@@ -300,14 +300,42 @@ u8 daycare_proceed(daycare_stru *daycare) {
     }
     // Proceed incubator
     for (int i = 0; i < incubator_available_slots(); i++) {
-      if (box_pokemon_hatching_proceed(&cmem.incubator_slots[i], true, false, 2)){
+      if (box_pokemon_hatching_proceed(&cmem.incubator_slots[i], true, true, 2)){
         // Mark the pokemon to hatch immediatley
         int cycles = BREEDING_CYCLES_HATCH_IMMEDIATLEY;
         box_pokemon_set_attribute(&cmem.incubator_slots[i], ATTRIBUTE_HAPPINESS, &cycles);
-        *var_access(0x8004) = (u16)(i + 6);
-        return true;
+		// Check if this egg can be hatched directly, i.e. if there is team or box space for the egg
+		if (player_pokemon_recount_pokemon() < 6 || box_has_empty_slot()) {
+			// There is some room to hatch the egg into
+			*var_access(0x8004) = (u16)(i + 6);
+			return true;
+		}
       }
     }
   }
   return false;
+}
+
+void incubator_hatch_egg_backup_player_party() {
+	player_pokemon_compact();
+	memcpy(opponent_pokemon + 1, player_pokemon, sizeof(pokemon));
+	int incubator_slot = *var_access(0x8004) - 6;
+	incubator_remove_egg(incubator_slot, &player_pokemon->box);
+}
+
+u16 incubator_add_hatched_pokemon_to_party_or_box() {
+	u16 result;
+	if (player_pokemon_recount_pokemon() < 6) {
+		// Add the mon to the party
+		memcpy(player_pokemon + player_pokemon_cnt, player_pokemon, sizeof(pokemon)); // Move hatched egg to party
+		result = 0; // Added to the party
+	} else if (pokemon_to_box(player_pokemon) == 1) {
+		// Add the mon to a box
+		result = 1; // Added to box
+	} else {
+		derrf("Hatched egg that has no room for hatching...\n");
+		result = 2;
+	}
+	memcpy(player_pokemon, opponent_pokemon + 1, sizeof(pokemon)); // Restore the original player's first mon
+	return result;
 }

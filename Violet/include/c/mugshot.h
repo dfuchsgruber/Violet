@@ -213,6 +213,10 @@ extern "C" {
     extern const unsigned short gfx_mug_roman_happyTiles[];
     extern const unsigned short gfx_mug_romanPal[];
     extern const unsigned short gfx_mug_rosalieTiles[];
+    extern const unsigned short gfx_mug_rosalie_angryTiles[];
+    extern const unsigned short gfx_mug_rosalie_sadTiles[];
+    extern const unsigned short gfx_mug_rosalie_shockedTiles[];
+    extern const unsigned short gfx_mug_rosalie_scaredTiles[];
     extern const unsigned short gfx_mug_rosaliePal[];
 
     extern u8 str_mug_mistral[];

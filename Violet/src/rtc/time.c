@@ -105,7 +105,7 @@ void buffer_time() {
 void time_based_events_run() {
 	berry_proceed();
     daily_events_proceed();
-	update_timezone();
+	// update_timezone();
 }
 
 void time_based_events_proceed(u16 *vars) {

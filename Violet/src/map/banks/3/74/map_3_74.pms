@@ -729,8 +729,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": "17",
-						"berry_tree_idx": 0
+						"species": "0",
+						"berry_tree_idx": "21"
 					}
 				},
 				{
@@ -753,8 +753,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": "18",
-						"berry_tree_idx": 0
+						"species": "0",
+						"berry_tree_idx": "22"
 					}
 				},
 				{

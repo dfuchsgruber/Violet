@@ -108,6 +108,12 @@ void incubator_callback_pokemon_imported(u8 self);
  */
 void incubator_clear();
 
+/**
+ * Attempts to add a slots to the incubator based on the number of pokémon caught
+ * @return if the number of slots increased
+ **/
+bool incubator_attempt_add_slot();
+
 #define INCUBATOR_TBOX_CNT 6
 #define INCUBATOR_TBOX_TITLE 0
 #define INCUBATOR_TBOX_EGG 1

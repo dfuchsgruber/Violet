@@ -292,6 +292,12 @@ int pokemon_give_with_player_not_ot(pokemon *p);
 int pokemon_to_box(pokemon *dst);
 
 /**
+ * Checks if there is room in any box
+ * @return if there is room in any box
+ **/
+bool box_has_empty_slot();
+
+/**
  * Gets the name of a box
  * @param box_idx the index of the box to get the name of
  * @return the name of the box

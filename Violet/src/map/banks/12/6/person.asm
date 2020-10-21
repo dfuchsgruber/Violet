@@ -12,6 +12,22 @@
 ow_script_laubdorf_inside_3_person_0:
     checkflag FLAG_LAUBDORF_STAERKE
     gotoif EQUAL done
+    lock
+    faceplayer
+    loadpointer 0 str_0
+    callstd MSG_KEEPOPEN
+    copyvarifnotzero 0x8000 ITEM_VM01
+	copyvarifnotzero 0x8001 1
+	callstd ITEM_OBTAIN
+    setflag FLAG_LAUBDORF_STAERKE
+done:
+    loadpointer 0 str_1
+    callstd MSG_FACE
+    end
+
+/* 
+    checkflag FLAG_LAUBDORF_STAERKE
+    gotoif EQUAL done
     lockall
     faceplayer
     loadpointer 0 str_0
@@ -55,49 +71,13 @@ done:
     loadpointer 0 str_done
     callstd MSG_FACE
     end
-
+*/
 .ifdef LANG_GER
-str_obtained:
-    .autostring 34 2 "Diese VM enthält Stärke, ein Angriff, der nur den wirklich starken Pokémon zugedacht ist."
-
-str_obtain_strength:
-    .autostring 34 2 "Oh ja!\nDas ist ein wahrlich starkes Pokémon.\pWeißt du, was zu einem solchen Pokémon passen würde?"
+str_0:
+    .autostring 34 2 "In Fachkreisen nennt man mich den Zerschneider.\pEs gibt nichts auf dieser schönen weiten Welt, das ich nicht im Handumdrehen zerschneiden könnte.\pDu glaubst mir nicht?\pProbier es doch einfach selbst aus!"
 
 str_1:
-    .autostring 34 2 "Keine Schande, Kindchen!\pAber solltest du in den Besitz eines starken Pokémon gelangenDOTS\pDann kannst du es mir gerne zeigen!"
-
-str_wrong_type:
-    .autostring 34 2 "Das soll ein starkes Pokémon sein?\pNur Pokémon vom Typ Kampf können auch stark sein, das weiß doch jeder!"
-
-str_select:
-    .autostring 34 2 "Wunderbar!\pWelches deiner Pokémon ist stark?"
-
-str_done:
-    .autostring 34 2 "Stärke ist ein mächtiger Angriff.\pAußerhalb des Kampfes kannst du damit Felsen bewegen, solltest du den Orden von Ceometria errungen haben."
-
-str_0:
-    .autostring 34 2 "Ich bin ein Meister der Stärke!\pAlles an mir verkörpert meine Stärke.\pKannst du mir ein starkes Pokémon zeigen?"
-
+    .autostring 34 2 "Mit dieser VM kannst auch du alles zerschneiden, was sich dir in den Weg stellt!"
 
 .elseif LANG_EN
-str_obtained:
-    .autostring 34 2 "This HM contains strength, a powerful move only for strong pokémon."
-
-str_obtain_strength:
-    .autostring 34 2 "Oh yes!\nThat really is a strong pokémon.\pDo you know what would fit a pokémon like this?"
-
-str_1:
-    .autostring 34 2 "No reason to be ashamed.\pBut if you ever should posess a pokémon that is really strongDOTS\pYou can show it to me for sure!"
-
-str_wrong_type:
-    .autostring 34 2 "That is supposed to be a strong pokémon?\pOnly pokémon with the fighting type can be strong, isn't that known?"
-
-str_select:
-    .autostring 34 2 "Wonderful!\pWhich of your pokémon is strong?"
-
-str_done:
-    .autostring 34 2 "Strengh is a powerful move.\pOutside of battle you can even move rocks with it, given that you posess the badge of Ceometria."
-
-str_0:
-    .autostring 34 2 "I am the master of strength.\pEverything on me is an embodyment of strength.\pCan you show me a pokémon of strength?"
 .endif

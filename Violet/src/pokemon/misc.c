@@ -49,3 +49,14 @@ bool pokemon_has_type() {
     dprintf("Species %d, type %d\n");
     return basestats[species].type1 == type || basestats[species].type2 == type;
 }
+
+bool box_has_empty_slot() {
+    for (u8 box_idx = 0; box_idx < 14; box_idx++) {
+        for (u8 slot = 0; slot < 30; slot++) {
+            box_pokemon *p = pokemon_get_by_box(box_idx, slot);
+            if (box_pokemon_get_attribute(p, ATTRIBUTE_SPECIES, 0) == 0)
+                return true;
+        }
+    }
+    return false;
+}

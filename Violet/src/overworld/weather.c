@@ -283,25 +283,22 @@ void overworld_weather_fade_in_with_filter() {
 }
 
 bool overworld_weather_fade_in_rain_and_clouds() {
-    dprintf("Fade in rain etc. with fadescreen cnt %d (delay %d of %d)\n", overworld_weather.fadescreen_cnt, fmem.weather_blend_delay, *var_access(VAR_MAP_TRANSITION_FADING_DELAY));
+    // dprintf("Fade in rain etc. with fadescreen cnt %d (delay %d of %d)\n", overworld_weather.fadescreen_cnt, fmem.weather_blend_delay, *var_access(VAR_MAP_TRANSITION_FADING_DELAY));
     if (overworld_weather.fadescreen_cnt == 16)
         return false;
     // Consider a slower fading also for weather effects
     int delay = *var_access(VAR_MAP_TRANSITION_FADING_DELAY);
     if (fmem.weather_blend_delay >= delay) {
-        dprintf("Delay overcome.\n");
         fmem.weather_blend_delay = 0;
     } else {
         fmem.weather_blend_delay++;
         return true;
     }
     if (++overworld_weather.fadescreen_cnt >= 16) {
-        dprintf("Fix gamma shift.\n");
         pal_gamma_shift(0, 32, 3);
         overworld_weather.fadescreen_cnt = 16;
         return false;
     } else {
-        dprintf("New gamma & blend with alpha %d.\n", (u8)(16 - overworld_weather.fadescreen_cnt));
         pal_gamma_shift_with_blend(0, 32, 3, (u8)(16 - overworld_weather.fadescreen_cnt), overworld_weather.fadescreen_target_color);
         return true;
     }

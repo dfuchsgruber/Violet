@@ -24,7 +24,7 @@ str_0:
 str_1:
     .autostring 34 2 "Pokémon-Pension"
 str_2:
-    .autostring 34 2 "Haus der Stärke"
+    .autostring 34 2 "Haus des Zerschneiders"
 
 .elseif LANG_EN
 str_0:
@@ -32,6 +32,6 @@ str_0:
 str_1:
     .autostring 34 2 "Pokémon-Daycare"
 str_2:
-    .autostring 34 2 "House of strength"
+    .autostring 34 2 "House of the cutter"
 
 .endif

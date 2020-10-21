@@ -242,6 +242,7 @@ overworld_sprite ow_blaise = {
 	ow_anim_standard_npc, overworld_sprite_blaise_sprites, 
 	oam_rotscale_anim_table_null
 };
+
 static graphic overworld_sprite_mia_sprites[] = {
 	{&gfx_ow_mia_0Tiles, 0x100, 0},
 	{&gfx_ow_mia_1Tiles, 0x100, 0},
@@ -1596,6 +1597,29 @@ overworld_sprite ow_roman = {
 	oam_rotscale_anim_table_null
 };
 
+
+
+
+static graphic overworld_sprite_rosalie_sprites[] = {
+	{gfx_ow_rosalieTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_rosalieTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_rosalieTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_rosalieTiles + 3 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_rosalieTiles + 4 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_rosalieTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_rosalieTiles + 6 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_rosalieTiles + 7 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_rosalieTiles + 8 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+};
+
+overworld_sprite ow_rosalie = {
+	0xffff, OW_PAL_TAG_ROSALIE, 0x11ff, 0x100,
+	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
+	&ow_final_oam_16_32, &ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_rosalie_sprites, 
+	oam_rotscale_anim_table_null
+};
+
 //The overworld table
 overworld_sprite *overworld_sprites[] = {
     	&ow_hiro,
@@ -1687,7 +1711,7 @@ overworld_sprite *overworld_sprites[] = {
 	&ow_faun, //(overworld_sprite*) 0x83a42c0,
 //80
 	&ow_lester,//(overworld_sprite*) 0x83a4548,
-	&ow_mia, //(overworld_sprite*) 0x83a456c,
+	&ow_rosalie, //(overworld_sprite*) 0x83a456c,
 	&ow_manus,//(overworld_sprite*) 0x96d7e58,
 	&ow_teah, //(overworld_sprite*) 0x83a45b4,
 	(overworld_sprite*) 0x83a45d8,

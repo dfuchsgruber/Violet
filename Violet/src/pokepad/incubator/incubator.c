@@ -50,3 +50,23 @@ void incubator_clear() {
     memset(&cmem.incubator_slots[i], 0, sizeof(box_pokemon));
   }
 }
+
+
+bool incubator_attempt_add_slot() {
+  int num_hatches = save_get_key(SAVE_KEY_EGGS_HATCHED);
+  *var_access(0x8004) = (u16)num_hatches;
+  u16 slots_available = 0;
+  if (checkflag(FLAG_INCUBATOR)) {
+    slots_available = 1;
+    if (num_hatches > 3)
+      slots_available++;
+    if (num_hatches > 15)
+      slots_available++;
+    // Check if previously less slots were available
+    if (incubator_available_slots() < slots_available) {
+      *var_access(INCUBATOR_SLOTS) = slots_available;
+      return true;
+    }
+  }
+  return false;
+}

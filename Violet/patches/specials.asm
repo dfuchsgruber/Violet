@@ -281,7 +281,14 @@ special_table equ 0x0815FCC0
 .org (special_table + 146 * 4)
         .word pal_tmp_synchronize_with_pal_restore | 1
 
-// free from >= 143 to <= 146
+.org (special_table + 172 * 4)
+        .word incubator_hatch_egg_backup_player_party | 1
+.org (special_table + 173 * 4)
+        .word incubator_add_hatched_pokemon_to_party_or_box | 1
+.org (special_table + 174 * 4)
+        .word incubator_attempt_add_slot | 1
+
+// 172 <= free <= 179
 
 .org (special_table + (0x129 * 4))
                 .word special_roamer_reset_and_initialize | 1

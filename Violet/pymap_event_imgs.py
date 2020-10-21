@@ -43,7 +43,7 @@ picture_idx_to_png = {
     78 : 'asset/gfx/overworld/npcs/revolutionary/gfx_ow_revolutionary_0.png',
     79 : 'asset/gfx/overworld/npcs/faun/gfx_ow_faun_0.png',
     80 : 'asset/gfx/overworld/npcs/lester/gfx_ow_lester.png',
-    81 : 'asset/gfx/overworld/npcs/mia/gfx_ow_mia_0.png',
+    81 : 'asset/gfx/overworld/npcs/gfx_ow_rosalie.png',
     82 : 'asset/gfx/overworld/npcs/manus/gfx_ow_manus_0.png',
     83 : 'asset/gfx/overworld/npcs/teah/gfx_ow_teah.png.display',
     86 : 'asset/gfx/overworld/npcs/igva/gfx_ow_igva_0.png',
@@ -97,6 +97,7 @@ picture_idx_to_png = {
 # Images that hold an entire spritesheet
 spritesheet_images = {
     80 : (16, 32),
+    81 : (16, 32),
     93 : (16, 16),
     176 : (16, 32),
     177 : (16, 32),
