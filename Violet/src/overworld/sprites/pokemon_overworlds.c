@@ -2,7 +2,7 @@
 #include "overworld/sprite.h"
 #include "color.h"
 #include "constants/species.h"
-#include "debug.h"
+#include "debug.h" 
 
 static palette ow_pokemon_pals[] = {
     [0] = {.pal = gfx_ow_bisasamPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_BISASAM},
@@ -256,6 +256,11 @@ static palette ow_pokemon_pals[] = {
     [POKEMON_LUGIA] = {.pal = gfx_ow_lugiaPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_LUGIA},
     [POKEMON_HO_OH] = {.pal = gfx_ow_ho_ohPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_HO_OH},
     [POKEMON_CELEBI] = {.pal = gfx_ow_celebiPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_CELEBI},
+	[POKEMON_ROTOM_FORST] = {.pal = gfx_ow_rotom_frostPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_ROTOM_FORST},
+	[POKEMON_ROTOM_HEAT] = {.pal = gfx_ow_rotom_heatPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_ROTOM_HEAT},
+	[POKEMON_ROTOM_GRASS] = {.pal = gfx_ow_rotom_mowPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_ROTOM_GRASS},
+	[POKEMON_ROTOM_WASH] = {.pal = gfx_ow_rotom_washPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_ROTOM_WASH},
+	[POKEMON_ROTOM_WIND] = {.pal = gfx_ow_rotom_fanPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_ROTOM_WIND},
     [POKEMON_DURENGARD_OFFENSIVE] = {.pal = gfx_ow_durengardaPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_DURENGARD_OFFENSIVE},
     [POKEMON_FIFFYEN] = {.pal = gfx_ow_fiffyenPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_FIFFYEN},
     [POKEMON_MAGNAYEN] = {.pal = gfx_ow_magnayenPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_MAGNAYEN},
@@ -324,8 +329,8 @@ static palette ow_pokemon_pals[] = {
     [POKEMON_AZURILL] = {.pal = gfx_ow_azurillPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_AZURILL},
     [POKEMON_SPOINK] = {.pal = gfx_ow_spoinkPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_SPOINK},
     [POKEMON_GROINK] = {.pal = gfx_ow_groinkPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_GROINK},
-    [POKEMON_PICHU] = {.pal = gfx_ow_pluslePal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_PICHU},
-    [POKEMON_ROTOM] = {.pal = gfx_ow_minunPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_ROTOM},
+    [POKEMON_PICHU] = {.pal = gfx_ow_pichuPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_PICHU},
+    [POKEMON_ROTOM] = {.pal = gfx_ow_rotomPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_ROTOM},
     [POKEMON_FLUNKIFER] = {.pal = gfx_ow_flunkiferPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_FLUNKIFER},
     [POKEMON_MEDITIE] = {.pal = gfx_ow_meditiePal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_MEDITIE},
     [POKEMON_MEDITALIS] = {.pal = gfx_ow_meditalisPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_MEDITALIS},
@@ -338,8 +343,8 @@ static palette ow_pokemon_pals[] = {
     [POKEMON_BUMMELZ] = {.pal = gfx_ow_bummelzPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_BUMMELZ},
     [POKEMON_MUNTIER] = {.pal = gfx_ow_muntierPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_MUNTIER},
     [POKEMON_LETARKING] = {.pal = gfx_ow_letarkingPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_LETARKING},
-    [POKEMON_MOLUNK] = {.pal = gfx_ow_schluppuckPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_MOLUNK},
-    [POKEMON_AMFIRA] = {.pal = gfx_ow_schlukwechPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_AMFIRA},
+    [POKEMON_MOLUNK] = {.pal = gfx_ow_molunkPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_MOLUNK},
+    [POKEMON_AMFIRA] = {.pal = gfx_ow_amfiraPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_AMFIRA},
     [POKEMON_TROPIUS] = {.pal = gfx_ow_tropiusPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_TROPIUS},
     [POKEMON_KAUMALAT] = {.pal = gfx_ow_kaumalatPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_KAUMALAT},
     [POKEMON_KNARKSEL] = {.pal = gfx_ow_knarkselPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_KNARKSEL},
@@ -3424,6 +3429,66 @@ static graphic overworld_gfxs_durengarda[] = {
 	[8] = {.sprite = gfx_ow_durengardaTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
 };
 
+static graphic overworld_gfxs_rotom_heat[] = {
+	[0] = {.sprite = gfx_ow_rotom_heatTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[1] = {.sprite = gfx_ow_rotom_heatTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[2] = {.sprite = gfx_ow_rotom_heatTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[3] = {.sprite = gfx_ow_rotom_heatTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[4] = {.sprite = gfx_ow_rotom_heatTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[5] = {.sprite = gfx_ow_rotom_heatTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[6] = {.sprite = gfx_ow_rotom_heatTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[7] = {.sprite = gfx_ow_rotom_heatTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[8] = {.sprite = gfx_ow_rotom_heatTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+};
+
+static graphic overworld_gfxs_rotom_wash[] = {
+	[0] = {.sprite = gfx_ow_rotom_washTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[1] = {.sprite = gfx_ow_rotom_washTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[2] = {.sprite = gfx_ow_rotom_washTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[3] = {.sprite = gfx_ow_rotom_washTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[4] = {.sprite = gfx_ow_rotom_washTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[5] = {.sprite = gfx_ow_rotom_washTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[6] = {.sprite = gfx_ow_rotom_washTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[7] = {.sprite = gfx_ow_rotom_washTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[8] = {.sprite = gfx_ow_rotom_washTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+};
+
+static graphic overworld_gfxs_rotom_mow[] = {
+	[0] = {.sprite = gfx_ow_rotom_mowTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[1] = {.sprite = gfx_ow_rotom_mowTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[2] = {.sprite = gfx_ow_rotom_mowTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[3] = {.sprite = gfx_ow_rotom_mowTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[4] = {.sprite = gfx_ow_rotom_mowTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[5] = {.sprite = gfx_ow_rotom_mowTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[6] = {.sprite = gfx_ow_rotom_mowTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[7] = {.sprite = gfx_ow_rotom_mowTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[8] = {.sprite = gfx_ow_rotom_mowTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+};
+
+static graphic overworld_gfxs_rotom_fan[] = {
+	[0] = {.sprite = gfx_ow_rotom_fanTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[1] = {.sprite = gfx_ow_rotom_fanTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[2] = {.sprite = gfx_ow_rotom_fanTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[3] = {.sprite = gfx_ow_rotom_fanTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[4] = {.sprite = gfx_ow_rotom_fanTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[5] = {.sprite = gfx_ow_rotom_fanTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[6] = {.sprite = gfx_ow_rotom_fanTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[7] = {.sprite = gfx_ow_rotom_fanTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[8] = {.sprite = gfx_ow_rotom_fanTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+};
+
+static graphic overworld_gfxs_rotom_frost[] = {
+	[0] = {.sprite = gfx_ow_rotom_frostTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[1] = {.sprite = gfx_ow_rotom_frostTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[2] = {.sprite = gfx_ow_rotom_frostTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[3] = {.sprite = gfx_ow_rotom_frostTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[4] = {.sprite = gfx_ow_rotom_frostTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[5] = {.sprite = gfx_ow_rotom_frostTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[6] = {.sprite = gfx_ow_rotom_frostTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[7] = {.sprite = gfx_ow_rotom_frostTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[8] = {.sprite = gfx_ow_rotom_frostTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+};
+
 static graphic overworld_gfxs_fiffyen[] = {
 	[0] = {.sprite = gfx_ow_fiffyenTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
 	[1] = {.sprite = gfx_ow_fiffyenTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
@@ -4229,28 +4294,28 @@ static graphic overworld_gfxs_groink[] = {
 	[8] = {.sprite = gfx_ow_groinkTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
 };
 
-static graphic overworld_gfxs_plusle[] = {
-	[0] = {.sprite = gfx_ow_plusleTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[1] = {.sprite = gfx_ow_plusleTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[2] = {.sprite = gfx_ow_plusleTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[3] = {.sprite = gfx_ow_plusleTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[4] = {.sprite = gfx_ow_plusleTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[5] = {.sprite = gfx_ow_plusleTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[6] = {.sprite = gfx_ow_plusleTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[7] = {.sprite = gfx_ow_plusleTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[8] = {.sprite = gfx_ow_plusleTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+static graphic overworld_gfxs_pichu[] = {
+	[0] = {.sprite = gfx_ow_pichuTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[1] = {.sprite = gfx_ow_pichuTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[2] = {.sprite = gfx_ow_pichuTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[3] = {.sprite = gfx_ow_pichuTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[4] = {.sprite = gfx_ow_pichuTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[5] = {.sprite = gfx_ow_pichuTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[6] = {.sprite = gfx_ow_pichuTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[7] = {.sprite = gfx_ow_pichuTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[8] = {.sprite = gfx_ow_pichuTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
 };
 
-static graphic overworld_gfxs_minun[] = {
-	[0] = {.sprite = gfx_ow_minunTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[1] = {.sprite = gfx_ow_minunTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[2] = {.sprite = gfx_ow_minunTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[3] = {.sprite = gfx_ow_minunTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[4] = {.sprite = gfx_ow_minunTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[5] = {.sprite = gfx_ow_minunTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[6] = {.sprite = gfx_ow_minunTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[7] = {.sprite = gfx_ow_minunTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[8] = {.sprite = gfx_ow_minunTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+static graphic overworld_gfxs_rotom[] = {
+	[0] = {.sprite = gfx_ow_rotomTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[1] = {.sprite = gfx_ow_rotomTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[2] = {.sprite = gfx_ow_rotomTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[3] = {.sprite = gfx_ow_rotomTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[4] = {.sprite = gfx_ow_rotomTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[5] = {.sprite = gfx_ow_rotomTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[6] = {.sprite = gfx_ow_rotomTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[7] = {.sprite = gfx_ow_rotomTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[8] = {.sprite = gfx_ow_rotomTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
 };
 
 static graphic overworld_gfxs_flunkifer[] = {
@@ -4397,28 +4462,28 @@ static graphic overworld_gfxs_letarking[] = {
 	[8] = {.sprite = gfx_ow_letarkingTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
 };
 
-static graphic overworld_gfxs_schluppuck[] = {
-	[0] = {.sprite = gfx_ow_schluppuckTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[1] = {.sprite = gfx_ow_schluppuckTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[2] = {.sprite = gfx_ow_schluppuckTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[3] = {.sprite = gfx_ow_schluppuckTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[4] = {.sprite = gfx_ow_schluppuckTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[5] = {.sprite = gfx_ow_schluppuckTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[6] = {.sprite = gfx_ow_schluppuckTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[7] = {.sprite = gfx_ow_schluppuckTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[8] = {.sprite = gfx_ow_schluppuckTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+static graphic overworld_gfxs_molunk[] = {
+	[0] = {.sprite = gfx_ow_molunkTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[1] = {.sprite = gfx_ow_molunkTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[2] = {.sprite = gfx_ow_molunkTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[3] = {.sprite = gfx_ow_molunkTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[4] = {.sprite = gfx_ow_molunkTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[5] = {.sprite = gfx_ow_molunkTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[6] = {.sprite = gfx_ow_molunkTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[7] = {.sprite = gfx_ow_molunkTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[8] = {.sprite = gfx_ow_molunkTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
 };
 
-static graphic overworld_gfxs_schlukwech[] = {
-	[0] = {.sprite = gfx_ow_schlukwechTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[1] = {.sprite = gfx_ow_schlukwechTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[2] = {.sprite = gfx_ow_schlukwechTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[3] = {.sprite = gfx_ow_schlukwechTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[4] = {.sprite = gfx_ow_schlukwechTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[5] = {.sprite = gfx_ow_schlukwechTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[6] = {.sprite = gfx_ow_schlukwechTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[7] = {.sprite = gfx_ow_schlukwechTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[8] = {.sprite = gfx_ow_schlukwechTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+static graphic overworld_gfxs_amfira[] = {
+	[0] = {.sprite = gfx_ow_amfiraTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[1] = {.sprite = gfx_ow_amfiraTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[2] = {.sprite = gfx_ow_amfiraTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[3] = {.sprite = gfx_ow_amfiraTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[4] = {.sprite = gfx_ow_amfiraTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[5] = {.sprite = gfx_ow_amfiraTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[6] = {.sprite = gfx_ow_amfiraTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[7] = {.sprite = gfx_ow_amfiraTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[8] = {.sprite = gfx_ow_amfiraTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
 };
 
 static graphic overworld_gfxs_tropius[] = {
@@ -6770,6 +6835,36 @@ static overworld_sprite overworlds_pokemon[] = {
         .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
         .graphics = overworld_gfxs_durengarda, .rotscale_animation = oam_rotscale_anim_table_null,
     },
+	[POKEMON_ROTOM_HEAT] = {
+        .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_ROTOM_HEAT,
+        .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
+        .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
+        .graphics = overworld_gfxs_rotom_heat, .rotscale_animation = oam_rotscale_anim_table_null,
+    },
+	[POKEMON_ROTOM_WASH] = {
+        .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_ROTOM_WASH,
+        .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
+        .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
+        .graphics = overworld_gfxs_rotom_wash, .rotscale_animation = oam_rotscale_anim_table_null,
+    },
+	[POKEMON_ROTOM_WIND] = {
+        .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_ROTOM_WIND,
+        .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
+        .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
+        .graphics = overworld_gfxs_rotom_fan, .rotscale_animation = oam_rotscale_anim_table_null,
+    },
+	[POKEMON_ROTOM_FORST] = {
+        .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_ROTOM_FORST,
+        .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
+        .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
+        .graphics = overworld_gfxs_rotom_frost, .rotscale_animation = oam_rotscale_anim_table_null,
+    },
+	[POKEMON_ROTOM_GRASS] = {
+        .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_ROTOM_GRASS,
+        .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
+        .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
+        .graphics = overworld_gfxs_rotom_mow, .rotscale_animation = oam_rotscale_anim_table_null,
+    },
     [POKEMON_FIFFYEN] = {
         .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_FIFFYEN,
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
@@ -7176,13 +7271,13 @@ static overworld_sprite overworlds_pokemon[] = {
         .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_PICHU,
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
         .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
-        .graphics = overworld_gfxs_plusle, .rotscale_animation = oam_rotscale_anim_table_null,
+        .graphics = overworld_gfxs_pichu, .rotscale_animation = oam_rotscale_anim_table_null,
     },
     [POKEMON_ROTOM] = {
         .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_ROTOM,
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
         .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
-        .graphics = overworld_gfxs_minun, .rotscale_animation = oam_rotscale_anim_table_null,
+        .graphics = overworld_gfxs_rotom, .rotscale_animation = oam_rotscale_anim_table_null,
     },
     [POKEMON_FLUNKIFER] = {
         .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_FLUNKIFER,
@@ -7260,13 +7355,13 @@ static overworld_sprite overworlds_pokemon[] = {
         .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_MOLUNK,
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
         .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
-        .graphics = overworld_gfxs_schluppuck, .rotscale_animation = oam_rotscale_anim_table_null,
+        .graphics = overworld_gfxs_molunk, .rotscale_animation = oam_rotscale_anim_table_null,
     },
     [POKEMON_AMFIRA] = {
         .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_AMFIRA,
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
         .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
-        .graphics = overworld_gfxs_schlukwech, .rotscale_animation = oam_rotscale_anim_table_null,
+        .graphics = overworld_gfxs_amfira, .rotscale_animation = oam_rotscale_anim_table_null,
     },
     [POKEMON_TROPIUS] = {
         .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_TROPIUS,

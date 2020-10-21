@@ -1051,6 +1051,26 @@ extern u8 gfx_ow_icognito_exclamationTiles[];
 extern color_t gfx_ow_icognito_exclamationPal[16];
 extern u8 gfx_ow_icognito_questionTiles[];
 extern color_t gfx_ow_icognito_questionPal[16];
+extern u8 gfx_ow_molunkTiles[];
+extern color_t gfx_ow_molunkPal[16];
+extern u8 gfx_ow_amfiraTiles[];
+extern color_t gfx_ow_amfiraPal[16];
+extern u8 gfx_ow_pichuTiles[];
+extern color_t gfx_ow_pichuPal[16];
+extern u8 gfx_ow_rotomTiles[];
+extern color_t gfx_ow_rotomPal[16];
+extern u8 gfx_ow_rotom_heatTiles[];
+extern color_t gfx_ow_rotom_heatPal[16];
+extern u8 gfx_ow_rotom_frostTiles[];
+extern color_t gfx_ow_rotom_frostPal[16];
+extern u8 gfx_ow_rotom_mowTiles[];
+extern color_t gfx_ow_rotom_mowPal[16];
+extern u8 gfx_ow_rotom_washTiles[];
+extern color_t gfx_ow_rotom_washPal[16];
+extern u8 gfx_ow_rotom_fanTiles[];
+extern color_t gfx_ow_rotom_fanPal[16];
+
+
 extern const unsigned short gfx_ow_deoxys_normal_0Tiles[];
 extern const unsigned short gfx_ow_deoxys_normal_1Tiles[];
 extern const unsigned short gfx_ow_deoxys_normal_2Tiles[];
