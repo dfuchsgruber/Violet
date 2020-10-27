@@ -34,7 +34,7 @@ lscr_0x719cab:
 .global ow_script_0x81c52a
 
 ow_script_0x81c52a:
-	checkflag FLAG_SILVANIA_GYM_OPEN
+	checkflag SILVANIA_FOREST_RIN
 	callif NOT_EQUAL ow_script_0x81c537
 	end
 
@@ -84,7 +84,7 @@ ow_script_0x81c55e:
 	applymovement 2 mov_run3l
 	waitmovement 0
 	loadpointer 0 str_7
-	show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT alignment=MUGSHOT_LEFT message_type=MSG emotion=MUGSHOT_HAPPY
+	show_mugshot MUGSHOT_FELIX  alignment=MUGSHOT_LEFT message_type=MSG emotion=MUGSHOT_HAPPY
 	applymovement 2 mov_8r
 	waitmovement 0
 	hidesprite 2

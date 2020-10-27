@@ -142,8 +142,8 @@
 					"picture": "91",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "4",
-					"y": "16",
+					"x": "7",
+					"y": "28",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
@@ -166,10 +166,10 @@
 			"warps": [
 				{
 					"target_bank": 3,
-					"y": 18,
+					"y": "31",
 					"level": 0,
 					"target_map": 3,
-					"x": 3,
+					"x": "6",
 					"target_warp_idx": 8
 				},
 				{

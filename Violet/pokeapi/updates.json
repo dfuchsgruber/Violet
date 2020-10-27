@@ -4304,7 +4304,14 @@
 		"ability_1": null,
 		"hidden_ability": null,
 		"safari_rate": 0,
-		"dex_number": 342
+		"dex_number": 342,
+		"evolutions" : {
+			"POKEMON_AMFIRA" : {
+				"trigger": "Female_and_level_Up",
+				"argument": 33,
+				"baby_trigger_item" : null
+			}
+		}
 	},
 	"POKEMON_AMFIRA": {
 		"ability_0": "Doesigkeit",

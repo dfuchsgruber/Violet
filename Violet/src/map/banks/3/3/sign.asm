@@ -97,15 +97,7 @@ str_0x8f5caa:
 
 
 ow_script_map_3_3_sign_5:
-compare STORY_PROGRESS 0x1c
-callif LESS ow_script_0x8f63f6
-loadpointer 0x0 str_0x8f615e
-callstd MSG_SIGN
-end
-
-
-ow_script_0x8f63f6:
-loadpointer 0x0 str_0x8f6400
+loadpointer 0 str_0x8f6400
 callstd MSG_SIGN
 end
 
