@@ -160,8 +160,8 @@ u8 battle_ai_should_use_item(int *score) {
                 if (battlers[active_battler].ability == HITZEWAHN) continue;
                 if (battlers[active_battler].ability == NOTSCHUTZ || battlers[attacking_battler].ability == EXPIDERMIS)
                     item_score /= 2;
-                break;
                 ai_item_flags[i] |= AI_ITEM_FLAG_BURN;
+                break;
             }
             case ITEM_EFFECT_HEAL_FREEZE: {
             check_freeze:

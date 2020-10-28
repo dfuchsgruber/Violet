@@ -407,6 +407,7 @@ void mugshot_delete_text(u8 self) {
 			if(!transparency_is_on()) 
 				tbox_border_flush(tb_id);
 			tbox_free(tb_id);
+			break;
 		}
 		default: {
 			if (!big_callback_is_active(mugshot_wait_for_deletion)) {
