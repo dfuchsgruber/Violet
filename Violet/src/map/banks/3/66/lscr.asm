@@ -542,7 +542,7 @@ str_0x8aa57d:
 str_0x8aa381:
 	.autostring 34 2 "Haha!\nIt's fine, don't worry.\pI have known my son for quite a while now!"
 str_0x8aa381_2:
-    .autostring 34 2 "If it calms you down, RIVALDOTS\pThis request much more is a task that a trainer has to deal with anyway.\pAs I said, Elise is researching the virtualization of Pokémon.\pAnd the foundation of her research is a lot of data.\pData, which has to be collected.\pBy Pokémon-Trainers, that is!\pAnd the Poképad gives you the ability to get that data for Elise.\pThe Pokédex-App records all the interesting information about the Pokémon you catch throughout your adventure.\pBasically, you just have to catch many different species to record their data.\pAnd that's all!\nDoesn't sound half bad, right?"    
+    .autostring 34 2 "If it calms you down, RIVALDOTS\pThis request much more is a task that a trainer has to deal with anyway.\pAs I said, Elise is researching the virtualization of Pokémon.\pAnd the foundation of her research is a lot of data.\pData, which has to be collected.\pBy Pokémon-Trainers, that is!\pAnd the Poképad gives you the ability to get that data for Elise.\pThe Pokédex-App records all the interesting information about the Pokémon you catch throughout your adventure.\pBasically, you just have to catch many different species to record their data.\pAnd that's all!\nDoesn't sound half bad, right?"
 str_0x8aa372:
     .autostring 34 2 "Really?\pThat's all?\nJust catching Pokémon?"
 str_0x8aa372_2:

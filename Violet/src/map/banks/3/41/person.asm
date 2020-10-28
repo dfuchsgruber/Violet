@@ -700,7 +700,7 @@ str_0x8ab6bf:
     .autostring 34 2 "Professor Primus Forschung an einem Raum-Zeit-Portal ist einfach blanker Wahnsinn.\pIch musste ihm meine Bedenken mitteilen.\pAber er ist grausam und hat mich einfach rausgeschmissenDOTS"
 .elseif LANG_EN
 str_0x8abe1c:
-    .autostring 34 2 "I spent so many years working for Professor Primus at the Laz. Corp.\pAnd for what?\pThey just fire me!\pBut when I left I took something from them.\pI won't just silently disappear!\pUnfortunately, I don't have any use for it.\pMaybe you want to have it?"    
+    .autostring 34 2 "I spent so many years working for Professor Primus at the Laz. Corp.\pAnd for what?\pThey just fire me!\pBut when I left I took something from them.\pI won't just silently disappear!\pUnfortunately, I don't have any use for it.\pMaybe you want to have it?"
 str_0x8ab77f:
     .autostring 34 2 "The link cable simulates a Pokémon trade.\pSome Pokémon evolve that way."
 str_0x8ab6bf:
