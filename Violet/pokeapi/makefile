@@ -51,7 +51,11 @@ $(EXPORTED_STATS_OBJ): %.o: %.pms
 	$(PYPREPROC) -o $*.i $*.asm $(MAPPROJ)   
 	$(AS) $(ASFLAGS) --MD $*.d $*.i -o $@
 
-$(EXPORTED_STATS): $(UPDATED_STATS)
+$(EXPORTED_STATS): $(UPDATED_STATS).intermediate ;
+
+.INTERMEDIATE: $(UPDATED_STATS).intermediate
+
+$(UPDATED_STATS).intermediate: $(UPDATED_STATS)
 	$(shell mkdir -p $(dir $@))
 	$(EXPORTER) --basestatslabel $(BASESTATS_LABEL) --levelupmoveslabel $(LEVELUP_MOVES_LABEL) --eggmoveslabel $(EGG_MOVES_LABEL) --tmcompatibilitylabel $(TM_COMPATIBILITY_LABEL) \
 	--tutorcompatibilitylabel $(TUTOR_COMPATIBILITY_LABEL) --accessiblemoveslabel $(ACCESSIBLE_MOVES_LABEL) --pokemonnameslabel $(NAMES_LABEL) \

@@ -5,6 +5,7 @@ import pymap.project
 import pickle
 import json
 from export import *
+import os
 
 if __name__ == '__main__':
 
@@ -46,9 +47,12 @@ if __name__ == '__main__':
 
     for name, _, _, export_func in types_to_export:
         data = export_func(stats, project, language=args.language)
+        # outfile = getattr(args, name)
         with open(getattr(args, name), 'w+', encoding=project.config['json']['encoding']) as f:
             json.dump({
                 'label' : getattr(args, f'{name}label'),
                 'type' : getattr(args, f'{name}filetype'),
                 'data' : data
             }, f, indent=project.config['json']['indent'])
+        # Rename the outfile only after everything as been written
+        # os.rename(f'{outfile}.intermediate', outfile)
