@@ -1,5 +1,5 @@
 FROM gcc
-ENTRYPOINT [ "/usr/local/bin/violet-entrypoint" ]
+CMD [ "/usr/local/bin/violet-entrypoint" ]
 
 RUN apt-get update --fix-missing
 RUN DEBIAN_FRONTEND=nointeractive apt-get install apt-utils -y
