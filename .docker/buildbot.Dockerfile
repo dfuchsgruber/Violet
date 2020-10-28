@@ -20,7 +20,7 @@ RUN apt-get install -y \
 RUN pip3 install pipenv
 
 RUN \
-        wget https://github.com/devkitPro/pacman/releases/download/devkitpro-pacman-1.0.1/devkitpro-pacman.deb -O pacman.deb; \
+        wget https://github.com/devkitPro/pacman/releases/download/v1.0.2/devkitpro-pacman.amd64.deb -O pacman.deb; \
         dpkg -i pacman.deb; \
         dkp-pacman -S --noconfirm gba-dev; \
         rm pacman.deb;
