@@ -35,29 +35,45 @@ RUN \
         cd /etc/violet; \
         \
         git clone https://github.com/ipatix/wav2agb; \
-        make -C wav2agb; \
-        chmod 744 wav2agb/wav2agb; \
-        cp wav2agb/wav2agb /usr/local/bin;
+        directory=$(pwd); \
+        cd wav2agb; \
+        git checkout 3acb19c8d11d017d39d77a87fa8630d07945a6c4; \
+        make; \
+        chmod 744 wav2agb; \
+        install -t /usr/local/bin ./wav2agb; \
+        cd $directory; \
+        unset directory;
 RUN \
         git clone https://github.com/pret/pokefirered.git; \
-        make -C pokefirered/tools/mid2agb; \
-        chmod 744 pokefirered/tools/mid2agb/mid2agb; \
-        cp pokefirered/tools/mid2agb/mid2agb /usr/local/bin;
+        directory=$(pwd); \
+        cd pokefirered/tools/mid2agb; \
+        git checkout 7b8c935926eec33651e0e265fa49f2f99fce918a; \
+        make; \
+        chmod 744 mid2agb; \
+        install -t /usr/local/bin ./mid2agb; \
+        cd $directory; \
+        unset directory;
 RUN \
         git clone https://github.com/Kingcom/armips.git; \
         directory=$(pwd); \
         cd armips; \
+        git checkout v0.11.0; \
         cmake .; \
+        make; \
+        chmod 744 armips; \
+        install -t /usr/local/bin ./armips; \
         cd $directory; \
-        unset directory; \
-        make -C armips; \
-        chmod 744 armips/armips; \
-        cp armips/armips /usr/local/bin;
+        unset directory;
 RUN \
         git clone https://github.com/WodkaRHR/gba-mus-ripper.git /etc/violet/gba-mus-ripper; \
-        make -C /etc/violet/gba-mus-ripper; \
-        chmod 744 /etc/violet/gba-mus-ripper/out/*; \
-        cp /etc/violet/gba-mus-ripper/out/* /usr/local/bin;
+        directory=$(pwd); \
+        cd gba-mus-ripper; \
+        git checkout a1c8ed924420fa7f2a311f61a88915aed8018bf9; \
+        make; \
+        chmod 744 ./*; \
+        install -t /usr/local/bin ./out/*; \
+        cd $directory; \
+        unset directory;
 
 WORKDIR /usr/local/violet
 COPY .docker/buildbot-entrypoint.sh /usr/local/bin/violet-entrypoint
