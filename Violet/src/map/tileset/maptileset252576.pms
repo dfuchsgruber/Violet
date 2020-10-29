@@ -1133,14 +1133,14 @@
 				"battle_bg": "BATTLE_BG_GYM"
 			},
 			{
-				"behaviour": "0x1d0",
-				"hm_usage": "0xe",
-				"field_2": "0x3",
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_7": "0x1",
-				"priority": "0x3",
-				"battle_bg": "0xe3"
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_GYM"
 			},
 			{
 				"behaviour": "0x0",
@@ -9174,10 +9174,28 @@
 			],
 			[
 				{
-					"tile_idx": 0,
+					"tile_idx": 940,
+					"palette_idx": 11,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 941,
+					"palette_idx": 11,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 956,
+					"palette_idx": 11,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 957,
+					"palette_idx": 11,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 0,
@@ -9204,46 +9222,28 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 696,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
-					"palette_idx": 0
+					"palette_idx": 7
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 697,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
-					"palette_idx": 0
+					"palette_idx": 7
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 712,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
-					"palette_idx": 0
+					"palette_idx": 7
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 713,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"palette_idx": 7
 				}
 			],
 			[

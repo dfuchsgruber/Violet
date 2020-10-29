@@ -213,7 +213,7 @@ void overworld_npc_reflection_brighten_palette(u8 pal_idx) {
     }
     // cpuset(pal_restore + 256 + 16 * pal_idx, pals + 256 + 16 * pal_idx, CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(16 * sizeof(color_t)));
     cpuset(pals + 256 + 16 * pal_idx, pal_restore + 256 + 16 * pal_idx, CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(16 * sizeof(color_t)));
-}   
+}
 
 // static color_t reflection_blue_channel = {.rgb = {.red = 12, .green = 20, .blue = 27}}; 
 

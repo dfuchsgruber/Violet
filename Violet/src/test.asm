@@ -36,6 +36,26 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	fadescreen 1
+	setvar 0x8004 0xe
+	setvar 0x8005 0x9
+	special SPECIAL_OVERWORLD_VIEWPORT_SET_POSITION
+	fadescreen 0
+	pause 64
+	special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
+	applymovement 0x7F movs
+	waitmovement 0
+	special SPECIAL_OVERWORLD_VIEWPORT_LOCK
+	fadescreen 1
+	special SPECIAL_OVERWORLD_VIEWPORT_SET_TO_PLAYER_POSITION
+	callasm ow_script_fadescreen_palette_backup
+	fadescreen 0
+	end
+
+movs:
+    .byte STEP_UP, STEP_UP, STOP 
+	end
+
 	givepokemon POKEMON_MOLUNK 50 ITEM_ALTARIANIT 0 0 0
 	givepokemon POKEMON_AMFIRA 50 ITEM_ALTARIANIT 0 0 0
 	givepokemon POKEMON_PICHU 50 ITEM_ALTARIANIT 0 0 0

@@ -287,6 +287,10 @@ special_table equ 0x0815FCC0
         .word incubator_add_hatched_pokemon_to_party_or_box | 1
 .org (special_table + 174 * 4)
         .word incubator_attempt_add_slot | 1
+.org (special_table + 175 * 4)
+        .word special_overworld_viewport_set_position | 1
+.org (special_table + 176 * 4)
+        .word overworld_viewport_set_position_to_player | 1
 
 // 172 <= free <= 179
 

@@ -228,4 +228,11 @@ u8 map_current_get_type();
  **/
 bool map_transition_is_exit(u8 previous_type, u8 current_type);
 
+/**
+ * Moves the overworld viewport and redraws all things (npcs, bgs, ...)
+ * @param dx how many blocks to move the viewport in x direction
+ * @param dy how many blocks to move the viewport in y direction
+ **/
+void overworld_viewport_move_and_update_all(s16 dx, s16 dy);
+
 #endif /* INCLUDE_C_OVERWORLD_MAP_CONTROL_H_ */

@@ -1145,3 +1145,4 @@ map_previous_get_type = 0x080561c0 | 1;
 map_current_get_type = 0x080561a8 | 1;
 map_transition_is_exit = 0x080c9f84 | 1;
 pal_gamma_shift_with_blend = 0x0807a334 | 1;
+overworld_viewport_move_and_update_all = 0x0805acb4 | 1;

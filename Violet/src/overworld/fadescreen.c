@@ -22,7 +22,7 @@ bool script_cmd_x97_fadescreen(ow_script_state *ow_state){
     //dprintf("Script state is %x\n", ow_state->script);
     u8 type = *(ow_state->script++);
     //dprintf("Script state is %x\n", ow_state->script);
-    if(type == 0 || type == 2){
+    if(type == FADE_FROM_BLACK || type == FADE_FROM_WHITE){
         //Fade back from black or white
         cpuset(pal_tmp, pal_restore, 0x4000100);
     }else{

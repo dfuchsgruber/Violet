@@ -3,8 +3,8 @@
 		"footer": "map_footer_12",
 		"events": {
 			"person_cnt": 6,
-			"warp_cnt": 2,
-			"trigger_cnt": 5,
+			"warp_cnt": 1,
+			"trigger_cnt": 4,
 			"signpost_cnt": 0,
 			"persons": [
 				{
@@ -69,11 +69,11 @@
 					"alert_radius": 1,
 					"level": 0,
 					"field_3": 0,
-					"x": 12,
+					"x": "9",
 					"picture": 22,
 					"script": "ow_script_map_7_5_trainer_2",
 					"field_2": 0,
-					"y": 12,
+					"y": "15",
 					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"is_trainer": "1",
 					"field_D": 0,
@@ -95,11 +95,11 @@
 					"alert_radius": 3,
 					"level": 0,
 					"field_3": 0,
-					"x": 4,
+					"x": "19",
 					"picture": 40,
 					"script": "ow_script_map_7_5_trainer_3",
 					"field_2": 0,
-					"y": 13,
+					"y": "28",
 					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"is_trainer": "1",
 					"field_D": 0,
@@ -121,11 +121,11 @@
 					"alert_radius": 4,
 					"level": 0,
 					"field_3": 0,
-					"x": 8,
+					"x": "22",
 					"picture": 18,
 					"script": "ow_script_map_7_5_trainer_4",
 					"field_2": 0,
-					"y": 7,
+					"y": "19",
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"is_trainer": "1",
 					"field_D": 0,
@@ -171,71 +171,52 @@
 					"target_map": 3,
 					"x": "6",
 					"target_warp_idx": 8
-				},
-				{
-					"target_bank": 3,
-					"y": 18,
-					"level": 0,
-					"target_map": 3,
-					"x": 2,
-					"target_warp_idx": 8
 				}
 			],
 			"triggers": [
 				{
-					"script": "ow_script_map_7_5_trigger_0",
+					"x": "30",
+					"y": "7",
+					"level": 0,
+					"field_5": 0,
+					"var": "VAR_TMP_SILVANIA_GYM_PURPLE_TRIGGER",
 					"value": 0,
-					"y": 11,
-					"level": 0,
-					"field_5": 0,
-					"x": 3,
 					"field_A": 0,
 					"field_B": 0,
-					"var": "VAR_SIVLANIA_GYM_SWITCH"
+					"script": "ow_script_silvania_gym_trigger_remove_purple_trees"
 				},
 				{
-					"script": "ow_script_map_7_5_trigger_0",
+					"x": "12",
+					"y": "31",
+					"level": 0,
+					"field_5": 0,
+					"var": "VAR_TMP_SILVANIA_GYM_RED_TRIGGER",
 					"value": 0,
-					"y": 10,
-					"level": 0,
-					"field_5": 0,
-					"x": 6,
 					"field_A": 0,
 					"field_B": 0,
-					"var": "VAR_SIVLANIA_GYM_SWITCH"
+					"script": "ow_script_silvania_gym_trigger_remove_red_trees"
 				},
 				{
-					"script": "ow_script_map_7_5_trigger_1",
-					"value": 1,
-					"y": 10,
+					"x": "8",
+					"y": "16",
 					"level": 0,
 					"field_5": 0,
-					"x": 11,
+					"var": "VAR_TMP_SILVANIA_GYM_GOLDEN_TRIGGER",
+					"value": 0,
 					"field_A": 0,
 					"field_B": 0,
-					"var": "VAR_SIVLANIA_GYM_SWITCH"
+					"script": "ow_script_silvania_gym_trigger_remove_golden_trees"
 				},
 				{
-					"script": "ow_script_map_7_5_trigger_1",
-					"value": 1,
-					"y": 16,
+					"x": "30",
+					"y": "18",
 					"level": 0,
 					"field_5": 0,
-					"x": 7,
+					"var": "VAR_TMP_SILVANIA_GYM_SWITCHES",
+					"value": 0,
 					"field_A": 0,
 					"field_B": 0,
-					"var": "VAR_SIVLANIA_GYM_SWITCH"
-				},
-				{
-					"script": "ow_script_map_7_5_trigger_2",
-					"value": "0",
-					"y": 15,
-					"level": 0,
-					"field_5": 0,
-					"x": 12,
-					"field_A": 0,
-					"field_B": 0,
-					"var": "VAR_SILVANIA_GYM_GOLDEN_SWITCH"
+					"script": "ow_script_silvania_gym_trigger_switch"
 				}
 			],
 			"signposts": []
