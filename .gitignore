@@ -74,3 +74,6 @@ base/
 
 # VSCode stuff
 ipch/ 
+
+# Pokeapi cache
+Violet/pokeapi_cache

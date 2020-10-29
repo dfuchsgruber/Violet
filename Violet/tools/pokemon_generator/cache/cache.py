@@ -10,8 +10,9 @@ def get_chache_path():
     cache_path : str
         Path the standard chache.
     """
-    xdg_cache_home = os.environ.get('XDG_CACHE_HOME') or \
-            os.path.join(os.path.expanduser('~'), '.cache')
+    #xdg_cache_home = os.environ.get('XDG_CACHE_HOME') or \
+    #        os.path.join(os.path.expanduser('~'), '.cache')
+    xdg_cache_home = 'pokeapi_cache'
 
     return os.path.join(xdg_cache_home, 'pokeapi_crawler', 'pokeapi_crawler.chache')
 
