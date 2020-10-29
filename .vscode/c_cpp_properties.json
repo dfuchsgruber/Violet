@@ -3,9 +3,14 @@
         {
             "name": "Linux",
             "defines": [],
-            "compilerPath": "/usr/bin/gcc",
             "cppStandard": "c++17",
-            "intelliSenseMode": "clang-x64"
+            "intelliSenseMode": "clang-x64",
+            "includePath": [
+                "${workspaceFolder}/Violet/include/**"
+            ],
+            "compilerArgs": [
+                "-DLANG_GER"
+            ]
         }
     ],
     "version": 4
