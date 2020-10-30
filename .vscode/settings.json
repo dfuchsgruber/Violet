@@ -108,5 +108,5 @@
         "abilities.h": "c",
         "attack_results.h": "c"
     },
-    "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
+    "python.pythonPath": ".venv/bin/python"
 }
