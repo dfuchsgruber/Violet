@@ -23,6 +23,27 @@
                 "isDefault": true
             },
             "problemMatcher": []
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "pipenv",
+            "args": [
+                "run",
+                "--",
+                "make",
+                "-C",
+                "Violet",
+                "clean"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
         }
     ]
 }
