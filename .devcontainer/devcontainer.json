@@ -29,6 +29,7 @@
 		"janisdd.vscode-edit-csv",
 		"mhutchie.git-graph",
 		"ms-python.python",
+		"ms-python.vscode-pylance",
 		"ms-vscode.cpptools"
 	]
 
