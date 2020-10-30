@@ -411,7 +411,7 @@ void pokedex_init_components() {
     pokedex_sort_locate_cursor();
 
     pal_decompress(gfx_pokedex_uiPal, 0, 32);
-    //Now we decide weather we want to clear features
+    //Now we decide whether we want to clear features
     const color_t cols_active [2] = {
         {0x6754},
         {0x56D0}};

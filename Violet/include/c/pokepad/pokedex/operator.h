@@ -29,7 +29,7 @@ bool pokedex_operator(u16 val, u8 op, bool is_species_id);
 /**
  * Accesses a pokedex flag
  * @param flag the flag to access
- * @param seen weather to access the seen area (or the caught area if false)
+ * @param seen Whether to access the seen area (or the caught area if false)
  * @return the byte containing the desired flag
  */
 u8* pokedex_flag_access(u16 flag, bool seen);

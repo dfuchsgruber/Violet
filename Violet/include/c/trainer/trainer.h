@@ -54,7 +54,7 @@ u8 *trainer_configure_by_overworld_script(u8 *script);
 /**
  * Checks the flag of a trainer
  * @param trainer_id Id of the trainer
- * @return Weather the trainer was battled
+ * @return Whether the trainer was battled
  */
 bool checktrainerflag(u16 trainer_id);
 

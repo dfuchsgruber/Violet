@@ -42,7 +42,7 @@ void fading_control_reset();
 
 /**
  * Checks if the fading control reports an active fading.
- * @return Weather fading is active
+ * @return Whether fading is active
  */
 bool fading_is_active();
 

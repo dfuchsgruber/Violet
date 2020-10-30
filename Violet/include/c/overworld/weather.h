@@ -157,7 +157,7 @@ void overworld_weather_fade_in();
 
 /**
  * Sets the map filters according to a weather
- * @param weather the weather according to which to set filters
+ * @param weather The weather according to which to set filters
  **/
 void weather_set_filter(u8 weather);
 
