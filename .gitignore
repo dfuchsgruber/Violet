@@ -67,7 +67,7 @@ pkl/
 # Resources
 psg_data.raw
 goldensun_synth.raw
-base/
+Violet/base/
 
 # Virtual Environments
 .venv/
@@ -76,4 +76,4 @@ base/
 ipch/ 
 
 # Pokeapi cache
-Violet/pokeapi_cache
+Violet/pokeapi_cache/
