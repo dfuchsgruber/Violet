@@ -6,10 +6,14 @@
         {
             "label": "Build",
             "type": "shell",
-            "command": "docker-compose",
+            "command": "pipenv",
             "args": [
-                "up",
-                "--build"
+                "run",
+                "--",
+                "make",
+                "-C",
+                "Violet",
+                "all"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
