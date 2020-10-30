@@ -23,7 +23,14 @@
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": []
+	"extensions": [
+		"bungcip.better-toml",
+		"dan-c-underwood.arm",
+		"janisdd.vscode-edit-csv",
+		"mhutchie.git-graph",
+		"ms-python.python",
+		"ms-vscode.cpptools"
+	]
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
