@@ -6,10 +6,35 @@
         {
             "label": "Build",
             "type": "shell",
-            "command": "docker-compose",
+            "command": "pipenv",
             "args": [
-                "up",
-                "--build"
+                "run",
+                "--",
+                "make",
+                "-C",
+                "Violet",
+                "all"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "pipenv",
+            "args": [
+                "run",
+                "--",
+                "make",
+                "-C",
+                "Violet",
+                "clean"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"

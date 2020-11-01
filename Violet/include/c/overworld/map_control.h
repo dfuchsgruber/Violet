@@ -86,7 +86,7 @@ void warp_setup_callbacks();
 
 /**
  * Gets the weather currently present
- * @return the current weather
+ * @return The current weather
  */
 u8 map_get_current_weather();
 

@@ -218,8 +218,8 @@ extern "C" {
 
     /**
      * Loads gfx and palette of the standard border to a tbox.
-     * @param box_idx the tbox to load the border to
-     * @param copy_to_vram weather the loaded gfx is to be synched with vram by enqueuing a copy request
+     * @param box_idx The tbox to load the border to
+     * @param copy_to_vram Whether the loaded gfx is to be synched with vram by enqueuing a copy request
      **/
     void tbox_init_border_standard_style(u8 box_idx, bool copy_to_vram);
 
