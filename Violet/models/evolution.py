@@ -10,14 +10,22 @@ evolution_entry_type = agb.types.Structure([
 ])
 
 evolution_entries_type = agb.types.UnboundedArrayType(
-    'evolution.entry', {
-        'method' : 'EVOLUTION_METHOD_NONE',
-        'argument' : {
-            'numeric' : 0
-        },
-        'target' : 0,
-        'baby_trigger_item' : 0
-    }
+    'evolution.entry', 
+    {
+        'method': 'EVOLUTION_METHOD_NONE', 
+        'argument': {
+            'numeric': 0, 
+            'item': 0, 
+            'move': 0, 
+            'map': {
+                'bank': 0, 
+                'map_idx': 0
+            }, 
+            'pokemon_type': 0
+        }, 
+    'target': 'POKEMON_POKEMON_0', 
+    'baby_trigger_item': 'ITEM_NONE',
+    },
 )
 
 evolution_entries_pointer_type = agb.types.PointerType(

@@ -3,6 +3,7 @@
 #include "constants/movements.h"
 #include "tile/block.h"
 #include "save.h"
+#include "superstate.h"
 
 static u8 movements_normal[][2] = {
     [DIR_DOWN] = {STEP_DOWN, STOP},
@@ -20,11 +21,9 @@ static u8 movements_fast[][2] = {
 
 void silvania_gym_switch() {
     u8 direction = player_get_facing();
-    if (player_state.state & PLAYER_STATE_RUNNING) {
+    if (super.keys.keys.B) {
         npc_apply_movement(0xFF, save1->map, save1->bank, movements_fast[direction]);
     } else {
         npc_apply_movement(0xFF, save1->map, save1->bank, movements_normal[direction]);
     }
-
-
 }

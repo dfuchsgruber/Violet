@@ -134,6 +134,11 @@ tm_hm_to_attack_type = agb.types.FixedSizeArrayType(
     (lambda project, context: 58)
 )
 
+move_tutor_to_attack_type = agb.types.FixedSizeArrayType(
+    'move',
+    (lambda project, context: 32)
+)
+
 
 models_to_export = {
     'basestats.basestats' : basestat_type,
@@ -163,4 +168,5 @@ models_to_export = {
     'basestats.pokemon_name' : pokemon_name_type,
     'pokemon_names' : pokemon_names_type,
     'tm_hm_to_attack' : tm_hm_to_attack_type,
+    'move_tutor_to_attack' : move_tutor_to_attack_type,
 }
