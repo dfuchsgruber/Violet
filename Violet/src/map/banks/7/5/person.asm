@@ -4,6 +4,7 @@
 .include "ordinals.s"
 .include "overworld_script.s"
 .include "flags.s"
+.include "mugshot.s"
 
 .global ow_script_map_7_5_trainer_2
 .global ow_script_0x830ee4
@@ -26,7 +27,7 @@ gym_beaten:
 
 .ifdef LANG_GER
 str_beaten:
-    .autostring 34 2 "Wahnsinn!\nDu hast Rosalie tatsächlich besiegt.\pIch hab dir das natürlich die ganze Zeit über zugetrautDOTS"
+    .autostring 34 2 "Wahnsinn!\nDu hast Rosalie tatsächlich besiegt.\pDu hast wirklich das Zeug, es weit zu bringen!"
 .elseif LANG_EN
 .endif
 
@@ -40,13 +41,9 @@ end
 .ifdef LANG_GER
 
 str_0x81aff5:
-    .string "Rosalie legt großen Wert auf\nNatürlichkeit. Deswegen ist in der\lArena auch alles aus natürlichen\lRohstoffen hergestellt."
-
-
-
+    .autostring 34 2 "Macht das Heckenlabyrinth dich verrückt?\pIch schicke dich gerne auf direktem Weg wieder nach Hause!"
 str_0x81b06e:
-    .string "Sogar die Wände sind aus Holz aus\ndem Kranzwald."
-
+    .autostring 34 2 "ÄhmDOTS\nDas war so aber nicht geplant."
 
 .elseif LANG_EN
 
@@ -63,13 +60,9 @@ end
 .ifdef LANG_GER
 
 str_0x81b0bb:
-    .string "Pflanzen-Pokémon sind stark.\nDeswegen trainiere ich sie."
-
-
-
+    .autostring 34 2 "Alles in dieser Arena duftet so wunderbar!\pDas ist der Duft des Sieges!"
 str_0x81b0f6:
-    .string "Pflanzen-Pokémon sind sehr\nstark, auch wenn ich verloren habe."
-
+    .autostring 34 2 "Habe ich mich etwa getäuscht und meine Niederlage gerochen?"
 
 .elseif LANG_EN
 
@@ -86,13 +79,9 @@ end
 .ifdef LANG_GER
 
 str_0x81b151:
-    .string "Ich liebe diese Arena! Der Geruch\nvon frischen Planzen lässt mich auf\lWolke sieben schweben."
-
-
-
+    .autostring 34 2 "Rosalie ist wirklich fanatisch, wenn es um Natürlichkeit geht.\pSelbst die Wände sind mit Bäumen bemalt."
 str_0x81b1b1:
-    .string "Ahh! Dieser Duft!\nWas? Nein ich bin nicht verrückt!"
-
+    .autostring 34 2 "Alles ist grün in dieser ArenaDOTS"
 
 .elseif LANG_EN
 
@@ -109,13 +98,9 @@ end
 .ifdef LANG_GER
 
 str_0x81b250:
-    .string "An den Hecken hier wachsen manchmal\nsogar rote Beeren!"
-
-
-
+    .autostring 34 2 "Glaubst du etwa, nur weil Rosalie einen so ruhigen Eindruck erweckt, dass du eine Chance gegen sie hast?\pWeit gefehlt!\nIch werde dich in die Schranken weisen!"
 str_0x81b289:
-    .string "Erzähl es nicht Rosalie, aber manchmal\nesse ich diese Beeren, wenn ich\lhungrig werde."
-
+    .autostring 34 2 "Nicht übel!\pAber mit einem so hektischen Kampfstil kannst du Rosalie niemals besiegenDOTS"
 
 .elseif LANG_EN
 
@@ -131,48 +116,29 @@ ow_script_movs_0x830eef:
 
 
 ow_script_map_7_5_trainer_1:
-lock
-faceplayer
-checkflag FRBADGE_2
-gotoif EQUAL ow_script_0x830ee4
-loadpointer 0 str_mia
-setvar 0x8000 1
-special 0xE
-loadpointer 0x0 str_0x8f078d
-callstd MSG
-special 0xF
-applymovement 0x3 ow_script_movs_0x830eef
-waitmovement 0x0
-hidesprite 0x3
-warp 0x7 0xa 0x0 0x14 0xf
-release
-end
+    lock
+    faceplayer
+    checkflag FRBADGE_2
+    gotoif EQUAL mia_done
+    loadpointer 0 str_0
+    // callstd MSG_KEEPOPEN
+    show_mugshot MUGSHOT_ROSALIE MUGSHOT_RIGHT message_type=MSG
+    warpmuted 0x7 0xa 0 0xff 0xff
+    release
+    end
 
-
-ow_script_0x830ee4:
-loadpointer 0 str_mia
-setvar 0x8000 1
-special 0xE
-loadpointer 0x0 str_0x8f08c4
-callstd MSG
-special 0xF
-release
-end
+mia_done:
+    loadpointer 0 str_1
+    show_mugshot MUGSHOT_ROSALIE MUGSHOT_RIGHT message_type=MSG
+    release
+    end
 
 
 .ifdef LANG_GER
-
-str_mia:
-	.string "Rosalie"
-
-
-str_0x8f078d:
-	.autostring 35 2 "PLAYER.\nDa bist du ja.\pKommen wir gleich zur Sache.\pAuch wenn einiges auf dem Spiel steht, werde ich dir den Wald-Orden nicht kampflos überreichen.\pLass uns in die Kampfarena gehen DOTS"
-
-
-str_0x8f08c4:
-    .autostring 35 2 "Faun hat dich wirklich ausgezeichnet ausgebildet.\pDas muss ich wirklich eingestehen."
-
+str_0:
+    .autostring 34 2 "PLAYER!\pIch möchte mich noch einmal bei dir für das, was du im Kranzwald geleistet hast, bedanken.\pIch bin dir wirklich etwas schuldig.\pAber du bist hier, um gegen mich zu kämpfen.\pUnd es wäre respektlos, wenn ich dir aus Dankbarkeit den Sieg überlasse.\pLass mich dir stattdessen also einen Kampf liefern, der dir alles abverlangt."
+str_1:
+    .autostring 34 2 "Du bist wirklich sehr talentiert, PLAYER.\pEs überrascht mich nicht im Geringsten, dass du es mit einer Kommandantin von Team Violet aufnehmen konntest.\pViel wichtiger ist aber, dass du das Herz am rechten Fleck hast.\pDas solltest du dir vor allem bewahren, PLAYER."
 
 .elseif LANG_EN
 

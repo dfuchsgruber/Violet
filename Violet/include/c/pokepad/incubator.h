@@ -114,6 +114,12 @@ void incubator_clear();
  **/
 bool incubator_attempt_add_slot();
 
+/**
+ * Initializes the incubator
+ * @param from_outdoor if the incubator is initialized from the overworld
+ **/
+void incubator_initialize(bool from_outdoor);
+
 #define INCUBATOR_TBOX_CNT 6
 #define INCUBATOR_TBOX_TITLE 0
 #define INCUBATOR_TBOX_EGG 1

@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_447",
 		"events": {
-			"person_cnt": 32,
+			"person_cnt": 33,
 			"warp_cnt": 7,
 			"trigger_cnt": 3,
 			"signpost_cnt": 3,
@@ -659,11 +659,11 @@
 				},
 				{
 					"target_index": 26,
-					"picture": 50,
+					"picture": "95",
 					"field_2": 0,
 					"field_3": 0,
-					"x": 66,
-					"y": 19,
+					"x": "67",
+					"y": "20",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -672,8 +672,8 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_74_trainer_16",
-					"flag": "SILVANIA_FOREST_RIN",
+					"script": "ow_script_cut_tree",
+					"flag": "16",
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -826,6 +826,30 @@
 					"value": {
 						"item": 0,
 						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "33",
+					"picture": "238",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
+					"field_3": "20",
+					"x": "62",
+					"y": "31",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "4",
+					"script": 0,
+					"flag": "17",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_RIHORN",
 						"berry_tree_idx": 0
 					}
 				}

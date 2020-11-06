@@ -26,7 +26,7 @@ lscr_battle:
 
 lscr_facing:
 	.hword MERIANA_ARENA_TRIGGER, 0x0
-	.word ow_script_0x801080
+	.word ow_script_player_face_left
 	.hword 0x0
 
 
