@@ -5,6 +5,7 @@
 .include "specials.s"
 
 .global lscr_ceometria_gym_punishment_room
+.global ow_script_player_face_left
 
 lscr_ceometria_gym_punishment_room:
     .byte LEVELSCRIPT_TYPE_ON_WARP_INTO_MAP_TABLE
@@ -17,10 +18,10 @@ lscr_ceometria_gym_punishment_room:
 
 player_face_up:
 	.hword AKTANIA_FLASHBACK_LSCR_PLAYER_INVISIBLE, 0x0
-	.word ow_script_player_face_up
+	.word ow_script_player_face_left
 	.hword 0x0
 
-ow_script_player_face_up:
+ow_script_player_face_left:
     spriteface 0xff 0x2
     end
 

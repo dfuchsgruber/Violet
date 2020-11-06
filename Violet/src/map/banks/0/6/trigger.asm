@@ -11,6 +11,10 @@
 .global ow_script_felix_and_blaise_felsige_oednis
 
 ow_script_felix_and_blaise_felsige_oednis:
+    addvar STORY_PROGRESS 1
+    releaseall
+    end
+    /* 
     lockall
     loadpointer 0 str_0
     show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
@@ -72,3 +76,4 @@ str_6:
 .elseif LANG_EN
 
 .endif
+*/

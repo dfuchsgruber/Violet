@@ -22499,7 +22499,37 @@
 			],
 			[
 				{
-					"tile_idx": 0,
+					"tile_idx": 842,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 11
+				},
+				{
+					"tile_idx": 843,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 11
+				},
+				{
+					"tile_idx": 858,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 11
+				},
+				{
+					"tile_idx": 859,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 11
+				},
+				{
+					"tile_idx": 157,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 0
+				},
+				{
+					"tile_idx": 158,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 0
@@ -22508,117 +22538,13 @@
 					"tile_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
-					"palette_idx": 0
+					"palette_idx": 1
 				},
 				{
 					"tile_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				}
-			],
-			[
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"palette_idx": 1
 				},
 				{
 					"tile_idx": 0,
@@ -22647,10 +22573,52 @@
 			],
 			[
 				{
-					"tile_idx": 0,
+					"tile_idx": 842,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 11
+				},
+				{
+					"tile_idx": 843,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 11
+				},
+				{
+					"tile_idx": 858,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 11
+				},
+				{
+					"tile_idx": 859,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 11
+				},
+				{
+					"tile_idx": 159,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 0
+				},
+				{
+					"tile_idx": 159,
+					"horizontal_flip": 1,
+					"vertical_flip": 0,
+					"palette_idx": 0
+				},
+				{
+					"tile_idx": 0,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 1
+				},
+				{
+					"tile_idx": 0,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 1
 				},
 				{
 					"tile_idx": 0,
@@ -22675,10 +22643,42 @@
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 0
+				}
+			],
+			[
+				{
+					"tile_idx": 842,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 11
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 843,
 					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 11
+				},
+				{
+					"tile_idx": 858,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 11
+				},
+				{
+					"tile_idx": 859,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 11
+				},
+				{
+					"tile_idx": 158,
+					"horizontal_flip": 1,
+					"vertical_flip": 0,
+					"palette_idx": 0
+				},
+				{
+					"tile_idx": 157,
+					"horizontal_flip": 1,
 					"vertical_flip": 0,
 					"palette_idx": 0
 				},
@@ -22686,13 +22686,13 @@
 					"tile_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
-					"palette_idx": 0
+					"palette_idx": 1
 				},
 				{
 					"tile_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
-					"palette_idx": 0
+					"palette_idx": 1
 				},
 				{
 					"tile_idx": 0,
@@ -31461,34 +31461,34 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_EC",
+				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x3",
+				"field_2": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x1",
+				"field_5": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
-				"battle_bg": "0x73"
+				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x184",
-				"hm_usage": "0x19",
-				"field_2": "0x2",
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x1",
+				"field_5": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
-				"battle_bg": "0x72"
+				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_PORTHOLE",
-				"hm_usage": "0x13",
-				"field_2": "0x2",
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x1",
+				"field_5": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
-				"battle_bg": "0x71"
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",

@@ -1,6 +1,6 @@
 .org 0x083A7190
     .word str_pokepad
-    .word startmenu_init_pokepad | 1
+    .word start_menu_pokepad_initialize | 1 //startmenu_init_pokepad | 1
     .word str_pokemon
 
 .org 0x083A71E0

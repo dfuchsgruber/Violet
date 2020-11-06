@@ -6710,6 +6710,25 @@ trainer trainers[TRAINER_CNT] = {
       .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
       .battle_state = 0, .pokemon_cnt = 4, .party = (trainer_pokemon*) trainer_party_x1a3_felsige_oednis_koch,
 	  },
+    [0x1A4] = {
+      .uses_custom_moves = true, .uses_custom_items = true,
+      .trainerclass = TRAINERCLASS_ARENALEITER, .encounter_and_gender = {1, 0} , .sprite = 0x75,
+      .name = LANGDEP(PSTRING("Lester"), PSTRING("Lester")),
+      .items = {ITEM_SUPERTRANK, ITEM_SUPERTRANK, ITEM_HYPERHEILER, ITEM_SUPERTRANK},
+      .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+      .battle_state = BATTLE_WITH_HANDICAP, .pokemon_cnt = 5, .party = (trainer_pokemon*)trainer_party_x1a4_rosalie_difficulty_normal,
+	  },
+    [0x1A5] = {
+      .uses_custom_moves = true, .uses_custom_items = true,
+      .trainerclass = TRAINERCLASS_ARENALEITER, .encounter_and_gender = {1, 0} , .sprite = 0x75,
+      .name = LANGDEP(PSTRING("Lester"), PSTRING("Lester")),
+      .items = {ITEM_GOLDAPFEL, ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG},
+      .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+      .battle_state = BATTLE_WITH_HANDICAP, .pokemon_cnt = 6, .party = (trainer_pokemon*) trainer_party_x1a5_rosalie_difficulty_hard,
+	  },
+
+
+
     [0x300] = {
       .uses_custom_moves = true, .uses_custom_items = true,
       .trainerclass = TRAINERCLASS_CHEFKOCH, .encounter_and_gender = {1, 0} , .sprite = 0x74,
