@@ -16,7 +16,7 @@
 #include "pokepad/incubator.h"
 #include "agbmemory.h"
 #include "fading.h"
-#include "pokepad/gui.h"
+#include "pokepad/pokepad2.h"
 #include "io.h"
 #include "oam.h"
 #include "dma.h"
@@ -284,7 +284,7 @@ void incubator_callback1_return() {
       if (fmem.incubator_state->from_outdoor) {
           callback1_set(map_reload);
       } else {
-          callback1_set(pokepad_callback_init);
+          callback1_set(pokepad2_callback_initialize);
       }
       incubator_free_components();
     }
@@ -755,7 +755,7 @@ void incubator_callback1_initialize() {
     if (fmem.dex_mem->from_outdoor) {
         overworld_free();
     } else {
-        pokepad_free_components();
+        pokepad2_free();
     }
     incubator_initialize_ui();
     fmem.incubator_state->idle_callback = incubator_callback1_idle;

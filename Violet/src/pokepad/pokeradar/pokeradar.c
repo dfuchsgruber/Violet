@@ -1,6 +1,6 @@
 #include "types.h"
 #include "map/header.h"
-#include "pokepad/gui.h"
+#include "pokepad/pokepad2.h"
 #include "pokepad/pokeradar.h"
 #include "callbacks.h"
 #include "save.h"
@@ -76,7 +76,7 @@ bool pokeradar_determine_position(coordinate_t *result) {
 void pokeradar_callback_return_to_ow_and_init_script() {
     generic_callback1();
     if (!fading_is_active()) {
-        pokepad_free_components();
+        pokepad2_free();
         overworld_script_init(script_pokeradar);
         map_reload();
     }

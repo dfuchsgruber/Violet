@@ -1,6 +1,6 @@
 #include "types.h"
 #include "stdbool.h"
-#include "pokepad/gui.h"
+#include "pokepad/pokepad2.h"
 #include "pokepad/pokedex/gui.h"
 #include "pokepad/pokedex/operator.h"
 #include "pokepad/pokedex/state.h"

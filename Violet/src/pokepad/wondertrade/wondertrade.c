@@ -2,7 +2,7 @@
 #include "stdbool.h"
 #include "fading.h"
 #include "pokepad/wondertrade.h"
-#include "pokepad/gui.h"
+#include "pokepad/pokepad2.h"
 #include "save.h"
 #include "bg.h"
 #include "color.h"
@@ -247,7 +247,7 @@ void wondertrade_callback_after_selection() {
         if (from_outdoor) {
             callback1_set(map_reload);
         } else {
-            callback1_set(pokepad_callback_init);
+            callback1_set(pokepad2_callback_initialize);
         }
     } else {
         if (wondertrade_can_pokemon_be_sent()) {
@@ -361,7 +361,7 @@ void wondertrade_callback_free_components_and_return() {
     generic_callback1();
     if (!fading_is_active()) {
         if (!fmem.wtrade_mem->from_outdoor) {
-            callback1_set(pokepad_callback_init);
+            callback1_set(pokepad2_callback_initialize);
         } else {
             callback1_set(map_reload);
         }
@@ -565,7 +565,7 @@ void wondertrade_init_callback() {
         if (fmem.wtrade_mem->from_outdoor) {
             overworld_free();
         } else {
-            pokepad_free_components();
+            pokepad2_free();
         }
         //Now we initilize the graphic components
         wondertrade_init_components();

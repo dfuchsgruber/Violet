@@ -1,7 +1,7 @@
 
 #include "types.h"
 #include "stdbool.h"
-#include "pokepad/gui.h"
+#include "pokepad/pokepad2.h"
 #include "pokepad/pokedex/gui.h"
 #include "pokepad/pokedex/operator.h"
 #include "oam.h"
@@ -142,7 +142,7 @@ void pokedex_callback_return() {
         if (fmem.dex_mem->from_outdoor) {
             callback1_set(map_reload);
         } else {
-            callback1_set(pokepad_callback_init);
+            callback1_set(pokepad2_callback_initialize);
         }
         free(fmem.dex_mem);
     }
@@ -460,7 +460,7 @@ void pokedex_callback_init() {
         if (fmem.dex_mem->from_outdoor) {
             overworld_free();
         } else {
-            pokepad_free_components();
+            pokepad2_free();
         }
         pokedex_init_components();
         pokedex_build_list();
