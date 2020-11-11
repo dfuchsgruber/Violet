@@ -180,6 +180,13 @@ extern "C" {
         u8 border_palette, u8 font, u8 speed, const u8 *text, void (*continuation)(u8));
 
     /**
+     * Proceeds a textbox printer and returns if the printing is active.
+     * @param tbox_idx the box to proceed
+     * @return if the printer in this box is active
+     **/
+    bool tbox_printer_proceed_and_is_active(u8 tbox_idx);
+
+    /**
      * Uses a big callback to display a text on tbox 0 and bg0. Also loads the gfx beforehand to tile 256 and the pal to slot 15.
      * @param callback_idx the callback to use
      * @param font the font
@@ -498,6 +505,15 @@ extern "C" {
     void tbox_print_money(u8 tbox_idx, u16 start_tile, u8 pal_idx, u32 amount);
 
     extern u8 overworld_tbox_state;
+
+    typedef struct {
+        u8 can_a_b_speed_up_printing:1;
+        u8 use_alternate_down_arrow:1;
+        u8 use_auto_scroll:1;
+        u8 force_mid_text_speed:1;
+    } tbox_printer_flags_t;
+
+    extern tbox_printer_flags_t tbox_printer_flags;
 
     extern u8 strbuf[];
     extern u8 buffer0[];

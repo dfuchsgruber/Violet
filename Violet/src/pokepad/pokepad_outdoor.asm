@@ -7,7 +7,7 @@
 
 .thumb_func
 pokepad_outdoor_trigger:
-    bl pokepad_init_function_outdoor
+    bl pokepad_initialize_registered_item
     cmp r0, #0
     bne ret_1
     ldrb r1, [r5]
