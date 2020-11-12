@@ -79,6 +79,14 @@ void battle_controller_emit_get_pokemon_data(u8 buffer_idx, u8 request_idx, u8 b
 void battle_controller_emit_two_values(u8 buffer_idx, u8 arg1, u16 arg2);
 
 /**
+ * Emits to update the exp of a pokemon
+ * @param buffer_idx the buffer to use
+ * @param party_idx which pokemon in the player party to update the exp of
+ * @param exp how many exp to add
+ **/
+void battle_controller_emit_exp_update(u8 buffer_idx, u8 party_idx, u16 exp);
+
+/**
  * Emits one return value for the battle controller.
  * @param buffer_idx
  * @param arg the value to emit

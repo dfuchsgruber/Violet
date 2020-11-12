@@ -47,6 +47,13 @@ void battle_string_decrypt_into_battle_string_buffer(const u8 *src);
  **/
 void battle_string_decrypt(const u8 *src, u8 *dst);
 
+/**
+ * Prints a string from the main table in battle
+ * @param string_idx the string to print
+ * @param battler the battler
+ **/
+void battle_print_string_idx(u16 string_idx, u8 battler);
+
 
 #define BSC_BUFFER_SPECIES(buffer, species) \
 { \
