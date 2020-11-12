@@ -106,7 +106,8 @@
         "coordinate.h": "c",
         "overworld_collisions.h": "c",
         "abilities.h": "c",
-        "attack_results.h": "c"
+        "attack_results.h": "c",
+        "random": "c"
     },
     "python.pythonPath": ".venv/bin/python",
     "python.linting.enabled": true,

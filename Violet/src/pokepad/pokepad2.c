@@ -429,7 +429,7 @@ static u8 str_select_motive[] = LANGDEP(
 
 static void pokepad2_idle(u8 self) {
     if (!fading_is_active()) {
-        if (super.keys_new.keys.down && POKEPAD_STATE->cursor_idx < 4 && POKEPAD_STATE->num_items >= 4) {
+        if (super.keys_new.keys.down && POKEPAD_STATE->cursor_idx < 4 && POKEPAD_STATE->num_items > 4) {
             POKEPAD_STATE->cursor_idx = (u8)MIN(POKEPAD_STATE->num_items - 1, POKEPAD_STATE->cursor_idx + 4);
             play_sound(5);
             *var_access(POKEPAD_LAST_USED) = POKEPAD_STATE->cursor_idx;

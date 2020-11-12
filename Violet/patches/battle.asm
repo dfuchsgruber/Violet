@@ -606,7 +606,6 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 	mov r0, r1 // Instead of eor r0, r1 with r0 = 1
 
 
-
 .org 0x0802d970
 	ldr r0, =hook_bsc_cmd_xF2_display_dex_entry | 1
 	bx r0
@@ -657,6 +656,14 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 	ldr r0, =hook_bsc_cmd_x07_adjustnormal_damage | 1
 	bx r0
 	.pool
+
+.org 0x08021e3a
+	mov r0, r7
+	ldr r1, =bsc_cmd_x23_adjust_exp_and_print_string | 1
+	bl _blxr1
+	b 0x08021eb2
+	.pool
+
 /** 
 .org 0x08012642
 	ldr r0, =hook_battle_initialize_absent_battlers | 1

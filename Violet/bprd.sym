@@ -1148,3 +1148,6 @@ pal_gamma_shift_with_blend = 0x0807a334 | 1;
 overworld_viewport_move_and_update_all = 0x0805acb4 | 1;
 tbox_printer_proceed_and_is_active = 0x080bf6e8 | 1;
 tbox_printer_flags = 0x03003da0;
+fainted_battler = 0x02023d6d;
+battle_controller_emit_exp_update = 0x0800e5a8 | 1;
+battle_print_string_idx = 0x08017330 | 1;
