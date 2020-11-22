@@ -87,6 +87,9 @@ typedef struct  {
 
 extern battle_scripting_t battle_scripting;
 
+#define SET_STATCHANGE(stat, stages, goes_down)(battle_scripting.stat_change = (u8)((stat) + (stages << 4) + (goes_down << 7)))
+
+
 extern u16 bsc_last_used_item; // Used for the BSC_LAST_ITEM buffer
 
 extern u8 *battlescripts_pokeball[0xD]; // Battle-Scripts for using different pokeballs...

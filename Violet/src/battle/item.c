@@ -1,6 +1,7 @@
 #include "types.h"
 #include "battle/state.h"
 #include "battle/battler.h"
+#include "battle/battle_string.h"
 #include "constants/item_hold_effects.h"
 #include "item/item.h"
 #include "battle/attack.h"
@@ -14,12 +15,14 @@
 #include "constants/battle/battle_weathers.h"
 #include "constants/battle/battle_animations.h"
 #include "battle/weather.h"
+#include "prng.h"
 
 extern u8 bsc_life_orb[];
 extern u8 bsc_sun_egg[];
 extern u8 bsc_storm_egg[];
 extern u8 bsc_desert_egg[];
 extern u8 bsc_blizzard_egg[];
+extern u8 bsc_energiequarz[];
 
 u8 battle_items_switch_in_effects(u8 battler_idx) { // Return 0 if no effect was used, 0xFF if an effect was used, but no bsc was triggered and a suitable effect type else
     u8 hold_effect = item_get_hold_effect(bsc_last_used_item);
@@ -63,6 +66,30 @@ u8 battle_items_switch_in_effects(u8 battler_idx) { // Return 0 if no effect was
                 battlescript_init_and_interrupt_battle(bsc_desert_egg);
                 return true;
             }
+            break;
+        }
+        case HOLD_EFFECT_ENERGY_QUARZ: {
+            // Determine any stat that can be raised
+            u8 stats[STAT_EVASION - STAT_ATTACK + 1] = {0};
+            size_t num_stats = 0;
+            for (u8 i = STAT_ATTACK; i <= STAT_EVASION; i++) {
+                if (battlers[battler_idx].stat_changes[i] < 12) {
+                    stats[num_stats++] = i;
+                }
+            }
+            if (num_stats > 0) {
+                u8 stat = stats[rnd16() % num_stats];
+                dprintf("Randomly raise stat %d\n", stat);
+                SET_STATCHANGE(stat, 1, false);
+                battle_scripting.animation_arguments[0] = (u8)(0x21 + stat + 5);
+                battle_scripting.animation_arguments[1] = 0;
+                effect_battler = battler_idx;
+                battle_scripting.battler_idx = battler_idx;
+                BSC_BUFFER_STAT(bsc_string_buffer0, stat);
+                battlescript_init_and_interrupt_battle(bsc_energiequarz);
+                return true;
+            }
+            break;
         }
     }
     return 0;

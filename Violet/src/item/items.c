@@ -1611,8 +1611,8 @@ static u8 str_item_quarzstaub_description[] = LANGDEP(
 	PSTRING("Strange fine-grained powder\nthat shines brightly in the sunlight.")
 );
 static u8 str_item_energiequarz_description[] = LANGDEP(
-	PSTRING("Ein weißer Quarzstein, von\ndem eine starke Energie\nauszugehen scheint."),
-	PSTRING("A white quartz stone that seems\nto emit a very strong energy.")
+	PSTRING("Item (Tragen), das beim Kampf-\neintritt einen zufälligen\nStatuswert erhöht."),
+	PSTRING("An item to be held that raises\na random stat when entering\nthe battle.")
 );
 static u8 str_item_mulch_description[] = LANGDEP(
 	PSTRING("Aus Beeren gewonnener Dünger,\nder Beerensträucher ertragreicher\nwerden lässt."),
@@ -7810,6 +7810,7 @@ item items[] = {
 		.index = ITEM_ENERGIEQUARZ, .price = 1000,
 		.description = str_item_energiequarz_description, .pocket = POCKET_ITEMS, .type = 4,
 		.field_usage = (void(*)(u8))0x80a2325,
+		.holding_effect_id = HOLD_EFFECT_ENERGY_QUARZ,
 	},
 	[ITEM_MULCH] = {
 		.name = LANGDEP(PSTRING("Mulch"), PSTRING("Mulch")),
