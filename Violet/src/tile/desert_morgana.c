@@ -22,9 +22,9 @@ void do_fata_morgana(){
         int high = fata_morgana_blocks_cnt[0];
         while(low != high){
             int mid = (low + high) / 2;
-            if(fata_morgana_blocks[mid][1] < coordinates[1]  - 6 ||
-                    (fata_morgana_blocks[mid][1] == coordinates[1]  - 6 && 
-                    fata_morgana_blocks[mid][0] < coordinates[0] - 6)){
+            if(fata_morgana_blocks[mid][1] < coordinates[1]  - 8 ||
+                    (fata_morgana_blocks[mid][1] == coordinates[1]  - 8 && 
+                    fata_morgana_blocks[mid][0] < coordinates[0] - 8)){
                 low = mid + 1;
             }else{
                 high = mid;
@@ -32,9 +32,9 @@ void do_fata_morgana(){
         }
         int i = low;
         while(i < fata_morgana_blocks_cnt[0] &&
-                fata_morgana_blocks[i][1] <= coordinates[1] + 6){
+                fata_morgana_blocks[i][1] <= coordinates[1] + 8){
             // Update blocks until a block out of sight-range is reached
-            if(fata_morgana_blocks[i][0] <= coordinates[0] + 6){
+            if(fata_morgana_blocks[i][0] <= coordinates[0] + 8){
                 //Block must be changed
                 int dx = coordinates[0] - fata_morgana_blocks[i][0];
                 int dy = coordinates[1] - fata_morgana_blocks[i][1];

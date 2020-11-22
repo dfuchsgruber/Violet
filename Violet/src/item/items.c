@@ -1618,6 +1618,22 @@ static u8 str_item_mulch_description[] = LANGDEP(
 	PSTRING("Aus Beeren gewonnener Dünger,\nder Beerensträucher ertragreicher\nwerden lässt."),
 	PSTRING("Fertilizer obtained from berries\nthat increases the yield of\nberry trees.")
 );
+static u8 str_item_sonnen_ei_description[] = LANGDEP(
+	PSTRING("Item (Tragen), das beim Kampf-\neintritt für zwei Runden\nSonnenschein erzeugt."),
+	PSTRING("Item to be held that causes\nsunshine for two rounds when\nentering the battle.")
+);
+static u8 str_item_gewitter_ei_description[] = LANGDEP(
+	PSTRING("Item (Tragen), das beim Kampf-\neintritt für zwei Runden\nRegen erzeugt."),
+	PSTRING("Item to be held that causes\nrain for two rounds when\nentering the battle.")
+);
+static u8 str_item_tundra_ei_description[] = LANGDEP(
+	PSTRING("Item (Tragen), das beim Kampf-\neintritt für zwei Runden\nHagel erzeugt."),
+	PSTRING("Item to be held that causes\nhail for two rounds when\nentering the battle.")
+);
+static u8 str_item_wuesten_ei_description[] = LANGDEP(
+	PSTRING("Item (Tragen), das beim Kampf-\neintritt für zwei Runden einen\nSandsturm erzeugt."),
+	PSTRING("Item to be held that causes\na sandstorm for two rounds when\nentering the battle.")
+);
 
 item items[] = {
 	{
@@ -7800,6 +7816,34 @@ item items[] = {
 		.index = ITEM_MULCH, .price = 100,
 		.description = str_item_mulch_description, .pocket = POCKET_ITEMS, .type = 2,
 		.field_usage = item_effect_mulch,
+	},
+	[ITEM_WUESTEN_EI] = {
+		.name = LANGDEP(PSTRING("Wüsten-Ei"), PSTRING("Desert-Egg")),
+		.index = ITEM_WUESTEN_EI, .price = 100,
+		.description = str_item_wuesten_ei_description, .pocket = POCKET_ITEMS, .type = 4,
+		.holding_effect_id = HOLD_EFFECT_WEATHER_EGG, .holding_effect_param = WEATHER_ROCK_SANDSTORM,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_TUNDRA_EI] = {
+		.name = LANGDEP(PSTRING("Blizzard-Ei"), PSTRING("Blizzard-Egg")),
+		.index = ITEM_TUNDRA_EI, .price = 100,
+		.description = str_item_tundra_ei_description, .pocket = POCKET_ITEMS, .type = 4,
+		.holding_effect_id = HOLD_EFFECT_WEATHER_EGG, .holding_effect_param = WEATHER_ROCK_HAIL,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_GEWITTER_EI] = {
+		.name = LANGDEP(PSTRING("Gewitter-Ei"), PSTRING("Storm-Egg")),
+		.index = ITEM_TUNDRA_EI, .price = 100,
+		.description = str_item_gewitter_ei_description, .pocket = POCKET_ITEMS, .type = 4,
+		.holding_effect_id = HOLD_EFFECT_WEATHER_EGG, .holding_effect_param = WEATHER_ROCK_RAIN,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_SONNEN_EI] = {
+		.name = LANGDEP(PSTRING("Sonnen-Ei"), PSTRING("Sun-Egg")),
+		.index = ITEM_SONNEN_EI, .price = 100,
+		.description = str_item_sonnen_ei_description, .pocket = POCKET_ITEMS, .type = 4,
+		.holding_effect_id = HOLD_EFFECT_WEATHER_EGG, .holding_effect_param = WEATHER_ROCK_SUN,
+		.field_usage = (void(*)(u8))0x80a2325,
 	},
 };
 

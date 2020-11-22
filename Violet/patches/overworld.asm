@@ -474,6 +474,11 @@ _blxr4:
     bx r0
     .pool
 
+.org 0x0807ab24
+    ldr r1, =overworld_weather_load_palette | 1
+    bx r1
+    .pool
+
 .org 0x0807dabc
     mov r0, #1
     ldr r1, =overworld_fadescreen | 1

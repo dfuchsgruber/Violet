@@ -198,6 +198,7 @@ battle_hook_before_attack:
 @ insert at 0x0801bce4 as a pointer in a jump-table (i.e. without | 1)
 .thumb_func
 hook_battle_item_switch_in_effects:
+    mov r0, r7
     bl battle_items_switch_in_effects
     cmp r0, #0xFF
     beq battle_items_effect_with_no_bsc_activated

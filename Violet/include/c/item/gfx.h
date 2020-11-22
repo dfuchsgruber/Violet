@@ -814,5 +814,13 @@ extern const u8 gfx_item_energiequarzTiles[];
 extern const u8 gfx_item_energiequarzPal[];
 extern const u8 gfx_item_mulchTiles[];
 extern const u8 gfx_item_mulchPal[];
+extern const u8 gfx_item_sonnen_eiTiles[];
+extern const u8 gfx_item_sonnen_eiPal[];
+extern const u8 gfx_item_wuesten_eiTiles[];
+extern const u8 gfx_item_wuesten_eiPal[];
+extern const u8 gfx_item_gewitter_eiTiles[];
+extern const u8 gfx_item_gewitter_eiPal[];
+extern const u8 gfx_item_tundra_eiTiles[];
+extern const u8 gfx_item_tundra_eiPal[];
 
 #endif

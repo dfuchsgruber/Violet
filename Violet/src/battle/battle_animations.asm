@@ -52,6 +52,7 @@ battle_animations:
     .word battle_animation_item_drop
     .word battle_animation_mon_is_aggresive
     .word battle_animation_barrier
+    .word battle_animation_weather_egg
 
 battle_animation_extreme_heat_introduction:
     loadgraphic 0x2815
@@ -347,4 +348,30 @@ battle_animation_mon_is_aggresive:
     waitstate 
     fadebattler SPRITE_FADING_AFFECTS_USER, 2, 10, 0, 31
     waitstate
+    end
+
+battle_animation_weather_egg:
+    loadgraphic 0x27DA
+    loadgraphic 0x27DB
+    enable_oam_as_target OAM_ANIMATION_USER
+    playsound_with_pan 0xA0 SOUND_PAN_ATTACKER
+    loadcallback battle_animation_shake_battler_task 2 5
+        .hword 0, 0, 2, 6, 1
+    loadoam battle_animation_split_egg_oam_template, 4 | OAM_AT_USER, 3
+        .hword 0, 16, 0
+    loadoam battle_animation_split_egg_oam_template, 4 | OAM_AT_USER, 3
+        .hword 0, 16, 1
+    pause 120
+    pause 7
+    playsound_with_pan 0x9F SOUND_PAN_ATTACKER
+    fadebattler SPRITE_FADING_AFFECTS_BATTLE_BG | SPRITE_FADING_AFFECTS_USER | SPRITE_FADING_AFFECTS_TARGET | SPRITE_FADING_AFFECTS_USER_PARTNER | SPRITE_FADING_AFFECTS_TARGET_PARTNER, 3, 10, 0, 31500
+    loadoam battle_animation_expanding_rings_template, 3 | OAM_AT_USER, 4
+        .hword 31, 16, 0, 1
+    pause 8
+    loadoam battle_animation_expanding_rings_template, 3 | OAM_AT_USER, 4
+        .hword 31, 16, 0, 1
+    pause 60
+    setadditional 7, 0xFFFF
+    waitstate
+    disable_oam_as_target OAM_ANIMATION_USER
     end

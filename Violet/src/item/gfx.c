@@ -1,6 +1,6 @@
 #include "types.h"
 #include "item/item.h"
-#include "item/gfx.h"
+#include "item/gfx.h" 
 
 static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_NONE] = { .gfx = gfx_item_noneTiles, .pal = gfx_item_nonePal },
@@ -406,6 +406,10 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_QUARZSTAUB] = { .gfx = gfx_item_quarzstaubTiles, .pal = gfx_item_quarzstaubPal },
     [ITEM_ENERGIEQUARZ] = { .gfx = gfx_item_energiequarzTiles, .pal = gfx_item_energiequarzPal },
     [ITEM_MULCH] = {.gfx = gfx_item_mulchTiles, .pal = gfx_item_mulchPal},
+    [ITEM_WUESTEN_EI] = {.gfx = gfx_item_wuesten_eiTiles, .pal = gfx_item_wuesten_eiPal},
+    [ITEM_TUNDRA_EI] = {.gfx = gfx_item_tundra_eiTiles, .pal = gfx_item_tundra_eiPal},
+    [ITEM_GEWITTER_EI] = {.gfx = gfx_item_gewitter_eiTiles, .pal = gfx_item_gewitter_eiPal},
+    [ITEM_SONNEN_EI] = {.gfx = gfx_item_sonnen_eiTiles, .pal = gfx_item_sonnen_eiPal},
 };
 
 const u8 *item_get_resource(u16 item_idx, u8 get_palette) {

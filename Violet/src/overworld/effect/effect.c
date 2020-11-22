@@ -158,6 +158,14 @@ bool overworld_effect_is_oam_outside_camera_view(s16 x, s16 y, int width, int he
     return x < left || x > right || y < top || y > bottom;
 }
 
+
+extern palette overworld_effect_pokeball_palette;
+
+void overworld_effect_sliding_pokeball_load_palette() {
+    // Loads the palette without applying any filters (dns or weather)
+    oam_palette_load_if_not_present(&overworld_effect_pokeball_palette);
+}
+
 const u8 *overworld_effects[NUM_OVERWORLD_EFFECTS] = {
     [OVERWORLD_EFFECT_EXCLAMATION_MARK_ICON] = overworld_effect_script_exclamation_mark_icon,
     [OVERWORLD_EFFECT_USE_CUT_ON_GRASS] = overworld_effect_script_use_cut_on_grass,
