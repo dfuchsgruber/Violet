@@ -75,7 +75,7 @@ void pal_apply_shaders_by_palette_idx(u8 pal_idx, u8 number_palettes) {
 
 void pal_apply_shaders_by_oam_palette_idx(u8 oam_pal_idx) {
     pal_apply_shaders((u16)(oam_pal_idx * 16 + 256), 16);
-}
+} 
 
 void pal_proceed() {
     void *src = pals;

@@ -6,167 +6,165 @@
 .include "flags.s"
 .include "overworld_script.s"
 .include "items.s"
+.include "pathfinding.s"
 
-.global ow_script_0x8ffc6d
-.global ow_script_0x926a3c
-.global ow_script_0x8ffc5d
-.global ow_script_0x8edb20
-.global ow_script_0x8ffc2d
-.global ow_script_map_3_21_trigger_0
-.global ow_script_0x8ffc41
-.global ow_script_0x8ffc7c
+.global ow_script_felsige_oednis_may_trigger
 
-ow_script_movs_0x8ffc55:
-.byte STEP_UP
-.byte STEP_UP
-.byte STEP_UP
-.byte STEP_UP
-.byte STEP_UP
-.byte STEP_UP
-.byte STOP
-
-
-ow_script_map_3_21_trigger_0:
-lockall
-showsprite 0x4
-setflag PKMNMENU
-setvar LASTTALKED 0x4
-getplayerpos 0x8004 0x8005
-compare 0x8004 0xc
-callif EQUAL ow_script_0x8ffc6d
-compare 0x8004 0xe
-callif EQUAL ow_script_0x8ffc7c
-compare 0x8004 0xf
-callif EQUAL ow_script_0x8ffc5d
-applymovement 0x800f ow_script_movs_0x8ffc55
-waitmovement 0x0
-draw_mugshot MUGSHOT_MAY MUGSHOT_LEFT
-compare STARTER_SELECTED 0x0
-gotoif EQUAL ow_script_0x8ffc2d
-compare STARTER_SELECTED 0x1
-gotoif EQUAL ow_script_0x8ffc41
-trainerbattlecont 0x1 0x5e 0x0 str_0x8eda29 str_0x8edae8 ow_script_0x8edb20
-
-
-ow_script_movs_0x8ede0c:
-.byte SAY_EXCLAM
-.byte STOP
-
-
-ow_script_0x8edb20:
-loadpointer 0x0 str_0x8ffbb5
-show_mugshot MUGSHOT_MAY MUGSHOT_LEFT
-loadpointer 0x0 str_0x8ffb51
-show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
-loadpointer 0x0 str_0x8ff97b
-show_mugshot MUGSHOT_MAY MUGSHOT_LEFT
-pause 0x20
-sound 0x15
-applymovement 0x800f ow_script_movs_0x8ede0c
-waitmovement 0x0
-checksound
-loadpointer 0x0 str_0x8edd68
-show_mugshot MUGSHOT_MAY MUGSHOT_LEFT MSG_KEEPOPEN
-copyvarifnotzero 0x8000 ITEM_EP_TEILER
-copyvarifnotzero 0x8001 1
-callstd ITEM_OBTAIN
-loadpointer 0x0 str_0x8edba7
-show_mugshot MUGSHOT_MAY MUGSHOT_LEFT
-goto ow_script_0x926a3c
-
-
-ow_script_movs_0x8edb9f:
-.byte STEP_DOWN
-.byte STEP_DOWN
-.byte STEP_DOWN
-.byte STEP_DOWN
-.byte STEP_DOWN
-.byte STEP_DOWN
-.byte STOP
-
-
-ow_script_0x926a3c:
-applymovement 0x800f ow_script_movs_0x8edb9f
-waitmovement 0x0
-hidesprite 0x800f
-addvar STORY_PROGRESS 0x1
-releaseall
-end
-
-
-ow_script_0x8ffc41:
-trainerbattlecont 0x1 0x5d 0x0 str_0x8eda29 str_0x8edae8 ow_script_0x8edb20
-
-
-ow_script_0x8ffc2d:
-trainerbattlecont 0x1 0x5c 0x0 str_0x8eda29 str_0x8edae8 ow_script_0x8edb20
-
-
-ow_script_movs_0x8ffc69:
-.byte STEP_RIGHT
-.byte STEP_RIGHT
-.byte STOP
-
-
-ow_script_0x8ffc5d:
-applymovement 0x800f ow_script_movs_0x8ffc69
-waitmovement 0x0
-return
-
-
-ow_script_movs_0x8ffc88:
-.byte STEP_RIGHT
-.byte STOP
-
-
-ow_script_0x8ffc7c:
-applymovement 0x800f ow_script_movs_0x8ffc88
-waitmovement 0x0
-return
-
-
-ow_script_movs_0x8ffc79:
-.byte STEP_LEFT
-.byte STOP
-
-
-ow_script_0x8ffc6d:
-applymovement 0x800f ow_script_movs_0x8ffc79
-waitmovement 0x0
-return
-
+ow_script_felsige_oednis_may_trigger:
+	lockall
+	applymovement 0xFF mov_fd
+	waitmovement 0
+	sound 0x15
+	setvar 0x8004 4
+	setvar LASTTALKED 4 
+	special SPECIAL_SET_TARGET_NPC_TO_VAR
+	applymovement 4 mov_fu
+	waitmovement 0
+	applymovement 4 mov_exclam
+	waitmovement 0
+	checksound
+	npc_move_to_player 4
+	applymovement 4 mov_fu
+	waitmovement 0
+	loadpointer 0 str_0
+	show_mugshot MUGSHOT_MAY MUGSHOT_LEFT hide_mugshot=0 message_type=MSG_KEEPOPEN
+	update_mugshot_emotion MUGSHOT_HAPPY
+	loadpointer 0 str_1
+	callstd MSG_KEEPOPEN
+	update_mugshot_emotion MUGSHOT_HAPPY
+	loadpointer 0 str_2
+	callstd MSG_KEEPOPEN
+	update_mugshot_emotion MUGSHOT_SAD
+	loadpointer 0 str_3
+	callstd MSG_KEEPOPEN
+	update_mugshot_emotion MUGSHOT_SERIOUS
+	loadpointer 0 str_4
+	callstd MSG_KEEPOPEN
+	update_mugshot_emotion MUGSHOT_SAD
+	loadpointer 0 str_5
+	callstd MSG_KEEPOPEN
+	update_mugshot_emotion MUGSHOT_SERIOUS
+	loadpointer 0 str_6
+	callstd MSG_KEEPOPEN
+	update_mugshot_emotion MUGSHOT_SAD
+	compare STARTER_SELECTED 0x0
+	gotoif EQUAL plant_starter
+	compare STARTER_SELECTED 0x1
+	gotoif EQUAL fire_starter
+water_starter:
+	trainerbattlecont 0x1 0x5e 0x0 str_before str_after later
+plant_starter:
+	trainerbattlecont 0x1 0x5c 0x0 str_before str_after later
+fire_starter:
+	trainerbattlecont 0x1 0x5d 0x0 str_before str_after later
+later:
+	loadpointer 0 str_7
+	show_mugshot MUGSHOT_MAY MUGSHOT_LEFT hide_mugshot=0 message_type=MSG_KEEPOPEN emotion=MUGSHOT_SAD
+	update_mugshot_emotion MUGSHOT_ANGRY
+	loadpointer 0 str_8
+	callstd MSG_KEEPOPEN
+	update_mugshot_emotion MUGSHOT_NORMAL
+	loadpointer 0 str_9
+	callstd MSG_KEEPOPEN
+	update_mugshot_emotion MUGSHOT_SAD
+	loadpointer 0 str_10
+	callstd MSG_KEEPOPEN
+	update_mugshot_emotion MUGSHOT_NORMAL
+	loadpointer 0 str_11
+	callstd MSG_KEEPOPEN
+	update_mugshot_emotion MUGSHOT_SAD
+	loadpointer 0 str_12
+	callstd MSG_KEEPOPEN
+	update_mugshot_emotion MUGSHOT_HAPPY
+	loadpointer 0 str_13
+	callstd MSG_KEEPOPEN
+	hide_mugshot
+	copyvarifnotzero 0x8000 ITEM_VM05
+	copyvarifnotzero 0x8001 1
+	callstd ITEM_OBTAIN
+	loadpointer 0 str_14
+	show_mugshot MUGSHOT_MAY MUGSHOT_LEFT hide_mugshot=0 message_type=MSG_KEEPOPEN emotion=MUGSHOT_NORMAL
+	update_mugshot_emotion MUGSHOT_SAD
+	loadpointer 0 str_15
+	callstd MSG_KEEPOPEN
+	closeonkeypress
+	hide_mugshot
+	pause 16
+	applymovement 4 mov_1d
+	waitmovement 0
+	pause 32
+	applymovement 4 mov_fu
+	waitmovement 0
+	pause 16
+	loadpointer 0 str_16
+	show_mugshot MUGSHOT_MAY MUGSHOT_LEFT hide_mugshot=0 message_type=MSG_KEEPOPEN emotion=MUGSHOT_NORMAL
+	update_mugshot_emotion MUGSHOT_SERIOUS
+	loadpointer 0 str_17
+	callstd MSG_KEEPOPEN
+	update_mugshot_emotion MUGSHOT_SAD
+	loadpointer 0 str_18
+	callstd MSG_KEEPOPEN
+	update_mugshot_emotion MUGSHOT_HAPPY
+	loadpointer 0 str_19
+	callstd MSG_KEEPOPEN
+	update_mugshot_emotion MUGSHOT_NORMAL
+	loadpointer 0 str_20
+	callstd MSG_KEEPOPEN
+	closeonkeypress
+	hide_mugshot
+	applymovement 4 mov_5d
+	waitmovement 0
+	hidesprite 4
+	addvar STORY_PROGRESS 0x1
+	releaseall
+	end
 
 .ifdef LANG_GER
-
-str_0x8eda29:
-	.autostring 35 2 "Hallo PLAYER!\pDu bist wohl auch auf dem Weg nach Kaskada, oder?\pIch sage dir eins, diese Wüste ist wirklich eine Hölle DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pWas sagst du? DOTS\pWürdest du bitte noch einmal gegen mich kämpfen?"
-
-
-str_0x8edae8:
-    .autostring 35 2 "Wieso verliere ich so viele Kämpfe\pDOTS DOTS DOTS"
-
-
-
-str_0x8ffbb5:
-	.autostring 35 2 "DOTS DOTS DOTS\pIch weiß wirklich nicht DOTS\pOb es noch einen Sinn hat DOTS\pWeiterzumachen DOTS\pDOTS DOTS DOTS"
-
-
-str_0x8ffb51:
-    .autostring 35 2 "Lass dich nicht unterkriegen, Maike!\pDu musst nur mit mehr Selbstvertrauen kämpfen!"
-
-
-
-str_0x8ff97b:
-	.autostring 35 2 "Selbstvertrauen?\pAber wie soll ich Selbstvertrauen aufbauen, wenn ich andauernd verliere?\pMein Freund aus Hoenn DOTS\pIch werde niemals auf einer Augenhöhe mit ihm sein DOTS\pIch bin einfach nicht für dieses Leben gemacht DOTS\pDOTS DOTS DOTS"
-
-
-str_0x8edd68:
-	.autostring 35 2 "Weißt du, PLAYER DOTS\pIch finde, dass ich dir das hier geben sollte DOTS"
-
-
-str_0x8edba7:
-	.autostring 35 2 "Der EP-Teiler war ein Geschenk meines Freundes aus Hoenn DOTS\pAber so ein nützliches Item ist in deinen fähigen Händen sicher besser aufgehoben DOTS\pAn mir wäre er nur verschwendet DOTS DOTS DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDOTS DOTS DOTS"
-
+str_0:
+	.autostring 34 2 "Hallo, PLAYER!"
+str_1:
+	.autostring 34 2 "Du hast es wohl auch aus dieser finsteren Höhle herausgeschafft?\pIch will dir deine Laune ja nicht verderbenDOTS"
+str_2:
+	.autostring 34 2 "Aber diese Wüste ist auch nicht gerade besserDOTS"
+str_3:
+	.autostring 34 2 "Oh, übrigens, PLAYERDOTS"
+str_4:
+	.autostring 34 2 "Ich habe sehr viel trainiert!\pIch bin jetzt viel stärker geworden!"
+str_5:
+	.autostring 34 2 "IchDOTS\nDOTS DOTS DOTS\pI-Ich glaube ich kann dich besiegen, PLAYER!"
+str_6:
+	.autostring 34 2 "Ich will gegen dich kämpfen!\pIch will dir beweisen, dass ich als Trainer zu etwas tauge!"
+str_before:
+	.autostring 34 2 "W-was sagst du, PLAYER?"
+str_after:
+	.autostring 34 2 "I-Ich habe verlorenDOTS\pNach dem ganzen Training habe ich trotzdem wieder verlorenDOTS"
+str_7:
+	.autostring 34 2 "Ich fasse es nichtDOTS\pIch habe so viel Zeit und Mühe in mein Training gesteckt.\pIch habe alles gegebenDOTS"
+str_8:
+	.autostring 34 2 "Und trotzdem habe ich wieder verloren!"
+str_9:
+	.autostring 34 2 ".TEXT_DELAY_LONG.TEXT_DELAY_LONG.TEXT_DELAY_LONG\pEntschuldige bitte, PLAYER.\pIch bin nur einfach frustriert, denke ich."
+str_10:
+	.autostring 34 2 "Aber so ist das nun einmal!\pManche Trainer sind eben stärker als andere.\pUnd du bist mir wohl immer einen Schritt voraus."
+str_11:
+	.autostring 34 2 "Und außerdem habe ich noch etwas für dich, PLAYER."
+str_12:
+	.autostring 34 2 "Eigentlich wollte ich dir das als Trostpreis überreichenDOTS"
+str_13:
+	.autostring 34 2 "Aber sieh es jetzt einfach als Preis für deinen Sieg, ja?"
+str_14:
+	.autostring 34 2 "Mit der VM Blitz kommst du kinderleicht durch dunkle Höhlen.\pJe stärker das Pokémon ist, das die Attacke benutzt, desto heller wird es!"
+str_15:
+	.autostring 34 2 "In deinen Händen ist diese VM sowieso viel besser aufgehoben als in meinen, was?\pDOTS DOTS DOTS\nDOTS DOTS DOTS"
+str_16:
+	.autostring 34 2 "Es war schön, dich einmal wieder zu sehen, PLAYER!\pEhrlich!\nObwohl du mich besiegt hast.\pI-IchDOTS\nDOTS DOTS DOTS"
+str_17:
+	.autostring 34 2 "Ich werde umso härter an mir arbeiten, dich beim nächsten Mal schlagen zu können!"
+str_18:
+	.autostring 34 2 "DOTS DOTS DOTS\pUnd wenn ich das nicht schaffeDOTS\p.TEXT_DELAY_LONG.TEXT_DELAY_LONG.TEXT_DELAY_LONG"
+str_19:
+	.autostring 34 2 "Ach!\nIch werde schon zurecht kommen, oder?"
+str_20:
+	.autostring 34 2 "Pass auf dich auf, PLAYER!"
 .elseif LANG_EN
-
 .endif

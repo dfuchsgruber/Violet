@@ -433,6 +433,10 @@ bsc_strings:
 .word str_battle_x1B7
 .word str_battle_x1B8
 .word str_battle_x1B9
+.word str_battle_x1BA
+.word str_battle_x1BB
+.word str_battle_x1BC
+.word str_battle_x1BD
 
 @ // Define the strings
 
@@ -2919,7 +2923,19 @@ bsc_strings:
 
 	str_battle_x1B9:
 		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX erleidet bis\nzum Ende des Zuges weniger Schaden."
-		
+
+	str_battle_x1BA:
+		.string "BSC_LAST_ITEM von BSC_SCR_ACTIVE_NAME_WITH_PREFIX\nerzeugt Sonnenschein."	
+
+	str_battle_x1BB:
+		.string "BSC_LAST_ITEM von BSC_SCR_ACTIVE_NAME_WITH_PREFIX\nlässt es regnen."
+
+	str_battle_x1BC:
+		.string "BSC_LAST_ITEM von BSC_SCR_ACTIVE_NAME_WITH_PREFIX\nlässt es hageln."
+
+	str_battle_x1BD:
+		.string "BSC_LAST_ITEM von BSC_SCR_ACTIVE_NAME_WITH_PREFIX\nverursacht einen Sandsturm."
+
 
 .elseif LANG_EN
 	.global str_battle_xc

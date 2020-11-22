@@ -588,6 +588,34 @@ static crafting_recipe crafting_recipies_battle[] = {
             [0] = {.item = ITEM_LANSATBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
         }
+    },{
+        .item = ITEM_SONNEN_EI, 
+        .ingredients = {
+            [0] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_TAMOTBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FLAG_WEATHER_EGG_RECIPIES,
+    },{
+        .item = ITEM_GEWITTER_EI, 
+        .ingredients = {
+            [0] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_SAIMBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FLAG_WEATHER_EGG_RECIPIES,
+    },{
+        .item = ITEM_WUESTEN_EI, 
+        .ingredients = {
+            [0] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_SANANABEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FLAG_WEATHER_EGG_RECIPIES,
+    },{
+        .item = ITEM_TUNDRA_EI, 
+        .ingredients = {
+            [0] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_KIWANBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FLAG_WEATHER_EGG_RECIPIES,
     },
 };
 

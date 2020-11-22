@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 "beautifulsoup4" = "*"
 "html5lib" = "*"
-pyagb = {git = "https://github.com/WodkaRHR/pyagb.git",ref = "58653c2236c2ee9d60044c7761c3ea1b9dec1560"}
+pyagb = {git = "https://github.com/WodkaRHR/pyagb.git",ref = "1609b337a6c2c5256c8015d335fb0f2de1aec61d"}
 
 [dev-packages]
 pylint = "*"

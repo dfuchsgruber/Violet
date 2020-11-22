@@ -303,3 +303,8 @@ bool overworld_weather_fade_in_rain_and_clouds() {
         return true;
     }
 }
+
+void overworld_weather_load_palette(const color_t *pal) {
+    pal_copy(pal, (u16)(256 + overworld_weather.alternative_gamma_oam_pal_idx * 16), 16 * sizeof(color_t));
+    pal_apply_shaders_by_oam_palette_idx(overworld_weather.alternative_gamma_oam_pal_idx);
+}

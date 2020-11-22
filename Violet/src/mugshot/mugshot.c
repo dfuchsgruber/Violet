@@ -59,6 +59,7 @@ mugshot mugshots[] = {
 					[MUGSHOT_RUMINATIVE] = gfx_mug_may_thoughtfulTiles,
 					[MUGSHOT_EVIL] = gfx_mug_may_evilTiles,
 					[MUGSHOT_ANNOYED] = gfx_mug_may_annoyedTiles,
+					[MUGSHOT_SERIOUS] = gfx_mug_may_seriousTiles,
 				},
 			gfx_mug_mayPal, str_mug_may},
     [MUGSHOT_FELIX] = {

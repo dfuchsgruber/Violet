@@ -10,11 +10,18 @@
 #include "debug.h"
 #include "battle/controller.h"
 #include "item/item_effect.h"
+#include "constants/item_weather_rock_types.h"
+#include "constants/battle/battle_weathers.h"
+#include "constants/battle/battle_animations.h"
+#include "battle/weather.h"
 
 extern u8 bsc_life_orb[];
+extern u8 bsc_sun_egg[];
+extern u8 bsc_storm_egg[];
+extern u8 bsc_desert_egg[];
+extern u8 bsc_blizzard_egg[];
 
-
-u8 battle_items_switch_in_effects() { // Return 0 if no effect was used, 0xFF if an effect was used, but no bsc was triggered and a suitable effect type else
+u8 battle_items_switch_in_effects(u8 battler_idx) { // Return 0 if no effect was used, 0xFF if an effect was used, but no bsc was triggered and a suitable effect type else
     u8 hold_effect = item_get_hold_effect(bsc_last_used_item);
     u8 hold_effect_parameter = item_get_hold_effect_parameter(bsc_last_used_item);
     dprintf("Item switch in effect, hold effect %d with parameter %d\n", hold_effect, hold_effect_parameter);
@@ -22,6 +29,41 @@ u8 battle_items_switch_in_effects() { // Return 0 if no effect was used, 0xFF if
         case HOLD_EFFECT_FOUR_LEAF:
             BATTLE_STATE2->item_dropping_chance_increased_by_item = 1;
             return 0xFF;
+        case HOLD_EFFECT_WEATHER_EGG: {
+            if (hold_effect_parameter == WEATHER_ROCK_HAIL && !(battle_weather & BATTLE_WEATHER_HAIL)) {
+                battle_weather = BATTLE_WEATHER_HAIL;
+                battler_timers.weather_turns = 2;
+                battle_scripting.battler_idx = battler_idx;
+                bsc_last_used_item = battlers[battler_idx].item;
+                active_battler = battler_idx;
+                battlescript_init_and_interrupt_battle(bsc_blizzard_egg);
+                return true;
+            } else if (hold_effect_parameter == WEATHER_ROCK_SUN && !(battle_weather & BATTLE_WEATHER_SUN)) {
+                battle_weather = BATTLE_WEATHER_SUN;
+                battler_timers.weather_turns = 2;
+                battle_scripting.battler_idx = battler_idx;
+                bsc_last_used_item = battlers[battler_idx].item;
+                active_battler = battler_idx;
+                battlescript_init_and_interrupt_battle(bsc_sun_egg);
+                return true;
+            } else if (hold_effect_parameter == WEATHER_ROCK_RAIN && !(battle_weather & BATTLE_WEATHER_RAIN)) {
+                battle_weather = BATTLE_WEATHER_RAIN;
+                battler_timers.weather_turns = 2;
+                battle_scripting.battler_idx = battler_idx;
+                bsc_last_used_item = battlers[battler_idx].item;
+                active_battler = battler_idx;
+                battlescript_init_and_interrupt_battle(bsc_storm_egg);
+                return true;
+            } else if (hold_effect_parameter == WEATHER_ROCK_SANDSTORM && !(battle_weather & BATTLE_WEATHER_SANDSTORM)) {
+                battle_weather = BATTLE_WEATHER_SANDSTORM;
+                battler_timers.weather_turns = 2;
+                battle_scripting.battler_idx = battler_idx;
+                bsc_last_used_item = battlers[battler_idx].item;
+                active_battler = battler_idx;
+                battlescript_init_and_interrupt_battle(bsc_desert_egg);
+                return true;
+            }
+        }
     }
     return 0;
 }

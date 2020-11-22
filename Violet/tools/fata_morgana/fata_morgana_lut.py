@@ -30,7 +30,7 @@ if __name__ == '__main__':
     data = [
         (x + 7, y + 7, footer['blocks'][y][x]['block_idx'])
         for y, x in itertools.product(range(footer['height']), range(footer['width']))
-        if footer['blocks'][y][x]['block_idx'] >= 0x320
+        if footer['blocks'][y][x]['block_idx'] in range(0x320, 0x3b0)
     ]
 
     blocks = [

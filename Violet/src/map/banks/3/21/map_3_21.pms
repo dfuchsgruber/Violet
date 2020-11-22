@@ -64,8 +64,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 13,
-					"y": 37,
+					"x": "13",
+					"y": "18",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -80,7 +80,7 @@
 					"field_B": 0,
 					"script_std": "PERSON_ITEM",
 					"value": {
-						"item": "ITEM_HYPERTRANK",
+						"item": "ITEM_WUESTEN_EI",
 						"species": 0,
 						"berry_tree_idx": 0
 					}
@@ -90,10 +90,10 @@
 					"picture": 15,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 13,
-					"y": 29,
+					"x": "14",
+					"y": "24",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -101,7 +101,7 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
-					"flag": "PKMNMENU",
+					"flag": "FLAG_FELSIGE_ODENIS_MAY",
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -210,7 +210,7 @@
 					"field_B": 0,
 					"script_std": "PERSON_ITEM",
 					"value": {
-						"item": "ITEM_VM05",
+						"item": "ITEM_EP_TEILER",
 						"species": 0,
 						"berry_tree_idx": 0
 					}
@@ -797,45 +797,45 @@
 			],
 			"triggers": [
 				{
-					"x": 12,
-					"y": 22,
+					"x": "12",
+					"y": "21",
 					"level": 0,
 					"field_5": 0,
 					"value": 30,
-					"script": "ow_script_map_3_21_trigger_0",
+					"script": "ow_script_felsige_oednis_may_trigger",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
 				},
 				{
-					"x": 13,
-					"y": 22,
+					"x": "13",
+					"y": "21",
 					"level": 0,
 					"field_5": 0,
 					"value": 30,
-					"script": "ow_script_map_3_21_trigger_0",
+					"script": "ow_script_felsige_oednis_may_trigger",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
 				},
 				{
-					"x": 14,
-					"y": 22,
+					"x": "14",
+					"y": "21",
 					"level": 0,
 					"field_5": 0,
 					"value": 30,
-					"script": "ow_script_map_3_21_trigger_0",
+					"script": "ow_script_felsige_oednis_may_trigger",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
 				},
 				{
-					"x": 15,
-					"y": 22,
+					"x": "15",
+					"y": "21",
 					"level": 0,
 					"field_5": 0,
 					"value": 30,
-					"script": "ow_script_map_3_21_trigger_0",
+					"script": "ow_script_felsige_oednis_may_trigger",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
