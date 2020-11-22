@@ -1155,3 +1155,4 @@ battle_print_string_idx = 0x08017330 | 1;
 battle_animation_shake_battler_task = 0x08098afc | 1;
 battle_animation_split_egg_oam_template = 0x083e3528;
 battle_animation_expanding_rings_template = 0x083e3594;
+bsc_stat_up = 0x081dae61;

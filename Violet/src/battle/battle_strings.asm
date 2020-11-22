@@ -437,6 +437,8 @@ bsc_strings:
 .word str_battle_x1BB
 .word str_battle_x1BC
 .word str_battle_x1BD
+.word str_battle_x1BE
+.word str_battle_x1BF
 
 @ // Define the strings
 
@@ -2936,6 +2938,11 @@ bsc_strings:
 	str_battle_x1BD:
 		.string "BSC_LAST_ITEM von BSC_SCR_ACTIVE_NAME_WITH_PREFIX\nverursacht einen Sandsturm."
 
+	str_battle_x1BE:
+		.string "BSC_LAST_ITEM von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX verglüht!"
+
+	str_battle_x1BF:
+		.string "BSC_BUF0 von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX steigt!"
 
 .elseif LANG_EN
 	.global str_battle_xc
@@ -5023,6 +5030,24 @@ bsc_strings:
 
 	str_battle_x1B9:
 		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX takes less\ndamage until the end of the turn."
+
+	str_battle_x1BA:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX's BSC_LAST_ITEM\nmakes the sun shine."	
+
+	str_battle_x1BB:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX's BSC_LAST_ITEM\nmakes it rain."	
+
+	str_battle_x1BC:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX's BSC_LAST_ITEM\ncauses a hailstorm."	
+
+	str_battle_x1BD:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX's BSC_LAST_ITEM\ncauses a sandstorm."	
+
+	str_battle_x1BE:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX's BSC_LAST_ITEM\nevaporates!"
+
+	str_battle_x1BF:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX's BSC_BUF0\nrises!"
 
 .endif
 

@@ -71,3 +71,14 @@ bsc_storm_egg:
     waitmessage 0x40
     removeitem BANK_SCRIPTING
     end3
+
+.global bsc_energiequarz
+
+bsc_energiequarz:
+    printstring 0x1be
+    playanimation BANK_SCRIPTING BATTLE_ANIM_ITEM_EFFECT 0
+	statbuffchange 0x41, .+4
+    setbyte battle_communication + BATTLE_COMMUNICATION_MULTISTRING_CHOOSER, 4
+    call bsc_stat_up
+    removeitem BANK_SCRIPTING
+    end3
