@@ -884,6 +884,16 @@
 				"map_felsige_oednis_west_clouds",
 				"src/map/banks/22/1/map_felsige_oednis_west_clouds.pms",
 				"MAP_FELSIGE_OEDNIS"
+			],
+			"2": [
+				"map_felsige_oednis_cave_3",
+				"src/map/banks/22/2/map_felsige_oednis_cave_3.pms",
+				"MAP_FELSIGE_OEDNIS"
+			],
+			"3": [
+				"map_felsige_oednis_gible_cave",
+				"src/map/banks/22/3/map_felsige_oednis_gible_cave.pms",
+				"MAP_FELSIGE_OEDNIS"
 			]
 		},
 		"23": {
@@ -1921,6 +1931,14 @@
 		"map_footer_bruchfels_grave": [
 			124,
 			"src/map/banks/6/11/map_footer_bruchfels_grave.pms"
+		],
+		"map_footer_felsige_oednis_cave_3": [
+			125,
+			"src/map/banks/22/2/map_footer_felsige_oednis_cave_3.pms"
+		],
+		"map_footer_felsige_oednis_gible_cave": [
+			126,
+			"src/map/banks/22/3/map_footer_felsige_oednis_gible_cave.pms"
 		]
 	},
 	"tilesets_primary": {

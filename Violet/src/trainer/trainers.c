@@ -6726,6 +6726,44 @@ trainer trainers[TRAINER_CNT] = {
       .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
       .battle_state = BATTLE_WITH_HANDICAP, .pokemon_cnt = 6, .party = (trainer_pokemon*) trainer_party_x1a5_rosalie_difficulty_hard,
 	  },
+    [0x1A6] = {
+        .trainerclass = TRAINERCLASS_JUNGES_GLUECK, .sprite = 68,
+        .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Pia u. Pete"),
+            PSTRING("Pia u. Pete")), .pokemon_cnt = 4,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+
+        .party = (trainer_pokemon*) trainer_party_x1a6_felsige_oednis_cave_trainer_0,
+        .battle_state = BATTLE_DOUBLE,
+    },
+    [0x1A7] = {
+        .trainerclass = TRAINERCLASS_WANDERER, .sprite = 0x43,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Jimbo"),
+            PSTRING("Jimbo")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1a7_felsige_oednis_cave_trainer_1,
+    },
+    [0x1A8] = {
+        .trainerclass = TRAINERCLASS_WANDERER, .sprite = 0x5c,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Karl"),
+            PSTRING("Karl")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1a8_felsige_oednis_cave_trainer_2,
+    },
+    [0x1A9] = {
+        .trainerclass = TRAINERCLASS_MECHANIKER, .sprite = 0x5d,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Dean"),
+            PSTRING("Dean")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1a9_felsige_oednis_cave_trainer_3,
+    },
+    [0x1AA] = {
+        .trainerclass = TRAINERCLASS_HEXE, .sprite = 10,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Olyvia"),
+            PSTRING("Olyvia")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1aa_felsige_oednis_cave_trainer_4,
+        .uses_custom_items = true,
+    },
 
 
 

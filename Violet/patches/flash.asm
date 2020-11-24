@@ -1,6 +1,6 @@
 //misc
 .org 0x080C9D84
-	.word new_flash_script
+	.word ow_script_flash
 	.pool
 	
 //flash radius in caves will be kept

@@ -677,6 +677,11 @@ wild_pokemon_data wild_pokemon[] = {
 		.water = &wild_pokemon_route_2_cave_water,
 		.other = NULL,
 		.rod = &wild_pokemon_route_2_cave_rod,
+	}, {
+		.bank = 22, .map = 2,
+		.water = &wild_pokemon_0_7_water,
+		.rod = &wild_pokemon_0_7_rod,
+		.grass = &wild_pokemon_0_6_grass,
 	},
 	{
 	    .bank = 0xFF, .map = 0xFF, .field_2 = 0xFF, .field_3 = 0xFF,
