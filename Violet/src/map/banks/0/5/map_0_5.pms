@@ -3,7 +3,7 @@
 		"footer": "map_footer_391",
 		"events": {
 			"person_cnt": 20,
-			"warp_cnt": 7,
+			"warp_cnt": 11,
 			"trigger_cnt": 0,
 			"signpost_cnt": 2,
 			"persons": [
@@ -166,12 +166,12 @@
 				{
 					"is_trainer": "0",
 					"script": "0",
-					"y": 31,
+					"y": "26",
 					"target_index": 7,
 					"field_3": 0,
 					"picture": 92,
 					"flag": "FELSIGE_ODNIS_ITEM_1",
-					"x": 24,
+					"x": "25",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -270,12 +270,12 @@
 				{
 					"is_trainer": "0",
 					"script": "0",
-					"y": 27,
+					"y": "30",
 					"target_index": 11,
 					"field_3": 0,
 					"picture": 92,
 					"flag": "FELSIGE_ODNIS_ITEM_3",
-					"x": 31,
+					"x": "33",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -452,12 +452,12 @@
 				{
 					"is_trainer": "0",
 					"script": "0",
-					"y": 31,
+					"y": "31",
 					"target_index": 18,
 					"field_3": 0,
 					"picture": 92,
 					"flag": "FELSIGE_ODNIS_ITEM_4",
-					"x": 41,
+					"x": "44",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -562,10 +562,10 @@
 				},
 				{
 					"target_map": 6,
-					"y": 39,
+					"y": "38",
 					"target_bank": 0,
 					"level": 0,
-					"x": 21,
+					"x": "22",
 					"target_warp_idx": 2
 				},
 				{
@@ -583,6 +583,38 @@
 					"level": 0,
 					"x": 3,
 					"target_warp_idx": 3
+				},
+				{
+					"x": "25",
+					"y": "37",
+					"level": 0,
+					"target_warp_idx": "7",
+					"target_map": "6",
+					"target_bank": "0"
+				},
+				{
+					"x": "41",
+					"y": "26",
+					"level": 0,
+					"target_warp_idx": "4",
+					"target_map": "21",
+					"target_bank": "3"
+				},
+				{
+					"x": "40",
+					"y": "58",
+					"level": 0,
+					"target_warp_idx": "5",
+					"target_map": "21",
+					"target_bank": "3"
+				},
+				{
+					"x": "38",
+					"y": "53",
+					"level": 0,
+					"target_warp_idx": "4",
+					"target_map": "6",
+					"target_bank": "0"
 				}
 			],
 			"triggers": [],

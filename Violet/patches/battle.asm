@@ -657,12 +657,15 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 	bx r0
 	.pool
 
+ 
 .org 0x08021e3a
 	mov r0, r7
 	ldr r1, =bsc_cmd_x23_adjust_exp_and_print_string | 1
 	bl _blxr1
+	ldr r6, =battle_state
 	b 0x08021eb2
 	.pool
+
 
 /** 
 .org 0x08012642

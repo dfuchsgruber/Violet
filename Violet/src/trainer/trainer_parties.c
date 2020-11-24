@@ -2327,10 +2327,37 @@ trainer_pokemon_custom_item_custom_attacks trainer_party_x1a5_rosalie_difficulty
 	TRAINER_PARTY_CUSTOM_ITEM_CUSTOM_MOVES(21, TRAINER_BUILD_SPECIAL_TANK, 0x0, false, false, 26, POKEMON_TROMBORK, ITEM_UEBERRESTE, ATTACK_SPUKBALL, ATTACK_IRRLICHT, ATTACK_GIGASAUGER, ATTACK_FLUCH)
 };
 
-
 trainer_pokemon_default_item_default_attacks trainer_party_x1a3_felsige_oednis_koch[4] = {
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,20, POKEMON_LORBLATT),
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,19, POKEMON_PERLU),
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,21, POKEMON_PORENTA),
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,18, POKEMON_MILTANK),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1a6_felsige_oednis_cave_trainer_0[4] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,27,POKEMON_NIDORINA),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,27,POKEMON_NIDORINO),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,26,POKEMON_VULPIX),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,26,POKEMON_FUKANO),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1a7_felsige_oednis_cave_trainer_1[3] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,25,POKEMON_SANDAN),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,28,POKEMON_ONIX),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,26,POKEMON_MASCHOCK),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1a8_felsige_oednis_cave_trainer_2[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,27,POKEMON_SMOGON),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,28,POKEMON_MOLUNK),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1a9_felsige_oednis_cave_trainer_3[3] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,27,POKEMON_PIKACHU),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,25,POKEMON_ELEKTEK),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,26,POKEMON_FRIZELBLIZ),
+};
+
+trainer_pokemon_custom_item_default_attacks trainer_party_x1aa_felsige_oednis_cave_trainer_4[1] = {
+	TRAINER_PARTY_CUSTOM_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,32,POKEMON_ZWIRRKLOP,ITEM_EVOLITH),
 };

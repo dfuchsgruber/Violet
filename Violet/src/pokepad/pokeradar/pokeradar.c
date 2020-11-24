@@ -44,7 +44,7 @@ bool pokeradar_determine_position(coordinate_t *result) {
                 int k;
                 bool match = false;
                 for (k = 0; k < 16; k++) {
-                    if (npcs[k].dest_x == x && npcs[k].dest_y == y) {
+                    if (npcs[k].flags.active && npcs[k].dest_x == x && npcs[k].dest_y == y) {
                         match = true;
                         break;
                     }

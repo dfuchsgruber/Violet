@@ -58,3 +58,7 @@
 
 .halfword 0x7f80
 .halfword 0x450
+
+
+.org 0x0804c082
+    mov r1, #0 // Don't move saveblocks, this makes it waaaay easier to debug...

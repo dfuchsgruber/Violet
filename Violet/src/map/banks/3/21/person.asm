@@ -29,224 +29,159 @@
 .global ow_script_map_3_21_person_1
 
 ow_script_map_3_21_trainer_10:
-trainerbattlestd 0x0 0x66 0x0 str_0x72458c str_0x7245ea
-loadpointer 0x0 str_0x7245ea
-callstd MSG_FACE
-end
+    trainerbattlestd 0x0 0x66 0x0 str_0x72458c str_0x7245ea
+    loadpointer 0x0 str_0x7245ea
+    callstd MSG_FACE
+    end
 
 
 .ifdef LANG_GER
-
 str_0x72458c:
-    .string "Soll ich dir ein Geheimnis über\ndiese Wüste verraten? Ich sags dir,\lwenn du mich besiegst!"
-
-
-
+    .autostring 34 2 "Ich habe so einen DurstDOTS\pHast du etwas zu trinken für mich?"
 str_0x7245ea:
-    .string "Gut, das Geheimnis ist, dass es\nhier 2 Brunnen geben soll! Bisher\lhabe ich aber noch keinen\lgefundenDOTS"
-
-
+    .autostring 34 2 "W-Wo ist denn hier etwas WasserDOTS"
 .elseif LANG_EN
-
 .endif
 
 
 ow_script_map_3_21_trainer_0:
-trainerbattlestd 0x0 0x61 0x0 str_0x8ede71 str_0x8edee6
-loadpointer 0x0 str_0x8edee6
-callstd MSG_FACE
-end
+    trainerbattlestd 0x0 0x61 0x0 str_0x8ede71 str_0x8edee6
+    loadpointer 0x0 str_0x8edee6
+    callstd MSG_FACE
+    end
 
 
 .ifdef LANG_GER
-
 str_0x8ede71:
-    .string "Wie kann es hier so trocken sein,\nwährend Kaskada die Stadt der\lWasserquellen genannt wird?"
-
-
-
+    .autostring 34 2 "Das hier muss der trockenste Ort der ganzen Region sein!\pPass auf, dass du nicht auch vertrocknest!"
 str_0x8edee6:
-    .string "Kaskada und diese Wüste liegen\nnahezu unmittelbar nebeneinander."
-
-
+    .autostring 34 2 "UffDOTS\pWoher hast du die ganze Kraft in so einer Hitze?"
 .elseif LANG_EN
 
 .endif
 
 
 ow_script_map_3_21_trainer_2:
-trainerbattlestd 0x0 0x60 0x0 str_0x743970 str_0x8ede0e
-loadpointer 0x0 str_0x8ede0e
-callstd MSG_FACE
-end
+    trainerbattlestd 0x0 0x60 0x0 str_0x743970 str_0x8ede0e
+    loadpointer 0x0 str_0x8ede0e
+    callstd MSG_FACE
+    end
 
 
 .ifdef LANG_GER
-
 str_0x743970:
-    .string "Ich habe meine Pokémon gerade am\nBrunnen erfrischt! Ich bin so gut\lgestärkt, ich kann nicht verliern!"
-
-
-
+    .autostring 34 2 "Ich verrate dir einmal etwas!\pIch habe mich gerade an einem Brunnen erfrischt!\pDu kannst mich gar nicht schlagen!"
 str_0x8ede0e:
-    .string "Am Brunnen konnte ich meine\nPokémon heilenDOTS\pVielleicht war es aber auch bloß\neine Fata Morgana."
-
-
+    .autostring 34 2 "Vielleicht habe ich mir diesen Brunnen doch nur eingebildetDOTS"
 .elseif LANG_EN
 
 .endif
 
 
 ow_script_map_3_21_trainer_11:
-trainerbattlestd 0x0 0x63 0x0 str_0x73cdd2 str_0x73ce20
-loadpointer 0x0 str_0x73ce20
-callstd MSG_FACE
-end
+    trainerbattlestd 0x0 0x63 0x0 str_0x73cdd2 str_0x73ce20
+    loadpointer 0x0 str_0x73ce20
+    callstd MSG_FACE
+    end
 
 
 .ifdef LANG_GER
 
 str_0x73cdd2:
-    .string "Hier ist das Kaktus Labyrinth! Ich\nwerde den Ausgang in Windeseile\lfinden!"
-
-
-
+    .autostring 34 2 "Hier gibt es nicht außer KakteenDOTS\pDiese Wüste ist so öde!\pWie wäre es mit einem Kampf?"
 str_0x73ce20:
-    .string "Der AusgangDOTS"
-
-
+    .autostring 34 2 "Ich glaube, ich breche hier noch zusammenDOTS"
 .elseif LANG_EN
-
 .endif
 
 
 ow_script_0x73ced1:
-trainerbattlestd 0x0 0x1c7 0x0 str_0x743d3a str_0x743d7f
-loadpointer 0x0 str_0x743d7f
-callstd MSG_FACE
-end
-
+    trainerbattlestd 0x0 0x1c7 0x0 str_0x743d3a str_0x743d7f
+    loadpointer 0x0 str_0x743d7f
+    callstd MSG_FACE
+    end
 
 .ifdef LANG_GER
-
 str_0x743d3a:
-    .string "Was eine Exorzistin in der Wüste zu\nsuchen hat? Ich weiß es nicht!"
-
-
-
+    .autostring 34 2 "Du fragst dich sicher, was eine Exorizistin wie ich in dieser Wüste verloren hat?\pNunDOTS\pDas wüsste ich auch gerne!"
 str_0x743d7f:
-    .string "Hinterfrage nie die Gedanken\nunseres Schöfpers!"
-
-
+    .autostring 34 2 "UffDOTS\pDu hast mir den Kampfgeist ausgetrieben."
 .elseif LANG_EN
-
 .endif
-
 
 ow_script_map_3_21_trainer_3:
-trainerbattlestd 0x0 0x68 0x0 str_0x744635 str_0x7446c2
-loadpointer 0x0 str_0x7446c2
-callstd MSG_FACE
-end
-
+    trainerbattlestd 0x0 0x68 0x0 str_0x744635 str_0x7446c2
+    loadpointer 0x0 str_0x7446c2
+    callstd MSG_FACE
+    end
 
 .ifdef LANG_GER
-
 str_0x744635:
-    .string "Als ich mich in der Nähe eines\ngoldenen Kaktusses aufgehalten\lhabe, hat mich ein Tuska\langefallen.\lIch habe es gefangen!"
-
-
-
+    .autostring 34 2 "Diese goldenen Kakteen sind tückisch.\pMich hat ein Pokémon angegriffen, als ich dem Kaktus zu Nahe gekommen bin.\pJetzt werde ich es gegen dich einsetzen!"
 str_0x7446c2:
-    .string "Mein TuskaDOTS."
-
-
+    .autostring 34 2 "Autsch!\nPass doch auf, dieses Pokémon piekst!"
 .elseif LANG_EN
-
 .endif
 
-
 ow_script_map_3_21_trainer_5:
-trainerbattlestd 0x0 0x5f 0x0 str_0x74476a str_0x7453a9
-loadpointer 0x0 str_0x7453a9
-callstd MSG_FACE
-end
-
+    trainerbattlestd 0x0 0x5f 0x0 str_0x74476a str_0x7453a9
+    loadpointer 0x0 str_0x7453a9
+    callstd MSG_FACE
+    end
 
 .ifdef LANG_GER
-
 str_0x74476a:
-    .string "Meine kleine, rebellische Schwester\nist vor kurzem auch Trainer\lgeworden! DOTS Sie trainiert auf\lRoute 2!"
-
-
-
+    .autostring 34 2 "Das ist kein Ort für ein Mädchen, haben sie mir gesagt!\pDenen werde ich es zeigen!"
 str_0x7453a9:
-    .string "HmpfDOTS Ich dachte, ich hätte eine\nChance!"
-
-
+    .autostring 34 2 "Auszeit!\nIch habe Sand in meinen SchuhenDOTS\pDas krazt ganz übelDOTS"
 .elseif LANG_EN
 
 .endif
 
 
 ow_script_map_3_21_trainer_8:
-trainerbattlestd 0x0 0x62 0x0 str_0x81fc71 str_0x8ffccf
-loadpointer 0x0 str_0x8ffccf
-callstd MSG_FACE
-end
-
+    trainerbattlestd 0x0 0x62 0x0 str_0x81fc71 str_0x8ffccf
+    loadpointer 0x0 str_0x8ffccf
+    callstd MSG_FACE
+    end
 
 .ifdef LANG_GER
-
 str_0x81fc71:
-    .string "Ich hätte mir einen besseren Ort\nfür mein Picknick aussuchen\lkönnen."
-
-
-
+    .autostring 34 2 "Ein Picknick in der Wüste!\pKannst du dir etwas Besseres vorstellen?"
 str_0x8ffccf:
-    .string "Doch wer kann schon von sich\nbehaupten, in der Wüste ein\lPicknick veranstaltet zu haben?"
-
-
+    .autostring 34 2 "Na gut, vielleicht ist ein Wüstenpicknick nicht mein bester Einfall gewesenDOTS"
 .elseif LANG_EN
 
 .endif
 
 
 ow_script_map_3_21_trainer_6:
-trainerbattlestd 0x0 0x67 0x0 str_0x81fb0d str_0x81fb69
-loadpointer 0x0 str_0x81fb69
-callstd MSG_FACE
-end
+    trainerbattlestd 0x0 0x67 0x0 str_0x81fb0d str_0x81fb69
+    loadpointer 0x0 str_0x81fb69
+    callstd MSG_FACE
+    end
 
 
 .ifdef LANG_GER
-
 str_0x81fb0d:
-    .string "Diese Wüste ist die Hölle, ich hab\nso einen Durst!"
-
-
-
+    .autostring 34 2 "M-Mir ist so schwindlig!\pIch habe seit Stunden keinen Tropfen Wasser mehr getrunkenDOTS\pH-Hast du etwas gegen meinen Durst?"
 str_0x81fb69:
-    .string "WasserDOTS. Wasser!!"
-
-
+    .autostring 34 2 "O-OhDOTS\nS-So durstigDOTS"
 .elseif LANG_EN
 
 .endif
 
 
 ow_script_map_3_21_person_1:
-loadpointer 0x0 str_0x81fc05
-callstd MSG_FACE
-end
+    loadpointer 0x0 str_0x81fc05
+    callstd MSG_FACE
+    end
 
 
 .ifdef LANG_GER
 
 str_0x81fc05:
-    .string "Diese Wüste ist nichts für mein\nHerz. Die ständigen Täuschungen\lder Fata Morganas belasten mich zu\lsehrDOTS"
-
-
+    .autostring 34 2 "Ich weiß nicht, was mich geritten hat, in diese Wüste zu kommen.\pAus irgendeinem Grund habe ich mir eingebildet, das schaffen zu können.\pAber diese Hitze setzt einem Mann in meinem Alter ganz schön zuDOTS"
 .elseif LANG_EN
 
 .endif
@@ -261,9 +196,7 @@ end
 .ifdef LANG_GER
 
 str_0x86c9f0:
-    .string "Ich habe gehört, dass es in dieser\nWüste goldene Kakteen geben soll.\pSchüttelt man an ihnen, so soll\nman Pokémon antreffen können."
-
-
+    .autostring 34 2 "Diese Wüste ist voller Tücken.\pDie eigenen Augen spielen einem hier Streiche.\pMan denkt, einen Brunnen entdeckt zu habenDOTS\pUnd dann muss man feststellen, dass es bloß eine Fata Morgana war."
 .elseif LANG_EN
 
 .endif
@@ -278,8 +211,7 @@ end
 .ifdef LANG_GER
 
 str_0x8ffd29:
-    .string "Vor vielen Jahren herrschte in\ndieser Region ein schrecklicher\lKrieg.\lDrei engagierte Trainer aber\lbezwangen die Unruhen und riefen\ldie Pokémon-Liga und das System\lder Top Vier ins Leben."
-
+    .autostring 34 2 "Obwohl es nun doch schon einige Jahre zurückliegt, erinnern sich noch viele Trainer an die Gründung der Pokémon-Liga.\pDrei talentierte junge Trainer, die sich in den Kopf gesetzt hatten, diese Region zu erobern.\pHeute allerdingsDOTS\pNun, bloß einer von ihnen ist noch Teil der Pokémon-Liga.\pDu hast vielleicht schon vom Rosa Faun gehört?"
 
 .elseif LANG_EN
 
@@ -295,8 +227,7 @@ end
 .ifdef LANG_GER
 
 str_0x86c1ad:
-    .string "An Brunnen wie diesen können\nTrainer ihre erschöpften Pokémon\lheilen."
-
+    .autostring 34 2 "Nach all den Strapazen und falschen BrunnenDOTS\pEndlich habe ich einen echten Wasserbrunnen gefunden!"
 
 .elseif LANG_EN
 
@@ -313,71 +244,48 @@ end
 .ifdef LANG_GER
 
 str_0x90ff68:
-    .string "Ich habe gehört, dass sich\nirgendwo in dieser Wüste das\lGrabmal eines legendären Pokémon\lbefindet. Ob an diesen Geschichten\letwas dran ist?"
-
-
-
+    .autostring 34 2 "In dieser Wüste soll sich das Grabmal eines antiken Pokémon befinden.\pWenn ich diese Grotte finde, werde ich mir das Pokémon unter den Nagel reißen!"
 str_0x91ff1b:
-    .string "Ich würde gerne einemal einem\nlegendären Pokémon begegnen."
-
-
+    .autostring 34 2 "Na, du magst vielleicht gewonnen haben.\pAber das antike Pokémon wird jemand wie du ganz sicher nicht finden!"
 .elseif LANG_EN
-
 .endif
 
-
 ow_script_map_3_21_trainer_12:
-loadpointer 0x0 str_0x91ff57
-callstd MSG_FACE
-end
-
+    loadpointer 0x0 str_0x91ff57
+    callstd MSG_FACE
+    end
 
 .ifdef LANG_GER
-
 str_0x91ff57:
-    .string "Endlich! Nach tagelanger Suche\nhabe ich den Weg nach Kaskada\lwieder gefunden. Nur zögere ich,\lmich erneut in eine Höhle zu\lbegebenDOTS"
-
-
+    .autostring 34 2 "Der Weg von Kranzdorf nach Kaskada ist wirklich eine Kraftprobe.\pErst quält man sich durch eine finstere Höhle, dann schleppt man sich durch eine Wüste.\pUnd alles nur, um sich dann wieder vor einem Höhleneingang zu finden."
 .elseif LANG_EN
-
 .endif
 
 
 ow_script_map_3_21_trainer_9:
-loadpointer 0x0 str_0x86ca74
-callstd MSG_FACE
-end
-
+    loadpointer 0x0 str_0x86ca74
+    callstd MSG_FACE
+    end
 
 .ifdef LANG_GER
-
 str_0x86ca74:
-    .string "Verdammt, immer wenn ich dem\nBrunnen zu nahe komme,\lverschwindet er wieder!"
-
-
+    .autostring 34 2 "I-Immer wenn ich mich diesem Brunnen nähereDOTS\pVerschwindet er vor meinen Augen!\pWas für eine Frechheit!"
 .elseif LANG_EN
-
 .endif
 
 
 ow_script_map_3_21_trainer_14:
-trainerbattlestd 0x0 0x69 0x0 str_0x922d48 str_0x926a50
-loadpointer 0x0 str_0x926a50
-callstd MSG_FACE
-end
+    trainerbattlestd 0x0 0x69 0x0 str_0x922d48 str_0x926a50
+    loadpointer 0x0 str_0x926a50
+    callstd MSG_FACE
+    end
 
 
 .ifdef LANG_GER
-
 str_0x922d48:
-    .string "Mit meinen Psychokräften kann ich\ndie Täuschungen der Fata Morganas\lleicht bezwingen!"
-
-
-
+    .autostring 34 2 "Eine Fata Morgana kann mir nichts anhaben.\pIch habe meinen Geist jahrelang trainiert!\pAlso zeig mir, was du gegen die Tücken dieser Wüste ausrichten kannst!"
 str_0x926a50:
-    .string "Ich kann Traum von Wirklichkeit\nunterscheiden, aber den Kampf\lkonnte ich nicht gewinnen."
-
-
+    .autostring 34 2 "Denk' ja nicht, dass ich wegen eines verwirrten Geistes verloren hätteDOTS"
 .elseif LANG_EN
 
 .endif
@@ -392,32 +300,25 @@ end
 .ifdef LANG_GER
 
 str_0x926aaa:
-    .string "Interessant sind die goldenen\nKakteen in dieser Wüstenregion. In\lihnen leben manchmal Pokémon."
-
-
+    .autostring 34 2 "Ist es nicht wirklich herausragend, dass einige Pokémon in einer so lebensfeindlichen Region überleben können?"
 .elseif LANG_EN
 
 .endif
 
 
 ow_script_map_3_21_trainer_4:
-trainerbattlestd 0x0 0x6a 0x0 str_0x926c12 str_0x926c67
-loadpointer 0x0 str_0x926c67
-callstd MSG_FACE
-end
+    trainerbattlestd 0x0 0x6a 0x0 str_0x926c12 str_0x926c67
+    loadpointer 0x0 str_0x926c67
+    callstd MSG_FACE
+    end
 
 
 .ifdef LANG_GER
 
 str_0x926c12:
-    .string "Oh, ich verdurste hier noch in\ndieser trockenen Ödnis!"
-
-
-
+    .autostring 34 2 "Man muss hier auf jeden seiner Schritte aufpassen.\pIm Sand verstecken sich die tückischsten Pokémon.\pUnd in gewisser Weise bist auch du mir direkt in die Falle gegangen!"
 str_0x926c67:
-    .string "Wo, wo ist nur ein Brunnen!"
-
-
+    .autostring 34 2 "N-Na gut, du hast dich aus meiner Falle befreit, was?"
 .elseif LANG_EN
 
 .endif
@@ -429,6 +330,8 @@ ow_script_movs_0x91fece:
 
 
 ow_script_map_3_21_person_0:
+    end
+/*
 loadpointer 0 str_violet
 setvar 0x8000 0
 special 0xE
@@ -551,3 +454,4 @@ str_0x90fdef:
 .elseif LANG_EN
 
 .endif
+*/
