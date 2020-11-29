@@ -1209,7 +1209,7 @@
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_NORTH",
-					"displacement": 16,
+					"displacement": "5",
 					"bank": 1,
 					"field_A": 0,
 					"field_B": 0,
@@ -1217,7 +1217,7 @@
 				},
 				{
 					"direction": "MAP_CONNECTION_SOUTH",
-					"displacement": 8,
+					"displacement": "14",
 					"bank": 3,
 					"field_A": 0,
 					"field_B": 0,

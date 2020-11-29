@@ -46,7 +46,7 @@
 			"signposts": [
 				{
 					"x": "6",
-					"y": "3",
+					"y": "4",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"flag": 0,

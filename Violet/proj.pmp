@@ -1947,7 +1947,8 @@
 		"maptileset_ceometria_additional_blocks": "src/map/tileset/maptileset_ceometria_additional_blocks.pms",
 		"maptileset_clouds": "src/map/tileset/maptileset_clouds.pms",
 		"maptileset_cave": "src/map/tileset/maptileset_cave.pms",
-		"maptileset0_aktania": "src/map/tileset/maptileset0_aktania.pms"
+		"maptileset0_aktania": "src/map/tileset/maptileset0_aktania.pms",
+		"maptileset0_kaskada": "src/map/tileset/maptileset0_kaskada.pms"
 	},
 	"tilesets_secondary": {
 		"maptileset45": "src/map/tileset/maptileset45.pms",
