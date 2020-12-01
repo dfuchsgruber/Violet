@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_117",
 		"events": {
-			"person_cnt": 56,
+			"person_cnt": 63,
 			"warp_cnt": 21,
 			"trigger_cnt": 4,
 			"signpost_cnt": 9,
@@ -503,27 +503,27 @@
 				},
 				{
 					"target_index": 20,
-					"picture": 0,
+					"picture": "238",
 					"field_2": 0,
-					"field_3": 0,
-					"x": 0,
-					"y": 59,
+					"field_3": "20",
+					"x": "30",
+					"y": "8",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour": "BEHAVIOUR_WALK_RIGHT_AND_LEFT",
 					"behaviour_range": {
-						"x": "0",
+						"x": "4",
 						"y": "0"
 					},
-					"is_trainer": "0",
-					"alert_radius": 0,
+					"is_trainer": "1",
+					"alert_radius": "4",
 					"script": "0",
-					"flag": "0x0",
+					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_KNILZ",
 						"berry_tree_idx": 0
 					}
 				},
@@ -1421,6 +1421,174 @@
 					"value": {
 						"item": 0,
 						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "57",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "38",
+					"y": "42",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_TANNZA",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "58",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "42",
+					"y": "35",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_TENTANTEL",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "59",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "13",
+					"y": "33",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_PUDOX",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "60",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "67",
+					"y": "43",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_SCHALOKO",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "61",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "25",
+					"y": "77",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_DUFLOR",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "62",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "73",
+					"y": "16",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_WAUMPEL",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "63",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "8",
+					"y": "12",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_BLANAS",
 						"berry_tree_idx": 0
 					}
 				}

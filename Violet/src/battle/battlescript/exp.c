@@ -35,7 +35,7 @@ void bsc_cmd_x23_adjust_exp_and_print_string(u16 boosted_string_idx) {
     factor = FIXED_MUL(factor, FIXED_MUL(factor, sqrt_factor));
     dprintf("Adjustment factor with exponentiation is (<<16) 0x%x\n", factor);
     FIXED exp_fixed = INT_TO_FIXED(MIN(10000, damage_to_apply)); // avoid overflow
-    damage_to_apply = MIN(0xFFFF, FIXED_TO_INT(FIXED_MUL(factor, exp_fixed)));
+    damage_to_apply = MAX(1, MIN(0xFFFF, FIXED_TO_INT(FIXED_MUL(factor, exp_fixed))));
     dprintf("Exp to give party idx %d after level adjustment %d\n", battle_state->exp_getter_idx, damage_to_apply);
     BSC_BUFFER_BATTLER_NICKNAME_WITH_PREFIX(bsc_string_buffer0, battle_state->experience_getter_battler_idx, battle_state->exp_getter_idx);
     BSC_BUFFER_STRING(bsc_string_buffer1, boosted_string_idx);

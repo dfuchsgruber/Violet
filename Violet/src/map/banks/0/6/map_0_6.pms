@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_392",
 		"events": {
-			"person_cnt": 19,
+			"person_cnt": 33,
 			"warp_cnt": 8,
 			"trigger_cnt": 2,
 			"signpost_cnt": 1,
@@ -452,38 +452,38 @@
 				{
 					"is_trainer": "0",
 					"script": "0",
-					"y": "0",
+					"y": "4",
 					"target_index": 18,
 					"field_3": 0,
-					"picture": 69,
-					"flag": "FLAG_FELIX_AND_BLAISE_FELSIDE_ODENIS",
-					"x": "48",
+					"picture": "238",
+					"flag": "0",
+					"x": "3",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_STOLLUNIOR",
 						"berry_tree_idx": 0
 					}
 				},
 				{
 					"target_index": "19",
-					"picture": "89",
-					"script_std": 0,
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "49",
-					"y": "0",
+					"x": "40",
+					"y": "5",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -493,10 +493,346 @@
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": 0,
-					"flag": "FLAG_FELIX_AND_BLAISE_FELSIDE_ODENIS",
+					"flag": "0",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_ZOBIRIS",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "20",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "18",
+					"y": "18",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MACHOLLO",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "21",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "25",
+					"y": "11",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_ZUBAT",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "22",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "3",
+					"y": "18",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_NASGNET",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "23",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "3",
+					"y": "30",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_ZUBAT",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "24",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "11",
+					"y": "41",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_GEOROK",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "25",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "13",
+					"y": "33",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_SANDAMER",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "26",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "27",
+					"y": "33",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_DIGDRI",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "27",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "42",
+					"y": "11",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_STOLLUNIOR",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "28",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "32",
+					"y": "46",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_GOLBAT",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "29",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "46",
+					"y": "30",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_STOLLRAK",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "30",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "16",
+					"y": "7",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MASCHOCK",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "31",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "20",
+					"y": "0",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_STOLLRAK",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "32",
+					"picture": "238",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
+					"field_3": "29",
+					"x": "30",
+					"y": "33",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP_AND_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "3",
+					"script": 0,
+					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_25_PERCENT",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_ZOBIRIS",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "33",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "14",
+					"y": "52",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_STOLLUNIOR",
 						"berry_tree_idx": 0
 					}
 				}

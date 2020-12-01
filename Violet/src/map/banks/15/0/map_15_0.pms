@@ -1049,13 +1049,13 @@
 				},
 				{
 					"target_index": "41",
-					"picture": 60,
+					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "0",
-					"y": "62",
+					"x": "45",
+					"y": "5",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -1063,25 +1063,25 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
-					"flag": "PKMNMENU",
+					"flag": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_WABLU",
 						"berry_tree_idx": 0
 					}
 				},
 				{
 					"target_index": "42",
-					"picture": 60,
+					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "0",
-					"y": "60",
+					"x": "49",
+					"y": "7",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -1089,51 +1089,51 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
-					"flag": "PKMNMENU",
+					"flag": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_WABLU",
 						"berry_tree_idx": 0
 					}
 				},
 				{
 					"target_index": "43",
-					"picture": "0",
+					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "6",
-					"y": "1",
+					"x": "51",
+					"y": "8",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_test",
+					"script": "0",
 					"flag": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_WABLU",
 						"berry_tree_idx": 0
 					}
 				},
 				{
 					"target_index": "44",
-					"picture": 60,
+					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "0",
-					"y": "61",
+					"x": "20",
+					"y": "6",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -1141,25 +1141,25 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
-					"flag": "PKMNMENU",
+					"flag": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_MYRAPLA",
 						"berry_tree_idx": 0
 					}
 				},
 				{
-					"target_index": "45",
-					"picture": "70",
+					"target_index": "46",
+					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "0",
-					"y": "63",
+					"x": "39",
+					"y": "12",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -1167,13 +1167,13 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
-					"flag": "PKMNMENU",
+					"flag": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_WABLU",
 						"berry_tree_idx": 0
 					}
 				},
@@ -1510,10 +1510,10 @@
 					"picture": "238",
 					"script_std": "PERSON_AGGRESSIVE_POKEMON",
 					"field_3": "18",
-					"x": "18",
-					"y": "45",
+					"x": "9",
+					"y": "52",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0

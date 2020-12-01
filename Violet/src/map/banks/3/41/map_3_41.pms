@@ -1101,27 +1101,27 @@
 				},
 				{
 					"target_index": "43",
-					"picture": 66,
+					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "3",
-					"y": "86",
+					"x": "47",
+					"y": "34",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_41_trainer_19",
-					"flag": "ROUTE_2_ALBUS",
+					"script": "0",
+					"flag": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_FIFFYEN",
 						"berry_tree_idx": 0
 					}
 				},
@@ -1179,11 +1179,11 @@
 				},
 				{
 					"target_index": "46",
-					"picture": 78,
+					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "3",
-					"y": "84",
+					"x": "9",
+					"y": "39",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -1192,14 +1192,14 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_41_trainer_22",
-					"flag": "ROUTE_2_ALBUS",
+					"script": "0",
+					"flag": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_KIRLIA",
 						"berry_tree_idx": 0
 					}
 				},
