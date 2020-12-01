@@ -2,34 +2,34 @@
 	"data": {
 		"footer": "map_footer_91",
 		"events": {
-			"person_cnt": 34,
+			"person_cnt": 49,
 			"warp_cnt": 7,
 			"trigger_cnt": 4,
 			"signpost_cnt": 22,
 			"persons": [
 				{
 					"target_index": 1,
-					"picture": 50,
+					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "1",
-					"y": "81",
+					"x": "4",
+					"y": "70",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_21_person_0",
-					"flag": "FELSIGE_ODNIS_OPTIONAL_VIOLET_GRUNT",
+					"script": "0",
+					"flag": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_KLEINSTEIN",
 						"berry_tree_idx": 0
 					}
 				},
@@ -246,8 +246,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 57,
-					"y": 13,
+					"x": "59",
+					"y": "16",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -425,27 +425,27 @@
 				},
 				{
 					"target_index": "17",
-					"picture": 18,
+					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "0",
-					"y": "81",
+					"x": "49",
+					"y": "77",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"is_trainer": "1",
-					"alert_radius": "5",
+					"is_trainer": "0",
+					"alert_radius": "0",
 					"script": "0",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_VIBRAVA",
 						"berry_tree_idx": 0
 					}
 				},
@@ -584,8 +584,8 @@
 					"picture": 39,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 67,
-					"y": 21,
+					"x": "68",
+					"y": "19",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -786,13 +786,13 @@
 				},
 				{
 					"target_index": "31",
-					"picture": "101",
-					"script_std": "PERSON_SCRIPT",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "0",
+					"x": "26",
 					"y": "1",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -801,10 +801,10 @@
 					"is_trainer": 0,
 					"alert_radius": 0,
 					"script": 0,
-					"flag": "FLAG_FELSIGE_ODENIS_EGG_1",
+					"flag": "0",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_KAUMALAT",
+						"species": "POKEMON_KNACKLION",
 						"berry_tree_idx": 0
 					}
 				},
@@ -879,6 +879,366 @@
 						"species": "POKEMON_DIGDRI",
 						"berry_tree_idx": 0
 					}
+				},
+				{
+					"target_index": "35",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "9",
+					"y": "17",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_DIGDA",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "36",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "15",
+					"y": "39",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_NOKTUSKA",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "37",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "6",
+					"y": "58",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_SANDAN",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "38",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "25",
+					"y": "37",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_DIGDA",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "39",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "11",
+					"y": "68",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_PUPPANCE",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "40",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "46",
+					"y": "45",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_SANDAMER",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "41",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "4",
+					"y": "7",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_LEPUMENTAS",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "42",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "14",
+					"y": "3",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MASCHOCK",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "43",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "44",
+					"y": "9",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_PUPPANCE",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "44",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "60",
+					"y": "9",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_DIGDA",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "45",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "72",
+					"y": "13",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_NASGNET",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "46",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "61",
+					"y": "78",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_PUPPANCE",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "47",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "80",
+					"y": "28",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_NOKTUSKA",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "48",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "76",
+					"y": "64",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_SANDAN",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "49",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "33",
+					"y": "74",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KNACKLION",
+						"berry_tree_idx": 0
+					}
 				}
 			],
 			"warps": [
@@ -891,8 +1251,8 @@
 					"target_warp_idx": 5
 				},
 				{
-					"x": 66,
-					"y": 16,
+					"x": "67",
+					"y": "8",
 					"level": 0,
 					"target_bank": 3,
 					"target_map": 67,
