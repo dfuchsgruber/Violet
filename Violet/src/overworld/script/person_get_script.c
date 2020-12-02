@@ -48,7 +48,7 @@ void battle_initialize_misc_ecounter() {
 
 u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank) {
 	map_event_person *p = map_get_person(target_idx, map_id, bank);
-	dprintf("Get script of person idx %d at %d.%d. Person offset is 0x%x\n", target_idx, bank, map_id, p);
+	// dprintf("Get script of person idx %d at %d.%d. Person offset is 0x%x\n", target_idx, bank, map_id, p);
 	switch(p->script_std) {
 	case PERSON_ITEM:
 		*var_access(0x8000) = p->value;
