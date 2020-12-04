@@ -899,6 +899,11 @@
 				"map_tafelberg_outside",
 				"src/map/banks/22/4/map_tafelberg_outside.pms",
 				"MAP_FELSIGE_OEDNIS"
+			],
+			"5": [
+				"map_tafelberg_lower",
+				"src/map/banks/22/5/map_tafelberg_lower.pms",
+				"MAP_FELSIGE_OEDNIS"
 			]
 		},
 		"23": {
@@ -1948,6 +1953,10 @@
 		"map_footer_tafelberg_outside": [
 			127,
 			"src/map/banks/22/4/map_footer_tafelberg_outside.pms"
+		],
+		"map_footer_tafelberg_lower": [
+			128,
+			"src/map/banks/22/5/map_footer_tafelberg_lower.pms"
 		]
 	},
 	"tilesets_primary": {

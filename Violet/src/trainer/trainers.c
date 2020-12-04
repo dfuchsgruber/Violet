@@ -6764,6 +6764,56 @@ trainer trainers[TRAINER_CNT] = {
         .party = (trainer_pokemon*) trainer_party_x1aa_felsige_oednis_cave_trainer_4,
         .uses_custom_items = true,
     },
+    [0x1AB] = {
+        .trainerclass = TRAINERCLASS_KAEFERMANIAC, .sprite = 20,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Jeremias"),
+            PSTRING("Jeremy")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1ab_tafelberg_lower_trainer_0),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1ab_tafelberg_lower_trainer_0,
+    },
+    [0x1AC] = {
+        .trainerclass = TRAINERCLASS_WANDERER, .sprite = 0x5c,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Horst"),
+            PSTRING("Horst")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1ac_tafelberg_lower_trainer_1),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1ac_tafelberg_lower_trainer_1,
+    },
+    [0x1AD] = {
+        .trainerclass = TRAINERCLASS_VOGELFAENGER, .sprite = 0x2e,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Eduard"),
+            PSTRING("Eduard")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1ad_tafelberg_lower_trainer_2),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1ad_tafelberg_lower_trainer_2,
+    },
+    [0x1AE] = {
+        .trainerclass = TRAINERCLASS_PKMN_RANGER, .sprite = 0x3d,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Bert"),
+            PSTRING("Bert")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1ae_tafelberg_lower_trainer_3),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1ae_tafelberg_lower_trainer_3,
+        .items = {ITEM_SUPERTRANK, ITEM_APFEL},
+    },
+    [0x1AF] = {
+        .trainerclass = TRAINERCLASS_FORSCHER, .sprite = 107,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Helge"),
+            PSTRING("Helge")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1af_tafelberg_lower_trainer_4),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1af_tafelberg_lower_trainer_4,
+    },
+    [0x1B0] = {
+        .trainerclass = TRAINERCLASS_GOERE, .sprite = 0x41,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Yvette"),
+            PSTRING("Yvette")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1b0_tafelberg_lower_trainer_5),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1b0_tafelberg_lower_trainer_5,
+    },
+    [0x1B1] = {
+        .trainerclass = TRAINERCLASS_JUNGES_GLUECK, .sprite = 68,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Nils u. Eva"),
+            PSTRING("Nils u. Eve")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1b1_tafelberg_lower_trainer_6),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1b1_tafelberg_lower_trainer_6,
+    },
 
 
 

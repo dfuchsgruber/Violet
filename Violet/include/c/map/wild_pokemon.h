@@ -298,5 +298,9 @@ wild_pokemon_habitat wild_pokemon_ardeal_dungeon_grass;
 wild_pokemon_habitat wild_pokemon_dark_tower;
 wild_pokemon_habitat wild_pokemon_route_2_cave_water;
 wild_pokemon_habitat wild_pokemon_route_2_cave_rod;
+wild_pokemon_habitat wild_pokemon_tafelberg_south_grass;
+wild_pokemon_habitat wild_pokemon_tafelberg_south_other;
+wild_pokemon_habitat wild_pokemon_tafelberg_south_water;
+wild_pokemon_habitat wild_pokemon_tafelberg_south_rod;
 
 #endif /* INCLUDE_C_MAP_WILD_POKEMON_H_ */
