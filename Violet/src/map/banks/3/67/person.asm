@@ -13,9 +13,7 @@ end
 .ifdef LANG_GER
 
 str_0x8c7d9c:
-    .string "Ich kann es nicht fassen, dass ich\nnach dem langen und aufreibenden\lMarsch durch die Wüste noch immer\lnicht in Kaskada angekommen bin!"
-
-
+    .autostring 34 2 "Ich wollte doch nur nach Kaskada wandernDOTS\pAber die Felsige Ödnis ist die reinste Hölle.\pWüsten, HöhlenDOTS\pWas kommt als nächstes?"
 .elseif LANG_EN
 
 .endif
