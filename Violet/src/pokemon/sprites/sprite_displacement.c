@@ -518,7 +518,7 @@ u32 pokemon_player_y[POKEMON_CNT] = {
     0,
     // POKEMON_DURENGARDA
     0x88,
-    // POKEMON_IN
+    // POKEMON_MEGA_SANDAMER
     0x188,
     // POKEMON_GAME
     0x88,

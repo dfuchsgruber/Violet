@@ -440,12 +440,12 @@
 					}
 				},
 				{
-					"target_index": 0,
+					"target_index": "19",
 					"picture": 0,
 					"script_std": 0,
 					"field_3": 0,
-					"x": 0,
-					"y": 0,
+					"x": "39",
+					"y": "51",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -455,7 +455,7 @@
 					"field_B": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": 0,
+					"script": "ow_script_test",
 					"flag": 0,
 					"value": {
 						"item": 0,

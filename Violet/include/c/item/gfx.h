@@ -490,8 +490,8 @@ extern const u8 gfx_item_octillerynitTiles[];
 extern const u8 gfx_item_octillerynitPal[];
 extern const u8 gfx_item_rasaffnitTiles[];
 extern const u8 gfx_item_rasaffnitPal[];
-extern const u8 gfx_item_item_f3Tiles[];
-extern const u8 gfx_item_item_f3Pal[];
+extern const u8 gfx_item_sandamernitTiles[];
+extern const u8 gfx_item_sandamernitPal[];
 extern const u8 gfx_item_item_f4Tiles[];
 extern const u8 gfx_item_item_f4Pal[];
 extern const u8 gfx_item_item_f5Tiles[];
@@ -822,5 +822,7 @@ extern const u8 gfx_item_gewitter_eiTiles[];
 extern const u8 gfx_item_gewitter_eiPal[];
 extern const u8 gfx_item_tundra_eiTiles[];
 extern const u8 gfx_item_tundra_eiPal[];
+extern const u8 gfx_item_sandamernitTiles[];
+extern const u8 gfx_item_sandamernitPal[];
 
 #endif
