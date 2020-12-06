@@ -36,6 +36,11 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	clearflag PLAYER_ABLE_TO_MEGA_EVOLVE
+	end
+	setflag PLAYER_ABLE_TO_MEGA_EVOLVE
+	givepokemon POKEMON_SANDAMER 20 ITEM_SANDAMERNIT 0 0 0
+	end
 	fadescreen 1
 	setvar 0x8004 0xe
 	setvar 0x8005 0x9

@@ -262,7 +262,7 @@
     gfx_pkmn_rotom_fan_iconTiles,
     gfx_pkmn_rotom_mow_iconTiles,
     gfx_pkmn_species_257_pokemon_durengarda_iconTiles,
-    gfx_pkmn_species_258_pokemon_in_iconTiles,
+    gfx_pkmn_mega_sandamer_iconTiles,
     gfx_pkmn_species_259_pokemon_game_iconTiles,
     gfx_pkmn_species_260_pokemon_turtokm_iconTiles,
     gfx_pkmn_species_261_pokemon_ampharaosm_iconTiles,
@@ -966,8 +966,8 @@ u8 pokemon_icon_usage[POKEMON_CNT] = {
     0x0,
     // POKEMON_DURENGARD_OFFENSIVE
     0x2,
-    // POKEMON_IN
-    0x1,
+    // POKEMONmega_sandamer_
+    0x2,
     // POKEMON_GAME
     0x2,
     // POKEMON_TURTOKM

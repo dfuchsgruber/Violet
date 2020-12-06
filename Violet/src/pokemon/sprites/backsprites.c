@@ -263,7 +263,7 @@ graphic pokemon_backsprites[POKEMON_CNT] = {
     {gfx_pkmn_rotom_fan_backspriteTiles, 0x800, 255},
     {gfx_pkmn_rotom_mow_backspriteTiles, 0x800, 256},
     {gfx_pkmn_species_257_pokemon_durengarda_backspriteTiles, 0x800, 257},
-    {gfx_pkmn_species_258_pokemon_in_backspriteTiles, 0x800, 258},
+    {gfx_pkmn_mega_sandamer_backspriteTiles, 0x800, 258},
     {gfx_pkmn_species_259_pokemon_game_backspriteTiles, 0x800, 259},
     {gfx_pkmn_species_260_pokemon_turtokm_backspriteTiles, 0x800, 260},
     {gfx_pkmn_species_261_pokemon_ampharaosm_backspriteTiles, 0x800, 261},

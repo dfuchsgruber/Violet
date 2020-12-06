@@ -1295,7 +1295,7 @@ pokemon_cry pokemon_cries_backward [POKEMON_CNT] = {
     // POKEMON_IN
     {
         {0x30, 0x3c, 0x0, 0x0}
-, (void*) 0x85dc8b8, {
+, (void*) 0x85289e4, {
             0xff, 0x0, 0xff, 0x0}},
     // POKEMON_GAME
     {
