@@ -1,7 +1,17 @@
 #include "types.h"
 #include "worldmap.h"
 
-static worldmap_position_t worldmap_positions_bank_0[] = {
+// Make the arrays fixed size to validate for tools/index/worldmap.py during debugging.
+// For space efficiency this can be omitted later I
+#define VALIDATION true
+
+#if VALIDATION
+#define SIZE [256]
+#else
+#define SIZE []
+#endif
+
+static worldmap_position_t worldmap_positions_bank_0 SIZE = {
 	[7] = {.x = 20, .y = 5, .width = 1, .height = 1},
 	[12] = {.x = 0, .y = 0, .width = 1, .height = 1},
 	[5] = {.x = 19, .y = 5, .width = 1, .height = 1},
@@ -9,7 +19,7 @@ static worldmap_position_t worldmap_positions_bank_0[] = {
 	[13] = {.x = 0, .y = 0, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_1[] = {
+static worldmap_position_t worldmap_positions_bank_1 SIZE = {
 	[0] = {.x = 18, .y = 4, .width = 1, .height = 1},
 	[81] = {.x = 0, .y = 0, .width = 1, .height = 1},
 	[82] = {.x = 0, .y = 0, .width = 1, .height = 1},
@@ -22,7 +32,7 @@ static worldmap_position_t worldmap_positions_bank_1[] = {
 	[2] = {.x = 18, .y = 4, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_3[] = {
+static worldmap_position_t worldmap_positions_bank_3 SIZE = {
 	[0] = {.x = 21, .y = 11, .width = 1, .height = 1},
 	[1] = {.x = 21, .y = 8, .width = 1, .height = 1},
 	[2] = {.x = 21, .y = 0, .width = 1, .height = 1},
@@ -59,7 +69,7 @@ static worldmap_position_t worldmap_positions_bank_3[] = {
 	[18] = {.x = 13, .y = 9, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_4[] = {
+static worldmap_position_t worldmap_positions_bank_4 SIZE = {
 	[0] = {.x = 21, .y = 11, .width = 1, .height = 1},
 	[1] = {.x = 21, .y = 11, .width = 1, .height = 1},
 	[2] = {.x = 21, .y = 11, .width = 1, .height = 1},
@@ -68,7 +78,7 @@ static worldmap_position_t worldmap_positions_bank_4[] = {
 	[5] = {.x = 21, .y = 11, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_5[] = {
+static worldmap_position_t worldmap_positions_bank_5 SIZE = {
 	[0] = {.x = 21, .y = 8, .width = 1, .height = 1},
 	[2] = {.x = 21, .y = 8, .width = 1, .height = 1},
 	[4] = {.x = 21, .y = 8, .width = 1, .height = 1},
@@ -78,7 +88,7 @@ static worldmap_position_t worldmap_positions_bank_5[] = {
 	[1] = {.x = 21, .y = 8, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_6[] = {
+static worldmap_position_t worldmap_positions_bank_6 SIZE = {
 	[0] = {.x = 21, .y = 0, .width = 1, .height = 1},
 	[1] = {.x = 21, .y = 0, .width = 1, .height = 1},
 	[2] = {.x = 21, .y = 0, .width = 1, .height = 1},
@@ -91,9 +101,12 @@ static worldmap_position_t worldmap_positions_bank_6[] = {
 	[4] = {.x = 21, .y = 0, .width = 1, .height = 1},
 	[6] = {.x = 21, .y = 0, .width = 1, .height = 1},
 	[7] = {.x = 21, .y = 0, .width = 1, .height = 1},
+	[8] = {.x = 21, .y = 0, .width = 1, .height = 1},
+	[10] = {.x = 21, .y = 0, .width = 1, .height = 1},
+	[11] = {.x = 21, .y = 0, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_7[] = {
+static worldmap_position_t worldmap_positions_bank_7 SIZE = {
 	[1] = {.x = 18, .y = 5, .width = 1, .height = 1},
 	[2] = {.x = 18, .y = 5, .width = 1, .height = 1},
 	[3] = {.x = 18, .y = 5, .width = 1, .height = 1},
@@ -103,7 +116,7 @@ static worldmap_position_t worldmap_positions_bank_7[] = {
 	[0] = {.x = 18, .y = 5, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_8[] = {
+static worldmap_position_t worldmap_positions_bank_8 SIZE = {
 	[0] = {.x = 21, .y = 5, .width = 1, .height = 1},
 	[2] = {.x = 21, .y = 5, .width = 1, .height = 1},
 	[4] = {.x = 21, .y = 5, .width = 1, .height = 1},
@@ -116,7 +129,7 @@ static worldmap_position_t worldmap_positions_bank_8[] = {
 	[1] = {.x = 21, .y = 5, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_9[] = {
+static worldmap_position_t worldmap_positions_bank_9 SIZE = {
 	[1] = {.x = 15, .y = 6, .width = 1, .height = 1},
 	[3] = {.x = 15, .y = 6, .width = 1, .height = 1},
 	[4] = {.x = 15, .y = 6, .width = 1, .height = 1},
@@ -135,7 +148,7 @@ static worldmap_position_t worldmap_positions_bank_9[] = {
 	[2] = {.x = 15, .y = 6, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_10[] = {
+static worldmap_position_t worldmap_positions_bank_10 SIZE = {
 	[16] = {.x = 11, .y = 6, .width = 1, .height = 1},
 	[12] = {.x = 11, .y = 6, .width = 1, .height = 1},
 	[20] = {.x = 11, .y = 6, .width = 1, .height = 1},
@@ -145,7 +158,7 @@ static worldmap_position_t worldmap_positions_bank_10[] = {
 	[2] = {.x = 11, .y = 6, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_15[] = {
+static worldmap_position_t worldmap_positions_bank_15 SIZE = {
 	[0] = {.x = 17, .y = 5, .width = 1, .height = 1},
 	[1] = {.x = 17, .y = 5, .width = 1, .height = 1},
 	[4] = {.x = 17, .y = 5, .width = 1, .height = 1},
@@ -153,36 +166,38 @@ static worldmap_position_t worldmap_positions_bank_15[] = {
 	[2] = {.x = 17, .y = 5, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_16[] = {
+static worldmap_position_t worldmap_positions_bank_16 SIZE = {
 	[3] = {.x = 21, .y = 7, .width = 1, .height = 1},
 	[4] = {.x = 21, .y = 6, .width = 1, .height = 1},
 	[0] = {.x = 21, .y = 6, .width = 1, .height = 2},
 };
 
-static worldmap_position_t worldmap_positions_bank_17[] = {
+static worldmap_position_t worldmap_positions_bank_17 SIZE = {
 	[2] = {.x = 16, .y = 6, .width = 1, .height = 1},
 	[3] = {.x = 16, .y = 6, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_18[] = {
+static worldmap_position_t worldmap_positions_bank_18 SIZE = {
 	[2] = {.x = 14, .y = 6, .width = 1, .height = 1},
 	[3] = {.x = 12, .y = 6, .width = 2, .height = 1},
 	[0] = {.x = 12, .y = 6, .width = 3, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_2[] = {
+static worldmap_position_t worldmap_positions_bank_2 SIZE = {
 	[33] = {.x = 0, .y = 0, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_11[] = {
+static worldmap_position_t worldmap_positions_bank_11 SIZE = {
 	[0] = {.x = 20, .y = 6, .width = 1, .height = 1},
 	[1] = {.x = 20, .y = 8, .width = 1, .height = 1},
 	[2] = {.x = 17, .y = 8, .width = 4, .height = 1},
 	[3] = {.x = 17, .y = 6, .width = 1, .height = 2},
 	[4] = {.x = 17, .y = 6, .width = 1, .height = 1},
+	[5] = {.x = 17, .y = 8, .width = 1, .height = 1},
+	[6] = {.x = 18, .y = 8, .width = 2, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_12[] = {
+static worldmap_position_t worldmap_positions_bank_12 SIZE = {
 	[0] = {.x = 18, .y = 2, .width = 1, .height = 1},
 	[1] = {.x = 18, .y = 2, .width = 1, .height = 1},
 	[2] = {.x = 18, .y = 2, .width = 1, .height = 1},
@@ -193,7 +208,7 @@ static worldmap_position_t worldmap_positions_bank_12[] = {
 	[7] = {.x = 18, .y = 2, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_13[] = {
+static worldmap_position_t worldmap_positions_bank_13 SIZE = {
 	[0] = {.x = 19, .y = 0, .width = 2, .height = 1},
 	[1] = {.x = 20, .y = 0, .width = 1, .height = 1},
 	[2] = {.x = 19, .y = 0, .width = 1, .height = 1},
@@ -202,11 +217,11 @@ static worldmap_position_t worldmap_positions_bank_13[] = {
 	[5] = {.x = 19, .y = 0, .width = 2, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_14[] = {
+static worldmap_position_t worldmap_positions_bank_14 SIZE = {
 	[0] = {.x = 21, .y = 1, .width = 1, .height = 3},
 };
 
-static worldmap_position_t worldmap_positions_bank_19[] = {
+static worldmap_position_t worldmap_positions_bank_19 SIZE = {
 	[0] = {.x = 17, .y = 11, .width = 1, .height = 1},
 	[1] = {.x = 17, .y = 11, .width = 1, .height = 1},
 	[2] = {.x = 17, .y = 11, .width = 1, .height = 1},
@@ -217,48 +232,49 @@ static worldmap_position_t worldmap_positions_bank_19[] = {
 	[7] = {.x = 17, .y = 11, .width = 1, .height = 1},
 	[8] = {.x = 17, .y = 11, .width = 1, .height = 1},
 	[9] = {.x = 17, .y = 11, .width = 1, .height = 1},
+	[10] = {.x = 17, .y = 11, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_20[] = {
+static worldmap_position_t worldmap_positions_bank_20 SIZE = {
 	[0] = {.x = 18, .y = 11, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_21[] = {
+static worldmap_position_t worldmap_positions_bank_21 SIZE = {
 	[0] = {.x = 0, .y = 0, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_22[] = {
+static worldmap_position_t worldmap_positions_bank_22 SIZE = {
 	[0] = {.x = 20, .y = 5, .width = 1, .height = 1},
 	[1] = {.x = 19, .y = 5, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_23[] = {
+static worldmap_position_t worldmap_positions_bank_23 SIZE = {
 	[0] = {.x = 18, .y = 3, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_24[] = {
+static worldmap_position_t worldmap_positions_bank_24 SIZE = {
 	[0] = {.x = 21, .y = 4, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_25[] = {
+static worldmap_position_t worldmap_positions_bank_25 SIZE = {
 	[0] = {.x = 17, .y = 9, .width = 1, .height = 3},
 };
 
-static worldmap_position_t worldmap_positions_bank_26[] = {
+static worldmap_position_t worldmap_positions_bank_26 SIZE = {
 	[0] = {.x = 16, .y = 11, .width = 1, .height = 1},
 	[1] = {.x = 14, .y = 11, .width = 2, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_27[] = {
+static worldmap_position_t worldmap_positions_bank_27 SIZE = {
 	[0] = {.x = 13, .y = 11, .width = 1, .height = 1},
 	[1] = {.x = 13, .y = 11, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_28[] = {
+static worldmap_position_t worldmap_positions_bank_28 SIZE = {
 	[0] = {.x = 0x14, .y = 5, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_29[] = {
+static worldmap_position_t worldmap_positions_bank_29 SIZE = {
 	[0] = {.x = 13, .y = 11, .width = 1, .height = 1},
 	[1] = {.x = 13, .y = 10, .width = 1, .height = 1},
 	[2] = {.x = 13, .y = 8, .width = 1, .height = 1},
@@ -267,7 +283,7 @@ static worldmap_position_t worldmap_positions_bank_29[] = {
 	[5] = {.x = 13, .y = 11, .width = 1, .height = 1},
 };
 
-static worldmap_position_t worldmap_positions_bank_31[] = {
+static worldmap_position_t worldmap_positions_bank_31 SIZE = {
 	[0] = {.x = 13, .y = 8, .width = 1, .height = 1},
 };
 

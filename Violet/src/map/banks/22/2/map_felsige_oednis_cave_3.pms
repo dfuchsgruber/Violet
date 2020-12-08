@@ -74,7 +74,7 @@
 					"script": 0,
 					"flag": "FLAG_FELSIGE_OEDNIS_ITEM_21",
 					"value": {
-						"item": "ITEM_SCHUETZER",
+						"item": "ITEM_SANDAMERNIT",
 						"species": "0",
 						"berry_tree_idx": 0
 					}

@@ -2,7 +2,7 @@
 	"headers": {
 		"0": {
 			"7": [
-				"map_0_7",
+				"map_felsige_oednis_lapis_cave",
 				"src/map/banks/0/7/map_0_7.pms",
 				"MAP_FELSIGE_OEDNIS"
 			],
@@ -12,12 +12,12 @@
 				"MAP_VULCANO"
 			],
 			"5": [
-				"map_0_5",
+				"map_felsige_oednis_cave_west_upper",
 				"src/map/banks/0/5/map_0_5.pms",
 				"MAP_FELSIGE_OEDNIS"
 			],
 			"6": [
-				"map_0_6",
+				"map_felsige_oednis_cave_west_lower",
 				"src/map/banks/0/6/map_0_6.pms",
 				"MAP_FELSIGE_OEDNIS"
 			],
@@ -96,9 +96,9 @@
 				"MAP_AKTANIA"
 			],
 			"67": [
-				"map_3_67",
+				"map_felsige_oednis_east_caves",
 				"src/map/banks/3/67/map_3_67.pms",
-				"MAP_FELSIGE_OEDNIS"
+				"MAP_KUESTENBERG"
 			],
 			"4": [
 				"map_3_4",
@@ -126,7 +126,7 @@
 				"MAP_AKTANIA"
 			],
 			"74": [
-				"map_3_74",
+				"map_felsige_oednis_west",
 				"src/map/banks/3/74/map_3_74.pms",
 				"MAP_FELSIGE_OEDNIS"
 			],
@@ -151,7 +151,7 @@
 				"MAP_SILVANIA"
 			],
 			"21": [
-				"map_3_21",
+				"map_felsige_oednis_desert",
 				"src/map/banks/3/21/map_3_21.pms",
 				"MAP_FELSIGE_OEDNIS"
 			],

@@ -175,9 +175,17 @@ cloud_maps_list_type = agb.types.UnboundedArrayType(
 # 3-layer blocks (containing 3*4 = 12 tiles in total)
 block_tilemap_type = agb.types.FixedSizeArrayType('block', lambda *args: 12)
 
+worldmap_position_type = agb.types.Structure([
+    ('x', 'u8', 0),
+    ('y', 'u8', 0),
+    ('width', 'u8', 0),
+    ('height', 'u8', 0)
+])
+
 # Export new models
 
 models_to_export = {
+    'worldmap_position' : worldmap_position_type,
     'person_behaviour' : person_behaviour_type,
     'person_script_std' : person_script_std_type_type,
     'event.person.script_std' : person_script_std_type,

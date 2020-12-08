@@ -400,7 +400,7 @@ map_namespaces:
 	.global str_mapnamespace_135
 
 	str_mapnamespace_135:
-		.string "Küstenberg"
+		.string "Tafelberg"
 
 
 	.global str_mapnamespace_136
