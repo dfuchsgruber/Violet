@@ -13,4 +13,3 @@ $(WORLDMAPOBJS): %.o: %.s
 $(WORLDMAPAS): $(BLDPATH)/%.s: %.csv
 	$(shell mkdir -p $(dir $(WORLDMAPAS)))
 	$(WORLDMAPCSV2AS) $< $(basename $(<F)) $(MAPPROJ) -o $@
-
