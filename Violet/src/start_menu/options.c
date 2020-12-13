@@ -247,7 +247,7 @@ static void options_print_description(int idx) {
         description = opt->option_descriptions[opt->getter()];
     }
     tbox_flush_set(TBOX_DESCRIPTION, 0);
-    tbox_print_string(TBOX_DESCRIPTION, 2, 0, 6, 0, 0, &title_fontcolmap, 0, description);
+    tbox_print_string(TBOX_DESCRIPTION, 2, 0, 8, 0, 0, &title_fontcolmap, 0, description);
 }
 
 static void options_callback_idle(u8 self) {
