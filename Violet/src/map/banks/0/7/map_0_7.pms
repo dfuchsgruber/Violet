@@ -296,12 +296,12 @@
 			],
 			"warps": [
 				{
-					"target_map": 67,
+					"target_map": "4",
 					"y": 32,
-					"target_bank": 3,
+					"target_bank": "22",
 					"level": 0,
 					"x": 4,
-					"target_warp_idx": 5
+					"target_warp_idx": "3"
 				},
 				{
 					"target_map": 4,
@@ -355,7 +355,7 @@
 		},
 		"music": "MUS_GLUTBERG_AND_EISKASKADENHOHLE_AND_WANDELHOHLE_AND_VERLORENE_HOHLE_AND_NABELFELS",
 		"footer_idx": 395,
-		"namespace": "MAP_FELSIGE_OEDNIS",
+		"namespace": "MAP_KUESTENBERG",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_INSIDE",
 		"type": "MAP_TYPE_BASEMENT",

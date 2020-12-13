@@ -230,6 +230,7 @@ enum {
     TBOX_APP_UPPER,
     TBOX_APP_LOWER,
     TBOX_HEADER,
+    NUM_TBOXES,
 };
 
 static tboxdata pokepad_tboxes[] = {
@@ -245,6 +246,9 @@ static tboxdata pokepad_tboxes[] = {
     [TBOX_HEADER] = {
         .bg_id = 0, .x = 0, .y = 0 , .w = 30, .h = 2, .pal = 15, .start_tile = 1 + 30 * 5 + 30 * 3 + 30 * 3
     },
+    [NUM_TBOXES] = {
+        .bg_id = 0xFF,
+    }
 };
 
 static list_menu_template motive_list_menu = {
@@ -705,9 +709,9 @@ void pokepad2_callback_initialize() {
 bool start_menu_pokepad_initialize() {
     if (!fading_is_active()) {
         save_increment_key(0x29);
-        start_menu_close();
+        overworld_rain_sound_fade_out();
+        start_menu_delete_safari();
         overworld_free();
-        tbox_free_all();
         callback1_set(pokepad2_callback_initialize);
         return true;
     }

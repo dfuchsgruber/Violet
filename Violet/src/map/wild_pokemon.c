@@ -684,16 +684,10 @@ wild_pokemon_data wild_pokemon[] = {
 		.grass = &wild_pokemon_0_6_grass,
 	}, {
 		.bank = 22, .map = 4,
-		.rod = &wild_pokemon_tafelberg_south_grass,
+		.grass = &wild_pokemon_tafelberg_south_grass,
 		.other = &wild_pokemon_tafelberg_south_other,
 		.water = &wild_pokemon_tafelberg_south_water,
-		.grass = &wild_pokemon_tafelberg_south_rod,
-	}, {
-		.bank = 22, .map = 5,
-		.rod = &wild_pokemon_tafelberg_south_grass,
-		.other = &wild_pokemon_tafelberg_south_other,
-		.water = &wild_pokemon_tafelberg_south_water,
-		.grass = &wild_pokemon_tafelberg_south_rod,
+		.rod = &wild_pokemon_tafelberg_south_rod,
 	},
 	{
 	    .bank = 0xFF, .map = 0xFF, .field_2 = 0xFF, .field_3 = 0xFF,

@@ -6,6 +6,7 @@ import argparse
 import pymap.project
 import pymap.compile
 from symbols import parse_symbols
+from warnings import warn
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Checks if all maps have worldmap associations')
@@ -36,5 +37,5 @@ if __name__ == '__main__':
                 if shape['width'] == 0 and shape['height'] == 0:
                     errors.append(f'No worldmap shape specified for map {bank}.{map_idx}:{label}')
     if len(errors):
-        raise RuntimeError('\n'.join(errors))
+        warn('\n'.join(errors))
                 

@@ -763,6 +763,7 @@ void incubator_callback1_initialize() {
 }
 
 void incubator_initialize(bool from_outdoor) {
+  overworld_rain_sound_fade_out();
   fmem.incubator_state = malloc_and_clear(sizeof(incubator_state_stru));
   fmem.incubator_state->from_outdoor = from_outdoor;
   fadescreen_all(1, 0);

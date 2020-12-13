@@ -2401,3 +2401,24 @@ trainer_pokemon_default_item_default_attacks trainer_party_x1b1_tafelberg_lower_
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,49,POKEMON_AMONITAS),
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,50,POKEMON_KABUTO),
 };
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1b2_felsige_oednis_east_caves_trainer_0[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,29,POKEMON_MEDITIE),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,28,POKEMON_RABAUZ),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1b3_felsige_oednis_east_caves_trainer_1[3] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,27,POKEMON_ONIX),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,28,POKEMON_GEOROK),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,28,POKEMON_MACHOLLO),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1b4_felsige_oednis_east_caves_trainer_2[1] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,31,POKEMON_URSARING),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1b5_felsige_oednis_east_caves_trainer_3[3] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,29,POKEMON_SANDAMER),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,29,POKEMON_NIDORINO),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,28,POKEMON_FUKANO),
+};

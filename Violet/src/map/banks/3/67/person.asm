@@ -1,36 +1,30 @@
 .include "callstds.s"
 .include "overworld_script.s"
 
-.global ow_script_map_3_67_person_0
-.global ow_script_map_3_67_person_1
+.global ow_script_felsige_oednis_east_caves_person_0
+.global ow_script_felsige_oednis_east_caves_person_1
+.global ow_script_felsige_oednis_east_caves_person_2
 
-ow_script_map_3_67_person_0:
-loadpointer 0x0 str_0x8c7d9c
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8c7d9c:
-    .autostring 34 2 "Ich wollte doch nur nach Kaskada wandernDOTS\pAber die Felsige Ödnis ist die reinste Hölle.\pWüsten, HöhlenDOTS\pWas kommt als nächstes?"
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_67_person_1:
-loadpointer 0x0 str_0x8c7e2e
-callstd MSG_FACE
-end
-
+ow_script_felsige_oednis_east_caves_person_0:
+    loadpointer 0 str_0
+    callstd MSG_FACE
+    end
+ow_script_felsige_oednis_east_caves_person_1:
+    loadpointer 0 str_1
+    callstd MSG_FACE
+    end
+ow_script_felsige_oednis_east_caves_person_2:
+    loadpointer 0 str_2
+    callstd MSG_FACE
+    end
 
 .ifdef LANG_GER
-
-str_0x8c7e2e:
-    .string "Es heißt, dass man in der Wüste\ndie Versteckte Maschine Blitz\lfinden kann.\pGlücklicherweise ist diese Höhle\nnicht dunkel."
-
-
+str_0:
+    .autostring 34 2 "Die Wanderung von Kranzdorf nach Kaskada war sicherlich eine die anstrengendste Unternehmung meines Lebens.\pFinstere Höhlen, eine staubtrockene Wüste und jetzt muss ich auch nach all dem auch noch einen Berg erklimmenDOTS"
+str_1:
+    .autostring 34 2 "Der Tafelberg setzt sich aus verschiedensten Gesteinsschichten zusammen.\pDer See auf dem Plateau ist umgeben von bläulichen Felswänden.\pKein Wunder, dass man dort Kaskada errichtet hat."
+str_2:
+    .autostring 34 2 "Ich fühle mich in Höhlen wirklich unwohlDOTS\pAber ich versuche, meine Ängste zu bewältigen.\pAlso komme ich jeden Tag für ein paar Minuten hierher und stelle mich meinen Ängsten."
 .elseif LANG_EN
-
 .endif
+

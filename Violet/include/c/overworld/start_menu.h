@@ -29,9 +29,11 @@ extern u8 gfx_start_menu_7_segmentTiles[];
 extern u8 gfx_start_menu_7_segmentPal[];
 
 /**
- * Closes the start menu
+ * Deletes the additional safari and clock windows of the start menu
  */
-void start_menu_close();
+void start_menu_delete_safari();
+
+
 
 /**
  * Builds the item idxs of the start menu

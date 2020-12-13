@@ -90,11 +90,11 @@ typedef struct saveblock2 {
     u8 minutes_played;
     u8 seconds_played;
     u8 milliseconds_played;
-    u8 detector_state; //original key swtiching
+    u8 keys_switched; //original key swtiching
     // 0x14
     u8 text_speed : 3;
     u8 tbox_style : 5;
-    u8 sound_state : 1;
+    u8 sound_is_mono : 1;
     u8 battle_style : 1;
     u8 battle_animations_off : 1;
     u8 region_map_zoom : 1;
@@ -155,6 +155,11 @@ typedef struct custom_memory {
     berry_tree berry_trees[256];
     u8 mushroom_flags[64];
     u8 shell_flags[32];
+    struct {
+        u8 manual_hm_usage : 1;
+        u8 dns_disabled : 1;
+        u8 detector_notifications : 2;
+    } settings;
     
     /**
     struct {
