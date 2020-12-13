@@ -475,6 +475,7 @@ void pokedex_callback_init() {
 }
 
 void pokedex_init(bool from_outdoor) {
+    overworld_rain_sound_fade_out();
     fmem.dex_mem = malloc_and_clear(sizeof (pokedex_memory));
     fmem.dex_mem->from_outdoor = from_outdoor;
     fmem.dex_mem->current_group = 0;

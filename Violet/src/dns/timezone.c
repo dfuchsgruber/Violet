@@ -63,7 +63,7 @@ bool dns_on() {
         case SHADER_NIGHT:
         case SHADER_EVENING:
         case SHADER_MORNING:
-            return !(save2->sound_state);
+            return !(cmem.settings.dns_disabled);
         case SHADER_CEOMETRIA_GYM_PUNISHMENT_ROOM:
             return true;
     }

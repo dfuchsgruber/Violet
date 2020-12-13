@@ -104,8 +104,8 @@ int list_menu_process_input(u8 list_menu_handler_callback_idx);
 /**
  * Returns the scroll offset and row of a list menu handler.
  * @param list_menu_handler_callback_idx callback index of the list menu handler
- * @param scroll_offset memory location of the scroll offset
- * @param row memory location of the row
+ * @param scroll_offset memory address where to put: How many elements are "scrolled-away", i.e. not visible and above the currently visible sublist
+ * @param row memory address where to put: The cursors x-position in the currently visible sublist
  */
 void list_menu_get_scroll_and_row(u8 list_menu_handler_callback_idx, u16 *scroll_offset, u16 *row);
 

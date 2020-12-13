@@ -107,6 +107,12 @@ extern u8 mplay_info_sound_effect_2[0x40];
  */
 void volume_set(void *song_controller, u16 affects_tracks, u16 volume);
 
+/**
+ * Enables stereo pokemon cries.
+ * @param is_stereo If the cries should be mono (or stereo)
+ **/
+void sound_set_pokemon_cries_stereo(bool is_mono);
+
 extern const unsigned char mus_rin_battle[];
 extern const unsigned char mus_encounter_violet[];
 extern const unsigned char mus_deoxys_battle[];

@@ -590,7 +590,7 @@ void wondertrade_init(bool is_outdoor) {
         overworld_script_init(script_wondertrade_failure);
         return;
     }
-
+    overworld_rain_sound_fade_out();
     fadescreen_all(1, 0);
     fmem.wtrade_mem = (wondertrade_memory*) malloc(sizeof (wondertrade_memory));
     fmem.wtrade_mem->from_outdoor = is_outdoor;

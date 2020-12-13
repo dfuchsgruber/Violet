@@ -6814,9 +6814,36 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x1b1_tafelberg_lower_trainer_6,
     },
+    [0x1B2] = {
+        .trainerclass = TRAINERCLASS_KAEMPFERIN, .sprite = 48,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Sophie"),
+            PSTRING("Sophy")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1b2_felsige_oednis_east_caves_trainer_0),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1b2_felsige_oednis_east_caves_trainer_0,
+    },
+    [0x1B3] = {
+        .trainerclass = TRAINERCLASS_WANDERER, .sprite = 0x5c,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Isibald"),
+            PSTRING("Isybald")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1b3_felsige_oednis_east_caves_trainer_1),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1b3_felsige_oednis_east_caves_trainer_1,
+    },
+    [0x1B4] = {
+        .trainerclass = TRAINERCLASS_POKEMANIAC, .sprite = 32,
+        .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Christian"),
+            PSTRING("Christian")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1b4_felsige_oednis_east_caves_trainer_2),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1b4_felsige_oednis_east_caves_trainer_2,
+    },
+    [0x1B5] = {
+        .trainerclass = TRAINERCLASS_CAMPER, .sprite = 86,
+        .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Manfred"),
+            PSTRING("Manfred")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1b5_felsige_oednis_east_caves_trainer_3),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1b5_felsige_oednis_east_caves_trainer_3,
+    },
 
-
-
+    
     [0x300] = {
       .uses_custom_moves = true, .uses_custom_items = true,
       .trainerclass = TRAINERCLASS_CHEFKOCH, .encounter_and_gender = {1, 0} , .sprite = 0x74,

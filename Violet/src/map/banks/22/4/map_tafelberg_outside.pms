@@ -10,7 +10,7 @@
 				{
 					"target_index": "1",
 					"picture": "238",
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
 					"x": "4",
 					"y": "18",
@@ -129,7 +129,7 @@
 				},
 				{
 					"target_index": "6",
-					"picture": "55",
+					"picture": "22",
 					"script_std": 0,
 					"field_3": 0,
 					"x": "40",
@@ -201,7 +201,7 @@
 				},
 				{
 					"target_index": "9",
-					"picture": "239",
+					"picture": "237",
 					"script_std": "PERSON_BERRY_TREE",
 					"field_3": 0,
 					"x": "43",
@@ -225,7 +225,7 @@
 				},
 				{
 					"target_index": "10",
-					"picture": "239",
+					"picture": "237",
 					"script_std": "PERSON_BERRY_TREE",
 					"field_3": 0,
 					"x": "44",
@@ -445,32 +445,32 @@
 					"x": "40",
 					"y": "37",
 					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_warp_idx": "6",
+					"target_map": "67",
+					"target_bank": "3"
 				},
 				{
 					"x": "9",
 					"y": "35",
 					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_warp_idx": "10",
+					"target_map": "67",
+					"target_bank": "3"
 				},
 				{
 					"x": "9",
 					"y": "16",
 					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_warp_idx": "9",
+					"target_map": "67",
+					"target_bank": "3"
 				},
 				{
 					"x": "42",
 					"y": "20",
 					"level": 0,
 					"target_warp_idx": 0,
-					"target_map": 0,
+					"target_map": "7",
 					"target_bank": 0
 				}
 			],
@@ -526,7 +526,7 @@
 		},
 		"music": "MUS_MONUMENTAL",
 		"footer_idx": 127,
-		"namespace": "MAP_FELSIGE_OEDNIS",
+		"namespace": "MAP_KUESTENBERG",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_OUTSIDE",
 		"type": "MAP_TYPE_ROUTE",

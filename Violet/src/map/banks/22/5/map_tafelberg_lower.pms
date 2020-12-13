@@ -2,8 +2,8 @@
 	"data": {
 		"footer": "map_footer_tafelberg_lower",
 		"events": {
-			"person_cnt": 6,
-			"warp_cnt": 3,
+			"person_cnt": 7,
+			"warp_cnt": 2,
 			"trigger_cnt": 0,
 			"signpost_cnt": 1,
 			"persons": [
@@ -82,7 +82,7 @@
 				{
 					"target_index": "4",
 					"picture": "238",
-					"script_std": "PERSON_POKEMON",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
 					"field_3": "28",
 					"x": "21",
 					"y": "14",
@@ -96,7 +96,7 @@
 					"is_trainer": "1",
 					"alert_radius": "3",
 					"script": 0,
-					"flag": "0",
+					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_GEOROK",
@@ -150,6 +150,30 @@
 						"species": 0,
 						"berry_tree_idx": 0
 					}
+				},
+				{
+					"target_index": "7",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "7",
+					"y": "10",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_FELSIGE_OEDNIS_ITEM_25",
+					"value": {
+						"item": "ITEM_AP_TOP",
+						"species": "0",
+						"berry_tree_idx": 0
+					}
 				}
 			],
 			"warps": [
@@ -165,17 +189,9 @@
 					"x": "38",
 					"y": "3",
 					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
-				},
-				{
-					"x": "9",
-					"y": "5",
-					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_warp_idx": "4",
+					"target_map": "67",
+					"target_bank": "3"
 				}
 			],
 			"triggers": [],
@@ -214,7 +230,7 @@
 		},
 		"music": "MUS_MONUMENTAL",
 		"footer_idx": 128,
-		"namespace": "MAP_FELSIGE_OEDNIS",
+		"namespace": "MAP_KUESTENBERG",
 		"flash_type": 0,
 		"weather": "MAP_WEATHER_SANDSTORM",
 		"type": "MAP_TYPE_ROUTE",

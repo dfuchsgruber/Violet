@@ -185,6 +185,15 @@ bool map_flash_usable();
  **/
 void map_reload_continuation_resume_script();
 
+/**
+ * Continuation that plays the map song, (goes into previously on quest) and enables the script context.
+ **/
+void map_reload_continuation_exit_warp();
+
+/**
+ * Callback for map reload that opens the start menu after map reload.
+ **/
+void map_reload_and_open_start_menu();
 
 /**
  * Proceeds the ambient cries, i.e. it may, if the delay is finished, play an ambient cry
@@ -234,5 +243,10 @@ bool map_transition_is_exit(u8 previous_type, u8 current_type);
  * @param dy how many blocks to move the viewport in y direction
  **/
 void overworld_viewport_move_and_update_all(s16 dx, s16 dy);
+
+/**
+ * Fades-out the rain sound
+ **/
+void overworld_rain_sound_fade_out();
 
 #endif /* INCLUDE_C_OVERWORLD_MAP_CONTROL_H_ */

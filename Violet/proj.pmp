@@ -4,7 +4,7 @@
 			"7": [
 				"map_felsige_oednis_lapis_cave",
 				"src/map/banks/0/7/map_0_7.pms",
-				"MAP_FELSIGE_OEDNIS"
+				"MAP_KUESTENBERG"
 			],
 			"12": [
 				"map_0_12",
@@ -898,12 +898,12 @@
 			"4": [
 				"map_tafelberg_outside",
 				"src/map/banks/22/4/map_tafelberg_outside.pms",
-				"MAP_FELSIGE_OEDNIS"
+				"MAP_KUESTENBERG"
 			],
 			"5": [
 				"map_tafelberg_lower",
 				"src/map/banks/22/5/map_tafelberg_lower.pms",
-				"MAP_FELSIGE_OEDNIS"
+				"MAP_KUESTENBERG"
 			]
 		},
 		"23": {

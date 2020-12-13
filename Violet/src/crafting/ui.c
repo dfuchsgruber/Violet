@@ -263,7 +263,7 @@ static void crafting_ui_setup_recipies_and_list_menu_items() {
 
 static void list_menu_print_callback_null(u8 tbox_idx, int idx, u8 y) {
     (void)tbox_idx; (void)idx; (void)y;
-}
+} 
 
 static list_menu_template recipe_selection_list_menu_template = {
     .items = NULL,
@@ -870,6 +870,7 @@ void crafting_ui_initialize() {
     CRAFTING_UI_STATE->initialized_from_overworld = true;
     callback1_set(crafting_ui_setup);
     vblank_handler_set(generic_vblank_handler);
+    io_bic(0, 0x6000);
 }
 
 void crafting_ui_reinitialize(u16 type, u16 list_menu_cursor_positions[CRAFTING_TYPE_CNT], u16 list_menu_cursor_above[CRAFTING_TYPE_CNT]) {
