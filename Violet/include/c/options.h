@@ -3,6 +3,7 @@
 
 #include "types.h"
 #include "save.h"
+#include "list_menu.h"
 
 #define TWO_OPTIONS_STRINGS(symbol, name, first_option_name, first_option_description, second_option_name, second_option_description) \
     static u8 str_option_##symbol##_name[] = name; \
@@ -68,5 +69,11 @@ extern u8 gfx_options_uiMap[];
 extern u8 gfx_options_uiPal[];
 
 #define OPTIONS_STATE ((options_state_t*)fmem.gp_state)
+
+/**
+ * Returns if automatic hm usage is active.
+ * @return if hms are used automatically
+ **/
+bool automatic_hm_usage_active();
 
 #endif

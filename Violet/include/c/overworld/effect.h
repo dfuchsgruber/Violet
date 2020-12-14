@@ -32,7 +32,7 @@ typedef struct{
     u8 triggered_by_behavior;
     oam_template *temp;
     palette *pal;
-    void (*init_func)();
+    void (*init_func)(bool reinitialize);
     u8 *(*player_step_cb)();
 }any_grass;
 
@@ -43,7 +43,7 @@ typedef struct {
 	int target_ow_and_their_map; // (target_ow << 8) | target_ow_map
 	int target_ow_bank;
 	int origin_map_and_bank; // (map << 8) | bank
-	int field_1C;
+	int reinitialize;
 } overworld_effect_state_t;
 
 extern overworld_effect_state_t overworld_effect_state;
@@ -90,8 +90,8 @@ void overworld_effect_remove_from_active_list(u8 effect_idx);
  **/
 any_grass *any_grass_get_on_current_map_by_behaviour(u8 behaviour);
 
-void rock_climb_step();
-void any_grass_step();
+void rock_climb_step(bool reinitialize);
+void any_grass_step(bool reinitialize);
 u8 *ash_grass_player_step();
 u8 *any_grass_player_step_null();
 
@@ -128,6 +128,7 @@ extern const u8 overworld_effect_script_exclamation_mark_icon[];
 extern const u8 overworld_effect_script_use_cut_on_grass[];
 extern const u8 overworld_effect_script_use_cut_on_tree[];
 extern const u8 overworld_effect_script_shadow[];
+extern const u8 overworld_effect_script_high_grass[];
 extern const u8 overworld_effect_script_tall_grass[];
 extern const u8 overworld_effect_script_ripple[];
 extern const u8 overworld_effect_script_field_move_show_mon[];

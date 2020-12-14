@@ -107,7 +107,7 @@ void pokedex_entry_load_strings() {
     tbox_flush_set(4, 0);
     tbox_tilemap_draw(4);
 
-    bool has_habitat = checkflag(POKEDEX_FEATURE_HABITAT);
+    bool has_habitat = true; //checkflag(POKEDEX_FEATURE_HABITAT);
 
     u8 *buf = strbuf;
     *buf = 0xFF;

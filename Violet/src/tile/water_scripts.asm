@@ -3,68 +3,101 @@
 .include "attacks.s"
 .include "callstds.s"
 .include "ordinals.s"
+.include "specials.s"
 
 .global ow_script_surf_not_usable_stream_too_strong
-ow_script_surf_not_usable_stream_too_strong:
-lockall
-loadpointer 0 str_stream_too_strong
-callstd MSG_KEEPOPEN
-releaseall
-end
+	ow_script_surf_not_usable_stream_too_strong:
+	lockall
+	loadpointer 0 str_stream_too_strong
+	callstd MSG_KEEPOPEN
+	releaseall
+	end
 
 .global ow_script_prompt_surf
-ow_script_prompt_surf:
-special 0x187
-compare LASTRESULT 0x2
-gotoif EQUAL prompt_surfer_none
-checkattack ATTACK_SURFER
-compare LASTRESULT 0x6
-gotoif EQUAL prompt_surfer_none
-bufferpartypokemon 0x0 LASTRESULT
-setanimation 0x0 LASTRESULT
-lockall
-loadpointer 0 str_prompt_surf
-callstd MSG_YES_NO
-compare LASTRESULT 0
-gotoif EQUAL prompt_surfer_end
-loadpointer 0 str_use_surf
-callstd MSG_KEEPOPEN
-doanimation 0x9
-prompt_surfer_end:
-releaseall
-prompt_surfer_none:
-end
+	ow_script_prompt_surf:
+	special 0x187
+	compare LASTRESULT 0x2
+	gotoif EQUAL prompt_surfer_none
+	checkattack ATTACK_SURFER
+	compare LASTRESULT 0x6
+	gotoif EQUAL prompt_surfer_none
+	bufferpartypokemon 0x0 LASTRESULT
+	setanimation 0x0 LASTRESULT
+	lockall
+    special2 LASTRESULT SPECIAL_AUTOMATIC_HM_USAGE_ACTIVE
+    compare LASTRESULT 1
+    gotoif EQUAL skip_ask_surf
+	loadpointer 0 str_prompt_surf
+	callstd MSG_YES_NO
+	compare LASTRESULT 0
+	gotoif EQUAL prompt_surfer_end
+skip_ask_surf:
+	loadpointer 0 str_use_surf
+	callstd MSG_KEEPOPEN
+	doanimation 0x9
+	prompt_surfer_end:
+	releaseall
+	prompt_surfer_none:
+	end
+
+.global ow_script_transition_start_surfing
+
+ow_script_transition_start_surfing:
+	checkattack ATTACK_SURFER
+	compare LASTRESULT 0x6
+	gotoif EQUAL prompt_surfer_none
+	bufferpartypokemon 0x0 LASTRESULT
+	setanimation 0x0 LASTRESULT
+	lockall
+	goto skip_ask_surf
+
 
 .global ow_script_waterfall_not_available
-ow_script_waterfall_not_available:
-lockall
-ow_script_waterfall_not_available_print_text:
-loadpointer 0 str_waterfall_not_avialable
-callstd MSG_KEEPOPEN
-releaseall
-end
+	ow_script_waterfall_not_available:
+	lockall
+	ow_script_waterfall_not_available_print_text:
+	loadpointer 0 str_waterfall_not_avialable
+	callstd MSG_KEEPOPEN
+	releaseall
+	end
 
 .global ow_script_prompt_waterfall
-ow_script_prompt_waterfall:
-special 0x187
-compare LASTRESULT 0x2
-gotoif EQUAL prompt_waterfall_end
-lockall
-checkattack ATTACK_KASKADE
-compare LASTRESULT 0x6
-gotoif EQUAL ow_script_waterfall_not_available_print_text
-bufferpartypokemon 0x0 LASTRESULT
-setanimation 0x0 LASTRESULT
-loadpointer 0 str_prompt_waterfall
-callstd MSG_YES_NO
-compare LASTRESULT 0
-gotoif EQUAL prompt_waterfall_end
-loadpointer 0 str_use_waterfall
-callstd MSG_KEEPOPEN
-doanimation 0x2B
-prompt_waterfall_end:
-release
-end
+	ow_script_prompt_waterfall:
+	special 0x187
+	compare LASTRESULT 0x2
+	gotoif EQUAL prompt_waterfall_end
+	lockall
+	checkattack ATTACK_KASKADE
+	compare LASTRESULT 0x6
+	gotoif EQUAL ow_script_waterfall_not_available_print_text
+	bufferpartypokemon 0x0 LASTRESULT
+	setanimation 0x0 LASTRESULT
+    special2 LASTRESULT SPECIAL_AUTOMATIC_HM_USAGE_ACTIVE
+    compare LASTRESULT 1
+    gotoif EQUAL skip_ask_waterfall
+	loadpointer 0 str_prompt_waterfall
+	callstd MSG_YES_NO
+	compare LASTRESULT 0
+	gotoif EQUAL prompt_waterfall_end
+skip_ask_waterfall:
+	loadpointer 0 str_use_waterfall
+	callstd MSG_KEEPOPEN
+	doanimation 0x2B
+	prompt_waterfall_end:
+	release
+	end
+
+.global ow_script_transition_start_waterfall
+
+ow_script_transition_start_waterfall:
+	checkattack ATTACK_KASKADE
+	compare LASTRESULT 0x6
+	gotoif EQUAL prompt_waterfall_end
+	bufferpartypokemon 0x0 LASTRESULT
+	setanimation 0x0 LASTRESULT
+	lockall
+	goto skip_ask_waterfall
+
 
 
 .ifdef LANG_GER

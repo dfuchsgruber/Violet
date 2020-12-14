@@ -156,7 +156,9 @@ typedef struct oam_object {
     u8 priority_on_layer;
 } oam_object;
 
-extern oam_object oams[];
+#define NUM_OAMS 64
+
+extern oam_object oams[NUM_OAMS];
 
 extern rotscale_frame *oam_rotscale_anim_table_null[];
 extern gfx_frame *oam_gfx_anim_table_null[];

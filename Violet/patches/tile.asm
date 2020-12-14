@@ -26,31 +26,10 @@
         bx r1
         .pool
 
-
-.org 0x080DB58C
-        ldr r1, =tile_high_grass_init_hook | 1
-        bx r1
-        .pool
-
-.org 0x80DB838
-        ldr r1, =tile_tall_grass_init_hook | 1
-        bx r1
-        .pool
-
-
-.org 0x08059F34
-        ldr r1, =tile_is_high_grass_hook | 1
-        bx r1
-        .pool
-
-
-.org 0x08059F44
-        tile_is_any_grass_wrap:
-        ldr r1, =tile_is_any_grass_hook | 1
-        bx r1
-        .pool
-        b tile_is_any_grass_wrap
-
+.org 0x08059f34
+    ldr r1, =tile_is_high_grass | 1
+    bx r1
+    .pool
 
 //prevents the help context from start menu to be ereased by decetor state
 .org 0x0806F064

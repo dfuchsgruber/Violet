@@ -226,15 +226,15 @@ str_larissa_2:
 str_may_5:
     .autostring 34 2 "Wer ist das, PLAYER?\pKennst du die Frau?"
 str_larissa_3:
-    .autostring 34 2 "Ach, wie unhöflich von mir!\pMein Name ist Larissa!\pDie meiste Zeit bin ich sehr gelangweilt von dieser Region.\pAlso freut es mich immer sehr, wenn Trainer treffe, die mit ganzem Herzen bei der Sache sind.\pUnd ihr beide habt wirklich fantastisch gekämpft, wenn ich das nocheinmal so sagen darf!"
+    .autostring 34 2 "Ach, wie unhöflich von mir!\pMein Name ist Larissa!\pDie meiste Zeit ist mir sehr langweilig in dieser RegionDOTS\pAlso freut es mich immer sehr, wenn Trainer treffe, die mit ganzem Herzen bei der Sache sind.\pUnd ihr beide habt wirklich fantastisch gekämpft, wenn ich das nocheinmal so sagen darf!"
 str_may_6:
     .autostring 34 2 "Na, zumindest einer von unsDOTS"
 str_may_7:
     .autostring 34 2 "Immerhin habe ich ja wiedermal einen meiner Kämpfe in den Sand gesetztDOTS"
 str_larissa_4:
-    .autostring 34 2 "Hör gefälligst auf, dich so selbst zu bemitleiden.\pIch erkenne einen talentierten Trainer, wenn ich ihn sehe!"
+    .autostring 34 2 "Hör gefälligst auf, dich so selbst zu bemitleiden."
 str_larissa_5:
-    .autostring 34 2 "Wenn du ein wenig mehr Vertrauen in dich und deine Pokémon setzt, wirst du von einem Sieg zum nächsten hüpfen!\pIhr beiden!\pIhr solltet die Arenaleiter dieser Region herausfordern.\pAn ihnen müssen sich alle aufstrebenden Trainer messen."
+    .autostring 34 2 "Wenn du ein wenig mehr Vertrauen in dich und deine Pokémon setzten würdest, könntest du ganz leicht von einem Sieg zum nächsten hüpfen!\pIhr beiden!\pIhr fordert doch die Arenaleiter dieser Region heraus, nicht?\pAn ihnen müssen sich alle aufstrebenden Trainer messen."
 str_larissa_6:
     .autostring 34 2 "Kranzdorf liegt zum Beispiel ganz in der Nähe, da hat Rosalie ihre Arena.\pAllerdingsDOTS\pDen Farmern hier sind einige Pokémon ausgebüchst und es könnte etwas dauern, bis sie ihre Voltilamm-Herde wieder zusammengescheucht haben.\pWarum versucht ihr nicht stattdessen nach Bruchfels zu gelangen?"
 str_karte:

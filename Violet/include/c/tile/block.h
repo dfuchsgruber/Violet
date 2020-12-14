@@ -178,6 +178,12 @@ bool behaviour_is_non_animated_warp(u8 behaviour);
 bool player_pokemon_has_surf();
 
 /**
+ * Checks if at least one pokemon of the player has waterfall
+ * @return if at least one pokemon of the player has surf
+ **/
+bool player_pokemon_has_waterfall();
+
+/**
  * Checks if the player can surf on the tile he is facing. If he already is surfing false is
  * returned.
  * @return if the player can trigger a new surf on the tile currently faced

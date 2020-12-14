@@ -42,7 +42,6 @@ ow_script_map_3_41_trigger_0:
 lockall
 playsong MUS_VIOLET_ENCOUNTER 0x0
 sound 0x15
-waitmovement 0
 applymovement 0xFF mov_face_right
 waitmovement 0
 applymovement 0xff mov_say_exclam

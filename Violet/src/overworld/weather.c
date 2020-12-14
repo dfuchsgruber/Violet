@@ -184,15 +184,6 @@ bool overworld_weather_drought_load_palettes() {
     return false;
 }
 
-color_t overworld_weather_static_fog_get_overlay_color() {
-    color_t fog_overlay = {.rgb = {.red = 28, .green = 31, .blue = 28}};
-    /*
-    if (dns_on()) {
-        fog_overlay = color_blend_and_multiply(fog_overlay, dns_get_overlay(pal_shaders), dns_get_alpha(pal_shaders));
-    }
-    */
-    return fog_overlay;
-}
 
 bool overworld_weather_static_fog_palette_affected(u8 pal_idx) {
     // The vanilla system is kinda dumb... It enqueues pals that are affected but never dequeues them
@@ -204,6 +195,19 @@ bool overworld_weather_static_fog_palette_affected(u8 pal_idx) {
     if (tag == 0xFFFF)
         return false;
     return tag_is_ground_effect(tag);
+}
+
+void pal_fog_alpha_blending(u16 first, u16 num_cols) {
+    color_t fog_col = dns_get_fog_overlay();
+    dprintf("Fog overlay is 0x%x\n", fog_col);
+    for (int i = 0; i < num_cols; i++) {
+        color_t new = {.rgb = {
+            .red = (u16)(MIN(31, (8 * pal_restore[first + i].rgb.red + 12 * fog_col.rgb.red) / 16) & 31),
+            .green = (u16)(MIN(31, (8 * pal_restore[first + i].rgb.green + 12 * fog_col.rgb.green) / 16) & 31),
+            .blue = (u16)(MIN(31, (8 * pal_restore[first + i].rgb.blue + 12 * fog_col.rgb.blue) / 16) & 31),
+        }};
+        pals[first + i] = new;
+    }
 }
 
 void pal_oam_apply_fading(u8 oam_pal_idx) {
@@ -228,21 +232,22 @@ void pal_oam_apply_fading(u8 oam_pal_idx) {
             if (palette_get_gamma_type(pal_idx) == GAMMA_NORMAL)
                 pal_gamma_shift(pal_idx, 1, overworld_weather.gamma);
         } else {
-            pal_alpha_blending((u16)(pal_idx * 16), 16, OVERWORLD_WEATHER_STATIC_FOG_PALETTE_BLENDING_ALPHA, 
-                overworld_weather_static_fog_get_overlay_color());
+            dprintf("Before alpha blending 0x%x\n", pals[pal_idx * 16 + 4] );
+            // color_t fog_overlay = dns_get_fog_overlay();
+            pal_fog_alpha_blending((u16)(pal_idx * 16), 16);
+            dprintf("After alpha blending 0x%x\n", pals[pal_idx * 16 + 4]);
         }
     }
 }
 
 void overworld_weather_static_fog_pal_blend(u8 alpha, color_t overlay) {
     pal_alpha_blending(0, 256, alpha, overlay);
-    color_t fog_overlay = overworld_weather_static_fog_get_overlay_color();
+    // color_t fog_overlay = dns_get_fog_overlay();
     for (u8 pal_idx = 16; pal_idx < 32; pal_idx++) {
         if (overworld_weather_static_fog_is_pal_affected(pal_idx)) {
+            pal_fog_alpha_blending((u16)(pal_idx * 16), 16);
             for (u16 color_idx = (u16)(pal_idx * 16); color_idx < (u16)((pal_idx + 1) * 16); color_idx++) {
-                color_t blended = pal_restore[color_idx];
-                blended = color_alpha_blend(blended, fog_overlay, OVERWORLD_WEATHER_STATIC_FOG_PALETTE_BLENDING_ALPHA);
-                pals[color_idx] = color_alpha_blend(blended, overlay, alpha);
+                pals[color_idx] = color_alpha_blend(pals[color_idx], overlay, alpha); // The fog effect blends into pals
             }
         } else {
             pal_alpha_blending((u16)(pal_idx * 16), 16, alpha, overlay);

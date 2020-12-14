@@ -291,6 +291,10 @@ special_table equ 0x0815FCC0
         .word special_overworld_viewport_set_position | 1
 .org (special_table + 176 * 4)
         .word overworld_viewport_set_position_to_player | 1
+.org (special_table + 177 * 4)
+        .word automatic_hm_usage_active | 1
+.org (special_table + 178 * 4)
+        .word player_pokemon_get_highest_level_flash_user | 1
 
 // 172 <= free <= 179
 
