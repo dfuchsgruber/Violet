@@ -43449,16 +43449,16 @@
 					"palette_idx": 4
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 486,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
-					"palette_idx": 1
+					"palette_idx": 3
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 487,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
-					"palette_idx": 1
+					"palette_idx": 3
 				},
 				{
 					"tile_idx": 488,

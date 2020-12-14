@@ -7,6 +7,7 @@
 #include "superstate.h"
 #include "agbmemory.h"
 #include "constants/sav_keys.h"
+#include "constants/attacks.h"
 #include "constants/overworld/overworld_collisions.h"
 #include "save.h"
 #include "constants/songs.h"
@@ -18,6 +19,31 @@
 #include "constants/movements.h"
 #include "constants/block_behaviour.h"
 #include "debug.h"
+#include "options.h"
+
+extern u8 ow_script_transition_start_surfing[];
+extern u8 ow_script_transition_start_waterfall[];
+
+bool npc_player_attempt_transition_land_to_water() {
+    return (checkflag(FRBADGE_4) && player_pokemon_has_surf() && player_can_use_surf_on_tile_faced() && !(player_state.state & PLAYER_STATE_SURFING) && automatic_hm_usage_active());
+}
+
+bool npc_player_attempt_surfing_into_waterfall() {
+    return (checkflag(FRBADGE_7) && player_can_use_waterfall_on_tile_faced() && automatic_hm_usage_active() && player_pokemon_has_waterfall());
+}
+
+bool npc_player_surfing_towards_waterfall(u8 direction) {
+    coordinate_t pos;
+    pos.x = npcs[player_state.npc_idx].dest_x;
+    pos.y = npcs[player_state.npc_idx].dest_y;
+    if (direction == DIR_UP) {
+        coordinates_apply_direction(direction, &pos.x, &pos.y);
+        if (behaviour_is_waterfall((u8)(block_get_behaviour_by_pos(pos.x, pos.y)))) {
+            return true;
+        }
+    }
+    return false;
+}
 
 
 int npc_player_attempt_step(npc *player, s16 x, s16 y, u8 direction, int param_5) {
@@ -26,6 +52,8 @@ int npc_player_attempt_step(npc *player, s16 x, s16 y, u8 direction, int param_5
     int collision = npc_attempt_diagonal_move(player, x, y, direction);
     if (collision == COLLISION_HEIGHT_MISMATCH && npc_player_attempt_transition_water_to_land(x, y, direction)) {
         return COLLISION_STOP_SURFING;
+    } else if (collision == COLLISION_HEIGHT_MISMATCH && npc_player_attempt_transition_land_to_water()) {
+        return COLLISION_START_SURFING;
     }
     if (block_ledge_triggered(x, y, direction)) {
         // Check if the block "after" the ledge yields no collision on its own
@@ -135,6 +163,11 @@ void npc_player_initialize_move_not_biking(u8 direction, key keys) {
     switch (collision) {
         case COLLISION_NONE: {
             if (player_state.state & PLAYER_STATE_SURFING) {
+                dprintf("Player surfing into waterfall. %d\n", npc_player_surfing_towards_waterfall(direction));
+                if (npc_player_surfing_towards_waterfall(direction) && npc_player_attempt_surfing_into_waterfall()) {
+                    overworld_script_init(ow_script_transition_start_waterfall);
+                    return;
+                }
                 npc_player_init_move_surfing(direction);
                 return;
             }
@@ -180,6 +213,9 @@ void npc_player_initialize_move_not_biking(u8 direction, key keys) {
             npc_player_sound_collision(direction);
             npc_player_set_state_and_execute_tile_anim(PAUSE_32, 2);
             return; 
+        case COLLISION_START_SURFING:
+            overworld_script_init(ow_script_transition_start_surfing);
+            return;
         default: {
             npc_player_init_move_blocked(direction);
             return;

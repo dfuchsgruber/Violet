@@ -29,4 +29,10 @@ u8 *map_levelscript_get_if_triggered(u8 type);
  */
 void map_levelscript_init_no_var_check(u8 type);
 
+/**
+ * Tries to automatically use flash.
+ * @return true if flash is used automatically
+ **/
+bool map_flash_try_automatic_usage();
+
 #endif /* INCLUDE_C_MAP_LEVELSCRIPT_H_ */

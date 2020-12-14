@@ -79,8 +79,9 @@ u16 berry_get_stage_duration(u8 berry_tree_idx) {
 void berry_tree_initialize(u8 berry_tree_idx, u8 berry_idx, u8 stage) {
     cmem.berry_trees[berry_tree_idx].berry = (u8)(berry_idx & 127);
     cmem.berry_trees[berry_tree_idx].stage = (u8)(stage & 7);
-    // berry_tree_calculate_yield(berry_tree_idx);
-    cmem.berry_trees[berry_tree_idx].yield = 0; // Only when blossoming, the yield is determined
+    berry *b = berry_get(cmem.berry_trees[berry_tree_idx].berry);
+    cmem.berry_trees[berry_tree_idx].yield = (u8)(b->min_yield & 7);
+    // cmem.berry_trees[berry_tree_idx].yield = 0; // Only when blossoming, the yield is determined
     cmem.berry_trees[berry_tree_idx].minutes_to_next_stage = berry_get_stage_duration(berry_tree_idx);
 }
 

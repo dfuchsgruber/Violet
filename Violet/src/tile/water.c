@@ -3,6 +3,8 @@
 #include "tile/block.h"
 #include "tile/coordinate.h"
 #include "constants/flags.h"
+#include "pokemon/virtual.h"
+#include "constants/attacks.h"
 
 extern u8 ow_script_surf_not_usable_stream_too_strong[];
 extern u8 ow_script_prompt_surf[];
@@ -23,4 +25,16 @@ u8 *tile_trigger_water_scripts(position_t *tile_position, u8 behaviour, u8 playe
       return ow_script_waterfall_not_available;
   }
   return NULL;
+}
+
+bool player_pokemon_has_waterfall() {
+  for (int i = 0; i < player_pokemon_cnt; i++) {
+    if (pokemon_get_attribute(player_pokemon + i, ATTRIBUTE_SPECIES, 0)) {
+      for (int j = 0; j < 4; j++) {
+        if (pokemon_get_attribute(player_pokemon + i, (u16)(ATTRIBUTE_ATTACK1 + j), 0) == ATTACK_KASKADE)
+          return true;
+      }
+    }
+  }
+  return false;
 }

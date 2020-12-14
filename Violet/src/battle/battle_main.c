@@ -209,8 +209,10 @@ void battle_initialize_graphics_or_preview() {
 }
 
 void battle_ally_save_and_setup_party() {
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 3; i++) {
         cmem.ally_battle_selected_party_idxs[i] = player_party_selected_idxs[i];
+        dprintf("Selected party idx slot %d: %d\n", i, player_party_selected_idxs[i]);
+    }
     player_save_party();
     player_party_reduce_to_selection();
     ally_party_setup();

@@ -87,3 +87,8 @@
     ldr r3, =map_draw_door_at | 1
     bx r3
     .pool
+
+.org 0x08069c64
+    ldr r0, =map_init_levelscript_2_on_frame | 1
+    bx r0
+    .pool

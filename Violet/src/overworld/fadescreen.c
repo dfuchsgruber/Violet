@@ -40,9 +40,8 @@ void _pal_copy(const void *src, u16 color, u16 bytes){
 }
 
 void _pal_load_comp(const void *src, u16 color, u16 bytes){
-    void *tmp = (void*)0x2037ACC;
-    lz77uncompwram(src, tmp);
-    pal_copy(tmp, color, bytes);
+    lz77uncompwram(src, pal_tmp + color);
+    pal_copy(pal_tmp + color, color, bytes);
 }
 
 void overworld_fadescreen(bool fade_from) {

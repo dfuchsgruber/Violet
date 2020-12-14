@@ -11,6 +11,8 @@
 #include "flags.h"
 #include "dns.h"
 #include "overworld/weather.h"
+#include "constants/block_behaviour.h"
+#include "bios.h"
 
 /*
  * Per each map on each bank we get an additional gras animation by this routine (a table determines which one)
@@ -144,19 +146,21 @@ graphic shallow_water_graphics[] = {
     {&gfx_shallow_waterTiles[0x80], 0x80, 0},
 };
 
+extern palette overworld_effect_tall_grass_pal;
+extern oam_template overworld_effect_oam_template_high_grass;
 
 any_grass any_grasses[] = {
-    {&maptileset0, 2, (oam_template *)0x083A52E4, NULL, any_grass_step, any_grass_player_step_null}, //Normal Grass, behavior 2 triggered by any map
-    {&maptileset0, 3, (oam_template *)0x083A5800, NULL, any_grass_step, any_grass_player_step_null},
-    {&maptileset0, 0xBD, &rock_climb_template, &rock_climb_pal, rock_climb_step, any_grass_player_step_null},
-    {&maptileset251828, 0xBB, any_grass_templates + ANY_GRASS_ASH, any_grass_pals + ANY_GRASS_ASH, any_grass_step, ash_grass_player_step},
-    {&maptileset_ceometria, 0xBB, any_grass_templates + ANY_GRASS_GRAVEYARD, any_grass_pals + ANY_GRASS_GRAVEYARD, 
+    {&maptileset0, MB_TALL_GRASS, &overworld_effect_oam_template_high_grass, &overworld_effect_tall_grass_pal, any_grass_step, any_grass_player_step_null}, //Normal Grass, behavior 2 triggered by any map
+    // {&maptileset0, MB_3, (oam_template *)0x083A5800, NULL, any_grass_step, any_grass_player_step_null},
+    {&maptileset0, MB_BD, &rock_climb_template, &rock_climb_pal, rock_climb_step, any_grass_player_step_null},
+    {&maptileset251828, MB_BB, any_grass_templates + ANY_GRASS_ASH, any_grass_pals + ANY_GRASS_ASH, any_grass_step, ash_grass_player_step},
+    {&maptileset_ceometria, MB_BB, any_grass_templates + ANY_GRASS_GRAVEYARD, any_grass_pals + ANY_GRASS_GRAVEYARD, 
         any_grass_step, any_grass_player_step_null},
-    {&maptileset_haweiland, 0xBB, any_grass_templates + ANY_GRASS_HAWEILAND, any_grass_pals + ANY_GRASS_HAWEILAND, 
+    {&maptileset_haweiland, MB_BB, any_grass_templates + ANY_GRASS_HAWEILAND, any_grass_pals + ANY_GRASS_HAWEILAND, 
         any_grass_step, any_grass_player_step_null},
     {&maptileset_clouds, 2, any_grass_templates + ANY_GRASS_CLOUD, any_grass_pals + ANY_GRASS_CLOUD, 
         any_grass_step, any_grass_player_step_null},
-    {&maptileset_clouds, 0xBD, &rock_climb_sky_island_template, &rock_climb_sky_island_pal, 
+    {&maptileset_clouds, MB_BB, &rock_climb_sky_island_template, &rock_climb_sky_island_pal, 
         rock_climb_step, any_grass_player_step_null},
 };
 
@@ -170,20 +174,18 @@ any_grass *any_grass_get_on_current_map_by_behaviour(u8 behaviour) {
     return NULL;
 }
 
-void any_grass_step(){
-    play_sound(0x15C);
+void any_grass_step(bool reinitialize){
+    if (!reinitialize)
+        play_sound(0x15C);
 }
 
-void rock_climb_step(){
-	play_sound(0x7C);
-}
-
-bool tile_is_any_grass(u8 behavior){
-    return behavior == 0x3; //we abuse "tall grass" byte for any grass
+void rock_climb_step(bool reinitialize){
+    if (!reinitialize)
+	    play_sound(0x7C);
 }
 
 bool tile_is_high_grass(u8 behavior){
-    return behavior == 2 || behavior == 0xD1 || behavior == 0xBb || behavior == 0xBD;
+    return behavior == MB_TALL_GRASS || behavior == 0xD1 || behavior == MB_BB || behavior == MB_BD;
 }
 
 
@@ -204,13 +206,14 @@ u8 *any_grass_player_step_null(){
  * @param pos
  * @return 
  */
-u8 tile_any_grass_init(coordinate_t *pos){
-    s16 x = (s16)overworld_effect_state.x;
-    s16 y = (s16)overworld_effect_state.y;
-    u8 behavior = (u8)block_get_behaviour_by_pos(x, y);
+int tile_any_grass_init(){
+    s16 x = (s16)(overworld_effect_state.x), y = (s16)(overworld_effect_state.y);
+    u8 behavior = (u8)block_get_behaviour_by_pos((s16)(overworld_effect_state.x), (s16)(overworld_effect_state.y));
     any_grass *g = any_grass_get_on_current_map_by_behaviour(behavior);
+    dprintf("New any grass init: 0x%x, behaviour %d.\n", g, behavior);
     if (g) {
-        if (g->init_func) g->init_func();
+        if (g->init_func) 
+            g->init_func(overworld_effect_state.reinitialize);
         // Initialize pal
         if (g->pal) {
             u8 pal_idx = oam_palette_get_index(g->pal->tag);
@@ -222,10 +225,26 @@ u8 tile_any_grass_init(coordinate_t *pos){
             pal_apply_shaders_by_oam_palette_idx(pal_idx);
             pal_oam_apply_fading(pal_idx);
         }
-        return oam_new_backward_search(g->temp, pos->x, pos->y, 0);
+        overworld_effect_ow_coordinates_to_screen_coordinates(&x, &y, 8, 8);
+        u8 oam_idx = oam_new_backward_search(g->temp, x, y, 0);
+        if (oam_idx < ARRAY_COUNT(oams)) {
+            oam_object *o = oams + oam_idx;
+            o->flags |= OAM_FLAG_CENTERED;
+            o->final_oam.attr2 = (u16)((o->final_oam.attr2 & (~ATTR2_PRIO(3))) | ATTR2_PRIO(overworld_effect_state.bg_priority));
+            o->private[0] = (u16)(overworld_effect_state.height);
+            o->private[1] = (u16)(overworld_effect_state.x);
+            o->private[2] = (u16)(overworld_effect_state.y);
+            o->private[3] = (u16)(overworld_effect_state.target_ow_and_their_map);
+            o->private[4] = (u16)(overworld_effect_state.target_ow_bank);
+            o->private[5] = (u16)(overworld_effect_state.origin_map_and_bank);
+            if (overworld_effect_state.reinitialize) {
+                oam_gfx_anim_init(o, 4);
+            }
+            return 0;
+        }   
     }
     dprintf("No grass animation possible for behaviour %d on current map.\n", behavior);
-    return 64;
+    return 0;
 }
 
 bool tag_is_ground_effect(u16 tag) {

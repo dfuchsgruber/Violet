@@ -433,3 +433,7 @@ bool start_menu_options_initialize() {
     }
     return false;
 }
+
+bool automatic_hm_usage_active() {
+    return options[OPTION_AUTOMATIC_HM_USAGE].getter() == OPTION_ON;
+}

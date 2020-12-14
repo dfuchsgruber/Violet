@@ -39,6 +39,12 @@ void pal_filters_apply();
 color_t dns_get_overlay(u8 shader_state);
 
 /**
+ * Gets the fog blending overlay for any dns shader.
+ * @return the alpha channel for fog
+ **/
+color_t dns_get_fog_overlay();
+
+/**
  * Returns the alpha value for the alpha blending filter depending on the shader state
  * @param shader_state the shader state
  * @rerutn the alpha value
