@@ -11,8 +11,9 @@
 #include "constants/natures.h"
 #include "constants/pokemon_attributes.h"
 #include "constants/pokemon_stat_names.h"
+#include "pokemon/virtual.h"
 
-trainer_build_t trainer_builds [TRAINER_BUILD_COUNT] = {
+trainer_build_t trainer_builds [NUM_TRAINER_BUILDS] = {
 	[TRAINER_BUILD_PHYSICAL_SWEEPER_ATTACK_PREFERENCE] = {
 			.evs = {[STAT_HP] = 4, [STAT_ATTACK] = 255, [STAT_SPEED] = 255}, .nature = NATURE_HART},
 	[TRAINER_BUILD_PHYSICAL_SWEEPER_SPEED_PREFERENCE] = {
@@ -44,6 +45,9 @@ trainer_build_t trainer_builds [TRAINER_BUILD_COUNT] = {
 	[TRAINER_BUILD_SPECIAL_TANK] = {
 			.evs = {[STAT_SPECIAL_ATTACK] = 255, [STAT_HP] = 255, [STAT_SPEED] = 4},
 			.nature = NATURE_MAESSIG},
+	[TRAINER_BUILD_SPECIAL_SWEEPER_SPECIAL_ATTACK_PREFERENCE_FEMALE] = {
+			.evs = {[STAT_HP] = 4, [STAT_SPECIAL_ATTACK] = 255, [STAT_SPEED] = 255},
+			.nature = NATURE_MAESSIG, .use_gender = true, .gender = GENDER_FEMALE},
 	[TRAINER_BUILD_NONE] = {0}
 };
 

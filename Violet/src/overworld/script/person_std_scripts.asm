@@ -167,10 +167,15 @@ ask_use_wonder_dust:
 	callstd MSG_YES_NO
 	compare LASTRESULT 0
 	gotoif EQUAL dont_harvest
+	callasm berry_tree_option_all_wonderdust_enabled
+	compare LASTRESULT 1
+	gotoif EQUAL use_max_wonderdust
+
 	removeitem ITEM_WUNDERSTAUB 1
 	loadpointer 0 str_use_wonder_dust
 	callstd MSG_KEEPOPEN
 	special SPECIAL_BERRY_TREE_GROW
+wonderdust_update_gfx:
 	special SPECIAL_BERRY_TREE_UPDATE_GFX
 	sound 188
 	doanimation 23
@@ -179,6 +184,25 @@ ask_use_wonder_dust:
 	loadpointer 0 str_grown
 	callstd MSG
 	end
+
+use_max_wonderdust: // Use wonderdust as long as the tree can grow and wonderdust is available
+	setvar 0x8005 0 // How many dusts were used so far
+use_max_wonderdust_loop_head:
+	checkitem ITEM_WUNDERSTAUB 1
+	compare LASTRESULT 0
+	gotoif 1 use_max_wonderdust_loop_end
+	special2 LASTRESULT SPECIAL_BERRY_TREE_GET_STAGE
+	compare LASTRESULT BERRY_STAGE_BERRIES
+	gotoif EQUAL use_max_wonderdust_loop_end
+	removeitem ITEM_WUNDERSTAUB 1
+	addvar 0x8005 1
+	special SPECIAL_BERRY_TREE_GROW
+	goto use_max_wonderdust_loop_head
+use_max_wonderdust_loop_end:
+	buffernumber 1 0x8005
+	loadpointer 0 str_use_wonder_dust_multiple
+	callstd MSG_KEEPOPEN
+	goto wonderdust_update_gfx
 
 harvest_berries:
 	compare 0x8005 1
@@ -414,6 +438,8 @@ str_ask_wonder_dust:
 	.autostring 34 2 "Möchtest du Wunderstaub benutzen, um die BUFFER_1n wachsen zu lassen?"
 str_use_wonder_dust:
 	.autostring 34 2 "PLAYER benutzt Wunderstaub."
+str_use_wonder_dust_multiple:
+	.autostring 34 2 "PLAYER benutzt BUFFER_2-Mal Wunderstaub."
 str_grown:
 	.autostring 34 2 "Die BUFFER_1n sind gewachsen!"
 str_mushroom_plucked:

@@ -520,7 +520,7 @@
 					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_POKEMON",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_KNILZ",
@@ -1882,9 +1882,9 @@
 					"value": {
 						"script": "0",
 						"item": {
-							"item": "ITEM_TSITRUBEERE",
+							"item": "ITEM_MININUGGET",
 							"flag": 23,
-							"amount": 5,
+							"amount": "1",
 							"chunk": 0
 						}
 					},

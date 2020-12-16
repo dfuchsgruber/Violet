@@ -33,6 +33,7 @@ script_pokeradar_s:
     hidesprite 254
     clearflag 0x917
     showsprite 254
+    callasm ow_script_fadescreen_palette_backup
     fadescreen 0
     loadpointer 0 str_pokepad_pokeradar_found
     callstd 6

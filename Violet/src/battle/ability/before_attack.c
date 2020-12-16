@@ -101,7 +101,8 @@ bool battle_abilities_before_attack(){
         }
         case AP_SPARER:{
             if(rnd16() & 3){
-                attacker->custom_status |= CUSTOM_STATUS_AP_SPARER;
+                //attacker->custom_status |= CUSTOM_STATUS_AP_SPARER;
+                BATTLE_STATE2->status_custom[attacking_battler] |= CUSTOM_STATUS_AP_SPARER;
                 battle_animation_user = attacking_battler;
                 battle_animation_target = attacking_battler;
                 battle_scripting.battler_idx = attacking_battler;

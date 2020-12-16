@@ -138,7 +138,6 @@ void ally_party_setup() {
 	}
 }
 
-
 void trainer_pokemon_new(pokemon *poke, union union_build_field field) {
 	pid_t pid = {.value = (u32)pokemon_get_attribute(poke, 0, 0)};
 	u8 ev_difficulty = 0; // EVs that are applied due to difficulty
@@ -183,7 +182,12 @@ void trainer_pokemon_new(pokemon *poke, union union_build_field field) {
 		// Apply the ability bit to the pokemon
 		int ability = field.bitfield.ability > 0;
 		pokemon_set_attribute(poke, ATTRIBUTE_ABILITY, &ability);
-		
+
+		// Apply gender, if persent
+		if (trainer_builds[field.bitfield.build_idx].use_gender) {
+			pid.fields.gender_partial = (u32)((trainer_builds[field.bitfield.build_idx].gender >> 1) & 0x7F); // TODO?
+		}
+
 		dprintf("Building pokemon species %d with ability bit %d -> ability is %d\n", pokemon_get_attribute(poke, ATTRIBUTE_SPECIES, 0), ability, pokemon_get_ability(poke));
 	}
 	pid.fields.is_shiny = field.bitfield.is_shiny > 0;

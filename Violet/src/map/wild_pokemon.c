@@ -275,7 +275,14 @@ wild_pokemon_data wild_pokemon[] = {
 	{
 		.bank = 15, .map = 4,
 		.grass = &wild_pokemon_15_4_grass,
-		.water = NULL,
+		.water = NULL, 
+		.other = NULL,
+		.rod = NULL,
+	},
+	{
+		.bank = 15, .map = 5,
+		.grass = &wild_pokemon_15_4_grass,
+		.water = NULL, 
 		.other = NULL,
 		.rod = NULL,
 	},

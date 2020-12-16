@@ -548,7 +548,7 @@ static bool pokepad2_initialize_app_oams(int num_to_initialize) {
     while (POKEPAD_STATE->num_app_oams < POKEPAD_STATE->num_items) {
         if (num_to_initialize <= 0)
             return false;
-        pokepad2_item *item = pokepad2_items + POKEPAD_STATE->num_app_oams;
+        pokepad2_item *item = pokepad2_items + POKEPAD_STATE->items[POKEPAD_STATE->num_app_oams];
         oam_load_graphic(&item->icon_graphic);
         oam_palette_load_if_not_present(&item->icon_palette);
         int row = POKEPAD_STATE->num_app_oams / 4;

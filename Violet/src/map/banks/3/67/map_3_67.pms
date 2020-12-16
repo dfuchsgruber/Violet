@@ -376,9 +376,9 @@
 			],
 			"warps": [
 				{
-					"target_map": 21,
+					"target_map": "21",
 					"y": "77",
-					"target_bank": 3,
+					"target_bank": "3",
 					"level": 0,
 					"x": "43",
 					"target_warp_idx": 1
@@ -443,7 +443,7 @@
 					"x": "49",
 					"y": "22",
 					"level": 0,
-					"target_warp_idx": "1",
+					"target_warp_idx": "11",
 					"target_map": "67",
 					"target_bank": "3"
 				},

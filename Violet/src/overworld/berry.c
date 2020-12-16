@@ -15,6 +15,7 @@
 #include "rtc.h"
 #include "overworld/effect.h"
 #include "constants/sav_keys.h"
+#include "options.h"
 
 u8 berry_tree_get_berry(u8 berry_tree_idx) {
     return cmem.berry_trees[berry_tree_idx].berry;
@@ -269,4 +270,8 @@ void overworld_effect_berry_tree_growth_sparkle() {
         o->final_oam.attr2 = (u16)((o->final_oam.attr2 & (~ATTR2_PRIO(3))) | ATTR2_PRIO(overworld_effect_state.bg_priority & 3));
         o->private[0] = 23;
     }
+}
+
+void berry_tree_option_all_wonderdust_enabled() {
+    *var_access(LASTRESULT) = (u16) (options[OPTION_WONDER_DUST_AUTOMATIC_USAGE].getter() == OPTION_ON);
 }

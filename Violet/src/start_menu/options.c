@@ -112,6 +112,17 @@ static int option_frame_style_getter() { return save2->tbox_style; }
 static void option_frame_style_setter(int style) { save2->tbox_style = (u8)(style & 31); } 
 static u8 str_option_frame_options_description[] = LANGDEP(PSTRING("Dargestellte Textrahmen entsprechen\nMotiv BUFFER_1."), PSTRING("Text frames are displayed in\nmotive BUFFER_1."));
 
+TWO_OPTIONS_STRINGS(
+    wonderdust,
+    LANGDEP(PSTRING("Wunderstaub"), PSTRING("Wonderdust")),
+    LANGDEP(PSTRING("Alle"), PSTRING("All")),
+    LANGDEP(PSTRING("Beeren werden mit maximaler\nAnzahl an Wunderstaub bestreut."), PSTRING("The maximal number of Wonderdust\nis used on berry trees.")),
+    LANGDEP(PSTRING("Eins"), PSTRING("One")),
+    LANGDEP(PSTRING("Wunderstaub wird nur ein Mal\nbei Beeren benutzt."), PSTRING("Wonderdust is used only once\non berry trees."))
+);
+static int option_wonderdust_getter() { return cmem.settings.wonder_dust_automatic_quantity_disabled ? OPTION_OFF : OPTION_ON; }
+static void option_wonderdust_setter(int is_off) { cmem.settings.wonder_dust_automatic_quantity_disabled = (u8)(is_off & 1); }
+
 option_t options[NUM_OPTIONS] = {
     [OPTION_FRAME_STYLE] = {
         .name = str_option_frame_style_name,
@@ -175,6 +186,14 @@ option_t options[NUM_OPTIONS] = {
         .num_options = ARRAY_COUNT(option_detector_names),
         .options = option_detector_names,
         .option_descriptions = option_detector_descriptions,
+    },
+    [OPTION_WONDER_DUST_AUTOMATIC_USAGE] = {
+        .name = str_option_wonderdust_name,
+        .getter = option_wonderdust_getter,
+        .setter = option_wonderdust_setter,
+        .num_options = ARRAY_COUNT(option_wonderdust_names),
+        .options = option_wonderdust_names,
+        .option_descriptions = option_wonderdust_descriptions,
     },
 };
 
