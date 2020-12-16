@@ -36,23 +36,6 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
-	setflag FRBADGE_1
-	setflag FRBADGE_2
-	setflag FRBADGE_3
-	setflag FRBADGE_4
-	setflag FRBADGE_5
-	setflag FRBADGE_6
-	setflag FRBADGE_7
-	setflag FRBADGE_8
-	additem ITEM_VM01 1
-	additem ITEM_VM02 1
-	additem ITEM_VM03 1
-	additem ITEM_VM04 1
-	additem ITEM_VM05 1
-	additem ITEM_VM06 1
-	additem ITEM_VM07 1
-	additem ITEM_VM08 1
-
 	callasm berry_trees_initialize_all
 	end
 	clearflag PLAYER_ABLE_TO_MEGA_EVOLVE

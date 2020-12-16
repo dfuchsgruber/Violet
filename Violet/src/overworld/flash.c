@@ -35,6 +35,7 @@ u8 player_pokemon_get_highest_level_flash_user() {
     if (idx < 6) {
         pokemon_party_menu_current_index = idx;
     }
+    dprintf("Highest flash user level is for index %d\n", idx);
     return idx;
 }
 

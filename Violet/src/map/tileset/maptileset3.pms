@@ -1183,7 +1183,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_LADDER",
+				"behaviour": "MB_EAST_ARROW_WARP",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -1253,7 +1253,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_LADDER",
+				"behaviour": "MB_EAST_ARROW_WARP",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -1263,7 +1263,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_LADDER",
+				"behaviour": "MB_EAST_ARROW_WARP",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -1343,7 +1343,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_LADDER",
+				"behaviour": "MB_EAST_ARROW_WARP",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -1423,7 +1423,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_LADDER",
+				"behaviour": "MB_EAST_ARROW_WARP",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",

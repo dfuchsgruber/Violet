@@ -288,12 +288,15 @@ flash_level_3:
 .global ow_script_automatic_flash_usage
 
 ow_script_automatic_flash_usage:
+	bufferattack 0x1 ATTACK_BLITZ
     special2 LASTRESULT SPECIAL_PLAYER_PARTY_GET_HIGHEST_LEVEL_FLASH_USER
 	setanimation 0x0 LASTRESULT
 	bufferpartypokemon 0x0 LASTRESULT
-	bufferattack 0x1 ATTACK_BLITZ
     loadpointer 0 str_uses_rock_climb
     callstd MSG
+    special2 LASTRESULT SPECIAL_PLAYER_PARTY_GET_HIGHEST_LEVEL_FLASH_USER
+	setanimation 0x0 LASTRESULT
+	bufferpartypokemon 0x0 LASTRESULT
 	doanimation 0x2
 	waitstate
     setflag FLASH_USED

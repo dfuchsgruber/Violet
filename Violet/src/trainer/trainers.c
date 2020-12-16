@@ -6743,7 +6743,7 @@ trainer trainers[TRAINER_CNT] = {
         .party = (trainer_pokemon*) trainer_party_x1a7_felsige_oednis_cave_trainer_1,
     },
     [0x1A8] = {
-        .trainerclass = TRAINERCLASS_WANDERER, .sprite = 0x5c,
+        .trainerclass = TRAINERCLASS_WANDERER, .sprite = 0x43,
         .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Karl"),
             PSTRING("Karl")), .pokemon_cnt = 2,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
@@ -6772,7 +6772,7 @@ trainer trainers[TRAINER_CNT] = {
         .party = (trainer_pokemon*) trainer_party_x1ab_tafelberg_lower_trainer_0,
     },
     [0x1AC] = {
-        .trainerclass = TRAINERCLASS_WANDERER, .sprite = 0x5c,
+        .trainerclass = TRAINERCLASS_WANDERER, .sprite = 0x43,
         .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Horst"),
             PSTRING("Horst")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1ac_tafelberg_lower_trainer_1),
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
@@ -6822,7 +6822,7 @@ trainer trainers[TRAINER_CNT] = {
         .party = (trainer_pokemon*) trainer_party_x1b2_felsige_oednis_east_caves_trainer_0,
     },
     [0x1B3] = {
-        .trainerclass = TRAINERCLASS_WANDERER, .sprite = 0x5c,
+        .trainerclass = TRAINERCLASS_WANDERER, .sprite = 0x43,
         .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Isibald"),
             PSTRING("Isybald")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1b3_felsige_oednis_east_caves_trainer_1),
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,

@@ -143,6 +143,7 @@ not_occupied:
     closeonkeypress
     pause 16
     fanfare 0x13E
+    additem ITEM_KARTE 1
     loadpointer 0 str_karte
     callstd MSG_KEEPOPEN
     waitfanfare

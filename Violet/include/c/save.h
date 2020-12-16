@@ -159,6 +159,7 @@ typedef struct custom_memory {
         u8 manual_hm_usage : 1;
         u8 dns_disabled : 1;
         u8 detector_notifications : 2;
+        u8 wonder_dust_automatic_quantity_disabled : 1;
     } settings;
     
     /**

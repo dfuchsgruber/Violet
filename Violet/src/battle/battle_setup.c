@@ -110,6 +110,8 @@ void battle_free_new() {
 void battle_switch_in_clear_new() {
     for (int i = 0; i < 4; i++)
         TRAINER_AI_STATE2->known_moves[active_battler][i] = 0;
+    BATTLE_STATE2->status_custom[active_battler] = 0;
+    BATTLE_STATE2->status_custom_persistent[active_battler] = 0;
 }
 
 void wild_battle_legendary_initialize() {
