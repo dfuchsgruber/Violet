@@ -484,6 +484,21 @@
 				"map_kaskada_cloud_ruins",
 				"src/map/banks/8/2/map_kaskada_cloud_ruins.pms",
 				"MAP_KASKADA"
+			],
+			"3": [
+				"map_kaskada_house_0",
+				"src/map/banks/8/3/map_kaskada_house_0.pms",
+				"MAP_KASKADA"
+			],
+			"5": [
+				"map_kaskada_house_1",
+				"src/map/banks/8/5/map_kaskada_house_1.pms",
+				"MAP_KASKADA"
+			],
+			"12": [
+				"map_kaskada_tea_house",
+				"src/map/banks/8/12/map_kaskada_tea_house.pms",
+				"MAP_KASKADA"
 			]
 		},
 		"9": {
@@ -1957,6 +1972,10 @@
 		"map_footer_tafelberg_lower": [
 			128,
 			"src/map/banks/22/5/map_footer_tafelberg_lower.pms"
+		],
+		"map_footer_kaskada_tea_house": [
+			129,
+			"src/map/banks/8/12/map_footer_kaskada_tea_house.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -2018,7 +2037,8 @@
 		"maptileset_bruchfels": "src/map/tileset/maptileset_bruchfels.pms",
 		"maptileset_bruchfels_crypt": "src/map/tileset/maptileset_bruchfels_crypt.pms",
 		"maptileset_bruchfels_past": "src/map/tileset/maptileset_bruchfels_past.pms",
-		"maptileset_tafelberg": "src/map/tileset/maptileset_tafelberg.pms"
+		"maptileset_tafelberg": "src/map/tileset/maptileset_tafelberg.pms",
+		"maptileset_kaskada_tea_house": "src/map/tileset/maptileset_kaskada_tea_house.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2075,6 +2095,7 @@
 		"gfx_maptileset_meriana_cityTiles": "asset/gfx/tileset/gfx_maptileset_meriana_city.png",
 		"gfx_maptileset_bruchfels_cryptTiles": "asset/gfx/tileset/gfx_maptileset_bruchfels_crypt.png",
 		"gfx_maptileset_bruchfels_pastTiles": "asset/gfx/tileset/gfx_maptileset_bruchfels_past.png",
-		"gfx_maptileset_tafelbergTiles": "asset/gfx/tileset/gfx_maptileset_tafelberg.png"
+		"gfx_maptileset_tafelbergTiles": "asset/gfx/tileset/gfx_maptileset_tafelberg.png",
+		"gfx_maptileset_kaskada_tea_houseTiles": "asset/gfx/tileset/gfx_maptileset_kaskada_tea_house.png"
 	}
 }

@@ -5,29 +5,29 @@
 
 wild_pokemon_entry wild_pokemon_0_7_grass_entries[12] = {
 	[WILD_POKEMON_DENSITY_GRASS_0_20_PERCENT] = 
-		{.level_min = 20, .level_max = 22, .species = POKEMON_MARILL},
+		{.level_min = 22, .level_max = 24, .species = POKEMON_MARILL},
 	[WILD_POKEMON_DENSITY_GRASS_1_20_PERCENT] = 
-		{.level_min = 18, .level_max = 22, .species = POKEMON_KRABBY},
+		{.level_min = 22, .level_max = 24, .species = POKEMON_KRABBY},
 	[WILD_POKEMON_DENSITY_GRASS_2_10_PERCENT] = 
-		{.level_min = 18, .level_max = 22, .species = POKEMON_ZUBAT},
+		{.level_min = 22, .level_max = 25, .species = POKEMON_ZUBAT},
 	[WILD_POKEMON_DENSITY_GRASS_3_10_PERCENT] = 
-		{.level_min = 18, .level_max = 22, .species = POKEMON_FLEGMON},
+		{.level_min = 23, .level_max = 24, .species = POKEMON_FLEGMON},
 	[WILD_POKEMON_DENSITY_GRASS_4_10_PERCENT] = 
-		{.level_min = 18, .level_max = 22, .species = POKEMON_KRABBY},
+		{.level_min = 23, .level_max = 25, .species = POKEMON_KRABBY},
 	[WILD_POKEMON_DENSITY_GRASS_5_10_PERCENT] = 
-		{.level_min = 18, .level_max = 18, .species = POKEMON_ZUBAT},
+		{.level_min = 23, .level_max = 24, .species = POKEMON_ZUBAT},
 	[WILD_POKEMON_DENSITY_GRASS_6_5_PERCENT] = 
-		{.level_min = 22, .level_max = 22, .species = POKEMON_FLEGMON},
+		{.level_min = 24, .level_max = 26, .species = POKEMON_FLEGMON},
 	[WILD_POKEMON_DENSITY_GRASS_7_5_PERCENT] = 
-		{.level_min = 22, .level_max = 17, .species = POKEMON_KRABBY},
+		{.level_min = 23, .level_max = 26, .species = POKEMON_KRABBY},
 	[WILD_POKEMON_DENSITY_GRASS_8_4_PERCENT] = 
-		{.level_min = 17, .level_max = 17, .species = POKEMON_ZUBAT},
+		{.level_min = 24, .level_max = 25, .species = POKEMON_ZUBAT},
 	[WILD_POKEMON_DENSITY_GRASS_9_4_PERCENT] = 
-		{.level_min = 18, .level_max = 18, .species = POKEMON_MARILL},
+		{.level_min = 24, .level_max = 27, .species = POKEMON_MARILL},
 	[WILD_POKEMON_DENSITY_GRASS_10_1_PERCENT] = 
-		{.level_min = 19, .level_max = 21, .species = POKEMON_KRABBY},
+		{.level_min = 25, .level_max = 28, .species = POKEMON_KRABBY},
 	[WILD_POKEMON_DENSITY_GRASS_11_1_PERCENT] = 
-		{.level_min = 26, .level_max = 26, .species = POKEMON_AZUMARILL},
+		{.level_min = 27, .level_max = 29, .species = POKEMON_AZUMARILL},
 };
 
 wild_pokemon_habitat wild_pokemon_0_7_grass = {

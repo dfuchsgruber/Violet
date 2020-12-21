@@ -13,9 +13,7 @@ end
 .ifdef LANG_GER
 
 str_0x9277cd:
-    .string "Ich habe eine besondere Beziehung\nzu Pflanzen. Ich verstehe sie, ich\lweiß, ich kann mich in sie\lhineinfühlen.\pVielleicht sollte ich nach\nKranzdorf ziehen. Das Dorf wurde in\lder Lichtung eines Waldes\lerrichtet."
-
-
+    .autostring 34 2 "Als ein Pflanzen-Pokémon Liebhaber würde ich am Liebsten in Kranzdorf wohnen.\pMeine Frau allerdings ist von der Milotic-Legende um Kaskada ganz begeistert.\pAlso haben wir uns für einen Kompromiss entschiedenDOTS\pDOTSund sind hierher nach Kaskada gezogenDOTS"
 .elseif LANG_EN
 
 .endif
@@ -30,9 +28,7 @@ end
 .ifdef LANG_GER
 
 str_0x9278f8:
-    .string "Im Fernsehen laufen stets\ninteressante Dinge. Nicht zuletzt,\lweil das Programm so vielfältig\list.\pWirf doch auch das eine oder\nandere Mal einen Blick auf einen\lFernseher, vielleicht gefällt dir,\lwas du siehst."
-
-
+    .autostring 34 2 "Bist du auch angereist, um das legendäre Milotic zu Gesicht zu bekommen?\pDa muss ich dich enttäuschen!\pIch kenne niemanden, der es bislang gesehen hat."
 .elseif LANG_EN
 
 .endif

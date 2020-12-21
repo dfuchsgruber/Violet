@@ -14,9 +14,7 @@ end
 .ifdef LANG_GER
 
 str_0x92723b:
-    .string "Ich habe miterlebt, wie die drei\ngrößten Trainer ihrer Zeit die Top\lVier ins Leben riefen.\pIhre Wege mögen sich getrennt\nhaben, ihr Vermächtnis aber ist\lnoch immer standhaft."
-
-
+    .autostring 34 2 "Ich habe noch miterlebt, wie die drei größten Trainer der Geschichte ihrerseits Pokémon-Liga gegründet haben.\pIhre Wege mögen sich heute freilich getrennt haben, aber ihr Vermächtis besteht noch immer."
 .elseif LANG_EN
 
 .endif
@@ -31,7 +29,7 @@ end
 .ifdef LANG_GER
 
 str_0x87fba3:
-    .string "Seit einigen Monaten sehe ich hier\nimmer öfter Revolutionäre in ihren\lsmaragdgrünen Roben.\pWas sie wohl hier wollen?"
+    .autostring 34 2 "Meine Oma erzählt uns immer viel von den Gründern der Pokémon-Liga.\pBesonders der Pinke Faun hat es ihr angetan.\pOb sie sich in ihrer Jugend vielleicht in ihn verguckt hatte?"
 
 
 .elseif LANG_EN
@@ -48,7 +46,7 @@ end
 .ifdef LANG_GER
 
 str_0x9272eb:
-    .string "Mein Papa sagt immer, dass ein\nguter Trainer auch ein guter\lMensch sein sollte."
+    .autostring 34 2 "Meine Omi sagt uns immer, dass ein guter Trainer auch ein guter Mensch sein soll.\pEben genauso, wie der Pinke Faun!\pIst doch klar!"
 
 
 .elseif LANG_EN

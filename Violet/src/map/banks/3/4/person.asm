@@ -9,653 +9,355 @@
 .include "items.s"
 .include "ordinals.s"
 
-.global ow_script_kaskada_harrenfeld
-.global ow_script_map_3_4_person_13
-.global ow_script_map_3_4_person_26
-.global ow_script_map_3_4_person_27
-.global ow_script_map_3_4_person_14
-.global ow_script_map_3_4_person_25
-.global ow_script_map_3_4_person_19
-.global ow_script_0x8f218b
-.global ow_script_map_3_4_person_1
-.global ow_script_map_3_4_person_4
-.global ow_script_map_3_4_person_2
-.global ow_script_map_3_4_person_20
-.global ow_script_map_3_4_person_21
-.global ow_script_map_3_4_person_22
-.global ow_script_map_3_4_person_10
-.global ow_script_map_3_4_person_3
-.global ow_script_map_3_4_person_18
-.global ow_script_0x8f185a
-.global ow_script_map_3_4_person_17
-.global ow_script_map_3_4_person_29
-.global ow_script_map_3_4_person_24
-.global ow_script_map_3_4_person_8
-.global ow_script_map_3_4_person_23
-.global ow_script_map_3_4_person_16
-.global ow_script_map_3_4_person_15
-.global ow_script_map_3_4_person_9
-.global ow_script_map_3_4_person_28
-.global ow_script_map_3_4_person_7
-.global ow_script_map_3_4_person_0
-.global ow_script_map_3_4_person_12
-.global ow_script_map_3_4_person_6
-.global ow_script_map_3_4_person_11
-.global ow_script_map_3_4_person_5
+.global ow_script_kaskada_person_0
+.global ow_script_kaskada_person_1
+.global ow_script_kaskada_person_2
+.global ow_script_kaskada_person_3
+.global ow_script_kaskada_person_4
+.global ow_script_kaskada_person_5
+.global ow_script_kaskada_person_6
+.global ow_script_kaskada_person_7
+.global ow_script_kaskada_person_8
+.global ow_script_kaskada_person_9
+.global ow_script_kaskada_person_10
+.global ow_script_kaskada_person_11
+.global ow_script_kaskada_person_12
+.global ow_script_kaskada_person_13
+.global ow_script_kaskada_person_14
+.global ow_script_kaskada_person_15
+.global ow_script_kaskada_person_16
+.global ow_script_kaskada_person_17
+.global ow_script_kaskada_person_18
+.global ow_script_kaskada_person_19
+.global ow_script_kaskada_person_20
+.global ow_script_kaskada_person_21
+.global ow_script_kaskada_person_22
+.global ow_script_kaskada_person_23
+.global ow_script_kaskada_person_24
+.global ow_script_kaskada_person_25
+.global ow_script_kaskada_person_26
+.global ow_script_kaskada_person_27
+.global ow_script_kaskada_person_28
+.global ow_script_kaskada_person_29
+.global ow_script_kaskada_person_30
+.global ow_script_kaskada_person_31
+.global ow_script_kaskada_person_32
+.global ow_script_kaskada_person_33
+.global ow_script_kaskada_person_34
+.global ow_script_kaskada_person_35
+.global ow_script_kaskada_person_36
+.global ow_script_kaskada_person_37
+.global ow_script_kaskada_evolithe_gift
 
+ow_script_kaskada_person_0:
+	loadpointer 0 str_0
+	callstd MSG_FACE
+	end
 
-ow_script_kaskada_harrenfeld:
-    lock
+ow_script_kaskada_person_1:
+	loadpointer 0 str_1
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_2:
+	loadpointer 0 str_2
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_3:
+	loadpointer 0 str_3
+	callstd MSG
+	end
+
+ow_script_kaskada_person_4:
+	loadpointer 0 str_4
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_5:
+	loadpointer 0 str_5
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_6:
+	loadpointer 0 str_6
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_7:
+	loadpointer 0 str_7
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_8:
+	loadpointer 0 str_8
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_9:
+	loadpointer 0 str_9
+	callstd MSG
+	end
+
+ow_script_kaskada_person_10:
+	loadpointer 0 str_10
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_11:
+	loadpointer 0 str_11
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_12:
+	loadpointer 0 str_12
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_13:
+	loadpointer 0 str_13
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_14:
+	loadpointer 0 str_14
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_15:
+	loadpointer 0 str_15
+	callstd MSG
+	end
+
+ow_script_kaskada_person_16:
+	loadpointer 0 str_16
+	callstd MSG
+	end
+
+ow_script_kaskada_person_17:
+	loadpointer 0 str_17
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_18:
+	loadpointer 0 str_18
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_19:
+	loadpointer 0 str_19
+	callstd MSG
+	end
+
+ow_script_kaskada_person_20:
+	loadpointer 0 str_20
+	callstd MSG
+	end
+
+ow_script_kaskada_person_21:
+	loadpointer 0 str_21
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_22:
+	loadpointer 0 str_22
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_23:
+	loadpointer 0 str_23
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_24:
+	loadpointer 0 str_24
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_25:
+	loadpointer 0 str_25
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_26:
+	loadpointer 0 str_26
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_27:
+	loadpointer 0 str_27
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_28:
+	loadpointer 0 str_28
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_29:
+	loadpointer 0 str_29
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_30:
+	loadpointer 0 str_30
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_31:
+	loadpointer 0 str_31
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_32:
+	loadpointer 0 str_32
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_33:
+	loadpointer 0 str_33
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_34:
+	loadpointer 0 str_34
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_35:
+	loadpointer 0 str_35
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_36:
+	loadpointer 0 str_36
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_person_37:
+	loadpointer 0 str_37
+	callstd MSG_FACE
+	end
+
+ow_script_kaskada_evolithe_gift:
+	lock
     faceplayer
-    loadpointer 0x0 str_harrenfeld0
-    show_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT MSG_KEEPOPEN
-    //callstd MSG
-    fadesong PROFESSOR_EICHS_LABOR
-    setvar 0x8004 0
-    special SPECIAL_CUTSCENE_SHOW
-    lock
-    waitstate
-    lock
-    faceplayer
-    pause 64
-    loadpointer 0x0 str_harrenfeld1
-    show_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT MSG_KEEPOPEN
-    fadescreen 1
-    hidesprite 37
-    hidesprite 1
-    hidesprite 2
-    fadescreen 0
+    checkflag KASKADA_EVOLITHE
+    gotoif EQUAL after_receiving_evolithe
+    loadpointer 0x0 str_intro_evolithe
+	callstd MSG_YES_NO
+	compare LASTRESULT 0 
+	gotoif EQUAL said_no
+	loadpointer 0 str_intro_evolithe2
+
+    callstd MSG_KEEPOPEN
+    copyvarifnotzero 0x8000 ITEM_EVOLITH
+    copyvarifnotzero 0x8001 1
+    callstd ITEM_OBTAIN
+    compare LASTRESULT 0x0
+    gotoif EQUAL ow_script_no_room_for_giveitem
+    loadpointer 0x0 str_after_receiving_evolithe
+    callstd MSG_KEEPOPEN
+    closeonkeypress
     release
+    setflag KASKADA_EVOLITHE
     end
 
-
-.ifdef LANG_GER
-str_harrenfeld0:
-    .autostring 34 2 "Oh, hallo PLAYER!\nWir haben die Albus' Spur leider verloren, nachdem wir ihn am Küstenberg nicht fassen konnten.\pDas ist natürlich sehr ärgerlich, wer weiß, wann wir wieder eine solche Chance bekommen.\pAber weißt du, Faun und Albus sind alte Bekannte.\pUm genau zu sein, waren beide Mitgründer der Pokémon-Liga in ThetoDOTS"
-str_harrenfeld1:
-    .autostring 34 2 "Seitdem Lucius, der ehemalige Champion gestürzt wurde, gewinnt mehr und mehr das Chaos die Überhand.\pTheto braucht einen Champion, aber von Lucius' Nachfolger fehlt jede Spur.\pWir von der Polizei geben solange unser Bestes, sowohl die Revolution als auch Team Violet in Schach zu halten, aber ewig werden wir nicht standhalten könnenDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pNun, ich denke, die Abriegelung der Stadt kann aufgehoben werden.\pWir sehen uns, PLAYER!\pHalt die Ohren steif!"
-
-.elseif LANG_EN
-.endif
-
-
-ow_script_map_3_4_person_1:
-loadpointer 0 str_police
-setvar 0x8000 0
-special 0xE
-loadpointer 0x0 str_0x8c8eab
-callstd MSG_FACE
-special 0xF
-end
-
-
-.ifdef LANG_GER
-str_police:
-	.string "Polizist"
-
-
-str_0x8c8eab:
-    .autostring 35 2 "Solange sich der Anführer der Revolutionsbewegung hier rumtreibt, haben wir strikte Anordnung, niemanden vorbeizulassen.\pWir riegeln die Stadt ab!"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_0:
-loadpointer 0 str_police
-setvar 0x8000 0
-special 0xE
-loadpointer 0x0 str_0x8c8f0d
-callstd MSG_FACE
-special 0xF
-end
-
-
-.ifdef LANG_GER
-
-str_0x8c8f0d:
-    .string "Lord Faun wird den Revolutionären\nzeigen, wie stark ein Mitglied der\lTop Vier ist!"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_2:
-loadpointer 0x0 str_0x8c90bc
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8c90bc:
-    .string "Kaskada ist die einzige Stadt des\nOstens, die nicht dem Pinken Faun\luntersteht."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_3:
-loadpointer 0x0 str_0x8c910d
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8c910d:
-    .string "Ich beobachte gerne Menschen in\nihren Kanus.\pDOTS\pDas Wasser ist zweifellos das\nElement des Lebens!"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_5:
-loadpointer 0x0 str_0x8f13dc
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f13dc:
-    .string "Seit geraumer Zeit schon frage ich\nmich, was sich wohl in dieser\lHöhle befindetDOTS"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_6:
-loadpointer 0x0 str_0x8f1430
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f1430:
-    .string "Das Wasser, das diese Stadt\numgibt, entspringt dem Küstenberg.\lViele nennen ihn auch den Berg des\lUrquells."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_4:
-    loadpointer 0 str_01
+after_receiving_evolithe:
+    loadpointer 0x0 str_after_receiving_evolithe
     callstd MSG_FACE
     end
-
-.ifdef LANG_GER
-str_01:
-    .autostring 34 2 "Ich vermisse Lucius, den ehemaligen Champion.\pEr war so charismatischDOTS\pVom neuen Champion weiß man nicht einmal, wer es überhaupt istDOTS"
-
-.elseif LANG_EN
-str_0:
-    .autostring 34 2 "I really miss Lucius, the former champ.\pHe was so charismaticDOTS\pAbout the new champ one doesn't even know who he isDOTS"
-.endif
-
-
-ow_script_map_3_4_person_8:
-loadpointer 0x0 str_0x8f1665
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f1665:
-    .string "Das Wasser hier ist so sauber,\ndass man direkt davon trinken\lkönnte."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_7:
-loadpointer 0x0 str_0x8f16ab
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f16ab:
-    .string "Dieser Brunnen wurde dem schönsten\naller Pokemon erbaut, Milotic.\pEs heißt, dass eines von ihnen in\nden hiesigen Gewässern lebe."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_9:
-loadpointer 0x0 str_0x8f172d
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f172d:
-    .string "Manche sagen, dass alle unsere\nEntscheidungen Auswirkungen\lhätten. Sie reden von Karma.\lGlaubst du an das Karma?"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_10:
-loadpointer 0x0 str_0x8f179f
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f179f:
-    .string "Schon lange frage ich mich, was\ndie Erbauer dieser Stadt mit\ldiesen marineblauen\lPflastersteinen zum Ausdruck\lbringen wolltenDOTS"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_11:
-lock
-faceplayer
-loadpointer 0x0 str_0x8f18a8
-callstd MSG_YES_NO
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x8f185a
-loadpointer 0x0 str_0x8f1821
-callstd MSG
-release
-end
-
-
-ow_script_0x8f185a:
-loadpointer 0x0 str_0x8f1865
-callstd MSG
-release
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f18a8:
-    .string "Guten Tag!\nHast du Lust auf eine Fahrt mit\leinem unserer Kanus? Ein Tag\lkostet dich gerade einmal\pDOTS\neine MILLION POKEDOLLAR!\pWas sagst du?"
-
-
-
-str_0x8f1821:
-    .string "DOTS\pDu hast nicht genügend Geld?\nPah! Armer Schlucker!"
-
-
-
-str_0x8f1865:
-    .string "Wiebitte? Warum denn nicht?\pDer Preis?\pDOTS\pPah! Armer Schlucker!"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_12:
-loadpointer 0x0 str_0x8f192d
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f192d:
-    .string "Wenn meine Pokémon Kaskada\nbeherrschten, könnte ich mit ihnen\ldie Wasserfälle erklimmen."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_14:
-loadpointer 0x0 str_0x8f1987
-callstd MSG
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f1987:
-    .string "Ich liebe es, gemeinsam mit meinem\nSchatz den Wellen zu lauschen."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_13:
-loadpointer 0x0 str_0x8f19ca
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f19ca:
-    .string "Meine Freundin und ich kommen oft\nhierher, um uns gemeinsam die\lWellen anzusehen."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_15:
-loadpointer 0x0 str_0x8f1a1d
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f1a1d:
-    .string "Wie ich mir eine Kanufahrt leisten\nkonnte?\pIch gehe arbeiten, wie das\nErwachsene eben so tun."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_16:
-loadpointer 0x0 str_0x8f1a7c
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f1a7c:
-    .string "Was? Ich habe dieses Kanu nicht\ngestohlen. Ich habe es mir nur auf\lunbestimmte Zeit geliehen!"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_17:
-loadpointer 0x0 str_0x8f1adb
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f1adb:
-    .string "Was soll das heißen, ich kann hier\nnicht angeln?\pWas denkst du, was ich hier seit\nStunden treibe?"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_18:
-loadpointer 0x0 str_0x8f1b48
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f1b48:
-    .string "Willst du mich verurteilen, dass\nich mir mein Essen in Mülltonnen\lsuche?\pVerurteile lieber das System, das\neinem alten Mann nicht genug zu\lEssen gibt!"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_19:
-loadpointer 0x0 str_0x8f1bea
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f1bea:
-    .string "Der Küstenberg ist klein, doch\nhoch genug, um bei Sturm einen\langenehm salzigen Wind erleben zu\lkönnen."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_21:
-loadpointer 0x0 str_0x8f1dd4
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f1dd4:
-    .string "Diese Frau in dem KanuDOTS\nSie ist so wunderschön! Aber ich\lkann einfach nicht genug Mut\lfinden, sie anzusprechen!"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_22:
-loadpointer 0x0 str_0x8f1e51
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f1e51:
-    .autostring 34 2 "Zwar wird dieses Gebiet offiziell vom Pinken Faun regiertDOTS\pAber in Wirklichkeit zieht der Schwarze Devin hier die FädenDOTS"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_23:
-checkflag KASKADA_EVOLITHE
-gotoif EQUAL ow_script_0x8f218b
-lock
-faceplayer
-loadpointer 0x0 str_0x8f1fda
-callstd MSG_KEEPOPEN
-copyvarifnotzero 0x8000 ITEM_EVOLITH
-copyvarifnotzero 0x8001 1
-callstd ITEM_OBTAIN
-loadpointer 0x0 str_0x8f1f5c
-callstd MSG
-setflag KASKADA_EVOLITHE
-release
-end
-
-
-
-ow_script_0x8f218b:
-loadpointer 0x0 str_0x8f1f5c
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f1fda:
-    .autostring 34 2 "Auch ein schwaches Pokémon kann stark sein.\pDiesen Ratschlag möchte ich dir ans Herz legen."
-
-
-
-str_0x8f1f5c:
-    .string "Der Evolith kann die Stärken eines scheinbar schwachen Pokémon hervorbringen, sofern es sich noch entwickeln kann."
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_20:
-loadpointer 0x0 str_0x926c84
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x926c84:
-    .string "Keiner weiß warum um das Haus im\nSüden immerzu von irgendwelchem\lKisten umgeben ist. Was wohl dort\lgetrieben wird?"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_26:
-loadpointer 0x0 str_0x8f2194
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f2194:
-    .string "Von einem Untergrundhandel weiß\nich nichtsDOTS\pWie, du hast nicht gefragt?"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_25:
-loadpointer 0x0 str_0x926cf8
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x926cf8:
-    .string "Mann, ich würde zu gerne die\nParole kennen, um in dieses Haus\lzu kommen!\pOb sie geheime Tee-Klub Treffen\nabhalten?"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_24:
-loadpointer 0x0 str_0x926d6c
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x926d6c:
-    .string "Die Parole? Warum sollte ich die\nParole kennen?"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_27:
-loadpointer 0x0 str_0x926d9d
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x926d9d:
-    .string "Wenn ich groß bin, möchte ich eine\nMillion POKEDOLLAR haben!\pDann kann ich mir endlich eine\nTour mit dem Kanu leisten!"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_28:
-loadpointer 0x0 str_0x926e0c
-callstd MSG
-end
-
-
-.ifdef LANG_GER
-
-str_0x926e0c:
-    .string "Ich vermisse die alten ZeitenDOTS\pVor den Top VierDOTS\pAls die Welt noch voller Abenteuer\nwarDOTS\pJetzt bleibt mir noch das Rauschen\nder WasserfälleDOTS\pUnd die ErinnerungenDOTS"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_4_person_29:
-	lock
-	faceplayer
-	loadpointer 0 str_0
-	show_mugshot MUGSHOT_IGVA alignment=MUGSHOT_RIGHT message_type=MSG_YES_NO mask_name=1
-	compare LASTRESULT 0
-	gotoif EQUAL said_no
-	loadpointer 0 str_2
-	show_mugshot MUGSHOT_IGVA alignment=MUGSHOT_RIGHT message_type=MSG mask_name=1
-	setflag KASKADA_BLACKMARKET_RECEIVED_PAROLE
-	fadescreen 0x1
-	hidesprite 0x800f
-	fadescreen 0x0
-	release
-	end
-
 said_no:
-	loadpointer 0 str_1
-	show_mugshot MUGSHOT_IGVA alignment=MUGSHOT_RIGHT message_type=MSG mask_name=1
+	loadpointer 0 str_said_no
+	callstd MSG_KEEPOPEN
 	release
 	end
 
-
 .ifdef LANG_GER
+str_intro_evolithe:
+	.autostring 34 2 "Für viele Trainer geht es nur darum, ihre Pokémon möglichst stark zu machen.\pSie zwingen sie sogar dazu, sich gegen ihren Willen zu entwickeln.\pWenn Trainer so einen Druck auf ihre Pokémon ausübenDOTS\pDas macht mich sehr traurigDOTS\pDabei können doch auch nicht entwickelte Pokémon stark sein, findest du nicht auch?"
+str_said_no:
+	.autostring 34 2 "Wirklich?\pAlso bist du auch eine dieser Personen, die ihre Pokémon ständig unter Druck setzen?\pDu solltest den Umgang mit deinen Pokémon wirklich noch einmal überdenken."
+str_intro_evolithe2:
+	.autostring 34 2 "Gut gesagt!\pDu hast aufrichtigen Respekt für Pokémon, die sich nicht entwickeln möchten.\pDarum will ich dir das hier schenken."
+str_after_receiving_evolithe:
+	.autostring 34 2 "Der Evolith stärkt die gesamte Defensive eines Pokémon, das sich noch entwickeln könnte.\pIst das nicht ein guter Grund, dein Pokémon nicht zu einer Entwicklung zu zwingen?"
 str_0:
-	.autostring 34 2 "Entschuldige bitte, falls ich dich damit überrumple.\pIch habe dich vorhin beobachtet, als du mit Albus, dem Anführer der Revolution gesprochen hast.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pEs muss seltsam wirken, aber ich möchte dir gerne etwas zeigen.\pWenn du Interesse hast, das wahre Gesicht dieser Region zu sehenDOTS\pNaja, was sagst du?"
+	.autostring 34 2 "Wo immer man sich in Kaskada auch aufhält, kann man stets das kraftvolle Rauschen dutzender Wasserfälle hören.\pDieser Ort strotzt nur so vor Kraft."
 str_1:
-	.autostring 34 2 "OhDOTS\nNa gut, vielleicht habe ich mich getäuscht.\pWenn du es dir anders überlegst, ich werde noch eine Weile in der Gegend sein."
+	.autostring 34 2 "Als Kind bin ich immer zwischen den Inseln auf diesem See hin und hergeschwommen.\pAber mittlerweile bin ich wohl ganz schön aus der ÜbungDOTS"
 str_2:
-	.autostring 34 2 "Ich wusste es!\nIrgendetwas hat mir gesagt, dass du die Art Mensch bist, die sich auch traut, hinter die glatte Fassade der Dinge zu sehen.\pDOTS DOTS DOTS\nIm Westen der Stadt gibt es ein Klubhaus, in das man nur mit einer Parole eintritt erhält.\pIch will nichts vorwegnehmen, aber du solltest dir dieses Klubhaus auf jeden Fall ansehen.\pWie war doch gleich dein Name?\pPLAYER?\nDOTS DOTS DOTS\pFreut mich sehr!\nIch bin übrigens Igva!\pWir sehen uns im Klubhaus, PLAYER!"
+	.autostring 34 2 "Komm schon Omi, ich will den Tafelberg hinunterklettern!"
+str_3:
+	.autostring 34 2 "Kindchen, warte doch bitteDOTS\pIch hab dir schon hundert Mal erklärt, dass ich für deine Unternehmungen zu alt binDOTS"
+str_4:
+	.autostring 34 2 "Ist es nicht beeindruckend, dass man eine Stadt mitten auf einem See errichtet hat?\pWir Bewohner von Kaskada leben sozusagen also im Wasser!"
+str_5:
+	.autostring 34 2 "Du musst wirklich lernen, dein Flegmon besser im Griff zu haben.\pAuch wenn es langsam ist, geht es einfach nicht, dass es anderen Menschen hinterherläuft."
+str_6:
+	.autostring 34 2 "Aber Mami!\pMein Flegmon will doch niemanden etwas Böses tun.\pGanz ehrlich!"
+str_7:
+	.autostring 34 2 "Ist dir schon aufgefallen, dass es auf diesem See einige Inseln gibt?\pIch wette, auf manchen kann man tolle Schätze finden."
+str_8:
+	.autostring 34 2 "Der Tafelberg ist so ein wunderschönes Fleckchen Natur.\pDiese bezaubernden bläulich schimmernden FelsenDOTS\pWer auch immer die Idee hatte, hier eine Stadt zu errichten, muss ein Genie gewesen sein!"
+str_9:
+	.autostring 34 2 "Also gut, mein kleines Karpador!\pEines Tages wirst du es schaffen, all die Wasserfälle hier zu erklimmen.\pUnd dann wirst du dich in ein Drachen-Pokémon verwandeln, ja?"
+str_10:
+	.autostring 34 2 "Jetzt mach doch 'mal langsam!\pIch komme ja gar nicht hinterherDOTS"
+str_11:
+	.autostring 34 2 "Dieser Ort ist ein beliebtes Reiseziel für VerliebteDOTS\pIch träume schon lange davon, mit meiner Angebeteten eine romantische Kanufahrt zu unternehmenDOTS\pAber ich habe einfach nicht den Schneid, sie danach zu fragenDOTS"
+str_12:
+	.autostring 34 2 "Es ist eine ziemlich beliebte Mutprobe, von dieser Klippe ins Wasser zu springen.\pMan muss nur aufpassen, dass man sich von der Strömung nicht zu weit mitreißen lässt.\pAm Ende landet man noch in Blütenbach und muss den ganzen Weg zurück nach Kaskada auf sich nehmen."
+str_13:
+	.autostring 34 2 "Bei gutem Wetter kann man von hier bis hinunter nach Anemonia sehen.\pEin Aussichtspunkt so hoch oben hat durchaus seine Vorzüge, findest du nicht?"
+str_14:
+	.autostring 34 2 "Du fragst dich sicher, was jemand von meiner Zunft in Kaskada treibt, nicht?\pNun, das kann ich dir sagen!\pIch bin wegen der Milotic-Legende hier, natürlich!\pDu kennst diese Geschichte gar nicht?\pDas ist ja wirklich kaum zu fassen!"
+str_15:
+	.autostring 34 2 "Jetzt haben wir die anderen verloren!\pWo sind denn nur Albus und Igva hin?"
+str_16:
+	.autostring 34 2 "Keine Sorge!\pDie beiden finden wir schon wieder.\pFrüher oder später werden sie ja zum Teehaus zurückkommen müssen."
+str_17:
+	.autostring 34 2 "Hach, ich freue mich schon darauf, nachher mit meinem Pummeluff einen heißen Tee im Teehaus zu schlürfen!"
+str_18:
+	.autostring 34 2 "Jedes Mal, wenn ich mir hier die Leute in ihren Kanus ansehe, werde ich total neidisch!\pUnd dabei gönne ich mir dieses Vergnügen doch selbst beinahe täglich!"
+str_19:
+	.autostring 34 2 "Ich will aber nicht auf so eine langweilige Kanufahrt mit dir gehenDOTS\pDas ist doch wirklich öde!"
+str_20:
+	.autostring 34 2 "Du bist aber wirklich schwer von Begriff!\pIch will aber unbedingt eine Kanufahrt machen!\pUnd zwar mit dir!"
+str_21:
+	.autostring 34 2 "Meine Frau besteht darauf, ständig auf diese nervigen Kanufahrten zu gehen.\pIch hätte wirklich gedacht, dass sie früher oder später auch für sie ihren Reiz verlieren würdenDOTS\pWäre ich doch bloß niemals in diese Stadt gezogen!"
+str_22:
+	.autostring 34 2 "Ich weiß, dass es klischeehaft wirken mussDOTS\pAber selbst, wenn man hier in Kaskada lebt, wird man dieser beruhigenden Kanufahrten einfach niemals müde."
+str_23:
+	.autostring 34 2 "Wie, du willst auf eine Kanufahrt gehen?\pGanz alleine?\pIst das nicht etwasDOTS\nDOTStraurig?"
+str_24:
+	.autostring 34 2 "Es wird vielleicht etwas ungewöhnlich klingen, aber für Käfersammler ist Kaskada ein Geheimtipp.\pEs heißt, hier kann man starke Exemplare des Pokémon Gehweiher fangen."
+str_25:
+	.autostring 34 2 "Es ist eine weit verbreitete Angewohnheit hier in Kaskada, regelmäßig im Teehaus einzukehren.\pDie ganze Stadt ist verrückt nach Tee, musst du wissen."
+str_26:
+	.autostring 34 2 "Ich war früher ein begeisterter Wanderer.\pMeine Lieblingstour war es schon immer, den Tafelberg hinaufzukraxeln.\pAllein der Ausblick, den man von Kaskada über die Region hat, ist jede Anstrengung wert.\pAlso bin ich, als ich irgenwann nicht mehr wandern konnte, einfach hierher gezogen."
+str_27:
+	.autostring 34 2 "Meine Mami sagt, ich soll nicht zu nah an die Geländer hier herangehen.\pIch könnte wohl sonst ins Wasser fallen.\pAber die Wasserfälle rauschen so schön!"
+str_28:
+	.autostring 34 2 "Früher war das Teehaus mein Lieblingsort in Kaskada.\pAber seit Devin von den Top Vier sich das Geschäft gekauft hat, kehren immer öfter zwielichtige Gestalten in diesem Teehaus ein.\pIch sag dir, das ist regelrechtes Gesindel.\pIrgendetwas stimmt da nicht, in diesem TeehausDOTS"
+str_29:
+	.autostring 34 2 "Kennst du die Legende, dass in diesem See ein Milotic leben soll?\pEs heißt, es sei das schönste Pokémon überhaupt.\pWas für ein Fang dieses Milotic doch für einen Angler wäre!"
+str_30:
+	.autostring 34 2 "Hier auf dem Milotic-Plaza trifft man allerhand Leute.\pReisende kommen aus aller Welt, in der Hoffnung, das sagenumwobene Pokémon hier mit einen Augen sehen zu können.\pDen meisten reicht dann aber doch ein Blick auf die Milotic-Statue hier am Plaza."
+str_31:
+	.autostring 34 2 "Dieser Brunnen ist dem Milotic gewidmet, das laut einer Sage hier im See leben soll.\pSeine Schönheit soll vor vielen Jahren einen Wanderer so sehr bezaubert haben, dass er hier eine Stadt errichtet hat.\pDas ist, der Sage nach, die Entstehunggeschichte von Kaskada.\pEin wirklich großartiger Mythos, nicht wahr?"
+str_32:
+	.autostring 34 2 "Kaskada ist in ganz Theto vielleicht der Ort, den man am Stärksten mit sauberem Wasser verbindet.\pUnd das ist kein Wunder, wo wir hier doch unser Wasser direkt aus den Quellen des Tafelbergs schöpfen."
+str_33:
+	.autostring 34 2 "Für mein Pokémon war es eine gute Entscheidung, hierher nach Kaskada zu kommen.\pAber an das laute Getöse der Wasserfälle muss ich mich erst einmal gewöhnenDOTS"
+str_34:
+	.autostring 34 2 "Tag für Tag mache ich mich früh morgens, wenn die ganze Stadt noch in den Federn liegt, aus dem Haus.\pVielleicht ergattere ich eines Tages ja einen Blick auf das sagenumwobene Milotic, das hier im See leben soll."
+str_35:
+	.autostring 34 2 "Der Gipfel des Tafelbergs ist nur noch einen kurzen Fußmarsch von hier entfernt.\pSelbst ich in meinem Alter kann diese kleine Wanderung noch antreten."
+str_36:
+	.autostring 34 2 "Und ich sage dir zum hundertsten Mal, dass keiner dieser Revolutionäre hier entlang gekommen ist.\pWir sollten zu den anderen am Tafelberggipfel aufschließen.\pDa würden wir uns nützlicher machen als hier!"
+str_37:
+	.autostring 34 2 "Ich bin mir absolut sicher, einen dieser Revolutionäre in dieser Höhle gesehen zu haben.\pDen werd ich nicht laufen lassen, das verpreche ich dir!"
+
 .elseif LANG_EN
 .endif

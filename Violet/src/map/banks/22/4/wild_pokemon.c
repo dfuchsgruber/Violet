@@ -31,7 +31,7 @@ wild_pokemon_entry wild_pokemon_tafelberg_south_grass_entries[12] = {
 };
 
 wild_pokemon_habitat wild_pokemon_tafelberg_south_grass = {
-	.frequency = 3, .data = wild_pokemon_tafelberg_south_grass_entries
+	.frequency = 9, .data = wild_pokemon_tafelberg_south_grass_entries
 };
 
 

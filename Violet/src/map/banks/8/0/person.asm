@@ -15,9 +15,7 @@ end
 .ifdef LANG_GER
 
 str_0x195c7a:
-    .string "Ich bin erst vor kurzem in diese\nStadt gezogen!"
-
-
+    .autostring 34 2 "Kaskada gilt als das Herz der Region.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pNaja, das stimmt vielleicht nicht ganz, aber für mich ist es die Wahrheit!"
 .elseif LANG_EN
 
 .endif
@@ -30,11 +28,8 @@ end
 
 
 .ifdef LANG_GER
-
 str_0x71cdbe:
-    .string "An den Flüssen kann man\nunglaublich gut Staudämme bauen."
-
-
+    .autostring 34 2 "Als keines Kind habe ich an den Wasserfällen immer versucht, Staudämme zu bauen.\pDas ist natürlich Kinderkram!\pJetzt interessiere ich mich nur noch für das Kämpfen!"
 .elseif LANG_EN
 
 .endif
@@ -49,7 +44,7 @@ end
 .ifdef LANG_GER
 
 str_0x95aaa5:
-    .string "Das Wasser in Kaskada ist das\nsauberste der ganzen Theto-Region."
+    .autostring 34 2 "Nirgendwo in Theto wirst du saubereres Wasser finden als hier in Kaskada.\pDarauf gebe ich dir mein Wort."
 
 
 .elseif LANG_EN

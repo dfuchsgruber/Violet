@@ -5485,7 +5485,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2b, //Effect-id (in table)
 		70, //Base Power
-		TYPE_UNLICHT,
+		TYPE_GEIST,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy

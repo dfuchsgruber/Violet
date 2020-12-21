@@ -13,11 +13,8 @@ end
 .ifdef LANG_GER
 
 str_0x87f9d5:
-    .string "Im Fernsehen laufen oft sehr\nspannende Berichte!\pErst kürzlich habe ich eine\nDokumentation über das seltene\lPokémon Barschwa gesehen."
-
-
+    .autostring 34 2 "Im Fernsehen laufen immer ganz spannende Sendungen.\pErst letztens habe ich den legendären Angler über das Milotic hier in Kaskada reden hören.\pEr bezweifelt aber leider, ob die Legende um das Milotic wirklich wahr istDOTS"
 .elseif LANG_EN
-
 .endif
 
 
@@ -28,11 +25,8 @@ end
 
 
 .ifdef LANG_GER
-
 str_0x87fa5c:
-    .string "Die Fernsehberichte orientieren\nsich immer an den aktuellen\lEreignissen in der Region."
-
-
+    .autostring 34 2 "Den ganzen Tag läuft bei uns die Flimmerkiste.\pIch kann diese permanente Geräuschkulisse langsam nicht mehr ab, ehrlich!"
 .elseif LANG_EN
 
 .endif

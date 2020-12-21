@@ -288,6 +288,7 @@ flash_level_3:
 .global ow_script_automatic_flash_usage
 
 ow_script_automatic_flash_usage:
+    pause 8
 	bufferattack 0x1 ATTACK_BLITZ
     special2 LASTRESULT SPECIAL_PLAYER_PARTY_GET_HIGHEST_LEVEL_FLASH_USER
 	setanimation 0x0 LASTRESULT

@@ -6842,6 +6842,34 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x1b5_felsige_oednis_east_caves_trainer_3,
     },
+    [0x1B6] = {
+        .trainerclass = TRAINERCLASS_TEENAGER, .sprite = 0x52,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Ludvig"),
+            PSTRING("Ludvig")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1b6_tafelberg_lapis_cave_trainer_1),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1b6_tafelberg_lapis_cave_trainer_1,
+    },
+    [0x1B7] = {
+        .trainerclass = TRAINERCLASS_GENTLEMAN, .sprite = 23,
+        .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Salomon"),
+            PSTRING("Salomon")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1b7_tafelberg_lapis_cave_trainer_2),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1b7_tafelberg_lapis_cave_trainer_2,
+    },
+    [0x1B8] = {
+        .trainerclass = TRAINERCLASS_KAEMPFERIN, .sprite = 48,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Hannah"),
+            PSTRING("Hannah")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1b8_tafelberg_lapis_cave_trainer_3),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1b8_tafelberg_lapis_cave_trainer_3,
+    },
+    [0x1B9] = {
+        .trainerclass = TRAINERCLASS_MATROSE, .sprite = 53,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Donald"),
+            PSTRING("Donald")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1b9_tafelberg_lapis_cave_trainer_4),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1b9_tafelberg_lapis_cave_trainer_4,
+    },
 
     
     [0x300] = {
