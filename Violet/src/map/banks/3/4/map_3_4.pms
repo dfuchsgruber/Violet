@@ -2,26 +2,26 @@
 	"data": {
 		"footer": "map_footer_82",
 		"events": {
-			"person_cnt": 37,
-			"warp_cnt": 15,
+			"person_cnt": 62,
+			"warp_cnt": 16,
 			"trigger_cnt": 1,
-			"signpost_cnt": 6,
+			"signpost_cnt": 8,
 			"persons": [
 				{
 					"picture": 60,
 					"level": 0,
 					"target_index": 1,
-					"flag": "FLAG_HARRENFELD_KASKADA_DONE",
+					"flag": "0",
 					"field_3": 0,
-					"x": 29,
+					"x": "44",
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_0",
-					"y": 81,
+					"script": "ow_script_kaskada_person_37",
+					"y": "71",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -37,17 +37,17 @@
 					"picture": 60,
 					"level": 0,
 					"target_index": 2,
-					"flag": "FLAG_HARRENFELD_KASKADA_DONE",
+					"flag": "0",
 					"field_3": 0,
-					"x": 30,
+					"x": "45",
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_1",
-					"y": 81,
+					"script": "ow_script_kaskada_person_36",
+					"y": "72",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -60,46 +60,46 @@
 					}
 				},
 				{
-					"picture": 69,
+					"picture": "238",
 					"level": 0,
 					"target_index": 3,
-					"flag": "KASKADA_FELIX",
+					"flag": "0",
 					"field_3": 0,
-					"x": 24,
+					"x": "34",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "BEHAVIOUR_WALK_IN_PLACE_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"script": "0",
-					"y": 69,
+					"y": "71",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_KARPADOR",
 						"berry_tree_idx": 0
 					}
 				},
 				{
-					"picture": 23,
+					"picture": "28",
 					"level": 0,
 					"target_index": 4,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 23,
+					"x": "38",
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_2",
-					"y": 61,
+					"script": "ow_script_kaskada_person_8",
+					"y": "61",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -117,15 +117,15 @@
 					"target_index": 5,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 14,
+					"x": "48",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_3",
-					"y": 51,
+					"script": "ow_script_kaskada_person_11",
+					"y": "47",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -138,20 +138,20 @@
 					}
 				},
 				{
-					"picture": 29,
+					"picture": "23",
 					"level": 0,
 					"target_index": 6,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 10,
+					"x": "39",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "0",
-					"y": 49,
+					"script": "ow_script_kaskada_person_5",
+					"y": "47",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -169,15 +169,15 @@
 					"target_index": 7,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 18,
+					"x": "28",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "0",
-					"y": 44,
+					"script": "ow_script_kaskada_person_4",
+					"y": "46",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -195,15 +195,15 @@
 					"target_index": 8,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 8,
+					"x": "34",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_WANDER_DOWN_AND_UP",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "0",
-					"y": 38,
+					"script": "ow_script_kaskada_person_7",
+					"y": "57",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -221,15 +221,15 @@
 					"target_index": 9,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 17,
+					"x": "46",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "0",
-					"y": 32,
+					"script": "ow_script_kaskada_person_33",
+					"y": "16",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -247,15 +247,15 @@
 					"target_index": 10,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 16,
+					"x": "19",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_4",
-					"y": 51,
+					"script": "ow_script_kaskada_person_3",
+					"y": "47",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -273,15 +273,15 @@
 					"target_index": 11,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 9,
+					"x": "18",
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_5",
-					"y": 59,
+					"script": "ow_script_kaskada_person_0",
+					"y": "71",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -299,15 +299,15 @@
 					"target_index": 12,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 7,
+					"x": "15",
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_6",
-					"y": 64,
+					"script": "ow_script_kaskada_person_1",
+					"y": "57",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -325,15 +325,15 @@
 					"target_index": 13,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 16,
+					"x": "56",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour": "BEHAVIOUR_WANDER_LEFT_AND_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_7",
-					"y": 37,
+					"script": "ow_script_kaskada_person_34",
+					"y": "13",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -351,15 +351,15 @@
 					"target_index": 14,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 22,
+					"x": "38",
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_8",
-					"y": 47,
+					"script": "ow_script_kaskada_person_24",
+					"y": "28",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -377,15 +377,15 @@
 					"target_index": 15,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 28,
+					"x": "19",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "BEHAVIOUR_WALK_DOWN_AND_UP",
 					"behaviour_range": {
 						"x": "0",
-						"y": "0"
+						"y": "3"
 					},
-					"script": "ow_script_map_3_4_person_9",
-					"y": 52,
+					"script": "ow_script_kaskada_person_2",
+					"y": "48",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -398,20 +398,20 @@
 					}
 				},
 				{
-					"picture": 41,
+					"picture": "25",
 					"level": 0,
 					"target_index": 16,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 29,
+					"x": "23",
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_10",
-					"y": 33,
+					"script": "ow_script_kaskada_person_23",
+					"y": "36",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -429,15 +429,15 @@
 					"target_index": 17,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 29,
+					"x": "63",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour": "BEHAVIOUR_WANDER_DOWN_AND_UP",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_11",
-					"y": 42,
+					"script": "ow_script_kaskada_person_32",
+					"y": "17",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -455,15 +455,15 @@
 					"target_index": 18,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 32,
+					"x": "31",
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_12",
-					"y": 28,
+					"script": "ow_script_kaskada_person_25",
+					"y": "25",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -481,15 +481,15 @@
 					"target_index": 19,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 36,
+					"x": "36",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_13",
-					"y": 39,
+					"script": "ow_script_kaskada_person_19",
+					"y": "36",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -507,15 +507,15 @@
 					"target_index": 20,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 37,
+					"x": "36",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_14",
-					"y": 39,
+					"script": "ow_script_kaskada_person_20",
+					"y": "37",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -533,15 +533,15 @@
 					"target_index": 21,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 43,
+					"x": "43",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_15",
-					"y": 34,
+					"script": "ow_script_kaskada_person_22",
+					"y": "32",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -559,15 +559,15 @@
 					"target_index": 22,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 47,
+					"x": "54",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_16",
-					"y": 42,
+					"script": "ow_script_kaskada_person_18",
+					"y": "37",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -585,15 +585,15 @@
 					"target_index": 23,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 42,
+					"x": "67",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_17",
-					"y": 26,
+					"script": "ow_script_kaskada_person_29",
+					"y": "29",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -611,15 +611,15 @@
 					"target_index": 24,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 49,
+					"x": "49",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_18",
-					"y": 26,
+					"script": "ow_script_kaskada_person_26",
+					"y": "26",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -637,15 +637,15 @@
 					"target_index": 25,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 55,
+					"x": "54",
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_19",
-					"y": 21,
+					"script": "ow_script_kaskada_person_30",
+					"y": "22",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -663,15 +663,15 @@
 					"target_index": 26,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 54,
+					"x": "55",
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_20",
-					"y": 49,
+					"script": "ow_script_kaskada_person_12",
+					"y": "58",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -684,20 +684,20 @@
 					}
 				},
 				{
-					"picture": 55,
+					"picture": "27",
 					"level": 0,
 					"target_index": 27,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 45,
+					"x": "42",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_21",
-					"y": 34,
+					"script": "ow_script_kaskada_person_21",
+					"y": "32",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -715,15 +715,15 @@
 					"target_index": 28,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 56,
+					"x": "60",
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_22",
-					"y": 30,
+					"script": "ow_script_kaskada_person_28",
+					"y": "32",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -741,15 +741,15 @@
 					"target_index": 29,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 54,
+					"x": "67",
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_23",
-					"y": 40,
+					"script": "ow_script_kaskada_person_14",
+					"y": "45",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -767,15 +767,15 @@
 					"target_index": 30,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 55,
+					"x": "69",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_24",
-					"y": 70,
+					"script": "ow_script_kaskada_person_15",
+					"y": "62",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -793,15 +793,15 @@
 					"target_index": 31,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 58,
+					"x": "57",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_25",
-					"y": 66,
+					"script": "ow_script_kaskada_person_13",
+					"y": "62",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -819,15 +819,15 @@
 					"target_index": 32,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 56,
+					"x": "70",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_26",
-					"y": 56,
+					"script": "ow_script_kaskada_person_16",
+					"y": "62",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -845,15 +845,15 @@
 					"target_index": 33,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 37,
+					"x": "38",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_27",
-					"y": 51,
+					"script": "ow_script_kaskada_person_6",
+					"y": "47",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -871,7 +871,7 @@
 					"target_index": 34,
 					"flag": "KASKADA_ITEM_0",
 					"field_3": 0,
-					"x": 9,
+					"x": "46",
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -879,33 +879,33 @@
 						"y": "0"
 					},
 					"script": "0",
-					"y": 74,
+					"y": "59",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": "PERSON_ITEM",
 					"value": {
-						"item": "ITEM_HYPERBALL",
+						"item": "ITEM_GOLDAPFEL",
 						"species": 0,
 						"berry_tree_idx": 0
 					}
 				},
 				{
-					"picture": 32,
+					"picture": "35",
 					"level": 0,
 					"target_index": 35,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 45,
+					"x": "58",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_28",
-					"y": 64,
+					"script": "ow_script_kaskada_person_35",
+					"y": "10",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -921,17 +921,17 @@
 					"picture": 86,
 					"level": 0,
 					"target_index": "36",
-					"flag": "KASKADA_IGVA",
+					"flag": "KASKADA_IGVA | 0x8000",
 					"field_3": 0,
-					"x": 23,
+					"x": "56",
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_map_3_4_person_29",
-					"y": 53,
+					"script": "0",
+					"y": "45",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -945,13 +945,13 @@
 				},
 				{
 					"target_index": "37",
-					"picture": "70",
+					"picture": "57",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "29",
-					"y": "79",
+					"x": "35",
+					"y": "71",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -960,8 +960,608 @@
 					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
-					"script": "ow_script_kaskada_harrenfeld",
-					"flag": "BLACK_MARKET_DONE | 0x8000",
+					"script": "ow_script_kaskada_person_9",
+					"flag": "0",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "38",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "38",
+					"y": "48",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP_AND_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_FLEGMON",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "39",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "41",
+					"y": "74",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_LEFT_UP_RIGHT_DOWN",
+					"behaviour_range": {
+						"x": "2",
+						"y": "2"
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_ZIGZACHS",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "40",
+					"picture": "32",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "40",
+					"y": "73",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_ROTATE_CLOCKWISE",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_kaskada_person_10",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "41",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "66",
+					"y": "55",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KRAMURX",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "42",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "69",
+					"y": "57",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_SMOGON",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "43",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "44",
+					"y": "64",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_RIGHT_AND_LEFT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MASKEREGEN",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "44",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "82",
+					"y": "48",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KLEINSTEIN",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "45",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "75",
+					"y": "70",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_KASKADA_ITEM_0",
+					"value": {
+						"item": "ITEM_HYPERHEILER",
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "46",
+					"picture": "236",
+					"script_std": "PERSON_MUSHROOM",
+					"field_3": 0,
+					"x": "63",
+					"y": "58",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "20"
+					}
+				},
+				{
+					"target_index": "47",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "61",
+					"y": "65",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MARILL",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "48",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "83",
+					"y": "57",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_NASGNET",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "49",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "75",
+					"y": "43",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_PUMMELUFF",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "50",
+					"picture": "21",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "74",
+					"y": "43",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_kaskada_person_17",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "51",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "29",
+					"y": "35",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_RUN_IN_PLACE_UP",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KARPADOR",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "52",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "13",
+					"y": "48",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_LEFT_UP_RIGHT",
+					"behaviour_range": {
+						"x": "2",
+						"y": "4"
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_GEHWEIHER",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "53",
+					"picture": "17",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "46",
+					"y": "31",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_RIGHT_AND_LEFT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_kaskada_person_27",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "54",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "60",
+					"y": "36",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_RIGHT_UP_LEFT",
+					"behaviour_range": {
+						"x": "3",
+						"y": "3"
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_GEHWEIHER",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "55",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "63",
+					"y": "36",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_LEFT_DOWN_RIGHT_UP",
+					"behaviour_range": {
+						"x": "3",
+						"y": "3"
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_GEHWEIHER",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "56",
+					"picture": "23",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "20",
+					"y": "32",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "57",
+					"picture": "26",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "31",
+					"y": "38",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "58",
+					"picture": "21",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "44",
+					"y": "36",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT_AND_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "59",
+					"picture": "18",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "50",
+					"y": "37",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT_AND_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "60",
+					"picture": "28",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "56",
+					"y": "18",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_kaskada_person_31",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "61",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "46",
+					"y": "17",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_SCHILLOK",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "62",
+					"picture": "32",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "32",
+					"y": "32",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_kaskada_evolithe_gift",
+					"flag": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
@@ -981,113 +1581,121 @@
 				{
 					"level": 0,
 					"target_bank": 8,
-					"y": 34,
+					"y": "25",
 					"target_map": 7,
-					"x": 36,
+					"x": "37",
 					"target_warp_idx": 0
 				},
 				{
 					"level": 0,
 					"target_bank": 8,
-					"y": 34,
+					"y": "43",
 					"target_map": 6,
-					"x": 24,
+					"x": "29",
 					"target_warp_idx": 0
 				},
 				{
 					"level": 0,
 					"target_bank": 8,
-					"y": 25,
+					"y": "25",
 					"target_map": 4,
-					"x": 36,
+					"x": "25",
 					"target_warp_idx": 0
 				},
 				{
 					"level": 0,
 					"target_bank": 8,
-					"y": 35,
+					"y": "25",
 					"target_map": 9,
-					"x": 51,
+					"x": "63",
 					"target_warp_idx": 0
 				},
 				{
 					"level": 0,
 					"target_bank": 8,
-					"y": 50,
+					"y": "43",
 					"target_map": 0,
-					"x": 31,
+					"x": "47",
 					"target_warp_idx": 0
 				},
 				{
 					"level": 0,
 					"target_bank": 0,
-					"y": 75,
+					"y": "68",
 					"target_map": 7,
-					"x": 30,
+					"x": "13",
 					"target_warp_idx": 1
 				},
 				{
 					"level": 0,
 					"target_bank": 8,
-					"y": 25,
+					"y": "25",
 					"target_map": 8,
-					"x": 51,
+					"x": "47",
 					"target_warp_idx": 0
 				},
 				{
 					"level": 0,
 					"target_bank": 8,
-					"y": 50,
+					"y": "43",
 					"target_map": 10,
-					"x": 43,
+					"x": "18",
 					"target_warp_idx": 0
 				},
 				{
 					"level": 0,
-					"target_bank": 0,
-					"y": 67,
-					"target_map": 0,
-					"x": 53,
+					"target_bank": "8",
+					"y": "12",
+					"target_map": "5",
+					"x": "63",
 					"target_warp_idx": 0
 				},
 				{
 					"level": 0,
-					"target_bank": 15,
-					"y": 53,
-					"target_map": 0,
-					"x": 56,
+					"target_bank": "8",
+					"y": "58",
+					"target_map": "12",
+					"x": "66",
 					"target_warp_idx": 0
 				},
 				{
-					"x": "43",
-					"y": "63",
+					"x": "49",
+					"y": "73",
 					"level": 0,
 					"target_warp_idx": 0,
 					"target_map": "1",
 					"target_bank": "8"
 				},
 				{
-					"x": "44",
-					"y": "63",
+					"x": "50",
+					"y": "73",
 					"level": 0,
 					"target_warp_idx": "1",
 					"target_map": "1",
 					"target_bank": "8"
 				},
 				{
-					"x": "44",
-					"y": "64",
+					"x": "50",
+					"y": "74",
 					"level": 0,
 					"target_warp_idx": "2",
 					"target_map": "1",
 					"target_bank": "8"
 				},
 				{
-					"x": "43",
-					"y": "64",
+					"x": "49",
+					"y": "74",
 					"level": 0,
 					"target_warp_idx": "3",
 					"target_map": "1",
+					"target_bank": "8"
+				},
+				{
+					"x": "47",
+					"y": "12",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "3",
 					"target_bank": "8"
 				}
 			],
@@ -1095,10 +1703,10 @@
 				{
 					"level": 0,
 					"script": "ow_script_map_3_4_trigger_0",
-					"y": 71,
+					"y": "69",
 					"value": 31,
 					"field_5": 0,
-					"x": 24,
+					"x": "13",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
@@ -1107,11 +1715,11 @@
 			"signposts": [
 				{
 					"level": 0,
-					"x": 28,
-					"y": 76,
+					"x": "44",
+					"y": "43",
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
-						"script": "ow_script_map_3_4_sign_0",
+						"script": "ow_script_kaskada_sign_2",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1123,11 +1731,11 @@
 				},
 				{
 					"level": 0,
-					"x": 27,
-					"y": 50,
+					"x": "11",
+					"y": "69",
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
-						"script": "ow_script_map_3_4_sign_1",
+						"script": "ow_script_kaskada_sign_0",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1139,11 +1747,11 @@
 				},
 				{
 					"level": 0,
-					"x": 54,
-					"y": 67,
+					"x": "69",
+					"y": "59",
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
-						"script": "ow_script_map_3_4_sign_2",
+						"script": "ow_script_kaskada_sign_3",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1155,11 +1763,11 @@
 				},
 				{
 					"level": 0,
-					"x": 53,
-					"y": 66,
+					"x": "53",
+					"y": "15",
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
-						"script": "ow_script_map_3_4_sign_3",
+						"script": "ow_script_kaskada_sign_5",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1171,11 +1779,11 @@
 				},
 				{
 					"level": 0,
-					"x": 54,
-					"y": 19,
+					"x": "42",
+					"y": "71",
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
-						"script": "ow_script_map_3_4_sign_4",
+						"script": "ow_script_kaskada_sign_1",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1187,11 +1795,11 @@
 				},
 				{
 					"level": 0,
-					"x": 39,
-					"y": 25,
+					"x": "28",
+					"y": "25",
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
-						"script": "ow_script_map_3_4_sign_5",
+						"script": "ow_script_kaskada_sign_4",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1200,6 +1808,38 @@
 						}
 					},
 					"flag": "0"
+				},
+				{
+					"x": "53",
+					"y": "6",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_kaskada_sign_6"
+					}
+				},
+				{
+					"x": "21",
+					"y": "75",
+					"level": 0,
+					"type": "SIGNPOST_HIDDEN_ITEM",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": "ITEM_STERNENSTUECK",
+							"flag": "96",
+							"amount": "1",
+							"chunk": 0
+						},
+						"script": 0
+					}
 				}
 			]
 		},

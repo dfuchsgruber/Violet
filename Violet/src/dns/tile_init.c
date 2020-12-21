@@ -23,7 +23,7 @@ static color_t dns_color_flame_orange = {.rgb = {.red = 31, .green = 17, .blue =
 void tile_init(map_footer_t *foot) {
 
     if (dns_on()) {
-        if (foot->tileset1 == &maptileset0) {
+        if (foot->tileset1 == &maptileset0 || foot->tileset1 == &maptileset0_kaskada) {
             //Tileset1 = 0
             pal_restore[0x21] = dns_color_light_yellow;
             pal_restore[0x22] = dns_color_light_yellow;

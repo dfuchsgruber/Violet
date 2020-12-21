@@ -80,5 +80,6 @@ extern tileset maptileset_clouds;
 extern tileset maptileset_cloud_ruins;
 extern tileset maptileset_cloud_ardeal;
 extern tileset maptileset_blackbeard_ship;
+extern tileset maptileset0_kaskada;
 
 #endif /* INCLUDE_C_MAP_TILESET_H_ */

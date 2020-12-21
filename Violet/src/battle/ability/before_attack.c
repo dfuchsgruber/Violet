@@ -37,7 +37,7 @@ void stance_change_change_species(u8 target, u16 species){
     pokemon_set_attribute(pokemon, ATTRIBUTE_SPECIES, &species);
     pokemon_calculate_stats(pokemon);
 
-    //Update the battler slot
+    // Update the battler slot
     battlers[target].species = species;
     int j;
     for(j = 0; j < 5; j++){
@@ -61,6 +61,7 @@ bool battle_abilities_before_attack(){
             // dprintf("Lauched ability 'Wandlungsk.'");
             u8 attack_type = attacks[active_attack].type;
             if(attacker->type1 != attack_type || attacker->type2 != attack_type){
+                defending_battler_ability = attacker->ability;
                 attacker->type1 = attack_type;
                 attacker->type2 = attack_type;
                 BSC_BUFFER_TYPE(bsc_string_buffer0, attack_type);
@@ -71,6 +72,7 @@ bool battle_abilities_before_attack(){
             break;
         }
         case TAKTIKWECHS:{
+            defending_battler_ability = attacker->ability;
             if(attacker->species == POKEMON_DURENGARD && 
                     (attacks[active_attack].category == CATEGORY_PHYSICAL || 
                     (attacks[active_attack].category == CATEGORY_SPECIAL))){
@@ -86,6 +88,7 @@ bool battle_abilities_before_attack(){
                 
             } else if(attacker->species == POKEMON_DURENGARD_OFFENSIVE &&
                     active_attack == ATTACK_KOENIGSSCHILD){
+                defending_battler_ability = attacker->ability;
                 stance_change_change_species(attacking_battler,
                         POKEMON_DURENGARD);
                 battlescript_callstack_push_next_command();
@@ -106,6 +109,7 @@ bool battle_abilities_before_attack(){
                 battle_animation_user = attacking_battler;
                 battle_animation_target = attacking_battler;
                 battle_scripting.battler_idx = attacking_battler;
+                defending_battler_ability = attacker->ability;
                 battlescript_callstack_push_next_command();
                 bsc_offset = bsc_ap_sparer;
                 return true;

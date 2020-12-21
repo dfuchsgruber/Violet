@@ -13,9 +13,7 @@ end
 .ifdef LANG_GER
 
 str_0x87f1e8:
-    .string "Ich liebe den Regen, wenn er auf\ndas Dach niederprasst und dabei\lgemütlich knattert."
-
-
+    .autostring 34 2 "Das höchste aller Gefühle für mich ist es, bei Regen das Teehaus hier zu besuchen.\pWenn es draußen stürmt und donnert, sitze ich drinnen bei einer Tasse heißem Tee.\pDas ist doch wirklich Luxus, oder nicht?"
 .elseif LANG_EN
 
 .endif
@@ -30,7 +28,7 @@ end
 .ifdef LANG_GER
 
 str_0x87f23e:
-    .string "Es genügt nicht, Gutes zu tun,\nwenn man selbst keine\lBeeinträchtung erfährt.\pTrotz des eigenen Nachteils im\nSinne anderer zu handeln, das ist\lwahre Güte."
+    .autostring 34 2 "Meine Frau ist ganz besessen von diesem Teehaus hier.\pStändig höre ich sie nur von den verschiedensten Sorten und Geschmäckern schwärmen.\pAber für mich interessiert sie sich im Grunde gar nicht mehrDOTS"
 
 
 .elseif LANG_EN

@@ -19,9 +19,7 @@ end
 .ifdef LANG_GER
 
 str_0x87f2d9:
-    .string "Bist du mit den Entscheidungen,\ndie du getroffen hast, zufrieden?\lStehst du hinter dem, was du getan\lhast? Hättest du mehr tun sollen?"
-
-
+    .autostring 34 2 "Manchmal, wenn ich morgens vor dem Spiegel stehe, kommen mir einige Fragen.\pBist du zufrieden mit dem, was du erreicht hast?\pUnd wenn du könntest, was würdest du anders machen?"
 .elseif LANG_EN
 
 .endif
@@ -36,7 +34,7 @@ end
 .ifdef LANG_GER
 
 str_0x87f361:
-    .string "Hunger! Hunger!\nIch will essen!"
+    .string "Hunger!\nIch habe Hunger!\pEssen!\nIch will jetzt essen!"
 
 
 .elseif LANG_EN
@@ -72,12 +70,9 @@ end
 .ifdef LANG_GER
 
 str_0x87f432:
-    .string "Es heißt, das Quellwasser vom\nKüstenberg habe magische\lFähigkeiten. Seine bloße Präsenz\lsoll das Wasser in seiner\lUmgebung verstärken."
-
-
-
+    .autostring 34 2 "Wusstest du, dass in dem See hier ein Milotic leben soll?\pDas verleiht dem Wasser magische Kräfte!\pIch werde dir eine Kostprobe davon geben."
 str_0x87f4bb:
-    .string "Wenn du der Legende glauben\nschenkst, wird das Zauberwasser\lseine Wirkung entfalten,\lversprochen!"
+    .autostring 34 2 "Das Zauberwasser verstärkt Wasser-Angriffe, wenn ein Pokémon es trägt.\pDas ist die Magie des sagenumwobenen Milotics von Kaskada.\pDu bist davon sicher ganz überwältigt, was?"
 
 
 .elseif LANG_EN
