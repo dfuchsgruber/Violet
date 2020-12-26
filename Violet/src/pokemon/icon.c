@@ -264,7 +264,7 @@
     gfx_pkmn_species_257_pokemon_durengarda_iconTiles,
     gfx_pkmn_mega_sandamer_iconTiles,
     gfx_pkmn_mega_lahmus_iconTiles,
-    gfx_pkmn_species_260_pokemon_turtokm_iconTiles,
+    gfx_pkmn_mega_maskeregen_iconTiles,
     gfx_pkmn_species_261_pokemon_ampharaosm_iconTiles,
     gfx_pkmn_species_262_pokemon_banette_mega_iconTiles,
     gfx_pkmn_species_263_pokemon_biborm_iconTiles,
@@ -970,8 +970,8 @@ u8 pokemon_icon_usage[POKEMON_CNT] = {
     0x2,
     // POKEMON_MEGA_LAHMUS
     0x0,
-    // POKEMON_TURTOKM
-    0x2,
+    // POKEMON_MEGA_MASKEREGEN
+    0x0,
     // POKEMON_AMPHARAOSM
     0x1,
     // POKEMON_BANETTE_MEGA
