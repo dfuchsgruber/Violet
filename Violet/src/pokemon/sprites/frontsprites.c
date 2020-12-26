@@ -266,7 +266,7 @@ graphic pokemon_frontsprites[POKEMON_CNT] = {
     {gfx_pkmn_species_257_pokemon_durengarda_frontspriteTiles, 0x800, 257},
     {gfx_pkmn_mega_sandamer_frontspriteTiles, 0x800, 258},
     {gfx_pkmn_mega_lahmus_frontspriteTiles, 0x800, 259},
-    {gfx_pkmn_species_260_pokemon_turtokm_frontspriteTiles, 0x800, 260},
+    {gfx_pkmn_mega_maskeregen_frontspriteTiles, 0x800, 260},
     {gfx_pkmn_species_261_pokemon_ampharaosm_frontspriteTiles, 0x800, 261},
     {gfx_pkmn_species_262_pokemon_banette_mega_frontspriteTiles, 0x800, 262},
     {gfx_pkmn_species_263_pokemon_biborm_frontspriteTiles, 0x800, 263},

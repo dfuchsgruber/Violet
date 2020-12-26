@@ -2068,23 +2068,45 @@
 		"species_link" : "POKEMON_LAHMUS",
 		"dex_number": 0
 	},
-	"POKEMON_TURTOKM": {
+	"POKEMON_MEGA_MASKEREGEN": {
 		"basestats": {
-			"hp": 79,
-			"attack": 103,
-			"defense": 120,
-			"speed": 78,
+			"hp": 70,
+			"attack": 110,
+			"defense": 62,
+			"speed": 135,
 			"special-attack": 135,
-			"special-defense": 115
+			"special-defense": 80
 		},
-		"type_0": "Wasser",
-		"type_1": "Wasser",
+		"type_0": "Käfer",
+		"type_1": "Unlicht",
 		"exp_yield": 240,
-		"ability_0": "Notschutz",
+		"ability_0": "Techniker",
 		"ability_1": null,
 		"hidden_ability": null,
-		"species_link": "POKEMON_TURTOK",
-		"dex_number": 0
+		"species_link" : "POKEMON_MASKEREGEN",
+		"dex_number": 288,
+		"levelup_moves": [
+			[
+				"Finte",
+				22
+			],
+			[
+				"Blubbstrahl",
+				29
+			],
+			[
+				"Abschlag",
+				36
+			],
+			[
+				"Tiefschlag",
+				43
+			],
+			[
+				"Finsteraura",
+				53
+			]
+		]
 	},
 	"POKEMON_AMPHARAOSM": {
 		"basestats": {

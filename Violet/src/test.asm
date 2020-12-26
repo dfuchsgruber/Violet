@@ -37,7 +37,7 @@ str_afterb:
 
 ow_script_test:
 	setflag PLAYER_ABLE_TO_MEGA_EVOLVE
-	givepokemon POKEMON_LAHMUS 20 ITEM_LAHMUSNIT 0 0 0
+	givepokemon POKEMON_MASKEREGEN 20 ITEM_MASKEREGENIT 0 0 0
 	end
 
 	callasm berry_trees_initialize_all
