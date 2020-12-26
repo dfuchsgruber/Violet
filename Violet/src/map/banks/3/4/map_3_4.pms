@@ -21,7 +21,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_37",
-					"y": "71",
+					"y": "73",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -47,7 +47,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_36",
-					"y": "72",
+					"y": "74",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -73,7 +73,7 @@
 						"y": "0"
 					},
 					"script": "0",
-					"y": "71",
+					"y": "73",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -99,7 +99,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_8",
-					"y": "61",
+					"y": "63",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -125,7 +125,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_11",
-					"y": "47",
+					"y": "49",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -151,7 +151,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_5",
-					"y": "47",
+					"y": "49",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -177,7 +177,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_4",
-					"y": "46",
+					"y": "48",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -203,7 +203,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_7",
-					"y": "57",
+					"y": "59",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -229,7 +229,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_33",
-					"y": "16",
+					"y": "18",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -255,7 +255,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_3",
-					"y": "47",
+					"y": "49",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -281,7 +281,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_0",
-					"y": "71",
+					"y": "73",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -307,7 +307,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_1",
-					"y": "57",
+					"y": "59",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -333,7 +333,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_34",
-					"y": "13",
+					"y": "15",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -359,7 +359,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_24",
-					"y": "28",
+					"y": "30",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -385,7 +385,7 @@
 						"y": "3"
 					},
 					"script": "ow_script_kaskada_person_2",
-					"y": "48",
+					"y": "50",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -411,7 +411,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_23",
-					"y": "36",
+					"y": "38",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -437,7 +437,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_32",
-					"y": "17",
+					"y": "19",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -463,7 +463,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_25",
-					"y": "25",
+					"y": "27",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -489,7 +489,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_19",
-					"y": "36",
+					"y": "38",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -515,7 +515,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_20",
-					"y": "37",
+					"y": "39",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -541,7 +541,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_22",
-					"y": "32",
+					"y": "34",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -567,7 +567,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_18",
-					"y": "37",
+					"y": "39",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -593,7 +593,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_29",
-					"y": "29",
+					"y": "31",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -619,7 +619,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_26",
-					"y": "26",
+					"y": "28",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -645,7 +645,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_30",
-					"y": "22",
+					"y": "24",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -671,7 +671,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_12",
-					"y": "58",
+					"y": "60",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -697,7 +697,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_21",
-					"y": "32",
+					"y": "34",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -723,7 +723,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_28",
-					"y": "32",
+					"y": "34",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -749,7 +749,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_14",
-					"y": "45",
+					"y": "47",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -775,7 +775,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_15",
-					"y": "62",
+					"y": "64",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -801,7 +801,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_13",
-					"y": "62",
+					"y": "64",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -827,7 +827,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_16",
-					"y": "62",
+					"y": "64",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -853,7 +853,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_6",
-					"y": "47",
+					"y": "49",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -879,7 +879,7 @@
 						"y": "0"
 					},
 					"script": "0",
-					"y": "59",
+					"y": "61",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -905,7 +905,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_35",
-					"y": "10",
+					"y": "12",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -931,7 +931,7 @@
 						"y": "0"
 					},
 					"script": "0",
-					"y": "45",
+					"y": "47",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -949,7 +949,7 @@
 					"script_std": 0,
 					"field_3": 0,
 					"x": "35",
-					"y": "71",
+					"y": "73",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
@@ -974,7 +974,7 @@
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
 					"x": "38",
-					"y": "48",
+					"y": "50",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_UP_AND_RIGHT",
 					"behaviour_range": {
@@ -998,7 +998,7 @@
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
 					"x": "41",
-					"y": "74",
+					"y": "76",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_LEFT_UP_RIGHT_DOWN",
 					"behaviour_range": {
@@ -1022,7 +1022,7 @@
 					"script_std": 0,
 					"field_3": 0,
 					"x": "40",
-					"y": "73",
+					"y": "75",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_ROTATE_CLOCKWISE",
 					"behaviour_range": {
@@ -1046,7 +1046,7 @@
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
 					"x": "66",
-					"y": "55",
+					"y": "57",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -1070,7 +1070,7 @@
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
 					"x": "69",
-					"y": "57",
+					"y": "59",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -1094,7 +1094,7 @@
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
 					"x": "44",
-					"y": "64",
+					"y": "66",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_RIGHT_AND_LEFT",
 					"behaviour_range": {
@@ -1118,7 +1118,7 @@
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
 					"x": "82",
-					"y": "48",
+					"y": "50",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -1142,7 +1142,7 @@
 					"script_std": "PERSON_ITEM",
 					"field_3": 0,
 					"x": "75",
-					"y": "70",
+					"y": "72",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -1166,7 +1166,7 @@
 					"script_std": "PERSON_MUSHROOM",
 					"field_3": 0,
 					"x": "63",
-					"y": "58",
+					"y": "60",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -1190,7 +1190,7 @@
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
 					"x": "61",
-					"y": "65",
+					"y": "67",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -1214,7 +1214,7 @@
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
 					"x": "83",
-					"y": "57",
+					"y": "59",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -1238,7 +1238,7 @@
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
 					"x": "75",
-					"y": "43",
+					"y": "45",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
@@ -1262,7 +1262,7 @@
 					"script_std": 0,
 					"field_3": 0,
 					"x": "74",
-					"y": "43",
+					"y": "45",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
@@ -1286,7 +1286,7 @@
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
 					"x": "29",
-					"y": "35",
+					"y": "37",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_RUN_IN_PLACE_UP",
 					"behaviour_range": {
@@ -1310,7 +1310,7 @@
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
 					"x": "13",
-					"y": "48",
+					"y": "50",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_LEFT_UP_RIGHT",
 					"behaviour_range": {
@@ -1334,7 +1334,7 @@
 					"script_std": 0,
 					"field_3": 0,
 					"x": "46",
-					"y": "31",
+					"y": "33",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_RIGHT_AND_LEFT",
 					"behaviour_range": {
@@ -1358,7 +1358,7 @@
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
 					"x": "60",
-					"y": "36",
+					"y": "38",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_RIGHT_UP_LEFT",
 					"behaviour_range": {
@@ -1382,7 +1382,7 @@
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
 					"x": "63",
-					"y": "36",
+					"y": "38",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_LEFT_DOWN_RIGHT_UP",
 					"behaviour_range": {
@@ -1406,7 +1406,7 @@
 					"script_std": 0,
 					"field_3": 0,
 					"x": "20",
-					"y": "32",
+					"y": "34",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
@@ -1430,7 +1430,7 @@
 					"script_std": 0,
 					"field_3": 0,
 					"x": "31",
-					"y": "38",
+					"y": "40",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -1454,7 +1454,7 @@
 					"script_std": 0,
 					"field_3": 0,
 					"x": "44",
-					"y": "36",
+					"y": "38",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_LEFT_AND_RIGHT",
 					"behaviour_range": {
@@ -1478,7 +1478,7 @@
 					"script_std": 0,
 					"field_3": 0,
 					"x": "50",
-					"y": "37",
+					"y": "39",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_LEFT_AND_RIGHT",
 					"behaviour_range": {
@@ -1502,7 +1502,7 @@
 					"script_std": 0,
 					"field_3": 0,
 					"x": "56",
-					"y": "18",
+					"y": "20",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
@@ -1526,7 +1526,7 @@
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
 					"x": "46",
-					"y": "17",
+					"y": "19",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
@@ -1550,7 +1550,7 @@
 					"script_std": 0,
 					"field_3": 0,
 					"x": "32",
-					"y": "32",
+					"y": "34",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
@@ -1574,7 +1574,7 @@
 					"script_std": 0,
 					"field_3": 0,
 					"x": "46",
-					"y": "44",
+					"y": "46",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -1597,7 +1597,7 @@
 				{
 					"level": 0,
 					"target_bank": 0,
-					"y": 61,
+					"y": "63",
 					"target_map": 0,
 					"x": 16,
 					"target_warp_idx": 0
@@ -1605,7 +1605,7 @@
 				{
 					"level": 0,
 					"target_bank": 8,
-					"y": "25",
+					"y": "27",
 					"target_map": 7,
 					"x": "37",
 					"target_warp_idx": 0
@@ -1613,7 +1613,7 @@
 				{
 					"level": 0,
 					"target_bank": 8,
-					"y": "43",
+					"y": "45",
 					"target_map": 6,
 					"x": "29",
 					"target_warp_idx": 0
@@ -1621,7 +1621,7 @@
 				{
 					"level": 0,
 					"target_bank": 8,
-					"y": "25",
+					"y": "27",
 					"target_map": 4,
 					"x": "25",
 					"target_warp_idx": 0
@@ -1629,7 +1629,7 @@
 				{
 					"level": 0,
 					"target_bank": 8,
-					"y": "25",
+					"y": "27",
 					"target_map": 9,
 					"x": "63",
 					"target_warp_idx": 0
@@ -1637,7 +1637,7 @@
 				{
 					"level": 0,
 					"target_bank": 8,
-					"y": "43",
+					"y": "45",
 					"target_map": 0,
 					"x": "47",
 					"target_warp_idx": 0
@@ -1645,7 +1645,7 @@
 				{
 					"level": 0,
 					"target_bank": 0,
-					"y": "68",
+					"y": "70",
 					"target_map": 7,
 					"x": "13",
 					"target_warp_idx": 1
@@ -1653,7 +1653,7 @@
 				{
 					"level": 0,
 					"target_bank": 8,
-					"y": "25",
+					"y": "27",
 					"target_map": 8,
 					"x": "47",
 					"target_warp_idx": 0
@@ -1661,7 +1661,7 @@
 				{
 					"level": 0,
 					"target_bank": 8,
-					"y": "43",
+					"y": "45",
 					"target_map": 10,
 					"x": "18",
 					"target_warp_idx": 0
@@ -1669,7 +1669,7 @@
 				{
 					"level": 0,
 					"target_bank": "8",
-					"y": "12",
+					"y": "14",
 					"target_map": "5",
 					"x": "63",
 					"target_warp_idx": 0
@@ -1677,14 +1677,14 @@
 				{
 					"level": 0,
 					"target_bank": "8",
-					"y": "58",
+					"y": "60",
 					"target_map": "12",
 					"x": "66",
 					"target_warp_idx": 0
 				},
 				{
 					"x": "49",
-					"y": "73",
+					"y": "75",
 					"level": 0,
 					"target_warp_idx": 0,
 					"target_map": "1",
@@ -1692,7 +1692,7 @@
 				},
 				{
 					"x": "50",
-					"y": "73",
+					"y": "75",
 					"level": 0,
 					"target_warp_idx": "1",
 					"target_map": "1",
@@ -1700,7 +1700,7 @@
 				},
 				{
 					"x": "50",
-					"y": "74",
+					"y": "76",
 					"level": 0,
 					"target_warp_idx": "2",
 					"target_map": "1",
@@ -1708,7 +1708,7 @@
 				},
 				{
 					"x": "49",
-					"y": "74",
+					"y": "76",
 					"level": 0,
 					"target_warp_idx": "3",
 					"target_map": "1",
@@ -1716,7 +1716,7 @@
 				},
 				{
 					"x": "47",
-					"y": "12",
+					"y": "14",
 					"level": 0,
 					"target_warp_idx": 0,
 					"target_map": "3",
@@ -1727,7 +1727,7 @@
 				{
 					"level": 0,
 					"script": "ow_script_map_3_4_trigger_0",
-					"y": "69",
+					"y": "71",
 					"value": 31,
 					"field_5": 0,
 					"x": "13",
@@ -1740,7 +1740,7 @@
 				{
 					"level": 0,
 					"x": "44",
-					"y": "43",
+					"y": "45",
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_kaskada_sign_2",
@@ -1756,7 +1756,7 @@
 				{
 					"level": 0,
 					"x": "11",
-					"y": "69",
+					"y": "71",
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_kaskada_sign_0",
@@ -1772,7 +1772,7 @@
 				{
 					"level": 0,
 					"x": "69",
-					"y": "59",
+					"y": "61",
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_kaskada_sign_3",
@@ -1788,7 +1788,7 @@
 				{
 					"level": 0,
 					"x": "53",
-					"y": "15",
+					"y": "17",
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_kaskada_sign_5",
@@ -1804,7 +1804,7 @@
 				{
 					"level": 0,
 					"x": "42",
-					"y": "71",
+					"y": "73",
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_kaskada_sign_1",
@@ -1820,7 +1820,7 @@
 				{
 					"level": 0,
 					"x": "28",
-					"y": "25",
+					"y": "27",
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_kaskada_sign_4",
@@ -1835,7 +1835,7 @@
 				},
 				{
 					"x": "53",
-					"y": "6",
+					"y": "8",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"flag": 0,
@@ -1851,7 +1851,7 @@
 				},
 				{
 					"x": "21",
-					"y": "75",
+					"y": "77",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"flag": 0,
