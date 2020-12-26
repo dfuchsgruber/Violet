@@ -27,6 +27,7 @@
 .global ow_script_map_3_21_trainer_14
 .global ow_script_map_3_21_trainer_3
 .global ow_script_map_3_21_person_1
+.global ow_script_map_felsige_oednis_desert_person_0
 
 ow_script_map_3_21_trainer_10:
     trainerbattlestd 0x0 0x66 0x0 str_0x72458c str_0x7245ea
@@ -323,6 +324,17 @@ str_0x926c67:
 
 .endif
 
+
+ow_script_map_felsige_oednis_desert_person_0:
+    loadpointer 0 str_0
+    callstd MSG_FACE
+    end
+
+.ifdef LANG_GER
+str_0:
+    .autostring 34 2 "Ich bin von der weiten Reise durch die Wüste völlig geschafft.\pGut, dass ich mich hier bei frischem Wasser erholen konnteDOTS"
+.elseif LANG_EN
+.endif
 
 ow_script_movs_0x91fece:
 .byte SAY_EXCLAM

@@ -2,10 +2,10 @@
 	"data": {
 		"footer": "map_footer_91",
 		"events": {
-			"person_cnt": 49,
-			"warp_cnt": 7,
+			"person_cnt": 50,
+			"warp_cnt": 8,
 			"trigger_cnt": 4,
-			"signpost_cnt": 22,
+			"signpost_cnt": 25,
 			"persons": [
 				{
 					"target_index": 1,
@@ -584,10 +584,10 @@
 					"picture": 39,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "68",
-					"y": "19",
+					"x": "69",
+					"y": "12",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -740,8 +740,8 @@
 					"picture": "101",
 					"script_std": "PERSON_EGG",
 					"field_3": 0,
-					"x": "71",
-					"y": "41",
+					"x": "74",
+					"y": "35",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -1239,6 +1239,30 @@
 						"species": "POKEMON_KNACKLION",
 						"berry_tree_idx": 0
 					}
+				},
+				{
+					"target_index": "50",
+					"picture": "22",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "73",
+					"y": "24",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_map_felsige_oednis_desert_person_0",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
 				}
 			],
 			"warps": [
@@ -1296,6 +1320,14 @@
 					"level": 0,
 					"target_warp_idx": 0,
 					"target_map": "3",
+					"target_bank": "22"
+				},
+				{
+					"x": "75",
+					"y": "21",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "6",
 					"target_bank": "22"
 				}
 			],
@@ -1363,8 +1395,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 67,
-					"y": 31,
+					"x": "77",
+					"y": "22",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -1379,8 +1411,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 68,
-					"y": 31,
+					"x": "78",
+					"y": "22",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -1395,8 +1427,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 67,
-					"y": 32,
+					"x": "77",
+					"y": "21",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -1411,8 +1443,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 68,
-					"y": 32,
+					"x": "78",
+					"y": "21",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -1427,8 +1459,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 69,
-					"y": 72,
+					"x": "68",
+					"y": "78",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -1443,8 +1475,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 68,
-					"y": 72,
+					"x": "68",
+					"y": "77",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -1459,8 +1491,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 69,
-					"y": 71,
+					"x": "67",
+					"y": "78",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -1475,8 +1507,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 68,
-					"y": 71,
+					"x": "67",
+					"y": "77",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -1696,6 +1728,54 @@
 							"chunk": 0
 						},
 						"script": 0
+					}
+				},
+				{
+					"x": "14",
+					"y": "18",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_felsige_oednis_desert_sign_0"
+					}
+				},
+				{
+					"x": "69",
+					"y": "9",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_felsige_oednis_desert_sign_1"
+					}
+				},
+				{
+					"x": "72",
+					"y": "21",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_felsige_oednis_desert_sign_2"
 					}
 				}
 			]

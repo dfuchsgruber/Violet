@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_82",
 		"events": {
-			"person_cnt": 62,
+			"person_cnt": 63,
 			"warp_cnt": 16,
 			"trigger_cnt": 1,
 			"signpost_cnt": 8,
@@ -1561,6 +1561,30 @@
 					"is_trainer": 0,
 					"alert_radius": 0,
 					"script": "ow_script_kaskada_evolithe_gift",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "63",
+					"picture": 0,
+					"script_std": 0,
+					"field_3": 0,
+					"x": "46",
+					"y": "44",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_test",
 					"flag": 0,
 					"value": {
 						"item": 0,

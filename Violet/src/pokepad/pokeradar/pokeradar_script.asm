@@ -2,6 +2,7 @@
 .include "movements.s"
 .include "constants/flags.s"
 .include "specials.s"
+.include "vars.s"
 
 .global script_pokeradar
 .global script_pokeradar_battle
@@ -12,7 +13,7 @@
 script_pokeradar_s:
     lockall
     pause 0x18
-    checkflag 0x917
+    checkflag POKERADAR_POKEMON_SPAWNED
     gotoif 0 subscript_pokeradar_done
     fadescreen 1
     sound 0x27
@@ -21,17 +22,17 @@ script_pokeradar_s:
     checksound
     sound 0x27
     checksound
-    compare 0x800D 1
+    compare LASTRESULT 1
     gotoif 1 subscript_pokeradar_empty
-    compare 0x800D 3
+    compare LASTRESULT 3
     gotoif 1 subscript_pokeradar_no_grass
-    compare 0x800D 2
+    compare LASTRESULT 2
     gotoif 1 subscript_pokeradar_unlucky
-    copyvar 0x50EB 0x8000 //we update the species and level that was spawned
-    copyvar 0x50EE 0x8001
-    setvar 0x50E9 0
+    // copyvar POKERADAR_EMENY_SPECIES 0x8000 //we update the species and level that was spawned
+    // copyvar POKERADAR_ENEMY_LEVEL 0x8001
+    setvar POKERADAR_ENEMY_STATE 0
     hidesprite 254
-    clearflag 0x917
+    clearflag POKERADAR_POKEMON_SPAWNED
     showsprite 254
     callasm ow_script_fadescreen_palette_backup
     fadescreen 0
@@ -60,7 +61,7 @@ subscript_pokeradar_no_grass:
     callstd 6
     releaseall
     end   
-
+ 
 subscript_pokeradar_unlucky:
     fadescreen 0
     loadpointer 0 str_pokepad_pokeradar_unlucky
@@ -70,7 +71,7 @@ subscript_pokeradar_unlucky:
 
 script_pokeradar_battle:
     faceplayer
-    cry 0x50EB 0
+    cry POKERADAR_EMENY_SPECIES 0
     waitcry
     special 0x13
 	setflag FLAG_IN_BATTLE
@@ -103,18 +104,18 @@ script_pokeradar_alert_s:
 script_pokeradar_poschange_s:
     lockall
     hidesprite 254
-    clearflag 0x917
+    clearflag POKERADAR_POKEMON_SPAWNED
     showsprite 254
     random 0x4
-    compare 0x800D 0
+    compare LASTRESULT 0
     callif 1 _mov_x52
-    compare 0x800D 1
+    compare LASTRESULT 1
     callif 1 _mov_x53
-    compare 0x800D 2
+    compare LASTRESULT 2
     callif 1 _mov_x54
-    compare 0x800D 3
+    compare LASTRESULT 3
     callif 1 _mov_x55
-    cry 0x50EB 0
+    cry POKERADAR_EMENY_SPECIES 0
     waitcry
     releaseall
     end
@@ -151,7 +152,7 @@ mov_x55:
 
 script_pokeradar_flee_s:
     lockall
-    cry 0x50EB 0
+    cry POKERADAR_EMENY_SPECIES 0
     fadescreen 1
     waitcry
     hidesprite 254

@@ -12,6 +12,32 @@
 .include "items.s"
 
 .global ow_script_felsige_oednis_regirock_cave_entrance
+.global ow_script_felsige_oednis_desert_sign_0
+.global ow_script_felsige_oednis_desert_sign_1
+.global ow_script_felsige_oednis_desert_sign_2
+
+ow_script_felsige_oednis_desert_sign_0:
+    loadpointer 0 str_sign0
+    callstd MSG_SIGN
+    end
+ow_script_felsige_oednis_desert_sign_1:
+    loadpointer 0 str_sign1
+    callstd MSG_SIGN
+    end
+ow_script_felsige_oednis_desert_sign_2:
+    loadpointer 0 str_sign2
+    callstd MSG_SIGN
+    end
+
+.ifdef LANG_GER
+str_sign0:
+    .autostring 34 2 "UP_ARROW Felsige Ödnis\pAchtung\nDunkel!"
+str_sign1:
+    .autostring 34 2 "UP_ARROW Tafelberg\pAchtung\nDunkel!"
+str_sign2:
+    .autostring 34 2 "Expeditionszelt von Professor Tann."
+.elseif LANG_EN
+.endif
 
 ow_script_felsige_oednis_regirock_cave_entrance:
     lock
@@ -68,8 +94,10 @@ str_0:
 .global ow_script_0x8ffcbb
 
 ow_script_map_3_21_sign_0:
-loadpointer 0x0 str_0x926b0a
-callstd MSG
+    loadpointer 0x0 str_0x926b0a
+    callstd MSG_SIGN
+    end
+
 fadescreen 0x1
 fanfare 0x100
 waitfanfare
@@ -83,7 +111,8 @@ end
 .ifdef LANG_GER
 
 str_0x926b0a:
-    .string "Ein Brunnen! Das frische Wasser\nwird den erschöpften Pokémon\lhelfen."
+    .autostring 34 2 "Ein Brunnen!\nVielleicht finde ich im Inneren des Zeltes etwas zu trinkenDOTS\pDas dürfte meinen Pokémon wieder auf die Beine helfen."
+    //.string "Ein Brunnen! Das frische Wasser\nwird den erschöpften Pokémon\lhelfen."
 
 
 
