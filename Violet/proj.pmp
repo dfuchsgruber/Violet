@@ -499,6 +499,11 @@
 				"map_kaskada_tea_house",
 				"src/map/banks/8/12/map_kaskada_tea_house.pms",
 				"MAP_KASKADA"
+			],
+			"13": [
+				"map_kaskada_cave",
+				"src/map/banks/8/13/map_kaskada_cave.pms",
+				"MAP_KASKADA"
 			]
 		},
 		"9": {
@@ -1985,6 +1990,10 @@
 		"map_footer_desert_tent": [
 			130,
 			"src/map/banks/22/6/map_footer_desert_tent.pms"
+		],
+		"map_footer_kaskada_cave": [
+			131,
+			"src/map/banks/8/13/map_footer_kaskada_cave.pms"
 		]
 	},
 	"tilesets_primary": {
