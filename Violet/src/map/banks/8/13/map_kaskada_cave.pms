@@ -1,0 +1,75 @@
+{
+	"data": {
+		"footer": "map_footer_kaskada_cave",
+		"events": {
+			"person_cnt": 1,
+			"warp_cnt": 1,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "101",
+					"script_std": "PERSON_EGG",
+					"field_3": 0,
+					"x": "11",
+					"y": "7",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_KASKADA_FEEBAS_EGG",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_BARSCHWA",
+						"berry_tree_idx": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "10",
+					"y": "16",
+					"level": 0,
+					"target_warp_idx": "16",
+					"target_map": "4",
+					"target_bank": "3"
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "VERTANIA_WALD_AND_BEERENFORST_AND_MUSTERBUSCHWALD_AND_DIGDAS_HOHLE_AND_SEESCHAUMINSELN",
+		"footer_idx": 131,
+		"namespace": "MAP_KASKADA",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"bike_usable": "0",
+		"flags": {
+			"allow_escape_rope": "1",
+			"allow_run": 0,
+			"show_name": 0,
+			"flag_3": 0,
+			"flag_4": 0,
+			"flag_5": 0,
+			"flag_6": 0,
+			"flag_7": 0
+		},
+		"level": 0,
+		"battle_style": 0
+	},
+	"label": "map_kaskada_cave",
+	"type": "header"
+}

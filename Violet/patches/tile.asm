@@ -125,3 +125,13 @@
     ldr r3, =signpost_get_script | 1
     bx r3
     .pool
+
+// Priority 3 for levels 0xB and 0xC
+.org 0x083a6f40 + 0xB
+    .byte 3
+.org 0x083a6f40 + 0xC
+    .byte 3
+.org 0x083a6f50 + 0xB
+    .byte 3 - 3
+.org 0x083a6f50 + 0xC
+    .byte 3 - 3
