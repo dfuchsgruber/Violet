@@ -169,7 +169,12 @@ void wondertrade_bg_scroll_callback(u8 self) {
 u16 wondertrade_select_pokemon() {
     u8 table = 0; //bronze standard table
     u8 r = (u8) rnd16();
-    switch (wondertrade_get_level()) {
+    u8 wondertrade_level = wondertrade_get_level();
+    if (wondertrade_level > 1 && !checkflag(WONDERTRADE_MEW_RECEIVED)) {
+        setflag(WONDERTRADE_MEW_RECEIVED);
+        return POKEMON_MEW;
+    }
+    switch (wondertrade_level) {
         case 3:
             if (r < 16)
                 table++;
@@ -182,13 +187,6 @@ u16 wondertrade_select_pokemon() {
             if (r < 128)
                 table++;
             break;
-    }
-    //dprintf("Table %d, mew flag %d\n", table, checkflag(WONDERTRADE_MEW_RECEIVED));
-    //if (table > 1 && !checkflag(WONDERTRADE_MEW_RECEIVED))
-    //   dprintf("Mew possible.\n");
-    if (table > 1 && !checkflag(WONDERTRADE_MEW_RECEIVED)) {
-        setflag(WONDERTRADE_MEW_RECEIVED);
-        return POKEMON_MEW;
     }
     u32 table_size = 0;
     while (wondertrade_pokemon[table][table_size] != 0xFFFF)

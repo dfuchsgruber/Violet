@@ -14,7 +14,7 @@ end
 .ifdef LANG_GER
 
 str_0x8c7d34:
-    .string "Östlich: Kranzwald"
+    .string "RIGHT_ARROW Kranzwald"
 
 
 .elseif LANG_EN

@@ -104,9 +104,10 @@ u8 pokeradar_prepeare() {
                 return 3;
             //There is a pokemon we can spawn, we check if random < frequency
             u8 random = (u8) rnd16();
-            if (wild_pokemon[wild_table_entry].other->frequency <= random) {
+            /* if (wild_pokemon[wild_table_entry].other->frequency <= random) {
                 return 2; //Unlucky, pokemon did not appear
             }
+            */
             int index;
             //Now we select a pokemon
             random = (u8) rnd16();
@@ -126,8 +127,8 @@ u8 pokeradar_prepeare() {
             u8 min = wild_pokemon[wild_table_entry].other->data[index].level_min;
             u8 max = wild_pokemon[wild_table_entry].other->data[index].level_max;
             int level = (rnd16() % (max - min + 1)) + min;
-            *var_access(0x8000) = result;
-            *var_access(0x8001) = (u16) level;
+            *var_access(POKERADAR_EMENY_SPECIES) = result;
+            *var_access(POKERADAR_ENEMY_LEVEL) = (u16) level;
 
             memcpy(&(cmem.pokeradar_person), &pokeradar_map_event_person, sizeof(map_event_person));
             cmem.pokeradar_person.x = (s16)(npc_pos.x - 7);

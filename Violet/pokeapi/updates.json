@@ -2050,8 +2050,23 @@
 		"species_link": "POKEMON_SANDAMER",
 		"dex_number": 0
 	},
-	"POKEMON_GAME": {
-		"species_link" : "POKEMON_POKEMON_0"
+	"POKEMON_MEGA_LAHMUS": {
+		"basestats": {
+			"hp": 95,
+			"attack": 75,
+			"defense": 180,
+			"speed": 130,
+			"special-attack": 80,
+			"special-defense": 30
+		},
+		"type_0": "Wasser",
+		"type_1": "Psycho",
+		"exp_yield": 240,
+		"ability_0": "Panzerhaut",
+		"ability_1": null,
+		"hidden_ability": null,
+		"species_link" : "POKEMON_LAHMUS",
+		"dex_number": 0
 	},
 	"POKEMON_TURTOKM": {
 		"basestats": {

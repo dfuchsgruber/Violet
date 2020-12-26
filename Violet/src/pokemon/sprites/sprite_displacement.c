@@ -520,8 +520,8 @@ u32 pokemon_player_y[POKEMON_CNT] = {
     0x88,
     // POKEMON_MEGA_SANDAMER
     0x188,
-    // POKEMON_GAME
-    0x88,
+    // POKEMON_MEGA_LAHMUS
+    0,
     // POKEMON_TURTOKM
     0x188,
     // POKEMON_AMPHARAOSM

@@ -986,9 +986,9 @@ static u8 str_item_sandamernit_description[] = LANGDEP(
 	PSTRING("Wird er von einem Sandamer\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
 	PSTRING("If held by an Sandslash in\nbattle it can perform\na mega evolution.")
 );
-static u8 str_item_item_f4_description[] = LANGDEP(
-	PSTRING(" ????"),
-	PSTRING("?????")
+static u8 str_item_lahmusnit_description[] = LANGDEP(
+	PSTRING("Wird er von einem Lahmus\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+	PSTRING("If held by an Slowbro in\nbattle it can perform\na mega evolution.")
 );
 static u8 str_item_item_f5_description[] = LANGDEP(
 	PSTRING(" ????"),
@@ -5542,12 +5542,12 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_F4
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
+		LANGDEP(PSTRING("Lahmusnit"), PSTRING("Slowbronite")),
+		ITEM_LAHMUSNIT, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_item_f4_description,
+		str_item_lahmusnit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket 
