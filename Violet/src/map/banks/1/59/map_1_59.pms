@@ -640,8 +640,8 @@
 					"target_warp_idx": 0
 				},
 				{
-					"x": 34,
-					"y": 9,
+					"x": "68",
+					"y": "17",
 					"level": 0,
 					"target_bank": 8,
 					"target_map": 11,
@@ -697,7 +697,7 @@
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_SOUTH",
-					"displacement": "-5",
+					"displacement": "26",
 					"bank": 3,
 					"field_A": 0,
 					"field_B": 0,

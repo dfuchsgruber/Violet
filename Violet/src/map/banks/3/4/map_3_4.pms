@@ -1881,7 +1881,7 @@
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_NORTH",
-					"displacement": "5",
+					"displacement": "-26",
 					"bank": 1,
 					"field_A": 0,
 					"field_B": 0,
