@@ -145,7 +145,10 @@ mugshot mugshots[] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_harrenfeldTiles}, 
 		gfx_mug_harrenfeldPal, str_mug_harrenfeld},
     [MUGSHOT_ALBUS] = {
-		{[MUGSHOT_NORMAL] = gfx_mug_albusTiles}, 
+		{
+			[MUGSHOT_NORMAL] = gfx_mug_albusTiles, 
+			[MUGSHOT_SAD] = gfx_mug_albus_sadTiles
+		}, 
 		gfx_mug_albusPal, str_mug_albus},
     [MUGSHOT_FAUN_YOUNG] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_faun_youngTiles}, 

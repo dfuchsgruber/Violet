@@ -36,6 +36,9 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	setvar STORY_PROGRESS 31
+	end
+
 	setflag PLAYER_ABLE_TO_MEGA_EVOLVE
 	givepokemon POKEMON_MASKEREGEN 20 ITEM_MASKEREGENIT 0 0 0
 	end

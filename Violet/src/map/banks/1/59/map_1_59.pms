@@ -2,9 +2,9 @@
 	"data": {
 		"footer": "map_footer_143",
 		"events": {
-			"person_cnt": 24,
+			"person_cnt": 57,
 			"warp_cnt": 2,
-			"trigger_cnt": 2,
+			"trigger_cnt": 5,
 			"signpost_cnt": 1,
 			"persons": [
 				{
@@ -12,17 +12,17 @@
 					"picture": 78,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 34,
-					"y": 22,
+					"x": "56",
+					"y": "13",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_JOG_IN_PLACE_DOWN",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_1_59_person_0",
+					"script": "ow_script_tafelberg_revolutionary_0",
 					"flag": "KUSTENBERG_DONE",
 					"field_D": 0,
 					"field_B": 0,
@@ -38,17 +38,17 @@
 					"picture": 78,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 41,
-					"y": 24,
+					"x": "46",
+					"y": "15",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "1",
-					"alert_radius": 2,
-					"script": "ow_script_map_1_59_trainer_0",
+					"alert_radius": "4",
+					"script": "ow_script_tafelberg_trainer_1",
 					"flag": "KUSTENBERG_DONE",
 					"field_D": 0,
 					"field_B": 0,
@@ -64,17 +64,17 @@
 					"picture": 78,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 38,
-					"y": 33,
+					"x": "53",
+					"y": "19",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_LEFT",
+					"behaviour": "BEHAVIOUR_WALK_RIGHT_AND_LEFT",
 					"behaviour_range": {
-						"x": "0",
+						"x": "5",
 						"y": "0"
 					},
 					"is_trainer": "1",
-					"alert_radius": 2,
-					"script": "ow_script_map_1_59_trainer_1",
+					"alert_radius": "5",
+					"script": "ow_script_tafelberg_trainer_0",
 					"flag": "KUSTENBERG_DONE",
 					"field_D": 0,
 					"field_B": 0,
@@ -90,17 +90,17 @@
 					"picture": 60,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "40",
-					"y": "16",
+					"x": "39",
+					"y": "20",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_JOG_IN_PLACE_LEFT",
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_1_59_trainer_2",
+					"script": "ow_script_tafelberg_policeman_2",
 					"flag": "KUSTENBERG_DONE",
 					"field_D": 0,
 					"field_B": 0,
@@ -116,17 +116,17 @@
 					"picture": 78,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "39",
-					"y": "16",
+					"x": "36",
+					"y": "20",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_JOG_IN_PLACE_RIGHT",
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_1_59_trainer_3",
+					"script": "ow_script_tafelberg_revolutionary_2",
 					"flag": "KUSTENBERG_DONE",
 					"field_D": 0,
 					"field_B": 0,
@@ -142,17 +142,17 @@
 					"picture": 78,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 35,
-					"y": 22,
+					"x": "57",
+					"y": "13",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_JOG_IN_PLACE_DOWN",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_1_59_trainer_4",
+					"script": "ow_script_tafelberg_revolutionary_1",
 					"flag": "KUSTENBERG_DONE",
 					"field_D": 0,
 					"field_B": 0,
@@ -168,17 +168,17 @@
 					"picture": 60,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 34,
-					"y": 23,
+					"x": "56",
+					"y": "16",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_JOG_IN_PLACE_UP",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_1_59_trainer_5",
+					"script": "ow_script_tafelberg_policeman_0",
 					"flag": "KUSTENBERG_DONE",
 					"field_D": 0,
 					"field_B": 0,
@@ -191,20 +191,20 @@
 				},
 				{
 					"target_index": 8,
-					"picture": "70",
+					"picture": "60",
 					"field_2": 0,
 					"field_3": 0,
-					"x": 35,
-					"y": 23,
+					"x": "57",
+					"y": "16",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_JOG_IN_PLACE_UP",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_kuestenberg_harrenfeld",
+					"script": "ow_script_tafelberg_policeman_1",
 					"flag": "KUSTENBERG_DONE",
 					"field_D": 0,
 					"field_B": 0,
@@ -217,20 +217,20 @@
 				},
 				{
 					"target_index": 9,
-					"picture": "60",
+					"picture": "78",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "35",
-					"y": "29",
+					"x": "37",
+					"y": "35",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_1_59_trainer_6",
+					"script": "ow_script_tafelberg_revolutionary_4",
 					"flag": "KUSTENBERG_DONE",
 					"field_D": 0,
 					"field_B": 0,
@@ -246,17 +246,17 @@
 					"picture": 78,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "30",
-					"y": "17",
+					"x": "40",
+					"y": "24",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_FACE_UP_AND_LEFT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"is_trainer": "0",
-					"alert_radius": "0",
-					"script": "ow_script_map_1_59_trainer_7",
+					"is_trainer": "1",
+					"alert_radius": "4",
+					"script": "ow_script_tafelberg_trainer_2",
 					"flag": "KUSTENBERG_DONE",
 					"field_D": 0,
 					"field_B": 0,
@@ -272,8 +272,8 @@
 					"picture": 66,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 27,
-					"y": 28,
+					"x": "34",
+					"y": "37",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
@@ -298,8 +298,8 @@
 					"picture": 79,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 28,
-					"y": 28,
+					"x": "35",
+					"y": "37",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
@@ -308,7 +308,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "0",
+					"script": "ow_script_tafelberg_faun",
 					"flag": "KUSTENBERG_DONE",
 					"field_D": 0,
 					"field_B": 0,
@@ -321,13 +321,13 @@
 				},
 				{
 					"target_index": 13,
-					"picture": 69,
+					"picture": "70",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "34",
-					"y": "15",
+					"x": "58",
+					"y": "24",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -335,7 +335,7 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
-					"flag": "KUSTENBERG_DONE",
+					"flag": "FLAG_TAFELBERG_FELIX",
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -350,8 +350,8 @@
 					"picture": 58,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 19,
-					"y": 33,
+					"x": "61",
+					"y": "39",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
@@ -360,7 +360,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_1_59_trainer_8",
+					"script": "ow_script_tafelberg_witch",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -376,8 +376,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 16,
-					"y": 35,
+					"x": "23",
+					"y": "37",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -402,8 +402,8 @@
 					"picture": 23,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 34,
-					"y": 31,
+					"x": "78",
+					"y": "53",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -412,7 +412,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_1_59_trainer_9",
+					"script": "ow_script_tafelberg_person_0",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -428,17 +428,17 @@
 					"picture": 28,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 26,
-					"y": 35,
+					"x": "77",
+					"y": "18",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "BEHAVIOUR_ROTATE_CLOCKWISE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "1",
-					"alert_radius": 2,
-					"script": "ow_script_map_1_59_trainer_10",
+					"alert_radius": "3",
+					"script": "ow_script_tafelberg_trainer_8",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -454,17 +454,17 @@
 					"picture": 18,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 38,
-					"y": 21,
+					"x": "63",
+					"y": "46",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"is_trainer": "0",
-					"alert_radius": 0,
-					"script": "ow_script_map_1_59_trainer_11",
+					"is_trainer": "1",
+					"alert_radius": "4",
+					"script": "ow_script_tafelberg_trainer_7",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -480,8 +480,8 @@
 					"picture": 32,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "35",
-					"y": "13",
+					"x": "69",
+					"y": "24",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -490,7 +490,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_1_59_trainer_12",
+					"script": "ow_script_tafelberg_person_1",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -506,17 +506,17 @@
 					"picture": 28,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 20,
-					"y": 27,
+					"x": "68",
+					"y": "37",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour": "BEHAVIOUR_ROTATE_COUNTERCLOCKWISE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"is_trainer": "0",
-					"alert_radius": 0,
-					"script": "ow_script_map_1_59_trainer_13",
+					"is_trainer": "1",
+					"alert_radius": "4",
+					"script": "ow_script_tafelberg_trainer_3",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -532,17 +532,17 @@
 					"picture": 26,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 34,
-					"y": 25,
+					"x": "58",
+					"y": "46",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_RIGHT",
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "1",
-					"alert_radius": 2,
-					"script": "ow_script_map_1_59_trainer_14",
+					"alert_radius": "5",
+					"script": "ow_script_tafelberg_trainer_4",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -555,20 +555,20 @@
 				},
 				{
 					"target_index": 22,
-					"picture": 0,
+					"picture": "20",
 					"field_2": 0,
 					"field_3": 0,
-					"x": 12,
-					"y": 44,
+					"x": "79",
+					"y": "35",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour": "BEHAVIOUR_WALK_UP_AND_DOWN",
 					"behaviour_range": {
 						"x": "0",
-						"y": "0"
+						"y": "3"
 					},
-					"is_trainer": "0",
-					"alert_radius": 0,
-					"script": "ow_script_map_1_59_trainer_15",
+					"is_trainer": "1",
+					"alert_radius": "3",
+					"script": "ow_script_tafelberg_trainer_6",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -584,8 +584,8 @@
 					"picture": "101",
 					"script_std": "PERSON_EGG",
 					"field_3": 0,
-					"x": "25",
-					"y": "10",
+					"x": "70",
+					"y": "19",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -600,7 +600,7 @@
 					"flag": "FLAG_KUESTENBERG_EGG_0",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_FLUNKIFER",
+						"species": "POKEMON_GEHWEIHER",
 						"berry_tree_idx": 0
 					}
 				},
@@ -609,31 +609,823 @@
 					"picture": "78",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "30",
-					"y": "13",
+					"x": "35",
+					"y": "24",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"field_B": 0,
-					"is_trainer": "0",
+					"is_trainer": "1",
 					"field_D": 0,
-					"alert_radius": 0,
-					"script": 0,
+					"alert_radius": "4",
+					"script": "ow_script_tafelberg_trainer_5",
 					"flag": "KUSTENBERG_DONE",
 					"value": {
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0
 					}
+				},
+				{
+					"target_index": "25",
+					"picture": "23",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "39",
+					"y": "35",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_tafelberg_person_2",
+					"flag": "KUSTENBERG_DONE | 0x8000",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "26",
+					"picture": "57",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "13",
+					"y": "22",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_tafelberg_trainer_10",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "27",
+					"picture": "238",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
+					"field_3": "35",
+					"x": "6",
+					"y": "14",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_RIGHT_UP_DOWN_LEFT",
+					"behaviour_range": {
+						"x": "2",
+						"y": "2"
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "4",
+					"script": 0,
+					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_5_PERCENT",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_AZUMARILL",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "28",
+					"picture": "236",
+					"script_std": "PERSON_SHELL",
+					"field_3": 0,
+					"x": "15",
+					"y": "9",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "11"
+					}
+				},
+				{
+					"target_index": "29",
+					"picture": "238",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
+					"field_3": "34",
+					"x": "11",
+					"y": "33",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_RIGHT_AND_LEFT",
+					"behaviour_range": {
+						"x": "5",
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "6",
+					"script": 0,
+					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KINGLER",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "30",
+					"picture": "238",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
+					"field_3": "27",
+					"x": "89",
+					"y": "28",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_UP_RIGHT_LEFT",
+					"behaviour_range": {
+						"x": "2",
+						"y": "4"
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "3",
+					"script": 0,
+					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_1",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_NATU",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "31",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "47",
+					"y": "25",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_TAFELBERG_ITEM_2",
+					"value": {
+						"item": "ITEM_HYPERHEILER",
+						"species": "0",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "32",
+					"picture": "236",
+					"script_std": "PERSON_SHELL",
+					"field_3": 0,
+					"x": "30",
+					"y": "34",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "9"
+					}
+				},
+				{
+					"target_index": "33",
+					"picture": "236",
+					"script_std": "PERSON_SHELL",
+					"field_3": 0,
+					"x": "18",
+					"y": "36",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "10"
+					}
+				},
+				{
+					"target_index": "34",
+					"picture": "17",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "78",
+					"y": "27",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "1",
+					"script": "ow_script_tafelberg_trainer_9",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "35",
+					"picture": "237",
+					"script_std": "PERSON_BERRY_TREE",
+					"field_3": 0,
+					"x": "53",
+					"y": "9",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "27"
+					}
+				},
+				{
+					"target_index": "36",
+					"picture": "237",
+					"script_std": "PERSON_BERRY_TREE",
+					"field_3": 0,
+					"x": "54",
+					"y": "9",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "28"
+					}
+				},
+				{
+					"target_index": "37",
+					"picture": "237",
+					"script_std": "PERSON_BERRY_TREE",
+					"field_3": 0,
+					"x": "76",
+					"y": "31",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "25"
+					}
+				},
+				{
+					"target_index": "38",
+					"picture": "237",
+					"script_std": "PERSON_BERRY_TREE",
+					"field_3": 0,
+					"x": "77",
+					"y": "31",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "26"
+					}
+				},
+				{
+					"target_index": "39",
+					"picture": "93",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "30",
+					"y": "22",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": "ITEM_MASKEREGENIT",
+						"species": "0",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "40",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "72",
+					"y": "41",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_TAFELBERG_ITEM_0",
+					"value": {
+						"item": "ITEM_SUPERSCHUTZ",
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "41",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "80",
+					"y": "16",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_TAFELBERG_ITEM_0",
+					"value": {
+						"item": "ITEM_HYPERTRANK",
+						"species": "0",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "42",
+					"picture": "78",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "36",
+					"y": "35",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_tafelberg_revolutionary_3",
+					"flag": "KUSTENBERG_DONE",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "43",
+					"picture": "70",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "37",
+					"y": "34",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_tafelberg_felix",
+					"flag": "KUSTENBERG_DONE",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "44",
+					"picture": "17",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "79",
+					"y": "27",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "1",
+					"script": "ow_script_tafelberg_trainer_9",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "45",
+					"picture": "236",
+					"script_std": "PERSON_MUSHROOM",
+					"field_3": 0,
+					"x": "57",
+					"y": "31",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "21"
+					}
+				},
+				{
+					"target_index": "46",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "62",
+					"y": "33",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_PELIPPER",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "47",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "73",
+					"y": "39",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_SPOINK",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "48",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "77",
+					"y": "13",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MEDITIE",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "49",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "94",
+					"y": "34",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MASKEREGEN",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "50",
+					"picture": "27",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "54",
+					"y": "11",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_tafelberg_person_3",
+					"flag": "KUSTENBERG_DONE | 0x8000",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "51",
+					"picture": "21",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "89",
+					"y": "20",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_tafelberg_person_4",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "52",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON_NON_FACING",
+					"field_3": 0,
+					"x": "56",
+					"y": "14",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_IN_PLACE_DOWN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "KUSTENBERG_DONE",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_TRAGOSSO",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "53",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON_NON_FACING",
+					"field_3": 0,
+					"x": "57",
+					"y": "14",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_IN_PLACE_DOWN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "KUSTENBERG_DONE",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_WAATY",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "54",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON_NON_FACING",
+					"field_3": 0,
+					"x": "56",
+					"y": "15",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_WALK_IN_PLACE_UP",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "KUSTENBERG_DONE",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_CLAVION",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "55",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON_NON_FACING",
+					"field_3": 0,
+					"x": "57",
+					"y": "15",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_IN_PLACE_UP",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "KUSTENBERG_DONE",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_FRIZELBLIZ",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "56",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON_NON_FACING",
+					"field_3": 0,
+					"x": "37",
+					"y": "20",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_IN_PLACE_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "KUSTENBERG_DONE",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_ZIGZACHS",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "57",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON_NON_FACING",
+					"field_3": 0,
+					"x": "38",
+					"y": "20",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_IN_PLACE_LEFT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "KUSTENBERG_DONE",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_FUKANO",
+						"berry_tree_idx": 0
+					}
 				}
 			],
 			"warps": [
 				{
-					"x": 40,
-					"y": 37,
+					"x": "49",
+					"y": "55",
 					"level": 3,
 					"target_bank": 3,
 					"target_map": 4,
@@ -650,32 +1442,65 @@
 			],
 			"triggers": [
 				{
-					"x": "35",
-					"y": "17",
+					"x": "36",
+					"y": "31",
 					"level": 0,
 					"field_5": 0,
 					"value": 32,
-					"script": "ow_script_kuestenberg_event",
+					"script": "ow_script_tafelberg_trigger_battle",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
 				},
 				{
-					"x": "36",
-					"y": "17",
+					"x": "37",
+					"y": "31",
 					"level": 0,
 					"field_5": 0,
 					"var": "STORY_PROGRESS",
 					"value": "32",
 					"field_A": 0,
 					"field_B": 0,
-					"script": "ow_script_kuestenberg_event"
+					"script": "ow_script_tafelberg_trigger_battle"
+				},
+				{
+					"x": "38",
+					"y": "31",
+					"level": 0,
+					"field_5": 0,
+					"var": "STORY_PROGRESS",
+					"value": "32",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_tafelberg_trigger_battle"
+				},
+				{
+					"x": "58",
+					"y": "26",
+					"level": 0,
+					"field_5": 0,
+					"var": "STORY_PROGRESS",
+					"value": "31",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_tafelberg_trigger_felix"
+				},
+				{
+					"x": "59",
+					"y": "26",
+					"level": 0,
+					"field_5": 0,
+					"var": "STORY_PROGRESS",
+					"value": "31",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_tafelberg_trigger_felix"
 				}
 			],
 			"signposts": [
 				{
-					"x": 41,
-					"y": 35,
+					"x": "35",
+					"y": "32",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -691,7 +1516,7 @@
 				}
 			]
 		},
-		"levelscripts": "lscr_0x16215f",
+		"levelscripts": "tafelberg_levelscripts",
 		"connections": {
 			"connection_cnt": 3,
 			"connections": [

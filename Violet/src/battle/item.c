@@ -159,6 +159,7 @@ bool battle_item_before_attack_attacker() {
             if (move_type == item_get_hold_effect_parameter(battlers[attacking_battler].item) &&
                 attacks[active_attack].base_power > 0) {
                 BATTLE_STATE2->status_custom[attacking_battler] |= CUSTOM_STATUS_GEM_USED;
+                dprintf("Triggered gem in custom status.\n");
             }
             break; // Didn't trigger a battle script, that is done by command 0x7 (i.e. the hook at its end) (this takes care of multi-turn moves)
         }
@@ -197,8 +198,6 @@ bool battle_item_restore_hp(u8 battler_idx, u8 move_turn, int hold_effect_parame
 
 
 bool battle_item_before_attack_defender() {
-    return false;
-    /**
     active_battler = defending_battler;
     switch (item_get_hold_effect(battlers[defending_battler].item)) {
         case HOLD_EFFECT_TYPE_BERRY: {
@@ -212,5 +211,4 @@ bool battle_item_before_attack_defender() {
         }
     }
     return false;
-    **/
 }

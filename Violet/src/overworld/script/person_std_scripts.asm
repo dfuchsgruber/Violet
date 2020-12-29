@@ -19,6 +19,7 @@
 .global ow_script_fertilize_berry_tree
 .global ow_script_mushroom
 .global ow_script_shell
+.global ow_script_person_pokemon_non_facing
 
 ow_script_person_pokeball:
 	callstd ITEM_FIND
@@ -60,6 +61,25 @@ print_mon_string2:
 print_mon_string3:
 	loadpointer 0 str_mon3
 	return
+
+ow_script_person_pokemon_non_facing:
+	lock
+	bufferpokemon 0 0x8000
+	showpokepic 0x8000 11 2
+	random 4
+	compare LASTRESULT 0
+	callif EQUAL print_mon_string0 
+	compare LASTRESULT 1
+	callif EQUAL print_mon_string1 
+	compare LASTRESULT 2
+	callif EQUAL print_mon_string2
+	compare LASTRESULT 3
+	callif EQUAL print_mon_string3  
+	callstd MSG_KEEPOPEN
+	waitcry
+	hidepokepic
+	releaseall
+	end
 
 ow_script_aggressive_wild:
 	lock

@@ -151,6 +151,7 @@ extern oam_template overworld_effect_oam_template_high_grass;
 
 any_grass any_grasses[] = {
     {&maptileset0, MB_TALL_GRASS, &overworld_effect_oam_template_high_grass, &overworld_effect_tall_grass_pal, any_grass_step, any_grass_player_step_null}, //Normal Grass, behavior 2 triggered by any map
+    {&maptileset0_kaskada, MB_TALL_GRASS, &overworld_effect_oam_template_high_grass, &overworld_effect_tall_grass_pal, any_grass_step, any_grass_player_step_null},
     // {&maptileset0, MB_3, (oam_template *)0x083A5800, NULL, any_grass_step, any_grass_player_step_null},
     {&maptileset0, MB_BD, &rock_climb_template, &rock_climb_pal, rock_climb_step, any_grass_player_step_null},
     {&maptileset251828, MB_BB, any_grass_templates + ANY_GRASS_ASH, any_grass_pals + ANY_GRASS_ASH, any_grass_step, ash_grass_player_step},

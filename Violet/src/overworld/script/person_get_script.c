@@ -25,6 +25,7 @@ extern u8 ow_script_mushroom[];
 extern u8 ow_script_shell[];
 extern u8 ow_script_boulder_gym_puzzle[];
 extern u8 ow_script_boulder_hay_bale[];
+extern u8 ow_script_person_pokemon_non_facing[];
 
 void battle_initialize_aggressive_wild() {
 	super.saved_callback = battle_continuation_wild_legendary_battle_end;
@@ -61,6 +62,9 @@ u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank) {
 	case PERSON_POKEMON:
 		*var_access(0x8000) = p->value;
 		return ow_script_person_pokemon;
+	case PERSON_POKEMON_NON_FACING:
+		*var_access(0x8000) = p->value;
+		return ow_script_person_pokemon_non_facing;
 	case PERSON_AGGRESSIVE_POKEMON:
 		*var_access(0x8000) = p->value;
 		*var_access(0x8001) = p->argument;
