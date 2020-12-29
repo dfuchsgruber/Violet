@@ -1,20 +1,16 @@
 .include "callstds.s"
 .include "overworld_script.s"
 
-.global ow_script_map_1_59_sign_0
+.global ow_script_tafelberg_sign_0
 
-ow_script_map_1_59_sign_0:
-loadpointer 0x0 str_0x8ffff2
-callstd MSG_SIGN
-end
-
+ow_script_tafelberg_sign_0:
+    loadpointer 0x0 str_0
+    callstd MSG_SIGN
+    end
 
 .ifdef LANG_GER
-
-str_0x8ffff2:
-    .string "Küstenberg"
-
+str_0:
+    .autostring 34 2 "UP_ARROW Tafelberg\nUP_ARROW Kaskada"
 
 .elseif LANG_EN
-
 .endif

@@ -5,7 +5,7 @@
 			"person_cnt": 57,
 			"warp_cnt": 2,
 			"trigger_cnt": 5,
-			"signpost_cnt": 1,
+			"signpost_cnt": 3,
 			"persons": [
 				{
 					"target_index": 1,
@@ -634,8 +634,8 @@
 					"picture": "23",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "39",
-					"y": "35",
+					"x": "43",
+					"y": "37",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -1504,7 +1504,7 @@
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
-						"script": "ow_script_map_1_59_sign_0",
+						"script": "ow_script_tafelberg_sign_0",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1513,6 +1513,38 @@
 						}
 					},
 					"flag": "0"
+				},
+				{
+					"x": "45",
+					"y": "35",
+					"level": 0,
+					"type": "SIGNPOST_HIDDEN_ITEM",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": "ITEM_ELIXIER",
+							"flag": "97",
+							"amount": "1",
+							"chunk": 0
+						},
+						"script": 0
+					}
+				},
+				{
+					"x": "83",
+					"y": "28",
+					"level": 0,
+					"type": "SIGNPOST_HIDDEN_ITEM",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": "ITEM_BELEBER",
+							"flag": "98",
+							"amount": "1",
+							"chunk": 0
+						},
+						"script": 0
+					}
 				}
 			]
 		},
