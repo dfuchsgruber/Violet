@@ -1,32 +1,28 @@
-
-.global lscr_0x16215f
-
-lscr_0x16215f:
-	.byte 0x3
-.word ow_script_0x8c8fa4
-	.byte 0x0
-
-
 .include "ordinals.s"
 .include "overworld_script.s"
 .include "flags.s"
+.include "vars.s"
+.include "person_behaviours.s"
+.include "levelscript_types.s"
 
-.global ow_script_0x8c8fa4
-.global ow_script_0x92733c
+.global tafelberg_levelscripts
 
-ow_script_0x8c8fa4:
-setworldmapflag WM_KUSTENBERG
-checkflag KASKADA_FELIX_DONE
-callif EQUAL ow_script_0x92733c
-end
+tafelberg_levelscripts:
+	.byte LEVELSCRIPT_TYPE_ON_TRANSITION
+	.word lsrc_setwmflag_and_movesprites
+	.byte 0x0
 
+lsrc_setwmflag_and_movesprites:
+	setworldmapflag WM_KUSTENBERG
+	compare STORY_PROGRESS 33
+	callif EQUAL move_sprites
+	end
 
-ow_script_0x92733c:
-movesprite2 0xe 0x0 0x0
-movesprite2 0x10 0x0 0x0
-movesprite2 0x11 0x0 0x0
-movesprite2 0x12 0x0 0x0
-movesprite2 0x13 0x0 0x0
-movesprite2 0x14 0x0 0x0
-movesprite2 0x15 0x0 0x0
-return
+move_sprites:
+	movesprite2 42 0x21 0x24
+	spritebehave 42 BEHAVIOUR_FACE_RIGHT
+	movesprite2 9 0x22 0x24
+	spritebehave 9 BEHAVIOUR_FACE_DOWN
+	movesprite2 43 0x23 0x24
+	spritebehave 43 BEHAVIOUR_FACE_DOWN
+	return

@@ -182,6 +182,7 @@ extern "C" {
     extern const unsigned short gfx_mug_harrenfeldTiles[];
     extern const unsigned short gfx_mug_harrenfeldPal[];
     extern const unsigned short gfx_mug_albusTiles[];
+    extern const unsigned short gfx_mug_albus_sadTiles[];
     extern const unsigned short gfx_mug_albusPal[];
     extern const unsigned short gfx_mug_faun_youngTiles[];
     extern const unsigned short gfx_mug_faun_youngPal[];

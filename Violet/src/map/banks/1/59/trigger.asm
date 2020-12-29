@@ -10,6 +10,178 @@
 .include "trainer_backsprites.s"
 .include "pathfinding.s"
 
+.global ow_script_tafelberg_trigger_felix
+
+ow_script_tafelberg_trigger_felix:
+    lockall
+    pause 32
+    sound 0x15
+    applymovement 13 mov_fd
+    waitmovement 0
+    applymovement 13 mov_exclam
+    waitmovement 0
+    npc_move_to_player 13
+    applymovement 13 mov_fd
+    waitmovement 0
+    lockall
+    loadpointer 0 str_f0
+    show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT message_type=MSG_KEEPOPEN hide_mugshot=0
+    update_mugshot_emotion MUGSHOT_ANGRY
+    loadpointer 0 str_f1
+    callstd MSG_KEEPOPEN
+    update_mugshot_emotion MUGSHOT_HAPPY
+    loadpointer 0 str_f2
+    callstd MSG_KEEPOPEN
+    update_mugshot_emotion MUGSHOT_NORMAL
+    loadpointer 0 str_f3
+    callstd MSG_KEEPOPEN
+    update_mugshot_emotion MUGSHOT_RUMINATIVE
+    loadpointer 0 str_f4
+    callstd MSG_KEEPOPEN
+    update_mugshot_emotion MUGSHOT_NORMAL
+    loadpointer 0 str_f5
+    callstd MSG_KEEPOPEN
+    hide_mugshot
+    closeonkeypress
+    // npc_move_to 13 0x37 0x11 waitmovement=1
+    applymovement 13 mov_6u
+    waitmovement 0
+    hidesprite 13
+    addvar STORY_PROGRESS 1
+    releaseall
+    end
+
+.ifdef LANG_GER
+str_f0:
+    .autostring 34 2 "Hey, PLAYER!\pWie immer kommst du zum perfekten Zeitpunkt."
+str_f1:
+    .autostring 34 2 "Mir liegt es immer noch schwer im Magen, dass wir die Team Violet Kommandantin im Zeitwald nicht geschnappt habenDOTS"
+str_f2:
+    .autostring 34 2 "Aber es scheint so, als würden wir hier eine zweite Chance bekommen!"
+str_f3:
+    .autostring 34 2 "Hier lungern überall Leute von der Revolutionsbewegung herum.\pDieses Pack will die Pokémon-Liga stürzen und die Region in einen Bürgerkrieg stoßen.\pAls Polizist kann ich das natürlich nicht zulassen.\pUnd gerade als Schüler von Opi, einem Mitglied der Top Vier, ist es quasi unsere Pflicht, diese Unruhestifter in die Schranken zu weisen, meinst du nicht?"
+str_f4:
+    .autostring 34 2 "Ich frage michDOTS\pDOTSob wir vielleicht sogar ein hochrangiges Mitglied dieser Bewegung dingfest machen könnenDOTS"
+str_f5:
+    .autostring 34 2 "Lass uns am Besten keine Zeit verlieren!"
+.elseif LANG_EN
+.endif
+
+.global ow_script_tafelberg_trigger_battle
+
+ow_script_tafelberg_trigger_battle:
+    lockall
+    loadpointer 0 str_0
+    show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT message_type=MSG_KEEPOPEN
+    closeonkeypress
+    sound 0x15
+    applymovement 43 mov_fu
+    waitmovement 0
+    applymovement 43 mov_exclam
+    waitmovement 0
+    checksound
+    loadpointer 0 str_1
+    show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT message_type=MSG_KEEPOPEN
+    closeonkeypress
+    npc_move_to 0xFF 0x24 0x22 waitmovement=1
+    applymovement 43 mov_fd
+    waitmovement 0
+select:
+    loadpointer 0 str_select
+    callstd MSG_KEEPOPEN
+    special SPECIAL_SELECT_HALF_PARTY
+    waitstate
+    compare LASTRESULT 0
+    gotoif EQUAL have_to_select
+    setvar SONG_OVERRIDE 0
+    setvar VAR_ALLY 0x169
+    special SPECIAL_ALLY_BATTLE_SAVE_AND_SETUP_PARTY
+    applymovement 43 mov_fl
+    waitmovement 0
+    loadpointer 0 str_lets_go
+    show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT
+    applymovement 43 mov_fd
+    waitmovement 0
+    pause 32
+// goto after_battle
+    playsong MUS_REVOLUTION 0
+    loadpointer 0 str_revo
+    setvar 0x8000 MUGSHOT_RIGHT
+    special SPECIAL_NAME_SHOW
+    setvar SONG_OVERRIDE MUS_REVOLUTION
+    trainerbattleallytwotrainers 0x16A 0x1c0 0x169 42 TRAINER_BACKSPRITE_FELIX 1 str_before str_after1 str_after2 after_battle
+after_battle:
+    msgbox_with_name str_2 str_revo alignment=MUGSHOT_RIGHT message_type=MSG
+    applymovement 42 mov_revo1_to_albus
+    applymovement 9 mov_revo1_to_albus
+    waitmovement 0
+    applymovement 42 mov_fr
+    waitmovement 0
+    fadesong MUS_ROUTE_24_25
+    pause 16
+    applymovement 0xFF mov_fr
+    applymovement 43 mov_fl
+    loadpointer 0 str_3
+    show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT message_type=MSG_KEEPOPEN emotion=MUGSHOT_RUMINATIVE
+    closeonkeypress
+    sound 0x15
+    applymovement 43 mov_fd
+    waitmovement 0
+    applymovement 43 mov_exclam
+    waitmovement 0
+    loadpointer 0 str_4
+    show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT message_type=MSG_KEEPOPEN emotion=MUGSHOT_SHOCKED
+    closeonkeypress
+    applymovement 43 run_to_faun
+    waitmovement 0
+    addvar STORY_PROGRESS 1
+    setvar SONG_OVERRIDE 0
+    releaseall
+    end
+
+have_to_select:
+    applymovement 43 mov_fl
+    waitmovement 0
+    loadpointer 0 str_have_to_select
+    show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT
+    goto select
+
+mov_revo1_to_albus:
+    .byte STEP_LEFT, STEP_LEFT, STEP_LEFT, STEP_DOWN, STOP
+run_to_faun:
+    .byte STEP_DOWN_FAST, STEP_DOWN_FAST, STEP_LEFT_FAST, STEP_LEFT, LOOK_DOWN, STOP
+
+.ifdef LANG_GER
+str_0:
+    .autostring 34 2 "So, jetzt geht es ans Eingemachte!\pIm Namen der Polizei von Theto und der Pokémon-LiagDOTS\pSeid ihr hiermit verhaf-"
+str_1:
+    .autostring 34 2 "Da bist du ja endlich, PLAYER!\pIch bin gerade im Begriff, diese beiden Revolutionäre festzunehmen.\pLass uns doch gemeinsam gegen sie kämpfen, was sagst du?"
+str_select:
+    .autostring 34 2 "Welche Pokémon willst du in den Kampf schicken?"
+str_have_to_select:
+    .autostring 34 2 "Hey, PLAYER!\pDu machst wohl Scherze, oder?\pLass uns diesen Revolutionären in den Hintern treten."
+str_before:
+    .autostring 34 2 "Hey, du Grünschnabel willst ein Polizist sein?\pMit euch werden wir im Handumdrehen fertig!"
+str_after1:
+    .autostring 34 2 "Das war eine AbreibungDOTS"
+str_after2:
+    .autostring 34 2 "Hab ich euch wohl unterschätztDOTS\pAber das spielt keine RolleDOTS"
+str_lets_go:
+    .autostring 34 2 "Also gut, PLAYER!\pGib dein Bestes, ja?"
+str_revo:
+    .string "Revolutionär"
+str_2:
+    .autostring 34 2 "Pah!\nNa gut, ihr habt uns besiegtDOTS\pAber das nützt euch gar nichtsDOTS\pDenn gegen unseren Anführer könnt ihr gar nichts ausrichten!"
+str_3:
+    .autostring 34 2 "Was haben diese Revolutionäre da gesagt?"
+str_4:
+    .autostring 34 2 "Schau mal drüben!\pDa ist ja Opi!"
+.elseif LANG_EN
+.endif
+
+/* 
+
+
 .global ow_script_0x93a667
 .global ow_script_0x92d67a
 .global ow_script_0x92dc84
@@ -788,3 +960,5 @@ str_0x92e56f:
 .elseif LANG_EN
 
 .endif
+
+*/

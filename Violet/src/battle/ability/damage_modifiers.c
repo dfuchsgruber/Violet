@@ -75,6 +75,7 @@ void apply_final_damage_modifiers(){
 
 
 void apply_pre_damage_modifiers(){
+    dprintf("Applying pre-demage modifiers...\n");
     battler *attacker = &battlers[attacking_battler];
     battler *defender = &battlers[defending_battler];
     switch(attacker->ability){
@@ -112,12 +113,12 @@ void apply_pre_damage_modifiers(){
     }
     if (BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_GEM_USED) {
         dprintf("Gem increased damage for battler %d.\n", attacking_battler);
-        BATTLE_STATE2->status_custom[attacking_battler] &= (u32)(~CUSTOM_STATUS_GEM_USED);
+        // BATTLE_STATE2->status_custom[attacking_battler] &= (u32)(~CUSTOM_STATUS_GEM_USED);
         damage_apply_multiplier(1500);
     }
     if (BATTLE_STATE2->status_custom[defending_battler] & CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY) {
         dprintf("Berry decreased damage for battler %d.\n", defending_battler);
-        BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY);
+        // BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY);
         damage_apply_multiplier(500);
     }
     battlescript_cmd_x06_apply_damage_modifiers();

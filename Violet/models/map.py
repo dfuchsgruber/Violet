@@ -30,6 +30,7 @@ person_script_std_type = agb.types.UnionType({
         'PERSON_SHELL' : 'berry_tree_idx',
         'PERSON_POKEMON_NPC' : 'species',
         'PERSON_PUZZLE_BOULDER' : 'berry_tree_idx',
+        'PERSON_POKEMON_NON_FACING' : 'species',
     }.get(parents[-1]['script_std'], 'item')
 )
 map_flags_type = agb.types.BitfieldType('u8', [

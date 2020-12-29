@@ -4,7 +4,7 @@
 		"events": {
 			"person_cnt": 63,
 			"warp_cnt": 17,
-			"trigger_cnt": 1,
+			"trigger_cnt": 0,
 			"signpost_cnt": 8,
 			"persons": [
 				{
@@ -1731,19 +1731,7 @@
 					"target_bank": "8"
 				}
 			],
-			"triggers": [
-				{
-					"level": 0,
-					"script": "ow_script_map_3_4_trigger_0",
-					"y": "71",
-					"value": 31,
-					"field_5": 0,
-					"x": "13",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				}
-			],
+			"triggers": [],
 			"signposts": [
 				{
 					"level": 0,

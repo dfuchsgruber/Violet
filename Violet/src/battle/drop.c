@@ -25,9 +25,9 @@
 
 static u32 standard_item_drop_rates[][2] = {
     {ITEM_BITTERKRAUT, 100},
-    {ITEM_QUARZSTAUB, 75},
-    {ITEM_WUNDERSTAUB, 100},
-    {ITEM_APFEL, 20},
+    {ITEM_QUARZSTAUB, 50},
+    {ITEM_WUNDERSTAUB, 75},
+    {ITEM_APFEL, 40},
     /**
     {ITEM_POKEBALL, 75},
     {ITEM_SUPERBALL, 30},
@@ -65,7 +65,6 @@ static bool drop_standard_item(u8 battler_idx, u16 *item, u8 *cnt) {
 }
 
 static u32 standard_item_rare_drop_rates[][2] = {
-    {ITEM_ENERGIEQUARZ, 1},
     {ITEM_MININUGGET, 5},
 };
 
