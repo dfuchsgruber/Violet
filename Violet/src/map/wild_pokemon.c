@@ -358,10 +358,10 @@ wild_pokemon_data wild_pokemon[] = {
 	},
 	{
 		.bank = 1, .map = 59,
-		.grass = &wild_pokemon_1_59_grass,
-		.water = &wild_pokemon_1_59_water,
-		.other = NULL,
-		.rod = &wild_pokemon_1_59_rod,
+		.grass = &wild_pokemon_tafelberg_grass,
+		.water = &wild_pokemon_tafelberg_water,
+		.other = &wild_pokemon_tafelberg_other,
+		.rod = &wild_pokemon_tafelberg_rod,
 	},
 	{
 		.bank = 3, .map = 22,

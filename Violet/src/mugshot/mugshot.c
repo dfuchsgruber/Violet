@@ -282,7 +282,7 @@ void mugshot_create_oam(int side, int idx, int emotion) {
 		pal_decompress(mugshots[idx].pal, (u16)(16 * (pal + 16)), 16 * sizeof(color_t));
 		pal_oam_apply_fading(pal);
 	}
-	fmem.mugshot_oam_id = oam_new_forward_search(mugshot_template, (s16) (32 + side * 176), 80, 0);
+	fmem.mugshot_oam_id = oam_new_forward_search(mugshot_template, (s16) (32 + (side > 0) * 176), 80, 0);
 	fmem.mugshot_active = 1;
 }
 
