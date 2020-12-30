@@ -1163,3 +1163,5 @@ overworld_effect_high_grass_init = 0x080db56c | 1;
 overworld_effect_tall_grass_init = 0x080db818 | 1;
 overworld_effect_high_grass_pal = 0x083a520c;
 overworld_effect_oam_template_high_grass = 0x083a52e4;
+pokemon_move_learning_current_move_idx = 0x02024028;
+pokemon_move_learning_learned_move = 0x02024022;

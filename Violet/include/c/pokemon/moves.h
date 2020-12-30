@@ -16,9 +16,16 @@ typedef struct {
     u16 level : 7;
 } pokemon_move;
 
+#define POKEMON_MOVE_BY_EVOLUTION 0
+
 pokemon_move *pokemon_moves[POKEMON_CNT];
 u8 pokemon_tm_compatibility [POKEMON_CNT][8];
 u32 pokemon_move_tutor_compatibility[POKEMON_CNT];
+
+// Which move idx currently being learned in the moveset
+extern u8 pokemon_move_learning_current_move_idx;
+// The move that is currently learned
+extern u16 pokemon_move_learning_learned_move;
 
 /**
  * Gets the attack associated with a move tutor
