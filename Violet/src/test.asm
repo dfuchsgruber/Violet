@@ -36,6 +36,10 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	givepokemon POKEMON_DARTIRI 26 0 0 0 0
+	additem ITEM_SONDERBONBON 99 
+	end
+	
 	setvar STORY_PROGRESS 31
 	end
 

@@ -1160,3 +1160,8 @@ lsr r0, #0x1A
 	ldr r0, = player_pokemon_recount_pokemon | 1
 	bx r0 
 	.pool
+
+.org 0x080cef74
+	ldr r2, =hook_pokemon_evolution_attempt_learning_moves | 1
+	bx r2
+	.pool
