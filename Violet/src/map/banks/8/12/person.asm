@@ -2,6 +2,9 @@
 .include "flags.s"
 .include "vars.s"
 .include "callstds.s"
+.include "mugshot.s"
+.include "ordinals.s"
+.include "movements.s"
 
 .global ow_script_kaskada_tea_house_person_0
 .global ow_script_kaskada_tea_house_person_1
@@ -12,6 +15,7 @@
 .global ow_script_kaskada_tea_house_person_6
 .global ow_script_kaskada_tea_house_person_7
 .global ow_script_kaskada_tea_house_person_8
+.global ow_script_kaskada_tea_house_igva
 
 ow_script_kaskada_tea_house_person_0:
     loadpointer 0 str_0
@@ -46,11 +50,52 @@ ow_script_kaskada_tea_house_person_7:
     callstd MSG_FACE
     end
 ow_script_kaskada_tea_house_person_8:
+    checkflag FLAG_KASKADA_TEAHOUSE_BLACK_MARKET_UNLOCKED
+    gotoif EQUAL unlocked
     loadpointer 0 str_8
     callstd MSG_FACE
     end
+unlocked:
+    loadpointer 0 str_9
+    callstd MSG_FACE
+    end
+ow_script_kaskada_tea_house_igva:
+    faceplayer
+    loadpointer 0 str_igva_0
+    show_mugshot MUGSHOT_IGVA MUGSHOT_RIGHT message_type=MSG
+    applymovement 11 mov_fu
+    applymovement 1 mov_fd
+    waitmovement 0
+    pause 48
+    applymovement 11 mov_step_inplace
+    waitmovement 0
+    pause 48
+    applymovement 1 mov_1r
+    waitmovement 0
+    applymovement 1 mov_fl
+    waitmovement 0
+    pause 48
+    faceplayer
+    loadpointer 0 str_igva_1
+    show_mugshot MUGSHOT_IGVA MUGSHOT_RIGHT message_type=MSG
+    applymovement 11 mov_2u
+    waitmovement 0
+    sound 9
+    hidesprite 11
+    checksound
+    setflag FLAG_KASKADA_TEAHOUSE_BLACK_MARKET_UNLOCKED
+    setflag (FLAG_KASKADA_IGVA_TEAHOUSE | 0x8000)
+    release
+    end
+
+mov_step_inplace:
+    .byte STEP_IN_PLACE_UP, STEP_IN_PLACE_UP, STOP
 
 .ifdef LANG_GER
+str_igva_0:
+    .autostring 34 2 "Ich werde dir jetzt einmal ein Geheimnis verraten, PLAYER!\pHinter dem Teehaus hier steckt viel mehr, als der Anschein verraten mag.\pDu musst nämlich wissen, dass es hier im Untergrund einen Handelsplatz gibt.\pNatürlich kommt man da nicht einfach so hinein.\pAber mit mir zusammen ist das gar kein Problem.\pPass mal auf!"
+str_igva_1:
+    .autostring 34 2 "Siehst du?\nGanz leicht, oder?\pJetzt müssen wir uns aber beeilen, wenn wir unseren Anführer noch treffen wollenDOTS"
 str_0:
     .autostring 34 2 "Im Teehaus ist immer sehr viel los.\pAn manchen Wochenenden bekommt man nicht einmal mehr einen Platz.\pAber das ist kaum verwunderlich bei all dem guten Tee hier!"
 str_1:
@@ -69,6 +114,7 @@ str_7:
     .autostring 34 2 "Du kannst dir gar nicht vorstellen, wie anstrengend es ist, in einem so belebten Geschäft der einzige Kellner zu seinDOTS"
 str_8:
     .autostring 34 2 "Hey, im Lagerraum hast du nichts zu suchen, verstanden?\pDer ist nämlich nur für besondere Gäste zugänglichDOTS"
-
+str_9:
+    .autostring 34 2 "Wenn man den ganzen Tag hier den Lagerraum bewachen muss, wird man sehr durstig.\pWas für ein Zufall, dass ich gerade in einem Teehaus arbeite."
 .elseif LANG_EN
 .endif

@@ -2,11 +2,15 @@
 #include "map/tileset.h"
 
 extern u8 gfx_tileset_cave_anim_waterTiles[];
+extern u8 gfx_tileset_cave_anim_water_streamTiles[];
 
 
 tileset_animation tileset_cave_animations[] = {
     {
         .cycle = 8, .speed = 16, .start_tile = 0x160, .num_tiles = 8, gfx_tileset_cave_anim_waterTiles,
+    },
+    {
+        .cycle = 8, .speed = 16, .start_tile = 0x1D0, .num_tiles = 16, gfx_tileset_cave_anim_water_streamTiles,
     },
 };
 

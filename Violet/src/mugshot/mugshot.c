@@ -18,10 +18,8 @@
 #include "constants/mugshot_character.h"
 #include "bg.h"
 
-
 sprite mugshot_sprite = {0, 0xC000,  ATTR2_PRIO(1), 0};
 sprite mugshot_sprite_prio0 = {0, 0xC000, ATTR2_PRIO(0), 0};
-
 
 mugshot mugshots[] = {
     [MUGSHOT_RIN] = {{
@@ -172,7 +170,14 @@ mugshot mugshots[] = {
 		}, 
 		gfx_mug_primusPal, str_mug_primus},
     [MUGSHOT_IGVA] = {
-		{[MUGSHOT_NORMAL] = gfx_mug_igvaTiles}, 
+		{
+			[MUGSHOT_NORMAL] = gfx_mug_igvaTiles,
+			[MUGSHOT_SAD] = gfx_mug_igva_sadTiles,
+			[MUGSHOT_HAPPY] = gfx_mug_igva_happyTiles,
+			[MUGSHOT_SCARED] = gfx_mug_igva_scaredTiles,
+			[MUGSHOT_SHOCKED] = gfx_mug_igva_shockedTiles,
+			[MUGSHOT_RUMINATIVE] = gfx_mug_igva_thoughtfulTiles,
+		}, 
 		gfx_mug_igvaPal, str_mug_igva},
     [MUGSHOT_BLACKBEARD] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_blackbeardTiles,
