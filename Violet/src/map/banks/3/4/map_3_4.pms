@@ -117,7 +117,7 @@
 					"target_index": 5,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": "48",
+					"x": "57",
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -125,7 +125,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_kaskada_person_11",
-					"y": "49",
+					"y": "48",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -923,14 +923,14 @@
 					"target_index": "36",
 					"flag": "KASKADA_IGVA | 0x8000",
 					"field_3": 0,
-					"x": "56",
+					"x": "47",
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "0",
+					"script": "ow_script_kaskada_igva",
 					"y": "47",
 					"field_2": 0,
 					"is_trainer": "0",

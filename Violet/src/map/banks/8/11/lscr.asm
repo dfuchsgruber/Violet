@@ -1,62 +1,54 @@
 .include "vars.s"
-
-.global lscr_0x7194d8
-
-lscr_0x7194d8:
-	.byte 0x2
-.word lscr_0x719852
-	.byte 0x0
-
-
-.align 4
-.global lscr_0x719852
-
-lscr_0x719852:
-	.hword STORY_PROGRESS, 0x21
-	.word ow_script_0x8c82da
-	.hword 0x0
-.include "vars.s"
 .include "movements.s"
 .include "callstds.s"
 .include "mugshot.s"
 .include "overworld_script.s"
+.include "levelscript_types.s"
 
-.global ow_script_0x8c82da
+.global map_kaskada_black_market_levelscripts
 
-ow_script_movs_0x8c8300:
-.byte STEP_DOWN
-.byte STEP_DOWN
-.byte STEP_DOWN
-.byte STEP_LEFT
-.byte STEP_LEFT
-.byte STEP_LEFT
-.byte STEP_DOWN
-.byte STEP_LEFT
-.byte STEP_DOWN
-.byte STEP_DOWN
-.byte STOP
+map_kaskada_black_market_levelscripts:
+	.byte LEVELSCRIPT_TYPE_ON_FRAME_TABLE
+	.word lscr_on_frame_table
+	.byte 0x0
 
+lscr_on_frame_table:
+	.hword STORY_PROGRESS, 0x21
+	.word ow_script_on_frame_table
+	.hword 0x0
 
-ow_script_0x8c82da:
-lockall
-pause 0x28
-loadpointer 0x0 str_0x8c80e4
-show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
-applymovement 0x2 ow_script_movs_0x8c8300
-waitmovement 0x0
-hidesprite 0x2
-addvar STORY_PROGRESS 0x1
-set_intern_bank 0x10 0x10
-loadbytefrompointer 0x12 0x10121012
-set_intern_bank 0xfe 0x6b
-end
+ow_script_on_frame_table:
+	lockall
+	pause 64
+	loadpointer 0 str_0
+	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT hide_mugshot=0 message_type=MSG_KEEPOPEN
+	loadpointer 0 str_1
+	update_mugshot_emotion MUGSHOT_HAPPY
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_2
+	update_mugshot_emotion MUGSHOT_RUMINATIVE
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_3
+	update_mugshot_emotion MUGSHOT_NORMAL
+	callstd MSG_KEEPOPEN
+	closeonkeypress
+	hide_mugshot
+	applymovement 2 mov_6d
+	waitmovement 0x0
+	hidesprite 2
+	addvar STORY_PROGRESS 0x1
+	releaseall
+	end
 
 
 .ifdef LANG_GER
-
-str_0x8c80e4:
-	.autostring 35 2 "Sehr gut, du hast hergefunden, PLAYER!\pWo wir uns hier befinden?\pDas hier ist das dunkle Geheimnis von Kaskada.\pEin geheimer Markt im Untergrund, genauer gesagt der größte und berüchtigste in ganz Theto.\pEr liegt direkt unterhalb Kaskadas, sodass sogar Schiffe anlegen können.\pWas hier gehandelt wird?\pIllegale Objekte, Falschgeld, ja sogar mit Pokémon wird hier gehandelt.\pEs ist ein ganz und gar hässlicher Ort und das direkt vor den Augen der Top Vier.\pLass mich dich herumführen."
-
+str_0:
+	.autostring 34 2 "Habe ich zu viel versprochen?\pHier, unter der Erde, treibt sich das Gesindel dieser Region herum.\pAn diesem Markt findest du alles, was unter dem Radar verkauft werden muss."
+str_1:
+	.autostring 34 2 "Du solltest also schauen, dass du hier kein großes Aufsehen erregst, ja?"
+str_2:
+	.autostring 34 2 "Das könnte sonst nämlich ganz schön gefährlich werdenDOTS\pDOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT"
+str_3:
+	.autostring 34 2 "Hier sollten wir Albus treffen.\pEr ist der Anführer der Revolutionsbewegung und so etwas wie mein Mentor.\pFolge mir, ja?"
 .elseif LANG_EN
-
 .endif

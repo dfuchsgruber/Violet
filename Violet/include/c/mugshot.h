@@ -99,6 +99,12 @@ extern "C" {
     extern const unsigned short gfx_mug_lesterTiles[];
     extern const unsigned short gfx_mug_lesterPal[];
     extern const unsigned short gfx_mug_igvaTiles[];
+    extern const unsigned short gfx_mug_igva_angryTiles[];
+    extern const unsigned short gfx_mug_igva_sadTiles[];
+    extern const unsigned short gfx_mug_igva_shockedTiles[];
+    extern const unsigned short gfx_mug_igva_scaredTiles[];
+    extern const unsigned short gfx_mug_igva_happyTiles[];
+    extern const unsigned short gfx_mug_igva_thoughtfulTiles[];
     extern const unsigned short gfx_mug_igvaPal[];
     extern const unsigned short gfx_mug_blackbeardTiles[];
     extern const unsigned short gfx_mug_blackbeard_shockedTiles[];

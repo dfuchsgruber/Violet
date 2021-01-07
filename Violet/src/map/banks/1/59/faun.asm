@@ -186,7 +186,7 @@ ow_script_tafelberg_faun:
     applymovement 43 mov_felix_away
     waitmovement 0
     hidesprite 43
-    clearflag KASKADA_IGVA
+    clearflag (KASKADA_IGVA | 0x8000)
     releaseall
     end
 

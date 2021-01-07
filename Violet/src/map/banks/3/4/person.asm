@@ -8,6 +8,7 @@
 .include "songs.s"
 .include "items.s"
 .include "ordinals.s"
+.include "pathfinding.s"
 
 .global ow_script_kaskada_person_0
 .global ow_script_kaskada_person_1
@@ -48,6 +49,7 @@
 .global ow_script_kaskada_person_36
 .global ow_script_kaskada_person_37
 .global ow_script_kaskada_evolithe_gift
+.global ow_script_kaskada_igva
 
 ow_script_kaskada_person_0:
 	loadpointer 0 str_0
@@ -273,7 +275,49 @@ said_no:
 	release
 	end
 
+ow_script_kaskada_igva:
+	pause 32
+	lockall
+	faceplayer
+	loadpointer 0 str_igva0
+	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT mask_name=1 hide_mugshot=0 message_type=MSG_KEEPOPEN
+	loadpointer 0 str_igva1
+	update_mugshot_emotion MUGSHOT_RUMINATIVE
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_igva2
+	update_mugshot_emotion MUGSHOT_HAPPY
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_igva3
+	update_mugshot_emotion MUGSHOT_RUMINATIVE
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_igva4
+	update_mugshot_emotion MUGSHOT_HAPPY
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_igva5
+	update_mugshot_emotion MUGSHOT_NORMAL
+	callstd MSG_KEEPOPEN
+	closeonkeypress
+	hide_mugshot
+	npc_move_to 36 0x38 0x2f
+	hidesprite 36
+	clearflag (FLAG_KASKADA_IGVA_TEAHOUSE | 0x8000)
+	releaseall
+	end
+
 .ifdef LANG_GER
+str_igva0:
+	.autostring 34 2 "Huh?\nKennen wir uns vielleicht?"
+str_igva1:
+	.autostring 34 2 "Du kommst mir irgendwie sehr bekannt vor.\pSagst du mir deinen Namen?"
+str_igva2:
+	.autostring 34 2 "PLAYER also!\nIch bin Igva, freut mich, dich kennenzulernen."
+str_igva3:
+	.autostring 34 2 "Normalerweise würde ich so etwas nicht machenDOTS"
+str_igva4:
+	.autostring 34 2 "Aber irgendetwas an dir sagt mir, dass ich dir vertrauen kann."
+str_igva5:
+	.autostring 34 2 "Weißt du, ich bin nämlich von der Revolutionsbewegung.\pUnd ich will mich hier in Kaskada mit unserem Anführer treffen.\pEr ist ein sehr weiser Mann, der mir viel beigebracht hat.\pDu solltest ihn unbedingt kennenlernen, PLAYER.\pWir haben ausgemacht, uns im Teehaus zu treffen.\pKomm doch auch einfach vorbei, ja?"
+
 str_intro_evolithe:
 	.autostring 34 2 "Für viele Trainer geht es nur darum, ihre Pokémon möglichst stark zu machen.\pSie zwingen sie sogar dazu, sich gegen ihren Willen zu entwickeln.\pWenn Trainer so einen Druck auf ihre Pokémon ausübenDOTS\pDas macht mich sehr traurigDOTS\pDabei können doch auch nicht entwickelte Pokémon stark sein, findest du nicht auch?"
 str_said_no:
