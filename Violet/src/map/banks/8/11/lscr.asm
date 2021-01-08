@@ -49,6 +49,6 @@ str_1:
 str_2:
 	.autostring 34 2 "Das könnte sonst nämlich ganz schön gefährlich werdenDOTS\pDOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT"
 str_3:
-	.autostring 34 2 "Hier sollten wir Albus treffen.\pEr ist der Anführer der Revolutionsbewegung und so etwas wie mein Mentor.\pFolge mir, ja?"
+	.autostring 34 2 "Wie dem auch sei!\pWir sind hier, weil einer unserer Leute versucht, die Blackbeard Piratenbande mit ins Boot zu holen.\pVerstehst du?\pSein Name ist Lucky und er treibt sich hier sicher irgendwo herum.\pVielleicht können wir ihn ja finden!"
 .elseif LANG_EN
 .endif

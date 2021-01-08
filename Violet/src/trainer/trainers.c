@@ -3068,13 +3068,13 @@ trainer trainers[TRAINER_CNT] = {
     false, // Custom moves
     false, // Custom items
     0x0, // field_0_filler
-    TRAINERCLASS_TEAM_VIOLET,
+    TRAINERCLASS_REVOLUTIONAER,
     {
       0x0,
       false
     }, //Encounter and gender
-    0x4e, // sprite
-    LANGDEP(PSTRING("Rüpel S."), PSTRING("Rüpel S.")),
+    0x2, // sprite
+    LANGDEP(PSTRING("Hannah"), PSTRING("Hannah")),
     {
       ITEM_NONE,
       ITEM_NONE,
