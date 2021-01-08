@@ -12,6 +12,309 @@
 .include "items.s"
 .include "pathfinding.s"
 
+
+.global ow_script_kaskada_blackmarket_person_0
+.global ow_script_kaskada_blackmarket_person_1
+.global ow_script_kaskada_blackmarket_person_2
+.global ow_script_kaskada_blackmarket_person_3
+.global ow_script_kaskada_blackmarket_person_4
+.global ow_script_kaskada_blackmarket_person_5
+.global ow_script_kaskada_blackmarket_person_6
+.global ow_script_kaskada_blackmarket_person_7
+.global ow_script_kaskada_blackmarket_person_8
+.global ow_script_kaskada_blackmarket_person_9
+.global ow_script_kaskada_blackmarket_person_10
+.global ow_script_kaskada_blackmarket_person_11
+.global ow_script_kaskada_blackmarket_person_12
+.global ow_script_kaskada_blackmarket_primus
+.global ow_script_kaskada_blackmarket_coin_game
+.global ow_script_kaskada_black_glasses
+.global ow_script_kaskada_black_blaise
+
+ow_script_kaskada_blackmarket_person_0:
+	loadpointer 0 str_0
+	callstd MSG
+	end
+ow_script_kaskada_blackmarket_person_1:
+	loadpointer 0 str_1
+	callstd MSG
+	end
+ow_script_kaskada_blackmarket_person_2:
+	loadpointer 0 str_2
+	callstd MSG_FACE
+	end
+ow_script_kaskada_blackmarket_person_3:
+	loadpointer 0 str_3
+	callstd MSG_FACE
+	end
+ow_script_kaskada_blackmarket_person_4:
+	loadpointer 0 str_4
+	callstd MSG_FACE
+	end
+ow_script_kaskada_blackmarket_person_5:
+	loadpointer 0 str_5
+	callstd MSG_FACE
+	end
+ow_script_kaskada_blackmarket_person_6:
+	loadpointer 0 str_6
+	callstd MSG_FACE
+	end
+ow_script_kaskada_blackmarket_person_7:
+	loadpointer 0 str_7
+	callstd MSG_FACE
+	end
+ow_script_kaskada_blackmarket_person_8:
+	loadpointer 0 str_8
+	callstd MSG_FACE
+	end
+ow_script_kaskada_blackmarket_person_9:
+	loadpointer 0 str_9
+	callstd MSG_FACE
+	end
+ow_script_kaskada_blackmarket_person_10:
+	loadpointer 0 str_10
+	callstd MSG_FACE
+	end
+ow_script_kaskada_blackmarket_person_11:
+	loadpointer 0 str_11
+	callstd MSG
+	end
+ow_script_kaskada_blackmarket_person_12:
+	loadpointer 0 str_12
+	callstd MSG
+	end
+
+ow_script_kaskada_black_glasses:
+    lock
+    faceplayer
+    checkflag KASKADA_BLACKMARKET_SCHATTENGLAS
+    gotoif EQUAL after_receiving_black_glasses
+    loadpointer 0x0 str_intro_black_glasses
+    callstd MSG_KEEPOPEN
+    copyvarifnotzero 0x8000 ITEM_SCHATTENGLAS
+    copyvarifnotzero 0x8001 1
+    callstd ITEM_OBTAIN
+    compare LASTRESULT 0x0
+    gotoif EQUAL ow_script_no_room_for_giveitem
+    loadpointer 0x0 str_after_receiving_black_glasses
+    callstd MSG_KEEPOPEN
+    closeonkeypress
+    release
+    setflag KASKADA_BLACKMARKET_SCHATTENGLAS
+    end
+after_receiving_black_glasses:
+    loadpointer 0x0 str_after_receiving_black_glasses
+    callstd MSG_FACE
+    end
+
+ow_script_kaskada_blackmarket_primus:
+	lock
+	faceplayer
+	checkflag KASKADA_BLACKMARKET_PRIMUS
+	gotoif EQUAL primus_done
+	pause 32
+	sound 0x15
+	applymovement LASTTALKED mov_exclam
+	waitmovement 0
+	checksound
+	loadpointer 0 str_primus_0
+	show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT emotion=MUGSHOT_SCARED
+	applymovement LASTTALKED mov_fu
+	waitmovement 0
+	pause 48
+	setflag KASKADA_BLACKMARKET_PRIMUS
+	faceplayer
+primus_done:
+	loadpointer 0 str_primus_1
+	show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT emotion=MUGSHOT_SCARED
+	releaseall
+	end
+ow_script_kaskada_black_blaise:
+	lock
+	faceplayer
+	pause 32
+	sound 0x15
+	applymovement LASTTALKED mov_exclam
+	waitmovement 0
+	checksound
+	loadpointer 0 str_blaise_0
+	show_mugshot MUGSHOT_BLAISE MUGSHOT_LEFT message_type=MSG_KEEPOPEN emotion=MUGSHOT_SHOCKED hide_mugshot=0
+	loadpointer 0 str_blaise_1
+	update_mugshot_emotion MUGSHOT_NORMAL
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_blaise_2
+	update_mugshot_emotion MUGSHOT_ANGRY
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_blaise_3
+	update_mugshot_emotion MUGSHOT_NORMAL
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_blaise_4
+	update_mugshot_emotion MUGSHOT_HAPPY
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_blaise_5
+	update_mugshot_emotion MUGSHOT_NORMAL
+	callstd MSG_KEEPOPEN
+	closeonkeypress
+	hide_mugshot
+	npc_move_to 20 0x1d 0x24
+	hidesprite 20
+	releaseall
+	end
+
+ow_script_kaskada_blackmarket_coin_game:
+	showmoney 0x0 0x0 0x0
+	loadpointer 0x0 str_coin_game_intro
+	callstd MSG_YES_NO
+	compare LASTRESULT 0x0
+	gotoif EQUAL coin_game_dont_play
+	loadpointer 0x0 str_coin_game_explain
+	callstd MSG_YES_NO
+	compare LASTRESULT 0x0
+	gotoif EQUAL coin_game_dont_play
+	checkmoney 5000 0x0
+	compare LASTRESULT 0x0
+	gotoif EQUAL coin_game_no_money
+	loadpointer 0x0 str_coin_game_start
+	callstd MSG
+	setvar 0x8004 20
+	hidemoney 0 0
+coin_game_loop:
+	buffernumber 0x0 0x8004
+	loadpointer 0x0 str_coin_game_state
+	callstd MSG_KEEPOPEN
+	setvar DYN_MULTICHOICE_ITEM_CNT 0x3
+	loadpointer 0x0 choice_coin_game
+	multichoice 0x0 0x0 0x0 0x1
+	compare LASTRESULT 0x0
+	callif EQUAL coin_game_take_one
+	compare LASTRESULT 0x1
+	callif EQUAL coin_game_take_two
+	compare LASTRESULT 0x2
+	callif EQUAL coin_game_take_three
+	special 0x25
+	setvar DYN_MULTICHOICE_ITEM_CNT 0x0
+	buffernumber 0x0 0x8005
+	loadpointer 0x0 str_coin_game_take
+	callstd MSG
+	compare 0x8004 0x0
+	gotoif EQUAL coin_game_end
+	goto coin_game_loop
+coin_game_end:
+	showmoney 0 0 0
+	loadpointer 0x0 str_coin_game_lost
+	callstd MSG_KEEPOPEN
+	paymoney 5000 0x0
+	updatemoney 0 0 0
+	sound 0x41
+	checksound
+	loadpointer 0 str_coin_game_payed
+	callstd MSG_KEEPOPEN
+	closeonkeypress
+	hidemoney 0 0
+	releaseall
+	end
+coin_game_take_three:
+	subvar 0x8004 0x3
+	return
+coin_game_take_two:
+	subvar 0x8004 0x2
+	return
+coin_game_take_one:
+	subvar 0x8004 0x1
+	return
+
+coin_game_no_money:
+	loadpointer 0x0 str_coin_game_no_money
+	callstd MSG
+	hidemoney 0 0
+	end
+coin_game_dont_play:
+	loadpointer 0x0 str_coin_game_dont_play
+	callstd MSG
+	hidemoney 0 0
+	end
+
+.align 4
+choice_coin_game:
+    .word str_one, 0
+    .word str_two, 0
+    .word str_three, 0
+
+.ifdef LANG_GER
+str_0:
+	.autostring 34 2 "A-Aber ich sage dir doch, ich kann das Geld auftreiben.\pGib mir einfach noch etwas mehr Zeit, ja?"
+str_1:
+	.autostring 34 2 "Ich lasse mich doch nicht zum Narren halten.\pDu hattest lange genug Zeit, mir mein Geld zurückzuzahlen.\pJetzt wirst du die Konsequenzen für deine Unverlässlichkeit tragen müssenDOTS"
+str_2:
+	.autostring 34 2 "Auf diesem Markt fühle ich mich immer ganz unwohlDOTS\pEs könnte ja jeden Moment die Decke auf uns herunterstürzen!"
+str_3:
+	.autostring 34 2 "Team Violet muss hier einige Einkäufe erledigen.\pAber das sind unsere Geschäfte, ja?\pDie gehen dich absolut gar nichts an, du Göre!"
+str_4:
+	.autostring 34 2 "Wenn man den richtigen Moment erwischt und der Verkäufer gerade nicht hinsiehtDOTS\pNun, dann kann man sich hier quasi selbst bedienen.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pWas siehst du mich denn so an?\pWir sind hier an einem Untergrund-Schwarzmarkt.\pDa sind solche kleinen Diebstähle doch wohl noch erlaubtDOTS"
+str_5:
+	.autostring 34 2 "Ich verstehe wirklich nicht, warum wir den Professor hierher begleiten müssen.\pSeit wann gibt den ein Wissenschaftler in Team Violet den Ton an?"
+str_6:
+	.autostring 34 2 "Als Trainer habe ich einfach kein großes Talent.\pDeswegen kaufe ich mir hier die Pokémon, die die Blackbeard Piraten erbeutet haben.\pWobei ich zugeben muss, dass mir die Piratenbande doch ein wenig Angst einjagtDOTS"
+str_7:
+	.autostring 34 2 "Weißt du, was der wirkliche Nachteil an einem Schwarzmarkt ist?\pWenn man einmal von einem dieser Halunken hier abgezogen wird, kann man sich praktisch nicht mehr zur Wehr setzenDOTS"
+str_8:
+	.autostring 34 2 "Du fragst dich sicher, wie man so einen Markt direkt vor den Augen der Pokémon-Liga betreiben kann, was?\pNun, darauf habe ich bisher ehrlichgesagt auch keine sinnvolle Antwort gefundenDOTS"
+str_9:
+	.autostring 34 2 "Es ist doch irgendwie genial, diesen Markt mit einem Teehaus zu decken.\pIch meine, wer würde darauf kommen, dass ein Teehaus in irgendwelche dubiosen Geschäfte verwickelt ist?"
+str_10:
+	.autostring 34 2 "Mit meinen übersinnlichen Kräften kann ich deine Pokémon unbesiegbar machenDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDu bist ja noch ein Kind!\pN-NeinDOTS\pEinem Kind kann ich das Geld nicht aus der Tasche ziehen.\pZieh ab, bevor ich es mir anders überlege, ja?"
+str_11:
+	.autostring 34 2 "Und ich sage Ihnen, dieser alte Mann schummelt!\pDa ist irgendetwas faul an diesem Stand.\pDa können Sie doch nicht einfach so zusehen!"
+str_12:
+	.autostring 34 2 "Wir machen hier die Regeln, verstanden?\pUnd dieser alte Mann, den du da beschuldigstDOTS\pIch kann dir versichern, dass er sehr vertrauenswürdig ist.\pOder hast du irgendwelche Beweise für deine abenteuerlichen Anschuldigungen?"
+str_blaise_0:
+	.autostring 34 2 "PLAYER!\pDich hätte ich an einem solchen Ort sicher nicht erwartetDOTS"
+str_blaise_1:
+	.autostring 34 2 "Es wird dich vielleicht wundern, aberDOTS\pDieser Markt hier wird von niemand anderem geführt, als meinem Vater.\pUnd das, obwohl er ebenfalls ein Mitglied der Top Vier ist."
+str_blaise_2:
+	.autostring 34 2 "Wenn ich das hier so sehe, dann würde ich am Liebsten alles kurz und klein schlagen.\pVerstehst du, was ich meine?"
+str_blaise_3:
+	.autostring 34 2 "Es ist nicht gerecht, dass jemand, der so verdorben ist, wie mein VaterDOTS\pDOTSdass so jemand so viel Macht und Einfluss hat."
+str_blaise_4:
+	.autostring 34 2 "Aber, das würdest du sowieso nicht verstehen, oder?"
+str_blaise_5:
+	.autostring 34 2 "Man sieht sich, PLAYER."
+str_primus_0:
+	.autostring 34 2 "O-Oh!\nPLAYER, wie unerwartet!\pW-Was ich hier treibe?\pÄhm, ja, das ist eine gute FrageDOTS\pIchDOTS\pIch muss bloß einige Besorgungen anstellenDOTS\pF-Für meine ForschungDOTS\pAlso nichts, worüber du dir den Kopf zerbrechen solltestDOTS"
+str_primus_1:
+	.autostring 34 2 "Du behältst das hier doch für dich, ja?\pNicht, dass man mir noch unangenehme Fragen stelltDOTS"
+str_coin_game_intro:
+	.autostring 34 2 "Na, sieh mal ein, ein Jungspund!\pIch kann dich doch sicher dazu überreden, mit einem alten Herren ein kleines Spielchen zu spielen, oder?"
+str_coin_game_explain:
+	.autostring 34 2 "Die Regeln sind ganz einfach.\pIch habe hier 20 Murmeln.\pWir beide nehmen abwechselnd entweder eine, zwei oder drei Murmeln.\pDie Person, die die letzte Murmel nimmt, gewinnt das Spiel.\pAlles klar?\pDu kannst gegen mich ganze 50.000POKEDOLLAR gewinnen.\pWenn du aber verlierstDOTS\pNaja, dann schuldest du mir 5.000POKEDOLLAR.\pWas sagst du?"
+str_coin_game_start:
+    .autostring 34 2 "Gut!\nIch bin so freundlich und lasse dir den Vortritt."
+str_coin_game_state:
+    .string "BUFFER_1 Murmeln verbleiben.\nWie viele möchtest du nehmen?"
+str_one:
+    .string "Eine"
+str_two:
+    .string "Zwei"
+str_three:
+    .string "Drei"
+str_coin_game_take:
+    .string "Na dann werde ichDOTS ähmDOTS\nBUFFER_1 Murmeln nehmen, ja?"
+str_coin_game_lost:
+	.autostring 34 2 "Was für ein Pech!\pSiehst so aus, als hättest du verloren.\pDann musst du jetzt wohl deine Schulden begleichen, KindchenDOTS"
+str_coin_game_payed:
+	.autostring 34 2 "Das ist einfach blöd gelaufen.\pVielleicht hast du ja bei der nächsten Partie mehr Glück?"
+str_coin_game_no_money:
+    .autostring 34 2 "Pah!\nWillst du mich für dumm verkaufen?\pDu hast ja nicht einmal 5.000POKEDOLLARDOTS\pWie willst du mich denn dann ausbezahlen?"
+str_coin_game_dont_play:
+	.autostring 34 2 "Huh?\nHast du etwa Angst, gegen einen alten Mann zu verlieren?\pJammerschade, wirklichDOTS"
+str_intro_black_glasses:
+	.autostring 34 2 "Ich hasse es, wenn meine Accessiores aus der Mode kommen.\pDiese Brille zum BeispielDOTS\pWer würde jetzt noch so etwas tragen?\pDu kannst sie gerne habenDOTS"
+str_after_receiving_black_glasses:
+	.autostring 34 2 "Dieses Schattenglas war mir sowieso viel zu dunkelDOTS\pUnd unmodisch ist es dazu auch noch."
+.elseif LANG_EN
+.endif
+
+
 .global ow_script_0x8c8786
 .global ow_script_0x8a5444
 .global ow_script_0x8c86e3
@@ -33,9 +336,9 @@
 .global ow_script_0x8c881e
 .global ow_script_0x933e18
 .global ow_script_map_8_11_trainer_4
-.global ow_script_0x935b66
+.global coin_game_dont_play
 .global ow_script_map_8_11_person_0
-.global ow_script_0x933ebf
+.global coin_game_take_one
 .global ow_script_map_8_11_trainer_9
 .global ow_script_map_8_11_trainer_1
 .global ow_script_0x8fadcc
@@ -44,7 +347,7 @@
 .global ow_script_map_8_11_trainer_8
 .global ow_script_map_8_11_person_5
 .global ow_script_0x8c86c2
-.global ow_script_0x935ad0
+.global coin_game_no_money
 .global ow_script_0x916919
 .global ow_script_map_8_11_trainer_7
 .global ow_script_map_8_11_person_6
@@ -764,148 +1067,11 @@ str_0x931de9:
 .endif
 
 
-ow_script_map_8_11_trainer_9:
-loadpointer 0x0 str_0x93674c
-callstd MSG_YES_NO
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x935b66
-loadpointer 0x0 str_0x935fb2
-callstd MSG_YES_NO
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x935b66
-checkmoney 0x1388 0x0
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x935ad0
-loadpointer 0x0 str_0x935a97
-callstd MSG
-setvar 0x8004 0x14
-goto ow_script_0x933987
-
-
-ow_script_0x933987:
-buffernumber 0x0 0x8004
-loadpointer 0x0 str_0x935a60
-callstd MSG_KEEPOPEN
-setvar DYN_MULTICHOICE_ITEM_CNT 0x3
-loadpointer 0x0 choice_game
-multichoice 0x0 0x0 0x0 0x1
-compare LASTRESULT 0x0
-callif EQUAL ow_script_0x933ebf
-compare LASTRESULT 0x1
-callif EQUAL ow_script_0x933ec6
-compare LASTRESULT 0x2
-callif EQUAL ow_script_0x933ecd
-special 0x25
-setvar DYN_MULTICHOICE_ITEM_CNT 0x0
-buffernumber 0x0 0x8005
-loadpointer 0x0 str_0x933e82
-callstd MSG
-compare 0x8004 0x0
-gotoif EQUAL ow_script_0x933e18
-goto ow_script_0x933987
-
-.align 4
-choice_game:
-    .word str_blackmarket_1, 0
-    .word str_blackmarket_2, 0
-    .word str_blackmarket_3, 0
-
-ow_script_0x933e18:
-loadpointer 0x0 str_0x933e28
-callstd MSG
-paymoney 0x1388 0x0
-end
-
-
-ow_script_0x933ecd:
-subvar 0x8004 0x3
-return
-
-
-ow_script_0x933ec6:
-subvar 0x8004 0x2
-return
-
-
-ow_script_0x933ebf:
-subvar 0x8004 0x1
-return
-
-
-ow_script_0x935ad0:
-loadpointer 0x0 str_0x935ada
-callstd MSG
-end
-
-
-ow_script_0x935b66:
-loadpointer 0x0 str_0x9366ff
-callstd MSG
-end
-
-
-.ifdef LANG_GER
-
-str_0x93674c:
-    .string "Oh hallo!\pHast du Lust auf kleines lustiges\nSpielchen mit einem alten Herren?"
-
-
-
-str_0x935fb2:
-    .string "Lass mich das Spielchen erklären.\pIch habe hier 20 Murmeln, wir\nbeide nehmen abwechselnd entweder\leine, zwei oder drei Murmeln.\pDer Spieler, der die letzte Murmel\nan sich nimmt, gewinnt das Spiel.\pSimpel, nicht?\pWenn du gewinnst, zahle ich dir\n50 000POKEDOLLAR, anderenfalls schuldest\ldu mir 5 000POKEDOLLAR.\pWas sagst du?"
-
-
-
-str_0x935a97:
-    .string "Gut, ich bin so freundlich und\nlasse dir den Vortritt."
-
-
-
-str_0x935a60:
-    .string "BUFFER_1 Murmeln verbleiben.\nWie viele möchtest du nehmen?"
-
-
-
-str_blackmarket_1:
-    .string "Eine"
-
-
-
-str_blackmarket_2:
-    .string "Zwei"
-
-
-
-str_blackmarket_3:
-    .string "Drei"
-
-
-
-str_0x933e82:
-    .string "Na dann werde ich DOTS äh DOTS\nBUFFER_1 Murmeln nehmen, denke ich."
-
-
-
-str_0x933e28:
-    .string "Oh, was ein Pech!\pSieht so aus, als hättest du\nverloren!\pDas tut mir aufrichtig leidDOTS"
-
-
-
-str_0x935ada:
-    .string "Du hast ja nicht einmal genügend\nGeld, deine Schulden zu zahlen!"
-
-
-
-str_0x9366ff:
-    .string "Oh, das ist aber schade!\nDu hast wohl Angst, gegen mich zu\lverlieren, was?"
-
-
-.elseif LANG_EN
-
-.endif
 
 
 ow_script_black_market_igva_final:
+	end
+	/* 
 	checkflag KASKADA_BLACKMARKET_PRIMUS
 	gotoif LESS not_done
 	checkflag KASKADA_BLACKMARKET_BLAISE
@@ -1001,3 +1167,4 @@ mov_6d:
 
 mov_exclam:
 	.byte SAY_EXCLAM, STOP
+*/

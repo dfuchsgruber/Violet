@@ -617,14 +617,14 @@ trainer_pokemon_default_item_default_attacks trainer_party_x70[] = {
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x71[] = {
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,27,POKEMON_ULTRIGARIA),
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,27,POKEMON_GOLBAT),
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,28,POKEMON_ENEKORO)
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,29,POKEMON_DODU),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,29,POKEMON_PONITA),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,30,POKEMON_DARTIGNIS)
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x72[] = {
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,28,POKEMON_NIDORINA),
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,27,POKEMON_FLOETTE)
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,29,POKEMON_NIDORINA),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,30,POKEMON_FLOETTE)
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x73[] = {
