@@ -248,6 +248,7 @@ typedef struct {
     u8 weather_blend_active : 1;
     u8 weather_blend_delay;
     u8 pokemon_move_learning_evolution_move_idx;
+    u8 blackbeard_ship_oam_idx;
     /*
     color_t pals_filtered[32][16];
     color_t dns_filter;

@@ -50,6 +50,7 @@
 .global ow_script_kaskada_person_37
 .global ow_script_kaskada_evolithe_gift
 .global ow_script_kaskada_igva
+.global ow_script_kaskada_felix
 
 ow_script_kaskada_person_0:
 	loadpointer 0 str_0
@@ -304,7 +305,72 @@ ow_script_kaskada_igva:
 	releaseall
 	end
 
+ow_script_kaskada_felix:
+	lockall
+	faceplayer
+	loadpointer 0 str_felix_0
+	show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT
+	sound 0x15
+	applymovement 63 mov_exclam
+	waitmovement 0
+	lockall
+	faceplayer
+	checksound
+	loadpointer 0 str_felix_1
+	show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED hide_mugshot=0 message_type=MSG_KEEPOPEN
+	loadpointer 0 str_felix_2
+	update_mugshot_emotion MUGSHOT_ANGRY
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_felix_3
+	update_mugshot_emotion MUGSHOT_ANNOYED
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_felix_4
+	update_mugshot_emotion MUGSHOT_ANGRY
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_felix_5
+	update_mugshot_emotion MUGSHOT_NORMAL
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_felix_6
+	update_mugshot_emotion MUGSHOT_HAPPY
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_felix_7
+	update_mugshot_emotion MUGSHOT_NORMAL
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_felix_8
+	update_mugshot_emotion MUGSHOT_HAPPY
+	callstd MSG_KEEPOPEN
+	closeonkeypress
+	hide_mugshot
+	fadescreen 1
+	hidesprite 63
+	hidesprite 1
+	hidesprite 2
+	fadescreen 0
+	releaseall
+	end
+
 .ifdef LANG_GER
+
+str_felix_0:
+	.autostring 34 2 "Hey, PLAYER!\pMeine Leute bewachen diesen Tunnel schon seit Stunden, aber es lässt sich einfach keiner von diesen Revolutionären hier blickenDOTS"
+str_felix_1:
+	.autostring 34 2 "Was soll das heißen?\pDu hast den Anführer der Revolutionsbewegung getroffen?\pUnd du hast nicht einmal versucht, ihn aufzuhalten?"
+str_felix_2:
+	.autostring 34 2 "Also ehrlich, PLAYER!\pWarum hast du denn nichts unternommen?"
+str_felix_3:
+	.autostring 34 2 "Da frägt man sich wirklich, auf wessen Seite du eigentlich stehstDOTS\pAuch wenn Opi uns verboten hat, gegen diesen Albus zu kämpfenDOTS"
+str_felix_4:
+	.autostring 34 2 "Wir wissen doch beide, dass wir diese Typen stoppen müssen."
+str_felix_5:
+	.autostring 34 2 "Aber ich will 'mal nicht so sein, PLAYER.\pManchmal verlässt einen schonmal der Mut."
+str_felix_6:
+	.autostring 34 2 "Keine Sorge!"
+str_felix_7:
+	.autostring 34 2 "Ab jetzt übernehmen meine Leute und ich!\pWir kriegen diese Fanatiker schon klein."
+str_felix_8:
+	.autostring 34 2 "Und du siehst zu, dass du beim nächsten Mal nicht kneifst, wenn es hart auf hart kommt, ja?\pBis dann, PLAYER!"
+
+
 str_igva0:
 	.autostring 34 2 "Huh?\nKennen wir uns vielleicht?"
 str_igva1:

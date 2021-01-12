@@ -7,6 +7,149 @@
 .include "flags.s"
 .include "pathfinding.s"
 
+
+.global ow_script_kaskada_black_market_pirates
+
+ow_script_kaskada_black_market_pirates:
+	lockall
+	fadesong MUS_PIRATE
+	loadpointer 0 str_0
+	show_mugshot MUGSHOT_LUCKY MUGSHOT_LEFT mask_name=1
+	msgbox_with_name str_1 str_priate 
+	loadpointer 0 str_2
+	show_mugshot MUGSHOT_LUCKY MUGSHOT_LEFT emotion=MUGSHOT_SCARED
+	msgbox_with_name str_3 str_priate
+	applymovement 36 mov_fr
+	waitmovement 0
+	msgbox_with_name str_4 str_priate
+	clearflag PKMNMENU
+	showsprite 24
+	pause 32
+	applymovement 36 mov_fu
+	waitmovement 0
+	sound 0x15
+	applymovement 36 mov_exclam
+	waitmovement 0
+	checksound
+	loadpointer 0 str_5
+	show_mugshot MUGSHOT_LUCKY MUGSHOT_LEFT emotion=MUGSHOT_SCARED
+	applymovement 24 mov_1d
+	waitmovement 0
+	loadpointer 0 str_6
+	show_mugshot MUGSHOT_BLACKBEARD MUGSHOT_RIGHT emotion=MUGSHOT_SCARED hide_mugshot=0 message_type=MSG_KEEPOPEN
+	loadpointer 0 str_7
+	update_mugshot_emotion MUGSHOT_ANGRY
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_8
+	update_mugshot_emotion MUGSHOT_NORMAL
+	callstd MSG_KEEPOPEN
+	closeonkeypress
+	hide_mugshot
+	applymovement 24 mov_1u
+	waitmovement 0
+	pause 24
+	applymovement 24 mov_fd
+	waitmovement 0
+	loadpointer 0 str_9
+	show_mugshot MUGSHOT_BLACKBEARD MUGSHOT_RIGHT
+	applymovement 25 mov_fu
+	applymovement 26 mov_fu
+	waitmovement 0
+	msgbox_with_name str_10 str_priate 
+	applymovement 24 mov_fu
+	waitmovement 0
+	pause 32
+	sound 9
+	hidesprite 24
+	checksound
+	applymovement 25 mov_fr
+	applymovement 26 mov_fl
+	applymovement 36 mov_fl
+	waitmovement 0
+	pause 48
+	applymovement 36 mov_fr
+	waitmovement 0
+	pause 48
+	applymovement 36 mov_fl
+	waitmovement 0
+	pause 48
+	applymovement 36 mov_1u
+	waitmovement 0
+	applymovement 25 mov_fu
+	applymovement 26 mov_fu
+	applymovement 36 mov_fd
+	waitmovement 0
+	loadpointer 0 str_11
+	show_mugshot MUGSHOT_LUCKY MUGSHOT_LEFT emotion=MUGSHOT_SCARED
+	applymovement 26 mov_force_lucky
+	waitmovement 0
+	msgbox_with_name str_12 str_priate
+	applymovement 26 mov_1u
+	applymovement 36 mov_1u
+	waitmovement 0
+	pause 24
+	sound 9
+	hidesprite 36
+	checksound
+	applymovement 26 mov_1u
+	applymovement 25 mov_1r
+	waitmovement 0
+	applymovement 25 mov_1u
+	waitmovement 0
+	pause 24
+	sound 9
+	hidesprite 26
+	checksound
+	applymovement 25 mov_1u
+	waitmovement 0
+	pause 24
+	sound 9
+	hidesprite 25
+	checksound
+	pause 64
+	callasm blackbeard_ship_move_left
+	setflag KASKADA_BLACKMARET_BB_SHIP
+	addvar STORY_PROGRESS 1
+	releaseall
+	end
+
+mov_force_lucky:
+	.byte STEP_LEFT, LOOK_UP, STOP
+
+
+.ifdef LANG_GER
+str_0:
+	.autostring 34 2 "Ich sage es euch, Freunde!\pDas ist die Gelegenheit.\pWenn ihr euch unserer Revolutionsbewegung anschließt können wir zusammen die Top Vier klein kriegenDOTS\pDann kann der Kapitän das ganze Meer beherrschen!"
+str_1:
+	.autostring 34 2 "Na, das hört sich ja alles ganz spannend an, Lucky.\pAber ich glaube, der Kapitän hat mit dir ganz andere Pläne.\pSeit dem Vorfall damalsDOTS"
+str_2:
+	.autostring 34 2 "A-ach dasDOTS\nDas ist doch längst Schnee von gestern, oder nicht?\pIhr seid doch deswegen nicht immer noch wütend auf mich, oder, Freunde?"
+str_3:
+	.autostring 34 2 "Nein, wir sind dir nicht böse deswegen.\pAber Blackbeard ist da wohl etwas nachtragender."
+str_4:
+	.autostring 34 2 "Und dass du so bereitwillig hierher kommst und dich praktisch auslieferstDOTS\pDas fand er wirklich aufmerksam von dir."
+str_5:
+	.autostring 34 2 "K-Kapitän Blackbeard!\nDOTS\pW-Was für eine Freude, euch wiederzusehen."
+str_6:
+	.autostring 34 2 "Spar dir das Gesülze, Lucky!"
+str_7:
+	.autostring 34 2 "Ich hab' nicht vergessen, was du auf meinem Schiff abgezogen hast.\pEine Meuterei gegen den Kapitän anzuzetteln ist unverzeihlich."
+str_8:
+	.autostring 34 2 "Wir werden eine Menge Spaß zusammen haben, Lucky."
+str_9:
+	.autostring 34 2 "Bringt ihn an Board und sperrt ihn in irgendeine Zelle."
+str_10:
+	.autostring 34 2 "Aye, aye, Kapitän!"
+str_11:
+	.autostring 34 2 "J-Jetzt wartet doch einmal.\pW-Wir können doch sicher über alles reden, oder?\pI-IchDOTS"
+str_12:
+	.autostring 34 2 "Nichts da, du kommst schön mit unsDOTS"
+str_priate:
+	.string "Pirat"
+.elseif LANG_EN
+.endif
+
+
 .global ow_script_0x93395a
 .global ow_script_map_8_11_trigger_0
 .global ow_script_0x93154e

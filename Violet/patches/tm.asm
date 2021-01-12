@@ -54,3 +54,8 @@ _item_is_sellable: // Target in branching range
 	ldr r1, =item_is_sellable | 1
 	bx r1
 	.pool
+
+// Don't use up TMs on use if cancelled "fancy" item animation
+.org 0x08125cd0
+	lsl r0, #0
+	lsl r0, #0

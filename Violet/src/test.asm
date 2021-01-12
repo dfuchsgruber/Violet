@@ -36,6 +36,21 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	setflag FLAG_BRUCHFELS_GYM_PUZZLE_ROOM_0_SOLVED
+	setflag FLAG_BRUCHFELS_GYM_PUZZLE_ROOM_1_SOLVED
+	setflag FLAG_SILVANIA_CUT_TREE
+	setflag FLAG_SILVANIA_CUT_TREE_2
+	setflag FLAG_SILVANIA_FOREST_BURNING
+	setflag FLAG_SILVANIA_FOREST_SEQUENCE_1_NPCS
+	setflag FLAG_SILVANIA_FOREST_HYDRO_PUMP_0
+	setflag FLAG_SILVANIA_FOREST_HYDRO_PUMP_1
+	end
+
+
+	callasm print_flags
+	callasm print_vars
+	end
+
 	clearflag (KASKADA_IGVA | 0x8000)
 	end
 	givepokemon POKEMON_DARTIRI 26 0 0 0 0

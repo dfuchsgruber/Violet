@@ -121,6 +121,7 @@ void version_upgrade_alpha_2_1_to_2_2() {
     setflag(FLAG_BRUCHFELS_MAY_1);
     setflag(FLAG_BRUCHFELS_MAY_2 | 0x8000);
     setflag(FLAG_PROFESSOR_TANN_GONE_IN_DESERT_TENT);
+    setflag(FLAG_KASKADA_POLICEMEN);
     if (checkflag(FLAG_DAYCARE_EGG_SPAWNED)) 
         setflag(KADKADA_ZAUBERWASSER);
     clearflag(FLAG_DAYCARE_EGG_SPAWNED);

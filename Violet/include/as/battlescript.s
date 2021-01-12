@@ -61,7 +61,7 @@
 
 @@ Super commands
 .macro calculatedamage
-.byte 7, 6, 5, 4
+    .byte 4, 5, 6, 7
 .endm
 
 

@@ -117,8 +117,8 @@ extern oam_template gp_oam_template; // Multi-use oam template
 #define OAM_FLAG_SPRITES 0x4000
 
 typedef struct {
-  u8 x;
-  u8 y;
+  s8 x;
+  s8 y;
   u16 shape : 2;
   u16 size : 2;
   u16 tile_offset : 10;

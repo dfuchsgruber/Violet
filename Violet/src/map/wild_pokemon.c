@@ -697,6 +697,10 @@ wild_pokemon_data wild_pokemon[] = {
 		.rod = &wild_pokemon_tafelberg_south_rod,
 	},
 	{
+		.bank = 8, .map = 14,
+		.grass = &wild_pokemon_0_7_grass,
+	},
+	{
 	    .bank = 0xFF, .map = 0xFF, .field_2 = 0xFF, .field_3 = 0xFF,
 	    .grass = NULL, .water = NULL, .other = NULL, .rod = NULL
 	},

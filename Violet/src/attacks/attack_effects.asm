@@ -228,7 +228,7 @@
     .word bsc_attack_effect_xd9 @0xd9
     .word bsc_attack_effect_xda @0xda
     .word bsc_attack_effect_xdb @0xdb
-    .word bsc_attack_effect_xdc @0xdc
+    .word bsc_attack_effect_fire_fang @0xdc
     .word bsc_attack_effect_xdd @0xdd
     .word bsc_attack_effect_xde @0xde
     .word bsc_attack_effect_xdf @0xdf
@@ -333,7 +333,7 @@ bsc_attack_effect_xdb:
     setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x5
     goto bsc_effect_and_flinch
 
-bsc_attack_effect_xdc:
+bsc_attack_effect_fire_fang:
     setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x3
     goto bsc_effect_and_flinch
 

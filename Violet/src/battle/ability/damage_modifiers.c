@@ -75,7 +75,7 @@ void apply_final_damage_modifiers(){
 
 
 void apply_pre_damage_modifiers(){
-    dprintf("Applying pre-demage modifiers...\n");
+    dprintf("Applying pre-demage modifiers... Damage before %d\n", damage_to_apply);
     battler *attacker = &battlers[attacking_battler];
     battler *defender = &battlers[defending_battler];
     switch(attacker->ability){
@@ -121,11 +121,14 @@ void apply_pre_damage_modifiers(){
         // BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY);
         damage_apply_multiplier(500);
     }
+    dprintf("Damage before bsc 0x6 %d\n", damage_to_apply);
     battlescript_cmd_x06_apply_damage_modifiers();
     if ((battle_flags & BATTLE_TRAINER) && (trainer_vars.rival_flags & 4) && battler_is_opponent(defending_battler)) {
         // When battling Lucius, you're not allowed to do any significant damage
         damage_apply_multiplier(250);
     }
+
     apply_final_damage_modifiers();
+    dprintf("Damage after all modifiers %d\n", damage_to_apply);
 }
 
