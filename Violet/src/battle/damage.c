@@ -49,15 +49,11 @@ static const u8 hold_effect_to_type[][2] = {
     {HOLD_EFFECT_NORMAL_POWER, TYPE_NORMAL},
 };
 
-/*
 #define APPLY_STAT_MOD(var, mon, stat, statIndex)                                   \
 {                                                                                   \
     (var) = (stat) * (battle_stat_change_multipliers)[(mon)->stat_changes[(statIndex)]][0];         \
     (var) /= (battle_stat_change_multipliers)[(mon)->stat_changes[(statIndex)]][1];                 \
 }
-*/
-
-#define APPLY_STAT_MOD(var, mon, stat, statIndex) {var = stat;}
 
 int battle_base_damage_calculate(battler *attacker, battler *defender, u32 move, u16 sideStatus, u16 powerOverride, u8 typeOverride, u8 battlerIdAtk, u8 battlerIdDef) {
     int damage = 0;
