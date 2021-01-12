@@ -221,7 +221,7 @@ ow_script_0x81c406:
 str_0:
 	.autostring 34 2 "Aber Opi, Team Violet ist eine Gefahr für die Menschen in dieser Region!"
 str_1:
-	.autostring 34 2 "Genug jetzt davon, Felix!\pMag ja sein, dass diese Gruppe Ärger macht, aber jemand wie kann sich nicht mit solchen Problemen herumschlangenDOTS"
+	.autostring 34 2 "Genug jetzt davon, Felix!\pMag ja sein, dass diese Gruppe Ärger macht, aber jemand wie ich kann sich nicht mit solchen Problemen herumschlangenDOTS"
 str_2:
 	.autostring 34 2 "Aber was ist denn für ein Mitglied der Top Vier wichtiger, als die Menschen in Theto zu beschützen?"
 str_3:

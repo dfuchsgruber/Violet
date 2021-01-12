@@ -755,3 +755,22 @@ battle_item_restore_hp_break:
 	ldr r0, = battle_callback1 | 1
 	bx r0
 	.pool
+
+.org 0x0803ebec
+	push {r4, lr}
+	sub sp, #0x10 // Room for the 4 args on the stack
+	ldr r4, [sp, #0x18]
+	str r4, [sp, #0x0] // Power override
+	ldr r4, [sp, #0x1C]
+	str r4, [sp, #0x4] // Type override
+	ldr r4, [sp, #0x20]
+	str r4, [sp, #0x8] // battler idx attacking
+	ldr r4, [sp, #0x24]
+	str r4, [sp, #0xC] // battler idx attacking
+	ldr r4, =battle_base_damage_calculate | 1
+	bl blxr4
+	add sp, #0x10
+	pop {r4}
+	pop {r1}
+	bx r1
+	.pool

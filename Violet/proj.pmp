@@ -504,6 +504,11 @@
 				"map_kaskada_cave",
 				"src/map/banks/8/13/map_kaskada_cave.pms",
 				"MAP_KASKADA"
+			],
+			"14": [
+				"map_kaskada_black_market_exit",
+				"src/map/banks/8/14/map_kaskada_black_market_exit.pms",
+				"MAP_KASKADA"
 			]
 		},
 		"9": {
@@ -666,6 +671,11 @@
 			"0": [
 				"map_route_4_clouds",
 				"src/map/banks/16/0/map_route_4_clouds.pms",
+				"MAP_ROUTE_4"
+			],
+			"1": [
+				"map_route_4_cave",
+				"src/map/banks/16/1/map_route_4_cave.pms",
 				"MAP_ROUTE_4"
 			]
 		},
@@ -1994,6 +2004,14 @@
 		"map_footer_kaskada_cave": [
 			131,
 			"src/map/banks/8/13/map_footer_kaskada_cave.pms"
+		],
+		"map_footer_kaskada_black_market_exit": [
+			132,
+			"src/map/banks/8/14/map_footer_kaskada_black_market_exit.pms"
+		],
+		"map_footer_route_4_cave": [
+			133,
+			"src/map/banks/16/1/map_footer_route_4_cave.pms"
 		]
 	},
 	"tilesets_primary": {

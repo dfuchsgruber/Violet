@@ -4,21 +4,6 @@
 	bx r1
 	.pool
 
-.org 0x803EE04
-        ldr r0, =hook_dmg_calc_pick_atk | 1
-        bx r0
-        .pool
-
-.org 0x803F124
-        ldr r0, =hook_dmg_calc_pick_def | 1
-        bx r0
-        .pool
-
-.org 0x0803F28C
-        ldr r0, =hook_dmg_calc_pick_satk | 1
-        bx r0
-        .pool
-
 .org 0x081375E0
         ldr r0, =load_split_chart3 | 1
         bx r0

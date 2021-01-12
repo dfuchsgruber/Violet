@@ -16,7 +16,7 @@
 #include "overworld/script.h"
 #include "language.h"
 #include "constants/mugshot_character.h"
-#include "bg.h"
+#include "bg.h" 
 
 sprite mugshot_sprite = {0, 0xC000,  ATTR2_PRIO(1), 0};
 sprite mugshot_sprite_prio0 = {0, 0xC000, ATTR2_PRIO(0), 0};
@@ -145,7 +145,8 @@ mugshot mugshots[] = {
     [MUGSHOT_ALBUS] = {
 		{
 			[MUGSHOT_NORMAL] = gfx_mug_albusTiles, 
-			[MUGSHOT_SAD] = gfx_mug_albus_sadTiles
+			[MUGSHOT_SAD] = gfx_mug_albus_sadTiles,
+			[MUGSHOT_SHOCKED] = gfx_mug_albus_shockedTiles,
 		}, 
 		gfx_mug_albusPal, str_mug_albus},
     [MUGSHOT_FAUN_YOUNG] = {

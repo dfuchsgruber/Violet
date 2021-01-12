@@ -3,7 +3,7 @@
 		"footer": "map_footer_453",
 		"events": {
 			"person_cnt": 36,
-			"warp_cnt": 4,
+			"warp_cnt": 2,
 			"trigger_cnt": 9,
 			"signpost_cnt": 1,
 			"persons": [
@@ -35,27 +35,27 @@
 				},
 				{
 					"is_trainer": "0",
-					"script": "ow_script_map_8_10_person_1",
-					"y": "12",
+					"script": "0",
+					"y": "22",
 					"target_index": 2,
 					"field_3": 0,
-					"picture": 152,
+					"picture": "238",
 					"flag": "KASKADA_BLACKMARET_BB_SHIP",
-					"x": "30",
+					"x": "50",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_MARILL",
 						"berry_tree_idx": 0
 					}
 				},
@@ -165,7 +165,7 @@
 				},
 				{
 					"is_trainer": "0",
-					"script": "ow_script_map_8_11_person_4",
+					"script": "0",
 					"y": 40,
 					"target_index": 7,
 					"field_3": 0,
@@ -483,7 +483,7 @@
 					"field_3": 0,
 					"picture": "58",
 					"flag": "0x0",
-					"x": "46",
+					"x": "47",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -608,16 +608,16 @@
 				{
 					"is_trainer": "0",
 					"script": "0",
-					"y": "14",
+					"y": "13",
 					"target_index": 24,
 					"field_3": 0,
-					"picture": 153,
-					"flag": "KASKADA_BLACKMARET_BB_SHIP",
+					"picture": "67",
+					"flag": "PKMNMENU",
 					"x": "30",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -669,7 +669,7 @@
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -737,17 +737,17 @@
 				},
 				{
 					"is_trainer": "0",
-					"script": "0",
-					"y": "12",
+					"script": "ow_script_kaskada_blackmarket_person_14",
+					"y": "15",
 					"target_index": 29,
 					"field_3": 0,
 					"picture": 78,
 					"flag": "BLACK_MARKET_DONE",
-					"x": "37",
+					"x": "43",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -763,17 +763,17 @@
 				},
 				{
 					"is_trainer": "0",
-					"script": "0",
-					"y": "12",
+					"script": "ow_script_kaskada_blackmarket_person_13",
+					"y": "15",
 					"target_index": 30,
 					"field_3": 0,
 					"picture": 78,
 					"flag": "BLACK_MARKET_DONE",
-					"x": "39",
+					"x": "45",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -790,12 +790,12 @@
 				{
 					"is_trainer": "0",
 					"script": "0",
-					"y": "7",
+					"y": "9",
 					"target_index": 31,
 					"field_3": 0,
 					"picture": 66,
 					"flag": "BLACK_MARKET_DONE",
-					"x": "38",
+					"x": "44",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -816,16 +816,16 @@
 				{
 					"is_trainer": "0",
 					"script": "ow_script_black_market_igva_final",
-					"y": "13",
+					"y": "15",
 					"target_index": 32,
 					"field_3": 0,
 					"picture": 86,
 					"flag": "BLACK_MARKET_DONE",
-					"x": "38",
+					"x": "44",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -925,7 +925,7 @@
 					"x": "30",
 					"y": "15",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -952,37 +952,21 @@
 					"target_warp_idx": "1"
 				},
 				{
-					"target_map": 11,
-					"y": 11,
-					"target_bank": 8,
-					"level": 0,
-					"x": 57,
-					"target_warp_idx": 2
-				},
-				{
-					"target_map": 11,
+					"target_map": "14",
 					"y": "4",
 					"target_bank": 8,
 					"level": 0,
 					"x": "17",
-					"target_warp_idx": 1
-				},
-				{
-					"target_map": 59,
-					"y": 12,
-					"target_bank": 1,
-					"level": 0,
-					"x": 57,
-					"target_warp_idx": 1
+					"target_warp_idx": "0"
 				}
 			],
 			"triggers": [
 				{
 					"value": 34,
-					"y": "54",
+					"y": "16",
 					"level": 0,
-					"x": "20",
-					"script": "ow_script_map_8_11_trigger_0",
+					"x": "30",
+					"script": "ow_script_kaskada_black_market_pirates",
 					"field_5": 0,
 					"field_A": 0,
 					"field_B": 0,
@@ -990,10 +974,10 @@
 				},
 				{
 					"value": 34,
-					"y": "55",
+					"y": "16",
 					"level": 0,
-					"x": "21",
-					"script": "ow_script_map_8_11_trigger_0",
+					"x": "31",
+					"script": "ow_script_kaskada_black_market_pirates",
 					"field_5": 0,
 					"field_A": 0,
 					"field_B": 0,
@@ -1034,10 +1018,10 @@
 				},
 				{
 					"value": 34,
-					"y": "54",
+					"y": "16",
 					"level": 0,
-					"x": "19",
-					"script": "ow_script_map_8_11_trigger_0",
+					"x": "29",
+					"script": "ow_script_kaskada_black_market_pirates",
 					"field_5": 0,
 					"field_A": 0,
 					"field_B": 0,

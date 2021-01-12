@@ -53,7 +53,7 @@ bool battle_abilities_attack_done_defender_new();
 
 #define ABILITY_ON_TARGET_SIDE(battler_idx, ability)(ability_execute(ABILITY_CONTEXT_CHECK_TARGET_SIDE, battler_idx, ability, 0, 0))
 #define ABILITY_PRESENT(ability)(ability_execute(ABILITY_CONTEXT_CHECK_PRESENT, 0, ability, 0, 0))
-#define ABILITY_PRESENT2(ability)(ability_execute(ABILITYEFFECT_FIELD_SPORT, 0, ability, 0, 0))
+#define ABILITY_PRESENT2(ability)(ability_execute(ABILITY_CONTEXT_FIELD_SPORT, 0, ability, 0, 0))
 
 extern u8 ability_names[ABILITY_CNT][0xD];
 u8 *ability_descriptions[ABILITY_CNT];

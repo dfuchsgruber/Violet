@@ -15,8 +15,14 @@ typedef struct {
 } battle_callback_list_t;
 
 typedef struct {
+    u32 flags[4];
+} battle_resource_flags_t;
+
+#define RESOURCE_FLAG_FLASH_FIRE 1
+
+typedef struct {
     void *secret_base;
-    void *flags;
+    battle_resource_flags_t *flags;
     script_list_t *battle_script_stack;
     battle_callback_list_t *battle_callbacks;
     void *stats_before_levelup;

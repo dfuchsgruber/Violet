@@ -131,6 +131,7 @@ static worldmap_position_bank worldmap_positions_bank_8  = {
 	[11] = {.x = 21, .y = 5, .width = 1, .height = 1},
 	[12] = {.x = 21, .y = 5, .width = 1, .height = 1},
 	[13] = {.x = 21, .y = 5, .width = 1, .height = 1},
+	[14] = {.x = 21, .y = 4, .width = 1, .height = 2},
 };
 
 static worldmap_position_bank worldmap_positions_bank_9  = {

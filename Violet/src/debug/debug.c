@@ -1,6 +1,8 @@
 #include "types.h"
 #include "stdbool.h"
 #include "debug.h"
+#include "flags.h"
+#include "vars.h"
 
 void debug1(int a){
     while(true){}
@@ -41,3 +43,14 @@ void err2(int e, int p){
     debug4(e, p, -1, -1);
 }
 
+void print_flags() {
+    for (u16 flag = 0x900; flag < 0xb00; flag++) {
+        dprintf("Flag %d: %d\n", flag, checkflag(flag));
+    }
+}
+
+void print_vars() {
+    for (u16 var = 0x5000; var < 0x5100; var++) {
+        dprintf("Var %d: 0x%x\n", var, *var_access(var));
+    }
+}
