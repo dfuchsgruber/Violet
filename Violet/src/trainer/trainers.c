@@ -6920,6 +6920,13 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x1c0_tafelberg_trainer_5,
     },
+    [0x1C1] = {
+        .trainerclass = TRAINERCLASS_SCHWARZGURT, .sprite = 0x69,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Jack"),
+            PSTRING("Jack")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1c1_route_4_north_cave_trainer_0),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1c1_route_4_north_cave_trainer_0,
+    },
 
     
     [0x300] = {

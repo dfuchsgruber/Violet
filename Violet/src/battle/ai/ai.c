@@ -106,7 +106,7 @@ void ai_setup(u16 trainer_idx) {
     if (battle_flags & BATTLE_FLEEING_WILD) {
         ai->ai_flags |= TRAINER_AI_CONSIDER_FLEEING;
     }
-    if (*var_access(DIFFICULTY) == DIFFICULTY_HARD && !(battle_flags & (BATTLE_LEGENDARY | BATTLE_WILD_SCRIPTED))) {
+    if (*var_access(DIFFICULTY) == DIFFICULTY_HARD && !(battle_flags & (BATTLE_TRAINER | BATTLE_LEGENDARY | BATTLE_WILD_SCRIPTED))) {
         ai->ai_flags |= TRAINER_AI_CONSIDER_FLEEING; // Normal wild encounters might flee in hard mode
     }
     dprintf("AI flags 0x%x, battle flags 0x%x\n", ai->ai_flags, battle_flags);

@@ -245,7 +245,7 @@ static int trainer_pricemoney_get(u16 trainer_idx) {
     int money = average_level * battle_state->money_multiplier * trainer_class_money_multipliers[trainers[trainer_idx].trainerclass] * 4;
     dprintf("Trainer %d yields %d / 1000 money. Multiplier is %d, class multiplier is %d\n", trainer_idx, 
         money, battle_state->money_multiplier, trainer_class_money_multipliers[trainers[trainer_idx].trainerclass]);
-    return money / 1000;
+    return money / 2048;
 }
 
 u32 money_lost() {
