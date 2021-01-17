@@ -495,8 +495,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 16,
-					"y": 22,
+					"x": "16",
+					"y": "22",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
@@ -511,8 +511,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 9,
-					"y": 65,
+					"x": "9",
+					"y": "65",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
@@ -533,12 +533,12 @@
 			"connection_cnt": 2,
 			"connections": [
 				{
-					"direction": "MAP_CONNECTION_NORTH",
-					"displacement": "-14",
+					"direction": "MAP_CONNECTION_SOUTH",
+					"displacement": "-9",
 					"bank": 3,
 					"field_A": 0,
 					"field_B": 0,
-					"map_idx": 4
+					"map_idx": "1"
 				},
 				{
 					"direction": "MAP_CONNECTION_CLOUD",

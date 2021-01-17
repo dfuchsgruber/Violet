@@ -23,16 +23,19 @@ bool abilities_battle_enter(u8 ability, u8 index) {
         battlescript_init_and_interrupt_battle(bsc_hagelalarm);
     	bsc_global.battler_idx = index;
         return true;
-    } else if (ability == HACK) {
+    } else if (ability == HACK && !battler_damage_taken[index].intimdated_foe) {
+        battler_damage_taken[index].intimdated_foe = 1; // Abuse that one a bit I suppose...
         battlescript_init_and_interrupt_battle(bsc_hack);
         return true;
-    } else if (ability == ESCHAT) {
+    } else if (ability == ESCHAT && !battler_damage_taken[index].intimdated_foe) {
+        battler_damage_taken[index].intimdated_foe = 1; // Abuse that one a bit I suppose...
     	bsc_global.battler_idx = index;
     	battlescript_init_and_interrupt_battle(bsc_eschat);
     	return true;
     } else if (ability == TOLLWUT && (battlers[index].stat_changes[STAT_ATTACK] < 7 ||
     		battlers[index].stat_changes[STAT_DEFENSE] > 0
-			|| battlers[index].stat_changes[STAT_SPECIAL_DEFENSE] > 0)) {
+			|| battlers[index].stat_changes[STAT_SPECIAL_DEFENSE] > 0) && !battler_damage_taken[index].intimdated_foe) {
+        battler_damage_taken[index].intimdated_foe = 1; // Abuse that one a bit I suppose...
 		battlescript_init_and_interrupt_battle(bsc_tollwut);
 		return true;
     } else if (ability == GEGENWIND && !battler_damage_taken[index].intimdated_foe) {

@@ -2482,3 +2482,9 @@ trainer_pokemon_default_item_default_attacks trainer_party_x1c0_tafelberg_traine
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,34,POKEMON_SANDAMER),
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,33,POKEMON_NOKTUSKA),
 }; 
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1c1_route_4_north_cave_trainer_0[3] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,31,POKEMON_MASCHOCK),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,31,POKEMON_RASAFF),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,30,POKEMON_MEDITIE),
+}; 

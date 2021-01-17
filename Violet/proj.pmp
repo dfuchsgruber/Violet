@@ -2021,7 +2021,8 @@
 		"maptileset_clouds": "src/map/tileset/maptileset_clouds.pms",
 		"maptileset_cave": "src/map/tileset/maptileset_cave.pms",
 		"maptileset0_aktania": "src/map/tileset/maptileset0_aktania.pms",
-		"maptileset0_kaskada": "src/map/tileset/maptileset0_kaskada.pms"
+		"maptileset0_kaskada": "src/map/tileset/maptileset0_kaskada.pms",
+		"maptileset0_route_4": "src/map/tileset/maptileset0_route_4.pms"
 	},
 	"tilesets_secondary": {
 		"maptileset45": "src/map/tileset/maptileset45.pms",

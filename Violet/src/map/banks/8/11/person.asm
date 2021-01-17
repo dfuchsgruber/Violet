@@ -269,7 +269,7 @@ lucky_gone:
 	checkgender
     compare LASTRESULT 0x0
     callif EQUAL buffer_he
-	compare LASTTALKED 0x1
+	compare LASTRESULT 0x1
 	callif EQUAL buffer_she
 	sound 0x15
 	applymovement 32 mov_exclam
@@ -447,7 +447,7 @@ str_albus_1:
 str_igva_5:
 	.autostring 34 2 "Nun jaDOTS\nDie Sache ist die, dass Lucky wohlDOTSTEXT_DELAY_SHORT\pEr ist wohl irgendwie mit den Blackbeard Piraten zusammen verschwundenDOTS"
 str_albus_2:
-	.autostring 34 2 "Wiebitte?\pEr ist gemeinsam mit Blackbeard verschwunden?"
+	.autostring 34 2 "Wie bitte?\pEr ist gemeinsam mit Blackbeard verschwunden?"
 str_albus_3:
 	.autostring 34 2 "Dabei hat er diese Bande doch schon vor langer Zeit verlassenDOTS"
 str_igva_6:

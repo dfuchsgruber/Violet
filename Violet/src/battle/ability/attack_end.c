@@ -21,8 +21,6 @@
 #include "item/item.h"
 #include "constants/item_hold_effects.h"
 
-extern u8 bsc_tollwut[];
-extern u8 bsc_tollwut_attack_boost[];
 extern u8 bsc_hagelalarm[];
 extern u8 bsc_lernfaehig[];
 extern u8 bsc_hochmut[];
