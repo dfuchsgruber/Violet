@@ -138,6 +138,7 @@ static void pc_handle_confirm_selection(u8 self) {
 }
 
 void pc_handle_context_on_pokemon_consider_new_modes() {
+    dprintf("Pc context on mon.\n");
     // Wrapper arround the original function, as it is big and I am too lazy to reimplement and test it from scratch...
     if (pc_state->mode == PC_MODE_SELECT && pc_state->state == 2) {
         switch (pc_context_menu_handle_inputs()) {
@@ -161,10 +162,13 @@ void pc_handle_context_on_pokemon_consider_new_modes() {
 }
 
 static bool pc_context_menu_build_context_on_pokemon_select() {
-    pc_context_menu_add_item(PC_CONTEXT_MENU_ITEM_SELECT);
-    pc_context_menu_add_item(PC_CONTEXT_MENU_ITEM_SUMMARY);
-    pc_context_menu_add_item(PC_CONTEXT_MENU_ITEM_CANCEL);
-    return true;
+    if (pc_get_current_species()) {
+        pc_context_menu_add_item(PC_CONTEXT_MENU_ITEM_SELECT);
+        pc_context_menu_add_item(PC_CONTEXT_MENU_ITEM_SUMMARY);
+        pc_context_menu_add_item(PC_CONTEXT_MENU_ITEM_CANCEL);
+        return true;
+    }
+    return false;
 }
 
 
