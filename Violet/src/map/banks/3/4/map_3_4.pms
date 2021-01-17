@@ -3,7 +3,7 @@
 		"footer": "map_footer_82",
 		"events": {
 			"person_cnt": 63,
-			"warp_cnt": 18,
+			"warp_cnt": 17,
 			"trigger_cnt": 0,
 			"signpost_cnt": 8,
 			"persons": [
@@ -1729,14 +1729,6 @@
 					"target_warp_idx": 0,
 					"target_map": "13",
 					"target_bank": "8"
-				},
-				{
-					"x": "44",
-					"y": "72",
-					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": "1",
-					"target_bank": "16"
 				}
 			],
 			"triggers": [],
@@ -1873,7 +1865,7 @@
 		},
 		"levelscripts": "lscr_0x726f28",
 		"connections": {
-			"connection_cnt": 3,
+			"connection_cnt": 2,
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_NORTH",
@@ -1882,14 +1874,6 @@
 					"field_A": 0,
 					"field_B": 0,
 					"map_idx": 59
-				},
-				{
-					"direction": "MAP_CONNECTION_SOUTH",
-					"displacement": "14",
-					"bank": 3,
-					"field_A": 0,
-					"field_B": 0,
-					"map_idx": 22
 				},
 				{
 					"direction": "MAP_CONNECTION_CLOUD",

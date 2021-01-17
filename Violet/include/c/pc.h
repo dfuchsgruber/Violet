@@ -183,4 +183,10 @@ u8 pc_get_mode();
  **/
 void pc_reinitialize_selection();
 
+/**
+ * Gets the species of the slot currently selected in the pc (may be in the team or on the box).
+ * @return the currently selected species
+ **/
+u16 pc_get_current_species();
+
 #endif
