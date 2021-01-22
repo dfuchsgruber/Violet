@@ -4,7 +4,7 @@
 		"events": {
 			"person_cnt": 15,
 			"warp_cnt": 7,
-			"trigger_cnt": 2,
+			"trigger_cnt": 1,
 			"signpost_cnt": 3,
 			"persons": [
 				{
@@ -12,13 +12,13 @@
 					"picture": 24,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "11",
-					"y": "6",
+					"x": "22",
+					"y": "15",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_LEFT_RIGHT_UP",
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_RIGHT_UP_LEFT_DOWN",
 					"behaviour_range": {
-						"x": "0",
-						"y": "0"
+						"x": "5",
+						"y": "3"
 					},
 					"is_trainer": "1",
 					"alert_radius": "4",
@@ -38,8 +38,8 @@
 					"picture": 26,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 9,
-					"y": 18,
+					"x": "43",
+					"y": "12",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
@@ -64,10 +64,10 @@
 					"picture": 19,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "7",
-					"y": "7",
+					"x": "52",
+					"y": "26",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -90,16 +90,16 @@
 					"picture": 61,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 17,
-					"y": 20,
+					"x": "47",
+					"y": "26",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN_UP_AND_LEFT",
+					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "1",
-					"alert_radius": 0,
+					"alert_radius": "5",
 					"script": "ow_script_map_3_22_trainer_3",
 					"flag": "0x0",
 					"field_D": 0,
@@ -116,8 +116,8 @@
 					"picture": 58,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "12",
-					"y": "13",
+					"x": "23",
+					"y": "23",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -142,8 +142,8 @@
 					"picture": 32,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 23,
-					"y": 32,
+					"x": "47",
+					"y": "31",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -168,10 +168,10 @@
 					"picture": 57,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "17",
-					"y": "34",
+					"x": "34",
+					"y": "49",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -194,8 +194,8 @@
 					"picture": 95,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 2,
-					"y": 13,
+					"x": "45",
+					"y": "54",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -220,8 +220,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 2,
-					"y": 6,
+					"x": "42",
+					"y": "54",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -246,8 +246,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 12,
-					"y": 17,
+					"x": "57",
+					"y": "30",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -272,8 +272,8 @@
 					"picture": "69",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "33",
-					"y": "14",
+					"x": "10",
+					"y": "28",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
@@ -298,8 +298,8 @@
 					"picture": 0,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 33,
-					"y": 13,
+					"x": "14",
+					"y": "28",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -324,8 +324,8 @@
 					"picture": "101",
 					"script_std": "PERSON_EGG",
 					"field_3": 0,
-					"x": "7",
-					"y": "32",
+					"x": "37",
+					"y": "84",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -349,8 +349,8 @@
 					"picture": "23",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "8",
-					"y": "18",
+					"x": "42",
+					"y": "12",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
@@ -374,8 +374,8 @@
 					"picture": "26",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "10",
-					"y": "38",
+					"x": "11",
+					"y": "19",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_LEFT",
 					"behaviour_range": {
@@ -397,56 +397,56 @@
 			],
 			"warps": [
 				{
-					"x": 23,
-					"y": 28,
+					"x": "46",
+					"y": "9",
 					"level": 0,
 					"target_bank": 16,
 					"target_map": 3,
 					"target_warp_idx": 0
 				},
 				{
-					"x": 19,
-					"y": 64,
+					"x": "43",
+					"y": "69",
 					"level": 0,
 					"target_bank": 16,
 					"target_map": 3,
 					"target_warp_idx": 1
 				},
 				{
-					"x": 11,
-					"y": 63,
+					"x": "59",
+					"y": "34",
 					"level": 0,
 					"target_bank": 16,
 					"target_map": 4,
 					"target_warp_idx": 0
 				},
 				{
-					"x": "5",
-					"y": "14",
+					"x": "30",
+					"y": "28",
 					"level": 0,
 					"target_warp_idx": 0,
 					"target_map": 0,
 					"target_bank": "16"
 				},
 				{
-					"x": "6",
-					"y": "14",
+					"x": "31",
+					"y": "28",
 					"level": 0,
 					"target_warp_idx": "1",
 					"target_map": 0,
 					"target_bank": "16"
 				},
 				{
-					"x": "6",
-					"y": "15",
+					"x": "31",
+					"y": "29",
 					"level": 0,
 					"target_warp_idx": "2",
 					"target_map": 0,
 					"target_bank": "16"
 				},
 				{
-					"x": "5",
-					"y": "15",
+					"x": "30",
+					"y": "29",
 					"level": 0,
 					"target_warp_idx": "3",
 					"target_map": 0,
@@ -455,23 +455,12 @@
 			],
 			"triggers": [
 				{
-					"x": 18,
-					"y": 28,
+					"x": "2",
+					"y": "0",
 					"level": 0,
 					"field_5": 0,
 					"value": 36,
-					"script": "ow_script_map_3_22_trigger_0",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"x": "17",
-					"y": "28",
-					"level": 0,
-					"field_5": 0,
-					"value": 36,
-					"script": "ow_script_map_3_22_trigger_0",
+					"script": "0",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
@@ -479,8 +468,8 @@
 			],
 			"signposts": [
 				{
-					"x": 21,
-					"y": 29,
+					"x": "47",
+					"y": "10",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -495,8 +484,8 @@
 					"flag": "0"
 				},
 				{
-					"x": "16",
-					"y": "22",
+					"x": "14",
+					"y": "13",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
@@ -511,14 +500,14 @@
 					"flag": "0"
 				},
 				{
-					"x": "9",
-					"y": "65",
+					"x": "49",
+					"y": "62",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"script": "0",
 						"item": {
-							"item": "ITEM_LUXUSBALL",
+							"item": "ITEM_KALZIUM",
 							"flag": 41,
 							"amount": 1,
 							"chunk": 0

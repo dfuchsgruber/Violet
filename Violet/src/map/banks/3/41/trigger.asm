@@ -131,7 +131,7 @@ plant_starter:
     loadpointer 0 str_violet_grunt
     setvar 0x8000 1
     special SPECIAL_NAME_SHOW
-    trainerbattleallytwotrainers 0x8 0x164 0x15F 44 TRAINER_BACKSPRITE_RIVAL 1 str_0x8a69df ow_script_0x8a71a2 str_after_second_grunt ow_script_0x8a71a2
+    trainerbattleallytwotrainers 0x8 0x164 0x15F 44 TRAINER_BACKSPRITE_RIVAL 1 str_0x8a69df str_0x8a6a97 str_after_second_grunt ow_script_0x8a71a2
 have_to_select:
     loadpointer 0x0 str_have_to_select
     show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT emotion=MUGSHOT_ANGRY

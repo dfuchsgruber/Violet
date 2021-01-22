@@ -26,11 +26,12 @@ if __name__ == '__main__':
         raise RuntimeError(f'Expected a map footer file, not {header["type"]}')
     footer = footer['data']
     
-    # Consider all blocks with idx >= 0x320 (this is hardcoded but w/e...)
+    FATA_MORGANA_BLOCK_IDXS = set(range(0x320, 0x3b0)).union(set((0x286, 0x287, 0x28e, 0x28f, 0x296, 0x297, 0x294, 0x295))) # kinda ugly, ngl...
+
     data = [
         (x + 7, y + 7, footer['blocks'][y][x]['block_idx'])
         for y, x in itertools.product(range(footer['height']), range(footer['width']))
-        if footer['blocks'][y][x]['block_idx'] in range(0x320, 0x3b0)
+        if footer['blocks'][y][x]['block_idx'] in FATA_MORGANA_BLOCK_IDXS
     ]
 
     blocks = [

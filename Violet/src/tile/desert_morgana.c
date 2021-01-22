@@ -6,12 +6,6 @@
 #include "map/header.h"
 #include <stdbool.h>
 
-
-morgana_anim morgana_anims[36];
-int fata_morgana_index_by_block(u16 block);
-extern u16 fata_morgana_blocks[][3];
-extern int fata_morgana_blocks_cnt[1];
-
 void do_fata_morgana(){
     if (save1->map == DESERT_MAP && save1->bank == DESERT_BANK) {
         s16 coordinates[2];

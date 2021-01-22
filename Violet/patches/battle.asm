@@ -774,3 +774,6 @@ battle_item_restore_hp_break:
 	pop {r1}
 	bx r1
 	.pool
+
+.org 0x081dddbd
+	.word item_effect_trainer_item_cured_status_battle_string_idxs

@@ -3158,8 +3158,8 @@ attack attacks[ATTACK_CNT] = {
 	},
 	// ATTACK_ZORNKLINGE
 	{
-		0x2b, //Effect-id (in table)
-		85, //Base Power
+		0x77, //Effect-id (in table)
+		20, //Base Power
 		TYPE_KAEFER,
 		100, //Accuracy
 		20, //PP

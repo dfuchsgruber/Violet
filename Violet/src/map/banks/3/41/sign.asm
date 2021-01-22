@@ -189,18 +189,15 @@ str_0x88bc91:
 @ ToDo: Investigate the letter-casing
 
 ow_script_map_3_41_sign_1:
-cry POKEMON_BIBOR 0x0
-showpokepic POKEMON_BIBOR 0x0 0x0
-loadpointer 0x0 str_0x87aad8
-callstd MSG
-hidepokepic
+    loadpointer 0x0 str_0x87aad8
+    callstd MSG_SIGN
 end
 
 
 .ifdef LANG_GER
 
 str_0x87aad8:
-    .string "Bibor! Bibor!"
+    .autostring 34 2 "Je näher man dem Bienenstock kommt, desto unruhiger scheinen die Bibor zu werdenDOTS"
 
 
 .elseif LANG_EN

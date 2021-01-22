@@ -439,6 +439,7 @@ bsc_strings:
 .word str_battle_x1BD
 .word str_battle_x1BE
 .word str_battle_x1BF
+.word str_battle_x1C0
 
 @ // Define the strings
 
@@ -2944,6 +2945,9 @@ bsc_strings:
 	str_battle_x1BF:
 		.string "BSC_BUF0 von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX steigt!"
 
+	str_battle_x1C0:
+		.string "STATUS_NAME heilte\nalle Statusprobleme von\lBSC_SCR_ACTIVE_NAME_WITH_PREFIX!"
+
 .elseif LANG_EN
 	.global str_battle_xc
 
@@ -5048,6 +5052,9 @@ bsc_strings:
 
 	str_battle_x1BF:
 		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX's BSC_BUF0\nrises!"
+
+	str_battle_x1C0:
+		.string "STATUS_NAME cured\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX's\lstatus aliments!"
 
 .endif
 
