@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_route_4_cave",
 		"events": {
-			"person_cnt": 6,
+			"person_cnt": 7,
 			"warp_cnt": 2,
 			"trigger_cnt": 0,
 			"signpost_cnt": 1,
@@ -148,6 +148,30 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_MEDITIE",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "7",
+					"picture": 0,
+					"script_std": 0,
+					"field_3": 0,
+					"x": "6",
+					"y": "6",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_test",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
 						"berry_tree_idx": 0
 					}
 				}

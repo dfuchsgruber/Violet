@@ -3,7 +3,7 @@
 #include "debug.h"
 
 
-morgana_anim morgana_anims[36] = {
+morgana_anim morgana_anims[NUM_FATA_MORGANA_BLOCKS] = {
     {
         {0x320, 0x322, 0x324, 0x326}, 0x0},
     {
@@ -78,7 +78,9 @@ morgana_anim morgana_anims[36] = {
     {
         {0x3ae, 0x3ac, 0x3aa, 0x3a8}, 0x0},
     {
-        {0x3af, 0x3ad, 0x3ab, 0x3a9}, 0x0}
+        {0x3af, 0x3ad, 0x3ab, 0x3a9}, 0x0},
+    {{0x286, 0x28e, 0x296, 0x294,}, 0xC00},
+    {{0x287, 0x28f, 0x297, 0x295,}, 0xC00},
 };
 
 int fata_morgana_index_by_block(u16 block){
@@ -263,6 +265,16 @@ int fata_morgana_index_by_block(u16 block){
         case 0x3ab:
         case 0x3a9:
                 return 35;
+        case 0x286:
+        case 0x28e:
+        case 0x296:
+        case 0x294:
+            return 36;
+        case 0x287:
+        case 0x28f:
+        case 0x297:
+        case 0x295:
+            return 37;
     }
     dprintf("No morgana anim specified for block %d\n", block);
     err(ERR_GENERIC);

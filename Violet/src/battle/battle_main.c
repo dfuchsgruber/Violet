@@ -59,6 +59,16 @@ void battle_intro_try_partner_ball_throw() {
     }
 }
 
+u16 item_effect_trainer_item_cured_status_battle_string_idxs[] = {
+    [ITEM_EFFECT_HEAL_CONFUSION] = 296,
+    [ITEM_EFFECT_HEAL_PARALYSIS] = 291,
+    [ITEM_EFFECT_HEAL_FREEZE] = 294,
+    [ITEM_EFFECT_HEAL_BURN] = 293,
+    [ITEM_EFFECT_HEAL_POISON] = 292,
+    [ITEM_EFFECT_HEAL_SLEEP] = 295, 
+    [ITEM_EFFECT_HEAL_ALL_STATUS] = 0x1c0,
+};
+
 void battle_action_use_item() {
     attacking_battler = defending_battler = battler_attacking_order[battle_action_current_turn];
     battle_bg0_x = 0;
@@ -82,7 +92,8 @@ void battle_action_use_item() {
             bsc_offset = battlescripts_use_item[1];
         } else {
             dprintf("Item has effect %d\n", item_get_effect_type(bsc_last_used_item));
-            switch (item_get_effect_type(bsc_last_used_item)) {
+            u8 effect_type = item_get_effect_type(bsc_last_used_item);
+            switch (effect_type) {
                 case ITEM_EFFECT_HEAL_HP:
                     bsc_offset = battlescripts_use_item[2];
                     break; 
@@ -92,6 +103,7 @@ void battle_action_use_item() {
                 case ITEM_EFFECT_HEAL_PARALYSIS:
                 case ITEM_EFFECT_HEAL_SLEEP:
                 case ITEM_EFFECT_HEAL_ALL_STATUS:
+                    battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = effect_type;
                     item_effect_execute_status_heals(p, bsc_last_used_item, attacking_battler, 4, 
                         battler_idx_to_party_idx(attacking_battler), item_get_hold_effect(bsc_last_used_item), effect, false, false);
                     bsc_offset = battlescripts_use_item[3];

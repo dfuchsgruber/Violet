@@ -36,6 +36,11 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+
+	settrainerflag 0x2e
+	trainerbattlestd 0x0 0x2e 0 str_beforeb str_afterb
+	end
+
 	setflag FLAG_BRUCHFELS_GYM_PUZZLE_ROOM_0_SOLVED
 	setflag FLAG_BRUCHFELS_GYM_PUZZLE_ROOM_1_SOLVED
 	setflag FLAG_SILVANIA_CUT_TREE

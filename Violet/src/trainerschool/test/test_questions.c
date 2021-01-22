@@ -44,7 +44,7 @@ u8 *str_trainerschool_test_question_1_answers[] = {
 
 u8 str_trainerschool_test_question_2[] = LANGDEP(
     PSTRING("Welcher Angriff\nwird von Relaxo\nerlernt?"),
-    PSTRING("Which of these\nattacks does\nSnorlax not\nlearn?"));
+    PSTRING("Which of these\nattacks does\nSnorlax learn?"));
 u8 str_trainerschool_test_question_2_answer_0[] = LANGDEP(
     PSTRING("Brüller"), PSTRING("Roar"));
 u8 str_trainerschool_test_question_2_answer_1[] = LANGDEP(

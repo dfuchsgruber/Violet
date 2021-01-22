@@ -1399,7 +1399,7 @@
 				},
 				{
 					"x": "45",
-					"y": "5",
+					"y": "7",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
@@ -1449,7 +1449,7 @@
 		},
 		"levelscripts": "map_meriana_city_levelscripts",
 		"connections": {
-			"connection_cnt": 3,
+			"connection_cnt": 4,
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_SOUTH",
@@ -1472,6 +1472,14 @@
 					"displacement": 0,
 					"bank": "5",
 					"map_idx": "1",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_NORTH",
+					"displacement": "9",
+					"bank": "3",
+					"map_idx": "22",
 					"field_A": 0,
 					"field_B": 0
 				}

@@ -2076,7 +2076,8 @@
 		"maptileset_bruchfels_past": "src/map/tileset/maptileset_bruchfels_past.pms",
 		"maptileset_tafelberg": "src/map/tileset/maptileset_tafelberg.pms",
 		"maptileset_kaskada_tea_house": "src/map/tileset/maptileset_kaskada_tea_house.pms",
-		"maptileset_desert_tent": "src/map/tileset/maptileset_desert_tent.pms"
+		"maptileset_desert_tent": "src/map/tileset/maptileset_desert_tent.pms",
+		"maptileset_felsige_oednis_savanna": "src/map/tileset/maptileset_felsige_oednis_savanna.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2135,6 +2136,7 @@
 		"gfx_maptileset_bruchfels_pastTiles": "asset/gfx/tileset/gfx_maptileset_bruchfels_past.png",
 		"gfx_maptileset_tafelbergTiles": "asset/gfx/tileset/gfx_maptileset_tafelberg.png",
 		"gfx_maptileset_kaskada_tea_houseTiles": "asset/gfx/tileset/gfx_maptileset_kaskada_tea_house.png",
-		"gfx_maptileset_desert_tentTiles": "asset/gfx/tileset/gfx_maptileset_desert_tent.png"
+		"gfx_maptileset_desert_tentTiles": "asset/gfx/tileset/gfx_maptileset_desert_tent.png",
+		"gfx_maptileset_felsige_oednis_savannaTiles": "asset/gfx/tileset/gfx_maptileset_felsige_oednis_savanna.png"
 	}
 }

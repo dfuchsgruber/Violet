@@ -28,6 +28,8 @@
 .global ow_script_map_3_21_trainer_3
 .global ow_script_map_3_21_person_1
 .global ow_script_map_felsige_oednis_desert_person_0
+.global ow_script_map_felsige_oednis_desert_person_1
+.global ow_script_map_felsige_oednis_desert_person_2
 
 ow_script_map_3_21_trainer_10:
     trainerbattlestd 0x0 0x66 0x0 str_0x72458c str_0x7245ea
@@ -329,10 +331,22 @@ ow_script_map_felsige_oednis_desert_person_0:
     loadpointer 0 str_0
     callstd MSG_FACE
     end
+ow_script_map_felsige_oednis_desert_person_1:
+    loadpointer 0 str_1
+    callstd MSG_FACE
+    end
+ow_script_map_felsige_oednis_desert_person_2:
+    loadpointer 0 str_2
+    callstd MSG_FACE
+    end
 
 .ifdef LANG_GER
 str_0:
     .autostring 34 2 "Ich bin von der weiten Reise durch die Wüste völlig geschafft.\pGut, dass ich mich hier bei frischem Wasser erholen konnteDOTS"
+str_1:
+    .autostring 34 2 "Es ist wirklich eine tolle Sache, dass man hier mitten in der Wüste auf das Wohl der Trainer und ihrer Pokémon achtet.\pIn den Zelten hier kann man sich etwas abkühlen, wenn einem die Hitze allzu sehr zusetzt."
+str_2:
+    .autostring 34 2 "Mein Pokémon und ich sind den ganzen weiten Weg von Inferior hierher gekommen.\pMan nennt mich zwar einen HitzkopfDOTS\pAber die Sonne ist hier selbst mir zu heißDOTS"
 .elseif LANG_EN
 .endif
 

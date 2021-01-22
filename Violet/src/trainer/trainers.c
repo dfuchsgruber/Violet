@@ -5113,7 +5113,7 @@ trainer trainers[TRAINER_CNT] = {
         .party = (trainer_pokemon*) trainer_party_xc6_route_8_trainer_1
     },
     [0xc7] = {
-        .trainerclass = TRAINERCLASS_KAEFERSAMMLER, .sprite = 0x43,
+        .trainerclass = TRAINERCLASS_KAEFERSAMMLER, .sprite = 66,
         .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Myrko"),
             PSTRING("Myrco")), .pokemon_cnt = 2,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
