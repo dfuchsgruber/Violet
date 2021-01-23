@@ -35,7 +35,8 @@ str_sign0:
 str_sign1:
     .autostring 34 2 "UP_ARROW Tafelberg\pAchtung\nDunkel!"
 str_sign2:
-    .autostring 34 2 "Expeditionszelt von Professor Tann."
+    //.autostring 34 2 "Expeditionszelt von Professor Tann."
+    .autostring 34 2 "Sanitärzelt\pGönne dir und deinen Pokémon eine Pause."
 .elseif LANG_EN
 .endif
 
