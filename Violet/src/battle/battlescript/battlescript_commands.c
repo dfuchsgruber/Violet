@@ -263,7 +263,7 @@ u32 money_lost() {
     int money = money_lost_multipliers_by_number_of_badges[badges_number_get()] * 4 * average_player_level;
     switch (*var_access(DIFFICULTY)) {
         case DIFFICULTY_EASY: money -= money / 2; break;
-        case DIFFICULTY_HARD: money += money / 2; break;
+        case DIFFICULTY_HARD: money *= 2; break;
     }
     return MIN((u32)(money / 1000), money_get(&save1->money));
 }

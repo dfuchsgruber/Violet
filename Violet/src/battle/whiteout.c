@@ -117,11 +117,13 @@ extern u8 str_whiteout[];
 extern u8 str_whiteout_mother[];
 extern u8 str_whiteout_bbship[];
 extern u8 str_whiteout_tann[];
+extern u8 str_whiteout_desert[];
 
 extern u8 ow_script_whiteout_bbship[];
 extern u8 ow_script_whiteout_joy[];
 extern u8 ow_script_whiteout_mother[];
 extern u8 ow_script_whiteout_tann[];
+extern u8 ow_script_whiteout_desert[];
 
 void whiteout_callback_print_text(u8 self) {
 	u16 *state = big_callbacks[self].params + 0;
@@ -144,6 +146,7 @@ void whiteout_callback_print_text(u8 self) {
 				case HEALINGPLACE_AMONIA: str = str_whiteout_mother; break;
 				case HEALINGPLACE_BBSHIP: str = str_whiteout_bbship; direction = DIR_DOWN; break;
 				case HEALINGPLACE_TANNS_LAB: str = str_whiteout_tann; direction = DIR_UP; break;
+				case HEALINGPLACE_DESERT: str = str_whiteout_desert; direction = DIR_DOWN; break;
 				default: str = str_whiteout; break;
 			}
 			if (whiteout_print_string(self, str, 2, 8)) {
@@ -170,6 +173,7 @@ void whiteout_callback_print_text(u8 self) {
 					case HEALINGPLACE_AMONIA: script = ow_script_whiteout_mother; break;
 					case HEALINGPLACE_BBSHIP: script = ow_script_whiteout_bbship; break;
 					case HEALINGPLACE_TANNS_LAB: script = ow_script_whiteout_tann; break;
+					case HEALINGPLACE_DESERT: script = ow_script_whiteout_desert; break;
 					default: script = ow_script_whiteout_joy; break;
 				}
 				overworld_script_init(script);

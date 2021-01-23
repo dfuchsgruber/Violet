@@ -11,6 +11,7 @@
 .global ow_script_whiteout_bbship
 .global ow_script_healing_sequence
 .global ow_script_whiteout_joy
+.global ow_script_whiteout_desert
 
 ow_script_whiteout_mother:
 lockall
@@ -57,6 +58,14 @@ ow_script_whiteout_bbship:
     show_mugshot MUGSHOT_PLAYER alignment=MUGSHOT_RIGHT message_type=MSG_KEEPOPEN mask_name=0
 	special SPECIAL_HEAL
 	songfadedefault
+	releaseall
+	end
+
+ow_script_whiteout_desert:
+	lockall
+	special SPECIAL_HEAL
+	songfadedefault
+	setvar 0x4000 1 // Don't trigger the bed anymore
 	releaseall
 	end
 
@@ -131,6 +140,9 @@ str_whiteout_bbship:
 .global str_whiteout_tann
 str_whiteout_tann:
 	.string "PLAYER rannte zu Professor Tanns\nLabor, um seinen Pokémon eine\nPause zu gönnen.\p"
+.global str_whiteout_desert
+str_whiteout_desert:
+	.string "PLAYER rannte zurück zum Zelt,\num seinen Pokémon eine Pause zu\ngönnen.\p"
 .elseif LANG_EN
 
 str_mother_before:
@@ -152,8 +164,11 @@ str_whiteout:
 	.string "PLAYER ran towards a Pokéstop\nto protected their\nexhausted Pokémon from\nfurther damageDOTS\p"
 .global str_whiteout_bbship
 str_whiteout_bbship:
-	.string "PLAYER ran back to his cell\nto get some rest for\ntheir Pokémon thereDOTS"
+	.string "PLAYER ran back to his cell\nto get some rest for\ntheir Pokémon thereDOTS\p"
 .global str_whiteout_tann
 str_whiteout_tann:
-	.string "PLAYER ran to Professor Fig's\nhouse to get some rest\nfor their Pokémon thereDOTS"
+	.string "PLAYER ran to Professor Fig's\nhouse to get some rest\nfor their Pokémon thereDOTS\p"
+.global str_whiteout_desert
+str_whiteout_desert:
+	.string "PLAYER ram back to the tent\nto get some rest for\ntheir Pokémon thereDOTS\p"
 .endif
