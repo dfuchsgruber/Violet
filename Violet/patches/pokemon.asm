@@ -1021,7 +1021,7 @@ lsr r0, #0x1A
 
 .org 0x08046054
 	ldr r3, =breeding_pokemon_new | 1
-	bx r3
+	bx r3 
 	.pool
 
 .org 0x080458F4

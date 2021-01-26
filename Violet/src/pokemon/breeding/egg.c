@@ -15,6 +15,7 @@
 #include "save.h"
 #include "pokepad/incubator.h"
 #include "debug.h"
+#include "constants/languages.h"
 
 u8 str_egg[] = LANGDEP(PSTRING("Ei"), PSTRING("Egg"));
 
@@ -89,7 +90,7 @@ void egg_hatched_pokemon_new(pokemon *egg, pokemon *target) {
 	for (int i = 0; i < 6; i++) {
 		ivs[i] = pokemon_get_attribute(egg, ATTRIBUTE_HP_IV + i, 0);
 	}
-	int language = pokemon_get_attribute(egg, ATTRIBUTE_LANGUAGE, 0);
+	int language = LANGUAGE_GERMAN; // pokemon_get_attribute(egg, ATTRIBUTE_LANGUAGE, 0);
 	int catch_game = pokemon_get_attribute(egg, ATTRIBUTE_CATCH_GAME, 0);
 	int markings = pokemon_get_attribute(egg, ATTRIBUTE_MARKINGS, 0);
 	int pokerus = pokemon_get_attribute(egg, ATTRIBUTE_POKERUS, 0);

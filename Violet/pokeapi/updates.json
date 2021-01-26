@@ -300,6 +300,10 @@
 		]
 	},
 	"POKEMON_NIDORANW": {
+		"name" : {
+			"LANG_GER" : "Nidoran♀",
+			"LANG_EN" : "Lockshel"
+		},
 		"ability_0": "Giftdorn",
 		"ability_1": null,
 		"hidden_ability": "Blitzfaenger",
@@ -321,6 +325,10 @@
 		"dex_number": 19
 	},
 	"POKEMON_NIDORANM": {
+		"name" : {
+			"LANG_GER" : "Nidoran♂",
+			"LANG_EN" : "Lockshel"
+		},
 		"ability_0": "Giftdorn",
 		"ability_1": null,
 		"hidden_ability": "Bedroher",

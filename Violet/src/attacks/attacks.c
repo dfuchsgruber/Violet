@@ -2793,7 +2793,7 @@ attack attacks[ATTACK_CNT] = {
 		0, //Priority
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
-		CATEGORY_SPECIAL,
+		CATEGORY_PHYSICAL,
 		0x0 //Padding
 	},
 	// ATTACK_BITTERKUSS
@@ -5860,7 +5860,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xe0, //Effect-id (in table)
 		85, //Base Power
-		TYPE_PFLANZE,
+		TYPE_STAHL,
 		100, //Accuracy
 		20, //PP
 		30, //Effect accuracy
@@ -5889,10 +5889,10 @@ attack attacks[ATTACK_CNT] = {
 	// ATTACK_SUPERNOVA
 	{
 		4, //Effect-id (in table)
-		70, //Base Power
+		60, //Base Power
 		TYPE_FEUER,
 		90, //Accuracy
-		15, //PP
+		5, //PP
 		100, //Effect accuracy
 		TARGET_BOTH_FOES,
 		0, //Priority
@@ -5904,7 +5904,7 @@ attack attacks[ATTACK_CNT] = {
 	// ATTACK_WASSERSPALT
 	{
 		76, //Effect-id (in table)
-		115, //Base Power
+		100, //Base Power
 		TYPE_WASSER,
 		100, //Accuracy
 		5, //PP
@@ -5922,7 +5922,7 @@ attack attacks[ATTACK_CNT] = {
 		75, //Base Power
 		TYPE_STAHL,
 		100, //Accuracy
-		10, //PP
+		5, //PP
 		0, //Effect accuracy
 		SELECTED_TARGET,
 		1, //Priority

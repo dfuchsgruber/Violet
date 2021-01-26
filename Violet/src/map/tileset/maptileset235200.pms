@@ -29771,14 +29771,14 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
+				"behaviour": "MB_CAVE_DOOR",
+				"hm_usage": "0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_DESERT"
 			},
 			{
 				"behaviour": "0x0",
