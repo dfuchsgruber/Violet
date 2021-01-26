@@ -3,7 +3,7 @@
 		"footer": "map_footer_91",
 		"events": {
 			"person_cnt": 53,
-			"warp_cnt": 8,
+			"warp_cnt": 10,
 			"trigger_cnt": 4,
 			"signpost_cnt": 25,
 			"persons": [
@@ -1400,6 +1400,22 @@
 					"level": 0,
 					"target_warp_idx": 0,
 					"target_map": "6",
+					"target_bank": "22"
+				},
+				{
+					"x": "38",
+					"y": "36",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "7",
+					"target_bank": "22"
+				},
+				{
+					"x": "53",
+					"y": "35",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "8",
 					"target_bank": "22"
 				}
 			],

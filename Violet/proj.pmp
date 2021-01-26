@@ -939,6 +939,16 @@
 				"map_desert_tent",
 				"src/map/banks/22/6/map_desert_tent.pms",
 				"MAP_FELSIGE_OEDNIS"
+			],
+			"7": [
+				"map_desert_red_tent",
+				"src/map/banks/22/7/map_desert_red_tent.pms",
+				"MAP_FELSIGE_OEDNIS"
+			],
+			"8": [
+				"map_desert_blue_tent",
+				"src/map/banks/22/8/map_desert_blue_tent.pms",
+				"MAP_FELSIGE_OEDNIS"
 			]
 		},
 		"23": {
@@ -2012,6 +2022,14 @@
 		"map_footer_route_4_cave": [
 			133,
 			"src/map/banks/16/1/map_footer_route_4_cave.pms"
+		],
+		"map_footer_desert_red_tent": [
+			134,
+			"src/map/banks/22/7/map_footer_desert_red_tent.pms"
+		],
+		"map_footer_desert_blue_tent": [
+			135,
+			"src/map/banks/22/8/map_footer_desert_blue_tent.pms"
 		]
 	},
 	"tilesets_primary": {

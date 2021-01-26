@@ -97,12 +97,14 @@ void breeding_pokemon_new(pokemon *p, u16 species, daycare_stru *daycare) {
 	pokemon_set_attribute(p, ATTRIBUTE_CATCH_LEVEL, &level_met);
 	u8 language = LANGUAGE_GERMAN;
 	pokemon_set_attribute(p, ATTRIBUTE_LANGUAGE, &language);
+	if (cmem.daycare_offspring_has_hidden_ability)
+		pokemon_set_hidden_ability(&p->box);
 }
 
 bool breeding_inherit_hidden_ability(daycare_stru *daycare) {
 	for (int i = 0; i < 2; i++) {
 		// Inherit hidden ability from each parent with 50% chance
-		if (pokemon_has_hidden_ability(&daycare->pokemon[i].pokemon)) {
+		if (pokemon_has_hidden_ability(&daycare->pokemon[i].pokemon) && rnd16() & 1) {
 			return true;
 		}
 	}
