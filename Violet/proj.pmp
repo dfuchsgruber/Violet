@@ -677,6 +677,11 @@
 				"map_route_4_cave",
 				"src/map/banks/16/1/map_route_4_cave.pms",
 				"MAP_ROUTE_4"
+			],
+			"2": [
+				"map_route_4_south_cave",
+				"src/map/banks/16/5/map_route_4_south_cave.pms",
+				"MAP_ROUTE_4"
 			]
 		},
 		"17": {
@@ -2030,6 +2035,10 @@
 		"map_footer_desert_blue_tent": [
 			135,
 			"src/map/banks/22/8/map_footer_desert_blue_tent.pms"
+		],
+		"map_footer_route_4_south_cave": [
+			136,
+			"src/map/banks/16/5/map_footer_route_4_south_cave.pms"
 		]
 	},
 	"tilesets_primary": {

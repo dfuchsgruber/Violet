@@ -14,6 +14,7 @@
 #include "text.h"
 #include "fading.h"
 #include "constants/vars.h"
+#include "constants/flags.h"
 #include "language.h"
 #include "vars.h"
 #include "io.h"
@@ -39,6 +40,11 @@ static pokepad_wallpaper pokepad_wallpapers[POKEPAD_NUM_WALLPAPERS] = {
         .tileset = gfx_pokepad_wallpaper_startersTiles, .tilemap = gfx_pokepad_wallpaper_startersMap,
         .palette = gfx_pokepad_wallpaper_startersPal, .flag = 0,
         .name = LANGDEP(PSTRING("Starter"), PSTRING("Starters")),
+    },
+    {
+        .tileset = gfx_pokepad_wallpaper_elite_four_foundersTiles, .tilemap = gfx_pokepad_wallpaper_elite_four_foundersMap,
+        .palette = gfx_pokepad_wallpaper_elite_four_foundersPal, .flag = 0,
+        .name = LANGDEP(PSTRING("Gründer"), PSTRING("Founders")),
     },
 };
 
@@ -354,8 +360,8 @@ static void pokepad2_update_wallpaper_palette() {
 
 static void pokepad2_update_wallpaper_bg() {
     pokepad_wallpaper *wallpaper = pokepad_get_wallpaper();
-    lz77uncompwram(wallpaper->tilemap, bg_get_tilemap(1));
     lz77uncompvram(wallpaper->tileset, CHARBASE(0));
+    lz77uncompwram(wallpaper->tilemap, bg_get_tilemap(1));
 }
 
 static void pokepad2_context_menu(u8 self);
@@ -373,12 +379,17 @@ static void pokepad2_update_wallpaper(u8 self) {
                 pokepad2_update_wallpaper_bg();
                 pokepad2_update_wallpaper_palette();
                 cpuset(&white, pals, CPUSET_FILL | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(10 * 16 * sizeof(color_t)));
+                ++big_callbacks[self].params[0];
+                break;
+            }
+            case 2: {
+                bg_copy_vram(1, bg_get_tilemap(1), 0x800, 0, BG_COPY_TILEMAP);
+                bg_sync_display_and_show(1);
                 fadescreen(0x3FF, 1, 16, 0, white.value);
                 ++big_callbacks[self].params[0];
                 break;
             }
-            case 2 : {
-                bg_sync_display_and_show(1);
+            case 3 : {
                 big_callbacks[self].function = pokepad2_context_menu;
             }
         }
@@ -595,7 +606,7 @@ static void pokepad2_initialize() {
         }
         case BG_SETUP: {
             bg_set_tilemap(0, malloc_and_clear(0x800));
-            bg_set_tilemap(1, malloc_and_clear(0x800));
+            bg_set_tilemap(1, malloc_and_clear(0x1000));
             bg_set_tilemap(2, malloc_and_clear(0x800));
             bg_sync_display_and_show(0);
             bg_sync_display_and_show(1);

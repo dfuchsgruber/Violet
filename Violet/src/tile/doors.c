@@ -19,6 +19,7 @@ static u8 door_animation_13_palettes[] = {10, 10, 10, 10, 10, 10, 10, 10};
 static u8 door_animation_haweiland_palettes[] = {10, 10, 10, 10, 10, 10, 10, 10};
 static u8 door_animation_blackbeard_ship_palettes[] = {7, 7, 7, 7, 7, 7, 7, 7};
 static u8 door_animation_meriana_city_palettes[] = {7, 7, 7, 7, 7, 7, 7, 7};
+static u8 door_animation_route_4_palettes[] = {12, 12, 12, 12, 12, 12, 12, 12};
 
 extern u32 gfx_tileset_door_anim_0Tiles[];
 extern u32 gfx_tileset_door_anim_1Tiles[];
@@ -56,6 +57,7 @@ door_animation door_animations[] = {
     {.block = 0x2F2, .type = DOOR_ANIM_TYPE_STANDARD, .double_tiled = false, .gfx = gfx_tileset_haweiland_door_animTiles, .palette_map = door_animation_haweiland_palettes},
     {.block = 0x2ca, .type = DOOR_ANIM_TYPE_STANDARD, .double_tiled = false, .gfx = gfx_maptileset_blackbeard_ship_door_animTiles, .palette_map = door_animation_blackbeard_ship_palettes},
     {.block = 0x36b, .type = DOOR_ANIM_TYPE_STANDARD, .double_tiled = false, .gfx = gfx_maptileset_meriana_city_doorTiles, .palette_map = door_animation_meriana_city_palettes},
+    {0x19e, 0, 0, gfx_tileset_door_anim_13Tiles, door_animation_route_4_palettes}, // same as ceometria, i am just recycling the house basically...
     {0, 0, 0, 0, 0}
 };
 

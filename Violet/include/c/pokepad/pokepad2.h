@@ -14,7 +14,7 @@ typedef struct {
     u16 flag;
 } pokepad_wallpaper;
 
-#define POKEPAD_NUM_WALLPAPERS 1
+#define POKEPAD_NUM_WALLPAPERS 2
 
 typedef struct {
     u8 initialization_state;
@@ -75,6 +75,9 @@ void pokepad2_callback_initialize();
 extern const u8 gfx_pokepad_wallpaper_startersTiles[];
 extern const u8 gfx_pokepad_wallpaper_startersPal[];
 extern const u8 gfx_pokepad_wallpaper_startersMap[];
+extern const u8 gfx_pokepad_wallpaper_elite_four_foundersTiles[];
+extern const u8 gfx_pokepad_wallpaper_elite_four_foundersPal[];
+extern const u8 gfx_pokepad_wallpaper_elite_four_foundersMap[];
 
 extern const u8 gfx_pokepad_icon_incubatorTiles[];
 extern const u8 gfx_pokepad_icon_incubatorPal[];

@@ -6295,7 +6295,7 @@ trainer trainers[TRAINER_CNT] = {
     [0x16B] = {
         .trainerclass = TRAINERCLASS_JUNGES_GLUECK, .sprite = 68,
         .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Jule u. Jan"),
-            PSTRING("Jule u. Jan")), .pokemon_cnt = 4,
+            PSTRING("Jule u. Jan")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x16b_route_4_trainer_couple),
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
 
         .party = (trainer_pokemon*) trainer_party_x16b_route_4_trainer_couple,
@@ -6927,6 +6927,64 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x1c1_route_4_north_cave_trainer_0,
     },
+    [0x1C2] = {
+        .trainerclass = TRAINERCLASS_SCHWARZGURT, .sprite = 0x69,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Fynn"),
+            PSTRING("Fynn")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1c2_route_4_trainer_0),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1c2_route_4_trainer_0,
+    },
+    [0x1c3] = {
+        .trainerclass = TRAINERCLASS_VOGELFAENGER, .sprite = 0x2e,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Thomas"),
+            PSTRING("Thomas")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1c3_route_4_trainer_1),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1c3_route_4_trainer_1,
+    },
+    [0x1c4] = {
+        .trainerclass = TRAINERCLASS_MECHANIKER, .sprite = 0x5d,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("James"),
+            PSTRING("James")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1c4_route_4_trainer_2),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1c4_route_4_trainer_2,
+    }, 
+    [0x1c5] = {
+        .trainerclass = TRAINERCLASS_KAEFERMANIAC, .sprite = 0x42,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Stephen"),
+            PSTRING("Stephen")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1c5_route_4_trainer_3),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1c5_route_4_trainer_3,
+    },
+    [0x1c6] = {
+        .trainerclass = TRAINERCLASS_ZWIL, .sprite = 127,
+        .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Kate u. Bea"),
+            PSTRING("Kate u. Bea")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1c6_route_4_trainer_4),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1c6_route_4_trainer_4,
+        .battle_state = BATTLE_DOUBLE,
+    },
+    [0x1c7] = {
+        .trainerclass = TRAINERCLASS_KAEMPFERIN, .sprite = 48,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Merope"),
+            PSTRING("Merope")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1c7_route_4_trainer_5),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1c7_route_4_trainer_5,
+    },
+    [0x1c8] = {
+        .trainerclass = TRAINERCLASS_SCHNOESEL, .sprite = 3,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Igor"),
+            PSTRING("Igor")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1c8_route_4_trainer_6),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1c8_route_4_trainer_6,
+        .items = {ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG}
+    },
+    [0x1c9] = {
+      .trainerclass = TRAINERCLASS_CHEFKOCH, .encounter_and_gender = {1, 0} , .sprite = 75,
+      .name = LANGDEP(PSTRING("Jamie"), PSTRING("Jamie")),
+      .items = {ITEM_GOLDAPFEL, ITEM_APFEL, ITEM_APFEL, 0},
+      .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+      .battle_state = 0, .pokemon_cnt = ARRAY_COUNT(trainer_party_x1c9_route_4_trainer_7), .party = (trainer_pokemon*) trainer_party_x1c9_route_4_trainer_7,
+	  }, 
 
     
     [0x300] = {

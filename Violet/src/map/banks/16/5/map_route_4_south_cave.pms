@@ -1,0 +1,41 @@
+{
+	"data": {
+		"footer": "map_footer_route_4_south_cave",
+		"events": {
+			"person_cnt": 0,
+			"warp_cnt": 0,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [],
+			"warps": [],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": 0,
+		"footer_idx": 136,
+		"namespace": "MAP_ROUTE_4",
+		"flash_type": 0,
+		"weather": 0,
+		"type": 0,
+		"bike_usable": 0,
+		"flags": {
+			"allow_escape_rope": 0,
+			"allow_run": 0,
+			"show_name": 0,
+			"flag_3": 0,
+			"flag_4": 0,
+			"flag_5": 0,
+			"flag_6": 0,
+			"flag_7": 0
+		},
+		"level": 0,
+		"battle_style": 0
+	},
+	"label": "map_route_4_south_cave",
+	"type": "header"
+}
