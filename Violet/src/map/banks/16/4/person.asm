@@ -33,19 +33,11 @@ end
 .ifdef LANG_GER
 
 str_0x937a0a:
-    .string "Was? Du hast mein geheimes Haus\nentdeckt? Unmöglich!\pBitte sag niemandem hiervon!\nNimm das als Gegenleistung für\ldein Schweigen."
-
-
-
+    .autostring 34 2 "Ich glaube es nicht!\pDu hast mein Haus gefunden?\pDabei habe ich mir doch so viel Mühe gegeben, es an einem abgelegenen Ort zu bauenDOTS\pDu darfst niemanden hiervon erzählen ja?\pAls Gegenleistung für dein Schweigen gebe ich dir diese Versteckte Maschine."
 str_0x937917:
-    .string "Diese Versteckte Maschine enthält\nFliegen, einen Flug-Angriff.\lUm ihn außerhalb des Kampfes zu\lbenutzen, benötigst du jedoch den\lOrden von Blütenbach.\lManus, der Arenaleiter, soll ein\lharter Brocken seinDOTS\lEr darf dieses Haus nie finden!"
-
-
-
+    .autostring 34 2 "Sie enthält Fliegen, einen Angriff für Flug-Pokémon.\pHast du erst einmal den Arenaorden von Blütenbach errungen, kannst du damit bequem zwischen Städten reisen."
 str_0x937890:
-    .string "Dieses Haus habe ich gebaut, um\nmeine Ruhe zu haben.\lRuhe vor den Top Vier, Ruhe vor\lden Arenaleitern.\pNiemand darf je davon wissen!"
-
-
+    .autostring 34 2 "Weißt du, warum ich mir dieses Haus gebaut habe?\pIch hatte die Hoffnung, hier etwas Abgeschiedenheit von der Welt da draußen zu bekommenDOTS\pKeine Pokémon-Liga, keine RevolutionsbewegungDOTS\pEinfach nur die friedliche Stille der NaturDOTS"
 .elseif LANG_EN
 
 .endif

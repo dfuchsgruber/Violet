@@ -4,13 +4,12 @@
 #include "tile/fata_morgana.h"
 #include "overworld/map_control.h"
 #include "map/header.h"
-#include <stdbool.h>
+#include "debug.h"
 
-void do_fata_morgana(){
+static void fata_morgana_setmaptiles(bool redraw) {
     if (save1->map == DESERT_MAP && save1->bank == DESERT_BANK) {
         s16 coordinates[2];
         player_get_coordinates(&coordinates[0], &coordinates[1]);
-        
         // Binary Search to find the first block that needs to be considered
         int low = 0;
         int high = fata_morgana_blocks_cnt[0];
@@ -41,11 +40,23 @@ void do_fata_morgana(){
                 else frame = 3;
                 block_set_by_pos((s16)fata_morgana_blocks[i][0], (s16)fata_morgana_blocks[i][1],
                         morgana_anims[anim_index].blocks[frame] | morgana_anims[anim_index].walkfield);
-                map_redraw_block_at_position((s16)fata_morgana_blocks[i][0], (s16)fata_morgana_blocks[i][1]);
+                if (redraw) 
+                    map_redraw_block_at_position((s16)fata_morgana_blocks[i][0], (s16)fata_morgana_blocks[i][1]);
             }
             i++;
         }
     }
+}
+
+void do_fata_morgana(){
+    fata_morgana_setmaptiles(true);
+}
+
+void fata_morgana_update_blocks_dont_redraw() {
+    fata_morgana_setmaptiles(true);
+    s16 coordinates[2];
+    player_get_coordinates(&coordinates[0], &coordinates[1]);
+    dprintf("Fata morgana player at %d, %d\n", coordinates[0], coordinates[1]);
 }
 
 

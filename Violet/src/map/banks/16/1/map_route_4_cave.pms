@@ -190,8 +190,8 @@
 					"y": "23",
 					"level": 0,
 					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_map": "22",
+					"target_bank": "3"
 				}
 			],
 			"triggers": [],
@@ -219,7 +219,7 @@
 			"connection_cnt": 0,
 			"connections": []
 		},
-		"music": "MUS_MONDBERG_AND_FELSTUNNEL_AND_SIEGESSTRASSE",
+		"music": "MUS_GLUTBERG_AND_EISKASKADENHOHLE_AND_WANDELHOHLE_AND_VERLORENE_HOHLE_AND_NABELFELS",
 		"footer_idx": 133,
 		"namespace": "MAP_ROUTE_4",
 		"flash_type": 0,

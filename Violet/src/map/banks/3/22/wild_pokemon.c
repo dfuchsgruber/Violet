@@ -5,29 +5,29 @@
 
 wild_pokemon_entry wild_pokemon_3_22_grass_entries[12] = {
 	[WILD_POKEMON_DENSITY_GRASS_0_20_PERCENT] = 
-		{.level_min = 21, .level_max = 25, .species = POKEMON_WINGULL},
+		{.level_min = 24, .level_max = 27, .species = POKEMON_WINGULL},
 	[WILD_POKEMON_DENSITY_GRASS_1_20_PERCENT] = 
-		{.level_min = 21, .level_max = 25, .species = POKEMON_MACHOLLO},
+		{.level_min = 24, .level_max = 27, .species = POKEMON_MACHOLLO},
 	[WILD_POKEMON_DENSITY_GRASS_2_10_PERCENT] = 
-		{.level_min = 21, .level_max = 25, .species = POKEMON_MEDITIE},
+		{.level_min = 24, .level_max = 28, .species = POKEMON_MEDITIE},
 	[WILD_POKEMON_DENSITY_GRASS_3_10_PERCENT] = 
-		{.level_min = 21, .level_max = 25, .species = POKEMON_LOTURZEL},
+		{.level_min = 24, .level_max = 27, .species = POKEMON_LOTURZEL},
 	[WILD_POKEMON_DENSITY_GRASS_4_10_PERCENT] = 
-		{.level_min = 21, .level_max = 25, .species = POKEMON_WINGULL},
+		{.level_min = 24, .level_max = 28, .species = POKEMON_MARILL},
 	[WILD_POKEMON_DENSITY_GRASS_5_10_PERCENT] = 
-		{.level_min = 21, .level_max = 25, .species = POKEMON_MACHOLLO},
+		{.level_min = 24, .level_max = 28, .species = POKEMON_MACHOLLO},
 	[WILD_POKEMON_DENSITY_GRASS_6_5_PERCENT] = 
-		{.level_min = 21, .level_max = 25, .species = POKEMON_MEDITIE},
+		{.level_min = 25, .level_max = 29, .species = POKEMON_MEDITIE},
 	[WILD_POKEMON_DENSITY_GRASS_7_5_PERCENT] = 
-		{.level_min = 22, .level_max = 25, .species = POKEMON_MEDITIE},
+		{.level_min = 24, .level_max = 28, .species = POKEMON_MEDITIE},
 	[WILD_POKEMON_DENSITY_GRASS_8_4_PERCENT] = 
-		{.level_min = 22, .level_max = 25, .species = POKEMON_LOMBRERO},
+		{.level_min = 25, .level_max = 28, .species = POKEMON_LOMBRERO},
 	[WILD_POKEMON_DENSITY_GRASS_9_4_PERCENT] = 
-		{.level_min = 22, .level_max = 26, .species = POKEMON_LOMBRERO},
+		{.level_min = 26, .level_max = 29, .species = POKEMON_LOMBRERO},
 	[WILD_POKEMON_DENSITY_GRASS_10_1_PERCENT] = 
-		{.level_min = 25, .level_max = 28, .species = POKEMON_MASCHOCK},
+		{.level_min = 27, .level_max = 30, .species = POKEMON_AZUMARILL},
 	[WILD_POKEMON_DENSITY_GRASS_11_1_PERCENT] = 
-		{.level_min = 25, .level_max = 28, .species = POKEMON_MASCHOCK},
+		{.level_min = 28, .level_max = 30, .species = POKEMON_MASCHOCK},
 };
 
 wild_pokemon_habitat wild_pokemon_3_22_grass = {
@@ -55,9 +55,9 @@ wild_pokemon_entry wild_pokemon_3_22_other_entries[5] = {
 	[WILD_POKEMON_DENSITY_OTHER_0_30_PERCENT] = 
 		{.level_min = 23, .level_max = 26, .species = POKEMON_WINGULL},
 	[WILD_POKEMON_DENSITY_OTHER_1_25_PERCENT] = 
-		{.level_min = 21, .level_max = 26, .species = POKEMON_FELINO},
+		{.level_min = 21, .level_max = 26, .species = POKEMON_MARILL},
 	[WILD_POKEMON_DENSITY_OTHER_2_20_PERCENT] = 
-		{.level_min = 23, .level_max = 25, .species = POKEMON_PANDIR},
+		{.level_min = 23, .level_max = 25, .species = POKEMON_GEHWEIHER},
 	[WILD_POKEMON_DENSITY_OTHER_3_15_PERCENT] = 
 		{.level_min = 23, .level_max = 25, .species = POKEMON_PANDIR},
 	[WILD_POKEMON_DENSITY_OTHER_4_10_PERCENT] = 
