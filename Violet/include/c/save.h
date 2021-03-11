@@ -160,7 +160,12 @@ typedef struct custom_memory {
         u8 dns_disabled : 1;
         u8 detector_notifications : 2;
         u8 wonder_dust_automatic_quantity_disabled : 1;
+        // padding for future settings
+        u8 field_1;
+        u8 field_2;
+        u8 field_3; 
     } settings;
+    u8 bluetenbach_gym_rotating_wall_orientations[16];
     
     /**
     struct {

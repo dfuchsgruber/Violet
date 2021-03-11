@@ -6984,6 +6984,14 @@ trainer trainers[TRAINER_CNT] = {
       .items = {ITEM_GOLDAPFEL, ITEM_APFEL, ITEM_APFEL, 0},
       .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
       .battle_state = 0, .pokemon_cnt = ARRAY_COUNT(trainer_party_x1c9_route_4_trainer_7), .party = (trainer_pokemon*) trainer_party_x1c9_route_4_trainer_7,
+	  },
+    [0x1ca] = {
+      .uses_custom_moves = true, .uses_custom_items = true,
+      .trainerclass = TRAINERCLASS_MALERIN, .encounter_and_gender = {1, 1} , .sprite = 147,
+      .name = LANGDEP(PSTRING("Jamie"), PSTRING("Jamie")),
+      .items = {ITEM_SUPERTRANK, ITEM_GEGENGIFT, ITEM_APFEL, 0},
+      .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+      .battle_state = 0, .pokemon_cnt = ARRAY_COUNT(trainer_party_x1ca_route_4_cave_south_painter), .party = (trainer_pokemon*) trainer_party_x1ca_route_4_cave_south_painter,
 	  }, 
 
     

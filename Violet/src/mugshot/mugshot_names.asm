@@ -152,5 +152,9 @@
 	str_mug_rosalie:
 		.string "Rosalie"
 
+.global str_mug_manus
+	str_mug_manus:
+		.string "Manuel"
+
 .elseif LANG_EN
 .endif

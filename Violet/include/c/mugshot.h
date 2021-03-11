@@ -227,6 +227,12 @@ extern "C" {
     extern const unsigned short gfx_mug_rosalie_shockedTiles[];
     extern const unsigned short gfx_mug_rosalie_scaredTiles[];
     extern const unsigned short gfx_mug_rosaliePal[];
+    extern const unsigned short gfx_mug_rosalie_angryTiles[];
+    extern const unsigned short gfx_mug_rosalie_sadTiles[];
+    extern const unsigned short gfx_mug_manusTiles[];
+    extern const unsigned short gfx_mug_manusPal[];
+    extern const unsigned short gfx_mug_manus_angryTiles[];
+    extern const unsigned short gfx_mug_manus_happyTiles[];
 
     extern u8 str_mug_mistral[];
     extern u8 str_mug_hiro[];
@@ -257,6 +263,7 @@ extern "C" {
     extern u8 str_mug_lucky[];
     extern u8 str_mug_roman[];
     extern u8 str_mug_rosalie[];
+    extern u8 str_mug_manus[];
 
 #ifdef	__cplusplus
 }

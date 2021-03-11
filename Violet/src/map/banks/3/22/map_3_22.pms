@@ -1513,8 +1513,8 @@
 					"y": "69",
 					"level": 0,
 					"target_bank": 16,
-					"target_map": 3,
-					"target_warp_idx": 1
+					"target_map": "2",
+					"target_warp_idx": "0"
 				},
 				{
 					"x": "59",

@@ -318,6 +318,11 @@
 				"map_meriana_city_clouds",
 				"src/map/banks/5/1/map_meriana_city_clouds.pms",
 				"MAP_MERIANA_CITY"
+			],
+			"3": [
+				"map_meriana_city_gym_ground_floor",
+				"src/map/banks/5/3/map_meriana_city_gym_ground_floor.pms",
+				"MAP_MERIANA_CITY"
 			]
 		},
 		"6": {
@@ -2039,6 +2044,10 @@
 		"map_footer_route_4_south_cave": [
 			136,
 			"src/map/banks/16/5/map_footer_route_4_south_cave.pms"
+		],
+		"map_footer_meriana_city_gym_ground_floor": [
+			137,
+			"src/map/banks/5/3/map_footer_meriana_city_gym_ground_floor.pms"
 		]
 	},
 	"tilesets_primary": {
