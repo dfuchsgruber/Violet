@@ -1280,7 +1280,7 @@
 					"y": "8",
 					"level": 0,
 					"target_bank": 5,
-					"target_map": 13,
+					"target_map": "3",
 					"target_warp_idx": 0
 				},
 				{
@@ -1296,8 +1296,8 @@
 					"y": "8",
 					"level": 0,
 					"target_bank": 16,
-					"target_map": 3,
-					"target_warp_idx": 2
+					"target_map": "2",
+					"target_warp_idx": "1"
 				},
 				{
 					"x": "8",

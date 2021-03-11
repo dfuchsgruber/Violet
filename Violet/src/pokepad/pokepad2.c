@@ -43,7 +43,7 @@ static pokepad_wallpaper pokepad_wallpapers[POKEPAD_NUM_WALLPAPERS] = {
     },
     {
         .tileset = gfx_pokepad_wallpaper_elite_four_foundersTiles, .tilemap = gfx_pokepad_wallpaper_elite_four_foundersMap,
-        .palette = gfx_pokepad_wallpaper_elite_four_foundersPal, .flag = 0,
+        .palette = gfx_pokepad_wallpaper_elite_four_foundersPal, .flag = FLAG_POKEPAD_WALLPAPER_LEGENDS,
         .name = LANGDEP(PSTRING("Gründer"), PSTRING("Founders")),
     },
 };

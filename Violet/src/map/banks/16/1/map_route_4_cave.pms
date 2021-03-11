@@ -225,7 +225,7 @@
 		"flash_type": 0,
 		"weather": "MAP_WEATHER_INSIDE",
 		"type": "MAP_TYPE_INSIDE",
-		"bike_usable": 0,
+		"bike_usable": "1",
 		"flags": {
 			"allow_escape_rope": "1",
 			"allow_run": 0,
