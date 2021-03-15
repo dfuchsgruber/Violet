@@ -5,6 +5,7 @@
     "C_Cpp.default.cStandard": "c99",
     "files.associations": {
         "*.const": "json",
+        "*.pmp": "json",
         "*.pms": "json",
         "*.h": "c",
         "*.cuh": "c",
