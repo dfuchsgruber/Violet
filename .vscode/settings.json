@@ -28,6 +28,10 @@
         {
             "viewType": "hexEditor.hexedit",
             "filenamePattern": "*.gba"
+        },
+        {
+            "viewType": "jupyter-notebook",
+            "filenamePattern": "*.ipynb"
         }
     ]
 }
