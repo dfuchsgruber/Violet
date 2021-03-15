@@ -23,5 +23,11 @@
     },
     "python.pythonPath": ".venv/bin/python3.7",
     "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true
+    "python.linting.pylintEnabled": true,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "hexEditor.hexedit",
+            "filenamePattern": "*.gba"
+        }
+    ]
 }
