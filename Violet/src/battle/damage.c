@@ -66,10 +66,10 @@ int battle_base_damage_calculate(battler *attacker, battler *defender, u32 move,
     u8 attackerHoldEffect;
     u8 attackerHoldEffectParam;
 
-	dprintf("Damage base calc attacker species %d, defender species %d, move %d, side_status %d, power override %d, type override %d, attacking_battler_idx %d, defending_battler_idx %d\n",
-		attacker->species, defender->species, move, sideStatus, powerOverride, typeOverride, battlerIdAtk, battlerIdDef);
+	// dprintf("Damage base calc attacker species %d, defender species %d, move %d, side_status %d, power override %d, type override %d, attacking_battler_idx %d, defending_battler_idx %d\n",
+		// attacker->species, defender->species, move, sideStatus, powerOverride, typeOverride, battlerIdAtk, battlerIdDef);
 
-    dprintf("Dynamic base power is %d\n", battle_dynamic_base_power);
+    // dprintf("Dynamic base power is %d\n", battle_dynamic_base_power);
 
     if (!powerOverride)
         move_power = attacks[move].base_power;
@@ -85,7 +85,7 @@ int battle_base_damage_calculate(battler *attacker, battler *defender, u32 move,
     defense = defender->stats[STAT_DEFENSE - 1];
     spAttack = attacker->stats[STAT_SPECIAL_ATTACK - 1];
     spDefense = defender->stats[STAT_SPECIAL_DEFENSE - 1];
-	dprintf("Damage base calc: Attacker has attack %d, defender has defense %d\n", attacker->stats[STAT_ATTACK - 1], defender->stats[STAT_DEFENSE - 1]);
+	// dprintf("Damage base calc: Attacker has attack %d, defender has defense %d\n", attacker->stats[STAT_ATTACK - 1], defender->stats[STAT_DEFENSE - 1]);
     
 
     if (attacker->item == ITEM_ENIGMABEERE) {
@@ -167,7 +167,7 @@ int battle_base_damage_calculate(battler *attacker, battler *defender, u32 move,
         defense /= 2;
 	
     if (attacks[move].category == CATEGORY_PHYSICAL) {
-		dprintf("Physical base damage calc: attack %d, defense %d, move power %d\n", attack, defense, move_power);
+		// dprintf("Physical base damage calc: attack %d, defense %d, move power %d\n", attack, defense, move_power);
         if (critical_hit_multiplier == 2) {
             if (attacker->stat_changes[STAT_ATTACK] > 6)
                 APPLY_STAT_MOD(damage, attacker, attack, STAT_ATTACK)
@@ -189,12 +189,12 @@ int battle_base_damage_calculate(battler *attacker, battler *defender, u32 move,
         else
             APPLY_STAT_MOD(damageHelper, defender, defense, STAT_DEFENSE)
 
-		dprintf("Physical damage %d / %d\n", damage, damageHelper);
+		// dprintf("Physical damage %d / %d\n", damage, damageHelper);
 
         damage = damage / damageHelper;
         damage /= 50;
 
-		dprintf("Physical Base-Damage after stat-mod is %d\n", damage);
+		// dprintf("Physical Base-Damage after stat-mod is %d\n", damage);
 
         if ((attacker->status1 & STATUS1_BURNED) && attacker->ability != ADRENALIN)
             damage /= 2;
@@ -279,7 +279,7 @@ int battle_base_damage_calculate(battler *attacker, battler *defender, u32 move,
 	if ((battle_ressources->flags->flags[battlerIdAtk] & RESOURCE_FLAG_FLASH_FIRE) && type == TYPE_FEUER)
 		damage = (15 * damage) / 10;
 
-	dprintf("Final Base-Damage is %d\n", damage);
+	// dprintf("Final Base-Damage is %d\n", damage);
 
     return damage + 2;
 }

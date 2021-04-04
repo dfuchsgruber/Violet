@@ -1,0 +1,551 @@
+{
+	"data": {
+		"width": 5,
+		"height": 24,
+		"border_width": 1,
+		"border_height": 1,
+		"border": [
+			[
+				{
+					"block_idx": 0,
+					"level": 0
+				}
+			]
+		],
+		"blocks": [
+			[
+				{
+					"block_idx": 691,
+					"level": 1
+				},
+				{
+					"block_idx": 695,
+					"level": 1
+				},
+				{
+					"block_idx": 689,
+					"level": 1
+				},
+				{
+					"block_idx": 694,
+					"level": 1
+				},
+				{
+					"block_idx": 873,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 783,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 824,
+					"level": 12
+				},
+				{
+					"block_idx": 825,
+					"level": 12
+				},
+				{
+					"block_idx": 828,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 832,
+					"level": 1
+				},
+				{
+					"block_idx": 833,
+					"level": 1
+				},
+				{
+					"block_idx": 836,
+					"level": 1
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 808,
+					"level": 1
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 849,
+					"level": 12
+				},
+				{
+					"block_idx": 681,
+					"level": 12
+				},
+				{
+					"block_idx": 685,
+					"level": 1
+				},
+				{
+					"block_idx": 667,
+					"level": 12
+				},
+				{
+					"block_idx": 840,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 691,
+					"level": 1
+				},
+				{
+					"block_idx": 695,
+					"level": 1
+				},
+				{
+					"block_idx": 876,
+					"level": 1
+				},
+				{
+					"block_idx": 694,
+					"level": 1
+				},
+				{
+					"block_idx": 873,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 801,
+					"level": 1
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 824,
+					"level": 12
+				},
+				{
+					"block_idx": 811,
+					"level": 12
+				},
+				{
+					"block_idx": 812,
+					"level": 1
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 832,
+					"level": 1
+				},
+				{
+					"block_idx": 833,
+					"level": 1
+				},
+				{
+					"block_idx": 820,
+					"level": 1
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 849,
+					"level": 12
+				},
+				{
+					"block_idx": 681,
+					"level": 12
+				},
+				{
+					"block_idx": 685,
+					"level": 12
+				},
+				{
+					"block_idx": 667,
+					"level": 12
+				},
+				{
+					"block_idx": 840,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 691,
+					"level": 1
+				},
+				{
+					"block_idx": 695,
+					"level": 1
+				},
+				{
+					"block_idx": 876,
+					"level": 1
+				},
+				{
+					"block_idx": 694,
+					"level": 1
+				},
+				{
+					"block_idx": 873,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 801,
+					"level": 1
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 776,
+					"level": 1
+				},
+				{
+					"block_idx": 777,
+					"level": 12
+				},
+				{
+					"block_idx": 778,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 784,
+					"level": 1
+				},
+				{
+					"block_idx": 785,
+					"level": 1
+				},
+				{
+					"block_idx": 786,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 849,
+					"level": 12
+				},
+				{
+					"block_idx": 681,
+					"level": 12
+				},
+				{
+					"block_idx": 685,
+					"level": 12
+				},
+				{
+					"block_idx": 667,
+					"level": 12
+				},
+				{
+					"block_idx": 840,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 691,
+					"level": 1
+				},
+				{
+					"block_idx": 695,
+					"level": 1
+				},
+				{
+					"block_idx": 689,
+					"level": 1
+				},
+				{
+					"block_idx": 694,
+					"level": 1
+				},
+				{
+					"block_idx": 873,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 783,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 829,
+					"level": 12
+				},
+				{
+					"block_idx": 777,
+					"level": 12
+				},
+				{
+					"block_idx": 778,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 837,
+					"level": 1
+				},
+				{
+					"block_idx": 785,
+					"level": 1
+				},
+				{
+					"block_idx": 786,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 808,
+					"level": 1
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				},
+				{
+					"block_idx": 700,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 849,
+					"level": 12
+				},
+				{
+					"block_idx": 681,
+					"level": 12
+				},
+				{
+					"block_idx": 685,
+					"level": 1
+				},
+				{
+					"block_idx": 667,
+					"level": 12
+				},
+				{
+					"block_idx": 840,
+					"level": 12
+				}
+			]
+		],
+		"tileset_primary": "maptileset12",
+		"tileset_secondary": "maptileset19",
+		"field_1A": 0
+	},
+	"label": "map_footer_meriana_city_gym_rotating_wall_6",
+	"type": "footer"
+}

@@ -36,6 +36,9 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	callasm bluetenbach_gym_rotate_walls
+	special SPECIAL_MAP_UPDATE_BLOCKS
+	end
 
 	settrainerflag 0x2e
 	trainerbattlestd 0x0 0x2e 0 str_beforeb str_afterb

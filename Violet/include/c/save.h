@@ -165,7 +165,6 @@ typedef struct custom_memory {
         u8 field_2;
         u8 field_3; 
     } settings;
-    u8 bluetenbach_gym_rotating_wall_orientations[16];
     
     /**
     struct {

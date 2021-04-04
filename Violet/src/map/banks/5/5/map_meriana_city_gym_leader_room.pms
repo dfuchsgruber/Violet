@@ -1,0 +1,75 @@
+{
+	"data": {
+		"footer": "map_footer_meriana_city_gym_leader_room",
+		"events": {
+			"person_cnt": 1,
+			"warp_cnt": 1,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "82",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "4",
+					"y": "2",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_bluetenbach_gym_leader",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "4",
+					"y": "7",
+					"level": 0,
+					"target_warp_idx": "38",
+					"target_map": "3",
+					"target_bank": "5"
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_ARENA_AND_TOP_4_LOTTE",
+		"footer_idx": 147,
+		"namespace": "MAP_MERIANA_CITY",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"bike_usable": 0,
+		"flags": {
+			"allow_escape_rope": "1",
+			"allow_run": 0,
+			"show_name": 0,
+			"flag_3": 0,
+			"flag_4": 0,
+			"flag_5": 0,
+			"flag_6": 0,
+			"flag_7": 0
+		},
+		"level": 0,
+		"battle_style": 0
+	},
+	"label": "map_meriana_city_gym_leader_room",
+	"type": "header"
+}

@@ -10,6 +10,7 @@
 #include "map/bluetenbach_gym.h"
 #include "save.h"
 
+/**
 static bluetenbach_gym_rotating_wall_t bluetenbach_gym_rotating_walls[] = {
     {.anchor_x = 0x8, .anchor_y = 0xC, .is_l_shape = false, .rotation = 3},
     {.anchor_x = 0xd, .anchor_y = 0xa, .is_l_shape = true, .rotation = 3},
@@ -96,7 +97,8 @@ static void rotating_walls_initialize() {
         oams[oam_idx].callback(oams + oam_idx);
     }
 }
+**/
 
 void tileset_bluetenbach_gym_animation_initialize() {
-    rotating_walls_initialize();
+    // rotating_walls_initialize();
 }

@@ -132,7 +132,7 @@ battlescript_handicap_arena_encouragement_apply:
     waitmessage 40
     setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0xF | MOVE_EFFECT_AFFECTS_USER
     seteffectprimary
-    end3
+    return
 
 .global battlescript_handicap_groudon_magnitude
 

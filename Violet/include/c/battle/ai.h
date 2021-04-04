@@ -111,4 +111,15 @@ u8 battle_ai_should_switch(int *score);
  **/
 void battle_ai_choose_action();
 
+/**
+ * Applies type effectiveness multipliers to some value.
+ * @param attack_type attacking type
+ * @param defending_ability defender ability
+ * @param defender_type1 first defender type
+ * @param defender_type2 second defender type
+ * @param multiplier the value to multiplier
+ **/
+void battle_ai_attack_apply_effectiveness_multiplier_with_abilities(u8 attack_type, u8 defender_ability, u8 defender_type1, u8 defender_type2, 
+    u8 *multiplier);
+
 #endif

@@ -16,6 +16,7 @@
 #include "constants/battle/battle_animations.h"
 #include "battle/weather.h"
 #include "prng.h"
+#include "battle/ai.h"
 
 extern u8 bsc_life_orb[];
 extern u8 bsc_sun_egg[];
@@ -203,9 +204,15 @@ bool battle_item_before_attack_defender() {
         case HOLD_EFFECT_TYPE_BERRY: {
             u8 move_type;
             GET_MOVE_TYPE(active_attack, move_type);
+            // printf("Checking berry for move type %d, defending item %d, param %d\n", move_type, battlers[defending_battler].item, item_get_hold_effect_parameter(battlers[defending_battler].item));
+            // dprintf("Active attack %d, attack_result %d\n", active_attack, attack_result);
+            u8 multiplier = 16;
+            battle_ai_attack_apply_effectiveness_multiplier_with_abilities(move_type, battlers[defending_battler].ability,
+                battlers[defending_battler].type1, battlers[defending_battler].type2, &multiplier);
             if (move_type == item_get_hold_effect_parameter(battlers[defending_battler].item) &&
-                attacks[active_attack].base_power > 0 && (attack_result & ATTACK_SUPER_EFFECTIVE)) {
+                attacks[active_attack].base_power > 0 && multiplier > 16) {
                 BATTLE_STATE2->status_custom[defending_battler] |= CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY;
+                // dprintf("Defender %d protected by berry.\n", defending_battler);
             }
             break; // Didn't trigger a battle script, that is done by command 0x7 (i.e. the hook at its end) (this takes care of multi-turn moves)
         }

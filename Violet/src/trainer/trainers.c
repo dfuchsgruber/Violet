@@ -4933,12 +4933,12 @@ trainer trainers[TRAINER_CNT] = {
 		TRAINERCLASS_ARENALEITER,
 		{0x0, false},//Encounter and gender
 		0x76,// sprite
-		LANGDEP(PSTRING("Manus"), PSTRING("Manus")),
-		{ITEM_HYPERTRANK, ITEM_HYPERHEILER, ITEM_HYPERTRANK, ITEM_HYPERTRANK},
+		LANGDEP(PSTRING("Manuel"), PSTRING("Manuel")),
+		{ITEM_HYPERTRANK, ITEM_HYPERHEILER, ITEM_HYPERTRANK, ITEM_SUPERTRANK},
 		BATTLE_WITH_HANDICAP,
 		TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
 		0x0,// field_1E
-		4,// Pokemon Count
+		ARRAY_COUNT(trainer_party_xb8),// Pokemon Count
 		0x0,// field_21
 		0x0,// field_22
 		0x0,// field_23
@@ -6992,9 +6992,23 @@ trainer trainers[TRAINER_CNT] = {
       .items = {ITEM_SUPERTRANK, ITEM_GEGENGIFT, ITEM_APFEL, 0},
       .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
       .battle_state = 0, .pokemon_cnt = ARRAY_COUNT(trainer_party_x1ca_route_4_cave_south_painter), .party = (trainer_pokemon*) trainer_party_x1ca_route_4_cave_south_painter,
-	  }, 
-
-    
+	  },
+    [0x1cb] = {
+      .uses_custom_moves = true, .uses_custom_items = true,
+      .trainerclass = TRAINERCLASS_ARENALEITER, .encounter_and_gender = {1, 0} , .sprite = 76,
+      .name = LANGDEP(PSTRING("Manuel"), PSTRING("Manuel")),
+      .items = {ITEM_HYPERTRANK, ITEM_SUPERTRANK, ITEM_NONE, ITEM_NONE},
+      .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+      .battle_state = 0, .pokemon_cnt = ARRAY_COUNT(trainer_party_x1cb_bluetenbach_gym_manus_easy), .party = (trainer_pokemon*)trainer_party_x1cb_bluetenbach_gym_manus_easy,
+	  },
+    [0x1cc] = {
+      .uses_custom_moves = true, .uses_custom_items = true,
+      .trainerclass = TRAINERCLASS_ARENALEITER, .encounter_and_gender = {1, 0} , .sprite = 76,
+      .name = LANGDEP(PSTRING("Manuel"), PSTRING("Manuel")),
+      .items = {ITEM_TOP_GENESUNG, ITEM_GOLDAPFEL, ITEM_TOP_GENESUNG, ITEM_HYPERHEILER},
+      .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+      .battle_state = BATTLE_WITH_HANDICAP, .pokemon_cnt = ARRAY_COUNT(trainer_party_x1cc_bluetenbach_gym_manus_hard), .party = (trainer_pokemon*)trainer_party_x1cc_bluetenbach_gym_manus_hard,
+	  },
     [0x300] = {
       .uses_custom_moves = true, .uses_custom_items = true,
       .trainerclass = TRAINERCLASS_CHEFKOCH, .encounter_and_gender = {1, 0} , .sprite = 0x74,

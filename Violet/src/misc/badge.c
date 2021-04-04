@@ -5,7 +5,7 @@
 
 static u8 str_badge1[] = LANGDEP(PSTRING("Antikorden"), PSTRING("Relic Badge"));
 static u8 str_badge2[] = LANGDEP(PSTRING("Waldorden"), PSTRING("Forest Badge"));
-static u8 str_badge3[] = LANGDEP(PSTRING("Faustorden"), PSTRING("Fist Badge"));
+static u8 str_badge3[] = LANGDEP(PSTRING("Fokusorden"), PSTRING("Focus Badge"));
 static u8 str_badge4[] = LANGDEP(PSTRING("Magmaorden"), PSTRING("Magma Badge"));
 static u8 str_badge5[] = LANGDEP(PSTRING("Ruheorden"), PSTRING("Calm Badge"));
 
