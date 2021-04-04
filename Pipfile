@@ -7,8 +7,10 @@ name = "pypi"
 "beautifulsoup4" = "*"
 "html5lib" = "*"
 pyagb = {git = "https://github.com/WodkaRHR/pyagb.git",ref = "1609b337a6c2c5256c8015d335fb0f2de1aec61d"}
+requests = "*"
 
 [dev-packages]
+ipykernel = "*"
 pylint = "*"
 
 [requires]

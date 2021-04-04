@@ -17,6 +17,7 @@ RUN apt-get install -y \
         cmake \
         bc \
         python3-pip
+RUN pip3 install --upgrade pip
 RUN pip3 install pipenv
 
 RUN \
