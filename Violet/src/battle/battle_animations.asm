@@ -53,6 +53,9 @@ battle_animations:
     .word battle_animation_mon_is_aggresive
     .word battle_animation_barrier
     .word battle_animation_weather_egg
+    .word attack_animation_calm_mind
+    .word battle_animation_focused_fighter_introduction
+    .word battle_animation_focused_fighter_introduction2
 
 battle_animation_extreme_heat_introduction:
     loadgraphic 0x2815
@@ -374,4 +377,23 @@ battle_animation_weather_egg:
     setadditional 7, 0xFFFF
     waitstate
     disable_oam_as_target OAM_ANIMATION_USER
+    end
+
+battle_animation_focused_fighter_introduction:
+    loadcallback battle_animation_fade_volume 2 3
+        .hword 0x100, 0x40, 32
+    fadebattler SPRITE_FADING_AFFECTS_BATTLE_BG, 6, 0, 8, 0
+    waitstate
+    pause 64
+    loadcallback battle_animation_fade_volume 2 3
+        .hword 0x40, 0x100, 32
+    fadebattler SPRITE_FADING_AFFECTS_BATTLE_BG, 6, 8, 0, 0
+    waitstate
+    end
+
+battle_animation_focused_fighter_introduction2:
+    loadcallback battle_animation_fade_volume 2 3
+        .hword 0x40, 0x100, 32
+    fadebattler SPRITE_FADING_AFFECTS_BATTLE_BG, 6, 8, 0, 0
+    waitstate
     end

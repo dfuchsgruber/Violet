@@ -1,6 +1,7 @@
 #include "types.h"
 #include "battle/battler.h"
 #include "battle/battlescript.h"
+#include "battle/communication.h"
 #include "mega.h"
 #include "debug.h"
 #include "battle/bg.h"
@@ -482,6 +483,140 @@ void bsc_teleport_set_outcome() {
     }
 }
 
+void bsc_command_x06_typecalc() {
+    dprintf("Typecalc\n");
+    u8 move_type;
+    if (active_attack == ATTACK_VERZWEIFLER) {
+        ++bsc_offset;
+        return;
+    }
+    GET_MOVE_TYPE(active_attack, move_type);
+
+    // check stab
+    if (IS_BATTLER_OF_TYPE(attacking_battler, move_type)) {
+        damage_apply_multiplier(1500);
+    }
+    if (battlers[defending_battler].ability == SCHWEBE && move_type == TYPE_BODEN) {
+        defending_battler_ability = battlers[defending_battler].ability;
+        attack_result |= ATTACK_MISSED | ATTACK_NO_EFFECT;
+        battler_last_landed_move[defending_battler] = 0;
+        battler_last_hit_by_type[defending_battler] = 0;
+        battle_communication[6] = move_type;
+        battle_record_ability(defending_battler, defending_battler_ability);
+    } else {
+        bool no_weakness = false;
+        if ((battle_flags & BATTLE_WITH_HANDICAP) && (fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_FLOATING_ROCKS]) &&
+            (battlers[defending_battler].type1 == TYPE_GESTEIN || battlers[defending_battler].type2 == TYPE_GESTEIN)) {
+                no_weakness = true;
+            } 
+        for (int i = 0; type_effectivenesses[i].attacker != 0xFF; i++) {
+            if (type_effectivenesses[i].attacker == 0xFE) {
+                if (battlers[defending_battler].status2 & STATUS2_FORESIGHT)
+                    break;
+            if (type_effectivenesses[i].multiplicator == 20 && no_weakness)
+                continue;
+            } else if (type_effectivenesses[i].attacker == move_type) {
+                if (type_effectivenesses[i].defender == battlers[defending_battler].type1)
+                    battle_add_damage_multiplier_and_update_attack_result(type_effectivenesses[i].multiplicator);
+                if (type_effectivenesses[i].defender == battlers[defending_battler].type2 &&
+                    battlers[defending_battler].type1 != battlers[defending_battler].type2)
+                    battle_add_damage_multiplier_and_update_attack_result(type_effectivenesses[i].multiplicator);
+            }
+        }
+    }
+    if (battlers[defending_battler].ability == WUNDERWACHE
+        && battler_get_charging_state(attacking_battler, active_attack) == CHARGING_STATE_NOT_CHARGING
+        && (!(attack_result & ATTACK_SUPER_EFFECTIVE) || 
+            ((attack_result & (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)) == (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)))
+        && attacks[active_attack].base_power > 0) {
+            defending_battler_ability = WUNDERWACHE;
+            attack_result |= ATTACK_MISSED;
+            battler_last_landed_move[defending_battler] = 0;
+            battler_last_hit_by_type[defending_battler] = 0;
+            battle_communication[6] = 3;
+            battle_record_ability(defending_battler, defending_battler_ability);
+    }
+    if (attack_result & ATTACK_NO_EFFECT)
+        battler_statuses[attacking_battler].target_unaffected = 1;
+    if ((attack_result & (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)) == (ATTACK_SUPER_EFFECTIVE) && !(attack_result | ATTACK_MISSED) 
+        && attacks[active_attack].base_power > 0) {
+        BATTLE_STATE2->status_custom[attacking_battler] |= CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY;
+    }
+    ++bsc_offset;
+}
+
+void bsc_command_x4a_typecalc2() {
+    // Does not apply any multipliers
+    u8 move_type;
+    GET_MOVE_TYPE(active_attack, move_type);
+
+    if (battlers[defending_battler].ability == SCHWEBE && move_type == TYPE_BODEN) {
+        defending_battler_ability = battlers[defending_battler].ability;
+        attack_result |= ATTACK_MISSED | ATTACK_NO_EFFECT;
+        battler_last_landed_move[defending_battler] = 0;
+        battler_last_hit_by_type[defending_battler] = 0;
+        battle_communication[6] = move_type;
+        battle_record_ability(defending_battler, defending_battler_ability);
+    } else {
+        bool no_weakness = false;
+        if ((battle_flags & BATTLE_WITH_HANDICAP) && (fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_FLOATING_ROCKS]) &&
+            (battlers[defending_battler].type1 == TYPE_GESTEIN || battlers[defending_battler].type2 == TYPE_GESTEIN)) {
+                no_weakness = true;
+            } 
+        for (int i = 0; type_effectivenesses[i].attacker != 0xFF; i++) {
+            if (type_effectivenesses[i].attacker == 0xFE) {
+                if (battlers[defending_battler].status2 & STATUS2_FORESIGHT) {
+                    break;
+                } else {
+                    continue;
+                }
+            }
+            if (type_effectivenesses[i].attacker == move_type) {
+                if (type_effectivenesses[i].defender == battlers[defending_battler].type1) {
+                    if (type_effectivenesses[i].multiplicator == 0) {
+                        attack_result |= ATTACK_NO_EFFECT;
+                        break;
+                    } else if (type_effectivenesses[i].multiplicator == 5) {
+                        attack_result |= ATTACK_NOT_EFFECTIVE;
+                    } else if (type_effectivenesses[i].multiplicator == 20 && !no_weakness) {
+                        attack_result |= ATTACK_SUPER_EFFECTIVE;
+                    }
+                }
+                if (type_effectivenesses[i].defender == battlers[defending_battler].type2 &&
+                    battlers[defending_battler].type1 != battlers[defending_battler].type2) {
+                    if (type_effectivenesses[i].multiplicator == 0) {
+                        attack_result |= ATTACK_NO_EFFECT;
+                        break;
+                    } else if (type_effectivenesses[i].multiplicator == 5) {
+                        attack_result |= ATTACK_NOT_EFFECTIVE;
+                    } else if (type_effectivenesses[i].multiplicator == 20 && !no_weakness) {
+                        attack_result |= ATTACK_SUPER_EFFECTIVE;
+                    }
+                }
+            }
+        }
+    }
+    if (battlers[defending_battler].ability == WUNDERWACHE
+        && battler_get_charging_state(attacking_battler, active_attack) == CHARGING_STATE_NOT_CHARGING
+        && (!(attack_result & ATTACK_SUPER_EFFECTIVE) || 
+            ((attack_result & (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)) == (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)))
+        && attacks[active_attack].base_power > 0) {
+            defending_battler_ability = WUNDERWACHE;
+            attack_result |= ATTACK_MISSED;
+            battler_last_landed_move[defending_battler] = 0;
+            battler_last_hit_by_type[defending_battler] = 0;
+            battle_communication[6] = 3;
+            battle_record_ability(defending_battler, defending_battler_ability);
+    }
+    if (attack_result & ATTACK_NO_EFFECT)
+        battler_statuses[attacking_battler].target_unaffected = 1;
+    if ((attack_result & (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)) == (ATTACK_SUPER_EFFECTIVE) && !(attack_result | ATTACK_MISSED) 
+        && attacks[active_attack].base_power > 0) {
+        BATTLE_STATE2->status_custom[attacking_battler] |= CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY;
+    }
+    bsc_offset++;
+}
+
 extern u8 battlescript_gem_used[];
 extern u8 battlescript_weakened_by_berry[];
 
@@ -494,9 +629,8 @@ void bsc_command_after_x07_adjustnormaldamage() {
         bsc_offset = battlescript_gem_used;
         BATTLE_STATE2->status_custom[attacking_battler] &= (u32)(~CUSTOM_STATUS_GEM_USED);
     }
-    if ((BATTLE_STATE2->status_custom[defending_battler] & CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY)) {
+    if ((BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY)) {
         bsc_last_used_item = battlers[defending_battler].item;
-        BATTLE_STATE2->status_custom[defending_battler] |= CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY;
         battlescript_callstack_push_next_command();
         bsc_offset = battlescript_weakened_by_berry;
         BATTLE_STATE2->status_custom[attacking_battler] &= (u32)(~CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY);

@@ -551,4 +551,11 @@ u8 *battle_healthbox_get_gfx(u8 tile);
  **/
 void battle_gp_tbox_draw(u8 x0, u8 y0, u8 x1, u8 y1, u8 mode);
 
+/**
+ * Records the ability of a battler into the history
+ * @param battler_idx the battler to load the ability of
+ * @param ability the ability to load
+ **/
+void battle_record_ability(u8 battler_idx, u8 ability);
+
 #endif /* INCLUDE_C_BATTLE_STATE_H_ */

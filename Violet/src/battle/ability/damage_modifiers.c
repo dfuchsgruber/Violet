@@ -116,13 +116,12 @@ void apply_pre_damage_modifiers(){
         // BATTLE_STATE2->status_custom[attacking_battler] &= (u32)(~CUSTOM_STATUS_GEM_USED);
         damage_apply_multiplier(1500);
     }
-    if (BATTLE_STATE2->status_custom[defending_battler] & CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY) {
+    if (BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY) {
         dprintf("Berry decreased damage for battler %d.\n", defending_battler);
-        // BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY);
         damage_apply_multiplier(500);
     }
     dprintf("Damage before bsc 0x6 %d\n", damage_to_apply);
-    battlescript_cmd_x06_apply_damage_modifiers();
+    bsc_command_x06_typecalc();
     if ((battle_flags & BATTLE_TRAINER) && (trainer_vars.rival_flags & 4) && battler_is_opponent(defending_battler)) {
         // When battling Lucius, you're not allowed to do any significant damage
         damage_apply_multiplier(250);

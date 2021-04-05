@@ -4,6 +4,7 @@
 .include "constants/battle/battle_animations.s"
 .include "constants/battle/battle_communication.s"
 .include "constants/battle/battle_statuses.s"
+.include "constants/pokemon_stat_names.s"
 
 .global battlescript_trainer_battle_won
 battlescript_trainer_battle_won:
@@ -185,6 +186,42 @@ groudon_magnitude_hit:
     // No move done effects
     jumpwhiletargetvalid groudon_magnitude_loop
     end2
+
+.global battlescript_handicap_focused_fighter
+
+battlescript_handicap_focused_fighter:
+    printstring 0x1c1
+    playanimation BANK_SCRIPTING, BATTLE_ANIM_FOCUSED_FIGHTER_INTRODUCTION, 0
+    // playanimation BANK_USER BATTLE_ANIM_GROUDON_MAGNITUDE 0
+    waitmessage 20
+    //playanimation BANK_SCRIPTING, BATTLE_ANIM_FOCUSED_FIGHTER_INTRODUCTION2, 0
+    pause 40
+    end3
+
+.global battlescript_handicap_focused_fighter_apply
+
+battlescript_handicap_focused_fighter_apply:
+    jumpifstat BANK_SCRIPTING, LESS_THAN, STAT_ATTACK, 12 focused_fighter_do_animation
+    jumpifstat BANK_SCRIPTING, EQUAL, STAT_ATTACK, 12 focused_fighter_end
+focused_fighter_do_animation:
+    printstring 0x1c2
+    playanimation BANK_SCRIPTING BATTLE_ANIM_FOCUSED_FIGHTER 0
+    waitmessage 20
+    setbyte BATTLE_SCRIPTING_STAT_CHANGE_ANIMATION, 0
+    playstatchangeanimation BANK_SCRIPTING, ((1 << STAT_ATTACK) | (1 << STAT_ACCURACY)), 0
+    setstatchange STAT_ATTACK, 1, 0
+    statbuffchange 1, focused_fighter_end
+    jumpifbyte EQUAL, battle_communication + BATTLE_COMMUNICATION_MULTISTRING_CHOOSER, 2, focused_fighter_try_accuracy
+    printfromtable battle_strings_stat_changes
+    waitmessage 0x40
+focused_fighter_try_accuracy:
+    setstatchange STAT_ACCURACY, 1, 0
+    statbuffchange 1, focused_fighter_end
+    jumpifbyte EQUAL, battle_communication + BATTLE_COMMUNICATION_MULTISTRING_CHOOSER, 2, focused_fighter_end
+    printfromtable battle_strings_stat_changes
+    waitmessage 0x40
+focused_fighter_end:
+    end3
 
 .global battlescript_before_attack
 

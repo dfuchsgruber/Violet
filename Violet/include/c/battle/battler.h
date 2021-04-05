@@ -178,6 +178,7 @@ extern u8 effect_battler;
     (battler_statuses3[i] & STATUS3_ROOTED) == 0 \
 )
 
+#define IS_BATTLER_OF_TYPE(battlerId, type)((battlers[battlerId].type1 == type || battlers[battlerId].type2 == type))
 
 
 extern u8 attack_targets;
@@ -193,6 +194,7 @@ extern u32 battler_statuses3[4];
 extern u8 item_target_battler;
 extern u8 battler_positions[4];
 extern u16 battler_last_landed_move[4];
+extern u16 battler_last_hit_by_type[4];
 extern u8 fainted_battler;
 
 #define STAT_CHANGE_MULTIPLIER_DIVIDEND 0
@@ -375,6 +377,16 @@ enum
  * @return the coordiante
  **/
 u8 battler_get_coordinate(u8 battler_idx, u8 type);
+
+#define CHARGING_STATE_CHARGING 1
+#define CHARGING_STATE_NOT_CHARGING 2
+
+/**
+ * Gets the charging state of a battler
+ * @param battler_idx the battler ot get the target state of
+ * @param attack the attack they are potentially charging or launching
+ **/
+u8 battler_get_charging_state(u8 battler_idx, u16 attack);
 
 
 #endif /* INCLUDE_C_BATTLE_BATTLER_H_ */

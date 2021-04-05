@@ -351,7 +351,7 @@ attack_anims:
 		.word 0x81d1009 @//attack_volttackle
 		.word 0x81d90fd @//attack_zauberblatt
 		.word 0x81d1101 @//attack_nassmacher
-		.word 0x81d1127 @//attack_gedankengut
+		.word attack_animation_calm_mind @//attack_gedankengut
 		.word 0x81d11a7 @//attack_laubklinge
 		.word 0x81d122a @//attack_drachentanz
 		.word 0x81d84b3 @//attack_felswurf

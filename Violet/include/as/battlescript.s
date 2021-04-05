@@ -64,6 +64,8 @@
     .byte 4, 5, 6, 7
 .endm
 
+.equ BATTLE_SCRIPTING_STAT_CHANGE_ANIMATION, (battle_scripting + 0x1B)
+
 
 @@ Index commands
 .macro attackcanceler

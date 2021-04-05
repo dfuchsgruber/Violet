@@ -122,6 +122,12 @@ void battle_animation_handler_delay();
  **/
 void battle_animation_big_callback_delete(u8 self);
 
+/**
+ * Removes a sound-based big animation callback.
+ * @param self self-reference
+ **/
+void battle_animation_sound_big_callback_delete(u8 self);
+
 extern u8 battle_animation_running;
 
 void battle_animation_oam_particle_emission_above_battler_callback (oam_object *self);

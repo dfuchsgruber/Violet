@@ -211,7 +211,7 @@ bool battle_item_before_attack_defender() {
                 battlers[defending_battler].type1, battlers[defending_battler].type2, &multiplier);
             if (move_type == item_get_hold_effect_parameter(battlers[defending_battler].item) &&
                 attacks[active_attack].base_power > 0 && multiplier > 16) {
-                BATTLE_STATE2->status_custom[defending_battler] |= CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY;
+                BATTLE_STATE2->status_custom[attacking_battler] |= CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY;
                 // dprintf("Defender %d protected by berry.\n", defending_battler);
             }
             break; // Didn't trigger a battle script, that is done by command 0x7 (i.e. the hook at its end) (this takes care of multi-turn moves)

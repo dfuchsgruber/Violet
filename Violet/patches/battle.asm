@@ -720,13 +720,6 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 	.byte 0x28 // Goto
 	.word battlescript_item_player_used
 
-.org 0x0801e8bc
-	mov r0, r8
-	ldr r1, =bsc_command_x06_typecalc_scan_effectiveness_table | 1
-	bl _blxr1
-	b 0x0801e958
-	.pool
-
 .org 0x0804983c
 	ldr r2, =battle_healthbox_add_pokeball_and_mega_indicator | 1
 	bx r2

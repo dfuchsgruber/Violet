@@ -22,6 +22,7 @@ extern u8 battlescript_handicap_grassy_field[];
 extern u8 battlescript_handicap_terrifying_atmosphere[];
 extern u8 battlescript_handicap_arena_encouragement[];
 extern u8 battlescript_handicap_groudon_magnitude[];
+extern u8 battlescript_handicap_focused_fighter[];
 
 static u8 *battlescripts_handicap[32] = {
     [BATTLE_HANDICAP_FLOATING_ROCKS] = battlescript_handicap_floating_rocks,
@@ -30,6 +31,7 @@ static u8 *battlescripts_handicap[32] = {
     [BATTLE_HANDICAP_TERRIFYING_ATMOSPHERE] = battlescript_handicap_terrifying_atmosphere,
     [BATTLE_HANDICAP_EXTREME_HEAT] = battlescript_handicap_extreme_heat,
     [BATTLE_HANDICAP_GROUDON_BATTLE] = battlescript_handicap_groudon_magnitude,
+    [BATTLE_HANDICAP_FOCUSED_FIGHTERS] = battlescript_handicap_focused_fighter,
 };
 
 void battle_introduce_handicap() {
@@ -76,6 +78,7 @@ void battle_handicap_clear() {
 
 extern u8 battlescript_handicap_extreme_heat_apply[];
 extern u8 battlescript_handicap_grassy_field_apply[];
+extern u8 battlescript_handicap_focused_fighter_apply[];
 
 bool battle_handicap_switch_in_effects(u8 battler_idx) {
     if (!(battle_flags & BATTLE_WITH_HANDICAP)) 
@@ -86,12 +89,14 @@ bool battle_handicap_switch_in_effects(u8 battler_idx) {
                 case BATTLE_HANDICAP_EXTREME_HEAT: {
                     if (battlers[battler_idx].max_hp > 0 && !(battlers[battler_idx].status1 & STATUS1_ANY) &&
                         battlers[battler_idx].ability != AQUAHUELLE && battlers[battler_idx].type1 != TYPE_FEUER && 
-                        battlers[battler_idx].type2 != TYPE_FEUER && !battle_side_statuses[battler_idx].status_safeguard) { 
+                        battlers[battler_idx].type2 != TYPE_FEUER && !battle_side_statuses[battler_idx].status_safeguard
+                        && !(BATTLE_STATE2->status_custom_persistent[battler_idx] & CUSTOM_STATUS_PERSISTENT_HANDICAP_APPLIED)) { 
                         // Battler can be affected by extreme heat
                         dprintf("Execute extreme heat for battler %d\n", battler_idx);
                         attacking_battler = battler_idx; // Set those for synchronize I suppose...
                         defending_battler = battler_idx; 
                         battle_scripting.battler_idx = battler_idx;
+                        BATTLE_STATE2->status_custom_persistent[battler_idx] |= CUSTOM_STATUS_PERSISTENT_HANDICAP_APPLIED; // Prevent looping
                         battle_communication[BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE] = 0x43;
     	                battlescript_init_and_interrupt_battle(battlescript_handicap_extreme_heat_apply);
                         return true;
@@ -100,12 +105,27 @@ bool battle_handicap_switch_in_effects(u8 battler_idx) {
                 }
                 case BATTLE_HANDICAP_GRASSY_FIELD: {
                     if (battlers[battler_idx].max_hp > 0 && !(battler_statuses3[battler_idx] & STATUS3_ROOTED) &&
-                        (battlers[battler_idx].type1 == TYPE_PFLANZE || battlers[battler_idx].type2 == TYPE_PFLANZE)) {
+                        (battlers[battler_idx].type1 == TYPE_PFLANZE || battlers[battler_idx].type2 == TYPE_PFLANZE)
+                        && !(BATTLE_STATE2->status_custom_persistent[battler_idx] & CUSTOM_STATUS_PERSISTENT_HANDICAP_APPLIED)) {
                         battler_statuses3[battler_idx] |= STATUS3_ROOTED;
                         attacking_battler = battler_idx;
                         defending_battler = battler_idx; 
                         battle_scripting.battler_idx = battler_idx;
+                        BATTLE_STATE2->status_custom_persistent[battler_idx] |= CUSTOM_STATUS_PERSISTENT_HANDICAP_APPLIED; // Prevent looping
     	                battlescript_init_and_interrupt_battle(battlescript_handicap_grassy_field_apply);
+                        return true;
+                    }
+                    break;
+                }
+            case BATTLE_HANDICAP_FOCUSED_FIGHTERS: {
+                if (battlers[battler_idx].max_hp > 0 && (battlers[battler_idx].type1 == TYPE_KAMPF || battlers[battler_idx].type2 == TYPE_KAMPF) && 
+                    (battlers[battler_idx].stat_changes[STAT_ATTACK] < 12 || battlers[battler_idx].stat_changes[STAT_ACCURACY] < 12)
+                     && !(BATTLE_STATE2->status_custom_persistent[battler_idx] & CUSTOM_STATUS_PERSISTENT_HANDICAP_APPLIED) ) {
+                        attacking_battler = battler_idx;
+                        defending_battler = battler_idx; 
+                        battle_scripting.battler_idx = battler_idx;
+                        BATTLE_STATE2->status_custom_persistent[battler_idx] |= CUSTOM_STATUS_PERSISTENT_HANDICAP_APPLIED; // Prevent looping
+    	                battlescript_init_and_interrupt_battle(battlescript_handicap_focused_fighter_apply);
                         return true;
                     }
                     break;

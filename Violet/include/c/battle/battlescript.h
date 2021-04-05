@@ -183,6 +183,11 @@ u8 battlescript_argument_to_battler_idx(u8 arg);
  **/
 bool battlescript_force_switch_out();
 
+/**
+ * Normal typecalc battlescript command that considers move effectivenesses.
+ **/
+void bsc_command_x06_typecalc();
+
 void sub_08013ef0(u8 battler_idx);
 
 

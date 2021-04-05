@@ -440,6 +440,8 @@ bsc_strings:
 .word str_battle_x1BE
 .word str_battle_x1BF
 .word str_battle_x1C0
+.word str_battle_x1C1
+.word str_battle_x1C2
 
 @ // Define the strings
 
@@ -2948,6 +2950,12 @@ bsc_strings:
 	str_battle_x1C0:
 		.string "STATUS_NAME heilte\nalle Statusprobleme von\lBSC_SCR_ACTIVE_NAME_WITH_PREFIX!"
 
+	str_battle_x1C1:
+		.string "Eine meditative Stille erfüllt die\nArenaDOTS"
+	
+	str_battle_x1C2:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX wird\neins mit der Umgebung."
+
 .elseif LANG_EN
 	.global str_battle_xc
 
@@ -5055,6 +5063,12 @@ bsc_strings:
 
 	str_battle_x1C0:
 		.string "STATUS_NAME cured\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX's\lstatus aliments!"
+
+	str_battle_x1C1:
+		.string "A meditative silence is in the\nairDOTS"
+	
+	str_battle_x1C2:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX\nbecomes one with the environment."
 
 .endif
 
