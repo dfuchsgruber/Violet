@@ -85,6 +85,14 @@ later:
 	loadpointer 0x0 str_3
 	show_mugshot MUGSHOT_MANUS MUGSHOT_LEFT
 	setflag FRBADGE_3
+	cleartrainerflag 0x80
+    cleartrainerflag 0x81
+    cleartrainerflag 0x82
+    cleartrainerflag 0x83
+    cleartrainerflag 0x1cd
+    cleartrainerflag 0x1ce
+    cleartrainerflag 0x1cf
+    cleartrainerflag 0x1d0
     setflag MERIANA_CITY_ELISE_VISIBLE
 	warpmuted 0x3 0x1 0x2 0 0
 	waitstate

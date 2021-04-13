@@ -15,6 +15,7 @@
 .global ow_script_0x8a5ccb
 .global ow_script_0x8a7343
 .global ow_script_map_3_66_person_1
+
 ow_script_map_3_66_person_0:
 	lockall
 	faceplayer
@@ -29,8 +30,6 @@ expedition_announced:
 	show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT MSG_FACE
 	releaseall
 	end
-
-
 check_expedition1:
 	checkflag ROUTE_5_VIOLET_GRUNTS
 	gotoif EQUAL expedition_announced
@@ -40,12 +39,212 @@ announce_expedition:
 	sound 9
 	clearflag PKMNMENU
 	showsprite 4
+	applymovement 0xFF mov_fd
+	applymovement 1 mov_fd
+	waitmovement 0
 	playsong MUS_RIVALE_ERSCHEINT_GARY 0
 	checksound
 	pause 16
 	loadpointer 0 str_0
 	show_mugshot MUGSHOT_RIVAL MUGSHOT_LEFT
-	applymovement 4 mov_rival_to_prof
+	applymovement 4 mov_3u
+	waitmovement 0
+	pause 20
+	sound 0x15
+	applymovement 4 mov_exclam
+	waitmovement 0
+	checksound
+	loadpointer 0 str_1
+	show_mugshot MUGSHOT_RIVAL MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED hide_mugshot=0 message_type=MSG_KEEPOPEN
+	update_mugshot_emotion MUGSHOT_ANNOYED
+	loadpointer 0 str_2
+	callstd MSG_KEEPOPEN
+	hide_mugshot
+	closeonkeypress
+	loadpointer 0 str_3
+	show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT
+	loadpointer 0 str_4
+	show_mugshot MUGSHOT_RIVAL MUGSHOT_LEFT emotion=MUGSHOT_ANNOYED
+	// Move rival either in front of prof or right next to them
+	getplayerpos 0x8004 0x8005
+	compare 0x8004 7
+	gotoif EQUAL move_rival_right
+move_rival_in_front:
+	npc_move_to 4 0x7 0x6
+	applymovement 4 mov_fu
+	waitmovement 0
+	goto after_rival_there
+move_rival_right:
+	npc_move_to 4 0x8 0x6
+	applymovement 4 mov_fu
+	waitmovement 0
+after_rival_there:
+	fadesong MUS_VERTANIA_CITY_AND_MARMORIA_CITY_AND_SAFFRONIA_CITY
+	pause 20
+	setvar 0x8004 0xFF
+	setvar 0x8005 1
+	special SPECIAL_NPC_FACE_TO_NPC
+	waitmovement 0
+	loadpointer 0 str_5
+	show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT emotion=MUGSHOT_HAPPY hide_mugshot=0 message_type=MSG_KEEPOPEN
+	loadpointer 0 str_6
+	update_mugshot_emotion MUGSHOT_NORMAL
+	callstd MSG_KEEPOPEN
+	hide_mugshot
+	loadpointer 0 str_7
+	show_mugshot MUGSHOT_RIVAL MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED hide_mugshot=0 message_type=MSG_KEEPOPEN
+	loadpointer 0 str_8
+	update_mugshot_emotion MUGSHOT_HAPPY
+	callstd MSG_KEEPOPEN
+	hide_mugshot
+	loadpointer 0 str_9
+	show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT emotion=MUGSHOT_HAPPY hide_mugshot=0 message_type=MSG_KEEPOPEN
+	loadpointer 0 str_10
+	update_mugshot_emotion MUGSHOT_NORMAL
+	callstd MSG_KEEPOPEN
+	hide_mugshot
+	closeonkeypress
+	pause 16
+	sound 0x15
+	applymovement 4 mov_exclam
+	waitmovement 0
+	checksound
+	loadpointer 0 str_11
+	show_mugshot MUGSHOT_RIVAL MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED hide_mugshot=0 message_type=MSG_KEEPOPEN
+	loadpointer 0 str_12
+	update_mugshot_emotion MUGSHOT_RUMINATIVE
+	callstd MSG_KEEPOPEN
+	hide_mugshot
+	loadpointer 0 str_13
+	show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT emotion=MUGSHOT_NORMAL hide_mugshot=0 message_type=MSG_KEEPOPEN
+	loadpointer 0 str_14
+	update_mugshot_emotion MUGSHOT_RUMINATIVE
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_15
+	update_mugshot_emotion MUGSHOT_HAPPY
+	callstd MSG_KEEPOPEN
+	hide_mugshot
+	loadpointer 0 str_16
+	show_mugshot MUGSHOT_RIVAL MUGSHOT_LEFT emotion=MUGSHOT_HAPPY
+	loadpointer 0 str_17
+	show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT emotion=MUGSHOT_NORMAL hide_mugshot=0 message_type=MSG_KEEPOPEN
+	loadpointer 0 str_18
+	update_mugshot_emotion MUGSHOT_HAPPY
+	callstd MSG_KEEPOPEN
+	hide_mugshot
+	loadpointer 0 str_19
+	show_mugshot MUGSHOT_RIVAL MUGSHOT_LEFT hide_mugshot=0 message_type=MSG_KEEPOPEN
+	loadpointer 0 str_20
+	update_mugshot_emotion MUGSHOT_RUMINATIVE
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_21
+	update_mugshot_emotion MUGSHOT_HAPPY
+	callstd MSG_KEEPOPEN
+	hide_mugshot
+	closeonkeypress
+	pause 12
+	setvar 0x8004 0xFF
+	setvar 0x8005 4
+	special SPECIAL_NPC_FACE_TO_NPC
+	waitmovement 0
+	applymovement 4 mov_jump_in_place_2_times
+	sound 10
+	pause 16
+	sound 10
+	waitmovement 0
+	checksound
+	setvar 0x8004 4
+	setvar 0x8005 0xFF
+	special SPECIAL_NPC_FACE_TO_NPC
+	waitmovement 0
+	loadpointer 0 str_22
+	show_mugshot MUGSHOT_RIVAL MUGSHOT_LEFT emotion=MUGSHOT_HAPPY
+	pause 24
+	loadpointer 0 str_23
+	show_mugshot MUGSHOT_RIVAL MUGSHOT_LEFT emotion=MUGSHOT_HAPPY
+	playsong MUS_RIVALE_ERSCHEINT_GARY 0
+	getplayerpos 0x8004 0x8005
+	compare 0x8004 7
+	gotoif EQUAL move_rival_away_right
+move_rival_away_in_front:
+	applymovement 4 mov_rival_away_in_front
+	goto rival_moved_away
+move_rival_away_right:
+	applymovement 4 mov_rival_away_right
+	goto rival_moved_away
+rival_moved_away:
+	pause 32
+	applymovement 0xFF mov_fd
+	applymovement 1 mov_fd
+	waitmovement 4
+	sound 9
+	hidesprite 4
+	checksound
+	loadpointer 0 str_24
+	show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT emotion=MUGSHOT_SHOCKED
+	fadesong MUS_VERTANIA_CITY_AND_MARMORIA_CITY_AND_SAFFRONIA_CITY
+	setvar 0x8004 1
+	special SPECIAL_SET_TARGET_NPC_TO_VAR
+	setvar 0x8004 0xFF
+	setvar 0x8005 1
+	special SPECIAL_NPC_FACE_TO_NPC
+	waitmovement 0
+	setvar 0x8004 1
+	setvar 0x8005 0xFF
+	special SPECIAL_NPC_FACE_TO_NPC
+	waitmovement 0
+	loadpointer 0 str_25
+	show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT emotion=MUGSHOT_ANNOYED hide_mugshot=0 message_type=MSG_KEEPOPEN
+	loadpointer 0 str_26
+	update_mugshot_emotion MUGSHOT_NORMAL
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_27
+	update_mugshot_emotion MUGSHOT_HAPPY
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_28
+	update_mugshot_emotion MUGSHOT_RUMINATIVE
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_29
+	update_mugshot_emotion MUGSHOT_HAPPY
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_30
+	update_mugshot_emotion MUGSHOT_RUMINATIVE
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_31
+	update_mugshot_emotion MUGSHOT_NORMAL
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_32
+	update_mugshot_emotion MUGSHOT_ANNOYED
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_33
+	update_mugshot_emotion MUGSHOT_NORMAL
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_34
+	update_mugshot_emotion MUGSHOT_HAPPY
+	callstd MSG_KEEPOPEN
+	closeonkeypress
+	hide_mugshot
+	npc_move_to 1 0x7 0x7
+	applymovement 0xFF mov_fd
+	applymovement 1 mov_4d
+	waitmovement 0
+	pause 16
+	sound 9
+	hidesprite 1
+	checksound
+	releaseall
+	end
+
+
+mov_jump_in_place_2_times:
+	.byte JUMP_IN_PLACE_FACE_UP, JUMP_IN_PLACE_FACE_UP, STOP
+mov_rival_away_in_front:
+	.byte STEP_DOWN_FAST, STEP_DOWN_FAST, STEP_DOWN_FAST, STEP_DOWN_FAST, STEP_DOWN_FAST, STEP_DOWN_FAST, STOP
+mov_rival_away_right:
+	.byte STEP_DOWN_FAST, STEP_DOWN_FAST, STEP_LEFT_FAST, STEP_DOWN_FAST, STEP_DOWN_FAST, STEP_DOWN_FAST, STEP_DOWN_FAST, STOP
+
+/* 
+	applymovement 4 mov_fu
 	waitmovement 0
 	loadpointer 0 str_1
 	show_mugshot MUGSHOT_RIVAL MUGSHOT_LEFT
@@ -109,41 +308,82 @@ announce_expedition:
 	clearflag MERIANA_CITY_ELISE_VISIBLE // makes her disappear
 	releaseall
 	end
-
-mov_rival_to_prof:
-	.byte STEP_UP, STEP_UP, STEP_UP, STEP_RIGHT, STEP_UP, STEP_UP, STOP
-mov_rival_away:
-	.byte STEP_DOWN, STEP_DOWN, STEP_DOWN, STEP_LEFT, STEP_DOWN, STEP_DOWN, STOP
-mov_fu:
-	.byte LOOK_UP, STOP
-mov_fd:
-	.byte LOOK_DOWN, STOP
-
+*/
 
 .ifdef LANG_GER
 
 str_expedition:
-	.autostring 34 2 "PLAYER!\nWie schön dich zu sehen.\pIch wollte dir und RIVAL etwas mitteilenDOTS\pEr sollte jeden MomentDOTS"
+	.autostring 34 2 "PLAYER!\nDa bist du ja!\pRIVAL sollte auch jeden Moment-"
 str_0:
-	.autostring 34 2 "Hallo Papa!\nDu wolltest mich sehen?"
+	.autostring 34 2 "So Papa!\nDa bin ich!"
 str_1:
-	.autostring 34 2 "PLAYER!\nDu bist ja auch schon da!\pSoll das etwa heißen, ich bin der Letzte?\pDas sieht mir so gar nicht ähnlich!\pAlso Papa, was gibt es?"
+	.autostring 34 2 "PLAYER!\pSoll das etwa heißen, dass du schon vor mir hier warst?"
 str_2:
-	.autostring 34 2 "Schön, dass du es auch geschafft hast, RIVAL.\pIch habe große Neuigkeiten für euch.\pIch werde in Kürze auf eine Expedition gehen, die versunkene Stadt Atlantea zu entdecken.\pZiel dieser Unternehmung ist es, die Alte Karte zu bergen, welche der Legende nach den Weg nach Atlantea weist.\pDas bedeutet, dass ich für einige Zeit fort sein werde.\pWie mir aber zu Ohren gekommen ist, seid ihr beide inzwischen stattliche Trainer geworden.\pDas macht mich wirklich außerordentlich glücklich!\pIhr lebt euren Traum, und das selbe muss auch ich tun.\pMir ist bewusst, dass die Expedition auf, die ich mich begebe, nicht ungefährlich ist.\pUnd daher wollte ich euch beide noch ein letztes Mal sehen und mich verabschieden, nur für den Fall, dassDOTS DOTS DOTS"
+	.autostring 34 2 "Dass eine Schlafmütze mich überholt haben sollDOTS"
 str_3:
-	.autostring 34 2 "Nun hör aber auf, so einen Unsinn zu reden, Papa!\pDeine Expedition wird ein Erfolg werden!\pIch werde mir von dir sicher kein Lebewohl anhören!"
+	.autostring 34 2 "RIVALDOTS\pKomm bitte einfach hierher, ja?"
 str_4:
-	.autostring 34 2 "RIVALDOTS"
+	.autostring 34 2 "Schon gut, Papa!"
 str_5:
-	.autostring 34 2 "Nichts da!\pDu kommst wieder zurück und damit basta!\pHast du mich verstanden?\pSo wird das gemacht, Papa und nicht anders!"
+	.autostring 34 2 "Schön, dass ihr nun beide hier seid, PLAYER und RIVAL."
 str_6:
-	.autostring 34 2 "Ich meine es ernst, Papa!"
+	.autostring 34 2 "Ihr wisst vermutlich schon, warum ich euch herbestellt habe, oder?\pIch werde mich auf eine gefährliche Expedition begeben.\pVielleicht bin ich erst einmal eine ganze Weile unterwegs."
 str_7:
-	.autostring 34 2 "Ich sollte mit RIVAL sprechenDOTS\pEntschuldige bitte dieses ganze Drama, PLAYER.\pAber du weißt ja, wie sturköpfig RIVAL sein kannDOTS"
+	.autostring 34 2 "Eine Expedition?\pDas klingt ganz schön gefährlichDOTS"
 str_8:
-	.autostring 34 2 "Der arme RIVAL macht sich wohl Sorgen um seinen VaterDOTS\pAuch, wenn er das scheinbar nicht wirklich ausdrücken kann.\pIch bin aber guter Dinge, dass die Expedition des Professors gut verlaufen wird!\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pSolltest du dich für die archäologische Forschung des Professors interessieren, solltest du unbedingt dem Museum in Orina City einen Besuch abstatten.\pUnd wenn du schon einmal dort bist, kann ich dir die Firma zeigen, für dich arbeite, die Laz. Corp.\pIch arbeite seit einiger Zeit an einem gänzlich virtuellen Pokémon.\pEinen Trainer wie dich, dürfte das sicherlich interessieren.\pIch werde dir eine Zugangskarte für mein Labor dort geben."
+	.autostring 34 2 "Aber auch super aufregend!\pWohin geht diese Expedition denn, Papa?"
 str_9:
-	.autostring 34 2 "Du erreichst Orina City über Route 5, welche sich westlich von hier befindet.\pDu solltest mich auf jeden Fall in der Laz. Corp besuchen kommen, PLAYER!\pDas virtuelle Pokémon wird dich ganz sicher begeistern!"
+	.autostring 34 2 "Freut mich, dass du frägst, RIVAL."
+str_10:
+	.autostring 34 2 "Ich bin schon seit einiger Zeit auf der Spur eines sagenumwobenen Relikts, das man oft einfach als Alte Karte bezeichnet.\pIm Grunde handelt es sich dabei um einen Wegweiser, der einen direkt zur versunkenen Stadt Atlantea führen soll."
+str_11:
+	.autostring 34 2 "Die versunkene Stadt Atlantea?"
+str_12:
+	.autostring 34 2 "Aber gibt es die denn wirklich, Papa?\pIch dachte immer, das wäre bloß eine Geschichte."
+str_13:
+	.autostring 34 2 "Das weiß niemand so genau, RIVAL.\pSicherlich ist die Legende der versunkenen Stadt Atlantea auch einfach ein Seefahrermärchen.\pUnd viele der Erzählungen davon sind vermutlich mit einigen Übertreibungen ausgeschmückt."
+str_14:
+	.autostring 34 2 "Aber gleichzeitigDOTS\pGibt es auch viele Hinweise darauf, dass es eine solche Stadt tatsächlich einmal gegeben haben könnte."
+str_15:
+	.autostring 34 2 "Und wie aufregend es wäre, wenn jemand diese Stadt entdecken würde!\pWir könnten so viel über die Menschen lernen, die in Theto vor Jahrhunderten gelebt haben."
+str_16:
+	.autostring 34 2 "So eine versunkene Stadt zu erkundenDOTS\pDas hört sich nach einem aufregenden Abenteuer an!"
+str_17:
+	.autostring 34 2 "Aber das bedeutet auch, dass ihr mich erst einmal eine Weile nicht sehen werdet.\pVielleicht bin ich für Wochen oder sogar Monate unterwegs."
+str_18:
+	.autostring 34 2 "Und ich kann natürlich nicht einfach gehen, ohne mich von euch zu verabschieden, oder?"
+str_19:
+	.autostring 34 2 "Alles klar, Papa!\pIch verstehe schon!\nDu gehst jetzt auch auf ein Abenteuer."
+str_20:
+	.autostring 34 2 "Das liegt wohl bei uns in der Familie!"
+str_21:
+	.autostring 34 2 "Und außerdem ist das perfekt.\pDu findest diese versunkene Stadt und dann werde ich der Trainer sein, der sie erkundet."
+str_22:
+	.autostring 34 2 "Ich bin ja sowas von aufgeregt!"
+str_23:
+	.autostring 34 2 "Also, worauf warten wir noch, PLAYER?\pDa draußen warten Abenteuer auf uns!"
+str_24:
+	.autostring 34 2 "J-Jetzt warte doch 'mal, RIVAL!"
+str_25:
+	.autostring 34 2 "Das ist mal wieder typischDOTS"
+str_26:
+	.autostring 34 2 "Aber zumindest von dir kann ich mich ordentlich verabschieden, PLAYER."
+str_27:
+	.autostring 34 2 "Pass auf dich auf, ja?"
+str_28:
+	.autostring 34 2 "Und wenn wir schon dabei sindDOTS"
+str_29:
+	.autostring 34 2 "Kannst du am besten auch gleich noch auf RIVAL aufpassen."
+str_30:
+	.autostring 34 2 "Und bevor ich es vergesseDOTS"
+str_31:
+	.autostring 34 2 "Meine Assistentin Elise wollte dich und RIVAL noch sprechen.\pEs klang so, als hätte sie etwas für euch."
+str_32:
+	.autostring 34 2 "Aber RIVAL ist wohl schon längst über alle BergeDOTS"
+str_33:
+	.autostring 34 2 "Also sei doch so lieb und sprich mit ihr, bevor du dich wieder auf den Weg machst, ja?"
+str_34:
+	.autostring 34 2 "Bis dann, PLAYER!\pVielleicht sehen wir uns beim nächsten Mal ja in der versunkenen Stadt Atlantea wieder.\pHalt die Ohren steif!"
 
 str_0x843a47:
 	.autostring 35 2 "Du und deine Pokémon sehen ja schrecklich erschöpft aus!\pSetz dich doch noch einmal eine Weile hin und ruh dich aus!"
@@ -178,44 +418,88 @@ str_0x8a679f:
 .endif
 
 ow_script_map_3_66_person_1:
-lock
-faceplayer
-checkflag FRBADGE_3
-gotoif EQUAL check_expedition
-checkflag WONDERTRADE
-gotoif EQUAL ow_script_0x8a5ccb
-call ow_script_0x8a7343
-release
-end
+	lock
+	faceplayer
+	checkflag FRBADGE_3
+	gotoif EQUAL check_expedition
+	checkflag WONDERTRADE
+	gotoif EQUAL ow_script_0x8a5ccb
+	call ow_script_0x8a7343
+	release
+	end
 
 check_expedition:
     checkflag ROUTE_5_VIOLET_GRUNTS
     gotoif EQUAL ow_script_0x8a7343
+	checkflag FLAG_PROFESSOR_TANN_GONE
+	gotoif EQUAL elise_give_access_card
     loadpointer 0 str_expedition2
     show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
     release
     end
 
+elise_give_access_card:
+	loadpointer 0 str_elise_0
+	show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT hide_mugshot=0 message_type=MSG_KEEPOPEN
+	loadpointer 0 str_elise_1
+	update_mugshot_emotion MUGSHOT_ANNOYED
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_elise_2
+	update_mugshot_emotion MUGSHOT_HAPPY
+	callstd MSG_KEEPOPEN
+	closeonkeypress
+	hide_mugshot
+	copyvarifnotzero 0x8000 ITEM_ZUGANGSKARTE
+	copyvarifnotzero 0x8001 1
+	callstd ITEM_OBTAIN
+	loadpointer 0 str_elise_3
+	show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT hide_mugshot=0 message_type=MSG_KEEPOPEN
+	loadpointer 0 str_elise_4
+	update_mugshot_emotion MUGSHOT_HAPPY
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_elise_5
+	update_mugshot_emotion MUGSHOT_NORMAL
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_elise_6
+	update_mugshot_emotion MUGSHOT_RUMINATIVE
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_elise_7
+	update_mugshot_emotion MUGSHOT_NORMAL
+	callstd MSG_KEEPOPEN
+	closeonkeypress
+	hide_mugshot
+	npc_move_to 2 0x7 0xa
+	applymovement 2 mov_1d
+	waitmovement 0
+	pause 16
+	sound 9
+	hidesprite 2
+	checksound
+	setflag ROUTE_5_VIOLET_GRUNTS
+	clearflag MERIANA_CITY_ELISE_VISIBLE // makes her disappear
+	releaseall
+	end
+
 ow_script_0x8a7343:
-loadpointer 0x0 str_0x8aac71
-show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
-fanfare 0x13e
-loadpointer 0x0 str_0x8aa801
-callstd MSG_KEEPOPEN
-closeonkeypress
-waitfanfare
-setflag WONDERTRADE
-loadpointer 0x0 str_0x8ab119
-show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT MSG_FACE
-setvar STORY_PROGRESS 0x10
-return
+	loadpointer 0x0 str_0x8aac71
+	show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
+	fanfare 0x13e
+	loadpointer 0x0 str_0x8aa801
+	callstd MSG_KEEPOPEN
+	closeonkeypress
+	waitfanfare
+	setflag WONDERTRADE
+	loadpointer 0x0 str_0x8ab119
+	show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT MSG_FACE
+	setvar STORY_PROGRESS 0x10
+	return
 
 
 ow_script_0x8a5ccb:
-loadpointer 0x0 str_0x8a7951
-show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
-release
-end
+	loadpointer 0x0 str_0x8a7951
+	show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
+	release
+	end
 
 
 .ifdef LANG_GER
@@ -230,7 +514,22 @@ str_0x8a7951:
     .autostring 35 2 "Hallo PLAYER!\pWie geht es dir?\pSammelst du auch fleißig Daten für den Pokédex?"
 str_expedition2:
     .autostring 34 2 "Professor Tann will dich sehen.\pEr begibt sich bald auf eine Expedition."
-
+str_elise_0:
+	.autostring 34 2 "PLAYER!\pSchön, dich zu sehen."
+str_elise_1:
+	.autostring 34 2 "Sieht wohl so aus, als wären RIVAL und der Professor schon weg.\pDas sieht ihnen ähnlichDOTS"
+str_elise_2:
+	.autostring 34 2 "Dann bekommst eben nur du das Geschenk, das ich eigentlich dir und RIVAL geben wollte."
+str_elise_3:
+	.autostring 34 2 "Mit dieser Karte gelangst du in das Gebäude der Laz. Corp., der Firma, für die ich arbeite.\pMeine Forschung hier ist fast abgeschlossenDOTS"
+str_elise_4:
+	.autostring 34 2 "Und um ehrlich zu sein, ist uns in der Laz. Corp. ein Durchbruch gelungen."
+str_elise_5:
+	.autostring 34 2 "Aber ich will die Überraschung nicht vorweg nehmen.\pKomm einfach in das Hauptgebäude der Laz. Corp. in Orina City.\pDort werde ich mit meiner Überraschung auf dich warten, ja?"
+str_elise_6:
+	.autostring 34 2 "Orina City liegt westlich von Route 2, also nicht weit von hier."
+str_elise_7:
+	.autostring 34 2 "Und lass dir nicht zu viel Zeit, PLAYER, ja?\pImmerhin wird es sich lohnen, das verspreche ich dir."
 .elseif LANG_EN
 
 
