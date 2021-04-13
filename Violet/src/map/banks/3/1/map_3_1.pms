@@ -1187,7 +1187,7 @@
 				},
 				{
 					"target_index": "48",
-					"picture": "105",
+					"picture": "72",
 					"script_std": 0,
 					"field_3": 0,
 					"x": "74",
@@ -1201,7 +1201,7 @@
 					"field_B": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_map_bluetenbach_elise",
+					"script": "ow_script_map_bluetenbach_rival",
 					"flag": "MERIANA_CITY_ELISE_VISIBLE | 0x8000",
 					"value": {
 						"item": 0,

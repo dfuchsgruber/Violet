@@ -8,8 +8,8 @@
 #ifndef MUSIC_H
 #define	MUSIC_H
 
-
 #include "types.h"
+#include "constants/songs.h"
 
 #define SONG_TYPE_SONG 0
 #define SONG_TYPE_SOUND 1
@@ -20,7 +20,7 @@
 typedef struct {
     const void *mid;
     u16 type;
-    u16 type2; //exact copy of type
+    u16 type2; // exact copy of type
 } song;
 
 /**
@@ -62,6 +62,14 @@ void song_play_by_controller (u16 song);
  **/
 u16 song_get_current();
 
+typedef struct {
+    u16 song_idx;
+    u16 duration;
+} fanfare_t;
+
+// How many frames the fanfare is still playing
+extern u16 fanfare_delay;
+
 /**
  * Plays a song on fanfare player
  * @param song_id id of the song to play
@@ -73,6 +81,11 @@ void fanfare(u16 song_id);
  * @param self self-reference in the big_callbacks array
  */
 void fanfare_callback_wait(u8 self);
+
+/**
+ * Creates a new callback to wait for the fanfare and resumes to the normal song.
+ **/
+void fanfare_callback_wait_new();
 
 /**
  * Gets the song to play in battle
@@ -93,11 +106,27 @@ u16 map_get_song();
  */
 u16 trainer_get_encounter_song(u16 trainer_id);
 
-
 extern u8 mplay_info_background_music[0x40]; // Todo: Reserach data type
 extern u8 mplay_info_sound_effect_0[0x40];
 extern u8 mplay_info_sound_effect_1[0x40];
 extern u8 mplay_info_sound_effect_2[0x40];
+
+/**
+ * Stops a mplay player
+ * @param mplay_info which player to stop
+ **/
+void mplay_stop(void *mplay_info);
+
+/**
+ * Uses the adequate mplay player to play a song
+ * @param song_idx the song to play
+ **/
+void mplay_start_song(u16 song_idx);
+
+/**
+ * Stops a song using the adquate mplay player
+ **/
+void mplay_stop_song(u16 song_idx);
 
 /**
  * Sets the song player volume
@@ -188,6 +217,8 @@ extern const unsigned char mus_dark_queen_battle2[];
 extern const unsigned char mus_dark_queen2[];
 extern const unsigned char mus_bbship[];
 extern const unsigned char mus_bb_battle[];
+extern const unsigned char fanfare_gong[];
+
 
 #endif	/* MUSIC_H */
 

@@ -134,8 +134,7 @@ $(COBJS): $(BLDPATH)/%.o: %.c
 	
 $(MIDAS): $(BLDPATH)/%.s: %.mid
 	$(shell mkdir -p $(dir $@))
-	$(MID2AGB) $(MIDFLAGS) -G$(shell echo "$<" | sed -n 's?.*\/vcg\(.*\)\/.*?\1?p') $< $@ > /dev/null
-	#$(MID2AGB) $< $@ -m 92 -g voicegroup$(shell echo "$<" | sed -n 's?.*\/vcg\(.*\)\/.*?\1?p') 
+	$(MID2AGB) $(shell cat $(basename $<).flags) $< $@ > /dev/null
 	
 $(MIDOBJS): %.o: %.s
 	$(shell mkdir -p $(dir $@))

@@ -13,6 +13,7 @@
 .include "overworld_script.s"
 .include "species.s"
 .include "items.s"
+.include "overworld/overworld_effects.s"
 
 .global ow_script_map_bluetenbach_person_0
 .global ow_script_map_bluetenbach_person_1
@@ -37,7 +38,7 @@
 .global ow_script_map_bluetenbach_person_20
 .global ow_script_map_bluetenbach_trainer_0
 .global ow_script_map_bluetenbach_move_tutor_rock_slide
-.global ow_script_map_bluetenbach_elise
+.global ow_script_map_bluetenbach_rival
 .global ow_script_map_bluetenbach_black_belt_gift
 
 ow_script_map_bluetenbach_person_0:
@@ -323,19 +324,84 @@ str_move_tutor_abort:
     .autostring 34 2 "What a shame!\pIf you want me to teach one of your Pokémon Rock Slide, I will just be right here."
 .endif
 
-ow_script_map_bluetenbach_elise:
+ow_script_map_bluetenbach_rival:
     lock
     faceplayer
-    buffernumber 0 WONDERTRADE_CNT
-    loadpointer 0x0 str_elise
-    show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
-    fadescreen 1
+
+	setvar 0x8004 2
+	setvar 0x8005 2
+	special SPECIAL_BUFFER_BADGE_NAME
+    loadpointer 0 str_rival_0
+    show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT hide_mugshot=0 message_type=MSG_KEEPOPEN
+    loadpointer 0 str_rival_1
+    update_mugshot_emotion MUGSHOT_HAPPY
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_rival_2
+    update_mugshot_emotion MUGSHOT_RUMINATIVE
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_rival_3
+    update_mugshot_emotion MUGSHOT_HAPPY
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_rival_4
+    update_mugshot_emotion MUGSHOT_HAPPY
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_rival_5
+    update_mugshot_emotion MUGSHOT_NORMAL
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_rival_6
+    update_mugshot_emotion MUGSHOT_RUMINATIVE
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_rival_7
+    update_mugshot_emotion MUGSHOT_NORMAL
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_rival_8
+    update_mugshot_emotion MUGSHOT_HAPPY
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_rival_9
+    update_mugshot_emotion MUGSHOT_NORMAL
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_rival_10
+    update_mugshot_emotion MUGSHOT_HAPPY
+    callstd MSG_KEEPOPEN
+    hide_mugshot
+    closeonkeypress
+    pause 15
+    applymovement LASTTALKED mov_fd
+    waitmovement 0
+    pause 50
+    setanimation 0, 1
+    doanimation OVERWORLD_EFFECT_NPCFLY_OUT
+    pause 15
     hidesprite LASTTALKED
-    fadescreen 0
+    checkanimation OVERWORLD_EFFECT_NPCFLY_OUT
     release
     end
 
 .ifdef LANG_GER
+str_rival_0:
+    .autostring 34 2 "PLAYER!\pDa bist du ja!"
+str_rival_1:
+    .autostring 34 2 "Hätte ich mir eigentlich denken müssen, dass ich dich in der Arena finde."
+str_rival_2:
+    .autostring 34 2 "Du siehst ganz schön geschafft ausDOTS"
+str_rival_3:
+    .autostring 34 2 "Da hat dir Manuel wohl ordentlich zugesetzt, was?"
+str_rival_4:
+    .autostring 34 2 "Aber ich habe den BUFFER_3 natürlich schon errungen!"
+str_rival_5:
+    .autostring 34 2 "Deswegen habe ich dich aber eigentlich nicht gesucht, PLAYER."
+str_rival_6:
+    .autostring 34 2 "Und ich fürchte, dass wir leider auch keine Zeit haben, gegeneinander zu kämpfen."
+str_rival_7:
+    .autostring 34 2 "Weißt du, ich habe vorhin einen Anruf von Papi erhalten.\pUnd du wirst nie erraten, was er mir erzählt hat, PLAYER!"
+str_rival_8:
+    .autostring 34 2 "Papi wird sich auf eine gefährliche Expedition begeben und für einige Zeit unterwegs sein."
+str_rival_9:
+    .autostring 34 2 "Und da wollte er sich davor noch von uns beiden verabschieden.\pAlso müssen wir unseren Kampf vertagen, PLAYER.\pIch weiß nicht, wie lange Papi noch hier sein wird, also sollten wir uns besser beeilen, ja?"
+str_rival_10:
+    .autostring 34 2 "Wer zuletzt in seinem Labor auf Route 2 ist, schuldet dem anderen einen Tee aus Kaskada, ja?\pUnd dir gebe ich ganz sicher nichts aus, PLAYER!"
+
+
 str_elise:
 	.autostring 34 2 "Hallo PLAYER!\nSchön, dich zu sehen!\pIch muss dir wirklich noch einmal danken, dass du im Kranzwald meinen Vater vor Team Violet gerettet hast.\pEs will mir nicht in den Kopf gehen, dass solche Leute es auf meinen Vater abgesehen habenDOTS\pAber ich bin aus einem ganz anderen Grund hier.\pProfessor Tann schickt mich, weil er dir und RIVAL etwas verkünden möchte.\pEigentlich sollte ich es nicht verraten, aber er wird sich auf eine sehr gefährliche Expedition begeben und will euch beide zuvor noch einmal sehen.\pAm Besten besuchst du uns in Professor Tanns Labor auf Route 2.\pBis dann, PLAYER!"
 .elseif LANG_EN

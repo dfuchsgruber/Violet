@@ -167,7 +167,7 @@ bool battle_handicap_attack_done() {
     battler *attacker = battlers + attacking_battler;
     // Apply handicap rules, step by step, the current state is fmem.gp_value
     if (BATTLE_STATE2->switch_in_handicap_effects_cnt == BATTLE_HANDICAP_ARENA_ENCOURAGEMENT && (fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_ARENA_ENCOURAGEMENT]) &&
-            !(attack_result & (ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)) && 
+            !(attack_result & ATTACK_NO_EFFECT_ANY) && 
             attacks[active_attack].base_power &&
             !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED
             && attacker->stat_changes[1] < 12 && 

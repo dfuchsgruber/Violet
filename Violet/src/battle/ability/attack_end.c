@@ -51,8 +51,7 @@ bool battle_abilities_attack_done_attacker_new() {
         battlescript_callstack_push_next_command();
         bsc_offset = bsc_lernfaehig;
         return true;
-    } else if (attacker->ability == HOCHMUT && !(attack_result & (ATTACK_MISSED |
-            ATTACK_NO_EFFECT | ATTACK_FAILED)) && 
+    } else if (attacker->ability == HOCHMUT && !(attack_result & ATTACK_NO_EFFECT_ANY) && 
             attacks[active_attack].base_power &&
             !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED
             && !defender->current_hp && attacker->stat_changes[1] < 12){
@@ -66,8 +65,7 @@ bool battle_abilities_attack_done_attacker_new() {
         battlescript_callstack_push_next_command();
         bsc_offset = bsc_hochmut;
         return true;
-    }else if (attacker->ability == LEBENSRAEUBER && !(attack_result & (
-            ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)) && 
+    }else if (attacker->ability == LEBENSRAEUBER && !(attack_result & ATTACK_NO_EFFECT_ANY) && 
             attacks[active_attack].base_power && attacker->current_hp <
             attacker->max_hp &&
             !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED){
@@ -81,8 +79,7 @@ bool battle_abilities_attack_done_attacker_new() {
         bsc_offset = bsc_lebensraeuber;
         battlescript_callstack_push_next_command(); 
         return true;
-    }else if (attacker->ability == CURATOR && !(attack_result & (
-            ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)) && 
+    }else if (attacker->ability == CURATOR && !(attack_result & ATTACK_NO_EFFECT_ANY) && 
             attacker->current_hp < attacker->max_hp && !battler_statuses[attacking_battler].hurt_in_confusion){
         for (size_t i = 0; i < ARRAY_COUNT(curator_relevant_attacks); i++) {
             if (active_attack == curator_relevant_attacks[i]) {
@@ -98,8 +95,7 @@ bool battle_abilities_attack_done_attacker_new() {
                 return true;
             }
         }
-    } else if (attacker->ability == EXTRADORN && !(attack_result & (
-            ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)) &&
+    } else if (attacker->ability == EXTRADORN && !(attack_result & ATTACK_NO_EFFECT_ANY) &&
             defender->current_hp && 
             (attacks[active_attack].flags & MAKES_CONTACT) &&
             !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED){
@@ -120,7 +116,7 @@ bool battle_abilities_attack_done_defender_new() {
     battler *defender = battlers + defending_battler;
     dprintf("Defender ability %d\n", defender->ability);
     defending_battler_ability = defender->ability;
-    if(defender->ability == FLUFFIG && !(attack_result & (ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)) &&
+    if(defender->ability == FLUFFIG && !(attack_result & ATTACK_NO_EFFECT_ANY) &&
             (attacks[active_attack].flags & MAKES_CONTACT) && !battler_statuses[attacking_battler].hurt_in_confusion && 
             DAMAGE_CAUSED) {
     	if (attacker->stat_changes[3] > 0) {
@@ -138,7 +134,7 @@ bool battle_abilities_attack_done_defender_new() {
             bsc_offset = bsc_fluffy;
             return true;
     	}
-    } else if (defender->ability == TINTENSCHUSS && !(attack_result & (ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)) &&
+    } else if (defender->ability == TINTENSCHUSS && !(attack_result & ATTACK_NO_EFFECT_ANY) &&
             (attacks[active_attack].flags & MAKES_CONTACT) && !battler_statuses[attacking_battler].hurt_in_confusion && 
             DAMAGE_CAUSED && attacker->stat_changes[STAT_ACCURACY] > 0) {
             attacker->stat_changes[STAT_ACCURACY] = (u8) MAX(0, attacker->stat_changes[STAT_ACCURACY] - 2);

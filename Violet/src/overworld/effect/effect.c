@@ -65,6 +65,71 @@ void special_overworld_effect_explosion() {
     overworld_effect_new(OVERWORLD_EFFECT_EXPLOSION);
 }
 
+static graphic overworld_effect_sound_wave_graphics[] = {
+    {.tag = 0xFFFF, .size = GRAPHIC_SIZE_4BPP(64, 64), .sprite = gfx_overworld_effect_sound_waveTiles},
+};
+
+palette overworld_effect_sound_wave_palette = {
+    .pal = gfx_overworld_effect_sound_wavePal, .tag = GFX_TAG_OVERWORLD_EFFECT_SOUND_WAVE,
+};
+
+static sprite overworld_effect_sound_wave_sprite = {
+    .attr0 = ATTR0_SHAPE_SQUARE | ATTR0_DSIZE | ATTR0_ROTSCALE, .attr1 = ATTR1_SIZE_64_64, .attr2 = ATTR2_PRIO(1),
+};
+
+
+static rotscale_frame overworld_effect_sound_wave_rotscale_anim[] = {
+    {.affine = {.affine_x_value = 32, .affine_y_value = 32, .duration = 0}},
+    {.affine = {.affine_x_value = 8, .affine_y_value = 8, .duration = 16}},
+    {.command = {.command = ROTSCALE_ANIM_END}}
+};
+
+static void overworld_effect_sound_wave_oam_callback(oam_object *self) {
+    // if (self->private[0]++ >= overworld_effect_sound_wave_rotscale_anim[1].affine.duration) {
+    if (self->flags & OAM_FLAG_GFX_ROTSCALE_ANIM_END) {
+        oam_rotscale_free(self);
+        overworld_effect_delete(self, OVERWORLD_EFFECT_SOUND_WAVE);
+    }
+}
+
+static gfx_frame overworld_effect_sound_wave_gfx_animation[] = {
+    {.data = 0, .duration = 0}, {.data = GFX_ANIM_END}, 
+};
+
+static gfx_frame *overworld_effect_sound_wave_gfx_animations[] = {overworld_effect_sound_wave_gfx_animation};
+
+static rotscale_frame *overworld_effect_sound_wave_rotscale_animations[] = {overworld_effect_sound_wave_rotscale_anim};
+
+static oam_template overworld_effect_sound_wave_oam_template = {
+    .tiles_tag = 0xFFFF, .pal_tag = GFX_TAG_OVERWORLD_EFFECT_SOUND_WAVE,
+    .graphics = overworld_effect_sound_wave_graphics,
+    .oam = &overworld_effect_sound_wave_sprite, .animation = overworld_effect_sound_wave_gfx_animations,
+    .rotscale = overworld_effect_sound_wave_rotscale_animations, .callback = overworld_effect_sound_wave_oam_callback,
+};
+
+
+
+void overworld_effect_sound_wave() {
+    s16 x = (s16)(overworld_effect_state.x + 7);
+    s16 y = (s16)(overworld_effect_state.y + 7);
+    overworld_effect_ow_coordinates_to_screen_coordinates(&x, &y, 7, 4);
+    u8 oam_idx = oam_new_backward_search(&overworld_effect_sound_wave_oam_template, x, y , 0);
+    oams[oam_idx].flags |= OAM_FLAG_CENTERED;
+    oam_rotscale_anim_init(oams + oam_idx, 0);
+    oams[oam_idx].private[0] = 0;
+    // oam_gfx_anim_start(oams + oam_idx, 0);
+}
+
+void special_overworld_effect_sound_wave() {
+    // overworld_effect_state.x = *var_access(0x8004);
+    // overworld_effect_state.y = *var_access(0x8005);
+    coordinate_t pos;
+    player_get_facing_position(&pos.x, &pos.y);
+    overworld_effect_state.x = pos.x - 7;
+    overworld_effect_state.y = pos.y - 7;
+    overworld_effect_new(OVERWORLD_EFFECT_SOUND_WAVE);
+}
+
 static void overworld_effect_npc_transparent_flicker_big_callback(u8 self) {
     u8 person_idx = (u8)big_callbacks[self].params[0];
     u16 amplitude = big_callbacks[self].params[1];
@@ -240,4 +305,5 @@ const u8 *overworld_effects[NUM_OVERWORLD_EFFECTS] = {
     [OVERWORLD_EFFECT_EXPLOSION] = overworld_effect_script_explosion,
     [OVERWORLD_EFFECT_NPC_TRANSPARENT_FLICKER] = overworld_effect_script_npc_transparent_flicker,
     [OVERWORLD_EFFECT_NPC_TRANSPARENT_FADE] = overworld_effect_script_npc_transparent_fade,
+    [OVERWORLD_EFFECT_SOUND_WAVE] = overworld_effect_script_sound_wave,
 };

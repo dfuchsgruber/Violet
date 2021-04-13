@@ -12,7 +12,7 @@
 #include "constants/attack_results.h"
 #include "oam.h"
 
-#define ATTACK_NO_EFFECT (ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)
+#define ATTACK_NO_EFFECT_ANY (ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)
 
 extern u16 active_attack;
 extern u8 active_attack_slot;

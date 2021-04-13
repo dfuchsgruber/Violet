@@ -484,7 +484,6 @@ void bsc_teleport_set_outcome() {
 }
 
 void bsc_command_x06_typecalc() {
-    dprintf("Typecalc\n");
     u8 move_type;
     if (active_attack == ATTACK_VERZWEIFLER) {
         ++bsc_offset;
@@ -498,7 +497,7 @@ void bsc_command_x06_typecalc() {
     }
     if (battlers[defending_battler].ability == SCHWEBE && move_type == TYPE_BODEN) {
         defending_battler_ability = battlers[defending_battler].ability;
-        attack_result |= ATTACK_MISSED | ATTACK_NO_EFFECT;
+        attack_result |= (ATTACK_MISSED | ATTACK_NO_EFFECT);
         battler_last_landed_move[defending_battler] = 0;
         battler_last_hit_by_type[defending_battler] = 0;
         battle_communication[6] = move_type;
@@ -623,7 +622,7 @@ extern u8 battlescript_weakened_by_berry[];
 void bsc_command_after_x07_adjustnormaldamage() {
     dprintf("bsc command 0x7: status custom of attacking battler: 0x%x\n", BATTLE_STATE2->status_custom[attacking_battler]);
     if ((BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_GEM_USED)
-        && !(attack_result & ATTACK_NO_EFFECT) && battlers[attacking_battler].item != 0) {
+        && !(attack_result & ATTACK_NO_EFFECT_ANY) && battlers[attacking_battler].item != 0) {
         bsc_last_used_item = battlers[attacking_battler].item;
         battlescript_callstack_push_next_command();
         bsc_offset = battlescript_gem_used;

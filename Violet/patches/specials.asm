@@ -295,6 +295,8 @@ special_table equ 0x0815FCC0
         .word automatic_hm_usage_active | 1
 .org (special_table + 178 * 4)
         .word player_pokemon_get_highest_level_flash_user | 1
+.org (special_table + 179 * 4)
+        .word special_overworld_effect_sound_wave | 1
 
 // 172 <= free <= 179
 

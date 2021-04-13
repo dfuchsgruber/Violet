@@ -106,8 +106,7 @@ bool battle_items_life_orb() {
     switch(item_get_hold_effect(attacker->item)) {
         case HOLD_EFFECT_LIFE_ORB: {
             if (attacker->current_hp &&
-            !(attack_result & (ATTACK_FAILED | ATTACK_MISSED |
-            ATTACK_NO_EFFECT)) && attacks[active_attack].base_power &&
+            !(attack_result & ATTACK_NO_EFFECT_ANY) && attacks[active_attack].base_power &&
             !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED){
                 damage_to_apply = MAX(1, attacker->max_hp / item_get_hold_effect_parameter(attacker->item));
                 battle_scripting.battler_idx = attacking_battler;
@@ -133,8 +132,7 @@ bool battle_items_gunpowder() {
     switch (item_get_hold_effect(battlers[defending_battler].item)) {
         case HOLD_EFFECT_GUN_POWDER: {
             if (attacks[active_attack].type == TYPE_FEUER && battlers[defending_battler].current_hp > 0 &&
-            !(attack_result & (ATTACK_FAILED | ATTACK_MISSED |
-            ATTACK_NO_EFFECT)) && attacks[active_attack].base_power &&
+            !(attack_result & ATTACK_NO_EFFECT_ANY) && attacks[active_attack].base_power &&
             !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED) {
                 damage_to_apply = battlers[defending_battler].current_hp;
                 battle_scripting.battler_idx = defending_battler;

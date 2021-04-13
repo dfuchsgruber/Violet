@@ -6,6 +6,7 @@
 .global overworld_effect_script_pokeball
 .global overworld_effect_script_high_grass
 .global overworld_effect_script_tall_grass
+.global overworld_effect_script_sound_wave
 
 overworld_effect_script_explosion:
     loadpalwithshaders_and_callasm overworld_effect_explosion_palette overworld_effect_explosion
@@ -19,6 +20,9 @@ overworld_effect_script_npc_transparent_fade:
 overworld_effect_script_pokeball:
     callasm overworld_effect_sliding_pokeball_load_palette
     callasm overworld_effect_pokeball
+    end
+overworld_effect_script_sound_wave:
+    loadpalwithshaders_and_callasm overworld_effect_sound_wave_palette overworld_effect_sound_wave
     end
 
 overworld_effect_script_high_grass:

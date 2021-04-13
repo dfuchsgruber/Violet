@@ -690,22 +690,22 @@ trainer_pokemon_default_item_default_attacks trainer_party_x7f[] = {
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x80[] = {
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,32,POKEMON_RASAFF),
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,31,POKEMON_MEDITIE)
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,35,POKEMON_RASAFF),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,35,POKEMON_MEDITIE)
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x81[] = {
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,34,POKEMON_SKARABORN)
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,37,POKEMON_SKARABORN)
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x82[] = {
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,30,POKEMON_MASCHOCK),
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,31,POKEMON_RIOLU),
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,30,POKEMON_RASAFF)
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,35,POKEMON_MASCHOCK),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,34,POKEMON_RIOLU),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,36,POKEMON_RASAFF)
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x83[] = {
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,33,POKEMON_MASCHOCK)
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,37,POKEMON_MASCHOCK)
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x84[] = {
@@ -2551,3 +2551,22 @@ trainer_pokemon_custom_item_custom_attacks trainer_party_x1cc_bluetenbach_gym_ma
 	TRAINER_PARTY_CUSTOM_ITEM_CUSTOM_MOVES(11, TRAINER_BUILD_PHYSICAL_SWEEPER_SPEED_PREFERENCE, 0x0, false, false, 41, POKEMON_RESLADERO, ITEM_SALKABEERE, ATTACK_AERO_ASS, ATTACK_DURCHBRUCH, ATTACK_DONNERSCHLAG, ATTACK_AUSDAUER),
 	TRAINER_PARTY_CUSTOM_ITEM_CUSTOM_MOVES(11, TRAINER_BUILD_PHYSICAL_SWEEPER_ATTACK_PREFERENCE, 0x0, false, false, 43, POKEMON_LUCARIO, ITEM_TAMOTBEERE, ATTACK_NAHKAMPF, ATTACK_STEINKANTE, ATTACK_ERDBEBEN, ATTACK_PATRONENHIEB)
 };
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1cd_bluetenbach_gym_trainer_4[3] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,34,POKEMON_MASCHOCK),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,35,POKEMON_RIOLU),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,34,POKEMON_MEDITIE),
+}; 
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1ce_bluetenbach_gym_trainer_5[1] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,37,POKEMON_KICKLEE),
+}; 
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1cf_bluetenbach_gym_trainer_6[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,36,POKEMON_RASAFF),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,35,POKEMON_RABAUZ),
+}; 
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1d0_bluetenbach_gym_trainer_7[1] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,37,POKEMON_NOCKCHAN),
+}; 
