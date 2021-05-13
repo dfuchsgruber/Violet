@@ -701,6 +701,18 @@ wild_pokemon_data wild_pokemon[] = {
 		.grass = &wild_pokemon_0_7_grass,
 	},
 	{
+		.bank = 17, .map = 0,
+		.grass = &wild_pokemon_route_5_cave_grass,
+	},
+	{
+		.bank = 17, .map = 1,
+		.grass = &wild_pokemon_route_5_cave_grass,
+	},
+	{
+		.bank = 17, .map = 4,
+		.grass = &wild_pokemon_route_5_cave_grass,
+	},
+	{
 	    .bank = 0xFF, .map = 0xFF, .field_2 = 0xFF, .field_3 = 0xFF,
 	    .grass = NULL, .water = NULL, .other = NULL, .rod = NULL
 	},

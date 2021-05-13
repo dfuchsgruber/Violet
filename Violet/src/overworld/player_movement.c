@@ -20,6 +20,7 @@
 #include "constants/block_behaviour.h"
 #include "debug.h"
 #include "options.h"
+#include "vars.h"
 
 extern u8 ow_script_transition_start_surfing[];
 extern u8 ow_script_transition_start_waterfall[];
@@ -314,4 +315,11 @@ void player_npc_move(u8 direction, key keys_new, key keys_held) {
     } else {
         player_npc_controll_not_biking(direction, keys_held);
     }
+}
+
+void special_player_get_position_facing() {
+    coordinate_t pos;
+    player_get_facing_position(&pos.x, &pos.y);
+    *var_access(0x8004) = (u16)(pos.x - 7);
+    *var_access(0x8005) = (u16)(pos.y - 7);
 }

@@ -59,6 +59,11 @@ void generic_tileset_anim_proceed_all(tileset_animation_header *anim_header,
 void overworld_load_tileset_pal(tileset *t, u16 dst_col, u16 bytecnt);
 
 /**
+ * Initializes the animations of the secondary tileset, but not general map effects like cloud upstreams
+ **/
+void _tileset_secondary_animation_initialize();
+
+/**
  * Proceeds tileset animation callbacks and clocks. Called by the overworld_proceed function.
  */
 void tileset_anim_proceed();

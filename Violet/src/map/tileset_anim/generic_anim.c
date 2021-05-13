@@ -6,6 +6,7 @@
 #include "constants/flags.h"
 #include "flags.h"
 #include "dma.h"
+#include "map/cloud.h"
 
 u16 generic_tileset_anim_get_clk(tileset_animation_header *anim_header){
     if(anim_header->cnt == 0) return 640 * 9;
@@ -38,5 +39,14 @@ void generic_tileset_anim_proceed_all(tileset_animation_header *anim_header,
     for(size_t i = 0; i < anim_header->cnt; i++)
         generic_tileset_anim_proceed(&anim_header->animations[i], clk);
     
+}
+
+void tileset_secondary_animation_initialize_() {
+    map_cloud_upstream_new();
+    tileset_anim_clk1 = 0;
+    tileset_anim_clk1_cycle = 0;
+    tileset_anim_1 = NULL;
+    if (mapheader_virtual.footer->tileset2 && mapheader_virtual.footer->tileset2->animation_init)
+        mapheader_virtual.footer->tileset2->animation_init();
 }
 

@@ -709,6 +709,21 @@
 				"map_17_3",
 				"src/map/banks/17/3/map_17_3.pms",
 				"MAP_ROUTE_5"
+			],
+			"0": [
+				"map_route_5_cave",
+				"src/map/banks/17/1/map_route_5_cave.pms",
+				"MAP_ROUTE_5"
+			],
+			"1": [
+				"map_route_5_cave_1f",
+				"src/map/banks/17/1/map_route_5_cave_1f.pms",
+				"MAP_ROUTE_5"
+			],
+			"4": [
+				"map_route_5_cave_2f",
+				"src/map/banks/17/4/map_route_5_cave_2f.pms",
+				"MAP_ROUTE_5"
 			]
 		},
 		"18": {
@@ -2098,6 +2113,18 @@
 		"map_footer_meriana_city_gym_arena": [
 			148,
 			"src/map/banks/5/6/map_footer_meriana_city_gym_arena.pms"
+		],
+		"map_footer_route_5_cave": [
+			149,
+			"src/map/banks/17/1/map_footer_route_5_cave.pms"
+		],
+		"map_footer_route_5_cave_1f": [
+			150,
+			"src/map/banks/17/1/map_footer_route_5_cave_1f.pms"
+		],
+		"map_footer_route_5_cave_2f": [
+			151,
+			"src/map/banks/17/4/map_footer_route_5_cave_2f.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -2164,7 +2191,9 @@
 		"maptileset_kaskada_tea_house": "src/map/tileset/maptileset_kaskada_tea_house.pms",
 		"maptileset_desert_tent": "src/map/tileset/maptileset_desert_tent.pms",
 		"maptileset_felsige_oednis_savanna": "src/map/tileset/maptileset_felsige_oednis_savanna.pms",
-		"maptileset_meriana_city_gym_rooftop": "src/map/tileset/maptileset_meriana_city_gym_rooftop.pms"
+		"maptileset_meriana_city_gym_rooftop": "src/map/tileset/maptileset_meriana_city_gym_rooftop.pms",
+		"maptileset_route_5": "src/map/tileset/maptileset_route_5.pms",
+		"maptileset_route_5_cave": "src/map/tileset/maptileset_route_5_cave.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2225,6 +2254,8 @@
 		"gfx_maptileset_kaskada_tea_houseTiles": "asset/gfx/tileset/gfx_maptileset_kaskada_tea_house.png",
 		"gfx_maptileset_desert_tentTiles": "asset/gfx/tileset/gfx_maptileset_desert_tent.png",
 		"gfx_maptileset_felsige_oednis_savannaTiles": "asset/gfx/tileset/gfx_maptileset_felsige_oednis_savanna.png",
-		"gfx_maptileset_meriana_city_gym_rooftopTiles": "asset/gfx/tileset/gfx_maptileset_meriana_city_gym_rooftop.png"
+		"gfx_maptileset_meriana_city_gym_rooftopTiles": "asset/gfx/tileset/gfx_maptileset_meriana_city_gym_rooftop.png",
+		"gfx_maptileset_route_5Tiles": "asset/gfx/tileset/gfx_maptileset_route_5.png",
+		"gfx_maptileset_route_5_caveTiles": "asset/gfx/tileset/gfx_maptileset_route_5_cave.png"
 	}
 }

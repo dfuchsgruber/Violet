@@ -1039,7 +1039,7 @@
 .byte 0xa5
 .endm
 
-.macro cmda6 param1
+.macro setonstepcallback param1
 .byte 0xa6
 .byte \param1
 .endm

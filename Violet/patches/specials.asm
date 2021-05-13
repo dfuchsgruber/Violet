@@ -297,8 +297,9 @@ special_table equ 0x0815FCC0
         .word player_pokemon_get_highest_level_flash_user | 1
 .org (special_table + 179 * 4)
         .word special_overworld_effect_sound_wave | 1
-
-// 172 <= free <= 179
+.org (special_table + 201 * 4)
+        .word special_player_get_position_facing | 1
+// 201 <= free <= 204
 
 .org (special_table + (0x129 * 4))
                 .word special_roamer_reset_and_initialize | 1

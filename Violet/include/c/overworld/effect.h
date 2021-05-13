@@ -202,5 +202,6 @@ extern const u8 overworld_effect_script_explosion[];
 extern const u8 overworld_effect_script_npc_transparent_flicker[];
 extern const u8 overworld_effect_script_npc_transparent_fade[];
 extern const u8 overworld_effect_script_sound_wave[];
+extern const u8 overworld_effect_script_whirlwind[];
 
 #endif

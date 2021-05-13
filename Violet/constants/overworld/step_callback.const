@@ -1,0 +1,8 @@
+{
+    "type" : "enum",
+    "base" : 0,
+    "values" : [
+        "OVERWORLD_STEP_CALLBACK_NONE",
+        "OVERWORLD_STEP_CALLBACK_ROUTE_5_CAVE"
+    ]
+}

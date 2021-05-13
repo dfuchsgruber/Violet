@@ -3,7 +3,7 @@
 		"footer": "map_footer_110",
 		"events": {
 			"person_cnt": 64,
-			"warp_cnt": 8,
+			"warp_cnt": 4,
 			"trigger_cnt": 5,
 			"signpost_cnt": 8,
 			"persons": [
@@ -90,8 +90,8 @@
 					"picture": 22,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "17",
-					"y": "39",
+					"x": "14",
+					"y": "40",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_ROTATE_COUNTERCLOCKWISE",
 					"behaviour_range": {
@@ -194,8 +194,8 @@
 					"picture": 27,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "36",
-					"y": "22",
+					"x": "35",
+					"y": "21",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -272,13 +272,13 @@
 					"picture": 42,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "24",
-					"y": "11",
+					"x": "25",
+					"y": "8",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_ROTATE_CLOCKWISE",
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_RIGHT_LEFT_DOWN_UP",
 					"behaviour_range": {
-						"x": "0",
-						"y": "0"
+						"x": "8",
+						"y": "6"
 					},
 					"is_trainer": "1",
 					"alert_radius": 5,
@@ -350,8 +350,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "20",
-					"y": "20",
+					"x": "22",
+					"y": "21",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -376,8 +376,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "33",
-					"y": "26",
+					"x": "34",
+					"y": "25",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -532,8 +532,8 @@
 					"picture": 49,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 2,
-					"y": 15,
+					"x": "1",
+					"y": "15",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
@@ -558,7 +558,7 @@
 					"picture": 50,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "3",
+					"x": "0",
 					"y": "16",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_RIGHT",
@@ -584,8 +584,8 @@
 					"picture": 50,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 1,
-					"y": 14,
+					"x": "0",
+					"y": "14",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
@@ -610,8 +610,8 @@
 					"picture": 50,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 3,
-					"y": 12,
+					"x": "2",
+					"y": "12",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
@@ -636,8 +636,8 @@
 					"picture": 49,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 2,
-					"y": 13,
+					"x": "1",
+					"y": "13",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
@@ -662,7 +662,7 @@
 					"picture": 50,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "2",
+					"x": "1",
 					"y": "11",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_LEFT",
@@ -1130,8 +1130,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "27",
-					"y": "72",
+					"x": "32",
+					"y": "84",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -1156,7 +1156,7 @@
 					"picture": "26",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "32",
+					"x": "31",
 					"y": "59",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_LEFT",
@@ -1286,8 +1286,8 @@
 					"picture": "17",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "38",
-					"y": "18",
+					"x": "39",
+					"y": "20",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
@@ -1311,8 +1311,8 @@
 					"picture": "17",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "39",
-					"y": "18",
+					"x": "40",
+					"y": "20",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
@@ -1655,16 +1655,16 @@
 					"target_warp_idx": 0
 				},
 				{
-					"x": "38",
-					"y": "2",
+					"x": "60",
+					"y": "6",
 					"level": 0,
 					"target_bank": 17,
 					"target_map": 3,
 					"target_warp_idx": 0
 				},
 				{
-					"x": 42,
-					"y": 37,
+					"x": "40",
+					"y": "38",
 					"level": 0,
 					"target_bank": 3,
 					"target_map": 72,
@@ -1677,38 +1677,6 @@
 					"target_bank": "3",
 					"target_map": "75",
 					"target_warp_idx": 0
-				},
-				{
-					"x": "62",
-					"y": "8",
-					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": "3",
-					"target_bank": "11"
-				},
-				{
-					"x": "63",
-					"y": "8",
-					"level": 0,
-					"target_warp_idx": "1",
-					"target_map": "3",
-					"target_bank": "11"
-				},
-				{
-					"x": "63",
-					"y": "9",
-					"level": 0,
-					"target_warp_idx": "2",
-					"target_map": "3",
-					"target_bank": "11"
-				},
-				{
-					"x": "62",
-					"y": "9",
-					"level": 0,
-					"target_warp_idx": "3",
-					"target_map": "3",
-					"target_bank": "11"
 				}
 			],
 			"triggers": [
@@ -1866,8 +1834,8 @@
 					"flag": "0"
 				},
 				{
-					"x": "26",
-					"y": "22",
+					"x": "29",
+					"y": "20",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
@@ -1913,7 +1881,7 @@
 				},
 				{
 					"direction": "MAP_CONNECTION_WEST",
-					"displacement": -6,
+					"displacement": "-22",
 					"bank": 3,
 					"field_A": 0,
 					"field_B": 0,

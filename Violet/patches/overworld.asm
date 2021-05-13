@@ -491,3 +491,14 @@ _blxr4:
     ldr r1, =overworld_fadescreen | 1
     bx r1
     .pool
+
+
+.org 0x0806e834
+    ldr r1, =overworld_step_callback_set | 1
+    bx r1
+    .pool
+
+.org 0x0806e828
+    .word overworld_step_callback_proceed | 1
+.org 0x0806e8ac
+    .word overworld_step_callback_proceed | 1

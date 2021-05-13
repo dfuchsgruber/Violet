@@ -220,7 +220,13 @@ battle_bg battle_bgs[256] = {
         gfx_battle_bg_cave_waterMap,
         NULL, NULL,
         gfx_battle_bg_cave_waterPal,
-    }
+    },
+    [BATTLE_BG_ROUTE_5_CAVE] = {
+        gfx_battle_bg_cloud_ruinsTiles,
+        gfx_battle_bg_cloud_ruinsMap,
+        NULL, NULL,
+        gfx_battle_bg_cloud_ruinsPal,
+    },
 };
 
 
@@ -315,6 +321,8 @@ void bsc_cmd_xEB_set_type_to_terrain() {
     case BATTLE_BG_BBSHIP_OUTSIDE:
     case BATTLE_BG_CAVE_WATER:
         type = TYPE_WASSER;
+    case BATTLE_BG_ROUTE_5_CAVE:
+        type = TYPE_KAEFER;
         break;
 	}
 	if (type == battlers[attacking_battler].type1 ||
@@ -357,6 +365,7 @@ u16 terrain_moves[] = {
     [BATTLE_BG_BBSHIP_INSIDE] = ATTACK_SURFER,
     [BATTLE_BG_BBSHIP_OUTSIDE] = ATTACK_SURFER,
     [BATTLE_BG_CAVE_WATER] = ATTACK_SURFER,
+    [BATTLE_BG_ROUTE_5_CAVE] = ATTACK_KAEFERBISS,
 };
 
 void bsc_cmd_xCC_set_terrain_based_move(){

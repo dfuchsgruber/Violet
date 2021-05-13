@@ -110,6 +110,14 @@ typedef struct {
     u8 unkown[3];
 } player_state_t;
 
+typedef struct { // State with which the player is initialized after warping
+    u8 state;
+    u8 direction;
+    u8 field2;
+} player_initial_state_t; 
+
+player_initial_state_t player_initial_state;
+
 #define PLAYER_STATE_WALKING 1
 #define PLAYER_STATE_MACH_BIKE 2
 #define PLAYER_STATE_ACRO_BIKE 4
@@ -124,6 +132,16 @@ extern npc npcs[NUM_NPCS];
 extern player_state_t player_state;
 // Npc idx of the trainer to battle
 extern u8 trainer_npc_idx;
+
+/**
+ * Saves the player's current state as initial state (after warping)
+ **/
+void player_save_initial_state();
+
+/**
+ * Resets the initial state of the player (after warping)
+ **/
+void player_reset_initial_state();
 
 /**
  * Checks if a tile is blocked for an npc in a given directions

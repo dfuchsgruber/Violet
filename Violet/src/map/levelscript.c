@@ -5,6 +5,7 @@
 #include "save.h"
 #include "debug.h"
 #include "constants/levelscript_types.h"
+#include "map/cloud.h"
 
 void map_init_levelscript_4() {
     u8 *a = fmem.additional_levelscript_4;
@@ -21,7 +22,7 @@ void map_init_levelscript_4() {
 void map_init_levelscript_1() {
 	// Apply map changes due to dungeons on map
 	dungeon_map_set_tiles();
-	map_levelscript_init_no_var_check(1);
+	map_levelscript_init_no_var_check(LEVELSCRIPT_TYPE_ON_LOAD);
 }
 
 extern u8 ow_script_automatic_flash_usage[];
@@ -39,4 +40,8 @@ bool map_init_levelscript_2_on_frame() {
         return true;
     }
     return false;
+}
+
+void map_init_levelscript_on_transition() {
+	map_levelscript_init_no_var_check(LEVELSCRIPT_TYPE_ON_TRANSITION);
 }

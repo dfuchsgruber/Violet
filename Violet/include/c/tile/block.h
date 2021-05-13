@@ -172,6 +172,55 @@ bool behaviour_is_waterfall(u8 behaviour);
 bool behaviour_is_non_animated_warp(u8 behaviour);
 
 /**
+ * Checks if a behaviour is a warp
+ * @param behaviour the behaviour byte to check
+ * @return if the tile behaviour is a warp
+ **/
+bool behaviour_is_warp(u8 behaviour);
+
+/**
+ * Checks if a behaviour is a an escalator warp
+ * @param behaviour the behaviour byte to check
+ * @return if the tile behaviour is an escalator warp
+ **/
+bool behaviour_is_escalator(u8 behaviour);
+
+/**
+ * Checks if a behaviour is a a teleport warp
+ * @param behaviour the behaviour byte to check
+ * @return if the tile behaviour is a teleport warp
+ **/
+bool behaviour_is_teleport_warp(u8 behaviour);
+
+/**
+ * Checks if a behaviour is a a union room warp
+ * @param behaviour the behaviour byte to check
+ * @return if the tile behaviour is a union room warp
+ **/
+bool behaviour_is_union_room_warp(u8 behaviour);
+
+/**
+ * Checks if a behaviour is a a fall warp
+ * @param behaviour the behaviour byte to check
+ * @return if the tile behaviour is a fall warp
+ **/
+bool behaviour_is_fall_warp(u8 behaviour);
+
+/**
+ * Checks if a behaviour is a a lavaridge b1f warp
+ * @param behaviour the behaviour byte to check
+ * @return if the tile behaviour is a lavaridge b1f warp
+ **/
+bool behaviour_is_lavaridge_b1f_warp(u8 behaviour);
+
+/**
+ * Checks if a behaviour is a a lavaridge 1f warp
+ * @param behaviour the behaviour byte to check
+ * @return if the tile behaviour is a lavaridge 1f warp
+ **/
+bool behaviour_is_lavaridge_1f_warp(u8 behaviour);
+
+/**
  * Checks if at least one pokemon of the player has surf
  * @return if at least one pokemon of the player has surf
  */

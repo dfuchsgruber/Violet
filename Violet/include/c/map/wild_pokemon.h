@@ -303,5 +303,8 @@ wild_pokemon_habitat wild_pokemon_tafelberg_south_grass;
 wild_pokemon_habitat wild_pokemon_tafelberg_south_other;
 wild_pokemon_habitat wild_pokemon_tafelberg_south_water;
 wild_pokemon_habitat wild_pokemon_tafelberg_south_rod;
+wild_pokemon_habitat wild_pokemon_route_5_rod;
+wild_pokemon_habitat wild_pokemon_route_5_water;
+wild_pokemon_habitat wild_pokemon_route_5_cave_grass;
 
 #endif /* INCLUDE_C_MAP_WILD_POKEMON_H_ */

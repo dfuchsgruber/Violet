@@ -7,6 +7,7 @@
 .global overworld_effect_script_high_grass
 .global overworld_effect_script_tall_grass
 .global overworld_effect_script_sound_wave
+.global overworld_effect_script_whirlwind
 
 overworld_effect_script_explosion:
     loadpalwithshaders_and_callasm overworld_effect_explosion_palette overworld_effect_explosion
@@ -32,4 +33,7 @@ overworld_effect_script_high_grass:
 overworld_effect_script_tall_grass:
     callasm tile_any_grass_init //overworld_effect_tall_grass_init
     //loadpalwithshaders_and_callasm overworld_effect_high_grass_pal overworld_effect_tall_grass_init
+    end
+overworld_effect_script_whirlwind:
+    callasm overworld_effect_whirlwind
     end

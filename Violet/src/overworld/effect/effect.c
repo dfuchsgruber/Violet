@@ -8,6 +8,7 @@
 #include "save.h"
 #include "math.h"
 #include "debug.h"
+#include "map/cloud.h"
 
 /**
 graphic overworld_effect_explosion_graphic = {
@@ -231,6 +232,15 @@ void overworld_effect_sliding_pokeball_load_palette() {
     oam_palette_load_if_not_present(&overworld_effect_pokeball_palette);
 }
 
+static void overworld_effect_whirlwind_continuation() {
+    overworld_effect_remove_from_active_list(OVERWORLD_EFFECT_WHIRLWIND);
+}
+
+void overworld_effect_whirlwind() {
+    oam_cloud_upstream_state_t *state = map_cloud_upstream_whirlwind_at((s16)overworld_effect_state.x, (s16)overworld_effect_state.y);
+    state->contunation = overworld_effect_whirlwind_continuation;
+}
+
 const u8 *overworld_effects[NUM_OVERWORLD_EFFECTS] = {
     [OVERWORLD_EFFECT_EXCLAMATION_MARK_ICON] = overworld_effect_script_exclamation_mark_icon,
     [OVERWORLD_EFFECT_USE_CUT_ON_GRASS] = overworld_effect_script_use_cut_on_grass,
@@ -306,4 +316,5 @@ const u8 *overworld_effects[NUM_OVERWORLD_EFFECTS] = {
     [OVERWORLD_EFFECT_NPC_TRANSPARENT_FLICKER] = overworld_effect_script_npc_transparent_flicker,
     [OVERWORLD_EFFECT_NPC_TRANSPARENT_FADE] = overworld_effect_script_npc_transparent_fade,
     [OVERWORLD_EFFECT_SOUND_WAVE] = overworld_effect_script_sound_wave,
+    [OVERWORLD_EFFECT_WHIRLWIND] = overworld_effect_script_whirlwind,
 };

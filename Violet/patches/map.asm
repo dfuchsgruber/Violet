@@ -8,6 +8,16 @@
 	bx r0
 	.pool
 
+.org 0x08069c34
+    ldr r0, =map_init_levelscript_on_transition | 1
+    bx r0
+    .pool
+
+.org 0x0806ffcc
+    ldr r0, =tileset_secondary_animation_initialize_ | 1
+    bx r0
+    .pool
+
 //@disable prescreens
 .org 0x80F8378
     mov r0, #0x1C
@@ -23,6 +33,10 @@
 .org 0x08111002
     mov r0, #0 //0 events to be loaded
 
+.org 0x0806d974
+    ldr r2, =step_on_warp | 1
+    bx r2
+    .pool
 
 //@Namespace
 

@@ -9,6 +9,7 @@
 #define INCLUDE_C_OVERWORLD_MAP_CONTROL_H_
 
 #include "constants/map_types.h"
+#include "map/header.h"
 
 
 typedef struct{
@@ -85,6 +86,37 @@ void warp_setup_by_event (u8 target_bank, u8 target_map, u8 warp_idx);
 void warp_setup_callbacks();
 
 /**
+ * Sets up callback to execute the escalator warp
+ **/
+void warp_setup_escalator_callback();
+
+/**
+ * Sets up callback to execute the lavaridge b1f warp
+ **/
+void warp_setup_lavaridge_b1f_callback();
+
+/**
+ * Sets up callback to execute the lavaridge 1f warp
+ **/
+void warp_setup_lavaridge_1f_callback();
+
+/**
+ * Sets up callback to execute the union room warp
+ **/
+void warp_setup_union_room_callback();
+
+// Overworld script for falling hole warps
+extern u8 ow_script_fall_warp[];
+
+/**
+ * Sets up target data for where to warp to
+ * @param header the map header where the warp is located
+ * @param warp_idx which warp event to use
+ * @param position at which position to warp from (7 shifted)
+ **/
+void warp_setup_by_event_and_position(map_header_t *header, s8 warp_idx, position_t *position);
+
+/**
  * Gets the weather currently present
  * @return The current weather
  */
@@ -104,6 +136,22 @@ void warp_setup_teleport_callback();
  * Sets up the warp muted teleport callback
  */
 void warp_setup_muted_callback();
+
+/**
+ * Callback for the teleport warp
+ * @param self self-reference
+ **/
+void warp_teleport_callback(u8 self);
+
+/**
+ * Starts the animation that moves the player out of the screen with a teleport warp
+ **/
+void warp_teleport_start_player_warp_out_animation();
+
+/**
+ * Attempts to fade out the current map music
+ **/
+void map_fade_out_music();
 
 /**
  * Enables the warp flags
