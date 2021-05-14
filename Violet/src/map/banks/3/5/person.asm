@@ -150,7 +150,7 @@ special 0xE
 loadpointer 0x0 str_0x959fa0
 callstd MSG_KEEPOPEN
 special 0xF
-copyvarifnotzero 0x8000 ITEM_ITEM_10B
+copyvarifnotzero 0x8000 ITEM_WOLKENGARN
 copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 

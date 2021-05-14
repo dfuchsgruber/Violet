@@ -10,6 +10,7 @@
 #include "callbacks.h"
 #include "map/cloud.h"
 #include "music.h"
+#include "flags.h"
 
 static void warp_setup_cloud_upstream_callback() {
     map_fade_out_music();
@@ -33,7 +34,7 @@ bool step_on_warp(position_t *position, u8 behaviour) {
     s8 warp_idx = map_get_warp_idx_by_position(&mapheader_virtual, position);
     if (warp_idx == -1)
         return false;
-    if (behaviour == MB_CLOUD_UPSTREAM_WARP && true) {//&& item_check(ITEM_FAHRRAD, 1)) {
+    if (behaviour == MB_CLOUD_UPSTREAM_WARP && checkflag(ROUTE_5_CLOUD_RECEIVED)) {//&& item_check(ITEM_FAHRRAD, 1)) {
         if (!(player_state.state & PLAYER_STATE_BIKING)) {
             u8 cb_idx = big_callback_new(player_transition_to_bike, 0);
             player_transition_to_bike(cb_idx);

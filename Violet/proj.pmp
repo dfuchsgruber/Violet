@@ -724,6 +724,26 @@
 				"map_route_5_cave_2f",
 				"src/map/banks/17/4/map_route_5_cave_2f.pms",
 				"MAP_ROUTE_5"
+			],
+			"5": [
+				"map_route_5_cave_3f",
+				"src/map/banks/17/5/map_route_5_cave_3f.pms",
+				"MAP_ROUTE_5"
+			],
+			"6": [
+				"map_route_5_cave_4f",
+				"src/map/banks/17/6/map_route_5_cave_4f.pms",
+				"MAP_ROUTE_5"
+			],
+			"7": [
+				"map_route_5_cave_5f",
+				"src/map/banks/17/7/map_route_5_cave_5f.pms",
+				"MAP_ROUTE_5"
+			],
+			"8": [
+				"map_route_5_cave_boss_room",
+				"src/map/banks/17/8/map_route_5_cave_boss_room.pms",
+				"MAP_ROUTE_5"
 			]
 		},
 		"18": {
@@ -2125,6 +2145,22 @@
 		"map_footer_route_5_cave_2f": [
 			151,
 			"src/map/banks/17/4/map_footer_route_5_cave_2f.pms"
+		],
+		"map_footer_route_5_cave_3f": [
+			152,
+			"src/map/banks/17/5/map_footer_route_5_cave_3f.pms"
+		],
+		"map_footer_route_5_cave_4f": [
+			153,
+			"src/map/banks/17/6/map_footer_route_5_cave_4f.pms"
+		],
+		"map_footer_route_5_cave_5f": [
+			156,
+			"src/map/banks/17/7/map_footer_route_5_cave_5f.pms"
+		],
+		"map_footer_route_5_cave_boss_room": [
+			157,
+			"src/map/banks/17/8/map_footer_route_5_cave_boss_room.pms"
 		]
 	},
 	"tilesets_primary": {

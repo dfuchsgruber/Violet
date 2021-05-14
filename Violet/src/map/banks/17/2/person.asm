@@ -2,6 +2,7 @@
 .include "overworld_script.s"
 .include "vars.s"
 .include "ordinals.s"
+.include "flags.s"
 
 .global ow_script_route_5_clouds_person_0
 .global ow_script_route_5_clouds_person_1
@@ -16,6 +17,8 @@ ow_script_route_5_clouds_person_1:
     callstd MSG_FACE
     end
 ow_script_route_5_clouds_priest:
+    checkflag FLAG_ROUTE_5_CLOUD_ARIADOS_DEFEATED
+    gotoif EQUAL make_cloud
     loadpointer 0 str_2
     callstd MSG_YES_NO
     compare LASTRESULT 1
@@ -24,12 +27,21 @@ ow_script_route_5_clouds_priest:
     callstd MSG
     release
     end
-
 priest_down:
     loadpointer 0 str_3
     callstd MSG
     warpmuted 3 23 0xFF 0xe 0x7
     waitstate
+    release
+    end
+make_cloud:
+    lock
+    faceplayer
+    call ow_script_route_5_priest_receive_cloud
+    closeonkeypress
+    fadescreen 1
+    hidesprite LASTTALKED
+    fadescreen 0
     release
     end
 

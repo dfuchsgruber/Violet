@@ -1,0 +1,83 @@
+{
+	"data": {
+		"footer": "map_footer_route_5_cave_5f",
+		"events": {
+			"person_cnt": 1,
+			"warp_cnt": 2,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "0",
+					"y": "13",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ROUTE_5_CLOUD_CAVE_ITEM_0",
+					"value": {
+						"item": "ITEM_GIFTSTICH",
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "5",
+					"y": "2",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "7",
+					"target_bank": "17"
+				},
+				{
+					"x": "5",
+					"y": "14",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "8",
+					"target_bank": "17"
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": "route_5_cave_5f_levelscripts",
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_GLUTBERG_AND_EISKASKADENHOHLE_AND_WANDELHOHLE_AND_VERLORENE_HOHLE_AND_NABELFELS",
+		"footer_idx": 156,
+		"namespace": "MAP_ROUTE_5",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_BASEMENT",
+		"bike_usable": "1",
+		"flags": {
+			"allow_escape_rope": 0,
+			"allow_run": 0,
+			"show_name": 0,
+			"flag_3": 0,
+			"flag_4": 0,
+			"flag_5": 0,
+			"flag_6": 0,
+			"flag_7": 0
+		},
+		"level": 0,
+		"battle_style": 0
+	},
+	"label": "map_route_5_cave_5f",
+	"type": "header"
+}

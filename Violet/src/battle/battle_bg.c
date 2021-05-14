@@ -222,10 +222,10 @@ battle_bg battle_bgs[256] = {
         gfx_battle_bg_cave_waterPal,
     },
     [BATTLE_BG_ROUTE_5_CAVE] = {
-        gfx_battle_bg_cloud_ruinsTiles,
-        gfx_battle_bg_cloud_ruinsMap,
+        gfx_battle_bg_route_5_caveTiles,
+        gfx_battle_bg_route_5_caveMap,
         NULL, NULL,
-        gfx_battle_bg_cloud_ruinsPal,
+        gfx_battle_bg_route_5_cavePal,
     },
 };
 

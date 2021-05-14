@@ -96,6 +96,8 @@ static bool cloud_current_block_dismountable(u16 *blocks) {
 	position_t pos;
 	player_get_position(&pos);
 	u16 block = block_get_by_pos(pos.coordinates.x, pos.coordinates.y);
+
+	
 	for (int i = 0; blocks[i] != 0xFFFF; i++) {
 		if (block == blocks[i]) return true;
 	}

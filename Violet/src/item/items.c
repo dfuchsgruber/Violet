@@ -1078,7 +1078,7 @@ static u8 str_item_wettb_karte_description[] = LANGDEP(
 	PSTRING("Ausweis zur Teilnahme an Pokémon-\nWettbewerben. Die Zeichnung\neines Bandes ist aufgedruckt."),
 	PSTRING("The pass required for entering\nPokémon Contests. It has a\ndrawing of an award ribbon on it.")
 );
-static u8 str_item_item_10b_description[] = LANGDEP(
+static u8 str_item_WOLKENGARN_description[] = LANGDEP(
 	PSTRING("Ein antikes Relikt, das zwar aus\nStein ist, sich aber weich anfühlt."),
 	PSTRING("?????")
 );
@@ -5573,7 +5573,7 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_ITEM_F6
+		//ITEM_ARIADOSNIT
 		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
@@ -5909,13 +5909,13 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_ITEM_10B
-		LANGDEP(PSTRING("Wolkenherz"), PSTRING("????????")),
+		//ITEM_WOLKENGARN
+		LANGDEP(PSTRING("Wolkengarn"), PSTRING("Cloudthread")),
 		0x10b, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_item_10b_description,
+		str_item_WOLKENGARN_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket

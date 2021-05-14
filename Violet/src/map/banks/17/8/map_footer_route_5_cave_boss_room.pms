@@ -1,0 +1,293 @@
+{
+	"data": {
+		"width": 7,
+		"height": 9,
+		"border_width": 1,
+		"border_height": 1,
+		"border": [
+			[
+				{
+					"block_idx": 648,
+					"level": 0
+				}
+			]
+		],
+		"blocks": [
+			[
+				{
+					"block_idx": 649,
+					"level": 16
+				},
+				{
+					"block_idx": 650,
+					"level": 16
+				},
+				{
+					"block_idx": 650,
+					"level": 16
+				},
+				{
+					"block_idx": 650,
+					"level": 16
+				},
+				{
+					"block_idx": 650,
+					"level": 16
+				},
+				{
+					"block_idx": 650,
+					"level": 16
+				},
+				{
+					"block_idx": 650,
+					"level": 16
+				}
+			],
+			[
+				{
+					"block_idx": 728,
+					"level": 16
+				},
+				{
+					"block_idx": 689,
+					"level": 16
+				},
+				{
+					"block_idx": 658,
+					"level": 16
+				},
+				{
+					"block_idx": 658,
+					"level": 16
+				},
+				{
+					"block_idx": 658,
+					"level": 16
+				},
+				{
+					"block_idx": 690,
+					"level": 16
+				},
+				{
+					"block_idx": 691,
+					"level": 16
+				}
+			],
+			[
+				{
+					"block_idx": 744,
+					"level": 1
+				},
+				{
+					"block_idx": 745,
+					"level": 1
+				},
+				{
+					"block_idx": 666,
+					"level": 1
+				},
+				{
+					"block_idx": 666,
+					"level": 1
+				},
+				{
+					"block_idx": 666,
+					"level": 1
+				},
+				{
+					"block_idx": 698,
+					"level": 1
+				},
+				{
+					"block_idx": 699,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 752,
+					"level": 1
+				},
+				{
+					"block_idx": 753,
+					"level": 1
+				},
+				{
+					"block_idx": 754,
+					"level": 12
+				},
+				{
+					"block_idx": 769,
+					"level": 12
+				},
+				{
+					"block_idx": 770,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 710,
+					"level": 0
+				},
+				{
+					"block_idx": 711,
+					"level": 0
+				},
+				{
+					"block_idx": 762,
+					"level": 1
+				},
+				{
+					"block_idx": 763,
+					"level": 1
+				},
+				{
+					"block_idx": 778,
+					"level": 12
+				},
+				{
+					"block_idx": 656,
+					"level": 12
+				},
+				{
+					"block_idx": 751,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 718,
+					"level": 1
+				},
+				{
+					"block_idx": 719,
+					"level": 1
+				},
+				{
+					"block_idx": 784,
+					"level": 16
+				},
+				{
+					"block_idx": 785,
+					"level": 16
+				},
+				{
+					"block_idx": 786,
+					"level": 0
+				},
+				{
+					"block_idx": 758,
+					"level": 12
+				},
+				{
+					"block_idx": 759,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 702,
+					"level": 1
+				},
+				{
+					"block_idx": 647,
+					"level": 12
+				},
+				{
+					"block_idx": 664,
+					"level": 0
+				},
+				{
+					"block_idx": 641,
+					"level": 16
+				},
+				{
+					"block_idx": 765,
+					"level": 1
+				},
+				{
+					"block_idx": 766,
+					"level": 1
+				},
+				{
+					"block_idx": 767,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 647,
+					"level": 1
+				},
+				{
+					"block_idx": 654,
+					"level": 1
+				},
+				{
+					"block_idx": 641,
+					"level": 16
+				},
+				{
+					"block_idx": 656,
+					"level": 16
+				},
+				{
+					"block_idx": 641,
+					"level": 16
+				},
+				{
+					"block_idx": 641,
+					"level": 16
+				},
+				{
+					"block_idx": 764,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 654,
+					"level": 16
+				},
+				{
+					"block_idx": 702,
+					"level": 1
+				},
+				{
+					"block_idx": 641,
+					"level": 16
+				},
+				{
+					"block_idx": 717,
+					"level": 16
+				},
+				{
+					"block_idx": 641,
+					"level": 16
+				},
+				{
+					"block_idx": 641,
+					"level": 16
+				},
+				{
+					"block_idx": 654,
+					"level": 1
+				}
+			]
+		],
+		"tileset_primary": "maptileset_cave",
+		"tileset_secondary": "maptileset_route_5_cave",
+		"field_1A": 0
+	},
+	"label": "map_footer_route_5_cave_boss_room",
+	"type": "footer"
+}

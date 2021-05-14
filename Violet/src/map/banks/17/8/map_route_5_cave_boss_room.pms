@@ -1,0 +1,75 @@
+{
+	"data": {
+		"footer": "map_footer_route_5_cave_boss_room",
+		"events": {
+			"person_cnt": 1,
+			"warp_cnt": 1,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON_NPC",
+					"field_3": 0,
+					"x": "3",
+					"y": "3",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_route_5_cave_ariados",
+					"flag": "FLAG_ROUTE_5_CLOUD_ARIADOS_DEFEATED",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_ARIADOS",
+						"berry_tree_idx": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "3",
+					"y": "8",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "7",
+					"target_bank": "17"
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_GLUTBERG_AND_EISKASKADENHOHLE_AND_WANDELHOHLE_AND_VERLORENE_HOHLE_AND_NABELFELS",
+		"footer_idx": 157,
+		"namespace": "MAP_ROUTE_5",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_CLOUDY",
+		"type": "MAP_TYPE_BASEMENT",
+		"bike_usable": "1",
+		"flags": {
+			"allow_escape_rope": 0,
+			"allow_run": 0,
+			"show_name": 0,
+			"flag_3": 0,
+			"flag_4": 0,
+			"flag_5": 0,
+			"flag_6": 0,
+			"flag_7": 0
+		},
+		"level": 0,
+		"battle_style": 0
+	},
+	"label": "map_route_5_cave_boss_room",
+	"type": "header"
+}
