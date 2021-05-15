@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_13",
 		"events": {
-			"person_cnt": 10,
+			"person_cnt": 11,
 			"warp_cnt": 3,
 			"trigger_cnt": 0,
 			"signpost_cnt": 2,
@@ -30,7 +30,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -56,7 +57,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -82,7 +84,8 @@
 					"value": {
 						"item": "ITEM_SONDERBONBON",
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -108,7 +111,8 @@
 					"value": {
 						"item": "ITEM_FUNKELSTEIN",
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -133,7 +137,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -158,7 +163,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -183,7 +189,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -207,7 +214,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -231,7 +239,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "40"
+						"berry_tree_idx": "40",
+						"type": 0
 					}
 				},
 				{
@@ -255,7 +264,33 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "39"
+						"berry_tree_idx": "39",
+						"type": 0
+					}
+				},
+				{
+					"target_index": "11",
+					"picture": 0,
+					"script_std": "PERSON_ACCESSIBLE_MOVE_TUTOR",
+					"field_3": 0,
+					"x": "7",
+					"y": "9",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": "TYPE_BODEN"
 					}
 				}
 			],

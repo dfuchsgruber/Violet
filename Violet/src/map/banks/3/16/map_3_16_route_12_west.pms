@@ -29,7 +29,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -54,7 +55,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -79,7 +81,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -104,7 +107,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -129,7 +133,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -154,7 +159,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -179,7 +185,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -204,7 +211,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -229,7 +237,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -254,7 +263,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -279,7 +289,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -304,7 +315,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -329,7 +341,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -354,7 +367,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -379,7 +393,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -404,7 +419,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -429,7 +445,8 @@
 					"value": {
 						"item": "ITEM_TOP_SCHUTZ",
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -454,7 +471,8 @@
 					"value": {
 						"item": "ITEM_PERLE",
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -479,7 +497,8 @@
 					"value": {
 						"item": "ITEM_NETZBALL",
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -504,7 +523,8 @@
 					"value": {
 						"item": "ITEM_TM12",
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -529,7 +549,8 @@
 					"value": {
 						"item": "ITEM_TAUCHBALL",
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -554,7 +575,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -579,7 +601,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -604,7 +627,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -629,7 +653,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -654,7 +679,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				}
 			],

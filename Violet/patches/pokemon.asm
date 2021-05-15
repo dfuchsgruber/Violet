@@ -1170,3 +1170,18 @@ lsr r0, #0x1A
 	ldr r0, = move_relearner_initialize_list_menu | 1
 	bx r0
 	.pool
+
+.org 0x080e5564
+	ldr r1, =move_relearner_update_move_info | 1
+	bx r1
+	.pool
+
+.org 0x080e499c
+	.word move_relearner_tboxes
+.org 0x080e48fe
+	cmp r5, #0x9 // The number of tboxes in the move_relearner - 1
+
+.org 0x080e56e4
+	ldr r0, =move_relearner_copy_to_vram_or_clear | 1
+	bx r0
+	.pool

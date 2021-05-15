@@ -30,7 +30,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -56,7 +57,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -82,7 +84,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -108,7 +111,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -134,7 +138,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -160,7 +165,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -186,7 +192,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -212,7 +219,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -238,7 +246,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -264,7 +273,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -290,7 +300,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -316,7 +327,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -342,7 +354,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -368,7 +381,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -394,7 +408,8 @@
 					"value": {
 						"item": "ITEM_AP_PLUS",
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -420,7 +435,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -446,7 +462,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -472,7 +489,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -498,7 +516,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -524,7 +543,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -550,7 +570,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -576,7 +597,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -601,7 +623,8 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_GEHWEIHER",
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -626,7 +649,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -650,7 +674,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -674,7 +699,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -698,7 +724,8 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_AZUMARILL",
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -722,7 +749,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "11"
+						"berry_tree_idx": "11",
+						"type": 0
 					}
 				},
 				{
@@ -746,7 +774,8 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_KINGLER",
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -770,7 +799,8 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_NATU",
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -794,7 +824,8 @@
 					"value": {
 						"item": "ITEM_HYPERHEILER",
 						"species": "0",
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -818,7 +849,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "9"
+						"berry_tree_idx": "9",
+						"type": 0
 					}
 				},
 				{
@@ -842,7 +874,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "10"
+						"berry_tree_idx": "10",
+						"type": 0
 					}
 				},
 				{
@@ -866,7 +899,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -890,7 +924,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "27"
+						"berry_tree_idx": "27",
+						"type": 0
 					}
 				},
 				{
@@ -914,7 +949,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "28"
+						"berry_tree_idx": "28",
+						"type": 0
 					}
 				},
 				{
@@ -938,7 +974,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "25"
+						"berry_tree_idx": "25",
+						"type": 0
 					}
 				},
 				{
@@ -962,7 +999,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "26"
+						"berry_tree_idx": "26",
+						"type": 0
 					}
 				},
 				{
@@ -986,7 +1024,8 @@
 					"value": {
 						"item": "ITEM_MASKEREGENIT",
 						"species": "0",
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -1010,7 +1049,8 @@
 					"value": {
 						"item": "ITEM_SUPERSCHUTZ",
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -1034,7 +1074,8 @@
 					"value": {
 						"item": "ITEM_HYPERTRANK",
 						"species": "0",
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -1058,7 +1099,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -1082,7 +1124,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -1106,7 +1149,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -1130,7 +1174,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "21"
+						"berry_tree_idx": "21",
+						"type": 0
 					}
 				},
 				{
@@ -1154,7 +1199,8 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_PELIPPER",
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -1178,7 +1224,8 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_SPOINK",
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -1202,7 +1249,8 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_MEDITIE",
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -1226,7 +1274,8 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_MASKEREGEN",
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -1250,7 +1299,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -1274,7 +1324,8 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -1298,7 +1349,8 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_TRAGOSSO",
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -1322,7 +1374,8 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_WAATY",
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -1346,7 +1399,8 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_CLAVION",
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -1370,7 +1424,8 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_FRIZELBLIZ",
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -1394,7 +1449,8 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_ZIGZACHS",
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -1418,7 +1474,8 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_FUKANO",
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				}
 			],

@@ -413,7 +413,7 @@ dont_open_shell:
 	end
 
 ow_script_person_accessible_move_tutor:
-	setvar VAR_ACCESIBLE_MOVE_TUTOR_TYPE, 0xFFFF
+	//setvar VAR_ACCESIBLE_MOVE_TUTOR_TYPE, 0
 	special SPECIAL_MOVE_RELEARNER_SELECT_POKEMON
 	waitstate
 	compare 0x8004 6
@@ -421,7 +421,8 @@ ow_script_person_accessible_move_tutor:
 	special SPECIAL_PARTY_POKEMON_IS_EGG
 	compare LASTRESULT 1
 	gotoif EQUAL accessible_move_tutor_is_egg
-	compare 0x8005 0
+	callasm pokemon_get_number_of_accessible_moves_in_lastresult
+	compare LASTRESULT 0
 	gotoif EQUAL accessible_move_tutor_no_moves
 	loadpointer 0 str_which_mon_to_tutor
 	callstd MSG_KEEPOPEN
@@ -433,7 +434,7 @@ ow_script_person_accessible_move_tutor:
 accessible_move_tutor_is_egg:
 accessible_move_tutor_no_moves:
 accessible_move_tutor_end:
-	setvar VAR_ACCESIBLE_MOVE_TUTOR_TYPE, 0xFFFF
+	setvar VAR_ACCESIBLE_MOVE_TUTOR_TYPE, 0
 	end
 
 .ifdef LANG_GER

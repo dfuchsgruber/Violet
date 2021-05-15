@@ -48,6 +48,8 @@ extern "C" {
     
     attack attacks[ATTACK_CNT];
     u8 attack_names[ATTACK_CNT][13];
+    u8 *attack_descriptions[ATTACK_CNT - 1];
+
     /**
      * Battle scripts for each attack effect.
      */

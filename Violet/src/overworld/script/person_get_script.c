@@ -84,7 +84,7 @@ u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank) {
 	case PERSON_HAY_BALE:
 		return ow_script_boulder_hay_bale;
 	case PERSON_ACCESSIBLE_MOVE_TUTOR:
-		*var_access(VAR_ACCESIBLE_MOVE_TUTOR_TYPE) = p->value;
+		*var_access(VAR_ACCESIBLE_MOVE_TUTOR_TYPE) = (u16)(p->value + 1);
 		return ow_script_person_accessible_move_tutor;
 	default:
 		return p->script;

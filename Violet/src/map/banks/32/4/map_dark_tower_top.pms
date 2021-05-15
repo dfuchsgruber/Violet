@@ -28,7 +28,8 @@
 					"value": {
 						"item": "ITEM_SPIRITKERN",
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				},
 				{
@@ -52,7 +53,8 @@
 					"value": {
 						"item": "ITEM_TOP_ELIXIER",
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				}
 			],

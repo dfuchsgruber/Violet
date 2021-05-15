@@ -43,6 +43,17 @@ extern move_relearner_state_t *move_relearner_state;
  **/
 u8 move_relearner_get_moves(pokemon *p, u16 *moves);
 
+/**
+ * Prints a string.
+ * @param tbox_idx in which box to print
+ * @param str the text to print
+ * @param x x coordinate within box
+ * @param y y coordinate within box
+ * @param speed text speed for the printer
+ * @param color_idx which color to use
+ **/
+void move_relearner_print_string(u8 tbox_idx, const u8 *str, u8 x, u8 y, int speed, int color_idx);
+
 list_menu_template move_relearner_list_menu_template; // static ROM structure
 
 #endif

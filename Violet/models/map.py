@@ -14,11 +14,13 @@ types_type = agb.types.ScalarType('u8', constant='map_types')
 show_name_type = agb.types.ScalarType('u8', constant='map_show_name_types')
 battle_style_type = agb.types.ScalarType('u8', constant='map_battle_styles')
 signpost_type_type = agb.types.ScalarType('u8', constant='signpost_types')
+pokemon_type_16_type = agb.types.ScalarType('u16', constant='pokemon_types')
 
 person_script_std_type = agb.types.UnionType({
         'item' : 'item',
         'species' : 'species',
         'berry_tree_idx' : 'u16',
+        'type' : 'pokemon_type_16'
     },
     lambda project, context, parents: {
         'PERSON_ITEM' : 'item',
@@ -31,6 +33,7 @@ person_script_std_type = agb.types.UnionType({
         'PERSON_POKEMON_NPC' : 'species',
         'PERSON_PUZZLE_BOULDER' : 'berry_tree_idx',
         'PERSON_POKEMON_NON_FACING' : 'species',
+        'PERSON_ACCESSIBLE_MOVE_TUTOR' : 'type',
     }.get(parents[-1]['script_std'], 'item')
 )
 map_flags_type = agb.types.BitfieldType('u8', [
@@ -186,6 +189,7 @@ worldmap_position_type = agb.types.Structure([
 # Export new models
 
 models_to_export = {
+    'pokemon_type_16' : pokemon_type_16_type,
     'worldmap_position' : worldmap_position_type,
     'person_behaviour' : person_behaviour_type,
     'person_script_std' : person_script_std_type_type,

@@ -527,6 +527,9 @@
 .org 0x8137c64
 	.word attack_descriptions
 
+.org 0x080e5664
+	.word attack_descriptions
+
 .org 0x80162e8
 	.word attack_effects
 

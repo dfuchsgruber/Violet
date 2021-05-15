@@ -1199,3 +1199,4 @@ move_relearner_state = 0x0203aab4;
 move_relearner_get_moves = 0x08043b84 | 1;
 move_relearner_list_menu_template = 0x083ffa98;
 pokemon_copy_nickname = 0x08008c74 | 1;
+move_relearner_print_string = 0x080e57c0 | 1;

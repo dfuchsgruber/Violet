@@ -29,7 +29,8 @@
 					"value": {
 						"item": "ITEM_HYPERBALL",
 						"species": 0,
-						"berry_tree_idx": 0
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				}
 			],
