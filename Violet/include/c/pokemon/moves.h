@@ -21,6 +21,7 @@ typedef struct {
 pokemon_move *pokemon_moves[POKEMON_CNT];
 u8 pokemon_tm_compatibility [POKEMON_CNT][8];
 u32 pokemon_move_tutor_compatibility[POKEMON_CNT];
+extern u16 *pokemon_accessible_moves[POKEMON_CNT];
 
 // Which move idx currently being learned in the moveset
 extern u8 pokemon_move_learning_current_move_idx;

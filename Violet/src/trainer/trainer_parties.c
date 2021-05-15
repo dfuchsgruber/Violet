@@ -739,12 +739,12 @@ trainer_pokemon_default_item_default_attacks trainer_party_x88[] = {
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x89[] = {
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,37,POKEMON_DODRI),
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,36,POKEMON_KRAMURX)
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,35,POKEMON_DODRI),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,34,POKEMON_KRAMURX)
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x8a[] = {
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,33,POKEMON_FORMEO)
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,37,POKEMON_FORMEO)
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x8b[] = {
@@ -1455,8 +1455,8 @@ trainer_pokemon_default_item_default_attacks trainer_party_x115_route_2_clouds_t
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x116_route_5_clouds_trainer_2[2] = {
-  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 37, POKEMON_SEESKULL),
-  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 38, POKEMON_TYRACROC),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 35, POKEMON_DODU),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 34, POKEMON_TYRACROC),
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x117_orina_city_clouds_trainer_0[1] = {

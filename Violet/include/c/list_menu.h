@@ -8,6 +8,9 @@
 #ifndef INCLUDE_C_LIST_MENU_H_
 #define INCLUDE_C_LIST_MENU_H_
 
+#include "types.h"
+#include "text.h"
+
 #define LIST_MENU_NOTHING_CHOSEN -1
 #define LIST_MENU_B_PRESSED -2
 #define LIST_MENU_HEADER -3

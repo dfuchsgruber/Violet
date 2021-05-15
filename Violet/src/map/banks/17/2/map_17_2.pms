@@ -2,22 +2,22 @@
 	"data": {
 		"footer": "map_footer_13",
 		"events": {
-			"person_cnt": 8,
+			"person_cnt": 10,
 			"warp_cnt": 3,
 			"trigger_cnt": 0,
-			"signpost_cnt": 0,
+			"signpost_cnt": 2,
 			"persons": [
 				{
 					"target_index": 1,
 					"picture": 170,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "20",
-					"y": "9",
+					"x": "24",
+					"y": "16",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour": "BEHAVIOUR_WALK_RIGHT_AND_LEFT",
 					"behaviour_range": {
-						"x": "1",
+						"x": "3",
 						"y": "1"
 					},
 					"is_trainer": "1",
@@ -38,16 +38,16 @@
 					"picture": 171,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "33",
-					"y": "12",
+					"x": "24",
+					"y": "34",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_ROTATE_CLOCKWISE",
+					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "1",
-					"alert_radius": 2,
+					"alert_radius": "3",
 					"script": "ow_script_route_5_clouds_trainer_1",
 					"flag": "0x0",
 					"field_D": 0,
@@ -80,7 +80,7 @@
 					"field_B": 0,
 					"script_std": "PERSON_ITEM",
 					"value": {
-						"item": "ITEM_HACKATTACK",
+						"item": "ITEM_SONDERBONBON",
 						"species": 0,
 						"berry_tree_idx": 0
 					}
@@ -116,8 +116,8 @@
 					"picture": "56",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "24",
-					"y": "17",
+					"x": "47",
+					"y": "12",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -138,15 +138,15 @@
 				},
 				{
 					"target_index": "6",
-					"picture": "43",
+					"picture": "26",
 					"script_std": 0,
 					"field_3": 0,
 					"x": "17",
-					"y": "24",
+					"y": "23",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_LEFT_AND_RIGHT",
 					"behaviour_range": {
-						"x": "5",
+						"x": "3",
 						"y": "0"
 					},
 					"field_B": 0,
@@ -209,6 +209,54 @@
 						"species": 0,
 						"berry_tree_idx": 0
 					}
+				},
+				{
+					"target_index": "9",
+					"picture": "237",
+					"script_std": "PERSON_BERRY_TREE",
+					"field_3": 0,
+					"x": "20",
+					"y": "7",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "40"
+					}
+				},
+				{
+					"target_index": "10",
+					"picture": "237",
+					"script_std": "PERSON_BERRY_TREE",
+					"field_3": 0,
+					"x": "21",
+					"y": "7",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "39"
+					}
 				}
 			],
 			"warps": [
@@ -238,7 +286,40 @@
 				}
 			],
 			"triggers": [],
-			"signposts": []
+			"signposts": [
+				{
+					"x": "25",
+					"y": "12",
+					"level": 0,
+					"type": "SIGNPOST_HIDDEN_ITEM",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": "ITEM_HACKATTACK",
+							"flag": "104",
+							"amount": "1",
+							"chunk": 0
+						},
+						"script": 0
+					}
+				},
+				{
+					"x": "14",
+					"y": "29",
+					"level": 0,
+					"type": "SIGNPOST_HIDDEN_ITEM",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": "ITEM_KALZIUM",
+							"flag": "105",
+							"amount": "1",
+							"chunk": 0
+						},
+						"script": 0
+					}
+				}
+			]
 		},
 		"levelscripts": "route_5_clouds_levelscripts",
 		"connections": {

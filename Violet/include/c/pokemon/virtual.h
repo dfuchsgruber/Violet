@@ -527,4 +527,13 @@ bool player_party_and_boxes_full();
  * @return the sum of their level
  **/
 u16 player_pokemon_get_total_level(u8 num);
+
+/**
+ * Copies the nickname of a pokemon (basically strcpy for 10 bytes)
+ * @param dst where to put the nickname
+ * @param src from where to read the nickname
+ * @return offset of the last char that was copied
+ **/
+u8 *pokemon_copy_nickname(u8 *dst, const u8 *src);
+
 #endif /* INCLUDE_C_POKEMON_VIRTUAL_H_ */

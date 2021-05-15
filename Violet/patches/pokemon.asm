@@ -1165,3 +1165,8 @@ lsr r0, #0x1A
 	ldr r2, =hook_pokemon_evolution_attempt_learning_moves | 1
 	bx r2
 	.pool
+
+.org 0x080e52f0
+	ldr r0, = move_relearner_initialize_list_menu | 1
+	bx r0
+	.pool

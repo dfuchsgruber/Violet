@@ -47,6 +47,7 @@ extern "C" {
     void battle_add_damage_multiplier_and_update_attack_result(u8 multiplier);
     
     attack attacks[ATTACK_CNT];
+    u8 attack_names[ATTACK_CNT][13];
     /**
      * Battle scripts for each attack effect.
      */

@@ -1195,3 +1195,7 @@ battle_strings_stat_changes = 0x083fe528;
 battle_record_ability = 0x080c7388 | 1;
 battler_get_charging_state = 0x0802a1bc | 1;
 warp_teleport_start_player_warp_out_animation = 0x0805dab0 | 1;
+move_relearner_state = 0x0203aab4;
+move_relearner_get_moves = 0x08043b84 | 1;
+move_relearner_list_menu_template = 0x083ffa98;
+pokemon_copy_nickname = 0x08008c74 | 1;

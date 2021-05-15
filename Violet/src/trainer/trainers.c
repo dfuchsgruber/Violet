@@ -5669,7 +5669,7 @@ trainer trainers[TRAINER_CNT] = {
         .party = (trainer_pokemon*) trainer_party_x115_route_2_clouds_trainer_4,
     },
     [0x116] = {
-        .trainerclass = TRAINERCLASS_SCHWIMMER, .sprite = 15,
+        .trainerclass = TRAINERCLASS_TRIATHLET, .sprite = 0x29,
         .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Sakim"),
             PSTRING("Sakim")), .pokemon_cnt = 2,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,

@@ -20,6 +20,7 @@
 .global ow_script_mushroom
 .global ow_script_shell
 .global ow_script_person_pokemon_non_facing
+.global ow_script_person_accessible_move_tutor
 
 ow_script_person_pokeball:
 	callstd ITEM_FIND
@@ -411,7 +412,33 @@ dont_open_shell:
 	releaseall
 	end
 
+ow_script_person_accessible_move_tutor:
+	setvar VAR_ACCESIBLE_MOVE_TUTOR_TYPE, 0xFFFF
+	special SPECIAL_MOVE_RELEARNER_SELECT_POKEMON
+	waitstate
+	compare 0x8004 6
+	gotoif EQUAL accessible_move_tutor_end
+	special SPECIAL_PARTY_POKEMON_IS_EGG
+	compare LASTRESULT 1
+	gotoif EQUAL accessible_move_tutor_is_egg
+	compare 0x8005 0
+	gotoif EQUAL accessible_move_tutor_no_moves
+	loadpointer 0 str_which_mon_to_tutor
+	callstd MSG_KEEPOPEN
+	special SPECIAL_MOVE_RELEARNER_MENU
+	waitstate
+	compare 0x8004 0
+	gotoif EQUAL accessible_move_tutor_end
+
+accessible_move_tutor_is_egg:
+accessible_move_tutor_no_moves:
+accessible_move_tutor_end:
+	setvar VAR_ACCESIBLE_MOVE_TUTOR_TYPE, 0xFFFF
+	end
+
 .ifdef LANG_GER
+str_which_mon_to_tutor:
+	.autostring 34 2 "Welchen Angriff soll BUFFER_1 erlernen?"
 str_mon0:
 	.autostring 34 2 "BUFFER_1! BUFFER_1!"
 str_mon1:

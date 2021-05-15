@@ -34,9 +34,9 @@ str_challange_1:
 str_defeat_1:
     .autostring 34 2 "Siehst du dunkle Löcher in den Wolken, kannst du dort wieder zum Boden hinabsteigen."
 str_challange_2:
-    .autostring 34 2 "Bist du überrascht, einen Schwimmer über den Wolken zu treffen?\pDie Luft hier trainiert meine Lungen!"
+    .autostring 34 2 "Bist du überrascht, einen Triathlet über den Wolken zu treffen?\pDie Luft hier trainiert meine Lungen!"
 str_defeat_2:
-    .autostring 34 2 "Du solltest auch einmal im Woklenwasser schwimmen!"
+    .autostring 34 2 "Du solltest zum Beispiel einmal im Woklenwasser schwimmen!"
 
 .elseif LANG_EN
 str_challange_0:
@@ -48,8 +48,8 @@ str_challange_1:
 str_defeat_1:
     .autostring 34 2 "Whenever you see dark patches in the clouds, you can return to the ground there."
 str_challange_2:
-    .autostring 34 2 "Are you suprised to see a swimmer above the clouds?\pThe air here trains my lungs!"
+    .autostring 34 2 "Are you suprised to see an athlete above the clouds?\pThe air here trains my lungs!"
 str_defeat_2:
-    .autostring 34 2 "You really should try swimming in cloudy water!"
+    .autostring 34 2 "You really should try swimming in cloudy water also!"
 
 .endif
