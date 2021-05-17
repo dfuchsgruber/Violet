@@ -1078,9 +1078,9 @@ static u8 str_item_wettb_karte_description[] = LANGDEP(
 	PSTRING("Ausweis zur Teilnahme an Pokémon-\nWettbewerben. Die Zeichnung\neines Bandes ist aufgedruckt."),
 	PSTRING("The pass required for entering\nPokémon Contests. It has a\ndrawing of an award ribbon on it.")
 );
-static u8 str_item_WOLKENGARN_description[] = LANGDEP(
-	PSTRING("Ein antikes Relikt, das zwar aus\nStein ist, sich aber weich anfühlt."),
-	PSTRING("?????")
+static u8 str_item_wolkengarn_description[] = LANGDEP(
+	PSTRING("Sehr weicher durchsichtiger\nFaden. Er fühlt sich etwas\pwie Watte an."),
+	PSTRING("Very soft and transparent\nthread. It feels a bit\nlike cotton wool.")
 );
 static u8 str_item_wailmerkanne_description[] = LANGDEP(
 	PSTRING("Ein Gegenstand zum Gießen von\nPflanzen, wie beispielsweise Beeren."),
@@ -5915,7 +5915,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_WOLKENGARN_description,
+		str_item_wolkengarn_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
