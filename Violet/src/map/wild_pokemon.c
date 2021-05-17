@@ -387,9 +387,9 @@ wild_pokemon_data wild_pokemon[] = {
 	{
 		.bank = 17, .map = 2,
 		.grass = &wild_pokemon_route_5_clouds_grass,
-		.water = &wild_pokemon_route_5_clouds_water,
+		.water = NULL,
 		.other = NULL,
-		.rod = &wild_pokemon_route_5_clouds_rod,
+		.rod = NULL,
 	},
 	{
 		.bank = 3, .map = 24,

@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_13",
 		"events": {
-			"person_cnt": 11,
+			"person_cnt": 18,
 			"warp_cnt": 3,
 			"trigger_cnt": 0,
 			"signpost_cnt": 2,
@@ -273,8 +273,8 @@
 					"picture": "235",
 					"script_std": "PERSON_ACCESSIBLE_MOVE_TUTOR",
 					"field_3": 0,
-					"x": "17",
-					"y": "28",
+					"x": "43",
+					"y": "24",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -291,6 +291,181 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": "TYPE_BODEN"
+					}
+				},
+				{
+					"target_index": "12",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "4",
+					"y": "7",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_WEBARAK",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "13",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "16",
+					"y": "22",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_LEFT_UP_RIGHT_DOWN",
+					"behaviour_range": {
+						"x": "6",
+						"y": "2"
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_SCHWALBOSS",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "14",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "38",
+					"y": "10",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_UP_RIGHT_DOWN_LEFT",
+					"behaviour_range": {
+						"x": "7",
+						"y": "3"
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_DARTIGNIS",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "15",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "19",
+					"y": "20",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KRAMURX",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "16",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "30",
+					"y": "35",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_SCHWALBINI",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "17",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "25",
+					"y": "42",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_LEFT_RIGHT_UP",
+					"behaviour_range": {
+						"x": "8",
+						"y": "6"
+					},
+					"field_B": "0",
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_SCHWALBOSS",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "18",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "39",
+					"y": "26",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_LEFT_UP_RIGHT",
+					"behaviour_range": {
+						"x": "7",
+						"y": "4"
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_WABLU",
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				}
 			],
