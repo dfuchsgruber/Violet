@@ -106,6 +106,28 @@ spritesheet_images = {
     180 : (32, 16),
 }
 
+# Tutor crystal images
+tutor_crystal_images = {
+    'TYPE_NORMAL' : 'asset/gfx/overworld/tutor_crystal/gfx_tutor_crystal_normal.png',
+    'TYPE_KAMPF' : 'asset/gfx/overworld/tutor_crystal/gfx_tutor_crystal_fighting.png',
+    'TYPE_FLUG' : 'asset/gfx/overworld/tutor_crystal/gfx_tutor_crystal_flying.png',
+    'TYPE_GIFT' : 'asset/gfx/overworld/tutor_crystal/gfx_tutor_crystal_poison.png',
+    'TYPE_BODEN' : 'asset/gfx/overworld/tutor_crystal/gfx_tutor_crystal_ground.png',
+    'TYPE_GESTEIN' : 'asset/gfx/overworld/tutor_crystal/gfx_tutor_crystal_rock.png',
+    'TYPE_KAEFER' : 'asset/gfx/overworld/tutor_crystal/gfx_tutor_crystal_bug.png',
+    'TYPE_GEIST' : 'asset/gfx/overworld/tutor_crystal/gfx_tutor_crystal_ghost.png',
+    'TYPE_STAHL' : 'asset/gfx/overworld/tutor_crystal/gfx_tutor_crystal_steel.png',
+    'TYPE_FEE' : 'asset/gfx/overworld/tutor_crystal/gfx_tutor_crystal_fairy.png',
+    'TYPE_FEUER' : 'asset/gfx/overworld/tutor_crystal/gfx_tutor_crystal_fire.png',
+    'TYPE_WASSER' : 'asset/gfx/overworld/tutor_crystal/gfx_tutor_crystal_water.png',
+    'TYPE_PFLANZE' : 'asset/gfx/overworld/tutor_crystal/gfx_tutor_crystal_grass.png',
+    'TYPE_ELEKTRO' : 'asset/gfx/overworld/tutor_crystal/gfx_tutor_crystal_electric.png',
+    'TYPE_PSYCHO' : 'asset/gfx/overworld/tutor_crystal/gfx_tutor_crystal_psychic.png',
+    'TYPE_EIS' : 'asset/gfx/overworld/tutor_crystal/gfx_tutor_crystal_ice.png',
+    'TYPE_DRACHE' : 'asset/gfx/overworld/tutor_crystal/gfx_tutor_crystal_dragon.png',
+    'TYPE_UNLICHT' : 'asset/gfx/overworld/tutor_crystal/gfx_tutor_crystal_dark.png',
+}
+
 
 class Event_to_image:
     """ Class to lazily load the images. """
@@ -136,6 +158,14 @@ class Event_to_image:
                 path = os.path.join('asset', 'gfx', 'overworld', 'misc', 'gfx_ow_mushroom.png')
             elif script_std == 'PERSON_SHELL':
                 path = os.path.join('asset', 'gfx', 'overworld', 'misc', 'gfx_ow_shell.png')
+            else:
+                return None
+            picture_idx = path
+        elif picture_idx == 235: # Tutor crystals
+            element = event['value']['type']
+            if element in tutor_crystal_images:
+                path = tutor_crystal_images[element]
+                box = ((0, 0, 32, 32))
             else:
                 return None
             picture_idx = path

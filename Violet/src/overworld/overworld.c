@@ -20,6 +20,7 @@
 #include "berry.h"
 #include "rtc.h"
 #include "constants/person_script_stds.h"
+#include "constants/pokemon_types.h"
 #include "math.h"
 #include "vars.h"
 #include "mugshot.h"
@@ -88,6 +89,8 @@ overworld_sprite *overworld_get_by_person(map_event_person *person) {
         }
     } else if (person->overworld_index == OVERWORLD_SPRITE_STRENGTH_BOULDER) {
         return overworld_sprite_get_by_boulder_person_script_std(person->script_std, person->value);
+    } else if (person->overworld_index == OVERWORLD_SPRITE_TUTOR_CRYSTAL) {
+        return overworld_sprite_get_by_tutor_crystal_type(person->value);
     }
     // dprintf("Falling back to default sprite showing %d\n", person->overworld_index);
     return overworld_get(person->overworld_index);
@@ -149,6 +152,9 @@ static palette *overworld_npc_palette_get_by_tag(u16 tag) {
     }
     if (tag >= OW_PAL_TAG_BERRY_BASE && tag < (OW_PAL_TAG_BERRY_BASE + NUM_OW_PAL_TAGS_BERRY)) {
         return overworld_palette_berry_get_by_tag(tag);
+    }
+    if (tag >= OW_PAL_TAG_TUTOR_CRYSTAL_BASE && tag < (OW_PAL_TAG_TUTOR_CRYSTAL_BASE + TYPE_UNLICHT + 1)) {
+        return overworld_palette_tutor_crystal_get_by_tag(tag);
     }
     switch (tag) {
         case OW_PAL_TAG_MUSHROOM: return overworld_palette_get_by_mushroom();

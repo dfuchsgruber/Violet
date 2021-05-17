@@ -1504,6 +1504,13 @@ static overworld_sprite ow_misc_16_16 = {
 	.graphics = NULL + 0, .rotscale_animation = oam_rotscale_anim_table_null,	
 };
 
+static overworld_sprite ow_tutor_crystal_dummy = {
+        .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_TUTOR_CRYSTAL_BASE,
+        .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
+        .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
+        .graphics = NULL, .rotscale_animation = oam_rotscale_anim_table_null,
+};
+
 graphic overworld_sprite_chef[] = {
 	{gfx_ow_chefTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
 	{gfx_ow_chefTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
@@ -1575,8 +1582,6 @@ overworld_sprite ow_lester_young = {
 	oam_rotscale_anim_table_null
 };
 
-
-
 static graphic overworld_sprite_roman_sprites[] = {
 	{gfx_ow_romanTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
 	{gfx_ow_romanTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
@@ -1596,9 +1601,6 @@ overworld_sprite ow_roman = {
 	ow_anim_standard_npc, overworld_sprite_roman_sprites, 
 	oam_rotscale_anim_table_null
 };
-
-
-
 
 static graphic overworld_sprite_rosalie_sprites[] = {
 	{gfx_ow_rosalieTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
@@ -1823,6 +1825,7 @@ overworld_sprite *overworld_sprites[] = {
 		&ow_roman,
 		&ow_rival_beaten,
 
+	[OVERWORLD_SPRITE_TUTOR_CRYSTAL] = &ow_tutor_crystal_dummy,
 	[OVERWORLD_SPRITE_MISC] = &ow_misc_16_16,
 	[OVERWORLD_SPRITE_BERRY] = &ow_berry_tree, // dummy
 	[OVERWORLD_SPRITE_POKEMON_32_32] = &ow_pokemon_32_32, // dummy with size 32x32

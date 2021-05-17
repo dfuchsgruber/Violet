@@ -414,9 +414,26 @@ dont_open_shell:
 
 ow_script_person_accessible_move_tutor:
 	//setvar VAR_ACCESIBLE_MOVE_TUTOR_TYPE, 0
+	loadpointer 0 str_quarz_intro
+	callstd MSG_KEEPOPEN
+	checkitem ITEM_ENERGIEQUARZ, 1
+	compare LASTRESULT 1
+	gotoif NOT_EQUAL no_quarz
+	loadpointer 0 str_ask_quarz
+	callstd MSG_YES_NO
+	compare LASTRESULT 0
+	gotoif EQUAL no_quarz
+	copyvar 0x8004 VAR_ACCESIBLE_MOVE_TUTOR_TYPE
+	subvar 0x8004 1
+	setvar 0x8005 2
+	special SPECIAL_BUFFER_TYPE_NAME
+	loadpointer 0 str_crystal_ask_mon
+	callstd MSG_KEEPOPEN
 	special SPECIAL_MOVE_RELEARNER_SELECT_POKEMON
 	waitstate
 	compare 0x8004 6
+	gotoif EQUAL accessible_move_tutor_end
+	compare 0x8004 7
 	gotoif EQUAL accessible_move_tutor_end
 	special SPECIAL_PARTY_POKEMON_IS_EGG
 	compare LASTRESULT 1
@@ -430,16 +447,40 @@ ow_script_person_accessible_move_tutor:
 	waitstate
 	compare 0x8004 0
 	gotoif EQUAL accessible_move_tutor_end
-
-accessible_move_tutor_is_egg:
-accessible_move_tutor_no_moves:
+	loadpointer 0 str_quarz_used
+	callstd MSG_KEEPOPEN
+	closeonkeypress
+	removeitem ITEM_ENERGIEQUARZ, 1
 accessible_move_tutor_end:
 	setvar VAR_ACCESIBLE_MOVE_TUTOR_TYPE, 0
 	end
+accessible_move_tutor_is_egg:
+	loadpointer 0 str_crystal_is_egg
+	callstd MSG_KEEPOPEN
+	goto no_quarz
+accessible_move_tutor_no_moves:
+	loadpointer 0 str_crystal_no_moves
+	callstd MSG_KEEPOPEN
+	goto no_quarz
+no_quarz:
+	closeonkeypress
+	goto accessible_move_tutor_end
 
 .ifdef LANG_GER
 str_which_mon_to_tutor:
 	.autostring 34 2 "Welchen Angriff soll BUFFER_1 erlernen?"
+str_quarz_intro:
+	.autostring 34 2 "Eine mysteriöse Energie scheint diesen Kristall zu umgebenDOTS"
+str_ask_quarz:
+	.autostring 34 2 "Möchtest du Energiequarz in den Kristall einsetzen?"
+str_crystal_ask_mon:
+	.autostring 34 2 "Eine strahlende Aura geht von dem Kristall aus!\pEs scheint, als ob eines deiner Pokémon eine BUFFER_3-Attacke lernen kann.\pWelches Pokémon soll eine neue Attacke lernen?"
+str_crystal_is_egg:
+	.autostring 34 2 "Ein Ei kann keine Attacken lernen!"
+str_crystal_no_moves:
+	.autostring 34 2 "Die Aura scheint mit deinem Pokémon nicht kompatibel zu seinDOTS"
+str_quarz_used:
+	.autostring 34 2 "Die strahlende Aura ist erloschenDOTS\pEs scheint, als wäre der Energiequarz aufgebrauchtDOTS"
 str_mon0:
 	.autostring 34 2 "BUFFER_1! BUFFER_1!"
 str_mon1:

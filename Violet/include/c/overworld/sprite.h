@@ -24,6 +24,7 @@
 
 #define OVERWORLD_SPRITE_STRENGTH_BOULDER 97
 #define OVERWORLD_SPRITE_ROMAN 179
+#define OVERWORLD_SPRITE_TUTOR_CRYSTAL 235
 #define OVERWORLD_SPRITE_MISC 236
 #define OVERWORLD_SPRITE_BERRY 237
 #define OVERWORLD_SPRITE_POKEMON_32_32 238
@@ -76,6 +77,7 @@ typedef struct overworld_sprite {
 
 #define OW_PAL_TAG_POKEMON_BASE 0x2000
 #define OW_PAL_TAG_POKEMON_END 0x2200
+#define OW_PAL_TAG_TUTOR_CRYSTAL_BASE 0x2900
 #define OW_PAL_TAG_MUSHROOM 0x2E00
 #define OW_PAL_TAG_SHELL 0x2E01
 #define OW_PAL_TAG_BOULDER_GYM_PUZZLE 0x2E02
@@ -164,6 +166,20 @@ palette *overworld_palette_get_hay_bale_boulder();
  * @return the palette
  **/
 palette *overworld_palette_get_mega_stone();
+
+/**
+ * Gets the palette of a tutor stone based on the pal tag.
+ * @param tag the pal tag of the ow pal
+ * @return the palette
+ **/
+palette *overworld_palette_tutor_crystal_get_by_tag(u16 tag);
+
+/**
+ * Gets the overworld of a tutor crystal by its element type
+ * @param type the element
+ * @return the tutor crystal overworld sprite
+ **/
+overworld_sprite *overworld_sprite_get_by_tutor_crystal_type(u16 type);
 
 /**
  * Frees a npc palette if currently no active npc is using this palette.
@@ -1778,6 +1794,26 @@ extern const u8 gfx_ow_lester_youngTiles[];
 extern const u8 gfx_ow_romanTiles[];
 extern const u8 gfx_ow_rageTiles[];
 extern const u8 gfx_ow_rosalieTiles[];
+
+extern const u8 gfx_tutor_crystal_bugTiles[];
+extern const color_t gfx_tutor_crystal_bugPal[16];
+extern const color_t gfx_tutor_crystal_darkPal[16];
+extern const color_t gfx_tutor_crystal_dragonPal[16];
+extern const color_t gfx_tutor_crystal_electricPal[16];
+extern const color_t gfx_tutor_crystal_fairyPal[16];
+extern const color_t gfx_tutor_crystal_fightingPal[16];
+extern const color_t gfx_tutor_crystal_firePal[16];
+extern const color_t gfx_tutor_crystal_flyingPal[16];
+extern const color_t gfx_tutor_crystal_ghostPal[16];
+extern const color_t gfx_tutor_crystal_grassPal[16];
+extern const color_t gfx_tutor_crystal_groundPal[16];
+extern const color_t gfx_tutor_crystal_icePal[16];
+extern const color_t gfx_tutor_crystal_normalPal[16];
+extern const color_t gfx_tutor_crystal_poisonPal[16];
+extern const color_t gfx_tutor_crystal_psychicPal[16];
+extern const color_t gfx_tutor_crystal_rockPal[16];
+extern const color_t gfx_tutor_crystal_steelPal[16];
+extern const color_t gfx_tutor_crystal_waterPal[16];
 
 extern const u8 gfx_ow_mushroomTiles[];
 extern const color_t gfx_ow_mushroomPal[];

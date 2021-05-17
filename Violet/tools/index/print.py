@@ -84,6 +84,19 @@ def print_misc_person_index(misc):
         index += '\n\n'
     return index
 
+def print_tutor_crystal_index(tutor_crystals):
+    index = ''
+    for element, data in tutor_crystals.items():
+        locations = []
+        for entry in data:
+            bank = entry['bank']
+            map_idx = entry['map_idx']
+            namespace = entry['namespace']
+            person_idx = entry['person_idx']
+            locations.append(f'{namespace} [{bank}.{map_idx}] Person {person_idx}')
+        index += f'{element}\t : {",".join(locations)}\n'
+    index += '\n\n'
+    return index
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Creates an index pickle for all species habitats.')
@@ -95,6 +108,7 @@ if __name__ == '__main__':
     group.add_argument('--hidden', dest='index_type', action='store_const', const='hidden', help='Output the index for hidden flags')
     group.add_argument('--berries', dest='index_type', action='store_const', const='berries', help='Output the index for berries')
     group.add_argument('--misc', dest='index_type', action='store_const', const='misc', help='Output the index for misc persons (mushrooms, shells, ...)')
+    group.add_argument('--tutor_crystal', dest='index_type', action='store_const', const='tutor_crystal', help='Output the index for tutor crystals')
     args = parser.parse_args()
 
     with open(args.pickle, 'rb') as f:
@@ -109,6 +123,8 @@ if __name__ == '__main__':
         readable = print_berry_index(index)
     elif args.index_type == 'misc':
         readable = print_misc_person_index(index)
+    elif args.index_type == 'tutor_crystal':
+        readable = print_tutor_crystal_index(index)
     with open(args.output, 'w+') as f:
         f.write(readable)
     
