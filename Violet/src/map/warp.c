@@ -30,6 +30,8 @@ static void big_callback_cloud_upstream_warp_waiting(u8 self) {
     }
 }
 
+extern u8 ow_script_lockall_and_pause[];
+
 bool step_on_warp(position_t *position, u8 behaviour) {
     s8 warp_idx = map_get_warp_idx_by_position(&mapheader_virtual, position);
     if (warp_idx == -1)
@@ -44,6 +46,7 @@ bool step_on_warp(position_t *position, u8 behaviour) {
         warp_setup_by_event_and_position(&mapheader_virtual, warp_idx, position);
         map_cloud_upstream_whirlwind_at((s16)(position->coordinates.x - 7), (s16)(position->coordinates.y - 7));
         overworld_script_set_active();
+        overworld_script_init(ow_script_lockall_and_pause);
         big_callback_new(big_callback_cloud_upstream_warp_waiting, 0);
     } else if (behaviour_is_warp(behaviour)) {
         player_save_initial_state();

@@ -40,7 +40,7 @@ typedef struct {
 typedef struct {
     u8 bank;
     u8 map_idx;
-    u8 letters[NUM_UNOWN_LETTERS_PER_MAP];
+    u8 letters[NUM_UNOWN_LETTERS_PER_MAP + 1];
 } wild_pokemon_unown_t;
 
 /**
@@ -48,6 +48,13 @@ typedef struct {
  * @return pointer to NUM_UNOWN_LETTERS_PER_MAP chars representing the letters or NULL
  **/
 u8 *wild_pokemon_get_current_unown_letters();
+
+/**
+ * Returns a pointer to the NUM_UNOWN_LETTERS_PER_MAP letters that currently can appear on the map specified by
+ * a bank in variable 0x8005 and a map_idx in variable 0x8006.
+ * @return pointer to NUM_UNOWN_LETTERS_PER_MAP chars representing the letters or NULL
+ **/
+u8 *wild_pokemon_get_unown_letters_of_header(u8 bank, u8 map_idx);
 
 #define UNOWN_LETTER(char) (char - 'A')
 

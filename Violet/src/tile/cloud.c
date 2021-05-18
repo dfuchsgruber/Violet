@@ -15,6 +15,9 @@
 #include "debug.h"
 
 u8 *cloud_trigger(bool back) {
+	(void)back;
+	return NULL; 
+	/** Normal warp trigger instead
     if (item_check(ITEM_FAHRRAD, 1)) {
     	// Check if the player is facing a warp
     	position_t pos;
@@ -34,6 +37,7 @@ u8 *cloud_trigger(bool back) {
     } else {
         return script_cloud_none_ref;
     }
+	**/
 }
 
 void cloud_enter() {

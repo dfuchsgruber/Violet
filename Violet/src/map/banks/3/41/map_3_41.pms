@@ -522,13 +522,13 @@
 				},
 				{
 					"target_index": "20",
-					"picture": "238",
+					"picture": "92",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "44",
-					"y": "68",
+					"x": "51",
+					"y": "23",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -536,13 +536,13 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
-					"flag": "0",
+					"flag": "FLAG_ROUTE_2_CLOUDS_ITEM_3",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_POKEMON",
+					"script_std": "PERSON_ITEM",
 					"value": {
-						"item": "0",
-						"species": "POKEMON_FLORGES",
+						"item": "ITEM_TM32",
+						"species": "0",
 						"berry_tree_idx": 0,
 						"type": 0
 					}
@@ -1145,25 +1145,25 @@
 					"target_index": "43",
 					"picture": "238",
 					"field_2": 0,
-					"field_3": 0,
-					"x": "47",
-					"y": "34",
-					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"field_3": "35",
+					"x": "56",
+					"y": "23",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_FACE_UP_AND_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"is_trainer": "0",
-					"alert_radius": 0,
+					"is_trainer": "1",
+					"alert_radius": "4",
 					"script": "0",
-					"flag": "0",
+					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_3",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_POKEMON",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_FIFFYEN",
+						"species": "POKEMON_KIRLIA",
 						"berry_tree_idx": 0,
 						"type": 0
 					}
@@ -1719,10 +1719,10 @@
 					"target_warp_idx": 0
 				},
 				{
-					"x": "60",
-					"y": "6",
+					"x": "63",
+					"y": "7",
 					"level": 0,
-					"target_bank": 17,
+					"target_bank": "11",
 					"target_map": 3,
 					"target_warp_idx": 0
 				},

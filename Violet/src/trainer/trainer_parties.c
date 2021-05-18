@@ -1430,28 +1430,28 @@ trainer_pokemon_default_item_default_attacks trainer_party_x110_route_12_trainer
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x111_route_2_clouds_trainer_0[2] = {
-  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 30, POKEMON_PANZAERON),
-  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 31, POKEMON_WABLU),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 36, POKEMON_PANZAERON),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 37, POKEMON_WABLU),
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x112_route_2_clouds_trainer_1[1] = {
-  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 34, POKEMON_IKSBAT),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 39, POKEMON_IKSBAT),
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x113_route_2_clouds_trainer_2[3] = {
-  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 29, POKEMON_PELIPPER),
-  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 31, POKEMON_SCHWALBINI),
-  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 30, POKEMON_DARTIGNIS),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 34, POKEMON_PELIPPER),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 35, POKEMON_SCHWALBINI),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 34, POKEMON_DARTIGNIS),
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x114_route_2_clouds_trainer_3[1] = {
-  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 35, POKEMON_AERODACTYL),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 38, POKEMON_AERODACTYL),
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x115_route_2_clouds_trainer_4[3] = {
-  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 31, POKEMON_SCHWALBOSS),
-  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 28, POKEMON_DARTIRI),
-  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 30, POKEMON_DODU),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 35, POKEMON_SCHWALBOSS),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 34, POKEMON_DARTIRI),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 34, POKEMON_DODU),
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x116_route_5_clouds_trainer_2[2] = {

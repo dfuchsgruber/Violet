@@ -12,12 +12,12 @@
 					"picture": 170,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "24",
-					"y": "16",
+					"x": "31",
+					"y": "15",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_RIGHT_AND_LEFT",
 					"behaviour_range": {
-						"x": "3",
+						"x": "4",
 						"y": "1"
 					},
 					"is_trainer": "1",
@@ -273,8 +273,8 @@
 					"picture": "235",
 					"script_std": "PERSON_ACCESSIBLE_MOVE_TUTOR",
 					"field_3": 0,
-					"x": "43",
-					"y": "24",
+					"x": "49",
+					"y": "23",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -448,8 +448,8 @@
 					"picture": "238",
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "39",
-					"y": "26",
+					"x": "38",
+					"y": "30",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_LEFT_UP_RIGHT",
 					"behaviour_range": {
@@ -479,8 +479,8 @@
 					"target_warp_idx": 0
 				},
 				{
-					"x": "33",
-					"y": "21",
+					"x": "34",
+					"y": "25",
 					"level": 0,
 					"target_bank": 3,
 					"target_map": 23,
@@ -537,7 +537,7 @@
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_EAST",
-					"displacement": "-11",
+					"displacement": "4",
 					"bank": "11",
 					"map_idx": "3",
 					"field_A": 0,

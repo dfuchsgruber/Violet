@@ -151,3 +151,9 @@ mov_9r:
 	.byte STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STOP
 mov_9l:
 	.byte STEP_LEFT, STEP_LEFT, STEP_LEFT, STEP_LEFT, STEP_LEFT, STEP_LEFT, STEP_LEFT, STEP_LEFT, STEP_LEFT, STOP
+
+.global ow_script_lockall_and_pause
+
+ow_script_lockall_and_pause:
+	lockall
+	waitstate

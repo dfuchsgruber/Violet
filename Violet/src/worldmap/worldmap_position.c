@@ -195,8 +195,8 @@ static worldmap_position_bank worldmap_positions_bank_2  = {
 static worldmap_position_bank worldmap_positions_bank_11  = {
 	[0] = {.x = 20, .y = 6, .width = 1, .height = 1},
 	[1] = {.x = 20, .y = 8, .width = 1, .height = 1},
-	[2] = {.x = 17, .y = 8, .width = 4, .height = 1},
-	[3] = {.x = 17, .y = 6, .width = 1, .height = 2},
+	[2] = {.x = 18, .y = 8, .width = 1, .height = 1},
+	[3] = {.x = 17, .y = 6, .width = 1, .height = 1},
 	[4] = {.x = 17, .y = 6, .width = 1, .height = 1},
 	[5] = {.x = 17, .y = 8, .width = 1, .height = 1},
 	[6] = {.x = 18, .y = 8, .width = 2, .height = 1},

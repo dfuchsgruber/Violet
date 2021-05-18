@@ -453,18 +453,18 @@ wild_pokemon_data wild_pokemon[] = {
 		.water = &wild_pokemon_3_41_water,
 		.other = &wild_pokemon_3_7_other,
 		.rod = &wild_pokemon_3_41_rod,
-	},
+	}, /* Removed map
 	{
 		.bank = 11, .map = 2,
 		.grass = &wild_pokemon_route_2_clouds_grass,
 		.water = &wild_pokemon_route_2_clouds_water,
 		.rod = &wild_pokemon_route_2_clouds_rod,
-	},
+	}, */
 	{
 		.bank = 11, .map = 3,
 		.grass = &wild_pokemon_route_2_clouds_grass,
-		.water = &wild_pokemon_route_2_clouds_water,
-		.rod = &wild_pokemon_route_2_clouds_rod,
+		//.water = &wild_pokemon_route_2_clouds_water,
+		//.rod = &wild_pokemon_route_2_clouds_rod,
 	},
 	{
 	    .bank = 3, .map = 8,

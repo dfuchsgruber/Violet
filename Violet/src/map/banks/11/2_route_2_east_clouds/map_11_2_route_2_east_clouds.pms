@@ -2,8 +2,8 @@
 	"data": {
 		"footer": "map_footer_11",
 		"events": {
-			"person_cnt": 8,
-			"warp_cnt": 10,
+			"person_cnt": 7,
+			"warp_cnt": 2,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
 			"persons": [
@@ -35,11 +35,11 @@
 				},
 				{
 					"target_index": "2",
-					"picture": "32",
-					"script_std": 0,
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "42",
-					"y": "32",
+					"x": "29",
+					"y": "13",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -50,11 +50,11 @@
 					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
-					"script": "ow_script_route_2_clouds_person_1",
+					"script": "0",
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_KRAMSHEF",
 						"berry_tree_idx": 0,
 						"type": 0
 					}
@@ -64,10 +64,10 @@
 					"picture": "24",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "25",
+					"x": "22",
 					"y": "23",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -87,16 +87,16 @@
 				},
 				{
 					"target_index": "4",
-					"picture": "171",
-					"script_std": 0,
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "10",
-					"y": "14",
+					"x": "19",
+					"y": "12",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_UP_LEFT_RIGHT",
 					"behaviour_range": {
-						"x": "0",
-						"y": "0"
+						"x": "8",
+						"y": "5"
 					},
 					"field_B": 0,
 					"is_trainer": "0",
@@ -106,33 +106,7 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": 0
-					}
-				},
-				{
-					"target_index": "5",
-					"picture": "92",
-					"script_std": "PERSON_ITEM",
-					"field_3": 0,
-					"x": "4",
-					"y": "17",
-					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
-					"behaviour_range": {
-						"x": "0",
-						"y": "0"
-					},
-					"field_B": 0,
-					"is_trainer": "0",
-					"field_D": 0,
-					"alert_radius": 0,
-					"script": 0,
-					"flag": "FLAG_ROUTE_2_CLOUDS_ITEM_0",
-					"value": {
-						"item": "ITEM_KP_PLUS",
-						"species": 0,
+						"species": "POKEMON_STARAPTOR",
 						"berry_tree_idx": 0,
 						"type": 0
 					}
@@ -142,8 +116,8 @@
 					"picture": "92",
 					"script_std": "PERSON_ITEM",
 					"field_3": 0,
-					"x": "86",
-					"y": "15",
+					"x": "18",
+					"y": "25",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -168,8 +142,8 @@
 					"picture": "170",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "83",
-					"y": "25",
+					"x": "20",
+					"y": "7",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_LEFT",
 					"behaviour_range": {
@@ -190,27 +164,26 @@
 					}
 				},
 				{
-					"target_index": "8",
-					"picture": "171",
-					"script_std": 0,
+					"target_index": "7",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "53",
-					"y": "13",
+					"x": "32",
+					"y": "25",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_LEFT_UP_RIGHT",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
-						"x": "3",
-						"y": "0"
+						"x": 0,
+						"y": 0
 					},
 					"field_B": 0,
-					"is_trainer": "1",
-					"field_D": 0,
-					"alert_radius": "3",
-					"script": "ow_script_route_2_clouds_trainer_1",
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_WABLU",
 						"berry_tree_idx": 0,
 						"type": 0
 					}
@@ -218,84 +191,20 @@
 			],
 			"warps": [
 				{
-					"x": "80",
-					"y": "13",
+					"x": "6",
+					"y": "8",
 					"level": 0,
 					"target_bank": 3,
 					"target_map": 7,
 					"target_warp_idx": 1
 				},
 				{
-					"x": "81",
-					"y": "13",
+					"x": "27",
+					"y": "31",
 					"level": 0,
-					"target_bank": 3,
-					"target_map": 7,
-					"target_warp_idx": 2
-				},
-				{
-					"x": "81",
-					"y": "14",
-					"level": 0,
-					"target_bank": 3,
-					"target_map": 7,
-					"target_warp_idx": 3
-				},
-				{
-					"x": "80",
-					"y": "14",
-					"level": 0,
-					"target_bank": 3,
-					"target_map": 7,
-					"target_warp_idx": 4
-				},
-				{
-					"x": "90",
-					"y": "26",
-					"level": 0,
-					"target_bank": 3,
-					"target_map": 7,
-					"target_warp_idx": 5
-				},
-				{
-					"x": "91",
-					"y": "26",
-					"level": 0,
-					"target_bank": 3,
-					"target_map": 7,
-					"target_warp_idx": 6
-				},
-				{
-					"x": "91",
-					"y": "27",
-					"level": 0,
-					"target_bank": 3,
-					"target_map": 7,
-					"target_warp_idx": 7
-				},
-				{
-					"x": "90",
-					"y": "27",
-					"level": 0,
-					"target_bank": 3,
-					"target_map": 7,
-					"target_warp_idx": 8
-				},
-				{
-					"x": "42",
-					"y": "29",
-					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": "4",
-					"target_bank": "11"
-				},
-				{
-					"x": "43",
-					"y": "29",
-					"level": 0,
-					"target_warp_idx": "1",
-					"target_map": "4",
-					"target_bank": "11"
+					"target_warp_idx": "2",
+					"target_map": "7",
+					"target_bank": "3"
 				}
 			],
 			"triggers": [],

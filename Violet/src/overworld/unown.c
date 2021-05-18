@@ -36,8 +36,16 @@ static u8 *unown_messages[] = {
     [UNOWN_MESSAGE_STEEL] = unown_message_steel
 };
 
+static u8 *unown_message_get(int idx) {
+    if (idx == UNOWN_MESSAGE_BY_HEADER) {
+        return wild_pokemon_get_unown_letters_of_header((u8)*var_access(0x8005), (u8)*var_access(0x8006));
+    } else {
+        return unown_messages[idx];
+    }
+}
+
 bool player_party_spells_unown_message() {
-    u8 *message = unown_messages[*var_access(0x8004)];
+    u8 *message = unown_message_get(*var_access(0x8004));
     u8 party_message[7] = {0xFF};
     int j = 0;
     for (int i = 0; i < player_pokemon_cnt; i++) {
@@ -99,7 +107,8 @@ void overworld_unown_wait_message(u8 self) {
 }
 
 void overworld_unown_print_message() {
-    u8 *message = unown_messages[*var_access(0x8004)];
+    u8 *message = unown_message_get(*var_access(0x8004));
+    dprintf("Printing unown message 0x%x\n", message);
     fmem.gp_state = malloc(sizeof(overworld_unown_state_t));
     for (OVERWORLD_UNOWN_MESSAGE_STATE->message_length = 0; message[OVERWORLD_UNOWN_MESSAGE_STATE->message_length] != 0xFF; 
         OVERWORLD_UNOWN_MESSAGE_STATE->message_length++) {}

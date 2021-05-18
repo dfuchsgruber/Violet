@@ -402,7 +402,7 @@ static void overworld_cloud_static_upstream_callback (oam_object *self) {
     s16 oam_x = 0; s16 oam_y = 0; // Anchor position for all oams
     map_position_to_oam_position((s16)(self->private[4]), (s16)(self->private[5]), &oam_x, &oam_y);
     self->x = (s16)(oam_x + 16 - 8);
-    self->y = (s16)(oam_y + self->private[6] * 6 + 4);
+    self->y = (s16)(oam_y + self->private[6] * 6);
 
     if (overworld_effect_is_oam_outside_camera_view((s16)self->private[4], (s16)self->private[5], 64, 32)) {
         self->flags |= OAM_FLAG_INVISIBLE;
