@@ -1185,3 +1185,15 @@ lsr r0, #0x1A
 	ldr r0, =move_relearner_copy_to_vram_or_clear | 1
 	bx r0
 	.pool
+
+.org 0x08050f1c
+	.word ingame_trades
+.org 0x08053af4
+	.word ingame_trades
+.org 0x08053b50
+	.word ingame_trades
+
+.org 0x08053b68
+	ldr r2, =ingame_trade_pokemon_new | 1
+	bx r2
+	.pool

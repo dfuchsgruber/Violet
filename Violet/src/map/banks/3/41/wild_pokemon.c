@@ -11,7 +11,7 @@ wild_pokemon_entry wild_pokemon_3_41_grass_entries[12] = {
 	[WILD_POKEMON_DENSITY_GRASS_2_10_PERCENT] = 
 		{.level_min = 5, .level_max = 7, .species = POKEMON_WAUMPEL},
 	[WILD_POKEMON_DENSITY_GRASS_3_10_PERCENT] = 
-		{.level_min = 5, .level_max = 7, .species = POKEMON_TRASLA},
+		{.level_min = 5, .level_max = 7, .species = POKEMON_ABRA},
 	[WILD_POKEMON_DENSITY_GRASS_4_10_PERCENT] = 
 		{.level_min = 5, .level_max = 7, .species = POKEMON_KOKUNA},
 	[WILD_POKEMON_DENSITY_GRASS_5_10_PERCENT] = 

@@ -83,5 +83,6 @@
 	"battle/battle_ai_item_flags" : "constants/battle/battle_ai_item_flags.const",
 	"overworld/overworld_effects" : "constants/overworld/overworld_effects.const",
 	"battle_side_statuses" : "constants/battle/battle_side_statuses.const",
-	"fata_morgana" : "constants/fata_morgana.const"
+	"fata_morgana" : "constants/fata_morgana.const",
+	"ingame_trades" : "constants/ingame_trades.const"
 }

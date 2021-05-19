@@ -23075,28 +23075,28 @@
 			],
 			[
 				{
-					"tile_idx": 218,
+					"tile_idx": 211,
 					"palette_idx": 0,
-					"horizontal_flip": 1,
-					"vertical_flip": 1
+					"horizontal_flip": 0,
+					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 217,
+					"tile_idx": 212,
 					"palette_idx": 0,
-					"horizontal_flip": 1,
-					"vertical_flip": 1
-				},
-				{
-					"tile_idx": 214,
-					"palette_idx": 0,
-					"horizontal_flip": 1,
-					"vertical_flip": 1
+					"horizontal_flip": 0,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 213,
 					"palette_idx": 0,
-					"horizontal_flip": 1,
-					"vertical_flip": 1
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 214,
+					"palette_idx": 0,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 0,
@@ -50980,7 +50980,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_B8",
+				"behaviour": "MB_CLOUD_UPSTREAM_WARP",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
