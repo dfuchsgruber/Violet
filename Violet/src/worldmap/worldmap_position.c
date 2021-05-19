@@ -80,12 +80,15 @@ static worldmap_position_bank worldmap_positions_bank_4  = {
 
 static worldmap_position_bank worldmap_positions_bank_5  = {
 	[0] = {.x = 21, .y = 8, .width = 1, .height = 1},
+	[1] = {.x = 21, .y = 8, .width = 1, .height = 1},
 	[2] = {.x = 21, .y = 8, .width = 1, .height = 1},
+	[3] = {.x = 21, .y = 8, .width = 1, .height = 1},
 	[4] = {.x = 21, .y = 8, .width = 1, .height = 1},
+	[5] = {.x = 21, .y = 8, .width = 1, .height = 1},
+	[6] = {.x = 21, .y = 8, .width = 1, .height = 1},
 	[11] = {.x = 21, .y = 8, .width = 1, .height = 1},
 	[12] = {.x = 21, .y = 8, .width = 1, .height = 1},
 	[13] = {.x = 21, .y = 8, .width = 1, .height = 1},
-	[1] = {.x = 21, .y = 8, .width = 1, .height = 1},
 };
 
 static worldmap_position_bank worldmap_positions_bank_6  = {
@@ -172,14 +175,23 @@ static worldmap_position_bank worldmap_positions_bank_15  = {
 };
 
 static worldmap_position_bank worldmap_positions_bank_16  = {
+	[2] = {.x = 21, .y = 7, .width = 1, .height = 1},
 	[3] = {.x = 21, .y = 7, .width = 1, .height = 1},
 	[4] = {.x = 21, .y = 6, .width = 1, .height = 1},
 	[0] = {.x = 21, .y = 6, .width = 1, .height = 2},
+	[1] = {.x = 21, .y = 6, .width = 1, .height = 1},
 };
 
 static worldmap_position_bank worldmap_positions_bank_17  = {
+	[0] = {.x = 16, .y = 6, .width = 1, .height = 1},
+	[1] = {.x = 16, .y = 6, .width = 1, .height = 1},
 	[2] = {.x = 16, .y = 6, .width = 1, .height = 1},
 	[3] = {.x = 16, .y = 6, .width = 1, .height = 1},
+	[4] = {.x = 16, .y = 6, .width = 1, .height = 1},
+	[5] = {.x = 16, .y = 6, .width = 1, .height = 1},
+	[6] = {.x = 16, .y = 6, .width = 1, .height = 1},
+	[7] = {.x = 16, .y = 6, .width = 1, .height = 1},
+	[8] = {.x = 16, .y = 6, .width = 1, .height = 1},
 };
 
 static worldmap_position_bank worldmap_positions_bank_18  = {
@@ -256,6 +268,8 @@ static worldmap_position_bank worldmap_positions_bank_22  = {
 	[4] = {.x = 21, .y = 5, .width = 1, .height = 1},
 	[5] = {.x = 21, .y = 5, .width = 1, .height = 1},
 	[6] = {.x = 21, .y = 5, .width = 1, .height = 1},
+	[7] = {.x = 21, .y = 5, .width = 1, .height = 1},
+	[8] = {.x = 21, .y = 5, .width = 1, .height = 1},
 };
 
 static worldmap_position_bank worldmap_positions_bank_23  = {
