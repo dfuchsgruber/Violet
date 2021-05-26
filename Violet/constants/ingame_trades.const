@@ -3,6 +3,8 @@
     "base" : 0,
     "values" : [
         "INGAME_TRADE_CAMAUB",
+        "INGAME_TRADE_SEEMOPS",
+        "INGAME_TRADE_ZWIRRLICHT",
         "INGAME_TRADE_MOLUNK",
         "NUM_INGAME_TRADES"
     ]

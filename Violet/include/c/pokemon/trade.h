@@ -14,7 +14,7 @@ typedef struct {
     u8 has_custom_moves : 1;
     u8 field_21[3];
     u32 tid;
-    u16 moves;
+    u16 moves[4];
     pid_t pid;
     u16 item;
     u8 mail_idx;

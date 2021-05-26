@@ -3,9 +3,9 @@
 		"footer": "map_footer_89",
 		"events": {
 			"person_cnt": 19,
-			"warp_cnt": 4,
+			"warp_cnt": 1,
 			"trigger_cnt": 11,
-			"signpost_cnt": 4,
+			"signpost_cnt": 3,
 			"persons": [
 				{
 					"is_trainer": "0",
@@ -506,35 +506,11 @@
 			"warps": [
 				{
 					"target_map": 76,
-					"y": 26,
+					"y": "27",
 					"target_bank": 3,
 					"level": 0,
-					"x": 27,
+					"x": "26",
 					"target_warp_idx": 0
-				},
-				{
-					"target_map": 76,
-					"y": 27,
-					"target_bank": 3,
-					"level": 0,
-					"x": 27,
-					"target_warp_idx": 1
-				},
-				{
-					"target_map": 76,
-					"y": 27,
-					"target_bank": 3,
-					"level": 0,
-					"x": 26,
-					"target_warp_idx": 2
-				},
-				{
-					"target_map": 76,
-					"y": 26,
-					"target_bank": 3,
-					"level": 0,
-					"x": 26,
-					"target_warp_idx": 3
 				}
 			],
 			"triggers": [
@@ -661,22 +637,6 @@
 				}
 			],
 			"signposts": [
-				{
-					"x": 44,
-					"y": 20,
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"script": "0",
-						"item": {
-							"item": "0",
-							"flag": "0",
-							"amount": 0,
-							"chunk": 0
-						}
-					},
-					"flag": "0"
-				},
 				{
 					"x": 16,
 					"y": 41,

@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_kaskada_tea_house",
 		"events": {
-			"person_cnt": 11,
+			"person_cnt": 12,
 			"warp_cnt": 2,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
@@ -275,6 +275,31 @@
 					"alert_radius": 0,
 					"script": "ow_script_kaskada_tea_house_igva",
 					"flag": "FLAG_KASKADA_IGVA_TEAHOUSE | 0x8000",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "12",
+					"picture": "23",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "8",
+					"y": "3",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_kaskada_teahouse_ingame_trade",
+					"flag": 0,
 					"value": {
 						"item": 0,
 						"species": 0,

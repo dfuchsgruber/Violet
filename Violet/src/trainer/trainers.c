@@ -7065,6 +7065,13 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x1d4_route_5_trainer_9,
     },
+    [0x1d5] = {
+        .trainerclass = TRAINERCLASS_RUINENMANIAC, .sprite = 4,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Tobias"),
+            PSTRING("Tobias")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1d5_anemonia_clouds_trainer_0),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1d5_anemonia_clouds_trainer_0,
+    },
     [0x300] = {
       .uses_custom_moves = true, .uses_custom_items = true,
       .trainerclass = TRAINERCLASS_CHEFKOCH, .encounter_and_gender = {1, 0} , .sprite = 0x74,

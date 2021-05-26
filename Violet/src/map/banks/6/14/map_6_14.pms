@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_439_indoor_layout_8",
 		"events": {
-			"person_cnt": 2,
+			"person_cnt": 3,
 			"warp_cnt": 1,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
@@ -54,6 +54,31 @@
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "1",
+					"picture": "30",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "9",
+					"y": "3",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
 					"value": {
 						"item": 0,
 						"species": 0,

@@ -5,7 +5,6 @@
 .include "ordinals.s"
 .include "ingame_trades.s"
 .include "vars.s"
-.include "specials.s"
 
 .global ow_script_map_5_11_person_1
 .global ow_script_map_5_11_person_0
@@ -22,7 +21,7 @@ ow_script_map_5_11_person_1:
 ow_script_bluetenbach_ingame_trade:
 	lock
 	faceplayer
-	setvar 0x8008, POKEMON_CAMAUB
+	setvar 0x8008, INGAME_TRADE_CAMAUB
 	call ow_script_ingame_trade_get_species_info
 	checkflag FLAG_BLUETENBACH_INGAME_TRADE
     gotoif 1 already_traded

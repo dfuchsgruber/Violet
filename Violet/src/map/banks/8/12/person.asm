@@ -5,6 +5,8 @@
 .include "mugshot.s"
 .include "ordinals.s"
 .include "movements.s"
+.include "species.s"
+.include "ingame_trades.s"
 
 .global ow_script_kaskada_tea_house_person_0
 .global ow_script_kaskada_tea_house_person_1
@@ -16,6 +18,7 @@
 .global ow_script_kaskada_tea_house_person_7
 .global ow_script_kaskada_tea_house_person_8
 .global ow_script_kaskada_tea_house_igva
+.global ow_script_kaskada_teahouse_ingame_trade
 
 ow_script_kaskada_tea_house_person_0:
     loadpointer 0 str_0
@@ -88,6 +91,51 @@ ow_script_kaskada_tea_house_igva:
     release
     end
 
+ow_script_kaskada_teahouse_ingame_trade:
+	lock
+	faceplayer
+	setvar 0x8008, INGAME_TRADE_MOLUNK
+	call ow_script_ingame_trade_get_species_info
+	checkflag FLAG_KASKADA_INGAME_TRADE
+    gotoif 1 already_traded
+    loadpointer 0 str_want_to_trade
+    callstd MSG_YES_NO
+	compare LASTRESULT, 0
+	gotoif EQUAL decline_trade
+	call ow_script_ingame_trade_choose_party_idx_to_trade
+	compare 0x8004, 6
+	gotoif HIGHER_OR_EQUAL decline_trade
+	call ow_script_ingame_trade_get_trade_species
+	comparevars LASTRESULT, 0x8009
+	gotoif NOT_EQUAL wrong_species
+	call ow_script_ingame_trade
+	loadpointer 0 str_after_trade
+	setflag FLAG_KASKADA_INGAME_TRADE
+	release
+	end
+
+decline_trade:
+	call ow_script_ingame_trade_get_species_info
+	loadpointer 0 str_decline_trade
+    callstd MSG
+	release
+	end
+
+wrong_species:
+	copyvar 0x8000, LASTRESULT
+	call ow_script_ingame_trade_get_species_info
+	bufferpokemon 1, 0x8000
+	loadpointer 0 str_wrong_species
+	callstd MSG
+	release
+	end
+
+already_traded:
+	loadpointer 0 str_already_traded
+	callstd MSG
+	release
+	end
+
 mov_step_inplace:
     .byte STEP_IN_PLACE_UP, STEP_IN_PLACE_UP, STOP
 
@@ -116,5 +164,15 @@ str_8:
     .autostring 34 2 "Hey, im Lagerraum hast du nichts zu suchen, verstanden?\pDer ist nämlich nur für besondere Gäste zugänglichDOTS"
 str_9:
     .autostring 34 2 "Wenn man den ganzen Tag hier den Lagerraum bewachen muss, wird man sehr durstig.\pWas für ein Zufall, dass ich gerade in einem Teehaus arbeite."
+str_want_to_trade:
+    .autostring 34 2 "Ich liebe es, an einem solchen Tag einen Tee zu trinken.\pNoch mehr aber liebe ich das Pokémon BUFFER_1.\pIch würde dafür sogar mein BUFFER_2 hergeben.\pWas meinst du dazu?"
+str_decline_trade:
+    .autostring 34 2 "Wie schade.\pVielleicht kann ich dich aber trotzdem zu einem Tee überreden?"
+str_wrong_species:
+    .autostring 34 2 "Das ist aber nicht sehr höflich, zu versuchen mir ein falsches Pokémon unterzujubeln.\pIch habe doch explizit nach einem BUFFER_1 gefragt!"
+str_already_traded:
+    .autostring 34 2 "Hach, dieses BUFFER_1 ist wirklich toll.\pMöchtest du einen Tee, mein Kleines?"
+str_after_trade:
+    .autostring 34 2 "Wahnsinn!\pMit BUFFER_1 an meiner Seite schmeckt mir mein Tee doch gleich viel besser."
 .elseif LANG_EN
 .endif

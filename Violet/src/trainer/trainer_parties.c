@@ -753,8 +753,8 @@ trainer_pokemon_default_item_default_attacks trainer_party_x8b[] = {
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x8c[] = {
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,31,POKEMON_SONNFEL),
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,31,POKEMON_LUNASTEIN)
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,36,POKEMON_SONNFEL),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,36,POKEMON_LUNASTEIN)
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x8d[] = {
@@ -2587,6 +2587,12 @@ trainer_pokemon_default_item_default_attacks trainer_party_x1d3_route_5_trainer_
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,34,POKEMON_KARPADOR),
 }; 
 
-trainer_pokemon_default_item_default_attacks trainer_party_x1d4_route_5_trainer_9[3] = {
+trainer_pokemon_default_item_default_attacks trainer_party_x1d4_route_5_trainer_9[1] = {
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,37,POKEMON_GARADOS),
+}; 
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1d5_anemonia_clouds_trainer_0[3] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,34,POKEMON_PUPPANCE),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,35,POKEMON_KLEINSTEIN),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,35,POKEMON_AMONITAS),
 }; 

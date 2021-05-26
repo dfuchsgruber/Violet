@@ -34,6 +34,62 @@ ingame_trade_t ingame_trades[NUM_INGAME_TRADES] = {
         .hidden_ability = 1,
         .requested_species = POKEMON_ABRA,
     },
+    [INGAME_TRADE_SEEMOPS] = {
+        .nickname = LANGDEP(PSTRING("Robin"), PSTRING("Robin")),
+        .species = POKEMON_SCHNEPPKE,
+        .ivs = {
+            [STAT_HP] = 24,
+            [STAT_ATTACK] = 16,
+            [STAT_DEFENSE] = 25,
+            [STAT_SPEED] = 25,
+            [STAT_SPECIAL_ATTACK] = 31,
+            [STAT_SPECIAL_DEFENSE] = 22,
+        },
+        .tid = 1234321,
+        .pid = {
+            .fields = {
+                .ability = 0,
+                .gender_partial = 0,
+                .is_shiny = 0,
+                .hidden_power_type = TYPE_ELEKTRO,
+                .hidden_power_strength = 7,
+                .nature = NATURE_STILL,
+            }
+        },
+        .item = ITEM_SEEGESANG,
+        .ot_name = LANGDEP(PSTRING("Franz"), PSTRING("Franz")),
+        .ot_is_female = 0,
+        .hidden_ability = 1,
+        .requested_species = POKEMON_ONIX,
+    },
+    [INGAME_TRADE_ZWIRRLICHT] = {
+        .nickname = LANGDEP(PSTRING("Düstrich"), PSTRING("Dusky")),
+        .species = POKEMON_ZWIRRLICHT,
+        .ivs = {
+            [STAT_HP] = 24,
+            [STAT_ATTACK] = 16,
+            [STAT_DEFENSE] = 25,
+            [STAT_SPEED] = 25,
+            [STAT_SPECIAL_ATTACK] = 31,
+            [STAT_SPECIAL_DEFENSE] = 22,
+        },
+        .tid = 666,
+        .pid = {
+            .fields = {
+                .ability = 0,
+                .gender_partial = 127,
+                .is_shiny = 0,
+                .hidden_power_type = TYPE_FEE,
+                .hidden_power_strength = 7,
+                .nature = NATURE_HART,
+            }
+        },
+        .item = ITEM_DUESTERUMHANG,
+        .ot_name = LANGDEP(PSTRING("Simon"), PSTRING("Simon")),
+        .ot_is_female = 0,
+        .hidden_ability = 1,
+        .requested_species = POKEMON_WABLU,
+    },
     [INGAME_TRADE_MOLUNK] = {
         .nickname = LANGDEP(PSTRING("Lizzy"), PSTRING("Lizzy")),
         .species = POKEMON_MOLUNK,
@@ -57,7 +113,7 @@ ingame_trade_t ingame_trades[NUM_INGAME_TRADES] = {
             }
         },
         .item = ITEM_GIFTJUWEL,
-        .ot_name = LANGDEP(PSTRING("Hannah"), PSTRING("Hannah")),
+        .ot_name = LANGDEP(PSTRING("Emilia"), PSTRING("Emilia")),
         .ot_is_female = 1,
         .hidden_ability = 1,
         .requested_species = POKEMON_NIDORANM,
@@ -81,4 +137,9 @@ void ingame_trade_pokemon_new(u8 party_idx, u8 ingame_trade_idx) {
     int met_location = CATCH_LOCATION_INGAME_TRADE;
     pokemon_set_attribute(p, ATTRIBUTE_CATCH_LOCATION, &met_location);
     pokemon_calculate_stats(p);
+    if (trade->has_custom_moves) {
+        for (int i = 0; i < 4; i++) {
+            pokemon_set_attribute(p, ATTRIBUTE_ATTACK1 + i, trade->moves + i);
+        }
+    }
 }
