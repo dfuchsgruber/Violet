@@ -729,6 +729,9 @@ wild_pokemon_data wild_pokemon[] = {
 		.water = NULL,
 		.other = NULL,
 		.rod = NULL,
+	}, {
+		.bank = 16, .map = 5,
+		.grass = &wild_pokemon_route_4_cloud_cave_grass,
 	},
 	{
 	    .bank = 0xFF, .map = 0xFF, .field_2 = 0xFF, .field_3 = 0xFF,

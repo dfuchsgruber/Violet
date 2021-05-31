@@ -1622,6 +1622,20 @@ overworld_sprite ow_rosalie = {
 	oam_rotscale_anim_table_null
 };
 
+static graphic overworld_sprite_old_amber_sprites[] = {
+	{gfx_ow_old_amberTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_old_amberTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_old_amberTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+};
+
+overworld_sprite ow_old_amber = {
+	0xffff, 0x1103, 0x11ff, 0x100,
+	16, 16, 0, 1, true, 0, 0x1, 0x0, 0x8,
+	&ow_final_oam_16_16, &ow_formation_16_16,
+	ow_anim_standard_npc, overworld_sprite_old_amber_sprites, 
+	oam_rotscale_anim_table_null,
+};
+
 //The overworld table
 overworld_sprite *overworld_sprites[] = {
     	&ow_hiro,
@@ -1824,6 +1838,7 @@ overworld_sprite *overworld_sprites[] = {
 		&ow_lester_young,
 		&ow_roman,
 		&ow_rival_beaten,
+	[181] = &ow_old_amber,
 
 	[OVERWORLD_SPRITE_TUTOR_CRYSTAL] = &ow_tutor_crystal_dummy,
 	[OVERWORLD_SPRITE_MISC] = &ow_misc_16_16,

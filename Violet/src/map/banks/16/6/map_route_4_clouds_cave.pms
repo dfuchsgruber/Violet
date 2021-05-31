@@ -1,0 +1,179 @@
+{
+	"data": {
+		"footer": "map_footer_route_4_clouds_cave",
+		"events": {
+			"person_cnt": 2,
+			"warp_cnt": 1,
+			"trigger_cnt": 4,
+			"signpost_cnt": 2,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "181",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "28",
+					"y": "12",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ROUTE_4_AMBER_STONE | 0x8000",
+					"value": {
+						"item": "ITEM_ALTBERNSTEIN",
+						"species": "0",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "2",
+					"picture": "238",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
+					"field_3": "38",
+					"x": "19",
+					"y": "25",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_RIGHT_UP_LEFT_DOWN",
+					"behaviour_range": {
+						"x": "7",
+						"y": "4"
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "5",
+					"script": 0,
+					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_GOLBAT",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "28",
+					"y": "41",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": 0,
+					"target_bank": "16"
+				}
+			],
+			"triggers": [
+				{
+					"x": "17",
+					"y": "29",
+					"level": 0,
+					"field_5": 0,
+					"var": "0x4004",
+					"value": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_route_4_clouds_cave_west_button"
+				},
+				{
+					"x": "40",
+					"y": "29",
+					"level": 0,
+					"field_5": 0,
+					"var": "0x4002",
+					"value": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_route_4_clouds_cave_east_button"
+				},
+				{
+					"x": "34",
+					"y": "43",
+					"level": 0,
+					"field_5": 0,
+					"var": "0x4003",
+					"value": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_route_4_clouds_cave_south_button"
+				},
+				{
+					"x": "32",
+					"y": "19",
+					"level": 0,
+					"field_5": 0,
+					"var": "0x4001",
+					"value": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_route_4_clouds_cave_north_button"
+				}
+			],
+			"signposts": [
+				{
+					"x": "28",
+					"y": "34",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_route_4_clouds_cave_tablet"
+					}
+				},
+				{
+					"x": "29",
+					"y": "34",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_route_4_clouds_cave_tablet"
+					}
+				}
+			]
+		},
+		"levelscripts": "route_4_clouds_cave_levelscripts",
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_GLUTBERG_AND_EISKASKADENHOHLE_AND_WANDELHOHLE_AND_VERLORENE_HOHLE_AND_NABELFELS",
+		"footer_idx": 158,
+		"namespace": "MAP_ROUTE_4",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_BASEMENT",
+		"bike_usable": "1",
+		"flags": {
+			"allow_escape_rope": "1",
+			"allow_run": 0,
+			"show_name": 0,
+			"flag_3": 0,
+			"flag_4": 0,
+			"flag_5": 0,
+			"flag_6": 0,
+			"flag_7": 0
+		},
+		"level": 0,
+		"battle_style": 0
+	},
+	"label": "map_route_4_clouds_cave",
+	"type": "header"
+}

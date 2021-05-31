@@ -1794,6 +1794,8 @@ extern const u8 gfx_ow_lester_youngTiles[];
 extern const u8 gfx_ow_romanTiles[];
 extern const u8 gfx_ow_rageTiles[];
 extern const u8 gfx_ow_rosalieTiles[];
+extern const u8 gfx_ow_old_amberTiles[];
+
 
 extern const u8 gfx_tutor_crystal_bugTiles[];
 extern const color_t gfx_tutor_crystal_bugPal[16];

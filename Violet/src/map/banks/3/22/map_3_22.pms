@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_92",
 		"events": {
-			"person_cnt": 61,
+			"person_cnt": 62,
 			"warp_cnt": 7,
 			"trigger_cnt": 1,
 			"signpost_cnt": 4,
@@ -1314,8 +1314,8 @@
 					"picture": "238",
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "9",
-					"y": "30",
+					"x": "7",
+					"y": "28",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -1555,6 +1555,31 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_MACHOLLO",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "62",
+					"picture": "101",
+					"script_std": "PERSON_EGG",
+					"field_3": 0,
+					"x": "9",
+					"y": "36",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ROUTE_4_EGG_2",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_LARVITAR",
 						"berry_tree_idx": 0,
 						"type": 0
 					}
