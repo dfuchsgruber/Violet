@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_meriana_city_clouds",
 		"events": {
-			"person_cnt": 4,
+			"person_cnt": 10,
 			"warp_cnt": 0,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
@@ -12,8 +12,8 @@
 					"picture": "56",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "11",
-					"y": "9",
+					"x": "16",
+					"y": "23",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -38,8 +38,8 @@
 					"picture": "92",
 					"script_std": "PERSON_ITEM",
 					"field_3": 0,
-					"x": "42",
-					"y": "22",
+					"x": "34",
+					"y": "4",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -64,8 +64,8 @@
 					"picture": "171",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "38",
-					"y": "7",
+					"x": "31",
+					"y": "6",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -90,10 +90,10 @@
 					"picture": "170",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "25",
+					"x": "32",
 					"y": "21",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_WALK_LEFT_AND_RIGHT",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "5",
 						"y": "0"
@@ -107,6 +107,156 @@
 					"value": {
 						"item": 0,
 						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "5",
+					"picture": "235",
+					"script_std": "PERSON_ACCESSIBLE_MOVE_TUTOR",
+					"field_3": 0,
+					"x": "13",
+					"y": "30",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": "TYPE_KAMPF"
+					}
+				},
+				{
+					"target_index": "6",
+					"picture": "96",
+					"script_std": "0",
+					"field_3": 0,
+					"x": "12",
+					"y": "25",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_rock_smash",
+					"flag": "16",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "7",
+					"picture": "238",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
+					"field_3": "35",
+					"x": "10",
+					"y": "12",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_RIGHT_AND_LEFT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "5",
+					"script": 0,
+					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_FLOETTE",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "8",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "19",
+					"y": "11",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_RIGHT_DOWN_LEFT_UP",
+					"behaviour_range": {
+						"x": "4",
+						"y": "4"
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_DARTIGNIS",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "9",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "37",
+					"y": "15",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_DOWN_AND_UP",
+					"behaviour_range": {
+						"x": 0,
+						"y": "10"
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_PANZAERON",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "10",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "28",
+					"y": "31",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KRAMURX",
 						"berry_tree_idx": 0,
 						"type": 0
 					}
@@ -130,7 +280,7 @@
 				},
 				{
 					"direction": "MAP_CONNECTION_SOUTH",
-					"displacement": "37",
+					"displacement": "-8",
 					"bank": "3",
 					"map_idx": "76",
 					"field_A": 0,
@@ -138,7 +288,7 @@
 				},
 				{
 					"direction": "MAP_CONNECTION_NORTH",
-					"displacement": "14",
+					"displacement": "-3",
 					"bank": "16",
 					"map_idx": 0,
 					"field_A": 0,
