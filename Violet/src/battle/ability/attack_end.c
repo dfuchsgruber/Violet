@@ -76,8 +76,8 @@ bool battle_abilities_attack_done_attacker_new() {
         int hp_to_heal = damage_caused >> 2;
         if(hp_to_heal <= 0) hp_to_heal = 1;
         damage_to_apply = -hp_to_heal;
-        bsc_offset = bsc_lebensraeuber;
         battlescript_callstack_push_next_command(); 
+        bsc_offset = bsc_lebensraeuber;
         return true;
     }else if (attacker->ability == CURATOR && !(attack_result & ATTACK_NO_EFFECT_ANY) && 
             attacker->current_hp < attacker->max_hp && !battler_statuses[attacking_battler].hurt_in_confusion){

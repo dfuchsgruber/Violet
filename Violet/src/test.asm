@@ -37,7 +37,7 @@ str_afterb:
 
 ow_script_test:
 
-	setflag PLAYER_ABLE_TO_MEGA_EVOLVE
+	// setflag PLAYER_ABLE_TO_MEGA_EVOLVE
 	givepokemon POKEMON_ARIADOS 20 ITEM_ARIADOSNIT 0 0 0
 	end
 	
