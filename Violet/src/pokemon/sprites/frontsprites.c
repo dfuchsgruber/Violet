@@ -278,7 +278,7 @@ graphic pokemon_frontsprites[POKEMON_CNT] = {
     {gfx_pkmn_species_269_pokemon_tropius_mega_frontspriteTiles, 0x800, 269},
     {gfx_pkmn_species_270_pokemon_octillery_mega_frontspriteTiles, 0x800, 270},
     {gfx_pkmn_species_271_pokemon_rasaff_mega_frontspriteTiles, 0x800, 271},
-    {gfx_pkmn_species_272_pokemon_110_frontspriteTiles, 0x800, 272},
+    {gfx_pkmn_mega_ariados_frontspriteTiles, 0x800, 272},
     {gfx_pkmn_species_273_pokemon_111_frontspriteTiles, 0x800, 273},
     {gfx_pkmn_species_274_pokemon_112_frontspriteTiles, 0x800, 274},
     {gfx_pkmn_species_275_pokemon_113_frontspriteTiles, 0x800, 275},

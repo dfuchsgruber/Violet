@@ -249,7 +249,7 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_SANDAMERNIT] = { .gfx = gfx_item_sandamernitTiles, .pal = gfx_item_sandamernitPal },
     [ITEM_LAHMUSNIT] = { .gfx = gfx_item_lahmusnitTiles, .pal = gfx_item_lahmusnitPal },
     [ITEM_MASKEREGENIT] = { .gfx = gfx_item_maskeregenitTiles, .pal = gfx_item_maskeregenitPal },
-    [ITEM_ARIADOSNIT] = { .gfx = gfx_item_item_f6Tiles, .pal = gfx_item_item_f6Pal },
+    [ITEM_ARIADOSNIT] = { .gfx = gfx_item_ariadosnitTiles, .pal = gfx_item_ariadosnitPal },
     [ITEM_ITEM_F7] = { .gfx = gfx_item_item_f7Tiles, .pal = gfx_item_item_f7Pal },
     [ITEM_LAHMRAUCH] = { .gfx = gfx_item_lahmrauchTiles, .pal = gfx_item_lahmrauchPal },
     [ITEM_EISBROCKEN] = { .gfx = gfx_item_eisbrockenTiles, .pal = gfx_item_eisbrockenPal },

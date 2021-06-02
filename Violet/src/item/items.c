@@ -994,9 +994,9 @@ static u8 str_item_maskeregenit_description[] = LANGDEP(
 	PSTRING("Wird er von einem Maskeregen\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
 	PSTRING("If held by an Masquerain in\nbattle it can perform\na mega evolution.")
 );
-static u8 str_item_item_f6_description[] = LANGDEP(
-	PSTRING(" ????"),
-	PSTRING("?????")
+static u8 str_item_ariadosnit_description[] = LANGDEP(
+	PSTRING("Wird er von einem Ariados\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+	PSTRING("If held by an Ariados in\nbattle it can perform\na mega evolution.")
 );
 static u8 str_item_item_f7_description[] = LANGDEP(
 	PSTRING(" ????"),
@@ -5574,12 +5574,12 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ARIADOSNIT
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
+		LANGDEP(PSTRING("Ariadosnit"), PSTRING("Ariadosnite")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_item_f6_description,
+		str_item_ariadosnit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket

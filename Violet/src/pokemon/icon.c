@@ -276,7 +276,7 @@
     gfx_pkmn_species_269_pokemon_tropius_mega_iconTiles,
     gfx_pkmn_species_270_pokemon_octillery_mega_iconTiles,
     gfx_pkmn_species_271_pokemon_rasaff_mega_iconTiles,
-    gfx_pkmn_species_272_pokemon_110_iconTiles,
+    gfx_pkmn_mega_ariados_iconTiles,
     gfx_pkmn_species_273_pokemon_111_iconTiles,
     gfx_pkmn_species_274_pokemon_112_iconTiles,
     gfx_pkmn_species_275_pokemon_113_iconTiles,
@@ -994,8 +994,8 @@ u8 pokemon_icon_usage[POKEMON_CNT] = {
     0x0,
     // pokemon_rasaff_mega
     0x2,
-    // POKEMON_110
-    0x0,
+    // mega_ariados
+    0x1,
     // POKEMON_111
     0x0,
     // POKEMON_112

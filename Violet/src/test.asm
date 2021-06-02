@@ -36,6 +36,12 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+
+	setflag PLAYER_ABLE_TO_MEGA_EVOLVE
+	givepokemon POKEMON_ARIADOS 20 ITEM_ARIADOSNIT 0 0 0
+	end
+	
+
 	callasm bluetenbach_gym_rotate_walls
 	special SPECIAL_MAP_UPDATE_BLOCKS
 	end
