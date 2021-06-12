@@ -32538,13 +32538,13 @@
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 557,
+					"tile_idx": 558,
 					"palette_idx": 4,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 558,
+					"tile_idx": 559,
 					"palette_idx": 4,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
@@ -33094,25 +33094,25 @@
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 573,
-					"palette_idx": 4,
-					"horizontal_flip": 0,
-					"vertical_flip": 0
-				},
-				{
 					"tile_idx": 574,
 					"palette_idx": 4,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 589,
+					"tile_idx": 575,
 					"palette_idx": 4,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 590,
+					"palette_idx": 4,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 591,
 					"palette_idx": 4,
 					"horizontal_flip": 0,
 					"vertical_flip": 0

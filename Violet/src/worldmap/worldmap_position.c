@@ -180,6 +180,7 @@ static worldmap_position_bank worldmap_positions_bank_16  = {
 	[4] = {.x = 21, .y = 6, .width = 1, .height = 1},
 	[0] = {.x = 21, .y = 6, .width = 1, .height = 2},
 	[1] = {.x = 21, .y = 6, .width = 1, .height = 1},
+	[5] = {.x = 21, .y = 6, .width = 1, .height = 2},
 };
 
 static worldmap_position_bank worldmap_positions_bank_17  = {

@@ -3,10 +3,11 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "flags.s"
+.include "mugshot.s"
 
 .global ow_script_route_5_clouds_person_0
 .global ow_script_route_5_clouds_person_1
-.global ow_script_route_5_clouds_priest
+.global ow_script_route_5_clouds_icarus
 
 ow_script_route_5_clouds_person_0:
     loadpointer 0 str_0
@@ -16,20 +17,22 @@ ow_script_route_5_clouds_person_1:
     loadpointer 0 str_1
     callstd MSG_FACE
     end
-ow_script_route_5_clouds_priest:
+ow_script_route_5_clouds_icarus:
     checkflag FLAG_ROUTE_5_CLOUD_ARIADOS_DEFEATED
     gotoif EQUAL make_cloud
     loadpointer 0 str_2
-    callstd MSG_YES_NO
+    show_mugshot MUGSHOT_ICARUS hide_mugshot=0 message_type=MSG_YES_NO
     compare LASTRESULT 1
-    gotoif EQUAL priest_down
+    gotoif EQUAL icarus_down
     loadpointer 0 str_4
     callstd MSG
+    hide_mugshot
     release
     end
-priest_down:
+icarus_down:
     loadpointer 0 str_3
     callstd MSG
+    hide_mugshot
     warpmuted 3 23 0xFF 0xe 0x7
     waitstate
     release
@@ -37,7 +40,7 @@ priest_down:
 make_cloud:
     lock
     faceplayer
-    call ow_script_route_5_priest_receive_cloud
+    call ow_script_route_5_icarus_receive_cloud
     closeonkeypress
     fadescreen 1
     hidesprite LASTTALKED
@@ -51,11 +54,11 @@ str_0:
 str_1:
     .autostring 34 2 "Vor langer Zeit hat eine antike Zivilisation im Himmelreich gelebt.\pWas wohl aus ihr geworden ist?"
 str_2:
-    .autostring 34 2 "Wenn du willst, dass ich dir eine Wolke webe, musst du dir den Wolkenfaden schon selbst beschaffen.\pOder willst du etwa, dass ich dich wieder auf den Boden bringe?"
+    .autostring 34 2 "Wenn du willst, dass ich dir eine Wolke webe, musst du mir den Wolkenfaden schon beschaffen.\pOder willst du etwa, dass ich dich wieder auf den Boden bringe?"
 str_3:
     .autostring 34 2 "Ganz wie du möchtest.\pHalt' dich gut fest, es geht abwärts!"
 str_4:
-    .autostring 34 2 "Sehr gut!\pDann mal los, oder?\pManche der Käfer-Pokémon in dieser Höhle sind in der Lage, den wertvollen Wolkenfaden herzustellen."
+    .autostring 34 2 "Sehr gut!\pDann mal los, oder?\pManche der Käfer-Pokémon in dieser Höhle sind in der Lage, den seltenen Wolkengarn herzustellen."
 .elseif LANG_EN
 
 str_0:

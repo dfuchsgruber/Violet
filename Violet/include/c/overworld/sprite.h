@@ -86,6 +86,7 @@ typedef struct overworld_sprite {
 #define OW_PAL_TAG_BOULDER_HAY_BALE 0x2E05
 #define OW_PAL_TAG_RAGE_SIGN 0x2E06
 #define OW_PAL_TAG_ROSALIE 0x2E07
+#define OW_PAL_TAG_ICARUS 0x2E08
 #define OW_PAL_TAG_END 0x3000
 
 /**
@@ -1795,6 +1796,7 @@ extern const u8 gfx_ow_romanTiles[];
 extern const u8 gfx_ow_rageTiles[];
 extern const u8 gfx_ow_rosalieTiles[];
 extern const u8 gfx_ow_old_amberTiles[];
+extern const u8 gfx_ow_icarusTiles[];
 
 
 extern const u8 gfx_tutor_crystal_bugTiles[];
@@ -1829,6 +1831,7 @@ extern const color_t gfx_ow_romanPal[];
 extern const color_t gfx_ow_boulder_hayPal[];
 extern const color_t gfx_ow_ragePal[];
 extern const color_t gfx_ow_rosaliePal[];
+extern const color_t gfx_ow_icarusPal[];
 
 extern overworld_sprite overworld_sprite_strength_boulder;
 

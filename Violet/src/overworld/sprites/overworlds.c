@@ -1636,6 +1636,26 @@ overworld_sprite ow_old_amber = {
 	oam_rotscale_anim_table_null,
 };
 
+static graphic overworld_sprite_icarus_sprites[] = {
+	{gfx_ow_icarusTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_icarusTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_icarusTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_icarusTiles + 3 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_icarusTiles + 4 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_icarusTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_icarusTiles + 6 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_icarusTiles + 7 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_icarusTiles + 8 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+};
+
+overworld_sprite ow_icarus = {
+	0xffff, OW_PAL_TAG_ICARUS, 0x11ff, 0x100,
+	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
+	&ow_final_oam_16_32, &ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_icarus_sprites, 
+	oam_rotscale_anim_table_null
+};
+
 //The overworld table
 overworld_sprite *overworld_sprites[] = {
     	&ow_hiro,
@@ -1839,6 +1859,7 @@ overworld_sprite *overworld_sprites[] = {
 		&ow_roman,
 		&ow_rival_beaten,
 	[181] = &ow_old_amber,
+	[182] = &ow_icarus,
 
 	[OVERWORLD_SPRITE_TUTOR_CRYSTAL] = &ow_tutor_crystal_dummy,
 	[OVERWORLD_SPRITE_MISC] = &ow_misc_16_16,

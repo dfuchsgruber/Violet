@@ -99,6 +99,7 @@ trainergfx 24,gfx_trainer_butlerTiles,gfx_trainer_butlerPal
 trainergfx 28,gfx_trainer_luciusTiles,gfx_trainer_luciusPal
 trainergfx 62,gfx_trainer_blackbeardTiles,gfx_trainer_blackbeardPal
 trainergfx 75,gfx_trainer_chefTiles,gfx_trainer_chefPal
+trainergfx 76,gfx_trainer_icarusTiles,gfx_trainer_icarusPal
 
 .org 0x0803f7a0
     .word trainer_backsprite_templates

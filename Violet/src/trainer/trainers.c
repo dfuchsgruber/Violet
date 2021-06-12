@@ -7100,6 +7100,14 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x1d9_route_4_clouds_trainer_5,
     },
+    [0x1da] = {
+      .uses_custom_moves = true, .uses_custom_items = true,
+      .trainerclass = TRAINERCLASS_PKMN_TRAINER, .encounter_and_gender = {1, 0} , .sprite = 77,
+      .name = LANGDEP(PSTRING("Ikarus"), PSTRING("Ikarus")),
+      .items = {ITEM_HYPERTRANK, ITEM_HYPERHEILER, 0, 0},
+      .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+      .battle_state = 0, .pokemon_cnt = ARRAY_COUNT(trainer_party_x1da_route_5_icarus_party), .party = (trainer_pokemon*)trainer_party_x1da_route_5_icarus_party,
+	  },
     [0x300] = {
       .uses_custom_moves = true, .uses_custom_items = true,
       .trainerclass = TRAINERCLASS_CHEFKOCH, .encounter_and_gender = {1, 0} , .sprite = 0x74,

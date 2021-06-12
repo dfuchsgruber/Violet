@@ -242,6 +242,20 @@ mugshot mugshots[] = {
 		gfx_mug_manusPal,
 		str_mug_manus,
 	},
+	[MUGSHOT_ICARUS] = {
+		{
+			[MUGSHOT_NORMAL] = gfx_mug_icarusTiles,
+			[MUGSHOT_HAPPY] = gfx_mug_icarus_happyTiles,
+			[MUGSHOT_SAD] = gfx_mug_icarus_sadTiles,
+			[MUGSHOT_SCARED] = gfx_mug_icarus_scaredTiles,
+			[MUGSHOT_ANGRY] = gfx_mug_icarus_angryTiles,
+			[MUGSHOT_SHOCKED] = gfx_mug_icarus_shockedTiles,
+			[MUGSHOT_RUMINATIVE] = gfx_mug_icarus_thoughtfulTiles,
+			[MUGSHOT_ANNOYED] = gfx_mug_icarus_annoyedTiles,
+		},
+		gfx_mug_icarusPal,
+		str_mug_icarus,
+	}
 	
 };
 

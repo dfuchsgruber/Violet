@@ -156,5 +156,9 @@
 	str_mug_manus:
 		.string "Manuel"
 
+.global str_mug_icarus
+	str_mug_icarus:
+		.string "Ikarus"
+
 .elseif LANG_EN
 .endif

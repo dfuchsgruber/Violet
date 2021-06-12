@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_13",
 		"events": {
-			"person_cnt": 18,
+			"person_cnt": 19,
 			"warp_cnt": 3,
 			"trigger_cnt": 0,
 			"signpost_cnt": 2,
@@ -12,13 +12,13 @@
 					"picture": 170,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "31",
+					"x": "35",
 					"y": "15",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_WALK_RIGHT_AND_LEFT",
+					"behaviour": "BEHAVIOUR_WANDER_UP_AND_DOWN",
 					"behaviour_range": {
 						"x": "4",
-						"y": "1"
+						"y": "5"
 					},
 					"is_trainer": "1",
 					"alert_radius": 2,
@@ -39,8 +39,8 @@
 					"picture": 171,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "24",
-					"y": "34",
+					"x": "27",
+					"y": "33",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_RIGHT",
 					"behaviour_range": {
@@ -66,8 +66,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "16",
-					"y": "35",
+					"x": "20",
+					"y": "41",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -93,8 +93,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "29",
-					"y": "27",
+					"x": "23",
+					"y": "30",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -120,8 +120,8 @@
 					"picture": "56",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "47",
-					"y": "12",
+					"x": "58",
+					"y": "13",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -146,10 +146,10 @@
 					"picture": "26",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "17",
-					"y": "23",
+					"x": "56",
+					"y": "25",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_WALK_LEFT_AND_RIGHT",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "3",
 						"y": "0"
@@ -157,7 +157,7 @@
 					"field_B": 0,
 					"is_trainer": "1",
 					"field_D": 0,
-					"alert_radius": "5",
+					"alert_radius": "2",
 					"script": "ow_script_route_5_clouds_trainer_2",
 					"flag": 0,
 					"value": {
@@ -172,8 +172,8 @@
 					"picture": "23",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "23",
-					"y": "29",
+					"x": "31",
+					"y": "27",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -195,7 +195,7 @@
 				},
 				{
 					"target_index": "8",
-					"picture": "171",
+					"picture": "182",
 					"script_std": 0,
 					"field_3": 0,
 					"x": "6",
@@ -209,7 +209,7 @@
 					"field_B": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_route_5_clouds_priest",
+					"script": "ow_script_route_5_clouds_icarus",
 					"flag": "FLAG_ROUTE_5_CLOUD_QUEST_TAKEN | 0x8000",
 					"value": {
 						"item": 0,
@@ -223,7 +223,7 @@
 					"picture": "237",
 					"script_std": "PERSON_BERRY_TREE",
 					"field_3": 0,
-					"x": "20",
+					"x": "23",
 					"y": "7",
 					"level": 0,
 					"behaviour": 0,
@@ -248,7 +248,7 @@
 					"picture": "237",
 					"script_std": "PERSON_BERRY_TREE",
 					"field_3": 0,
-					"x": "21",
+					"x": "24",
 					"y": "7",
 					"level": 0,
 					"behaviour": 0,
@@ -273,8 +273,8 @@
 					"picture": "235",
 					"script_std": "PERSON_ACCESSIBLE_MOVE_TUTOR",
 					"field_3": 0,
-					"x": "49",
-					"y": "23",
+					"x": "65",
+					"y": "24",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -323,13 +323,13 @@
 					"picture": "238",
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "16",
-					"y": "22",
+					"x": "20",
+					"y": "25",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_LEFT_UP_RIGHT_DOWN",
 					"behaviour_range": {
-						"x": "6",
-						"y": "2"
+						"x": "10",
+						"y": "4"
 					},
 					"field_B": 0,
 					"is_trainer": 0,
@@ -348,13 +348,13 @@
 					"picture": "238",
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "38",
-					"y": "10",
+					"x": "39",
+					"y": "7",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_UP_RIGHT_DOWN_LEFT",
 					"behaviour_range": {
 						"x": "7",
-						"y": "3"
+						"y": "5"
 					},
 					"field_B": 0,
 					"is_trainer": 0,
@@ -373,7 +373,7 @@
 					"picture": "238",
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "19",
+					"x": "22",
 					"y": "20",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
@@ -398,8 +398,8 @@
 					"picture": "238",
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "30",
-					"y": "35",
+					"x": "43",
+					"y": "32",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -423,8 +423,8 @@
 					"picture": "238",
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "25",
-					"y": "42",
+					"x": "36",
+					"y": "46",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_LEFT_RIGHT_UP",
 					"behaviour_range": {
@@ -449,12 +449,12 @@
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
 					"x": "38",
-					"y": "30",
+					"y": "20",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_LEFT_UP_RIGHT",
 					"behaviour_range": {
-						"x": "7",
-						"y": "4"
+						"x": "4",
+						"y": "7"
 					},
 					"field_B": 0,
 					"is_trainer": 0,
@@ -467,19 +467,44 @@
 						"berry_tree_idx": 0,
 						"type": 0
 					}
+				},
+				{
+					"target_index": "19",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "7",
+					"y": "20",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ROUTE_5_CLOUD_QUEST_TAKEN | 0x8000",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KINDWURM",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
 				}
 			],
 			"warps": [
 				{
-					"x": "21",
-					"y": "44",
+					"x": "26",
+					"y": "53",
 					"level": 0,
 					"target_bank": 3,
 					"target_map": 23,
 					"target_warp_idx": 0
 				},
 				{
-					"x": "34",
+					"x": "42",
 					"y": "25",
 					"level": 0,
 					"target_bank": 3,
@@ -498,7 +523,7 @@
 			"triggers": [],
 			"signposts": [
 				{
-					"x": "25",
+					"x": "28",
 					"y": "12",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
@@ -514,8 +539,8 @@
 					}
 				},
 				{
-					"x": "14",
-					"y": "29",
+					"x": "39",
+					"y": "33",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"flag": 0,

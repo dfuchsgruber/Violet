@@ -146,6 +146,10 @@ static palette overworld_palette_rosalie = {
     .pal = gfx_ow_rosaliePal, .tag = OW_PAL_TAG_ROSALIE,
 };
 
+static palette overworld_palette_icarus = {
+    .pal = gfx_ow_icarusPal, .tag = OW_PAL_TAG_ICARUS,
+};
+
 static palette *overworld_npc_palette_get_by_tag(u16 tag) {
     if (tag >= OW_PAL_TAG_POKEMON_BASE && tag < OW_PAL_TAG_POKEMON_END) {
         return overworld_palette_get_by_species((u16)(tag - OW_PAL_TAG_POKEMON_BASE));
@@ -164,6 +168,7 @@ static palette *overworld_npc_palette_get_by_tag(u16 tag) {
         case OW_PAL_TAG_ROMAN: return &overworld_palette_roman;
         case OW_PAL_TAG_MEGA_STONE: return overworld_palette_get_mega_stone();
         case OW_PAL_TAG_ROSALIE: return &overworld_palette_rosalie;
+        case OW_PAL_TAG_ICARUS: return &overworld_palette_icarus;
     }
     u8 idx = overworld_npc_palette_get_idx(tag);
     // dprintf("Tag 0x%x is at idx %d in pal-table.\n", tag, idx);
