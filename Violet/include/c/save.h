@@ -139,7 +139,7 @@ typedef struct custom_memory {
     u8 unused[7];
     u32 money_backup;
     //trash memory (generall a vector memory)
-    u8 unused_flags[16];
+    u8 trash_flags2[16];
     rtc_timestamp daily_events_last_update;
     u32 daily_events_seed;
     rtc_timestamp fossil_gen_time;

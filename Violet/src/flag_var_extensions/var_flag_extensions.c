@@ -25,7 +25,7 @@ u8 *flag_access_ext(u16 flag) {
     } else if (flag < 0xF80) { // 0xF00 - 0xF80 are mapped to shells
         int idx = (flag - 0xF00) / 8;
         return cmem.shell_flags + idx;
-    } else if (flag < 0x1000) { // 0xF80 - 0x1000 are mapped to trash cans
+    } else if (flag < 0x1000) { // 0xF80 - 0x1080 are mapped to trash cans
         int idx = (flag - 0xF80);
         return cmem.trash_flags + idx;
     } else {

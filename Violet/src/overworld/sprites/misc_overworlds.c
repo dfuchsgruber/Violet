@@ -282,7 +282,8 @@ void shell_open() {
 static u32 trash_rates[] = {[TRASH_TYPE_WIND] = 5, [TRASH_TYPE_ITEM] = 3, [TRASH_TYPE_ENCOUNTER] = 2};
 
 u16 trash_get_type(u16 trash_idx) {
-    if (gp_flag_get(trash_idx, cmem.trash_flags)) {
+    bool empty = trash_idx < 128 ? gp_flag_get(trash_idx, cmem.trash_flags) : gp_flag_get((u16)(trash_idx - 128), cmem.trash_flags2);
+    if (empty) {
         return TRASH_TYPE_EMPTY;
     } else {
         u32 seq[1] = {trash_idx};
@@ -300,7 +301,10 @@ u16 special_trash_get_type() {
 void trash_set_empty() {
     map_event_person *p = map_get_person((u8)(*var_access(LASTTALKED)), save1->map, save1->bank);
     u16 trash_idx = p->value;
-    gp_flag_set(trash_idx, cmem.trash_flags);
+    if (trash_idx < 128)
+        gp_flag_set(trash_idx, cmem.trash_flags);
+    else
+        gp_flag_set((u16)(trash_idx - 128), cmem.trash_flags2);
 }
 
 void overworld_misc_intialize() {
