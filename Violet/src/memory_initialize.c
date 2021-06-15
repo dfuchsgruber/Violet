@@ -17,13 +17,13 @@
 #include "agbmemory.h"
 #include "data_structures.h"
 #include "berry.h"
-#include "mushroom_and_shell.h"
+#include "overworld/misc.h"
 
 void custom_memory_init() {
   memset(&cmem, 0, sizeof(custom_memory));
   setflag(POKERADAR_POKEMON_SPAWNED);  // set corresponds to a pokemon already spawned
   incubator_clear();
-  mushroom_and_shell_regrow();
+  overworld_misc_intialize();
   berry_trees_initialize_all();
 }
 

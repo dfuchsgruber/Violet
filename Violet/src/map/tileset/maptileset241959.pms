@@ -11189,10 +11189,10 @@
 					"palette_idx": 7
 				},
 				{
-					"tile_idx": 799,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 8
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 735,

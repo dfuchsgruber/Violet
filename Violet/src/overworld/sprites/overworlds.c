@@ -1875,5 +1875,6 @@ overworld_sprite *overworld_get (u16 picture){
 		// dprintf("Picture is %d\n", *var_access((u16)(0x4010+picture-0xF0)));
         return overworld_sprites[*var_access((u16)(0x4010 + picture - 0xF0))];
     }
+	// dprintf("Var STORY PROGRESS @0x%x is %d\n", var_access(STORY_PROGRESS), *var_access(STORY_PROGRESS));
     return overworld_sprites[picture];
 }

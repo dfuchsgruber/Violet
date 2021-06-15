@@ -161,6 +161,9 @@ class Event_to_image:
                 path = os.path.join('asset', 'gfx', 'overworld', 'misc', 'gfx_ow_mushroom.png')
             elif script_std == 'PERSON_SHELL':
                 path = os.path.join('asset', 'gfx', 'overworld', 'misc', 'gfx_ow_shell.png')
+            elif script_std == 'PERSON_TRASH_CAN':
+                path = os.path.join('asset', 'gfx', 'overworld', 'misc', 'gfx_ow_trash.png')
+                box = ((0, 0, 16, 32))
             else:
                 return None
             picture_idx = path

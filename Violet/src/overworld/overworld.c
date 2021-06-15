@@ -86,6 +86,8 @@ overworld_sprite *overworld_get_by_person(map_event_person *person) {
                 return overworld_sprite_get_by_mushroom_idx(person->value);
             case PERSON_SHELL:
                 return overworld_sprite_get_by_shell_idx(person->value);
+            case PERSON_TRASH_CAN:
+                return overworld_sprite_get_by_trash_idx(person->value);
         }
     } else if (person->overworld_index == OVERWORLD_SPRITE_STRENGTH_BOULDER) {
         return overworld_sprite_get_by_boulder_person_script_std(person->script_std, person->value);
@@ -169,6 +171,7 @@ static palette *overworld_npc_palette_get_by_tag(u16 tag) {
         case OW_PAL_TAG_MEGA_STONE: return overworld_palette_get_mega_stone();
         case OW_PAL_TAG_ROSALIE: return &overworld_palette_rosalie;
         case OW_PAL_TAG_ICARUS: return &overworld_palette_icarus;
+        case OW_PAL_TAG_TRASH: return overworld_palette_get_by_trash();
     }
     u8 idx = overworld_npc_palette_get_idx(tag);
     // dprintf("Tag 0x%x is at idx %d in pal-table.\n", tag, idx);

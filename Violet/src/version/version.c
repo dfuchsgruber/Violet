@@ -6,7 +6,6 @@
 #include "constants/items.h"
 #include "constants/flags.h"
 #include "constants/time_types.h"
-#include "tile/trash.h"
 #include "language.h"
 #include "vars.h"
 #include "flags.h"
@@ -21,7 +20,7 @@
 #include "pokemon/roamer.h"
 #include "constants/roamers.h"
 #include "berry.h"
-#include "mushroom_and_shell.h"
+#include "overworld/misc.h"
 
 void version_init(){
     *var_access(SGM_VER) = VERSION_LATEST;
@@ -139,7 +138,7 @@ void version_upgrade_alpha_2_1_to_2_2() {
 	}
 	time_reset_events();
     berry_trees_initialize_all();
-    mushroom_and_shell_regrow();
+    overworld_misc_intialize();
 	// Reorder pokedex flags
 	version_transfer_pokedex();
 

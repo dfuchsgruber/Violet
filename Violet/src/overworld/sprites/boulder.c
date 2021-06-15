@@ -9,7 +9,7 @@
 #include "vars.h"
 #include "agbmemory.h"
 #include "prng.h"
-#include "mushroom_and_shell.h"
+#include "overworld/misc.h"
 #include "math.h"
 #include "music.h"
 #include "constants/person_script_stds.h"

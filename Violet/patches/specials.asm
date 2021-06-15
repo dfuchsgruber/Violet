@@ -37,7 +37,7 @@ special_table equ 0x0815FCC0
 	.pool
 	
 .org (special_table +(0x17 * 4))
-	.word special_set_trashflag | 1
+	.word 0
 	.pool
 	
 .org (special_table +(0x18 * 4))
@@ -301,6 +301,10 @@ special_table equ 0x0815FCC0
         .word special_player_get_position_facing | 1
 .org (special_table + 202 * 4)
         .word special_buffer_type_name | 1
+.org (special_table + 203 * 4)
+        .word special_trash_get_type | 1
+.org (special_table + 204 * 4)
+        .word trash_get_encounter_or_item | 1
 // 201 <= free <= 204
 
 .org (special_table + (0x129 * 4))

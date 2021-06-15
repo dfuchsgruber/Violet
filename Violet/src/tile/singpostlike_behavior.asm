@@ -48,10 +48,8 @@ ldr r0, =0x0806D15F
 bx r0
 
 trigger_trash:
-mov r0, r5
-bl trash_get_item
-ldr r0, =trash_script
-b ret_s
+    ldr r0, =ow_script_trash
+    b ret_s
 
 trigger_tv:
 cmp r5, #2

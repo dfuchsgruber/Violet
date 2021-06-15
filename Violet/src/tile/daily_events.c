@@ -1,56 +1,11 @@
 #include "types.h"
 #include "save.h" 
 #include "constants/items.h"
-#include "tile/trash.h"
 #include "rtc.h"
 #include "vars.h"
 #include "prng.h"
 #include "debug.h"
-#include "mushroom_and_shell.h"
-
-void trash_get_item() {
-
-    u16 item = 0;
-    coordinate_t pos;
-    player_get_facing_position(&pos.x, &pos.y);
-
-    if (!trash_checkflag(pos.x, pos.y, save1->bank, save1->map)) {
-        u32 r = tile_hash_by_position(pos.x, pos.y, save1->bank, save1->map, 97);
-        dprintf("Trash hash value is %d\n", r);
-        if (r == 0) {
-            // 1 / 97 chance for leftovers
-            item = ITEM_UEBERRESTE;
-        } else if (r < 10) {
-            // 9 / 97 chance for rare berries
-            u32 berry_index = tile_hash_by_position(pos.x, pos.y, save1->bank, save1->map, 7);
-            item = (u16) (ITEM_LYDZIBEERE + berry_index);
-        } else if (r < 25) {
-            // 15 / 97 chance for common berries
-            u32 berry_index = tile_hash_by_position(pos.x, pos.y, save1->bank, save1->map, 11);
-            item = (u16) (ITEM_AMRENABEERE + berry_index);
-        }
-    }
-    *var_access(0x8000) = item;
-}
-
-void special_set_trashflag() {
-    coordinate_t pos;
-    player_get_facing_position(&pos.x, &pos.y);
-    trash_setflag(pos.x, pos.y, save1->bank, save1->map);
-}
-
-bool trash_checkflag(s16 x, s16 y, u8 bank, u8 map_idx) {
-    u32 hashflag = tile_hash_by_position(x, y, bank, map_idx, 127);
-    int mask = 1 << (hashflag & 7);
-    int value = cmem.trash_flags[hashflag >> 3] & mask;
-    return value != 0;
-}
-
-void trash_setflag(s16 x, s16 y, u8 bank, u8 map_idx) {
-    u32 hashflag = tile_hash_by_position(x, y, bank, map_idx, 127);
-    u8 mask = (u8) (1 << (hashflag & 7));
-    cmem.trash_flags[hashflag >> 3] |= mask;
-}
+#include "overworld/misc.h"
 
 u16 tile_hash_by_position(s16 x, s16 y, u8 bank, u8 map_idx, size_t m) {
     u32 seq[4] = {
@@ -60,7 +15,6 @@ u16 tile_hash_by_position(s16 x, s16 y, u8 bank, u8 map_idx, size_t m) {
     dprintf("Hash value %x\n", hash);
     return (u16)(hash % m);
 }
-
 
 u32 daily_events_hash(u32 seq[], size_t size) {
 	// Hashing according to https://stackoverflow.com/a/27216842/7292394
@@ -85,11 +39,10 @@ void daily_events_new_seed() {
 void daily_events_reset() {
     int i;
     for (i = 0; i < 16; i++) {
-        cmem.trash_flags[i] = 0;
         cmem.any_tmp_flags[i] = 0;
         cmem.dungeon_flags[i] = 0;
     }
-    mushroom_and_shell_regrow();
+    overworld_misc_intialize();
 }
 
 u32 dungeon_hash(int dungeon_id) {

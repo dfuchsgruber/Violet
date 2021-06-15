@@ -3,7 +3,6 @@
 #include "color.h"
 #include "save.h"
 #include "dns.h"
-#include "tile/trash.h"
 #include "constants/vars.h"
 #include "constants/shader_states.h"
 #include "constants/map_types.h"

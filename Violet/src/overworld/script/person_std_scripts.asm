@@ -8,7 +8,7 @@
 .include "berry_stages.s"
 .include "songs.s"
 .include "items.s"
-.include "mushroom_and_shell.s"
+.include "overworld/misc.s"
 
 .global ow_script_person_pokeball
 .global ow_script_person_egg
@@ -19,6 +19,7 @@
 .global ow_script_fertilize_berry_tree
 .global ow_script_mushroom
 .global ow_script_shell
+.global ow_script_trash_can
 .global ow_script_person_pokemon_non_facing
 .global ow_script_person_accessible_move_tutor
 
@@ -412,6 +413,66 @@ dont_open_shell:
 	releaseall
 	end
 
+ow_script_trash_can:
+	lockall
+	special2 0x8004 SPECIAL_TRASH_GET_TYPE
+	compare 0x8004 TRASH_TYPE_EMPTY
+	gotoif EQUAL trash_empty
+	loadpointer 0 str_trash_to_be_opened
+	callstd MSG_YES_NO
+	compare LASTRESULT 0
+	gotoif EQUAL dont_open_trash
+	compare 0x8004 TRASH_TYPE_WIND
+	gotoif EQUAL trash_wind
+	compare 0x8004 TRASH_TYPE_ITEM
+	gotoif EQUAL trash_item
+	compare 0x8004 TRASH_TYPE_ENCOUNTER
+	gotoif EQUAL trash_encounter
+	releaseall
+	end
+trash_empty:
+	loadpointer 0 str_trash_empty
+	callstd MSG_KEEPOPEN
+	releaseall
+	end
+trash_wind:
+	loadpointer 0 str_trash_wind
+	callstd MSG_KEEPOPEN
+	callasm trash_set_empty
+	special SPECIAL_BERRY_TREE_UPDATE_GFX
+	releaseall
+	end
+trash_item:
+	special2 0x8000 SPECIAL_TRASH_GET_ENCOUNTER_OR_ITEM
+	setvar 0x8001 1
+	bufferitem 0 0x8000
+	checkitemroom 0x8000 0x1
+	compare LASTRESULT 0
+	gotoif EQUAL no_room_for_trash_item
+	callstd ITEM_OBTAIN
+	callasm trash_set_empty
+	special SPECIAL_BERRY_TREE_UPDATE_GFX
+	releaseall
+	end
+trash_encounter:
+	special2 0x8004 SPECIAL_TRASH_GET_ENCOUNTER_OR_ITEM
+	compare 0x8004 0
+	callif NOT_EQUAL misc_encounter
+	callasm trash_set_empty
+	special SPECIAL_BERRY_TREE_UPDATE_GFX
+	bufferpokemon 0 0x8004
+	loadpointer 0 str_pokemon_was_hiding_oin_trash
+	callstd MSG_KEEPOPEN
+	releaseall
+	end
+no_room_for_trash_item:
+	loadpointer 0 str_no_room_for_mushroom
+	callstd MSG_KEEPOPEN
+dont_open_trash:
+	closeonkeypress
+	releaseall
+	end
+
 ow_script_person_accessible_move_tutor:
 	//setvar VAR_ACCESIBLE_MOVE_TUTOR_TYPE, 0
 	loadpointer 0 str_quarz_intro
@@ -543,6 +604,14 @@ str_shell_to_be_opened:
 	.autostring 34 2 "Etwas funkelt im Inneren der Muschel!\pMöchtest du die Muschel aufbrechen?"
 str_pokemon_was_hiding_in_shell:
 	.autostring 34 2 "Ein BUFFER_1 hatte sich in der Muschel versteckt!"
+str_trash_to_be_opened:
+	.autostring 34 2 "Irgendetwas scheint diese Mülltonne zum Klappern zu bringen.\pMöchtest du sie öffnen?"
+str_trash_empty:
+	.autostring 34 2 "Die Mülltonne ist leer."
+str_trash_wind:
+	.autostring 34 2 "Die Mülltonne ist leer.\pEs scheint, als hätte jemand den Deckel nicht richtig verschlossen.\pPLAYER schließt den Deckel der Mülltonne."
+str_pokemon_was_hiding_oin_trash:
+	.autostring 34 2 "Ein BUFFER_1 hatte sich in der Mülltonne versteckt!"
 .elseif LANG_EN
 str_mon0:
 	.autostring 34 2 "BUFFER_1! BUFFER_1!"

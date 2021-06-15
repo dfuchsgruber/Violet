@@ -87,6 +87,7 @@ typedef struct overworld_sprite {
 #define OW_PAL_TAG_RAGE_SIGN 0x2E06
 #define OW_PAL_TAG_ROSALIE 0x2E07
 #define OW_PAL_TAG_ICARUS 0x2E08
+#define OW_PAL_TAG_TRASH 0x2E09
 #define OW_PAL_TAG_END 0x3000
 
 /**
@@ -131,7 +132,7 @@ palette *overworld_palette_get_by_mushroom();
 
 /**
  * Returns the overworld sprite of a shell
- * @param mushroom_idx which shell to get
+ * @param shell_idx which shell to get
  * @return the overworld sprite
  **/
 overworld_sprite *overworld_sprite_get_by_shell_idx(u16 shell_idx);
@@ -141,6 +142,19 @@ overworld_sprite *overworld_sprite_get_by_shell_idx(u16 shell_idx);
  * @return the palette sprite
  **/
 palette *overworld_palette_get_by_shell();
+
+/**
+ * Returns the overworld sprite of a trash
+ * @param trash_idx which trash to get
+ * @return the overworld sprite
+ **/
+overworld_sprite *overworld_sprite_get_by_trash_idx(u16 trash_idx);
+
+/**
+ * Returns the overworld palette of a trash
+ * @return the palette sprite
+ **/
+palette *overworld_palette_get_by_trash();
 
 /**
  * Gets the sprite of a boulder.
@@ -1832,6 +1846,8 @@ extern const color_t gfx_ow_boulder_hayPal[];
 extern const color_t gfx_ow_ragePal[];
 extern const color_t gfx_ow_rosaliePal[];
 extern const color_t gfx_ow_icarusPal[];
+extern const u8 gfx_ow_trashTiles[];
+extern const u8 gfx_ow_trashPal[];
 
 extern overworld_sprite overworld_sprite_strength_boulder;
 

@@ -10,6 +10,10 @@
         "SHELL_TYPE_HEART_SCALE" : 3,
         "SHELL_TYPE_SHOAL_SALT" : 4,
         "SHELL_TYPE_SHOAL_SHELL" : 5,
-        "SHELL_TYPE_ENCOUNTER" : 6
+        "SHELL_TYPE_ENCOUNTER" : 6,
+        "TRASH_TYPE_EMPTY" : 0,
+        "TRASH_TYPE_WIND" : 1,
+        "TRASH_TYPE_ITEM" : 2,
+        "TRASH_TYPE_ENCOUNTER" : 3
     }
 }

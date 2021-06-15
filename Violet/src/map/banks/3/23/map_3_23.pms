@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_93",
 		"events": {
-			"person_cnt": 39,
+			"person_cnt": 40,
 			"warp_cnt": 2,
 			"trigger_cnt": 6,
 			"signpost_cnt": 8,
@@ -698,7 +698,7 @@
 					"picture": "92",
 					"script_std": "PERSON_ITEM",
 					"field_3": 0,
-					"x": "53",
+					"x": "55",
 					"y": "9",
 					"level": 0,
 					"behaviour": 0,
@@ -1017,6 +1017,31 @@
 						"berry_tree_idx": "24",
 						"type": 0
 					}
+				},
+				{
+					"target_index": "40",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "15",
+					"y": "6",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KINDWURM",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
 				}
 			],
 			"warps": [
@@ -1040,7 +1065,7 @@
 			"triggers": [
 				{
 					"value": 40,
-					"y": "33",
+					"y": "26",
 					"level": 0,
 					"x": "0",
 					"script": "ow_script_map_3_23_trigger_0",
@@ -1062,7 +1087,7 @@
 				},
 				{
 					"value": 40,
-					"y": "31",
+					"y": "26",
 					"level": 0,
 					"x": "0",
 					"script": "ow_script_map_3_23_trigger_0",
@@ -1073,7 +1098,7 @@
 				},
 				{
 					"value": 40,
-					"y": "30",
+					"y": "26",
 					"level": 0,
 					"x": "0",
 					"script": "ow_script_map_3_23_trigger_0",
@@ -1084,7 +1109,7 @@
 				},
 				{
 					"value": 40,
-					"y": "29",
+					"y": "26",
 					"level": 0,
 					"x": "0",
 					"script": "ow_script_map_3_23_trigger_0",
@@ -1095,7 +1120,7 @@
 				},
 				{
 					"value": 40,
-					"y": "28",
+					"y": "26",
 					"level": 0,
 					"x": "0",
 					"script": "ow_script_map_3_23_trigger_0",

@@ -139,7 +139,7 @@ typedef struct custom_memory {
     u8 unused[7];
     u32 money_backup;
     //trash memory (generall a vector memory)
-    u8 trash_flags[16];
+    u8 unused_flags[16];
     rtc_timestamp daily_events_last_update;
     u32 daily_events_seed;
     rtc_timestamp fossil_gen_time;
@@ -154,7 +154,8 @@ typedef struct custom_memory {
     roamer_history_entry_t roamer_locations[NUM_ROAMERS];
     berry_tree berry_trees[256];
     u8 mushroom_flags[64];
-    u8 shell_flags[32];
+    u8 shell_flags[16];
+    u8 trash_flags[16];
     struct {
         u8 manual_hm_usage : 1;
         u8 dns_disabled : 1;

@@ -1,14 +1,14 @@
-#ifndef H_MUSHROOM_AND_SHELL
-#define H_MUSHROOM_AND_SHELL
+#ifndef H_OVERWORLD_MISC
+#define H_OVERWORLD_MISC
 
 #include "types.h"
 #include "save.h"
-#include "constants/mushroom_and_shell.h"
+#include "constants/overworld/misc.h"
 
 /**
  * "Regrows" (i.e. makes them reappear) the mushrooms and shells. That is, all flags are simply cleared.
  **/
-void mushroom_and_shell_regrow();
+void overworld_misc_intialize();
 
 /**
  * Gets the stage of a mushroom
@@ -23,5 +23,12 @@ u16 mushroom_get_stage(u16 mushroom_idx);
  * @return the shell's stage
  **/
 u16 shell_get_stage(u16 shell_idx);
+
+/**
+ * Gets the content of a trash can
+ * @param trash_idx the trash can to check
+ * @return content of the trash can
+ **/
+u16 trash_get_type(u16 trash_idx);
 
 #endif

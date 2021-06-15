@@ -36,6 +36,8 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	clearflag ORINA_CITY_RECEIVED_PORYGON
+	end
 
 	// setflag PLAYER_ABLE_TO_MEGA_EVOLVE
 	givepokemon POKEMON_ARIADOS 20 ITEM_ARIADOSNIT 0 0 0

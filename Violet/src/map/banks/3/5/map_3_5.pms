@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_83",
 		"events": {
-			"person_cnt": 49,
+			"person_cnt": 50,
 			"warp_cnt": 15,
 			"trigger_cnt": 15,
 			"signpost_cnt": 9,
@@ -1036,12 +1036,12 @@
 				{
 					"is_trainer": "0",
 					"script": "0",
-					"y": 31,
+					"y": "23",
 					"target_index": 39,
 					"field_3": 0,
 					"picture": 105,
 					"flag": "PKMNMENU",
-					"x": 60,
+					"x": "65",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -1329,6 +1329,31 @@
 						"berry_tree_idx": 0,
 						"type": 0
 					}
+				},
+				{
+					"target_index": "50",
+					"picture": "236",
+					"script_std": "PERSON_TRASH_CAN",
+					"field_3": 0,
+					"x": "33",
+					"y": "26",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
 				}
 			],
 			"warps": [
@@ -1555,9 +1580,9 @@
 				},
 				{
 					"value": 43,
-					"y": 29,
+					"y": "26",
 					"level": 0,
-					"x": 68,
+					"x": "68",
 					"script": "ow_script_map_3_5_trigger_1",
 					"field_5": 0,
 					"field_A": 0,
@@ -1566,9 +1591,9 @@
 				},
 				{
 					"value": 43,
-					"y": 30,
+					"y": "26",
 					"level": 0,
-					"x": 68,
+					"x": "68",
 					"script": "ow_script_map_3_5_trigger_1",
 					"field_5": 0,
 					"field_A": 0,
@@ -1577,9 +1602,9 @@
 				},
 				{
 					"value": 43,
-					"y": 31,
+					"y": "26",
 					"level": 0,
-					"x": 68,
+					"x": "68",
 					"script": "ow_script_map_3_5_trigger_1",
 					"field_5": 0,
 					"field_A": 0,
@@ -1588,9 +1613,9 @@
 				},
 				{
 					"value": 43,
-					"y": 32,
+					"y": "26",
 					"level": 0,
-					"x": 68,
+					"x": "68",
 					"script": "ow_script_map_3_5_trigger_1",
 					"field_5": 0,
 					"field_A": 0,
@@ -1599,9 +1624,9 @@
 				},
 				{
 					"value": 43,
-					"y": 33,
+					"y": "26",
 					"level": 0,
-					"x": 68,
+					"x": "68",
 					"script": "ow_script_map_3_5_trigger_1",
 					"field_5": 0,
 					"field_A": 0,
@@ -1610,9 +1635,9 @@
 				},
 				{
 					"value": 43,
-					"y": 28,
+					"y": "26",
 					"level": 0,
-					"x": 68,
+					"x": "68",
 					"script": "ow_script_map_3_5_trigger_1",
 					"field_5": 0,
 					"field_A": 0,

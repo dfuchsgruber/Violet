@@ -27,6 +27,7 @@ extern u8 ow_script_boulder_gym_puzzle[];
 extern u8 ow_script_boulder_hay_bale[];
 extern u8 ow_script_person_pokemon_non_facing[];
 extern u8 ow_script_person_accessible_move_tutor[];
+extern u8 ow_script_trash_can[];
 
 void battle_initialize_aggressive_wild() {
 	super.saved_callback = battle_continuation_wild_legendary_battle_end;
@@ -79,6 +80,9 @@ u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank) {
 	case PERSON_SHELL:
 		*var_access(0x8000) = p->value;
 		return ow_script_shell;
+	case PERSON_TRASH_CAN:
+		*var_access(0x8000) = p->value;
+		return ow_script_trash_can;
 	case PERSON_PUZZLE_BOULDER:
 		return ow_script_boulder_gym_puzzle;
 	case PERSON_HAY_BALE:

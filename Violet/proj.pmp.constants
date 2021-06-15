@@ -77,7 +77,7 @@
 	"mugshot_emotions" : "constants/mugshot_emotions.const",
 	"berry_stages" : "constants/berry_stages.const",
 	"battle/bsc_status_flags" : "constants/battle/bsc_status_flags.const",
-	"mushroom_and_shell" : "constants/mushroom_and_shell.const",
+	"overworld/misc" : "constants/overworld/misc.const",
 	"crafting_ingredient_types" : "constants/crafting_ingredient_types.const",
 	"battle/battle_transitions" : "constants/battle/battle_transitions.const",
 	"battle/battle_ai_item_flags" : "constants/battle/battle_ai_item_flags.const",
