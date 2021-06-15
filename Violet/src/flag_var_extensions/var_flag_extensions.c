@@ -19,19 +19,16 @@ u8 *flag_access_ext(u16 flag) {
     if(flag < 0xD00){
         int index = (flag - 0x900) / 8;
         return &(cmem.flag_extension[index]);
-    }else if(flag < 0xE00){
-       flag = (u16)(flag-0xD00);
-       if(flag < 0x80){
-           //flags 0xD00 - 0xD80 are mapped to trash flags
-           int index = flag / 8;
-           return &(cmem.trash_flags[index]);
-        
-       }else{
-           //Flags 0xD80-0xE00 are mapped to any_a_flags
-           int index = (flag - 0x80) / 8;
-           return &(cmem.any_tmp_flags[index]);
-       }
-    }else{
+    } else if (flag < 0xF00) { // 0xD00 - 0xF00 are mapped to mushrooms
+        int idx = (flag - 0xD00) / 8;
+        return cmem.mushroom_flags + idx;
+    } else if (flag < 0xF80) { // 0xF00 - 0xF80 are mapped to shells
+        int idx = (flag - 0xF00) / 8;
+        return cmem.shell_flags + idx;
+    } else if (flag < 0x1000) { // 0xF80 - 0x1000 are mapped to trash cans
+        int idx = (flag - 0xF80);
+        return cmem.trash_flags + idx;
+    } else {
         err2(ERR_FLAG_ACCESS_INVALID, flag);
         return NULL;
     }

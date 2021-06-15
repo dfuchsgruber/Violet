@@ -75,6 +75,7 @@ def print_misc_person_index(misc):
     for misc_name, misc_table in (
         ('Mushrooms', misc['mushroom_flag_to_map']),
         ('Shells', misc['shell_flag_to_map']),
+        ('Trash Cans', misc['trash_flag_to_map']),
     ):
         index += f'{misc_name}:\n'
         if len(misc_table.keys()) == 0:

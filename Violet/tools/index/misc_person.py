@@ -16,6 +16,7 @@ def get_misc_index(rompath, symbolspath, projectpath):
 
     mushroom_flag_to_map = defaultdict(list)
     shell_flag_to_map = defaultdict(list)
+    trash_flag_to_map = defaultdict(list)
 
     for bank in project.headers:
         for map_idx in project.headers[bank]:
@@ -28,12 +29,16 @@ def get_misc_index(rompath, symbolspath, projectpath):
                     elif person['script_std'] == 'PERSON_SHELL':
                         idx = str(person['value']['berry_tree_idx'])
                         shell_flag_to_map[int(idx, 0)].append((bank, map_idx, namespace))
+                    elif person['script_std'] == 'PERSON_TRASH_CAN':
+                        idx = str(person['value']['berry_tree_idx'])
+                        trash_flag_to_map[int(idx, 0)].append((bank, map_idx, namespace))
                 except Exception as e:
                     print(f'Error in parsing item of person {person_idx} on map {bank},{map_idx}')
                     raise e
     return {
         'mushroom_flag_to_map' : dict(mushroom_flag_to_map),
-        'shell_flag_to_map' : dict(shell_flag_to_map)
+        'shell_flag_to_map' : dict(shell_flag_to_map),
+        'trash_flag_to_map' : dict(trash_flag_to_map),
     }
 
 if __name__ == '__main__':
