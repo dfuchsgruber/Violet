@@ -225,11 +225,11 @@
 				},
 				{
 					"target_index": "9",
-					"picture": "238",
+					"picture": "236",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "45",
-					"y": "58",
+					"x": "32",
+					"y": "62",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -242,11 +242,11 @@
 					"flag": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_POKEMON",
+					"script_std": "PERSON_TRASH_CAN",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_BLUBELLA",
-						"berry_tree_idx": 0,
+						"species": "0",
+						"berry_tree_idx": "13",
 						"type": 0
 					}
 				},
@@ -1251,13 +1251,13 @@
 				},
 				{
 					"target_index": "47",
-					"picture": "238",
+					"picture": "236",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "29",
-					"y": "51",
+					"x": "32",
+					"y": "36",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "0",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -1268,11 +1268,11 @@
 					"flag": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_POKEMON",
+					"script_std": "PERSON_TRASH_CAN",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_KRAMSHEF",
-						"berry_tree_idx": 0,
+						"species": "0",
+						"berry_tree_idx": "4",
 						"type": 0
 					}
 				},

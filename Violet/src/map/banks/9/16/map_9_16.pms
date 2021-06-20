@@ -338,7 +338,7 @@
 					"target_index": 13,
 					"field_3": 0,
 					"picture": 168,
-					"flag": "PKMNMENU",
+					"flag": "1 | 0x8000",
 					"x": 11,
 					"field_2": 0,
 					"level": 0,
@@ -365,7 +365,7 @@
 					"target_index": 14,
 					"field_3": 0,
 					"picture": 50,
-					"flag": "PKMNMENU",
+					"flag": "1 | 0x8000",
 					"x": 12,
 					"field_2": 0,
 					"level": 0,
@@ -455,7 +455,7 @@
 					"var": "MERIANA_ARENA_TRIGGER"
 				},
 				{
-					"value": 45,
+					"value": "36",
 					"y": 6,
 					"level": 0,
 					"x": 9,
@@ -466,7 +466,7 @@
 					"var": "STORY_PROGRESS"
 				},
 				{
-					"value": 45,
+					"value": "36",
 					"y": 6,
 					"level": 0,
 					"x": 10,
@@ -477,7 +477,7 @@
 					"var": "STORY_PROGRESS"
 				},
 				{
-					"value": 45,
+					"value": "36",
 					"y": 6,
 					"level": 0,
 					"x": 11,
@@ -488,7 +488,7 @@
 					"var": "STORY_PROGRESS"
 				},
 				{
-					"value": 45,
+					"value": "36",
 					"y": 6,
 					"level": 0,
 					"x": 8,

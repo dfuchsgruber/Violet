@@ -1,5 +1,6 @@
 .include "callstds.s"
 .include "overworld_script.s"
+.include "vars.s"
 
 .global ow_script_map_9_16_trainer_2
 .global ow_script_map_9_16_person_3
@@ -119,11 +120,8 @@ end
 .ifdef LANG_GER
 
 str_0x959066:
-    .string "Mistral war bereits ein Kommandant\nder Revolutionsbewegung.\pEr ist bestens ausgebildet und\nmacht keine halben Sachen.\pNimm dich lieber in Acht, Bursche!"
-
-
+    .autostring 34 2 "Unser Anführer war bereits Kommandant in der Revolutionsbewegung.\pEr ist unglaublich stark und macht keine halben Sachen.\pNimm dich lieber in Acht, Kindchen!"
 .elseif LANG_EN
-
 .endif
 
 

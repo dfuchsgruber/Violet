@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_18_route_8",
 		"events": {
-			"person_cnt": 28,
+			"person_cnt": 29,
 			"warp_cnt": 6,
 			"trigger_cnt": 1,
 			"signpost_cnt": 5,
@@ -725,6 +725,31 @@
 						"item": 0,
 						"species": "POKEMON_MOBAI",
 						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "29",
+					"picture": "236",
+					"script_std": "PERSON_TRASH_CAN",
+					"field_3": 0,
+					"x": "20",
+					"y": "60",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "10",
 						"type": 0
 					}
 				}

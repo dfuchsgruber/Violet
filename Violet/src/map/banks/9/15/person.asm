@@ -7,6 +7,7 @@
 .include "map_connections.s"
 .include "overworld_script.s"
 .include "items.s"
+.include "specials.s"
 
 .global ow_script_0x95c261
 .global ow_script_0x95c4fb
@@ -27,13 +28,9 @@ end
 
 
 .ifdef LANG_GER
-
 str_0x95c65d:
-    .string "Die Fossilforschung mag vielen\nsteintrocken erscheinen.\pTatsächlich sind wir aber den\nAnfängen der Mensch-Pokémon\lGeschichte auf der Spur."
-
-
+    .autostring 34 2 "Unsere Forschung ist unglaublich spannend.\pWir sind quasi den Anfängen der Beziehung zwischen Mensch und Pokémon auf der Spur."
 .elseif LANG_EN
-
 .endif
 
 
@@ -44,13 +41,9 @@ end
 
 
 .ifdef LANG_GER
-
 str_0x95c6e9:
-    .string "Unser Traum war es immer,\nFossilien zum Leben erwecken zu\lkönnen.\pNun, da wir dazu im Stande sind,\nwo führt uns unser Weg hin?"
-
-
+    .autostring 34 2 "Ich habe immer davon geträumt, Fossilien wieder zum Leben erwecken zu können.\pAber nun, da wir dazu im Stande sindDOTS\pIch frage mich, was als nächstes kommt."
 .elseif LANG_EN
-
 .endif
 
 
@@ -61,13 +54,9 @@ end
 
 
 .ifdef LANG_GER
-
 str_0x95c769:
-    .string "Ist dir der Name Lester ein\nBegriff?\pEr ist ein großer Unterstützer des\nFossilienprojekts der Laz.Corp."
-
-
+    .autostring 34 2 "Sagt dir der Name Lester etwas?\pEr ist ein großer Unterstützer unseres Fossilien-Restaurations Projekts.\pEr und sein Vater waren schon immer sehr begeistert von der Arbeit unserer Gruppe."
 .elseif LANG_EN
-
 .endif
 
 
@@ -78,13 +67,9 @@ end
 
 
 .ifdef LANG_GER
-
 str_0x95c7d2:
-    .string "Fossilien häufen sich dort, wo\neine hohe Mineralkonzentration\lvorherrscht.\pAuf diese Weise können wir\neffizienter antike Pokémon\lrestaurieren."
-
-
+    .autostring 34 2 "Ein Fossil wieder zu erwecken ist einfacher, als man es sich vorstellt.\pAber scheinbar schwer genug, dass es uns jahrelange Forschung abverlangt hat, die nötige Technologie dafür zu entwickeln."
 .elseif LANG_EN
-
 .endif
 
 
@@ -102,13 +87,13 @@ loadpointer 0x0 str_0x95c5d4
 callstd MSG_YES_NO
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x95c56e
-special 0x3e
+special SPECIAL_FOSSIL_PRINT_ITEMS
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x95c4fb
 waitstate
 compare LASTRESULT 0x7f
 gotoif EQUAL ow_script_0x95c56e
-special 0x3f
+special SPECIAL_FOSSIL_GIVE
 compare 0x8004 0
 gotoif EQUAL ow_script_0x95c3d3
 bufferitem 0x0 0x8004
@@ -152,7 +137,7 @@ goto ow_script_0x95c56e
 
 
 ow_script_0x95c271:
-special2 0x800d 0x40
+special2 LASTRESULT 0x40
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x95c261
 bufferpokemon 0x0 FOSSIL_RESTAURATED_SPECIES
@@ -179,50 +164,24 @@ end
 
 
 .ifdef LANG_GER
-
 str_0x95c5d4:
-    .string "Hallo, junger Trainer!\nDiese Maschine kann Fossilien\lwieder zum Leben erwecken.\pMöchtest du eines deiner Fossilien\nrestaurieren lassen?"
-
-
-
+    .autostring 34 2 "Hallo, junger Trainer!\pDiese Maschine hier kann Fossilien wieder zum Leben erwecken.\pMöchtest du eines deiner Fossilien restaurieren lassen?"
 str_0x95c487:
-    .string "Sehr wohl, ich werde dein\nBUFFER_1 restaurieren."
-
-
-
+    .autostring 34 2  "Sehr wohl, ich werde dein BUFFER_1 restaurieren."
 str_0x95c4b4:
-    .string "Komm in genau einer Stunde wieder\nund die Maschine wird fertig sein."
-
-
-
+    .autostring 34 2  "Komm in etwa einer Stunde wieder.\pDann wird die Maschine fertig sein."
 str_0x95c3e1:
-	.autostring 35 2 "Es sieht so aus, als würde die interne Spielzeit nicht voranschreiten.\pBesuche am besten das Haus des Uhrenmachers, ehe du ein Fossil zur Restauration abgeben möchtest."
-
-
+	.autostring 34 2 "Es sieht so aus, als würde die interne Spielzeit nicht voranschreiten.\pBesuche am besten das Haus des Uhrenmachers, ehe du ein Fossil zur Restauration abgeben möchtest."
 str_0x95c579:
-    .string "Solltest du ein Fossil finden,\nkannst du es hierher bringen und\lwiederherstellen lassen."
-
-
-
+    .autostring 34 2 "Solltest du ein Fossil finden, kannst du es hierher bringen und wiederherstellen lassen."
 str_0x95c509:
-    .string "Oh, es sieht so aus, als hättest\ndu kein Fossil bei dir, das ich\lwieder zum Leben erwecken könnte."
-
-
-
+    .autostring 34 2 "Oh, es sieht so aus, als hättest du kein Fossil bei dir, das ich wieder zum Leben erwecken könnte."
 str_0x95c2eb:
-    .string "Ah, du bist es!\nEs ist uns gelungen, das Fossil zu\lrestaurieren.\pEs hat sich als BUFFER_1 entpuppt.\pDOTS\nDOTS"
-
-
-
+    .autostring 34 2 "Ah, du bist es!\nEs ist uns gelungen, das Fossil zu restaurieren.\pEs hat sich als BUFFER_1 entpuppt.\pDOTS\nDOTS DOTS DOTS"
 str_0x95c2d1:
-    .string "PLAYER hat ein BUFFER_1\nerhalten!"
-
-
-
+    .autostring 34 2 "PLAYER hat ein BUFFER_1 erhalten!"
 str_0x95c353:
-    .string "Sieht so aus, als hättest du auf\ndeinem PC keinen Platz mehr für\lweitere Pokémon.\pKomm wieder, wenn du Platz\ngeschaffen hast."
-
-
+    .autostring 34 2 "Sieht so aus, als hättest du auf deinem PC keinen Platz mehr für weitere Pokémon.\pKomm wieder, wenn du Platz geschaffen hast."
 .elseif LANG_EN
 
 .endif

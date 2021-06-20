@@ -26,7 +26,7 @@ end
 .ifdef LANG_GER
 
 str_0x95587d:
-    .string "Orina City, die Stadt der\nWolkenkratzer"
+    .autostring 34 2 "Orina City.\pHier überragen Häuser die Wolken."
 
 
 .elseif LANG_EN
@@ -173,7 +173,7 @@ end
 .ifdef LANG_GER
 
 str_0x955429:
-    .string "Orina City Mauzi Bank"
+    .autostring 34 2 "Orina City Bank"
 
 
 .elseif LANG_EN
@@ -190,7 +190,7 @@ end
 .ifdef LANG_GER
 
 str_0x9558a6:
-    .string "Laz.Corp - Wir machen Zukunft zur\nGegenwart"
+    .autostring 34 2 "Laz. Corp.\pWir machen Zukunft zur Gegenwart"
 
 
 .elseif LANG_EN
@@ -216,15 +216,15 @@ str_0x95547f:
 
 
 ow_script_map_3_5_sign_6:
-loadpointer 0x0 str_0x95da61
-callstd MSG_SIGN
-end
+    loadpointer 0x0 str_0x95da61
+    callstd MSG_SIGN
+    end
 
 
 .ifdef LANG_GER
 
 str_0x95da61:
-    .string "Haus des Attacken-Erinnerers"
+    .autostring 34 2 "Haus des Attacken-Erinnerers"
 
 
 .elseif LANG_EN

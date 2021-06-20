@@ -279,7 +279,7 @@ void shell_open() {
     gp_flag_set(shell_idx, cmem.shell_flags);
 }
 
-static u32 trash_rates[] = {[TRASH_TYPE_WIND] = 5, [TRASH_TYPE_ITEM] = 3, [TRASH_TYPE_ENCOUNTER] = 2};
+static u32 trash_rates[] = {[TRASH_TYPE_WIND] = 2, [TRASH_TYPE_ITEM] = 3, [TRASH_TYPE_ENCOUNTER] = 2};
 
 u16 trash_get_type(u16 trash_idx) {
     bool empty = trash_idx < 128 ? gp_flag_get(trash_idx, cmem.trash_flags) : gp_flag_get((u16)(trash_idx - 128), cmem.trash_flags2);
@@ -336,7 +336,7 @@ u16 shell_get_encounter() {
 }
 
 static u32 trash_encounters[] = {[POKEMON_SLEIMA] = 3, [POKEMON_SMOGON] = 2, [POKEMON_ZIGZACHS] = 2, [POKEMON_TEDDIURSA] = 1};
-static u32 trash_items[] = {[ITEM_UEBERRESTE] = 1, [ITEM_MININUGGET] = 2, [ITEM_FLUCHTSEIL] = 10, [ITEM_POKEPUPPE] = 8, [ITEM_POKEBALL] = 9, [ITEM_AETHER] = 5, 
+static u32 trash_items[] = {[ITEM_UEBERRESTE] = 1, [ITEM_MININUGGET] = 2, [ITEM_FLUCHTSEIL] = 10, [ITEM_POKEPUPPE] = 8, [ITEM_AETHER] = 5, 
     [ITEM_BITTERKRAUT] = 7, [ITEM_QUARZSTAUB] = 7, [ITEM_APFEL] = 15};
 
 u16 trash_get_encounter_or_item() {

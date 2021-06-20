@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_143",
 		"events": {
-			"person_cnt": 57,
+			"person_cnt": 58,
 			"warp_cnt": 1,
 			"trigger_cnt": 5,
 			"signpost_cnt": 3,
@@ -1475,6 +1475,31 @@
 						"item": 0,
 						"species": "POKEMON_FUKANO",
 						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "58",
+					"picture": "236",
+					"script_std": "PERSON_TRASH_CAN",
+					"field_3": 0,
+					"x": "87",
+					"y": "20",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "8",
 						"type": 0
 					}
 				}

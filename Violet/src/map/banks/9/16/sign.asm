@@ -27,7 +27,7 @@ end
 .ifdef LANG_GER
 
 str_0x95a700:
-    .string "Das Gemälde zeigt ein rotes\nMonster, das von Flammen und Lava\lumgeben ist."
+    .autostring 34 2 "Das Gemälde zeigt ein von Lava umgebenes rotes monströses Wesen.\pIst das etwa ein antikes Pokémon?"
 
 
 .elseif LANG_EN
@@ -39,27 +39,27 @@ ow_script_map_9_16_sign_0:
 checkflag ORINA_CITY_VIOLET_GRUNTS
 gotoif EQUAL ow_script_0x959475
 loadpointer 0x0 str_0x95a56d
-callstd MSG_SIGN
+callstd MSG
 end
 
 
 ow_script_0x959475:
 loadpointer 0x0 str_0x95a56d
-callstd MSG_SIGN
+callstd MSG_KEEPOPEN
 loadpointer 0x0 str_0x959487
-callstd MSG_SIGN
+callstd MSG
 end
 
 
 .ifdef LANG_GER
 
 str_0x95a56d:
-    .string "QUOTE_STARTDas Magmaherz - die Essenz der\nErde und LandmassenQUOTE_END"
+    .autostring 34 2 "QUOTE_STARTDas Magmaherz\pEntdeckt und ausgegraben von Professor Tann.QUOTE_END"
 
 
 
 str_0x959487:
-    .string "DOTS Das Schild wurde\ndurchgestrichen DOTS"
+    .autostring 34 2 "Das Schild wurde durchgestrichenDOTS"
 
 
 .elseif LANG_EN
@@ -68,44 +68,26 @@ str_0x959487:
 
 
 ow_script_map_9_16_sign_1:
-checkflag ORINA_CITY_WOLKENHERZ_STOLEN
-gotoif EQUAL ow_script_0x95a5a3
-loadpointer 0x0 str_0x95a5b5
-callstd MSG_SIGN
-end
-
-
-ow_script_0x95a5a3:
-loadpointer 0x0 str_0x95a5b5
-callstd MSG_SIGN
-loadpointer 0x0 str_0x959487
-callstd MSG_SIGN
-end
-
+    loadpointer 0 str_wolkenherz
+    callstd MSG_SIGN
+    end
 
 .ifdef LANG_GER
-
-str_0x95a5b5:
-    .string "QUOTE_STARTDas Wolkenherz - es glitzert in\nden Regenbogenfarben im LichtQUOTE_END"
-
-
-
+str_wolkenherz:
+    .autostring 34 2 "Wolkengestein.\pEin Federleichtes Mineral, das vor vielen Jahren als Baustoff diente."
 .elseif LANG_EN
-
 .endif
 
-
 ow_script_map_9_16_sign_5:
-loadpointer 0x0 str_0x95a74c
-callstd MSG_SIGN
-end
+    loadpointer 0x0 str_0x95a74c
+    callstd MSG_SIGN
+    end
 
 
 .ifdef LANG_GER
 
 str_0x95a74c:
-    .string "Ein weißes, hirschähnliches Wesen,\ndas von einer transzendenten Anmut\lgezeichnet ist, gleitet vor dem\lLicht der Sonne.\pEs wirkt fast wie eine Gottheit."
-
+    .autostring 34 2 "Eine unwirkliche Anmut geht von diesem Gemälde aus.\pEs zeigt ein in Licht einghülltes Wesen, das von hoch oben auf die Welt herabsieht.\pIst das etwaDOTS?"
 
 .elseif LANG_EN
 
@@ -121,8 +103,7 @@ end
 .ifdef LANG_GER
 
 str_0x95a7ef:
-    .string "Auf dem Gemälde ist ein monströses\nFischwesen zu sehen, das scheinbar\lmit unergründlicher Stille am\lMeeresboden wandert."
-
+    .autostring 34 2 "Auf diesem Gemälde ist ein blaues riesiges Wesen zu sehen, das gebieterisch über den Meeresboden wacht.\pOb es sich um ein antikes Pokémon handelt?"
 
 .elseif LANG_EN
 
@@ -138,7 +119,7 @@ end
 .ifdef LANG_GER
 
 str_0x95a873:
-    .string "Das Bild zeigt eine gigantische\ngrüne Schlange, die sich flink\ldurch das Wolkenmeer windet."
+    .autostring 34 2 "Ein grünes langes Wesen bricht mit scheinbar atemberaubender Geschwindigkeit durch die Wolkendecke.\pExistieren überhaupt Pokémon, die so groß sind?"
 
 
 .elseif LANG_EN

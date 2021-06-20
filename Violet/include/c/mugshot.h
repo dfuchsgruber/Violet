@@ -77,6 +77,13 @@ extern "C" {
     void special_delete_name();
 
     extern const unsigned short gfx_mug_mistralTiles[];
+    extern const unsigned short gfx_mug_mistral_angryTiles[];
+    extern const unsigned short gfx_mug_mistral_goodTiles[];
+    extern const unsigned short gfx_mug_mistral_happyTiles[];
+    extern const unsigned short gfx_mug_mistral_sadTiles[];
+    extern const unsigned short gfx_mug_mistral_scaredTiles[];
+    extern const unsigned short gfx_mug_mistral_shockedTiles[];
+    extern const unsigned short gfx_mug_mistral_thoughtfulTiles[];
     extern const unsigned short gfx_mug_mistralPal[];
     extern const unsigned short gfx_mug_hiroTiles[];
     extern const unsigned short gfx_mug_hiroPal[];

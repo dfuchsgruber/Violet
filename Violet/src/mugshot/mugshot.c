@@ -28,7 +28,16 @@ mugshot mugshots[] = {
 			[MUGSHOT_ANGRY] = gfx_mug_rin_angryTiles, 
 		}, gfx_mug_rinPal, str_mug_rin},
     [MUGSHOT_MISTRAL] = {
-		{[MUGSHOT_NORMAL] = gfx_mug_mistralTiles}, 
+		{
+			[MUGSHOT_NORMAL] = gfx_mug_mistralTiles,
+			[MUGSHOT_ANGRY] = gfx_mug_mistral_angryTiles,
+			[MUGSHOT_GOOD] = gfx_mug_mistral_goodTiles,
+			[MUGSHOT_HAPPY] = gfx_mug_mistral_happyTiles,
+			[MUGSHOT_SAD] = gfx_mug_mistral_sadTiles,
+			[MUGSHOT_SCARED] = gfx_mug_mistral_scaredTiles,
+			[MUGSHOT_SHOCKED] = gfx_mug_mistral_shockedTiles,
+			[MUGSHOT_RUMINATIVE] = gfx_mug_mistral_thoughtfulTiles,
+			}, 
 		gfx_mug_mistralPal, str_mug_mistral},
     [MUGSHOT_RIVAL] = {
 			{
