@@ -294,7 +294,6 @@ u16 trash_get_type(u16 trash_idx) {
 
 u16 special_trash_get_type() {
     u16 type = trash_get_type(map_get_person((u8)(*var_access(LASTTALKED)), save1->map, save1->bank)->value);
-    dprintf("Trash stage is %d\n", type);
     return type;
 }
 

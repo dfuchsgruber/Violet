@@ -96,6 +96,7 @@ void version_upgrade_alpha_2_1_to_2_2() {
 	*var_access(TRAINERSCHOOL_ALLOWED_TO_ENTER_GRASS) = 1;
 	*var_access(TRAINERSCHOOL_GOODBYE_CNT) = 3;
 	*var_access(STORY_STATE) = STORY_STATE_VULCANO_CLEAR;
+    *var_access(VAR_ROUTE_6_RIVAL) = 1;
 	setflag(TRAINERSCHOOL_MAY_INSIDE);
 	setflag(TRAINERSCHOOL_BLAISE_INSIDE);
 	setflag(TRAINERSCHOOL_FELIX_INSIDE);

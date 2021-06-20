@@ -117,7 +117,35 @@ ingame_trade_t ingame_trades[NUM_INGAME_TRADES] = {
         .ot_is_female = 1,
         .hidden_ability = 1,
         .requested_species = POKEMON_NIDORANM,
-    }
+    },
+    [INGAME_TRADE_MAGNETON] = {
+        .nickname = LANGDEP(PSTRING("Magneto"), PSTRING("Magneto")),
+        .species = POKEMON_MAGNETON,
+        .ivs = {
+            [STAT_HP] = 31,
+            [STAT_ATTACK] = 7,
+            [STAT_DEFENSE] = 28,
+            [STAT_SPEED] = 15,
+            [STAT_SPECIAL_ATTACK] = 31,
+            [STAT_SPECIAL_DEFENSE] = 31,
+        },
+        .tid = 987653,
+        .pid = {
+            .fields = {
+                .ability = 0,
+                .gender_partial = 0,
+                .is_shiny = 0,
+                .hidden_power_type = TYPE_FEUER,
+                .hidden_power_strength = 7,
+                .nature = NATURE_KUEHN,
+            }
+        },
+        .item = ITEM_SANANABEERE,
+        .ot_name = LANGDEP(PSTRING("Julia"), PSTRING("Julia")),
+        .ot_is_female = 1,
+        .hidden_ability = 1,
+        .requested_species = POKEMON_GEOROK,
+    },
 };
 
 

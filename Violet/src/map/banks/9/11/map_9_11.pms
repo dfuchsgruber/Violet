@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_413_indoor_layout_two_levels_3",
 		"events": {
-			"person_cnt": 4,
+			"person_cnt": 5,
 			"warp_cnt": 3,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
@@ -91,12 +91,12 @@
 				{
 					"is_trainer": "0",
 					"script": "ow_script_map_9_11_person_3",
-					"y": 21,
+					"y": "19",
 					"target_index": 4,
 					"field_3": 0,
 					"picture": 23,
 					"flag": "0x0",
-					"x": 3,
+					"x": "9",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -108,6 +108,31 @@
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "5",
+					"picture": "22",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "1",
+					"y": "22",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_LEFT_AND_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_orina_city_ingame_trade",
+					"flag": 0,
 					"value": {
 						"item": 0,
 						"species": 0,

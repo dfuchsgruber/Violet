@@ -4,16 +4,16 @@
 		"events": {
 			"person_cnt": 3,
 			"warp_cnt": 1,
-			"trigger_cnt": 5,
-			"signpost_cnt": 1,
+			"trigger_cnt": 6,
+			"signpost_cnt": 2,
 			"persons": [
 				{
 					"target_index": 1,
 					"picture": 31,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 70,
-					"y": 24,
+					"x": "72",
+					"y": "28",
 					"level": 3,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -39,8 +39,8 @@
 					"picture": 16,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 66,
-					"y": 27,
+					"x": "66",
+					"y": "28",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -105,55 +105,66 @@
 					"y": 24,
 					"level": 0,
 					"field_5": 0,
-					"value": 46,
+					"value": "0",
 					"script": "ow_script_map_3_24_trigger_0",
 					"field_A": 0,
 					"field_B": 0,
-					"var": "STORY_PROGRESS"
+					"var": "VAR_ROUTE_6_RIVAL"
 				},
 				{
 					"x": 72,
 					"y": 25,
 					"level": 0,
 					"field_5": 0,
-					"value": 46,
+					"value": "0",
 					"script": "ow_script_map_3_24_trigger_0",
 					"field_A": 0,
 					"field_B": 0,
-					"var": "STORY_PROGRESS"
+					"var": "VAR_ROUTE_6_RIVAL"
 				},
 				{
-					"x": 72,
-					"y": 26,
+					"x": "70",
+					"y": "28",
 					"level": 0,
 					"field_5": 0,
-					"value": 46,
+					"value": "0",
 					"script": "ow_script_map_3_24_trigger_0",
 					"field_A": 0,
 					"field_B": 0,
-					"var": "STORY_PROGRESS"
+					"var": "VAR_ROUTE_6_RIVAL"
 				},
 				{
-					"x": 71,
-					"y": 27,
+					"x": "71",
+					"y": "26",
 					"level": 0,
 					"field_5": 0,
-					"value": 46,
+					"value": "0",
 					"script": "ow_script_map_3_24_trigger_0",
 					"field_A": 0,
 					"field_B": 0,
-					"var": "STORY_PROGRESS"
+					"var": "VAR_ROUTE_6_RIVAL"
 				},
 				{
-					"x": 70,
-					"y": 28,
+					"x": "70",
+					"y": "27",
 					"level": 0,
 					"field_5": 0,
-					"value": 46,
+					"value": "0",
 					"script": "ow_script_map_3_24_trigger_0",
 					"field_A": 0,
 					"field_B": 0,
-					"var": "STORY_PROGRESS"
+					"var": "VAR_ROUTE_6_RIVAL"
+				},
+				{
+					"x": "70",
+					"y": "29",
+					"level": 0,
+					"field_5": 0,
+					"var": "VAR_ROUTE_6_RIVAL",
+					"value": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_map_3_24_trigger_0"
 				}
 			],
 			"signposts": [
@@ -172,6 +183,22 @@
 						}
 					},
 					"flag": "0"
+				},
+				{
+					"x": "65",
+					"y": "34",
+					"level": 0,
+					"type": "SIGNPOST_HIDDEN_ITEM",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": "ITEM_SONDERBONBON",
+							"flag": "108",
+							"amount": "1",
+							"chunk": 0
+						},
+						"script": 0
+					}
 				}
 			]
 		},
