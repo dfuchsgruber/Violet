@@ -24,6 +24,8 @@
 #include "math.h"
 #include "vars.h"
 #include "mugshot.h"
+#include "overworld/step_callback.h"
+#include "overworld/detector.h"
 
 static u8 aggressive_wild_pokemon_get_spawn_rate(u16 flag) {
     switch (flag) {
@@ -386,6 +388,16 @@ void overworld_effect_show_warp_arrow(u8 oam_idx, u8 direction, s16 x, s16 y) {
     }
 }
 
+u8 overworld_effect_warp_arrow_and_detector_arrow_new() {
+    u8 oam_idx = oam_new_backward_search(&overworld_effect_arrow_template, 0, 0, 0x52);
+    if (oam_idx < NUM_OAMS) {
+        oam_object *o = oams + oam_idx;
+        o->final_oam.attr2 = (u16)((o->final_oam.attr2 & (~ATTR2_PRIO(3))) | ATTR2_PRIO(1));
+        o->flags |= OAM_FLAG_INVISIBLE | OAM_FLAG_CENTERED;
+    }
+    return oam_idx;
+}
+
 extern oam_template oam_template_item_finder_arrow;
 
 void itemfinder_create_arrow_sprite(u8 anim_idx, u8 direction) {
@@ -718,6 +730,23 @@ void big_callback_time_based_events(u8 self) {
     if (!ow_script_is_active()) {
         ambient_cry_proceed(big_callbacks[self].params + 1, big_callbacks[self].params + 2);
         time_based_events_proceed(big_callbacks[self].params + 0);
+    }
+}
+
+void overworld_big_callbacks_initialize() {
+    if (!big_callback_is_active(overworld_step_callback_proceed)) {
+        u8 cb_idx = big_callback_new(overworld_step_callback_proceed, 0x50);
+        big_callbacks[cb_idx].params[0] = OVERWORLD_STEP_CALLBACK_NONE;
+    }
+    if (!big_callback_is_active(big_callback_time_based_events)) {
+        big_callback_new(big_callback_time_based_events, 0x50);
+    }
+    if (!big_callback_is_active(overworld_static_detector_callback)) {
+        u8 cb_idx = big_callback_new(overworld_static_detector_callback, 0x50);
+        // Set x and y coordinates of the callback to something invalid, so it will be updated imideatly when the oam is present
+        big_callbacks[cb_idx].params[DETECTOR_CB_VAR_OAM_IDX_ARROW] = overworld_effect_static_detector_arrow_new();
+        big_callbacks[cb_idx].params[DETECTOR_CB_VAR_X] = 0xFFFF;
+        big_callbacks[cb_idx].params[DETECTOR_CB_VAR_Y] = 0xFFFF;
     }
 }
 

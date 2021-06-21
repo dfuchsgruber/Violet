@@ -94,16 +94,15 @@ TWO_OPTIONS_STRINGS(
 static int option_sound_getter() { return save2->sound_is_mono; }
 static void option_sound_setter(int is_mono) { save2->sound_is_mono = (u8)(is_mono & 1); }
 
-THREE_OPTIONS_STRINGS(
+TWO_OPTIONS_STRINGS(
     detector,
-    LANGDEP(PSTRING("Detektor"), PSTRING("Detector Notification")),
-    LANGDEP(PSTRING("Keine"), PSTRING("None")),
-    LANGDEP(PSTRING("Keine Benachrichtigung in\nder Nähe von versteckten Items."), PSTRING("No detector notification when\nnearby hidden items.")),
-    LANGDEP(PSTRING("Text"), PSTRING("Text")),
-    LANGDEP(PSTRING("Text-Benachrichtigung in der Nähe\nvon versteckten Items."), PSTRING("Text notification when nearby hidden\nitems.")),
-    LANGDEP(PSTRING("Ton"), PSTRING("Sound")),
-    LANGDEP(PSTRING("Sound-Benachrichtigung in der Nähe\nvon verstecken Items."), PSTRING("Sound notification when nearby hidden\nitems."))
+    LANGDEP(PSTRING("Detektor"), PSTRING("Item Finder")),
+    LANGDEP(PSTRING("An"), PSTRING("On")),
+    LANGDEP(PSTRING("Detektor zeigt versteckte\nItems an."), PSTRING("Hidden items are indicated\nby the item finder.")),
+    LANGDEP(PSTRING("Aus"), PSTRING("Off")),
+    LANGDEP(PSTRING("Versteckte Items werden\nnicht angezeigt."), PSTRING("Hidden items are not\nindicated."))
 );
+
 static int option_detector_getter() { return cmem.settings.detector_notifications; }
 static void option_detector_setter(int value) { cmem.settings.detector_notifications = (u8)(value & 3); }
 

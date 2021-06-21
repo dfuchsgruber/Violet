@@ -303,6 +303,25 @@ void oam_gfx_anim_init(oam_object* oam, u8 frame);
 void oam_rotscale_anim_init(oam_object* oam, u8 index);
 
 /**
+ * Sets rotation and scale of a oam matrix
+ * @param matrix_idx the matrix to set
+ * @param x_scale the x_scale in multiples of 0x100
+ * @param y_scale the y_scale in multiples of 0x100
+ * @param rotation the rotation from [0, 255]
+ **/
+void oam_set_rotation_and_scale(u8 matrix_idx, s16 x_scale, s16 y_scale, u8 rotation);
+
+/**
+ * Attempts to set rotation and scale of an oam object if it has a matrix. It pauses the current affine anim.
+ * @param o the object to set parameters of
+ * @param recalculate_center_vector if the center vector will be recalculated
+ * @param x_scale the horizontal scaling in multiples of 0x100
+ * @param y_scale the vertical scaling in multiples of 0x100
+ * @param rotation the angle in [0, 0xFFFF]
+ **/
+void oam_try_set_rotation_and_scale(oam_object *o, bool recalculate_center_vector, s16 x_scale, s16 y_scale, u16 rotation);
+
+/**
  * Returns the oam palette associated with a certain tag
  * @param The palette tag to search for
  * @return The palette index or 0xFF if no match

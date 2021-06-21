@@ -55,5 +55,13 @@ void cpufastset(void *src, void *dst, u32 cnt_and_mode);
  */
 u16 sqrt32(u32 x);
 
+/**
+ * Calculates the negative arctan of a ratio
+ * @param x x value
+ * @param y y value
+ * @return -arctan2(x, y)
+ **/
+u16 negative_arctan2(s16 x, s16 y); 
+
 
 #endif /* INCLUDE_C_BIOS_H_ */

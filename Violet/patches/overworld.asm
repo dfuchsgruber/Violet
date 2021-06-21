@@ -26,6 +26,10 @@ overworld_pals equ 0x083A501C
 .org overworld_pals + 0x10 * 8
     .word gfx_ow_pal_bbshipPal
 
+.org 0x080db2e8
+    ldr r0, =overworld_effect_warp_arrow_and_detector_arrow_new | 1
+    bx r0
+    .pool
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -502,3 +506,8 @@ _blxr4:
     .word overworld_step_callback_proceed | 1
 .org 0x0806e8ac
     .word overworld_step_callback_proceed | 1
+
+.org 0x0806e7e0
+    ldr r0, =overworld_big_callbacks_initialize | 1
+    bx r0
+    .pool
