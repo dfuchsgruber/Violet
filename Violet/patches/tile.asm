@@ -55,11 +55,6 @@
     bx r2
     .pool
 
-.org 0x0806D120
-    ldr r0, =hook_singpost_hidden_flag | 1
-    bx r0
-    .pool
-
 .org 0x08083064
     .word script_repel_wore_off
 

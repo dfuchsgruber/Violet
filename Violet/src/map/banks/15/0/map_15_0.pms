@@ -1842,14 +1842,14 @@
 					"flag": "0"
 				},
 				{
-					"x": 25,
-					"y": 12,
+					"x": "29",
+					"y": "5",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"script": "0",
 						"item": {
-							"item": "ITEM_NESTBALL",
+							"item": "ITEM_MININUGGET",
 							"flag": 17,
 							"amount": 1,
 							"chunk": 0

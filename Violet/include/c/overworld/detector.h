@@ -38,6 +38,7 @@ enum {
     DETECTOR_CB_VAR_Y,
     DETECTOR_CB_VAR_BANK,
     DETECTOR_CB_VAR_MAP_IDX,
+    DETECTOR_CB_VAR_FLAG,
 };
 
 /**
@@ -48,6 +49,14 @@ enum {
  **/
 bool hidden_item_is_within_player_range(map_event_header_t *event_header, u8 cb_idx);
 
+enum {
+    ITEM_FINDER_ON_ITEM = 0,
+    ITEM_FINDER_NORTH = 3,
+    ITEM_FINDER_EAST = 2,
+    ITEM_FINDER_SOUTH = 1,
+    ITEM_FINDER_WEST = 4,  
+};
+
 /**
  * Gets the direction of a hidden item by the values computed by 'hidden_item_is_within_player_range'
  * @param dx the relative horizontal distance to the item
@@ -55,5 +64,17 @@ bool hidden_item_is_within_player_range(map_event_header_t *event_header, u8 cb_
  * @return the direction the item is
  **/
 u8 detector_get_hidden_item_direction(s16 dx, s16 dy);
+
+/**
+ * Issues an update of the static detector arrow if a flag is set
+ * @param flag the flag to wait for
+ **/
+void overworld_static_detector_issue_update_when_flag_set(u16 flag);
+
+extern const u8 gfx_item_finder_arrow_staticTiles[];
+
+#define ITEM_FINDER_TAG 2000
+
+palette palette_item_finder_arrow;
 
 #endif

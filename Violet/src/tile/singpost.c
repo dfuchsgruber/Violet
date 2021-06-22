@@ -5,6 +5,7 @@
 #include "constants/items.h"
 #include "constants/flags.h"
 #include "overworld/npc.h"
+#include "overworld/detector.h"
 #include "vars.h"
 #include "flags.h"
 #include "constants/signpost_types.h"
@@ -85,12 +86,15 @@ u8 *signpost_get_script(position_t *position, u8 behaviour, u8 direction) {
         case SIGNPOST_5:
         case SIGNPOST_6:
         case SIGNPOST_HIDDEN_ITEM: {
-            if (hidden_item_get_field(sign->value.hidden_item, HIDDEN_UNDERFOOT)) return NULL;
+            if (hidden_item_get_field(sign->value.hidden_item, HIDDEN_UNDERFOOT)) 
+                return NULL;
             *var_access(0x8005) = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_ITEM_IDX);
             *var_access(0x8004) = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_FLAG);
             *var_access(0x8006) = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_COUNT);
-            if (checkflag(*var_access(0x8004))) return NULL;
+            if (checkflag(*var_access(0x8004))) 
+                return NULL;
             *var_access(PLAYERFACING) = direction;
+            overworld_static_detector_issue_update_when_flag_set(*var_access(0x8004));
             return ow_script_signpost_hidden_item;
         }
     }

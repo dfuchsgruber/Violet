@@ -481,8 +481,8 @@ u8 item_finder_create_star() {
 extern graphic graphic_item_finder_arrow;
 extern color_t gfx_item_finder_arrowPal[];
 
-static palette palette_item_finder_arrow = {
-    .pal = gfx_item_finder_arrowPal, .tag = 2000,
+palette palette_item_finder_arrow = {
+    .pal = gfx_item_finder_arrowPal, .tag = ITEM_FINDER_TAG,
 };
 
 void item_finder_load_gfx_and_pal() {
@@ -491,8 +491,8 @@ void item_finder_load_gfx_and_pal() {
 }
 
 void item_finder_free_gfx_and_pal() {
-    oam_palette_free(2000);
-    oam_free_vram_by_tag(2000);
+    oam_palette_free(ITEM_FINDER_TAG);
+    oam_free_vram_by_tag(ITEM_FINDER_TAG);
 }
 
 
@@ -747,6 +747,7 @@ void overworld_big_callbacks_initialize() {
         big_callbacks[cb_idx].params[DETECTOR_CB_VAR_OAM_IDX_ARROW] = overworld_effect_static_detector_arrow_new();
         big_callbacks[cb_idx].params[DETECTOR_CB_VAR_X] = 0xFFFF;
         big_callbacks[cb_idx].params[DETECTOR_CB_VAR_Y] = 0xFFFF;
+        dprintf("New detector field callback.\n");
     }
 }
 

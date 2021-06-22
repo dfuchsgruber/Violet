@@ -964,14 +964,14 @@
 					"flag": "0"
 				},
 				{
-					"y": 23,
+					"y": "26",
 					"level": 0,
-					"x": 22,
+					"x": "29",
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"script": "0",
 						"item": {
-							"item": "ITEM_LUXUSBALL",
+							"item": "ITEM_HYPERTRANK",
 							"flag": 31,
 							"amount": 1,
 							"chunk": 0
