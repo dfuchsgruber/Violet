@@ -249,6 +249,11 @@
 				"map_route_7",
 				"src/map/banks/3/18/map_route_7.pms",
 				"MAP_ROUTE_7"
+			],
+			"20": [
+				"map_power_plant",
+				"src/map/banks/3/20/map_power_plant.pms",
+				"MAP_KRAFTWERK"
 			]
 		},
 		"4": {
@@ -1296,7 +1301,8 @@
 				"src/map/banks/33/8/map_blackbeard_ship_treasure_room.pms",
 				"MAP_SCHATTENFLUT"
 			]
-		}
+		},
+		"34": {}
 	},
 	"footers": {
 		"map_footer_395": [
@@ -2170,6 +2176,10 @@
 		"map_footer_route_4_clouds_cave": [
 			158,
 			"src/map/banks/16/6/map_footer_route_4_clouds_cave.pms"
+		],
+		"map_footer_power_plant": [
+			159,
+			"src/map/banks/3/20/map_footer_power_plant.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -2195,7 +2205,6 @@
 		"maptileset291108": "src/map/tileset/maptileset291108.pms",
 		"maptileset1": "src/map/tileset/maptileset1.pms",
 		"maptileset26": "src/map/tileset/maptileset26.pms",
-		"maptileset245157": "src/map/tileset/maptileset245157.pms",
 		"maptileset16": "src/map/tileset/maptileset16.pms",
 		"maptileset282712": "src/map/tileset/maptileset282712.pms",
 		"maptileset278730": "src/map/tileset/maptileset278730.pms",
@@ -2238,7 +2247,9 @@
 		"maptileset_felsige_oednis_savanna": "src/map/tileset/maptileset_felsige_oednis_savanna.pms",
 		"maptileset_meriana_city_gym_rooftop": "src/map/tileset/maptileset_meriana_city_gym_rooftop.pms",
 		"maptileset_route_5": "src/map/tileset/maptileset_route_5.pms",
-		"maptileset_route_5_cave": "src/map/tileset/maptileset_route_5_cave.pms"
+		"maptileset_route_5_cave": "src/map/tileset/maptileset_route_5_cave.pms",
+		"maptileset_power_plant": "src/map/tileset/maptileset_power_plant.pms",
+		"maptileset_orina_city": "src/map/tileset/maptileset245157.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2301,6 +2312,7 @@
 		"gfx_maptileset_felsige_oednis_savannaTiles": "asset/gfx/tileset/gfx_maptileset_felsige_oednis_savanna.png",
 		"gfx_maptileset_meriana_city_gym_rooftopTiles": "asset/gfx/tileset/gfx_maptileset_meriana_city_gym_rooftop.png",
 		"gfx_maptileset_route_5Tiles": "asset/gfx/tileset/gfx_maptileset_route_5.png",
-		"gfx_maptileset_route_5_caveTiles": "asset/gfx/tileset/gfx_maptileset_route_5_cave.png"
+		"gfx_maptileset_route_5_caveTiles": "asset/gfx/tileset/gfx_maptileset_route_5_cave.png",
+		"gfx_maptileset_power_plantTiles": "asset/gfx/tileset/gfx_maptileset_power_plant.png"
 	}
 }
