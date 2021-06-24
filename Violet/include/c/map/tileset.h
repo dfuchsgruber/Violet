@@ -73,7 +73,7 @@ extern tileset maptileset1;
 extern tileset maptileset2;
 extern tileset maptileset3;
 extern tileset maptileset4;
-extern tileset maptileset245157;
+extern tileset maptileset_orina_city;
 extern tileset maptileset249598;
 extern tileset maptileset302795;
 extern tileset maptileset242637;

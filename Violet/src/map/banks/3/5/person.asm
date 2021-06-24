@@ -9,6 +9,9 @@
 .include "items.s"
 .include "pathfinding.s"
 
+.global ow_script_map_3_5_person_39
+.global ow_script_map_3_5_person_38
+.global ow_script_map_3_5_person_37
 .global ow_script_map_3_5_person_16
 .global ow_script_0x95a390
 .global ow_script_map_3_5_person_34
@@ -55,6 +58,31 @@
 .global ow_script_map_3_5_person_26
 .global ow_script_map_3_5_person_33
 .global ow_script_map_3_5_person_13
+
+
+ow_script_map_3_5_person_37:
+    loadpointer 0 str_37
+    callstd MSG_FACE
+    end
+ow_script_map_3_5_person_38:
+    loadpointer 0 str_38
+    callstd MSG_FACE
+    end
+ow_script_map_3_5_person_39:
+    loadpointer 0 str_39
+    callstd MSG_FACE
+    end
+
+.ifdef LANG_GER
+str_37:
+    .autostring 34 2 "Auf meiner Patroullie entgeht mir keine verdächtige Person.\pEigentlich muss man ja auch nur auf violette oder grüne Kleidung achtenDOTS"
+str_38:
+    .autostring 34 2 "Bei meiner Arbeit im Kraftwerk sehe ich manchmal ein großes gelbes Vogelpokémon.\pIch frage mich, ob es von der Elektrizität angezogen wird."
+str_39:
+    .autostring 34 2 "Das Kraftwerk versorgt die ganze Region mit Strom.\pNatürlich bekommt Orina City dabei den größten Teil ab.\pImmerhin ist das hier die größte Stadt Thetos."
+.elseif LANG_EN
+
+.endif
 
 ow_script_map_3_5_person_13:
 loadpointer 0x0 str_0x94e126

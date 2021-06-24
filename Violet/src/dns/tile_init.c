@@ -32,7 +32,7 @@ void tile_init(map_footer_t *foot) {
             pal_restore[2 * 16 + 14] = dns_color_flame_yellow;
             pal_restore[2 * 16 + 15] = dns_color_flame_orange;
         }
-        if (foot->tileset2 == &maptileset245157) {
+        if (foot->tileset2 == &maptileset_orina_city) {
             //Orina City TS2
             pal_restore[7*16+7] = dns_color_light_yellow_weak_dark;
             pal_restore[7*16+6] = dns_color_light_yellow;
