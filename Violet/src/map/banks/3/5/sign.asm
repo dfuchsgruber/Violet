@@ -41,8 +41,14 @@ goto ow_script_0x9554da
 
 
 ow_script_0x9554da:
-loadpointer 0x0 str_0x955852
-callstd MSG_KEEPOPEN
+    loadpointer 0x0 str_0x955852
+    callstd MSG_KEEPOPEN
+    callasm map_orina_city_wanted_posters
+    waitstate
+    releaseall
+    end
+
+
 setvar DYN_MULTICHOICE_ITEM_CNT 0x4
 loadpointer 0x0 choice
 multichoice 0x0 0x0 0x0 0x0
