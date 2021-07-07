@@ -7108,6 +7108,27 @@ trainer trainers[TRAINER_CNT] = {
       .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
       .battle_state = 0, .pokemon_cnt = ARRAY_COUNT(trainer_party_x1da_route_5_icarus_party), .party = (trainer_pokemon*)trainer_party_x1da_route_5_icarus_party,
 	  },
+    [0x1db] = {
+        .trainerclass = TRAINERCLASS_FORSCHER, .sprite = 107,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Albert"),
+            PSTRING("Albert")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1db_power_plant_inside_trainer_0),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1db_power_plant_inside_trainer_0,
+    },
+    [0x1dc] = {
+        .trainerclass = TRAINERCLASS_MECHANIKER, .sprite = 0x5d,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Antonio"),
+            PSTRING("Antonio")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1dc_power_plant_inside_trainer_1),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1dc_power_plant_inside_trainer_1,
+    },
+    [0x1dd] = {
+        .trainerclass = TRAINERCLASS_MECHANIKER, .sprite = 0x5d,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Marvin"),
+            PSTRING("Marvin")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1dd_power_plant_inside_trainer_2),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1dd_power_plant_inside_trainer_2,
+    },
     [0x300] = {
       .uses_custom_moves = true, .uses_custom_items = true,
       .trainerclass = TRAINERCLASS_CHEFKOCH, .encounter_and_gender = {1, 0} , .sprite = 0x74,

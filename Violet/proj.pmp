@@ -1302,7 +1302,13 @@
 				"MAP_SCHATTENFLUT"
 			]
 		},
-		"34": {}
+		"34": {
+			"0": [
+				"map_power_plant_inside",
+				"src/map/banks/34/0/map_power_plant_inside.pms",
+				"MAP_KRAFTWERK"
+			]
+		}
 	},
 	"footers": {
 		"map_footer_395": [
@@ -2180,6 +2186,10 @@
 		"map_footer_power_plant": [
 			159,
 			"src/map/banks/3/20/map_footer_power_plant.pms"
+		],
+		"map_footer_power_plant_inside": [
+			160,
+			"src/map/banks/34/map_footer_power_plant_inside.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -2249,7 +2259,8 @@
 		"maptileset_route_5": "src/map/tileset/maptileset_route_5.pms",
 		"maptileset_route_5_cave": "src/map/tileset/maptileset_route_5_cave.pms",
 		"maptileset_power_plant": "src/map/tileset/maptileset_power_plant.pms",
-		"maptileset_orina_city": "src/map/tileset/maptileset245157.pms"
+		"maptileset_orina_city": "src/map/tileset/maptileset245157.pms",
+		"maptileset_power_plant_inside": "src/map/tileset/maptileset_power_plant_inside.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2313,6 +2324,7 @@
 		"gfx_maptileset_meriana_city_gym_rooftopTiles": "asset/gfx/tileset/gfx_maptileset_meriana_city_gym_rooftop.png",
 		"gfx_maptileset_route_5Tiles": "asset/gfx/tileset/gfx_maptileset_route_5.png",
 		"gfx_maptileset_route_5_caveTiles": "asset/gfx/tileset/gfx_maptileset_route_5_cave.png",
-		"gfx_maptileset_power_plantTiles": "asset/gfx/tileset/gfx_maptileset_power_plant.png"
+		"gfx_maptileset_power_plantTiles": "asset/gfx/tileset/gfx_maptileset_power_plant.png",
+		"gfx_maptileset_power_plant_insideTiles": "asset/gfx/tileset/gfx_maptileset_power_plant_inside.png"
 	}
 }

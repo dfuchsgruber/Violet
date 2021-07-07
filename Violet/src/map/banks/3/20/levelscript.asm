@@ -15,11 +15,6 @@ map_power_plant_levelscripts:
     .byte LEVELSCRIPT_TYPE_ON_TRANSITION
     .word transition_script
 	.byte 0x0
-
-setmaptile_script:
-    checkflag FLAG_BBSHIP_CAPTAIN_ROOM_UNLOCKED
-    callif EQUAL ow_script_blackbeard_ship_deck_open_captain_cabin
-    end
     
 transition_script:
     checkflag FLAG_POWER_PLANT_WINGULL_QUEST_TAKEN

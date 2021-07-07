@@ -1022,7 +1022,7 @@
 .byte 0xa2
 .hword \x
 .hword \y
-.hword (\block | (\level << 10))
+.hword ((\block) | ((\level) << 10))
 .hword \attribute
 .endm
 

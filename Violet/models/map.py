@@ -35,6 +35,7 @@ person_script_std_type = agb.types.UnionType({
         'PERSON_POKEMON_NON_FACING' : 'species',
         'PERSON_ACCESSIBLE_MOVE_TUTOR' : 'type',
         'PERSON_TRASH_CAN' : 'berry_tree_idx',
+        'PERSON_AGGRESSIVE_POKEMON_NO_OVERWORLD_EFFECT' : 'species',
     }.get(parents[-1]['script_std'], 'item')
 )
 map_flags_type = agb.types.BitfieldType('u8', [
