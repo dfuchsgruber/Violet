@@ -227,6 +227,12 @@ battle_bg battle_bgs[256] = {
         NULL, NULL,
         gfx_battle_bg_route_5_cavePal,
     },
+    [BATTLE_BG_POWER_PLANT] = {
+        gfx_battle_bg_power_plantTiles,
+        gfx_battle_bg_power_plantMap,
+        NULL, NULL,
+        gfx_battle_bg_power_plantPal,
+    },
 };
 
 
@@ -324,6 +330,9 @@ void bsc_cmd_xEB_set_type_to_terrain() {
     case BATTLE_BG_ROUTE_5_CAVE:
         type = TYPE_KAEFER;
         break;
+    case BATTLE_BG_POWER_PLANT:
+        type = TYPE_ELEKTRO;
+        break;
 	}
 	if (type == battlers[attacking_battler].type1 ||
 			type == battlers[attacking_battler].type2) {
@@ -366,6 +375,7 @@ u16 terrain_moves[] = {
     [BATTLE_BG_BBSHIP_OUTSIDE] = ATTACK_SURFER,
     [BATTLE_BG_CAVE_WATER] = ATTACK_SURFER,
     [BATTLE_BG_ROUTE_5_CAVE] = ATTACK_KAEFERBISS,
+    [BATTLE_BG_POWER_PLANT] = ATTACK_SCHOCKWELLE,
 };
 
 void bsc_cmd_xCC_set_terrain_based_move(){

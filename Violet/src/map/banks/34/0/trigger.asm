@@ -11,7 +11,7 @@
 ow_script_power_plant_inside_trigger_hide_blue_spark:
     lockall
     pause 16
-    sound 0xA
+    sound 22
     call ow_script_power_plant_inside_hide_blue_sparks
     special SPECIAL_MAP_UPDATE_BLOCKS
     checksound
@@ -23,7 +23,7 @@ ow_script_power_plant_inside_trigger_hide_blue_spark:
 ow_script_power_plant_inside_trigger_hide_yellow_spark:
     lockall
     pause 16
-    sound 0xA
+    sound 22
     call ow_script_power_plant_inside_hide_yellow_sparks
     special SPECIAL_MAP_UPDATE_BLOCKS
     checksound

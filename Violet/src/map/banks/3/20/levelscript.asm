@@ -19,7 +19,13 @@ map_power_plant_levelscripts:
 transition_script:
     checkflag FLAG_POWER_PLANT_WINGULL_QUEST_TAKEN
     gotoif NOT_EQUAL end_transition_script
-    movesprite2 3 0x15 0x19
+    checkflag FLAG_POWER_PLANT_WINGULL_FOUND
+    gotoif EQUAL move_old_man_to_talk_to_scientist
+    movesprite2 3 0x15 0x18
     spritebehave 3 BEHAVIOUR_LOOK_AROUND
 end_transition_script:
+    end
+move_old_man_to_talk_to_scientist:
+    movesprite2 3 0x15 0x18
+    spritebehave 3 BEHAVIOUR_FACE_RIGHT
     end

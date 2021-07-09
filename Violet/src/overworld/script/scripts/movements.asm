@@ -18,6 +18,7 @@ mov_fu:
 .global mov_exclam
 .global mov_question
 .global mov_double_exclam
+.global mov_say_smile
 
 mov_exclam:
     .byte SAY_EXCLAM, STOP
@@ -25,7 +26,9 @@ mov_question:
     .byte SAY_QUESTION, STOP
 mov_double_exclam:
 	.byte SAY_DOUBLE_EXCLAM, STOP
-
+mov_say_smile:
+	.byte SAY_SMILE, STOP
+	
 .global mov_1u
 .global mov_1d
 .global mov_1r

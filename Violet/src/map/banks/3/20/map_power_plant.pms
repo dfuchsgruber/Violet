@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_power_plant",
 		"events": {
-			"person_cnt": 13,
+			"person_cnt": 15,
 			"warp_cnt": 2,
 			"trigger_cnt": 3,
 			"signpost_cnt": 2,
@@ -74,7 +74,7 @@
 					"is_trainer": 0,
 					"alert_radius": 0,
 					"script": "ow_script_power_plant_person_2",
-					"flag": 0,
+					"flag": "FLAG_POWER_PLANT_SURF_QUEST_DONE",
 					"value": {
 						"item": 0,
 						"species": 0,
@@ -113,7 +113,7 @@
 					"script_std": "PERSON_MUSHROOM",
 					"field_3": 0,
 					"x": "18",
-					"y": "21",
+					"y": "31",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -328,6 +328,56 @@
 					"value": {
 						"item": 0,
 						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "14",
+					"picture": "55",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "22",
+					"y": "24",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_power_plant_person_3",
+					"flag": "FLAG_POWER_PLANT_WINGULL_FOUND | 0x8000",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "15",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "22",
+					"y": "25",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_POWER_PLANT_WINGULL_OUTSIDE | 0x8000",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_WINGULL",
 						"berry_tree_idx": 0,
 						"type": 0
 					}

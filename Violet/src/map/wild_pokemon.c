@@ -732,6 +732,9 @@ wild_pokemon_data wild_pokemon[] = {
 	}, {
 		.bank = 16, .map = 5,
 		.grass = &wild_pokemon_route_4_cloud_cave_grass,
+	}, {
+		.bank = 34, .map = 0,
+		.grass = &wild_pokemon_power_plant_inside_grass,
 	},
 	{
 	    .bank = 0xFF, .map = 0xFF, .field_2 = 0xFF, .field_3 = 0xFF,
