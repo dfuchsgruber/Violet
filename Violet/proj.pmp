@@ -166,7 +166,7 @@
 				"MAP_ROUTE_5"
 			],
 			"24": [
-				"map_3_24",
+				"map_route_6_east",
 				"src/map/banks/3/24/map_3_24.pms",
 				"MAP_ROUTE_6"
 			],
@@ -758,12 +758,12 @@
 		},
 		"18": {
 			"2": [
-				"map_18_2",
+				"map_route_6_cave",
 				"src/map/banks/18/2/map_18_2.pms",
 				"MAP_ROUTE_6"
 			],
 			"3": [
-				"map_18_3",
+				"map_route_6_west",
 				"src/map/banks/18/3/map_18_3.pms",
 				"MAP_ROUTE_6"
 			],

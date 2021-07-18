@@ -2,10 +2,10 @@
 	"data": {
 		"footer": "map_footer_467",
 		"events": {
-			"person_cnt": 30,
-			"warp_cnt": 7,
-			"trigger_cnt": 3,
-			"signpost_cnt": 5,
+			"person_cnt": 37,
+			"warp_cnt": 4,
+			"trigger_cnt": 0,
+			"signpost_cnt": 6,
 			"persons": [
 				{
 					"target_index": 1,
@@ -22,7 +22,7 @@
 					},
 					"is_trainer": "1",
 					"alert_radius": "4",
-					"script": "ow_script_map_18_3_trainer_0",
+					"script": "ow_script_route_6_trainer_11",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -39,8 +39,8 @@
 					"picture": 22,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "63",
-					"y": "36",
+					"x": "62",
+					"y": "38",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -49,7 +49,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_18_3_trainer_1",
+					"script": "ow_script_route_6_person_0",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -66,8 +66,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 69,
-					"y": 29,
+					"x": "80",
+					"y": "17",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -82,7 +82,7 @@
 					"field_B": 0,
 					"script_std": "PERSON_ITEM",
 					"value": {
-						"item": "ITEM_HYPERTRANK",
+						"item": "ITEM_EISEN",
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
@@ -93,7 +93,7 @@
 					"picture": 29,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "69",
+					"x": "70",
 					"y": "25",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_LEFT",
@@ -103,7 +103,7 @@
 					},
 					"is_trainer": "1",
 					"alert_radius": "4",
-					"script": "ow_script_map_18_3_trainer_2",
+					"script": "ow_script_route_6_trainer_2",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -117,21 +117,21 @@
 				},
 				{
 					"target_index": 5,
-					"picture": 26,
+					"picture": "96",
 					"field_2": 0,
 					"field_3": 0,
-					"x": 53,
-					"y": 34,
+					"x": "73",
+					"y": "21",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_18_3_trainer_3",
-					"flag": "0x0",
+					"script": "ow_script_rock_smash",
+					"flag": "17",
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -156,8 +156,8 @@
 						"y": "0"
 					},
 					"is_trainer": "1",
-					"alert_radius": 2,
-					"script": "ow_script_map_18_3_trainer_4",
+					"alert_radius": "4",
+					"script": "ow_script_route_6_trainer_9",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -174,8 +174,8 @@
 					"picture": 30,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 47,
-					"y": 21,
+					"x": "48",
+					"y": "22",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -184,7 +184,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_18_3_trainer_5",
+					"script": "ow_script_route_6_person_2",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -204,14 +204,14 @@
 					"x": "51",
 					"y": "27",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "1",
 					"alert_radius": "4",
-					"script": "ow_script_map_18_3_trainer_6",
+					"script": "ow_script_route_6_trainer_4",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -228,8 +228,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 43,
-					"y": 36,
+					"x": "50",
+					"y": "44",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -255,8 +255,8 @@
 					"picture": 55,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 37,
-					"y": 18,
+					"x": "36",
+					"y": "18",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -265,7 +265,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_18_3_trainer_7",
+					"script": "ow_script_route_6_person_3",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -282,10 +282,10 @@
 					"picture": 86,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 29,
-					"y": 23,
+					"x": "27",
+					"y": "19",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -293,7 +293,7 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
-					"flag": "PKMNMENU",
+					"flag": "0",
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -319,7 +319,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_18_3_trainer_8",
+					"script": "ow_script_route_6_person_4",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -336,8 +336,8 @@
 					"picture": 35,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 29,
-					"y": 14,
+					"x": "3",
+					"y": "39",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -346,7 +346,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_18_3_trainer_9",
+					"script": "ow_script_route_6_person_5",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -363,17 +363,17 @@
 					"picture": 52,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 36,
-					"y": 9,
+					"x": "38",
+					"y": "7",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_ROTATE_COUNTERCLOCKWISE",
+					"behaviour": "BEHAVIOUR_WALK_DOWN_AND_UP",
 					"behaviour_range": {
 						"x": "0",
-						"y": "0"
+						"y": "4"
 					},
 					"is_trainer": "1",
-					"alert_radius": 2,
-					"script": "ow_script_map_18_3_trainer_10",
+					"alert_radius": "4",
+					"script": "ow_script_route_6_trainer_5",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -400,7 +400,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_18_3_trainer_11",
+					"script": "ow_script_route_6_person_1",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -515,7 +515,7 @@
 					"script_std": "PERSON_EGG",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_FEURIGEL",
+						"species": "POKEMON_MOLUNK",
 						"berry_tree_idx": 0,
 						"type": 0
 					}
@@ -525,17 +525,17 @@
 					"picture": 42,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 55,
-					"y": 11,
+					"x": "56",
+					"y": "11",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN_LEFT_AND_RIGHT",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "1",
 					"alert_radius": 2,
-					"script": "ow_script_map_18_3_trainer_12",
+					"script": "ow_script_route_6_trainer_6",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -552,17 +552,17 @@
 					"picture": 22,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "44",
-					"y": "25",
+					"x": "3",
+					"y": "38",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_ROTATE_COUNTERCLOCKWISE",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"is_trainer": "1",
-					"alert_radius": 2,
-					"script": "ow_script_map_18_3_trainer_13",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "ow_script_route_6_person_3",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -589,7 +589,7 @@
 					},
 					"is_trainer": "1",
 					"alert_radius": "4",
-					"script": "ow_script_map_18_3_trainer_14",
+					"script": "ow_script_route_6_trainer_8",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -606,8 +606,8 @@
 					"picture": 18,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "18",
-					"y": "31",
+					"x": "17",
+					"y": "30",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -616,7 +616,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_18_3_trainer_15",
+					"script": "ow_script_route_6_person_5",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -633,8 +633,8 @@
 					"picture": 39,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 26,
-					"y": 25,
+					"x": "26",
+					"y": "25",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
@@ -642,8 +642,8 @@
 						"y": "0"
 					},
 					"is_trainer": "1",
-					"alert_radius": 2,
-					"script": "ow_script_map_18_3_trainer_16",
+					"alert_radius": "4",
+					"script": "ow_script_route_6_trainer_9",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -670,7 +670,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_18_3_trainer_17",
+					"script": "ow_script_route_6_person_7",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -688,7 +688,7 @@
 					"field_2": 0,
 					"field_3": 0,
 					"x": "16",
-					"y": "22",
+					"y": "21",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -697,7 +697,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_18_3_trainer_18",
+					"script": "ow_script_route_6_person_8",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -711,27 +711,27 @@
 				},
 				{
 					"target_index": 27,
-					"picture": 26,
+					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": 7,
-					"y": 22,
+					"x": "41",
+					"y": "29",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"is_trainer": "1",
-					"alert_radius": 4,
-					"script": "ow_script_map_18_3_trainer_19",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_SCHNECKMAG",
 						"berry_tree_idx": 0,
 						"type": 0
 					}
@@ -793,8 +793,8 @@
 					"picture": "24",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "7",
-					"y": "26",
+					"x": "6",
+					"y": "25",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
@@ -810,6 +810,181 @@
 					"value": {
 						"item": 0,
 						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "31",
+					"picture": "238",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
+					"field_3": "36",
+					"x": "47",
+					"y": "35",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_LEFT_UP_DOWN_RIGHT",
+					"behaviour_range": {
+						"x": "4",
+						"y": "4"
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "4",
+					"script": 0,
+					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_VULPIX",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "32",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "20",
+					"y": "43",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_FUKANO",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "33",
+					"picture": "168",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "28",
+					"y": "19",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "34",
+					"picture": "95",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "54",
+					"y": "20",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_cut_tree",
+					"flag": "16",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "35",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "59",
+					"y": "29",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MAGMAR",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "36",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "37",
+					"y": "40",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MAGCARGO",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "37",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "20",
+					"y": "11",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_DOWN_AND_UP",
+					"behaviour_range": {
+						"x": 0,
+						"y": "3"
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_PANZAERON",
 						"berry_tree_idx": 0,
 						"type": 0
 					}
@@ -833,8 +1008,8 @@
 					"target_warp_idx": 0
 				},
 				{
-					"x": 60,
-					"y": 10,
+					"x": "35",
+					"y": "1",
 					"level": 0,
 					"target_bank": 3,
 					"target_map": 6,
@@ -842,76 +1017,18 @@
 				},
 				{
 					"x": "29",
-					"y": "33",
+					"y": "34",
 					"level": 0,
 					"target_warp_idx": 0,
 					"target_map": 0,
 					"target_bank": "18"
-				},
-				{
-					"x": "30",
-					"y": "33",
-					"level": 0,
-					"target_warp_idx": "1",
-					"target_map": 0,
-					"target_bank": "18"
-				},
-				{
-					"x": "30",
-					"y": "34",
-					"level": 0,
-					"target_warp_idx": "2",
-					"target_map": 0,
-					"target_bank": "18"
-				},
-				{
-					"x": "29",
-					"y": "34",
-					"level": 0,
-					"target_warp_idx": "3",
-					"target_map": 0,
-					"target_bank": "18"
 				}
 			],
-			"triggers": [
-				{
-					"x": 30,
-					"y": 16,
-					"level": 0,
-					"field_5": 0,
-					"value": 48,
-					"script": "ow_script_map_18_3_trigger_0",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"x": 30,
-					"y": 17,
-					"level": 0,
-					"field_5": 0,
-					"value": 48,
-					"script": "ow_script_map_18_3_trigger_0",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"x": 31,
-					"y": 15,
-					"level": 0,
-					"field_5": 0,
-					"value": 48,
-					"script": "ow_script_map_18_3_trigger_0",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				}
-			],
+			"triggers": [],
 			"signposts": [
 				{
-					"x": 58,
-					"y": 37,
+					"x": "70",
+					"y": "37",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
@@ -926,8 +1043,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 26,
-					"y": 20,
+					"x": "49",
+					"y": "17",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
@@ -988,6 +1105,22 @@
 						}
 					},
 					"flag": "0"
+				},
+				{
+					"x": "14",
+					"y": "23",
+					"level": 0,
+					"type": "SIGNPOST_HIDDEN_ITEM",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": "ITEM_FEUERJUWEL",
+							"flag": "110",
+							"amount": "1",
+							"chunk": 0
+						},
+						"script": 0
+					}
 				}
 			]
 		},
@@ -1033,6 +1166,6 @@
 			"flag_7": "0"
 		}
 	},
-	"label": "map_18_3",
+	"label": "map_route_6_west",
 	"type": "header"
 }

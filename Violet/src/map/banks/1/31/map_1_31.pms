@@ -3,7 +3,7 @@
 		"footer": "map_footer_174",
 		"events": {
 			"person_cnt": 6,
-			"warp_cnt": 2,
+			"warp_cnt": 3,
 			"trigger_cnt": 0,
 			"signpost_cnt": 1,
 			"persons": [
@@ -37,12 +37,12 @@
 				{
 					"is_trainer": "1",
 					"script": "ow_script_map_1_31_trainer_0",
-					"y": 26,
+					"y": "27",
 					"target_index": 2,
 					"field_3": 0,
 					"picture": 22,
 					"flag": "0x0",
-					"x": 13,
+					"x": "13",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 2,
@@ -64,19 +64,19 @@
 				{
 					"is_trainer": "1",
 					"script": "ow_script_map_1_31_trainer_1",
-					"y": 22,
+					"y": "11",
 					"target_index": 3,
 					"field_3": 0,
 					"picture": 56,
 					"flag": "0x0",
-					"x": 7,
+					"x": "16",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 2,
-					"behaviour": "BEHAVIOUR_WALK_UP_AND_DOWN",
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_UP_RIGHT_LEFT",
 					"behaviour_range": {
-						"x": "0",
-						"y": "0"
+						"x": "2",
+						"y": "3"
 					},
 					"field_D": 0,
 					"field_B": 0,
@@ -186,6 +186,14 @@
 					"level": 3,
 					"x": 14,
 					"target_warp_idx": 0
+				},
+				{
+					"x": "19",
+					"y": "44",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": "2",
+					"target_bank": "18"
 				}
 			],
 			"triggers": [],
@@ -198,7 +206,7 @@
 					"value": {
 						"script": "0",
 						"item": {
-							"item": "ITEM_HYPERBALL",
+							"item": "ITEM_PURPURSTUECK",
 							"flag": 55,
 							"amount": 1,
 							"chunk": 0

@@ -9,7 +9,7 @@
 			"persons": [
 				{
 					"is_trainer": "0",
-					"script": "ow_script_map_1_125_person_0",
+					"script": "ow_script_aschhain_house_person_0",
 					"y": 4,
 					"target_index": 1,
 					"field_3": 0,
@@ -36,7 +36,7 @@
 				},
 				{
 					"is_trainer": "0",
-					"script": "ow_script_map_1_125_person_1",
+					"script": "ow_script_aschhain_glas_guy",
 					"y": 3,
 					"target_index": 2,
 					"field_3": 0,
@@ -63,7 +63,7 @@
 				},
 				{
 					"is_trainer": "0",
-					"script": "ow_script_map_1_125_person_2",
+					"script": "ow_script_aschhain_ash_bag_kid",
 					"y": 5,
 					"target_index": 3,
 					"field_3": 0,
