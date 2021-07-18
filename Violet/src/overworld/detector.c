@@ -34,6 +34,7 @@ static graphic static_detector_graphics[] = {
     {.sprite = gfx_item_finder_arrow_staticTiles + 5 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
     {.sprite = gfx_item_finder_arrow_staticTiles + 6 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
     {.sprite = gfx_item_finder_arrow_staticTiles + 7 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    {.sprite = gfx_item_finder_arrow_staticTiles + 8 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
 };
 
 static gfx_frame static_detector_frames[][2] = {
@@ -45,6 +46,7 @@ static gfx_frame static_detector_frames[][2] = {
     {{.data = 5, .duration = 0}, {.data = GFX_ANIM_END}},
     {{.data = 6, .duration = 0}, {.data = GFX_ANIM_END}},
     {{.data = 7, .duration = 0}, {.data = GFX_ANIM_END}},
+    {{.data = 8, .duration = 0}, {.data = GFX_ANIM_END}},
 };
 
 static gfx_frame *static_detector_animations[] = {
@@ -56,6 +58,7 @@ static gfx_frame *static_detector_animations[] = {
     static_detector_frames[5],
     static_detector_frames[6],
     static_detector_frames[7],
+    static_detector_frames[8],
 };
 
 #define ARROW_SINE_PERIOD 64
@@ -89,14 +92,18 @@ static void static_detector_arrow_callback(oam_object *self) {
     }
 }
 
+static palette static_detector_arrow_palette = {
+    .pal = gfx_item_finder_arrow_staticPal, .tag = ITEM_FINDER_STATIC_TAG,
+};
+
 static oam_template static_detector_arrow_template = {
-    .tiles_tag = 0xFFFF, .pal_tag = ITEM_FINDER_TAG, .oam = &static_detector_arrow_sprite, .graphics = static_detector_graphics,
+    .tiles_tag = 0xFFFF, .pal_tag = ITEM_FINDER_STATIC_TAG, .oam = &static_detector_arrow_sprite, .graphics = static_detector_graphics,
     .animation = static_detector_animations, .rotscale = static_detector_rs_anims, .callback = static_detector_arrow_callback,
 };
 
 u8 overworld_effect_static_detector_arrow_new() {
     
-    oam_palette_load_if_not_present_and_apply_shaders(&palette_item_finder_arrow);
+    oam_palette_load_if_not_present_and_apply_shaders(&static_detector_arrow_palette);
     u8 oam_idx = oam_new_backward_search(&static_detector_arrow_template, 0, 0, 0x53);
     if (oam_idx < 64) {
         oam_object *o = oams + oam_idx;
@@ -146,6 +153,16 @@ void overworld_static_detector_callback(u8 self) {
                     oams[oam_idx].private[1] = negative_arctan2((s16)vars[HIDDEN_ITEM_CB_VAR_DX], (s16)vars[HIDDEN_ITEM_CB_VAR_DY]);
                 } else {
                     // dprintf("Direction is %d\n", direction);
+                    // For now, we don't want an arrow at all, so we just have no rotscale
+                    oams[oam_idx].private[1] = 0x8000;
+                    if (oams[oam_idx].private[2] < 4) // Non-directional animation
+                        oams[oam_idx].private[2] = (u16)(oams[oam_idx].private[2] + 5);
+                    else if (oams[oam_idx].private[2] == 4) {
+                        oams[oam_idx].private[2] = 8; // Don't show the star
+                    }
+                    oams[oam_idx].private[3] = 0;
+
+                    /**
                     switch (direction) {
                         case ITEM_FINDER_NORTH:
                             oams[oam_idx].private[1] = 0xc000;
@@ -160,6 +177,7 @@ void overworld_static_detector_callback(u8 self) {
                             oams[oam_idx].private[1] = 0x8000;
                             break;
                     }
+                    **/
                 }
                 // dprintf("Have found hidden item at %d.%d\n", vars[HIDDEN_ITEM_CB_VAR_DX], vars[HIDDEN_ITEM_CB_VAR_DY]);
             } else {

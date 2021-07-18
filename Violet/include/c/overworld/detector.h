@@ -72,8 +72,10 @@ u8 detector_get_hidden_item_direction(s16 dx, s16 dy);
 void overworld_static_detector_issue_update_when_flag_set(u16 flag);
 
 extern const u8 gfx_item_finder_arrow_staticTiles[];
+extern const color_t gfx_item_finder_arrow_staticPal[16];
 
 #define ITEM_FINDER_TAG 2000
+#define ITEM_FINDER_STATIC_TAG 2222
 
 palette palette_item_finder_arrow;
 

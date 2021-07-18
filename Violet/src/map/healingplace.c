@@ -18,7 +18,7 @@ stru_flight_position flight_positions[NUM_HEALING_PLACES] = {
     // bank, map, x, y, d
     [HEALINGPLACE_AMONIA - 1] = {3, 0, 14, 26, 0}, // Amonia
     [HEALINGPLACE_MERIANA_CITY - 1] = {3, 1, 72, 29, 0}, // Meriana City
-    [HEALINGPLACE_AKTANIA - 1] = {3, 2, 24, 21, 0}, // Bruchfels
+    [HEALINGPLACE_AKTANIA - 1] = {3, 2, 0x1f, 0x28, 0}, // Bruchfels
     [HEALINGPLACE_SILVANIA_CITY - 1] = {3, 3, 0x1c, 0xA, 0}, // Kranzdorf
     [HEALINGPLACE_KASKADA - 1] = {3, 4, 0x2f, 0x2e, 0}, // Kaskada
     [HEALINGPLACE_ORINA_CITY - 1] = {3, 5, 31, 37, 0}, // Orina City
