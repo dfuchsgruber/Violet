@@ -255,12 +255,12 @@ static u8 str_item_scharfzahn_description[] = LANGDEP(
 	PSTRING("An item to hold. If the user\ncauses damage the target may\nflinch.")
 );
 static u8 str_item_ovaler_stein_description[] = LANGDEP(
-	PSTRING("Dieeser besondere, eiförmige Stein\nhilft manchen Pokémon bei ihrer\nEvolution."),
+	PSTRING("Dieser besondere, eiförmige Stein\nhilft manchen Pokémon bei ihrer\nEvolution."),
 	PSTRING("This special, oval rock helps\nsome Pokémon with their evolution.")
 );
-static u8 str_item_item_3e_description[] = LANGDEP(
-	PSTRING(" ????"),
-	PSTRING("?????")
+static u8 str_item_abra_puppe[] = LANGDEP(
+	PSTRING("Teleportiert zum letzten\nheilenden Ort."),
+	PSTRING("Teleports the player back\nto the last healing place.")
 );
 static u8 str_item_kp_plus_description[] = LANGDEP(
 	PSTRING("Ein gehaltvolles Getränk, das die\nKp-Anzeige eines Pokémon erhöht."),
@@ -2629,18 +2629,18 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_ITEM_3E
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
-		0, //price
+		//ITEM_ABRA_PUPPE
+		LANGDEP(PSTRING("Abra-Puppe"), PSTRING("Abra Doll")),
+		ITEM_ABRA_PUPPE, //index
+		500, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_item_3e_description,
+		str_item_abra_puppe,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
-		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		2, //type
+		item_field_effect_abra_doll, //
 		(void(*)(u8))0x0, //battle_usage1
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28

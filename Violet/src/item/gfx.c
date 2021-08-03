@@ -65,7 +65,7 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_EVOLITH] = { .gfx = gfx_item_evolithTiles, .pal = gfx_item_evolithPal },
     [ITEM_SCHARFZAHN] = { .gfx = gfx_item_scharfzahnTiles, .pal = gfx_item_scharfzahnPal },
     [ITEM_OVALER_STEIN] = { .gfx = gfx_item_ovaler_steinTiles, .pal = gfx_item_ovaler_steinPal },
-    [ITEM_ITEM_3E] = { .gfx = gfx_item_item_3eTiles, .pal = gfx_item_item_3ePal },
+    [ITEM_ABRA_PUPPE] = { .gfx = gfx_item_abra_puppeTiles, .pal = gfx_item_abra_puppePal },
     [ITEM_KP_PLUS] = { .gfx = gfx_item_kp_plusTiles, .pal = gfx_item_kp_plusPal },
     [ITEM_PROTEIN] = { .gfx = gfx_item_proteinTiles, .pal = gfx_item_proteinPal },
     [ITEM_EISEN] = { .gfx = gfx_item_eisenTiles, .pal = gfx_item_eisenPal },

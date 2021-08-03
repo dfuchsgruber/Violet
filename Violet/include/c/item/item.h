@@ -278,6 +278,12 @@ void item_print_string_can_not_be_used_by_oak(u8 self, u8 from_overworld);
  **/
 void item_effect_mulch(u8 self);
 
+/**
+ * Item effect for abra doll
+ * @param self self-reference
+ **/
+void item_field_effect_abra_doll(u8 self);
+
 typedef struct {
     const u8 *gfx;
     const u8 *pal;

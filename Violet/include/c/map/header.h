@@ -38,6 +38,13 @@ extern map_header_t **mapbanks[];
 extern map_header_t mapheader_virtual;
 
 /**
+ * Checks if the current map allows fly or teleport
+ * @param type the map type
+ * @return if the current map allows fly or teleport
+ **/
+bool map_type_enables_fly_or_teleport(u8 type);
+
+/**
  * Gets a mapheader by the current bank and map id
  * @param bank the desired bank
  * @param map the desired map id

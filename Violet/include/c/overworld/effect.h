@@ -126,6 +126,11 @@ u8 overworld_effect_static_detector_arrow_new();
 
 extern oam_template overworld_effect_arrow_template;
 
+/**
+ * Executes the overworld effect for the teleport field move after showing the pokemon that uses it
+ **/
+void overworld_effect_teleport_after_showing_pokemon();
+
 #define GFX_TAG_OVERWORLD_EFFECT_EXPLOSION 0x1773
 #define GFX_TAG_OVERWORLD_EFFECT_SOUND_WAVE 0x1774
 
