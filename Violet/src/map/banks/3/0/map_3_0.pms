@@ -5,7 +5,7 @@
 			"person_cnt": 16,
 			"warp_cnt": 4,
 			"trigger_cnt": 0,
-			"signpost_cnt": 6,
+			"signpost_cnt": 5,
 			"persons": [
 				{
 					"target_index": 1,
@@ -507,22 +507,6 @@
 						"item": {
 							"item": "ITEM_AP_PLUS",
 							"flag": "48",
-							"amount": "1",
-							"chunk": 0
-						},
-						"script": 0
-					},
-					"flag": "0"
-				},
-				{
-					"x": "39",
-					"y": "22",
-					"level": 0,
-					"type": "SIGNPOST_HIDDEN_ITEM",
-					"value": {
-						"item": {
-							"item": "ITEM_SCHUTZ",
-							"flag": "63",
 							"amount": "1",
 							"chunk": 0
 						},

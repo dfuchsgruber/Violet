@@ -1339,7 +1339,7 @@
 					"value": {
 						"script": "0",
 						"item": {
-							"item": "ITEM_STERNENSTUECK",
+							"item": "ITEM_STERNENSTAUB",
 							"flag": 26,
 							"amount": 1,
 							"chunk": 0

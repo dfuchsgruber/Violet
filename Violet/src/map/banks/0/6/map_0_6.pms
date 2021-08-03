@@ -136,7 +136,7 @@
 					"field_B": 0,
 					"script_std": "PERSON_ITEM",
 					"value": {
-						"item": "ITEM_ELIXIER",
+						"item": "ITEM_ABRA_PUPPE",
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
@@ -298,7 +298,7 @@
 					"field_B": 0,
 					"script_std": "PERSON_ITEM",
 					"value": {
-						"item": "ITEM_TOP_BELEBER",
+						"item": "ITEM_BELEBER",
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0

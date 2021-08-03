@@ -702,7 +702,7 @@
 					"value": {
 						"script": "0",
 						"item": {
-							"item": "ITEM_STERNENSTAUB",
+							"item": "ITEM_ABRA_PUPPE",
 							"flag": 5,
 							"amount": 1,
 							"chunk": 0

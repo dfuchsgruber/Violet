@@ -2632,7 +2632,7 @@ item items[] = {
 		//ITEM_ABRA_PUPPE
 		LANGDEP(PSTRING("Abra-Puppe"), PSTRING("Abra Doll")),
 		ITEM_ABRA_PUPPE, //index
-		500, //price
+		1000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_abra_puppe,

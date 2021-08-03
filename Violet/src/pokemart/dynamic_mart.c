@@ -96,6 +96,11 @@ static mart_item mart_item_elixier[] = {
     {0xFFFF, 0}
 };
 
+static mart_item mart_item_abra_doll[] = {
+    {0, ITEM_ABRA_PUPPE},
+    {0xFFFF, 0}
+};
+
 static mart_item *mart_items[] = {
     mart_items_ball_std,
     mart_item_full_restore,
@@ -107,6 +112,7 @@ static mart_item *mart_items[] = {
     mart_item_eisheiler,
     mart_item_repel_std,
     mart_item_fluchtseil,
+    mart_item_abra_doll,
     mart_item_beleber,
     mart_item_ether,
     mart_item_elixier,

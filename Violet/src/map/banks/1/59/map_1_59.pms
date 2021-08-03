@@ -1072,7 +1072,7 @@
 					"script": 0,
 					"flag": "FLAG_TAFELBERG_ITEM_0",
 					"value": {
-						"item": "ITEM_HYPERTRANK",
+						"item": "ITEM_ABRA_PUPPE",
 						"species": "0",
 						"berry_tree_idx": 0,
 						"type": 0

@@ -201,7 +201,7 @@
 					"script": 0,
 					"flag": "FLAG_FELSIGE_OEDNIS_ITEM_20",
 					"value": {
-						"item": "ITEM_STERNENSTAUB",
+						"item": "ITEM_ELIXIER",
 						"species": "0",
 						"berry_tree_idx": 0,
 						"type": 0

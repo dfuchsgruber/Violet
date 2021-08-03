@@ -5,7 +5,7 @@
 			"person_cnt": 62,
 			"warp_cnt": 10,
 			"trigger_cnt": 4,
-			"signpost_cnt": 9,
+			"signpost_cnt": 10,
 			"persons": [
 				{
 					"target_index": "1",
@@ -336,8 +336,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 24,
-					"y": 17,
+					"x": "7",
+					"y": "30",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -352,7 +352,7 @@
 					"field_B": 0,
 					"script_std": "PERSON_ITEM",
 					"value": {
-						"item": "ITEM_AETHER",
+						"item": "ITEM_ELIXIER",
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
@@ -984,8 +984,8 @@
 					"picture": 95,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 23,
-					"y": 17,
+					"x": "11",
+					"y": "22",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
@@ -1308,7 +1308,7 @@
 					"picture": 101,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "52",
+					"x": "50",
 					"y": "33",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
@@ -1922,7 +1922,7 @@
 					"flag": "0"
 				},
 				{
-					"x": "47",
+					"x": "25",
 					"y": "20",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
@@ -1936,6 +1936,22 @@
 						"script": 0
 					},
 					"flag": "0"
+				},
+				{
+					"x": "7",
+					"y": "19",
+					"level": 0,
+					"type": "SIGNPOST_HIDDEN_ITEM",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": "ITEM_ABRA_PUPPE",
+							"flag": "63",
+							"amount": "1",
+							"chunk": 0
+						},
+						"script": 0
+					}
 				}
 			]
 		},
