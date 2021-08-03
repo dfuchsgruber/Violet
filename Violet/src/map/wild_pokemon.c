@@ -737,6 +737,10 @@ wild_pokemon_data wild_pokemon[] = {
 		.grass = &wild_pokemon_power_plant_inside_grass,
 	},
 	{
+		.bank = 1, .map = 31,
+		.grass = &wild_pokemon_18_2_grass,
+	},
+	{
 	    .bank = 0xFF, .map = 0xFF, .field_2 = 0xFF, .field_3 = 0xFF,
 	    .grass = NULL, .water = NULL, .other = NULL, .rod = NULL
 	},

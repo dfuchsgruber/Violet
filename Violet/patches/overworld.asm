@@ -511,3 +511,8 @@ _blxr4:
     ldr r0, =overworld_big_callbacks_initialize | 1
     bx r0
     .pool
+
+.org 0x0809ced0
+    ldr r2, = yesnobox | 1
+    bx r2
+    .pool

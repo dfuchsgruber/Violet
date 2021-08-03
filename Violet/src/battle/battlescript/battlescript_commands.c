@@ -512,7 +512,8 @@ void bsc_command_x06_typecalc() {
             if (type_effectivenesses[i].attacker == 0xFE) {
                 if (battlers[defending_battler].status2 & STATUS2_FORESIGHT)
                     break;
-            if (type_effectivenesses[i].multiplicator == 20 && no_weakness)
+            }
+            if (type_effectivenesses[i].multiplicator == 20 && no_weakness) {
                 continue;
             } else if (type_effectivenesses[i].attacker == move_type) {
                 if (type_effectivenesses[i].defender == battlers[defending_battler].type1)

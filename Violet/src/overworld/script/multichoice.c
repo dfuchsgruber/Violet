@@ -2,6 +2,25 @@
 #include "overworld/script.h"
 #include "transparency.h"
 #include "debug.h"
+#include "callbacks.h"
+#include "vars.h"
+#include "list_menu.h"
+
+static void yesnobox_new_at(u8 x, u8 y, u8 default_no) {
+    tboxdata boxdata = {
+        .bg_id = 0, .x = x, .y = y, .w = 6, .h = 4, .pal = 15, .start_tile = 0x125,
+    };
+    gp_list_menu_yes_no_new(&boxdata, 2, 0, 2, 0x214, 14, default_no);
+}
+
+bool yesnobox(u8 x, u8 y) {
+    if (big_callback_is_active(yesnobox_handle_input))
+        return false;
+    lastresult = 0xFF;
+    yesnobox_new_at(x, y, false);
+    big_callback_new(yesnobox_handle_input, 80);
+    return true;
+}
 
 bool script_cmd_x6E_yesnobox(overworld_script_state_t *state) {
     u8 x = *(state->script++);

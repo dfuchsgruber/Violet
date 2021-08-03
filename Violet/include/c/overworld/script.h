@@ -91,6 +91,12 @@ void overworld_script_set_inactive();
 void overworld_script_init_muted(u8 *script);
 
 /**
+ * Big callback to process input of a yesnobox
+ * @param self self-reference
+ **/
+void yesnobox_handle_input(u8 self);
+
+/**
  * Shows a yes/no box and spawns a callback to process user input
  * @param x unused
  * @param y unused

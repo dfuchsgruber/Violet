@@ -36,6 +36,10 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	settrainerflag 0xb6
+	goto ow_script_0x89472b
+	end
+
 	clearflag ORINA_CITY_RECEIVED_PORYGON
 	end
 

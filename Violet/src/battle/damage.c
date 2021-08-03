@@ -66,8 +66,8 @@ int battle_base_damage_calculate(battler *attacker, battler *defender, u32 move,
     u8 attackerHoldEffect;
     u8 attackerHoldEffectParam;
 
-	// dprintf("Damage base calc attacker species %d, defender species %d, move %d, side_status %d, power override %d, type override %d, attacking_battler_idx %d, defending_battler_idx %d\n",
-		// attacker->species, defender->species, move, sideStatus, powerOverride, typeOverride, battlerIdAtk, battlerIdDef);
+	dprintf("Damage base calc attacker species %d, defender species %d, move %d, side_status %d, power override %d, type override %d, attacking_battler_idx %d, defending_battler_idx %d\n",
+		attacker->species, defender->species, move, sideStatus, powerOverride, typeOverride, battlerIdAtk, battlerIdDef);
 
     // dprintf("Dynamic base power is %d\n", battle_dynamic_base_power);
 
