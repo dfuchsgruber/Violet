@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_5",
 		"events": {
-			"person_cnt": 29,
+			"person_cnt": 30,
 			"warp_cnt": 9,
 			"trigger_cnt": 3,
 			"signpost_cnt": 1,
@@ -228,8 +228,8 @@
 					"picture": 55,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "61",
-					"y": "0",
+					"x": "89",
+					"y": "1",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -753,6 +753,31 @@
 					"alert_radius": 0,
 					"script": "ow_script_cut_tree",
 					"flag": "3",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "30",
+					"picture": "17",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "64",
+					"y": "5",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_route_2_east_abra_doll_girl",
+					"flag": "FLAG_MART_SELLS_ABRA_DOLL",
 					"value": {
 						"item": 0,
 						"species": 0,

@@ -5,12 +5,83 @@
 .include "flags.s"
 .include "species.s"
 .include "items.s"
+.include "movements.s"
 
 .global ow_script_route_2_scientist
 .global ow_script_route_2_east_npc_0
 .global ow_script_route_2_east_npc_1
 .global ow_script_route_2_east_npc_2
+.global ow_script_route_2_east_abra_doll_girl
 
+ow_script_route_2_east_abra_doll_girl:
+	checkflag FLAG_ROUTE_2_ABRA_DOLL_QUEST_REWARD_RECEIVED
+	gotoif EQUAL abra_doll_done
+	lockall
+	faceplayer
+	loadpointer 0 str_abra_doll_lost
+	callstd MSG
+	checkitem ITEM_ABRA_PUPPE 1
+	compare LASTRESULT 0x1
+	gotoif 1 give_abra_doll
+	release
+	end
+give_abra_doll:
+	sound 0x15
+	applymovement LASTTALKED mov_exclam
+	waitmovement 0
+	checksound
+	pause 16
+	loadpointer 0 str_found_abra_doll
+	callstd MSG_KEEPOPEN
+	fanfare 0x13e
+	lockall
+	loadpointer 0 str_hand_over_abra_doll
+	callstd MSG_KEEPOPEN
+	waitfanfare
+	setflag FLAG_ROUTE_2_ABRA_DOLL_QUEST_REWARD_RECEIVED
+	loadpointer 0 str_abra_doll_reward
+	callstd MSG
+attempt_to_give_reward:
+	lock
+	copyvarifnotzero 0x8000 ITEM_SONDERBONBON
+	copyvarifnotzero 0x8001 1
+	callstd ITEM_OBTAIN
+	compare LASTRESULT 0x0
+    gotoif EQUAL ow_script_no_room_for_giveitem
+	loadpointer 0 str_after_receive_reward
+	callstd MSG
+	sound 39
+	applymovement LASTTALKED mov_teleport_away
+	waitmovement 0
+	checksound
+	hidesprite LASTTALKED
+	setflag FLAG_MART_SELLS_ABRA_DOLL
+	releaseall
+	end
+
+abra_doll_done:
+	loadpointer 0 str_abra_doll_done
+	callstd MSG_FACE
+	goto attempt_to_give_reward
+
+mov_teleport_away:
+	.byte 164, STOP
+
+.ifdef LANG_GER
+str_after_receive_reward:
+	.autostring 34 2 "Jetzt kann ich endlich wieder mit meiner Abra-Puppe spielen.\pSchau mal!\nWenn ich sie ganz doll knuddleDOTS"
+str_abra_doll_reward:
+	.autostring 34 2 "Das ist wirklich total lieb von dir!\pEndlich habe ich meine Puppe wieder.\pIch möchte dir als Dank das hier geben."
+str_abra_doll_lost:
+	.autostring 34 2 "Buhu! Wähhh!\pIch bin so traurig.\pIch habe meine Abra-Puppe beim Spielen verlorenDOTS\pIrgendwo hier muss sie doch seinDOTS"
+str_hand_over_abra_doll:
+	.autostring 34 2 "PLAYER übergibt die Abra-Puppe."
+str_found_abra_doll:
+	.autostring 34 2 "W-Was ist das denn?\pJa, das ist sie!\nDu hast meine Abra-Puppe gefunden."
+str_abra_doll_done:
+	.autostring 34 2 "Hey!\nWillst du dir mein Geschenk abholen?\pGerne doch!"
+.elseif LANG_EN
+.endif
 
 ow_script_route_2_east_npc_0:
 loadpointer 0 str1
