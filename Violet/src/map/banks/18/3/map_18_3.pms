@@ -1188,7 +1188,7 @@
 				},
 				{
 					"direction": "MAP_CONNECTION_SOUTH",
-					"displacement": "15",
+					"displacement": "7",
 					"bank": "29",
 					"map_idx": "3",
 					"field_A": 0,

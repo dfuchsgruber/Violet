@@ -66,7 +66,6 @@ ow_script_dungeon2_enter_forest:
 ow_script_dungeon2_enter_forest_field:
 	@ Display animation
 	doanimation 0x2
-	nop
 	waitstate
     callasm dungeon2_seed_init
     setvar DUNGEON_TYPE DTYPE_FOREST

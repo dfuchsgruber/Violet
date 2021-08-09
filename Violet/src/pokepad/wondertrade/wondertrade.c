@@ -207,21 +207,18 @@ u32 tid_by_ot_name(u8 *ot_name) {
     return tid;
 }
 
+static u8 str_wodka[] = PSTRING("Wodka");
+
 void wondertrade_spawn_pokemon() {
     u16 species = wondertrade_select_pokemon();
-
-    //first we find a OT name
-    u8 *ot_name = species == POKEMON_MEW ? str_wondertrade_name0 :
-            wondertrade_ot_names[rnd16() % 36];
-
+    bool female_ot = rnd16() % 1;
+    u8 *ot_name = species == POKEMON_MEW ? str_wodka : person_names[female_ot][rnd16() % 128];
     u32 tid = tid_by_ot_name(ot_name);
-
     pid_t p = {.value = 0};
     pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, 5, 32, false, p,
         true, tid, wondertrade_next_seed, NULL);
-
-    //at last we define ot
     pokemon_set_attribute(&opponent_pokemon[0], ATTRIBUTE_OT_NAME, ot_name);
+    pokemon_set_attribute(opponent_pokemon + 0, ATTRIBUTE_OT_GENDER, &female_ot);
 }
 
 bool wondertrade_can_pokemon_be_sent() {

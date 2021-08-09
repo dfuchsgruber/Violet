@@ -228,6 +228,7 @@ typedef struct {
     wild_pokemon_entry dwild_data_rod[10];
     u32 trainer_prng_state;
     trainer_pokemon_custom_item_custom_attacks dynamic_trainer_party[3];
+    u8 dynamic_trainer_name[12];
     u8 roamer_last_encountered;
     u8 start_menu_clock_oam_idxs[4];
     u8 tbox_idx_braille;

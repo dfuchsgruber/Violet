@@ -1,5 +1,6 @@
 #include "types.h"
 #include "map/tileset.h"
+#include "debug.h"
 
 extern u16 gfx_tileset_0_anim_0Tiles[];
 extern u16 gfx_tileset_0_anim_1Tiles[];
@@ -32,6 +33,7 @@ tileset_animation_header tileset_0_animations_head = {
 
 
 void tileset_0_anim(u16 clk){
+    dprintf("Tileset 0 anim at clk %d\n", clk);
     generic_tileset_anim_proceed_all(&tileset_0_animations_head, clk);
 }
 

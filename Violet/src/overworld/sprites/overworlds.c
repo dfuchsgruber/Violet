@@ -1656,6 +1656,28 @@ overworld_sprite ow_icarus = {
 	oam_rotscale_anim_table_null
 };
 
+static gfx_frame gfx_animation_secret_power_vines[] = {
+	{.data = 0, .duration = 0}, {.data = 0, .duration = 16}, {.data = 1, .duration = 16}, 
+    {.data = 2, .duration = 16}, {.data = 1, .duration = 16},
+    {.data = GFX_ANIM_JUMP, .duration = 0},
+};
+
+static gfx_frame *gfx_animations_secret_power_vines[1] = {gfx_animation_secret_power_vines};
+
+static graphic overworld_sprite_secret_power_vines_sprites[] = {
+	{gfx_overworld_secret_power_vinesTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{gfx_overworld_secret_power_vinesTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{gfx_overworld_secret_power_vinesTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{gfx_overworld_secret_power_vinesTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+};
+
+static overworld_sprite ow_secret_power_vine = {
+        .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_SECRET_POWER_VINES,
+        .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
+        .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = gfx_animations_secret_power_vines,
+        .graphics = overworld_sprite_secret_power_vines_sprites, .rotscale_animation = oam_rotscale_anim_table_null,
+};
+
 //The overworld table
 overworld_sprite *overworld_sprites[] = {
     	&ow_hiro,
@@ -1860,6 +1882,7 @@ overworld_sprite *overworld_sprites[] = {
 		&ow_rival_beaten,
 	[181] = &ow_old_amber,
 	[182] = &ow_icarus,
+	[183] = &ow_secret_power_vine,
 
 	[OVERWORLD_SPRITE_TUTOR_CRYSTAL] = &ow_tutor_crystal_dummy,
 	[OVERWORLD_SPRITE_MISC] = &ow_misc_16_16,

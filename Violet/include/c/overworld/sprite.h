@@ -88,6 +88,9 @@ typedef struct overworld_sprite {
 #define OW_PAL_TAG_ROSALIE 0x2E07
 #define OW_PAL_TAG_ICARUS 0x2E08
 #define OW_PAL_TAG_TRASH 0x2E09
+#define OW_PAL_TAG_SECRET_POWER_VINES 0x2E0A
+#define OW_PAL_TAG_SECRET_POWER_CAVE 0x2E0B
+#define OW_PAL_TAG_SECRET_POWER_WHIRLPOOL 0x2E0C
 #define OW_PAL_TAG_END 0x3000
 
 /**
@@ -1847,7 +1850,9 @@ extern const color_t gfx_ow_ragePal[];
 extern const color_t gfx_ow_rosaliePal[];
 extern const color_t gfx_ow_icarusPal[];
 extern const u8 gfx_ow_trashTiles[];
-extern const u8 gfx_ow_trashPal[];
+extern const color_t gfx_ow_trashPal[];
+extern const u8 gfx_overworld_secret_power_vinesTiles[];
+extern const color_t gfx_overworld_secret_power_vinesPal[];
 
 extern overworld_sprite overworld_sprite_strength_boulder;
 

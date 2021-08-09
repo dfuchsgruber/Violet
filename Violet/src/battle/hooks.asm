@@ -35,6 +35,8 @@ battle_free_hook:
 .thumb_func
 battle_string_decrypt_additional_buffers_hook:
     ldrb r0, [r2]
+    cmp r0, #0x1D
+    beq _decrypt_additional // TrainerA name
     cmp r0, #0x2E
     beq _decrypt_additional // TrainerB defeat text
     cmp r0, #0x2F

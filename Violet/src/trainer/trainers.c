@@ -7129,6 +7129,51 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x1dd_power_plant_inside_trainer_2,
     },
+    [0x1de] = {
+        .trainerclass = TRAINERCLASS_JUNGES_GLUECK, .sprite = 68,
+        .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Eli u. Erik"),
+            PSTRING("Eli u. Erik")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1de_route_7_north_couple),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1de_route_7_north_couple,
+        .battle_state = BATTLE_DOUBLE,
+    },
+    [0x1df] = {
+      .trainerclass = TRAINERCLASS_CHEFKOCH, .encounter_and_gender = {1, 0} , .sprite = 75,
+      .name = LANGDEP(PSTRING("Alfons"), PSTRING("Alfons")),
+      .uses_custom_moves = true, .uses_custom_items = true,
+      .items = {ITEM_GOLDAPFEL, ITEM_APFEL, ITEM_APFEL, 0},
+      .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+      .battle_state = 0, .pokemon_cnt = ARRAY_COUNT(trainer_party_x1df_route_7_north_cook), .party = (trainer_pokemon*) trainer_party_x1df_route_7_north_cook,
+	  },
+    [0x1e0] = {
+        .trainerclass = TRAINERCLASS_PKMN_RANGER, .sprite = 0x3d,
+        .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING(""),
+            PSTRING("")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) &fmem.dynamic_trainer_party
+    },
+    [0x1e1] = {
+        .trainerclass = TRAINERCLASS_PKMN_RANGER, .sprite = 0x3c,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING(""),
+            PSTRING("")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) &fmem.dynamic_trainer_party,
+    },
+    [0x1e2] = {
+        .trainerclass = TRAINERCLASS_PKMN_RANGER, .sprite = 0x3d,
+        .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING(""),
+            PSTRING("")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) &fmem.dynamic_trainer_party
+    },
+    [0x1e3] = {
+        .trainerclass = TRAINERCLASS_PKMN_RANGER, .sprite = 0x3c,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING(""),
+            PSTRING("")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) &fmem.dynamic_trainer_party,
+    },
+
     [0x300] = {
       .uses_custom_moves = true, .uses_custom_items = true,
       .trainerclass = TRAINERCLASS_CHEFKOCH, .encounter_and_gender = {1, 0} , .sprite = 0x74,

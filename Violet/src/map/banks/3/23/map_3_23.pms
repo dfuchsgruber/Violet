@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_93",
 		"events": {
-			"person_cnt": 41,
+			"person_cnt": 43,
 			"warp_cnt": 2,
 			"trigger_cnt": 6,
 			"signpost_cnt": 8,
@@ -1065,6 +1065,56 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "3",
+						"type": 0
+					}
+				},
+				{
+					"target_index": "42",
+					"picture": "183",
+					"script_std": "PERSON_SECRET_POWER_VINE",
+					"field_3": 0,
+					"x": "7",
+					"y": "25",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_DUNGEON_BASE + 0",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "43",
+					"picture": "183",
+					"script_std": "PERSON_SECRET_POWER_VINE",
+					"field_3": 0,
+					"x": "8",
+					"y": "25",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_DUNGEON_BASE + 0",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
 						"type": 0
 					}
 				}

@@ -522,6 +522,12 @@ extern "C" {
     extern u8 str_types[][7];
     extern u8 str_types_long[][8];
 
+    enum {
+        PERSON_NAME_MALE = 0,
+        PERSON_NAME_FEMALE = 1,
+    };
+    u8 person_names[2][128][12];
+
 #ifdef	__cplusplus
 }
 #endif

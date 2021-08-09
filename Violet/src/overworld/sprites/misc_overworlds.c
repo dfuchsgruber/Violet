@@ -227,7 +227,7 @@ u16 special_mushroom_get_stage() {
 }
 
 
-static u32 mushroom_rates[] = {[MUSHROOM_TYPE_LARGE_MUSHROOM] = 1, [MUSHROOM_TYPE_TINY_MUSHROOM] = 4};
+static u32 mushroom_rates[] = {[MUSHROOM_TYPE_LARGE_MUSHROOM] = 1, [MUSHROOM_TYPE_TINY_MUSHROOM] = 5};
 
 u16 mushroom_get_stage(u16 mushroom_idx) {
     if (gp_flag_get(mushroom_idx, cmem.mushroom_flags))
@@ -336,7 +336,7 @@ u16 shell_get_encounter() {
 
 static u32 trash_encounters[] = {[POKEMON_SLEIMA] = 3, [POKEMON_SMOGON] = 2, [POKEMON_ZIGZACHS] = 2, [POKEMON_TEDDIURSA] = 1};
 static u32 trash_items[] = {[ITEM_UEBERRESTE] = 1, [ITEM_MININUGGET] = 2, [ITEM_FLUCHTSEIL] = 10, [ITEM_POKEPUPPE] = 8, [ITEM_AETHER] = 5, 
-    [ITEM_BITTERKRAUT] = 7, [ITEM_QUARZSTAUB] = 7, [ITEM_APFEL] = 15};
+    [ITEM_BITTERKRAUT] = 7, [ITEM_QUARZSTAUB] = 7, [ITEM_APFEL] = 15, [ITEM_ABRA_PUPPE] = 8};
 
 u16 trash_get_encounter_or_item() {
     map_event_person *p = map_get_person((u8)(*var_access(LASTTALKED)), save1->map, save1->bank);

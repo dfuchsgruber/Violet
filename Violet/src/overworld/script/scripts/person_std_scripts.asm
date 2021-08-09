@@ -36,6 +36,8 @@ ow_script_person_pokemon:
 	faceplayer
 	bufferpokemon 0 0x8000
 	showpokepic 0x8000 11 2
+	copyvar 0x8004 0x8000
+    special SPECIAL_SET_AS_SEEN
 	random 4
 	compare LASTRESULT 0
 	callif EQUAL print_mon_string0 
@@ -68,6 +70,8 @@ ow_script_person_pokemon_non_facing:
 	lock
 	bufferpokemon 0 0x8000
 	showpokepic 0x8000 11 2
+	copyvar 0x8004 0x8000
+    special SPECIAL_SET_AS_SEEN
 	random 4
 	compare LASTRESULT 0
 	callif EQUAL print_mon_string0 

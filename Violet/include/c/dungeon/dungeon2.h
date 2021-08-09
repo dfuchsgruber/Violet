@@ -389,6 +389,12 @@ extern "C" {
 
     levelscript_header_t dungeon2_lscr[1];
 
+    /**
+     * Initializes the trainer party and name of a dungeon trainer
+     * @param trainer_idx the trainer idx between [0x1e0, 0x1e4[ to fight
+     **/
+    void dungeon2_init_trainer(u16 trainer_idx);
+
 #ifdef	__cplusplus
 }
 #endif

@@ -372,8 +372,12 @@ u16 trainer_idx_by_battler_idx(u8 battler_idx) {
 }
 
 u8 *trainer_get_name(u16 trainer_idx) {
+        dprintf("Return dynamic trainer name.\n");
     if (trainers[trainer_idx].trainerclass == TRAINERCLASS_RIVALE || trainers[trainer_idx].trainerclass == TRAINERCLASS_RIVALE2) {
         return string_get_placeholder(6);
+    } else if (trainer_idx >= 0x1e0 && trainer_idx < 0x1e4) {
+        dprintf("Return dynamic trainer name.\n");
+        return fmem.dynamic_trainer_name;
     }
     else
         return trainers[trainer_idx].name;
@@ -381,7 +385,9 @@ u8 *trainer_get_name(u16 trainer_idx) {
 
 u8 *battle_string_decrypt_additional_buffers(u8 buffer_idx) {
     switch(buffer_idx) {
-        case 0x31: // Trainer2 Class
+        case 0x1D: // Trainer1 name
+            return trainer_get_name(trainer_vars.trainer_id);
+        case 0x31:  // Trainer2 Class
             return trainer_class_names[trainers[fmem.trainer_varsB.trainer_id].trainerclass];
         case 0x32 : // Trainer2 Name
             return trainer_get_name(fmem.trainer_varsB.trainer_id);

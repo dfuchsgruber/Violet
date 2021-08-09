@@ -28,9 +28,9 @@
 #include "overworld/sprite.h"
 
 extern tileset maptileset0;
-extern tileset maptileset_cave;
+extern tileset maptileset_power_plant;
 
-u16 dungeon2_forest_borders[4] = {0x5e, 0x5e, 0x5e, 0x5e};
+u16 dungeon2_forest_borders[4] = {0x26, 0x27, 0x2c, 0x2d};
 
 map_block dungeon2_forest_map_empty[DG2_FOREST_WIDTH * DG2_FOREST_HEIGHT] = {0};
 
@@ -60,7 +60,7 @@ map_footer_t *dungeon2_init_footer_forest(dungeon_generator2 *dg2){
     fmem.dmapfooter.width = (u32)dg2->width;
     fmem.dmapfooter.height = (u32)dg2->height;
     fmem.dmapfooter.tileset1 = &maptileset0;
-    fmem.dmapfooter.tileset2 = &maptileset_cave;
+    fmem.dmapfooter.tileset2 = &maptileset_power_plant;
     fmem.dmapfooter.border_blocks = dungeon2_forest_borders;
     fmem.dmapfooter.border_width = 2;
     fmem.dmapfooter.border_height = 2;
@@ -68,9 +68,17 @@ map_footer_t *dungeon2_init_footer_forest(dungeon_generator2 *dg2){
     return &(fmem.dmapfooter);
 }
 
+extern u8 ow_script_dungeon_trainer_0[];
+extern u8 ow_script_dungeon_trainer_1[];
+extern u8 ow_script_dungeon_trainer_2[];
+extern u8 ow_script_dungeon_trainer_3[];
+
+static u8 *dungeon2_trainer_scripts[4] = {
+    ow_script_dungeon_trainer_0, ow_script_dungeon_trainer_1, ow_script_dungeon_trainer_2, ow_script_dungeon_trainer_3
+};
+
 map_event_header_t *dungeon2_init_events_forest(dungeon_generator2 *dg2){
     dprintf("D2 event init, dg2 seed %d, num nodes %d\n", dg2->initial_seed, dg2->nodes);
-    (void)dg2;
 
     fmem.dmapevents.person_cnt = (u8)(dg2->nodes - 1);
     fmem.dmapevents.warp_cnt = 0;
@@ -97,34 +105,62 @@ map_event_header_t *dungeon2_init_events_forest(dungeon_generator2 *dg2){
     fmem.dpersons[0].script = ow_script_dungeon_encounter;
     fmem.dpersons[0].flag = 0x12;
 
-    // Determine how many items there will be
-    int num_items = (dungeon2_rnd_16(dg2) % (dg2->nodes - 2)) + 1;
+    // Determine how many items / trainers there will be
+    int num_events = MIN(DMAP_PERSONS - 1, (dungeon2_rnd_16(dg2) % (dg2->nodes - 2)) + 1); // First two nodes are entry / overworld-mon
+    int num_trainers = 0;
 
-    for (int i = 0; i < num_items; i++) {
+    for (int i = 0; i < num_events; i++) {
       int person_idx = i + 1;
       int node_idx = i + 2;
       cpuset(&zero, &(fmem.dpersons[person_idx]), CPUSET_FILL | CPUSET_HALFWORD |
           CPUSET_HALFWORD_SIZE(sizeof(map_event_person)));
-
-      fmem.dpersons[person_idx].x = (s16)(nodes[node_idx][0]);
-      fmem.dpersons[person_idx].y = (s16)(nodes[node_idx][1]);
-      fmem.dpersons[person_idx].target_index = (u8)(person_idx + 1);
-      fmem.dpersons[person_idx].overworld_index = 92;
-      fmem.dpersons[person_idx].flag = (u16)(0x13 + i);
-      fmem.dpersons[person_idx].value = dungeon_forest_pick_item(dg2);
-      fmem.dpersons[person_idx].script = ow_script_dungeon_item;
+        fmem.dpersons[person_idx].x = (s16)(nodes[node_idx][0]);
+        fmem.dpersons[person_idx].y = (s16)(nodes[node_idx][1]);
+        fmem.dpersons[person_idx].target_index = (u8)(person_idx + 1);
+        if (num_trainers < 4 && ((dungeon2_rnd_16(dg2) % 4) == 0)) {
+            fmem.dpersons[person_idx].overworld_index = (u8)(41 + (num_trainers & 1));
+            fmem.dpersons[person_idx].trainer_type_and_strength_flag = 1;
+            fmem.dpersons[person_idx].alert_radius = 4;
+            fmem.dpersons[person_idx].script = dungeon2_trainer_scripts[num_trainers];
+            fmem.dpersons[person_idx].behavior = BEHAVIOUR_LOOK_AROUND;
+            dprintf("Dynamic trainer %d has picture idx %d\n", num_trainers, fmem.dpersons[person_idx].overworld_index);
+            num_trainers++;
+        } else {
+            fmem.dpersons[person_idx].overworld_index = 92;
+            fmem.dpersons[person_idx].flag = (u16)(0x13 + i);
+            fmem.dpersons[person_idx].value = dungeon_forest_pick_item(dg2);
+            fmem.dpersons[person_idx].script = ow_script_dungeon_item;
+        }
     }
-
-    fmem.dmapevents.person_cnt = (u8)(1 + num_items);
+    fmem.dmapevents.person_cnt = (u8)(1 + num_events);
     return &(fmem.dmapevents);
 }
 
+#define DG2_2x2_TREE 16
 
-u16 dungeon2_compute_block_forest(u8 *map, u8 *over, int x, int y, dungeon_generator2 *dg2){
-    int width = dg2->width;
-    if(map[y * width + x] == DG2_SPACE){
-        if(over[y * width + x] == DG2_SPACE) return 0x10; //High grass
-        else{
+static u16 dungeon2_forest_branches[] = {0xa, 0xb};
+static u16 dungeon2_forest_decoratives[] = {0x18, 0x20, 0x28, 0x19, 0x21, 0x29};
+static u16 dungeon2_forest_tiny_grasses[] = {0x8, 0x9, 0xc};
+
+static inline u16 dungeon2_compute_space_block_forest(u8 *map, u8 *over, int x, int y, dungeon_generator2 *dg2) {
+    bool tree_2x2_below = (y == dg2->height - 1) || map[(y + 1) * dg2->width + x] == DG2_2x2_TREE;
+    bool tree_1x1_below = (y != dg2->height - 1) && map[(y + 1) * dg2->width + x] == DG2_WALL;
+    if (tree_2x2_below) {
+        if (over[y * dg2->width + x] == DG2_SPACE) {
+            return (u16)(0x1A + (x % 2));
+        } else {
+            return (u16)(0x1E + (x % 2));
+        }
+    } else if (tree_1x1_below) {
+        if (over[y * dg2->width + x] == DG2_SPACE) {
+            return 0x5C;
+        } else {
+            return 0x5F;
+        }
+    } else {
+        if (over[y * dg2->width + x] == DG2_SPACE) 
+            return 0x10; //High grass
+        else {
             //Count grass, wall neighbours
             int grass_neighbours = 0;
             int wall_neighbours = 0;
@@ -142,38 +178,74 @@ u16 dungeon2_compute_block_forest(u8 *map, u8 *over, int x, int y, dungeon_gener
             }
             if(dungeon2_rnd_16(dg2) < grass_neighbours * 0x4000){
                 return 0x11; //Cut grass
+            } else if (wall_neighbours >= 2 && (dungeon2_rnd_16(dg2) % 100) < 35) {
+                return dungeon2_forest_branches[dungeon2_rnd_16(dg2) % ARRAY_COUNT(dungeon2_forest_branches)];
+            } else if (dungeon2_rnd_16(dg2) < wall_neighbours * 0x1000) {
+                return dungeon2_forest_decoratives[dungeon2_rnd_16(dg2) % ARRAY_COUNT(dungeon2_forest_decoratives)];
+            } else if (dungeon2_rnd_16(dg2) < 0x1000) {
+                return dungeon2_forest_tiny_grasses[dungeon2_rnd_16(dg2) % ARRAY_COUNT(dungeon2_forest_tiny_grasses)];
+            } else {
+                return 1;
             }
-            if(dungeon2_rnd_16(dg2) < wall_neighbours * 0x1000){
-                u16 decoratives[16] = {
-                    0x18, 0x19, 0x20, 0x21, 0x28, 0x29, 0x8, 0x9,
-                    0xA, 0xA, 0xA, 0xA, 0xB, 0xB, 0xB, 0xB
-                };
-                return decoratives[dungeon2_rnd_16(dg2) % 16];
-            }
-            if(dungeon2_rnd_16(dg2) < 0x400) return 0xC;
-            return 0x1;
         }
     }
-    bool wall_above = true;
-    if(y > 0) wall_above = map[(y - 1) * width + x] == DG2_WALL;
-    bool wall_below = true;
-    if(y < dg2->height - 1) wall_below = map[(y + 1) * width + x] == DG2_WALL;
-    if(wall_above && wall_below) return 0x5E | BLOCK_SOLID;
-    if(wall_above) return 0x67 | BLOCK_SOLID;
-    if(wall_below){
-        if(over[y * width + x] == DG2_SPACE) return 0x5C;
-        else return 0x5F;  // Tree tip
-    }
+}
 
-    return 0x12  | BLOCK_SOLID;
+static inline u16 dungeon2_compute_2x2_tree_block_forest(u8 *map, u8 *over, int x, int y, dungeon_generator2 *dg2) {
+    (void) over;
+    // bool tree_2x2_above = (y == 0) || map[(y - 1) * dg2->width + x] == DG2_2x2_TREE;
+    bool tree_2x2_below = (y == dg2->height - 1) || map[(y + 1) * dg2->width + x] == DG2_2x2_TREE;
+    // bool tree_1x1_above = (y != 0) && map[(y - 1) * dg2->width + x] == DG2_WALL;
+    bool tree_1x1_below = (y != dg2->height - 1) && map[(y + 1) * dg2->width + x] == DG2_WALL;
+    if (y % 2) {
+        if (tree_2x2_below)
+            return (u16)((0x2C + (x % 2)) | BLOCK_SOLID);
+        else if (tree_1x1_below)
+            return (u16)((0x64 + (x % 2)) | BLOCK_SOLID);
+        else
+            return (u16)((0x2E + (x % 2)) | BLOCK_SOLID);
+    } else {
+        return (u16)((0x26 + (x % 2)) | BLOCK_SOLID);
+    }
+}
+
+static inline u16 dungeon2_compute_1x1_tree_block_forest(u8 *map, u8 *over, int x, int y, dungeon_generator2 *dg2) {
+    (void) over;
+    bool tree_2x2_below = (y == dg2->height - 1) || map[(y + 1) * dg2->width + x] == DG2_2x2_TREE;
+    bool tree_1x1_below = (y != dg2->height - 1) && map[(y + 1) * dg2->width + x] == DG2_WALL;
+    if (tree_2x2_below) {
+        return (u16)((0x24 + (x % 2)) | BLOCK_SOLID);
+    } else if (tree_1x1_below) {
+        return 0x5E | BLOCK_SOLID;
+    } else {
+        return 0x67 | BLOCK_SOLID;
+    }
 }
 
 void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2){
-    for(int x = 0; x < dg2->width; x++){
-        for(int y = 0; y < dg2->height; y++){
-            /*TODO*/
-            u16 block = dungeon2_compute_block_forest(map, over, x, y, dg2);
-            //dprintf("DG2 block %x, %x -> %x\n", x, y, block);
+    // First we identify all the 2x2 trees
+    for (int y = 0; y < dg2->height - 1; y += 2) {
+        for (int x = 0; x < dg2->width - 1; x += 2) {
+            // Always compute 2x2 patches for tree placement
+            if (map[y * dg2->width + x] == DG2_WALL && map[y * dg2->width + x + 1] == DG2_WALL &&
+                map[(y + 1) * dg2->width + x] == DG2_WALL && map[(y + 1) * dg2->width + x + 1] == DG2_WALL) {
+                map[y * dg2->width + x] = DG2_2x2_TREE;
+                map[y * dg2->width + x + 1] = DG2_2x2_TREE;
+                map[(y + 1) * dg2->width + x] = DG2_2x2_TREE;
+                map[(y + 1) * dg2->width + x + 1] = DG2_2x2_TREE;
+            }
+        }
+    }
+    for (int y = 0; y < dg2->height; y++) {
+        for (int x = 0; x < dg2->width; x++) {
+            int type = map[y * dg2->width + x];
+            u16 block = 0;
+            if (type == DG2_SPACE)
+                block = dungeon2_compute_space_block_forest(map, over, x, y, dg2);
+            else if (type == DG2_2x2_TREE)
+                block = dungeon2_compute_2x2_tree_block_forest(map, over, x, y, dg2);
+            else if (type == DG2_WALL)
+                block = dungeon2_compute_1x1_tree_block_forest(map, over, x, y, dg2);
             block_set_by_pos((s16)(x + 7), (s16)(y + 7), block);
         }
     }
