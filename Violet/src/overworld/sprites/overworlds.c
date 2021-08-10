@@ -1662,13 +1662,26 @@ static gfx_frame gfx_animation_secret_power_vines[] = {
     {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
-static gfx_frame *gfx_animations_secret_power_vines[1] = {gfx_animation_secret_power_vines};
+static gfx_frame gfx_animation_secret_power_vines_cut[] = {
+	{.data = 0, .duration = 0}, {.data = 0, .duration = 6}, {.data = 4, .duration = 6}, 
+    {.data = 5, .duration = 6}, {.data = 6, .duration = 6}, {.data = 7, .duration = 6}, 
+    {.data = 8, .duration = 6}, {.data = 9, .duration = 0}, 
+    {.data = GFX_ANIM_END, .duration = 0},
+};
+
+static gfx_frame *gfx_animations_secret_power_vines[2] = {gfx_animation_secret_power_vines, gfx_animation_secret_power_vines_cut};
 
 static graphic overworld_sprite_secret_power_vines_sprites[] = {
 	{gfx_overworld_secret_power_vinesTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
 	{gfx_overworld_secret_power_vinesTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
 	{gfx_overworld_secret_power_vinesTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
 	{gfx_overworld_secret_power_vinesTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{gfx_overworld_secret_power_vinesTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{gfx_overworld_secret_power_vinesTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{gfx_overworld_secret_power_vinesTiles + 6 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{gfx_overworld_secret_power_vinesTiles + 7 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{gfx_overworld_secret_power_vinesTiles + 8 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{gfx_overworld_secret_power_vinesTiles + 9 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
 };
 
 static overworld_sprite ow_secret_power_vine = {

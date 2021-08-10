@@ -10,15 +10,21 @@
 
 #define DTYPE_FOREST_WILD_POKEMON_FREQUENCY 0x20
 
-    #define DG2_FOREST_WIDTH 50
-    #define DG2_FOREST_HEIGHT 50
+    #define DG2_FOREST_WIDTH 52
+    #define DG2_FOREST_HEIGHT 52
     #define DG2_FOREST_PATH_RANDOMNESS 45875 //0.7
     #define DG2_FOREST_INIT_RANDOMNESS 26214 //0.4
     #define DG2_FOREST_NODES 12
-    #define DG2_FOREST_MARGIN 3
+    #define DG2_FOREST_MARGIN 4
     #define DG2_FOREST_NODE_METRIC_LAMBDA_MIN 7
     #define DG2_FOREST_NODE_METRIC_LAMBDA_MEAN 5
     #define DG2_FOREST_NODE_SAMPLES 100
+
+    enum {
+        DUNGEON_FOREST_TYPE_NORMAL = 0,
+        DUNGEON_FOREST_TYPE_APPLE_FOREST = 1,
+        NUM_DUNGEON_FOREST_TYPES
+    };
 
     /**
      * Computes blocks for the forest dungeon

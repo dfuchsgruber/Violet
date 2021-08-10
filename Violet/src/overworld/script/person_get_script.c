@@ -98,7 +98,8 @@ u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank) {
 			*var_access(0x8001) = p->argument;
 			return ow_script_aggressive_wild;
 		case PERSON_SECRET_POWER_VINE:
-			*var_access(0x8004) = p->value;
+			*var_access(0x8000) = p->value;
+			dprintf("Power vine for dungeon %d script...\n", p->value);
 			return ow_script_dungeon2_enter_forest;
 		default:
 			return NULL;

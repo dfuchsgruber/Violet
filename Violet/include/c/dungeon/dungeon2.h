@@ -63,6 +63,30 @@ extern "C" {
         
     } dungeon_generator2;
 
+    #define DG2_MAX_NUM_TRAINERS 4
+    #define DG2_MAX_NUM_TRAINER_OR_ITEM_NODES 8
+
+    enum {
+        DG2_NODE_PLAYER_WARP,
+        DG2_NODE_STATIC_ENCOUNTER,
+        DG2_NODE_PATTERN,
+        DG2_NODE_TRAINER_OR_ITEM,
+        DG2_NODE_CNT = DG2_NODE_TRAINER_OR_ITEM + DG2_MAX_NUM_TRAINER_OR_ITEM_NODES,
+    };
+
+    enum {
+        DG2_FLAG_ITEM = 1,
+        DG2_FLAG_STATIC_ENCOUNTER = DG2_FLAG_ITEM + DG2_MAX_NUM_TRAINER_OR_ITEM_NODES,
+        DG2_FLAG_PATTERN,
+    };
+
+    /**
+     * Initializes std events (static encounter, items, trainers) for a dungeon
+     * @param dg2 the dungeon generator
+     * @param item_picker a function that picks an item given a dungeon generator
+     **/
+    void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(dungeon_generator2*));
+
 // #define NUM_DUNGEON_LOCATIONS 40
 #define NUM_DUNGEON_LOCATIONS 0
     
@@ -394,6 +418,41 @@ extern "C" {
      * @param trainer_idx the trainer idx between [0x1e0, 0x1e4[ to fight
      **/
     void dungeon2_init_trainer(u16 trainer_idx);
+
+    /**
+     * Scans all node for being a suitable center for a rectangle of empty space and picks one.
+     * @param space_x where to put the x position of the rectangle
+     * @param space_y where to put the y position of the rectangle
+     * @param center_node where to put the idx of the node that is the center of the pattern
+     * @param nodes all nodes in the dungeon
+     * @param width width of the empty rectangle to find
+     * @param height height of the empty rectangle to find
+     * @param map the map to use
+     * @param dg2 the dungeon generator
+     * @return true if such a rectangle was found
+     **/
+    bool dungeon2_find_empty_space(int *space_x, int *space_y, u8 *center_node, int nodes[][2], int width, int height, u8 *map, dungeon_generator2 *dg2);
+
+    /**
+     * Scans all node for being a suitable center for a pattern and picks one.
+     * @param space_x where to put the x position of the rectangle
+     * @param space_y where to put the y position of the rectangle
+     * @param center_node where to put the idx of the node that is the center of the pattern
+     * @param nodes all nodes in the dungeon
+     * @param pattern the pattern (map footer) to place
+     * @param map the map to use
+     * @param dg2 the dungeon generator
+     * @return true if such a rectangle was found
+     **/
+    bool dungeon2_find_empty_space_for_pattern(int *space_x, int *space_y, u8 *center_node, int nodes[][2], map_footer_t *pattern, u8 *map, dungeon_generator2 *dg2);
+
+    /**
+     * Places a pattern (mapfooter) centered at a position
+     * @param pattern_x center coordinate where to place the pattern
+     * @param pattern_y center coordinate where to place the pattern
+     * @param pattern the pattern to place
+     **/
+    void dungeon2_place_pattern(int pattern_x, int pattern_y, map_footer_t *pattern);
 
 #ifdef	__cplusplus
 }

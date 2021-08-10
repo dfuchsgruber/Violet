@@ -67,6 +67,10 @@ ow_script_dungeon2_enter_forest_field:
 	@ Display animation
 	doanimation 0x2
 	waitstate
+	copyvar 0x8004 LASTTALKED
+	setvar 0x8005 1
+	callasm overworld_npc_gfx_animation_new
+	pause 32
     callasm dungeon2_seed_init
     setvar DUNGEON_TYPE DTYPE_FOREST
     setvar DUNGEON_STEPS 0

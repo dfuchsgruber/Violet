@@ -53,25 +53,19 @@ u32 dungeon_hash(int dungeon_id) {
 }
 
 bool dungeon_flag_check(int dungeon_id) {
-	u32 flag = dungeon_hash(dungeon_id);
-	if (flag < 64) {
-		// If the dungeon hashes to something < 64, it will be made availible
-		int byte_num = (int)flag >> 3;
-		int mask = 1 << (flag & 7);
-		return (cmem.dungeon_flags[byte_num] & mask) != 0;
-	} else {
-		// The dungeon is not availible with the current a-vector
-		return true;
+	dprintf("get dungeon flag %d\n", dungeon_id);
+	if (dungeon_id < 128) {
+		int mask = 1 << (dungeon_id & 7);
+		return (cmem.dungeon_flags[dungeon_id / 8] & mask) != 0;
 	}
+	return true;
 }
 
 void dungeon_flag_set(int dungeon_id) {
-	u32 flag = dungeon_hash(dungeon_id);
-	if (flag < 64) {
-		// If the dungeon hashes to something < 64, it will be made availible
-		int byte_num = (int)flag >> 3;
-		int mask = 1 << (flag & 7);
-		cmem.dungeon_flags[byte_num] = (u8)(cmem.dungeon_flags[byte_num] | mask);
+	dprintf("Set dungeon flag %d\n", dungeon_id);
+	if (dungeon_id < 128) {
+		int mask = 1 << (dungeon_id & 7);
+		cmem.dungeon_flags[dungeon_id / 8] = (u8)(cmem.dungeon_flags[dungeon_id / 8] | mask);
 	}
 }
 

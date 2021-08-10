@@ -80,51 +80,7 @@ void dungeon2_sample_node(int nodes[][2], int idx, dungeon_generator2 *dg2) {
   nodes[idx][1] = best_y;
 }
 
-/**
-int dungeon2_get_marginal_nodes(int nodes[][2], dungeon_generator2 *dg2) {
-
-  int margin = dg2->margin;
-  int node_margin = dg2->node_margin;
-  int xrange = dg2->width - 2 * margin;
-  int yrange = dg2->height - 2 * margin;
-  if (xrange <= 0 || yrange <= 0) {
-    derrf("Parameters for dungeon2 do not allow marginal node generation!\n");
-  }
-
-  int idx = 0;
-  // Get node with x in [margin, margin + node_margin)
-  do {
-    nodes[idx][0] = margin + (dungeon2_rnd_int(dg2) % node_margin);
-    nodes[idx][1] = margin + (dungeon2_rnd_int(dg2) % yrange);
-  } while (!dungeon2_propose_node(nodes, idx, dg2));
-  idx++;
-
-  // Get node with x in [width - margin - node_margin - 1, width - margin)
-  do {
-    nodes[idx][0] = margin + xrange - node_margin + (dungeon2_rnd_int(dg2) % node_margin);
-    nodes[idx][1] = margin + (dungeon2_rnd_int(dg2) % yrange);
-  } while (!dungeon2_propose_node(nodes, idx, dg2));
-  idx++;
-
-  // Get node with y in [margin, margin + node_margin)
-  do {
-    nodes[idx][1] = margin + (dungeon2_rnd_int(dg2) % node_margin);
-    nodes[idx][0] = margin + (dungeon2_rnd_int(dg2) % xrange);
-  } while (!dungeon2_propose_node(nodes, idx, dg2));
-  idx++;
-
-  // Get node with x in [width - margin - node_margin - 1, width - margin)
-  do {
-    nodes[idx][1] = margin + yrange - node_margin + (dungeon2_rnd_int(dg2) % node_margin);
-    nodes[idx][0] = margin + (dungeon2_rnd_int(dg2) % xrange);
-  } while (!dungeon2_propose_node(nodes, idx, dg2));
-  idx++;
-
-  return idx;
-}
-**/
 void dungeon2_get_nodes(int nodes[][2], int num_nodes, dungeon_generator2 *dg2, bool random_nodes) {
-
   if (!random_nodes) {
     // Reset state of prng to assert the same nodes every time
     dg2->seed = dg2->initial_seed;
@@ -138,24 +94,6 @@ void dungeon2_get_nodes(int nodes[][2], int num_nodes, dungeon_generator2 *dg2, 
     } while (!dungeon2_propose_node(nodes, node_idx, dg2));
 
   }
-  /**
-  // Depercated
-
-  // Generate marginal nodes
-  if (num_nodes < 4) {
-    derrf("Number of nodes < 4 (could not generate 4 marginal nodes)");
-    return;
-  }
-  int node_idx = dungeon2_get_marginal_nodes(nodes, dg2);
-
-  // Generate nodes
-  for (; node_idx < num_nodes; node_idx++) {
-    do {
-      nodes[node_idx][0] = margin + (dungeon2_rnd_int(dg2) % xrange);
-      nodes[node_idx][1] = margin + (dungeon2_rnd_int(dg2) % yrange);
-    } while (!dungeon2_propose_node(nodes, node_idx, dg2));
-  }
-  **/
 }
 
 #define STATE_SP 0

@@ -1,0 +1,29 @@
+{
+	"data": {
+		"width": 1,
+		"height": 1,
+		"border_width": 1,
+		"border_height": 1,
+		"border": [
+			[
+				{
+					"block_idx": 0,
+					"level": 0
+				}
+			]
+		],
+		"blocks": [
+			[
+				{
+					"block_idx": 0,
+					"level": 0
+				}
+			]
+		],
+		"tileset_primary": "maptileset12",
+		"tileset_secondary": "maptileset_power_plant_inside",
+		"field_1A": 0
+	},
+	"label": "map_footer_dungeon_forest_cabin",
+	"type": "footer"
+}

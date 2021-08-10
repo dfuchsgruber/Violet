@@ -26,9 +26,13 @@
 #include "tile/block.h"
 #include "constants/map_types.h"
 #include "overworld/sprite.h"
+#include "dungeon/forest.h"
+#include "flags.h"
+#include "constants/person_script_stds.h"
 
 extern tileset maptileset0;
-extern tileset maptileset_power_plant;
+extern tileset maptileset_dungeon_forest;
+extern map_footer_t map_footer_dungeon_forest_apple_tree;
 
 u16 dungeon2_forest_borders[4] = {0x26, 0x27, 0x2c, 0x2d};
 
@@ -36,6 +40,25 @@ map_block dungeon2_forest_map_empty[DG2_FOREST_WIDTH * DG2_FOREST_HEIGHT] = {0};
 
 extern u8 ow_script_dungeon_encounter[];
 extern u8 ow_script_dungeon_item[];
+
+static u32 dungeon2_forest_type_rates[NUM_DUNGEON_FOREST_TYPES] = {
+    [DUNGEON_FOREST_TYPE_NORMAL] = 5,
+    [DUNGEON_FOREST_TYPE_APPLE_FOREST] = 300,
+};
+
+u8 dungeon2_get_forest_type(dungeon_generator2 *dg2) {
+    fmem.gp_rng = dg2->initial_seed;
+    return (u8)choice(dungeon2_forest_type_rates, NUM_DUNGEON_FOREST_TYPES, gp_rnd16);
+}
+
+static map_footer_t *dungeon2_get_forest_type_pattern(dungeon_generator2 *dg2) {
+    switch (dungeon2_get_forest_type(dg2)) {
+        case DUNGEON_FOREST_TYPE_APPLE_FOREST:
+            return &map_footer_dungeon_forest_apple_tree;
+        default:
+            return NULL;
+    }
+}
 
 map_header_t *dungeon2_init_header_forest(dungeon_generator2 *dg2) {
 
@@ -60,7 +83,7 @@ map_footer_t *dungeon2_init_footer_forest(dungeon_generator2 *dg2){
     fmem.dmapfooter.width = (u32)dg2->width;
     fmem.dmapfooter.height = (u32)dg2->height;
     fmem.dmapfooter.tileset1 = &maptileset0;
-    fmem.dmapfooter.tileset2 = &maptileset_power_plant;
+    fmem.dmapfooter.tileset2 = &maptileset_dungeon_forest;
     fmem.dmapfooter.border_blocks = dungeon2_forest_borders;
     fmem.dmapfooter.border_width = 2;
     fmem.dmapfooter.border_height = 2;
@@ -68,71 +91,32 @@ map_footer_t *dungeon2_init_footer_forest(dungeon_generator2 *dg2){
     return &(fmem.dmapfooter);
 }
 
-extern u8 ow_script_dungeon_trainer_0[];
-extern u8 ow_script_dungeon_trainer_1[];
-extern u8 ow_script_dungeon_trainer_2[];
-extern u8 ow_script_dungeon_trainer_3[];
-
-static u8 *dungeon2_trainer_scripts[4] = {
-    ow_script_dungeon_trainer_0, ow_script_dungeon_trainer_1, ow_script_dungeon_trainer_2, ow_script_dungeon_trainer_3
+static s16 dungeon_forest_apple_displacements[][2] = {
+    {-1, 1}, {-1, 2}, {1, 1}, {1, 2}
 };
 
 map_event_header_t *dungeon2_init_events_forest(dungeon_generator2 *dg2){
-    dprintf("D2 event init, dg2 seed %d, num nodes %d\n", dg2->initial_seed, dg2->nodes);
-
-    fmem.dmapevents.person_cnt = (u8)(dg2->nodes - 1);
-    fmem.dmapevents.warp_cnt = 0;
-    fmem.dmapevents.script_cnt = 0;
-    fmem.dmapevents.signpost_cnt = 0;
-    fmem.dmapevents.persons = fmem.dpersons;
-
-    // Get the nodes of the dungeon
+    dungeon2_initialize_std_events(dg2, dungeon_forest_pick_item);
+    u8 num_persons = fmem.dmapevents.person_cnt;
     int nodes[dg2->nodes][2];
     dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
-
-    int zero = 0;
-
-    // Place the super rare pokemon at the second node
-    cpuset(&zero, &(fmem.dpersons[0]), CPUSET_FILL | CPUSET_HALFWORD |
-        CPUSET_HALFWORD_SIZE(sizeof(map_event_person)));
-    fmem.dpersons[0].x = (s16)(nodes[1][0]);
-    fmem.dpersons[0].y = (s16)(nodes[1][1]);
-    u16 species = *var_access(DUNGEON_OVERWORLD_SPECIES);
-    fmem.dpersons[0].overworld_index = overworld_get_sprite_idx_by_species(species);
-    fmem.dpersons[0].value = species;
-    fmem.dpersons[0].behavior = BEHAVIOUR_WANDER_AROUND;
-    fmem.dpersons[0].target_index = 1;
-    fmem.dpersons[0].script = ow_script_dungeon_encounter;
-    fmem.dpersons[0].flag = 0x12;
-
-    // Determine how many items / trainers there will be
-    int num_events = MIN(DMAP_PERSONS - 1, (dungeon2_rnd_16(dg2) % (dg2->nodes - 2)) + 1); // First two nodes are entry / overworld-mon
-    int num_trainers = 0;
-
-    for (int i = 0; i < num_events; i++) {
-      int person_idx = i + 1;
-      int node_idx = i + 2;
-      cpuset(&zero, &(fmem.dpersons[person_idx]), CPUSET_FILL | CPUSET_HALFWORD |
-          CPUSET_HALFWORD_SIZE(sizeof(map_event_person)));
-        fmem.dpersons[person_idx].x = (s16)(nodes[node_idx][0]);
-        fmem.dpersons[person_idx].y = (s16)(nodes[node_idx][1]);
-        fmem.dpersons[person_idx].target_index = (u8)(person_idx + 1);
-        if (num_trainers < 4 && ((dungeon2_rnd_16(dg2) % 4) == 0)) {
-            fmem.dpersons[person_idx].overworld_index = (u8)(41 + (num_trainers & 1));
-            fmem.dpersons[person_idx].trainer_type_and_strength_flag = 1;
-            fmem.dpersons[person_idx].alert_radius = 4;
-            fmem.dpersons[person_idx].script = dungeon2_trainer_scripts[num_trainers];
-            fmem.dpersons[person_idx].behavior = BEHAVIOUR_LOOK_AROUND;
-            dprintf("Dynamic trainer %d has picture idx %d\n", num_trainers, fmem.dpersons[person_idx].overworld_index);
-            num_trainers++;
-        } else {
-            fmem.dpersons[person_idx].overworld_index = 92;
-            fmem.dpersons[person_idx].flag = (u16)(0x13 + i);
-            fmem.dpersons[person_idx].value = dungeon_forest_pick_item(dg2);
-            fmem.dpersons[person_idx].script = ow_script_dungeon_item;
+    switch (dungeon2_get_forest_type(dg2)) {
+        case DUNGEON_FOREST_TYPE_APPLE_FOREST: { // Place up to 4 apples
+            for (int i = 0; i < 4; i++) {
+                if (dungeon2_rnd_16(dg2) % 2) {
+                    fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
+                    fmem.dpersons[num_persons].overworld_index = 92; // TODO
+                    fmem.dpersons[num_persons].script_std = PERSON_ITEM;
+                    fmem.dpersons[num_persons].value = ITEM_APFEL;
+                    fmem.dpersons[num_persons].flag = (u16)(DG2_FLAG_PATTERN + i);
+                    fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN][0] + dungeon_forest_apple_displacements[i][0]);
+                    fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN][1] + dungeon_forest_apple_displacements[i][1]);
+                    num_persons++;
+                }
+            }
         }
     }
-    fmem.dmapevents.person_cnt = (u8)(1 + num_events);
+    fmem.dmapevents.person_cnt = num_persons;
     return &(fmem.dmapevents);
 }
 
@@ -223,6 +207,23 @@ static inline u16 dungeon2_compute_1x1_tree_block_forest(u8 *map, u8 *over, int 
 }
 
 void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2){
+    int nodes[dg2->nodes][2];
+    dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
+    map_footer_t *pattern = dungeon2_get_forest_type_pattern(dg2);
+    if (pattern) {
+        map_footer_t *pattern = dungeon2_get_forest_type_pattern(dg2);
+        int x = nodes[DG2_NODE_PATTERN][0];
+        int y = nodes[DG2_NODE_PATTERN][1];
+        for (u8 j = 0; j < pattern->height + 2; j++) {
+            for (u8 i = 0; i < pattern->width + 2; i++){
+                if ((i == 0 && j == 0) || (i == 0 && j == (pattern->height + 1)) || 
+                    (i == (pattern->width + 1) && j == (pattern->height + 1)) || (i == (pattern->width + 1) && j == 0))
+                    continue; // Don't draw corners for a more natural feel
+                map[(y - (int)pattern->height / 2 - 1 + j) * dg2->width + x - (int)pattern->width / 2 - 1 + i] = DG2_SPACE;
+            }
+        }
+    }
+
     // First we identify all the 2x2 trees
     for (int y = 0; y < dg2->height - 1; y += 2) {
         for (int x = 0; x < dg2->width - 1; x += 2) {
@@ -236,6 +237,7 @@ void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2){
             }
         }
     }
+
     for (int y = 0; y < dg2->height; y++) {
         for (int x = 0; x < dg2->width; x++) {
             int type = map[y * dg2->width + x];
@@ -248,6 +250,9 @@ void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2){
                 block = dungeon2_compute_1x1_tree_block_forest(map, over, x, y, dg2);
             block_set_by_pos((s16)(x + 7), (s16)(y + 7), block);
         }
+    }
+    if (pattern) { 
+        dungeon2_place_pattern(nodes[DG2_NODE_PATTERN][0], nodes[DG2_NODE_PATTERN][1], pattern);
     }
 }
 
@@ -288,7 +293,6 @@ void dungeon2_forest_init_state(dungeon_generator2 *dg2) {
 
 void dungeon2_init_forest(){
     if (fmem.dmap_header_initialized) {
-      dprintf("D2 header already initialized...\n");
       return;
     }
 
@@ -310,7 +314,7 @@ void dungeon2_enter_forest() {
   int nodes[dg2->nodes][2];
   dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
   s16 x = (s16)(nodes[0][0]);
-  s16 y = (s16)(nodes[0][1]);
+  s16 y = (s16)(nodes[0][1]); 
 
 
   warp_setup(DG2_BANK, DG2_MAP, 0xFF, x, y);

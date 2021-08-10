@@ -148,13 +148,14 @@ int dungeon_map_entrance_get_type() {
 }
 
 void dungeon_map_entrance_set_flag() {
-	dungeon_flag_set(*var_access(0x8004));
+	dprintf("Set flag for dungeon %d\n", *var_access(0x8000));
+	dungeon_flag_set(*var_access(0x8000));
 }
 
 
 void dungeon2_seed_init() {
-	u32 dungeon_idx = *var_access(0x8004);
+	u32 dungeon_idx = *var_access(0x8000);
 	u32 seq[1] = {dungeon_idx};
 	cmem.dg2.initial_seed = daily_events_hash(seq, 1);
-	dprintf("Setup seed to %d\n", cmem.dg2.initial_seed);
+	dprintf("Setup seed for dungeon %d to %d\n", dungeon_idx, cmem.dg2.initial_seed);
 }

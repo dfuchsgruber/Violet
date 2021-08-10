@@ -767,3 +767,12 @@ void player_npc_set_invisible() {
         npcs[npc_idx].flags.trigger_ground_effects_on_stop = 0;
     }
 }
+
+void overworld_npc_gfx_animation_new() {
+    u8 ow_idx = (u8)*var_access(0x8004);
+    u8 anim_idx = (u8)*var_access(0x8005);
+    u8 npc_idx = npc_get_by_person_idx(ow_idx, save1->map, save1->bank);
+    if (npc_idx < 16) {
+        oam_gfx_anim_start(oams + npcs[npc_idx].oam_id, anim_idx);
+    }
+}

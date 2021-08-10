@@ -30,6 +30,7 @@ u8 *flag_access_ext(u16 flag) {
         return cmem.trash_flags + idx;
     } else if (flag < 0x1080) { // 0x1000 - 0x1080 are mapped to dungeons
         int idx = (flag - 0x1000);
+        dprintf("Get dungeon flag hard %d\n", flag - 0x1000);
         return cmem.dungeon_flags + idx;
     } else {
         err2(ERR_FLAG_ACCESS_INVALID, flag);

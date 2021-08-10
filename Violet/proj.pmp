@@ -1308,6 +1308,13 @@
 				"src/map/banks/34/0/map_power_plant_inside.pms",
 				"MAP_KRAFTWERK"
 			]
+		},
+		"126": {
+			"0": [
+				"map_dungeon_forest_cabin",
+				"src/map/banks/126/0/map_dungeon_forest_cabin.pms",
+				"MAP_PRISMANIA_EINK"
+			]
 		}
 	},
 	"footers": {
@@ -2190,6 +2197,14 @@
 		"map_footer_power_plant_inside": [
 			160,
 			"src/map/banks/34/map_footer_power_plant_inside.pms"
+		],
+		"map_footer_dungeon_forest_apple_tree": [
+			161,
+			"src/map/banks/126/map_footer_dungeon_forest_apple_tree.pms"
+		],
+		"map_footer_dungeon_forest_cabin": [
+			162,
+			"src/map/banks/126/0/map_footer_dungeon_forest_cabin.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -2260,7 +2275,8 @@
 		"maptileset_route_5_cave": "src/map/tileset/maptileset_route_5_cave.pms",
 		"maptileset_power_plant": "src/map/tileset/maptileset_power_plant.pms",
 		"maptileset_orina_city": "src/map/tileset/maptileset245157.pms",
-		"maptileset_power_plant_inside": "src/map/tileset/maptileset_power_plant_inside.pms"
+		"maptileset_power_plant_inside": "src/map/tileset/maptileset_power_plant_inside.pms",
+		"maptileset_dungeon_forest": "src/map/tileset/maptileset_dungeon_forest.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2325,6 +2341,7 @@
 		"gfx_maptileset_route_5Tiles": "asset/gfx/tileset/gfx_maptileset_route_5.png",
 		"gfx_maptileset_route_5_caveTiles": "asset/gfx/tileset/gfx_maptileset_route_5_cave.png",
 		"gfx_maptileset_power_plantTiles": "asset/gfx/tileset/gfx_maptileset_power_plant.png",
-		"gfx_maptileset_power_plant_insideTiles": "asset/gfx/tileset/gfx_maptileset_power_plant_inside.png"
+		"gfx_maptileset_power_plant_insideTiles": "asset/gfx/tileset/gfx_maptileset_power_plant_inside.png",
+		"gfx_maptileset_dungeon_forestTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_forest.png"
 	}
 }

@@ -23,7 +23,6 @@ map_footer_t *get_mapfooter() {
         dungeon2_init();
         return &(fmem.dmapfooter);
     }
-
     //return standard map header
     u16 current_footer = save1->current_footer_id;
     if (current_footer) {

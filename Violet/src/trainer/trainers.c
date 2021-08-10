@@ -7146,28 +7146,28 @@ trainer trainers[TRAINER_CNT] = {
       .battle_state = 0, .pokemon_cnt = ARRAY_COUNT(trainer_party_x1df_route_7_north_cook), .party = (trainer_pokemon*) trainer_party_x1df_route_7_north_cook,
 	  },
     [0x1e0] = {
-        .trainerclass = TRAINERCLASS_PKMN_RANGER, .sprite = 0x3d,
+        .trainerclass = TRAINERCLASS_PKMN_RANGER, .sprite = 0x3c,
         .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING(""),
             PSTRING("")), .pokemon_cnt = 3,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) &fmem.dynamic_trainer_party
     },
     [0x1e1] = {
-        .trainerclass = TRAINERCLASS_PKMN_RANGER, .sprite = 0x3c,
+        .trainerclass = TRAINERCLASS_PKMN_RANGER, .sprite = 0x3d,
         .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING(""),
             PSTRING("")), .pokemon_cnt = 3,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) &fmem.dynamic_trainer_party,
     },
     [0x1e2] = {
-        .trainerclass = TRAINERCLASS_PKMN_RANGER, .sprite = 0x3d,
+        .trainerclass = TRAINERCLASS_PKMN_RANGER, .sprite = 0x3c,
         .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING(""),
             PSTRING("")), .pokemon_cnt = 3,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) &fmem.dynamic_trainer_party
     },
     [0x1e3] = {
-        .trainerclass = TRAINERCLASS_PKMN_RANGER, .sprite = 0x3c,
+        .trainerclass = TRAINERCLASS_PKMN_RANGER, .sprite = 0x3d,
         .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING(""),
             PSTRING("")), .pokemon_cnt = 3,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
