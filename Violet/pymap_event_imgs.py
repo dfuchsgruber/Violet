@@ -94,7 +94,7 @@ picture_idx_to_png = {
     180 : "asset/gfx/overworld/npcs/rival/gfx_ow_rival_beaten.png",
     181 : "asset/gfx/overworld/npcs/gfx_ow_old_amber.png",
     182 : "asset/gfx/overworld/npcs/gfx_ow_icarus.png",
-    183 : "asset/gfx/overworld/misc/gfx_overworld_secret_power_vines.png"
+    183 : "asset/gfx/overworld/misc/gfx_overworld_secret_power_vines.png",
     184 : "asset/gfx/overworld/npcs/gfx_ow_apple.png",
 }
 

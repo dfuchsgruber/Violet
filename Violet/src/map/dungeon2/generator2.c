@@ -13,6 +13,14 @@
 #include "agbmemory.h"
 #include "prng.h"
 
+void dungeon2_fill_rectangle(u8 *map, int x, int y, int w, int h, u8 fill, dungeon_generator2 *dg2) {
+    dprintf("Fill rectangle at %d,%d with measures %d,%d with value %d\n", x, y, w, h, fill);
+    for (int i = 0; i < w; i++) {
+        for (int j = 0; j < h; j++) {
+            map[dg2->width * (y + j) + x + i] = fill;
+        }
+    }
+};
 
 void dungeon2_iterate(u8 *map, u8 *map2, int near_lower_bound, int far_upper_bound, dungeon_generator2 *dg2){
     dprintf("Iterating map with nlb %d and hub %d\n", near_lower_bound, far_upper_bound);
@@ -161,11 +169,12 @@ int dungeon2_flood_fill(u8 *map, u8 *map2, dungeon_generator2 *dg2){
     
 }
 
-void dungeon_init_unconnected_nodes(u8 *map, dungeon_generator2 *dg2, bool random_nodes){
+void dungeon_init_unconnected_nodes(u8 *map, dungeon_generator2 *dg2, bool random_nodes, int excluded_nodes_mask){
     int nodes[dg2->nodes][2];
     dungeon2_get_nodes(nodes, dg2->nodes, dg2, random_nodes);
     for(int i = 0; i < dg2->nodes; i++){
-        map[nodes[i][1] * dg2->width + nodes[i][0]] = DG2_SPACE;
+        if (!(excluded_nodes_mask & (1 << i)))
+            map[nodes[i][1] * dg2->width + nodes[i][0]] = DG2_SPACE;
     }
 }
 
@@ -184,7 +193,7 @@ void dungeon_init_random(u8 *map, dungeon_generator2 *dg2) {
   }
 }
 
-u8 *dungeon2_create_patch_layout(dungeon_generator2 *dg2, bool random_nodes){
+u8 *dungeon2_create_patch_layout(dungeon_generator2 *dg2, bool random_nodes, int excluded_nodes_mask){
     
     u8 *map1 = malloc((u32)(dg2->width * dg2->height));
     u8 *map2 = malloc((u32)(dg2->width * dg2->height));
@@ -193,7 +202,7 @@ u8 *dungeon2_create_patch_layout(dungeon_generator2 *dg2, bool random_nodes){
             CPUSET_HALFWORD_SIZE(dg2->width * dg2->height));
     cpuset(&_dg2_space, map2, CPUSET_HALFWORD | CPUSET_FILL | 
             CPUSET_HALFWORD_SIZE(dg2->width * dg2->height));
-    dungeon_init_unconnected_nodes(map1, dg2, random_nodes);
+    dungeon_init_unconnected_nodes(map1, dg2, random_nodes, excluded_nodes_mask);
     dungeon2_enlarge(map1, map2, dg2);
     dungeon2_enlarge(map2, map1, dg2);
     dungeon2_iterate(map1, map2, 8, 1, dg2);

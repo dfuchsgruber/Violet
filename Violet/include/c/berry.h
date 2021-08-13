@@ -71,7 +71,16 @@ berry *berry_get(u8 berry_idx);
  * @param berry_idx the idx of the berry tree
  * @return the overworld sprite of the berry tree
  **/
-overworld_sprite *overworld_sprite_get_by_berry_idx(u8 berry_idx);
+overworld_sprite *overworld_sprite_get_by_berry_tree_idx(u8 berry_tree_idx);
+
+/**
+ * Gets the overworld sprite of a berry
+ * @param berry_idx the idx of the berry
+ * @param the stage of the berry
+ * @param if the berry is fertilized
+ * @return the overworld sprite of the berry tree
+ **/
+overworld_sprite *overworld_sprite_get_by_berry_idx(u8 berry_idx, u8 stage, bool fertilized);
 
 /**
  * Gets the palette of a berry tree

@@ -22,6 +22,7 @@
 .global ow_script_trash_can
 .global ow_script_person_pokemon_non_facing
 .global ow_script_person_accessible_move_tutor
+.global ow_script_static_berry_tree
 
 ow_script_person_pokeball:
 	callstd ITEM_FIND
@@ -99,6 +100,44 @@ ow_script_aggressive_wild_do_battle:
     callstd MSG_KEEPOPEN
     waitcry
 	goto ow_script_aggressive_wild_pokemon_start_battle
+
+ow_script_static_berry_tree:
+	bufferitem 0 0x8000
+	buffernumber 1 0x8001
+	compare 0x8001 1
+	gotoif EQUAL load_str_want_to_harvest_single_static
+	loadpointer 0 str_want_to_harvest
+	goto loaded_str_want_to_harvest_single_static
+load_str_want_to_harvest_single_static:
+	loadpointer 0 str_want_to_harvest_single
+loaded_str_want_to_harvest_single_static:
+	callstd MSG_YES_NO
+	compare LASTRESULT 0
+	gotoif EQUAL dont_harvest
+	fanfare 262
+	additem 0x8000 0x8001
+	compare LASTRESULT 0
+	gotoif EQUAL no_room_for_berries
+	compare 0x8001 1
+	gotoif EQUAL load_str_harvest_single_static
+	loadpointer 0 str_harvest
+	goto loaded_str_harvest_static
+load_str_harvest_single_static:
+	loadpointer 0 str_harvest_single
+loaded_str_harvest_static:
+	callstd MSG_KEEPOPEN
+	waitfanfare
+	compare 0x8001 1
+	gotoif EQUAL load_str_harvested_single_static
+	loadpointer 0 str_harvested
+	goto loaded_str_harvested_single_static
+load_str_harvested_single_static:
+	loadpointer 0 str_harvested_single
+loaded_str_harvested_single_static:
+	callstd MSG_KEEPOPEN
+	hidesprite LASTTALKED
+	closeonkeypress
+	end
 
 
 ow_script_berry_tree:

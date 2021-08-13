@@ -19,6 +19,7 @@
 #include "bios.h"
 #include "transparency.h"
 #include "overworld/map_control.h"
+#include "berry.h"
 #include "constants/vars.h"
 #include "vars.h"
 #include "pokemon/basestat.h"
@@ -33,6 +34,7 @@
 extern tileset maptileset0;
 extern tileset maptileset_dungeon_forest;
 extern map_footer_t map_footer_dungeon_forest_apple_tree;
+extern map_footer_t map_footer_dungeon_forest_berry_spot;
 
 u16 dungeon2_forest_borders[4] = {0x26, 0x27, 0x2c, 0x2d};
 
@@ -43,7 +45,8 @@ extern u8 ow_script_dungeon_item[];
 
 static u32 dungeon2_forest_type_rates[NUM_DUNGEON_FOREST_TYPES] = {
     [DUNGEON_FOREST_TYPE_NORMAL] = 5,
-    [DUNGEON_FOREST_TYPE_APPLE_FOREST] = 300,
+    [DUNGEON_FOREST_TYPE_APPLE_FOREST] = 3,
+    [DUNGEON_FOREST_TYPE_BERRY_FOREST] = 3000,
 };
 
 u8 dungeon2_get_forest_type(dungeon_generator2 *dg2) {
@@ -55,6 +58,8 @@ static map_footer_t *dungeon2_get_forest_type_pattern(dungeon_generator2 *dg2) {
     switch (dungeon2_get_forest_type(dg2)) {
         case DUNGEON_FOREST_TYPE_APPLE_FOREST:
             return &map_footer_dungeon_forest_apple_tree;
+        case DUNGEON_FOREST_TYPE_BERRY_FOREST:
+            return &map_footer_dungeon_forest_berry_spot;
         default:
             return NULL;
     }
@@ -64,13 +69,13 @@ static int dungeon2_get_forest_num_patterns(dungeon_generator2 *dg2) {
     switch (dungeon2_get_forest_type(dg2)) {
         case DUNGEON_FOREST_TYPE_APPLE_FOREST:
             return MIN(DG2_MAX_NUM_PATTERNS, 1 + (dungeon2_rnd_16(dg2) % 3));
+        case DUNGEON_FOREST_TYPE_BERRY_FOREST:
+            return MIN(DG2_MAX_NUM_PATTERNS, 3);
     }
     return 0;
 }
 
 map_header_t *dungeon2_init_header_forest(dungeon_generator2 *dg2) {
-
-    //save1->flash_circle_size = 1;
     dprintf("D2 header init\n");
     fmem.dmap_header_initialized = 1;
     fmem.dmapheader.levelscripts = dungeon2_lscr;
@@ -102,6 +107,17 @@ map_footer_t *dungeon2_init_footer_forest(dungeon_generator2 *dg2){
 static s16 dungeon_forest_apple_displacements[][2] = {
     {-1, 0}, {-1, 1}, {1, 0}, {1, 1}
 };
+static u32 dungeon_forest_berries[] = {
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_AMRENABEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_PIRSIFBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_MARONBEERE)] = 4,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_FRAGIABEERE)] = 4,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_WILBIRBEERE)] = 5,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_SINELBEERE)] = 5,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_TSITRUBEERE)] = 3,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_JONAGOBEERE)] = 2,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_PRUNUSBEERE)] = 1,
+};
 
 map_event_header_t *dungeon2_init_events_forest(dungeon_generator2 *dg2){
     dungeon2_initialize_std_events(dg2, dungeon_forest_pick_item);
@@ -115,7 +131,7 @@ map_event_header_t *dungeon2_init_events_forest(dungeon_generator2 *dg2){
                 for (int i = 0; i < 4 && num_persons < ARRAY_COUNT(fmem.dpersons); i++) {
                     if (dungeon2_rnd_16(dg2) % 2) {
                         fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
-                        fmem.dpersons[num_persons].overworld_index = 184; // TODO
+                        fmem.dpersons[num_persons].overworld_index = 184;
                         fmem.dpersons[num_persons].script_std = PERSON_ITEM;
                         fmem.dpersons[num_persons].value = (dungeon2_rnd_16(dg2) % 8) > 0 ? ITEM_APFEL : ITEM_RIESENAPFEL;
                         fmem.dpersons[num_persons].flag = (u16)(DG2_FLAG_PATTERN + i);
@@ -125,6 +141,26 @@ map_event_header_t *dungeon2_init_events_forest(dungeon_generator2 *dg2){
                     }
                 }
             }
+            break;
+        }
+        case DUNGEON_FOREST_TYPE_BERRY_FOREST: {
+            gp_rng_seed(cmem.dg2.seed);
+            for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns); j++) {
+                for (int i = 0; i < 3 && num_persons < ARRAY_COUNT(fmem.dpersons); i++) {
+                    fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
+                    fmem.dpersons[num_persons].overworld_index = OVERWORLD_SPRITE_BERRY;
+                    fmem.dpersons[num_persons].script_std = PERSON_STATIC_BERRY_TREE;
+                    u16 item = (u16)BERRY_IDX_TO_ITEM_IDX(choice(dungeon_forest_berries, ARRAY_COUNT(dungeon_forest_berries), gp_rnd16));
+                    berry *b = berry_get((u8)ITEM_IDX_TO_BERRY_IDX(item));
+                    fmem.dpersons[num_persons].value = item;
+                    fmem.dpersons[num_persons].argument = b->min_yield;
+                    fmem.dpersons[num_persons].flag = (u16)(DG2_FLAG_PATTERN + i);
+                    fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] + i - 1);
+                    fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] - 1);
+                    num_persons++;
+                }
+            }
+            break;
         }
     }
     fmem.dmapevents.person_cnt = num_persons;
@@ -210,6 +246,23 @@ static inline u16 dungeon2_compute_2x2_tree_block_forest(u8 *map, u8 *over, int 
             }
             break;
         }
+        case DUNGEON_FOREST_TYPE_BERRY_FOREST: {
+            if (y % 2) {
+                if (tree_2x2_below)
+                    return (u16)((0x2C + (x % 2)) | BLOCK_SOLID);
+                else if (tree_1x1_below)
+                    return (u16)((0x64 + (x % 2)) | BLOCK_SOLID);
+                else
+                    return (u16)((0x2E + (x % 2)) | BLOCK_SOLID);
+            } else {
+                if (dungeon2_rnd_16(dg2) % 10 == 0) {
+                    return (u16)((0x2a8 + (8 * (dungeon2_rnd_16(dg2) % 4)) + (x % 2)) | BLOCK_SOLID);
+                } else {
+                    return (u16)((0x26 + (x % 2)) | BLOCK_SOLID);
+                }
+            }
+            break;
+        }
         default: {
             if (y % 2) {
                 if (tree_2x2_below)
@@ -230,13 +283,31 @@ static inline u16 dungeon2_compute_1x1_tree_block_forest(u8 *map, u8 *over, int 
     (void) over;
     bool tree_2x2_below = (y == dg2->height - 1) || map[(y + 1) * dg2->width + x] == DG2_2x2_TREE;
     bool tree_1x1_below = (y != dg2->height - 1) && map[(y + 1) * dg2->width + x] == DG2_WALL;
-    if (tree_2x2_below) {
-        return (u16)((0x24 + (x % 2)) | BLOCK_SOLID);
-    } else if (tree_1x1_below) {
-        return 0x5E | BLOCK_SOLID;
-    } else {
-        return 0x67 | BLOCK_SOLID;
+
+    switch (dungeon2_get_forest_type(dg2)) {
+        case DUNGEON_FOREST_TYPE_BERRY_FOREST: {
+            if (tree_2x2_below) {
+                return (u16)((0x24 + (x % 2)) | BLOCK_SOLID);
+            } else if (tree_1x1_below) {
+                return 0x5E | BLOCK_SOLID;
+            } else {
+                if (dungeon2_rnd_16(dg2) % 2 == 0)
+                    return (u16)((0x2aa + 8 * (dungeon2_rnd_16(dg2) % 4) + (dungeon2_rnd_16(dg2) % 2)) | BLOCK_SOLID);
+                else
+                    return 0x67 | BLOCK_SOLID;
+            }
+        }
+        default: {
+            if (tree_2x2_below) {
+                return (u16)((0x24 + (x % 2)) | BLOCK_SOLID);
+            } else if (tree_1x1_below) {
+                return 0x5E | BLOCK_SOLID;
+            } else {
+                return 0x67 | BLOCK_SOLID;
+            }
+        }
     }
+    
 }
 
 void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2){
@@ -244,22 +315,32 @@ void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2){
     dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
     map_footer_t *pattern = dungeon2_get_forest_type_pattern(dg2);
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
-    if (pattern) {
-        map_footer_t *pattern = dungeon2_get_forest_type_pattern(dg2);
-        for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns); j++) {
-            int x = nodes[DG2_NODE_PATTERN + j][0];
-            int y = nodes[DG2_NODE_PATTERN + j][1];
-            for (u8 j = 0; j < pattern->height + 2; j++) {
-                for (u8 i = 0; i < pattern->width + 2; i++){
-                    if ((i == 0 && j == 0) || (i == 0 && j == (pattern->height + 1)) || 
-                        (i == (pattern->width + 1) && j == (pattern->height + 1)) || (i == (pattern->width + 1) && j == 0))
-                        continue; // Don't draw corners for a more natural feel
-                    map[(y - (int)pattern->height / 2 - 1 + j) * dg2->width + x - (int)pattern->width / 2 - 1 + i] = DG2_SPACE;
-                }
+    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns); j++) {
+        int w = (int)pattern->width;
+        int h = (int)pattern->height;
+        int x = nodes[DG2_NODE_PATTERN + j][0] - (w / 2);
+        int y = nodes[DG2_NODE_PATTERN + j][1] - (h / 2);
+        switch (dungeon2_get_forest_type(dg2)) {
+            case DUNGEON_FOREST_TYPE_APPLE_FOREST: {
+                dungeon2_fill_rectangle(map, x, y, w, h, DG2_SPACE, dg2);
+                dungeon2_fill_rectangle(map, x - 1, y, 1, h, DG2_SPACE, dg2);
+                dungeon2_fill_rectangle(map, x + w, y, 1, h, DG2_SPACE, dg2);
+                dungeon2_fill_rectangle(map, x, y - 1, w, 1, DG2_SPACE, dg2);
+                dungeon2_fill_rectangle(map, x, y + h, w, 1, DG2_SPACE, dg2);
+                break;
+            }
+            case DUNGEON_FOREST_TYPE_BERRY_FOREST: {
+                dungeon2_fill_rectangle(map, x, y, w, h, DG2_SPACE, dg2);
+                dungeon2_fill_rectangle(map, x - 1, y, 1, h, DG2_SPACE, dg2);
+                dungeon2_fill_rectangle(map, x + w, y, 1, h, DG2_SPACE, dg2);
+                dungeon2_fill_rectangle(map, x, y - 1, w, 1, DG2_SPACE, dg2);
+                dungeon2_fill_rectangle(map, x, y + h, w, 1, DG2_SPACE, dg2);
+                // The three tiles above a berry tree should be solid...
+                dungeon2_fill_rectangle(map, x + 1, y - 1, 3, 1, DG2_WALL, dg2);
+                break;
             }
         }
     }
-
     // First we identify all the 2x2 trees
     for (int y = 0; y < dg2->height - 1; y += 2) {
         for (int x = 0; x < dg2->width - 1; x += 2) {
@@ -273,7 +354,6 @@ void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2){
             }
         }
     }
-
     for (int y = 0; y < dg2->height; y++) {
         for (int x = 0; x < dg2->width; x++) {
             int type = map[y * dg2->width + x];
@@ -307,8 +387,11 @@ void dungeon2_compute_forest(){
     dungeon2_forest_init_state(dg2);
 
     u8 *map = dungeon2_create_connected_layout(dg2, false);
-
-    u8 *over = dungeon2_create_patch_layout(dg2, false);
+    int num_patterns = dungeon2_get_forest_num_patterns(dg2);
+    int excluded_nodes_mask = 0;
+    for (int i = DG2_NODE_PATTERN; i < DG2_NODE_PATTERN + num_patterns; i++)
+        excluded_nodes_mask |= 1 << i;
+    u8 *over = dungeon2_create_patch_layout(dg2, false, excluded_nodes_mask);
     dungeon2_compute_blocks_forest(map, over, dg2);
     free(map);
     free(over);

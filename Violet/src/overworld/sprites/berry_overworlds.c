@@ -1320,12 +1320,13 @@ overworld_sprite overworld_berry_tree_sprout = {
     .graphics = overworld_gfxs_sprout, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
-overworld_sprite *overworld_sprite_get_by_berry_idx(u8 berry_idx) {
-	u8 stage = cmem.berry_trees[berry_idx].stage;
-	u8 berry = cmem.berry_trees[berry_idx].berry;
-	//dprintf("Requesting ow sprite for berry idx %d, in stage %d with berry %d\n", berry_idx, stage, berry);
+overworld_sprite *overworld_sprite_get_by_berry_tree_idx(u8 berry_idx) {
+	return overworld_sprite_get_by_berry_idx(cmem.berry_trees[berry_idx].stage, cmem.berry_trees[berry_idx].berry, cmem.berry_trees[berry_idx].fertilized);
+}
+
+overworld_sprite *overworld_sprite_get_by_berry_idx(u8 berry, u8 stage, bool fertilized) {
 	if (stage == BERRY_STAGE_NO_BERRY) {
-		if (cmem.berry_trees[berry_idx].fertilized)
+		if (fertilized)
 			return &overworld_berry_tree_none_fertilized;
 		else 
 			return &overworld_berry_tree_none;
@@ -1346,7 +1347,7 @@ palette *overworld_palette_berry_get_by_tag(u16 tag) {
 }
 
 palette *overworld_palette_get_by_berry_idx(u8 berry_idx) {
-    u16 tag = overworld_sprite_get_by_berry_idx(berry_idx)->pal_tag;
+    u16 tag = overworld_sprite_get_by_berry_tree_idx(berry_idx)->pal_tag;
     return overworld_palette_berry_get_by_tag(tag);
 }
 

@@ -74,14 +74,16 @@ void map_reset_temporary_flags_and_vars() {
 
 overworld_sprite *overworld_get_by_person(map_event_person *person) {
     if (person->overworld_index == OVERWORLD_SPRITE_POKEMON_32_32) {
-        // dprintf("Reqeusting 32x32 mon overworld\n");
         return overworld_sprite_get_by_species(person->value);
-        // return overworld_get(170); // For testing: This is the deoxys sprite
     } else if (person->overworld_index == OVERWORLD_SPRITE_POKEMON_64_64) {
         return overworld_sprite_get_by_species(person->value);
-        // return overworld_get(OVERWORLD_SPRITE_POKEMON_64_64); // For testing: This is the groudon sprite
     } else if (person->overworld_index == OVERWORLD_SPRITE_BERRY) {
-        return overworld_sprite_get_by_berry_idx((u8)(person->value));
+        switch (person->script_std) {
+            case PERSON_BERRY_TREE:
+                return overworld_sprite_get_by_berry_tree_idx((u8)(person->value));
+            case PERSON_STATIC_BERRY_TREE:
+                return overworld_sprite_get_by_berry_idx((u8)(ITEM_IDX_TO_BERRY_IDX(person->value)), BERRY_STAGE_BERRIES, false); 
+        }
     } else if (person->overworld_index == OVERWORLD_SPRITE_MISC) {
         switch (person->script_std) {
             case PERSON_MUSHROOM:

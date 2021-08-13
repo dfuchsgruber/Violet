@@ -2205,6 +2205,10 @@
 		"map_footer_dungeon_forest_cabin": [
 			162,
 			"src/map/banks/126/0/map_footer_dungeon_forest_cabin.pms"
+		],
+		"map_footer_dungeon_forest_berry_spot": [
+			163,
+			"src/map/banks/126/0/map_footer_dungeon_forest_berry_spot.pms"
 		]
 	},
 	"tilesets_primary": {

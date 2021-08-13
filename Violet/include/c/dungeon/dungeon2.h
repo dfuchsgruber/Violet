@@ -314,9 +314,10 @@ extern "C" {
      * @param num_nodes number of nodes to generate
      * @param dg2
      * @param random_nodes if the set of nodes is random or coninciedes with the standard nodes
+     * @param excluded_nodes_mask bitfield that masks all nodes that will not be initialized
      * of the given seed
      */
-    void dungeon_init_unconnected_nodes(u8 *map, dungeon_generator2 *dg2, bool random_nodes);
+    void dungeon_init_unconnected_nodes(u8 *map, dungeon_generator2 *dg2, bool random_nodes, int excluded_nodes_mask);
     
     /**
      * Initializes a bytemap for a dungeon by randomizing the walls. Each
@@ -342,9 +343,10 @@ extern "C" {
      * @param dg2
      * @param random_nodes if the set of nodes is random or coninciedes with the standard nodes
      * of the given seed
-     * @return 
+     * @param excluded_nodes_mask bitfield that masks all nodes that will not be initialized
+     * @return the created map
      */
-    u8 *dungeon2_create_patch_layout(dungeon_generator2 *dg2, bool random_nodes);
+    u8 *dungeon2_create_patch_layout(dungeon_generator2 *dg2, bool random_nodes, int excluded_nodes_mask);
 
     /**
      * Linear congruence RNG returning positive 16-bit integers
@@ -454,6 +456,18 @@ extern "C" {
      * @param pattern the pattern to place
      **/
     void dungeon2_place_pattern(int pattern_x, int pattern_y, map_footer_t *pattern);
+
+    /**
+     * Fills a rectangle on a map
+     * @param map where to fill
+     * @param x upper left coordinate to fill
+     * @param y upper left coordinate to fill
+     * @param w width of the rectangle to fill
+     * @param h height of the rectangle to fill
+     * @param fill the value to fill with
+     * @param dg2 dungeon generator (to access the measures of the map)
+     **/
+    void dungeon2_fill_rectangle(u8 *map, int x, int y, int w, int h, u8 fill, dungeon_generator2 *dg2);
 
 #ifdef	__cplusplus
 }
