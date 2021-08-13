@@ -33,7 +33,7 @@ u8 *flag_access_ext(u16 flag) {
         dprintf("Get dungeon flag hard %d\n", flag - 0x1000);
         return cmem.dungeon_flags + idx;
     } else {
-        err2(ERR_FLAG_ACCESS_INVALID, flag);
+        derrf("Invalid flag access: 0x%x\n", flag);
         return NULL;
     }
 }

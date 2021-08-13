@@ -66,6 +66,7 @@ static bool drop_standard_item(u8 battler_idx, u16 *item, u8 *cnt) {
 
 static u32 standard_item_rare_drop_rates[][2] = {
     {ITEM_MININUGGET, 5},
+    {ITEM_RIESENAPFEL, 3},
 };
 
 static u32 standard_item_rare_count_rates[] = {[1] = 1};

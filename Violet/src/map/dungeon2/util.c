@@ -95,7 +95,7 @@ void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(
     // Initialize items / trainers
     int num_trainers_remaining = dungeon2_rnd_16(dg2) % (DG2_MAX_NUM_TRAINERS + 1);
     int num_trainers = 0;
-    for (int i = 0; i < DG2_MAX_NUM_TRAINER_OR_ITEM_NODES; i++) {
+    for (int i = 0; i < DG2_MAX_NUM_TRAINER_OR_ITEM_NODES && DG2_NODE_TRAINER_OR_ITEM + i < dg2->nodes; i++) {
         fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_TRAINER_OR_ITEM + i][0]);
         fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_TRAINER_OR_ITEM + i][1]);
         fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);

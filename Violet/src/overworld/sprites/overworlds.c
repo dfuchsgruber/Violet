@@ -1691,6 +1691,20 @@ static overworld_sprite ow_secret_power_vine = {
         .graphics = overworld_sprite_secret_power_vines_sprites, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
+static graphic overworld_sprite_apple_sprites[] = {
+	{gfx_ow_appleTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
+	{gfx_ow_appleTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
+	{gfx_ow_appleTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
+};
+
+overworld_sprite ow_apple = {
+	0xffff, OW_PAL_TAG_APPLE, 0x11ff, 0x100,
+	16, 16, 0, 1, true, 0, 0x1, 0x0, 0x8,
+	&ow_final_oam_16_16, &ow_formation_16_16,
+	ow_anim_standard_npc, overworld_sprite_apple_sprites,
+	oam_rotscale_anim_table_null
+};
+
 //The overworld table
 overworld_sprite *overworld_sprites[] = {
     	&ow_hiro,
@@ -1896,6 +1910,7 @@ overworld_sprite *overworld_sprites[] = {
 	[181] = &ow_old_amber,
 	[182] = &ow_icarus,
 	[183] = &ow_secret_power_vine,
+	[184] = &ow_apple,
 
 	[OVERWORLD_SPRITE_TUTOR_CRYSTAL] = &ow_tutor_crystal_dummy,
 	[OVERWORLD_SPRITE_MISC] = &ow_misc_16_16,

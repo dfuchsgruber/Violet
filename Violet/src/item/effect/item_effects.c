@@ -342,4 +342,5 @@ item_effect_t *item_effects[] = {
     [ITEM_APFEL- ITEM_TRANK] = &item_effect_apple,
     [ITEM_GOLDAPFEL- ITEM_TRANK] = &item_effect_golden_apple,
     [ITEM_BITTERKRAUT - ITEM_TRANK] = &item_effect_bitter_herb,
+    [ITEM_RIESENAPFEL - ITEM_TRANK] = &item_effect_max_potion,
 };

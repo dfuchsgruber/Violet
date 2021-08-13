@@ -95,7 +95,7 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_APFEL] = {.gfx = gfx_item_apfelTiles, .pal = gfx_item_apfelPal},
     [ITEM_GOLDAPFEL] = {.gfx = gfx_item_goldapfelTiles, .pal = gfx_item_goldapfelPal},
     [ITEM_BITTERKRAUT] = { .gfx = gfx_item_bitterkrautTiles, .pal = gfx_item_bitterkrautPal },
-    [ITEM_ITEM_5C] = { .gfx = gfx_item_item_5cTiles, .pal = gfx_item_item_5cPal },
+    [ITEM_RIESENAPFEL] = { .gfx = gfx_item_riesenapfelTiles, .pal = gfx_item_riesenapfelPal },
     [ITEM_SONNENSTEIN] = { .gfx = gfx_item_sonnensteinTiles, .pal = gfx_item_sonnensteinPal },
     [ITEM_MONDSTEIN] = { .gfx = gfx_item_mondsteinTiles, .pal = gfx_item_mondsteinPal },
     [ITEM_FEUERSTEIN] = { .gfx = gfx_item_feuersteinTiles, .pal = gfx_item_feuersteinPal },

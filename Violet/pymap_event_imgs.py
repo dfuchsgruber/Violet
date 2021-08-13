@@ -95,6 +95,7 @@ picture_idx_to_png = {
     181 : "asset/gfx/overworld/npcs/gfx_ow_old_amber.png",
     182 : "asset/gfx/overworld/npcs/gfx_ow_icarus.png",
     183 : "asset/gfx/overworld/misc/gfx_overworld_secret_power_vines.png"
+    184 : "asset/gfx/overworld/npcs/gfx_ow_apple.png",
 }
 
 # Images that hold an entire spritesheet
@@ -109,6 +110,7 @@ spritesheet_images = {
     180 : (32, 16),
     182 : (16, 32),
     183 : (32, 32),
+    184 : (16, 16),
 }
 
 # Tutor crystal images

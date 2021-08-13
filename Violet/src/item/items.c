@@ -378,9 +378,9 @@ static u8 str_item_bitterkraut_description[] = LANGDEP(
 	PSTRING("Bitteres Kraut, das unverarbeitet\nnur einen einzigen Kraftpunkt\nwiederherstellt."),
 	PSTRING("A bitter herb that, if not being\nprocessed, only restores a single HP.")
 );
-static u8 str_item_item_5c_description[] = LANGDEP(
-	PSTRING(" ????"),
-	PSTRING("?????")
+static u8 str_item_riesenapfel_description[] = LANGDEP(
+	PSTRING("Ein besonders großer und saftiger\nApfel, der alle Kp eines Pokémon\nwiederherstellt."),
+	PSTRING("A particularily big and juicy\napple that restores all Hp of a\nPokémon.")
 );
 static u8 str_item_sonnenstein_description[] = LANGDEP(
 	PSTRING("Dieser spezielle Stein löst bei be-\nstimmten Pokémon die Entwicklung\naus. Er ist rot wie die Sonne."),
@@ -3109,20 +3109,20 @@ item items[] = {
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_ITEM_5C
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
-		0, //price
+		//ITEM_RIESENAPFEL
+		LANGDEP(PSTRING("Riesenapfel"), PSTRING("Big Apple")),
+		ITEM_RIESENAPFEL, //index
+		500, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_item_5c_description,
+		str_item_riesenapfel_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
-		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0x0, //battle_usage2
+		1, //type
+		(void(*)(u8))item_field_by_effect_table, //field_usage
+		(void(*)(u8))0x1, //battle_usage1
+		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SONNENSTEIN

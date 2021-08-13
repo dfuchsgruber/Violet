@@ -154,6 +154,10 @@ static palette overworld_palette_icarus = {
     .pal = gfx_ow_icarusPal, .tag = OW_PAL_TAG_ICARUS,
 };
 
+static palette overworld_palette_apple = {
+    .pal = gfx_ow_applePal, .tag = OW_PAL_TAG_APPLE,
+};
+
 static palette overworld_palette_secret_power_vine = {
     .pal = gfx_overworld_secret_power_vinesPal, .tag = OW_PAL_TAG_SECRET_POWER_VINES,
 }; 
@@ -179,6 +183,7 @@ static palette *overworld_npc_palette_get_by_tag(u16 tag) {
         case OW_PAL_TAG_ICARUS: return &overworld_palette_icarus;
         case OW_PAL_TAG_TRASH: return overworld_palette_get_by_trash();
         case OW_PAL_TAG_SECRET_POWER_VINES: return &overworld_palette_secret_power_vine;
+        case OW_PAL_TAG_APPLE: return &overworld_palette_apple;
     }
     u8 idx = overworld_npc_palette_get_idx(tag);
     // dprintf("Tag 0x%x is at idx %d in pal-table.\n", tag, idx);

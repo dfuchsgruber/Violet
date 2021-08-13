@@ -20,31 +20,30 @@ static crafting_recipe crafting_recipies_healing[] = {
         .item = ITEM_HYPERTRANK, 
         .ingredients = {
             [0] = {.item = ITEM_BITTERKRAUT, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_APFEL, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_TSITRUBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_SINELBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .flag = FRBADGE_2,
     },{
         .item = ITEM_TOP_TRANK, 
         .ingredients = {
             [0] = {.item = ITEM_BITTERKRAUT, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_APFEL, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_TSITRUBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .flag = FRBADGE_4,
     },{
         .item = ITEM_TOP_GENESUNG, 
         .ingredients = {
             [0] = {.item = ITEM_BITTERKRAUT, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_APFEL, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_HYPERHEILER, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_TSITRUBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.item = ITEM_PRUNUSBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .flag = FRBADGE_5,
     },{
         .item = ITEM_TOP_GENESUNG, 
         .ingredients = {
             [0] = {.item = ITEM_BITTERKRAUT, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_APFEL, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_PRUNUSBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_TSITRUBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.item = ITEM_HYPERHEILER, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .flag = FRBADGE_5,
     },{
@@ -76,7 +75,7 @@ static crafting_recipe crafting_recipies_healing[] = {
         .ingredients = {
             [0] = {.item = ITEM_BITTERKRAUT, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_APFEL, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.item = ITEM_RIESENAPFEL, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [3] = {.item = ITEM_BELEBER, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .flag = FRBADGE_1,
@@ -87,9 +86,14 @@ static crafting_recipe crafting_recipies_healing[] = {
             [1] = {.item = ITEM_KUESTENSCHALE, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{
+        .item = ITEM_RIESENAPFEL,
+        .ingredients = {
+            [0] = {.item = ITEM_APFEL, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+        }
+    },{
         .item = ITEM_GOLDAPFEL,
         .ingredients = {
-            [0] = {.item = ITEM_APFEL, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_RIESENAPFEL, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_NUGGET, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
         }
@@ -460,7 +464,7 @@ static crafting_recipe crafting_recipies_nutrients[] = {
     {
         .item = ITEM_KP_PLUS, 
         .ingredients = {
-            [0] = {.item = ITEM_APFEL, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_RIESENAPFEL, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_RIESENPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_BITTERKRAUT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
         },
