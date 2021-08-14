@@ -2209,6 +2209,10 @@
 		"map_footer_dungeon_forest_berry_spot": [
 			163,
 			"src/map/banks/126/0/map_footer_dungeon_forest_berry_spot.pms"
+		],
+		"map_footer_dungeon_forest_nest": [
+			164,
+			"src/map/banks/126/0/map_footer_dungeon_forest_nest.pms"
 		]
 	},
 	"tilesets_primary": {

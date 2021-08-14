@@ -17,6 +17,7 @@ extern "C" {
 #include "map/footer.h"
 #include "map/event.h"
 #include "map/wild_pokemon.h"
+#include "constants/flags.h"
 
     // Linear congruency rnd parameters
     #define DG2_RND_MULTIPLIER 0x41C64E6D
@@ -76,10 +77,15 @@ extern "C" {
     };
 
     enum {
-        DG2_FLAG_ITEM = 1,
+        DG2_FLAG_ITEM = FLAG_DUNGEON_GP,
         DG2_FLAG_STATIC_ENCOUNTER = DG2_FLAG_ITEM + DG2_MAX_NUM_TRAINER_OR_ITEM_NODES,
         DG2_FLAG_PATTERN,
     };
+
+    /**
+     * Clears flags of all dungeon events.
+     **/
+    void dungeon2_reset_flags();
 
     /**
      * Initializes std events (static encounter, items, trainers) for a dungeon

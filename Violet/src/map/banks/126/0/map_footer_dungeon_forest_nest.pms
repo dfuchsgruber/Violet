@@ -15,68 +15,68 @@
 		"blocks": [
 			[
 				{
-					"block_idx": 549,
-					"level": 12
+					"block_idx": 8,
+					"level": 0
 				},
 				{
-					"block_idx": 550,
-					"level": 12
+					"block_idx": 692,
+					"level": 0
 				},
 				{
-					"block_idx": 550,
-					"level": 12
+					"block_idx": 693,
+					"level": 0
 				},
 				{
-					"block_idx": 550,
-					"level": 12
+					"block_idx": 694,
+					"level": 0
 				},
 				{
-					"block_idx": 551,
-					"level": 12
-				}
-			],
-			[
-				{
-					"block_idx": 557,
-					"level": 12
-				},
-				{
-					"block_idx": 558,
-					"level": 12
-				},
-				{
-					"block_idx": 558,
-					"level": 12
-				},
-				{
-					"block_idx": 558,
-					"level": 12
-				},
-				{
-					"block_idx": 559,
-					"level": 12
+					"block_idx": 1,
+					"level": 0
 				}
 			],
 			[
 				{
 					"block_idx": 1,
-					"level": 12
+					"level": 0
+				},
+				{
+					"block_idx": 700,
+					"level": 0
+				},
+				{
+					"block_idx": 701,
+					"level": 0
+				},
+				{
+					"block_idx": 702,
+					"level": 0
+				},
+				{
+					"block_idx": 17,
+					"level": 0
+				}
+			],
+			[
+				{
+					"block_idx": 17,
+					"level": 0
+				},
+				{
+					"block_idx": 9,
+					"level": 0
 				},
 				{
 					"block_idx": 1,
-					"level": 12
+					"level": 0
 				},
 				{
 					"block_idx": 1,
-					"level": 12
+					"level": 0
 				},
 				{
 					"block_idx": 1,
-					"level": 12
-				},
-				{
-					"block_idx": 1,
-					"level": 12
+					"level": 0
 				}
 			]
 		],
@@ -84,6 +84,6 @@
 		"tileset_secondary": "maptileset_dungeon_forest",
 		"field_1A": 0
 	},
-	"label": "map_footer_dungeon_forest_berry_spot",
+	"label": "map_footer_dungeon_forest_nest",
 	"type": "footer"
 }

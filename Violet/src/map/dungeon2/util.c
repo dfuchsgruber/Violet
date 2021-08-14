@@ -9,6 +9,8 @@
 #include "constants/person_behaviours.h"
 #include "constants/person_script_stds.h"
 #include "overworld/sprite.h"
+#include "flags.h"
+#include "debug.h"
 
 bool dungeon2_find_empty_space(int *space_x, int *space_y, u8 *center_node, int nodes[][2], int width, int height, u8 *map, dungeon_generator2 *dg2) {
     // For each node, see if we can expand the window arround it
@@ -45,6 +47,7 @@ bool dungeon2_find_empty_space_for_pattern(int *space_x, int *space_y, u8 *cente
 }
 
 void dungeon2_place_pattern(int pattern_x, int pattern_y, map_footer_t *pattern) {
+    dprintf("Place pattern with dimensions %d,%d at %d,%d\n", pattern->width, pattern->height, pattern_x, pattern_y);
     for (u8 i = 0; i < pattern->width; i++) {
         for (u8 j = 0; j < pattern->height; j++) {
             u16 *block = (u16*) pattern->map + (j * pattern->width + i);
@@ -117,4 +120,9 @@ void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(
         }
     }
     fmem.dmapevents.person_cnt = num_persons;
+}
+
+void dungeon2_reset_flags() {
+    for (u16 flag = FLAG_DUNGEON_GP; flag <= FLAG_LAST_DUNGEON_GP; flag++)
+        clearflag(flag);
 }

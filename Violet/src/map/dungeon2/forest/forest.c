@@ -35,6 +35,7 @@ extern tileset maptileset0;
 extern tileset maptileset_dungeon_forest;
 extern map_footer_t map_footer_dungeon_forest_apple_tree;
 extern map_footer_t map_footer_dungeon_forest_berry_spot;
+extern map_footer_t map_footer_dungeon_forest_nest;
 
 u16 dungeon2_forest_borders[4] = {0x26, 0x27, 0x2c, 0x2d};
 
@@ -46,7 +47,8 @@ extern u8 ow_script_dungeon_item[];
 static u32 dungeon2_forest_type_rates[NUM_DUNGEON_FOREST_TYPES] = {
     [DUNGEON_FOREST_TYPE_NORMAL] = 5,
     [DUNGEON_FOREST_TYPE_APPLE_FOREST] = 3,
-    [DUNGEON_FOREST_TYPE_BERRY_FOREST] = 3000,
+    [DUNGEON_FOREST_TYPE_BERRY_FOREST] = 2,
+    [DUNGEON_FOREST_TYPE_EGG_FOREST] = 2000,
 };
 
 u8 dungeon2_get_forest_type(dungeon_generator2 *dg2) {
@@ -60,6 +62,8 @@ static map_footer_t *dungeon2_get_forest_type_pattern(dungeon_generator2 *dg2) {
             return &map_footer_dungeon_forest_apple_tree;
         case DUNGEON_FOREST_TYPE_BERRY_FOREST:
             return &map_footer_dungeon_forest_berry_spot;
+        case DUNGEON_FOREST_TYPE_EGG_FOREST:
+            return &map_footer_dungeon_forest_nest;
         default:
             return NULL;
     }
@@ -70,7 +74,10 @@ static int dungeon2_get_forest_num_patterns(dungeon_generator2 *dg2) {
         case DUNGEON_FOREST_TYPE_APPLE_FOREST:
             return MIN(DG2_MAX_NUM_PATTERNS, 1 + (dungeon2_rnd_16(dg2) % 3));
         case DUNGEON_FOREST_TYPE_BERRY_FOREST:
-            return MIN(DG2_MAX_NUM_PATTERNS, 3);
+            return MIN(DG2_MAX_NUM_PATTERNS, 1 + (dungeon2_rnd_16(dg2) % 3));
+        case DUNGEON_FOREST_TYPE_EGG_FOREST:
+            // return MIN(DG2_MAX_NUM_PATTERNS, 1 + (dungeon2_rnd_16(dg2) % 2));
+            return 3;
     }
     return 0;
 }
@@ -107,7 +114,8 @@ map_footer_t *dungeon2_init_footer_forest(dungeon_generator2 *dg2){
 static s16 dungeon_forest_apple_displacements[][2] = {
     {-1, 0}, {-1, 1}, {1, 0}, {1, 1}
 };
-static u32 dungeon_forest_berries[] = {
+
+u32 dungeon_forest_berries[] = {
     [ITEM_IDX_TO_BERRY_IDX(ITEM_AMRENABEERE)] = 6,
     [ITEM_IDX_TO_BERRY_IDX(ITEM_PIRSIFBEERE)] = 6,
     [ITEM_IDX_TO_BERRY_IDX(ITEM_MARONBEERE)] = 4,
@@ -117,6 +125,13 @@ static u32 dungeon_forest_berries[] = {
     [ITEM_IDX_TO_BERRY_IDX(ITEM_TSITRUBEERE)] = 3,
     [ITEM_IDX_TO_BERRY_IDX(ITEM_JONAGOBEERE)] = 2,
     [ITEM_IDX_TO_BERRY_IDX(ITEM_PRUNUSBEERE)] = 1,
+};
+
+u16 dungeon_forest_eggs[] = {
+    POKEMON_TOGEPI, POKEMON_MAEHIKEL, POKEMON_PIKACHU, POKEMON_FLABEBE, POKEMON_MYRAPLA, POKEMON_WATTZAPF,
+    POKEMON_TRAUMATO, POKEMON_KANGAMA, POKEMON_PINSIR, POKEMON_SICHLOR,
+    POKEMON_MOBAI, POKEMON_TANNZA, POKEMON_TEDDIURSA, POKEMON_MAMPFAXO, POKEMON_SAMURZEL,
+    POKEMON_KNILZ, POKEMON_BUMMELZ, POKEMON_VIPITIS, POKEMON_SENGO, 0xFFFF,
 };
 
 map_event_header_t *dungeon2_init_events_forest(dungeon_generator2 *dg2){
@@ -134,7 +149,7 @@ map_event_header_t *dungeon2_init_events_forest(dungeon_generator2 *dg2){
                         fmem.dpersons[num_persons].overworld_index = 184;
                         fmem.dpersons[num_persons].script_std = PERSON_ITEM;
                         fmem.dpersons[num_persons].value = (dungeon2_rnd_16(dg2) % 8) > 0 ? ITEM_APFEL : ITEM_RIESENAPFEL;
-                        fmem.dpersons[num_persons].flag = (u16)(DG2_FLAG_PATTERN + i);
+                        fmem.dpersons[num_persons].flag = (u16)(DG2_FLAG_PATTERN + 4 * j + i);
                         fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] + dungeon_forest_apple_displacements[i][0]);
                         fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + dungeon_forest_apple_displacements[i][1]);
                         num_persons++;
@@ -154,11 +169,25 @@ map_event_header_t *dungeon2_init_events_forest(dungeon_generator2 *dg2){
                     berry *b = berry_get((u8)ITEM_IDX_TO_BERRY_IDX(item));
                     fmem.dpersons[num_persons].value = item;
                     fmem.dpersons[num_persons].argument = b->min_yield;
-                    fmem.dpersons[num_persons].flag = (u16)(DG2_FLAG_PATTERN + i);
+                    fmem.dpersons[num_persons].flag = (u16)(DG2_FLAG_PATTERN + 3 * j + i);
                     fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] + i - 1);
                     fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] - 1);
                     num_persons++;
                 }
+            }
+            break;
+        }
+        case DUNGEON_FOREST_TYPE_EGG_FOREST: {
+            gp_rng_seed(cmem.dg2.seed);
+            for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns); j++) {
+                fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
+                fmem.dpersons[num_persons].overworld_index = 101;
+                fmem.dpersons[num_persons].script_std = PERSON_EGG;
+                fmem.dpersons[num_persons].value = dungeon_forest_eggs[dungeon2_rnd_16(dg2) % (ARRAY_COUNT(dungeon_forest_eggs) - 1)];
+                fmem.dpersons[num_persons].flag = (u16)(DG2_FLAG_PATTERN + j);
+                fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0]);
+                fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] - 1);
+                num_persons++;
             }
             break;
         }
@@ -263,6 +292,23 @@ static inline u16 dungeon2_compute_2x2_tree_block_forest(u8 *map, u8 *over, int 
             }
             break;
         }
+        case DUNGEON_FOREST_TYPE_EGG_FOREST: {
+            if (y % 2) {
+                if (tree_2x2_below)
+                    return (u16)((0x2C + (x % 2)) | BLOCK_SOLID);
+                else if (tree_1x1_below)
+                    return (u16)((0x64 + (x % 2)) | BLOCK_SOLID);
+                else
+                    return (u16)((0x2E + (x % 2)) | BLOCK_SOLID);
+            } else {
+                if (dungeon2_rnd_16(dg2) % 32 == 0) {
+                    return (u16)((0x2a4 + (8 * (dungeon2_rnd_16(dg2) % 2)) + (x % 2)) | BLOCK_SOLID);
+                } else {
+                    return (u16)((0x26 + (x % 2)) | BLOCK_SOLID);
+                }
+            }
+            break;
+        }
         default: {
             if (y % 2) {
                 if (tree_2x2_below)
@@ -337,6 +383,13 @@ void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2){
                 dungeon2_fill_rectangle(map, x, y + h, w, 1, DG2_SPACE, dg2);
                 // The three tiles above a berry tree should be solid...
                 dungeon2_fill_rectangle(map, x + 1, y - 1, 3, 1, DG2_WALL, dg2);
+                break;
+            }
+            case DUNGEON_FOREST_TYPE_EGG_FOREST: {
+                dungeon2_fill_rectangle(map, x, y, w, h, DG2_SPACE, dg2);
+                dungeon2_fill_rectangle(map, x - 1, y, 1, h, DG2_SPACE, dg2);
+                dungeon2_fill_rectangle(map, x + w, y, 1, h, DG2_SPACE, dg2);
+                dungeon2_fill_rectangle(map, x, y + h, w, 1, DG2_SPACE, dg2);
                 break;
             }
         }
@@ -418,6 +471,7 @@ void dungeon2_init_forest(){
     }
 
     fmem.dmap_header_initialized = 1;
+    dungeon2_reset_flags();
 
     dungeon_generator2 *dg2 = &(cmem.dg2);
     dungeon2_forest_init_state(dg2);

@@ -205,7 +205,9 @@ u8 *dungeon2_create_patch_layout(dungeon_generator2 *dg2, bool random_nodes, int
     dungeon_init_unconnected_nodes(map1, dg2, random_nodes, excluded_nodes_mask);
     dungeon2_enlarge(map1, map2, dg2);
     dungeon2_enlarge(map2, map1, dg2);
-    dungeon2_iterate(map1, map2, 8, 1, dg2);
+    dungeon2_enlarge(map1, map2, dg2);
+    dungeon2_enlarge(map2, map1, dg2);
+    dungeon2_iterate(map1, map2, 7, 1, dg2);
     free(map1);
     dungeon2_print_map(map2, dg2);
     return map2;
