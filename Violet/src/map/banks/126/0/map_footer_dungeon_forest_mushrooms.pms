@@ -1,0 +1,125 @@
+{
+	"data": {
+		"width": 5,
+		"height": 4,
+		"border_width": 2,
+		"border_height": 2,
+		"border": [
+			[
+				{
+					"block_idx": 38,
+					"level": 0
+				},
+				{
+					"block_idx": 39,
+					"level": 0
+				}
+			],
+			[
+				{
+					"block_idx": 44,
+					"level": 0
+				},
+				{
+					"block_idx": 45,
+					"level": 0
+				}
+			]
+		],
+		"blocks": [
+			[
+				{
+					"block_idx": 1,
+					"level": 12
+				},
+				{
+					"block_idx": 1000,
+					"level": 12
+				},
+				{
+					"block_idx": 1,
+					"level": 12
+				},
+				{
+					"block_idx": 1001,
+					"level": 12
+				},
+				{
+					"block_idx": 1,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 1,
+					"level": 12
+				},
+				{
+					"block_idx": 1008,
+					"level": 1
+				},
+				{
+					"block_idx": 1010,
+					"level": 1
+				},
+				{
+					"block_idx": 1009,
+					"level": 1
+				},
+				{
+					"block_idx": 17,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 12,
+					"level": 12
+				},
+				{
+					"block_idx": 17,
+					"level": 12
+				},
+				{
+					"block_idx": 1008,
+					"level": 1
+				},
+				{
+					"block_idx": 1,
+					"level": 12
+				},
+				{
+					"block_idx": 1,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 1,
+					"level": 12
+				},
+				{
+					"block_idx": 12,
+					"level": 12
+				},
+				{
+					"block_idx": 1,
+					"level": 12
+				},
+				{
+					"block_idx": 1,
+					"level": 12
+				},
+				{
+					"block_idx": 1,
+					"level": 12
+				}
+			]
+		],
+		"tileset_primary": "maptileset0",
+		"tileset_secondary": "maptileset_dungeon_mushroom_forest",
+		"field_1A": 0
+	},
+	"label": "map_footer_dungeon_forest_mushrooms",
+	"type": "footer"
+}

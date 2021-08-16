@@ -2,12 +2,26 @@
 	"data": {
 		"width": 5,
 		"height": 6,
-		"border_width": 1,
-		"border_height": 1,
+		"border_width": 2,
+		"border_height": 2,
 		"border": [
 			[
 				{
-					"block_idx": 2,
+					"block_idx": 664,
+					"level": 0
+				},
+				{
+					"block_idx": 665,
+					"level": 0
+				}
+			],
+			[
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 681,
 					"level": 0
 				}
 			]
@@ -19,107 +33,107 @@
 					"level": 12
 				},
 				{
-					"block_idx": 641,
+					"block_idx": 961,
 					"level": 12
 				},
 				{
-					"block_idx": 642,
+					"block_idx": 962,
 					"level": 12
 				},
 				{
-					"block_idx": 643,
+					"block_idx": 963,
 					"level": 12
 				},
+				{
+					"block_idx": 964,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 968,
+					"level": 12
+				},
+				{
+					"block_idx": 969,
+					"level": 12
+				},
+				{
+					"block_idx": 970,
+					"level": 1
+				},
+				{
+					"block_idx": 971,
+					"level": 12
+				},
+				{
+					"block_idx": 972,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 976,
+					"level": 12
+				},
+				{
+					"block_idx": 977,
+					"level": 12
+				},
+				{
+					"block_idx": 978,
+					"level": 1
+				},
+				{
+					"block_idx": 979,
+					"level": 12
+				},
+				{
+					"block_idx": 980,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 984,
+					"level": 12
+				},
+				{
+					"block_idx": 985,
+					"level": 12
+				},
+				{
+					"block_idx": 986,
+					"level": 1
+				},
+				{
+					"block_idx": 987,
+					"level": 12
+				},
+				{
+					"block_idx": 988,
+					"level": 12
+				}
+			],
+			[
 				{
 					"block_idx": 1,
 					"level": 12
-				}
-			],
-			[
+				},
 				{
-					"block_idx": 648,
+					"block_idx": 993,
 					"level": 12
 				},
 				{
-					"block_idx": 649,
-					"level": 12
-				},
-				{
-					"block_idx": 650,
+					"block_idx": 994,
 					"level": 1
 				},
 				{
-					"block_idx": 651,
+					"block_idx": 995,
 					"level": 12
 				},
 				{
-					"block_idx": 652,
-					"level": 12
-				}
-			],
-			[
-				{
-					"block_idx": 656,
-					"level": 12
-				},
-				{
-					"block_idx": 657,
-					"level": 12
-				},
-				{
-					"block_idx": 658,
-					"level": 1
-				},
-				{
-					"block_idx": 659,
-					"level": 12
-				},
-				{
-					"block_idx": 660,
-					"level": 12
-				}
-			],
-			[
-				{
-					"block_idx": 664,
-					"level": 12
-				},
-				{
-					"block_idx": 665,
-					"level": 12
-				},
-				{
-					"block_idx": 666,
-					"level": 1
-				},
-				{
-					"block_idx": 667,
-					"level": 12
-				},
-				{
-					"block_idx": 668,
-					"level": 12
-				}
-			],
-			[
-				{
-					"block_idx": 1,
-					"level": 12
-				},
-				{
-					"block_idx": 673,
-					"level": 12
-				},
-				{
-					"block_idx": 674,
-					"level": 1
-				},
-				{
-					"block_idx": 675,
-					"level": 12
-				},
-				{
-					"block_idx": 1,
+					"block_idx": 996,
 					"level": 12
 				}
 			],
@@ -147,7 +161,7 @@
 			]
 		],
 		"tileset_primary": "maptileset0",
-		"tileset_secondary": "maptileset_dungeon_forest",
+		"tileset_secondary": "maptileset_dungeon_apple_forest",
 		"field_1A": 0
 	},
 	"label": "map_footer_dungeon_forest_apple_tree",

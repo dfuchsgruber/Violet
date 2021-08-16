@@ -1,0 +1,43 @@
+{
+	"data": {
+		"width": 1,
+		"height": 1,
+		"border_width": 2,
+		"border_height": 2,
+		"border": [
+			[
+				{
+					"block_idx": 38,
+					"level": 0
+				},
+				{
+					"block_idx": 39,
+					"level": 0
+				}
+			],
+			[
+				{
+					"block_idx": 44,
+					"level": 0
+				},
+				{
+					"block_idx": 45,
+					"level": 0
+				}
+			]
+		],
+		"blocks": [
+			[
+				{
+					"block_idx": 640,
+					"level": 12
+				}
+			]
+		],
+		"tileset_primary": "maptileset0",
+		"tileset_secondary": "maptileset_dungeon_apple_forest",
+		"field_1A": 0
+	},
+	"label": "map_footer_dungeon_forest_normal",
+	"type": "footer"
+}

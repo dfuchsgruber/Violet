@@ -30,9 +30,11 @@ extern "C" {
 #define DTYPE_CAVE 2
 #define DTYPE_OCEAN 3
 
-#define DG2_WALL 0
-#define DG2_SPACE 1
-#define DG2_ROCK 2
+#define DG2_WALL 1
+#define DG2_SPACE 2
+#define DG2_ROCK 4
+#define DG2_2x2_TREE 8
+#define DG2_ALTERNATIVE_TILE 16
     
     typedef struct{
         // Initial seed of the dg2
@@ -474,6 +476,21 @@ extern "C" {
      * @param dg2 dungeon generator (to access the measures of the map)
      **/
     void dungeon2_fill_rectangle(u8 *map, int x, int y, int w, int h, u8 fill, dungeon_generator2 *dg2);
+
+    #define DUNGEON_MISC_IDX_START 0x4000
+
+    /**
+     * Gets the type of a mushroom in dungeons
+     * @param mushroom_idx the mushroom_idx to get the type of. It is expected to be offsetted by DUNGEON_MISC_IDX_START
+     * @return the mushroom type
+     **/
+    u16 dungeon_mushroom_get_type(u16 mushroom_idx);
+
+    /**
+     * Sets the flag of a mushroom in dungeons
+     * @param mushroom_idx the mushroom_idx to set the flag of. It is expected to be offsetted by DUNGEON_MISC_IDX_START
+     **/
+    void dungeon_mushroom_set_flag(u16 mushroom_idx);
 
 #ifdef	__cplusplus
 }

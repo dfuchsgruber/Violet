@@ -20,15 +20,15 @@
 				},
 				{
 					"block_idx": 550,
-					"level": 12
+					"level": 1
 				},
 				{
 					"block_idx": 550,
-					"level": 12
+					"level": 1
 				},
 				{
 					"block_idx": 550,
-					"level": 12
+					"level": 1
 				},
 				{
 					"block_idx": 551,
@@ -81,7 +81,7 @@
 			]
 		],
 		"tileset_primary": "maptileset0",
-		"tileset_secondary": "maptileset_dungeon_forest",
+		"tileset_secondary": "maptileset_dungeon_berry_forest",
 		"field_1A": 0
 	},
 	"label": "map_footer_dungeon_forest_berry_spot",

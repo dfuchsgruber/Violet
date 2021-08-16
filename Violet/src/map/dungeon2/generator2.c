@@ -12,6 +12,7 @@
 #include "bios.h"
 #include "agbmemory.h"
 #include "prng.h"
+#include "circle.h"
 
 void dungeon2_fill_rectangle(u8 *map, int x, int y, int w, int h, u8 fill, dungeon_generator2 *dg2) {
     dprintf("Fill rectangle at %d,%d with measures %d,%d with value %d\n", x, y, w, h, fill);
@@ -196,21 +197,26 @@ void dungeon_init_random(u8 *map, dungeon_generator2 *dg2) {
 u8 *dungeon2_create_patch_layout(dungeon_generator2 *dg2, bool random_nodes, int excluded_nodes_mask){
     
     u8 *map1 = malloc((u32)(dg2->width * dg2->height));
-    u8 *map2 = malloc((u32)(dg2->width * dg2->height));
     int _dg2_space = DG2_WALL | (DG2_WALL << 8);
     cpuset(&_dg2_space, map1, CPUSET_HALFWORD | CPUSET_FILL | 
             CPUSET_HALFWORD_SIZE(dg2->width * dg2->height));
-    cpuset(&_dg2_space, map2, CPUSET_HALFWORD | CPUSET_FILL | 
-            CPUSET_HALFWORD_SIZE(dg2->width * dg2->height));
-    dungeon_init_unconnected_nodes(map1, dg2, random_nodes, excluded_nodes_mask);
-    dungeon2_enlarge(map1, map2, dg2);
-    dungeon2_enlarge(map2, map1, dg2);
-    dungeon2_enlarge(map1, map2, dg2);
-    dungeon2_enlarge(map2, map1, dg2);
-    dungeon2_iterate(map1, map2, 7, 1, dg2);
-    free(map1);
-    dungeon2_print_map(map2, dg2);
-    return map2;
+    int nodes[dg2->nodes][2];
+    dungeon2_get_nodes(nodes, dg2->nodes, dg2, random_nodes);
+    for (int i = 0; i < dg2->nodes; i++) {
+        if (excluded_nodes_mask & (1 << i))
+            continue;
+        int x_node = nodes[i][0];
+        int y_node = nodes[i][1];
+        for (int radius = 0; radius <= 4; radius++) {
+            for (size_t j = 0; j < circle_coordinates_by_radius[radius].size; j++) {
+                int x = x_node + circle_coordinates_by_radius[radius].coordinates[j].x;
+                int y = y_node + circle_coordinates_by_radius[radius].coordinates[j].y;
+                map1[y * dg2->width + x] = DG2_SPACE;
+            }
+        }
+    }
+    dungeon2_print_map(map1, dg2);
+    return map1;
 }
 
 u16 dungeon2_rnd_16(dungeon_generator2 *dg2) {

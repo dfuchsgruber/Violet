@@ -60,6 +60,10 @@ ow_script_dungeon_enter_field:
 .global ow_script_dungeon_trainer_1
 .global ow_script_dungeon_trainer_2
 .global ow_script_dungeon_trainer_3
+.global ow_script_dungeon_trainer_4
+.global ow_script_dungeon_trainer_5
+.global ow_script_dungeon_trainer_6
+.global ow_script_dungeon_trainer_7
 
 ow_script_dungeon_trainer_0:
 	trainerbattlestd 0 0x1e0 0 str_before_0 str_after_0
@@ -79,6 +83,26 @@ ow_script_dungeon_trainer_2:
 ow_script_dungeon_trainer_3:
 	trainerbattlestd 0 0x1e3 0 str_before_3 str_after_3
 	loadpointer 0 str_later_3
+	callstd MSG_FACE
+	end
+ow_script_dungeon_trainer_4:
+	trainerbattlestd 0 0x1e0 0 str_before_4 str_after_4
+	loadpointer 0 str_later_4
+	callstd MSG_FACE
+	end
+ow_script_dungeon_trainer_5:
+	trainerbattlestd 0 0x1e1 0 str_before_5 str_after_5
+	loadpointer 0 str_later_5
+	callstd MSG_FACE
+	end
+ow_script_dungeon_trainer_6:
+	trainerbattlestd 0 0x1e2 0 str_before_6 str_after_6
+	loadpointer 0 str_later_6
+	callstd MSG_FACE
+	end
+ow_script_dungeon_trainer_7:
+	trainerbattlestd 0 0x1e3 0 str_before_7 str_after_7
+	loadpointer 0 str_later_7
 	callstd MSG_FACE
 	end
 
@@ -107,6 +131,30 @@ str_after_3:
 	.autostring 34 2 "Hast was auf dem Kasten.\nNicht schlecht!"
 str_later_3:
 	.autostring 34 2 "Ich benutze Geheimpower, um seltene Pokémon zu finden.\pDas ist wirklich ein großer Spaß."
+str_before_4:
+	.autostring 34 2 "V-Vorsicht!\pHier ist es wirklich gefährlich!"
+str_after_4:
+	.autostring 34 2 "O-ohDOTS\nIch sehe schon, du kommst selbst zurecht."
+str_later_4:
+	.autostring 34 2 "Ich muss mir wohl k-keine Sorgen um dich machen.\pAber pass trotzdem auf dich auf.\pMan weiß nie, was einen an einem solchen Ort erwartet."
+str_before_5:
+	.autostring 34 2 "Es hat sich wirklich gelohnt, ein Ranger zu werden.\pAreale zu erkunden, in die die meisten Trainer nicht vordringenDOTS\pDas ist doch wirklich aufregend!"
+str_after_5:
+	.autostring 34 2 "Hut ab!\nStark gekämpft."
+str_later_5:
+	.autostring 34 2 "Es wundert mich überhaupt nicht, dass jemand von deinem Kaliber sich an solchen Ort herumtreibt.\pDas hier ist nur etwas für hartgesottene Persönlichkeiten."
+str_before_6:
+	.autostring 34 2 "Wir Ranger erschließen hier neues Gebiet!\pWillst du uns etwa bei der Arbeit stören?"
+str_after_6:
+	.autostring 34 2 "He!\nDas ist wirklich ganz schön unhöflich, mir so ins Wort zu fallen."
+str_later_6:
+	.autostring 34 2 "Denkst du, dass es sinnvoll ist, einen Ranger bei der Arbeit zu stören?\pDu solltest dich schämen, Kindchen."
+str_before_7:
+	.autostring 34 2 "Gegen meine Geheimpower kannst du nichts ausrichten!\pNimm dich in acht!"
+str_after_7:
+	.autostring 34 2 "Deine Geheimpower ist einfach stärkerDOTS"
+str_later_7:
+	.autostring 34 2 "Nicht alle Ranger sind dazu im Stande, Geheimpower einzusetzen.\pDu würdest dich gut unter uns machen, ehrlich!"
 .elseif LANG_EN
 
 .endif

@@ -16,18 +16,18 @@ u16 tile_hash_by_position(s16 x, s16 y, u8 bank, u8 map_idx, size_t m) {
     return (u16)(hash % m);
 }
 
-u32 daily_events_hash(u32 seq[], size_t size) {
+u32 hash_sequence(u32 seq[], size_t size, u32 seed) {
 	// Hashing according to https://stackoverflow.com/a/27216842/7292394
-	u32 seed = cmem.daily_events_seed;
-
-	// Also use "salt" to enlarge the sequence
-	u32 salt[4] = {0xffbfa3a1, 0xcfd893ce, 0x121420e0, 0x7e87aa4b};
-
-	for (size_t idx = 0; idx < size + 4; idx++) {
-		u32 i = idx < size ? seq[idx] : salt[idx - size];
+	for (size_t idx = 0; idx < size; idx++) {
+		u32 i = seq[idx] * 0xdeece66d + 0xb; // The ints are individually hashed to prevent nearby sequences to be close
 		seed = (u32)(seed ^ (i + 0x9e3779b9 + (seed << 6) + (seed >> 2)));
 	}
 	return seed;
+}
+
+u32 daily_events_hash(u32 seq[], size_t size) {
+	u32 seed = cmem.daily_events_seed;
+	return hash_sequence(seq, size, seed);
 }
 
 

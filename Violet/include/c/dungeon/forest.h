@@ -8,6 +8,9 @@
 #ifndef INCLUDE_C_DUNGEON_FOREST_H_
 #define INCLUDE_C_DUNGEON_FOREST_H_
 
+#include "types.h"
+#include "map/header.h"
+
 #define DTYPE_FOREST_WILD_POKEMON_FREQUENCY 0x20
 
     #define DG2_FOREST_WIDTH 56
@@ -25,7 +28,35 @@
         DUNGEON_FOREST_TYPE_APPLE_FOREST,
         DUNGEON_FOREST_TYPE_BERRY_FOREST,
         DUNGEON_FOREST_TYPE_EGG_FOREST,
+        DUNGEON_FOREST_TYPE_MUSHROOM_FOREST,
         NUM_DUNGEON_FOREST_TYPES
+    };
+
+    enum {
+        NB_GRASS = 0,
+        NB_1x1_TREE,
+        NB_2x2_TREE,
+        NB_2x2_TREE_ALT,
+        NUM_NBS,
+    };
+
+    typedef struct {
+        map_footer_t *footer; // A special pattern that only occurs in this dungeon
+        void (*event_init)(dungeon_generator2 *);
+        u8 min_num_patterns;
+        u8 max_num_patterns; // How often this pattern can occur
+        u16 deco_rate; // in 1/256
+        u16 alternative_tree_rate; // in 1/256
+        u8 has_alternative_trees;
+        u8 x_consistent_decoration; // If true, the decoration idx is always the same across two columns, this allows for larger patterns
+        void (*fill_pattern_in_map)(u8 *map, int x, int y, int w, int h, dungeon_generator2 *dg2);
+    } dungeon_forest_t;
+
+    dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES];
+
+    enum {
+        BLOCK_NORMAL,
+        BLOCK_WITH_DECO,
     };
 
     /**

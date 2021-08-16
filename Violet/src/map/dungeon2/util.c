@@ -8,9 +8,11 @@
 #include "vars.h"
 #include "constants/person_behaviours.h"
 #include "constants/person_script_stds.h"
+#include "constants/overworld/misc.h"
 #include "overworld/sprite.h"
 #include "flags.h"
 #include "debug.h"
+#include "hash.h"
 
 bool dungeon2_find_empty_space(int *space_x, int *space_y, u8 *center_node, int nodes[][2], int width, int height, u8 *map, dungeon_generator2 *dg2) {
     // For each node, see if we can expand the window arround it
@@ -61,9 +63,16 @@ extern u8 ow_script_dungeon_trainer_0[];
 extern u8 ow_script_dungeon_trainer_1[];
 extern u8 ow_script_dungeon_trainer_2[];
 extern u8 ow_script_dungeon_trainer_3[];
+extern u8 ow_script_dungeon_trainer_4[];
+extern u8 ow_script_dungeon_trainer_5[];
+extern u8 ow_script_dungeon_trainer_6[];
+extern u8 ow_script_dungeon_trainer_7[];
 
-static u8 *dungeon2_trainer_scripts[4] = {
-    ow_script_dungeon_trainer_0, ow_script_dungeon_trainer_1, ow_script_dungeon_trainer_2, ow_script_dungeon_trainer_3
+static u8 *dungeon2_trainer_scripts[4][2] = {
+    {ow_script_dungeon_trainer_0, ow_script_dungeon_trainer_4}, 
+    {ow_script_dungeon_trainer_1, ow_script_dungeon_trainer_5}, 
+    {ow_script_dungeon_trainer_2, ow_script_dungeon_trainer_6},
+    {ow_script_dungeon_trainer_3, ow_script_dungeon_trainer_7},
 };
 
 void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(dungeon_generator2*)) {
@@ -106,7 +115,7 @@ void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(
             fmem.dpersons[num_persons].overworld_index = (u8)(41 + (num_trainers & 1));
             fmem.dpersons[num_persons].trainer_type_and_strength_flag = 1;
             fmem.dpersons[num_persons].alert_radius = 4;
-            fmem.dpersons[num_persons].script = dungeon2_trainer_scripts[num_trainers];
+            fmem.dpersons[num_persons].script = dungeon2_trainer_scripts[num_trainers][dungeon2_rnd_16(dg2) % ARRAY_COUNT(dungeon2_trainer_scripts[0])];
             fmem.dpersons[num_persons].behavior = BEHAVIOUR_LOOK_AROUND;
             num_trainers_remaining--;
             num_trainers++;
@@ -120,6 +129,24 @@ void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(
         }
     }
     fmem.dmapevents.person_cnt = num_persons;
+}
+
+static u32 dungeon_mushroom_rates[] = {
+    [MUSHROOM_TYPE_TINY_MUSHROOM] = 2, [MUSHROOM_TYPE_LARGE_MUSHROOM] = 1,
+};
+
+u16 dungeon_mushroom_get_type(u16 mushroom_idx) {
+    int idx = mushroom_idx - DUNGEON_MISC_IDX_START;
+    if (checkflag((u16)(DG2_FLAG_PATTERN + idx)))
+        return MUSHROOM_TYPE_PLUCKED;
+    u32 seq[1] = {mushroom_idx};
+    fmem.gp_rng = hash_sequence(seq, ARRAY_COUNT(seq), cmem.dg2.initial_seed);
+    dprintf("GP rnd seeded with mushroom dungeon hash 0x%x\n", fmem.gp_rng);
+    return (u8)choice(dungeon_mushroom_rates, ARRAY_COUNT(dungeon_mushroom_rates), gp_rnd16);
+}
+
+void dungeon_mushroom_set_flag(u16 mushroom_idx) {
+    setflag((u16)(DG2_FLAG_PATTERN + mushroom_idx - DUNGEON_MISC_IDX_START));
 }
 
 void dungeon2_reset_flags() {

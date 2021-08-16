@@ -14,6 +14,7 @@
 #include "music.h"
 #include "constants/species.h"
 #include "constants/overworld/misc.h"
+#include "dungeon/dungeon2.h"
 
 static gfx_frame gfx_animation_mushroom_idle[] = {
 	{.data = 0, .duration = 0}, {.data = 0, .duration = 32}, {.data = 1, .duration = 32}, {.data = GFX_ANIM_JUMP, .duration = 0},
@@ -230,6 +231,8 @@ u16 special_mushroom_get_stage() {
 static u32 mushroom_rates[] = {[MUSHROOM_TYPE_LARGE_MUSHROOM] = 1, [MUSHROOM_TYPE_TINY_MUSHROOM] = 5};
 
 u16 mushroom_get_stage(u16 mushroom_idx) {
+    if (mushroom_idx >= DUNGEON_MISC_IDX_START)
+        return dungeon_mushroom_get_type(mushroom_idx);
     if (gp_flag_get(mushroom_idx, cmem.mushroom_flags))
         return MUSHROOM_TYPE_PLUCKED;
     u32 seq[1] = {mushroom_idx};
@@ -240,7 +243,10 @@ u16 mushroom_get_stage(u16 mushroom_idx) {
 void mushroom_pluck() {
     map_event_person *p = map_get_person((u8)(*var_access(LASTTALKED)), save1->map, save1->bank);
     u16 mushroom_idx = p->value;
-    gp_flag_set(mushroom_idx, cmem.mushroom_flags);
+    if (mushroom_idx >= DUNGEON_MISC_IDX_START)
+        dungeon_mushroom_set_flag(mushroom_idx);
+    else
+        gp_flag_set(mushroom_idx, cmem.mushroom_flags);
 }
 
 u16 special_shell_get_stage() {
