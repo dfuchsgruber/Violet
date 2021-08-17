@@ -35,6 +35,7 @@ extern "C" {
 #define DG2_ROCK 4
 #define DG2_2x2_TREE 8
 #define DG2_ALTERNATIVE_TILE 16
+#define DG2_ALTERNATIVE_TILE_PROHIBITED 32
     
     typedef struct{
         // Initial seed of the dg2

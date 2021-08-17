@@ -54,7 +54,7 @@ void cloud_enter() {
 		warp_set_last_outdoor_map(save1->bank, save1->map, -1, (s16)(pos.coordinates.x - 7),
 			(s16)(pos.coordinates.y - 7));
 	}
-	warp_last_map_set_on_current_position(save1->bank, save1->map, warp_idx);
+	warp_last_map_set_on_current_position(warp_idx, save1->bank, save1->map, warp_idx);
     warp_setup_muted_callback();
     warp_enable_flags();
     clearflag(TRANS_PALETTE_FETCH);

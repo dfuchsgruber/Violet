@@ -175,7 +175,12 @@ void dungeon2_print_map(u8 *map, dungeon_generator2 *dg2) {
         int x;
         for (x = 0; x < dg2->width; x++) {
           if (map[y * dg2->width + x] == DG2_SPACE) charmap[x] = ' ';
-          else if (map[y * dg2->width + x] == DG2_WALL) charmap[x] = '#';
+          else if (map[y * dg2->width + x] == DG2_WALL){
+            if (map[y * dg2->width + x] & DG2_ALTERNATIVE_TILE)
+              charmap[x] = 'A';
+            else
+              charmap[x] = '#';
+          }
           else charmap[x] = 'R';
           for (int i = 0; i < dg2->nodes; i++) {
                       if (x == nodes[i][0] && y == nodes [i][1])

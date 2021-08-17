@@ -11,6 +11,8 @@
 #include "types.h"
 #include "map/header.h"
 
+#define DG2_DUSK_FOREST_CABIN_MAP 0
+
 #define DTYPE_FOREST_WILD_POKEMON_FREQUENCY 0x20
 
     #define DG2_FOREST_WIDTH 56

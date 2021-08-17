@@ -72,8 +72,6 @@ ow_script_dungeon2_enter_forest_field:
 	callasm overworld_npc_gfx_animation_new
 	pause 32
     callasm dungeon2_seed_init
-    setvar DUNGEON_TYPE DTYPE_FOREST
-    setvar DUNGEON_STEPS 0
     callasm dungeon_map_entrance_set_flag
     callasm dungeon2_enter_forest
     waitstate

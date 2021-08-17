@@ -130,6 +130,12 @@ static void dungeon_pattern_fill_egg_forest(u8 *map, int x, int y, int w, int h,
     dungeon2_fill_rectangle(map, x, y + h, w, 1, DG2_SPACE, dg2);
 }
 
+static void dungeon_pattern_fill_dusk_forest(u8 *map, int x, int y, int w, int h, dungeon_generator2 *dg2) {
+    dungeon_pattern_fill_with_1x1_border_without_corners(map, x, y, w, h, dg2);
+    dungeon2_fill_rectangle(map, x + 2, y, w - 6, 2, DG2_WALL | DG2_ALTERNATIVE_TILE_PROHIBITED, dg2);
+    dungeon2_fill_rectangle(map, x + 6, y, 2, 2, DG2_WALL | DG2_ALTERNATIVE_TILE, dg2);
+}
+
 static void dungeon_pattern_fill_none(u8 *map, int x, int y, int w, int h, dungeon_generator2 *dg2) {
     (void)map; (void)x; (void)y; (void)w; (void)h; (void)dg2;
 }
@@ -235,6 +241,23 @@ static void dungeon_mushroom_forest_initialize_events(dungeon_generator2 *dg2) {
     fmem.dmapevents.person_cnt = num_persons;
 }
 
+static void dungeon_dusk_forest_initialize_events(dungeon_generator2 *dg2) {
+    u8 num_warps = fmem.dmapevents.warp_cnt;
+    int nodes[dg2->nodes][2];
+    dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
+    int num_patterns = dungeon2_get_forest_num_patterns(dg2);
+    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_warps <= ARRAY_COUNT(fmem.dwarps); j++) {
+        fmem.dwarps[num_warps].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] - 1);
+        fmem.dwarps[num_warps].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + 1);
+        fmem.dwarps[num_warps].target_warp_id = 0;
+        fmem.dwarps[num_warps].target_map = DG2_DUSK_FOREST_CABIN_MAP;
+        fmem.dwarps[num_warps].target_bank = DG2_BANK;
+        dprintf("Created warp at %d.%d\n", fmem.dwarps[num_warps].x, fmem.dwarps[num_warps].y);
+        num_warps++;
+    }
+    fmem.dmapevents.warp_cnt = num_warps;
+}
+
 dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
     [DUNGEON_FOREST_TYPE_NORMAL] = {
         .footer = &map_footer_dungeon_forest_normal,
@@ -299,8 +322,8 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .max_num_patterns = 1,
         .deco_rate = 80,
         .alternative_tree_rate = 32,
-        .event_init = dungeon_mushroom_forest_initialize_events,
-        .fill_pattern_in_map = dungeon_pattern_fill_with_1x1_border_without_corners,
+        .event_init = dungeon_dusk_forest_initialize_events,
+        .fill_pattern_in_map = dungeon_pattern_fill_dusk_forest,
         .has_alternative_trees = true,
         .x_consistent_decoration = true,
         .y_consistent_decoration = true,
@@ -327,6 +350,7 @@ map_header_t *dungeon2_init_header_forest(dungeon_generator2 *dg2) {
 map_event_header_t *dungeon2_init_events_forest(dungeon_generator2 *dg2){
     dungeon2_initialize_std_events(dg2, dungeon_forest_pick_item);
     dungeon_forest_types[dungeon2_get_forest_type(dg2)].event_init(dg2);
+    dprintf("forest hast %d warps\n", fmem.dmapevents.warp_cnt);
     return &(fmem.dmapevents);
 }
 
@@ -575,6 +599,7 @@ void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2){
     map_footer_t *pattern = dungeon2_get_forest_type_pattern(dg2);
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
 
+
     // Fill map to fit the pattern
     for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns); j++) {
         int w = (int)pattern->width;
@@ -590,7 +615,9 @@ void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2){
             // Always compute 2x2 patches for tree placement
             if (map[y * dg2->width + x] & DG2_WALL && map[y * dg2->width + x + 1] & DG2_WALL &&
                 map[(y + 1) * dg2->width + x] & DG2_WALL && map[(y + 1) * dg2->width + x + 1] & DG2_WALL) {
-                u8 mask = ((dungeon2_rnd_16(dg2) % 256) < forest_type->alternative_tree_rate) && forest_type->has_alternative_trees ? 
+                u8 mask = ((dungeon2_rnd_16(dg2) % 256) < forest_type->alternative_tree_rate) && forest_type->has_alternative_trees &&
+                    !(map[y * dg2->width + x] & DG2_ALTERNATIVE_TILE_PROHIBITED || map[y * dg2->width + x + 1] & DG2_ALTERNATIVE_TILE_PROHIBITED
+                    || map[(y + 1) * dg2->width + x] & DG2_ALTERNATIVE_TILE_PROHIBITED || map[(y + 1) * dg2->width + x + 1] & DG2_ALTERNATIVE_TILE_PROHIBITED)? 
                     DG2_2x2_TREE | DG2_ALTERNATIVE_TILE : DG2_2x2_TREE;
                 map[y * dg2->width + x] |= mask;
                 map[y * dg2->width + x + 1] |= mask;
@@ -653,7 +680,6 @@ void dungeon2_init_forest(){
     }
 
     fmem.dmap_header_initialized = 1;
-    dungeon2_reset_flags();
 
     dungeon_generator2 *dg2 = &(cmem.dg2);
     dungeon2_forest_init_state(dg2);
@@ -665,31 +691,33 @@ void dungeon2_init_forest(){
 }
 
 void dungeon2_enter_forest() {
-  // Get the warp node (first node in the forest)
-  dungeon_generator2 *dg2 = &(cmem.dg2);
-  dungeon2_forest_init_state(dg2);
-  int nodes[dg2->nodes][2];
-  dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
-  s16 x = (s16)(nodes[0][0]);
-  s16 y = (s16)(nodes[0][1]); 
 
+    *var_access(DUNGEON_TYPE) = DTYPE_FOREST;
+    *var_access(VAR_DUNGEON_TYPE_TO_COMPUTE) = DTYPE_FOREST;
+    *var_access(DUNGEON_STEPS) = 0;
+    dungeon2_reset_flags();
 
-  warp_setup(DG2_BANK, DG2_MAP, 0xFF, x, y);
-  warp_update_last_outdoor_map(save1->x_cam_orig, save1->y_cam_orig);
-  warp_last_map_set(0, save1->bank, save1->map, 0xFF, (s16)(save1->x_cam_orig - 7),
-		  (s16)(save1->y_cam_orig - 7));
-  warp_setup_callbacks();
-  warp_enable_flags();
+    // Get the warp node (first node in the forest)
+    dungeon_generator2 *dg2 = &(cmem.dg2);
+    dungeon2_forest_init_state(dg2);
+    int nodes[dg2->nodes][2];
+    dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
+    s16 x = (s16)(nodes[0][0]);
+    s16 y = (s16)(nodes[0][1]); 
 
-  // Setup warpback
-  player_get_coordinates(&(dg2->previous_position.x), &(dg2->previous_position.y));
-  dg2->previous_position.x = (s16)(dg2->previous_position.x - 7);
-  dg2->previous_position.y = (s16)(dg2->previous_position.y - 7);
-  dg2->previous_bank = save1->bank;
-  dg2->previous_map = save1->map;
-  dprintf("Saved player @ (%d, %d) on %d.%d\n", dg2->previous_position.x, dg2->previous_position.y,
-      dg2->previous_bank, dg2->previous_map);
+    warp_setup(DG2_BANK, DG2_MAP, 0xFF, x, y);
+    warp_update_last_outdoor_map(save1->x_cam_orig, save1->y_cam_orig);
+    warp_last_map_set(0, save1->bank, save1->map, 0xFF, (s16)(save1->x_cam_orig - 7),
+            (s16)(save1->y_cam_orig - 7));
+    warp_setup_callbacks();
+    warp_enable_flags();
 
-  transparency_off();
-
+    // Setup warpback
+    player_get_coordinates(&(dg2->previous_position.x), &(dg2->previous_position.y));
+    dg2->previous_position.x = (s16)(dg2->previous_position.x - 7);
+    dg2->previous_position.y = (s16)(dg2->previous_position.y - 7);
+    dg2->previous_bank = save1->bank;
+    dg2->previous_map = save1->map;
+    dprintf("Saved player @ (%d, %d) on %d.%d\n", dg2->previous_position.x, dg2->previous_position.y,
+        dg2->previous_bank, dg2->previous_map);
 }

@@ -117,6 +117,12 @@ extern u8 ow_script_fall_warp[];
 void warp_setup_by_event_and_position(map_header_t *header, s8 warp_idx, position_t *position);
 
 /**
+ * Sets the target warp map number to a dynamic idx (for escalators etc)
+ * @param unused unused
+ **/
+void warp_set_dynamic_map_idx(u8 unused);
+
+/**
  * Gets the weather currently present
  * @return The current weather
  */
@@ -171,11 +177,12 @@ void warp_last_map_set(int unused, u8 bank, u8 map, u8 exit, s16 x, s16 y);
 
 /**
  * Sets the last map to a map and the current player coordinates.
+ * @param unused unused
  * @param bank the bank to set
  * @param map the map to set
  * @param warp_idx the warp index to set
  */
-void warp_last_map_set_on_current_position(u8 bank, u8 map, s8 warp_idx);
+void warp_last_map_set_on_current_position(s8 unused, u8 bank, u8 map, s8 warp_idx);
 
 /**
  * Updates the last outdoor map to the current map if and only if the current map is an outdoor

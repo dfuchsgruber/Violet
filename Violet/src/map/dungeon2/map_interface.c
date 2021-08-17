@@ -34,7 +34,6 @@ void dungeon2_compute(int dungeon_type){
 
 void dungeon2_init() {
     int dungeon_type = dungeon_get_type();
-    // dprintf("Initializing header structures for dungeon type %d\n", dungeon_type);
     switch(dungeon_type) {
       case DTYPE_FOREST: {
         dungeon2_init_forest();

@@ -82,15 +82,21 @@ void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(
     cpuset(&zero, &(fmem.dpersons), CPUSET_FILL | CPUSET_HALFWORD |
         CPUSET_HALFWORD_SIZE(DMAP_PERSONS * sizeof(map_event_person)));
 
-    fmem.dmapevents.warp_cnt = 0;
     fmem.dmapevents.script_cnt = 0;
     fmem.dmapevents.signpost_cnt = 0;
     fmem.dmapevents.persons = fmem.dpersons;
+    fmem.dmapevents.warps = fmem.dwarps;
 
     int nodes[dg2->nodes][2];
     dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
 
     u8 num_persons = 0;
+    u8 num_warps = 0;
+
+    // Initialize the first warp to the entrance, i.e. node 0
+    fmem.dwarps[num_warps].x = (s16)(nodes[DG2_NODE_PLAYER_WARP][0]);
+    fmem.dwarps[num_warps].y = (s16)(nodes[DG2_NODE_PLAYER_WARP][1]);
+    num_warps++;
 
     // Initialize the static encounter
     fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_STATIC_ENCOUNTER][0]);
@@ -129,6 +135,7 @@ void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(
         }
     }
     fmem.dmapevents.person_cnt = num_persons;
+    fmem.dmapevents.warp_cnt = num_warps;
 }
 
 static u32 dungeon_mushroom_rates[] = {

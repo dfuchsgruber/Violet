@@ -182,7 +182,7 @@ typedef struct custom_memory {
 } custom_memory;
 
 #define DMAP_PERSONS 25
-#define DMAP_WARPS 1
+#define DMAP_WARPS 8
 
 typedef struct {
     int _hook_tmp_; // This variable is used to save r0 values while trying to hook something that uses r0-r3 already
