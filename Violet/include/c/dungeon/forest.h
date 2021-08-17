@@ -51,6 +51,7 @@
         u8 has_alternative_trees;
         u8 x_consistent_decoration; // If true, the decoration idx is always the same across two columns, this allows for larger patterns
         u8 y_consistent_decoration; // If true, the decoratino idx is always the same across two rows, this allows for larger patterns
+        u8 map_weather;
         void (*fill_pattern_in_map)(u8 *map, int x, int y, int w, int h, dungeon_generator2 *dg2);
     } dungeon_forest_t;
 

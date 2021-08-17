@@ -30,6 +30,7 @@
 #include "dungeon/forest.h"
 #include "flags.h"
 #include "constants/person_script_stds.h"
+#include "constants/map_weathers.h"
 
 extern tileset maptileset0;
 extern tileset maptileset_dungeon_forest;
@@ -68,22 +69,6 @@ static map_footer_t *dungeon2_get_forest_type_pattern(dungeon_generator2 *dg2) {
 static int dungeon2_get_forest_num_patterns(dungeon_generator2 *dg2) {
     dungeon_forest_t *type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
     return MIN(DG2_MAX_NUM_PATTERNS, type->min_num_patterns + (dungeon2_rnd_16(dg2) % (type->max_num_patterns - type->min_num_patterns + 1)));
-}
-
-map_header_t *dungeon2_init_header_forest(dungeon_generator2 *dg2) {
-    dprintf("D2 header init\n");
-    fmem.dmap_header_initialized = 1;
-    fmem.dmapheader.levelscripts = dungeon2_lscr;
-    fmem.dmapheader.connections = &dungeon2_connections;
-    fmem.dmapheader.music = 0x14b;
-    fmem.dmapheader.map_namespace = mapheader_virtual.map_namespace;
-    fmem.dmapheader.flash_type = 0;
-    fmem.dmapheader.weather = MAP_WEATHER_INSIDE;
-    fmem.dmapheader.type = MAP_TYPE_INSIDE;
-    fmem.dmapheader.show_name = 0;
-    fmem.dmapheader.battle_style = 0;
-    fmem.dmapheader.events = dungeon2_init_events_forest(dg2);
-    return &(fmem.dmapheader);
 }
 
 map_footer_t *dungeon2_init_footer_forest(dungeon_generator2 *dg2){
@@ -260,6 +245,7 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .event_init = dungeon_forest_normal_initialize_events,
         .fill_pattern_in_map = dungeon_pattern_fill_none,
         .has_alternative_trees = false,
+        .map_weather = MAP_WEATHER_CLOUDY,
     },
     [DUNGEON_FOREST_TYPE_APPLE_FOREST] = {
         .footer = &map_footer_dungeon_forest_apple_tree,
@@ -270,6 +256,7 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .event_init = dungeon_forest_apple_forest_initialize_events,
         .fill_pattern_in_map = dungeon_pattern_fill_with_1x1_border_without_corners,
         .has_alternative_trees = true,
+        .map_weather = MAP_WEATHER_OUTSIDE,
     },
     [DUNGEON_FOREST_TYPE_BERRY_FOREST] = {
         .footer = &map_footer_dungeon_forest_berry_spot,
@@ -281,6 +268,7 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .fill_pattern_in_map = dungeon_pattern_fill_berry_forest,
         .has_alternative_trees = true,
         .x_consistent_decoration = true,
+        .map_weather = MAP_WEATHER_OUTSIDE,
     },
     [DUNGEON_FOREST_TYPE_EGG_FOREST] = {
         .footer = &map_footer_dungeon_forest_nest,
@@ -292,6 +280,7 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .fill_pattern_in_map = dungeon_pattern_fill_egg_forest,
         .has_alternative_trees = true,
         .x_consistent_decoration = true,
+        .map_weather = MAP_WEATHER_OUTSIDE,
     },
     [DUNGEON_FOREST_TYPE_MUSHROOM_FOREST] = {
         .footer = &map_footer_dungeon_forest_mushrooms,
@@ -302,6 +291,7 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .event_init = dungeon_mushroom_forest_initialize_events,
         .fill_pattern_in_map = dungeon_pattern_fill_with_1x1_border_without_corners,
         .has_alternative_trees = true,
+        .map_weather = MAP_WEATHER_CLOUDY,
     },
     [DUNGEON_FOREST_TYPE_DUSK_FOREST] = {
         .footer = &map_footer_dungeon_forest_dusk,
@@ -314,8 +304,25 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .has_alternative_trees = true,
         .x_consistent_decoration = true,
         .y_consistent_decoration = true,
+        .map_weather = MAP_WEATHER_CLOUDY,
     },
 };
+
+map_header_t *dungeon2_init_header_forest(dungeon_generator2 *dg2) {
+    dprintf("D2 header init\n");
+    fmem.dmap_header_initialized = 1;
+    fmem.dmapheader.levelscripts = dungeon2_lscr;
+    fmem.dmapheader.connections = &dungeon2_connections;
+    fmem.dmapheader.music = 0x14b;
+    fmem.dmapheader.map_namespace = mapheader_virtual.map_namespace;
+    fmem.dmapheader.flash_type = 0;
+    fmem.dmapheader.weather = dungeon_forest_types[dungeon2_get_forest_type(dg2)].map_weather;
+    fmem.dmapheader.type = MAP_TYPE_INSIDE;
+    fmem.dmapheader.show_name = 0;
+    fmem.dmapheader.battle_style = 0;
+    fmem.dmapheader.events = dungeon2_init_events_forest(dg2);
+    return &(fmem.dmapheader);
+}
 
 map_event_header_t *dungeon2_init_events_forest(dungeon_generator2 *dg2){
     dungeon2_initialize_std_events(dg2, dungeon_forest_pick_item);
@@ -333,24 +340,24 @@ static u16 blocks_alternative_tree[NUM_NBS][5][2][2] = { // [block_type_below][d
     },
     [NB_1x1_TREE] = {
         [0] = {{0x2b8 | BLOCK_SOLID, 0x2b9 | BLOCK_SOLID}, {0x2a4 | BLOCK_SOLID, 0x2a5 | BLOCK_SOLID}},
-        [1] = {{0x2e8 | BLOCK_SOLID, 0x2e9 | BLOCK_SOLID}, {0x2a4 | BLOCK_SOLID, 0x2a5 | BLOCK_SOLID}},
-        [2] = {{0x2ea | BLOCK_SOLID, 0x2eb | BLOCK_SOLID}, {0x2a4 | BLOCK_SOLID, 0x2a5 | BLOCK_SOLID}},
-        [3] = {{0x2ec | BLOCK_SOLID, 0x2ed | BLOCK_SOLID}, {0x2a4 | BLOCK_SOLID, 0x2a5 | BLOCK_SOLID}},
-        [4] = {{0x2ee | BLOCK_SOLID, 0x2ef | BLOCK_SOLID}, {0x2a4 | BLOCK_SOLID, 0x2a5 | BLOCK_SOLID}},
+        [1] = {{0x2e8 | BLOCK_SOLID, 0x2e9 | BLOCK_SOLID}, {0x320 | BLOCK_SOLID, 0x321 | BLOCK_SOLID}},
+        [2] = {{0x2ea | BLOCK_SOLID, 0x2eb | BLOCK_SOLID}, {0x322 | BLOCK_SOLID, 0x323 | BLOCK_SOLID}},
+        [3] = {{0x2ec | BLOCK_SOLID, 0x2ed | BLOCK_SOLID}, {0x324 | BLOCK_SOLID, 0x325 | BLOCK_SOLID}},
+        [4] = {{0x2ee | BLOCK_SOLID, 0x2ef | BLOCK_SOLID}, {0x326 | BLOCK_SOLID, 0x327 | BLOCK_SOLID}},
     },
     [NB_2x2_TREE] = {
         [0] = {{0x2b8 | BLOCK_SOLID, 0x2b9 | BLOCK_SOLID}, {0x2ae | BLOCK_SOLID, 0x2af | BLOCK_SOLID}},
-        [1] = {{0x2e8 | BLOCK_SOLID, 0x2e9 | BLOCK_SOLID}, {0x2ae | BLOCK_SOLID, 0x2af | BLOCK_SOLID}},
-        [2] = {{0x2ea | BLOCK_SOLID, 0x2eb | BLOCK_SOLID}, {0x2ae | BLOCK_SOLID, 0x2af | BLOCK_SOLID}},
-        [3] = {{0x2ec | BLOCK_SOLID, 0x2ed | BLOCK_SOLID}, {0x2ae | BLOCK_SOLID, 0x2af | BLOCK_SOLID}},
-        [4] = {{0x2ee | BLOCK_SOLID, 0x2ef | BLOCK_SOLID}, {0x2ae | BLOCK_SOLID, 0x2af | BLOCK_SOLID}},
+        [1] = {{0x2e8 | BLOCK_SOLID, 0x2e9 | BLOCK_SOLID}, {0x308 | BLOCK_SOLID, 0x309 | BLOCK_SOLID}},
+        [2] = {{0x2ea | BLOCK_SOLID, 0x2eb | BLOCK_SOLID}, {0x30a | BLOCK_SOLID, 0x30b | BLOCK_SOLID}},
+        [3] = {{0x2ec | BLOCK_SOLID, 0x2ed | BLOCK_SOLID}, {0x30c | BLOCK_SOLID, 0x30d | BLOCK_SOLID}},
+        [4] = {{0x2ee | BLOCK_SOLID, 0x2ef | BLOCK_SOLID}, {0x30e | BLOCK_SOLID, 0x30f | BLOCK_SOLID}},
     },
     [NB_2x2_TREE_ALT] = {
         [0] = {{0x2b8 | BLOCK_SOLID, 0x2b9 | BLOCK_SOLID}, {0x2c8 | BLOCK_SOLID, 0x2c9 | BLOCK_SOLID}},
-        [1] = {{0x2e8 | BLOCK_SOLID, 0x2e9 | BLOCK_SOLID}, {0x2c8 | BLOCK_SOLID, 0x2c9 | BLOCK_SOLID}},
-        [2] = {{0x2ea | BLOCK_SOLID, 0x2eb | BLOCK_SOLID}, {0x2c8 | BLOCK_SOLID, 0x2c9 | BLOCK_SOLID}},
-        [3] = {{0x2ec | BLOCK_SOLID, 0x2ed | BLOCK_SOLID}, {0x2c8 | BLOCK_SOLID, 0x2c9 | BLOCK_SOLID}},
-        [4] = {{0x2ee | BLOCK_SOLID, 0x2ef | BLOCK_SOLID}, {0x2c8 | BLOCK_SOLID, 0x2c9 | BLOCK_SOLID}},
+        [1] = {{0x2e8 | BLOCK_SOLID, 0x2e9 | BLOCK_SOLID}, {0x338 | BLOCK_SOLID, 0x339 | BLOCK_SOLID}},
+        [2] = {{0x2ea | BLOCK_SOLID, 0x2eb | BLOCK_SOLID}, {0x33a | BLOCK_SOLID, 0x33b | BLOCK_SOLID}},
+        [3] = {{0x2ec | BLOCK_SOLID, 0x2ed | BLOCK_SOLID}, {0x33c | BLOCK_SOLID, 0x33d | BLOCK_SOLID}},
+        [4] = {{0x2ee | BLOCK_SOLID, 0x2ef | BLOCK_SOLID}, {0x33e | BLOCK_SOLID, 0x33f | BLOCK_SOLID}},
     },
 };
 
@@ -364,24 +371,24 @@ static u16 blocks_1x1_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoratio
     },
     [NB_1x1_TREE] = {
         [0] = {{0x29b | BLOCK_SOLID, 0x29b | BLOCK_SOLID}, {0x29b | BLOCK_SOLID, 0x29b | BLOCK_SOLID}},
-        [1] = {{0x29b | BLOCK_SOLID, 0x29b | BLOCK_SOLID}, {0x29b | BLOCK_SOLID, 0x29b | BLOCK_SOLID}},
-        [2] = {{0x29b | BLOCK_SOLID, 0x29b | BLOCK_SOLID}, {0x29b | BLOCK_SOLID, 0x29b | BLOCK_SOLID}},
-        [3] = {{0x29b | BLOCK_SOLID, 0x29b | BLOCK_SOLID}, {0x29b | BLOCK_SOLID, 0x29b | BLOCK_SOLID}},
-        [4] = {{0x29b | BLOCK_SOLID, 0x29b | BLOCK_SOLID}, {0x29b | BLOCK_SOLID, 0x29b | BLOCK_SOLID}},
+        [1] = {{0x318 | BLOCK_SOLID, 0x319 | BLOCK_SOLID}, {0x318 | BLOCK_SOLID, 0x319 | BLOCK_SOLID}},
+        [2] = {{0x31a | BLOCK_SOLID, 0x31b | BLOCK_SOLID}, {0x31a | BLOCK_SOLID, 0x31b | BLOCK_SOLID}},
+        [3] = {{0x31c | BLOCK_SOLID, 0x31d | BLOCK_SOLID}, {0x31c | BLOCK_SOLID, 0x31d | BLOCK_SOLID}},
+        [4] = {{0x31e | BLOCK_SOLID, 0x31f | BLOCK_SOLID}, {0x31e | BLOCK_SOLID, 0x31f | BLOCK_SOLID}},
     },
     [NB_2x2_TREE] = {
         [0] = {{0x2aa | BLOCK_SOLID, 0x2ab | BLOCK_SOLID}, {0x2aa | BLOCK_SOLID, 0x2ab | BLOCK_SOLID}},
-        [1] = {{0x2aa | BLOCK_SOLID, 0x2ab | BLOCK_SOLID}, {0x2aa | BLOCK_SOLID, 0x2ab | BLOCK_SOLID}},
-        [2] = {{0x2aa | BLOCK_SOLID, 0x2ab | BLOCK_SOLID}, {0x2aa | BLOCK_SOLID, 0x2ab | BLOCK_SOLID}},
-        [3] = {{0x2aa | BLOCK_SOLID, 0x2ab | BLOCK_SOLID}, {0x2aa | BLOCK_SOLID, 0x2ab | BLOCK_SOLID}},
-        [4] = {{0x2aa | BLOCK_SOLID, 0x2ab | BLOCK_SOLID}, {0x2aa | BLOCK_SOLID, 0x2ab | BLOCK_SOLID}},
+        [1] = {{0x300 | BLOCK_SOLID, 0x301 | BLOCK_SOLID}, {0x300 | BLOCK_SOLID, 0x301 | BLOCK_SOLID}},
+        [2] = {{0x302 | BLOCK_SOLID, 0x303 | BLOCK_SOLID}, {0x302 | BLOCK_SOLID, 0x303 | BLOCK_SOLID}},
+        [3] = {{0x304 | BLOCK_SOLID, 0x305 | BLOCK_SOLID}, {0x304 | BLOCK_SOLID, 0x305 | BLOCK_SOLID}},
+        [4] = {{0x306 | BLOCK_SOLID, 0x307 | BLOCK_SOLID}, {0x306 | BLOCK_SOLID, 0x307 | BLOCK_SOLID}},
     },
     [NB_2x2_TREE_ALT] = {
         [0] = {{0x2ca | BLOCK_SOLID, 0x2cb | BLOCK_SOLID}, {0x2ca | BLOCK_SOLID, 0x2cb | BLOCK_SOLID}},
-        [1] = {{0x2ca | BLOCK_SOLID, 0x2cb | BLOCK_SOLID}, {0x2ca | BLOCK_SOLID, 0x2cb | BLOCK_SOLID}},
-        [2] = {{0x2ca | BLOCK_SOLID, 0x2cb | BLOCK_SOLID}, {0x2ca | BLOCK_SOLID, 0x2cb | BLOCK_SOLID}},
-        [3] = {{0x2ca | BLOCK_SOLID, 0x2cb | BLOCK_SOLID}, {0x2ca | BLOCK_SOLID, 0x2cb | BLOCK_SOLID}},
-        [4] = {{0x2ca | BLOCK_SOLID, 0x2cb | BLOCK_SOLID}, {0x2ca | BLOCK_SOLID, 0x2cb | BLOCK_SOLID}},
+        [1] = {{0x330 | BLOCK_SOLID, 0x331 | BLOCK_SOLID}, {0x330 | BLOCK_SOLID, 0x331 | BLOCK_SOLID}},
+        [2] = {{0x332 | BLOCK_SOLID, 0x333 | BLOCK_SOLID}, {0x332 | BLOCK_SOLID, 0x333 | BLOCK_SOLID}},
+        [3] = {{0x334 | BLOCK_SOLID, 0x335 | BLOCK_SOLID}, {0x334 | BLOCK_SOLID, 0x335 | BLOCK_SOLID}},
+        [4] = {{0x336 | BLOCK_SOLID, 0x337 | BLOCK_SOLID}, {0x336 | BLOCK_SOLID, 0x337 | BLOCK_SOLID}},
     }
 };
 
@@ -457,24 +464,24 @@ static u16 blocks_2x2_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoratio
     },
     [NB_1x1_TREE] = {
         [0] = {{0x298 | BLOCK_SOLID, 0x299 | BLOCK_SOLID}, {0x2a2 | BLOCK_SOLID, 0x2a3 | BLOCK_SOLID}},
-        [1] = {{0x2d0 | BLOCK_SOLID, 0x2d1 | BLOCK_SOLID}, {0x2a2 | BLOCK_SOLID, 0x2a3 | BLOCK_SOLID}},
-        [2] = {{0x2d2 | BLOCK_SOLID, 0x2d3 | BLOCK_SOLID}, {0x2a2 | BLOCK_SOLID, 0x2a3 | BLOCK_SOLID}},
-        [3] = {{0x2d4 | BLOCK_SOLID, 0x2d5 | BLOCK_SOLID}, {0x2a2 | BLOCK_SOLID, 0x2a3 | BLOCK_SOLID}},
-        [4] = {{0x2d6 | BLOCK_SOLID, 0x2d7 | BLOCK_SOLID}, {0x2a2 | BLOCK_SOLID, 0x2a3 | BLOCK_SOLID}},
+        [1] = {{0x2d0 | BLOCK_SOLID, 0x2d1 | BLOCK_SOLID}, {0x310 | BLOCK_SOLID, 0x311 | BLOCK_SOLID}},
+        [2] = {{0x2d2 | BLOCK_SOLID, 0x2d3 | BLOCK_SOLID}, {0x312 | BLOCK_SOLID, 0x313 | BLOCK_SOLID}},
+        [3] = {{0x2d4 | BLOCK_SOLID, 0x2d5 | BLOCK_SOLID}, {0x314 | BLOCK_SOLID, 0x315 | BLOCK_SOLID}},
+        [4] = {{0x2d6 | BLOCK_SOLID, 0x2d7 | BLOCK_SOLID}, {0x316 | BLOCK_SOLID, 0x317 | BLOCK_SOLID}},
     },
     [NB_2x2_TREE] = {
         [0] = {{0x298 | BLOCK_SOLID, 0x299 | BLOCK_SOLID}, {0x2a8 | BLOCK_SOLID, 0x2a9 | BLOCK_SOLID}},
-        [1] = {{0x2d0 | BLOCK_SOLID, 0x2d1 | BLOCK_SOLID}, {0x2a8 | BLOCK_SOLID, 0x2a9 | BLOCK_SOLID}},
-        [2] = {{0x2d2 | BLOCK_SOLID, 0x2d3 | BLOCK_SOLID}, {0x2a8 | BLOCK_SOLID, 0x2a9 | BLOCK_SOLID}},
-        [3] = {{0x2d4 | BLOCK_SOLID, 0x2d5 | BLOCK_SOLID}, {0x2a8 | BLOCK_SOLID, 0x2a9 | BLOCK_SOLID}},
-        [4] = {{0x2d6 | BLOCK_SOLID, 0x2d7 | BLOCK_SOLID}, {0x2a8 | BLOCK_SOLID, 0x2a9 | BLOCK_SOLID}},
+        [1] = {{0x2d0 | BLOCK_SOLID, 0x2d1 | BLOCK_SOLID}, {0x2f8 | BLOCK_SOLID, 0x2f9 | BLOCK_SOLID}},
+        [2] = {{0x2d2 | BLOCK_SOLID, 0x2d3 | BLOCK_SOLID}, {0x2fa | BLOCK_SOLID, 0x2fb | BLOCK_SOLID}},
+        [3] = {{0x2d4 | BLOCK_SOLID, 0x2d5 | BLOCK_SOLID}, {0x2fc | BLOCK_SOLID, 0x2fd | BLOCK_SOLID}},
+        [4] = {{0x2d6 | BLOCK_SOLID, 0x2d7 | BLOCK_SOLID}, {0x2fe | BLOCK_SOLID, 0x2ff | BLOCK_SOLID}},
     },
     [NB_2x2_TREE_ALT] = {
         [0] = {{0x298 | BLOCK_SOLID, 0x299 | BLOCK_SOLID}, {0x2ce | BLOCK_SOLID, 0x2cf | BLOCK_SOLID}},
-        [1] = {{0x2d0 | BLOCK_SOLID, 0x2d1 | BLOCK_SOLID}, {0x2ce | BLOCK_SOLID, 0x2cf | BLOCK_SOLID}},
-        [2] = {{0x2d2 | BLOCK_SOLID, 0x2d3 | BLOCK_SOLID}, {0x2ce | BLOCK_SOLID, 0x2cf | BLOCK_SOLID}},
-        [3] = {{0x2d4 | BLOCK_SOLID, 0x2d5 | BLOCK_SOLID}, {0x2ce | BLOCK_SOLID, 0x2cf | BLOCK_SOLID}},
-        [4] = {{0x2d6 | BLOCK_SOLID, 0x2d7 | BLOCK_SOLID}, {0x2ce | BLOCK_SOLID, 0x2cf | BLOCK_SOLID}},
+        [1] = {{0x2d0 | BLOCK_SOLID, 0x2d1 | BLOCK_SOLID}, {0x328 | BLOCK_SOLID, 0x329 | BLOCK_SOLID}},
+        [2] = {{0x2d2 | BLOCK_SOLID, 0x2d3 | BLOCK_SOLID}, {0x32a | BLOCK_SOLID, 0x32b | BLOCK_SOLID}},
+        [3] = {{0x2d4 | BLOCK_SOLID, 0x2d5 | BLOCK_SOLID}, {0x32c | BLOCK_SOLID, 0x32d | BLOCK_SOLID}},
+        [4] = {{0x2d6 | BLOCK_SOLID, 0x2d7 | BLOCK_SOLID}, {0x32e | BLOCK_SOLID, 0x32f | BLOCK_SOLID}},
     },
 };
 
