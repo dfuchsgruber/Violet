@@ -29,6 +29,7 @@
         DUNGEON_FOREST_TYPE_BERRY_FOREST,
         DUNGEON_FOREST_TYPE_EGG_FOREST,
         DUNGEON_FOREST_TYPE_MUSHROOM_FOREST,
+        DUNGEON_FOREST_TYPE_DUSK_FOREST,
         NUM_DUNGEON_FOREST_TYPES
     };
 
@@ -49,6 +50,7 @@
         u16 alternative_tree_rate; // in 1/256
         u8 has_alternative_trees;
         u8 x_consistent_decoration; // If true, the decoration idx is always the same across two columns, this allows for larger patterns
+        u8 y_consistent_decoration; // If true, the decoratino idx is always the same across two rows, this allows for larger patterns
         void (*fill_pattern_in_map)(u8 *map, int x, int y, int w, int h, dungeon_generator2 *dg2);
     } dungeon_forest_t;
 

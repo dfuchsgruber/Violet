@@ -1,0 +1,29 @@
+{
+	"data": {
+		"width": 1,
+		"height": 1,
+		"border_width": 1,
+		"border_height": 1,
+		"border": [
+			[
+				{
+					"block_idx": 0,
+					"level": 0
+				}
+			]
+		],
+		"blocks": [
+			[
+				{
+					"block_idx": 0,
+					"level": 0
+				}
+			]
+		],
+		"tileset_primary": "maptileset_ceometria_additional_blocks",
+		"tileset_secondary": "maptileset_dungeon_dusk_forest",
+		"field_1A": 0
+	},
+	"label": "map_footer_dungeon_forest_dusk",
+	"type": "footer"
+}

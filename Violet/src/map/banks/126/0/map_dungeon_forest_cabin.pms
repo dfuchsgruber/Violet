@@ -1,6 +1,6 @@
 {
 	"data": {
-		"footer": "map_footer_dungeon_forest_berry_spot",
+		"footer": "map_footer_dungeon_forest_dusk",
 		"events": {
 			"person_cnt": 0,
 			"warp_cnt": 0,
@@ -17,7 +17,7 @@
 			"connections": []
 		},
 		"music": 0,
-		"footer_idx": 163,
+		"footer_idx": 167,
 		"namespace": "MAP_PRISMANIA_EINK",
 		"flash_type": 0,
 		"weather": 0,

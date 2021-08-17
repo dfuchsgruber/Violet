@@ -38,6 +38,7 @@ extern map_footer_t map_footer_dungeon_forest_apple_tree;
 extern map_footer_t map_footer_dungeon_forest_berry_spot;
 extern map_footer_t map_footer_dungeon_forest_nest;
 extern map_footer_t map_footer_dungeon_forest_mushrooms;
+extern map_footer_t map_footer_dungeon_forest_dusk;
 
 u16 dungeon2_forest_borders[4] = {0x26, 0x27, 0x2c, 0x2d};
 
@@ -51,7 +52,8 @@ static u32 dungeon2_forest_type_rates[NUM_DUNGEON_FOREST_TYPES] = {
     [DUNGEON_FOREST_TYPE_APPLE_FOREST] = 3,
     [DUNGEON_FOREST_TYPE_BERRY_FOREST] = 2,
     [DUNGEON_FOREST_TYPE_EGG_FOREST] = 1,
-    [DUNGEON_FOREST_TYPE_MUSHROOM_FOREST] = 2000,
+    [DUNGEON_FOREST_TYPE_MUSHROOM_FOREST] = 2,
+    [DUNGEON_FOREST_TYPE_DUSK_FOREST] = 1000,
 };
 
 u8 dungeon2_get_forest_type(dungeon_generator2 *dg2) {
@@ -301,6 +303,18 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .fill_pattern_in_map = dungeon_pattern_fill_with_1x1_border_without_corners,
         .has_alternative_trees = true,
     },
+    [DUNGEON_FOREST_TYPE_DUSK_FOREST] = {
+        .footer = &map_footer_dungeon_forest_dusk,
+        .min_num_patterns = 1,
+        .max_num_patterns = 1,
+        .deco_rate = 80,
+        .alternative_tree_rate = 32,
+        .event_init = dungeon_mushroom_forest_initialize_events,
+        .fill_pattern_in_map = dungeon_pattern_fill_with_1x1_border_without_corners,
+        .has_alternative_trees = true,
+        .x_consistent_decoration = true,
+        .y_consistent_decoration = true,
+    },
 };
 
 map_event_header_t *dungeon2_init_events_forest(dungeon_generator2 *dg2){
@@ -500,8 +514,21 @@ static inline u16 dungeon2_get_grass_decoration(u8 *map, u8 *over, int x, int y,
 
 static void dungeon2_set_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2) {
     dungeon_forest_t *forest_type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
+    // To be able to have consistent decorations, we store them for each row
+    u8 *decoration_idxs = malloc(sizeof(u8) * (size_t)dg2->width);
     for (int y = 0; y < dg2->height; y++) {
-        int decoration_idx = 0;
+        if ((y % 2) == 0 || !forest_type->y_consistent_decoration) { // Update decorations for entire row
+            u8 decoration_idx = 0;
+            for (int x = 0; x < dg2->width; x++) {
+                if ((x % 2) == 0 || !forest_type->x_consistent_decoration) {
+                    if ((dungeon2_rnd_16(dg2) % 256) < forest_type->deco_rate)
+                        decoration_idx = (u8)(1 + (dungeon2_rnd_16(dg2) % 4));
+                    else
+                        decoration_idx = 0;
+                }
+                decoration_idxs[x] = decoration_idx;
+            }
+        }
         for (int x = 0; x < dg2->width; x++) {
             int type = map[y * dg2->width + x];
             u8 type_below;
@@ -514,13 +541,7 @@ static void dungeon2_set_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg
             } else {
                 type_below = NB_GRASS;
             }
-            if (!forest_type->x_consistent_decoration || (x % 2) == 0) { // Update a new decoration idx
-                if ((dungeon2_rnd_16(dg2) % 256) < forest_type->deco_rate)
-                    decoration_idx = 1 + (dungeon2_rnd_16(dg2) % 4);
-                else
-                    decoration_idx = 0;
-            }
-
+            u8 decoration_idx = decoration_idxs[x];
             u16 block = 0;
             if (type & DG2_SPACE && over[y * dg2->width + x] & DG2_SPACE)
                 block = blocks_high_grass[type_below][decoration_idx][y % 2][x % 2];
@@ -537,6 +558,7 @@ static void dungeon2_set_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg
             block_set_by_pos((s16)(x + 7), (s16)(y + 7), block);
         }
     }
+    free(decoration_idxs);
 }
 
 void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2){

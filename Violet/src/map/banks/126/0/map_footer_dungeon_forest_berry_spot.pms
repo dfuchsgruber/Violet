@@ -2,12 +2,26 @@
 	"data": {
 		"width": 5,
 		"height": 3,
-		"border_width": 1,
-		"border_height": 1,
+		"border_width": 2,
+		"border_height": 2,
 		"border": [
 			[
 				{
-					"block_idx": 0,
+					"block_idx": 38,
+					"level": 0
+				},
+				{
+					"block_idx": 39,
+					"level": 0
+				}
+			],
+			[
+				{
+					"block_idx": 44,
+					"level": 0
+				},
+				{
+					"block_idx": 45,
 					"level": 0
 				}
 			]

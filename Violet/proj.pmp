@@ -2221,6 +2221,10 @@
 		"map_footer_dungeon_forest_normal": [
 			166,
 			"src/map/banks/126/0/map_footer_dungeon_forest_normal.pms"
+		],
+		"map_footer_dungeon_forest_dusk": [
+			167,
+			"src/map/banks/126/0/map_footer_dungeon_forest_dusk.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -2296,7 +2300,8 @@
 		"maptileset_dungeon_mushroom_forest": "src/map/tileset/maptileset_dungeon_mushroom_forest.pms",
 		"maptileset_dungeon_apple_forest": "src/map/tileset/maptileset_dungeon_apple_forest.pms",
 		"maptileset_dungeon_berry_forest": "src/map/tileset/maptileset_dungeon_berry_forest.pms",
-		"maptileset_dungeon_egg_forest": "src/map/tileset/maptileset_dungeon_egg_forest.pms"
+		"maptileset_dungeon_egg_forest": "src/map/tileset/maptileset_dungeon_egg_forest.pms",
+		"maptileset_dungeon_dusk_forest": "src/map/tileset/maptileset_dungeon_dusk_forest.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2366,6 +2371,7 @@
 		"gfx_maptileset_dungeon_mushroom_forestTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_mushroom_forest.png",
 		"gfx_maptileset_dungeon_apple_forestTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_apple_forest.png",
 		"gfx_maptileset_dungeon_berry_forestTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_berry_forest.png",
-		"gfx_maptileset_dungeon_egg_forestTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_egg_forest.png"
+		"gfx_maptileset_dungeon_egg_forestTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_egg_forest.png",
+		"gfx_maptileset_dungeon_dusk_forestTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_dusk_forest.png"
 	}
 }
