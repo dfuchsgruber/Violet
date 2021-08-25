@@ -2242,7 +2242,6 @@
 		"maptileset4": "src/map/tileset/maptileset4.pms",
 		"maptileset13": "src/map/tileset/maptileset13.pms",
 		"maptileset235200": "src/map/tileset/maptileset235200.pms",
-		"maptileset241959": "src/map/tileset/maptileset241959.pms",
 		"maptileset294571": "src/map/tileset/maptileset294571.pms",
 		"maptileset14": "src/map/tileset/maptileset14.pms",
 		"maptileset252576": "src/map/tileset/maptileset252576.pms",
@@ -2301,7 +2300,8 @@
 		"maptileset_dungeon_apple_forest": "src/map/tileset/maptileset_dungeon_apple_forest.pms",
 		"maptileset_dungeon_berry_forest": "src/map/tileset/maptileset_dungeon_berry_forest.pms",
 		"maptileset_dungeon_egg_forest": "src/map/tileset/maptileset_dungeon_egg_forest.pms",
-		"maptileset_dungeon_dusk_forest": "src/map/tileset/maptileset_dungeon_dusk_forest.pms"
+		"maptileset_dungeon_dusk_forest": "src/map/tileset/maptileset_dungeon_dusk_forest.pms",
+		"maptileset_inside_std": "src/map/tileset/maptileset241959.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",

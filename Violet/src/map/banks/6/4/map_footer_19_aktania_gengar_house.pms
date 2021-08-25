@@ -465,7 +465,7 @@
 			]
 		],
 		"tileset_primary": "maptileset12",
-		"tileset_secondary": "maptileset241959",
+		"tileset_secondary": "maptileset_inside_std",
 		"field_1A": 0
 	},
 	"label": "map_footer_indoor_layout_6",

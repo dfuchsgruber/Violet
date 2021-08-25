@@ -13,7 +13,7 @@
 			]
 		],
 		"tileset_primary": "maptileset12",
-		"tileset_secondary": "maptileset241959",
+		"tileset_secondary": "maptileset_inside_std",
 		"blocks": [
 			[
 				{

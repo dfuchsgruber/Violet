@@ -1,16 +1,16 @@
 {
 	"data": {
-		"footer": "map_footer_276_indoor_layout_0",
+		"footer": "map_footer_dungeon_forest_cabin",
 		"events": {
 			"person_cnt": 0,
 			"warp_cnt": 1,
 			"trigger_cnt": 0,
-			"signpost_cnt": 0,
+			"signpost_cnt": 1,
 			"persons": [],
 			"warps": [
 				{
-					"x": "6",
-					"y": "7",
+					"x": "4",
+					"y": "6",
 					"level": 0,
 					"target_warp_idx": "1",
 					"target_map": "126",
@@ -18,23 +18,40 @@
 				}
 			],
 			"triggers": [],
-			"signposts": []
+			"signposts": [
+				{
+					"x": "4",
+					"y": "2",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_dungeon_forest_rotom_tv"
+					}
+				}
+			]
 		},
 		"levelscripts": 0,
 		"connections": {
 			"connection_cnt": 0,
 			"connections": []
 		},
-		"music": 0,
-		"footer_idx": 276,
+		"music": "MUS_GLUTBERG_AND_EISKASKADENHOHLE_AND_WANDELHOHLE_AND_VERLORENE_HOHLE_AND_NABELFELS",
+		"footer_idx": 162,
 		"namespace": "MAP_PRISMANIA_EINK",
-		"flash_type": 0,
-		"weather": 0,
-		"type": 0,
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
 		"bike_usable": 0,
 		"flags": {
 			"allow_escape_rope": 0,
-			"allow_run": 0,
+			"allow_run": "1",
 			"show_name": 0,
 			"flag_3": 0,
 			"flag_4": 0,

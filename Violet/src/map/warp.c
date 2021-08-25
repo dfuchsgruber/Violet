@@ -34,7 +34,6 @@ static void big_callback_cloud_upstream_warp_waiting(u8 self) {
 }
 
 void warp_setup_by_event_and_position(map_header_t *header, s8 warp_idx, position_t *position) {
-    dprintf("Setup warp by event and position\n");
     (void) header;
     map_event_warp *warp = mapheader_virtual.events->warps + warp_idx;
     if (warp->target_map == 0x7F) {
@@ -46,7 +45,6 @@ void warp_setup_by_event_and_position(map_header_t *header, s8 warp_idx, positio
             *dungeon_type = *dungeon_type_backup;
             fmem.dmap_header_initialized = false;
             fmem.dmap_blocks_initialized = false;
-            dprintf("returning to dungeon type %d via warp setup\n", *dungeon_type);
             warp_setup_by_event(warp->target_bank, warp->target_map, warp->target_warp_id);
             warp_update_last_outdoor_map(position->coordinates.x, position->coordinates.y);
         } else if (*dungeon_type) {

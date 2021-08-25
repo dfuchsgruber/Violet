@@ -23,7 +23,7 @@
 			]
 		],
 		"tileset_primary": "maptileset12",
-		"tileset_secondary": "maptileset241959",
+		"tileset_secondary": "maptileset_inside_std",
 		"blocks": [
 			[
 				{
@@ -331,7 +331,7 @@
 					"level": 1
 				},
 				{
-					"block_idx": 736,
+					"block_idx": 849,
 					"level": 12
 				},
 				{

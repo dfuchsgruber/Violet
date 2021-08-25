@@ -1,13 +1,13 @@
 {
 	"data": {
-		"width": 1,
-		"height": 1,
+		"width": 9,
+		"height": 8,
 		"border_width": 1,
 		"border_height": 1,
 		"border": [
 			[
 				{
-					"block_idx": 0,
+					"block_idx": 8,
 					"level": 0
 				}
 			]
@@ -15,13 +15,311 @@
 		"blocks": [
 			[
 				{
-					"block_idx": 0,
-					"level": 0
+					"block_idx": 709,
+					"level": 1
+				},
+				{
+					"block_idx": 683,
+					"level": 1
+				},
+				{
+					"block_idx": 683,
+					"level": 1
+				},
+				{
+					"block_idx": 683,
+					"level": 1
+				},
+				{
+					"block_idx": 683,
+					"level": 1
+				},
+				{
+					"block_idx": 683,
+					"level": 1
+				},
+				{
+					"block_idx": 683,
+					"level": 1
+				},
+				{
+					"block_idx": 683,
+					"level": 1
+				},
+				{
+					"block_idx": 684,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 693,
+					"level": 1
+				},
+				{
+					"block_idx": 843,
+					"level": 1
+				},
+				{
+					"block_idx": 691,
+					"level": 1
+				},
+				{
+					"block_idx": 867,
+					"level": 1
+				},
+				{
+					"block_idx": 868,
+					"level": 1
+				},
+				{
+					"block_idx": 869,
+					"level": 1
+				},
+				{
+					"block_idx": 691,
+					"level": 1
+				},
+				{
+					"block_idx": 844,
+					"level": 1
+				},
+				{
+					"block_idx": 692,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 693,
+					"level": 1
+				},
+				{
+					"block_idx": 706,
+					"level": 1
+				},
+				{
+					"block_idx": 707,
+					"level": 1
+				},
+				{
+					"block_idx": 875,
+					"level": 1
+				},
+				{
+					"block_idx": 876,
+					"level": 1
+				},
+				{
+					"block_idx": 877,
+					"level": 1
+				},
+				{
+					"block_idx": 699,
+					"level": 1
+				},
+				{
+					"block_idx": 852,
+					"level": 1
+				},
+				{
+					"block_idx": 692,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 693,
+					"level": 1
+				},
+				{
+					"block_idx": 677,
+					"level": 12
+				},
+				{
+					"block_idx": 678,
+					"level": 12
+				},
+				{
+					"block_idx": 883,
+					"level": 12
+				},
+				{
+					"block_idx": 884,
+					"level": 12
+				},
+				{
+					"block_idx": 885,
+					"level": 12
+				},
+				{
+					"block_idx": 708,
+					"level": 12
+				},
+				{
+					"block_idx": 860,
+					"level": 12
+				},
+				{
+					"block_idx": 692,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 775,
+					"level": 1
+				},
+				{
+					"block_idx": 736,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 774,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 693,
+					"level": 1
+				},
+				{
+					"block_idx": 736,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 803,
+					"level": 12
+				},
+				{
+					"block_idx": 692,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 783,
+					"level": 1
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 826,
+					"level": 12
+				},
+				{
+					"block_idx": 824,
+					"level": 12
+				},
+				{
+					"block_idx": 825,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 811,
+					"level": 1
+				},
+				{
+					"block_idx": 692,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 8,
+					"level": 1
+				},
+				{
+					"block_idx": 8,
+					"level": 1
+				},
+				{
+					"block_idx": 8,
+					"level": 1
+				},
+				{
+					"block_idx": 834,
+					"level": 1
+				},
+				{
+					"block_idx": 832,
+					"level": 1
+				},
+				{
+					"block_idx": 833,
+					"level": 1
+				},
+				{
+					"block_idx": 8,
+					"level": 1
+				},
+				{
+					"block_idx": 8,
+					"level": 1
+				},
+				{
+					"block_idx": 8,
+					"level": 1
 				}
 			]
 		],
 		"tileset_primary": "maptileset12",
-		"tileset_secondary": "maptileset_power_plant_inside",
+		"tileset_secondary": "maptileset_inside_std",
 		"field_1A": 0
 	},
 	"label": "map_footer_dungeon_forest_cabin",
