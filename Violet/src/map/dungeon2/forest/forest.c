@@ -32,14 +32,13 @@
 #include "constants/person_script_stds.h"
 #include "constants/map_weathers.h"
 
-extern tileset maptileset0;
-extern tileset maptileset_dungeon_forest;
 extern map_footer_t map_footer_dungeon_forest_normal;
 extern map_footer_t map_footer_dungeon_forest_apple_tree;
 extern map_footer_t map_footer_dungeon_forest_berry_spot;
 extern map_footer_t map_footer_dungeon_forest_nest;
 extern map_footer_t map_footer_dungeon_forest_mushrooms;
 extern map_footer_t map_footer_dungeon_forest_dusk;
+extern map_footer_t map_footer_dungeon_forest_tent_and_campfire;
 
 u16 dungeon2_forest_borders[4] = {0x26, 0x27, 0x2c, 0x2d};
 
@@ -54,7 +53,8 @@ static u32 dungeon2_forest_type_rates[NUM_DUNGEON_FOREST_TYPES] = {
     [DUNGEON_FOREST_TYPE_BERRY_FOREST] = 2,
     [DUNGEON_FOREST_TYPE_EGG_FOREST] = 1,
     [DUNGEON_FOREST_TYPE_MUSHROOM_FOREST] = 2,
-    [DUNGEON_FOREST_TYPE_DUSK_FOREST] = 1000,
+    [DUNGEON_FOREST_TYPE_DUSK_FOREST] = 1,
+    [DUNGEON_FOREST_TYPE_TENT_FOREST] = 100000,
 };
 
 u8 dungeon2_get_forest_type(dungeon_generator2 *dg2) {
@@ -252,7 +252,22 @@ static void dungeon_dusk_forest_initialize_events(dungeon_generator2 *dg2) {
         fmem.dwarps[num_warps].target_warp_id = 0;
         fmem.dwarps[num_warps].target_map = DG2_DUSK_FOREST_CABIN_MAP;
         fmem.dwarps[num_warps].target_bank = DG2_BANK;
-        dprintf("Created warp at %d.%d\n", fmem.dwarps[num_warps].x, fmem.dwarps[num_warps].y);
+        num_warps++;
+    }
+    fmem.dmapevents.warp_cnt = num_warps;
+}
+
+static void dungeon_tent_forest_initialize_events(dungeon_generator2 *dg2) {
+    u8 num_warps = fmem.dmapevents.warp_cnt;
+    int nodes[dg2->nodes][2];
+    dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
+    int num_patterns = dungeon2_get_forest_num_patterns(dg2);
+    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_warps <= ARRAY_COUNT(fmem.dwarps); j++) {
+        fmem.dwarps[num_warps].x = (s16)(nodes[DG2_NODE_PATTERN + j][0]);
+        fmem.dwarps[num_warps].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + 1);
+        fmem.dwarps[num_warps].target_warp_id = 0;
+        fmem.dwarps[num_warps].target_map = DG2_DUSK_FOREST_TENT_MAP;
+        fmem.dwarps[num_warps].target_bank = DG2_BANK;
         num_warps++;
     }
     fmem.dmapevents.warp_cnt = num_warps;
@@ -329,6 +344,16 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .y_consistent_decoration = true,
         .map_weather = MAP_WEATHER_CLOUDY,
     },
+    [DUNGEON_FOREST_TYPE_TENT_FOREST] = {
+        .footer = &map_footer_dungeon_forest_tent_and_campfire,
+        .min_num_patterns = 1,
+        .max_num_patterns = 1,
+        .deco_rate = 0,
+        .alternative_tree_rate = 0,
+        .event_init = dungeon_tent_forest_initialize_events,
+        .fill_pattern_in_map = dungeon_pattern_fill_with_1x1_border_without_corners,
+        .map_weather = MAP_WEATHER_CLOUDY,
+    },
 };
 
 map_header_t *dungeon2_init_header_forest(dungeon_generator2 *dg2) {
@@ -350,7 +375,6 @@ map_header_t *dungeon2_init_header_forest(dungeon_generator2 *dg2) {
 map_event_header_t *dungeon2_init_events_forest(dungeon_generator2 *dg2){
     dungeon2_initialize_std_events(dg2, dungeon_forest_pick_item);
     dungeon_forest_types[dungeon2_get_forest_type(dg2)].event_init(dg2);
-    dprintf("forest hast %d warps\n", fmem.dmapevents.warp_cnt);
     return &(fmem.dmapevents);
 }
 
@@ -599,7 +623,6 @@ void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2){
     map_footer_t *pattern = dungeon2_get_forest_type_pattern(dg2);
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
 
-
     // Fill map to fit the pattern
     for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns); j++) {
         int w = (int)pattern->width;
@@ -607,6 +630,16 @@ void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2){
         int x = nodes[DG2_NODE_PATTERN + j][0] - (w / 2);
         int y = nodes[DG2_NODE_PATTERN + j][1] - (h / 2);
         forest_type->fill_pattern_in_map(map, x, y, w, h, dg2);
+    }
+
+    // Fill map to fill items
+    for (int j = DG2_NODE_TRAINER_OR_ITEM; j < dg2->nodes && j < DG2_NODE_TRAINER_OR_ITEM + DG2_MAX_NUM_TRAINER_OR_ITEM_NODES; j++) {
+        if (dungeon2_node_trainer_or_item_get_type(dg2, j) == DG2_NODE_TRAINER_OR_ITEM_TYPE_ITEM) {
+            int x = nodes[j][0];
+            int y = nodes[j][1];
+            dungeon2_fill_rectangle(map, nodes[j][0] - 1, nodes[j][1] - 1, 3, 3, DG2_SPACE, dg2);
+            over[dg2->width * y + x] = DG2_WALL;
+        }
     }
 
     // Construct 2x2 and alternative 2x2 trees

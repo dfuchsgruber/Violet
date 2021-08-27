@@ -1314,6 +1314,11 @@
 				"map_dungeon_forest_cabin",
 				"src/map/banks/126/0/map_dungeon_forest_cabin.pms",
 				"MAP_PRISMANIA_EINK"
+			],
+			"1": [
+				"map_dungeon_forest_tent_inside",
+				"src/map/banks/126/1/map_dungeon_forest_tent_inside.pms",
+				"MAP_PRISMANIA_EINK"
 			]
 		}
 	},
@@ -2225,6 +2230,14 @@
 		"map_footer_dungeon_forest_dusk": [
 			167,
 			"src/map/banks/126/0/map_footer_dungeon_forest_dusk.pms"
+		],
+		"map_footer_dungeon_forest_tent_and_campfire": [
+			168,
+			"src/map/banks/126/0/map_footer_dungeon_forest_tent_and_campfire.pms"
+		],
+		"map_footer_dungeon_forest_tent_inside": [
+			169,
+			"src/map/banks/126/1/map_footer_dungeon_forest_tent_inside.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -2301,7 +2314,9 @@
 		"maptileset_dungeon_berry_forest": "src/map/tileset/maptileset_dungeon_berry_forest.pms",
 		"maptileset_dungeon_egg_forest": "src/map/tileset/maptileset_dungeon_egg_forest.pms",
 		"maptileset_dungeon_dusk_forest": "src/map/tileset/maptileset_dungeon_dusk_forest.pms",
-		"maptileset_inside_std": "src/map/tileset/maptileset241959.pms"
+		"maptileset_inside_std": "src/map/tileset/maptileset241959.pms",
+		"maptileset_dungeon_forest_campfire_and_tent": "src/map/tileset/maptileset_dungeon_forest_campfire_and_tent.pms",
+		"maptileset_dungeon_tent_inside": "src/map/tileset/maptileset_dungeon_tent_inside.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2372,6 +2387,8 @@
 		"gfx_maptileset_dungeon_apple_forestTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_apple_forest.png",
 		"gfx_maptileset_dungeon_berry_forestTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_berry_forest.png",
 		"gfx_maptileset_dungeon_egg_forestTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_egg_forest.png",
-		"gfx_maptileset_dungeon_dusk_forestTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_dusk_forest.png"
+		"gfx_maptileset_dungeon_dusk_forestTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_dusk_forest.png",
+		"gfx_maptileset_dungeon_tent_and_campfireTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_tent_and_campfire.png",
+		"gfx_maptileset_dungeon_tent_insideTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_tent_inside.png"
 	}
 }

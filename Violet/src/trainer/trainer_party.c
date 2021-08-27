@@ -24,12 +24,27 @@ u16 trainer_pokemon_prng() {
 	return (u16)_prng_xorshift(&(fmem.trainer_prng_state));
 }
 
+static u8 trainer_pokemon_get_level(u8 level) {
+	if (level == TRAINER_POKEMON_LEVEL_STORY_BASED) {
+		u8 mean = 5;
+		u8 std = 0;
+		dungeon2_get_wild_pokemon_level_distribution(&mean, &std);
+		level = mean;
+	} else if (level == TRAINER_POKEMON_LEVEL_STORY_BASED_PLUS_ONE_STD) {
+		u8 mean = 5;
+		u8 std = 0;
+		dungeon2_get_wild_pokemon_level_distribution(&mean, &std);
+		level = (u8)(mean + std);
+	}
+	return MIN(100, MAX(1, level));
+}
+
 void trainer_pokemon_new_custom_item_default_attacks(pokemon *dst,
 		trainer_pokemon_custom_item_default_attacks *party) {
 	// Obtain the prng state that was seeded with the trainer id
 	pid_t pid = pokemon_new_pid_by_prng(trainer_pokemon_prng);
 	pid.fields.is_shiny = 0;
-	pokemon_new(dst, party->species, party->level, party->ivs, true, pid, false, 0);
+	pokemon_new(dst, party->species, trainer_pokemon_get_level(party->level), party->ivs, true, pid, false, 0);
 	trainer_pokemon_new(dst, party->build);
 	// Custom item
 	pokemon_set_attribute(dst, ATTRIBUTE_ITEM, &(party->item));
@@ -40,7 +55,7 @@ void trainer_pokemon_new_custom_item_custom_attacks(pokemon *dst,
 	// Obtain the prng state that was seeded with the trainer id
 	pid_t pid = pokemon_new_pid_by_prng(trainer_pokemon_prng);
 	pid.fields.is_shiny = 0;
-	pokemon_new(dst, party->species, party->level, party->ivs, true, pid, false, 0);
+	pokemon_new(dst, party->species, trainer_pokemon_get_level(party->level), party->ivs, true, pid, false, 0);
 	trainer_pokemon_new(dst, party->build);
 	// Custom item
 	pokemon_set_attribute(dst, ATTRIBUTE_ITEM, &(party->item));
@@ -56,7 +71,7 @@ void trainer_pokemon_new_default_item_custom_attacks(pokemon *dst,
 	// Obtain the prng state that was seeded with the trainer id
 	pid_t pid = pokemon_new_pid_by_prng(trainer_pokemon_prng);
 	pid.fields.is_shiny = 0;
-	pokemon_new(dst, party->species, party->level, party->ivs, true, pid, false, 0);
+	pokemon_new(dst, party->species, trainer_pokemon_get_level(party->level), party->ivs, true, pid, false, 0);
 	trainer_pokemon_new(dst, party->build);
 	// Custom attacks
 	for (int i = 0; i < 4; i++) {
@@ -70,7 +85,7 @@ void trainer_pokemon_new_default_item_default_attacks(pokemon *dst,
 	// Obtain the prng state that was seeded with the trainer id
 	pid_t pid = pokemon_new_pid_by_prng(trainer_pokemon_prng);
 	pid.fields.is_shiny = 0;
-	pokemon_new(dst, party->species, party->level, party->ivs, true, pid, false, 0);
+	pokemon_new(dst, party->species, trainer_pokemon_get_level(party->level), party->ivs, true, pid, false, 0);
 	trainer_pokemon_new(dst, party->build);
 }
 

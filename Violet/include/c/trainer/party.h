@@ -8,6 +8,9 @@
 #ifndef INCLUDE_C_TRAINER_PARTY_H_
 #define INCLUDE_C_TRAINER_PARTY_H_
 
+#define TRAINER_POKEMON_LEVEL_STORY_BASED 254
+#define TRAINER_POKEMON_LEVEL_STORY_BASED_PLUS_ONE_STD 253
+
 #include "trainer/build.h"
 #include "pokemon/virtual.h"
 

@@ -68,6 +68,8 @@ extern const unsigned short gfx_battle_bg_bbship_outsideTiles[];
 extern const unsigned short gfx_battle_bg_cave_waterTiles[];
 extern const unsigned short gfx_battle_bg_route_5_caveTiles[];
 extern const unsigned short gfx_battle_bg_power_plantTiles[];
+extern const unsigned short gfx_battle_bg_inside_stdTiles[];
+extern const unsigned short gfx_battle_bg_dungeon_forest_tent_insideTiles[];
 
 extern const unsigned short gfx_battle_bg_capturedPal[];
 extern const unsigned short gfx_battle_bg_cavePal[];
@@ -99,6 +101,8 @@ extern const unsigned short gfx_battle_bg_bbship_outsidePal[];
 extern const unsigned short gfx_battle_bg_cave_waterPal[];
 extern const unsigned short gfx_battle_bg_route_5_cavePal[];
 extern const unsigned short gfx_battle_bg_power_plantPal[];
+extern const unsigned short gfx_battle_bg_inside_stdPal[];
+extern const unsigned short gfx_battle_bg_dungeon_forest_tent_insidePal[];
 
 extern const unsigned short gfx_battle_bg_capturedMap[];
 extern const unsigned short gfx_battle_bg_caveMap[];
@@ -130,6 +134,8 @@ extern const unsigned short gfx_battle_bg_bbship_outsideMap[];
 extern const unsigned short gfx_battle_bg_cave_waterMap[];
 extern const unsigned short gfx_battle_bg_route_5_caveMap[];
 extern const unsigned short gfx_battle_bg_power_plantMap[];
+extern const unsigned short gfx_battle_bg_inside_stdMap[];
+extern const unsigned short gfx_battle_bg_dungeon_forest_tent_insideMap[];
 
 // Battle anim bg
 extern const unsigned short gfx_stance_changeTiles[];

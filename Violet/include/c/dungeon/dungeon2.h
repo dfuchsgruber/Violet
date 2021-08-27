@@ -79,6 +79,14 @@ extern "C" {
         DG2_NODE_CNT = DG2_NODE_TRAINER_OR_ITEM + DG2_MAX_NUM_TRAINER_OR_ITEM_NODES,
     };
 
+    // Classifies nodes in range [DG2_NODE_TRAINER_OR_ITEM, DG2_NODE_TRAINER_OR_ITEM + DG2_MAX_NUM_TRAINER_OR_ITEM_NODES[
+    enum {
+        DG2_NODE_TRAINER_OR_ITEM_TYPE_NOT_VALID = -1,
+        DG2_NODE_TRAINER_OR_ITEM_TYPE_NONE = 0,
+        DG2_NODE_TRAINER_OR_ITEM_TYPE_ITEM,
+        DG2_NODE_TRAINER_OR_ITEM_TYPE_TRAINER,
+    };
+
     enum {
         DG2_FLAG_ITEM = FLAG_DUNGEON_GP,
         DG2_FLAG_STATIC_ENCOUNTER = DG2_FLAG_ITEM + DG2_MAX_NUM_TRAINER_OR_ITEM_NODES,
@@ -492,6 +500,43 @@ extern "C" {
      * @param mushroom_idx the mushroom_idx to set the flag of. It is expected to be offsetted by DUNGEON_MISC_IDX_START
      **/
     void dungeon_mushroom_set_flag(u16 mushroom_idx);
+
+    /**
+     * Gets the number of trainers within the dungeon
+     * @param dg2 the dungeon generator
+     * @return the number of trainers within that dungeon
+     **/
+    u8 dungeon2_get_number_trainers(dungeon_generator2 *dg2);
+
+    /**
+     * Gets the number of items within the dungeon
+     * @param dg2 the dungeon generator
+     * @return the number of items within that dungeon
+     **/
+    u8 dungeon2_get_number_items(dungeon_generator2 *dg2);
+
+    /**
+     * For a node with index in range [DG2_NODE_TRAINER_OR_ITEM, DG2_NODE_TRAINER_OR_ITEM + DG2_MAX_NUM_TRAINER_OR_ITEM_NODES[
+     * classifies what node it is
+     * @param dg2 the dungeon generator
+     * @param node_idx the index of the node to classify
+     * @return the node type
+     **/
+    int dungeon2_node_trainer_or_item_get_type(dungeon_generator2 *dg2, int node_idx);
+
+    enum {
+        DG2_RANDOM_SEED_NUM_TRAINERS = 0x1c78302a,
+        DG2_RANDOM_SEED_NUM_ITEMS = 0x6628801,
+    };
+
+    /**
+     * Returns a random 16-bit value but sets the seed first. This way this value is consistent even if the
+     * random state of the dungeon generator changes. Note that the dungeon generators state is unaffected by this
+     * @param dg2 the dungeon generator
+     * @param seed the seed for the random value
+     * @return random 16-bit value
+     **/
+    u16 dungeon2_seeded_rnd16(dungeon_generator2 *dg2, u32 seed);
 
 #ifdef	__cplusplus
 }

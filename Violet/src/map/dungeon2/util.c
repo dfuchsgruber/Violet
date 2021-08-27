@@ -75,6 +75,40 @@ static u8 *dungeon2_trainer_scripts[4][2] = {
     {ow_script_dungeon_trainer_3, ow_script_dungeon_trainer_7},
 };
 
+u16 dungeon2_seeded_rnd16(dungeon_generator2 *dg2, u32 seed) {
+    fmem.gp_rng = hash_sequence(&(dg2->initial_seed), 1, seed);
+    u16 r =  gp_rnd16();
+    return r;
+}
+
+
+u8 dungeon2_get_number_trainers(dungeon_generator2 *dg2) {
+    u8 num_trainers = (u8)(dungeon2_seeded_rnd16(dg2, DG2_RANDOM_SEED_NUM_TRAINERS) % (DG2_MAX_NUM_TRAINERS + 1));
+    dprintf("Dungeon has %d trainers\n", num_trainers);
+    return num_trainers;
+}
+
+u8 dungeon2_get_number_items(dungeon_generator2 *dg2) {
+    u8 num_trainers = dungeon2_get_number_trainers(dg2);
+    int max_num_items = MAX(0, MIN(dg2->nodes - DG2_NODE_TRAINER_OR_ITEM - num_trainers, DG2_MAX_NUM_TRAINER_OR_ITEM_NODES - num_trainers));
+    u8 num_items = (u8)(dungeon2_seeded_rnd16(dg2, DG2_RANDOM_SEED_NUM_ITEMS) % (max_num_items + 1));
+    dprintf("Dungeon has %d (%d possible) items\n", num_items, max_num_items);
+    return num_items;
+}
+
+int dungeon2_node_trainer_or_item_get_type(dungeon_generator2 *dg2, int node_idx) {
+    if (node_idx < DG2_NODE_TRAINER_OR_ITEM || node_idx >= dg2->nodes || node_idx >= DG2_NODE_TRAINER_OR_ITEM + DG2_MAX_NUM_TRAINER_OR_ITEM_NODES)
+        return DG2_NODE_TRAINER_OR_ITEM_TYPE_NOT_VALID;
+    u8 num_trainers = dungeon2_get_number_trainers(dg2);
+    u8 num_items = dungeon2_get_number_items(dg2);
+    if (node_idx - DG2_NODE_TRAINER_OR_ITEM < num_trainers)
+        return DG2_NODE_TRAINER_OR_ITEM_TYPE_TRAINER;
+    else if (node_idx - DG2_NODE_TRAINER_OR_ITEM - num_trainers < num_items)
+        return DG2_NODE_TRAINER_OR_ITEM_TYPE_ITEM;
+    else
+        return DG2_NODE_TRAINER_OR_ITEM_TYPE_NONE;
+}
+
 void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(dungeon_generator2*)) {
 
     // Clear all dynamic person events
@@ -91,6 +125,7 @@ void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(
     dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
 
     u8 num_persons = 0;
+    u8 num_trainers = 0;
     u8 num_warps = 0;
 
     // Initialize the first warp to the entrance, i.e. node 0
@@ -111,27 +146,29 @@ void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(
     num_persons++;
 
     // Initialize items / trainers
-    int num_trainers_remaining = dungeon2_rnd_16(dg2) % (DG2_MAX_NUM_TRAINERS + 1);
-    int num_trainers = 0;
     for (int i = 0; i < DG2_MAX_NUM_TRAINER_OR_ITEM_NODES && DG2_NODE_TRAINER_OR_ITEM + i < dg2->nodes; i++) {
         fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_TRAINER_OR_ITEM + i][0]);
         fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_TRAINER_OR_ITEM + i][1]);
         fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
-        if (num_trainers_remaining > 0) { // Create a trainer
-            fmem.dpersons[num_persons].overworld_index = (u8)(41 + (num_trainers & 1));
-            fmem.dpersons[num_persons].trainer_type_and_strength_flag = 1;
-            fmem.dpersons[num_persons].alert_radius = 4;
-            fmem.dpersons[num_persons].script = dungeon2_trainer_scripts[num_trainers][dungeon2_rnd_16(dg2) % ARRAY_COUNT(dungeon2_trainer_scripts[0])];
-            fmem.dpersons[num_persons].behavior = BEHAVIOUR_LOOK_AROUND;
-            num_trainers_remaining--;
-            num_trainers++;
-            num_persons++;
-        } else if (dungeon2_rnd_16(dg2) % 2) { // Create an item
-            fmem.dpersons[num_persons].overworld_index = 92;
-            fmem.dpersons[num_persons].value = item_picker(dg2);
-            fmem.dpersons[num_persons].script_std = PERSON_ITEM;
-            fmem.dpersons[num_persons].flag = (u16)(DG2_FLAG_ITEM + i);
-            num_persons++;
+        switch (dungeon2_node_trainer_or_item_get_type(dg2, DG2_NODE_TRAINER_OR_ITEM + i)) {
+            case DG2_NODE_TRAINER_OR_ITEM_TYPE_ITEM: {
+                fmem.dpersons[num_persons].overworld_index = 92;
+                fmem.dpersons[num_persons].value = item_picker(dg2);
+                fmem.dpersons[num_persons].script_std = PERSON_ITEM;
+                fmem.dpersons[num_persons].flag = (u16)(DG2_FLAG_ITEM + i);
+                num_persons++;
+                break;
+            }
+            case DG2_NODE_TRAINER_OR_ITEM_TYPE_TRAINER: {
+                fmem.dpersons[num_persons].overworld_index = (u8)(41 + (num_trainers & 1));
+                fmem.dpersons[num_persons].trainer_type_and_strength_flag = 1;
+                fmem.dpersons[num_persons].alert_radius = 4;
+                fmem.dpersons[num_persons].script = dungeon2_trainer_scripts[num_trainers][dungeon2_rnd_16(dg2) % ARRAY_COUNT(dungeon2_trainer_scripts[0])];
+                fmem.dpersons[num_persons].behavior = BEHAVIOUR_LOOK_AROUND;
+                num_trainers++;
+                num_persons++;
+                break;
+            }
         }
     }
     fmem.dmapevents.person_cnt = num_persons;
