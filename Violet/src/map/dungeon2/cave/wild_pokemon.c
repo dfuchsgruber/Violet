@@ -83,13 +83,13 @@ void dungeon2_set_encounter_cave() {
 void dungeon2_init_wild_pokemon_cave(dungeon_generator2 *dg2) {
   // Pick four common pokemon
   u16 common_pokemon[4];
-  dungeon2_pick_wild_pokemon(common_pokemon, 4, dungeon_cave_wild_pokemon_common, dg2);
+  dungeon2_pick_wild_pokemon(common_pokemon, 4, dungeon_cave_wild_pokemon_common, 1, dg2);
   // Pick one rare pokemon
   u16 rare_pokemon[2];
-  dungeon2_pick_wild_pokemon(rare_pokemon, 2, dungeon_cave_wild_pokemon_rare, dg2);
+  dungeon2_pick_wild_pokemon(rare_pokemon, 2, dungeon_cave_wild_pokemon_rare, 1, dg2);
   // Pick one super rare pokemon
   u16 super_rare_pokemon[1];
-  dungeon2_pick_wild_pokemon(super_rare_pokemon, 1, dungeon_cave_wild_pokemon_super_rare, dg2);
+  dungeon2_pick_wild_pokemon(super_rare_pokemon, 1, dungeon_cave_wild_pokemon_super_rare, 1, dg2);
 
   *var_access(DUNGEON_OVERWORLD_SPECIES) = super_rare_pokemon[0];
 

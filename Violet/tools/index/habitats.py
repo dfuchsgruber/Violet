@@ -55,19 +55,19 @@ def get_habitat_index(rompath, symbolspath, projectpath):
                 'rank' : rank,
             })
 
-    # Parse dungeons
-    datatype = project.model['species_list']
-    for dungeon in ('cave', 'forest', 'ocean'):
-        for rarity in ('common', 'rare', 'super_rare'):
-            if dungeon == 'ocean':
-                rarity = f'water_{rarity}'
-            offset = symbols[f'dungeon_{dungeon}_wild_pokemon_{rarity}']
-            for species in datatype.from_data(rom, offset, project, [], []):
-                habitats[species].append({
-                    'type' : 'dungeon',
-                    'dungeon' : dungeon,
-                    'rarity' : rarity
-                })
+    # # Parse dungeons
+    # datatype = project.model['species_list']
+    # for dungeon in ('cave', 'forest', 'ocean'):
+    #     for rarity in ('common', 'rare', 'super_rare'):
+    #         if dungeon == 'ocean':
+    #             rarity = f'water_{rarity}'
+    #         offset = symbols[f'dungeon_{dungeon}_wild_pokemon_{rarity}']
+    #         for species in datatype.from_data(rom, offset, project, [], []):
+    #             habitats[species].append({
+    #                 'type' : 'dungeon',
+    #                 'dungeon' : dungeon,
+    #                 'rarity' : rarity
+    #             })
     # Parse the rod pokemon of the ocean dungeon
     for rod_type in ('rod', 'good_rod', 'super_rod'):
         offset = symbols[f'dungeon_ocean_wild_pokemon_{rod_type}']

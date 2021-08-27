@@ -5,6 +5,7 @@
 .include "overworld_script.s"
 .include "mugshot.s"
 .include "pathfinding.s"
+.include "story_states.s"
 
 .global ow_script_route_6_person_ash_gift
 .global ow_script_route_6_person_0
@@ -85,6 +86,7 @@ said_yes:
     closeonkeypress
     npc_move_to 11 0x1f 0x19
     hidesprite 11
+    setvar VAR_STORY_STATE STORY_STATE_ROUTE_6_MISTRAL_IGVA_DONE
     releaseall
     end
 

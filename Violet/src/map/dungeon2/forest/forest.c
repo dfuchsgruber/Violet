@@ -1,10 +1,3 @@
-/*
- * forest.c
- *
- *  Created on: Jun 3, 2018
- *      Author: dominik
- */
-
 #include "types.h"
 #include "map/header.h"
 #include "save.h"
@@ -31,6 +24,7 @@
 #include "flags.h"
 #include "constants/person_script_stds.h"
 #include "constants/map_weathers.h"
+#include "constants/wild_pokemon_densities.h"
 
 extern map_footer_t map_footer_dungeon_forest_normal;
 extern map_footer_t map_footer_dungeon_forest_apple_tree;
@@ -48,13 +42,13 @@ extern u8 ow_script_dungeon_encounter[];
 extern u8 ow_script_dungeon_item[];
 
 static u32 dungeon2_forest_type_rates[NUM_DUNGEON_FOREST_TYPES] = {
-    [DUNGEON_FOREST_TYPE_NORMAL] = 5,
-    [DUNGEON_FOREST_TYPE_APPLE_FOREST] = 3,
+    [DUNGEON_FOREST_TYPE_NORMAL] = 3,
+    [DUNGEON_FOREST_TYPE_APPLE_FOREST] = 2,
     [DUNGEON_FOREST_TYPE_BERRY_FOREST] = 2,
-    [DUNGEON_FOREST_TYPE_EGG_FOREST] = 1,
-    [DUNGEON_FOREST_TYPE_MUSHROOM_FOREST] = 2,
+    [DUNGEON_FOREST_TYPE_EGG_FOREST] = 2,
+    [DUNGEON_FOREST_TYPE_MUSHROOM_FOREST] = 3,
     [DUNGEON_FOREST_TYPE_DUSK_FOREST] = 1,
-    [DUNGEON_FOREST_TYPE_TENT_FOREST] = 100000,
+    [DUNGEON_FOREST_TYPE_TENT_FOREST] = 2,
 };
 
 u8 dungeon2_get_forest_type(dungeon_generator2 *dg2) {
@@ -284,6 +278,23 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .fill_pattern_in_map = dungeon_pattern_fill_none,
         .has_alternative_trees = false,
         .map_weather = MAP_WEATHER_CLOUDY,
+        .items_common = {
+            ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_SUPERSCHUTZ, ITEM_FLUCHTSEIL,
+            ITEM_PARA_HEILER, ITEM_GEGENGIFT, ITEM_AUFWECKER, ITEM_AETHER,
+        },
+        .items_rare = {
+            ITEM_GRUENSTUECK, ITEM_TOP_SCHUTZ, ITEM_AP_PLUS, ITEM_ELIXIER,
+        },
+        .species_common = {
+            POKEMON_PIKACHU, POKEMON_MYRAPLA, POKEMON_KNOFENSA, POKEMON_SAMURZEL,
+            POKEMON_WAUMPEL, POKEMON_HORNLIU, POKEMON_LEDYBA, POKEMON_WATTZAPF,
+        },
+        .species_rare = {
+            POKEMON_DUFLOR, POKEMON_ULTRIGARIA, POKEMON_SCHALOKO, POKEMON_PANEKON,
+        },
+        .species_static_encounter = {
+            POKEMON_GIFLOR, POKEMON_SARZENIA, POKEMON_PAPINELLA, POKEMON_PUDOX,
+        },
     },
     [DUNGEON_FOREST_TYPE_APPLE_FOREST] = {
         .footer = &map_footer_dungeon_forest_apple_tree,
@@ -295,6 +306,23 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .fill_pattern_in_map = dungeon_pattern_fill_with_1x1_border_without_corners,
         .has_alternative_trees = true,
         .map_weather = MAP_WEATHER_OUTSIDE,
+        .items_common = {
+            ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_SUPERSCHUTZ, ITEM_FLUCHTSEIL,
+            ITEM_PARA_HEILER, ITEM_GEGENGIFT, ITEM_APFEL, ITEM_APFEL,
+        },
+        .items_rare = {
+            ITEM_GRUENSTUECK, ITEM_TOP_SCHUTZ, ITEM_RIESENAPFEL, ITEM_ELIXIER,
+        },
+        .species_common = {
+            POKEMON_TEDDIURSA, POKEMON_MOBAI, POKEMON_KNOFENSA, POKEMON_SAMURZEL,
+            POKEMON_WAUMPEL, POKEMON_HORNLIU, POKEMON_LEDYBA, POKEMON_FLABEBE,
+        },
+        .species_rare = {
+            POKEMON_DUFLOR, POKEMON_MOGELBAUM, POKEMON_LEDIAN, POKEMON_FLOETTE,
+        },
+        .species_static_encounter = {
+            POKEMON_GIFLOR, POKEMON_URSARING, POKEMON_FLORGES, POKEMON_SARZENIA,
+        },
     },
     [DUNGEON_FOREST_TYPE_BERRY_FOREST] = {
         .footer = &map_footer_dungeon_forest_berry_spot,
@@ -307,6 +335,23 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .has_alternative_trees = true,
         .x_consistent_decoration = true,
         .map_weather = MAP_WEATHER_OUTSIDE,
+        .items_common = {
+            ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_SUPERSCHUTZ, ITEM_FLUCHTSEIL,
+            ITEM_PARA_HEILER, ITEM_GEGENGIFT, ITEM_BEERENSAFT, ITEM_AETHER,
+        },
+        .items_rare = {
+            ITEM_GRUENSTUECK, ITEM_TOP_SCHUTZ, ITEM_TOP_AETHER, ITEM_ELIXIER,
+        },
+        .species_common = {
+            POKEMON_TEDDIURSA, POKEMON_WATTZAPF, POKEMON_KNOFENSA, POKEMON_SAMURZEL,
+            POKEMON_BUMMELZ, POKEMON_MYRAPLA, POKEMON_LEDYBA, POKEMON_FLABEBE,
+        },
+        .species_rare = {
+            POKEMON_DUFLOR, POKEMON_FLOETTE, POKEMON_BLANAS, POKEMON_MUNTIER,
+        },
+        .species_static_encounter = {
+            POKEMON_GIFLOR, POKEMON_URSARING, POKEMON_TENGULIST, POKEMON_LETARKING,
+        },
     },
     [DUNGEON_FOREST_TYPE_EGG_FOREST] = {
         .footer = &map_footer_dungeon_forest_nest,
@@ -319,6 +364,23 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .has_alternative_trees = true,
         .x_consistent_decoration = true,
         .map_weather = MAP_WEATHER_OUTSIDE,
+        .items_common = {
+            ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_SUPERSCHUTZ, ITEM_FLUCHTSEIL,
+            ITEM_PARA_HEILER, ITEM_GEGENGIFT, ITEM_BEERENSAFT, ITEM_AETHER,
+        },
+        .items_rare = {
+            ITEM_GEWITTER_EI, ITEM_WUESTEN_EI, ITEM_TUNDRA_EI, ITEM_SONNEN_EI,
+        },
+        .species_common = {
+            POKEMON_TOGEPI, POKEMON_TANNZA, POKEMON_KNOFENSA, POKEMON_SAMURZEL,
+            POKEMON_KASTADUR, POKEMON_MYRAPLA, POKEMON_PIKACHU, POKEMON_FLABEBE,
+        },
+        .species_rare = {
+            POKEMON_ULTRIGARIA, POKEMON_DUFLOR, POKEMON_BLANAS, POKEMON_FLOETTE,
+        },
+        .species_static_encounter = {
+            POKEMON_GIFLOR, POKEMON_TOGETIC, POKEMON_RAICHU, POKEMON_CHANEIRA,
+        },
     },
     [DUNGEON_FOREST_TYPE_MUSHROOM_FOREST] = {
         .footer = &map_footer_dungeon_forest_mushrooms,
@@ -330,6 +392,23 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .fill_pattern_in_map = dungeon_pattern_fill_with_1x1_border_without_corners,
         .has_alternative_trees = true,
         .map_weather = MAP_WEATHER_CLOUDY,
+        .items_common = {
+            ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_SUPERSCHUTZ, ITEM_FLUCHTSEIL,
+            ITEM_PARA_HEILER, ITEM_GEGENGIFT, ITEM_AUFWECKER, ITEM_AETHER,
+        },
+        .items_rare = {
+            ITEM_MINIPILZ, ITEM_GRUENSTUECK, ITEM_HYPERTRANK, ITEM_TOP_SCHUTZ,
+        },
+        .species_common = {
+            POKEMON_KNILZ, POKEMON_TRAUMATO, POKEMON_KNOFENSA, POKEMON_SAMURZEL,
+            POKEMON_KASTADUR, POKEMON_MYRAPLA, POKEMON_WAUMPEL, POKEMON_KRAMURX,
+        },
+        .species_rare = {
+            POKEMON_SCHALOKO, POKEMON_PANEKON, POKEMON_BLANAS, POKEMON_ULTRIGARIA,
+        },
+        .species_static_encounter = {
+            POKEMON_KAPILZ, POKEMON_HYPNO, POKEMON_PAPINELLA, POKEMON_PUDOX,
+        },
     },
     [DUNGEON_FOREST_TYPE_DUSK_FOREST] = {
         .footer = &map_footer_dungeon_forest_dusk,
@@ -343,6 +422,23 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .x_consistent_decoration = true,
         .y_consistent_decoration = true,
         .map_weather = MAP_WEATHER_CLOUDY,
+        .items_common = {
+            ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_SUPERSCHUTZ, ITEM_FLUCHTSEIL,
+            ITEM_PARA_HEILER, ITEM_GEGENGIFT, ITEM_AUFWECKER, ITEM_AETHER,
+        },
+        .items_rare = {
+            ITEM_DUESTERSTUECK, ITEM_BELEBER, ITEM_HYPERTRANK, ITEM_TOP_SCHUTZ,
+        },
+        .species_common = {
+            POKEMON_PARAGONI, POKEMON_TRAUMATO, POKEMON_WEBARAK, POKEMON_SAMURZEL,
+            POKEMON_WATTZAPF, POKEMON_MYRAPLA, POKEMON_WAUMPEL, POKEMON_KRAMURX,
+        },
+        .species_rare = {
+            POKEMON_SCHALOKO, POKEMON_PANEKON, POKEMON_BLANAS, POKEMON_ARIADOS,
+        },
+        .species_static_encounter = {
+            POKEMON_KAPILZ, POKEMON_HYPNO, POKEMON_TROMBORK, POKEMON_KRAMSHEF,
+        },
     },
     [DUNGEON_FOREST_TYPE_TENT_FOREST] = {
         .footer = &map_footer_dungeon_forest_tent_and_campfire,
@@ -353,8 +449,106 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .event_init = dungeon_tent_forest_initialize_events,
         .fill_pattern_in_map = dungeon_pattern_fill_with_1x1_border_without_corners,
         .map_weather = MAP_WEATHER_CLOUDY,
+        .items_common = {
+            ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_SUPERSCHUTZ, ITEM_FLUCHTSEIL,
+            ITEM_PARA_HEILER, ITEM_GEGENGIFT, ITEM_AUFWECKER, ITEM_AETHER,
+        },
+        .items_rare = {
+            ITEM_GRUENSTUECK, ITEM_TOP_SCHUTZ, ITEM_AP_PLUS, ITEM_ELIXIER,
+        },
+        .species_common = {
+            POKEMON_PIKACHU, POKEMON_MYRAPLA, POKEMON_KNOFENSA, POKEMON_SAMURZEL,
+            POKEMON_WAUMPEL, POKEMON_TANNZA, POKEMON_LEDYBA, POKEMON_WATTZAPF,
+        },
+        .species_rare = {
+            POKEMON_DUFLOR, POKEMON_KOKUNA, POKEMON_SCHALOKO, POKEMON_PANEKON,
+        },
+        .species_static_encounter = {
+            POKEMON_GIFLOR, POKEMON_BIBOR, POKEMON_PAPINELLA, POKEMON_PUDOX,
+        },
     },
 };
+
+u16 dungeon_forest_pick_item(dungeon_generator2 *dg2) {
+    if ((dungeon2_rnd_16(dg2) % 10) < 3) {
+        return dungeon_forest_types[dungeon2_get_forest_type(dg2)].items_rare[dungeon2_rnd_16(dg2) % DUNGEON_FOREST_NUM_ITEMS_RARE];
+    } else {
+        return dungeon_forest_types[dungeon2_get_forest_type(dg2)].items_common[dungeon2_rnd_16(dg2) % DUNGEON_FOREST_NUM_ITEMS_COMMON];
+    }
+}
+
+void dungeon2_init_wild_pokemon_forest(dungeon_generator2 *dg2) {
+
+    dungeon_forest_t *forest_type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
+
+    u16 common_pokemon[4];
+    u16 rare_pokemon[2];
+    u16 super_rare_pokemon[1];
+
+    dungeon2_pick_wild_pokemon(common_pokemon, ARRAY_COUNT(common_pokemon), forest_type->species_common, DUNGEON_FOREST_NUM_POKEMON_COMMON, dg2);
+    dungeon2_pick_wild_pokemon(rare_pokemon, ARRAY_COUNT(rare_pokemon), forest_type->species_rare, DUNGEON_FOREST_NUM_POKEMON_RARE, dg2);
+    dungeon2_pick_wild_pokemon(super_rare_pokemon, ARRAY_COUNT(super_rare_pokemon), forest_type->species_static_encounter, DUNGEON_FOREST_NUM_POKEMON_STATIC, dg2);
+
+    *var_access(DUNGEON_OVERWORLD_SPECIES) = super_rare_pokemon[0];
+
+    fmem.dwild_pokemon.grass = &(fmem.dwild_habitat_grass);
+    fmem.dwild_pokemon.water = NULL;
+    fmem.dwild_pokemon.other = NULL;
+    fmem.dwild_pokemon.rod = NULL;
+    fmem.dwild_habitat_grass.frequency = DTYPE_FOREST_WILD_POKEMON_FREQUENCY;
+    fmem.dwild_habitat_grass.data = fmem.dwild_data_grass;
+
+    // Each of the common pokemon has a 20% probability
+    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_0_20_PERCENT].species = common_pokemon[0];
+    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_1_20_PERCENT].species = common_pokemon[1];
+    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_2_10_PERCENT].species = common_pokemon[2];
+    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_3_10_PERCENT].species = common_pokemon[2];
+    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_4_10_PERCENT].species = common_pokemon[3];
+    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_5_10_PERCENT].species = common_pokemon[3];
+
+    // The first rare pokemon has a 14% probability
+    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_6_5_PERCENT].species = rare_pokemon[0];
+    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_7_5_PERCENT].species = rare_pokemon[0];
+    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_8_4_PERCENT].species = rare_pokemon[0];
+
+    // The other rare pokemon has a 6% probability
+    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_9_4_PERCENT].species = rare_pokemon[1];
+    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_10_1_PERCENT].species = rare_pokemon[1];
+    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_11_1_PERCENT].species = rare_pokemon[1];
+
+    u8 mean = 0;
+    u8 std_deviation = 0;
+    u8 level_min = 0;
+    u8 level_max = 0;
+    dungeon2_get_wild_pokemon_level_distribution(&mean, &std_deviation);
+
+    for(int i = 0; i < 12; i++) {
+        dungeon2_wild_pokemon_sample_level_boundaries(&level_min, &level_max,
+            (i < 6) ? mean : (u8)(mean + std_deviation), std_deviation, dg2);
+        fmem.dwild_data_grass[i].level_min = level_min;
+        fmem.dwild_data_grass[i].level_max = level_max;
+    }
+}
+
+void dungeon2_set_encounter_forest() {
+  dungeon_generator2 *dg2 = &(cmem.dg2);
+  dungeon2_forest_init_state(dg2);
+  pokemon_clear_opponent_party();
+
+  u16 species = *var_access(DUNGEON_OVERWORLD_SPECIES);
+  u8 mean = 0, std_deviation = 0;
+  dungeon2_get_wild_pokemon_level_distribution(&mean, &std_deviation);
+  mean = (u8)(mean + std_deviation + std_deviation / 2); // High level for this pokemon
+
+  int level = FIXED_TO_INT(FIXED_ADD(INT_TO_FIXED(mean), FIXED_MUL(INT_TO_FIXED(std_deviation),
+        dungeon2_rnd_normal(dg2))));
+  level = MAX(MIN(level, 100), 2);
+
+  pid_t p = {dungeon2_rnd(dg2)};
+
+  pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, (u8)level, 32, true, p, false, 0,
+      dungeon2_encounter_rnd_generator, dungeon2_encounter_rnd_generator);
+}
 
 map_header_t *dungeon2_init_header_forest(dungeon_generator2 *dg2) {
     dprintf("D2 header init\n");

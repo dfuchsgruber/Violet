@@ -9,6 +9,7 @@
 .include "songs.s"
 .include "trainer_backsprites.s"
 .include "pathfinding.s"
+.include "story_states.s"
 
 .global ow_script_tafelberg_trigger_felix
 
@@ -48,6 +49,7 @@ ow_script_tafelberg_trigger_felix:
     waitmovement 0
     hidesprite 13
     addvar STORY_PROGRESS 1
+    setvar VAR_STORY_STATE STORY_STATE_KUESTENBERG_DONE
     releaseall
     end
 

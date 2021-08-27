@@ -170,10 +170,20 @@ void trainer_pokemon_new(pokemon *poke, union union_build_field field) {
 		}
 	} else {
 		// Apply the build of the trainer
-		u8 effective_ev_story = 0;
-		switch(*var_access(STORY_STATE)) {
-		case STORY_STATE_SILVANIA_FOREST_CLEAR: effective_ev_story = 7; break;
-		case STORY_STATE_VULCANO_CLEAR: effective_ev_story = 15; break;
+		u8 effective_ev_story;
+		switch(*var_access(VAR_STORY_STATE)) {
+			case STORY_STATE_SILVANIA_FOREST_DONE: 
+			case STORY_STATE_FELSIGE_ODENIS_RIVAL_DONE:
+			case STORY_STATE_BLUETENBACH_GYM_DONE:
+			case STORY_STATE_ROUTE_6_MISTRAL_IGVA_DONE:
+				effective_ev_story = 7; 
+				break;
+			case STORY_STATE_VULCANO_DONE: 
+				effective_ev_story = 15; 
+				break;
+			default:
+				effective_ev_story = 0;
+				break;
 		}
 		effective_ev_story = (u8)(effective_ev_story + ev_difficulty);
 		for (int i = 0; i < 6; i++) {

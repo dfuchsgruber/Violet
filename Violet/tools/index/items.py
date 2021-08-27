@@ -76,17 +76,17 @@ def get_item_index(rompath, symbolspath, projectpath):
                     raise e
 
 
-    # Parse dungeon items
-    datatype = project.model['item_list']
-    for dungeon in ('cave', 'forest', 'ocean'):
-        for rarity in ('common', 'rare'):
-            offset = symbols[f'dungeon_{dungeon}_items_{rarity}']
-            for item in datatype.from_data(rom, offset, project, [], []):
-                items[item]['locations'].append({
-                    'type' : 'dungeon',
-                    'dungeon' : dungeon,
-                    'rarity' : rarity
-                })
+    # # Parse dungeon items
+    # datatype = project.model['item_list']
+    # for dungeon in ('cave', 'forest', 'ocean'):
+    #     for rarity in ('common', 'rare'):
+    #         offset = symbols[f'dungeon_{dungeon}_items_{rarity}']
+    #         for item in datatype.from_data(rom, offset, project, [], []):
+    #             items[item]['locations'].append({
+    #                 'type' : 'dungeon',
+    #                 'dungeon' : dungeon,
+    #                 'rarity' : rarity
+    #             })
     # Add attacks that TM/HMs correspond to
     tm_hm_to_attack = project.model['tm_hm_to_attack'].from_data(rom, symbols['tm_hm_to_attack'], project, [], [])
     for item in items:

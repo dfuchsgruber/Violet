@@ -7,6 +7,7 @@
 .include "person_behaviours.s"
 .include "movements.s"
 .include "specials.s"
+.include "story_states.s"
 
 .global lscr_0x8f5100
 .global ow_script_0x8d3195
@@ -108,6 +109,7 @@ pause 16
 loadpointer 0x0 str_7
 show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT emotion=MUGSHOT_RUMINATIVE
 addvar STORY_PROGRESS 0x2
+setvar VAR_STORY_STATE STORY_STATE_BRUCHFELS_DONE
 clearflag FLAG_DONT_SHOW_MAP_NAME_POPUP
 special SPECIAL_MAP_TRANSITION_SHOW_NAMESPACE
 releaseall

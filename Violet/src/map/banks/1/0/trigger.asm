@@ -12,6 +12,7 @@
 .include "map_weathers.s"
 .include "pathfinding.s"
 .include "person_behaviours.s"
+.include "story_states.s"
 
 .global ow_script_silvania_forest_rin_0
 
@@ -291,6 +292,7 @@ ow_script_silvania_forest_rin_0:
     show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT emotion=MUGSHOT_SAD message_type=MSG
     releaseall
     addvar STORY_PROGRESS 1
+    setvar VAR_STORY_STATE STORY_STATE_SILVANIA_FOREST_DONE
 	movesprite 42 0x2d 0x13
 	movesprite 43 0x31 0x14
 	movesprite2 42 0x2d 0x13

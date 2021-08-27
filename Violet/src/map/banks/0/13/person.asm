@@ -578,7 +578,7 @@ goto ow_script_0x9730a3
 
 
 ow_script_0x9730a3:
-setvar STORY_STATE STORY_STATE_VULCANO_CLEAR
+setvar VAR_STORY_STATE STORY_STATE_VULCANO_DONE
 sound 0x64
 checksound
 setvar 0x8004 0xa

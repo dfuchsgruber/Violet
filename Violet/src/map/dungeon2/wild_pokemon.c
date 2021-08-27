@@ -5,6 +5,7 @@
  *      Author: dominik
  */
 
+
 #include "types.h"
 #include "dungeon/dungeon2.h"
 #include "prng.h"
@@ -16,17 +17,17 @@
 #include "save.h"
 #include "debug.h"
 #include "flags.h"
+#include "vars.h"
+#include "constants/story_states.h"
 
-void dungeon2_pick_wild_pokemon(u16 *dst, int number, u16 *src, dungeon_generator2 *dg2) {
-  int size = 0;
-  while(src[size] != 0xFFFF) size++;
-  for(int picked = 0; picked < number; picked++) {
+void dungeon2_pick_wild_pokemon(u16 *dst, size_t number, u16 *src, size_t src_size, dungeon_generator2 *dg2) {
+  for(size_t picked = 0; picked < number; picked++) {
     // Pick an index not in dst[:picked]
     while(1) {
-      u16 suggestion = src[dungeon2_rnd_16(dg2) % size];
+      u16 suggestion = src[dungeon2_rnd_16(dg2) % src_size];
       // Check if suggestion is not in dst[:picked]
       int valid = 1;
-      for(int i = 0; i < picked; i++) {
+      for(size_t i = 0; i < picked; i++) {
         if(dst[picked] == suggestion) {
           valid = 0;
           break;
@@ -42,24 +43,47 @@ void dungeon2_pick_wild_pokemon(u16 *dst, int number, u16 *src, dungeon_generato
 }
 
 void dungeon2_get_wild_pokemon_level_distribution(u8 *mean, u8 *std_deviation) {
-  if (checkflag(FRBADGE_5)) {
-    *mean = 37;
-    *std_deviation = 3;
-  } else if(checkflag(FRBADGE_4)) {
-    *mean = 32;
-    *std_deviation = 3;
-  } else if (checkflag(FRBADGE_3)) {
-    *mean = 26;
-    *std_deviation = 3;
-  } else if (checkflag(FRBADGE_2)) {
-    *mean = 16;
-    *std_deviation = 2;
-  } else if (checkflag(FRBADGE_1)) {
-    *mean = 10;
-    *std_deviation = 2;
-  } else {
-    *mean = 5;
-    *std_deviation = 1;
+  switch (*var_access(VAR_STORY_STATE)) {
+    default: {
+      *mean = 5;
+      *std_deviation = 1;
+      break;
+    }
+    case STORY_STATE_ROUTE_2_TANN_DONE: {
+      *mean = 11;
+      *std_deviation = 2;
+      break;
+    }
+    case STORY_STATE_BRUCHFELS_DONE: {
+      *mean = 16;
+      *std_deviation = 2;
+      break;
+    }
+    case STORY_STATE_FELSIGE_ODENIS_RIVAL_DONE: {
+      *mean = 20;
+      *std_deviation = 2;
+      break;
+    }
+    case STORY_STATE_KUESTENBERG_DONE: {
+      *mean = 31;
+      *std_deviation = 3;
+      break;
+    }
+    case STORY_STATE_BLUETENBACH_GYM_DONE: {
+      *mean = 36;
+      *std_deviation = 3;
+      break;
+    }
+    case STORY_STATE_ROUTE_6_MISTRAL_IGVA_DONE: {
+      *mean = 39;
+      *std_deviation = 3;
+      break;
+    }
+    case STORY_STATE_VULCANO_DONE: {
+      *mean = 43;
+      *std_deviation = 3;
+      break;
+    }
   }
 }
 

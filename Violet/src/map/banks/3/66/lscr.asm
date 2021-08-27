@@ -9,6 +9,7 @@
 .include "items.s"
 .include "levelscript_types.s"
 .include "healingplaces.s"
+.include "story_states.s"
 
 .global lscr_0x718dc8
 
@@ -365,6 +366,7 @@ applymovement 0x2 ow_script_movs_0x8aafce
 waitmovement 0x0
 setflag ROUTE_2_RIVAL_INSIDE_LAB
 setvar STORY_PROGRESS 0xf
+setvar VAR_STORY_STATE STORY_STATE_ROUTE_2_TANN_DONE
 sound 0x15
 applymovement 1 mov_exclam
 waitmovement 0

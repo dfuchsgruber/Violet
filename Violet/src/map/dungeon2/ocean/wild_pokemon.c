@@ -105,14 +105,14 @@ void dungeon2_set_encounter_ocean() {
 void dungeon2_init_wild_pokemon_ocean(dungeon_generator2 *dg2) {
   // Pick four common pokemon
   u16 common_pokemon[2];
-  dungeon2_pick_wild_pokemon(common_pokemon, 2, dungeon_ocean_wild_pokemon_water_common, dg2);
+  dungeon2_pick_wild_pokemon(common_pokemon, 2, dungeon_ocean_wild_pokemon_water_common, 1, dg2);
   // Pick one rare pokemon
   u16 rare_pokemon[3];
-  dungeon2_pick_wild_pokemon(rare_pokemon, 2, dungeon_ocean_wild_pokemon_water_rare, dg2);
+  dungeon2_pick_wild_pokemon(rare_pokemon, 2, dungeon_ocean_wild_pokemon_water_rare, 1, dg2);
   // Pick one super rare pokemon
   u16 super_rare_pokemon[2];
   dungeon2_pick_wild_pokemon(super_rare_pokemon, 1, dungeon_ocean_wild_pokemon_water_super_rare,
-		  dg2);
+		  1, dg2);
 
   *var_access(DUNGEON_OVERWORLD_SPECIES) = super_rare_pokemon[0];
 
@@ -139,18 +139,18 @@ void dungeon2_init_wild_pokemon_ocean(dungeon_generator2 *dg2) {
   // Rod
 
   // The rod pokemon have 70% and 30% probability
-  dungeon2_pick_wild_pokemon(common_pokemon, 2, dungeon_ocean_wild_pokemon_rod, dg2);
+  dungeon2_pick_wild_pokemon(common_pokemon, 2, dungeon_ocean_wild_pokemon_rod, 1, dg2);
   fmem.dwild_data_rod[0].species = common_pokemon[0];
   fmem.dwild_data_rod[1].species = common_pokemon[1];
 
   // The good rod pokemon have 60% and 40% probability
-  dungeon2_pick_wild_pokemon(rare_pokemon, 3, dungeon_ocean_wild_pokemon_good_rod, dg2);
+  dungeon2_pick_wild_pokemon(rare_pokemon, 3, dungeon_ocean_wild_pokemon_good_rod, 1, dg2);
   fmem.dwild_data_rod[2].species = rare_pokemon[0];
   fmem.dwild_data_rod[3].species = rare_pokemon[1];
   fmem.dwild_data_rod[4].species = rare_pokemon[1];
 
   // The super rood pokemon: 60% a good rod, 30% for the first, 10% for the second
-  dungeon2_pick_wild_pokemon(super_rare_pokemon, 2, dungeon_ocean_wild_pokemon_super_rod, dg2);
+  dungeon2_pick_wild_pokemon(super_rare_pokemon, 2, dungeon_ocean_wild_pokemon_super_rod, 1, dg2);
   fmem.dwild_data_rod[5].species = rare_pokemon[2];
   fmem.dwild_data_rod[6].species = super_rare_pokemon[0];
   fmem.dwild_data_rod[7].species = super_rare_pokemon[1];

@@ -45,6 +45,12 @@
         NUM_NBS,
     };
 
+    #define DUNGEON_FOREST_NUM_ITEMS_COMMON 8
+    #define DUNGEON_FOREST_NUM_ITEMS_RARE 4
+    #define DUNGEON_FOREST_NUM_POKEMON_COMMON 8
+    #define DUNGEON_FOREST_NUM_POKEMON_RARE 4
+    #define DUNGEON_FOREST_NUM_POKEMON_STATIC 4
+
     typedef struct {
         map_footer_t *footer; // A special pattern that only occurs in this dungeon
         void (*event_init)(dungeon_generator2 *);
@@ -57,6 +63,11 @@
         u8 y_consistent_decoration; // If true, the decoratino idx is always the same across two rows, this allows for larger patterns
         u8 map_weather;
         void (*fill_pattern_in_map)(u8 *map, int x, int y, int w, int h, dungeon_generator2 *dg2);
+        u16 items_common[8];
+        u16 items_rare[4];
+        u16 species_common[8];
+        u16 species_rare[4];
+        u16 species_static_encounter[4];
     } dungeon_forest_t;
 
     dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES];

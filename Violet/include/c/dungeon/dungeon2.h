@@ -401,9 +401,14 @@ extern "C" {
     void dungeon2_get_wild_pokemon_level_distribution(u8 *mean, u8 *std_deviation);
 
     /**
-     * Picks a number of distinct elements of src (terminated by 0xFFFF) and places them at dst
+     * Picks a number of distinct elements of src  and places them at dst
+     * @param dst where to put elements
+     * @param number how many elements to put
+     * @param src where to get elements from
+     * @param src_size how many elements are in src
+     * @param dg2 dungeon generator state
      */
-    void dungeon2_pick_wild_pokemon(u16 *dst, int number, u16 *src, dungeon_generator2 *dg2);
+    void dungeon2_pick_wild_pokemon(u16 *dst, size_t number, u16 *src, size_t src_size, dungeon_generator2 *dg2);
 
     /**
      * Gets the boundaries for wild pokemon levels based on a mean and standard deviation

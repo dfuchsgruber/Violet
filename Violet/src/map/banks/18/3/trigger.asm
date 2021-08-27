@@ -6,6 +6,7 @@
 .include "flags.s"
 .include "movements.s"
 .include "pathfinding.s"
+.include "story_states.s"
 
 .global ow_script_map_18_3_trigger_0
 .global ow_script_0x95e6bd

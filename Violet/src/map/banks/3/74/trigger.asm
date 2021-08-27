@@ -8,6 +8,7 @@
 .include "overworld_script.s"
 .include "items.s"
 .include "pathfinding.s"
+.include "story_states.s"
 
 .global ow_script_0x8e33a7
 .global ow_script_0x8e63a6
@@ -106,6 +107,7 @@ later:
 	npc_move_to 0x11 0x11 0x10
 	hidesprite 0x11
 	addvar STORY_PROGRESS 1
+	setvar VAR_STORY_STATE STORY_STATE_FELSIGE_ODENIS_RIVAL_DONE
 	releaseall
 	end
 

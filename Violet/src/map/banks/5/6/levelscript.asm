@@ -10,6 +10,7 @@
 .include "mugshot.s"
 .include "difficulties.s"
 .include "ordinals.s"
+.include "story_states.s"
 
 .global map_meriana_city_gym_arena_levelscripts
 
@@ -94,6 +95,7 @@ later:
     cleartrainerflag 0x1cf
     cleartrainerflag 0x1d0
     setflag MERIANA_CITY_ELISE_VISIBLE
+	setvar VAR_STORY_STATE STORY_STATE_BLUETENBACH_GYM_DONE
 	warpmuted 0x3 0x1 0x2 0 0
 	waitstate
 	release
