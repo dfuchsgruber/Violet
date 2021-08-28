@@ -14,6 +14,7 @@
 #include "bios.h"
 #include "agbmemory.h"
 #include "prng.h"
+#include "callbacks.h"
 
 int dungeon2_propose_node(int nodes[][2], int idx, dungeon_generator2 *dg2) {
   (void)dg2;

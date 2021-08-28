@@ -63,7 +63,10 @@ typedef struct saveblock1 {
     u8 flags[288];
     u16 vars[256];
     u32 sav_keys[64]; // This is one of the whackest names for stuff I have so far... At one point this should be renamed to: game stat
-    u8 field_4864[6640];
+    u16 dungeon_blocks[56 * 56]; // Previously questlog
+    int dungeon_nodes[16][2];
+    u8 questlog[160];
+    u8 field_4864[80];
     u16 mail_words[2][9]; // Might be there are more than 2 mails
     u8 unknown_4[620];
     // 0x2F80
@@ -210,8 +213,8 @@ typedef struct {
     u8 mugshot_tb_id;
     u8 mugshot_active : 1;
     multichoice_t dynamic_choice;
-    u16 tile_anim_clks_0[8];
-    u16 tile_anim_clks_1[8];
+    // u16 tile_anim_clks_0[8];
+    // u16 tile_anim_clks_1[8];
     map_header_t dmapheader;
     map_footer_t dmapfooter;
     map_event_header_t dmapevents;
@@ -255,22 +258,6 @@ typedef struct {
     u8 weather_blend_delay;
     u8 pokemon_move_learning_evolution_move_idx;
     u8 blackbeard_ship_oam_idx;
-    /*
-    color_t pals_filtered[32][16];
-    color_t dns_filter;
-    color_t weather_filter;
-    u8 dns_alpha : 5;
-    u8 dns_filter_mode : 3; // If true, color multiply is used, else alpha blending
-    u8 weather_alpha : 5;
-    u8 weather_filter_mode : 3; // If true, color multiply is used, else alpha blending
-    color_t weather_previous_filter;
-    color_t weather_next_filter;
-    u8 weather_filter_transition_delay;
-    u8 weather_filter_transition_delay_counter;
-    u8 weather_filter_transition_idx;
-    u8 weather_filter_transition_num_steps;
-    */
-
 } floating_memory;
 
 

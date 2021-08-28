@@ -92,7 +92,11 @@ void trainer_variables_initialize() {
 }
 
 int trainerbattle_initialize_by_npc_idx(u8 npc_idx) {
+    map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
+    if (person->script_std == PERSON_AGGRESSIVE_POKEMON)
+        return 0; // Aggresive wild pokemon can not be trainers
     int num_trainers = 0;
+
     u8 *script = npc_get_script(npc_idx);
     if (!script) return 0;
     if (npc_trainer_check_flag(script)) return 0;

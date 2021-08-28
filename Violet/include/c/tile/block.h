@@ -105,6 +105,25 @@ u16 block_get_by_pos(s16 x, s16 y);
  */
 void block_set_by_pos_with_level(s16 x, s16 y, u16 block_and_level);
 
+typedef struct {
+    int width;
+    int height;
+    u16 *blocks;
+} virtual_map_t;
+
+extern virtual_map_t map_blocks_virtual;
+
+// The map block data
+extern u16 map_changes[10240];
+
+/**
+ * Copies a set of blocks to the map_blocks_virtual.
+ * @param src from where to copy
+ * @param src_width width of the map to copy
+ * @param src_height height of the map to copy
+ **/
+void map_copy_blocks_to_virtual_blocks_with_padding(u16 *src, u16 src_width, u16 src_height);
+
 #define BLOCK_SOLID 0xC00
 
 /**

@@ -2,6 +2,7 @@
 #include "map/header.h"
 #include "save.h"
 #include "dungeon/dungeon2.h"
+#include "dungeon/callback.h"
 #include "dungeon/forest.h"
 #include "debug.h"
 #include "constants/map_weathers.h"
@@ -25,6 +26,8 @@
 #include "constants/person_script_stds.h"
 #include "constants/map_weathers.h"
 #include "constants/wild_pokemon_densities.h"
+#include "callbacks.h"
+#include "overworld/script.h"
 
 extern map_footer_t map_footer_dungeon_forest_normal;
 extern map_footer_t map_footer_dungeon_forest_apple_tree;
@@ -66,7 +69,6 @@ static int dungeon2_get_forest_num_patterns(dungeon_generator2 *dg2) {
 }
 
 map_footer_t *dungeon2_init_footer_forest(dungeon_generator2 *dg2){
-    dprintf("D2 footer init\n");
     map_footer_t *footer = dungeon2_get_forest_type_pattern(dg2);
     fmem.dmapfooter.width = (u32)dg2->width;
     fmem.dmapfooter.height = (u32)dg2->height;
@@ -140,8 +142,7 @@ static void dungeon_forest_normal_initialize_events(dungeon_generator2 *dg2) {
 
 static void dungeon_forest_apple_forest_initialize_events(dungeon_generator2 *dg2){
     u8 num_persons = fmem.dmapevents.person_cnt;
-    int nodes[dg2->nodes][2];
-    dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
+    int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
     // Up to 4 apples are under an apple tree
     size_t idxs_shuffled[4] = {0, 1, 2, 3};
@@ -166,8 +167,7 @@ static void dungeon_forest_apple_forest_initialize_events(dungeon_generator2 *dg
 
 static void dungeon_forest_berry_forest_initialize_events(dungeon_generator2 *dg2){
     u8 num_persons = fmem.dmapevents.person_cnt;
-    int nodes[dg2->nodes][2];
-    dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
+    int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
     gp_rng_seed(cmem.dg2.seed);
     for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns); j++) {
@@ -190,8 +190,7 @@ static void dungeon_forest_berry_forest_initialize_events(dungeon_generator2 *dg
 
 static void dungeon_forest_egg_forest_initialize_events(dungeon_generator2 *dg2){
     u8 num_persons = fmem.dmapevents.person_cnt;
-    int nodes[dg2->nodes][2];
-    dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
+    int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
     gp_rng_seed(cmem.dg2.seed);
     for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_persons < ARRAY_COUNT(fmem.dpersons); j++) {
@@ -213,8 +212,7 @@ static s16 dungeon_forest_mushroom_displacements[][3] = {
 
 static void dungeon_mushroom_forest_initialize_events(dungeon_generator2 *dg2) {
     u8 num_persons = fmem.dmapevents.person_cnt;
-    int nodes[dg2->nodes][2];
-    dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
+    int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
     size_t idxs_shuffled[3] = {0, 1, 2};
     for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns); j++) {
@@ -237,8 +235,7 @@ static void dungeon_mushroom_forest_initialize_events(dungeon_generator2 *dg2) {
 
 static void dungeon_dusk_forest_initialize_events(dungeon_generator2 *dg2) {
     u8 num_warps = fmem.dmapevents.warp_cnt;
-    int nodes[dg2->nodes][2];
-    dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
+    int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
     for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_warps <= ARRAY_COUNT(fmem.dwarps); j++) {
         fmem.dwarps[num_warps].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] - 1);
@@ -253,8 +250,7 @@ static void dungeon_dusk_forest_initialize_events(dungeon_generator2 *dg2) {
 
 static void dungeon_tent_forest_initialize_events(dungeon_generator2 *dg2) {
     u8 num_warps = fmem.dmapevents.warp_cnt;
-    int nodes[dg2->nodes][2];
-    dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
+    int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
     for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_warps <= ARRAY_COUNT(fmem.dwarps); j++) {
         fmem.dwarps[num_warps].x = (s16)(nodes[DG2_NODE_PATTERN + j][0]);
@@ -532,7 +528,7 @@ void dungeon2_init_wild_pokemon_forest(dungeon_generator2 *dg2) {
 
 void dungeon2_set_encounter_forest() {
   dungeon_generator2 *dg2 = &(cmem.dg2);
-  dungeon2_forest_init_state(dg2);
+  dungeon2_forest_initialize_state(dg2);
   pokemon_clear_opponent_party();
 
   u16 species = *var_access(DUNGEON_OVERWORLD_SPECIES);
@@ -563,6 +559,8 @@ map_header_t *dungeon2_init_header_forest(dungeon_generator2 *dg2) {
     fmem.dmapheader.show_name = 0;
     fmem.dmapheader.battle_style = 0;
     fmem.dmapheader.events = dungeon2_init_events_forest(dg2);
+    fmem.dmapheader.footer = dungeon2_init_footer_forest(dg2);
+    fmem.dmapheader.footer_idx = DG2_FOOTER_IDX;
     return &(fmem.dmapheader);
 }
 
@@ -804,15 +802,14 @@ static void dungeon2_set_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg
                 block = blocks_2x2_tree[type_below][decoration_idx][y % 2][x % 2];
             else if (type & DG2_WALL)
                 block = blocks_1x1_tree[type_below][decoration_idx][y % 2][x % 2];
-            block_set_by_pos((s16)(x + 7), (s16)(y + 7), block);
+            save1->dungeon_blocks[y * dg2->width + x] = block;
         }
     }
     free(decoration_idxs);
 }
 
-void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2){
-    int nodes[dg2->nodes][2];
-    dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
+static void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2){
+    int (*nodes)[2] = save1->dungeon_nodes;
     dungeon_forest_t *forest_type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
     map_footer_t *pattern = dungeon2_get_forest_type_pattern(dg2);
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
@@ -858,37 +855,12 @@ void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2){
     dungeon2_set_blocks_forest(map, over, dg2);
     if (pattern) {
         for (int i = 0; i < MIN(num_patterns, DG2_MAX_NUM_PATTERNS); i++) {
-            dungeon2_place_pattern(nodes[DG2_NODE_PATTERN + i][0], nodes[DG2_NODE_PATTERN + i][1], pattern);
+            dungeon2_place_pattern(nodes[DG2_NODE_PATTERN + i][0], nodes[DG2_NODE_PATTERN + i][1], pattern, dg2);
         } 
     }
 }
 
-void dungeon2_compute_forest(){
-    if (fmem.dmap_blocks_initialized) {
-      dprintf("D2 already computed...\n");
-      return;
-    }
-    dprintf("D2 compute...\n");
-
-    fmem.dmap_blocks_initialized = 1;
-
-    dungeon_generator2 *dg2 = &(cmem.dg2);
-    dungeon2_forest_init_state(dg2);
-
-    u8 *map = dungeon2_create_connected_layout(dg2, false);
-    int num_patterns = dungeon2_get_forest_num_patterns(dg2);
-    int excluded_nodes_mask = 0;
-    for (int i = DG2_NODE_PATTERN; i < DG2_NODE_PATTERN + num_patterns; i++)
-        excluded_nodes_mask |= 1 << i;
-    u8 *over = dungeon2_create_patch_layout(dg2, false, excluded_nodes_mask);
-    dungeon2_compute_blocks_forest(map, over, dg2);
-    free(map);
-    free(over);
-
-    mapheader_virtual.footer = &(fmem.dmapfooter);
-}
-
-void dungeon2_forest_init_state(dungeon_generator2 *dg2) {
+void dungeon2_forest_initialize_state(dungeon_generator2 *dg2) {
   dg2->seed = dg2->initial_seed;
   dg2->width = DG2_FOREST_WIDTH;
   dg2->height = DG2_FOREST_HEIGHT;
@@ -901,34 +873,105 @@ void dungeon2_forest_init_state(dungeon_generator2 *dg2) {
   dg2->node_samples = DG2_FOREST_NODE_SAMPLES;
 }
 
-void dungeon2_init_forest(){
-    if (fmem.dmap_header_initialized) {
-      return;
-    }
-
-    fmem.dmap_header_initialized = 1;
-
+void dungeon2_initialize_forest(){
     dungeon_generator2 *dg2 = &(cmem.dg2);
-    dungeon2_forest_init_state(dg2);
-
+    dungeon2_forest_initialize_state(dg2);
     dungeon2_init_wild_pokemon_forest(dg2); // Initialize before events since persons depend
     dungeon2_init_header_forest(dg2);
-    dungeon2_init_events_forest(dg2);
-    dungeon2_init_footer_forest(dg2);
+    fmem.dmap_header_initialized = 1;
+}
+
+void dungeon2_compute_layout_forest_callback(u8 self) {
+    dungeon_generator2 *dg2 = (dungeon_generator2*) big_callback_get_int(self, 2);
+    u8 *map = (u8*)big_callback_get_int(self, 4);
+    u8 *over = (u8*)big_callback_get_int(self, 8);
+    u16 *vars = big_callbacks[self].params;
+    dprintf("Forest callback superstate %d\n", vars[0]);
+    switch (vars[0]) {
+        case 0: {
+            big_callback_set_int(self, 4, (int)malloc(sizeof(u8) * (size_t)dg2->width * (size_t)dg2->height));
+            big_callback_set_int(self, 8, (int)malloc(sizeof(u8) * (size_t)dg2->width * (size_t)dg2->height));
+            vars[0]++;
+            FALL_THROUGH;
+        }
+        case 1: { // Sample nodes
+            int (*nodes_tmp)[2] = malloc(sizeof(save1->dungeon_nodes));
+            big_callback_set_int(self, 6, (int)nodes_tmp);
+            vars[1] = dungeon2_get_nodes_with_callback(nodes_tmp, dg2->nodes, dg2);
+            vars[0]++;
+            break;
+        }
+        case 2: {
+            if (dungeon2_get_nodes_with_callback_finished((u8)vars[1])) {
+                int (*nodes_tmp)[2] = (int (*)[2])big_callback_get_int(self, 6);
+                memcpy(save1->dungeon_nodes, nodes_tmp, sizeof(save1->dungeon_nodes));
+                free(nodes_tmp);
+                vars[0]++;
+            }
+            break;
+        }
+        case 3: {
+            vars[1] = dungeon2_create_connected_layout_with_callback(dg2, save1->dungeon_nodes, map);
+            vars[0]++;
+            break;
+        }
+        case 4: {
+            if (dungeon2_create_connected_layout_with_callback_finished((u8)vars[1]))
+                vars[0]++;
+            break;
+        }
+        case 5: {
+            int num_patterns = dungeon2_get_forest_num_patterns(dg2);
+            int excluded_nodes_mask = 0;
+            for (int i = DG2_NODE_PATTERN; i < DG2_NODE_PATTERN + num_patterns; i++)
+                excluded_nodes_mask |= 1 << i;
+            vars[1] = dungeon2_create_patch_layout_with_callback(dg2, save1->dungeon_nodes, over, excluded_nodes_mask);
+            vars[0]++;
+            break;
+        }
+        case 6: {
+            if (dungeon2_create_patch_layout_with_callback_finished((u8)vars[1]))
+                vars[0]++;
+            break;
+        }
+        case 7: {
+            dungeon2_compute_blocks_forest(map, over, dg2);
+            free(map);
+            free(over);
+            big_callback_delete(self);
+        }
+    }
+}
+
+
+void dungeon2_compute_layout_forest() {
+    dungeon_generator2 *dg2 = &(cmem.dg2);
+    dungeon2_forest_initialize_state(dg2);
+    u8 cb_idx = big_callback_new(dungeon2_compute_layout_forest_callback, 0);
+    big_callback_set_int(cb_idx, 2, (int)dg2);
+    big_callbacks[cb_idx].params[0] = 0;
+}
+
+void dungeon2_compute_layout_continue_overworld_script_if_finished_callback(u8 self) {
+    if (!big_callback_is_active(dungeon2_compute_layout_forest_callback)) {
+        overworld_script_resume();
+        big_callback_delete(self);
+    }
+}
+void dungeon2_compute_layout_continue_overworld_script_if_finished() {
+    big_callback_new(dungeon2_compute_layout_continue_overworld_script_if_finished_callback, 1);
 }
 
 void dungeon2_enter_forest() {
 
     *var_access(DUNGEON_TYPE) = DTYPE_FOREST;
-    *var_access(VAR_DUNGEON_TYPE_TO_COMPUTE) = DTYPE_FOREST;
     *var_access(DUNGEON_STEPS) = 0;
     dungeon2_reset_flags();
 
     // Get the warp node (first node in the forest)
     dungeon_generator2 *dg2 = &(cmem.dg2);
-    dungeon2_forest_init_state(dg2);
-    int nodes[dg2->nodes][2];
-    dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
+    dungeon2_forest_initialize_state(dg2);
+    int (*nodes)[2] = save1->dungeon_nodes;
     s16 x = (s16)(nodes[0][0]);
     s16 y = (s16)(nodes[0][1]); 
 

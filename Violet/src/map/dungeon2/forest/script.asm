@@ -64,14 +64,16 @@ ow_script_dungeon2_enter_forest:
 	gotoif 1 ow_script_dungeon2_dont_enter_forest
 
 ow_script_dungeon2_enter_forest_field:
+    callasm dungeon2_seed_init
+	callasm dungeon2_compute_layout_forest // The earlier we start computing, the less idle time is induced
 	@ Display animation
 	doanimation 0x2
 	waitstate
 	copyvar 0x8004 LASTTALKED
 	setvar 0x8005 1
 	callasm overworld_npc_gfx_animation_new
-	pause 32
-    callasm dungeon2_seed_init
+	callasm dungeon2_compute_layout_continue_overworld_script_if_finished
+	waitstate
     callasm dungeon_map_entrance_set_flag
     callasm dungeon2_enter_forest
     waitstate

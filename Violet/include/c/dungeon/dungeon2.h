@@ -25,6 +25,7 @@ extern "C" {
 
 #define DG2_BANK 126
 #define DG2_MAP 126
+#define DG2_FOOTER_IDX 0x8000
 
 #define DTYPE_FOREST 1
 #define DTYPE_CAVE 2
@@ -104,6 +105,8 @@ extern "C" {
      * @param item_picker a function that picks an item given a dungeon generator
      **/
     void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(dungeon_generator2*));
+
+
 
 // #define NUM_DUNGEON_LOCATIONS 40
 #define NUM_DUNGEON_LOCATIONS 0
@@ -476,8 +479,9 @@ extern "C" {
      * @param pattern_x center coordinate where to place the pattern
      * @param pattern_y center coordinate where to place the pattern
      * @param pattern the pattern to place
+     * @param dg2 the dungeon generator state
      **/
-    void dungeon2_place_pattern(int pattern_x, int pattern_y, map_footer_t *pattern);
+    void dungeon2_place_pattern(int pattern_x, int pattern_y, map_footer_t *pattern, dungeon_generator2 *dg2);
 
     /**
      * Fills a rectangle on a map

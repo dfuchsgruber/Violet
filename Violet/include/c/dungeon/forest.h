@@ -24,7 +24,7 @@
     #define DG2_FOREST_MARGIN 6
     #define DG2_FOREST_NODE_METRIC_LAMBDA_MIN 7
     #define DG2_FOREST_NODE_METRIC_LAMBDA_MEAN 5
-    #define DG2_FOREST_NODE_SAMPLES 100
+    #define DG2_FOREST_NODE_SAMPLES 64
 
     enum {
         DUNGEON_FOREST_TYPE_NORMAL = 0,
@@ -78,28 +78,20 @@
     };
 
     /**
-     * Computes blocks for the forest dungeon
+     * Copies the blocks for the forest dungeon from the savefile to the map layout
      */
-    void dungeon2_compute_forest();
+    void dungeon2_copy_blocks_forest();
 
     /**
      * Initializes a dungeon_generator2 instance for the forest dungeon
      * @param dg2 the instance to initalize
      */
-    void dungeon2_forest_init_state(dungeon_generator2 *dg2);
+    void dungeon2_forest_initialize_state(dungeon_generator2 *dg2);
 
     /**
-     * Computes the header structures for the forest dungeon type
+     * Computes the header, footer, events and wild pokemon structures for the forest dungeon type
      */
-    void dungeon2_init_forest();
-
-    /**
-     * Computes map blocks for a forest map by using set_block_id(...) and a bytemap
-     * @param map The basic walk map
-     * @param over The overlay map for grass patches
-     * @param dg2
-     */
-    void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2);
+    void dungeon2_initialize_forest();
 
     map_header_t *dungeon2_init_header_forest(dungeon_generator2 *dg2);
 

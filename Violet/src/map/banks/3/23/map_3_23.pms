@@ -4,7 +4,7 @@
 		"events": {
 			"person_cnt": 43,
 			"warp_cnt": 2,
-			"trigger_cnt": 6,
+			"trigger_cnt": 0,
 			"signpost_cnt": 8,
 			"persons": [
 				{
@@ -1137,74 +1137,7 @@
 					"target_warp_idx": 1
 				}
 			],
-			"triggers": [
-				{
-					"value": 40,
-					"y": "26",
-					"level": 0,
-					"x": "0",
-					"script": "ow_script_map_3_23_trigger_0",
-					"field_5": 0,
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"value": 40,
-					"y": "32",
-					"level": 0,
-					"x": "0",
-					"script": "ow_script_map_3_23_trigger_0",
-					"field_5": 0,
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"value": 40,
-					"y": "26",
-					"level": 0,
-					"x": "0",
-					"script": "ow_script_map_3_23_trigger_0",
-					"field_5": 0,
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"value": 40,
-					"y": "26",
-					"level": 0,
-					"x": "0",
-					"script": "ow_script_map_3_23_trigger_0",
-					"field_5": 0,
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"value": 40,
-					"y": "26",
-					"level": 0,
-					"x": "0",
-					"script": "ow_script_map_3_23_trigger_0",
-					"field_5": 0,
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"value": 40,
-					"y": "26",
-					"level": 0,
-					"x": "0",
-					"script": "ow_script_map_3_23_trigger_0",
-					"field_5": 0,
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				}
-			],
+			"triggers": [],
 			"signposts": [
 				{
 					"x": "9",

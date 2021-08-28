@@ -39,34 +39,11 @@ void warp_setup_by_event_and_position(map_header_t *header, s8 warp_idx, positio
     if (warp->target_map == 0x7F) {
         warp_set_dynamic_map_idx(warp->target_warp_id);
     } else { 
-        u16 *dungeon_type = var_access(DUNGEON_TYPE);
-        u16 *dungeon_type_backup = var_access(VAR_DUNGEON_TYPE_TO_COMPUTE);
-        if (warp->target_bank == DG2_BANK && warp->target_map == DG2_MAP) {
-            *dungeon_type = *dungeon_type_backup;
-            fmem.dmap_header_initialized = false;
-            fmem.dmap_blocks_initialized = false;
-            warp_setup_by_event(warp->target_bank, warp->target_map, warp->target_warp_id);
-            warp_update_last_outdoor_map(position->coordinates.x, position->coordinates.y);
-        } else if (*dungeon_type) {
-            // Warp within the dungeon
-            if (warp->target_bank != DG2_BANK || warp->target_map != DG2_MAP) {
-                *dungeon_type_backup = *dungeon_type;
-                *dungeon_type = 0;
-                fmem.dmap_header_initialized = false;
-                fmem.dmap_blocks_initialized = false;
-                warp_setup_by_event(warp->target_bank, warp->target_map, warp->target_warp_id);
-            } else {
-                // Warp from a warp in the dungeon to a warp in the dungeon
-                warp_setup_by_event(warp->target_bank, warp->target_map, warp->target_warp_id);
-                warp_update_last_outdoor_map(position->coordinates.x, position->coordinates.y);
-            }
-        } else {
-            warp_setup_by_event(warp->target_bank, warp->target_map, warp->target_warp_id);
-            warp_update_last_outdoor_map(position->coordinates.x, position->coordinates.y);
-            map_header_t *header = get_mapheader(warp->target_bank, warp->target_map);
-            if (header->events->warps[warp->target_warp_id].target_map == 0x7F)
-                warp_last_map_set_on_current_position((s8)header->events->warps[warp_idx].target_warp_id, save1->bank, save1->map, warp_idx);
-        }
+        warp_setup_by_event(warp->target_bank, warp->target_map, warp->target_warp_id);
+        warp_update_last_outdoor_map(position->coordinates.x, position->coordinates.y);
+        map_header_t *header = get_mapheader(warp->target_bank, warp->target_map);
+        if (header->events->warps[warp->target_warp_id].target_map == 0x7F)
+            warp_last_map_set_on_current_position((s8)header->events->warps[warp_idx].target_warp_id, save1->bank, save1->map, warp_idx);
     }
 }
 

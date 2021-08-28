@@ -10,8 +10,7 @@
 	bx r0
 	.pool
 	
-	
-.org 0x08058A58
-	ldr r0, =reset_mapchanges_hook | 1
-	bx r0
+.org 0x08058a20
+	ldr r1, =map_initialize_blocks | 1
+	bx r1
 	.pool

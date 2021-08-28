@@ -1,5 +1,6 @@
 #include "types.h"
 #include "dungeon/dungeon2.h"
+#include "dungeon/callback.h"
 #include "prng.h"
 #include "map/header.h"
 #include "save.h"
@@ -10,9 +11,11 @@
 #include "constants/person_script_stds.h"
 #include "constants/overworld/misc.h"
 #include "overworld/sprite.h"
+#include "overworld/script.h"
 #include "flags.h"
 #include "debug.h"
 #include "hash.h"
+#include "callbacks.h"
 
 bool dungeon2_find_empty_space(int *space_x, int *space_y, u8 *center_node, int nodes[][2], int width, int height, u8 *map, dungeon_generator2 *dg2) {
     // For each node, see if we can expand the window arround it
@@ -48,12 +51,14 @@ bool dungeon2_find_empty_space_for_pattern(int *space_x, int *space_y, u8 *cente
     return dungeon2_find_empty_space(space_x, space_y, center_node, nodes, (int)pattern->width, (int)pattern->height, map, dg2);
 }
 
-void dungeon2_place_pattern(int pattern_x, int pattern_y, map_footer_t *pattern) {
+void dungeon2_place_pattern(int pattern_x, int pattern_y, map_footer_t *pattern, dungeon_generator2 *dg2) {
     dprintf("Place pattern with dimensions %d,%d at %d,%d\n", pattern->width, pattern->height, pattern_x, pattern_y);
     for (u8 i = 0; i < pattern->width; i++) {
         for (u8 j = 0; j < pattern->height; j++) {
             u16 *block = (u16*) pattern->map + (j * pattern->width + i);
-            block_set_by_pos((s16)(pattern_x + i + 7 - (int)(pattern->width / 2)), (s16)(pattern_y + j + 7 - (int)(pattern->height / 2)), *block);
+            // block_set_by_pos((s16)(pattern_x + i + 7 - (int)(pattern->width / 2)), (s16)(pattern_y + j + 7 - (int)(pattern->height / 2)), *block);
+            save1->dungeon_blocks[(pattern_y + j - (int)(pattern->height / 2)) * dg2->width + pattern_x + i - (int)(pattern->width / 2)] = *block;
+
         }
     }
 }
@@ -121,8 +126,7 @@ void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(
     fmem.dmapevents.persons = fmem.dpersons;
     fmem.dmapevents.warps = fmem.dwarps;
 
-    int nodes[dg2->nodes][2];
-    dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
+    int (*nodes)[2] = save1->dungeon_nodes;
 
     u8 num_persons = 0;
     u8 num_trainers = 0;

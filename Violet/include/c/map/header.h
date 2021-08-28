@@ -94,5 +94,10 @@ bool map_is_cloud();
  **/
 void map_current_play_song_if_not_playing();
 
+/**
+ * Copies the blocks of adjacent maps into the virtual blocks of a map
+ * @param header the header of the current map
+ **/
+void map_copy_adjacent_maps_to_virtual_blocks(map_header_t *header);
 
 #endif /* INCLUDE_C_MAP_HEADER_H_ */

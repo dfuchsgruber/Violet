@@ -68,7 +68,6 @@ ow_script_dungeon2_enter_ocean_field:
 	nop
 	waitstate
     callasm dungeon2_seed_init
-    setvar VAR_DUNGEON_TYPE_TO_COMPUTE DTYPE_OCEAN
     setvar DUNGEON_STEPS 0
     callasm dungeon_map_entrance_set_flag
     callasm dungeon2_enter_ocean
