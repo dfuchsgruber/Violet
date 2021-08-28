@@ -326,8 +326,10 @@ static void dungeon2_create_patch_layout_callback(u8 self) {
             int step = 0;
             while (step < DG2_CREATE_PATCH_LAYOUT_NODES_PER_FRAME && vars[1] < dg2->nodes) {
                 int node_idx = vars[1]++;
-                if (excluded_node_mask & (1 << node_idx))
-                    continue; // Don't count this as step
+                if (excluded_node_mask & (1 << node_idx)) {
+                    dprintf("Dont create patch arround node %d\n", node_idx);
+                    continue;
+                }
                 step++;
                 int x_node = nodes[node_idx][0];
                 int y_node = nodes[node_idx][1];

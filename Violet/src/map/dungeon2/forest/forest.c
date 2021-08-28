@@ -55,7 +55,7 @@ static u32 dungeon2_forest_type_rates[NUM_DUNGEON_FOREST_TYPES] = {
 };
 
 u8 dungeon2_get_forest_type(dungeon_generator2 *dg2) {
-    fmem.gp_rng = dg2->initial_seed;
+    gp_rng_seed(dungeon2_seeded_rnd16(dg2, DG2_RANDOM_SEED_DUNGEON_TYPE));
     return (u8)choice(dungeon2_forest_type_rates, NUM_DUNGEON_FOREST_TYPES, gp_rnd16);
 }
 
@@ -65,7 +65,8 @@ static map_footer_t *dungeon2_get_forest_type_pattern(dungeon_generator2 *dg2) {
 
 static int dungeon2_get_forest_num_patterns(dungeon_generator2 *dg2) {
     dungeon_forest_t *type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
-    return MIN(DG2_MAX_NUM_PATTERNS, type->min_num_patterns + (dungeon2_rnd_16(dg2) % (type->max_num_patterns - type->min_num_patterns + 1)));
+    gp_rng_seed(dungeon2_seeded_rnd16(dg2, DG2_RANDOM_SEED_NUM_PATTERNS));
+    return MIN(DG2_MAX_NUM_PATTERNS, type->min_num_patterns + (gp_rnd16() % (type->max_num_patterns - type->min_num_patterns + 1)));
 }
 
 map_footer_t *dungeon2_init_footer_forest(dungeon_generator2 *dg2){
@@ -147,7 +148,7 @@ static void dungeon_forest_apple_forest_initialize_events(dungeon_generator2 *dg
     // Up to 4 apples are under an apple tree
     size_t idxs_shuffled[4] = {0, 1, 2, 3};
     for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns); j++) {
-        fmem.gp_rng = dg2->seed;
+        gp_rng_seed(dungeon2_seeded_rnd16(dg2, DG2_RANDOM_SEED_PATTERN_PARAMETER));
         shuffle(idxs_shuffled, ARRAY_COUNT(idxs_shuffled), gp_rnd16);
         for (int i = 0; i < 4 && num_persons < ARRAY_COUNT(fmem.dpersons); i++) {
             if (dungeon2_rnd_16(dg2) % 2) {
@@ -169,7 +170,7 @@ static void dungeon_forest_berry_forest_initialize_events(dungeon_generator2 *dg
     u8 num_persons = fmem.dmapevents.person_cnt;
     int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
-    gp_rng_seed(cmem.dg2.seed);
+    gp_rng_seed(dungeon2_seeded_rnd16(dg2, DG2_RANDOM_SEED_PATTERN_PARAMETER));
     for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns); j++) {
         for (int i = 0; i < 3 && num_persons < ARRAY_COUNT(fmem.dpersons); i++) {
             fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
@@ -925,6 +926,7 @@ void dungeon2_compute_layout_forest_callback(u8 self) {
             int excluded_nodes_mask = 0;
             for (int i = DG2_NODE_PATTERN; i < DG2_NODE_PATTERN + num_patterns; i++)
                 excluded_nodes_mask |= 1 << i;
+            dprintf("Excluded vertices mask 0x%x\n", excluded_nodes_mask);
             vars[1] = dungeon2_create_patch_layout_with_callback(dg2, save1->dungeon_nodes, over, excluded_nodes_mask);
             vars[0]++;
             break;

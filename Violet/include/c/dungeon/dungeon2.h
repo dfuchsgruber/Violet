@@ -534,8 +534,11 @@ extern "C" {
     int dungeon2_node_trainer_or_item_get_type(dungeon_generator2 *dg2, int node_idx);
 
     enum {
-        DG2_RANDOM_SEED_NUM_TRAINERS = 0x1c78302a,
-        DG2_RANDOM_SEED_NUM_ITEMS = 0x6628801,
+        DG2_RANDOM_SEED_NUM_TRAINERS = 0xf21b93c9,
+        DG2_RANDOM_SEED_NUM_ITEMS = 0x5ac09df9,
+        DG2_RANDOM_SEED_DUNGEON_TYPE = 0x9cb74858,
+        DG2_RANDOM_SEED_NUM_PATTERNS = 0xcb3fbbfb,
+        DG2_RANDOM_SEED_PATTERN_PARAMETER = 0xf0045451,
     };
 
     /**
