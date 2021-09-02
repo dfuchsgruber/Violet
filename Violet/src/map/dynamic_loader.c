@@ -45,6 +45,9 @@ map_header_t *get_mapheader(u8 bank, u8 map) {
                 case DTYPE_FOREST:
                     dungeon2_initialize_forest();
                     break;
+                case DTYPE_CAVE:
+                    dungeon2_initialize_cave();
+                    break;
             }
         }
         return &(fmem.dmapheader);

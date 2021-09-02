@@ -1855,6 +1855,8 @@ extern const u8 gfx_ow_trashTiles[];
 extern const color_t gfx_ow_trashPal[];
 extern const u8 gfx_overworld_secret_power_vinesTiles[];
 extern const color_t gfx_overworld_secret_power_vinesPal[];
+extern const u8 gfx_overworld_secret_power_caveTiles[];
+extern const color_t gfx_overworld_secret_power_cavePal[];
 extern const color_t gfx_ow_applePal[16];
 
 extern overworld_sprite overworld_sprite_strength_boulder;

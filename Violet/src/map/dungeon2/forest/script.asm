@@ -72,7 +72,7 @@ ow_script_dungeon2_enter_forest_field:
 	copyvar 0x8004 LASTTALKED
 	setvar 0x8005 1
 	callasm overworld_npc_gfx_animation_new
-	callasm dungeon2_compute_layout_continue_overworld_script_if_finished
+	callasm dungeon2_compute_layout_forest_continue_overworld_script_if_finished
 	waitstate
     callasm dungeon_map_entrance_set_flag
     callasm dungeon2_enter_forest

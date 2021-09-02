@@ -164,6 +164,10 @@ static palette overworld_palette_secret_power_vine = {
     .pal = gfx_overworld_secret_power_vinesPal, .tag = OW_PAL_TAG_SECRET_POWER_VINES,
 }; 
 
+static palette overworld_palette_secret_power_cave = {
+    .pal = gfx_overworld_secret_power_cavePal, .tag = OW_PAL_TAG_SECRET_POWER_CAVE,
+}; 
+
 static palette *overworld_npc_palette_get_by_tag(u16 tag) {
     if (tag >= OW_PAL_TAG_POKEMON_BASE && tag < OW_PAL_TAG_POKEMON_END) {
         return overworld_palette_get_by_species((u16)(tag - OW_PAL_TAG_POKEMON_BASE));
@@ -185,6 +189,7 @@ static palette *overworld_npc_palette_get_by_tag(u16 tag) {
         case OW_PAL_TAG_ICARUS: return &overworld_palette_icarus;
         case OW_PAL_TAG_TRASH: return overworld_palette_get_by_trash();
         case OW_PAL_TAG_SECRET_POWER_VINES: return &overworld_palette_secret_power_vine;
+        case OW_PAL_TAG_SECRET_POWER_CAVE: return &overworld_palette_secret_power_cave;
         case OW_PAL_TAG_APPLE: return &overworld_palette_apple;
     }
     u8 idx = overworld_npc_palette_get_idx(tag);

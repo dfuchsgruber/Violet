@@ -63,12 +63,16 @@ ow_script_dungeon2_enter_cave:
 	compare LASTRESULT 0
 	gotoif 1 ow_script_dungeon2_dont_enter_cave
 ow_script_dungeon2_enter_cave_field:
+	callasm dungeon2_seed_init
+	callasm dungeon2_compute_layout_cave // The earlier we start computing, the less idle time is induced
 	@ Display animation
 	doanimation 0x2
 	waitstate
-
-    callasm dungeon2_seed_init
-    setvar DUNGEON_STEPS 0
+	copyvar 0x8004 LASTTALKED
+	setvar 0x8005 1
+	callasm overworld_npc_gfx_animation_new
+	callasm dungeon2_compute_layout_cave_continue_overworld_script_if_finished
+	waitstate
     callasm dungeon_map_entrance_set_flag
     callasm dungeon2_enter_cave
     waitstate

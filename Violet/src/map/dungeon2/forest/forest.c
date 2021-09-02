@@ -872,6 +872,8 @@ void dungeon2_forest_initialize_state(dungeon_generator2 *dg2) {
   dg2->node_metric_lambda_l2 = DG2_FOREST_NODE_METRIC_LAMBDA_MEAN;
   dg2->node_metric_lambda_min = DG2_FOREST_NODE_METRIC_LAMBDA_MIN;
   dg2->node_samples = DG2_FOREST_NODE_SAMPLES;
+  map_footer_t *pattern = dungeon2_get_forest_type_pattern(dg2);
+  dg2->pattern_margin = (u8)(((MAX(pattern->width, pattern->height) + 1) / 2) & 0xF);
 }
 
 void dungeon2_initialize_forest(){
@@ -887,7 +889,7 @@ void dungeon2_compute_layout_forest_callback(u8 self) {
     u8 *map = (u8*)big_callback_get_int(self, 4);
     u8 *over = (u8*)big_callback_get_int(self, 8);
     u16 *vars = big_callbacks[self].params;
-    dprintf("Forest callback superstate %d\n", vars[0]);
+    // dprintf("Forest callback superstate %d\n", vars[0]);
     switch (vars[0]) {
         case 0: {
             big_callback_set_int(self, 4, (int)malloc(sizeof(u8) * (size_t)dg2->width * (size_t)dg2->height));
@@ -912,7 +914,7 @@ void dungeon2_compute_layout_forest_callback(u8 self) {
             break;
         }
         case 3: {
-            vars[1] = dungeon2_create_connected_layout_with_callback(dg2, save1->dungeon_nodes, map);
+            vars[1] = dungeon2_create_connected_layout_with_callback(dg2, save1->dungeon_nodes, map, 0);
             vars[0]++;
             break;
         }
@@ -926,7 +928,7 @@ void dungeon2_compute_layout_forest_callback(u8 self) {
             int excluded_nodes_mask = 0;
             for (int i = DG2_NODE_PATTERN; i < DG2_NODE_PATTERN + num_patterns; i++)
                 excluded_nodes_mask |= 1 << i;
-            dprintf("Excluded vertices mask 0x%x\n", excluded_nodes_mask);
+            // dprintf("Excluded vertices mask 0x%x\n", excluded_nodes_mask);
             vars[1] = dungeon2_create_patch_layout_with_callback(dg2, save1->dungeon_nodes, over, excluded_nodes_mask);
             vars[0]++;
             break;
@@ -954,14 +956,14 @@ void dungeon2_compute_layout_forest() {
     big_callbacks[cb_idx].params[0] = 0;
 }
 
-void dungeon2_compute_layout_continue_overworld_script_if_finished_callback(u8 self) {
+void dungeon2_compute_layout_forest_continue_overworld_script_if_finished_callback(u8 self) {
     if (!big_callback_is_active(dungeon2_compute_layout_forest_callback)) {
         overworld_script_resume();
         big_callback_delete(self);
     }
 }
-void dungeon2_compute_layout_continue_overworld_script_if_finished() {
-    big_callback_new(dungeon2_compute_layout_continue_overworld_script_if_finished_callback, 1);
+void dungeon2_compute_layout_forest_continue_overworld_script_if_finished() {
+    big_callback_new(dungeon2_compute_layout_forest_continue_overworld_script_if_finished_callback, 1);
 }
 
 void dungeon2_enter_forest() {

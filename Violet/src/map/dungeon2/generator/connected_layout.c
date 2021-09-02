@@ -168,9 +168,7 @@ void dungeon2_init_by_paths(u8 *map, dungeon_generator2 *dg2, bool random_nodes)
     }
 }
 
-void dungeon2_print_map(u8 *map, dungeon_generator2 *dg2) {
-  int nodes[dg2->nodes][2];
-  dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
+void dungeon2_print_map_with_nodes(u8 *map, dungeon_generator2 *dg2, int nodes[][2], size_t num_nodes) {
   char charmap[dg2->width + 5];
       for (int y = 0; y < dg2->height; y++) {
         int x;
@@ -183,7 +181,7 @@ void dungeon2_print_map(u8 *map, dungeon_generator2 *dg2) {
               charmap[x] = '#';
           }
           else charmap[x] = 'R';
-          for (int i = 0; i < dg2->nodes; i++) {
+          for (u8 i = 0; i < num_nodes; i++) {
                       if (x == nodes[i][0] && y == nodes [i][1])
                         charmap[x] = 'x';
           }
@@ -195,6 +193,10 @@ void dungeon2_print_map(u8 *map, dungeon_generator2 *dg2) {
         charmap[x++] = 0;
         dprintf(charmap);
        }
+}
+
+void dungeon2_print_map(u8 *map, dungeon_generator2 *dg2) {
+  dungeon2_print_map_with_nodes(map, dg2, save1->dungeon_nodes, dg2->nodes);
 }
 
 u8 *dungeon2_create_connected_layout(dungeon_generator2 *dg2, bool random_nodes){

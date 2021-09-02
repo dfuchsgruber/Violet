@@ -16,6 +16,137 @@ static void dungeon2_callback_done(u8 self) {
     (void)self;
 }
 
+static void dungeon2_enlarge_callback(u8 self) {
+    u16 *vars = big_callbacks[self].params;
+    u8 *src = (u8*)big_callback_get_int(self, 2);
+    u8 *dst = (u8*)big_callback_get_int(self, 4);
+    dungeon_generator2 *dg2 = (dungeon_generator2*)big_callback_get_int(self, 6);
+    int step = 0;
+    while (step < vars[1] && vars[0] < dg2->height) {
+        for (int x = 0; x < dg2->width; x++) {
+            int adjacent_walls = 0;
+            int y = vars[0];
+            for(int k = 0; k < 4; k++){
+                int i = dg2_cross_neighbourhood[k][0];
+                int j = dg2_cross_neighbourhood[k][1];
+                if(src[(y + j) * dg2->width + x + i] == DG2_WALL)
+                    adjacent_walls++;
+            }
+            if (adjacent_walls == 4 && src[y * dg2->width + x] == DG2_WALL)
+                dst[y * dg2->width + x] = DG2_WALL;
+            else
+                dst[y * dg2->width + x] = DG2_SPACE;
+        }
+        vars[0]++;
+        step++;
+    }
+    if (vars[0] >= dg2->height)
+        big_callbacks[self].function = dungeon2_callback_done;
+}
+
+u8 dungeon2_enlarge_with_callback(u8 *src, u8 *dst, dungeon_generator2 *dg2, u16 lines_per_frame) {
+    u8 cb_idx = big_callback_new(dungeon2_enlarge_callback, 10);
+    big_callbacks[cb_idx].params[0] = 0;
+    big_callbacks[cb_idx].params[1] = lines_per_frame;
+    big_callback_set_int(cb_idx, 2, (int)src);
+    big_callback_set_int(cb_idx, 4, (int)dst);
+    big_callback_set_int(cb_idx, 6, (int)dg2);
+    return cb_idx;
+}
+
+bool dungeon2_enlarge_with_callback_finished(u8 cb_idx) {
+    if (big_callbacks[cb_idx].function == dungeon2_callback_done) {
+        big_callback_delete(cb_idx);
+        return true;
+    }
+    return false;
+}
+
+static void dungeon2_contract_callback(u8 self) {
+    u16 *vars = big_callbacks[self].params;
+    u8 *src = (u8*)big_callback_get_int(self, 2);
+    u8 *dst = (u8*)big_callback_get_int(self, 4);
+    dungeon_generator2 *dg2 = (dungeon_generator2*)big_callback_get_int(self, 6);
+    int step = 0;
+    while (step < vars[1] && vars[0] < dg2->height) {
+        for (int x = 0; x < dg2->width; x++) {
+            int adjacent_walls = 0;
+            int y = vars[0];
+            for(int k = 0; k < 4; k++){
+                int i = dg2_cross_neighbourhood[k][0];
+                int j = dg2_cross_neighbourhood[k][1];
+                if(src[(y + j) * dg2->width + x + i] == DG2_WALL)
+                    adjacent_walls++;
+            }
+            if(adjacent_walls > 0 || src[y * dg2->width + x] == DG2_WALL)
+                dst[y * dg2->width + x] = DG2_WALL;
+            else
+                dst[y * dg2->width + x] = DG2_SPACE;
+                }
+        vars[0]++;
+        step++;
+    }
+    if (vars[0] >= dg2->height)
+        big_callbacks[self].function = dungeon2_callback_done;
+}
+
+u8 dungeon2_contract_with_callback(u8 *src, u8 *dst, dungeon_generator2 *dg2, u16 lines_per_frame) {
+    u8 cb_idx = big_callback_new(dungeon2_contract_callback, 10);
+    big_callbacks[cb_idx].params[0] = 0;
+    big_callbacks[cb_idx].params[1] = lines_per_frame;
+    big_callback_set_int(cb_idx, 2, (int)src);
+    big_callback_set_int(cb_idx, 4, (int)dst);
+    big_callback_set_int(cb_idx, 6, (int)dg2);
+    return cb_idx;
+}
+
+bool dungeon2_contract_with_callback_finished(u8 cb_idx) {
+    if (big_callbacks[cb_idx].function == dungeon2_callback_done) {
+        big_callback_delete(cb_idx);
+        return true;
+    }
+    return false;
+}
+
+static void dungeon2_apply_callback(u8 self) {
+    u16 *vars = big_callbacks[self].params;
+    u8 *src = (u8*)big_callback_get_int(self, 2);
+    u8 *dst = (u8*)big_callback_get_int(self, 4);
+    dungeon_generator2 *dg2 = (dungeon_generator2*)big_callback_get_int(self, 6);
+    int step = 0;
+    u8 tile = (u8)vars[8];
+    while (step < vars[1] && vars[0] < dg2->height) {
+        for (int x = 0; x < dg2->width; x++) {
+            int y = vars[0];
+            if (src[y * dg2->width + x] == tile)
+                dst[y * dg2->width + x] = tile;
+        }
+        vars[0]++;
+        step++;
+    }
+    if (vars[0] >= dg2->height)
+        big_callbacks[self].function = dungeon2_callback_done;
+}
+
+u8 dungeon2_apply_with_callback(u8 *src, u8 *dst, u8 tile, dungeon_generator2 *dg2, u16 lines_per_frame) {
+    u8 cb_idx = big_callback_new(dungeon2_apply_callback, 10);
+    big_callbacks[cb_idx].params[0] = 0;
+    big_callbacks[cb_idx].params[1] = lines_per_frame;
+    big_callback_set_int(cb_idx, 2, (int)src);
+    big_callback_set_int(cb_idx, 4, (int)dst);
+    big_callback_set_int(cb_idx, 6, (int)dg2);
+    big_callbacks[cb_idx].params[8] = tile;
+    return cb_idx;
+}
+
+bool dungeon2_apply_with_callback_finished(u8 cb_idx) {
+    if (big_callbacks[cb_idx].function == dungeon2_callback_done) {
+        big_callback_delete(cb_idx);
+        return true;
+    }
+    return false;
+}
+
 static void dungeon2_fold_function_over_map_callback(u8 self) {
     u16 *vars = big_callbacks[self].params;
     u8 *src = (u8*)big_callback_get_int(self, 2);
@@ -58,19 +189,30 @@ static void dungeon2_initialize_map_by_paths_callback(u8 self) {
     u8 *map = (u8*)big_callback_get_int(self, 3);
     int (*nodes)[2] = (int (*)[2])big_callback_get_int(self, 5);
     dungeon_generator2 *dg2 = (dungeon_generator2*) big_callback_get_int(self, 7);
+    int excluded_nodes_mask = big_callback_get_int(self, 9);
     int step = 0;
     dprintf("Initialize by path callback; progress %d/%d, steps per frame %d\n", vars[0], vars[1], vars[2]);
     while (step < vars[1] && vars[0] < vars[2]) {
-        int other = dungeon2_rnd_16(dg2) % vars[0];
-        dungeon2_connect_nodes(nodes[vars[0]], nodes[other], dg2, map);
-        vars[0]++;
+        int node_idx = vars[0]++;
+        if (excluded_nodes_mask & (1 << node_idx))
+            continue;
+        int other_candidates[node_idx];
+        int other_candidates_size = 0;
+        for (int i = 0; i < node_idx; i++) {
+            if (!(excluded_nodes_mask & (1 << i)))
+                other_candidates[other_candidates_size++] = i;
+        }
+        if (other_candidates_size > 0) {
+            int other = other_candidates[dungeon2_rnd_16(dg2) % other_candidates_size];
+            dungeon2_connect_nodes(nodes[node_idx], nodes[other], dg2, map);
+        }
         step++;
     }
     if (vars[0] >= vars[2]) 
         big_callbacks[self].function = dungeon2_callback_done;
 }
 
-u8 dungeon2_initialize_map_by_paths(u8 *map, int (*nodes)[2], u16 num_nodes, u16 steps_per_frame, dungeon_generator2 *dg2) {
+u8 dungeon2_initialize_map_by_paths(u8 *map, int (*nodes)[2], u16 num_nodes, u16 steps_per_frame, dungeon_generator2 *dg2, int excluded_nodes_mask) {
     u8 cb_idx = big_callback_new(dungeon2_initialize_map_by_paths_callback, 0);
     big_callbacks[cb_idx].params[0] = 1;
     big_callbacks[cb_idx].params[1] = steps_per_frame;
@@ -78,6 +220,7 @@ u8 dungeon2_initialize_map_by_paths(u8 *map, int (*nodes)[2], u16 num_nodes, u16
     big_callback_set_int(cb_idx, 3, (int)map);
     big_callback_set_int(cb_idx, 5, (int)nodes);
     big_callback_set_int(cb_idx, 7, (int)dg2);
+    big_callback_set_int(cb_idx, 9, excluded_nodes_mask);
     return cb_idx;
 }
 
@@ -140,7 +283,7 @@ static void dungeon2_create_connected_layout_callback(u8 self) {
     }
     case 1: {
         state->cb_idx_to_wait_for = dungeon2_initialize_map_by_paths(state->map_paths, state->nodes, dg2->nodes, 
-            DG2_CREATE_CONNECTED_LAYOUT_NODE_CONNECTION_STEPS_PER_FRAME, dg2);
+            DG2_CREATE_CONNECTED_LAYOUT_NODE_CONNECTION_STEPS_PER_FRAME, dg2, state->excluded_nodes_mask);
         state->state++;
         break;
     }
@@ -153,32 +296,32 @@ static void dungeon2_create_connected_layout_callback(u8 self) {
         break;
     }
     case 3: {
-        state->cb_idx_to_wait_for = dungeon2_fold_function_over_map(state->map1, state->map2, dg2, 
-            DG2_CREATE_CONNECTED_LAYOUT_FOLD_FUNCTION_LINES_PER_FRAME, dungeon2_enlarge_foldable);
+        state->cb_idx_to_wait_for = dungeon2_enlarge_with_callback(state->map1, state->map2, dg2, 
+            DG2_ENLARGE_LINES_PER_FRAME);
         state->state++;
     }
     case 4: {
-        if (dungeon2_fold_function_over_map_finished(state->cb_idx_to_wait_for))
+        if (dungeon2_enlarge_with_callback_finished(state->cb_idx_to_wait_for))
             state->state++;
         break;
     }
     case 5: {
-        state->cb_idx_to_wait_for = dungeon2_fold_function_over_map(state->map2, state->map1, dg2, 
-            DG2_CREATE_CONNECTED_LAYOUT_FOLD_FUNCTION_LINES_PER_FRAME, dungeon2_contract_foldable);
+        state->cb_idx_to_wait_for = dungeon2_contract_with_callback(state->map2, state->map1, dg2, 
+            DG2_CONTRACT_LINES_PER_FRAME);
         state->state++;
     }
     case 6: {
-        if (dungeon2_fold_function_over_map_finished(state->cb_idx_to_wait_for))
+        if (dungeon2_contract_with_callback_finished(state->cb_idx_to_wait_for))
             state->state++;
         break;
     }
     case 7: {
-        state->cb_idx_to_wait_for = dungeon2_fold_function_over_map(state->map_paths, state->map1, dg2, 
-            DG2_CREATE_CONNECTED_LAYOUT_FOLD_FUNCTION_LINES_PER_FRAME, dungeon2_apply_space_foldable);
+        state->cb_idx_to_wait_for = dungeon2_apply_with_callback(state->map_paths, state->map1, DG2_SPACE, dg2, 
+            DG2_APPLY_LINES_PER_FRAME);
         state->state++;
     }
     case 8: {
-        if (dungeon2_fold_function_over_map_finished(state->cb_idx_to_wait_for))
+        if (dungeon2_apply_with_callback_finished(state->cb_idx_to_wait_for))
             state->state++;
         break;
     }
@@ -190,7 +333,7 @@ static void dungeon2_create_connected_layout_callback(u8 self) {
   }
 } 
 
-u8 dungeon2_create_connected_layout_with_callback(dungeon_generator2 *dg2, int (*nodes)[2], u8 *dst) {
+u8 dungeon2_create_connected_layout_with_callback(dungeon_generator2 *dg2, int (*nodes)[2], u8 *dst, int excluded_nodes_mask) {
   u8 cb_idx = big_callback_new(dungeon2_create_connected_layout_callback, 10);
   create_connected_layout_state_t *state = malloc_and_clear(sizeof(create_connected_layout_state_t));
   big_callback_set_int(cb_idx, 0, (int)state);
@@ -200,6 +343,7 @@ u8 dungeon2_create_connected_layout_with_callback(dungeon_generator2 *dg2, int (
   state->result = dst;
   state->nodes = nodes;
   state->dg2 = dg2;
+  state->excluded_nodes_mask = excluded_nodes_mask;
   return cb_idx;
 }
 
@@ -216,7 +360,7 @@ bool dungeon2_create_connected_layout_with_callback_finished(u8 cb_idx) {
   return false;
 }
 
-static int score_node(int nodes[][2], int idx, dungeon_generator2 *dg2) {
+static inline int score_node(int nodes[][2], int idx, dungeon_generator2 *dg2) {
   if (idx == 0) return INT_MAX;
   FIXED min_dist = INT_MAX;
   FIXED mean_dist = 0;
@@ -247,15 +391,23 @@ static void dungeon2_get_nodes_callback(u8 self) {
         }
         case 1: { // Sample nodes
             int step = 0;
-            int xrange = dg2->width - 2 * dg2->margin;
-            int yrange = dg2->height - 2 * dg2->margin;
+            int idx = vars[0];
+            int xrange = dg2->width - 2 * (dg2->margin + 1); // Use a larger margin since we may offset the sample by | 1
+            int yrange = dg2->height - 2 * (dg2->margin + 1);
+            int xoffset = dg2->margin;
+            int yoffset = dg2->margin;
+            if (idx >= DG2_NODE_PATTERN && idx < DG2_NODE_PATTERN + DG2_MAX_NUM_PATTERNS) { // If a pattern is at the node, we need an even larger margin
+                xrange -= 2 * dg2->pattern_margin;
+                yrange -= 2 * dg2->pattern_margin;
+                xoffset += dg2->pattern_margin;
+                yoffset += dg2->pattern_margin;
+            }
             FIXED best_score = big_callback_get_int(self, 8);
             // dprintf("Sampling for node %d: %d / %d candidates.\n", vars[0], vars[7], dg2->node_samples);
             while (step < DG2_NODE_SAMPLES_PER_FRAME && vars[7] < dg2->node_samples) {
-                int idx = vars[0];
                 // Odd node coordinates ensure the correct placements of patterns
-                nodes[idx][0] = (dg2->margin + dungeon2_rnd_16(dg2) % xrange) | 1; 
-                nodes[idx][1] = (dg2->margin + dungeon2_rnd_16(dg2) % yrange) | 1;
+                nodes[idx][0] = (xoffset + dungeon2_rnd_16(dg2) % xrange) | 1; 
+                nodes[idx][1] = (yoffset + dungeon2_rnd_16(dg2) % yrange) | 1;
                 FIXED score = score_node(nodes, idx, dg2);
                 // dprintf("Cadidate %d,%d: Score 0x%x\n", nodes[idx][0], nodes[idx][1], score);
                 if (score > best_score) {
@@ -277,7 +429,7 @@ static void dungeon2_get_nodes_callback(u8 self) {
             nodes[idx][0] = vars[10];
             nodes[idx][1] = vars[11];
             if (dungeon2_propose_node(nodes, idx, dg2)) { // Node was accepted
-                // dprintf("Sampled node %d: %d,%d\n", vars[0], vars[10], vars[11]);
+                dprintf("Callback sampled node %d: %d,%d\n", vars[0], vars[10], vars[11]);
                 vars[0]++;
                 if (vars[0] >= vars[1]) { // All nodes have been sampled
                     big_callbacks[self].function = dungeon2_callback_done;

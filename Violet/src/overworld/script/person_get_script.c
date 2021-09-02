@@ -30,6 +30,7 @@ extern u8 ow_script_person_accessible_move_tutor[];
 extern u8 ow_script_trash_can[];
 extern u8 ow_script_dungeon2_enter_forest[];
 extern u8 ow_script_static_berry_tree[];
+extern u8 ow_script_dungeon2_enter_cave[];
 
 void battle_initialize_aggressive_wild() {
 	super.saved_callback = battle_continuation_wild_legendary_battle_end;
@@ -105,6 +106,9 @@ u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank) {
 			*var_access(0x8000) = p->value;
 			*var_access(0x8001) = p->argument;
 			return ow_script_static_berry_tree;
+		case PERSON_SECRET_POWER_CAVE:
+			*var_access(0x8000) = p->value;
+			return ow_script_dungeon2_enter_cave;
 		default:
 			return NULL;
 	}

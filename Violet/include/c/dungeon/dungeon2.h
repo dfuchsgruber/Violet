@@ -60,7 +60,8 @@ extern "C" {
         u8 nodes;
 
         // Size of margin in which nodes can not be placed in
-        u8 margin;
+        u8 margin : 4;
+        u8 pattern_margin : 4;
         
         coordinate_t previous_position;
         u8 previous_bank, previous_map;
@@ -351,11 +352,21 @@ extern "C" {
     /**
      * Debugging: Uses dprintf to print a dungeon, using # for walls and spaces for spaces and
      * x for nodes
+     * Also uses the save1->dungeon_nodes to print the nodes.
      * @param map the map to print
-     * @param nodes the nodes
-     * @dg2 the dungeon generator
+     * @param dg2 the dungeon generator
      */
     void dungeon2_print_map(u8 *map, dungeon_generator2 *dg2);
+
+    /**
+     * Debugging: Uses dprintf to print a dungeon, using # for walls and spaces for spaces and
+     * x for nodes
+     * @param map the map to print
+     * @param dg2 the dungeon generator
+     * @param nodes the nodes of the dungeon
+     * @param num_nodes the number of nodes
+     */
+    void dungeon2_print_map_with_nodes(u8 *map, dungeon_generator2 *dg2, int nodes[][2], size_t num_nodes);
 
     /**
      * Creates a map layout full of patches (can be used for grass etc.)

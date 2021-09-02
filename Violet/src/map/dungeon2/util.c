@@ -89,7 +89,7 @@ u16 dungeon2_seeded_rnd16(dungeon_generator2 *dg2, u32 seed) {
 
 u8 dungeon2_get_number_trainers(dungeon_generator2 *dg2) {
     u8 num_trainers = (u8)(dungeon2_seeded_rnd16(dg2, DG2_RANDOM_SEED_NUM_TRAINERS) % (DG2_MAX_NUM_TRAINERS + 1));
-    dprintf("Dungeon has %d trainers\n", num_trainers);
+    // dprintf("Dungeon has %d trainers\n", num_trainers);
     return num_trainers;
 }
 
@@ -97,7 +97,7 @@ u8 dungeon2_get_number_items(dungeon_generator2 *dg2) {
     u8 num_trainers = dungeon2_get_number_trainers(dg2);
     int max_num_items = MAX(0, MIN(dg2->nodes - DG2_NODE_TRAINER_OR_ITEM - num_trainers, DG2_MAX_NUM_TRAINER_OR_ITEM_NODES - num_trainers));
     u8 num_items = (u8)(dungeon2_seeded_rnd16(dg2, DG2_RANDOM_SEED_NUM_ITEMS) % (max_num_items + 1));
-    dprintf("Dungeon has %d (%d possible) items\n", num_items, max_num_items);
+    // dprintf("Dungeon has %d (%d possible) items\n", num_items, max_num_items);
     return num_items;
 }
 
@@ -115,7 +115,6 @@ int dungeon2_node_trainer_or_item_get_type(dungeon_generator2 *dg2, int node_idx
 }
 
 void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(dungeon_generator2*)) {
-
     // Clear all dynamic person events
     int zero = 0;
     cpuset(&zero, &(fmem.dpersons), CPUSET_FILL | CPUSET_HALFWORD |

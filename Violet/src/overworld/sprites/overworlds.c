@@ -1691,6 +1691,46 @@ static overworld_sprite ow_secret_power_vine = {
         .graphics = overworld_sprite_secret_power_vines_sprites, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
+static gfx_frame gfx_animation_secret_power_cave[] = {
+	{.data = 0, .duration = 0}, {.data = 0, .duration = 48}, {.data = 0, .duration = 32}, 
+    {.data = 1, .duration = 16}, {.data = 2, .duration = 16}, {.data = 3, .duration = 48},
+	{.data = 3, .duration = 48}, {.data = 4, .duration = 8}, {.data = 0, .duration = 8},
+	{.data = 4, .duration = 8}, {.data = 3, .duration = 48}, {.data = 3, .duration = 48},
+	{.data = 2, .duration = 16}, {.data = 1, .duration = 16}, {.data = 0, .duration = 48},
+    {.data = GFX_ANIM_JUMP, .duration = 0},
+};
+
+static gfx_frame gfx_animation_secret_power_cave_smashed[] = {
+	{.data = 0, .duration = 0}, {.data = 0, .duration = 8}, {.data = 5, .duration = 8}, 
+    {.data = 6, .duration = 8}, {.data = 7, .duration = 8}, {.data = 8, .duration = 8},
+    {.data = 9, .duration = 8}, {.data = 10, .duration = 8},
+	{.data = GFX_ANIM_END, .duration = 0},
+};
+
+static gfx_frame *gfx_animations_secret_power_cave[2] = {gfx_animation_secret_power_cave, gfx_animation_secret_power_cave_smashed};
+
+static graphic overworld_sprite_secret_power_cave_sprites[] = {
+	{gfx_overworld_secret_power_caveTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{gfx_overworld_secret_power_caveTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{gfx_overworld_secret_power_caveTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{gfx_overworld_secret_power_caveTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{gfx_overworld_secret_power_caveTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{gfx_overworld_secret_power_caveTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{gfx_overworld_secret_power_caveTiles + 6 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{gfx_overworld_secret_power_caveTiles + 7 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{gfx_overworld_secret_power_caveTiles + 8 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{gfx_overworld_secret_power_caveTiles + 9 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{gfx_overworld_secret_power_caveTiles + 10 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
+};
+
+static overworld_sprite ow_secret_power_cave = {
+        .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_SECRET_POWER_CAVE,
+        .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
+        .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = gfx_animations_secret_power_cave,
+        .graphics = overworld_sprite_secret_power_cave_sprites, .rotscale_animation = oam_rotscale_anim_table_null,
+};
+
+
 static graphic overworld_sprite_apple_sprites[] = {
 	{gfx_ow_appleTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
 	{gfx_ow_appleTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
@@ -1911,6 +1951,7 @@ overworld_sprite *overworld_sprites[] = {
 	[182] = &ow_icarus,
 	[183] = &ow_secret_power_vine,
 	[184] = &ow_apple,
+	[185] = &ow_secret_power_cave,
 
 	[OVERWORLD_SPRITE_TUTOR_CRYSTAL] = &ow_tutor_crystal_dummy,
 	[OVERWORLD_SPRITE_MISC] = &ow_misc_16_16,

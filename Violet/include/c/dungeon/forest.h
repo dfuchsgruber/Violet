@@ -63,11 +63,11 @@
         u8 y_consistent_decoration; // If true, the decoratino idx is always the same across two rows, this allows for larger patterns
         u8 map_weather;
         void (*fill_pattern_in_map)(u8 *map, int x, int y, int w, int h, dungeon_generator2 *dg2);
-        u16 items_common[8];
-        u16 items_rare[4];
-        u16 species_common[8];
-        u16 species_rare[4];
-        u16 species_static_encounter[4];
+        u16 items_common[DUNGEON_FOREST_NUM_ITEMS_COMMON];
+        u16 items_rare[DUNGEON_FOREST_NUM_ITEMS_RARE];
+        u16 species_common[DUNGEON_FOREST_NUM_POKEMON_COMMON];
+        u16 species_rare[DUNGEON_FOREST_NUM_POKEMON_RARE];
+        u16 species_static_encounter[DUNGEON_FOREST_NUM_POKEMON_STATIC];
     } dungeon_forest_t;
 
     dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES];
