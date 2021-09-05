@@ -10,7 +10,7 @@
 
 #include "pokemon/count.h"
 
-#define LINKED_PKMN_CNT 6
+#define LINKED_PKMN_CNT 7
 
 typedef struct {
     u8 base_hp;

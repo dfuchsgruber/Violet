@@ -89,6 +89,7 @@ void pokedex_entry_load_strings() {
     tbox_print_string(0, 2, 30, 0, 0, 0, &pokedex_entry_title_fontcolmap, 0,
         pokemon_names[fmem.dex_mem->current_species]);
     u16 dex_id = pokedex_get_id(fmem.dex_mem->current_species);
+    dprintf("Pokedex entry load for dex idx %d\n", dex_id);
 
     tbox_flush_set(1, 0);
     tbox_tilemap_draw(1);

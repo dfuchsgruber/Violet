@@ -70,6 +70,7 @@ extern const unsigned short gfx_battle_bg_route_5_caveTiles[];
 extern const unsigned short gfx_battle_bg_power_plantTiles[];
 extern const unsigned short gfx_battle_bg_inside_stdTiles[];
 extern const unsigned short gfx_battle_bg_dungeon_forest_tent_insideTiles[];
+extern const unsigned short gfx_battle_bg_ice_caveTiles[];
 
 extern const unsigned short gfx_battle_bg_capturedPal[];
 extern const unsigned short gfx_battle_bg_cavePal[];
@@ -103,6 +104,7 @@ extern const unsigned short gfx_battle_bg_route_5_cavePal[];
 extern const unsigned short gfx_battle_bg_power_plantPal[];
 extern const unsigned short gfx_battle_bg_inside_stdPal[];
 extern const unsigned short gfx_battle_bg_dungeon_forest_tent_insidePal[];
+extern const unsigned short gfx_battle_bg_ice_cavePal[];
 
 extern const unsigned short gfx_battle_bg_capturedMap[];
 extern const unsigned short gfx_battle_bg_caveMap[];
@@ -136,6 +138,7 @@ extern const unsigned short gfx_battle_bg_route_5_caveMap[];
 extern const unsigned short gfx_battle_bg_power_plantMap[];
 extern const unsigned short gfx_battle_bg_inside_stdMap[];
 extern const unsigned short gfx_battle_bg_dungeon_forest_tent_insideMap[];
+extern const unsigned short gfx_battle_bg_ice_caveMap[];
 
 // Battle anim bg
 extern const unsigned short gfx_stance_changeTiles[];

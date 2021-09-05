@@ -2,7 +2,7 @@ import agb.types
 
 pokedex_order_type = agb.types.FixedSizeArrayType(
     'u16',
-    lambda project, context: len(project.constants['species']) - 1
+    lambda project, context: project.constants['species']['POKEMON_CNT'] - 1
 )
 
 pokedex_entry_string_type = agb.types.StringType(box_size=(35, 255))

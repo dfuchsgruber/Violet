@@ -2,7 +2,7 @@
 #include "overworld/sprite.h"
 #include "color.h"
 #include "constants/species.h"
-#include "debug.h" 
+#include "debug.h"  
 
 static palette ow_pokemon_pals[] = {
     [0] = {.pal = gfx_ow_bisasamPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_BISASAM},
@@ -415,6 +415,7 @@ static palette ow_pokemon_pals[] = {
     [POKEMON_ICOGNITO_Z] = {.pal = gfx_ow_icognito_zPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_ICOGNITO_Z},
     [POKEMON_ICOGNITO_EXCLAMATION] = {.pal = gfx_ow_icognito_exclamationPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_ICOGNITO_EXCLAMATION},
     [POKEMON_ICOGNITO_QUESTION] = {.pal = gfx_ow_icognito_questionPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_ICOGNITO_QUESTION},
+	[POKEMON_CRYSTAL_ONIX] = {.pal = gfx_ow_crystal_onixPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_CRYSTAL_ONIX}
 };
 
 static graphic overworld_gfxs_bisasam[] = {
@@ -5326,7 +5327,17 @@ static graphic overworld_gfxs_icognito_question[] = {
 	[8] = {.sprite = gfx_ow_icognito_questionTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
 };
 
-
+static graphic overworld_gfxs_crystal_onix[] = {
+	[0] = {.sprite = gfx_ow_crystal_onixTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[1] = {.sprite = gfx_ow_crystal_onixTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[2] = {.sprite = gfx_ow_crystal_onixTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[3] = {.sprite = gfx_ow_crystal_onixTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[4] = {.sprite = gfx_ow_crystal_onixTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[5] = {.sprite = gfx_ow_crystal_onixTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[6] = {.sprite = gfx_ow_crystal_onixTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[7] = {.sprite = gfx_ow_crystal_onixTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[8] = {.sprite = gfx_ow_crystal_onixTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+};
 
 static overworld_sprite overworlds_pokemon[] = {
     [POKEMON_BISASAM] = {
@@ -7782,6 +7793,12 @@ static overworld_sprite overworlds_pokemon[] = {
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
         .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
         .graphics = overworld_gfxs_icognito_question, .rotscale_animation = oam_rotscale_anim_table_null,
+    },
+    [POKEMON_CRYSTAL_ONIX] = {
+        .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_CRYSTAL_ONIX,
+        .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
+        .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
+        .graphics = overworld_gfxs_crystal_onix, .rotscale_animation = oam_rotscale_anim_table_null,
     },
 
 };

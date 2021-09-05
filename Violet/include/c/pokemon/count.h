@@ -8,6 +8,6 @@
 #ifndef INCLUDE_C_POKEMON_POKEMON_COUNT_H_
 #define INCLUDE_C_POKEMON_POKEMON_COUNT_H_
 
-#define POKEMON_CNT 0x1BA
+#include "constants/species.h"
 
 #endif /* INCLUDE_C_POKEMON_POKEMON_COUNT_H_ */

@@ -31,6 +31,7 @@
 
 extern map_footer_t map_footer_dungeon_cave_normal;
 extern map_footer_t map_footer_dungeon_cave_tent_and_campfire;
+extern map_footer_t map_footer_dungeon_ice_cave;
 
 u16 dungeon2_cave_borders[4] = {0x281, 0x281, 0x281, 0x281};
 
@@ -41,7 +42,8 @@ extern u8 ow_script_dungeon_item[];
 
 static u32 dungeon2_cave_type_rates[NUM_DUNGEON_CAVE_TYPES] = {
     [DUNGEON_CAVE_TYPE_NORMAL] = 1,
-    [DUNGEON_CAVE_TYPE_TENT] = 30000,
+    [DUNGEON_CAVE_TYPE_TENT] = 1,
+    [DUNGEON_CAVE_TYPE_ICE] = 30000,
 };
 
 u8 dungeon2_get_cave_type(dungeon_generator2 *dg2) {
@@ -72,7 +74,30 @@ map_footer_t *dungeon2_init_footer_cave(dungeon_generator2 *dg2){
     return &(fmem.dmapfooter);
 }
 
-static void dungeon_tent_forest_initialize_events(dungeon_generator2 *dg2) {
+static void dungeon_cave_tent_initialize_events(dungeon_generator2 *dg2) {
+    u8 num_warps = fmem.dmapevents.warp_cnt;
+    int (*nodes)[2] = save1->dungeon_nodes;
+    int num_patterns = dungeon2_get_cave_num_patterns(dg2);
+    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_warps <= ARRAY_COUNT(fmem.dwarps); j++) {
+        fmem.dwarps[num_warps].x = (s16)(nodes[DG2_NODE_PATTERN + j][0]);
+        fmem.dwarps[num_warps].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + 1);
+        fmem.dwarps[num_warps].target_warp_id = 0;
+        fmem.dwarps[num_warps].target_map = DG2_CAVE_TENT_MAP;
+        fmem.dwarps[num_warps].target_bank = DG2_BANK;
+        num_warps++;
+    }
+    fmem.dmapevents.warp_cnt = num_warps;
+    // u8 num_persons = fmem.dmapevents.person_cnt;
+    // for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_warps <= ARRAY_COUNT(fmem.dwarps); j++) {
+    //     fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0]);
+    //     fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + 1);
+    //     fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
+    //     num_persons++;
+    // }
+    // fmem.dmapevents.person_cnt = num_persons;
+}
+
+static void dungeon_ice_cave_initialize_events(dungeon_generator2 *dg2) {
     u8 num_warps = fmem.dmapevents.warp_cnt;
     int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_cave_num_patterns(dg2);
@@ -152,7 +177,7 @@ dungeon_cave_t dungeon_cave_types[NUM_DUNGEON_CAVE_TYPES] = {
         .min_num_patterns = 1,
         .max_num_patterns = 1,
         .deco_rate = 0,
-        .event_init = dungeon_tent_forest_initialize_events,
+        .event_init = dungeon_cave_tent_initialize_events,
         .fill_pattern_in_map = dungeon_pattern_fill_with_1x1_border_without_corners,
         .fill_pattern_in_over = dungeon_pattern_fill_with_1x1_border_without_corners_walls,
         .map_weather = MAP_WEATHER_CLOUDY,
@@ -172,6 +197,33 @@ dungeon_cave_t dungeon_cave_types[NUM_DUNGEON_CAVE_TYPES] = {
         },
         .species_static_encounter = {
             POKEMON_GEOWAZ, POKEMON_BRONZONG, POKEMON_ZOBIRIS, POKEMON_VOLUMINAS,
+        },
+    },
+    [DUNGEON_CAVE_TYPE_ICE] = {
+        .footer = &map_footer_dungeon_ice_cave,
+        .min_num_patterns = 1,
+        .max_num_patterns = 3,
+        .deco_rate = 0,
+        .event_init = dungeon_ice_cave_initialize_events,
+        .fill_pattern_in_map = dungeon_pattern_fill_with_1x1_border_without_corners,
+        .fill_pattern_in_over = dungeon_pattern_fill_with_1x1_border_without_corners_walls,
+        .map_weather = MAP_WEATHER_COLD_BLUE,
+        .items_common = {
+            ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_SUPERSCHUTZ, ITEM_FLUCHTSEIL,
+            ITEM_PARA_HEILER, ITEM_EISHEILER, ITEM_AUFWECKER, ITEM_AETHER,
+        },
+        .items_rare = {
+            ITEM_EWIGES_EIS, ITEM_BELEBER, ITEM_EISJUWEL, ITEM_ELIXIER,
+        },
+        .species_common = {
+            POKEMON_ZUBAT, POKEMON_QUIEKEL, POKEMON_SCHNEPPKE, POKEMON_SCHNEPPKE,
+            POKEMON_MACHOLLO, POKEMON_ONIX, POKEMON_MARILL, POKEMON_ZUBAT,
+        },
+        .species_rare = {
+            POKEMON_GOLBAT, POKEMON_FIRNONTOR, POKEMON_KEIFEL, POKEMON_GOLBAT,
+        },
+        .species_static_encounter = {
+            POKEMON_CRYSTAL_ONIX, POKEMON_CRYSTAL_ONIX, POKEMON_CRYSTAL_ONIX, POKEMON_CRYSTAL_ONIX,
         },
     },
 };

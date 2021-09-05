@@ -447,5 +447,6 @@ graphic pokemon_frontsprites[POKEMON_CNT] = {
     {gfx_pkmn_species_438_pokemon_icognito_exclamation_frontspriteTiles, 0x800, 438},
     {gfx_pkmn_species_439_pokemon_icognito_question_frontspriteTiles, 0x800, 439},
     {gfx_pkmn_species_440_pokemon_groudon_e_frontspriteTiles, 0x800, 440},
-    {gfx_pkmn_species_441_pokemon_kecleon_p_frontspriteTiles, 0x800, 441}
+    {gfx_pkmn_species_441_pokemon_kecleon_p_frontspriteTiles, 0x800, 441},
+    {gfx_pkmn_crystal_onix_frontspriteTiles, 0x800, POKEMON_CRYSTAL_ONIX},
 };

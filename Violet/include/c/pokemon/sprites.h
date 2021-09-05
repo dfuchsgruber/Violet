@@ -2285,4 +2285,11 @@ u16 icon_pals[3][16];
     extern const unsigned short gfx_pkmn_species_440_pokemon_groudon_e_iconTiles[];
     extern const unsigned short gfx_pkmn_species_441_pokemon_kecleon_p_iconTiles[];
 
+
+    extern const unsigned short gfx_pkmn_crystal_onix_frontspriteTiles[];
+    extern const unsigned short gfx_pkmn_crystal_onix_backspriteTiles[];
+    extern const unsigned short gfx_pkmn_crystal_onix_frontspritePal[];
+    extern const unsigned short gfx_pkmn_crystal_onix_backspritePal[];
+    extern const unsigned short gfx_pkmn_crystal_onix_iconTiles[];
+
 #endif /* INCLUDE_C_POKEMON_SPRITES_H_ */

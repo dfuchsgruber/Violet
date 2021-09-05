@@ -1104,6 +1104,8 @@ extern u8 gfx_ow_rotom_washTiles[];
 extern color_t gfx_ow_rotom_washPal[16];
 extern u8 gfx_ow_rotom_fanTiles[];
 extern color_t gfx_ow_rotom_fanPal[16];
+extern u8 gfx_ow_crystal_onixTiles[];
+extern color_t gfx_ow_crystal_onixPal[16];
 
 
 extern const unsigned short gfx_ow_deoxys_normal_0Tiles[];

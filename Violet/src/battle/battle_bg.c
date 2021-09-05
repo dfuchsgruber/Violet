@@ -245,6 +245,12 @@ battle_bg battle_bgs[256] = {
         NULL, NULL,
         gfx_battle_bg_dungeon_forest_tent_insidePal,
     },
+    [BATTLE_BG_ICE_CAVE] = {
+        gfx_battle_bg_ice_caveTiles,
+        gfx_battle_bg_ice_caveMap,
+        NULL, NULL,
+        gfx_battle_bg_ice_cavePal,
+    },
 };
 
 
@@ -347,6 +353,9 @@ void bsc_cmd_xEB_set_type_to_terrain() {
     case BATTLE_BG_POWER_PLANT:
         type = TYPE_ELEKTRO;
         break;
+    case BATTLE_BG_ICE_CAVE:
+        type = TYPE_EIS;
+        break;
 	}
 	if (type == battlers[attacking_battler].type1 ||
 			type == battlers[attacking_battler].type2) {
@@ -392,6 +401,7 @@ u16 terrain_moves[] = {
     [BATTLE_BG_POWER_PLANT] = ATTACK_SCHOCKWELLE,
     [BATTLE_BG_INSIDE_STD] = ATTACK_RUECKKEHR,
     [BATTLE_BG_DUNGEON_FOREST_TENT_INSIDE] = ATTACK_AMNESIE,
+    [BATTLE_BG_ICE_CAVE] = ATTACK_EISSTURM,
 };
 
 void bsc_cmd_xCC_set_terrain_based_move(){

@@ -2659,5 +2659,7 @@ u8 pokemon_altitude[POKEMON_CNT] = {
     // POKEMON_GROUDON
     0x0,
     // POKEMON_KECLEON
-    0x0
+    0x0,
+    // POKEMON_CRYSTAL_ONIX
+    0x0,
 };

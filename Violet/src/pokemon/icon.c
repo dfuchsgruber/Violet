@@ -445,7 +445,8 @@
     gfx_pkmn_species_438_pokemon_icognito_exclamation_iconTiles,
     gfx_pkmn_species_439_pokemon_icognito_question_iconTiles,
     gfx_pkmn_species_440_pokemon_groudon_e_iconTiles,
-    gfx_pkmn_species_441_pokemon_kecleon_p_iconTiles
+    gfx_pkmn_species_441_pokemon_kecleon_p_iconTiles,
+    gfx_pkmn_crystal_onix_iconTiles,
     
 };
 
@@ -1333,5 +1334,7 @@ u8 pokemon_icon_usage[POKEMON_CNT] = {
     // POKEMON_GROUDON_REGENT
     0x0,
 	// POKEMON_KECLEON_PURPLE
-	0x2
+	0x2,
+    // POKEMON_CRYSTAL_ONIX
+    0x2,
 };

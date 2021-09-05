@@ -1,5 +1,8 @@
 import agb.types
 
+def get_number_species(project, constants):
+    return project.constants['species']['POKEMON_CNT']
+
 evolution_method_type = agb.types.ScalarType('u16', constant='evolution_methods')
 
 evolution_entry_type = agb.types.Structure([
@@ -42,7 +45,7 @@ evolution_argument_pokemon_type_type = agb.types.ScalarType('u16', constant='pok
 
 evolutions_type = agb.types.FixedSizeArrayType(
     'evolution.entries_pointer',
-    lambda project, context: len(project.constants['species'])
+    get_number_species,
 )
 
 def evolution_argument_get_type(project, context, parents):

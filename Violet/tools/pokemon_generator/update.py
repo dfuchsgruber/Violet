@@ -4,6 +4,7 @@ import argparse, json, pickle
 from pymap import project
 from export import tms, move_tutor
 import copy
+from collections import defaultdict
 
 def merge(target, source):
     """ Merges all keys from target recursively into source.
@@ -22,7 +23,11 @@ def merge(target, source):
             if isinstance(target[key], list):
                 target[key] += source[key]
             elif isinstance(target[key], dict):
-                merge(target[key], source[key])
+                if source[key].get('__overwrite__', False):
+                    print(f'Overwrite {target[key]} with {source[key]}')
+                    source[key] = target[key]
+                else:
+                    merge(target[key], source[key])
             elif isinstance(target[key], set):
                 target[key].update(source[key])
             else:
@@ -70,27 +75,40 @@ if __name__ == '__main__':
     
     species_links = []
 
+    updated = defaultdict(dict)
     for species in updates:
         update = updates[species]
         idx = project.constants['species'][species]
-        if stats[idx] is not None:
+        if idx in range(len(stats)) and stats[idx] is not None:
             # Update the stats from the PokeApi
-            merge(stats[idx], update)
+            updated[idx] = copy.deepcopy(stats[idx])
+            merge(updated[idx], update)
         else:
             # Simply use the update as stat set
-            stats[idx] = update
+            updated[idx] = copy.deepcopy(update)
         # Apply species links if present
         if 'species_link' in update:
             link_target = update['species_link']
             link_idx = project.constants['species'][link_target]
             species_links.append((idx, link_idx))
 
+    rev_species_constants = {v : k for k,v in project.constants['species'].items()}
 
     for idx, link_idx in species_links:
         # Copy the target
-        stat = copy.deepcopy(stats[link_idx])
-        # Update the target
-        merge(stat, stats[idx])
+        base = copy.deepcopy(updated[link_idx])
+        if base is None:
+            # Linking to an on-existing target
+            updated[idx] = {}
+            raise RuntimeError(f'{rev_species_constants[idx]} is linking to {rev_species_constants[link_idx]}, which has no stats') 
+        else:
+            # Update the target
+            merge(base, updated[idx])
+            updated[idx] = base
+
+    # Build a list
+    stats = [None] * (max(updated.keys()) + 1)
+    for idx, stat in updated.items():
         stats[idx] = stat
 
     # Create move sets for each species

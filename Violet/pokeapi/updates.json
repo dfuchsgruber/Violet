@@ -2347,16 +2347,16 @@
 		"species_link" : "POKEMON_ARIADOS"
 	},
 	"POKEMON_111": {
-		"species_link" : "POKEMON_POKEMON_0"
+		"species_link" : "POKEMON_BISASAM"
 	},
 	"POKEMON_112": {
-		"species_link" : "POKEMON_POKEMON_0"
+		"species_link" : "POKEMON_BISASAM"
 	},
 	"POKEMON_113": {
-		"species_link" : "POKEMON_POKEMON_0"
+		"species_link" : "POKEMON_BISASAM"
 	},
 	"POKEMON_114": {
-		"species_link" : "POKEMON_POKEMON_0"
+		"species_link" : "POKEMON_BISASAM"
 	},
 	"POKEMON_LOCKSCHAL": {
 		"name" : {
@@ -6246,5 +6246,23 @@
 		"hidden_ability": "Wandlungsk",
 		"species_link": "POKEMON_KECLEON",
 		"dex_number": 293
+	},
+	"POKEMON_CRYSTAL_ONIX" : {
+		"species_link": "POKEMON_ONIX",
+		"dex_number": 79,
+		"basestats": {
+			"hp": 45,
+			"attack": 90,
+			"defense": 180,
+			"speed": 90,
+			"special-attack": 45,
+			"special-defense": 80
+		},
+		"ability_0" : "FELSENKERN",
+		"ability_1" : "FELSENKERN",
+		"exp_yield": 170,
+		"evolutions" : {
+			"__overwrite__" : true
+		}
 	}
 }

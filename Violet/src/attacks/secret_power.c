@@ -78,6 +78,9 @@ void bsc_cmd_xE4_secret_power() {
 	case BATTLE_BG_CAPTURE:
 		battle_effects[3] = BATTLE_EFFECT_NONE;
 		break;
+	case BATTLE_BG_ICE_CAVE:
+		battle_effects[3] = BATTLE_EFFECT_LOWER_INITIATIVE;
+		break;
 	}
 	bsc_offset++;
 }
@@ -164,6 +167,9 @@ void attack_anim_task_secret_power(u8 self) {
 	case BATTLE_BG_DUNGEON_FOREST_TENT_INSIDE:
 	case BATTLE_BG_INSIDE_STD:
 		attack = ATTACK_BODYCHECK;
+		break;
+	case BATTLE_BG_ICE_CAVE:
+		attack = ATTACK_EISSTURM;
 		break;
 	}
 	u8 *animation = attack_anims[attack];

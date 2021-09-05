@@ -20,7 +20,7 @@ void pokemon_get_frontsprite(graphic *g, void *dst, u16 species, pid_t p, u8 loa
             g = pokemon_backsprites + species;
         }
     }
-    if (species > POKEMON_KECLEON_PURPLE) {
+    if (species >= POKEMON_CNT) {
         g = pokemon_frontsprites;
     }
     lz77uncompwram(g->sprite, dst);

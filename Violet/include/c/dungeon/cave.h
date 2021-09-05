@@ -25,6 +25,7 @@
     enum {
         DUNGEON_CAVE_TYPE_NORMAL = 0,
         DUNGEON_CAVE_TYPE_TENT,
+        DUNGEON_CAVE_TYPE_ICE,
         NUM_DUNGEON_CAVE_TYPES,
     };
 

@@ -2,7 +2,7 @@
 #include "oam.h"
 #include "pokemon/count.h"
 #include "pokemon/sprites.h"
-
+ 
 
 graphic pokemon_backsprites[POKEMON_CNT] = {
     {gfx_pkmn_species_000_pokemon_pokemon_0_backspriteTiles, 0x800, 0},
@@ -446,7 +446,7 @@ graphic pokemon_backsprites[POKEMON_CNT] = {
     {gfx_pkmn_species_438_pokemon_icognito_exclamation_backspriteTiles, 0x800, 438},
     {gfx_pkmn_species_439_pokemon_icognito_question_backspriteTiles, 0x800, 439},
     {gfx_pkmn_species_440_pokemon_groudon_e_backspriteTiles, 0x800, 440},
-    {gfx_pkmn_species_441_pokemon_kecleon_p_backspriteTiles, 0x800, 441}
-    
+    {gfx_pkmn_species_441_pokemon_kecleon_p_backspriteTiles, 0x800, 441},
+    {gfx_pkmn_crystal_onix_backspriteTiles, 0x800, POKEMON_CRYSTAL_ONIX},
     
 };

@@ -55,6 +55,7 @@ static bool is_cemetery_map() {
 
 static color_t weather_burning_trees_filter = {.rgb = {.red = 31, .blue = 16, .green = 15}};
 static color_t weather_fog_cemetery_filter = {.rgb = {.red = 15, .green = 15, .blue = 28}};
+static color_t weather_cold_blue_filter = {.rgb = {.red = 200 / 8, .green = 232 / 8, .blue = 248 / 8}};
 
 void weather_set_filter(u8 weather) {
     dprintf("Weather filter set according to weather %d\n", weather);
@@ -70,6 +71,10 @@ void weather_set_filter(u8 weather) {
             } else {
                 fmem.weather_blend_active = 0;
             }
+            break;
+        case MAP_WEATHER_COLD_BLUE:
+            fmem.weather_blend_active = 1;
+            fmem.weather_blend = weather_cold_blue_filter;
             break;
         default:
             fmem.weather_blend_active = 0;
@@ -108,6 +113,7 @@ weather_callbacks_t weather_callbacks[] = {
     [MAP_WEATHER_UNDERWATER] = {.initialize_variables = weather_underwater_initialize_variables_with_blend, .main = weather_underwater_main, .initialize_all = weather_underwater_initialize_all_with_blend, .closure = weather_underwater_closure },
     [MAP_WEATHER_WEATHER_0F] = {.initialize_variables = weather_weather_0f_initialize_variables_with_blend, .main = weather_weather_0f_main, .initialize_all = weather_weather_0f_initialize_all_with_blend, .closure = weather_weather_0f_closure },
     [MAP_WEATHER_BURNING_TREES] = {.initialize_variables = weather_extreme_sun_initialize_variables_with_blend, .main = weather_extreme_sun_main, .initialize_all = weather_extreme_sun_initialize_all_with_blend, .closure = weather_extreme_sun_closure },
+    [MAP_WEATHER_COLD_BLUE] = {.initialize_variables = weather_inside_initialize_variables_with_blend, .main = weather_inside_main, .initialize_all = weather_inside_initialize_all_with_blend, .closure = weather_inside_closure},
 };
 
 void pal_gamma_shift(u8 start_pal_idx, u8 num_pals, s8 gamma_idx) {
