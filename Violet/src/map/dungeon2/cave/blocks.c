@@ -293,7 +293,7 @@ void dungeon2_set_blocks_cave(u8 *map, u8 *over, dungeon_generator2 *dg2){
       }
     }
   }
-  dungeon2_print_map(map, dg2);
+  // dungeon2_print_map(map, dg2);
 
   dungeon2_cave_draw_map(map, WALL_SET_GROUND, dg2);
   
@@ -304,15 +304,15 @@ void dungeon2_set_blocks_cave(u8 *map, u8 *over, dungeon_generator2 *dg2){
   dungeon2_cave_remove_walls(map, map2, INT_TO_FIXED(1), dg2);
   dungeon2_cave_remove_walls(map2, map, FIXED_DIV(INT_TO_FIXED(5), INT_TO_FIXED(100)), dg2);
   dungeon2_cave_draw_map(map, WALL_SET_LEVEL, dg2);
-  dungeon2_print_map(map, dg2);
+  // dungeon2_print_map(map, dg2);
   dungeon2_cave_remove_walls(map, map2, INT_TO_FIXED(1), dg2);
   dungeon2_cave_remove_walls(map2, map, FIXED_DIV(INT_TO_FIXED(55), INT_TO_FIXED(100)), dg2);
   dungeon2_cave_draw_map(map, WALL_SET_LEVEL, dg2);
-  dungeon2_print_map(map, dg2);
+  // dungeon2_print_map(map, dg2);
   free(map2);
 
   // Draw the sand
   dungeon2_cave_draw_map(over, WALL_SET_SAND, dg2);
-  dungeon2_print_map_with_nodes(over, dg2, NULL, 0);
+  // dungeon2_print_map_with_nodes(over, dg2, NULL, 0);
 
 }

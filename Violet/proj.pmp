@@ -2255,6 +2255,10 @@
 		"map_footer_dungeon_ice_cave": [
 			173,
 			"src/map/banks/126/map_footer_dungeon_ice_cave.pms"
+		],
+		"map_footer_dungeon_sand_cave": [
+			175,
+			"src/map/banks/126/map_footer_dungeon_sand_cave.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -2335,7 +2339,8 @@
 		"maptileset_dungeon_forest_campfire_and_tent": "src/map/tileset/maptileset_dungeon_forest_campfire_and_tent.pms",
 		"maptileset_dungeon_tent_inside": "src/map/tileset/maptileset_dungeon_tent_inside.pms",
 		"maptileset_dungeon_cave_tent": "src/map/tileset/maptileset_dungeon_cave_tent.pms",
-		"maptileset_dungeon_ice_cave": "src/map/tileset/maptileset_dungeon_ice_cave.pms"
+		"maptileset_dungeon_ice_cave": "src/map/tileset/maptileset_dungeon_ice_cave.pms",
+		"maptileset_dungeon_sand_cave": "src/map/tileset/maptileset_dungeon_sand_cave.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2409,6 +2414,7 @@
 		"gfx_maptileset_dungeon_dusk_forestTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_dusk_forest.png",
 		"gfx_maptileset_dungeon_tent_and_campfireTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_tent_and_campfire.png",
 		"gfx_maptileset_dungeon_tent_insideTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_tent_inside.png",
-		"gfx_maptileset_dungeon_ice_caveTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_ice_cave.png"
+		"gfx_maptileset_dungeon_ice_caveTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_ice_cave.png",
+		"gfx_maptileset_dungeon_sand_caveTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_sand_cave.png"
 	}
 }

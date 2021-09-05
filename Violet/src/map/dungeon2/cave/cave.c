@@ -32,6 +32,7 @@
 extern map_footer_t map_footer_dungeon_cave_normal;
 extern map_footer_t map_footer_dungeon_cave_tent_and_campfire;
 extern map_footer_t map_footer_dungeon_ice_cave;
+extern map_footer_t map_footer_dungeon_sand_cave;
 
 u16 dungeon2_cave_borders[4] = {0x281, 0x281, 0x281, 0x281};
 
@@ -43,7 +44,8 @@ extern u8 ow_script_dungeon_item[];
 static u32 dungeon2_cave_type_rates[NUM_DUNGEON_CAVE_TYPES] = {
     [DUNGEON_CAVE_TYPE_NORMAL] = 1,
     [DUNGEON_CAVE_TYPE_TENT] = 1,
-    [DUNGEON_CAVE_TYPE_ICE] = 30000,
+    [DUNGEON_CAVE_TYPE_ICE] = 1,
+    [DUNGEON_CAVE_TYPE_SAND] = 30000,
 };
 
 u8 dungeon2_get_cave_type(dungeon_generator2 *dg2) {
@@ -87,37 +89,27 @@ static void dungeon_cave_tent_initialize_events(dungeon_generator2 *dg2) {
         num_warps++;
     }
     fmem.dmapevents.warp_cnt = num_warps;
-    // u8 num_persons = fmem.dmapevents.person_cnt;
-    // for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_warps <= ARRAY_COUNT(fmem.dwarps); j++) {
-    //     fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0]);
-    //     fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + 1);
-    //     fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
-    //     num_persons++;
-    // }
-    // fmem.dmapevents.person_cnt = num_persons;
 }
 
 static void dungeon_ice_cave_initialize_events(dungeon_generator2 *dg2) {
-    u8 num_warps = fmem.dmapevents.warp_cnt;
+    (void)dg2;
+}
+
+static void dungeon_sand_cave_initialize_events(dungeon_generator2 *dg2) {
     int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_cave_num_patterns(dg2);
-    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_warps <= ARRAY_COUNT(fmem.dwarps); j++) {
-        fmem.dwarps[num_warps].x = (s16)(nodes[DG2_NODE_PATTERN + j][0]);
-        fmem.dwarps[num_warps].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + 1);
-        fmem.dwarps[num_warps].target_warp_id = 0;
-        fmem.dwarps[num_warps].target_map = DG2_CAVE_TENT_MAP;
-        fmem.dwarps[num_warps].target_bank = DG2_BANK;
-        num_warps++;
+    u8 num_persons = fmem.dmapevents.person_cnt;
+    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_persons <= ARRAY_COUNT(fmem.dpersons); j++) {
+        fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0]);
+        fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1]);
+        fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
+        fmem.dpersons[num_persons].overworld_index = 101;
+        fmem.dpersons[num_persons].script_std = PERSON_EGG;
+        fmem.dpersons[num_persons].value = POKEMON_LARVITAR;
+        fmem.dpersons[num_persons].flag = (u16)(FLAG_DUNGEON_GP + j);
+        num_persons++;
     }
-    fmem.dmapevents.warp_cnt = num_warps;
-    // u8 num_persons = fmem.dmapevents.person_cnt;
-    // for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_warps <= ARRAY_COUNT(fmem.dwarps); j++) {
-    //     fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0]);
-    //     fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + 1);
-    //     fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
-    //     num_persons++;
-    // }
-    // fmem.dmapevents.person_cnt = num_persons;
+    fmem.dmapevents.person_cnt = num_persons;
 }
 
 static void dungeon_pattern_fill_none(u8 *map, int x, int y, int w, int h, dungeon_generator2 *dg2) {
@@ -210,7 +202,7 @@ dungeon_cave_t dungeon_cave_types[NUM_DUNGEON_CAVE_TYPES] = {
         .map_weather = MAP_WEATHER_COLD_BLUE,
         .items_common = {
             ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_SUPERSCHUTZ, ITEM_FLUCHTSEIL,
-            ITEM_PARA_HEILER, ITEM_EISHEILER, ITEM_AUFWECKER, ITEM_AETHER,
+            ITEM_INDIGOSTUECK, ITEM_EISHEILER, ITEM_INDIGOSTUECK, ITEM_AETHER,
         },
         .items_rare = {
             ITEM_EWIGES_EIS, ITEM_BELEBER, ITEM_EISJUWEL, ITEM_ELIXIER,
@@ -224,6 +216,33 @@ dungeon_cave_t dungeon_cave_types[NUM_DUNGEON_CAVE_TYPES] = {
         },
         .species_static_encounter = {
             POKEMON_CRYSTAL_ONIX, POKEMON_CRYSTAL_ONIX, POKEMON_CRYSTAL_ONIX, POKEMON_CRYSTAL_ONIX,
+        },
+    },
+    [DUNGEON_CAVE_TYPE_SAND] = {
+        .footer = &map_footer_dungeon_sand_cave,
+        .min_num_patterns = 1,
+        .max_num_patterns = 1,
+        .deco_rate = 0,
+        .event_init = dungeon_sand_cave_initialize_events,
+        .fill_pattern_in_map = dungeon_pattern_fill_with_1x1_border_without_corners,
+        .fill_pattern_in_over = dungeon_pattern_fill_with_1x1_border_without_corners_walls,
+        .map_weather = MAP_WEATHER_INSIDE,
+        .items_common = {
+            ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_SUPERSCHUTZ, ITEM_FLUCHTSEIL,
+            ITEM_GELBSTUECK, ITEM_PURPURSTUECK, ITEM_SOLARSTUECK, ITEM_LUNARSTUECK,
+        },
+        .items_rare = {
+            ITEM_PUDERSAND, ITEM_BELEBER, ITEM_BODENJUWEL, ITEM_ELIXIER,
+        },
+        .species_common = {
+            POKEMON_ZUBAT, POKEMON_SANDAN, POKEMON_DIGDA, POKEMON_PUPPANCE,
+            POKEMON_MACHOLLO, POKEMON_ONIX, POKEMON_NASGNET, POKEMON_ZUBAT,
+        },
+        .species_rare = {
+            POKEMON_GOLBAT, POKEMON_MASCHOCK, POKEMON_SKORGLA, POKEMON_SANDAMER,
+        },
+        .species_static_encounter = {
+            POKEMON_SANDAMER, POKEMON_DIGDRI, POKEMON_LEPUMENTAS, POKEMON_SKORGRO,
         },
     },
 };
