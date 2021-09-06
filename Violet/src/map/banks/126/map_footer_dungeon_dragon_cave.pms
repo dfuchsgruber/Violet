@@ -1,0 +1,365 @@
+{
+	"data": {
+		"width": 9,
+		"height": 9,
+		"border_width": 1,
+		"border_height": 1,
+		"border": [
+			[
+				{
+					"block_idx": 673,
+					"level": 0
+				}
+			]
+		],
+		"blocks": [
+			[
+				{
+					"block_idx": 645,
+					"level": 12
+				},
+				{
+					"block_idx": 645,
+					"level": 12
+				},
+				{
+					"block_idx": 645,
+					"level": 12
+				},
+				{
+					"block_idx": 645,
+					"level": 12
+				},
+				{
+					"block_idx": 645,
+					"level": 12
+				},
+				{
+					"block_idx": 645,
+					"level": 12
+				},
+				{
+					"block_idx": 645,
+					"level": 12
+				},
+				{
+					"block_idx": 645,
+					"level": 12
+				},
+				{
+					"block_idx": 645,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 645,
+					"level": 12
+				},
+				{
+					"block_idx": 647,
+					"level": 1
+				},
+				{
+					"block_idx": 640,
+					"level": 1
+				},
+				{
+					"block_idx": 641,
+					"level": 1
+				},
+				{
+					"block_idx": 641,
+					"level": 1
+				},
+				{
+					"block_idx": 641,
+					"level": 1
+				},
+				{
+					"block_idx": 641,
+					"level": 1
+				},
+				{
+					"block_idx": 642,
+					"level": 1
+				},
+				{
+					"block_idx": 645,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 645,
+					"level": 12
+				},
+				{
+					"block_idx": 640,
+					"level": 1
+				},
+				{
+					"block_idx": 652,
+					"level": 1
+				},
+				{
+					"block_idx": 664,
+					"level": 1
+				},
+				{
+					"block_idx": 665,
+					"level": 1
+				},
+				{
+					"block_idx": 666,
+					"level": 1
+				},
+				{
+					"block_idx": 643,
+					"level": 1
+				},
+				{
+					"block_idx": 658,
+					"level": 1
+				},
+				{
+					"block_idx": 645,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 688,
+					"level": 12
+				},
+				{
+					"block_idx": 707,
+					"level": 1
+				},
+				{
+					"block_idx": 664,
+					"level": 1
+				},
+				{
+					"block_idx": 652,
+					"level": 1
+				},
+				{
+					"block_idx": 655,
+					"level": 1
+				},
+				{
+					"block_idx": 674,
+					"level": 1
+				},
+				{
+					"block_idx": 650,
+					"level": 1
+				},
+				{
+					"block_idx": 647,
+					"level": 1
+				},
+				{
+					"block_idx": 645,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 715,
+					"level": 1
+				},
+				{
+					"block_idx": 672,
+					"level": 1
+				},
+				{
+					"block_idx": 649,
+					"level": 1
+				},
+				{
+					"block_idx": 649,
+					"level": 1
+				},
+				{
+					"block_idx": 674,
+					"level": 1
+				},
+				{
+					"block_idx": 651,
+					"level": 1
+				},
+				{
+					"block_idx": 642,
+					"level": 1
+				},
+				{
+					"block_idx": 645,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 715,
+					"level": 1
+				},
+				{
+					"block_idx": 672,
+					"level": 1
+				},
+				{
+					"block_idx": 654,
+					"level": 1
+				},
+				{
+					"block_idx": 649,
+					"level": 1
+				},
+				{
+					"block_idx": 651,
+					"level": 1
+				},
+				{
+					"block_idx": 666,
+					"level": 1
+				},
+				{
+					"block_idx": 650,
+					"level": 1
+				},
+				{
+					"block_idx": 645,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 704,
+					"level": 12
+				},
+				{
+					"block_idx": 723,
+					"level": 1
+				},
+				{
+					"block_idx": 680,
+					"level": 1
+				},
+				{
+					"block_idx": 712,
+					"level": 1
+				},
+				{
+					"block_idx": 713,
+					"level": 1
+				},
+				{
+					"block_idx": 714,
+					"level": 1
+				},
+				{
+					"block_idx": 682,
+					"level": 1
+				},
+				{
+					"block_idx": 650,
+					"level": 1
+				},
+				{
+					"block_idx": 645,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 645,
+					"level": 12
+				},
+				{
+					"block_idx": 656,
+					"level": 1
+				},
+				{
+					"block_idx": 724,
+					"level": 1
+				},
+				{
+					"block_idx": 720,
+					"level": 1
+				},
+				{
+					"block_idx": 721,
+					"level": 12
+				},
+				{
+					"block_idx": 722,
+					"level": 1
+				},
+				{
+					"block_idx": 726,
+					"level": 1
+				},
+				{
+					"block_idx": 658,
+					"level": 1
+				},
+				{
+					"block_idx": 645,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 645,
+					"level": 12
+				},
+				{
+					"block_idx": 645,
+					"level": 12
+				},
+				{
+					"block_idx": 704,
+					"level": 12
+				},
+				{
+					"block_idx": 705,
+					"level": 12
+				},
+				{
+					"block_idx": 705,
+					"level": 12
+				},
+				{
+					"block_idx": 705,
+					"level": 12
+				},
+				{
+					"block_idx": 706,
+					"level": 12
+				},
+				{
+					"block_idx": 645,
+					"level": 12
+				},
+				{
+					"block_idx": 645,
+					"level": 12
+				}
+			]
+		],
+		"tileset_primary": "maptileset_cave",
+		"tileset_secondary": "maptileset_dungeon_dragon_cave",
+		"field_1A": 0
+	},
+	"label": "map_footer_dungeon_dragon_cave",
+	"type": "footer"
+}
