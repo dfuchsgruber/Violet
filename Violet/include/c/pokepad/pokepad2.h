@@ -72,6 +72,11 @@ void pokepad2_free();
  **/
 void pokepad2_callback_initialize();
 
+/**
+ * Initializes the pokepad from the start menu
+ **/
+bool start_menu_pokepad_initialize();
+
 extern const u8 gfx_pokepad_wallpaper_startersTiles[];
 extern const u8 gfx_pokepad_wallpaper_startersPal[];
 extern const u8 gfx_pokepad_wallpaper_startersMap[];

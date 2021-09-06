@@ -2267,6 +2267,10 @@
 		"map_footer_dungeon_dragon_cave_inside": [
 			177,
 			"src/map/banks/126/2/map_footer_dungeon_dragon_cave_inside.pms"
+		],
+		"map_footer_dungeon_steel_cave": [
+			178,
+			"src/map/banks/126/map_footer_dungeon_steel_cave.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -2349,7 +2353,8 @@
 		"maptileset_dungeon_cave_tent": "src/map/tileset/maptileset_dungeon_cave_tent.pms",
 		"maptileset_dungeon_ice_cave": "src/map/tileset/maptileset_dungeon_ice_cave.pms",
 		"maptileset_dungeon_sand_cave": "src/map/tileset/maptileset_dungeon_sand_cave.pms",
-		"maptileset_dungeon_dragon_cave": "src/map/tileset/maptileset_dungeon_dragon_cave.pms"
+		"maptileset_dungeon_dragon_cave": "src/map/tileset/maptileset_dungeon_dragon_cave.pms",
+		"maptileset_dungeon_steel_cave": "src/map/tileset/maptileset_dungeon_steel_cave.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2425,6 +2430,7 @@
 		"gfx_maptileset_dungeon_tent_insideTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_tent_inside.png",
 		"gfx_maptileset_dungeon_ice_caveTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_ice_cave.png",
 		"gfx_maptileset_dungeon_sand_caveTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_sand_cave.png",
-		"gfx_maptileset_dungeon_dragon_caveTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_dragon_cave.png"
+		"gfx_maptileset_dungeon_dragon_caveTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_dragon_cave.png",
+		"gfx_maptileset_dungeon_steel_caveTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_steel_cave.png"
 	}
 }

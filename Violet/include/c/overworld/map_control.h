@@ -230,6 +230,12 @@ bool safari_is_active();
 bool is_bank_x0_and_map_x40();
 
 /**
+ * Checks if the link update callback is currently cb0
+ * @return if the callback for updating the link state is cb0
+ **/
+bool callback_update_link_state_is_cb0();
+
+/**
  * Checks if flash is usable on the current map.
  * @param if flash is usable on the current map, i.e. the map is darkened
  **/

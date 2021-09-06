@@ -15,10 +15,7 @@ ow_script_dungeon_ocean_collapsing:
 	fadesong 0
 	loadpointer 0x0 str_dungeon_ocean_collapsing
 	callstd MSG
-    setvar DUNGEON_TYPE 0
-	callasm dungeon2_exit
-	waitstate
-	end
+    goto ow_script_dungeon_exit
 
 .ifdef LANG_GER
 str_dungeon_ocean_collapsing:

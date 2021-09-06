@@ -104,13 +104,17 @@ void start_menu_clear_additional_box() {
         tbox_flush_all(start_menu_state.safari_tbox_idx, 0);
         tbox_copy_to_vram(start_menu_state.safari_tbox_idx, 2);
         tbox_free_2(start_menu_state.safari_tbox_idx);
+    } else if (safari_is_active()) {
+        tbox_flush_all(start_menu_state.safari_tbox_idx, 0);
+        tbox_copy_to_vram(start_menu_state.safari_tbox_idx, 2);
+        tbox_free_2(start_menu_state.safari_tbox_idx);
     }
 }
 
-void start_menu_call_save_and_clear_additional_box() {
+bool start_menu_save_initialize_and_clear_additional_box() {
     if (!safari_is_active() && !mapheader_virtual.flash_type) {
         u8 idx = big_callback_get_id(start_menu_clock_callback);
         if (idx != 0xFF) big_callback_delete(idx);
     }
-    start_menu_call_save();
+    return start_menu_save_initialize();
 }

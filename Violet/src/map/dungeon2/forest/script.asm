@@ -11,12 +11,14 @@
 .equ DTYPE_FOREST, 1
 
 .global ow_script_dungeon_forest_collapsing
+.global ow_script_dungeon_exit
 
 ow_script_dungeon_forest_collapsing:
 	lockall
 	fadesong 0
 	loadpointer 0x0 str_dungeon_forest_collapsing
 	callstd MSG
+ow_script_dungeon_exit:
     setvar DUNGEON_TYPE 0
 	callasm dungeon2_exit
 	waitstate

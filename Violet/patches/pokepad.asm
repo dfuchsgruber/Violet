@@ -55,3 +55,4 @@ bxr1:
 //Wondertrade names after trade
 .org 0x08050E52
     lsl r0, #0
+    
