@@ -34,6 +34,8 @@ extern map_footer_t map_footer_dungeon_cave_tent_and_campfire;
 extern map_footer_t map_footer_dungeon_ice_cave;
 extern map_footer_t map_footer_dungeon_sand_cave;
 extern map_footer_t map_footer_dungeon_dragon_cave;
+extern map_footer_t map_footer_dungeon_steel_cave;
+extern map_footer_t map_footer_dungeon_fossil_cave;
 
 u16 dungeon2_cave_borders[4] = {0x281, 0x281, 0x281, 0x281};
 
@@ -43,11 +45,13 @@ extern u8 ow_script_dungeon_encounter[];
 extern u8 ow_script_dungeon_item[];
 
 static u32 dungeon2_cave_type_rates[NUM_DUNGEON_CAVE_TYPES] = {
-    [DUNGEON_CAVE_TYPE_NORMAL] = 1,
+    [DUNGEON_CAVE_TYPE_NORMAL] = 6,
     [DUNGEON_CAVE_TYPE_TENT] = 1,
-    [DUNGEON_CAVE_TYPE_ICE] = 1,
+    [DUNGEON_CAVE_TYPE_ICE] = 2,
     [DUNGEON_CAVE_TYPE_SAND] = 1,
-    [DUNGEON_CAVE_TYPE_DRAGON] = 30000,
+    [DUNGEON_CAVE_TYPE_DRAGON] = 1,
+    [DUNGEON_CAVE_TYPE_STEEL] = 4,
+    [DUNGEON_CAVE_TYPE_FOSSIL] = 1,
 };
 
 u8 dungeon2_get_cave_type(dungeon_generator2 *dg2) {
@@ -127,6 +131,53 @@ static void dungeon_dragon_cave_initialize_events(dungeon_generator2 *dg2) {
         num_warps++;
     }
     fmem.dmapevents.warp_cnt = num_warps;
+}
+
+u16 dungeon_steel_cave_special_items[] = {
+    ITEM_METALLMANTEL, ITEM_NUGGET, ITEM_TOP_BELEBER,
+};
+
+static s16 dungeon_steel_cave_special_item_positions[3][2] = {
+    {-1, 1}, {1, 1}, {1, -1}
+};
+
+static void dungeon_steel_cave_initialize_events(dungeon_generator2 *dg2) {
+    int (*nodes)[2] = save1->dungeon_nodes;
+    int num_patterns = dungeon2_get_cave_num_patterns(dg2);
+    u8 num_persons = fmem.dmapevents.person_cnt;
+    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_persons <= ARRAY_COUNT(fmem.dpersons); j++) {
+        int pos_idx = dungeon2_rnd_16(dg2) % ARRAY_COUNT(dungeon_steel_cave_special_item_positions);
+        fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] + dungeon_steel_cave_special_item_positions[pos_idx][0]);
+        fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + dungeon_steel_cave_special_item_positions[pos_idx][1]);
+        fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
+        fmem.dpersons[num_persons].overworld_index = 92;
+        fmem.dpersons[num_persons].script_std = PERSON_ITEM;
+        fmem.dpersons[num_persons].value = dungeon_steel_cave_special_items[dungeon2_rnd_16(dg2) % ARRAY_COUNT(dungeon_steel_cave_special_items)];
+        fmem.dpersons[num_persons].flag = (u16)(FLAG_DUNGEON_GP + j);
+        num_persons++;
+    }
+    fmem.dmapevents.person_cnt = num_persons;
+}
+
+u16 dungeon_fossil_cave_fossils[] = {
+    ITEM_DOMFOSSIL, ITEM_HELIXFOSSIL, ITEM_WURZELFOSSIL, ITEM_KLAUENFOSSIL,
+};
+
+static void dungeon_fossil_cave_initialize_events(dungeon_generator2 *dg2) {
+    int (*nodes)[2] = save1->dungeon_nodes;
+    int num_patterns = dungeon2_get_cave_num_patterns(dg2);
+    u8 num_persons = fmem.dmapevents.person_cnt;
+    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_persons <= ARRAY_COUNT(fmem.dpersons); j++) {
+        fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] + 0);
+        fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] - 3);
+        fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
+        fmem.dpersons[num_persons].overworld_index = 98;
+        fmem.dpersons[num_persons].script_std = PERSON_ITEM;
+        fmem.dpersons[num_persons].value = dungeon_fossil_cave_fossils[dungeon2_rnd_16(dg2) % ARRAY_COUNT(dungeon_fossil_cave_fossils)];
+        fmem.dpersons[num_persons].flag = (u16)(FLAG_DUNGEON_GP + j);
+        num_persons++;
+    }
+    fmem.dmapevents.person_cnt = num_persons;
 }
 
 static void dungeon_pattern_fill_none(u8 *map, int x, int y, int w, int h, dungeon_generator2 *dg2) {
@@ -287,6 +338,60 @@ dungeon_cave_t dungeon_cave_types[NUM_DUNGEON_CAVE_TYPES] = {
         },
         .species_static_encounter = {
             POKEMON_VIBRAVA, POKEMON_LEPUMENTAS, POKEMON_VIBRAVA, POKEMON_LEPUMENTAS,
+        },
+    },
+    [DUNGEON_CAVE_TYPE_STEEL] = {
+        .footer = &map_footer_dungeon_steel_cave,
+        .min_num_patterns = 1,
+        .max_num_patterns = 3,
+        .deco_rate = 0,
+        .event_init = dungeon_steel_cave_initialize_events,
+        .fill_pattern_in_map = dungeon_pattern_fill_with_1x1_border_without_corners,
+        .fill_pattern_in_over = dungeon_pattern_fill_with_1x1_border_without_corners_walls,
+        .map_weather = MAP_WEATHER_INSIDE,
+        .items_common = {
+            ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_SUPERSCHUTZ, ITEM_FLUCHTSEIL,
+            ITEM_X_ABWEHR, ITEM_STERNENSTAUB, ITEM_LUNARSTUECK, ITEM_SOLARSTUECK,
+        },
+        .items_rare = {
+            ITEM_METALLMANTEL, ITEM_UNLICHTJUWEL, ITEM_STAHLJUWEL, ITEM_BELEBER,
+        },
+        .species_common = {
+            POKEMON_KLEINSTEIN, POKEMON_STOLLUNIOR, POKEMON_BRONZEL, POKEMON_ZUBAT,
+            POKEMON_STOLLUNIOR, POKEMON_ONIX, POKEMON_BRONZEL, POKEMON_STOLLUNIOR,
+        },
+        .species_rare = {
+            POKEMON_STOLLRAK, POKEMON_GEOROK, POKEMON_GOLBAT, POKEMON_BRONZONG,
+        },
+        .species_static_encounter = {
+            POKEMON_STOLLOSS, POKEMON_SONNFEL, POKEMON_STAHLOS, POKEMON_LUNASTEIN,
+        },
+    },
+    [DUNGEON_CAVE_TYPE_FOSSIL] = {
+        .footer = &map_footer_dungeon_fossil_cave,
+        .min_num_patterns = 1,
+        .max_num_patterns = 1,
+        .deco_rate = 0,
+        .event_init = dungeon_fossil_cave_initialize_events,
+        .fill_pattern_in_map = dungeon_pattern_fill_with_1x1_border_without_corners,
+        .fill_pattern_in_over = dungeon_pattern_fill_with_1x1_border_without_corners_walls,
+        .map_weather = MAP_WEATHER_INSIDE,
+        .items_common = {
+            ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_SUPERSCHUTZ, ITEM_FLUCHTSEIL,
+            ITEM_X_TREFFER, ITEM_STERNENSTAUB, ITEM_GLITZERSTUECK, ITEM_LUNARSTUECK,
+        },
+        .items_rare = {
+            ITEM_ELIXIER, ITEM_EWIGSTEIN, ITEM_STERNENSTUECK, ITEM_BELEBER,
+        },
+        .species_common = {
+            POKEMON_KLEINSTEIN, POKEMON_ABRA, POKEMON_MEDITIE, POKEMON_ZUBAT,
+            POKEMON_NASGNET, POKEMON_PUMMELUFF, POKEMON_BRONZEL, POKEMON_MACHOLLO,
+        },
+        .species_rare = {
+            POKEMON_KADABRA, POKEMON_GEOROK, POKEMON_GOLBAT, POKEMON_BRONZONG,
+        },
+        .species_static_encounter = {
+            POKEMON_MEDITALIS, POKEMON_VOLUMINAS, POKEMON_BRONZONG, POKEMON_KNUDDELUFF,
         },
     },
 };

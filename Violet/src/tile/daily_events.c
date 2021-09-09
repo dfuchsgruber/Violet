@@ -6,6 +6,7 @@
 #include "prng.h"
 #include "debug.h"
 #include "overworld/misc.h"
+#include "flags.h"
 
 u16 tile_hash_by_position(s16 x, s16 y, u8 bank, u8 map_idx, size_t m) {
     u32 seq[4] = {
@@ -55,18 +56,14 @@ u32 dungeon_hash(int dungeon_id) {
 bool dungeon_flag_check(int dungeon_id) {
 	dprintf("get dungeon flag %d\n", dungeon_id);
 	if (dungeon_id < 128) {
-		int mask = 1 << (dungeon_id & 7);
-		return (cmem.dungeon_flags[dungeon_id / 8] & mask) != 0;
+		return checkflag((u16)(FLAG_DUNGEON_BASE + dungeon_id));
 	}
 	return true;
 }
 
 void dungeon_flag_set(int dungeon_id) {
 	dprintf("Set dungeon flag %d\n", dungeon_id);
-	if (dungeon_id < 128) {
-		int mask = 1 << (dungeon_id & 7);
-		cmem.dungeon_flags[dungeon_id / 8] = (u8)(cmem.dungeon_flags[dungeon_id / 8] | mask);
-	}
+	setflag((u16)(FLAG_DUNGEON_BASE + dungeon_id));
 }
 
 

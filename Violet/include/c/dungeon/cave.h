@@ -8,6 +8,9 @@
 #ifndef INCLUDE_C_DUNGEON_CAVE_H_
 #define INCLUDE_C_DUNGEON_CAVE_H_
 
+#include "types.h"
+#include "constants/dungeon/dungeon_cave_types.h"
+
 #define DG2_CAVE_TENT_MAP 1
 #define DG2_CAVE_DRAGON_CAVE_MAP 2
 
@@ -22,16 +25,6 @@
     #define DG2_CAVE_NODE_METRIC_LAMBDA_MIN 7
     #define DG2_CAVE_NODE_METRIC_LAMBDA_MEAN 5
     #define DG2_CAVE_NODE_SAMPLES 50
-
-    enum {
-        DUNGEON_CAVE_TYPE_NORMAL = 0,
-        DUNGEON_CAVE_TYPE_TENT,
-        DUNGEON_CAVE_TYPE_ICE,
-        DUNGEON_CAVE_TYPE_SAND,
-        DUNGEON_CAVE_TYPE_DRAGON,
-        NUM_DUNGEON_CAVE_TYPES,
-    };
-
 
     #define DUNGEON_CAVE_NUM_ITEMS_COMMON 8
     #define DUNGEON_CAVE_NUM_ITEMS_RARE 4

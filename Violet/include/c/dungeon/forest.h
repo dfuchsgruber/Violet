@@ -10,6 +10,7 @@
 
 #include "types.h"
 #include "map/header.h"
+#include "constants/dungeon/dungeon_forest_types.h"
 
 #define DG2_DUSK_FOREST_CABIN_MAP 0
 #define DG2_DUSK_FOREST_TENT_MAP 1
@@ -25,17 +26,6 @@
     #define DG2_FOREST_NODE_METRIC_LAMBDA_MIN 7
     #define DG2_FOREST_NODE_METRIC_LAMBDA_MEAN 5
     #define DG2_FOREST_NODE_SAMPLES 64
-
-    enum {
-        DUNGEON_FOREST_TYPE_NORMAL = 0,
-        DUNGEON_FOREST_TYPE_APPLE_FOREST,
-        DUNGEON_FOREST_TYPE_BERRY_FOREST,
-        DUNGEON_FOREST_TYPE_EGG_FOREST,
-        DUNGEON_FOREST_TYPE_MUSHROOM_FOREST,
-        DUNGEON_FOREST_TYPE_DUSK_FOREST,
-        DUNGEON_FOREST_TYPE_TENT_FOREST,
-        NUM_DUNGEON_FOREST_TYPES
-    };
 
     enum {
         NB_GRASS = 0,

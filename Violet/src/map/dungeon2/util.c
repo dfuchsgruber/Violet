@@ -141,6 +141,7 @@ void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(
     fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_STATIC_ENCOUNTER][1]);
     u16 species = *var_access(DUNGEON_OVERWORLD_SPECIES);
     fmem.dpersons[num_persons].overworld_index = overworld_get_sprite_idx_by_species(species);
+    dprintf("Static encounter has gotten overworld idx %d\n", fmem.dpersons[num_persons].overworld_index);
     fmem.dpersons[num_persons].value = species;
     fmem.dpersons[num_persons].behavior = BEHAVIOUR_WANDER_AROUND;
     fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);

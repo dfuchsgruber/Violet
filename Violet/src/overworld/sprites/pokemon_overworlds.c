@@ -2903,15 +2903,15 @@ static graphic overworld_gfxs_skorgla[] = {
 };
 
 static graphic overworld_gfxs_stahlos[] = {
-	[0] = {.sprite = gfx_ow_stahlosTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[1] = {.sprite = gfx_ow_stahlosTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[2] = {.sprite = gfx_ow_stahlosTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[3] = {.sprite = gfx_ow_stahlosTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[4] = {.sprite = gfx_ow_stahlosTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[5] = {.sprite = gfx_ow_stahlosTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[6] = {.sprite = gfx_ow_stahlosTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[7] = {.sprite = gfx_ow_stahlosTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[8] = {.sprite = gfx_ow_stahlosTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[0] = {.sprite = gfx_ow_stahlosTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[1] = {.sprite = gfx_ow_stahlosTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[2] = {.sprite = gfx_ow_stahlosTiles + 4 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[3] = {.sprite = gfx_ow_stahlosTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[4] = {.sprite = gfx_ow_stahlosTiles + 3 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[5] = {.sprite = gfx_ow_stahlosTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[6] = {.sprite = gfx_ow_stahlosTiles + 1 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[7] = {.sprite = gfx_ow_stahlosTiles + 4 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[8] = {.sprite = gfx_ow_stahlosTiles + 5 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
 };
 
 static graphic overworld_gfxs_snubbull[] = {
@@ -3383,27 +3383,27 @@ static graphic overworld_gfxs_despotar[] = {
 };
 
 static graphic overworld_gfxs_lugia[] = {
-	[0] = {.sprite = gfx_ow_lugiaTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[1] = {.sprite = gfx_ow_lugiaTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[2] = {.sprite = gfx_ow_lugiaTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[3] = {.sprite = gfx_ow_lugiaTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[4] = {.sprite = gfx_ow_lugiaTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[5] = {.sprite = gfx_ow_lugiaTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[6] = {.sprite = gfx_ow_lugiaTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[7] = {.sprite = gfx_ow_lugiaTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[8] = {.sprite = gfx_ow_lugiaTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[0] = {.sprite = gfx_ow_lugiaTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[1] = {.sprite = gfx_ow_lugiaTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[2] = {.sprite = gfx_ow_lugiaTiles + 4 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[3] = {.sprite = gfx_ow_lugiaTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[4] = {.sprite = gfx_ow_lugiaTiles + 3 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[5] = {.sprite = gfx_ow_lugiaTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[6] = {.sprite = gfx_ow_lugiaTiles + 1 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[7] = {.sprite = gfx_ow_lugiaTiles + 4 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[8] = {.sprite = gfx_ow_lugiaTiles + 5 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
 };
 
 static graphic overworld_gfxs_ho_oh[] = {
-	[0] = {.sprite = gfx_ow_ho_ohTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[1] = {.sprite = gfx_ow_ho_ohTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[2] = {.sprite = gfx_ow_ho_ohTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[3] = {.sprite = gfx_ow_ho_ohTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[4] = {.sprite = gfx_ow_ho_ohTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[5] = {.sprite = gfx_ow_ho_ohTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[6] = {.sprite = gfx_ow_ho_ohTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[7] = {.sprite = gfx_ow_ho_ohTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[8] = {.sprite = gfx_ow_ho_ohTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[0] = {.sprite = gfx_ow_ho_ohTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[1] = {.sprite = gfx_ow_ho_ohTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[2] = {.sprite = gfx_ow_ho_ohTiles + 4 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[3] = {.sprite = gfx_ow_ho_ohTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[4] = {.sprite = gfx_ow_ho_ohTiles + 3 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[5] = {.sprite = gfx_ow_ho_ohTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[6] = {.sprite = gfx_ow_ho_ohTiles + 1 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[7] = {.sprite = gfx_ow_ho_ohTiles + 4 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[8] = {.sprite = gfx_ow_ho_ohTiles + 5 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
 };
 
 static graphic overworld_gfxs_celebi[] = {
@@ -3828,15 +3828,15 @@ static graphic overworld_gfxs_wailmer[] = {
 };
 
 static graphic overworld_gfxs_wailord[] = {
-	[0] = {.sprite = gfx_ow_wailordTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[1] = {.sprite = gfx_ow_wailordTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[2] = {.sprite = gfx_ow_wailordTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[3] = {.sprite = gfx_ow_wailordTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[4] = {.sprite = gfx_ow_wailordTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[5] = {.sprite = gfx_ow_wailordTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[6] = {.sprite = gfx_ow_wailordTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[7] = {.sprite = gfx_ow_wailordTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[8] = {.sprite = gfx_ow_wailordTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[0] = {.sprite = gfx_ow_wailordTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[1] = {.sprite = gfx_ow_wailordTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[2] = {.sprite = gfx_ow_wailordTiles + 4 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[3] = {.sprite = gfx_ow_wailordTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[4] = {.sprite = gfx_ow_wailordTiles + 3 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[5] = {.sprite = gfx_ow_wailordTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[6] = {.sprite = gfx_ow_wailordTiles + 1 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[7] = {.sprite = gfx_ow_wailordTiles + 4 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[8] = {.sprite = gfx_ow_wailordTiles + 5 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
 };
 
 static graphic overworld_gfxs_eneco[] = {
@@ -4908,39 +4908,39 @@ static graphic overworld_gfxs_registeel[] = {
 };
 
 static graphic overworld_gfxs_kyogre[] = {
-	[0] = {.sprite = gfx_ow_kyogreTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[1] = {.sprite = gfx_ow_kyogreTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[2] = {.sprite = gfx_ow_kyogreTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[3] = {.sprite = gfx_ow_kyogreTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[4] = {.sprite = gfx_ow_kyogreTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[5] = {.sprite = gfx_ow_kyogreTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[6] = {.sprite = gfx_ow_kyogreTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[7] = {.sprite = gfx_ow_kyogreTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[8] = {.sprite = gfx_ow_kyogreTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[0] = {.sprite = gfx_ow_kyogreTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[1] = {.sprite = gfx_ow_kyogreTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[2] = {.sprite = gfx_ow_kyogreTiles + 4 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[3] = {.sprite = gfx_ow_kyogreTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[4] = {.sprite = gfx_ow_kyogreTiles + 3 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[5] = {.sprite = gfx_ow_kyogreTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[6] = {.sprite = gfx_ow_kyogreTiles + 1 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[7] = {.sprite = gfx_ow_kyogreTiles + 4 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[8] = {.sprite = gfx_ow_kyogreTiles + 5 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
 };
 
 static graphic overworld_gfxs_groudon[] = {
-	[0] = {.sprite = gfx_ow_groudonTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[1] = {.sprite = gfx_ow_groudonTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[2] = {.sprite = gfx_ow_groudonTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[3] = {.sprite = gfx_ow_groudonTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[4] = {.sprite = gfx_ow_groudonTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[5] = {.sprite = gfx_ow_groudonTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[6] = {.sprite = gfx_ow_groudonTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[7] = {.sprite = gfx_ow_groudonTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[8] = {.sprite = gfx_ow_groudonTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[0] = {.sprite = gfx_ow_groudonTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[1] = {.sprite = gfx_ow_groudonTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[2] = {.sprite = gfx_ow_groudonTiles + 4 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[3] = {.sprite = gfx_ow_groudonTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[4] = {.sprite = gfx_ow_groudonTiles + 3 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[5] = {.sprite = gfx_ow_groudonTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[6] = {.sprite = gfx_ow_groudonTiles + 1 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[7] = {.sprite = gfx_ow_groudonTiles + 4 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[8] = {.sprite = gfx_ow_groudonTiles + 5 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
 };
 
 static graphic overworld_gfxs_rayquaza[] = {
-	[0] = {.sprite = gfx_ow_rayquazaTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[1] = {.sprite = gfx_ow_rayquazaTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[2] = {.sprite = gfx_ow_rayquazaTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[3] = {.sprite = gfx_ow_rayquazaTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[4] = {.sprite = gfx_ow_rayquazaTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[5] = {.sprite = gfx_ow_rayquazaTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[6] = {.sprite = gfx_ow_rayquazaTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[7] = {.sprite = gfx_ow_rayquazaTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
-	[8] = {.sprite = gfx_ow_rayquazaTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
+	[0] = {.sprite = gfx_ow_rayquazaTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[1] = {.sprite = gfx_ow_rayquazaTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[2] = {.sprite = gfx_ow_rayquazaTiles + 4 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[3] = {.sprite = gfx_ow_rayquazaTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[4] = {.sprite = gfx_ow_rayquazaTiles + 3 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[5] = {.sprite = gfx_ow_rayquazaTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[6] = {.sprite = gfx_ow_rayquazaTiles + 1 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[7] = {.sprite = gfx_ow_rayquazaTiles + 4 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
+	[8] = {.sprite = gfx_ow_rayquazaTiles + 5 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = 0},
 };
 
 static graphic overworld_gfxs_latias[] = {

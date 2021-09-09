@@ -1,0 +1,14 @@
+{
+    "type" : "enum",
+    "base" : 0,
+    "values" : [
+        "DUNGEON_CAVE_TYPE_NORMAL",
+        "DUNGEON_CAVE_TYPE_TENT",
+        "DUNGEON_CAVE_TYPE_ICE",
+        "DUNGEON_CAVE_TYPE_SAND",
+        "DUNGEON_CAVE_TYPE_DRAGON",
+        "DUNGEON_CAVE_TYPE_STEEL",
+        "DUNGEON_CAVE_TYPE_FOSSIL",
+        "NUM_DUNGEON_CAVE_TYPES"
+    ]
+}
