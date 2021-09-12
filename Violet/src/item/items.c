@@ -372,8 +372,8 @@ static u8 str_item_apfel_description[] = LANGDEP(
 	PSTRING("A juicy red apple that restores\n50% of a Pokémon's Hp.")
 );
 static u8 str_item_goldapfel_description[] = LANGDEP(
-	PSTRING("Ein goldener Apfel, der ein\nPokémon vollständig heilt und\ndie Verteidigung temporär erhöht."),
-	PSTRING("A golden apple that fully heals\na Pokémon and raises its\ndefenses temporarily.")
+	PSTRING("Ein goldener Apfel, der ein\nPokémon vollständig heilt und\nSchaden temporär reduziert."),
+	PSTRING("A golden apple that fully heals\na Pokémon and reduces\ndamage temporarily.")
 );
 static u8 str_item_bitterkraut_description[] = LANGDEP(
 	PSTRING("Bitteres Kraut, das unverarbeitet\nnur einen einzigen Kraftpunkt\nwiederherstellt."),

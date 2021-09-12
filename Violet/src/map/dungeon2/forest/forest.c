@@ -145,6 +145,7 @@ static void dungeon_forest_apple_forest_initialize_events(dungeon_generator2 *dg
     u8 num_persons = fmem.dmapevents.person_cnt;
     int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
+    bool create_golden_apple = (dungeon2_rnd_16(dg2) % 4) == 0; // 1/4 of apple forests hold a golden apple
     // Up to 4 apples are under an apple tree
     size_t idxs_shuffled[4] = {0, 1, 2, 3};
     for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns); j++) {
@@ -153,9 +154,14 @@ static void dungeon_forest_apple_forest_initialize_events(dungeon_generator2 *dg
         for (int i = 0; i < 4 && num_persons < ARRAY_COUNT(fmem.dpersons); i++) {
             if (dungeon2_rnd_16(dg2) % 2) {
                 fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
-                fmem.dpersons[num_persons].overworld_index = 184;
+                fmem.dpersons[num_persons].overworld_index = 92;
                 fmem.dpersons[num_persons].script_std = PERSON_ITEM;
-                fmem.dpersons[num_persons].value = (dungeon2_rnd_16(dg2) % 8) > 0 ? ITEM_APFEL : ITEM_RIESENAPFEL;
+                if (create_golden_apple) {
+                    fmem.dpersons[num_persons].value = ITEM_GOLDAPFEL;
+                    create_golden_apple = false;
+                } else {
+                    fmem.dpersons[num_persons].value = (dungeon2_rnd_16(dg2) % 4) > 0 ? ITEM_APFEL : ITEM_RIESENAPFEL;
+                }
                 fmem.dpersons[num_persons].flag = (u16)(DG2_FLAG_PATTERN + 4 * j + i);
                 fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] + dungeon_forest_apple_displacements[idxs_shuffled[i]][0]);
                 fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + dungeon_forest_apple_displacements[idxs_shuffled[i]][1]);
