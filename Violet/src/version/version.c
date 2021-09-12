@@ -21,6 +21,7 @@
 #include "constants/roamers.h"
 #include "berry.h"
 #include "overworld/misc.h"
+#include "item/tm_hm.h"
 
 void version_init(){
     *var_access(SGM_VER) = VERSION_LATEST;
@@ -182,6 +183,7 @@ void version_upgrade_alpha_2_1_to_2_2() {
 void version_upgrade_alpha_2_2_to_3_0() {
     *var_access(SGM_VER) = VERSION_ALPHA_3_0;
     *var_access(VAR_GYM_TIPPS) = 3;
+    tm_used_initialize();
 }
 
 u16 version_is_latest(){

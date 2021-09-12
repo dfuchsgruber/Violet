@@ -460,6 +460,12 @@ TEXT_DELAY = FC 08
 \x0D = 0D
 \x0E = 0E
 \x0F = 0F
+\x11 = 13
+\x12 = 12
+\x13 = 13
+\x14 = 14
+\x3C = 3C
+\xF9 = F9
 
 TEXT_SET_FG = FC 01 @ followed by the color idx
 TEXT_SET_BG = FC 02 @ followed by the color idx
@@ -468,10 +474,11 @@ TEXT_SET_SHADOW = FC 03 @ followed by the color idx
 COLOR = FC 01 @ use a color listed below right after
 HIGHLIGHT = FC 02 @ same as fc 01
 SHADOW = FC 03 @ same as fc 01
-COLOR_HIGHLIGHT_SHADOW = FC 04 @ takes 3 bytes
+COLOR_FG_BG_SHADOW = FC 04 @ takes 3 bytes
 PALETTE = FC 05 @ used in credits
 SIZE = FC 06 @ note that anything other than "SMALL" is invalid
-SMALL = FC 06 00
+FONT_SIZE_SMALL = FC 06 00
+FONT_SIZE_BIG = FC 06 02
 UNKNOWN_7 = FC 07
 PAUSE = FC 08 @ manually print the wait byte after this, havent mapped them
 PAUSE_UNTIL_PRESS = FC 09
@@ -534,12 +541,6 @@ KEY_DPAD       = F8 0C
 '\l' = FA @ scroll up window text
 '\p' = FB @ new paragraph
 '\n' = FE @ new line
-
-\xF9 = F9
-\x13 = 13
-\x11 = 13
-\x14 = 14
-\x3C = 3C
 
 @ braille
 'BRAILLE_A' = 01

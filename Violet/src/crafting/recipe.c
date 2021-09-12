@@ -88,35 +88,40 @@ static crafting_recipe crafting_recipies_healing[] = {
     },{
         .item = ITEM_RIESENAPFEL,
         .ingredients = {
-            [0] = {.item = ITEM_APFEL, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_APFEL, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{
         .item = ITEM_GOLDAPFEL,
         .ingredients = {
             [0] = {.item = ITEM_RIESENAPFEL, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_NUGGET, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_NUGGET, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
         }
     }
 };
 static crafting_recipe crafting_recipies_jewels[] = {
     {
-        .item = ITEM_NUGGET, 
-        .ingredients = {
-            [0] = {.item = ITEM_MININUGGET, .count = 7, .type = CRAFTING_INGREDIENT_ITEM},
-        }
-    },{
-        .item = ITEM_STERNENSTUECK, 
-        .ingredients = {
-            [0] = {.item = ITEM_STERNENSTAUB, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
-        }
-    },{
         .item = ITEM_ENERGIEQUARZ, 
         .ingredients = {
             [0] = {.item = ITEM_QUARZSTAUB, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },
     {
+        .item = ITEM_ENERGIEDISK,
+        .ingredients = {
+            [0] = {.item = ITEM_QUARZSTAUB, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+        }
+    },
+    {
+        .item = ITEM_NUGGET, 
+        .ingredients = {
+            [0] = {.item = ITEM_MININUGGET, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+        }
+    },{
+        .item = ITEM_STERNENSTUECK, 
+        .ingredients = {
+            [0] = {.item = ITEM_STERNENSTAUB, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+        }
+    },{
         .item = ITEM_NORMALJUWEL, 
         .ingredients = {
             [0] = {.item = ITEM_HIMMIHBEERE, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
@@ -306,63 +311,63 @@ static crafting_recipe crafting_recipies_evolution[] = {
     {
         .item = ITEM_BLATTSTEIN, 
         .ingredients = {
-            [0] = {.item = ITEM_GRUENSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_GRUENSTUECK, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
         }
     },{
         .item = ITEM_WASSERSTEIN, 
         .ingredients = {
-            [0] = {.item = ITEM_INDIGOSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_INDIGOSTUECK, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
         }
     },{
         .item = ITEM_FEUERSTEIN, 
         .ingredients = {
-            [0] = {.item = ITEM_PURPURSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_PURPURSTUECK, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
         }
     },{
         .item = ITEM_DONNERSTEIN, 
         .ingredients = {
-            [0] = {.item = ITEM_GELBSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_GELBSTUECK, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
         }
     },{
         .item = ITEM_SONNENSTEIN, 
         .ingredients = {
-            [0] = {.item = ITEM_SOLARSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_SOLARSTUECK, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
         }
     },{
         .item = ITEM_MONDSTEIN, 
         .ingredients = {
-            [0] = {.item = ITEM_LUNARSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_LUNARSTUECK, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
         }
     },{
         .item = ITEM_FINSTERSTEIN, 
         .ingredients = {
-            [0] = {.item = ITEM_DUESTERSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_DUESTERSTUECK, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
         }
     },{
         .item = ITEM_LEUCHTSTEIN, 
         .ingredients = {
-            [0] = {.item = ITEM_LICHTSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_LICHTSTUECK, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
         }
     },{
         .item = ITEM_FUNKELSTEIN, 
         .ingredients = {
-            [0] = {.item = ITEM_GLITZERSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_GLITZERSTUECK, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
         }
@@ -370,9 +375,8 @@ static crafting_recipe crafting_recipies_evolution[] = {
         .item = ITEM_LINKKABEL, 
         .ingredients = {
             [0] = {.item = ITEM_STERNENSTUECK, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_NUGGET, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_ENERGIEQUARZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [3] = {.count = 50, .type = CRAFTING_INGREDIENT_ASH},
+            [1] = {.item = ITEM_ENERGIEQUARZ, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 25, .type = CRAFTING_INGREDIENT_ASH},
         },
         .flag = FLAG_LINK_CABLE_RECIPE,
     },

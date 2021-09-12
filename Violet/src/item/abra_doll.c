@@ -6,6 +6,7 @@
 #include "overworld/map_control.h"
 #include "overworld/effect.h"
 #include "callbacks.h"
+#include "item/bag.h"
 
 static void abra_doll_field_continuation(u8 self) {
     overworld_effect_teleport_after_showing_pokemon();

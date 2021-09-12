@@ -11,6 +11,7 @@
 
 #include "constants/items.h"
 #include "item/item_effect.h"
+#include "constants/item_pockets.h"
 #include "oam.h"
 
 typedef struct {
@@ -31,7 +32,6 @@ typedef struct {
 } item;
 
 item items[ITEM_CNT];
-
 
 typedef struct {
 	u8 hold_effect;
@@ -166,32 +166,6 @@ void item_field_null_syrup(u8 self);
 u16 item_get_price(u16 item_idx);
 
 /**
- * Prints a string in the bag and continues with a contnmuation function.
- * @param callback_idx self-reference
- * @param font the font in which to print
- * @param str the string to print
- * @param continuation the continuation function after printing the string
- **/
-void bag_print_string(u8 callback_idx, u8 font, u8 *str, void (*continuation)(u8));
-
-/**
- * Callback function that continues the bag functionality after a context menu has been executed
- * @param self self-reference
- **/
-void bag_return_from_context_menu(u8 self);
-
-/**
- * Initializes the animation for closing the bag, i.e. closing Win0
- **/
-void bag_initialize_close_animation();
-
-/**
- * Initializes fading to dark and then conitinues with the exit continuation of the bag
- * @param self self-reference
- **/
-void item_menu_fade_and_continue(u8 self);
-
-/**
  * Battle function for pokéballs
  * @param self self-reference
  **/
@@ -203,6 +177,13 @@ void item_pokeball_battle(u8 self);
  * @return pocket the pocket of the item
  **/
 u8 item_get_pocket(u16 item);
+
+/**
+ * Gets the importance of an item
+ * @param item the item idx
+ * @return the item's importance
+ **/
+u8 item_get_importance(u16 item);
 
 u16 tm_hm_to_attack[58];
 
@@ -260,12 +241,6 @@ void item_callback_rare_candy(u8 self, void (*failure_continuation)(u8));
 void item_gold_candy_field_effect(u8 self);
 
 /**
- * Closes the bag and returns to the overworld, where a continuation is executed
- * @param self self-reference
- **/
-void item_close_bag_and_return_to_overworld(u8 self);
-
-/**
  * Prints the string that an item can not be used currently (oak says that)
  * @param self self-reference
  * @param from_overworld if the item was used in the overworld (or in the bag)
@@ -283,6 +258,15 @@ void item_effect_mulch(u8 self);
  * @param self self-reference
  **/
 void item_field_effect_abra_doll(u8 self);
+
+/**
+ * Checks if an item is a mail and can be written here in this context
+ * @param item_idx the item to check
+ * @return if the item is a mail and can be written
+ **/
+bool item_is_mail_and_can_be_written(u16 item_idx);
+
+
 
 typedef struct {
     const u8 *gfx;

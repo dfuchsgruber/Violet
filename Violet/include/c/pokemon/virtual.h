@@ -536,4 +536,26 @@ u16 player_pokemon_get_total_level(u8 num);
  **/
 u8 *pokemon_copy_nickname(u8 *dst, const u8 *src);
 
+/**
+ * Clears the pp up bonuses in a certain slot
+ * @param p which pokemon to clear the pp ups of
+ * @param slot in which slot to clear the pp ups
+ **/
+void pokemon_clear_pp_ups(pokemon *p, u8 slot);
+
+/**
+ * Sets the move of a pokemon
+ * @param p which pokemon to set a move of
+ * @param move which move to set
+ * @param slot in which slot to set the move
+ */
+void pokemon_set_move(pokemon *p, u16 move, u8 slot);
+
+/**
+ * Adds friendship to a pokemon
+ * @param p which pokemon to add friendship to
+ * @param value how much friendship to add
+ **/
+void pokemon_add_friendship(pokemon *p, s8 value);
+
 #endif /* INCLUDE_C_POKEMON_VIRTUAL_H_ */

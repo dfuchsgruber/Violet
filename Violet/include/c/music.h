@@ -29,6 +29,12 @@ typedef struct {
  */
 void play_sound(u16 sound_id);
 
+/**
+ * Checks if a sound effect is playing on the sound player
+ * @return if a sound effect is playing
+ **/
+bool sound_is_playing();
+
 
 /**
  * Uses the sound players 0 and 1 to play a sound and sets pan.

@@ -408,6 +408,7 @@
 		"ITEM_SONNEN_EI",
 		"ITEM_TUNDRA_EI",
 		"ITEM_WUESTEN_EI",
+		"ITEM_ENERGIEDISK",
 		"ITEM_CNT"
 	],
 	"base": 0

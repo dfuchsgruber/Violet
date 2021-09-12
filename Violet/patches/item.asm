@@ -200,3 +200,12 @@ _bxr1:
     .word berry_pouch_context_menu_option_compost_text
     .word berry_pouch_context_menu_option_toss
 
+.org 0x0810a3f0
+    ldr r1, =bag_item_selected_give | 1
+    bx r1
+    .pool
+
+.org 0x0810a4e8
+    ldr r1, =bag_item_selected_give_from_pc | 1
+    bx r1
+    .pool

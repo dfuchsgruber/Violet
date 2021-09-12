@@ -14,6 +14,7 @@
 #include "vars.h"
 #include "language.h"
 #include "overworld/script.h"
+#include "item/bag.h"
 
 extern u8 ow_script_fertilize_berry_tree[];
 

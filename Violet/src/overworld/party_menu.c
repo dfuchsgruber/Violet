@@ -6,6 +6,10 @@
 #include "battle/state.h"
 #include "debug.h"
 #include "agbmemory.h"
+#include "item/animation.h"
+#include "item/tm_hm.h"
+#include "attack.h"
+#include "callbacks.h"
 
 void pokemon_party_menu_options_build(pokemon *base, u8 index) {
     pokemon_party_menu_options_state_t *options_state = pokemon_party_menu_state.options_state;
@@ -70,4 +74,40 @@ void pokemon_party_menu_load_partner_party(pokemon *p) {
         pokemon_party_menu_partner_party[i].nickname[j] = 0xFF;
     }
     memcpy(&battle_state->field_184, pokemon_party_menu_partner_party, 3 * sizeof(pokemon_party_menu_partner_pokemon_t));
+}
+
+void sub_08124f4c(void) {
+    if (item_animation_is_disabled()) {
+        pokemon *p = player_pokemon + pokemon_party_menu_state.slot_idx;
+        u8 slot = pokemon_get_move_slot_to_replace();
+        pokemon_clear_pp_ups(p, slot);
+        pokemon_set_move(p, item_idx_to_attack(item_activated), slot);
+        pokemon_add_friendship(p, 4);
+        if (item_activated < ITEM_VM01)
+            tm_set_used(ITEM_IDX_TO_TM_IDX(item_activated));
+        callback1_set(pokemon_party_menu_state.callback);
+    } else {
+        pokemon_party_menu_init(pokemon_party_menu_state.menu_type, KEEP_PARTY_LAYOUT, pokemon_party_menu_state.action, 
+            pokemon_party_menu_state.slot_idx, PARTY_MSG_NONE, pokemon_party_menu_continuation_apply_item_effect, pokemon_party_menu_state.callback);
+    }
+}
+
+extern u8 str_pokemon_learned_move[];
+
+void pokemon_party_menu_big_callback_learned_move(u8 self) {
+    pokemon *p = player_pokemon + pokemon_party_menu_state.slot_idx;
+    s16 *move = &pokemon_party_menu_state.data1;
+    u16 item = item_activated;
+    
+    if (move[1] == 0) {
+        pokemon_add_friendship(p, 4);
+        if (item < ITEM_VM01)
+            tm_set_used(ITEM_IDX_TO_TM_IDX(item));
+    }
+    pokemon_load_name_as_string(p, buffer0);
+    strcpy(buffer1, attack_names[move[0]]);
+    string_decrypt(strbuf, str_pokemon_learned_move);
+    pokemon_party_menu_init_text_rendering(strbuf, true);
+    bg_virtual_sync_reqeust_push(2);
+    big_callbacks[self].function = pokemon_party_menu_play_fanfare_after_text_finished;
 }

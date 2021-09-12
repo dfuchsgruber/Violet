@@ -8,6 +8,7 @@
 #include "language.h"
 #include "constants/items.h"
 #include "item/custom.h"
+#include "item/tm_hm.h"
 
 
 static u8 str_item_none_description[] = LANGDEP(
@@ -1633,6 +1634,10 @@ static u8 str_item_tundra_ei_description[] = LANGDEP(
 static u8 str_item_wuesten_ei_description[] = LANGDEP(
 	PSTRING("Item (Tragen), das beim Kampf-\neintritt für zwei Runden einen\nSandsturm erzeugt."),
 	PSTRING("Item to be held that causes\na sandstorm for two rounds when\nentering the battle.")
+);
+static u8 str_item_energiedisc_description[] = LANGDEP(
+	PSTRING("Eine mit Energie geladene Disk.\nSie lädt benutzte Tms wieder\nauf."),
+	PSTRING("This disc is charged with\nenergy. It recharges used Tms.")
 );
 
 item items[] = {
@@ -7845,6 +7850,12 @@ item items[] = {
 		.description = str_item_sonnen_ei_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_WEATHER_EGG, .holding_effect_param = WEATHER_ROCK_SUN,
 		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_ENERGIEDISK] = {
+		.name = LANGDEP(PSTRING("Energiedisk"), PSTRING("Energy Disc")),
+		.index = ITEM_ENERGIEDISK, .price = 1000,
+		.description = str_item_energiedisc_description, .pocket = POCKET_ITEMS, .type = 2,
+		.field_usage = item_field_effect_energiedisk,
 	},
 };
 

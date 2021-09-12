@@ -65,7 +65,8 @@ typedef struct saveblock1 {
     u32 sav_keys[64]; // This is one of the whackest names for stuff I have so far... At one point this should be renamed to: game stat
     u16 dungeon_blocks[56 * 56]; // Previously questlog
     int dungeon_nodes[16][2];
-    u8 questlog[160];
+    u8 tm_used_flags[16];
+    u8 questlog[144];
     u8 field_4864[80];
     u16 mail_words[2][9]; // Might be there are more than 2 mails
     u8 unknown_4[620];

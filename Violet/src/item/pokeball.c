@@ -5,6 +5,7 @@
 #include "battle/state.h"
 #include "battle/battler.h"
 #include "debug.h"
+#include "item/bag.h"
 
 extern u8 str_pokeball_unusable_because_no_space[];
 

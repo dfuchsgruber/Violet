@@ -824,5 +824,7 @@ extern const u8 gfx_item_tundra_eiTiles[];
 extern const u8 gfx_item_tundra_eiPal[];
 extern const u8 gfx_item_sandamernitTiles[];
 extern const u8 gfx_item_sandamernitPal[];
+extern const u8 gfx_item_energiediskTiles[];
+extern const u8 gfx_item_energiediskPal[];
 
 #endif

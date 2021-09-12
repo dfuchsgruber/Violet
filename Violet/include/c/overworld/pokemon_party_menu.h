@@ -33,7 +33,17 @@ typedef struct {
 
 typedef struct {
     pokemon_party_menu_options_state_t *options_state;
-    void *callback;
+    void (*callback)();
+    void (*big_callback)();
+    u8 menu_type : 4;
+    u8 layout : 2;
+    u8 unk_8_6 : 2;
+    u8 slot_idx;
+    u8 slot_idx2;
+    u8 action;
+    u16 bag_item;
+    s16 data1;
+    s16 learn_move_state;
 } pokemon_party_menu_state_t;
 
 bool (*pokemon_party_menu_continuation)();
@@ -261,5 +271,28 @@ extern u8 pokemon_party_menu_order[3]; // 4 Bits per slot
  * Contiuation for the party menu that returns to the bag.
  **/
 void party_menu_continuation_return_to_bag();
+
+/**
+ * Callback for opening the pokemon party menu for item use
+ **/
+void pokemon_party_menu_open_for_item_use();
+
+/**
+ * Gets the move slot that should be replaced when learning a new move
+ * @return the move slot to replace
+ **/
+u8 pokemon_get_move_slot_to_replace();
+
+/**
+ * Continuation that uses the item effect stored once the party menu is open
+ * @param self self-reference
+ **/
+void pokemon_party_menu_continuation_apply_item_effect(u8 self);
+
+/**
+ * Callback that waits for the text to finish and then plays a fanfare for a pokemon that learned a new move
+ * @param self self-reference
+ **/
+void pokemon_party_menu_play_fanfare_after_text_finished(u8 self);
 
 #endif /* INCLUDE_C_OVERWORLD_POKEMON_PARTY_MENU_H_ */
