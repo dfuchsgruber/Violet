@@ -254,6 +254,11 @@
 				"map_power_plant",
 				"src/map/banks/3/20/map_power_plant.pms",
 				"MAP_KRAFTWERK"
+			],
+			"25": [
+				"map_r2_village",
+				"src/map/banks/3/25/map_r2_village.pms",
+				"MAP_TANNS_LABOR"
 			]
 		},
 		"4": {
@@ -1325,6 +1330,23 @@
 				"src/map/banks/126/2/map_dungeon_cave_tent_inside.pms",
 				"MAP_PRISMANIA_EINK"
 			]
+		},
+		"35": {
+			"0": [
+				"map_sonnaufeld_pokestop",
+				"src/map/banks/35/0/map_sonnaufeld_pokestop.pms",
+				"MAP_TANNS_LABOR"
+			],
+			"1": [
+				"map_sonnaufeld_inside_0",
+				"src/map/banks/35/1/map_sonnaufeld_inside_0.pms",
+				"MAP_TANNS_LABOR"
+			],
+			"2": [
+				"map_sonnaufeld_inside_1",
+				"src/map/banks/35/2/map_sonnaufeld_inside_1.pms",
+				"MAP_TANNS_LABOR"
+			]
 		}
 	},
 	"footers": {
@@ -2275,6 +2297,10 @@
 		"map_footer_dungeon_fossil_cave": [
 			179,
 			"src/map/banks/126/map_footer_dungeon_fossil_cave.pms"
+		],
+		"map_footer_r2_village": [
+			183,
+			"src/map/banks/3/25/map_footer_r2_village.pms"
 		]
 	},
 	"tilesets_primary": {

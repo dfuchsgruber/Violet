@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_384",
 		"events": {
-			"person_cnt": 4,
+			"person_cnt": 5,
 			"warp_cnt": 1,
 			"trigger_cnt": 1,
 			"signpost_cnt": 0,
@@ -113,16 +113,41 @@
 						"berry_tree_idx": 0,
 						"type": 0
 					}
+				},
+				{
+					"target_index": "5",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "11",
+					"y": "3",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MOGELBAUM",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
 				}
 			],
 			"warps": [
 				{
-					"target_map": 41,
+					"target_map": "25",
 					"y": 11,
-					"target_bank": 3,
+					"target_bank": "3",
 					"level": 0,
 					"x": 7,
-					"target_warp_idx": 0
+					"target_warp_idx": "1"
 				}
 			],
 			"triggers": [

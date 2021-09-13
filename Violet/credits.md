@@ -7,3 +7,4 @@
 - Phyromatical
 - zetavares852
 - EvolinaX
+- Lordkazeh [https://www.deviantart.com/lordkazeh]

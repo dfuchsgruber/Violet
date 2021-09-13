@@ -376,7 +376,7 @@ map_namespaces:
 	.global str_mapnamespace_131
 
 	str_mapnamespace_131:
-		.string "Tanns Labor"
+		.string "Sonnaufeld"
 
 
 	.global str_mapnamespace_132

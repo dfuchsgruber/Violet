@@ -7212,6 +7212,20 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x1e8_dungeon_forest_veteran,
         .uses_custom_moves = true, .uses_custom_items = true,
+    }, 
+    [0x1e9] = {
+        .trainerclass = TRAINERCLASS_TEENAGER, .sprite = 0x24,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Lewis"),
+            PSTRING("Lewis")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1e9_route_2_east_trainer_1),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1e9_route_2_east_trainer_1,
+    },
+    [0x1ea] = {
+        .trainerclass = TRAINERCLASS_ANGLER, .sprite = 0x26,
+        .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Reginald"),
+            PSTRING("Reginald")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1ea_route_2_east_trainer_2),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1ea_route_2_east_trainer_2,
     },
 
     [0x300] = {

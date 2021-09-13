@@ -23,11 +23,7 @@ ow_script_map_3_66_person_0:
 	gotoif EQUAL check_expedition1
 expedition_announced:
 	loadpointer 0x0 str_0x843a47
-	show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT emotion=MUGSHOT_SHOCKED
-	call ow_script_healing_sequence
-	// playsong MUS_VERTANIA_CITY_AND_MARMORIA_CITY_AND_SAFFRONIA_CITY 0x0
-	loadpointer 0x0 str_0x843aba
-	show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT MSG_FACE
+	show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT
 	releaseall
 	end
 check_expedition1:
@@ -386,7 +382,7 @@ str_34:
 	.autostring 34 2 "Bis dann, PLAYER!\pVielleicht sehen wir uns beim nächsten Mal ja in der versunkenen Stadt Atlantea wieder.\pHalt die Ohren steif!"
 
 str_0x843a47:
-	.autostring 35 2 "Du und deine Pokémon sehen ja schrecklich erschöpft aus!\pSetz dich doch noch einmal eine Weile hin und ruh dich aus!"
+	.autostring 35 2 "Wie geht es dir, PLAYER?\pVerfolgst du immer noch deine Träume?\pLass dich auf deinem Weg von niemanden abhalten!"
 str_0x843aba:
 	.autostring 35 2 "Na siehst du?\pDu und deine Pokémon sehen schon wieder ganz fit aus!"
 
@@ -430,7 +426,7 @@ ow_script_map_3_66_person_1:
 
 check_expedition:
     checkflag ROUTE_5_VIOLET_GRUNTS
-    gotoif EQUAL ow_script_0x8a7343
+    gotoif EQUAL ow_script_0x8a5ccb
 	checkflag FLAG_PROFESSOR_TANN_GONE
 	gotoif EQUAL elise_give_access_card
     loadpointer 0 str_expedition2

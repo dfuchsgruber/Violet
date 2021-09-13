@@ -22,7 +22,7 @@ lscr_0x718dc8:
 
 
 script_set_healingplace:
-	sethealingplace HEALINGPLACE_TANNS_LAB
+	// sethealingplace HEALINGPLACE_TANNS_LAB
     setworldmapflag WM_TANNS_LAB
 end
 
@@ -372,8 +372,8 @@ applymovement 1 mov_exclam
 waitmovement 0
 checksound
 loadpointer 0 str_tann_transition
-show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT emotion=MUGSHOT_SHOCKED message_type=MSG
-goto ow_script_map_3_66_person_0
+show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT emotion=MUGSHOT_NORMAL message_type=MSG
+releaseall
 end
 
 ow_script_0x8a9640:
@@ -490,7 +490,7 @@ str_elise_end:
 str_elise_end4:
     .autostring 34 2 "Entschuldigt bitte, PLAYER und RIVAL.\pIch wollte euch nicht entmutigen.\pGebt einfach euer Bestes, ja?\pUnd wenn ihr mir ein paar interessante Pokémon-Daten beschaffen könntet, wäre ich euch sehr dankbar.\pVielen Dank euch beiden!"
 str_tann_transition:
-    .autostring 34 2 "PLAYER!\pIch hätte es fast gar nicht bemerkt!"
+    .autostring 34 2 "Also gut, PLAYER!\pIch mache mich wieder an die Arbeit.\pHalte die Ohren steif, ja?"
 .elseif LANG_EN
 
 str_0x8a7f97:

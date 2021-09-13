@@ -71,9 +71,9 @@ void tile_init(map_footer_t *foot) {
             pal_restore[8*16+5] = dns_color_light_yellow_dark;
             pal_restore[8*16+14] = dns_color_light_yellow;
         } else if (foot->tileset2 == &maptileset2) {
-            //Route 2, Meriana City
+            // Route 2, Sonnaufeld
             pal_restore[7*16+12] = dns_color_light_yellow;
-            pal_restore[7*16+13] = dns_color_light_yellow_dark;
+            pal_restore[7*16+9] = dns_color_light_yellow_dark;
             pal_restore[10*16+10] = dns_color_light_yellow_dark;
             pal_restore[10*16+11] = dns_color_light_yellow;
             pal_restore[10*16+12] = dns_color_light_yellow;

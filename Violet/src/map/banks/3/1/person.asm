@@ -399,7 +399,7 @@ str_rival_8:
 str_rival_9:
     .autostring 34 2 "Und da wollte er sich davor noch von uns beiden verabschieden.\pAlso müssen wir unseren Kampf vertagen, PLAYER.\pIch weiß nicht, wie lange Papi noch hier sein wird, also sollten wir uns besser beeilen, ja?"
 str_rival_10:
-    .autostring 34 2 "Wer zuletzt in seinem Labor auf Route 2 ist, schuldet dem anderen einen Tee aus Kaskada, ja?\pUnd dir gebe ich ganz sicher nichts aus, PLAYER!"
+    .autostring 34 2 "Wer zuletzt in seinem Labor in Sonnenaufeld ist, schuldet dem anderen einen Tee aus Kaskada, ja?\pUnd dir gebe ich ganz sicher nichts aus, PLAYER!"
 
 
 str_elise:
