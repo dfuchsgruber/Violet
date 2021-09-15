@@ -99,6 +99,25 @@ def print_tutor_crystal_index(tutor_crystals):
     index += '\n\n'
     return index
 
+def print_dungeon_index(dungeons):
+    index = ''
+    for dungeon_type, idxs in dungeons['dungeon_locations_by_type'].items():
+        index += f'{dungeon_type}:\n'
+        for idx in idxs:
+            index += f'\t{idx}\n'
+    index += '\nIdxs:\n'
+    for idx in sorted(list(dungeons['dungeon_locations_by_idx'].keys())):
+        locations = []
+        for entry in  dungeons['dungeon_locations_by_idx'][idx]:
+            bank = entry['bank']
+            map_idx = entry['map_idx']
+            namespace = entry['namespace']
+            person_idx = entry['person_idx']
+            dungeon_type = entry['type']
+            locations.append(f'{namespace} Type {dungeon_type}[{bank}.{map_idx}] Person {person_idx}')
+        index += f'\t {idx}\t: ' + ', '.join(locations) + '\n'
+    return index
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Creates an index pickle for all species habitats.')
     parser.add_argument('pickle', help='The pickle to output in readable format')
@@ -110,6 +129,7 @@ if __name__ == '__main__':
     group.add_argument('--berries', dest='index_type', action='store_const', const='berries', help='Output the index for berries')
     group.add_argument('--misc', dest='index_type', action='store_const', const='misc', help='Output the index for misc persons (mushrooms, shells, ...)')
     group.add_argument('--tutor_crystal', dest='index_type', action='store_const', const='tutor_crystal', help='Output the index for tutor crystals')
+    group.add_argument('--dungeon', dest='index_type', action='store_const', const='dungeon', help='Output the index for dungeons')
     args = parser.parse_args()
 
     with open(args.pickle, 'rb') as f:
@@ -126,6 +146,8 @@ if __name__ == '__main__':
         readable = print_misc_person_index(index)
     elif args.index_type == 'tutor_crystal':
         readable = print_tutor_crystal_index(index)
+    elif args.index_type == 'dungeon':
+        readable = print_dungeon_index(index)
     with open(args.output, 'w+') as f:
         f.write(readable)
     

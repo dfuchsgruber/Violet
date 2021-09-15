@@ -10,7 +10,7 @@
 				{
 					"is_trainer": "1",
 					"script": "ow_script_route_5_trainer_2",
-					"y": "44",
+					"y": "45",
 					"target_index": 1,
 					"field_3": 0,
 					"picture": 61,
@@ -898,8 +898,8 @@
 					"picture": "238",
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "55",
-					"y": "42",
+					"x": "52",
+					"y": "41",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -974,9 +974,9 @@
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
 					"x": "49",
-					"y": "55",
+					"y": "57",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_WALK_RIGHT_AND_LEFT",
+					"behaviour": "BEHAVIOUR_WANDER_RIGHT_AND_LEFT",
 					"behaviour_range": {
 						"x": "6",
 						"y": 0
@@ -1276,7 +1276,7 @@
 				{
 					"direction": "MAP_CONNECTION_EAST",
 					"bank": 3,
-					"displacement": "22",
+					"displacement": "26",
 					"field_A": 0,
 					"field_B": 0,
 					"map_idx": 41

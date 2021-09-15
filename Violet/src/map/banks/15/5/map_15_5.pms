@@ -230,7 +230,7 @@
 		},
 		"music": "MUS_VERTANIA_CITY_AND_MARMORIA_CITY_AND_SAFFRONIA_CITY",
 		"footer_idx": 443,
-		"namespace": "MAP_ROUTE_3",
+		"namespace": "MAP_ROUTE_4",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_OUTSIDE",
 		"type": "MAP_TYPE_INSIDE",

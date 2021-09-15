@@ -133,7 +133,7 @@
 			"75": [
 				"map_3_75",
 				"src/map/banks/3/75/map_3_75.pms",
-				"MAP_ROUTE_2"
+				"MAP_ROUTE_3"
 			],
 			"76": [
 				"map_3_76",
@@ -178,7 +178,7 @@
 			"41": [
 				"map_3_41",
 				"src/map/banks/3/41/map_3_41.pms",
-				"MAP_ROUTE_2"
+				"MAP_ROUTE_3"
 			],
 			"19": [
 				"map_3_19",
@@ -659,27 +659,27 @@
 			"0": [
 				"map_15_0",
 				"src/map/banks/15/0/map_15_0.pms",
-				"MAP_ROUTE_3"
+				"MAP_ROUTE_4"
 			],
 			"1": [
 				"map_15_1",
 				"src/map/banks/15/1/map_15_1.pms",
-				"MAP_ROUTE_3"
+				"MAP_ROUTE_4"
 			],
 			"4": [
 				"map_15_4",
 				"src/map/banks/15/4/map_15_4.pms",
-				"MAP_ROUTE_3"
+				"MAP_ROUTE_4"
 			],
 			"5": [
 				"map_15_5",
 				"src/map/banks/15/5/map_15_5.pms",
-				"MAP_ROUTE_3"
+				"MAP_ROUTE_4"
 			],
 			"2": [
 				"map_route_3_clouds",
 				"src/map/banks/15/2/map_route_3_clouds.pms",
-				"MAP_ROUTE_3"
+				"MAP_ROUTE_4"
 			]
 		},
 		"16": {
@@ -1346,6 +1346,13 @@
 				"map_sonnaufeld_inside_1",
 				"src/map/banks/35/2/map_sonnaufeld_inside_1.pms",
 				"MAP_TANNS_LABOR"
+			]
+		},
+		"36": {
+			"0": [
+				"map_route_3_house_inside",
+				"src/map/banks/36/0/map_route_3_house_inside.pms",
+				"MAP_ROUTE_3"
 			]
 		}
 	},

@@ -2,10 +2,10 @@
 	"data": {
 		"footer": "map_footer_r2_village",
 		"events": {
-			"person_cnt": 23,
+			"person_cnt": 24,
 			"warp_cnt": 4,
 			"trigger_cnt": 0,
-			"signpost_cnt": 8,
+			"signpost_cnt": 9,
 			"persons": [
 				{
 					"target_index": "1",
@@ -581,6 +581,31 @@
 						"berry_tree_idx": 0,
 						"type": 0
 					}
+				},
+				{
+					"target_index": "24",
+					"picture": "96",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "15",
+					"y": "9",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_rock_smash",
+					"flag": "1",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
 				}
 			],
 			"warps": [
@@ -746,10 +771,26 @@
 						},
 						"script": 0
 					}
+				},
+				{
+					"x": "23",
+					"y": "7",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": "ROUTE_2_TANN_AND_VIOLET_GRUNTS | 0x8000",
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_sonnaufeld_lab_door"
+					}
 				}
 			]
 		},
-		"levelscripts": 0,
+		"levelscripts": "map_sonnaufeld_levelscripts",
 		"connections": {
 			"connection_cnt": 2,
 			"connections": [

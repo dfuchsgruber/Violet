@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_221",
 		"events": {
-			"person_cnt": 62,
+			"person_cnt": 64,
 			"warp_cnt": 10,
 			"trigger_cnt": 4,
 			"signpost_cnt": 10,
@@ -255,10 +255,10 @@
 					"picture": 61,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "29",
+					"x": "28",
 					"y": "8",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN_LEFT_AND_RIGHT",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -310,7 +310,7 @@
 					"field_2": 0,
 					"field_3": 0,
 					"x": "45",
-					"y": "56",
+					"y": "57",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -471,8 +471,8 @@
 					"picture": 57,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 39,
-					"y": 21,
+					"x": "36",
+					"y": "20",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
@@ -498,8 +498,8 @@
 					"picture": 57,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 42,
-					"y": 23,
+					"x": "40",
+					"y": "22",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
@@ -1065,8 +1065,8 @@
 					"picture": "236",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "50",
-					"y": "24",
+					"x": "45",
+					"y": "23",
 					"level": 5,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -1389,8 +1389,8 @@
 					"picture": 55,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "48",
-					"y": "27",
+					"x": "49",
+					"y": "26",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -1662,6 +1662,56 @@
 						"berry_tree_idx": "12",
 						"type": 0
 					}
+				},
+				{
+					"target_index": "63",
+					"picture": "183",
+					"script_std": "PERSON_SECRET_POWER_VINE",
+					"field_3": 0,
+					"x": "29",
+					"y": "4",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_DUNGEON_BASE + 5",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "5",
+						"type": 0
+					}
+				},
+				{
+					"target_index": "64",
+					"picture": "183",
+					"script_std": "PERSON_SECRET_POWER_VINE",
+					"field_3": 0,
+					"x": "28",
+					"y": "4",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_DUNGEON_BASE + 5",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "5",
+						"type": 0
+					}
 				}
 			],
 			"warps": [
@@ -1842,8 +1892,8 @@
 					"flag": "0"
 				},
 				{
-					"x": "29",
-					"y": "5",
+					"x": "32",
+					"y": "6",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
@@ -1961,7 +2011,7 @@
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_SOUTH",
-					"displacement": -6,
+					"displacement": "-4",
 					"bank": 3,
 					"field_A": 0,
 					"field_B": 0,
@@ -1979,7 +2029,7 @@
 		},
 		"music": "MUS_ROUTE_1_AND_TUNNELPFAD",
 		"footer_idx": 221,
-		"namespace": "MAP_ROUTE_3",
+		"namespace": "MAP_ROUTE_4",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_OUTSIDE",
 		"type": "MAP_TYPE_ROUTE",
