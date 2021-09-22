@@ -153,7 +153,7 @@
 			"21": [
 				"map_felsige_oednis_desert",
 				"src/map/banks/3/21/map_3_21.pms",
-				"MAP_FELSIGE_OEDNIS"
+				"MAP_KAKTUSLABYRINTH"
 			],
 			"22": [
 				"map_3_22",
@@ -259,6 +259,11 @@
 				"map_r2_village",
 				"src/map/banks/3/25/map_r2_village.pms",
 				"MAP_TANNS_LABOR"
+			],
+			"26": [
+				"map_desert_village",
+				"src/map/banks/3/26/map_desert_village.pms",
+				"MAP_DESERT_VILLAGE"
 			]
 		},
 		"4": {
@@ -993,7 +998,7 @@
 			"3": [
 				"map_felsige_oednis_gible_cave",
 				"src/map/banks/22/3/map_felsige_oednis_gible_cave.pms",
-				"MAP_FELSIGE_OEDNIS"
+				"MAP_KAKTUSLABYRINTH"
 			],
 			"4": [
 				"map_tafelberg_outside",
@@ -1008,17 +1013,17 @@
 			"6": [
 				"map_desert_tent",
 				"src/map/banks/22/6/map_desert_tent.pms",
-				"MAP_FELSIGE_OEDNIS"
+				"MAP_DESERT_VILLAGE"
 			],
 			"7": [
 				"map_desert_red_tent",
 				"src/map/banks/22/7/map_desert_red_tent.pms",
-				"MAP_FELSIGE_OEDNIS"
+				"MAP_DESERT_VILLAGE"
 			],
 			"8": [
 				"map_desert_blue_tent",
 				"src/map/banks/22/8/map_desert_blue_tent.pms",
-				"MAP_FELSIGE_OEDNIS"
+				"MAP_DESERT_VILLAGE"
 			]
 		},
 		"23": {
@@ -1353,6 +1358,18 @@
 				"map_route_3_house_inside",
 				"src/map/banks/36/0/map_route_3_house_inside.pms",
 				"MAP_ROUTE_3"
+			]
+		},
+		"37": {
+			"0": [
+				"map_desert_village_pokestop",
+				"src/map/banks/37/0/map_desert_village_pokestop.pms",
+				"MAP_DESERT_VILLAGE"
+			],
+			"1": [
+				"map_desert_village_tent_1",
+				"src/map/banks/37/1/map_desert_village_tent_1.pms",
+				"MAP_DESERT_VILLAGE"
 			]
 		}
 	},
@@ -2308,6 +2325,14 @@
 		"map_footer_r2_village": [
 			183,
 			"src/map/banks/3/25/map_footer_r2_village.pms"
+		],
+		"map_footer_desert_village": [
+			184,
+			"src/map/banks/3/26/map_footer_desert_village.pms"
+		],
+		"map_footer_desert_village_tent_1": [
+			185,
+			"src/map/banks/37/1/map_footer_desert_village_tent_1.pms"
 		]
 	},
 	"tilesets_primary": {

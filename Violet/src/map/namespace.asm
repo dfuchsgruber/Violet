@@ -13,7 +13,7 @@ map_namespaces:
 	.word str_mapnamespace_96
 	.word str_mapnamespace_97
 	.word str_mapnamespace_98
-	.word str_mapnamespace_99
+	.word str_mapnamespace_desert_village
 	.word str_mapnamespace_100
 	.word str_mapnamespace_101
 	.word str_mapnamespace_102
@@ -39,7 +39,7 @@ map_namespaces:
 	.word str_mapnamespace_122
 	.word str_mapnamespace_123
 	.word str_mapnamespace_124
-	.word str_mapnamespace_125
+	.word str_mapnamespace_kaktus_labyrinth
 	.word str_mapnamespace_126
 	.word str_mapnamespace_127
 	.word str_mapnamespace_128
@@ -181,10 +181,10 @@ map_namespaces:
 		.string "Haweiland"
 
 
-	.global str_mapnamespace_99
+	.global str_mapnamespace_desert_village
 
-	str_mapnamespace_99:
-		.string "Route 4"
+	str_mapnamespace_desert_village:
+		.string "Basis Trockentag"
 
 
 	.global str_mapnamespace_100
@@ -337,10 +337,10 @@ map_namespaces:
 		.string "Route 24"
 
 
-	.global str_mapnamespace_125
+	.global str_mapnamespace_kaktus_labyrinth
 
-	str_mapnamespace_125:
-		.string "Route 25"
+	str_mapnamespace_kaktus_labyrinth:
+		.string "Kaktus-Labyrinth"
 
 
 	.global str_mapnamespace_126

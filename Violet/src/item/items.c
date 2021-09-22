@@ -1087,9 +1087,9 @@ static u8 str_item_wailmerkanne_description[] = LANGDEP(
 	PSTRING("Ein Gegenstand zum Gießen von\nPflanzen, wie beispielsweise Beeren."),
 	PSTRING("A nifty watering pail.\nUse it to promote strong growth in\nBerries planted in soft soil.")
 );
-static u8 str_item_devon_waren_description[] = LANGDEP(
-	PSTRING("Ein Päckchen, das Maschinenteile\nder Devon Corp. enthält."),
-	PSTRING("A package that contains mechanical\nparts of some sort made by the\nDevon Corporation.")
+static u8 str_item_gluecksmuenze_description[] = LANGDEP(
+	PSTRING("Eine leuchtende Münze, die wohl\njemand verloren hatDOTS"),
+	PSTRING("A shiny coin that somebody must\nhave lostDOTS")
 );
 static u8 str_item_aschetasche_description[] = LANGDEP(
 	PSTRING("Ein Säckchen zum Sammeln und\nAufbewahren von Vulkanasche."),
@@ -5946,13 +5946,13 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_DEVON_WAREN
-		LANGDEP(PSTRING("Devon-Waren"), PSTRING("Devon Goods")),
-		0x10d, //index
+		// ITEM_GLUECKSMUENZE
+		LANGDEP(PSTRING("Glücksmünze"), PSTRING("Lucky Coin")),
+		ITEM_GLUECKSMUENZE, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_devon_waren_description,
+		str_item_gluecksmuenze_description,
 		2, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket

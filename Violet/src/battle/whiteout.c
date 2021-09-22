@@ -145,7 +145,6 @@ void whiteout_callback_print_text(u8 self) {
 			switch(healingplace_get_current()) {
 				case HEALINGPLACE_AMONIA: str = str_whiteout_mother; break;
 				case HEALINGPLACE_BBSHIP: str = str_whiteout_bbship; direction = DIR_DOWN; break;
-				case HEALINGPLACE_DESERT: str = str_whiteout_desert; direction = DIR_DOWN; break;
 				default: str = str_whiteout; break;
 			}
 			if (whiteout_print_string(self, str, 2, 8)) {
@@ -171,7 +170,6 @@ void whiteout_callback_print_text(u8 self) {
 				switch(healingplace_get_current()) {
 					case HEALINGPLACE_AMONIA: script = ow_script_whiteout_mother; break;
 					case HEALINGPLACE_BBSHIP: script = ow_script_whiteout_bbship; break;
-					case HEALINGPLACE_DESERT: script = ow_script_whiteout_desert; break;
 					default: script = ow_script_whiteout_joy; break;
 				}
 				overworld_script_init(script);

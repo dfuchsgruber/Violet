@@ -106,7 +106,7 @@ def print_dungeon_index(dungeons):
         for idx in idxs:
             index += f'\t{idx}\n'
     index += '\nIdxs:\n'
-    for idx in sorted(list(dungeons['dungeon_locations_by_idx'].keys())):
+    for idx in sorted(list(dungeons['dungeon_locations_by_idx'].keys()), key=lambda s: int(s)):
         locations = []
         for entry in  dungeons['dungeon_locations_by_idx'][idx]:
             bank = entry['bank']

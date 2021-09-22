@@ -183,6 +183,13 @@ void version_upgrade_alpha_2_1_to_2_2() {
 void version_upgrade_alpha_2_2_to_3_0() {
     *var_access(SGM_VER) = VERSION_ALPHA_3_0;
     *var_access(VAR_GYM_TIPPS) = 3;
+    clearflag(FLAG_EP_TEILER);
+    clearflag(FLAG_GLUECKSMUENZE_RETURNED);
+    clearflag(FLAG_KAKTUSLABYRINTH_GLUECKSMUENZE);
+    worldmap_flag_state_set(WM_DESERT_VILLAGE);
+    worldmap_flag_state_set(WM_TANNS_LAB);
+    worldmap_flag_set(WM_DESERT_VILLAGE);
+    worldmap_flag_set(WM_TANNS_LAB);
     tm_used_initialize();
 }
 

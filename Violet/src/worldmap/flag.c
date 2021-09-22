@@ -36,6 +36,8 @@ u8 worldmap_lower_layer_check(u8 namespace) {
 		flag = WM_HAWEILAND; break;
 	case MAP_TANNS_LABOR:
 		flag = WM_TANNS_LAB; break;
+	case MAP_DESERT_VILLAGE:
+		flag = WM_DESERT_VILLAGE; break;
 	case 0xC5:
 		return WORLDMAP_FLAG_CHECK_INVALID;
 	default: return WORLDMAP_FLAG_CHECK_NO_FLAG;

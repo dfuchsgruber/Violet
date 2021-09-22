@@ -28,7 +28,7 @@ stru_flight_position flight_positions[NUM_HEALING_PLACES] = {
     [HEALINGPLACE_HAWEILAND - 1] = {3, 17, 0x1e, 0x15, 0}, // Haweiland
     [HEALINGPLACE_BBSHIP - 1] = {33, 0, 3, 5, 0}, // Shouldn't be able to fly there though...
     [HEALINGPLACE_TANNS_LAB - 1] = {3, 25, 0x8, 0x22, 0}, // Tann's Lab
-    [HEALINGPLACE_DESERT - 1] = {3, 21, 0x2d, 0x2d, 0}, // Also, we shouldn't be able to fly here...
+    [HEALINGPLACE_DESERT - 1] = {3, 26, 0x15, 0x27, 0},
     [NUM_HEALING_PLACES - 1] = {0xFF, 0xFF, 0, 0, 0}
 };
 
@@ -55,7 +55,7 @@ stru_healing_place_map healing_place_maps[NUM_HEALING_PLACES] = {
 	[HEALINGPLACE_HAWEILAND - 1] = {27, 3},
     [HEALINGPLACE_BBSHIP - 1] = {33, 0},
     [HEALINGPLACE_TANNS_LAB - 1] = {35, 0},
-    [HEALINGPLACE_DESERT - 1] = {22, 6},
+    [HEALINGPLACE_DESERT - 1] = {37, 0},
     [NUM_HEALING_PLACES - 1] = {0xFFFF, 0xFFFF}
 };
 
@@ -72,7 +72,7 @@ u8 healing_place_target_persons[NUM_HEALING_PLACES] = {
 	[HEALINGPLACE_HAWEILAND - 1] = 1,
     [HEALINGPLACE_BBSHIP - 1] = 0xFF,
     [HEALINGPLACE_TANNS_LAB - 1] = 1,
-    [HEALINGPLACE_DESERT - 1] = 0xFF,
+    [HEALINGPLACE_DESERT - 1] = 1,
     [NUM_HEALING_PLACES - 1] = 0xFF
 };
 
@@ -89,7 +89,7 @@ coordinate_t healing_place_target_coordinates[NUM_HEALING_PLACES] = {
 		[HEALINGPLACE_HAWEILAND - 1] = {0x7, 0x4},
         [HEALINGPLACE_BBSHIP - 1] = {3, 5},
         [HEALINGPLACE_TANNS_LAB - 1] = {0x7, 0x4},
-        [HEALINGPLACE_DESERT - 1] = {6, 3},
+        [HEALINGPLACE_DESERT - 1] = {7, 4},
 		[NUM_HEALING_PLACES - 1] = {-1, -1}
 };
 

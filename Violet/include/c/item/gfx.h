@@ -826,5 +826,7 @@ extern const u8 gfx_item_sandamernitTiles[];
 extern const u8 gfx_item_sandamernitPal[];
 extern const u8 gfx_item_energiediskTiles[];
 extern const u8 gfx_item_energiediskPal[];
+extern const u8 gfx_item_gluecksmuenzeTiles[];
+extern const u8 gfx_item_gluecksmuenzePal[];
 
 #endif

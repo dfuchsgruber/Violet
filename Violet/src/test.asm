@@ -36,6 +36,9 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	setworldmapflag WM_DESERT_VILLAGE
+	end
+	
 	clearflag FLAG_DUNGEON_BASE
 	additem ITEM_ABRA_PUPPE 5
 	end

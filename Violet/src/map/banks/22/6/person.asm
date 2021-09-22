@@ -48,7 +48,7 @@ str_3:
 str_4:
     .autostring 34 2 "Kannst du dir vorstellen, wie schwierig es war, hier die notwendige Infrastruktur für einen Computer aufzuziehen?"
 str_5:
-    .autostring 34 2 "Ich muss zugeben, dass es schon ungewöhnlich für eine Schwester ist, nicht in einem Pokéstop zu arbeiten.\pAber ich glaube wirklich daran, dass ich hier viel mehr Trainern und ihren Pokémon helfen kann."
+    .autostring 34 2 "Ich bin eine Schwester in Ausbildung.\pMan hat mir gesagt, ich solle nicht hier in dieser Wüstenstadt lernenDOTS\pAber ich denke mir, dass man gerade hier meine Hilfe am meisten braucht!"
 
 .elseif LANG_EN
 .endif

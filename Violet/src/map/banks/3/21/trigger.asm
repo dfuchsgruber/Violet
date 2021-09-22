@@ -15,16 +15,16 @@ ow_script_felsige_oednis_may_trigger:
 	applymovement 0xFF mov_fd
 	waitmovement 0
 	sound 0x15
-	setvar 0x8004 4
-	setvar LASTTALKED 4 
+	setvar 0x8004 1
+	setvar LASTTALKED 1 
 	special SPECIAL_SET_TARGET_NPC_TO_VAR
-	applymovement 4 mov_fu
+	applymovement 1 mov_fu
 	waitmovement 0
-	applymovement 4 mov_exclam
+	applymovement 1 mov_exclam
 	waitmovement 0
 	checksound
-	npc_move_to_player 4
-	applymovement 4 mov_fu
+	npc_move_to_player 1
+	applymovement 1 mov_fu
 	waitmovement 0
 	loadpointer 0 str_0
 	show_mugshot MUGSHOT_MAY MUGSHOT_LEFT hide_mugshot=0 message_type=MSG_KEEPOPEN
@@ -90,10 +90,10 @@ later:
 	closeonkeypress
 	hide_mugshot
 	pause 16
-	applymovement 4 mov_1d
+	applymovement 1 mov_1d
 	waitmovement 0
 	pause 32
-	applymovement 4 mov_fu
+	applymovement 1 mov_fu
 	waitmovement 0
 	pause 16
 	loadpointer 0 str_16
@@ -112,10 +112,11 @@ later:
 	callstd MSG_KEEPOPEN
 	closeonkeypress
 	hide_mugshot
-	applymovement 4 mov_5d
+	applymovement 1 mov_5d
 	waitmovement 0
-	hidesprite 4
+	hidesprite 1
 	addvar STORY_PROGRESS 0x1
+	setworldmapflag WM_DESERT_VILLAGE
 	releaseall
 	end
 

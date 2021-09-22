@@ -39,8 +39,8 @@
 					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "54",
-					"y": "35",
+					"x": "49",
+					"y": "5",
 					"level": 5,
 					"behaviour": "BEHAVIOUR_FACE_LEFT_AND_RIGHT",
 					"behaviour_range": {
@@ -174,7 +174,7 @@
 					"picture": "237",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "10",
+					"x": "9",
 					"y": "43",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
@@ -202,7 +202,7 @@
 					"field_2": 0,
 					"field_3": 0,
 					"x": "20",
-					"y": "14",
+					"y": "12",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
@@ -228,7 +228,7 @@
 					"picture": "237",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "9",
+					"x": "8",
 					"y": "43",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
@@ -255,7 +255,7 @@
 					"picture": 61,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "28",
+					"x": "26",
 					"y": "8",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
@@ -363,8 +363,8 @@
 					"picture": 23,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "16",
-					"y": "33",
+					"x": "15",
+					"y": "34",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_ROTATE_COUNTERCLOCKWISE",
 					"behaviour_range": {
@@ -444,8 +444,8 @@
 					"picture": 57,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 16,
-					"y": 15,
+					"x": "15",
+					"y": "16",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
@@ -499,9 +499,9 @@
 					"field_2": 0,
 					"field_3": 0,
 					"x": "40",
-					"y": "22",
+					"y": "21",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -579,8 +579,8 @@
 					"picture": 31,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 15,
-					"y": 23,
+					"x": "19",
+					"y": "21",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -633,8 +633,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 29,
-					"y": 28,
+					"x": "8",
+					"y": "9",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -984,7 +984,7 @@
 					"picture": 95,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "11",
+					"x": "10",
 					"y": "22",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
@@ -1065,8 +1065,8 @@
 					"picture": "236",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "45",
-					"y": "23",
+					"x": "44",
+					"y": "27",
 					"level": 5,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -1089,13 +1089,13 @@
 				},
 				{
 					"target_index": "41",
-					"picture": "238",
+					"picture": "183",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "45",
-					"y": "5",
+					"x": "59",
+					"y": "34",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "0",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -1103,14 +1103,14 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
-					"flag": "0",
+					"flag": "FLAG_DUNGEON_BASE + 7",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_POKEMON",
+					"script_std": "PERSON_SECRET_POWER_VINE",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_WABLU",
-						"berry_tree_idx": 0,
+						"species": "0",
+						"berry_tree_idx": "7",
 						"type": 0
 					}
 				},
@@ -1173,8 +1173,8 @@
 					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "20",
-					"y": "6",
+					"x": "6",
+					"y": "5",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -1197,13 +1197,13 @@
 				},
 				{
 					"target_index": "45",
-					"picture": "238",
+					"picture": "183",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "39",
-					"y": "12",
+					"x": "59",
+					"y": "33",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -1211,14 +1211,14 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
-					"flag": "0",
+					"flag": "FLAG_DUNGEON_BASE + 7",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_POKEMON",
+					"script_std": "PERSON_SECRET_POWER_VINE",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_WABLU",
-						"berry_tree_idx": 0,
+						"species": "0",
+						"berry_tree_idx": "7",
 						"type": 0
 					}
 				},
@@ -1284,7 +1284,7 @@
 					"x": "60",
 					"y": "53",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "0",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -1309,7 +1309,7 @@
 					"field_2": 0,
 					"field_3": 0,
 					"x": "50",
-					"y": "33",
+					"y": "32",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -1389,8 +1389,8 @@
 					"picture": 55,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "49",
-					"y": "26",
+					"x": "48",
+					"y": "22",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -1518,8 +1518,8 @@
 					"picture": "238",
 					"script_std": "PERSON_AGGRESSIVE_POKEMON",
 					"field_3": "15",
-					"x": "18",
-					"y": "25",
+					"x": "16",
+					"y": "27",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_LEFT_AND_RIGHT",
 					"behaviour_range": {
@@ -1568,10 +1568,10 @@
 					"picture": "238",
 					"script_std": "PERSON_AGGRESSIVE_POKEMON",
 					"field_3": "18",
-					"x": "9",
-					"y": "52",
+					"x": "10",
+					"y": "54",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -1618,7 +1618,7 @@
 					"picture": "238",
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "46",
+					"x": "40",
 					"y": "44",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
@@ -1716,8 +1716,8 @@
 			],
 			"warps": [
 				{
-					"x": 46,
-					"y": 43,
+					"x": "45",
+					"y": "43",
 					"level": 0,
 					"target_bank": 15,
 					"target_map": 1,
@@ -1908,8 +1908,8 @@
 					"flag": "0"
 				},
 				{
-					"x": "54",
-					"y": "30",
+					"x": "46",
+					"y": "35",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
@@ -1940,8 +1940,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 45,
-					"y": 44,
+					"x": "48",
+					"y": "44",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -1972,8 +1972,8 @@
 					"flag": "0"
 				},
 				{
-					"x": "25",
-					"y": "20",
+					"x": "18",
+					"y": "8",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
@@ -1989,7 +1989,7 @@
 				},
 				{
 					"x": "7",
-					"y": "19",
+					"y": "21",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"flag": 0,

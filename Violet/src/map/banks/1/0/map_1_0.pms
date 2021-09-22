@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_117",
 		"events": {
-			"person_cnt": 63,
+			"person_cnt": 64,
 			"warp_cnt": 21,
 			"trigger_cnt": 4,
 			"signpost_cnt": 9,
@@ -1582,13 +1582,13 @@
 				},
 				{
 					"target_index": "61",
-					"picture": "238",
-					"script_std": "PERSON_POKEMON",
+					"picture": "183",
+					"script_std": "PERSON_SECRET_POWER_VINE",
 					"field_3": 0,
-					"x": "25",
-					"y": "77",
+					"x": "6",
+					"y": "58",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -1597,23 +1597,23 @@
 					"is_trainer": 0,
 					"alert_radius": 0,
 					"script": 0,
-					"flag": 0,
+					"flag": "FLAG_DUNGEON_BASE + 8",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_DUFLOR",
-						"berry_tree_idx": 0,
+						"species": "0",
+						"berry_tree_idx": "8",
 						"type": 0
 					}
 				},
 				{
 					"target_index": "62",
-					"picture": "238",
-					"script_std": "PERSON_POKEMON",
+					"picture": "183",
+					"script_std": "PERSON_SECRET_POWER_VINE",
 					"field_3": 0,
-					"x": "73",
-					"y": "16",
+					"x": "54",
+					"y": "75",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -1622,23 +1622,23 @@
 					"is_trainer": 0,
 					"alert_radius": 0,
 					"script": 0,
-					"flag": 0,
+					"flag": "FLAG_DUNGEON_BASE + 9",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_WAUMPEL",
-						"berry_tree_idx": 0,
+						"species": "0",
+						"berry_tree_idx": "9",
 						"type": 0
 					}
 				},
 				{
 					"target_index": "63",
-					"picture": "238",
-					"script_std": "PERSON_POKEMON",
+					"picture": "183",
+					"script_std": "PERSON_SECRET_POWER_VINE",
 					"field_3": 0,
-					"x": "8",
-					"y": "12",
+					"x": "6",
+					"y": "57",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -1647,11 +1647,36 @@
 					"is_trainer": 0,
 					"alert_radius": 0,
 					"script": 0,
-					"flag": 0,
+					"flag": "FLAG_DUNGEON_BASE + 8",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_BLANAS",
-						"berry_tree_idx": 0,
+						"species": "0",
+						"berry_tree_idx": "8",
+						"type": 0
+					}
+				},
+				{
+					"target_index": "64",
+					"picture": "183",
+					"script_std": "PERSON_SECRET_POWER_VINE",
+					"field_3": 0,
+					"x": "55",
+					"y": "75",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_DUNGEON_BASE + 9",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "9",
 						"type": 0
 					}
 				}
@@ -1706,16 +1731,16 @@
 					"target_warp_idx": 12
 				},
 				{
-					"x": 62,
-					"y": 68,
+					"x": "62",
+					"y": "70",
 					"level": 0,
 					"target_bank": 3,
 					"target_map": 74,
 					"target_warp_idx": 0
 				},
 				{
-					"x": 62,
-					"y": 69,
+					"x": "62",
+					"y": "71",
 					"level": 0,
 					"target_bank": 3,
 					"target_map": 74,
@@ -1770,8 +1795,8 @@
 					"target_warp_idx": 14
 				},
 				{
-					"x": 62,
-					"y": 67,
+					"x": "62",
+					"y": "69",
 					"level": 0,
 					"target_bank": 3,
 					"target_map": 74,

@@ -88,8 +88,8 @@
 					"x": "3",
 					"y": "7",
 					"level": 0,
-					"target_warp_idx": "9",
-					"target_map": "21",
+					"target_warp_idx": "3",
+					"target_map": "26",
 					"target_bank": "3"
 				}
 			],
@@ -103,7 +103,7 @@
 		},
 		"music": "MUS_VERTANIA_CITY_AND_MARMORIA_CITY_AND_SAFFRONIA_CITY",
 		"footer_idx": 135,
-		"namespace": "MAP_FELSIGE_OEDNIS",
+		"namespace": "MAP_DESERT_VILLAGE",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_INSIDE",
 		"type": "MAP_TYPE_INSIDE",

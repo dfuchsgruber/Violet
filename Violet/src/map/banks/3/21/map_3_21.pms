@@ -3,9 +3,9 @@
 		"footer": "map_footer_91",
 		"events": {
 			"person_cnt": 53,
-			"warp_cnt": 10,
-			"trigger_cnt": 4,
-			"signpost_cnt": 25,
+			"warp_cnt": 7,
+			"trigger_cnt": 0,
+			"signpost_cnt": 16,
 			"persons": [
 				{
 					"target_index": 1,
@@ -39,8 +39,8 @@
 					"picture": 61,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "22",
-					"y": "27",
+					"x": "15",
+					"y": "29",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -90,11 +90,11 @@
 				},
 				{
 					"target_index": 4,
-					"picture": 15,
+					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "14",
-					"y": "24",
+					"x": "21",
+					"y": "35",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -104,13 +104,13 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
-					"flag": "FLAG_FELSIGE_ODENIS_MAY",
+					"flag": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_SANDAMER",
 						"berry_tree_idx": 0,
 						"type": 0
 					}
@@ -201,8 +201,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "45",
-					"y": "74",
+					"x": "68",
+					"y": "72",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -212,12 +212,12 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
-					"flag": "FELISGE_ODNIS_ITEM_9",
+					"flag": "FLAG_KAKTUSLABYRINTH_GLUECKSMUENZE",
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": "PERSON_ITEM",
 					"value": {
-						"item": "ITEM_EP_TEILER",
+						"item": "ITEM_GLUECKSMUENZE",
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
@@ -552,13 +552,13 @@
 					"picture": 42,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "52",
-					"y": "52",
+					"x": "50",
+					"y": "50",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_LEFT_DOWN_RIGHT_UP",
 					"behaviour_range": {
-						"x": "3",
-						"y": "3"
+						"x": "4",
+						"y": "4"
 					},
 					"is_trainer": "1",
 					"alert_radius": "4",
@@ -869,7 +869,7 @@
 					"picture": "238",
 					"script_std": "PERSON_AGGRESSIVE_POKEMON",
 					"field_3": "25",
-					"x": "73",
+					"x": "72",
 					"y": "50",
 					"level": "0",
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
@@ -894,7 +894,7 @@
 					"picture": "238",
 					"script_std": "PERSON_AGGRESSIVE_POKEMON",
 					"field_3": "31",
-					"x": "36",
+					"x": "16",
 					"y": "15",
 					"level": "0",
 					"behaviour": "BEHAVIOUR_ROTATE_CLOCKWISE",
@@ -919,8 +919,8 @@
 					"picture": "238",
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "9",
-					"y": "17",
+					"x": "10",
+					"y": "11",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -1067,24 +1067,24 @@
 				{
 					"target_index": "41",
 					"picture": "238",
-					"script_std": "PERSON_POKEMON",
-					"field_3": 0,
-					"x": "4",
-					"y": "7",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
+					"field_3": "26",
+					"x": "8",
+					"y": "22",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour": "BEHAVIOUR_WALK_DOWN_AND_UP",
 					"behaviour_range": {
 						"x": 0,
-						"y": 0
+						"y": "4"
 					},
 					"field_B": 0,
-					"is_trainer": 0,
-					"alert_radius": 0,
+					"is_trainer": "1",
+					"alert_radius": "4",
 					"script": 0,
-					"flag": 0,
+					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_2",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_LEPUMENTAS",
+						"species": "POKEMON_PUPPANCE",
 						"berry_tree_idx": 0,
 						"type": 0
 					}
@@ -1094,8 +1094,8 @@
 					"picture": "238",
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "14",
-					"y": "3",
+					"x": "12",
+					"y": "7",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -1319,7 +1319,7 @@
 					"picture": "27",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "41",
+					"x": "44",
 					"y": "46",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
@@ -1392,8 +1392,8 @@
 			],
 			"warps": [
 				{
-					"x": 12,
-					"y": 17,
+					"x": "8",
+					"y": "12",
 					"level": 0,
 					"target_bank": 0,
 					"target_map": 5,
@@ -1416,7 +1416,7 @@
 					"target_warp_idx": 3
 				},
 				{
-					"x": "12",
+					"x": "15",
 					"y": "6",
 					"level": 0,
 					"target_warp_idx": 0,
@@ -1424,8 +1424,8 @@
 					"target_bank": "28"
 				},
 				{
-					"x": "15",
-					"y": "14",
+					"x": "9",
+					"y": "12",
 					"level": 0,
 					"target_warp_idx": "8",
 					"target_map": "5",
@@ -1446,78 +1446,9 @@
 					"target_warp_idx": 0,
 					"target_map": "3",
 					"target_bank": "22"
-				},
-				{
-					"x": "45",
-					"y": "44",
-					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": "6",
-					"target_bank": "22"
-				},
-				{
-					"x": "38",
-					"y": "36",
-					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": "7",
-					"target_bank": "22"
-				},
-				{
-					"x": "53",
-					"y": "35",
-					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": "8",
-					"target_bank": "22"
 				}
 			],
-			"triggers": [
-				{
-					"x": "12",
-					"y": "21",
-					"level": 0,
-					"field_5": 0,
-					"value": 30,
-					"script": "ow_script_felsige_oednis_may_trigger",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"x": "13",
-					"y": "21",
-					"level": 0,
-					"field_5": 0,
-					"value": 30,
-					"script": "ow_script_felsige_oednis_may_trigger",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"x": "14",
-					"y": "21",
-					"level": 0,
-					"field_5": 0,
-					"value": 30,
-					"script": "ow_script_felsige_oednis_may_trigger",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"x": "15",
-					"y": "21",
-					"level": 0,
-					"field_5": 0,
-					"value": 30,
-					"script": "ow_script_felsige_oednis_may_trigger",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				}
-			],
+			"triggers": [],
 			"signposts": [
 				{
 					"x": "49",
@@ -1530,70 +1461,6 @@
 							"item": "ITEM_KAMPFKNOCHEN",
 							"flag": 36,
 							"amount": 1,
-							"chunk": 0
-						}
-					},
-					"flag": "0"
-				},
-				{
-					"x": "47",
-					"y": "45",
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"script": "ow_script_map_3_21_sign_0",
-						"item": {
-							"item": "0",
-							"flag": "0",
-							"amount": 0,
-							"chunk": 0
-						}
-					},
-					"flag": "0"
-				},
-				{
-					"x": "48",
-					"y": "45",
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"script": "ow_script_map_3_21_sign_0",
-						"item": {
-							"item": "0",
-							"flag": "0",
-							"amount": 0,
-							"chunk": 0
-						}
-					},
-					"flag": "0"
-				},
-				{
-					"x": "47",
-					"y": "44",
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"script": "ow_script_map_3_21_sign_0",
-						"item": {
-							"item": "0",
-							"flag": "0",
-							"amount": 0,
-							"chunk": 0
-						}
-					},
-					"flag": "0"
-				},
-				{
-					"x": "48",
-					"y": "44",
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"script": "ow_script_map_3_21_sign_0",
-						"item": {
-							"item": "0",
-							"flag": "0",
-							"amount": 0,
 							"chunk": 0
 						}
 					},
@@ -1808,56 +1675,8 @@
 					"flag": "0"
 				},
 				{
-					"x": "11",
-					"y": "6",
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"item": {
-							"item": 0,
-							"flag": 0,
-							"amount": 0,
-							"chunk": 0
-						},
-						"script": "ow_script_felsige_oednis_regirock_cave_entrance"
-					},
-					"flag": "0"
-				},
-				{
-					"x": "12",
-					"y": "6",
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"item": {
-							"item": 0,
-							"flag": 0,
-							"amount": 0,
-							"chunk": 0
-						},
-						"script": "ow_script_felsige_oednis_regirock_cave_entrance"
-					},
-					"flag": "0"
-				},
-				{
-					"x": "13",
-					"y": "6",
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"item": {
-							"item": 0,
-							"flag": 0,
-							"amount": 0,
-							"chunk": 0
-						},
-						"script": "ow_script_felsige_oednis_regirock_cave_entrance"
-					},
-					"flag": "0"
-				},
-				{
-					"x": "25",
-					"y": "16",
+					"x": "46",
+					"y": "74",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"flag": 0,
@@ -1869,22 +1688,6 @@
 							"chunk": 0
 						},
 						"script": 0
-					}
-				},
-				{
-					"x": "14",
-					"y": "18",
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"flag": 0,
-					"value": {
-						"item": {
-							"item": 0,
-							"flag": 0,
-							"amount": 0,
-							"chunk": 0
-						},
-						"script": "ow_script_felsige_oednis_desert_sign_0"
 					}
 				},
 				{
@@ -1902,28 +1705,12 @@
 						},
 						"script": "ow_script_felsige_oednis_desert_sign_1"
 					}
-				},
-				{
-					"x": "46",
-					"y": "45",
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"flag": 0,
-					"value": {
-						"item": {
-							"item": 0,
-							"flag": 0,
-							"amount": 0,
-							"chunk": 0
-						},
-						"script": "ow_script_felsige_oednis_desert_sign_2"
-					}
 				}
 			]
 		},
 		"levelscripts": "levelscript_felsige_oednis",
 		"connections": {
-			"connection_cnt": 1,
+			"connection_cnt": 2,
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_CLOUD",
@@ -1932,12 +1719,20 @@
 					"map_idx": 0,
 					"field_A": 0,
 					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_WEST",
+					"displacement": "-6",
+					"bank": "3",
+					"map_idx": "26",
+					"field_A": 0,
+					"field_B": 0
 				}
 			]
 		},
 		"music": "MUS_DESERT",
 		"footer_idx": 91,
-		"namespace": "MAP_FELSIGE_OEDNIS",
+		"namespace": "MAP_KAKTUSLABYRINTH",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_SANDSTORM",
 		"type": "MAP_TYPE_VILLAGE",

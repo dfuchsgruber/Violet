@@ -272,7 +272,7 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_WETTB_KARTE] = { .gfx = gfx_item_wettb_karteTiles, .pal = gfx_item_wettb_kartePal },
     [ITEM_WOLKENGARN] = { .gfx = gfx_item_wolkengarnTiles, .pal = gfx_item_wolkengarnPal },
     [ITEM_WAILMERKANNE] = { .gfx = gfx_item_wailmerkanneTiles, .pal = gfx_item_wailmerkannePal },
-    [ITEM_DEVON_WAREN] = { .gfx = gfx_item_devon_warenTiles, .pal = gfx_item_devon_warenPal },
+    [ITEM_GLUECKSMUENZE] = { .gfx = gfx_item_gluecksmuenzeTiles, .pal = gfx_item_gluecksmuenzePal },
     [ITEM_ASCHETASCHE] = { .gfx = gfx_item_aschetascheTiles, .pal = gfx_item_aschetaschePal },
     [ITEM_GEISTERSCHLUESSEL] = { .gfx = gfx_item_geisterschluesselTiles, .pal = gfx_item_geisterschluesselPal },
     [ITEM_KUNSTRAD] = { .gfx = gfx_item_kunstradTiles, .pal = gfx_item_kunstradPal },
