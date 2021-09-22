@@ -158,7 +158,7 @@
 			"22": [
 				"map_3_22",
 				"src/map/banks/3/22/map_3_22.pms",
-				"MAP_ROUTE_4"
+				"MAP_ROUTE_5"
 			],
 			"23": [
 				"map_3_23",
@@ -691,32 +691,32 @@
 			"3": [
 				"map_16_3",
 				"src/map/banks/16/3/map_16_3.pms",
-				"MAP_ROUTE_4"
+				"MAP_ROUTE_5"
 			],
 			"4": [
 				"map_16_4",
 				"src/map/banks/16/4/map_16_4.pms",
-				"MAP_ROUTE_4"
+				"MAP_ROUTE_5"
 			],
 			"0": [
 				"map_route_4_clouds",
 				"src/map/banks/16/0/map_route_4_clouds.pms",
-				"MAP_ROUTE_4"
+				"MAP_ROUTE_5"
 			],
 			"1": [
 				"map_route_4_cave",
 				"src/map/banks/16/1/map_route_4_cave.pms",
-				"MAP_ROUTE_4"
+				"MAP_ROUTE_5"
 			],
 			"2": [
 				"map_route_4_south_cave",
 				"src/map/banks/16/5/map_route_4_south_cave.pms",
-				"MAP_ROUTE_4"
+				"MAP_ROUTE_5"
 			],
 			"5": [
 				"map_route_4_clouds_cave",
 				"src/map/banks/16/6/map_route_4_clouds_cave.pms",
-				"MAP_ROUTE_4"
+				"MAP_ROUTE_5"
 			]
 		},
 		"17": {

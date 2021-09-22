@@ -9,6 +9,9 @@
 
 .global ow_script_route_4_south_cave_person_0
 .global ow_script_route_4_south_cave_person_1
+.global ow_script_route_4_south_cave_person_2
+.global ow_script_route_4_south_cave_person_3
+.global ow_script_route_4_south_cave_person_4
 .global ow_script_route_4_south_cave_larissa_and_manuel
 
 ow_script_route_4_south_cave_person_0:
@@ -17,6 +20,18 @@ ow_script_route_4_south_cave_person_0:
     end
 ow_script_route_4_south_cave_person_1:
     loadpointer 0 str_1
+    callstd MSG_FACE
+    end
+ow_script_route_4_south_cave_person_2:
+    loadpointer 0 str_x2
+    callstd MSG_FACE
+    end
+ow_script_route_4_south_cave_person_3:
+    loadpointer 0 str_x3
+    callstd MSG_FACE
+    end
+ow_script_route_4_south_cave_person_4:
+    loadpointer 0 str_x4
     callstd MSG_FACE
     end
 
@@ -122,6 +137,12 @@ buffer_she:
 	return
 
 .ifdef LANG_GER
+str_x2:
+    .autostring 34 2 "Manuel kommt oft in diese Höhle, um zu trainieren.\pSeine Pokémon können sogar Felsen zertrümmern!"
+str_x3:
+    .autostring 34 2 "Diese Höhle liegt am Fuß des Tafelbergs.\pIch mag die blauen Felsen wirklich sehrDOTS"
+str_x4:
+    .autostring 34 2 "Vorhin ist eine Horde von diesen Revolutionären in Grün vorbeigekommen.\pDie hatten es vielleicht eiligDOTS"
 str_0:
     .autostring 34 2 "Meine alten müden Knochen haben mich früher ohne Mühe den Küstenberg hinaufgetragen.\pJetzt schaffe ich es kaum einige Meter weit von Blütenbach wegDOTS"
 str_1:

@@ -2705,3 +2705,39 @@ trainer_pokemon_default_item_default_attacks trainer_party_x1ea_route_2_east_tra
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,8,POKEMON_MUSCHAS),
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,7,POKEMON_STERNDU),
 };
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1eb_route_4_south_cave_trainer_3[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,33,POKEMON_MASCHOCK),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,31,POKEMON_RIOLU),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1ec_route_4_south_cave_trainer_4[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,32,POKEMON_RASAFF),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,32,POKEMON_MEDITIE),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1ed_route_4_south_cave_trainer_5[1] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,35,POKEMON_MEDITALIS),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1ee_route_4_south_cave_trainer_6[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,35,POKEMON_KAPOERA),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1ef_route_4_south_cave_trainer_7[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,44, POKEMON_KIRLIA),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,43, POKEMON_KADABRA),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1f0_route_4_south_cave_trainer_8[3] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,42, POKEMON_LEKTROBAL),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,42, POKEMON_MAGNETON),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,41, POKEMON_WATTZAPF),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1f1_route_4_south_cave_trainer_9[4] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,45, POKEMON_RAICHU),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,44, POKEMON_RELAXO),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,45, POKEMON_RESLADERO),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,43, POKEMON_RASAFF),
+};

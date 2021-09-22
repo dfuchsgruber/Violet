@@ -742,7 +742,7 @@
 		},
 		"music": "MUS_CLOUDS",
 		"footer_idx": 49,
-		"namespace": "MAP_ROUTE_4",
+		"namespace": "MAP_ROUTE_5",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_OUTSIDE",
 		"type": "MAP_TYPE_CLOUD",

@@ -792,7 +792,7 @@
 		},
 		"music": "MUS_GLUTBERG_AND_EISKASKADENHOHLE_AND_WANDELHOHLE_AND_VERLORENE_HOHLE_AND_NABELFELS",
 		"footer_idx": 454,
-		"namespace": "MAP_ROUTE_4",
+		"namespace": "MAP_ROUTE_5",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_CLOUDY",
 		"type": "MAP_TYPE_BASEMENT",

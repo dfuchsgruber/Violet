@@ -7227,6 +7227,55 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x1ea_route_2_east_trainer_2,
     },
+    [0x1eb] = {
+        .trainerclass = TRAINERCLASS_SCHWARZGURT, .sprite = 0x69,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Hilbert"),
+            PSTRING("Hilbert")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1eb_route_4_south_cave_trainer_3),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1eb_route_4_south_cave_trainer_3,
+    },
+    [0x1ec] = {
+        .trainerclass = TRAINERCLASS_KAEMPFERIN, .sprite = 48,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Simone"),
+            PSTRING("Simone")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1ec_route_4_south_cave_trainer_4),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1ec_route_4_south_cave_trainer_4,
+    },
+    [0x1ed] = {
+        .trainerclass = TRAINERCLASS_SCHWARZGURT, .sprite = 0x69,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Kasimir"),
+            PSTRING("Kasimir")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1ed_route_4_south_cave_trainer_5),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1ed_route_4_south_cave_trainer_5,
+    },
+    [0x1ee] = {
+        .trainerclass = TRAINERCLASS_KAEMPFERIN, .sprite = 48,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Alvida"),
+            PSTRING("Alvida")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1ee_route_4_south_cave_trainer_6),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1ee_route_4_south_cave_trainer_6,
+    },
+    [0x1ef] = {
+        .trainerclass = TRAINERCLASS_PSYCHO, .sprite = 0x16,
+        .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Bridget"),
+            PSTRING("Bridget")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1ef_route_4_south_cave_trainer_7),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1ef_route_4_south_cave_trainer_7
+    },
+    [0x1f0] = {
+        .trainerclass = TRAINERCLASS_MECHANIKER, .sprite = 0x5d,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Oliver"),
+            PSTRING("Oliver")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1f0_route_4_south_cave_trainer_8),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1f0_route_4_south_cave_trainer_8,
+    }, 
+    [0x1f1] = {
+        .trainerclass = TRAINERCLASS_REVOLUTIONAER, .sprite = 2,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Charlie"),
+            PSTRING("Charlie")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1f1_route_4_south_cave_trainer_9),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1f1_route_4_south_cave_trainer_9,
+    }, 
 
     [0x300] = {
       .uses_custom_moves = true, .uses_custom_items = true,

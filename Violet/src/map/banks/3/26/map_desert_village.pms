@@ -628,7 +628,7 @@
 					"x": "16",
 					"y": "47",
 					"level": 0,
-					"type": 0,
+					"type": "SIGNPOST_HIDDEN_ITEM",
 					"flag": 0,
 					"value": {
 						"item": {

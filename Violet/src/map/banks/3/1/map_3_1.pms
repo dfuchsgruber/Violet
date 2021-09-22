@@ -12,8 +12,8 @@
 					"picture": 27,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "70",
-					"y": "31",
+					"x": "78",
+					"y": "30",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -1138,7 +1138,7 @@
 					"script_std": "PERSON_BERRY_TREE",
 					"field_3": 0,
 					"x": "80",
-					"y": "29",
+					"y": "26",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -1163,7 +1163,7 @@
 					"script_std": "PERSON_BERRY_TREE",
 					"field_3": 0,
 					"x": "79",
-					"y": "29",
+					"y": "26",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -1188,7 +1188,7 @@
 					"script_std": "PERSON_BERRY_TREE",
 					"field_3": 0,
 					"x": "78",
-					"y": "29",
+					"y": "26",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -1337,8 +1337,8 @@
 					"picture": "185",
 					"script_std": "PERSON_SECRET_POWER_CAVE",
 					"field_3": 0,
-					"x": "13",
-					"y": "13",
+					"x": "51",
+					"y": "8",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -1392,8 +1392,8 @@
 					"target_warp_idx": 0
 				},
 				{
-					"x": "51",
-					"y": "8",
+					"x": "85",
+					"y": "25",
 					"level": 0,
 					"target_bank": 16,
 					"target_map": "2",
@@ -1577,7 +1577,7 @@
 				},
 				{
 					"direction": "MAP_CONNECTION_NORTH",
-					"displacement": "9",
+					"displacement": "31",
 					"bank": "3",
 					"map_idx": "22",
 					"field_A": 0,
