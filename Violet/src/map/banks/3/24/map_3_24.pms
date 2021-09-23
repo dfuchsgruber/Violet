@@ -242,7 +242,7 @@
 		},
 		"music": "MUS_ROUTE_1_AND_TUNNELPFAD",
 		"footer_idx": 94,
-		"namespace": "MAP_ROUTE_6",
+		"namespace": "MAP_ROUTE_7",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_INSIDE",
 		"type": "MAP_TYPE_ROUTE",

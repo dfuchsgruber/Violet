@@ -158,7 +158,7 @@
 		},
 		"music": "MUS_HAWEILAND",
 		"footer_idx": 180,
-		"namespace": "MAP_ROUTE_7",
+		"namespace": "MAP_ROUTE_8",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_INSIDE",
 		"type": "MAP_TYPE_INSIDE",

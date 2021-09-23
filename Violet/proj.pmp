@@ -163,12 +163,12 @@
 			"23": [
 				"map_3_23",
 				"src/map/banks/3/23/map_3_23.pms",
-				"MAP_ROUTE_5"
+				"MAP_ROUTE_6"
 			],
 			"24": [
 				"map_route_6_east",
 				"src/map/banks/3/24/map_3_24.pms",
-				"MAP_ROUTE_6"
+				"MAP_ROUTE_7"
 			],
 			"70": [
 				"map_3_70",
@@ -198,7 +198,7 @@
 			"8": [
 				"map_3_8_route_8",
 				"src/map/banks/3/8/3_8_map_3_8_route_8.pms",
-				"MAP_ROUTE_8"
+				"MAP_LAUBPFAD"
 			],
 			"9": [
 				"map_3_9_laubdorf",
@@ -248,7 +248,7 @@
 			"18": [
 				"map_route_7",
 				"src/map/banks/3/18/map_route_7.pms",
-				"MAP_ROUTE_7"
+				"MAP_ROUTE_8"
 			],
 			"20": [
 				"map_power_plant",
@@ -688,11 +688,6 @@
 			]
 		},
 		"16": {
-			"3": [
-				"map_16_3",
-				"src/map/banks/16/3/map_16_3.pms",
-				"MAP_ROUTE_5"
-			],
 			"4": [
 				"map_16_4",
 				"src/map/banks/16/4/map_16_4.pms",
@@ -723,64 +718,64 @@
 			"2": [
 				"map_17_2",
 				"src/map/banks/17/2/map_17_2.pms",
-				"MAP_ROUTE_5"
+				"MAP_ROUTE_6"
 			],
 			"3": [
 				"map_17_3",
 				"src/map/banks/17/3/map_17_3.pms",
-				"MAP_ROUTE_5"
+				"MAP_ROUTE_6"
 			],
 			"0": [
 				"map_route_5_cave",
 				"src/map/banks/17/1/map_route_5_cave.pms",
-				"MAP_ROUTE_5"
+				"MAP_ROUTE_6"
 			],
 			"1": [
 				"map_route_5_cave_1f",
 				"src/map/banks/17/1/map_route_5_cave_1f.pms",
-				"MAP_ROUTE_5"
+				"MAP_ROUTE_6"
 			],
 			"4": [
 				"map_route_5_cave_2f",
 				"src/map/banks/17/4/map_route_5_cave_2f.pms",
-				"MAP_ROUTE_5"
+				"MAP_ROUTE_6"
 			],
 			"5": [
 				"map_route_5_cave_3f",
 				"src/map/banks/17/5/map_route_5_cave_3f.pms",
-				"MAP_ROUTE_5"
+				"MAP_ROUTE_6"
 			],
 			"6": [
 				"map_route_5_cave_4f",
 				"src/map/banks/17/6/map_route_5_cave_4f.pms",
-				"MAP_ROUTE_5"
+				"MAP_ROUTE_6"
 			],
 			"7": [
 				"map_route_5_cave_5f",
 				"src/map/banks/17/7/map_route_5_cave_5f.pms",
-				"MAP_ROUTE_5"
+				"MAP_ROUTE_6"
 			],
 			"8": [
 				"map_route_5_cave_boss_room",
 				"src/map/banks/17/8/map_route_5_cave_boss_room.pms",
-				"MAP_ROUTE_5"
+				"MAP_ROUTE_6"
 			]
 		},
 		"18": {
 			"2": [
 				"map_route_6_cave",
 				"src/map/banks/18/2/map_18_2.pms",
-				"MAP_ROUTE_6"
+				"MAP_ROUTE_7"
 			],
 			"3": [
 				"map_route_6_west",
 				"src/map/banks/18/3/map_18_3.pms",
-				"MAP_ROUTE_6"
+				"MAP_ROUTE_7"
 			],
 			"0": [
 				"map_route_6_clouds",
 				"src/map/banks/18/0/map_route_6_clouds.pms",
-				"MAP_ROUTE_6"
+				"MAP_ROUTE_7"
 			]
 		},
 		"2": {
@@ -809,12 +804,12 @@
 			"3": [
 				"map_route_2_north_clouds",
 				"src/map/banks/11/3_route_2_north_clouds/map_route_2_north_clouds.pms",
-				"MAP_ROUTE_2"
+				"MAP_ROUTE_3"
 			],
 			"4": [
 				"map_route_2_cloud_ruins",
 				"src/map/banks/11/4/map_route_2_cloud_ruins.pms",
-				"MAP_ROUTE_2"
+				"MAP_ROUTE_3"
 			],
 			"5": [
 				"map_route_2_cave_2",
@@ -983,7 +978,7 @@
 			"0": [
 				"map_felisge_oednis_clouds",
 				"src/map/banks/22/0/map_felisge_oednis_clouds.pms",
-				"MAP_FELSIGE_OEDNIS"
+				"MAP_KAKTUSLABYRINTH"
 			],
 			"1": [
 				"map_felsige_oednis_west_clouds",
@@ -1030,7 +1025,7 @@
 			"0": [
 				"map_route_8_clouds",
 				"src/map/banks/23/0/map_route_8_clouds.pms",
-				"MAP_ROUTE_8"
+				"MAP_LAUBPFAD"
 			]
 		},
 		"24": {
@@ -1117,32 +1112,32 @@
 			"1": [
 				"map_route_7_south",
 				"src/map/banks/29/1/map_route_7_south.pms",
-				"MAP_ROUTE_7"
+				"MAP_ROUTE_8"
 			],
 			"2": [
 				"map_route_7_castle",
 				"src/map/banks/29/2/map_route_7_castle.pms",
-				"MAP_ROUTE_7"
+				"MAP_ROUTE_8"
 			],
 			"3": [
 				"map_route_7_north",
 				"src/map/banks/29/3/map_route_7_north.pms",
-				"MAP_ROUTE_7"
+				"MAP_ROUTE_8"
 			],
 			"4": [
 				"map_route_7_secret_power_lab",
 				"src/map/banks/29/4/map_route_7_secret_power_lab.pms",
-				"MAP_ROUTE_7"
+				"MAP_ROUTE_8"
 			],
 			"5": [
 				"map_route_7_legendary_fishermans_house",
 				"src/map/banks/29/5/map_route_7_legendary_fishermans_house.pms",
-				"MAP_ROUTE_7"
+				"MAP_ROUTE_8"
 			],
 			"6": [
 				"map_route_7_clouds_castle",
 				"src/map/banks/29/6/map_route_7_clouds_castle.pms",
-				"MAP_ROUTE_7"
+				"MAP_ROUTE_8"
 			]
 		},
 		"30": {},

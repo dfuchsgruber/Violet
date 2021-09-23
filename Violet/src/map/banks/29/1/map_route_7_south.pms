@@ -640,7 +640,7 @@
 		},
 		"music": "MUS_ROUTE_7",
 		"footer_idx": 86,
-		"namespace": "MAP_ROUTE_7",
+		"namespace": "MAP_ROUTE_8",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_OUTSIDE",
 		"type": "MAP_TYPE_ROUTE",

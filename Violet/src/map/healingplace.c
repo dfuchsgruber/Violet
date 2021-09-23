@@ -16,7 +16,7 @@
 // The namespace -> worldmapflag association is hardcoded unfortunately...
 stru_flight_position flight_positions[NUM_HEALING_PLACES] = {
     // bank, map, x, y, d
-    [HEALINGPLACE_AMONIA - 1] = {3, 0, 14, 26, 0}, // Amonia
+    [HEALINGPLACE_AMONIA - 1] = {3, 0, 0xe, 0x10, 0}, // Amonia
     [HEALINGPLACE_MERIANA_CITY - 1] = {3, 1, 72, 29, 0}, // Meriana City
     [HEALINGPLACE_AKTANIA - 1] = {3, 2, 0x1f, 0x28, 0}, // Bruchfels
     [HEALINGPLACE_SILVANIA_CITY - 1] = {3, 3, 0x1c, 0xA, 0}, // Kranzdorf

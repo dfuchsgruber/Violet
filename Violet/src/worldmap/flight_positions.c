@@ -40,7 +40,7 @@ flight_position_association_t flight_position_associations[MAP_NAMESPACE_NONE - 
     [MAP_ROUTE_21 - MAP_AMONIA] = {.bank = 3, .map_idx = 39, .healing_place_idx = 0},
     [MAP_ROUTE_2 - MAP_AMONIA] = {.bank = 3, .map_idx = 41, .healing_place_idx = 0},
     [MAP_ROUTE_23 - MAP_AMONIA] = {.bank = 3, .map_idx = 42, .healing_place_idx = 0},
-    [MAP_ROUTE_24 - MAP_AMONIA] = {.bank = 3, .map_idx = 43, .healing_place_idx = 0},
+    [MAP_LAUBPFAD - MAP_AMONIA] = {.bank = 3, .map_idx = 43, .healing_place_idx = 0},
     [MAP_KAKTUSLABYRINTH - MAP_AMONIA] = {.bank = 3, .map_idx = 44, .healing_place_idx = 0},
     [MAP_SILVANIA_WALD - MAP_AMONIA] = {.bank = 3, .map_idx = 0, .healing_place_idx = 0},
     [MAP_WALDFRIEDHOF - MAP_AMONIA] = {.bank = 3, .map_idx = 0, .healing_place_idx = 0},

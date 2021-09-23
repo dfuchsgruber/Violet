@@ -38,7 +38,7 @@ map_namespaces:
 	.word str_mapnamespace_121
 	.word str_mapnamespace_122
 	.word str_mapnamespace_123
-	.word str_mapnamespace_124
+	.word str_mapnamespace_laubkindpfad
 	.word str_mapnamespace_kaktus_labyrinth
 	.word str_mapnamespace_126
 	.word str_mapnamespace_127
@@ -166,7 +166,7 @@ map_namespaces:
 	.global str_mapnamespace_96
 
 	str_mapnamespace_96:
-		.string "Laubdorf"
+		.string "Laubkind-Dorf"
 
 
 	.global str_mapnamespace_97
@@ -331,10 +331,10 @@ map_namespaces:
 		.string "Route 23"
 
 
-	.global str_mapnamespace_124
+	.global str_mapnamespace_laubkindpfad
 
-	str_mapnamespace_124:
-		.string "Route 24"
+	str_mapnamespace_laubkindpfad:
+		.string "Laubkindpfad"
 
 
 	.global str_mapnamespace_kaktus_labyrinth

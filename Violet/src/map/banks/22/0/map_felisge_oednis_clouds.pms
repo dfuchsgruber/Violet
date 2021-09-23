@@ -122,7 +122,7 @@
 		},
 		"music": "MUS_CLOUDS",
 		"footer_idx": 51,
-		"namespace": "MAP_FELSIGE_OEDNIS",
+		"namespace": "MAP_KAKTUSLABYRINTH",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_OUTSIDE",
 		"type": "MAP_TYPE_CLOUD",

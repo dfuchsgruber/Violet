@@ -23,7 +23,7 @@ close_sign_1:
 
 .ifdef LANG_GER
 str_0:
-    .autostring 34 2 "LEFT_ARROWOrina City\nRIGHT_ARROWRoute 2"
+    .autostring 34 2 "LEFT_ARROWOrina City\nRIGHT_ARROWRoute 3"
 str_1:
     .autostring 34 2 "Auf dieser Tafel sind verblasste Lettern zu erkennen.\pMöchtest du sie lesen?"
 str_2:

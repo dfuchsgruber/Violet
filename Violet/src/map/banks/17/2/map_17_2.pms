@@ -588,7 +588,7 @@
 		},
 		"music": "MUS_CLOUDS",
 		"footer_idx": 13,
-		"namespace": "MAP_ROUTE_5",
+		"namespace": "MAP_ROUTE_6",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_OUTSIDE",
 		"type": "MAP_TYPE_CLOUD",

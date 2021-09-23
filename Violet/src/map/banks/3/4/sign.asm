@@ -40,9 +40,9 @@ ow_script_kaskada_sign_6:
 
 .ifdef LANG_GER
 str_0:
-    .autostring 34 2 "DOWN_ARROW Felsige Ödnis"
+    .autostring 34 2 "DOWN_ARROW Kaktus-Labyrinth"
 str_1:
-    .autostring 34 2 "DOWN_ARROW Route 4"
+    .autostring 34 2 "DOWN_ARROW Route 5"
 str_2:
     .autostring 34 2 "Kaskada\pDie Stadt, deren Schönheit im Wasser verborgen liegt."
 str_3:

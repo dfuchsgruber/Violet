@@ -39,8 +39,8 @@
 					"picture": 29,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "48",
-					"y": "6",
+					"x": "47",
+					"y": "9",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -282,12 +282,12 @@
 					"picture": 42,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "24",
-					"y": "9",
+					"x": "22",
+					"y": "6",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_RIGHT_LEFT_DOWN_UP",
 					"behaviour_range": {
-						"x": "8",
+						"x": "7",
 						"y": "6"
 					},
 					"is_trainer": "1",
@@ -417,8 +417,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "53",
-					"y": "12",
+					"x": "54",
+					"y": "5",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -1308,8 +1308,8 @@
 					"picture": 101,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "23",
-					"y": "27",
+					"x": "24",
+					"y": "29",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -1909,8 +1909,8 @@
 					"flag": "0"
 				},
 				{
-					"x": "32",
-					"y": "5",
+					"x": "40",
+					"y": "9",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
@@ -1948,7 +1948,7 @@
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_NORTH",
-					"displacement": "4",
+					"displacement": "-19",
 					"bank": 15,
 					"field_A": 0,
 					"field_B": 0,

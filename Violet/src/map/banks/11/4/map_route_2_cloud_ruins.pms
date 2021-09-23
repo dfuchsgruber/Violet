@@ -52,7 +52,7 @@
 		},
 		"music": "MUS_GLYPHS",
 		"footer_idx": 68,
-		"namespace": "MAP_ROUTE_2",
+		"namespace": "MAP_ROUTE_3",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_INSIDE",
 		"type": "MAP_TYPE_BASEMENT",

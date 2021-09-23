@@ -932,7 +932,7 @@
 		},
 		"music": "MUS_ROUTE_8",
 		"footer_idx": 18,
-		"namespace": "MAP_ROUTE_8",
+		"namespace": "MAP_LAUBPFAD",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_OUTSIDE",
 		"type": "MAP_TYPE_ROUTE",

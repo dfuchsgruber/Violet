@@ -1198,7 +1198,7 @@
 		},
 		"music": "MUS_LAVA",
 		"footer_idx": 467,
-		"namespace": "MAP_ROUTE_6",
+		"namespace": "MAP_ROUTE_7",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_ASH",
 		"type": "MAP_TYPE_ROUTE",
