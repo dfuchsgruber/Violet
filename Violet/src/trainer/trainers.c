@@ -4,13 +4,12 @@
 #include "constants/trainer_ai_flags.h"
 #include "constants/items.h"
 #include "trainer/trainer.h"
-#include "trainer/parties.h"
 #include "language.h"
 #include "save.h"
 #include "battle/state.h"
 #include "battle/ai.h"
+#include "data/trainer_parties.h"
 
-trainer_pokemon_custom_item_custom_attacks maike_test[2];
 trainer trainers[TRAINER_CNT] = {
   {
     //Trainer 0x0
@@ -7275,7 +7274,42 @@ trainer trainers[TRAINER_CNT] = {
             PSTRING("Charlie")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1f1_route_4_south_cave_trainer_9),
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x1f1_route_4_south_cave_trainer_9,
-    }, 
+    },
+    [0x1f2] = {
+        .trainerclass = TRAINERCLASS_VOGELFAENGER, .sprite = 0x2e,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Imanuel"),
+            PSTRING("Imanuel")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1f2_route_2_clouds_trainer_5),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1f2_route_2_clouds_trainer_5,
+    },
+    [0x1f3] = {
+        .trainerclass = TRAINERCLASS_ANGLER, .sprite = 0x26,
+        .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Thomas"),
+            PSTRING("Thomas")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1f3_route_2_clouds_trainer_6),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1f3_route_2_clouds_trainer_6,
+    },
+    [0x1f4] = {
+        .trainerclass = TRAINERCLASS_PSYCHO, .sprite = 0x16,
+        .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Dhalia"),
+            PSTRING("Dhalia")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1f4_route_2_clouds_trainer_7),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1f4_route_2_clouds_trainer_7
+    },
+    [0x1f5] = {
+        .trainerclass = TRAINERCLASS_WANDERER, .sprite = 0x43,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Achim"),
+            PSTRING("Achim")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1f5_route_2_clouds_trainer_8),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1f5_route_2_clouds_trainer_8,
+    },
+    [0x1f6] = {
+        .trainerclass = TRAINERCLASS_AROMALADY, .sprite = 3,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Angelika"),
+            PSTRING("Angelika")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1f6_route_2_clouds_trainer_9),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1f6_route_2_clouds_trainer_9,
+    },
 
     [0x300] = {
       .uses_custom_moves = true, .uses_custom_items = true,
