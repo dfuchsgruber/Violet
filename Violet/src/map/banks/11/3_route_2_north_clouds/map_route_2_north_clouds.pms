@@ -2,8 +2,8 @@
 	"data": {
 		"footer": "map_footer_route_2_clouds_north",
 		"events": {
-			"person_cnt": 8,
-			"warp_cnt": 3,
+			"person_cnt": 9,
+			"warp_cnt": 4,
 			"trigger_cnt": 0,
 			"signpost_cnt": 1,
 			"persons": [
@@ -90,8 +90,8 @@
 					"picture": "171",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "25",
-					"y": "8",
+					"x": "36",
+					"y": "9",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -211,12 +211,37 @@
 						"berry_tree_idx": 0,
 						"type": 0
 					}
+				},
+				{
+					"target_index": "9",
+					"picture": "235",
+					"script_std": "PERSON_ACCESSIBLE_MOVE_TUTOR",
+					"field_3": 0,
+					"x": "37",
+					"y": "73",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": "TYPE_KAEFER"
+					}
 				}
 			],
 			"warps": [
 				{
-					"x": "31",
-					"y": "11",
+					"x": "47",
+					"y": "10",
 					"level": 0,
 					"target_warp_idx": "1",
 					"target_map": "41",
@@ -237,6 +262,14 @@
 					"target_warp_idx": "1",
 					"target_map": "4",
 					"target_bank": "11"
+				},
+				{
+					"x": "38",
+					"y": "90",
+					"level": 0,
+					"target_warp_idx": "4",
+					"target_map": "41",
+					"target_bank": "3"
 				}
 			],
 			"triggers": [],
@@ -281,7 +314,7 @@
 				},
 				{
 					"direction": "MAP_CONNECTION_NORTH",
-					"displacement": "34",
+					"displacement": "4",
 					"bank": "15",
 					"map_idx": "2",
 					"field_A": 0,
