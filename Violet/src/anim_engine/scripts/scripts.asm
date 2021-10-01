@@ -26,6 +26,9 @@ ae_scripts:
     .word ae_script_aktania_beam
     .word ae_script_aktania_sky
     .word ae_script_ardeal_tower
+    @ 20
+    .word ae_script_unown_shrine
+    
 
 
 

@@ -18516,60 +18516,78 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 48,
-					"palette_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0
-				},
-				{
-					"tile_idx": 49,
-					"palette_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0
-				},
-				{
-					"tile_idx": 65,
-					"palette_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0
-				},
-				{
-					"tile_idx": 64,
-					"palette_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0
-				},
-				{
-					"tile_idx": 190,
+					"tile_idx": 560,
 					"palette_idx": 3,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 191,
+					"tile_idx": 509,
 					"palette_idx": 3,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 206,
+					"tile_idx": 544,
 					"palette_idx": 3,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 207,
+					"tile_idx": 577,
 					"palette_idx": 3,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 0,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 0
+				},
+				{
+					"tile_idx": 0,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 0
+				},
+				{
+					"tile_idx": 327,
+					"palette_idx": 2,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 328,
+					"palette_idx": 2,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				}
 			],
 			[
 				{
-					"tile_idx": 0,
+					"tile_idx": 510,
+					"palette_idx": 3,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 565,
+					"palette_idx": 3,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 580,
+					"palette_idx": 3,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 549,
+					"palette_idx": 3,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 0,
@@ -18608,34 +18626,16 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 327,
+					"palette_idx": 2,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 328,
+					"palette_idx": 2,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				}
 			],
 			[
@@ -46710,14 +46710,14 @@
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 600,
-					"palette_idx": 6,
+					"tile_idx": 186,
+					"palette_idx": 3,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 601,
-					"palette_idx": 6,
+					"tile_idx": 187,
+					"palette_idx": 3,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
@@ -46734,16 +46734,16 @@
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 600,
+					"palette_idx": 6,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 601,
+					"palette_idx": 6,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 0,
@@ -47894,14 +47894,14 @@
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 586,
-					"palette_idx": 6,
+					"tile_idx": 186,
+					"palette_idx": 3,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 587,
-					"palette_idx": 6,
+					"tile_idx": 187,
+					"palette_idx": 3,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
@@ -47918,16 +47918,16 @@
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 586,
+					"palette_idx": 6,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 587,
+					"palette_idx": 6,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 0,
@@ -52759,7 +52759,7 @@
 				"behaviour": "0x0",
 				"hm_usage": 0,
 				"field_2": 0,
-				"battle_bg": 0,
+				"battle_bg": "BATTLE_BG_SKY_ISLAND",
 				"encounter_type": 0,
 				"field_5": 0,
 				"priority": 0,

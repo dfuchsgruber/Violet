@@ -305,7 +305,9 @@ special_table equ 0x0815FCC0
         .word special_trash_get_type | 1
 .org (special_table + 204 * 4)
         .word trash_get_encounter_or_item | 1
-// 201 <= free <= 204
+.org (special_table + 207 * 4)
+        .word special_overworld_effect_lightning | 1
+// 207 <= free <= 211
 
 .org (special_table + (0x129 * 4))
                 .word special_roamer_reset_and_initialize | 1

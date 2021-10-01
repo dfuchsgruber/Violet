@@ -828,5 +828,13 @@ extern const u8 gfx_item_energiediskTiles[];
 extern const u8 gfx_item_energiediskPal[];
 extern const u8 gfx_item_gluecksmuenzeTiles[];
 extern const u8 gfx_item_gluecksmuenzePal[];
+extern const u8 gfx_item_rotes_zahnradTiles[];
+extern const u8 gfx_item_rotes_zahnradPal[];
+extern const u8 gfx_item_blaues_zahnradTiles[];
+extern const u8 gfx_item_blaues_zahnradPal[];
+extern const u8 gfx_item_gelbes_zahnradTiles[];
+extern const u8 gfx_item_gelbes_zahnradPal[];
+extern const u8 gfx_item_gruenes_zahnradTiles[];
+extern const u8 gfx_item_gruenes_zahnradPal[];
 
 #endif

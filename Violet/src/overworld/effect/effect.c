@@ -9,6 +9,7 @@
 #include "math.h"
 #include "debug.h"
 #include "map/cloud.h"
+#include "bios.h"
 
 /**
 graphic overworld_effect_explosion_graphic = {
@@ -51,7 +52,7 @@ static oam_template overworld_effect_explosion_oam_template = {
     .rotscale = oam_rotscale_anim_table_null, .callback = overworld_effect_explosion_oam_callback,
 };
 
-void overworld_effect_explosion() {
+void overworld_effect_explosion_initialize() {
     s16 x = (s16)(overworld_effect_state.x + 7);
     s16 y = (s16)(overworld_effect_state.y + 7);
     overworld_effect_ow_coordinates_to_screen_coordinates(&x, &y, 8, 8);
@@ -110,7 +111,7 @@ static oam_template overworld_effect_sound_wave_oam_template = {
 
 
 
-void overworld_effect_sound_wave() {
+void overworld_effect_sound_wave_initialize() {
     s16 x = (s16)(overworld_effect_state.x + 7);
     s16 y = (s16)(overworld_effect_state.y + 7);
     overworld_effect_ow_coordinates_to_screen_coordinates(&x, &y, 7, 4);
@@ -154,7 +155,7 @@ static void overworld_effect_npc_transparent_flicker_big_callback(u8 self) {
     overworld_effect_remove_from_active_list(OVERWORLD_EFFECT_NPC_TRANSPARENT_FLICKER);
 }
 
-void overworld_effect_npc_transparent_flicker() {
+void overworld_effect_npc_transparent_flicker_initialize() {
     u8 person_idx = (u8)overworld_effect_state.x;
     u8 npc_idx = npc_get_by_person_idx(person_idx, save1->map, save1->bank);
     u8 amplitude = (u8)overworld_effect_state.y;
@@ -198,7 +199,7 @@ static void overworld_effect_npc_transparent_fade_big_callback(u8 self) {
     overworld_effect_remove_from_active_list(OVERWORLD_EFFECT_NPC_TRANSPARENT_FADE);
 }
 
-void overworld_effect_npc_transparent_fade() {
+void overworld_effect_npc_transparent_fade_initialize() {
     u8 person_idx = (u8)overworld_effect_state.x;
     u8 npc_idx = npc_get_by_person_idx(person_idx, save1->map, save1->bank);
     u8 from = (u8)overworld_effect_state.y;
@@ -236,9 +237,88 @@ static void overworld_effect_whirlwind_continuation() {
     overworld_effect_remove_from_active_list(OVERWORLD_EFFECT_WHIRLWIND);
 }
 
-void overworld_effect_whirlwind() {
+void overworld_effect_whirlwind_initialize() {
     oam_cloud_upstream_state_t *state = map_cloud_upstream_whirlwind_at((s16)overworld_effect_state.x, (s16)overworld_effect_state.y);
     state->contunation = overworld_effect_whirlwind_continuation;
+}
+
+static graphic overworld_effect_lightning_graphics[] = {
+    [0] = {.sprite = gfx_overworld_effect_lightningTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0xFFFF},
+    [1] = {.sprite = gfx_overworld_effect_lightningTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0xFFFF},
+    [2] = {.sprite = gfx_overworld_effect_lightningTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0xFFFF},
+    [3] = {.sprite = gfx_overworld_effect_lightningTiles + 3 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0xFFFF},
+    [4] = {.sprite = gfx_overworld_effect_lightningTiles + 4 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0xFFFF},
+    [5] = {.sprite = gfx_overworld_effect_lightningTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0xFFFF},
+    [6] = {.sprite = gfx_overworld_effect_lightningTiles + 6 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0xFFFF},
+    [7] = {.sprite = gfx_overworld_effect_lightningTiles + 7 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0xFFFF},
+    [8] = {.sprite = gfx_overworld_effect_lightningTiles + 8 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0xFFFF},
+};
+
+palette overworld_effect_lightning_palette = {
+    .pal = gfx_overworld_effect_lightningPal, .tag = GFX_TAG_OVERWORLD_EFFECT_LIGHTNING,
+};
+
+static sprite overworld_effect_lightning_sprite = {
+    .attr0 = ATTR0_SHAPE_VERTICAL, .attr1 = ATTR1_SIZE_16_32, .attr2 = ATTR2_PRIO(1),
+};
+
+#define LIGHTNING_FRAME_DURATION 4
+
+static gfx_frame overworld_effect_lightning_gfx_animation[] = {
+    {.data = 0, .duration = 0},
+    {.data = 0, .duration = LIGHTNING_FRAME_DURATION},
+    {.data = 8, .duration = LIGHTNING_FRAME_DURATION}, // empty
+    {.data = 1, .duration = LIGHTNING_FRAME_DURATION},
+    {.data = 8, .duration = LIGHTNING_FRAME_DURATION}, // empty
+    {.data = 2, .duration = LIGHTNING_FRAME_DURATION}, 
+    {.data = 8, .duration = LIGHTNING_FRAME_DURATION}, // empty
+    {.data = 1, .duration = LIGHTNING_FRAME_DURATION},
+    {.data = 8, .duration = LIGHTNING_FRAME_DURATION}, // empty & whole screen to white
+    {.data = 3, .duration = LIGHTNING_FRAME_DURATION},
+    {.data = 4, .duration = LIGHTNING_FRAME_DURATION},
+    {.data = 5, .duration = LIGHTNING_FRAME_DURATION},
+    {.data = 6, .duration = LIGHTNING_FRAME_DURATION},
+    {.data = 7, .duration = LIGHTNING_FRAME_DURATION},
+    {.data = 8, .duration = 0},
+    {.data = GFX_ANIM_END}, 
+};
+
+static gfx_frame *overworld_effect_lightning_gfx_animations[] = {overworld_effect_lightning_gfx_animation};
+
+static void overworld_effect_lightning_oam_callback(oam_object *self) {
+    u16 *frame = self->private + 1;
+    if (*frame == 7 * LIGHTNING_FRAME_DURATION + 1) {
+        cpuset(pals, pal_tmp, CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(sizeof(pals)));
+        pal_set_all_to_white();
+    } else if (*frame == 8 * LIGHTNING_FRAME_DURATION + 1) {
+        cpuset(pal_tmp, pals, CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(sizeof(pals)));
+    }
+    ++*frame;
+    if (self->flags & OAM_FLAG_GFX_ANIM_END) {
+        overworld_effect_delete(self, OVERWORLD_EFFECT_LIGHTNING);
+    }
+}
+
+static oam_template overworld_effect_lightning_oam_template = {
+    .tiles_tag = 0xFFFF, .pal_tag = GFX_TAG_OVERWORLD_EFFECT_LIGHTNING,
+    .graphics = overworld_effect_lightning_graphics,
+    .oam = &overworld_effect_lightning_sprite, .animation = overworld_effect_lightning_gfx_animations,
+    .rotscale = oam_rotscale_anim_table_null, .callback = overworld_effect_lightning_oam_callback,
+};
+
+void overworld_effect_lightning_initialize() {
+    s16 x = (s16)(overworld_effect_state.x + 7);
+    s16 y = (s16)(overworld_effect_state.y + 7);
+    overworld_effect_ow_coordinates_to_screen_coordinates(&x, &y, 8, 0);
+    u8 oam_idx = oam_new_backward_search(&overworld_effect_lightning_oam_template, x, y , 0);
+    oams[oam_idx].flags |= OAM_FLAG_CENTERED;
+    oam_gfx_anim_start(oams + oam_idx, 0);
+}
+
+void special_overworld_effect_lightning() {
+    overworld_effect_state.x = *var_access(0x8004);
+    overworld_effect_state.y = *var_access(0x8005);
+    overworld_effect_new(OVERWORLD_EFFECT_LIGHTNING);
 }
 
 const u8 *overworld_effects[NUM_OVERWORLD_EFFECTS] = {
@@ -317,4 +397,5 @@ const u8 *overworld_effects[NUM_OVERWORLD_EFFECTS] = {
     [OVERWORLD_EFFECT_NPC_TRANSPARENT_FADE] = overworld_effect_script_npc_transparent_fade,
     [OVERWORLD_EFFECT_SOUND_WAVE] = overworld_effect_script_sound_wave,
     [OVERWORLD_EFFECT_WHIRLWIND] = overworld_effect_script_whirlwind,
+    [OVERWORLD_EFFECT_LIGHTNING] = overworld_effect_script_lightning,
 };

@@ -1,0 +1,356 @@
+{
+	"data": {
+		"footer": "map_footer_sonnaufeld_clouds",
+		"events": {
+			"person_cnt": 4,
+			"warp_cnt": 1,
+			"trigger_cnt": 6,
+			"signpost_cnt": 8,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "182",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "30",
+					"y": "29",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "1 | 0x8000",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "2",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "30",
+					"y": "30",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "1 | 0x8000",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KINDWURM",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "3",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "29",
+					"y": "13",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KINDWURM",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "4",
+					"picture": "182",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "30",
+					"y": "13",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ICARUS_SONNAUFELD_CLOUDS",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "33",
+					"y": "38",
+					"level": 0,
+					"target_warp_idx": "4",
+					"target_map": "25",
+					"target_bank": "3"
+				}
+			],
+			"triggers": [
+				{
+					"x": "28",
+					"y": "23",
+					"level": 0,
+					"field_5": 0,
+					"var": "VAR_SONNAUFELD_CLOUDS_ICARUS",
+					"value": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_sonnaufeld_clouds_icarus_trigger"
+				},
+				{
+					"x": "29",
+					"y": "23",
+					"level": 0,
+					"field_5": 0,
+					"var": "VAR_SONNAUFELD_CLOUDS_ICARUS",
+					"value": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_sonnaufeld_clouds_icarus_trigger"
+				},
+				{
+					"x": "30",
+					"y": "23",
+					"level": 0,
+					"field_5": 0,
+					"var": "VAR_SONNAUFELD_CLOUDS_ICARUS",
+					"value": "0",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_sonnaufeld_clouds_icarus_trigger"
+				},
+				{
+					"x": "31",
+					"y": "23",
+					"level": 0,
+					"field_5": 0,
+					"var": "VAR_SONNAUFELD_CLOUDS_ICARUS",
+					"value": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_sonnaufeld_clouds_icarus_trigger"
+				},
+				{
+					"x": "32",
+					"y": "23",
+					"level": 0,
+					"field_5": 0,
+					"var": "VAR_SONNAUFELD_CLOUDS_ICARUS",
+					"value": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_sonnaufeld_clouds_icarus_trigger"
+				},
+				{
+					"x": "33",
+					"y": "23",
+					"level": 0,
+					"field_5": 0,
+					"var": "VAR_SONNAUFELD_CLOUDS_ICARUS",
+					"value": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_sonnaufeld_clouds_icarus_trigger"
+				}
+			],
+			"signposts": [
+				{
+					"x": "3",
+					"y": "13",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_sonnaufeld_clouds_red_lock"
+					}
+				},
+				{
+					"x": "4",
+					"y": "13",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_sonnaufeld_clouds_red_lock"
+					}
+				},
+				{
+					"x": "15",
+					"y": "4",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_sonnaufeld_clouds_blue_lock"
+					}
+				},
+				{
+					"x": "16",
+					"y": "4",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_sonnaufeld_clouds_blue_lock"
+					}
+				},
+				{
+					"x": "43",
+					"y": "4",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_sonnaufeld_clouds_green_lock"
+					}
+				},
+				{
+					"x": "44",
+					"y": "4",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_sonnaufeld_clouds_green_lock"
+					}
+				},
+				{
+					"x": "55",
+					"y": "13",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_sonnaufeld_clouds_yellow_lock"
+					}
+				},
+				{
+					"x": "56",
+					"y": "13",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_sonnaufeld_clouds_yellow_lock"
+					}
+				}
+			]
+		},
+		"levelscripts": "sonnaufeld_clouds_levelscripts",
+		"connections": {
+			"connection_cnt": 1,
+			"connections": [
+				{
+					"direction": "MAP_CONNECTION_WEST",
+					"displacement": "-44",
+					"bank": "11",
+					"map_idx": "3",
+					"field_A": 0,
+					"field_B": 0
+				}
+			]
+		},
+		"music": "MUS_CLOUDS",
+		"footer_idx": 186,
+		"namespace": "MAP_TANNS_LABOR",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_OUTSIDE",
+		"type": "MAP_TYPE_CLOUD",
+		"bike_usable": "1",
+		"flags": {
+			"allow_escape_rope": 0,
+			"allow_run": "1",
+			"show_name": "1",
+			"flag_3": 0,
+			"flag_4": 0,
+			"flag_5": 0,
+			"flag_6": 0,
+			"flag_7": 0
+		},
+		"level": 0,
+		"battle_style": 0
+	},
+	"label": "map_sonnaufeld_clouds",
+	"type": "header"
+}

@@ -3,7 +3,7 @@
 		"footer": "map_footer_r2_village",
 		"events": {
 			"person_cnt": 24,
-			"warp_cnt": 4,
+			"warp_cnt": 5,
 			"trigger_cnt": 0,
 			"signpost_cnt": 9,
 			"persons": [
@@ -87,7 +87,7 @@
 					"picture": "236",
 					"script_std": "PERSON_SHELL",
 					"field_3": 0,
-					"x": "7",
+					"x": "9",
 					"y": "50",
 					"level": 0,
 					"behaviour": 0,
@@ -337,8 +337,8 @@
 					"picture": "57",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "12",
-					"y": "48",
+					"x": "14",
+					"y": "49",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
@@ -639,6 +639,14 @@
 					"level": 0,
 					"target_warp_idx": 0,
 					"target_map": "2",
+					"target_bank": "35"
+				},
+				{
+					"x": "7",
+					"y": "44",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "3",
 					"target_bank": "35"
 				}
 			],

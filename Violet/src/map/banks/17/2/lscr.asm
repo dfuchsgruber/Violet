@@ -8,6 +8,7 @@
 .include "mugshot.s"
 
 .global route_5_clouds_levelscripts
+.global ow_script_move_camera_at_position
 
 route_5_clouds_levelscripts:
 	.byte LEVELSCRIPT_TYPE_ON_WARP_INTO_MAP_TABLE
@@ -26,16 +27,16 @@ ow_script_explain_quest:
 	pause 20
 	loadpointer 0 str_0
 	show_mugshot MUGSHOT_ICARUS emotion=MUGSHOT_HAPPY message_type=MSG
+	fadescreen 1
     setvar 0x8004 0x15
     setvar 0x8005 0xa
-	call move_camera_at_position
+	call ow_script_move_camera_at_position
 	setvar 0x8004 0x12
     setvar 0x8005 0x21
-	call move_camera_at_position
+	call ow_script_move_camera_at_position
 	setvar 0x8004 0x30
     setvar 0x8005 0xf
-	call move_camera_at_position
-	fadescreen 1
+	call ow_script_move_camera_at_position
 	special SPECIAL_OVERWORLD_VIEWPORT_SET_TO_PLAYER_POSITION
 	fadescreen 0
 	pause 32
@@ -71,8 +72,7 @@ ow_script_explain_quest:
 	releaseall
 	end
 
-move_camera_at_position:
-	fadescreen 1
+ow_script_move_camera_at_position:
 	special SPECIAL_OVERWORLD_VIEWPORT_SET_POSITION
 	pause 1
 	special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
@@ -80,13 +80,18 @@ move_camera_at_position:
 	pause 1
 	fadescreen 0
 	waitmovement 0
+	applymovement 0x7f mov_rslow2
+	fadescreen 1
+	waitmovement 0
 	special SPECIAL_OVERWORLD_VIEWPORT_LOCK
 	return
 
 mov_11u:
 	.byte STEP_UP, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STOP
 mov_rslow:
-	.byte STEP_RIGHT_VERY_SLOW, STEP_RIGHT_VERY_SLOW, STEP_RIGHT_VERY_SLOW, STEP_RIGHT_VERY_SLOW, STEP_RIGHT_VERY_SLOW, STOP
+	.byte STEP_RIGHT_VERY_SLOW, STEP_RIGHT_VERY_SLOW, STEP_RIGHT_VERY_SLOW, STEP_RIGHT_VERY_SLOW, STOP
+mov_rslow2:
+	.byte STEP_RIGHT_VERY_SLOW, STOP 
 
 
 

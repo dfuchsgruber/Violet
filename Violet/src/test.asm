@@ -13,6 +13,7 @@
 .include "battle/battle_handicaps.s"
 .include "battle/battle_bgs.s"
 .include "map_weathers.s"
+.include "overworld/overworld_effects.s"
 
 .global ow_script_test
 .global ow_script_trainer1
@@ -36,6 +37,24 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	setvar 0x8004 20
+	special SPECIAL_CUTSCENE_SHOW
+	waitstate
+	end
+
+	setvar 0x8004 0x45
+	setvar 0x8005 0x1c
+	special SPECIAL_OVERWORLD_EFFECT_LIGHTNING
+	sound 111
+	checkanimation OVERWORLD_EFFECT_LIGHTNING
+	end
+
+	additem ITEM_ROTES_ZAHNRAD 1
+	additem ITEM_BLAUES_ZAHNRAD 1
+	additem ITEM_GELBES_ZAHNRAD 1
+	additem ITEM_GRUENES_ZAHNRAD 1
+	end
+
 	setworldmapflag WM_DESERT_VILLAGE
 	end
 	

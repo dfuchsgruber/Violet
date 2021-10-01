@@ -1346,6 +1346,11 @@
 				"map_sonnaufeld_inside_1",
 				"src/map/banks/35/2/map_sonnaufeld_inside_1.pms",
 				"MAP_TANNS_LABOR"
+			],
+			"3": [
+				"map_sonnaufeld_clouds",
+				"src/map/banks/35/3/map_sonnaufeld_clouds.pms",
+				"MAP_TANNS_LABOR"
 			]
 		},
 		"36": {
@@ -2328,6 +2333,10 @@
 		"map_footer_desert_village_tent_1": [
 			185,
 			"src/map/banks/37/1/map_footer_desert_village_tent_1.pms"
+		],
+		"map_footer_sonnaufeld_clouds": [
+			186,
+			"src/map/banks/35/3/map_footer_sonnaufeld_clouds.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -2412,7 +2421,8 @@
 		"maptileset_dungeon_sand_cave": "src/map/tileset/maptileset_dungeon_sand_cave.pms",
 		"maptileset_dungeon_dragon_cave": "src/map/tileset/maptileset_dungeon_dragon_cave.pms",
 		"maptileset_dungeon_steel_cave": "src/map/tileset/maptileset_dungeon_steel_cave.pms",
-		"maptileset_dungeon_fossil": "src/map/tileset/maptileset_dungeon_fossil.pms"
+		"maptileset_dungeon_fossil": "src/map/tileset/maptileset_dungeon_fossil.pms",
+		"maptileset_clouds_gear": "src/map/tileset/maptileset_clouds_gear.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2490,6 +2500,7 @@
 		"gfx_maptileset_dungeon_sand_caveTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_sand_cave.png",
 		"gfx_maptileset_dungeon_dragon_caveTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_dragon_cave.png",
 		"gfx_maptileset_dungeon_steel_caveTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_steel_cave.png",
-		"gfx_maptileset_dungeon_fossil_caveTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_fossil_cave.png"
+		"gfx_maptileset_dungeon_fossil_caveTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_fossil_cave.png",
+		"gfx_maptileset_clouds_gearTiles": "asset/gfx/tileset/gfx_maptileset_clouds_gear.png"
 	}
 }

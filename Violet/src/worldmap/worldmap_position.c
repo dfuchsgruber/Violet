@@ -363,6 +363,7 @@ static worldmap_position_bank worldmap_positions_bank_35  = {
 	[0] = {.x = 15, .y = 9, .width = 1, .height = 1},
 	[1] = {.x = 15, .y = 9, .width = 1, .height = 1},
 	[2] = {.x = 15, .y = 9, .width = 1, .height = 1},
+	[3] = {.x = 15, .y = 9, .width = 1, .height = 1},
 };
 
 static worldmap_position_bank worldmap_positions_bank_36  = {

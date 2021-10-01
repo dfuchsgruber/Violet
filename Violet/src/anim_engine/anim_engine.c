@@ -448,9 +448,9 @@ void cmdx1D_loadpal(ae_memory* mem) {
         pal = pal_tmp;
     }
 
-    cpuset(pal, &pal_restore[destcol], bytecount >> 1);
+    cpuset(pal, &pal_restore[destcol], CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(bytecount));
     if (force) {
-        cpuset(pal, &pals[destcol], bytecount >> 1);
+        cpuset(pal, &pals[destcol], CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(bytecount));
     }
 
 }

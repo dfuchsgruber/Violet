@@ -1119,21 +1119,21 @@ static u8 str_item_spiritkern_description[] = LANGDEP(
 	PSTRING("Ein merkwürdiger Gesteinsbrocken,\numgeben von etwas Bösem."),
 	PSTRING("An orb that glows red.\nIt is said to contain an incredible\npower from ancient times.")
 );
-static u8 str_item_blaue_kugel_description[] = LANGDEP(
-	PSTRING("Eine blau glühende Kugel, die eine\nuralte Macht bergen soll."),
-	PSTRING("An orb that glows blue.\nIt is said to contain an incredible\npower from ancient times.")
+static u8 str_item_blaues_zahnrad_description[] = LANGDEP(
+	PSTRING("Ein uralter blauer Schlüssel in\nForm eines Zahnrads."),
+	PSTRING("An ancient blue key in the\nshape of a gear.")
 );
-static u8 str_item_scanner_description[] = LANGDEP(
-	PSTRING("Ein Gerät, mit dem man im Wasser\nnach Lebewesen sucht. Seine\nBedienung ist schwierig."),
-	PSTRING("A device used to search for\nlife-forms in water.\nIt looks too difficult to use.")
+static u8 str_item_rotes_zahnrad_description[] = LANGDEP(
+	PSTRING("Ein uralter rotes Schlüssel in\nForm eines Zahnrads."),
+	PSTRING("An ancient red key in the\nshape of a gear.")
 );
-static u8 str_item_wuestenglas_description[] = LANGDEP(
-	PSTRING("Eine Schutzbrille, die es Trainern\nermöglicht, selbst bei Sandstürmen\nWüsten zu durchqueren."),
-	PSTRING("A pair of protective goggles.\nThey enable a Trainer to travel\nthrough even desert sandstorms.")
+static u8 str_item_gelber_zahnrad_description[] = LANGDEP(
+	PSTRING("Ein uralter gelber Schlüssel in\nForm eines Zahnrads."),
+	PSTRING("An ancient yellow key in the\nshape of a gear.")
 );
-static u8 str_item_meteorit_description[] = LANGDEP(
-	PSTRING("Ein Meteorit, der im Mondberg\naufschlug. Ein sehr harter Klumpen."),
-	PSTRING("A meteorite that fell from space\nonto MT. Moon long ago.\nIt is very lumpy and hard.")
+static u8 str_item_gruenes_schluessel_description[] = LANGDEP(
+	PSTRING("Ein uralter grüner Schlüssel in\nForm eines Zahnrads."),
+	PSTRING("An ancient green key in the\nshape of a gear.")
 );
 static u8 str_item_goldschluessel_description[] = LANGDEP(
 	PSTRING("Ein goldener Schlüssel, der\ndas Tor zum Turm des Schlosses\nArdeal öffnet."),
@@ -6074,13 +6074,13 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_BLAUE_KUGEL
-		LANGDEP(PSTRING("Blaue Kugel"), PSTRING("Blue Orb")),
-		0x115, //index
+		//ITEM_BLAUES_ZAHNRAD
+		LANGDEP(PSTRING("Bl.-Schlüssel"), PSTRING("Blue Key")),
+		ITEM_BLAUES_ZAHNRAD, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_blaue_kugel_description,
+		str_item_blaues_zahnrad_description,
 		2, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -6090,13 +6090,13 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_SCANNER
-		LANGDEP(PSTRING("Scanner"), PSTRING("Scanner")),
-		0x116, //index
+		//ITEM_ROTES_ZAHNRAD
+		LANGDEP(PSTRING("R.-Schlüssel"), PSTRING("Red Key")),
+		ITEM_ROTES_ZAHNRAD, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_scanner_description,
+		str_item_rotes_zahnrad_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -6106,13 +6106,13 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_WUESTENGLAS
-		LANGDEP(PSTRING("Wüstenglas"), PSTRING("Go-Goggles")),
-		0x117, //index
+		//ITEM_GELBES_ZAHNRAD
+		LANGDEP(PSTRING("Ge.-Schlüssel"), PSTRING("Yellow Key")),
+		ITEM_GELBES_ZAHNRAD, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_wuestenglas_description,
+		str_item_gelber_zahnrad_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -6122,13 +6122,13 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_METEORIT
-		LANGDEP(PSTRING("Meteorit"), PSTRING("Meteorite")),
-		0x118, //index
+		//ITEM_GRUENES_ZAHNRAD
+		LANGDEP(PSTRING("Gr.-Schlüssel"), PSTRING("Green Key")),
+		ITEM_GRUENES_ZAHNRAD, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_meteorit_description,
+		str_item_gruenes_schluessel_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
