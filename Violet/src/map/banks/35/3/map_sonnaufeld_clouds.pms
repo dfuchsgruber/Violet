@@ -5,7 +5,7 @@
 			"person_cnt": 4,
 			"warp_cnt": 1,
 			"trigger_cnt": 6,
-			"signpost_cnt": 8,
+			"signpost_cnt": 9,
 			"persons": [
 				{
 					"target_index": "1",
@@ -74,7 +74,7 @@
 					"is_trainer": 0,
 					"alert_radius": 0,
 					"script": 0,
-					"flag": 0,
+					"flag": "FLAG_ICARUS_SONNAUFELD_CLOUDS",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_KINDWURM",
@@ -98,7 +98,7 @@
 					"field_B": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": 0,
+					"script": "ow_script_sonnaufeld_clouds_icarus",
 					"flag": "FLAG_ICARUS_SONNAUFELD_CLOUDS",
 					"value": {
 						"item": 0,
@@ -313,6 +313,22 @@
 							"chunk": 0
 						},
 						"script": "ow_script_sonnaufeld_clouds_yellow_lock"
+					}
+				},
+				{
+					"x": "29",
+					"y": "11",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": "FLAG_SONNAUFELD_SHRINE_VISIBLE | 0x8000",
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_sonnaufeld_shrine"
 					}
 				}
 			]

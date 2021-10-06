@@ -20,6 +20,18 @@
 .global ow_script_sonnaufeld_clouds_blue_lock
 .global ow_script_sonnaufeld_clouds_green_lock
 .global ow_script_sonnaufeld_clouds_yellow_lock
+.global ow_script_sonnaufeld_shrine
+
+ow_script_sonnaufeld_shrine:
+    checkflag FLAG_UNOWN_ENABLED
+    gotoif NOT_EQUAL shrine_not_enabled
+    loadpointer 0 str_shrine
+    callstd MSG
+    end
+shrine_not_enabled:
+    loadpointer 0 str_shrine_not_enabled
+    callstd MSG
+    end
 
 ow_script_sonnaufeld_clouds_red_lock:
     checkflag FLAG_ROTES_ZAHNRAD_PLACED
@@ -84,14 +96,14 @@ show_shrine:
     applymovement 4 mov_exclam
     waitmovement 0
     checksound
-    sound 0x2B
+    sound 227
     setvar 0x8004 0x1
     setvar 0x8005 0x1
     setvar 0x8006 0x8
     setvar 0x8007 0x4
     special SPECIAL_EARTHQUAKE
     waitstate
-    sound 0x2B
+    sound 227
     setvar 0x8004 0x1
     setvar 0x8005 0x1
     setvar 0x8006 32
@@ -137,7 +149,7 @@ tower_activate:
     special SPECIAL_MAP_UPDATE_BLOCKS
     checksound
     pause 24
-    sound 0x2B
+    sound 227
     setvar 0x8004 0x1
     setvar 0x8005 0x1
     setvar 0x8006 0x8
@@ -182,5 +194,9 @@ str_ask_place_gear:
     .autostring 34 2 "Möchtest du den BUFFER_1 platzieren?"
 str_activated:
     .autostring 34 2 "Es scheint so, als wäre ein Siegel gebrochen wordenDOTS"
+str_shrine:
+    .autostring 34 2 "Die Lettern auf diesem Schrein ähneln den Pokémon, die darin gefangen warenDOTS\pEs ist unmöglich, sie zu lesenDOTS"
+str_shrine_not_enabled:
+    .autostring 34 2 "Die Lettern auf diesem Schrein scheinen in einer völlig fremden Schriftart zu seinDOTS\pEs ist unmöglich, sie zu lesenDOTS"
 .elseif LANG_EN
 .endif

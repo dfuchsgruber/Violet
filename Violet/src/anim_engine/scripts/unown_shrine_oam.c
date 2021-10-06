@@ -8,6 +8,7 @@
 #include "io.h"
 #include "bios.h"
 #include "anim_engine.h"
+#include "music.h"
 
 #define LIGHTNING_TAG 0x1AAB
 
@@ -151,11 +152,23 @@ static u8 lightnings_anim_idxs[2][2] = {
     {3, 4},
 };
 
+static void lightning_sound_callback (oam_object *self) {
+    int period = 14 * LIGHTNING_FRAME_DURATION + 3 * 32;
+    if (self->anim_number != 0) {
+        u16 frame = self->private[7]++;
+        if (self->private[7] >= period)
+            self->private[7] = 0;
+        if (frame == 0) {
+            // play_sound(111); // interferes with the earthquake sound
+        }
+    }
+}
+
 static oam_template lightning_template = {
     .tiles_tag = 0xFFFF, .pal_tag = LIGHTNING_TAG,
     .oam = &lightning_sprite, .animation = lightning_anims,
     .graphics = unown_shrine_lightning_graphic, .rotscale = oam_rotscale_anim_table_null,
-    .callback = oam_null_callback,
+    .callback = lightning_sound_callback,
 };
 
 #define NUM_LIGHTNINGS 4

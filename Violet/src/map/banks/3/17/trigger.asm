@@ -14,7 +14,7 @@ ow_script_haweiland_pirates_trigger:
     playsong MUS_PIRATE 0
     special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
     setvar 0x8004 0x3a
-    setvar 0x8005 0x10
+    setvar 0x8005 0xf
     special SPECIAL_OVERWORLD_VIEWPOINT_MOVE_TO
     waitmovement 0
     special SPECIAL_OVERWORLD_VIEWPORT_LOCK

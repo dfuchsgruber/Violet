@@ -1,4 +1,4 @@
-.include "anim_engine.s"
+.include "anim_engine.s" 
 
 .global ae_script_unown_shrine
 
@@ -47,6 +47,7 @@ ae_script_unown_shrine:
     // obj_vram_load unown_shrine_lightning_graphic
     anim_task_new 0, unown_shrine_animation_lightning_callback, 256
     pause 1
+    sound 227
     fadescreen 0 0 512 16 16 4
     pause 240
     fadescreen 0 0 512 16 4 0
