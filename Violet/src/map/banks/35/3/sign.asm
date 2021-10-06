@@ -52,7 +52,6 @@ ow_script_sonnaufeld_clouds_green_lock:
     goto show_shrine
     end
 ow_script_sonnaufeld_clouds_yellow_lock:
-    goto show_shrine
     checkflag FLAG_GELBES_ZAHNRAD_PLACED
     gotoif EQUAL unlocked
     setvar 0x8004 ITEM_GELBES_ZAHNRAD
@@ -114,9 +113,13 @@ show_shrine:
     setvar 0x8005 0xb
     special SPECIAL_OVERWORLD_EFFECT_LIGHTNING
     pause 64
-
-
-
+    resetweather
+    call ow_script_sonnaufeld_clouds_show_shrine
+    setflag FLAG_SONNAUFELD_SHRINE_VISIBLE
+	setvar 0x8004 20
+	special SPECIAL_CUTSCENE_SHOW
+	waitstate
+    pause 100
     fadescreen 1
 	special SPECIAL_OVERWORLD_VIEWPORT_SET_TO_PLAYER_POSITION
     fadescreen 0

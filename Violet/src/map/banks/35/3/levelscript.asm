@@ -3,6 +3,7 @@
 .include "vars.s"
 .include "flags.s"
 .include "ordinals.s"
+.include "person_behaviours.s"
 
 .global sonnaufeld_clouds_levelscripts
 .global ow_script_sonnaufeld_clouds_set_red_gear
@@ -12,11 +13,21 @@
 .global ow_script_sonnaufeld_clouds_show_shrine
 
 sonnaufeld_clouds_levelscripts:
+	.byte LEVELSCRIPT_TYPE_ON_TRANSITION
+	.word levelscript_on_transition
     .byte LEVELSCRIPT_TYPE_ON_LOAD
     .word levelscript_set_blocks
 	.byte LEVELSCRIPT_TYPE_ON_WARP_INTO_MAP_TABLE
 	.word levelscript_player_set_on_cloud
     .byte 0
+
+levelscript_on_transition:
+    checkflag FLAG_SONNAUFELD_SHRINE_VISIBLE
+    gotoif NOT_EQUAL shrine_not_visible_normal_behaviour
+    spritebehave 3 BEHAVIOUR_FACE_UP
+    spritebehave 4 BEHAVIOUR_FACE_UP
+shrine_not_visible_normal_behaviour:
+    end
 
 levelscript_set_blocks:
     checkflag FLAG_ROTES_ZAHNRAD_PLACED
@@ -79,4 +90,7 @@ ow_script_sonnaufeld_clouds_show_shrine:
     setmaptile SHRINE_X, SHRINE_Y + 2, 0x2b2, 1
     setmaptile SHRINE_X + 1, SHRINE_Y + 2, 0x2b3, 1
     setmaptile SHRINE_X + 2, SHRINE_Y + 2, 0x2b4, 1
+    setmaptile SHRINE_X, SHRINE_Y + 3, 0x2ba, 0
+    setmaptile SHRINE_X + 1, SHRINE_Y + 3, 0x2bb, 0
+    setmaptile SHRINE_X + 2, SHRINE_Y + 3, 0x2bc, 0
     return

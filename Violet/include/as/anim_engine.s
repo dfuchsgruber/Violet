@@ -549,6 +549,17 @@
 .hword \loop_duration
 .endm
 
+@ creates a new anim engine task
+@ priority the priority to create it with
+@ function the function to execute
+@ var_space how many bytes will be allocated to the task
+.macro anim_task_new priority:req function:req var_space:req
+.byte 0x3C
+.word \priority
+.word \function
+.word \var_space
+.endm
+
 
 .equ BG_SIZE_256x256, 0
 .equ BG_SIZE_512x256, 1

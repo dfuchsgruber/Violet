@@ -21,7 +21,7 @@
 #include "dma.h"
 
 static void cmdx3B_loop_sound_with_pan_and_volume_decay(ae_memory *mem);
-
+static void cmdx3C_task_new(ae_memory *mem);
 
 static void (*commands[])(ae_memory *) = {
         cmdx00_end,
@@ -84,6 +84,7 @@ static void (*commands[])(ae_memory *) = {
         cmdx39_pause,
         cmdx3A_task_delete_all,
         cmdx3B_loop_sound_with_pan_and_volume_decay,
+        cmdx3C_task_new,
 };
 
 void init_anim_engine_by_table() {
@@ -551,7 +552,6 @@ void cmdx22_cry(ae_memory* mem) {
 
 void cmdx23_maintain() {
     callback1_set(callback_maintain);
-    vblank_handler_set(generic_vblank_handler);
 }
 
 void cmdx24_script_notify() {
@@ -984,4 +984,12 @@ static void cmdx3B_loop_sound_with_pan_and_volume_decay(ae_memory *mem) {
     ctrl->num_loops = anim_engine_read_byte(mem);
     ctrl->loop_duration = anim_engine_read_hword(mem);
     ctrl->delay = 0;
+}
+
+static void cmdx3C_task_new(ae_memory *mem) {
+    int priority = (int)anim_engine_read_word(mem);
+    void (*callback)(struct anim_engine_task*) = (void (*)(struct anim_engine_task*))anim_engine_read_word(mem);
+    size_t var_size = (size_t)anim_engine_read_word(mem);
+    dprintf("New task with prop %d, callback 0x%x, size %d\n", priority, callback, var_size);
+    anim_engine_task_new(priority, callback, var_size, mem->root);
 }
