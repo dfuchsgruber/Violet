@@ -442,6 +442,7 @@ bsc_strings:
 .word str_battle_x1C0
 .word str_battle_x1C1
 .word str_battle_x1C2
+.word str_battle_x1C3
 
 @ // Define the strings
 
@@ -2955,6 +2956,9 @@ bsc_strings:
 	
 	str_battle_x1C2:
 		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX wird\neins mit der Umgebung."
+
+	str_battle_x1C3:
+		.string "BSC_ATK_NAME_WITH_PREFIX wurde durch\nBSC_LAST_ITEM verletzt!"
 
 .elseif LANG_EN
 	.global str_battle_xc

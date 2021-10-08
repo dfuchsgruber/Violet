@@ -2814,5 +2814,23 @@ static trainer_pokemon_default_item_default_attacks trainer_party_x1f6_route_2_c
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,36, POKEMON_ULTRIGARIA),
 };
 
+static trainer_pokemon_custom_item_default_attacks trainer_party_x1f7_sonnaufeld_trainer_0[] = {
+	TRAINER_PARTY_CUSTOM_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,36, POKEMON_FORMEO, ITEM_SONNEN_EI),
+	TRAINER_PARTY_CUSTOM_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,36, POKEMON_FORMEO, ITEM_TUNDRA_EI),
+	TRAINER_PARTY_CUSTOM_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,36, POKEMON_FORMEO, ITEM_WUESTEN_EI),
+	TRAINER_PARTY_CUSTOM_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,36, POKEMON_FORMEO, ITEM_GEWITTER_EI),
+};
+
+static trainer_pokemon_default_item_default_attacks trainer_party_x1f8_sonnaufeld_trainer_1[] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,37, POKEMON_ELEKTEK),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,36, POKEMON_PIKACHU),
+};
+
+static trainer_pokemon_default_item_default_attacks trainer_party_x1f9_sonnaufeld_trainer_2[] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,37, POKEMON_ARKANI),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,37, POKEMON_VOLTENSO),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,38, POKEMON_MAGNAYEN),
+};
+
 
 #endif 

@@ -1640,6 +1640,11 @@ static u8 str_item_energiedisc_description[] = LANGDEP(
 	PSTRING("This disc is charged with\nenergy. It recharges used Tms.")
 );
 
+static u8 str_item_beulenhelm_description[] = LANGDEP(
+	PSTRING("Fügt bei Kontakt mit Träger dem\nAngreifer schaden zu."),
+	PSTRING("Causes damage to the attacker\nat contact.")
+);
+
 item items[] = {
 	{
 		//ITEM_NONE
@@ -7856,6 +7861,12 @@ item items[] = {
 		.index = ITEM_ENERGIEDISK, .price = 1000,
 		.description = str_item_energiedisc_description, .pocket = POCKET_ITEMS, .type = 2,
 		.field_usage = item_field_effect_energiedisk,
+	},
+	[ITEM_BEULENHELM] = {
+		.name = LANGDEP(PSTRING("Beulenhelm"), PSTRING("Rocky Helmet")),
+		.index = ITEM_BEULENHELM, .price = 200,
+		.description = str_item_beulenhelm_description, .pocket = POCKET_ITEMS, .type = 4,
+		.holding_effect_id = HOLD_EFFECT_BEULENHELM, .holding_effect_param = 6,
 	},
 };
 

@@ -3,6 +3,7 @@
 #include "battle/battler.h"
 #include "battle/battle_string.h"
 #include "constants/item_hold_effects.h"
+#include "constants/attack_flags.h"
 #include "item/item.h"
 #include "battle/attack.h"
 #include "constants/attack_results.h"
@@ -24,6 +25,7 @@ extern u8 bsc_storm_egg[];
 extern u8 bsc_desert_egg[];
 extern u8 bsc_blizzard_egg[];
 extern u8 bsc_energiequarz[];
+extern u8 bsc_beulenhelm[];
 
 u8 battle_items_switch_in_effects(u8 battler_idx) { // Return 0 if no effect was used, 0xFF if an effect was used, but no bsc was triggered and a suitable effect type else
     u8 hold_effect = item_get_hold_effect(bsc_last_used_item);
@@ -123,6 +125,24 @@ bool battle_items_life_orb() {
 }
 
 bool battle_items_attack_done_defender() {
+    battler *defender = battlers + defending_battler;
+    switch (item_get_hold_effect(defender->item)) {
+        case HOLD_EFFECT_BEULENHELM: {
+            if (battlers[attacking_battler].current_hp > 0 &&
+                !(attack_result & ATTACK_NO_EFFECT_ANY) && attacks[active_attack].base_power &&
+                !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED &&
+                (attacks[active_attack].flags & MAKES_CONTACT)) {
+                    damage_to_apply = MAX(1, battlers[attacking_battler].max_hp / item_get_hold_effect_parameter(defender->item));
+                    battlescript_callstack_push_next_command();
+                    battle_scripting.battler_idx = attacking_battler;
+                    battle_scripting.animation_user = attacking_battler;
+                    battle_scripting.animation_targets = attacking_battler;
+                    bsc_last_used_item = battlers[defending_battler].item;
+                    bsc_offset = bsc_beulenhelm;
+                    return true;
+                }
+        }
+    }
     return false;
 }
 

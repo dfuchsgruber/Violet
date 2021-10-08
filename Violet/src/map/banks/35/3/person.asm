@@ -9,6 +9,32 @@
 .include "pathfinding.s"
 
 .global ow_script_sonnaufeld_clouds_icarus
+.global ow_script_sonnaufeld_clouds_person_0
+.global ow_script_sonnaufeld_clouds_person_1
+.global ow_script_sonnaufeld_clouds_person_2
+.global ow_script_sonnaufeld_clouds_person_3
+.global ow_script_sonnaufeld_clouds_person_4
+
+ow_script_sonnaufeld_clouds_person_0:
+    loadpointer 0 str_0
+    callstd MSG_FACE
+    end
+ow_script_sonnaufeld_clouds_person_1:
+    loadpointer 0 str_1
+    callstd MSG_FACE
+    end
+ow_script_sonnaufeld_clouds_person_2:
+    loadpointer 0 str_2
+    callstd MSG_FACE
+    end
+ow_script_sonnaufeld_clouds_person_3:
+    loadpointer 0 str_3
+    callstd MSG_FACE
+    end
+ow_script_sonnaufeld_clouds_person_4:
+    loadpointer 0 str_4
+    callstd MSG_FACE
+    end
 
 ow_script_sonnaufeld_clouds_icarus:
     checkflag FLAG_SONNAUFELD_SHRINE_VISIBLE
@@ -116,6 +142,17 @@ icarus_shrine_visible:
 
 
 .ifdef LANG_GER
+str_0:
+    .autostring 34 2 "Diese Türme sind zwar antik, aber jemand hat sich erst vor wenigen Jahren daran zu schaffen gemacht.\pDas lässt sich an den vergleichsweise gut erhaltenen Abdrücken im Stein erkennen.\pIrgendwer hat etwas aus den Türmen hier oben entferntDOTS\pIch frage mich, wiesoDOTS"
+str_1:
+    .autostring 34 2 "Siehst du diese Steinbauten hier?\pDabei handelt es sich nach meinen Erkenntnissen um eine Art antikes Siegel.\pWas hier versiegelt wurde?\pDa frägst du den Falschen!"
+str_2:
+    .autostring 34 2 "Es ist wirklich ein befreiendes Gefühl, hier oben den Blick über die Weiten der Region streifen zu lassenDOTS"
+str_3:
+    .autostring 34 2 "Für viele Jahrhunderte war die Natur hier oben praktisch unberührt.\pJetzt, wo der ehemalige Champion das Wolkenreiten populär gemacht hat, verkommt diese einzigartige FloraDOTS"
+str_4:
+    .autostring 34 2 "Hier oben ist es so cool!\pMeinst du, ich finde einige starke Drachen-Pokémon?"
+
 str_icarus_0:
     .autostring 34 2 "Dieser Ort ist wirklich seltsamDOTS\pWarum wächst hier kein Gras auf dem Boden?"
 str_icarus_1:

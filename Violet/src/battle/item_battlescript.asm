@@ -4,7 +4,7 @@
 .include "battle/battle_animations.s"
 .include "battle/battle_communication.s"
 .include "battle/battle_statuses.s"
-
+.include "battle/bsc_status_flags.s"
 
 .global bsc_life_orb
 
@@ -14,7 +14,7 @@ bsc_life_orb:
     datahpupdate 0x1
     printstring 0x183
     waitmessage 0x40
-    faintpokemon 0x1 0x0 0x8000000
+    faintpokemon BANK_USER 0x0, 0
     return
 
 .global bsc_gunpowder
@@ -25,7 +25,7 @@ bsc_gunpowder:
     orword bsc_status_flags 0x100100
     graphicalhpupdate 0x0
     datahpupdate 0x0
-    faintpokemon 0x0 0x0 0x8000000
+    faintpokemon BANK_TARGET 0x0 0,
     return
 
 .global bsc_blizzard_egg
@@ -82,3 +82,14 @@ bsc_energiequarz:
     call bsc_stat_up
     removeitem BANK_SCRIPTING
     end3
+
+.global bsc_beulenhelm
+
+bsc_beulenhelm:
+    orword bsc_status_flags, (BSC_STATUS_FLAG_IGNORE_SUBSTITUTE | BSC_STATUS_FLAG_PASSIVE_DAMAGE)
+    graphicalhpupdate 0x1
+    datahpupdate 0x1
+    printstring 0x1c3
+    waitmessage 0x40
+    faintpokemon BANK_USER, 0x0, 0
+    return

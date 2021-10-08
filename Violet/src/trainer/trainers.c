@@ -7310,6 +7310,28 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x1f6_route_2_clouds_trainer_9,
     },
+    [0x1f7] = {
+        .trainerclass = TRAINERCLASS_WOLKENREITER, .sprite = 0x47,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Kira"),
+            PSTRING("Kira")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1f7_sonnaufeld_trainer_0),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1f7_sonnaufeld_trainer_0,
+        .uses_custom_items = true,
+    },
+    [0x1f8] = {
+        .trainerclass = TRAINERCLASS_GITARRIST, .sprite = 17,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Joni"),
+            PSTRING("Joni")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1f8_sonnaufeld_trainer_1),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1f8_sonnaufeld_trainer_1,
+    },
+    [0x1f9] = {
+        .trainerclass = TRAINERCLASS_PKMN_RANGER, .sprite = 0x3d,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Beate"),
+            PSTRING("Beate")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1f9_sonnaufeld_trainer_2),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1f9_sonnaufeld_trainer_2,
+    },
 
     [0x300] = {
       .uses_custom_moves = true, .uses_custom_items = true,

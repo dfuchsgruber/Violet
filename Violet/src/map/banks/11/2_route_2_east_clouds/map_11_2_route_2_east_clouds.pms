@@ -3,7 +3,7 @@
 		"footer": "map_footer_11",
 		"events": {
 			"person_cnt": 7,
-			"warp_cnt": 2,
+			"warp_cnt": 3,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
 			"persons": [
@@ -12,8 +12,8 @@
 					"picture": "170",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "53",
-					"y": "26",
+					"x": "39",
+					"y": "25",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -64,8 +64,8 @@
 					"picture": "24",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "22",
-					"y": "23",
+					"x": "15",
+					"y": "24",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -117,7 +117,7 @@
 					"script_std": "PERSON_ITEM",
 					"field_3": 0,
 					"x": "18",
-					"y": "25",
+					"y": "18",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -142,7 +142,7 @@
 					"picture": "170",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "20",
+					"x": "40",
 					"y": "7",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_LEFT",
@@ -168,8 +168,8 @@
 					"picture": "238",
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "32",
-					"y": "25",
+					"x": "28",
+					"y": "31",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -191,7 +191,7 @@
 			],
 			"warps": [
 				{
-					"x": "6",
+					"x": "23",
 					"y": "8",
 					"level": 0,
 					"target_bank": 3,
@@ -199,12 +199,20 @@
 					"target_warp_idx": 1
 				},
 				{
-					"x": "27",
+					"x": "44",
 					"y": "31",
 					"level": 0,
 					"target_warp_idx": "2",
 					"target_map": "7",
 					"target_bank": "3"
+				},
+				{
+					"x": "10",
+					"y": "20",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": 0
 				}
 			],
 			"triggers": [],
@@ -212,16 +220,8 @@
 		},
 		"levelscripts": "lscr_route_2_east_clouds",
 		"connections": {
-			"connection_cnt": 4,
+			"connection_cnt": 3,
 			"connections": [
-				{
-					"direction": "MAP_CONNECTION_NORTH",
-					"displacement": "-30",
-					"bank": "11",
-					"map_idx": "3",
-					"field_A": 0,
-					"field_B": 0
-				},
 				{
 					"direction": "MAP_CONNECTION_EAST",
 					"displacement": "19",
@@ -231,18 +231,18 @@
 					"field_B": 0
 				},
 				{
-					"direction": "MAP_CONNECTION_SOUTH",
-					"displacement": 0,
-					"bank": "25",
-					"map_idx": 0,
-					"field_A": 0,
-					"field_B": 0
-				},
-				{
 					"direction": "MAP_CONNECTION_CLOUD_RETURN",
 					"displacement": 0,
 					"bank": "3",
 					"map_idx": "7",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_WEST",
+					"displacement": "-6",
+					"bank": "35",
+					"map_idx": "3",
 					"field_A": 0,
 					"field_B": 0
 				}
