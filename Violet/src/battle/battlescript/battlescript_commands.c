@@ -483,6 +483,19 @@ void bsc_teleport_set_outcome() {
     }
 }
 
+static bool typecalc_apply_item_effects() {
+    bool effect = false;
+    if ((attack_result & (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)) == (ATTACK_SUPER_EFFECTIVE) && !(attack_result & ATTACK_MISSED) 
+        && attacks[active_attack].base_power > 0) {
+        if (item_get_hold_effect(battlers[attacking_battler].item) == HOLD_EFFECT_EXPERT_BELT) {
+            damage_to_apply *= item_get_hold_effect_parameter(battlers[attacking_battler].item) + 100;
+            damage_to_apply /= 100;
+            effect = true;
+        }
+    }
+    return effect;
+}
+
 void bsc_command_x06_typecalc() {
     u8 move_type;
     if (active_attack == ATTACK_VERZWEIFLER) {
@@ -538,10 +551,7 @@ void bsc_command_x06_typecalc() {
     }
     if (attack_result & ATTACK_NO_EFFECT)
         battler_statuses[attacking_battler].target_unaffected = 1;
-    if ((attack_result & (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)) == (ATTACK_SUPER_EFFECTIVE) && !(attack_result | ATTACK_MISSED) 
-        && attacks[active_attack].base_power > 0) {
-        BATTLE_STATE2->status_custom[attacking_battler] |= CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY;
-    }
+    typecalc_apply_item_effects();
     ++bsc_offset;
 }
 
@@ -610,10 +620,7 @@ void bsc_command_x4a_typecalc2() {
     }
     if (attack_result & ATTACK_NO_EFFECT)
         battler_statuses[attacking_battler].target_unaffected = 1;
-    if ((attack_result & (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)) == (ATTACK_SUPER_EFFECTIVE) && !(attack_result | ATTACK_MISSED) 
-        && attacks[active_attack].base_power > 0) {
-        BATTLE_STATE2->status_custom[attacking_battler] |= CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY;
-    }
+    typecalc_apply_item_effects();
     bsc_offset++;
 }
 
@@ -662,4 +669,26 @@ void bsc_command_x06_typecalc_scan_effectiveness_table(u8 move_type) {
             }
         }
     }
+}
+
+void bsc_jump_if_item_effect() {
+    u8 battler_idx = battlescript_argument_to_battler_idx(bsc_offset[1]);
+    u8 item_effect = bsc_offset[2];
+    // dprintf("Bsc jump if battler %d has item effect %d, bsc : 0x%x\n", battler_idx, item_effect, bsc_offset);
+    if (item_get_hold_effect(battlers[battler_idx].item) == item_effect) {
+        bsc_last_used_item = battlers[battler_idx].item;
+        bsc_offset = (u8*)UNALIGNED_32_GET(bsc_offset + 3);
+    } else {
+        bsc_offset += 7;
+    }
+    // dprintf("Bsc jump if battler %d has item effect %d, after jump bsc : 0x%x\n", battler_idx, item_effect, bsc_offset);
+}
+
+static void (*bsc_multibyte_commands[])() = {
+    [0] = bsc_jump_if_item_effect,
+};
+
+void bsc_cmd_multibyte_command() {
+    bsc_offset++;
+    bsc_multibyte_commands[bsc_offset[0]]();
 }

@@ -1328,9 +1328,13 @@ various \battler, 2
 .macro beforeattack
 .byte 0xFC
 .endm
-
-.macro itemdrop
-    .byte 0xFD
+@ Jumps to an adress if a battler has an item with a given effect
+.macro bsc_jump_if_item_effect slot:req item_effect:req target_script:req
+    .byte 0xFD // multibyte command
+    .byte 0
+    .byte \slot
+    .byte \item_effect
+    .word \target_script
 .endm
 
 @// Meta macros

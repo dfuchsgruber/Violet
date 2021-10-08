@@ -4373,7 +4373,7 @@ attack attacks[ATTACK_CNT] = {
 	},
 	// ATTACK_TAUCHER
 	{
-		0x0, //Effect-id (in table)
+		0x9b, //Effect-id (in table)
 		95, //Base Power
 		TYPE_WASSER,
 		100, //Accuracy

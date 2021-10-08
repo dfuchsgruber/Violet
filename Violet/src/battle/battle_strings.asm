@@ -443,6 +443,7 @@ bsc_strings:
 .word str_battle_x1C1
 .word str_battle_x1C2
 .word str_battle_x1C3
+.word str_battle_x1C4
 
 @ // Define the strings
 
@@ -2960,6 +2961,9 @@ bsc_strings:
 	str_battle_x1C3:
 		.string "BSC_ATK_NAME_WITH_PREFIX wurde durch\nBSC_LAST_ITEM verletzt!"
 
+	str_battle_x1C4:
+		.string "BSC_LAST_ITEM lässt\nBSC_ATK_NAME_WITH_PREFIX sofort angreifen!"
+
 .elseif LANG_EN
 	.global str_battle_xc
 
@@ -5073,6 +5077,12 @@ bsc_strings:
 	
 	str_battle_x1C2:
 		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX\nbecomes one with the environment."
+
+	str_battle_x1C3:
+		.string "BSC_ATK_NAME_WITH_PREFIX was\nhurt by BSC_LAST_ITEM!"
+
+	str_battle_x1C4:
+		.string "BSC_LAST_ITEM lets\nBSC_ATK_NAME_WITH_PREFIX attack\lthis turn!"
 
 .endif
 

@@ -838,5 +838,9 @@ extern const u8 gfx_item_gruenes_zahnradTiles[];
 extern const u8 gfx_item_gruenes_zahnradPal[];
 extern const u8 gfx_item_beulenhelmTiles[];
 extern const u8 gfx_item_beulenhelmPal[];
+extern const u8 gfx_item_expertengurtTiles[];
+extern const u8 gfx_item_expertengurtPal[];
+extern const u8 gfx_item_energiekrautTiles[];
+extern const u8 gfx_item_energiekrautPal[];
 
 #endif

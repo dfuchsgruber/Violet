@@ -1639,10 +1639,17 @@ static u8 str_item_energiedisc_description[] = LANGDEP(
 	PSTRING("Eine mit Energie geladene Disk.\nSie lädt benutzte Tms wieder\nauf."),
 	PSTRING("This disc is charged with\nenergy. It recharges used Tms.")
 );
-
 static u8 str_item_beulenhelm_description[] = LANGDEP(
 	PSTRING("Fügt bei Kontakt mit Träger dem\nAngreifer schaden zu."),
 	PSTRING("Causes damage to the attacker\nat contact.")
+);
+static u8 str_item_expertengurt_description[] = LANGDEP(
+	PSTRING("Item (Tragen), das sehr\neffektive Angriffe verstärkt."),
+	PSTRING("Item to be held that boosts the\nstrength of super effective attacks.")
+);
+static u8 str_item_energiekraut_description[] = LANGDEP(
+	PSTRING("Item (Tragen), das den\nsofortigen Einsatz eines\nAuflade-Angriffs erlaubt."),
+	PSTRING("Item to be held that allows\nto immideatly use an\nattack that needs charging.")
 );
 
 item items[] = {
@@ -7866,7 +7873,20 @@ item items[] = {
 		.name = LANGDEP(PSTRING("Beulenhelm"), PSTRING("Rocky Helmet")),
 		.index = ITEM_BEULENHELM, .price = 200,
 		.description = str_item_beulenhelm_description, .pocket = POCKET_ITEMS, .type = 4,
-		.holding_effect_id = HOLD_EFFECT_BEULENHELM, .holding_effect_param = 6,
+		//.holding_effect_id = HOLD_EFFECT_BEULENHELM, .holding_effect_param = 6,
+		.holding_effect_id = HOLD_EFFECT_POWER_HERB, .holding_effect_param = 20,
+	},
+	[ITEM_EXPERTENGURT] = {
+		.name = LANGDEP(PSTRING("Expertengurt"), PSTRING("Expert Belt")),
+		.index = ITEM_EXPERTENGURT, .price = 200,
+		.description = str_item_expertengurt_description, .pocket = POCKET_ITEMS, .type = 4,
+		.holding_effect_id = HOLD_EFFECT_EXPERT_BELT, .holding_effect_param = 20,
+	},
+	[ITEM_ENERGIEKRAUT] = {
+		.name = LANGDEP(PSTRING("Energiekraut"), PSTRING("Power Herb")),
+		.index = ITEM_EXPERTENGURT, .price = 200,
+		.description = str_item_energiekraut_description, .pocket = POCKET_ITEMS, .type = 4,
+		.holding_effect_id = HOLD_EFFECT_POWER_HERB,
 	},
 };
 

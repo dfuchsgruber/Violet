@@ -1,6 +1,10 @@
 .include "battlescript.s"
 .include "constants/battle/battle_communication.s"
 .include "constants/battle/battle_flags.s"
+.include "constants/item_hold_effects.s"
+.include "constants/battle/battle_animations.s"
+.include "constants/abilities.s"
+.include "constants/battle/battle_weathers.s"
 
 .global attack_effects
 .global bsc_roar_success_force_out
@@ -47,7 +51,7 @@
     .word 0x81db10d @0x24
     .word 0x81db118 @0x25
     .word 0x81db160 @0x26
-    .word 0x81db191 @0x27
+    .word bsc_attack_effect_razor_wind_consider_power_herb @ 0x81db191 @0x27
     .word 0x81db212 @0x28
     .word 0x81db229 @0x29
     .word 0x81db258 @0x2a
@@ -83,7 +87,7 @@
     .word 0x81db51b @0x48
     .word 0x81db526 @0x49
     .word bsc_attack_effect_hit @0x4a
-    .word 0x81db531 @0x4b
+    .word bsc_attack_effect_sky_attack_consider_power_herb @0x81db531 @0x4b
     .word 0x81db559 @0x4c
     .word 0x81db564 @0x4d
     .word bsc_attack_effect_hit @0x4e
@@ -153,17 +157,17 @@
     .word 0x81dbce2 @0x8e
     .word 0x81dbd04 @0x8f
     .word 0x81dbd19 @0x90
-    .word 0x81dbd2f @0x91
+    .word bsc_attack_effect_skull_bash_consider_power_herb // 0x81dbd2f @0x91
     .word 0x81dbd7e @0x92
     .word 0x81dbda3 @0x93
     .word 0x81dbe27 @0x94
     .word 0x81dbe3e @0x95
     .word 0x81dbe5d @0x96
-    .word 0x81dbe73 @0x97
+    .word bsc_attack_effect_solar_beam_consider_power_herb // 0x81dbe73 @0x97
     .word 0x81dbec9 @0x98
     .word bsc_attack_effect_teleport //0x81dbedd @0x99
     .word 0x81dbf1a @0x9a
-    .word 0x81dbf71 @0x9b
+    .word bsc_attack_effect_bounce_consider_power_herb // 0x81dbf71 @0x9b
     .word 0x81dc01c @0x9c
     .word 0x81dc03e @0x9d
     .word 0x81dc06f @0x9e
@@ -506,3 +510,46 @@ bsc_roar_animation:
     returntoball BANK_TARGET
     waitstate
     return
+
+bsc_two_turn_move_charge_with_item_animation:
+    printstring 0x188 // empty
+    playanimation BANK_USER, BATTLE_ANIM_ITEM_EFFECT, 0
+    removeitem BANK_USER
+    printstring 0x1c4
+    waitmessage 0x40
+    return
+
+bsc_two_turn_move_charge_with_item:
+    call bsc_two_turn_move_charge_with_item_animation
+    goto bsc_two_turn_move_second_turn
+
+bsc_two_turn_move_semi_invulnerable_charge_with_item:
+    call bsc_two_turn_move_charge_with_item_animation
+    goto bsc_two_turn_move_semi_invulnerable_second_turn
+
+bsc_attack_effect_sky_attack_consider_power_herb:
+    bsc_jump_if_item_effect BANK_USER, HOLD_EFFECT_POWER_HERB, bsc_two_turn_move_charge_with_item
+    goto bsc_attack_effect_sky_attack
+
+bsc_attack_effect_razor_wind_consider_power_herb:
+    bsc_jump_if_item_effect BANK_USER, HOLD_EFFECT_POWER_HERB, bsc_two_turn_move_charge_with_item
+    goto bsc_attack_effect_razor_wind
+
+bsc_attack_effect_bounce_consider_power_herb:
+    bsc_jump_if_item_effect BANK_USER, HOLD_EFFECT_POWER_HERB, bsc_two_turn_move_semi_invulnerable_charge_with_item
+    goto bsc_attack_effect_bounce
+
+bsc_attack_effect_skull_bash_consider_power_herb:
+    bsc_jump_if_item_effect BANK_USER, HOLD_EFFECT_POWER_HERB, bsc_two_turn_move_charge_with_item
+    goto bsc_attack_effect_skull_bash
+
+bsc_attack_effect_solar_beam_consider_power_herb:
+    jumpifabilitypresent WOLKE_SIEBEN, solar_beam_weather_bypass
+    jumpifabilitypresent KLIMASCHUTZ, solar_beam_weather_bypass
+    jumpifhalfword COMMON_BITS, battle_weather, (BATTLE_WEATHER_SUN_DROUGHT | BATTLE_WEATHER_SUN), bsc_attack_effect_solar_beam_hits_on_first_turn
+solar_beam_weather_bypass:
+    bsc_jump_if_item_effect BANK_USER, HOLD_EFFECT_POWER_HERB, solar_beam_charged_by_item
+    goto bsc_attack_effect_solar_beam_decide_in_which_turn
+solar_beam_charged_by_item:
+    call bsc_two_turn_move_charge_with_item_animation
+    goto bsc_attack_effect_solar_beam_hits_on_first_turn
