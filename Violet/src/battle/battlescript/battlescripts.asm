@@ -5,6 +5,7 @@
 .include "constants/battle/battle_communication.s"
 .include "constants/battle/battle_statuses.s"
 .include "constants/pokemon_stat_names.s"
+.include "constants/item_hold_effects.s"
 
 .global battlescript_trainer_battle_won
 battlescript_trainer_battle_won:
@@ -288,4 +289,15 @@ battlescript_item_opponent_used_hp_heal_or_full_restore_closure: // Just a closu
     attack_end ATTACK_END_MODE_ONE_CASE first_case=15
     finishaction
 
+.global bsc_battler_hung_on_with_item
 
+bsc_battler_hung_on_with_item:
+    playanimation BANK_TARGET, BATTLE_ANIM_HANGED_ON, 0
+    bsc_jump_if_item_effect BANK_TARGET, HOLD_EFFECT_FOCUS_SASH, focus_sash_remove_item
+hung_on_printstring:
+    printstring 0x12f
+    waitmessage 0x40
+    return
+focus_sash_remove_item:
+    removeitem BANK_TARGET
+    goto hung_on_printstring

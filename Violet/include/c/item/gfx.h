@@ -842,5 +842,7 @@ extern const u8 gfx_item_expertengurtTiles[];
 extern const u8 gfx_item_expertengurtPal[];
 extern const u8 gfx_item_energiekrautTiles[];
 extern const u8 gfx_item_energiekrautPal[];
+extern const u8 gfx_item_fokusgurtTiles[];
+extern const u8 gfx_item_fokusgurtPal[];
 
 #endif

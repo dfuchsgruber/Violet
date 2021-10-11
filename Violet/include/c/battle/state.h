@@ -558,4 +558,11 @@ void battle_gp_tbox_draw(u8 x0, u8 y0, u8 x1, u8 y1, u8 mode);
  **/
 void battle_record_ability(u8 battler_idx, u8 ability);
 
+/**
+ * Records the effect of an items battler
+ * @param battler_idx the battler to record the ability of
+ * @param hold_effect the hold effect to record
+ **/
+void battle_record_item_effect(u8 battler_idx, u8 hold_effect);
+
 #endif /* INCLUDE_C_BATTLE_STATE_H_ */

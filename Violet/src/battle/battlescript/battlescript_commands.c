@@ -624,26 +624,6 @@ void bsc_command_x4a_typecalc2() {
     bsc_offset++;
 }
 
-extern u8 battlescript_gem_used[];
-extern u8 battlescript_weakened_by_berry[];
-
-void bsc_command_after_x07_adjustnormaldamage() {
-    dprintf("bsc command 0x7: status custom of attacking battler: 0x%x\n", BATTLE_STATE2->status_custom[attacking_battler]);
-    if ((BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_GEM_USED)
-        && !(attack_result & ATTACK_NO_EFFECT_ANY) && battlers[attacking_battler].item != 0) {
-        bsc_last_used_item = battlers[attacking_battler].item;
-        battlescript_callstack_push_next_command();
-        bsc_offset = battlescript_gem_used;
-        BATTLE_STATE2->status_custom[attacking_battler] &= (u32)(~CUSTOM_STATUS_GEM_USED);
-    }
-    if ((BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY)) {
-        bsc_last_used_item = battlers[defending_battler].item;
-        battlescript_callstack_push_next_command();
-        bsc_offset = battlescript_weakened_by_berry;
-        BATTLE_STATE2->status_custom[attacking_battler] &= (u32)(~CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY);
-    }
-}
-
 void bsc_command_x06_typecalc_scan_effectiveness_table(u8 move_type) {
     bool no_weakness = false;
     if ((battle_flags & BATTLE_WITH_HANDICAP) && (fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_FLOATING_ROCKS]) &&
@@ -667,6 +647,139 @@ void bsc_command_x06_typecalc_scan_effectiveness_table(u8 move_type) {
                 if (!(type_effectivenesses[i].multiplicator == 20 && no_weakness))
                     battle_add_damage_multiplier_and_update_attack_result(type_effectivenesses[i].multiplicator);
             }
+        }
+    }
+}
+
+
+
+extern u8 battlescript_gem_used[];
+extern u8 battlescript_weakened_by_berry[];
+
+
+static inline void apply_random_damage_multiplier() {
+    if (damage_to_apply != 0) {
+        damage_to_apply *= 100 - (rnd16() % 16);
+        damage_to_apply /= 100;
+        damage_to_apply = MAX(1, damage_to_apply);
+    }
+}
+
+
+static void adjustnormaldamage(bool consider_false_swipe, bool random_damage_multiplier) {
+    if (random_damage_multiplier)
+        apply_random_damage_multiplier();
+    u8 hold_effect, hold_effect_param;
+    if (battlers[defending_battler].item == ITEM_ENIGMABEERE) {
+        hold_effect = enigma_berries[defending_battler].hold_effect;
+        hold_effect_param = enigma_berries[defending_battler].hold_effect_parameter;
+    } else {
+        hold_effect = item_get_hold_effect(battlers[defending_battler].item);
+        hold_effect_param = item_get_hold_effect_parameter(battlers[defending_battler].item);
+    }
+    item_target_battler = defending_battler;
+    if (hold_effect == HOLD_EFFECT_FOCUS_BAND && (rnd16() % 100) < hold_effect_param) {
+        battle_record_item_effect(defending_battler, hold_effect);
+        battler_damage_taken[defending_battler].used_focus_band = true;
+    } else if (hold_effect == HOLD_EFFECT_FOCUS_SASH && battlers[defending_battler].current_hp <= damage_to_apply) {
+        battle_record_item_effect(defending_battler, hold_effect);
+        battler_damage_taken[defending_battler].used_focus_band = true;
+    }
+    if (!(battlers[defending_battler].status2 & STATUS2_SUBSTITUTE)
+        && ((attacks[active_attack].effect == 0x65 && consider_false_swipe) || battler_statuses[defending_battler].endure || battler_damage_taken[defending_battler].used_focus_band)
+        && battlers[defending_battler].current_hp <= damage_to_apply) {
+        damage_to_apply = battlers[defending_battler].current_hp - 1;
+        if (battler_damage_taken[defending_battler].used_focus_band) {
+            attack_result |= ATTACK_ENDURED_BY_FOCUS_SASH;
+            bsc_last_used_item = battlers[defending_battler].item;
+        } else if (battler_statuses[defending_battler].endure) {
+            attack_result |= ATTACK_ENDURED;
+        }
+    }
+    if ((BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_GEM_USED)
+        && !(attack_result & ATTACK_NO_EFFECT_ANY) && battlers[attacking_battler].item != 0) {
+        bsc_last_used_item = battlers[attacking_battler].item;
+        battlescript_callstack_push_next_command();
+        bsc_offset = battlescript_gem_used;
+        BATTLE_STATE2->status_custom[attacking_battler] &= (u32)(~CUSTOM_STATUS_GEM_USED);
+    }
+    if ((BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY)) {
+        bsc_last_used_item = battlers[defending_battler].item;
+        battlescript_callstack_push_next_command();
+        bsc_offset = battlescript_weakened_by_berry;
+        BATTLE_STATE2->status_custom[attacking_battler] &= (u32)(~CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY);
+    }
+}
+
+void bsc_command_x07_adjustnormaldamage() {
+    ++bsc_offset;
+    adjustnormaldamage(true, true);
+}
+
+void bsc_command_x08_adjustnormaldamage2() {
+    ++bsc_offset;
+    adjustnormaldamage(false, true);
+}
+
+void bsc_command_x69_adjustsetdamage() {
+    ++bsc_offset;
+    adjustnormaldamage(true, false);
+}
+
+extern u8 bsc_sturdy_prevents_ohko[];
+
+void bsc_command_x93_setohkodamage(void) {
+    u8 hold_effect, hold_effect_param;
+    if (battlers[defending_battler].item == ITEM_ENIGMABEERE) {
+        hold_effect = enigma_berries[defending_battler].hold_effect;
+        hold_effect_param = enigma_berries[defending_battler].hold_effect_parameter;
+    } else {
+        hold_effect = item_get_hold_effect(battlers[defending_battler].item);
+        hold_effect_param = item_get_hold_effect_parameter(battlers[defending_battler].item);
+    }
+    item_target_battler = defending_battler;
+    if (hold_effect == HOLD_EFFECT_FOCUS_BAND && (rnd16() % 100) < hold_effect_param) {
+        battle_record_item_effect(defending_battler, hold_effect);
+        battler_damage_taken[defending_battler].used_focus_band = true;
+    } else if (hold_effect == HOLD_EFFECT_FOCUS_SASH && battlers[defending_battler].current_hp <= damage_to_apply) {
+        battle_record_item_effect(defending_battler, hold_effect);
+        battler_damage_taken[defending_battler].used_focus_band = true;
+    }
+    if (battlers[defending_battler].ability == ROBUSTHEIT) {
+        attack_result |= ATTACK_MISSED;
+        defending_battler_ability  = battlers[defending_battler].ability;
+        battle_record_ability(defending_battler, battlers[defending_battler].ability);
+        bsc_offset = bsc_sturdy_prevents_ohko;;
+    } else {
+        bool hits;
+        int level_difference = battlers[attacking_battler].level - battlers[defending_battler].level;
+        if (battler_disable[defending_battler].cant_miss == attacking_battler && level_difference >= 0 && (battler_statuses3[defending_battler] & STATUS3_ALWAYS_HITS)) {
+            hits = true;
+        } else {
+            int p = attacks[active_attack].accuracy + level_difference;
+            hits = (rnd16() % 100) + 1 < p && level_difference >= 0;
+        }
+        if (hits) {
+            if (battler_statuses[defending_battler].endure) {
+                damage_to_apply = battlers[defending_battler].current_hp - 1;
+                attack_result |= ATTACK_ENDURED;
+            } else if (battler_damage_taken[defending_battler].used_focus_band) {
+                damage_to_apply = battlers[defending_battler].current_hp - 1;
+                attack_result |= ATTACK_ENDURED_BY_FOCUS_SASH;
+                bsc_last_used_item = battlers[defending_battler].item;
+            } else {
+                damage_to_apply = battlers[defending_battler].current_hp;
+                attack_result |= ATTACK_OHKO;
+            }
+            bsc_offset += 5;
+        } else {
+            attack_result |= ATTACK_MISSED;
+            if (level_difference >= 0) {
+                battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 0;
+            } else {
+                battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 1;
+            }
+            bsc_offset = (u8*)UNALIGNED_32_GET(bsc_offset + 1);
         }
     }
 }

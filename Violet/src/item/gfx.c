@@ -414,6 +414,7 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_BEULENHELM] = {.gfx = gfx_item_beulenhelmTiles, .pal = gfx_item_beulenhelmPal},
     [ITEM_EXPERTENGURT] = {.gfx = gfx_item_expertengurtTiles,  .pal = gfx_item_expertengurtPal},
     [ITEM_ENERGIEKRAUT] = {.gfx = gfx_item_energiekrautTiles, .pal = gfx_item_energiekrautPal},
+    [ITEM_FOKUSGURT] = {.gfx = gfx_item_fokusgurtTiles, .pal = gfx_item_fokusgurtPal}
 };
 
 const u8 *item_get_resource(u16 item_idx, u8 get_palette) {

@@ -1651,6 +1651,11 @@ static u8 str_item_energiekraut_description[] = LANGDEP(
 	PSTRING("Item (Tragen), das den\nsofortigen Einsatz eines\nAuflade-Angriffs erlaubt."),
 	PSTRING("Item to be held that allows\nto immideatly use an\nattack that needs charging.")
 );
+static u8 str_item_fokusgurt_description[] = LANGDEP(
+	PSTRING("Item (Tragen), das bei\nvollen KP den Schaden von\nK.O.-Attacken auf 1 senkt."),
+	PSTRING("Item to be held that\nreduces the damage of\nK.O. attacks to 1.")
+);
+
 
 item items[] = {
 	{
@@ -7874,7 +7879,7 @@ item items[] = {
 		.index = ITEM_BEULENHELM, .price = 200,
 		.description = str_item_beulenhelm_description, .pocket = POCKET_ITEMS, .type = 4,
 		//.holding_effect_id = HOLD_EFFECT_BEULENHELM, .holding_effect_param = 6,
-		.holding_effect_id = HOLD_EFFECT_POWER_HERB, .holding_effect_param = 20,
+		.holding_effect_id = HOLD_EFFECT_FOCUS_SASH, .holding_effect_param = 20,
 	},
 	[ITEM_EXPERTENGURT] = {
 		.name = LANGDEP(PSTRING("Expertengurt"), PSTRING("Expert Belt")),
@@ -7884,9 +7889,15 @@ item items[] = {
 	},
 	[ITEM_ENERGIEKRAUT] = {
 		.name = LANGDEP(PSTRING("Energiekraut"), PSTRING("Power Herb")),
-		.index = ITEM_EXPERTENGURT, .price = 200,
+		.index = ITEM_ENERGIEKRAUT, .price = 200,
 		.description = str_item_energiekraut_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_POWER_HERB,
+	},
+	[ITEM_FOKUSGURT] = {
+		.name = LANGDEP(PSTRING("Fokusgurt"), PSTRING("Focus Sash")),
+		.index = ITEM_FOKUSGURT, .price = 200,
+		.description = str_item_fokusgurt_description, .pocket = POCKET_ITEMS, .type = 4,
+		.holding_effect_id = HOLD_EFFECT_FOCUS_SASH,
 	},
 };
 

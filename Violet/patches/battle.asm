@@ -652,11 +652,13 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 	b 0x0801f3ee
 	.pool
 
+
+/**
 .org 0x0801f220
 	ldr r0, =hook_bsc_cmd_x07_adjustnormal_damage | 1
 	bx r0
 	.pool
-
+*/
  
 .org 0x08021e3a
 	mov r0, r7
@@ -666,6 +668,10 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 	b 0x08021eb2
 	.pool
 
+.org 0x0801fbf8
+	.word bsc_battler_hung_on_with_item
+.org 0x0801fc98
+	.word bsc_battler_hung_on_with_item
 
 /** 
 .org 0x08012642

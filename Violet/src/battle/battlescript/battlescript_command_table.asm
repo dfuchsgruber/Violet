@@ -11,8 +11,8 @@ battle_script_cmds:
 	.word 0x801e38d
 	.word 0x801e521
 	.word apply_pre_damage_modifiers
-	.word 0x801f089
-	.word 0x801f239
+	.word bsc_command_x07_adjustnormaldamage
+	.word bsc_command_x08_adjustnormaldamage2
 	.word 0x801f3c5
 	.word 0x801f50d
 	.word 0x801f52d
@@ -109,7 +109,7 @@ battle_script_cmds:
 	.word 0x8025dbd
 	.word 0x8025e51
 	.word 0x8025f2d
-	.word 0x8025f65
+	.word bsc_command_x69_adjustsetdamage
 	.word 0x80260e1
 	.word 0x8026151
 	.word 0x802618d
@@ -151,7 +151,7 @@ battle_script_cmds:
 	.word 0x802859d
 	.word bsc_cmd_itemdrop_and_payday
 	.word bsc_cmd_x92_setlightscreen
-	.word 0x80288a1
+	.word bsc_command_x93_setohkodamage
 	.word 0x8028bf5
 	.word bsc_cmd_x95_setsandstorm
 	.word 0x8028c89
