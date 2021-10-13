@@ -20,12 +20,6 @@
         bx r0
         .pool
 
-.org 0x0801F5AC
-        ldr r0, =hook_battle_abilities_sturdy | 1
-        bx r0
-        .pool
-
-
 
 //abilities
 .org 0x80001c0

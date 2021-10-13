@@ -665,6 +665,16 @@ static inline void apply_random_damage_multiplier() {
     }
 }
 
+extern u8 bsc_battler_hung_on_with_sturdy[];
+
+void battlescript_jump_to_sturdy_script_if_set() {
+    dprintf("Decide which sturdy script to take %d\n", battler_damage_taken[defending_battler].used_sturdy);
+    if (battler_damage_taken[defending_battler].used_sturdy) {
+        bsc_offset = (u8*)UNALIGNED_32_GET(bsc_offset);
+    } else {
+        bsc_offset += 4;
+    }
+}
 
 static void adjustnormaldamage(bool consider_false_swipe, bool random_damage_multiplier) {
     if (random_damage_multiplier)
@@ -681,15 +691,23 @@ static void adjustnormaldamage(bool consider_false_swipe, bool random_damage_mul
     if (hold_effect == HOLD_EFFECT_FOCUS_BAND && (rnd16() % 100) < hold_effect_param) {
         battle_record_item_effect(defending_battler, hold_effect);
         battler_damage_taken[defending_battler].used_focus_band = true;
-    } else if (hold_effect == HOLD_EFFECT_FOCUS_SASH && battlers[defending_battler].current_hp <= damage_to_apply) {
+    } else if (hold_effect == HOLD_EFFECT_FOCUS_SASH && battlers[defending_battler].current_hp <= damage_to_apply &&
+            battlers[defending_battler].current_hp == battlers[defending_battler].max_hp) {
         battle_record_item_effect(defending_battler, hold_effect);
         battler_damage_taken[defending_battler].used_focus_band = true;
+    } else if (battlers[defending_battler].ability == ROBUSTHEIT && battlers[defending_battler].current_hp <= damage_to_apply && 
+            battlers[defending_battler].current_hp == battlers[defending_battler].max_hp) {
+        battle_record_ability(defending_battler, battlers[defending_battler].ability);
+        defending_battler_ability = battlers[defending_battler].ability;
+        battler_damage_taken[defending_battler].used_sturdy = true;
+        dprintf("Defender uses sturdy\n");
     }
     if (!(battlers[defending_battler].status2 & STATUS2_SUBSTITUTE)
-        && ((attacks[active_attack].effect == 0x65 && consider_false_swipe) || battler_statuses[defending_battler].endure || battler_damage_taken[defending_battler].used_focus_band)
+        && ((attacks[active_attack].effect == 0x65 && consider_false_swipe) || battler_statuses[defending_battler].endure || 
+            battler_damage_taken[defending_battler].used_focus_band || battler_damage_taken[defending_battler].used_sturdy)
         && battlers[defending_battler].current_hp <= damage_to_apply) {
         damage_to_apply = battlers[defending_battler].current_hp - 1;
-        if (battler_damage_taken[defending_battler].used_focus_band) {
+        if (battler_damage_taken[defending_battler].used_focus_band || battler_damage_taken[defending_battler].used_sturdy) {
             attack_result |= ATTACK_ENDURED_BY_FOCUS_SASH;
             bsc_last_used_item = battlers[defending_battler].item;
         } else if (battler_statuses[defending_battler].endure) {
@@ -741,7 +759,7 @@ void bsc_command_x93_setohkodamage(void) {
     if (hold_effect == HOLD_EFFECT_FOCUS_BAND && (rnd16() % 100) < hold_effect_param) {
         battle_record_item_effect(defending_battler, hold_effect);
         battler_damage_taken[defending_battler].used_focus_band = true;
-    } else if (hold_effect == HOLD_EFFECT_FOCUS_SASH && battlers[defending_battler].current_hp <= damage_to_apply) {
+    } else if (hold_effect == HOLD_EFFECT_FOCUS_SASH && battlers[defending_battler].current_hp == battlers[defending_battler].max_hp) {
         battle_record_item_effect(defending_battler, hold_effect);
         battler_damage_taken[defending_battler].used_focus_band = true;
     }

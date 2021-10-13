@@ -444,6 +444,7 @@ bsc_strings:
 .word str_battle_x1C2
 .word str_battle_x1C3
 .word str_battle_x1C4
+.word str_battle_x1C5
 
 @ // Define the strings
 
@@ -2964,6 +2965,9 @@ bsc_strings:
 	str_battle_x1C4:
 		.string "BSC_LAST_ITEM lässt\nBSC_ATK_NAME_WITH_PREFIX sofort angreifen!"
 
+	str_battle_x1C5:
+		.string "BSC_DEF_NAME_WITH_PREFIX\nhält dank BSC_SCR_ACTIVE_ABILITY durch!"
+
 .elseif LANG_EN
 	.global str_battle_xc
 
@@ -5084,6 +5088,8 @@ bsc_strings:
 	str_battle_x1C4:
 		.string "BSC_LAST_ITEM lets\nBSC_ATK_NAME_WITH_PREFIX attack\lthis turn!"
 
+	str_battle_x1C5:
+		.string "BSC_DEF_NAME_WITH_PREFIX hangs on\ndue to BSC_SCR_ACTIVE_ABILITY!"
 .endif
 
 

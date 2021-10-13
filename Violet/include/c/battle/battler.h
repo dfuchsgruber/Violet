@@ -114,6 +114,10 @@ typedef struct battler_damage_taken_stru {
 	u8 pp_unaffected_by_pressure : 1;
 	u8 bit_6;
 	u8 used_focus_band : 1;
+    u8 used_sturdy : 1;
+    u8 field_1 : 7;
+    u8 field_2;
+    u8 field_3;
 	int damage;
 	int physical_damage;
 	int special_damage;

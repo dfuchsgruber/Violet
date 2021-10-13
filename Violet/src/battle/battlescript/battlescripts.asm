@@ -292,6 +292,9 @@ battlescript_item_opponent_used_hp_heal_or_full_restore_closure: // Just a closu
 .global bsc_battler_hung_on_with_item
 
 bsc_battler_hung_on_with_item:
+    // Sturdy is also squeezed in here...
+    callasm battlescript_jump_to_sturdy_script_if_set
+        .word bsc_battler_hung_on_with_sturdy
     playanimation BANK_TARGET, BATTLE_ANIM_HANGED_ON, 0
     bsc_jump_if_item_effect BANK_TARGET, HOLD_EFFECT_FOCUS_SASH, focus_sash_remove_item
 hung_on_printstring:
@@ -301,3 +304,9 @@ hung_on_printstring:
 focus_sash_remove_item:
     removeitem BANK_TARGET
     goto hung_on_printstring
+
+bsc_battler_hung_on_with_sturdy:
+    playanimation BANK_TARGET, BATTLE_ANIM_HANGED_ON, 0
+    printstring 0x1c5
+    waitmessage 0x40
+    return
