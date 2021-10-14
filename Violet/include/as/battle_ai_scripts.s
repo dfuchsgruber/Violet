@@ -487,15 +487,19 @@
 	.byte \battler
 	.endm
 
-	@ nullsub
+	@ former nullsub
 	.macro jump_if_fleeing_chosen script:req
 	.byte 0x52
     .word \script
 	.endm
 
-	@ nullsub
-	.macro ai_53
+	@ former nullsub
+	@ Gets the item of a battler and jumps if it is bad for a battler (do not have to be the same)
+	.macro jump_if_item_bad_for_battler item_hold_battler:req target_battler:req script:req
 	.byte 0x53
+	.byte \item_hold_battler
+	.byte \target_battler
+	.word \script
 	.endm
 
 	@ nullsub

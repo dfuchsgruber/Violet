@@ -844,5 +844,9 @@ extern const u8 gfx_item_energiekrautTiles[];
 extern const u8 gfx_item_energiekrautPal[];
 extern const u8 gfx_item_fokusgurtTiles[];
 extern const u8 gfx_item_fokusgurtPal[];
+extern const u8 gfx_item_grosslinseTiles[];
+extern const u8 gfx_item_grosslinsePal[];
+extern const u8 gfx_item_giftschleimTiles[];
+extern const u8 gfx_item_giftschleimPal[];
 
 #endif

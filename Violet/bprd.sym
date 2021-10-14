@@ -1269,3 +1269,4 @@ tm_hm_initialize = 0x08131848 | 1;
 bag_initialize_from_start_menu = 0x08107f34 | 1;
 sound_is_playing = 0x08072344 | 1;
 bsc_sturdy_prevents_ohko = 0x081dd637;
+bsc_heal_hp_by_item_end2 = 0x081dd8b2;

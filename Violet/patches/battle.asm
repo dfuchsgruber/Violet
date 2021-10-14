@@ -673,6 +673,14 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 .org 0x0801fc98
 	.word bsc_battler_hung_on_with_item
 
+.org 0x0801e058
+	mov r0, r4
+	ldr r1, =battle_item_adjust_accuracy | 1
+	bl _blxr1
+	lsl r0, #0x10
+	lsr r4, r0, #0x10
+	b 0x0801e0d4
+	.pool
 /** 
 .org 0x08012642
 	ldr r0, =hook_battle_initialize_absent_battlers | 1
@@ -744,11 +752,31 @@ battle_item_restore_hp_break:
 	bl 0x0801c8d6 // Break
 	.pool
 
+.org 0x0801c01c
+	mov r0, r7 // Battler Idx
+	mov r1, r6 // Move turn
+	mov r2, r9 // Hold Effect Parameter
+	ldr r3, =battle_item_restore_hp_at_end_turn_for_type | 1
+	bl _blxr3
+	cmp r0, #0
+	beq battle_item_restore_hp_at_end_turn_for_type_break
+	mov r0, #4	// effect = 4
+	str r0, [sp, #0xC]
+battle_item_restore_hp_at_end_turn_for_type_break: 
+	bl 0x0801c8d6 // Break
+	.pool
+
+
 .org 0x081dde8c	+ 28 * 4
 	.word battle_ai_script_consider_fleeing
 
 .org 0x083f4dfc + 0x52 * 4
 	.word battle_ai_script_command_random_flee | 1
+.org 0x083f4dfc + 0x53 * 4
+	.word battle_ai_script_command_jump_if_item_bad_for_battler | 1
+
+.org 0x081de925
+	.word battle_ai_script_check_viability_trick
 
 .org 0x08011084
 	ldr r0, = battle_callback1 | 1

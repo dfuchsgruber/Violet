@@ -93,3 +93,13 @@ bsc_beulenhelm:
     waitmessage 0x40
     faintpokemon BANK_USER, 0x0, 0
     return
+
+.global bsc_deal_damage_by_item_end2
+
+bsc_deal_damage_by_item_end2:
+    printstring 0x1c6
+	waitmessage 0x40
+	orword bsc_status_flags, BSC_STATUS_FLAG_IGNORE_SUBSTITUTE
+	graphicalhpupdate BANK_USER
+	datahpupdate BANK_USER
+	end2

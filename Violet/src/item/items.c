@@ -1655,6 +1655,14 @@ static u8 str_item_fokusgurt_description[] = LANGDEP(
 	PSTRING("Item (Tragen), das bei\nvollen KP den Schaden von\nK.O.-Attacken auf 1 senkt."),
 	PSTRING("Item to be held that\nreduces the damage of\nK.O. attacks to 1.")
 );
+static u8 str_item_grosslinse_description[] = LANGDEP(
+	PSTRING("Item (Tragen), das die\nGenauigkeit des Trägers\nerhöht."),
+	PSTRING("Item to be held that\nraises the accuracy of a\nPokémon.")
+);
+static u8 str_item_giftschleim_description[] = LANGDEP(
+	PSTRING("Item (Tragen), das bei\nGift-Pokémon Kp auffüllt,\nsonst aber schadet."),
+	PSTRING("Item to be held that\nrestores the Hp of\nPoison-Pkmn or causes damage.")
+);
 
 
 item items[] = {
@@ -4863,8 +4871,8 @@ item items[] = {
 		LANGDEP(PSTRING("Überreste"), PSTRING("Leftovers")),
 		0xc8, //index
 		200, //price
-		43, //holding_effect_id
-		10, //holding_effect_param
+		HOLD_EFFECT_LEFTOVERS, //holding_effect_id
+		0xFF, //holding_effect_param
 		str_item_ueberreste_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -7879,7 +7887,7 @@ item items[] = {
 		.index = ITEM_BEULENHELM, .price = 200,
 		.description = str_item_beulenhelm_description, .pocket = POCKET_ITEMS, .type = 4,
 		//.holding_effect_id = HOLD_EFFECT_BEULENHELM, .holding_effect_param = 6,
-		.holding_effect_id = HOLD_EFFECT_FOCUS_SASH, .holding_effect_param = 20,
+		.holding_effect_id = HOLD_EFFECT_LEFTOVERS, .holding_effect_param = TYPE_GIFT,
 	},
 	[ITEM_EXPERTENGURT] = {
 		.name = LANGDEP(PSTRING("Expertengurt"), PSTRING("Expert Belt")),
@@ -7898,6 +7906,18 @@ item items[] = {
 		.index = ITEM_FOKUSGURT, .price = 200,
 		.description = str_item_fokusgurt_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_FOCUS_SASH,
+	},
+	[ITEM_GROSSLINSE] = {
+		.name = LANGDEP(PSTRING("Großlinse"), PSTRING("Wide Lens")),
+		.index = ITEM_GROSSLINSE, .price = 200,
+		.description = str_item_grosslinse_description, .pocket = POCKET_ITEMS, .type = 4,
+		.holding_effect_id = HOLD_EFFECT_BOOST_ACCURACY, .holding_effect_param = 20,
+	},
+	[ITEM_GIFTSCHLEIM] = {
+		.name = LANGDEP(PSTRING("Giftschleim"), PSTRING("Black Sludge")),
+		.index = ITEM_GROSSLINSE, .price = 200,
+		.description = str_item_giftschleim_description, .pocket = POCKET_ITEMS, .type = 4,
+		.holding_effect_id = HOLD_EFFECT_LEFTOVERS, .holding_effect_param = TYPE_GIFT,
 	},
 };
 

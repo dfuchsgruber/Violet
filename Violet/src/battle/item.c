@@ -169,6 +169,33 @@ bool battle_items_gunpowder() {
     return false;
 }
 
+u16 battle_item_adjust_accuracy(u16 accuracy) {
+    u8 hold_effect, hold_effect_param;
+    // defender
+    if (battlers[defending_battler].item == ITEM_ENIGMABEERE) {
+        hold_effect = enigma_berries[defending_battler].hold_effect;
+        hold_effect_param = enigma_berries[defending_battler].hold_effect_parameter;
+    } else {
+        hold_effect = item_get_hold_effect(battlers[defending_battler].item);
+        hold_effect_param = item_get_hold_effect_parameter(battlers[defending_battler].item);
+    }
+    if (hold_effect == HOLD_EFFECT_EVASION_UP) {
+        accuracy = (u16)((accuracy * (100 - hold_effect_param)) / 100);
+    }
+    // attacker
+    if (battlers[attacking_battler].item == ITEM_ENIGMABEERE) {
+        hold_effect = enigma_berries[attacking_battler].hold_effect;
+        hold_effect_param = enigma_berries[attacking_battler].hold_effect_parameter;
+    } else {
+        hold_effect = item_get_hold_effect(battlers[attacking_battler].item);
+        hold_effect_param = item_get_hold_effect_parameter(battlers[attacking_battler].item);
+    }
+    if (hold_effect == HOLD_EFFECT_BOOST_ACCURACY) {
+        accuracy = (u16)((accuracy * (100 + hold_effect_param)) / 100);
+    }
+    return accuracy;
+}
+
 bool battle_item_before_attack_attacker() {
     active_battler = attacking_battler;
     switch (item_get_hold_effect(battlers[attacking_battler].item)) {
@@ -210,6 +237,26 @@ bool battle_item_restore_hp(u8 battler_idx, u8 move_turn, int hold_effect_parame
         }
         damage_to_apply *= -1;
         battlescript_init_and_push_current_callback(battlescript_battle_item_hold_effect_restore_hp);
+        return true;
+    }
+    return false;
+}
+
+extern u8 bsc_heal_hp_by_item_end2[];
+extern u8 bsc_deal_damage_by_item_end2[];
+
+bool battle_item_restore_hp_at_end_turn_for_type(u8 battler_idx, u8 move_turn, int hold_effect_paramter) {
+    bool heals = battlers[battler_idx].type1 == hold_effect_paramter || battlers[battler_idx].type2 == hold_effect_paramter || hold_effect_paramter == 0xFF;
+    if ((battlers[battler_idx].current_hp < battlers[battler_idx].max_hp || !heals) && !move_turn) {
+        bsc_last_used_item = battlers[battler_idx].item;
+        battle_record_item_effect(battler_idx, HOLD_EFFECT_LEFTOVERS);
+        if (heals) {
+            damage_to_apply = -MIN(MAX(1, battlers[battler_idx].max_hp / 16), battlers[battler_idx].max_hp - battlers[battler_idx].current_hp);
+            battlescript_init_and_push_current_callback(bsc_heal_hp_by_item_end2);
+        } else {
+            damage_to_apply  = MAX(1, battlers[battler_idx].max_hp / 8);
+            battlescript_init_and_push_current_callback(bsc_deal_damage_by_item_end2);
+        }
         return true;
     }
     return false;

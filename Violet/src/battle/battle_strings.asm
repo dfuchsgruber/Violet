@@ -445,6 +445,7 @@ bsc_strings:
 .word str_battle_x1C3
 .word str_battle_x1C4
 .word str_battle_x1C5
+.word str_battle_x1C6
 
 @ // Define the strings
 
@@ -2968,6 +2969,9 @@ bsc_strings:
 	str_battle_x1C5:
 		.string "BSC_DEF_NAME_WITH_PREFIX\nhält dank BSC_SCR_ACTIVE_ABILITY durch!"
 
+	str_battle_x1C6:
+		.string "BSC_ATK_NAME_WITH_PREFIX wurde von\nBSC_LAST_ITEM verletzt!"
+
 .elseif LANG_EN
 	.global str_battle_xc
 
@@ -5090,6 +5094,9 @@ bsc_strings:
 
 	str_battle_x1C5:
 		.string "BSC_DEF_NAME_WITH_PREFIX hangs on\ndue to BSC_SCR_ACTIVE_ABILITY!"
+
+	str_battle_x1C6:
+		.string "BSC_ATK_NAME_WITH_PREFIX was hurt\nby BSC_LAST_ITEM!"
 .endif
 
 
