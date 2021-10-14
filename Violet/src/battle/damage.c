@@ -118,7 +118,12 @@ int battle_base_damage_calculate(battler *attacker, battler *defender, u32 move,
             break;
         }
     }
-
+    if (attackerHoldEffect == HOLD_EFFECT_BOOST_PHYSICAL_MOVES && attacks[move].category == CATEGORY_PHYSICAL) {
+        attack = (attack * (attackerHoldEffectParam + 100)) / 100;
+    }
+    if (attackerHoldEffect == HOLD_EFFECT_BOOST_SPECIAL_MOVES && attacks[move].category == CATEGORY_SPECIAL) {
+        attack = (attack * (attackerHoldEffectParam + 100)) / 100;
+    }
 	if (attackerHoldEffect == HOLD_EFFECT_CHOICE_ITEM && attackerHoldEffectParam == CHOICE_ITEM_BAND)
 		attack = (150 * attack) / 100;
 	if (attackerHoldEffect == HOLD_EFFECT_CHOICE_ITEM && attackerHoldEffectParam == CHOICE_ITEM_SPECS)

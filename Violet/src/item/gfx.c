@@ -417,6 +417,8 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_FOKUSGURT] = {.gfx = gfx_item_fokusgurtTiles, .pal = gfx_item_fokusgurtPal},
     [ITEM_GROSSLINSE] = {.gfx = gfx_item_grosslinseTiles, .pal = gfx_item_grosslinsePal},
     [ITEM_GIFTSCHLEIM] = {.gfx = gfx_item_giftschleimTiles, .pal = gfx_item_giftschleimPal},
+    [ITEM_MUSKELBAND] = {.gfx = gfx_item_muskelbandTiles, .pal = gfx_item_muskelbandPal},
+    [ITEM_SCHLAUBRILLE] = {.gfx = gfx_item_schlaubrilleTiles, .pal = gfx_item_schlaubrillePal},
 };
 
 const u8 *item_get_resource(u16 item_idx, u8 get_palette) {

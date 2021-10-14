@@ -1663,6 +1663,14 @@ static u8 str_item_giftschleim_description[] = LANGDEP(
 	PSTRING("Item (Tragen), das bei\nGift-Pokémon Kp auffüllt,\nsonst aber schadet."),
 	PSTRING("Item to be held that\nrestores the Hp of\nPoison-Pkmn or causes damage.")
 );
+static u8 str_item_muskelband_description[] = LANGDEP(
+	PSTRING("Item (Tragen), das\nphysische Attacken verstärkt."),
+	PSTRING("Item to be held that\nboosts physical moves.")
+);
+static u8 str_item_schlaubrille_description[] = LANGDEP(
+	PSTRING("Item (Tragen), das\nspezielle Attacken verstärkt."),
+	PSTRING("Item to be held that\nboost special moves.")
+);
 
 
 item items[] = {
@@ -7915,9 +7923,21 @@ item items[] = {
 	},
 	[ITEM_GIFTSCHLEIM] = {
 		.name = LANGDEP(PSTRING("Giftschleim"), PSTRING("Black Sludge")),
-		.index = ITEM_GROSSLINSE, .price = 200,
+		.index = ITEM_GIFTSCHLEIM, .price = 200,
 		.description = str_item_giftschleim_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_LEFTOVERS, .holding_effect_param = TYPE_GIFT,
+	},
+	[ITEM_MUSKELBAND] = {
+		.name = LANGDEP(PSTRING("Muskelband"), PSTRING("Muscle Band")),
+		.index = ITEM_MUSKELBAND, .price = 200,
+		.description = str_item_muskelband_description, .pocket = POCKET_ITEMS, .type = 4,
+		.holding_effect_id = HOLD_EFFECT_BOOST_PHYSICAL_MOVES, .holding_effect_param = 10,
+	},
+	[ITEM_SCHLAUBRILLE] = {
+		.name = LANGDEP(PSTRING("Schlaubrille"), PSTRING("Wise Glasses")),
+		.index = ITEM_SCHLAUBRILLE, .price = 200,
+		.description = str_item_schlaubrille_description, .pocket = POCKET_ITEMS, .type = 4,
+		.holding_effect_id = HOLD_EFFECT_BOOST_SPECIAL_MOVES, .holding_effect_param = 10,
 	},
 };
 

@@ -848,5 +848,9 @@ extern const u8 gfx_item_grosslinseTiles[];
 extern const u8 gfx_item_grosslinsePal[];
 extern const u8 gfx_item_giftschleimTiles[];
 extern const u8 gfx_item_giftschleimPal[];
+extern const u8 gfx_item_muskelbandTiles[];
+extern const u8 gfx_item_muskelbandPal[];
+extern const u8 gfx_item_schlaubrilleTiles[];
+extern const u8 gfx_item_schlaubrillePal[];
 
 #endif

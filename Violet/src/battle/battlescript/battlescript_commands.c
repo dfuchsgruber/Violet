@@ -153,8 +153,6 @@ bool bsc_cmd_x8f_random_switch_out_replace_in_wild_double_battle() {
         (BATTLE_IS_WILD_DOUBLE && !battler_is_opponent(attacking_battler) && !battler_is_opponent(defending_battler));
 }
 
-
-
 void bsc_roar_failure() {
     if (BATTLE_IS_WILD_DOUBLE) {
         // dprintf("Roar failure in double wild battles.\n");
@@ -219,7 +217,6 @@ void bsc_cmd_trainerslidein() {
     battler_mark_for_controller_execution(active_battler);
     bsc_offset += 2;    
 }
-
 
 static int trainer_pricemoney_get(u16 trainer_idx) {
     // Calculate the average level of the trainer pokemon
@@ -301,7 +298,6 @@ void bsc_cmd_opponent_use_item() {
     item_effect(p, bsc_last_used_item, battler_idx_to_party_idx(attacking_battler), 0, true, false);
     bsc_offset++;
 }
-
 
 bool bsc_cmd_exp_gain_should_gain_exp() {
     u8 idx = battle_state->exp_getter_idx;
@@ -651,11 +647,8 @@ void bsc_command_x06_typecalc_scan_effectiveness_table(u8 move_type) {
     }
 }
 
-
-
 extern u8 battlescript_gem_used[];
 extern u8 battlescript_weakened_by_berry[];
-
 
 static inline void apply_random_damage_multiplier() {
     if (damage_to_apply != 0) {
