@@ -752,6 +752,12 @@ battle_item_restore_hp_break:
 	bl 0x0801c8d6 // Break
 	.pool
 
+.org 0x0801bd9c
+	ldr r0, =battle_item_effect_after_attack_hook | 1
+	bx r0
+	.pool
+
+/**
 .org 0x0801c01c
 	mov r0, r7 // Battler Idx
 	mov r1, r6 // Move turn
@@ -765,7 +771,7 @@ battle_item_restore_hp_break:
 battle_item_restore_hp_at_end_turn_for_type_break: 
 	bl 0x0801c8d6 // Break
 	.pool
-
+*/
 
 .org 0x081dde8c	+ 28 * 4
 	.word battle_ai_script_consider_fleeing

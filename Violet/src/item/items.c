@@ -7895,7 +7895,7 @@ item items[] = {
 		.index = ITEM_BEULENHELM, .price = 200,
 		.description = str_item_beulenhelm_description, .pocket = POCKET_ITEMS, .type = 4,
 		//.holding_effect_id = HOLD_EFFECT_BEULENHELM, .holding_effect_param = 6,
-		.holding_effect_id = HOLD_EFFECT_LEFTOVERS, .holding_effect_param = TYPE_GIFT,
+		.holding_effect_id = HOLD_EFFECT_RECOVERS_HP_AT_END_OF_TURN_FOR_TYPE, .holding_effect_param = TYPE_GIFT,
 	},
 	[ITEM_EXPERTENGURT] = {
 		.name = LANGDEP(PSTRING("Expertengurt"), PSTRING("Expert Belt")),
@@ -7925,7 +7925,7 @@ item items[] = {
 		.name = LANGDEP(PSTRING("Giftschleim"), PSTRING("Black Sludge")),
 		.index = ITEM_GIFTSCHLEIM, .price = 200,
 		.description = str_item_giftschleim_description, .pocket = POCKET_ITEMS, .type = 4,
-		.holding_effect_id = HOLD_EFFECT_LEFTOVERS, .holding_effect_param = TYPE_GIFT,
+		.holding_effect_id = HOLD_EFFECT_RECOVERS_HP_AT_END_OF_TURN_FOR_TYPE, .holding_effect_param = TYPE_GIFT,
 	},
 	[ITEM_MUSKELBAND] = {
 		.name = LANGDEP(PSTRING("Muskelband"), PSTRING("Muscle Band")),

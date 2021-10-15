@@ -215,12 +215,27 @@ battle_items_effect_with_no_bsc_activated:
     ldr r0, = 0x0801cf2a | 1 // End the function, but return 0 overall
     bx r0
 
-/**
-.global hook_bsc_cmd_x07_adjustnormal_damage
+.global battle_item_effect_after_attack_hook
 
-hook_bsc_cmd_x07_adjustnormal_damage:
-    bl bsc_command_after_x07_adjustnormaldamage
-    pop {r4-r7}
-    pop {r0}
-    bx r0
-*/
+.align 2
+.thumb
+
+.thumb_func
+battle_item_effect_after_attack_hook:
+    mov r0, r7 @ battler_idx
+    mov r1, r6 @ move_turn
+    bl battle_item_effect_after_attack
+    cmp r0, #0
+    bne battle_item_effect_after_attack_happened
+    sub r0, r5, #1
+    cmp r0, #0x2a
+    bls battle_item_effect_after_attack_hook_jpt
+battle_item_effect_after_attack_break:
+    ldr r1, =0x0801c8d6 | 1
+    bx r1
+battle_item_effect_after_attack_hook_jpt:
+    ldr r1, =0x0801bda6 | 1
+    bx r1
+battle_item_effect_after_attack_happened:
+    str r0, [sp, #0xC]
+    b battle_item_effect_after_attack_break
