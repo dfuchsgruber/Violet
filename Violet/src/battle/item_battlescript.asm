@@ -5,6 +5,7 @@
 .include "battle/battle_communication.s"
 .include "battle/battle_statuses.s"
 .include "battle/bsc_status_flags.s"
+.include "pokemon_stat_names.s"
 
 .global bsc_life_orb
 
@@ -116,3 +117,26 @@ bsc_status_orb:
 bsc_attack_disabled_by_assault_vest:
     printselectionstring 0x1c7
 	endselectionscript
+
+.global bsc_weakness_policy
+
+bsc_weakness_policy:
+    playanimation BANK_TARGET BATTLE_ANIM_ITEM_EFFECT 0
+    printstring 0x1c8
+	waitmessage 0x40
+	setbyte battle_scripting + 0x1B, 0
+	playstatchangeanimation BANK_TARGET, ((1 << STAT_ATTACK) | (1 << STAT_SPECIAL_ATTACK)), 0
+	setstatchange STAT_ATTACK, 2, 0
+    statbuffchange (STAT_BUF_CHANGE_FAILURE_CONTINUATION | STAT_BUF_CHANGE_AFFECTS_TARGET), weakness_policy_raise_spatk
+	jumpifbyte EQUAL, battle_communication + BATTLE_COMMUNICATION_MULTISTRING_CHOOSER, 2, weakness_policy_raise_spatk
+	printfromtable battle_strings_stat_changes
+	waitmessage 0x40
+weakness_policy_raise_spatk:
+	setstatchange STAT_SPECIAL_ATTACK, 2, 0
+    statbuffchange (STAT_BUF_CHANGE_FAILURE_CONTINUATION | STAT_BUF_CHANGE_AFFECTS_TARGET), weakness_policy_end
+	jumpifbyte EQUAL, battle_communication + BATTLE_COMMUNICATION_MULTISTRING_CHOOSER, 2, weakness_policy_end
+	printfromtable battle_strings_stat_changes
+	waitmessage 0x40
+weakness_policy_end:
+    removeitem BANK_TARGET
+    return

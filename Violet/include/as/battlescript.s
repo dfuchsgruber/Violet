@@ -797,13 +797,14 @@ various \battler, 2
 .byte 0x88
 .endm
 
+.equ STAT_BUF_CHANGE_FAILURE_CONTINUATION, 1 // If this flag is set, the continuation is executed on failure
 .equ STAT_BUF_IGNORE_PROTECT, 0x20
-.equ STAT_BUF_CHANGE_FAILURE_CONTINUATION, 1
+.equ STAT_BUF_CHANGE_AFFECTS_USER, 0x40 // refers to attacking_battler
+.equ STAT_BUF_CHANGE_AFFECTS_TARGET, 0x0 // refers to defending_battler
 
-
-.macro statbuffchange target:req failure_continuation:req
+.macro statbuffchange flags:req failure_continuation:req
 .byte 0x89
-.byte \target
+.byte \flags
 .word \failure_continuation
 .endm
 

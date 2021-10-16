@@ -447,6 +447,7 @@ bsc_strings:
 .word str_battle_x1C5
 .word str_battle_x1C6
 .word str_battle_x1C7
+.word str_battle_x1C8
 
 @ // Define the strings
 
@@ -2975,6 +2976,9 @@ bsc_strings:
 
 	str_battle_x1C7:
 		.string "BSC_LAST_ITEM verbietet\nden Einsatz von Status-Attacken!\p"
+	
+	str_battle_x1C8:
+		.string "BSC_LAST_ITEM von\nBSC_DEF_NAME_WITH_PREFIX wird wirksam!"
 
 .elseif LANG_EN
 	.global str_battle_xc
@@ -5104,6 +5108,9 @@ bsc_strings:
 
 	str_battle_x1C7:
 		.string "BSC_LAST_ITEM prohibits\nthe use of status moves!\p"
+
+	str_battle_x1C8:
+		.string "BSC_DEF_NAME_WITH_PREFIX's\nBSC_LAST_ITEM was activated!"
 .endif
 
 

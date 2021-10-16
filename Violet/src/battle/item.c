@@ -28,6 +28,7 @@ extern u8 bsc_desert_egg[];
 extern u8 bsc_blizzard_egg[];
 extern u8 bsc_energiequarz[];
 extern u8 bsc_beulenhelm[];
+extern u8 bsc_weakness_policy[];
 
 u8 battle_items_switch_in_effects(u8 battler_idx) { // Return 0 if no effect was used, 0xFF if an effect was used, but no bsc was triggered and a suitable effect type else
     u8 hold_effect = item_get_hold_effect(bsc_last_used_item);
@@ -127,22 +128,37 @@ bool battle_items_life_orb() {
 }
 
 bool battle_items_attack_done_defender() {
-    battler *defender = battlers + defending_battler;
-    switch (item_get_hold_effect(defender->item)) {
+    u8 hold_effect, hold_effect_param;
+    battler_get_hold_item_effect_and_parameter(defending_battler, &hold_effect, &hold_effect_param);
+    switch (hold_effect) {
         case HOLD_EFFECT_BEULENHELM: {
             if (battlers[attacking_battler].current_hp > 0 &&
                 !(attack_result & ATTACK_NO_EFFECT_ANY) && attacks[active_attack].base_power &&
                 !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED &&
                 (attacks[active_attack].flags & MAKES_CONTACT)) {
-                    damage_to_apply = MAX(1, battlers[attacking_battler].max_hp / item_get_hold_effect_parameter(defender->item));
+                    damage_to_apply = MAX(1, battlers[attacking_battler].max_hp / hold_effect_param);
                     battlescript_callstack_push_next_command();
                     battle_scripting.battler_idx = attacking_battler;
                     battle_scripting.animation_user = attacking_battler;
                     battle_scripting.animation_targets = attacking_battler;
                     bsc_last_used_item = battlers[defending_battler].item;
+                    battle_record_item_effect(defending_battler, hold_effect);
                     bsc_offset = bsc_beulenhelm;
                     return true;
                 }
+        }
+        case HOLD_EFFECT_WEAKNESS_POLICY: {
+            if (((attack_result & (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)) == ATTACK_SUPER_EFFECTIVE) &&
+                battlers[defending_battler].current_hp > 0 && 
+                (battlers[defending_battler].stat_changes[STAT_ATTACK - 1] < 12 || battlers[defending_battler].stat_changes[STAT_SPECIAL_ATTACK - 1] < 12)) {
+                effect_battler = defending_battler;
+                battle_scripting.battler_idx = defending_battler;
+                bsc_last_used_item = battlers[defending_battler].item;
+                battlescript_callstack_push_next_command();
+                battle_record_item_effect(defending_battler, hold_effect);
+                bsc_offset = bsc_weakness_policy;
+                return true;
+            }
         }
     }
     return false;

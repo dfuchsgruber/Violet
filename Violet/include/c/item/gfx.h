@@ -858,5 +858,7 @@ extern const u8 gfx_item_toxik_orbTiles[];
 extern const u8 gfx_item_toxik_orbPal[];
 extern const u8 gfx_item_offensivwesteTiles[];
 extern const u8 gfx_item_offensivwestePal[];
+extern const u8 gfx_item_schwaechenschutzTiles[];
+extern const u8 gfx_item_schwaechenschutzPal[];
 
 #endif

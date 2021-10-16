@@ -1683,7 +1683,10 @@ static u8 str_item_offensivweste_description[] = LANGDEP(
 	PSTRING("Item (Tragen), das\ndie Sp.Vert. erhöht aber,\nStatus-Attacken verbietet."),
 	PSTRING("Item to be held that\nraises Special Defense but\nprohibits status moves.")
 );
-
+static u8 str_item_schwaechenschutz_description[] = LANGDEP(
+	PSTRING("Item (Tragen), das\nAngr. und Sp. Angr. bei\neffektivem Treffer steigert."),
+	PSTRING("Item to be held that\nraises Attack and Sp. Attack\nwhen hit by an effective move.")
+);
 
 item items[] = {
 	{
@@ -7907,7 +7910,7 @@ item items[] = {
 		.index = ITEM_BEULENHELM, .price = 200,
 		.description = str_item_beulenhelm_description, .pocket = POCKET_ITEMS, .type = 4,
 		//.holding_effect_id = HOLD_EFFECT_BEULENHELM, .holding_effect_param = 6,
-		.holding_effect_id = HOLD_EFFECT_ASSAULT_VEST, .holding_effect_param = TYPE_GIFT,
+		.holding_effect_id = HOLD_EFFECT_WEAKNESS_POLICY, .holding_effect_param = TYPE_GIFT,
 	},
 	[ITEM_EXPERTENGURT] = {
 		.name = LANGDEP(PSTRING("Expertengurt"), PSTRING("Expert Belt")),
@@ -7968,6 +7971,12 @@ item items[] = {
 		.index = ITEM_OFFENSIVWESTE, .price = 200,
 		.description = str_item_offensivweste_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_ASSAULT_VEST,
+	},
+	[ITEM_SCHWAECHENSCHUTZ] = {
+		.name = LANGDEP(PSTRING("Schw.-Schutz"), PSTRING("Weakness Policy")),
+		.index = ITEM_SCHWAECHENSCHUTZ, .price = 200,
+		.description = str_item_schwaechenschutz_description, .pocket = POCKET_ITEMS, .type = 4,
+		.holding_effect_id = HOLD_EFFECT_WEAKNESS_POLICY,
 	},
 };
 
