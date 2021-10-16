@@ -820,3 +820,21 @@ battle_item_restore_hp_at_end_turn_for_type_break:
 	ldr r0, =battle_player_set_move_selection_battlescript | 1
 	bx r0
 	.pool
+
+
+.org 0x080185b8
+	ldr r0, = battle_end_turn_wrap | 1
+	bl _blxr0
+	cmp r0, #0
+	beq end_turn_wrap_no_effect
+	// Increment effect counter
+	mov r0, r9
+	add r0, #1
+	lsl r0, #0x18
+	lsr r0, #0x18
+	mov r9, r0
+end_turn_wrap_no_effect:
+	ldr r0, =0x08018b96 | 1
+	bx r0
+	.pool
+	

@@ -149,7 +149,8 @@ bool battle_items_attack_done_defender() {
         }
         case HOLD_EFFECT_WEAKNESS_POLICY: {
             if (((attack_result & (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)) == ATTACK_SUPER_EFFECTIVE) &&
-                battlers[defending_battler].current_hp > 0 && 
+                !(attack_result & ATTACK_NO_EFFECT_ANY) && attacks[active_attack].base_power &&
+                !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED && battlers[defending_battler].current_hp > 0 && 
                 (battlers[defending_battler].stat_changes[STAT_ATTACK - 1] < 12 || battlers[defending_battler].stat_changes[STAT_SPECIAL_ATTACK - 1] < 12)) {
                 effect_battler = defending_battler;
                 battle_scripting.battler_idx = defending_battler;

@@ -29,6 +29,7 @@
 #include "constants/battle/battle_results.h"
 #include "vars.h"
 #include "dns.h"
+#include "constants/item_hold_effects.h"
 
 void battle_intro_draw_pokemon_or_trainer_sprite_draw_second_trainer() {
     if ((battle_flags & BATTLE_TWO_TRAINERS) && battler_get_position(active_battler) == BATTLE_POSITION_OPPONENT_RIGHT) {
@@ -312,6 +313,43 @@ void battle_end_turn_handle_battle_continues_wrapper() {
         BATTLE_STATE2->end_of_turn_handicap_effects_cnt = 0;
         BATTLE_STATE2->golden_apple_battler_idx = 0;
     }
+}
+
+extern u8 bsc_wrap_broke_free[];
+extern u8 bsc_wrap_continues[];
+
+bool battle_end_turn_wrap() {
+    if ((battlers[active_battler].status2 & STATUS2_WRAPPED) && battlers[active_battler].current_hp > 0) {
+        battlers[active_battler].status2 = (u32)(battlers[active_battler].status2 - 0x2000);
+        if (battlers[active_battler].status2 & STATUS2_WRAPPED) { // still wrapped
+            u8 wrapper_hold_effect, wrapper_hold_effect_param;
+            battler_get_hold_item_effect_and_parameter(battle_state->wrapped_by[active_battler], &wrapper_hold_effect, &wrapper_hold_effect_param);
+            battle_scripting.animation_arguments[0] = battle_state->wrapped_move[active_battler * 2 + 0];
+            battle_scripting.animation_arguments[1] = battle_state->wrapped_move[active_battler * 2 + 1];
+            bsc_string_buffer0[0] = BSC_BUFFER_BEGIN;
+            bsc_string_buffer0[1] = BSC_BUFFER_DISPLAY_MOVE;
+            bsc_string_buffer0[2] = battle_state->wrapped_move[active_battler * 2 + 0];
+            bsc_string_buffer0[3] = battle_state->wrapped_move[active_battler * 2 + 1];
+            bsc_string_buffer0[4] = BSC_BUFFER_EOS;
+            bsc_offset = bsc_wrap_continues;
+            if (wrapper_hold_effect == HOLD_EFFECT_BINDING_BAND) {
+                damage_to_apply = MAX(1, battlers[active_battler].max_hp / 6);
+            } else {
+                damage_to_apply = MAX(1, battlers[active_battler].max_hp / 16);
+            }
+            dprintf("Damage for wrap %d\n", damage_to_apply);
+        } else { // broke free
+            bsc_string_buffer0[0] = BSC_BUFFER_BEGIN;
+            bsc_string_buffer0[1] = BSC_BUFFER_DISPLAY_MOVE;
+            bsc_string_buffer0[2] = battle_state->wrapped_move[active_battler * 2 + 0];
+            bsc_string_buffer0[3] = battle_state->wrapped_move[active_battler * 2 + 1];
+            bsc_string_buffer0[4] = BSC_BUFFER_EOS;
+            bsc_offset = bsc_wrap_broke_free;
+        }
+        battlescript_init_and_push_current_callback(bsc_offset);
+        return true;
+    }
+    return false;
 }
 
 u8 battle_is_running_impossible() {

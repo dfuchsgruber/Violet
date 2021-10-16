@@ -423,6 +423,7 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_TOXIK_ORB] = {.gfx = gfx_item_toxik_orbTiles, .pal = gfx_item_toxik_orbPal},
     [ITEM_OFFENSIVWESTE] = {.gfx = gfx_item_offensivwesteTiles, .pal = gfx_item_offensivwestePal},
     [ITEM_SCHWAECHENSCHUTZ] = {.gfx = gfx_item_schwaechenschutzTiles, .pal = gfx_item_schwaechenschutzPal},
+    [ITEM_KLAMMERBAND] = {.gfx = gfx_item_klammerbandTiles, .pal = gfx_item_klammerbandPal},
 };
 
 const u8 *item_get_resource(u16 item_idx, u8 get_palette) {

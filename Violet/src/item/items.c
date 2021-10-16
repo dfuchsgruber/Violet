@@ -1687,6 +1687,10 @@ static u8 str_item_schwaechenschutz_description[] = LANGDEP(
 	PSTRING("Item (Tragen), das\nAngr. und Sp. Angr. bei\neffektivem Treffer steigert."),
 	PSTRING("Item to be held that\nraises Attack and Sp. Attack\nwhen hit by an effective move.")
 );
+static u8 str_item_klammerband_description[] = LANGDEP(
+	PSTRING("Item (Tragen), das\nden Schaden von Klammer-\nAttacken verstärkt."),
+	PSTRING("Item to be held that\nincreases the damage of\nbinding attacks.")
+);
 
 item items[] = {
 	{
@@ -7910,7 +7914,7 @@ item items[] = {
 		.index = ITEM_BEULENHELM, .price = 200,
 		.description = str_item_beulenhelm_description, .pocket = POCKET_ITEMS, .type = 4,
 		//.holding_effect_id = HOLD_EFFECT_BEULENHELM, .holding_effect_param = 6,
-		.holding_effect_id = HOLD_EFFECT_WEAKNESS_POLICY, .holding_effect_param = TYPE_GIFT,
+		.holding_effect_id = HOLD_EFFECT_BINDING_BAND, .holding_effect_param = TYPE_GIFT,
 	},
 	[ITEM_EXPERTENGURT] = {
 		.name = LANGDEP(PSTRING("Expertengurt"), PSTRING("Expert Belt")),
@@ -7977,6 +7981,12 @@ item items[] = {
 		.index = ITEM_SCHWAECHENSCHUTZ, .price = 200,
 		.description = str_item_schwaechenschutz_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_WEAKNESS_POLICY,
+	},
+	[ITEM_KLAMMERBAND] = {
+		.name = LANGDEP(PSTRING("Klammerband"), PSTRING("Binding Band")),
+		.index = ITEM_KLAMMERBAND, .price = 200,
+		.description = str_item_klammerband_description, .pocket = POCKET_ITEMS, .type = 4,
+		.holding_effect_id = HOLD_EFFECT_BINDING_BAND,
 	},
 };
 

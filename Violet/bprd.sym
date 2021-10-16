@@ -1279,3 +1279,5 @@ bsc_attack_disabled_by_imprison = 0x081dd235;
 bsc_attack_disabled_by_choice_item = 0x081dd8d3;
 bsc_attack_has_no_pp = 0x081dd13a;
 battler_cancel_multiturn_moves = 0x0801726c | 1;
+bsc_wrap_broke_free = 0x081dd3cc;
+bsc_wrap_continues = 0x081dd3ba;
