@@ -25,6 +25,8 @@ extern int damage_caused;
 extern u16 move_power;
 extern u16 moves_used[4];
 
+extern u16 battler_last_move[4];
+
 #define BATTLE_ANIMATION_OAM_BASE 10000
 
 extern graphic battle_animation_graphics[];
@@ -183,5 +185,13 @@ void battle_animation_oam_delete(oam_object *self);
  * @param self self-reference
  **/
 void battle_animation_oam_callback_roots_flicker_out(oam_object *self);
+
+/**
+ * Counts by how many opposing battlers the move of one battler is imprisoned and cant be used.
+ * @param battler_idx the battler to check if the move is imprisoned
+ * @param move the move to check
+ * @return how many opposing battlers imprison the move `move_idx` for battler `battler_idx`
+ **/
+u8 battle_move_get_imprison_count(u8 battler_idx, u16 move);
 
 #endif /* INCLUDE_C_BATTLE_ATTACK_H_ */

@@ -200,6 +200,7 @@ extern u8 battler_positions[4];
 extern u16 battler_last_landed_move[4];
 extern u16 battler_last_hit_by_type[4];
 extern u8 fainted_battler;
+extern u8 *battler_move_selection_battlescripts[4]; // the battle script to execute for move selection (e.g. doing the attack or printing that it can't be selected)
 
 #define STAT_CHANGE_MULTIPLIER_DIVIDEND 0
 #define STAT_CHANGE_MULTIPLIER_DIVISOR 1
@@ -392,5 +393,18 @@ u8 battler_get_coordinate(u8 battler_idx, u8 type);
  **/
 u8 battler_get_charging_state(u8 battler_idx, u16 attack);
 
+/**
+ * Gets the held item effect and parameter of a battler
+ * @param battler_idx the battler to get the effect item of
+ * @param hold_effect where to place the item effect
+ * @param hold_effect_param where to place the item effect param
+ **/
+void battler_get_hold_item_effect_and_parameter(u8 battler_idx, u8 *hold_effect, u8 *hold_effect_param);
+
+/**
+ * Cancels multi-turn moves (such as rollout) for a battler
+ * @param battler_idx the battler to cancel multiturn moves of
+ **/
+void battler_cancel_multiturn_moves(u8 battler_idx);
 
 #endif /* INCLUDE_C_BATTLE_BATTLER_H_ */

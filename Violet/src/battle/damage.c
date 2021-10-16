@@ -142,6 +142,8 @@ int battle_base_damage_calculate(battler *attacker, battler *defender, u32 move,
         spAttack *= 2;
     if (defenderHoldEffect == HOLD_EFFECT_METAL_POWDER && defender->species == POKEMON_DITTO)
         defense *= 2;
+    if (defenderHoldEffect == HOLD_EFFECT_ASSAULT_VEST)
+        spDefense = (150 * spDefense) / 100;
     if (attackerHoldEffect == HOLD_EFFECT_THICK_CLUB && (attacker->species == POKEMON_TRAGOSSO || attacker->species == POKEMON_KNOGGA))
         attack *= 2;
     if (defender->ability == SPECKSCHICHT && (type == TYPE_FEUER || type == TYPE_EIS))

@@ -852,5 +852,11 @@ extern const u8 gfx_item_muskelbandTiles[];
 extern const u8 gfx_item_muskelbandPal[];
 extern const u8 gfx_item_schlaubrilleTiles[];
 extern const u8 gfx_item_schlaubrillePal[];
+extern const u8 gfx_item_heiss_orbTiles[];
+extern const u8 gfx_item_heiss_orbPal[];
+extern const u8 gfx_item_toxik_orbTiles[];
+extern const u8 gfx_item_toxik_orbPal[];
+extern const u8 gfx_item_offensivwesteTiles[];
+extern const u8 gfx_item_offensivwestePal[];
 
 #endif

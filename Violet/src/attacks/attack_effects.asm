@@ -245,11 +245,11 @@
 
 
 bsc_attack_effect_xd5:
-    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x58
+    setbyte battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT, 0x58
     goto bsc_attack_effect_hit
 
 bsc_attack_effect_xd6:
-    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x59
+    setbyte battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT, 0x59
     goto bsc_attack_effect_hit
 
 bsc_attack_effect_xd7:
@@ -269,18 +269,18 @@ bsc_attack_effect_xd7:
     waitmessage 0x40
     resultmessage
     waitmessage 0x40
-    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0xE6
+    setbyte battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT, 0xE6
     seteffectwithchancetarget
-    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x3
+    setbyte battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT, 0x3
     seteffectwithchancetarget
     faintpokemon 0x0 0x0 0x0
     attack_end ATTACK_END_MODE_ALL first_case=0
     end
 
 bsc_attack_effect_xd8:
-    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x57
+    setbyte battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT, 0x57
     seteffectwithchancetarget
-    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x5A
+    setbyte battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT, 0x5A
     seteffectwithchancetarget
     goto bsc_attack_effect_hit
 
@@ -301,14 +301,14 @@ bsc_attack_effect_xd9:
     waitmessage 0x40
     resultmessage
     waitmessage 0x40
-    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0xE6
+    setbyte battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT, 0xE6
     seteffectwithchancetarget
-    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x3
+    setbyte battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT, 0x3
     seteffectwithchancetarget
     goto bsc_faint_pokemon
 
 bsc_attack_effect_xda:
-    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x4
+    setbyte battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT, 0x4
     goto bsc_effect_and_flinch
 
 bsc_effect_and_flinch:
@@ -329,16 +329,16 @@ bsc_effect_and_flinch:
     resultmessage
     waitmessage 0x40
     seteffectwithchancetarget
-    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x8
+    setbyte battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT, 0x8
     seteffectwithchancetarget
     goto bsc_faint_pokemon
 
 bsc_attack_effect_xdb:
-    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x5
+    setbyte battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT, 0x5
     goto bsc_effect_and_flinch
 
 bsc_attack_effect_fire_fang:
-    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x3
+    setbyte battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT, 0x3
     goto bsc_effect_and_flinch
 
 bsc_attack_effect_xdd:
@@ -385,14 +385,14 @@ bsc_attack_effect_xde:
     waitmessage 0x40
     resultmessage
     waitmessage 0x40
-    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0xD7
+    setbyte battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT, 0xD7
     seteffectwithchancetarget
-    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0xDA
+    setbyte battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT, 0xDA
     seteffectwithchancetarget
     goto bsc_faint_pokemon
 
 bsc_attack_effect_xdf:
-    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x45
+    setbyte battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT, 0x45
     goto bsc_attack_effect_hit
 
 bsc_attack_effect_xe0:
@@ -417,9 +417,9 @@ bsc_attack_effect_xe0_cont:
     waitmessage 0x40
     resultmessage
     waitmessage 0x40
-    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x4F
+    setbyte battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT, 0x4F
     seteffectwithchancetarget
-    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x50
+    setbyte battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT, 0x50
     seteffectwithchancetarget
     faintpokemon 0x0 0x0 0x8000000
     attack_end ATTACK_END_MODE_ALL first_case=0
@@ -457,7 +457,7 @@ bsc_attack_effect_xe1_cont2:
     goto bsc_miss_pp_reduce
 
 bsc_attack_effect_xe2:
-    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x51
+    setbyte battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT, 0x51
     goto bsc_attack_effect_hit
 
 bsc_attack_effect_glyph_match:

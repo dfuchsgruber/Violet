@@ -419,6 +419,9 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_GIFTSCHLEIM] = {.gfx = gfx_item_giftschleimTiles, .pal = gfx_item_giftschleimPal},
     [ITEM_MUSKELBAND] = {.gfx = gfx_item_muskelbandTiles, .pal = gfx_item_muskelbandPal},
     [ITEM_SCHLAUBRILLE] = {.gfx = gfx_item_schlaubrilleTiles, .pal = gfx_item_schlaubrillePal},
+    [ITEM_HEISS_ORB] = {.gfx = gfx_item_heiss_orbTiles, .pal = gfx_item_heiss_orbPal},
+    [ITEM_TOXIK_ORB] = {.gfx = gfx_item_toxik_orbTiles, .pal = gfx_item_toxik_orbPal},
+    [ITEM_OFFENSIVWESTE] = {.gfx = gfx_item_offensivwesteTiles, .pal = gfx_item_offensivwestePal},
 };
 
 const u8 *item_get_resource(u16 item_idx, u8 get_palette) {

@@ -18,6 +18,8 @@
 #include "battle/weather.h"
 #include "prng.h"
 #include "battle/ai.h"
+#include "battle/communication.h"
+#include "constants/battle/battle_effects.h"
 
 extern u8 bsc_life_orb[];
 extern u8 bsc_sun_egg[];
@@ -244,6 +246,7 @@ bool battle_item_restore_hp(u8 battler_idx, u8 move_turn, int hold_effect_parame
 
 extern u8 bsc_heal_hp_by_item_end2[];
 extern u8 bsc_deal_damage_by_item_end2[];
+extern u8 bsc_status_orb[];
 
 int battle_item_effect_after_attack(u8 battler_idx, bool move_turn) {
     u8 hold_effect, hold_effect_param;
@@ -271,6 +274,73 @@ int battle_item_effect_after_attack(u8 battler_idx, bool move_turn) {
                     return 4; // effect hp changed
                 }
             
+            }
+            break;
+        }
+        case HOLD_EFFECT_CAUSES_BURN: {
+            if (battlers[battler_idx].current_hp > 0 && battlers[battler_idx].type1 != TYPE_FEUER && battlers[battler_idx].type2 != TYPE_FEUER &&
+                battlers[battler_idx].ability != AQUAHUELLE && battlers[battler_idx].status1 == 0 && (rnd16() % 100) < hold_effect_param) {
+                attacking_battler = battler_idx;
+                battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = 0x40 | BATTLE_EFFECT_FIRE;
+                    battle_record_item_effect(battler_idx, hold_effect);
+                battlescript_init_and_push_current_callback(bsc_status_orb);
+                return 1; // status changed
+            }
+            break;
+        }
+        case HOLD_EFFECT_CAUSES_POISON: {
+            if (battlers[battler_idx].current_hp > 0 && battlers[battler_idx].type1 != TYPE_GIFT && battlers[battler_idx].type2 != TYPE_GIFT &&
+                battlers[battler_idx].type1 != TYPE_STAHL && battlers[battler_idx].type2 != TYPE_STAHL &&
+                battlers[battler_idx].ability != IMMUNITAET && battlers[battler_idx].status1 == 0 && (rnd16() % 100) < hold_effect_param) {
+                attacking_battler = battler_idx;
+                battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = 0x40 | BATTLE_EFFECT_BAD_POISON;
+                    battle_record_item_effect(battler_idx, hold_effect);
+                battlescript_init_and_push_current_callback(bsc_status_orb);
+                return 1; // status changed
+            }
+            break;
+        }
+        case HOLD_EFFECT_CAUSES_SLEEP: {
+            if (battlers[battler_idx].current_hp > 0 && battlers[battler_idx].ability != INSOMNIA &&
+                battlers[battler_idx].ability != MUNTERKEIT && battlers[battler_idx].status1 == 0 && (rnd16() % 100) < hold_effect_param) {
+                // Check if there is an uproar and if so, if the battler is affected by it
+                bool is_uproar = false;
+                for (active_battler = 0; active_battler < battler_cnt; active_battler++)
+                    if (battlers[active_battler].status2 & STATUS2_UPROARED)
+                        is_uproar = true;
+                if (is_uproar && battlers[battler_idx].ability != LAERMSCHUTZ)
+                    break;
+                attacking_battler = battler_idx;
+                battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = 0x40 | BATTLE_EFFECT_SLEEP;
+                    battle_record_item_effect(battler_idx, hold_effect);
+                battlescript_init_and_push_current_callback(bsc_status_orb);
+                return 1; // status changed
+            }
+            break;
+        }
+        case HOLD_EFFECT_CAUSES_PARALYSIS: {
+            if (battlers[battler_idx].current_hp > 0 && battlers[battler_idx].ability != FLEXIBILITAET &&
+                battlers[battler_idx].status1 == 0 && (rnd16() % 100) < hold_effect_param) {
+                attacking_battler = battler_idx;
+                battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = 0x40 | BATTLE_EFFECT_PARALYSIS;
+                    battle_record_item_effect(battler_idx, hold_effect);
+                battlescript_init_and_push_current_callback(bsc_status_orb);
+                return 1; // status changed
+            }
+            break;
+        }
+        case HOLD_EFFECT_CAUSES_FREEZE: {
+            if (battlers[battler_idx].current_hp > 0 && battlers[battler_idx].ability != MAGMAPANZER &&
+                battlers[battler_idx].type1 != TYPE_EIS && battlers[battler_idx].type2 != TYPE_EIS &&
+                battlers[battler_idx].status1 == 0 && (rnd16() % 100) < hold_effect_param) {
+                // Pokémon can't be frozen in the sun
+                if(WEATHER_HAS_EFFECT && (battle_weather & BATTLE_WEATHER_SUN_ANY))
+                    break;
+                attacking_battler = battler_idx;
+                battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = 0x40 | BATTLE_EFFECT_ICE;
+                    battle_record_item_effect(battler_idx, hold_effect);
+                battlescript_init_and_push_current_callback(bsc_status_orb);
+                return 1; // status changed
             }
             break;
         }

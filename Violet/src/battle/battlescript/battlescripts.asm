@@ -132,7 +132,7 @@ battlescript_handicap_arena_encouragement_apply:
     playanimation BANK_USER BATTLE_ANIM_ARENA_ENCOURAGEMENT 0
     printstring 0x1ac
     waitmessage 40
-    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0xF | MOVE_EFFECT_AFFECTS_USER
+    setbyte battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT, 0xF | MOVE_EFFECT_AFFECTS_USER
     seteffectprimary
     return
 

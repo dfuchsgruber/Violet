@@ -103,3 +103,16 @@ bsc_deal_damage_by_item_end2:
 	graphicalhpupdate BANK_USER
 	datahpupdate BANK_USER
 	end2
+
+.global bsc_status_orb
+
+bsc_status_orb:
+    playanimation BANK_USER BATTLE_ANIM_ITEM_EFFECT 0
+    seteffectsecondary
+    end2
+
+.global bsc_attack_disabled_by_assault_vest
+
+bsc_attack_disabled_by_assault_vest:
+    printselectionstring 0x1c7
+	endselectionscript

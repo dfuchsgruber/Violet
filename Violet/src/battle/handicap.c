@@ -15,6 +15,7 @@
 #include "prng.h"
 #include "battle/battle_string.h"
 #include "constants/attacks.h"
+#include "constants/battle/battle_effects.h"
 
 extern u8 battlescript_handicap_extreme_heat[];
 extern u8 battlescript_handicap_floating_rocks[];
@@ -97,7 +98,7 @@ bool battle_handicap_switch_in_effects(u8 battler_idx) {
                         defending_battler = battler_idx; 
                         battle_scripting.battler_idx = battler_idx;
                         BATTLE_STATE2->status_custom_persistent[battler_idx] |= CUSTOM_STATUS_PERSISTENT_HANDICAP_APPLIED; // Prevent looping
-                        battle_communication[BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE] = 0x43;
+                        battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = 0x40 | BATTLE_EFFECT_FIRE;
     	                battlescript_init_and_interrupt_battle(battlescript_handicap_extreme_heat_apply);
                         return true;
                     }

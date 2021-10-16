@@ -141,7 +141,7 @@
 .hword \printstring_string
 .endm
 
-.macro printstring2 printstring2_string
+.macro printselectionstring printstring2_string
 .byte 0x11
 .hword \printstring2_string
 .endm
@@ -156,7 +156,7 @@
 .word \printfromtable_table
 .endm
 
-.macro printfromtable2 printfromtable2_table
+.macro printselectionstringfromtable printfromtable2_table
 .byte 0x14
 .word \printfromtable2_table
 .endm
@@ -442,7 +442,7 @@
 .word \jumpifabilitypresent_address
 .endm
 
-.macro cmd44
+.macro endselectionscript
 .byte 0x44
 .endm
 

@@ -810,3 +810,13 @@ battle_item_restore_hp_at_end_turn_for_type_break:
 
 .org 0x081dddbd
 	.word item_effect_trainer_item_cured_status_battle_string_idxs
+
+.org 0x08017720
+	ldr r3, = battler_check_move_limitations | 1
+	bx r3
+	.pool
+
+.org 0x08017518
+	ldr r0, =battle_player_set_move_selection_battlescript | 1
+	bx r0
+	.pool

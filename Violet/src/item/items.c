@@ -1671,6 +1671,18 @@ static u8 str_item_schlaubrille_description[] = LANGDEP(
 	PSTRING("Item (Tragen), das\nspezielle Attacken verstärkt."),
 	PSTRING("Item to be held that\nboost special moves.")
 );
+static u8 str_item_heiss_orb_description[] = LANGDEP(
+	PSTRING("Item (Tragen), das\nden Träger verbrennt."),
+	PSTRING("Item to be held that\nburns its holder.")
+);
+static u8 str_item_toxik_orb_description[] = LANGDEP(
+	PSTRING("Item (Tragen), das\nden Träger schwer vergiftet."),
+	PSTRING("Item to be held that\nbadly poisons its holder.")
+);
+static u8 str_item_offensivweste_description[] = LANGDEP(
+	PSTRING("Item (Tragen), das\ndie Sp.Vert. erhöht aber,\nStatus-Attacken verbietet."),
+	PSTRING("Item to be held that\nraises Special Defense but\nprohibits status moves.")
+);
 
 
 item items[] = {
@@ -7895,7 +7907,7 @@ item items[] = {
 		.index = ITEM_BEULENHELM, .price = 200,
 		.description = str_item_beulenhelm_description, .pocket = POCKET_ITEMS, .type = 4,
 		//.holding_effect_id = HOLD_EFFECT_BEULENHELM, .holding_effect_param = 6,
-		.holding_effect_id = HOLD_EFFECT_RECOVERS_HP_AT_END_OF_TURN_FOR_TYPE, .holding_effect_param = TYPE_GIFT,
+		.holding_effect_id = HOLD_EFFECT_ASSAULT_VEST, .holding_effect_param = TYPE_GIFT,
 	},
 	[ITEM_EXPERTENGURT] = {
 		.name = LANGDEP(PSTRING("Expertengurt"), PSTRING("Expert Belt")),
@@ -7938,6 +7950,24 @@ item items[] = {
 		.index = ITEM_SCHLAUBRILLE, .price = 200,
 		.description = str_item_schlaubrille_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_BOOST_SPECIAL_MOVES, .holding_effect_param = 10,
+	},
+	[ITEM_HEISS_ORB] = {
+		.name = LANGDEP(PSTRING("Heiß-Orb"), PSTRING("Flame Orb")),
+		.index = ITEM_HEISS_ORB, .price = 200,
+		.description = str_item_heiss_orb_description, .pocket = POCKET_ITEMS, .type = 4,
+		.holding_effect_id = HOLD_EFFECT_CAUSES_BURN, .holding_effect_param = 100,
+	},
+	[ITEM_TOXIK_ORB] = {
+		.name = LANGDEP(PSTRING("Toxik-Orb"), PSTRING("Toxic Orb")),
+		.index = ITEM_TOXIK_ORB, .price = 200,
+		.description = str_item_toxik_orb_description, .pocket = POCKET_ITEMS, .type = 4,
+		.holding_effect_id = HOLD_EFFECT_CAUSES_POISON, .holding_effect_param = 100,
+	},
+	[ITEM_OFFENSIVWESTE] = {
+		.name = LANGDEP(PSTRING("Offensivweste"), PSTRING("Assault Vest")),
+		.index = ITEM_OFFENSIVWESTE, .price = 200,
+		.description = str_item_offensivweste_description, .pocket = POCKET_ITEMS, .type = 4,
+		.holding_effect_id = HOLD_EFFECT_ASSAULT_VEST,
 	},
 };
 
