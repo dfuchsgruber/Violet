@@ -209,3 +209,64 @@ _bxr1:
     ldr r1, =bag_item_selected_give_from_pc | 1
     bx r1
     .pool
+
+
+/** POKEBALLS */
+
+.org 0x80f0a0c
+	.word pokeball_particles_oam_templates
+.org 0x80f0b8c
+	.word pokeball_particles_oam_templates
+.org 0x80f0c90
+	.word pokeball_particles_oam_templates
+.org 0x80f0d94
+	.word pokeball_particles_oam_templates
+.org 0x80f0e98
+	.word pokeball_particles_oam_templates
+.org 0x80f0fcc
+	.word pokeball_particles_oam_templates
+.org 0x80f1124
+	.word pokeball_particles_oam_templates
+.org 0x80f1250
+	.word pokeball_particles_oam_templates
+.org 0x80f13a8
+	.word pokeball_particles_oam_templates
+.org 0x80f04fc
+
+	.word pokeball_particle_animation_idxs
+.org 0x80f0a14
+	.word pokeball_particle_animation_idxs
+.org 0x80f0b90
+	.word pokeball_particle_animation_idxs
+.org 0x80f0c94
+	.word pokeball_particle_animation_idxs
+.org 0x80f0d90
+	.word pokeball_particle_animation_idxs
+.org 0x80f0e9c
+	.word pokeball_particle_animation_idxs
+.org 0x80f0fc8
+	.word pokeball_particle_animation_idxs
+.org 0x80f1120
+	.word pokeball_particle_animation_idxs
+.org 0x80f1258
+	.word pokeball_particle_animation_idxs
+.org 0x80f13a4
+	.word pokeball_particle_animation_idxs
+
+.org 0x80f08f4
+	.word pokeball_particles_initializers
+
+.org 0x80f150c
+	.word pokeball_open_fade_colors
+.org 0x80f1558
+	.word pokeball_open_fade_colors
+.org 0x80f15bc
+	.word pokeball_open_fade_colors
+.org 0x80f1698
+	.word pokeball_open_fade_colors
+
+
+.org 0x080ef7b4
+    ldr r1, =item_idx_to_pokeball_idx | 1
+    bx r1
+    .pool

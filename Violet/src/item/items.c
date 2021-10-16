@@ -1691,6 +1691,10 @@ static u8 str_item_klammerband_description[] = LANGDEP(
 	PSTRING("Item (Tragen), das\nden Schaden von Klammer-\nAttacken verstärkt."),
 	PSTRING("Item to be held that\nincreases the damage of\nbinding attacks.")
 );
+static u8 str_item_lotus_ball_description[] = LANGDEP(
+	PSTRING("Ein seltener Ball, der bei\ngefangenen Pokémon eine versteckte\nFähigkeit erwecken kann."),
+	PSTRING("A rare Ball that can awaken\nhidden abilities in Pokémon\nit catches.")
+);
 
 item items[] = {
 	{
@@ -1706,9 +1710,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_MEISTERBALL
 		LANGDEP(PSTRING("Meisterball"), PSTRING("Master Ball")),
@@ -1722,9 +1726,9 @@ item items[] = {
 		POCKET_POKEBALLS, //pocket
 		0, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_HYPERBALL
 		LANGDEP(PSTRING("Hyperball"), PSTRING("Ultra Ball")),
@@ -1738,9 +1742,9 @@ item items[] = {
 		POCKET_POKEBALLS, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SUPERBALL
 		LANGDEP(PSTRING("Superball"), PSTRING("Great Ball")),
@@ -1754,9 +1758,9 @@ item items[] = {
 		POCKET_POKEBALLS, //pocket
 		2, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_POKEBALL
 		LANGDEP(PSTRING("Pokéball"), PSTRING("Poké Ball")),
@@ -1770,9 +1774,9 @@ item items[] = {
 		POCKET_POKEBALLS, //pocket
 		3, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SAFARIBALL
 		LANGDEP(PSTRING("Safariball"), PSTRING("Safari Ball")),
@@ -1786,9 +1790,9 @@ item items[] = {
 		POCKET_POKEBALLS, //pocket
 		4, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_NETZBALL
 		LANGDEP(PSTRING("Netzball"), PSTRING("Net Ball")),
@@ -1802,9 +1806,9 @@ item items[] = {
 		POCKET_POKEBALLS, //pocket
 		5, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TAUCHBALL
 		LANGDEP(PSTRING("Tauchball"), PSTRING("Dive Ball")),
@@ -1818,9 +1822,9 @@ item items[] = {
 		POCKET_POKEBALLS, //pocket
 		6, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_NESTBALL
 		LANGDEP(PSTRING("Nestball"), PSTRING("Nest Ball")),
@@ -1834,9 +1838,9 @@ item items[] = {
 		POCKET_POKEBALLS, //pocket
 		7, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_WIEDERBALL
 		LANGDEP(PSTRING("Wiederball"), PSTRING("Repeat Ball")),
@@ -1850,9 +1854,9 @@ item items[] = {
 		POCKET_POKEBALLS, //pocket
 		8, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TIMERBALL
 		LANGDEP(PSTRING("Timerball"), PSTRING("Timer Ball")),
@@ -1866,9 +1870,9 @@ item items[] = {
 		POCKET_POKEBALLS, //pocket
 		9, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_LUXUSBALL
 		LANGDEP(PSTRING("Luxusball"), PSTRING("Luxury Ball")),
@@ -1882,9 +1886,9 @@ item items[] = {
 		POCKET_POKEBALLS, //pocket
 		10, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_PREMIERBALL
 		LANGDEP(PSTRING("Premierball"), PSTRING("Premier Ball")),
@@ -1898,9 +1902,9 @@ item items[] = {
 		POCKET_POKEBALLS, //pocket
 		11, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TRANK
 		LANGDEP(PSTRING("Trank"), PSTRING("Potion")),
@@ -1914,9 +1918,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_GEGENGIFT
 		LANGDEP(PSTRING("Gegengift"), PSTRING("Antidote")),
@@ -1930,9 +1934,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_FEUERHEILER
 		LANGDEP(PSTRING("Feuerheiler"), PSTRING("Burn Heal")),
@@ -1946,9 +1950,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_EISHEILER
 		LANGDEP(PSTRING("Eisheiler"), PSTRING("Ice Heal")),
@@ -1962,9 +1966,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_AUFWECKER
 		LANGDEP(PSTRING("Aufwecker"), PSTRING("Awakening")),
@@ -1978,9 +1982,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_PARA_HEILER
 		LANGDEP(PSTRING("Para-Heiler"), PSTRING("Parlyz Heal")),
@@ -1994,9 +1998,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TOP_GENESUNG
 		LANGDEP(PSTRING("Top-Genesung"), PSTRING("Full Restore")),
@@ -2010,9 +2014,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TOP_TRANK
 		LANGDEP(PSTRING("Top-Trank"), PSTRING("Max Potion")),
@@ -2026,9 +2030,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_HYPERTRANK
 		LANGDEP(PSTRING("Hypertrank"), PSTRING("Hyper Potion")),
@@ -2042,9 +2046,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SUPERTRANK
 		LANGDEP(PSTRING("Supertrank"), PSTRING("Super Potion")),
@@ -2058,9 +2062,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_HYPERHEILER
 		LANGDEP(PSTRING("Hyperheiler"), PSTRING("Full Heal")),
@@ -2074,9 +2078,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_BELEBER
 		LANGDEP(PSTRING("Beleber"), PSTRING("Revive")),
@@ -2090,9 +2094,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TOP_BELEBER
 		LANGDEP(PSTRING("Top-Beleber"), PSTRING("Max Revive")),
@@ -2106,9 +2110,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TAFELWASSER
 		LANGDEP(PSTRING("C.O.-Mix"), PSTRING("C.O.-Mix")),
@@ -2122,9 +2126,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SPRUDEL
 		LANGDEP(PSTRING("C-Saft"), PSTRING("C-Juice")),
@@ -2138,9 +2142,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_LIMONADE
 		LANGDEP(PSTRING("C-Serum"), PSTRING("C-Serum")),
@@ -2154,9 +2158,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_KUHMUH_MILCH
 		LANGDEP(PSTRING("Kuhmuh-Milch"), PSTRING("Moomoo Milk")),
@@ -2170,9 +2174,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ENERGIESTAUB
 		LANGDEP(PSTRING("Energiestaub"), PSTRING("Energypowder")),
@@ -2186,9 +2190,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_KRAFTWURZEL
 		LANGDEP(PSTRING("Kraftwurzel"), PSTRING("Energy Root")),
@@ -2202,9 +2206,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_HEILPUDER
 		LANGDEP(PSTRING("Heilpuder"), PSTRING("Heal Powder")),
@@ -2218,9 +2222,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_VITALKRAUT
 		LANGDEP(PSTRING("Vitalkraut"), PSTRING("Revival Herb")),
@@ -2234,9 +2238,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_AETHER
 		LANGDEP(PSTRING("Äther"), PSTRING("Ether")),
@@ -2250,9 +2254,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a17e9, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20e1, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TOP_AETHER
 		LANGDEP(PSTRING("Top-Äther"), PSTRING("Max Ether")),
@@ -2266,9 +2270,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a17e9, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20e1, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ELIXIER
 		LANGDEP(PSTRING("Elixier"), PSTRING("Elixir")),
@@ -2282,9 +2286,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a17e9, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20e1, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TOP_ELIXIER
 		LANGDEP(PSTRING("Top-Elixier"), PSTRING("Max Elixir")),
@@ -2298,9 +2302,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a17e9, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20e1, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_LAVAKEKS
 		LANGDEP(PSTRING("Lavakeks"), PSTRING("Lava Cookie")),
@@ -2314,9 +2318,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_BLAUE_FLOETE
 		LANGDEP(PSTRING("Blaue Flöte"), PSTRING("Blue Flute")),
@@ -2330,9 +2334,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_GELBE_FLOETE
 		LANGDEP(PSTRING("Gelbe Flöte"), PSTRING("Yellow Flute")),
@@ -2346,9 +2350,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ROTE_FLOETE
 		LANGDEP(PSTRING("Rote Flöte"), PSTRING("Red Flute")),
@@ -2362,9 +2366,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SCHW_FLOETE
 		LANGDEP(PSTRING("Schw. Flöte"), PSTRING("Black Flute")),
@@ -2378,9 +2382,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a1b81, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_WEISSE_FLOETE
 		LANGDEP(PSTRING("Weisse Flöte"), PSTRING("White Flute")),
@@ -2394,9 +2398,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a1b81, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_BEERENSAFT
 		LANGDEP(PSTRING("Beerensaft"), PSTRING("Berry Juice")),
@@ -2410,9 +2414,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ZAUBERASCHE
 		LANGDEP(PSTRING("Zauberasche"), PSTRING("Sacred Ash")),
@@ -2426,9 +2430,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a1859, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_KUESTENSALZ
 		LANGDEP(PSTRING("Küstensalz"), PSTRING("Shoal Salt")),
@@ -2442,9 +2446,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_KUESTENSCHALE
 		LANGDEP(PSTRING("Küstenschale"), PSTRING("Shoal Shell")),
@@ -2458,9 +2462,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_PURPURSTUECK
 		LANGDEP(PSTRING("Purpurstück"), PSTRING("Red Shard")),
@@ -2474,9 +2478,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_INDIGOSTUECK
 		LANGDEP(PSTRING("Indigostück"), PSTRING("Blue Shard")),
@@ -2490,9 +2494,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_GELBSTUECK
 		LANGDEP(PSTRING("Gelbstück"), PSTRING("Yellow Shard")),
@@ -2506,9 +2510,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_GRUENSTUECK
 		LANGDEP(PSTRING("Grünstück"), PSTRING("Green Shard")),
@@ -2522,9 +2526,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_MAGMAISIERER
 		LANGDEP(PSTRING("Magmaisierer"), PSTRING("????????")),
@@ -2538,9 +2542,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_STROMISIERER
 		LANGDEP(PSTRING("Stromisierer"), PSTRING("????????")),
@@ -2554,9 +2558,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SCHOENSCHUPPE
 		LANGDEP(PSTRING("Schönschuppe"), PSTRING("????????")),
@@ -2570,9 +2574,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_DUBIOSDISK
 		LANGDEP(PSTRING("Dubiosdisc"), PSTRING("????????")),
@@ -2586,9 +2590,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_DUESTERUMHANG
 		LANGDEP(PSTRING("Düsterumhang"), PSTRING("????????")),
@@ -2602,9 +2606,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SCHUETZER
 		LANGDEP(PSTRING("Schützer"), PSTRING("????????")),
@@ -2618,9 +2622,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_LEBEN_ORB
 		LANGDEP(PSTRING("Leben-Orb"), PSTRING("????????")),
@@ -2634,9 +2638,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_EVOLITH
 		LANGDEP(PSTRING("Evolith"), PSTRING("????????")),
@@ -2650,9 +2654,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SCHARFZAHN
 		LANGDEP(PSTRING("Scharfzahn"), PSTRING("????????")),
@@ -2666,9 +2670,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ITEM_3D
 		LANGDEP(PSTRING("Ovaler Stein"), PSTRING("Oval Rock")),
@@ -2682,9 +2686,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ABRA_PUPPE
 		LANGDEP(PSTRING("Abra-Puppe"), PSTRING("Abra Doll")),
@@ -2698,9 +2702,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		2, //type
 		item_field_effect_abra_doll, //
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_KP_PLUS
 		LANGDEP(PSTRING("KP-Plus"), PSTRING("HP Up")),
@@ -2714,9 +2718,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_PROTEIN
 		LANGDEP(PSTRING("Protein"), PSTRING("Protein")),
@@ -2730,9 +2734,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_EISEN
 		LANGDEP(PSTRING("Eisen"), PSTRING("Iron")),
@@ -2746,9 +2750,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_CARBON
 		LANGDEP(PSTRING("Carbon"), PSTRING("Carbos")),
@@ -2762,9 +2766,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_KALZIUM
 		LANGDEP(PSTRING("Kalzium"), PSTRING("Calcium")),
@@ -2778,9 +2782,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SONDERBONBON
 		LANGDEP(PSTRING("Sonderbonbon"), PSTRING("Rare Candy")),
@@ -2794,9 +2798,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a1821, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_AP_PLUS
 		LANGDEP(PSTRING("AP-Plus"), PSTRING("PP Up")),
@@ -2810,9 +2814,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a1805, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ZINK
 		LANGDEP(PSTRING("Zink"), PSTRING("Zinc")),
@@ -2826,9 +2830,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_AP_TOP
 		LANGDEP(PSTRING("AP-Top"), PSTRING("PP Max")),
@@ -2842,9 +2846,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a1805, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_GOLDBONBON
 		LANGDEP(PSTRING("Goldbonbon"), PSTRING("Gold Candy")),
@@ -2858,9 +2862,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a1821, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_MEGABLOCK
 		LANGDEP(PSTRING("Megablock"), PSTRING("Guard Spec.")),
@@ -2874,9 +2878,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		(void(*)(u8))0x80a1f69, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ANGRIFFPLUS
 		LANGDEP(PSTRING("Angriffplus"), PSTRING("Dire Hit")),
@@ -2890,9 +2894,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		(void(*)(u8))0x80a1f69, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_X_ANGRIFF
 		LANGDEP(PSTRING("X-Angriff"), PSTRING("X Attack")),
@@ -2906,9 +2910,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		(void(*)(u8))0x80a1f69, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_X_ABWEHR
 		LANGDEP(PSTRING("X-Abwehr"), PSTRING("X Defend")),
@@ -2922,9 +2926,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		(void(*)(u8))0x80a1f69, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_X_TEMPO
 		LANGDEP(PSTRING("X-Tempo"), PSTRING("X Speed")),
@@ -2938,9 +2942,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		(void(*)(u8))0x80a1f69, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_X_TREFFER
 		LANGDEP(PSTRING("X-Treffer"), PSTRING("X Accuracy")),
@@ -2954,9 +2958,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		(void(*)(u8))0x80a1f69, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_X_SPEZIAL
 		LANGDEP(PSTRING("X-Spezial"), PSTRING("X Special")),
@@ -2970,9 +2974,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		(void(*)(u8))0x80a1f69, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_POKEPUPPE
 		LANGDEP(PSTRING("Poképuppe"), PSTRING("Poké Doll")),
@@ -2986,9 +2990,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		(void(*)(u8))0x80a20fd, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ENECO_RUTE
 		LANGDEP(PSTRING("Eneco-Rute"), PSTRING("Fluffy Tail")),
@@ -3002,9 +3006,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		(void(*)(u8))0x80a20fd, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SUESSBONBON
 		LANGDEP(PSTRING("Süßbonbon"), PSTRING("Sweet Candy")),
@@ -3018,9 +3022,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SUPERSCHUTZ
 		LANGDEP(PSTRING("Superschutz"), PSTRING("Super Repel")),
@@ -3034,9 +3038,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a1a85, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TOP_SCHUTZ
 		LANGDEP(PSTRING("Top-Schutz"), PSTRING("Max Repel")),
@@ -3050,9 +3054,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a1a85, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_FLUCHTSEIL
 		LANGDEP(PSTRING("Fluchtseil"), PSTRING("Escape Rope")),
@@ -3066,9 +3070,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		2, //type
 		(void(*)(u8))0x80a1c99, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SCHUTZ
 		LANGDEP(PSTRING("Schutz"), PSTRING("Repel")),
@@ -3082,9 +3086,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a1a85, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		// ITEM_KRAFTSTAUB
 		LANGDEP(PSTRING("Wunderstaub"), PSTRING("Wonder Powder")),
@@ -3098,9 +3102,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_NULLSAFT
 		LANGDEP(PSTRING("Nullsaft"), PSTRING("Null Syrup")),
@@ -3114,9 +3118,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		item_field_null_syrup, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ITEM_59
 		LANGDEP(PSTRING("Apfel"), PSTRING("Apfel")),
@@ -3130,9 +3134,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ITEM_5A
 		LANGDEP(PSTRING("Goldapfel"), PSTRING("Goldapfel")),
@@ -3146,9 +3150,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ITEM_5B
 		LANGDEP(PSTRING("Bitterkraut"), PSTRING("Bitter Herb")),
@@ -3162,9 +3166,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_RIESENAPFEL
 		LANGDEP(PSTRING("Riesenapfel"), PSTRING("Big Apple")),
@@ -3178,9 +3182,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SONNENSTEIN
 		LANGDEP(PSTRING("Sonnenstein"), PSTRING("Sun Stone")),
@@ -3194,9 +3198,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_MONDSTEIN
 		LANGDEP(PSTRING("Mondstein"), PSTRING("Moon Stone")),
@@ -3210,9 +3214,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_FEUERSTEIN
 		LANGDEP(PSTRING("Feuerstein"), PSTRING("Fire Stone")),
@@ -3226,9 +3230,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_DONNERSTEIN
 		LANGDEP(PSTRING("Donnerstein"), PSTRING("Thunderstone")),
@@ -3242,9 +3246,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_WASSERSTEIN
 		LANGDEP(PSTRING("Wasserstein"), PSTRING("Water Stone")),
@@ -3258,9 +3262,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_BLATTSTEIN
 		LANGDEP(PSTRING("Blattstein"), PSTRING("Leaf Stone")),
@@ -3274,9 +3278,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_LINKKABEL
 		LANGDEP(PSTRING("Linkkabel"), PSTRING("????????")),
@@ -3290,9 +3294,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_FINSTERSTEIN
 		LANGDEP(PSTRING("Finsterstein"), PSTRING("????????")),
@@ -3306,9 +3310,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_LEUCHTSTEIN
 		LANGDEP(PSTRING("Leuchtstein"), PSTRING("????????")),
@@ -3322,9 +3326,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_FUNKELSTEIN
 		LANGDEP(PSTRING("Funkelstein"), PSTRING("????????")),
@@ -3338,9 +3342,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_MINIPILZ
 		LANGDEP(PSTRING("Minipilz"), PSTRING("Tinymushroom")),
@@ -3354,9 +3358,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_RIESENPILZ
 		LANGDEP(PSTRING("Riesenpilz"), PSTRING("Big Mushroom")),
@@ -3370,9 +3374,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SPV_ORB_N
 		LANGDEP(PSTRING("Wirrminze"), PSTRING("Weird Mint")),
@@ -3386,9 +3390,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x9008d01, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_PERLE
 		LANGDEP(PSTRING("Perle"), PSTRING("Pearl")),
@@ -3402,9 +3406,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_RIESENPERLE
 		LANGDEP(PSTRING("Riesenperle"), PSTRING("Big Pearl")),
@@ -3418,9 +3422,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_STERNENSTAUB
 		LANGDEP(PSTRING("Sternenstaub"), PSTRING("Stardust")),
@@ -3434,9 +3438,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_STERNENSTUECK
 		LANGDEP(PSTRING("Sternenstück"), PSTRING("Star Piece")),
@@ -3450,9 +3454,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_NUGGET
 		LANGDEP(PSTRING("Nugget"), PSTRING("Nugget")),
@@ -3466,9 +3470,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_HERZSCHUPPE
 		LANGDEP(PSTRING("Herzschuppe"), PSTRING("Heart Scale")),
@@ -3482,9 +3486,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ANGR_ORB_P
 		LANGDEP(PSTRING("Wutminze"), PSTRING("Aggro Mint")),
@@ -3498,9 +3502,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x9008d01, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ANGR_ORB_N
 		LANGDEP(PSTRING("Ruheminze"), PSTRING("Calm Mint")),
@@ -3514,9 +3518,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x9008d01, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_VERT_ORB_P
 		LANGDEP(PSTRING("Eisenminze"), PSTRING("Iron Mint")),
@@ -3530,9 +3534,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x9008d01, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_VERT_ORB_N
 		LANGDEP(PSTRING("Fragilminze"), PSTRING("Fragile Mint")),
@@ -3546,9 +3550,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x9008d01, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_INIT_ORB_P
 		LANGDEP(PSTRING("Mobilminze"), PSTRING("Mobile Mint")),
@@ -3562,9 +3566,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x9008d01, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_INIT_ORB_N
 		LANGDEP(PSTRING("Schwerminze"), PSTRING("Heavy Mint")),
@@ -3578,9 +3582,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x9008d01, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SPA_ORB_P
 		LANGDEP(PSTRING("Fokusminze"), PSTRING("Focus Mint")),
@@ -3594,9 +3598,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x9008d01, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SPA_ORB_N
 		LANGDEP(PSTRING("Achtlosminze"), PSTRING("Careless Mint")),
@@ -3610,9 +3614,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x9008d01, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SPV_ORB_P
 		LANGDEP(PSTRING("Gedankenminze"), PSTRING("Mind Mint")),
@@ -3626,9 +3630,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x9008d01, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_79
 		LANGDEP(PSTRING("Zigzachsbrief"), PSTRING("Orange Mail")),
@@ -3642,9 +3646,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_HAFENBRIEF
 		LANGDEP(PSTRING("Hafenbrief"), PSTRING("Harbor Mail")),
@@ -3658,9 +3662,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_GLITZERBRIEF
 		LANGDEP(PSTRING("Glitzerbrief"), PSTRING("Glitter Mail")),
@@ -3674,9 +3678,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_EILBRIEF
 		LANGDEP(PSTRING("Eilbrief"), PSTRING("Mech Mail")),
@@ -3690,9 +3694,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_WALDBRIEF
 		LANGDEP(PSTRING("Waldbrief"), PSTRING("Wood Mail")),
@@ -3706,9 +3710,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_WELLENBRIEF
 		LANGDEP(PSTRING("Wellenbrief"), PSTRING("Wave Mail")),
@@ -3722,9 +3726,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_PERLENBRIEF
 		LANGDEP(PSTRING("Perlenbrief"), PSTRING("Bead Mail")),
@@ -3738,9 +3742,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_DUNKELBRIEF
 		LANGDEP(PSTRING("Dunkelbrief"), PSTRING("Shadow Mail")),
@@ -3754,9 +3758,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TROPENBRIEF
 		LANGDEP(PSTRING("Tropenbrief"), PSTRING("Tropic Mail")),
@@ -3770,9 +3774,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TRAUMBRIEF
 		LANGDEP(PSTRING("Traumbrief"), PSTRING("Dream Mail")),
@@ -3786,9 +3790,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_EDELBRIEF
 		LANGDEP(PSTRING("Edelbrief"), PSTRING("Fab Mail")),
@@ -3802,9 +3806,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_RETROBRIEF
 		LANGDEP(PSTRING("Retrobrief"), PSTRING("Retro Mail")),
@@ -3818,9 +3822,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_AMRENABEERE
 		LANGDEP(PSTRING("Amrenabeere"), PSTRING("Cheri Berry")),
@@ -3834,9 +3838,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_MARONBEERE
 		LANGDEP(PSTRING("Maronbeere"), PSTRING("Chesto Berry")),
@@ -3850,9 +3854,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_PIRSIFBEERE
 		LANGDEP(PSTRING("Pirsifbeere"), PSTRING("Pecha Berry")),
@@ -3866,9 +3870,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_FRAGIABEERE
 		LANGDEP(PSTRING("Fragiabeere"), PSTRING("Rawst Berry")),
@@ -3882,9 +3886,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_WILBIRBEERE
 		LANGDEP(PSTRING("Wilbirbeere"), PSTRING("Aspear Berry")),
@@ -3898,9 +3902,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_JONAGOBEERE
 		LANGDEP(PSTRING("Jonagobeere"), PSTRING("Leppa Berry")),
@@ -3914,9 +3918,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		1, //type
 		(void(*)(u8))0x80a17e9, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20e1, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SINELBEERE
 		LANGDEP(PSTRING("Sinelbeere"), PSTRING("Oran Berry")),
@@ -3930,9 +3934,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_PERSIMBEERE
 		LANGDEP(PSTRING("Persimbeere"), PSTRING("Persim Berry")),
@@ -3946,9 +3950,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_PRUNUSBEERE
 		LANGDEP(PSTRING("Prunusbeere"), PSTRING("Lum Berry")),
@@ -3962,9 +3966,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TSITRUBEERE
 		LANGDEP(PSTRING("Tsitrubeere"), PSTRING("Sitrus Berry")),
@@ -3978,9 +3982,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a20a9, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_GIEFEBEERE
 		LANGDEP(PSTRING("Giefebeere"), PSTRING("Figy Berry")),
@@ -3994,9 +3998,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_WIKIBEERE
 		LANGDEP(PSTRING("Wikibeere"), PSTRING("Wiki Berry")),
@@ -4010,9 +4014,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_MAGOBEERE
 		LANGDEP(PSTRING("Magobeere"), PSTRING("Mago Berry")),
@@ -4026,9 +4030,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_GAUVEBEERE
 		LANGDEP(PSTRING("Gauvebeere"), PSTRING("Aguav Berry")),
@@ -4042,9 +4046,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_YAPABEERE
 		LANGDEP(PSTRING("Yapabeere"), PSTRING("Iapapa Berry")),
@@ -4058,9 +4062,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_HIMMIHBEERE
 		LANGDEP(PSTRING("Himmihbeere"), PSTRING("Razz Berry")),
@@ -4074,9 +4078,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_MORBBEERE
 		LANGDEP(PSTRING("Morbbeere"), PSTRING("Bluk Berry")),
@@ -4090,9 +4094,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_NANABBEERE
 		LANGDEP(PSTRING("Nanabbeere"), PSTRING("Nanab Berry")),
@@ -4106,9 +4110,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_NIRBEBEERE
 		LANGDEP(PSTRING("Nirbebeere"), PSTRING("Wepear Berry")),
@@ -4122,9 +4126,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SANANABEERE
 		LANGDEP(PSTRING("Sananabeere"), PSTRING("Pinap Berry")),
@@ -4138,9 +4142,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_GRANABEERE
 		LANGDEP(PSTRING("Granabeere"), PSTRING("Pomeg Berry")),
@@ -4154,9 +4158,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SETANGBEERE
 		LANGDEP(PSTRING("Setangbeere"), PSTRING("Kelpsy Berry")),
@@ -4170,9 +4174,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_QUALOTBEERE
 		LANGDEP(PSTRING("Qualotbeere"), PSTRING("Qualot Berry")),
@@ -4186,9 +4190,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_HONMELBEERE
 		LANGDEP(PSTRING("Honmelbeere"), PSTRING("Hondew Berry")),
@@ -4202,9 +4206,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_LABRUSBEERE
 		LANGDEP(PSTRING("Labrusbeere"), PSTRING("Grepa Berry")),
@@ -4218,9 +4222,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TAMOTBEERE
 		LANGDEP(PSTRING("Tamotbeere"), PSTRING("Tamato Berry")),
@@ -4234,9 +4238,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SAIMBEERE
 		LANGDEP(PSTRING("Saimbeere"), PSTRING("Cornn Berry")),
@@ -4250,9 +4254,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_MAGOSTBEERE
 		LANGDEP(PSTRING("Magostbeere"), PSTRING("Magost Berry")),
@@ -4266,9 +4270,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_RABUTABEERE
 		LANGDEP(PSTRING("Rabutabeere"), PSTRING("Rabuta Berry")),
@@ -4282,9 +4286,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TRONZIBEERE
 		LANGDEP(PSTRING("Tronzibeere"), PSTRING("Nomel Berry")),
@@ -4298,9 +4302,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_KIWANBEERE
 		LANGDEP(PSTRING("Kiwanbeere"), PSTRING("Spelon Berry")),
@@ -4314,9 +4318,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_PALLMBEERE
 		LANGDEP(PSTRING("Pallmbeere"), PSTRING("Pamtre Berry")),
@@ -4330,9 +4334,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_WASMELBEERE
 		LANGDEP(PSTRING("Wasmelbeere"), PSTRING("Watmel Berry")),
@@ -4346,9 +4350,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_DURINBEERE
 		LANGDEP(PSTRING("Durinbeere"), PSTRING("Durin Berry")),
@@ -4362,9 +4366,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_MYRTILBEERE
 		LANGDEP(PSTRING("Myrtilbeere"), PSTRING("Belue Berry")),
@@ -4378,9 +4382,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_LYDZIBEERE
 		LANGDEP(PSTRING("Lydzibeere"), PSTRING("Liechi Berry")),
@@ -4394,9 +4398,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_LINGANBEERE
 		LANGDEP(PSTRING("Linganbeere"), PSTRING("Ganlon Berry")),
@@ -4410,9 +4414,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SALKABEERE
 		LANGDEP(PSTRING("Salkabeere"), PSTRING("Salac Berry")),
@@ -4426,9 +4430,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TAHAYBEERE
 		LANGDEP(PSTRING("Tahaybeere"), PSTRING("Petaya Berry")),
@@ -4442,9 +4446,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_APIKOBEERE
 		LANGDEP(PSTRING("Apikobeere"), PSTRING("Apicot Berry")),
@@ -4458,9 +4462,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_LANSATBEERE
 		LANGDEP(PSTRING("Lansatbeere"), PSTRING("Lansat Berry")),
@@ -4474,9 +4478,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_KRAMBOBEERE
 		LANGDEP(PSTRING("Krambobeere"), PSTRING("Starf Berry")),
@@ -4490,9 +4494,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ENIGMABEERE
 		LANGDEP(PSTRING("Enigmabeere"), PSTRING("Enigma Berry")),
@@ -4506,9 +4510,9 @@ item items[] = {
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2155, //field_usage
-		(void(*)(u8))0x1, //battle_usage1
+		1, // battle_effect
 		(void(*)(u8))0x80a2281, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ITEM_B0
 		LANGDEP(PSTRING("????????"), PSTRING("????????")),
@@ -4522,9 +4526,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_WAHLGLAS
 		LANGDEP(PSTRING("Wahlglas"), PSTRING("????????")),
@@ -4538,9 +4542,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_WAHLSCHAL
 		LANGDEP(PSTRING("Wahlschal"), PSTRING("????????")),
@@ -4554,9 +4558,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_BLENDPUDER
 		LANGDEP(PSTRING("Blendpuder"), PSTRING("Brightpowder")),
@@ -4570,9 +4574,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SCHLOHKRAUT
 		LANGDEP(PSTRING("Schlohkraut"), PSTRING("White Herb")),
@@ -4586,9 +4590,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_MACHOBAND
 		LANGDEP(PSTRING("Machoband"), PSTRING("Macho Brace")),
@@ -4602,9 +4606,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_EP_TEILER
 		LANGDEP(PSTRING("EP-Teiler"), PSTRING("Exp. Share")),
@@ -4618,9 +4622,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_FLINKKLAUE
 		LANGDEP(PSTRING("Flinkklaue"), PSTRING("Quick Claw")),
@@ -4634,9 +4638,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SANFTGLOCKE
 		LANGDEP(PSTRING("Sanftglocke"), PSTRING("Soothe Bell")),
@@ -4650,9 +4654,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_MENTALKRAUT
 		LANGDEP(PSTRING("Mentalkraut"), PSTRING("Mental Herb")),
@@ -4666,9 +4670,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_WAHLBAND
 		LANGDEP(PSTRING("Wahlband"), PSTRING("Choice Band")),
@@ -4682,9 +4686,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_KING_STEIN
 		LANGDEP(PSTRING("King-Stein"), PSTRING("King\'s Rock")),
@@ -4698,9 +4702,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SILBERSTAUB
 		LANGDEP(PSTRING("Silberstaub"), PSTRING("Silverpowder")),
@@ -4714,9 +4718,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_MUENZAMULETT
 		LANGDEP(PSTRING("Münzamulett"), PSTRING("Amulet Coin")),
@@ -4730,9 +4734,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SCHUTZBAND
 		LANGDEP(PSTRING("Schutzband"), PSTRING("Cleanse Tag")),
@@ -4746,9 +4750,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SEELENTAU
 		LANGDEP(PSTRING("Seelentau"), PSTRING("Soul Dew")),
@@ -4762,9 +4766,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ABYSSZAHN
 		LANGDEP(PSTRING("Abysszahn"), PSTRING("Deepseatooth")),
@@ -4778,9 +4782,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ABYSSPLATTE
 		LANGDEP(PSTRING("Abyssplatte"), PSTRING("Deepseascale")),
@@ -4794,9 +4798,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_RAUCHBALL
 		LANGDEP(PSTRING("Rauchball"), PSTRING("Smoke Ball")),
@@ -4810,9 +4814,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_EWIGSTEIN
 		LANGDEP(PSTRING("Ewigstein"), PSTRING("Everstone")),
@@ -4826,9 +4830,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_FOKUS_BAND
 		LANGDEP(PSTRING("Fokus-Band"), PSTRING("Focus Band")),
@@ -4842,9 +4846,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_GLUECKS_EI
 		LANGDEP(PSTRING("Glücks-Ei"), PSTRING("Lucky Egg")),
@@ -4858,9 +4862,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SCOPE_LINSE
 		LANGDEP(PSTRING("Scope-Linse"), PSTRING("Scope Lens")),
@@ -4874,9 +4878,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_METALLMANTEL
 		LANGDEP(PSTRING("Metallmantel"), PSTRING("Metal Coat")),
@@ -4890,9 +4894,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_UEBERRESTE
 		LANGDEP(PSTRING("Überreste"), PSTRING("Leftovers")),
@@ -4906,9 +4910,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_DRACHENHAUT
 		LANGDEP(PSTRING("Drachenhaut"), PSTRING("Dragon Scale")),
@@ -4922,9 +4926,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_KUGELBLITZ
 		LANGDEP(PSTRING("Kugelblitz"), PSTRING("Light Ball")),
@@ -4938,9 +4942,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_PUDERSAND
 		LANGDEP(PSTRING("Pudersand"), PSTRING("Soft Sand")),
@@ -4954,9 +4958,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_GRANITSTEIN
 		LANGDEP(PSTRING("Granitstein"), PSTRING("Hard Stone")),
@@ -4970,9 +4974,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_WUNDERSAAT
 		LANGDEP(PSTRING("Wundersaat"), PSTRING("Miracle Seed")),
@@ -4986,9 +4990,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SCHATTENGLAS
 		LANGDEP(PSTRING("Schattenglas"), PSTRING("Blackglasses")),
@@ -5002,9 +5006,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SCHWARZGURT
 		LANGDEP(PSTRING("Schwarzgurt"), PSTRING("Black Belt")),
@@ -5018,9 +5022,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_MAGNET
 		LANGDEP(PSTRING("Magnet"), PSTRING("Magnet")),
@@ -5034,9 +5038,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ZAUBERWASSER
 		LANGDEP(PSTRING("Zauberwasser"), PSTRING("Mystic Water")),
@@ -5050,9 +5054,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_HACKATTACK
 		LANGDEP(PSTRING("Hackattack"), PSTRING("Sharp Beak")),
@@ -5066,9 +5070,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_GIFTSTICH
 		LANGDEP(PSTRING("Giftstich"), PSTRING("Poison Barb")),
@@ -5082,9 +5086,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_EWIGES_EIS
 		LANGDEP(PSTRING("Ewiges Eis"), PSTRING("Nevermeltice")),
@@ -5098,9 +5102,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_BANNSTICKER
 		LANGDEP(PSTRING("Bannsticker"), PSTRING("Spell Tag")),
@@ -5114,9 +5118,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_KRUEMMLOEFFEL
 		LANGDEP(PSTRING("Krümmlöffel"), PSTRING("Twistedspoon")),
@@ -5130,9 +5134,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_HOLZKOHLE
 		LANGDEP(PSTRING("Holzkohle"), PSTRING("Charcoal")),
@@ -5146,9 +5150,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_DRACHENZAHN
 		LANGDEP(PSTRING("Drachenzahn"), PSTRING("Dragon Fang")),
@@ -5162,9 +5166,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SEIDENSCHAL
 		LANGDEP(PSTRING("Seidenschal"), PSTRING("Silk Scarf")),
@@ -5178,9 +5182,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_UP_GRADE
 		LANGDEP(PSTRING("Up-Grade"), PSTRING("Up-Grade")),
@@ -5194,9 +5198,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SEEGESANG
 		LANGDEP(PSTRING("Seegesang"), PSTRING("Shell Bell")),
@@ -5210,9 +5214,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SEERAUCH
 		LANGDEP(PSTRING("Seerauch"), PSTRING("Sea Incense")),
@@ -5226,9 +5230,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_LAXRAUCH
 		LANGDEP(PSTRING("Laxrauch"), PSTRING("Lax Incense")),
@@ -5242,9 +5246,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_LUCKY_PUNCH
 		LANGDEP(PSTRING("Lucky Punch"), PSTRING("Lucky Punch")),
@@ -5258,9 +5262,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_METALLSTAUB
 		LANGDEP(PSTRING("Metallstaub"), PSTRING("Metal Powder")),
@@ -5274,9 +5278,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_KAMPFKNOCHEN
 		LANGDEP(PSTRING("Kampfknochen"), PSTRING("Thick Club")),
@@ -5290,9 +5294,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_LAUCHSTANGE
 		LANGDEP(PSTRING("Lauchstange"), PSTRING("Stick")),
@@ -5306,9 +5310,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_BISAFLORNIT
 		LANGDEP(PSTRING("Bisaflornit"), PSTRING("????????")),
@@ -5322,9 +5326,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_GLURAKNIT
 		LANGDEP(PSTRING("Gluraknit"), PSTRING("????????")),
@@ -5338,9 +5342,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TURTOKNIT
 		LANGDEP(PSTRING("Turtoknit"), PSTRING("????????")),
@@ -5354,9 +5358,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TERRASORNIT
 		LANGDEP(PSTRING("Terrasornit"), PSTRING("????????")),
@@ -5370,9 +5374,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ZERBERNIT
 		LANGDEP(PSTRING("Zerbernit"), PSTRING("????????")),
@@ -5386,9 +5390,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SKULLYDRANIT
 		LANGDEP(PSTRING("Skullydranit"), PSTRING("????????")),
@@ -5402,9 +5406,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_AQUANANIT
 		LANGDEP(PSTRING("Aquananit"), PSTRING("????????")),
@@ -5418,9 +5422,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_FLAMARANIT
 		LANGDEP(PSTRING("Flamaranit"), PSTRING("????????")),
@@ -5434,9 +5438,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_altarianit
 		LANGDEP(PSTRING("Altarianit"), PSTRING("????????")),
@@ -5450,9 +5454,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_AMPHAROSNIT
 		LANGDEP(PSTRING("Ampharosnit"), PSTRING("????????")),
@@ -5466,9 +5470,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_banettenit
 		LANGDEP(PSTRING("Banetteonit"), PSTRING("????????")),
@@ -5482,9 +5486,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_BIBORNIT
 		LANGDEP(PSTRING("Bibornit"), PSTRING("????????")),
@@ -5498,9 +5502,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ITEM_EE
 		LANGDEP(PSTRING("Magmaherz"), PSTRING("Magma Soul")),
@@ -5514,9 +5518,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ITEM_EF
 		LANGDEP(PSTRING("Geowaznit"), PSTRING("Golemnite")),
@@ -5530,9 +5534,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TROPIUSNIT
 		LANGDEP(PSTRING("Tropiusnit"), PSTRING("Tropiusnite")),
@@ -5546,9 +5550,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_OCTILLERYNIT
 		LANGDEP(PSTRING("Octanit"), PSTRING("Octanite")),
@@ -5562,9 +5566,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ITEM_F2
 		LANGDEP(PSTRING("Rasaffnit"), PSTRING("Primenite")),
@@ -5578,9 +5582,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ITEM_F3
 		LANGDEP(PSTRING("Sandamernit"), PSTRING("Sandnite")),
@@ -5594,9 +5598,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ITEM_F4
 		LANGDEP(PSTRING("Lahmusnit"), PSTRING("Slowbronite")),
@@ -5610,9 +5614,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket 
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ITEM_F5
 		LANGDEP(PSTRING("Maskeregenit"), PSTRING("Masquerainite")),
@@ -5626,9 +5630,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ARIADOSNIT
 		LANGDEP(PSTRING("Ariadosnit"), PSTRING("Ariadosnite")),
@@ -5642,9 +5646,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ITEM_F7
 		LANGDEP(PSTRING("????????"), PSTRING("????????")),
@@ -5658,9 +5662,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ITEM_F8
 		LANGDEP(PSTRING("Lahmrauch"), PSTRING("Full Incense")),
@@ -5674,9 +5678,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ITEM_F9
 		LANGDEP(PSTRING("Eisbrocken"), PSTRING("Ice Rock")),
@@ -5690,9 +5694,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ITEM_FA
 		LANGDEP(PSTRING("Nassbrocken"), PSTRING("Damp Rock")),
@@ -5706,9 +5710,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ITEM_FB
 		LANGDEP(PSTRING("Glattbrocken"), PSTRING("Smooth Rock")),
@@ -5722,9 +5726,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ITEM_FC
 		LANGDEP(PSTRING("Heißbrocken"), PSTRING("Heat Rock")),
@@ -5738,9 +5742,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ITEM_FD
 		LANGDEP(PSTRING("Lichtlehm"), PSTRING("Light Clay")),
@@ -5754,9 +5758,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ROTER_SCHAL
 		LANGDEP(PSTRING("Steinrauch"), PSTRING("Rock Incense")),
@@ -5770,9 +5774,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_BLAUER_SCHAL
 		LANGDEP(PSTRING("Scheuchrauch"), PSTRING("Pure Incense")),
@@ -5786,9 +5790,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ROSA_SCHAL
 		LANGDEP(PSTRING("Glücksrauch"), PSTRING("Luck Incense")),
@@ -5802,9 +5806,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_KOEDER
 		LANGDEP(PSTRING("Köder"), PSTRING("Bait")),
@@ -5818,9 +5822,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_GOLDENER_KOEDER
 		LANGDEP(PSTRING("Goldköder"), PSTRING("Golden Bait")),
@@ -5834,9 +5838,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//
 		LANGDEP(PSTRING("Leuchtköder"), PSTRING("Shining Bait")),
@@ -5850,9 +5854,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_MUENZKORB
 		LANGDEP(PSTRING("Münzkorb"), PSTRING("Coin Case")),
@@ -5866,9 +5870,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a154d, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_DETEKTOR
 		LANGDEP(PSTRING("Detektor"), PSTRING("Itemfinder")),
@@ -5882,9 +5886,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		2, //type
 		(void(*)(u8))0x80a1525, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ANGEL
 		LANGDEP(PSTRING("Angel"), PSTRING("Old Rod")),
@@ -5898,9 +5902,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		2, //type
 		(void(*)(u8))0x80a1425, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_PROFIANGEL
 		LANGDEP(PSTRING("Profiangel"), PSTRING("Good Rod")),
@@ -5914,9 +5918,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		2, //type
 		(void(*)(u8))0x80a1425, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x1, //field_28
+		1 // secondary_idx
 	},{
 		//ITEM_SUPERANGEL
 		LANGDEP(PSTRING("Superangel"), PSTRING("Super Rod")),
@@ -5930,9 +5934,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		2, //type
 		(void(*)(u8))0x80a1425, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x2, //field_28
+		2 // secondary_idx
 	},{
 		//ITEM_BOOTSTICKET
 		LANGDEP(PSTRING("Bootsticket"), PSTRING("S.S. Ticket")),
@@ -5946,9 +5950,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_WETTB_KARTE
 		LANGDEP(PSTRING("Wettb.-Karte"), PSTRING("Contest Pass")),
@@ -5962,9 +5966,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_WOLKENGARN
 		LANGDEP(PSTRING("Wolkengarn"), PSTRING("Cloudthread")),
@@ -5978,9 +5982,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_WAILMERKANNE
 		LANGDEP(PSTRING("Wailmerkanne"), PSTRING("Wailmer Pail")),
@@ -5994,9 +5998,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		// ITEM_GLUECKSMUENZE
 		LANGDEP(PSTRING("Glücksmünze"), PSTRING("Lucky Coin")),
@@ -6010,9 +6014,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ASCHETASCHE
 		LANGDEP(PSTRING("Aschetasche"), PSTRING("Soot Sack")),
@@ -6026,9 +6030,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))item_ashbag_field, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_GEISTERSCHLUESSEL
 		LANGDEP(PSTRING("Geist-Schl."), PSTRING("Ghost Key")),
@@ -6042,9 +6046,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_KUNSTRAD
 		LANGDEP(PSTRING("Kunstrad"), PSTRING("Acro Bike")),
@@ -6058,9 +6062,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		2, //type
 		(void(*)(u8))0x80a1319, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_BOX
 		LANGDEP(PSTRING("Box"), PSTRING("Pokéblock Case")),
@@ -6074,9 +6078,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_BRIEF
 		LANGDEP(PSTRING("Brief"), PSTRING("Letter")),
@@ -6090,9 +6094,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_AEON_TICKET
 		LANGDEP(PSTRING("Äon-Ticket"), PSTRING("Eon Ticket")),
@@ -6106,9 +6110,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SPIRITKERN
 		LANGDEP(PSTRING("Spiritkern"), PSTRING("Red Orb")),
@@ -6122,9 +6126,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_BLAUES_ZAHNRAD
 		LANGDEP(PSTRING("Bl.-Schlüssel"), PSTRING("Blue Key")),
@@ -6138,9 +6142,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ROTES_ZAHNRAD
 		LANGDEP(PSTRING("R.-Schlüssel"), PSTRING("Red Key")),
@@ -6154,9 +6158,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_GELBES_ZAHNRAD
 		LANGDEP(PSTRING("Ge.-Schlüssel"), PSTRING("Yellow Key")),
@@ -6170,9 +6174,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_GRUENES_ZAHNRAD
 		LANGDEP(PSTRING("Gr.-Schlüssel"), PSTRING("Green Key")),
@@ -6186,9 +6190,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		// ITEM_GOLDSCHLUESSEL
 		LANGDEP(PSTRING("Goldschlüssel"), PSTRING("Golden Key")),
@@ -6202,9 +6206,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ZELLENSCHUESSEL
 		LANGDEP(PSTRING("Zellenschl."), PSTRING("Cell Keys")),
@@ -6218,9 +6222,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_K4_SCHLUESSEL
 		LANGDEP(PSTRING("K4-Schlüssel"), PSTRING("RM. 4 Key")),
@@ -6234,9 +6238,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_K6_SCHLUESSEL
 		LANGDEP(PSTRING("K6-Schlüssel"), PSTRING("RM. 6 Key")),
@@ -6250,9 +6254,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_L_SCHLUESSEL
 		LANGDEP(PSTRING("L.-Schlüssel"), PSTRING("Storage Key")),
@@ -6266,9 +6270,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_WURZELFOSSIL
 		LANGDEP(PSTRING("Wurzelfossil"), PSTRING("Root Fossil")),
@@ -6282,9 +6286,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_KLAUENFOSSIL
 		LANGDEP(PSTRING("Klauenfossil"), PSTRING("Claw Fossil")),
@@ -6298,9 +6302,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_DEVON_SCOPE
 		LANGDEP(PSTRING("Devon-Scope"), PSTRING("Devon Scope")),
@@ -6314,9 +6318,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM01
 		LANGDEP(PSTRING("TM01"), PSTRING("TM01")),
@@ -6330,9 +6334,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM02
 		LANGDEP(PSTRING("TM02"), PSTRING("TM02")),
@@ -6346,9 +6350,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM03
 		LANGDEP(PSTRING("TM03"), PSTRING("TM03")),
@@ -6362,9 +6366,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM04
 		LANGDEP(PSTRING("TM04"), PSTRING("TM04")),
@@ -6378,9 +6382,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM05
 		LANGDEP(PSTRING("TM05"), PSTRING("TM05")),
@@ -6394,9 +6398,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM06
 		LANGDEP(PSTRING("TM06"), PSTRING("TM06")),
@@ -6410,9 +6414,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM07
 		LANGDEP(PSTRING("TM07"), PSTRING("TM07")),
@@ -6426,9 +6430,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM08
 		LANGDEP(PSTRING("TM08"), PSTRING("TM08")),
@@ -6442,9 +6446,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM09
 		LANGDEP(PSTRING("TM09"), PSTRING("TM09")),
@@ -6458,9 +6462,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM10
 		LANGDEP(PSTRING("TM10"), PSTRING("TM10")),
@@ -6474,9 +6478,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM11
 		LANGDEP(PSTRING("TM11"), PSTRING("TM11")),
@@ -6490,9 +6494,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM12
 		LANGDEP(PSTRING("TM12"), PSTRING("TM12")),
@@ -6506,9 +6510,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM13
 		LANGDEP(PSTRING("TM13"), PSTRING("TM13")),
@@ -6522,9 +6526,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM14
 		LANGDEP(PSTRING("TM14"), PSTRING("TM14")),
@@ -6538,9 +6542,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM15
 		LANGDEP(PSTRING("TM15"), PSTRING("TM15")),
@@ -6554,9 +6558,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM16
 		LANGDEP(PSTRING("TM16"), PSTRING("TM16")),
@@ -6570,9 +6574,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM17
 		LANGDEP(PSTRING("TM17"), PSTRING("TM17")),
@@ -6586,9 +6590,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM18
 		LANGDEP(PSTRING("TM18"), PSTRING("TM18")),
@@ -6602,9 +6606,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM19
 		LANGDEP(PSTRING("TM19"), PSTRING("TM19")),
@@ -6618,9 +6622,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM20
 		LANGDEP(PSTRING("TM20"), PSTRING("TM20")),
@@ -6634,9 +6638,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM21
 		LANGDEP(PSTRING("TM21"), PSTRING("TM21")),
@@ -6650,9 +6654,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM22
 		LANGDEP(PSTRING("TM22"), PSTRING("TM22")),
@@ -6666,9 +6670,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM23
 		LANGDEP(PSTRING("TM23"), PSTRING("TM23")),
@@ -6682,9 +6686,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM24
 		LANGDEP(PSTRING("TM24"), PSTRING("TM24")),
@@ -6698,9 +6702,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM25
 		LANGDEP(PSTRING("TM25"), PSTRING("TM25")),
@@ -6714,9 +6718,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM26
 		LANGDEP(PSTRING("TM26"), PSTRING("TM26")),
@@ -6730,9 +6734,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM27
 		LANGDEP(PSTRING("TM27"), PSTRING("TM27")),
@@ -6746,9 +6750,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM28
 		LANGDEP(PSTRING("TM28"), PSTRING("TM28")),
@@ -6762,9 +6766,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM29
 		LANGDEP(PSTRING("TM29"), PSTRING("TM29")),
@@ -6778,9 +6782,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM30
 		LANGDEP(PSTRING("TM30"), PSTRING("TM30")),
@@ -6794,9 +6798,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM31
 		LANGDEP(PSTRING("TM31"), PSTRING("TM31")),
@@ -6810,9 +6814,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM32
 		LANGDEP(PSTRING("TM32"), PSTRING("TM32")),
@@ -6826,9 +6830,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM33
 		LANGDEP(PSTRING("TM33"), PSTRING("TM33")),
@@ -6842,9 +6846,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM34
 		LANGDEP(PSTRING("TM34"), PSTRING("TM34")),
@@ -6858,9 +6862,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM35
 		LANGDEP(PSTRING("TM35"), PSTRING("TM35")),
@@ -6874,9 +6878,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM36
 		LANGDEP(PSTRING("TM36"), PSTRING("TM36")),
@@ -6890,9 +6894,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM37
 		LANGDEP(PSTRING("TM37"), PSTRING("TM37")),
@@ -6906,9 +6910,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM38
 		LANGDEP(PSTRING("TM38"), PSTRING("TM38")),
@@ -6922,9 +6926,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM39
 		LANGDEP(PSTRING("TM39"), PSTRING("TM39")),
@@ -6938,9 +6942,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM40
 		LANGDEP(PSTRING("TM40"), PSTRING("TM40")),
@@ -6954,9 +6958,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM41
 		LANGDEP(PSTRING("TM41"), PSTRING("TM41")),
@@ -6970,9 +6974,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM42
 		LANGDEP(PSTRING("TM42"), PSTRING("TM42")),
@@ -6986,9 +6990,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM43
 		LANGDEP(PSTRING("TM43"), PSTRING("TM43")),
@@ -7002,9 +7006,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM44
 		LANGDEP(PSTRING("TM44"), PSTRING("TM44")),
@@ -7018,9 +7022,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM45
 		LANGDEP(PSTRING("TM45"), PSTRING("TM45")),
@@ -7034,9 +7038,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM46
 		LANGDEP(PSTRING("TM46"), PSTRING("TM46")),
@@ -7050,9 +7054,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM47
 		LANGDEP(PSTRING("TM47"), PSTRING("TM47")),
@@ -7066,9 +7070,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM48
 		LANGDEP(PSTRING("TM48"), PSTRING("TM48")),
@@ -7082,9 +7086,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM49
 		LANGDEP(PSTRING("TM49"), PSTRING("TM49")),
@@ -7098,9 +7102,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TM50
 		LANGDEP(PSTRING("TM50"), PSTRING("TM50")),
@@ -7114,9 +7118,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_VM01
 		LANGDEP(PSTRING("VM01"), PSTRING("HM01")),
@@ -7130,9 +7134,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_VM02
 		LANGDEP(PSTRING("VM02"), PSTRING("HM02")),
@@ -7146,9 +7150,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_VM03
 		LANGDEP(PSTRING("VM03"), PSTRING("HM03")),
@@ -7162,9 +7166,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_VM04
 		LANGDEP(PSTRING("VM04"), PSTRING("HM04")),
@@ -7178,9 +7182,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_VM05
 		LANGDEP(PSTRING("VM05"), PSTRING("HM05")),
@@ -7194,9 +7198,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_VM06
 		LANGDEP(PSTRING("VM06"), PSTRING("HM06")),
@@ -7210,9 +7214,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_VM07
 		LANGDEP(PSTRING("VM07"), PSTRING("HM07")),
@@ -7226,9 +7230,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_VM08
 		LANGDEP(PSTRING("VM08"), PSTRING("HM08")),
@@ -7242,9 +7246,9 @@ item items[] = {
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SCHWARZPULVER
 		LANGDEP(PSTRING("Schwarzpulver"), PSTRING("Gun Powder")),
@@ -7258,9 +7262,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		// ITEM_VIERBLATT
 		LANGDEP(PSTRING("Vierblatt"), PSTRING("Four Leaf")),
@@ -7274,9 +7278,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_EICHS_PAKET
 		LANGDEP(PSTRING("Zugangskarte"), PSTRING("Oak\'s Parcel")),
@@ -7290,9 +7294,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_POKEFLOETE
 		LANGDEP(PSTRING("Pok▶löte"), PSTRING("Poké Flute")),
@@ -7306,9 +7310,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a1659, //field_usage
-		(void(*)(u8))0x2, //battle_usage1
+		2, // battle_effect
 		(void(*)(u8))0x80a1f51, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM__OEFFNER
 		LANGDEP(PSTRING("?-öffner"), PSTRING("Secret Key")),
@@ -7322,9 +7326,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_RAD_COUPON
 		LANGDEP(PSTRING("Alte Karte"), PSTRING("Old Map")),
@@ -7338,9 +7342,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_PKMCORDER
 		LANGDEP(PSTRING("Pkmcorder"), PSTRING("Gold Teeth")),
@@ -7354,9 +7358,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x0, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_ALTBERNSTEIN
 		LANGDEP(PSTRING("Altbernstein"), PSTRING("Old Amber")),
@@ -7370,9 +7374,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TUEROEFFNER
 		LANGDEP(PSTRING("Türöffner"), PSTRING("Card Key")),
@@ -7386,9 +7390,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_LIFTOEFFNER
 		LANGDEP(PSTRING("Liftöffner"), PSTRING("Lift Key")),
@@ -7402,9 +7406,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_HELIXFOSSIL
 		LANGDEP(PSTRING("Helixfossil"), PSTRING("Helix Fossil")),
@@ -7418,9 +7422,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_DOMFOSSIL
 		LANGDEP(PSTRING("Domfossil"), PSTRING("Dome Fossil")),
@@ -7434,9 +7438,9 @@ item items[] = {
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SILPH_SCOPE
 		LANGDEP(PSTRING("Silph Scope"), PSTRING("Silph Scope")),
@@ -7450,9 +7454,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_FAHRRAD
 		LANGDEP(PSTRING("Wolke"), PSTRING("Bicycle")),
@@ -7466,9 +7470,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		2, //type
 		(void(*)(u8))0x80a1319, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_KARTE
 		LANGDEP(PSTRING("Karte"), PSTRING("Town Map")),
@@ -7482,9 +7486,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a1d4d, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_KAMPFFAHNDER
 		LANGDEP(PSTRING("Kampffahnder"), PSTRING("VS Seeker")),
@@ -7498,9 +7502,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		2, //type
 		(void(*)(u8))0x80a1e89, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_RUHMESDATEI
 		LANGDEP(PSTRING("Ruhmesdatei"), PSTRING("Fame Checker")),
@@ -7514,9 +7518,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a1de5, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_VMTM_BOX
 		LANGDEP(PSTRING("Vm/Tm-Box"), PSTRING("TM Case")),
@@ -7530,9 +7534,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a1875, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_BEERENTUETE
 		LANGDEP(PSTRING("Beerentüte"), PSTRING("Berry Pouch")),
@@ -7546,9 +7550,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a190d, //field_usage
-		(void(*)(u8))0x3, //battle_usage1
+		3, // battle_effect
 		(void(*)(u8))0x80a19a5, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_LEHRKANAL
 		LANGDEP(PSTRING("Lehrkanal"), PSTRING("Teachy TV")),
@@ -7562,9 +7566,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		2, //type
 		(void(*)(u8))0x80a19d9, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_TRI_PASS
 		LANGDEP(PSTRING("Tri-Pass"), PSTRING("Tri-Pass")),
@@ -7578,9 +7582,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_BUNT_PASS
 		LANGDEP(PSTRING("Bunt-Pass"), PSTRING("Rainbow Pass")),
@@ -7594,9 +7598,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_MEGA_AMULETT
 		LANGDEP(PSTRING("Mega-Amulett"), PSTRING("Mega-Locket")),
@@ -7610,9 +7614,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0xe, //battle_usage1
+		0,
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_GEHEIMTICKET
 		LANGDEP(PSTRING("Geheimticket"), PSTRING("Mysticticket")),
@@ -7626,9 +7630,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_AURORATICKET
 		LANGDEP(PSTRING("Auroraticket"), PSTRING("Auroraticket")),
@@ -7642,9 +7646,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_PUDERDOESCHEN
 		LANGDEP(PSTRING("Puderdöschen"), PSTRING("Powder Jar")),
@@ -7658,9 +7662,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a15d5, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_RUBIN
 		LANGDEP(PSTRING("Rubin"), PSTRING("Ruby")),
@@ -7674,9 +7678,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},{
 		//ITEM_SAPHIR
 		LANGDEP(PSTRING("Saphir"), PSTRING("Sapphire")),
@@ -7690,9 +7694,9 @@ item items[] = {
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
+		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		0, // secondary_idx
 	},
 	[ITEM_NORMALJUWEL] = {
 		.name = LANGDEP(PSTRING("Normaljuwel"), PSTRING("Normalgem")),
@@ -7913,8 +7917,7 @@ item items[] = {
 		.name = LANGDEP(PSTRING("Beulenhelm"), PSTRING("Rocky Helmet")),
 		.index = ITEM_BEULENHELM, .price = 200,
 		.description = str_item_beulenhelm_description, .pocket = POCKET_ITEMS, .type = 4,
-		//.holding_effect_id = HOLD_EFFECT_BEULENHELM, .holding_effect_param = 6,
-		.holding_effect_id = HOLD_EFFECT_BINDING_BAND, .holding_effect_param = TYPE_GIFT,
+		.holding_effect_id = HOLD_EFFECT_BEULENHELM, .holding_effect_param = 6,
 	},
 	[ITEM_EXPERTENGURT] = {
 		.name = LANGDEP(PSTRING("Expertengurt"), PSTRING("Expert Belt")),
@@ -7988,6 +7991,12 @@ item items[] = {
 		.description = str_item_klammerband_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_BINDING_BAND,
 	},
+	[ITEM_LOTUS_BALL] = {
+		.name = LANGDEP(PSTRING("Lotus-Ball"), PSTRING("Lotus Ball")),
+		.index = ITEM_LOTUS_BALL, .price = 1000,
+		.description = str_item_lotus_ball_description, .pocket = POCKET_POKEBALLS, .type = 0,
+		.battle_effect = 2, .battle_usage = item_pokeball_battle,
+	}
 };
 
 u16 item_idx_saniztize(u16 item_idx) {

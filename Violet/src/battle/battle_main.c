@@ -30,6 +30,7 @@
 #include "vars.h"
 #include "dns.h"
 #include "constants/item_hold_effects.h"
+#include "item/item.h"
 
 void battle_intro_draw_pokemon_or_trainer_sprite_draw_second_trainer() {
     if ((battle_flags & BATTLE_TWO_TRAINERS) && battler_get_position(active_battler) == BATTLE_POSITION_OPPONENT_RIGHT) {
@@ -77,8 +78,13 @@ void battle_action_use_item() {
     battler_remove_fury_cutter_destiny_bond_grudge(attacking_battler);
     bsc_last_used_item = UNALIGNED_16_GET(battle_general_buffers1[attacking_battler] + 1);
     dprintf("Used item is %d\n", bsc_last_used_item);
-    if (bsc_last_used_item <= ITEM_PREMIERBALL) {
-        bsc_offset = battlescripts_pokeball[bsc_last_used_item];
+    if (item_get_pocket(bsc_last_used_item) == POCKET_POKEBALLS) {
+        // All pokeballs but safari ball are handled similarly, so in the interest of allowing balls with high idx
+        // We call the pokeball function for all non-safari balls
+        if (bsc_last_used_item == ITEM_SAFARIBALL)
+            bsc_offset = battlescripts_pokeball[ITEM_SAFARIBALL];
+        else
+            bsc_offset = battlescripts_pokeball[ITEM_POKEBALL];
     } else if (bsc_last_used_item == ITEM_POKEPUPPE || bsc_last_used_item == ITEM_ENECO_RUTE) {
         bsc_offset = battlescripts_run_by_item[0];
     } else if (bsc_last_used_item == ITEM_POKEFLOETE) {

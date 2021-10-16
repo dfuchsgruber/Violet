@@ -424,6 +424,7 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_OFFENSIVWESTE] = {.gfx = gfx_item_offensivwesteTiles, .pal = gfx_item_offensivwestePal},
     [ITEM_SCHWAECHENSCHUTZ] = {.gfx = gfx_item_schwaechenschutzTiles, .pal = gfx_item_schwaechenschutzPal},
     [ITEM_KLAMMERBAND] = {.gfx = gfx_item_klammerbandTiles, .pal = gfx_item_klammerbandPal},
+    [ITEM_LOTUS_BALL] = {.gfx = gfx_item_lotus_ballTiles, .pal = gfx_item_lotus_ballPal},
 };
 
 const u8 *item_get_resource(u16 item_idx, u8 get_palette) {

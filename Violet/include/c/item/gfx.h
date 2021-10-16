@@ -862,5 +862,7 @@ extern const u8 gfx_item_schwaechenschutzTiles[];
 extern const u8 gfx_item_schwaechenschutzPal[];
 extern const u8 gfx_item_klammerbandTiles[];
 extern const u8 gfx_item_klammerbandPal[];
+extern const u8 gfx_item_lotus_ballTiles[];
+extern const u8 gfx_item_lotus_ballPal[];
 
 #endif

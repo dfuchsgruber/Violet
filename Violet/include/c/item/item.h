@@ -26,9 +26,9 @@ typedef struct {
     u8 pocket;
     u8 type;
     void (*field_usage)(u8);
-    void (*battle_usage_1)(u8);
-    void (*battle_usage_2)(u8);
-    void (*field_28)(u8);
+    u8 battle_effect;
+    void (*battle_usage)(u8);
+    u8 secondary_idx;
 } item;
 
 item items[ITEM_CNT];

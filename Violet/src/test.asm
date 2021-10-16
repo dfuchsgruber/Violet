@@ -37,7 +37,7 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
-	additem ITEM_BEULENHELM 1
+	additem ITEM_LOTUS_BALL 1
 	end
 	setvar 0x8004 20
 	special SPECIAL_CUTSCENE_SHOW
