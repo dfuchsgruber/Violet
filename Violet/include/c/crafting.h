@@ -45,6 +45,7 @@ typedef struct {
     crafting_recipe *recipies[CRAFTING_TYPE_CNT]; // A list of all available recipies
     u8 num_crafting_recipies[CRAFTING_TYPE_CNT]; // How many of each category are available
     list_menu_item *list_menu_items[CRAFTING_TYPE_CNT]; // List menus for each category
+    u8 **list_menu_item_strings[CRAFTING_TYPE_CNT];
     u8 recipe_selection_list_menu_callback;
     list_menu_template recipe_selection_list_menu_template;
     u16 list_menu_cursor_positions[CRAFTING_TYPE_CNT]; // Remember where the cursor was for each category

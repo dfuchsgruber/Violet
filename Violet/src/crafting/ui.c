@@ -75,7 +75,7 @@ static tboxdata ui_tboxes[] = {
     [TBOX_DESCRIPTION] = {.bg_id = 1, .x = 5, .y = 14, .w = 24, .h = 6, .pal = 15, .start_tile = 1 + (2 * 13) + (5 * 2)},
     [TBOX_INGREDIENTS] = {.bg_id = 1, .x = 16, .y = 2, .w = 14, .h = 3 * MAX_NUM_INGREDIENTS, .pal = 14,
         .start_tile = 1 + (2 * 13) + (5 * 2) + (6 * 24)},
-    [TBOX_LIST_MENU] = {.bg_id = 1, .x = 1, .y = 3, .w = 11, .h = 11, .pal = 14, 
+    [TBOX_LIST_MENU] = {.bg_id = 1, .x = 0, .y = 3, .w = 12, .h = 11, .pal = 14, 
         .start_tile = 1 + (2 * 13) + (5 * 2) + (6 * 24) + (14 * 3 * MAX_NUM_INGREDIENTS)},
     [TBOX_CRAFTING_CNT] = {.bg_id = 0, .x = 24, .y = 9, .w = 5, .h = 4, .pal = 14, .start_tile = 1 + 26 * 4,},
     [TBOX_POSSESION] = {.bg_id = 0, .x = 1, .y = 11, .w = 8, .h = 2, .pal = 14, .start_tile = 1 + 26 * 4 + 5 * 4,},
@@ -243,13 +243,43 @@ static void crafting_ui_setup_recipies_and_list_menu_items() {
         size_t recipe_cnt = crafting_get_num_recipies_by_type(type);
         CRAFTING_UI_STATE->recipies[type] = malloc_and_clear(sizeof(crafting_recipe) * recipe_cnt);
         CRAFTING_UI_STATE->list_menu_items[type] = malloc_and_clear(sizeof(list_menu_item) * (recipe_cnt + 1));
+        CRAFTING_UI_STATE->list_menu_item_strings[type] = malloc_and_clear(sizeof(u8*) * recipe_cnt);
+
         dprintf("Allocated recipies @%x, list_menu_items @%x\n", CRAFTING_UI_STATE->recipies[type], CRAFTING_UI_STATE->list_menu_items[type]);
 
         for (u8 idx = 0; idx < recipe_cnt; idx++) {
             if (recipies[idx].flag == 0 || recipies[idx].flag == 0xFFFF || checkflag(recipies[idx].flag)) {
                 u8 recipe_idx = CRAFTING_UI_STATE->num_crafting_recipies[type]++;
                 CRAFTING_UI_STATE->recipies[type][recipe_idx] = recipies[idx];
-                CRAFTING_UI_STATE->list_menu_items[type][recipe_idx].text = item_get_name(CRAFTING_UI_STATE->recipies[type][recipe_idx].item);
+                u8 *line_str = malloc(32);
+                CRAFTING_UI_STATE->list_menu_item_strings[type][recipe_idx] = line_str;
+                #define STYLE_NAME_COUNT
+                #ifdef STYLE_COUNT_NAME
+                    u8 str_fontsize_small_x[] = PSTRING("FONT_SIZE_SMALL");
+                    u8 str_times[] = PSTRING("× ");
+                    line_str[0] = 0xFF;
+                    line_str = strcat(line_str, str_fontsize_small_x);
+                    itoa(line_str, CRAFTING_UI_STATE->recipies[type][recipe_idx].count, ITOA_NO_PADDING, 1);
+                    strcat(line_str, str_times);
+                    strcat(line_str, item_get_name(CRAFTING_UI_STATE->recipies[type][recipe_idx].item));
+                #else
+                    u8 font_size_small[] = PSTRING("FONT_SIZE_SMALL");
+                    strcpy(line_str, font_size_small);
+                    strcat(line_str, item_get_name(CRAFTING_UI_STATE->recipies[type][recipe_idx].item));
+                    u8 str_clear_to[] = PSTRING("SKIP\x42×");
+                    line_str = strcat(line_str, str_clear_to);
+                    itoa(line_str, CRAFTING_UI_STATE->recipies[type][recipe_idx].count, ITOA_NO_PADDING, 1);
+                    // u8 pos = 0;
+                    // while(line_str[pos] != 0xFF) pos++;
+                    // for(;pos < 13; pos++) line_str[pos] = 0;
+                    // line_str[pos++] = 0xFF;
+                    // u8 str_small[] = PSTRING("x");
+                    // line_str = strcat(line_str, str_small);
+                    // itoa(line_str, CRAFTING_UI_STATE->recipies[type][recipe_idx].count, ITOA_NO_PADDING, 1);
+                    // u8 str_times[] = PSTRING("x");
+                    // strcat(line_str, str_times);
+                #endif
+                CRAFTING_UI_STATE->list_menu_items[type][recipe_idx].text = CRAFTING_UI_STATE->list_menu_item_strings[type][recipe_idx];
                 CRAFTING_UI_STATE->list_menu_items[type][recipe_idx].idx = (recipe_idx + 1);
             }
         }
@@ -270,7 +300,7 @@ static list_menu_template recipe_selection_list_menu_template = {
     .cursor_moved_callback = list_menu_generic_cursor_callback,
     .item_print_callback = list_menu_print_callback_null,
     .item_cnt = 255, .max_items_showed = 5, .tbox_idx = TBOX_LIST_MENU,
-    .header_x = 0, .item_x = 8, .cursor_x = 0, .up_text_y = 2, .cursor_pal = 2, .fill_value = 0,
+    .header_x = 0, .item_x = 12, .cursor_x = 4, .up_text_y = 2, .cursor_pal = 2, .fill_value = 0,
     .cursor_shadow_color = 3, .letter_spacing = 1, .item_vertical_padding = 2, .scroll_multiple = 0,
     .font = 2
 };
@@ -572,8 +602,8 @@ static u8 str_ask_crafting[] = LANGDEP(
 ); 
 
 static u8 str_ask_crafting_cnt[] = LANGDEP(
-    PSTRING("Wie oft willst du\nBUFFER_1 herstellen?"),
-    PSTRING("How many times do you want to\ncraft BUFFER_1?")
+    PSTRING("Wie oft willst du das Rezept\nfür BUFFER_1 anwenden?"),
+    PSTRING("How many times do you want to\nuse the recipe for BUFFER_1?")
 );
 
 static void crafting_ui_process_list_menu(u8 self) {
@@ -605,7 +635,7 @@ static void crafting_ui_process_list_menu(u8 self) {
                 play_sound(5);
                 // Print the string that the player doesn't have all ingredients. Suspend all callbacks other than that
                 crafting_ui_print_message(self, str_cant_craft, crafting_ui_message_continuation_delete_message_and_return_to_selection);
-            } else if (!item_has_room(recipe->item, 1)) {
+            } else if (!item_has_room(recipe->item, recipe->count)) {
                 crafting_ui_print_message(self, str_no_room, crafting_ui_message_continuation_delete_message_and_return_to_selection);
             } else if (recipe_max_count_with_requirements_fulfilled(crafting_ui_get_current_recipe()) > 1){
                 crafting_ui_remove_scroll_indicators();
@@ -695,6 +725,8 @@ static void crafting_ui_free() {
     free(bg_get_tilemap(2));
     free(bg_get_tilemap(3));
     for (u16 type = 0; type < CRAFTING_TYPE_CNT; type++) {
+        for (int i = 0; i < CRAFTING_UI_STATE->num_crafting_recipies[type]; i++)
+            free(CRAFTING_UI_STATE->list_menu_item_strings[type][i]);
         free(CRAFTING_UI_STATE->recipies[type]);
         free(CRAFTING_UI_STATE->list_menu_items[type]);
     }
