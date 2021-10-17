@@ -20,6 +20,7 @@
 #include "debug.h"
 #include "constants/item_effect_types.h"
 #include "language.h"
+#include "item/pokeball.h"
 
 // TODO: this function is only used by the battle ai in order to check if to use an item
 // when at some point refactoring the battle ai, we do not have to return this value
@@ -326,7 +327,7 @@ bool item_effect_increase_friendship(pokemon *p, u8 hold_effect, int amount, boo
             amount += amount / 2;
         }
         friendship += amount;
-        if (pokemon_get_attribute(p, ATTRIBUTE_CATCH_INFO, 0) == ITEM_LUXUSBALL) 
+        if (pokemon_get_attribute(p, ATTRIBUTE_CATCH_INFO, 0) == BALL_LUXURY) 
             friendship++;
         if (pokemon_get_attribute(p, ATTRIBUTE_CATCH_LOCATION, 0) == map_get_current_namespace())
             friendship++;

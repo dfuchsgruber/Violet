@@ -47,7 +47,7 @@ u8 item_idx_to_pokeball_idx(u16 item_idx) {
             return BALL_SAFARI;
         case ITEM_NETZBALL:
             return BALL_NET;
-        case ITEM_TAUCHBALL:
+        case ITEM_WOLKENBALL:
             return BALL_DIVE;
         case ITEM_NESTBALL:
             return BALL_NEST;
@@ -67,7 +67,87 @@ u8 item_idx_to_pokeball_idx(u16 item_idx) {
     }
 }
 
+graphic pokeball_gfxs[NUM_POKEBALLS] = {
+    [BALL_POKE] = {.sprite = gfx_pokeball_pokeTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_POKE},
+    [BALL_GREAT] = {.sprite = gfx_pokeball_greatTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_GREAT},
+    [BALL_SAFARI] = {.sprite = gfx_pokeball_safariTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_SAFARI},
+    [BALL_ULTRA] = {.sprite = gfx_pokeball_ultraTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_ULTRA},
+    [BALL_MASTER] = {.sprite = gfx_pokeball_masterTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_MASTER},
+    [BALL_NET] = {.sprite = gfx_pokeball_netTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_NET},
+    [BALL_DIVE] = {.sprite = gfx_pokeball_diveTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_DIVE},
+    [BALL_NEST] = {.sprite = gfx_pokeball_nestTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_NEST},
+    [BALL_REPEAT] = {.sprite = gfx_pokeball_repeatTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_REPEAT},
+    [BALL_TIMER] = {.sprite = gfx_pokeball_timerTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_TIMER},
+    [BALL_LUXURY] = {.sprite = gfx_pokeball_luxuryTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_LUXURY},
+    [BALL_PREMIER] = {.sprite = gfx_pokeball_premierTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_PREMIER},
+    [BALL_LOTUS] = {.sprite = gfx_pokeball_lotusTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_LOTUS},
+};
+
+palette pokeball_palettes[NUM_POKEBALLS] = {
+    [BALL_POKE] = {.pal = gfx_pokeball_pokePal, .tag = OAM_TAG_POKEBALL_BASE + BALL_POKE},
+    [BALL_GREAT] = {.pal = gfx_pokeball_greatPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_GREAT},
+    [BALL_SAFARI] = {.pal = gfx_pokeball_safariPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_SAFARI},
+    [BALL_ULTRA] = {.pal = gfx_pokeball_ultraPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_ULTRA},
+    [BALL_MASTER] = {.pal = gfx_pokeball_masterPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_MASTER},
+    [BALL_NET] = {.pal = gfx_pokeball_netPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_NET},
+    [BALL_DIVE] = {.pal = gfx_pokeball_divePal, .tag = OAM_TAG_POKEBALL_BASE + BALL_DIVE},
+    [BALL_NEST] = {.pal = gfx_pokeball_nestPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_NEST},
+    [BALL_REPEAT] = {.pal = gfx_pokeball_repeatPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_REPEAT},
+    [BALL_TIMER] = {.pal = gfx_pokeball_timerPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_TIMER},
+    [BALL_LUXURY] = {.pal = gfx_pokeball_luxuryPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_LUXURY},
+    [BALL_PREMIER] = {.pal = gfx_pokeball_premierPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_PREMIER},
+    [BALL_LOTUS] = {.pal = gfx_pokeball_lotusPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_LOTUS},
+};
+
+oam_template pokeball_oam_templates[NUM_POKEBALLS] = {
+    [BALL_POKE] = POKEBALL_TEMPLATE_STANDARD(BALL_POKE),
+    [BALL_GREAT] = POKEBALL_TEMPLATE_STANDARD(BALL_GREAT),
+    [BALL_SAFARI] = POKEBALL_TEMPLATE_STANDARD(BALL_SAFARI),
+    [BALL_ULTRA] = POKEBALL_TEMPLATE_STANDARD(BALL_ULTRA),
+    [BALL_MASTER] = POKEBALL_TEMPLATE_STANDARD(BALL_MASTER),
+    [BALL_NET] = POKEBALL_TEMPLATE_STANDARD(BALL_NET),
+    [BALL_DIVE] = POKEBALL_TEMPLATE_STANDARD(BALL_DIVE),
+    [BALL_NEST] = POKEBALL_TEMPLATE_STANDARD(BALL_NEST),
+    [BALL_REPEAT] = POKEBALL_TEMPLATE_STANDARD(BALL_REPEAT),
+    [BALL_TIMER] = POKEBALL_TEMPLATE_STANDARD(BALL_TIMER),
+    [BALL_LUXURY] = POKEBALL_TEMPLATE_STANDARD(BALL_LUXURY),
+    [BALL_PREMIER] = POKEBALL_TEMPLATE_STANDARD(BALL_PREMIER),
+    [BALL_LOTUS] = POKEBALL_TEMPLATE_STANDARD(BALL_LOTUS),
+};
+
 static sprite pokeball_partices_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_8_8, .attr2 = ATTR2_PRIO(2),};
+
+graphic pokeball_particle_gfxs[NUM_POKEBALLS] = {
+    [BALL_POKE] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_POKE},
+    [BALL_GREAT] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_GREAT},
+    [BALL_SAFARI] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_SAFARI},
+    [BALL_ULTRA] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_ULTRA},
+    [BALL_MASTER] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_MASTER},
+    [BALL_NET] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_NET},
+    [BALL_DIVE] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_DIVE},
+    [BALL_NEST] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_NEST},
+    [BALL_REPEAT] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_REPEAT},
+    [BALL_TIMER] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_TIMER},
+    [BALL_LUXURY] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_LUXURY},
+    [BALL_PREMIER] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_PREMIER},
+    [BALL_LOTUS] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_LOTUS},
+};
+
+palette pokeball_particle_palettes[NUM_POKEBALLS] = {
+    [BALL_POKE] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_POKE},
+    [BALL_GREAT] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_GREAT},
+    [BALL_SAFARI] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_SAFARI},
+    [BALL_ULTRA] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_ULTRA},
+    [BALL_MASTER] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_MASTER},
+    [BALL_NET] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_NET},
+    [BALL_DIVE] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_DIVE},
+    [BALL_NEST] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_NEST},
+    [BALL_REPEAT] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_REPEAT},
+    [BALL_TIMER] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_TIMER},
+    [BALL_LUXURY] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_LUXURY},
+    [BALL_PREMIER] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_PREMIER},
+    [BALL_LOTUS] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_LOTUS},
+};
 
 u8 pokeball_particle_animation_idxs[NUM_POKEBALLS] = {
     [BALL_POKE]    = 0,
@@ -117,6 +197,7 @@ oam_template pokeball_particles_oam_templates[NUM_POKEBALLS] = {
     [BALL_LOTUS] = POKEBALL_PARTICLE_TEMPLATE_STANDARD(BALL_LOTUS),
 };
 
+// Battlers are faded to this palette when sent out in this ball
 color_t pokeball_open_fade_colors[] = {
     [BALL_POKE]    =  {.rgb = {.red = 31, .green = 22, .blue = 30}},
     [BALL_GREAT]    =  {.rgb = {.red = 16, .green = 23, .blue = 30}},
@@ -133,4 +214,9 @@ color_t pokeball_open_fade_colors[] = {
     [BALL_LOTUS]    =  {.rgb = {.red = 31, .green = 31, .blue = 10}},
 };
 
-// TODO from battle_anim_special.c : gBallParticleSpritesheets, gBallParticlePalettes, stuff in pokeball.c
+void pokeball_load_gfx(u8 ball_idx) {
+    if (oam_vram_get_tile(pokeball_oam_templates[ball_idx].tiles_tag) == 0xFFFF) {
+        oam_load_graphic_using_heap(pokeball_gfxs + ball_idx);
+        oam_load_palette_using_heap(pokeball_palettes + ball_idx);
+    }
+}

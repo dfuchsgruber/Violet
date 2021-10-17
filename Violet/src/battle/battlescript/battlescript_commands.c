@@ -30,6 +30,11 @@
 #include "attack.h"
 #include "constants/item_hold_effects.h"
 #include "constants/battle/battle_handicaps.h"
+#include "pokemon/basestat.h"
+#include "item/pokeball.h"
+#include "pokepad/pokedex/operator.h"
+#include "bios.h"
+#include "math.h"
 
 u8 bsc_get_byte(){
     u8 result = *bsc_offset;

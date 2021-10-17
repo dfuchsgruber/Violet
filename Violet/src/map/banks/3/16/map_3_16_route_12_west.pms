@@ -547,7 +547,7 @@
 					"script": 0,
 					"flag": "FLAG_ROUTE_12_ITEM_7",
 					"value": {
-						"item": "ITEM_TAUCHBALL",
+						"item": "ITEM_NETZBALL",
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0

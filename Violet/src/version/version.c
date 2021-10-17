@@ -191,6 +191,19 @@ void version_upgrade_alpha_2_2_to_3_0() {
     worldmap_flag_set(WM_DESERT_VILLAGE);
     worldmap_flag_set(WM_TANNS_LAB);
     tm_used_initialize();
+
+    // In substructure-d, one additional bit is allocated to pokeballs now (32 different pokeballs)
+	// Update the party
+	for (int i = 0; i < 6; i++) {
+		alpha_3_0_fix_pokemon_pokeball(&player_pokemon[i].box);
+		pokemon_calculate_stats(&player_pokemon[i]);
+	}
+	// Update the boxes
+	for (int box_idx = 0; box_idx < 15; box_idx++) {
+		for (int idx = 0; idx < 30; idx++) {
+			alpha_3_0_fix_pokemon_pokeball(pokemon_get_by_box(box_idx, idx));
+		}
+	}
 }
 
 u16 version_is_latest(){

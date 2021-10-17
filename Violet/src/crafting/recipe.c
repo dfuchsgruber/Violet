@@ -270,7 +270,7 @@ static crafting_recipe crafting_recipies_jewels[] = {
 };
 static crafting_recipe crafting_recipies_pokeballs[] = {
     {
-        .item = ITEM_TAUCHBALL, 
+        .item = ITEM_WOLKENBALL, 
         .ingredients = {
             [0] = {.item = ITEM_PERLE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_POKEBALL, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},

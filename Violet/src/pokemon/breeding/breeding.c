@@ -19,6 +19,7 @@
 #include "constants/abilities.h"
 #include "pokepad/incubator.h"
 #include "agbmemory.h"
+#include "item/pokeball.h"
 
 void _pokemon_get_egg_moves_stub(){
     derrf("Rom called old invalid stub for pokemon_get_egg_moves!\n");
@@ -89,7 +90,7 @@ void breeding_inherit_ivs(pokemon *egg, daycare_stru *daycare) {
 void breeding_pokemon_new(pokemon *p, u16 species, daycare_stru *daycare) {
 	(void)(daycare);
 	pokemon_new(p, species, 5, 32, true, cmem.daycare_offspring_pid, false, 0);
-	u8 ball = ITEM_POKEBALL;
+	u8 ball = BALL_POKE;
 	pokemon_set_attribute(p, ATTRIBUTE_CATCH_INFO, &ball);
 	pokemon_set_attribute(p, ATTRIBUTE_NICKNAME, str_egg);
 	pokemon_set_attribute(p, ATTRIBUTE_HAPPINESS, &basestats[species].egg_cycles);

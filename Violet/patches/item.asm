@@ -231,8 +231,10 @@ _bxr1:
 	.word pokeball_particles_oam_templates
 .org 0x80f13a8
 	.word pokeball_particles_oam_templates
-.org 0x80f04fc
 
+/* 
+*/
+.org 0x80f04fc
 	.word pokeball_particle_animation_idxs
 .org 0x80f0a14
 	.word pokeball_particle_animation_idxs
@@ -252,7 +254,6 @@ _bxr1:
 	.word pokeball_particle_animation_idxs
 .org 0x80f13a4
 	.word pokeball_particle_animation_idxs
-
 .org 0x80f08f4
 	.word pokeball_particles_initializers
 
@@ -265,8 +266,92 @@ _bxr1:
 .org 0x80f1698
 	.word pokeball_open_fade_colors
 
+.org 0x80f0870
+	.word pokeball_particle_palettes
+.org 0x80f1490
+	.word pokeball_particle_palettes
+
+.org 0x80f0868
+	.word pokeball_particle_gfxs
+.org 0x80f148c
+	.word pokeball_particle_gfxs
+
+.org 0x80001d0
+	.word pokeball_gfxs
+.org 0x804b9f4
+	.word pokeball_gfxs
+.org 0x804bc5c
+	.word pokeball_gfxs
+.org 0x804bf70
+	.word pokeball_gfxs
+.org 0x804bfa8
+	.word pokeball_gfxs
+
+.org 0x80001d4
+	.word pokeball_palettes
+.org 0x804b9f8
+	.word pokeball_palettes
+.org 0x804bc60
+	.word pokeball_palettes
+.org 0x804bf78
+	.word pokeball_palettes
+.org 0x804bfac
+	.word pokeball_palettes
+
+.org 0x804aadc
+	.word pokeball_oam_templates
+.org 0x804b9fc
+	.word pokeball_oam_templates
+.org 0x804bc64
+	.word pokeball_oam_templates
+.org 0x80ef900
+	.word pokeball_oam_templates
+.org 0x80efa54
+	.word pokeball_oam_templates
+.org 0x8139ddc
+	.word pokeball_oam_templates
 
 .org 0x080ef7b4
     ldr r1, =item_idx_to_pokeball_idx | 1
     bx r1
     .pool
+
+.org 0x080efbfa
+	lsl r0, #0 //  No limiting byte for pokeball idxs
+.org 0x080f055e
+	lsl r0, #0 //  No limiting byte for pokeball idxs
+
+.org 0x0804bf14
+	ldr r1, =pokeball_load_gfx | 1
+	bx r1
+	.pool
+
+// Remove all item_idx -> ball idx translations that are unneccesary, as we now store the ball idx in a pokemon substructure
+.org 0x080ef630 // Switch-out animations
+	lsl r0, #0
+	lsl r0, #0
+
+.org 0x08046088 // Create eggs from script command
+	mov r1, #0 // Ball idx 0 
+
+.org 0x08046cd6 // Hatch mon to party
+	mov r0, #0 // Ball idx 0
+
+.org 0x0804ac50 // pokefirered's `SpriteCB_TestBallThrow`
+	lsl r0, #0
+	lsl r0, #0
+
+.org 0x0804b2ac // pokefirered's `SpriteCB_ReleaseMonFromBall`
+	lsl r0, #0
+	lsl r0, #0
+
+.org 0x0804aa3e // pokefirered's `Task_DoPokeballSendOutAnim`
+	lsl r0, #0
+	lsl r0, #0
+
+.org 0x08139d76 // Summary screen, pokefirered's `CreateBallIconObj`
+	lsl r0, #0
+	lsl r0, #0 
+
+.org 0x08043718 // Pokemon add friendship
+	cmp r0, #10 // Luxury ball

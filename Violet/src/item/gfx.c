@@ -10,7 +10,7 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_POKEBALL] = { .gfx = gfx_item_pokeballTiles, .pal = gfx_item_pokeballPal },
     [ITEM_SAFARIBALL] = { .gfx = gfx_item_safariballTiles, .pal = gfx_item_safariballPal },
     [ITEM_NETZBALL] = { .gfx = gfx_item_netzballTiles, .pal = gfx_item_netzballPal },
-    [ITEM_TAUCHBALL] = { .gfx = gfx_item_tauchballTiles, .pal = gfx_item_tauchballPal },
+    [ITEM_WOLKENBALL] = { .gfx = gfx_item_tauchballTiles, .pal = gfx_item_tauchballPal },
     [ITEM_NESTBALL] = { .gfx = gfx_item_nestballTiles, .pal = gfx_item_nestballPal },
     [ITEM_WIEDERBALL] = { .gfx = gfx_item_wiederballTiles, .pal = gfx_item_wiederballPal },
     [ITEM_TIMERBALL] = { .gfx = gfx_item_timerballTiles, .pal = gfx_item_timerballPal },

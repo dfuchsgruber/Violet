@@ -218,6 +218,20 @@ u8 oam_new_backward_search(oam_template * template, s16 x, s16 y, u8 prio);
 u16 oam_load_graphic(graphic*g);
 
 /**
+ * Loads lz77 compressed graphic by allocating heap space, decompressing and then copying.
+ * @param g the graphic to load
+ * @return if the graphic could be loaded
+ **/
+bool oam_load_graphic_using_heap(graphic *g);
+
+/**
+ * Loads lz77 compressed palette by allocating heap space, decompressing and then copying.
+ * @param p the palette to load
+ * @return if the palette could be loaded
+ **/
+bool oam_load_palette_using_heap(palette *p);
+
+/**
  * Frees allocated oam vram an oam holds but keeps the graphic's tag in the oam vram allocation
  * table.
  * @param oam The oam that holds the graphic to free

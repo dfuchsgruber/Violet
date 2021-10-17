@@ -1019,7 +1019,7 @@ lsr r0, #0x1A
 	bx r2
 	.pool
 
-.org 0x08046054
+.org 0x0804610c
 	ldr r3, =breeding_pokemon_new | 1
 	bx r3 
 	.pool
@@ -1197,3 +1197,24 @@ lsr r0, #0x1A
 	ldr r2, =ingame_trade_pokemon_new | 1
 	bx r2
 	.pool
+
+.org 0x08040758
+	mov r0, r5
+	ldrb r1, [r4]
+	ldr r2, =box_pokemon_set_pokeball_in_substructure | 1
+	bl blxr2
+	b 0x080409da
+	.pool
+
+.org 0x08040740
+	mov r0, r5
+	ldrb r1, [r4]
+	ldr r2, =box_pokemon_set_game_in_substructure | 1
+	bl blxr2
+	b 0x080409da
+	.pool
+
+.org 0x0803fd6c
+	.word box_pokemon_get_attribute_game_hook // in jumptable, so no | 1
+.org 0x0803fd70
+	.word box_pokemon_get_attribute_pokeball_hook // in jumptable, so no | 1

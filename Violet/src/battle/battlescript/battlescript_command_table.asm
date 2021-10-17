@@ -243,7 +243,7 @@ battle_script_cmds:
 	.word 0x802d239
 	.word 0x802d2fd
 	.word 0x802d351
-	.word 0x802d3cd
+	.word bsc_command_xEF_handleballthrow
 	.word 0x802d799
 	.word bsc_pokemon_caught @//0xF1
 	.word 0x802d971

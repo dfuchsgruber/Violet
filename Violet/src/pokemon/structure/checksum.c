@@ -11,6 +11,7 @@
 #include "debug.h"
 #include "constants/pokemon_stat_names.h"
 #include "constants/pokemon_attributes.h"
+#include "item/pokeball.h"
 
 pid_t pokemon_new_pid_by_prng(u16 (*rnd)()) {
 	pid_t p;
@@ -90,4 +91,21 @@ palette *pokemon_get_pal_struct(u16 species, u32 tid, pid_t p){
 
 const void *pokemon_get_pal(u16 species, u32 tid, pid_t p){
     return pokemon_get_pal_struct(species, tid, p)->pal;
+}
+
+void box_pokemon_set_pokeball_in_substructure (pokemon_substructure_section_D *subs, u8 pokeball_idx) {
+	dprintf("Set pokeball of 0x%x to %d\n", subs, pokeball_idx);
+	subs->pokeball = (u8)(pokeball_idx & 0x1F);
+}
+
+void box_pokemon_set_game_in_substructure (pokemon_substructure_section_D *subs, u8 game) {
+	subs->catch_game = (u8)(game & 7);
+}
+
+int box_pokemon_get_pokeball_in_substructure(pokemon_substructure_section_D *subs) {
+	return subs->pokeball;
+}
+
+int box_pokemon_get_game_in_substructure(pokemon_substructure_section_D *subs) {
+	return subs->catch_game;
 }

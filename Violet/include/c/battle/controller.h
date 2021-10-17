@@ -128,6 +128,23 @@ void battle_controller_emit_trainer_slide_in(u8 buffer_idx);
  **/
 void battle_controller_emit_intro_trainer_ball_throw(u8 buffer_idx);
 
+enum {
+    BALL_THROW_ANIMATION_NO_SHAKES,
+    BALL_THROW_ANIMATION_1_SHAKE,
+    BALL_THROW_ANIMATION_2_SHAKES,
+    BALL_THROW_ANIMATION_3_SHAKES,
+    BALL_THROW_ANIMATION_SUCCESS,
+    BALL_THROW_ANIMATION_TRAINER_BLOCK,
+    BALL_THROW_ANIMATION_GHOST_DOGE,
+};
+
+/**
+ * Emits to play a ball throw animation for catching
+ * @param buffer_idx which buffer to use
+ * @param ball_throw_animation which animation to emit
+ **/
+void battle_controller_emit_ball_throw_animation(u8 buffer_idx, u8 ball_throw_animation);
+
 /**
  * Marks a battler such that is executed by the battle controller.
  * @param battler_idx the battler to mark.

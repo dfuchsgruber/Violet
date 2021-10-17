@@ -40,8 +40,8 @@ static u8 str_item_netzball_description[] = LANGDEP(
 	PSTRING("A somewhat different Ball that\nworks especially well on Water- and\nBug-type Pokémon.")
 );
 static u8 str_item_tauchball_description[] = LANGDEP(
-	PSTRING("Ein Ball, mit dem sich\nPokémon vom Meeresgrund\nbesser fangen lassen."),
-	PSTRING("A somewhat different Ball that\nworks especially well on Pokémon\ndeep in the sea.")
+	PSTRING("Ein Ball, mit dem sich\nPokémon auf den Wolken\nbesser fangen lassen."),
+	PSTRING("A somewhat different Ball that\nworks especially well on Pokémon\non clouds.")
 );
 static u8 str_item_nestball_description[] = LANGDEP(
 	PSTRING("Ein Ball, dessen Erfolgsquote\nbesonders bei schwächeren\nPokémon sehr hoch ist."),

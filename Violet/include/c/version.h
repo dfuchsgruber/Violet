@@ -40,6 +40,12 @@ typedef union {
  * @param target the pokemon to fix (might be in compressed format)
  */
 void version_alpha_2_2_fix_pid(box_pokemon *target);
+
+/**
+ * Fixes the pokeball attribute of pokemon to version 3_0
+ * @param p the pokemon to fix the ball of
+ **/
+void alpha_3_0_fix_pokemon_pokeball(box_pokemon *p);
     
     void version_upgrade_alpha_1_X_to_2_0();
     void version_upgrade_alpha_2_0_to_2_1();

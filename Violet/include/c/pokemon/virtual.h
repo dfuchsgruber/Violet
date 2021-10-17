@@ -77,8 +77,8 @@ typedef struct {
 	u8 catch_location;
 
 	u16 catch_level:7;
-	u16 catch_game:4;
-	u16 pokeball:4;
+	u16 catch_game:3;
+	u16 pokeball:5;
 	u16 ot_gender:1;
 
 	u32 hp_iv:5;
