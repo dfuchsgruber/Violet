@@ -18,7 +18,24 @@ enum {
     BALL_LUXURY,
     BALL_PREMIER,
     BALL_LOTUS,
+    BALL_QUICK,
+    BALL_DUSK,
+    BALL_HP,
+    BALL_ATTACK,
+    BALL_DEFENSE,
+    BALL_SPEED,
+    BALL_SPECIAL_ATTACK,
+    BALL_SPECIAL_DEFENSE,
     NUM_POKEBALLS,
+};
+
+enum {
+    BALL_PARTICLE_STICKS,
+    BALL_PARTICLE_STARS,
+    BALL_PARTICLE_BUBBLES,
+    BALL_PARTICLE_HEARTS,
+    BALL_PARTICLE_BIG_GREEN_CROSSES,
+    BALL_PARTICLE_SMALL_GREEN_CROSSES,
 };
 
 #define OAM_TAG_POKEBALL_BASE 56020
@@ -91,6 +108,10 @@ extern const u8 gfx_pokeball_premierTiles[];
 extern const u8 gfx_pokeball_premierPal[];
 extern const u8 gfx_pokeball_lotusTiles[];
 extern const u8 gfx_pokeball_lotusPal[];
+extern const u8 gfx_pokeball_quickTiles[];
+extern const u8 gfx_pokeball_quickPal[];
+extern const u8 gfx_pokeball_duskTiles[];
+extern const u8 gfx_pokeball_duskPal[];
 
 extern const u8 gfx_pokeball_particlesTiles[];
 extern const u8 gfx_pokeball_particlesPal[];

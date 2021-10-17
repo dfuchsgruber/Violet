@@ -24,9 +24,9 @@ typedef struct {
 	item_effect_t item_effect;
 	u8 hold_effect_parameter;
 	u8 filler; // ???
-} enigma_berry_stru;
+} battle_enigma_berry_stru;
 
-extern enigma_berry_stru enigma_berries[4];
+extern battle_enigma_berry_stru enigma_berries[4];
 
 // mostly taken from prets firered
 // https://github.com/pret/pokefirered/blob/master/include/battle.h
@@ -118,7 +118,7 @@ typedef struct {
     u8 field_185;
     u8 field_186;
     u8 field_187;
-    enigma_berry_stru enigma_berry;
+    battle_enigma_berry_stru enigma_berry;
     u8 field_1A4[0x5C];
 } battle_state_t;
 

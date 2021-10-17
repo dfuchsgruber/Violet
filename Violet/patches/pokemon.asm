@@ -1218,3 +1218,8 @@ lsr r0, #0x1A
 	.word box_pokemon_get_attribute_game_hook // in jumptable, so no | 1
 .org 0x0803fd70
 	.word box_pokemon_get_attribute_pokeball_hook // in jumptable, so no | 1
+
+.org 0x08043790
+	ldr r2, =pokemon_get_evs | 1
+	bx r2
+	.pool

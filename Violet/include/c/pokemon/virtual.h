@@ -558,4 +558,14 @@ void pokemon_set_move(pokemon *p, u16 move, u8 slot);
  **/
 void pokemon_add_friendship(pokemon *p, s8 value);
 
+#define POKERUS_GET_SINGLE_POKEMON 0
+
+/**
+ * Gets the pokerus state of a pokemon / party
+ * @param p the pokemon / party to get the pokerus state of
+ * @param mask mask for all party idxs requested for the pokerus check, if POKERUS_GET_SINGLE_POKEMON is passed, a simple bool value for p is returned
+ * @return pokerus_state the requested pokerus state
+ **/
+u8 pokemon_get_pokerus(pokemon *p, u8 mask);
+
 #endif /* INCLUDE_C_POKEMON_VIRTUAL_H_ */

@@ -15,6 +15,20 @@ void callback_switch_timezone() {
     callback1_set(overworld_return_to); //return to normal map reload
 }
 
+u8 dns_get_daytime() {
+    rtc_timestamp stamp = {0};
+    time_read(&stamp);
+    if (stamp.hour >= 22 || stamp.hour <= 6) {
+        return DAYTIME_NIGHT; //night
+    } else if (stamp.hour <= 8) {
+        return DAYTIME_MORNING; //morning
+    } else if (stamp.hour >= 20) {
+        return DAYTIME_EVENING; //evening
+    } else {
+        return DAYTIME_DAY;
+    }
+}
+
 void update_timezone() {
     rtc_timestamp stamp = {0};
     time_read(&stamp);
@@ -36,14 +50,19 @@ void update_timezone() {
             } else if (is_inside_map(bank, map)) {
                 pal_shaders = SHADER_NONE;
             } else {
-                if (stamp.hour >= 22 || stamp.hour <= 6) {
-                    pal_shaders = SHADER_NIGHT; //night
-                } else if (stamp.hour <= 8) {
-                    pal_shaders = SHADER_MORNING; //morning
-                } else if (stamp.hour >= 20) {
-                    pal_shaders = SHADER_EVENING; //evening
-                } else {
-                    pal_shaders = SHADER_NONE;
+                switch (dns_get_daytime()) {
+                    case DAYTIME_NIGHT:
+                        pal_shaders = SHADER_NIGHT; //night
+                        break;
+                    case DAYTIME_MORNING:
+                        pal_shaders = SHADER_MORNING;
+                        break;
+                    case DAYTIME_EVENING:
+                        pal_shaders = SHADER_EVENING;
+                        break;
+                    default:
+                        pal_shaders = SHADER_NONE;
+                        break;
                 }
             }
         }

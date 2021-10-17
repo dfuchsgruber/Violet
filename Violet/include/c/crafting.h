@@ -33,6 +33,7 @@ typedef struct {
     crafting_ingredient ingredients[MAX_NUM_INGREDIENTS];
     u16 item;
     u16 flag;
+    u8 count;
 } crafting_recipe;
 
 typedef struct {

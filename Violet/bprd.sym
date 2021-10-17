@@ -1306,3 +1306,4 @@ battle_controller_emit_ball_throw_animation = 0x0800e118 | 1;
 bsc_trainer_blocks_catch_attempt = 0x081ddd59;
 bsc_ball_throw_success = 0x081ddcda;
 bsc_ball_throw_no_success = 0x081ddd2b;
+pokemon_get_pokerus = 0x080439d8 | 1;

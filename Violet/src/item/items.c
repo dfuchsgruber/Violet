@@ -1695,6 +1695,14 @@ static u8 str_item_lotus_ball_description[] = LANGDEP(
 	PSTRING("Ein seltener Ball, der bei\ngefangenen Pokémon eine versteckte\nFähigkeit erwecken kann."),
 	PSTRING("A rare Ball that can awaken\nhidden abilities in Pokémon\nit catches.")
 );
+static u8 str_item_flottball_description[] = LANGDEP(
+	PSTRING("Ein Ball, der am Anfang\ndes Kampfes am Wirkungsvollsten\nist."),
+	PSTRING("A somewhat different Ball that\nis most efficient at the\nstart of the battle.")
+);
+static u8 str_item_duesterball_description[] = LANGDEP(
+	PSTRING("Ein Ball, der nachts oder\nin Höhlen am Wirkungsvollsten\nist."),
+	PSTRING("A somewhat different Ball that\nis most efficient at\nnighttime or in caves.")
+);
 
 item items[] = {
 	{
@@ -7996,7 +8004,19 @@ item items[] = {
 		.index = ITEM_LOTUS_BALL, .price = 1000,
 		.description = str_item_lotus_ball_description, .pocket = POCKET_POKEBALLS, .type = 0,
 		.battle_effect = 2, .battle_usage = item_pokeball_battle,
-	}
+	},
+	[ITEM_FLOTTBALL] = {
+		.name = LANGDEP(PSTRING("Flottball"), PSTRING("Quick Ball")),
+		.index = ITEM_FLOTTBALL, .price = 1000,
+		.description = str_item_flottball_description, .pocket = POCKET_POKEBALLS, .type = 0,
+		.battle_effect = 2, .battle_usage = item_pokeball_battle,
+	},
+	[ITEM_FINSTERBALL] = {
+		.name = LANGDEP(PSTRING("Düsterball"), PSTRING("Dusk Ball")),
+		.index = ITEM_FINSTERBALL, .price = 1000,
+		.description = str_item_duesterball_description, .pocket = POCKET_POKEBALLS, .type = 0,
+		.battle_effect = 2, .battle_usage = item_pokeball_battle,
+	},
 };
 
 u16 item_idx_saniztize(u16 item_idx) {

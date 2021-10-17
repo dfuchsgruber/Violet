@@ -16,6 +16,8 @@
 #include "constants/pokemon_types.h"
 #include "pokemon/basestat.h"
 #include "prng.h"
+#include "constants/map_types.h"
+#include "dns.h"
 
 u8 bsc_cmd_xEF_determine_target_to_catch() {
     u8 target = battler_get_by_position(BATTLE_POSITION_OPPONENT_LEFT);
@@ -106,6 +108,18 @@ static void bsc_ballthrow_success_set_pokemon_attribues(u8 battler_idx) {
                     pokemon_set_hidden_ability(&p->box);
             break;
         }
+        case BALL_HP:
+            pokemon_set_potential_ev(p, STAT_HP, 48); break;
+        case BALL_ATTACK:
+            pokemon_set_potential_ev(p, STAT_ATTACK, 48); break;
+        case BALL_DEFENSE:
+            pokemon_set_potential_ev(p, STAT_DEFENSE, 48); break;
+        case BALL_SPEED:
+            pokemon_set_potential_ev(p, STAT_SPEED, 48); break;
+        case BALL_SPECIAL_ATTACK:
+            pokemon_set_potential_ev(p, STAT_SPECIAL_ATTACK, 48); break;
+        case BALL_SPECIAL_DEFENSE:
+            pokemon_set_potential_ev(p, STAT_SPECIAL_DEFENSE, 48); break;
     }
 }
 
@@ -130,17 +144,18 @@ void bsc_command_xEF_handleballthrow(void) {
                 catch_rate = basestats[battlers[defending_battler].species].catch_rate;
             u8 ball_idx = item_idx_to_pokeball_idx(bsc_last_used_item);
             switch (ball_idx) {
-                case BALL_POKE:
-                case BALL_LUXURY:
-                case BALL_PREMIER:
-                case BALL_LOTUS:
-                    ball_multiplier = 10; break;
+                default:
+                    ball_multiplier = 10; 
+                    break;
                 case BALL_GREAT:
-                    ball_multiplier = 15; break;
+                    ball_multiplier = 15; 
+                    break;
                 case BALL_ULTRA:
-                    ball_multiplier = 20; break;
+                    ball_multiplier = 20; 
+                    break;
                 case BALL_SAFARI:
-                    ball_multiplier = 15; break;
+                    ball_multiplier = 15; 
+                    break;
                 case BALL_NET:
                     if (battlers[defending_battler].type1 == TYPE_WASSER || battlers[defending_battler].type2 == TYPE_WASSER ||
                         battlers[defending_battler].type1 == TYPE_KAEFER || battlers[defending_battler].type2 == TYPE_KAEFER)
@@ -169,6 +184,18 @@ void bsc_command_xEF_handleballthrow(void) {
                 case BALL_TIMER:
                     ball_multiplier = (u8)MIN(40, battle_results.turns_cnt + 10);
                     break;
+                case BALL_QUICK:
+                    if (battle_results.turns_cnt == 0)
+                        ball_multiplier = 50;
+                    else
+                        ball_multiplier = 10;
+                    break;
+                case BALL_DUSK: {
+                    if (mapheader_virtual.type == MAP_TYPE_BASEMENT || dns_get_daytime() == DAYTIME_NIGHT)
+                        ball_multiplier = 30;
+                    else
+                        ball_multiplier = 10;
+                }
             }
             dprintf("Ball multiplier of item %d (=ball %d) is %d\n", bsc_last_used_item, ball_idx, ball_multiplier);
             odds = (u32)((catch_rate * ball_multiplier / 10) *

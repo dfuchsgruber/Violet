@@ -8,3 +8,6 @@
 - zetavares852
 - EvolinaX
 - Lordkazeh [https://www.deviantart.com/lordkazeh]
+
+### Pokeball Sprites
+- Bela

@@ -864,5 +864,9 @@ extern const u8 gfx_item_klammerbandTiles[];
 extern const u8 gfx_item_klammerbandPal[];
 extern const u8 gfx_item_lotus_ballTiles[];
 extern const u8 gfx_item_lotus_ballPal[];
+extern const u8 gfx_item_flottballTiles[];
+extern const u8 gfx_item_flottballPal[];
+extern const u8 gfx_item_duesterballTiles[];
+extern const u8 gfx_item_duesterballPal[];
 
 #endif

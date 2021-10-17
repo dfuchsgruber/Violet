@@ -431,7 +431,7 @@ bool item_effect(pokemon *p, u16 item, u8 party_idx, u8 move_idx, bool calculate
         if (super.in_battle) {
             effect = &enigma_berries[battler_idx].item_effect;
         } else {
-            effect = &save1->enigma_berry_item_effect;
+            effect = (item_effect_t*)&save1->enigma_berry.item_effect;
         }
     }
     for (int i = 0; i < NUMBER_ITEM_EFFECT_FUNCTIONS; i++) {
@@ -455,7 +455,7 @@ u8 item_get_effect_type(u16 item) {
     if (!ITEM_HAS_TABLE_EFFECT(item)) return ITEM_EFFECT_NONE;
     item_effect_t* effect;
     if (item == ITEM_ENIGMABEERE) {
-        effect = &(save1->enigma_berry_item_effect);
+        effect = (item_effect_t*)&save1->enigma_berry.item_effect;
     } else {
         effect = item_effects[item - ITEM_TRANK];
     }

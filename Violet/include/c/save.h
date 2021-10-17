@@ -31,6 +31,28 @@ typedef struct warp_save_t {
 	s16 x, y;
 } warp_save_t;
 
+typedef struct  {
+    u8 name[7];
+    u8 firmness;
+    u16 size;
+    u8 max_yield;
+    u8 min_yield;
+    u8 * description_1;
+    u8 * description_2;
+    u8 stage_duration;
+    u8 spicy;
+    u8 dry;
+    u8 sweet;
+    u8 bitter;
+    u8 sour;
+    u8 smoothness;
+    u8 field_0x1b;
+    u8 item_effect[18];
+    u8 hold_effect;
+    u8 hold_effect_parameter;
+    u32 checksum;
+} enigma_berry_t;
+
 typedef struct saveblock1 {
     s16 x_cam_orig; //camera origin
     s16 y_cam_orig; //camera origin
@@ -75,9 +97,8 @@ typedef struct saveblock1 {
     u8 field_12444[52];
     roamer_state_t roamer;
     u8 roamer_old_overhead[12]; // 12 bytes were retrieved refactoring the old roamer
-    u8 field_12524[28];
-    item_effect_t enigma_berry_item_effect;
-    u8 field_12570[2942];
+    enigma_berry_t enigma_berry;
+    u8 field_12570[2936];
     mini_daycare_stru mini_daycare;
 } saveblock1;
 

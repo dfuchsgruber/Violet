@@ -81,6 +81,8 @@ graphic pokeball_gfxs[NUM_POKEBALLS] = {
     [BALL_LUXURY] = {.sprite = gfx_pokeball_luxuryTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_LUXURY},
     [BALL_PREMIER] = {.sprite = gfx_pokeball_premierTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_PREMIER},
     [BALL_LOTUS] = {.sprite = gfx_pokeball_lotusTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_LOTUS},
+    [BALL_QUICK] = {.sprite = gfx_pokeball_quickTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_QUICK},
+    [BALL_DUSK] = {.sprite = gfx_pokeball_duskTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_DUSK},
 };
 
 palette pokeball_palettes[NUM_POKEBALLS] = {
@@ -97,6 +99,8 @@ palette pokeball_palettes[NUM_POKEBALLS] = {
     [BALL_LUXURY] = {.pal = gfx_pokeball_luxuryPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_LUXURY},
     [BALL_PREMIER] = {.pal = gfx_pokeball_premierPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_PREMIER},
     [BALL_LOTUS] = {.pal = gfx_pokeball_lotusPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_LOTUS},
+    [BALL_QUICK] = {.pal = gfx_pokeball_quickPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_QUICK},
+    [BALL_DUSK] = {.pal = gfx_pokeball_duskPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_DUSK},
 };
 
 oam_template pokeball_oam_templates[NUM_POKEBALLS] = {
@@ -113,6 +117,8 @@ oam_template pokeball_oam_templates[NUM_POKEBALLS] = {
     [BALL_LUXURY] = POKEBALL_TEMPLATE_STANDARD(BALL_LUXURY),
     [BALL_PREMIER] = POKEBALL_TEMPLATE_STANDARD(BALL_PREMIER),
     [BALL_LOTUS] = POKEBALL_TEMPLATE_STANDARD(BALL_LOTUS),
+    [BALL_QUICK] = POKEBALL_TEMPLATE_STANDARD(BALL_QUICK),
+    [BALL_DUSK] = POKEBALL_TEMPLATE_STANDARD(BALL_DUSK),
 };
 
 static sprite pokeball_partices_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_8_8, .attr2 = ATTR2_PRIO(2),};
@@ -131,6 +137,8 @@ graphic pokeball_particle_gfxs[NUM_POKEBALLS] = {
     [BALL_LUXURY] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_LUXURY},
     [BALL_PREMIER] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_PREMIER},
     [BALL_LOTUS] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_LOTUS},
+    [BALL_QUICK] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_QUICK},
+    [BALL_DUSK] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_DUSK},
 };
 
 palette pokeball_particle_palettes[NUM_POKEBALLS] = {
@@ -147,6 +155,8 @@ palette pokeball_particle_palettes[NUM_POKEBALLS] = {
     [BALL_LUXURY] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_LUXURY},
     [BALL_PREMIER] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_PREMIER},
     [BALL_LOTUS] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_LOTUS},
+    [BALL_QUICK] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_QUICK},
+    [BALL_DUSK] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_DUSK},
 };
 
 u8 pokeball_particle_animation_idxs[NUM_POKEBALLS] = {
@@ -163,6 +173,8 @@ u8 pokeball_particle_animation_idxs[NUM_POKEBALLS] = {
     [BALL_LUXURY]  = 4,
     [BALL_PREMIER] = 4,
     [BALL_LOTUS] = 1,
+    [BALL_QUICK] = BALL_PARTICLE_SMALL_GREEN_CROSSES,
+    [BALL_DUSK] = BALL_PARTICLE_SMALL_GREEN_CROSSES,
 };
 
 void (*pokeball_particles_initializers[NUM_POKEBALLS])(u8) = {
@@ -179,6 +191,8 @@ void (*pokeball_particles_initializers[NUM_POKEBALLS])(u8) = {
     [BALL_LUXURY] = pokeball_particles_initialize_luxury_ball,
     [BALL_PREMIER] = pokeball_particles_initialize_premier_ball,
     [BALL_LOTUS] = pokeball_particles_initialize_master_ball,
+    [BALL_QUICK] = pokeball_particles_initialize_nest_ball,
+    [BALL_DUSK] = pokeball_particles_initialize_nest_ball,
 };
 
 oam_template pokeball_particles_oam_templates[NUM_POKEBALLS] = {
@@ -195,6 +209,8 @@ oam_template pokeball_particles_oam_templates[NUM_POKEBALLS] = {
     [BALL_LUXURY] = POKEBALL_PARTICLE_TEMPLATE_STANDARD(BALL_LUXURY),
     [BALL_PREMIER] = POKEBALL_PARTICLE_TEMPLATE_STANDARD(BALL_PREMIER),
     [BALL_LOTUS] = POKEBALL_PARTICLE_TEMPLATE_STANDARD(BALL_LOTUS),
+    [BALL_QUICK] = POKEBALL_PARTICLE_TEMPLATE_STANDARD(BALL_QUICK),
+    [BALL_DUSK] = POKEBALL_PARTICLE_TEMPLATE_STANDARD(BALL_DUSK),
 };
 
 // Battlers are faded to this palette when sent out in this ball
@@ -212,6 +228,8 @@ color_t pokeball_open_fade_colors[] = {
     [BALL_LUXURY]    =  {.rgb = {.red = 31, .green = 17, .blue = 10}},
     [BALL_PREMIER]    =  {.rgb = {.red = 31, .green = 9, .blue = 10}},
     [BALL_LOTUS]    =  {.rgb = {.red = 31, .green = 31, .blue = 10}},
+    [BALL_QUICK]    =  {.rgb = {.red = 26, .green = 20, .blue = 4}},
+    [BALL_DUSK]    =  {.rgb = {.red = 11, .green = 11, .blue = 1}},
 };
 
 void pokeball_load_gfx(u8 ball_idx) {
