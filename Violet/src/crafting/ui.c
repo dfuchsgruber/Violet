@@ -269,15 +269,6 @@ static void crafting_ui_setup_recipies_and_list_menu_items() {
                     u8 str_clear_to[] = PSTRING("SKIP\x42×");
                     line_str = strcat(line_str, str_clear_to);
                     itoa(line_str, CRAFTING_UI_STATE->recipies[type][recipe_idx].count, ITOA_NO_PADDING, 1);
-                    // u8 pos = 0;
-                    // while(line_str[pos] != 0xFF) pos++;
-                    // for(;pos < 13; pos++) line_str[pos] = 0;
-                    // line_str[pos++] = 0xFF;
-                    // u8 str_small[] = PSTRING("x");
-                    // line_str = strcat(line_str, str_small);
-                    // itoa(line_str, CRAFTING_UI_STATE->recipies[type][recipe_idx].count, ITOA_NO_PADDING, 1);
-                    // u8 str_times[] = PSTRING("x");
-                    // strcat(line_str, str_times);
                 #endif
                 CRAFTING_UI_STATE->list_menu_items[type][recipe_idx].text = CRAFTING_UI_STATE->list_menu_item_strings[type][recipe_idx];
                 CRAFTING_UI_STATE->list_menu_items[type][recipe_idx].idx = (recipe_idx + 1);

@@ -1819,7 +1819,7 @@ item items[] = {
 		0, // secondary_idx
 	},{
 		//ITEM_TAUCHBALL
-		LANGDEP(PSTRING("Tauchball"), PSTRING("Dive Ball")),
+		LANGDEP(PSTRING("Wolkenball"), PSTRING("Cloud Ball")),
 		0x7, //index
 		1000, //price
 		0, //holding_effect_id

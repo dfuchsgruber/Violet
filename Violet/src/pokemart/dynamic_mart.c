@@ -7,11 +7,14 @@
 #include "overworld/script.h"
 #include "constants/flags.h"
 
+static mart_item mart_items_pokeball[] = {
+    {POKEDEX, ITEM_POKEBALL},
+    {0xFFFF, 0}
+};
 
 static mart_item mart_items_ball_std[] = {
     {FRBADGE_5, ITEM_HYPERBALL},
     {FRBADGE_2, ITEM_SUPERBALL},
-    {POKEDEX, ITEM_POKEBALL},
     {0xFFFF, 0}
 };
 
@@ -102,6 +105,7 @@ static mart_item mart_item_abra_doll[] = {
 };
 
 static mart_item *mart_items[] = {
+    mart_items_pokeball,
     mart_items_ball_std,
     mart_item_full_restore,
     mart_item_potion_std,

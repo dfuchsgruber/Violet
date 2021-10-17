@@ -327,7 +327,7 @@ static void cauldron_scene_step9_success_string(u16 frame) {
     tbox_flush_set(0, 0);
     tbox_tilemap_draw(0);
     u8 cb_idx = big_callback_new(cauldron_scene_big_callback_null, 0);
-    itoa(buffer1, CAULDRON_SCENE_STATE->count, ITOA_NO_PADDING, 3);
+    itoa(buffer1, CAULDRON_SCENE_STATE->count * CAULDRON_SCENE_STATE->recipe.count, ITOA_NO_PADDING, 3);
     string_decrypt(strbuf, str_crafted);
     tbox_print_string_and_continue(cb_idx, 0, 1 + 26 * 4, 15, 2, tbox_get_set_speed(), strbuf, cauldron_scene_end_on_keypress);
     CAULDRON_SCENE_STATE->bg_vertical_scrolling[0] = (s16)(-CAULDRON_SCENE_STATE->bg_vertical_origin);
