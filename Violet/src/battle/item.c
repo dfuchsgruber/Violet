@@ -146,6 +146,7 @@ bool battle_items_attack_done_defender() {
                     bsc_offset = bsc_beulenhelm;
                     return true;
                 }
+            break;
         }
         case HOLD_EFFECT_WEAKNESS_POLICY: {
             if (((attack_result & (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)) == ATTACK_SUPER_EFFECTIVE) &&
