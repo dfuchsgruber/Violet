@@ -25,14 +25,8 @@
     "python.pythonPath": ".venv/bin/python",
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
-    "workbench.editorAssociations": [
-        {
-            "viewType": "hexEditor.hexedit",
-            "filenamePattern": "*.gba"
-        },
-        {
-            "viewType": "jupyter-notebook",
-            "filenamePattern": "*.ipynb"
-        }
-    ]
+    "workbench.editorAssociations": {
+        "*.gba": "hexEditor.hexedit",
+        "*.ipynb": "jupyter-notebook"
+    }
 }
