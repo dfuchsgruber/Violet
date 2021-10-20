@@ -22,9 +22,9 @@
         "map": "c",
         "random": "c"
     },
-    "python.pythonPath": ".venv/bin/python",
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
     "workbench.editorAssociations": {
         "*.gba": "hexEditor.hexedit",
         "*.ipynb": "jupyter-notebook"
