@@ -1,6 +1,7 @@
 #ifndef H_ABILITIES
 #define H_ABILITIES
 
+#include "types.h"
 #include "constants/ability_contexts.h"
 #include "constants/abilities.h"
 

@@ -7,7 +7,8 @@
 
 #ifndef INCLUDE_C_TILE_EGG_HATCHING_H_
 #define INCLUDE_C_TILE_EGG_HATCHING_H_
-
+#include "pokemon/virtual.h"
+#include "stdbool.h"
 
 void egg_warm_update();
 bool pokemon_party_has_flamebody();
