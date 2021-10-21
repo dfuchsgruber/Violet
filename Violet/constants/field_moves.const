@@ -1,6 +1,6 @@
 {
-	"type": "enum",
-	"values": [
+    "type": "enum",
+    "values": [
         "FIELD_MOVE_FLASH",
         "FIELD_MOVE_CUT",
         "FIELD_MOVE_FLY",
@@ -16,6 +16,6 @@
         "FIELD_MOVE_SWEET_SCENT",
         "FIELD_MOVE_SECRET_POWER",
         "NUM_FIELD_MOVES"
-	],
-	"base": 0
+    ],
+    "base": 0
 }

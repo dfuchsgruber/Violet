@@ -6,7 +6,7 @@
 /**
  * Checks if the item animation is disabled
  * @return if the item animation is disabled
- **/
+ */
 bool item_animation_is_disabled();
 
 #endif

@@ -1,8 +1,8 @@
 #ifndef H_MATH
 #define H_MATH
 
-#include "types.h"
 #include "stdbool.h"
+#include "types.h"
 
 #define SIN_LUT_BITS 9
 
@@ -123,14 +123,14 @@ int kgv(int a, int b);
  * @param
  * @param
  * @return
- **/
-s16 sine (s16 x, s16 amplitude);
+ */
+s16 sine(s16 x, s16 amplitude);
 
 /**
  * Returns the index of the most significant bit, a.k.a calculates floor(log2(x))
  * @param value the value to calculate the msb index of
  * @return floor(log2(x))
- **/
+ */
 int msb_index(u32 value);
 
 #endif

@@ -1,24 +1,24 @@
-#include "types.h"
-#include "callbacks.h"
-#include "map/wild_pokemon.h"
-#include "pokemon/virtual.h"
-#include "constants/flags.h"
-#include "flags.h"
-#include "save.h"
-#include "prng.h"
-#include "data_structures.h"
-#include "constants/sav_keys.h"
-#include "debug.h"
 #include "item/fishing.h"
-#include "overworld/script.h"
-#include "constants/items.h"
-#include "item/item.h"
-#include "constants/pokemon_attributes.h"
-#include "list_menu.h"
-#include "vars.h"
-#include "constants/vars.h"
-#include "language.h"
 #include "agbmemory.h"
+#include "callbacks.h"
+#include "constants/flags.h"
+#include "constants/items.h"
+#include "constants/pokemon_attributes.h"
+#include "constants/sav_keys.h"
+#include "constants/vars.h"
+#include "data_structures.h"
+#include "debug.h"
+#include "flags.h"
+#include "item/item.h"
+#include "language.h"
+#include "list_menu.h"
+#include "map/wild_pokemon.h"
+#include "overworld/script.h"
+#include "pokemon/virtual.h"
+#include "prng.h"
+#include "save.h"
+#include "types.h"
+#include "vars.h"
 
 static u16 fishing_rng_no_bait() {
     u32 state = (u32)gp_stack_pop();
@@ -59,8 +59,8 @@ u16 fishing_create_pokemon(wild_pokemon_habitat *habitat, u8 rod_type) {
     dprintf("Gp stack has size %d\n", fmem.gp_stack_size);
     gp_stack_push((int)seed);
     if (checkflag(FLAG_FISHING_SHINING_BAIT_USED)) {
-        pokemon_spawn_by_seed_algorithm(opponent_pokemon, species, (u8)(MIN(level + 8, 100)), 
-        32, false, pid, false, 0, fishing_rng_shining_bait, NULL);
+        pokemon_spawn_by_seed_algorithm(opponent_pokemon, species, (u8)(MIN(level + 8, 100)),
+                                        32, false, pid, false, 0, fishing_rng_shining_bait, NULL);
         pid_t pid = {.value = (u32)pokemon_get_attribute(opponent_pokemon, ATTRIBUTE_PID, 0)};
         pid.fields.is_shiny = 1;
         pokemon_set_attribute(opponent_pokemon, ATTRIBUTE_PID, &pid);
@@ -68,20 +68,20 @@ u16 fishing_create_pokemon(wild_pokemon_habitat *habitat, u8 rod_type) {
         item_remove(ITEM_LEUCHTKOEDER, 1);
         dprintf("Spawned fishing pokemon with shining bait\n");
     } else if (checkflag(FLAG_FISHING_GOLDEN_BAIT_USED)) {
-        pokemon_spawn_by_seed_algorithm(opponent_pokemon, species, (u8)(MIN(level + 5, 100)), 
-        POKEMON_NEW_RANDOM_IVS, false, pid, false, 0, fishing_rng_golden_bait, NULL);
+        pokemon_spawn_by_seed_algorithm(opponent_pokemon, species, (u8)(MIN(level + 5, 100)),
+                                        POKEMON_NEW_RANDOM_IVS, false, pid, false, 0, fishing_rng_golden_bait, NULL);
         clearflag(FLAG_FISHING_GOLDEN_BAIT_USED);
         item_remove(ITEM_GOLDKOEDER, 1);
         dprintf("Spawned fishing pokemon with golden bait\n");
     } else if (checkflag(FLAG_FISHING_BAIT_USED)) {
-        pokemon_spawn_by_seed_algorithm(opponent_pokemon, species, (u8)(MIN(level + 2, 100)), 
-        POKEMON_NEW_RANDOM_IVS, false, pid, false, 0, fishing_rng_bait, NULL);
+        pokemon_spawn_by_seed_algorithm(opponent_pokemon, species, (u8)(MIN(level + 2, 100)),
+                                        POKEMON_NEW_RANDOM_IVS, false, pid, false, 0, fishing_rng_bait, NULL);
         clearflag(FLAG_FISHING_BAIT_USED);
         item_remove(ITEM_KOEDER, 1);
         dprintf("Spawned fishing pokemon with bait\n");
     } else {
-        pokemon_spawn_by_seed_algorithm(opponent_pokemon, species, level, 
-        POKEMON_NEW_RANDOM_IVS, false, pid, false, 0, fishing_rng_no_bait, NULL);
+        pokemon_spawn_by_seed_algorithm(opponent_pokemon, species, level,
+                                        POKEMON_NEW_RANDOM_IVS, false, pid, false, 0, fishing_rng_no_bait, NULL);
         dprintf("Spawned fishing pokemon without bait\n");
     }
     gp_stack_pop();
@@ -89,12 +89,13 @@ u16 fishing_create_pokemon(wild_pokemon_habitat *habitat, u8 rod_type) {
 }
 
 static void fishing_big_callback_wait_bait_selection(u8 self) {
-    (void) self;
+    (void)self;
 }
 
 void fishing_start_after_bait_selection() {
     u8 idx = big_callback_get_id(fishing_big_callback_wait_bait_selection);
-    if (idx == 0xFF) derrf("No fishing in progress, can't start it after bait selection...\n");
+    if (idx == 0xFF)
+        derrf("No fishing in progress, can't start it after bait selection...\n");
     big_callbacks[idx].function = fishing_big_callback;
 }
 
@@ -132,7 +133,7 @@ void fishing_print_bait_selection() {
     list_menu_item *list = malloc_and_clear(sizeof(list_menu_item) * 4);
     u16 num_displayed = fishing_build_selection_list(list);
     *var_access(DYN_MULTICHOICE_ITEM_CNT) = num_displayed;
-    overworld_script_state.pointer_banks[0] = (u8*)list;
+    overworld_script_state.pointer_banks[0] = (u8 *)list;
     if (multichoice(0, 0, 0, true)) {
         overworld_script_halt();
     }
@@ -141,7 +142,7 @@ void fishing_print_bait_selection() {
 }
 
 void fishing_execute_bait_selection() {
-    list_menu_item *list = (list_menu_item*)fmem.gp_state;
+    list_menu_item *list = (list_menu_item *)fmem.gp_state;
     fishing_build_selection_list(list);
     u16 idx = *var_access(LASTRESULT);
     u16 flag = (u16)list[idx].idx;

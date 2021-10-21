@@ -23,4 +23,3 @@ def parse_symbols(symbolspath):
                     symbols[symbol] = offset
             except: pass
         return symbols
-    

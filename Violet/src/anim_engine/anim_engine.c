@@ -1,90 +1,90 @@
-#include "types.h"
-#include "oam.h"
-#include "callbacks.h"
 #include "anim_engine.h"
-#include "superstate.h"
-#include "color.h"
-#include "bg.h"
-#include "text.h"
-#include "save.h"
-#include "debug.h"
-#include "math.h"
-#include "bios.h"
-#include "music.h"
 #include "agbmemory.h"
-#include "overworld/map_control.h"
-#include "pokemon/cry.h"
+#include "bg.h"
+#include "bios.h"
+#include "callbacks.h"
+#include "color.h"
+#include "debug.h"
+#include "dma.h"
+#include "fading.h"
 #include "flags.h"
 #include "io.h"
+#include "math.h"
+#include "music.h"
+#include "oam.h"
+#include "overworld/map_control.h"
+#include "pokemon/cry.h"
+#include "save.h"
+#include "superstate.h"
+#include "text.h"
+#include "types.h"
 #include "vars.h"
-#include "fading.h"
-#include "dma.h"
 
 static void cmdx3B_loop_sound_with_pan_and_volume_decay(ae_memory *mem);
 static void cmdx3C_task_new(ae_memory *mem);
 
 static void (*commands[])(ae_memory *) = {
-        cmdx00_end,
-        cmdx01_call,
-        cmdx02_jump,
-        cmdx03_oam_new,
-        cmdx04_oam_delete,
-        cmdx05_oam_vram_load,
-        cmdx06_oam_vram_free,
-        cmdx07_oam_despawn,
-        cmdx08_spawn_callback,
-        cmdx09_bg_reset,
-        cmdx0A_bg_setup,
-        cmdx0B_bg_sync_and_show,
-        cmdx0C_bg_hide,
-        cmdx0D_bg_display_sync,
-        cmdx0E_bg_override,
-        cmdx0F_load_obj_pal,
-        cmdx10_free_obj_pal,
-        cmdx11_get_io,
-        cmdx12_set_io_to_var,
-        cmdx13_set_io_to_value,
-        cmdx14_prepare_tbox,
-        cmd_nop,
-        cmdx16_clear_textbox,
-        cmd_nop,
-        cmd_nop,
-        cmdx19_objmove,
-        anim_engine_cmdx1A, // cmd_x1A_callasm function in Assembler Code
-        cmdx1B_gfx_anim_set,
-        cmdx1C_rs_anim_set,
-        cmdx1D_loadpal,
-        cmdx1E_fade,
-        cmdx1F_invertcolors,
-        cmdx20_sound,
-        cmdx21_song,
-        cmdx22_cry,
-        cmdx23_maintain,
-        cmdx24_script_notify,
-        cmdx25_oam_reset,
-        cmdx26_callback_reset,
-        cmdx27_dma3_controller_reset,
-        cmdx28_bg_displacement_reset,
-        cmdx29_bg_vmap_init,
-        cmdx2A_bg_vmap_drop,
-        cmdx2B_bg_scroll,
-        cmdx2C_mapreload,
-        cmdx2D_force_pals_to_black,
-        cmdx2E_bg_clear_map,
-        cmdx2F_setvar,
-        cmdx30_fade_obj_pal,
-        cmdx31_tbox_flush,
-        cmdx32_pal_restore_force_current,
-        cmdx33_jump_if_female,
-        cmdx34_setflag,
-        cmdx35_pal_restore_snapshot,
-        cmdx36_load_obj_pal_from_struct,
-        cmdx37_obj_move_trace,
-        cmdx38_tbox_and_interrupt,
-        cmdx39_pause,
-        cmdx3A_task_delete_all,
-        cmdx3B_loop_sound_with_pan_and_volume_decay,
-        cmdx3C_task_new,
+    cmdx00_end,
+    cmdx01_call,
+    cmdx02_jump,
+    cmdx03_oam_new,
+    cmdx04_oam_delete,
+    cmdx05_oam_vram_load,
+    cmdx06_oam_vram_free,
+    cmdx07_oam_despawn,
+    cmdx08_spawn_callback,
+    cmdx09_bg_reset,
+    cmdx0A_bg_setup,
+    cmdx0B_bg_sync_and_show,
+    cmdx0C_bg_hide,
+    cmdx0D_bg_display_sync,
+    cmdx0E_bg_override,
+    cmdx0F_load_obj_pal,
+    cmdx10_free_obj_pal,
+    cmdx11_get_io,
+    cmdx12_set_io_to_var,
+    cmdx13_set_io_to_value,
+    cmdx14_prepare_tbox,
+    cmd_nop,
+    cmdx16_clear_textbox,
+    cmd_nop,
+    cmd_nop,
+    cmdx19_objmove,
+    anim_engine_cmdx1A, // cmd_x1A_callasm function in Assembler Code
+    cmdx1B_gfx_anim_set,
+    cmdx1C_rs_anim_set,
+    cmdx1D_loadpal,
+    cmdx1E_fade,
+    cmdx1F_invertcolors,
+    cmdx20_sound,
+    cmdx21_song,
+    cmdx22_cry,
+    cmdx23_maintain,
+    cmdx24_script_notify,
+    cmdx25_oam_reset,
+    cmdx26_callback_reset,
+    cmdx27_dma3_controller_reset,
+    cmdx28_bg_displacement_reset,
+    cmdx29_bg_vmap_init,
+    cmdx2A_bg_vmap_drop,
+    cmdx2B_bg_scroll,
+    cmdx2C_mapreload,
+    cmdx2D_force_pals_to_black,
+    cmdx2E_bg_clear_map,
+    cmdx2F_setvar,
+    cmdx30_fade_obj_pal,
+    cmdx31_tbox_flush,
+    cmdx32_pal_restore_force_current,
+    cmdx33_jump_if_female,
+    cmdx34_setflag,
+    cmdx35_pal_restore_snapshot,
+    cmdx36_load_obj_pal_from_struct,
+    cmdx37_obj_move_trace,
+    cmdx38_tbox_and_interrupt,
+    cmdx39_pause,
+    cmdx3A_task_delete_all,
+    cmdx3B_loop_sound_with_pan_and_volume_decay,
+    cmdx3C_task_new,
 };
 
 void init_anim_engine_by_table() {
@@ -107,9 +107,9 @@ void anim_engine_initiatlize(u8 *script) {
 }
 
 void anim_engine_callback(u8 callback_id) {
-    ae_memory* mem = (ae_memory*)big_callback_get_int(callback_id, 1);
+    ae_memory *mem = (ae_memory *)big_callback_get_int(callback_id, 1);
     anim_engine_tasks_execute(mem->root);
-    if (mem->paused) 
+    if (mem->paused)
         return;
     if (mem->delayed > 0) {
         --mem->delayed;
@@ -119,7 +119,8 @@ void anim_engine_callback(u8 callback_id) {
         // dprintf("Script offset is %x\n", mem->script);
         u8 command = anim_engine_read_byte(mem);
         // dprintf("Running ae command %d\n", command);
-        if (command == 0xFF) break;
+        if (command == 0xFF)
+            break;
         commands[command](mem);
     }
     if (!(mem->active)) {
@@ -130,29 +131,29 @@ void anim_engine_callback(u8 callback_id) {
     mem->current_frame++;
 }
 
-u8 anim_engine_read_byte(ae_memory* mem) {
+u8 anim_engine_read_byte(ae_memory *mem) {
     return *(mem->script++);
 }
 
-u16 anim_engine_read_param(ae_memory*mem) {
+u16 anim_engine_read_param(ae_memory *mem) {
     u16 result = anim_engine_read_hword(mem);
-    if ((u16) (result - 0x8000) < 0x10) {
+    if ((u16)(result - 0x8000) < 0x10) {
         result = mem->vars[(result - 0x8000)];
     }
     return result;
 }
 
-u32 anim_engine_read_word(ae_memory* mem) {
+u32 anim_engine_read_word(ae_memory *mem) {
     u32 word = (u32)UNALIGNED_32_GET(mem->script);
     mem->script += 4;
     return word;
 }
 
-u16 anim_engine_get_hword(ae_memory* mem) {
+u16 anim_engine_get_hword(ae_memory *mem) {
     return (u16)UNALIGNED_16_GET(mem->script);
 }
 
-u16 anim_engine_read_hword(ae_memory*mem) {
+u16 anim_engine_read_hword(ae_memory *mem) {
     u16 hword = anim_engine_get_hword(mem);
     mem->script += 2;
     return hword;
@@ -162,7 +163,7 @@ void cmd_nop(ae_memory *mem) {
     (void)mem;
 }
 
-void cmdx00_end(ae_memory* mem) {
+void cmdx00_end(ae_memory *mem) {
     if (mem->stack_size == 0) {
         mem->active = false;
     } else {
@@ -171,8 +172,8 @@ void cmdx00_end(ae_memory* mem) {
     }
 }
 
-void cmdx01_call(ae_memory* mem) {
-    u8 *subscript = (u8*)anim_engine_read_word(mem);
+void cmdx01_call(ae_memory *mem) {
+    u8 *subscript = (u8 *)anim_engine_read_word(mem);
     if (mem->stack_size < ARRAY_COUNT(mem->stack)) {
         mem->stack[mem->stack_size] = mem->script;
         ++mem->stack_size;
@@ -180,23 +181,23 @@ void cmdx01_call(ae_memory* mem) {
     }
 }
 
-void cmdx02_jump(ae_memory* mem) {
-    u8 *target = (u8*) anim_engine_read_word(mem);
+void cmdx02_jump(ae_memory *mem) {
+    u8 *target = (u8 *)anim_engine_read_word(mem);
     mem->script = target;
 }
 
-void cmdx03_oam_new(ae_memory* mem) {
-    oam_template* template = (oam_template*) (anim_engine_read_word(mem));
-    s16 x = (s16) (anim_engine_read_hword(mem));
-    s16 y = (s16) (anim_engine_read_hword(mem));
+void cmdx03_oam_new(ae_memory *mem) {
+    oam_template *template = (oam_template *)(anim_engine_read_word(mem));
+    s16 x = (s16)(anim_engine_read_hword(mem));
+    s16 y = (s16)(anim_engine_read_hword(mem));
     u8 priority = anim_engine_read_byte(mem);
-    u16 target = (u16) (anim_engine_read_hword(mem) - 0x8000);
+    u16 target = (u16)(anim_engine_read_hword(mem) - 0x8000);
     if (target < 0x10) {
         mem->vars[target] = oam_new_forward_search(template, x, y, priority);
     }
 }
 
-void cmdx04_oam_delete(ae_memory* mem) {
+void cmdx04_oam_delete(ae_memory *mem) {
 
     u16 id = anim_engine_read_hword(mem);
 
@@ -206,25 +207,25 @@ void cmdx04_oam_delete(ae_memory* mem) {
     oam_clear(&oams[id]);
 }
 
-void cmdx05_oam_vram_load(ae_memory* mem) {
-    graphic* resource = (graphic*) anim_engine_read_word(mem);
+void cmdx05_oam_vram_load(ae_memory *mem) {
+    graphic *resource = (graphic *)anim_engine_read_word(mem);
     oam_load_graphic(resource);
 }
 
-void cmdx06_oam_vram_free(ae_memory* mem) {
+void cmdx06_oam_vram_free(ae_memory *mem) {
     u16 oam_id = anim_engine_read_param(mem);
-    oam_object* oam = (oam_object*) (oam_id * 0x44 + 0x0202063c);
+    oam_object *oam = (oam_object *)(oam_id * 0x44 + 0x0202063c);
     oam_free_graphic(oam);
 }
 
-void cmdx07_oam_despawn(ae_memory* mem) {
-    u8 oam_id = (u8) anim_engine_read_param(mem);
-    oam_object* oam = &oams[oam_id];
+void cmdx07_oam_despawn(ae_memory *mem) {
+    u8 oam_id = (u8)anim_engine_read_param(mem);
+    oam_object *oam = &oams[oam_id];
     oam_free(oam);
 }
 
-void cmdx08_spawn_callback(ae_memory* mem) {
-    void* function = (void*) anim_engine_read_word(mem);
+void cmdx08_spawn_callback(ae_memory *mem) {
+    void *function = (void *)anim_engine_read_word(mem);
     u8 priority = anim_engine_read_byte(mem);
     u8 length = anim_engine_read_byte(mem);
     u8 idx = big_callback_new(function, priority);
@@ -233,7 +234,7 @@ void cmdx08_spawn_callback(ae_memory* mem) {
     }
 }
 
-void cmdx09_bg_reset(ae_memory* mem) {
+void cmdx09_bg_reset(ae_memory *mem) {
     if (bg_get_tilemap(0))
         free(bg_get_tilemap(0));
     if (bg_get_tilemap(1))
@@ -245,15 +246,15 @@ void cmdx09_bg_reset(ae_memory* mem) {
     bg_reset(anim_engine_read_byte(mem));
 }
 
-void cmdx0A_bg_setup(ae_memory* mem) {
-    bg_setup(anim_engine_read_byte(mem), (bg_config*) anim_engine_read_word(mem), anim_engine_read_byte(mem));
+void cmdx0A_bg_setup(ae_memory *mem) {
+    bg_setup(anim_engine_read_byte(mem), (bg_config *)anim_engine_read_word(mem), anim_engine_read_byte(mem));
 }
 
-void cmdx0B_bg_sync_and_show(ae_memory* mem) {
+void cmdx0B_bg_sync_and_show(ae_memory *mem) {
     bg_sync_display_and_show(anim_engine_read_byte(mem));
 }
 
-void cmdx0C_bg_hide(ae_memory* mem) {
+void cmdx0C_bg_hide(ae_memory *mem) {
     bg_hide(anim_engine_read_byte(mem));
 }
 
@@ -261,70 +262,70 @@ void cmdx0D_bg_display_sync() {
     bg_display_sync();
 }
 
-void cmdx0E_bg_override(ae_memory* mem) {
+void cmdx0E_bg_override(ae_memory *mem) {
     u8 bgid = anim_engine_read_byte(mem);
-    void* graphic = (void*) anim_engine_read_word(mem);
+    void *graphic = (void *)anim_engine_read_word(mem);
     u16 size = anim_engine_read_hword(mem);
     u16 start = anim_engine_read_hword(mem);
     u8 mode = anim_engine_read_byte(mem);
 
-    void* buffer = malloc(size);
-    if(!buffer)
+    void *buffer = malloc(size);
+    if (!buffer)
         return;
     lz77uncompwram(graphic, buffer);
     bg_copy_vram(bgid, buffer, size, start, mode);
 
     // Callback to free the allocated ressource
-    anim_engine_task *t = anim_engine_task_new(0, anim_engine_bg_free_task, sizeof(void*), mem->root);
-    *(void**)(t->vars) = buffer;
+    anim_engine_task *t = anim_engine_task_new(0, anim_engine_bg_free_task, sizeof(void *), mem->root);
+    *(void **)(t->vars) = buffer;
 }
 
-
-
-void cmdx0F_load_obj_pal(ae_memory* mem) {
+void cmdx0F_load_obj_pal(ae_memory *mem) {
 
     u8 pal_id = oam_allocate_palette(anim_engine_read_hword(mem));
-    
-    void* pal = (void*) anim_engine_read_word(mem);
+
+    void *pal = (void *)anim_engine_read_word(mem);
     u8 mode = anim_engine_read_byte(mem);
     u8 force = anim_engine_read_byte(mem);
-    if(pal_id == 0xFF)return;
-    if(mode){
+    if (pal_id == 0xFF)
+        return;
+    if (mode) {
         lz77uncompwram(pal, pal_tmp);
         pal = pal_tmp;
     }
     cpuset(pal, &pal_restore[(pal_id + 16) * 16], 16);
-    if(force) cpuset(pal, &pals[(pal_id + 16) * 16], 16);
+    if (force)
+        cpuset(pal, &pals[(pal_id + 16) * 16], 16);
 }
 
-void cmdx10_free_obj_pal(ae_memory* mem) {
+void cmdx10_free_obj_pal(ae_memory *mem) {
     oam_palette_free(anim_engine_read_hword(mem));
 }
 
-void cmdx11_get_io(ae_memory*mem) {
-    u16 var = (u16) (anim_engine_read_hword(mem) - 0x8000);
+void cmdx11_get_io(ae_memory *mem) {
+    u16 var = (u16)(anim_engine_read_hword(mem) - 0x8000);
     u16 ioreg = anim_engine_read_hword(mem);
     if (var < 0x10) {
         mem->vars[var] = io_get(ioreg);
     }
 }
 
-void cmdx12_set_io_to_var(ae_memory*mem) {
-    u16 var = (u16) (anim_engine_read_hword(mem) - 0x8000);
+void cmdx12_set_io_to_var(ae_memory *mem) {
+    u16 var = (u16)(anim_engine_read_hword(mem) - 0x8000);
     u16 ioreg = anim_engine_read_hword(mem);
     if (var < 0x10) {
         io_set(ioreg, mem->vars[var]);
     }
 }
 
-void cmdx13_set_io_to_value(ae_memory*mem) {
+void cmdx13_set_io_to_value(ae_memory *mem) {
     u16 val = anim_engine_read_hword(mem);
     u16 ioreg = anim_engine_read_hword(mem);
     io_set(ioreg, val);
 }
 
-void cmdx14_prepare_tbox(ae_memory*mem) {
-    u16 target_var = (u16) (anim_engine_read_hword(mem) - 0x8000);
+void cmdx14_prepare_tbox(ae_memory *mem) {
+    u16 target_var = (u16)(anim_engine_read_hword(mem) - 0x8000);
     u8 bgid = anim_engine_read_byte(mem);
     u8 x = anim_engine_read_byte(mem);
     u8 y = anim_engine_read_byte(mem);
@@ -342,103 +343,99 @@ void cmdx14_prepare_tbox(ae_memory*mem) {
     }
 }
 
-void cmdx15_display_text_inst(ae_memory* mem) {
-    u8 boxid = (u8) anim_engine_read_param(mem);
+void cmdx15_display_text_inst(ae_memory *mem) {
+    u8 boxid = (u8)anim_engine_read_param(mem);
     u8 font_id = anim_engine_read_byte(mem);
     u8 unkown = anim_engine_read_byte(mem);
     u8 border_distance = anim_engine_read_byte(mem);
     u8 line_distance_u = anim_engine_read_byte(mem);
     u8 line_distance_l = anim_engine_read_byte(mem);
-    tbox_font_colormap *font_map = (tbox_font_colormap*) anim_engine_read_word(mem);
+    tbox_font_colormap *font_map = (tbox_font_colormap *)anim_engine_read_word(mem);
     u8 display_flag = anim_engine_read_byte(mem);
-    u8* string = (u8*) anim_engine_read_word(mem);
+    u8 *string = (u8 *)anim_engine_read_word(mem);
     u8 bgid = anim_engine_read_byte(mem);
 
     //decrypting string
-    u8* ram_buffer = (u8*) 0x02021D18;
+    u8 *ram_buffer = (u8 *)0x02021D18;
     string_decrypt(ram_buffer, string);
 
     tbox_flush_set(boxid, 0);
     tbox_print_string(boxid, font_id, unkown, border_distance, line_distance_u, line_distance_l, font_map, display_flag, ram_buffer);
     bg_copy_vram(bgid, bg_get_tilemap(bgid), 0x800, 0x0, 0x2);
-
 }
 
-void cmdx16_clear_textbox(ae_memory* mem) {
-    u8 boxid = (u8) anim_engine_read_param(mem);
+void cmdx16_clear_textbox(ae_memory *mem) {
+    u8 boxid = (u8)anim_engine_read_param(mem);
     tbox_flush_set(boxid, 0);
     tbox_flush_map(boxid);
     tbox_free(boxid);
     bg_copy_vram(0, bg_get_tilemap(0), 0x800, 0x0, 0x2);
 }
 
-
-void cmdx19_objmove(ae_memory* mem) {
-    u8 oam_id = (u8) anim_engine_read_param(mem);
+void cmdx19_objmove(ae_memory *mem) {
+    u8 oam_id = (u8)anim_engine_read_param(mem);
     u16 duration = anim_engine_read_hword(mem);
-    s16 x = (s16) (anim_engine_read_hword(mem));
-    s16 y = (s16) (anim_engine_read_hword(mem));
+    s16 x = (s16)(anim_engine_read_hword(mem));
+    s16 y = (s16)(anim_engine_read_hword(mem));
 
     if (duration == 0) {
-        oam_object* oam = (oam_object*) (0x0202063c + oam_id * 0x44);
-        oam-> x = (s16) (oam->x + x);
-        oam-> y = (s16) (oam->y + y);
+        oam_object *oam = (oam_object *)(0x0202063c + oam_id * 0x44);
+        oam->x = (s16)(oam->x + x);
+        oam->y = (s16)(oam->y + y);
     } else {
         //spawn a new callback
         anim_engine_task *t = anim_engine_task_new(0, _obj_move_linear_trace,
-                5 * sizeof(u16), mem->root);
-        
+                                                   5 * sizeof(u16), mem->root);
+
         dprintf("Spawned linear trace @%x\n", t);
-        u16 *vars = (u16*)(t->vars);
+        u16 *vars = (u16 *)(t->vars);
         vars[0] = oam_id;
-        vars[1] = (u16) x;
-        vars[2] = (u16) y;
+        vars[1] = (u16)x;
+        vars[2] = (u16)y;
         vars[3] = duration;
         vars[4] = 0x0; //frame count
     }
 }
 
 void _obj_move_linear_trace(anim_engine_task *self) {
-    u16 *vars = (u16*)(self->vars);
-    u8 oam_id = (u8) (vars[0]);
-    oam_object* oam = &oams[oam_id];
-    s16 x = (s16) (vars[1]);
-    s16 y = (s16) (vars[2]);
+    u16 *vars = (u16 *)(self->vars);
+    u8 oam_id = (u8)(vars[0]);
+    oam_object *oam = &oams[oam_id];
+    s16 x = (s16)(vars[1]);
+    s16 y = (s16)(vars[2]);
     u16 d = vars[3];
     u16 t = vars[4];
 
-
-    vars[4]++; //incrementing frame count 
+    vars[4]++; //incrementing frame count
     //calculating the movement in this frame by this formula mov_x(t) = x*t/d - (t-1)*x/d
     int x_mov = (x * t) / d - ((t - 1) * x) / d;
     int y_mov = (y * t) / d - ((t - 1) * y) / d;
 
-    oam -> x = (s16) ((oam -> x) + x_mov);
-    oam -> y = (s16) ((oam -> y) + y_mov);
+    oam->x = (s16)((oam->x) + x_mov);
+    oam->y = (s16)((oam->y) + y_mov);
 
     if (vars[4] == vars[3]) {
         anim_engine_task_delete(self);
     }
 }
 
-void cmdx1B_gfx_anim_set(ae_memory* mem) {
+void cmdx1B_gfx_anim_set(ae_memory *mem) {
     u16 oam_id = anim_engine_read_param(mem);
     u8 anim_id = anim_engine_read_byte(mem);
     oam_gfx_anim_start(oams + oam_id, anim_id);
     oam_gfx_anim_init(oams + oam_id, 0);
 }
 
-void cmdx1C_rs_anim_set(ae_memory* mem) {
+void cmdx1C_rs_anim_set(ae_memory *mem) {
     u16 oam_id = anim_engine_read_param(mem);
     u8 anim_id = anim_engine_read_byte(mem);
 
-    oam_object* oam = (oam_object*) (oam_id * 0x44 + 0x0202063c);
+    oam_object *oam = (oam_object *)(oam_id * 0x44 + 0x0202063c);
     oam_rotscale_anim_init(oam, anim_id);
-
 }
 
-void cmdx1D_loadpal(ae_memory* mem) {
-    void *pal = (void*) anim_engine_read_word(mem);
+void cmdx1D_loadpal(ae_memory *mem) {
+    void *pal = (void *)anim_engine_read_word(mem);
     u16 destcol = anim_engine_read_hword(mem);
     u16 bytecount = anim_engine_read_hword(mem);
     u8 cflag = anim_engine_read_byte(mem); //compressed flag: if 0x1 data is compressed
@@ -453,10 +450,9 @@ void cmdx1D_loadpal(ae_memory* mem) {
     if (force) {
         cpuset(pal, &pals[destcol], CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(bytecount));
     }
-
 }
 
-void cmdx1E_fade(ae_memory* mem) {
+void cmdx1E_fade(ae_memory *mem) {
     u16 color = anim_engine_read_hword(mem);
     u16 dcol = anim_engine_read_hword(mem);
     u16 ncol = anim_engine_read_hword(mem);
@@ -466,8 +462,8 @@ void cmdx1E_fade(ae_memory* mem) {
 
     //initing a callback
     anim_engine_task *t = anim_engine_task_new(0, anim_engine_fader, 7 * sizeof(u16), mem->root);
-    
-    u16 *vars = (u16*)(t->vars);
+
+    u16 *vars = (u16 *)(t->vars);
     vars[0] = color;
     vars[1] = dcol;
     vars[2] = ncol;
@@ -477,12 +473,11 @@ void cmdx1E_fade(ae_memory* mem) {
     vars[6] = to_intensity;
 
     anim_engine_fader(t);
-
 }
 
 void anim_engine_fader(anim_engine_task *self) {
 
-    u16 *vars = (u16*)(self->vars);
+    u16 *vars = (u16 *)(self->vars);
     u16 duration = vars[3];
     u16 current_frame = vars[4]++;
     u8 intensity;
@@ -491,11 +486,11 @@ void anim_engine_fader(anim_engine_task *self) {
         int d = vars[6] - vars[5];
         d *= current_frame;
         d /= duration;
-        intensity = (u8) (d + vars[5]);
+        intensity = (u8)(d + vars[5]);
 
     } else {
         //Instant palload
-        intensity = (u8) vars[6];
+        intensity = (u8)vars[6];
     }
 
     //now we do the fading loop
@@ -514,12 +509,12 @@ void anim_engine_fader(anim_engine_task *self) {
     }
 }
 
-void cmdx1F_invertcolors(ae_memory* mem) {
+void cmdx1F_invertcolors(ae_memory *mem) {
     u16 startcol = anim_engine_read_hword(mem);
     u16 ncol = anim_engine_read_hword(mem);
     if (ncol != 0) {
-        u16* palcopyram = (u16*) 0x020371F8;
-        u16* palram = (u16*) 0x020375F8;
+        u16 *palcopyram = (u16 *)0x020371F8;
+        u16 *palram = (u16 *)0x020375F8;
 
         //start a inversion loop
         for (int i = startcol; i < ncol + startcol; i++) {
@@ -527,24 +522,24 @@ void cmdx1F_invertcolors(ae_memory* mem) {
             int red = 0x1F - (oc & 0x1F);
             int blue = 0x3E0 - (oc & 0x3E0);
             int green = 0x7C00 - (oc & 0x7C00);
-            palcopyram[i] = (u16) (red | blue | green);
-            palram[i] = (u16) (red | blue | green);
+            palcopyram[i] = (u16)(red | blue | green);
+            palram[i] = (u16)(red | blue | green);
         }
     }
 }
 
-void cmdx20_sound(ae_memory* mem) {
+void cmdx20_sound(ae_memory *mem) {
     u16 soundid = anim_engine_read_hword(mem);
     play_sound(soundid);
 }
 
-void cmdx21_song(ae_memory* mem) {
+void cmdx21_song(ae_memory *mem) {
     u16 songid = anim_engine_read_hword(mem);
     u8 feature = anim_engine_read_byte(mem);
     playsong1(songid, feature);
 }
 
-void cmdx22_cry(ae_memory* mem) {
+void cmdx22_cry(ae_memory *mem) {
     u16 pokeid = anim_engine_read_hword(mem);
     u8 feature = anim_engine_read_byte(mem);
     pokemon_play_cry(pokeid, feature);
@@ -555,7 +550,7 @@ void cmdx23_maintain() {
 }
 
 void cmdx24_script_notify() {
-    *((bool*) 0x03000EA8) = false;
+    *((bool *)0x03000EA8) = false;
 }
 
 void cmdx25_oam_reset() {
@@ -581,8 +576,8 @@ void cmdx27_dma3_controller_reset() {
 void cmdx28_bg_displacement_reset() {
     int i;
     for (i = 0; i < 4; i++) {
-        bg_virtual_map_displace((u8) i, 0, 0);
-        bg_virtual_set_displace((u8) i, 0, 0);
+        bg_virtual_map_displace((u8)i, 0, 0);
+        bg_virtual_set_displace((u8)i, 0, 0);
     }
 }
 
@@ -606,7 +601,7 @@ void cmdx2B_bg_scroll(ae_memory *mem) {
     u16 hdelta = anim_engine_read_hword(mem);
     u16 vdelta = anim_engine_read_hword(mem);
     anim_engine_task *t = anim_engine_task_new(15, anim_engine_bg_scroller, 5 * sizeof(u16), mem->root);
-    u16 *vars = (u16*)(t->vars);
+    u16 *vars = (u16 *)(t->vars);
     vars[0] = bg_id;
     vars[1] = duration;
     vars[2] = hdelta;
@@ -616,12 +611,12 @@ void cmdx2B_bg_scroll(ae_memory *mem) {
 }
 
 void anim_engine_bg_scroller(anim_engine_task *self) {
-    u16 *vars = (u16*)(self->vars);
-    u8 bg_id = (u8) vars[0];
+    u16 *vars = (u16 *)(self->vars);
+    u8 bg_id = (u8)vars[0];
     u16 duration = vars[1];
     u16 current_frame = ++(vars[4]);
-    s16 hdelta = (s16) vars[2];
-    s16 vdelta = (s16) vars[3];
+    s16 hdelta = (s16)vars[2];
+    s16 vdelta = (s16)vars[3];
     u16 bg_hreg = (u16)(0x10 + 4 * bg_id);
     u16 bg_vreg = (u16)(0x12 + 4 * bg_id);
     u16 x = io_get(bg_hreg);
@@ -647,7 +642,7 @@ void anim_engine_bg_scroller(anim_engine_task *self) {
 
 void ae_mapreloader() {
     generic_callback1();
-    if ((*((u8*) 0x02037AB8 + 7)) & 0x80) {
+    if ((*((u8 *)0x02037AB8 + 7)) & 0x80) {
         return;
     }
     int i;
@@ -672,11 +667,11 @@ void cmdx2D_force_pals_to_black() {
 }
 
 void anim_engine_bg_free_task(anim_engine_task *self) {
-    void **vars = (void**)(self->vars);
+    void **vars = (void **)(self->vars);
     free(*vars);
-    if(anim_engine_task_delete(self) < 0){
+    if (anim_engine_task_delete(self) < 0) {
         dprintf("Error at deleting bg free task!\n");
-        err( ERR_GENERIC);
+        err(ERR_GENERIC);
     }
 }
 
@@ -694,7 +689,7 @@ void cmdx2F_setvar(ae_memory *mem) {
     mem->vars[var] = val;
 }
 
-void cmdx30_fade_obj_pal(ae_memory *mem){
+void cmdx30_fade_obj_pal(ae_memory *mem) {
     u16 color = anim_engine_read_hword(mem);
     u16 tag = anim_engine_read_hword(mem);
     u8 start_col = anim_engine_read_byte(mem);
@@ -702,12 +697,12 @@ void cmdx30_fade_obj_pal(ae_memory *mem){
     u16 duration = anim_engine_read_hword(mem);
     u8 from_intensity = anim_engine_read_byte(mem);
     u8 to_intensity = anim_engine_read_byte(mem);
-    
+
     int pal_id = oam_palette_get_index(tag) + 16;
     u16 dcol = (u16)(16 * pal_id + start_col);
     u16 ncol = col_count;
     anim_engine_task *t = anim_engine_task_new(0, anim_engine_fader, 7 * sizeof(u16), mem->root);
-    u16 *vars = (u16*)(t->vars);
+    u16 *vars = (u16 *)(t->vars);
     vars[0] = color;
     vars[1] = dcol;
     vars[2] = ncol;
@@ -717,45 +712,44 @@ void cmdx30_fade_obj_pal(ae_memory *mem){
     vars[6] = to_intensity;
 
     anim_engine_fader(t);
-    
 }
 
-void cmdx31_tbox_flush(ae_memory *mem){
+void cmdx31_tbox_flush(ae_memory *mem) {
     u8 box_id = (u8)anim_engine_read_param(mem);
     u8 flush = anim_engine_read_byte(mem);
     tbox_flush_set(box_id, flush);
 }
 
-void cmdx32_pal_restore_force_current(ae_memory *mem){
+void cmdx32_pal_restore_force_current(ae_memory *mem) {
     u16 first_col = anim_engine_read_hword(mem);
     u16 col_cnt = anim_engine_read_hword(mem);
     int i;
-    for(i = 0; i < col_cnt; i++){
+    for (i = 0; i < col_cnt; i++) {
         pal_restore[first_col + i] = pals[first_col + i];
     }
-    
 }
 
-void cmdx33_jump_if_female(ae_memory *mem){
-    u8 *target = (u8*)anim_engine_read_word(mem);
+void cmdx33_jump_if_female(ae_memory *mem) {
+    u8 *target = (u8 *)anim_engine_read_word(mem);
     u16 target_frame = anim_engine_read_hword(mem);
-    if(save2->player_is_female){
+    if (save2->player_is_female) {
         mem->script = target;
         mem->current_frame = target_frame;
     }
-   
 }
 
-void cmdx34_setflag(ae_memory *mem){
+void cmdx34_setflag(ae_memory *mem) {
     u16 flag = anim_engine_read_hword(mem);
-    if(anim_engine_read_byte(mem)) setflag(flag);
-    else clearflag(flag);
+    if (anim_engine_read_byte(mem))
+        setflag(flag);
+    else
+        clearflag(flag);
 }
 
-void cmdx35_pal_restore_snapshot(ae_memory *mem){
-    if(anim_engine_read_byte(mem)){
+void cmdx35_pal_restore_snapshot(ae_memory *mem) {
+    if (anim_engine_read_byte(mem)) {
         //Create snapshot pal_restore
-        if(mem->pal_restore_save){
+        if (mem->pal_restore_save) {
             dprintf("Warning: Trying to snapshot pal restore when there is already a snapshot!\n");
         }
         mem->pal_restore_save = malloc(sizeof(color_t) * 1024);
@@ -763,8 +757,8 @@ void cmdx35_pal_restore_snapshot(ae_memory *mem){
         // cpuset(pal_restore, mem->pal_restore_save, 0x4000100);
         cpuset(pal_tmp, &(mem->pal_restore_save[512]), 0x4000100);
         dprintf("Pal restore snap alloc\n");
-    }else{
-        if(!mem->pal_restore_save){
+    } else {
+        if (!mem->pal_restore_save) {
             dprintf("Warning: Trying to load a not present snapshot for pal restore\n");
         }
         //cpuset(mem->pal_restore_save, pal_restore, 0x4000100);
@@ -775,30 +769,31 @@ void cmdx35_pal_restore_snapshot(ae_memory *mem){
     }
 }
 
-void cmdx36_load_obj_pal_from_struct(ae_memory *mem){
-    palette *p = (palette*)anim_engine_read_word(mem);
+void cmdx36_load_obj_pal_from_struct(ae_memory *mem) {
+    palette *p = (palette *)anim_engine_read_word(mem);
     u8 pal_id = oam_allocate_palette(p->tag);
     u8 mode = anim_engine_read_byte(mem);
     u8 force = anim_engine_read_byte(mem);
-    if (pal_id == 0xFF) return;
-    
+    if (pal_id == 0xFF)
+        return;
+
     const void *pal = p->pal;
-    if(mode){
+    if (mode) {
         lz77uncompwram(pal, pal_tmp);
         pal = pal_tmp;
     }
-    
+
     cpuset(pal, &pal_restore[(pal_id + 16) * 16], 16);
-    if(force) cpuset(pal, &pals[(pal_id + 16) * 16], 16);
+    if (force)
+        cpuset(pal, &pals[(pal_id + 16) * 16], 16);
 }
 
-
-void _obj_move_trig_trace(anim_engine_task *self){
-    u16 *vars = (u16*)(self->vars);
+void _obj_move_trig_trace(anim_engine_task *self) {
+    u16 *vars = (u16 *)(self->vars);
     //trace @%x with vars @%x\n", self, vars);
     u8 oam_id = (u8)vars[0];
     u16 duration = vars[1];
-    if(duration == vars[2]++){
+    if (duration == vars[2]++) {
         anim_engine_task_delete(self);
     }
     u16 frame = vars[2];
@@ -810,16 +805,17 @@ void _obj_move_trig_trace(anim_engine_task *self){
     FIXED famplitude = INT_TO_FIXED(amplitude);
     FIXED fx = FIXED_DIV(INT_TO_FIXED(frame), fperiod);
     FIXED fxprev = FIXED_DIV(INT_TO_FIXED(frame - 1), fperiod);
-    FIXED (*eval_func)(FIXED);
-    switch(trig_func){
+    FIXED(*eval_func)
+    (FIXED);
+    switch (trig_func) {
         case 0: //sine function
-        	eval_func = FIXED_SIN;
+            eval_func = FIXED_SIN;
             break;
         case 1: //cosine function
-        	eval_func = FIXED_COS;
+            eval_func = FIXED_COS;
             break;
         case 2: //tangens function
-        	eval_func = FIXED_TAN;
+            eval_func = FIXED_TAN;
             break;
         case 3: //sine function
             eval_func = FIXED_TRIANGLE_SIN;
@@ -830,39 +826,38 @@ void _obj_move_trig_trace(anim_engine_task *self){
         case 5: //tangens function
             eval_func = FIXED_TRIANGLE_TAN;
             break;
-        default: return;
+        default:
+            return;
     }
 
     // Evaluate the function at the current and previous frame
     int current = FIXED_TO_INT(FIXED_MUL(famplitude, eval_func(fx)));
     int prev = FIXED_TO_INT(FIXED_MUL(famplitude, eval_func(fxprev)));
     int d = current - prev;
-    if(on_y_axis)oams[oam_id].y = (s16)(oams[oam_id].y + d);
-    else oams[oam_id].x = (s16)(oams[oam_id].x + d);
+    if (on_y_axis)
+        oams[oam_id].y = (s16)(oams[oam_id].y + d);
+    else
+        oams[oam_id].x = (s16)(oams[oam_id].x + d);
 }
 
-
-
-
-
-void cmdx37_obj_move_trace(ae_memory *mem){
+void cmdx37_obj_move_trace(ae_memory *mem) {
     u8 oam_id = (u8)anim_engine_read_param(mem);
     u16 duration = anim_engine_read_hword(mem);
     u8 trace = anim_engine_read_byte(mem);
-    switch(trace){
+    switch (trace) {
         case 0:
         case 1:
         case 2:
         case 3:
         case 4:
-        case 5:{
+        case 5: {
             //Trigonometric functions
             u8 on_y_axis = anim_engine_read_byte(mem);
             u16 amplitude = anim_engine_read_hword(mem);
             u16 period = anim_engine_read_hword(mem);
             size_t size_var_space = 7 * sizeof(u16);
             anim_engine_task *t = anim_engine_task_new(0, _obj_move_trig_trace, size_var_space, mem->root);
-            u16 *var_space = (u16*)(t->vars);
+            u16 *var_space = (u16 *)(t->vars);
             var_space[0] = oam_id;
             var_space[1] = duration;
             var_space[2] = 0;
@@ -873,16 +868,16 @@ void cmdx37_obj_move_trace(ae_memory *mem){
             dprintf("Spawned trig trace task @%x\n", t);
             break;
         }
-        case 6:{
+        case 6: {
             //Linear function
             u16 dx = anim_engine_read_hword(mem);
             u16 dy = anim_engine_read_hword(mem);
             anim_engine_task *t = anim_engine_task_new(0, _obj_move_linear_trace,
-                5 * sizeof(u16), mem->root);
-            u16 *vars = (u16*)(t->vars);
+                                                       5 * sizeof(u16), mem->root);
+            u16 *vars = (u16 *)(t->vars);
             vars[0] = oam_id;
-            vars[1] = (u16) dx;
-            vars[2] = (u16) dy;
+            vars[1] = (u16)dx;
+            vars[2] = (u16)dy;
             vars[3] = duration;
             vars[4] = 0x0; //frame count
             break;
@@ -900,7 +895,7 @@ struct cmd_x38_tbox_waiting_struct {
 };
 
 static void cmdx38_wait_for_tbox(anim_engine_task *self) {
-    struct cmd_x38_tbox_waiting_struct *waiting_struct = (struct cmd_x38_tbox_waiting_struct*)self->vars;
+    struct cmd_x38_tbox_waiting_struct *waiting_struct = (struct cmd_x38_tbox_waiting_struct *)self->vars;
     if (waiting_struct->proceed_boxes)
         tbox_proceed();
     if (!tbox_printer_is_active(waiting_struct->tbox_idx)) {
@@ -910,22 +905,22 @@ static void cmdx38_wait_for_tbox(anim_engine_task *self) {
 }
 
 void cmdx38_tbox_and_interrupt(ae_memory *mem) {
-    u8 tbox_idx = (u8) anim_engine_read_param(mem);
+    u8 tbox_idx = (u8)anim_engine_read_param(mem);
     u8 font = anim_engine_read_byte(mem);
     u16 x = anim_engine_read_hword(mem);
     u16 y = anim_engine_read_hword(mem);
     u8 letter_spacing = anim_engine_read_byte(mem);
     u8 line_spacing = anim_engine_read_byte(mem);
-    tbox_font_colormap* font_colormap = (tbox_font_colormap*) anim_engine_read_word(mem);
+    tbox_font_colormap *font_colormap = (tbox_font_colormap *)anim_engine_read_word(mem);
     u8 speed = (u8)anim_engine_read_byte(mem);
     if (speed == 0x80) {
         speed = tbox_get_set_speed();
     }
-    string_decrypt(strbuf, (u8*) anim_engine_read_word(mem));
+    string_decrypt(strbuf, (u8 *)anim_engine_read_word(mem));
     u8 proceed_boxes = anim_engine_read_byte(mem);
     tbox_print_string(tbox_idx, font, x, y, letter_spacing, line_spacing, font_colormap, speed, strbuf);
     anim_engine_task *t = anim_engine_task_new(127, cmdx38_wait_for_tbox, sizeof(struct cmd_x38_tbox_waiting_struct), mem->root);
-    struct cmd_x38_tbox_waiting_struct *waiting_struct = (struct cmd_x38_tbox_waiting_struct*)t->vars;
+    struct cmd_x38_tbox_waiting_struct *waiting_struct = (struct cmd_x38_tbox_waiting_struct *)t->vars;
     waiting_struct->tbox_idx = tbox_idx;
     waiting_struct->script_state = mem;
     waiting_struct->proceed_boxes = proceed_boxes;
@@ -941,7 +936,6 @@ void cmdx3A_task_delete_all(ae_memory *mem) {
     anim_engine_task_delete_all(mem->root);
 }
 
-
 typedef struct {
     u16 sound;
     s8 pan;
@@ -954,7 +948,7 @@ typedef struct {
 } task_loop_sound_control;
 
 static void task_loop_sound_with_pan_and_volume(anim_engine_task *self) {
-    task_loop_sound_control *ctrl = (task_loop_sound_control*)self->vars;
+    task_loop_sound_control *ctrl = (task_loop_sound_control *)self->vars;
     if (ctrl->delay) {
         ctrl->delay--;
         return;
@@ -972,10 +966,9 @@ static void task_loop_sound_with_pan_and_volume(anim_engine_task *self) {
     ctrl->volume = (u16)(ctrl->volume + ctrl->volume_increment);
 }
 
-
 static void cmdx3B_loop_sound_with_pan_and_volume_decay(ae_memory *mem) {
     anim_engine_task *task = anim_engine_task_new(0, task_loop_sound_with_pan_and_volume, sizeof(task_loop_sound_control), mem->root);
-    task_loop_sound_control *ctrl = (task_loop_sound_control*)task->vars;
+    task_loop_sound_control *ctrl = (task_loop_sound_control *)task->vars;
     ctrl->sound = anim_engine_read_hword(mem);
     ctrl->pan = (s8)anim_engine_read_byte(mem);
     ctrl->pan_increment = (s8)anim_engine_read_byte(mem);
@@ -988,7 +981,7 @@ static void cmdx3B_loop_sound_with_pan_and_volume_decay(ae_memory *mem) {
 
 static void cmdx3C_task_new(ae_memory *mem) {
     int priority = (int)anim_engine_read_word(mem);
-    void (*callback)(struct anim_engine_task*) = (void (*)(struct anim_engine_task*))anim_engine_read_word(mem);
+    void (*callback)(struct anim_engine_task *) = (void (*)(struct anim_engine_task *))anim_engine_read_word(mem);
     size_t var_size = (size_t)anim_engine_read_word(mem);
     dprintf("New task with prop %d, callback 0x%x, size %d\n", priority, callback, var_size);
     anim_engine_task_new(priority, callback, var_size, mem->root);

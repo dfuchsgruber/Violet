@@ -3,5 +3,5 @@ UseTab: Never
 IndentWidth: 4
 TabWidth: 4
 ColumnLimit: 0
-BraceWrapping:
-    AfterCaseLabel: true
+PointerAlignment: Right
+IndentCaseLabels: true

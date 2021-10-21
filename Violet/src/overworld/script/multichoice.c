@@ -1,14 +1,20 @@
-#include "types.h"
+#include "callbacks.h"
+#include "debug.h"
+#include "list_menu.h"
 #include "overworld/script.h"
 #include "transparency.h"
-#include "debug.h"
-#include "callbacks.h"
+#include "types.h"
 #include "vars.h"
-#include "list_menu.h"
 
 static void yesnobox_new_at(u8 x, u8 y, u8 default_no) {
     tboxdata boxdata = {
-        .bg_id = 0, .x = x, .y = y, .w = 6, .h = 4, .pal = 15, .start_tile = 0x125,
+        .bg_id = 0,
+        .x = x,
+        .y = y,
+        .w = 6,
+        .h = 4,
+        .pal = 15,
+        .start_tile = 0x125,
     };
     gp_list_menu_yes_no_new(&boxdata, 2, 0, 2, 0x214, 14, default_no);
 }

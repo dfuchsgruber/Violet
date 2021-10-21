@@ -1,23 +1,26 @@
-#include "types.h"
-#include "overworld/effect.h"
-#include "overworld/sprite.h"
-#include "overworld/script.h"
-#include "oam.h"
-#include "save.h"
 #include "bios.h"
-#include "flags.h"
 #include "debug.h"
+#include "flags.h"
+#include "oam.h"
+#include "overworld/effect.h"
+#include "overworld/script.h"
+#include "overworld/sprite.h"
+#include "save.h"
+#include "types.h"
 
 extern u8 gfx_ow_bbshipPal[];
 
 #define OAM_TAG_BB_SHIP 0x6666
 
 static palette palette_bb_ship = {
-    .pal = gfx_ow_bbshipPal, .tag = OAM_TAG_BB_SHIP,
+    .pal = gfx_ow_bbshipPal,
+    .tag = OAM_TAG_BB_SHIP,
 };
 
 static sprite final_oam_bb_ship = {
-    .attr0 = ATTR0_SHAPE_HORIZONTAL, .attr1 = ATTR1_SIZE_64_32, .attr2 = ATTR2_PRIO(2),
+    .attr0 = ATTR0_SHAPE_HORIZONTAL,
+    .attr1 = ATTR1_SIZE_64_32,
+    .attr2 = ATTR2_PRIO(2),
 };
 
 static void oam_callback_bb_ship(oam_object *self) {
@@ -25,10 +28,10 @@ static void oam_callback_bb_ship(oam_object *self) {
         oam_free(self);
         return;
     }
-    s16 *privates = (s16*)(self->private);
+    s16 *privates = (s16 *)(self->private);
     s16 x = privates[0];
     s16 y = privates[1];
-    // Since the sprite is centered, use half the circle 
+    // Since the sprite is centered, use half the circle
     if (overworld_effect_is_oam_outside_camera_view(x, y, 128, 64)) {
         self->flags |= OAM_FLAG_INVISIBLE;
     } else {
@@ -42,20 +45,52 @@ static void oam_callback_bb_ship(oam_object *self) {
 }
 
 static oam_template template_bb_ship = {
-    .tiles_tag = OAM_TAG_BB_SHIP, .pal_tag = OAM_TAG_BB_SHIP, .oam = &final_oam_bb_ship,
-    .animation = oam_gfx_anim_table_null, .rotscale = oam_rotscale_anim_table_null, 
+    .tiles_tag = OAM_TAG_BB_SHIP,
+    .pal_tag = OAM_TAG_BB_SHIP,
+    .oam = &final_oam_bb_ship,
+    .animation = oam_gfx_anim_table_null,
+    .rotscale = oam_rotscale_anim_table_null,
     .callback = oam_callback_bb_ship,
 };
 
 static subsprite subsprites_bb_ship[4] = {
-    {.x = -64, .y = -32, .shape = 1, .size = 3, .tile_offset = 0 * (64 / 8) * (32 / 8 ), .priority = 2,},
-    {.x = 0, .y = -32, .shape = 1, .size = 3, .tile_offset = 1 * (64 / 8) * (32 / 8 ), .priority = 2,},
-    {.x = -64, .y = 0, .shape = 1, .size = 3, .tile_offset = 2 * (64 / 8) * (32 / 8 ), .priority = 3,},
-    {.x = 0, .y = 0, .shape = 1, .size = 3, .tile_offset = 3 * (64 / 8) * (32 / 8 ), .priority = 3,},
+    {
+        .x = -64,
+        .y = -32,
+        .shape = 1,
+        .size = 3,
+        .tile_offset = 0 * (64 / 8) * (32 / 8),
+        .priority = 2,
+    },
+    {
+        .x = 0,
+        .y = -32,
+        .shape = 1,
+        .size = 3,
+        .tile_offset = 1 * (64 / 8) * (32 / 8),
+        .priority = 2,
+    },
+    {
+        .x = -64,
+        .y = 0,
+        .shape = 1,
+        .size = 3,
+        .tile_offset = 2 * (64 / 8) * (32 / 8),
+        .priority = 3,
+    },
+    {
+        .x = 0,
+        .y = 0,
+        .shape = 1,
+        .size = 3,
+        .tile_offset = 3 * (64 / 8) * (32 / 8),
+        .priority = 3,
+    },
 };
 
 static subsprite_table subsprite_table_bb_ship = {
-    .num_subsprites = ARRAY_COUNT(subsprites_bb_ship), .subsprites = subsprites_bb_ship,
+    .num_subsprites = ARRAY_COUNT(subsprites_bb_ship),
+    .subsprites = subsprites_bb_ship,
 };
 
 u8 overworld_blackbeard_ship_new_at(s16 x, s16 y, s16 dx, s16 dy, u8 bank, u8 map) {
@@ -71,7 +106,7 @@ u8 overworld_blackbeard_ship_new_at(s16 x, s16 y, s16 dx, s16 dy, u8 bank, u8 ma
     if (oam_idx >= ARRAY_COUNT(oams))
         return ARRAY_COUNT(oams);
     oam_set_subsprite_table(oams + oam_idx, &subsprite_table_bb_ship);
-    s16 *privates = (s16*)oams[oam_idx].private;
+    s16 *privates = (s16 *)oams[oam_idx].private;
     privates[0] = x;
     privates[1] = y;
     privates[2] = bank;
@@ -94,9 +129,8 @@ void tileset_lapis_cave_animations_initialize() {
     }
 }
 
-
 static void oam_callback_move_left(oam_object *self) {
-    s16 *privates = (s16*)(self->private);
+    s16 *privates = (s16 *)(self->private);
     if (++privates[7] <= 12 * 16) {
         privates[4]--;
         //dprintf("Privates 4 is %d\n", privates[4]);

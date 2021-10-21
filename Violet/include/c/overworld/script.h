@@ -15,16 +15,16 @@
 typedef struct overworld_script_state_t overworld_script_state_t;
 
 typedef struct overworld_script_state_t {
-	u8 field_0;
-	u8 state;
-	u8 field_2;
-	u8 field_3;
-	bool (*callback)(); // Returns true when the handler is supposed to be waiting
-	u8 *script;
-	u8 field_12[80];
-	bool (*commands)(overworld_script_state_t*);
-	bool (*last_command)(overworld_script_state_t*);
-	u8 *pointer_banks[4];
+    u8 field_0;
+    u8 state;
+    u8 field_2;
+    u8 field_3;
+    bool (*callback)(); // Returns true when the handler is supposed to be waiting
+    u8 *script;
+    u8 field_12[80];
+    bool (*commands)(overworld_script_state_t *);
+    bool (*last_command)(overworld_script_state_t *);
+    u8 *pointer_banks[4];
 } overworld_script_state_t;
 
 u8 *ow_script_string_buffers[3];
@@ -50,14 +50,14 @@ int overworld_script_read_word(void *script_state);
  * Reads a 16-bit hword from the current script offset.
  * @param state the current script state
  * @return the 16-bit hword located at the current offset
- **/
+ */
 u16 overworld_script_read_hword(overworld_script_state_t *state);
 
 /**
  * Initializes an overworld script
  * @param script The script offset to initialize
  */
-void overworld_script_init(void* script);
+void overworld_script_init(void *script);
 
 /**
  * Halts the script until the warp is executed
@@ -81,7 +81,7 @@ void overworld_script_set_active();
 
 /**
  * Changes the overworld script state to inactive
- **/
+ */
 void overworld_script_set_inactive();
 
 /**
@@ -93,7 +93,7 @@ void overworld_script_init_muted(u8 *script);
 /**
  * Big callback to process input of a yesnobox
  * @param self self-reference
- **/
+ */
 void yesnobox_handle_input(u8 self);
 
 /**
@@ -101,7 +101,7 @@ void yesnobox_handle_input(u8 self);
  * @param x unused
  * @param y unused
  * @return if the creation was sucessful
- **/
+ */
 bool yesnobox(u8 x, u8 y);
 
 /**
@@ -146,13 +146,13 @@ u16 overworld_script_giveegg(u16 species);
 /**
  * Checks if an ow script is active (called script context 1 in poke*)
  * @return if any script is active
- **/
+ */
 bool ow_script_is_active();
 
 /**
  * Callback that shows a pokemon pic.
  * @param self self-reference
- **/
+ */
 void overworld_script_callback_show_pokemon_picture(u8 self);
 
 #endif /* INCLUDE_C_OVERWORLD_SCRIPT_H_ */

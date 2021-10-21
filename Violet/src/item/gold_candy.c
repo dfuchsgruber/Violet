@@ -1,19 +1,19 @@
-#include "types.h"
+#include "callbacks.h"
 #include "item/item.h"
+#include "overworld/pokemon_party_menu.h"
 #include "save.h"
 #include "superstate.h"
-#include "overworld/pokemon_party_menu.h"
-#include "callbacks.h"
+#include "types.h"
 
-/**
+/*
  * This is way too much work... leave it for later (or never) and say that level-increase N-at once is good enough (even if one misses moves and potential evolutions)
- * 
+ *
 static void big_callback_nullsub(u8 self) {
     (void)self;
 }
-**/
+*/
 
-/**
+/*
 void item_gold_candy_field_effect(u8 self) {
     fmem.gold_candy_active = 1;
     fmem.gold_candy_levels_remaining = 3;
@@ -34,4 +34,4 @@ void callback2_return_to_bag_if_no_gold_candy_issued() {
     fmem.gold_candy_levels_remaining = 0;
     party_menu_continuation_return_to_bag();
 }
-**/
+*/

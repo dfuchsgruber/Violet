@@ -1,7 +1,7 @@
 {
-    "type" : "enum",
-    "base" : 0,
-    "values" : [
+    "type": "enum",
+    "base": 0,
+    "values": [
         "PC_CONTEXT_TEXT_EXIT_BOX",
         "PC_CONTEXT_TEXT_WHAT_YOU_DO",
         "PC_CONTEXT_TEXT_PICK_A_THEME",

@@ -1,9 +1,9 @@
-#include "types.h"
 #include "pokemon/trade.h"
-#include "language.h"
-#include "constants/pokemon_types.h"
-#include "constants/natures.h"
 #include "constants/items.h"
+#include "constants/natures.h"
+#include "constants/pokemon_types.h"
+#include "language.h"
+#include "types.h"
 
 ingame_trade_t ingame_trades[NUM_INGAME_TRADES] = {
     [INGAME_TRADE_CAMAUB] = {
@@ -18,16 +18,14 @@ ingame_trade_t ingame_trades[NUM_INGAME_TRADES] = {
             [STAT_SPECIAL_DEFENSE] = 22,
         },
         .tid = 69420,
-        .pid = {
-            .fields = {
-                .ability = 0,
-                .gender_partial = 0,
-                .is_shiny = 0,
-                .hidden_power_type = TYPE_KAMPF,
-                .hidden_power_strength = 6,
-                .nature = NATURE_MAESSIG,
-            }
-        },
+        .pid = {.fields = {
+                    .ability = 0,
+                    .gender_partial = 0,
+                    .is_shiny = 0,
+                    .hidden_power_type = TYPE_KAMPF,
+                    .hidden_power_strength = 6,
+                    .nature = NATURE_MAESSIG,
+                }},
         .item = ITEM_SAIMBEERE,
         .ot_name = LANGDEP(PSTRING("Anthony"), PSTRING("Anthony")),
         .ot_is_female = 0,
@@ -46,16 +44,14 @@ ingame_trade_t ingame_trades[NUM_INGAME_TRADES] = {
             [STAT_SPECIAL_DEFENSE] = 22,
         },
         .tid = 1234321,
-        .pid = {
-            .fields = {
-                .ability = 0,
-                .gender_partial = 0,
-                .is_shiny = 0,
-                .hidden_power_type = TYPE_ELEKTRO,
-                .hidden_power_strength = 7,
-                .nature = NATURE_STILL,
-            }
-        },
+        .pid = {.fields = {
+                    .ability = 0,
+                    .gender_partial = 0,
+                    .is_shiny = 0,
+                    .hidden_power_type = TYPE_ELEKTRO,
+                    .hidden_power_strength = 7,
+                    .nature = NATURE_STILL,
+                }},
         .item = ITEM_SEEGESANG,
         .ot_name = LANGDEP(PSTRING("Franz"), PSTRING("Franz")),
         .ot_is_female = 0,
@@ -74,16 +70,14 @@ ingame_trade_t ingame_trades[NUM_INGAME_TRADES] = {
             [STAT_SPECIAL_DEFENSE] = 22,
         },
         .tid = 666,
-        .pid = {
-            .fields = {
-                .ability = 0,
-                .gender_partial = 127,
-                .is_shiny = 0,
-                .hidden_power_type = TYPE_FEE,
-                .hidden_power_strength = 7,
-                .nature = NATURE_HART,
-            }
-        },
+        .pid = {.fields = {
+                    .ability = 0,
+                    .gender_partial = 127,
+                    .is_shiny = 0,
+                    .hidden_power_type = TYPE_FEE,
+                    .hidden_power_strength = 7,
+                    .nature = NATURE_HART,
+                }},
         .item = ITEM_DUESTERUMHANG,
         .ot_name = LANGDEP(PSTRING("Simon"), PSTRING("Simon")),
         .ot_is_female = 0,
@@ -102,16 +96,14 @@ ingame_trade_t ingame_trades[NUM_INGAME_TRADES] = {
             [STAT_SPECIAL_DEFENSE] = 19,
         },
         .tid = 133737,
-        .pid = {
-            .fields = {
-                .ability = 0,
-                .gender_partial = 0,
-                .is_shiny = 0,
-                .hidden_power_type = TYPE_WASSER,
-                .hidden_power_strength = 7,
-                .nature = NATURE_MAESSIG,
-            }
-        },
+        .pid = {.fields = {
+                    .ability = 0,
+                    .gender_partial = 0,
+                    .is_shiny = 0,
+                    .hidden_power_type = TYPE_WASSER,
+                    .hidden_power_strength = 7,
+                    .nature = NATURE_MAESSIG,
+                }},
         .item = ITEM_GIFTJUWEL,
         .ot_name = LANGDEP(PSTRING("Emilia"), PSTRING("Emilia")),
         .ot_is_female = 1,
@@ -130,16 +122,14 @@ ingame_trade_t ingame_trades[NUM_INGAME_TRADES] = {
             [STAT_SPECIAL_DEFENSE] = 31,
         },
         .tid = 987653,
-        .pid = {
-            .fields = {
-                .ability = 0,
-                .gender_partial = 0,
-                .is_shiny = 0,
-                .hidden_power_type = TYPE_FEUER,
-                .hidden_power_strength = 7,
-                .nature = NATURE_KUEHN,
-            }
-        },
+        .pid = {.fields = {
+                    .ability = 0,
+                    .gender_partial = 0,
+                    .is_shiny = 0,
+                    .hidden_power_type = TYPE_FEUER,
+                    .hidden_power_strength = 7,
+                    .nature = NATURE_KUEHN,
+                }},
         .item = ITEM_SANANABEERE,
         .ot_name = LANGDEP(PSTRING("Julia"), PSTRING("Julia")),
         .ot_is_female = 1,
@@ -148,8 +138,7 @@ ingame_trade_t ingame_trades[NUM_INGAME_TRADES] = {
     },
 };
 
-
-void ingame_trade_pokemon_new(u8 party_idx, u8 ingame_trade_idx) { 
+void ingame_trade_pokemon_new(u8 party_idx, u8 ingame_trade_idx) {
     ingame_trade_t *trade = ingame_trades + ingame_trade_idx;
     u8 level = (u8)pokemon_get_attribute(player_pokemon + party_idx, ATTRIBUTE_LEVEL, 0);
     pokemon *p = &opponent_pokemon[0];

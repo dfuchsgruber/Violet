@@ -184,4 +184,3 @@ bx r2
 get_tiles_attribute:
 ldr r3, =0x08058f49
 bx r3
-

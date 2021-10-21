@@ -1,7 +1,7 @@
 {
-    "type" : "enum",
-    "base" : 1,
-    "values" : [
+    "type": "enum",
+    "base": 1,
+    "values": [
         "AI_ITEM_FULL_RESTORE",
         "AI_ITEM_HEAL_HP",
         "AI_ITEM_CURE_CONDITION",

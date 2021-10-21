@@ -8,11 +8,11 @@
 #ifndef INCLUDE_C_OVERWORLD_NPC_H_
 #define INCLUDE_C_OVERWORLD_NPC_H_
 
-#include "types.h"
-#include "oam.h"
-#include "superstate.h"
 #include "constants/overworld/npc_pathfinding_speeds.h"
 #include "map/event.h"
+#include "oam.h"
+#include "superstate.h"
+#include "types.h"
 
 typedef struct npc {
 
@@ -114,7 +114,7 @@ typedef struct { // State with which the player is initialized after warping
     u8 state;
     u8 direction;
     u8 field2;
-} player_initial_state_t; 
+} player_initial_state_t;
 
 player_initial_state_t player_initial_state;
 
@@ -135,12 +135,12 @@ extern u8 trainer_npc_idx;
 
 /**
  * Saves the player's current state as initial state (after warping)
- **/
+ */
 void player_save_initial_state();
 
 /**
  * Resets the initial state of the player (after warping)
- **/
+ */
 void player_reset_initial_state();
 
 /**
@@ -160,14 +160,13 @@ u8 npc_get_collision(npc *n, s16 x, s16 y, u8 direction);
  */
 u8 npc_sees_player(npc *n);
 
-
 /**
  * Makes a npc face into a direction.
  * @param n the npc instance
  * @param target the oam object associated with the npc
  * @param direction the direciton in which to face 
  * @return whether the animation has finished
- **/
+ */
 bool npc_movement_animation_set_direction(npc *n, oam_object *target, u8 direction);
 
 /**
@@ -175,16 +174,15 @@ bool npc_movement_animation_set_direction(npc *n, oam_object *target, u8 directi
  * @param n the npc instance
  * @param target the oam object associated with the npc
  * @return whether the method was sucessfull
- **/
+ */
 bool npc_anim_walk_down_slowly_init(npc *n, oam_object *target);
-
 
 /**
  * Initializes walking down in a direction.
  * @param n the npc instance
  * @param target the oam object associated with the npc
  * @return whether the method was sucessfull
- **/
+ */
 bool npc_anim_walk_slowly_init(npc *n, oam_object *target, u8 direction);
 
 /**
@@ -192,16 +190,15 @@ bool npc_anim_walk_slowly_init(npc *n, oam_object *target, u8 direction);
  * @param n the npc instance
  * @param target the oam object associated with the npc
  * @return whether the method was sucessfull
- **/
+ */
 bool npc_anim_slow_walk_slowly_finished(npc *n, oam_object *target);
-
 
 /**
  * Pauses for some frames.
  * @param n the npc instance
  * @param target the oam object associated with the npc
  * @return whether the method was sucessfull
- **/
+ */
 bool npc_anim_pause_init(oam_object *target, u16 frames);
 
 /**
@@ -209,7 +206,7 @@ bool npc_anim_pause_init(oam_object *target, u16 frames);
  * @param n the npc instance
  * @param target the oam object associated with the npc
  * @return whether the method was sucessfull
- **/
+ */
 bool npc_anim_pause_finished(npc *n, oam_object *target);
 
 /**
@@ -217,7 +214,7 @@ bool npc_anim_pause_finished(npc *n, oam_object *target);
  * @param n the npc instance
  * @param target the oam object associated with the npc
  * @return whether the method was sucessfull
- **/
+ */
 bool npc_anim_lock_facing(npc *n, oam_object *target);
 
 /**
@@ -225,7 +222,7 @@ bool npc_anim_lock_facing(npc *n, oam_object *target);
  * @param n the npc instance
  * @param target the oam object associated with the npc
  * @return whether the method was sucessfull
- **/
+ */
 bool npc_anim_unlock_facing(npc *n, oam_object *target);
 
 /**
@@ -233,7 +230,7 @@ bool npc_anim_unlock_facing(npc *n, oam_object *target);
  * @param n the npc instance
  * @param target the oam object associated with the npc
  * @return whether the method was sucessfull
- **/
+ */
 bool npc_anim_face_down(npc *n, oam_object *target);
 
 /**
@@ -241,7 +238,7 @@ bool npc_anim_face_down(npc *n, oam_object *target);
  * @param n the npc instance
  * @param target the oam object associated with the npc
  * @return whether the method was sucessfull
- **/
+ */
 bool npc_anim_face_up(npc *n, oam_object *target);
 
 /**
@@ -292,7 +289,6 @@ bool npc_anim_diag_ne_init(npc *n, oam_object *target);
  * @return whether the animation initialized is already finished
  */
 bool npc_anim_diag_nw_init(npc *n, oam_object *target);
-
 
 /**
  * Initializes an npc animation in the south-east (so) direction
@@ -384,7 +380,7 @@ void npc_apply_movement(u8 overworld_id, u8 map, u8 bank, u8 *moves);
  * @param map the map id to look on
  * @param bank the map bank to look on
  * @return whether a movement is finished
- **/
+ */
 bool npc_movement_callback_is_finished(u8 overworld_id, u8 map, u8 bank);
 
 /**
@@ -392,7 +388,7 @@ bool npc_movement_callback_is_finished(u8 overworld_id, u8 map, u8 bank);
  * @param n the npc
  * @param move the movement to execute
  * @return if the movement has finished
- **/
+ */
 bool npc_apply_movement_execute_movement(npc *n, u8 move);
 
 /**
@@ -401,7 +397,7 @@ bool npc_apply_movement_execute_movement(npc *n, u8 move);
  * @param map_idx the map_idx the map idx
  * @param bank the map bank to look on
  * @return the strength flag to clear
- **/
+ */
 u16 npc_get_strength_flag(u8 overworld_idx, u8 map_idx, u8 bank);
 
 // Person idx that is targeted by npc_apply_movement
@@ -428,64 +424,64 @@ u8 player_get_facing();
 
 /**
  * Stops the movements of all non-player npcs
- **/
+ */
 void npc_stop_all_movements_but_players();
 
 /**
  * Stops the movements (i.e. freezes) all npcs but the player and a target npc.
  * @param npc_idx the npc which is excluded from lockall
- **/
+ */
 void npc_stop_all_movements_but_one(u8 npc_idx);
 
 /**
  * A callback that is executed when the player transits from water (surfing) to land (walking / biking).
  * @param self self-reference
- **/
+ */
 void player_transition_water_to_land_callback(u8 self);
 
 /**
  * Checks if the animation of a npc has finished.
  * @param n the npc to check if it has its animation finished
  * @return if the npc has its animation finished
- **/
+ */
 bool npc_animation_finished(npc *n);
 
 /**
  * Updates the picture of an npc.
  * @param n the npc to update the picture of
  * @param picture the picture that the npc is supposed to show
- **/
+ */
 void npc_update_picture(npc *n, u8 picture);
 
 /**
  * Gets the movement idx for facing in a certain direction.
  * @param direction the direction to face into
  * @return the movement idx associated with this facing direction for facing
- **/
+ */
 u8 npc_get_facing_movement_by_direction(u8 direction);
 
 /**
  * Executes a facing move of an npc.
  * @param n the npc that executes the facing move
  * @param movement the movement to execute. This is supposed to resemble a facing move.
- **/
+ */
 void npc_do_facing_move(npc *n, u8 movement);
 
 /**
  * Updates the delay field of oams associated with npcs for all npcs present.
- **/
+ */
 void npc_update_oam_delay_all();
 
 /**
  * Callback that lets the player transit to a biking state.
  * @param self self reference
- **/
+ */
 void player_transition_to_bike(u8 self);
 
 /**
  * Checks if the player state disables them to use a bike
  * @return if the current player state and position disables biking
- **/
+ */
 bool player_state_disables_bike();
 
 /**
@@ -494,8 +490,8 @@ bool player_state_disables_bike();
  * @param y the y coordinate of the target block
  * @param direction the direction the player is attempting to transit in
  * @return if a transition from water to land happened
- **/
-bool npc_player_attempt_transition_water_to_land(s16 x,s16 y,u8 direction);
+ */
+bool npc_player_attempt_transition_water_to_land(s16 x, s16 y, u8 direction);
 
 /**
  * Checks if a movable boulder npc is at a given position.
@@ -503,101 +499,101 @@ bool npc_player_attempt_transition_water_to_land(s16 x,s16 y,u8 direction);
  * @param y the y coordinate of the boulder
  * @param direction the direction to move the boulder in
  * @return if a movable boulder exists at this location
- **/ 
-bool npc_is_movable_boulder_at(s16 x,s16 y,u8 direction);
+ */
+bool npc_is_movable_boulder_at(s16 x, s16 y, u8 direction);
 
 /**
  * Checks what collision there is for the player to walk into a certain direction.
  * @param direction the direction the player attempts to walk into
  * @return collision which collision there is
- **/
+ */
 u8 npc_player_collision(u8 direction);
 
 /**
  * Checks what collision there is for the player to bike into a certain direction.
  * @param direction the direction the player attempts to bike into
  * @return collision which collision there is
- **/
+ */
 u8 npc_player_collision_on_bike(u8 direction);
 
 /**
  * Initializes a move for the player to jump over a block (ledges).
  * @param direction the direction in which to jump.
- **/
+ */
 void npc_player_init_move_jump(u8 direction);
 
 /**
  * Initializes a move for the player to face a certain direction (warps).
  * @param direction the direction in which to face.
- **/
+ */
 void npc_player_init_move_face(u8 direction);
 
 /**
  * Initializes a move for the player to walk in place and creates the blocked soundeffect.
  * @param direction the direction in which to be blocked.
- **/
+ */
 void npc_player_init_move_blocked(u8 direction);
 
 /**
  * Plays the adequate sound effect for colliding into a certain direction.
  * @param direction the direction to attempt to walk into.
- **/
+ */
 void npc_player_sound_collision(u8 direction);
 
 /**
  * Initializes a move for the player to surf.
  * @param direction the direction in which to be go.
- **/
+ */
 void npc_player_init_move_surfing(u8 direction);
 
 /**
  * Initializes the player sliding on the left foot
  * @param direction the direction in which to slide in
- **/
+ */
 void npc_player_init_move_sliding_on_left_foot(u8 direction);
 
 /**
  * Initializes the player running.
  * @param direction the direction in which to run in.
- **/
+ */
 void npc_player_init_move_running(u8 direction);
 
 /**
  * Initializes the player walking.
  * @param direction the direction in which to walk in.
- **/
+ */
 void npc_player_init_move_walking(u8 direction);
 
 /**
  * Initializes the player slowly walking
  * @param direction the direction in which to slowly walk in
- **/
+ */
 void npc_player_init_move_walking_slow(u8 direction);
 
 /**
  * Initializes the player biking into a direction
  * @param direction the direction in which to bike in
- **/
+ */
 void npc_player_init_move_bike(u8 direction);
 
 /**
  * Initializes the player on the bike being blocked into a direction
  * @param direction the direction in which attempted to bike in
- **/
+ */
 void npc_player_init_move_bike_blocked(u8 direction);
 
 /**
  * Checks if an npc is not allowed to run.
  * @param behaviour the behaviour the npc is on
  * @return if the npc is prevented to run
- **/
+ */
 bool npc_can_not_run(u8 behaviour);
 
 /**
  * Checks if the player npc is walking towards rock stairs (which slow the player down)
  * @param direction in which direction the player npc walks
  * @return if the tile it walks towards are rock stairs
- **/
+ */
 bool npc_player_walking_towards_rock_stairs(u8 direction);
 
 /**
@@ -607,11 +603,10 @@ bool npc_player_walking_towards_rock_stairs(u8 direction);
  */
 void npc_set_facing(npc *n, u8 direction);
 
-
 /**
  * Makes the player face into a direction.
  * @param direction the direction to face into
- **/
+ */
 void npc_player_set_facing(u8 direction);
 
 /**
@@ -619,14 +614,14 @@ void npc_player_set_facing(u8 direction);
  * @param direction the direction to move into
  * @param keys_new newly pressed keys (for acro bike)
  * @param keys_held held keys
- **/
+ */
 void player_npc_controll_biking(u8 direction, key keys_new, key keys_held);
 
 /**
  * Controls the player npc using the input when not on a bike.
  * @param direction the direction to move into
  * @param keys_held held keys
- **/
+ */
 void player_npc_controll_not_biking(u8 direction, key keys_held);
 
 /**
@@ -635,31 +630,31 @@ void player_npc_controll_not_biking(u8 direction, key keys_held);
  * @param map_idx the map on which the person is
  * @param bank the bank on which the person is
  * @return the npc_idx associated with the person or 16 on failure
- **/
+ */
 u8 npc_get_by_person_idx(u8 person_idx, u8 map_idx, u8 bank);
 
 /**
  * Gets the animation of an oam by the direction its facing
  * @param facing the direction
  * @return the animation idx
- **/
+ */
 u8 npc_get_animation_idx_by_facing(u8 facing);
 
 /**
  * Returns the direction opposite of another
  * @param direciton the direction to get the opposite of
  * @return the opposite direction
- **/
+ */
 u8 direction_get_opposite(u8 direction);
 
-extern void (*npc_movements_oam_callbacks[])(oam_object*);
+extern void (*npc_movements_oam_callbacks[])(oam_object *);
 
 /**
  * Gets the an npc at a position
  * @param x the x coordinate
  * @param y the y coordinate
  * @return npc_idx the idx of the npc at this position. If None, returns NUM_NPCS.
- **/
+ */
 u8 npc_get_by_position(s16 x, s16);
 
 /**
@@ -671,7 +666,7 @@ u8 npc_get_by_position(s16 x, s16);
  * @param camera_x the x of the camera
  * @param camery_y the y of the camera
  * @return npc_idx the idx of the npc created or NUM_NPCS on failure
- **/
+ */
 u8 npc_create_with_oam_by_person(map_event_person *person, oam_template *template, u8 map_idx, u8 bank, s16 camera_x, s16 camera_y);
 
 #endif /* INCLUDE_C_OVERWORLD_NPC_H_ */

@@ -1,13 +1,13 @@
-#include "types.h"
 #include "overworld/step_callback.h"
-#include "debug.h"
-#include "tile/coordinate.h"
-#include "tile/block.h"
 #include "constants/block_behaviour.h"
-#include "vars.h"
+#include "debug.h"
 #include "music.h"
+#include "tile/block.h"
+#include "tile/coordinate.h"
+#include "types.h"
+#include "vars.h"
 
-static void overworld_step_callback_none(u8 self){
+static void overworld_step_callback_none(u8 self) {
     (void)self;
 }
 

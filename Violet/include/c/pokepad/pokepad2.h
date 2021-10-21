@@ -1,10 +1,10 @@
 #ifndef H_POKEPAD2
 #define H_POKEPAD2
 
-#include "types.h"
-#include "save.h"
-#include "oam.h"
 #include "list_menu.h"
+#include "oam.h"
+#include "save.h"
+#include "types.h"
 
 typedef struct {
     const u8 *tileset;
@@ -37,7 +37,6 @@ typedef struct {
     list_menu_item wallpaper_list[POKEPAD_NUM_WALLPAPERS];
 } pokepad_memory2;
 
-
 typedef struct {
     u16 flag;
     u8 *name;
@@ -63,18 +62,18 @@ enum {
 
 /**
  * Frees all resources allocated by the pokepad gui
- **/
+ */
 void pokepad2_free();
 
 /**
  * Callback1 that initializes the pokepad gui from a black screen. 
  * Assumes that resources of the previous context are released.
- **/
+ */
 void pokepad2_callback_initialize();
 
 /**
  * Initializes the pokepad from the start menu
- **/
+ */
 bool start_menu_pokepad_initialize();
 
 extern const u8 gfx_pokepad_wallpaper_startersTiles[];
@@ -99,7 +98,6 @@ extern const u8 gfx_pokepad_indicator_leftTiles[];
 extern const u8 gfx_pokepad_indicator_leftPal[];
 extern const u8 gfx_pokepad_indicator_rightTiles[];
 
-#define POKEPAD_STATE ((pokepad_memory2*)fmem.pad_mem)
-
+#define POKEPAD_STATE ((pokepad_memory2 *)fmem.pad_mem)
 
 #endif

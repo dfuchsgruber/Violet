@@ -1,6 +1,6 @@
-#include "types.h"
-#include "pokemon/virtual.h"
 #include "debug.h"
+#include "pokemon/virtual.h"
+#include "types.h"
 
 int pokemon_unown_get_letter(pid_t p) {
     return (int)p.fields.unown_letter % 28;

@@ -8,9 +8,9 @@
 #ifndef INCLUDE_C_POKEMON_VIRTUAL_H_
 #define INCLUDE_C_POKEMON_VIRTUAL_H_
 
-#include "types.h"
 #include "constants/pokemon_attributes.h"
 #include "constants/species.h"
+#include "types.h"
 
 typedef struct marking {
     u8 circle : 1;
@@ -29,7 +29,7 @@ typedef union {
         u32 is_shiny : 1;
         u32 hidden_power_type : 5;
         u32 hidden_power_strength : 3;
-		u32 unown_letter : 5;
+        u32 unown_letter : 5;
         u32 unused : 2;
         u32 nature : 5;
         u32 form : 3;
@@ -47,68 +47,67 @@ typedef union {
 #define STATUS_CONDITION_POISON_ANY (STATUS_CONDITION_POISON | STATUS_CONDITION_BAD_POISON)
 #define STATUS_CONDITION_ANY (STATUS_CONDITION_SLEEP | STATUS_CONDITION_POISON | STATUS_CONDITION_BURN | STATUS_CONDITION_FREEZE | STATUS_CONDITION_PARALYSIS | STATUS_CONDITION_BAD_POISON)
 
-#define POKEMON_IS_VIABLE(p) ((\
-	pokemon_get_attribute(p, ATTRIBUTE_CURRENT_HP, 0) != 0 && \
-	pokemon_get_attribute(p, ATTRIBUTE_SPECIES2, 0) != 0 && \
-	pokemon_get_attribute(p, ATTRIBUTE_SPECIES2, 0) != POKEMON_EGG && \
-	!pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, 0)) \
-)
+#define POKEMON_IS_VIABLE(p) ((                                       \
+    pokemon_get_attribute(p, ATTRIBUTE_CURRENT_HP, 0) != 0 &&         \
+    pokemon_get_attribute(p, ATTRIBUTE_SPECIES2, 0) != 0 &&           \
+    pokemon_get_attribute(p, ATTRIBUTE_SPECIES2, 0) != POKEMON_EGG && \
+    !pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, 0)))
 
 typedef struct {
-	u16 species;
-	u16 item;
-	u32 exp;
-	u8 pp_up;
-	u8 friendship;
+    u16 species;
+    u16 item;
+    u32 exp;
+    u8 pp_up;
+    u8 friendship;
 } pokemon_substructure_section_A;
 
 typedef struct {
-	u16 moves[4];
-	u8 pp[4];
+    u16 moves[4];
+    u8 pp[4];
 } pokemon_substructure_section_B;
 
 typedef struct {
-	u8 evs[6];
-	u8 contest_stats[6];
+    u8 evs[6];
+    u8 contest_stats[6];
 } pokemon_substructure_section_C;
 
 typedef struct {
-	u8 pokerus;
-	u8 catch_location;
+    u8 pokerus;
+    u8 catch_location;
 
-	u16 catch_level:7;
-	u16 catch_game:3;
-	u16 pokeball:5;
-	u16 ot_gender:1;
+    u16 catch_level : 7;
+    u16 catch_game : 3;
+    u16 pokeball : 5;
+    u16 ot_gender : 1;
 
-	u32 hp_iv:5;
-	u32 attack_iv:5;
-	u32 defense_iv:5;
-	u32 speed_iv:5;
-	u32 special_attack_iv:5;
-	u32 special_defense_iv:5;
-	u32 is_egg:1;
-	u32 ability:1;
+    u32 hp_iv : 5;
+    u32 attack_iv : 5;
+    u32 defense_iv : 5;
+    u32 speed_iv : 5;
+    u32 special_attack_iv : 5;
+    u32 special_defense_iv : 5;
+    u32 is_egg : 1;
+    u32 ability : 1;
 
-	u32 coolness_ribbons:3;
-	u32 beatuy_ribbons:3;
-	u32 cuteness_ribbons:3;
-	u32 smartness_ribbons:3;
-	u32 toughness_ribbons:3;
-	u32 champion_ribbon:1;
-	u32 winning_ribbon:1;
-	u32 victory_ribbon:1;
-	u32 artist_ribbon:1;
-	u32 effort_ribbon:1;
-	u32 gift_ribbon_1:1;
-	u32 gift_ribbon_2:1;
-	u32 gift_ribbon_3:1;
-	u32 gift_ribbon_4:1;
-	u32 gift_ribbon_5:1;
-	u32 gift_ribbon_6:1;
-	u32 gift_ribbon_7:1;
-	u32 fateful_encounter:4;
-	u32 obedient:1;
+    u32 coolness_ribbons : 3;
+    u32 beatuy_ribbons : 3;
+    u32 cuteness_ribbons : 3;
+    u32 smartness_ribbons : 3;
+    u32 toughness_ribbons : 3;
+    u32 champion_ribbon : 1;
+    u32 winning_ribbon : 1;
+    u32 victory_ribbon : 1;
+    u32 artist_ribbon : 1;
+    u32 effort_ribbon : 1;
+    u32 gift_ribbon_1 : 1;
+    u32 gift_ribbon_2 : 1;
+    u32 gift_ribbon_3 : 1;
+    u32 gift_ribbon_4 : 1;
+    u32 gift_ribbon_5 : 1;
+    u32 gift_ribbon_6 : 1;
+    u32 gift_ribbon_7 : 1;
+    u32 fateful_encounter : 4;
+    u32 obedient : 1;
 } pokemon_substructure_section_D;
 
 #define CATCH_LOCATION_FATEFUL_ENCOUNTER 255
@@ -117,27 +116,27 @@ typedef struct {
 #define CATCH_LOCATION_INGAME_TRADE 254
 
 typedef union {
-	pokemon_substructure_section_A section_A;
-	pokemon_substructure_section_B section_B;
-	pokemon_substructure_section_C section_C;
-	pokemon_substructure_section_D section_D;
-	u16 values[6];
+    pokemon_substructure_section_A section_A;
+    pokemon_substructure_section_B section_B;
+    pokemon_substructure_section_C section_C;
+    pokemon_substructure_section_D section_D;
+    u16 values[6];
 } pokemon_substructure_section;
 
 typedef struct {
-	pid_t pid;
-	u32 tid;
-	u8 nickname[10];
-	u8 language;
-	u8 is_bad_egg : 1;
-	u8 has_species : 1;
-	u8 is_egg : 1;
-	u8 unused : 5;
-	u8 ot_name[7];
-	marking markings;
-	u16 checksum;
-	u16 padding;
-	pokemon_substructure_section encrypted_substructure[4];
+    pid_t pid;
+    u32 tid;
+    u8 nickname[10];
+    u8 language;
+    u8 is_bad_egg : 1;
+    u8 has_species : 1;
+    u8 is_egg : 1;
+    u8 unused : 5;
+    u8 ot_name[7];
+    marking markings;
+    u16 checksum;
+    u16 padding;
+    pokemon_substructure_section encrypted_substructure[4];
 } box_pokemon;
 
 typedef struct pokemon {
@@ -162,17 +161,17 @@ extern pokemon opponent_pokemon[];
 
 /** 
  * Transfers the entire player party to the save block.
- **/
+ */
 void player_save_party();
 
 /**
  * Loads the entire player party from the save block.
- **/
+ */
 void player_restore_party();
 
 /**
  * Reduces the player party to the (up to) three selected pokemon in the selected order.
- **/
+ */
 void player_party_reduce_to_selection();
 
 /**
@@ -195,7 +194,7 @@ u8 player_pokemon_recount_pokemon();
  * @param requested_attribute Id of the attribute to get
  * @param result Storage for the result if it is no scalar type (pass 0 otherwise)
  */
-int pokemon_get_attribute(pokemon* p, int requested_attribute, void *result);
+int pokemon_get_attribute(pokemon *p, int requested_attribute, void *result);
 
 /**
  * Gets the attribute of a virtual pokemon's substructre
@@ -211,7 +210,7 @@ int box_pokemon_get_attribute(box_pokemon *p, int requested_attribute, void *res
  * @param requested_attribute Id of the attribute to set
  * @param value Pointer to the value to apply
  */
-void pokemon_set_attribute(pokemon* p, int requested_attribute, void* value);
+void pokemon_set_attribute(pokemon *p, int requested_attribute, void *value);
 
 /**
  * Sets the attribute of a virtual pokemon's substructure
@@ -219,7 +218,7 @@ void pokemon_set_attribute(pokemon* p, int requested_attribute, void* value);
  * @param requested_attribute idx of the attribute to set
  * @param value Pointer to the value to apply
  */
-void box_pokemon_set_attribute(box_pokemon* p, int requested_attribute, void* value);
+void box_pokemon_set_attribute(box_pokemon *p, int requested_attribute, void *value);
 
 /**
  * Calculates the stats of a pokemon.
@@ -258,7 +257,7 @@ void pokemon_load_name_as_string(pokemon *pokemon, u8 *buffer);
  * @param tid if tid_determined true the tid the pokemon will gain
  */
 void pokemon_new(pokemon *space, u16 species, u8 level, u8 fixed_ivs,
-        bool pid_determined, pid_t pid, bool tid_determined, u32 tid);
+                 bool pid_determined, pid_t pid, bool tid_determined, u32 tid);
 
 /**
  * Creates a new pokemon egg data (without actually setting the is_egg attribute).
@@ -294,7 +293,7 @@ int pokemon_to_box(pokemon *dst);
 /**
  * Checks if there is room in any box
  * @return if there is room in any box
- **/
+ */
 bool box_has_empty_slot();
 
 /**
@@ -309,7 +308,6 @@ u8 *box_get_name(u8 box_idx);
  * @param p the pokemon to enable its hidden ability on
  */
 void pokemon_set_hidden_ability(box_pokemon *p);
-
 
 u16 pokemon_append_attack(pokemon *p, u16 attack);
 void pokemon_rotate_and_push_attack(pokemon *p, u16 attack);
@@ -333,8 +331,8 @@ void pokemon_rotate_and_push_attack(pokemon *p, u16 attack);
  * is used.
  */
 void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_spread,
-    bool pid_determined, pid_t pid, bool tid_determined, u32 tid, u16(*feature_generator)(),
-	u16(*rng)());
+                                     bool pid_determined, pid_t pid, bool tid_determined, u32 tid, u16 (*feature_generator)(),
+                                     u16 (*rng)());
 
 /**
  * Generates tid based on a ot_name.
@@ -350,7 +348,7 @@ u32 tid_by_ot_name(u8 *ot_name);
  * @param level the level of the pokemon to create
  * @param ivs the ivs of the pokemon to create
  * @param pid the pid of the pokemon to create
- **/
+ */
 void pokemon_new_and_set_ivs(pokemon *dst, u16 species, u8 level, u32 ivs, pid_t pid);
 
 /**
@@ -447,7 +445,7 @@ u8 pokemon_get_potential_ev(pokemon *p, int stat);
  * @param pp_ups the bitfield indicating the pp ups used
  * @param index the index of the move on the pokemon
  * @returns the maximal pp of the move
- **/
+ */
 u8 attack_get_pp(u16 attack, u8 pp_ups, u8 index);
 
 // Masks for isolating the pp ups of a certain move
@@ -458,13 +456,13 @@ extern u8 pokemon_pp_up_add_masks[4];
 /**
  * Restores hp, pp and status of a pokemon.
  * @param dst the pokemon to heal
- **/
+ */
 void pokemon_heal(pokemon *dst);
 
 /**
  * Checks if a pokémon is at its full health (hp, pp, status)
  * @return if a pokémon has max hp, pp and no primary status condition
- **/
+ */
 bool pokemon_is_healed(pokemon *dst);
 
 /**
@@ -473,7 +471,7 @@ bool pokemon_is_healed(pokemon *dst);
  * @param party_idx which index the pokemon has in the party
  * @param status_mask the conditions to check for
  * @return if the pokemon has the status condition
- **/ 
+ */
 bool pokemon_has_status_condition(pokemon *p, int party_idx, u32 status_mask);
 
 /**
@@ -483,28 +481,28 @@ bool pokemon_has_status_condition(pokemon *p, int party_idx, u32 status_mask);
  * @param status_mask the conditions to check for
  * @param battler_idx the idx of the battler associated with the pokemon. If no battler is associated, pass the value 4.
  * @return if the pokemon has the status condition
- **/ 
+ */
 bool pokemon_remove_status_condition(pokemon *p, int party_idx, u32 status_mask, u8 battler_idx);
 
 /**
  * Returns the letter index of a pokemon's pid.
  * @param p the pid of the pokemon
  * @return which kind of letter the pid resembles
- **/
+ */
 int pokemon_unown_get_letter(pid_t p);
 
 /**
  * Generates a pid that resembles a unown letter.
  * @param letter the letter (< 28) to generate.
  * @return a random pid with that letter.
- **/
+ */
 pid_t pokemon_unown_generate_letter_pid(u32 letter);
 
 /**
  * Clears a pokemon on the box.
  * @param the box of the pokemon to clear
  * @param slot the slot in the box to clear
- **/
+ */
 void box_pokemon_clear_by_box_idx_and_slot(u8 box_idx, u8 slot);
 
 /**
@@ -512,20 +510,20 @@ void box_pokemon_clear_by_box_idx_and_slot(u8 box_idx, u8 slot);
  * @param box_idx the box of the pokemon to copy
  * @param slot the slot in the box
  * @param dst where to put the data
- **/
+ */
 void box_pokemon_copy(u8 box_idx, u8 slot, box_pokemon *dst);
 
 /**
  * Check if the player party and all boxes are full
  * @return if the player party and all boxes are full
- **/
+ */
 bool player_party_and_boxes_full();
 
 /**
  * Adds the level of the first num pokemon's level in the player party.
  * @param num how many viable pokemon to consider
  * @return the sum of their level
- **/
+ */
 u16 player_pokemon_get_total_level(u8 num);
 
 /**
@@ -533,14 +531,14 @@ u16 player_pokemon_get_total_level(u8 num);
  * @param dst where to put the nickname
  * @param src from where to read the nickname
  * @return offset of the last char that was copied
- **/
+ */
 u8 *pokemon_copy_nickname(u8 *dst, const u8 *src);
 
 /**
  * Clears the pp up bonuses in a certain slot
  * @param p which pokemon to clear the pp ups of
  * @param slot in which slot to clear the pp ups
- **/
+ */
 void pokemon_clear_pp_ups(pokemon *p, u8 slot);
 
 /**
@@ -555,7 +553,7 @@ void pokemon_set_move(pokemon *p, u16 move, u8 slot);
  * Adds friendship to a pokemon
  * @param p which pokemon to add friendship to
  * @param value how much friendship to add
- **/
+ */
 void pokemon_add_friendship(pokemon *p, s8 value);
 
 #define POKERUS_GET_SINGLE_POKEMON 0
@@ -565,7 +563,7 @@ void pokemon_add_friendship(pokemon *p, s8 value);
  * @param p the pokemon / party to get the pokerus state of
  * @param mask mask for all party idxs requested for the pokerus check, if POKERUS_GET_SINGLE_POKEMON is passed, a simple bool value for p is returned
  * @return pokerus_state the requested pokerus state
- **/
+ */
 u8 pokemon_get_pokerus(pokemon *p, u8 mask);
 
 #endif /* INCLUDE_C_POKEMON_VIRTUAL_H_ */

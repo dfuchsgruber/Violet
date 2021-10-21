@@ -1,25 +1,24 @@
-#include "types.h"
+#include "agbmemory.h"
+#include "callbacks.h"
+#include "constants/attacks.h"
+#include "constants/block_behaviour.h"
+#include "constants/movements.h"
+#include "constants/overworld/overworld_collisions.h"
+#include "constants/sav_keys.h"
+#include "constants/songs.h"
+#include "debug.h"
+#include "flags.h"
+#include "music.h"
+#include "options.h"
 #include "overworld/npc.h"
+#include "overworld/script.h"
 #include "overworld/sprite.h"
+#include "save.h"
+#include "superstate.h"
 #include "tile/block.h"
 #include "tile/coordinate.h"
 #include "tile/diagonal_stair.h"
-#include "superstate.h"
-#include "agbmemory.h"
-#include "constants/sav_keys.h"
-#include "constants/attacks.h"
-#include "constants/overworld/overworld_collisions.h"
-#include "save.h"
-#include "constants/songs.h"
-#include "callbacks.h"
-#include "music.h"
-#include "overworld/script.h"
-#include "superstate.h"
-#include "flags.h"
-#include "constants/movements.h"
-#include "constants/block_behaviour.h"
-#include "debug.h"
-#include "options.h"
+#include "types.h"
 #include "vars.h"
 
 extern u8 ow_script_transition_start_surfing[];
@@ -46,10 +45,9 @@ bool npc_player_surfing_towards_waterfall(u8 direction) {
     return false;
 }
 
-
 int npc_player_attempt_step(npc *player, s16 x, s16 y, u8 direction, int param_5) {
     // dprintf("Player z %d\n", player->height.current);
-    (void) param_5; // unused in fire red
+    (void)param_5; // unused in fire red
     int collision = npc_attempt_diagonal_move(player, x, y, direction);
     if (collision == COLLISION_HEIGHT_MISMATCH && npc_player_attempt_transition_water_to_land(x, y, direction)) {
         return COLLISION_STOP_SURFING;
@@ -92,7 +90,7 @@ int npc_player_attempt_step(npc *player, s16 x, s16 y, u8 direction, int param_5
         }
         case MB_CLIMBABLE_LADDER_MIDPOINT: {
             if (direction == DIR_UP || direction == DIR_DOWN)
-                setflag (FLAG_PLAYER_ON_LADDER);
+                setflag(FLAG_PLAYER_ON_LADDER);
             else
                 clearflag(FLAG_PLAYER_ON_LADDER);
             break;
@@ -103,18 +101,23 @@ int npc_player_attempt_step(npc *player, s16 x, s16 y, u8 direction, int param_5
             return COLLISION_LADDER;
         } else {
             return COLLISION_LADDER_BLOCKED;
-        }      
+        }
     }
     return collision;
 }
 
 static u8 diagonal_walking_movement_idx_by_collision(u8 collision) {
     switch (collision) {
-        case COLLISION_SIDEWAY_STAIRS_NORTH_EAST: return STEP_NORTH_EAST;
-        case COLLISION_SIDEWAY_STAIRS_SOUTH_EAST: return STEP_SOUTH_EAST;
-        case COLLISION_SIDEWAY_STAIRS_SOUTH_WEST: return STEP_SOUTH_WEST;
-        case COLLISION_SIDEWAY_STAIRS_NORTH_WEST: return STEP_NORTH_WEST;
-        default: return 0;
+        case COLLISION_SIDEWAY_STAIRS_NORTH_EAST:
+            return STEP_NORTH_EAST;
+        case COLLISION_SIDEWAY_STAIRS_SOUTH_EAST:
+            return STEP_SOUTH_EAST;
+        case COLLISION_SIDEWAY_STAIRS_SOUTH_WEST:
+            return STEP_SOUTH_WEST;
+        case COLLISION_SIDEWAY_STAIRS_NORTH_WEST:
+            return STEP_NORTH_WEST;
+        default:
+            return 0;
     }
 }
 
@@ -122,14 +125,18 @@ static void npc_player_init_move_diagonal_walking(u8 collision) {
     npc_player_set_state_and_execute_tile_anim(diagonal_walking_movement_idx_by_collision(collision), 2);
 }
 
-
 static u8 diagonal_running_movement_idx_by_collision(u8 collision) {
     switch (collision) {
-        case COLLISION_SIDEWAY_STAIRS_NORTH_EAST: return STEP_NORTH_EAST_RUNNING;
-        case COLLISION_SIDEWAY_STAIRS_SOUTH_EAST: return STEP_SOUTH_EAST_RUNNING;
-        case COLLISION_SIDEWAY_STAIRS_SOUTH_WEST: return STEP_SOUTH_WEST_RUNNING;
-        case COLLISION_SIDEWAY_STAIRS_NORTH_WEST: return STEP_NORTH_WEST_RUNNING;
-        default: return 0;
+        case COLLISION_SIDEWAY_STAIRS_NORTH_EAST:
+            return STEP_NORTH_EAST_RUNNING;
+        case COLLISION_SIDEWAY_STAIRS_SOUTH_EAST:
+            return STEP_SOUTH_EAST_RUNNING;
+        case COLLISION_SIDEWAY_STAIRS_SOUTH_WEST:
+            return STEP_SOUTH_WEST_RUNNING;
+        case COLLISION_SIDEWAY_STAIRS_NORTH_WEST:
+            return STEP_NORTH_WEST_RUNNING;
+        default:
+            return 0;
     }
 }
 
@@ -139,11 +146,16 @@ static void npc_player_init_move_diagonal_running(u8 collision) {
 
 static u8 diagonal_biking_movement_idx_by_collision(u8 collision) {
     switch (collision) {
-        case COLLISION_SIDEWAY_STAIRS_NORTH_EAST: return STEP_NORTH_EAST_RIDING;
-        case COLLISION_SIDEWAY_STAIRS_SOUTH_EAST: return STEP_SOUTH_EAST_RIDING;
-        case COLLISION_SIDEWAY_STAIRS_SOUTH_WEST: return STEP_SOUTH_WEST_RIDING;
-        case COLLISION_SIDEWAY_STAIRS_NORTH_WEST: return STEP_NORTH_WEST_RIDING;
-        default: return 0;
+        case COLLISION_SIDEWAY_STAIRS_NORTH_EAST:
+            return STEP_NORTH_EAST_RIDING;
+        case COLLISION_SIDEWAY_STAIRS_SOUTH_EAST:
+            return STEP_SOUTH_EAST_RIDING;
+        case COLLISION_SIDEWAY_STAIRS_SOUTH_WEST:
+            return STEP_SOUTH_WEST_RIDING;
+        case COLLISION_SIDEWAY_STAIRS_NORTH_WEST:
+            return STEP_NORTH_WEST_RIDING;
+        default:
+            return 0;
     }
 }
 
@@ -213,7 +225,7 @@ void npc_player_initialize_move_not_biking(u8 direction, key keys) {
         case COLLISION_LADDER_BLOCKED:
             npc_player_sound_collision(direction);
             npc_player_set_state_and_execute_tile_anim(PAUSE_32, 2);
-            return; 
+            return;
         case COLLISION_START_SURFING:
             overworld_script_init(ow_script_transition_start_surfing);
             return;
@@ -244,7 +256,7 @@ void npc_player_initialize_move_on_bike(u8 direction) {
             // Appearently nothing happens?
             return;
         case COLLISION_NONE:
-        case 14:{ // This thing super weird, it is returned when stepping on cracked ice, I suppose 
+        case 14: { // This thing super weird, it is returned when stepping on cracked ice, I suppose
             if (collision == 14 || npc_player_walking_towards_rock_stairs(direction))
                 npc_player_init_move_surfing(direction);
             else

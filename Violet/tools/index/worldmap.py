@@ -38,4 +38,3 @@ if __name__ == '__main__':
                     errors.append(f'No worldmap shape specified for map {bank}.{map_idx}:{label}')
     if len(errors):
         warn('\n'.join(errors))
-                

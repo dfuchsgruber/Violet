@@ -1,7 +1,7 @@
 {
-    "type" : "enum",
-    "base" : 0,
-    "values" : [
+    "type": "enum",
+    "base": 0,
+    "values": [
         "PC_CONTEXT_TEXT_FORMAT_NORMAL",
         "PC_CONTEXT_TEXT_FORMAT_POKEMON_0",
         "PC_CONTEXT_TEXT_FORMAT_POKEMON_1",

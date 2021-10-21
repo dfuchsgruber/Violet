@@ -6,11 +6,11 @@
  */
 
 #ifndef BIN_HEAP_H
-#define	BIN_HEAP_H
+#define BIN_HEAP_H
 
-#include "types.h"
-#include "overworld/npc.h"
 #include "constants/overworld/npc_pathfinding_speeds.h"
+#include "overworld/npc.h"
+#include "types.h"
 
 typedef struct {
     u32 key;
@@ -70,7 +70,7 @@ typedef union {
     struct {
         int x : 14;
         int y : 14;
-        int heading : 4; 
+        int heading : 4;
     } state;
     int value;
 } a_star_key;
@@ -100,10 +100,10 @@ int gp_stack_peek();
 int gp_stack_pop();
 
 typedef struct {
-  int *elems;
-  size_t max_size;
-  size_t size;
-  size_t head;
+    int *elems;
+    size_t max_size;
+    size_t size;
+    size_t head;
 } ring_queue_t;
 
 /**
@@ -143,5 +143,4 @@ bool ring_queue_empty(ring_queue_t *queue);
  */
 void ring_queue_del(ring_queue_t *queue);
 
-#endif	/* BIN_HEAP_H */
-
+#endif /* BIN_HEAP_H */

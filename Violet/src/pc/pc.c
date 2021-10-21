@@ -1,20 +1,20 @@
-#include "types.h"
 #include "pc.h"
-#include "text.h"
-#include "list_menu.h"
-#include "overworld/map_control.h"
-#include "fading.h"
 #include "callbacks.h"
-#include "music.h"
-#include "vars.h"
+#include "constants/pokemon_attributes.h"
 #include "constants/vars.h"
 #include "debug.h"
-#include "save.h"
+#include "fading.h"
+#include "list_menu.h"
+#include "music.h"
+#include "overworld/map_control.h"
 #include "pokemon/virtual.h"
-#include "constants/pokemon_attributes.h"
-#include "superstate.h"
-#include "pokepad/wondertrade.h"
 #include "pokepad/incubator.h"
+#include "pokepad/wondertrade.h"
+#include "save.h"
+#include "superstate.h"
+#include "text.h"
+#include "types.h"
+#include "vars.h"
 
 void pc_initialize_for_selection_big_callback(u8 self) {
     if (!fading_control.active) {
@@ -35,7 +35,7 @@ void special_initialize_pc_for_selection() {
 
 void pc_exit() {
     pc_last_used_mode = pc_get_mode();
-    if (pc_get_mode() ==  PC_MODE_SELECT) {
+    if (pc_get_mode() == PC_MODE_SELECT) {
         switch (fmem.pc_selection_context) {
             case PC_SELECTION_CONTEXT_CHOOSE_WONDERTRADE:
                 callback1_set(wondertrade_callback_after_selection);
@@ -85,11 +85,10 @@ static void pc_selection_eligible(u8 self) {
             break;
         }
         case 1: {
-            if (super.keys_new.keys.A || super.keys_new.keys.B || super.keys_new.keys.up || super.keys_new.keys.down 
-                || super.keys_new.keys.right || super.keys_new.keys.left) {
-                    pc_context_menu_flush();
-                    pc_set_callback(pc_callback);
-                }
+            if (super.keys_new.keys.A || super.keys_new.keys.B || super.keys_new.keys.up || super.keys_new.keys.down || super.keys_new.keys.right || super.keys_new.keys.left) {
+                pc_context_menu_flush();
+                pc_set_callback(pc_callback);
+            }
             break;
         }
         case 2: {
@@ -170,7 +169,6 @@ static bool pc_context_menu_build_context_on_pokemon_select() {
     }
     return false;
 }
-
 
 bool pc_context_menu_build_context_on_pokemon() {
     pc_context_menu_reset();

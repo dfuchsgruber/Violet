@@ -1,16 +1,16 @@
-#include "types.h"
 #include "bios.h"
-#include "rtc.h"
 #include "color.h"
-#include "dns.h"
-#include "constants/vars.h"
 #include "constants/shader_states.h"
-#include "vars.h"
-#include "save.h"
-#include "fading.h"
-#include "dma.h"
+#include "constants/vars.h"
 #include "debug.h"
+#include "dma.h"
+#include "dns.h"
+#include "fading.h"
 #include "overworld/weather.h"
+#include "rtc.h"
+#include "save.h"
+#include "types.h"
+#include "vars.h"
 
 static color_t dns_colors[] = {
     [SHADER_NIGHT] = {.rgb = {.red = 15, .green = 15, .blue = 28}},
@@ -19,7 +19,7 @@ static color_t dns_colors[] = {
     [SHADER_CEOMETRIA_GYM_PUNISHMENT_ROOM] = {.rgb = {.red = 6, .green = 8, .blue = 19}},
 };
 
-// This is very inconsistent: How to calculate the fog colors: Look for two colors you want to match and solve the system 
+// This is very inconsistent: How to calculate the fog colors: Look for two colors you want to match and solve the system
 // 0.5 * unfogged + 0.75 * fog_overlay = blended
 // Or alternatively: fog_overlay = (blended - 0.5 * unfogged) / 0.75
 // The unfogged color should be after application of the filter and the fogged color what the output is
@@ -104,7 +104,7 @@ void pal_apply_shaders_by_palette_idx(u8 pal_idx, u8 number_palettes) {
 
 void pal_apply_shaders_by_oam_palette_idx(u8 oam_pal_idx) {
     pal_apply_shaders((u16)(oam_pal_idx * 16 + 256), 16);
-} 
+}
 
 void pal_proceed() {
     void *src = pals;

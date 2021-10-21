@@ -1,26 +1,26 @@
-#include "types.h"
-#include "battle/state.h"
+#include "attack.h"
+#include "battle/ai.h"
 #include "battle/battler.h"
 #include "battle/controller.h"
-#include "battle/ai.h"
-#include "constants/battle/battle_actions.h"
-#include "attack.h"
-#include "constants/attack_affects_whom_flags.h"
-#include "mega.h"
-#include "debug.h"
-#include "save.h"
-#include "overworld/pokemon_party_menu.h"
-#include "oam.h"
-#include "pokemon/sprites.h"
-#include "trainer/trainer.h"
-#include "trainer/backsprite.h"
-#include "pokemon/cry.h"
 #include "battle/link.h"
+#include "battle/state.h"
+#include "constants/attack_affects_whom_flags.h"
+#include "constants/battle/battle_actions.h"
+#include "debug.h"
+#include "mega.h"
+#include "oam.h"
+#include "overworld/pokemon_party_menu.h"
+#include "pokemon/cry.h"
+#include "pokemon/sprites.h"
+#include "save.h"
+#include "trainer/backsprite.h"
+#include "trainer/trainer.h"
+#include "types.h"
 
 void battle_controller_player_handle_draw_trainer_picture() {
     s16 x;
     if (battle_is_multi_double() || battle_is_tag()) {
-        if ((battler_get_position(active_battler) & 2) == 2) {  // Left flank
+        if ((battler_get_position(active_battler) & 2) == 2) { // Left flank
             x = 90;
         } else {
             x = 32;
@@ -40,11 +40,11 @@ void battle_controller_player_handle_draw_trainer_picture() {
     } else {
         sprite_idx = save2->player_is_female ? 1 : 0;
     }
-    battle_trainer_load_backsprite_palette((u8)sprite_idx, active_battler);    
+    battle_trainer_load_backsprite_palette((u8)sprite_idx, active_battler);
     trainer_gfx_initialize_gp_oam_template((u8)sprite_idx, battler_get_position(active_battler));
-    u8 oam_idx = oam_new_forward_search(&gp_oam_template, x, 
-        (s16)((8 - trainer_backsprite_coordinates[sprite_idx].y_offset) * 4 + 80), 
-        battler_oam_get_relative_priority(active_battler));
+    u8 oam_idx = oam_new_forward_search(&gp_oam_template, x,
+                                        (s16)((8 - trainer_backsprite_coordinates[sprite_idx].y_offset) * 4 + 80),
+                                        battler_oam_get_relative_priority(active_battler));
     battler_oams[active_battler] = oam_idx;
     oams[oam_idx].final_oam.attr2 = (u16)((oams[oam_idx].final_oam.attr2 & 0xFFF) | (active_battler << 12));
     oams[oam_idx].x2 = 240;

@@ -1,8 +1,5 @@
-
-
 #ifndef RTC
 #define RTC
-
 
 // Define how many seconds one inamge second is equivalent to
 #define INGAME_CLOCK_SPEED_UP 6
@@ -42,7 +39,7 @@ u64 rtc_timestamp_to_seconds(rtc_timestamp *t);
  * Initializes year, month and day of a timestamp with a certain amount of days that has passed.
  * @param days how many days have passed
  * @param t the timestamp to initialize
- **/
+ */
 void days_to_rtc_timestamp(int days, rtc_timestamp *t);
 
 bool rtc_test();
@@ -73,7 +70,7 @@ void time_reset_events();
 /**
  * Tries to proceed time based events
  * @param vars space for local variables of the time based events (e.g. the ambient cry)
- **/
+ */
 void time_based_events_proceed(u16 *vars);
 
 gpio gpios;

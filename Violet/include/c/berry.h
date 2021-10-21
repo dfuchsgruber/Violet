@@ -1,19 +1,19 @@
 #ifndef H_BERRY
 #define H_BERRY
 
-#include "types.h"
-#include "constants/items.h"
 #include "constants/berry_stages.h"
-#include "save.h"
-#include "overworld/sprite.h"
+#include "constants/items.h"
 #include "oam.h"
+#include "overworld/sprite.h"
+#include "save.h"
+#include "types.h"
 
 #define OW_PAL_TAG_BERRY_BASE 0x2800
 #define NUM_OW_PAL_TAGS_BERRY 6
 #define TAG_BERRY_GROWTH_SPARKLE 0x2880
 
 #define ITEM_FIRST_BERRY ITEM_AMRENABEERE
-#define ITEM_IDX_TO_BERRY_IDX(item_idx) ((item_idx) - ITEM_FIRST_BERRY)
+#define ITEM_IDX_TO_BERRY_IDX(item_idx) ((item_idx)-ITEM_FIRST_BERRY)
 #define BERRY_IDX_TO_ITEM_IDX(berry_idx) ((berry_idx) + ITEM_FIRST_BERRY)
 
 typedef struct { // From pokeemerald
@@ -47,7 +47,7 @@ typedef struct {
 /**
  * Fades the berry pouch and loads the continuation. Resources are freed as well.
  * @param self self-reference
- **/
+ */
 void berry_pouch_fade_and_continuation(u8 self);
 
 /**
@@ -55,22 +55,21 @@ void berry_pouch_fade_and_continuation(u8 self);
  * @param context in which context. Different contexts enables different behaviour
  * @param continuation the continuation after the berry pouch is closed
  * @param allow_select if select is allowed
- **/
+ */
 void berry_pouch_initialize(u8 context, void (*continuation)(), u8 allow_select);
-
 
 /**
  * Gets the information of a berry
  * @param berry_idx the berry to get
  * @return berry the information of the berry
- **/
+ */
 berry *berry_get(u8 berry_idx);
 
 /**
  * Gets the overworld sprite of a berry tree.
  * @param berry_idx the idx of the berry tree
  * @return the overworld sprite of the berry tree
- **/
+ */
 overworld_sprite *overworld_sprite_get_by_berry_tree_idx(u8 berry_tree_idx);
 
 /**
@@ -79,33 +78,33 @@ overworld_sprite *overworld_sprite_get_by_berry_tree_idx(u8 berry_tree_idx);
  * @param the stage of the berry
  * @param if the berry is fertilized
  * @return the overworld sprite of the berry tree
- **/
+ */
 overworld_sprite *overworld_sprite_get_by_berry_idx(u8 berry_idx, u8 stage, bool fertilized);
 
 /**
  * Gets the palette of a berry tree
  * @param berry_idx the idx of the berry tree
  * @return the palette of the berry tree
- **/
+ */
 palette *overworld_palette_get_by_berry_idx(u8 berry_idx);
 
 /**
  * Gets the picture idx associated with a berry tree
  * @param berry_idx the idx of the berry tree
  * @return the picture idx of the berry tree
- **/
+ */
 u8 overworld_get_sprite_idx_by_berry_idx(u8 berry_idx);
 
 /**
  * Gets the palette of a berry tree pal tag
  * @param tag the pal tag to get the palette of
  * @return the palette of the berry tree
- **/
+ */
 palette *overworld_palette_berry_get_by_tag(u16 tag);
 
 /**
  * Tries proceeding the berry growth based on the ingame time
- **/
+ */
 void berry_proceed();
 
 /**
@@ -113,12 +112,12 @@ void berry_proceed();
  * @param berry_tree_idx which berry tree to initialize
  * @param berry_idx with which berry to initialize
  * @param stage at which stage
- **/
+ */
 void berry_tree_initialize(u8 berry_tree_idx, u8 berry_idx, u8 stage);
 
 /**
  * Initializes all berry trees.
- **/
+ */
 void berry_trees_initialize_all();
 
 extern void berry_pouch_callback_context_menu(u8 self);

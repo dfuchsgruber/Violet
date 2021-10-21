@@ -1,13 +1,13 @@
-#include "types.h"
-#include "constants/abilities.h"
-#include "constants/battle/battle_weathers.h"
+#include "abilities.h"
+#include "battle/battler.h"
+#include "battle/battlescript.h"
 #include "battle/state.h"
 #include "battle/weather.h"
-#include "battle/battlescript.h"
-#include "battle/battler.h"
+#include "constants/abilities.h"
+#include "constants/battle/battle_weathers.h"
 #include "constants/pokemon_stat_names.h"
 #include "debug.h"
-#include "abilities.h"
+#include "types.h"
 
 extern u8 bsc_eschat[];
 extern u8 bsc_hack[];
@@ -17,11 +17,11 @@ extern u8 bsc_tollwut[];
 
 bool abilities_battle_enter(u8 ability, u8 index) {
     dprintf("Battle enter for ability %d, index %d\n", ability, index);
-    if(ability == HAGELALARM && !(battle_weather & BATTLE_WEATHER_HAIL)){
+    if (ability == HAGELALARM && !(battle_weather & BATTLE_WEATHER_HAIL)) {
         battle_weather = BATTLE_WEATHER_HAIL;
         dprintf("Hail triggered\n");
         battlescript_init_and_interrupt_battle(bsc_hagelalarm);
-    	bsc_global.battler_idx = index;
+        bsc_global.battler_idx = index;
         return true;
     } else if (ability == HACK && !battler_damage_taken[index].intimdated_foe) {
         battler_damage_taken[index].intimdated_foe = 1; // Abuse that one a bit I suppose...
@@ -29,15 +29,13 @@ bool abilities_battle_enter(u8 ability, u8 index) {
         return true;
     } else if (ability == ESCHAT && !battler_damage_taken[index].intimdated_foe) {
         battler_damage_taken[index].intimdated_foe = 1; // Abuse that one a bit I suppose...
-    	bsc_global.battler_idx = index;
-    	battlescript_init_and_interrupt_battle(bsc_eschat);
-    	return true;
-    } else if (ability == TOLLWUT && (battlers[index].stat_changes[STAT_ATTACK] < 7 ||
-    		battlers[index].stat_changes[STAT_DEFENSE] > 0
-			|| battlers[index].stat_changes[STAT_SPECIAL_DEFENSE] > 0) && !battler_damage_taken[index].intimdated_foe) {
+        bsc_global.battler_idx = index;
+        battlescript_init_and_interrupt_battle(bsc_eschat);
+        return true;
+    } else if (ability == TOLLWUT && (battlers[index].stat_changes[STAT_ATTACK] < 7 || battlers[index].stat_changes[STAT_DEFENSE] > 0 || battlers[index].stat_changes[STAT_SPECIAL_DEFENSE] > 0) && !battler_damage_taken[index].intimdated_foe) {
         battler_damage_taken[index].intimdated_foe = 1; // Abuse that one a bit I suppose...
-		battlescript_init_and_interrupt_battle(bsc_tollwut);
-		return true;
+        battlescript_init_and_interrupt_battle(bsc_tollwut);
+        return true;
     } else if (ability == GEGENWIND && !battler_damage_taken[index].intimdated_foe) {
         battler_statuses3[index] |= STATUS3_INTIMIDATE_POKES;
         battler_damage_taken[index].intimdated_foe = 1;
@@ -47,6 +45,4 @@ bool abilities_battle_enter(u8 ability, u8 index) {
         return false;
     }
     return false;
-    
 }
-

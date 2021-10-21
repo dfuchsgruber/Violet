@@ -1,25 +1,22 @@
-#include "types.h"
+#include "agbmemory.h"
+#include "battle/ai.h"
 #include "battle/state.h"
+#include "battle/whiteout.h"
+#include "constants/battle/battle_results.h"
+#include "constants/songs.h"
+#include "constants/trainer_battle_types.h"
+#include "debug.h"
+#include "mega.h"
+#include "overworld/script.h"
+#include "save.h"
 #include "superstate.h"
 #include "trainer/virtual.h"
-#include "save.h"
-#include "overworld/script.h"
-#include "constants/trainer_battle_types.h"
-#include "battle/ai.h"
-#include "mega.h"
-#include "agbmemory.h"
-#include "constants/songs.h"
-#include "debug.h"
-#include "constants/battle/battle_results.h"
-#include "battle/whiteout.h"
-
-
+#include "types.h"
 
 void battle_initialize_trainerbattle() {
     battle_flags = BATTLE_TRAINER;
     super.saved_callback = battle_trainerbattle_continuation;
-    if (fmem.trainers_cnt == 2 || trainer_vars.kind_of_battle == TRAINER_BATTLE_TWO_TRAINERS 
-        || trainer_vars.kind_of_battle == TRAINER_BATTLE_ALLY_TWO_TRAINERS) {
+    if (fmem.trainers_cnt == 2 || trainer_vars.kind_of_battle == TRAINER_BATTLE_TWO_TRAINERS || trainer_vars.kind_of_battle == TRAINER_BATTLE_ALLY_TWO_TRAINERS) {
         battle_flags |= BATTLE_DOUBLE | BATTLE_TWO_TRAINERS;
     }
     if (trainer_vars.kind_of_battle == TRAINER_BATTLE_ALLY_ONE_TRAINER ||
@@ -30,7 +27,6 @@ void battle_initialize_trainerbattle() {
     trainerbattle_start();
     overworld_script_halt();
 }
-
 
 void battle_allocate_new() {
     fmem.mega_state = malloc_and_clear(sizeof(mega_state_t));
@@ -47,7 +43,7 @@ void ally_battle_restore_party() {
         // Update the pokemon that parttook in the battle
         for (int i = 0; i < 3; i++) {
             if (cmem.ally_battle_selected_party_idxs[i]) {
-                memcpy(player_pokemon + cmem.ally_battle_selected_party_idxs[i] - 1, party + i , sizeof(pokemon));
+                memcpy(player_pokemon + cmem.ally_battle_selected_party_idxs[i] - 1, party + i, sizeof(pokemon));
             }
         }
         free(party);
@@ -64,9 +60,9 @@ void ally_battle_revive_pokemon() {
             if (pokemon_get_attribute(player_pokemon + i, ATTRIBUTE_SPECIES, 0) != 0 &&
                 !pokemon_get_attribute(player_pokemon + i, ATTRIBUTE_IS_EGG, 0) &&
                 pokemon_get_attribute(player_pokemon + i, ATTRIBUTE_CURRENT_HP, 0) > 0) {
-                    has_viable_pokemon = true;
-                    break;
-                }
+                has_viable_pokemon = true;
+                break;
+            }
         }
         if (!has_viable_pokemon) {
             for (int i = 0; i < player_pokemon_cnt; i++) {
@@ -81,7 +77,6 @@ void ally_battle_revive_pokemon() {
     }
 }
 
-
 void battle_end_actions() {
     dprintf("Do battle end actions...\n");
     battle_alternative_forms_revert();
@@ -89,7 +84,6 @@ void battle_end_actions() {
     ally_battle_revive_pokemon();
     battle_handicap_clear();
 }
-
 
 void battle_free_new() {
     battle_end_actions();

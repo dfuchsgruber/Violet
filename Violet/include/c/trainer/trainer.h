@@ -10,9 +10,9 @@
 
 #define TRAINER_CNT 0x301
 
-#include "trainer/party.h"
 #include "constants/trainerclasses.h"
 #include "oam.h"
+#include "trainer/party.h"
 
 typedef struct {
     u8 uses_custom_moves : 1;
@@ -48,7 +48,7 @@ u8 trainer_class_money_multipliers[TRAINERCLASS_CNT];
  * Configures a trainerbattle by parameters of an overworld script command.
  * @param script the parameter list
  * @return the challange script
- **/
+ */
 u8 *trainer_configure_by_overworld_script(u8 *script);
 
 /**
@@ -79,45 +79,44 @@ void special_prepeare_player_facing();
 /**
  * Checks if the game state prohibits a trainerbattle.
  * @return if a trainerbattle is prohibited.
- **/
+ */
 bool trainerbattle_not_initializable();
 
 /**
  * Checks if a trainer with a certain script wants to battle.
  * @param script the trainerscript command
  * @return if the trainerflag is set
- **/
+ */
 bool npc_trainer_check_flag(u8 *script);
 
 /**
  * Checks if the player is able to participate in a double battle.
  * @return 0 if the player has two viable pokemon, 2 if the player is only one viable pokemon (don't ask me...)
- **/
+ */
 int player_party_get_double_battle_viability();
 
 /**
  * Initializes a trainerbattle if a trainer npc sees the player.
  * @param npc_idx the npc to check
  * @return how many trainers were found, i.e. 1 if a normal trainer was found, 2 if a double battle trainer was found, 0 else
- **/
+ */
 int trainerbattle_initialize_by_npc_idx(u8 npc_idx);
 
 /**
  * Gets the flag of the second opponent.
  * @return trainerflag of the second opponent.
- **/
+ */
 u16 trainerB_get_flag();
-
 
 /**
  * Callback for trainer sprites.
  * @param self self-reference
- **/
+ */
 void oam_trainer_sprite_callback(oam_object *self);
 
 /**
  * Sets up the ally's party to slots 3,4,5 of the player's party.
- **/
+ */
 void ally_party_setup();
 
 #endif /* INCLUDE_C_TRAINER_TRAINER_H_ */

@@ -1,6 +1,6 @@
 {
 	"type": "enum",
-	"base" : 0,
+	"base": 0,
 	"values": [
 		"TRAINER_BUILD_NONE",
 		"TRAINER_BUILD_PHYSICAL_SWEEPER_ATTACK_PREFERENCE",

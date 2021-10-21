@@ -8,7 +8,6 @@
 #ifndef INCLUDE_C_TILE_TRAINER_TIPP_H_
 #define INCLUDE_C_TILE_TRAINER_TIPP_H_
 
-
 #define TRAINER_TIPP_RELOAD 50
 
 extern u8 script_trainer_tipp_fp_menu[];

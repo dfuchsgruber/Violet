@@ -1,6 +1,5 @@
-#include "types.h"
 #include "tile/door_animation.h"
-
+#include "types.h"
 
 static u8 door_animation_0_palettes[] = {8, 8, 8, 8, 8, 8, 8, 8};
 static u8 door_animation_1_palettes[] = {2, 2, 2, 2, 2, 2, 2, 2};
@@ -63,4 +62,3 @@ door_animation door_animations[] = {
     {.block = 0x3b9, .type = DOOR_ANIM_TYPE_STANDARD, .double_tiled = false, .gfx = gfx_tileset_door_anim_sonnaufeldTiles, .palette_map = door_animation_sonnaufeld_palettes},
     {0, 0, 0, 0, 0},
 };
-

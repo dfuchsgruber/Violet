@@ -1,7 +1,6 @@
 #ifndef H_OAMS
 #define H_OAMS
 
-
 #define GFX_ANIM_VFLIP 0x80
 #define GFX_ANIM_HFLIP 0x40
 
@@ -37,7 +36,7 @@
 #define ATTR1_SIZE_64_32 0xC000
 #define ATTR1_SIZE_32_64 0xC000
 
-#define ATTR2_PRIO(x) (x<<10)
+#define ATTR2_PRIO(x) (x << 10)
 
 #define GRAPHIC_SIZE_4BPP(width, height) (width * height / 2)
 #define GRAPHIC_SIZE_8BPP(width, height) (width * height)
@@ -71,19 +70,19 @@ typedef struct graphic {
 #define ROTSCALE_ANIM_END 0x7FFF
 
 typedef union rotscale_frame {
-  struct {
-    s16 affine_x_value;
-    s16 affine_y_value;
-    u8 rotation;
-    u8 duration;
-    u16 field_6;
-  } affine;
-  struct {
-    u16 command;
-    u16 parameter;
-    u16 field_4;
-    u16 field_6;
-  } command;
+    struct {
+        s16 affine_x_value;
+        s16 affine_y_value;
+        u8 rotation;
+        u8 duration;
+        u16 field_6;
+    } affine;
+    struct {
+        u16 command;
+        u16 parameter;
+        u16 field_4;
+        u16 field_6;
+    } command;
 } rotscale_frame;
 
 typedef struct sprite {
@@ -117,17 +116,17 @@ extern oam_template gp_oam_template; // Multi-use oam template
 #define OAM_FLAG_SPRITES 0x4000
 
 typedef struct {
-  s8 x;
-  s8 y;
-  u16 shape : 2;
-  u16 size : 2;
-  u16 tile_offset : 10;
-  u16 priority : 2;
+    s8 x;
+    s8 y;
+    u16 shape : 2;
+    u16 size : 2;
+    u16 tile_offset : 10;
+    u16 priority : 2;
 } subsprite;
 
 typedef struct {
-  u8 num_subsprites;
-  subsprite *subsprites;
+    u8 num_subsprites;
+    subsprite *subsprites;
 } subsprite_table;
 
 typedef struct oam_object {
@@ -137,7 +136,7 @@ typedef struct oam_object {
     u32 *rotscale_table;
     oam_template *oam_template;
     subsprite_table *subsprites;
-    void (*callback)(oam_object*);
+    void (*callback)(oam_object *);
     s16 x;
     s16 y;
     s16 x2;
@@ -164,12 +163,11 @@ extern rotscale_frame *oam_rotscale_anim_table_null[];
 extern gfx_frame *oam_gfx_anim_table_null[];
 
 typedef struct { // Subject to change, I guess...
-  u8 y_offset;
-  u8 frames;
-  u8 field_2;
-  u8 field_3;
+    u8 y_offset;
+    u8 frames;
+    u8 field_2;
+    u8 field_3;
 } sprite_coordinates_t;
-
 
 extern u8 oam_rotscale_disabled;
 
@@ -177,7 +175,7 @@ extern u8 oam_rotscale_disabled;
  * Sets the subsprite table of an oam
  * @param o the oam to set the table of
  * @param subsprites the subsprite table to set
- **/
+ */
 void oam_set_subsprite_table(oam_object *o, const subsprite_table *subsprites);
 
 /**
@@ -207,7 +205,7 @@ u8 oam_new_forward_search(oam_template *template, s16 x, s16 y, u8 prio);
  * @param y Y-coordinate of the oam's center
  * @param prio The priority relative to other oams on the same layer (0 being lowest)
  */
-u8 oam_new_backward_search(oam_template * template, s16 x, s16 y, u8 prio);
+u8 oam_new_backward_search(oam_template *template, s16 x, s16 y, u8 prio);
 
 /**
  * Allocates oam vram and decompresses a graphic resource into the allocated vram. Places the
@@ -215,20 +213,20 @@ u8 oam_new_backward_search(oam_template * template, s16 x, s16 y, u8 prio);
  * @param graphic The graphic resource to load
  * @return The oam vram tile id that was allocated
  */
-u16 oam_load_graphic(graphic*g);
+u16 oam_load_graphic(graphic *g);
 
 /**
  * Loads lz77 compressed graphic by allocating heap space, decompressing and then copying.
  * @param g the graphic to load
  * @return if the graphic could be loaded
- **/
+ */
 bool oam_load_graphic_using_heap(graphic *g);
 
 /**
  * Loads lz77 compressed palette by allocating heap space, decompressing and then copying.
  * @param p the palette to load
  * @return if the palette could be loaded
- **/
+ */
 bool oam_load_palette_using_heap(palette *p);
 
 /**
@@ -236,19 +234,19 @@ bool oam_load_palette_using_heap(palette *p);
  * table.
  * @param oam The oam that holds the graphic to free
  */
-void oam_free_graphic_keep_tag(oam_object* oam);
+void oam_free_graphic_keep_tag(oam_object *oam);
 
 /**
  * Frees the allocated oam vram an oam (also deletes the entry in the oam vram allocation table)
  * @param oam The oam that holds the graphic to free
  */
-void oam_free_graphic(oam_object* oam);
+void oam_free_graphic(oam_object *oam);
 
 /**
  * Frees the vram allocated for a gfx tag.
  * @param tag the tag 
- **/
-void oam_free_vram_by_tag (u16 tag);
+ */
+void oam_free_vram_by_tag(u16 tag);
 
 /**
  * Allocates an oam palette and places a tag in the oam palette allocation table
@@ -274,26 +272,26 @@ void oam_palette_free(u16 tag);
  * Loads (and possibly allocates) a oam palette, if it is not already present.
  * @param p the palettes struct, referring to an uncompressed color array
  * @return the idx of the palette or 0xFF on failure
- **/
+ */
 u8 oam_palette_load_if_not_present(palette *p);
 
 /**
  * Loads (and possibly allocates) a oam palette, if it is not already present and applies shaders if and only if it was not present.
  * @param p the palettes struct, referring to an uncompressed color array
  * @return the idx of the palette or 0xFF on failure
- **/
+ */
 u8 oam_palette_load_if_not_present_and_apply_shaders(palette *p);
 /**
  * Clears an oam object (but does not free resources held by the object).
  * @param oam The oam object to clear
  */
-void oam_clear(oam_object* oam);
+void oam_clear(oam_object *oam);
 
 /**
  * Clears an oam object and frees all resources held by it
  * @param oam The oam object to free
  */
-void oam_free(oam_object* oam);
+void oam_free(oam_object *oam);
 
 /**
  * Returns the index of a oam graphic tag in the oam vram allocation table
@@ -307,14 +305,14 @@ u8 oam_vram_allocation_table_get_index(u16 tag);
  * @param oam The oam object whose gfx animation will be initialized
  * @param frame The frame to start the animation in
  */
-void oam_gfx_anim_init(oam_object* oam, u8 frame);
+void oam_gfx_anim_init(oam_object *oam, u8 frame);
 
 /**
  * Initializes the rotation-scale animation of an oam object
  * @param oam The oam object whose rotation-scale animation will be initialized
  * @param index Animation index in the oam's rotation-scale animation table
  */
-void oam_rotscale_anim_init(oam_object* oam, u8 index);
+void oam_rotscale_anim_init(oam_object *oam, u8 index);
 
 /**
  * Sets rotation and scale of a oam matrix
@@ -322,7 +320,7 @@ void oam_rotscale_anim_init(oam_object* oam, u8 index);
  * @param x_scale the x_scale in multiples of 0x100
  * @param y_scale the y_scale in multiples of 0x100
  * @param rotation the rotation from [0, 255]
- **/
+ */
 void oam_set_rotation_and_scale(u8 matrix_idx, s16 x_scale, s16 y_scale, u8 rotation);
 
 /**
@@ -332,7 +330,7 @@ void oam_set_rotation_and_scale(u8 matrix_idx, s16 x_scale, s16 y_scale, u8 rota
  * @param x_scale the horizontal scaling in multiples of 0x100
  * @param y_scale the vertical scaling in multiples of 0x100
  * @param rotation the angle in [0, 0xFFFF]
- **/
+ */
 void oam_try_set_rotation_and_scale(oam_object *o, bool recalculate_center_vector, s16 x_scale, s16 y_scale, u16 rotation);
 
 /**
@@ -425,35 +423,35 @@ void oam_flip(oam_object *o, bool horizontal_flip, bool vertical_flip);
 /**
  * Clears an oam and releases all tiles used for its gfx animation.
  * @param o the oam to clear
- **/
+ */
 void oam_clear_and_free_vram(oam_object *o);
 
 /**
  * Allocates tiles for a oam graphic and copies it into vram.
  * @param g the graphic to copy, the sprite is expected to be uncompressed
  * @return t the tile where to graphic was copied to or 0xFFFF on failure
- **/
+ */
 u16 oam_load_graphic_uncompressed(graphic *g);
 
 /**
  * Starts a certain gfx animation.
  * @param o the oam to start the animation of
  * @param anim_idx the animation to start
- **/
+ */
 void oam_gfx_anim_start(oam_object *o, u8 anim_idx);
 
 /**
  * Starts a certain gfx animation, if the selected animation is not already running.
  * @param o the oam to start the animation of
  * @param anim_idx the animation to start
- **/
+ */
 void oam_gfx_anim_start_if_not_current(oam_object *o, u8 anim_idx);
 
 /**
  * Resets the oam attribute buffer.
  * @param first the first oam to reset
  * @param the last oam oam (exclusive) to reset
- **/
+ */
 void oam_buffer_reset(u8 first, u8 last);
 
 #endif

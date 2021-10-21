@@ -1,7 +1,7 @@
 {
-    "type" : "enum",
-    "base" : 0,
-    "values" : [
+    "type": "enum",
+    "base": 0,
+    "values": [
         "BERRY_STAGE_NO_BERRY",
         "BERRY_STAGE_DIRT_PILE",
         "BERRY_STAGE_SPROUT",

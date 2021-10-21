@@ -1,9 +1,9 @@
-#include "types.h"
+#include "constants/species.h"
 #include "oam.h"
 #include "pokemon/count.h"
 #include "pokemon/sprites.h"
 #include "pokemon/virtual.h"
-#include "constants/species.h"
+#include "types.h"
 
 graphic pokemon_frontsprites[POKEMON_CNT] = {
     {gfx_pkmn_species_000_pokemon_pokemon_0_frontspriteTiles, 0x800, 0},
@@ -373,7 +373,7 @@ graphic pokemon_frontsprites[POKEMON_CNT] = {
     {gfx_pkmn_species_364_pokemon_bummelz_frontspriteTiles, 0x800, 364},
     {gfx_pkmn_species_365_pokemon_muntier_frontspriteTiles, 0x800, 365},
     {gfx_pkmn_species_366_pokemon_letarking_frontspriteTiles, 0x800, 366},
-    {gfx_pkmn_molunk_frontspriteTiles, 0x800, 367}, 
+    {gfx_pkmn_molunk_frontspriteTiles, 0x800, 367},
     {gfx_pkmn_amfira_frontspriteTiles, 0x800, 368},
     {gfx_pkmn_species_369_pokemon_tropius_frontspriteTiles, 0x800, 369},
     {gfx_pkmn_species_370_pokemon_kaumalat_frontspriteTiles, 0x800, 370},
@@ -391,7 +391,7 @@ graphic pokemon_frontsprites[POKEMON_CNT] = {
     {gfx_pkmn_species_382_pokemon_stollunior_frontspriteTiles, 0x800, 382},
     {gfx_pkmn_species_383_pokemon_stollrak_frontspriteTiles, 0x800, 383},
     {gfx_pkmn_species_384_pokemon_stolloss_frontspriteTiles, 0x800, 384},
-    {(void*)0x08E26780, 0x800, 385}, // Keep Formeo's original tiles
+    {(void *)0x08E26780, 0x800, 385}, // Keep Formeo's original tiles
     {gfx_pkmn_species_386_pokemon_wonneira_frontspriteTiles, 0x800, 386},
     {gfx_pkmn_species_387_pokemon_mobai_frontspriteTiles, 0x800, 387},
     {gfx_pkmn_species_388_pokemon_liliep_frontspriteTiles, 0x800, 388},

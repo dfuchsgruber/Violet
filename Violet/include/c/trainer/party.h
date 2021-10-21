@@ -11,12 +11,12 @@
 #define TRAINER_POKEMON_LEVEL_STORY_BASED 254
 #define TRAINER_POKEMON_LEVEL_STORY_BASED_PLUS_ONE_STD 253
 
-#include "trainer/build.h"
 #include "pokemon/virtual.h"
+#include "trainer/build.h"
 
 typedef struct {
-	u8 ivs;
-	union_build_field build;
+    u8 ivs;
+    union_build_field build;
     u8 level;
     u8 field_3;
     u16 species;
@@ -24,8 +24,8 @@ typedef struct {
 } trainer_pokemon_default_item_default_attacks;
 
 typedef struct {
-	u8 ivs;
-	union_build_field build;
+    u8 ivs;
+    union_build_field build;
     u8 level;
     u8 field_3;
     u16 species;
@@ -33,8 +33,8 @@ typedef struct {
 } trainer_pokemon_custom_item_default_attacks;
 
 typedef struct {
-	u8 ivs;
-	union_build_field build;
+    u8 ivs;
+    union_build_field build;
     u8 level;
     u8 field_3;
     u16 species;
@@ -43,8 +43,8 @@ typedef struct {
 } trainer_pokemon_default_item_custom_attacks;
 
 typedef struct {
-	u8 ivs;
-	union_build_field build;
+    u8 ivs;
+    union_build_field build;
     u8 level;
     u8 field_3;
     u16 species;
@@ -52,13 +52,12 @@ typedef struct {
     u16 moves[4];
 } trainer_pokemon_custom_item_custom_attacks;
 
-typedef union{
+typedef union {
     trainer_pokemon_default_item_default_attacks default_item_default_attacks;
     trainer_pokemon_custom_item_default_attacks custom_item_default_attacks;
     trainer_pokemon_default_item_custom_attacks default_item_custom_attacks;
     trainer_pokemon_custom_item_custom_attacks custom_item_custom_attacks;
 } trainer_pokemon;
-
 
 /**
  * Builds / modifies a trainer pokemon based on its build field
@@ -66,6 +65,5 @@ typedef union{
  * @param field the build field that encodes the information about the trainer
  */
 void trainer_pokemon_new(pokemon *poke, union union_build_field field);
-
 
 #endif /* INCLUDE_C_TRAINER_PARTY_H_ */

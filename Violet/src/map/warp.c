@@ -1,18 +1,18 @@
-#include "types.h"
+#include "callbacks.h"
+#include "constants/block_behaviour.h"
+#include "debug.h"
+#include "flags.h"
+#include "item/item.h"
+#include "map/cloud.h"
 #include "map/event.h"
 #include "map/header.h"
-#include "tile/coordinate.h"
-#include "constants/block_behaviour.h"
-#include "item/item.h"
-#include "overworld/npc.h"
-#include "overworld/map_control.h"
-#include "overworld/script.h"
-#include "callbacks.h"
-#include "map/cloud.h"
 #include "music.h"
-#include "flags.h"
-#include "debug.h"
+#include "overworld/map_control.h"
+#include "overworld/npc.h"
+#include "overworld/script.h"
 #include "save.h"
+#include "tile/coordinate.h"
+#include "types.h"
 #include "vars.h"
 
 static void warp_setup_cloud_upstream_callback() {
@@ -34,11 +34,11 @@ static void big_callback_cloud_upstream_warp_waiting(u8 self) {
 }
 
 void warp_setup_by_event_and_position(map_header_t *header, s8 warp_idx, position_t *position) {
-    (void) header;
+    (void)header;
     map_event_warp *warp = mapheader_virtual.events->warps + warp_idx;
     if (warp->target_map == 0x7F) {
         warp_set_dynamic_map_idx(warp->target_warp_id);
-    } else { 
+    } else {
         warp_setup_by_event(warp->target_bank, warp->target_map, warp->target_warp_id);
         warp_update_last_outdoor_map(position->coordinates.x, position->coordinates.y);
         map_header_t *header = get_mapheader(warp->target_bank, warp->target_map);
@@ -54,7 +54,7 @@ bool step_on_warp(position_t *position, u8 behaviour) {
     if (warp_idx == -1) {
         return false;
     }
-    if (behaviour == MB_CLOUD_UPSTREAM_WARP && checkflag(ROUTE_5_CLOUD_RECEIVED)) {//&& item_check(ITEM_FAHRRAD, 1)) {
+    if (behaviour == MB_CLOUD_UPSTREAM_WARP && checkflag(ROUTE_5_CLOUD_RECEIVED)) { //&& item_check(ITEM_FAHRRAD, 1)) {
         if (!(player_state.state & PLAYER_STATE_BIKING)) {
             u8 cb_idx = big_callback_new(player_transition_to_bike, 0);
             player_transition_to_bike(cb_idx);

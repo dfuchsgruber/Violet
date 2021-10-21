@@ -8,7 +8,6 @@
 #ifndef INCLUDE_C_MAP_WILD_POKEMON_H_
 #define INCLUDE_C_MAP_WILD_POKEMON_H_
 
-
 typedef struct wild_pokemon_entry {
     u8 level_min;
     u8 level_max;
@@ -46,14 +45,14 @@ typedef struct {
 /**
  * Returns a pointer to the NUM_UNOWN_LETTERS_PER_MAP letters that currently can appear on the current map.
  * @return pointer to NUM_UNOWN_LETTERS_PER_MAP chars representing the letters or NULL
- **/
+ */
 u8 *wild_pokemon_get_current_unown_letters();
 
 /**
  * Returns a pointer to the NUM_UNOWN_LETTERS_PER_MAP letters that currently can appear on the map specified by
  * a bank in variable 0x8005 and a map_idx in variable 0x8006.
  * @return pointer to NUM_UNOWN_LETTERS_PER_MAP chars representing the letters or NULL
- **/
+ */
 u8 *wild_pokemon_get_unown_letters_of_header(u8 bank, u8 map_idx);
 
 #define UNOWN_LETTER(char) (char - 'A')
@@ -75,7 +74,7 @@ void wildbattle_start();
  * @return whether the initialization, i.e. the generation of a pokemon was successful
  */
 bool wildbattle_initialize_by_habitat(wild_pokemon_habitat *habitat, int type,
-		bool consider_repel);
+                                      bool consider_repel);
 
 /**
  * Initializes the opponent's party with a wild pokemon
@@ -137,15 +136,14 @@ u8 wildbattle_sample_level(wild_pokemon_entry *entry);
  * Samples an index in the rod table to be encountered.
  * @param rod_type which rod is used (0 := rod, 1 := good rod, 2 := super rod)
  * @return the index in the table
- **/
-int wildbattle_sample_from_rod_pdf (u8 rod_type);
+ */
+int wildbattle_sample_from_rod_pdf(u8 rod_type);
 
 /**
  * Initializes the wild battle encounter with the secondary starter (used for the trainer school)
  * @return if the pokemon will be encountered
  */
 bool trainerschool_wildbattle_initialize_secondary_starter();
-
 
 #define WILD_POKEMON_NUM_ENTRIES_GRASS 12
 #define WILD_POKEMON_NUM_ENTRIES_WATER 5

@@ -8,12 +8,12 @@
 #ifndef INCLUDE_C_MAP_EVENT_H_
 #define INCLUDE_C_MAP_EVENT_H_
 
-#include "types.h"
 #include "tile/coordinate.h"
 #include "tile/hidden_item.h"
+#include "types.h"
 
 typedef struct map_event_person {
-    u8 target_index; //scripts use this as target reference
+    u8 target_index;    //scripts use this as target reference
     u8 overworld_index; //the picture to be displayed
     u8 script_std;
     u8 argument;
@@ -99,7 +99,7 @@ u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank);
  * @param person_idx the person to delete
  * @param map_idx the index of the map the person is on
  * @param bank the bank of the map the person is on
- **/
+ */
 void person_delete_npc_if_present(u8 person_idx, u8 map_idx, u8 bank);
 
 /**
@@ -107,7 +107,7 @@ void person_delete_npc_if_present(u8 person_idx, u8 map_idx, u8 bank);
  * @param behaviour behaviour of the signpost
  * @param direction in which direction the signspost was encountered
  * @return the script type or 255 if None
- **/
+ */
 u8 signpost_get_script_type(u8 behaviour, u8 direction);
 
 /**
@@ -115,14 +115,14 @@ u8 signpost_get_script_type(u8 behaviour, u8 direction);
  * @param person_idx the idx of the person
  * @param x the x coordinate
  * @param y the y coordinate
- **/
+ */
 void person_set_position(u8 person_idx, s16 x, s16 y);
 
 /**
  * Sets the position of a person.
  * @param person_idx the idx of the person
  * @param behaviour the behaviour to set
- **/
+ */
 void person_set_behaviour(u8 person_idx, u8 behaviour);
 
 #endif /* INCLUDE_C_MAP_EVENT_H_ */

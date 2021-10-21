@@ -1,5 +1,5 @@
-#include "types.h"
 #include "pokemon/count.h"
+#include "types.h"
 
 u8 pokemon_item_animations[POKEMON_CNT][5] = {
     // POKEMON_POKEMON_0

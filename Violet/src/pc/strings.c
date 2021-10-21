@@ -1,6 +1,6 @@
-#include "types.h"
 #include "language.h"
 #include "pc.h"
+#include "types.h"
 
 static u8 str_cancel[] = LANGDEP(PSTRING("Zurück"), PSTRING("Cancel"));
 static u8 str_store[] = LANGDEP(PSTRING("Ablegen"), PSTRING("Store"));
@@ -119,7 +119,6 @@ static u8 str_select_this_one[] = LANGDEP(PSTRING("BOX_SELECTED_PKMN  auswählen
 static u8 str_select_egg[] = LANGDEP(PSTRING("Wähle ein Ei!"), PSTRING("Choose an egg!"));
 static u8 str_cant_trade_eggs[] = LANGDEP(PSTRING("Das ist ein Ei!"), PSTRING("That is an egg!"));
 static u8 str_cant_trade_hm_user[] = LANGDEP(PSTRING("Kennt eine Vm!"), PSTRING("Knows an Hm move!"));
-
 
 pc_context_text_t pc_context_texts[] = {
     [PC_CONTEXT_TEXT_EXIT_BOX] = {.text = str_exit_box, .format = PC_CONTEXT_TEXT_FORMAT_NORMAL},

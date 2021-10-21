@@ -1,11 +1,11 @@
-#include "types.h"
-#include "overworld/script.h"
 #include "map/levelscript.h"
-#include "dungeon/dungeon2.h"
-#include "save.h"
-#include "debug.h"
 #include "constants/levelscript_types.h"
+#include "debug.h"
+#include "dungeon/dungeon2.h"
 #include "map/cloud.h"
+#include "overworld/script.h"
+#include "save.h"
+#include "types.h"
 
 void map_init_levelscript_4() {
     u8 *a = fmem.additional_levelscript_4;
@@ -20,9 +20,9 @@ void map_init_levelscript_4() {
 }
 
 void map_init_levelscript_1() {
-	// Apply map changes due to dungeons on map
-	dungeon_map_set_tiles();
-	map_levelscript_init_no_var_check(LEVELSCRIPT_TYPE_ON_LOAD);
+    // Apply map changes due to dungeons on map
+    dungeon_map_set_tiles();
+    map_levelscript_init_no_var_check(LEVELSCRIPT_TYPE_ON_LOAD);
 }
 
 extern u8 ow_script_automatic_flash_usage[];
@@ -43,5 +43,5 @@ bool map_init_levelscript_2_on_frame() {
 }
 
 void map_init_levelscript_on_transition() {
-	map_levelscript_init_no_var_check(LEVELSCRIPT_TYPE_ON_TRANSITION);
+    map_levelscript_init_no_var_check(LEVELSCRIPT_TYPE_ON_TRANSITION);
 }

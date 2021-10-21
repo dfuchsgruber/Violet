@@ -1,10 +1,10 @@
-#include "types.h"
-#include "pokemon/virtual.h"
 #include "attack.h"
+#include "debug.h"
 #include "pokemon/basestat.h"
 #include "pokemon/moves.h"
-#include "debug.h"
+#include "pokemon/virtual.h"
 #include "save.h"
+#include "types.h"
 
 static u16 pokemon_attempt_learning_move_by_evolution(pokemon_move *moveset) {
     u8 skip = fmem.pokemon_move_learning_evolution_move_idx;
@@ -51,8 +51,8 @@ u16 pokemon_attempt_learning_move_consider_evolution_moves(pokemon *p, u8 is_fir
     }
     // Check if we can learn the current move by level-up
     if (moveset[pokemon_move_learning_current_move_idx].level == level) {
-            pokemon_move_learning_learned_move = moveset[pokemon_move_learning_current_move_idx++].move_id;
-            return pokemon_append_attack(p, pokemon_move_learning_learned_move);
+        pokemon_move_learning_learned_move = moveset[pokemon_move_learning_current_move_idx++].move_id;
+        return pokemon_append_attack(p, pokemon_move_learning_learned_move);
     }
     return 0; // Pokemon can learn no more moves
 }

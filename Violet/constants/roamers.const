@@ -1,9 +1,9 @@
 {
 	"type": "enum",
 	"values": [
-        "ROAMER_ARKTOS",
-        "ROAMER_ZAPDOS",
-        "ROAMER_LAVADOS"
+		"ROAMER_ARKTOS",
+		"ROAMER_ZAPDOS",
+		"ROAMER_LAVADOS"
 	],
 	"base": 0
 }

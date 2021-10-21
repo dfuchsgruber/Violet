@@ -70,4 +70,3 @@
     str_field_move_return_dig:
         .autostring 34 2 "Flee from here and return to BUFFER_1?"
 .endif
-

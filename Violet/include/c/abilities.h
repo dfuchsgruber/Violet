@@ -1,9 +1,9 @@
 #ifndef H_ABILITIES
 #define H_ABILITIES
 
-#include "types.h"
-#include "constants/ability_contexts.h"
 #include "constants/abilities.h"
+#include "constants/ability_contexts.h"
+#include "types.h"
 
 #define ABILITY_CNT 0x71
 
@@ -31,30 +31,29 @@ u8 ability_get(u16 species, u8 fields);
  * @param active_attack the currently used attack
  * @return whether an ability was triggered in the current state
  */
-u8 ability_execute(u8 state, u8 attacker, u8 attacker_ability, u8
-    defender_ability, u16 active_attack);
+u8 ability_execute(u8 state, u8 attacker, u8 attacker_ability, u8 defender_ability, u16 active_attack);
 
 /**
  * Executes battle abilities before an attack.
  * @return if any ability, i.e. battlescript, was triggered
- **/
+ */
 bool battle_abilities_before_attack();
 
 /**
  * Executes battle abilities after an attack triggered by the attacker, new abilities.
  * @param if any ability, i.e. battlescript, was triggered.
- **/
+ */
 bool battle_abilities_attack_done_attacker_new();
 
 /**
  * Executes battle abilities after an attack triggered by the defender, new abilities.
  * @param if any ability, i.e. battlescript, was triggered.
- **/
+ */
 bool battle_abilities_attack_done_defender_new();
 
-#define ABILITY_ON_TARGET_SIDE(battler_idx, ability)(ability_execute(ABILITY_CONTEXT_CHECK_TARGET_SIDE, battler_idx, ability, 0, 0))
-#define ABILITY_PRESENT(ability)(ability_execute(ABILITY_CONTEXT_CHECK_PRESENT, 0, ability, 0, 0))
-#define ABILITY_PRESENT2(ability)(ability_execute(ABILITY_CONTEXT_FIELD_SPORT, 0, ability, 0, 0))
+#define ABILITY_ON_TARGET_SIDE(battler_idx, ability) (ability_execute(ABILITY_CONTEXT_CHECK_TARGET_SIDE, battler_idx, ability, 0, 0))
+#define ABILITY_PRESENT(ability) (ability_execute(ABILITY_CONTEXT_CHECK_PRESENT, 0, ability, 0, 0))
+#define ABILITY_PRESENT2(ability) (ability_execute(ABILITY_CONTEXT_FIELD_SPORT, 0, ability, 0, 0))
 
 extern u8 ability_names[ABILITY_CNT][0xD];
 u8 *ability_descriptions[ABILITY_CNT];

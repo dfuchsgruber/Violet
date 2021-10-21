@@ -1,7 +1,7 @@
-#include "types.h"
 #include "oam.h"
 #include "pokemon/count.h"
 #include "pokemon/sprites.h"
+#include "types.h"
 
 palette pokemon_pals[POKEMON_CNT] = {
     {gfx_pkmn_species_000_pokemon_pokemon_0_frontspritePal, 0, 0},
@@ -389,7 +389,7 @@ palette pokemon_pals[POKEMON_CNT] = {
     {gfx_pkmn_species_382_pokemon_stollunior_frontspritePal, 382, 0},
     {gfx_pkmn_species_383_pokemon_stollrak_frontspritePal, 383, 0},
     {gfx_pkmn_species_384_pokemon_stolloss_frontspritePal, 384, 0},
-    {(void*)0x8E27208, 385, 0}, // Keep Formeo's original pal
+    {(void *)0x8E27208, 385, 0}, // Keep Formeo's original pal
     {gfx_pkmn_species_386_pokemon_wonneira_frontspritePal, 386, 0},
     {gfx_pkmn_species_387_pokemon_mobai_frontspritePal, 387, 0},
     {gfx_pkmn_species_388_pokemon_liliep_frontspritePal, 388, 0},
@@ -445,10 +445,9 @@ palette pokemon_pals[POKEMON_CNT] = {
     {gfx_pkmn_species_438_pokemon_icognito_exclamation_frontspritePal, 438, 0},
     {gfx_pkmn_species_439_pokemon_icognito_question_frontspritePal, 439, 0},
     {gfx_pkmn_species_440_pokemon_groudon_e_frontspritePal, 440, 0},
-	{gfx_pkmn_species_441_pokemon_kecleon_p_frontspritePal, 441, 0},
+    {gfx_pkmn_species_441_pokemon_kecleon_p_frontspritePal, 441, 0},
     {gfx_pkmn_crystal_onix_frontspritePal, 442, 0},
 };
-
 
 palette pokemon_shiny_pals[POKEMON_CNT] = {
     {gfx_pkmn_species_000_pokemon_pokemon_0_backspritePal, 0, 0},
@@ -836,7 +835,7 @@ palette pokemon_shiny_pals[POKEMON_CNT] = {
     {gfx_pkmn_species_382_pokemon_stollunior_backspritePal, 382, 0},
     {gfx_pkmn_species_383_pokemon_stollrak_backspritePal, 383, 0},
     {gfx_pkmn_species_384_pokemon_stolloss_backspritePal, 384, 0},
-    {(void*) 0x08E27C44, 385, 0}, // Keep Formeo's original pal
+    {(void *)0x08E27C44, 385, 0}, // Keep Formeo's original pal
     {gfx_pkmn_species_386_pokemon_wonneira_backspritePal, 386, 0},
     {gfx_pkmn_species_387_pokemon_mobai_backspritePal, 387, 0},
     {gfx_pkmn_species_388_pokemon_liliep_backspritePal, 388, 0},

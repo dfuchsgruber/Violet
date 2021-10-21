@@ -1,14 +1,14 @@
-#include "types.h"
-#include "rtc.h"
 #include "color.h"
-#include "save.h"
-#include "dns.h"
-#include "constants/vars.h"
-#include "constants/shader_states.h"
 #include "constants/map_types.h"
-#include "superstate.h"
-#include "vars.h"
+#include "constants/shader_states.h"
+#include "constants/vars.h"
+#include "dns.h"
 #include "overworld/map_control.h"
+#include "rtc.h"
+#include "save.h"
+#include "superstate.h"
+#include "types.h"
+#include "vars.h"
 
 void callback_switch_timezone() {
     update_timezone();

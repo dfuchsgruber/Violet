@@ -1,7 +1,7 @@
-#include "types.h"
-#include "language.h"
 #include "constants/pokemon_types.h"
+#include "language.h"
 #include "text.h"
+#include "types.h"
 #include "vars.h"
 
 static u8 str_normal[] = LANGDEP(PSTRING("Normal"), PSTRING("Normal"));

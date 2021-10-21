@@ -1,16 +1,15 @@
-#include "types.h"
-#include "overworld/script.h"
-#include "text.h"
-#include "save.h"
 #include "debug.h"
+#include "overworld/script.h"
+#include "save.h"
+#include "text.h"
+#include "types.h"
 
 static tbox_font_colormap braille_font_color_map = {
-    .background = 1, .body = 2, .edge = 3, .shadow = 3
-};
+    .background = 1, .body = 2, .edge = 3, .shadow = 3};
 
 bool overworld_script_command_braille(overworld_script_state_t *state) {
 
-    u8 *str = (u8*)overworld_script_read_word(state);
+    u8 *str = (u8 *)overworld_script_read_word(state);
     if (!str) {
         str = state->pointer_banks[0];
     }
@@ -41,7 +40,7 @@ bool overworld_script_command_braille(overworld_script_state_t *state) {
 }
 
 bool overworld_script_command_close_braille(overworld_script_state_t *state) {
-    (void) state;
+    (void)state;
     tbox_flush_all(fmem.tbox_idx_braille, 0);
     tbox_flush_map(fmem.tbox_idx_braille);
     tbox_sync(fmem.tbox_idx_braille, TBOX_SYNC_MAP_AND_SET);

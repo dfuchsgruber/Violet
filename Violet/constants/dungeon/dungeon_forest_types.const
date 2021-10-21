@@ -1,7 +1,7 @@
 {
-    "type" : "enum",
-    "base" : 0,
-    "values" : [
+    "type": "enum",
+    "base": 0,
+    "values": [
         "DUNGEON_FOREST_TYPE_NORMAL",
         "DUNGEON_FOREST_TYPE_APPLE_FOREST",
         "DUNGEON_FOREST_TYPE_BERRY_FOREST",

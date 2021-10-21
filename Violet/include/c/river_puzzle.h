@@ -8,10 +8,10 @@
 #ifndef INCLUDE_C_RIVER_PUZZLE_H_
 #define INCLUDE_C_RIVER_PUZZLE_H_
 
-#include "types.h"
 #include "map/footer.h"
-#include "text.h"
 #include "save.h"
+#include "text.h"
+#include "types.h"
 
 #define RIVER_PUZZLE_WEST 0
 #define RIVER_PUZZLE_EAST 1
@@ -22,18 +22,18 @@
 #define RIVER_PUZZLE_FROM_BOAT 1
 
 typedef struct {
-  u8 boat_oam;
-  u8 pokemon_oams[6];
-  u8 cursor_oam;
-  u8 boat[2]; // Which indices are in the boat
-  u8 pokemon[6]; // Which indices
-  u8 cursor_side; // The side where the cursor is
-  u8 cursor; // Where the cursor is at
-  u8 callback_idx_list;
-  u8 delay;
+    u8 boat_oam;
+    u8 pokemon_oams[6];
+    u8 cursor_oam;
+    u8 boat[2];     // Which indices are in the boat
+    u8 pokemon[6];  // Which indices
+    u8 cursor_side; // The side where the cursor is
+    u8 cursor;      // Where the cursor is at
+    u8 callback_idx_list;
+    u8 delay;
 } river_puzzle_state_t;
 
-#define RIVER_PUZZLE_STATE ((river_puzzle_state_t*) fmem.gp_state)
+#define RIVER_PUZZLE_STATE ((river_puzzle_state_t *)fmem.gp_state)
 
 /**
  * Callback to handle the state of the river puzzle.
@@ -90,6 +90,5 @@ extern map_footer_t map_footer_22_river_puzzle;
 #define RIVER_PUZZLE_TBOX_MESSAGE 2
 #define RIVER_PUZZLE_TBOX_LIST 3
 tboxdata river_puzzle_tboxes[RIVER_PUZZLE_TBOX_CNT + 1];
-
 
 #endif /* INCLUDE_C_RIVER_PUZZLE_H_ */

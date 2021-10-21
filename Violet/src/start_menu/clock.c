@@ -1,27 +1,22 @@
-#include "types.h"
-#include "rtc.h"
-#include "oam.h"
-#include "save.h"
 #include "callbacks.h"
-#include "overworld/start_menu.h"
 #include "color.h"
-#include "fading.h"
 #include "debug.h"
-#include "text.h"
+#include "fading.h"
+#include "language.h"
+#include "oam.h"
 #include "overworld/map_control.h"
+#include "overworld/start_menu.h"
+#include "rtc.h"
 #include "save.h"
 #include "superstate.h"
-#include "language.h"
-
-
+#include "text.h"
+#include "types.h"
 
 static tboxdata start_menu_clock_tboxdata = {
-    .bg_id = 0, .x = 1, .y = 1, .w = 6, .h = 4, .pal = 14, .start_tile = 8 
-};
+    .bg_id = 0, .x = 1, .y = 1, .w = 6, .h = 4, .pal = 14, .start_tile = 8};
 
 static u8 start_menu_clock_text[] = LANGDEP(
-    PSTRING("Uhrzeit"), PSTRING("Time")
-);
+    PSTRING("Uhrzeit"), PSTRING("Time"));
 
 static u8 start_menu_clock_colon[] = PSTRING(":");
 
@@ -40,7 +35,8 @@ static void start_menu_clock_update() {
 }
 
 void start_menu_print_clock() {
-    if (fading_is_active()) return;
+    if (fading_is_active())
+        return;
     start_menu_state.safari_tbox_idx = tbox_new(&start_menu_clock_tboxdata);
     tbox_tilemap_draw(start_menu_state.safari_tbox_idx);
     tbox_print_std_frame(start_menu_state.safari_tbox_idx, false);
@@ -82,8 +78,8 @@ bool start_menu_initilize() {
             break;
         case 5: {
             u8 box_idx = start_menu_get_tbox_idx();
-            start_menu_state.cursor = sub_0810f888(box_idx, 2, 0, 0, 15, 
-                start_menu_state.number_items, start_menu_state.cursor);
+            start_menu_state.cursor = sub_0810f888(box_idx, 2, 0, 0, 15,
+                                                   start_menu_state.number_items, start_menu_state.cursor);
             if (!sub_080bf8d8() && !is_bank_x0_and_map_x40()) {
                 start_menu_print_item_description(start_menu_item_descriptions[start_menu_state.items[start_menu_state.cursor]]);
             }
@@ -100,7 +96,8 @@ bool start_menu_initilize() {
 void start_menu_clear_additional_box() {
     if (!safari_is_active() && !mapheader_virtual.flash_type) {
         u8 idx = big_callback_get_id(start_menu_clock_callback);
-        if (idx != 0xFF) big_callback_delete(idx);
+        if (idx != 0xFF)
+            big_callback_delete(idx);
         tbox_flush_all(start_menu_state.safari_tbox_idx, 0);
         tbox_copy_to_vram(start_menu_state.safari_tbox_idx, 2);
         tbox_free_2(start_menu_state.safari_tbox_idx);
@@ -114,7 +111,8 @@ void start_menu_clear_additional_box() {
 bool start_menu_save_initialize_and_clear_additional_box() {
     if (!safari_is_active() && !mapheader_virtual.flash_type) {
         u8 idx = big_callback_get_id(start_menu_clock_callback);
-        if (idx != 0xFF) big_callback_delete(idx);
+        if (idx != 0xFF)
+            big_callback_delete(idx);
     }
     return start_menu_save_initialize();
 }

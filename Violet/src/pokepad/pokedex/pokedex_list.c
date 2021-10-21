@@ -1,24 +1,24 @@
-#include "types.h"
-#include "stdbool.h"
-#include "pokepad/pokepad2.h"
+#include "agbmemory.h"
+#include "bg.h"
+#include "callbacks.h"
+#include "color.h"
+#include "debug.h"
+#include "fading.h"
+#include "language.h"
+#include "mega.h"
+#include "music.h"
+#include "pokemon/basestat.h"
+#include "pokemon/names.h"
 #include "pokepad/pokedex/gui.h"
 #include "pokepad/pokedex/operator.h"
 #include "pokepad/pokedex/state.h"
-#include "pokemon/names.h"
-#include "pokemon/basestat.h"
-#include "callbacks.h"
+#include "pokepad/pokepad2.h"
 #include "save.h"
-#include "bg.h"
-#include "text.h"
-#include "mega.h"
-#include "color.h"
+#include "stdbool.h"
 #include "superstate.h"
+#include "text.h"
 #include "transparency.h"
-#include "language.h"
-#include "fading.h"
-#include "music.h"
-#include "debug.h"
-#include "agbmemory.h"
+#include "types.h"
 
 bool pokedex_callback_list_mode_proceed() {
     switch (fmem.dex_mem->list_mode) {
@@ -105,23 +105,21 @@ void pokedex_callback_list() {
                 index_new = pokedex_get_last_seen();
             if (index_new != index_old) {
                 play_sound(5);
-                fmem.dex_mem->current_list_index = (u16) index_new;
+                fmem.dex_mem->current_list_index = (u16)index_new;
                 fmem.dex_mem->list_countdown = fmem.dex_mem->list_fast_mode ? 0 : 8;
                 pokedex_update_list();
             }
         }
     }
-
 }
 
 void pokedex_build_list() {
-    pokedex_list_element *list = (pokedex_list_element*) malloc_and_clear(POKEDEX_CNT * sizeof (pokedex_list_element));
+    pokedex_list_element *list = (pokedex_list_element *)malloc_and_clear(POKEDEX_CNT * sizeof(pokedex_list_element));
     fmem.dex_mem->list = list;
-    
 
     int list_size = 0;
     for (u16 i = 0; i < POKEMON_CNT; i++) {
-        // Get the pokedex number 
+        // Get the pokedex number
         u16 dex_idx = pokedex_get_id(i);
         if (dex_idx != 0) {
             bool is_alternative_form = mega_evolution_get_by_mega_species((u16)i) != 0;
@@ -163,9 +161,8 @@ void pokedex_update_list() {
     u8 *buf = strbuf;
     *buf = 0xFF;
 
-
-    u8 str_none [] = {0, 0xFF};
-    u8 str_pokepad_pokedex_cursor [] = {0xEF, 0xFF};
+    u8 str_none[] = {0, 0xFF};
+    u8 str_pokepad_pokedex_cursor[] = {0xEF, 0xFF};
 
     tbox_flush_set(POKEDEX_TBOX_LIST_NAME, 0);
     tbox_flush_set(POKEDEX_TBOX_LIST_TYPES, 0);
@@ -173,7 +170,7 @@ void pokedex_update_list() {
     tbox_flush_set(POKEDEX_TBOX_LIST_NR, 0);
     int i = 0;
     while (first <= last) {
-        u16 y_pixel = (u16) (14 * i);
+        u16 y_pixel = (u16)(14 * i);
 
         //We create the number string
         pokedex_tbox_draw_num(POKEDEX_TBOX_LIST_NR, 0, list[first].species, 0xC, y_pixel);
@@ -191,17 +188,15 @@ void pokedex_update_list() {
         u8 str_newline[] = PSTRING("\n");
         buf = strcat(buf, str_newline);
 
-
         if (list[first].caught) {
             //now we draw the types
-            u8 type1 = (u8) (basestats[list[first].species].type1 + 1);
-            u8 type2 = (u8) (basestats[list[first].species].type2 + 1);
+            u8 type1 = (u8)(basestats[list[first].species].type1 + 1);
+            u8 type2 = (u8)(basestats[list[first].species].type2 + 1);
             tbox_draw_type_icon_by_type_p1(POKEDEX_TBOX_LIST_TYPES, type1, 0, y_pixel);
             if (type1 != type2)
                 tbox_draw_type_icon_by_type_p1(POKEDEX_TBOX_LIST_TYPES, type2, 0x20, y_pixel);
             tbox_draw_type_icon_by_type_p1(POKEDEX_TBOX_LIST_CAPTURE, 0, 0, y_pixel);
         } else {
-
         }
 
         //Now we draw the typechart (lmostup x = 22, y = 5)
@@ -212,7 +207,6 @@ void pokedex_update_list() {
          * */
         first++;
         i++;
-
     }
 
     tbox_tilemap_draw(POKEDEX_TBOX_LIST_NAME);

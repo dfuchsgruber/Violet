@@ -24,6 +24,3 @@ ts_cry_hook:
 c_cry:
     ldr r2, =0x8071D54 | 1
     bx r2
-
-
-

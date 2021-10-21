@@ -50,4 +50,3 @@ trainer_build_t trainer_builds [NUM_TRAINER_BUILDS] = {
 			.nature = NATURE_MAESSIG, .use_gender = true, .gender = GENDER_FEMALE},
 	[TRAINER_BUILD_NONE] = {0}
 };
-

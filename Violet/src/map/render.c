@@ -1,17 +1,17 @@
-#include "types.h"
-#include "map/footer.h"
 #include "bg.h"
-#include "tile/block.h"
+#include "map/footer.h"
 #include "overworld/map_control.h"
+#include "tile/block.h"
+#include "types.h"
 
 void map_draw_block_to_bg(u8 layer_type, u16 *blocks, u16 offset) {
     // The layer priority (bottom to top) is 3, 1, 2
-    if (layer_type == 0xFF) { // Doors, TODO        
+    if (layer_type == 0xFF) { // Doors, TODO
         overworld_bg3_tilemap[offset] = blocks[0];
         overworld_bg3_tilemap[offset + 1] = blocks[1];
         overworld_bg3_tilemap[offset + 32] = blocks[2];
         overworld_bg3_tilemap[offset + 32 + 1] = blocks[3];
-        
+
         overworld_bg2_tilemap[offset] = 0;
         overworld_bg2_tilemap[offset + 1] = 0;
         overworld_bg2_tilemap[offset + 32] = 0;
@@ -27,7 +27,7 @@ void map_draw_block_to_bg(u8 layer_type, u16 *blocks, u16 offset) {
         overworld_bg3_tilemap[offset + 1] = blocks[1];
         overworld_bg3_tilemap[offset + 32] = blocks[2];
         overworld_bg3_tilemap[offset + 32 + 1] = blocks[3];
-        
+
         overworld_bg2_tilemap[offset] = blocks[4];
         overworld_bg2_tilemap[offset + 1] = blocks[5];
         overworld_bg2_tilemap[offset + 32] = blocks[6];
@@ -48,10 +48,10 @@ void map_draw_block_at_position(map_footer_t *f, u16 offset, s16 x, s16 y) {
     if (block_idx >= 1024)
         block_idx = 0;
     u16 *blocks;
-    if (block_idx < 0x280) 
-        blocks = (u16*)f->tileset1->blocks;
+    if (block_idx < 0x280)
+        blocks = (u16 *)f->tileset1->blocks;
     else {
-        blocks = (u16*)f->tileset2->blocks;
+        blocks = (u16 *)f->tileset2->blocks;
         block_idx = (u16)(block_idx - 0x280);
     }
     map_draw_block_to_bg(0, blocks + 12 * block_idx, offset);

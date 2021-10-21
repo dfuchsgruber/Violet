@@ -1,14 +1,14 @@
-#include "types.h"
-#include "vars.h"
-#include "constants/difficulties.h"
 #include "battle/attack.h"
+#include "battle/battle_string.h"
 #include "battle/battler.h"
 #include "battle/controller.h"
-#include "battle/battle_string.h"
-#include "pokemon/virtual.h"
 #include "battle/state.h"
-#include "math.h"
+#include "constants/difficulties.h"
 #include "debug.h"
+#include "math.h"
+#include "pokemon/virtual.h"
+#include "types.h"
+#include "vars.h"
 
 void bsc_cmd_x23_adjust_exp_and_print_string(u16 boosted_string_idx) {
     u8 opponent_level = battlers[fainted_battler].level;

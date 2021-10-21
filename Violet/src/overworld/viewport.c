@@ -1,16 +1,15 @@
-#include "types.h"
-#include "overworld/npc.h"
-#include "map/event.h"
-#include "save.h"
 #include "debug.h"
+#include "map/event.h"
 #include "overworld/map_control.h"
+#include "overworld/npc.h"
+#include "save.h"
+#include "types.h"
 #include "vars.h"
 
 void overworld_viewport_set_position(s16 x, s16 y) {
     overworld_viewport_move_and_update_all(
         (s16)(x - save1->x_cam_orig),
-        (s16)(y - save1->y_cam_orig)
-    );
+        (s16)(y - save1->y_cam_orig));
 }
 
 void special_overworld_viewport_set_position() {

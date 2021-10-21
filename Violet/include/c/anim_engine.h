@@ -1,16 +1,16 @@
 #ifndef H_ANIM_ENGINE
 #define H_ANIM_ENGINE
 
-#include <stdbool.h>
 #include "color.h"
 #include "text.h"
+#include <stdbool.h>
 
-typedef struct anim_engine_task{
+typedef struct anim_engine_task {
     int priority;
     int id;
     struct anim_engine_task *prev;
     struct anim_engine_task *next;
-    void (*callback)(struct anim_engine_task*);
+    void (*callback)(struct anim_engine_task *);
     void *vars;
 } anim_engine_task;
 
@@ -34,54 +34,54 @@ extern u8 *ae_scripts[];
 void init_anim_engine_by_table();
 void anim_engine_initiatlize(u8 *script);
 void anim_engine_callback(u8 callback_id);
-void anim_engine_execute_frame(ae_memory* mem);
-u8 anim_engine_read_byte(ae_memory* mem);
-u16 anim_engine_get_hword(ae_memory*mem);
-u32 anim_engine_read_word(ae_memory* mem);
-u16 anim_engine_read_hword(ae_memory* mem);
-u16 anim_engine_read_param(ae_memory* mem);
+void anim_engine_execute_frame(ae_memory *mem);
+u8 anim_engine_read_byte(ae_memory *mem);
+u16 anim_engine_get_hword(ae_memory *mem);
+u32 anim_engine_read_word(ae_memory *mem);
+u16 anim_engine_read_hword(ae_memory *mem);
+u16 anim_engine_read_param(ae_memory *mem);
 //void anim_engine_tbox_renderer(u8 cbid);
 void _obj_move_linear_trace(anim_engine_task *self);
 void anim_engine_fader(anim_engine_task *self);
 void callback_maintain();
 /**
-/ Command Functions
- **/
-void cmdx00_end(ae_memory* mem);
-void cmdx01_call(ae_memory* mem);
-void cmdx02_jump(ae_memory* mem);
-void cmdx03_oam_new(ae_memory* mem);
-void cmdx04_oam_delete(ae_memory* mem);
-void cmdx05_oam_vram_load(ae_memory* mem);
-void cmdx06_oam_vram_free(ae_memory* mem);
-void cmdx07_oam_despawn(ae_memory* mem);
-void cmdx08_spawn_callback(ae_memory* mem);
-void cmdx09_bg_reset(ae_memory* mem);
-void cmdx0A_bg_setup(ae_memory* mem);
-void cmdx0B_bg_sync_and_show(ae_memory* mem);
-void cmdx0C_bg_hide(ae_memory* mem);
+ * Command Functions
+ */
+void cmdx00_end(ae_memory *mem);
+void cmdx01_call(ae_memory *mem);
+void cmdx02_jump(ae_memory *mem);
+void cmdx03_oam_new(ae_memory *mem);
+void cmdx04_oam_delete(ae_memory *mem);
+void cmdx05_oam_vram_load(ae_memory *mem);
+void cmdx06_oam_vram_free(ae_memory *mem);
+void cmdx07_oam_despawn(ae_memory *mem);
+void cmdx08_spawn_callback(ae_memory *mem);
+void cmdx09_bg_reset(ae_memory *mem);
+void cmdx0A_bg_setup(ae_memory *mem);
+void cmdx0B_bg_sync_and_show(ae_memory *mem);
+void cmdx0C_bg_hide(ae_memory *mem);
 void cmdx0D_bg_display_sync();
-void cmdx0E_bg_override(ae_memory* mem);
-void cmdx0F_load_obj_pal(ae_memory* mem);
-void cmdx10_free_obj_pal(ae_memory* mem);
-void cmdx11_get_io(ae_memory* mem);
-void cmdx12_set_io_to_var(ae_memory* mem);
-void cmdx13_set_io_to_value(ae_memory*mem);
-void cmdx14_prepare_tbox(ae_memory*mem);
-void cmdx15_display_text_inst(ae_memory*mem);
-void cmdx16_clear_textbox(ae_memory*mem);
-void cmdx17_display_rendered_tbox(ae_memory*mem);
-void cmdx18_rendered_tbox_event(ae_memory* mem);
-void cmdx19_objmove(ae_memory* mem);
-void anim_engine_cmdx1A(ae_memory* mem);
-void cmdx1B_gfx_anim_set(ae_memory*mem);
-void cmdx1C_rs_anim_set(ae_memory*mem);
-void cmdx1D_loadpal(ae_memory*mem);
-void cmdx1E_fade(ae_memory*mem);
-void cmdx1F_invertcolors(ae_memory* mem);
-void cmdx20_sound(ae_memory* mem);
-void cmdx21_song(ae_memory* mem);
-void cmdx22_cry(ae_memory* mem);
+void cmdx0E_bg_override(ae_memory *mem);
+void cmdx0F_load_obj_pal(ae_memory *mem);
+void cmdx10_free_obj_pal(ae_memory *mem);
+void cmdx11_get_io(ae_memory *mem);
+void cmdx12_set_io_to_var(ae_memory *mem);
+void cmdx13_set_io_to_value(ae_memory *mem);
+void cmdx14_prepare_tbox(ae_memory *mem);
+void cmdx15_display_text_inst(ae_memory *mem);
+void cmdx16_clear_textbox(ae_memory *mem);
+void cmdx17_display_rendered_tbox(ae_memory *mem);
+void cmdx18_rendered_tbox_event(ae_memory *mem);
+void cmdx19_objmove(ae_memory *mem);
+void anim_engine_cmdx1A(ae_memory *mem);
+void cmdx1B_gfx_anim_set(ae_memory *mem);
+void cmdx1C_rs_anim_set(ae_memory *mem);
+void cmdx1D_loadpal(ae_memory *mem);
+void cmdx1E_fade(ae_memory *mem);
+void cmdx1F_invertcolors(ae_memory *mem);
+void cmdx20_sound(ae_memory *mem);
+void cmdx21_song(ae_memory *mem);
+void cmdx22_cry(ae_memory *mem);
 void cmdx23_maintain();
 void cmdx24_script_notify();
 void cmdx25_oam_reset();
@@ -148,9 +148,8 @@ void anim_engine_task_delete_all(anim_engine_task *root);
  * structure else
  */
 anim_engine_task *anim_engine_task_new(int priority,
-        void (*callback)(anim_engine_task*),
-        unsigned int size_var_space, anim_engine_task *root);
-
+                                       void (*callback)(anim_engine_task *),
+                                       unsigned int size_var_space, anim_engine_task *root);
 
 /**
  * Sets up the anim engine root task
@@ -172,7 +171,6 @@ void anim_engine_task_tear_down(anim_engine_task *root);
  * @return next free task id -1 if no task id availible
  */
 int anim_engine_task_next_id(anim_engine_task *root);
-
 
 /**
  * Returns an anim engine task by its id

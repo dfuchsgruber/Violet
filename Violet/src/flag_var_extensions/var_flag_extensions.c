@@ -1,7 +1,7 @@
-#include "types.h"
-#include "save.h"
-#include "flags.h"
 #include "debug.h"
+#include "flags.h"
+#include "save.h"
+#include "types.h"
 
 bool gp_flag_get(u16 flag, u8 *flags) {
     return (flags[flag / 8] & (1 << (flag & 7))) != 0;
@@ -16,7 +16,7 @@ void gp_flag_clear(u16 flag, u8 *flags) {
 }
 
 u8 *flag_access_ext(u16 flag) {
-    if(flag < 0xD00){
+    if (flag < 0xD00) {
         int index = (flag - 0x900) / 8;
         return &(cmem.flag_extension[index]);
     } else if (flag < FLAG_MUSHROOM_BASE + 512) { // 0xD00 - 0xF00 are mapped to mushrooms
@@ -45,21 +45,23 @@ u16 *var_access_ext(u16 var) {
 
 bool checkflag(u16 flag) {
 
-    if (flag >= 0x8000) return !checkflag((u16) (flag - 0x8000));
+    if (flag >= 0x8000)
+        return !checkflag((u16)(flag - 0x8000));
     u8 *off = flag_access(flag);
     if (off) {
-        if (*off & (1 << (flag & 7))) return true;
+        if (*off & (1 << (flag & 7)))
+            return true;
     }
     return false;
 }
 
 void setflag(u16 flag) {
     if (flag >= 0x8000) {
-        clearflag((u16) (flag - 0x8000));
+        clearflag((u16)(flag - 0x8000));
     } else {
         u8 *off = flag_access(flag);
         if (off) {
-            u8 mask = (u8) (1 << (flag & 7));
+            u8 mask = (u8)(1 << (flag & 7));
             *off |= mask;
         }
     }
@@ -68,15 +70,12 @@ void setflag(u16 flag) {
 void clearflag(u16 flag) {
 
     if (flag >= 0x8000) {
-        setflag((u16) (flag - 0x8000));
+        setflag((u16)(flag - 0x8000));
     } else {
         u8 *off = flag_access(flag);
         if (off) {
-            u8 mask = (u8) (~(1 << (flag & 7)));
+            u8 mask = (u8)(~(1 << (flag & 7)));
             *off &= mask;
         }
     }
 }
-
-
-

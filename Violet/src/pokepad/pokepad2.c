@@ -1,49 +1,52 @@
-#include "types.h"
 #include "pokepad/pokepad2.h"
+#include "agbmemory.h"
+#include "bg.h"
+#include "bios.h"
+#include "callbacks.h"
+#include "color.h"
+#include "constants/flags.h"
+#include "constants/vars.h"
+#include "debug.h"
+#include "dma.h"
+#include "fading.h"
+#include "flags.h"
+#include "io.h"
+#include "language.h"
+#include "list_menu.h"
+#include "math.h"
+#include "menu_indicators.h"
+#include "music.h"
+#include "oam.h"
+#include "overworld/map_control.h"
+#include "overworld/start_menu.h"
+#include "pokepad/incubator.h"
 #include "pokepad/pokedex/gui.h"
 #include "pokepad/pokeradar.h"
 #include "pokepad/wondertrade.h"
-#include "pokepad/incubator.h"
 #include "save.h"
-#include "bg.h"
-#include "color.h"
-#include "callbacks.h"
-#include "transparency.h"
-#include "oam.h"
 #include "superstate.h"
 #include "text.h"
-#include "fading.h"
-#include "constants/vars.h"
-#include "constants/flags.h"
-#include "language.h"
+#include "transparency.h"
+#include "types.h"
 #include "vars.h"
-#include "io.h"
-#include "agbmemory.h"
-#include "music.h"
-#include "overworld/start_menu.h"
-#include "overworld/map_control.h"
-#include "dma.h"
-#include "bios.h"
-#include "flags.h"
-#include "math.h"
-#include "debug.h"
-#include "list_menu.h"
-#include "menu_indicators.h"
 
 u8 str_pokepad_description[] = LANGDEP(
     PSTRING("Benutze verschiedene Apps, die auf dem\nPoképad installiert sind."),
-    PSTRING("Use different apps installed on the\nPoképad.")
-);
+    PSTRING("Use different apps installed on the\nPoképad."));
 
 static pokepad_wallpaper pokepad_wallpapers[POKEPAD_NUM_WALLPAPERS] = {
     {
-        .tileset = gfx_pokepad_wallpaper_startersTiles, .tilemap = gfx_pokepad_wallpaper_startersMap,
-        .palette = gfx_pokepad_wallpaper_startersPal, .flag = 0,
+        .tileset = gfx_pokepad_wallpaper_startersTiles,
+        .tilemap = gfx_pokepad_wallpaper_startersMap,
+        .palette = gfx_pokepad_wallpaper_startersPal,
+        .flag = 0,
         .name = LANGDEP(PSTRING("Starter"), PSTRING("Starters")),
     },
     {
-        .tileset = gfx_pokepad_wallpaper_elite_four_foundersTiles, .tilemap = gfx_pokepad_wallpaper_elite_four_foundersMap,
-        .palette = gfx_pokepad_wallpaper_elite_four_foundersPal, .flag = FLAG_POKEPAD_WALLPAPER_LEGENDS,
+        .tileset = gfx_pokepad_wallpaper_elite_four_foundersTiles,
+        .tilemap = gfx_pokepad_wallpaper_elite_four_foundersMap,
+        .palette = gfx_pokepad_wallpaper_elite_four_foundersPal,
+        .flag = FLAG_POKEPAD_WALLPAPER_LEGENDS,
         .name = LANGDEP(PSTRING("Gründer"), PSTRING("Founders")),
     },
 };
@@ -55,20 +58,16 @@ static u8 incubator_name[] = LANGDEP(PSTRING("Inkubator"), PSTRING("Incubator"))
 
 static u8 wondertrade_description[] = LANGDEP(
     PSTRING("Tausche Pokémon mit Trainern aus aller\nWelt."),
-    PSTRING("Trade Pokémon with trainers all over\nthe world.")
-);
+    PSTRING("Trade Pokémon with trainers all over\nthe world."));
 static u8 pokedex_description[] = LANGDEP(
     PSTRING("Betrachte Aufzeichnungen zu gefangenen\nund gesehenen Pokémon."),
-    PSTRING("View records of caught and seen Pokémon.")
-);
+    PSTRING("View records of caught and seen Pokémon."));
 static u8 pokeradar_description[] = LANGDEP(
     PSTRING("Spüre seltene Pokémon in der Nähe auf."),
-    PSTRING("Identify rare Pokémon nearby.")
-);
+    PSTRING("Identify rare Pokémon nearby."));
 static u8 incubator_description[] = LANGDEP(
     PSTRING("Brüte Eier aus und überprüfe deren\nStatus."),
-    PSTRING("Hatch eggs and check on their status.")
-);
+    PSTRING("Hatch eggs and check on their status."));
 
 static pokepad2_item pokepad2_items[] = {
     [POKEPAD_ITEM_WONDERTRADE] = {
@@ -77,53 +76,60 @@ static pokepad2_item pokepad2_items[] = {
         .flag = WONDERTRADE,
         .initialize = wondertrade_init,
         .icon_graphic = {
-            .sprite = gfx_pokepad_icon_wondertradeTiles, .size = GRAPHIC_SIZE_4BPP(32, 32), 
+            .sprite = gfx_pokepad_icon_wondertradeTiles,
+            .size = GRAPHIC_SIZE_4BPP(32, 32),
             .tag = POKEPAD_ITEM_ICON_BASE_TAG + POKEPAD_ITEM_WONDERTRADE,
         },
         .icon_palette = {
-            .pal = gfx_pokepad_icon_wondertradePal, .tag = POKEPAD_ITEM_ICON_BASE_TAG + POKEPAD_ITEM_WONDERTRADE,
+            .pal = gfx_pokepad_icon_wondertradePal,
+            .tag = POKEPAD_ITEM_ICON_BASE_TAG + POKEPAD_ITEM_WONDERTRADE,
         },
-    }, 
+    },
     [POKEPAD_ITEM_POKEDEX] = {
         .name = pokedex_name,
         .description = pokedex_description,
         .flag = POKEDEX,
         .initialize = pokedex_init,
         .icon_graphic = {
-            .sprite = gfx_pokepad_icon_pokedexTiles, .size = GRAPHIC_SIZE_4BPP(32, 32), 
+            .sprite = gfx_pokepad_icon_pokedexTiles,
+            .size = GRAPHIC_SIZE_4BPP(32, 32),
             .tag = POKEPAD_ITEM_ICON_BASE_TAG + POKEPAD_ITEM_POKEDEX,
         },
         .icon_palette = {
-            .pal = gfx_pokepad_icon_pokedexPal, .tag = POKEPAD_ITEM_ICON_BASE_TAG + POKEPAD_ITEM_POKEDEX,
+            .pal = gfx_pokepad_icon_pokedexPal,
+            .tag = POKEPAD_ITEM_ICON_BASE_TAG + POKEPAD_ITEM_POKEDEX,
         },
-    }, 
+    },
     [POKEPAD_ITEM_POKERADAR] = {
         .name = pokeradar_name,
         .description = pokeradar_description,
         .flag = POKERADAR,
         .initialize = pokeradar_init,
         .icon_graphic = {
-            .sprite = gfx_pokepad_icon_pokeradarTiles, .size = GRAPHIC_SIZE_4BPP(32, 32), 
+            .sprite = gfx_pokepad_icon_pokeradarTiles,
+            .size = GRAPHIC_SIZE_4BPP(32, 32),
             .tag = POKEPAD_ITEM_ICON_BASE_TAG + POKEPAD_ITEM_POKERADAR,
         },
         .icon_palette = {
-            .pal = gfx_pokepad_icon_pokeradarPal, .tag = POKEPAD_ITEM_ICON_BASE_TAG + POKEPAD_ITEM_POKERADAR,
+            .pal = gfx_pokepad_icon_pokeradarPal,
+            .tag = POKEPAD_ITEM_ICON_BASE_TAG + POKEPAD_ITEM_POKERADAR,
         },
-    }, 
+    },
     [POKEPAD_ITEM_INCUBATOR] = {
         .name = incubator_name,
         .description = incubator_description,
         .flag = FLAG_INCUBATOR,
         .initialize = incubator_initialize,
         .icon_graphic = {
-            .sprite = gfx_pokepad_icon_incubatorTiles, .size = GRAPHIC_SIZE_4BPP(32, 32), 
+            .sprite = gfx_pokepad_icon_incubatorTiles,
+            .size = GRAPHIC_SIZE_4BPP(32, 32),
             .tag = POKEPAD_ITEM_ICON_BASE_TAG + POKEPAD_ITEM_INCUBATOR,
         },
         .icon_palette = {
-            .pal = gfx_pokepad_icon_incubatorPal, .tag = POKEPAD_ITEM_ICON_BASE_TAG + POKEPAD_ITEM_INCUBATOR,
+            .pal = gfx_pokepad_icon_incubatorPal,
+            .tag = POKEPAD_ITEM_ICON_BASE_TAG + POKEPAD_ITEM_INCUBATOR,
         },
-    }
-};
+    }};
 
 enum {
     PRIORITY_INDICATORS = 0,
@@ -132,15 +138,20 @@ enum {
 };
 
 static graphic cursor_graphic = {
-    .sprite = gfx_pokepad_cursorTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEPAD_CURSOR_TAG,
+    .sprite = gfx_pokepad_cursorTiles,
+    .size = GRAPHIC_SIZE_4BPP(64, 64),
+    .tag = POKEPAD_CURSOR_TAG,
 };
 
 static palette cursor_palette = {
-    .pal = gfx_pokepad_cursorPal, .tag = POKEPAD_CURSOR_TAG,
+    .pal = gfx_pokepad_cursorPal,
+    .tag = POKEPAD_CURSOR_TAG,
 };
 
 static sprite cursor_sprite = {
-    .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_64_64, .attr2 = ATTR2_PRIO(1),
+    .attr0 = ATTR0_SHAPE_SQUARE,
+    .attr1 = ATTR1_SIZE_64_64,
+    .attr2 = ATTR2_PRIO(1),
 };
 
 static void cursor_callback(oam_object *self) {
@@ -155,33 +166,50 @@ static void cursor_callback(oam_object *self) {
 }
 
 static graphic left_indicator_graphic = {
-    .sprite = gfx_pokepad_indicator_leftTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEPAD_LEFT_INDICATOR_TAG,
+    .sprite = gfx_pokepad_indicator_leftTiles,
+    .size = GRAPHIC_SIZE_4BPP(64, 64),
+    .tag = POKEPAD_LEFT_INDICATOR_TAG,
 };
 
 static graphic right_indicator_graphic = {
-    .sprite = gfx_pokepad_indicator_rightTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEPAD_RIGHT_INDICATOR_TAG,
+    .sprite = gfx_pokepad_indicator_rightTiles,
+    .size = GRAPHIC_SIZE_4BPP(64, 64),
+    .tag = POKEPAD_RIGHT_INDICATOR_TAG,
 };
 
 static palette lr_indicator_palette = {
-    .pal = gfx_pokepad_indicator_leftPal, .tag = POKEPAD_LEFT_INDICATOR_TAG,
+    .pal = gfx_pokepad_indicator_leftPal,
+    .tag = POKEPAD_LEFT_INDICATOR_TAG,
 };
 
 static oam_template cursor_template = {
-    .tiles_tag = POKEPAD_CURSOR_TAG, .pal_tag = POKEPAD_CURSOR_TAG,
-    .animation = oam_gfx_anim_table_null, .rotscale = oam_rotscale_anim_table_null,
-    .graphics = NULL, .oam = &cursor_sprite, .callback = cursor_callback,
+    .tiles_tag = POKEPAD_CURSOR_TAG,
+    .pal_tag = POKEPAD_CURSOR_TAG,
+    .animation = oam_gfx_anim_table_null,
+    .rotscale = oam_rotscale_anim_table_null,
+    .graphics = NULL,
+    .oam = &cursor_sprite,
+    .callback = cursor_callback,
 };
 
 static oam_template indicator_left_template = {
-    .tiles_tag = POKEPAD_LEFT_INDICATOR_TAG, .pal_tag = POKEPAD_LEFT_INDICATOR_TAG,
-    .animation = oam_gfx_anim_table_null, .rotscale = oam_rotscale_anim_table_null,
-    .graphics = NULL, .oam = &cursor_sprite, .callback = oam_null_callback,
+    .tiles_tag = POKEPAD_LEFT_INDICATOR_TAG,
+    .pal_tag = POKEPAD_LEFT_INDICATOR_TAG,
+    .animation = oam_gfx_anim_table_null,
+    .rotscale = oam_rotscale_anim_table_null,
+    .graphics = NULL,
+    .oam = &cursor_sprite,
+    .callback = oam_null_callback,
 };
 
 static oam_template indicator_right_template = {
-    .tiles_tag = POKEPAD_RIGHT_INDICATOR_TAG, .pal_tag = POKEPAD_LEFT_INDICATOR_TAG,
-    .animation = oam_gfx_anim_table_null, .rotscale = oam_rotscale_anim_table_null,
-    .graphics = NULL, .oam = &cursor_sprite, .callback = oam_null_callback,
+    .tiles_tag = POKEPAD_RIGHT_INDICATOR_TAG,
+    .pal_tag = POKEPAD_LEFT_INDICATOR_TAG,
+    .animation = oam_gfx_anim_table_null,
+    .rotscale = oam_rotscale_anim_table_null,
+    .graphics = NULL,
+    .oam = &cursor_sprite,
+    .callback = oam_null_callback,
 };
 
 static void oam_64_64_locate(oam_object *oam, u8 position) {
@@ -192,7 +220,7 @@ static void oam_64_64_locate(oam_object *oam, u8 position) {
 }
 
 static u8 *registered_items_get() {
-    return (u8*) var_access(POKEPAD_SHORTCUTS);
+    return (u8 *)var_access(POKEPAD_SHORTCUTS);
 }
 
 static u8 pokepad_item_get_idx(u8 item) {
@@ -241,31 +269,39 @@ enum {
 
 static tboxdata pokepad_tboxes[] = {
     [TBOX_DESCRIPTION] = {
-        .bg_id = 0, .x = 0, .y = 15, .w = 30, .h = 5, .pal = 15, .start_tile = 1,
+        .bg_id = 0,
+        .x = 0,
+        .y = 15,
+        .w = 30,
+        .h = 5,
+        .pal = 15,
+        .start_tile = 1,
     },
-    [TBOX_APP_UPPER] = {
-        .bg_id = 0, .x = 0 * 60, .y = 6 , .w = 30, .h = 3, .pal = 15, .start_tile = 1 + 30 * 5
-    },
-    [TBOX_APP_LOWER] = {
-        .bg_id = 0, .x = 0 * 60, .y = 12 , .w = 30, .h = 3, .pal = 15, .start_tile = 1 + 30 * 5 + 30 * 3
-    },
-    [TBOX_HEADER] = {
-        .bg_id = 0, .x = 0, .y = 0 , .w = 30, .h = 2, .pal = 15, .start_tile = 1 + 30 * 5 + 30 * 3 + 30 * 3
-    },
+    [TBOX_APP_UPPER] = {.bg_id = 0, .x = 0 * 60, .y = 6, .w = 30, .h = 3, .pal = 15, .start_tile = 1 + 30 * 5},
+    [TBOX_APP_LOWER] = {.bg_id = 0, .x = 0 * 60, .y = 12, .w = 30, .h = 3, .pal = 15, .start_tile = 1 + 30 * 5 + 30 * 3},
+    [TBOX_HEADER] = {.bg_id = 0, .x = 0, .y = 0, .w = 30, .h = 2, .pal = 15, .start_tile = 1 + 30 * 5 + 30 * 3 + 30 * 3},
     [NUM_TBOXES] = {
         .bg_id = 0xFF,
-    }
-};
+    }};
 
 static list_menu_template motive_list_menu = {
     .items = NULL,
     .cursor_moved_callback = list_menu_generic_cursor_callback,
     .item_print_callback = incubator_context_menu_item_print_callback,
-    .item_cnt = 0, .max_items_showed = 0, .tbox_idx = 0xFF,
-    .header_x = 0, .item_x = 8, .cursor_x = 0, .up_text_y = 0, .cursor_pal = 2, .fill_value = 1,
-    .cursor_shadow_color = 3, .letter_spacing = 1, .item_vertical_padding = 2, .scroll_multiple = 0,
-    .font = 2
-};
+    .item_cnt = 0,
+    .max_items_showed = 0,
+    .tbox_idx = 0xFF,
+    .header_x = 0,
+    .item_x = 8,
+    .cursor_x = 0,
+    .up_text_y = 0,
+    .cursor_pal = 2,
+    .fill_value = 1,
+    .cursor_shadow_color = 3,
+    .letter_spacing = 1,
+    .item_vertical_padding = 2,
+    .scroll_multiple = 0,
+    .font = 2};
 
 static bg_config bg_configs[] = {
     {.bg_id = 0, .char_base = 2, .map_base = 31, .size = 0, .color_mode = 0, .priority = 1},
@@ -298,7 +334,9 @@ static void callback1_free() {
 }
 
 static tbox_font_colormap description_fontcolmap = {
-    .background = 1, .body = 2, .edge = 1,
+    .background = 1,
+    .body = 2,
+    .edge = 1,
 };
 
 static void pokepad2_update_description() {
@@ -313,13 +351,11 @@ static u8 str_key_r[] = PSTRING("KEY_R");
 
 static u8 str_registered[] = LANGDEP(
     PSTRING("Die BUFFER_1-App wurde auf der\nBUFFER_2 Taste registriert.PAUSE_UNTIL_PRESS"),
-    PSTRING("The BUFFER_1-App was registered\non the BUFFER_2 key.PAUSE_UNTIL_PRESS")
-);
+    PSTRING("The BUFFER_1-App was registered\non the BUFFER_2 key.PAUSE_UNTIL_PRESS"));
 
 static u8 str_deregistered[] = LANGDEP(
     PSTRING("Die BUFFER_1-App ist nicht länger auf\nder BUFFER_2 Taste registriert.PAUSE_UNTIL_PRESS"),
-    PSTRING("The BUFFER_1-App is no longer registered\non the BUFFER_2 key.PAUSE_UNTIL_PRESS")
-);
+    PSTRING("The BUFFER_1-App is no longer registered\non the BUFFER_2 key.PAUSE_UNTIL_PRESS"));
 
 static void pokepad2_idle(u8 self);
 
@@ -353,9 +389,9 @@ static u16 pokepad2_build_wallpaper_list() {
 static void pokepad2_update_wallpaper_palette() {
     pokepad_wallpaper *wallpaper = pokepad_get_wallpaper();
     pal_decompress(wallpaper->palette, 0, 10 * 16 * sizeof(color_t)); // Probably a bit too much...
-    color_t black = {.rgb={0, 0, 0}};
+    color_t black = {.rgb = {0, 0, 0}};
     pal_gamma_shift_with_blend(0, 10, 3, 4, black);
-    cpuset(pals, pal_restore, CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(10 * 16 * sizeof(color_t)));  
+    cpuset(pals, pal_restore, CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(10 * 16 * sizeof(color_t)));
 }
 
 static void pokepad2_update_wallpaper_bg() {
@@ -370,12 +406,12 @@ static void pokepad2_update_wallpaper(u8 self) {
     color_t white = {.rgb = {0, 0, 0}};
     if (!fading_is_active()) {
         switch (big_callbacks[self].params[0]) {
-            case 0 : {
+            case 0: {
                 bg_hide(1);
                 ++big_callbacks[self].params[0];
                 break;
             }
-            case 1 : {
+            case 1: {
                 pokepad2_update_wallpaper_bg();
                 pokepad2_update_wallpaper_palette();
                 cpuset(&white, pals, CPUSET_FILL | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(10 * 16 * sizeof(color_t)));
@@ -389,25 +425,28 @@ static void pokepad2_update_wallpaper(u8 self) {
                 ++big_callbacks[self].params[0];
                 break;
             }
-            case 3 : {
+            case 3: {
                 big_callbacks[self].function = pokepad2_context_menu;
             }
         }
-        
     }
 }
 
 static void pokepad2_context_menu_setup_scroll_indicators() {
     scroll_indicator_template indicator_template = {
-        .arrow0_type = SCROLL_ARROW_UP, .arrow0_x = 25 * 8, .arrow0_y = (u8)((14 - 2 * POKEPAD_STATE->context_menu_num_items_shown) * 8),
-        .arrow1_type = SCROLL_ARROW_DOWN, .arrow1_x = 25 * 8, .arrow1_y = 14 * 8,
-        .arrow0_threshold = 0, 
-        .arrow1_threshold = (u16) MAX(0, (POKEPAD_STATE->context_menu_list_size - POKEPAD_STATE->context_menu_num_items_shown)),
+        .arrow0_type = SCROLL_ARROW_UP,
+        .arrow0_x = 25 * 8,
+        .arrow0_y = (u8)((14 - 2 * POKEPAD_STATE->context_menu_num_items_shown) * 8),
+        .arrow1_type = SCROLL_ARROW_DOWN,
+        .arrow1_x = 25 * 8,
+        .arrow1_y = 14 * 8,
+        .arrow0_threshold = 0,
+        .arrow1_threshold = (u16)MAX(0, (POKEPAD_STATE->context_menu_list_size - POKEPAD_STATE->context_menu_num_items_shown)),
         .tiles_tag = 111,
         .pal_tag = 111,
     };
     POKEPAD_STATE->scroll_indicator_callback_idx = scroll_indicator_new(&indicator_template,
-        &POKEPAD_STATE->context_menu_cursor_position);
+                                                                        &POKEPAD_STATE->context_menu_cursor_position);
     scroll_indicator_set_oam_priority(POKEPAD_STATE->scroll_indicator_callback_idx, 0, 0);
 }
 
@@ -416,7 +455,8 @@ static void pokepad2_context_menu(u8 self) {
         return;
     list_menu_get_scroll_and_row(POKEPAD_STATE->callback_idx_context_menu, &POKEPAD_STATE->context_menu_cursor_position, &POKEPAD_STATE->context_menu_num_items_above);
     int item = list_menu_process_input(POKEPAD_STATE->callback_idx_context_menu);
-    if (item == LIST_MENU_NOTHING_CHOSEN) return;
+    if (item == LIST_MENU_NOTHING_CHOSEN)
+        return;
     if (item == LIST_MENU_B_PRESSED) {
         play_sound(5);
         list_menu_remove(POKEPAD_STATE->callback_idx_context_menu, NULL, NULL);
@@ -439,8 +479,7 @@ static void pokepad2_context_menu(u8 self) {
 
 static u8 str_select_motive[] = LANGDEP(
     PSTRING("Wähle ein Hintergrundmotiv aus."),
-    PSTRING("Choose a background motive.")
-);
+    PSTRING("Choose a background motive."));
 
 static void pokepad2_idle(u8 self) {
     if (!fading_is_active()) {
@@ -528,8 +567,13 @@ static void pokepad2_idle(u8 self) {
             tbox_print_string(TBOX_DESCRIPTION, 2, 8, 6, 0, 0, &description_fontcolmap, 0, str_select_motive);
             // Create context menu textbox
             tboxdata boxdata = {
-                .bg_id = 2, .x = 20, .y = (u8)(14 - 2 * context_menu_height), .w = 10, 
-                .h = (u8)(2 * context_menu_height), .pal = 15, .start_tile = 1,
+                .bg_id = 2,
+                .x = 20,
+                .y = (u8)(14 - 2 * context_menu_height),
+                .w = 10,
+                .h = (u8)(2 * context_menu_height),
+                .pal = 15,
+                .start_tile = 1,
             };
             POKEPAD_STATE->tbox_idx_context_menu = tbox_new(&boxdata);
             tbox_tilemap_draw(POKEPAD_STATE->tbox_idx_context_menu);
@@ -548,11 +592,15 @@ static void pokepad2_idle(u8 self) {
 }
 
 static sprite app_icon_sprite = {
-    .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(1),
+    .attr0 = ATTR0_SHAPE_SQUARE,
+    .attr1 = ATTR1_SIZE_32_32,
+    .attr2 = ATTR2_PRIO(1),
 };
 
 static tbox_font_colormap app_name_fontcolmap = {
-    .background = 0, .body = 2, .edge = 0,
+    .background = 0,
+    .body = 2,
+    .edge = 0,
 };
 
 static bool pokepad2_initialize_app_oams(int num_to_initialize) {
@@ -565,9 +613,13 @@ static bool pokepad2_initialize_app_oams(int num_to_initialize) {
         int row = POKEPAD_STATE->num_app_oams / 4;
         int col = POKEPAD_STATE->num_app_oams % 4;
         oam_template template = {
-            .tiles_tag = item->icon_graphic.tag, .pal_tag = item->icon_palette.tag,
-            .animation = oam_gfx_anim_table_null, .rotscale = oam_rotscale_anim_table_null,
-            .graphics = NULL, .oam = &app_icon_sprite, .callback = oam_null_callback,
+            .tiles_tag = item->icon_graphic.tag,
+            .pal_tag = item->icon_palette.tag,
+            .animation = oam_gfx_anim_table_null,
+            .rotscale = oam_rotscale_anim_table_null,
+            .graphics = NULL,
+            .oam = &app_icon_sprite,
+            .callback = oam_null_callback,
         };
         int string_width = string_get_width(2, item->name, 0);
         tbox_print_string(row > 0 ? TBOX_APP_LOWER : TBOX_APP_UPPER, 2, (u16)((60 - string_width) / 2 + 60 * col), 6, 0, 0, &app_name_fontcolmap, 0, item->name);
@@ -591,7 +643,7 @@ enum {
 };
 
 static void pokepad2_initialize() {
-    switch(POKEPAD_STATE->initialization_state) {
+    switch (POKEPAD_STATE->initialization_state) {
         case RESET: {
             dma0_reset_callback();
             oam_reset();
@@ -673,8 +725,7 @@ static void pokepad2_initialize() {
             tbox_flush_set(TBOX_APP_LOWER, 0x0);
             u8 str_header[] = LANGDEP(
                 PSTRING("KEY_LKEY_R Registrieren  KEY_START Motiv  KEY_B Zur."),
-                PSTRING("KEY_LKEY_R Register  KEY_START Motive  KEY_B Back")
-            );
+                PSTRING("KEY_LKEY_R Register  KEY_START Motive  KEY_B Back"));
             tbox_print_string(TBOX_HEADER, 2, 8, 0, 0, 0, &description_fontcolmap, 0, str_header);
             tbox_sync(TBOX_APP_UPPER, TBOX_SYNC_SET);
             tbox_sync(TBOX_APP_LOWER, TBOX_SYNC_SET);
@@ -730,7 +781,7 @@ bool start_menu_pokepad_initialize() {
 }
 
 bool pokepad_initialize_registered_item() {
-    if (!checkflag(POKEDEX)) 
+    if (!checkflag(POKEDEX))
         return false;
     u8 *registered = registered_items_get();
     if (super.keys_new.keys.l && registered[0] != 0xFF) {

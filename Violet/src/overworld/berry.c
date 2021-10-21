@@ -1,21 +1,21 @@
-#include "types.h"
-#include "save.h"
 #include "berry.h"
-#include "debug.h"
 #include "agbmemory.h"
-#include "vars.h"
-#include "overworld/sprite.h"
-#include "item/item.h"
-#include "prng.h"
-#include "constants/berry_pouch_contexts.h"
 #include "callbacks.h"
-#include "overworld/map_control.h"
-#include "fading.h"
-#include "overworld/pokemon_party_menu.h"
-#include "rtc.h"
-#include "overworld/effect.h"
+#include "constants/berry_pouch_contexts.h"
 #include "constants/sav_keys.h"
+#include "debug.h"
+#include "fading.h"
+#include "item/item.h"
 #include "options.h"
+#include "overworld/effect.h"
+#include "overworld/map_control.h"
+#include "overworld/pokemon_party_menu.h"
+#include "overworld/sprite.h"
+#include "prng.h"
+#include "rtc.h"
+#include "save.h"
+#include "types.h"
+#include "vars.h"
 
 u8 berry_tree_get_berry(u8 berry_tree_idx) {
     return cmem.berry_trees[berry_tree_idx].berry;
@@ -46,7 +46,7 @@ u8 berry_tree_initial_items[256] = {
     [21] = ITEM_IDX_TO_BERRY_IDX(ITEM_SANANABEERE),
     [22] = ITEM_IDX_TO_BERRY_IDX(ITEM_MAGOBEERE),
     [23] = ITEM_IDX_TO_BERRY_IDX(ITEM_SANANABEERE),
-    [24] = ITEM_IDX_TO_BERRY_IDX(ITEM_GRANABEERE), 
+    [24] = ITEM_IDX_TO_BERRY_IDX(ITEM_GRANABEERE),
     [25] = ITEM_IDX_TO_BERRY_IDX(ITEM_YAPABEERE),
     [26] = ITEM_IDX_TO_BERRY_IDX(ITEM_HIMMIHBEERE),
     [27] = ITEM_IDX_TO_BERRY_IDX(ITEM_AMRENABEERE),
@@ -96,12 +96,10 @@ void berry_tree_calculate_yield(u8 berry_tree_idx) {
     // dprintf("Initialized berry tree %d with yield %d\n", berry_tree_idx, yield);
 }
 
-
 u16 berry_get_stage_duration(u8 berry_tree_idx) {
     berry *b = berry_get(cmem.berry_trees[berry_tree_idx].berry);
     return (u16)(b->stage_duration * 5); // Where as in the original game the unit of stage duration would be hours, we simply make a stage 12 times faster (5 minutes)
 }
-
 
 void berry_tree_initialize(u8 berry_tree_idx, u8 berry_idx, u8 stage) {
     cmem.berry_trees[berry_tree_idx].berry = (u8)(berry_idx & 127);
@@ -111,7 +109,6 @@ void berry_tree_initialize(u8 berry_tree_idx, u8 berry_idx, u8 stage) {
     // cmem.berry_trees[berry_tree_idx].yield = 0; // Only when blossoming, the yield is determined
     cmem.berry_trees[berry_tree_idx].minutes_to_next_stage = berry_get_stage_duration(berry_tree_idx);
 }
-
 
 void berry_trees_initialize_all() {
     memset(cmem.berry_trees, 0, sizeof(cmem.berry_trees));
@@ -154,7 +151,8 @@ bool berry_pick() {
     u16 item_idx = (u16)(BERRY_IDX_TO_ITEM_IDX(cmem.berry_trees[*var_access(0x8000)].berry));
     u8 count = cmem.berry_trees[*var_access(0x8000)].yield;
     dprintf("Picked %d times %d\n", count, item_idx);
-    if (!item_has_room(item_idx, count)) return false;
+    if (!item_has_room(item_idx, count))
+        return false;
     item_add(item_idx, count);
     cmem.berry_trees[*var_access(0x8000)].picked_once = 1;
     cmem.berry_trees[*var_access(0x8000)].stage = BERRY_STAGE_NO_BERRY;
@@ -185,9 +183,11 @@ void berry_plant() {
 
 bool berry_tree_grow(u8 berry_tree_idx) {
     berry_tree *tree = cmem.berry_trees + berry_tree_idx;
-    switch(tree->stage) {
-        case BERRY_STAGE_NO_BERRY: return false; // Can't grow obviously
-        case BERRY_STAGE_BERRIES: return false; // Can't grow any more, I will *not* destroy trees that were not harvested in time...
+    switch (tree->stage) {
+        case BERRY_STAGE_NO_BERRY:
+            return false; // Can't grow obviously
+        case BERRY_STAGE_BERRIES:
+            return false; // Can't grow any more, I will *not* destroy trees that were not harvested in time...
         case BERRY_STAGE_BLOSSOM:
             berry_tree_calculate_yield(berry_tree_idx);
             break;
@@ -215,7 +215,7 @@ void berry_proceed_minutes(u16 minutes) {
                 }
                 // We can entirely finished a stage
                 time = (u16)(time - tree->minutes_to_next_stage);
-                if(!berry_tree_grow((u8)i)) 
+                if (!berry_tree_grow((u8)i))
                     break; // The tree can't grow anymore
                 dprintf("Tree %d grew to stage %d\n", i, tree->stage);
             }
@@ -224,21 +224,22 @@ void berry_proceed_minutes(u16 minutes) {
 }
 
 void berry_proceed() {
-    if (!time_test()) return;
-	if (!fmem.berry_tree_time_last_updated_initialized) {
+    if (!time_test())
+        return;
+    if (!fmem.berry_tree_time_last_updated_initialized) {
         time_read(&fmem.berry_tree_time_last_update);
         fmem.berry_tree_time_last_updated_initialized = 1;
         dprintf("Reference timestamp for berry tree updated initialized.\n");
-	}
+    }
     rtc_timestamp time = {0};
     time_read(&time);
     u64 lseconds_last_update = rtc_timestamp_to_seconds(&fmem.berry_tree_time_last_update);
     u64 lseconds_current = rtc_timestamp_to_seconds(&time);
     if (lseconds_current < lseconds_last_update) {
         dprintf("Timestamp of last update is %d.%d.%d clock time: %d:%d (%d s)\n", fmem.berry_tree_time_last_update.day, fmem.berry_tree_time_last_update.month, fmem.berry_tree_time_last_update.year,
-            fmem.berry_tree_time_last_update.hour, fmem.berry_tree_time_last_update.minute, fmem.berry_tree_time_last_update.second);
+                fmem.berry_tree_time_last_update.hour, fmem.berry_tree_time_last_update.minute, fmem.berry_tree_time_last_update.second);
         dprintf("Timestamp current is %d.%d.%d clock time: %d:%d (%d s)\n", time.day, time.month, time.year,
-            time.hour, time.minute, time.second);
+                time.hour, time.minute, time.second);
         dprintf("Warning: The current time is before the last berry tree update, this most likely is a bug...\n");
         return;
     }
@@ -251,8 +252,7 @@ void berry_proceed() {
 }
 
 palette berry_tree_growth_sparkle_palette = {
-    .pal = gfx_berry_tree_growth_sparklePal, .tag = TAG_BERRY_GROWTH_SPARKLE
-};
+    .pal = gfx_berry_tree_growth_sparklePal, .tag = TAG_BERRY_GROWTH_SPARKLE};
 
 graphic berry_tree_growth_sparkle_graphics[] = {
     [0] = {.sprite = gfx_berry_tree_growth_sparkleTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = TAG_BERRY_GROWTH_SPARKLE},
@@ -264,15 +264,25 @@ graphic berry_tree_growth_sparkle_graphics[] = {
 };
 
 gfx_frame berry_tree_growth_sparkle_gfx_animation[] = {
-    {.data = 0, .duration = 0}, {.data = 0, .duration = 8},  {.data = 1, .duration = 8}, {.data = 2, .duration = 8},
-    {.data = 3, .duration = 8},  {.data = 4, .duration = 8}, {.data = 5, .duration = 8}, {.data = GFX_ANIM_END, .duration = 0},
+    {.data = 0, .duration = 0},
+    {.data = 0, .duration = 8},
+    {.data = 1, .duration = 8},
+    {.data = 2, .duration = 8},
+    {.data = 3, .duration = 8},
+    {.data = 4, .duration = 8},
+    {.data = 5, .duration = 8},
+    {.data = GFX_ANIM_END, .duration = 0},
 };
 
 gfx_frame *berry_tree_growth_sparkle_gfx_animations[] = {berry_tree_growth_sparkle_gfx_animation};
 
 oam_template berry_tree_growth_sparkle_oam_template = {
-    .tiles_tag = 0xFFFF, .pal_tag = TAG_BERRY_GROWTH_SPARKLE, .oam = &ow_final_oam_16_16, .animation = berry_tree_growth_sparkle_gfx_animations,
-    .graphics = berry_tree_growth_sparkle_graphics, .rotscale = oam_rotscale_anim_table_null,
+    .tiles_tag = 0xFFFF,
+    .pal_tag = TAG_BERRY_GROWTH_SPARKLE,
+    .oam = &ow_final_oam_16_16,
+    .animation = berry_tree_growth_sparkle_gfx_animations,
+    .graphics = berry_tree_growth_sparkle_graphics,
+    .rotscale = oam_rotscale_anim_table_null,
     .callback = overworld_effect_oam_callback_wait_for_gfx_animation,
 };
 
@@ -288,7 +298,7 @@ void overworld_effect_berry_tree_growth_sparkle() {
     overworld_effect_state.bg_priority = (oams[npcs[npc_idx].oam_id].final_oam.attr2 >> 10) & 3;
 
     oam_palette_load_if_not_present(&berry_tree_growth_sparkle_palette);
-    overworld_effect_ow_coordinates_to_screen_coordinates((s16*)(&overworld_effect_state.x), (s16*)(&overworld_effect_state.y), 8, 4);
+    overworld_effect_ow_coordinates_to_screen_coordinates((s16 *)(&overworld_effect_state.x), (s16 *)(&overworld_effect_state.y), 8, 4);
     u8 oam_idx = oam_new_forward_search(&berry_tree_growth_sparkle_oam_template, (s16)(overworld_effect_state.x), (s16)(overworld_effect_state.y), (u8)(overworld_effect_state.bg_priority));
     if (oam_idx < 0x40) {
         oam_object *o = oams + oam_idx;
@@ -299,5 +309,5 @@ void overworld_effect_berry_tree_growth_sparkle() {
 }
 
 void berry_tree_option_all_wonderdust_enabled() {
-    *var_access(LASTRESULT) = (u16) (options[OPTION_WONDER_DUST_AUTOMATIC_USAGE].getter() == OPTION_ON);
+    *var_access(LASTRESULT) = (u16)(options[OPTION_WONDER_DUST_AUTOMATIC_USAGE].getter() == OPTION_ON);
 }

@@ -19,7 +19,6 @@ typedef struct {
     u8 field_B;
 } map_connection_t;
 
-
 // A list containing map connections
 typedef struct {
     u32 count;

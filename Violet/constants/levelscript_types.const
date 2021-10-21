@@ -1,7 +1,7 @@
 {
-    "type" : "enum",
-    "base" : 1,
-    "values" : [
+    "type": "enum",
+    "base": 1,
+    "values": [
         "LEVELSCRIPT_TYPE_ON_LOAD",
         "LEVELSCRIPT_TYPE_ON_FRAME_TABLE",
         "LEVELSCRIPT_TYPE_ON_TRANSITION",

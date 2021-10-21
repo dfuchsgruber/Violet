@@ -1,24 +1,24 @@
-#include "types.h"
-#include "io.h"
-#include "oam.h"
-#include "callbacks.h"
-#include "superstate.h"
-#include "crafting.h"
-#include "bg.h"
-#include "dma.h"
 #include "agbmemory.h"
-#include "bios.h"
-#include "fading.h"
-#include "prng.h"
-#include "item/item.h"
-#include "music.h"
-#include "math.h"
-#include "debug.h"
 #include "battle/attack.h"
+#include "bg.h"
+#include "bios.h"
+#include "callbacks.h"
+#include "crafting.h"
+#include "debug.h"
+#include "dma.h"
+#include "fading.h"
+#include "io.h"
+#include "item/item.h"
 #include "language.h"
+#include "math.h"
+#include "music.h"
+#include "oam.h"
 #include "overworld/map_control.h"
 #include "overworld/script.h"
+#include "prng.h"
+#include "superstate.h"
 #include "text.h"
+#include "types.h"
 
 static void cauldron_scene_step1_create_dropping_item(u16 frame);
 
@@ -48,16 +48,24 @@ static void cauldron_vblank_handler() {
 }
 
 static graphic cauldron_lights_graphic = {
-    .sprite = gfx_crafting_cauldron_lightsTiles, .tag = CAULDRON_LIGHT_TAG, .size = 6 * GRAPHIC_SIZE_4BPP(32, 32),
+    .sprite = gfx_crafting_cauldron_lightsTiles,
+    .tag = CAULDRON_LIGHT_TAG,
+    .size = 6 * GRAPHIC_SIZE_4BPP(32, 32),
 };
 
 static gfx_frame cauldron_light_gfx_frames[] = {
-    {.data = 0, .duration = 0}, {.data = GFX_ANIM_END},
-    {.data = 16, .duration = 0}, {.data = GFX_ANIM_END},
-    {.data = 32, .duration = 0}, {.data = GFX_ANIM_END},
-    {.data = 48, .duration = 0}, {.data = GFX_ANIM_END},
-    {.data = 64, .duration = 0}, {.data = GFX_ANIM_END},
-    {.data = 80, .duration = 0}, {.data = GFX_ANIM_END},
+    {.data = 0, .duration = 0},
+    {.data = GFX_ANIM_END},
+    {.data = 16, .duration = 0},
+    {.data = GFX_ANIM_END},
+    {.data = 32, .duration = 0},
+    {.data = GFX_ANIM_END},
+    {.data = 48, .duration = 0},
+    {.data = GFX_ANIM_END},
+    {.data = 64, .duration = 0},
+    {.data = GFX_ANIM_END},
+    {.data = 80, .duration = 0},
+    {.data = GFX_ANIM_END},
 };
 
 static gfx_frame *cauldron_light_gfx_animations[] = {
@@ -69,9 +77,10 @@ static gfx_frame *cauldron_light_gfx_animations[] = {
     [5] = cauldron_light_gfx_frames + 5 * 2,
 };
 
-enum {CAULDRON_LIGHT_CENTER = 0, CAULDRON_LIGHT_SIDE = 1};
+enum { CAULDRON_LIGHT_CENTER = 0,
+       CAULDRON_LIGHT_SIDE = 1 };
 
-static void cauldron_light_oam_callback (oam_object *self) {
+static void cauldron_light_oam_callback(oam_object *self) {
     u16 *frame = self->private + 0;
     u16 type = self->private[1];
     u16 color = self->private[2];
@@ -93,24 +102,27 @@ static void cauldron_light_initialize_all(u16 duration) {
     }
 }
 
-
 static sprite cauldron_light_final_oam = {
-    .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(3),
+    .attr0 = ATTR0_SHAPE_SQUARE,
+    .attr1 = ATTR1_SIZE_32_32,
+    .attr2 = ATTR2_PRIO(3),
 };
 
 static oam_template cauldron_light_oam_template = {
-    .tiles_tag = CAULDRON_LIGHT_TAG, .pal_tag = CAULDRON_LIGHT_TAG, .oam = &cauldron_light_final_oam,
-    .animation = cauldron_light_gfx_animations, .graphics = NULL, .rotscale = oam_rotscale_anim_table_null,
-    .callback = cauldron_light_oam_callback
-};
+    .tiles_tag = CAULDRON_LIGHT_TAG, .pal_tag = CAULDRON_LIGHT_TAG, .oam = &cauldron_light_final_oam, .animation = cauldron_light_gfx_animations, .graphics = NULL, .rotscale = oam_rotscale_anim_table_null, .callback = cauldron_light_oam_callback};
 
 static sprite cauldron_spark_final_oam = {
-    .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(0),
+    .attr0 = ATTR0_SHAPE_SQUARE,
+    .attr1 = ATTR1_SIZE_16_16,
+    .attr2 = ATTR2_PRIO(0),
 };
 
 static gfx_frame cauldron_spark_gfx_animation[] = {
-    {.data = 0, .duration = 0}, {.data = 0, .duration = 4}, {.data = 4, .duration = 4}, 
-    {.data = 8, .duration = 4}, {.data = GFX_ANIM_END},
+    {.data = 0, .duration = 0},
+    {.data = 0, .duration = 4},
+    {.data = 4, .duration = 4},
+    {.data = 8, .duration = 4},
+    {.data = GFX_ANIM_END},
 };
 
 static gfx_frame *cauldron_spark_gfx_animations[] = {
@@ -123,15 +135,17 @@ static void cauldron_spark_oam_callback(oam_object *self) {
 }
 
 static oam_template cauldron_spark_oam_template = {
-    .tiles_tag = BATTLE_ANIMATION_OAM_BASE + 11, .pal_tag = BATTLE_ANIMATION_OAM_BASE + 11,
-    .oam = &cauldron_spark_final_oam, .animation = cauldron_spark_gfx_animations, .graphics = NULL,
-    .rotscale = oam_rotscale_anim_table_null, .callback = cauldron_spark_oam_callback,
+    .tiles_tag = BATTLE_ANIMATION_OAM_BASE + 11,
+    .pal_tag = BATTLE_ANIMATION_OAM_BASE + 11,
+    .oam = &cauldron_spark_final_oam,
+    .animation = cauldron_spark_gfx_animations,
+    .graphics = NULL,
+    .rotscale = oam_rotscale_anim_table_null,
+    .callback = cauldron_spark_oam_callback,
 };
-
 
 static sprite cauldron_item_final_oam = {
-    .attr0 = ATTR0_DSIZE | ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE, .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(3)
-};
+    .attr0 = ATTR0_DSIZE | ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE, .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(3)};
 
 #define CAULDRON_ITEM_DY 144
 #define CAULDRON_ITEM_DX 32
@@ -155,7 +169,7 @@ static void cauldron_item_callback(oam_object *self) {
     }
     FIXED t = INT_TO_FIXED(frame);
     FIXED y = FIXED_MUL(a, FIXED_MUL(t, t)); // y = at^2
-    FIXED x = FIXED_MUL(vx, t); // x = vt
+    FIXED x = FIXED_MUL(vx, t);              // x = vt
     self->y2 = (s16)(FIXED_TO_INT(y) + CAULDRON_SCENE_STATE->bg_vertical_origin);
     self->x2 = (s16)(-FIXED_TO_INT(x) + CAULDRON_SCENE_STATE->bg_horizontal_origin);
 }
@@ -205,14 +219,17 @@ static rotscale_frame cauldron_item_rotscale_animation1[] = {
 };
 
 static rotscale_frame *cauldron_item_rotscale_animations[] = {
-    [0] = cauldron_item_rotscale_animation0, [1] = cauldron_item_rotscale_animation1,
+    [0] = cauldron_item_rotscale_animation0,
+    [1] = cauldron_item_rotscale_animation1,
 };
 
 static oam_template cauldron_item_template = {
-    .oam = &cauldron_item_final_oam, .animation = oam_gfx_anim_table_null, .graphics = NULL,
-    .rotscale = cauldron_item_rotscale_animations, .callback = cauldron_item_callback,
+    .oam = &cauldron_item_final_oam,
+    .animation = oam_gfx_anim_table_null,
+    .graphics = NULL,
+    .rotscale = cauldron_item_rotscale_animations,
+    .callback = cauldron_item_callback,
 };
-
 
 static coordinate_t cauldron_light_positions[3] = {
     {.x = 74, .y = 179},
@@ -221,7 +238,7 @@ static coordinate_t cauldron_light_positions[3] = {
 };
 
 static void cauldron_scene_light_animation(u8 self) {
-    (void) self;
+    (void)self;
     if (CAULDRON_SCENE_STATE->lights_number_active == 0) {
         for (int i = 0; i < 3; i++) {
             u16 color = (u16)((i + CAULDRON_SCENE_STATE->lights_color_state) % 3);
@@ -258,7 +275,6 @@ static coordinate_t cauldron_item_positions[4] = {
     {.x = 152, .y = -16 - 64},
 };
 
-
 static void cauldron_scene_item_shaker(u8 self) {
     u16 frame = big_callbacks[self].params[0]++;
     if (frame % 16 == 0 && (rnd16() % 2)) { // Shake a new item
@@ -284,7 +300,7 @@ static void cauldron_scene_shaker(u8 self) {
     u16 frame = big_callbacks[self].params[0]++;
     FIXED t = FIXED_DIV(INT_TO_FIXED(frame % SHAKER_PERIOD), INT_TO_FIXED(SHAKER_PERIOD));
     FIXED y = FIXED_MUL(INT_TO_FIXED(CAULDRON_SCENE_STATE->shaking_intensity), FIXED_SIN(t));
-    CAULDRON_SCENE_STATE->bg_horizontal_origin = (s16)FIXED_TO_INT(y); 
+    CAULDRON_SCENE_STATE->bg_horizontal_origin = (s16)FIXED_TO_INT(y);
 }
 
 static void cauldron_scene_big_callback_null(u8 self) {
@@ -293,8 +309,7 @@ static void cauldron_scene_big_callback_null(u8 self) {
 
 static u8 str_crafted[] = LANGDEP(
     PSTRING("PLAYER hat BUFFER_2x BUFFER_1\nhergestellt!"),
-    PSTRING("PLAYER crafted BUFFER_2x BUFFER_1!")
-);
+    PSTRING("PLAYER crafted BUFFER_2x BUFFER_1!"));
 
 static void cauldron_free_and_return_to_overworld() {
     if (!fading_is_active() && !dma3_busy(-1)) {
@@ -305,8 +320,7 @@ static void cauldron_free_and_return_to_overworld() {
         cauldron_scene_state tmp = *CAULDRON_SCENE_STATE;
         free(CAULDRON_SCENE_STATE);
         crafting_ui_reinitialize(tmp.saved_ui_state.type,
-            tmp.saved_ui_state.list_menu_cursor_positions, tmp.saved_ui_state.list_menu_cursor_above);
-        
+                                 tmp.saved_ui_state.list_menu_cursor_positions, tmp.saved_ui_state.list_menu_cursor_above);
     }
     generic_callback1();
 }
@@ -334,7 +348,6 @@ static void cauldron_scene_step9_success_string(u16 frame) {
     cauldron_scene_next_step(cauldron_scene_step_none);
 }
 
-
 static void cauldron_scene_step8_decrease_shaking_intensity(u16 frame) {
     if (frame % 24 == 0) {
         CAULDRON_SCENE_STATE->shaking_intensity--;
@@ -348,7 +361,6 @@ static void cauldron_scene_step8_decrease_shaking_intensity(u16 frame) {
         cauldron_scene_next_step(cauldron_scene_step9_success_string);
     }
 }
-
 
 static void cauldron_scene_step7_wait_shaking(u16 frame) {
     if (frame >= 128) {
@@ -396,7 +408,6 @@ static void cauldron_scene_step7_wait_shaking(u16 frame) {
     }
 }
 
-
 static void cauldron_scene_step6_increase_shaking_intensity(u16 frame) {
     if (frame % 48 == 0) {
         CAULDRON_SCENE_STATE->shaking_intensity++;
@@ -426,14 +437,14 @@ static void cauldron_scene_step4_close_cauldron(u16 frame) {
     if (frame >= 50) {
         cauldron_scene_next_step(cauldron_scene_step5_scroll_down);
     } else {
-        CAULDRON_SCENE_STATE->bg_vertical_scrolling[2] = (s16)-(2 * frame + 65);
+        CAULDRON_SCENE_STATE->bg_vertical_scrolling[2] = (s16) - (2 * frame + 65);
     }
 }
 
 static void cauldron_scene_step2_wait_dropping_item(u16 frame) {
     if (frame == 32) {
-        if (CAULDRON_SCENE_STATE->state < MAX_NUM_INGREDIENTS && (CAULDRON_SCENE_STATE->recipe.ingredients[CAULDRON_SCENE_STATE->state].item || 
-            CAULDRON_SCENE_STATE->recipe.ingredients[CAULDRON_SCENE_STATE->state].type == CRAFTING_INGREDIENT_ASH)) {
+        if (CAULDRON_SCENE_STATE->state < MAX_NUM_INGREDIENTS && (CAULDRON_SCENE_STATE->recipe.ingredients[CAULDRON_SCENE_STATE->state].item ||
+                                                                  CAULDRON_SCENE_STATE->recipe.ingredients[CAULDRON_SCENE_STATE->state].type == CRAFTING_INGREDIENT_ASH)) {
             cauldron_scene_next_step(cauldron_scene_step1_create_dropping_item);
         } else {
             bg_sync_display_and_show(2);
@@ -442,9 +453,8 @@ static void cauldron_scene_step2_wait_dropping_item(u16 frame) {
     }
 }
 
-
 static void cauldron_scene_step1_create_dropping_item(u16 frame) {
-    (void) frame;
+    (void)frame;
     u8 idx = CAULDRON_SCENE_STATE->state++;
     u16 item;
     if (CAULDRON_SCENE_STATE->recipe.ingredients[idx].type == CRAFTING_INGREDIENT_ASH) {
@@ -460,8 +470,6 @@ static void cauldron_scene_step1_create_dropping_item(u16 frame) {
     cauldron_scene_next_step(cauldron_scene_step2_wait_dropping_item);
     play_sound(23);
 }
-
-
 
 static void cauldron_scene_step0_scroll_down(u16 frame) {
     if (frame <= 32) {
@@ -504,8 +512,8 @@ void cauldron_scene_setup() {
         }
         case 2: {
             tbox_sync_with_virtual_bg_and_init_all(cauldron_tboxes);
-            lz77uncompvram(gfx_crafting_cauldronTiles, CHARBASE(2)); // on bg3
-            lz77uncompvram(gfx_crafting_cauldron_topTiles, CHARBASE(1)); // on bg2
+            lz77uncompvram(gfx_crafting_cauldronTiles, CHARBASE(2));         // on bg3
+            lz77uncompvram(gfx_crafting_cauldron_topTiles, CHARBASE(1));     // on bg2
             lz77uncompvram(gfx_crafting_cauldron_overlayTiles, CHARBASE(0)); // on bg1
             lz77uncompwram(gfx_crafting_cauldronMap, bg_get_tilemap(3));
             lz77uncompwram(gfx_crafting_cauldron_topMap, bg_get_tilemap(2));
@@ -525,8 +533,8 @@ void cauldron_scene_setup() {
         }
         case 4: {
             for (u8 i = 0; i < ARRAY_COUNT(CAULDRON_SCENE_STATE->oams_lights); i++) {
-                CAULDRON_SCENE_STATE->oams_lights[i] = oam_new_forward_search(&cauldron_light_oam_template, 
-                    cauldron_light_positions[i].x, cauldron_light_positions[i].y, 0);
+                CAULDRON_SCENE_STATE->oams_lights[i] = oam_new_forward_search(&cauldron_light_oam_template,
+                                                                              cauldron_light_positions[i].x, cauldron_light_positions[i].y, 0);
                 oam_object *oam = oams + CAULDRON_SCENE_STATE->oams_lights[i];
                 oam->private[2] = i;
                 if (i == 2) {
@@ -556,9 +564,9 @@ void cauldron_scene_setup() {
         case 7: {
             fadescreen_all(0, 0);
             io_set(IO_WININ, IO_WININOUT_OBJ(0) |
-                IO_WININOUT_BG(0, 0) | IO_WININOUT_BG(0, 1) | IO_WININOUT_BG(0, 2) | IO_WININOUT_BG(0, 3) |
-                IO_WININOUT_BG(1, 0) | IO_WININOUT_BG(1, 1) | IO_WININOUT_BG(1, 2) | IO_WININOUT_BG(1, 3) |
-                IO_WININOUT_OBJ(1) | IO_WININOUT_FX(0));
+                                 IO_WININOUT_BG(0, 0) | IO_WININOUT_BG(0, 1) | IO_WININOUT_BG(0, 2) | IO_WININOUT_BG(0, 3) |
+                                 IO_WININOUT_BG(1, 0) | IO_WININOUT_BG(1, 1) | IO_WININOUT_BG(1, 2) | IO_WININOUT_BG(1, 3) |
+                                 IO_WININOUT_OBJ(1) | IO_WININOUT_FX(0));
             io_set(IO_WINOUT, IO_WININOUT_BG(0, 0) | IO_WININOUT_BG(1, 0));
 
             io_set(IO_BLDCNT, IO_BLDCNT_ALPHA_BLENDING | IO_BLDCNT_BG2_FIRST | IO_BLDCNT_BG3_SECOND | IO_BLDCNT_OBJ_SECOND);
@@ -571,8 +579,6 @@ void cauldron_scene_setup() {
     }
     CAULDRON_SCENE_STATE->state++;
 }
-
-
 
 void cauldron_scene_initialize(crafting_recipe *recipe, crafting_ui_state *ui_state) {
     fmem.gp_state = malloc_and_clear(sizeof(cauldron_scene_state));

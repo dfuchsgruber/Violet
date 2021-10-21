@@ -681,7 +681,7 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 	lsr r4, r0, #0x10
 	b 0x0801e0d4
 	.pool
-/** 
+/*
 .org 0x08012642
 	ldr r0, =hook_battle_initialize_absent_battlers | 1
 	bx r0
@@ -691,9 +691,9 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 	ldr r1, =battler_sprite_visible | 1
 	bx r1
 	.pool
-**/
+*/
 
-/**
+/*
 .org 0x08077c12
 	mov r0, r7 // Battler idx
 	ldr r1, =battler_sprite_visible | 1
@@ -707,7 +707,7 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 	bl _blxr1
 	b 0x08078088
 	.pool
-**/
+*/
 
 .org 0x0807fee4
 	ldr r0, =battle_trainer_get_transition_type | 1

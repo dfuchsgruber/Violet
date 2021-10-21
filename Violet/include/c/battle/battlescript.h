@@ -8,8 +8,8 @@
 #ifndef INCLUDE_C_BATTLE_BATTLESCRIPT_H_
 #define INCLUDE_C_BATTLE_BATTLESCRIPT_H_
 
-#include "types.h"
 #include "constants/battle/bsc_status_flags.h"
+#include "types.h"
 
 #define BSC_STATUS_FLAG_FAINTED(battler_idx) (int_bitmasks[battler_idx] << 0x1C)
 #define BSC_STATUS_FLAG_FAINTED2(battler_idx) (0x10000000 << battler_idx)
@@ -19,44 +19,43 @@ extern u8 *bsc_offset;
 extern u8 bsc_effect_to_apply;
 
 typedef struct {
-	u8 stat_change;
-	u8 field_1;
-	u8 field_2;
-	u8 field_3;
-	int field_4;
-	u8 field_8;
-	u8 field_9;
-	u8 field_A;
-	u8 field_B;
-	u8 field_C;
-	u8 field_D;
-	u16 field_E;
-	u8 animation;
-	u8 field_11;
-	u8 field_12;
-	u8 field_13;
-	u8 field_14;
-	u8 field_15;
-	u8 field_16;
-	u8 battler_idx;
-	u8 field_18;
-	u8 field_19;
-	u8 status_effect;
-	u8 field_1B;
-	u8 field_1C;
-	u8 field_1D;
-	u8 field_1E;
+    u8 stat_change;
+    u8 field_1;
+    u8 field_2;
+    u8 field_3;
+    int field_4;
+    u8 field_8;
+    u8 field_9;
+    u8 field_A;
+    u8 field_B;
+    u8 field_C;
+    u8 field_D;
+    u16 field_E;
+    u8 animation;
+    u8 field_11;
+    u8 field_12;
+    u8 field_13;
+    u8 field_14;
+    u8 field_15;
+    u8 field_16;
+    u8 battler_idx;
+    u8 field_18;
+    u8 field_19;
+    u8 status_effect;
+    u8 field_1B;
+    u8 field_1C;
+    u8 field_1D;
+    u8 field_1E;
 } battlescript_global_stru;
 
 typedef struct {
-	u8 *scripts[8];
-	u8 size;
+    u8 *scripts[8];
+    u8 size;
 } battlescript_stack_t;
 
 extern battlescript_global_stru bsc_global;
 
-
-typedef struct  {
+typedef struct {
     u32 pain_split_damage;
     u32 bide_damage;
     u8 multihit_string[6];
@@ -87,18 +86,17 @@ typedef struct  {
 
 extern battle_scripting_t battle_scripting;
 
-#define SET_STATCHANGE(stat, stages, goes_down)(battle_scripting.stat_change = (u8)((stat) + (stages << 4) + (goes_down << 7)))
-
+#define SET_STATCHANGE(stat, stages, goes_down) (battle_scripting.stat_change = (u8)((stat) + (stages << 4) + (goes_down << 7)))
 
 extern u16 bsc_last_used_item; // Used for the BSC_LAST_ITEM buffer
 
-extern u8 *battlescripts_pokeball[0xD]; // Battle-Scripts for using different pokeballs...
-extern u8 *battlescripts_run_by_item[]; // Battle-Scripts for running using different items
-extern u8 *battlescripts_use_item[]; // Battle-Scripts for using different item types
-extern u8 battlescript_apply_status1[]; // Battle-Script that applies a status1 condition (burn, posion, etc.). Uses battle communcitation and the MOVE_EFECT_BYTE
+extern u8 *battlescripts_pokeball[0xD];              // Battle-Scripts for using different pokeballs...
+extern u8 *battlescripts_run_by_item[];              // Battle-Scripts for running using different items
+extern u8 *battlescripts_use_item[];                 // Battle-Scripts for using different item types
+extern u8 battlescript_apply_status1[];              // Battle-Script that applies a status1 condition (burn, posion, etc.). Uses battle communcitation and the MOVE_EFECT_BYTE
 extern u8 battlescript_attack_failed_no_pp_reduce[]; // Prints the "but if failed" message and doesn't reduce pp, ends the move afterwards
-extern u8 bsc_roar_success_force_out[]; // Forces a pokémon out, making the target select a new switch in target
-extern u8 bsc_roar_sucess_end_battle[]; // Uses roar to end a battle
+extern u8 bsc_roar_success_force_out[];              // Forces a pokémon out, making the target select a new switch in target
+extern u8 bsc_roar_sucess_end_battle[];              // Uses roar to end a battle
 /**
  * Loads the graphic for the attack "transform"
  * @param user_index battler index of the user
@@ -112,7 +110,7 @@ void battlescript_transform_load_graphic(u8 user_index, u8 target_index, u8 unko
  * @param str the string to print
  * @param duration the number of frames for the string to be present
  */
-void battle_print_string(u8* str, u16 duration);
+void battle_print_string(u8 *str, u16 duration);
 
 /**
  * Initializes the battle script sequences for attacks
@@ -138,7 +136,7 @@ void battlescript_init_and_interrupt_battle(u8 *bsc);
 /**
  * Initializes a battlescript. The current battle callback is pushed.
  * @param script the script to run. Scripts should be ended using end2.
- **/
+ */
 void battlescript_init_and_push_current_callback(u8 *script);
 
 /**
@@ -155,7 +153,7 @@ void bsc_cmd_xEA_recycle_item();
 /**
  * Battlescript command that step-by-step triggers events after a battle.
  * In Violet, this function is wrapped...
- **/
+ */
 void bsc_cmd_x49_attack_done();
 
 /**
@@ -174,22 +172,21 @@ int bsc_get_word();
  * Gets the battler idx associated with a battlescript argument.
  * @param arg the battle script argument
  * @return the battler idx
- **/
+ */
 u8 battlescript_argument_to_battler_idx(u8 arg);
 
 /**
  * Attempts to do a forced switch out and calls the proper subscript on failure.
  * @return if the switch out was sucessful
- **/
+ */
 bool battlescript_force_switch_out();
 
 /**
  * Normal typecalc battlescript command that considers move effectivenesses.
- **/
+ */
 void bsc_command_x06_typecalc();
 
 void sub_08013ef0(u8 battler_idx);
-
 
 // Multipliers for how much money is lost at losing a battle.
 extern u8 money_lost_multipliers_by_number_of_badges[9];

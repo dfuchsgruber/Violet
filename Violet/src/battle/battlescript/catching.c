@@ -1,23 +1,23 @@
-#include "types.h"
+#include "battle/attack.h"
+#include "battle/battler.h"
 #include "battle/battlescript.h"
+#include "battle/communication.h"
+#include "battle/controller.h"
+#include "battle/state.h"
+#include "bios.h"
+#include "constants/flags.h"
+#include "constants/map_types.h"
+#include "constants/pokemon_attributes.h"
+#include "constants/pokemon_types.h"
+#include "debug.h"
+#include "dns.h"
+#include "flags.h"
+#include "item/pokeball.h"
+#include "pokemon/basestat.h"
 #include "pokemon/virtual.h"
 #include "pokepad/pokedex/operator.h"
-#include "constants/pokemon_attributes.h"
-#include "constants/flags.h"
-#include "flags.h"
-#include "debug.h"
-#include "battle/state.h"
-#include "battle/battler.h"
-#include "battle/attack.h"
-#include "battle/controller.h"
-#include "battle/communication.h"
-#include "item/pokeball.h"
-#include "bios.h"
-#include "constants/pokemon_types.h"
-#include "pokemon/basestat.h"
 #include "prng.h"
-#include "constants/map_types.h"
-#include "dns.h"
+#include "types.h"
 
 u8 bsc_cmd_xEF_determine_target_to_catch() {
     u8 target = battler_get_by_position(BATTLE_POSITION_OPPONENT_LEFT);
@@ -34,24 +34,26 @@ pokemon *battle_get_catch_target_pokemon() {
 }
 
 bool bsc_cmd_x23_should_play_victory_music() {
-    if (battle_flags & BATTLE_TRAINER) 
+    if (battle_flags & BATTLE_TRAINER)
         return false;
-    if (battle_state->victory_song_idx != 0) 
+    if (battle_state->victory_song_idx != 0)
         return false;
     int total_hp = 0;
     for (int i = 0; i < player_pokemon_recount_pokemon(); i++) {
         total_hp += pokemon_get_attribute(player_pokemon + i, ATTRIBUTE_CURRENT_HP, 0);
     }
-    if (total_hp == 0) return false; // Player has no viable mons and thus lost!
+    if (total_hp == 0)
+        return false; // Player has no viable mons and thus lost!
     // Check if there are any other non-trainer mons to battle
     total_hp = 0;
     for (int i = 0; i < 6; i++) {
         total_hp += pokemon_get_attribute(opponent_pokemon + i, ATTRIBUTE_CURRENT_HP, 0);
     }
-    if (total_hp > 0) return false;
+    if (total_hp > 0)
+        return false;
     return true;
 }
- 
+
 void battle_handle_successful_ball_throw() {
     battle_sprite_data->animation_info->ball_throw_state = 4; // success
     battle_animation_active = true;
@@ -66,33 +68,31 @@ void battle_handle_ball_throw() {
     battle_controllers[active_battler] = battle_controller_wait_for_animation;
 }
 
-
-void bsc_pokemon_caught(){
+void bsc_pokemon_caught() {
     pokemon *p = opponent_pokemon + battler_idx_to_party_idx(bsc_cmd_xEF_determine_target_to_catch());
     //dprintf("Bsc before caught %x\n", bsc_offset);
     u16 species = (u16)pokemon_get_attribute(p, ATTRIBUTE_SPECIES, 0);
     dprintf("Bsc pokemon caught with battler %d, species %d\n", bsc_cmd_xEF_determine_target_to_catch(), species);
     u16 dex_id = pokedex_get_id(species);
     pid_t pid = {.value = (u32)pokemon_get_attribute(p, ATTRIBUTE_PID, 0)};
-    bool caught = pokedex_operator(species,POKEDEX_GET | POKEDEX_CAUGHT, true);
-    if(caught){
-      u8 *bsc_off_loc = &((bsc_offset)[1]);
-      int target = UNALIGNED_32_GET(bsc_off_loc);
-      bsc_offset = (u8*)target;
-    }else{
+    bool caught = pokedex_operator(species, POKEDEX_GET | POKEDEX_CAUGHT, true);
+    if (caught) {
+        u8 *bsc_off_loc = &((bsc_offset)[1]);
+        int target = UNALIGNED_32_GET(bsc_off_loc);
+        bsc_offset = (u8 *)target;
+    } else {
         //catch pokemon
         pokedex_set_caught_and_load_pid(dex_id, 0b11, pid);
-        if(checkflag(CAUGHT_POKEDEX_DISABLE)){
+        if (checkflag(CAUGHT_POKEDEX_DISABLE)) {
             u8 *bsc_off_loc = &((bsc_offset)[1]);
             int target = UNALIGNED_32_GET(bsc_off_loc);
-            bsc_offset = (u8*)target;
-        }else{
-            bsc_offset = (u8*)((int)(bsc_offset) + 5);   
+            bsc_offset = (u8 *)target;
+        } else {
+            bsc_offset = (u8 *)((int)(bsc_offset) + 5);
         }
     }
     //dprintf("Bsc after caught %x\n", bsc_offset);
 }
-
 
 extern u8 bsc_trainer_blocks_catch_attempt[];
 extern u8 bsc_ball_throw_success[];
@@ -104,22 +104,28 @@ static void bsc_ballthrow_success_set_pokemon_attribues(u8 battler_idx) {
     pokemon_set_attribute(p, ATTRIBUTE_CATCH_INFO, &ball_idx);
     switch (ball_idx) {
         case BALL_LOTUS: {
-                if (rnd16() % 1 == 0)
-                    pokemon_set_hidden_ability(&p->box);
+            if (rnd16() % 1 == 0)
+                pokemon_set_hidden_ability(&p->box);
             break;
         }
         case BALL_HP:
-            pokemon_set_potential_ev(p, STAT_HP, 48); break;
+            pokemon_set_potential_ev(p, STAT_HP, 48);
+            break;
         case BALL_ATTACK:
-            pokemon_set_potential_ev(p, STAT_ATTACK, 48); break;
+            pokemon_set_potential_ev(p, STAT_ATTACK, 48);
+            break;
         case BALL_DEFENSE:
-            pokemon_set_potential_ev(p, STAT_DEFENSE, 48); break;
+            pokemon_set_potential_ev(p, STAT_DEFENSE, 48);
+            break;
         case BALL_SPEED:
-            pokemon_set_potential_ev(p, STAT_SPEED, 48); break;
+            pokemon_set_potential_ev(p, STAT_SPEED, 48);
+            break;
         case BALL_SPECIAL_ATTACK:
-            pokemon_set_potential_ev(p, STAT_SPECIAL_ATTACK, 48); break;
+            pokemon_set_potential_ev(p, STAT_SPECIAL_ATTACK, 48);
+            break;
         case BALL_SPECIAL_DEFENSE:
-            pokemon_set_potential_ev(p, STAT_SPECIAL_DEFENSE, 48); break;
+            pokemon_set_potential_ev(p, STAT_SPECIAL_DEFENSE, 48);
+            break;
     }
 }
 
@@ -145,16 +151,16 @@ void bsc_command_xEF_handleballthrow(void) {
             u8 ball_idx = item_idx_to_pokeball_idx(bsc_last_used_item);
             switch (ball_idx) {
                 default:
-                    ball_multiplier = 10; 
+                    ball_multiplier = 10;
                     break;
                 case BALL_GREAT:
-                    ball_multiplier = 15; 
+                    ball_multiplier = 15;
                     break;
                 case BALL_ULTRA:
-                    ball_multiplier = 20; 
+                    ball_multiplier = 20;
                     break;
                 case BALL_SAFARI:
-                    ball_multiplier = 15; 
+                    ball_multiplier = 15;
                     break;
                 case BALL_NET:
                     if (battlers[defending_battler].type1 == TYPE_WASSER || battlers[defending_battler].type2 == TYPE_WASSER ||
@@ -199,8 +205,7 @@ void bsc_command_xEF_handleballthrow(void) {
             }
             dprintf("Ball multiplier of item %d (=ball %d) is %d\n", bsc_last_used_item, ball_idx, ball_multiplier);
             odds = (u32)((catch_rate * ball_multiplier / 10) *
-                    (battlers[defending_battler].max_hp * 3 - battlers[defending_battler].current_hp * 2)
-                    / (3 * battlers[defending_battler].max_hp));
+                         (battlers[defending_battler].max_hp * 3 - battlers[defending_battler].current_hp * 2) / (3 * battlers[defending_battler].max_hp));
             if (battlers[defending_battler].status1 & (STATUS1_SLEEPING | STATUS1_FROZEN))
                 odds *= 2;
             if (battlers[defending_battler].status1 & (STATUS1_POISONED_ANY | STATUS1_BURNED | STATUS1_PARALYZED))
@@ -222,7 +227,8 @@ void bsc_command_xEF_handleballthrow(void) {
                     odds = sqrt32(sqrt32(16711680 / odds));
                     odds = 1048560 / odds;
                     dprintf("Probability for a single shake is 0x%x\n", odds);
-                    for (shakes = 0; shakes < 4 && rnd16() < odds; ++shakes);
+                    for (shakes = 0; shakes < 4 && rnd16() < odds; ++shakes)
+                        ;
                 }
             }
             dprintf("%d shakes!\n", shakes);

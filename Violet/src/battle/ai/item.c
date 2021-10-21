@@ -1,21 +1,21 @@
-#include "types.h"
-#include "battle/state.h"
-#include "battle/battler.h"
+#include "item/item.h"
 #include "battle/ai.h"
 #include "battle/attack.h"
-#include "item/item_effect.h"
-#include "item/item.h"
-#include "constants/item_effect_types.h"
-#include "constants/items.h"
-#include "constants/battle/battle_ai_item_types.h"
-#include "debug.h"
+#include "battle/battler.h"
+#include "battle/ressources.h"
+#include "battle/state.h"
 #include "constants/abilities.h"
 #include "constants/attacks.h"
-#include "battle/ressources.h"
 #include "constants/battle/battle_ai_item_flags.h"
+#include "constants/battle/battle_ai_item_types.h"
+#include "constants/item_effect_types.h"
+#include "constants/items.h"
+#include "debug.h"
+#include "item/item_effect.h"
+#include "types.h"
 
 #define AI_DEBUG_ITEMS_ON true
-#define AI_DEBUG_ITEMS(str, ...) ({if (AI_DEBUG_ITEMS_ON) dprintf(str, __VA_ARGS__);})
+#define AI_DEBUG_ITEMS(str, ...) ({if (AI_DEBUG_ITEMS_ON) dprintf(str, __VA_ARGS__); })
 
 static u8 ai_get_item_type(u16 item, item_effect_t *effect) {
     if (item == ITEM_TOP_GENESUNG || item == ITEM_GOLDAPFEL)
@@ -26,32 +26,35 @@ static u8 ai_get_item_type(u16 item, item_effect_t *effect) {
         return AI_ITEM_CURE_CONDITION;
     else if (effect->x_accuracy || effect->x_attack || effect->x_defense || effect->x_special_attack || effect->x_speed || effect->increase_critical_ratio)
         return AI_ITEM_X_STAT;
-    else if (effect->creates_mist )
+    else if (effect->creates_mist)
         return AI_ITEM_GUARD_SPECS;
     else
         return AI_ITEM_NOT_RECOGNIZABLE;
 }
 
 u8 battle_ai_should_use_item(int *score) {
-    if (!(battle_flags & BATTLE_TRAINER)) return 4;
+    if (!(battle_flags & BATTLE_TRAINER))
+        return 4;
     u8 first = 0, last = 0, partner = 0, foe = 0, foe_partner = 0;
     battler_get_partner_and_foes(active_battler, &partner, &foe, &foe_partner);
     pokemon *party = battler_load_party_range(active_battler, &first, &last);
-
 
     // Check how many items the AI has still left in relation to the number of battlers
     u8 owner = battler_get_owner(active_battler);
     int num_items = 0, num_viable_pokemon = 0, party_size = 0;
     for (u8 i = 0; i < BATTLE_STATE2->num_items[owner]; i++) {
-        if (BATTLE_STATE2->items[owner][i]) num_items++; 
+        if (BATTLE_STATE2->items[owner][i])
+            num_items++;
     }
     AI_DEBUG_ITEMS("Battle ai for battler %d has %d items.\n", active_battler, num_items);
     if (num_items == 0)
         return 4;
     for (u8 i = first; i < last; i++) {
-        if (POKEMON_IS_VIABLE(party + i)) num_viable_pokemon++;
+        if (POKEMON_IS_VIABLE(party + i))
+            num_viable_pokemon++;
         if (pokemon_get_attribute(party + i, ATTRIBUTE_SPECIES2, 0) != 0 && pokemon_get_attribute(party + i, ATTRIBUTE_SPECIES2, 0) != POKEMON_EGG &&
-            !pokemon_get_attribute(party + i, ATTRIBUTE_IS_EGG, 0)) party_size++;
+            !pokemon_get_attribute(party + i, ATTRIBUTE_IS_EGG, 0))
+            party_size++;
     }
     // Compare the ratios of pokemon in the party that are viable to items left
     // Negative bias towards item use, if the ratio of mons in the team exceeds the ratio of items
@@ -65,16 +68,19 @@ u8 battle_ai_should_use_item(int *score) {
 
     // Check if the item is eligible anyways
     u8 item_idx_to_choose = 4;
-    int best_item_score = INT_MIN;;
+    int best_item_score = INT_MIN;
+    ;
     for (u8 i = 0; i < BATTLE_STATE2->num_items[owner]; i++) {
         AI_DEBUG_ITEMS("Checking if item %d is applicable...\n", i);
         u16 item = BATTLE_STATE2->items[owner][i];
-        if (item == 0 || item < ITEM_TRANK) continue;
+        if (item == 0 || item < ITEM_TRANK)
+            continue;
         item_effect_t *effect = item_effects[item - ITEM_TRANK];
         ai_item_types[i] = ai_get_item_type(item, effect);
         ai_item_flags[i] = 0;
         int item_score = 0;
-        if (item == ITEM_TOP_GENESUNG || item == ITEM_GOLDAPFEL) goto check_heal_hp;
+        if (item == ITEM_TOP_GENESUNG || item == ITEM_GOLDAPFEL)
+            goto check_heal_hp;
         switch (item_get_effect_type(item)) {
             case ITEM_EFFECT_X_ITEM: {
                 int stat_change_current = 6;
@@ -107,9 +113,9 @@ u8 battle_ai_should_use_item(int *score) {
                     break;
                     ai_item_flags[i] |= AI_ITEM_FLAG_HIGH_CRITICAL_RATIO;
                 }
-                if (stat_change_current + increase >= 12) 
+                if (stat_change_current + increase >= 12)
                     increase = 12 - stat_change_current;
-                if (increase <= 0) 
+                if (increase <= 0)
                     continue;
                 int stat_change_score = increase * (12 - stat_change_current) / 2;
                 AI_DEBUG_ITEMS("Stat change score for item %d is %d\n", i, stat_change_score);
@@ -129,7 +135,8 @@ u8 battle_ai_should_use_item(int *score) {
                 } else {
                     continue;
                 }
-                if (battlers[active_battler].ability == GIFTWAHN) continue;
+                if (battlers[active_battler].ability == GIFTWAHN)
+                    continue;
                 if (battlers[active_battler].ability == NOTSCHUTZ || battlers[attacking_battler].ability == EXPIDERMIS)
                     item_score /= 2;
                 ai_item_flags[i] |= AI_ITEM_FLAG_POISON;
@@ -139,14 +146,17 @@ u8 battle_ai_should_use_item(int *score) {
             check_sleep:
                 if (battlers[active_battler].status1 & STATUS1_SLEEPING) {
                     item_score = 4;
-                } else continue;
+                } else
+                    continue;
                 // Check if the battler can use sleep talk
                 u8 move_limitations = battler_check_move_limitations(active_battler, 0, MOVE_LIMITATION_ALL);
                 bool can_sleep_talk = false;
                 for (int j = 0; j < 4; j++) {
-                    if (!(move_limitations & int_bitmasks[j]) && battlers[active_battler].moves[j] == ATTACK_SCHLAFREDE) can_sleep_talk = true; 
+                    if (!(move_limitations & int_bitmasks[j]) && battlers[active_battler].moves[j] == ATTACK_SCHLAFREDE)
+                        can_sleep_talk = true;
                 }
-                if (can_sleep_talk) continue;
+                if (can_sleep_talk)
+                    continue;
                 if (battlers[active_battler].ability == NOTSCHUTZ || battlers[attacking_battler].ability == EXPIDERMIS || battlers[attacking_battler].ability == FRUEHWECKER)
                     item_score /= 2;
                 ai_item_flags[i] |= AI_ITEM_FLAG_SLEEP;
@@ -156,8 +166,10 @@ u8 battle_ai_should_use_item(int *score) {
             check_burn:
                 if (battlers[active_battler].status1 & STATUS1_BURNED) {
                     item_score = 4;
-                } else continue;
-                if (battlers[active_battler].ability == HITZEWAHN) continue;
+                } else
+                    continue;
+                if (battlers[active_battler].ability == HITZEWAHN)
+                    continue;
                 if (battlers[active_battler].ability == NOTSCHUTZ || battlers[attacking_battler].ability == EXPIDERMIS)
                     item_score /= 2;
                 ai_item_flags[i] |= AI_ITEM_FLAG_BURN;
@@ -167,46 +179,63 @@ u8 battle_ai_should_use_item(int *score) {
             check_freeze:
                 if (battlers[active_battler].status1 & STATUS1_FROZEN) {
                     item_score = 6;
-                } else continue;
+                } else
+                    continue;
                 if (battlers[active_battler].ability == NOTSCHUTZ || battlers[attacking_battler].ability == EXPIDERMIS)
                     item_score /= 2;
                 ai_item_flags[i] |= AI_ITEM_FLAG_FREEZE;
                 break;
-            } case ITEM_EFFECT_HEAL_PARALYSIS: {
+            }
+            case ITEM_EFFECT_HEAL_PARALYSIS: {
             check_paralysis:
                 if (battlers[active_battler].status1 & STATUS1_PARALYZED) {
                     item_score = 4;
-                } else continue;
+                } else
+                    continue;
                 if (battlers[active_battler].ability == NOTSCHUTZ || battlers[attacking_battler].ability == EXPIDERMIS)
                     item_score /= 2;
                 ai_item_flags[i] |= AI_ITEM_FLAG_PARALYSIS;
                 break;
-            } case ITEM_EFFECT_HEAL_CONFUSION: {
+            }
+            case ITEM_EFFECT_HEAL_CONFUSION: {
             check_confusion:
                 if (battlers[active_battler].status2 & STATUS2_CONFUSED) {
                     item_score = 4;
-                } else continue;
+                } else
+                    continue;
                 ai_item_flags[i] |= AI_ITEM_FLAG_CONFUSION;
                 break;
-            } case ITEM_EFFECT_HEAL_INFATUATION: {
+            }
+            case ITEM_EFFECT_HEAL_INFATUATION: {
             check_infatuation:
                 if (battlers[active_battler].status2 & STATUS2_INFATUATION) {
                     item_score = 4;
-                } else continue;
+                } else
+                    continue;
                 break;
-            } case ITEM_EFFECT_HEAL_ALL_STATUS: {
-                if (battlers[active_battler].status1 & STATUS1_POISONED_ANY) goto check_poison;
-                if (battlers[active_battler].status1 & STATUS1_SLEEPING) goto check_sleep;
-                if (battlers[active_battler].status1 & STATUS1_BURNED) goto check_burn;
-                if (battlers[active_battler].status1 & STATUS1_FROZEN) goto check_freeze;
-                if (battlers[active_battler].status1 & STATUS1_PARALYZED) goto check_paralysis;
-                if (battlers[active_battler].status2 & STATUS2_CONFUSED) goto check_confusion;
-                if (battlers[active_battler].status2 & STATUS2_INFATUATION) goto check_infatuation;
+            }
+            case ITEM_EFFECT_HEAL_ALL_STATUS: {
+                if (battlers[active_battler].status1 & STATUS1_POISONED_ANY)
+                    goto check_poison;
+                if (battlers[active_battler].status1 & STATUS1_SLEEPING)
+                    goto check_sleep;
+                if (battlers[active_battler].status1 & STATUS1_BURNED)
+                    goto check_burn;
+                if (battlers[active_battler].status1 & STATUS1_FROZEN)
+                    goto check_freeze;
+                if (battlers[active_battler].status1 & STATUS1_PARALYZED)
+                    goto check_paralysis;
+                if (battlers[active_battler].status2 & STATUS2_CONFUSED)
+                    goto check_confusion;
+                if (battlers[active_battler].status2 & STATUS2_INFATUATION)
+                    goto check_infatuation;
                 continue;
-            } case ITEM_EFFECT_HEAL_HP:
-            check_heal_hp: {
+            }
+            case ITEM_EFFECT_HEAL_HP:
+            check_heal_hp : {
                 int amount = battlers[active_battler].max_hp - battlers[active_battler].current_hp;
-                if (amount <= 0) continue;
+                if (amount <= 0)
+                    continue;
                 if (battlers[active_battler].current_hp < battlers[active_battler].max_hp / 4) {
                     item_score = 2 - (battlers[active_battler].current_hp * 4 / battlers[active_battler].max_hp);
                     AI_DEBUG_ITEMS("Healing hp item score %d\n", item_score);
@@ -215,7 +244,8 @@ u8 battle_ai_should_use_item(int *score) {
                 }
                 break;
             }
-            default: continue; // AI can't use item of this type...
+            default:
+                continue; // AI can't use item of this type...
         }
         if (item_score > best_item_score) {
             item_idx_to_choose = i;

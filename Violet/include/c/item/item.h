@@ -8,10 +8,9 @@
 #ifndef INCLUDE_C_ITEM_ITEM_H_
 #define INCLUDE_C_ITEM_ITEM_H_
 
-
+#include "constants/item_pockets.h"
 #include "constants/items.h"
 #include "item/item_effect.h"
-#include "constants/item_pockets.h"
 #include "oam.h"
 
 typedef struct {
@@ -34,14 +33,14 @@ typedef struct {
 item items[ITEM_CNT];
 
 typedef struct {
-	u8 hold_effect;
-	u8 type;
+    u8 hold_effect;
+    u8 type;
 } item_hold_effect_type_boost_stru;
 
 #define ITEM_HOLD_EFFECT_TYPE_BOOSTS_SIZE 17
 
 extern item_hold_effect_type_boost_stru
-item_hold_effect_type_boosts[ITEM_HOLD_EFFECT_TYPE_BOOSTS_SIZE];
+    item_hold_effect_type_boosts[ITEM_HOLD_EFFECT_TYPE_BOOSTS_SIZE];
 
 void (*item_callback_after_pokemon_selected)(u8, void (*)(u8));
 
@@ -53,14 +52,14 @@ void (*item_use_continuation)(u8);
  * Copies an items name
  * @param item_idx which items name to copy
  * @param dst where to copy the name to
- **/
+ */
 void item_strcpy(u16 item_idx, u8 *dst);
 
 /**
  * Gets the name of an item.
  * @param item_idx the item to get the name of
  * @return offset of the item's name
- **/
+ */
 u8 *item_get_name(u16 item_idx);
 
 /**
@@ -143,46 +142,46 @@ bool item_check(u16 item, u16 quantity);
  * @param item the item to check
  * @param quantity the amount
  * @return if the player's bag can hold this much items
- **/
+ */
 bool item_has_room(u16 item, u16 quantity);
 
 /**
  * Item function for items that use an effect from the effect table.
  * @param self reference to the callback
- **/
+ */
 void item_field_by_effect_table(u8 self);
 
 /**
  * Item field function for null syrup.
  * @param self self-reference
- **/
+ */
 void item_field_null_syrup(u8 self);
 
 /**
  * Gets the price of an item.
  * @param item_idx the item to get the price of
  * @return the item price
- **/
+ */
 u16 item_get_price(u16 item_idx);
 
 /**
  * Battle function for pokéballs
  * @param self self-reference
- **/
+ */
 void item_pokeball_battle(u8 self);
 
 /**
  * Gets the pocket of an item
  * @param item the item to get the pocket of
  * @return pocket the pocket of the item
- **/
+ */
 u8 item_get_pocket(u16 item);
 
 /**
  * Gets the importance of an item
  * @param item the item idx
  * @return the item's importance
- **/
+ */
 u8 item_get_importance(u16 item);
 
 u16 tm_hm_to_attack[58];
@@ -193,7 +192,7 @@ u16 tm_hm_to_attack[58];
  * @param pal_tag which pal tag to associate with the oam
  * @param item_idx which item to show
  * @return the oam idx
- **/
+ */
 u8 item_oam_new(u16 tiles_tag, u16 pal_tag, u16 item_idx);
 
 /**
@@ -203,7 +202,7 @@ u8 item_oam_new(u16 tiles_tag, u16 pal_tag, u16 item_idx);
  * @param pal_tag which pal tag to associate with the oam
  * @param item_idx which item to show
  * @return the oam idx
- **/
+ */
 u8 item_oam_new_by_template(const oam_template *template, u16 tiles_tag, u16 pal_tag, u16 item_idx);
 
 /**
@@ -211,67 +210,64 @@ u8 item_oam_new_by_template(const oam_template *template, u16 tiles_tag, u16 pal
  * @param item the item to get the resource of
  * @param get_palette a bool indicating if the palette should be retrieved
  * @return the resource
- **/
+ */
 const u8 *item_get_resource(u16 item, u8 get_palette);
 
 /**
  * Checks how many copies of an item the bag has
  * @param item_idx the item to check
  * @return count the number of copies of this item in the bag
- **/
+ */
 u16 item_get_count(u16 item_idx);
 
 /**
  * Fades to a scene that fits the item to use (either overworld or party menu) and executes the item callback there.
  * @param self self-reference
- **/
+ */
 void item_field_fade_to_scene_and_execute_callback(u8 self);
 
 /**
  * Item callback for executing rare candy.
  * @param self self-reference
  * @param failure_continuation where to continue in case of a failure
- **/
+ */
 void item_callback_rare_candy(u8 self, void (*failure_continuation)(u8));
 
 /**
  * Field effect callback for the gold candy.
  * @param self self-reference
- **/
+ */
 void item_gold_candy_field_effect(u8 self);
 
 /**
  * Prints the string that an item can not be used currently (oak says that)
  * @param self self-reference
  * @param from_overworld if the item was used in the overworld (or in the bag)
- **/
+ */
 void item_print_string_can_not_be_used_by_oak(u8 self, u8 from_overworld);
 
 /**
  * Item effect for mulch
  * @param self self-reference
- **/
+ */
 void item_effect_mulch(u8 self);
 
 /**
  * Item effect for abra doll
  * @param self self-reference
- **/
+ */
 void item_field_effect_abra_doll(u8 self);
 
 /**
  * Checks if an item is a mail and can be written here in this context
  * @param item_idx the item to check
  * @return if the item is a mail and can be written
- **/
+ */
 bool item_is_mail_and_can_be_written(u16 item_idx);
-
-
 
 typedef struct {
     const u8 *gfx;
     const u8 *pal;
 } item_gfx_pair;
-
 
 #endif /* INCLUDE_C_ITEM_ITEM_H_ */

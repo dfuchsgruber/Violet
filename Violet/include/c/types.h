@@ -5,9 +5,9 @@
 #include "stddef.h"
 
 #if defined(__GNUC__) && __GNUC__ >= 7
- #define FALL_THROUGH __attribute__((fallthrough))
+#define FALL_THROUGH __attribute__((fallthrough))
 #else
- #define FALL_THROUGH ((void)0)
+#define FALL_THROUGH ((void)0)
 #endif /* __GNUC__ >= 7 */
 
 #define LOW 0
@@ -21,19 +21,19 @@ typedef unsigned long long int u64;
 typedef u8 UNALIGNED_16[2];
 typedef u8 UNALIGNED_32[4];
 
-#define UNALIGNED_16_GET(arr)((u16)((arr)[0] | ((arr)[1] << 8)))
-#define UNALIGNED_32_GET(arr)((int)((arr)[0] | ((arr)[1] << 8) | ((arr)[2] << 16) | ((arr)[3] << 24)))
+#define UNALIGNED_16_GET(arr) ((u16)((arr)[0] | ((arr)[1] << 8)))
+#define UNALIGNED_32_GET(arr) ((int)((arr)[0] | ((arr)[1] << 8) | ((arr)[2] << 16) | ((arr)[3] << 24)))
 
 typedef signed char s8;
 typedef signed short int s16;
 typedef signed int s32;
 typedef signed long long int s64;
 
-typedef volatile u8   vu8;
+typedef volatile u8 vu8;
 typedef volatile u16 vu16;
 typedef volatile u32 vu32;
 typedef volatile u64 vu64;
-typedef volatile s8   vs8;
+typedef volatile s8 vs8;
 typedef volatile s16 vs16;
 typedef volatile s32 vs32;
 typedef volatile s64 vs64;
@@ -53,8 +53,8 @@ typedef struct {
 
 #define ARRAY_COUNT(array) (size_t)(sizeof(array) / (size_t)sizeof((array)[0]))
 
-#define MIN(x,y) ((x) < (y) ? (x) : (y))
-#define MAX(x,y) ((x) > (y) ? (x) : (y))
+#define MIN(x, y) ((x) < (y) ? (x) : (y))
+#define MAX(x, y) ((x) > (y) ? (x) : (y))
 #define ABS(x) ((x) < 0 ? (-(x)) : (x))
 #define SGN(x) ((x < 0 ? -1 : (x > 0 ? 1 : 0)))
 
@@ -71,7 +71,7 @@ typedef s32 FIXED;
  * @return a + b as FIXED type
  */
 static inline FIXED FIXED_ADD(FIXED a, FIXED b) {
-  return a + b;
+    return a + b;
 }
 
 /**
@@ -81,7 +81,7 @@ static inline FIXED FIXED_ADD(FIXED a, FIXED b) {
  * @return a - b as FIXED type
  */
 static inline FIXED FIXED_SUB(FIXED a, FIXED b) {
-  return a - b;
+    return a - b;
 }
 
 /**
@@ -91,7 +91,7 @@ static inline FIXED FIXED_SUB(FIXED a, FIXED b) {
  * @return a * b as FIXED type
  */
 static inline FIXED FIXED_MUL(FIXED a, FIXED b) {
-  return (a >> (FIXED_SHIFT >> 1)) * (b >> (FIXED_SHIFT >> 1));
+    return (a >> (FIXED_SHIFT >> 1)) * (b >> (FIXED_SHIFT >> 1));
 }
 
 /**
@@ -101,9 +101,9 @@ static inline FIXED FIXED_MUL(FIXED a, FIXED b) {
  * @return a / b as FIXED type
  */
 static inline FIXED FIXED_DIV(FIXED a, FIXED b) {
-  int scale_a = FIXED_SHIFT >> 2;
-  int scale_b = FIXED_SHIFT - scale_a;
-  return (a << scale_a) / (b >> scale_b);
+    int scale_a = FIXED_SHIFT >> 2;
+    int scale_b = FIXED_SHIFT - scale_a;
+    return (a << scale_a) / (b >> scale_b);
 }
 
 /**
@@ -112,14 +112,14 @@ static inline FIXED FIXED_DIV(FIXED a, FIXED b) {
  * @return the integer value
  */
 static inline int FIXED_TO_INT(FIXED a) {
-  return (int)((a + (1 << (FIXED_SHIFT - 1))) >> FIXED_SHIFT);
+    return (int)((a + (1 << (FIXED_SHIFT - 1))) >> FIXED_SHIFT);
 }
 
 /**
  * Transforms an integer into a fixed point value
  */
 static inline FIXED INT_TO_FIXED(int a) {
-  return a << FIXED_SHIFT;
+    return a << FIXED_SHIFT;
 }
 
 extern u32 int_bitmasks[32];

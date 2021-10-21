@@ -1,17 +1,17 @@
-#include "types.h"
-#include "pokemon/virtual.h"
-#include "map/ceometria_gym.h"
+#include "constants/abilities.h"
 #include "constants/pokemon_attributes.h"
 #include "constants/pokemon_statuses.h"
-#include "vars.h"
-#include "flags.h"
-#include "constants/vars.h"
-#include "save.h"
-#include "overworld/script.h"
-#include "debug.h"
-#include "pokemon/basestat.h"
 #include "constants/pokemon_types.h"
-#include "constants/abilities.h"
+#include "constants/vars.h"
+#include "debug.h"
+#include "flags.h"
+#include "map/ceometria_gym.h"
+#include "overworld/script.h"
+#include "pokemon/basestat.h"
+#include "pokemon/virtual.h"
+#include "save.h"
+#include "types.h"
+#include "vars.h"
 
 void ceometria_gym_punishment_room_get_script() {
     int room_type = cmem.ceometria_gym_state.next_rooms[*var_access(CEOMETRIA_GYM_NEXT_ROOM)];
@@ -77,23 +77,23 @@ s16 ceometria_gym_punishment_get_eligible_index() {
             case CEOMETRIA_GYM_BADLY_POISON_ROOM:
             case CEOMETRIA_GYM_POISON_ROOM:
                 eligible = type1 != TYPE_GIFT && type2 != TYPE_GIFT && type1 != TYPE_STAHL && type2 != TYPE_STAHL &&
-                    ability != IMMUNITAET && pokemon_get_attribute(dst, ATTRIBUTE_CURRENT_HP, 0) > 0 && !(status & STATUS_CONDITION_ANY);
+                           ability != IMMUNITAET && pokemon_get_attribute(dst, ATTRIBUTE_CURRENT_HP, 0) > 0 && !(status & STATUS_CONDITION_ANY);
                 break;
             case CEOMETRIA_GYM_BURNING_ROOM:
-                eligible = type1 != TYPE_FEUER && type2 != TYPE_FEUER && ability != AQUAHUELLE && 
-                    pokemon_get_attribute(dst, ATTRIBUTE_CURRENT_HP, 0) > 0 && !(status & STATUS_CONDITION_ANY);
+                eligible = type1 != TYPE_FEUER && type2 != TYPE_FEUER && ability != AQUAHUELLE &&
+                           pokemon_get_attribute(dst, ATTRIBUTE_CURRENT_HP, 0) > 0 && !(status & STATUS_CONDITION_ANY);
                 break;
             case CEOMETRIA_GYM_PARALYSING_ROOM:
                 eligible = type1 != TYPE_ELEKTRO && type2 != TYPE_ELEKTRO && ability != FLEXIBILITAET &&
-                    pokemon_get_attribute(dst, ATTRIBUTE_CURRENT_HP, 0) > 0 && !(status & STATUS_CONDITION_ANY);
+                           pokemon_get_attribute(dst, ATTRIBUTE_CURRENT_HP, 0) > 0 && !(status & STATUS_CONDITION_ANY);
                 break;
             case CEOMETRIA_GYM_FREEZING_ROOM:
                 eligible = type1 != TYPE_EIS && type2 != TYPE_EIS && ability != MAGMAPANZER &&
-                    pokemon_get_attribute(dst, ATTRIBUTE_CURRENT_HP, 0) > 0 && !(status & STATUS_CONDITION_ANY);
+                           pokemon_get_attribute(dst, ATTRIBUTE_CURRENT_HP, 0) > 0 && !(status & STATUS_CONDITION_ANY);
                 break;
             case CEOMETRIA_GYM_SLEEPING_ROOM:
                 eligible = ability != INSOMNIA && ability != MUNTERKEIT &&
-                    pokemon_get_attribute(dst, ATTRIBUTE_CURRENT_HP, 0) > 0 && !(status & STATUS_CONDITION_ANY);
+                           pokemon_get_attribute(dst, ATTRIBUTE_CURRENT_HP, 0) > 0 && !(status & STATUS_CONDITION_ANY);
                 break;
             case CEOMETRIA_GYM_HEALING_ROOM:
                 eligible = !pokemon_is_healed(dst);
@@ -109,7 +109,6 @@ s16 ceometria_gym_punishment_get_eligible_index() {
                 }
                 break;
             }
-            
         }
         if (eligible) {
             indices[num_eligible++] = i;

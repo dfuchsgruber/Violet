@@ -1,8 +1,8 @@
 #ifndef H_SUPERSTATE
 #define H_SUPERSTATE
 
-#include "types.h"
 #include "oam.h"
+#include "types.h"
 
 typedef union {
 
@@ -37,7 +37,7 @@ typedef struct superstate {
     key keys_new;
     key keys_inv;
     key keys_remapped; //by options (L->A, R->B)
-    key keys_new_rst; //keys are registered as new here when pressed long enough
+    key keys_new_rst;  //keys are registered as new here when pressed long enough
     key keys_countdown;
     u16 keys_watched;
     key watched_keys;
@@ -80,12 +80,12 @@ void vblank_handler_set(void (*f)());
 
 /**
  * Updates the context of the game.
- **/
+ */
 void game_context_update();
 
 /**
  * Checks if the game state is "normal" or something like that, i.e. either a standard callback0 or a flag that must be set to bypass that.
- **/
+ */
 bool sub_080bf8d8();
 
 #endif

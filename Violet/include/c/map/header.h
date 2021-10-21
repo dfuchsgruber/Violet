@@ -8,11 +8,11 @@
 #ifndef INCLUDE_C_MAP_HEADER_H_
 #define INCLUDE_C_MAP_HEADER_H_
 
-#include "map/footer.h"
-#include "map/levelscript.h"
 #include "map/connection.h"
-#include "map/header.h"
 #include "map/event.h"
+#include "map/footer.h"
+#include "map/header.h"
+#include "map/levelscript.h"
 
 typedef struct map_header_t {
     map_footer_t *footer;
@@ -41,7 +41,7 @@ extern map_header_t mapheader_virtual;
  * Checks if the current map allows fly or teleport
  * @param type the map type
  * @return if the current map allows fly or teleport
- **/
+ */
 bool map_type_enables_fly_or_teleport(u8 type);
 
 /**
@@ -73,7 +73,7 @@ s8 map_get_warp_idx_by_position(map_header_t *map, position_t *position);
  * @param y the y coordiante, not +7 shifted
  * @param level the level on which the event is supposed to be on
  * @return the event or NULL if none was found
- **/
+ */
 map_event_signpost *map_get_signpost_by_position(map_header_t *map, s16 x, s16 y, u8 level);
 
 /**
@@ -81,23 +81,23 @@ map_event_signpost *map_get_signpost_by_position(map_header_t *map, s16 x, s16 y
  * @param map_type the map type
  * @return if the map represents an outside map
  */
-bool map_type_is_outside (u8 map_type);
+bool map_type_is_outside(u8 map_type);
 
 /**
  * Checks if the virtual map header is a cloud map.
  * @return if the map is a cloud map
- **/
+ */
 bool map_is_cloud();
 
 /**
  * Plays the current map song if it is not already playing, i.e. after surfing or biking.
- **/
+ */
 void map_current_play_song_if_not_playing();
 
 /**
  * Copies the blocks of adjacent maps into the virtual blocks of a map
  * @param header the header of the current map
- **/
+ */
 void map_copy_adjacent_maps_to_virtual_blocks(map_header_t *header);
 
 #endif /* INCLUDE_C_MAP_HEADER_H_ */

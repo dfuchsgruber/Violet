@@ -1,26 +1,23 @@
-#include "types.h"
 #include "pokemon/roamer.h"
-#include "save.h"
 #include "agbmemory.h"
-#include "constants/species.h"
-#include "constants/roamers.h"
-#include "constants/pokemon_attributes.h"
+#include "constants/flags.h"
+#include "constants/map_connections.h"
 #include "constants/map_namespaces.h"
-#include "prng.h"
-#include "vars.h"
+#include "constants/pokemon_attributes.h"
+#include "constants/roamers.h"
+#include "constants/species.h"
 #include "debug.h"
 #include "flags.h"
-#include "constants/flags.h"
 #include "map/header.h"
-#include "constants/map_connections.h"
+#include "prng.h"
+#include "save.h"
+#include "types.h"
+#include "vars.h"
 
 u16 roamer_species[NUM_ROAMERS] = {
     [ROAMER_ARKTOS] = POKEMON_ARKTOS,
     [ROAMER_ZAPDOS] = POKEMON_ZAPDOS,
-    [ROAMER_LAVADOS] = POKEMON_LAVADOS
-};
-
-
+    [ROAMER_LAVADOS] = POKEMON_LAVADOS};
 
 void roamer_reset_all() {
     for (int i = 0; i < NUM_ROAMERS; i++) {
@@ -40,7 +37,8 @@ void roamer_reset(int roamer_idx) {
 
 int roamer_get_random_map() {
     int i = 0;
-    while (cloud_maps[i].bank != 0xFF && cloud_maps[i].map_idx != 0xFF) i++;
+    while (cloud_maps[i].bank != 0xFF && cloud_maps[i].map_idx != 0xFF)
+        i++;
     return rnd16() % i;
 }
 
@@ -71,7 +69,8 @@ void special_roamer_reset_and_initialize() {
 }
 
 void roamer_history_update() {
-    if (checkflag(ROAMER_LOCATIONS_FIXED)) return;
+    if (checkflag(ROAMER_LOCATIONS_FIXED))
+        return;
     for (int i = 0; i < NUM_ROAMERS; i++) {
         cmem.roamer_histories[i][2].bank = cmem.roamer_histories[i][1].bank;
         cmem.roamer_histories[i][2].map_idx = cmem.roamer_histories[i][1].map_idx;
@@ -83,7 +82,8 @@ void roamer_history_update() {
 }
 
 void roamer_randomize_position(int roamer_idx) {
-    if (checkflag(ROAMER_LOCATIONS_FIXED)) return;
+    if (checkflag(ROAMER_LOCATIONS_FIXED))
+        return;
     if (cmem.roamers[roamer_idx].is_present) {
         u8 new_map_idx, new_bank;
         do {
@@ -156,7 +156,7 @@ void pokemon_new_roamer(int roamer_idx) {
 
 bool roamer_is_present(u8 bank, u8 map_idx, int roamer_idx) {
     return cmem.roamers[roamer_idx].is_present && cmem.roamer_locations[roamer_idx].bank == bank &&
-    cmem.roamer_locations[roamer_idx].map_idx == map_idx;
+           cmem.roamer_locations[roamer_idx].map_idx == map_idx;
 }
 
 bool wild_pokemon_spawn_roamer() {

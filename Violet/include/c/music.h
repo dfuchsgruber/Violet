@@ -6,16 +6,15 @@
  */
 
 #ifndef MUSIC_H
-#define	MUSIC_H
+#define MUSIC_H
 
-#include "types.h"
 #include "constants/songs.h"
+#include "types.h"
 
 #define SONG_TYPE_SONG 0
 #define SONG_TYPE_SOUND 1
 #define SONG_TYPE_FANFARE 2
 #define SONG_PLAYER_3 3
-
 
 typedef struct {
     const void *mid;
@@ -32,15 +31,14 @@ void play_sound(u16 sound_id);
 /**
  * Checks if a sound effect is playing on the sound player
  * @return if a sound effect is playing
- **/
+ */
 bool sound_is_playing();
-
 
 /**
  * Uses the sound players 0 and 1 to play a sound and sets pan.
  * @param sound the sound to play
  * @param pan the pan
- **/
+ */
 void mplay_sound_effect_0_and_1_play_with_pan(u16 sound, s8 pan);
 
 /**
@@ -59,13 +57,13 @@ void playsong2(u16 song);
 /**
  * Uses the map song controller to play a song.
  * @param song the song to play
- **/
-void song_play_by_controller (u16 song);
+ */
+void song_play_by_controller(u16 song);
 
 /**
  * Gets the currently played song.
  * @return the currently played song.
- **/
+ */
 u16 song_get_current();
 
 typedef struct {
@@ -90,7 +88,7 @@ void fanfare_callback_wait(u8 self);
 
 /**
  * Creates a new callback to wait for the fanfare and resumes to the normal song.
- **/
+ */
 void fanfare_callback_wait_new();
 
 /**
@@ -120,18 +118,18 @@ extern u8 mplay_info_sound_effect_2[0x40];
 /**
  * Stops a mplay player
  * @param mplay_info which player to stop
- **/
+ */
 void mplay_stop(void *mplay_info);
 
 /**
  * Uses the adequate mplay player to play a song
  * @param song_idx the song to play
- **/
+ */
 void mplay_start_song(u16 song_idx);
 
 /**
  * Stops a song using the adquate mplay player
- **/
+ */
 void mplay_stop_song(u16 song_idx);
 
 /**
@@ -145,7 +143,7 @@ void volume_set(void *song_controller, u16 affects_tracks, u16 volume);
 /**
  * Enables stereo pokemon cries.
  * @param is_stereo If the cries should be mono (or stereo)
- **/
+ */
 void sound_set_pokemon_cries_stereo(bool is_mono);
 
 extern const unsigned char mus_rin_battle[];
@@ -225,6 +223,4 @@ extern const unsigned char mus_bbship[];
 extern const unsigned char mus_bb_battle[];
 extern const unsigned char fanfare_gong[];
 
-
-#endif	/* MUSIC_H */
-
+#endif /* MUSIC_H */

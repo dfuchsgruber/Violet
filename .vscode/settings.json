@@ -4,6 +4,7 @@
     ],
     "C_Cpp.default.cStandard": "c99",
     "files.associations": {
+        ".clang-format": "yaml",
         "*.const": "json",
         "*.pmp": "json",
         "*.pms": "json",
@@ -28,5 +29,8 @@
     "workbench.editorAssociations": {
         "*.gba": "hexEditor.hexedit",
         "*.ipynb": "jupyter-notebook"
+    },
+    "C_Cpp.files.exclude": {
+        "**/agbpring.c": true
     }
 }

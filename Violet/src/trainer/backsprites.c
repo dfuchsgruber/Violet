@@ -1,7 +1,6 @@
-#include "types.h"
 #include "oam.h"
 #include "trainer/backsprite.h"
-
+#include "types.h"
 
 graphic gfx_trainer_backsprite_hiro[5] = {
     {.sprite = gfx_trainer_backsprite_hiroTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
@@ -76,89 +75,22 @@ oam_template trainer_backsprite_templates[TRAINER_BACKSPRITE_CNT] = {
         .animation = NULL,
         .graphics = gfx_trainer_backsprite_hiro,
         .rotscale = trainer_backsprite_rotscale_anim_table,
-        .callback = trainer_backsprite_callback
-    },
-    [TRAINER_BACKSPRITE_HIROINE] = {
-        .tiles_tag = 0xFFFF,
-        .pal_tag = 0,
-        .oam = &trainer_backsprite_sprite,
-        .animation = NULL,
-        .graphics = gfx_trainer_backsprite_hiroine,
-        .rotscale = trainer_backsprite_rotscale_anim_table,
-        .callback = trainer_backsprite_callback
-    },
-    [TRAINER_BACKSPRITE_BRENDAN] = {
-        .tiles_tag = 0xFFFF,
-        .pal_tag = 0,
-        .oam = &trainer_backsprite_sprite,
-        .animation = NULL,
-        .graphics = gfx_trainer_backsprite_brendan,
-        .rotscale = trainer_backsprite_rotscale_anim_table,
-        .callback = trainer_backsprite_callback
-    },
-    [TRAINER_BACKSPRITE_MAY] = {
-        .tiles_tag = 0xFFFF,
-        .pal_tag = 0,
-        .oam = &trainer_backsprite_sprite,
-        .animation = NULL,
-        .graphics = gfx_trainer_backsprite_may,
-        .rotscale = trainer_backsprite_rotscale_anim_table,
-        .callback = trainer_backsprite_callback
-    },
-    [TRAINER_BACKSPRITE_POKEDUDE] = {
-        .tiles_tag = 0xFFFF,
-        .pal_tag = 0,
-        .oam = &trainer_backsprite_sprite,
-        .animation = NULL,
-        .graphics = gfx_trainer_backsprite_pokedude,
-        .rotscale = trainer_backsprite_rotscale_anim_table,
-        .callback = trainer_backsprite_callback
-    },
-    [TRAINER_BACKSPRITE_OLD_MAN] = {
-        .tiles_tag = 0xFFFF,
-        .pal_tag = 0,
-        .oam = &trainer_backsprite_sprite,
-        .animation = NULL,
-        .graphics = gfx_trainer_backsprite_old_man,
-        .rotscale = trainer_backsprite_rotscale_anim_table,
-        .callback = trainer_backsprite_callback
-    },
-    [TRAINER_BACKSPRITE_RIVAL] = {
-        .tiles_tag = 0xFFFF,
-        .pal_tag = 0,
-        .oam = &trainer_backsprite_sprite,
-        .animation = NULL,
-        .graphics = gfx_trainer_backsprite_rival,
-        .rotscale = trainer_backsprite_rotscale_anim_table,
-        .callback = trainer_backsprite_callback
-    },
-    [TRAINER_BACKSPRITE_FELIX] = {
-        .tiles_tag = 0xFFFF,
-        .pal_tag = 0,
-        .oam = &trainer_backsprite_sprite,
-        .animation = NULL,
-        .graphics = gfx_trainer_backsprite_felix,
-        .rotscale = trainer_backsprite_rotscale_anim_table,
-        .callback = trainer_backsprite_callback
-    },
-    [TRAINER_BACKSPRITE_IGVA] = {
-        .tiles_tag = 0xFFFF,
-        .pal_tag = 0,
-        .oam = &trainer_backsprite_sprite,
-        .animation = NULL,
-        .graphics = gfx_trainer_backsprite_igva,
-        .rotscale = trainer_backsprite_rotscale_anim_table,
-        .callback = trainer_backsprite_callback
-    },
+        .callback = trainer_backsprite_callback},
+    [TRAINER_BACKSPRITE_HIROINE] = {.tiles_tag = 0xFFFF, .pal_tag = 0, .oam = &trainer_backsprite_sprite, .animation = NULL, .graphics = gfx_trainer_backsprite_hiroine, .rotscale = trainer_backsprite_rotscale_anim_table, .callback = trainer_backsprite_callback},
+    [TRAINER_BACKSPRITE_BRENDAN] = {.tiles_tag = 0xFFFF, .pal_tag = 0, .oam = &trainer_backsprite_sprite, .animation = NULL, .graphics = gfx_trainer_backsprite_brendan, .rotscale = trainer_backsprite_rotscale_anim_table, .callback = trainer_backsprite_callback},
+    [TRAINER_BACKSPRITE_MAY] = {.tiles_tag = 0xFFFF, .pal_tag = 0, .oam = &trainer_backsprite_sprite, .animation = NULL, .graphics = gfx_trainer_backsprite_may, .rotscale = trainer_backsprite_rotscale_anim_table, .callback = trainer_backsprite_callback},
+    [TRAINER_BACKSPRITE_POKEDUDE] = {.tiles_tag = 0xFFFF, .pal_tag = 0, .oam = &trainer_backsprite_sprite, .animation = NULL, .graphics = gfx_trainer_backsprite_pokedude, .rotscale = trainer_backsprite_rotscale_anim_table, .callback = trainer_backsprite_callback},
+    [TRAINER_BACKSPRITE_OLD_MAN] = {.tiles_tag = 0xFFFF, .pal_tag = 0, .oam = &trainer_backsprite_sprite, .animation = NULL, .graphics = gfx_trainer_backsprite_old_man, .rotscale = trainer_backsprite_rotscale_anim_table, .callback = trainer_backsprite_callback},
+    [TRAINER_BACKSPRITE_RIVAL] = {.tiles_tag = 0xFFFF, .pal_tag = 0, .oam = &trainer_backsprite_sprite, .animation = NULL, .graphics = gfx_trainer_backsprite_rival, .rotscale = trainer_backsprite_rotscale_anim_table, .callback = trainer_backsprite_callback},
+    [TRAINER_BACKSPRITE_FELIX] = {.tiles_tag = 0xFFFF, .pal_tag = 0, .oam = &trainer_backsprite_sprite, .animation = NULL, .graphics = gfx_trainer_backsprite_felix, .rotscale = trainer_backsprite_rotscale_anim_table, .callback = trainer_backsprite_callback},
+    [TRAINER_BACKSPRITE_IGVA] = {.tiles_tag = 0xFFFF, .pal_tag = 0, .oam = &trainer_backsprite_sprite, .animation = NULL, .graphics = gfx_trainer_backsprite_igva, .rotscale = trainer_backsprite_rotscale_anim_table, .callback = trainer_backsprite_callback},
 };
 
 static gfx_frame trainer_backsprite_animation_frame_0[] = {
-    {.data = 0, .duration = 0}, {.data = GFX_ANIM_END}
-};
+    {.data = 0, .duration = 0}, {.data = GFX_ANIM_END}};
 
 static gfx_frame trainer_backsprite_animation_frame_3[] = {
-    {.data = 3, .duration = 0}, {.data = GFX_ANIM_END}
-};
+    {.data = 3, .duration = 0}, {.data = GFX_ANIM_END}};
 
 static gfx_frame trainer_backsprite_animation_throw_hiro[] = {
     {.data = 1, .duration = 20},
@@ -166,8 +98,7 @@ static gfx_frame trainer_backsprite_animation_throw_hiro[] = {
     {.data = 3, .duration = 6},
     {.data = 4, .duration = 24},
     {.data = 0, .duration = 1},
-    {.data = GFX_ANIM_END}
-};
+    {.data = GFX_ANIM_END}};
 
 static gfx_frame trainer_backsprite_animation_throw_brendan[] = {
     {.data = 0, .duration = 24},
@@ -175,52 +106,41 @@ static gfx_frame trainer_backsprite_animation_throw_brendan[] = {
     {.data = 2, .duration = 24},
     {.data = 0, .duration = 9},
     {.data = 3, .duration = 50},
-    {.data = GFX_ANIM_END}
-};
+    {.data = GFX_ANIM_END}};
 
 static gfx_frame trainer_backsprite_animation_throw_pokedude[] = {
     {.data = 1, .duration = 24},
     {.data = 2, .duration = 9},
     {.data = 3, .duration = 24},
     {.data = 0, .duration = 9},
-    {.data = GFX_ANIM_END}
-};
+    {.data = GFX_ANIM_END}};
 
 static gfx_frame *trainer_backsprite_animations_hiro[] = {
-    trainer_backsprite_animation_frame_0, trainer_backsprite_animation_throw_hiro
-};
+    trainer_backsprite_animation_frame_0, trainer_backsprite_animation_throw_hiro};
 
 static gfx_frame *trainer_backsprite_animations_hiroine[] = {
-    trainer_backsprite_animation_frame_0, trainer_backsprite_animation_throw_hiro
-};
+    trainer_backsprite_animation_frame_0, trainer_backsprite_animation_throw_hiro};
 
 static gfx_frame *trainer_backsprite_animations_brendan[] = {
-    trainer_backsprite_animation_frame_3, trainer_backsprite_animation_throw_brendan
-};
+    trainer_backsprite_animation_frame_3, trainer_backsprite_animation_throw_brendan};
 
 static gfx_frame *trainer_backsprite_animations_may[] = {
-    trainer_backsprite_animation_frame_3, trainer_backsprite_animation_throw_brendan
-};
+    trainer_backsprite_animation_frame_3, trainer_backsprite_animation_throw_brendan};
 
 static gfx_frame *trainer_backsprite_animations_pokedude[] = {
-    trainer_backsprite_animation_frame_0, trainer_backsprite_animation_throw_pokedude
-};
+    trainer_backsprite_animation_frame_0, trainer_backsprite_animation_throw_pokedude};
 
 static gfx_frame *trainer_backsprite_animations_old_man[] = {
-    trainer_backsprite_animation_frame_0, trainer_backsprite_animation_throw_pokedude
-};
+    trainer_backsprite_animation_frame_0, trainer_backsprite_animation_throw_pokedude};
 
 static gfx_frame *trainer_backsprite_animations_rival[] = {
-    trainer_backsprite_animation_frame_3, trainer_backsprite_animation_throw_brendan
-};
+    trainer_backsprite_animation_frame_3, trainer_backsprite_animation_throw_brendan};
 
 static gfx_frame *trainer_backsprite_animations_felix[] = {
-    trainer_backsprite_animation_frame_3, trainer_backsprite_animation_throw_brendan
-};
+    trainer_backsprite_animation_frame_3, trainer_backsprite_animation_throw_brendan};
 
 static gfx_frame *trainer_backsprite_animations_igva[] = {
-    trainer_backsprite_animation_frame_3, trainer_backsprite_animation_throw_brendan
-};
+    trainer_backsprite_animation_frame_3, trainer_backsprite_animation_throw_brendan};
 
 palette trainer_backsprite_palettes[TRAINER_BACKSPRITE_CNT] = {
     [TRAINER_BACKSPRITE_HIRO] = {.pal = gfx_trainer_backsprite_hiroPal, .tag = TRAINER_BACKSPRITE_HIRO},

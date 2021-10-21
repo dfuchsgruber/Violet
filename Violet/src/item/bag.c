@@ -1,17 +1,15 @@
-#include "item/item.h"
 #include "item/bag.h"
 #include "callbacks.h"
+#include "item/item.h"
 #include "language.h"
 
 static u8 str_cant_write_mail_here[] = LANGDEP(
     PSTRING("Du kannst jetzt keinen Brief\nschreiben!"),
-    PSTRING("You can't write a mail now!")
-);
+    PSTRING("You can't write a mail now!"));
 
 static u8 str_cant_give_a_tm[] = LANGDEP(
     PSTRING("Tms und Vms können nicht gegeben\nwerden!"),
-    PSTRING("Tms and Hms can't be held!")
-);
+    PSTRING("Tms and Hms can't be held!"));
 
 void bag_item_selected_give_from_overworld_or_pc(u8 self, bool from_pc) {
     u16 *data = big_callbacks[self].params;

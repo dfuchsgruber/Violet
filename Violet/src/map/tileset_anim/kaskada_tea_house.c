@@ -1,9 +1,9 @@
-#include "types.h"
 #include "map/tileset.h"
+#include "oam.h"
 #include "overworld/effect.h"
 #include "overworld/sprite.h"
-#include "oam.h"
 #include "save.h"
+#include "types.h"
 
 #define KASKADA_TEA_HOUSE_SMOKE_TAG 0x88A
 #define KASKADA_TEA_HOUSE_BANK 8
@@ -14,7 +14,9 @@ extern const u8 gfx_maptileset_kaskada_tea_house_smokeTiles[];
 extern const u8 gfx_maptileset_kaskada_tea_house_smokePal[];
 
 static graphic smoke_graphic = {
-    .sprite = gfx_maptileset_kaskada_tea_house_smokeTiles, .tag = KASKADA_TEA_HOUSE_SMOKE_TAG, .size = GRAPHIC_SIZE_4BPP(16, 16) * 4,
+    .sprite = gfx_maptileset_kaskada_tea_house_smokeTiles,
+    .tag = KASKADA_TEA_HOUSE_SMOKE_TAG,
+    .size = GRAPHIC_SIZE_4BPP(16, 16) * 4,
 };
 
 static sprite smoke_final_oam = {
@@ -28,9 +30,9 @@ static void oam_callback_smoke(oam_object *self) {
         oam_free(self);
         return;
     }
-    s16 *x = (s16*)(self->private + 0);
-    s16 *y = (s16*)(self->private + 1);
-    // Since the sprite is centered, use half the circle 
+    s16 *x = (s16 *)(self->private + 0);
+    s16 *y = (s16 *)(self->private + 1);
+    // Since the sprite is centered, use half the circle
     if (overworld_effect_is_oam_outside_camera_view(*x, *y, 16, 16)) {
         self->flags |= OAM_FLAG_INVISIBLE;
     } else {
@@ -43,13 +45,19 @@ static void oam_callback_smoke(oam_object *self) {
 }
 
 static gfx_frame gfx_anim_smoke[] = {
-    {.data = 0, .duration = 0}, {.data = 0, .duration = 16}, {.data = 4, .duration = 16}, {.data = 8, .duration = 16}, {.data = 12, .duration = 16}, {.data = GFX_ANIM_JUMP, .duration = 1},
+    {.data = 0, .duration = 0},
+    {.data = 0, .duration = 16},
+    {.data = 4, .duration = 16},
+    {.data = 8, .duration = 16},
+    {.data = 12, .duration = 16},
+    {.data = GFX_ANIM_JUMP, .duration = 1},
 };
 
 static gfx_frame *gfx_anims_smoke[] = {gfx_anim_smoke};
 
 static oam_template smoke_template = {
-    .tiles_tag = KASKADA_TEA_HOUSE_SMOKE_TAG, .pal_tag = KASKADA_TEA_HOUSE_SMOKE_TAG,
+    .tiles_tag = KASKADA_TEA_HOUSE_SMOKE_TAG,
+    .pal_tag = KASKADA_TEA_HOUSE_SMOKE_TAG,
     .oam = &smoke_final_oam,
     .animation = gfx_anims_smoke,
     .rotscale = oam_rotscale_anim_table_null,
@@ -57,7 +65,9 @@ static oam_template smoke_template = {
 };
 
 static coordinate_t smoke_positions[] = {
-    {.x = 2, .y = 7}, {.x = 0xA, .y = 7}, {.x = 9, .y = 3},
+    {.x = 2, .y = 7},
+    {.x = 0xA, .y = 7},
+    {.x = 9, .y = 3},
 };
 
 static void smoke_initialize() {
@@ -76,24 +86,17 @@ static void smoke_initialize() {
 }
 
 tileset_animation tileset_kaskada_tea_house_animations[] = {
-    {
-		.cycle = 4, .speed = 32, .start_tile = 0x330, .num_tiles = 9,
-		.gfx = gfx_maptileset_kaskada_tea_house_light_animTiles
-    }
-};
+    {.cycle = 4, .speed = 32, .start_tile = 0x330, .num_tiles = 9, .gfx = gfx_maptileset_kaskada_tea_house_light_animTiles}};
 
 tileset_animation_header tileset_kaskada_tea_house_animations_head = {
-    1, tileset_kaskada_tea_house_animations
-};
+    1, tileset_kaskada_tea_house_animations};
 
-
-void tileset_kaskada_tea_house_anim(u16 clk){
+void tileset_kaskada_tea_house_anim(u16 clk) {
     generic_tileset_anim_proceed_all(&tileset_kaskada_tea_house_animations_head, clk);
 }
 
-void tileset_kaskada_tea_house_anim_init(){
+void tileset_kaskada_tea_house_anim_init() {
     tileset_anim_clk1_cycle = generic_tileset_anim_get_clk(&tileset_kaskada_tea_house_animations_head);
     tileset_anim_1 = tileset_kaskada_tea_house_anim;
     smoke_initialize();
 }
-

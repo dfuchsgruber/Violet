@@ -1,12 +1,12 @@
-#include "types.h"
-#include "item/item.h"
-#include "overworld/start_menu.h"
-#include "overworld/pokemon_party_menu.h"
-#include "map/header.h"
-#include "overworld/map_control.h"
-#include "overworld/effect.h"
 #include "callbacks.h"
 #include "item/bag.h"
+#include "item/item.h"
+#include "map/header.h"
+#include "overworld/effect.h"
+#include "overworld/map_control.h"
+#include "overworld/pokemon_party_menu.h"
+#include "overworld/start_menu.h"
+#include "types.h"
 
 static void abra_doll_field_continuation(u8 self) {
     overworld_effect_teleport_after_showing_pokemon();

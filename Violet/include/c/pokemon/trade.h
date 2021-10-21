@@ -1,10 +1,10 @@
 #ifndef H_POKEMON_TRADE
 #define H_POKEMON_TRADE
 
-#include "types.h"
-#include "constants/pokemon_stat_names.h"
 #include "constants/ingame_trades.h"
+#include "constants/pokemon_stat_names.h"
 #include "pokemon/virtual.h"
+#include "types.h"
 
 typedef struct {
     u8 nickname[11];

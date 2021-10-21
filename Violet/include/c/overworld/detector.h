@@ -1,18 +1,18 @@
 #ifndef H_OVERWORLD_DETECTOR
 #define H_OVERWORLD_DETECTOR
-#include "types.h"
 #include "map/header.h"
+#include "types.h"
 
 /**
  * Creates the static detector arrow
  * @return oam idx of the arrow
- **/
+ */
 u8 overworld_effect_static_detector_arrow_new();
 
 /**
  * Callback that updates the detector arrow that is shown above the player.
  * @param self self-reference
- **/
+ */
 void overworld_static_detector_callback(u8 self);
 
 enum {
@@ -46,7 +46,7 @@ enum {
  * @param event_header the event header of the map to check for items
  * @param cb_idx the callback where to store the results
  * @return if any item could be found
- **/
+ */
 bool hidden_item_is_within_player_range(map_event_header_t *event_header, u8 cb_idx);
 
 enum {
@@ -54,7 +54,7 @@ enum {
     ITEM_FINDER_NORTH = 3,
     ITEM_FINDER_EAST = 2,
     ITEM_FINDER_SOUTH = 1,
-    ITEM_FINDER_WEST = 4,  
+    ITEM_FINDER_WEST = 4,
 };
 
 /**
@@ -62,13 +62,13 @@ enum {
  * @param dx the relative horizontal distance to the item
  * @param dy the relative vertical distance to the item
  * @return the direction the item is
- **/
+ */
 u8 detector_get_hidden_item_direction(s16 dx, s16 dy);
 
 /**
  * Issues an update of the static detector arrow if a flag is set
  * @param flag the flag to wait for
- **/
+ */
 void overworld_static_detector_issue_update_when_flag_set(u16 flag);
 
 extern const u8 gfx_item_finder_arrow_staticTiles[];

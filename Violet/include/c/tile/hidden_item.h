@@ -8,7 +8,7 @@
 #ifndef INCLUDE_C_TILE_HIDDEN_ITEM_H_
 #define INCLUDE_C_TILE_HIDDEN_ITEM_H_
 
-enum hidden_item_field{
+enum hidden_item_field {
     HIDDEN_ITEM_IDX = 0,
     HIDDEN_FLAG = 1,
     HIDDEN_COUNT = 2,
@@ -29,7 +29,7 @@ typedef struct {
  * @param hidden_item the hidden item structure
  * @param field which field to get
  * @return the field
- **/
+ */
 int hidden_item_get_field(hidden_item_t hidden_item, u8 field);
 
 typedef struct {

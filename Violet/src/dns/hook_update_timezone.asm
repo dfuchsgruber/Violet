@@ -11,4 +11,3 @@ str r0, [r1, #8]
 bl update_timezone
 pop {r0}
 bx r0
-

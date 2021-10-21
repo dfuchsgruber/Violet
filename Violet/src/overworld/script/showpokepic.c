@@ -1,15 +1,15 @@
-#include "types.h"
-#include "overworld/script.h"
 #include "bg.h"
 #include "callbacks.h"
-#include "pokemon/sprites.h"
-#include "oam.h"
-#include "text.h"
-#include "transparency.h"
 #include "color.h"
 #include "debug.h"
+#include "oam.h"
+#include "overworld/script.h"
+#include "pokemon/sprites.h"
+#include "text.h"
+#include "transparency.h"
+#include "types.h"
 
-bool overworld_script_show_pokemon_picture (u16 species, u8 x, u8 y) {
+bool overworld_script_show_pokemon_picture(u16 species, u8 x, u8 y) {
     if (big_callback_is_active(overworld_script_callback_show_pokemon_picture))
         return false;
     dprintf("Showing pokepic of species %d\n", species);

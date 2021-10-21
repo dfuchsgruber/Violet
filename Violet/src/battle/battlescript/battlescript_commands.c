@@ -1,50 +1,50 @@
-#include "types.h"
+#include "abilities.h"
+#include "attack.h"
+#include "battle/attack.h"
+#include "battle/battle_string.h"
 #include "battle/battler.h"
 #include "battle/battlescript.h"
-#include "battle/communication.h"
-#include "mega.h"
-#include "debug.h"
 #include "battle/bg.h"
-#include "constants/battle/battle_bgs.h"
-#include "constants/pokemon_types.h"
+#include "battle/communication.h"
+#include "battle/controller.h"
 #include "battle/state.h"
-#include "constants/species.h"
-#include "map/wild_pokemon.h"
-#include "battle/attack.h"
+#include "bios.h"
 #include "callbacks.h"
 #include "constants/abilities.h"
-#include "battle/controller.h"
-#include "prng.h"
+#include "constants/battle/battle_bgs.h"
+#include "constants/battle/battle_handicaps.h"
 #include "constants/battle/battle_results.h"
+#include "constants/difficulties.h"
+#include "constants/item_hold_effects.h"
+#include "constants/pokemon_types.h"
+#include "constants/species.h"
+#include "debug.h"
+#include "flags.h"
+#include "item/item.h"
+#include "item/item_effect.h"
+#include "item/pokeball.h"
+#include "map/wild_pokemon.h"
+#include "math.h"
+#include "mega.h"
+#include "overworld/pokemon_party_menu.h"
+#include "pokemon/basestat.h"
+#include "pokepad/pokedex/operator.h"
+#include "prng.h"
+#include "save.h"
 #include "trainer/trainer.h"
 #include "trainer/virtual.h"
-#include "save.h"
+#include "types.h"
 #include "vars.h"
-#include "constants/difficulties.h"
-#include "battle/battle_string.h"
-#include "flags.h"
-#include "overworld/pokemon_party_menu.h"
-#include "item/item_effect.h"
-#include "abilities.h"
-#include "item/item.h"
-#include "attack.h"
-#include "constants/item_hold_effects.h"
-#include "constants/battle/battle_handicaps.h"
-#include "pokemon/basestat.h"
-#include "item/pokeball.h"
-#include "pokepad/pokedex/operator.h"
-#include "bios.h"
-#include "math.h"
 
-u8 bsc_get_byte(){
+u8 bsc_get_byte() {
     u8 result = *bsc_offset;
     (bsc_offset)++;
     return result;
 }
 
-int bsc_get_word(){
+int bsc_get_word() {
     return bsc_get_byte() + (bsc_get_byte() << 8) + (bsc_get_byte() << 16) +
-            (bsc_get_byte() << 24);
+           (bsc_get_byte() << 24);
     bsc_offset += 4;
 }
 
@@ -54,17 +54,16 @@ void battle_animation(u8 user, u8 target, u8 *animation) {
     battle_animation_initialize(&animation, 0, false);
     u8 cb = big_callback_new(battle_special_anim_clear_flags_when_finished, 10);
     u8 battler_idx = user; // The battler that is being active
-    big_callbacks[cb].params[0] = battler_idx; 
+    big_callbacks[cb].params[0] = battler_idx;
     battle_sprite_data->healthbox_info[battler_idx].special_anim_active = 1;
 }
 
-
-// Parameter structure animation user_type target_type 
-void bsc_cmd_custom_attack_anim(){
+// Parameter structure animation user_type target_type
+void bsc_cmd_custom_attack_anim() {
     bsc_offset++;
     u8 user = bsc_get_byte() ? attacking_battler : defending_battler;
     u8 target = bsc_get_byte() ? attacking_battler : defending_battler;
-    u8 *animation = (u8*)bsc_get_word();
+    u8 *animation = (u8 *)bsc_get_word();
     battle_animation(user, target, animation);
 }
 
@@ -76,9 +75,9 @@ void bsc_cmd_wait_battle_animation() {
 
 //Parameter structure
 //Offset : word
-void bsc_cmd_callasm(){
+void bsc_cmd_callasm() {
     bsc_offset++; //command itself
-    void (*function)() = (void (*)()) bsc_get_word();
+    void (*function)() = (void (*)())bsc_get_word();
     function();
 }
 
@@ -86,26 +85,37 @@ void attack_calculate_damage_from_target_name() {
     battle_dynamic_base_power = 20;
     if (battlers[attacking_battler].species == POKEMON_ICOGNITO) {
         int matches = 0;
-        int unown_letter = battlers[attacking_battler].pid.fields.unown_letter;   
+        int unown_letter = battlers[attacking_battler].pid.fields.unown_letter;
         for (int i = 0; battlers[defending_battler].name[i] != 0xFF; i++) {
             int letter = battlers[defending_battler].name[i];
             switch (unown_letter) {
                 case POKEMON_ICOGNITO_EXCLAMATION - POKEMON_EGG:
-                    if (letter == 0xAB) matches++;
+                    if (letter == 0xAB)
+                        matches++;
                     break;
                 case POKEMON_ICOGNITO_QUESTION - POKEMON_EGG:
-                    if (letter == 0xAC) matches++;
+                    if (letter == 0xAC)
+                        matches++;
                     break;
                 default:
-                    if (letter == 0xBB + unown_letter || letter == 0xD5 + unown_letter) matches++;
+                    if (letter == 0xBB + unown_letter || letter == 0xD5 + unown_letter)
+                        matches++;
                     break;
             }
         }
         switch (matches) {
-            case 0: battle_dynamic_base_power = 55; break;
-            case 1: battle_dynamic_base_power = 95; break;
-            case 2: battle_dynamic_base_power = 135; break;
-            default: battle_dynamic_base_power = 180; break;
+            case 0:
+                battle_dynamic_base_power = 55;
+                break;
+            case 1:
+                battle_dynamic_base_power = 95;
+                break;
+            case 2:
+                battle_dynamic_base_power = 135;
+                break;
+            default:
+                battle_dynamic_base_power = 180;
+                break;
         }
     }
     dprintf("Damage for runengleich %d\n", battle_dynamic_base_power);
@@ -117,8 +127,8 @@ void bsc_cmd_switch_out_abilites() {
     bsc_offset++;
     if (battlers[active_battler].ability == INNERE_KRAFT) {
         battlers[active_battler].status1 = 0;
-        battle_controller_emit_set_pokemon_data(0, 0x28, (u8)int_bitmasks[battle_state->switch_out_party_idxs[active_battler]], 4, 
-            &battlers[active_battler].status1);
+        battle_controller_emit_set_pokemon_data(0, 0x28, (u8)int_bitmasks[battle_state->switch_out_party_idxs[active_battler]], 4,
+                                                &battlers[active_battler].status1);
         battler_mark_for_controller_execution(active_battler);
     }
     /** else if (battlers[active_battler].ability == 0xFF) { // TODO: This is code for a potential regenerator ability
@@ -141,7 +151,7 @@ void bsc_cmd_x4f_jump_if_unable_to_switch() {
     battler_get_partner_and_foes(active_battler, &partner, &foe, &foe_partner);
     pokemon *party = battler_load_party_range(active_battler, &first, &last);
     // Check if this battler can switch-out
-    if (bsc_offset[1] & 0x80 || BATTLER_CAN_SWITCH_OUT(active_battler)){ // Check if there is any target for switching-out into
+    if (bsc_offset[1] & 0x80 || BATTLER_CAN_SWITCH_OUT(active_battler)) { // Check if there is any target for switching-out into
         for (u8 j = first; j < last; j++) {
             if (POKEMON_IS_VIABLE(party + j) && battler_idx_to_party_idx(active_battler) != j && battler_idx_to_party_idx(partner) != j) {
                 bsc_offset = bsc_offset + 6;
@@ -149,13 +159,13 @@ void bsc_cmd_x4f_jump_if_unable_to_switch() {
             }
         }
     }
-    bsc_offset = (u8*)UNALIGNED_32_GET(bsc_offset + 2);
+    bsc_offset = (u8 *)UNALIGNED_32_GET(bsc_offset + 2);
 }
 
 bool bsc_cmd_x8f_random_switch_out_replace_in_wild_double_battle() {
     return (BATTLE_IS_WILD_DOUBLE && battler_is_opponent(attacking_battler) && !battler_is_opponent(defending_battler) &&
             battler_is_alive(defending_battler) && battler_is_alive(PARTNER(defending_battler))) ||
-        (BATTLE_IS_WILD_DOUBLE && !battler_is_opponent(attacking_battler) && !battler_is_opponent(defending_battler));
+           (BATTLE_IS_WILD_DOUBLE && !battler_is_opponent(attacking_battler) && !battler_is_opponent(defending_battler));
 }
 
 void bsc_roar_failure() {
@@ -172,7 +182,7 @@ void bsc_roar_failure() {
 }
 
 void bsc_cmd_x8f_random_switch_out() {
-     if ((battle_flags & BATTLE_TRAINER) || bsc_cmd_x8f_random_switch_out_replace_in_wild_double_battle()) { 
+    if ((battle_flags & BATTLE_TRAINER) || bsc_cmd_x8f_random_switch_out_replace_in_wild_double_battle()) {
         // A new target is selectable in the following cases
         // a) trainer battles
         // b) wild double battles, when the wild pokemon attacks the player and both player mons are alive
@@ -189,7 +199,7 @@ void bsc_cmd_x8f_random_switch_out() {
             }
         }
         if (num_valid_targets < 1) {
-            bsc_offset = (u8*) UNALIGNED_32_GET(bsc_offset + 1);
+            bsc_offset = (u8 *)UNALIGNED_32_GET(bsc_offset + 1);
             return;
         }
         // Roar should succeed regardless of the level, like in generations >= V, so if we reach this point, roar will succed!
@@ -201,7 +211,7 @@ void bsc_cmd_x8f_random_switch_out() {
         battle_link_multi_switch_party_order(defending_battler, switch_into, 0);
         battle_link_multi_switch_party_order(PARTNER(defending_battler), switch_into, 1);
         bsc_offset = bsc_roar_success_force_out;
-        
+
     } else {
         // Roar will succced regardless of the level, like in generations >= V, so if we reach this point roar will succed!
         dprintf("Roar ends battle.\n");
@@ -213,60 +223,66 @@ void bsc_cmd_trainerslideout() {
     active_battler = battler_get_by_position(bsc_offset[1]);
     battle_controller_emit_trainer_slide_out(0);
     battler_mark_for_controller_execution(active_battler);
-    bsc_offset += 2;    
+    bsc_offset += 2;
 }
 
 void bsc_cmd_trainerslidein() {
     active_battler = battler_get_by_position(bsc_offset[1]);
     battle_controller_emit_trainer_slide_in(0);
     battler_mark_for_controller_execution(active_battler);
-    bsc_offset += 2;    
+    bsc_offset += 2;
 }
 
 static int trainer_pricemoney_get(u16 trainer_idx) {
     // Calculate the average level of the trainer pokemon
     int average_level = 0;
     if (trainers[trainer_idx].uses_custom_items && trainers[trainer_idx].uses_custom_items) {
-        trainer_pokemon_custom_item_custom_attacks *party = (trainer_pokemon_custom_item_custom_attacks*) trainers[trainer_idx].party;
+        trainer_pokemon_custom_item_custom_attacks *party = (trainer_pokemon_custom_item_custom_attacks *)trainers[trainer_idx].party;
         for (int i = 0; i < trainers[trainer_idx].pokemon_cnt; i++)
             average_level += party[i].level;
     } else if (trainers[trainer_idx].uses_custom_items) {
-        trainer_pokemon_custom_item_default_attacks *party = (trainer_pokemon_custom_item_default_attacks*) trainers[trainer_idx].party;
+        trainer_pokemon_custom_item_default_attacks *party = (trainer_pokemon_custom_item_default_attacks *)trainers[trainer_idx].party;
         for (int i = 0; i < trainers[trainer_idx].pokemon_cnt; i++)
             average_level += party[i].level;
     } else if (trainers[trainer_idx].uses_custom_moves) {
-        trainer_pokemon_default_item_custom_attacks *party = (trainer_pokemon_default_item_custom_attacks*) trainers[trainer_idx].party;
+        trainer_pokemon_default_item_custom_attacks *party = (trainer_pokemon_default_item_custom_attacks *)trainers[trainer_idx].party;
         for (int i = 0; i < trainers[trainer_idx].pokemon_cnt; i++)
             average_level += party[i].level;
     } else {
-        trainer_pokemon_default_item_default_attacks *party = (trainer_pokemon_default_item_default_attacks*) trainers[trainer_idx].party;
+        trainer_pokemon_default_item_default_attacks *party = (trainer_pokemon_default_item_default_attacks *)trainers[trainer_idx].party;
         for (int i = 0; i < trainers[trainer_idx].pokemon_cnt; i++)
             average_level += party[i].level;
     }
     average_level = MAX(1, 1000 * average_level / trainers[trainer_idx].pokemon_cnt); // Higher resultion by multplying with 1000
     dprintf("Trainer %d has an average level of %d / 1000\n", trainer_idx, average_level);
     int money = average_level * battle_state->money_multiplier * trainer_class_money_multipliers[trainers[trainer_idx].trainerclass] * 4;
-    dprintf("Trainer %d yields %d / 1000 money. Multiplier is %d, class multiplier is %d\n", trainer_idx, 
-        money, battle_state->money_multiplier, trainer_class_money_multipliers[trainers[trainer_idx].trainerclass]);
+    dprintf("Trainer %d yields %d / 1000 money. Multiplier is %d, class multiplier is %d\n", trainer_idx,
+            money, battle_state->money_multiplier, trainer_class_money_multipliers[trainers[trainer_idx].trainerclass]);
     return money / 2048;
 }
 
 u32 money_lost() {
     int average_player_level = 0, pokemon_cnt = 0;
     for (int i = 0; i < 6; i++) {
-        if (pokemon_get_attribute(player_pokemon + i, ATTRIBUTE_SANITY_HAS_SPECIES, 0) && 
+        if (pokemon_get_attribute(player_pokemon + i, ATTRIBUTE_SANITY_HAS_SPECIES, 0) &&
             !pokemon_get_attribute(player_pokemon + i, ATTRIBUTE_SANITY_IS_EGG, 0)) {
             average_player_level += pokemon_get_attribute(player_pokemon + i, ATTRIBUTE_LEVEL, 0);
             pokemon_cnt++;
         }
     }
-    if (pokemon_cnt) average_player_level = MAX(1, average_player_level * 1000 / pokemon_cnt);
-    else average_player_level = 1;
+    if (pokemon_cnt)
+        average_player_level = MAX(1, average_player_level * 1000 / pokemon_cnt);
+    else
+        average_player_level = 1;
     dprintf("Average player level is %d / 1000.\n", average_player_level);
     int money = money_lost_multipliers_by_number_of_badges[badges_number_get()] * 4 * average_player_level;
     switch (*var_access(DIFFICULTY)) {
-        case DIFFICULTY_EASY: money -= money / 2; break;
-        case DIFFICULTY_HARD: money *= 2; break;
+        case DIFFICULTY_EASY:
+            money -= money / 2;
+            break;
+        case DIFFICULTY_HARD:
+            money *= 2;
+            break;
     }
     return MIN((u32)(money / 1000), money_get(&save1->money));
 }
@@ -280,9 +296,13 @@ void bsc_cmd_pricemoney() {
             money += trainer_pricemoney_get(fmem.trainer_varsB.trainer_id);
         else if (battle_flags & BATTLE_DOUBLE)
             money *= 2;
-        switch(*var_access(DIFFICULTY)) {
-            case DIFFICULTY_EASY: money += money / 2; break;
-            case DIFFICULTY_HARD: money /= 2; break;
+        switch (*var_access(DIFFICULTY)) {
+            case DIFFICULTY_EASY:
+                money += money / 2;
+                break;
+            case DIFFICULTY_HARD:
+                money /= 2;
+                break;
         }
         money_add(&save1->money, (u32)money);
     } else {
@@ -290,7 +310,7 @@ void bsc_cmd_pricemoney() {
     }
     BSC_BUFFER_NUMBER(bsc_string_buffer0, 5, money);
     if (money == 0) {
-        bsc_offset = (u8*) UNALIGNED_32_GET(bsc_offset + 1);
+        bsc_offset = (u8 *)UNALIGNED_32_GET(bsc_offset + 1);
     } else {
         bsc_offset += 5;
     }
@@ -306,20 +326,23 @@ void bsc_cmd_opponent_use_item() {
 
 bool bsc_cmd_exp_gain_should_gain_exp() {
     u8 idx = battle_state->exp_getter_idx;
-    if (battle_is_tag() && (idx == 3 || idx == 4 || idx == 5)) return false;
+    if (battle_is_tag() && (idx == 3 || idx == 4 || idx == 5))
+        return false;
     return pokemon_get_attribute(player_pokemon + idx, ATTRIBUTE_LEVEL, 0) < 100;
 }
 
 bool bsc_cmd_switch_in_effects_check_ability_or_handicap() {
-    if (ability_execute(ABILITY_CONTEXT_ENTER, active_battler, 0, 0, 0)) return true;
-    if (battle_handicap_switch_in_effects(active_battler)) return true;
+    if (ability_execute(ABILITY_CONTEXT_ENTER, active_battler, 0, 0, 0))
+        return true;
+    if (battle_handicap_switch_in_effects(active_battler))
+        return true;
     return false;
 }
 
 void bsc_cmd_before_attack() {
     BATTLE_STATE2->status_custom[attacking_battler] &= (u32)(~(CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY | CUSTOM_STATUS_GEM_USED));
     bool effect = false;
-    while(!effect) {
+    while (!effect) {
         dprintf("Executing before attack events in state %d\n", BATTLE_STATE2->before_attack_state);
         switch (BATTLE_STATE2->before_attack_state) {
             case 0: { // Abilities
@@ -353,16 +376,14 @@ void bsc_cmd_before_attack() {
                 if (effect)
                     return;
                 break;
-
             }
             default:
                 bsc_offset++;
                 return;
         }
     }
-
 }
- 
+
 void bsc_cmd_x49_attack_done_new() {
     if (battle_scripting.attack_done_state <= 17) {
         bsc_cmd_x49_attack_done();
@@ -372,12 +393,13 @@ void bsc_cmd_x49_attack_done_new() {
     u8 mode = bsc_offset[1];
     if (mode == 1) {
         BATTLE_STATE2->attack_done_substate = 255; // Only one state was supposed to be executed whatsoever
-    }; 
+    };
     u8 last_state = bsc_offset[2];
     // dprintf("mode is %d, arg is %d\n", mode, last_state);
     switch (battle_scripting.attack_done_state) {
-        case 0 ... 17: return; // The original function has not terminated 
-        case 18: { // We enter this case when the original function whould have terminated
+        case 0 ... 17:
+            return; // The original function has not terminated
+        case 18: {  // We enter this case when the original function whould have terminated
             //dprintf("Initialize new attack done effects.\n");
             BATTLE_STATE2->attack_done_substate = 0;
             BATTLE_STATE2->switch_in_handicap_effects_cnt = 0;
@@ -390,7 +412,7 @@ void bsc_cmd_x49_attack_done_new() {
             bool effect = false;
             while (!effect) {
                 dprintf("Executing substate %d\n", BATTLE_STATE2->attack_done_substate);
-                switch(BATTLE_STATE2->attack_done_substate) {
+                switch (BATTLE_STATE2->attack_done_substate) {
                     case 0: {
                         if (mode != 2 || last_state > 5) { // State 5 is the original attacker abilities (i.e. synchronize)
                             if (battle_abilities_attack_done_attacker_new()) {
@@ -427,23 +449,24 @@ void bsc_cmd_x49_attack_done_new() {
                         BATTLE_STATE2->attack_done_substate++;
                         break;
                     }
-                    case 4 : {
+                    case 4: {
                         if (mode != 2 || last_state > 16) { // Only if all effects will be executed, we consider gunpowder
-                            if (battle_items_gunpowder()) effect = true;
+                            if (battle_items_gunpowder())
+                                effect = true;
                         }
                         BATTLE_STATE2->attack_done_substate++;
                         break;
                     }
-                    case 5 : {
+                    case 5: {
                         if (mode != 2 || last_state > 16) { // Only if all effects will be executed, we consider life-orb
-                            if (battle_items_life_orb()) effect = true;
+                            if (battle_items_life_orb())
+                                effect = true;
                         }
                         BATTLE_STATE2->attack_done_substate++;
                         break;
                     }
                     case 6: {
-                        if ((mode != 2 || last_state > 16) 
-                            && BATTLE_STATE2->switch_in_handicap_effects_cnt < 32) { // Only when all attack-end effects are executed, we consider handicaps...
+                        if ((mode != 2 || last_state > 16) && BATTLE_STATE2->switch_in_handicap_effects_cnt < 32) { // Only when all attack-end effects are executed, we consider handicaps...
                             if (battle_handicap_attack_done())
                                 effect = true;
                             BATTLE_STATE2->switch_in_handicap_effects_cnt++; // Next step -> Next Check next handycap
@@ -486,8 +509,7 @@ void bsc_teleport_set_outcome() {
 
 static bool typecalc_apply_item_effects() {
     bool effect = false;
-    if ((attack_result & (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)) == (ATTACK_SUPER_EFFECTIVE) && !(attack_result & ATTACK_MISSED) 
-        && attacks[active_attack].base_power > 0) {
+    if ((attack_result & (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)) == (ATTACK_SUPER_EFFECTIVE) && !(attack_result & ATTACK_MISSED) && attacks[active_attack].base_power > 0) {
         if (item_get_hold_effect(battlers[attacking_battler].item) == HOLD_EFFECT_EXPERT_BELT) {
             damage_to_apply *= item_get_hold_effect_parameter(battlers[attacking_battler].item) + 100;
             damage_to_apply /= 100;
@@ -520,8 +542,8 @@ void bsc_command_x06_typecalc() {
         bool no_weakness = false;
         if ((battle_flags & BATTLE_WITH_HANDICAP) && (fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_FLOATING_ROCKS]) &&
             (battlers[defending_battler].type1 == TYPE_GESTEIN || battlers[defending_battler].type2 == TYPE_GESTEIN)) {
-                no_weakness = true;
-            } 
+            no_weakness = true;
+        }
         for (int i = 0; type_effectivenesses[i].attacker != 0xFF; i++) {
             if (type_effectivenesses[i].attacker == 0xFE) {
                 if (battlers[defending_battler].status2 & STATUS2_FORESIGHT)
@@ -538,17 +560,13 @@ void bsc_command_x06_typecalc() {
             }
         }
     }
-    if (battlers[defending_battler].ability == WUNDERWACHE
-        && battler_get_charging_state(attacking_battler, active_attack) == CHARGING_STATE_NOT_CHARGING
-        && (!(attack_result & ATTACK_SUPER_EFFECTIVE) || 
-            ((attack_result & (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)) == (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)))
-        && attacks[active_attack].base_power > 0) {
-            defending_battler_ability = WUNDERWACHE;
-            attack_result |= ATTACK_MISSED;
-            battler_last_landed_move[defending_battler] = 0;
-            battler_last_hit_by_type[defending_battler] = 0;
-            battle_communication[6] = 3;
-            battle_record_ability(defending_battler, defending_battler_ability);
+    if (battlers[defending_battler].ability == WUNDERWACHE && battler_get_charging_state(attacking_battler, active_attack) == CHARGING_STATE_NOT_CHARGING && (!(attack_result & ATTACK_SUPER_EFFECTIVE) || ((attack_result & (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)) == (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE))) && attacks[active_attack].base_power > 0) {
+        defending_battler_ability = WUNDERWACHE;
+        attack_result |= ATTACK_MISSED;
+        battler_last_landed_move[defending_battler] = 0;
+        battler_last_hit_by_type[defending_battler] = 0;
+        battle_communication[6] = 3;
+        battle_record_ability(defending_battler, defending_battler_ability);
     }
     if (attack_result & ATTACK_NO_EFFECT)
         battler_statuses[attacking_battler].target_unaffected = 1;
@@ -572,8 +590,8 @@ void bsc_command_x4a_typecalc2() {
         bool no_weakness = false;
         if ((battle_flags & BATTLE_WITH_HANDICAP) && (fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_FLOATING_ROCKS]) &&
             (battlers[defending_battler].type1 == TYPE_GESTEIN || battlers[defending_battler].type2 == TYPE_GESTEIN)) {
-                no_weakness = true;
-            } 
+            no_weakness = true;
+        }
         for (int i = 0; type_effectivenesses[i].attacker != 0xFF; i++) {
             if (type_effectivenesses[i].attacker == 0xFE) {
                 if (battlers[defending_battler].status2 & STATUS2_FORESIGHT) {
@@ -607,17 +625,13 @@ void bsc_command_x4a_typecalc2() {
             }
         }
     }
-    if (battlers[defending_battler].ability == WUNDERWACHE
-        && battler_get_charging_state(attacking_battler, active_attack) == CHARGING_STATE_NOT_CHARGING
-        && (!(attack_result & ATTACK_SUPER_EFFECTIVE) || 
-            ((attack_result & (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)) == (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)))
-        && attacks[active_attack].base_power > 0) {
-            defending_battler_ability = WUNDERWACHE;
-            attack_result |= ATTACK_MISSED;
-            battler_last_landed_move[defending_battler] = 0;
-            battler_last_hit_by_type[defending_battler] = 0;
-            battle_communication[6] = 3;
-            battle_record_ability(defending_battler, defending_battler_ability);
+    if (battlers[defending_battler].ability == WUNDERWACHE && battler_get_charging_state(attacking_battler, active_attack) == CHARGING_STATE_NOT_CHARGING && (!(attack_result & ATTACK_SUPER_EFFECTIVE) || ((attack_result & (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)) == (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE))) && attacks[active_attack].base_power > 0) {
+        defending_battler_ability = WUNDERWACHE;
+        attack_result |= ATTACK_MISSED;
+        battler_last_landed_move[defending_battler] = 0;
+        battler_last_hit_by_type[defending_battler] = 0;
+        battle_communication[6] = 3;
+        battle_record_ability(defending_battler, defending_battler_ability);
     }
     if (attack_result & ATTACK_NO_EFFECT)
         battler_statuses[attacking_battler].target_unaffected = 1;
@@ -629,8 +643,8 @@ void bsc_command_x06_typecalc_scan_effectiveness_table(u8 move_type) {
     bool no_weakness = false;
     if ((battle_flags & BATTLE_WITH_HANDICAP) && (fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_FLOATING_ROCKS]) &&
         (battlers[defending_battler].type1 == TYPE_GESTEIN || battlers[defending_battler].type2 == TYPE_GESTEIN)) {
-            no_weakness = true;
-        } 
+        no_weakness = true;
+    }
     for (int i = 0; type_effectivenesses[i].attacker != 0xFF; i++) {
         if (type_effectivenesses[i].attacker == 0xFE) {
             // If the defender is in foresight, ignore entries after the "marker" 0xFE
@@ -668,7 +682,7 @@ extern u8 bsc_battler_hung_on_with_sturdy[];
 void battlescript_jump_to_sturdy_script_if_set() {
     dprintf("Decide which sturdy script to take %d\n", battler_damage_taken[defending_battler].used_sturdy);
     if (battler_damage_taken[defending_battler].used_sturdy) {
-        bsc_offset = (u8*)UNALIGNED_32_GET(bsc_offset);
+        bsc_offset = (u8 *)UNALIGNED_32_GET(bsc_offset);
     } else {
         bsc_offset += 4;
     }
@@ -690,20 +704,17 @@ static void adjustnormaldamage(bool consider_false_swipe, bool random_damage_mul
         battle_record_item_effect(defending_battler, hold_effect);
         battler_damage_taken[defending_battler].used_focus_band = true;
     } else if (hold_effect == HOLD_EFFECT_FOCUS_SASH && battlers[defending_battler].current_hp <= damage_to_apply &&
-            battlers[defending_battler].current_hp == battlers[defending_battler].max_hp) {
+               battlers[defending_battler].current_hp == battlers[defending_battler].max_hp) {
         battle_record_item_effect(defending_battler, hold_effect);
         battler_damage_taken[defending_battler].used_focus_band = true;
-    } else if (battlers[defending_battler].ability == ROBUSTHEIT && battlers[defending_battler].current_hp <= damage_to_apply && 
-            battlers[defending_battler].current_hp == battlers[defending_battler].max_hp) {
+    } else if (battlers[defending_battler].ability == ROBUSTHEIT && battlers[defending_battler].current_hp <= damage_to_apply &&
+               battlers[defending_battler].current_hp == battlers[defending_battler].max_hp) {
         battle_record_ability(defending_battler, battlers[defending_battler].ability);
         defending_battler_ability = battlers[defending_battler].ability;
         battler_damage_taken[defending_battler].used_sturdy = true;
         dprintf("Defender uses sturdy\n");
     }
-    if (!(battlers[defending_battler].status2 & STATUS2_SUBSTITUTE)
-        && ((attacks[active_attack].effect == 0x65 && consider_false_swipe) || battler_statuses[defending_battler].endure || 
-            battler_damage_taken[defending_battler].used_focus_band || battler_damage_taken[defending_battler].used_sturdy)
-        && battlers[defending_battler].current_hp <= damage_to_apply) {
+    if (!(battlers[defending_battler].status2 & STATUS2_SUBSTITUTE) && ((attacks[active_attack].effect == 0x65 && consider_false_swipe) || battler_statuses[defending_battler].endure || battler_damage_taken[defending_battler].used_focus_band || battler_damage_taken[defending_battler].used_sturdy) && battlers[defending_battler].current_hp <= damage_to_apply) {
         damage_to_apply = battlers[defending_battler].current_hp - 1;
         if (battler_damage_taken[defending_battler].used_focus_band || battler_damage_taken[defending_battler].used_sturdy) {
             attack_result |= ATTACK_ENDURED_BY_FOCUS_SASH;
@@ -712,8 +723,7 @@ static void adjustnormaldamage(bool consider_false_swipe, bool random_damage_mul
             attack_result |= ATTACK_ENDURED;
         }
     }
-    if ((BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_GEM_USED)
-        && !(attack_result & ATTACK_NO_EFFECT_ANY) && battlers[attacking_battler].item != 0) {
+    if ((BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_GEM_USED) && !(attack_result & ATTACK_NO_EFFECT_ANY) && battlers[attacking_battler].item != 0) {
         bsc_last_used_item = battlers[attacking_battler].item;
         battlescript_callstack_push_next_command();
         bsc_offset = battlescript_gem_used;
@@ -763,9 +773,10 @@ void bsc_command_x93_setohkodamage(void) {
     }
     if (battlers[defending_battler].ability == ROBUSTHEIT) {
         attack_result |= ATTACK_MISSED;
-        defending_battler_ability  = battlers[defending_battler].ability;
+        defending_battler_ability = battlers[defending_battler].ability;
         battle_record_ability(defending_battler, battlers[defending_battler].ability);
-        bsc_offset = bsc_sturdy_prevents_ohko;;
+        bsc_offset = bsc_sturdy_prevents_ohko;
+        ;
     } else {
         bool hits;
         int level_difference = battlers[attacking_battler].level - battlers[defending_battler].level;
@@ -795,7 +806,7 @@ void bsc_command_x93_setohkodamage(void) {
             } else {
                 battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 1;
             }
-            bsc_offset = (u8*)UNALIGNED_32_GET(bsc_offset + 1);
+            bsc_offset = (u8 *)UNALIGNED_32_GET(bsc_offset + 1);
         }
     }
 }
@@ -806,7 +817,7 @@ void bsc_jump_if_item_effect() {
     // dprintf("Bsc jump if battler %d has item effect %d, bsc : 0x%x\n", battler_idx, item_effect, bsc_offset);
     if (item_get_hold_effect(battlers[battler_idx].item) == item_effect) {
         bsc_last_used_item = battlers[battler_idx].item;
-        bsc_offset = (u8*)UNALIGNED_32_GET(bsc_offset + 3);
+        bsc_offset = (u8 *)UNALIGNED_32_GET(bsc_offset + 3);
     } else {
         bsc_offset += 7;
     }

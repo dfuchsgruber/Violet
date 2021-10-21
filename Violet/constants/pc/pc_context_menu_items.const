@@ -1,7 +1,7 @@
 {
-    "type" : "enum",
-    "base" : 0,
-    "values" : [
+    "type": "enum",
+    "base": 0,
+    "values": [
         "PC_CONTEXT_MENU_ITEM_CANCEL",
         "PC_CONTEXT_MENU_ITEM_STORE",
         "PC_CONTEXT_MENU_ITEM_WITHDRAW",

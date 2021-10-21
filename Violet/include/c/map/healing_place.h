@@ -8,11 +8,11 @@
 #ifndef INCLUDE_C_MAP_HEALING_PLACE_H_
 #define INCLUDE_C_MAP_HEALING_PLACE_H_
 
+#include "constants/healingplaces.h"
 #include "save.h"
 #include "tile/coordinate.h"
-#include "constants/healingplaces.h"
 
-typedef struct{
+typedef struct {
     u16 bank;
     u16 map;
 } stru_healing_place_map;

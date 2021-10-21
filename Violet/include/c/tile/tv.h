@@ -8,8 +8,6 @@
 #ifndef INCLUDE_C_TILE_TV_H_
 #define INCLUDE_C_TILE_TV_H_
 
-
-
 void load_tv_text();
 u8 *get_tv_text();
 

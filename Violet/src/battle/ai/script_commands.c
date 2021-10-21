@@ -1,17 +1,17 @@
-#include "types.h"
-#include "battle/state.h"
-#include "battle/battler.h"
 #include "battle/ai.h"
-#include "constants/battle/battle_statuses.h"
-#include "pokemon/basestat.h"
-#include "prng.h"
-#include "debug.h"
+#include "battle/battler.h"
 #include "battle/ressources.h"
-#include "vars.h"
+#include "battle/state.h"
+#include "constants/battle/battle_statuses.h"
 #include "constants/difficulties.h"
 #include "constants/item_hold_effects.h"
 #include "constants/pokemon_types.h"
+#include "debug.h"
 #include "item/item.h"
+#include "pokemon/basestat.h"
+#include "prng.h"
+#include "types.h"
+#include "vars.h"
 
 static u16 battle_ai_fleeing_prng() {
     return (u16)_prng_xorshift(&BATTLE_STATE2->fleeing_rng);
@@ -37,7 +37,7 @@ void battle_ai_script_command_random_flee() {
     dprintf("Considering fleeing with a rate of %d\n", base_rate);
 
     if (battle_ai_fleeing_prng() % 255 < base_rate) {
-        battle_ai_script = (u8*)UNALIGNED_32_GET(battle_ai_script + 1);
+        battle_ai_script = (u8 *)UNALIGNED_32_GET(battle_ai_script + 1);
     } else {
         battle_ai_script += 5;
     }
@@ -53,7 +53,7 @@ void battle_ai_script_command_jump_if_item_bad_for_battler() {
         type_battler_idx = attacking_battler;
     else
         type_battler_idx = defending_battler;
-    u8 *script = (u8*)UNALIGNED_32_GET(battle_ai_script + 3);
+    u8 *script = (u8 *)UNALIGNED_32_GET(battle_ai_script + 3);
     battle_ai_script += 7;
     if (battlers[item_battler_idx].item == 0)
         return;
@@ -67,7 +67,7 @@ void battle_ai_script_command_jump_if_item_bad_for_battler() {
     }
     switch (hold_effect) {
         case HOLD_EFFECT_LEFTOVERS: {
-            if (hold_effect_param != 0xFF){
+            if (hold_effect_param != 0xFF) {
                 if (hold_effect_param != battlers[type_battler_idx].type1 && hold_effect_param != battlers[type_battler_idx].type2) {
                     battle_ai_script = script;
                 }
@@ -75,5 +75,4 @@ void battle_ai_script_command_jump_if_item_bad_for_battler() {
             break;
         }
     }
-    
-}   
+}

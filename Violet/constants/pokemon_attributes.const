@@ -90,6 +90,6 @@
 		"ATTRIBUTE_SPEED2",
 		"ATTRIBUTE_SPATK2",
 		"ATTRIBUTE_SPDEF2"
-			],
+	],
 	"base": 0
 }

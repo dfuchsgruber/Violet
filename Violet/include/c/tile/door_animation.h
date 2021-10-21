@@ -19,5 +19,4 @@ typedef struct {
     u8 *palette_map;
 } door_animation;
 
-
 #endif /* INCLUDE_C_TILE_DOOR_ANIMATION_H_ */

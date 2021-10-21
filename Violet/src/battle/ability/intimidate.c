@@ -1,14 +1,13 @@
-#include "types.h"
-#include "constants/abilities.h"
-#include "constants/battle/battle_weathers.h"
+#include "abilities.h"
+#include "battle/battler.h"
+#include "battle/battlescript.h"
 #include "battle/state.h"
 #include "battle/weather.h"
-#include "battle/battlescript.h"
-#include "battle/battler.h"
+#include "constants/abilities.h"
+#include "constants/battle/battle_weathers.h"
 #include "constants/pokemon_stat_names.h"
 #include "debug.h"
-#include "abilities.h"
-#include "debug.h"
+#include "types.h"
 
 extern u8 bsc_intimidate[];
 extern u8 bsc_intimidate_end3[];
@@ -60,4 +59,3 @@ bool battle_abilities_intimidate1() {
     }
     return false;
 }
-

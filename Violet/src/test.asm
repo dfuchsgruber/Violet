@@ -263,7 +263,7 @@ callasm trainerschool_exam_init
 loadpointer 0 str_beforea
 callstd MSG
 end
-/** 
+/* 
 clearflag AMONIA_RIVAL_INSIDE_PLAYER_HOUSE
 showsprite 2
 goto ow_script_0x88abb8

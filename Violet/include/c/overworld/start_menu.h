@@ -44,8 +44,11 @@ u8 *start_menu_item_descriptions[NUM_START_MENU_ITEMS];
 extern start_menu_state_t start_menu_state;
 
 #define START_MENU_GFX_7_SEGMENT_TAG 0x3788
-enum start_menu_clock_digit{
-    START_MENU_CLOCK_HOURS_10, START_MENU_CLOCK_HOURS_1, START_MENU_CLOCK_MINUTES_10, START_MENU_CLOCK_MINUTES_1
+enum start_menu_clock_digit {
+    START_MENU_CLOCK_HOURS_10,
+    START_MENU_CLOCK_HOURS_1,
+    START_MENU_CLOCK_MINUTES_10,
+    START_MENU_CLOCK_MINUTES_1
 };
 
 extern u8 gfx_start_menu_7_segmentTiles[];
@@ -58,29 +61,29 @@ void start_menu_delete_safari();
 
 /**
  * Adds an item to the start menu list
- **/
+ */
 void start_menu_add_item(u8 item_idx);
 
 /**
  * Builds the item idxs of the start menu
- **/
+ */
 void start_menu_build();
 
 /**
  * Initializes the textbox for the start menu.
  * @param number_items how many items are to be displayed
  * @return the box idx
- **/
+ */
 u8 start_menu_tbox_initialize(u8 number_items);
 
 /**
  * Creates a tbox for the safari balls in the start menu.
- **/
+ */
 void start_menu_print_safari_balls();
 
 /**
  * Clears the additional box (clock, safari balls) in the start menu
- **/
+ */
 void start_menu_clear_additional_box();
 
 /**
@@ -88,94 +91,94 @@ void start_menu_clear_additional_box();
  * @param items_drawn_total pointer to how many items were drawn already
  * @param items_to_draw how many items to draw in this iteration
  * @return if all items were drawn with this iteration
- **/
+ */
 bool start_menu_draw_items(u8 *items_drawn_total, u8 items_to_draw);
 
 /**
  * TODO
- **/
-u8 sub_0810f888(int uParm1,int uParm2,int uParm3,int uParm4,int param_1,int param_2, int param_3);
+ */
+u8 sub_0810f888(int uParm1, int uParm2, int uParm3, int uParm4, int param_1, int param_2, int param_3);
 
 /**
  * Returns the box idx of the start menu box.
  * @return the box idx of the start menu box
- **/
+ */
 u8 start_menu_get_tbox_idx();
 
 /**
  * Prints the description of an item for the start menu.
  * @param str the description string to print
- **/
+ */
 void start_menu_print_item_description(u8 *str);
 
 /**
  * Start menu function that initializes saving the game
- **/
+ */
 bool start_menu_save_initialize();
 
 /**
  * Build start menu items for link
- **/
+ */
 void start_menu_build_link();
 
 /**
  * Build start menu items for the union room
- **/
+ */
 void start_menu_build_union_room();
 
 /**
  * Builds the start menu items for the safari context
- **/
+ */
 void start_menu_build_safari();
 
 /**
  * Builds the standard start menu items
- **/
+ */
 void start_menu_build_std();
 
 /**
  * Initializes the start menu and clears the additional box (safari / clock)
- **/
+ */
 bool start_menu_save_initialize_and_clear_additional_box();
 
 /**
  * Initializes the options from the start menu
- **/
+ */
 bool start_menu_options_initialize();
 
 /**
  * Initializes the pokemon menu from the start menu
- **/
+ */
 bool start_menu_pokemon_initialize();
 
 /**
  * Initializes the trainer card from the start menu
- **/
+ */
 bool start_menu_trainer_card_initialize();
 
 /**
  * Initializes the trainer card from the start menu
- **/
+ */
 bool start_menu_trainer_card_initialize2();
 
 /**
  * Initializes the saving dialoge from the start menu
- **/
+ */
 bool start_menu_save_initialize();
 
 /**
  * Closes the start menu
- **/
+ */
 bool start_menu_close();
 
 /**
  * Initializes the retiring from safari dialoge from the start menu
- **/
+ */
 bool start_menu_retire_initialize();
 
 /**
  * Initializes the bag from the start menu
- **/
+ */
 bool start_menu_bag_initialize();
 
 #endif /* INCLUDE_C_OVERWORLD_START_MENU_H_ */

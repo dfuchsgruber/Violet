@@ -1,14 +1,14 @@
-#include "types.h"
-#include "battle/state.h"
-#include "battle/battler.h"
-#include "debug.h"
-#include "overworld/pokemon_party_menu.h"
-#include "battle/attack.h"
-#include "constants/attacks.h"
-#include "item/item.h"
 #include "attack.h"
-#include "constants/item_hold_effects.h"
+#include "battle/attack.h"
+#include "battle/battler.h"
+#include "battle/state.h"
 #include "constants/attack_categories.h"
+#include "constants/attacks.h"
+#include "constants/item_hold_effects.h"
+#include "debug.h"
+#include "item/item.h"
+#include "overworld/pokemon_party_menu.h"
+#include "types.h"
 
 pokemon *battler_load_party_range(u8 battler_idx, u8 *first, u8 *last) {
     if (battle_flags & BATTLE_MULTI) {
@@ -30,16 +30,21 @@ pokemon *battler_load_party_range(u8 battler_idx, u8 *first, u8 *last) {
     return SIDE(battler_idx) == BATTLE_SIDE_OPPONENT ? opponent_pokemon : player_pokemon;
 }
 
-
 void battler_get_partner_and_foes(u8 battler, u8 *partner, u8 *foe, u8 *foe_partner) {
     if (battle_flags & BATTLE_DOUBLE) {
-        if (partner) *partner = PARTNER(battler);
-        if (foe) *foe = OPPONENT(battler);
-        if (foe_partner) *foe_partner = PARTNER(*foe);
+        if (partner)
+            *partner = PARTNER(battler);
+        if (foe)
+            *foe = OPPONENT(battler);
+        if (foe_partner)
+            *foe_partner = PARTNER(*foe);
     } else {
-        if (partner) *partner = battler;
-        if (foe) *foe = OPPONENT(battler);
-        if (foe_partner) *foe_partner = *foe;
+        if (partner)
+            *partner = battler;
+        if (foe)
+            *foe = OPPONENT(battler);
+        if (foe_partner)
+            *foe_partner = *foe;
     }
 }
 
@@ -59,13 +64,14 @@ u8 battler_idx_to_party_idx(u8 battler_idx) {
 }
 
 bool battler_has_no_switching_targets(u8 battler_idx, u8 party_idx, u8 partner_party_idx) {
-    if (!(battle_flags & BATTLE_DOUBLE)) return false;
+    if (!(battle_flags & BATTLE_DOUBLE))
+        return false;
     u8 first = 0, last = 0;
     pokemon *party = battler_load_party_range(battler_idx, &first, &last);
     if (party_idx == 6)
-        party_idx = (u8) battler_idx_to_party_idx(battler_idx);
+        party_idx = (u8)battler_idx_to_party_idx(battler_idx);
     if (partner_party_idx == 6)
-        partner_party_idx = (u8) battler_idx_to_party_idx(PARTNER(battler_idx));
+        partner_party_idx = (u8)battler_idx_to_party_idx(PARTNER(battler_idx));
     dprintf("Battler %d has switching target?\nparty_idx %d, partner_party_idx %d\n", battler_idx, party_idx, partner_party_idx);
     for (int i = first; i < last; i++) {
         if (POKEMON_IS_VIABLE(party + i) && i != party_idx && i != partner_party_idx) {
@@ -78,7 +84,7 @@ bool battler_has_no_switching_targets(u8 battler_idx, u8 party_idx, u8 partner_p
 }
 
 bool battler_is_alive(u8 battler_idx) {
-    if (battlers[battler_idx].current_hp <= 0) 
+    if (battlers[battler_idx].current_hp <= 0)
         return false;
     if (battler_idx >= battler_cnt)
         return false;
@@ -91,7 +97,7 @@ bool battle_active_attack_should_do_animation() {
     if (active_attack == ATTACK_DELEGATOR || active_attack == ATTACK_WANDLER) // Even with no animations, these ones are needed for the game to work
         return true;
     if (active_attack == ATTACK_TELEPORT && BATTLE_IS_WILD_DOUBLE && battler_is_opponent(attacking_battler) && battler_is_alive(PARTNER(attacking_battler)))
-        return true; // In a double battle against two wilds, the teleport animation is required if both of them are still alive
+        return true;                       // In a double battle against two wilds, the teleport animation is required if both of them are still alive
     return (bsc_status_flags & 0x80) == 0; // 0x80: Animations inactive
 }
 
@@ -165,7 +171,7 @@ u8 battle_player_set_move_selection_battlescript() {
 u8 battler_check_move_limitations(u8 battler_idx, u8 mask, u8 check) {
     u16 *choiced_move = battle_state->choiced_move + battler_idx;
     u8 hold_effect;
-    u8 hold_effect_param; 
+    u8 hold_effect_param;
     battler_get_hold_item_effect_and_parameter(battler_idx, &hold_effect, &hold_effect_param);
     item_target_battler = battler_idx;
     for (int i = 0; i < 4; i++) {

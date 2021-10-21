@@ -1,25 +1,23 @@
-#include "types.h"
-#include "item/item.h"
-#include "pokemon/virtual.h"
-#include "language.h"
-#include "battle/state.h"
+#include "item/pokeball.h"
 #include "battle/battler.h"
+#include "battle/state.h"
+#include "color.h"
 #include "debug.h"
 #include "item/bag.h"
-#include "item/pokeball.h"
-#include "color.h"
+#include "item/item.h"
+#include "language.h"
+#include "pokemon/virtual.h"
+#include "types.h"
 
 extern u8 str_pokeball_unusable_because_no_space[];
 
 u8 str_pokeball_unusable_cant_aim_at_two[] = LANGDEP(
     PSTRING("Du kannst nicht auf zwei Pokémon\ngleichzeitig zielen!PAUSE_UNTIL_PRESS"),
-    PSTRING("You can't aim at two Pokémon at\nthe same time!PAUSE_UNTIL_PRESS")
-);
+    PSTRING("You can't aim at two Pokémon at\nthe same time!PAUSE_UNTIL_PRESS"));
 
 u8 str_pokeball_unusable_because_of_other_action[] = LANGDEP(
     PSTRING("Du kannst keinen Ball werfen, wenn du\nbereits eine andere Aktion ausführst.PAUSE_UNTIL_PRESS"),
-    PSTRING("You can't throw a ball while\nperforming another action.PAUSE_UNTIL_PRESS")
-);
+    PSTRING("You can't throw a ball while\nperforming another action.PAUSE_UNTIL_PRESS"));
 
 void item_pokeball_battle(u8 self) {
     if (BATTLE_IS_WILD_DOUBLE && battler_get_position(battler_in_party_menu) == BATTLE_POSITION_PLAYER_RIGHT) {
@@ -121,7 +119,11 @@ oam_template pokeball_oam_templates[NUM_POKEBALLS] = {
     [BALL_DUSK] = POKEBALL_TEMPLATE_STANDARD(BALL_DUSK),
 };
 
-static sprite pokeball_partices_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_8_8, .attr2 = ATTR2_PRIO(2),};
+static sprite pokeball_partices_sprite = {
+    .attr0 = ATTR0_SHAPE_SQUARE,
+    .attr1 = ATTR1_SIZE_8_8,
+    .attr2 = ATTR2_PRIO(2),
+};
 
 graphic pokeball_particle_gfxs[NUM_POKEBALLS] = {
     [BALL_POKE] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_POKE},
@@ -160,17 +162,17 @@ palette pokeball_particle_palettes[NUM_POKEBALLS] = {
 };
 
 u8 pokeball_particle_animation_idxs[NUM_POKEBALLS] = {
-    [BALL_POKE]    = 0,
-    [BALL_GREAT]   = 0,
-    [BALL_SAFARI]  = 0,
-    [BALL_ULTRA]   = 5,
-    [BALL_MASTER]  = 1,
-    [BALL_NET]     = 2,
-    [BALL_DIVE]    = 2,
-    [BALL_NEST]    = 3,
-    [BALL_REPEAT]  = 5,
-    [BALL_TIMER]   = 5,
-    [BALL_LUXURY]  = 4,
+    [BALL_POKE] = 0,
+    [BALL_GREAT] = 0,
+    [BALL_SAFARI] = 0,
+    [BALL_ULTRA] = 5,
+    [BALL_MASTER] = 1,
+    [BALL_NET] = 2,
+    [BALL_DIVE] = 2,
+    [BALL_NEST] = 3,
+    [BALL_REPEAT] = 5,
+    [BALL_TIMER] = 5,
+    [BALL_LUXURY] = 4,
     [BALL_PREMIER] = 4,
     [BALL_LOTUS] = 1,
     [BALL_QUICK] = BALL_PARTICLE_SMALL_GREEN_CROSSES,
@@ -215,21 +217,21 @@ oam_template pokeball_particles_oam_templates[NUM_POKEBALLS] = {
 
 // Battlers are faded to this palette when sent out in this ball
 color_t pokeball_open_fade_colors[] = {
-    [BALL_POKE]    =  {.rgb = {.red = 31, .green = 22, .blue = 30}},
-    [BALL_GREAT]    =  {.rgb = {.red = 16, .green = 23, .blue = 30}},
-    [BALL_SAFARI]    =  {.rgb = {.red = 23, .green = 30, .blue = 20}},
-    [BALL_ULTRA]    =  {.rgb = {.red = 31, .green = 31, .blue = 15}},
-    [BALL_MASTER]    =  {.rgb = {.red = 23, .green = 20, .blue = 28}},
-    [BALL_NET]    =  {.rgb = {.red = 21, .green = 31, .blue = 25}},
-    [BALL_DIVE]    =  {.rgb = {.red = 12, .green = 25, .blue = 30}},
-    [BALL_NEST]    =  {.rgb = {.red = 30, .green = 27, .blue = 10}},
-    [BALL_REPEAT]    =  {.rgb = {.red = 31, .green = 24, .blue = 16}},
-    [BALL_TIMER]    =  {.rgb = {.red = 29, .green = 30, .blue = 30}},
-    [BALL_LUXURY]    =  {.rgb = {.red = 31, .green = 17, .blue = 10}},
-    [BALL_PREMIER]    =  {.rgb = {.red = 31, .green = 9, .blue = 10}},
-    [BALL_LOTUS]    =  {.rgb = {.red = 31, .green = 31, .blue = 10}},
-    [BALL_QUICK]    =  {.rgb = {.red = 26, .green = 20, .blue = 4}},
-    [BALL_DUSK]    =  {.rgb = {.red = 11, .green = 11, .blue = 1}},
+    [BALL_POKE] = {.rgb = {.red = 31, .green = 22, .blue = 30}},
+    [BALL_GREAT] = {.rgb = {.red = 16, .green = 23, .blue = 30}},
+    [BALL_SAFARI] = {.rgb = {.red = 23, .green = 30, .blue = 20}},
+    [BALL_ULTRA] = {.rgb = {.red = 31, .green = 31, .blue = 15}},
+    [BALL_MASTER] = {.rgb = {.red = 23, .green = 20, .blue = 28}},
+    [BALL_NET] = {.rgb = {.red = 21, .green = 31, .blue = 25}},
+    [BALL_DIVE] = {.rgb = {.red = 12, .green = 25, .blue = 30}},
+    [BALL_NEST] = {.rgb = {.red = 30, .green = 27, .blue = 10}},
+    [BALL_REPEAT] = {.rgb = {.red = 31, .green = 24, .blue = 16}},
+    [BALL_TIMER] = {.rgb = {.red = 29, .green = 30, .blue = 30}},
+    [BALL_LUXURY] = {.rgb = {.red = 31, .green = 17, .blue = 10}},
+    [BALL_PREMIER] = {.rgb = {.red = 31, .green = 9, .blue = 10}},
+    [BALL_LOTUS] = {.rgb = {.red = 31, .green = 31, .blue = 10}},
+    [BALL_QUICK] = {.rgb = {.red = 26, .green = 20, .blue = 4}},
+    [BALL_DUSK] = {.rgb = {.red = 11, .green = 11, .blue = 1}},
 };
 
 void pokeball_load_gfx(u8 ball_idx) {

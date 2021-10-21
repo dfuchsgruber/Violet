@@ -1,7 +1,7 @@
 {
-    "type" : "enum",
-    "base" : 0,
-    "values" : [
+    "type": "enum",
+    "base": 0,
+    "values": [
         "ITEM_EFFECT_X_ITEM",
         "ITEM_EFFECT_INCREASE_LEVEL",
         "ITEM_EFFECT_HEAL_HP",

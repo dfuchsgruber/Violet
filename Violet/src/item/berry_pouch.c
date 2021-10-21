@@ -1,23 +1,23 @@
-#include "types.h"
-#include "item/item.h"
 #include "item/berry_pouch.h"
-#include "save.h"
 #include "berry.h"
-#include "debug.h"
-#include "flags.h"
-#include "language.h"
 #include "bg.h"
-#include "overworld/map_control.h"
-#include "fading.h"
 #include "callbacks.h"
-#include "overworld/script.h"
-#include "text.h"
-#include "superstate.h"
-#include "music.h"
 #include "constants/berry_pouch_contexts.h"
-#include "vars.h"
 #include "constants/sav_keys.h"
+#include "debug.h"
+#include "fading.h"
+#include "flags.h"
+#include "item/item.h"
+#include "language.h"
+#include "music.h"
+#include "overworld/map_control.h"
 #include "overworld/pokemon_party_menu.h"
+#include "overworld/script.h"
+#include "save.h"
+#include "superstate.h"
+#include "text.h"
+#include "types.h"
+#include "vars.h"
 
 static u8 context_menu_options_standard[4] = {
     BERRY_POUCH_CONTEXT_MENU_ACTION_USE,
@@ -30,7 +30,6 @@ static u8 context_menu_options_composter[2] = {
     BERRY_POUCH_CONTEXT_MENU_ACTION_COMPOST,
     BERRY_POUCH_CONTEXT_MENU_ACTION_EXIT,
 };
-
 
 void berry_pouch_callback_plant_berry(u8 self) {
     *var_access(LASTRESULT) = 1; // Berry planted
@@ -55,13 +54,11 @@ void (*berry_pouch_callbacks[])(u8) = {
 
 u8 berry_pouch_context_menu_option_compost_text[] = LANGDEP(
     PSTRING("Kompost."),
-    PSTRING("Compost")
-);
+    PSTRING("Compost"));
 
 u8 str_berry_pouch_how_many_to_compost[] = LANGDEP(
     PSTRING("Wie viele willst du\nkompostieren?"),
-    PSTRING("How many to compost?")
-);
+    PSTRING("How many to compost?"));
 
 extern u8 str_berry_pouch_how_many_to_toss[];
 
@@ -75,8 +72,7 @@ void berry_pouch_toss_print_string_how_many(u8 self) {
 
 u8 str_berry_pouch_how_confirm_quantity_to_compost[] = LANGDEP(
     PSTRING("Dieses Item BUFFER_2 ×\nkompostieren?"),
-    PSTRING("Compost this item BUFFER_2 ×?")
-);
+    PSTRING("Compost this item BUFFER_2 ×?"));
 
 extern u8 str_berry_pouch_confirm_quantity_to_toss[];
 
@@ -90,8 +86,7 @@ void berry_pouch_toss_get_string_confirm_quantity_to_toss() {
 
 u8 str_berry_pouch_composted_item[] = LANGDEP(
     PSTRING("BUFFER_2 × BUFFER_1\nzu BUFFER_3 kompostiert."),
-    PSTRING("Composted BUFFER_2 ×\nBUFFER_1 to BUFFER_3 ")
-);
+    PSTRING("Composted BUFFER_2 ×\nBUFFER_1 to BUFFER_3 "));
 
 extern u8 str_berry_pouch_tossed_item[];
 
@@ -110,8 +105,7 @@ void berry_pouch_composting_no_room_for_mulch(u8 self) {
 
 u8 str_berry_pouch_no_room_for_mulch[] = LANGDEP(
     PSTRING("Du hast keinen Platz für\nBUFFER_3!"),
-    PSTRING("You don't have any room for\nBUFFER_3!")
-);
+    PSTRING("You don't have any room for\nBUFFER_3!"));
 
 void berry_pouch_toss_or_compost_confirmed(u8 self) {
     if (berry_pouch_state2.type == BERRY_POUCH_CONTEXT_COMPOSTING) {

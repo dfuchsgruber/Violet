@@ -8,8 +8,8 @@
 #ifndef INCLUDE_C_OVERWORLD_POKEMON_PARTY_MENU_H_
 #define INCLUDE_C_OVERWORLD_POKEMON_PARTY_MENU_H_
 
-#include "types.h"
 #include "pokemon/virtual.h"
+#include "types.h"
 
 typedef struct {
     void (*callback)();
@@ -48,7 +48,6 @@ typedef struct {
 
 bool (*pokemon_party_menu_continuation)();
 
-
 typedef struct {
     /*0x00*/ u16 species;
     /*0x02*/ u16 item;
@@ -68,8 +67,8 @@ extern pokemon_party_menu_partner_pokemon_t pokemon_party_menu_partner_party[3];
 /**
  * Loads the partner party from a normal party.
  * @param p the party from which to load the partner party
- **/
-void pokemon_party_menu_load_partner_party (pokemon *p);
+ */
+void pokemon_party_menu_load_partner_party(pokemon *p);
 
 extern pokemon_party_menu_state_t pokemon_party_menu_state;
 extern u8 pokemon_party_menu_current_index;
@@ -234,13 +233,13 @@ void pokemon_party_menu_return_to();
  * @param return_callback the callback to execute when returning from the pokemon party menu
  */
 void pokemon_party_menu_init(u8 menu_type, u8 layout, u8 party_action, u8 keep_cursor_position, u8 message_idx, void (*big_callback)(u8),
-    void (*return_callback)());
+                             void (*return_callback)());
 
 /**
  * Callback to initialize sliding the partner's party in the pokemon party preview.
  * @param self self-reference
- **/
-void pokemon_party_menu_partner_party_slide_in_initialize (u8 self);
+ */
+void pokemon_party_menu_partner_party_slide_in_initialize(u8 self);
 
 /**
  * Some callback function. Seems to fit well as big_callback parameter for pokemon_party_menu_init.
@@ -262,37 +261,37 @@ void pokemon_party_menu_return_callback();
  * Gets the index in a party of a pokemon considering reordering due to inbattle-switches.
  * @param the current index, possibly after switching
  * @return the index of the pokemon in the player party array
- **/ 
+ */
 u8 player_party_get_reordered_idx(u8 party_idx);
 
 extern u8 pokemon_party_menu_order[3]; // 4 Bits per slot
 
 /**
  * Contiuation for the party menu that returns to the bag.
- **/
+ */
 void party_menu_continuation_return_to_bag();
 
 /**
  * Callback for opening the pokemon party menu for item use
- **/
+ */
 void pokemon_party_menu_open_for_item_use();
 
 /**
  * Gets the move slot that should be replaced when learning a new move
  * @return the move slot to replace
- **/
+ */
 u8 pokemon_get_move_slot_to_replace();
 
 /**
  * Continuation that uses the item effect stored once the party menu is open
  * @param self self-reference
- **/
+ */
 void pokemon_party_menu_continuation_apply_item_effect(u8 self);
 
 /**
  * Callback that waits for the text to finish and then plays a fanfare for a pokemon that learned a new move
  * @param self self-reference
- **/
+ */
 void pokemon_party_menu_play_fanfare_after_text_finished(u8 self);
 
 #endif /* INCLUDE_C_OVERWORLD_POKEMON_PARTY_MENU_H_ */

@@ -8,8 +8,8 @@
 #ifndef INCLUDE_C_DMA_H_
 #define INCLUDE_C_DMA_H_
 
-#include "types.h"
 #include "io.h"
+#include "types.h"
 
 /**
  * Resets the dma3 controller
@@ -33,7 +33,7 @@ void dma3_queue_add(void *src, void *dst, u16 size);
  * Checks if the dma3 is busy copying stuff (probably into vram).
  * @param idx if to wait for any specific request. if -1 is passed, we wait for any request
  * @return if the dma3 is busy
- **/
+ */
 bool dma3_busy(s16 idx);
 
 /**
@@ -46,7 +46,6 @@ void dma0_proceed();
  */
 void dma0_reset_callback();
 
-
 // For each line on the screen (possibly up to 540 = 2 * 240) there is room for one word
 // (or 2 * 540 = 1080 hwords)
 // cast to another type for setting i.e. ioregs
@@ -54,28 +53,28 @@ void dma0_reset_callback();
 u16 dma0_scanline_frames[2][480 * 2];
 
 typedef union {
-	struct {
-		u8 flipflop_cntrl;
-		u8 defaults_field_16_17;
-	} bytes;
-	int int_value;
+    struct {
+        u8 flipflop_cntrl;
+        u8 defaults_field_16_17;
+    } bytes;
+    int int_value;
 } dma0_scanline_flipflop_t;
 
-#define DMA_SET(num, src, dest, count, control) 			\
-{                                                 			\
-    vu32 *io_regs = (vu32 *)IO_DMA_REGS(num); 				\
-    io_regs[0] = (vu32)(src);                     			\
-    io_regs[1] = (vu32)(dest);                    			\
-    io_regs[2] = (vu32)(DMA_SIZE(count) | (u32)control);   	    \
-    io_regs[2];                                   			\
-}
+#define DMA_SET(num, src, dest, count, control)              \
+    {                                                        \
+        vu32 *io_regs = (vu32 *)IO_DMA_REGS(num);            \
+        io_regs[0] = (vu32)(src);                            \
+        io_regs[1] = (vu32)(dest);                           \
+        io_regs[2] = (vu32)(DMA_SIZE(count) | (u32)control); \
+        io_regs[2];                                          \
+    }
 
-#define DMA_COPY(num, src, dest, size, bit)                                             							 	\
-    DMA_SET(num,                                                                          							\
-           src,                                                                             							\
-           dest,																										\
-		   (size)/(bit/8),                                                                          					\
-           (DMA_ENABLE | DMA_TIMING_IMMIDIATLY | DMA_TRANSFER_TYPE_##bit##_BIT | DMA_SRC_INCREMENT | DMA_DST_INCREMENT))
+#define DMA_COPY(num, src, dest, size, bit) \
+    DMA_SET(num,                            \
+            src,                            \
+            dest,                           \
+            (size) / (bit / 8),             \
+            (DMA_ENABLE | DMA_TIMING_IMMIDIATLY | DMA_TRANSFER_TYPE_##bit##_BIT | DMA_SRC_INCREMENT | DMA_DST_INCREMENT))
 
 #define DMA_COPY_16(num, src, dest, size) DMA_COPY(num, src, dest, size, 16)
 #define DMA_COPY_32(num, src, dest, size) DMA_COPY(num, src, dest, size, 32)
@@ -99,6 +98,6 @@ typedef union {
 #define DMA_DST_RELOAD (3 << 21)
 #define DMA_SIZE(x) (x)
 
-void dma0_init_scanline (void *dst, int dma0_cntrl, dma0_scanline_flipflop_t flipflop);
+void dma0_init_scanline(void *dst, int dma0_cntrl, dma0_scanline_flipflop_t flipflop);
 
 #endif /* INCLUDE_C_DMA_H_ */

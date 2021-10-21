@@ -14,8 +14,8 @@ typedef struct {
 } coordinate_t;
 
 typedef struct {
-	coordinate_t coordinates;
-	u8 height;
+    coordinate_t coordinates;
+    u8 height;
 } position_t;
 
 /**

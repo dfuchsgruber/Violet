@@ -1,25 +1,25 @@
-#include "types.h"
-#include "battle/state.h"
+#include "battle/battlescript.h"
+#include "abilities.h"
+#include "battle/battle_string.h"
 #include "battle/battler.h"
 #include "battle/controller.h"
-#include "battle/battlescript.h"
-#include "constants/battle/battle_results.h"
+#include "battle/state.h"
 #include "constants/battle/battle_actions.h"
-#include "save.h"
-#include "mega.h"
-#include "debug.h"
-#include "abilities.h"
-#include "pokemon/virtual.h"
+#include "constants/battle/battle_results.h"
 #include "constants/pokemon_attributes.h"
 #include "constants/pokemon_stat_names.h"
-#include "pokemon/basestat.h"
-#include "battle/battle_string.h"
-#include "overworld/pokemon_party_menu.h"
+#include "debug.h"
 #include "language.h"
-#include "text.h"
+#include "mega.h"
+#include "overworld/pokemon_party_menu.h"
+#include "pokemon/basestat.h"
 #include "pokemon/names.h"
-#include "vars.h"
+#include "pokemon/virtual.h"
+#include "save.h"
+#include "text.h"
 #include "trainer/trainer.h"
+#include "types.h"
+#include "vars.h"
 
 extern u8 battlescript_mega_evolution[];
 extern u8 battlescript_regent_evolution[];
@@ -27,12 +27,12 @@ extern u8 battlescript_regent_evolution[];
 void battler_update_after_form_change(u8 battler_idx) {
     int party_idx = battler_idx_to_party_idx(battler_idx);
     pokemon *mon = !battler_is_opponent(battler_idx) ? player_pokemon + party_idx : opponent_pokemon + party_idx;
-    u16 species = (u16) pokemon_get_attribute(mon, ATTRIBUTE_SPECIES, NULL);
+    u16 species = (u16)pokemon_get_attribute(mon, ATTRIBUTE_SPECIES, NULL);
     battlers[battler_idx].species = species;
-    battlers[battler_idx].current_hp = (u16) pokemon_get_attribute(mon, ATTRIBUTE_CURRENT_HP, NULL);
-    battlers[battler_idx].max_hp = (u16) pokemon_get_attribute(mon, ATTRIBUTE_TOTAL_HP, NULL);
+    battlers[battler_idx].current_hp = (u16)pokemon_get_attribute(mon, ATTRIBUTE_CURRENT_HP, NULL);
+    battlers[battler_idx].max_hp = (u16)pokemon_get_attribute(mon, ATTRIBUTE_TOTAL_HP, NULL);
     for (int i = 0; i < 5; i++)
-        battlers[battler_idx].stats[i] = (u16) pokemon_get_attribute(mon, (u8)(ATTRIBUTE_ATK + i), NULL);
+        battlers[battler_idx].stats[i] = (u16)pokemon_get_attribute(mon, (u8)(ATTRIBUTE_ATK + i), NULL);
     battlers[battler_idx].type1 = basestats[species].type1;
     battlers[battler_idx].type2 = basestats[species].type2;
     battlers[battler_idx].ability = pokemon_get_ability(mon);
@@ -84,12 +84,13 @@ bool battle_execute_action_mega_evolution() {
                                 break;
                         }
                         // dprintf("Trainer idx for the string is %d\n", trainer_idx);
-                        if (trainer_idx == 0xFFFF) { // Player
+                        if (trainer_idx == 0xFFFF) {      // Player
                             bsc_string_buffer0[0] = 0xFF; // No trainer class
                             strcpy(bsc_string_buffer1, save2->player_name);
                         } else {
                             u8 *dst = strcpy(bsc_string_buffer0, trainer_class_names[trainers[trainer_idx].trainerclass]);
-                            dst[0] = 0; dst[1] = 0xFF; // Spacing between two buffers
+                            dst[0] = 0;
+                            dst[1] = 0xFF; // Spacing between two buffers
                             strcpy(bsc_string_buffer1, trainers[trainer_idx].name);
                         }
                         bsc_last_used_item = mega_evolution->mega_item;
@@ -140,5 +141,3 @@ bool battle_execute_action_mega_evolution() {
     }
     return true;
 }
-
-

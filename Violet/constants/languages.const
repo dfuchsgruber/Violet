@@ -1,7 +1,7 @@
 {
-	"type" : "enum",
-	"base" : 1,
-	"values" : [
+	"type": "enum",
+	"base": 1,
+	"values": [
 		"LANGUAGE_JAPANESE",
 		"LANGUAGE_ENGLISH",
 		"LANGUAGE_FRENCH",

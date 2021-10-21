@@ -1,20 +1,22 @@
-#include "types.h"
 #include "battle/ai.h"
-#include "battle/state.h"
-#include "battle/controller.h"
-#include "prng.h"
-#include "debug.h"
-#include "constants/battle/battle_actions.h"
-#include "battle/ressources.h"
 #include "agbmemory.h"
-#include "trainer/trainer.h"
 #include "battle/attack.h"
-#include "constants/trainer_ai_flags.h"
-#include "vars.h"
+#include "battle/controller.h"
+#include "battle/ressources.h"
+#include "battle/state.h"
+#include "constants/battle/battle_actions.h"
 #include "constants/difficulties.h"
+#include "constants/trainer_ai_flags.h"
+#include "debug.h"
+#include "prng.h"
+#include "trainer/trainer.h"
+#include "types.h"
+#include "vars.h"
 
 enum {
-    ACTION_SWITCH = 1, ACTION_ITEM, ACTION_MOVE
+    ACTION_SWITCH = 1,
+    ACTION_ITEM,
+    ACTION_MOVE
 };
 
 void battle_ai_choose_action() {
@@ -56,7 +58,7 @@ void battle_ai_choose_action() {
             dprintf("Switch.\n");
             battle_state->battler_to_switch_into[active_battler] = switch_into;
             battle_scripting.battler_idx = active_battler;
-            battle_state->ai_switch_target_chosen &= (u8) int_bitmasks[active_battler];
+            battle_state->ai_switch_target_chosen &= (u8)int_bitmasks[active_battler];
             battle_controller_emit_two_values(1, BATTLE_ACTION_SWITCH, 0);
             break;
         }
@@ -67,7 +69,6 @@ void battle_ai_choose_action() {
         }
     }
     return;
-
 }
 
 void ai_setup(u16 trainer_idx) {

@@ -228,5 +228,3 @@ for label in project.tilesets:
 
 
 project.save('proj.pmp')
-
-

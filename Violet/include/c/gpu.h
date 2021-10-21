@@ -29,6 +29,6 @@ void gpu_render_line(int x0, int y0, int x1, int y1, void (*set_pixel)(int, int)
  * are in the range [-radius, radius]. These pixels fill the entire polygon
  */
 void gpu_render_polygon_by_radius(FIXED *ratios, int num_edges, int max_radius,
-		void (*set_pixel)(int, int));
+                                  void (*set_pixel)(int, int));
 
 #endif /* INCLUDE_C_GPU_H_ */

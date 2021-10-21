@@ -1,140 +1,206 @@
-#include "types.h"
-#include "overworld/sprite.h"
-#include "overworld/script.h"
+#include "agbmemory.h"
 #include "color.h"
 #include "constants/items.h"
-#include "save.h"
+#include "constants/overworld/misc.h"
+#include "constants/species.h"
 #include "debug.h"
+#include "dungeon/dungeon2.h"
 #include "flags.h"
-#include "vars.h"
-#include "agbmemory.h"
-#include "prng.h"
-#include "overworld/misc.h"
 #include "math.h"
 #include "music.h"
-#include "constants/species.h"
-#include "constants/overworld/misc.h"
-#include "dungeon/dungeon2.h"
+#include "overworld/misc.h"
+#include "overworld/script.h"
+#include "overworld/sprite.h"
+#include "prng.h"
+#include "save.h"
+#include "types.h"
+#include "vars.h"
 
 static gfx_frame gfx_animation_mushroom_idle[] = {
-	{.data = 0, .duration = 0}, {.data = 0, .duration = 32}, {.data = 1, .duration = 32}, {.data = GFX_ANIM_JUMP, .duration = 0},
+    {.data = 0, .duration = 0},
+    {.data = 0, .duration = 32},
+    {.data = 1, .duration = 32},
+    {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
 static gfx_frame gfx_animation_shell_idle[] = {
-	{.data = 0, .duration = 0}, {.data = 0, .duration = 12}, {.data = 1, .duration = 12}, 
-    {.data = 2, .duration = 12}, {.data = 3, .duration = 12}, {.data = 4, .duration = 12},
+    {.data = 0, .duration = 0},
+    {.data = 0, .duration = 12},
+    {.data = 1, .duration = 12},
+    {.data = 2, .duration = 12},
+    {.data = 3, .duration = 12},
+    {.data = 4, .duration = 12},
     {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
 static gfx_frame gfx_animation_trash_idle[] = {
-	{.data = 0, .duration = 0}, {.data = 0, .duration = 48}, {.data = 0, .duration = 24}, 
-    {.data = 1, .duration = 4}, {.data = 2, .duration = 6}, {.data = 1, .duration = 4},
-    {.data = 0, .duration = 48}, {.data = 0, .duration = 24}, 
-    {.data = 1, .duration = 4 | GFX_ANIM_HFLIP}, {.data = 2, .duration = 6 | GFX_ANIM_HFLIP}, {.data = 1, .duration = 4 | GFX_ANIM_HFLIP},
+    {.data = 0, .duration = 0},
+    {.data = 0, .duration = 48},
+    {.data = 0, .duration = 24},
+    {.data = 1, .duration = 4},
+    {.data = 2, .duration = 6},
+    {.data = 1, .duration = 4},
+    {.data = 0, .duration = 48},
+    {.data = 0, .duration = 24},
+    {.data = 1, .duration = 4 | GFX_ANIM_HFLIP},
+    {.data = 2, .duration = 6 | GFX_ANIM_HFLIP},
+    {.data = 1, .duration = 4 | GFX_ANIM_HFLIP},
     {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
 static gfx_frame gfx_animation_trash_empty[] = {
-	{.data = 0, .duration = 0},
+    {.data = 0, .duration = 0},
     {.data = GFX_ANIM_END, .duration = 0},
 };
-
-
 
 static gfx_frame *gfx_animations_mushroom[1] = {gfx_animation_mushroom_idle};
 static gfx_frame *gfx_animations_shell[1] = {gfx_animation_shell_idle};
 static gfx_frame *gfx_animations_trash[2] = {gfx_animation_trash_idle, gfx_animation_trash_empty};
 
 static graphic overworld_gfx_mushrooms[] = {
-	[0] = {gfx_ow_mushroomTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
-	[1] = {gfx_ow_mushroomTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
-	[2] = {gfx_ow_mushroomTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
-	[3] = {gfx_ow_mushroomTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
-	[4] = {gfx_ow_mushroomTiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
-	[5] = {gfx_ow_mushroomTiles + 4 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+    [0] = {gfx_ow_mushroomTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+    [1] = {gfx_ow_mushroomTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+    [2] = {gfx_ow_mushroomTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+    [3] = {gfx_ow_mushroomTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+    [4] = {gfx_ow_mushroomTiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+    [5] = {gfx_ow_mushroomTiles + 4 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
 };
 
-
 static graphic overworld_gfx_shells[] = {
-	[0] = {gfx_ow_shellTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
-	[1] = {gfx_ow_shellTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
-	[2] = {gfx_ow_shellTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
-	[3] = {gfx_ow_shellTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
-	[4] = {gfx_ow_shellTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
-	[5] = {gfx_ow_shellTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
-	[6] = {gfx_ow_shellTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
-	[7] = {gfx_ow_shellTiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
-	[8] = {gfx_ow_shellTiles + 4 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
-	[9] = {gfx_ow_shellTiles + 5 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+    [0] = {gfx_ow_shellTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+    [1] = {gfx_ow_shellTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+    [2] = {gfx_ow_shellTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+    [3] = {gfx_ow_shellTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+    [4] = {gfx_ow_shellTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+    [5] = {gfx_ow_shellTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+    [6] = {gfx_ow_shellTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+    [7] = {gfx_ow_shellTiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+    [8] = {gfx_ow_shellTiles + 4 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+    [9] = {gfx_ow_shellTiles + 5 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
 };
 
 static graphic overworld_gfx_trash[] = {
-	[0] = {gfx_ow_trashTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
-	[1] = {gfx_ow_trashTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
-	[2] = {gfx_ow_trashTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
-	[3] = {gfx_ow_trashTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
-	[4] = {gfx_ow_trashTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
-	[5] = {gfx_ow_trashTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
+    [0] = {gfx_ow_trashTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
+    [1] = {gfx_ow_trashTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
+    [2] = {gfx_ow_trashTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
+    [3] = {gfx_ow_trashTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
+    [4] = {gfx_ow_trashTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
+    [5] = {gfx_ow_trashTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
 overworld_sprite overworld_mushroom_plucked = {
-		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_MUSHROOM,
-        .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 16), .width = 16, .height = 16,
-        .final_oam = &ow_final_oam_16_16, .subsprite_table = &ow_formation_16_16, .gfx_animation = gfx_animations_mushroom,
-        .graphics = overworld_gfx_mushrooms + 0, .rotscale_animation = oam_rotscale_anim_table_null, .inanimate = true,
+    .tiles_tag = 0xFFFF,
+    .pal_tag = OW_PAL_TAG_MUSHROOM,
+    .unknown = 0x11FF,
+    .size = GRAPHIC_SIZE_4BPP(16, 16),
+    .width = 16,
+    .height = 16,
+    .final_oam = &ow_final_oam_16_16,
+    .subsprite_table = &ow_formation_16_16,
+    .gfx_animation = gfx_animations_mushroom,
+    .graphics = overworld_gfx_mushrooms + 0,
+    .rotscale_animation = oam_rotscale_anim_table_null,
+    .inanimate = true,
 };
 
 overworld_sprite overworld_mushroom_tiny = {
-		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_MUSHROOM,
-        .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 16), .width = 16, .height = 16,
-        .final_oam = &ow_final_oam_16_16, .subsprite_table = &ow_formation_16_16, .gfx_animation = gfx_animations_mushroom,
-        .graphics = overworld_gfx_mushrooms + 2, .rotscale_animation = oam_rotscale_anim_table_null,
+    .tiles_tag = 0xFFFF,
+    .pal_tag = OW_PAL_TAG_MUSHROOM,
+    .unknown = 0x11FF,
+    .size = GRAPHIC_SIZE_4BPP(16, 16),
+    .width = 16,
+    .height = 16,
+    .final_oam = &ow_final_oam_16_16,
+    .subsprite_table = &ow_formation_16_16,
+    .gfx_animation = gfx_animations_mushroom,
+    .graphics = overworld_gfx_mushrooms + 2,
+    .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
 overworld_sprite overworld_mushroom_large = {
-		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_MUSHROOM,
-        .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 16), .width = 16, .height = 16,
-        .final_oam = &ow_final_oam_16_16, .subsprite_table = &ow_formation_16_16, .gfx_animation = gfx_animations_mushroom,
-        .graphics = overworld_gfx_mushrooms + 4, .rotscale_animation = oam_rotscale_anim_table_null,
+    .tiles_tag = 0xFFFF,
+    .pal_tag = OW_PAL_TAG_MUSHROOM,
+    .unknown = 0x11FF,
+    .size = GRAPHIC_SIZE_4BPP(16, 16),
+    .width = 16,
+    .height = 16,
+    .final_oam = &ow_final_oam_16_16,
+    .subsprite_table = &ow_formation_16_16,
+    .gfx_animation = gfx_animations_mushroom,
+    .graphics = overworld_gfx_mushrooms + 4,
+    .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
 overworld_sprite overworld_shell_empty = {
-		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_SHELL,
-        .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 16), .width = 16, .height = 16,
-        .final_oam = &ow_final_oam_16_16, .subsprite_table = &ow_formation_16_16, .gfx_animation = gfx_animations_shell,
-        .graphics = overworld_gfx_shells + 0, .rotscale_animation = oam_rotscale_anim_table_null, .inanimate = true,
+    .tiles_tag = 0xFFFF,
+    .pal_tag = OW_PAL_TAG_SHELL,
+    .unknown = 0x11FF,
+    .size = GRAPHIC_SIZE_4BPP(16, 16),
+    .width = 16,
+    .height = 16,
+    .final_oam = &ow_final_oam_16_16,
+    .subsprite_table = &ow_formation_16_16,
+    .gfx_animation = gfx_animations_shell,
+    .graphics = overworld_gfx_shells + 0,
+    .rotscale_animation = oam_rotscale_anim_table_null,
+    .inanimate = true,
 };
 
 overworld_sprite overworld_shell = {
-		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_SHELL,
-        .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 16), .width = 16, .height = 16,
-        .final_oam = &ow_final_oam_16_16, .subsprite_table = &ow_formation_16_16, .gfx_animation = gfx_animations_shell,
-        .graphics = overworld_gfx_shells + 5, .rotscale_animation = oam_rotscale_anim_table_null,
+    .tiles_tag = 0xFFFF,
+    .pal_tag = OW_PAL_TAG_SHELL,
+    .unknown = 0x11FF,
+    .size = GRAPHIC_SIZE_4BPP(16, 16),
+    .width = 16,
+    .height = 16,
+    .final_oam = &ow_final_oam_16_16,
+    .subsprite_table = &ow_formation_16_16,
+    .gfx_animation = gfx_animations_shell,
+    .graphics = overworld_gfx_shells + 5,
+    .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
 overworld_sprite overworld_trash_empty = {
-		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_TRASH,
-        .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-        .final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_trash + 1,
-        .graphics = overworld_gfx_trash + 3, .rotscale_animation = oam_rotscale_anim_table_null, .inanimate = true,
+    .tiles_tag = 0xFFFF,
+    .pal_tag = OW_PAL_TAG_TRASH,
+    .unknown = 0x11FF,
+    .size = GRAPHIC_SIZE_4BPP(16, 32),
+    .width = 16,
+    .height = 32,
+    .final_oam = &ow_final_oam_16_32,
+    .subsprite_table = &ow_formation_16_32,
+    .gfx_animation = gfx_animations_trash + 1,
+    .graphics = overworld_gfx_trash + 3,
+    .rotscale_animation = oam_rotscale_anim_table_null,
+    .inanimate = true,
 };
 
 overworld_sprite overworld_trash = {
-		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_TRASH,
-        .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-        .final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_trash + 0,
-        .graphics = overworld_gfx_trash, .rotscale_animation = oam_rotscale_anim_table_null,
+    .tiles_tag = 0xFFFF,
+    .pal_tag = OW_PAL_TAG_TRASH,
+    .unknown = 0x11FF,
+    .size = GRAPHIC_SIZE_4BPP(16, 32),
+    .width = 16,
+    .height = 32,
+    .final_oam = &ow_final_oam_16_32,
+    .subsprite_table = &ow_formation_16_32,
+    .gfx_animation = gfx_animations_trash + 0,
+    .graphics = overworld_gfx_trash,
+    .rotscale_animation = oam_rotscale_anim_table_null,
 };
 palette overworld_mushroom_palette = {
-    .pal = gfx_ow_mushroomPal, .tag = OW_PAL_TAG_MUSHROOM,
+    .pal = gfx_ow_mushroomPal,
+    .tag = OW_PAL_TAG_MUSHROOM,
 };
 
 palette overworld_shell_palette = {
-    .pal = gfx_ow_shellPal, .tag = OW_PAL_TAG_SHELL,
+    .pal = gfx_ow_shellPal,
+    .tag = OW_PAL_TAG_SHELL,
 };
 
 palette overworld_trash_palette = {
-    .pal = gfx_ow_trashPal, .tag = OW_PAL_TAG_TRASH,
+    .pal = gfx_ow_trashPal,
+    .tag = OW_PAL_TAG_TRASH,
 };
 
 overworld_sprite *overworld_sprite_get_by_mushroom_idx(u16 mushroom_idx) {
@@ -183,7 +249,7 @@ palette *overworld_palette_get_by_trash() {
 #define DROPPING_DY 12
 #define DROPPING_DT 24
 
- void misc_counter_overworld_oam_callback(oam_object *self) {
+void misc_counter_overworld_oam_callback(oam_object *self) {
     u16 *frame = self->private + 7;
     if (*frame > DROPPING_DT) {
         self->y2 = 0;
@@ -194,7 +260,7 @@ palette *overworld_palette_get_by_trash() {
     }
     // Sine for jumping
     FIXED t = INT_TO_FIXED(*frame);
-    FIXED y = FIXED_SIN(FIXED_DIV(t, INT_TO_FIXED(DROPPING_DT  * 2)));
+    FIXED y = FIXED_SIN(FIXED_DIV(t, INT_TO_FIXED(DROPPING_DT * 2)));
     y = FIXED_MUL(INT_TO_FIXED(DROPPING_DY), y);
     self->y2 = (s16)(-FIXED_TO_INT(y));
     ++*frame;
@@ -226,7 +292,6 @@ static u16 shell_idx_with_shoal_salt_or_shoal_shell[] = {
 u16 special_mushroom_get_stage() {
     return mushroom_get_stage(map_get_person((u8)(*var_access(LASTTALKED)), save1->map, save1->bank)->value);
 }
-
 
 static u32 mushroom_rates[] = {[MUSHROOM_TYPE_LARGE_MUSHROOM] = 1, [MUSHROOM_TYPE_TINY_MUSHROOM] = 5};
 
@@ -266,7 +331,7 @@ u16 shell_get_stage(u16 shell_idx) {
     gp_rng_seed(daily_events_hash(seq, ARRAY_COUNT(seq)));
     // Check if we have special shell
     bool special_shell = false;
-    for(size_t i = 0; i < ARRAY_COUNT(shell_idx_with_shoal_salt_or_shoal_shell); i++) {
+    for (size_t i = 0; i < ARRAY_COUNT(shell_idx_with_shoal_salt_or_shoal_shell); i++) {
         if (shell_idx_with_shoal_salt_or_shoal_shell[i] == shell_idx) {
             special_shell = true;
             break;
@@ -341,15 +406,14 @@ u16 shell_get_encounter() {
 }
 
 static u32 trash_encounters[] = {[POKEMON_SLEIMA] = 3, [POKEMON_SMOGON] = 2, [POKEMON_ZIGZACHS] = 2, [POKEMON_TEDDIURSA] = 1};
-static u32 trash_items[] = {[ITEM_UEBERRESTE] = 1, [ITEM_MININUGGET] = 2, [ITEM_FLUCHTSEIL] = 10, [ITEM_POKEPUPPE] = 8, [ITEM_AETHER] = 5, 
-    [ITEM_BITTERKRAUT] = 7, [ITEM_QUARZSTAUB] = 7, [ITEM_APFEL] = 15, [ITEM_ABRA_PUPPE] = 8};
+static u32 trash_items[] = {[ITEM_UEBERRESTE] = 1, [ITEM_MININUGGET] = 2, [ITEM_FLUCHTSEIL] = 10, [ITEM_POKEPUPPE] = 8, [ITEM_AETHER] = 5, [ITEM_BITTERKRAUT] = 7, [ITEM_QUARZSTAUB] = 7, [ITEM_APFEL] = 15, [ITEM_ABRA_PUPPE] = 8};
 
 u16 trash_get_encounter_or_item() {
     map_event_person *p = map_get_person((u8)(*var_access(LASTTALKED)), save1->map, save1->bank);
     u16 trash_idx = p->value;
     u32 seq[1] = {trash_idx};
     gp_rng_seed(daily_events_hash(seq, ARRAY_COUNT(seq)));
-    switch(trash_get_type(trash_idx)) {
+    switch (trash_get_type(trash_idx)) {
         case TRASH_TYPE_ENCOUNTER:
             return (u16)choice(trash_encounters, ARRAY_COUNT(trash_encounters), gp_rnd16);
         case TRASH_TYPE_ITEM:

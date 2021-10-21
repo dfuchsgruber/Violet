@@ -1,20 +1,19 @@
-#include "types.h"
 #include "mega.h"
 #include "battle/battler.h"
 #include "battle/state.h"
-#include "constants/species.h"
-#include "constants/items.h"
-#include "flags.h"
 #include "constants/flags.h"
-#include "vars.h"
-#include "constants/vars.h"
-#include "save.h"
-#include "debug.h"
-#include "trainer/trainer.h"
-#include "trainer/virtual.h"
-#include "item/item.h"
 #include "constants/item_hold_effects.h"
 #include "constants/items.h"
+#include "constants/species.h"
+#include "constants/vars.h"
+#include "debug.h"
+#include "flags.h"
+#include "item/item.h"
+#include "save.h"
+#include "trainer/trainer.h"
+#include "trainer/virtual.h"
+#include "types.h"
+#include "vars.h"
 
 static mega_evolution_t mega_evolutions[] = {
     {POKEMON_GROUDON, ITEM_MAGMAHERZ, POKEMON_GROUDON_REGENT, REGENT_EVOLUTION},
@@ -65,7 +64,8 @@ u16 battler_get_keystone(u8 battler_idx) {
         }
         case OWNER_TRAINER_A: {
             keystone = trainer_get_keystone(trainer_vars.trainer_id);
-            if (keystone == 0xFFFF) keystone = *var_access(OPPONENT_MEGA_ITEM);
+            if (keystone == 0xFFFF)
+                keystone = *var_access(OPPONENT_MEGA_ITEM);
             break;
         }
         case OWNER_ALLY: {
@@ -74,7 +74,8 @@ u16 battler_get_keystone(u8 battler_idx) {
         }
         case OWNER_TRAINER_B: {
             keystone = trainer_get_keystone(fmem.trainer_varsB.trainer_id);
-            if (keystone == 0xFFFF) keystone = *var_access(OPPONENT_MEGA_ITEM);
+            if (keystone == 0xFFFF)
+                keystone = *var_access(OPPONENT_MEGA_ITEM);
             break;
         }
     }
@@ -84,14 +85,19 @@ u16 battler_get_keystone(u8 battler_idx) {
         return keystone;
 }
 
-u8 battler_get_owner(u8 battler_idx) { 
+u8 battler_get_owner(u8 battler_idx) {
     switch (battler_get_position(battler_idx)) {
-        case BATTLE_POSITION_PLAYER_LEFT: return OWNER_PLAYER;
-        case BATTLE_POSITION_OPPONENT_LEFT: return OWNER_TRAINER_A;
-        case BATTLE_POSITION_PLAYER_RIGHT: return battle_flags & BATTLE_ALLY ? OWNER_ALLY : OWNER_PLAYER;
-        case BATTLE_POSITION_OPPONENT_RIGHT: return battle_flags & BATTLE_TWO_TRAINERS ? OWNER_TRAINER_B : OWNER_TRAINER_A;
+        case BATTLE_POSITION_PLAYER_LEFT:
+            return OWNER_PLAYER;
+        case BATTLE_POSITION_OPPONENT_LEFT:
+            return OWNER_TRAINER_A;
+        case BATTLE_POSITION_PLAYER_RIGHT:
+            return battle_flags & BATTLE_ALLY ? OWNER_ALLY : OWNER_PLAYER;
+        case BATTLE_POSITION_OPPONENT_RIGHT:
+            return battle_flags & BATTLE_TWO_TRAINERS ? OWNER_TRAINER_B : OWNER_TRAINER_A;
     }
-    derrf("Cant get owner of battler %d, position %d\n", battler_idx, battler_get_position(battler_idx)); return 0xFF;
+    derrf("Cant get owner of battler %d, position %d\n", battler_idx, battler_get_position(battler_idx));
+    return 0xFF;
 }
 
 mega_evolution_t *battler_get_available_mega_evolution(u8 battler_idx) {
@@ -112,7 +118,7 @@ mega_evolution_t *battler_get_available_mega_evolution(u8 battler_idx) {
     if (mega_evolution->type == MEGA_EVOLUTION) {
         for (u8 i = 0; i < battler_cnt; i++) {
             if (i != battler_idx && battler_get_owner(i) == owner && MEGA_STATE.marked_for_mega_evolution[i] == MEGA_EVOLUTION)
-                return NULL; 
+                return NULL;
         }
     }
     return mega_evolution;

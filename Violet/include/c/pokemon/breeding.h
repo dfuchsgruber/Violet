@@ -8,42 +8,42 @@
 #ifndef INCLUDE_C_POKEMON_EGG_MOVES_H_
 #define INCLUDE_C_POKEMON_EGG_MOVES_H_
 
-#include "types.h"
 #include "pokemon/virtual.h"
+#include "types.h"
 
 typedef struct {
-	u16 words[9];
-	u8 player_name[8]; // terminated with 0xFF
-	u8 tid[4];
-	u16 species;
-	u16 item;
+    u16 words[9];
+    u8 player_name[8]; // terminated with 0xFF
+    u8 tid[4];
+    u16 species;
+    u16 item;
 } mail_stru;
 
 typedef struct {
-	mail_stru message;
-	u8 ot_name[8]; // terminated with 0xFF
-	u8 pokemon_name[11]; // terminated with 0xFF
-	u8 game_language : 4;
-	u8 pokemon_language : 4;
+    mail_stru message;
+    u8 ot_name[8];       // terminated with 0xFF
+    u8 pokemon_name[11]; // terminated with 0xFF
+    u8 game_language : 4;
+    u8 pokemon_language : 4;
 } daycare_mail_stru;
 
 typedef struct {
-	box_pokemon pokemon;
-	daycare_mail_stru mail;
-	u32 step_counter;
+    box_pokemon pokemon;
+    daycare_mail_stru mail;
+    u32 step_counter;
 } daycare_pokemon;
 
 typedef struct {
-	daycare_pokemon pokemon[2];
-	u16 offspring_present : 1;
-	u16 offspring_unused : 15;
-	// u16 offspring_personality_lower; // why would you only store this, thats akward!
-	u8 step_counter;
-	u8 field_283;
+    daycare_pokemon pokemon[2];
+    u16 offspring_present : 1;
+    u16 offspring_unused : 15;
+    // u16 offspring_personality_lower; // why would you only store this, thats akward!
+    u8 step_counter;
+    u8 field_283;
 } daycare_stru;
 
 typedef struct {
-	daycare_pokemon pokemon;
+    daycare_pokemon pokemon;
 } mini_daycare_stru;
 
 #define BREEDING_CYCLES_HATCH_IMMEDIATLEY 255
@@ -87,7 +87,7 @@ u8 breeding_get_cycle_steps();
  * @return if the egg can hatch. If no egg is given, false will be returned.
  */
 bool box_pokemon_hatching_proceed(box_pokemon *egg, bool consider_zero_cycles,
-    bool consider_immediate_hatching, u8 proceed_cycles);
+                                  bool consider_immediate_hatching, u8 proceed_cycles);
 
 /**
  * Checks if the player party contains at least one pokemon with flame body.

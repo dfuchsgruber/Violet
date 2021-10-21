@@ -28,12 +28,11 @@
  * Created on 11. April 2017, 04:55
  */
 
-#include "types.h"
-#include "debug.h"
 #include "agbmemory.h"
+#include "debug.h"
+#include "types.h"
 
-void dprint(const char * sz)
-{
+void dprint(const char *sz) {
     __asm__ __volatile__(
         "mov r2, %0\n"
         "mov r0, #0xC0\n"
@@ -47,20 +46,21 @@ void dprint(const char * sz)
         "mov r1, #0x0D\n"
         "orr r0, r1\n"
         "mov r1, #0\n"
-        "and r0, r0, r0\n":
+        "and r0, r0, r0\n"
         :
-        "r" (sz):
-        "r0", "r1", "r2");
+        : "r"(sz)
+        : "r0", "r1", "r2");
 }
 
-u32 mini_strlen(const char * s) {
+u32 mini_strlen(const char *s) {
     u32 len = 0;
-    while (s[len] != '\0') len++;
+    while (s[len] != '\0')
+        len++;
     return len;
 }
 
-u32 mini_itoa(int value, u32 radix, u32 uppercase, u32 unsig, char * buffer, u32 zero_pad) {
-    char * pbuffer = buffer;
+u32 mini_itoa(int value, u32 radix, u32 uppercase, u32 unsig, char *buffer, u32 zero_pad) {
+    char *pbuffer = buffer;
     s32 negative = 0;
     u32 i, len;
     /* No support for unusual radixes. */
@@ -74,21 +74,21 @@ u32 mini_itoa(int value, u32 radix, u32 uppercase, u32 unsig, char * buffer, u32
     if (radix == 16) {
         do {
             u32 digit = value & 0xF;
-            * (pbuffer++) = (char)(digit < 10 ? '0' + digit : (uppercase ? 'A' : 'a') + digit - 10);
+            *(pbuffer++) = (char)(digit < 10 ? '0' + digit : (uppercase ? 'A' : 'a') + digit - 10);
             value >>= 4;
         } while (value > 0);
     } else {
         do {
             u32 digit = (u32)((u32)value % radix);
-            * (pbuffer++) = (char)(digit < 10 ? '0' + digit : (uppercase ? 'A' : 'a') + digit - 10);
+            *(pbuffer++) = (char)(digit < 10 ? '0' + digit : (uppercase ? 'A' : 'a') + digit - 10);
             value = value / (int)radix;
         } while (value > 0);
     }
     for (i = (u32)(pbuffer - buffer); i < zero_pad; i++)
-        * (pbuffer++) = '0';
-    if (negative)
-    {
-        * (pbuffer++) = '-'; * (pbuffer) = '\0';
+        *(pbuffer++) = '0';
+    if (negative) {
+        *(pbuffer++) = '-';
+        *(pbuffer) = '\0';
     }
     /* ... now we reverse it (could do it recursively but will
      * conserve the stack space) */
@@ -101,81 +101,78 @@ u32 mini_itoa(int value, u32 radix, u32 uppercase, u32 unsig, char * buffer, u32
     return len;
 }
 
-int mini_vsnprintf(char * buffer, u32 buffer_len,
-    const char * fmt, va_list va)
-{
-    char * pbuffer = buffer;
+int _putc(char ch, char *pbuffer, char *buffer, u32 buffer_len) {
+    if ((u32)((pbuffer - buffer) + 1) >= buffer_len)
+        return 0;
+    *(pbuffer++) = ch;
+    *(pbuffer) = '\0';
+    return 1;
+}
+int _puts(char *s, u32 len, char *pbuffer, char *buffer, u32 buffer_len) {
+    u32 i;
+    if ((int)buffer_len - (pbuffer - buffer) - 1 < (int)len)
+        len = (u32)((int)buffer_len - (pbuffer - buffer) - 1);
+    /* Copy to buffer */
+    for (i = 0; i < len; i++)
+        *(pbuffer++) = s[i];
+    *(pbuffer) = '\0';
+    return (int)len;
+}
+
+int mini_vsnprintf(char *buffer, u32 buffer_len,
+                   const char *fmt, va_list va) {
+    char *pbuffer = buffer;
     char bf[24];
     char ch;
-    int _putc(char ch)
-    {
-        if ((u32)((pbuffer - buffer) + 1) >= buffer_len)
-            return 0;
-        * (pbuffer++) = ch;
-        * (pbuffer) = '\0';
-        return 1;
-    }
-    int _puts(char * s, u32 len)
-    {
-        u32 i;
-        if ((int)buffer_len - (pbuffer - buffer) - 1 < (int)len)
-            len = (u32)((int)buffer_len - (pbuffer - buffer) - 1);
-        /* Copy to buffer */
-        for (i = 0; i < len; i++)
-            * (pbuffer++) = s[i];
-        * (pbuffer) = '\0';
-        return (int)len;
-    }
-    while ((ch = * (fmt++))) {
+    while ((ch = *(fmt++))) {
         if ((u32)((pbuffer - buffer) + 1) >= buffer_len)
             break;
         if (ch != '%')
-            _putc(ch);
+            _putc(ch, pbuffer, buffer, buffer_len);
         else {
             char zero_pad = 0;
-            char * ptr;
+            char *ptr;
             u32 len;
-            ch = * (fmt++);
+            ch = *(fmt++);
             /* Zero padding requested */
             if (ch == '0') {
-                ch = * (fmt++);
+                ch = *(fmt++);
                 if (ch == '\0')
                     return pbuffer - buffer;
                 if (ch >= '0' && ch <= '9')
                     zero_pad = (char)(ch - '0');
-                ch = * (fmt++);
+                ch = *(fmt++);
             }
             switch (ch) {
-            case 0:
-                return pbuffer - buffer;
-            case 'u':
-            case 'd':
-                len = mini_itoa(va_arg(va, int), 10, 0, (ch == 'u'), bf, zero_pad);
-                _puts(bf, len);
-                break;
-            case 'x':
-            case 'X':
-                len = mini_itoa(va_arg(va, int), 16, (ch == 'X'), 1, bf, zero_pad);
-                _puts(bf, len);
-                break;
-            case 'c':
-                _putc((char)(va_arg(va, int)));
-                break;
-            case 's':
-                ptr = va_arg(va, char * );
-                _puts(ptr, mini_strlen(ptr));
-                break;
-            default:
-                _putc(ch);
-                break;
+                case 0:
+                    return pbuffer - buffer;
+                case 'u':
+                case 'd':
+                    len = mini_itoa(va_arg(va, int), 10, 0, (ch == 'u'), bf, zero_pad);
+                    _puts(bf, len, pbuffer, buffer, buffer_len);
+                    break;
+                case 'x':
+                case 'X':
+                    len = mini_itoa(va_arg(va, int), 16, (ch == 'X'), 1, bf, zero_pad);
+                    _puts(bf, len, pbuffer, buffer, buffer_len);
+                    break;
+                case 'c':
+                    _putc((char)(va_arg(va, int)), pbuffer, buffer, buffer_len);
+                    break;
+                case 's':
+                    ptr = va_arg(va, char *);
+                    _puts(ptr, mini_strlen(ptr), pbuffer, buffer, buffer_len);
+                    break;
+                default:
+                    _putc(ch, pbuffer, buffer, buffer_len);
+                    break;
             }
         }
     }
-        return pbuffer - buffer;
+    return pbuffer - buffer;
 }
 
-void dprintf(const char * str, ...)
-{
+void dprintf(const char *str, ...) {
     char *__outstr = malloc(256);
     va_list args;
     va_start(args, str);
@@ -185,15 +182,13 @@ void dprintf(const char * str, ...)
     free(__outstr);
 }
 
-
-
-void derrf(const char *str, ...){
-        char* __outstr = malloc(256);
-        va_list args;
-        va_start(args, str);
-        mini_vsnprintf(__outstr, 256, str, args);
-        va_end(args);
-        dprint(__outstr);
-        free(__outstr);
-        err2(ERR_GENERIC, (int)str);
+void derrf(const char *str, ...) {
+    char *__outstr = malloc(256);
+    va_list args;
+    va_start(args, str);
+    mini_vsnprintf(__outstr, 256, str, args);
+    va_end(args);
+    dprint(__outstr);
+    free(__outstr);
+    err2(ERR_GENERIC, (int)str);
 }

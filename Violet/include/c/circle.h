@@ -1,8 +1,8 @@
 #ifndef H_CIRCLE
 #define H_CIRCLE
 
-#include "types.h"
 #include "tile/coordinate.h"
+#include "types.h"
 
 // Sets of coordinates that are within a circle of a given radius centered at 0,0
 

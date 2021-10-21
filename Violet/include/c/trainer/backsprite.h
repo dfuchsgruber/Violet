@@ -1,9 +1,9 @@
 #ifndef H_TRAINER_BACKSPRITE
 #define H_TRAINER_BACKSPRITE
 
-#include "types.h"
-#include "oam.h"
 #include "constants/trainer_backsprites.h"
+#include "oam.h"
+#include "types.h"
 
 palette trainer_backsprite_palettes[TRAINER_BACKSPRITE_CNT];
 sprite_coordinates_t trainer_backsprite_coordinates[TRAINER_BACKSPRITE_CNT];
@@ -14,9 +14,8 @@ extern rotscale_frame *trainer_backsprite_rotscale_anim_table[];
 /**
  * Oam callback for a trainer backsprite oam.
  * @param self self-reference
- **/
+ */
 void trainer_backsprite_callback(oam_object *self);
-
 
 extern const u8 gfx_trainer_backsprite_hiroTiles[];
 extern const u8 gfx_trainer_backsprite_hiroineTiles[];

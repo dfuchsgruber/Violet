@@ -1,15 +1,15 @@
-#include "types.h"
-#include "overworld/map_control.h"
-#include "constants/flags.h"
-#include "map/header.h"
-#include "save.h"
-#include "flags.h"
-#include "constants/levelscript_types.h"
-#include "options.h"
 #include "constants/attacks.h"
-#include "vars.h"
-#include "overworld/pokemon_party_menu.h"
+#include "constants/flags.h"
+#include "constants/levelscript_types.h"
 #include "debug.h"
+#include "flags.h"
+#include "map/header.h"
+#include "options.h"
+#include "overworld/map_control.h"
+#include "overworld/pokemon_party_menu.h"
+#include "save.h"
+#include "types.h"
+#include "vars.h"
 
 bool map_flash_usable() {
     return !checkflag(FLASH_USED) && get_mapheader(save1->bank, save1->map)->flash_type;
@@ -24,7 +24,7 @@ u8 player_pokemon_get_highest_level_flash_user() {
             if (level <= highest_level)
                 continue;
             for (int j = 0; j < 4; j++) {
-                if (pokemon_get_attribute(player_pokemon + i, (u16)(ATTRIBUTE_ATTACK1 + j), 0) == ATTACK_BLITZ) { 
+                if (pokemon_get_attribute(player_pokemon + i, (u16)(ATTRIBUTE_ATTACK1 + j), 0) == ATTACK_BLITZ) {
                     highest_level = level;
                     idx = i;
                     break;
