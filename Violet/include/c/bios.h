@@ -13,14 +13,14 @@
  * @param src Source offset (lz77 compressed)
  * @param dst Destination offset (in WRAM)
  */
-void lz77uncompwram(const void* src, void *dst);
+void lz77uncompwram(const void *src, void *dst);
 
 /**
  * Calls software interrupt for lz77 decompression into VRAM
  * @param src Source offset (lz77 compressed)
  * @param dst Destination offset (in VRAM)
  */
-void lz77uncompvram(const void *src, void*dst);
+void lz77uncompvram(const void *src, void *dst);
 
 #define CPUSET_COPY 0x0
 #define CPUSET_FILL 0x1000000
@@ -60,8 +60,7 @@ u16 sqrt32(u32 x);
  * @param x x value
  * @param y y value
  * @return -arctan2(x, y)
- **/
-u16 negative_arctan2(s16 x, s16 y); 
-
+ */
+u16 negative_arctan2(s16 x, s16 y);
 
 #endif /* INCLUDE_C_BIOS_H_ */

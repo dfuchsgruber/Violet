@@ -8,25 +8,25 @@
 #ifndef INCLUDE_C_POKEPAD_INCUBATOR_H_
 #define INCLUDE_C_POKEPAD_INCUBATOR_H_
 
-#include "types.h"
 #include "constants/species.h"
 #include "pokemon/virtual.h"
 #include "text.h"
+#include "types.h"
 
 typedef struct {
-  u8 from_outdoor;
-  u8 cursor_idx;
-  u8 select_from_box;
-  u8 oam_egg_idx;
-  u8 oam_egg_icons_idx[3];
-  u8 oam_egg_progress_bars_idx[3][2]; // Two progress bars per egg
-  u8 oam_selection[2];
-  u8 context_menu_callback_idx;
-  u8 imported_party_idx;
-  u8 imported_box_idx;
-  u8 imported_box_slot;
-  u8 hide_current_egg_icon; // If set, the current egg icon is hidden
-  void (*idle_callback)(); // The idle callback to set after showing components
+    u8 from_outdoor;
+    u8 cursor_idx;
+    u8 select_from_box;
+    u8 oam_egg_idx;
+    u8 oam_egg_icons_idx[3];
+    u8 oam_egg_progress_bars_idx[3][2]; // Two progress bars per egg
+    u8 oam_selection[2];
+    u8 context_menu_callback_idx;
+    u8 imported_party_idx;
+    u8 imported_box_idx;
+    u8 imported_box_slot;
+    u8 hide_current_egg_icon; // If set, the current egg icon is hidden
+    void (*idle_callback)();  // The idle callback to set after showing components
 } incubator_state_stru;
 
 #define INCUBATOR_EGG_TAG POKEMON_EGG
@@ -111,13 +111,13 @@ void incubator_clear();
 /**
  * Attempts to add a slots to the incubator based on the number of pokémon caught
  * @return if the number of slots increased
- **/
+ */
 bool incubator_attempt_add_slot();
 
 /**
  * Initializes the incubator
  * @param from_outdoor if the incubator is initialized from the overworld
- **/
+ */
 void incubator_initialize(bool from_outdoor);
 
 #define INCUBATOR_TBOX_CNT 6

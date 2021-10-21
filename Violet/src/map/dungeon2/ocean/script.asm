@@ -91,5 +91,3 @@ str_dungeon_enter_ocean_0:
 str_dungeon_enter_ocean_1:
 	.autostring 35 2 "Do you want to use Secret Power to overcome the rocks?"
 .endif
-
-

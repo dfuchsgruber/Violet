@@ -1,14 +1,13 @@
-#include "types.h"
 #include "battle/battler.h"
 #include "battle/state.h"
-#include "oam.h"
-#include "pokepad/pokedex/operator.h"
-#include "pokemon/virtual.h"
-#include "bios.h"
 #include "bg.h"
-#include "mega.h"
+#include "bios.h"
 #include "debug.h"
-
+#include "mega.h"
+#include "oam.h"
+#include "pokemon/virtual.h"
+#include "pokepad/pokedex/operator.h"
+#include "types.h"
 
 extern const u8 gfx_mega_indicatorTiles[];
 
@@ -17,7 +16,7 @@ bool battle_healthbox_add_mega_indicator(u8 oam_idx) {
     u8 offset;
     if (battler_is_opponent(battler_idx))
         offset = 0x11;
-    else if (battle_is_double()) 
+    else if (battle_is_double())
         offset = 0x12;
     else
         offset = 0x1a;
@@ -45,14 +44,14 @@ bool battle_healthbox_add_mega_indicator(u8 oam_idx) {
 
 void battle_healthbox_add_pokeball_and_mega_indicator(u8 oam_idx, bool has_no_status_aliment) {
     if (has_no_status_aliment) {
-        if (battle_healthbox_add_mega_indicator(oam_idx))  // The mega indicator overrides the caught icon
+        if (battle_healthbox_add_mega_indicator(oam_idx)) // The mega indicator overrides the caught icon
             return;
     }
     if (battle_flags & (BATTLE_OAK | BATTLE_TUTORIAL | 0x10000))
         return;
     if (battle_flags & BATTLE_TRAINER)
         return;
-    
+
     u8 battler_idx = (u8)oams[oam_idx].private[6];
     if (!battler_is_opponent(battler_idx))
         return;
@@ -70,5 +69,4 @@ void battle_healthbox_add_pokeball_and_mega_indicator(u8 oam_idx, bool has_no_st
         int zero = 0;
         cpuset(&zero, OAMCHARBASE(tile_num + 8), CPUSET_FILL | CPUSET_WORD | CPUSET_WORD_SIZE(32));
     }
-
 }

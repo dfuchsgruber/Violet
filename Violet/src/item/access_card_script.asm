@@ -51,5 +51,3 @@ access_card_element_names_r:
 		.string "But you are already on that\nfloor!"
 
 .endif
-
-

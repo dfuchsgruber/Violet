@@ -20,4 +20,3 @@ pokemon_play_cry_hook:
     table_loaded:
     ldr r2, =0x80720E1
     bx r2
-

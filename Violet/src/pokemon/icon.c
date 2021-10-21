@@ -1,8 +1,8 @@
-#include "types.h"
 #include "pokemon/count.h"
 #include "pokemon/sprites.h"
+#include "types.h"
 
- const void *pokemon_icons[POKEMON_CNT] = {
+const void *pokemon_icons[POKEMON_CNT] = {
 
     gfx_pkmn_species_000_pokemon_pokemon_0_iconTiles,
     gfx_pkmn_species_001_pokemon_bisasam_iconTiles,
@@ -447,7 +447,7 @@
     gfx_pkmn_species_440_pokemon_groudon_e_iconTiles,
     gfx_pkmn_species_441_pokemon_kecleon_p_iconTiles,
     gfx_pkmn_crystal_onix_iconTiles,
-    
+
 };
 
 u8 pokemon_icon_usage[POKEMON_CNT] = {
@@ -1333,8 +1333,8 @@ u8 pokemon_icon_usage[POKEMON_CNT] = {
     0x0,
     // POKEMON_GROUDON_REGENT
     0x0,
-	// POKEMON_KECLEON_PURPLE
-	0x2,
+    // POKEMON_KECLEON_PURPLE
+    0x2,
     // POKEMON_CRYSTAL_ONIX
     0x2,
 };

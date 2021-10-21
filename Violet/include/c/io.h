@@ -48,14 +48,14 @@
 #define IO_BLDALPHA_EVA(x) (x)
 #define IO_BLDALPHA_EVB(x) (x << 8)
 
-#define IO_WININOUT_BG(win,bg) (1 << ((bg) + 8 * (win)))
+#define IO_WININOUT_BG(win, bg) (1 << ((bg) + 8 * (win)))
 #define IO_WININOUT_OBJ(win) (16 << (8 * (win)))
 #define IO_WININOUT_FX(win) (32 << (8 * (win)))
 #define IO_WININ 0x48
 #define IO_WINOUT 0x4C
 
-#define IO_WINH(left,right) ((right) | ((left) << 8))
-#define IO_WINV(up,down) ((down) | ((up) << 8))
+#define IO_WINH(left, right) ((right) | ((left) << 8))
+#define IO_WINV(up, down) ((down) | ((up) << 8))
 #define IO_WIN0H 0x40
 #define IO_WIN1H 0x42
 #define IO_WIN0V 0x44
@@ -64,9 +64,7 @@
 #define IO_DMA_BASE 0x040000B0
 #define IO_DMA_REGS(num) (IO_DMA_BASE + 12 * num)
 
-#define IO_IME (*(vu16*) (IO_ADDRESS + 0x208))
-
-
+#define IO_IME (*(vu16 *)(IO_ADDRESS + 0x208))
 
 /**
  * Sets the value of an IO register in the next frame

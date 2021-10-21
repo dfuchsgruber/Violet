@@ -8,12 +8,12 @@
 #ifndef INCLUDE_C_TRAINER_VIRTUAL_H_
 #define INCLUDE_C_TRAINER_VIRTUAL_H_
 
-#include "types.h"
 #include "constants/trainer_battle_types.h"
 #include "overworld/npc.h"
+#include "types.h"
 
 #define TRAINER_BATTLE_TYPE_IS_DOUBLE(type) ((type) == TRAINER_BATTLE_DOUBLE || (type) == TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE || (type) == TRAINER_BATTLE_REMATCH_DOUBLE || (type) == TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC)
- 
+
 typedef struct trainer_variables {
     u16 kind_of_battle;
     u16 trainer_id;
@@ -57,7 +57,7 @@ u16 trainer_get_flag();
 
 /**
  * Sets trainer flags (for both A and B trainer)
- **/
+ */
 void trainer_set_flags();
 
 /**
@@ -69,45 +69,44 @@ void battle_trainerbattle_continuation();
  * Configures all trainer variables
  * @param configuration the configuration according to which variables are to be configured
  * @param parameters the trainerbattle parameters
- **/
+ */
 void trainerbattle_configure(trainerbattle_configuration *configuration, u8 *parameters);
 
 /**
  * Configures the trainer variables and initalizes a script for challanging the player, single battle.
  * @param npc_idx the npc to move
  * @param ow_script the trainer script
- **/
+ */
 void trainerbattle_configure_and_initialize_challange_script(u8 npc_idx, u8 *ow_script);
-
 
 /**
  * Initializes and configures the trainer at fmem.current_trainer with a trainerbattle command.
  * @param script the trainerbattle command to initialize the trainer with.
- **/
+ */
 u8 *trainer_configure_by_overworld_script(u8 *ow_script);
 
 /**
  * Gets the npc idx of the currently approaching trainer npc and updates trainer_npc_idx and LASTTALKED.
  * @return the npc idx
- **/
+ */
 u8 trainer_get_current_npc_idx();
 
 /**
  * Moves a trainer npc to the player
  * @param n the npc to move to
  * @param distance how much it should be moved
- **/
+ */
 void trainer_npc_move_to_player(npc *n, u8 distance);
 
 /**
  * Sets the target npc_idx to the trainer that was loaded before.
- **/
+ */
 void trainerbattle_load_target_npc();
 
 /**
  * Starts the trainer battle, i.e. increments stats, loads the transition and starts the battle function. Battle flags should
  * be already set at this point.
- **/
+ */
 void trainerbattle_start();
 
 /**
@@ -115,14 +114,14 @@ void trainerbattle_start();
  * @param trainer_idx the trainer
  * @param num how many mons to consider
  * @return total sum of the levels
- **/
+ */
 u8 trainer_pokemon_get_total_level(u16 trainer_idx, u8 num);
 
 /**
  * Gets the idx of the rematch trainer associated with a trainer.
  * @param trainer_idx the trainer idx to check
  * @return the assoicated rematch trainer idx
- **/
+ */
 u16 trainer_get_rematch_idx(u16 trainer_idx);
 
 // Ow script that does encounter music, intro speech and starts the battle.

@@ -13,13 +13,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -33,8 +33,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped"
@@ -45,7 +45,7 @@
 		"hidden_ability": "Photogenese",
 		"safari_rate": 0,
 		"dex_number": 1,
-		"capture_rate" : 200
+		"capture_rate": 200
 	},
 	"POKEMON_BISAKNOSP": {
 		"ability_0": "Notduenger",
@@ -67,7 +67,7 @@
 		"hidden_ability": "Ungebrochen",
 		"safari_rate": 0,
 		"dex_number": 4,
-		"capture_rate" : 200
+		"capture_rate": 200
 	},
 	"POKEMON_GLUTEXO": {
 		"ability_0": "Grossbrand",
@@ -89,7 +89,7 @@
 		"hidden_ability": "Regenmut",
 		"safari_rate": 0,
 		"dex_number": 7,
-		"capture_rate" : 200
+		"capture_rate": 200
 	},
 	"POKEMON_SCHILLOK": {
 		"ability_0": "Sturzbach",
@@ -113,8 +113,8 @@
 		"dex_number": 167
 	},
 	"POKEMON_DARTIGNIS": {
-		"name" : {
-			"LANG_EN" : "Fletchin."
+		"name": {
+			"LANG_EN": "Fletchin."
 		},
 		"ability_0": "Flammkoerper",
 		"ability_1": null,
@@ -202,9 +202,9 @@
 		"hidden_ability": "Robustheit",
 		"safari_rate": 0,
 		"dex_number": 346,
-		"genus" : {
-			"LANG_GER" : "Bronzegl.",
-			"LANG_EN" : "Bronze Bell"
+		"genus": {
+			"LANG_GER": "Bronzegl.",
+			"LANG_EN": "Bronze Bell"
 		}
 	},
 	"POKEMON_MAEHIKEL": {
@@ -300,9 +300,9 @@
 		]
 	},
 	"POKEMON_NIDORANW": {
-		"name" : {
-			"LANG_GER" : "Nidoran♀",
-			"LANG_EN" : "Lockshel"
+		"name": {
+			"LANG_GER": "Nidoran♀",
+			"LANG_EN": "Lockshel"
 		},
 		"ability_0": "Giftdorn",
 		"ability_1": null,
@@ -325,9 +325,9 @@
 		"dex_number": 19
 	},
 	"POKEMON_NIDORANM": {
-		"name" : {
-			"LANG_GER" : "Nidoran♂",
-			"LANG_EN" : "Lockshel"
+		"name": {
+			"LANG_GER": "Nidoran♂",
+			"LANG_EN": "Lockshel"
 		},
 		"ability_0": "Giftdorn",
 		"ability_1": null,
@@ -350,8 +350,8 @@
 		"dex_number": 22
 	},
 	"POKEMON_FLOETTE": {
-		"genus" : {
-			"LANG_EN" : "Single Bl."
+		"genus": {
+			"LANG_EN": "Single Bl."
 		},
 		"ability_0": "Lernfaehig",
 		"ability_1": null,
@@ -379,9 +379,9 @@
 		"hidden_ability": "Solarkraft",
 		"safari_rate": 0,
 		"dex_number": 24,
-		"dex_entry" : {
-			"LANG_GER" : "Man sagt, es k\u00f6nne bis zu 1.000 Jahre alt werden. Mit mystischen Kr\u00e4ften kontrolliert es das Feuer und br\u00e4t sich damit seine Beute.",
-			"LANG_EN" : ""
+		"dex_entry": {
+			"LANG_GER": "Man sagt, es k\u00f6nne bis zu 1.000 Jahre alt werden. Mit mystischen Kr\u00e4ften kontrolliert es das Feuer und br\u00e4t sich damit seine Beute.",
+			"LANG_EN": ""
 		}
 	},
 	"POKEMON_PUMMELUFF": {
@@ -441,8 +441,8 @@
 		"dex_number": 132
 	},
 	"POKEMON_FEELINARA": {
-		"genus" : {
-			"LANG_EN" : "Intertwin."
+		"genus": {
+			"LANG_EN": "Intertwin."
 		},
 		"ability_0": "Ap_sparer",
 		"ability_1": null,
@@ -512,9 +512,9 @@
 		"hidden_ability": "Tollwut",
 		"safari_rate": 0,
 		"dex_number": 41,
-		"genus" : {
-			"LANG_GER" : "Schw./ Affe",
-			"LANG_EN" : "Pig / Ape"
+		"genus": {
+			"LANG_GER": "Schw./ Affe",
+			"LANG_EN": "Pig / Ape"
 		}
 	},
 	"POKEMON_RASAFF": {
@@ -523,11 +523,11 @@
 		"hidden_ability": "Tollwut",
 		"safari_rate": 0,
 		"dex_number": 42,
-		"genus" : {
-			"LANG_GER" : "Schw./ Affe",
-			"LANG_EN" : "Pig / Ape"
+		"genus": {
+			"LANG_GER": "Schw./ Affe",
+			"LANG_EN": "Pig / Ape"
 		}
- 	},
+	},
 	"POKEMON_FUKANO": {
 		"ability_0": "Bedroher",
 		"ability_1": "Feuerfaenger",
@@ -548,9 +548,9 @@
 		"hidden_ability": "Hochmut",
 		"safari_rate": 50,
 		"dex_number": 184,
-		"genus" : {
-			"LANG_GER" : "Klingenkr.",
-			"LANG_EN" : "Blade Power"
+		"genus": {
+			"LANG_GER": "Klingenkr.",
+			"LANG_EN": "Blade Power"
 		}
 	},
 	"POKEMON_DUOKLES": {
@@ -559,9 +559,9 @@
 		"hidden_ability": "Hochmut",
 		"safari_rate": 0,
 		"dex_number": 185,
-		"genus" : {
-			"LANG_GER" : "Klingenkr.",
-			"LANG_EN" : "Blade Power"
+		"genus": {
+			"LANG_GER": "Klingenkr.",
+			"LANG_EN": "Blade Power"
 		}
 	},
 	"POKEMON_DURENGARD": {
@@ -570,9 +570,9 @@
 		"hidden_ability": null,
 		"safari_rate": 0,
 		"dex_number": 186,
-		"genus" : {
-			"LANG_GER" : "Königskl.",
-			"LANG_EN" : "Kings Blade"
+		"genus": {
+			"LANG_GER": "Königskl.",
+			"LANG_EN": "Kings Blade"
 		},
 		"levelup_moves": [
 			[
@@ -734,12 +734,12 @@
 		"hidden_ability": "Schwebe",
 		"safari_rate": 0,
 		"dex_number": 65,
-		"evolutions" : {
-			"POKEMON_MAGNEZONE" : {
-				"trigger" : "On_Map",
-				"argument" : {
-					"bank" : 255,
-					"map_idx" : 255
+		"evolutions": {
+			"POKEMON_MAGNEZONE": {
+				"trigger": "On_Map",
+				"argument": {
+					"bank": 255,
+					"map_idx": 255
 				}
 			}
 		}
@@ -771,9 +771,9 @@
 		"hidden_ability": "Barriere",
 		"safari_rate": 0,
 		"dex_number": 70,
-		"dex_entry" : {
-			"LANG_GER" : "Unter seinem hellblauen Pelz liegt eine dicke und feste Haut. Es ist bei frostigen -40 Grad noch aktiv.",
-			"LANG_EN" : ""
+		"dex_entry": {
+			"LANG_GER": "Unter seinem hellblauen Pelz liegt eine dicke und feste Haut. Es ist bei frostigen -40 Grad noch aktiv.",
+			"LANG_EN": ""
 		}
 	},
 	"POKEMON_JUGONG": {
@@ -832,8 +832,8 @@
 		"safari_rate": 0,
 		"dex_number": 78,
 		"dex_entry": {
-			"LANG_GER" : "Es versteckt sich im Schatten. Man sagt, wenn sich ein Gengar versteckt, kühlt es sich um 5 Grad ab.",
-			"LANG_EN" : "It hides in shadows. It is said that if Gengar is hiding, it cools the area by nearly 10 degrees Fahrenheit."
+			"LANG_GER": "Es versteckt sich im Schatten. Man sagt, wenn sich ein Gengar versteckt, kühlt es sich um 5 Grad ab.",
+			"LANG_EN": "It hides in shadows. It is said that if Gengar is hiding, it cools the area by nearly 10 degrees Fahrenheit."
 		}
 	},
 	"POKEMON_ONIX": {
@@ -962,8 +962,8 @@
 		"safari_rate": 0,
 		"dex_number": 100,
 		"dex_entry": {
-			"LANG_GER" : "Durch seine panzerähnliche Körperfülle kann es in bis zu 2 000 Grad heißer Lava leben.",
-			"LANG_EN" : "Protected by an armor-like hide, it is capable of living in molten lava of 3,600 degrees Fahrenheit."
+			"LANG_GER": "Durch seine panzerähnliche Körperfülle kann es in bis zu 2 000 Grad heißer Lava leben.",
+			"LANG_EN": "Protected by an armor-like hide, it is capable of living in molten lava of 3,600 degrees Fahrenheit."
 		}
 	},
 	"POKEMON_CHANEIRA": {
@@ -1063,9 +1063,9 @@
 		"hidden_ability": "Feuerfaenger",
 		"safari_rate": 0,
 		"dex_number": 115,
-		"dex_entry" : {
-			"LANG_GER" : "Es wurde in der Nähe eines Vulkans gefunden. Die Körpertemperatur dieses Feuerspuckers liegt bei fast 1 200 Grad.",
-			"LANG_EN" : "Found near the mouth of a volcano. This fire-breather's body temperature is nearly 2,200 degrees Fahrenheit."
+		"dex_entry": {
+			"LANG_GER": "Es wurde in der Nähe eines Vulkans gefunden. Die Körpertemperatur dieses Feuerspuckers liegt bei fast 1 200 Grad.",
+			"LANG_EN": "Found near the mouth of a volcano. This fire-breather's body temperature is nearly 2,200 degrees Fahrenheit."
 		}
 	},
 	"POKEMON_PINSIR": {
@@ -1116,19 +1116,19 @@
 		"hidden_ability": "Allrounder",
 		"safari_rate": 0,
 		"dex_number": 125,
-		"evolutions" : {
-			"POKEMON_FOLIPURBA" : {
-				"trigger" : "On_Map",
-				"argument" : {
-					"bank" : 255,
-					"map_idx" : 255
+		"evolutions": {
+			"POKEMON_FOLIPURBA": {
+				"trigger": "On_Map",
+				"argument": {
+					"bank": 255,
+					"map_idx": 255
 				}
 			},
-			"POKEMON_GLAZIOLA" : {
-				"trigger" : "On_Map",
-				"argument" : {
-					"bank" : 255,
-					"map_idx" : 255
+			"POKEMON_GLAZIOLA": {
+				"trigger": "On_Map",
+				"argument": {
+					"bank": 255,
+					"map_idx": 255
 				}
 			}
 		}
@@ -1153,9 +1153,9 @@
 		"hidden_ability": "Flammkoerper",
 		"safari_rate": 0,
 		"dex_number": 128,
-		"dex_entry" : {
-			"LANG_GER" : "In seinem Körper befindet sich eine Flamme. Seine Körpertemperatur liegt vor dem Kampf bei 900 Grad.",
-			"LANG_EN" : "It has a flame sac in its body. Its body temperature tops 1,650 degrees Fahrenheit before battle."
+		"dex_entry": {
+			"LANG_GER": "In seinem Körper befindet sich eine Flamme. Seine Körpertemperatur liegt vor dem Kampf bei 900 Grad.",
+			"LANG_EN": "It has a flame sac in its body. Its body temperature tops 1,650 degrees Fahrenheit before battle."
 		}
 	},
 	"POKEMON_PORYGON": {
@@ -1427,9 +1427,9 @@
 		"hidden_ability": "Schwebe",
 		"safari_rate": 0,
 		"dex_number": 66,
-		"genus" : {
-			"LANG_GER" : "Magnetgeb.",
-			"LANG_EN" : "Magnet Area"
+		"genus": {
+			"LANG_GER": "Magnetgeb.",
+			"LANG_EN": "Magnet Area"
 		}
 	},
 	"POKEMON_TOGEKISS": {
@@ -1440,8 +1440,8 @@
 		"dex_number": 176
 	},
 	"POKEMON_FLABEBE": {
-		"genus" : {
-			"LANG_EN" : "Single Bl."
+		"genus": {
+			"LANG_EN": "Single Bl."
 		},
 		"ability_0": "Lernfaehig",
 		"ability_1": null,
@@ -1650,18 +1650,18 @@
 		"hidden_ability": "Schwebe",
 		"safari_rate": 0,
 		"dex_number": 322,
-		"genus" : {
-			"LANG_GER" : "Schneegeb.",
-			"LANG_EN" : "Snow Land"
+		"genus": {
+			"LANG_GER": "Schneegeb.",
+			"LANG_EN": "Snow Land"
 		},
-		"dex_entry" : {
-			"LANG_GER" : "Sein eisiger Atem mit -50 Grad friert Gegner ein. Was aussieht wie sein Körper, ist tatsächlich hohl.",
-			"LANG_EN" : "It freezes foes with an icy breath nearly -60 degrees Fahrenheit. What seems to be its body is actually hollow. "
+		"dex_entry": {
+			"LANG_GER": "Sein eisiger Atem mit -50 Grad friert Gegner ein. Was aussieht wie sein Körper, ist tatsächlich hohl.",
+			"LANG_EN": "It freezes foes with an icy breath nearly -60 degrees Fahrenheit. What seems to be its body is actually hollow. "
 		}
 	},
 	"POKEMON_SKORGRO": {
-		"genus" : {
-			"LANG_EN" : "Fang Scorp."
+		"genus": {
+			"LANG_EN": "Fang Scorp."
 		},
 		"ability_0": "Scherenmacht",
 		"ability_1": "Sandschleier",
@@ -1691,8 +1691,8 @@
 		"dex_number": 113
 	},
 	"POKEMON_SKORGLA": {
-		"genus" : {
-			"LANG_EN" : "Fly Scorp."
+		"genus": {
+			"LANG_EN": "Fly Scorp."
 		},
 		"ability_0": "Scherenmacht",
 		"ability_1": "Sandschleier",
@@ -1727,9 +1727,9 @@
 		"hidden_ability": "Frostschicht",
 		"safari_rate": 0,
 		"dex_number": 218,
-		"genus" : {
-			"LANG_GER" : "Doppelstoß.",
-			"LANG_EN" : "Twin Tusk"
+		"genus": {
+			"LANG_GER": "Doppelstoß.",
+			"LANG_EN": "Twin Tusk"
 		}
 	},
 	"POKEMON_SCHEROX": {
@@ -1759,7 +1759,7 @@
 		"hidden_ability": "Dunkle_magie",
 		"safari_rate": 0,
 		"dex_number": 223,
-		"capture_rate" : 20
+		"capture_rate": 20
 	},
 	"POKEMON_TEDDIURSA": {
 		"ability_0": "Mitnahme",
@@ -1921,9 +1921,9 @@
 		"hidden_ability": "Aufwertung",
 		"safari_rate": 0,
 		"dex_number": 222,
-		"genus" : {
-			"LANG_GER" : "Gelassenh.",
-			"LANG_EN" : "Placid"
+		"genus": {
+			"LANG_GER": "Gelassenh.",
+			"LANG_EN": "Placid"
 		}
 	},
 	"POKEMON_ELEKID": {
@@ -1939,9 +1939,9 @@
 		"hidden_ability": "Feuerfaenger",
 		"safari_rate": 0,
 		"dex_number": 114,
-		"dex_entry" : {
-			"LANG_GER" : "Seine Körpertemperatur misst 600 Grad. Beim Ein- und Ausatmen springen glühende Kohlenstücke aus seinem Mund.",
-			"LANG_EN" : "It's small, but its body temperature is over 1 100 degrees Fahrenheit. Embers escape its mouth and nose when it breathes."
+		"dex_entry": {
+			"LANG_GER": "Seine Körpertemperatur misst 600 Grad. Beim Ein- und Ausatmen springen glühende Kohlenstücke aus seinem Mund.",
+			"LANG_EN": "It's small, but its body temperature is over 1 100 degrees Fahrenheit. Embers escape its mouth and nose when it breathes."
 		}
 	},
 	"POKEMON_MILTANK": {
@@ -2014,7 +2014,7 @@
 		"safari_rate": 0,
 		"dex_number": 251
 	},
-	"POKEMON_CELEBI": { 
+	"POKEMON_CELEBI": {
 		"ability_0": "Innere_kraft",
 		"ability_1": null,
 		"hidden_ability": "Innere_kraft",
@@ -2022,27 +2022,27 @@
 		"dex_number": 252
 	},
 	"POKEMON_ROTOM_HEAT": {
-		"species_link" : "POKEMON_ROTOM",
+		"species_link": "POKEMON_ROTOM",
 		"type_0": "Elektro",
 		"type_1": "Feuer"
 	},
 	"POKEMON_ROTOM_WASH": {
-		"species_link" : "POKEMON_ROTOM",
+		"species_link": "POKEMON_ROTOM",
 		"type_0": "Elektro",
 		"type_1": "Wasser"
 	},
 	"POKEMON_ROTOM_FORST": {
-		"species_link" : "POKEMON_ROTOM",
+		"species_link": "POKEMON_ROTOM",
 		"type_0": "Elektro",
 		"type_1": "Eis"
 	},
 	"POKEMON_ROTOM_WIND": {
-		"species_link" : "POKEMON_ROTOM",
+		"species_link": "POKEMON_ROTOM",
 		"type_0": "Elektro",
 		"type_1": "Flug"
 	},
 	"POKEMON_ROTOM_GRASS": {
-		"species_link" : "POKEMON_ROTOM",
+		"species_link": "POKEMON_ROTOM",
 		"type_0": "Elektro",
 		"type_1": "Pflanze"
 	},
@@ -2091,7 +2091,7 @@
 		"ability_0": "Panzerhaut",
 		"ability_1": null,
 		"hidden_ability": null,
-		"species_link" : "POKEMON_LAHMUS",
+		"species_link": "POKEMON_LAHMUS",
 		"dex_number": 0
 	},
 	"POKEMON_MEGA_MASKEREGEN": {
@@ -2109,7 +2109,7 @@
 		"ability_0": "Techniker",
 		"ability_1": null,
 		"hidden_ability": null,
-		"species_link" : "POKEMON_MASKEREGEN",
+		"species_link": "POKEMON_MASKEREGEN",
 		"dex_number": 288,
 		"levelup_moves": [
 			[
@@ -2307,10 +2307,10 @@
 		},
 		"exp_yield": 240,
 		"dex_number": 0,
-		"species_link" : "POKEMON_OCTILLERY",
+		"species_link": "POKEMON_OCTILLERY",
 		"ability_0": "Tintenschuss",
 		"ability_1": null,
-		"hidden_ability" : "Tintenschuss"
+		"hidden_ability": "Tintenschuss"
 	},
 	"POKEMON_MEGA_RASAFF": {
 		"basestats": {
@@ -2325,8 +2325,8 @@
 		"dex_number": 0,
 		"ability_0": "Hochmut",
 		"ability_1": null,
-		"hidden_ability" : "Hochmut",
-		"species_link" : "POKEMON_RASAFF"
+		"hidden_ability": "Hochmut",
+		"species_link": "POKEMON_RASAFF"
 	},
 	"POKEMON_MEGA_ARIADOS": {
 		"basestats": {
@@ -2343,36 +2343,36 @@
 		"dex_number": 0,
 		"ability_0": "Bedroher",
 		"ability_1": null,
-		"hidden_ability" : "Bedroher",
-		"species_link" : "POKEMON_ARIADOS"
+		"hidden_ability": "Bedroher",
+		"species_link": "POKEMON_ARIADOS"
 	},
 	"POKEMON_111": {
-		"species_link" : "POKEMON_BISASAM"
+		"species_link": "POKEMON_BISASAM"
 	},
 	"POKEMON_112": {
-		"species_link" : "POKEMON_BISASAM"
+		"species_link": "POKEMON_BISASAM"
 	},
 	"POKEMON_113": {
-		"species_link" : "POKEMON_BISASAM"
+		"species_link": "POKEMON_BISASAM"
 	},
 	"POKEMON_114": {
-		"species_link" : "POKEMON_BISASAM"
+		"species_link": "POKEMON_BISASAM"
 	},
 	"POKEMON_LOCKSCHAL": {
-		"name" : {
-			"LANG_GER" : "Lockschal",
-			"LANG_EN" : "Lockshell"
+		"name": {
+			"LANG_GER": "Lockschal",
+			"LANG_EN": "Lockshell"
 		},
-		"genus" : {
-			"LANG_GER" : "Locke",
-			"LANG_EN" : "Locke"
+		"genus": {
+			"LANG_GER": "Locke",
+			"LANG_EN": "Locke"
 		},
-		"dex_entry" :{
-			"LANG_GER" : "Es ist überaus stolz auf seine Haarpracht. Es träumt davon, mit einem Schwert zu kämpfen.",
-			"LANG_EN" : "It is most proud of its hair. It dreams of fighting with a sword one day."
+		"dex_entry": {
+			"LANG_GER": "Es ist überaus stolz auf seine Haarpracht. Es träumt davon, mit einem Schwert zu kämpfen.",
+			"LANG_EN": "It is most proud of its hair. It dreams of fighting with a sword one day."
 		},
-		"height" : 5,
-		"weight" : 50,
+		"height": 5,
+		"weight": 50,
 		"basestats": {
 			"hp": 50,
 			"attack": 56,
@@ -2386,13 +2386,13 @@
 		"capture_rate": 45,
 		"exp_yield": 65,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 1,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 1,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -2406,8 +2406,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "Gruen"
+			"flip": 0,
+			"color": "Gruen"
 		},
 		"hidden_ability": "Ungebrochen",
 		"shape": "Legs",
@@ -2537,29 +2537,29 @@
 		],
 		"egg_moves": [],
 		"dex_number": 253,
-		"evolutions" : {
-			"POKEMON_STICHSCHAL" : {
-				"trigger" : "Level_up",
-				"argument" : 16,
-				"baby_trigger_item" : null
+		"evolutions": {
+			"POKEMON_STICHSCHAL": {
+				"trigger": "Level_up",
+				"argument": 16,
+				"baby_trigger_item": null
 			}
 		}
 	},
 	"POKEMON_STICHSCHAL": {
-		"name" : {
-			"LANG_GER" : "Stichschal",
-			"LANG_EN" : "Piershel"
+		"name": {
+			"LANG_GER": "Stichschal",
+			"LANG_EN": "Piershel"
 		},
-		"genus" : {
-			"LANG_GER" : "Schwert",
-			"LANG_EN" : "Sword"
+		"genus": {
+			"LANG_GER": "Schwert",
+			"LANG_EN": "Sword"
 		},
-		"dex_entry" : {
-			"LANG_GER" : "Sowohl sein Schwert als auch seine Panzerung sind aus Eichenholz. Es ist äußerst edelmütig.",
-			"LANG_EN" : "Its sword as well as its armor are made of oak wood. It behaves very noble."
+		"dex_entry": {
+			"LANG_GER": "Sowohl sein Schwert als auch seine Panzerung sind aus Eichenholz. Es ist äußerst edelmütig.",
+			"LANG_EN": "Its sword as well as its armor are made of oak wood. It behaves very noble."
 		},
-		"height" : 9,
-		"weight" : 216,
+		"height": 9,
+		"weight": 216,
 		"basestats": {
 			"hp": 70,
 			"attack": 90,
@@ -2573,13 +2573,13 @@
 		"capture_rate": 45,
 		"exp_yield": 141,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 2,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 2,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -2593,8 +2593,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "Gruen"
+			"flip": 0,
+			"color": "Gruen"
 		},
 		"hidden_ability": "Ungebrochen",
 		"shape": "Humanoid",
@@ -2728,29 +2728,29 @@
 		],
 		"egg_moves": [],
 		"dex_number": 254,
-		"evolutions" : {
-			"POKEMON_STAHLSTICH" : {
-				"trigger" : "Level_up",
-				"argument" : 36,
-				"baby_trigger_item" : null
+		"evolutions": {
+			"POKEMON_STAHLSTICH": {
+				"trigger": "Level_up",
+				"argument": 36,
+				"baby_trigger_item": null
 			}
 		}
 	},
 	"POKEMON_STAHLSTICH": {
-		"name" : {
-			"LANG_GER" : "Stahlstich",
-			"LANG_EN" : "Ironpierce"
+		"name": {
+			"LANG_GER": "Stahlstich",
+			"LANG_EN": "Ironpierce"
 		},
-		"genus" : {
+		"genus": {
 			"LANG_GER": "Ritter",
-			"LANG_EN" : "Knight"
+			"LANG_EN": "Knight"
 		},
-		"dex_entry" : {
-			"LANG_GER" : "Mit seinem eisernen Schwert erlegte es einst ein Brutalanda. Seitdem gilt die Klinge als legendär.",
-			"LANG_EN" : "With its iron sword it once slayed a Salamance. Ever since the blade is considered legendary."
+		"dex_entry": {
+			"LANG_GER": "Mit seinem eisernen Schwert erlegte es einst ein Brutalanda. Seitdem gilt die Klinge als legendär.",
+			"LANG_EN": "With its iron sword it once slayed a Salamance. Ever since the blade is considered legendary."
 		},
-		"height" : 18,
-		"weight" : 1337,
+		"height": 18,
+		"weight": 1337,
 		"basestats": {
 			"hp": 95,
 			"attack": 115,
@@ -2764,13 +2764,13 @@
 		"capture_rate": 45,
 		"exp_yield": 208,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 2,
-			"defense" : 1,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 2,
+			"defense": 1,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -2784,8 +2784,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "Gruen"
+			"flip": 0,
+			"color": "Gruen"
 		},
 		"hidden_ability": "Ungebrochen",
 		"shape": "Humanoid",
@@ -2936,20 +2936,20 @@
 		"dex_number": 255
 	},
 	"POKEMON_WELUNO": {
-		"name" : {
-			"LANG_GER" : "Weluno",
-			"LANG_EN" : "Pupuno"
+		"name": {
+			"LANG_GER": "Weluno",
+			"LANG_EN": "Pupuno"
 		},
-		"genus" : {
-			"LANG_GER" : "Welpe",
-			"LANG_EN" : "Puppy"
+		"genus": {
+			"LANG_GER": "Welpe",
+			"LANG_EN": "Puppy"
 		},
-		"dex_entry" : {
-			"LANG_GER" : "Es ist leicht reizbar und verfügt über einen starken Kiefer. Seine Bisse sind können schmerzhaft sein.",
-			"LANG_EN" : "It gets angry very easily and has strong jaws. Its bites can be very painful."
+		"dex_entry": {
+			"LANG_GER": "Es ist leicht reizbar und verfügt über einen starken Kiefer. Seine Bisse sind können schmerzhaft sein.",
+			"LANG_EN": "It gets angry very easily and has strong jaws. Its bites can be very painful."
 		},
-		"height" : 4,
-		"weight" : 25,
+		"height": 4,
+		"weight": 25,
 		"basestats": {
 			"hp": 45,
 			"attack": 59,
@@ -2963,13 +2963,13 @@
 		"capture_rate": 45,
 		"exp_yield": 65,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 1,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 1,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -2983,8 +2983,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "Rot"
+			"flip": 0,
+			"color": "Rot"
 		},
 		"hidden_ability": "Dunkle_magie",
 		"shape": "Quadruped",
@@ -3111,29 +3111,29 @@
 			"Donnerzahn"
 		],
 		"dex_number": 256,
-		"evolutions" : {
-			"POKEMON_ORTHODOS" : {
-				"trigger" : "Level_up",
-				"argument" : 16,
-				"baby_trigger_item" : null
+		"evolutions": {
+			"POKEMON_ORTHODOS": {
+				"trigger": "Level_up",
+				"argument": 16,
+				"baby_trigger_item": null
 			}
 		}
 	},
 	"POKEMON_ORTHODOS": {
-		"name" : {
-			"LANG_GER" : "Orthodos",
-			"LANG_EN" : "Orthodos"
+		"name": {
+			"LANG_GER": "Orthodos",
+			"LANG_EN": "Orthodos"
 		},
-		"genus" : {
-			"LANG_GER" : "Orthos",
-			"LANG_EN" : "Orthos"
+		"genus": {
+			"LANG_GER": "Orthos",
+			"LANG_EN": "Orthos"
 		},
-		"dex_entry" : {
-			"LANG_GER" : "Ein Ring versiegelt seine wahre Kraft. Es heißt, dies sei der Fluch eines Guardevoirs.",
-			"LANG_EN" : "A ring seals its true power. Legends tell, this is due to the curse of a Guardevoir."
+		"dex_entry": {
+			"LANG_GER": "Ein Ring versiegelt seine wahre Kraft. Es heißt, dies sei der Fluch eines Guardevoirs.",
+			"LANG_EN": "A ring seals its true power. Legends tell, this is due to the curse of a Guardevoir."
 		},
-		"height" : 9,
-		"weight" : 195,
+		"height": 9,
+		"weight": 195,
 		"basestats": {
 			"hp": 75,
 			"attack": 85,
@@ -3147,13 +3147,13 @@
 		"capture_rate": 45,
 		"exp_yield": 142,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 2,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 2,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -3167,8 +3167,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "Rot"
+			"flip": 0,
+			"color": "Rot"
 		},
 		"hidden_ability": "Dunkle_magie",
 		"shape": "Quadruped",
@@ -3305,29 +3305,29 @@
 		],
 		"egg_moves": [],
 		"dex_number": 257,
-		"evolutions" : {
-			"POKEMON_ZERBERTRES" : {
-				"trigger" : "Level_up",
-				"argument" : 36,
-				"baby_trigger_item" : null
+		"evolutions": {
+			"POKEMON_ZERBERTRES": {
+				"trigger": "Level_up",
+				"argument": 36,
+				"baby_trigger_item": null
 			}
 		}
 	},
 	"POKEMON_ZERBERTRES": {
-		"name" : {
-			"LANG_GER" : "Zerbertres",
-			"LANG_EN" : "Cerbertres"
+		"name": {
+			"LANG_GER": "Zerbertres",
+			"LANG_EN": "Cerbertres"
 		},
-		"genus" : {
-			"LANG_GER" : "Zerberus",
-			"LANG_EN" : "Cerberus"
+		"genus": {
+			"LANG_GER": "Zerberus",
+			"LANG_EN": "Cerberus"
 		},
-		"dex_entry" : {
-			"LANG_GER" : "Jeder seiner drei Köpfe ist in der Lage, Feuer zu speien. Wird es zornig, versengt es seine Gegner.",
-			"LANG_EN" : "Each of its three heads is able to breathe fire. In its wrath, it burns its foes."
+		"dex_entry": {
+			"LANG_GER": "Jeder seiner drei Köpfe ist in der Lage, Feuer zu speien. Wird es zornig, versengt es seine Gegner.",
+			"LANG_EN": "Each of its three heads is able to breathe fire. In its wrath, it burns its foes."
 		},
-		"height" : 19,
-		"weight" : 520,
+		"height": 19,
+		"weight": 520,
 		"basestats": {
 			"hp": 80,
 			"attack": 125,
@@ -3341,13 +3341,13 @@
 		"capture_rate": 45,
 		"exp_yield": 209,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 1,
-			"special-attack" : 2,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 1,
+			"special-attack": 2,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -3361,8 +3361,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "Rot"
+			"flip": 0,
+			"color": "Rot"
 		},
 		"hidden_ability": "Dunkle_magie",
 		"shape": "Quadruped",
@@ -3520,20 +3520,20 @@
 		"dex_number": 258
 	},
 	"POKEMON_SEEKID": {
-		"name" : {
-			"LANG_GER" : "Seekid",
-			"LANG_EN" : "Seakid"
+		"name": {
+			"LANG_GER": "Seekid",
+			"LANG_EN": "Seakid"
 		},
-		"genus" : {
-			"LANG_GER" : "Wassermolch",
-			"LANG_EN" : "Newt"
+		"genus": {
+			"LANG_GER": "Wassermolch",
+			"LANG_EN": "Newt"
 		},
-		"dex_entry" : {
-			"LANG_GER" : "Es gilt als äußerst verschlagen und kann mit seinem Schweif heftige Hiebe austeilen.",
-			"LANG_EN" : "It is considered very treacherous and can deal severe damage with its tail."
+		"dex_entry": {
+			"LANG_GER": "Es gilt als äußerst verschlagen und kann mit seinem Schweif heftige Hiebe austeilen.",
+			"LANG_EN": "It is considered very treacherous and can deal severe damage with its tail."
 		},
-		"height" : 4,
-		"weight" : 76,
+		"height": 4,
+		"weight": 76,
 		"basestats": {
 			"hp": 45,
 			"attack": 57,
@@ -3547,13 +3547,13 @@
 		"capture_rate": 45,
 		"exp_yield": 65,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 1,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 1,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -3567,8 +3567,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "Blau"
+			"flip": 0,
+			"color": "Blau"
 		},
 		"hidden_ability": "H2o_absorber",
 		"shape": "Upright",
@@ -3686,29 +3686,29 @@
 		],
 		"egg_moves": [],
 		"dex_number": 259,
-		"evolutions" : {
-			"POKEMON_SEESKULL" : {
-				"trigger" : "Level_up",
-				"argument" : 16,
-				"baby_trigger_item" : null
+		"evolutions": {
+			"POKEMON_SEESKULL": {
+				"trigger": "Level_up",
+				"argument": 16,
+				"baby_trigger_item": null
 			}
 		}
 	},
 	"POKEMON_SEESKULL": {
-		"name" : {
-			"LANG_GER" : "Seeskull",
-			"LANG_EN" : "Seaskull"
+		"name": {
+			"LANG_GER": "Seeskull",
+			"LANG_EN": "Seaskull"
 		},
-		"genus" : {
-			"LANG_GER" : "Delphin",
-			"LANG_EN" : "Dolphin"
+		"genus": {
+			"LANG_GER": "Delphin",
+			"LANG_EN": "Dolphin"
 		},
-		"dex_entry" : {
-			"LANG_GER" : "Mit seinem starken Schweif kann es gewaltige Wellen erzeugen. Im Wasser gilt es als äußert agil.",
-			"LANG_EN" : "With its mighty tail it can cause big waves. Underwater it is considered very agile."
+		"dex_entry": {
+			"LANG_GER": "Mit seinem starken Schweif kann es gewaltige Wellen erzeugen. Im Wasser gilt es als äußert agil.",
+			"LANG_EN": "With its mighty tail it can cause big waves. Underwater it is considered very agile."
 		},
-		"height" : 7,
-		"weight" : 280,
+		"height": 7,
+		"weight": 280,
 		"basestats": {
 			"hp": 55,
 			"attack": 85,
@@ -3722,13 +3722,13 @@
 		"capture_rate": 45,
 		"exp_yield": 143,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 2,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 2,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -3742,8 +3742,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "Blau"
+			"flip": 0,
+			"color": "Blau"
 		},
 		"hidden_ability": "H2o_absorber",
 		"shape": "Squiggle",
@@ -3877,29 +3877,29 @@
 		],
 		"egg_moves": [],
 		"dex_number": 260,
-		"evolutions" : {
-			"POKEMON_SKULLYDRA" : {
-				"trigger" : "Level_up",
-				"argument" : 36,
-				"baby_trigger_item" : null
+		"evolutions": {
+			"POKEMON_SKULLYDRA": {
+				"trigger": "Level_up",
+				"argument": 36,
+				"baby_trigger_item": null
 			}
 		}
 	},
 	"POKEMON_SKULLYDRA": {
-		"name" : {
-			"LANG_GER" : "Skullydra",
-			"LANG_EN" : "Skullydra"
+		"name": {
+			"LANG_GER": "Skullydra",
+			"LANG_EN": "Skullydra"
 		},
-		"genus" : {
-			"LANG_GER" : "Seeschlange",
-			"LANG_EN" : "Sea Serpent"
+		"genus": {
+			"LANG_GER": "Seeschlange",
+			"LANG_EN": "Sea Serpent"
 		},
-		"dex_entry" : {
-			"LANG_GER" : "Unterwasser ist es so schnell, dass es schwerfällt, es wahrzunehmen. Weil es sich mit den Knochen seiner Beute schmückt, nennt man es denn Geist der Meere.",
-			"LANG_EN" : "Its underwater speed is so high, that it is hardly ever seen. Since it decorates itself with the bones of its prey, some call it the Ghost of the Sea."
+		"dex_entry": {
+			"LANG_GER": "Unterwasser ist es so schnell, dass es schwerfällt, es wahrzunehmen. Weil es sich mit den Knochen seiner Beute schmückt, nennt man es denn Geist der Meere.",
+			"LANG_EN": "Its underwater speed is so high, that it is hardly ever seen. Since it decorates itself with the bones of its prey, some call it the Ghost of the Sea."
 		},
-		"height" : 15,
-		"weight" : 819,
+		"height": 15,
+		"weight": 819,
 		"basestats": {
 			"hp": 75,
 			"attack": 95,
@@ -3913,13 +3913,13 @@
 		"capture_rate": 45,
 		"exp_yield": 210,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 2,
-			"special-attack" : 1,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 2,
+			"special-attack": 1,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -3933,8 +3933,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "Blau"
+			"flip": 0,
+			"color": "Blau"
 		},
 		"hidden_ability": "H2o_absorber",
 		"shape": "Squiggle",
@@ -4101,8 +4101,8 @@
 		"dex_number": 263
 	},
 	"POKEMON_ZIGZACHS": {
-		"genus" : {
-			"LANG_EN" : "Tiny Rac."
+		"genus": {
+			"LANG_EN": "Tiny Rac."
 		},
 		"ability_0": "Mitnahme",
 		"ability_1": null,
@@ -4123,16 +4123,16 @@
 		"hidden_ability": "Angsthase",
 		"safari_rate": 0,
 		"dex_number": 266,
-		"evolutions" : {
-			"POKEMON_SCHALOKO" : {
-				"trigger" : "Pid_even",
-				"argument" : 7,
-				"baby_trigger_item" : null
+		"evolutions": {
+			"POKEMON_SCHALOKO": {
+				"trigger": "Pid_even",
+				"argument": 7,
+				"baby_trigger_item": null
 			},
-			"POKEMON_PANEKON" : {
-				"trigger" : "Pid_odd",
-				"argument" : 7,
-				"baby_trigger_item" : null
+			"POKEMON_PANEKON": {
+				"trigger": "Pid_odd",
+				"argument": 7,
+				"baby_trigger_item": null
 			}
 		}
 	},
@@ -4142,11 +4142,11 @@
 		"hidden_ability": null,
 		"safari_rate": 0,
 		"dex_number": 267,
-		"evolutions" : {
-			"POKEMON_PANEKON" : {
-				"trigger" : "Level_up",
-				"argument" : 10,
-				"baby_trigger_item" : null
+		"evolutions": {
+			"POKEMON_PANEKON": {
+				"trigger": "Level_up",
+				"argument": 10,
+				"baby_trigger_item": null
 			}
 		}
 	},
@@ -4219,11 +4219,11 @@
 		"hidden_ability": "Techniker",
 		"safari_rate": 0,
 		"dex_number": 277,
-		"evolutions" : {
-			"POKEMON_NINJATOM" : {
-				"trigger" : "Spawn_Second",
-				"argument" : 20,
-				"baby_trigger_item" : null
+		"evolutions": {
+			"POKEMON_NINJATOM": {
+				"trigger": "Spawn_Second",
+				"argument": 20,
+				"baby_trigger_item": null
 			}
 		}
 	},
@@ -4242,8 +4242,8 @@
 		"dex_number": 279
 	},
 	"POKEMON_SCHWALBINI": {
-		"genus" : {
-			"LANG_EN" : "Tiny Swal."
+		"genus": {
+			"LANG_EN": "Tiny Swal."
 		},
 		"ability_0": "Adrenalin",
 		"ability_1": null,
@@ -4362,12 +4362,12 @@
 		"hidden_ability": "Felsenkern",
 		"safari_rate": 0,
 		"dex_number": 296,
-		"evolutions" : {
-			"POKEMON_VOLUMINAS" : {
-				"trigger" : "On_Map",
-				"argument" : {
-					"bank" : 255,
-					"map_idx" : 255
+		"evolutions": {
+			"POKEMON_VOLUMINAS": {
+				"trigger": "On_Map",
+				"argument": {
+					"bank": 255,
+					"map_idx": 255
 				}
 			}
 		}
@@ -4378,9 +4378,9 @@
 		"hidden_ability": "Feuerfaenger",
 		"safari_rate": 0,
 		"dex_number": 116,
-		"dex_entry" : {
-			"LANG_GER" : "Aus den Enden seiner Arme schießen Feuerbälle mit 2,000 Grad. Es lebt in Vulkankratern.",
-			"LANG_EN" : "It blasts fireballs of over 3,600 degrees Fahrenheit from the ends of its arms. It lives in volcanic craters."
+		"dex_entry": {
+			"LANG_GER": "Aus den Enden seiner Arme schießen Feuerbälle mit 2,000 Grad. Es lebt in Vulkankratern.",
+			"LANG_EN": "It blasts fireballs of over 3,600 degrees Fahrenheit from the ends of its arms. It lives in volcanic craters."
 		}
 	},
 	"POKEMON_ZWIRRFINST": {
@@ -4508,10 +4508,10 @@
 		"hidden_ability": "Barriere",
 		"safari_rate": 0,
 		"dex_number": 313,
-		"dex_entry" : {
-			"LANG_GER" : "In seinem K\u00f6rper flie\u00dft 1 200 Grad hei\u00dfes Magma. Nach Einsatz einer Feuer-Attacke schrumpft sein H\u00f6cker.",
-			"LANG_EN" : ""
- 		}
+		"dex_entry": {
+			"LANG_GER": "In seinem K\u00f6rper flie\u00dft 1 200 Grad hei\u00dfes Magma. Nach Einsatz einer Feuer-Attacke schrumpft sein H\u00f6cker.",
+			"LANG_EN": ""
+		}
 	},
 	"POKEMON_CAMERUPT": {
 		"ability_0": "Magmapanzer",
@@ -4561,9 +4561,9 @@
 		"hidden_ability": "Ap_sparer",
 		"safari_rate": 0,
 		"dex_number": 320,
-		"dex_entry" : {
-			"LANG_GER" : "Schneppke kann nur in besonders kalten Gebieten leben. Selbst bei -100 Grad hopst es munter umher.",
-			"LANG_EN" : ""
+		"dex_entry": {
+			"LANG_GER": "Schneppke kann nur in besonders kalten Gebieten leben. Selbst bei -100 Grad hopst es munter umher.",
+			"LANG_EN": ""
 		}
 	},
 	"POKEMON_FIRNONTOR": {
@@ -4722,11 +4722,11 @@
 		"hidden_ability": null,
 		"safari_rate": 0,
 		"dex_number": 342,
-		"evolutions" : {
-			"POKEMON_AMFIRA" : {
+		"evolutions": {
+			"POKEMON_AMFIRA": {
 				"trigger": "Female_and_level_Up",
 				"argument": 33,
-				"baby_trigger_item" : null
+				"baby_trigger_item": null
 			}
 		}
 	},
@@ -4995,9 +4995,9 @@
 		"hidden_ability": "Robustheit",
 		"safari_rate": 0,
 		"dex_number": 378,
-		"dex_entry" : {
-			"LANG_GER" : "Sein K\u00f6rper besteht aus Eis aus der Eiszeit. Es kontrolliert gefrorene Luft, die -200 Grad kalt ist.",
-			"LANG_EN" : ""
+		"dex_entry": {
+			"LANG_GER": "Sein K\u00f6rper besteht aus Eis aus der Eiszeit. Es kontrolliert gefrorene Luft, die -200 Grad kalt ist.",
+			"LANG_EN": ""
 		}
 	},
 	"POKEMON_REGISTEEL": {
@@ -5077,13 +5077,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5097,8 +5097,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5118,13 +5118,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5138,8 +5138,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5159,13 +5159,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5179,8 +5179,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5200,13 +5200,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5220,8 +5220,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5241,13 +5241,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5261,8 +5261,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5282,13 +5282,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5302,8 +5302,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5323,13 +5323,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5343,8 +5343,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5364,13 +5364,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5384,8 +5384,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5405,13 +5405,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5425,8 +5425,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5446,13 +5446,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5466,8 +5466,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5487,13 +5487,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5507,8 +5507,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5528,13 +5528,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5548,8 +5548,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5569,13 +5569,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5589,8 +5589,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5610,13 +5610,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5630,8 +5630,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5651,13 +5651,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5671,8 +5671,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5692,13 +5692,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5712,8 +5712,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5733,13 +5733,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5753,8 +5753,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5774,13 +5774,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5794,8 +5794,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5815,13 +5815,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5835,8 +5835,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5856,13 +5856,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5876,8 +5876,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5897,13 +5897,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5917,8 +5917,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5938,13 +5938,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5958,8 +5958,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -5979,13 +5979,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -5999,8 +5999,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -6020,13 +6020,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -6040,8 +6040,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -6061,13 +6061,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -6081,8 +6081,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -6102,13 +6102,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -6122,8 +6122,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -6143,13 +6143,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -6163,8 +6163,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -6184,13 +6184,13 @@
 		"capture_rate": 0,
 		"exp_yield": 0,
 		"ev_yield": {
-			"hp" : 0,
-			"attack" : 0,
-			"defense" : 0,
-			"speed" : 0,
-			"special-attack" : 0,
-			"special-defense" : 0,
-			"Padding" : 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0,
+			"Padding": 0
 		},
 		"common_item": null,
 		"rare_item": null,
@@ -6204,8 +6204,8 @@
 		"ability_1": null,
 		"safari_rate": 0,
 		"color_and_flip": {
-			"flip" : 0,
-			"color" : "None"
+			"flip": 0,
+			"color": "None"
 		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
@@ -6247,7 +6247,7 @@
 		"species_link": "POKEMON_KECLEON",
 		"dex_number": 293
 	},
-	"POKEMON_CRYSTAL_ONIX" : {
+	"POKEMON_CRYSTAL_ONIX": {
 		"species_link": "POKEMON_ONIX",
 		"dex_number": 79,
 		"basestats": {
@@ -6258,11 +6258,11 @@
 			"special-attack": 45,
 			"special-defense": 80
 		},
-		"ability_0" : "FELSENKERN",
-		"ability_1" : "FELSENKERN",
+		"ability_0": "FELSENKERN",
+		"ability_1": "FELSENKERN",
 		"exp_yield": 170,
-		"evolutions" : {
-			"__overwrite__" : true
+		"evolutions": {
+			"__overwrite__": true
 		}
 	}
 }

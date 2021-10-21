@@ -1,44 +1,44 @@
 #ifndef HSAVE
 #define HSAVE
 
-#include "dungeon/dungeon2.h"
-#include "pokepad/state.h"
-#include "pokepad/pokedex/state.h"
-#include "pokepad/incubator.h"
-#include "map/wild_pokemon.h"
-#include "map/event.h"
-#include "map/header.h"
-#include "map/footer.h"
-#include "pokepad/wondertrade.h"
 #include "anim_engine.h"
-#include "multichoice.h"
-#include "rtc.h"
-#include "ev_menu.h"
-#include "pokemon/virtual.h"
-#include "pokemon/breeding.h"
-#include "map/ceometria_gym.h"
-#include "trainer/party.h"
-#include "pokemon/roamer.h"
-#include "item/item_effect.h"
-#include "trainer/virtual.h"
-#include "overworld/palette.h"
 #include "color.h"
+#include "dungeon/dungeon2.h"
+#include "ev_menu.h"
+#include "item/item_effect.h"
+#include "map/ceometria_gym.h"
+#include "map/event.h"
+#include "map/footer.h"
+#include "map/header.h"
+#include "map/wild_pokemon.h"
+#include "multichoice.h"
+#include "overworld/palette.h"
+#include "pokemon/breeding.h"
+#include "pokemon/roamer.h"
+#include "pokemon/virtual.h"
+#include "pokepad/incubator.h"
+#include "pokepad/pokedex/state.h"
+#include "pokepad/state.h"
+#include "pokepad/wondertrade.h"
+#include "rtc.h"
+#include "trainer/party.h"
+#include "trainer/virtual.h"
 
 #define GP_STACK_SIZE 16
 
 typedef struct warp_save_t {
-	u8 bank, map, exit, field_3;
-	s16 x, y;
+    u8 bank, map, exit, field_3;
+    s16 x, y;
 } warp_save_t;
 
-typedef struct  {
+typedef struct {
     u8 name[7];
     u8 firmness;
     u16 size;
     u8 max_yield;
     u8 min_yield;
-    u8 * description_1;
-    u8 * description_2;
+    u8 *description_1;
+    u8 *description_2;
     u8 stage_duration;
     u8 spicy;
     u8 dry;
@@ -61,7 +61,7 @@ typedef struct saveblock1 {
     u8 last_exit;
     u8 field_7;
     s16 field_8, field_A; // this struct is very warp_like: field_8, field_A seem to be 0xFFFF
-    u8 unknown_1[0x8]; // probably also a warp save
+    u8 unknown_1[0x8];    // probably also a warp save
     warp_save_t last_map; // ????
     warp_save_t healingplace;
     warp_save_t last_outdoor_map;
@@ -84,7 +84,7 @@ typedef struct saveblock1 {
     // 0x20E0
     u8 flags[288];
     u16 vars[256];
-    u32 sav_keys[64]; // This is one of the whackest names for stuff I have so far... At one point this should be renamed to: game stat
+    u32 sav_keys[64];            // This is one of the whackest names for stuff I have so far... At one point this should be renamed to: game stat
     u16 dungeon_blocks[56 * 56]; // Previously questlog
     int dungeon_nodes[16][2];
     u8 tm_used_flags[16];
@@ -130,14 +130,12 @@ typedef struct saveblock2 {
     pid_t pandir_pid;
     u8 unknown_5[0x4];
     u8 pokedex_caught_flags[0x34]; //416 flags
-    u8 pokedex_seen_flags[0x34]; //416 flags
+    u8 pokedex_seen_flags[0x34];   //416 flags
     u8 unknown_6[3728];
     u32 money;
 } saveblock2;
 
 #define PLAYER_TID (u32)(save2->tid_0 + (save2->tid_1 << 8) + (save2->tid_2 << 16) + (save2->tid_3 << 24))
-
-
 
 typedef struct {
     u8 berry : 7;
@@ -150,12 +148,12 @@ typedef struct {
 } berry_tree;
 
 typedef struct custom_memory {
-    u8 flag_extension[0x80]; //additional 0x400 flags (0x900-0xD00)
-    u8 pokedex_seen_extension[0x40]; //additional 512 flags
+    u8 flag_extension[0x80];           //additional 0x400 flags (0x900-0xD00)
+    u8 pokedex_seen_extension[0x40];   //additional 512 flags
     u8 pokedex_caught_extension[0x40]; //additional 512 flags
     u8 gp_freespace[0x100];
-    u16 var_extension[0x100]; //Additional 256 vars (0x5000-0x50FF)
-    u8 dungeon_flags[0x10]; // mapheader dmapheader (part I)
+    u16 var_extension[0x100];    //Additional 256 vars (0x5000-0x50FF)
+    u8 dungeon_flags[0x10];      // mapheader dmapheader (part I)
     pid_t daycare_offspring_pid; // FRLG's desing does not allow for an entire word to be stored...
     u8 daycare_offspring_has_hidden_ability;
     u8 daycare_offspring_male; // Volbeat and Nidoran may alter their gender when breeding (y tho?)
@@ -170,7 +168,7 @@ typedef struct custom_memory {
     rtc_timestamp fossil_gen_time;
     u8 any_tmp_flags[16];
     map_event_person pokeradar_person;
-    
+
     //Dungeon Memory II
     dungeon_generator2 dg2;
     ceometria_gym_state_t ceometria_gym_state;
@@ -189,10 +187,10 @@ typedef struct custom_memory {
         // padding for future settings
         u8 field_1;
         u8 field_2;
-        u8 field_3; 
+        u8 field_3;
     } settings;
-    
-    /**
+
+    /*
     struct {
         u8 flags[64];
         u8 is_large[64];
@@ -202,7 +200,7 @@ typedef struct custom_memory {
         u8 is_large[32];
         u8 is_heart_scale[32];
     } shells;
-    **/
+    */
 
 } custom_memory;
 
@@ -282,8 +280,6 @@ typedef struct {
     u8 blackbeard_ship_oam_idx;
 } floating_memory;
 
-
-
 extern saveblock1 *save1;
 extern saveblock2 *save2;
 extern custom_memory cmem;
@@ -327,28 +323,28 @@ void daily_events_new_seed();
 
 /**
  * Sets the surfing field in save1 to false
- **/
+ */
 void save_set_player_non_surfing();
 
 /**
  * Adds a certain amount of money to an encrypted variable.
  * @param dst the encrypted destination where the money is to be added.
  * @param value the amount to add.
- **/
+ */
 void money_add(u32 *dst, u32 value);
 
 /**
  * Gets the amount of money from an encrypted variable.
  * @param dst the encrypted variable
  * @return the amount of money
- **/
+ */
 u32 money_get(u32 *dst);
 
 /**
  * Sets the amount of money to an encrypted variable.
  * @param dst where to put the value
  * @param amount the amount to set
- **/
+ */
 void money_set(u32 *dst, u32 amount);
 
 #endif

@@ -4,38 +4,38 @@
  *
  * Created on 6. Juli 2016, 22:46
  */
-#include "types.h"
-#include "stdbool.h"
+#include "agbmemory.h"
+#include "callbacks.h"
+#include "constants/movements.h"
+#include "data_structures.h"
+#include "debug.h"
 #include "math.h"
 #include "overworld/npc.h"
 #include "overworld/script.h"
 #include "save.h"
-#include "callbacks.h"
-#include "data_structures.h"
-#include "vars.h"
-#include "agbmemory.h"
+#include "stdbool.h"
 #include "trainer/virtual.h"
-#include "constants/movements.h"
-#include "debug.h"
+#include "types.h"
+#include "vars.h"
 
 void special_move_npc_to_player() {
     s16 pos[2];
     player_get_facing_position(&pos[0], &pos[1]);
-    u8 target = (u8) * var_access(0x8004);
+    u8 target = (u8)*var_access(0x8004);
     u8 speed = (u8)*var_access(0x8005);
     npc_move_to(target, pos[0], pos[1], speed);
 }
 
 void special_move_npc_to() {
-    s16 x = (s16) (*var_access(0x8005) + 7);
-    s16 y = (s16) (*var_access(0x8006) + 7);
-    u8 speed = (u8) *var_access(0x8007);
-    u8 target = (u8) * var_access(0x8004);
+    s16 x = (s16)(*var_access(0x8005) + 7);
+    s16 y = (s16)(*var_access(0x8006) + 7);
+    u8 speed = (u8)*var_access(0x8007);
+    u8 target = (u8)*var_access(0x8004);
     npc_move_to(target, x, y, speed);
 }
 
 void overworld_person_get_position() {
-    u8 person_idx = (u8) (*var_access(0x8004));
+    u8 person_idx = (u8)(*var_access(0x8004));
     u8 npc_id;
     if (npc_get_id_by_overworld_id(person_idx, save1->map, save1->bank, &npc_id))
         return;
@@ -53,7 +53,7 @@ void npc_move_to_unblock_movements() {
 }
 
 void npc_move_to_freeing_callback(u8 self) {
-    u8 person_idx = (u8) big_callbacks[self].params[2];
+    u8 person_idx = (u8)big_callbacks[self].params[2];
     if (npc_movement_callback_is_finished(person_idx, save1->map, save1->bank)) {
         big_callback_delete(self);
     }
@@ -61,7 +61,7 @@ void npc_move_to_freeing_callback(u8 self) {
 
 static void npc_move_to_do_moves(u8 self) {
     if (!fmem.pathfinding_npc_movements_waiting) {
-        u8 *moves = (u8*)big_callback_get_int(self, 0);
+        u8 *moves = (u8 *)big_callback_get_int(self, 0);
         u8 person_idx = (u8)big_callbacks[self].params[2];
         npc_apply_movement(person_idx, save1->map, save1->bank, moves);
         npc_movement_target_person_idx = person_idx;
@@ -85,21 +85,20 @@ void npc_move_to(u8 ow_id, s16 dest_x, s16 dest_y, u8 speed) {
     if (npc_get_id_by_overworld_id(ow_id, save1->map, save1->bank, &npc_id))
         return;
     trainer_npc_idx = npc_id;
-    u8 *dyn_move = (u8*) malloc(256); // dynamic space for movement list
+    u8 *dyn_move = (u8 *)malloc(256); // dynamic space for movement list
     u8 a_star = a_star_compute_path(dyn_move, dest_x, dest_y, &npcs[npc_id], speed, A_STAR_STEPS_PER_FRAME);
     u8 cb = big_callback_new(npc_move_to_wait_for_a_star, 10);
-    big_callback_set_int(cb, 0, (int) dyn_move);
+    big_callback_set_int(cb, 0, (int)dyn_move);
     big_callbacks[cb].params[2] = ow_id;
-    big_callbacks[cb].params[3] = (u16) dest_x;
-    big_callbacks[cb].params[4] = (u16) dest_y;
+    big_callbacks[cb].params[3] = (u16)dest_x;
+    big_callbacks[cb].params[4] = (u16)dest_y;
     big_callbacks[cb].params[5] = 0;
     big_callbacks[cb].params[6] = a_star;
 }
 
-
 void npc_move_camera_to() {
-    s16 x_destination = (s16) (*var_access(0x8004) + 7);
-    s16 y_destination = (s16) (*var_access(0x8005) + 7); 
+    s16 x_destination = (s16)(*var_access(0x8004) + 7);
+    s16 y_destination = (s16)(*var_access(0x8005) + 7);
     u8 npc_idx = 0;
     if (npc_get_id_by_overworld_id(0x7F, save1->map, save1->bank, &npc_idx))
         return;
@@ -107,7 +106,7 @@ void npc_move_camera_to() {
     s16 x = npcs[npc_idx].dest_x;
     s16 y = npcs[npc_idx].dest_y;
     int i = 0;
-    u8 *moves = (u8*) malloc(256); 
+    u8 *moves = (u8 *)malloc(256);
 
     bool horizontal = ABS(x - x_destination) > ABS(y - y_destination);
 
@@ -120,7 +119,8 @@ void npc_move_camera_to() {
                 moves[i++] = STEP_LEFT;
                 x--;
             }
-            if (x == x_destination) horizontal = false;
+            if (x == x_destination)
+                horizontal = false;
         } else if (!horizontal) {
             if (y_destination > y) {
                 moves[i++] = STEP_DOWN;
@@ -129,7 +129,8 @@ void npc_move_camera_to() {
                 moves[i++] = STEP_UP;
                 y--;
             }
-            if (y == y_destination) horizontal = true;
+            if (y == y_destination)
+                horizontal = true;
         }
     }
     moves[i++] = STOP;
@@ -137,8 +138,8 @@ void npc_move_camera_to() {
     u8 cb = big_callback_new(npc_move_to_freeing_callback, 10);
     big_callback_set_int(cb, 0, (int)moves);
     big_callbacks[cb].params[2] = 0x7F;
-    big_callbacks[cb].params[3] = (u16) x_destination;
-    big_callbacks[cb].params[4] = (u16) y_destination;
+    big_callbacks[cb].params[3] = (u16)x_destination;
+    big_callbacks[cb].params[4] = (u16)y_destination;
     npc_movement_target_person_idx = 0x7F;
 }
 
@@ -180,19 +181,19 @@ static void overworld_person_face_to_person(u8 person_idx_facing, u8 person_idx_
             horizontal = false;
     }
     if (horizontal) {
-            if (dx >= 0)
-                fmem.npc_facing_movements[0] = LOOK_LEFT;
-            else
-                fmem.npc_facing_movements[0] = LOOK_RIGHT;
-        } else {
-            if (dy >= 0)
-                fmem.npc_facing_movements[0] = LOOK_UP;
-            else
-                fmem.npc_facing_movements[0] = LOOK_DOWN;
-        }
-        fmem.npc_facing_movements[1] = STOP;
-        npc_apply_movement(person_idx_facing, save1->map, save1->bank, fmem.npc_facing_movements);
-        npc_movement_target_person_idx = person_idx_facing;
+        if (dx >= 0)
+            fmem.npc_facing_movements[0] = LOOK_LEFT;
+        else
+            fmem.npc_facing_movements[0] = LOOK_RIGHT;
+    } else {
+        if (dy >= 0)
+            fmem.npc_facing_movements[0] = LOOK_UP;
+        else
+            fmem.npc_facing_movements[0] = LOOK_DOWN;
+    }
+    fmem.npc_facing_movements[1] = STOP;
+    npc_apply_movement(person_idx_facing, save1->map, save1->bank, fmem.npc_facing_movements);
+    npc_movement_target_person_idx = person_idx_facing;
 }
 
 void special_overworld_person_face_to_person() {

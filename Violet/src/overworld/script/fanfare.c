@@ -1,24 +1,24 @@
-#include "types.h"
-#include "overworld/script.h"
-#include "music.h"
 #include "debug.h"
+#include "music.h"
+#include "overworld/script.h"
+#include "types.h"
 
 static fanfare_t fanfares[] = {
-    { MUS_ITEM_GEFUNDEN,      80 },
-    { MUS_ITEM_ERHALTEN,     160 },
-    { MUS_POKEMON_GEFANGEN,     220 },
-    { MUS_BASISITEM_ERHALTEN,    220 },
-    { MUS_POKEMON_WERDEN_GEHEILT,     160 },
-    { MUS_ORDEN_ERHALTEN,   340 },
-    { MUS_VERRUCKTER_SOUND,  180 },
-    { MUS_BEERE_WURDE_GEPFLUCKT,  120 },
-    { MUS_SOUND_GLUCKWUNSCH,   250 },
-    { MUS_SOUND_GLUCKWUNSCH2, 150 },
-    { MUS_VERRUCKTER_SOUND2,  160 },
-    { MUS_POKEMON_FLOTE,    450 },
-    { MUS_BASISITEM_ERHALTEN_VERSION_2,       170 },
-    { MUS_SOUND_317,       196 },
-    { FANFARE_GONG, 80},
+    {MUS_ITEM_GEFUNDEN, 80},
+    {MUS_ITEM_ERHALTEN, 160},
+    {MUS_POKEMON_GEFANGEN, 220},
+    {MUS_BASISITEM_ERHALTEN, 220},
+    {MUS_POKEMON_WERDEN_GEHEILT, 160},
+    {MUS_ORDEN_ERHALTEN, 340},
+    {MUS_VERRUCKTER_SOUND, 180},
+    {MUS_BEERE_WURDE_GEPFLUCKT, 120},
+    {MUS_SOUND_GLUCKWUNSCH, 250},
+    {MUS_SOUND_GLUCKWUNSCH2, 150},
+    {MUS_VERRUCKTER_SOUND2, 160},
+    {MUS_POKEMON_FLOTE, 450},
+    {MUS_BASISITEM_ERHALTEN_VERSION_2, 170},
+    {MUS_SOUND_317, 196},
+    {FANFARE_GONG, 80},
 };
 
 void fanfare_by_fanfare_idx(u8 fanfare_idx) {

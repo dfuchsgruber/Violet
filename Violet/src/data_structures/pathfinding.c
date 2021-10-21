@@ -1,14 +1,14 @@
-#include "types.h"
-#include "stdbool.h"
-#include "data_structures.h"
-#include "tile/block.h"
-#include "overworld/npc.h"
-#include "math.h"
 #include "agbmemory.h"
-#include "debug.h"
-#include "constants/movements.h"
 #include "callbacks.h"
+#include "constants/movements.h"
+#include "data_structures.h"
+#include "debug.h"
+#include "math.h"
+#include "overworld/npc.h"
 #include "overworld/script.h"
+#include "stdbool.h"
+#include "tile/block.h"
+#include "types.h"
 
 static void a_star_state_delete(a_star_state *state) {
     hashmap_free(state->predecessor);
@@ -23,7 +23,7 @@ static void a_star_done(u8 self) {
 }
 
 static void a_star_big_callback(u8 self) {
-    a_star_state *state = (a_star_state*)big_callback_get_int(self, 1);
+    a_star_state *state = (a_star_state *)big_callback_get_int(self, 1);
     int steps = 0;
 
     while (steps < state->steps_per_frame && state->queue->size) {
@@ -41,8 +41,8 @@ static void a_star_big_callback(u8 self) {
             return;
         }
         for (int i = 1; i < 5; i++) {
-            s16 x_adjacent = (s16) (key.state.x + walking_directions[i].x);
-            s16 y_adjacent = (s16) (key.state.y + walking_directions[i].y);
+            s16 x_adjacent = (s16)(key.state.x + walking_directions[i].x);
+            s16 y_adjacent = (s16)(key.state.y + walking_directions[i].y);
             a_star_key key_adjacent = {.state = {.x = (s16)(x_adjacent & 0x1FFF), .y = (s16)(y_adjacent & 0x1FFF), .heading = (s8)(i & 7)}};
             if (!a_star_is_connected(x_adjacent, y_adjacent, key.state.x, key.state.y, &state->original_walker))
                 continue;
@@ -57,11 +57,11 @@ static void a_star_big_callback(u8 self) {
             // Enqueue only if the cost is decreasing
             if (hashmap_contains((u32)key_adjacent.value, state->closed))
                 continue;
-            if (hashmap_contains((u32)key_adjacent.value, state->g) && distance_adjacent >= hashmap_get((u32)key_adjacent.value, state->g)) 
+            if (hashmap_contains((u32)key_adjacent.value, state->g) && distance_adjacent >= hashmap_get((u32)key_adjacent.value, state->g))
                 continue;
             hashmap_put((u32)key_adjacent.value, key.value, state->predecessor);
             hashmap_put((u32)key_adjacent.value, distance_adjacent, state->g);
-                binary_heap_insert((u32) (distance_adjacent + heuristic), key_adjacent.value, state->queue);
+            binary_heap_insert((u32)(distance_adjacent + heuristic), key_adjacent.value, state->queue);
         }
         steps++;
     }
@@ -86,7 +86,7 @@ u8 a_star_compute_path(u8 *path, s16 x_destination, s16 y_destination, npc *orig
 
     a_star_key key = {.state = {.x = (int)(original_walker->dest_x & 0x1FFF), .y = (int)(original_walker->dest_y & 0x1FFF), .heading = DIR_NONE}};
     binary_heap_insert(0, key.value, queue);
-    hashmap_put((u32)key.value, (int) A_STAR_PREDECESSOR_NONE, predecessor);
+    hashmap_put((u32)key.value, (int)A_STAR_PREDECESSOR_NONE, predecessor);
     hashmap_put((u32)key.value, 0, g);
 
     state->g = g;
@@ -133,15 +133,14 @@ int a_star_reconstruct(u8 *path, a_star_key key, hashmap *predecessors, u8 speed
     int path_length = 0;
     int predecessor;
     do {
-        predecessor = hashmap_get((u32) key.value, predecessors);
-        if ((u32) predecessor == A_STAR_PREDECESSOR_NONE)
+        predecessor = hashmap_get((u32)key.value, predecessors);
+        if ((u32)predecessor == A_STAR_PREDECESSOR_NONE)
             break;
         a_star_key predecessor_key = {.value = (int)predecessor};
         if (key.state.heading != DIR_NONE)
             path[path_length++] = direction_and_speed_to_movement[speed][key.state.heading];
         key = predecessor_key;
     } while ((u32)key.value != A_STAR_PREDECESSOR_NONE);
-
 
     // Reverse the order of moves
     int i = 0, j = path_length - 1;
@@ -159,8 +158,8 @@ int a_star_reconstruct(u8 *path, a_star_key key, hashmap *predecessors, u8 speed
 bool a_star_is_connected(s16 dest_x, s16 dest_y, s16 from_x, s16 from_y, npc *walker) {
 
     //First we find the direction of the movement
-    s16 dx = (s16) (dest_x - from_x);
-    s16 dy = (s16) (dest_y - from_y);
+    s16 dx = (s16)(dest_x - from_x);
+    s16 dy = (s16)(dest_y - from_y);
     int i;
     for (i = 0; i <= 9; i++) {
         if (i == 9) {
@@ -169,7 +168,7 @@ bool a_star_is_connected(s16 dest_x, s16 dest_y, s16 from_x, s16 from_y, npc *wa
         if (walking_directions[i].x == dx && walking_directions[i].y == dy)
             break;
     }
-    u8 dir = (u8) i;
+    u8 dir = (u8)i;
 
     walker->rectangle.x = 0;
     walker->rectangle.y = 0;

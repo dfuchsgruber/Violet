@@ -233,4 +233,3 @@ script_pokeradar_flee:
 		.string "The Pokéradar spotted a Pokémon!"
 
 .endif
-

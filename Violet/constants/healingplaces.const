@@ -1,6 +1,6 @@
 {
-	"type": "enum",
-	"values": [
+    "type": "enum",
+    "values": [
         "HEALINGPLACE_AMONIA",
         "HEALINGPLACE_MERIANA_CITY",
         "HEALINGPLACE_AKTANIA",
@@ -15,6 +15,6 @@
         "HEALINGPLACE_TANNS_LAB",
         "HEALINGPLACE_DESERT",
         "NUM_HEALING_PLACES"
-	],
-	"base": 1
+    ],
+    "base": 1
 }

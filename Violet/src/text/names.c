@@ -1,9 +1,9 @@
-#include "types.h"
-#include "text.h"
 #include "language.h"
+#include "text.h"
+#include "types.h"
 
 u8 person_names[2][128][12] = {
-    {   
+    {
         LANGDEP(PSTRING("August"), PSTRING("August")),
         LANGDEP(PSTRING("Achim"), PSTRING("Achim")),
         LANGDEP(PSTRING("Hugo"), PSTRING("Hugo")),
@@ -131,7 +131,8 @@ u8 person_names[2][128][12] = {
         LANGDEP(PSTRING("Wilhelm"), PSTRING("Wilhelm")),
         LANGDEP(PSTRING("Johannes"), PSTRING("Johannes")),
         LANGDEP(PSTRING("Immanuel"), PSTRING("Immanuel")),
-    },{
+    },
+    {
         LANGDEP(PSTRING("Heiderose"), PSTRING("Heiderose")),
         LANGDEP(PSTRING("Annekristin"), PSTRING("Annekristin")),
         LANGDEP(PSTRING("Friedlind"), PSTRING("Friedlind")),
@@ -260,5 +261,4 @@ u8 person_names[2][128][12] = {
         LANGDEP(PSTRING("Hildburg"), PSTRING("Hildburg")),
         LANGDEP(PSTRING("Agnieszka"), PSTRING("Agnieszka")),
         LANGDEP(PSTRING("Isolde"), PSTRING("Isolde")),
-    }
-};
+    }};

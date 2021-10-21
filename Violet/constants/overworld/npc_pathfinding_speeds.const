@@ -1,7 +1,7 @@
 {
-    "type" : "enum",
-    "base" : 0,
-    "values" : [
+    "type": "enum",
+    "base": 0,
+    "values": [
         "A_STAR_SPEED_SLOW",
         "A_STAR_SPEED_NORMAL",
         "A_STAR_SPEED_FAST"

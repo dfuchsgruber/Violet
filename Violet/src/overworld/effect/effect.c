@@ -1,21 +1,21 @@
-#include "types.h"
+#include "overworld/effect.h"
+#include "bios.h"
+#include "callbacks.h"
+#include "debug.h"
+#include "io.h"
+#include "map/cloud.h"
+#include "math.h"
 #include "oam.h"
 #include "overworld/sprite.h"
-#include "overworld/effect.h"
-#include "vars.h"
-#include "io.h"
-#include "callbacks.h"
 #include "save.h"
-#include "math.h"
-#include "debug.h"
-#include "map/cloud.h"
-#include "bios.h"
+#include "types.h"
+#include "vars.h"
 
-/**
+/*
 graphic overworld_effect_explosion_graphic = {
     .sprite = gfx_overworld_explosionTiles, .tag = GFX_TAG_OVERWORLD_EFFECT_EXPLOSION, .size = GRAPHIC_SIZE_4BPP(32, 32),
 };
-**/
+*/
 
 static graphic overworld_effect_explosion_graphics[] = {
     [0] = {.sprite = gfx_overworld_explosionTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0xFFFF},
@@ -25,16 +25,23 @@ static graphic overworld_effect_explosion_graphics[] = {
 };
 
 palette overworld_effect_explosion_palette = {
-    .pal = gfx_overworld_explosionPal, .tag = GFX_TAG_OVERWORLD_EFFECT_EXPLOSION,
+    .pal = gfx_overworld_explosionPal,
+    .tag = GFX_TAG_OVERWORLD_EFFECT_EXPLOSION,
 };
 
 static sprite overworld_effect_explosion_sprite = {
-    .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(1),
+    .attr0 = ATTR0_SHAPE_SQUARE,
+    .attr1 = ATTR1_SIZE_32_32,
+    .attr2 = ATTR2_PRIO(1),
 };
 
 static gfx_frame overworld_effect_explosion_gfx_animation[] = {
-    {.data = 0, .duration = 0}, {.data = 0, .duration = 5}, {.data = 1, .duration = 5}, {.data = 2, .duration = 5}, 
-    {.data = 3, .duration = 5}, {.data = GFX_ANIM_END}, 
+    {.data = 0, .duration = 0},
+    {.data = 0, .duration = 5},
+    {.data = 1, .duration = 5},
+    {.data = 2, .duration = 5},
+    {.data = 3, .duration = 5},
+    {.data = GFX_ANIM_END},
 };
 
 static gfx_frame *overworld_effect_explosion_gfx_animations[] = {overworld_effect_explosion_gfx_animation};
@@ -46,17 +53,20 @@ static void overworld_effect_explosion_oam_callback(oam_object *self) {
 }
 
 static oam_template overworld_effect_explosion_oam_template = {
-    .tiles_tag = 0xFFFF, .pal_tag = GFX_TAG_OVERWORLD_EFFECT_EXPLOSION,
+    .tiles_tag = 0xFFFF,
+    .pal_tag = GFX_TAG_OVERWORLD_EFFECT_EXPLOSION,
     .graphics = overworld_effect_explosion_graphics,
-    .oam = &overworld_effect_explosion_sprite, .animation = overworld_effect_explosion_gfx_animations,
-    .rotscale = oam_rotscale_anim_table_null, .callback = overworld_effect_explosion_oam_callback,
+    .oam = &overworld_effect_explosion_sprite,
+    .animation = overworld_effect_explosion_gfx_animations,
+    .rotscale = oam_rotscale_anim_table_null,
+    .callback = overworld_effect_explosion_oam_callback,
 };
 
 void overworld_effect_explosion_initialize() {
     s16 x = (s16)(overworld_effect_state.x + 7);
     s16 y = (s16)(overworld_effect_state.y + 7);
     overworld_effect_ow_coordinates_to_screen_coordinates(&x, &y, 8, 8);
-    u8 oam_idx = oam_new_backward_search(&overworld_effect_explosion_oam_template, x, y , 0);
+    u8 oam_idx = oam_new_backward_search(&overworld_effect_explosion_oam_template, x, y, 0);
     oams[oam_idx].flags |= OAM_FLAG_CENTERED;
     oam_gfx_anim_start(oams + oam_idx, 0);
 }
@@ -72,19 +82,20 @@ static graphic overworld_effect_sound_wave_graphics[] = {
 };
 
 palette overworld_effect_sound_wave_palette = {
-    .pal = gfx_overworld_effect_sound_wavePal, .tag = GFX_TAG_OVERWORLD_EFFECT_SOUND_WAVE,
+    .pal = gfx_overworld_effect_sound_wavePal,
+    .tag = GFX_TAG_OVERWORLD_EFFECT_SOUND_WAVE,
 };
 
 static sprite overworld_effect_sound_wave_sprite = {
-    .attr0 = ATTR0_SHAPE_SQUARE | ATTR0_DSIZE | ATTR0_ROTSCALE, .attr1 = ATTR1_SIZE_64_64, .attr2 = ATTR2_PRIO(1),
+    .attr0 = ATTR0_SHAPE_SQUARE | ATTR0_DSIZE | ATTR0_ROTSCALE,
+    .attr1 = ATTR1_SIZE_64_64,
+    .attr2 = ATTR2_PRIO(1),
 };
-
 
 static rotscale_frame overworld_effect_sound_wave_rotscale_anim[] = {
     {.affine = {.affine_x_value = 32, .affine_y_value = 32, .duration = 0}},
     {.affine = {.affine_x_value = 8, .affine_y_value = 8, .duration = 16}},
-    {.command = {.command = ROTSCALE_ANIM_END}}
-};
+    {.command = {.command = ROTSCALE_ANIM_END}}};
 
 static void overworld_effect_sound_wave_oam_callback(oam_object *self) {
     // if (self->private[0]++ >= overworld_effect_sound_wave_rotscale_anim[1].affine.duration) {
@@ -95,7 +106,8 @@ static void overworld_effect_sound_wave_oam_callback(oam_object *self) {
 }
 
 static gfx_frame overworld_effect_sound_wave_gfx_animation[] = {
-    {.data = 0, .duration = 0}, {.data = GFX_ANIM_END}, 
+    {.data = 0, .duration = 0},
+    {.data = GFX_ANIM_END},
 };
 
 static gfx_frame *overworld_effect_sound_wave_gfx_animations[] = {overworld_effect_sound_wave_gfx_animation};
@@ -103,19 +115,20 @@ static gfx_frame *overworld_effect_sound_wave_gfx_animations[] = {overworld_effe
 static rotscale_frame *overworld_effect_sound_wave_rotscale_animations[] = {overworld_effect_sound_wave_rotscale_anim};
 
 static oam_template overworld_effect_sound_wave_oam_template = {
-    .tiles_tag = 0xFFFF, .pal_tag = GFX_TAG_OVERWORLD_EFFECT_SOUND_WAVE,
+    .tiles_tag = 0xFFFF,
+    .pal_tag = GFX_TAG_OVERWORLD_EFFECT_SOUND_WAVE,
     .graphics = overworld_effect_sound_wave_graphics,
-    .oam = &overworld_effect_sound_wave_sprite, .animation = overworld_effect_sound_wave_gfx_animations,
-    .rotscale = overworld_effect_sound_wave_rotscale_animations, .callback = overworld_effect_sound_wave_oam_callback,
+    .oam = &overworld_effect_sound_wave_sprite,
+    .animation = overworld_effect_sound_wave_gfx_animations,
+    .rotscale = overworld_effect_sound_wave_rotscale_animations,
+    .callback = overworld_effect_sound_wave_oam_callback,
 };
-
-
 
 void overworld_effect_sound_wave_initialize() {
     s16 x = (s16)(overworld_effect_state.x + 7);
     s16 y = (s16)(overworld_effect_state.y + 7);
     overworld_effect_ow_coordinates_to_screen_coordinates(&x, &y, 7, 4);
-    u8 oam_idx = oam_new_backward_search(&overworld_effect_sound_wave_oam_template, x, y , 0);
+    u8 oam_idx = oam_new_backward_search(&overworld_effect_sound_wave_oam_template, x, y, 0);
     oams[oam_idx].flags |= OAM_FLAG_CENTERED;
     oam_rotscale_anim_init(oams + oam_idx, 0);
     oams[oam_idx].private[0] = 0;
@@ -164,9 +177,9 @@ void overworld_effect_npc_transparent_flicker_initialize() {
     big_callbacks[cb_idx].params[0] = person_idx;
     big_callbacks[cb_idx].params[1] = amplitude;
     big_callbacks[cb_idx].params[2] = half_period;
-    io_set(IO_BLDCNT, IO_BLDCNT_ALPHA_BLENDING | IO_BLDCNT_BG0_SECOND | IO_BLDCNT_BG1_SECOND | 
-        IO_BLDCNT_BG2_SECOND | IO_BLDCNT_BG3_SECOND | IO_BLDCNT_BACKDROP_SECOND | 
-        IO_BLDCNT_OBJ_FIRST);
+    io_set(IO_BLDCNT, IO_BLDCNT_ALPHA_BLENDING | IO_BLDCNT_BG0_SECOND | IO_BLDCNT_BG1_SECOND |
+                          IO_BLDCNT_BG2_SECOND | IO_BLDCNT_BG3_SECOND | IO_BLDCNT_BACKDROP_SECOND |
+                          IO_BLDCNT_OBJ_FIRST);
     io_set(IO_BLDALPHA, (u16)(IO_BLDALPHA_EVA(31) | IO_BLDALPHA_EVB(0)));
     oams[npcs[npc_idx].oam_id].final_oam.attr0 |= ATTR0_MODE_SEMI_TRANSPARENT;
 }
@@ -210,9 +223,9 @@ void overworld_effect_npc_transparent_fade_initialize() {
     big_callbacks[cb_idx].params[1] = from;
     big_callbacks[cb_idx].params[2] = to;
     big_callbacks[cb_idx].params[3] = duration;
-    io_set(IO_BLDCNT, IO_BLDCNT_ALPHA_BLENDING | IO_BLDCNT_BG0_SECOND | IO_BLDCNT_BG1_SECOND | 
-        IO_BLDCNT_BG2_SECOND | IO_BLDCNT_BG3_SECOND | IO_BLDCNT_BACKDROP_SECOND | 
-        IO_BLDCNT_OBJ_FIRST);
+    io_set(IO_BLDCNT, IO_BLDCNT_ALPHA_BLENDING | IO_BLDCNT_BG0_SECOND | IO_BLDCNT_BG1_SECOND |
+                          IO_BLDCNT_BG2_SECOND | IO_BLDCNT_BG3_SECOND | IO_BLDCNT_BACKDROP_SECOND |
+                          IO_BLDCNT_OBJ_FIRST);
     io_set(IO_BLDALPHA, (u16)(IO_BLDALPHA_EVA(31) | IO_BLDALPHA_EVB(0)));
     oams[npcs[npc_idx].oam_id].final_oam.attr0 |= ATTR0_MODE_SEMI_TRANSPARENT;
 }
@@ -224,7 +237,6 @@ bool overworld_effect_is_oam_outside_camera_view(s16 x, s16 y, int width, int he
     int bottom = save1->y_cam_orig + 7 + 5 + (height / 16);
     return x < left || x > right || y < top || y > bottom;
 }
-
 
 extern palette overworld_effect_pokeball_palette;
 
@@ -255,11 +267,14 @@ static graphic overworld_effect_lightning_graphics[] = {
 };
 
 palette overworld_effect_lightning_palette = {
-    .pal = gfx_overworld_effect_lightningPal, .tag = GFX_TAG_OVERWORLD_EFFECT_LIGHTNING,
+    .pal = gfx_overworld_effect_lightningPal,
+    .tag = GFX_TAG_OVERWORLD_EFFECT_LIGHTNING,
 };
 
 static sprite overworld_effect_lightning_sprite = {
-    .attr0 = ATTR0_SHAPE_VERTICAL, .attr1 = ATTR1_SIZE_16_32, .attr2 = ATTR2_PRIO(1),
+    .attr0 = ATTR0_SHAPE_VERTICAL,
+    .attr1 = ATTR1_SIZE_16_32,
+    .attr2 = ATTR2_PRIO(1),
 };
 
 #define LIGHTNING_FRAME_DURATION 4
@@ -270,7 +285,7 @@ static gfx_frame overworld_effect_lightning_gfx_animation[] = {
     {.data = 8, .duration = LIGHTNING_FRAME_DURATION}, // empty
     {.data = 1, .duration = LIGHTNING_FRAME_DURATION},
     {.data = 8, .duration = LIGHTNING_FRAME_DURATION}, // empty
-    {.data = 2, .duration = LIGHTNING_FRAME_DURATION}, 
+    {.data = 2, .duration = LIGHTNING_FRAME_DURATION},
     {.data = 8, .duration = LIGHTNING_FRAME_DURATION}, // empty
     {.data = 1, .duration = LIGHTNING_FRAME_DURATION},
     {.data = 8, .duration = LIGHTNING_FRAME_DURATION}, // empty & whole screen to white
@@ -280,7 +295,7 @@ static gfx_frame overworld_effect_lightning_gfx_animation[] = {
     {.data = 6, .duration = LIGHTNING_FRAME_DURATION},
     {.data = 7, .duration = LIGHTNING_FRAME_DURATION},
     {.data = 8, .duration = 0},
-    {.data = GFX_ANIM_END}, 
+    {.data = GFX_ANIM_END},
 };
 
 static gfx_frame *overworld_effect_lightning_gfx_animations[] = {overworld_effect_lightning_gfx_animation};
@@ -300,17 +315,20 @@ static void overworld_effect_lightning_oam_callback(oam_object *self) {
 }
 
 static oam_template overworld_effect_lightning_oam_template = {
-    .tiles_tag = 0xFFFF, .pal_tag = GFX_TAG_OVERWORLD_EFFECT_LIGHTNING,
+    .tiles_tag = 0xFFFF,
+    .pal_tag = GFX_TAG_OVERWORLD_EFFECT_LIGHTNING,
     .graphics = overworld_effect_lightning_graphics,
-    .oam = &overworld_effect_lightning_sprite, .animation = overworld_effect_lightning_gfx_animations,
-    .rotscale = oam_rotscale_anim_table_null, .callback = overworld_effect_lightning_oam_callback,
+    .oam = &overworld_effect_lightning_sprite,
+    .animation = overworld_effect_lightning_gfx_animations,
+    .rotscale = oam_rotscale_anim_table_null,
+    .callback = overworld_effect_lightning_oam_callback,
 };
 
 void overworld_effect_lightning_initialize() {
     s16 x = (s16)(overworld_effect_state.x + 7);
     s16 y = (s16)(overworld_effect_state.y + 7);
     overworld_effect_ow_coordinates_to_screen_coordinates(&x, &y, 8, 0);
-    u8 oam_idx = oam_new_backward_search(&overworld_effect_lightning_oam_template, x, y , 0);
+    u8 oam_idx = oam_new_backward_search(&overworld_effect_lightning_oam_template, x, y, 0);
     oams[oam_idx].flags |= OAM_FLAG_CENTERED;
     oam_gfx_anim_start(oams + oam_idx, 0);
 }

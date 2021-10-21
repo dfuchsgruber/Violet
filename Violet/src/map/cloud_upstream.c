@@ -1,19 +1,20 @@
-#include "types.h"
-#include "map/cloud.h"
-#include "oam.h"
-#include "debug.h"
-#include "overworld/sprite.h"
-#include "overworld/effect.h"
-#include "map/header.h"
-#include "save.h"
 #include "agbmemory.h"
 #include "constants/block_behaviour.h"
+#include "debug.h"
+#include "map/cloud.h"
+#include "map/header.h"
+#include "oam.h"
+#include "overworld/effect.h"
+#include "overworld/sprite.h"
+#include "save.h"
+#include "types.h"
 
 extern u8 gfx_overworld_cloud_upstreamTiles[];
 extern u8 gfx_overworld_cloud_upstreamPal[];
 
 static palette overworld_cloud_upstream_palette = {
-    .pal = gfx_overworld_cloud_upstreamPal, .tag = OAM_TAG_CLOUD_UPSTREAM,
+    .pal = gfx_overworld_cloud_upstreamPal,
+    .tag = OAM_TAG_CLOUD_UPSTREAM,
 };
 
 static graphic overworld_cloud_upstream_graphics[] = {
@@ -47,7 +48,7 @@ static sprite sprite_cloud_upstream_controller = {.attr0 = ATTR0_SHAPE_SQUARE, .
 
 static bool cloud_upstream_hide(oam_cloud_upstream_state_t *state) {
     if (overworld_effect_is_oam_outside_camera_view(state->x, (s16)(state->y), 64, 64)) {
-        for(int i = 0; i < CLOUD_UPSTREAM_NUM_OAMS; i++) {
+        for (int i = 0; i < CLOUD_UPSTREAM_NUM_OAMS; i++) {
             for (int j = 0; j < 2; j++)
                 oams[state->oam_idxs[i][j]].flags |= OAM_FLAG_INVISIBLE;
         }
@@ -121,7 +122,8 @@ static void oam_callback_cloud_upstream_step0(oam_object *self) {
     if (cloud_upstream_clear_if_not_on_map(state))
         return;
     if (!cloud_upstream_hide(state) && !cloud_upstream_waiting(state)) { // Upstream effect is active
-        s16 x = 0; s16 y = 0; // Anchor position for all oams
+        s16 x = 0;
+        s16 y = 0; // Anchor position for all oams
         map_position_to_oam_position(state->x, state->y, &x, &y);
         for (int j = 0; j < 2; j++) {
             // Hide mid and bottom
@@ -143,7 +145,8 @@ static void oam_callback_cloud_upstream_step1(oam_object *self) {
     if (cloud_upstream_clear_if_not_on_map(state))
         return;
     if (!cloud_upstream_hide(state) && !cloud_upstream_waiting(state)) { // Upstream effect is active
-        s16 x = 0; s16 y = 0; // Anchor position for all oams
+        s16 x = 0;
+        s16 y = 0; // Anchor position for all oams
         map_position_to_oam_position(state->x, state->y, &x, &y);
         for (int j = 0; j < 2; j++) {
             oams[state->oam_idxs[CLOUD_UPSTREAM_MID][j]].y = (s16)(y + 8);
@@ -163,7 +166,8 @@ static void oam_callback_cloud_upstream_step2(oam_object *self) {
     if (cloud_upstream_clear_if_not_on_map(state))
         return;
     if (!cloud_upstream_hide(state) && !cloud_upstream_waiting(state)) { // Upstream effect is active
-        s16 x = 0; s16 y = 0; // Anchor position for all oams
+        s16 x = 0;
+        s16 y = 0; // Anchor position for all oams
         map_position_to_oam_position(state->x, state->y, &x, &y);
         for (int j = 0; j < 2; j++) {
             oams[state->oam_idxs[CLOUD_UPSTREAM_TOP][j]].y = (s16)(y + 4);
@@ -183,7 +187,8 @@ static void oam_callback_cloud_upstream_step3(oam_object *self) {
     if (cloud_upstream_clear_if_not_on_map(state))
         return;
     if (!cloud_upstream_hide(state) && !cloud_upstream_waiting(state)) { // Upstream effect is activeCLOUD_UPSTREAM_TOP_2
-        s16 x = 0; s16 y = 0; // Anchor position for all oams
+        s16 x = 0;
+        s16 y = 0; // Anchor position for all oams
         map_position_to_oam_position(state->x, state->y, &x, &y);
         for (int j = 0; j < 2; j++) {
             oams[state->oam_idxs[CLOUD_UPSTREAM_TOP_2][j]].y = (s16)(y - 2);
@@ -203,7 +208,8 @@ static void oam_callback_cloud_upstream_step4(oam_object *self) {
     if (cloud_upstream_clear_if_not_on_map(state))
         return;
     if (!cloud_upstream_hide(state) && !cloud_upstream_waiting(state)) { // Upstream effect is active
-        s16 x = 0; s16 y = 0; // Anchor position for all oams
+        s16 x = 0;
+        s16 y = 0; // Anchor position for all oams
         map_position_to_oam_position(state->x, state->y, &x, &y);
         for (int j = 0; j < 2; j++) {
             oams[state->oam_idxs[CLOUD_UPSTREAM_BOTTOM][j]].private[5] = (u16)(y - 10);
@@ -224,7 +230,8 @@ static void oam_callback_cloud_upstream_step5(oam_object *self) {
     if (cloud_upstream_clear_if_not_on_map(state))
         return;
     if (!cloud_upstream_hide(state) && !cloud_upstream_waiting(state)) { // Upstream effect is active
-        s16 x = 0; s16 y = 0; // Anchor position for all oams
+        s16 x = 0;
+        s16 y = 0; // Anchor position for all oams
         map_position_to_oam_position(state->x, state->y, &x, &y);
         for (int j = 0; j < 2; j++) {
             oams[state->oam_idxs[CLOUD_UPSTREAM_MID][j]].private[5] = (u16)(y - 16);
@@ -307,80 +314,127 @@ static void oam_callback_cloud_upstream_step10(oam_object *self) {
 }
 
 static gfx_frame overworld_cloud_upstream_animation_big_ring[] = {
-    {.data = 0, .duration = 0}, 
+    {.data = 0, .duration = 0},
     // Small ring
-    {.data = 0, .duration = 4}, {.data = 1, .duration = 4}, {.data = 2, .duration = 4}, {.data = 1, .duration = 4  | GFX_ANIM_HFLIP},
+    {.data = 0, .duration = 4},
+    {.data = 1, .duration = 4},
+    {.data = 2, .duration = 4},
+    {.data = 1, .duration = 4 | GFX_ANIM_HFLIP},
     // Normal ring
-    {.data = 3, .duration = 4}, {.data = 4, .duration = 4}, {.data = 5, .duration = 4}, {.data = 4, .duration = 4  | GFX_ANIM_HFLIP},
+    {.data = 3, .duration = 4},
+    {.data = 4, .duration = 4},
+    {.data = 5, .duration = 4},
+    {.data = 4, .duration = 4 | GFX_ANIM_HFLIP},
     // Big ring
-    {.data = 6, .duration = 4}, {.data = 7, .duration = 4}, {.data = 8, .duration = 4}, {.data = 7, .duration = 4  | GFX_ANIM_HFLIP},
+    {.data = 6, .duration = 4},
+    {.data = 7, .duration = 4},
+    {.data = 8, .duration = 4},
+    {.data = 7, .duration = 4 | GFX_ANIM_HFLIP},
     {.data = GFX_ANIM_JUMP, .duration = 9},
 };
 
 static gfx_frame overworld_cloud_upstream_animation_big_ring_bg[] = {
-    {.data = 10, .duration = 0}, 
+    {.data = 10, .duration = 0},
     // Small ring
-    {.data = 10, .duration = 4}, {.data = 11, .duration = 4}, {.data = 12, .duration = 4}, {.data = 11, .duration = 4  | GFX_ANIM_HFLIP},
+    {.data = 10, .duration = 4},
+    {.data = 11, .duration = 4},
+    {.data = 12, .duration = 4},
+    {.data = 11, .duration = 4 | GFX_ANIM_HFLIP},
     // Normal ring
-    {.data = 13, .duration = 4}, {.data = 14, .duration = 4}, {.data = 15, .duration = 4}, {.data = 14, .duration = 4  | GFX_ANIM_HFLIP},
+    {.data = 13, .duration = 4},
+    {.data = 14, .duration = 4},
+    {.data = 15, .duration = 4},
+    {.data = 14, .duration = 4 | GFX_ANIM_HFLIP},
     // Big ring
-    {.data = 16, .duration = 4}, {.data = 17, .duration = 4}, {.data = 18, .duration = 4}, {.data = 17, .duration = 4  | GFX_ANIM_HFLIP},
+    {.data = 16, .duration = 4},
+    {.data = 17, .duration = 4},
+    {.data = 18, .duration = 4},
+    {.data = 17, .duration = 4 | GFX_ANIM_HFLIP},
     {.data = GFX_ANIM_JUMP, .duration = 9},
 };
 
 static gfx_frame overworld_cloud_upstream_animation_normal_ring[] = {
-    {.data = 3, .duration = 0}, 
+    {.data = 3, .duration = 0},
     // Small ring
-    {.data = 0, .duration = 4}, {.data = 1, .duration = 4}, {.data = 2, .duration = 4}, {.data = 1, .duration = 4  | GFX_ANIM_HFLIP},
+    {.data = 0, .duration = 4},
+    {.data = 1, .duration = 4},
+    {.data = 2, .duration = 4},
+    {.data = 1, .duration = 4 | GFX_ANIM_HFLIP},
     // Normal ring
-    {.data = 3, .duration = 4}, {.data = 4, .duration = 4}, {.data = 5, .duration = 4}, {.data = 4, .duration = 4  | GFX_ANIM_HFLIP},
+    {.data = 3, .duration = 4},
+    {.data = 4, .duration = 4},
+    {.data = 5, .duration = 4},
+    {.data = 4, .duration = 4 | GFX_ANIM_HFLIP},
     {.data = GFX_ANIM_JUMP, .duration = 5},
 };
 
 static gfx_frame overworld_cloud_upstream_animation_normal_ring_bg[] = {
-    {.data = 13, .duration = 0}, 
+    {.data = 13, .duration = 0},
     // Small ring
-    {.data = 10, .duration = 4}, {.data = 11, .duration = 4}, {.data = 12, .duration = 4}, {.data = 11, .duration = 4  | GFX_ANIM_HFLIP},
+    {.data = 10, .duration = 4},
+    {.data = 11, .duration = 4},
+    {.data = 12, .duration = 4},
+    {.data = 11, .duration = 4 | GFX_ANIM_HFLIP},
     // Normal ring
-    {.data = 13, .duration = 4}, {.data = 14, .duration = 4}, {.data = 15, .duration = 4}, {.data = 14, .duration = 4  | GFX_ANIM_HFLIP},
+    {.data = 13, .duration = 4},
+    {.data = 14, .duration = 4},
+    {.data = 15, .duration = 4},
+    {.data = 14, .duration = 4 | GFX_ANIM_HFLIP},
     {.data = GFX_ANIM_JUMP, .duration = 5},
 };
 
 static gfx_frame overworld_cloud_upstream_animation_small_ring[] = {
-    {.data = 3, .duration = 0}, 
+    {.data = 3, .duration = 0},
     // Small ring
-    {.data = 0, .duration = 4}, {.data = 1, .duration = 4}, {.data = 2, .duration = 4}, {.data = 1, .duration = 4  | GFX_ANIM_HFLIP},
+    {.data = 0, .duration = 4},
+    {.data = 1, .duration = 4},
+    {.data = 2, .duration = 4},
+    {.data = 1, .duration = 4 | GFX_ANIM_HFLIP},
     {.data = GFX_ANIM_JUMP, .duration = 1},
 };
 
 static gfx_frame overworld_cloud_upstream_animation_small_ring_bg[] = {
-    {.data = 13, .duration = 0}, 
+    {.data = 13, .duration = 0},
     // Small ring
-    {.data = 10, .duration = 4}, {.data = 11, .duration = 4}, {.data = 12, .duration = 4}, {.data = 11, .duration = 4  | GFX_ANIM_HFLIP},
+    {.data = 10, .duration = 4},
+    {.data = 11, .duration = 4},
+    {.data = 12, .duration = 4},
+    {.data = 11, .duration = 4 | GFX_ANIM_HFLIP},
     {.data = GFX_ANIM_JUMP, .duration = 1},
 };
 
 static gfx_frame overworld_cloud_upstream_animation_static_upstream[] = {
-    {.data = 3, .duration = 0}, 
+    {.data = 3, .duration = 0},
     // Small ring
-    {.data = 0, .duration = 4}, {.data = 1, .duration = 4}, {.data = 2, .duration = 4}, {.data = 1, .duration = 4  | GFX_ANIM_HFLIP},
-    {.data = 0, .duration = 4}, {.data = 1, .duration = 4}, {.data = 2, .duration = 4}, {.data = 1, .duration = 4  | GFX_ANIM_HFLIP},
+    {.data = 0, .duration = 4},
+    {.data = 1, .duration = 4},
+    {.data = 2, .duration = 4},
+    {.data = 1, .duration = 4 | GFX_ANIM_HFLIP},
+    {.data = 0, .duration = 4},
+    {.data = 1, .duration = 4},
+    {.data = 2, .duration = 4},
+    {.data = 1, .duration = 4 | GFX_ANIM_HFLIP},
     {.data = 9, .duration = 32},
     {.data = GFX_ANIM_JUMP, .duration = 1},
 };
 
 static gfx_frame overworld_cloud_upstream_animation_static_upstream_bg[] = {
-    {.data = 3, .duration = 0}, 
+    {.data = 3, .duration = 0},
     // Small ring
-    {.data = 10, .duration = 4}, {.data = 11, .duration = 4}, {.data = 12, .duration = 4}, {.data = 11, .duration = 4  | GFX_ANIM_HFLIP},
-    {.data = 10, .duration = 4}, {.data = 11, .duration = 4}, {.data = 12, .duration = 4}, {.data = 11, .duration = 4  | GFX_ANIM_HFLIP},
+    {.data = 10, .duration = 4},
+    {.data = 11, .duration = 4},
+    {.data = 12, .duration = 4},
+    {.data = 11, .duration = 4 | GFX_ANIM_HFLIP},
+    {.data = 10, .duration = 4},
+    {.data = 11, .duration = 4},
+    {.data = 12, .duration = 4},
+    {.data = 11, .duration = 4 | GFX_ANIM_HFLIP},
     {.data = 9, .duration = 32},
     {.data = GFX_ANIM_JUMP, .duration = 1},
 };
 
 static gfx_frame overworld_cloud_upstream_animation_no_ring[] = {
-    {.data = 9, .duration = 0}, {.data = GFX_ANIM_END}
-}; 
+    {.data = 9, .duration = 0}, {.data = GFX_ANIM_END}};
 
 static gfx_frame *overworld_cloud_upstream_animations[] = {
     [CLOUD_UPSTREAM_ANIM_BIG_RING] = overworld_cloud_upstream_animation_big_ring,
@@ -394,17 +448,18 @@ static gfx_frame *overworld_cloud_upstream_animations[] = {
     [CLOUD_UPSTREAM_ANIM_STATIC_BG] = overworld_cloud_upstream_animation_static_upstream_bg,
 };
 
-static void overworld_cloud_static_upstream_callback (oam_object *self) {
+static void overworld_cloud_static_upstream_callback(oam_object *self) {
     if (save1->bank != self->private[2] || save1->map != self->private[3]) {
         oam_clear(self);
         return;
     }
-    s16 oam_x = 0; s16 oam_y = 0; // Anchor position for all oams
+    s16 oam_x = 0;
+    s16 oam_y = 0; // Anchor position for all oams
     map_position_to_oam_position((s16)(self->private[4]), (s16)(self->private[5]), &oam_x, &oam_y);
     self->x = (s16)(oam_x + 16 - 8);
     self->y = (s16)(oam_y + self->private[6] * 6);
 
-    if (overworld_effect_is_oam_outside_camera_view((s16)self->private[4], (s16)self->private[5], 64, 32)) {
+    if (overworld_effect_is_oam_outside_camera_view((s16)self->private[4], (s16)self -> private[5], 64, 32)) {
         self->flags |= OAM_FLAG_INVISIBLE;
     } else {
         self->flags &= (u16)(~OAM_FLAG_INVISIBLE);
@@ -413,24 +468,32 @@ static void overworld_cloud_static_upstream_callback (oam_object *self) {
 
 static oam_template overworld_cloud_upstream_oam_templates[] = {
     {
-        .tiles_tag = 0xFFFF, .pal_tag = OAM_TAG_CLOUD_UPSTREAM,
+        .tiles_tag = 0xFFFF,
+        .pal_tag = OAM_TAG_CLOUD_UPSTREAM,
         .graphics = overworld_cloud_upstream_graphics,
-        .oam = &sprite_cloud_upstream_prio_1, .animation = overworld_cloud_upstream_animations,
-        .rotscale = oam_rotscale_anim_table_null, .callback = oam_null_callback,
+        .oam = &sprite_cloud_upstream_prio_1,
+        .animation = overworld_cloud_upstream_animations,
+        .rotscale = oam_rotscale_anim_table_null,
+        .callback = oam_null_callback,
     },
     {
-        .tiles_tag = 0xFFFF, .pal_tag = OAM_TAG_CLOUD_UPSTREAM,
+        .tiles_tag = 0xFFFF,
+        .pal_tag = OAM_TAG_CLOUD_UPSTREAM,
         .graphics = overworld_cloud_upstream_graphics,
-        .oam = &sprite_cloud_upstream_prio_2, .animation = overworld_cloud_upstream_animations,
-        .rotscale = oam_rotscale_anim_table_null, .callback = oam_null_callback,
+        .oam = &sprite_cloud_upstream_prio_2,
+        .animation = overworld_cloud_upstream_animations,
+        .rotscale = oam_rotscale_anim_table_null,
+        .callback = oam_null_callback,
     },
     {
-        .tiles_tag = 0xFFFF, .pal_tag = 0xFFFF,
+        .tiles_tag = 0xFFFF,
+        .pal_tag = 0xFFFF,
         .graphics = overworld_cloud_upstream_graphics,
-        .oam = &sprite_cloud_upstream_controller, .animation = oam_gfx_anim_table_null,
-        .rotscale = oam_rotscale_anim_table_null, .callback = oam_callback_cloud_upstream_step0,
-    }
-};
+        .oam = &sprite_cloud_upstream_controller,
+        .animation = oam_gfx_anim_table_null,
+        .rotscale = oam_rotscale_anim_table_null,
+        .callback = oam_callback_cloud_upstream_step0,
+    }};
 
 oam_cloud_upstream_state_t *map_cloud_upstream_whirlwind_at(s16 x, s16 y) {
     oam_palette_load_if_not_present_and_apply_shaders(&overworld_cloud_upstream_palette);
@@ -466,7 +529,6 @@ static void map_cloud_static_upstream_oam_callback_delayed_gfx_animation(oam_obj
         self->callback = overworld_cloud_static_upstream_callback;
     }
 }
-
 
 void map_cloud_static_upstream_new_at_position(s16 x, s16 y, u8 bank, u8 map_idx) {
     oam_palette_load_if_not_present_and_apply_shaders(&overworld_cloud_upstream_palette);

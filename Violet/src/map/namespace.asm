@@ -771,4 +771,3 @@ map_namespaces:
 
 .elseif LANG_EN
 .endif
-

@@ -25,5 +25,3 @@ bl map_change_load_ts1_pal
 mov r4, #7
 ldr r0, =0x80558F4 | 1
 bx r0
-
-

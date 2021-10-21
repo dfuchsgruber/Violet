@@ -1,11 +1,11 @@
 {
 	"type": "enum",
-	"base" : 0,
+	"base": 0,
 	"values": [
 		"UNOWN_MESSAGE_ROCK",
 		"UNOWN_MESSAGE_ICE",
 		"UNOWN_MESSAGE_STEEL",
-		
+
 		"UNOWN_MESSAGE_BY_HEADER"
 	]
 }

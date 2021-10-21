@@ -1,13 +1,13 @@
-#include "types.h"
-#include "map/cloud.h"
-#include "oam.h"
-#include "debug.h"
-#include "overworld/sprite.h"
-#include "overworld/effect.h"
-#include "map/header.h"
-#include "save.h"
 #include "agbmemory.h"
 #include "constants/block_behaviour.h"
+#include "debug.h"
+#include "map/cloud.h"
+#include "map/header.h"
+#include "oam.h"
+#include "overworld/effect.h"
+#include "overworld/sprite.h"
+#include "save.h"
+#include "types.h"
 
 #define OAM_TAG_SPARKS 1449
 #define POWER_PLANT_BANK 3
@@ -18,7 +18,8 @@ extern u8 gfx_overworld_effect_sparks_verticalTiles[];
 extern u8 gfx_overworld_effect_sparksPal[];
 
 static palette sparks_palette = {
-    .pal = gfx_overworld_effect_sparksPal, .tag = OAM_TAG_SPARKS,
+    .pal = gfx_overworld_effect_sparksPal,
+    .tag = OAM_TAG_SPARKS,
 };
 
 static graphic sparks_graphics[] = {
@@ -32,7 +33,10 @@ static graphic sparks_graphics_vertical[] = {
 };
 
 static gfx_frame sparks_gfx_animation[] = {
-    {.data = 0, .duration = 0}, {.data = 0, .duration = 8}, {.data = 1, .duration = 8}, {.data = GFX_ANIM_JUMP, .duration = 1},
+    {.data = 0, .duration = 0},
+    {.data = 0, .duration = 8},
+    {.data = 1, .duration = 8},
+    {.data = GFX_ANIM_JUMP, .duration = 1},
 };
 
 static gfx_frame *sparks_gfx_animations[] = {sparks_gfx_animation};
@@ -45,9 +49,9 @@ static void oam_callback_sparks(oam_object *self) {
         oam_free(self);
         return;
     }
-    s16 *x = (s16*)(self->private + 0);
-    s16 *y = (s16*)(self->private + 1);
-    // Since the sprite is centered, use half the circle 
+    s16 *x = (s16 *)(self->private + 0);
+    s16 *y = (s16 *)(self->private + 1);
+    // Since the sprite is centered, use half the circle
     if (overworld_effect_is_oam_outside_camera_view(*x, *y, 32, 32)) {
         self->flags |= OAM_FLAG_INVISIBLE;
     } else {
@@ -64,37 +68,45 @@ static void oam_callback_sparks(oam_object *self) {
     }
 }
 
-static oam_template sparks_templates[2] =  {
+static oam_template sparks_templates[2] = {
     {
-        .tiles_tag = 0xFFFF, .pal_tag = OAM_TAG_SPARKS,
+        .tiles_tag = 0xFFFF,
+        .pal_tag = OAM_TAG_SPARKS,
         .graphics = sparks_graphics,
-        .oam = &sparks_sprite, .animation = sparks_gfx_animations,
-        .rotscale = oam_rotscale_anim_table_null, .callback = oam_callback_sparks,
-    },{
-        .tiles_tag = 0xFFFF, .pal_tag = OAM_TAG_SPARKS,
+        .oam = &sparks_sprite,
+        .animation = sparks_gfx_animations,
+        .rotscale = oam_rotscale_anim_table_null,
+        .callback = oam_callback_sparks,
+    },
+    {
+        .tiles_tag = 0xFFFF,
+        .pal_tag = OAM_TAG_SPARKS,
         .graphics = sparks_graphics_vertical,
-        .oam = &sparks_sprite_vertical, .animation = sparks_gfx_animations,
-        .rotscale = oam_rotscale_anim_table_null, .callback = oam_callback_sparks,
+        .oam = &sparks_sprite_vertical,
+        .animation = sparks_gfx_animations,
+        .rotscale = oam_rotscale_anim_table_null,
+        .callback = oam_callback_sparks,
     },
 };
 
 static coordinate_t sparks_positions[] = {
-    {.x = 0xe, .y = 0x17}, {.x = 0xe, .y = 0x14}, {.x = 0xc, .y = 0x15},
-    {.x = 0x11, .y = 0x15}, {.x = 0xb, .y = 0xa}, {.x = 0xc, .y = 0xa},
-    {.x = 0xb, .y = 0xb}, {.x = 0xc, .y = 0xb}, {.x = 0x14, .y = 0xc},
-    {.x = 0x14, .y = 0xd}, {.x = 0xd, .y = 0x15}, {.x = 0x10, .y = 0x15}
-};
+    {.x = 0xe, .y = 0x17}, {.x = 0xe, .y = 0x14}, {.x = 0xc, .y = 0x15}, {.x = 0x11, .y = 0x15}, {.x = 0xb, .y = 0xa}, {.x = 0xc, .y = 0xa}, {.x = 0xb, .y = 0xb}, {.x = 0xc, .y = 0xb}, {.x = 0x14, .y = 0xc}, {.x = 0x14, .y = 0xd}, {.x = 0xd, .y = 0x15}, {.x = 0x10, .y = 0x15}};
 
 static u8 sparks_vertical[ARRAY_COUNT(sparks_positions)] = {
-    [2] = 1, [3] = 1, [10] = 1, [11] = 1,
+    [2] = 1,
+    [3] = 1,
+    [10] = 1,
+    [11] = 1,
 };
 
 static s16 x_displacements[ARRAY_COUNT(sparks_positions)] = {
-    [8] = 8, [9] = 8,
+    [8] = 8,
+    [9] = 8,
 };
 
 static s16 y_displacements[ARRAY_COUNT(sparks_positions)] = {
-    [8] = 12, [9] = 8,
+    [8] = 12,
+    [9] = 8,
 };
 
 static void sparks_initialize() {
@@ -105,8 +117,8 @@ static void sparks_initialize() {
         oams[oam_idx].private[0] = (u16)(sparks_positions[i].x + 7);
         oams[oam_idx].private[1] = (u16)(sparks_positions[i].y + 7);
         oams[oam_idx].private[2] = sparks_vertical[i];
-        oams[oam_idx].private[3] = (u16) x_displacements[i];
-        oams[oam_idx].private[4] = (u16) y_displacements[i];
+        oams[oam_idx].private[3] = (u16)x_displacements[i];
+        oams[oam_idx].private[4] = (u16)y_displacements[i];
         oam_gfx_anim_start(oams + oam_idx, 0);
         oams[oam_idx].callback(oams + oam_idx);
     }

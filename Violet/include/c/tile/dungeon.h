@@ -17,7 +17,6 @@
  */
 u32 dungeon_hash(int dungeon_id);
 
-
 /**
  * Check if a dungeon has been visited
  * @param dungeon_id the dungeon id to check

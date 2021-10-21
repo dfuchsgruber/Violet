@@ -12,21 +12,21 @@
 
 // Bitfield for a single bg map entry in text mode
 typedef struct {
-  u16 tile_number : 10;
-  u16 hflip : 1;
-  u16 vflip : 1;
-  u16 palette : 4;
+    u16 tile_number : 10;
+    u16 hflip : 1;
+    u16 vflip : 1;
+    u16 palette : 4;
 } bg_text_tile;
 
 // Union for bg map entry either in text mode or rs mode
 typedef union {
-  bg_text_tile text;
-  u16 text_value;
+    bg_text_tile text;
+    u16 text_value;
 } bg_tile;
 
-#define CHARBASE(x) ((u32*)(0x06000000 + 0x4000 * (x)))
-#define MAPBASE(x) ((bg_tile*)(0x06000000 + 0x800 * (x)))
-#define OAMCHARBASE(x) ((u32*)(0x06010000 + 32 * (x)))
+#define CHARBASE(x) ((u32 *)(0x06000000 + 0x4000 * (x)))
+#define MAPBASE(x) ((bg_tile *)(0x06000000 + 0x800 * (x)))
+#define OAMCHARBASE(x) ((u32 *)(0x06010000 + 32 * (x)))
 
 /**
  * Copies all graphics in the graphic queue to their destinations using the DMA

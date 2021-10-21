@@ -100,7 +100,3 @@ script_tv:
 .byte 0x9
 .byte 0x3	@callstd 3
 .byte 2
-
-
-
-

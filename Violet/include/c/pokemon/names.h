@@ -8,8 +8,8 @@
 #ifndef INCLUDE_C_POKEMON_NAMES_H_
 #define INCLUDE_C_POKEMON_NAMES_H_
 
-#include "types.h"
 #include "pokemon/count.h"
+#include "types.h"
 
 extern u8 pokemon_names[POKEMON_CNT][11];
 

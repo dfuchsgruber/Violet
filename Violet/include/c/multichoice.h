@@ -6,25 +6,23 @@
  */
 
 #ifndef MULTICHOICE_H
-#define	MULTICHOICE_H
+#define MULTICHOICE_H
 
-#ifdef	__cplusplus
+#ifdef __cplusplus
 extern "C" {
 #endif
-    
+
 #include "types.h"
-    
-    typedef struct{
-        u8 **choices;
-        int size;
-    } multichoice_t;
-    
-    extern multichoice_t multichoices[];
 
+typedef struct {
+    u8 **choices;
+    int size;
+} multichoice_t;
 
-#ifdef	__cplusplus
+extern multichoice_t multichoices[];
+
+#ifdef __cplusplus
 }
 #endif
 
-#endif	/* MULTICHOICE_H */
-
+#endif /* MULTICHOICE_H */

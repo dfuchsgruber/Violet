@@ -11,12 +11,12 @@
 #include "constants/trainer_builds.h"
 
 typedef struct build {
-    u8 nature; // If 255, use random nature
-    u8 evs[6]; // If 255, use difficulty and story state dependent evs
-    u16 prefered_item; // Only if the pokemon has no item so far
-    u8 hidden_power_type; // If 255, use random type
+    u8 nature;                // If 255, use random nature
+    u8 evs[6];                // If 255, use difficulty and story state dependent evs
+    u16 prefered_item;        // Only if the pokemon has no item so far
+    u8 hidden_power_type;     // If 255, use random type
     u8 hidden_power_strength; // If 255, use random strength
-    u8 use_gender : 1; // If true, a gender is assigned
+    u8 use_gender : 1;        // If true, a gender is assigned
     u8 gender;
 } trainer_build_t;
 
@@ -33,7 +33,6 @@ typedef struct build_field {
 typedef union union_build_field {
     u8 value;
     build_field bitfield;
-} union_build_field ;
-
+} union_build_field;
 
 #endif /* INCLUDE_C_TRAINER_BUILD_H_ */

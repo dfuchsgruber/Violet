@@ -1,7 +1,7 @@
 {
-    "type" : "enum",
-    "base" : 0,
-    "values" : [
+    "type": "enum",
+    "base": 0,
+    "values": [
         "BATTLE_ANIM_CASTFORM_CHANGE",
         "BATTLE_ANIM_STATS_CHANGE",
         "BATTLE_ANIM_SUBSTITUTE_FADE",

@@ -95,4 +95,3 @@ hook_npc_create_oam_template:
     bl overworld_create_oam_template_by_npc_with_movement_callback
     ldr r0, =0x0805eeac | 1
     bx r0
- 

@@ -1,7 +1,7 @@
+#include "language.h"
+#include "text.h"
 #include "types.h"
 #include "vars.h"
-#include "text.h"
-#include "language.h"
 
 static u8 str_badge1[] = LANGDEP(PSTRING("Antikorden"), PSTRING("Relic Badge"));
 static u8 str_badge2[] = LANGDEP(PSTRING("Waldorden"), PSTRING("Forest Badge"));
@@ -19,11 +19,18 @@ u8 *badge_names[8] = {
 
 void special_buffer_badge_name() {
     u8 *buffer;
-    switch(*var_access(0x8005)) {
-        case 0: buffer = buffer0; break;
-        case 1: buffer = buffer1; break;
-        case 2: buffer = buffer2; break;
-        default: return;
+    switch (*var_access(0x8005)) {
+        case 0:
+            buffer = buffer0;
+            break;
+        case 1:
+            buffer = buffer1;
+            break;
+        case 2:
+            buffer = buffer2;
+            break;
+        default:
+            return;
     }
     strcpy(buffer, badge_names[*var_access(0x8004)]);
 }

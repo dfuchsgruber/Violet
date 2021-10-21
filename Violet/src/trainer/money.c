@@ -1,6 +1,6 @@
-#include "types.h"
-#include "trainer/trainer.h"
 #include "constants/trainerclasses.h"
+#include "trainer/trainer.h"
+#include "types.h"
 
 u8 trainer_class_money_multipliers[TRAINERCLASS_CNT] = {
     [TRAINERCLASS_PKMN_TRAINER] = 1,

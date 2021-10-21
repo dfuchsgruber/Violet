@@ -1,7 +1,7 @@
 {
-    "type" : "enum",
-    "base" : 0,
-    "values" : [
+    "type": "enum",
+    "base": 0,
+    "values": [
         "SIGNPOST_SCRIPT",
         "SIGNPOST_SCRIPT_NORTH",
         "SIGNPOST_SCRIPT_SOUTH",

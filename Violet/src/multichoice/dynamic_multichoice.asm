@@ -12,7 +12,4 @@ mov r0, r10
 bl dynamic_multichoice_get_choices
 ldr r1, =0x0809CB9A | 1
 bx r1
-
-
-
     

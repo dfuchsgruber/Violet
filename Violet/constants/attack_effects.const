@@ -1,7 +1,7 @@
 {
-	"type" : "enum",
-	"base" : 0,
-	"values" : [
+	"type": "enum",
+	"base": 0,
+	"values": [
 		"ATTACK_EFFECT_HIT",
 		"ATTACK_EFFECT_SLEEP",
 		"ATTACK_EFFECT_POISON_HIT",

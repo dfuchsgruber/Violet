@@ -8,9 +8,9 @@
 #ifndef INCLUDE_C_POKEPAD_POKEDEX_OPERATOR_H_
 #define INCLUDE_C_POKEPAD_POKEDEX_OPERATOR_H_
 
-#include "types.h"
-#include "pokemon/virtual.h"
 #include "pokemon/count.h"
+#include "pokemon/virtual.h"
+#include "types.h"
 
 #define POKEDEX_GET 0
 #define POKEDEX_SET 2
@@ -32,7 +32,7 @@ bool pokedex_operator(u16 val, u8 op, bool is_species_id);
  * @param seen Whether to access the seen area (or the caught area if false)
  * @return the byte containing the desired flag
  */
-u8* pokedex_flag_access(u16 flag, bool seen);
+u8 *pokedex_flag_access(u16 flag, bool seen);
 
 /**
  * Counts the number of seen (or caught) pokemon

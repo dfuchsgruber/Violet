@@ -1,5 +1,5 @@
-#include "types.h"
 #include "pokemon/count.h"
+#include "types.h"
 
 u32 pokemon_player_y[POKEMON_CNT] = {
     // POKEMON_POKEMON_0
@@ -885,8 +885,7 @@ u32 pokemon_player_y[POKEMON_CNT] = {
     // POKEMON_GROUDON
     0x887,
     // POKEMON_KECLEON_PURPLE
-    0x687
-};
+    0x687};
 
 u32 pokemon_enemy_y[POKEMON_CNT] = {
     // POKEMON_POKEMON_0
@@ -1772,8 +1771,7 @@ u32 pokemon_enemy_y[POKEMON_CNT] = {
     // POKEMON_GROUDON
     0x188,
     // POKEMON_KECLEON
-    0x367
-};
+    0x367};
 
 u8 pokemon_altitude[POKEMON_CNT] = {
     // POKEMON_POKEMON_0

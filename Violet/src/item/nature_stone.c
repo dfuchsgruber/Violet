@@ -1,17 +1,17 @@
-#include "types.h"
-#include "stdbool.h"
-#include "constants/items.h"
-#include "pokemon/virtual.h"
-#include "pokemon/basestat.h"
-#include "callbacks.h"
-#include "item/custom.h"
-#include "constants/pokemon_attributes.h"
-#include "language.h"
-#include "item/item.h"
-#include "text.h"
 #include "bg.h"
-#include "overworld/pokemon_party_menu.h"
+#include "callbacks.h"
+#include "constants/items.h"
+#include "constants/pokemon_attributes.h"
+#include "item/custom.h"
+#include "item/item.h"
+#include "language.h"
 #include "music.h"
+#include "overworld/pokemon_party_menu.h"
+#include "pokemon/basestat.h"
+#include "pokemon/virtual.h"
+#include "stdbool.h"
+#include "text.h"
+#include "types.h"
 
 extern u8 str_item_has_no_effect[];
 
@@ -19,7 +19,6 @@ void item_field_nature_stone(u8 self) {
     item_callback_after_pokemon_selected = item_nature_stone;
     item_select_target_pokemon(self);
 }
-
 
 u8 str_nature_stone_sucess[] = LANGDEP(
     PSTRING("BUFFER_1 hat jetzt\ndas Wesen BUFFER_2.PAUSE_UNTIL_PRESS"),
@@ -32,7 +31,6 @@ void item_nature_stone(u8 self, void (*item_field_usage_on_poke_callback_failure
     u8 current_nature = poke_pid.fields.nature;
     u32 current_positive = current_nature / 5;
     u32 current_negative = current_nature % 5;
-
 
     bool possible = false;
 
@@ -83,11 +81,11 @@ void item_nature_stone(u8 self, void (*item_field_usage_on_poke_callback_failure
     if (possible) {
         play_sound(258);
         //Now we compute the new nature
-        u32 new_nature = (u32) (new_positive * 5 + new_negative);
+        u32 new_nature = (u32)(new_positive * 5 + new_negative);
         poke_pid.fields.nature = new_nature & 0x1F;
         strcpy(buffer1, pokemon_nature_strings[new_nature]);
         pokemon_set_attribute(&player_pokemon[pokemon_party_menu_current_index],
-        		ATTRIBUTE_PID, &poke_pid);
+                              ATTRIBUTE_PID, &poke_pid);
         pokemon_calculate_stats(&player_pokemon[pokemon_party_menu_current_index]);
         //Todo remove item and return to bag
         item_remove(item_activated, 1);
@@ -106,8 +104,7 @@ void item_nature_stone(u8 self, void (*item_field_usage_on_poke_callback_failure
 
 static u8 str_item_null_syrup_used[] = LANGDEP(
     PSTRING("Die verteilten Fleiß-Punkte von\nBUFFER_1 wurden zurückgesetzt.PAUSE_UNTIL_PRESS"),
-    PSTRING("All distributed effort values of\nBUFFER_1 were reset.PAUSE_UNTIL_PRESS")
-);
+    PSTRING("All distributed effort values of\nBUFFER_1 were reset.PAUSE_UNTIL_PRESS"));
 
 static void item_null_syrup(u8 self, void (*item_field_usage_on_poke_callback_failure)(u8)) {
     pokemon *p = &player_pokemon[pokemon_party_menu_current_index];
@@ -133,7 +130,7 @@ static void item_null_syrup(u8 self, void (*item_field_usage_on_poke_callback_fa
         bg_virtual_sync_reqeust_push(2);
         big_callbacks[self].function = item_field_usage_on_poke_callback_failure;
     }
-} 
+}
 
 void item_field_null_syrup(u8 self) {
     item_callback_after_pokemon_selected = item_null_syrup;

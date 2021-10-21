@@ -1,7 +1,6 @@
 #ifndef H_CALLBACK
 #define H_CALLBACK
 
-
 void nullsub();
 
 typedef struct {
@@ -10,11 +9,10 @@ typedef struct {
     u8 u1;
     u8 u2;
     u8 u3;
-    u16 params [0x10];
+    u16 params[0x10];
 } big_callback;
 
 extern big_callback big_callbacks[];
-
 
 /**
  * Spawns a new big callback

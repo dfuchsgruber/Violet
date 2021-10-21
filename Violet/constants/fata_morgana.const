@@ -1,6 +1,6 @@
 {
-    "type" : "dict",
-    "values" : {
-        "NUM_FATA_MORGANA_BLOCKS" : 38
+    "type": "dict",
+    "values": {
+        "NUM_FATA_MORGANA_BLOCKS": 38
     }
 }

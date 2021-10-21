@@ -6,10 +6,10 @@
  */
 
 #ifndef TRANSPARENCY_H
-#define	TRANSPARENCY_H
+#define TRANSPARENCY_H
 
-#include "types.h"
 #include "color.h"
+#include "types.h"
 
 void transparency_handler(u8 *command);
 bool transparency_is_on();
@@ -20,5 +20,4 @@ bool transparency_load_black_pal();
 
 const color_t tbox_palette_transparent[16];
 
-#endif	/* TRANSPARENCY_H */
-
+#endif /* TRANSPARENCY_H */

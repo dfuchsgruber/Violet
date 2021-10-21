@@ -1,7 +1,7 @@
 {
-    "type" : "enum",
-    "base" : 0,
-    "values" : [
+    "type": "enum",
+    "base": 0,
+    "values": [
         "BERRY_POUCH_CONTEXT_FROM_OVERWORLD",
         "BERRY_POUCH_CONTEXT_FROM_PARTY_MENU_GIVE",
         "BERRY_POUCH_CONTEXT_FROM_MART_SELL",

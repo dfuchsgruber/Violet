@@ -1,13 +1,13 @@
-#include "types.h"
-#include "pokepad/pokedex/habitat.h"
+#include "constants/map_namespaces.h"
+#include "constants/map_types.h"
+#include "debug.h"
 #include "map/header.h"
 #include "map/wild_pokemon.h"
 #include "pokemon/roamer.h"
+#include "pokepad/pokedex/habitat.h"
 #include "save.h"
-#include "constants/map_namespaces.h"
+#include "types.h"
 #include "worldmap.h"
-#include "debug.h"
-#include "constants/map_types.h"
 
 void pokedex_habitats_add_position(int x, int y, pokedex_habitat_pair *dst, int *size, int probability, int habitat_type, int map_type) {
     for (int i = 0; i < *size; i++) {
@@ -25,14 +25,13 @@ void pokedex_habitats_add_position(int x, int y, pokedex_habitat_pair *dst, int 
     (*size)++;
 }
 
-
 void pokedex_habitats_add(u8 bank, u8 map_idx, pokedex_habitat_pair *dst, int *size, int probability, int habitat_type, int map_type) {
     dprintf("Size of habitats %d\n", *size);
     dprintf("Found species at %d.%d with m_type %d, h_type %d and probability of %d percent.\n", bank, map_idx, map_type, habitat_type, probability);
     for (int i = 0; i < worldmap_positions[bank][map_idx].width; i++) {
         for (int j = 0; j < worldmap_positions[bank][map_idx].height; j++) {
             pokedex_habitats_add_position(worldmap_positions[bank][map_idx].x + i,
-                worldmap_positions[bank][map_idx].y + j, dst, size, probability, habitat_type, map_type);
+                                          worldmap_positions[bank][map_idx].y + j, dst, size, probability, habitat_type, map_type);
         }
     }
 }
@@ -62,7 +61,8 @@ int pokedex_get_habitats_of_species(pokedex_habitat_pair *dst, u16 species) {
                     probability += wild_pokemon_grass_pdf[j];
                 }
             }
-            if (probability > 0) pokedex_habitats_add(wild_pokemon[i].bank, wild_pokemon[i].map, dst, &cnt, probability, HABITAT_TYPE_GRASS, map_type);
+            if (probability > 0)
+                pokedex_habitats_add(wild_pokemon[i].bank, wild_pokemon[i].map, dst, &cnt, probability, HABITAT_TYPE_GRASS, map_type);
         }
         if (wild_pokemon[i].water) {
             int probability = 0;
@@ -71,7 +71,8 @@ int pokedex_get_habitats_of_species(pokedex_habitat_pair *dst, u16 species) {
                     probability += wild_pokemon_water_pdf[j];
                 }
             }
-            if (probability > 0) pokedex_habitats_add(wild_pokemon[i].bank, wild_pokemon[i].map, dst, &cnt, probability, HABITAT_TYPE_WASSER, map_type);
+            if (probability > 0)
+                pokedex_habitats_add(wild_pokemon[i].bank, wild_pokemon[i].map, dst, &cnt, probability, HABITAT_TYPE_WASSER, map_type);
         }
         if (wild_pokemon[i].other) {
             int probability = 0;
@@ -80,7 +81,8 @@ int pokedex_get_habitats_of_species(pokedex_habitat_pair *dst, u16 species) {
                     probability += wild_pokemon_other_pdf[j];
                 }
             }
-            if (probability > 0) pokedex_habitats_add(wild_pokemon[i].bank, wild_pokemon[i].map, dst, &cnt, probability, HABITAT_TYPE_RADAR, map_type);
+            if (probability > 0)
+                pokedex_habitats_add(wild_pokemon[i].bank, wild_pokemon[i].map, dst, &cnt, probability, HABITAT_TYPE_RADAR, map_type);
         }
         if (wild_pokemon[i].rod) {
             int probability = 0;
@@ -89,21 +91,24 @@ int pokedex_get_habitats_of_species(pokedex_habitat_pair *dst, u16 species) {
                     probability += wild_pokemon_rod_pdf[j];
                 }
             }
-            if (probability > 0) pokedex_habitats_add(wild_pokemon[i].bank, wild_pokemon[i].map, dst, &cnt, probability, HABITAT_TYPE_ROD, map_type);
+            if (probability > 0)
+                pokedex_habitats_add(wild_pokemon[i].bank, wild_pokemon[i].map, dst, &cnt, probability, HABITAT_TYPE_ROD, map_type);
             probability = 0;
             for (int j = 0; j < 3; j++) {
                 if (wild_pokemon[i].rod->data[2 + j].species == species) {
                     probability += wild_pokemon_good_rod_pdf[j];
                 }
             }
-            if (probability > 0) pokedex_habitats_add(wild_pokemon[i].bank, wild_pokemon[i].map, dst, &cnt, probability, HABITAT_TYPE_GOOD_ROD, map_type);
+            if (probability > 0)
+                pokedex_habitats_add(wild_pokemon[i].bank, wild_pokemon[i].map, dst, &cnt, probability, HABITAT_TYPE_GOOD_ROD, map_type);
             probability = 0;
             for (int j = 0; j < 5; j++) {
                 if (wild_pokemon[i].rod->data[2 + 3 + j].species == species) {
                     probability += wild_pokemon_super_rod_pdf[j];
                 }
             }
-            if (probability > 0) pokedex_habitats_add(wild_pokemon[i].bank, wild_pokemon[i].map, dst, &cnt, probability, HABITAT_TYPE_GOOD_ROD, map_type);
+            if (probability > 0)
+                pokedex_habitats_add(wild_pokemon[i].bank, wild_pokemon[i].map, dst, &cnt, probability, HABITAT_TYPE_GOOD_ROD, map_type);
         }
     }
     int roamer_idx = species_to_roamer_idx(species);
@@ -117,4 +122,3 @@ int pokedex_get_habitats_of_species(pokedex_habitat_pair *dst, u16 species) {
     dprintf("Number of habitats is %d @%x\n", cnt, dst);
     return cnt;
 }
-

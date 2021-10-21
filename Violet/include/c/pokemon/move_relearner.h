@@ -1,9 +1,9 @@
 #ifndef H_POKEMON_MOVE_RELEARNER
 #define H_POKEMON_MOVE_RELEARNER
 
-#include "types.h"
 #include "list_menu.h"
 #include "pokemon/virtual.h"
+#include "types.h"
 
 typedef struct {
     u8 state;
@@ -40,7 +40,7 @@ extern move_relearner_state_t *move_relearner_state;
  * @param p the pokemon to get relearnable moves of
  * @param moves where to put the moves
  * @return how many moves are relearnable and where put
- **/
+ */
 u8 move_relearner_get_moves(pokemon *p, u16 *moves);
 
 /**
@@ -51,7 +51,7 @@ u8 move_relearner_get_moves(pokemon *p, u16 *moves);
  * @param y y coordinate within box
  * @param speed text speed for the printer
  * @param color_idx which color to use
- **/
+ */
 void move_relearner_print_string(u8 tbox_idx, const u8 *str, u8 x, u8 y, int speed, int color_idx);
 
 list_menu_template move_relearner_list_menu_template; // static ROM structure

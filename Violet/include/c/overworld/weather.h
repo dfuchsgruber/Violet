@@ -1,10 +1,10 @@
 #ifndef H_OVERWORLD_WEATHER
 #define H_OVERWORLD_WEATHER
 
-#include "types.h"
 #include "color.h"
-#include "oam.h"
 #include "constants/map_weathers.h"
+#include "oam.h"
+#include "types.h"
 
 #define OVERWORLD_WEATHER_PAL_PROCESSING_STATE_CHANGING_WEATHER 0
 #define OVERWORLD_WEATHER_PAL_PROCESSING_STATE_FADING_IN 1
@@ -13,13 +13,13 @@
 
 #define OVERWORLD_WEATHER_STATIC_FOG_PALETTE_BLENDING_ALPHA 12
 
-#define MAX_RAIN_SPRITES             24
-#define NUM_CLOUD_SPRITES            3
-#define NUM_FOG_HORIZONTAL_SPRITES   20
-#define NUM_ASH_SPRITES              20
-#define NUM_FOG_DIAGONAL_SPRITES     20
-#define NUM_SANDSTORM_SPRITES        20
-#define NUM_SWIRL_SANDSTORM_SPRITES  5
+#define MAX_RAIN_SPRITES 24
+#define NUM_CLOUD_SPRITES 3
+#define NUM_FOG_HORIZONTAL_SPRITES 20
+#define NUM_ASH_SPRITES 20
+#define NUM_FOG_DIAGONAL_SPRITES 20
+#define NUM_SANDSTORM_SPRITES 20
+#define NUM_SWIRL_SANDSTORM_SPRITES 5
 
 #define DROUGHT_COLOR_INDEX(color) ((((color) >> 1) & 0xF) | (((color) >> 2) & 0xF0) | (((color) >> 3) & 0xF00))
 
@@ -27,15 +27,14 @@ color_t drought_colors[6][0x1000];
 
 // Ugly macro to create wrappers that initialize the weather filters
 
-#define WEATHER_FUNCTION_WITH_BLEND(weather_func)        \
-    void weather_func##_with_blend() { \
-        weather_set_filter(save1->map_weather); \
-        weather_func(); \
+#define WEATHER_FUNCTION_WITH_BLEND(weather_func) \
+    void weather_func##_with_blend() {            \
+        weather_set_filter(save1->map_weather);   \
+        weather_func();                           \
     }
 
 typedef struct {
-    union
-    {
+    union {
         struct
         {
             struct oam_object *rainSprites[MAX_RAIN_SPRITES];
@@ -111,7 +110,7 @@ typedef struct {
     s16 unknown_73E;
     s16 unknown_740;
     s16 unknown_742;
-    u8 filler_744[0xD-4];
+    u8 filler_744[0xD - 4];
     s8 load_drought_pals_index;
     u8 load_drought_pals_offset;
 } overworld_weather_stru;
@@ -121,44 +120,44 @@ extern overworld_weather_stru overworld_weather;
 /**
  * Adds a palette idx that is affected by fog, i.e. it is blended with an average color of the fog oams.
  * @param pal_idx the palette idx to add
- **/ 
+ */
 void overworld_weather_static_fog_add_affected_pal_idx(u8 pal_idx);
 
 /**
  * Checks if a palette is affected by fog, i.e. it is supposed to be blended with an average color of the fog oams.
  * @param pal_idx the palette idx to check
  * @return if the palette is affected by fog
- **/
+ */
 bool overworld_weather_static_fog_is_pal_affected(u8 pal_idx);
 
 /**
  * Gets the average color of fog oams to blend over other oam palettes (since the fx of the GBA can not blend oams over oams).
  * @return the average color of fog oams, considering filters due to dns
- **/
+ */
 color_t overworld_weather_static_fog_get_overlay_color();
 
 /**
  * Checks if any overworld fading effect is active (e.g. weather)
  * @return if no overworld effect is active
- **/
+ */
 bool overworld_fading_effect_finished();
 
 /**
  * (Probably) a callback that handles overworld weather...
  * @param self self-reference
- **/
+ */
 void overworld_weather_callback(u8 self);
 
 /**
  * Callback for palette processing while the screen is fading in.
  * Sets-up gamma values and applies the correct gamma shift
- **/
+ */
 void overworld_weather_fade_in();
 
 /**
  * Sets the map filters according to a weather
  * @param weather The weather according to which to set filters
- **/
+ */
 void weather_set_filter(u8 weather);
 
 typedef struct {

@@ -5,5 +5,3 @@ services:
     build:
       context: .
       dockerfile: .docker/buildbot.Dockerfile
-    volumes:
-      - .:/usr/local/violet

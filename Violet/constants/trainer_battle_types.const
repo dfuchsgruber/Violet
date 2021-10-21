@@ -1,7 +1,7 @@
 {
-    "type" : "enum",
-    "base" : 0,
-    "values" : [
+    "type": "enum",
+    "base": 0,
+    "values": [
         "TRAINER_BATTLE_SINGLE",
         "TRAINER_BATTLE_CONTINUE_SCRIPT_NO_MUSIC",
         "TRAINER_BATTLE_CONTINUE_SCRIPT",

@@ -1,8 +1,8 @@
-#include "types.h"
+#include "oam.h"
 #include "overworld/effect.h"
 #include "overworld/sprite.h"
-#include "oam.h"
 #include "save.h"
+#include "types.h"
 
 extern const u8 gfx_tileset_route_3_millTiles[];
 extern const u8 gfx_tileset_route_3_millPal[];
@@ -10,15 +10,18 @@ extern const u8 gfx_tileset_route_3_millPal[];
 #define ROUTE_3_MILL_TAG 0x888
 #define ROUTE_3_BANK 15
 #define ROUTE_3_MAP 0
-#define ROUTE_3_X 0x2D + 7 
-#define ROUTE_3_Y 0x7 + 7 
+#define ROUTE_3_X 0x2D + 7
+#define ROUTE_3_Y 0x7 + 7
 
 static graphic route_3_mill_graphic = {
-    .sprite = gfx_tileset_route_3_millTiles, .tag = ROUTE_3_MILL_TAG, .size = GRAPHIC_SIZE_4BPP(64, 64),
+    .sprite = gfx_tileset_route_3_millTiles,
+    .tag = ROUTE_3_MILL_TAG,
+    .size = GRAPHIC_SIZE_4BPP(64, 64),
 };
 
 static rotscale_frame route_3_mill_rotscale_animation[] = {
-    {.affine = {.rotation = 1, .duration = 0xff}}, {.command = {.command = ROTSCALE_ANIM_JUMP, .parameter = 0}}, 
+    {.affine = {.rotation = 1, .duration = 0xff}},
+    {.command = {.command = ROTSCALE_ANIM_JUMP, .parameter = 0}},
 };
 
 static rotscale_frame *route_3_mill_rotscale_animations[] = {route_3_mill_rotscale_animation};
@@ -34,7 +37,7 @@ static void oam_callback_route_3_mill(oam_object *self) {
         oam_free(self);
         return;
     }
-    // Since the sprite is centered, use half the circle 
+    // Since the sprite is centered, use half the circle
     if (overworld_effect_is_oam_outside_camera_view(ROUTE_3_X, ROUTE_3_Y, 91 / 2, 91 / 2)) {
         self->flags |= OAM_FLAG_INVISIBLE;
     } else {
@@ -47,7 +50,8 @@ static void oam_callback_route_3_mill(oam_object *self) {
 }
 
 static oam_template route_3_mill_oam_template = {
-    .tiles_tag = ROUTE_3_MILL_TAG, .pal_tag = ROUTE_3_MILL_TAG,
+    .tiles_tag = ROUTE_3_MILL_TAG,
+    .pal_tag = ROUTE_3_MILL_TAG,
     .oam = &route_3_mill_final_oam,
     .animation = oam_gfx_anim_table_null,
     .rotscale = route_3_mill_rotscale_animations,

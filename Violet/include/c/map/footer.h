@@ -27,7 +27,6 @@ typedef struct mapfooter {
     u16 padding;
 } map_footer_t;
 
-
 extern map_footer_t *mapfooters[];
 
 map_footer_t *get_mapfooter();
@@ -40,7 +39,7 @@ void tile_init(map_footer_t *foot);
  * @param offset at which offset to put the block
  * @param x the x coordiante in the map
  * @param y the y coordinate in the map
- **/
+ */
 void map_draw_block_at_position(map_footer_t *f, u16 offset, s16 x, s16 y);
 
 u16 *overworld_bg1_tilemap;

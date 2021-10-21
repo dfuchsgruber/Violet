@@ -1,41 +1,45 @@
 
-#include "types.h"
-#include "battle/state.h"
-#include "battle/battler.h"
-#include "pokemon/basestat.h"
-#include "battle/attack.h"
-#include "math.h"
-#include "attack.h"
-#include "constants/abilities.h"
-#include "constants/pokemon_types.h"
-#include "prng.h"
-#include "debug.h"
-#include "battle/controller.h"
-#include "trainer/virtual.h"
-#include "trainer/trainer.h"
-#include "save.h"
-#include "oam.h"
-#include "pokemon/sprites.h"
-#include "music.h"
-#include "battle/ai.h"
 #include "abilities.h"
-#include "constants/attacks.h"
-#include "constants/attack_categories.h"
-#include "trainer/trainer.h"
+#include "attack.h"
+#include "battle/ai.h"
+#include "battle/attack.h"
+#include "battle/battler.h"
+#include "battle/controller.h"
 #include "battle/ressources.h"
+#include "battle/state.h"
+#include "constants/abilities.h"
+#include "constants/attack_categories.h"
+#include "constants/attacks.h"
+#include "constants/pokemon_types.h"
+#include "debug.h"
+#include "math.h"
+#include "music.h"
+#include "oam.h"
+#include "pokemon/basestat.h"
+#include "pokemon/sprites.h"
+#include "prng.h"
+#include "save.h"
+#include "trainer/trainer.h"
+#include "trainer/virtual.h"
+#include "types.h"
 
 #define AI_DEBUG_SWITCHING_ON true
-#define AI_DEBUG_SWITCHING(str, ...) ({if (AI_DEBUG_SWITCHING_ON) dprintf(str, __VA_ARGS__);})
+#define AI_DEBUG_SWITCHING(str, ...) ({if (AI_DEBUG_SWITCHING_ON) dprintf(str, __VA_ARGS__); })
 
-void battle_ai_attack_apply_effectiveness_multiplier_with_abilities(u8 attack_type, u8 defender_ability, u8 defender_type1, u8 defender_type2, 
-    u8 *multiplier) {
+void battle_ai_attack_apply_effectiveness_multiplier_with_abilities(u8 attack_type, u8 defender_ability, u8 defender_type1, u8 defender_type2,
+                                                                    u8 *multiplier) {
     u8 old_multiplier = *multiplier;
     attack_apply_effectiveness_multiplier(attack_type, defender_type1, defender_type2, multiplier);
-    if (attack_type == TYPE_BODEN && defender_ability == SCHWEBE) *multiplier = 0;
-    if (defender_ability == WUNDERWACHE && *multiplier <= old_multiplier) *multiplier = 0;
-    if (defender_ability == FEUERFAENGER && attack_type == TYPE_FEUER) *multiplier = 0;
-    if (defender_ability == BLITZFAENGER && attack_type == TYPE_ELEKTRO) *multiplier = 0;
-    if (defender_ability == H2O_ABSORBER && attack_type == TYPE_WASSER) *multiplier = 0;
+    if (attack_type == TYPE_BODEN && defender_ability == SCHWEBE)
+        *multiplier = 0;
+    if (defender_ability == WUNDERWACHE && *multiplier <= old_multiplier)
+        *multiplier = 0;
+    if (defender_ability == FEUERFAENGER && attack_type == TYPE_FEUER)
+        *multiplier = 0;
+    if (defender_ability == BLITZFAENGER && attack_type == TYPE_ELEKTRO)
+        *multiplier = 0;
+    if (defender_ability == H2O_ABSORBER && attack_type == TYPE_WASSER)
+        *multiplier = 0;
 }
 
 bool battle_ai_battler_can_switch_out(u8 idx) {
@@ -45,7 +49,7 @@ bool battle_ai_battler_can_switch_out(u8 idx) {
     bool escape_prevented_or_wrapped = battlers[idx].status2 & (STATUS2_ESCAPE_PREVENTATION | STATUS2_WRAPPED);
     bool magnet_trap = ABILITY_ON_TARGET_SIDE(idx, MAGNETFALLE) && (battlers[idx].type1 == TYPE_STAHL || battlers[idx].type2 == TYPE_STAHL);
     AI_DEBUG_SWITCHING("Can switch out?\nShadow Tag %d, Arena Trap %d, rooted %d, escape_prevented %d, magnet_trap %d\n",
-        shadow_tag, arena_trap, rooted, escape_prevented_or_wrapped, magnet_trap);
+                       shadow_tag, arena_trap, rooted, escape_prevented_or_wrapped, magnet_trap);
     return !(shadow_tag || arena_trap || rooted || escape_prevented_or_wrapped || magnet_trap);
 }
 
@@ -54,8 +58,8 @@ bool battler_ai_battler_can_hit_target(u8 battler_idx, u8 target) {
     for (int i = 0; i < 4; i++) { // Check if the user has any move that can do damage
         if (!(move_limitations & int_bitmasks[i])) {
             u8 multiplier = 8;
-            battle_ai_attack_apply_effectiveness_multiplier_with_abilities(attacks[battlers[battler_idx].moves[i]].type, 
-                battlers[target].ability, battlers[target].type1, battlers[target].type2, &multiplier);
+            battle_ai_attack_apply_effectiveness_multiplier_with_abilities(attacks[battlers[battler_idx].moves[i]].type,
+                                                                           battlers[target].ability, battlers[target].type1, battlers[target].type2, &multiplier);
             if (multiplier > 0) {
                 AI_DEBUG_SWITCHING("Battler %d can hit %d with move idx %d (%d)\n", battler_idx, target, i, battlers[battler_idx].moves[i]);
                 return true; // The current battler can hit the target
@@ -76,21 +80,22 @@ u8 battle_ai_should_switch_if_wonderguard(int *score) {
         u8 target = targets[j];
         if (battlers[target].ability == WUNDERWACHE) {
             wonderguard_present[j] = target;
-            if (battler_ai_battler_can_hit_target(active_battler, target)) return 6;
+            if (battler_ai_battler_can_hit_target(active_battler, target))
+                return 6;
         }
     }
     // If there's any wonderguard battler on the opposing side, active_battler can't hit it, check if a party member can
-    for(int j = 0; j < 2; j++) { 
+    for (int j = 0; j < 2; j++) {
         if (wonderguard_present[j] != 4) {
             u8 target = wonderguard_present[j];
             for (u8 i = first; i < last; i++) {
                 if (AI_CAN_SWITCH_INTO(i, party, active_battler, partner)) {
                     for (int l = 0; l < 4; l++) {
-                        u16 attack = (u16) pokemon_get_attribute(party + i, (u8)(ATTRIBUTE_ATTACK1 + l), 0);
+                        u16 attack = (u16)pokemon_get_attribute(party + i, (u8)(ATTRIBUTE_ATTACK1 + l), 0);
                         if (attack != 0 && pokemon_get_attribute(party + i, (u8)(ATTRIBUTE_PP1 + l), 0) > 0) {
                             u8 multiplier = 8;
                             battle_ai_attack_apply_effectiveness_multiplier_with_abilities(attacks[attack].type, battlers[target].ability,
-                                battlers[target].type1, battlers[target].type2, &multiplier);
+                                                                                           battlers[target].type1, battlers[target].type2, &multiplier);
                             if (multiplier > 0) {
                                 *score += 32; // Switch is urgent
                                 AI_DEBUG_SWITCHING("Party member %d of battler %d can hit wonderguard foe %d with attack %d (%d)\n", i, active_battler, target, l, attack);
@@ -122,7 +127,8 @@ void battle_ai_should_switch_if_natural_cure(int *score) {
             *score += 3;
         else if (battlers[active_battler].status1 & (STATUS1_POISONED | STATUS1_PARALYZED | STATUS1_BURNED))
             *score += 2;
-        else return;
+        else
+            return;
         // If the battler likes to attack physically, burning is also a more severy condition
         if (battlers[active_battler].status1 & STATUS1_BURNED) {
             for (int i = 0; i < 4; i++) {
@@ -152,16 +158,17 @@ u8 battle_ai_should_switch_into_pokemon_to_absorb_move(int *score) {
     battler_get_partner_and_foes(active_battler, &partner, &foe, &foe_partner);
     pokemon *party = battler_load_party_range(active_battler, &first, &last);
     if (battler_last_landed_move[active_battler] == 0 || battler_last_landed_move[active_battler] == 0xFFFF ||
-        attacks[battler_last_landed_move[active_battler]].base_power == 0) return 6;
+        attacks[battler_last_landed_move[active_battler]].base_power == 0)
+        return 6;
     u8 best_target = 6;
     int best_score = 0;
     for (u8 i = first; i < last; i++) {
         if (AI_CAN_SWITCH_INTO(i, party, active_battler, partner)) {
             // Check if the pokemon can absorb the move
             u8 multiplier = 4;
-            u16 species = (u16) pokemon_get_attribute(party + i, ATTRIBUTE_SPECIES, 0);
-            battle_ai_attack_apply_effectiveness_multiplier_with_abilities(attacks[battler_last_landed_move[active_battler]].type, 
-                pokemon_get_ability(party + i), basestats[species].type1, basestats[species].type2, &multiplier);
+            u16 species = (u16)pokemon_get_attribute(party + i, ATTRIBUTE_SPECIES, 0);
+            battle_ai_attack_apply_effectiveness_multiplier_with_abilities(attacks[battler_last_landed_move[active_battler]].type,
+                                                                           pokemon_get_ability(party + i), basestats[species].type1, basestats[species].type2, &multiplier);
             if (multiplier == 0) {
                 if (best_score < 12) {
                     best_score = 12;
@@ -197,7 +204,7 @@ void battle_ai_should_switch_stat_changes(int *score) {
 int battle_ai_score_resists_foes(pokemon *p, u8 foe, u8 foe_partner) {
     if (POKEMON_IS_VIABLE(p)) {
         u8 multiplier;
-        u16 species = (u16) pokemon_get_attribute(p, ATTRIBUTE_SPECIES, 0);
+        u16 species = (u16)pokemon_get_attribute(p, ATTRIBUTE_SPECIES, 0);
         u8 ability = pokemon_get_ability(p);
         u8 type1 = basestats[species].type1;
         u8 type2 = basestats[species].type2;
@@ -237,14 +244,14 @@ int battle_ai_score_attacks_foes(pokemon *p, u8 foe, u8 foe_partner) {
             int attack = pokemon_get_attribute(p, (u8)(ATTRIBUTE_ATTACK1 + i), 0);
             if (attack != 0 && pokemon_get_attribute(p, (u8)(ATTRIBUTE_PP1 + i), 0) > 0 && attacks[attack].base_power) {
                 if (!(battlers_absent & int_bitmasks[foe])) {
-                    battle_ai_attack_apply_effectiveness_multiplier_with_abilities(attacks[attack].type, battlers[foe].type1, battlers[foe].type2, 
-                        battlers[foe].ability, &multiplier1);
+                    battle_ai_attack_apply_effectiveness_multiplier_with_abilities(attacks[attack].type, battlers[foe].type1, battlers[foe].type2,
+                                                                                   battlers[foe].ability, &multiplier1);
                 }
                 if (!(battlers_absent & int_bitmasks[foe_partner]) && foe_partner != foe) {
-                    battle_ai_attack_apply_effectiveness_multiplier_with_abilities(attacks[attack].type, battlers[foe_partner].type1, 
-                        battlers[foe_partner].type2, battlers[foe_partner].ability, &multiplier2);
+                    battle_ai_attack_apply_effectiveness_multiplier_with_abilities(attacks[attack].type, battlers[foe_partner].type1,
+                                                                                   battlers[foe_partner].type2, battlers[foe_partner].ability, &multiplier2);
                 }
-                int score_foe = msb_index(multiplier1) - 2; // Score in [-3, 2]
+                int score_foe = msb_index(multiplier1) - 2;         // Score in [-3, 2]
                 int score_foe_partner = msb_index(multiplier2) - 2; // Score in [-3, 2]
                 // AI_DEBUG_SWITCHING("Move %d has a score: %d on foe; %d on foe partner\n", i, score_foe, score_foe_partner);
                 best_score_foe = MAX(best_score_foe, score_foe);
@@ -254,8 +261,10 @@ int battle_ai_score_attacks_foes(pokemon *p, u8 foe, u8 foe_partner) {
         // AI_DEBUG_SWITCHING("Offensive Score for %x with foes %d, %d: %d\n", p, foe, foe_partner, 4 * (best_score_foe + best_score_foe_partner));
         // AI_DEBUG_SWITCHING("Best Score on foe %d, Best Score on foe's partner %d, total %d\n", best_score_foe, best_score_foe_partner,4 * (best_score_foe + best_score_foe_partner));
         int weight = 0;
-        if (!(battlers_absent & int_bitmasks[foe])) weight++;
-        if (!(battlers_absent & int_bitmasks[foe_partner]) && foe_partner != foe) weight++;
+        if (!(battlers_absent & int_bitmasks[foe]))
+            weight++;
+        if (!(battlers_absent & int_bitmasks[foe_partner]) && foe_partner != foe)
+            weight++;
         return 4 * (best_score_foe + best_score_foe_partner) / weight; // Score in range [-9, 8]
     }
     return 0;
@@ -324,12 +333,12 @@ u8 battle_ai_get_pokemon_to_switch_into() {
             num_viable_targets++;
         }
     }
-    if (num_viable_targets == 0) return 6;
+    if (num_viable_targets == 0)
+        return 6;
     u8 target = targets[softmax_choice(scores, num_viable_targets, -48, 48, NULL)];
     AI_DEBUG_SWITCHING("Ai chose party idx %d from battler %d, partner %d as most suitable mon to switch into.\n", target, active_battler, partner);
     return target;
 }
-
 
 void battle_ai_should_switch_consider_battler_viablility(int *score, u8 target) {
     u8 first = 0, last = 0, partner = 0, foe = 0, foe_partner = 0;
@@ -346,7 +355,6 @@ void battle_ai_should_switch_consider_battler_viablility(int *score, u8 target) 
     int viablility_target = battle_ai_switch_weight_scores(party + target, offensive_score_target, defensive_score_target);
     AI_DEBUG_SWITCHING("Party target %d (@0x%x) has a viability of %d against foes (off %d, def %d).\n", target, party + target, viablility_target, offensive_score_target, defensive_score_target);
 
-
     // Compare the viablities of the current battler and the switching target
     // Switching in general is disfavored: Only if the target's viablity is at least 3 higher than the current mon's viablility
     // the swichting score will be >= 0. Also the target's viability needs to be positive (the current battler's viability is overestimated
@@ -356,10 +364,10 @@ void battle_ai_should_switch_consider_battler_viablility(int *score, u8 target) 
 }
 
 static int battle_ai_threat_score_by_level_difference(int level_difference) {
-    if (level_difference < 0) { // Higher leveled than foes -> no threat
+    if (level_difference < 0) {                     // Higher leveled than foes -> no threat
         return -(1 << (-level_difference / 5)) + 1; // For every 5 levels the foes are a factor 2 less threatining (if that makes sense...)
-    } else { // The foes are higher leveled -> threat
-        return (1 << (level_difference / 5)) - 1; // For every 5 levels the foes are a factor 2 more threatening
+    } else {                                        // The foes are higher leveled -> threat
+        return (1 << (level_difference / 5)) - 1;   // For every 5 levels the foes are a factor 2 more threatening
     }
 }
 
@@ -385,16 +393,17 @@ void battle_ai_should_switch_consider_foe_as_threat(int *score, u8 target) {
     if (threat_level_active <= 0) { // We don't generally want to switch if the foes are no threat level-wise
         *score += threat_level_active;
         return;
-    } else { // The foes might be threatening to the active battler, maybe they are less threatening to the target
+    } else {                                                 // The foes might be threatening to the active battler, maybe they are less threatening to the target
         *score += threat_level_active - threat_level_target; // If the target has a lesser threat level towards
     }
-
 }
 
 u8 battle_ai_should_switch(int *score) {
-    if (!(battle_flags & BATTLE_TRAINER)) return 6;
+    if (!(battle_flags & BATTLE_TRAINER))
+        return 6;
     // Check if we need to switch into a pokemon that can deal with wonderguard
-    if (!battle_ai_battler_can_switch_out(active_battler)) return 6;
+    if (!battle_ai_battler_can_switch_out(active_battler))
+        return 6;
     AI_DEBUG_SWITCHING("Battler %d eligible to switching\n", active_battler);
     *score = 0;
     u8 target = battle_ai_should_switch_if_wonderguard(score);
@@ -421,5 +430,5 @@ u8 battle_ai_should_switch(int *score) {
     AI_DEBUG_SWITCHING("Trainer specific switching bias is %d\n", (battle_ressources->ai->ai_flags >> 10) & 3);
     *score = MIN(16, MAX(-16, *score));
     AI_DEBUG_SWITCHING("Switching has a score of %d\n", *score);
-    return target; 
+    return target;
 }

@@ -1,16 +1,15 @@
-#include "types.h"
-#include "oam.h"
-#include "mega.h"
 #include "battle/attack.h"
+#include "battle/battler.h"
 #include "battle/state.h"
-#include "save.h"
-#include "mega.h"
+#include "callbacks.h"
 #include "constants/species.h"
 #include "debug.h"
-#include "battle/battler.h"
-#include "callbacks.h"
+#include "mega.h"
+#include "oam.h"
 #include "pokemon/names.h"
+#include "save.h"
 #include "text.h"
+#include "types.h"
 
 extern const u8 gfx_mega_sparkleTiles[];
 extern const u8 gfx_regent_groudon_sparkleTiles[];
@@ -24,51 +23,69 @@ extern const u8 gfx_mega_rayPal[];
 #define REGENT_TAG 43211
 
 static graphic graphic_mega_sparkle = {
-    .sprite = gfx_mega_sparkleTiles, .tag = MEGA_TAG, .size = 32 * 32 / 2,
+    .sprite = gfx_mega_sparkleTiles,
+    .tag = MEGA_TAG,
+    .size = 32 * 32 / 2,
 };
 static graphic graphic_regent_groudon_sparkle = {
-    .sprite = gfx_regent_groudon_sparkleTiles, .tag = REGENT_TAG, .size = 32 * 32 / 2,
+    .sprite = gfx_regent_groudon_sparkleTiles,
+    .tag = REGENT_TAG,
+    .size = 32 * 32 / 2,
 };
 static graphic graphic_regent_kyogre_sparkle = {
-    .sprite = gfx_regent_kyogre_sparkleTiles, .tag = REGENT_TAG, .size = 32 * 32 / 2,
+    .sprite = gfx_regent_kyogre_sparkleTiles,
+    .tag = REGENT_TAG,
+    .size = 32 * 32 / 2,
 };
 static graphic graphic_regent_rayquaza_sparkle = {
-    .sprite = gfx_regent_rayquaza_sparkleTiles, .tag = REGENT_TAG, .size = 32 * 32 / 2,
+    .sprite = gfx_regent_rayquaza_sparkleTiles,
+    .tag = REGENT_TAG,
+    .size = 32 * 32 / 2,
 };
 static palette palette_mega_sparkle = {
-    .pal = gfx_mega_sparklePal, .tag = MEGA_TAG,
+    .pal = gfx_mega_sparklePal,
+    .tag = MEGA_TAG,
 };
 static palette palette_regent_sparkle = {
-    .pal = gfx_regent_kyogre_sparklePal, .tag = REGENT_TAG,
+    .pal = gfx_regent_kyogre_sparklePal,
+    .tag = REGENT_TAG,
 };
 
-
 static sprite sparkle_sprite = {
-    .attr0 = ATTR0_SHAPE_SQUARE | ATTR0_MODE_SEMI_TRANSPARENT, .attr1 = ATTR1_SIZE_32_32, 
+    .attr0 = ATTR0_SHAPE_SQUARE | ATTR0_MODE_SEMI_TRANSPARENT,
+    .attr1 = ATTR1_SIZE_32_32,
     .attr2 = ATTR2_PRIO(2),
 };
 
 oam_template battle_animation_mega_sparkle_template = {
-    .tiles_tag = MEGA_TAG, .pal_tag = MEGA_TAG, .oam = &sparkle_sprite,
-    .animation = oam_gfx_anim_table_null, .graphics = NULL, .rotscale = oam_rotscale_anim_table_null,
+    .tiles_tag = MEGA_TAG,
+    .pal_tag = MEGA_TAG,
+    .oam = &sparkle_sprite,
+    .animation = oam_gfx_anim_table_null,
+    .graphics = NULL,
+    .rotscale = oam_rotscale_anim_table_null,
     .callback = battle_animation_oam_particle_emission_above_battler_callback,
 };
 
 oam_template battle_animation_regent_sparkle_template = {
-    .tiles_tag = REGENT_TAG, .pal_tag = REGENT_TAG, .oam = &sparkle_sprite,
-    .animation = oam_gfx_anim_table_null, .graphics = NULL, .rotscale = oam_rotscale_anim_table_null,
+    .tiles_tag = REGENT_TAG,
+    .pal_tag = REGENT_TAG,
+    .oam = &sparkle_sprite,
+    .animation = oam_gfx_anim_table_null,
+    .graphics = NULL,
+    .rotscale = oam_rotscale_anim_table_null,
     .callback = battle_animation_oam_particle_emission_above_battler_callback,
 };
 
 void battle_animation_mega_callback_load_gfx(u8 self) {
     u8 battler_idx = battler_attacking_order[MEGA_STATE.mega_action_current_slot];
     mega_evolution_t *mega_evolution = mega_evolution_get_by_mega_species(battlers[battler_idx].species);
-    graphic *g = NULL; palette *p = NULL;
-    if (mega_evolution->type == MEGA_EVOLUTION){
+    graphic *g = NULL;
+    palette *p = NULL;
+    if (mega_evolution->type == MEGA_EVOLUTION) {
         g = &graphic_mega_sparkle;
         p = &palette_mega_sparkle;
-    } 
-    else {
+    } else {
         p = &palette_regent_sparkle;
         switch (mega_evolution->species) {
             case POKEMON_GROUDON:
@@ -116,7 +133,6 @@ void battle_animation_mega_modify_particle_pals(u8 self) {
 
 void battle_animation_alpha_blending_callback(u8 self);
 
-
 static void battle_animation_update_battler_callback_step(u8 self) {
     u16 *state = big_callbacks[self].params + 10;
     u8 battler_idx = (u8)(big_callbacks[self].params[12]);
@@ -159,13 +175,21 @@ static void battle_animation_update_battler_callback_step(u8 self) {
     }
 }
 
-void battle_animation_update_battler_callback (u8 self) {
+void battle_animation_update_battler_callback(u8 self) {
     u8 battler_idx = 0xFF;
     switch (battle_animation_arguments[0]) {
-        case 0: battler_idx = battle_animation_user; break;
-        case 1: battler_idx = battle_animation_target; break;
-        case 2: battler_idx = PARTNER(battle_animation_user); break;
-        case 3: battler_idx = PARTNER(battle_animation_target); break;
+        case 0:
+            battler_idx = battle_animation_user;
+            break;
+        case 1:
+            battler_idx = battle_animation_target;
+            break;
+        case 2:
+            battler_idx = PARTNER(battle_animation_user);
+            break;
+        case 3:
+            battler_idx = PARTNER(battle_animation_target);
+            break;
     }
     if (battler_idx == 0xFF) {
         battle_animation_big_callback_delete(self);

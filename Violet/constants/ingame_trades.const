@@ -1,7 +1,7 @@
 {
-    "type" : "enum",
-    "base" : 0,
-    "values" : [
+    "type": "enum",
+    "base": 0,
+    "values": [
         "INGAME_TRADE_CAMAUB",
         "INGAME_TRADE_SEEMOPS",
         "INGAME_TRADE_ZWIRRLICHT",

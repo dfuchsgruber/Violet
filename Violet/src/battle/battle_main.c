@@ -1,36 +1,34 @@
-#include "types.h"
-#include "battle/state.h"
-#include "save.h"
-#include "mega.h"
-#include "agbmemory.h"
-#include "battle/controller.h"
-#include "debug.h"
-#include "battle/bg.h"
-#include "battle/battlescript.h"
-#include "constants/items.h"
-#include "constants/item_effect_types.h"
-#include "item/item_effect.h"
-#include "item/item.h"
-#include "battle/communication.h"
-#include "battle/battle_string.h"
-#include "constants/pokemon_stat_names.h"
-#include "pokemon/virtual.h"
-#include "overworld/pokemon_party_menu.h"
-#include "overworld/map_control.h"
-#include "superstate.h"
-#include "fading.h"
-#include "trainer/trainer.h"
-#include "constants/item_hold_effects.h"
-#include "constants/abilities.h"
-#include "constants/pokemon_types.h"
 #include "abilities.h"
-#include "constants/item_pockets.h"
+#include "agbmemory.h"
+#include "battle/battle_string.h"
+#include "battle/battlescript.h"
+#include "battle/bg.h"
+#include "battle/communication.h"
+#include "battle/controller.h"
+#include "battle/state.h"
 #include "callbacks.h"
+#include "constants/abilities.h"
 #include "constants/battle/battle_results.h"
-#include "vars.h"
-#include "dns.h"
+#include "constants/item_effect_types.h"
 #include "constants/item_hold_effects.h"
+#include "constants/item_pockets.h"
+#include "constants/items.h"
+#include "constants/pokemon_stat_names.h"
+#include "constants/pokemon_types.h"
+#include "debug.h"
+#include "dns.h"
+#include "fading.h"
 #include "item/item.h"
+#include "item/item_effect.h"
+#include "mega.h"
+#include "overworld/map_control.h"
+#include "overworld/pokemon_party_menu.h"
+#include "pokemon/virtual.h"
+#include "save.h"
+#include "superstate.h"
+#include "trainer/trainer.h"
+#include "types.h"
+#include "vars.h"
 
 void battle_intro_draw_pokemon_or_trainer_sprite_draw_second_trainer() {
     if ((battle_flags & BATTLE_TWO_TRAINERS) && battler_get_position(active_battler) == BATTLE_POSITION_OPPONENT_RIGHT) {
@@ -44,8 +42,8 @@ void battle_intro_draw_pokemon_or_trainer_sprite_draw_second_trainer() {
 }
 
 void battle_intro_try_second_trainer_ball_throw() {
-    if (battle_flags & (BATTLE_MULTI | BATTLE_TWO_TRAINERS) && 
-            battler_get_position(active_battler) == BATTLE_POSITION_OPPONENT_RIGHT) {
+    if (battle_flags & (BATTLE_MULTI | BATTLE_TWO_TRAINERS) &&
+        battler_get_position(active_battler) == BATTLE_POSITION_OPPONENT_RIGHT) {
         dprintf("Add second ball throw \n");
         battle_controller_emit_intro_trainer_ball_throw(0);
         battler_mark_for_controller_execution(active_battler);
@@ -53,8 +51,8 @@ void battle_intro_try_second_trainer_ball_throw() {
 }
 
 void battle_intro_try_partner_ball_throw() {
-    if ((battle_flags & (BATTLE_MULTI | BATTLE_ALLY)) && 
-            battler_get_position(active_battler) == BATTLE_POSITION_PLAYER_RIGHT) {
+    if ((battle_flags & (BATTLE_MULTI | BATTLE_ALLY)) &&
+        battler_get_position(active_battler) == BATTLE_POSITION_PLAYER_RIGHT) {
         dprintf("Add partner ball throw \n");
         battle_controller_emit_intro_trainer_ball_throw(0);
         battler_mark_for_controller_execution(active_battler);
@@ -67,7 +65,7 @@ u16 item_effect_trainer_item_cured_status_battle_string_idxs[] = {
     [ITEM_EFFECT_HEAL_FREEZE] = 294,
     [ITEM_EFFECT_HEAL_BURN] = 293,
     [ITEM_EFFECT_HEAL_POISON] = 292,
-    [ITEM_EFFECT_HEAL_SLEEP] = 295, 
+    [ITEM_EFFECT_HEAL_SLEEP] = 295,
     [ITEM_EFFECT_HEAL_ALL_STATUS] = 0x1c0,
 };
 
@@ -103,7 +101,7 @@ void battle_action_use_item() {
             switch (effect_type) {
                 case ITEM_EFFECT_HEAL_HP:
                     bsc_offset = battlescripts_use_item[2];
-                    break; 
+                    break;
                 case ITEM_EFFECT_HEAL_BURN:
                 case ITEM_EFFECT_HEAL_FREEZE:
                 case ITEM_EFFECT_HEAL_POISON:
@@ -111,20 +109,20 @@ void battle_action_use_item() {
                 case ITEM_EFFECT_HEAL_SLEEP:
                 case ITEM_EFFECT_HEAL_ALL_STATUS:
                     battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = effect_type;
-                    item_effect_execute_status_heals(p, bsc_last_used_item, attacking_battler, 4, 
-                        battler_idx_to_party_idx(attacking_battler), item_get_hold_effect(bsc_last_used_item), effect, false, false);
+                    item_effect_execute_status_heals(p, bsc_last_used_item, attacking_battler, 4,
+                                                     battler_idx_to_party_idx(attacking_battler), item_get_hold_effect(bsc_last_used_item), effect, false, false);
                     bsc_offset = battlescripts_use_item[3];
                     break;
                 case ITEM_EFFECT_HEAL_INFATUATION:
                 case ITEM_EFFECT_HEAL_CONFUSION:
-                    item_effect_execute_battle_effects(p, bsc_last_used_item, attacking_battler, 4, 
-                        battler_idx_to_party_idx(attacking_battler), item_get_hold_effect(bsc_last_used_item), effect, false, false);
+                    item_effect_execute_battle_effects(p, bsc_last_used_item, attacking_battler, 4,
+                                                       battler_idx_to_party_idx(attacking_battler), item_get_hold_effect(bsc_last_used_item), effect, false, false);
                     bsc_offset = battlescripts_use_item[3];
                     break;
                 case ITEM_EFFECT_X_ITEM:
                     battle_scripting.battler_idx = attacking_battler;
-                    item_effect_execute_battle_effects(p, bsc_last_used_item, attacking_battler, 4, 
-                        battler_idx_to_party_idx(attacking_battler), item_get_hold_effect(bsc_last_used_item), effect, false, false);
+                    item_effect_execute_battle_effects(p, bsc_last_used_item, attacking_battler, 4,
+                                                       battler_idx_to_party_idx(attacking_battler), item_get_hold_effect(bsc_last_used_item), effect, false, false);
                     battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 4;
                     bsc_offset = battlescripts_use_item[4];
                     if (effect->increase_critical_ratio) {
@@ -188,7 +186,7 @@ void battle_callback1() {
     if (super.keys_inv.keys.B && (battle_flags & BATTLE_POKEDUDE)) {
         *var_access(LASTRESULT) = battle_result = BATTLE_RESULT_DRAW;
         fading_control_reset();
-        fadescreen(0xFFFFFFFF, 0, 0, 16, 0); 
+        fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
         callback1_set(battle_pokedude_callback_end);
     }
 }
@@ -201,8 +199,8 @@ void battle_callback_partner_party_preview() {
             BATTLE_STATE2->saved_battle_flags = battle_flags;
             super.saved_callback = battle_callback_partner_party_preview; // Return to this callback once the preview is done
             pokemon_party_menu_load_partner_party(player_pokemon + 3);
-            pokemon_party_menu_init(PARTY_MENU_TYPE_MULTI_SHOWCASE, PARTY_LAYOUT_MULTI_SHOWCASE, PARTY_ACTION_CHOOSE_MON, 0, 
-                PARTY_MSG_NONE, pokemon_party_menu_partner_party_slide_in_initialize, super.saved_callback);
+            pokemon_party_menu_init(PARTY_MENU_TYPE_MULTI_SHOWCASE, PARTY_LAYOUT_MULTI_SHOWCASE, PARTY_ACTION_CHOOSE_MON, 0,
+                                    PARTY_MSG_NONE, pokemon_party_menu_partner_party_slide_in_initialize, super.saved_callback);
             battle_communication[BATTLE_COMMUNICATION_MULTIUSE]++;
             break;
         }
@@ -247,14 +245,15 @@ bool battle_has_two_opponents() {
 }
 
 bool battle_controller_double_battle_should_send_out_only_one_pokemon() {
-    if (battle_has_two_opponents()) return true; // Each battler has their own controller, that only sends out one mon
+    if (battle_has_two_opponents())
+        return true; // Each battler has their own controller, that only sends out one mon
     return false;
 }
 
-void battle_clear_temporary_custom_effects(bool clear_all){
-    if(clear_all){
+void battle_clear_temporary_custom_effects(bool clear_all) {
+    if (clear_all) {
         int i;
-        for(i = 0; i < battler_cnt; i++){
+        for (i = 0; i < battler_cnt; i++) {
             BATTLE_STATE2->status_custom[i] = 0;
         }
     }
@@ -306,10 +305,14 @@ bool battle_end_turn_effects() {
     // Therefore, we have to allow the ai to choose a new switch in target in any step
     for (int i = 0; i < 4; i++)
         battle_state->battler_to_switch_into[i] = 6;
-    if (battle_end_turn_field_effects()) return true;
-    if (battle_handicap_end_turn_effects()) return true;
-    if (battle_end_turn_battler_effects()) return true;
-    if (battle_end_turn_golden_apple_effects()) return true;
+    if (battle_end_turn_field_effects())
+        return true;
+    if (battle_handicap_end_turn_effects())
+        return true;
+    if (battle_end_turn_battler_effects())
+        return true;
+    if (battle_end_turn_golden_apple_effects())
+        return true;
     return false;
 }
 
@@ -359,8 +362,7 @@ bool battle_end_turn_wrap() {
 }
 
 u8 battle_is_running_impossible() {
-    if (BATTLE_IS_WILD_DOUBLE && battler_get_position(active_battler) == BATTLE_POSITION_PLAYER_RIGHT
-        &&battler_is_alive(battler_get_by_position(BATTLE_POSITION_PLAYER_LEFT))) { // The right mon can only run if it is "alone"
+    if (BATTLE_IS_WILD_DOUBLE && battler_get_position(active_battler) == BATTLE_POSITION_PLAYER_RIGHT && battler_is_alive(battler_get_by_position(BATTLE_POSITION_PLAYER_LEFT))) { // The right mon can only run if it is "alone"
         // Reason: We don't want the left mon to pick an action and then run with the right mon
         battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 0;
         return 1;
@@ -380,9 +382,7 @@ u8 battle_is_running_impossible() {
             battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 2;
             return 2;
         }
-        if (side != battler_is_opponent(i) && battlers[i].ability == AUSWEGSLOS
-        && battlers[active_battler].ability != SCHWEBE && battlers[active_battler].type1 != TYPE_FLUG
-        && battlers[active_battler].type2 != TYPE_FLUG) {
+        if (side != battler_is_opponent(i) && battlers[i].ability == AUSWEGSLOS && battlers[active_battler].ability != SCHWEBE && battlers[active_battler].type1 != TYPE_FLUG && battlers[active_battler].type2 != TYPE_FLUG) {
             battle_scripting.battler_idx = i;
             defending_battler_ability = battlers[i].ability;
             battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 2;
@@ -396,7 +396,7 @@ u8 battle_is_running_impossible() {
         battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 2;
         return 2;
     }
-    if (battlers[active_battler].status2 & (STATUS2_ESCAPE_PREVENTATION | STATUS2_WRAPPED) || 
+    if (battlers[active_battler].status2 & (STATUS2_ESCAPE_PREVENTATION | STATUS2_WRAPPED) ||
         (battler_statuses3[active_battler] & STATUS3_ROOTED)) {
         battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 0;
         return 1;

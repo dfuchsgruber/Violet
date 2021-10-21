@@ -1,27 +1,27 @@
-#include "types.h"
-#include "flags.h"
-#include "oam.h"
-#include "save.h"
-#include "callbacks.h"
-#include "tile/coordinate.h"
-#include "debug.h"
 #include "overworld/detector.h"
-#include "overworld/sprite.h"
-#include "overworld/script.h"
-#include "flags.h"
 #include "bios.h"
-#include "overworld/npc.h"
-#include "options.h"
+#include "callbacks.h"
+#include "debug.h"
+#include "flags.h"
 #include "math.h"
+#include "oam.h"
+#include "options.h"
+#include "overworld/npc.h"
+#include "overworld/script.h"
+#include "overworld/sprite.h"
+#include "save.h"
+#include "tile/coordinate.h"
+#include "types.h"
 
 static sprite static_detector_arrow_sprite = {
-    .attr0 = ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE | ATTR0_DSIZE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(1),
+    .attr0 = ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE | ATTR0_DSIZE,
+    .attr1 = ATTR1_SIZE_16_16,
+    .attr2 = ATTR2_PRIO(1),
 };
 
 static rotscale_frame static_detector_rs_anim[] = {
     {.affine = {.affine_x_value = 0x100, .affine_y_value = 0x100, .duration = 0}},
-    {.command = {.command = ROTSCALE_ANIM_END}}
-}; 
+    {.command = {.command = ROTSCALE_ANIM_END}}};
 
 static rotscale_frame *static_detector_rs_anims[] = {static_detector_rs_anim};
 
@@ -74,10 +74,9 @@ static void static_detector_arrow_callback(oam_object *self) {
             oam_try_set_rotation_and_scale(self, true, 0x100, 0x100, 0);
             oam_gfx_anim_start_if_not_current(self, 4);
         } else {
-            oam_try_set_rotation_and_scale(self, true, 0x100, 0x100, (u16)(self->private[1] + 0x8000)); 
+            oam_try_set_rotation_and_scale(self, true, 0x100, 0x100, (u16)(self->private[1] + 0x8000));
             oam_gfx_anim_start_if_not_current(self, (u8)self->private[2]);
         }
-
 
         /*
         coordinate_t coords;
@@ -93,16 +92,22 @@ static void static_detector_arrow_callback(oam_object *self) {
 }
 
 static palette static_detector_arrow_palette = {
-    .pal = gfx_item_finder_arrow_staticPal, .tag = ITEM_FINDER_STATIC_TAG,
+    .pal = gfx_item_finder_arrow_staticPal,
+    .tag = ITEM_FINDER_STATIC_TAG,
 };
 
 static oam_template static_detector_arrow_template = {
-    .tiles_tag = 0xFFFF, .pal_tag = ITEM_FINDER_STATIC_TAG, .oam = &static_detector_arrow_sprite, .graphics = static_detector_graphics,
-    .animation = static_detector_animations, .rotscale = static_detector_rs_anims, .callback = static_detector_arrow_callback,
+    .tiles_tag = 0xFFFF,
+    .pal_tag = ITEM_FINDER_STATIC_TAG,
+    .oam = &static_detector_arrow_sprite,
+    .graphics = static_detector_graphics,
+    .animation = static_detector_animations,
+    .rotscale = static_detector_rs_anims,
+    .callback = static_detector_arrow_callback,
 };
 
 u8 overworld_effect_static_detector_arrow_new() {
-    
+
     oam_palette_load_if_not_present_and_apply_shaders(&static_detector_arrow_palette);
     u8 oam_idx = oam_new_backward_search(&static_detector_arrow_template, 0, 0, 0x53);
     if (oam_idx < 64) {
@@ -124,9 +129,8 @@ void overworld_static_detector_callback(u8 self) {
             flag_based_update = true;
             vars[DETECTOR_CB_VAR_FLAG] = 0;
         }
-        if (coords.x != vars[DETECTOR_CB_VAR_X] || coords.y != vars[DETECTOR_CB_VAR_Y] || 
-            save1->bank != vars[DETECTOR_CB_VAR_BANK] || save1->map != vars[DETECTOR_CB_VAR_MAP_IDX] 
-            || flag_based_update) { // Update detector
+        if (coords.x != vars[DETECTOR_CB_VAR_X] || coords.y != vars[DETECTOR_CB_VAR_Y] ||
+            save1->bank != vars[DETECTOR_CB_VAR_BANK] || save1->map != vars[DETECTOR_CB_VAR_MAP_IDX] || flag_based_update) { // Update detector
             // dprintf("Updating detector arrow for position %d.%d\n", coords.x, coords.y);
             vars[DETECTOR_CB_VAR_X] = (u16)coords.x;
             vars[DETECTOR_CB_VAR_Y] = (u16)coords.y;
@@ -162,7 +166,7 @@ void overworld_static_detector_callback(u8 self) {
                     }
                     oams[oam_idx].private[3] = 0;
 
-                    /**
+                    /*
                     switch (direction) {
                         case ITEM_FINDER_NORTH:
                             oams[oam_idx].private[1] = 0xc000;
@@ -177,7 +181,7 @@ void overworld_static_detector_callback(u8 self) {
                             oams[oam_idx].private[1] = 0x8000;
                             break;
                     }
-                    **/
+                    */
                 }
                 // dprintf("Have found hidden item at %d.%d\n", vars[HIDDEN_ITEM_CB_VAR_DX], vars[HIDDEN_ITEM_CB_VAR_DY]);
             } else {

@@ -98,4 +98,3 @@ no_place_in_boxes:
 	str_no_place_in_boxes:
 		.autostring 35 2 "I am most sorry, but it appears that neither in your party nor your PC boxes you seem to have room for this Pokémon DOTS"
 .endif
-    

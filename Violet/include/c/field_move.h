@@ -6,12 +6,12 @@
  */
 
 #ifndef FIELDMOVES_H
-#define	FIELDMOVES_H
+#define FIELDMOVES_H
 
-#include "types.h"
-#include "stdbool.h"
-#include "pokemon/virtual.h"
 #include "constants/field_moves.h"
+#include "pokemon/virtual.h"
+#include "stdbool.h"
+#include "types.h"
 
 u16 field_moves[NUM_FIELD_MOVES + 1];
 
@@ -27,80 +27,78 @@ void (*field_move_overworld_continuation)();
 * @return if the field move flash could be initialized successfully.
 */
 bool field_move_check_flash();
-    
+
 /**
 * Tries to initialize the field move cut.
 * @return if the field move cut could be initialized successfully.
 */
 bool field_move_check_cut();
-    
+
 /**
 * Tries to initialize the field move fly.
 * @return if the field move fly could be initialized successfully.
 */
 bool field_move_check_fly();
-    
+
 /**
 * Tries to initialize the field move strength.
 * @return if the field move strength could be initialized successfully.
 */
 bool field_move_check_strength();
-    
+
 /**
 * Tries to initialize the field move surf.
 * @return if the field move surf could be initialized successfully.
 */
 bool field_move_check_surf();
-    
+
 /**
 * Tries to initialize the field move rock_smash.
 * @return if the field move rock_smash could be initialized successfully.
 */
 bool field_move_check_rock_smash();
-    
+
 /**
 * Tries to initialize the field move waterfall.
 * @return if the field move waterfall could be initialized successfully.
 */
 bool field_move_check_waterfall();
-    
+
 /**
 * Tries to initialize the field move rock_climb.
 * @return if the field move rock_climb could be initialized successfully.
 */
 bool field_move_check_rock_climb();
-    
+
 /**
 * Tries to initialize the field move teleport.
 * @return if the field move teleport could be initialized successfully.
 */
 bool field_move_check_teleport();
-    
+
 /**
 * Tries to initialize the field move dig.
 * @return if the field move dig could be initialized successfully.
 */
 bool field_move_check_dig();
-    
+
 /**
 * Tries to initialize the field move softboiled.
 * @return if the field move softboiled could be initialized successfully.
 */
 bool field_move_check_softboiled();
-    
+
 /**
 * Tries to initialize the field move sweet_scent.
 * @return if the field move sweet_scent could be initialized successfully.
 */
 bool field_move_check_sweet_scent();
-    
+
 /**
 * Tries to initialize the field move secret_power.
 * @return if the field move secret_power could be initialized successfully.
 */
 bool field_move_check_secret_power();
-
-
 
 /**
  * Initializes the field move softboiled from the pokemon party menu
@@ -127,7 +125,7 @@ void field_move_load_buffers(pokemon *pokemon, u8 index);
 
 /**
  * Contiuation for flash in the overworld.
- **/
+ */
 void field_move_flash_overworld();
 
 extern u8 ow_script_dungeon_enter_field[];
@@ -153,5 +151,4 @@ extern u8 str_field_move_usable_with_new_badge[];
 extern u8 str_field_move_return_to_healing_place[];
 extern u8 str_field_move_return_dig[];
 
-#endif	/* FIELDMOVES_H */
-
+#endif /* FIELDMOVES_H */

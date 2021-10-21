@@ -8,8 +8,8 @@
 #ifndef INCLUDE_C_POKEMON_CRY_H_
 #define INCLUDE_C_POKEMON_CRY_H_
 
-#include "types.h"
 #include "pokemon/count.h"
+#include "types.h"
 
 typedef struct {
     u8 header[4];
@@ -23,7 +23,7 @@ pokemon_cry pokemon_cries_backward[POKEMON_CNT];
 /**
  * Checks if a cry is playing and clears the cry songs.
  * @return if a cry is playing.
- **/
+ */
 bool cry_is_playing_or_clear_cry_songs();
 
 /**
@@ -118,6 +118,5 @@ extern u8 cry_172[];
 extern u8 cry_479[];
 extern u8 cry_757[];
 extern u8 cry_758[];
-
 
 #endif /* INCLUDE_C_POKEMON_CRY_H_ */

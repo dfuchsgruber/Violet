@@ -1,12 +1,12 @@
-#include "types.h"
-#include "stdbool.h"
-#include "pokemon/moves.h"
-#include "constants/attacks.h"
 #include "constants/move_tutor.h"
+#include "constants/attacks.h"
+#include "pokemon/moves.h"
+#include "stdbool.h"
+#include "types.h"
 
-bool move_tutor_is_compatible(u16 species, u8 move_tutor){
+bool move_tutor_is_compatible(u16 species, u8 move_tutor) {
     u32 mask = (u32)(1 << move_tutor);
-    if(pokemon_move_tutor_compatibility[species] & mask)
+    if (pokemon_move_tutor_compatibility[species] & mask)
         return true;
     return false;
 }
@@ -36,4 +36,3 @@ u16 move_tutor_attacks[32] = {
 u16 move_tutor_get_attack(u8 move_tutor_idx) {
     return move_tutor_attacks[move_tutor_idx];
 }
-

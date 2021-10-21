@@ -150,4 +150,3 @@ if __name__ == '__main__':
         readable = print_dungeon_index(index)
     with open(args.output, 'w+') as f:
         f.write(readable)
-    

@@ -1,15 +1,15 @@
-#include "types.h"
-#include "pokemon/virtual.h"
-#include "pokemon/moves.h"
 #include "pokemon/move_relearner.h"
-#include "vars.h"
-#include "constants/pokemon_types.h"
 #include "attack.h"
-#include "language.h"
+#include "constants/pokemon_types.h"
 #include "debug.h"
-#include "transparency.h"
 #include "io.h"
+#include "language.h"
 #include "oam.h"
+#include "pokemon/moves.h"
+#include "pokemon/virtual.h"
+#include "transparency.h"
+#include "types.h"
+#include "vars.h"
 
 extern color_t gfx_text_std_borderPal[16];
 
@@ -20,7 +20,7 @@ u8 pokemon_get_accesible_learnable_moves(pokemon *p, u16 *moves, u8 type) {
         return 0;
     u16 current_moves[4];
     for (int i = 0; i < 4; i++)
-        current_moves[i] = (u16) pokemon_get_attribute(p, (u8)(ATTRIBUTE_ATTACK1 + i), 0);
+        current_moves[i] = (u16)pokemon_get_attribute(p, (u8)(ATTRIBUTE_ATTACK1 + i), 0);
     u8 num_moves = 0;
     for (int i = 0; accesible[i] != 0xFFFF; i++) {
         if (attacks[accesible[i]].type != type)
@@ -55,11 +55,10 @@ void pokemon_get_number_of_accessible_moves_in_lastresult() {
     *var_access(LASTRESULT) = pokemon_get_accesible_learnable_moves(player_pokemon + *var_access(0x8004), moves, (u8)type);
 }
 
-
 static u8 str_back[] = LANGDEP(PSTRING("Zurück"), PSTRING("Cancel"));
 
 void move_relearner_initialize_list_menu() {
-    u8 nickname[11]; 
+    u8 nickname[11];
     pokemon *p = player_pokemon + move_relearner_state->party_idx;
     int type = *var_access(VAR_ACCESIBLE_MOVE_TUTOR_TYPE);
     dprintf("Relearner with type %d\n", type);
@@ -146,87 +145,69 @@ void move_relearner_copy_to_vram_or_clear() {
 }
 
 const tboxdata move_relearner_tboxes[10] = {
+    {.bg_id = 0,
+     .x = 0,
+     .y = 0,
+     .w = 6,
+     .h = 7,
+     .pal = 0x0d,
+     .start_tile = 0x014},
+    {.bg_id = 0,
+     .x = 10,
+     .y = 0,
+     .w = 5,
+     .h = 5,
+     .pal = 0x0d,
+     .start_tile = 0x03e},
+    {.bg_id = 0,
+     .x = 5,
+     .y = 0,
+     .w = 5,
+     .h = 2,
+     .pal = 0x0d,
+     .start_tile = 0x057},
+    {.bg_id = 0,
+     .x = 15,
+     .y = 0,
+     .w = 3,
+     .h = 5,
+     .pal = 0x0f,
+     .start_tile = 0x061},
+    {.bg_id = 0,
+     .x = 5,
+     .y = 2,
+     .w = 3,
+     .h = 3,
+     .pal = 0x0f,
+     .start_tile = 0x070},
+    {.bg_id = 0,
+     .x = 2,
+     .y = 6,
+     .w = 15,
+     .h = 8,
+     .pal = 0x0f,
+     .start_tile = 0x079},
+    {.bg_id = 0,
+     .x = 19,
+     .y = 1,
+     .w = 10,
+     .h = 12,
+     .pal = 0x0f,
+     .start_tile = 0x0f1},
+    {.bg_id = 0,
+     .x = 2,
+     .y = 15,
+     .w = 26,
+     .h = 4,
+     .pal = 0x0f,
+     .start_tile = 0x169},
+    {.bg_id = 0,
+     .x = 5,
+     .y = 4,
+     .w = 4,
+     .h = 2,
+     .pal = 0x0d,
+     .start_tile = 0x1d1 + 24},
     {
-        .bg_id = 0,
-        .x = 0,
-        .y = 0,
-        .w = 6,
-        .h = 7,
-        .pal = 0x0d,
-        .start_tile = 0x014
-    },
-    {
-        .bg_id = 0,
-        .x = 10,
-        .y = 0,
-        .w = 5,
-        .h = 5,
-        .pal = 0x0d,
-        .start_tile = 0x03e
-    },
-    {
-        .bg_id = 0,
-        .x = 5,
-        .y = 0,
-        .w = 5,
-        .h = 2,
-        .pal = 0x0d,
-        .start_tile = 0x057
-    },
-    {
-        .bg_id = 0,
-        .x = 15,
-        .y = 0,
-        .w = 3,
-        .h = 5,
-        .pal = 0x0f,
-        .start_tile = 0x061
-    },
-    {
-        .bg_id = 0,
-        .x = 5,
-        .y = 2,
-        .w = 3,
-        .h = 3,
-        .pal = 0x0f,
-        .start_tile = 0x070
-    },
-    {
-        .bg_id = 0,
-        .x = 2,
-        .y = 6,
-        .w = 15,
-        .h = 8,
-        .pal = 0x0f,
-        .start_tile = 0x079
-    },
-    {
-        .bg_id = 0,
-        .x = 19,
-        .y = 1,
-        .w = 10,
-        .h = 12,
-        .pal = 0x0f,
-        .start_tile = 0x0f1
-    },
-    {
-        .bg_id = 0,
-        .x = 2,
-        .y = 15,
-        .w = 26,
-        .h = 4,
-        .pal = 0x0f,
-        .start_tile = 0x169
-    },
-    {
-        .bg_id = 0,
-        .x = 5,
-        .y = 4,
-        .w = 4,
-        .h = 2,
-        .pal = 0x0d,
-        .start_tile = 0x1d1 + 24
-    }, {
         .bg_id = 0xFF,
-    }
-};
+    }};

@@ -1,7 +1,7 @@
 {
-    "type" : "enum",
-    "base" : 0,
-    "values" : [
+    "type": "enum",
+    "base": 0,
+    "values": [
         "BATTLE_POSITION_PLAYER_LEFT",
         "BATTLE_POSITION_OPPONENT_LEFT",
         "BATTLE_POSITION_PLAYER_RIGHT",

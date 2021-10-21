@@ -1,8 +1,8 @@
 #ifndef H_BATTLE_RESOURCES
 #define H_BATTLE_RESOURCES
 
-#include "types.h"
 #include "battle/ai.h"
+#include "types.h"
 
 typedef struct {
     u8 *scripts[8];

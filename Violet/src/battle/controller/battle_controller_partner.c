@@ -1,20 +1,20 @@
-#include "types.h"
-#include "battle/state.h"
+#include "attack.h"
+#include "battle/ai.h"
 #include "battle/battler.h"
 #include "battle/controller.h"
-#include "battle/ai.h"
-#include "constants/battle/battle_actions.h"
-#include "attack.h"
+#include "battle/state.h"
 #include "constants/attack_affects_whom_flags.h"
-#include "mega.h"
+#include "constants/battle/battle_actions.h"
 #include "debug.h"
-#include "save.h"
-#include "overworld/pokemon_party_menu.h"
+#include "mega.h"
 #include "oam.h"
+#include "overworld/pokemon_party_menu.h"
+#include "pokemon/cry.h"
 #include "pokemon/sprites.h"
+#include "save.h"
 #include "trainer/backsprite.h"
 #include "trainer/trainer.h"
-#include "pokemon/cry.h"
+#include "types.h"
 
 // Just copy the player's battle controller essentially...
 void (*battle_controller_partner[BATTLE_CONTROLLER_COMMAND_CNT])() = {
@@ -39,7 +39,7 @@ void (*battle_controller_partner[BATTLE_CONTROLLER_COMMAND_CNT])() = {
     [0x12] = battle_controller_partner_handle_choose_action, //(void (*)(void))0x8032ad5,
     [0x13] = (void (*)(void))0x8032b49,
     [0x14] = battle_controller_partner_handle_choose_move,
-    [0x15] = battle_controller_partner_handle_choose_item, //(void (*)(void))0x8032bed,
+    [0x15] = battle_controller_partner_handle_choose_item,    //(void (*)(void))0x8032bed,
     [0x16] = battle_controller_partner_handle_choose_pokemon, //(void (*)(void))0x8032c51,
     [0x17] = (void (*)(void))0x8032d29,
     [0x18] = (void (*)(void))0x8032d4d,
@@ -108,7 +108,7 @@ void battle_controller_partner_handle_choose_move() {
 
     ai_setup(trainer_idx_by_battler_idx(active_battler));
     u8 move_idx = trainer_ai_choose_move_or_action();
-    trainer_ai_choosing_state_t *ai_state = (trainer_ai_choosing_state_t*) &battle_general_buffers0[active_battler][4];
+    trainer_ai_choosing_state_t *ai_state = (trainer_ai_choosing_state_t *)&battle_general_buffers0[active_battler][4];
     switch (move_idx) {
         case AI_CHOICE_FLEE: {
             battle_controller_emit_two_values(1, BATTLE_ACTION_RUN, 0);
@@ -141,14 +141,12 @@ void battle_controller_partner_handle_choose_move() {
             battle_controller_emit_two_values(1, BATTLE_ACTION_EXECUTE_SCRIPT, (u16)(move_idx | (defending_battler << 8)));
             break;
         }
-
     }
 }
 
 void battle_controller_partner_handle_print_selection_string() {
     battle_controller_player_or_partner_execution_finished();
 }
-
 
 void battle_controller_partner_handle_choose_action() {
     ai_setup(trainer_idx_by_battler_idx(active_battler));
@@ -186,11 +184,11 @@ void battle_controller_partner_handle_exp_update() {
 
 void battle_controller_partner_handle_draw_trainer_picture() {
     dprintf("Load ally backsprite idx %d\n", fmem.ally_trainer_backsprite_idx);
-    battle_trainer_load_backsprite_palette(fmem.ally_trainer_backsprite_idx, active_battler);    
+    battle_trainer_load_backsprite_palette(fmem.ally_trainer_backsprite_idx, active_battler);
     trainer_gfx_initialize_gp_oam_template(fmem.ally_trainer_backsprite_idx, battler_get_position(active_battler));
-    u8 oam_idx = oam_new_forward_search(&gp_oam_template, 90, 
-        (s16)((8 - trainer_backsprite_coordinates[fmem.ally_trainer_backsprite_idx].y_offset) * 4 + 80), 
-        battler_oam_get_relative_priority(active_battler));
+    u8 oam_idx = oam_new_forward_search(&gp_oam_template, 90,
+                                        (s16)((8 - trainer_backsprite_coordinates[fmem.ally_trainer_backsprite_idx].y_offset) * 4 + 80),
+                                        battler_oam_get_relative_priority(active_battler));
     battler_oams[active_battler] = oam_idx;
     oams[oam_idx].final_oam.attr2 = (u16)((oams[oam_idx].final_oam.attr2 & 0xFFF) | (active_battler << 12));
     oams[oam_idx].x2 = 240;
@@ -205,8 +203,7 @@ void battle_controller_partner_intro_ball_throw_allocate_palette() {
     if (battle_is_tag() && battler_get_position(active_battler) == BATTLE_POSITION_PLAYER_RIGHT) {
         pal_idx = oam_allocate_palette(0xd6f9);
         pal_decompress(trainer_backsprite_palettes[fmem.ally_trainer_backsprite_idx].pal, (u16)(256 + 16 * pal_idx), 32);
-    }
-    else {
+    } else {
         pal_idx = oam_allocate_palette(0xd6f8);
         pal_decompress(trainer_backsprite_palettes[save2->player_is_female].pal, (u16)(256 + 16 * pal_idx), 32);
     }
@@ -222,10 +219,12 @@ void battle_controller_player_or_partner_wait_for_healthboxes() {
         bool healthbox_done = false;
         // The partner doesn't free any resources whatsoever, it only waits until their box has finished
         if (battle_controller_partner_is_single_or_multi_or_tag_battle()) { // Wait only for one box
-            if (oams[battle_healthbox_oams[active_battler]].callback == oam_null_callback) healthbox_done = true;
+            if (oams[battle_healthbox_oams[active_battler]].callback == oam_null_callback)
+                healthbox_done = true;
         } else { // Wait for both boxes (should in theory never be reached though...)
-            if (oams[battle_healthbox_oams[active_battler]].callback == oam_null_callback && 
-                    oams[battle_healthbox_oams[PARTNER(active_battler)]].callback == oam_null_callback) healthbox_done = true;
+            if (oams[battle_healthbox_oams[active_battler]].callback == oam_null_callback &&
+                oams[battle_healthbox_oams[PARTNER(active_battler)]].callback == oam_null_callback)
+                healthbox_done = true;
         }
         if (cry_is_playing_or_clear_cry_songs())
             healthbox_done = false;

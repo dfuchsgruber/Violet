@@ -15,12 +15,11 @@
  * Created on 16. Juni 2016, 11:14
  */
 
-
-#include "types.h"
-#include "oam.h"
 #include "color.h"
-#include "overworld/npc.h"
 #include "map/event.h"
+#include "oam.h"
+#include "overworld/npc.h"
+#include "types.h"
 
 #define OVERWORLD_SPRITE_STRENGTH_BOULDER 97
 #define OVERWORLD_SPRITE_ROMAN 179
@@ -52,12 +51,11 @@ extern sprite ow_final_oam_64_64;
 extern sprite ow_final_oam_32_32;
 extern sprite ow_final_oam_16_16;
 
-
 typedef struct overworld_sprite {
     u16 tiles_tag; //Tiles tag
-    u16 pal_tag; //0x1100 + PalID
-    u16 unknown; //usually 0x11FF
-    u16 size; //in bytes, e.g. for 32x16 := 0x100
+    u16 pal_tag;   //0x1100 + PalID
+    u16 unknown;   //usually 0x11FF
+    u16 size;      //in bytes, e.g. for 32x16 := 0x100
     u16 width;
     u16 height;
     u8 palette_slot : 4;
@@ -67,13 +65,12 @@ typedef struct overworld_sprite {
     u8 field_D;
     u8 field_E;
     u8 field_F;
-    sprite *final_oam; //NSE := Pointer 1
-    subsprite_table *subsprite_table; //NSE := Pointer 2
-    gfx_frame **gfx_animation; //NSE := Anim Pointer
-    graphic *graphics; //NSE := equals Pointer 3
+    sprite *final_oam;                   //NSE := Pointer 1
+    subsprite_table *subsprite_table;    //NSE := Pointer 2
+    gfx_frame **gfx_animation;           //NSE := Anim Pointer
+    graphic *graphics;                   //NSE := equals Pointer 3
     rotscale_frame **rotscale_animation; //No NSE equal
 } overworld_sprite;
-
 
 #define OW_PAL_TAG_POKEMON_BASE 0x2000
 #define OW_PAL_TAG_POKEMON_END 0x2200
@@ -98,66 +95,66 @@ typedef struct overworld_sprite {
  * Returns the palette of an overworld species.
  * @param species the species to get the palette of
  * @return the palette structure
- **/
+ */
 palette *overworld_palette_get_by_species(u16 species);
 /**
  * Returns the overworld sprite of an overworld species.
  * @param species the species to get the overworld sprite of
  * @return the overworld sprite.
- **/
+ */
 overworld_sprite *overworld_sprite_get_by_species(u16 species);
 
 /**
  * Returns the overworld sprite idx that is to be used for a species.
  * @param the species to find a suitable sprite for
  * @return the overworld sprite idx to use for this species, e.g. in a person
- **/
+ */
 u8 overworld_get_sprite_idx_by_species(u16 species);
 
 /**
  * Gets the overworld sprite associated with a npc
  * @param npc the npc to get the sprite of
  * @return the overworld sprite
- **/
+ */
 overworld_sprite *overworld_get_by_npc(npc *n);
 
 /**
  * Returns the overworld sprite of a mushroom
  * @param mushroom_idx which mushroom to get
  * @return the overworld sprite
- **/
+ */
 overworld_sprite *overworld_sprite_get_by_mushroom_idx(u16 mushroom_idx);
 
 /**
  * Returns the overworld palette of a mushroom
  * @return the palette sprite
- **/
+ */
 palette *overworld_palette_get_by_mushroom();
 
 /**
  * Returns the overworld sprite of a shell
  * @param shell_idx which shell to get
  * @return the overworld sprite
- **/
+ */
 overworld_sprite *overworld_sprite_get_by_shell_idx(u16 shell_idx);
 
 /**
  * Returns the overworld palette of a shell
  * @return the palette sprite
- **/
+ */
 palette *overworld_palette_get_by_shell();
 
 /**
  * Returns the overworld sprite of a trash
  * @param trash_idx which trash to get
  * @return the overworld sprite
- **/
+ */
 overworld_sprite *overworld_sprite_get_by_trash_idx(u16 trash_idx);
 
 /**
  * Returns the overworld palette of a trash
  * @return the palette sprite
- **/
+ */
 palette *overworld_palette_get_by_trash();
 
 /**
@@ -165,59 +162,59 @@ palette *overworld_palette_get_by_trash();
  * @param person_script_std person's script std that indicates the boulder picture
  * @param value flags of the person
  * @return the overworld sprite
- **/
+ */
 overworld_sprite *overworld_sprite_get_by_boulder_person_script_std(u8 person_script_std, u16 value);
 
 /**
  * Returns the overworld palette of the first gym's puzzle boulders
  * @return the palette
- **/
+ */
 palette *overworld_palette_get_gym_puzzle_boulder();
 
 /**
  * Returns the overworld palette of the hay bale boulders for Route 3's mill.
  * @return the palette
- **/
+ */
 palette *overworld_palette_get_hay_bale_boulder();
 
 /**
  * Returns the overworld palette of the mega stone npc
  * @return the palette
- **/
+ */
 palette *overworld_palette_get_mega_stone();
 
 /**
  * Gets the palette of a tutor stone based on the pal tag.
  * @param tag the pal tag of the ow pal
  * @return the palette
- **/
+ */
 palette *overworld_palette_tutor_crystal_get_by_tag(u16 tag);
 
 /**
  * Gets the overworld of a tutor crystal by its element type
  * @param type the element
  * @return the tutor crystal overworld sprite
- **/
+ */
 overworld_sprite *overworld_sprite_get_by_tutor_crystal_type(u16 type);
 
 /**
  * Frees a npc palette if currently no active npc is using this palette.
  * @param slot the palette to free
- **/
+ */
 void npc_free_palette_if_unused_by_slot(u8 slot);
 
 /**
  * Updates the palette of a npc by, if neccesary, also loading the palette
  * @param npc the npc to update
  * @param oam the oam object to update
- **/
+ */
 void overworld_npc_update_palette(npc *n, oam_object *oam);
 
 /**
  * Sets the priority of the oam (oam attribute) according to the oams height
  * @param o the oam to set the height of
  * @param height the height
- **/
+ */
 void oam_set_priority_by_height(oam_object *o, u8 height);
 
 /**
@@ -225,7 +222,7 @@ void oam_set_priority_by_height(oam_object *o, u8 height);
  * @param o the oam to set the subpriority of
  * @param height the height
  * @param relative_priority priority relative to oams of the same height (simply an offset to the subpriority)
- **/
+ */
 void oam_set_subpriority_by_height(oam_object *o, u8 height, u8 relative_priority);
 
 /**
@@ -237,7 +234,7 @@ void oam_set_subpriority_by_height(oam_object *o, u8 height, u8 relative_priorit
  * @param z the height
  * @param direction in which direction the oam should face
  * @return oam_idx the idx of the oam created
- **/
+ */
 u8 overworld_create_oam_by_person(map_event_person *person, u8 a1, s16 x, s16 y, u8 z, u8 direction);
 
 /**
@@ -248,14 +245,14 @@ u8 overworld_create_oam_by_person(map_event_person *person, u8 a1, s16 x, s16 y,
  * @param y the y coordinate
  * @param subpriority priority relative to other oams on this layer
  * @return the idx of the oam or 64 on failure
- **/
-u8 overworld_create_oam_with_callback_by_npc(npc *n, void (*callback)(oam_object*), s16 x, s16 y, u8 subpriority);
+ */
+u8 overworld_create_oam_with_callback_by_npc(npc *n, void (*callback)(oam_object *), s16 x, s16 y, u8 subpriority);
 
 /**
  * Starts the boulder push animation and pushes the boulder
  * @param npc_idx the npc to move
  * @param direction in which direction
- **/
+ */
 void boulder_animation_start(u8 npc_idx, u8 direction);
 
 /**
@@ -264,7 +261,7 @@ void boulder_animation_start(u8 npc_idx, u8 direction);
  * @param y y coordinate of the boulder
  * @param direction in which direction to push the boulder
  * @return if the boulder push attempt was sucessful, i.e. if a boulder push animation was triggered
- **/
+ */
 bool boulder_push_attempt(s16 x, s16 y, u8 direction);
 
 enum {
@@ -275,7 +272,7 @@ enum {
 /**
  * Deletes a rage effect sprite of an npc and frees resources that are not held by other rage effect sprites
  * @param oam_idx the oam to free
- **/
+ */
 void npc_delete_rage_sprite(u8 oam_idx);
 
 extern u8 gfx_ow_bisasamTiles[];
@@ -1107,7 +1104,6 @@ extern color_t gfx_ow_rotom_fanPal[16];
 extern u8 gfx_ow_crystal_onixTiles[];
 extern color_t gfx_ow_crystal_onixPal[16];
 
-
 extern const unsigned short gfx_ow_deoxys_normal_0Tiles[];
 extern const unsigned short gfx_ow_deoxys_normal_1Tiles[];
 extern const unsigned short gfx_ow_deoxys_normal_2Tiles[];
@@ -1819,7 +1815,6 @@ extern const u8 gfx_ow_old_amberTiles[];
 extern const u8 gfx_ow_icarusTiles[];
 extern const u8 gfx_ow_appleTiles[];
 
-
 extern const u8 gfx_tutor_crystal_bugTiles[];
 extern const color_t gfx_tutor_crystal_bugPal[16];
 extern const color_t gfx_tutor_crystal_darkPal[16];
@@ -1870,15 +1865,14 @@ extern overworld_sprite overworld_sprite_strength_boulder;
  * Gets the picture of the player in a given context.
  * @param context the context the player is in
  * @return the picture of the player
- **/
+ */
 u8 player_get_overworld_picture(u8 context);
-
 
 /**
  * Finds the overworld_sprite structure of a picture idx.
  * @param picture the picture of the overworld
  * @return sprite the overworld_sprite structure
- **/
+ */
 overworld_sprite *overworld_get(u16 picture);
 
 /**
@@ -1887,13 +1881,13 @@ overworld_sprite *overworld_get(u16 picture);
  * @param map_y the y on the map in blocks
  * @param oam_x resulting oam x coordinate
  * @param oam_y resulting oam y coordinate
- **/
+ */
 void map_position_to_oam_position(s16 map_x, s16 map_y, s16 *oam_x, s16 *oam_y);
 
 /**
  * Callback that handles (probably) applymovement stuff and movements for an npc while a script is not active
  * @param self self-reference
- **/
-void npc_oam_callback_script_not_active (oam_object *self);
+ */
+void npc_oam_callback_script_not_active(oam_object *self);
 
 #endif /* INCLUDE_C_OVERWORLD_SPRITE_H_ */

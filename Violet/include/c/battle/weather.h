@@ -8,9 +8,9 @@
 #ifndef INCLUDE_C_BATTLE_WEATHER_H_
 #define INCLUDE_C_BATTLE_WEATHER_H_
 
+#include "abilities.h"
 #include "constants/abilities.h"
 #include "constants/battle/battle_weathers.h"
-#include "abilities.h"
 
 #define WEATHER_HAS_EFFECT ((!ABILITY_PRESENT(WOLKE_SIEBEN) && !ABILITY_PRESENT(KLIMASCHUTZ)))
 #define WEATHER_HAS_EFFECT2 ((!ABILITY_PRESENT(WOLKE_SIEBEN) && !ABILITY_PRESENT(KLIMASCHUTZ)))

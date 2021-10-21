@@ -49,7 +49,6 @@ typedef union union_block_data {
     u32 value;
 } block_data;
 
-
 #define FIELD_BEHAVIOR 0
 #define FIELD_HM_USAGE 1
 #define FIELD_BATTLE_BG 3
@@ -72,8 +71,8 @@ extern coordinate_t walking_directions[];
  * @param direction the direction in which to move in
  * @param x x coordinate of the position
  * @param y y coordinate of the position
- **/
-void coordinates_apply_direction(int direction,short *x,short *y);
+ */
+void coordinates_apply_direction(int direction, short *x, short *y);
 
 /**
  * Redraws a single block in the map
@@ -121,7 +120,7 @@ extern u16 map_changes[10240];
  * @param src from where to copy
  * @param src_width width of the map to copy
  * @param src_height height of the map to copy
- **/
+ */
 void map_copy_blocks_to_virtual_blocks_with_padding(u16 *src, u16 src_width, u16 src_height);
 
 #define BLOCK_SOLID 0xC00
@@ -187,56 +186,56 @@ bool behaviour_is_waterfall(u8 behaviour);
  * Checks if a tile's behaviour is that of a non-animated door, i.e. cave entrance
  * @param behaviour the behaviour byte to check
  * @return if the tile behaviour is a non animated door
- **/
+ */
 bool behaviour_is_non_animated_warp(u8 behaviour);
 
 /**
  * Checks if a behaviour is a warp
  * @param behaviour the behaviour byte to check
  * @return if the tile behaviour is a warp
- **/
+ */
 bool behaviour_is_warp(u8 behaviour);
 
 /**
  * Checks if a behaviour is a an escalator warp
  * @param behaviour the behaviour byte to check
  * @return if the tile behaviour is an escalator warp
- **/
+ */
 bool behaviour_is_escalator(u8 behaviour);
 
 /**
  * Checks if a behaviour is a a teleport warp
  * @param behaviour the behaviour byte to check
  * @return if the tile behaviour is a teleport warp
- **/
+ */
 bool behaviour_is_teleport_warp(u8 behaviour);
 
 /**
  * Checks if a behaviour is a a union room warp
  * @param behaviour the behaviour byte to check
  * @return if the tile behaviour is a union room warp
- **/
+ */
 bool behaviour_is_union_room_warp(u8 behaviour);
 
 /**
  * Checks if a behaviour is a a fall warp
  * @param behaviour the behaviour byte to check
  * @return if the tile behaviour is a fall warp
- **/
+ */
 bool behaviour_is_fall_warp(u8 behaviour);
 
 /**
  * Checks if a behaviour is a a lavaridge b1f warp
  * @param behaviour the behaviour byte to check
  * @return if the tile behaviour is a lavaridge b1f warp
- **/
+ */
 bool behaviour_is_lavaridge_b1f_warp(u8 behaviour);
 
 /**
  * Checks if a behaviour is a a lavaridge 1f warp
  * @param behaviour the behaviour byte to check
  * @return if the tile behaviour is a lavaridge 1f warp
- **/
+ */
 bool behaviour_is_lavaridge_1f_warp(u8 behaviour);
 
 /**
@@ -248,7 +247,7 @@ bool player_pokemon_has_surf();
 /**
  * Checks if at least one pokemon of the player has waterfall
  * @return if at least one pokemon of the player has surf
- **/
+ */
 bool player_pokemon_has_waterfall();
 
 /**
@@ -270,14 +269,13 @@ bool player_can_use_waterfall_on_tile_faced();
  * @param y the y position where the movement happens
  * @param direction the direction in which to move
  * @return if this movement triggers a ledge behaviour
- **/
-bool block_ledge_triggered(s16 x,s16 y,u8 direction);
+ */
+bool block_ledge_triggered(s16 x, s16 y, u8 direction);
 
 /**
  * Checks if the player is forced to be on a cloud.
  * @return if the player is forced to be on a cloud
- **/
+ */
 bool cloud_not_dismountable();
-
 
 #endif /* INCLUDE_C_TILE_BLOCK_H_ */

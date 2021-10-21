@@ -1,9 +1,9 @@
 #ifndef H_ITEM_EFFECT
 #define H_ITEM_EFFECT
 
-#include "types.h"
 #include "constants/items.h"
 #include "pokemon/virtual.h"
+#include "types.h"
 
 #define NUMBER_ITEM_EFFECT_FUNCTIONS 10
 #define EFFECT_RESET_EVS 127
@@ -73,7 +73,7 @@ item_effect_t *item_effects[ITEM_ENIGMABEERE - ITEM_TRANK];
  * Gets the effect type of an item.
  * @param item the item to get the effect type of
  * @return the effect type of the item
- **/
+ */
 u8 item_get_effect_type(u16 item);
 
 /**
@@ -88,9 +88,9 @@ u8 item_get_effect_type(u16 item);
  * @param calcualte_heal_only unused
  * @param if the change is not actually applied, but only checked if it is applicable
  * @return if the item effect was applicable
- **/
-bool item_effect_execute_status_heals(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect, 
-    item_effect_t *effect, bool calculate_heal_only, bool check_only);
+ */
+bool item_effect_execute_status_heals(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect,
+                                      item_effect_t *effect, bool calculate_heal_only, bool check_only);
 
 /**
  * Executes in-battle effects (including status2 heals) and applies them to the battler.
@@ -104,9 +104,9 @@ bool item_effect_execute_status_heals(pokemon *p, u16 item, u8 battler_idx, u8 m
  * @param calcualte_heal_only unused
  * @param if the change is not actually applied, but only checked if it is applicable
  * @return if the item effect was applicable
- **/
-bool item_effect_execute_battle_effects(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect, 
-    item_effect_t *effect, bool calculate_heal_only, bool check_only);
+ */
+bool item_effect_execute_battle_effects(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect,
+                                        item_effect_t *effect, bool calculate_heal_only, bool check_only);
 
 /**
  * Executes healing effects (potion, max restore, ...) and applies them to the battler and party.
@@ -120,9 +120,9 @@ bool item_effect_execute_battle_effects(pokemon *p, u16 item, u8 battler_idx, u8
  * @param calcualte_heal_only if the healing amount is only to be set, but not applied
  * @param if the change is not actually applied, but only checked if it is applicable
  * @return if the item effect was applicable
- **/
-bool item_effect_execute_hp_heal(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect, 
-    item_effect_t *effect, bool calculate_heal_only, bool check_only);
+ */
+bool item_effect_execute_hp_heal(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect,
+                                 item_effect_t *effect, bool calculate_heal_only, bool check_only);
 
 /**
  * Executes all item effects (in-battle and non in-battle)
@@ -133,7 +133,7 @@ bool item_effect_execute_hp_heal(pokemon *p, u16 item, u8 battler_idx, u8 move_i
  * @param calcualte_heal_only if the amount of hp to heal is only calcualted, but not applied
  * @param check_only if true, no changes are applied whatsoever, only checks if the item is applicable
  * @return if the item is applicable
- **/
+ */
 bool item_effect(pokemon *p, u16 item, u8 party_idx, u8 move_idx, bool calculate_heal_only, bool check_only);
 
 #endif

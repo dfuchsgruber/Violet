@@ -1,43 +1,36 @@
-#include "types.h"
-#include "item/item_effect.h"
 #include "constants/item_effect_types.h"
-#include "language.h"
-#include "text.h"
-#include "pokemon/names.h"
 #include "constants/pokemon_stat_names.h"
 #include "debug.h"
+#include "item/item_effect.h"
+#include "language.h"
+#include "pokemon/names.h"
+#include "text.h"
+#include "types.h"
 
 static u8 str_item_effect_result_heal_status[] = LANGDEP(
     PSTRING("Die BUFFER_2 von BUFFER_1\nwurde geheilt.PAUSE_UNTIL_PRESS"),
     PSTRING("The BUFFER_2 of BUFFER_1\nwas cured.PAUSE_UNTIL_PRESS"));
 
 static u8 str_item_effect_result_heal_sleep[] = LANGDEP(
-    PSTRING("BUFFER_1 ist aufgewacht.PAUSE_UNTIL_PRESS"), PSTRING("BUFFER_2 woke up.PAUSE_UNTIL_PRESS")
-);
+    PSTRING("BUFFER_1 ist aufgewacht.PAUSE_UNTIL_PRESS"), PSTRING("BUFFER_2 woke up.PAUSE_UNTIL_PRESS"));
 
 static u8 str_item_effect_result_full_heal[] = LANGDEP(
-    PSTRING("BUFFER_1 erholte sich.PAUSE_UNTIL_PRESS"), PSTRING("BUFFER_2 recovered.PAUSE_UNTIL_PRESS")
-);
+    PSTRING("BUFFER_1 erholte sich.PAUSE_UNTIL_PRESS"), PSTRING("BUFFER_2 recovered.PAUSE_UNTIL_PRESS"));
 
 static u8 str_item_effect_result_ev[] = LANGDEP(
-    PSTRING("BUFFER_2 Fleiß-Punkte von\nBUFFER_1 wurden angehoben.PAUSE_UNTIL_PRESS"), PSTRING("BUFFER_1's BUFFER_2\neffort values were raised.PAUSE_UNTIL_PRESS")
-);
+    PSTRING("BUFFER_2 Fleiß-Punkte von\nBUFFER_1 wurden angehoben.PAUSE_UNTIL_PRESS"), PSTRING("BUFFER_1's BUFFER_2\neffort values were raised.PAUSE_UNTIL_PRESS"));
 
 static u8 str_item_effect_result_increase_pp[] = LANGDEP(
-    PSTRING("Ap von BUFFER_1\nwurden angehoben.PAUSE_UNTIL_PRESS"), PSTRING("PP of BUFFER_2\nwere raised.PAUSE_UNTIL_PRESS")
-);
+    PSTRING("Ap von BUFFER_1\nwurden angehoben.PAUSE_UNTIL_PRESS"), PSTRING("PP of BUFFER_2\nwere raised.PAUSE_UNTIL_PRESS"));
 
 static u8 str_item_effect_result_heal_pp[] = LANGDEP(
-    PSTRING("Ap wurden aufgefüllt.PAUSE_UNTIL_PRESS"), PSTRING("PP were recovered.PAUSE_UNTIL_PRESS")
-);
+    PSTRING("Ap wurden aufgefüllt.PAUSE_UNTIL_PRESS"), PSTRING("PP were recovered.PAUSE_UNTIL_PRESS"));
 
 static u8 str_item_effect_result_none[] = LANGDEP(
-    PSTRING("Es wird keine Wirkung haben.PAUSE_UNTIL_PRESS"), PSTRING("It has no effect.PAUSE_UNTIL_PRESS")
-);
+    PSTRING("Es wird keine Wirkung haben.PAUSE_UNTIL_PRESS"), PSTRING("It has no effect.PAUSE_UNTIL_PRESS"));
 
 static u8 str_item_effect_result_friendship[] = LANGDEP(
-    PSTRING("BUFFER_1 wurde\nzutraulicher.PAUSE_UNTIL_PRESS"), PSTRING("BUFFER_1 became\nmore friendly.PAUSE_UNTIL_PRESS")
-);
+    PSTRING("BUFFER_1 wurde\nzutraulicher.PAUSE_UNTIL_PRESS"), PSTRING("BUFFER_1 became\nmore friendly.PAUSE_UNTIL_PRESS"));
 
 static u8 *item_effect_result_strings[] = {
     [ITEM_EFFECT_HEAL_POISON] = str_item_effect_result_heal_status,
@@ -80,12 +73,12 @@ void item_effect_print_result(u16 item) {
             strcpy(buffer1, s);
             break;
         }
-        case ITEM_EFFECT_HEAL_INFATUATION:  {
+        case ITEM_EFFECT_HEAL_INFATUATION: {
             u8 s[] = LANGDEP(PSTRING("Vernarrtheit"), PSTRING("infatuation"));
             strcpy(buffer1, s);
             break;
         }
-        case ITEM_EFFECT_HEAL_PARALYSIS:  {
+        case ITEM_EFFECT_HEAL_PARALYSIS: {
             u8 s[] = LANGDEP(PSTRING("Paralyse"), PSTRING("paralysis"));
             strcpy(buffer1, s);
             break;

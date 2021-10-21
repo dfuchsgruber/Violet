@@ -1,18 +1,17 @@
 {
-    "type" : "dict",
-    "values" : {
-        "AI_ITEM_FLAG_CONFUSION" : 1,
-        "AI_ITEM_FLAG_PARALYSIS" : 2,
-        "AI_ITEM_FLAG_FREEZE" : 4,
-        "AI_ITEM_FLAG_BURN" : 8,
-        "AI_ITEM_FLAG_POISON" : 16,
-        "AI_ITEM_FLAG_SLEEP" : 32,
-        "AI_ITEM_FLAG_X_ATTACK" : 1,
-        "AI_ITEM_FLAG_X_DEFENSE" : 2,
-        "AI_ITEM_FLAG_X_SPEED" : 4,
-        "AI_ITEM_FLAG_X_SPECIAL_ATTACK" : 8,
-        "AI_ITEM_FLAG_X_ACCURACY" : 32,
-        "AI_ITEM_FLAG_HIGH_CRITICAL_RATIO" : 128
-
+    "type": "dict",
+    "values": {
+        "AI_ITEM_FLAG_CONFUSION": 1,
+        "AI_ITEM_FLAG_PARALYSIS": 2,
+        "AI_ITEM_FLAG_FREEZE": 4,
+        "AI_ITEM_FLAG_BURN": 8,
+        "AI_ITEM_FLAG_POISON": 16,
+        "AI_ITEM_FLAG_SLEEP": 32,
+        "AI_ITEM_FLAG_X_ATTACK": 1,
+        "AI_ITEM_FLAG_X_DEFENSE": 2,
+        "AI_ITEM_FLAG_X_SPEED": 4,
+        "AI_ITEM_FLAG_X_SPECIAL_ATTACK": 8,
+        "AI_ITEM_FLAG_X_ACCURACY": 32,
+        "AI_ITEM_FLAG_HIGH_CRITICAL_RATIO": 128
     }
 }

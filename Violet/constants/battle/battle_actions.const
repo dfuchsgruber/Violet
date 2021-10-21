@@ -1,7 +1,7 @@
 {
-    "type" : "enum",
-    "base" : 0,
-    "values" : [
+    "type": "enum",
+    "base": 0,
+    "values": [
         "BATTLE_ACTION_USE_MOVE",
         "BATTLE_ACTION_USE_ITEM",
         "BATTLE_ACTION_SWITCH",

@@ -24,5 +24,4 @@ typedef struct {
     u32 checksum;
 } engima_berry_t;
 
-
 #endif

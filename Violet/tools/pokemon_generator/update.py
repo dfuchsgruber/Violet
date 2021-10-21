@@ -127,8 +127,3 @@ if __name__ == '__main__':
 
     with open(args.output, 'wb') as f:
         pickle.dump(stats, f)       
-
-
-
-
-    

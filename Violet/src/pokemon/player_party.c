@@ -1,11 +1,11 @@
-#include "types.h"
-#include "stdbool.h"
-#include "pokemon/virtual.h"
-#include "constants/pokemon_attributes.h"
-#include "bios.h"
-#include "vars.h"
 #include "agbmemory.h"
+#include "bios.h"
+#include "constants/pokemon_attributes.h"
 #include "flags.h"
+#include "pokemon/virtual.h"
+#include "stdbool.h"
+#include "types.h"
+#include "vars.h"
 
 void pokemon_heal(pokemon *dst) {
     int max_hp = pokemon_get_attribute(dst, ATTRIBUTE_TOTAL_HP, 0);
@@ -47,9 +47,11 @@ void special_player_party_heal_index() {
 
 u8 player_pokemon_recount_pokemon() {
     player_pokemon_cnt = 0;
-    if (checkflag(FLAG_PLAYER_PARTY_STOLEN)) return 0;
+    if (checkflag(FLAG_PLAYER_PARTY_STOLEN))
+        return 0;
     for (; player_pokemon_cnt < 6; player_pokemon_cnt++) {
-        if (pokemon_get_attribute(player_pokemon + player_pokemon_cnt, ATTRIBUTE_SPECIES, 0) == 0) break;
+        if (pokemon_get_attribute(player_pokemon + player_pokemon_cnt, ATTRIBUTE_SPECIES, 0) == 0)
+            break;
     }
     return player_pokemon_cnt;
 }

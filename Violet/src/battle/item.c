@@ -1,25 +1,25 @@
-#include "types.h"
-#include "battle/state.h"
-#include "battle/battler.h"
-#include "battle/battle_string.h"
-#include "constants/item_hold_effects.h"
-#include "constants/attack_flags.h"
 #include "item/item.h"
-#include "battle/attack.h"
-#include "constants/attack_results.h"
 #include "attack.h"
+#include "battle/ai.h"
+#include "battle/attack.h"
+#include "battle/battle_string.h"
+#include "battle/battler.h"
+#include "battle/communication.h"
+#include "battle/controller.h"
+#include "battle/state.h"
+#include "battle/weather.h"
+#include "constants/attack_flags.h"
+#include "constants/attack_results.h"
+#include "constants/battle/battle_animations.h"
+#include "constants/battle/battle_effects.h"
+#include "constants/battle/battle_weathers.h"
+#include "constants/item_hold_effects.h"
+#include "constants/item_weather_rock_types.h"
 #include "constants/pokemon_types.h"
 #include "debug.h"
-#include "battle/controller.h"
 #include "item/item_effect.h"
-#include "constants/item_weather_rock_types.h"
-#include "constants/battle/battle_weathers.h"
-#include "constants/battle/battle_animations.h"
-#include "battle/weather.h"
 #include "prng.h"
-#include "battle/ai.h"
-#include "battle/communication.h"
-#include "constants/battle/battle_effects.h"
+#include "types.h"
 
 extern u8 bsc_life_orb[];
 extern u8 bsc_sun_egg[];
@@ -34,7 +34,7 @@ u8 battle_items_switch_in_effects(u8 battler_idx) { // Return 0 if no effect was
     u8 hold_effect = item_get_hold_effect(bsc_last_used_item);
     u8 hold_effect_parameter = item_get_hold_effect_parameter(bsc_last_used_item);
     dprintf("Item switch in effect, hold effect %d with parameter %d\n", hold_effect, hold_effect_parameter);
-    switch(hold_effect) {
+    switch (hold_effect) {
         case HOLD_EFFECT_FOUR_LEAF:
             BATTLE_STATE2->item_dropping_chance_increased_by_item = 1;
             return 0xFF;
@@ -108,11 +108,11 @@ bool battle_items_attack_done_new() {
 bool battle_items_life_orb() {
     battler *attacker = battlers + attacking_battler;
     bsc_last_used_item = attacker->item;
-    switch(item_get_hold_effect(attacker->item)) {
+    switch (item_get_hold_effect(attacker->item)) {
         case HOLD_EFFECT_LIFE_ORB: {
             if (attacker->current_hp &&
-            !(attack_result & ATTACK_NO_EFFECT_ANY) && attacks[active_attack].base_power &&
-            !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED){
+                !(attack_result & ATTACK_NO_EFFECT_ANY) && attacks[active_attack].base_power &&
+                !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED) {
                 damage_to_apply = MAX(1, attacker->max_hp / item_get_hold_effect_parameter(attacker->item));
                 battle_scripting.battler_idx = attacking_battler;
                 battle_scripting.animation_user = attacking_battler;
@@ -136,22 +136,22 @@ bool battle_items_attack_done_defender() {
                 !(attack_result & ATTACK_NO_EFFECT_ANY) && attacks[active_attack].base_power &&
                 !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED &&
                 (attacks[active_attack].flags & MAKES_CONTACT)) {
-                    damage_to_apply = MAX(1, battlers[attacking_battler].max_hp / hold_effect_param);
-                    battlescript_callstack_push_next_command();
-                    battle_scripting.battler_idx = attacking_battler;
-                    battle_scripting.animation_user = attacking_battler;
-                    battle_scripting.animation_targets = attacking_battler;
-                    bsc_last_used_item = battlers[defending_battler].item;
-                    battle_record_item_effect(defending_battler, hold_effect);
-                    bsc_offset = bsc_beulenhelm;
-                    return true;
-                }
+                damage_to_apply = MAX(1, battlers[attacking_battler].max_hp / hold_effect_param);
+                battlescript_callstack_push_next_command();
+                battle_scripting.battler_idx = attacking_battler;
+                battle_scripting.animation_user = attacking_battler;
+                battle_scripting.animation_targets = attacking_battler;
+                bsc_last_used_item = battlers[defending_battler].item;
+                battle_record_item_effect(defending_battler, hold_effect);
+                bsc_offset = bsc_beulenhelm;
+                return true;
+            }
             break;
         }
         case HOLD_EFFECT_WEAKNESS_POLICY: {
             if (((attack_result & (ATTACK_SUPER_EFFECTIVE | ATTACK_NOT_EFFECTIVE)) == ATTACK_SUPER_EFFECTIVE) &&
                 !(attack_result & ATTACK_NO_EFFECT_ANY) && attacks[active_attack].base_power &&
-                !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED && battlers[defending_battler].current_hp > 0 && 
+                !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED && battlers[defending_battler].current_hp > 0 &&
                 (battlers[defending_battler].stat_changes[STAT_ATTACK - 1] < 12 || battlers[defending_battler].stat_changes[STAT_SPECIAL_ATTACK - 1] < 12)) {
                 effect_battler = defending_battler;
                 battle_scripting.battler_idx = defending_battler;
@@ -172,8 +172,8 @@ bool battle_items_gunpowder() {
     switch (item_get_hold_effect(battlers[defending_battler].item)) {
         case HOLD_EFFECT_GUN_POWDER: {
             if (attacks[active_attack].type == TYPE_FEUER && battlers[defending_battler].current_hp > 0 &&
-            !(attack_result & ATTACK_NO_EFFECT_ANY) && attacks[active_attack].base_power &&
-            !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED) {
+                !(attack_result & ATTACK_NO_EFFECT_ANY) && attacks[active_attack].base_power &&
+                !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED) {
                 damage_to_apply = battlers[defending_battler].current_hp;
                 battle_scripting.battler_idx = defending_battler;
                 battle_scripting.animation_user = defending_battler;
@@ -286,12 +286,11 @@ int battle_item_effect_after_attack(u8 battler_idx, bool move_turn) {
                         damage_to_apply = -MIN(MAX(1, battlers[battler_idx].max_hp / 16), battlers[battler_idx].max_hp - battlers[battler_idx].current_hp);
                         battlescript_init_and_push_current_callback(bsc_heal_hp_by_item_end2);
                     } else {
-                        damage_to_apply  = MAX(1, battlers[battler_idx].max_hp / 8);
+                        damage_to_apply = MAX(1, battlers[battler_idx].max_hp / 8);
                         battlescript_init_and_push_current_callback(bsc_deal_damage_by_item_end2);
                     }
                     return 4; // effect hp changed
                 }
-            
             }
             break;
         }
@@ -300,7 +299,7 @@ int battle_item_effect_after_attack(u8 battler_idx, bool move_turn) {
                 battlers[battler_idx].ability != AQUAHUELLE && battlers[battler_idx].status1 == 0 && (rnd16() % 100) < hold_effect_param) {
                 attacking_battler = battler_idx;
                 battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = 0x40 | BATTLE_EFFECT_FIRE;
-                    battle_record_item_effect(battler_idx, hold_effect);
+                battle_record_item_effect(battler_idx, hold_effect);
                 battlescript_init_and_push_current_callback(bsc_status_orb);
                 return 1; // status changed
             }
@@ -312,7 +311,7 @@ int battle_item_effect_after_attack(u8 battler_idx, bool move_turn) {
                 battlers[battler_idx].ability != IMMUNITAET && battlers[battler_idx].status1 == 0 && (rnd16() % 100) < hold_effect_param) {
                 attacking_battler = battler_idx;
                 battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = 0x40 | BATTLE_EFFECT_BAD_POISON;
-                    battle_record_item_effect(battler_idx, hold_effect);
+                battle_record_item_effect(battler_idx, hold_effect);
                 battlescript_init_and_push_current_callback(bsc_status_orb);
                 return 1; // status changed
             }
@@ -330,7 +329,7 @@ int battle_item_effect_after_attack(u8 battler_idx, bool move_turn) {
                     break;
                 attacking_battler = battler_idx;
                 battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = 0x40 | BATTLE_EFFECT_SLEEP;
-                    battle_record_item_effect(battler_idx, hold_effect);
+                battle_record_item_effect(battler_idx, hold_effect);
                 battlescript_init_and_push_current_callback(bsc_status_orb);
                 return 1; // status changed
             }
@@ -341,7 +340,7 @@ int battle_item_effect_after_attack(u8 battler_idx, bool move_turn) {
                 battlers[battler_idx].status1 == 0 && (rnd16() % 100) < hold_effect_param) {
                 attacking_battler = battler_idx;
                 battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = 0x40 | BATTLE_EFFECT_PARALYSIS;
-                    battle_record_item_effect(battler_idx, hold_effect);
+                battle_record_item_effect(battler_idx, hold_effect);
                 battlescript_init_and_push_current_callback(bsc_status_orb);
                 return 1; // status changed
             }
@@ -352,11 +351,11 @@ int battle_item_effect_after_attack(u8 battler_idx, bool move_turn) {
                 battlers[battler_idx].type1 != TYPE_EIS && battlers[battler_idx].type2 != TYPE_EIS &&
                 battlers[battler_idx].status1 == 0 && (rnd16() % 100) < hold_effect_param) {
                 // Pokémon can't be frozen in the sun
-                if(WEATHER_HAS_EFFECT && (battle_weather & BATTLE_WEATHER_SUN_ANY))
+                if (WEATHER_HAS_EFFECT && (battle_weather & BATTLE_WEATHER_SUN_ANY))
                     break;
                 attacking_battler = battler_idx;
                 battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = 0x40 | BATTLE_EFFECT_ICE;
-                    battle_record_item_effect(battler_idx, hold_effect);
+                battle_record_item_effect(battler_idx, hold_effect);
                 battlescript_init_and_push_current_callback(bsc_status_orb);
                 return 1; // status changed
             }
@@ -365,7 +364,6 @@ int battle_item_effect_after_attack(u8 battler_idx, bool move_turn) {
     }
     return 0; // no effect
 }
-
 
 bool battle_item_before_attack_defender() {
     active_battler = defending_battler;
@@ -377,7 +375,7 @@ bool battle_item_before_attack_defender() {
             // dprintf("Active attack %d, attack_result %d\n", active_attack, attack_result);
             u8 multiplier = 16;
             battle_ai_attack_apply_effectiveness_multiplier_with_abilities(move_type, battlers[defending_battler].ability,
-                battlers[defending_battler].type1, battlers[defending_battler].type2, &multiplier);
+                                                                           battlers[defending_battler].type1, battlers[defending_battler].type2, &multiplier);
             if (move_type == item_get_hold_effect_parameter(battlers[defending_battler].item) &&
                 attacks[active_attack].base_power > 0 && multiplier > 16) {
                 BATTLE_STATE2->status_custom[attacking_battler] |= CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY;

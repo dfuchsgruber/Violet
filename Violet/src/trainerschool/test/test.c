@@ -1,47 +1,43 @@
-#include "math.h"
-#include "types.h"
-#include "save.h"
-#include "callbacks.h"
+#include "agbmemory.h"
 #include "bg.h"
-#include "text.h"
-#include "superstate.h"
-#include "oam.h"
+#include "bios.h"
+#include "callbacks.h"
+#include "constants/flags.h"
+#include "constants/vars.h"
 #include "debug.h"
 #include "fading.h"
-#include "constants/vars.h"
-#include "language.h"
 #include "flags.h"
-#include "constants/flags.h"
-#include "vars.h"
-#include "agbmemory.h"
-#include "bios.h"
-#include "music.h"
-#include "overworld/map_control.h"
 #include "io.h"
-#include "overworld/script.h"
-#include "transparency.h"
-#include "rtc.h"
+#include "language.h"
 #include "math.h"
-#include "callbacks.h"
+#include "music.h"
+#include "oam.h"
+#include "overworld/map_control.h"
+#include "overworld/script.h"
+#include "rtc.h"
+#include "save.h"
+#include "superstate.h"
+#include "text.h"
 #include "trainerschool_test.h"
+#include "transparency.h"
+#include "types.h"
+#include "vars.h"
 
 #define TEST_TIME (60 * 60) // 1 minutes?
 
 bg_config trainerschool_test_bg_configs[3] = {
     {0, 2, 31, 0, 0, 1}, //text on bg0
     {1, 1, 30, 0, 0, 0}, //bg1 is above bg0 to show paper sliding
-    {2, 0, 29, 0, 0, 2}
-};
+    {2, 0, 29, 0, 0, 2}};
 
-tboxdata trainerschool_test_tboxes [] = {
-    {0, 8, 1, 12, 8, 0, 1}, //0 := question
+tboxdata trainerschool_test_tboxes[] = {
+    {0, 8, 1, 12, 8, 0, 1},   //0 := question
     {0, 9, 10, 14, 2, 0, 97}, //1 + x = answer x
     {0, 9, 12, 14, 2, 0, 125},
     {0, 9, 14, 14, 2, 0, 153},
     {0, 9, 16, 14, 2, 0, 181},
     {0, 9, 18, 14, 2, 0, 209},
-    {0xFF, 0, 0, 0, 0, 0, 0}
-};
+    {0xFF, 0, 0, 0, 0, 0, 0}};
 
 extern const short gfx_trainerschool_page_0Tiles[];
 extern const short gfx_trainerschool_page_0Map[];
@@ -59,60 +55,66 @@ extern const u8 gfx_trainerschool_clockTiles[];
 extern const short gfx_trainerschool_clockPal[];
 
 static tbox_font_colormap trainerschool_test_fontcolmap_std = {
-    0, 6, 7, 3
-};
+    0, 6, 7, 3};
 
 static graphic trainerschool_test_graphic_correct = {
     &gfx_trainerschool_correctTiles,
     0x800,
-    0xA0E0
-};
+    0xA0E0};
 
 static graphic trainerschool_test_graphic_wrong = {
     &gfx_trainerschool_wrongTiles,
     0x800,
-    0xA0E1
-};
+    0xA0E1};
 
-/**
+/*
 static graphic trainerschool_graphic_clock = {
     &gfx_trainerschool_clockTiles,
     GRAPHIC_SIZE_4BPP(32, 512),
     0xA0E2,
 };
-**/
+*/
 
 static sprite trainerschool_test_sprite = {
-    .attr0 = ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE | ATTR0_DSIZE, 
-    .attr1 = ATTR1_SIZE_64_64, 
+    .attr0 = ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE | ATTR0_DSIZE,
+    .attr1 = ATTR1_SIZE_64_64,
     .attr2 = ATTR2_PRIO(0),
 };
 
 static sprite trainerschool_clock_sprite = {
-    .attr0 = ATTR0_SHAPE_VERTICAL | ATTR0_ROTSCALE | ATTR0_DSIZE, 
-    .attr1 = ATTR1_SIZE_32_64, 
-    .attr2 = ATTR2_PRIO(0), 
+    .attr0 = ATTR0_SHAPE_VERTICAL | ATTR0_ROTSCALE | ATTR0_DSIZE,
+    .attr1 = ATTR1_SIZE_32_64,
+    .attr2 = ATTR2_PRIO(0),
 };
-
 
 static rotscale_frame trainerschool_test_rotscal_anim[] = {
-    {.affine = {0x200, 0x200, 0, 0, 0}}, {.affine = {-36, -36, 0, 12, 0}},
-    {.command = {ROTSCALE_ANIM_END, 0, 0, 0}}
-};
+    {.affine = {0x200, 0x200, 0, 0, 0}}, {.affine = {-36, -36, 0, 12, 0}}, {.command = {ROTSCALE_ANIM_END, 0, 0, 0}}};
 
-/**
+/*
 static gfx_frame trainerschool_clock_gfx_animation[] = {
     {.data = 0, .duration = 0}, {.data = 0, .duration = 8}, {.data = 32, .duration = 8}, {.data = GFX_ANIM_JUMP, .duration = 1},
     {.data = 64, .duration = 0}, {.data = 64, .duration = 8}, {.data = 96, .duration = 8}, {.data = GFX_ANIM_JUMP, .duration = 5},
     {.data = 128, .duration = 0}, {.data = 128, .duration = 8}, {.data = 160, .duration = 8}, {.data = GFX_ANIM_JUMP, .duration = 9},
     {.data = 192, .duration = 0}, {.data = 192, .duration = 8}, {.data = 224, .duration = 8}, {.data = GFX_ANIM_JUMP, .duration = 13},
 };
-**/
+*/
 static gfx_frame trainerschool_clock_gfx_animation[] = {
-    {.data = 0, .duration = 0}, {.data = 0, .duration = 8}, {.data = 1, .duration = 8}, {.data = GFX_ANIM_JUMP, .duration = 0},
-    {.data = 2, .duration = 0}, {.data = 2, .duration = 8}, {.data = 3, .duration = 8}, {.data = GFX_ANIM_JUMP, .duration = 0},
-    {.data = 4, .duration = 0}, {.data = 4, .duration = 8}, {.data = 5, .duration = 8}, {.data = GFX_ANIM_JUMP, .duration = 0},
-    {.data = 6, .duration = 0}, {.data = 6, .duration = 8}, {.data = 7, .duration = 8}, {.data = GFX_ANIM_JUMP, .duration = 0},
+    {.data = 0, .duration = 0},
+    {.data = 0, .duration = 8},
+    {.data = 1, .duration = 8},
+    {.data = GFX_ANIM_JUMP, .duration = 0},
+    {.data = 2, .duration = 0},
+    {.data = 2, .duration = 8},
+    {.data = 3, .duration = 8},
+    {.data = GFX_ANIM_JUMP, .duration = 0},
+    {.data = 4, .duration = 0},
+    {.data = 4, .duration = 8},
+    {.data = 5, .duration = 8},
+    {.data = GFX_ANIM_JUMP, .duration = 0},
+    {.data = 6, .duration = 0},
+    {.data = 6, .duration = 8},
+    {.data = 7, .duration = 8},
+    {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
 static graphic trainerschool_clock_gfx_table[] = {
@@ -127,7 +129,9 @@ static graphic trainerschool_clock_gfx_table[] = {
 };
 
 static gfx_frame *trainerschool_clock_gfx_animations[] = {
-    trainerschool_clock_gfx_animation + 0, trainerschool_clock_gfx_animation + 4, trainerschool_clock_gfx_animation + 8,
+    trainerschool_clock_gfx_animation + 0,
+    trainerschool_clock_gfx_animation + 4,
+    trainerschool_clock_gfx_animation + 8,
     trainerschool_clock_gfx_animation + 12,
 };
 
@@ -138,15 +142,14 @@ static rotscale_frame trainerschool_clock_rotscale_animation[] = {
     {.affine = {0, 0, (u8)(-1), 6, 0}},
     {.affine = {0, 0, 0, 24, 0}},
     {.affine = {0, 0, 1, 3, 0}},
-    {.command = {ROTSCALE_ANIM_JUMP, 1, 0, 0}}
-};
+    {.command = {ROTSCALE_ANIM_JUMP, 1, 0, 0}}};
 
 static rotscale_frame *trainerschool_test_rotscale_table[] = {trainerschool_test_rotscal_anim};
 static rotscale_frame *trainerschool_clock_rotscale_animations[] = {trainerschool_clock_rotscale_animation};
 
-
 static oam_template trainerschool_test_oam_template_correct = {
-    0xA0E0, 0xA0E0,
+    0xA0E0,
+    0xA0E0,
     &trainerschool_test_sprite,
     oam_gfx_anim_table_null,
     NULL,
@@ -155,7 +158,8 @@ static oam_template trainerschool_test_oam_template_correct = {
 };
 
 static oam_template trainerschool_test_oam_template_wrong = {
-    0xA0E1, 0xA0E0,
+    0xA0E1,
+    0xA0E0,
     &trainerschool_test_sprite,
     oam_gfx_anim_table_null,
     NULL,
@@ -190,7 +194,8 @@ static void trainerschool_clock_callback(oam_object *self) {
 }
 
 static oam_template trainerschool_test_oam_template_clock = {
-    0xFFFF, 0xA0E2,
+    0xFFFF,
+    0xA0E2,
     &trainerschool_clock_sprite,
     trainerschool_clock_gfx_animations,
     trainerschool_clock_gfx_table,
@@ -201,64 +206,64 @@ static oam_template trainerschool_test_oam_template_clock = {
 u8 str_trainerschool_test_list[] = PSTRING("-");
 u8 str_trainerschool_test_cursor[] = PSTRING("▶");
 
-void trainerschool_test_load_answers(){
+void trainerschool_test_load_answers() {
     u8 question = TRAINER_SCHOOL_TEST_STATE->current_question;
     dprintf("Question %d\n", question);
     int i;
-    for(i = 0; i < 5; i++){
+    for (i = 0; i < 5; i++) {
         dprintf("Printing answer %d\n", i);
         tbox_flush_set((u8)(i + 1), 0);
         tbox_tilemap_draw((u8)(i + 1));
-        
-        if(i < trainerschool_test_questions[question].answer_cnt){
-            strcpy(strbuf, 
-                    TRAINER_SCHOOL_TEST_STATE->cursor == i ? str_trainerschool_test_cursor :
-                    str_trainerschool_test_list);
+
+        if (i < trainerschool_test_questions[question].answer_cnt) {
+            strcpy(strbuf,
+                   TRAINER_SCHOOL_TEST_STATE->cursor == i ? str_trainerschool_test_cursor : str_trainerschool_test_list);
             strcat(strbuf, trainerschool_test_questions[question].answers[i]);
-            tbox_print_string((u8)(i + 1), 2, 0, 0, 0, 0, 
-                    &trainerschool_test_fontcolmap_std, 0,
-                    strbuf);
-            
-        }else{
+            tbox_print_string((u8)(i + 1), 2, 0, 0, 0, 0,
+                              &trainerschool_test_fontcolmap_std, 0,
+                              strbuf);
+
+        } else {
             dprintf("clearing answer %d\n", i);
             //tbox_flush_map((u8)(i + 1));
             u8 str_none[] = {0xFF};
-            tbox_print_string((u8)(i + 1), 2, 0, 0, 0, 0, 
-                    &trainerschool_test_fontcolmap_std, 0,
-                    str_none);
+            tbox_print_string((u8)(i + 1), 2, 0, 0, 0, 0,
+                              &trainerschool_test_fontcolmap_std, 0,
+                              str_none);
         }
     }
 }
 
-void trainerschool_test_load_question(){
+void trainerschool_test_load_question() {
     u8 question = TRAINER_SCHOOL_TEST_STATE->current_question;
     TRAINER_SCHOOL_TEST_STATE->cursor = 0;
     //Print question
-    
+
     tbox_flush_set(0, 0);
     tbox_tilemap_draw(0);
     tbox_print_string(0, 2, 0, 0, 0, 0, &trainerschool_test_fontcolmap_std, 0,
-            trainerschool_test_questions[question].question);
+                      trainerschool_test_questions[question].question);
     trainerschool_test_load_answers();
 }
 
-void trainerschool_test_done(){
+void trainerschool_test_done() {
     generic_callback1();
-    if(!fading_is_active()){
-        // clearflag(MAP_BGN_AUTO_ALIGN_OFF);   
+    if (!fading_is_active()) {
+        // clearflag(MAP_BGN_AUTO_ALIGN_OFF);
         overworld_script_resume();
         callback1_set(map_reload);
     }
 }
 
-void trainerschool_test_question_done(){
+void trainerschool_test_question_done() {
     generic_callback1();
-    if(TRAINER_SCHOOL_TEST_STATE->delay) TRAINER_SCHOOL_TEST_STATE->delay--;
-    else{
-        switch(TRAINER_SCHOOL_TEST_STATE->frame){
+    if (TRAINER_SCHOOL_TEST_STATE->delay)
+        TRAINER_SCHOOL_TEST_STATE->delay--;
+    else {
+        switch (TRAINER_SCHOOL_TEST_STATE->frame) {
             case 0:
                 TRAINER_SCHOOL_TEST_STATE->current_question++;
-                if(TRAINER_SCHOOL_TEST_STATE->current_question == 10){
+                if (TRAINER_SCHOOL_TEST_STATE->current_question == 10) {
                     TRAINER_SCHOOL_TEST_STATE->finished = 1;
                     fadescreen_all(1, 0);
                     callback1_set(trainerschool_test_done);
@@ -312,11 +317,9 @@ void trainerschool_times_up() {
         fadescreen_all(1, 0);
         callback1_set(trainerschool_test_done);
     }
-
 }
 
-
-void trainerschool_test_idle(){
+void trainerschool_test_idle() {
     generic_callback1();
     TRAINER_SCHOOL_TEST_STATE->timer++;
     if (TRAINER_SCHOOL_TEST_STATE->timer >= TEST_TIME) {
@@ -326,23 +329,24 @@ void trainerschool_test_idle(){
         callback1_set(trainerschool_times_up);
         return;
     }
-    if(super.keys_new.keys.down){
+    if (super.keys_new.keys.down) {
         TRAINER_SCHOOL_TEST_STATE->cursor++;
-        TRAINER_SCHOOL_TEST_STATE->cursor = 
-        (u8)(TRAINER_SCHOOL_TEST_STATE->cursor %
-                trainerschool_test_questions[TRAINER_SCHOOL_TEST_STATE->current_question].answer_cnt);
+        TRAINER_SCHOOL_TEST_STATE->cursor =
+            (u8)(TRAINER_SCHOOL_TEST_STATE->cursor %
+                 trainerschool_test_questions[TRAINER_SCHOOL_TEST_STATE->current_question].answer_cnt);
         play_sound(5);
         trainerschool_test_load_answers();
-    }else if(super.keys_new.keys.up){
-        if(!TRAINER_SCHOOL_TEST_STATE->cursor)TRAINER_SCHOOL_TEST_STATE->cursor = (u8)
-                (trainerschool_test_questions[TRAINER_SCHOOL_TEST_STATE->current_question].answer_cnt - 1);
-        else TRAINER_SCHOOL_TEST_STATE->cursor--;
+    } else if (super.keys_new.keys.up) {
+        if (!TRAINER_SCHOOL_TEST_STATE->cursor)
+            TRAINER_SCHOOL_TEST_STATE->cursor = (u8)(trainerschool_test_questions[TRAINER_SCHOOL_TEST_STATE->current_question].answer_cnt - 1);
+        else
+            TRAINER_SCHOOL_TEST_STATE->cursor--;
         play_sound(5);
         trainerschool_test_load_answers();
-    }else if(super.keys_new.keys.A){
+    } else if (super.keys_new.keys.A) {
         s16 y = (s16)(TRAINER_SCHOOL_TEST_STATE->cursor * 16 + 83);
         u8 question = TRAINER_SCHOOL_TEST_STATE->current_question;
-        if(trainerschool_test_questions[question].correct_answer == TRAINER_SCHOOL_TEST_STATE->cursor){
+        if (trainerschool_test_questions[question].correct_answer == TRAINER_SCHOOL_TEST_STATE->cursor) {
             //correct answer
             fanfare(269);
             play_sound(12);
@@ -352,7 +356,7 @@ void trainerschool_test_idle(){
             TRAINER_SCHOOL_TEST_STATE->delay = 0xC0;
             TRAINER_SCHOOL_TEST_STATE->frame = 0;
             callback1_set(trainerschool_test_question_done);
-        }else{
+        } else {
             fanfare(271);
             play_sound(12);
             TRAINER_SCHOOL_TEST_STATE->answer_oam = oam_new_forward_search(
@@ -364,17 +368,17 @@ void trainerschool_test_idle(){
     }
 }
 
-void trainerschool_exam_init_components(){
+void trainerschool_exam_init_components() {
     generic_callback1();
-    if(!fading_is_active()){
+    if (!fading_is_active()) {
         //init gfx and stuff
-        
+
         big_callback_delete_all();
         oam_reset();
         oam_palette_allocation_reset();
         bg_reset(0);
         bg_setup(0, trainerschool_test_bg_configs, 3);
-        
+
         bg_sync_display_and_show(0);
         bg_sync_display_and_show(1);
         bg_sync_display_and_show(2);
@@ -391,18 +395,18 @@ void trainerschool_exam_init_components(){
         io_set(0x16, 0);
         io_set(0x18, 0);
         io_set(0x1A, 0);
-        
+
         void *bg0map = malloc_and_clear(0x800);
         void *bg1map = malloc_and_clear(0x800);
         void *bg2map = malloc_and_clear(0x800);
-        
+
         bg_set_tilemap(0, bg0map);
         bg_set_tilemap(1, bg1map);
         bg_set_tilemap(2, bg2map);
-        
+
         lz77uncompwram(gfx_trainerschool_paperMap, bg2map);
-        lz77uncompvram(gfx_trainerschool_paperTiles, (void*) 0x06000000);
-        lz77uncompvram(gfx_trainerschool_page_0Tiles, (void*) 0x06004000);
+        lz77uncompvram(gfx_trainerschool_paperTiles, (void *)0x06000000);
+        lz77uncompvram(gfx_trainerschool_page_0Tiles, (void *)0x06004000);
         bg_copy_vram(0, bg0map, 0x800, 0, 2);
         bg_copy_vram(1, bg1map, 0x800, 0, 2);
         bg_copy_vram(2, bg2map, 0x800, 0, 2);
@@ -412,18 +416,15 @@ void trainerschool_exam_init_components(){
         pal_decompress(gfx_trainerschool_clockPal, (u16)(256 + oam_allocate_palette(0xA0E2) * 16), 16 * sizeof(color_t));
         pal_copy(tbox_palette_transparent, 15 * 16, 16 * sizeof(color_t));
         pal_set_all_to_black(); //we avoid the 1frame show of a pal
-        
 
         tbox_sync_with_virtual_bg_and_init_all(trainerschool_test_tboxes);
         trainerschool_test_load_question();
 
-        
         oam_load_graphic(&trainerschool_test_graphic_correct);
         oam_load_graphic(&trainerschool_test_graphic_wrong);
         // oam_load_graphic(&trainerschool_graphic_clock);
         oam_new_forward_search(&trainerschool_test_oam_template_clock, 212, 48, 1);
-        
-        
+
         fadescreen_all(0, 0);
         callback1_set(trainerschool_test_idle);
         vblank_handler_set(generic_vblank_handler);
@@ -434,10 +435,10 @@ void trainerschool_exam_init_components(){
     }
 }
 
-void trainerschool_exam_init(){
+void trainerschool_exam_init() {
     generic_callback1();
     *var_access(TRAINERSCHOOL_CORRECT_ANSWERS) = 0;
-    fmem.gp_state = (trainerschool_test_memory*) malloc_and_clear(sizeof(trainerschool_test_memory));
+    fmem.gp_state = (trainerschool_test_memory *)malloc_and_clear(sizeof(trainerschool_test_memory));
     TRAINER_SCHOOL_TEST_STATE->current_question = 0;
     TRAINER_SCHOOL_TEST_STATE->timer = 0;
     TRAINER_SCHOOL_TEST_STATE->finished = 0;
@@ -446,4 +447,3 @@ void trainerschool_exam_init(){
     vblank_handler_set(generic_vblank_handler);
     // setflag(MAP_BGN_AUTO_ALIGN_OFF);
 }
-

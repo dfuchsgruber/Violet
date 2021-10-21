@@ -1,33 +1,31 @@
-#include "types.h"
-#include "map/header.h"
-#include "save.h"
-#include "dungeon/dungeon2.h"
-#include "dungeon/callback.h"
 #include "dungeon/forest.h"
-#include "debug.h"
-#include "constants/map_weathers.h"
-#include "map/footer.h"
 #include "agbmemory.h"
-#include "prng.h"
-#include "vars.h"
-#include "bios.h"
-#include "transparency.h"
-#include "overworld/map_control.h"
 #include "berry.h"
-#include "constants/vars.h"
-#include "vars.h"
-#include "pokemon/basestat.h"
-#include "constants/person_behaviours.h"
-#include "tile/block.h"
+#include "bios.h"
+#include "callbacks.h"
 #include "constants/map_types.h"
-#include "overworld/sprite.h"
+#include "constants/map_weathers.h"
+#include "constants/person_behaviours.h"
+#include "constants/person_script_stds.h"
+#include "constants/vars.h"
+#include "constants/wild_pokemon_densities.h"
+#include "debug.h"
+#include "dungeon/callback.h"
+#include "dungeon/dungeon2.h"
 #include "dungeon/forest.h"
 #include "flags.h"
-#include "constants/person_script_stds.h"
-#include "constants/map_weathers.h"
-#include "constants/wild_pokemon_densities.h"
-#include "callbacks.h"
+#include "map/footer.h"
+#include "map/header.h"
+#include "overworld/map_control.h"
 #include "overworld/script.h"
+#include "overworld/sprite.h"
+#include "pokemon/basestat.h"
+#include "prng.h"
+#include "save.h"
+#include "tile/block.h"
+#include "transparency.h"
+#include "types.h"
+#include "vars.h"
 
 extern map_footer_t map_footer_dungeon_forest_normal;
 extern map_footer_t map_footer_dungeon_forest_apple_tree;
@@ -69,7 +67,7 @@ static int dungeon2_get_forest_num_patterns(dungeon_generator2 *dg2) {
     return MIN(DG2_MAX_NUM_PATTERNS, type->min_num_patterns + (gp_rnd16() % (type->max_num_patterns - type->min_num_patterns + 1)));
 }
 
-map_footer_t *dungeon2_init_footer_forest(dungeon_generator2 *dg2){
+map_footer_t *dungeon2_init_footer_forest(dungeon_generator2 *dg2) {
     map_footer_t *footer = dungeon2_get_forest_type_pattern(dg2);
     fmem.dmapfooter.width = (u32)dg2->width;
     fmem.dmapfooter.height = (u32)dg2->height;
@@ -83,8 +81,7 @@ map_footer_t *dungeon2_init_footer_forest(dungeon_generator2 *dg2){
 }
 
 static s16 dungeon_forest_apple_displacements[][2] = {
-    {-1, 0}, {-1, 1}, {1, 0}, {1, 1}
-};
+    {-1, 0}, {-1, 1}, {1, 0}, {1, 1}};
 
 u32 dungeon_forest_berries[] = {
     [ITEM_IDX_TO_BERRY_IDX(ITEM_AMRENABEERE)] = 6,
@@ -100,10 +97,26 @@ u32 dungeon_forest_berries[] = {
 };
 
 u16 dungeon_forest_eggs[] = {
-    POKEMON_TOGEPI, POKEMON_MAEHIKEL, POKEMON_PIKACHU, POKEMON_FLABEBE, POKEMON_MYRAPLA, POKEMON_WATTZAPF,
-    POKEMON_TRAUMATO, POKEMON_KANGAMA, POKEMON_PINSIR, POKEMON_SICHLOR,
-    POKEMON_MOBAI, POKEMON_TANNZA, POKEMON_TEDDIURSA, POKEMON_MAMPFAXO, POKEMON_SAMURZEL,
-    POKEMON_KNILZ, POKEMON_BUMMELZ, POKEMON_VIPITIS, POKEMON_SENGO, 0xFFFF,
+    POKEMON_TOGEPI,
+    POKEMON_MAEHIKEL,
+    POKEMON_PIKACHU,
+    POKEMON_FLABEBE,
+    POKEMON_MYRAPLA,
+    POKEMON_WATTZAPF,
+    POKEMON_TRAUMATO,
+    POKEMON_KANGAMA,
+    POKEMON_PINSIR,
+    POKEMON_SICHLOR,
+    POKEMON_MOBAI,
+    POKEMON_TANNZA,
+    POKEMON_TEDDIURSA,
+    POKEMON_MAMPFAXO,
+    POKEMON_SAMURZEL,
+    POKEMON_KNILZ,
+    POKEMON_BUMMELZ,
+    POKEMON_VIPITIS,
+    POKEMON_SENGO,
+    0xFFFF,
 };
 
 static void dungeon_pattern_fill_with_1x1_border_without_corners(u8 *map, int x, int y, int w, int h, dungeon_generator2 *dg2) {
@@ -134,16 +147,21 @@ static void dungeon_pattern_fill_dusk_forest(u8 *map, int x, int y, int w, int h
 }
 
 static void dungeon_pattern_fill_none(u8 *map, int x, int y, int w, int h, dungeon_generator2 *dg2) {
-    (void)map; (void)x; (void)y; (void)w; (void)h; (void)dg2;
+    (void)map;
+    (void)x;
+    (void)y;
+    (void)w;
+    (void)h;
+    (void)dg2;
 }
 
 static void dungeon_forest_normal_initialize_events(dungeon_generator2 *dg2) {
     (void)dg2;
 }
 
-static void dungeon_forest_apple_forest_initialize_events(dungeon_generator2 *dg2){
+static void dungeon_forest_apple_forest_initialize_events(dungeon_generator2 *dg2) {
     u8 num_persons = fmem.dmapevents.person_cnt;
-    int (*nodes)[2] = save1->dungeon_nodes;
+    int(*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
     bool create_golden_apple = (dungeon2_rnd_16(dg2) % 4) == 0; // 1/4 of apple forests hold a golden apple
     // Up to 4 apples are under an apple tree
@@ -172,9 +190,9 @@ static void dungeon_forest_apple_forest_initialize_events(dungeon_generator2 *dg
     fmem.dmapevents.person_cnt = num_persons;
 }
 
-static void dungeon_forest_berry_forest_initialize_events(dungeon_generator2 *dg2){
+static void dungeon_forest_berry_forest_initialize_events(dungeon_generator2 *dg2) {
     u8 num_persons = fmem.dmapevents.person_cnt;
-    int (*nodes)[2] = save1->dungeon_nodes;
+    int(*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
     gp_rng_seed(dungeon2_seeded_rnd16(dg2, DG2_RANDOM_SEED_PATTERN_PARAMETER));
     for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns); j++) {
@@ -195,9 +213,9 @@ static void dungeon_forest_berry_forest_initialize_events(dungeon_generator2 *dg
     fmem.dmapevents.person_cnt = num_persons;
 }
 
-static void dungeon_forest_egg_forest_initialize_events(dungeon_generator2 *dg2){
+static void dungeon_forest_egg_forest_initialize_events(dungeon_generator2 *dg2) {
     u8 num_persons = fmem.dmapevents.person_cnt;
-    int (*nodes)[2] = save1->dungeon_nodes;
+    int(*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
     gp_rng_seed(cmem.dg2.seed);
     for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_persons < ARRAY_COUNT(fmem.dpersons); j++) {
@@ -214,12 +232,14 @@ static void dungeon_forest_egg_forest_initialize_events(dungeon_generator2 *dg2)
 }
 
 static s16 dungeon_forest_mushroom_displacements[][3] = {
-    {0, -2}, {-1, 0}, {1, 0},
+    {0, -2},
+    {-1, 0},
+    {1, 0},
 };
 
 static void dungeon_mushroom_forest_initialize_events(dungeon_generator2 *dg2) {
     u8 num_persons = fmem.dmapevents.person_cnt;
-    int (*nodes)[2] = save1->dungeon_nodes;
+    int(*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
     size_t idxs_shuffled[3] = {0, 1, 2};
     for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns); j++) {
@@ -242,7 +262,7 @@ static void dungeon_mushroom_forest_initialize_events(dungeon_generator2 *dg2) {
 
 static void dungeon_dusk_forest_initialize_events(dungeon_generator2 *dg2) {
     u8 num_warps = fmem.dmapevents.warp_cnt;
-    int (*nodes)[2] = save1->dungeon_nodes;
+    int(*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
     for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_warps <= ARRAY_COUNT(fmem.dwarps); j++) {
         fmem.dwarps[num_warps].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] - 1);
@@ -257,7 +277,7 @@ static void dungeon_dusk_forest_initialize_events(dungeon_generator2 *dg2) {
 
 static void dungeon_tent_forest_initialize_events(dungeon_generator2 *dg2) {
     u8 num_warps = fmem.dmapevents.warp_cnt;
-    int (*nodes)[2] = save1->dungeon_nodes;
+    int(*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
     for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_warps <= ARRAY_COUNT(fmem.dwarps); j++) {
         fmem.dwarps[num_warps].x = (s16)(nodes[DG2_NODE_PATTERN + j][0]);
@@ -282,21 +302,42 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .has_alternative_trees = false,
         .map_weather = MAP_WEATHER_CLOUDY,
         .items_common = {
-            ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_SUPERSCHUTZ, ITEM_FLUCHTSEIL,
-            ITEM_PARA_HEILER, ITEM_GEGENGIFT, ITEM_AUFWECKER, ITEM_AETHER,
+            ITEM_SUPERBALL,
+            ITEM_SUPERTRANK,
+            ITEM_SUPERSCHUTZ,
+            ITEM_FLUCHTSEIL,
+            ITEM_PARA_HEILER,
+            ITEM_GEGENGIFT,
+            ITEM_AUFWECKER,
+            ITEM_AETHER,
         },
         .items_rare = {
-            ITEM_GRUENSTUECK, ITEM_TOP_SCHUTZ, ITEM_AP_PLUS, ITEM_ELIXIER,
+            ITEM_GRUENSTUECK,
+            ITEM_TOP_SCHUTZ,
+            ITEM_AP_PLUS,
+            ITEM_ELIXIER,
         },
         .species_common = {
-            POKEMON_PIKACHU, POKEMON_MYRAPLA, POKEMON_KNOFENSA, POKEMON_SAMURZEL,
-            POKEMON_WAUMPEL, POKEMON_HORNLIU, POKEMON_LEDYBA, POKEMON_WATTZAPF,
+            POKEMON_PIKACHU,
+            POKEMON_MYRAPLA,
+            POKEMON_KNOFENSA,
+            POKEMON_SAMURZEL,
+            POKEMON_WAUMPEL,
+            POKEMON_HORNLIU,
+            POKEMON_LEDYBA,
+            POKEMON_WATTZAPF,
         },
         .species_rare = {
-            POKEMON_DUFLOR, POKEMON_ULTRIGARIA, POKEMON_SCHALOKO, POKEMON_PANEKON,
+            POKEMON_DUFLOR,
+            POKEMON_ULTRIGARIA,
+            POKEMON_SCHALOKO,
+            POKEMON_PANEKON,
         },
         .species_static_encounter = {
-            POKEMON_GIFLOR, POKEMON_SARZENIA, POKEMON_PAPINELLA, POKEMON_PUDOX,
+            POKEMON_GIFLOR,
+            POKEMON_SARZENIA,
+            POKEMON_PAPINELLA,
+            POKEMON_PUDOX,
         },
     },
     [DUNGEON_FOREST_TYPE_APPLE_FOREST] = {
@@ -310,21 +351,42 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .has_alternative_trees = true,
         .map_weather = MAP_WEATHER_OUTSIDE,
         .items_common = {
-            ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_SUPERSCHUTZ, ITEM_FLUCHTSEIL,
-            ITEM_PARA_HEILER, ITEM_GEGENGIFT, ITEM_APFEL, ITEM_APFEL,
+            ITEM_SUPERBALL,
+            ITEM_SUPERTRANK,
+            ITEM_SUPERSCHUTZ,
+            ITEM_FLUCHTSEIL,
+            ITEM_PARA_HEILER,
+            ITEM_GEGENGIFT,
+            ITEM_APFEL,
+            ITEM_APFEL,
         },
         .items_rare = {
-            ITEM_GRUENSTUECK, ITEM_TOP_SCHUTZ, ITEM_RIESENAPFEL, ITEM_ELIXIER,
+            ITEM_GRUENSTUECK,
+            ITEM_TOP_SCHUTZ,
+            ITEM_RIESENAPFEL,
+            ITEM_ELIXIER,
         },
         .species_common = {
-            POKEMON_TEDDIURSA, POKEMON_MOBAI, POKEMON_KNOFENSA, POKEMON_SAMURZEL,
-            POKEMON_WAUMPEL, POKEMON_HORNLIU, POKEMON_LEDYBA, POKEMON_FLABEBE,
+            POKEMON_TEDDIURSA,
+            POKEMON_MOBAI,
+            POKEMON_KNOFENSA,
+            POKEMON_SAMURZEL,
+            POKEMON_WAUMPEL,
+            POKEMON_HORNLIU,
+            POKEMON_LEDYBA,
+            POKEMON_FLABEBE,
         },
         .species_rare = {
-            POKEMON_DUFLOR, POKEMON_MOGELBAUM, POKEMON_LEDIAN, POKEMON_FLOETTE,
+            POKEMON_DUFLOR,
+            POKEMON_MOGELBAUM,
+            POKEMON_LEDIAN,
+            POKEMON_FLOETTE,
         },
         .species_static_encounter = {
-            POKEMON_GIFLOR, POKEMON_URSARING, POKEMON_FLORGES, POKEMON_SARZENIA,
+            POKEMON_GIFLOR,
+            POKEMON_URSARING,
+            POKEMON_FLORGES,
+            POKEMON_SARZENIA,
         },
     },
     [DUNGEON_FOREST_TYPE_BERRY_FOREST] = {
@@ -339,21 +401,42 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .x_consistent_decoration = true,
         .map_weather = MAP_WEATHER_OUTSIDE,
         .items_common = {
-            ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_SUPERSCHUTZ, ITEM_FLUCHTSEIL,
-            ITEM_PARA_HEILER, ITEM_GEGENGIFT, ITEM_BEERENSAFT, ITEM_AETHER,
+            ITEM_SUPERBALL,
+            ITEM_SUPERTRANK,
+            ITEM_SUPERSCHUTZ,
+            ITEM_FLUCHTSEIL,
+            ITEM_PARA_HEILER,
+            ITEM_GEGENGIFT,
+            ITEM_BEERENSAFT,
+            ITEM_AETHER,
         },
         .items_rare = {
-            ITEM_GRUENSTUECK, ITEM_TOP_SCHUTZ, ITEM_TOP_AETHER, ITEM_ELIXIER,
+            ITEM_GRUENSTUECK,
+            ITEM_TOP_SCHUTZ,
+            ITEM_TOP_AETHER,
+            ITEM_ELIXIER,
         },
         .species_common = {
-            POKEMON_TEDDIURSA, POKEMON_WATTZAPF, POKEMON_KNOFENSA, POKEMON_SAMURZEL,
-            POKEMON_BUMMELZ, POKEMON_MYRAPLA, POKEMON_LEDYBA, POKEMON_FLABEBE,
+            POKEMON_TEDDIURSA,
+            POKEMON_WATTZAPF,
+            POKEMON_KNOFENSA,
+            POKEMON_SAMURZEL,
+            POKEMON_BUMMELZ,
+            POKEMON_MYRAPLA,
+            POKEMON_LEDYBA,
+            POKEMON_FLABEBE,
         },
         .species_rare = {
-            POKEMON_DUFLOR, POKEMON_FLOETTE, POKEMON_BLANAS, POKEMON_MUNTIER,
+            POKEMON_DUFLOR,
+            POKEMON_FLOETTE,
+            POKEMON_BLANAS,
+            POKEMON_MUNTIER,
         },
         .species_static_encounter = {
-            POKEMON_GIFLOR, POKEMON_URSARING, POKEMON_TENGULIST, POKEMON_LETARKING,
+            POKEMON_GIFLOR,
+            POKEMON_URSARING,
+            POKEMON_TENGULIST,
+            POKEMON_LETARKING,
         },
     },
     [DUNGEON_FOREST_TYPE_EGG_FOREST] = {
@@ -368,21 +451,42 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .x_consistent_decoration = true,
         .map_weather = MAP_WEATHER_OUTSIDE,
         .items_common = {
-            ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_SUPERSCHUTZ, ITEM_FLUCHTSEIL,
-            ITEM_PARA_HEILER, ITEM_GEGENGIFT, ITEM_BEERENSAFT, ITEM_AETHER,
+            ITEM_SUPERBALL,
+            ITEM_SUPERTRANK,
+            ITEM_SUPERSCHUTZ,
+            ITEM_FLUCHTSEIL,
+            ITEM_PARA_HEILER,
+            ITEM_GEGENGIFT,
+            ITEM_BEERENSAFT,
+            ITEM_AETHER,
         },
         .items_rare = {
-            ITEM_GEWITTER_EI, ITEM_WUESTEN_EI, ITEM_TUNDRA_EI, ITEM_SONNEN_EI,
+            ITEM_GEWITTER_EI,
+            ITEM_WUESTEN_EI,
+            ITEM_TUNDRA_EI,
+            ITEM_SONNEN_EI,
         },
         .species_common = {
-            POKEMON_TOGEPI, POKEMON_TANNZA, POKEMON_KNOFENSA, POKEMON_SAMURZEL,
-            POKEMON_KASTADUR, POKEMON_MYRAPLA, POKEMON_PIKACHU, POKEMON_FLABEBE,
+            POKEMON_TOGEPI,
+            POKEMON_TANNZA,
+            POKEMON_KNOFENSA,
+            POKEMON_SAMURZEL,
+            POKEMON_KASTADUR,
+            POKEMON_MYRAPLA,
+            POKEMON_PIKACHU,
+            POKEMON_FLABEBE,
         },
         .species_rare = {
-            POKEMON_ULTRIGARIA, POKEMON_DUFLOR, POKEMON_BLANAS, POKEMON_FLOETTE,
+            POKEMON_ULTRIGARIA,
+            POKEMON_DUFLOR,
+            POKEMON_BLANAS,
+            POKEMON_FLOETTE,
         },
         .species_static_encounter = {
-            POKEMON_GIFLOR, POKEMON_TOGETIC, POKEMON_RAICHU, POKEMON_CHANEIRA,
+            POKEMON_GIFLOR,
+            POKEMON_TOGETIC,
+            POKEMON_RAICHU,
+            POKEMON_CHANEIRA,
         },
     },
     [DUNGEON_FOREST_TYPE_MUSHROOM_FOREST] = {
@@ -396,21 +500,42 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .has_alternative_trees = true,
         .map_weather = MAP_WEATHER_CLOUDY,
         .items_common = {
-            ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_SUPERSCHUTZ, ITEM_FLUCHTSEIL,
-            ITEM_PARA_HEILER, ITEM_GEGENGIFT, ITEM_AUFWECKER, ITEM_AETHER,
+            ITEM_SUPERBALL,
+            ITEM_SUPERTRANK,
+            ITEM_SUPERSCHUTZ,
+            ITEM_FLUCHTSEIL,
+            ITEM_PARA_HEILER,
+            ITEM_GEGENGIFT,
+            ITEM_AUFWECKER,
+            ITEM_AETHER,
         },
         .items_rare = {
-            ITEM_MINIPILZ, ITEM_GRUENSTUECK, ITEM_HYPERTRANK, ITEM_TOP_SCHUTZ,
+            ITEM_MINIPILZ,
+            ITEM_GRUENSTUECK,
+            ITEM_HYPERTRANK,
+            ITEM_TOP_SCHUTZ,
         },
         .species_common = {
-            POKEMON_KNILZ, POKEMON_TRAUMATO, POKEMON_KNOFENSA, POKEMON_SAMURZEL,
-            POKEMON_KASTADUR, POKEMON_MYRAPLA, POKEMON_WAUMPEL, POKEMON_KRAMURX,
+            POKEMON_KNILZ,
+            POKEMON_TRAUMATO,
+            POKEMON_KNOFENSA,
+            POKEMON_SAMURZEL,
+            POKEMON_KASTADUR,
+            POKEMON_MYRAPLA,
+            POKEMON_WAUMPEL,
+            POKEMON_KRAMURX,
         },
         .species_rare = {
-            POKEMON_SCHALOKO, POKEMON_PANEKON, POKEMON_BLANAS, POKEMON_ULTRIGARIA,
+            POKEMON_SCHALOKO,
+            POKEMON_PANEKON,
+            POKEMON_BLANAS,
+            POKEMON_ULTRIGARIA,
         },
         .species_static_encounter = {
-            POKEMON_KAPILZ, POKEMON_HYPNO, POKEMON_PAPINELLA, POKEMON_PUDOX,
+            POKEMON_KAPILZ,
+            POKEMON_HYPNO,
+            POKEMON_PAPINELLA,
+            POKEMON_PUDOX,
         },
     },
     [DUNGEON_FOREST_TYPE_DUSK_FOREST] = {
@@ -426,21 +551,42 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .y_consistent_decoration = true,
         .map_weather = MAP_WEATHER_CLOUDY,
         .items_common = {
-            ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_SUPERSCHUTZ, ITEM_FLUCHTSEIL,
-            ITEM_PARA_HEILER, ITEM_GEGENGIFT, ITEM_AUFWECKER, ITEM_AETHER,
+            ITEM_SUPERBALL,
+            ITEM_SUPERTRANK,
+            ITEM_SUPERSCHUTZ,
+            ITEM_FLUCHTSEIL,
+            ITEM_PARA_HEILER,
+            ITEM_GEGENGIFT,
+            ITEM_AUFWECKER,
+            ITEM_AETHER,
         },
         .items_rare = {
-            ITEM_DUESTERSTUECK, ITEM_BELEBER, ITEM_HYPERTRANK, ITEM_TOP_SCHUTZ,
+            ITEM_DUESTERSTUECK,
+            ITEM_BELEBER,
+            ITEM_HYPERTRANK,
+            ITEM_TOP_SCHUTZ,
         },
         .species_common = {
-            POKEMON_PARAGONI, POKEMON_TRAUMATO, POKEMON_WEBARAK, POKEMON_SAMURZEL,
-            POKEMON_WATTZAPF, POKEMON_MYRAPLA, POKEMON_WAUMPEL, POKEMON_KRAMURX,
+            POKEMON_PARAGONI,
+            POKEMON_TRAUMATO,
+            POKEMON_WEBARAK,
+            POKEMON_SAMURZEL,
+            POKEMON_WATTZAPF,
+            POKEMON_MYRAPLA,
+            POKEMON_WAUMPEL,
+            POKEMON_KRAMURX,
         },
         .species_rare = {
-            POKEMON_SCHALOKO, POKEMON_PANEKON, POKEMON_BLANAS, POKEMON_ARIADOS,
+            POKEMON_SCHALOKO,
+            POKEMON_PANEKON,
+            POKEMON_BLANAS,
+            POKEMON_ARIADOS,
         },
         .species_static_encounter = {
-            POKEMON_KAPILZ, POKEMON_HYPNO, POKEMON_TROMBORK, POKEMON_KRAMSHEF,
+            POKEMON_KAPILZ,
+            POKEMON_HYPNO,
+            POKEMON_TROMBORK,
+            POKEMON_KRAMSHEF,
         },
     },
     [DUNGEON_FOREST_TYPE_TENT_FOREST] = {
@@ -453,21 +599,42 @@ dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
         .fill_pattern_in_map = dungeon_pattern_fill_with_1x1_border_without_corners,
         .map_weather = MAP_WEATHER_CLOUDY,
         .items_common = {
-            ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_SUPERSCHUTZ, ITEM_FLUCHTSEIL,
-            ITEM_PARA_HEILER, ITEM_GEGENGIFT, ITEM_AUFWECKER, ITEM_AETHER,
+            ITEM_SUPERBALL,
+            ITEM_SUPERTRANK,
+            ITEM_SUPERSCHUTZ,
+            ITEM_FLUCHTSEIL,
+            ITEM_PARA_HEILER,
+            ITEM_GEGENGIFT,
+            ITEM_AUFWECKER,
+            ITEM_AETHER,
         },
         .items_rare = {
-            ITEM_GRUENSTUECK, ITEM_TOP_SCHUTZ, ITEM_AP_PLUS, ITEM_ELIXIER,
+            ITEM_GRUENSTUECK,
+            ITEM_TOP_SCHUTZ,
+            ITEM_AP_PLUS,
+            ITEM_ELIXIER,
         },
         .species_common = {
-            POKEMON_PIKACHU, POKEMON_MYRAPLA, POKEMON_KNOFENSA, POKEMON_SAMURZEL,
-            POKEMON_WAUMPEL, POKEMON_TANNZA, POKEMON_LEDYBA, POKEMON_WATTZAPF,
+            POKEMON_PIKACHU,
+            POKEMON_MYRAPLA,
+            POKEMON_KNOFENSA,
+            POKEMON_SAMURZEL,
+            POKEMON_WAUMPEL,
+            POKEMON_TANNZA,
+            POKEMON_LEDYBA,
+            POKEMON_WATTZAPF,
         },
         .species_rare = {
-            POKEMON_DUFLOR, POKEMON_KOKUNA, POKEMON_SCHALOKO, POKEMON_PANEKON,
+            POKEMON_DUFLOR,
+            POKEMON_KOKUNA,
+            POKEMON_SCHALOKO,
+            POKEMON_PANEKON,
         },
         .species_static_encounter = {
-            POKEMON_GIFLOR, POKEMON_BIBOR, POKEMON_PAPINELLA, POKEMON_PUDOX,
+            POKEMON_GIFLOR,
+            POKEMON_BIBOR,
+            POKEMON_PAPINELLA,
+            POKEMON_PUDOX,
         },
     },
 };
@@ -525,32 +692,32 @@ void dungeon2_init_wild_pokemon_forest(dungeon_generator2 *dg2) {
     u8 level_max = 0;
     dungeon2_get_wild_pokemon_level_distribution(&mean, &std_deviation);
 
-    for(int i = 0; i < 12; i++) {
+    for (int i = 0; i < 12; i++) {
         dungeon2_wild_pokemon_sample_level_boundaries(&level_min, &level_max,
-            (i < 6) ? mean : (u8)(mean + std_deviation), std_deviation, dg2);
+                                                      (i < 6) ? mean : (u8)(mean + std_deviation), std_deviation, dg2);
         fmem.dwild_data_grass[i].level_min = level_min;
         fmem.dwild_data_grass[i].level_max = level_max;
     }
 }
 
 void dungeon2_set_encounter_forest() {
-  dungeon_generator2 *dg2 = &(cmem.dg2);
-  dungeon2_forest_initialize_state(dg2);
-  pokemon_clear_opponent_party();
+    dungeon_generator2 *dg2 = &(cmem.dg2);
+    dungeon2_forest_initialize_state(dg2);
+    pokemon_clear_opponent_party();
 
-  u16 species = *var_access(DUNGEON_OVERWORLD_SPECIES);
-  u8 mean = 0, std_deviation = 0;
-  dungeon2_get_wild_pokemon_level_distribution(&mean, &std_deviation);
-  mean = (u8)(mean + std_deviation + std_deviation / 2); // High level for this pokemon
+    u16 species = *var_access(DUNGEON_OVERWORLD_SPECIES);
+    u8 mean = 0, std_deviation = 0;
+    dungeon2_get_wild_pokemon_level_distribution(&mean, &std_deviation);
+    mean = (u8)(mean + std_deviation + std_deviation / 2); // High level for this pokemon
 
-  int level = FIXED_TO_INT(FIXED_ADD(INT_TO_FIXED(mean), FIXED_MUL(INT_TO_FIXED(std_deviation),
-        dungeon2_rnd_normal(dg2))));
-  level = MAX(MIN(level, 100), 2);
+    int level = FIXED_TO_INT(FIXED_ADD(INT_TO_FIXED(mean), FIXED_MUL(INT_TO_FIXED(std_deviation),
+                                                                     dungeon2_rnd_normal(dg2))));
+    level = MAX(MIN(level, 100), 2);
 
-  pid_t p = {dungeon2_rnd(dg2)};
+    pid_t p = {dungeon2_rnd(dg2)};
 
-  pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, (u8)level, 32, true, p, false, 0,
-      dungeon2_encounter_rnd_generator, dungeon2_encounter_rnd_generator);
+    pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, (u8)level, 32, true, p, false, 0,
+                                    dungeon2_encounter_rnd_generator, dungeon2_encounter_rnd_generator);
 }
 
 map_header_t *dungeon2_init_header_forest(dungeon_generator2 *dg2) {
@@ -571,13 +738,14 @@ map_header_t *dungeon2_init_header_forest(dungeon_generator2 *dg2) {
     return &(fmem.dmapheader);
 }
 
-map_event_header_t *dungeon2_init_events_forest(dungeon_generator2 *dg2){
+map_event_header_t *dungeon2_init_events_forest(dungeon_generator2 *dg2) {
     dungeon2_initialize_std_events(dg2, dungeon_forest_pick_item);
     dungeon_forest_types[dungeon2_get_forest_type(dg2)].event_init(dg2);
     return &(fmem.dmapevents);
 }
 
-static u16 blocks_alternative_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
+static u16 blocks_alternative_tree[NUM_NBS][5][2][2] = {
+    // [block_type_below][decoration_idx][y][x]
     [NB_GRASS] = {
         [0] = {{0x2b8 | BLOCK_SOLID, 0x2b9 | BLOCK_SOLID}, {0x2c0 | BLOCK_SOLID, 0x2c1 | BLOCK_SOLID}},
         [1] = {{0x2e8 | BLOCK_SOLID, 0x2e9 | BLOCK_SOLID}, {0x2f0 | BLOCK_SOLID, 0x2f1 | BLOCK_SOLID}},
@@ -636,11 +804,12 @@ static u16 blocks_1x1_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoratio
         [2] = {{0x332 | BLOCK_SOLID, 0x333 | BLOCK_SOLID}, {0x332 | BLOCK_SOLID, 0x333 | BLOCK_SOLID}},
         [3] = {{0x334 | BLOCK_SOLID, 0x335 | BLOCK_SOLID}, {0x334 | BLOCK_SOLID, 0x335 | BLOCK_SOLID}},
         [4] = {{0x336 | BLOCK_SOLID, 0x337 | BLOCK_SOLID}, {0x336 | BLOCK_SOLID, 0x337 | BLOCK_SOLID}},
-    }
-};
+    }};
 
-static u16 blocks_grass[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
-    [NB_GRASS] = { // Grass is decorated by a separate function
+static u16 blocks_grass[NUM_NBS][5][2][2] = {
+    // [block_type_below][decoration_idx][y][x]
+    [NB_GRASS] = {
+        // Grass is decorated by a separate function
         [0] = {{0xFFFF, 0xFFFF}, {0xFFFF, 0xFFFF}},
         [1] = {{0xFFFF, 0xFFFF}, {0xFFFF, 0xFFFF}},
         [2] = {{0xFFFF, 0xFFFF}, {0xFFFF, 0xFFFF}},
@@ -670,7 +839,8 @@ static u16 blocks_grass[NUM_NBS][5][2][2] = { // [block_type_below][decoration_i
     },
 };
 
-static u16 blocks_high_grass[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
+static u16 blocks_high_grass[NUM_NBS][5][2][2] = {
+    // [block_type_below][decoration_idx][y][x]
     [NB_GRASS] = {
         [0] = {{0x285, 0x285}, {0x285, 0x285}},
         [1] = {{0x285, 0x285}, {0x285, 0x285}},
@@ -701,7 +871,8 @@ static u16 blocks_high_grass[NUM_NBS][5][2][2] = { // [block_type_below][decorat
     },
 };
 
-static u16 blocks_2x2_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
+static u16 blocks_2x2_tree[NUM_NBS][5][2][2] = {
+    // [block_type_below][decoration_idx][y][x]
     [NB_GRASS] = {
         [0] = {{0x298 | BLOCK_SOLID, 0x299 | BLOCK_SOLID}, {0x2a0 | BLOCK_SOLID, 0x2a1 | BLOCK_SOLID}},
         [1] = {{0x2d0 | BLOCK_SOLID, 0x2d1 | BLOCK_SOLID}, {0x2d8 | BLOCK_SOLID, 0x2d9 | BLOCK_SOLID}},
@@ -737,23 +908,23 @@ static u16 dungeon2_forest_decoratives[] = {0x28a, 0x28b, 0x28c, 0x28d, 0x28e, 0
 static u16 dungeon2_forest_tiny_grasses[] = {0x281, 0x282, 0x283};
 
 static inline u16 dungeon2_get_grass_decoration(u8 *map, u8 *over, int x, int y, dungeon_generator2 *dg2) {
-    (void) over;
+    (void)over;
     // Count grass, wall neighbours
     int grass_neighbours = 0;
     int wall_neighbours = 0;
-    for(int k = 0; k < 4; k++){
+    for (int k = 0; k < 4; k++) {
         int i = dg2_cross_neighbourhood[k][0];
         int j = dg2_cross_neighbourhood[k][1];
-        if(x + i >= 0 && x + i < dg2->width &&
-                y + j >= 0 && y + j < dg2->height){
-            if(over[(y + j) * dg2->height + x + i] == DG2_SPACE &&
+        if (x + i >= 0 && x + i < dg2->width &&
+            y + j >= 0 && y + j < dg2->height) {
+            if (over[(y + j) * dg2->height + x + i] == DG2_SPACE &&
                 map[(y + j) * dg2->height + x + i] == DG2_SPACE)
                 grass_neighbours++;
-            else if(map[(y + j) * dg2->height + x + i] == DG2_WALL)
+            else if (map[(y + j) * dg2->height + x + i] == DG2_WALL)
                 wall_neighbours++;
         }
     }
-    if(dungeon2_rnd_16(dg2) < grass_neighbours * 0x4000){
+    if (dungeon2_rnd_16(dg2) < grass_neighbours * 0x4000) {
         return 0x287; //Cut grass
     } else if (wall_neighbours >= 2 && (dungeon2_rnd_16(dg2) % 100) < 35) {
         return dungeon2_forest_branches[dungeon2_rnd_16(dg2) % ARRAY_COUNT(dungeon2_forest_branches)];
@@ -801,7 +972,7 @@ static void dungeon2_set_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg
                 block = blocks_high_grass[type_below][decoration_idx][y % 2][x % 2];
             else if (type & DG2_SPACE) {
                 block = blocks_grass[type_below][decoration_idx][y % 2][x % 2];
-                if (block == 0xFFFF) 
+                if (block == 0xFFFF)
                     block = dungeon2_get_grass_decoration(map, over, x, y, dg2);
             } else if ((type & (DG2_2x2_TREE | DG2_ALTERNATIVE_TILE)) == (DG2_2x2_TREE | DG2_ALTERNATIVE_TILE)) {
                 block = blocks_alternative_tree[type_below][decoration_idx][y % 2][x % 2];
@@ -815,8 +986,8 @@ static void dungeon2_set_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg
     free(decoration_idxs);
 }
 
-static void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2){
-    int (*nodes)[2] = save1->dungeon_nodes;
+static void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2) {
+    int(*nodes)[2] = save1->dungeon_nodes;
     dungeon_forest_t *forest_type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
     map_footer_t *pattern = dungeon2_get_forest_type_pattern(dg2);
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
@@ -847,9 +1018,9 @@ static void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2
             if (map[y * dg2->width + x] & DG2_WALL && map[y * dg2->width + x + 1] & DG2_WALL &&
                 map[(y + 1) * dg2->width + x] & DG2_WALL && map[(y + 1) * dg2->width + x + 1] & DG2_WALL) {
                 u8 mask = ((dungeon2_rnd_16(dg2) % 256) < forest_type->alternative_tree_rate) && forest_type->has_alternative_trees &&
-                    !(map[y * dg2->width + x] & DG2_ALTERNATIVE_TILE_PROHIBITED || map[y * dg2->width + x + 1] & DG2_ALTERNATIVE_TILE_PROHIBITED
-                    || map[(y + 1) * dg2->width + x] & DG2_ALTERNATIVE_TILE_PROHIBITED || map[(y + 1) * dg2->width + x + 1] & DG2_ALTERNATIVE_TILE_PROHIBITED)? 
-                    DG2_2x2_TREE | DG2_ALTERNATIVE_TILE : DG2_2x2_TREE;
+                                  !(map[y * dg2->width + x] & DG2_ALTERNATIVE_TILE_PROHIBITED || map[y * dg2->width + x + 1] & DG2_ALTERNATIVE_TILE_PROHIBITED || map[(y + 1) * dg2->width + x] & DG2_ALTERNATIVE_TILE_PROHIBITED || map[(y + 1) * dg2->width + x + 1] & DG2_ALTERNATIVE_TILE_PROHIBITED)
+                              ? DG2_2x2_TREE | DG2_ALTERNATIVE_TILE
+                              : DG2_2x2_TREE;
                 map[y * dg2->width + x] |= mask;
                 map[y * dg2->width + x + 1] |= mask;
                 map[(y + 1) * dg2->width + x] |= mask;
@@ -863,26 +1034,26 @@ static void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2
     if (pattern) {
         for (int i = 0; i < MIN(num_patterns, DG2_MAX_NUM_PATTERNS); i++) {
             dungeon2_place_pattern(nodes[DG2_NODE_PATTERN + i][0], nodes[DG2_NODE_PATTERN + i][1], pattern, dg2);
-        } 
+        }
     }
 }
 
 void dungeon2_forest_initialize_state(dungeon_generator2 *dg2) {
-  dg2->seed = dg2->initial_seed;
-  dg2->width = DG2_FOREST_WIDTH;
-  dg2->height = DG2_FOREST_HEIGHT;
-  dg2->path_randomness = DG2_FOREST_PATH_RANDOMNESS;
-  dg2->init_randomness = DG2_FOREST_INIT_RANDOMNESS;
-  dg2->nodes = DG2_FOREST_NODES;
-  dg2->margin = DG2_FOREST_MARGIN;
-  dg2->node_metric_lambda_l2 = DG2_FOREST_NODE_METRIC_LAMBDA_MEAN;
-  dg2->node_metric_lambda_min = DG2_FOREST_NODE_METRIC_LAMBDA_MIN;
-  dg2->node_samples = DG2_FOREST_NODE_SAMPLES;
-  map_footer_t *pattern = dungeon2_get_forest_type_pattern(dg2);
-  dg2->pattern_margin = (u8)(((MAX(pattern->width, pattern->height) + 1) / 2) & 0xF);
+    dg2->seed = dg2->initial_seed;
+    dg2->width = DG2_FOREST_WIDTH;
+    dg2->height = DG2_FOREST_HEIGHT;
+    dg2->path_randomness = DG2_FOREST_PATH_RANDOMNESS;
+    dg2->init_randomness = DG2_FOREST_INIT_RANDOMNESS;
+    dg2->nodes = DG2_FOREST_NODES;
+    dg2->margin = DG2_FOREST_MARGIN;
+    dg2->node_metric_lambda_l2 = DG2_FOREST_NODE_METRIC_LAMBDA_MEAN;
+    dg2->node_metric_lambda_min = DG2_FOREST_NODE_METRIC_LAMBDA_MIN;
+    dg2->node_samples = DG2_FOREST_NODE_SAMPLES;
+    map_footer_t *pattern = dungeon2_get_forest_type_pattern(dg2);
+    dg2->pattern_margin = (u8)(((MAX(pattern->width, pattern->height) + 1) / 2) & 0xF);
 }
 
-void dungeon2_initialize_forest(){
+void dungeon2_initialize_forest() {
     dungeon_generator2 *dg2 = &(cmem.dg2);
     dungeon2_forest_initialize_state(dg2);
     dungeon2_init_wild_pokemon_forest(dg2); // Initialize before events since persons depend
@@ -891,9 +1062,9 @@ void dungeon2_initialize_forest(){
 }
 
 void dungeon2_compute_layout_forest_callback(u8 self) {
-    dungeon_generator2 *dg2 = (dungeon_generator2*) big_callback_get_int(self, 2);
-    u8 *map = (u8*)big_callback_get_int(self, 4);
-    u8 *over = (u8*)big_callback_get_int(self, 8);
+    dungeon_generator2 *dg2 = (dungeon_generator2 *)big_callback_get_int(self, 2);
+    u8 *map = (u8 *)big_callback_get_int(self, 4);
+    u8 *over = (u8 *)big_callback_get_int(self, 8);
     u16 *vars = big_callbacks[self].params;
     // dprintf("Forest callback superstate %d\n", vars[0]);
     switch (vars[0]) {
@@ -904,7 +1075,7 @@ void dungeon2_compute_layout_forest_callback(u8 self) {
             FALL_THROUGH;
         }
         case 1: { // Sample nodes
-            int (*nodes_tmp)[2] = malloc(sizeof(save1->dungeon_nodes));
+            int(*nodes_tmp)[2] = malloc(sizeof(save1->dungeon_nodes));
             big_callback_set_int(self, 6, (int)nodes_tmp);
             vars[1] = dungeon2_get_nodes_with_callback(nodes_tmp, dg2->nodes, dg2);
             vars[0]++;
@@ -912,7 +1083,7 @@ void dungeon2_compute_layout_forest_callback(u8 self) {
         }
         case 2: {
             if (dungeon2_get_nodes_with_callback_finished((u8)vars[1])) {
-                int (*nodes_tmp)[2] = (int (*)[2])big_callback_get_int(self, 6);
+                int(*nodes_tmp)[2] = (int(*)[2])big_callback_get_int(self, 6);
                 memcpy(save1->dungeon_nodes, nodes_tmp, sizeof(save1->dungeon_nodes));
                 free(nodes_tmp);
                 vars[0]++;
@@ -953,7 +1124,6 @@ void dungeon2_compute_layout_forest_callback(u8 self) {
     }
 }
 
-
 void dungeon2_compute_layout_forest() {
     dungeon_generator2 *dg2 = &(cmem.dg2);
     dungeon2_forest_initialize_state(dg2);
@@ -981,14 +1151,14 @@ void dungeon2_enter_forest() {
     // Get the warp node (first node in the forest)
     dungeon_generator2 *dg2 = &(cmem.dg2);
     dungeon2_forest_initialize_state(dg2);
-    int (*nodes)[2] = save1->dungeon_nodes;
+    int(*nodes)[2] = save1->dungeon_nodes;
     s16 x = (s16)(nodes[0][0]);
-    s16 y = (s16)(nodes[0][1]); 
+    s16 y = (s16)(nodes[0][1]);
 
     warp_setup(DG2_BANK, DG2_MAP, 0xFF, x, y);
     warp_update_last_outdoor_map(save1->x_cam_orig, save1->y_cam_orig);
     warp_last_map_set(0, save1->bank, save1->map, 0xFF, (s16)(save1->x_cam_orig - 7),
-            (s16)(save1->y_cam_orig - 7));
+                      (s16)(save1->y_cam_orig - 7));
     warp_setup_callbacks();
     warp_enable_flags();
 
@@ -999,5 +1169,5 @@ void dungeon2_enter_forest() {
     dg2->previous_bank = save1->bank;
     dg2->previous_map = save1->map;
     dprintf("Saved player @ (%d, %d) on %d.%d\n", dg2->previous_position.x, dg2->previous_position.y,
-        dg2->previous_bank, dg2->previous_map);
+            dg2->previous_bank, dg2->previous_map);
 }

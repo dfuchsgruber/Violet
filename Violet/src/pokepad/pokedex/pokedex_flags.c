@@ -1,8 +1,8 @@
-#include "types.h"
-#include "save.h"
 #include "pokepad/pokedex/operator.h"
+#include "save.h"
+#include "types.h"
 
-u8* pokedex_flag_access(u16 flag, bool seen) {
+u8 *pokedex_flag_access(u16 flag, bool seen) {
     if (flag < 416) {
         //std access
         int index = flag / 8;
@@ -20,7 +20,7 @@ bool pokedex_operator(u16 val, u8 op, bool is_species_id) {
     if (!val)
         return false;
     val--;
-    u8 mask = (u8) (1 << (val & 7));
+    u8 mask = (u8)(1 << (val & 7));
     bool seen = !(op & 1);
     bool apply = op & 2;
     u8 *field = pokedex_flag_access(val, seen);
@@ -40,8 +40,6 @@ u16 pokedex_get_number_seen_or_caught(bool caught) {
     for (i = 1; i <= POKEDEX_CNT; i++) {
         if (pokedex_operator_by_dex_id(i, caught ? 1 : 0))
             cnt++;
-
     }
     return cnt;
 }
-

@@ -1,28 +1,27 @@
-#include "types.h"
+#include "options.h"
+#include "agbmemory.h"
 #include "bg.h"
-#include "superstate.h"
-#include "save.h"
-#include "text.h"
-#include "language.h"
+#include "bios.h"
+#include "callbacks.h"
+#include "constants/difficulties.h"
+#include "debug.h"
+#include "dma.h"
+#include "fading.h"
 #include "io.h"
+#include "item/item.h"
+#include "language.h"
 #include "list_menu.h"
+#include "menu_indicators.h"
+#include "music.h"
 #include "oam.h"
 #include "overworld/map_control.h"
 #include "overworld/start_menu.h"
-#include "fading.h"
-#include "options.h"
-#include "agbmemory.h"
-#include "bios.h"
+#include "save.h"
+#include "superstate.h"
+#include "text.h"
 #include "transparency.h"
-#include "dma.h"
-#include "callbacks.h"
-#include "item/item.h"
+#include "types.h"
 #include "vars.h"
-#include "constants/difficulties.h"
-#include "debug.h"
-#include "overworld/map_control.h"
-#include "music.h"
-#include "menu_indicators.h"
 
 TWO_OPTIONS_STRINGS(
     dns_colors,
@@ -30,8 +29,7 @@ TWO_OPTIONS_STRINGS(
     LANGDEP(PSTRING("Ein"), PSTRING("On")),
     LANGDEP(PSTRING("Farben werden von der Tageszeit\nbeeinflusst."), PSTRING("Colors are affected by the daytime.")),
     LANGDEP(PSTRING("Aus"), PSTRING("Off")),
-    LANGDEP(PSTRING("Farben werden nicht von der\nTageszeit beeinflusst."), PSTRING("Colors are unaffected by the\ndaytime."))
-);
+    LANGDEP(PSTRING("Farben werden nicht von der\nTageszeit beeinflusst."), PSTRING("Colors are unaffected by the\ndaytime.")));
 static int option_dns_colors_getter() { return cmem.settings.dns_disabled ? OPTION_OFF : OPTION_ON; }
 static void option_dns_color_setter(int is_off) { cmem.settings.dns_disabled = (u8)(is_off & 1); }
 
@@ -41,8 +39,7 @@ TWO_OPTIONS_STRINGS(
     LANGDEP(PSTRING("Automatisch"), PSTRING("Automatic")),
     LANGDEP(PSTRING("VMs werden automatisch benutzt, wenn sie\neinsetzbar sind."), PSTRING("HMs are used automatically if they\nare usable.")),
     LANGDEP(PSTRING("Manuell"), PSTRING("Manual")),
-    LANGDEP(PSTRING("VMs werden nicht automatisch benutzt."), PSTRING("HMs are not used automatically."))
-);
+    LANGDEP(PSTRING("VMs werden nicht automatisch benutzt."), PSTRING("HMs are not used automatically.")));
 static int option_automatic_hm_usage_getter() { return cmem.settings.manual_hm_usage ? OPTION_OFF : OPTION_ON; }
 static void option_automatic_hm_usage_setter(int is_off) { cmem.settings.manual_hm_usage = (u8)(is_off & 1); }
 
@@ -54,8 +51,7 @@ THREE_OPTIONS_STRINGS(
     LANGDEP(PSTRING("Normal"), PSTRING("Normal")),
     LANGDEP(PSTRING("Texte werden im normalen Tempo\nabgespielt."), PSTRING("Texts are displayed normally\nfast.")),
     LANGDEP(PSTRING("Schnell"), PSTRING("Fast")),
-    LANGDEP(PSTRING("Texte werden schnell abgespielt."), PSTRING("Texts are displayed fastly."))
-);
+    LANGDEP(PSTRING("Texte werden schnell abgespielt."), PSTRING("Texts are displayed fastly.")));
 
 static int option_text_tempo_getter() { return save2->text_speed; }
 static void option_text_tempo_setter(int speed) { save2->text_speed = (u8)(speed & 3); }
@@ -66,8 +62,7 @@ TWO_OPTIONS_STRINGS(
     LANGDEP(PSTRING("Ein"), PSTRING("On")),
     LANGDEP(PSTRING("Kampf-Animationen werden gezeigt."), PSTRING("Battle animations are shown.")),
     LANGDEP(PSTRING("Aus"), PSTRING("Off")),
-    LANGDEP(PSTRING("Kampf-Animationen werden nicht\ngezeigt."), PSTRING("Battle animations are not\nshown."))
-);
+    LANGDEP(PSTRING("Kampf-Animationen werden nicht\ngezeigt."), PSTRING("Battle animations are not\nshown.")));
 static int option_battle_animations_getter() { return save2->battle_animations_off ? OPTION_OFF : OPTION_ON; }
 static void option_battle_animations_setter(int is_off) { save2->battle_animations_off = (u8)(is_off & 1); }
 
@@ -77,8 +72,7 @@ TWO_OPTIONS_STRINGS(
     LANGDEP(PSTRING("Wechsel"), PSTRING("Shift")),
     LANGDEP(PSTRING("Pokémon können gewechselt werden,\nwenn ein Pokémon besiegt wird."), PSTRING("Pokémon can be switched when a\nPokémon is defeated.")),
     LANGDEP(PSTRING("Folge"), PSTRING("Set")),
-    LANGDEP(PSTRING("Pokémon können nicht gewechselt\nwerden, wenn ein Pokémon besiegt wird."), PSTRING("Pokémon can not be switched when a\nPokémon is defeated."))
-);
+    LANGDEP(PSTRING("Pokémon können nicht gewechselt\nwerden, wenn ein Pokémon besiegt wird."), PSTRING("Pokémon can not be switched when a\nPokémon is defeated.")));
 static int option_battle_style_getter() { return save2->battle_style; }
 static void option_battle_style_setter(int style) { save2->battle_style = (u8)(style & 1); }
 static bool option_battle_style_available() { return *var_access(DIFFICULTY) != DIFFICULTY_HARD; }
@@ -89,8 +83,7 @@ TWO_OPTIONS_STRINGS(
     LANGDEP(PSTRING("Stereo"), PSTRING("Stereo")),
     LANGDEP(PSTRING("Sounds benutzen den linken und\nrechten Lautsprecher."), PSTRING("Sounds use both right and left\nspeakers.")),
     LANGDEP(PSTRING("Mono"), PSTRING("Mono")),
-    LANGDEP(PSTRING("Sounds werden gleichmäßig auf alle\nLautsprecher aufgeteilt."), PSTRING("Sounds are using only one\nchannel."))
-);
+    LANGDEP(PSTRING("Sounds werden gleichmäßig auf alle\nLautsprecher aufgeteilt."), PSTRING("Sounds are using only one\nchannel.")));
 static int option_sound_getter() { return save2->sound_is_mono; }
 static void option_sound_setter(int is_mono) { save2->sound_is_mono = (u8)(is_mono & 1); }
 
@@ -100,15 +93,14 @@ TWO_OPTIONS_STRINGS(
     LANGDEP(PSTRING("An"), PSTRING("On")),
     LANGDEP(PSTRING("Detektor zeigt versteckte\nItems an."), PSTRING("Hidden items are indicated\nby the item finder.")),
     LANGDEP(PSTRING("Aus"), PSTRING("Off")),
-    LANGDEP(PSTRING("Versteckte Items werden\nnicht angezeigt."), PSTRING("Hidden items are not\nindicated."))
-);
+    LANGDEP(PSTRING("Versteckte Items werden\nnicht angezeigt."), PSTRING("Hidden items are not\nindicated.")));
 
 static int option_detector_getter() { return cmem.settings.detector_notifications; }
 static void option_detector_setter(int value) { cmem.settings.detector_notifications = (u8)(value & 3); }
 
 static u8 str_option_frame_style_name[] = LANGDEP(PSTRING("Rahmen"), PSTRING("Frame"));
 static int option_frame_style_getter() { return save2->tbox_style; }
-static void option_frame_style_setter(int style) { save2->tbox_style = (u8)(style & 31); } 
+static void option_frame_style_setter(int style) { save2->tbox_style = (u8)(style & 31); }
 static u8 str_option_frame_options_description[] = LANGDEP(PSTRING("Dargestellte Textrahmen entsprechen\nMotiv BUFFER_1."), PSTRING("Text frames are displayed in\nmotive BUFFER_1."));
 
 TWO_OPTIONS_STRINGS(
@@ -117,8 +109,7 @@ TWO_OPTIONS_STRINGS(
     LANGDEP(PSTRING("Alle"), PSTRING("All")),
     LANGDEP(PSTRING("Beeren werden mit maximaler\nAnzahl an Wunderstaub bestreut."), PSTRING("The maximal number of Wonderdust\nis used on berry trees.")),
     LANGDEP(PSTRING("Eins"), PSTRING("One")),
-    LANGDEP(PSTRING("Wunderstaub wird nur ein Mal\nbei Beeren benutzt."), PSTRING("Wonderdust is used only once\non berry trees."))
-);
+    LANGDEP(PSTRING("Wunderstaub wird nur ein Mal\nbei Beeren benutzt."), PSTRING("Wonderdust is used only once\non berry trees.")));
 static int option_wonderdust_getter() { return cmem.settings.wonder_dust_automatic_quantity_disabled ? OPTION_OFF : OPTION_ON; }
 static void option_wonderdust_setter(int is_off) { cmem.settings.wonder_dust_automatic_quantity_disabled = (u8)(is_off & 1); }
 
@@ -221,27 +212,47 @@ enum {
 
 static tboxdata options_tboxes[] = {
     [TBOX_TITLE] = {
-        .bg_id = 0, .x = 10, .y = 0, .w = 10, .h = 2, .pal = 15, .start_tile = 33,
+        .bg_id = 0,
+        .x = 10,
+        .y = 0,
+        .w = 10,
+        .h = 2,
+        .pal = 15,
+        .start_tile = 33,
     },
     [TBOX_DESCRIPTION] = {
-        .bg_id = 0, .x = 2, .y = 15, .w = 26, .h = 5, .pal = 15, .start_tile = 33 + 10 * 2,
+        .bg_id = 0,
+        .x = 2,
+        .y = 15,
+        .w = 26,
+        .h = 5,
+        .pal = 15,
+        .start_tile = 33 + 10 * 2,
     },
     [TBOX_LIST] = {
-        .bg_id = 0, .x = 2, .y = 4, .w = 26, .h = 10, .pal = 14, .start_tile = 33 + 10 * 2 + 26 * 5,
+        .bg_id = 0,
+        .x = 2,
+        .y = 4,
+        .w = 26,
+        .h = 10,
+        .pal = 14,
+        .start_tile = 33 + 10 * 2 + 26 * 5,
     },
     [NUM_TBOXES] = {
         .bg_id = 0xFF,
-    }
-};
+    }};
 
 static tbox_font_colormap title_fontcolmap = {
-    .background = 0, .body = 2, .edge = 1,
+    .background = 0,
+    .body = 2,
+    .edge = 1,
 };
 
 static tbox_font_colormap setting_fontcolmap = {
-    .background = 0, .body = 4, .edge = 5,
+    .background = 0,
+    .body = 4,
+    .edge = 5,
 };
-
 
 static void options_callback_exit(u8 self) {
     if (fading_is_active())
@@ -271,7 +282,7 @@ static void options_print_description(int idx) {
 static void options_callback_idle(u8 self) {
     if (fading_is_active() || dma3_busy(-1))
         return;
-    
+
     list_menu_get_scroll_and_row(OPTIONS_STATE->list_menu_callback_idx, &(OPTIONS_STATE->cursor_position), &(OPTIONS_STATE->cursor_above));
     int d = 0;
     if (super.keys_new.keys.left)
@@ -312,7 +323,6 @@ static void list_menu_print_callback_null(u8 tbox_idx, int idx, u8 y) {
     tbox_print_string(tbox_idx, 2, 128, y, 0, 0, &setting_fontcolmap, 0xFF, setting);
 }
 
-
 static void list_menu_cursor_moved_callback(int idx, u8 is_on_initialization, list_menu *list) {
     list_menu_generic_cursor_callback(idx, is_on_initialization, list);
     options_print_description(idx - 1);
@@ -322,14 +332,23 @@ static list_menu_template list_template = {
     .items = NULL,
     .cursor_moved_callback = list_menu_cursor_moved_callback,
     .item_print_callback = list_menu_print_callback_null,
-    .item_cnt = 0, .max_items_showed = 5, .tbox_idx = TBOX_LIST,
-    .header_x = 0, .item_x = 10, .cursor_x = 2, .up_text_y = 1, .cursor_pal = 2, .fill_value = 0,
-    .cursor_shadow_color = 3, .letter_spacing = 1, .item_vertical_padding = 2, .scroll_multiple = 0,
-    .font = 2
-};
+    .item_cnt = 0,
+    .max_items_showed = 5,
+    .tbox_idx = TBOX_LIST,
+    .header_x = 0,
+    .item_x = 10,
+    .cursor_x = 2,
+    .up_text_y = 1,
+    .cursor_pal = 2,
+    .fill_value = 0,
+    .cursor_shadow_color = 3,
+    .letter_spacing = 1,
+    .item_vertical_padding = 2,
+    .scroll_multiple = 0,
+    .font = 2};
 
 static void options_initialize() {
-    switch(OPTIONS_STATE->initialization_state) {
+    switch (OPTIONS_STATE->initialization_state) {
         case RESET: {
             dma0_reset_callback();
             oam_reset();
@@ -375,10 +394,14 @@ static void options_initialize() {
             }
             OPTIONS_STATE->list_menu_callback_idx = list_menu_new(&gp_list_menu_template, 0, 0);
             scroll_indicator_template crafting_ui_scroll_indicator_template_up_down = {
-                .arrow0_type = SCROLL_ARROW_UP, .arrow0_x = 120, .arrow0_y = 32,
-                .arrow1_type = SCROLL_ARROW_DOWN, .arrow1_x = 120, .arrow1_y = 112,
-                .arrow0_threshold = 0, 
-                .arrow1_threshold = (u16) MAX(0, (gp_list_menu_template.item_cnt - gp_list_menu_template.max_items_showed)),
+                .arrow0_type = SCROLL_ARROW_UP,
+                .arrow0_x = 120,
+                .arrow0_y = 32,
+                .arrow1_type = SCROLL_ARROW_DOWN,
+                .arrow1_x = 120,
+                .arrow1_y = 112,
+                .arrow0_threshold = 0,
+                .arrow1_threshold = (u16)MAX(0, (gp_list_menu_template.item_cnt - gp_list_menu_template.max_items_showed)),
                 .tiles_tag = 111,
                 .pal_tag = 111,
             };
@@ -408,8 +431,7 @@ static void options_initialize() {
             tbox_border_draw(TBOX_LIST, 1, 13);
             u8 str_title[] = LANGDEP(
                 PSTRING("Optionen"),
-                PSTRING("Options")
-            );
+                PSTRING("Options"));
             int str_width = string_get_width(2, str_title, 0);
             tbox_print_string(TBOX_TITLE, 2, (u16)((options_tboxes[TBOX_TITLE].w * 8 - str_width) / 2), 0, 0, 0, &title_fontcolmap, 0, str_title);
             ++(OPTIONS_STATE->initialization_state);

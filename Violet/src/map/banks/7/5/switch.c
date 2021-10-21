@@ -1,9 +1,9 @@
-#include "types.h"
-#include "overworld/npc.h"
 #include "constants/movements.h"
-#include "tile/block.h"
+#include "overworld/npc.h"
 #include "save.h"
 #include "superstate.h"
+#include "tile/block.h"
+#include "types.h"
 
 static u8 movements_normal[][2] = {
     [DIR_DOWN] = {STEP_DOWN, STOP},

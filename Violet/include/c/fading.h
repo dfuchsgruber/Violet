@@ -15,16 +15,16 @@ typedef struct {
     u16 target_alpha : 5;
     u16 color : 15;
     u16 active : 1;
-    u16 gp :6;
-    u16 alpha_is_deacreasing:1; // whether blend coefficient is decreasing
-    u16 buffer_transfer_disabled:1;
-    u16 mode:2;
-    u16 should_reset_bld_registers:1;
-    u16 hardware_fade_finishing:1;
-    u16 software_fade_finishing_counter:5;
-    u16 software_fade_finishing:1;
-    u16 oam_palette_toggle:1;
-    u8 delta_alpha:4; // rate of change of blend coefficient
+    u16 gp : 6;
+    u16 alpha_is_deacreasing : 1; // whether blend coefficient is decreasing
+    u16 buffer_transfer_disabled : 1;
+    u16 mode : 2;
+    u16 should_reset_bld_registers : 1;
+    u16 hardware_fade_finishing : 1;
+    u16 software_fade_finishing_counter : 5;
+    u16 software_fade_finishing : 1;
+    u16 oam_palette_toggle : 1;
+    u8 delta_alpha : 4; // rate of change of blend coefficient
     u32 unused;
 } stru_fading_cntrl;
 
@@ -32,12 +32,12 @@ extern stru_fading_cntrl fading_control;
 
 /**
  * Updates all blending registers based on the values in the fading control
- **/
+ */
 void fading_update_blending();
 
 /**
  * Resets the entire fading control
- **/
+ */
 void fading_control_reset();
 
 /**
@@ -87,7 +87,7 @@ void fadescreen(u32 affects, u8 delay, u8 from, u8 to, u16 color);
 
 /**
  * Initializes a fadescreen ensuring zeros in the dma3 source.
- **/
+ */
 void fadescreen_and_clear_dma3_source();
 
 #endif /* INCLUDE_C_FADING_H_ */

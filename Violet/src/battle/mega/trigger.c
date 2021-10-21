@@ -1,22 +1,19 @@
-
-
-#include "types.h"
-#include "oam.h"
-#include "callbacks.h"
-#include "mega.h"
-#include "color.h"
-#include "bios.h"
 #include "battle/battler.h"
-#include "battle/state.h"
 #include "battle/controller.h"
+#include "battle/state.h"
+#include "bios.h"
+#include "callbacks.h"
+#include "color.h"
 #include "constants/battle/battle_actions.h"
-#include "superstate.h"
-#include "music.h"
-#include "math.h"
 #include "debug.h"
 #include "fading.h"
+#include "math.h"
+#include "mega.h"
+#include "music.h"
+#include "oam.h"
 #include "save.h"
-#include "callbacks.h"
+#include "superstate.h"
+#include "types.h"
 
 extern const unsigned gfx_mega_triggerTiles[];
 extern const unsigned gfx_mega_triggerPal[];
@@ -42,7 +39,7 @@ static void trigger_callback_animation(oam_object *self) {
         self->anim_number = animation_idx;
         oam_gfx_anim_init(self, 0);
     }
-    
+
     u8 pal_idx = (u8)((self->final_oam.attr2 >> 12) & 15);
     color_t white = {.rgb = {.red = 31, .blue = 31, .green = 31}};
     pal_blend((u16)(256 + 16 * pal_idx + 5), 12, (u8)MIN(15, alpha / 3), white);
@@ -52,7 +49,7 @@ static void mega_trigger_oam_callback(oam_object *self) {
     trigger_callback_animation(self);
     u16 *state = self->private;
     u8 battler_idx = (u8)(self->private[1]);
-    if(!battler_get_available_mega_evolution(battler_idx)) {
+    if (!battler_get_available_mega_evolution(battler_idx)) {
         *state = MEGA_TRIGGER_HIDE; // Whenever the active battler is not eligible to mega evolve, hide the trigger
     }
     switch (*state) {
@@ -60,7 +57,7 @@ static void mega_trigger_oam_callback(oam_object *self) {
             if (self->y2 <= -32) {
                 *state = MEGA_TRIGGER_IDLE;
             } else {
-                self->y2 = (s16) MAX(-32, self->y2 - 4);
+                self->y2 = (s16)MAX(-32, self->y2 - 4);
             }
             break;
         }
@@ -69,7 +66,7 @@ static void mega_trigger_oam_callback(oam_object *self) {
                 *state = MEGA_TRIGGER_IDLE;
                 oam_free(self);
             } else {
-                self->y2 = (s16) MIN(0, self->y2 + 4);
+                self->y2 = (s16)MIN(0, self->y2 + 4);
             }
             return;
         }
@@ -84,8 +81,10 @@ static void mega_trigger_oam_callback(oam_object *self) {
 }
 
 static gfx_frame trigger_gfx_anims[] = {
-    {.data = 0, .duration = 0}, {.data = GFX_ANIM_END},
-    {.data = 64, .duration = 0}, {.data = GFX_ANIM_END},
+    {.data = 0, .duration = 0},
+    {.data = GFX_ANIM_END},
+    {.data = 64, .duration = 0},
+    {.data = GFX_ANIM_END},
 };
 
 static gfx_frame *trigger_gfx_anim_table[] = {
@@ -108,17 +107,8 @@ static oam_template trigger_templates[] = {
         trigger_gfx_anim_table,
         NULL,
         oam_rotscale_anim_table_null,
-        mega_trigger_oam_callback
-    },
-    [REGENT_EVOLUTION] = {
-        REGENT_TRIGGER_TAG,
-        REGENT_TRIGGER_TAG,
-        &trigger_sprite,
-        trigger_gfx_anim_table,
-        NULL,
-        oam_rotscale_anim_table_null,
-        mega_trigger_oam_callback
-    },
+        mega_trigger_oam_callback},
+    [REGENT_EVOLUTION] = {REGENT_TRIGGER_TAG, REGENT_TRIGGER_TAG, &trigger_sprite, trigger_gfx_anim_table, NULL, oam_rotscale_anim_table_null, mega_trigger_oam_callback},
 };
 
 static const void *trigger_pals[] = {
@@ -131,11 +121,10 @@ static u16 trigger_tags[] = {
     [REGENT_EVOLUTION] = REGENT_TRIGGER_TAG,
 };
 
-
 u8 mega_trigger_oam_idx_get(u8 battler_idx) {
     for (u8 i = 0; i < 0x40; i++) {
-        if (oams[i].callback == mega_trigger_oam_callback && 
-        (battler_idx = 4 || oams[i].private[1] == battler_idx)) {
+        if (oams[i].callback == mega_trigger_oam_callback &&
+            (battler_idx = 4 || oams[i].private[1] == battler_idx)) {
             return i;
         }
     }
@@ -185,7 +174,7 @@ void _battle_controller_player_choose_move() {
             MEGA_STATE.marked_for_mega_evolution[active_battler] = 0;
             play_sound(3);
         } else {
-            MEGA_STATE.marked_for_mega_evolution[active_battler] = (u8) mega_evolution->type;
+            MEGA_STATE.marked_for_mega_evolution[active_battler] = (u8)mega_evolution->type;
             play_sound(2);
         }
     }

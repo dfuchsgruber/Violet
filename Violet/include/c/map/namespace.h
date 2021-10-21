@@ -20,7 +20,7 @@ void map_load_namespace(u8 *dst, u8 namespace_id);
 /**
  * Gets the namespace of the map that is currently loaded.
  * @return the namespace of the current map
- **/
+ */
 u8 map_get_current_namespace();
 
 #endif /* INCLUDE_C_MAP_NAMESPACE_H_ */

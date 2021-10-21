@@ -3,7 +3,6 @@
 
 #include "types.h"
 
-
 extern const u8 gfx_item_noneTiles[];
 extern const u8 gfx_item_nonePal[];
 extern const u8 gfx_item_meisterballTiles[];

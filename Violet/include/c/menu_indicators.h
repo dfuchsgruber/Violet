@@ -38,7 +38,7 @@ typedef struct {
 /**
  * Removes a scroll indicator arrow pair
  * @param callback_idx the callback of the scroll indicators
- **/
+ */
 void scroll_indicator_delete(u8 callback_idx);
 
 /**
@@ -46,7 +46,7 @@ void scroll_indicator_delete(u8 callback_idx);
  * @param template the template that describes how to create the indicators
  * @param cursor_position offset of the cursor position
  * @return the idx of the created callback
- **/
+ */
 u8 scroll_indicator_new(const scroll_indicator_template *temp, u16 *cursor_position);
 
 /**
@@ -54,7 +54,7 @@ u8 scroll_indicator_new(const scroll_indicator_template *temp, u16 *cursor_posit
  * @param callback_idx calllback for the scroll indicators
  * @param arrow0_priority the priority for the first arrow
  * @param arrow1_priority the priority for the second arrow
- **/
+ */
 void scroll_indicator_set_oam_priority(u8 callback_idx, u8 arrow0_priority, u8 arrow1_priority);
 
 #endif

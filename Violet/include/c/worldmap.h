@@ -6,135 +6,134 @@
  */
 
 #ifndef WORLDMAP_H
-#define	WORLDMAP_H
+#define WORLDMAP_H
 
-#ifdef	__cplusplus
+#ifdef __cplusplus
 extern "C" {
 #endif
 #define ____ 0xC5
 #include "constants/map_namespaces.h"
-#include "tile/coordinate.h"
 #include "map/healing_place.h"
+#include "tile/coordinate.h"
 
 #define NUM_FLIGHT_POSITONS 21
 
-    typedef struct{
-        u8 bank;
-        u8 map;
-        s16 x;
-        s16 y;
-        u16 field_6;
-    } stru_flight_position;
-    
-    typedef struct {
-    	u16 cursor_x, cursor_y;
-    	u8 unknown[0x10];
-    	u16 player_namespace;
-    	u8 unkown2[0xE];
-    	u16 tiles[0x80]; // whatever those tiles may be...
+typedef struct {
+    u8 bank;
+    u8 map;
+    s16 x;
+    s16 y;
+    u16 field_6;
+} stru_flight_position;
 
-    } worldmap_state_t;
+typedef struct {
+    u16 cursor_x, cursor_y;
+    u8 unknown[0x10];
+    u16 player_namespace;
+    u8 unkown2[0xE];
+    u16 tiles[0x80]; // whatever those tiles may be...
 
-    // A pattern consists of multiple shapes, each of which can have displacement from the
-    // position anchor and its own rectangular dimension. To associate a map with a shape use
-    // the respective field in the mapheader structure
-    typedef struct {
-    	u8 x, y, width, height;
-    } worldmap_shape_t;
+} worldmap_state_t;
 
-    typedef struct {
-    	int num_shapes;
-    	worldmap_shape_t *shapes;
-    } worldmap_pattern_t;
+// A pattern consists of multiple shapes, each of which can have displacement from the
+// position anchor and its own rectangular dimension. To associate a map with a shape use
+// the respective field in the mapheader structure
+typedef struct {
+    u8 x, y, width, height;
+} worldmap_shape_t;
 
-    typedef struct {
-        u8 bank;
-        u8 map_idx;
-        u8 shape_idx;
-    } worldmap_shape_association_t;
+typedef struct {
+    int num_shapes;
+    worldmap_shape_t *shapes;
+} worldmap_pattern_t;
 
-    #define NUM_WORLDMAP_SHAPE_ASSOCIATIONS 6
-    worldmap_shape_association_t worldmap_shape_associations[NUM_WORLDMAP_SHAPE_ASSOCIATIONS];
+typedef struct {
+    u8 bank;
+    u8 map_idx;
+    u8 shape_idx;
+} worldmap_shape_association_t;
 
-    extern worldmap_state_t *worldmap_state;
+#define NUM_WORLDMAP_SHAPE_ASSOCIATIONS 6
+worldmap_shape_association_t worldmap_shape_associations[NUM_WORLDMAP_SHAPE_ASSOCIATIONS];
 
-    stru_flight_position flight_positions[NUM_HEALING_PLACES]; // Each flight position is associated with a healing place
+extern worldmap_state_t *worldmap_state;
 
-    typedef struct {
-        u8 bank;
-        u8 map_idx;
-        u8 healing_place_idx;
-    } flight_position_association_t;
-    
-    // Associates map namespaces with healing place idxs
-    flight_position_association_t flight_position_associations[MAP_NAMESPACE_NONE - MAP_AMONIA];
+stru_flight_position flight_positions[NUM_HEALING_PLACES]; // Each flight position is associated with a healing place
 
-    int *worldmap_tilemaps[4];
-    u8 *namespace_worldmap_associations;
-    extern const unsigned short gfx_worldmapTiles[];
-    extern const unsigned short gfx_worldmapMap[];
-    extern const unsigned short gfx_worldmapPal[];
+typedef struct {
+    u8 bank;
+    u8 map_idx;
+    u8 healing_place_idx;
+} flight_position_association_t;
 
-    /**
-     * Returns the flightposition idx that corresponds to a bank, map tuple
-     * @param bank the mapbank
-     * @param map the mapid in the bank
-     * @return the corresponding flightposition idx + 1 or 0 if none matches
-     */
-    int map_get_flightposition(u8 bank, u8 map);
+// Associates map namespaces with healing place idxs
+flight_position_association_t flight_position_associations[MAP_NAMESPACE_NONE - MAP_AMONIA];
 
-    /**
-     * Returns the offset on a flight position by its index + 1
-     * @param idx_plus_one the index of the flight position plus one
-     * @return the flight pos offset
-     */
-    stru_flight_position *flightposition_by_id(int idx_plus_one);
+int *worldmap_tilemaps[4];
+u8 *namespace_worldmap_associations;
+extern const unsigned short gfx_worldmapTiles[];
+extern const unsigned short gfx_worldmapMap[];
+extern const unsigned short gfx_worldmapPal[];
 
-    /**
-     * Gets the namespace id associated with a position on the worldmap
-     * @param worldmap_index which worldmap to use
-     * @param layer the town or locality layer
-     * @param x the x coordinate (in tiles)
-     * @param y the y coordinate (in tiles)
-     * @return the namespace id
-     */
-    u8 worldmap_get_namespace_by_pos(u8 worldmap_index, u8 layer, u16 x, u16 y);
+/**
+ * Returns the flightposition idx that corresponds to a bank, map tuple
+ * @param bank the mapbank
+ * @param map the mapid in the bank
+ * @return the corresponding flightposition idx + 1 or 0 if none matches
+ */
+int map_get_flightposition(u8 bank, u8 map);
 
-    /**
-     * Sets the state corresponding to a worldmapflag (needed as well to set the worldmapflag)
-     * @param flag the flag to set
-     */
-    void worldmap_flag_state_set(u16 flag);
+/**
+ * Returns the offset on a flight position by its index + 1
+ * @param idx_plus_one the index of the flight position plus one
+ * @return the flight pos offset
+ */
+stru_flight_position *flightposition_by_id(int idx_plus_one);
 
-    /**
-     * Sets a worldmap flag (the state needs to be set as well!)
-     * @param flag the flag to set
-     */
-    void worldmap_flag_set(u16 flag);
+/**
+ * Gets the namespace id associated with a position on the worldmap
+ * @param worldmap_index which worldmap to use
+ * @param layer the town or locality layer
+ * @param x the x coordinate (in tiles)
+ * @param y the y coordinate (in tiles)
+ * @return the namespace id
+ */
+u8 worldmap_get_namespace_by_pos(u8 worldmap_index, u8 layer, u16 x, u16 y);
 
-    /**
-     * Locates the player on the current worldmap (saves x, y to the worldmap state).
-     */
-    void worldmap_locate_player();
+/**
+ * Sets the state corresponding to a worldmapflag (needed as well to set the worldmapflag)
+ * @param flag the flag to set
+ */
+void worldmap_flag_state_set(u16 flag);
 
-    typedef struct {
-        u8 x;
-        u8 y;
-        u8 width; 
-        u8 height;
-    } worldmap_position_t;
+/**
+ * Sets a worldmap flag (the state needs to be set as well!)
+ * @param flag the flag to set
+ */
+void worldmap_flag_set(u16 flag);
 
-    // Locates maps exactly on the worldmap
-    worldmap_position_t *worldmap_positions[256];
+/**
+ * Locates the player on the current worldmap (saves x, y to the worldmap state).
+ */
+void worldmap_locate_player();
+
+typedef struct {
+    u8 x;
+    u8 y;
+    u8 width;
+    u8 height;
+} worldmap_position_t;
+
+// Locates maps exactly on the worldmap
+worldmap_position_t *worldmap_positions[256];
 
 #define WORLDMAP_FLAG_CHECK_INVALID 0
 #define WORLDMAP_FLAG_CHECK_NO_FLAG 1
 #define WORLDMAP_FLAG_CHECK_SET 2
 #define WORLDMAP_FLAG_CHECK_UNSET 3
 
-#ifdef	__cplusplus
+#ifdef __cplusplus
 }
 #endif
 
-#endif	/* WORLDMAP_H */
-
+#endif /* WORLDMAP_H */

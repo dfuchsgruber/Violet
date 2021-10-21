@@ -5,10 +5,10 @@
  * Created on 7. Juli 2016, 13:31
  */
 
-#include "types.h"
-#include "stdbool.h"
-#include "data_structures.h"
 #include "agbmemory.h"
+#include "data_structures.h"
+#include "stdbool.h"
+#include "types.h"
 
 /**
  * Restores heap invariance of heap at root position (sift downn)
@@ -85,7 +85,3 @@ int binary_heap_remove(int i, dyn_arr *heap) {
     }
     return value;
 }
-
-
-
-

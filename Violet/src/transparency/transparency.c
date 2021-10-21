@@ -1,17 +1,17 @@
-#include "types.h"
-#include "stdbool.h"
 #include "transparency.h"
-#include "constants/flags.h"
-#include "flags.h"
-#include "overworld/map_control.h"
-#include "io.h"
-#include "constants/specials.h"
-#include "text.h"
 #include "bg.h"
-#include "debug.h"
 #include "callbacks.h"
+#include "constants/flags.h"
+#include "constants/specials.h"
+#include "debug.h"
+#include "flags.h"
+#include "io.h"
+#include "overworld/map_control.h"
+#include "stdbool.h"
+#include "text.h"
+#include "types.h"
 
-const color_t tbox_palette_transparent [16] = {
+const color_t tbox_palette_transparent[16] = {
     {0x0},
     {0x0},
     {0x7FFF},
@@ -36,7 +36,7 @@ bool transparency_is_on() {
 }
 
 bool transparency_used_by_weather() {
-    u8 current_weather =  map_get_current_weather();
+    u8 current_weather = map_get_current_weather();
     return current_weather == 6 || current_weather == 8 || current_weather == 9 || current_weather == 0xA;
 }
 
@@ -56,7 +56,6 @@ void transparency_off() {
         io_set(0x52, 0x0010);
     }
 }
-
 
 extern void *gfx_text_std_borderTiles[];
 extern color_t gfx_text_std_borderPal[16];
@@ -84,13 +83,13 @@ void overworld_tbox_load_gfx() {
     }
 }
 
-/**
+/*
 static void callback_transparency_disable(u8 self){
     if (transparency_is_on())
         transparency_off();
     big_callback_delete(self);
 }
-**/
+*/
 
 void overworld_tbox_delete() {
     //big_callback_new(callback_transparency_disable, 0); // 1 frame later

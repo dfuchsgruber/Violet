@@ -16,5 +16,4 @@ void karma_calculate();
 s16 karma_add(s16 *value);
 int modify_price_money(int price_money);
 
-
 #endif

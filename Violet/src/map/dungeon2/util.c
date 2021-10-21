@@ -1,28 +1,28 @@
-#include "types.h"
-#include "dungeon/dungeon2.h"
-#include "dungeon/callback.h"
-#include "prng.h"
-#include "map/header.h"
-#include "save.h"
 #include "agbmemory.h"
 #include "bios.h"
-#include "vars.h"
+#include "callbacks.h"
+#include "constants/overworld/misc.h"
 #include "constants/person_behaviours.h"
 #include "constants/person_script_stds.h"
-#include "constants/overworld/misc.h"
-#include "overworld/sprite.h"
-#include "overworld/script.h"
-#include "flags.h"
 #include "debug.h"
+#include "dungeon/callback.h"
+#include "dungeon/dungeon2.h"
+#include "flags.h"
 #include "hash.h"
-#include "callbacks.h"
+#include "map/header.h"
+#include "overworld/script.h"
+#include "overworld/sprite.h"
+#include "prng.h"
+#include "save.h"
+#include "types.h"
+#include "vars.h"
 
 bool dungeon2_find_empty_space(int *space_x, int *space_y, u8 *center_node, int nodes[][2], int width, int height, u8 *map, dungeon_generator2 *dg2) {
     // For each node, see if we can expand the window arround it
     int valid_positions[dg2->nodes][2];
     u8 num_valid_positions = 0;
     for (u8 node_idx = 0; node_idx < dg2->nodes; node_idx++) {
-        
+
         int x = nodes[node_idx][0] - (width - width / 2);
         int y = nodes[node_idx][1] - (height - height / 2);
         bool valid_node = true;
@@ -55,10 +55,9 @@ void dungeon2_place_pattern(int pattern_x, int pattern_y, map_footer_t *pattern,
     dprintf("Place pattern with dimensions %d,%d at %d,%d\n", pattern->width, pattern->height, pattern_x, pattern_y);
     for (u8 i = 0; i < pattern->width; i++) {
         for (u8 j = 0; j < pattern->height; j++) {
-            u16 *block = (u16*) pattern->map + (j * pattern->width + i);
+            u16 *block = (u16 *)pattern->map + (j * pattern->width + i);
             // block_set_by_pos((s16)(pattern_x + i + 7 - (int)(pattern->width / 2)), (s16)(pattern_y + j + 7 - (int)(pattern->height / 2)), *block);
             save1->dungeon_blocks[(pattern_y + j - (int)(pattern->height / 2)) * dg2->width + pattern_x + i - (int)(pattern->width / 2)] = *block;
-
         }
     }
 }
@@ -74,18 +73,17 @@ extern u8 ow_script_dungeon_trainer_6[];
 extern u8 ow_script_dungeon_trainer_7[];
 
 static u8 *dungeon2_trainer_scripts[4][2] = {
-    {ow_script_dungeon_trainer_0, ow_script_dungeon_trainer_4}, 
-    {ow_script_dungeon_trainer_1, ow_script_dungeon_trainer_5}, 
+    {ow_script_dungeon_trainer_0, ow_script_dungeon_trainer_4},
+    {ow_script_dungeon_trainer_1, ow_script_dungeon_trainer_5},
     {ow_script_dungeon_trainer_2, ow_script_dungeon_trainer_6},
     {ow_script_dungeon_trainer_3, ow_script_dungeon_trainer_7},
 };
 
 u16 dungeon2_seeded_rnd16(dungeon_generator2 *dg2, u32 seed) {
     fmem.gp_rng = hash_sequence(&(dg2->initial_seed), 1, seed);
-    u16 r =  gp_rnd16();
+    u16 r = gp_rnd16();
     return r;
 }
-
 
 u8 dungeon2_get_number_trainers(dungeon_generator2 *dg2) {
     u8 num_trainers = (u8)(dungeon2_seeded_rnd16(dg2, DG2_RANDOM_SEED_NUM_TRAINERS) % (DG2_MAX_NUM_TRAINERS + 1));
@@ -114,18 +112,17 @@ int dungeon2_node_trainer_or_item_get_type(dungeon_generator2 *dg2, int node_idx
         return DG2_NODE_TRAINER_OR_ITEM_TYPE_NONE;
 }
 
-void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(dungeon_generator2*)) {
+void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(dungeon_generator2 *)) {
     // Clear all dynamic person events
     int zero = 0;
-    cpuset(&zero, &(fmem.dpersons), CPUSET_FILL | CPUSET_HALFWORD |
-        CPUSET_HALFWORD_SIZE(DMAP_PERSONS * sizeof(map_event_person)));
+    cpuset(&zero, &(fmem.dpersons), CPUSET_FILL | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(DMAP_PERSONS * sizeof(map_event_person)));
 
     fmem.dmapevents.script_cnt = 0;
     fmem.dmapevents.signpost_cnt = 0;
     fmem.dmapevents.persons = fmem.dpersons;
     fmem.dmapevents.warps = fmem.dwarps;
 
-    int (*nodes)[2] = save1->dungeon_nodes;
+    int(*nodes)[2] = save1->dungeon_nodes;
 
     u8 num_persons = 0;
     u8 num_trainers = 0;
@@ -180,7 +177,8 @@ void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(
 }
 
 static u32 dungeon_mushroom_rates[] = {
-    [MUSHROOM_TYPE_TINY_MUSHROOM] = 2, [MUSHROOM_TYPE_LARGE_MUSHROOM] = 1,
+    [MUSHROOM_TYPE_TINY_MUSHROOM] = 2,
+    [MUSHROOM_TYPE_LARGE_MUSHROOM] = 1,
 };
 
 u16 dungeon_mushroom_get_type(u16 mushroom_idx) {

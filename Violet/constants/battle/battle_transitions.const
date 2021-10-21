@@ -1,7 +1,7 @@
 {
-    "type" : "enum",
-    "base" : 0,
-    "values" : [
+    "type": "enum",
+    "base": 0,
+    "values": [
         "BATTLE_TRANSITION_BLUR",
         "BATTLE_TRANSITION_DISTORTED_WAVE",
         "BATTLE_TRANSITION_HORIZONTAL_CORRUGATE",

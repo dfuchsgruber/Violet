@@ -36,5 +36,3 @@ def get_tutor_compatibility(compatible_moves):
     for move in compatible_moves:
         tutor_compatibility |= 1 << (tutor_moves.index(move))
     return tutor_compatibility
-
-

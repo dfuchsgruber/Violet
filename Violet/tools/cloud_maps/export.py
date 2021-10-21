@@ -2,8 +2,6 @@
 
 import argparse
 import pymap.project
-import pickle
-import json
 
 if __name__ == '__main__':
 

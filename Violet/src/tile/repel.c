@@ -1,11 +1,11 @@
-#include "types.h"
-#include "vars.h"
 #include "callbacks.h"
 #include "constants/items.h"
 #include "debug.h"
+#include "types.h"
+#include "vars.h"
 
-void repel_use(){
-    switch(*var_access(0x800E)){
+void repel_use() {
+    switch (*var_access(0x800E)) {
         case ITEM_SCHUTZ:
             *var_access(0x4020) = 100;
             break;

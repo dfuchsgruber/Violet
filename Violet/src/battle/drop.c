@@ -1,34 +1,34 @@
-#include "types.h"
-#include "battle/state.h"
-#include "battle/battler.h"
-#include "item/item.h"
-#include "constants/items.h"
-#include "battle/battlescript.h"
-#include "battle/battle_string.h"
-#include "debug.h"
-#include "callbacks.h"
-#include "oam.h"
 #include "battle/attack.h"
-#include "music.h"
-#include "text.h"
+#include "battle/battle_string.h"
+#include "battle/battler.h"
+#include "battle/battlescript.h"
 #include "battle/bg.h"
-#include "bg.h"
-#include "dma.h"
-#include "superstate.h"
-#include "language.h"
-#include "prng.h"
-#include "constants/pokemon_types.h"
-#include "pokemon/basestat.h"
-#include "constants/pokemon_colors.h"
+#include "battle/state.h"
 #include "berry.h"
+#include "bg.h"
+#include "callbacks.h"
+#include "constants/items.h"
+#include "constants/pokemon_colors.h"
+#include "constants/pokemon_types.h"
+#include "debug.h"
+#include "dma.h"
+#include "item/item.h"
+#include "language.h"
+#include "music.h"
+#include "oam.h"
+#include "pokemon/basestat.h"
 #include "pokemon/evolution.h"
+#include "prng.h"
+#include "superstate.h"
+#include "text.h"
+#include "types.h"
 
 static u32 standard_item_drop_rates[][2] = {
     {ITEM_BITTERKRAUT, 100},
     {ITEM_QUARZSTAUB, 50},
     {ITEM_WUNDERSTAUB, 75},
     {ITEM_APFEL, 40},
-    /**
+    /*
     {ITEM_POKEBALL, 75},
     {ITEM_SUPERBALL, 30},
     {ITEM_HYPERBALL, 5},
@@ -46,7 +46,7 @@ static u32 standard_item_drop_rates[][2] = {
     {ITEM_SCHUTZ, 50},
     {ITEM_SUPERSCHUTZ, 40},
     {ITEM_TOP_SCHUTZ, 30},
-    **/
+    */
 };
 
 static u32 standard_item_count_rates[] = {[1] = 19, [2] = 4, [3] = 1};
@@ -60,7 +60,7 @@ static bool drop_standard_item(u8 battler_idx, u16 *item, u8 *cnt) {
         p[i] = (u32)(standard_item_drop_rates[i][1] + offset);
     }
     *item = (u16)(standard_item_drop_rates[choice(p, ARRAY_COUNT(p), NULL)][0]);
-    *cnt = (u8) choice(standard_item_count_rates, ARRAY_COUNT(standard_item_count_rates), NULL);
+    *cnt = (u8)choice(standard_item_count_rates, ARRAY_COUNT(standard_item_count_rates), NULL);
     return true;
 }
 
@@ -80,16 +80,22 @@ static bool drop_rare_item(u8 battler_idx, u16 *item, u8 *cnt) {
         p[i] = (u32)(standard_item_rare_drop_rates[i][1] + offset);
     }
     *item = (u16)(standard_item_rare_drop_rates[choice(p, ARRAY_COUNT(p), NULL)][0]);
-    *cnt = (u8) choice(standard_item_rare_count_rates, ARRAY_COUNT(standard_item_rare_count_rates), NULL);
+    *cnt = (u8)choice(standard_item_rare_count_rates, ARRAY_COUNT(standard_item_rare_count_rates), NULL);
     return true;
 }
 
-#define P_ARRAY_ADD_ITEM(p, items, item, prob, p_size) {p[p_size] = prob; items[p_size] = item; p_size++;}
+#define P_ARRAY_ADD_ITEM(p, items, item, prob, p_size) \
+    {                                                  \
+        p[p_size] = prob;                              \
+        items[p_size] = item;                          \
+        p_size++;                                      \
+    }
 
 static u32 drop_type_item_count_rates[] = {0, 1};
 
 static bool drop_type_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
-    u32 p[16]; u16 items[16];
+    u32 p[16];
+    u16 items[16];
     size_t p_size = 0;
     if (battlers[battler_idx].type1 == TYPE_WASSER || battlers[battler_idx].type2 == TYPE_WASSER) {
         P_ARRAY_ADD_ITEM(p, items, ITEM_PERLE, 50, p_size);
@@ -107,14 +113,14 @@ static bool drop_type_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
         P_ARRAY_ADD_ITEM(p, items, ITEM_STERNENSTAUB, 40, p_size);
         P_ARRAY_ADD_ITEM(p, items, ITEM_STERNENSTUECK, 2, p_size);
     }
-    /**
+    /*
     for (u16 i = ITEM_NORMALJUWEL; i <= ITEM_UNLICHTJUWEL; i++) {
         if (battlers[battler_idx].type1 == item_get_hold_effect_parameter(i) ||
             battlers[battler_idx].type2 == item_get_hold_effect_parameter(i)) {
             P_ARRAY_ADD_ITEM(p, items, i, 1, p_size);
         }
     }
-    **/
+    */
     if (p_size > 0) {
         *dst_item = items[choice(p, p_size, NULL)];
         *dst_cnt = (u8)choice(drop_type_item_count_rates, ARRAY_COUNT(drop_type_item_count_rates), NULL);
@@ -124,14 +130,14 @@ static bool drop_type_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     }
 }
 
-
 static u32 drop_color_item_count_rates[] = {[1] = 1};
 
 static bool drop_color_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     int color = basestats[battlers[battler_idx].species].color_flip_field & 0x7F;
-    u32 p[16]; u16 items[16];
+    u32 p[16];
+    u16 items[16];
     size_t p_size = 0;
-    switch(color) {
+    switch (color) {
         case POKEMON_COLOR_BLAU:
             P_ARRAY_ADD_ITEM(p, items, ITEM_INDIGOSTUECK, 1, p_size);
             break;
@@ -171,11 +177,14 @@ static bool drop_color_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
 
 static bool drop_species_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     u16 species = battlers[battler_idx].species;
-    u32 p[16]; u16 items[16];
+    u32 p[16];
+    u16 items[16];
     size_t p_size = 0;
-    if (basestats[species].common_item) P_ARRAY_ADD_ITEM(p, items, basestats[species].common_item, 50, p_size)
-    if (basestats[species].rare_item) P_ARRAY_ADD_ITEM(p, items, basestats[species].rare_item, 5, p_size)
-     if (p_size > 0) {
+    if (basestats[species].common_item)
+        P_ARRAY_ADD_ITEM(p, items, basestats[species].common_item, 50, p_size)
+    if (basestats[species].rare_item)
+        P_ARRAY_ADD_ITEM(p, items, basestats[species].rare_item, 5, p_size)
+    if (p_size > 0) {
         *dst_item = items[choice(p, p_size, NULL)];
         *dst_cnt = 1;
         return true;
@@ -229,11 +238,10 @@ static u32 berry_dropping_probabilities[] = {
     [ITEM_IDX_TO_BERRY_IDX(ITEM_KRAMBOBEERE)] = 1,
 };
 
-
 static u32 drop_berry_item_count_rates[] = {[1] = 13, [2] = 4, [3] = 2, [4] = 1};
 
 static bool drop_berry_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
-    (void) battler_idx;
+    (void)battler_idx;
     *dst_item = (u16)(BERRY_IDX_TO_ITEM_IDX(choice(berry_dropping_probabilities, ARRAY_COUNT(berry_dropping_probabilities), NULL)));
     *dst_cnt = (u8)choice(drop_berry_item_count_rates, ARRAY_COUNT(drop_berry_item_count_rates), NULL);
     return true;
@@ -251,7 +259,6 @@ static bool drop_evolution_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     return true;
 }
 
-
 enum {
     DROP_STANDARD_ITEM = 0,
     DROP_RARE_ITEM,
@@ -262,7 +269,7 @@ enum {
     DROP_EVOLUTION_ITEM,
 };
 
-static bool (*dropping_functions[])(u8, u16*, u8*) = {
+static bool (*dropping_functions[])(u8, u16 *, u8 *) = {
     [DROP_STANDARD_ITEM] = drop_standard_item,
     [DROP_RARE_ITEM] = drop_rare_item,
     [DROP_TYPE_ITEM] = drop_type_item,
@@ -288,7 +295,8 @@ void battler_drop_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     u8 cnts[ARRAY_COUNT(dropping_type_probabilities)];
     size_t p_size = 0;
     for (size_t i = 0; i < ARRAY_COUNT(dropping_type_probabilities); i++) {
-        u16 item = 0; u8 cnt = 0; 
+        u16 item = 0;
+        u8 cnt = 0;
         if (dropping_functions[i](battler_idx, &item, &cnt)) {
             dprintf("Type %d made item %d droppable (absolute mass %d)\n", i, item, dropping_type_probabilities[i]);
             p[p_size] = dropping_type_probabilities[i];
@@ -330,8 +338,8 @@ static void battle_item_drop_compact(u8 battler_idx) {
             if (BATTLE_STATE2->items_dropped[battler_idx][j] == item) {
                 dprintf("compactifying items at slot %d and %d\n", i, j);
                 // Aggregate the same items
-                BATTLE_STATE2->items_dropped_cnt[battler_idx][i] = (u8) (BATTLE_STATE2->items_dropped_cnt[battler_idx][i] + 
-                    BATTLE_STATE2->items_dropped_cnt[battler_idx][j]);
+                BATTLE_STATE2->items_dropped_cnt[battler_idx][i] = (u8)(BATTLE_STATE2->items_dropped_cnt[battler_idx][i] +
+                                                                        BATTLE_STATE2->items_dropped_cnt[battler_idx][j]);
                 // Remove the aggregated item by swapping with the last one and reducing the list length
                 BATTLE_STATE2->num_items_dropped[battler_idx]--;
                 BATTLE_STATE2->items_dropped[battler_idx][j] = BATTLE_STATE2->items_dropped[battler_idx][BATTLE_STATE2->num_items_dropped[battler_idx]];
@@ -358,7 +366,7 @@ enum {
     SUMMARY_DONE,
 };
 
-static tbox_font_colormap item_drop_summary_fontcolmap = { .background = 0xE, .body = 0xD, .edge = 0xF};
+static tbox_font_colormap item_drop_summary_fontcolmap = {.background = 0xE, .body = 0xD, .edge = 0xF};
 
 static u8 battle_item_drop_summary_tbox_new() {
     int height = 2 * BATTLE_STATE2->num_items_dropped[BATTLE_STATE2->item_dropping_battler];
@@ -379,23 +387,23 @@ static void battle_item_drop_draw_summary_text() {
         strcat(strbuf, str_x);
         strcat(strbuf, item_get_name(item));
 
-        tbox_print_string(BATTLE_STATE2->item_dropping_summary_tbox_idx, 2, 0, (u16)((16 * i)), 0, 0, 
-            &item_drop_summary_fontcolmap, 0xFF, strbuf);
+        tbox_print_string(BATTLE_STATE2->item_dropping_summary_tbox_idx, 2, 0, (u16)((16 * i)), 0, 0,
+                          &item_drop_summary_fontcolmap, 0xFF, strbuf);
 
         if (!item_has_room(item, cnt)) {
             u8 str_full[] = LANGDEP(PSTRING("voll"), PSTRING("full"));
             strcpy(strbuf, str_full);
-            tbox_print_string(BATTLE_STATE2->item_dropping_summary_tbox_idx, 2, 96, (u16)((16 * i)), 0, 0, 
-                &item_drop_summary_fontcolmap, 0xFF, strbuf);
+            tbox_print_string(BATTLE_STATE2->item_dropping_summary_tbox_idx, 2, 96, (u16)((16 * i)), 0, 0,
+                              &item_drop_summary_fontcolmap, 0xFF, strbuf);
         }
     }
 }
 
-/**
+/*
 static void item_drop_summary_battle_gp_tbox_draw(u8 mode) {
     battle_gp_tbox_draw(18, 7, 29, (u8)(2 * BATTLE_STATE2->num_items_dropped[BATTLE_STATE2->item_dropping_battler] + 2 + 9), mode);
 }
-**/
+*/
 
 void bsc_cmd_itemdrop_and_payday() {
     // dprintf("Payday in state %d\n", BATTLE_STATE2->item_dropping_state);
@@ -403,7 +411,7 @@ void bsc_cmd_itemdrop_and_payday() {
         case DROPPING_PAYDAY: {
             BATTLE_STATE2->item_dropping_state++;
             if (!(battle_flags & BATTLE_LINK) && battle_payday_money > 0) {
-                u32 amount =(u32)(battle_payday_money * battle_state->money_multiplier);
+                u32 amount = (u32)(battle_payday_money * battle_state->money_multiplier);
                 money_add(&save1->money, amount);
                 BSC_BUFFER_HWORD(bsc_string_buffer0, 5, amount);
                 battlescript_callstack_push_next_command();
@@ -416,7 +424,7 @@ void bsc_cmd_itemdrop_and_payday() {
             }
             break;
         }
-        case DROPPING_INIT:  {
+        case DROPPING_INIT: {
             BATTLE_STATE2->item_dropping_battler = 0;
             for (int i = 0; i < MAX_ITEMS_DROPPED_PER_BATTLER; i++)
                 BATTLE_STATE2->items_dropped_oams[i] = 0xFF;
@@ -436,7 +444,7 @@ void bsc_cmd_itemdrop_and_payday() {
                         }
                     } while (item != 0 && BATTLE_STATE2->num_items_dropped[i] < MAX_ITEMS_DROPPED_PER_BATTLER);
                     battle_item_drop_compact(i);
-                    /**
+                    /*
                     // Try to add the items to the player's inventory and remove non-addable items (i.e. bag full)
                     for (int j = 0; j < BATTLE_STATE2->num_items_dropped[i]; j++) {
                         item = BATTLE_STATE2->items_dropped[i][j];
@@ -445,7 +453,7 @@ void bsc_cmd_itemdrop_and_payday() {
                             BATTLE_STATE2->num_items_dropped[i]--;
                         }
                     }
-                    **/
+                    */
                     // Debugging:
                     for (int j = 0; j < BATTLE_STATE2->num_items_dropped[i]; j++) {
                         dprintf("Player obtained item %d %d-times from battler %d\n", BATTLE_STATE2->items_dropped[i][j], BATTLE_STATE2->items_dropped_cnt[i][j], j);
@@ -456,9 +464,9 @@ void bsc_cmd_itemdrop_and_payday() {
             }
             BATTLE_STATE2->item_dropping_state++;
         }
-        FALL_THROUGH;
+            FALL_THROUGH;
         case DROP_ITEM: {
-            for(; BATTLE_STATE2->item_dropping_battler < battler_cnt; BATTLE_STATE2->item_dropping_battler++) {
+            for (; BATTLE_STATE2->item_dropping_battler < battler_cnt; BATTLE_STATE2->item_dropping_battler++) {
                 if (!(BATTLE_STATE2->items_dropped_done & int_bitmasks[BATTLE_STATE2->item_dropping_battler])) {
                     BATTLE_STATE2->items_dropped_done = (u8)(BATTLE_STATE2->items_dropped_done | int_bitmasks[BATTLE_STATE2->item_dropping_battler]);
                     if (BATTLE_STATE2->num_items_dropped[BATTLE_STATE2->item_dropping_battler] > 0) {
@@ -479,7 +487,7 @@ void bsc_cmd_itemdrop_and_payday() {
             }
             BATTLE_STATE2->item_dropping_state++;
         }
-        FALL_THROUGH;
+            FALL_THROUGH;
         case DROPPING_DONE: {
             bsc_offset++;
             return;
@@ -509,11 +517,11 @@ void bsc_cmd_itemdrop_and_payday() {
         case SUMMARY_WAIT_FOR_DMA3: {
             if (!dma3_busy(-1))
                 battle_bg1_y = 0;
-                BATTLE_STATE2->item_dropping_state++;
+            BATTLE_STATE2->item_dropping_state++;
             break;
         }
         case SUMMARY_WAIT_FOR_INPUT: {
-            
+
             if (!big_callback_is_active(fanfare_callback_wait) && super.keys_new.value) { // Any key press is ok...
                 play_sound(5);
                 tbox_flush_all(BATTLE_STATE2->item_dropping_summary_tbox_idx, 0);
@@ -526,7 +534,7 @@ void bsc_cmd_itemdrop_and_payday() {
             tbox_flush_map(BATTLE_STATE2->item_dropping_summary_tbox_idx);
             tbox_copy_to_vram(BATTLE_STATE2->item_dropping_summary_tbox_idx, TBOX_COPY_TILEMAP);
             BATTLE_STATE2->item_dropping_state++;
-            break; 
+            break;
         }
         case SUMMARY_DONE: {
             if (!dma3_busy(-1)) {
@@ -539,7 +547,7 @@ void bsc_cmd_itemdrop_and_payday() {
             }
             break;
         }
-        /**
+            /*
         case DROPPING_COLLECT_ITEM: {
             if (BATTLE_STATE2->item_to_pickup < BATTLE_STATE2->num_items_dropped[BATTLE_STATE2->item_dropping_battler]) {
                 bsc_last_used_item = BATTLE_STATE2->items_dropped[BATTLE_STATE2->item_dropping_battler][BATTLE_STATE2->item_to_pickup];
@@ -560,14 +568,16 @@ void bsc_cmd_itemdrop_and_payday() {
             }
             break;
         }
-        **/
+        */
     }
 }
 
 static coordinate_t item_dropping_animation_offsets[MAX_ITEMS_DROPPED_PER_BATTLER] = {
-    {.x = 4, .y = 0}, {.x = 20, .y = -4}, {.x = -20, .y = 0}, {.x = -8, .y = -2},
+    {.x = 4, .y = 0},
+    {.x = 20, .y = -4},
+    {.x = -20, .y = 0},
+    {.x = -8, .y = -2},
 };
-
 
 enum {
     ITEM_DROPPING_CALLBACK_STATE = 0,
@@ -606,9 +616,9 @@ static void item_dropping_oam_callback(oam_object *self) {
     FIXED dt = INT_TO_FIXED(DROPPING_DT); // in frames
     FIXED dy = INT_TO_FIXED(DROPPING_DY); // Fallin 32 px
     FIXED a = FIXED_DIV(dy, FIXED_MUL(dt, dt));
-    switch(*state) {
+    switch (*state) {
         case ITEM_DROPPING_OAM_STATE_SHOW: {
-            self->flags = (u16)(self->flags &(~OAM_FLAG_INVISIBLE));
+            self->flags = (u16)(self->flags & (~OAM_FLAG_INVISIBLE));
             *state = ITEM_DROPPING_OAM_STATE_FALL;
             FALL_THROUGH;
         }
@@ -645,7 +655,7 @@ static void item_dropping_oam_callback(oam_object *self) {
         case ITEM_DROPPING_OAM_STATE_DELETE: {
             // play_sound(88);
             big_callbacks[*callback_idx].params[ITEM_DROPPING_CALLBACK_NUM_OAMS_TO_WAIT_FOR]--; // Wait for one oam less
-            oam_free(self); // This state is set externally, when picking stuff up
+            oam_free(self);                                                                     // This state is set externally, when picking stuff up
             break;
         }
     }
@@ -678,7 +688,7 @@ void battle_animation_callback_create_item_sprite(u8 self) {
             break;
         }
         case 1: {
-            if (*num_oams_to_wait_for > 0) 
+            if (*num_oams_to_wait_for > 0)
                 return;
             *delay = 32;
             ++*state;
@@ -687,7 +697,7 @@ void battle_animation_callback_create_item_sprite(u8 self) {
         case 2: {
             for (u8 i = 0; i < BATTLE_STATE2->num_items_dropped[BATTLE_STATE2->item_dropping_battler]; i++) {
                 u8 oam_idx = BATTLE_STATE2->items_dropped_oams[i];
-                oams[oam_idx].private[ITEM_DROPPING_OAM_DELAY] = (u16)(i * 8); // delay
+                oams[oam_idx].private[ITEM_DROPPING_OAM_DELAY] = (u16)(i * 8);                   // delay
                 oams[oam_idx].private[ITEM_DROPPING_OAM_STATE] = ITEM_DROPPING_OAM_STATE_DELETE; // state
                 ++*num_oams_to_wait_for;
             }
@@ -695,13 +705,10 @@ void battle_animation_callback_create_item_sprite(u8 self) {
             break;
         }
         case 3: {
-            if (*num_oams_to_wait_for > 0) 
+            if (*num_oams_to_wait_for > 0)
                 return;
             battle_animation_big_callback_delete(self);
             break;
         }
-
     }
-
-
 }

@@ -26,14 +26,14 @@ void *malloc(size_t);
  * Frees allocated heap memory.
  * @param ptr Memory that was allocated on heap
  */
-void free(void* ptr);
+void free(void *ptr);
 
 /**
  * Allocates heap memory and fills it with zeroes.
  * @param size Size of memory to allocate
  * @return Pointer to allocated memory
  */
-void* malloc_and_clear(size_t size);
+void *malloc_and_clear(size_t size);
 
 /**
  * Memory copy.
@@ -41,7 +41,7 @@ void* malloc_and_clear(size_t size);
  * @param Source
  * @param Size
  */
-void *memcpy(void*, const void*, size_t);
+void *memcpy(void *, const void *, size_t);
 
 /**
  * Memory set.
@@ -49,6 +49,6 @@ void *memcpy(void*, const void*, size_t);
  * @param value
  * @param Size
  */
-void *memset(void*, int, size_t);
+void *memset(void *, int, size_t);
 
 #endif /* INCLUDE_C_AGBMEMORY_H_ */

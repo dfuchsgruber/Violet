@@ -25,7 +25,6 @@ enum {
     CLOUD_UPSTREAM_ANIM_STATIC_BG,
 };
 
-
 typedef struct {
     s16 x;
     s16 y;
@@ -40,7 +39,7 @@ typedef struct {
 
 /**
  * Creates oams for all cloud upstreams on the current map
- **/
+ */
 void map_cloud_upstream_new();
 
 /**
@@ -48,7 +47,7 @@ void map_cloud_upstream_new();
  * @param x x coordinate (not 7 shifted)
  * @param y y coordinate (not 7 shifted)
  * @return the state of the cloud upstream, that is automatically freed if the upstream animation ends
- **/
+ */
 oam_cloud_upstream_state_t *map_cloud_upstream_whirlwind_at(s16 x, s16 y);
 
 #endif

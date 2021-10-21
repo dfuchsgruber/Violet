@@ -1,28 +1,28 @@
-#include "types.h"
-#include "save.h"
-#include "map/ceometria_gym.h"
-#include "prng.h"
-#include "flags.h"
-#include "overworld/script.h"
-#include "vars.h"
-#include "text.h"
-#include "language.h"
-#include "debug.h"
-#include "constants/vars.h"
 #include "constants/species.h"
 #include "constants/trainer_builds.h"
+#include "constants/vars.h"
+#include "debug.h"
+#include "flags.h"
+#include "language.h"
+#include "map/ceometria_gym.h"
+#include "overworld/script.h"
+#include "prng.h"
+#include "save.h"
+#include "text.h"
+#include "types.h"
+#include "vars.h"
 
 u16 ceometria_gym_trainer_pokemon[] = {
     POKEMON_NEBULAK, POKEMON_ALPOLLO, POKEMON_TRAUNFUGIL, POKEMON_TRAUNMAGIL,
     POKEMON_ZWIRRLICHT, POKEMON_ZWIRRKLOP, POKEMON_LICHTEL,
     POKEMON_LATERNECTO, POKEMON_PARAGONI, POKEMON_QUABBEL, POKEMON_APOQUALLYP,
-    POKEMON_ZOBIRIS, 0xFFFF
-};
+    POKEMON_ZOBIRIS, 0xFFFF};
 
 void ceometria_gym_build_trainer_party(u8 min_level, u8 max_level) {
     int num_species = 0;
-    while (ceometria_gym_trainer_pokemon[num_species] != 0xFFFF) num_species++;
-    trainer_pokemon_default_item_default_attacks *dst = (trainer_pokemon_default_item_default_attacks*)&fmem.dynamic_trainer_party;
+    while (ceometria_gym_trainer_pokemon[num_species] != 0xFFFF)
+        num_species++;
+    trainer_pokemon_default_item_default_attacks *dst = (trainer_pokemon_default_item_default_attacks *)&fmem.dynamic_trainer_party;
     for (int i = 0; i < 3; i++) {
         dst[i].species = ceometria_gym_trainer_pokemon[(u16)ceometria_gym_rnd() % num_species];
         dst[i].build.bitfield.build_idx = TRAINER_BUILD_NONE;
@@ -44,12 +44,10 @@ void ceometria_gym_initialize() {
 }
 
 u8 ceometria_gym_overworld_pictures_male[] = {
-    27, 32, 26, 30
-};
+    27, 32, 26, 30};
 
 u8 ceometria_gym_overworld_pictures_female[] = {
-    23, 28, 35, 58
-};
+    23, 28, 35, 58};
 
 static u8 ceometria_gym_generate_room() {
     u8 room = cmem.ceometria_gym_state.last_room;
@@ -63,7 +61,8 @@ static u8 ceometria_gym_generate_room() {
             room = (u8)(ceometria_gym_rnd() % NUM_CEOMETRIA_GYM_ROOM_TYPES);
         }
     }
-    if (room == NUM_CEOMETRIA_GYM_ROOM_TYPES) derrf("Couldn't sample any room type.\n");
+    if (room == NUM_CEOMETRIA_GYM_ROOM_TYPES)
+        derrf("Couldn't sample any room type.\n");
     return room;
 }
 
@@ -102,7 +101,6 @@ void ceometria_gym_next_waiting_room() {
     }
 }
 
-
 u8 *ceometria_gym_person_scripts_trainerbattle[8] = {
     ow_script_ceometria_gym_trainer_variant_0,
     ow_script_ceometria_gym_trainer_variant_1,
@@ -136,22 +134,19 @@ u8 *ceometria_gym_person_scripts_reveal_room[] = {
     [CEOMETRIA_GYM_SLEEPING_ROOM] = ow_script_ceometria_gym_reveal_room_sleep,
     [CEOMETRIA_GYM_HEALING_ROOM] = ow_script_ceometria_gym_reveal_room_healing,
     [CEOMETRIA_GYM_REDUCE_HP_ROOM] = ow_script_ceometria_gym_reveal_room_reduce_any,
-    [CEOMETRIA_GYM_REDUCE_PP_ROOM] = ow_script_ceometria_gym_reveal_room_reduce_any
-};
+    [CEOMETRIA_GYM_REDUCE_PP_ROOM] = ow_script_ceometria_gym_reveal_room_reduce_any};
 
 u8 *ceometria_gym_room_hint_room_not_negative[4] = {
     ow_script_ceometria_gym_hint_room_not_negative_variant_0,
     ow_script_ceometria_gym_hint_room_not_negative_variant_1,
     ow_script_ceometria_gym_hint_room_not_negative_variant_2,
-    ow_script_ceometria_gym_hint_room_not_negative_variant_3
-};
+    ow_script_ceometria_gym_hint_room_not_negative_variant_3};
 
 u8 *ceometria_gym_room_hint_room_negative[4] = {
     ow_script_ceometria_gym_hint_room_negative_variant_0,
     ow_script_ceometria_gym_hint_room_negative_variant_1,
     ow_script_ceometria_gym_hint_room_negative_variant_2,
-    ow_script_ceometria_gym_hint_room_negative_variant_3
-};
+    ow_script_ceometria_gym_hint_room_negative_variant_3};
 
 void ceometria_gym_person_buffer_target_room() {
     u16 person_idx = *var_access(0x8004);
@@ -161,19 +156,18 @@ void ceometria_gym_person_buffer_target_room() {
             strcpy(buffer0, s);
             break;
         }
-        case 1 : {
+        case 1: {
             u8 s[] = LANGDEP(PSTRING("mittlere Raum"), PSTRING("middle room"));
             strcpy(buffer0, s);
             break;
         }
-        case 2 : {
+        case 2: {
             u8 s[] = LANGDEP(PSTRING("rechte Raum"), PSTRING("right room"));
             strcpy(buffer0, s);
             break;
         }
-
     }
-} 
+}
 
 bool ceometria_gym_room_is_negative(u8 type) {
     switch (type) {
@@ -227,7 +221,6 @@ void ceometria_gym_waiting_room_person_get_script() {
         default:
             derrf("Unkown person type %d\n", cmem.ceometria_gym_state.persons[person_idx].type);
     }
-
 }
 
 u8 ceometria_gym_get_number_waiting_rooms() {

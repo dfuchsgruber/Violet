@@ -1,14 +1,14 @@
-#include "types.h"
-#include "oam.h"
-#include "callbacks.h"
-#include "save.h"
-#include "debug.h"
-#include "color.h"
-#include "math.h"
-#include "io.h"
-#include "bios.h"
 #include "anim_engine.h"
+#include "bios.h"
+#include "callbacks.h"
+#include "color.h"
+#include "debug.h"
+#include "io.h"
+#include "math.h"
 #include "music.h"
+#include "oam.h"
+#include "save.h"
+#include "types.h"
 
 #define LIGHTNING_TAG 0x1AAB
 
@@ -16,8 +16,7 @@ extern const u8 gfx_cutscene_unown_shrine_lightningTiles[];
 extern const u8 gfx_cutscene_unown_shrine_lightningPal[];
 
 static sprite lightning_sprite = {
-    ATTR0_SHAPE_SQUARE, ATTR1_SIZE_64_64, ATTR2_PRIO(2), 0
-};
+    ATTR0_SHAPE_SQUARE, ATTR1_SIZE_64_64, ATTR2_PRIO(2), 0};
 
 static graphic unown_shrine_lightning_graphic[] = {
     [0] = {.sprite = gfx_cutscene_unown_shrine_lightningTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = LIGHTNING_TAG},
@@ -46,8 +45,7 @@ static graphic unown_shrine_lightning_graphic[] = {
 #define LIGHTNING_EMPTY 19
 
 static gfx_frame lightning_anim_idle[] = {
-    {.data = LIGHTNING_EMPTY, .duration = 0}, {.data = GFX_ANIM_END}
-};
+    {.data = LIGHTNING_EMPTY, .duration = 0}, {.data = GFX_ANIM_END}};
 
 static gfx_frame lightning_anim_upper[] = {
     {.data = LIGHTNING_EMPTY, .duration = 0},
@@ -55,7 +53,7 @@ static gfx_frame lightning_anim_upper[] = {
     {.data = LIGHTNING_EMPTY, .duration = LIGHTNING_FRAME_DURATION}, // empty
     {.data = 1 * 2, .duration = LIGHTNING_FRAME_DURATION},
     {.data = LIGHTNING_EMPTY, .duration = LIGHTNING_FRAME_DURATION}, // empty
-    {.data = 2 * 2, .duration = LIGHTNING_FRAME_DURATION}, 
+    {.data = 2 * 2, .duration = LIGHTNING_FRAME_DURATION},
     {.data = LIGHTNING_EMPTY, .duration = LIGHTNING_FRAME_DURATION}, // empty
     {.data = 1 * 2, .duration = LIGHTNING_FRAME_DURATION},
     {.data = LIGHTNING_EMPTY, .duration = LIGHTNING_FRAME_DURATION}, // empty & whole screen to white
@@ -68,7 +66,7 @@ static gfx_frame lightning_anim_upper[] = {
     {.data = LIGHTNING_EMPTY, .duration = 32},
     {.data = LIGHTNING_EMPTY, .duration = 32},
     {.data = LIGHTNING_EMPTY, .duration = 32},
-    {.data = GFX_ANIM_JUMP, .duration = 0}, 
+    {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
 static gfx_frame lightning_anim_lower[] = {
@@ -77,7 +75,7 @@ static gfx_frame lightning_anim_lower[] = {
     {.data = LIGHTNING_EMPTY, .duration = LIGHTNING_FRAME_DURATION}, // empty
     {.data = 1 * 2 + 1, .duration = LIGHTNING_FRAME_DURATION},
     {.data = LIGHTNING_EMPTY, .duration = LIGHTNING_FRAME_DURATION}, // empty
-    {.data = 2 * 2 + 1, .duration = LIGHTNING_FRAME_DURATION}, 
+    {.data = 2 * 2 + 1, .duration = LIGHTNING_FRAME_DURATION},
     {.data = LIGHTNING_EMPTY, .duration = LIGHTNING_FRAME_DURATION}, // empty
     {.data = 1 * 2 + 1, .duration = LIGHTNING_FRAME_DURATION},
     {.data = LIGHTNING_EMPTY, .duration = LIGHTNING_FRAME_DURATION}, // empty & whole screen to white
@@ -90,9 +88,8 @@ static gfx_frame lightning_anim_lower[] = {
     {.data = LIGHTNING_EMPTY, .duration = 32},
     {.data = LIGHTNING_EMPTY, .duration = 32},
     {.data = LIGHTNING_EMPTY, .duration = 32},
-    {.data = GFX_ANIM_JUMP, .duration = 0}, 
+    {.data = GFX_ANIM_JUMP, .duration = 0},
 };
-
 
 static gfx_frame lightning_anim_upper_flipped[] = {
     {.data = LIGHTNING_EMPTY, .duration = 0},
@@ -100,7 +97,7 @@ static gfx_frame lightning_anim_upper_flipped[] = {
     {.data = LIGHTNING_EMPTY, .duration = LIGHTNING_FRAME_DURATION | GFX_ANIM_HFLIP}, // empty
     {.data = 1 * 2, .duration = LIGHTNING_FRAME_DURATION | GFX_ANIM_HFLIP},
     {.data = LIGHTNING_EMPTY, .duration = LIGHTNING_FRAME_DURATION | GFX_ANIM_HFLIP}, // empty
-    {.data = 2 * 2, .duration = LIGHTNING_FRAME_DURATION | GFX_ANIM_HFLIP}, 
+    {.data = 2 * 2, .duration = LIGHTNING_FRAME_DURATION | GFX_ANIM_HFLIP},
     {.data = LIGHTNING_EMPTY, .duration = LIGHTNING_FRAME_DURATION | GFX_ANIM_HFLIP}, // empty
     {.data = 1 * 2, .duration = LIGHTNING_FRAME_DURATION | GFX_ANIM_HFLIP},
     {.data = LIGHTNING_EMPTY, .duration = LIGHTNING_FRAME_DURATION | GFX_ANIM_HFLIP}, // empty & whole screen to white
@@ -113,7 +110,7 @@ static gfx_frame lightning_anim_upper_flipped[] = {
     {.data = LIGHTNING_EMPTY, .duration = 32},
     {.data = LIGHTNING_EMPTY, .duration = 32},
     {.data = LIGHTNING_EMPTY, .duration = 32},
-    {.data = GFX_ANIM_JUMP, .duration = 0}, 
+    {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
 static gfx_frame lightning_anim_lower_flipped[] = {
@@ -122,7 +119,7 @@ static gfx_frame lightning_anim_lower_flipped[] = {
     {.data = LIGHTNING_EMPTY, .duration = LIGHTNING_FRAME_DURATION | GFX_ANIM_HFLIP}, // empty
     {.data = 1 * 2 + 1, .duration = LIGHTNING_FRAME_DURATION | GFX_ANIM_HFLIP},
     {.data = LIGHTNING_EMPTY, .duration = LIGHTNING_FRAME_DURATION | GFX_ANIM_HFLIP}, // empty
-    {.data = 2 * 2 + 1, .duration = LIGHTNING_FRAME_DURATION | GFX_ANIM_HFLIP}, 
+    {.data = 2 * 2 + 1, .duration = LIGHTNING_FRAME_DURATION | GFX_ANIM_HFLIP},
     {.data = LIGHTNING_EMPTY, .duration = LIGHTNING_FRAME_DURATION | GFX_ANIM_HFLIP}, // empty
     {.data = 1 * 2 + 1, .duration = LIGHTNING_FRAME_DURATION | GFX_ANIM_HFLIP},
     {.data = LIGHTNING_EMPTY, .duration = LIGHTNING_FRAME_DURATION | GFX_ANIM_HFLIP}, // empty & whole screen to white
@@ -135,9 +132,8 @@ static gfx_frame lightning_anim_lower_flipped[] = {
     {.data = LIGHTNING_EMPTY, .duration = 32},
     {.data = LIGHTNING_EMPTY, .duration = 32},
     {.data = LIGHTNING_EMPTY, .duration = 32},
-    {.data = GFX_ANIM_JUMP, .duration = 0}, 
+    {.data = GFX_ANIM_JUMP, .duration = 0},
 };
-
 
 static gfx_frame *lightning_anims[] = {
     [0] = lightning_anim_idle,
@@ -152,7 +148,7 @@ static u8 lightnings_anim_idxs[2][2] = {
     {3, 4},
 };
 
-static void lightning_sound_callback (oam_object *self) {
+static void lightning_sound_callback(oam_object *self) {
     int period = 14 * LIGHTNING_FRAME_DURATION + 3 * 32;
     if (self->anim_number != 0) {
         u16 frame = self->private[7]++;
@@ -165,23 +161,29 @@ static void lightning_sound_callback (oam_object *self) {
 }
 
 static oam_template lightning_template = {
-    .tiles_tag = 0xFFFF, .pal_tag = LIGHTNING_TAG,
-    .oam = &lightning_sprite, .animation = lightning_anims,
-    .graphics = unown_shrine_lightning_graphic, .rotscale = oam_rotscale_anim_table_null,
+    .tiles_tag = 0xFFFF,
+    .pal_tag = LIGHTNING_TAG,
+    .oam = &lightning_sprite,
+    .animation = lightning_anims,
+    .graphics = unown_shrine_lightning_graphic,
+    .rotscale = oam_rotscale_anim_table_null,
     .callback = lightning_sound_callback,
 };
 
 #define NUM_LIGHTNINGS 4
 
 static s16 lightning_coordinates[NUM_LIGHTNINGS][2] = {
-    {40, 64}, 
+    {40, 64},
     {240 - 32, 64},
     {80, 72},
     {240 - 112, 69},
 };
 
 static u16 lightning_delays[NUM_LIGHTNINGS] = {
-    0, 82, 104, 40,
+    0,
+    82,
+    104,
+    40,
 };
 
 static u8 lightning_flipped[NUM_LIGHTNINGS] = {false, true, true, false};
@@ -197,12 +199,12 @@ static inline int earthquake_displacement(int frame, int period, int amplitude, 
     FIXED sin_arg = FIXED_DIV(INT_TO_FIXED(frame), INT_TO_FIXED(period));
     FIXED trig_applied = FIXED_MUL(FIXED_SIN(sin_arg), INT_TO_FIXED(amplitude));
     // Apply decay function
-    int decay = hwt(frame/period, FIXED_TO_INT(FIXED_DIV(INT_TO_FIXED(period), cushion)), 0x10000);
+    int decay = hwt(frame / period, FIXED_TO_INT(FIXED_DIV(INT_TO_FIXED(period), cushion)), 0x10000);
     return (FIXED_TO_INT(trig_applied) * decay) / 0x10000;
 }
 
 void unown_shrine_animation_lightning_callback(anim_engine_task *self) {
-    lightning_state_t *state = (lightning_state_t*)self->vars;
+    lightning_state_t *state = (lightning_state_t *)self->vars;
     switch (state->state) {
         case 0: {
             for (int i = 0; i < NUM_LIGHTNINGS; i++) {
@@ -252,5 +254,3 @@ void unown_shrine_animation_lightning_callback(anim_engine_task *self) {
         }
     }
 }
-
-

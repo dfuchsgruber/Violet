@@ -1,5 +1,5 @@
-#include "types.h"
 #include "map/tileset.h"
+#include "types.h"
 
 extern u16 gfx_tileset_clouds_anim_waterTiles[];
 extern u16 gfx_tileset_clouds_anim_waterfallTiles[];
@@ -18,15 +18,13 @@ tileset_animation tileset_clouds_animations[] = {
 };
 
 tileset_animation_header tileset_clouds_animation_head = {
-    ARRAY_COUNT(tileset_clouds_animations), tileset_clouds_animations
-};
+    ARRAY_COUNT(tileset_clouds_animations), tileset_clouds_animations};
 
-
-void tileset_clouds_anim(u16 clk){
+void tileset_clouds_anim(u16 clk) {
     generic_tileset_anim_proceed_all(&tileset_clouds_animation_head, clk);
 }
 
-void tileset_clouds_anim_init(){
+void tileset_clouds_anim_init() {
     tileset_anim_clk0_cycle = generic_tileset_anim_get_clk(&tileset_clouds_animation_head);
     tileset_anim_0 = tileset_clouds_anim;
 }

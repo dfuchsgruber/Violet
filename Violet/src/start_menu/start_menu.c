@@ -1,12 +1,12 @@
-#include "types.h"
-#include "callbacks.h"
 #include "overworld/start_menu.h"
-#include "overworld/map_control.h"
+#include "callbacks.h"
 #include "dungeon/dungeon2.h"
-#include "save.h"
 #include "language.h"
-#include "pokepad/pokepad2.h"
+#include "overworld/map_control.h"
 #include "overworld/script.h"
+#include "pokepad/pokepad2.h"
+#include "save.h"
+#include "types.h"
 
 extern u8 ow_script_dungeon_exit[];
 
@@ -35,10 +35,7 @@ start_menu_item_t start_menu_items[NUM_START_MENU_ITEMS] = {
         .name = str_pokemon,
         .initialize = start_menu_pokemon_initialize,
     },
-    [START_MENU_BAG] = {
-        .name = str_bag,
-        .initialize = start_menu_bag_initialize
-    },
+    [START_MENU_BAG] = {.name = str_bag, .initialize = start_menu_bag_initialize},
     [START_MENU_PLAYER] = {
         .name = str_player,
         .initialize = start_menu_trainer_card_initialize,
@@ -71,48 +68,39 @@ start_menu_item_t start_menu_items[NUM_START_MENU_ITEMS] = {
 
 static u8 str_pokepad_description[] = LANGDEP(
     PSTRING("Benutze verschiedene Apps, die auf dem\nPoképad installiert sind."),
-    PSTRING("Use different apps that are installed\non the Poképad.")
-);
+    PSTRING("Use different apps that are installed\non the Poképad."));
 
 static u8 str_pokemon_description[] = LANGDEP(
     PSTRING("Überprüfe und organisiere die Pokémon,\ndie sich in deinem Team befinden."),
-    PSTRING("Check and organize the Pokémon that are\nin your party.")
-);
+    PSTRING("Check and organize the Pokémon that are\nin your party."));
 
 static u8 str_bag_description[] = LANGDEP(
     PSTRING("Enthält Taschen für Items, die du gekauft,\nerhalten oder gefunden hast."),
-    PSTRING("Has pockets for items you have bought,\nreceived or found.")
-);
+    PSTRING("Has pockets for items you have bought,\nreceived or found."));
 
 static u8 str_trainer_card_description[] = LANGDEP(
     PSTRING("Überprüfe Geldbestand und Spieldaten\nauf deinem Trainerpass."),
-    PSTRING("Check money and game stats on your\ntrainer card.")
-);
+    PSTRING("Check money and game stats on your\ntrainer card."));
 
 static u8 str_save_description[] = LANGDEP(
     PSTRING("Sichere deinen Spielfortschritt und\nmache eine Pause."),
-    PSTRING("Save your game progress and take\na break.")
-);
+    PSTRING("Save your game progress and take\na break."));
 
 static u8 str_option_description[] = LANGDEP(
     PSTRING("Verändere Spieleinstellungen wie\nTexttempo, Regeln etc."),
-    PSTRING("Change game settings like text speed\nrules etc.")
-);
+    PSTRING("Change game settings like text speed\nrules etc."));
 
 static u8 str_exit_description[] = LANGDEP(
     PSTRING("Schließe dieses Menü."),
-    PSTRING("Close this menu.")
-);
+    PSTRING("Close this menu."));
 
 static u8 str_retire_description[] = LANGDEP(
     PSTRING("Beende das Safari-Spiel und kehre\nzum Eingang zurück."),
-    PSTRING("Quit the safari game and return to\nthe entrance.")
-);
+    PSTRING("Quit the safari game and return to\nthe entrance."));
 
 static u8 str_leave_dungeon_description[] = LANGDEP(
     PSTRING("Verlasse das Areal und kehre zum\nEingang zurück."),
-    PSTRING("Leave the area and return to the\nentrance.")
-);
+    PSTRING("Leave the area and return to the\nentrance."));
 
 u8 *start_menu_item_descriptions[NUM_START_MENU_ITEMS] = {
     [START_MENU_POKEPAD] = str_pokepad_description,

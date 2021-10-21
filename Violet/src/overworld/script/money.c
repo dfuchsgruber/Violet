@@ -1,12 +1,12 @@
-#include "types.h"
-#include "overworld/script.h"
 #include "bg.h"
 #include "callbacks.h"
-#include "pokemon/sprites.h"
+#include "color.h"
 #include "oam.h"
+#include "overworld/script.h"
+#include "pokemon/sprites.h"
 #include "text.h"
 #include "transparency.h"
-#include "color.h"
+#include "types.h"
 
 void money_draw(u32 money, u8 x, u8 y) {
     tboxdata boxdata;

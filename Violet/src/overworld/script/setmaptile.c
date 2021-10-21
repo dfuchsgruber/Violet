@@ -1,8 +1,8 @@
-#include "types.h"
 #include "overworld/script.h"
 #include "tile/block.h"
+#include "types.h"
 
-bool overworld_script_command_setmaptile (overworld_script_state_t *state) {
+bool overworld_script_command_setmaptile(overworld_script_state_t *state) {
     int x = overworld_script_read_hword(state) + 7;
     int y = overworld_script_read_hword(state) + 7;
     u16 block_and_level = overworld_script_read_hword(state);

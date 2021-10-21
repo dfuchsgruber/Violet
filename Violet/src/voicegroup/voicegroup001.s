@@ -1158,6 +1158,4 @@ voicegroup001:
 	.word	WaveDuty50
 	.byte	0x0, 0x0, 0xF, 0x0
 
-
-
 	.end

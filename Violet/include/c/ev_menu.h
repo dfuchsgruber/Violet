@@ -8,9 +8,9 @@
 #ifndef INCLUDE_C_EV_MENU_H_
 #define INCLUDE_C_EV_MENU_H_
 
-#include "pokemon/virtual.h"
-#include "oam.h"
 #include "bg.h"
+#include "oam.h"
+#include "pokemon/virtual.h"
 #include "text.h"
 
 #define EV_MENU_OAM_POKEPIC_TAG 0xA000
@@ -23,21 +23,21 @@
 #define EV_MENU_EV_CHART_MIN_VALUE 7
 
 typedef struct {
-	u8 party_idx;
-	u8 stat_idx;
-	u8 oam_pokepic_idx;
-	u8 delay;
-	u16 oam_pokepic_tile;
-	u16 oam_iv_hexagon_tile;
-	u16 oam_ev_hexagon_tile;
-	u8 oam_iv_hexagon_idx;
-	u8 oam_ev_hexagon_idx;
-	int *pokemon_sprite;
-	int *iv_hexagon_sprite;
-	int *ev_hexagon_sprite;
-	// Picture and color the currently rendered polygon uses
-	int *render_sprite;
-	u8 render_color;
+    u8 party_idx;
+    u8 stat_idx;
+    u8 oam_pokepic_idx;
+    u8 delay;
+    u16 oam_pokepic_tile;
+    u16 oam_iv_hexagon_tile;
+    u16 oam_ev_hexagon_tile;
+    u8 oam_iv_hexagon_idx;
+    u8 oam_ev_hexagon_idx;
+    int *pokemon_sprite;
+    int *iv_hexagon_sprite;
+    int *ev_hexagon_sprite;
+    // Picture and color the currently rendered polygon uses
+    int *render_sprite;
+    u8 render_color;
 } ev_menu_state_stru;
 
 /**
@@ -120,7 +120,6 @@ void ev_menu_callback_setup();
 
 #define EV_MENU_BG_COUNT 3
 bg_config ev_menu_bg_configs[EV_MENU_BG_COUNT];
-
 
 #define EV_MENU_TBOX_COUNT 13
 #define EV_MENU_TBOX_NAME 0

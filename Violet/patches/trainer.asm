@@ -117,5 +117,5 @@
 	ldr r0, =trainer_set_flags | 1
 	bx r0
 	.pool
-/**
-**/
+/*
+*/

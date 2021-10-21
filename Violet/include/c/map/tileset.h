@@ -8,8 +8,8 @@
 #ifndef INCLUDE_C_MAP_TILESET_H_
 #define INCLUDE_C_MAP_TILESET_H_
 
-#include "tile/block.h"
 #include "bg.h"
+#include "tile/block.h"
 
 typedef struct map_tileset_info {
     u8 compression_used;
@@ -54,13 +54,13 @@ u16 generic_tileset_anim_get_clk(tileset_animation_header *anim_header);
 void generic_tileset_anim_proceed(tileset_animation *anim, u16 clk);
 
 void generic_tileset_anim_proceed_all(tileset_animation_header *anim_header,
-        u16 clk);
+                                      u16 clk);
 
 void overworld_load_tileset_pal(tileset *t, u16 dst_col, u16 bytecnt);
 
 /**
  * Initializes the animations of the secondary tileset, but not general map effects like cloud upstreams
- **/
+ */
 void _tileset_secondary_animation_initialize();
 
 /**

@@ -4,31 +4,33 @@
  *  Created on: Sep 26, 2018
  *      Author: dominik
  */
-#include "types.h"
-#include "pokemon/count.h"
-#include "pokepad/pokedex/operator.h"
-#include "mega.h"
-#include "save.h"
 #include "agbmemory.h"
-#include "pokemon/virtual.h"
-#include "version.h"
 #include "constants/pokemon_attributes.h"
+#include "mega.h"
+#include "pokemon/count.h"
+#include "pokemon/virtual.h"
+#include "pokepad/pokedex/operator.h"
 #include "prng.h"
+#include "save.h"
+#include "types.h"
+#include "version.h"
 
 void version_alpha_2_2_fix_pid(box_pokemon *target) {
-	if (box_pokemon_get_attribute(target, ATTRIBUTE_SPECIES, 0) == 0) return;
-	_pid_t_old old = {.value = (u32)box_pokemon_get_attribute(target, ATTRIBUTE_PID, 0)};
-	pid_t p = {.value = 0};
-	p.fields.ability = old.fields.ability;
-	p.fields.gender_partial = old.fields.gender_partial;
-	p.fields.is_shiny = old.fields.shinyness <= 512 ? 1 : 0;
-	int nature = old.fields.nature;
-	if (nature >= 25) nature /= 2;
-	p.fields.nature = (u8)(nature & 31);
-	p.fields.form = 0;
-	p.fields.hidden_power_type = (u8)((rnd16() % 18) & 31);
-	p.fields.hidden_power_strength = (u8)(rnd16() & 7);
-	box_pokemon_set_attribute(target, ATTRIBUTE_PID, &p);
+    if (box_pokemon_get_attribute(target, ATTRIBUTE_SPECIES, 0) == 0)
+        return;
+    _pid_t_old old = {.value = (u32)box_pokemon_get_attribute(target, ATTRIBUTE_PID, 0)};
+    pid_t p = {.value = 0};
+    p.fields.ability = old.fields.ability;
+    p.fields.gender_partial = old.fields.gender_partial;
+    p.fields.is_shiny = old.fields.shinyness <= 512 ? 1 : 0;
+    int nature = old.fields.nature;
+    if (nature >= 25)
+        nature /= 2;
+    p.fields.nature = (u8)(nature & 31);
+    p.fields.form = 0;
+    p.fields.hidden_power_type = (u8)((rnd16() % 18) & 31);
+    p.fields.hidden_power_strength = (u8)(rnd16() & 7);
+    box_pokemon_set_attribute(target, ATTRIBUTE_PID, &p);
 }
 
 u16 pokedex_order_old[POKEMON_CNT - 1] = {
@@ -910,36 +912,34 @@ u16 pokedex_order_old[POKEMON_CNT - 1] = {
     0x0,
     // POKEMON_ICOGNITO_QUESTION
     0x0,
-	// POKEMON_GROUDON_REGENT
-	0x0
-};
+    // POKEMON_GROUDON_REGENT
+    0x0};
 
 void version_transfer_pokedex() {
-	// First save the old pokedex flags (extensions are not used so far...)
-	u8 *old_seen = malloc_and_clear(sizeof(u8) * 52);
-	u8 *old_caught = malloc_and_clear(sizeof(u8) * 52);
-	for (int i = 0; i < 52; i++) {
-		old_seen[i] = save2->pokedex_seen_flags[i];
-		old_caught[i] = save2->pokedex_caught_flags[i];
-		save2->pokedex_seen_flags[i] = 0;
-		save2->pokedex_caught_flags[i] = 0;
-	}
-	// Now iterate over all specieses and transfer their seen / caught to back to the save2 memory
-	for (int i = 0; i < POKEMON_CNT - 1; i++) {
-		int flag_old = pokedex_order_old[i] - 1;
-		int flag_new = pokedex_order[i] - 1;
-		int byte_old = flag_old / 8;
-		int byte_new = flag_new / 8;
-		int bit_old = flag_old & 7;
-		int bit_new = flag_new & 7;
-		if (old_seen[byte_old] & (1 << bit_old)) {
-			save2->pokedex_seen_flags[byte_new] |= (u8)(1 << bit_new);
-		}
-		if (old_caught[byte_old] & (1 << bit_old)){
-			save2->pokedex_caught_flags[byte_new] |= (u8)(1 << bit_new);
-		}
-	}
-	free(old_seen);
-	free(old_caught);
+    // First save the old pokedex flags (extensions are not used so far...)
+    u8 *old_seen = malloc_and_clear(sizeof(u8) * 52);
+    u8 *old_caught = malloc_and_clear(sizeof(u8) * 52);
+    for (int i = 0; i < 52; i++) {
+        old_seen[i] = save2->pokedex_seen_flags[i];
+        old_caught[i] = save2->pokedex_caught_flags[i];
+        save2->pokedex_seen_flags[i] = 0;
+        save2->pokedex_caught_flags[i] = 0;
+    }
+    // Now iterate over all specieses and transfer their seen / caught to back to the save2 memory
+    for (int i = 0; i < POKEMON_CNT - 1; i++) {
+        int flag_old = pokedex_order_old[i] - 1;
+        int flag_new = pokedex_order[i] - 1;
+        int byte_old = flag_old / 8;
+        int byte_new = flag_new / 8;
+        int bit_old = flag_old & 7;
+        int bit_new = flag_new & 7;
+        if (old_seen[byte_old] & (1 << bit_old)) {
+            save2->pokedex_seen_flags[byte_new] |= (u8)(1 << bit_new);
+        }
+        if (old_caught[byte_old] & (1 << bit_old)) {
+            save2->pokedex_caught_flags[byte_new] |= (u8)(1 << bit_new);
+        }
+    }
+    free(old_seen);
+    free(old_caught);
 }
-

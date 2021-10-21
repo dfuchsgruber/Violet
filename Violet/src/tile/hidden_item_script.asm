@@ -98,5 +98,3 @@ no_ashbag:
 	str_ashbag_picked_up:
 		.string "PLAYER obtains\nBUFFER_1 ashes!"
 .endif
-
-

@@ -129,4 +129,3 @@ str_use_waterfall:
 	.autostring 34 2 "BUFFER_1 uses Waterfall."
 
 .endif
-

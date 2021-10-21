@@ -1,7 +1,7 @@
 {
-	"type" : "enum",
-	"base" : 0,
-	"values" : [
+	"type": "enum",
+	"base": 0,
+	"values": [
 		"STORY_STATE_NONE",
 		"STORY_STATE_ROUTE_2_TANN_DONE",
 		"STORY_STATE_BRUCHFELS_DONE",

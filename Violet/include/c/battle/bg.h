@@ -18,7 +18,7 @@ typedef struct battle_bg {
     const void *pal;
 } battle_bg;
 
-typedef struct  {
+typedef struct {
     const void *tileset;
     const void *pal;
     const void *map;
@@ -144,6 +144,5 @@ extern const unsigned short gfx_battle_bg_ice_caveMap[];
 extern const unsigned short gfx_stance_changeTiles[];
 extern const unsigned short gfx_stance_changePal[];
 extern const unsigned short gfx_stance_changeMap[];
-
 
 #endif /* INCLUDE_C_BATTLE_BG_H_ */

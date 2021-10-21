@@ -1,11 +1,11 @@
-#include "types.h"
+#include "callbacks.h"
+#include "color.h"
+#include "debug.h"
 #include "fading.h"
 #include "overworld/map_control.h"
-#include "callbacks.h"
-#include "superstate.h"
-#include "debug.h"
 #include "overworld/script.h"
-#include "color.h"
+#include "superstate.h"
+#include "types.h"
 #include "vars.h"
 
 static void map_reload_if_fading_done(u8 self) {
@@ -17,7 +17,6 @@ static void map_reload_if_fading_done(u8 self) {
         callback1_set(map_reload);
     }
 }
-
 
 void silvania_forest_white_blend_map_reload() {
     fadescreen_all(1, 8);

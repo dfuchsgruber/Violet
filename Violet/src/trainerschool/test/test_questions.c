@@ -1,6 +1,6 @@
-#include "types.h"
-#include "trainerschool_test.h"
 #include "language.h"
+#include "trainerschool_test.h"
+#include "types.h"
 
 u8 str_trainerschool_test_question_0[] = LANGDEP(
     PSTRING("Welches ist das\nGrößte aller\nPokémon?"),
@@ -12,15 +12,13 @@ u8 str_trainerschool_test_question_0_answer_1[] = LANGDEP(
 u8 str_trainerschool_test_question_0_answer_2[] = LANGDEP(
     PSTRING("Wailord"), PSTRING("Wailord"));
 u8 str_trainerschool_test_question_0_answer_3[] = LANGDEP(
-    PSTRING("Garados"), PSTRING("Gyrados")
-    );
+    PSTRING("Garados"), PSTRING("Gyrados"));
 
 u8 *str_trainerschool_test_question_0_answers[] = {
     str_trainerschool_test_question_0_answer_0,
     str_trainerschool_test_question_0_answer_1,
     str_trainerschool_test_question_0_answer_2,
-    str_trainerschool_test_question_0_answer_3
-};
+    str_trainerschool_test_question_0_answer_3};
 
 u8 str_trainerschool_test_question_1[] = LANGDEP(
     PSTRING("Wie viele AP\nverliert das Ziel\ndurch die Attacke\nGroll?"),
@@ -28,8 +26,7 @@ u8 str_trainerschool_test_question_1[] = LANGDEP(
 u8 str_trainerschool_test_question_1_answer_0[] = LANGDEP(
     PSTRING("Vier"), PSTRING("Four"));
 u8 str_trainerschool_test_question_1_answer_1[] = LANGDEP(
-    PSTRING("Hälfte"), PSTRING("Half")
-    );
+    PSTRING("Hälfte"), PSTRING("Half"));
 u8 str_trainerschool_test_question_1_answer_2[] = LANGDEP(
     PSTRING("Alle"), PSTRING("All"));
 u8 str_trainerschool_test_question_1_answer_3[] = LANGDEP(
@@ -39,8 +36,7 @@ u8 *str_trainerschool_test_question_1_answers[] = {
     str_trainerschool_test_question_1_answer_0,
     str_trainerschool_test_question_1_answer_1,
     str_trainerschool_test_question_1_answer_2,
-    str_trainerschool_test_question_1_answer_3
-};
+    str_trainerschool_test_question_1_answer_3};
 
 u8 str_trainerschool_test_question_2[] = LANGDEP(
     PSTRING("Welcher Angriff\nwird von Relaxo\nerlernt?"),
@@ -55,8 +51,7 @@ u8 str_trainerschool_test_question_2_answer_2[] = LANGDEP(
 u8 *str_trainerschool_test_question_2_answers[] = {
     str_trainerschool_test_question_2_answer_0,
     str_trainerschool_test_question_2_answer_1,
-    str_trainerschool_test_question_2_answer_2
-};
+    str_trainerschool_test_question_2_answer_2};
 
 u8 str_trainerschool_test_question_3[] = LANGDEP(
     PSTRING("Welches dieser\nItems hat den\nhöchsten Wert?"),
@@ -77,14 +72,11 @@ u8 *str_trainerschool_test_question_3_answers[] = {
     str_trainerschool_test_question_3_answer_1,
     str_trainerschool_test_question_3_answer_2,
     str_trainerschool_test_question_3_answer_3,
-    str_trainerschool_test_question_3_answer_4
-};
-
+    str_trainerschool_test_question_3_answer_4};
 
 u8 str_trainerschool_test_question_4[] = LANGDEP(
     PSTRING("Welches dieser\nPokémon besitzt\nden höchsten\nBasis-Angriff?"),
-    PSTRING("Which of these\nPokémon has the\nhighest Base-\nAttack?")
-);
+    PSTRING("Which of these\nPokémon has the\nhighest Base-\nAttack?"));
 u8 str_trainerschool_test_question_4_answer_0[] = LANGDEP(
     PSTRING("Flamara"), PSTRING("Flareon"));
 u8 str_trainerschool_test_question_4_answer_1[] = LANGDEP(
@@ -98,13 +90,11 @@ u8 *str_trainerschool_test_question_4_answers[] = {
     str_trainerschool_test_question_4_answer_0,
     str_trainerschool_test_question_4_answer_1,
     str_trainerschool_test_question_4_answer_2,
-    str_trainerschool_test_question_4_answer_3
-};
+    str_trainerschool_test_question_4_answer_3};
 
 u8 str_trainerschool_test_question_5[] = LANGDEP(
     PSTRING("Wie viele\nStunden benötigt\nDragoran zur\nWeltumrundung?"),
-    PSTRING("How many\nhours does it\ntake Dargonite\nto circle the world?")
-    );
+    PSTRING("How many\nhours does it\ntake Dargonite\nto circle the world?"));
 u8 str_trainerschool_test_question_5_answer_0[] = LANGDEP(
     PSTRING("Sechzehn"), PSTRING("Sixteen"));
 u8 str_trainerschool_test_question_5_answer_1[] = LANGDEP(
@@ -121,8 +111,7 @@ u8 *str_trainerschool_test_question_5_answers[] = {
     str_trainerschool_test_question_5_answer_1,
     str_trainerschool_test_question_5_answer_2,
     str_trainerschool_test_question_5_answer_3,
-    str_trainerschool_test_question_5_answer_4
-};
+    str_trainerschool_test_question_5_answer_4};
 
 u8 str_trainerschool_test_question_6[] = LANGDEP(
     PSTRING("Was ist Fauns\nLieblingsfarbe?"),
@@ -197,38 +186,24 @@ u8 *str_trainerschool_test_question_9_answers[] = {
     str_trainerschool_test_question_9_answer_3,
 };
 
-trainerschool_test_question trainerschool_test_questions [] = {
-    {
-        4, 2, str_trainerschool_test_question_0, 
-                str_trainerschool_test_question_0_answers
-    },{
-        4, 0, str_trainerschool_test_question_1, 
-                str_trainerschool_test_question_1_answers
-    },{
-        3, 2, str_trainerschool_test_question_2, 
-                str_trainerschool_test_question_2_answers
-    },{
-        5, 3, str_trainerschool_test_question_3, 
-                str_trainerschool_test_question_3_answers
-    },{
-        4, 0, str_trainerschool_test_question_4, 
-                str_trainerschool_test_question_4_answers
-    },{
-        5, 0, str_trainerschool_test_question_5, 
-                str_trainerschool_test_question_5_answers
-    },{
-        3, 0, str_trainerschool_test_question_6, 
-                str_trainerschool_test_question_6_answers
-    },{
-        4, 3, str_trainerschool_test_question_7, 
-                str_trainerschool_test_question_7_answers
-    },{
-        4, 1, str_trainerschool_test_question_8, 
-                str_trainerschool_test_question_8_answers
-    },{
-        4, 1, str_trainerschool_test_question_9, 
-                str_trainerschool_test_question_9_answers
-    }
-};
-
-
+trainerschool_test_question trainerschool_test_questions[] = {
+    {4, 2, str_trainerschool_test_question_0,
+     str_trainerschool_test_question_0_answers},
+    {4, 0, str_trainerschool_test_question_1,
+     str_trainerschool_test_question_1_answers},
+    {3, 2, str_trainerschool_test_question_2,
+     str_trainerschool_test_question_2_answers},
+    {5, 3, str_trainerschool_test_question_3,
+     str_trainerschool_test_question_3_answers},
+    {4, 0, str_trainerschool_test_question_4,
+     str_trainerschool_test_question_4_answers},
+    {5, 0, str_trainerschool_test_question_5,
+     str_trainerschool_test_question_5_answers},
+    {3, 0, str_trainerschool_test_question_6,
+     str_trainerschool_test_question_6_answers},
+    {4, 3, str_trainerschool_test_question_7,
+     str_trainerschool_test_question_7_answers},
+    {4, 1, str_trainerschool_test_question_8,
+     str_trainerschool_test_question_8_answers},
+    {4, 1, str_trainerschool_test_question_9,
+     str_trainerschool_test_question_9_answers}};

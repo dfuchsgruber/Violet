@@ -1,16 +1,18 @@
-#include "types.h"
-#include "constants/vars.h"
 #include "constants/flags.h"
-#include "vars.h"
+#include "constants/vars.h"
+#include "debug.h"
 #include "flags.h"
 #include "map/route_9_puzzle.h"
-#include "debug.h"
+#include "types.h"
+#include "vars.h"
 
 int route_9_cave_puzzle_connection_shifts[4] = {0, 4, 7, 9};
 
 bool route_9_cave_puzzle_connection_check(int first, int second) {
-    if (second < first) return route_9_cave_puzzle_connection_check(second, first);
-    else if (second == first) return false;
+    if (second < first)
+        return route_9_cave_puzzle_connection_check(second, first);
+    else if (second == first)
+        return false;
     int bit_position = second - first - 1 + route_9_cave_puzzle_connection_shifts[first];
     return (*var_access(ROUTE_9_CAVE_STATE) & (1 << bit_position)) > 0;
 }
@@ -32,10 +34,12 @@ s16 route_9_cave_puzzle_get_state() {
             bool is_drawn = route_9_cave_puzzle_connection_check(i, j);
             // dprintf("Line from %d to %d drawn: %d\n", i, j, is_drawn);
             if ((i + 2) % 5 == j || (i + 3) % 5 == j) {
-                if (is_drawn) number_connections++;
+                if (is_drawn)
+                    number_connections++;
             } else {
                 // Invalid line that is not part of the pentagram
-                if (is_drawn) return -1;
+                if (is_drawn)
+                    return -1;
             }
         }
     }
@@ -64,4 +68,3 @@ void route_9_cave_puzzle_rock() {
 void route_9_cave_puzzle_reset() {
     *var_access(ROUTE_9_CAVE_STATE) = 0;
 }
-
