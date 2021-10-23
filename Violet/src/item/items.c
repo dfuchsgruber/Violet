@@ -1703,6 +1703,31 @@ static u8 str_item_duesterball_description[] = LANGDEP(
 	PSTRING("Ein Ball, der nachts oder\nin Höhlen am Wirkungsvollsten\nist."),
 	PSTRING("A somewhat different Ball that\nis most efficient at\nnighttime or in caves.")
 );
+static u8 str_item_masseball_description[] = LANGDEP(
+	PSTRING("Ein Ball, der bei gefangenen\nPokémon die Kp Fleiß Punkte\nschneller steigen lässt."),
+	PSTRING("A somewhat different Ball that\nmakes the Hp effort values of\nof a Pokémon grow faster.")
+);
+static u8 str_item_kraftball_description[] = LANGDEP(
+	PSTRING("Ein Ball, der bei gefangenen\nPokémon die Angr. Fleiß Punkte\nschneller steigen lässt."),
+	PSTRING("A somewhat different Ball that\nmakes the attack effort values of\nof a Pokémon grow faster.")
+);
+static u8 str_item_schildball_description[] = LANGDEP(
+	PSTRING("Ein Ball, der bei gefangenen\nPokémon die Vert. Punkte\nschneller steigen lässt."),
+	PSTRING("A somewhat different Ball that\nmakes the defense effort values of\nof a Pokémon grow faster.")
+);
+static u8 str_item_agilball_description[] = LANGDEP(
+	PSTRING("Ein Ball, der bei gefangenen\nPokémon die Init. Fleiß Punkte\nschneller steigen lässt."),
+	PSTRING("A somewhat different Ball that\nmakes the speed effort values of\nof a Pokémon grow faster.")
+);
+static u8 str_item_gedankenball_description[] = LANGDEP(
+	PSTRING("Ein Ball, der bei gefangenen\nPokémon die Sp. Angr. Fleiß Punkte\nschneller steigen lässt."),
+	PSTRING("A somewhat different Ball that\nmakes the special attack effort values of\nof a Pokémon grow faster.")
+);
+static u8 str_item_fokusball_description[] = LANGDEP(
+	PSTRING("Ein Ball, der bei gefangenen\nPokémon die Sp. Vert. Fleiß Punkte\nschneller steigen lässt."),
+	PSTRING("A somewhat different Ball that\nmakes the special defense effort values of\nof a Pokémon grow faster.")
+);
+
 
 item items[] = {
 	{
@@ -8001,20 +8026,56 @@ item items[] = {
 	},
 	[ITEM_LOTUS_BALL] = {
 		.name = LANGDEP(PSTRING("Lotus-Ball"), PSTRING("Lotus Ball")),
-		.index = ITEM_LOTUS_BALL, .price = 1000,
+		.index = ITEM_LOTUS_BALL, .price = 500,
 		.description = str_item_lotus_ball_description, .pocket = POCKET_POKEBALLS, .type = 0,
 		.battle_effect = 2, .battle_usage = item_pokeball_battle,
 	},
 	[ITEM_FLOTTBALL] = {
 		.name = LANGDEP(PSTRING("Flottball"), PSTRING("Quick Ball")),
-		.index = ITEM_FLOTTBALL, .price = 1000,
+		.index = ITEM_FLOTTBALL, .price = 500,
 		.description = str_item_flottball_description, .pocket = POCKET_POKEBALLS, .type = 0,
 		.battle_effect = 2, .battle_usage = item_pokeball_battle,
 	},
 	[ITEM_FINSTERBALL] = {
 		.name = LANGDEP(PSTRING("Düsterball"), PSTRING("Dusk Ball")),
-		.index = ITEM_FINSTERBALL, .price = 1000,
+		.index = ITEM_FINSTERBALL, .price = 500,
 		.description = str_item_duesterball_description, .pocket = POCKET_POKEBALLS, .type = 0,
+		.battle_effect = 2, .battle_usage = item_pokeball_battle,
+	},
+	[ITEM_MASSEBALL] = {
+		.name = LANGDEP(PSTRING("Volumenball"), PSTRING("Volume Ball")),
+		.index = ITEM_FINSTERBALL, .price = 500,
+		.description = str_item_masseball_description, .pocket = POCKET_POKEBALLS, .type = 0,
+		.battle_effect = 2, .battle_usage = item_pokeball_battle,
+	},
+	[ITEM_KRAFTBALL] = {
+		.name = LANGDEP(PSTRING("Muskelball"), PSTRING("Muscle Ball")),
+		.index = ITEM_KRAFTBALL, .price = 500,
+		.description = str_item_kraftball_description, .pocket = POCKET_POKEBALLS, .type = 0,
+		.battle_effect = 2, .battle_usage = item_pokeball_battle,
+	},
+	[ITEM_SCHILDBALL] = {
+		.name = LANGDEP(PSTRING("Schildball"), PSTRING("Shield Ball")),
+		.index = ITEM_SCHILDBALL, .price = 500,
+		.description = str_item_schildball_description, .pocket = POCKET_POKEBALLS, .type = 0,
+		.battle_effect = 2, .battle_usage = item_pokeball_battle,
+	},
+	[ITEM_AGILBALL] = {
+		.name = LANGDEP(PSTRING("Agilball"), PSTRING("Agile Ball")),
+		.index = ITEM_AGILBALL, .price = 500,
+		.description = str_item_agilball_description, .pocket = POCKET_POKEBALLS, .type = 0,
+		.battle_effect = 2, .battle_usage = item_pokeball_battle,
+	},
+	[ITEM_GEDANKENBALL] = {
+		.name = LANGDEP(PSTRING("Mentalball"), PSTRING("Mental Ball")),
+		.index = ITEM_GEDANKENBALL, .price = 500,
+		.description = str_item_gedankenball_description, .pocket = POCKET_POKEBALLS, .type = 0,
+		.battle_effect = 2, .battle_usage = item_pokeball_battle,
+	},
+	[ITEM_FOKUSBALL] = {
+		.name = LANGDEP(PSTRING("Fokusball"), PSTRING("Focus Ball")),
+		.index = ITEM_FOKUSBALL, .price = 500,
+		.description = str_item_fokusball_description, .pocket = POCKET_POKEBALLS, .type = 0,
 		.battle_effect = 2, .battle_usage = item_pokeball_battle,
 	},
 };

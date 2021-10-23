@@ -36,13 +36,13 @@
 				},
 				{
 					"target_index": "2",
-					"picture": "238",
+					"picture": "186",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "49",
-					"y": "5",
+					"x": "25",
+					"y": "36",
 					"level": 5,
-					"behaviour": "BEHAVIOUR_FACE_LEFT_AND_RIGHT",
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "6",
 						"y": "0"
@@ -56,7 +56,7 @@
 					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_WABLU",
+						"species": "FLAG_RECIPE_FLOTTBALL",
 						"berry_tree_idx": 0,
 						"type": 0
 					}
@@ -1226,7 +1226,7 @@
 					"target_index": "46",
 					"picture": 92,
 					"field_2": 0,
-					"field_3": 0,
+					"field_3": "5",
 					"x": "42",
 					"y": "44",
 					"level": 0,
@@ -1241,9 +1241,9 @@
 					"flag": "ROUTE_3_ITEM_2",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_ITEM",
+					"script_std": "PERSON_ITEM_MULTIPLE_COPIES",
 					"value": {
-						"item": "ITEM_SUPERTRANK",
+						"item": "ITEM_POKEBALL",
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
@@ -1414,10 +1414,10 @@
 				{
 					"target_index": "53",
 					"picture": "92",
-					"script_std": "PERSON_ITEM",
-					"field_3": 0,
-					"x": "24",
-					"y": "39",
+					"script_std": "PERSON_ITEM_MULTIPLE_COPIES",
+					"field_3": "2",
+					"x": "27",
+					"y": "12",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -1594,7 +1594,7 @@
 					"script_std": 0,
 					"field_3": 0,
 					"x": "42",
-					"y": "53",
+					"y": "52",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {

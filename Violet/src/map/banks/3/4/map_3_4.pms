@@ -919,7 +919,7 @@
 					"field_B": 0,
 					"script_std": "PERSON_ITEM",
 					"value": {
-						"item": "ITEM_GOLDAPFEL",
+						"item": "ITEM_NUGGET",
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0

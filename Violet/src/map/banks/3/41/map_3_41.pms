@@ -174,12 +174,12 @@
 					"picture": 54,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "48",
+					"x": "49",
 					"y": "71",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_LEFT_UP_DOWN_RIGHT",
 					"behaviour_range": {
-						"x": "3",
+						"x": "4",
 						"y": "5"
 					},
 					"is_trainer": "1",
@@ -444,8 +444,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "37",
-					"y": "84",
+					"x": "53",
+					"y": "75",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -470,9 +470,9 @@
 					"target_index": "18",
 					"picture": 92,
 					"field_2": 0,
-					"field_3": 0,
-					"x": "19",
-					"y": "49",
+					"field_3": "3",
+					"x": "28",
+					"y": "54",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -485,9 +485,9 @@
 					"flag": "ROUTE_2_ITEM_3",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_ITEM",
+					"script_std": "PERSON_ITEM_MULTIPLE_COPIES",
 					"value": {
-						"item": "ITEM_SUPERTRANK",
+						"item": "ITEM_NESTBALL",
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
@@ -1223,12 +1223,12 @@
 					}
 				},
 				{
-					"target_index": "46",
-					"picture": "238",
+					"target_index": "47",
+					"picture": "186",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "6",
-					"y": "38",
+					"x": "37",
+					"y": "84",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -1238,13 +1238,13 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
-					"flag": "0",
+					"flag": "FLAG_RECIPE_NESTBALL",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_POKEMON",
+					"script_std": "PERSON_RECIPE",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_KIRLIA",
+						"species": "0",
 						"berry_tree_idx": 0,
 						"type": 0
 					}
@@ -1309,7 +1309,7 @@
 					"field_2": 0,
 					"field_3": 0,
 					"x": "24",
-					"y": "29",
+					"y": "30",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -1901,8 +1901,8 @@
 					"flag": "0"
 				},
 				{
-					"x": "18",
-					"y": "81",
+					"x": "19",
+					"y": "83",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {

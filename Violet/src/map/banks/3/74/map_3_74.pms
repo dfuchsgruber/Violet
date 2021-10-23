@@ -200,7 +200,7 @@
 					"target_index": 8,
 					"picture": 92,
 					"field_2": 0,
-					"field_3": 0,
+					"field_3": "3",
 					"x": "71",
 					"y": "22",
 					"level": 0,
@@ -215,7 +215,7 @@
 					"flag": "FELSIGE_ODNIS_ITEM_16",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_ITEM",
+					"script_std": "PERSON_ITEM_MULTIPLE_COPIES",
 					"value": {
 						"item": "ITEM_FLUCHTSEIL",
 						"species": 0,

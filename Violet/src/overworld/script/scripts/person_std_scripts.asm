@@ -23,6 +23,7 @@
 .global ow_script_person_pokemon_non_facing
 .global ow_script_person_accessible_move_tutor
 .global ow_script_static_berry_tree
+.global ow_script_recipe
 
 ow_script_person_pokeball:
 	callstd ITEM_FIND
@@ -570,6 +571,19 @@ no_quarz:
 	closeonkeypress
 	goto accessible_move_tutor_end
 
+ow_script_recipe:
+	copyvar 0x8004 0x8000
+	callasm overworld_recipe_buffer_name
+	hidesprite LASTTALKED
+	fanfare 261
+	loadpointer 0 str_player_found_recipe
+	callstd MSG_KEEPOPEN
+	waitfanfare
+	loadpointer 0 str_recipe_can_be_used
+	callstd MSG_KEEPOPEN
+	releaseall
+	end
+
 .ifdef LANG_GER
 str_which_mon_to_tutor:
 	.autostring 34 2 "Welchen Angriff soll BUFFER_1 erlernen?"
@@ -655,6 +669,10 @@ str_trash_wind:
 	.autostring 34 2 "Die Mülltonne ist leer.\pEs scheint, als hätte jemand den Deckel nicht richtig verschlossen.\pPLAYER schließt den Deckel der Mülltonne."
 str_pokemon_was_hiding_oin_trash:
 	.autostring 34 2 "Ein BUFFER_1 hatte sich in der Mülltonne versteckt!"
+str_player_found_recipe:
+	.autostring 34 2 "Rezept zur Herstellung von BUFFER_1 gefunden!"
+str_recipe_can_be_used:
+	.autostring 34 2 "Das Rezept kann an einem Laz. Kessel in einem Pokéstop verwendet werden."
 .elseif LANG_EN
 str_mon0:
 	.autostring 34 2 "BUFFER_1! BUFFER_1!"

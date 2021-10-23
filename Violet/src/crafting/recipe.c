@@ -313,6 +313,7 @@ static crafting_recipe crafting_recipies_pokeballs[] = {
             [1] = {.item = ITEM_NANABBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .count = 5,
+        .flag = FLAG_RECIPE_WOLKENBALL,
     },{
         .item = ITEM_NESTBALL, 
         .ingredients = {
@@ -320,6 +321,7 @@ static crafting_recipe crafting_recipies_pokeballs[] = {
             [1] = {.item = ITEM_MINIPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .count = 5,
+        .flag = FLAG_RECIPE_NESTBALL,
     },{
         .item = ITEM_NETZBALL, 
         .ingredients = {
@@ -327,13 +329,31 @@ static crafting_recipe crafting_recipies_pokeballs[] = {
             [1] = {.item = ITEM_PERLE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .count = 5,
+        .flag = FLAG_RECIPE_NETZBALL,
     },{
         .item = ITEM_WIEDERBALL, 
         .ingredients = {
             [0] = {.item = ITEM_POKEBALL, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_BITTERKRAUT, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_BITTERKRAUT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .count = 5,
+        .flag = FLAG_RECIPE_WIEDERBALL,
+    },{
+        .item = ITEM_FINSTERBALL, 
+        .ingredients = {
+            [0] = {.item = ITEM_POKEBALL, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_DUESTERSTUECK, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .count = 5,
+        .flag = FLAG_RECIPE_FINSTERBALL,
+    },{
+        .item = ITEM_FLOTTBALL, 
+        .ingredients = {
+            [0] = {.item = ITEM_POKEBALL, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_WUNDERSTAUB, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .count = 5,
+        .flag = FLAG_RECIPE_FLOTTBALL
     },{
         .item = ITEM_TIMERBALL, 
         .ingredients = {
@@ -341,6 +361,7 @@ static crafting_recipe crafting_recipies_pokeballs[] = {
             [1] = {.item = ITEM_STERNENSTAUB, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .count = 5,
+        .flag = FLAG_RECIPE_TIMER_BALL,
     },{
         .item = ITEM_LUXUSBALL, 
         .ingredients = {
@@ -348,6 +369,63 @@ static crafting_recipe crafting_recipies_pokeballs[] = {
             [1] = {.item = ITEM_MININUGGET, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .count = 5,
+        .flag = FLAG_RECIPE_LUXUSBALL,
+    },{
+        .item = ITEM_LOTUS_BALL, 
+        .ingredients = {
+            [0] = {.item = ITEM_POKEBALL, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .count = 5,
+        .flag = FLAG_RECIPE_LOTUS_BALL,
+    },{
+        .item = ITEM_MASSEBALL, 
+        .ingredients = {
+            [0] = {.item = ITEM_POKEBALL, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_APFEL, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .count = 5,
+        .flag = FLAG_RECIPE_STAT_BALLS,
+    },{
+        .item = ITEM_KRAFTBALL, 
+        .ingredients = {
+            [0] = {.item = ITEM_POKEBALL, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_LYDZIBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .count = 5,
+        .flag = FLAG_RECIPE_STAT_BALLS,
+    },{
+        .item = ITEM_SCHILDBALL, 
+        .ingredients = {
+            [0] = {.item = ITEM_POKEBALL, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_LINGANBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .count = 5,
+        .flag = FLAG_RECIPE_STAT_BALLS,
+    },{
+        .item = ITEM_AGILBALL, 
+        .ingredients = {
+            [0] = {.item = ITEM_POKEBALL, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_SALKABEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .count = 5,
+        .flag = FLAG_RECIPE_STAT_BALLS,
+    },{
+        .item = ITEM_GEDANKENBALL, 
+        .ingredients = {
+            [0] = {.item = ITEM_POKEBALL, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_TAHAYBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .count = 5,
+        .flag = FLAG_RECIPE_STAT_BALLS,
+    },{
+        .item = ITEM_FOKUSBALL, 
+        .ingredients = {
+            [0] = {.item = ITEM_POKEBALL, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_APIKOBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .count = 5,
+        .flag = FLAG_RECIPE_STAT_BALLS,
     },
 };
 static crafting_recipe crafting_recipies_evolution[] = {
@@ -530,7 +608,7 @@ static crafting_recipe crafting_recipies_nutrients[] = {
     {
         .item = ITEM_KP_PLUS, 
         .ingredients = {
-            [0] = {.item = ITEM_RIESENAPFEL, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_RIESENAPFEL, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_RIESENPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_BITTERKRAUT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
         },
@@ -595,7 +673,7 @@ static crafting_recipe crafting_recipies_nutrients[] = {
         .ingredients = {
             [0] = {.item = ITEM_JONAGOBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_MINIPILZ, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.item = ITEM_ENERGIESTAUB, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .flag = FLAG_PP_ITEM_RECIPE,
         .count = 1,
@@ -603,15 +681,15 @@ static crafting_recipe crafting_recipies_nutrients[] = {
         .item = ITEM_AP_TOP, 
         .ingredients = {
             [0] = {.item = ITEM_JONAGOBEERE, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_RIESENPILZ, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_ENERGIEQUARZ, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_RIESENPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .flag = FLAG_PP_ITEM_RECIPE,
         .count = 1,
     },{
         .item = ITEM_SONDERBONBON, 
         .ingredients = {
-            [0] = {.item = ITEM_BITTERKRAUT, .count = 15, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_BITTERKRAUT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_ENERGIEQUARZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .flag = FLAG_RARE_CANDY_RECIPE,
@@ -638,49 +716,49 @@ static crafting_recipe crafting_recipies_battle[] = {
         .item = ITEM_X_ANGRIFF, 
         .ingredients = {
             [0] = {.item = ITEM_LYDZIBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_QUARZSTAUB, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
         },
-        .count = 1,
+        .count = 3,
     },{
         .item = ITEM_X_ABWEHR, 
         .ingredients = {
             [0] = {.item = ITEM_LINGANBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_QUARZSTAUB, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
         },
-        .count = 1,
+        .count = 3,
     },{
         .item = ITEM_X_TEMPO, 
         .ingredients = {
             [0] = {.item = ITEM_SALKABEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_QUARZSTAUB, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
         },
-        .count = 1,
+        .count = 3,
     },{
         .item = ITEM_X_SPEZIAL, 
         .ingredients = {
             [0] = {.item = ITEM_TAHAYBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_QUARZSTAUB, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
         },
-        .count = 1,
+        .count = 3,
     },{
         .item = ITEM_MEGABLOCK, 
         .ingredients = {
             [0] = {.item = ITEM_KRAMBOBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_QUARZSTAUB, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
         },
-        .count = 1,
+        .count = 3,
     },{
         .item = ITEM_ANGRIFFPLUS, 
         .ingredients = {
             [0] = {.item = ITEM_LANSATBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_QUARZSTAUB, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
         },
-        .count = 1,
+        .count = 3,
     },{
         .item = ITEM_SONNEN_EI, 
         .ingredients = {
             [0] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_TAMOTBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_LICHTSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .flag = FLAG_WEATHER_EGG_RECIPIES,
         .count = 1,
@@ -688,7 +766,7 @@ static crafting_recipe crafting_recipies_battle[] = {
         .item = ITEM_GEWITTER_EI, 
         .ingredients = {
             [0] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_SAIMBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_INDIGOSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .flag = FLAG_WEATHER_EGG_RECIPIES,
         .count = 1,
@@ -696,7 +774,7 @@ static crafting_recipe crafting_recipies_battle[] = {
         .item = ITEM_WUESTEN_EI, 
         .ingredients = {
             [0] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_SANANABEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_SANANABEERE, .count = 4, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .flag = FLAG_WEATHER_EGG_RECIPIES,
         .count = 1,
@@ -704,7 +782,7 @@ static crafting_recipe crafting_recipies_battle[] = {
         .item = ITEM_TUNDRA_EI, 
         .ingredients = {
             [0] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_KIWANBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_KIWANBEERE, .count = 4, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .flag = FLAG_WEATHER_EGG_RECIPIES,
         .count = 1,

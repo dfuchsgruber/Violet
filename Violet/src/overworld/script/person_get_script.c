@@ -31,6 +31,7 @@ extern u8 ow_script_trash_can[];
 extern u8 ow_script_dungeon2_enter_forest[];
 extern u8 ow_script_static_berry_tree[];
 extern u8 ow_script_dungeon2_enter_cave[];
+extern u8 ow_script_recipe[];
 
 void battle_initialize_aggressive_wild() {
 	super.saved_callback = battle_continuation_wild_legendary_battle_end;
@@ -61,6 +62,10 @@ u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank) {
 		case PERSON_ITEM:
 			*var_access(0x8000) = p->value;
 			*var_access(0x8001) = 1;
+			return ow_script_person_pokeball;
+		case PERSON_ITEM_MULTIPLE_COPIES:
+			*var_access(0x8000) = p->value;
+			*var_access(0x8001) = MAX(1, p->argument);
 			return ow_script_person_pokeball;
 		case PERSON_EGG:
 			// dprintf("Person egg\n");
@@ -109,6 +114,9 @@ u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank) {
 		case PERSON_SECRET_POWER_CAVE:
 			*var_access(0x8000) = p->value;
 			return ow_script_dungeon2_enter_cave;
+		case PERSON_RECIPE:
+			*var_access(0x8000) = p->flag;
+			return ow_script_recipe;
 		default:
 			return NULL;
 	}

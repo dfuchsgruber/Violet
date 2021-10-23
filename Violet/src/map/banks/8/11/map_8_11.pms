@@ -741,7 +741,7 @@
 					"script": "0",
 					"y": "40",
 					"target_index": 28,
-					"field_3": 0,
+					"field_3": "5",
 					"picture": 92,
 					"flag": "KASKADA_BLACKMARKET_ITEM_1",
 					"x": "52",
@@ -755,7 +755,7 @@
 					},
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_ITEM",
+					"script_std": "PERSON_ITEM_MULTIPLE_COPIES",
 					"value": {
 						"item": "ITEM_SUPERBALL",
 						"species": 0,

@@ -93,7 +93,7 @@
 					"script": "0",
 					"y": "42",
 					"target_index": 4,
-					"field_3": 0,
+					"field_3": "5",
 					"picture": 92,
 					"flag": "ROUTE_5_ITEM_0",
 					"x": "30",
@@ -107,9 +107,9 @@
 					},
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_ITEM",
+					"script_std": "PERSON_ITEM_MULTIPLE_COPIES",
 					"value": {
-						"item": "ITEM_SUPERBALL",
+						"item": "ITEM_HYPERBALL",
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
@@ -228,7 +228,7 @@
 					"script": "0",
 					"y": "18",
 					"target_index": 9,
-					"field_3": 0,
+					"field_3": "4",
 					"picture": 92,
 					"flag": "ROUTE_5_ITEM_1",
 					"x": "16",
@@ -242,7 +242,7 @@
 					},
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_ITEM",
+					"script_std": "PERSON_ITEM_MULTIPLE_COPIES",
 					"value": {
 						"item": "ITEM_SUPERSCHUTZ",
 						"species": 0,

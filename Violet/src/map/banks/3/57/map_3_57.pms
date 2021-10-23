@@ -2,9 +2,9 @@
 	"data": {
 		"footer": "map_footer_249",
 		"events": {
-			"person_cnt": 8,
+			"person_cnt": 12,
 			"warp_cnt": 4,
-			"trigger_cnt": 14,
+			"trigger_cnt": 15,
 			"signpost_cnt": 3,
 			"persons": [
 				{
@@ -220,6 +220,106 @@
 						"berry_tree_idx": 0,
 						"type": 0
 					}
+				},
+				{
+					"target_index": "9",
+					"picture": "21",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "35",
+					"y": "29",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_trainerschool_outside_person_1",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "10",
+					"picture": "17",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "34",
+					"y": "29",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_trainerschool_outside_person_0",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "11",
+					"picture": "18",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "34",
+					"y": "31",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_trainerschool_outside_person_2",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "12",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "34",
+					"y": "32",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_ZIGZACHS",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
 				}
 			],
 			"warps": [
@@ -258,8 +358,8 @@
 			],
 			"triggers": [
 				{
-					"x": 43,
-					"y": 32,
+					"x": "44",
+					"y": "31",
 					"level": 0,
 					"field_5": 0,
 					"value": 4,
@@ -269,8 +369,8 @@
 					"var": "STORY_PROGRESS"
 				},
 				{
-					"x": 44,
-					"y": 31,
+					"x": "43",
+					"y": "30",
 					"level": 0,
 					"field_5": 0,
 					"value": 4,
@@ -280,8 +380,8 @@
 					"var": "STORY_PROGRESS"
 				},
 				{
-					"x": 45,
-					"y": 29,
+					"x": "43",
+					"y": "28",
 					"level": 0,
 					"field_5": 0,
 					"value": 4,
@@ -291,8 +391,8 @@
 					"var": "STORY_PROGRESS"
 				},
 				{
-					"x": 45,
-					"y": 30,
+					"x": "43",
+					"y": "29",
 					"level": 0,
 					"field_5": 0,
 					"value": 4,
@@ -410,12 +510,23 @@
 					"field_A": 0,
 					"field_B": 0,
 					"var": "TRAINERSCHOOL_DONE"
+				},
+				{
+					"x": "44",
+					"y": "32",
+					"level": 0,
+					"field_5": 0,
+					"var": "STORY_PROGRESS",
+					"value": "4",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_map_3_57_trigger_1"
 				}
 			],
 			"signposts": [
 				{
-					"x": 39,
-					"y": 27,
+					"x": "43",
+					"y": "27",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -469,7 +580,7 @@
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_EAST",
-					"displacement": -3,
+					"displacement": "-14",
 					"bank": 3,
 					"field_A": 0,
 					"field_B": 0,

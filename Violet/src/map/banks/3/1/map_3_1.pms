@@ -1259,9 +1259,9 @@
 				},
 				{
 					"target_index": "49",
-					"picture": 0,
-					"script_std": 0,
-					"field_3": 0,
+					"picture": "92",
+					"script_std": "PERSON_ITEM_MULTIPLE_COPIES",
+					"field_3": "5",
 					"x": "71",
 					"y": "29",
 					"level": 0,
@@ -1273,10 +1273,10 @@
 					"field_B": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_test",
-					"flag": 0,
+					"script": "0",
+					"flag": "FLAG_RECIPE_LUXUSBALL",
 					"value": {
-						"item": 0,
+						"item": "ITEM_WIEDERBALL",
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0

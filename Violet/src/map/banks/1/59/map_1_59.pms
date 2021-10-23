@@ -1031,8 +1031,8 @@
 				{
 					"target_index": "40",
 					"picture": "92",
-					"script_std": "PERSON_ITEM",
-					"field_3": 0,
+					"script_std": "PERSON_ITEM_MULTIPLE_COPIES",
+					"field_3": "5",
 					"x": "72",
 					"y": "41",
 					"level": 0,

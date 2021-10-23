@@ -1742,8 +1742,33 @@ overworld_sprite ow_apple = {
 	16, 16, 0, 1, true, 0, 0x1, 0x0, 0x8,
 	&ow_final_oam_16_16, &ow_formation_16_16,
 	ow_anim_standard_npc, overworld_sprite_apple_sprites,
+	oam_rotscale_anim_table_null 
+};
+
+static graphic overworld_sprite_recipe_sprites[] = {
+	{gfx_ow_recipe2Tiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
+	{gfx_ow_recipe2Tiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
+	{gfx_ow_recipe2Tiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
+	{gfx_ow_recipe2Tiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
+};
+
+static gfx_frame gfx_animation_recipe[] = {
+	{.data = 0, .duration = 0}, {.data = 0, .duration = 8}, {.data = 1, .duration = 8}, 
+	{.data = 2, .duration = 8}, {.data = 3, .duration = 8}, {.data = 2, .duration = 4},
+	{.data = 1, .duration = 4}, {.data = GFX_ANIM_JUMP, .duration = 0},
+};
+
+static gfx_frame *gfx_animations_recipe[] = {gfx_animation_recipe};
+
+overworld_sprite ow_recipe = {
+	0xffff, OW_PAL_TAG_RECIPE, 0x11ff, 0x100,
+	16, 16, 0, 1, false, 0, 0x1, 0x0, 0x8,
+	&ow_final_oam_16_16, &ow_formation_16_16,
+	gfx_animations_recipe, overworld_sprite_recipe_sprites,
 	oam_rotscale_anim_table_null
 };
+
+
 
 //The overworld table
 overworld_sprite *overworld_sprites[] = {
@@ -1952,6 +1977,7 @@ overworld_sprite *overworld_sprites[] = {
 	[183] = &ow_secret_power_vine,
 	[184] = &ow_apple,
 	[185] = &ow_secret_power_cave,
+	[186] = &ow_recipe,
 
 	[OVERWORLD_SPRITE_TUTOR_CRYSTAL] = &ow_tutor_crystal_dummy,
 	[OVERWORLD_SPRITE_MISC] = &ow_misc_16_16,

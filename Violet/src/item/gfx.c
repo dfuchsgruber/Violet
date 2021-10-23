@@ -427,6 +427,12 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_LOTUS_BALL] = {.gfx = gfx_item_lotus_ballTiles, .pal = gfx_item_lotus_ballPal},
     [ITEM_FLOTTBALL] = {.gfx = gfx_item_flottballTiles, .pal = gfx_item_flottballPal},
     [ITEM_FINSTERBALL] = {.gfx = gfx_item_duesterballTiles, .pal = gfx_item_duesterballPal},
+    [ITEM_MASSEBALL] = {.gfx = gfx_item_pokeball_hpTiles, .pal = gfx_item_pokeball_hpPal},
+    [ITEM_KRAFTBALL] = {.gfx = gfx_item_pokeball_attackTiles, .pal = gfx_item_pokeball_attackPal},
+    [ITEM_SCHILDBALL] = {.gfx = gfx_item_pokeball_defenseTiles, .pal = gfx_item_pokeball_defensePal},
+    [ITEM_AGILBALL] = {.gfx = gfx_item_pokeball_speedTiles, .pal = gfx_item_pokeball_speedPal},
+    [ITEM_GEDANKENBALL] = {.gfx = gfx_item_pokeball_special_attackTiles, .pal = gfx_item_pokeball_special_attackPal},
+    [ITEM_FOKUSBALL] = {.gfx = gfx_item_pokeball_special_defenseTiles, .pal = gfx_item_pokeball_special_defensePal},
 };
 
 const u8 *item_get_resource(u16 item_idx, u8 get_palette) {

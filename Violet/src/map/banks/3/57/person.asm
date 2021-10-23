@@ -14,7 +14,22 @@
 .global ow_script_trainerschool_maike_outside
 .global ow_script_trainerschool_blaise_outside
 .global ow_script_trainerschool_felix_outside
+.global ow_script_trainerschool_outside_person_0
+.global ow_script_trainerschool_outside_person_1
+.global ow_script_trainerschool_outside_person_2
 
+ow_script_trainerschool_outside_person_0:
+	loadpointer 0 str_0
+	callstd MSG_FACE
+	end
+ow_script_trainerschool_outside_person_1:
+	loadpointer 0 str_1
+	callstd MSG_FACE
+	end
+ow_script_trainerschool_outside_person_2:
+	loadpointer 0 str_2
+	callstd MSG_FACE
+	end
 
 ow_script_trainerschool_blaise_outside:
 compare TRAINERSCHOOL_PROGRESS 3
@@ -405,6 +420,12 @@ mov_may_back:
 	.byte STEP_RIGHT, STEP_UP, LOOK_DOWN, STOP
 
 .ifdef LANG_GER
+str_0:
+	.autostring 34 2 "Mami sagt, dass ich einies Tages auch auf diese Trainerschule gehen werde.\pIch bin ja schon so aufgeregt!"
+str_1:
+	.autostring 34 2 "Meine Tochter träumt davon, hier zur Schule zu gehen.\pUnd gerade, weil der Schulleiter ein so renomierter Trainer ist, denke ich, dass das eine gute Wahl wäre."
+str_2:
+	.autostring 34 2 "UffDOTS\pIch habe mich in der Pause mit einem Mitschüler gestritten.\pUnd als wir unseren Zwist mit einem Kampf klären wollten, hab ich die Hosen voll bekommenDOTS"
 
 str_show_player_pkmn:
 	.autostring 35 2 "Also PLAYER, bleiben noch drei Pokémon, aus denen du wählen kannst.\pTriff deine Entscheidung mit Bedacht!"

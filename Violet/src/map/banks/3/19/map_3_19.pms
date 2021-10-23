@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_89",
 		"events": {
-			"person_cnt": 20,
+			"person_cnt": 21,
 			"warp_cnt": 1,
 			"trigger_cnt": 11,
 			"signpost_cnt": 3,
@@ -10,12 +10,12 @@
 				{
 					"is_trainer": "0",
 					"script": "ow_script_map_3_19_person_0",
-					"y": 40,
+					"y": "34",
 					"target_index": 1,
 					"field_3": 0,
 					"picture": 17,
 					"flag": "0x0",
-					"x": 37,
+					"x": "35",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -64,12 +64,12 @@
 				{
 					"is_trainer": "1",
 					"script": "ow_script_map_3_19_trainer_1",
-					"y": 23,
+					"y": "22",
 					"target_index": 3,
 					"field_3": 0,
 					"picture": 18,
 					"flag": "0x0",
-					"x": 13,
+					"x": "13",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 4,
@@ -91,12 +91,12 @@
 				{
 					"is_trainer": "0",
 					"script": "0",
-					"y": 27,
+					"y": "10",
 					"target_index": "4",
 					"field_3": 0,
 					"picture": 92,
 					"flag": "ROUTE_1_ITEM_0",
-					"x": 34,
+					"x": "29",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -145,12 +145,12 @@
 				{
 					"is_trainer": "0",
 					"script": "0",
-					"y": "48",
+					"y": "44",
 					"target_index": 6,
 					"field_3": 0,
 					"picture": 72,
 					"flag": "ROUTE_1_RIVAL",
-					"x": "16",
+					"x": "20",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -172,12 +172,12 @@
 				{
 					"is_trainer": "1",
 					"script": "ow_script_map_3_19_trainer_3",
-					"y": 33,
+					"y": "33",
 					"target_index": 7,
 					"field_3": 0,
 					"picture": 19,
 					"flag": "0x0",
-					"x": 28,
+					"x": "27",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 3,
@@ -226,12 +226,12 @@
 				{
 					"is_trainer": "0",
 					"script": "ow_script_cut_tree",
-					"y": 9,
+					"y": "8",
 					"target_index": "9",
 					"field_3": 0,
 					"picture": 95,
 					"flag": "0x13",
-					"x": 33,
+					"x": "34",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -253,12 +253,12 @@
 				{
 					"is_trainer": "0",
 					"script": "0",
-					"y": 8,
+					"y": "8",
 					"target_index": "10",
 					"field_3": 0,
 					"picture": "101",
 					"flag": "ROUTE_1_EGG",
-					"x": 33,
+					"x": "36",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -357,7 +357,7 @@
 					"picture": "238",
 					"script_std": "PERSON_AGGRESSIVE_POKEMON",
 					"field_3": "6",
-					"x": "21",
+					"x": "20",
 					"y": "10",
 					"level": "0",
 					"behaviour": "BEHAVIOUR_WANDER_RIGHT_AND_LEFT",
@@ -457,8 +457,8 @@
 					"picture": "238",
 					"script_std": "PERSON_AGGRESSIVE_POKEMON",
 					"field_3": "6",
-					"x": "23",
-					"y": "22",
+					"x": "22",
+					"y": "23",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_ROTATE_CLOCKWISE",
 					"behaviour_range": {
@@ -507,8 +507,8 @@
 					"picture": "236",
 					"script_std": "PERSON_TRASH_CAN",
 					"field_3": 0,
-					"x": "24",
-					"y": "30",
+					"x": "26",
+					"y": "29",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -526,22 +526,91 @@
 						"berry_tree_idx": "14",
 						"type": 0
 					}
+				},
+				{
+					"target_index": "21",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "8",
+					"y": "37",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ROUTE_1_ITEM_1",
+					"value": {
+						"item": "ITEM_PARA_HEILER",
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
 				}
 			],
 			"warps": [
 				{
 					"target_map": 76,
-					"y": "27",
+					"y": "26",
 					"target_bank": 3,
 					"level": 0,
-					"x": "26",
+					"x": "27",
 					"target_warp_idx": 0
 				}
 			],
 			"triggers": [
 				{
 					"value": 3,
-					"y": "51",
+					"y": "47",
+					"level": 0,
+					"x": "23",
+					"script": "ow_script_map_3_19_trigger_0",
+					"field_5": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"var": "STORY_PROGRESS"
+				},
+				{
+					"value": 3,
+					"y": "47",
+					"level": 0,
+					"x": "22",
+					"script": "ow_script_map_3_19_trigger_0",
+					"field_5": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"var": "STORY_PROGRESS"
+				},
+				{
+					"value": 3,
+					"y": "47",
+					"level": 0,
+					"x": "21",
+					"script": "ow_script_map_3_19_trigger_0",
+					"field_5": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"var": "STORY_PROGRESS"
+				},
+				{
+					"value": 3,
+					"y": "47",
+					"level": 0,
+					"x": "20",
+					"script": "ow_script_map_3_19_trigger_0",
+					"field_5": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"var": "STORY_PROGRESS"
+				},
+				{
+					"value": 3,
+					"y": "47",
 					"level": 0,
 					"x": "19",
 					"script": "ow_script_map_3_19_trigger_0",
@@ -551,76 +620,10 @@
 					"var": "STORY_PROGRESS"
 				},
 				{
-					"value": 3,
-					"y": "51",
-					"level": 0,
-					"x": "18",
-					"script": "ow_script_map_3_19_trigger_0",
-					"field_5": 0,
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"value": 3,
-					"y": "51",
-					"level": 0,
-					"x": "17",
-					"script": "ow_script_map_3_19_trigger_0",
-					"field_5": 0,
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"value": 3,
-					"y": "51",
-					"level": 0,
-					"x": "16",
-					"script": "ow_script_map_3_19_trigger_0",
-					"field_5": 0,
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"value": 3,
-					"y": "51",
-					"level": 0,
-					"x": "15",
-					"script": "ow_script_map_3_19_trigger_0",
-					"field_5": 0,
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"value": 0,
-					"y": "48",
-					"level": 0,
-					"x": "20",
-					"script": "ow_script_map_3_19_trigger_1",
-					"field_5": 0,
-					"field_A": 0,
-					"field_B": 0,
-					"var": "TRAINERSCHOOL_DONE"
-				},
-				{
-					"value": 0,
-					"y": "47",
-					"level": 0,
-					"x": "20",
-					"script": "ow_script_map_3_19_trigger_1",
-					"field_5": 0,
-					"field_A": 0,
-					"field_B": 0,
-					"var": "TRAINERSCHOOL_DONE"
-				},
-				{
 					"value": 0,
 					"y": "46",
 					"level": 0,
-					"x": "20",
+					"x": "26",
 					"script": "ow_script_map_3_19_trigger_1",
 					"field_5": 0,
 					"field_A": 0,
@@ -631,7 +634,7 @@
 					"value": 0,
 					"y": "45",
 					"level": 0,
-					"x": "20",
+					"x": "26",
 					"script": "ow_script_map_3_19_trigger_1",
 					"field_5": 0,
 					"field_A": 0,
@@ -642,7 +645,7 @@
 					"value": 0,
 					"y": "44",
 					"level": 0,
-					"x": "19",
+					"x": "26",
 					"script": "ow_script_map_3_19_trigger_1",
 					"field_5": 0,
 					"field_A": 0,
@@ -650,8 +653,30 @@
 					"var": "TRAINERSCHOOL_DONE"
 				},
 				{
-					"x": "19",
+					"value": 0,
 					"y": "43",
+					"level": 0,
+					"x": "26",
+					"script": "ow_script_map_3_19_trigger_1",
+					"field_5": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"var": "TRAINERSCHOOL_DONE"
+				},
+				{
+					"value": 0,
+					"y": "42",
+					"level": 0,
+					"x": "26",
+					"script": "ow_script_map_3_19_trigger_1",
+					"field_5": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"var": "TRAINERSCHOOL_DONE"
+				},
+				{
+					"x": "26",
+					"y": "41",
 					"level": 0,
 					"field_5": 0,
 					"var": "TRAINERSCHOOL_DONE",
@@ -663,8 +688,8 @@
 			],
 			"signposts": [
 				{
-					"x": 16,
-					"y": 41,
+					"x": "10",
+					"y": "40",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
@@ -680,7 +705,7 @@
 				},
 				{
 					"x": "19",
-					"y": "18",
+					"y": "20",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
@@ -695,7 +720,7 @@
 					"flag": "0"
 				},
 				{
-					"x": "33",
+					"x": "34",
 					"y": "16",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
@@ -735,7 +760,7 @@
 				{
 					"direction": "MAP_CONNECTION_WEST",
 					"bank": 3,
-					"displacement": 3,
+					"displacement": "14",
 					"field_A": 0,
 					"field_B": 0,
 					"map_idx": 57

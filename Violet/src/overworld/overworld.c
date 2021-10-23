@@ -168,6 +168,10 @@ static palette overworld_palette_secret_power_cave = {
     .pal = gfx_overworld_secret_power_cavePal, .tag = OW_PAL_TAG_SECRET_POWER_CAVE,
 }; 
 
+static palette overworld_palette_recipe = {
+    .pal = gfx_ow_recipe2Pal, .tag = OW_PAL_TAG_RECIPE,
+}; 
+
 static palette *overworld_npc_palette_get_by_tag(u16 tag) {
     if (tag >= OW_PAL_TAG_POKEMON_BASE && tag < OW_PAL_TAG_POKEMON_END) {
         return overworld_palette_get_by_species((u16)(tag - OW_PAL_TAG_POKEMON_BASE));
@@ -191,6 +195,7 @@ static palette *overworld_npc_palette_get_by_tag(u16 tag) {
         case OW_PAL_TAG_SECRET_POWER_VINES: return &overworld_palette_secret_power_vine;
         case OW_PAL_TAG_SECRET_POWER_CAVE: return &overworld_palette_secret_power_cave;
         case OW_PAL_TAG_APPLE: return &overworld_palette_apple;
+        case OW_PAL_TAG_RECIPE: return &overworld_palette_recipe;
     }
     u8 idx = overworld_npc_palette_get_idx(tag);
     // dprintf("Tag 0x%x is at idx %d in pal-table.\n", tag, idx);

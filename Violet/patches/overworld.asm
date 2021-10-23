@@ -131,10 +131,16 @@ blxr4_0805bba8:
 .org overworld_script_commands + 4 * 0xA2
     .word overworld_script_command_setmaptile | 1
 
+.org overworld_script_commands + 4 * 0xd4
+    .word overworld_script_command_xd4_bufferitemnameplural | 1
+
 .org 0x0809d3d4
     ldr r3, =overworld_script_show_pokemon_picture | 1
     bx r3
     .pool
+
+.org 0x081603b4
+    .word ow_script_std_1_find_item
 
 // Overworld script std strings
 .org 0x0806BE74

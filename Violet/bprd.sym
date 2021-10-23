@@ -1307,3 +1307,6 @@ bsc_trainer_blocks_catch_attempt = 0x081ddd59;
 bsc_ball_throw_success = 0x081ddcda;
 bsc_ball_throw_no_success = 0x081ddd2b;
 pokemon_get_pokerus = 0x080439d8 | 1;
+ow_script_buffer_item_pocket_name_and_play_item_fanfare = 0x081a956d;
+ow_script_pick_up_item = 0x081a969f;
+ow_script_cant_pick_up_item = 0x081a96de;
