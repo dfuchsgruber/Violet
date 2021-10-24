@@ -229,8 +229,11 @@ void npc_player_turn_in_place(u8 direction) {
     }
 }
 
-void npc_player_init_move_sliding(u8 direction) {
-    u8 movement_idx = npc_player_get_movement_idx_by_direction_sliding(direction);
+static u8 rainbow_movements[5] = {STEP_DOWN_RAINBOW, STEP_DOWN_RAINBOW, STEP_UP_RAINBOW, STEP_LEFT_RAINBOW, STEP_RIGHT_RAINBOW};
+
+void npc_player_init_move_rainbow(u8 direction) {
+    // u8 movement_idx = npc_player_get_movement_idx_by_direction_sliding(direction);
+    u8 movement_idx = rainbow_movements[MIN(ARRAY_COUNT(rainbow_movements), direction)];
     npc_player_set_state_and_execute_tile_anim(movement_idx, 2);
 }
 
@@ -264,7 +267,7 @@ void npc_player_initialize_move_on_bike(u8 direction, u8 unused, key keys_new, k
                     overworld_effect_state.target_ow_bank = save1->bank;
                     overworld_effect_state.target_ow_and_their_map = save1->map;
                     overworld_effect_new(OVERWORLD_EFFECT_RAINBOW_SPARKLES);
-                    npc_player_init_move_sliding(direction);
+                    npc_player_init_move_rainbow(direction);
             } else if (collision == 14 || npc_player_walking_towards_rock_stairs(direction)) {
                 npc_player_init_move_surfing(direction);
                 dprintf("Special collision event, collision %d, walking towards rock staris %d\n", collision, npc_player_walking_towards_rock_stairs(direction));

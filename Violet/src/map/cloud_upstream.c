@@ -8,6 +8,7 @@
 #include "save.h"
 #include "agbmemory.h"
 #include "constants/block_behaviour.h"
+#include "overworld/map_control.h"
 
 extern u8 gfx_overworld_cloud_upstreamTiles[];
 extern u8 gfx_overworld_cloud_upstreamPal[];
