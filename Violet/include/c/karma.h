@@ -1,5 +1,6 @@
 #ifndef H_KARMA
 #define H_KARMA
+#include "types.h"
 
 int modify_item_prices(int price);
 /**

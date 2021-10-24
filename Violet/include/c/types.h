@@ -51,7 +51,7 @@ typedef struct {
     int value;
 } int_pair;
 
-#define ARRAY_COUNT(array) (size_t)(sizeof(array) / sizeof((array)[0]))
+#define ARRAY_COUNT(array) (size_t)(sizeof(array) / (size_t)sizeof((array)[0]))
 
 #define MIN(x,y) ((x) < (y) ? (x) : (y))
 #define MAX(x,y) ((x) > (y) ? (x) : (y))

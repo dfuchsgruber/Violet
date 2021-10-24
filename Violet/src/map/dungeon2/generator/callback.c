@@ -299,6 +299,7 @@ static void dungeon2_create_connected_layout_callback(u8 self) {
         state->cb_idx_to_wait_for = dungeon2_enlarge_with_callback(state->map1, state->map2, dg2, 
             DG2_ENLARGE_LINES_PER_FRAME);
         state->state++;
+        break;
     }
     case 4: {
         if (dungeon2_enlarge_with_callback_finished(state->cb_idx_to_wait_for))
@@ -309,6 +310,7 @@ static void dungeon2_create_connected_layout_callback(u8 self) {
         state->cb_idx_to_wait_for = dungeon2_contract_with_callback(state->map2, state->map1, dg2, 
             DG2_CONTRACT_LINES_PER_FRAME);
         state->state++;
+        break;
     }
     case 6: {
         if (dungeon2_contract_with_callback_finished(state->cb_idx_to_wait_for))
@@ -319,6 +321,7 @@ static void dungeon2_create_connected_layout_callback(u8 self) {
         state->cb_idx_to_wait_for = dungeon2_apply_with_callback(state->map_paths, state->map1, DG2_SPACE, dg2, 
             DG2_APPLY_LINES_PER_FRAME);
         state->state++;
+        break;
     }
     case 8: {
         if (dungeon2_apply_with_callback_finished(state->cb_idx_to_wait_for))

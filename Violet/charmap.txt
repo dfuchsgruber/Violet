@@ -479,6 +479,7 @@ TEXT_SET_SHADOW = FC 03 @ followed by the color idx
 COLOR = FC 01 @ use a color listed below right after
 HIGHLIGHT = FC 02 @ same as fc 01
 SHADOW = FC 03 @ same as fc 01
+COLOR_HIGHLIGHT_SHADOW = FC 04 @ takes 3 bytes
 COLOR_FG_BG_SHADOW = FC 04 @ takes 3 bytes
 PALETTE = FC 05 @ used in credits
 SIZE = FC 06 @ note that anything other than "SMALL" is invalid

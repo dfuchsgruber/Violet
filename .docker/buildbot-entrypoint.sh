@@ -1,3 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 pipenv install
-pipenv run make -j$(nproc) -C Violet index
+cp /etc/violet/gba-mus-ripper/{goldensun_synth.raw,psg_data.raw} ./Violet
+pipenv run make -j$(nproc) -C Violet all

@@ -7,6 +7,7 @@
 
 #ifndef INCLUDE_C_TILE_CLOUD_H_
 #define INCLUDE_C_TILE_CLOUD_H_
+#include "stdbool.h"
 
 extern u8 *script_cloud_none_ref;
 extern u8 *script_use_cloud_ref;

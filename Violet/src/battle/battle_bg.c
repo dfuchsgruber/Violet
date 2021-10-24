@@ -347,6 +347,7 @@ void bsc_cmd_xEB_set_type_to_terrain() {
     case BATTLE_BG_BBSHIP_OUTSIDE:
     case BATTLE_BG_CAVE_WATER:
         type = TYPE_WASSER;
+        break;
     case BATTLE_BG_ROUTE_5_CAVE:
         type = TYPE_KAEFER;
         break;
