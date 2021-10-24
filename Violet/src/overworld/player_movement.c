@@ -21,6 +21,7 @@
 #include "debug.h"
 #include "options.h"
 #include "vars.h"
+#include "overworld/effect.h"
 
 extern u8 ow_script_transition_start_surfing[];
 extern u8 ow_script_transition_start_waterfall[];
@@ -48,7 +49,6 @@ bool npc_player_surfing_towards_waterfall(u8 direction) {
 
 
 int npc_player_attempt_step(npc *player, s16 x, s16 y, u8 direction, int param_5) {
-    // dprintf("Player z %d\n", player->height.current);
     (void) param_5; // unused in fire red
     int collision = npc_attempt_diagonal_move(player, x, y, direction);
     if (collision == COLLISION_HEIGHT_MISMATCH && npc_player_attempt_transition_water_to_land(x, y, direction)) {
@@ -164,7 +164,6 @@ void npc_player_initialize_move_not_biking(u8 direction, key keys) {
     switch (collision) {
         case COLLISION_NONE: {
             if (player_state.state & PLAYER_STATE_SURFING) {
-                dprintf("Player surfing into waterfall. %d\n", npc_player_surfing_towards_waterfall(direction));
                 if (npc_player_surfing_towards_waterfall(direction) && npc_player_attempt_surfing_into_waterfall()) {
                     overworld_script_init(ow_script_transition_start_waterfall);
                     return;
@@ -230,12 +229,21 @@ void npc_player_turn_in_place(u8 direction) {
     }
 }
 
-void npc_player_initialize_move_on_bike(u8 direction) {
+void npc_player_init_move_sliding(u8 direction) {
+    u8 movement_idx = npc_player_get_movement_idx_by_direction_sliding(direction);
+    npc_player_set_state_and_execute_tile_anim(movement_idx, 2);
+}
+
+void npc_player_initialize_move_on_bike(u8 direction, u8 unused, key keys_new, key keys_held) {
+    (void)unused; (void)keys_new; (void)keys_held;
+    dprintf("move on bike, keys held %d, speed %d\n", keys_held.value, player_state.bike_speed);
+    player_state.bike_speed = 0;
     // There is some biking stuff from RSE, which is cut in firered, I don't bother to copy a bunch of stuff that never gets executed
     u8 collision = npc_player_collision_on_bike(direction);
     // dprintf("Biking collision type %d\n");
     switch (collision) {
         case COLLISION_LEDGE:
+            // Keep the current biking speed
             npc_player_init_move_jump(direction);
             return;
         case COLLISION_STOP_SURFING:
@@ -245,10 +253,24 @@ void npc_player_initialize_move_on_bike(u8 direction) {
             return;
         case COLLISION_NONE:
         case 14:{ // This thing super weird, it is returned when stepping on cracked ice, I suppose 
-            if (collision == 14 || npc_player_walking_towards_rock_stairs(direction))
+            if (keys_held.keys.B && (checkflag(FLAG_CLOUD_HAS_HIGH_SPEED) || true)) { // High speed biking
+                    dprintf("High speed biking...\n");
+                    player_state.bike_speed = 4;
+                    position_t pos;
+                    player_get_position(&pos);
+                    overworld_effect_state.x = pos.coordinates.x - 7;
+                    overworld_effect_state.y = pos.coordinates.y - 7;
+                    overworld_effect_state.height = pos.height;
+                    overworld_effect_state.target_ow_bank = save1->bank;
+                    overworld_effect_state.target_ow_and_their_map = save1->map;
+                    overworld_effect_new(OVERWORLD_EFFECT_RAINBOW_SPARKLES);
+                    npc_player_init_move_sliding(direction);
+            } else if (collision == 14 || npc_player_walking_towards_rock_stairs(direction)) {
                 npc_player_init_move_surfing(direction);
-            else
+                dprintf("Special collision event, collision %d, walking towards rock staris %d\n", collision, npc_player_walking_towards_rock_stairs(direction));
+            } else {
                 npc_player_init_move_bike(direction);
+            }
             return;
         }
         case COLLISION_SIDEWAY_STAIRS_NORTH_EAST:
@@ -261,6 +283,13 @@ void npc_player_initialize_move_on_bike(u8 direction) {
             npc_player_init_move_bike_blocked(direction);
             return;
     }
+}
+
+extern u8 (*npc_player_bike_transitions[])(u8, u8, key, key);
+
+void player_npc_controll_biking(u8 direction, key keys_new, key keys_held) {
+    u8 idx = player_npc_get_bike_transition_state(&direction, keys_new, keys_held);
+    npc_player_bike_transitions[idx](direction, direction, keys_new, keys_held); // Don't ask me why there's a duplicate for direction here...
 }
 
 void player_transition_water_to_land(u8 direction) {

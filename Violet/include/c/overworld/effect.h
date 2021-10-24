@@ -134,6 +134,7 @@ void overworld_effect_teleport_after_showing_pokemon();
 #define GFX_TAG_OVERWORLD_EFFECT_EXPLOSION 0x1773
 #define GFX_TAG_OVERWORLD_EFFECT_SOUND_WAVE 0x1774
 #define GFX_TAG_OVERWORLD_EFFECT_LIGHTNING 0x1775
+#define GFX_TAG_OVERWORLD_EFFECT_RAINBOW_SPARKLES 0x1775
 
 extern const u8 gfx_overworld_explosionTiles[];
 extern const color_t gfx_overworld_explosionPal[16];
@@ -141,6 +142,10 @@ extern const u8 gfx_overworld_effect_sound_waveTiles[];
 extern const color_t gfx_overworld_effect_sound_wavePal[16];
 extern const u8 gfx_overworld_effect_lightningTiles[];
 extern const color_t gfx_overworld_effect_lightningPal[16];
+extern const u8 gfx_overworld_effect_lightningTiles[];
+extern const color_t gfx_overworld_effect_lightningPal[16];
+extern const u8 gfx_overworld_effect_rainbow_sparklesTiles[];
+extern const color_t gfx_overworld_effect_rainbow_sparklesPal[16];
 
 extern const u8 overworld_effect_script_exclamation_mark_icon[];
 extern const u8 overworld_effect_script_use_cut_on_grass[];
@@ -219,5 +224,6 @@ extern const u8 overworld_effect_script_npc_transparent_fade[];
 extern const u8 overworld_effect_script_sound_wave[];
 extern const u8 overworld_effect_script_whirlwind[];
 extern const u8 overworld_effect_script_lightning[];
+extern const u8 overworld_effect_script_rainbow_sparkles[];
 
 #endif

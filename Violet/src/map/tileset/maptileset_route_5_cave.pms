@@ -29250,7 +29250,7 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": 0,
+				"behaviour": "MB_CRACKED_ICE_HOLE",
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": 0,
@@ -29350,7 +29350,7 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": 0,
+				"behaviour": "MB_CRACKED_ICE_HOLE",
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": 0,

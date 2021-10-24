@@ -661,7 +661,7 @@ u8 overworld_create_rage_sprite(u8 npc_idx, u8 type) {
         o->private[3] = type;
         u8 z = npcs[npc_idx].height.current;
         oam_set_priority_by_height(o, z);
-        oam_set_subpriority_by_height(o, z, 0);
+        oam_set_subpriority_by_height(z, o, 0);
         oam_gfx_anim_start(o, type);
         o->callback(o);
     }   
@@ -691,7 +691,7 @@ u8 overworld_create_oam_by_person(map_event_person *person, u8 a1, s16 x, s16 y,
             o->sprite_mode = 2;
         }
         oam_set_priority_by_height(o, z);
-        oam_set_subpriority_by_height(o, z, 1);
+        oam_set_subpriority_by_height(z, o, 1);
         oam_gfx_anim_start(o, npc_get_animation_idx_by_facing(direction));
     }
     return oam_idx;

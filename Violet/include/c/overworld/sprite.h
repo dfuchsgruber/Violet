@@ -227,7 +227,7 @@ void oam_set_priority_by_height(oam_object *o, u8 height);
  * @param height the height
  * @param relative_priority priority relative to oams of the same height (simply an offset to the subpriority)
  **/
-void oam_set_subpriority_by_height(oam_object *o, u8 height, u8 relative_priority);
+void oam_set_subpriority_by_height(u8 height, oam_object *o, u8 relative_priority);
 
 /**
  * Creates a oam that would correspond to a person, but doesn't intialize any npc for it

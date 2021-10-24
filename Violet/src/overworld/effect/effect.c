@@ -2,6 +2,7 @@
 #include "oam.h"
 #include "overworld/sprite.h"
 #include "overworld/effect.h"
+#include "overworld/map_control.h"
 #include "vars.h"
 #include "io.h"
 #include "callbacks.h"
@@ -10,6 +11,7 @@
 #include "debug.h"
 #include "map/cloud.h"
 #include "bios.h"
+#include "overworld/npc.h"
 
 /**
 graphic overworld_effect_explosion_graphic = {
@@ -321,6 +323,89 @@ void special_overworld_effect_lightning() {
     overworld_effect_new(OVERWORLD_EFFECT_LIGHTNING);
 }
 
+
+static graphic overworld_effect_rainbow_sparkles_graphics[] = {
+    [0] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [1] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [2] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [3] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [4] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 4 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [5] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 5 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [6] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 6 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [7] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 7 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+};
+
+palette overworld_effect_rainbow_sparkles_palette = {
+    .pal = gfx_overworld_effect_rainbow_sparklesPal, .tag = GFX_TAG_OVERWORLD_EFFECT_RAINBOW_SPARKLES,
+};
+
+static sprite overworld_effect_rainbow_sparkles_sprite = {
+    .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(2),
+};
+
+#define RAINBOW_SPARKLES_FRAME_DURATION 4
+
+static gfx_frame overworld_effect_rainbow_sparkles_animation[] = {
+    {.data = 0, .duration = 0},
+    {.data = 0, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
+    {.data = 1, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
+    {.data = 2, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
+    {.data = 3, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
+    {.data = 4, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
+    {.data = 5, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
+    {.data = 6, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
+    {.data = 7, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
+    {.data = GFX_ANIM_END}, 
+};
+
+static gfx_frame *overworld_effect_rainbow_sparkles_animations[] = {overworld_effect_rainbow_sparkles_animation};
+
+static void overworld_effect_rainbow_sparkles_oam_callback(oam_object *self) {
+    oam_set_priority_by_height(self, (u8)self->private[2]);
+    oam_set_subpriority_by_height((u8)self->private[2], self, 2);
+    if ((self->private[3] != save1->bank || self->private[4] != save1->map) && overworld_viewport.active) {
+        self->private[0] = (u16)(self->private[0] - overworld_viewport.x);
+        self->private[1] = (u16)(self->private[1] - overworld_viewport.y);
+        self->private[3] = save1->bank;
+        self->private[4] = save1->map;
+    }
+    if (self->flags & OAM_FLAG_GFX_ANIM_END 
+            || overworld_effect_is_oam_outside_camera_view((s16)self->private[0], (s16)self->private[1], 16, 16)) {
+        overworld_effect_delete(self, OVERWORLD_EFFECT_RAINBOW_SPARKLES);
+    }
+}
+
+static oam_template overworld_effect_rainbow_sparkles_oam_template = {
+    .tiles_tag = 0xFFFF, .pal_tag = GFX_TAG_OVERWORLD_EFFECT_RAINBOW_SPARKLES,
+    .graphics = overworld_effect_rainbow_sparkles_graphics,
+    .oam = &overworld_effect_rainbow_sparkles_sprite, .animation = overworld_effect_rainbow_sparkles_animations,
+    .rotscale = oam_rotscale_anim_table_null, .callback = overworld_effect_rainbow_sparkles_oam_callback,
+};
+
+void overworld_effect_rainbow_sparkles_initialize() {
+    s16 x = (s16)(overworld_effect_state.x + 7);
+    s16 y = (s16)(overworld_effect_state.y + 7);
+    overworld_effect_ow_coordinates_to_screen_coordinates(&x, &y, 8, 0);
+    u8 oam_idx = oam_new_forward_search(&overworld_effect_rainbow_sparkles_oam_template, x, y , 0);
+    oam_set_priority_by_height(oams + oam_idx, 8);
+    oams[oam_idx].flags |= OAM_FLAG_CENTERED;
+    oam_gfx_anim_start(oams + oam_idx, 0);
+    oams[oam_idx].private[0] = (u16)(overworld_effect_state.x + 7);
+    oams[oam_idx].private[1] = (u16)(overworld_effect_state.y + 7);
+    oams[oam_idx].private[2] = (u16)overworld_effect_state.height;
+    oams[oam_idx].private[3] = (u16)overworld_effect_state.target_ow_bank;
+    oams[oam_idx].private[4] = (u16)overworld_effect_state.target_ow_and_their_map;
+}
+
+void special_overworld_effect_rainbow_sparkles() {
+    overworld_effect_state.x = *var_access(0x8004);
+    overworld_effect_state.y = *var_access(0x8005);
+    overworld_effect_state.height = *var_access(0x8006);
+    overworld_effect_state.target_ow_bank = save1->bank;
+    overworld_effect_state.target_ow_and_their_map = save1->map;
+    overworld_effect_new(OVERWORLD_EFFECT_RAINBOW_SPARKLES);
+}
+
 const u8 *overworld_effects[NUM_OVERWORLD_EFFECTS] = {
     [OVERWORLD_EFFECT_EXCLAMATION_MARK_ICON] = overworld_effect_script_exclamation_mark_icon,
     [OVERWORLD_EFFECT_USE_CUT_ON_GRASS] = overworld_effect_script_use_cut_on_grass,
@@ -398,4 +483,5 @@ const u8 *overworld_effects[NUM_OVERWORLD_EFFECTS] = {
     [OVERWORLD_EFFECT_SOUND_WAVE] = overworld_effect_script_sound_wave,
     [OVERWORLD_EFFECT_WHIRLWIND] = overworld_effect_script_whirlwind,
     [OVERWORLD_EFFECT_LIGHTNING] = overworld_effect_script_lightning,
+    [OVERWORLD_EFFECT_RAINBOW_SPARKLES] = overworld_effect_script_rainbow_sparkles,
 };

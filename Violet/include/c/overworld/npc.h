@@ -97,17 +97,35 @@ typedef struct npc {
     u8 field_23;
 } npc;
 
+enum {
+    RUNNING_STATE_NOT_MOVING,
+    RUNNING_STATE_TURNING,
+    RUNNING_STATE_MOVING,
+};
+
+enum {
+    BIKE_STATE_NORMAL,
+    BIKE_STATE_TURNING,
+    BIKE_STATE_SLOPE
+};
+
 typedef struct {
     u8 state;
     u8 field1;
-    u8 running2;
-    u8 tile_state;
+    u8 running_state; //running2
+    u8 tile_transition_state; // tile_state
     u8 oam_idx;
     u8 npc_idx;
     u8 is_locked;
     u8 gender;
-    u8 mode;
-    u8 unkown[3];
+    u8 bike_state;
+    u8 new_direction_backup;
+    u8 bike_step_counter;
+    u8 bike_speed;
+    u32 direction_history;
+    u32 button_history;
+    u8 direction_timer_history[8];
+    u16 last_spin_tile;
 } player_state_t;
 
 typedef struct { // State with which the player is initialized after warping
@@ -117,6 +135,12 @@ typedef struct { // State with which the player is initialized after warping
 } player_initial_state_t; 
 
 player_initial_state_t player_initial_state;
+
+/**
+ * Keeps track of how many blocks the player has traversed with their bike
+ * @param block_cnt how many blocks have been traversed
+ **/
+void npc_player_bike_set_block_count(u8 block_cnt);
 
 #define PLAYER_STATE_WALKING 1
 #define PLAYER_STATE_MACH_BIKE 2
@@ -581,6 +605,19 @@ void npc_player_init_move_walking_slow(u8 direction);
 void npc_player_init_move_bike(u8 direction);
 
 /**
+ * Initializes the player into a direction on fastest speed
+ * @param direction the direction in which to move in
+ **/
+void npc_player_init_move_fastest(u8 direction);
+
+/**
+ * Gets the movement idx of the sliding (probably this is wrongly labeled and just fastest) direcitonal
+ * @param dir in which direction to slide
+ * @return the corresponding movement idx
+ **/
+u8 npc_player_get_movement_idx_by_direction_sliding(u8 dir);
+
+/**
  * Initializes the player on the bike being blocked into a direction
  * @param direction the direction in which attempted to bike in
  **/
@@ -621,6 +658,15 @@ void npc_player_set_facing(u8 direction);
  * @param keys_held held keys
  **/
 void player_npc_controll_biking(u8 direction, key keys_new, key keys_held);
+
+/**
+ * Gets which transition function will be executed for the player's bike state.
+ * @param direction direction in which to travel
+ * @param keys_new newly pressed keys
+ * @param keys_held held keys
+ * @return idx which transition function to execute
+ **/
+u8 player_npc_get_bike_transition_state(u8 *direction, key keys_new, key keys_held);
 
 /**
  * Controls the player npc using the input when not on a bike.

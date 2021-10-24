@@ -37,7 +37,7 @@ static void oam_callback_bb_ship(oam_object *self) {
         // Center at block
         self->x = (s16)(self->x + 8 + privates[4]);
         self->y = (s16)(self->y + 8 + privates[5]);
-        oam_set_subpriority_by_height(self, 0, 20);
+        oam_set_subpriority_by_height(0, self, 20);
     }
 }
 

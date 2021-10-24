@@ -21,6 +21,14 @@ typedef struct{
 
 extern stru_map_displ_cntrl map_displ_cntrl;
 
+typedef struct {
+    u8 active:1;
+    s32 x;
+    s32 y;
+} overworld_viewport_t;
+
+extern overworld_viewport_t overworld_viewport;
+
 /**
  * Initialize map blocks (executes mapscripts for blocks as well)
  **/

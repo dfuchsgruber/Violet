@@ -48,9 +48,15 @@ overworld_pals equ 0x083A501C
     .pool
 
 .org 0x080bd3b4
-    ldr r2, = npc_player_initialize_move_on_bike | 1
-    bx r2
+    push {r4, lr}
+    ldr r4, = npc_player_initialize_move_on_bike | 1
+    bl _blxr4_0x080bd3b4
+    pop {r4}
+    pop {r1}
+    bx r1
     .pool
+_blxr4_0x080bd3b4:
+    bx r4
 
 //.org 0x0805ba06
 //    ldr r0, =npc_player_initialize_step_movement_hook | 1

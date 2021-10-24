@@ -31664,7 +31664,7 @@
 				"battle_bg": "0x30"
 			},
 			{
-				"behaviour": "MB_D2",
+				"behaviour": "0",
 				"hm_usage": "0x3",
 				"field_2": "0xa",
 				"encounter_type": "0x6",
