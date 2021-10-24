@@ -2832,5 +2832,14 @@ static trainer_pokemon_default_item_default_attacks trainer_party_x1f9_sonnaufel
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,38, POKEMON_MAGNAYEN),
 };
 
+static trainer_pokemon_default_item_default_attacks trainer_party_x1fa_route2_clouds_cave_trainer_0[] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,37, POKEMON_GEOROK),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,37, POKEMON_PUPPANCE),
+};
+
+static trainer_pokemon_default_item_default_attacks trainer_party_x1fb_route2_clouds_cave_trainer_1[] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,39, POKEMON_SMOGMOG),
+};
+
 
 #endif 

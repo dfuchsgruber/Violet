@@ -17184,25 +17184,25 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 122,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 122,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 122,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 122,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
@@ -17220,14 +17220,14 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 142,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 143,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				}
@@ -17258,25 +17258,31 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 132,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 132,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 132,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 132,
+					"tile_idx": 0,
+					"palette_idx": 0,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
@@ -17289,19 +17295,13 @@
 				},
 				{
 					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 142,
-					"palette_idx": 3,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 143,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				}
@@ -17332,50 +17332,50 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 48,
-					"palette_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0
-				},
-				{
-					"tile_idx": 49,
-					"palette_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0
-				},
-				{
-					"tile_idx": 65,
-					"palette_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0
-				},
-				{
-					"tile_idx": 64,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 142,
-					"palette_idx": 3,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 143,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 0,
+					"palette_idx": 0,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 0,
+					"palette_idx": 0,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 0,
+					"palette_idx": 0,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 0,
+					"palette_idx": 0,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				}
@@ -17431,25 +17431,25 @@
 				},
 				{
 					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 142,
-					"palette_idx": 3,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 143,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 0,
+					"palette_idx": 0,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				}
@@ -17776,50 +17776,50 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 122,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 122,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 122,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 122,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 158,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 159,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 174,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 175,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				}
@@ -17850,50 +17850,50 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 132,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 132,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 132,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 132,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 158,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 159,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 174,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 175,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				}
@@ -17924,50 +17924,50 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 48,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 49,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 65,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 64,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 158,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 159,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 174,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 175,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				}
@@ -17998,50 +17998,50 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 160,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 160,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 104,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 105,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 158,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 159,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 174,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 175,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				}
@@ -18344,50 +18344,50 @@
 			],
 			[
 				{
-					"tile_idx": 122,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 122,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 122,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 122,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 190,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 191,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 206,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 207,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
@@ -18442,50 +18442,50 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 132,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 132,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 132,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 132,
+					"tile_idx": 0,
 					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 190,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 191,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 206,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 207,
-					"palette_idx": 3,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				}
@@ -48030,7 +48030,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "0x1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -48040,57 +48040,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": 0,
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": 0,
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": 0,
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": 0,
-				"encounter_type": 0,
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -48110,37 +48060,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": 0,
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": 0,
-				"encounter_type": 0,
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -48190,7 +48110,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -48200,7 +48120,87 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": 0,
+				"field_2": 0,
+				"battle_bg": 0,
+				"encounter_type": 0,
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": 0,
+				"field_2": 0,
+				"battle_bg": 0,
+				"encounter_type": 0,
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": 0,
+				"field_2": 0,
+				"battle_bg": 0,
+				"encounter_type": 0,
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": 0,
+				"field_2": 0,
+				"battle_bg": 0,
+				"encounter_type": 0,
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": 0,
+				"field_2": 0,
+				"battle_bg": 0,
+				"encounter_type": 0,
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": 0,
+				"field_2": 0,
+				"battle_bg": 0,
+				"encounter_type": 0,
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": 0,
+				"field_2": 0,
+				"battle_bg": "BATTLE_BG_CLOUD",
+				"encounter_type": "0",
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": 0,
+				"field_2": 0,
+				"battle_bg": "BATTLE_BG_CLOUD",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -48300,7 +48300,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -49330,7 +49330,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -49340,7 +49340,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -49410,7 +49410,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -49930,7 +49930,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -49970,7 +49970,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -49980,7 +49980,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -49990,7 +49990,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -50010,7 +50010,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -50090,7 +50090,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -50110,7 +50110,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -50120,7 +50120,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -50130,7 +50130,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -50140,7 +50140,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -50150,7 +50150,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -50160,7 +50160,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -50170,7 +50170,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -50180,7 +50180,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -50190,7 +50190,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -50200,7 +50200,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -50210,7 +50210,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -50270,7 +50270,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -50310,7 +50310,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -50390,7 +50390,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -50750,7 +50750,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -50760,7 +50760,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -50770,7 +50770,7 @@
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": "BATTLE_BG_CLOUD",
-				"encounter_type": "1",
+				"encounter_type": "0",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0

@@ -880,5 +880,9 @@ extern const u8 gfx_item_pokeball_special_attackTiles[];
 extern const u8 gfx_item_pokeball_special_attackPal[];
 extern const u8 gfx_item_pokeball_special_defenseTiles[];
 extern const u8 gfx_item_pokeball_special_defensePal[];
+extern const u8 gfx_item_kryo_orbTiles[];
+extern const u8 gfx_item_kryo_orbPal[];
+extern const u8 gfx_item_firnontornitTiles[];
+extern const u8 gfx_item_firnontornitPal[];
 
 #endif

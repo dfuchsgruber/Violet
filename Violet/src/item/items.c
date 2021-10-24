@@ -1727,6 +1727,14 @@ static u8 str_item_fokusball_description[] = LANGDEP(
 	PSTRING("Ein Ball, der bei gefangenen\nPokémon die Sp. Vert. Fleiß Punkte\nschneller steigen lässt."),
 	PSTRING("A somewhat different Ball that\nmakes the special defense effort values of\nof a Pokémon grow faster.")
 );
+static u8 str_item_kryo_orb_description[] = LANGDEP(
+	PSTRING("Item (Tragen), das\nden Träger einfrieren kann."),
+	PSTRING("Item to be held that\ncan freeze its holder.")
+);
+static u8 str_item_firnontornit_description[] = LANGDEP(
+	PSTRING("Wird er von einem Firnontor\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+	PSTRING("If held by a Glalie in\nbattle it can perform\na mega evolution.")
+);
 
 
 item items[] = {
@@ -7951,78 +7959,91 @@ item items[] = {
 		.index = ITEM_BEULENHELM, .price = 200,
 		.description = str_item_beulenhelm_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_BEULENHELM, .holding_effect_param = 6,
+		.field_usage = (void(*)(u8))0x80a2325,
 	},
 	[ITEM_EXPERTENGURT] = {
 		.name = LANGDEP(PSTRING("Expertengurt"), PSTRING("Expert Belt")),
 		.index = ITEM_EXPERTENGURT, .price = 200,
 		.description = str_item_expertengurt_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_EXPERT_BELT, .holding_effect_param = 20,
+		.field_usage = (void(*)(u8))0x80a2325,
 	},
 	[ITEM_ENERGIEKRAUT] = {
 		.name = LANGDEP(PSTRING("Energiekraut"), PSTRING("Power Herb")),
 		.index = ITEM_ENERGIEKRAUT, .price = 200,
 		.description = str_item_energiekraut_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_POWER_HERB,
+		.field_usage = (void(*)(u8))0x80a2325,
 	},
 	[ITEM_FOKUSGURT] = {
 		.name = LANGDEP(PSTRING("Fokusgurt"), PSTRING("Focus Sash")),
 		.index = ITEM_FOKUSGURT, .price = 200,
 		.description = str_item_fokusgurt_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_FOCUS_SASH,
+		.field_usage = (void(*)(u8))0x80a2325,
 	},
 	[ITEM_GROSSLINSE] = {
 		.name = LANGDEP(PSTRING("Großlinse"), PSTRING("Wide Lens")),
 		.index = ITEM_GROSSLINSE, .price = 200,
 		.description = str_item_grosslinse_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_BOOST_ACCURACY, .holding_effect_param = 20,
+		.field_usage = (void(*)(u8))0x80a2325,
 	},
 	[ITEM_GIFTSCHLEIM] = {
 		.name = LANGDEP(PSTRING("Giftschleim"), PSTRING("Black Sludge")),
 		.index = ITEM_GIFTSCHLEIM, .price = 200,
 		.description = str_item_giftschleim_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_RECOVERS_HP_AT_END_OF_TURN_FOR_TYPE, .holding_effect_param = TYPE_GIFT,
+		.field_usage = (void(*)(u8))0x80a2325,
 	},
 	[ITEM_MUSKELBAND] = {
 		.name = LANGDEP(PSTRING("Muskelband"), PSTRING("Muscle Band")),
 		.index = ITEM_MUSKELBAND, .price = 200,
 		.description = str_item_muskelband_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_BOOST_PHYSICAL_MOVES, .holding_effect_param = 10,
+		.field_usage = (void(*)(u8))0x80a2325,
 	},
 	[ITEM_SCHLAUBRILLE] = {
 		.name = LANGDEP(PSTRING("Schlaubrille"), PSTRING("Wise Glasses")),
 		.index = ITEM_SCHLAUBRILLE, .price = 200,
 		.description = str_item_schlaubrille_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_BOOST_SPECIAL_MOVES, .holding_effect_param = 10,
+		.field_usage = (void(*)(u8))0x80a2325,
 	},
 	[ITEM_HEISS_ORB] = {
 		.name = LANGDEP(PSTRING("Heiß-Orb"), PSTRING("Flame Orb")),
 		.index = ITEM_HEISS_ORB, .price = 200,
 		.description = str_item_heiss_orb_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_CAUSES_BURN, .holding_effect_param = 100,
+		.field_usage = (void(*)(u8))0x80a2325,
 	},
 	[ITEM_TOXIK_ORB] = {
 		.name = LANGDEP(PSTRING("Toxik-Orb"), PSTRING("Toxic Orb")),
 		.index = ITEM_TOXIK_ORB, .price = 200,
 		.description = str_item_toxik_orb_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_CAUSES_POISON, .holding_effect_param = 100,
+		.field_usage = (void(*)(u8))0x80a2325,
 	},
 	[ITEM_OFFENSIVWESTE] = {
 		.name = LANGDEP(PSTRING("Offensivweste"), PSTRING("Assault Vest")),
 		.index = ITEM_OFFENSIVWESTE, .price = 200,
 		.description = str_item_offensivweste_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_ASSAULT_VEST,
+		.field_usage = (void(*)(u8))0x80a2325,
 	},
 	[ITEM_SCHWAECHENSCHUTZ] = {
 		.name = LANGDEP(PSTRING("Schw.-Schutz"), PSTRING("Weakness Policy")),
 		.index = ITEM_SCHWAECHENSCHUTZ, .price = 200,
 		.description = str_item_schwaechenschutz_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_WEAKNESS_POLICY,
+		.field_usage = (void(*)(u8))0x80a2325,
 	},
 	[ITEM_KLAMMERBAND] = {
 		.name = LANGDEP(PSTRING("Klammerband"), PSTRING("Binding Band")),
 		.index = ITEM_KLAMMERBAND, .price = 200,
 		.description = str_item_klammerband_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_BINDING_BAND,
+		.field_usage = (void(*)(u8))0x80a2325,
 	},
 	[ITEM_LOTUS_BALL] = {
 		.name = LANGDEP(PSTRING("Lotus-Ball"), PSTRING("Lotus Ball")),
@@ -8078,6 +8099,19 @@ item items[] = {
 		.description = str_item_fokusball_description, .pocket = POCKET_POKEBALLS, .type = 0,
 		.battle_effect = 2, .battle_usage = item_pokeball_battle,
 	},
+	[ITEM_KRYO_ORB] = {
+		.name = LANGDEP(PSTRING("Kryo-Orb"), PSTRING("Cryo-Orb")),
+		.index = ITEM_KRYO_ORB, .price = 200,
+		.description = str_item_kryo_orb_description, .pocket = POCKET_ITEMS, .type = 4,
+		.holding_effect_id = HOLD_EFFECT_CAUSES_FREEZE, .holding_effect_param = 50,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_FIRNONTORNIT] = {
+		.name = LANGDEP(PSTRING("Firnontornit"), ("Glalienite")),
+		.index = ITEM_FIRNONTORNIT,
+		.description = str_item_firnontornit_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	}
 };
 
 u16 item_idx_saniztize(u16 item_idx) {

@@ -1,0 +1,92 @@
+{
+	"data": {
+		"footer": "map_footer_route_2_clouds_cave_eg_room_2",
+		"events": {
+			"person_cnt": 1,
+			"warp_cnt": 3,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "10",
+					"y": "7",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ROUTE_2_CLOUDS_CAVE_ITEM_1",
+					"value": {
+						"item": "ITEM_KRYO_ORB",
+						"species": "0",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "9",
+					"y": "24",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "7",
+					"target_bank": "11"
+				},
+				{
+					"x": "10",
+					"y": "19",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": 0
+				},
+				{
+					"x": "10",
+					"y": "8",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": 0
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": 0,
+		"footer_idx": 188,
+		"namespace": "MAP_ROUTE_2",
+		"flash_type": 0,
+		"weather": 0,
+		"type": 0,
+		"bike_usable": 0,
+		"flags": {
+			"allow_escape_rope": 0,
+			"allow_run": 0,
+			"show_name": 0,
+			"flag_3": 0,
+			"flag_4": 0,
+			"flag_5": 0,
+			"flag_6": 0,
+			"flag_7": 0
+		},
+		"level": 0,
+		"battle_style": 0
+	},
+	"label": "map_route_2_clouds_cave_eg_room_2",
+	"type": "header"
+}

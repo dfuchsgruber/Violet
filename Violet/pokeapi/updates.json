@@ -2110,29 +2110,7 @@
 		"ability_1": null,
 		"hidden_ability": null,
 		"species_link" : "POKEMON_MASKEREGEN",
-		"dex_number": 288,
-		"levelup_moves": [
-			[
-				"Finte",
-				22
-			],
-			[
-				"Blubbstrahl",
-				29
-			],
-			[
-				"Abschlag",
-				36
-			],
-			[
-				"Tiefschlag",
-				43
-			],
-			[
-				"Finsteraura",
-				53
-			]
-		]
+		"dex_number": 0
 	},
 	"POKEMON_AMPHARAOSM": {
 		"basestats": {
@@ -2347,16 +2325,16 @@
 		"species_link" : "POKEMON_ARIADOS"
 	},
 	"POKEMON_111": {
-		"species_link" : "POKEMON_BISASAM"
+		"species_link" : "POKEMON_POKEMON_0"
 	},
 	"POKEMON_112": {
-		"species_link" : "POKEMON_BISASAM"
+		"species_link" : "POKEMON_POKEMON_0"
 	},
 	"POKEMON_113": {
-		"species_link" : "POKEMON_BISASAM"
+		"species_link" : "POKEMON_POKEMON_0"
 	},
 	"POKEMON_114": {
-		"species_link" : "POKEMON_BISASAM"
+		"species_link" : "POKEMON_POKEMON_0"
 	},
 	"POKEMON_LOCKSCHAL": {
 		"name" : {
@@ -4305,7 +4283,29 @@
 		"ability_1": null,
 		"hidden_ability": "Temposchub",
 		"safari_rate": 0,
-		"dex_number": 288
+		"dex_number": 288,
+		"levelup_moves": [
+			[
+				"Finte",
+				22
+			],
+			[
+				"Blubbstrahl",
+				29
+			],
+			[
+				"Abschlag",
+				36
+			],
+			[
+				"Tiefschlag",
+				43
+			],
+			[
+				"Finsteraura",
+				53
+			]
+		]
 	},
 	"POKEMON_WAILMER": {
 		"ability_0": "Aquahuelle",

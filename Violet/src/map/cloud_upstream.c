@@ -397,9 +397,15 @@ static gfx_frame *overworld_cloud_upstream_animations[] = {
 
 static void overworld_cloud_static_upstream_callback (oam_object *self) {
     if (save1->bank != self->private[2] || save1->map != self->private[3]) {
-        // Relocate to different bank
-        oam_clear(self);
-        return;
+        if (overworld_viewport.active) {
+            self->private[2] = save1->bank;
+            self->private[3] = save1->map;
+            self->private[4] = (u16)(self->private[4] - overworld_viewport.x);
+            self->private[5] = (u16)(self->private[5] - overworld_viewport.y);
+        } else {
+            oam_clear(self);
+            return;
+        }
     }
     s16 oam_x = 0; s16 oam_y = 0; // Anchor position for all oams
     map_position_to_oam_position((s16)(self->private[4]), (s16)(self->private[5]), &oam_x, &oam_y);

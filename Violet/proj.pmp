@@ -820,6 +820,16 @@
 				"map_route_2_cave_connection",
 				"src/map/banks/11/6/map_route_2_cave_connection.pms",
 				"MAP_ROUTE_2"
+			],
+			"7": [
+				"map_route_2_clouds_cave_eg",
+				"src/map/banks/11/7/map_route_2_clouds_cave_eg.pms",
+				"MAP_ROUTE_2"
+			],
+			"8": [
+				"map_route_2_clouds_cave_eg_room_2",
+				"src/map/banks/11/8/map_route_2_clouds_cave_eg_room_2.pms",
+				"MAP_ROUTE_2"
 			]
 		},
 		"12": {
@@ -2337,6 +2347,14 @@
 		"map_footer_sonnaufeld_clouds": [
 			186,
 			"src/map/banks/35/3/map_footer_sonnaufeld_clouds.pms"
+		],
+		"map_footer_route_2_clouds_cave_eg": [
+			187,
+			"src/map/banks/11/7/map_footer_route_2_clouds_cave_eg.pms"
+		],
+		"map_footer_route_2_clouds_cave_eg_room_2": [
+			188,
+			"src/map/banks/11/8/map_footer_route_2_clouds_cave_eg_room_2.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -2422,7 +2440,9 @@
 		"maptileset_dungeon_dragon_cave": "src/map/tileset/maptileset_dungeon_dragon_cave.pms",
 		"maptileset_dungeon_steel_cave": "src/map/tileset/maptileset_dungeon_steel_cave.pms",
 		"maptileset_dungeon_fossil": "src/map/tileset/maptileset_dungeon_fossil.pms",
-		"maptileset_clouds_gear": "src/map/tileset/maptileset_clouds_gear.pms"
+		"maptileset_clouds_gear": "src/map/tileset/maptileset_clouds_gear.pms",
+		"maptileset_cloud_spider_web": "src/map/tileset/maptileset_cloud_spider_web.pms",
+		"maptileset_cloud_various": "src/map/tileset/maptileset_clouds_various.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2501,6 +2521,8 @@
 		"gfx_maptileset_dungeon_dragon_caveTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_dragon_cave.png",
 		"gfx_maptileset_dungeon_steel_caveTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_steel_cave.png",
 		"gfx_maptileset_dungeon_fossil_caveTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_fossil_cave.png",
-		"gfx_maptileset_clouds_gearTiles": "asset/gfx/tileset/gfx_maptileset_clouds_gear.png"
+		"gfx_maptileset_clouds_gearTiles": "asset/gfx/tileset/gfx_maptileset_clouds_gear.png",
+		"gfx_maptileset_cloud_spider_webTiles": "asset/gfx/tileset/gfx_maptileset_cloud_spider_web.png",
+		"gfx_maptileset_clouds_variousTiles": "asset/gfx/tileset/gfx_maptileset_clouds_various.png"
 	}
 }

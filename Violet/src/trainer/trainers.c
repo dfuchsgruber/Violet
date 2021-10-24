@@ -7332,6 +7332,20 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x1f9_sonnaufeld_trainer_2,
     },
+    [0x1fa] = {
+        .trainerclass = TRAINERCLASS_RUINENMANIAC, .sprite = 4,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Effraim"),
+            PSTRING("Effraim")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1fa_route2_clouds_cave_trainer_0),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1fa_route2_clouds_cave_trainer_0,
+    },
+    [0x1fb] = {
+        .trainerclass = TRAINERCLASS_DIEB, .sprite = 0x5c,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Lothar"),
+            PSTRING("Effraim")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1fb_route2_clouds_cave_trainer_1),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1fb_route2_clouds_cave_trainer_1,
+    },
 
     [0x300] = {
       .uses_custom_moves = true, .uses_custom_items = true,

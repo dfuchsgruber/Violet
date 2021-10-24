@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_11",
 		"events": {
-			"person_cnt": 7,
+			"person_cnt": 8,
 			"warp_cnt": 3,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
@@ -116,7 +116,7 @@
 					"picture": "92",
 					"script_std": "PERSON_ITEM",
 					"field_3": 0,
-					"x": "18",
+					"x": "17",
 					"y": "18",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
@@ -131,7 +131,7 @@
 					"script": 0,
 					"flag": "FLAG_ROUTE_2_CLOUDS_ITEM_1",
 					"value": {
-						"item": "ITEM_SUESSBONBON",
+						"item": "ITEM_LOTUS_BALL",
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
@@ -187,6 +187,31 @@
 						"berry_tree_idx": 0,
 						"type": 0
 					}
+				},
+				{
+					"target_index": "8",
+					"picture": "96",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "6",
+					"y": "20",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_rock_smash",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
 				}
 			],
 			"warps": [
@@ -224,7 +249,7 @@
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_EAST",
-					"displacement": "19",
+					"displacement": "8",
 					"bank": "5",
 					"map_idx": "1",
 					"field_A": 0,
