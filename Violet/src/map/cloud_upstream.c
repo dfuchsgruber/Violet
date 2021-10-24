@@ -397,6 +397,7 @@ static gfx_frame *overworld_cloud_upstream_animations[] = {
 
 static void overworld_cloud_static_upstream_callback (oam_object *self) {
     if (save1->bank != self->private[2] || save1->map != self->private[3]) {
+        // Relocate to different bank
         oam_clear(self);
         return;
     }
