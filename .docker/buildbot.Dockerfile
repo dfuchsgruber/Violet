@@ -20,7 +20,7 @@ RUN \
         git clone https://github.com/ipatix/wav2agb.git && \
         directory=$(pwd) && \
         cd wav2agb && \
-        git checkout 3acb19c8d11d017d39d77a87fa8630d07945a6c4 && \
+        git checkout 8d09076bd53d32c15ef2829d157ba87556f50de0 && \
         make && \
         chmod 744 wav2agb && \
         install -t /usr/local/bin ./wav2agb && \
@@ -31,7 +31,7 @@ RUN \
         git clone https://github.com/pret/pokefirered.git && \
         directory=$(pwd) && \
         cd pokefirered/tools/mid2agb && \
-        git checkout 7b8c935926eec33651e0e265fa49f2f99fce918a && \
+        git checkout 471608b56abbdf70a452896a0d895ffa5b4b06f9 && \
         make && \
         chmod 744 mid2agb && \
         install -t /usr/local/bin ./mid2agb && \
