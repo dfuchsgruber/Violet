@@ -278,7 +278,7 @@ graphic pokemon_backsprites[POKEMON_CNT] = {
     {gfx_pkmn_species_270_pokemon_octillery_mega_backspriteTiles, 0x800, 270},
     {gfx_pkmn_species_271_pokemon_rasaff_mega_backspriteTiles, 0x800, 271},
     {gfx_pkmn_mega_ariados_backspriteTiles, 0x800, 272},
-    {gfx_pkmn_species_273_pokemon_111_backspriteTiles, 0x800, 273},
+    {gfx_pkmn_mega_firnontor_backspriteTiles, 0x800, 273},
     {gfx_pkmn_species_274_pokemon_112_backspriteTiles, 0x800, 274},
     {gfx_pkmn_species_275_pokemon_113_backspriteTiles, 0x800, 275},
     {gfx_pkmn_species_276_pokemon_114_backspriteTiles, 0x800, 276},

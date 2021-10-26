@@ -2112,7 +2112,7 @@
 		"species_link" : "POKEMON_MASKEREGEN",
 		"dex_number": 0
 	},
-	"POKEMON_AMPHARAOSM": {
+	"POKEMON_MEGA_AMPHAROS": {
 		"basestats": {
 			"hp": 90,
 			"attack": 95,
@@ -2148,7 +2148,7 @@
 		"species_link": "POKEMON_BANETTE",
 		"dex_number": 0
 	},
-	"POKEMON_BIBORM": {
+	"POKEMON_MEGA_BIBOR": {
 		"basestats": {
 			"hp": 65,
 			"attack": 160,
@@ -2202,7 +2202,7 @@
 		"species_link": "POKEMON_GEOWAZ",
 		"dex_number": 0
 	},
-	"POKEMON_SENGOM": {
+	"POKEMON_MEGA_SENGO": {
 		"basestats": {
 			"hp": 73,
 			"attack": 145,
@@ -2220,7 +2220,7 @@
 		"species_link": "POKEMON_SENGO",
 		"dex_number": 0
 	},
-	"POKEMON_VIPITISM": {
+	"POKEMON_MEGA_VIPITIS": {
 		"basestats": {
 			"hp": 73,
 			"attack": 140,
@@ -2238,7 +2238,7 @@
 		"species_link": "POKEMON_VIPITIS",
 		"dex_number": 0
 	},
-	"POKEMON_ZOBIRISM": {
+	"POKEMON_MEGA_ZOBIRIS": {
 		"basestats": {
 			"hp": 50,
 			"attack": 100,
@@ -2324,8 +2324,21 @@
 		"hidden_ability" : "Bedroher",
 		"species_link" : "POKEMON_ARIADOS"
 	},
-	"POKEMON_111": {
-		"species_link" : "POKEMON_POKEMON_0"
+	"POKEMON_MEGA_FIRNONTOR": {
+		"species_link" : "POKEMON_FIRNONTOR",
+		"basestats": {
+			"hp": 80,
+			"attack": 120,
+			"defense": 80,
+			"speed": 120,
+			"special-attack": 80,
+			"special-defense": 100
+		},
+		"ability_0": "Frostschicht",
+		"ability_1": null,
+		"hidden_ability" : "Frostschicht",
+		"exp_yield": 240,
+		"dex_number": 0
 	},
 	"POKEMON_112": {
 		"species_link" : "POKEMON_POKEMON_0"

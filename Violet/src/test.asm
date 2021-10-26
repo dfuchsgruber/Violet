@@ -37,8 +37,10 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
-	additem ITEM_LOTUS_BALL 1
+	setflag PLAYER_ABLE_TO_MEGA_EVOLVE
+	givepokemon POKEMON_FIRNONTOR 20 ITEM_FIRNONTORNIT 0 0 0
 	end
+	additem ITEM_LOTUS_BALL 1
 	setvar 0x8004 20
 	special SPECIAL_CUTSCENE_SHOW
 	waitstate

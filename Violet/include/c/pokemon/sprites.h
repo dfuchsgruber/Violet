@@ -56,15 +56,26 @@ u8 pokemon_oam_new(u16 species, s16 x, s16 y);
  */
 palette *pokemon_get_palette(pokemon *p);
 
+#define POKEMON_COORDINATE_SIZE(x) ((x) >> 3)
+
+typedef struct {
+    u8 width : 4;
+    u8 height : 4;
+    u8 y_offset;
+    u8 field2;
+    u8 field3;
+} pokemon_coordinate_t;
+
 graphic pokemon_frontsprites[POKEMON_CNT];
 graphic pokemon_backsprites[POKEMON_CNT];
 palette pokemon_pals[POKEMON_CNT];
 palette pokemon_shiny_pals[POKEMON_CNT];
 u8 pokemon_icon_usage[POKEMON_CNT];
 const void *pokemon_icons[POKEMON_CNT];
-u32 pokemon_player_y[POKEMON_CNT];
+
+pokemon_coordinate_t pokemon_player_y[POKEMON_CNT];
+pokemon_coordinate_t pokemon_enemy_y[POKEMON_CNT];
 u8 pokemon_altitude[POKEMON_CNT];
-u32 pokemon_enemy_y[POKEMON_CNT];
 u16 icon_pals[3][16];
 
 
@@ -341,7 +352,7 @@ u16 icon_pals[3][16];
     extern const unsigned short gfx_pkmn_species_270_pokemon_octillery_mega_frontspriteTiles[];
     extern const unsigned short gfx_pkmn_species_271_pokemon_rasaff_mega_frontspriteTiles[];
     extern const unsigned short gfx_pkmn_mega_ariados_frontspriteTiles[];
-    extern const unsigned short gfx_pkmn_species_273_pokemon_111_frontspriteTiles[];
+    extern const unsigned short gfx_pkmn_mega_firnontor_frontspriteTiles[];
     extern const unsigned short gfx_pkmn_species_274_pokemon_112_frontspriteTiles[];
     extern const unsigned short gfx_pkmn_species_275_pokemon_113_frontspriteTiles[];
     extern const unsigned short gfx_pkmn_species_276_pokemon_114_frontspriteTiles[];
@@ -784,7 +795,7 @@ u16 icon_pals[3][16];
     extern const unsigned short gfx_pkmn_species_270_pokemon_octillery_mega_backspriteTiles[];
     extern const unsigned short gfx_pkmn_species_271_pokemon_rasaff_mega_backspriteTiles[];
     extern const unsigned short gfx_pkmn_mega_ariados_backspriteTiles[];
-    extern const unsigned short gfx_pkmn_species_273_pokemon_111_backspriteTiles[];
+    extern const unsigned short gfx_pkmn_mega_firnontor_backspriteTiles[];
     extern const unsigned short gfx_pkmn_species_274_pokemon_112_backspriteTiles[];
     extern const unsigned short gfx_pkmn_species_275_pokemon_113_backspriteTiles[];
     extern const unsigned short gfx_pkmn_species_276_pokemon_114_backspriteTiles[];
@@ -1228,7 +1239,7 @@ u16 icon_pals[3][16];
     extern const unsigned short gfx_pkmn_species_270_pokemon_octillery_mega_frontspritePal[];
     extern const unsigned short gfx_pkmn_species_271_pokemon_rasaff_mega_frontspritePal[];
     extern const unsigned short gfx_pkmn_mega_ariados_frontspritePal[];
-    extern const unsigned short gfx_pkmn_species_273_pokemon_111_frontspritePal[];
+    extern const unsigned short gfx_pkmn_mega_firnontor_frontspritePal[];
     extern const unsigned short gfx_pkmn_species_274_pokemon_112_frontspritePal[];
     extern const unsigned short gfx_pkmn_species_275_pokemon_113_frontspritePal[];
     extern const unsigned short gfx_pkmn_species_276_pokemon_114_frontspritePal[];
@@ -1671,7 +1682,7 @@ u16 icon_pals[3][16];
     extern const unsigned short gfx_pkmn_species_270_pokemon_octillery_mega_backspritePal[];
     extern const unsigned short gfx_pkmn_species_271_pokemon_rasaff_mega_backspritePal[];
     extern const unsigned short gfx_pkmn_mega_ariados_backspritePal[];
-    extern const unsigned short gfx_pkmn_species_273_pokemon_111_backspritePal[];
+    extern const unsigned short gfx_pkmn_mega_firnontor_backspritePal[];
     extern const unsigned short gfx_pkmn_species_274_pokemon_112_backspritePal[];
     extern const unsigned short gfx_pkmn_species_275_pokemon_113_backspritePal[];
     extern const unsigned short gfx_pkmn_species_276_pokemon_114_backspritePal[];
@@ -2115,7 +2126,7 @@ u16 icon_pals[3][16];
     extern const unsigned short gfx_pkmn_species_270_pokemon_octillery_mega_iconTiles[];
     extern const unsigned short gfx_pkmn_species_271_pokemon_rasaff_mega_iconTiles[];
     extern const unsigned short gfx_pkmn_mega_ariados_iconTiles[];
-    extern const unsigned short gfx_pkmn_species_273_pokemon_111_iconTiles[];
+    extern const unsigned short gfx_pkmn_mega_firnontor_iconTiles[];
     extern const unsigned short gfx_pkmn_species_274_pokemon_112_iconTiles[];
     extern const unsigned short gfx_pkmn_species_275_pokemon_113_iconTiles[];
     extern const unsigned short gfx_pkmn_species_276_pokemon_114_iconTiles[];

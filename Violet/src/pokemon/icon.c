@@ -277,7 +277,7 @@
     gfx_pkmn_species_270_pokemon_octillery_mega_iconTiles,
     gfx_pkmn_species_271_pokemon_rasaff_mega_iconTiles,
     gfx_pkmn_mega_ariados_iconTiles,
-    gfx_pkmn_species_273_pokemon_111_iconTiles,
+    gfx_pkmn_mega_firnontor_iconTiles,
     gfx_pkmn_species_274_pokemon_112_iconTiles,
     gfx_pkmn_species_275_pokemon_113_iconTiles,
     gfx_pkmn_species_276_pokemon_114_iconTiles,
@@ -451,890 +451,447 @@
 };
 
 u8 pokemon_icon_usage[POKEMON_CNT] = {
-    // POKEMON_POKEMON_0
-    0x0,
-    // POKEMON_BISASAM
-    0x1,
-    // POKEMON_BISAKNOSP
-    0x1,
-    // POKEMON_BISAFLOR
-    0x1,
-    // POKEMON_GLUMANDA
-    0x0,
-    // POKEMON_GLUTEXO
-    0x0,
-    // POKEMON_GLURAK
-    0x0,
-    // POKEMON_SCHIGGY
-    0x0,
-    // POKEMON_SCHILLOK
-    0x2,
-    // POKEMON_TURTOK
-    0x2,
-    // POKEMON_DARTIRI
-    0x2,
-    // POKEMON_DARTIGNIS
-    0x2,
-    // POKEMON_FIARO
-    0x2,
-    // POKEMON_HORNLIU
-    0x1,
-    // POKEMON_KOKUNA
-    0x2,
-    // POKEMON_BIBOR
-    0x2,
-    // POKEMON_STARALILI
-    0x0,
-    // POKEMON_STARAVIA
-    0x0,
-    // POKEMON_STARAPTOR
-    0x0,
-    // POKEMON_BRONZEL
-    0x0,
-    // POKEMON_BRONZONG
-    0x0,
-    // POKEMON_MAEHIKEL
-    0x1,
-    // POKEMON_CHEVRUMM
-    0x1,
-    // POKEMON_PARAGONI
-    0x1,
-    // POKEMON_TROMBORK
-    0x1,
-    // POKEMON_PIKACHU
-    0x2,
-    // POKEMON_RAICHU
-    0x0,
-    // POKEMON_SANDAN
-    0x2,
-    // POKEMON_SANDAMER
-    0x2,
-    // POKEMON_NIDORANW
-    0x2,
-    // POKEMON_NIDORINA
-    0x2,
-    // POKEMON_NIDOQUEEN
-    0x2,
-    // POKEMON_NIDORANM
-    0x2,
-    // POKEMON_NIDORINO
-    0x2,
-    // POKEMON_NIDOKING
-    0x2,
-    // POKEMON_FLOETTE
-    0x1,
-    // POKEMON_FLORGES
-    0x0,
-    // POKEMON_VULPIX
-    0x2,
-    // POKEMON_VULNONA
-    0x1,
-    // POKEMON_PUMMELUFF
-    0x0,
-    // POKEMON_KNUDDELUFF
-    0x0,
-    // POKEMON_ZUBAT
-    0x2,
-    // POKEMON_GOLBAT
-    0x2,
-    // POKEMON_MYRAPLA
-    0x1,
-    // POKEMON_DUFLOR
-    0x0,
-    // POKEMON_GIFLOR
-    0x0,
-    // POKEMON_FOLIPURBA
-    0x1,
-    // POKEMON_FEELINARA
-    0x0,
-    // POKEMON_WATTZAPF
-    0x1,
-    // POKEMON_VOLTULA
-    0x1,
-    // POKEMON_DIGDA
-    0x2,
-    // POKEMON_DIGDRI
-    0x2,
-    // POKEMON_KASTADUR
-    0x2,
-    // POKEMON_TENTANTEL
-    0x2,
-    // POKEMON_ENTON
-    0x1,
-    // POKEMON_ENTORON
-    0x2,
-    // POKEMON_MENKI
-    0x1,
-    // POKEMON_RASAFF
-    0x2,
-    // POKEMON_FUKANO
-    0x0,
-    // POKEMON_ARKANI
-    0x0,
-    // POKEMON_GRAMOKLES
-    0x2,
-    // POKEMON_DUOKLES
-    0x1,
-    // POKEMON_DURENGARD
-    0x2,
-    // POKEMON_ABRA
-    0x2,
-    // POKEMON_KADABRA
-    0x2,
-    // POKEMON_SIMSALA
-    0x2,
-    // POKEMON_MACHOLLO
-    0x0,
-    // POKEMON_MASCHOCK
-    0x2,
-    // POKEMON_MACHOMEI
-    0x0,
-    // POKEMON_KNOFENSA
-    0x1,
-    // POKEMON_ULTRIGARIA
-    0x1,
-    // POKEMON_SARZENIA
-    0x1,
-    // POKEMON_TENTACHA
-    0x2,
-    // POKEMON_TENTOXA
-    0x2,
-    // POKEMON_KLEINSTEIN
-    0x1,
-    // POKEMON_GEOROK
-    0x1,
-    // POKEMON_GEOWAZ
-    0x1,
-    // POKEMON_PONITA
-    0x0,
-    // POKEMON_GALLOPA
-    0x0,
-    // POKEMON_FLEGMON
-    0x0,
-    // POKEMON_LAHMUS
-    0x0,
-    // POKEMON_MAGNETILO
-    0x0,
-    // POKEMON_MAGNETON
-    0x0,
-    // POKEMON_PORENTA
-    0x1,
-    // POKEMON_DODU
-    0x2,
-    // POKEMON_DODRI
-    0x2,
-    // POKEMON_JURBO
-    0x2,
-    // POKEMON_JUGONG
-    0x2,
-    // POKEMON_SLEIMA
-    0x2,
-    // POKEMON_SLEIMOK
-    0x2,
-    // POKEMON_MUSCHAS
-    0x2,
-    // POKEMON_AUSTOS
-    0x2,
-    // POKEMON_NEBULAK
-    0x2,
-    // POKEMON_ALPOLLO
-    0x2,
-    // POKEMON_GENGAR
-    0x2,
-    // POKEMON_ONIX
-    0x2,
-    // POKEMON_TRAUMATO
-    0x2,
-    // POKEMON_HYPNO
-    0x1,
-    // POKEMON_KRABBY
-    0x2,
-    // POKEMON_KINGLER
-    0x2,
-    // POKEMON_VOLTOBAL
-    0x0,
-    // POKEMON_LEKTROBAL
-    0x0,
-    // POKEMON_OWEI
-    0x0,
-    // POKEMON_KOKOWEI
-    0x1,
-    // POKEMON_TRAGOSSO
-    0x1,
-    // POKEMON_KNOGGA
-    0x1,
-    // POKEMON_KICKLEE
-    0x2,
-    // POKEMON_NOCKCHAN
-    0x2,
-    // POKEMON_SCHLURP
-    0x1,
-    // POKEMON_SMOGON
-    0x2,
-    // POKEMON_SMOGMOG
-    0x2,
-    // POKEMON_RIHORN
-    0x1,
-    // POKEMON_RIZEROS
-    0x1,
-    // POKEMON_CHANEIRA
-    0x0,
-    // POKEMON_ZOBIRIS
-    0x2,
-    // POKEMON_KANGAMA
-    0x1,
-    // POKEMON_SEEPER
-    0x0,
-    // POKEMON_SEEMON
-    0x0,
-    // POKEMON_QUABBEL
-    0x0,
-    // POKEMON_APOQUALLYP
-    0x0,
-    // POKEMON_STERNDU
-    0x2,
-    // POKEMON_STARMIE
-    0x2,
-    // POKEMON_TRAUNFUGIL
-    0x0,
-    // POKEMON_SICHLOR
-    0x1,
-    // POKEMON_GALAGLADI
-    0x1,
-    // POKEMON_ELEKTEK
-    0x1,
-    // POKEMON_MAGMAR
-    0x0,
-    // POKEMON_PINSIR
-    0x2,
-    // POKEMON_TAUROS
-    0x2,
-    // POKEMON_KARPADOR
-    0x0,
-    // POKEMON_GARADOS
-    0x0,
-    // POKEMON_LAPRAS
-    0x2,
-    // POKEMON_DITTO
-    0x2,
-    // POKEMON_EVOLI
-    0x2,
-    // POKEMON_AQUANA
-    0x0,
-    // POKEMON_BLITZA
-    0x0,
-    // POKEMON_FLAMARA
-    0x0,
-    // POKEMON_PORYGON
-    0x0,
-    // POKEMON_AMONITAS
-    0x0,
-    // POKEMON_AMOROSO
-    0x0,
-    // POKEMON_KABUTO
-    0x2,
-    // POKEMON_KABUTOPS
-    0x2,
-    // POKEMON_AERODACTYL
-    0x0,
-    // POKEMON_RELAXO
-    0x1,
-    // POKEMON_ARKTOS
-    0x0,
-    // POKEMON_ZAPDOS
-    0x0,
-    // POKEMON_LAVADOS
-    0x0,
-    // POKEMON_DRATINI
-    0x0,
-    // POKEMON_DRAGONIR
-    0x0,
-    // POKEMON_DRAGORAN
-    0x2,
-    // POKEMON_MEWTU
-    0x2,
-    // POKEMON_MEW
-    0x0,
-    // POKEMON_ENDIVIE
-    0x1,
-    // POKEMON_LORBLATT
-    0x1,
-    // POKEMON_MEGANIE
-    0x1,
-    // POKEMON_FEURIGEL
-    0x1,
-    // POKEMON_IGELAVAR
-    0x1,
-    // POKEMON_TORNUPTO
-    0x1,
-    // POKEMON_KARNIMANI
-    0x2,
-    // POKEMON_TYRACROC
-    0x2,
-    // POKEMON_IMPERGATOR
-    0x2,
-    // POKEMON_IGNIVOR
-    0x1,
-    // POKEMON_RAMOTH
-    0x1,
-    // POKEMON_GLAZIOLA
-    0x0,
-    // POKEMON_RESLADERO
-    0x0,
-    // POKEMON_LEDYBA
-    0x0,
-    // POKEMON_LEDIAN
-    0x0,
-    // POKEMON_WEBARAK
-    0x1,
-    // POKEMON_ARIADOS
-    0x0,
-    // POKEMON_IKSBAT
-    0x2,
-    // POKEMON_LAMPI
-    0x2,
-    // POKEMON_LANTURN
-    0x0,
-    // POKEMON_MAGNEZONE
-    0x0,
-    // POKEMON_TOGEKISS
-    0x1,
-    // POKEMON_FLABEBE
-    0x1,
-    // POKEMON_TOGEPI
-    0x2,
-    // POKEMON_TOGETIC
-    0x2,
-    // POKEMON_NATU
-    0x0,
-    // POKEMON_XATU
-    0x0,
-    // POKEMON_VOLTILAMM
-    0x2,
-    // POKEMON_WAATY
-    0x0,
-    // POKEMON_AMPHAROS
-    0x0,
-    // POKEMON_BLUBELLA
-    0x1,
-    // POKEMON_MARILL
-    0x2,
-    // POKEMON_AZUMARILL
-    0x2,
-    // POKEMON_MOGELBAUM
-    0x1,
-    // POKEMON_CLAVION
-    0x2,
-    // POKEMON_LICHTEL
-    0x2,
-    // POKEMON_LATERNECTO
-    0x2,
-    // POKEMON_SKLELABRA
-    0x2,
-    // POKEMON_GRIFFEL
-    0x2,
-    // POKEMON_SHNEBEDECK
-    0x1,
-    // POKEMON_REXBLISAR
-    0x1,
-    // POKEMON_AMBIDIFFEL
-    0x2,
-    // POKEMON_FELINO
-    0x0,
-    // POKEMON_MORLORD
-    0x0,
-    // POKEMON_PSIANA
-    0x2,
-    // POKEMON_NACHTARA
-    0x2,
-    // POKEMON_KRAMURX
-    0x2,
-    // POKEMON_LASCHOKING
-    0x0,
-    // POKEMON_KRAMSHEF
-    0x2,
-    // POKEMON_ICOGNITO
-    0x0,
-    // POKEMON_FROSDEDJE
-    0x0,
-    // POKEMON_SKORGRO
-    0x2,
-    // POKEMON_TANNZA
-    0x0,
-    // POKEMON_FORSTELLKA
-    0x2,
-    // POKEMON_ELEVOLTEK
-    0x1,
-    // POKEMON_SKORGLA
-    0x2,
-    // POKEMON_STAHLOS
-    0x0,
-    // POKEMON_SNUBBULL
-    0x0,
-    // POKEMON_GRANBULL
-    0x2,
-    // POKEMON_MAMUTEL
-    0x2,
-    // POKEMON_SCHEROX
-    0x0,
-    // POKEMON_FLUFFELUFF
-    0x0,
-    // POKEMON_SKARABORN
-    0x2,
-    // POKEMON_KRYPPUK
-    0x0,
-    // POKEMON_TEDDIURSA
-    0x0,
-    // POKEMON_URSARING
-    0x2,
-    // POKEMON_SCHNECKMAG
-    0x0,
-    // POKEMON_MAGCARGO
-    0x0,
-    // POKEMON_QUIEKEL
-    0x2,
-    // POKEMON_KEIFEL
-    0x2,
-    // POKEMON_CORASONN
-    0x2,
-    // POKEMON_REMORAID
-    0x0,
-    // POKEMON_OCTILLERY
-    0x0,
-    // POKEMON_BOTOGEL
-    0x0,
-    // POKEMON_SCHLURPLEK
-    0x1,
-    // POKEMON_PANZAERON
-    0x0,
-    // POKEMON_HUNDUSTER
-    0x0,
-    // POKEMON_HUNDEMON
-    0x0,
-    // POKEMON_SEEDRAKING
-    0x0,
-    // POKEMON_PHANPY
-    0x0,
-    // POKEMON_DONPHAN
-    0x0,
-    // POKEMON_PORYGON2
-    0x0,
-    // POKEMON_VOLUMINAS
-    0x0,
-    // POKEMON_TRAUNMAGIL
-    0x2,
-    // POKEMON_RABAUZ
-    0x2,
-    // POKEMON_KAPOERA
-    0x2,
-    // POKEMON_SEN_LONG
-    0x0,
-    // POKEMON_ELEKID
-    0x1,
-    // POKEMON_MAGBY
-    0x1,
-    // POKEMON_MILTANK
-    0x1,
-    // POKEMON_HEITEIRA
-    0x1,
-    // POKEMON_RAIKOU
-    0x0,
-    // POKEMON_ENTEI
-    0x2,
-    // POKEMON_SUICUNE
-    0x0,
-    // POKEMON_LARVITAR
-    0x1,
-    // POKEMON_PUPITAR
-    0x0,
-    // POKEMON_DESPOTAR
-    0x1,
-    // POKEMON_LUGIA
-    0x0,
-    // POKEMON_HO_OH
-    0x1,
-    // POKEMON_CELEBI
-    0x1,
-    // POKEMON_ROTOM_HEAT
-    0x0,
-    // POKEMON_ROTOM_WASH
-    0x0,
-    // POKEMON_ROTOM_FORST
-    0x0,
-    // POKEMON_ROTOM_WIND
-    0x0,
-    // POKEMON_ROTOM_GRASS
-    0x0,
-    // POKEMON_DURENGARD_OFFENSIVE
-    0x2,
-    // POKEMONmega_sandamer_
-    0x2,
-    // POKEMON_MEGA_LAHMUS
-    0x0,
-    // POKEMON_MEGA_MASKEREGEN
-    0x0,
-    // POKEMON_AMPHARAOSM
-    0x1,
-    // POKEMON_BANETTE_MEGA
-    0x0,
-    // POKEMON_BIBORM
-    0x0,
-    // POKEMON_ALTARIAM
-    0x0,
-    // POKEMON_GEOWAZM
-    0x1,
-    // POKEMON_SENGOM
-    0x0,
-    // POKEMON_VIPITISM
-    0x2,
-    // POKEMON_ZOBIRISM
-    0x2,
-    // POKEMON_tropius_mega
-    0x1,
-    // pokemon_octillery_mega
-    0x0,
-    // pokemon_rasaff_mega
-    0x2,
-    // mega_ariados
-    0x1,
-    // POKEMON_111
-    0x0,
-    // POKEMON_112
-    0x0,
-    // POKEMON_113
-    0x0,
-    // POKEMON_114
-    0x0,
-    // POKEMON_LOCKSCHAL
-    0x1,
-    // POKEMON_STICHSCHAL
-    0x1,
-    // POKEMON_STAHLSTICH
-    0x1,
-    // POKEMON_WELUNO
-    0x0,
-    // POKEMON_ORTHODOS
-    0x0,
-    // POKEMON_ZERBERTRES
-    0x0,
-    // POKEMON_SEEKID
-    0x2,
-    // POKEMON_SEESKULL
-    0x2,
-    // POKEMON_SKULLYDRA
-    0x2,
-    // POKEMON_FIFFYEN
-    0x2,
-    // POKEMON_MAGNAYEN
-    0x2,
-    // POKEMON_ZIGZACHS
-    0x2,
-    // POKEMON_GERADAKS
-    0x2,
-    // POKEMON_WAUMPEL
-    0x0,
-    // POKEMON_SCHALOKO
-    0x2,
-    // POKEMON_PAPINELLA
-    0x0,
-    // POKEMON_PANEKON
-    0x2,
-    // POKEMON_PUDOX
-    0x1,
-    // POKEMON_LOTURZEL
-    0x1,
-    // POKEMON_LOMBRERO
-    0x1,
-    // POKEMON_KAPPALORES
-    0x1,
-    // POKEMON_SAMURZEL
-    0x1,
-    // POKEMON_BLANAS
-    0x1,
-    // POKEMON_TENGULIST
-    0x0,
-    // POKEMON_NINCADA
-    0x1,
-    // POKEMON_NINJASK
-    0x1,
-    // POKEMON_NINJATOM
-    0x1,
-    // POKEMON_SCHWALBINI
-    0x2,
-    // POKEMON_SCHWALBOSS
-    0x2,
-    // POKEMON_KNILZ
-    0x1,
-    // POKEMON_KAPILZ
-    0x1,
-    // POKEMON_PANDIR
-    0x1,
-    // POKEMON_WINGULL
-    0x0,
-    // POKEMON_PELIPPER
-    0x0,
-    // POKEMON_GEHWEIHER
-    0x2,
-    // POKEMON_MASKEREGEN
-    0x0,
-    // POKEMON_WAILMER
-    0x2,
-    // POKEMON_WAILORD
-    0x0,
-    // POKEMON_ENECO
-    0x0,
-    // POKEMON_ENEKORO
-    0x2,
-    // POKEMON_KECLEON
-    0x1,
-    // POKEMON_PUPPANCE
-    0x1,
-    // POKEMON_LEPUMENTAS
-    0x0,
-    // POKEMON_NASGNET
-    0x0,
-    // POKEMON_MAGBRANT
-    0x0,
-    // POKEMON_ZWIRRFINST
-    0x2,
-    // POKEMON_SCHMERBE
-    0x0,
-    // POKEMON_WELSAR
-    0x0,
-    // POKEMON_LIEBISKUS
-    0x0,
-    // POKEMON_KREBSCORPS
-    0x0,
-    // POKEMON_KREBUTACK
-    0x0,
-    // POKEMON_BARSCHWA
-    0x2,
-    // POKEMON_MILOTIC
-    0x0,
-    // POKEMON_KANIVANHA
-    0x0,
-    // POKEMON_TOHAIDO
-    0x0,
-    // POKEMON_KNACKLION
-    0x1,
-    // POKEMON_VIBRAVA
-    0x1,
-    // POKEMON_LIBELLDRA
-    0x1,
-    // POKEMON_RIOLU
-    0x2,
-    // POKEMON_LUCARIO
-    0x2,
-    // POKEMON_FRIZELBLIZ
-    0x1,
-    // POKEMON_VOLTENSO
-    0x0,
-    // POKEMON_CAMAUB
-    0x1,
-    // POKEMON_CAMERUPT
-    0x0,
-    // POKEMON_SEEMOPS
-    0x2,
-    // POKEMON_SEEJONG
-    0x2,
-    // POKEMON_WALRAISA
-    0x0,
-    // POKEMON_TUSKA
-    0x1,
-    // POKEMON_NOKTUSKA
-    0x1,
-    // POKEMON_SCHNEPPKE
-    0x2,
-    // POKEMON_FIRNONTOR
-    0x0,
-    // POKEMON_LUNASTEIN
-    0x1,
-    // POKEMON_SONNFEL
-    0x0,
-    // POKEMON_AZURILL
-    0x2,
-    // POKEMON_SPOINK
-    0x0,
-    // POKEMON_GROINK
-    0x2,
-    // POKEMON_PICHU
-    0x1,
-    // POKEMON_ROTOM
-    0x0,
-    // POKEMON_FLUNKIFER
-    0x2,
-    // POKEMON_MEDITIE
-    0x0,
-    // POKEMON_MEDITALIS
-    0x0,
-    // POKEMON_WABLU
-    0x0,
-    // POKEMON_ALTARIA
-    0x0,
-    // POKEMON_ISSO
-    0x2,
-    // POKEMON_ZWIRRLICHT
-    0x0,
-    // POKEMON_ZWIRRKLOP
-    0x0,
-    // POKEMON_ROSELIA
-    0x0,
-    // POKEMON_BUMMELZ
-    0x2,
-    // POKEMON_MUNTIER
-    0x2,
-    // POKEMON_LETARKING
-    0x1,
-    // POKEMON_MOLUNK
-    0x0,
-    // POKEMON_AMFIRA
-    0x0,
-    // POKEMON_TROPIUS
-    0x1,
-    // POKEMON_KAUMALAT
-    0x0,
-    // POKEMON_KNARKSEL
-    0x0,
-    // POKEMON_KNAKRACK
-    0x0,
-    // POKEMON_PERLU
-    0x0,
-    // POKEMON_AALABYSS
-    0x0,
-    // POKEMON_SAGANABYSS
-    0x0,
-    // POKEMON_ABSOL
-    0x0,
-    // POKEMON_SHUPPET
-    0x0,
-    // POKEMON_BANETTE
-    0x0,
-    // POKEMON_VIPITIS
-    0x2,
-    // POKEMON_SENGO
-    0x0,
-    // POKEMON_RELICANTH
-    0x1,
-    // POKEMON_STOLLUNIOR
-    0x2,
-    // POKEMON_STOLLRAK
-    0x2,
-    // POKEMON_STOLLOSS
-    0x2,
-    // POKEMON_FORMEO
-    0x0,
-    // POKEMON_VOLBEAT
-    0x0,
-    // POKEMON_ILLUMISE
-    0x1,
-    // POKEMON_LILIEP
-    0x2,
-    // POKEMON_WIELIE
-    0x0,
-    // POKEMON_ANORITH
-    0x0,
-    // POKEMON_ARMALDO
-    0x0,
-    // POKEMON_TRASLA
-    0x1,
-    // POKEMON_KIRLIA
-    0x1,
-    // POKEMON_GUARDEVOIR
-    0x1,
-    // POKEMON_KINDWURM
-    0x2,
-    // POKEMON_DRASCHEL
-    0x2,
-    // POKEMON_BRUTALANDA
-    0x0,
-    // POKEMON_TANHEL
-    0x0,
-    // POKEMON_METANG
-    0x0,
-    // POKEMON_METAGROSS
-    0x0,
-    // POKEMON_REGIROCK
-    0x2,
-    // POKEMON_REGICE
-    0x2,
-    // POKEMON_REGISTEEL
-    0x2,
-    // POKEMON_KYOGRE
-    0x2,
-    // POKEMON_GROUDON
-    0x0,
-    // POKEMON_RAYQUAZA
-    0x1,
-    // POKEMON_LATIAS
-    0x0,
-    // POKEMON_LATIOS
-    0x2,
-    // POKEMON_JIRACHI
-    0x0,
-    // POKEMON_DEOXYS
-    0x0,
-    // POKEMON_PALIMPALIM
-    0x0,
-    // POKEMON_EGG
-    0x1,
-    // POKEMON_ICOGNITO_B
-    0x0,
-    // POKEMON_ICOGNITO_C
-    0x0,
-    // POKEMON_ICOGNITO_D
-    0x0,
-    // POKEMON_ICOGNITO_E
-    0x0,
-    // POKEMON_ICOGNITO_F
-    0x0,
-    // POKEMON_ICOGNITO_G
-    0x0,
-    // POKEMON_ICOGNITO_H
-    0x0,
-    // POKEMON_ICOGNITO_I
-    0x0,
-    // POKEMON_ICOGNITO_J
-    0x0,
-    // POKEMON_ICOGNITO_K
-    0x0,
-    // POKEMON_ICOGNITO_L
-    0x0,
-    // POKEMON_ICOGNITO_M
-    0x0,
-    // POKEMON_ICOGNITO_N
-    0x0,
-    // POKEMON_ICOGNITO_O
-    0x0,
-    // POKEMON_ICOGNITO_P
-    0x0,
-    // POKEMON_ICOGNITO_Q
-    0x0,
-    // POKEMON_ICOGNITO_R
-    0x0,
-    // POKEMON_ICOGNITO_S
-    0x0,
-    // POKEMON_ICOGNITO_T
-    0x0,
-    // POKEMON_ICOGNITO_U
-    0x0,
-    // POKEMON_ICOGNITO_V
-    0x0,
-    // POKEMON_ICOGNITO_W
-    0x0,
-    // POKEMON_ICOGNITO_X
-    0x0,
-    // POKEMON_ICOGNITO_Y
-    0x0,
-    // POKEMON_ICOGNITO_Z
-    0x0,
-    // POKEMON_ICOGNITO_EXCLAMATION
-    0x0,
-    // POKEMON_ICOGNITO_QUESTION
-    0x0,
-    // POKEMON_GROUDON_REGENT
-    0x0,
-	// POKEMON_KECLEON_PURPLE
-	0x2,
-    // POKEMON_CRYSTAL_ONIX
-    0x2,
+    [POKEMON_POKEMON_0] = 0,
+    [POKEMON_BISASAM] = 1,
+    [POKEMON_BISAKNOSP] = 1,
+    [POKEMON_BISAFLOR] = 1,
+    [POKEMON_GLUMANDA] = 0,
+    [POKEMON_GLUTEXO] = 0,
+    [POKEMON_GLURAK] = 0,
+    [POKEMON_SCHIGGY] = 0,
+    [POKEMON_SCHILLOK] = 2,
+    [POKEMON_TURTOK] = 2,
+    [POKEMON_DARTIRI] = 2,
+    [POKEMON_DARTIGNIS] = 2,
+    [POKEMON_FIARO] = 2,
+    [POKEMON_HORNLIU] = 1,
+    [POKEMON_KOKUNA] = 2,
+    [POKEMON_BIBOR] = 2,
+    [POKEMON_STARALILI] = 0,
+    [POKEMON_STARAVIA] = 0,
+    [POKEMON_STARAPTOR] = 0,
+    [POKEMON_BRONZEL] = 0,
+    [POKEMON_BRONZONG] = 0,
+    [POKEMON_MAEHIKEL] = 1,
+    [POKEMON_CHEVRUMM] = 1,
+    [POKEMON_PARAGONI] = 1,
+    [POKEMON_TROMBORK] = 1,
+    [POKEMON_PIKACHU] = 2,
+    [POKEMON_RAICHU] = 0,
+    [POKEMON_SANDAN] = 2,
+    [POKEMON_SANDAMER] = 2,
+    [POKEMON_NIDORANW] = 2,
+    [POKEMON_NIDORINA] = 2,
+    [POKEMON_NIDOQUEEN] = 2,
+    [POKEMON_NIDORANM] = 2,
+    [POKEMON_NIDORINO] = 2,
+    [POKEMON_NIDOKING] = 2,
+    [POKEMON_FLOETTE] = 1,
+    [POKEMON_FLORGES] = 0,
+    [POKEMON_VULPIX] = 2,
+    [POKEMON_VULNONA] = 1,
+    [POKEMON_PUMMELUFF] = 0,
+    [POKEMON_KNUDDELUFF] = 0,
+    [POKEMON_ZUBAT] = 2,
+    [POKEMON_GOLBAT] = 2,
+    [POKEMON_MYRAPLA] = 1,
+    [POKEMON_DUFLOR] = 0,
+    [POKEMON_GIFLOR] = 0,
+    [POKEMON_FOLIPURBA] = 1,
+    [POKEMON_FEELINARA] = 0,
+    [POKEMON_WATTZAPF] = 1,
+    [POKEMON_VOLTULA] = 1,
+    [POKEMON_DIGDA] = 2,
+    [POKEMON_DIGDRI] = 2,
+    [POKEMON_KASTADUR] = 2,
+    [POKEMON_TENTANTEL] = 2,
+    [POKEMON_ENTON] = 1,
+    [POKEMON_ENTORON] = 2,
+    [POKEMON_MENKI] = 1,
+    [POKEMON_RASAFF] = 2,
+    [POKEMON_FUKANO] = 0,
+    [POKEMON_ARKANI] = 0,
+    [POKEMON_GRAMOKLES] = 2,
+    [POKEMON_DUOKLES] = 1,
+    [POKEMON_DURENGARD] = 2,
+    [POKEMON_ABRA] = 2,
+    [POKEMON_KADABRA] = 2,
+    [POKEMON_SIMSALA] = 2,
+    [POKEMON_MACHOLLO] = 0,
+    [POKEMON_MASCHOCK] = 2,
+    [POKEMON_MACHOMEI] = 0,
+    [POKEMON_KNOFENSA] = 1,
+    [POKEMON_ULTRIGARIA] = 1,
+    [POKEMON_SARZENIA] = 1,
+    [POKEMON_TENTACHA] = 2,
+    [POKEMON_TENTOXA] = 2,
+    [POKEMON_KLEINSTEIN] = 1,
+    [POKEMON_GEOROK] = 1,
+    [POKEMON_GEOWAZ] = 1,
+    [POKEMON_PONITA] = 0,
+    [POKEMON_GALLOPA] = 0,
+    [POKEMON_FLEGMON] = 0,
+    [POKEMON_LAHMUS] = 0,
+    [POKEMON_MAGNETILO] = 0,
+    [POKEMON_MAGNETON] = 0,
+    [POKEMON_PORENTA] = 1,
+    [POKEMON_DODU] = 2,
+    [POKEMON_DODRI] = 2,
+    [POKEMON_JUROB] = 2,
+    [POKEMON_JUGONG] = 2,
+    [POKEMON_SLEIMA] = 2,
+    [POKEMON_SLEIMOK] = 2,
+    [POKEMON_MUSCHAS] = 2,
+    [POKEMON_AUSTOS] = 2,
+    [POKEMON_NEBULAK] = 2,
+    [POKEMON_ALPOLLO] = 2,
+    [POKEMON_GENGAR] = 2,
+    [POKEMON_ONIX] = 2,
+    [POKEMON_TRAUMATO] = 2,
+    [POKEMON_HYPNO] = 1,
+    [POKEMON_KRABBY] = 2,
+    [POKEMON_KINGLER] = 2,
+    [POKEMON_VOLTOBAL] = 0,
+    [POKEMON_LEKTROBAL] = 0,
+    [POKEMON_OWEI] = 0,
+    [POKEMON_KOKOWEI] = 1,
+    [POKEMON_TRAGOSSO] = 1,
+    [POKEMON_KNOGGA] = 1,
+    [POKEMON_KICKLEE] = 2,
+    [POKEMON_NOCKCHAN] = 2,
+    [POKEMON_SCHLURP] = 1,
+    [POKEMON_SMOGON] = 2,
+    [POKEMON_SMOGMOG] = 2,
+    [POKEMON_RIHORN] = 1,
+    [POKEMON_RIZEROS] = 1,
+    [POKEMON_CHANEIRA] = 0,
+    [POKEMON_ZOBIRIS] = 2,
+    [POKEMON_KANGAMA] = 1,
+    [POKEMON_SEEPER] = 0,
+    [POKEMON_SEEMON] = 0,
+    [POKEMON_QUABBEL] = 0,
+    [POKEMON_APOQUALLYP] = 0,
+    [POKEMON_STERNDU] = 2,
+    [POKEMON_STARMIE] = 2,
+    [POKEMON_TRAUNFUGIL] = 0,
+    [POKEMON_SICHLOR] = 1,
+    [POKEMON_GALAGLADI] = 1,
+    [POKEMON_ELEKTEK] = 1,
+    [POKEMON_MAGMAR] = 0,
+    [POKEMON_PINSIR] = 2,
+    [POKEMON_TAUROS] = 2,
+    [POKEMON_KARPADOR] = 0,
+    [POKEMON_GARADOS] = 0,
+    [POKEMON_LAPRAS] = 2,
+    [POKEMON_DITTO] = 2,
+    [POKEMON_EVOLI] = 2,
+    [POKEMON_AQUANA] = 0,
+    [POKEMON_BLITZA] = 0,
+    [POKEMON_FLAMARA] = 0,
+    [POKEMON_PORYGON] = 0,
+    [POKEMON_AMONITAS] = 0,
+    [POKEMON_AMOROSO] = 0,
+    [POKEMON_KABUTO] = 2,
+    [POKEMON_KABUTOPS] = 2,
+    [POKEMON_AERODACTYL] = 0,
+    [POKEMON_RELAXO] = 1,
+    [POKEMON_ARKTOS] = 0,
+    [POKEMON_ZAPDOS] = 0,
+    [POKEMON_LAVADOS] = 0,
+    [POKEMON_DRATINI] = 0,
+    [POKEMON_DRAGONIR] = 0,
+    [POKEMON_DRAGORAN] = 2,
+    [POKEMON_MEWTU] = 2,
+    [POKEMON_MEW] = 0,
+    [POKEMON_ENDIVIE] = 1,
+    [POKEMON_LORBLATT] = 1,
+    [POKEMON_MEGANIE] = 1,
+    [POKEMON_FEURIGEL] = 1,
+    [POKEMON_IGELAVAR] = 1,
+    [POKEMON_TORNUPTO] = 1,
+    [POKEMON_KARNIMANI] = 2,
+    [POKEMON_TYRACROC] = 2,
+    [POKEMON_IMPERGATOR] = 2,
+    [POKEMON_IGNIVOR] = 1,
+    [POKEMON_RAMOTH] = 1,
+    [POKEMON_GLAZIOLA] = 0,
+    [POKEMON_RESLADERO] = 0,
+    [POKEMON_LEDYBA] = 0,
+    [POKEMON_LEDIAN] = 0,
+    [POKEMON_WEBARAK] = 1,
+    [POKEMON_ARIADOS] = 0,
+    [POKEMON_IKSBAT] = 2,
+    [POKEMON_LAMPI] = 2,
+    [POKEMON_LANTURN] = 0,
+    [POKEMON_MAGNEZONE] = 0,
+    [POKEMON_TOGEKISS] = 1,
+    [POKEMON_FLABEBE] = 1,
+    [POKEMON_TOGEPI] = 2,
+    [POKEMON_TOGETIC] = 2,
+    [POKEMON_NATU] = 0,
+    [POKEMON_XATU] = 0,
+    [POKEMON_VOLTILAMM] = 2,
+    [POKEMON_WAATY] = 0,
+    [POKEMON_AMPHAROS] = 0,
+    [POKEMON_BLUBELLA] = 1,
+    [POKEMON_MARILL] = 2,
+    [POKEMON_AZUMARILL] = 2,
+    [POKEMON_MOGELBAUM] = 1,
+    [POKEMON_CLAVION] = 2,
+    [POKEMON_LICHTEL] = 2,
+    [POKEMON_LATERNECTO] = 2,
+    [POKEMON_SKELABRA] = 2,
+    [POKEMON_GRIFFEL] = 2,
+    [POKEMON_SHNEBEDECK] = 1,
+    [POKEMON_REXBLISAR] = 1,
+    [POKEMON_AMBIDIFFEL] = 2,
+    [POKEMON_FELINO] = 0,
+    [POKEMON_MORLORD] = 0,
+    [POKEMON_PSIANA] = 2,
+    [POKEMON_NACHTARA] = 2,
+    [POKEMON_KRAMURX] = 2,
+    [POKEMON_LASCHOKING] = 0,
+    [POKEMON_KRAMSHEF] = 2,
+    [POKEMON_ICOGNITO] = 0,
+    [POKEMON_FROSDEDJE] = 0,
+    [POKEMON_SKORGRO] = 2,
+    [POKEMON_TANNZA] = 0,
+    [POKEMON_FORSTELLKA] = 2,
+    [POKEMON_ELEVOLTEK] = 1,
+    [POKEMON_SKORGLA] = 2,
+    [POKEMON_STAHLOS] = 0,
+    [POKEMON_SNUBBULL] = 0,
+    [POKEMON_GRANBULL] = 2,
+    [POKEMON_MAMUTEL] = 2,
+    [POKEMON_SCHEROX] = 0,
+    [POKEMON_FLUFFELUFF] = 0,
+    [POKEMON_SKARABORN] = 2,
+    [POKEMON_KRYPPUK] = 0,
+    [POKEMON_TEDDIURSA] = 0,
+    [POKEMON_URSARING] = 2,
+    [POKEMON_SCHNECKMAG] = 0,
+    [POKEMON_MAGCARGO] = 0,
+    [POKEMON_QUIEKEL] = 2,
+    [POKEMON_KEIFEL] = 2,
+    [POKEMON_MAMPFAXO] = 2,
+    [POKEMON_REMORAID] = 0,
+    [POKEMON_OCTILLERY] = 0,
+    [POKEMON_BOTOGEL] = 0,
+    [POKEMON_SCHLURPLEK] = 1,
+    [POKEMON_PANZAERON] = 0,
+    [POKEMON_HUNDUSTER] = 0,
+    [POKEMON_HUNDEMON] = 0,
+    [POKEMON_SEEDRAKING] = 0,
+    [POKEMON_PHANPY] = 0,
+    [POKEMON_DONPHAN] = 0,
+    [POKEMON_PORYGON2] = 0,
+    [POKEMON_VOLUMINAS] = 0,
+    [POKEMON_TRAUNMAGIL] = 2,
+    [POKEMON_RABAUZ] = 2,
+    [POKEMON_KAPOERA] = 2,
+    [POKEMON_SEN_LONG] = 0,
+    [POKEMON_ELEKID] = 1,
+    [POKEMON_MAGBY] = 1,
+    [POKEMON_MILTANK] = 1,
+    [POKEMON_HEITEIRA] = 1,
+    [POKEMON_RAIKOU] = 0,
+    [POKEMON_ENTEI] = 2,
+    [POKEMON_SUICUNE] = 0,
+    [POKEMON_LARVITAR] = 1,
+    [POKEMON_PUPITAR] = 0,
+    [POKEMON_DESPOTAR] = 1,
+    [POKEMON_LUGIA] = 0,
+    [POKEMON_HO_OH] = 1,
+    [POKEMON_CELEBI] = 1,
+    [POKEMON_ROTOM_HEAT] = 0,
+    [POKEMON_ROTOM_WASH] = 0,
+    [POKEMON_ROTOM_FORST] = 0,
+    [POKEMON_ROTOM_WIND] = 0,
+    [POKEMON_ROTOM_GRASS] = 0,
+    [POKEMON_DURENGARD_OFFENSIVE] = 2,
+    [POKEMON_MEGA_SANDAMER] = 2,
+    [POKEMON_MEGA_LAHMUS] = 0,
+    [POKEMON_MEGA_MASKEREGEN] = 0,
+    [POKEMON_MEGA_AMPHAROS] = 1,
+    [POKEMON_MEGA_BANETTE] = 0,
+    [POKEMON_MEGA_BIBOR] = 0,
+    [POKEMON_MEGA_ALTARIA] = 0,
+    [POKEMON_MEGA_GEOWAZ] = 1,
+    [POKEMON_MEGA_SENGO] = 0,
+    [POKEMON_MEGA_VIPITIS] = 2,
+    [POKEMON_MEGA_ZOBIRIS] = 2,
+    [POKEMON_MEGA_TROPIUS] = 1,
+    [POKEMON_MEGA_OCTILLERY] = 0,
+    [POKEMON_MEGA_RASAFF] = 2,
+    [POKEMON_MEGA_ARIADOS] = 1,
+    [POKEMON_MEGA_FIRNONTOR] = 0,
+    [POKEMON_112] = 0,
+    [POKEMON_113] = 0,
+    [POKEMON_114] = 0,
+    [POKEMON_LOCKSCHAL] = 1,
+    [POKEMON_STICHSCHAL] = 1,
+    [POKEMON_STAHLSTICH] = 1,
+    [POKEMON_WELUNO] = 0,
+    [POKEMON_ORTHODOS] = 0,
+    [POKEMON_ZERBERTRES] = 0,
+    [POKEMON_SEEKID] = 2,
+    [POKEMON_SEESKULL] = 2,
+    [POKEMON_SKULLYDRA] = 2,
+    [POKEMON_FIFFYEN] = 2,
+    [POKEMON_MAGNAYEN] = 2,
+    [POKEMON_ZIGZACHS] = 2,
+    [POKEMON_GERADAKS] = 2,
+    [POKEMON_WAUMPEL] = 0,
+    [POKEMON_SCHALOKO] = 2,
+    [POKEMON_PAPINELLA] = 0,
+    [POKEMON_PANEKON] = 2,
+    [POKEMON_PUDOX] = 1,
+    [POKEMON_LOTURZEL] = 1,
+    [POKEMON_LOMBRERO] = 1,
+    [POKEMON_KAPPALORES] = 1,
+    [POKEMON_SAMURZEL] = 1,
+    [POKEMON_BLANAS] = 1,
+    [POKEMON_TENGULIST] = 0,
+    [POKEMON_NINCADA] = 1,
+    [POKEMON_NINJASK] = 1,
+    [POKEMON_NINJATOM] = 1,
+    [POKEMON_SCHWALBINI] = 2,
+    [POKEMON_SCHWALBOSS] = 2,
+    [POKEMON_KNILZ] = 1,
+    [POKEMON_KAPILZ] = 1,
+    [POKEMON_PANDIR] = 1,
+    [POKEMON_WINGULL] = 0,
+    [POKEMON_PELIPPER] = 0,
+    [POKEMON_GEHWEIHER] = 2,
+    [POKEMON_MASKEREGEN] = 0,
+    [POKEMON_WAILMER] = 2,
+    [POKEMON_WAILORD] = 0,
+    [POKEMON_ENECO] = 0,
+    [POKEMON_ENEKORO] = 2,
+    [POKEMON_KECLEON] = 1,
+    [POKEMON_PUPPANCE] = 1,
+    [POKEMON_LEPUMENTAS] = 0,
+    [POKEMON_NASGNET] = 0,
+    [POKEMON_MAGBRANT] = 0,
+    [POKEMON_ZWIRRFINST] = 2,
+    [POKEMON_SCHMERBE] = 0,
+    [POKEMON_WELSAR] = 0,
+    [POKEMON_RIHORNIOR] = 0,
+    [POKEMON_KREBSCORPS] = 0,
+    [POKEMON_KREBUTACK] = 0,
+    [POKEMON_BARSCHWA] = 2,
+    [POKEMON_MILOTIC] = 0,
+    [POKEMON_KANIVANHA] = 0,
+    [POKEMON_TOHAIDO] = 0,
+    [POKEMON_KNACKLION] = 1,
+    [POKEMON_VIBRAVA] = 1,
+    [POKEMON_LIBELLDRA] = 1,
+    [POKEMON_RIOLU] = 2,
+    [POKEMON_LUCARIO] = 2,
+    [POKEMON_FRIZELBLIZ] = 1,
+    [POKEMON_VOLTENSO] = 0,
+    [POKEMON_CAMAUB] = 1,
+    [POKEMON_CAMERUPT] = 0,
+    [POKEMON_SEEMOPS] = 2,
+    [POKEMON_SEEJONG] = 2,
+    [POKEMON_WALRAISA] = 0,
+    [POKEMON_TUSKA] = 1,
+    [POKEMON_NOKTUSKA] = 1,
+    [POKEMON_SCHNEPPKE] = 2,
+    [POKEMON_FIRNONTOR] = 0,
+    [POKEMON_LUNASTEIN] = 1,
+    [POKEMON_SONNFEL] = 0,
+    [POKEMON_AZURILL] = 2,
+    [POKEMON_SPOINK] = 0,
+    [POKEMON_GROINK] = 2,
+    [POKEMON_PICHU] = 1,
+    [POKEMON_ROTOM] = 0,
+    [POKEMON_FLUNKIFER] = 2,
+    [POKEMON_MEDITIE] = 0,
+    [POKEMON_MEDITALIS] = 0,
+    [POKEMON_WABLU] = 0,
+    [POKEMON_ALTARIA] = 0,
+    [POKEMON_KLINGPLIM] = 2,
+    [POKEMON_ZWIRRLICHT] = 0,
+    [POKEMON_ZWIRRKLOP] = 0,
+    [POKEMON_PORYGON_Z] = 0,
+    [POKEMON_BUMMELZ] = 2,
+    [POKEMON_MUNTIER] = 2,
+    [POKEMON_LETARKING] = 1,
+    [POKEMON_MOLUNK] = 0,
+    [POKEMON_AMFIRA] = 0,
+    [POKEMON_TROPIUS] = 1,
+    [POKEMON_KAUMALAT] = 0,
+    [POKEMON_KNARKSEL] = 0,
+    [POKEMON_KNAKRACK] = 0,
+    [POKEMON_PERLU] = 0,
+    [POKEMON_AALABYSS] = 0,
+    [POKEMON_SAGANABYSS] = 0,
+    [POKEMON_ABSOL] = 0,
+    [POKEMON_SHUPPET] = 0,
+    [POKEMON_BANETTE] = 0,
+    [POKEMON_VIPITIS] = 2,
+    [POKEMON_SENGO] = 0,
+    [POKEMON_RELICANTH] = 1,
+    [POKEMON_STOLLUNIOR] = 2,
+    [POKEMON_STOLLRAK] = 2,
+    [POKEMON_STOLLOSS] = 2,
+    [POKEMON_FORMEO] = 0,
+    [POKEMON_WONNEIRA] = 0,
+    [POKEMON_MOBAI] = 1,
+    [POKEMON_LILIEP] = 2,
+    [POKEMON_WIELIE] = 0,
+    [POKEMON_ANORITH] = 0,
+    [POKEMON_ARMALDO] = 0,
+    [POKEMON_TRASLA] = 1,
+    [POKEMON_KIRLIA] = 1,
+    [POKEMON_GUARDEVOIR] = 1,
+    [POKEMON_KINDWURM] = 2,
+    [POKEMON_DRASCHEL] = 2,
+    [POKEMON_BRUTALANDA] = 0,
+    [POKEMON_TANHEL] = 0,
+    [POKEMON_METANG] = 0,
+    [POKEMON_METAGROSS] = 0,
+    [POKEMON_REGIROCK] = 2,
+    [POKEMON_REGICE] = 2,
+    [POKEMON_REGISTEEL] = 2,
+    [POKEMON_KYOGRE] = 2,
+    [POKEMON_GROUDON] = 0,
+    [POKEMON_RAYQUAZA] = 1,
+    [POKEMON_LATIAS] = 0,
+    [POKEMON_LATIOS] = 2,
+    [POKEMON_JIRACHI] = 0,
+    [POKEMON_DEOXYS] = 0,
+    [POKEMON_PALIMPALIM] = 0,
+    [POKEMON_EGG] = 1,
+    [POKEMON_ICOGNITO_B] = 0,
+    [POKEMON_ICOGNITO_C] = 0,
+    [POKEMON_ICOGNITO_D] = 0,
+    [POKEMON_ICOGNITO_E] = 0,
+    [POKEMON_ICOGNITO_F] = 0,
+    [POKEMON_ICOGNITO_G] = 0,
+    [POKEMON_ICOGNITO_H] = 0,
+    [POKEMON_ICOGNITO_I] = 0,
+    [POKEMON_ICOGNITO_J] = 0,
+    [POKEMON_ICOGNITO_K] = 0,
+    [POKEMON_ICOGNITO_L] = 0,
+    [POKEMON_ICOGNITO_M] = 0,
+    [POKEMON_ICOGNITO_N] = 0,
+    [POKEMON_ICOGNITO_O] = 0,
+    [POKEMON_ICOGNITO_P] = 0,
+    [POKEMON_ICOGNITO_Q] = 0,
+    [POKEMON_ICOGNITO_R] = 0,
+    [POKEMON_ICOGNITO_S] = 0,
+    [POKEMON_ICOGNITO_T] = 0,
+    [POKEMON_ICOGNITO_U] = 0,
+    [POKEMON_ICOGNITO_V] = 0,
+    [POKEMON_ICOGNITO_W] = 0,
+    [POKEMON_ICOGNITO_X] = 0,
+    [POKEMON_ICOGNITO_Y] = 0,
+    [POKEMON_ICOGNITO_Z] = 0,
+    [POKEMON_ICOGNITO_EXCLAMATION] = 0,
+    [POKEMON_ICOGNITO_QUESTION] = 0,
+    [POKEMON_GROUDON_REGENT] = 0,
+    [POKEMON_KECLEON_PURPLE] = 2,
+    [POKEMON_CRYSTAL_ONIX] = 2,
 };
