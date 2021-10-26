@@ -200,8 +200,8 @@ extern "C" {
     extern const unsigned short gfx_mug_albusPal[];
     extern const unsigned short gfx_mug_faun_youngTiles[];
     extern const unsigned short gfx_mug_faun_youngPal[];
-    extern const unsigned short gfx_pkmn_species_251_pokemon_celebi_frontspriteTiles[];
-    extern const unsigned short gfx_pkmn_species_251_pokemon_celebi_frontspritePal[];
+    extern const unsigned short gfx_pokemon_celebi_frontspriteTiles[];
+    extern const unsigned short gfx_pokemon_celebi_frontspritePal[];
     extern const unsigned short gfx_mug_larissaTiles[];
     extern const unsigned short gfx_mug_larissa_happyTiles[];
     extern const unsigned short gfx_mug_larissa_angryTiles[];
