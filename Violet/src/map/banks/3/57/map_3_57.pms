@@ -227,7 +227,7 @@
 					"script_std": 0,
 					"field_3": 0,
 					"x": "35",
-					"y": "29",
+					"y": "28",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -252,7 +252,7 @@
 					"script_std": 0,
 					"field_3": 0,
 					"x": "34",
-					"y": "29",
+					"y": "28",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
