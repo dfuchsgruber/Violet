@@ -144,13 +144,13 @@
 		"dex_number": 11
 	},
 	"POKEMON_BIBOR": {
-		"ability_0": "Extradorn",
+		"ability_0": "Hexaplaga",
 		"ability_1": null,
-		"hidden_ability": "Hexaplaga",
+		"hidden_ability": "Extradorn",
 		"safari_rate": 0,
 		"dex_number": 12,
 		"basestats": {
-			"hp": 45,
+			"hp": 65,
 			"attack": 115,
 			"defense": 60,
 			"speed": 95,
@@ -2156,7 +2156,7 @@
 		"type_0": "Kaefer",
 		"type_1": "Gift",
 		"exp_yield": 240,
-		"ability_0": "Schwebe",
+		"ability_0": "Hochmut",
 		"ability_1": null,
 		"hidden_ability": null,
 		"species_link": "POKEMON_BIBOR",

@@ -1223,3 +1223,6 @@ lsr r0, #0x1A
 	ldr r2, =pokemon_get_evs | 1
 	bx r2
 	.pool
+
+.org 0x0803db52
+	mov r0, #0 // Givepokemon : Set the pokeball idx to 0 (=Pokeball) 
