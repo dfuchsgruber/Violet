@@ -12597,10 +12597,10 @@
 					"palette_idx": 1
 				},
 				{
-					"tile_idx": 175,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 1
+					"tile_idx": 174,
+					"palette_idx": 1,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 190,
@@ -12609,10 +12609,10 @@
 					"palette_idx": 1
 				},
 				{
-					"tile_idx": 191,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 1
+					"tile_idx": 190,
+					"palette_idx": 1,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 55,
