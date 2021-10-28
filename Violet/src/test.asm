@@ -38,7 +38,7 @@ str_afterb:
 
 ow_script_test:
 	setflag PLAYER_ABLE_TO_MEGA_EVOLVE
-	givepokemon POKEMON_GEOWAZ 20 ITEM_GEOWAZNIT 0 0 0
+	givepokemon POKEMON_BIBOR 20 ITEM_BIBORNIT 0 0 0
 	end
 	additem ITEM_LOTUS_BALL 1
 	setvar 0x8004 20
