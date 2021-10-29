@@ -2246,9 +2246,9 @@
 		"type_0": "Unlicht",
 		"type_1": "Gestein",
 		"exp_yield": 180,
-		"ability_0": null,
+		"ability_0": "Strolch",
 		"ability_1": null,
-		"hidden_ability": null,
+		"hidden_ability": "Strolch",
 		"species_link": "POKEMON_ZOBIRIS",
 		"dex_number": 0
 	},

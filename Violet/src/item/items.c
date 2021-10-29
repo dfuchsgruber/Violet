@@ -927,12 +927,12 @@ static u8 str_item_turtoknit_description[] = LANGDEP(
 	PSTRING("Wird er von einem Turtok\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
 	PSTRING("?????")
 );
-static u8 str_item_terrasornit_description[] = LANGDEP(
-	PSTRING("Einer der seltenen Mega-Steine.\nGetragen von Terasorus könnte man\nmittels des Mega-Amuletts..."),
-	PSTRING("?????")
+static u8 str_item_zobirisnit_description[] = LANGDEP(
+	PSTRING("Wird er von einem Zobiris\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+	PSTRING("If held by an Sableye in\nbattle it can perform\na mega evolution.")
 );
 static u8 str_item_zerbernit_description[] = LANGDEP(
-	PSTRING("Einer der seltenen Mega-Steine.\nGetragen von Zerbertres könnte man\nmittels des Mega-Amuletts..."),
+	PSTRING("Einer der seltenen Mega-Steine.\nGetragen von Terasorus könnte man\nmittels des Mega-Amuletts..."),
 	PSTRING("?????")
 );
 static u8 str_item_skullydranit_description[] = LANGDEP(
@@ -949,23 +949,23 @@ static u8 str_item_flamaranit_description[] = LANGDEP(
 );
 static u8 str_item_altarianit_description[] = LANGDEP(
 	PSTRING("Wird er von einem Altaria\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
-	PSTRING("?????")
+	PSTRING("If held by an Altaria in\nbattle it can perform\na mega evolution.")
 );
 static u8 str_item_ampharosnit_description[] = LANGDEP(
 	PSTRING("Wird er von einem Ampharos\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
-	PSTRING("?????")
+	PSTRING("If held by an Ampharos in\nbattle it can perform\na mega evolution.")
 );
 static u8 str_item_banettenit_description[] = LANGDEP(
 	PSTRING("Wird er von einem Banette\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
-	PSTRING("?????")
+	PSTRING("If held by a Banette in\nbattle it can perform\na mega evolution.")
 );
 static u8 str_item_bibornit_description[] = LANGDEP(
 	PSTRING("Wird er von einem Bibor\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
-	PSTRING("?????")
+	PSTRING("If held by a Beedrill in\nbattle it can perform\na mega evolution.")
 );
 static u8 str_item_magmaherz_description[] = LANGDEP(
-	PSTRING(" ????"),
-	PSTRING("?????")
+	PSTRING("Dieser ehrfurchtgebietende\nStein erlaubt es Groudon\nin seine Kaiserform\nzu wechselnDOTS"),
+	PSTRING("This commanding stone allows\nGroudon to switch into\nits emperor formDOTS")
 );
 static u8 str_item_geowaznit_description[] = LANGDEP(
 	PSTRING("Wird er von einem Geowaz\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
@@ -5407,13 +5407,13 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
 	},{
-		//ITEM_TERRASORNIT
-		LANGDEP(PSTRING("Terrasornit"), PSTRING("????????")),
-		0xe5, //index
+		// ITEM_ZOBIRISNIT
+		LANGDEP(PSTRING("Zobirisnit"), PSTRING("Sableyenite")),
+		ITEM_ZOBIRISNIT, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_terrasornit_description,
+		str_item_zobirisnit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket

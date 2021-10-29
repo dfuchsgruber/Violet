@@ -886,5 +886,7 @@ extern const u8 gfx_item_firnontornitTiles[];
 extern const u8 gfx_item_firnontornitPal[];
 extern const u8 gfx_item_jugongnitTiles[];
 extern const u8 gfx_item_jugongnitPal[];
+extern const u8 gfx_item_zobirisnitTiles[];
+extern const u8 gfx_item_zobirisnitPal[];
 
 #endif
