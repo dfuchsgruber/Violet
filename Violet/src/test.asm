@@ -38,7 +38,7 @@ str_afterb:
 
 ow_script_test:
 	setflag PLAYER_ABLE_TO_MEGA_EVOLVE
-	givepokemon POKEMON_JUGONG 20 ITEM_JUGONGNIT 0 0 0
+	givepokemon POKEMON_AMPHAROS 20 ITEM_AMPHAROSNIT 0 0 0
 	end
 	additem ITEM_LOTUS_BALL 1
 	setvar 0x8004 20

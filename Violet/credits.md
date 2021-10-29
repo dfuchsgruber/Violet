@@ -10,10 +10,12 @@
 - Mega Glalie: Gnomowladny [https://www.deviantart.com/gnomowladny/art/Mega-Glalie-Sprite-488453781]
 
 ### Tilesets
-- Phyromatical
-- zetavares852
-- EvolinaX
+- Phyromatical [https://www.deviantart.com/phyromatical]
+- zetavares852 [https://www.deviantart.com/zetavares852/gallery/24895961/tilesets]
+- EvolinaX [https://www.deviantart.com/tag/evolinax]
 - Lordkazeh [https://www.deviantart.com/lordkazeh]
+- The-Red-Ex [https://www.deviantart.com/the-red-ex]
+- Magiscarf [https://www.deviantart.com/magiscarf]
 
 ### Pokeball Sprites
-- Bela
+- Bela [https://www.pokecommunity.com/member.php?tab=visitor_messaging&u=141093&page=4]
