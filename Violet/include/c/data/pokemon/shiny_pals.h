@@ -279,7 +279,7 @@ extern const u8 gfx_pokemon_mega_octillery_backspritePal[];
 extern const u8 gfx_pokemon_mega_rasaff_backspritePal[];
 extern const u8 gfx_pokemon_mega_ariados_backspritePal[];
 extern const u8 gfx_pokemon_mega_firnontor_backspritePal[];
-extern const u8 gfx_pokemon_112_backspritePal[];
+extern const u8 gfx_pokemon_mega_jugong_backspritePal[];
 extern const u8 gfx_pokemon_113_backspritePal[];
 extern const u8 gfx_pokemon_114_backspritePal[];
 extern const u8 gfx_pokemon_lockschal_backspritePal[];
@@ -724,7 +724,7 @@ palette pokemon_shiny_pals[POKEMON_CNT] = {
 	[POKEMON_MEGA_RASAFF] = {.pal = gfx_pokemon_mega_rasaff_backspritePal, .tag = POKEMON_MEGA_RASAFF,},
 	[POKEMON_MEGA_ARIADOS] = {.pal = gfx_pokemon_mega_ariados_backspritePal, .tag = POKEMON_MEGA_ARIADOS,},
 	[POKEMON_MEGA_FIRNONTOR] = {.pal = gfx_pokemon_mega_firnontor_backspritePal, .tag = POKEMON_MEGA_FIRNONTOR,},
-	[POKEMON_112] = {.pal = gfx_pokemon_112_backspritePal, .tag = POKEMON_112,},
+	[POKEMON_MEGA_JUGONG] = {.pal = gfx_pokemon_mega_jugong_backspritePal, .tag = POKEMON_MEGA_JUGONG,},
 	[POKEMON_113] = {.pal = gfx_pokemon_113_backspritePal, .tag = POKEMON_113,},
 	[POKEMON_114] = {.pal = gfx_pokemon_114_backspritePal, .tag = POKEMON_114,},
 	[POKEMON_LOCKSCHAL] = {.pal = gfx_pokemon_lockschal_backspritePal, .tag = POKEMON_LOCKSCHAL,},

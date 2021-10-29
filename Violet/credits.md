@@ -4,6 +4,7 @@
 - Mega Beedrill: nganlamsong [https://www.deviantart.com/nganlamsong/art/Mega-Beedrill-490023833]
 - Mega Golem: Dragonith [https://www.deviantart.com/dragonith/art/Mega-Golem-397496826]
 - Mega Altaria: Dragonith [https://www.deviantart.com/dragonith/art/Mega-Altaria-FAN-MADE-392745959]
+- Mega Dewgong: Nyjee [https://www.pinterest.ca/pin/752453050216587857/]
 
 ### Mega Pokemon Sprites:
 - Mega Glalie: Gnomowladny [https://www.deviantart.com/gnomowladny/art/Mega-Glalie-Sprite-488453781]

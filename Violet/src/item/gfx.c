@@ -434,6 +434,8 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_GEDANKENBALL] = {.gfx = gfx_item_pokeball_special_attackTiles, .pal = gfx_item_pokeball_special_attackPal},
     [ITEM_FOKUSBALL] = {.gfx = gfx_item_pokeball_special_defenseTiles, .pal = gfx_item_pokeball_special_defensePal},
     [ITEM_KRYO_ORB] = {.gfx = gfx_item_kryo_orbTiles, .pal = gfx_item_kryo_orbPal},
+    [ITEM_FIRNONTORNIT] = {.gfx = gfx_item_firnontornitTiles, .pal = gfx_item_firnontornitPal},
+    [ITEM_JUGONGNIT] = {.gfx = gfx_item_jugongnitTiles, .pal = gfx_item_jugongnitPal},
 };
 
 const u8 *item_get_resource(u16 item_idx, u8 get_palette) {

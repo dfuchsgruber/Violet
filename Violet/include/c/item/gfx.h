@@ -884,5 +884,7 @@ extern const u8 gfx_item_kryo_orbTiles[];
 extern const u8 gfx_item_kryo_orbPal[];
 extern const u8 gfx_item_firnontornitTiles[];
 extern const u8 gfx_item_firnontornitPal[];
+extern const u8 gfx_item_jugongnitTiles[];
+extern const u8 gfx_item_jugongnitPal[];
 
 #endif

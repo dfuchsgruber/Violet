@@ -1735,6 +1735,10 @@ static u8 str_item_firnontornit_description[] = LANGDEP(
 	PSTRING("Wird er von einem Firnontor\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
 	PSTRING("If held by a Glalie in\nbattle it can perform\na mega evolution.")
 );
+static u8 str_item_jugongnit_description[] = LANGDEP(
+	PSTRING("Wird er von einem Jugong\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+	PSTRING("If held by a Dewgong in\nbattle it can perform\na mega evolution.")
+);
 
 
 item items[] = {
@@ -8111,7 +8115,13 @@ item items[] = {
 		.index = ITEM_FIRNONTORNIT,
 		.description = str_item_firnontornit_description, .pocket = POCKET_ITEMS, .type = 4,
 		.field_usage = (void(*)(u8))0x80a2325,
-	}
+	},
+	[ITEM_JUGONGNIT] = {
+		.name = LANGDEP(PSTRING("Jugongnit"), ("Jugongnit")),
+		.index = ITEM_JUGONGNIT,
+		.description = str_item_jugongnit_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
 };
 
 u16 item_idx_saniztize(u16 item_idx) {

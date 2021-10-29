@@ -278,7 +278,7 @@ extern const unsigned short gfx_pkmn_species_270_pokemon_octillery_mega_iconTile
 extern const unsigned short gfx_pkmn_species_271_pokemon_rasaff_mega_iconTiles[];
 extern const unsigned short gfx_pkmn_mega_ariados_iconTiles[];
 extern const unsigned short gfx_pkmn_mega_firnontor_iconTiles[];
-extern const unsigned short gfx_pkmn_species_274_pokemon_112_iconTiles[];
+extern const unsigned short gfx_pkmn_mega_jugong_iconTiles[];
 extern const unsigned short gfx_pkmn_species_275_pokemon_113_iconTiles[];
 extern const unsigned short gfx_pkmn_species_276_pokemon_114_iconTiles[];
 extern const unsigned short gfx_pkmn_species_277_pokemon_lockschal_iconTiles[];
@@ -724,7 +724,7 @@ const void *pokemon_icons[POKEMON_CNT] = {
     gfx_pkmn_species_271_pokemon_rasaff_mega_iconTiles,
     gfx_pkmn_mega_ariados_iconTiles,
     gfx_pkmn_mega_firnontor_iconTiles,
-    gfx_pkmn_species_274_pokemon_112_iconTiles,
+    gfx_pkmn_mega_jugong_iconTiles,
     gfx_pkmn_species_275_pokemon_113_iconTiles,
     gfx_pkmn_species_276_pokemon_114_iconTiles,
     gfx_pkmn_species_277_pokemon_lockschal_iconTiles,

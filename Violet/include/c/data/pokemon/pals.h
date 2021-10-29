@@ -279,7 +279,7 @@ extern const u8 gfx_pokemon_mega_octillery_frontspritePal[];
 extern const u8 gfx_pokemon_mega_rasaff_frontspritePal[];
 extern const u8 gfx_pokemon_mega_ariados_frontspritePal[];
 extern const u8 gfx_pokemon_mega_firnontor_frontspritePal[];
-extern const u8 gfx_pokemon_112_frontspritePal[];
+extern const u8 gfx_pokemon_mega_jugong_frontspritePal[];
 extern const u8 gfx_pokemon_113_frontspritePal[];
 extern const u8 gfx_pokemon_114_frontspritePal[];
 extern const u8 gfx_pokemon_lockschal_frontspritePal[];
@@ -724,7 +724,7 @@ palette pokemon_pals[POKEMON_CNT] = {
 	[POKEMON_MEGA_RASAFF] = {.pal = gfx_pokemon_mega_rasaff_frontspritePal, .tag = POKEMON_MEGA_RASAFF,},
 	[POKEMON_MEGA_ARIADOS] = {.pal = gfx_pokemon_mega_ariados_frontspritePal, .tag = POKEMON_MEGA_ARIADOS,},
 	[POKEMON_MEGA_FIRNONTOR] = {.pal = gfx_pokemon_mega_firnontor_frontspritePal, .tag = POKEMON_MEGA_FIRNONTOR,},
-	[POKEMON_112] = {.pal = gfx_pokemon_112_frontspritePal, .tag = POKEMON_112,},
+	[POKEMON_MEGA_JUGONG] = {.pal = gfx_pokemon_mega_jugong_frontspritePal, .tag = POKEMON_MEGA_JUGONG,},
 	[POKEMON_113] = {.pal = gfx_pokemon_113_frontspritePal, .tag = POKEMON_113,},
 	[POKEMON_114] = {.pal = gfx_pokemon_114_frontspritePal, .tag = POKEMON_114,},
 	[POKEMON_LOCKSCHAL] = {.pal = gfx_pokemon_lockschal_frontspritePal, .tag = POKEMON_LOCKSCHAL,},

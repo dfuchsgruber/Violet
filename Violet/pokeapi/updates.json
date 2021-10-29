@@ -764,7 +764,7 @@
 	"POKEMON_JUROB": {
 		"ability_0": "Speckschicht",
 		"ability_1": null,
-		"hidden_ability": "Barriere",
+		"hidden_ability": "Hagelalarm",
 		"safari_rate": 0,
 		"dex_number": 70,
 		"dex_entry" : {
@@ -775,7 +775,7 @@
 	"POKEMON_JUGONG": {
 		"ability_0": "Speckschicht",
 		"ability_1": null,
-		"hidden_ability": "Barriere",
+		"hidden_ability": "Hagelalarm",
 		"safari_rate": 0,
 		"dex_number": 71
 	},
@@ -2336,8 +2336,21 @@
 		"exp_yield": 240,
 		"dex_number": 0
 	},
-	"POKEMON_112": {
-		"species_link" : "POKEMON_POKEMON_0"
+	"POKEMON_MEGA_JUGONG": {
+		"species_link" : "POKEMON_JUGONG",
+		"basestats": {
+			"hp": 90,
+			"attack": 105,
+			"defense": 95,
+			"speed": 85,
+			"special-attack": 120,
+			"special-defense": 130
+		},
+		"ability_0" : "Kaeltewahn",
+		"ability_1" : null,
+		"hidden_ability" : "Kaeltewahn",
+		"exp_yield": 240,
+		"dex_number": 0
 	},
 	"POKEMON_113": {
 		"species_link" : "POKEMON_POKEMON_0"
