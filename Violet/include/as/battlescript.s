@@ -1342,3 +1342,7 @@ various \battler, 2
 .macro setstatchange stat:req amount:req decrease:req
 setbyte bsc_status_effect_to_apply \stat | \amount << 4 | \decrease << 7
 .endm
+
+.macro setbattleeffect effect:req
+    setbyte (battle_effects + 3), \effect
+.endm

@@ -235,7 +235,7 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_ZOBIRISNIT] = { .gfx = gfx_item_zobirisnitTiles, .pal = gfx_item_zobirisnitPal },
     [ITEM_FLUNKIFERNIT] = { .gfx = gfx_item_flunkifernitTiles, .pal = gfx_item_flunkifernitPal },
     [ITEM_SENGONIT] = { .gfx = gfx_item_sengonitTiles, .pal = gfx_item_sengonitPal },
-    [ITEM_VIPITISNIT] = { .gfx = gfx_item_aquananitTiles, .pal = gfx_item_aquananitPal },
+    [ITEM_VIPITISNIT] = { .gfx = gfx_item_vipitisnitTiles, .pal = gfx_item_vipitisnitPal },
     [ITEM_FLAMARANIT] = { .gfx = gfx_item_flamaranitTiles, .pal = gfx_item_flamaranitPal },
     [ITEM_ALTARIANIT] = { .gfx = gfx_item_altarianitTiles, .pal = gfx_item_altarianitPal },
     [ITEM_AMPHAROSNIT] = { .gfx = gfx_item_ampharosnitTiles, .pal = gfx_item_ampharosnitPal },

@@ -4,6 +4,7 @@
 .include "constants/abilities.s"
 .include "constants/battle/battle_communication.s"
 .include "constants/battle/battle_animations.s"
+.include "constants/battle/battle_effects.s"
 
 .global bsc_wandlungskunst
 .global bsc_stance_change_to_attack
@@ -34,6 +35,8 @@
 .global bsc_flinch_baura
 .global bsc_flinch_gaura
 .global bsc_tintenschuss
+.global bsc_giftnebel
+.global bsc_giftnebel_end3
 
 
 bsc_wandlungskunst:
@@ -285,3 +288,23 @@ bsc_flinch_gaura:
     waitmessage 0x40
     goto 0x81DABDE
 
+bsc_giftnebel_end3:
+    call bsc_giftnebel_pause
+    end3
+bsc_giftnebel_pause:
+    pause 0x20
+bsc_giftnebel:
+    setbyte defending_battler 0 // Target for "giftnebel"
+bsc_giftnebel_loop:
+    intimidate_try_get_target bsc_giftnebel_return
+    jumpifsecondarystatus BANK_TARGET STATUS2_SUBSTITUTE bsc_giftnebel_loop_increment
+    printstring 0x1c9
+    waitmessage 0x40
+
+    setbattleeffect BATTLE_EFFECT_POISON
+    seteffectprimary
+bsc_giftnebel_loop_increment:
+	addbyte defending_battler 1
+	goto bsc_giftnebel_loop
+bsc_giftnebel_return:
+    return

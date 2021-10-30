@@ -2057,7 +2057,7 @@
 	"POKEMON_MEGA_SANDAMER": {
 		"basestats": {
 			"hp": 75,
-			"attack": 140,
+			"attack": 120,
 			"defense": 175,
 			"speed": 105,
 			"special-attack": 50,
@@ -2086,7 +2086,7 @@
 		"exp_yield": 240,
 		"ability_0": "Panzerhaut",
 		"ability_1": null,
-		"hidden_ability": null,
+		"hidden_ability": "Panzerhaut",
 		"species_link" : "POKEMON_LAHMUS",
 		"dex_number": 0
 	},
@@ -2104,7 +2104,7 @@
 		"exp_yield": 240,
 		"ability_0": "Techniker",
 		"ability_1": null,
-		"hidden_ability": null,
+		"hidden_ability": "Techniker",
 		"species_link" : "POKEMON_MASKEREGEN",
 		"dex_number": 0
 	},
@@ -2122,7 +2122,7 @@
 		"exp_yield": 240,
 		"ability_0": "Notschutz",
 		"ability_1": null,
-		"hidden_ability": null,
+		"hidden_ability": "Notschutz",
 		"species_link": "POKEMON_AMPHAROS",
 		"dex_number": 0
 	},
@@ -2140,16 +2140,16 @@
 		"exp_yield": 240,
 		"ability_0": "Strolch",
 		"ability_1": null,
-		"hidden_ability": null,
+		"hidden_ability": "Strolch",
 		"species_link": "POKEMON_BANETTE",
 		"dex_number": 0
 	},
 	"POKEMON_MEGA_BIBOR": {
 		"basestats": {
 			"hp": 65,
-			"attack": 160,
+			"attack": 155,
 			"defense": 95,
-			"speed": 140,
+			"speed": 115,
 			"special-attack": 45,
 			"special-defense": 95
 		},
@@ -2158,7 +2158,7 @@
 		"exp_yield": 240,
 		"ability_0": "Hochmut",
 		"ability_1": null,
-		"hidden_ability": null,
+		"hidden_ability": "Hochmut",
 		"species_link": "POKEMON_BIBOR",
 		"dex_number": 0
 	},
@@ -2176,7 +2176,7 @@
 		"exp_yield": 240,
 		"ability_0": "Schwebe",
 		"ability_1": null,
-		"hidden_ability": null,
+		"hidden_ability": "Schwebe",
 		"species_link": "POKEMON_ALTARIA",
 		"dex_number": 0
 	},
@@ -2194,7 +2194,7 @@
 		"exp_yield": 240,
 		"ability_0": "Feuerfaenger",
 		"ability_1": null,
-		"hidden_ability": null,
+		"hidden_ability": "Feuerfaenger",
 		"species_link": "POKEMON_GEOWAZ",
 		"dex_number": 0
 	},
@@ -2219,18 +2219,18 @@
 	"POKEMON_MEGA_VIPITIS": {
 		"basestats": {
 			"hp": 73,
-			"attack": 140,
-			"defense": 100,
-			"speed": 100,
+			"attack": 135,
+			"defense": 95,
+			"speed": 95,
 			"special-attack": 115,
-			"special-defense": 100
+			"special-defense": 80
 		},
 		"type_0": "Gift",
 		"type_1": "Gift",
 		"exp_yield": 240,
-		"ability_0": "Temposchub",
+		"ability_0": "Giftnebel",
 		"ability_1": null,
-		"hidden_ability": null,
+		"hidden_ability": "Giftnebel",
 		"species_link": "POKEMON_VIPITIS",
 		"dex_number": 0
 	},
@@ -2266,7 +2266,7 @@
 		"exp_yield": 240,
 		"ability_0": "Gegenwind",
 		"ability_1": null,
-		"hidden_ability": null,
+		"hidden_ability": "Gegenwind",
 		"species_link": "POKEMON_TROPIUS",
 		"dex_number": 0
 	},
@@ -2276,7 +2276,7 @@
 			"attack": 115,
 			"defense": 100,
 			"speed": 70,
-			"special-attack": 115,
+			"special-attack": 125,
 			"special-defense": 100
 		},
 		"exp_yield": 240,
@@ -2289,7 +2289,7 @@
 	"POKEMON_MEGA_RASAFF": {
 		"basestats": {
 			"hp": 65,
-			"attack": 140,
+			"attack": 145,
 			"defense": 80,
 			"speed": 115,
 			"special-attack": 60,

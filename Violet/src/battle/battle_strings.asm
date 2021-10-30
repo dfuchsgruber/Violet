@@ -448,6 +448,7 @@ bsc_strings:
 .word str_battle_x1C6
 .word str_battle_x1C7
 .word str_battle_x1C8
+.word str_battle_x1C9
 
 @ // Define the strings
 
@@ -2979,6 +2980,9 @@ bsc_strings:
 	
 	str_battle_x1C8:
 		.string "BSC_LAST_ITEM von\nBSC_DEF_NAME_WITH_PREFIX wird wirksam!"
+	
+	str_battle_x1C9:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX erzeugt\neinen BSC_SCR_ACTIVE_ABILITY!"
 
 .elseif LANG_EN
 	.global str_battle_xc
@@ -5111,6 +5115,9 @@ bsc_strings:
 
 	str_battle_x1C8:
 		.string "BSC_DEF_NAME_WITH_PREFIX's\nBSC_LAST_ITEM was activated!"
+
+	str_battle_x1C9:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX creates\na BSC_SCR_ACTIVE_ABILITY!"
 .endif
 
 

@@ -42,6 +42,10 @@ bool abilities_battle_enter(u8 ability, u8 index) {
         battler_statuses3[index] |= STATUS3_INTIMIDATE_POKES;
         battler_damage_taken[index].intimdated_foe = 1;
         return true;
+    } else if (ability == GIFTNEBEL && !battler_damage_taken[index].intimdated_foe) {
+        battler_statuses3[index] |= STATUS3_INTIMIDATE_POKES;
+        battler_damage_taken[index].intimdated_foe = 1;
+        return true;
     } else if (ability == GLUECKSPILZ) {
         BATTLE_STATE2->item_dropping_chance_increased_by_ability = true;
         return false;

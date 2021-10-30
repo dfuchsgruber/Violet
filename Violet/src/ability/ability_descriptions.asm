@@ -129,6 +129,7 @@ ability_descriptions:
     .word str_ability_descr_0x7c
     .word str_ability_descr_0x7d
     .word str_ability_descr_0x7e
+    .word str_ability_descr_0x7f
 @ // Define the strings
 
 .ifdef LANG_GER
@@ -852,10 +853,15 @@ ability_descriptions:
 
 	str_ability_descr_0x7c: @// Gegenwind
 		.string "Senkt geg. Init. stark."
+
 	str_ability_descr_0x7d: @// Tintenschuss
 		.string "Senkt geg. Genaug. bei Berührung."
+
 	str_ability_descr_0x7e: @// Krallenwucht
 		.string "Verstärkt Attacken, die berühren."
+
+	str_ability_descr_0x7f: @// Giftnebel
+		.string "Vergiftet Gegner bei Kampfeintritt."
 
 
 .elseif LANG_EN
@@ -1465,6 +1471,12 @@ ability_descriptions:
 		.string "Lowers opp. Init. drastically."
 	str_ability_descr_0x7d: @// Tintenschuss
 		.string "Lowers opp. Acc. when touched."
+
+	str_ability_descr_0x7e: @// Krallenwucht
+		.string "Boosts attacks that make contact."
+
+	str_ability_descr_0x7f: @// Giftnebel
+		.string "Poisons foes on battle entry."
 
 .endif
 

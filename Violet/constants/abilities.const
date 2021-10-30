@@ -127,7 +127,8 @@
 		"ESCHAT",
 		"GEGENWIND",
 		"TINTENSCHUSS",
-		"KRALLENWUCHT"
+		"KRALLENWUCHT",
+		"GIFTNEBEL"
 	],
 	"base": 0
 }
