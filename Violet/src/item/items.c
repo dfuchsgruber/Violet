@@ -931,9 +931,9 @@ static u8 str_item_zobirisnit_description[] = LANGDEP(
 	PSTRING("Wird er von einem Zobiris\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
 	PSTRING("If held by an Sableye in\nbattle it can perform\na mega evolution.")
 );
-static u8 str_item_zerbernit_description[] = LANGDEP(
-	PSTRING("Einer der seltenen Mega-Steine.\nGetragen von Terasorus könnte man\nmittels des Mega-Amuletts..."),
-	PSTRING("?????")
+static u8 str_item_flunkifernit_description[] = LANGDEP(
+	PSTRING("Wird er von einem Flunkifer\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+	PSTRING("If held by an Mawile in\nbattle it can perform\na mega evolution.")
 );
 static u8 str_item_skullydranit_description[] = LANGDEP(
 	PSTRING("Einer der seltenen Mega-Steine.\nGetragen von Skullydra könnte man\nmittels des Mega-Amuletts..."),
@@ -5423,13 +5423,13 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
 	},{
-		//ITEM_ZERBERNIT
-		LANGDEP(PSTRING("Zerbernit"), PSTRING("????????")),
-		0xe6, //index
+		//ITEM_FLUNKIFERNIT
+		LANGDEP(PSTRING("Flunkifernit"), PSTRING("Mawilenite")),
+		ITEM_FLUNKIFERNIT, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_zerbernit_description,
+		str_item_flunkifernit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket

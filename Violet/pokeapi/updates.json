@@ -2352,8 +2352,21 @@
 		"exp_yield": 240,
 		"dex_number": 0
 	},
-	"POKEMON_113": {
-		"species_link" : "POKEMON_POKEMON_0"
+	"POKEMON_MEGA_FLUNKIFER": {
+		"species_link" : "POKEMON_FLUNKIFER",
+		"basestats": {
+			"hp": 50,
+			"attack": 105,
+			"defense": 125,
+			"speed": 50,
+			"special-attack": 55,
+			"special-defense": 95
+		},
+		"ability_0" : "Kraftkoloss",
+		"ability_1" : null,
+		"hidden_ability" : "Kraftkoloss",
+		"exp_yield": 240,
+		"dex_number": 0
 	},
 	"POKEMON_114": {
 		"species_link" : "POKEMON_POKEMON_0"

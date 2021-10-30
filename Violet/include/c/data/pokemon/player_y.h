@@ -281,7 +281,7 @@ pokemon_coordinate_t pokemon_player_y[POKEMON_CNT] = {
     [POKEMON_MEGA_ARIADOS] = {.width = POKEMON_COORDINATE_SIZE(64), .height = POKEMON_COORDINATE_SIZE(64), .y_offset = 1},
     [POKEMON_MEGA_FIRNONTOR] = {.width = POKEMON_COORDINATE_SIZE(64), .height = POKEMON_COORDINATE_SIZE(64), .y_offset = 1},
     [POKEMON_MEGA_JUGONG] = {.width = POKEMON_COORDINATE_SIZE(64), .height = POKEMON_COORDINATE_SIZE(64), .y_offset = 1},
-    [POKEMON_113] = {.width = POKEMON_COORDINATE_SIZE(64), .height = POKEMON_COORDINATE_SIZE(64), .y_offset = 1},
+    [POKEMON_MEGA_FLUNKIFER] = {.width = POKEMON_COORDINATE_SIZE(64), .height = POKEMON_COORDINATE_SIZE(64), .y_offset = 2},
     [POKEMON_114] = {.width = POKEMON_COORDINATE_SIZE(64), .height = POKEMON_COORDINATE_SIZE(64), .y_offset = 1},
     [POKEMON_LOCKSCHAL] = {.width = POKEMON_COORDINATE_SIZE(56), .height = POKEMON_COORDINATE_SIZE(64), .y_offset = 0},
     [POKEMON_STICHSCHAL] = {.width = POKEMON_COORDINATE_SIZE(48), .height = POKEMON_COORDINATE_SIZE(64), .y_offset = 0},
