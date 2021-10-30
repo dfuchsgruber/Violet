@@ -270,7 +270,7 @@ extern const unsigned short gfx_pkmn_species_262_pokemon_banette_mega_iconTiles[
 extern const unsigned short gfx_pkmn_species_263_pokemon_biborm_iconTiles[];
 extern const unsigned short gfx_pkmn_species_264_pokemon_altariam_iconTiles[];
 extern const unsigned short gfx_pkmn_species_265_pokemon_geowazm_iconTiles[];
-extern const unsigned short gfx_pkmn_species_266_pokemon_sengom_iconTiles[];
+extern const unsigned short gfx_pkmn_mega_sengo_iconTiles[];
 extern const unsigned short gfx_pkmn_species_267_pokemon_vipitism_iconTiles[];
 extern const unsigned short gfx_pkmn_species_268_pokemon_zobirism_iconTiles[];
 extern const unsigned short gfx_pkmn_species_269_pokemon_tropius_mega_iconTiles[];
@@ -716,7 +716,7 @@ const void *pokemon_icons[POKEMON_CNT] = {
     gfx_pkmn_species_263_pokemon_biborm_iconTiles,
     gfx_pkmn_species_264_pokemon_altariam_iconTiles,
     gfx_pkmn_species_265_pokemon_geowazm_iconTiles,
-    gfx_pkmn_species_266_pokemon_sengom_iconTiles,
+    gfx_pkmn_mega_sengo_iconTiles,
     gfx_pkmn_species_267_pokemon_vipitism_iconTiles,
     gfx_pkmn_species_268_pokemon_zobirism_iconTiles,
     gfx_pkmn_species_269_pokemon_tropius_mega_iconTiles,

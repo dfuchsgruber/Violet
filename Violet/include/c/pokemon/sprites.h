@@ -56,7 +56,8 @@ u8 pokemon_oam_new(u16 species, s16 x, s16 y);
  */
 palette *pokemon_get_palette(pokemon *p);
 
-#define POKEMON_COORDINATE_SIZE(x) ((x) >> 3)
+// Make this thing round correctly, therefore add 8 / 2 = 4
+#define POKEMON_COORDINATE_SIZE(x) (((x) + 4) >> 3)
 
 typedef struct {
     u8 width : 4;

@@ -2201,18 +2201,18 @@
 	"POKEMON_MEGA_SENGO": {
 		"basestats": {
 			"hp": 73,
-			"attack": 145,
-			"defense": 80,
-			"speed": 135,
-			"special-attack": 60,
-			"special-defense": 80
+			"attack": 155,
+			"defense": 65,
+			"speed": 115,
+			"special-attack": 70,
+			"special-defense": 65
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
 		"exp_yield": 240,
-		"ability_0": "Temposchub",
+		"ability_0": "Krallenwucht",
 		"ability_1": null,
-		"hidden_ability": null,
+		"hidden_ability": "Krallenwucht",
 		"species_link": "POKEMON_SENGO",
 		"dex_number": 0
 	},

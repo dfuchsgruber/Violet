@@ -28,6 +28,7 @@
 #include "abilities.h"
 #include "constants/attack_affects_whom_flags.h"
 #include "constants/battle/battle_side_statuses.h"
+#include "constants/attack_flags.h"
 
 static const u8 hold_effect_to_type[][2] = {
     {HOLD_EFFECT_BUG_POWER, TYPE_KAEFER},
@@ -172,6 +173,8 @@ int battle_base_damage_calculate(battler *attacker, battler *defender, u32 move,
         move_power = (u16)((150 * move_power) / 100);
     if (attacks[move].effect == 7) // Explosion
         defense /= 2;
+    if (attacker->ability == KRALLENWUCHT && (attacks[move].flags & MAKES_CONTACT))
+        move_power = (u16)((130 * move_power) / 100);
 	
     if (attacks[move].category == CATEGORY_PHYSICAL) {
 		// dprintf("Physical base damage calc: attack %d, defense %d, move power %d\n", attack, defense, move_power);

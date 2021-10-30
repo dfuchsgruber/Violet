@@ -128,6 +128,7 @@ ability_descriptions:
     .word str_ability_descr_0x7b
     .word str_ability_descr_0x7c
     .word str_ability_descr_0x7d
+    .word str_ability_descr_0x7e
 @ // Define the strings
 
 .ifdef LANG_GER
@@ -853,6 +854,8 @@ ability_descriptions:
 		.string "Senkt geg. Init. stark."
 	str_ability_descr_0x7d: @// Tintenschuss
 		.string "Senkt geg. Genaug. bei Berührung."
+	str_ability_descr_0x7e: @// Krallenwucht
+		.string "Verstärkt Attacken, die berühren."
 
 
 .elseif LANG_EN

@@ -888,5 +888,7 @@ extern const u8 gfx_item_jugongnitTiles[];
 extern const u8 gfx_item_jugongnitPal[];
 extern const u8 gfx_item_zobirisnitTiles[];
 extern const u8 gfx_item_zobirisnitPal[];
+extern const u8 gfx_item_sengonitTiles[];
+extern const u8 gfx_item_sengonitPal[];
 
 #endif
