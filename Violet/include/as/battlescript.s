@@ -1329,6 +1329,7 @@ various \battler, 2
 .macro beforeattack
 .byte 0xFC
 .endm
+
 @ Jumps to an adress if a battler has an item with a given effect
 .macro bsc_jump_if_item_effect slot:req item_effect:req target_script:req
     .byte 0xFD // multibyte command
@@ -1336,6 +1337,14 @@ various \battler, 2
     .byte \slot
     .byte \item_effect
     .word \target_script
+.endm
+
+
+@ Tries do set perish song to battler `defending_battler` and jumps if not possible
+.macro setperishsongnoattack failure_continuation:req
+    .byte 0xFD // multibyte command
+    .byte 1
+    .word \failure_continuation
 .endm
 
 @// Meta macros

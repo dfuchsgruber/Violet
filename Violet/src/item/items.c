@@ -943,9 +943,9 @@ static u8 str_item_vipitisnit_description[] = LANGDEP(
 	PSTRING("Wird er von einem Vipitis\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
 	PSTRING("If held by an Seviper in\nbattle it can perform\na mega evolution.")
 );
-static u8 str_item_flamaranit_description[] = LANGDEP(
-	PSTRING("Einer der seltenen Mega-Steine.\nGetragen von Flamara könnte man\nmittels des Mega-Amuletts..."),
-	PSTRING("?????")
+static u8 str_item_palimpalimnit_description[] = LANGDEP(
+	PSTRING("Wird er von einem Palimpalim\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+	PSTRING("If held by an Chimecho in\nbattle it can perform\na mega evolution.")
 );
 static u8 str_item_altarianit_description[] = LANGDEP(
 	PSTRING("Wird er von einem Altaria\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
@@ -5471,13 +5471,13 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
 	},{
-		//ITEM_FLAMARANIT
-		LANGDEP(PSTRING("Flamaranit"), PSTRING("????????")),
-		0xe9, //index
+		//ITEM_PALIMPALIMNIT
+		LANGDEP(PSTRING("Palimpanit"), PSTRING("Chimechonite")),
+		ITEM_PALIMPALIMNIT, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_flamaranit_description,
+		str_item_palimpalimnit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket

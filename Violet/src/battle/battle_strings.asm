@@ -449,6 +449,8 @@ bsc_strings:
 .word str_battle_x1C7
 .word str_battle_x1C8
 .word str_battle_x1C9
+.word str_battle_x1CA
+.word str_battle_x1CB
 
 @ // Define the strings
 
@@ -2983,6 +2985,12 @@ bsc_strings:
 	
 	str_battle_x1C9:
 		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX erzeugt\neinen BSC_SCR_ACTIVE_ABILITY!"
+	
+	str_battle_x1CA:
+		.string "BSC_SCR_ACTIVE_ABILITY von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX lässt\lAbgesang erklingen!"
+
+	str_battle_x1CB:
+		.string "BSC_DEF_ABILITY von\nBSC_DEF_NAME_WITH_PREFIX schützt es vor\nBSC_SCR_ACTIVE_ABILITY!"
 
 .elseif LANG_EN
 	.global str_battle_xc
@@ -5118,6 +5126,12 @@ bsc_strings:
 
 	str_battle_x1C9:
 		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX creates\na BSC_SCR_ACTIVE_ABILITY!"
+	
+	str_battle_x1CA:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX's\nBSC_SCR_ACTIVE_ABILITY plays\lPerish Song!"
+
+	str_battle_x1CB:
+		.string "BSC_DEF_NAME_WITH_PREFIX's\nBSC_DEF_ABILITY protects it from es \nBSC_SCR_ACTIVE_ABILITY!"
 .endif
 
 

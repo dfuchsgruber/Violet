@@ -37,6 +37,8 @@
 .global bsc_tintenschuss
 .global bsc_giftnebel
 .global bsc_giftnebel_end3
+.global bsc_letzte_glocke
+.global bsc_letzte_glocke_end3
 
 
 bsc_wandlungskunst:
@@ -308,3 +310,28 @@ bsc_giftnebel_loop_increment:
 	goto bsc_giftnebel_loop
 bsc_giftnebel_return:
     return
+
+bsc_letzte_glocke_end3:
+    call bsc_letzte_glocke_pause
+    end3
+bsc_letzte_glocke_pause:
+    pause 0x20
+bsc_letzte_glocke:
+    printstring 0x1ca
+    waitmessage 0x40
+    playanimation BANK_SCRIPTING, BATTLE_ANIM_PERISH_BELL, 0
+    printstring 254
+    waitmessage 0x40
+    setbyte defending_battler, 0 // Target for ability
+bsc_letzte_glocke_loop:
+    setperishsongnoattack bsc_letzte_glocke_unaffected
+bsc_letzte_glocke_loop_increment:
+    addbyte defending_battler, 1
+    jumpifarraynotequal defending_battler, battler_cnt, 1 bsc_letzte_glocke_loop 
+bsc_letzte_glocke_return:
+    return
+
+bsc_letzte_glocke_unaffected:
+    printstring 0x1cb
+    waitmessage 0x40
+    goto bsc_letzte_glocke_loop_increment

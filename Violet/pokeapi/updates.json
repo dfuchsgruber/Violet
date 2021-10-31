@@ -2368,8 +2368,21 @@
 		"exp_yield": 240,
 		"dex_number": 0
 	},
-	"POKEMON_114": {
-		"species_link" : "POKEMON_POKEMON_0"
+	"POKEMON_MEGA_PALIMPALIM": {
+		"species_link" : "POKEMON_PALIMPALIM",
+		"basestats": {
+			"hp": 75,
+			"attack": 60,
+			"defense": 105,
+			"speed": 50,
+			"special-attack": 120,
+			"special-defense": 115
+		},
+		"ability_0" : "Finalglocke",
+		"ability_1" : null,
+		"hidden_ability" : "Finalglocke",
+		"exp_yield": 240,
+		"dex_number": 0
 	},
 	"POKEMON_LOCKSCHAL": {
 		"name" : {

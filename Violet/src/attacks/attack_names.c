@@ -417,4 +417,5 @@ u8 attack_names[ATTACK_CNT][13] = {
 	LANGDEP(PSTRING("Tornado"), PSTRING("Tornado")),
 	LANGDEP(PSTRING("Königsschild"), PSTRING("King\'s Shield")),
 	LANGDEP(PSTRING("Runengleich"), PSTRING("Glyphmatch")),
+	LANGDEP(PSTRING("Sirenenlied"), PSTRING("Siren's Song")),
 };

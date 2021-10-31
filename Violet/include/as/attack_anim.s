@@ -4,9 +4,9 @@
 .endm
 
 
-.macro cmd1 param0
+.macro freegraphic idx:req
 .byte 0x1
-.hword \param0
+.hword \idx
 .endm
 
 

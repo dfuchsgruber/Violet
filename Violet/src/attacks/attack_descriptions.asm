@@ -416,6 +416,7 @@ attack_descriptions:
 	.word str_attack_description_attack_tornado
 	.word str_attack_description_attack_koenigsschild
 	.word str_attack_description_attack_glyphengleich
+	.word str_attack_description_attack_sirenenlied
 
 .ifdef LANG_GER
 .global str_attack_description_attack_pfund
@@ -2890,6 +2891,9 @@ attack_descriptions:
 str_attack_description_attack_glyphengleich:
 		.string "Wird stärker,\nje öfter eig.\nBuchstabe in\ngeg. Namen."
 
+str_attack_description_attack_sirenenlied:
+		.string "Betörendes Lied,\ndas den Gegner\nan der Flucht\nhindert."
+
 .elseif LANG_EN
 	.global str_attack_description_attack_pfund
 
@@ -4951,6 +4955,9 @@ str_attack_description_attack_glyphengleich:
 
 str_attack_description_attack_glyphengleich:
 		.string "Gets stronger\nthe more often\nown letter\nin opp. name."
+
+str_attack_description_attack_sirenenlied:
+		.string "Bewitching song,\nthat prevents\nfoes from\nfleeing."
 
 
 .endif

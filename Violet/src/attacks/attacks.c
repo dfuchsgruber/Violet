@@ -6215,6 +6215,15 @@ attack attacks[ATTACK_CNT] = {
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
 		0x0 //Padding
-	}
-    
+	},
+	[ATTACK_SIRENENLIED] = {
+		.effect = 0x6A,
+		.base_power = 0,
+		.type = TYPE_NORMAL,
+		.accuracy = 100,
+		.pp = 5,
+		.affects_whom = SELECTED_TARGET,
+		.flags = AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
+		.category = CATEGORY_STATUS
+	},
 };

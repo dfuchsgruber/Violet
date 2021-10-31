@@ -130,6 +130,7 @@ ability_descriptions:
     .word str_ability_descr_0x7d
     .word str_ability_descr_0x7e
     .word str_ability_descr_0x7f
+    .word str_ability_descr_0x80
 @ // Define the strings
 
 .ifdef LANG_GER
@@ -863,6 +864,9 @@ ability_descriptions:
 	str_ability_descr_0x7f: @// Giftnebel
 		.string "Vergiftet Gegner bei Kampfeintritt."
 
+	str_ability_descr_0x80: @// Finalglocke
+		.string "Spielt Abgesang bei Kampfeintritt."
+
 
 .elseif LANG_EN
 	.global str_ability_descr_0x0
@@ -1477,6 +1481,9 @@ ability_descriptions:
 
 	str_ability_descr_0x7f: @// Giftnebel
 		.string "Poisons foes on battle entry."
+
+	str_ability_descr_0x80: @// Fataläuten
+		.string "Plays perish song on battle entry."
 
 .endif
 

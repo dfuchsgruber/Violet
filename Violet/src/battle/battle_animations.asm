@@ -56,6 +56,7 @@ battle_animations:
     .word attack_animation_calm_mind
     .word battle_animation_focused_fighter_introduction
     .word battle_animation_focused_fighter_introduction2
+    .word battle_animation_perish_bell
 
 battle_animation_extreme_heat_introduction:
     loadgraphic 0x2815
@@ -397,3 +398,62 @@ battle_animation_focused_fighter_introduction2:
     fadebattler SPRITE_FADING_AFFECTS_BATTLE_BG, 6, 8, 0, 0
     waitstate
     end
+
+battle_animation_perish_bell:
+    loadgraphic 0x27dd
+    loadgraphic 0x27de
+    loadgraphic 0x27db
+    loadcallback battle_animation_fade_battler, 10, 5
+        .hword 10, 0, 0, 10, 0x7FFF
+    waitstate
+    loadcallback battle_animation_load_music_note_palettes, 10, 0
+    loadoam battle_animation_oam_template_bell, (2 | OAM_AT_USER), 4
+        .hword 0, -24, 0, 1
+    pause 12    
+    loadoam battle_animation_oam_template_music_note, (40 | OAM_AT_USER), 7
+        .hword 0, -24, 48, -18, 35, 0, 0
+	loadoam battle_animation_oam_template_music_note, (40 | OAM_AT_USER), 7
+        .hword 0, -24, -48, 20, 30, 1, 1
+	loadoam battle_animation_oam_template_music_note, (40 | OAM_AT_USER), 7
+        .hword 0, -24, -38, -29, 30, 2, 2
+	loadoam battle_animation_oam_template_music_note, (40 | OAM_AT_USER), 7
+        .hword 0, -24, 36, 18, 30, 3, 3
+    call perish_bell_ring
+    pause 33    
+    loadoam battle_animation_oam_template_music_note, (40 | OAM_AT_USER), 7
+        .hword 0, -24, 19, 26, 35, 4, 4
+	loadoam battle_animation_oam_template_music_note, (40 | OAM_AT_USER), 7
+        .hword 0, -24, -34, -12, 30, 5, 5
+	loadoam battle_animation_oam_template_music_note, (40 | OAM_AT_USER), 7
+        .hword 0, -24, 41, -20, 34, 6, 2
+	loadoam battle_animation_oam_template_music_note, (40 | OAM_AT_USER), 7
+        .hword 0, -24, -15, 26, 32, 7, 0
+	call perish_bell_ring
+	pause 33
+    loadoam battle_animation_oam_template_music_note, (40 | OAM_AT_USER), 7
+        .hword 0, -24, -48, 18, 31, 0, 2
+	loadoam battle_animation_oam_template_music_note, (40 | OAM_AT_USER), 7
+        .hword 0, -24, 48, -20, 30, 2, 5
+	loadoam battle_animation_oam_template_music_note, (40 | OAM_AT_USER), 7
+        .hword 0, -24, 38, 29, 33, 4, 3
+	loadoam battle_animation_oam_template_music_note, (40 | OAM_AT_USER), 7
+        .hword 0, -24, -36, -18, 30, 6, 1
+	call perish_bell_ring
+	waitstate
+	loadcallback battle_animation_free_music_note_palettes, 5, 0
+    waitstate
+    freegraphic 0x27dd
+    freegraphic 0x27de
+    freegraphic 0x27db
+    loadcallback battle_animation_fade_battler, 10, 5
+        .hword 10, 3, 10, 0, 0x7FFF
+    end
+
+perish_bell_ring:
+    fadeexclude FADEEXCLUDE_USER_AND_TARGET, 3, 8, 0, 0x396D
+    loadcallback battle_animation_fade_battler, 10, 5
+        .hword 10, 3, 2, 10, 0x7FFF
+    loadoam battle_animation_oam_template_expanding_thin_ring, (40 | OAM_AT_USER), 4
+        .hword 0, -24, 0, 1
+    playsound_with_pan 385, SOUND_PAN_ATTACKER
+    return

@@ -128,7 +128,8 @@
 		"GEGENWIND",
 		"TINTENSCHUSS",
 		"KRALLENWUCHT",
-		"GIFTNEBEL"
+		"GIFTNEBEL",
+		"FINALGLOCKE"
 	],
 	"base": 0
 }

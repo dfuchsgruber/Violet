@@ -281,7 +281,7 @@ extern const u8 gfx_pokemon_mega_ariados_frontspriteTiles[];
 extern const u8 gfx_pokemon_mega_firnontor_frontspriteTiles[];
 extern const u8 gfx_pokemon_mega_jugong_frontspriteTiles[];
 extern const u8 gfx_pokemon_mega_flunkifer_frontspriteTiles[];
-extern const u8 gfx_pokemon_114_frontspriteTiles[];
+extern const u8 gfx_pokemon_mega_palimpalim_frontspriteTiles[];
 extern const u8 gfx_pokemon_lockschal_frontspriteTiles[];
 extern const u8 gfx_pokemon_stichschal_frontspriteTiles[];
 extern const u8 gfx_pokemon_stahlstich_frontspriteTiles[];
@@ -726,7 +726,7 @@ graphic pokemon_frontsprites[POKEMON_CNT] = {
 	[POKEMON_MEGA_FIRNONTOR] = {.sprite = gfx_pokemon_mega_firnontor_frontspriteTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEMON_MEGA_FIRNONTOR,},
 	[POKEMON_MEGA_JUGONG] = {.sprite = gfx_pokemon_mega_jugong_frontspriteTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEMON_MEGA_JUGONG,},
 	[POKEMON_MEGA_FLUNKIFER] = {.sprite = gfx_pokemon_mega_flunkifer_frontspriteTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEMON_MEGA_FLUNKIFER,},
-	[POKEMON_114] = {.sprite = gfx_pokemon_114_frontspriteTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEMON_114,},
+	[POKEMON_MEGA_PALIMPALIM] = {.sprite = gfx_pokemon_mega_palimpalim_frontspriteTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEMON_MEGA_PALIMPALIM,},
 	[POKEMON_LOCKSCHAL] = {.sprite = gfx_pokemon_lockschal_frontspriteTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEMON_LOCKSCHAL,},
 	[POKEMON_STICHSCHAL] = {.sprite = gfx_pokemon_stichschal_frontspriteTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEMON_STICHSCHAL,},
 	[POKEMON_STAHLSTICH] = {.sprite = gfx_pokemon_stahlstich_frontspriteTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEMON_STAHLSTICH,},

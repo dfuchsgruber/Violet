@@ -130,4 +130,5 @@ u8 ability_names[][13] = {
 	LANGDEP(PSTRING("Tintenschuss"), PSTRING("Ink Shot")),
 	LANGDEP(PSTRING("Krallenwucht"), PSTRING("Tough Claw")),
 	LANGDEP(PSTRING("Giftnebel"), PSTRING("Toxic Mist")),
+	LANGDEP(PSTRING("Finalglocke"), PSTRING("Perish Bell")),
 };

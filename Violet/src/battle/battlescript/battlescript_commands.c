@@ -813,8 +813,26 @@ void bsc_jump_if_item_effect() {
     // dprintf("Bsc jump if battler %d has item effect %d, after jump bsc : 0x%x\n", battler_idx, item_effect, bsc_offset);
 }
 
+void bsc_try_set_perishsong_no_attack() {
+    u8 battler_idx = defending_battler;
+    if (battlers_absent & int_bitmasks[battler_idx]) {
+        bsc_offset += 5;
+        return;
+    }
+    if ((battler_statuses3[battler_idx] & STATUS3_PERISH_SONG) || battlers[battler_idx].ability == LAERMSCHUTZ) {
+        bsc_offset = (u8*)UNALIGNED_32_GET(bsc_offset + 1);
+        return;
+    } else {
+        battler_statuses3[battler_idx] |= STATUS3_PERISH_SONG;
+        battler_disable[battler_idx].perish_song_timer = 3;
+        battler_disable[battler_idx].perish_song_timer_start = 3;
+        bsc_offset += 5;
+    }
+}
+
 static void (*bsc_multibyte_commands[])() = {
     [0] = bsc_jump_if_item_effect,
+    [1] = bsc_try_set_perishsong_no_attack,
 };
 
 void bsc_cmd_multibyte_command() {
