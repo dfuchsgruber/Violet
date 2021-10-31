@@ -418,7 +418,7 @@ attack_anims:
 		.word 0x81d8f9e @//attack_tornado
 		.word 0x81cd1e5 @//attack_koenigsschild
 		.word 0x81d169b @//attack glyphengleich
-		.word 0x81d61d1 @//attack_sirenenlied
+		.word 0x81ce830 @//attack_sirenenlied
 
 
 attack_script_tsunami:

@@ -389,14 +389,20 @@
 		"ability_1": null,
 		"hidden_ability": "Curator",
 		"safari_rate": 0,
-		"dex_number": 26
+		"dex_number": 26,
+		"levelup_moves" : [
+			["Sirenenlied", 1]
+		]
 	},
 	"POKEMON_KNUDDELUFF": {
 		"ability_0": "Charmebolzen",
 		"ability_1": null,
 		"hidden_ability": "Curator",
 		"safari_rate": 0,
-		"dex_number": 27
+		"dex_number": 27,
+		"levelup_moves" : [
+			["Sirenenlied", 1]
+		]
 	},
 	"POKEMON_ZUBAT": {
 		"ability_0": "Konzentrator",
@@ -2370,6 +2376,8 @@
 	},
 	"POKEMON_MEGA_PALIMPALIM": {
 		"species_link" : "POKEMON_PALIMPALIM",
+		"type_0": "Psycho",
+		"type_1": "Stahl",
 		"basestats": {
 			"hp": 75,
 			"attack": 60,
@@ -4374,14 +4382,20 @@
 		"ability_1": null,
 		"hidden_ability": "Fluffig",
 		"safari_rate": 0,
-		"dex_number": 291
+		"dex_number": 291,
+		"levelup_moves" : [
+			["Sirenenlied", 27]
+		]
 	},
 	"POKEMON_ENEKORO": {
 		"ability_0": "Charmebolzen",
 		"ability_1": null,
 		"hidden_ability": "Fluffig",
 		"safari_rate": 0,
-		"dex_number": 292
+		"dex_number": 292,
+		"levelup_moves" : [
+			["Sirenenlied", 1]
+		]
 	},
 	"POKEMON_KECLEON": {
 		"ability_0": "Farbwechsel",
@@ -4696,7 +4710,10 @@
 		"ability_1": null,
 		"hidden_ability": "Wolke_sieben",
 		"safari_rate": 0,
-		"dex_number": 334
+		"dex_number": 334,
+		"levelup_moves" : [
+			["Sirenenlied", 34]
+		]
 	},
 	"POKEMON_ALTARIA": {
 		"ability_0": "Innere_kraft",
@@ -4704,6 +4721,7 @@
 		"hidden_ability": "Wolke_sieben",
 		"safari_rate": 0,
 		"levelup_moves": [
+			["Sirenenlied", 34],
 			[
 				"Donnerblitz",
 				40
@@ -5109,7 +5127,15 @@
 		"ability_1": null,
 		"hidden_ability": null,
 		"safari_rate": 0,
-		"dex_number": 362
+		"dex_number": 362,
+		"levelup_moves" : [
+			["Sirenenlied", 20],
+			["Lichtkanone", 45]
+		],
+		"accessible_moves" : [
+			"Lichtkanone",
+			"Eisenschweif"
+		]
 	},
 	"POKEMON_EGG": {
 		"basestats": {

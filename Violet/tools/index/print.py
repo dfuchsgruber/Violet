@@ -4,6 +4,8 @@
 
 import argparse, pickle
 from collections import defaultdict
+import yaml
+import pprint
 
 def print_habitat_index(habitats):
     """ Creates a readable version of the habitat index. """
@@ -130,6 +132,7 @@ if __name__ == '__main__':
     group.add_argument('--misc', dest='index_type', action='store_const', const='misc', help='Output the index for misc persons (mushrooms, shells, ...)')
     group.add_argument('--tutor_crystal', dest='index_type', action='store_const', const='tutor_crystal', help='Output the index for tutor crystals')
     group.add_argument('--dungeon', dest='index_type', action='store_const', const='dungeon', help='Output the index for dungeons')
+    group.add_argument('--pokemon', dest='index_type', action='store_const', const='pokemon_data', help='Output all basestat data for all pokemon.')
     args = parser.parse_args()
 
     with open(args.pickle, 'rb') as f:
@@ -148,6 +151,8 @@ if __name__ == '__main__':
         readable = print_tutor_crystal_index(index)
     elif args.index_type == 'dungeon':
         readable = print_dungeon_index(index)
+    elif args.index_type == 'pokemon_data':
+        readable = pprint.pformat(index, indent=4)
     with open(args.output, 'w+') as f:
         f.write(readable)
     
