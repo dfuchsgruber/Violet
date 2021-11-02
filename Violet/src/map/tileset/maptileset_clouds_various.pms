@@ -18484,28 +18484,28 @@
 			],
 			[
 				{
-					"tile_idx": 0,
+					"tile_idx": 684,
+					"palette_idx": 3,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 685,
+					"palette_idx": 3,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 700,
+					"palette_idx": 3,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 701,
+					"palette_idx": 3,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 0,
@@ -31350,7 +31350,7 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": "0x0",
+				"behaviour": "MB_JUMP_ALL_WITH_CLOUD",
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": 0,

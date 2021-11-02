@@ -528,3 +528,8 @@ _blxr4:
     ldr r2, = yesnobox | 1
     bx r2
     .pool
+
+.org 0x08068100
+    ldr r3, =player_get_ledge_direction | 1
+    bx r3
+    .pool

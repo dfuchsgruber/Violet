@@ -246,6 +246,8 @@
         "MB_CLIMBABLE_LADDER_MIDPOINT",
         "MB_CRAFTING_CAULDRON",
         "MB_BOULDER_LANE",
-        "MB_CLOUD_UPSTREAM_WARP"
+        "MB_CLOUD_UPSTREAM_WARP",
+        "MB_JUMP_ALL",
+        "MB_JUMP_ALL_WITH_CLOUD"
     ]
 }

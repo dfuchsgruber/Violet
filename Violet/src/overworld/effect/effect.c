@@ -12,12 +12,7 @@
 #include "map/cloud.h"
 #include "bios.h"
 #include "overworld/npc.h"
-
-/**
-graphic overworld_effect_explosion_graphic = {
-    .sprite = gfx_overworld_explosionTiles, .tag = GFX_TAG_OVERWORLD_EFFECT_EXPLOSION, .size = GRAPHIC_SIZE_4BPP(32, 32),
-};
-**/
+#include "prng.h"
 
 static graphic overworld_effect_explosion_graphics[] = {
     [0] = {.sprite = gfx_overworld_explosionTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0xFFFF},
@@ -288,6 +283,17 @@ static gfx_frame overworld_effect_lightning_gfx_animation[] = {
 static gfx_frame *overworld_effect_lightning_gfx_animations[] = {overworld_effect_lightning_gfx_animation};
 
 static void overworld_effect_lightning_oam_callback(oam_object *self) {
+    if ((self->private[3] != save1->bank || self->private[4] != save1->map) && overworld_viewport.active) {
+        self->private[5] = (u16)(self->private[5] - overworld_viewport.x);
+        self->private[6] = (u16)(self->private[6] - overworld_viewport.y);
+        self->private[3] = save1->bank;
+        self->private[4] = save1->map;
+    }
+    if (overworld_effect_is_oam_outside_camera_view((s16)self->private[5], (s16)self->private[6], 16, 32)) {
+        self->flags |= OAM_FLAG_INVISIBLE;
+    } else {
+        self->flags &= (u16)(~OAM_FLAG_INVISIBLE);
+    }
     u16 *frame = self->private + 1;
     if (*frame == 7 * LIGHTNING_FRAME_DURATION + 1) {
         cpuset(pals, pal_tmp, CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(sizeof(pals)));
@@ -315,11 +321,17 @@ void overworld_effect_lightning_initialize() {
     u8 oam_idx = oam_new_backward_search(&overworld_effect_lightning_oam_template, x, y , 0);
     oams[oam_idx].flags |= OAM_FLAG_CENTERED;
     oam_gfx_anim_start(oams + oam_idx, 0);
+    oams[oam_idx].private[5] = (u16)x;
+    oams[oam_idx].private[6] = (u16)y;
+    oams[oam_idx].private[3] = (u16)overworld_effect_state.target_ow_bank;
+    oams[oam_idx].private[4] = (u16)overworld_effect_state.target_ow_and_their_map;
 }
 
 void special_overworld_effect_lightning() {
     overworld_effect_state.x = *var_access(0x8004);
     overworld_effect_state.y = *var_access(0x8005);
+    overworld_effect_state.target_ow_bank = save1->bank;
+    overworld_effect_state.target_ow_and_their_map = save1->map;
     overworld_effect_new(OVERWORLD_EFFECT_LIGHTNING);
 }
 
@@ -406,6 +418,236 @@ void special_overworld_effect_rainbow_sparkles() {
     overworld_effect_new(OVERWORLD_EFFECT_RAINBOW_SPARKLES);
 }
 
+static graphic overworld_effect_feathers_graphics[] = {
+    [0] = {.sprite = gfx_overworld_effect_featherTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [1] = {.sprite = gfx_overworld_effect_featherTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [2] = {.sprite = gfx_overworld_effect_featherTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [3] = {.sprite = gfx_overworld_effect_featherTiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [4] = {.sprite = gfx_overworld_effect_featherTiles + 4 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [5] = {.sprite = gfx_overworld_effect_featherTiles + 5 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [6] = {.sprite = gfx_overworld_effect_featherTiles + 6 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [7] = {.sprite = gfx_overworld_effect_featherTiles + 7 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [8] = {.sprite = gfx_overworld_effect_featherTiles + 8 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [9] = {.sprite = gfx_overworld_effect_featherTiles + 9 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [10] = {.sprite = gfx_overworld_effect_featherTiles + 10 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [11] = {.sprite = gfx_overworld_effect_featherTiles + 11 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [12] = {.sprite = gfx_overworld_effect_featherTiles + 12 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [13] = {.sprite = gfx_overworld_effect_featherTiles + 13 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [14] = {.sprite = gfx_overworld_effect_featherTiles + 14 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [15] = {.sprite = gfx_overworld_effect_featherTiles + 15 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+    [16] = {.sprite = gfx_overworld_effect_featherTiles + 16 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+};
+
+palette overworld_effect_feathers_palette = {
+    .pal = gfx_overworld_effect_featherPal, .tag = GFX_TAG_OVERWORLD_EFFECT_FEATHERS,
+};
+
+static sprite overworld_effect_feathers_sprite = {
+    .attr0 = ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE | ATTR0_DSIZE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(2),
+};
+
+static sprite overworld_effect_feathers_sprite_controller = {
+    .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(2),
+};
+
+static gfx_frame overworld_effect_feathers_animation_type_0[] = {
+    {.data = 1, .duration = 0}, 
+    {.data = GFX_ANIM_END}, 
+};
+
+static gfx_frame overworld_effect_feathers_animation_type_1[] = {
+    {.data = 2, .duration = 0}, 
+    {.data = GFX_ANIM_END}, 
+};
+
+static gfx_frame overworld_effect_feathers_animation_type_2[] = {
+    {.data = 3, .duration = 0}, 
+    {.data = GFX_ANIM_END}, 
+};
+
+static gfx_frame overworld_effect_feathers_animation_type_3[] = {
+    {.data = 4, .duration = 0},  
+    {.data = GFX_ANIM_END}, 
+};
+
+static gfx_frame overworld_effect_feathers_animation_type_4[] = {
+    {.data = 5, .duration = 0},  
+    {.data = GFX_ANIM_END}, 
+};
+
+static gfx_frame overworld_effect_feathers_animation_type_5[] = {
+    {.data = 6, .duration = 0},  
+    {.data = GFX_ANIM_END}, 
+};
+
+static gfx_frame overworld_effect_feathers_animation_type_6[] = {
+    {.data = 7, .duration = 0},  
+    {.data = GFX_ANIM_END}, 
+};
+
+static gfx_frame overworld_effect_feathers_animation_type_7[] = {
+    {.data = 8, .duration = 0},  
+    {.data = GFX_ANIM_END}, 
+};
+
+enum {
+    FEATHER_ANIMATION_TYPE_0,
+    FEATHER_ANIMATION_TYPE_1,
+    FEATHER_ANIMATION_TYPE_2,
+    FEATHER_ANIMATION_TYPE_3,
+    FEATHER_ANIMATION_TYPE_4,
+    FEATHER_ANIMATION_TYPE_5,
+    FEATHER_ANIMATION_TYPE_6,
+    FEATHER_ANIMATION_TYPE_7,
+};
+
+static gfx_frame *overworld_effect_feathers_animations[] = {
+    [FEATHER_ANIMATION_TYPE_0] = overworld_effect_feathers_animation_type_0,
+    [FEATHER_ANIMATION_TYPE_1] = overworld_effect_feathers_animation_type_1,
+    [FEATHER_ANIMATION_TYPE_2] = overworld_effect_feathers_animation_type_2,
+    [FEATHER_ANIMATION_TYPE_3] = overworld_effect_feathers_animation_type_3,
+    [FEATHER_ANIMATION_TYPE_4] = overworld_effect_feathers_animation_type_4,
+    [FEATHER_ANIMATION_TYPE_5] = overworld_effect_feathers_animation_type_5,
+    [FEATHER_ANIMATION_TYPE_6] = overworld_effect_feathers_animation_type_6,
+    [FEATHER_ANIMATION_TYPE_7] = overworld_effect_feathers_animation_type_7,
+};
+
+static rotscale_frame overworld_effect_feathers_affine_animation[] = {
+    {.affine = {.rotation = 1, .duration = 12}},
+    {.affine = {.rotation = (u8)(-1), .duration = 24}}, 
+    {.affine = {.rotation = 1, .duration = 12}},
+    {.command = {.command = ROTSCALE_ANIM_JUMP, .parameter = 0}},  
+};
+
+static rotscale_frame *overworld_effect_feathers_affine_animations[] = {
+    overworld_effect_feathers_affine_animation,
+};
+
+#define FEATHERS_FRAME_DURATION 8
+#define FEATHERS_FRAME_DELAY 8
+
+static void overworld_effect_feathers_oam_callback_center(oam_object *self) {
+    oam_set_priority_by_height(self, (u8)self->private[2]);
+    oam_set_subpriority_by_height((u8)self->private[2], self, 0);
+    if ((self->private[3] != save1->bank || self->private[4] != save1->map) && overworld_viewport.active) {
+        self->private[0] = (u16)(self->private[0] - overworld_viewport.x);
+        self->private[1] = (u16)(self->private[1] - overworld_viewport.y);
+        self->private[3] = save1->bank;
+        self->private[4] = save1->map;
+    }
+    if (self->private[6] > 0 && ~overworld_effect_is_oam_outside_camera_view((s16)self->private[0], (s16)self->private[1], 16, 16)) {
+        if (self->private[5] > 0) {
+            self->private[5]--;
+            return;
+        }
+        self->private[5] = FEATHERS_FRAME_DELAY;
+        self->y2++;
+        self->private[6]--;
+    } else {
+        self->private[7] = true;
+        self->flags |= OAM_FLAG_INVISIBLE;
+        self->callback = oam_null_callback;
+    }
+}
+
+static void overworld_effect_feathers_oam_callback_gfx_anim_with_delay(oam_object *self) {
+    if (self->private[6] > 0) {
+        self->flags |= OAM_FLAG_INVISIBLE;
+        (self->private[6])--;
+    } else {
+        self->flags &= (u16)(~OAM_FLAG_INVISIBLE);
+        oam_rotscale_anim_init(self, 0);
+        self->private[5] = FEATHERS_FRAME_DELAY; // is finished ?
+        self->private[6] = FEATHERS_FRAME_DURATION; // is finished ?
+        self->private[7] = false; // is finished ?
+        self->callback = overworld_effect_feathers_oam_callback_center;
+    }
+}
+
+static coordinate_t feather_positions[] = {
+    {.x = -9, .y = -4},
+    {.x = 12, .y = -7},
+    {.x = -13, .y = -11},
+    {.x = 8, .y = -2},
+    {.x = 6, .y = -9},
+    {.x = -5, .y = -2},
+};
+
+static u8 feather_types[] = {
+    FEATHER_ANIMATION_TYPE_0,
+    FEATHER_ANIMATION_TYPE_1,
+    FEATHER_ANIMATION_TYPE_2,
+    FEATHER_ANIMATION_TYPE_3,
+    FEATHER_ANIMATION_TYPE_4,
+    FEATHER_ANIMATION_TYPE_5,
+};
+
+#define FEATHER_START_FRAME 8
+
+static u8 feather_delays[] = {
+    FEATHER_START_FRAME + 0,
+    FEATHER_START_FRAME + 8,
+    FEATHER_START_FRAME + 20,
+    FEATHER_START_FRAME + 26,
+    FEATHER_START_FRAME + 31,
+    FEATHER_START_FRAME + 40,
+};
+
+
+static void overworld_effect_feathers_oam_callback_controller(oam_object *self) {
+
+    u16 *feather_oams = self->private;
+    for (u8 i = 0; i < ARRAY_COUNT(feather_positions); i++) {
+        if (!oams[feather_oams[i]].private[7])
+            return;
+    }
+    for (u8 i = 0; i < ARRAY_COUNT(feather_positions); i++) {
+        oam_rotscale_free(oams + feather_oams[i]);
+        overworld_effect_delete_oam_and_free_resources_if_unused(oams + feather_oams[i]);
+    }
+    overworld_effect_delete(self, OVERWORLD_EFFECT_FEATHERS);
+}
+
+static oam_template overworld_effect_feathers_oam_template = {
+    .tiles_tag = 0xFFFF, .pal_tag = GFX_TAG_OVERWORLD_EFFECT_FEATHERS,
+    .graphics = overworld_effect_feathers_graphics,
+    .oam = &overworld_effect_feathers_sprite, .animation = overworld_effect_feathers_animations,
+    .rotscale = overworld_effect_feathers_affine_animations, .callback = overworld_effect_feathers_oam_callback_gfx_anim_with_delay,
+};
+
+static oam_template overworld_effect_feathers_oam_template_controller = {
+    .tiles_tag = 0xFFFF, .pal_tag = 0xFFFF,
+    .graphics = overworld_effect_feathers_graphics,
+    .oam = &overworld_effect_feathers_sprite_controller, .animation = oam_gfx_anim_table_null,
+    .rotscale = oam_rotscale_anim_table_null, .callback = overworld_effect_feathers_oam_callback_controller,
+};
+
+
+void overworld_effect_feathers_initialize() {
+    s16 x = (s16)(overworld_effect_state.x + 7);
+    s16 y = (s16)(overworld_effect_state.y + 7);
+    overworld_effect_ow_coordinates_to_screen_coordinates(&x, &y, 8, 0);
+    // Create a controller oam
+    u8 controller_oam_idx = oam_new_forward_search(&overworld_effect_feathers_oam_template_controller, 0, 0, 0);
+    oams[controller_oam_idx].flags |= OAM_FLAG_INVISIBLE;
+    for (u8 i = 0; i < ARRAY_COUNT(feather_positions); i++) {
+        u8 oam_idx = oam_new_forward_search(&overworld_effect_feathers_oam_template, x, y ,10);
+        oam_set_priority_by_height(oams + oam_idx, (u8)overworld_effect_state.height);
+        oams[oam_idx].flags |= OAM_FLAG_CENTERED;
+        oams[oam_idx].private[0] = (u16)(overworld_effect_state.x + 7);
+        oams[oam_idx].private[1] = (u16)(overworld_effect_state.y + 7);
+        oams[oam_idx].private[2] = (u16)overworld_effect_state.height;
+        oams[oam_idx].private[3] = (u16)overworld_effect_state.target_ow_bank;
+        oams[oam_idx].private[4] = (u16)overworld_effect_state.target_ow_and_their_map;
+        oam_gfx_anim_start(oams + oam_idx, feather_types[i]);
+        oams[oam_idx].private[6] = feather_delays[i];
+        oams[oam_idx].private[7] = false;
+        oams[oam_idx].x2 = feather_positions[i].x;
+        oams[oam_idx].y2 = feather_positions[i].y;
+        oams[controller_oam_idx].private[i] = oam_idx;
+    }
+}
+
 const u8 *overworld_effects[NUM_OVERWORLD_EFFECTS] = {
     [OVERWORLD_EFFECT_EXCLAMATION_MARK_ICON] = overworld_effect_script_exclamation_mark_icon,
     [OVERWORLD_EFFECT_USE_CUT_ON_GRASS] = overworld_effect_script_use_cut_on_grass,
@@ -484,4 +726,5 @@ const u8 *overworld_effects[NUM_OVERWORLD_EFFECTS] = {
     [OVERWORLD_EFFECT_WHIRLWIND] = overworld_effect_script_whirlwind,
     [OVERWORLD_EFFECT_LIGHTNING] = overworld_effect_script_lightning,
     [OVERWORLD_EFFECT_RAINBOW_SPARKLES] = overworld_effect_script_rainbow_sparkles,
+    [OVERWORLD_EFFECT_FEATHERS] = overworld_effect_script_feathers,
 };

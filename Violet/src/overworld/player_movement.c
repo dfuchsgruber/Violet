@@ -47,6 +47,26 @@ bool npc_player_surfing_towards_waterfall(u8 direction) {
     return false;
 }
 
+bool block_cloud_ledge_triggered(s16 x, s16 y, u8 direction) {
+    (void)direction;
+    if ((player_state.state & PLAYER_STATE_BIKING)) { // && checkflag(FLAG_CLOUD_HAS_WINGS)) {
+        u16 behaviour = block_get_behaviour_by_pos(x, y);
+        if (behaviour == MB_JUMP_ALL_WITH_CLOUD) {
+            return true;
+        }
+    }
+    return false;
+}
+
+static u8 npc_player_get_collision_after_ledge(npc *player, s16 x, s16 y, u8 direction) {
+    // Check if the block "after" the ledge yields no collision on its own
+    npc dummy = *player;
+    coordinates_apply_direction(direction, &dummy.dest_x, &dummy.dest_y);
+    coordinates_apply_direction(direction, &dummy.from_x, &dummy.from_y);
+    coordinates_apply_direction(direction, &x, &y);
+    return npc_get_collision(&dummy, x, y, direction);
+}
+
 
 int npc_player_attempt_step(npc *player, s16 x, s16 y, u8 direction, int param_5) {
     (void) param_5; // unused in fire red
@@ -57,15 +77,17 @@ int npc_player_attempt_step(npc *player, s16 x, s16 y, u8 direction, int param_5
         return COLLISION_START_SURFING;
     }
     if (block_ledge_triggered(x, y, direction)) {
-        // Check if the block "after" the ledge yields no collision on its own
-        npc dummy = *player;
-        coordinates_apply_direction(direction, &dummy.dest_x, &dummy.dest_y);
-        coordinates_apply_direction(direction, &dummy.from_x, &dummy.from_y);
-        coordinates_apply_direction(direction, &x, &y);
-        collision = npc_get_collision(&dummy, x, y, direction);
-        if (collision == COLLISION_NONE) {
+        if (npc_player_get_collision_after_ledge(player, x, y, direction) == COLLISION_NONE) {
             save_increment_key(SAV_KEY_LEDGES_JUMPED);
             return COLLISION_LEDGE;
+        } else {
+            return COLLISION_IMPASSABLE; // There are no special collision events like boulder pushing along ledges
+        }
+    } else if (block_cloud_ledge_triggered(x, y, direction)) {
+        if (npc_player_get_collision_after_ledge(player, x, y, direction) == COLLISION_NONE) {
+            save_increment_key(SAV_KEY_LEDGES_JUMPED);
+            dprintf("Return cloud collision\n");
+            return COLLISION_CLOUD_LEDGE;
         } else {
             return COLLISION_IMPASSABLE; // There are no special collision events like boulder pushing along ledges
         }
@@ -106,6 +128,26 @@ int npc_player_attempt_step(npc *player, s16 x, s16 y, u8 direction, int param_5
         }      
     }
     return collision;
+}
+
+bool block_is_ledge_any_direction(u16 behaviour) {
+    return behaviour == MB_JUMP_ALL;
+}
+
+extern bool (*block_is_ledge_by_direction[4])(u16);
+
+u8 player_get_ledge_direction(s16 x, s16 y, u8 direction) {
+    if (direction == DIR_NONE)
+        return DIR_NONE;
+    u16 behaviour = block_get_behaviour_by_pos(x, y);
+    if (direction > DIR_RIGHT)
+        direction = (u8) (direction - 4);
+    if (block_is_ledge_by_direction[MIN((int)ARRAY_COUNT(block_is_ledge_by_direction), direction - 1)](behaviour)) {
+        return direction;
+    }
+    if (block_is_ledge_any_direction(behaviour))
+        return direction;
+    return DIR_NONE;
 }
 
 static u8 diagonal_walking_movement_idx_by_collision(u8 collision) {
@@ -237,6 +279,15 @@ void npc_player_init_move_rainbow(u8 direction) {
     npc_player_set_state_and_execute_tile_anim(movement_idx, 2);
 }
 
+static u8 jump_cloud_movements[5] = {JUMP_DOWN2, JUMP_DOWN2, JUMP_UP2, JUMP_LEFT2, JUMP_RIGHT2};
+
+void npc_player_init_move_jump_cloud(u8 direction) {
+    play_sound(150);
+    u8 movement_idx = jump_cloud_movements[MIN(ARRAY_COUNT(rainbow_movements), direction)];
+    npc_player_set_state_and_execute_tile_anim(movement_idx, 2);
+
+}
+
 void npc_player_initialize_move_on_bike(u8 direction, u8 unused, key keys_new, key keys_held) {
     (void)unused; (void)keys_new; (void)keys_held;
     dprintf("move on bike, keys held %d, speed %d\n", keys_held.value, player_state.bike_speed);
@@ -249,6 +300,19 @@ void npc_player_initialize_move_on_bike(u8 direction, u8 unused, key keys_new, k
             // Keep the current biking speed
             npc_player_init_move_jump(direction);
             return;
+        case COLLISION_CLOUD_LEDGE: {
+            position_t pos;
+            player_get_position(&pos);
+            coordinates_apply_direction(direction, &pos.coordinates.x, &pos.coordinates.y);
+            overworld_effect_state.x = pos.coordinates.x - 7;
+            overworld_effect_state.y = pos.coordinates.y - 7;
+            overworld_effect_state.height = pos.height;
+            overworld_effect_state.target_ow_bank = save1->bank;
+            overworld_effect_state.target_ow_and_their_map = save1->map;
+            overworld_effect_new(OVERWORLD_EFFECT_FEATHERS);
+            npc_player_init_move_jump_cloud(direction);
+            return;
+        }
         case COLLISION_STOP_SURFING:
         case COLLISION_PUSHED_BOULDER:
         case COLLISION_WARP:
@@ -256,7 +320,7 @@ void npc_player_initialize_move_on_bike(u8 direction, u8 unused, key keys_new, k
             return;
         case COLLISION_NONE:
         case 14:{ // This thing super weird, it is returned when stepping on cracked ice, I suppose 
-            if (keys_held.keys.B && (checkflag(FLAG_CLOUD_HAS_HIGH_SPEED) || true)) { // High speed biking
+            if (keys_held.keys.B && checkflag(FLAG_CLOUD_HAS_HIGH_SPEED)) { // High speed biking
                     dprintf("High speed biking...\n");
                     player_state.bike_speed = 4;
                     position_t pos;

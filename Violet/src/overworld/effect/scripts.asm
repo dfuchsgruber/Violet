@@ -10,6 +10,7 @@
 .global overworld_effect_script_whirlwind
 .global overworld_effect_script_lightning
 .global overworld_effect_script_rainbow_sparkles
+.global overworld_effect_script_feathers
 
 overworld_effect_script_explosion:
     loadpalwithshaders_and_callasm overworld_effect_explosion_palette overworld_effect_explosion_initialize
@@ -44,4 +45,7 @@ overworld_effect_script_lightning:
     end
 overworld_effect_script_rainbow_sparkles:
     loadpalwithshaders_and_callasm overworld_effect_rainbow_sparkles_palette overworld_effect_rainbow_sparkles_initialize
+    end
+overworld_effect_script_feathers:
+    loadpalwithshaders_and_callasm overworld_effect_feathers_palette overworld_effect_feathers_initialize
     end

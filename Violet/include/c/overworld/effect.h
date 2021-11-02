@@ -72,6 +72,13 @@ void overworld_effect_oam_callback_wait_for_gfx_animation(oam_object *self);
 void overworld_effect_delete(oam_object *o, u8 effect_idx);
 
 /**
+ * Deletes an oam, free's its sheet and delets allocated vram tag and pal tag if no other active oam uses them
+ * Note: This does *not* free the affine (rotscale) resources!
+ * @param o the oam to delete
+ **/
+void overworld_effect_delete_oam_and_free_resources_if_unused(oam_object *o);
+
+/**
  * Does a new overworld effect
  * @param effect_idx which effect do to do
  **/
@@ -135,6 +142,7 @@ void overworld_effect_teleport_after_showing_pokemon();
 #define GFX_TAG_OVERWORLD_EFFECT_SOUND_WAVE 0x1774
 #define GFX_TAG_OVERWORLD_EFFECT_LIGHTNING 0x1775
 #define GFX_TAG_OVERWORLD_EFFECT_RAINBOW_SPARKLES 0x1775
+#define GFX_TAG_OVERWORLD_EFFECT_FEATHERS 0x1776
 
 extern const u8 gfx_overworld_explosionTiles[];
 extern const color_t gfx_overworld_explosionPal[16];
@@ -146,6 +154,8 @@ extern const u8 gfx_overworld_effect_lightningTiles[];
 extern const color_t gfx_overworld_effect_lightningPal[16];
 extern const u8 gfx_overworld_effect_rainbow_sparklesTiles[];
 extern const color_t gfx_overworld_effect_rainbow_sparklesPal[16];
+extern const u8 gfx_overworld_effect_featherTiles[];
+extern const color_t gfx_overworld_effect_featherPal[16];
 
 extern const u8 overworld_effect_script_exclamation_mark_icon[];
 extern const u8 overworld_effect_script_use_cut_on_grass[];
@@ -225,5 +235,6 @@ extern const u8 overworld_effect_script_sound_wave[];
 extern const u8 overworld_effect_script_whirlwind[];
 extern const u8 overworld_effect_script_lightning[];
 extern const u8 overworld_effect_script_rainbow_sparkles[];
+extern const u8 overworld_effect_script_feathers[];
 
 #endif
