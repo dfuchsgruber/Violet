@@ -236,8 +236,8 @@
 					"y": "20",
 					"level": 0,
 					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_map": "7",
+					"target_bank": "11"
 				}
 			],
 			"triggers": [],

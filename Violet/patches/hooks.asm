@@ -70,3 +70,7 @@
     ldr r0, =hook_main_initialize | 1
     bx r0
     .pool
+
+.org 0x080008a0 // Improved vblank wait
+    swi 0x5
+    bx lr
