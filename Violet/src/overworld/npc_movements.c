@@ -3,6 +3,9 @@
 #include "tile/block.h"
 #include "tile/coordinate.h"
 #include "constants/movements.h"
+#include "debug.h"
+#include "overworld/effect.h"
+#include "music.h"
 
 void npc_diag_update_pos(npc *n, oam_object *target, u8 direction) {
     n->dest_x = (s16) (n->from_x + walking_directions[direction].x);
@@ -218,6 +221,129 @@ bool(*npc_anim_rainbow_up[0x3])(npc *n, oam_object *target) = {npc_anim_rainbow_
 bool(*npc_anim_rainbow_left[0x3])(npc *n, oam_object *target) = {npc_anim_rainbow_left_init, npc_anim_walk_is_finished, npc_anim_stop};
 bool(*npc_anim_rainbow_right[0x3])(npc *n, oam_object *target) = {npc_anim_rainbow_right_init, npc_anim_walk_is_finished, npc_anim_stop};
 
+// This is the delta that is applied when starting the jump.
+static u16 npc_anim_jump_deltas_initialize[4] = {0, 0, 1, 1};
+// This is the delta that is applied every 16 frames (or rather everytime `JUMP_MOVED_ONE_BLOCK` is returned by `npc_normal_jump_proceed`)
+static u16 npc_anim_jump_deltas_every_block[4] = {0, 1, 1, 1}; 
+// This is how long a jump takes in frames
+static s16 npc_jump_durations[4] = {16, 16, 32, 48};
+// Basically the jump type's duration / 16, so all 16 jumping frames are evenly spaced out
+static u8 npc_jump_divs[4] = {1, 1, 2, 3}; 
+
+enum {
+    JUMP_PROCEEDING = 0,
+    JUMP_MOVED_ONE_BLOCK = 1,
+    JUMP_FINISHED = -1,
+};
+
+static void overworld_effect_feathers_at_npc(npc *n) {
+    overworld_effect_state.x = n->from_x - 7;
+    overworld_effect_state.y = n->from_y - 7;
+    overworld_effect_state.height = n->height.current;
+    overworld_effect_state.target_ow_bank = n->bank;
+    overworld_effect_state.target_ow_and_their_map = n->map;
+    overworld_effect_new(OVERWORLD_EFFECT_FEATHERS);
+    play_sound(150);
+}
+
+#define tdirection private[3]
+#define tspeed private[4]
+#define theight private[5]
+#define tclk private[6]
+
+s8 npc_normal_jump_proceed(oam_object *target) {
+    if (target->tspeed != 0)
+        npc_oam_apply_direction(target, (u8)target->tdirection);
+    target->y2 = (s16)npc_jump_get_y((u8)(target->tclk / npc_jump_divs[target->tspeed]), (u8)target->theight);
+    target->tclk++;
+
+    if (target->tclk >= npc_jump_durations[target->tspeed]) {
+        target->y2 = 0;
+        return JUMP_FINISHED;
+    } else if (target->tclk % 16 == 0) { // Moved by 16 pixels (i.e. one block)
+        return JUMP_MOVED_ONE_BLOCK;
+    } else {
+        return JUMP_PROCEEDING;
+    }
+}
+
+s8 npc_normal_jump_proceed_and_update_position(npc *n, oam_object *target, s8(*jump_proceed)(oam_object*)) {
+    s8 result = jump_proceed(target);
+    if (result == JUMP_MOVED_ONE_BLOCK && target->tspeed != JUMP_SPEED_IN_PLACE) {
+        s16 x = 0; s16 y = 0;
+        coordiantes_move_direction(n->facing.higher, &x, &y, 
+            npc_anim_jump_deltas_every_block[target->tspeed], npc_anim_jump_deltas_every_block[target->tspeed]);
+        npc_update_coordinates(n, (s16)(n->dest_x + x), (s16)(n->dest_y + y));
+        n->flags.trigger_ground_effects_on_move = true;
+        n->flags.covering_ground_effects_disabled = true;
+        if (target->tspeed == JUMP_SPEED_3) { // Create the overworld effect for feathers
+            overworld_effect_feathers_at_npc(n);
+        }
+
+    } else if (result == JUMP_FINISHED) {
+        npc_update_coordinates_with_current(n);
+        n->flags.trigger_ground_effects_on_stop = true;
+        n->flags.landing_jump = true;
+        target->gfx_anim_paused = true;
+    }
+    return result;
+}
+
+#undef tdirection
+#undef tspeed
+#undef theight
+#undef tclk
+
+void npc_apply_jump(npc *n, oam_object *target, u8 direction, u8 speed, u8 height) {
+    npc_set_direction(n, direction);
+    s16 x = 0;
+    s16 y = 0;
+    coordiantes_move_direction(direction, &x, &y, npc_anim_jump_deltas_initialize[speed], npc_anim_jump_deltas_initialize[speed]);
+    npc_update_coordinates(n, (s16)(n->dest_x + x), (s16)(n->dest_y + y));
+    npc_oam_set_jump_parameters(target, direction, speed, height);
+    target->private[2] = 1;
+    target->gfx_anim_paused = true;
+    n->flags.trigger_ground_effects_on_move = true;
+    n->flags.covering_ground_effects_disabled = true;
+}
+
+static void npc_anim_init_jump_no_shadow(npc *n, oam_object *target, u8 direction, u8 speed, u8 height) {
+    dprintf("jump no shadow with dir %d, speed %d, height %d\n", direction, speed, height);
+    npc_apply_jump(n, target, direction, speed, height);
+    u8 anim_idx = npc_get_animation_idx_by_movement_direction(n->facing.lower);
+    npc_apply_animation_looping(n, target, anim_idx);
+}
+
+bool npc_anim_jump_down_3_init(npc *n, oam_object *target) {
+    npc_anim_init_jump_no_shadow(n, target, DIR_DOWN, JUMP_SPEED_3, JUMP_HEIGHT_10);
+    return npc_anim_jump_is_finished(n, target);
+}
+
+bool npc_anim_jump_up_3_init(npc *n, oam_object *target) {
+    npc_anim_init_jump_no_shadow(n, target, DIR_UP, JUMP_SPEED_3, JUMP_HEIGHT_10);
+    return npc_anim_jump_is_finished(n, target);
+}
+
+bool npc_anim_jump_left_3_init(npc *n, oam_object *target) {
+    npc_anim_init_jump_no_shadow(n, target, DIR_LEFT, JUMP_SPEED_3, JUMP_HEIGHT_10);
+    return npc_anim_jump_is_finished(n, target);
+}
+
+bool npc_anim_jump_right_3_init(npc *n, oam_object *target) {
+    npc_anim_init_jump_no_shadow(n, target, DIR_RIGHT, JUMP_SPEED_3, JUMP_HEIGHT_10);
+    return npc_anim_jump_is_finished(n, target);
+}
+
+bool npc_anim_jump_3_is_feathers_finished(npc *n, oam_object *target) {
+    (void)n; (void)target;
+    return !overworld_effect_is_active(OVERWORLD_EFFECT_FEATHERS);
+}
+
+bool(*npc_anim_jump_down_3[0x4])(npc *n, oam_object *target) = {npc_anim_jump_down_3_init, npc_anim_jump_is_finished, npc_anim_jump_3_is_feathers_finished, npc_anim_stop};
+bool(*npc_anim_jump_up_3[0x4])(npc *n, oam_object *target) = {npc_anim_jump_up_3_init, npc_anim_jump_is_finished, npc_anim_jump_3_is_feathers_finished, npc_anim_stop};
+bool(*npc_anim_jump_left_3[0x4])(npc *n, oam_object *target) = {npc_anim_jump_left_3_init, npc_anim_jump_is_finished, npc_anim_jump_3_is_feathers_finished, npc_anim_stop};
+bool(*npc_anim_jump_right_3[0x4])(npc *n, oam_object *target) = {npc_anim_jump_right_3_init, npc_anim_jump_is_finished, npc_anim_jump_3_is_feathers_finished, npc_anim_stop};
+
 bool(**npc_anims[])(npc *n, oam_object *target) = {
     [FACE_DOWN] = (bool (**)(npc*, oam_object*)) 0x83a6728,
     [LOOK_UP] = (bool (**)(npc*, oam_object*)) 0x83a6730,
@@ -415,4 +541,8 @@ bool(**npc_anims[])(npc *n, oam_object *target) = {
     [STEP_UP_RAINBOW] = npc_anim_rainbow_up,
     [STEP_LEFT_RAINBOW] = npc_anim_rainbow_left,
     [STEP_RIGHT_RAINBOW] = npc_anim_rainbow_right,
+    [JUMP_DOWN_3] = npc_anim_jump_down_3,
+    [JUMP_UP_3] = npc_anim_jump_up_3,
+    [JUMP_LEFT_3] = npc_anim_jump_left_3,
+    [JUMP_RIGHT_3] = npc_anim_jump_right_3,
 };

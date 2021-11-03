@@ -146,7 +146,9 @@ typedef struct oam_object {
     s8 y_centre;
     u8 anim_number;
     u8 anim_frame;
-    u8 anim_delay;
+    u8 anim_delay : 6;
+    u8 gfx_anim_paused : 1;
+    u8 rotscale_anim_paused : 1;
     u8 counter;
     u16 private[8];
     u16 flags;

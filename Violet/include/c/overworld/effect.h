@@ -85,6 +85,13 @@ void overworld_effect_delete_oam_and_free_resources_if_unused(oam_object *o);
 void overworld_effect_new(u8 effect_idx);
 
 /**
+ * Checks if an overworld effect is active.
+ * @param effect_idx which effect to check for
+ * @return if the effect is active
+ **/
+bool overworld_effect_is_active(u8 effect_idx);
+
+/**
  * Removes an overworld effect from the list of active overworld effects.
  * @param effect_idx the effect to remove
  **/

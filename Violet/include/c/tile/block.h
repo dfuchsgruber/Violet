@@ -76,6 +76,16 @@ extern coordinate_t walking_directions[];
 void coordinates_apply_direction(int direction,short *x,short *y);
 
 /**
+ * Shifts coordinates into a direction by an absolute value
+ * @param direction the direction
+ * @param x x coordinate
+ * @param y y coordinate
+ * @param abs_dx the absolute shift in x direction
+ * @param abs_dy the absolute shift in y direction
+ **/
+void coordiantes_move_direction(int direction, s16 *x, s16 *y, u16 abs_dx, u16 abs_dy);
+
+/**
  * Redraws a single block in the map
  * @param x the AM x coordiante + 7 (camera origin relative)
  * @param y the AM y coordinate + 7 (camera origin relative)

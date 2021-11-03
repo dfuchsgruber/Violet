@@ -533,3 +533,13 @@ _blxr4:
     ldr r3, =player_get_ledge_direction | 1
     bx r3
     .pool
+
+.org 0x08068d44
+    ldr r1, =npc_normal_jump_proceed | 1
+    bx r1
+    .pool
+
+.org 0x08064f3c
+    ldr r3, =npc_normal_jump_proceed_and_update_position | 1
+    bx r3
+    .pool

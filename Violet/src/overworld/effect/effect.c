@@ -435,7 +435,6 @@ static graphic overworld_effect_feathers_graphics[] = {
     [13] = {.sprite = gfx_overworld_effect_featherTiles + 13 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
     [14] = {.sprite = gfx_overworld_effect_featherTiles + 14 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
     [15] = {.sprite = gfx_overworld_effect_featherTiles + 15 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [16] = {.sprite = gfx_overworld_effect_featherTiles + 16 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
 };
 
 palette overworld_effect_feathers_palette = {
@@ -443,92 +442,134 @@ palette overworld_effect_feathers_palette = {
 };
 
 static sprite overworld_effect_feathers_sprite = {
-    .attr0 = ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE | ATTR0_DSIZE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(2),
+    .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(2),
 };
 
 static sprite overworld_effect_feathers_sprite_controller = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(2),
 };
 
-static gfx_frame overworld_effect_feathers_animation_type_0[] = {
-    {.data = 1, .duration = 0}, 
-    {.data = GFX_ANIM_END}, 
+static gfx_frame overworld_effect_feathers_animation_type_white[] = {
+    {.data = 0, .duration = 0}, 
+    {.data = 0, .duration = 8}, 
+    {.data = 1, .duration = 8}, 
+    {.data = 2, .duration = 8}, 
+    {.data = 3, .duration = 8}, 
+    {.data = 2, .duration = 8}, 
+    {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
-static gfx_frame overworld_effect_feathers_animation_type_1[] = {
-    {.data = 2, .duration = 0}, 
-    {.data = GFX_ANIM_END}, 
+static gfx_frame overworld_effect_feathers_animation_type_white_flipped[] = {
+    {.data = 0, .duration = 0  | GFX_ANIM_HFLIP}, 
+    {.data = 0, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 1, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 2, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 3, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 2, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
-static gfx_frame overworld_effect_feathers_animation_type_2[] = {
-    {.data = 3, .duration = 0}, 
-    {.data = GFX_ANIM_END}, 
+static gfx_frame overworld_effect_feathers_animation_type_red[] = {
+    {.data = 4, .duration = 0}, 
+    {.data = 4, .duration = 8}, 
+    {.data = 5, .duration = 8}, 
+    {.data = 6, .duration = 8}, 
+    {.data = 7, .duration = 8}, 
+    {.data = 6, .duration = 8}, 
+    {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
-static gfx_frame overworld_effect_feathers_animation_type_3[] = {
-    {.data = 4, .duration = 0},  
-    {.data = GFX_ANIM_END}, 
+static gfx_frame overworld_effect_feathers_animation_type_red_flipped[] = {
+    {.data = 4, .duration = 0 | GFX_ANIM_HFLIP}, 
+    {.data = 4, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 5, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 6, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 7, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 6, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
-static gfx_frame overworld_effect_feathers_animation_type_4[] = {
-    {.data = 5, .duration = 0},  
-    {.data = GFX_ANIM_END}, 
+static gfx_frame overworld_effect_feathers_animation_type_blue[] = {
+    {.data = 8, .duration = 0}, 
+    {.data = 8, .duration = 8}, 
+    {.data = 9, .duration = 8}, 
+    {.data = 10, .duration = 8}, 
+    {.data = 11, .duration = 8}, 
+    {.data = 10, .duration = 8}, 
+    {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
-static gfx_frame overworld_effect_feathers_animation_type_5[] = {
-    {.data = 6, .duration = 0},  
-    {.data = GFX_ANIM_END}, 
+static gfx_frame overworld_effect_feathers_animation_type_blue_flipped[] = {
+    {.data = 8, .duration = 0 | GFX_ANIM_HFLIP}, 
+    {.data = 8, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 9, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 10, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 11, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 10, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
-static gfx_frame overworld_effect_feathers_animation_type_6[] = {
-    {.data = 7, .duration = 0},  
-    {.data = GFX_ANIM_END}, 
+static gfx_frame overworld_effect_feathers_animation_type_yellow[] = {
+    {.data = 12, .duration = 0}, 
+    {.data = 12, .duration = 8}, 
+    {.data = 13, .duration = 8}, 
+    {.data = 14, .duration = 8}, 
+    {.data = 15, .duration = 8}, 
+    {.data = 14, .duration = 8}, 
+    {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
-static gfx_frame overworld_effect_feathers_animation_type_7[] = {
-    {.data = 8, .duration = 0},  
-    {.data = GFX_ANIM_END}, 
+static gfx_frame overworld_effect_feathers_animation_type_yellow_flipped[] = {
+    {.data = 12, .duration = 0 | GFX_ANIM_HFLIP}, 
+    {.data = 12, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 13, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 14, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 15, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 14, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
 enum {
-    FEATHER_ANIMATION_TYPE_0,
-    FEATHER_ANIMATION_TYPE_1,
-    FEATHER_ANIMATION_TYPE_2,
-    FEATHER_ANIMATION_TYPE_3,
-    FEATHER_ANIMATION_TYPE_4,
-    FEATHER_ANIMATION_TYPE_5,
-    FEATHER_ANIMATION_TYPE_6,
-    FEATHER_ANIMATION_TYPE_7,
+    FEATHER_ANIMATION_TYPE_WHITE,
+    FEATHER_ANIMATION_TYPE_RED,
+    FEATHER_ANIMATION_TYPE_BLUE,
+    FEATHER_ANIMATION_TYPE_YELLOW,
+    FEATHER_ANIMATION_TYPE_WHITE_FLIPPED,
+    FEATHER_ANIMATION_TYPE_RED_FLIPPED,
+    FEATHER_ANIMATION_TYPE_BLUE_FLIPPED,
+    FEATHER_ANIMATION_TYPE_YELLOW_FLIPPED,
 };
 
 static gfx_frame *overworld_effect_feathers_animations[] = {
-    [FEATHER_ANIMATION_TYPE_0] = overworld_effect_feathers_animation_type_0,
-    [FEATHER_ANIMATION_TYPE_1] = overworld_effect_feathers_animation_type_1,
-    [FEATHER_ANIMATION_TYPE_2] = overworld_effect_feathers_animation_type_2,
-    [FEATHER_ANIMATION_TYPE_3] = overworld_effect_feathers_animation_type_3,
-    [FEATHER_ANIMATION_TYPE_4] = overworld_effect_feathers_animation_type_4,
-    [FEATHER_ANIMATION_TYPE_5] = overworld_effect_feathers_animation_type_5,
-    [FEATHER_ANIMATION_TYPE_6] = overworld_effect_feathers_animation_type_6,
-    [FEATHER_ANIMATION_TYPE_7] = overworld_effect_feathers_animation_type_7,
+    [FEATHER_ANIMATION_TYPE_WHITE] = overworld_effect_feathers_animation_type_white,
+    [FEATHER_ANIMATION_TYPE_RED] = overworld_effect_feathers_animation_type_red,
+    [FEATHER_ANIMATION_TYPE_BLUE] = overworld_effect_feathers_animation_type_blue,
+    [FEATHER_ANIMATION_TYPE_YELLOW] = overworld_effect_feathers_animation_type_yellow,
+    [FEATHER_ANIMATION_TYPE_WHITE_FLIPPED] = overworld_effect_feathers_animation_type_white_flipped,
+    [FEATHER_ANIMATION_TYPE_RED_FLIPPED] = overworld_effect_feathers_animation_type_red_flipped,
+    [FEATHER_ANIMATION_TYPE_BLUE_FLIPPED] = overworld_effect_feathers_animation_type_blue_flipped,
+    [FEATHER_ANIMATION_TYPE_YELLOW_FLIPPED] = overworld_effect_feathers_animation_type_yellow_flipped,
 };
 
-static rotscale_frame overworld_effect_feathers_affine_animation[] = {
-    {.affine = {.rotation = 1, .duration = 12}},
-    {.affine = {.rotation = (u8)(-1), .duration = 24}}, 
-    {.affine = {.rotation = 1, .duration = 12}},
-    {.command = {.command = ROTSCALE_ANIM_JUMP, .parameter = 0}},  
-};
+// static rotscale_frame overworld_effect_feathers_affine_animation[] = {
+//     {.affine = {.rotation = 1, .duration = 12}},
+//     {.affine = {.rotation = (u8)(-1), .duration = 24}}, 
+//     {.affine = {.rotation = 1, .duration = 12}},
+//     {.command = {.command = ROTSCALE_ANIM_JUMP, .parameter = 0}},  
+// };
 
-static rotscale_frame *overworld_effect_feathers_affine_animations[] = {
-    overworld_effect_feathers_affine_animation,
-};
+// static rotscale_frame *overworld_effect_feathers_affine_animations[] = {
+//     overworld_effect_feathers_affine_animation,
+// };
 
 #define FEATHERS_FRAME_DURATION 8
 #define FEATHERS_FRAME_DELAY 8
 
 static void overworld_effect_feathers_oam_callback_center(oam_object *self) {
     oam_set_priority_by_height(self, (u8)self->private[2]);
-    oam_set_subpriority_by_height((u8)self->private[2], self, 0);
+    oam_set_subpriority_by_height((u8)self->private[2], self, 2);
+    self->priority_on_layer = (u8)(oams[player_state.oam_idx].priority_on_layer + 1);
+
     if ((self->private[3] != save1->bank || self->private[4] != save1->map) && overworld_viewport.active) {
         self->private[0] = (u16)(self->private[0] - overworld_viewport.x);
         self->private[1] = (u16)(self->private[1] - overworld_viewport.y);
@@ -556,11 +597,12 @@ static void overworld_effect_feathers_oam_callback_gfx_anim_with_delay(oam_objec
         (self->private[6])--;
     } else {
         self->flags &= (u16)(~OAM_FLAG_INVISIBLE);
-        oam_rotscale_anim_init(self, 0);
-        self->private[5] = FEATHERS_FRAME_DELAY; // is finished ?
-        self->private[6] = FEATHERS_FRAME_DURATION; // is finished ?
+        oam_gfx_anim_start(self, (u8)self->private[5]);
+        self->private[5] = FEATHERS_FRAME_DELAY;
+        self->private[6] = FEATHERS_FRAME_DURATION;
         self->private[7] = false; // is finished ?
         self->callback = overworld_effect_feathers_oam_callback_center;
+        self->callback(self);
     }
 }
 
@@ -568,18 +610,18 @@ static coordinate_t feather_positions[] = {
     {.x = -9, .y = -4},
     {.x = 12, .y = -7},
     {.x = -13, .y = -11},
-    {.x = 8, .y = -2},
+    {.x = 8, .y = -4},
     {.x = 6, .y = -9},
-    {.x = -5, .y = -2},
+    {.x = -5, .y = -4},
 };
 
 static u8 feather_types[] = {
-    FEATHER_ANIMATION_TYPE_0,
-    FEATHER_ANIMATION_TYPE_1,
-    FEATHER_ANIMATION_TYPE_2,
-    FEATHER_ANIMATION_TYPE_3,
-    FEATHER_ANIMATION_TYPE_4,
-    FEATHER_ANIMATION_TYPE_5,
+    FEATHER_ANIMATION_TYPE_BLUE,
+    FEATHER_ANIMATION_TYPE_WHITE_FLIPPED,
+    FEATHER_ANIMATION_TYPE_RED_FLIPPED,
+    FEATHER_ANIMATION_TYPE_YELLOW,
+    FEATHER_ANIMATION_TYPE_BLUE_FLIPPED,
+    FEATHER_ANIMATION_TYPE_RED,
 };
 
 #define FEATHER_START_FRAME 8
@@ -612,7 +654,7 @@ static oam_template overworld_effect_feathers_oam_template = {
     .tiles_tag = 0xFFFF, .pal_tag = GFX_TAG_OVERWORLD_EFFECT_FEATHERS,
     .graphics = overworld_effect_feathers_graphics,
     .oam = &overworld_effect_feathers_sprite, .animation = overworld_effect_feathers_animations,
-    .rotscale = overworld_effect_feathers_affine_animations, .callback = overworld_effect_feathers_oam_callback_gfx_anim_with_delay,
+    .rotscale = oam_rotscale_anim_table_null, .callback = overworld_effect_feathers_oam_callback_gfx_anim_with_delay,
 };
 
 static oam_template overworld_effect_feathers_oam_template_controller = {
@@ -639,7 +681,7 @@ void overworld_effect_feathers_initialize() {
         oams[oam_idx].private[2] = (u16)overworld_effect_state.height;
         oams[oam_idx].private[3] = (u16)overworld_effect_state.target_ow_bank;
         oams[oam_idx].private[4] = (u16)overworld_effect_state.target_ow_and_their_map;
-        oam_gfx_anim_start(oams + oam_idx, feather_types[i]);
+        oams[oam_idx].private[5] = feather_types[i];
         oams[oam_idx].private[6] = feather_delays[i];
         oams[oam_idx].private[7] = false;
         oams[oam_idx].x2 = feather_positions[i].x;

@@ -68,10 +68,10 @@ typedef struct npc {
     s16 origin_x;
     s16 origin_y;
 
-    s16 dest_x;
+    s16 dest_x; // current coordiantes
     s16 dest_y;
 
-    s16 from_x;
+    s16 from_x; // previous coordinates
     s16 from_y;
 
     struct npc_facing {
@@ -719,5 +719,96 @@ u8 npc_get_by_position(s16 x, s16);
  * @return npc_idx the idx of the npc created or NUM_NPCS on failure
  **/
 u8 npc_create_with_oam_by_person(map_event_person *person, oam_template *template, u8 map_idx, u8 bank, s16 camera_x, s16 camera_y);
+
+/**
+ * Gets the animation idx that corresponds to moving in a certain direction.
+ * @param direction the direction
+ * @return the animation idx
+ **/
+u8 npc_get_animation_idx_by_movement_direction(u8 direction);
+
+/**
+ * Applys an animation to an npc and loops it.
+ * @param n the npc to apply the animation to
+ * @param target the oam object of the npc
+ * @param anim_idx the animation to loop
+ **/
+u8 npc_apply_animation_looping(npc *n, oam_object *o, u8 anim_idx);
+
+/**
+ * Applies a jumping movement to an npc.
+ * @param n the target npc
+ * @param target the corresponding oam
+ * @param direction the direction in which to jump
+ * @param speed the speed with which to jump
+ * @param jump_height how high to jump
+ **/
+void npc_apply_jump(npc *n, oam_object *target, u8 direction, u8 speed, u8 jump_height);
+
+/**
+ * Checks if a jumping animation is active for a npc
+ * @param n the npc to check
+ * @param target the corresponding oam
+ * @return if a jumping animation is active
+ **/
+bool npc_anim_jump_is_finished(npc *n, oam_object *target);
+
+/**
+ * Sets the direction of an npc
+ * @param n the npc
+ * @param direction the direction
+ **/
+void npc_set_direction (npc *n, u8 direction);
+
+/**
+ * Updates the coordinates of an npc and updates the previous coordinates.
+ * @param n the npc
+ * @param x x coordinate
+ * @param y y coordinate
+ **/
+void npc_update_coordinates(npc *n, s16 x, s16 y);
+
+/** Updates the coordinates of an npc to its current position and updates the previous as well.
+ * Basically this is equivalent to a move with zero distance.
+ * @param n the npc
+ **/
+void npc_update_coordinates_with_current(npc *n);
+
+enum {
+    JUMP_HEIGHT_12,
+    JUMP_HEIGHT_6,
+    JUMP_HEIGHT_10,
+};
+
+enum {
+    JUMP_SPEED_IN_PLACE,
+    JUMP_SPEED_1,
+    JUMP_SPEED_2,
+    JUMP_SPEED_3,
+};
+
+/**
+ * Sets the jumping parameters of an npc's oam
+ * @param target the target oam
+ * @param direction in which direction to jump
+ * @param speed the jumping speed
+ * @param height the jumping height
+ **/
+void npc_oam_set_jump_parameters(oam_object *target, u8 direction, u8 speed, u8 height);
+
+/**
+ * Moves the coordinates of an oam by one pixel in a direction
+ * @param target the oam
+ * @param direction in which direction to move
+ **/
+void npc_oam_apply_direction(oam_object *target, u8 direction);
+
+/**
+ * Gets the y displacement of frame `idx`.
+ * @param idx the current frame
+ * @param height the jump height type
+ * @return the y displacement
+ **/
+s8 npc_jump_get_y(u8 idx, u8 height);
 
 #endif /* INCLUDE_C_OVERWORLD_NPC_H_ */

@@ -49,21 +49,25 @@ bool npc_player_surfing_towards_waterfall(u8 direction) {
 
 bool block_cloud_ledge_triggered(s16 x, s16 y, u8 direction) {
     (void)direction;
+    dprintf("Check cloud ledge at 0x%x, 0x%x, dir %d\n", x, y, direction);
     if ((player_state.state & PLAYER_STATE_BIKING)) { // && checkflag(FLAG_CLOUD_HAS_WINGS)) {
         u16 behaviour = block_get_behaviour_by_pos(x, y);
         if (behaviour == MB_JUMP_ALL_WITH_CLOUD) {
+            dprintf("Is cloud ledge collision\n");
             return true;
         }
     }
     return false;
 }
 
-static u8 npc_player_get_collision_after_ledge(npc *player, s16 x, s16 y, u8 direction) {
+static u8 npc_player_get_collision_after_ledge(npc *player, s16 x, s16 y, u8 direction, u8 jump_over) {
     // Check if the block "after" the ledge yields no collision on its own
     npc dummy = *player;
-    coordinates_apply_direction(direction, &dummy.dest_x, &dummy.dest_y);
-    coordinates_apply_direction(direction, &dummy.from_x, &dummy.from_y);
-    coordinates_apply_direction(direction, &x, &y);
+    for (; jump_over > 0; jump_over--) {
+        coordinates_apply_direction(direction, &dummy.dest_x, &dummy.dest_y);
+        coordinates_apply_direction(direction, &dummy.from_x, &dummy.from_y);
+        coordinates_apply_direction(direction, &x, &y);
+    }
     return npc_get_collision(&dummy, x, y, direction);
 }
 
@@ -77,14 +81,14 @@ int npc_player_attempt_step(npc *player, s16 x, s16 y, u8 direction, int param_5
         return COLLISION_START_SURFING;
     }
     if (block_ledge_triggered(x, y, direction)) {
-        if (npc_player_get_collision_after_ledge(player, x, y, direction) == COLLISION_NONE) {
+        if (npc_player_get_collision_after_ledge(player, x, y, direction, 1) == COLLISION_NONE) {
             save_increment_key(SAV_KEY_LEDGES_JUMPED);
             return COLLISION_LEDGE;
         } else {
             return COLLISION_IMPASSABLE; // There are no special collision events like boulder pushing along ledges
         }
     } else if (block_cloud_ledge_triggered(x, y, direction)) {
-        if (npc_player_get_collision_after_ledge(player, x, y, direction) == COLLISION_NONE) {
+        if (npc_player_get_collision_after_ledge(player, x, y, direction, 2) == COLLISION_NONE) {
             save_increment_key(SAV_KEY_LEDGES_JUMPED);
             dprintf("Return cloud collision\n");
             return COLLISION_CLOUD_LEDGE;
@@ -279,11 +283,10 @@ void npc_player_init_move_rainbow(u8 direction) {
     npc_player_set_state_and_execute_tile_anim(movement_idx, 2);
 }
 
-static u8 jump_cloud_movements[5] = {JUMP_DOWN2, JUMP_DOWN2, JUMP_UP2, JUMP_LEFT2, JUMP_RIGHT2};
+static u8 jump_cloud_movements[5] = {JUMP_DOWN_3, JUMP_DOWN_3, JUMP_UP_3, JUMP_LEFT_3, JUMP_RIGHT_3};
 
 void npc_player_init_move_jump_cloud(u8 direction) {
-    play_sound(150);
-    u8 movement_idx = jump_cloud_movements[MIN(ARRAY_COUNT(rainbow_movements), direction)];
+    u8 movement_idx = jump_cloud_movements[MIN(ARRAY_COUNT(jump_cloud_movements), direction)];
     npc_player_set_state_and_execute_tile_anim(movement_idx, 2);
 
 }
@@ -294,22 +297,13 @@ void npc_player_initialize_move_on_bike(u8 direction, u8 unused, key keys_new, k
     player_state.bike_speed = 0;
     // There is some biking stuff from RSE, which is cut in firered, I don't bother to copy a bunch of stuff that never gets executed
     u8 collision = npc_player_collision_on_bike(direction);
-    // dprintf("Biking collision type %d\n");
+    dprintf("Biking collision type %d\n", collision);
     switch (collision) {
         case COLLISION_LEDGE:
             // Keep the current biking speed
             npc_player_init_move_jump(direction);
             return;
         case COLLISION_CLOUD_LEDGE: {
-            position_t pos;
-            player_get_position(&pos);
-            coordinates_apply_direction(direction, &pos.coordinates.x, &pos.coordinates.y);
-            overworld_effect_state.x = pos.coordinates.x - 7;
-            overworld_effect_state.y = pos.coordinates.y - 7;
-            overworld_effect_state.height = pos.height;
-            overworld_effect_state.target_ow_bank = save1->bank;
-            overworld_effect_state.target_ow_and_their_map = save1->map;
-            overworld_effect_new(OVERWORLD_EFFECT_FEATHERS);
             npc_player_init_move_jump_cloud(direction);
             return;
         }
