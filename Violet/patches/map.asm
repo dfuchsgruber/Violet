@@ -112,3 +112,13 @@
     ldr r0, =warp_setup_by_event_and_position | 1 // The header is unused
     bx r0
     .pool 
+
+.org 0x0805a684
+    ldr r0, =map_draw_all | 1
+    bx r0
+    .pool
+
+.org 0x0805a8e8
+    ldr r3, = map_redraw_block_at_position | 1
+    bx r3
+    .pool

@@ -11,15 +11,17 @@
 #include "constants/map_types.h"
 #include "map/header.h"
 
+// essentially the 
 
 typedef struct{
     u8 x_start_pixel;
     u8 y_start_pixel;
     u8 x_start;
     u8 y_start;
-} stru_map_displ_cntrl;
+    u8 copy_to_vram;
+} map_camera_offset_t;
 
-extern stru_map_displ_cntrl map_displ_cntrl;
+extern map_camera_offset_t map_camera_offset;
 
 typedef struct {
     u8 active:1;
@@ -278,7 +280,7 @@ void ambient_cry_proceed(u16 *state, u16 *delay);
  * @param y the y coordinate
  * @return -1 on failure, otherwise the offset in the bg tilemaps
  **/
-int map_position_to_bg_tilemap_offset(stru_map_displ_cntrl *c, s16 x, s16 y);
+int map_position_to_bg_tilemap_offset(map_camera_offset_t *c, s16 x, s16 y);
 
 /**
  * Shows the name of the map namespace as popup.
@@ -317,5 +319,38 @@ void overworld_viewport_move_and_update_all(s16 dx, s16 dy);
  * Fades-out the rain sound
  **/
 void overworld_rain_sound_fade_out();
+
+/**
+ * Redraws the entire map view
+ * @param x upper left corner
+ * @param y upper left corner
+ * @param footer the footer to draw
+ **/
+void map_draw_all_by_position_and_footer(int x, int y, map_footer_t *footer);
+
+/**
+ * Translates a map position into the displacement of the tilemap
+ * @param camera the current camera offset
+ * @param x x coordinate
+ * @param y y coordinate
+ **/
+int map_position_to_tilemap_offset(map_camera_offset_t *camera, int x, int y);
+
+/**
+ * Draws a block on a map
+ * @param footer the map
+ * @param offset the tilemap offset
+ * @param x the x coordinate
+ * @param y the y coordinate
+ **/
+void map_draw_block_at(map_footer_t *footer, int offset, int x, int y);
+
+/**
+ * Draws a certain block at an offset in the tilemap
+ * @param layer at which layer
+ * @param block the block to draw
+ * @param offset the offset in the tilemap
+ **/
+void map_draw_block(int layer, u16 *block, int offset);
 
 #endif /* INCLUDE_C_OVERWORLD_MAP_CONTROL_H_ */

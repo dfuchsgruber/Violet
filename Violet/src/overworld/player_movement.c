@@ -23,6 +23,9 @@
 #include "vars.h"
 #include "overworld/effect.h"
 
+
+#define DEBUG_PLAYER_HAS_ALL_CLOUD_FEATURES true
+
 extern u8 ow_script_transition_start_surfing[];
 extern u8 ow_script_transition_start_waterfall[];
 
@@ -49,11 +52,9 @@ bool npc_player_surfing_towards_waterfall(u8 direction) {
 
 bool block_cloud_ledge_triggered(s16 x, s16 y, u8 direction) {
     (void)direction;
-    dprintf("Check cloud ledge at 0x%x, 0x%x, dir %d\n", x, y, direction);
-    if ((player_state.state & PLAYER_STATE_BIKING)) { // && checkflag(FLAG_CLOUD_HAS_WINGS)) {
+    if ((player_state.state & PLAYER_STATE_BIKING) && (checkflag(FLAG_CLOUD_HAS_WINGS) || DEBUG_PLAYER_HAS_ALL_CLOUD_FEATURES)) {
         u16 behaviour = block_get_behaviour_by_pos(x, y);
         if (behaviour == MB_JUMP_ALL_WITH_CLOUD) {
-            dprintf("Is cloud ledge collision\n");
             return true;
         }
     }
@@ -314,7 +315,7 @@ void npc_player_initialize_move_on_bike(u8 direction, u8 unused, key keys_new, k
             return;
         case COLLISION_NONE:
         case 14:{ // This thing super weird, it is returned when stepping on cracked ice, I suppose 
-            if (keys_held.keys.B && checkflag(FLAG_CLOUD_HAS_HIGH_SPEED)) { // High speed biking
+            if (keys_held.keys.B && (checkflag(FLAG_CLOUD_HAS_HIGH_SPEED) || DEBUG_PLAYER_HAS_ALL_CLOUD_FEATURES)) { // High speed biking
                     dprintf("High speed biking...\n");
                     player_state.bike_speed = 4;
                     position_t pos;

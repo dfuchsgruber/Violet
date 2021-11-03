@@ -3,6 +3,22 @@
 #include "bg.h"
 #include "tile/block.h"
 #include "overworld/map_control.h"
+#include "save.h"
+#include "debug.h"
+
+void map_draw_all() { // special 0x8E
+    dprintf("Map draw all.\n");
+    map_draw_all_by_position_and_footer(save1->x_cam_orig, save1->y_cam_orig, mapheader_virtual.footer);
+    map_camera_offset.copy_to_vram = true; // imported from pokeemerald
+}
+
+void map_redraw_block_at_position(s16 x, s16 y) {
+    int offset = map_position_to_bg_tilemap_offset(&map_camera_offset, x, y);
+    if (offset >= 0) {
+        map_draw_block_at(mapheader_virtual.footer, offset, x, y);
+        map_camera_offset.copy_to_vram = true;
+    }
+}
 
 void map_draw_block_to_bg(u8 layer_type, u16 *blocks, u16 offset) {
     // The layer priority (bottom to top) is 3, 1, 2
@@ -58,8 +74,9 @@ void map_draw_block_at_position(map_footer_t *f, u16 offset, s16 x, s16 y) {
 }
 
 void map_draw_door_at(s16 x, s16 y, u16 *block_tilemaps) {
-    int offset = map_position_to_bg_tilemap_offset(&map_displ_cntrl, x, y);
+    int offset = map_position_to_bg_tilemap_offset(&map_camera_offset, x, y);
     if (offset >= 0) {
         map_draw_block_to_bg(0xFF, block_tilemaps, (u16)offset);
+        map_camera_offset.copy_to_vram = true;
     }
 }
