@@ -830,6 +830,11 @@
 				"map_route_2_clouds_cave_eg_room_2",
 				"src/map/banks/11/8/map_route_2_clouds_cave_eg_room_2.pms",
 				"MAP_ROUTE_2"
+			],
+			"9": [
+				"map_route_2_clouds_cave_ice_room",
+				"src/map/banks/11/9/map_route_2_clouds_cave_ice_room.pms",
+				"MAP_ROUTE_2"
 			]
 		},
 		"12": {
@@ -2355,6 +2360,10 @@
 		"map_footer_route_2_clouds_cave_eg_room_2": [
 			188,
 			"src/map/banks/11/8/map_footer_route_2_clouds_cave_eg_room_2.pms"
+		],
+		"map_footer_route_2_clouds_cave_ice_room": [
+			189,
+			"src/map/banks/11/9/map_footer_route_2_clouds_cave_ice_room.pms"
 		]
 	},
 	"tilesets_primary": {

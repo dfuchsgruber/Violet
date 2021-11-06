@@ -793,3 +793,23 @@ void overworld_npc_gfx_animation_new() {
         oam_gfx_anim_start(oams + npcs[npc_idx].oam_id, anim_idx);
     }
 }
+
+u8 npc_create_camera(u8 picture,u8 behaviour,u8 person_idx,s16 x,s16 y,u8 level) {
+    map_event_person p;
+    memset(&p, 0, sizeof(map_event_person)); // The vanilla game excludes this, resulting in undefined flags for camera overworlds...
+    p.target_index = person_idx;
+    p.overworld_index = picture;
+    p.x = (s16)(x - 7);
+    p.y = (s16)(y - 7);
+    p.level = level;
+    p.behavior = behaviour;
+    return npc_create_camera_by_person(&p);
+}
+
+u16 person_get_flag(u8 person_idx, u8 map_idx, u8 bank) {
+    map_event_person *person = map_get_person(person_idx, map_idx, bank);
+    if (!person) // Bug-fix from initial game: Attempted to read from NULL, which results in undefined behaviour on emulators.
+        return 0;
+    else
+        return person->flag;
+}

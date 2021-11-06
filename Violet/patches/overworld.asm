@@ -543,3 +543,25 @@ _blxr4:
     ldr r3, =npc_normal_jump_proceed_and_update_position | 1
     bx r3
     .pool
+
+.org 0x0805e830
+    push {r4, lr}
+    sub sp, #0x8 // pass 2 arguments on the stack
+    ldr r4, [sp, #0x10] // first arg from stack 
+    str r4, [sp]
+    ldr r4, [sp, #0x14] // second arg from stack
+    str r4, [sp, #0x4]
+    ldr r4, =npc_create_camera | 1
+    bl blxr4_npc_create_camera
+    add sp, #0x8
+    pop {r4}
+    pop {r1}
+    bx r1
+blxr4_npc_create_camera:
+    bx r4
+    .pool
+
+.org 0x0805fc5c
+    ldr r3, =person_get_flag | 1
+    bx r3
+    .pool

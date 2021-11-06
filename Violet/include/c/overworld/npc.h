@@ -811,4 +811,11 @@ void npc_oam_apply_direction(oam_object *target, u8 direction);
  **/
 s8 npc_jump_get_y(u8 idx, u8 height);
 
+/**
+ * Creates a camera npc given a person.
+ * @param p the person to base the camera npc on
+ * @return the camera npc idx
+ **/
+u8 npc_create_camera_by_person(map_event_person *p);
+
 #endif /* INCLUDE_C_OVERWORLD_NPC_H_ */

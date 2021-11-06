@@ -1652,3 +1652,4 @@ overworld_effect_is_active = 0x08083790 | 1;
 map_draw_all_by_position_and_footer = 0x0805a6a8 | 1;
 map_draw_block_at = 0x0805a948 | 1;
 map_draw_block = 0x0805a9b4 | 1;
+npc_create_camera_by_person = 0x0805e7f4 | 1;

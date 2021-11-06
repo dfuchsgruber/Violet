@@ -12,10 +12,12 @@
 #include "tile/coordinate.h"
 #include "tile/hidden_item.h"
 
+
 typedef struct map_event_person {
     u8 target_index; //scripts use this as target reference
     u8 overworld_index; //the picture to be displayed
-    u8 script_std;
+    u8 script_std : 7;
+    u8 in_connection : 1; // If set, this npc refers to a person in a connecting map
     u8 argument;
     s16 x;
     s16 y;
