@@ -7606,25 +7606,25 @@
 			],
 			[
 				{
-					"tile_idx": 932,
+					"tile_idx": 646,
 					"palette_idx": 8,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 933,
+					"tile_idx": 647,
 					"palette_idx": 8,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 948,
+					"tile_idx": 662,
 					"palette_idx": 8,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 949,
+					"tile_idx": 663,
 					"palette_idx": 8,
 					"horizontal_flip": 0,
 					"vertical_flip": 0

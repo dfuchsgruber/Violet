@@ -335,16 +335,19 @@ void special_overworld_effect_lightning() {
     overworld_effect_new(OVERWORLD_EFFECT_LIGHTNING);
 }
 
+// static graphic overworld_effect_rainbow_sparkles_graphics[] = {
+//     [0] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [1] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [2] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [3] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [4] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 4 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [5] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 5 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [6] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 6 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [7] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 7 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+// };
 
-static graphic overworld_effect_rainbow_sparkles_graphics[] = {
-    [0] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [1] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [2] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [3] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [4] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 4 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [5] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 5 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [6] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 6 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [7] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 7 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+static graphic overworld_effect_rainbow_sparkles_graphic = {
+    .sprite = gfx_overworld_effect_rainbow_sparklesTiles, .size = GRAPHIC_SIZE_4BPP(16, 16) * 8, .tag = GFX_TAG_OVERWORLD_EFFECT_RAINBOW_SPARKLES,
 };
 
 palette overworld_effect_rainbow_sparkles_palette = {
@@ -359,14 +362,14 @@ static sprite overworld_effect_rainbow_sparkles_sprite = {
 
 static gfx_frame overworld_effect_rainbow_sparkles_animation[] = {
     {.data = 0, .duration = 0},
-    {.data = 0, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
-    {.data = 1, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
-    {.data = 2, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
-    {.data = 3, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
-    {.data = 4, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
-    {.data = 5, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
-    {.data = 6, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
-    {.data = 7, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
+    {.data = 0 * 4, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
+    {.data = 1 * 4, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
+    {.data = 2 * 4, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
+    {.data = 3 * 4, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
+    {.data = 4 * 4, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
+    {.data = 5 * 4, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
+    {.data = 6 * 4, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
+    {.data = 7 * 4, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
     {.data = GFX_ANIM_END}, 
 };
 
@@ -384,17 +387,21 @@ static void overworld_effect_rainbow_sparkles_oam_callback(oam_object *self) {
     if (self->flags & OAM_FLAG_GFX_ANIM_END 
             || overworld_effect_is_oam_outside_camera_view((s16)self->private[0], (s16)self->private[1], 16, 16)) {
         overworld_effect_delete(self, OVERWORLD_EFFECT_RAINBOW_SPARKLES);
+        if (!overworld_effect_is_active(OVERWORLD_EFFECT_RAINBOW_SPARKLES))
+            oam_free_vram_by_tag(GFX_TAG_OVERWORLD_EFFECT_RAINBOW_SPARKLES);
     }
 }
 
 static oam_template overworld_effect_rainbow_sparkles_oam_template = {
-    .tiles_tag = 0xFFFF, .pal_tag = GFX_TAG_OVERWORLD_EFFECT_RAINBOW_SPARKLES,
-    .graphics = overworld_effect_rainbow_sparkles_graphics,
+    .tiles_tag = GFX_TAG_OVERWORLD_EFFECT_RAINBOW_SPARKLES, .pal_tag = GFX_TAG_OVERWORLD_EFFECT_RAINBOW_SPARKLES,
+    .graphics = NULL,
     .oam = &overworld_effect_rainbow_sparkles_sprite, .animation = overworld_effect_rainbow_sparkles_animations,
     .rotscale = oam_rotscale_anim_table_null, .callback = overworld_effect_rainbow_sparkles_oam_callback,
 };
 
 void overworld_effect_rainbow_sparkles_initialize() {
+    if (oam_vram_allocation_table_get_index(GFX_TAG_OVERWORLD_EFFECT_RAINBOW_SPARKLES) == 0xFF)
+        oam_load_graphic(&overworld_effect_rainbow_sparkles_graphic);
     s16 x = (s16)(overworld_effect_state.x + 7);
     s16 y = (s16)(overworld_effect_state.y + 7);
     overworld_effect_ow_coordinates_to_screen_coordinates(&x, &y, 8, 0);
@@ -418,23 +425,27 @@ void special_overworld_effect_rainbow_sparkles() {
     overworld_effect_new(OVERWORLD_EFFECT_RAINBOW_SPARKLES);
 }
 
-static graphic overworld_effect_feathers_graphics[] = {
-    [0] = {.sprite = gfx_overworld_effect_featherTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [1] = {.sprite = gfx_overworld_effect_featherTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [2] = {.sprite = gfx_overworld_effect_featherTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [3] = {.sprite = gfx_overworld_effect_featherTiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [4] = {.sprite = gfx_overworld_effect_featherTiles + 4 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [5] = {.sprite = gfx_overworld_effect_featherTiles + 5 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [6] = {.sprite = gfx_overworld_effect_featherTiles + 6 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [7] = {.sprite = gfx_overworld_effect_featherTiles + 7 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [8] = {.sprite = gfx_overworld_effect_featherTiles + 8 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [9] = {.sprite = gfx_overworld_effect_featherTiles + 9 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [10] = {.sprite = gfx_overworld_effect_featherTiles + 10 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [11] = {.sprite = gfx_overworld_effect_featherTiles + 11 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [12] = {.sprite = gfx_overworld_effect_featherTiles + 12 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [13] = {.sprite = gfx_overworld_effect_featherTiles + 13 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [14] = {.sprite = gfx_overworld_effect_featherTiles + 14 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
-    [15] = {.sprite = gfx_overworld_effect_featherTiles + 15 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+// static graphic overworld_effect_feathers_graphics[] = {
+//     [0] = {.sprite = gfx_overworld_effect_featherTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [1] = {.sprite = gfx_overworld_effect_featherTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [2] = {.sprite = gfx_overworld_effect_featherTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [3] = {.sprite = gfx_overworld_effect_featherTiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [4] = {.sprite = gfx_overworld_effect_featherTiles + 4 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [5] = {.sprite = gfx_overworld_effect_featherTiles + 5 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [6] = {.sprite = gfx_overworld_effect_featherTiles + 6 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [7] = {.sprite = gfx_overworld_effect_featherTiles + 7 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [8] = {.sprite = gfx_overworld_effect_featherTiles + 8 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [9] = {.sprite = gfx_overworld_effect_featherTiles + 9 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [10] = {.sprite = gfx_overworld_effect_featherTiles + 10 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [11] = {.sprite = gfx_overworld_effect_featherTiles + 11 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [12] = {.sprite = gfx_overworld_effect_featherTiles + 12 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [13] = {.sprite = gfx_overworld_effect_featherTiles + 13 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [14] = {.sprite = gfx_overworld_effect_featherTiles + 14 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+//     [15] = {.sprite = gfx_overworld_effect_featherTiles + 15 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
+// };
+
+static graphic overworld_effect_feathers_graphic = {
+    .sprite = gfx_overworld_effect_featherTiles, .size = GRAPHIC_SIZE_4BPP(16, 16) * 16, .tag = GFX_TAG_OVERWORLD_EFFECT_FEATHERS,
 };
 
 palette overworld_effect_feathers_palette = {
@@ -450,82 +461,82 @@ static sprite overworld_effect_feathers_sprite_controller = {
 };
 
 static gfx_frame overworld_effect_feathers_animation_type_white[] = {
-    {.data = 0, .duration = 0}, 
-    {.data = 0, .duration = 8}, 
-    {.data = 1, .duration = 8}, 
-    {.data = 2, .duration = 8}, 
-    {.data = 3, .duration = 8}, 
-    {.data = 2, .duration = 8}, 
+    {.data = 0 * 4, .duration = 0}, 
+    {.data = 0 * 4, .duration = 8}, 
+    {.data = 1 * 4, .duration = 8}, 
+    {.data = 2 * 4, .duration = 8}, 
+    {.data = 3 * 4, .duration = 8}, 
+    {.data = 2 * 4, .duration = 8}, 
     {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
 static gfx_frame overworld_effect_feathers_animation_type_white_flipped[] = {
-    {.data = 0, .duration = 0  | GFX_ANIM_HFLIP}, 
-    {.data = 0, .duration = 8 | GFX_ANIM_HFLIP}, 
-    {.data = 1, .duration = 8 | GFX_ANIM_HFLIP}, 
-    {.data = 2, .duration = 8 | GFX_ANIM_HFLIP}, 
-    {.data = 3, .duration = 8 | GFX_ANIM_HFLIP}, 
-    {.data = 2, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 0 * 4, .duration = 0  | GFX_ANIM_HFLIP}, 
+    {.data = 0 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 1 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 2 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 3 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 2 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
     {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
 static gfx_frame overworld_effect_feathers_animation_type_red[] = {
-    {.data = 4, .duration = 0}, 
-    {.data = 4, .duration = 8}, 
-    {.data = 5, .duration = 8}, 
-    {.data = 6, .duration = 8}, 
-    {.data = 7, .duration = 8}, 
-    {.data = 6, .duration = 8}, 
+    {.data = 4 * 4, .duration = 0}, 
+    {.data = 4 * 4, .duration = 8}, 
+    {.data = 5 * 4, .duration = 8}, 
+    {.data = 6 * 4, .duration = 8}, 
+    {.data = 7 * 4, .duration = 8}, 
+    {.data = 6 * 4, .duration = 8}, 
     {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
 static gfx_frame overworld_effect_feathers_animation_type_red_flipped[] = {
-    {.data = 4, .duration = 0 | GFX_ANIM_HFLIP}, 
-    {.data = 4, .duration = 8 | GFX_ANIM_HFLIP}, 
-    {.data = 5, .duration = 8 | GFX_ANIM_HFLIP}, 
-    {.data = 6, .duration = 8 | GFX_ANIM_HFLIP}, 
-    {.data = 7, .duration = 8 | GFX_ANIM_HFLIP}, 
-    {.data = 6, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 4 * 4, .duration = 0 | GFX_ANIM_HFLIP}, 
+    {.data = 4 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 5 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 6 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 7 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 6 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
     {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
 static gfx_frame overworld_effect_feathers_animation_type_blue[] = {
-    {.data = 8, .duration = 0}, 
-    {.data = 8, .duration = 8}, 
-    {.data = 9, .duration = 8}, 
-    {.data = 10, .duration = 8}, 
-    {.data = 11, .duration = 8}, 
-    {.data = 10, .duration = 8}, 
+    {.data = 8 * 4, .duration = 0}, 
+    {.data = 8 * 4, .duration = 8}, 
+    {.data = 9 * 4, .duration = 8}, 
+    {.data = 10 * 4, .duration = 8}, 
+    {.data = 11 * 4, .duration = 8}, 
+    {.data = 10 * 4, .duration = 8}, 
     {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
 static gfx_frame overworld_effect_feathers_animation_type_blue_flipped[] = {
-    {.data = 8, .duration = 0 | GFX_ANIM_HFLIP}, 
-    {.data = 8, .duration = 8 | GFX_ANIM_HFLIP}, 
-    {.data = 9, .duration = 8 | GFX_ANIM_HFLIP}, 
-    {.data = 10, .duration = 8 | GFX_ANIM_HFLIP}, 
-    {.data = 11, .duration = 8 | GFX_ANIM_HFLIP}, 
-    {.data = 10, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 8 * 4, .duration = 0 | GFX_ANIM_HFLIP}, 
+    {.data = 8 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 9 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 10 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 11 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 10 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
     {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
 static gfx_frame overworld_effect_feathers_animation_type_yellow[] = {
-    {.data = 12, .duration = 0}, 
-    {.data = 12, .duration = 8}, 
-    {.data = 13, .duration = 8}, 
-    {.data = 14, .duration = 8}, 
-    {.data = 15, .duration = 8}, 
-    {.data = 14, .duration = 8}, 
+    {.data = 12 * 4, .duration = 0}, 
+    {.data = 12 * 4, .duration = 8}, 
+    {.data = 13 * 4, .duration = 8}, 
+    {.data = 14 * 4, .duration = 8}, 
+    {.data = 15 * 4, .duration = 8}, 
+    {.data = 14 * 4, .duration = 8}, 
     {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
 static gfx_frame overworld_effect_feathers_animation_type_yellow_flipped[] = {
-    {.data = 12, .duration = 0 | GFX_ANIM_HFLIP}, 
-    {.data = 12, .duration = 8 | GFX_ANIM_HFLIP}, 
-    {.data = 13, .duration = 8 | GFX_ANIM_HFLIP}, 
-    {.data = 14, .duration = 8 | GFX_ANIM_HFLIP}, 
-    {.data = 15, .duration = 8 | GFX_ANIM_HFLIP}, 
-    {.data = 14, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 12 * 4, .duration = 0 | GFX_ANIM_HFLIP}, 
+    {.data = 12 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 13 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 14 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 15 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
+    {.data = 14 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
     {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
@@ -648,24 +659,28 @@ static void overworld_effect_feathers_oam_callback_controller(oam_object *self) 
         overworld_effect_delete_oam_and_free_resources_if_unused(oams + feather_oams[i]);
     }
     overworld_effect_delete(self, OVERWORLD_EFFECT_FEATHERS);
+    if (!overworld_effect_is_active(OVERWORLD_EFFECT_FEATHERS))
+            oam_free_vram_by_tag(OVERWORLD_EFFECT_FEATHERS);
 }
 
 static oam_template overworld_effect_feathers_oam_template = {
-    .tiles_tag = 0xFFFF, .pal_tag = GFX_TAG_OVERWORLD_EFFECT_FEATHERS,
-    .graphics = overworld_effect_feathers_graphics,
+    .tiles_tag = GFX_TAG_OVERWORLD_EFFECT_FEATHERS, .pal_tag = GFX_TAG_OVERWORLD_EFFECT_FEATHERS,
+    .graphics = NULL,
     .oam = &overworld_effect_feathers_sprite, .animation = overworld_effect_feathers_animations,
     .rotscale = oam_rotscale_anim_table_null, .callback = overworld_effect_feathers_oam_callback_gfx_anim_with_delay,
 };
 
 static oam_template overworld_effect_feathers_oam_template_controller = {
-    .tiles_tag = 0xFFFF, .pal_tag = 0xFFFF,
-    .graphics = overworld_effect_feathers_graphics,
+    .tiles_tag = GFX_TAG_OVERWORLD_EFFECT_FEATHERS, .pal_tag = 0xFFFF,
+    .graphics = NULL,
     .oam = &overworld_effect_feathers_sprite_controller, .animation = oam_gfx_anim_table_null,
     .rotscale = oam_rotscale_anim_table_null, .callback = overworld_effect_feathers_oam_callback_controller,
 };
 
 
 void overworld_effect_feathers_initialize() {
+    if (oam_vram_allocation_table_get_index(GFX_TAG_OVERWORLD_EFFECT_FEATHERS) == 0xFF)
+        oam_load_graphic(&overworld_effect_feathers_graphic);
     s16 x = (s16)(overworld_effect_state.x + 7);
     s16 y = (s16)(overworld_effect_state.y + 7);
     overworld_effect_ow_coordinates_to_screen_coordinates(&x, &y, 8, 0);

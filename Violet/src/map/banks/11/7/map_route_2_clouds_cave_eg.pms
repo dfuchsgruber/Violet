@@ -213,7 +213,7 @@
 					"x": "24",
 					"y": "25",
 					"level": 0,
-					"target_warp_idx": 0,
+					"target_warp_idx": "2",
 					"target_map": "2",
 					"target_bank": "11"
 				},
@@ -229,20 +229,20 @@
 			"triggers": [],
 			"signposts": []
 		},
-		"levelscripts": 0,
+		"levelscripts": "map_route_2_clouds_cave_eg_levelscripts",
 		"connections": {
 			"connection_cnt": 0,
 			"connections": []
 		},
-		"music": "MUS_MONDBERG_AND_FELSTUNNEL_AND_SIEGESSTRASSE",
+		"music": "MUS_GLUTBERG_AND_EISKASKADENHOHLE_AND_WANDELHOHLE_AND_VERLORENE_HOHLE_AND_NABELFELS",
 		"footer_idx": 187,
 		"namespace": "MAP_ROUTE_2",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_INSIDE",
 		"type": "MAP_TYPE_BASEMENT",
-		"bike_usable": 0,
+		"bike_usable": "1",
 		"flags": {
-			"allow_escape_rope": 0,
+			"allow_escape_rope": "1",
 			"allow_run": 0,
 			"show_name": 0,
 			"flag_3": 0,
