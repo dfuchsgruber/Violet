@@ -8,6 +8,8 @@
 #ifndef INCLUDE_C_MAP_CONNECTION_H_
 #define INCLUDE_C_MAP_CONNECTION_H_
 
+#include "constants/map_connections.h"
+
 // A single map connection
 
 typedef struct {

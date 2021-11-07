@@ -163,7 +163,7 @@ class Event_to_image:
                 box = ((0, 2 * 64, 64, 3 * 64))
             picture_idx = path
         elif picture_idx == 236: # Misc overworlds
-            script_std = event['script_std']
+            script_std = event['script_std_and_in_connection']['script_std']
             box = ((0, 16, 16, 32))
             if script_std == 'PERSON_MUSHROOM':
                 path = os.path.join('asset', 'gfx', 'overworld', 'misc', 'gfx_ow_mushroom.png')
