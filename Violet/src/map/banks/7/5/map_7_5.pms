@@ -16,7 +16,6 @@
 					},
 					"alert_radius": 3,
 					"level": 0,
-					"field_3": 0,
 					"x": "28",
 					"picture": 39,
 					"script": "ow_script_map_7_5_trainer_0",
@@ -26,12 +25,16 @@
 					"is_trainer": "1",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
@@ -43,7 +46,6 @@
 					},
 					"alert_radius": 0,
 					"level": 3,
-					"field_3": 0,
 					"x": 4,
 					"picture": 81,
 					"script": "ow_script_map_7_5_trainer_1",
@@ -53,12 +55,16 @@
 					"is_trainer": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
@@ -70,7 +76,6 @@
 					},
 					"alert_radius": "5",
 					"level": 0,
-					"field_3": 0,
 					"x": "19",
 					"picture": 22,
 					"script": "ow_script_map_7_5_trainer_2",
@@ -80,12 +85,16 @@
 					"is_trainer": "1",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
@@ -97,7 +106,6 @@
 					},
 					"alert_radius": "1",
 					"level": 0,
-					"field_3": 0,
 					"x": "18",
 					"picture": 40,
 					"script": "ow_script_map_7_5_trainer_3",
@@ -107,12 +115,16 @@
 					"is_trainer": "1",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
@@ -124,7 +136,6 @@
 					},
 					"alert_radius": "6",
 					"level": 0,
-					"field_3": 0,
 					"x": "23",
 					"picture": 18,
 					"script": "ow_script_map_7_5_trainer_4",
@@ -134,19 +145,21 @@
 					"is_trainer": "1",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "2",
 					"picture": "91",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "7",
 					"y": "28",
 					"level": 0,
@@ -166,6 +179,11 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				}
 			],

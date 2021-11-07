@@ -10,8 +10,6 @@
 				{
 					"target_index": "1",
 					"picture": "92",
-					"script_std": "PERSON_ITEM",
-					"field_3": 0,
 					"x": "9",
 					"y": "16",
 					"level": 0,
@@ -30,13 +28,16 @@
 						"species": "0",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_ITEM",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "2",
 					"picture": "18",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "31",
 					"y": "15",
 					"level": 0,
@@ -55,13 +56,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "3",
 					"picture": "238",
-					"script_std": "PERSON_POKEMON",
-					"field_3": 0,
 					"x": "27",
 					"y": "7",
 					"level": 0,
@@ -80,13 +84,16 @@
 						"species": "POKEMON_SANDAN",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "4",
 					"picture": "238",
-					"script_std": "PERSON_AGGRESSIVE_POKEMON",
-					"field_3": "28",
 					"x": "21",
 					"y": "14",
 					"level": 0,
@@ -105,13 +112,16 @@
 						"species": "POKEMON_GEOROK",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": "28",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_AGGRESSIVE_POKEMON",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "5",
 					"picture": "18",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "22",
 					"y": "4",
 					"level": 0,
@@ -130,13 +140,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "6",
 					"picture": "29",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "23",
 					"y": "4",
 					"level": 0,
@@ -155,13 +168,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "7",
 					"picture": "92",
-					"script_std": "PERSON_ITEM",
-					"field_3": 0,
 					"x": "7",
 					"y": "10",
 					"level": 0,
@@ -180,6 +196,11 @@
 						"species": "0",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_ITEM",
+						"in_connection": "0"
 					}
 				}
 			],

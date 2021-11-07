@@ -10,8 +10,6 @@
 				{
 					"target_index": "1",
 					"picture": "236",
-					"script_std": "PERSON_MUSHROOM",
-					"field_3": 0,
 					"x": "8",
 					"y": "7",
 					"level": 0,
@@ -30,13 +28,16 @@
 						"species": 0,
 						"berry_tree_idx": "2",
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_MUSHROOM",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "2",
 					"picture": "238",
-					"script_std": "PERSON_POKEMON",
-					"field_3": 0,
 					"x": "6",
 					"y": "3",
 					"level": 0,
@@ -55,13 +56,16 @@
 						"species": "POKEMON_RASAFF",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "3",
 					"picture": "238",
-					"script_std": "PERSON_POKEMON",
-					"field_3": 0,
 					"x": "15",
 					"y": "7",
 					"level": 0,
@@ -80,13 +84,16 @@
 						"species": "POKEMON_KNILZ",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "4",
 					"picture": "238",
-					"script_std": "PERSON_POKEMON",
-					"field_3": 0,
 					"x": "2",
 					"y": "12",
 					"level": 0,
@@ -105,13 +112,16 @@
 						"species": "POKEMON_KLEINSTEIN",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "5",
 					"picture": "238",
-					"script_std": "PERSON_POKEMON",
-					"field_3": 0,
 					"x": "19",
 					"y": "10",
 					"level": 0,
@@ -130,6 +140,11 @@
 						"species": "POKEMON_SANDAN",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
 					}
 				}
 			],

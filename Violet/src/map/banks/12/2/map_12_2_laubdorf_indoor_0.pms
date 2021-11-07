@@ -10,8 +10,6 @@
 				{
 					"target_index": "1",
 					"picture": "32",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "1",
 					"y": "6",
 					"level": 0,
@@ -31,13 +29,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "2",
 					"picture": "18",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "6",
 					"y": "4",
 					"level": 0,
@@ -57,6 +58,11 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				}
 			],

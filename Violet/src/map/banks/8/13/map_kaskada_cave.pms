@@ -10,8 +10,6 @@
 				{
 					"target_index": "1",
 					"picture": "101",
-					"script_std": "PERSON_EGG",
-					"field_3": 0,
 					"x": "11",
 					"y": "7",
 					"level": 0,
@@ -30,6 +28,11 @@
 						"species": "POKEMON_BARSCHWA",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_EGG",
+						"in_connection": "0"
 					}
 				}
 			],

@@ -47,7 +47,7 @@ def get_item_index(rompath, symbolspath, projectpath):
             header, label, namespace = project.load_header(bank, map_idx)
             for person_idx, person in enumerate(header['events']['persons']):
                 try:
-                    if person['script_std'] == 'PERSON_ITEM':
+                    if person['script_std_and_in_connection']['script_std'] in ('PERSON_ITEM', 'PERSON_ITEM_MULTIPLE_COPIES'):
                         items[person['value']['item']]['locations'].append({
                             'type' : 'pokeball',
                             'bank' : bank,

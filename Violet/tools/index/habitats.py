@@ -84,7 +84,7 @@ def get_habitat_index(rompath, symbolspath, projectpath):
             header, label, namespace = project.load_header(bank, map_idx)
             try:
                 for person in header['events']['persons']:
-                    if person['script_std'] == 'PERSON_EGG':
+                    if person['script_std_and_in_connection']['script_std'] == 'PERSON_EGG':
                         habitats[person['value']['species']].append({
                             'type' : 'egg',
                             'bank' : bank,

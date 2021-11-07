@@ -10,8 +10,6 @@
 				{
 					"target_index": "1",
 					"picture": "105",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "1",
 					"y": "1",
 					"level": 0,
@@ -30,13 +28,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "2",
 					"picture": "71",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "0",
 					"y": "1",
 					"level": 0,
@@ -55,13 +56,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "3",
 					"picture": "55",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "2",
 					"y": "1",
 					"level": 0,
@@ -80,13 +84,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "4",
 					"picture": "64",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "3",
 					"y": "6",
 					"level": 0,
@@ -105,13 +112,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "5",
 					"picture": "52",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "1",
 					"y": "4",
 					"level": 0,
@@ -130,13 +140,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "6",
 					"picture": "42",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "7",
 					"y": "6",
 					"level": 0,
@@ -155,13 +168,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "7",
 					"picture": "238",
-					"script_std": "PERSON_POKEMON",
-					"field_3": 0,
 					"x": "3",
 					"y": "7",
 					"level": 0,
@@ -180,6 +196,11 @@
 						"species": "POKEMON_WONNEIRA",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
 					}
 				}
 			],

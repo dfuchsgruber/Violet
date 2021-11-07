@@ -16,7 +16,6 @@
 					},
 					"alert_radius": 0,
 					"level": 0,
-					"field_3": 0,
 					"x": "24",
 					"picture": "238",
 					"script": "0",
@@ -26,12 +25,16 @@
 					"is_trainer": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_LOTURZEL",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
 					}
 				},
 				{
@@ -43,7 +46,6 @@
 					},
 					"alert_radius": 0,
 					"level": 0,
-					"field_3": 0,
 					"x": "18",
 					"picture": "70",
 					"script": "0",
@@ -53,12 +55,16 @@
 					"is_trainer": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
@@ -70,7 +76,6 @@
 					},
 					"alert_radius": 0,
 					"level": 0,
-					"field_3": 0,
 					"x": "24",
 					"picture": 18,
 					"script": "ow_script_map_3_3_person_0",
@@ -80,12 +85,16 @@
 					"is_trainer": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
@@ -97,7 +106,6 @@
 					},
 					"alert_radius": 0,
 					"level": 0,
-					"field_3": 0,
 					"x": "24",
 					"picture": 32,
 					"script": "ow_script_map_3_3_person_1",
@@ -107,12 +115,16 @@
 					"is_trainer": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
@@ -124,7 +136,6 @@
 					},
 					"alert_radius": 0,
 					"level": 0,
-					"field_3": 0,
 					"x": "14",
 					"picture": 27,
 					"script": "ow_script_map_3_3_person_2",
@@ -134,12 +145,16 @@
 					"is_trainer": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
@@ -151,7 +166,6 @@
 					},
 					"alert_radius": 0,
 					"level": 0,
-					"field_3": 0,
 					"x": "40",
 					"picture": 23,
 					"script": "ow_script_map_3_3_person_3",
@@ -161,12 +175,16 @@
 					"is_trainer": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
@@ -178,7 +196,6 @@
 					},
 					"alert_radius": 0,
 					"level": 0,
-					"field_3": 0,
 					"x": "38",
 					"picture": 95,
 					"script": "ow_script_cut_tree",
@@ -188,12 +205,16 @@
 					"is_trainer": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
@@ -205,7 +226,6 @@
 					},
 					"alert_radius": 0,
 					"level": 0,
-					"field_3": 0,
 					"x": "23",
 					"picture": "238",
 					"script": "0",
@@ -215,12 +235,16 @@
 					"is_trainer": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_BLANAS",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
 					}
 				},
 				{
@@ -232,7 +256,6 @@
 					},
 					"alert_radius": 0,
 					"level": 0,
-					"field_3": 0,
 					"x": "8",
 					"picture": "95",
 					"script": "ow_script_cut_tree",
@@ -242,12 +265,16 @@
 					"is_trainer": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
@@ -259,7 +286,6 @@
 					},
 					"alert_radius": 0,
 					"level": 0,
-					"field_3": 0,
 					"x": "44",
 					"picture": "238",
 					"script": "ow_script_test",
@@ -269,12 +295,16 @@
 					"is_trainer": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_BLUBELLA",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
 					}
 				},
 				{
@@ -286,7 +316,6 @@
 					},
 					"alert_radius": 0,
 					"level": 0,
-					"field_3": 0,
 					"x": "39",
 					"picture": 95,
 					"script": "ow_script_cut_tree",
@@ -296,12 +325,16 @@
 					"is_trainer": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
@@ -313,7 +346,6 @@
 					},
 					"alert_radius": 0,
 					"level": 0,
-					"field_3": 0,
 					"x": "18",
 					"picture": 19,
 					"script": "ow_script_map_3_3_person_7",
@@ -323,12 +355,16 @@
 					"is_trainer": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
@@ -340,7 +376,6 @@
 					},
 					"alert_radius": 0,
 					"level": 0,
-					"field_3": 0,
 					"x": "29",
 					"picture": 17,
 					"script": "ow_script_map_3_3_person_8",
@@ -350,19 +385,21 @@
 					"is_trainer": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "14",
 					"picture": "101",
-					"script_std": "PERSON_EGG",
-					"field_3": 0,
 					"x": "20",
 					"y": "42",
 					"level": 0,
@@ -381,13 +418,16 @@
 						"species": "POKEMON_ENDIVIE",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_EGG",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "15",
 					"picture": "238",
-					"script_std": "PERSON_POKEMON",
-					"field_3": 0,
 					"x": "35",
 					"y": "14",
 					"level": 0,
@@ -406,13 +446,16 @@
 						"species": "POKEMON_KAPILZ",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "16",
 					"picture": "236",
-					"script_std": "PERSON_MUSHROOM",
-					"field_3": 0,
 					"x": "41",
 					"y": "11",
 					"level": 0,
@@ -431,13 +474,16 @@
 						"species": 0,
 						"berry_tree_idx": "12",
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_MUSHROOM",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "17",
 					"picture": "237",
-					"script_std": "PERSON_BERRY_TREE",
-					"field_3": 0,
 					"x": "51",
 					"y": "15",
 					"level": 0,
@@ -456,13 +502,16 @@
 						"species": 0,
 						"berry_tree_idx": "16",
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_BERRY_TREE",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "18",
 					"picture": "237",
-					"script_std": "PERSON_BERRY_TREE",
-					"field_3": 0,
 					"x": "52",
 					"y": "15",
 					"level": 0,
@@ -481,13 +530,16 @@
 						"species": 0,
 						"berry_tree_idx": "15",
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_BERRY_TREE",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "19",
 					"picture": "238",
-					"script_std": "PERSON_POKEMON",
-					"field_3": 0,
 					"x": "51",
 					"y": "18",
 					"level": 0,
@@ -506,13 +558,16 @@
 						"species": "POKEMON_DUFLOR",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "20",
 					"picture": "81",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "38",
 					"y": "8",
 					"level": 0,
@@ -531,13 +586,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "21",
 					"picture": "70",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "39",
 					"y": "8",
 					"level": 0,
@@ -556,13 +614,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "22",
 					"picture": "238",
-					"script_std": "PERSON_POKEMON",
-					"field_3": 0,
 					"x": "22",
 					"y": "10",
 					"level": 0,
@@ -581,13 +642,16 @@
 						"species": "POKEMON_KASTADUR",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "23",
 					"picture": "238",
-					"script_std": "PERSON_POKEMON",
-					"field_3": 0,
 					"x": "15",
 					"y": "23",
 					"level": 0,
@@ -606,13 +670,16 @@
 						"species": "POKEMON_PANEKON",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "24",
 					"picture": "238",
-					"script_std": "PERSON_POKEMON",
-					"field_3": 0,
 					"x": "31",
 					"y": "22",
 					"level": 0,
@@ -631,13 +698,16 @@
 						"species": "POKEMON_SCHALOKO",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "25",
 					"picture": "238",
-					"script_std": "PERSON_POKEMON",
-					"field_3": 0,
 					"x": "12",
 					"y": "26",
 					"level": 0,
@@ -656,13 +726,16 @@
 						"species": "POKEMON_WABLU",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "26",
 					"picture": "238",
-					"script_std": "PERSON_POKEMON",
-					"field_3": 0,
 					"x": "12",
 					"y": "35",
 					"level": 0,
@@ -681,13 +754,16 @@
 						"species": "POKEMON_TANNZA",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "27",
 					"picture": "238",
-					"script_std": "PERSON_POKEMON",
-					"field_3": 0,
 					"x": "14",
 					"y": "7",
 					"level": 0,
@@ -706,13 +782,16 @@
 						"species": "POKEMON_KRAMURX",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "28",
 					"picture": 0,
-					"script_std": 0,
-					"field_3": 0,
 					"x": "56",
 					"y": "3",
 					"level": 0,
@@ -731,13 +810,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "29",
 					"picture": "236",
-					"script_std": "PERSON_TRASH_CAN",
-					"field_3": 0,
 					"x": "25",
 					"y": "29",
 					"level": 0,
@@ -756,6 +838,11 @@
 						"species": "0",
 						"berry_tree_idx": "9",
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_TRASH_CAN",
+						"in_connection": "0"
 					}
 				}
 			],

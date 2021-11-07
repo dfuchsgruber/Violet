@@ -19,7 +19,7 @@ def get_tutor_crystal_index(rompath, symbolspath, projectpath):
         for map_idx in project.headers[bank]:
             header, label, namespace = project.load_header(bank, map_idx)
             for person_idx, person in enumerate(header['events']['persons']):
-                if person['script_std'] == 'PERSON_ACCESSIBLE_MOVE_TUTOR':
+                if person['script_std_and_in_connection']['script_std'] == 'PERSON_ACCESSIBLE_MOVE_TUTOR':
                     index[person['value']['type']].append({
                         'bank' : bank,
                         'map_idx' : map_idx,

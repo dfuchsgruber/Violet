@@ -16,7 +16,6 @@
 					},
 					"alert_radius": 0,
 					"level": 3,
-					"field_3": 0,
 					"x": 6,
 					"picture": 22,
 					"script": "ow_script_map_7_1_person_0",
@@ -26,12 +25,16 @@
 					"is_trainer": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
@@ -43,7 +46,6 @@
 					},
 					"alert_radius": 0,
 					"level": 0,
-					"field_3": 0,
 					"x": 8,
 					"picture": 20,
 					"script": "ow_script_map_7_1_person_1",
@@ -53,12 +55,16 @@
 					"is_trainer": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
@@ -70,7 +76,6 @@
 					},
 					"alert_radius": 0,
 					"level": 0,
-					"field_3": 0,
 					"x": 2,
 					"picture": 27,
 					"script": "ow_script_map_7_1_person_2",
@@ -80,12 +85,16 @@
 					"is_trainer": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				}
 			],

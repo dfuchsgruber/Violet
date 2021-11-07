@@ -39,7 +39,10 @@ person_script_std_type = agb.types.UnionType({
         'PERSON_SECRET_POWER_VINE' : 'berry_tree_idx',
         'PERSON_SECRET_POWER_CAVE' : 'berry_tree_idx',
         'PERSON_SECRET_POWER_WHIRLPOOL' : 'berry_tree_idx',
-    }.get(parents[-1]['script_std'], 'item')
+        'PERSON_STATIC_BERRY_TREE' : 'berry_tree_idx',
+        'PERSON_RECIPE' : 'berry_tree_idx',
+        'PERSON_ITEM_MULTIPLE_COPIES' : 'item',
+    }.get(parents[-1]['script_std_and_in_connection']['script_std'], 'item')
 )
 map_flags_type = agb.types.BitfieldType('u8', [
     ('allow_escape_rope', None, 1),
@@ -52,7 +55,13 @@ map_flags_type = agb.types.BitfieldType('u8', [
     ('flag_7', None, 1),
 ])
 
+
 person_script_std_type_type = agb.types.ScalarType('u8', constant='person_script_stds')
+
+person_script_std_and_in_connection_type = agb.types.BitfieldType('u8', [
+    ('script_std', 'person_script_stds', 5),
+    ('in_connection', 'map_connections', 3),
+])
 
 person_behaviour_range_type = agb.types.BitfieldType('u8', [
     ('x', None, 4),
@@ -63,8 +72,8 @@ person_behaviour_range_type = agb.types.BitfieldType('u8', [
 person_type = agb.types.Structure([
     ('target_index', 'u8', 0),
     ('picture', 'u8', 0),
-    ('script_std', 'person_script_std', 0),
-    ('field_3', 'u8', 0),
+    ('script_std_and_in_connection', 'event.person.script_std_and_in_connection', 0),
+    ('argument', 'u8', 0),
     ('x', 's16', 0),
     ('y', 's16', 0),
     ('level', 'u8', 0),
@@ -198,6 +207,7 @@ models_to_export = {
     'worldmap_position' : worldmap_position_type,
     'person_behaviour' : person_behaviour_type,
     'person_script_std' : person_script_std_type_type,
+    'event.person.script_std_and_in_connection' : person_script_std_and_in_connection_type,
     'event.person.script_std' : person_script_std_type,
     'event.person.behaviour_range' : person_behaviour_range_type,
     'flag' : flag_type,

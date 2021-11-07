@@ -10,8 +10,6 @@
 				{
 					"target_index": "1",
 					"picture": "92",
-					"script_std": "PERSON_ITEM",
-					"field_3": 0,
 					"x": "0",
 					"y": "5",
 					"level": 0,
@@ -30,13 +28,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_ITEM",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "2",
 					"picture": "92",
-					"script_std": "PERSON_ITEM",
-					"field_3": 0,
 					"x": "1",
 					"y": "3",
 					"level": 0,
@@ -55,13 +56,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_ITEM",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "3",
 					"picture": "92",
-					"script_std": "PERSON_ITEM",
-					"field_3": 0,
 					"x": "5",
 					"y": "4",
 					"level": 0,
@@ -80,13 +84,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_ITEM",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "4",
 					"picture": "238",
-					"script_std": "PERSON_AGGRESSIVE_POKEMON",
-					"field_3": 0,
 					"x": "2",
 					"y": "8",
 					"level": 0,
@@ -105,6 +112,11 @@
 						"species": "POKEMON_MAGNAYEN",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_AGGRESSIVE_POKEMON",
+						"in_connection": "0"
 					}
 				}
 			],

@@ -10,8 +10,6 @@
 				{
 					"target_index": "1",
 					"picture": "92",
-					"script_std": "PERSON_ITEM",
-					"field_3": 0,
 					"x": "0",
 					"y": "13",
 					"level": 0,
@@ -30,6 +28,11 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_ITEM",
+						"in_connection": "0"
 					}
 				}
 			],

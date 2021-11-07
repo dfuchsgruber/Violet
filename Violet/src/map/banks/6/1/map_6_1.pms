@@ -22,16 +22,19 @@
 					"flag": "AKTANIA_LESTER_REGI_ROOM",
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"field_3": 0,
 					"script": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				}
 			],

@@ -23,13 +23,13 @@ def get_misc_index(rompath, symbolspath, projectpath):
             header, label, namespace = project.load_header(bank, map_idx)
             for person_idx, person in enumerate(header['events']['persons']):
                 try:
-                    if person['script_std'] == 'PERSON_MUSHROOM':
+                    if person['script_std_and_in_connection']['script_std'] == 'PERSON_MUSHROOM':
                         idx = str(person['value']['berry_tree_idx'])
                         mushroom_flag_to_map[int(idx, 0)].append((bank, map_idx, namespace))
-                    elif person['script_std'] == 'PERSON_SHELL':
+                    elif person['script_std_and_in_connection']['script_std'] == 'PERSON_SHELL':
                         idx = str(person['value']['berry_tree_idx'])
                         shell_flag_to_map[int(idx, 0)].append((bank, map_idx, namespace))
-                    elif person['script_std'] == 'PERSON_TRASH_CAN':
+                    elif person['script_std_and_in_connection']['script_std'] == 'PERSON_TRASH_CAN':
                         idx = str(person['value']['berry_tree_idx'])
                         trash_flag_to_map[int(idx, 0)].append((bank, map_idx, namespace))
                 except Exception as e:

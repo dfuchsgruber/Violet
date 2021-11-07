@@ -44,7 +44,7 @@ def get_berry_index(rompath, symbolspath, projectpath):
             header, label, namespace = project.load_header(bank, map_idx)
             for person_idx, person in enumerate(header['events']['persons']):
                 try:
-                    if person['script_std'] == 'PERSON_BERRY_TREE':
+                    if person['script_std_and_in_connection']['script_std'] == 'PERSON_BERRY_TREE':
                         tree_idx = str(person['value']['berry_tree_idx'])
                         flag_to_map[int(tree_idx, 0)].append((bank, map_idx, namespace))
                 except Exception as e:

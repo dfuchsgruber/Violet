@@ -12,7 +12,6 @@
 					"script": "0",
 					"y": "7",
 					"target_index": 1,
-					"field_3": 0,
 					"picture": "93",
 					"flag": "0x0",
 					"x": "7",
@@ -26,12 +25,16 @@
 					},
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_ITEM",
 					"value": {
 						"item": "ITEM_GEOWAZNIT",
 						"species": "0",
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_ITEM",
+						"in_connection": "0"
 					}
 				}
 			],

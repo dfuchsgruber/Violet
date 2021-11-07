@@ -10,8 +10,6 @@
 				{
 					"target_index": "1",
 					"picture": "17",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "81",
 					"y": "9",
 					"level": 0,
@@ -31,13 +29,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "2",
 					"picture": "31",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "118",
 					"y": "10",
 					"level": 0,
@@ -57,13 +58,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "3",
 					"picture": "171",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "53",
 					"y": "21",
 					"level": 0,
@@ -83,6 +87,11 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				}
 			],

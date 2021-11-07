@@ -10,8 +10,6 @@
 				{
 					"target_index": "1",
 					"picture": "58",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "8",
 					"y": "12",
 					"level": 0,
@@ -31,13 +29,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "2",
 					"picture": "171",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "8",
 					"y": "28",
 					"level": 0,
@@ -57,13 +58,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "3",
 					"picture": "170",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "16",
 					"y": "3",
 					"level": 0,
@@ -83,13 +87,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "4",
 					"picture": "92",
-					"script_std": "PERSON_ITEM",
-					"field_3": 0,
 					"x": "34",
 					"y": "29",
 					"level": 0,
@@ -109,13 +116,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_ITEM",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "5",
 					"picture": "92",
-					"script_std": "PERSON_ITEM",
-					"field_3": 0,
 					"x": "28",
 					"y": "17",
 					"level": 0,
@@ -135,13 +145,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_ITEM",
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "6",
 					"picture": "56",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "19",
 					"y": "24",
 					"level": 0,
@@ -161,13 +174,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "7",
 					"picture": "58",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "19",
 					"y": "21",
 					"level": 0,
@@ -187,13 +203,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "8",
 					"picture": "58",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "30",
 					"y": "7",
 					"level": 0,
@@ -213,13 +232,16 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				},
 				{
 					"target_index": "9",
 					"picture": "56",
-					"script_std": 0,
-					"field_3": 0,
 					"x": "35",
 					"y": "22",
 					"level": 0,
@@ -239,6 +261,11 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					},
+					"argument": 0,
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "0"
 					}
 				}
 			],
