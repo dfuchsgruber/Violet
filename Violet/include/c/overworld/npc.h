@@ -75,9 +75,9 @@ typedef struct npc {
     s16 from_y;
 
     struct npc_facing {
-        u8 lower : 4;
-        u8 higher : 4;
-    } facing;
+        u8 facing : 4; // lower
+        u8 movement : 4; // upper
+    } direction;
 
     struct rectangle {
         u8 x : 4;
@@ -86,14 +86,14 @@ typedef struct npc {
     u8 oam_surf;
     u8 oam_bike;
 
-    u8 field_1C;
+    u8 movement_action_idx;
     u8 sight_range;
-    u8 behavior_tile_to;
-    u8 behavior_tile_current;
+    u8 behavior_tile;
+    u8 behavior_tile_previous;
 
-    u8 field_20;
+    u8 movement_direction_previous;
     u8 step_countdown;
-    u8 field_22;
+    u8 player_copyable_movement;
     u8 field_23;
 } npc;
 
@@ -817,5 +817,31 @@ s8 npc_jump_get_y(u8 idx, u8 height);
  * @return the camera npc idx
  **/
 u8 npc_create_camera_by_person(map_event_person *p);
+
+/**
+ * Searches for an empty slot to place the npc in.
+ * @param person_idx person to create
+ * @param map_idx on which map
+ * @param on which bank
+ * @param idx where to put the slot
+ * @return `true` if no slot is available or the npc is already loaded
+ **/
+bool npc_get_empty_idx(u16 person_idx, u8 map_idx, u8 bank, u8 *idx);
+
+/**
+ * Clears an npc
+ * @param n the npc to clear
+ **/
+void npc_clear (npc *n);
+
+/**
+ * Updates an npcs picture considering possible dynamic pictures
+ * @param n the npc to update
+ **/
+void npc_set_dynamic_picture(npc *n);
+
+// Initial facing direction per behaviour
+extern u8 behaviour_initial_facing_directions[80];
+extern u8 behaviour_has_range[80];
 
 #endif /* INCLUDE_C_OVERWORLD_NPC_H_ */

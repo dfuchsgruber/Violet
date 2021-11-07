@@ -122,3 +122,13 @@
     ldr r3, = map_redraw_block_at_position | 1
     bx r3
     .pool
+
+.org 0x08054f88
+    ldr r0, =persons_load_from_header | 1
+    bx r0
+    .pool
+    
+.org 0x0805e080
+    ldr r3, =npc_create_by_person | 1
+    bx r3
+    .pool

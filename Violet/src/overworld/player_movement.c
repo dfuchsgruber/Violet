@@ -218,7 +218,7 @@ void npc_player_initialize_move_not_biking(u8 direction, key keys) {
                 npc_player_init_move_surfing(direction);
                 return;
             }
-            if (keys.keys.B && !npc_can_not_run(npcs[player_state.npc_idx].behavior_tile_to)) {
+            if (keys.keys.B && !npc_can_not_run(npcs[player_state.npc_idx].behavior_tile)) {
                 if (npc_player_walking_towards_rock_stairs(direction))
                     npc_player_init_move_sliding_on_left_foot(direction);
                 else
@@ -245,7 +245,7 @@ void npc_player_initialize_move_not_biking(u8 direction, key keys) {
         case COLLISION_SIDEWAY_STAIRS_SOUTH_EAST:
         case COLLISION_SIDEWAY_STAIRS_SOUTH_WEST: {
             // There are none of these tiles where the player can actually surf on (so far), so I dont check
-            if (keys.keys.B && !npc_can_not_run(npcs[player_state.npc_idx].behavior_tile_to))
+            if (keys.keys.B && !npc_can_not_run(npcs[player_state.npc_idx].behavior_tile))
                 npc_player_init_move_diagonal_running(collision);
             else
                 npc_player_init_move_diagonal_walking(collision);

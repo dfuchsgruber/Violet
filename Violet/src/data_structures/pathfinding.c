@@ -177,8 +177,8 @@ bool a_star_is_connected(s16 dest_x, s16 dest_y, s16 from_x, s16 from_y, npc *wa
     walker->height.current = (u8)(block_get_level(from_x, from_y) & 0xF);
     walker->dest_x = dest_x;
     walker->dest_y = dest_y;
-    walker->facing.lower = (u8)(dir & 0xF);
-    walker->facing.higher = (u8)(dir & 0xF);
+    walker->direction.facing = (u8)(dir & 0xF);
+    walker->direction.movement = (u8)(dir & 0xF);
     walker->from_x = from_x;
     walker->from_y = from_y;
     u8 result = npc_get_collision(walker, dest_x, dest_y, dir);

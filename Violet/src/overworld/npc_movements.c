@@ -271,7 +271,7 @@ s8 npc_normal_jump_proceed_and_update_position(npc *n, oam_object *target, s8(*j
     s8 result = jump_proceed(target);
     if (result == JUMP_MOVED_ONE_BLOCK && target->tspeed != JUMP_SPEED_IN_PLACE) {
         s16 x = 0; s16 y = 0;
-        coordiantes_move_direction(n->facing.higher, &x, &y, 
+        coordiantes_move_direction(n->direction.movement, &x, &y, 
             npc_anim_jump_deltas_every_block[target->tspeed], npc_anim_jump_deltas_every_block[target->tspeed]);
         npc_update_coordinates(n, (s16)(n->dest_x + x), (s16)(n->dest_y + y));
         n->flags.trigger_ground_effects_on_move = true;
@@ -310,7 +310,7 @@ void npc_apply_jump(npc *n, oam_object *target, u8 direction, u8 speed, u8 heigh
 static void npc_anim_init_jump_no_shadow(npc *n, oam_object *target, u8 direction, u8 speed, u8 height) {
     dprintf("jump no shadow with dir %d, speed %d, height %d\n", direction, speed, height);
     npc_apply_jump(n, target, direction, speed, height);
-    u8 anim_idx = npc_get_animation_idx_by_movement_direction(n->facing.lower);
+    u8 anim_idx = npc_get_animation_idx_by_movement_direction(n->direction.facing);
     npc_apply_animation_looping(n, target, anim_idx);
 }
 

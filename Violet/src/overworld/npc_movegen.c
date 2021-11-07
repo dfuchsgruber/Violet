@@ -162,7 +162,7 @@ static void overworld_person_face_to_person(u8 person_idx_facing, u8 person_idx_
     if (!npc_get_id_by_overworld_id(person_idx_target, save1->map, save1->bank, &npc_target)) {
         target_x = npcs[npc_target].dest_x;
         target_y = npcs[npc_target].dest_y;
-        target_direction = npcs[npc_target].facing.lower;
+        target_direction = npcs[npc_target].direction.facing;
     } else { // Get the position from map event
         map_event_person *person_target = map_get_person(person_idx_target, save1->map, save1->bank);
         target_x = (s16)(person_target->x + 7);

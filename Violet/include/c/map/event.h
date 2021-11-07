@@ -14,11 +14,11 @@
 
 
 typedef struct map_event_person {
-    u8 target_index; //scripts use this as target reference
+    u8 target_index; // Used as a reference id for the person
     u8 overworld_index; //the picture to be displayed
-    u8 script_std : 7;
-    u8 in_connection : 1; // If set, this npc refers to a person in a connecting map
-    u8 argument;
+    u8 script_std : 5;
+    u8 in_connection : 3; // If set, refers to in which adjacent map to look for the person
+    u8 argument; // Argument for a) script stds or b) the person that is referred to by `in_connection`
     s16 x;
     s16 y;
     u8 level;
