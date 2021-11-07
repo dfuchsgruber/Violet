@@ -2841,5 +2841,9 @@ static trainer_pokemon_default_item_default_attacks trainer_party_x1fb_route2_cl
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,39, POKEMON_SMOGMOG),
 };
 
+static trainer_pokemon_default_item_default_attacks trainer_party_x1fc_route2_clouds_fisherman_2[] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,37, POKEMON_KANIVANHA),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,37, POKEMON_QUABBEL),
+};
 
 #endif 

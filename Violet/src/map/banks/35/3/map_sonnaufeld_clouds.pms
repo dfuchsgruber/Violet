@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_sonnaufeld_clouds",
 		"events": {
-			"person_cnt": 24,
+			"person_cnt": 25,
 			"warp_cnt": 1,
 			"trigger_cnt": 6,
 			"signpost_cnt": 9,
@@ -677,6 +677,34 @@
 					"script_std_and_in_connection": {
 						"script_std": "PERSON_ITEM",
 						"in_connection": "0"
+					}
+				},
+				{
+					"target_index": "25",
+					"picture": "18",
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": "MAP_CONNECTION_EAST"
+					},
+					"argument": "10",
+					"x": "65",
+					"y": "26",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				}
 			],

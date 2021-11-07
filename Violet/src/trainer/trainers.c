@@ -7346,6 +7346,13 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x1fb_route2_clouds_cave_trainer_1,
     },
+    [0x1fc] = {
+        .trainerclass = TRAINERCLASS_ANGLER, .sprite = 0x26,
+        .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Eberhart"),
+            PSTRING("Eberhart")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1fc_route2_clouds_fisherman_2),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1fc_route2_clouds_fisherman_2,
+    },
 
     [0x300] = {
       .uses_custom_moves = true, .uses_custom_items = true,

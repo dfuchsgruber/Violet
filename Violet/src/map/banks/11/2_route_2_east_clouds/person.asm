@@ -6,6 +6,9 @@
 .global ow_script_route_2_clouds_person_2
 .global ow_script_route_2_clouds_person_3
 .global ow_script_route_2_clouds_person_4
+.global ow_script_route_2_clouds_person_5
+.global ow_script_route_2_clouds_person_6
+.global ow_script_route_2_clouds_person_7
 
 ow_script_route_2_clouds_person_0:
     loadpointer 0 str_0
@@ -27,6 +30,18 @@ ow_script_route_2_clouds_person_4:
     loadpointer 0 str_4
     callstd MSG_FACE
     end
+ow_script_route_2_clouds_person_5:
+    loadpointer 0 str_5
+    callstd MSG_FACE
+    end
+ow_script_route_2_clouds_person_6:
+    loadpointer 0 str_6
+    callstd MSG_FACE
+    end
+ow_script_route_2_clouds_person_7:
+    loadpointer 0 str_7
+    callstd MSG_FACE
+    end
 
 
 .ifdef LANG_GER
@@ -40,7 +55,12 @@ str_3:
     .autostring 34 2 "Ich erblickte einmal einen Vogel, dessen drei eisblaue Schweife so anmutig glänzten, dass ich seither keinen Tag verbracht habe, ohne hier oben nach ihm Ausschau zu halten."
 str_4:
     .autostring 34 2 "Als der ehemalige Champion Lucius begonnen hatte, auf einer Wolke nach einem Drachen-Pokémon zu suchen, eiferten ihm viele Menschen in Theto nach.\pMan kann sagen, dass er nach Jahrhunderten wieder Menschen dazu gebracht hat, die Himmel zu bereisen."
-
+str_5:
+    .autostring 34 2 "Die Vegatation auf diesen Himmelsinseln ist wirklich beeindruckendDOTS\pMan kann sich gar nicht vorstellen, wie urzeitlich diese Pflanzen sein mögenDOTS"
+str_6:
+    .autostring 34 2 "Wie ärgerlich!\pDiese schwebenden Felsen sind groß genug, um darauf zu stehen, aber nicht nah genug, als dass ich einen Sprung wagen würdeDOTS"
+str_7:
+    .autostring 34 2 "Durch diese Löcher in den Wolken gelang auf sanfte Weise zurück zum Boden.\pDer Wirbel darunter federt den sonst harten Fall ab."
 .elseif LANG_EN
 str_0:
     .autostring 34 2 "It is said that thousands of years ago people formed a civilization above the clouds.\pThey were able to craft rocks that could be carried by the clouds."
