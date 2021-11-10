@@ -3,16 +3,24 @@
 #include "debug.h"
 
 static inline size_t oams_compress() {
-    size_t num = 0;
-    size_t num_inactive = NUM_OAMS;
-    for (size_t i = 0; i < NUM_OAMS; i++) {
-        if ((oams[i].flags & OAM_FLAG_ACTIVE) && !(oams[i].flags & OAM_FLAG_INVISIBLE)) {
-            oam_order[num++] = (u8)i;
-        } else {
-            oam_order[--num_inactive] = (u8)i; // The inactive ones are always put last, since they wont be copied whatsoever... 
+    int tail = NUM_OAMS - 1;
+    int i = 0;
+    while(i <= tail) {
+        // Search the last active element
+        while (tail >= 0 && (oams[oam_order[tail]].flags & (OAM_FLAG_ACTIVE | OAM_FLAG_INVISIBLE)) != OAM_FLAG_ACTIVE)
+            tail--;
+        // Tail now points the last active element
+        if (i > tail) 
+            break; // whole range [i...NUM_OAMS] is inactive, done
+        else if ((oams[oam_order[i]].flags & (OAM_FLAG_ACTIVE | OAM_FLAG_INVISIBLE)) != OAM_FLAG_ACTIVE) {
+            // i is an inactive oam, swap with tail and continue
+            u8 tmp = oam_order[i];
+            oam_order[i] = oam_order[tail]; // i is now an active oam
+            oam_order[tail] = tmp;
         }
+        i++; // either i was active to begin with or it was swapped with tail, which was active by definition
     }
-    return num;
+    return (size_t)i;
 }
 
 static inline int oam_get_y(oam_object *o) {
@@ -50,6 +58,7 @@ void oam_sort() {
     if (n == 0)
         return;
     bool swapped;
+    size_t swaps = 0;
     do {
         swapped = false;
         for (size_t i = 0; i < n - 1; i++) {
@@ -58,6 +67,7 @@ void oam_sort() {
                 oam_order[i] = oam_order[i + 1];
                 oam_order[i + 1] = tmp;
                 swapped = true;
+                swaps++;
             }
         }
         n--;
