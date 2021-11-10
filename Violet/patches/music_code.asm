@@ -37,6 +37,3 @@ bx r0
 .org 0x084A18C4
     .word 0x03002BB0
     .word 14 // Num traces
-
-/* 
-*/

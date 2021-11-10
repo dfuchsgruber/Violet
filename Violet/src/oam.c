@@ -1,5 +1,6 @@
 #include "types.h"
 #include "oam.h"
+#include "debug.h"
 
 static inline size_t oams_compress() {
     size_t num = 0;
@@ -18,7 +19,8 @@ static inline int oam_get_y(oam_object *o) {
     int y = o->final_oam.attr0 & 0xFF;
     if (y >= 160)
         y -= 256;
-    if ((o->final_oam.attr0 & (ATTR0_ROTSCALE | ATTR0_DSIZE)) == (ATTR0_ROTSCALE | ATTR0_DSIZE)) {
+    if ((o->final_oam.attr0 & (ATTR0_ROTSCALE | ATTR0_DSIZE)) == (ATTR0_ROTSCALE | ATTR0_DSIZE) &&
+        (o->final_oam.attr1 >> 14)  == (ATTR1_SIZE_64_64 >> 14)) {
         u32 shape = (o->final_oam.attr0 >> 14) & 3;
         if (shape == (ATTR0_SHAPE_SQUARE >> 14) || shape == (ATTR0_SHAPE_VERTICAL >> 14)) {
             if (y > 128)
@@ -30,6 +32,8 @@ static inline int oam_get_y(oam_object *o) {
 
 
 static inline bool oam_priority_greater(size_t idx_first, size_t idx_second) {
+    idx_first = oam_order[idx_first];
+    idx_second = oam_order[idx_second];
     u16 prio_first = oam_priorities[idx_first];
     u16 prio_second = oam_priorities[idx_second];
     if (prio_first > prio_second)
@@ -58,5 +62,4 @@ void oam_sort() {
         }
         n--;
     } while (swapped);
-
 }

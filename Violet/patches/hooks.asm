@@ -71,13 +71,6 @@
     bx r0
     .pool
 
-/* 
-.org 0x08000f44
-    ldr r1, =hook_dma3_copy | 1
-    bx r1
-    .pool
-*/
-
 .org 0x080008a0 // Improved vblank wait
     swi 0x5
     bx lr

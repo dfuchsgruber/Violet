@@ -1,10 +1,11 @@
 
 
-//tile
+
 .org 0x0806d684
-	ldr r0, =tile_step | 1
+	ldr r0, =on_step | 1
 	bx r0
 	.pool
+
 
 .org 0x806D154
 	ldr r0, =hook_get_behavior_script | 1

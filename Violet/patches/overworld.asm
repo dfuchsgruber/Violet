@@ -42,6 +42,8 @@ overworld_pals equ 0x083A501C
 .org 0x80645B4
     .word npc_anims
 
+/* 
+*/
 .org 0x0805b9d4
     ldr r2, =npc_player_initialize_move_not_biking | 1
     bx r2
@@ -58,11 +60,6 @@ overworld_pals equ 0x083A501C
 _blxr4_0x080bd3b4:
     bx r4
 
-//.org 0x0805ba06
-//    ldr r0, =npc_player_initialize_step_movement_hook | 1
-//    bx r0
-//    .pool
-
 .org 0x0805bba8
     push {r4, lr}
     ldr r4, =npc_player_attempt_step | 1
@@ -74,11 +71,34 @@ blxr4_0805bba8:
     bx r4
     .pool
 
+.org 0x080db358
+    push {lr, r4}
+    ldr r4, =overworld_effect_show_warp_arrow | 1
+    bl blxr4_0805bba8
+    pop {r4}
+    pop {r0}
+    bx r0
+    .pool
+
+
 //Bg alignment
 .org 0x0805A5F4
     ldr r0, =bg_alignment | 1
     bx r0
     .pool
+
+.org 0x0805b9c4
+    ldr r1, = npc_player_turn_in_place | 1
+    bx r1
+    .pool
+
+
+.org 0x0805b4d4
+    ldr r3, =player_npc_move | 1
+    bx r3
+    .pool
+
+
 
 //Dynamic multichoice
 .org 0x0809CB90
@@ -220,18 +240,6 @@ _blxr1:
     b 0x08127b36
     .pool
 
-.org 0x0805b9c4
-    ldr r1, = npc_player_turn_in_place | 1
-    bx r1
-    .pool
-
-
-.org 0x0805b4d4
-    ldr r3, =player_npc_move | 1
-    bx r3
-    .pool
-
-
 // Prevent auto-load of overworld palettes
 .org 0x0805fecc
     ldr r1, =overworld_npc_palettes_initialize | 1
@@ -343,14 +351,7 @@ _blxr1:
     bx r3
     .pool
 
-.org 0x080db358
-    push {lr, r4}
-    ldr r4, =overworld_effect_show_warp_arrow | 1
-    bl blxr4_0805bba8
-    pop {r4}
-    pop {r0}
-    bx r0
-    .pool
+
 
 .org 0x0813f4bc
     ldr r3, =itemfinder_create_arrow_sprite | 1

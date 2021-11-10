@@ -46,10 +46,3 @@
 
 .org 0x080705e6
     bl 0x080703d8
-
-/* 
-.org 0x0811585c // initially this was a questlog function, but I don't keep questlog arround
-    ldr r0, =pal_filters_apply | 1
-    bx r0
-    .pool
-*/
