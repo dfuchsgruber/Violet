@@ -23,7 +23,6 @@
 .include "patches/map.asm"
 .include "patches/attack.asm"
 .include "patches/save.asm"
-.include "patches/idle_loop.asm"
 .include "patches/titlescreen.asm"
 .include "patches/intro.asm"
 .include "patches/worldmap.asm"
@@ -34,6 +33,7 @@
 .include "patches/start_menu.asm"
 .include "patches/pc.asm"
 .include "patches/summary.asm"
+.include "patches/oam.asm"
 
 //Memleak debug
 .org 0x0800296C
@@ -70,6 +70,13 @@
     ldr r0, =hook_main_initialize | 1
     bx r0
     .pool
+
+/* 
+.org 0x08000f44
+    ldr r1, =hook_dma3_copy | 1
+    bx r1
+    .pool
+*/
 
 .org 0x080008a0 // Improved vblank wait
     swi 0x5

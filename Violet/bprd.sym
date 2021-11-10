@@ -1658,3 +1658,5 @@ npc_clear = 0x0805de2c | 1;
 behaviour_initial_facing_directions = 0x0839fc21;
 behaviour_has_range = 0x0839fbd0;
 npc_set_dynamic_picture = 0x0805f2f8 | 1;
+oam_order = 0x02021800;
+oam_priorities = 0x02021780;

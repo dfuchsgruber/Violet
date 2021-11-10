@@ -14,7 +14,6 @@ bx r0
     ldr r0, =map_get_song | 1
     bx r0
     .pool
-
 //Ipatix sound stuff
 .org 0x080007C4
     .word  0x0203E000   // new PCM work area
@@ -38,3 +37,6 @@ bx r0
 .org 0x084A18C4
     .word 0x03002BB0
     .word 14 // Num traces
+
+/* 
+*/

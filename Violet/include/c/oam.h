@@ -161,6 +161,8 @@ typedef struct oam_object {
 #define NUM_OAMS 64
 
 extern oam_object oams[NUM_OAMS];
+extern u16 oam_priorities[NUM_OAMS];
+extern u8 oam_order[NUM_OAMS];
 
 extern rotscale_frame *oam_rotscale_anim_table_null[];
 extern gfx_frame *oam_gfx_anim_table_null[];
