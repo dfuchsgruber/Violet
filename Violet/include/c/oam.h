@@ -164,6 +164,11 @@ extern oam_object oams[NUM_OAMS];
 extern u16 oam_priorities[NUM_OAMS];
 extern u8 oam_order[NUM_OAMS];
 
+extern u8 oam_order_recompress; // Set on creation or deletion of an oam and triggers a recompression
+extern u8 oam_order_compressed_size;
+
+extern oam_object oam_object_empty;
+
 extern rotscale_frame *oam_rotscale_anim_table_null[];
 extern gfx_frame *oam_gfx_anim_table_null[];
 

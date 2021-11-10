@@ -3,24 +3,28 @@
 #include "debug.h"
 
 static inline size_t oams_compress() {
-    int tail = NUM_OAMS - 1;
-    int i = 0;
-    while(i <= tail) {
-        // Search the last active element
-        while (tail >= 0 && (oams[oam_order[tail]].flags & (OAM_FLAG_ACTIVE | OAM_FLAG_INVISIBLE)) != OAM_FLAG_ACTIVE)
-            tail--;
-        // Tail now points the last active element
-        if (i > tail) 
-            break; // whole range [i...NUM_OAMS] is inactive, done
-        else if ((oams[oam_order[i]].flags & (OAM_FLAG_ACTIVE | OAM_FLAG_INVISIBLE)) != OAM_FLAG_ACTIVE) {
-            // i is an inactive oam, swap with tail and continue
-            u8 tmp = oam_order[i];
-            oam_order[i] = oam_order[tail]; // i is now an active oam
-            oam_order[tail] = tmp;
+    if (oam_order_recompress) {
+        int tail = NUM_OAMS - 1;
+        int i = 0;
+        while(i <= tail) {
+            // Search the last active element
+            while (tail >= 0 && (oams[oam_order[tail]].flags & (OAM_FLAG_ACTIVE | OAM_FLAG_INVISIBLE)) != OAM_FLAG_ACTIVE)
+                tail--;
+            // Tail now points the last active element
+            if (i > tail) 
+                break; // whole range [i...NUM_OAMS] is inactive, done
+            else if ((oams[oam_order[i]].flags & (OAM_FLAG_ACTIVE | OAM_FLAG_INVISIBLE)) != OAM_FLAG_ACTIVE) {
+                // i is an inactive oam, swap with tail and continue
+                u8 tmp = oam_order[i];
+                oam_order[i] = oam_order[tail]; // i is now an active oam
+                oam_order[tail] = tmp;
+            }
+            i++; // either i was active to begin with or it was swapped with tail, which was active by definition
         }
-        i++; // either i was active to begin with or it was swapped with tail, which was active by definition
+        oam_order_compressed_size = (u8)i;
+        oam_order_recompress = false;
     }
-    return (size_t)i;
+    return oam_order_compressed_size;
 }
 
 static inline int oam_get_y(oam_object *o) {
@@ -72,4 +76,9 @@ void oam_sort() {
         }
         n--;
     } while (swapped);
+}
+
+void oam_clear(oam_object *o) { // Conveniently, this method is both called when deleting and creating a new oam
+    oam_order_recompress = true; 
+    *o = oam_object_empty;
 }
