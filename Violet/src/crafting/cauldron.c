@@ -119,7 +119,7 @@ static gfx_frame *cauldron_spark_gfx_animations[] = {
 
 static void cauldron_spark_oam_callback(oam_object *self) {
     if (self->flags & OAM_FLAG_GFX_ANIM_END)
-        oam_clear(self);
+        oam_delete(self);
 }
 
 static oam_template cauldron_spark_oam_template = {

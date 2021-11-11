@@ -134,7 +134,7 @@ typedef struct oam_object {
     sprite final_oam;
     gfx_frame **animation_table;
     graphic *gfx_table;
-    u32 *rotscale_table;
+    rotscale_frame **rotscale_table;
     oam_template *oam_template;
     subsprite_table *subsprites;
     void (*callback)(oam_object*);
@@ -160,12 +160,21 @@ typedef struct oam_object {
 
 #define NUM_OAMS 64
 
-extern oam_object oams[NUM_OAMS];
+extern oam_object oams[NUM_OAMS + 1];
 extern u16 oam_priorities[NUM_OAMS];
 extern u8 oam_order[NUM_OAMS];
 
-extern u8 oam_order_recompress; // Set on creation or deletion of an oam and triggers a recompression
+#define NUM_OAM_VRAM_TILES 1024
+
+extern u8 oam_vram_allocation[NUM_OAM_VRAM_TILES / 8];
+
+extern u8 oam_visible_cnt; // Only oams oam_order[0], ... oam_order[oam_num_to_render - 1] have to be rendered in a vblank
 extern u8 oam_order_compressed_size;
+extern u8 oam_buffer_size; // `super` only wants this many GBA OAMs at most
+extern u8 oam_copy_requests_enabled;
+
+extern s16 coordinate_camera_x_offset;
+extern s16 coordinate_camera_y_offset;
 
 extern oam_object oam_object_empty;
 
@@ -432,10 +441,10 @@ u8 oam_rotscale_get(oam_object *o);
 void oam_flip(oam_object *o, bool horizontal_flip, bool vertical_flip);
 
 /**
- * Clears an oam and releases all tiles used for its gfx animation.
+ * Clears an oam and releases tiles which are not from a pre-loaded graphic with tag but its spritesheet.
  * @param o the oam to clear
  **/
-void oam_clear_and_free_vram(oam_object *o);
+void oam_delete(oam_object *o);
 
 /**
  * Allocates tiles for a oam graphic and copies it into vram.
@@ -464,5 +473,39 @@ void oam_gfx_anim_start_if_not_current(oam_object *o, u8 anim_idx);
  * @param the last oam oam (exclusive) to reset
  **/
 void oam_buffer_reset(u8 first, u8 last);
+
+/**
+ * Calculates the coordinates of the center w.r.t. the upper left corner of an oam. 
+ * @param o the oam
+ * @param shape its shape
+ * @param size its size (accordint to the GBA specs)
+ * @param affine_mode (rotscale and dsize)
+ **/
+void oam_calculate_center_coordinates(oam_object *o, u8 shape, u8 size, u8 affine_mode);
+
+/**
+ * Updates the base tile of an oam based on where the gfx animation points in the sheet that was loaded to vram.
+ * @param o the object
+ **/
+void oam_update_base_tile_by_gfx_animation(oam_object *o);
+
+/**
+ * Initializes the affine animation of an oam
+ * @param o the object
+ **/
+void oam_rotscale_animation_initialize(oam_object *o);
+
+/**
+ * Adds an oam object (and its subsprites) to `super`s oam buffer.
+ * @param o the object to add
+ * @param cnt is incremented by how many GBA-OAMs were added
+ * @return true on failure ( full buffer!)
+ **/
+bool oam_add_to_buffer(oam_object *o, u8 *cnt);
+
+/**
+ * Copies all rotscale (affine) groups to `super`'s oam buffer.
+ **/
+void oam_copy_rotscale_to_buffer();
 
 #endif

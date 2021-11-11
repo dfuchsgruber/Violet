@@ -41,7 +41,7 @@ typedef struct superstate {
     key keys_countdown;
     u16 keys_watched;
     key watched_keys;
-    u16 oam_attributes[128][4];
+    sprite oam_attributes[128];
     u8 state;
     u8 disable_oams : 1;
     u8 in_battle : 1;

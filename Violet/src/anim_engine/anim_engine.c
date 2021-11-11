@@ -203,7 +203,7 @@ void cmdx04_oam_delete(ae_memory* mem) {
     if (id >= 0x8000) {
         id = mem->vars[id - 0x8000];
     }
-    oam_clear(&oams[id]);
+    oam_delete(&oams[id]);
 }
 
 void cmdx05_oam_vram_load(ae_memory* mem) {

@@ -269,7 +269,7 @@ void trainerschool_test_question_done(){
                 bg_sync_display_and_show(1);
                 bg_display_sync();
                 oam_rotscale_free(&oams[TRAINER_SCHOOL_TEST_STATE->answer_oam]);
-                oam_clear(&oams[TRAINER_SCHOOL_TEST_STATE->answer_oam]);
+                oam_delete(&oams[TRAINER_SCHOOL_TEST_STATE->answer_oam]);
                 lz77uncompwram(gfx_trainerschool_page_0Tiles, gp_tmp_buf);
                 lz77uncompwram(gfx_trainerschool_page_0Map, bg_get_tilemap(1));
                 bg_copy_vram(1, gp_tmp_buf, 0x1000, 0, 1);

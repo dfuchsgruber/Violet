@@ -65,9 +65,9 @@ static bool cloud_upstream_hide(oam_cloud_upstream_state_t *state) {
 static void cloud_upstream_clear(oam_cloud_upstream_state_t *state) {
     for (int i = CLOUD_UPSTREAM_NUM_OAMS - 1; i >= 0; i--) {
         for (int j = 1; j >= 0; j--)
-            oam_clear(oams + state->oam_idxs[i][j]);
+            oam_delete(oams + state->oam_idxs[i][j]);
     }
-    oam_clear(oams + state->oam_idx_controller);
+    oam_delete(oams + state->oam_idx_controller);
     free(state);
 }
 
@@ -403,7 +403,7 @@ static void overworld_cloud_static_upstream_callback (oam_object *self) {
             self->private[4] = (u16)(self->private[4] - overworld_viewport.x);
             self->private[5] = (u16)(self->private[5] - overworld_viewport.y);
         } else {
-            oam_clear(self);
+            oam_delete(self);
             return;
         }
     }

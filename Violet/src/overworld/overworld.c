@@ -328,7 +328,8 @@ void npc_free_resources(npc *n) {
     tmp.size = overworld_get_by_npc(n)->size;
     oams[n->oam_id].gfx_table = &tmp;
     u8 pal_idx = (u8)((oams[n->oam_id].final_oam.attr2 >> 12) & 0xF);
-    oam_clear_and_free_vram(oams + n->oam_id);
+    dprintf("Deleted resources for npc 0x%x with oam %d\n", n, n->oam_id);
+    oam_delete(oams + n->oam_id);
     npc_free_palette_if_unused_by_slot(pal_idx);
 }
 
@@ -635,7 +636,7 @@ void npc_delete_rage_sprite(u8 oam_idx) {
         oam_palette_free(OW_PAL_TAG_RAGE_SIGN);
     }
     oam_rotscale_free(oams + oam_idx);
-    oam_clear_and_free_vram(oams + oam_idx);
+    oam_delete(oams + oam_idx);
 }
 
 void special_delete_rage_sprite() {
