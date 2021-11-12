@@ -2,10 +2,72 @@
 #include "oam.h"
 #include "debug.h"
 #include "superstate.h"
+#include "save.h"
 
-// Compresses the oam_order to [0...i, i+1...n_active], where all >= i+1 are active, but invisible and need not to be rendered
+static inline void oam_allocation_remove(oam_alloc_list_element_t *list, u8 idx) {
+    u8 prev = list[idx].previous;
+    u8 next = list[idx].next;
+    list[prev].next = next;
+    list[next].previous = prev;
+}
+
+static inline void oam_allocation_insert_after(oam_alloc_list_element_t *list, u8 idx, u8 idx_before) {
+    u8 next = list[idx_before].next;
+    list[idx_before].next = idx;
+    list[next].previous = idx;
+    list[idx].next = next;
+    list[idx].previous = idx_before;
+}
+
+// Removes all inactive oams that are part of the allocated list and re-inserts them in the free list
+void oam_allocation_initialize_order() {
+    oam_alloc_list_element_t *list = fmem.oam_allocation_list;
+    u8 current = list[OAM_ALLOC_ACTIVE_START].next;
+    oam_active_cnt = 0;
+    while (current != OAM_ALLOC_ACTIVE_END) {
+        u8 next = list[current].next;
+        if (!oams[current].flags & OAM_FLAG_ACTIVE) {
+            oam_allocation_remove(list, current);
+            oam_allocation_insert_after(list, current, OAM_ALLOC_FREE_START);
+        } else {
+            oam_order[oam_active_cnt++] = current;
+        }
+        current = next;
+    }
+}
+
+u8 oam_allocation_alloc() {
+    oam_alloc_list_element_t *list = fmem.oam_allocation_list;
+    u8 idx = list[OAM_ALLOC_FREE_START].next;
+    if (idx != OAM_ALLOC_ACTIVE_START) {
+        oam_allocation_remove(list, idx);
+        return idx;
+    } else {
+        return NUM_OAMS; // no free slots
+    }
+}
+
+
+void oam_allocation_initialize() {
+    oam_alloc_list_element_t *list = fmem.oam_allocation_list;
+    for (int i = 0; i < NUM_OAMS; i++) {
+        list[i].previous = (u8)(i - 1);
+        list[i].next = (u8)(i + 1);
+    }
+    list[0].previous = OAM_ALLOC_FREE_START;
+    list[NUM_OAMS - 1].next = OAM_ALLOC_ACTIVE_START;
+    list[OAM_ALLOC_FREE_START].next = 0;
+    list[OAM_ALLOC_FREE_START].previous = 0xFF;
+    list[OAM_ALLOC_ACTIVE_START].next = OAM_ALLOC_ACTIVE_END;
+    list[OAM_ALLOC_ACTIVE_START].previous = NUM_OAMS - 1;
+    list[OAM_ALLOC_ACTIVE_END].next = 0xFF;
+    list[OAM_ALLOC_ACTIVE_END].previous = OAM_ALLOC_ACTIVE_START;
+    oam_active_cnt = 0;
+}
+
+// Compresses the oam_order to [0...i, i+1...n_active-1], where all >= i+1 are active, but invisible and need not to be rendered
 static inline size_t oam_compress_and_calculate_visible_cnt() {
-    int tail = oam_order_compressed_size - 1;
+    int tail = oam_active_cnt - 1;
     int i = 0;
     while(i <= tail) {
         // Search the last non-invisible element
@@ -24,28 +86,6 @@ static inline size_t oam_compress_and_calculate_visible_cnt() {
     }
     oam_visible_cnt = (u8)i;
     return oam_visible_cnt;
-}
-
-
-bool oam_order_compressed_remove_idx(u8 idx) {
-    if (idx < NUM_OAMS && oam_order_compressed_size > 0) {
-        for (size_t i = 0; i < oam_order_compressed_size; i++) {
-            if (oam_order[i] == idx) {
-                oam_order[i] = oam_order[oam_order_compressed_size - 1];
-                oam_order_compressed_size--;
-                return true;
-            }
-        }
-    }
-    return false;
-}
-
-bool oam_order_compressed_add_idx(u8 idx) {
-    if (idx < NUM_OAMS && oam_order_compressed_size < NUM_OAMS) {
-        oam_order[oam_order_compressed_size++] = idx;
-        return true;
-    }
-    return false;
 }
 
 static inline int oam_get_y(oam_object *o) {
@@ -78,14 +118,6 @@ static inline bool oam_priority_greater(size_t idx_first, size_t idx_second) {
     }
 }
 
-static inline u8 oam_object_to_idx(oam_object *o) {
-    size_t delta = (size_t)o - (size_t)oams;
-    if (delta % sizeof(oam_object) == 0) {
-        return (u8)(delta / sizeof(oam_object));
-    } else {
-        return NUM_OAMS;
-    }
-}
 
 void oam_calculate_position() {
     int cnt = oam_visible_cnt;
@@ -158,7 +190,21 @@ void oam_copy_to_oam_buffer() {
     }
 }
 
+void oam_print_allocation_list() {
+    oam_alloc_list_element_t *list = fmem.oam_allocation_list;
+    dprintf("Oam alloc list: ");
+    u8 idx = OAM_ALLOC_FREE_START;
+    while (true) {
+        dprintf(" %d", idx);
+        if (idx == OAM_ALLOC_ACTIVE_END) break;
+        idx = list[idx].next;
+    }
+    dprintf("\n");
+}
+
 void oam_proceed() {
+    oam_allocation_initialize_order();
+    // oam_print_allocation_list();
     oam_compress_and_calculate_visible_cnt(); // compresses the oam_order such that the first indices are the ones to render
     // dprintf("Visible %d\n", oam_visible_cnt);
     oam_calculate_position();
@@ -177,35 +223,15 @@ void oam_clear(oam_object *o); // Declare it here so no other file is tempted to
 
 void oam_clear_all() {
     u8 i;
-    oam_order_compressed_size = 0;
+    oam_active_cnt = 0;
     for (i = 0; i < NUM_OAMS; i++) {
         oam_clear(oams + i);
         oam_order[i] = i;
     }
     oam_clear(oams + i);
+    oam_allocation_initialize();
 }
 
-static void oam_free_sheet(oam_object *o) {
-    if ((o->flags & OAM_FLAG_SPRITES) || !o->gfx_table)
-        return;
-    int base_tile = o->final_oam.attr2 & 0x3FF;
-    int end_tile = base_tile + o->gfx_table->size / GRAPHIC_SIZE_4BPP(8, 8);
-    for (int i = base_tile; i < end_tile; i++) {
-        oam_vram_allocation[i >> 3] = (u8)(oam_vram_allocation[i >> 3] & (~(1 << (i & 7))));
-    }
-}
-
-void oam_delete(oam_object *o) {
-    if (o->flags & OAM_FLAG_ACTIVE) {
-        oam_free_sheet(o);
-        oam_clear(o);
-        
-        u8 idx = oam_object_to_idx(o);
-        if (idx < NUM_OAMS) {
-            oam_order_compressed_remove_idx(idx);
-        }
-    }
-}
 
 u8 oam_new_at(u8 idx, oam_template *template, s16 x, s16 y, u8 subpriority) {
     oam_object *o = oams + idx;
@@ -241,7 +267,30 @@ u8 oam_new_at(u8 idx, oam_template *template, s16 x, s16 y, u8 subpriority) {
     if (template->pal_tag != 0xFFFF) {
         o->final_oam.attr2 = (u16)((o->final_oam.attr2 & ~0xF000) | (oam_palette_get_index(template->pal_tag) << 12));
     }
-    oam_order_compressed_add_idx(idx);
     o->flags |= OAM_FLAG_ACTIVE;
     return idx;
+}
+
+u8 oam_new_forward_search(oam_template *template, s16 x, s16 y, u8 priority_on_layer) {
+    oam_alloc_list_element_t *list = fmem.oam_allocation_list;
+    u8 idx = oam_allocation_alloc();
+    if (idx != NUM_OAMS) {
+        oam_allocation_insert_after(list, idx, OAM_ALLOC_ACTIVE_START);
+        oam_active_cnt++;
+        return oam_new_at(idx, template, x, y, priority_on_layer);
+    } else {
+        return NUM_OAMS;
+    }
+}
+
+u8 oam_new_backward_search(oam_template *template, s16 x, s16 y, u8 priority_on_layer) {
+    oam_alloc_list_element_t *list = fmem.oam_allocation_list;
+    u8 idx = oam_allocation_alloc();
+    if (idx != NUM_OAMS) {
+        oam_allocation_insert_after(list, idx, list[OAM_ALLOC_ACTIVE_END].previous);
+        oam_active_cnt++;
+        return oam_new_at(idx, template, x, y, priority_on_layer);
+    } else {
+        return NUM_OAMS;
+    }
 }

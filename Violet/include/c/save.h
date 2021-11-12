@@ -23,6 +23,7 @@
 #include "trainer/virtual.h"
 #include "overworld/palette.h"
 #include "color.h"
+#include "oam.h"
 
 #define GP_STACK_SIZE 16
 
@@ -237,6 +238,7 @@ typedef struct {
     multichoice_t dynamic_choice;
     // u16 tile_anim_clks_0[8];
     // u16 tile_anim_clks_1[8];
+    oam_alloc_list_element_t oam_allocation_list[OAM_ALLOC_LIST_SIZE];
     map_header_t dmapheader;
     map_footer_t dmapfooter;
     map_event_header_t dmapevents;

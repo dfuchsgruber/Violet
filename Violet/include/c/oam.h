@@ -1,6 +1,7 @@
 #ifndef H_OAMS
 #define H_OAMS
 
+#include "types.h"
 
 #define GFX_ANIM_VFLIP 0x80
 #define GFX_ANIM_HFLIP 0x40
@@ -169,7 +170,7 @@ extern u8 oam_order[NUM_OAMS];
 extern u8 oam_vram_allocation[NUM_OAM_VRAM_TILES / 8];
 
 extern u8 oam_visible_cnt; // Only oams oam_order[0], ... oam_order[oam_num_to_render - 1] have to be rendered in a vblank
-extern u8 oam_order_compressed_size;
+extern u8 oam_active_cnt;
 extern u8 oam_buffer_size; // `super` only wants this many GBA OAMs at most
 extern u8 oam_copy_requests_enabled;
 
@@ -188,6 +189,17 @@ typedef struct { // Subject to change, I guess...
   u8 field_3;
 } sprite_coordinates_t;
 
+enum {
+  OAM_ALLOC_FREE_START = NUM_OAMS,
+  OAM_ALLOC_ACTIVE_START,
+  OAM_ALLOC_ACTIVE_END,
+  OAM_ALLOC_LIST_SIZE,
+};
+
+typedef struct {
+  u8 previous;
+  u8 next;
+} oam_alloc_list_element_t;
 
 extern u8 oam_rotscale_disabled;
 

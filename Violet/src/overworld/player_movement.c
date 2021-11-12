@@ -325,7 +325,7 @@ void npc_player_initialize_move_on_bike(u8 direction, u8 unused, key keys_new, k
                     overworld_effect_state.height = pos.height;
                     overworld_effect_state.target_ow_bank = save1->bank;
                     overworld_effect_state.target_ow_and_their_map = save1->map;
-                    overworld_effect_new(OVERWORLD_EFFECT_RAINBOW_SPARKLES);
+                    // overworld_effect_new(OVERWORLD_EFFECT_RAINBOW_SPARKLES);
                     npc_player_init_move_rainbow(direction);
             } else if (collision == 14 || npc_player_walking_towards_rock_stairs(direction)) {
                 npc_player_init_move_surfing(direction);

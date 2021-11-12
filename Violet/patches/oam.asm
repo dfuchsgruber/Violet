@@ -7,9 +7,6 @@
     bx r1
     .pool
 
-*/
-
-
 .org 0x08007014
     push {r4, lr}
     sub sp, #4
@@ -26,6 +23,31 @@
 _blxr4_oam:
     bx r4
 
+.org 0x08007200
+    ldr r1, = oam_delete | 1
+    bx r1
+    .pool
+*/
+
+.org 0x08006f0c
+    push {r4, lr}
+    ldr r4, =oam_new_forward_search | 1
+    bl _blxr4_oam
+    pop {r4}
+    pop {r1}
+    bx r1
+    .pool
+_blxr4_oam:
+    bx r4
+
+.org 0x08006f60
+    push {r4, lr}
+    ldr r4, =oam_new_backward_search | 1
+    bl _blxr4_oam
+    pop {r4}
+    pop {r1}
+    bx r1
+    .pool
 
 .org 0x080076f0
     ldr r0, =oam_clear_all | 1
@@ -35,11 +57,6 @@ _blxr4_oam:
 .org 0x08006c78
     ldr r0, =oam_sort | 1
     bx r0
-    .pool
-
-.org 0x08007200
-    ldr r1, = oam_delete | 1
-    bx r1
     .pool
 
 
