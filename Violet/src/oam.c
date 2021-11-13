@@ -3,6 +3,17 @@
 #include "debug.h"
 #include "superstate.h"
 #include "save.h"
+#include "dma.h"
+
+#define DEBUG_OAMS 1
+#if DEBUG_OAMS
+    #define DEBUG(...) dprintf (__VA_ARGS__)
+#else
+    #define DEBUG(...) 
+#endif
+
+// Functions that (by my design) should not be called externally
+u8 oam_new_at(u8 idx, oam_template *template, s16 x, s16 y, u8 subpriority);
 
 static inline void oam_allocation_remove(oam_alloc_list_element_t *list, u8 idx) {
     u8 prev = list[idx].previous;
@@ -19,34 +30,41 @@ static inline void oam_allocation_insert_after(oam_alloc_list_element_t *list, u
     list[idx].previous = idx_before;
 }
 
-// Removes all inactive oams that are part of the allocated list and re-inserts them in the free list
-void oam_allocation_initialize_order() {
+void oam_print_allocation_list() {
     oam_alloc_list_element_t *list = fmem.oam_allocation_list;
-    u8 current = list[OAM_ALLOC_ACTIVE_START].next;
-    oam_active_cnt = 0;
-    while (current != OAM_ALLOC_ACTIVE_END) {
-        u8 next = list[current].next;
-        if (!oams[current].flags & OAM_FLAG_ACTIVE) {
-            oam_allocation_remove(list, current);
-            oam_allocation_insert_after(list, current, OAM_ALLOC_FREE_START);
-        } else {
-            oam_order[oam_active_cnt++] = current;
-        }
-        current = next;
+    dprintf("Oam alloc list: ");
+    u8 idx = OAM_ALLOC_FREE_START;
+    while (true) {
+        dprintf(" %d", idx);
+        if (idx == OAM_ALLOC_ACTIVE_END) break;
+        idx = list[idx].next;
     }
+    dprintf("\n");
 }
 
-u8 oam_allocation_alloc() {
+u8 oam_allocate(u8 where) {
     oam_alloc_list_element_t *list = fmem.oam_allocation_list;
     u8 idx = list[OAM_ALLOC_FREE_START].next;
     if (idx != OAM_ALLOC_ACTIVE_START) {
         oam_allocation_remove(list, idx);
+        switch (where) {
+            default:
+            case OAM_ALLOCATE_AT_START:
+                oam_allocation_insert_after(list, idx, OAM_ALLOC_ACTIVE_START);
+                oam_active_cnt++;
+                break;
+            case OAM_ALLOCATE_AT_END:
+                oam_allocation_insert_after(list, idx, list[OAM_ALLOC_ACTIVE_END].previous);
+                oam_active_cnt++;
+                break;
+        }
+        DEBUG("allocated %d\n", idx);
         return idx;
     } else {
+        DEBUG("couldnt allocate\n", idx);
         return NUM_OAMS; // no free slots
     }
 }
-
 
 void oam_allocation_initialize() {
     oam_alloc_list_element_t *list = fmem.oam_allocation_list;
@@ -190,21 +208,11 @@ void oam_copy_to_oam_buffer() {
     }
 }
 
-void oam_print_allocation_list() {
-    oam_alloc_list_element_t *list = fmem.oam_allocation_list;
-    dprintf("Oam alloc list: ");
-    u8 idx = OAM_ALLOC_FREE_START;
-    while (true) {
-        dprintf(" %d", idx);
-        if (idx == OAM_ALLOC_ACTIVE_END) break;
-        idx = list[idx].next;
-    }
-    dprintf("\n");
-}
 
 void oam_proceed() {
-    oam_allocation_initialize_order();
-    // oam_print_allocation_list();
+    #if DEBUG_OAMS
+        // oam_print_allocation_list();
+    #endif
     oam_compress_and_calculate_visible_cnt(); // compresses the oam_order such that the first indices are the ones to render
     // dprintf("Visible %d\n", oam_visible_cnt);
     oam_calculate_position();
@@ -233,50 +241,47 @@ void oam_clear_all() {
 }
 
 
-u8 oam_new_at(u8 idx, oam_template *template, s16 x, s16 y, u8 subpriority) {
-    oam_object *o = oams + idx;
-    oam_clear(o);
-    o->flags |= OAM_FLAG_GFX_ANIM_START | OAM_FLAG_ROTSCALE_ANIM_START | OAM_FLAG_SPRITES;
-    o->priority_on_layer = subpriority;
-    o->final_oam = *template->oam;
-    o->animation_table = template->animation;
-    o->rotscale_table = template->rotscale;
-    o->oam_template = template;
-    o->callback = template->callback;
-    o->x = x;
-    o->y = y;
-    oam_calculate_center_coordinates(o, (u8)(o->final_oam.attr0 >> 14), (u8)(o->final_oam.attr1 >> 14), (u8)((o->final_oam.attr0 >> 8) & 3));
-    if (template->tiles_tag == 0xFFFF) {
-        int base_tile;
-        o->gfx_table = template->graphics;
-        base_tile = oam_vram_alloc((u8)(o->gfx_table->size / GRAPHIC_SIZE_4BPP(8, 8))); // idk why we cast to u8, but i want to be consistent with the original func
-        if (base_tile == 0xFFFF) {
-            oam_clear(o);
-            return NUM_OAMS;
-        }
-        o->final_oam.attr2 = (u16)((o->final_oam.attr2 & ~0x3FF) | base_tile);
-        o->flags &= (u16)(~OAM_FLAG_SPRITES);
-        o->base_tile = 0;
-    } else {
-        o->base_tile = oam_vram_get_tile(template->tiles_tag);
-        oam_update_base_tile_by_gfx_animation(o);
-    }
-    if (o->final_oam.attr0 & ATTR0_ROTSCALE) {
-        oam_rotscale_animation_initialize(o);
-    }
-    if (template->pal_tag != 0xFFFF) {
-        o->final_oam.attr2 = (u16)((o->final_oam.attr2 & ~0xF000) | (oam_palette_get_index(template->pal_tag) << 12));
-    }
-    o->flags |= OAM_FLAG_ACTIVE;
-    return idx;
-}
+// u8 oam_new_at(u8 idx, oam_template *template, s16 x, s16 y, u8 subpriority) {
+//     oam_object *o = oams + idx;
+//     oam_clear(o);
+//     o->flags |= OAM_FLAG_GFX_ANIM_START | OAM_FLAG_ROTSCALE_ANIM_START | OAM_FLAG_SPRITES;
+//     o->priority_on_layer = subpriority;
+//     o->final_oam = *template->oam;
+//     o->animation_table = template->animation;
+//     o->rotscale_table = template->rotscale;
+//     o->oam_template = template;
+//     o->callback = template->callback;
+//     o->x = x;
+//     o->y = y;
+//     oam_calculate_center_coordinates(o, (u8)(o->final_oam.attr0 >> 14), (u8)(o->final_oam.attr1 >> 14), (u8)((o->final_oam.attr0 >> 8) & 3));
+//     if (template->tiles_tag == 0xFFFF) {
+//         int base_tile;
+//         o->gfx_table = template->graphics;
+//         base_tile = oam_vram_alloc((u8)(o->gfx_table->size / GRAPHIC_SIZE_4BPP(8, 8))); // idk why we cast to u8, but i want to be consistent with the original func
+//         if (base_tile == 0xFFFF) {
+//             oam_clear(o);
+//             return NUM_OAMS;
+//         }
+//         o->final_oam.attr2 = (u16)((o->final_oam.attr2 & ~0x3FF) | base_tile);
+//         o->flags &= (u16)(~OAM_FLAG_SPRITES);
+//         o->base_tile = 0;
+//     } else {
+//         o->base_tile = oam_vram_get_tile(template->tiles_tag);
+//         oam_update_base_tile_by_gfx_animation(o);
+//     }
+//     if (o->final_oam.attr0 & ATTR0_ROTSCALE) {
+//         oam_rotscale_animation_initialize(o);
+//     }
+//     if (template->pal_tag != 0xFFFF) {
+//         o->final_oam.attr2 = (u16)((o->final_oam.attr2 & ~0xF000) | (oam_palette_get_index(template->pal_tag) << 12));
+//     }
+//     o->flags |= OAM_FLAG_ACTIVE;
+//     return idx;
+// }
 
 u8 oam_new_forward_search(oam_template *template, s16 x, s16 y, u8 priority_on_layer) {
-    oam_alloc_list_element_t *list = fmem.oam_allocation_list;
-    u8 idx = oam_allocation_alloc();
+    u8 idx = oam_allocate(OAM_ALLOCATE_AT_START);
     if (idx != NUM_OAMS) {
-        oam_allocation_insert_after(list, idx, OAM_ALLOC_ACTIVE_START);
-        oam_active_cnt++;
         return oam_new_at(idx, template, x, y, priority_on_layer);
     } else {
         return NUM_OAMS;
@@ -284,13 +289,100 @@ u8 oam_new_forward_search(oam_template *template, s16 x, s16 y, u8 priority_on_l
 }
 
 u8 oam_new_backward_search(oam_template *template, s16 x, s16 y, u8 priority_on_layer) {
-    oam_alloc_list_element_t *list = fmem.oam_allocation_list;
-    u8 idx = oam_allocation_alloc();
+    u8 idx = oam_allocate(OAM_ALLOCATE_AT_END);
     if (idx != NUM_OAMS) {
-        oam_allocation_insert_after(list, idx, list[OAM_ALLOC_ACTIVE_END].previous);
-        oam_active_cnt++;
         return oam_new_at(idx, template, x, y, priority_on_layer);
     } else {
         return NUM_OAMS;
     }
+}
+
+u8 oam_new_forward_search_and_animation(oam_template *template, s16 x, s16 y, u8 priority_on_layer) {
+    u8 idx = oam_new_forward_search(template, x, y, priority_on_layer);
+    if (idx != NUM_OAMS) {
+        oams[idx].callback(oams + idx);
+        if (oams[idx].flags & OAM_FLAG_ACTIVE) {
+            oam_animation_proceed(oams + idx);
+        }
+    }
+    return idx;
+}
+
+u8 oam_copy_forward_search(oam_object *src, s16 x, s16 y, u8 priority_on_layer) {
+    u8 idx = oam_allocate(OAM_ALLOCATE_AT_START);
+    if (idx != NUM_OAMS) {
+        oams[idx] = *src;
+        oams[idx].x = x;
+        oams[idx].y = y;
+        oams[idx].priority_on_layer = priority_on_layer;
+    }
+    return idx;
+}
+
+u8 oam_copy_backward_search(oam_object *src, s16 x, s16 y, u8 priority_on_layer) {
+    u8 idx = oam_allocate(OAM_ALLOCATE_AT_END);
+    if (idx != NUM_OAMS) {
+        oams[idx] = *src;
+        oams[idx].x = x;
+        oams[idx].y = y;
+        oams[idx].priority_on_layer = priority_on_layer;
+    }
+    return idx;
+}
+
+void oam_copy_requests_proceed() {
+    if (oam_copy_requests_enabled) {
+        u8 i = 0;
+        while (oam_copy_requests_cnt > 0) {
+            DEBUG("Oam copy 0x%x to 0x%x (size 0x%x)\n", oam_copy_requests[i].src, oam_copy_requests[i].dst, oam_copy_requests[i].size);
+            DMA_COPY_32(3, oam_copy_requests[i].src, oam_copy_requests[i].dst, oam_copy_requests[i].size);
+            oam_copy_requests_cnt--;
+            i++;
+        }
+        oam_copy_requests_enabled = false;
+    }
+}
+
+void oam_animations_proceed() {
+    // Also performs gargabe collection and builds the oam order
+    oam_alloc_list_element_t *list = fmem.oam_allocation_list;
+    u8 current = list[OAM_ALLOC_ACTIVE_START].next;
+    oam_active_cnt = 0;
+    while (current != OAM_ALLOC_ACTIVE_END) {
+        u8 next = list[current].next;
+        oam_object *current_object = oams + current;
+        if (current_object->flags & OAM_FLAG_ACTIVE) {
+            current_object->callback(current_object);
+            if (current_object->flags & OAM_FLAG_ACTIVE) {
+                oam_animation_proceed(current_object);
+            }
+            // DEBUG("Animated sprite %d with callback %x andd template %x\n", current, current_object->callback, current_object->oam_template);
+        }
+        if (current_object->flags & OAM_FLAG_ACTIVE) {
+            oam_order[oam_active_cnt++] = current;
+        } else {
+            oam_allocation_remove(list, current);
+            oam_allocation_insert_after(list, current, OAM_ALLOC_FREE_START);
+            DEBUG("Garbage collection on %d\n", current);
+        }
+        current = next;
+    }
+    #if DEBUG_OAMS
+        u8 cnt_free = 0; u8 cnt_active = 0;
+        current = list[OAM_ALLOC_FREE_START].next;
+        while (current != OAM_ALLOC_ACTIVE_START) {
+            if (oams[current].flags & OAM_FLAG_ACTIVE) {
+                dprintf("Error: Oam %d is in inactive list, but is active! (build from %x), callback %x\n", current, 
+                    oams[current].oam_template, oams[current].callback);
+            }
+            current = list[current].next;
+            cnt_free++;
+        }
+        current = list[OAM_ALLOC_ACTIVE_START].next;
+        while (current != OAM_ALLOC_ACTIVE_END) {
+            cnt_active++;
+            current = list[current].next;
+        }
+        // DEBUG("List active %d, list free %d\n", cnt_active, cnt_free);
+    #endif
 }

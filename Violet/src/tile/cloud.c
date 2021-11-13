@@ -14,31 +14,22 @@
 #include "constants/battle/battle_bgs.h"
 #include "debug.h"
 
-u8 *cloud_trigger(bool back) {
-	(void)back;
-	return NULL; 
-	/** Normal warp trigger instead
-    if (item_check(ITEM_FAHRRAD, 1)) {
-    	// Check if the player is facing a warp
-    	position_t pos;
-    	// player_get_position_faced(&pos);
-		player_get_position(&pos);
-    	s8 warp_idx = map_get_warp_idx_by_position(&mapheader_virtual, &pos);
-    	if (warp_idx != -1) {
-			if (back) {
-				fmem.additional_levelscript_4 = script_cloud_facings[player_get_facing() + 4];
-				return script_use_cloud_back_ref;
-			} else {
-				fmem.additional_levelscript_4 = script_cloud_facings[player_get_facing()];
-				return script_use_cloud_ref;
-			}
-    	}
-    	return NULL;
-    } else {
-        return script_cloud_none_ref;
+void cloud_force() {
+    if ((player_state.state & 1) && cloud_not_dismountable()) {
+        npc_player_set_bike_state(2);
+        dprintf("Forced to bike.\n");
     }
-	**/
 }
+
+bool map_is_cloud(){
+	return mapheader_virtual.type == MAP_TYPE_CLOUD;
+}
+
+
+// u8 *cloud_trigger(bool back) {
+// 	(void)back;
+// 	return NULL; 
+// }
 
 void cloud_enter() {
 	position_t pos;

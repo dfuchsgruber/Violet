@@ -173,6 +173,16 @@ extern u8 oam_visible_cnt; // Only oams oam_order[0], ... oam_order[oam_num_to_r
 extern u8 oam_active_cnt;
 extern u8 oam_buffer_size; // `super` only wants this many GBA OAMs at most
 extern u8 oam_copy_requests_enabled;
+extern u8 oam_copy_requests_cnt;
+
+typedef struct {
+  void *src;
+  void *dst;
+  u16 size;
+  u16 filler;
+} oam_copy_request_t;
+
+extern oam_copy_request_t oam_copy_requests[64];
 
 extern s16 coordinate_camera_x_offset;
 extern s16 coordinate_camera_y_offset;
@@ -434,7 +444,13 @@ void oam_attributes_copy();
 /**
  * Executes all oam animations for the next frame (gfx and rotscal)
  */
-void oam_anim_proceed();
+void oam_animations_proceed();
+
+/**
+ * Executes the animation of one oam
+ * @param o the oam to execute the animation of
+ **/
+void oam_animation_proceed(oam_object *o);
 
 /**
  * Returns the index of the affine group the oam uses or 0 if the oam does not use affine
@@ -519,5 +535,36 @@ bool oam_add_to_buffer(oam_object *o, u8 *cnt);
  * Copies all rotscale (affine) groups to `super`'s oam buffer.
  **/
 void oam_copy_rotscale_to_buffer();
+
+enum {
+  OAM_ALLOCATE_AT_START,
+  OAM_ALLOCATE_AT_END,
+};
+
+/**
+ * Allocates a free oam idx
+ * @return the oam idx or NUM_OAMS if None was free
+ **/
+u8 oam_allocate(u8 where);
+
+/**
+ * Copies an oam by allocating at the beginning of the list
+ * @param src the object to copy
+ * @param x the x coordinate to set for the new oam
+ * @param y the y coordinate to set for the new oam
+ * @param priority_on_layer its priority on the layer
+ * @return the idx of the oam_object or NUM_OAMS if no slot could be allocated
+ **/
+u8 oam_copy_forward_search(oam_object *src, s16 x, s16 y, u8 priority_on_layer);
+
+/**
+ * Copies an oam by allocating at the end of the list
+ * @param src the object to copy
+ * @param x the x coordinate to set for the new oam
+ * @param y the y coordinate to set for the new oam
+ * @param priority_on_layer its priority on the layer
+ * @return the idx of the oam_object or NUM_OAMS if no slot could be allocated
+ **/
+u8 oam_copy_backward_search(oam_object *src, s16 x, s16 y, u8 priority_on_layer);
 
 #endif

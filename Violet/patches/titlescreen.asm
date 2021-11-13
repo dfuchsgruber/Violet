@@ -1,3 +1,6 @@
+/*
+
+ */
 
 .org 0x08078EF4
     .word gfx_ts_deoxys_0Pal

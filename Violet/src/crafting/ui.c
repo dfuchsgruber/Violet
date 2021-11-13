@@ -373,7 +373,7 @@ static void crafting_ui_exit_and_return_to_overworld() {
 }
 
 static void crafting_ui_update_recipe_callback1() {
-    oam_anim_proceed();
+    oam_animations_proceed();
     oam_proceed();
     if (dma3_busy(-1))
         return;
@@ -658,7 +658,7 @@ static void crafting_ui_setup_list_menu() {
 }
 
 static void crafting_ui_switch_type_callback1() {
-    oam_anim_proceed();
+    oam_animations_proceed();
     oam_proceed();
     fading_proceed();
     if (fading_is_active() || dma3_busy(-1))
@@ -729,7 +729,7 @@ static void crafting_ui_setup() {
     // big_callback_proceed(); Don't proceed callbacks, as we proceed the list menu while we in fact are still setting stuff up
     fading_proceed();
     tbox_proceed();
-    oam_anim_proceed();
+    oam_animations_proceed();
     oam_proceed();
     *(u16*)0x02038604 = 0; //no idea why to do this, but needs to be done for some reason
     if (fading_is_active() || dma3_busy(-1))

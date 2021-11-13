@@ -23,8 +23,8 @@ skip_inc:
 bl do_fata_morgana
 
 bl player_step_force_on_cloud
-// cmp r0, #0
-// bne ret_1
+@ cmp r0, #0
+@ bne ret_1
 
 bl player_step_on_behavior
 cmp r0, #0

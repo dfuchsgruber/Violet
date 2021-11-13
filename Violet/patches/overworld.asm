@@ -312,6 +312,16 @@ _blxr1:
     b 0x080dc650
     .pool
 
+
+.org 0x0805eef2 
+// Quickfix: The function reloads npc objects and this quickfix saves the oam_idx of an npc at the correct point in time
+// It overrides the oam_idx * sizeof(oam_object) calculation by a more expensive mul operation and uses the other two
+// instructions to save the oam_idx into the npc object
+strb r7, [r6, #4] // npcs[npc_idx].oam_idx = oam_idx;
+mov r0, #68 // sizeof(oam_object)
+mul r0, r7
+
+
 .org 0x0805f090 // Updating a sprite does not patch the palette, but instead allocates a palette if not present
     mov r0, r6
     mov r1, r4
@@ -321,6 +331,8 @@ _blxr1:
     .pool
 .org 0x0805f114
     lsl r0, #0 // Don't set the palette slot
+
+
 
 .org 0x080870e0
     push {r0}
@@ -566,3 +578,16 @@ blxr4_npc_create_camera:
     ldr r3, =person_get_flag | 1
     bx r3
     .pool
+
+// Make facing animations non-looping
+.org 0x083a298c
+    .halfword 0xFFFF
+
+.org 0x083a2994
+    .halfword 0xFFFF
+
+.org 0x083a299c
+    .halfword 0xFFFF
+
+.org 0x083a29a4
+    .halfword 0xFFFF

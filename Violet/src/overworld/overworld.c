@@ -27,6 +27,14 @@
 #include "overworld/step_callback.h"
 #include "overworld/detector.h"
 
+#define DEBUG_OVERWORLD 0
+#if DEBUG_OVERWORLD
+    #define DEBUG(...) dprintf (__VA_ARGS__)
+#else
+    #define DEBUG(...) 
+#endif
+
+
 static u8 aggressive_wild_pokemon_get_spawn_rate(u16 flag) {
     switch (flag) {
         case FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0:
@@ -98,15 +106,15 @@ overworld_sprite *overworld_get_by_person(map_event_person *person) {
     } else if (person->overworld_index == OVERWORLD_SPRITE_TUTOR_CRYSTAL) {
         return overworld_sprite_get_by_tutor_crystal_type(person->value);
     }
-    // dprintf("Falling back to default sprite showing %d\n", person->overworld_index);
+    // DEBUG("Falling back to default sprite showing %d\n", person->overworld_index);
     return overworld_get(person->overworld_index);
 }
 
 overworld_sprite *overworld_get_by_npc(npc *n) {
     map_event_person *person = map_get_person(n->overworld_id, n->map, n->bank);
-    // dprintf("Ow get by npc: npc is @0x%x\n", n);
+    // DEBUG("Ow get by npc: npc is @0x%x\n", n);
     // if (person)
-        // dprintf("Has person at 0x%x with sprite %d\n", person, person->overworld_index);
+        // DEBUG("Has person at 0x%x with sprite %d\n", person, person->overworld_index);
     if (person)
         return overworld_get_by_person(person);
     else // Hiro and camera can not be found...
@@ -198,7 +206,7 @@ static palette *overworld_npc_palette_get_by_tag(u16 tag) {
         case OW_PAL_TAG_RECIPE: return &overworld_palette_recipe;
     }
     u8 idx = overworld_npc_palette_get_idx(tag);
-    // dprintf("Tag 0x%x is at idx %d in pal-table.\n", tag, idx);
+    // DEBUG("Tag 0x%x is at idx %d in pal-table.\n", tag, idx);
     if (idx != 0xFF) {
         return overworld_npc_palettes + idx;
     }
@@ -212,13 +220,13 @@ u8 oam_palette_load_if_not_present_and_apply_shaders(palette *pal) {
     if (oam_pal_idx == 0xFF) {
         oam_pal_idx =  oam_palette_load_if_not_present(pal); 
         pal_apply_shaders_by_oam_palette_idx(oam_pal_idx);
-        dprintf("Applied blend to oam palette with tag 0x%x (pal_idx %d)\n", pal->tag, oam_pal_idx);
+        DEBUG("Applied blend to oam palette with tag 0x%x (pal_idx %d)\n", pal->tag, oam_pal_idx);
     }
     return oam_pal_idx;
 }
 
 u8 overworld_npc_palette_load(u16 tag) {
-    dprintf("Loading oam palette for tag 0x%x\n", tag);
+    DEBUG("Loading oam palette for tag 0x%x\n", tag);
     palette *pal = overworld_npc_palette_get_by_tag(tag);
     if (pal) {
        return oam_palette_load_if_not_present_and_apply_shaders(pal); 
@@ -227,9 +235,9 @@ u8 overworld_npc_palette_load(u16 tag) {
 }
 
 void overworld_npc_load_palette_by_template(oam_template *template) {
-    // dprintf("Find palette 0x%x via template\n", template->pal_tag);
+    // DEBUG("Find palette 0x%x via template\n", template->pal_tag);
     if (template->pal_tag != 0xFFFF) {
-        // dprintf("Loading oam pal from tag 0x%x\n", template->pal_tag);
+        // DEBUG("Loading oam pal from tag 0x%x\n", template->pal_tag);
         overworld_npc_palette_load(template->pal_tag);
     }
 }
@@ -246,7 +254,7 @@ void overworld_npc_reflection_brighten_palette(u8 pal_idx) {
         c.rgb.red = (u16)(MIN(31, c.rgb.red + 5) & 31);
         c.rgb.green = (u16)(MIN(31, c.rgb.green + 5) & 31);
         c.rgb.blue = (u16)(MIN(31, c.rgb.blue + 10) & 31);
-        // dprintf("Old color 0x%x, new color 0x%x\n", pals[256 + 16 * pal_idx + i], c);
+        // DEBUG("Old color 0x%x, new color 0x%x\n", pals[256 + 16 * pal_idx + i], c);
         pals[256 + 16 * pal_idx + i] = c;
     }
     // cpuset(pal_restore + 256 + 16 * pal_idx, pals + 256 + 16 * pal_idx, CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(16 * sizeof(color_t)));
@@ -259,13 +267,13 @@ void overworld_npc_load_reflection_palette(npc *n, oam_object *oam) {
     overworld_sprite *sprite = overworld_get_by_npc(n);
     u16 tag = sprite->pal_tag;
     u16 reflection_tag = NPC_PAL_TAG_TO_REFLECTION_TAG(tag);
-    dprintf("Try to set up reflection tag 0x%x for tag 0x%x\n", reflection_tag, tag);
+    DEBUG("Try to set up reflection tag 0x%x for tag 0x%x\n", reflection_tag, tag);
     u8 pal_idx = oam_palette_get_index(reflection_tag);
     if (pal_idx != 0xFF) {
         oam->final_oam.attr2 = (u16)((pal_idx << 12) | (oam->final_oam.attr2 & ~(15 << 12)));
         return;
     }
-    // dprintf("Reflection tag not yet allocated...\n");
+    // DEBUG("Reflection tag not yet allocated...\n");
     palette *pal = overworld_npc_palette_get_by_tag(tag);
     if (pal == NULL) 
         return; // The original palette doesn't exist...
@@ -273,28 +281,28 @@ void overworld_npc_load_reflection_palette(npc *n, oam_object *oam) {
     reflection_palette.tag = reflection_tag;
     pal_idx = oam_palette_get_index(reflection_palette.tag);
     if (pal_idx == 0xFF) {
-        dprintf("Reflection palette apply shaders and brighten.\n");
+        DEBUG("Reflection palette apply shaders and brighten.\n");
         pal_idx = oam_palette_load_if_not_present_and_apply_shaders(&reflection_palette); 
-        dprintf("Reflection palette before brightening, color idx 3: 0x%x\n", pal_restore[256 + 16 * pal_idx + 3]);
+        DEBUG("Reflection palette before brightening, color idx 3: 0x%x\n", pal_restore[256 + 16 * pal_idx + 3]);
         overworld_npc_reflection_brighten_palette(pal_idx);
-        dprintf("Reflection palette after brightening, color idx 3: 0x%x\n", pal_restore[256 + 16 * pal_idx + 3]);
+        DEBUG("Reflection palette after brightening, color idx 3: 0x%x\n", pal_restore[256 + 16 * pal_idx + 3]);
     }
     // pal_alpha_blending((u16)(256 + 16 * pal_idx), 16, 6, reflection_blue_channel);
     // cpuset(pals + 256 + 16 * pal_idx, pal_restore + 256 + 16 * pal_idx, CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(16 * sizeof(color_t)));
     pal_oam_apply_fading(pal_idx);
     if (big_callback_is_active(whiteout_callback_print_text)){ // This causes issues somehow...
-        dprintf("Reflection palette while whiting out...\n");
+        DEBUG("Reflection palette while whiting out...\n");
         int zero = 0;
         cpuset(&zero, pals + 16 * (pal_idx + 16), CPUSET_FILL | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(16 * sizeof(color_t)));
     }
-    dprintf("Reflection palette set up done.\n");
+    DEBUG("Reflection palette set up done.\n");
     oam->final_oam.attr2 = (u16)((pal_idx << 12) | (oam->final_oam.attr2 & ~(15 << 12)));
-    // dprintf("Created reflective pal at slot %d\n", pal_idx);
-    // dprintf("Attribute2 is 0x%x\n", oam->final_oam.attr2);
+    // DEBUG("Created reflective pal at slot %d\n", pal_idx);
+    // DEBUG("Attribute2 is 0x%x\n", oam->final_oam.attr2);
 }
 
 void npc_free_palette_if_unused(u16 tag) {
-    dprintf("Attempting to free npc palette 0x%x\n", tag);
+    DEBUG("Attempting to free npc palette 0x%x\n", tag);
     if (tag == 0xFFFF || tag == 0x1200) // 0x1200 is the tag for weather effects, we mustn't release those
         return;
     u8 slot = oam_palette_get_index(tag);
@@ -311,7 +319,7 @@ void npc_free_palette_if_unused(u16 tag) {
     if (tag == 0x1200) // This tag is used by weather effects, we never can release this palette...
         return; 
     oam_palette_free(tag);
-    // dprintf("Released palette %d with tag 0x%x\n", pal_idx, tag);
+    // DEBUG("Released palette %d with tag 0x%x\n", pal_idx, tag);
 }
 
 void npc_free_palette_if_unused_by_slot(u8 slot) {
@@ -328,7 +336,7 @@ void npc_free_resources(npc *n) {
     tmp.size = overworld_get_by_npc(n)->size;
     oams[n->oam_id].gfx_table = &tmp;
     u8 pal_idx = (u8)((oams[n->oam_id].final_oam.attr2 >> 12) & 0xF);
-    dprintf("Deleted resources for npc 0x%x with oam %d\n", n, n->oam_id);
+    DEBUG("Deleted resources for npc 0x%x with oam %d\n", n, n->oam_id);
     oam_delete(oams + n->oam_id);
     npc_free_palette_if_unused_by_slot(pal_idx);
 }
@@ -394,14 +402,14 @@ void overworld_effect_emotion_bubble_start(oam_object *o, u16 arg2, u8 anim_idx)
 }
 
 void overworld_effect_show_warp_arrow(u8 oam_idx, u8 direction, s16 x, s16 y) {
-    // dprintf("Arrow at %d, %d\n", x, y);
+    // DEBUG("Arrow at %d, %d\n", x, y);
     oam_object *o = oams + oam_idx;
     if ((o->flags & OAM_FLAG_INVISIBLE) || (s16)(o->private[0]) != x || (s16)(o->private[1]) != y) { // This is a super hacky way by the game engine to check if there already is an arrow...
         s16 oam_x = 0, oam_y = 0;
         map_position_to_oam_position((s16)x, (s16)y, &oam_x, &oam_y);
         o->x = (s16)(oam_x + 8);
         o->y = (s16)(oam_y + 8);
-        // dprintf("Create arrow with screen coordinates. %d, %d", oam_x, oam_y);
+        // DEBUG("Create arrow with screen coordinates. %d, %d", oam_x, oam_y);
         o->flags &= (u16)(~(OAM_FLAG_INVISIBLE));
         o->private[0] = (u16)x;
         o->private[1] = (u16)y;
@@ -412,6 +420,7 @@ void overworld_effect_show_warp_arrow(u8 oam_idx, u8 direction, s16 x, s16 y) {
 }
 
 u8 overworld_effect_warp_arrow_and_detector_arrow_new() {
+    dprintf("new warp arrow\n");
     u8 oam_idx = oam_new_backward_search(&overworld_effect_arrow_template, 0, 0, 0x52);
     if (oam_idx < NUM_OAMS) {
         oam_object *o = oams + oam_idx;
@@ -424,7 +433,7 @@ u8 overworld_effect_warp_arrow_and_detector_arrow_new() {
 extern oam_template oam_template_item_finder_arrow;
 
 void itemfinder_create_arrow_sprite(u8 anim_idx, u8 direction) {
-    // dprintf("Item finder create arrow in direction %d\n", direction);
+    // DEBUG("Item finder create arrow in direction %d\n", direction);
     u8 oam_idx = oam_new_forward_search(&oam_template_item_finder_arrow, 120, 76, 0);
     oam_object *o = oams + oam_idx;
     oam_gfx_anim_start(o, anim_idx);
@@ -632,7 +641,7 @@ static bool npc_rage_sprite_active() {
 void npc_delete_rage_sprite(u8 oam_idx) {
     oam_free_graphic(oams + oam_idx);
     if (!npc_rage_sprite_active()) {
-        dprintf("Rage effect sprite palette freed, not in use anymore.\n");
+        DEBUG("Rage effect sprite palette freed, not in use anymore.\n");
         oam_palette_free(OW_PAL_TAG_RAGE_SIGN);
     }
     oam_rotscale_free(oams + oam_idx);
@@ -649,7 +658,7 @@ void special_delete_rage_sprite() {
 }
 
 u8 overworld_create_rage_sprite(u8 npc_idx, u8 type) {
-    dprintf("Create rage sprite for person %d\n", npcs[npc_idx].overworld_id);
+    DEBUG("Create rage sprite for person %d\n", npcs[npc_idx].overworld_id);
     oam_palette_load_if_not_present_and_apply_shaders(&palette_rage);
     u8 oam_idx = oam_new_backward_search(&oam_template_rage, 0, 0, 0);
     if (oam_idx < 64) {
@@ -770,7 +779,7 @@ void overworld_big_callbacks_initialize() {
         big_callbacks[cb_idx].params[DETECTOR_CB_VAR_OAM_IDX_ARROW] = overworld_effect_static_detector_arrow_new();
         big_callbacks[cb_idx].params[DETECTOR_CB_VAR_X] = 0xFFFF;
         big_callbacks[cb_idx].params[DETECTOR_CB_VAR_Y] = 0xFFFF;
-        dprintf("New detector field callback.\n");
+        DEBUG("New detector field callback.\n");
     }
 }
 

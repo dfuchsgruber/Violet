@@ -838,3 +838,7 @@ end_turn_wrap_no_effect:
 	bx r0
 	.pool
 	
+.org 0x08075f20
+	ldr r1, =battler_oam_clone_and_set_blend | 1
+	bx r1
+	.pool

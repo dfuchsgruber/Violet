@@ -179,7 +179,7 @@ void battle_action_turn_finished_wrapper() {
 }
 
 void battle_callback1() {
-    oam_anim_proceed();
+    oam_animations_proceed();
     oam_proceed();
     tbox_proceed();
     fading_proceed();

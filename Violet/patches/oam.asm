@@ -49,6 +49,15 @@ _blxr4_oam:
     bx r1
     .pool
 
+.org 0x0800716c
+    push {r4, lr}
+    ldr r4, = oam_new_forward_search_and_animation | 1
+    bl _blxr4_oam
+    pop {r4}
+    pop {r1}
+    bx r1
+    .pool
+
 .org 0x080076f0
     ldr r0, =oam_clear_all | 1
     bx r0
@@ -79,3 +88,40 @@ _blxr4_oam:
     ldr r0, =oam_copy_to_oam_buffer | 1
     bx r0
     .pool
+
+.org 0x08007590
+    ldr r0, =oam_copy_requests_proceed | 1
+    bx r0
+    .pool
+/*
+ */
+
+
+.org 0x08006adc
+    ldr r0, =oam_animations_proceed | 1
+    bx r0
+    .pool
+
+/* 
+.org 0x0805fb08
+    push {r4, lr}
+    ldr r4, =oam_copy_forward_search | 1
+    bl _blxr4_oam_copy
+    pop {r4}
+    pop {r1}
+    bx r1
+    .pool
+_blxr4_oam_copy:
+    bx r4
+
+.org 0x0805fb6c
+    push {r4, lr}
+    ldr r4, =oam_copy_backward_search | 1
+    bl _blxr4_oam_copy
+    pop {r4}
+    pop {r1}
+    bx r1
+    .pool
+
+
+*/

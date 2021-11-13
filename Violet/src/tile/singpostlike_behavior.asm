@@ -25,11 +25,6 @@ beq trigger_tv
 cmp r4, #0xB3
 beq trigger_trash
 
-cmp r4, #0xB8
-beq trigger_cloud
-
-cmp r4, #0xB9
-beq trigger_cloud_back
 
 cmp r4, #0xBC
 beq trigger_any_behavior
@@ -61,16 +56,6 @@ trigger_any_behavior:
 bl singpost_behavior_xBC
 b ret_s
 
-
-trigger_cloud:
-mov r0, #0
-exec_trigger_cloud:
-bl cloud_trigger
-b ret_s
-
-trigger_cloud_back:
-mov r0, #1
-b exec_trigger_cloud
 
 
 trigger_dungeon_entry:
