@@ -91,14 +91,14 @@ int npc_player_attempt_step(npc *player, s16 x, s16 y, u8 direction, int param_5
     } else if (block_cloud_ledge_triggered(x, y, direction)) {
         if (npc_player_get_collision_after_ledge(player, x, y, direction, 2) == COLLISION_NONE) {
             save_increment_key(SAV_KEY_LEDGES_JUMPED);
-            dprintf("Return cloud collision\n");
+            // dprintf("Return cloud collision\n");
             return COLLISION_CLOUD_LEDGE;
         } else {
             return COLLISION_IMPASSABLE; // There are no special collision events like boulder pushing along ledges
         }
     }
     if (collision == COLLISION_OTHER_NPC && boulder_push_attempt(x, y, direction)) {
-        dprintf("Collision with strength boulder.\n");
+        // dprintf("Collision with strength boulder.\n");
         return COLLISION_PUSHED_BOULDER;
     }
     // Update the player's ladder state
@@ -294,11 +294,11 @@ void npc_player_init_move_jump_cloud(u8 direction) {
 
 void npc_player_initialize_move_on_bike(u8 direction, u8 unused, key keys_new, key keys_held) {
     (void)unused; (void)keys_new; (void)keys_held;
-    dprintf("move on bike, keys held %d, speed %d\n", keys_held.value, player_state.bike_speed);
+    // dprintf("move on bike, keys held %d, speed %d\n", keys_held.value, player_state.bike_speed);
     player_state.bike_speed = 0;
     // There is some biking stuff from RSE, which is cut in firered, I don't bother to copy a bunch of stuff that never gets executed
     u8 collision = npc_player_collision_on_bike(direction);
-    dprintf("Biking collision type %d\n", collision);
+    // dprintf("Biking collision type %d\n", collision);
     switch (collision) {
         case COLLISION_LEDGE:
             // Keep the current biking speed
@@ -316,7 +316,7 @@ void npc_player_initialize_move_on_bike(u8 direction, u8 unused, key keys_new, k
         case COLLISION_NONE:
         case 14:{ // This thing super weird, it is returned when stepping on cracked ice, I suppose 
             if (keys_held.keys.B && (checkflag(FLAG_CLOUD_HAS_HIGH_SPEED) || DEBUG_PLAYER_HAS_ALL_CLOUD_FEATURES)) { // High speed biking
-                    dprintf("High speed biking...\n");
+                    // dprintf("High speed biking...\n");
                     player_state.bike_speed = 4;
                     position_t pos;
                     player_get_position(&pos);
@@ -329,7 +329,7 @@ void npc_player_initialize_move_on_bike(u8 direction, u8 unused, key keys_new, k
                     npc_player_init_move_rainbow(direction);
             } else if (collision == 14 || npc_player_walking_towards_rock_stairs(direction)) {
                 npc_player_init_move_surfing(direction);
-                dprintf("Special collision event, collision %d, walking towards rock staris %d\n", collision, npc_player_walking_towards_rock_stairs(direction));
+                // dprintf("Special collision event, collision %d, walking towards rock staris %d\n", collision, npc_player_walking_towards_rock_stairs(direction));
             } else {
                 npc_player_init_move_bike(direction);
             }

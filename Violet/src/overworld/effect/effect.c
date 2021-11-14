@@ -387,8 +387,9 @@ static void overworld_effect_rainbow_sparkles_oam_callback(oam_object *self) {
     if (self->flags & OAM_FLAG_GFX_ANIM_END 
             || overworld_effect_is_oam_outside_camera_view((s16)self->private[0], (s16)self->private[1], 16, 16)) {
         overworld_effect_delete(self, OVERWORLD_EFFECT_RAINBOW_SPARKLES);
-        if (!overworld_effect_is_active(OVERWORLD_EFFECT_RAINBOW_SPARKLES))
-            oam_free_vram_by_tag(GFX_TAG_OVERWORLD_EFFECT_RAINBOW_SPARKLES);
+        // Keep the gfx around, because: why not? player most likely will do that ground effect again
+        // if (!overworld_effect_is_active(OVERWORLD_EFFECT_RAINBOW_SPARKLES)) 
+        //    oam_free_vram_by_tag(GFX_TAG_OVERWORLD_EFFECT_RAINBOW_SPARKLES);
     }
 }
 

@@ -58,7 +58,7 @@ static color_t weather_fog_cemetery_filter = {.rgb = {.red = 15, .green = 15, .b
 static color_t weather_cold_blue_filter = {.rgb = {.red = 200 / 8, .green = 232 / 8, .blue = 248 / 8}};
 
 void weather_set_filter(u8 weather) {
-    dprintf("Weather filter set according to weather %d\n", weather);
+    // dprintf("Weather filter set according to weather %d\n", weather);
     switch (weather) {
         case MAP_WEATHER_BURNING_TREES:
             fmem.weather_blend_active = 1;
@@ -88,7 +88,7 @@ void weather_burning_trees_update_pal_restore_and_tmp() {
         u8 gamma_type = palette_get_gamma_type(pal_idx);
         if (gamma_type != GAMMA_NONE) {
             pal_color_multiply((u16)(16 * pal_idx), 16, fmem.weather_blend);
-            dprintf("blending pal %d\n", pal_idx);
+            // dprintf("blending pal %d\n", pal_idx);
         }
     }
     cpuset(pal_restore, pal_tmp, CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(32 * 16 * sizeof(color_t)));
@@ -205,7 +205,7 @@ bool overworld_weather_static_fog_palette_affected(u8 pal_idx) {
 
 void pal_fog_alpha_blending(u16 first, u16 num_cols) {
     color_t fog_col = dns_get_fog_overlay();
-    dprintf("Fog overlay is 0x%x\n", fog_col);
+    // dprintf("Fog overlay is 0x%x\n", fog_col);
     for (int i = 0; i < num_cols; i++) {
         color_t new = {.rgb = {
             .red = (u16)(MIN(31, (8 * pal_restore[first + i].rgb.red + 12 * fog_col.rgb.red) / 16) & 31),
@@ -217,7 +217,7 @@ void pal_fog_alpha_blending(u16 first, u16 num_cols) {
 }
 
 void pal_oam_apply_fading(u8 oam_pal_idx) {
-    dprintf("Pal idx %d, pr state %d, Shader state %d\n", oam_pal_idx, overworld_weather.pal_processing_state, pal_shaders);
+    // dprintf("Pal idx %d, pr state %d, Shader state %d\n", oam_pal_idx, overworld_weather.pal_processing_state, pal_shaders);
     u8 pal_idx = (u8)(oam_pal_idx + 16);
     if (overworld_weather.pal_processing_state == OVERWORLD_WEATHER_PAL_PROCESSING_STATE_FADING_IN) {
         if (overworld_weather.field_1738) {
@@ -238,10 +238,10 @@ void pal_oam_apply_fading(u8 oam_pal_idx) {
             if (palette_get_gamma_type(pal_idx) == GAMMA_NORMAL)
                 pal_gamma_shift(pal_idx, 1, overworld_weather.gamma);
         } else {
-            dprintf("Before alpha blending 0x%x\n", pals[pal_idx * 16 + 4] );
+            // dprintf("Before alpha blending 0x%x\n", pals[pal_idx * 16 + 4] );
             // color_t fog_overlay = dns_get_fog_overlay();
             pal_fog_alpha_blending((u16)(pal_idx * 16), 16);
-            dprintf("After alpha blending 0x%x\n", pals[pal_idx * 16 + 4]);
+            // dprintf("After alpha blending 0x%x\n", pals[pal_idx * 16 + 4]);
         }
     }
 }
