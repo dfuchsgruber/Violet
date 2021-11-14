@@ -12,6 +12,8 @@
 .global ow_script_route_2_east_npc_1
 .global ow_script_route_2_east_npc_2
 .global ow_script_route_2_east_abra_doll_girl
+.global ow_script_route_2_east_npc_3
+.global ow_script_route_2_east_npc_4
 
 ow_script_route_2_east_abra_doll_girl:
 	checkflag FLAG_ROUTE_2_ABRA_DOLL_QUEST_REWARD_RECEIVED
@@ -67,6 +69,15 @@ abra_doll_done:
 mov_teleport_away:
 	.byte 164, STOP
 
+ow_script_route_2_east_npc_3:
+	loadpointer 0 str_4
+	callstd MSG_FACE
+	end
+ow_script_route_2_east_npc_4:
+	loadpointer 0 str_5
+	callstd MSG_FACE
+	end
+
 .ifdef LANG_GER
 str_after_receive_reward:
 	.autostring 34 2 "Jetzt kann ich endlich wieder mit meiner Abra-Puppe spielen.\pSchau mal!\nWenn ich sie ganz doll knuddleDOTS"
@@ -80,6 +91,11 @@ str_found_abra_doll:
 	.autostring 34 2 "W-Was ist das denn?\pJa, das ist sie!\nDu hast meine Abra-Puppe gefunden."
 str_abra_doll_done:
 	.autostring 34 2 "Hey!\nWillst du dir mein Geschenk abholen?\pGerne doch!"
+str_4:
+	.autostring 34 2 "Professor Tann lebt dort in Sonnaufeld.\pEr ist eine hoch angesehene Größe auf dem Gebiet der Archäologie.\pIhm verdanken wir vieles von dem Wissen, das wir über urzeitliche Pokémon besitzen."
+str_5:
+	.autostring 34 2 "Argh!\nHeute beißt einfach nichtsDOTS\pDu willst kämpfen, was?\pAber ich muss dich enttäuschen.\pWenn die Pokémon weiter so schlecht beißen, dann werd' ich auch in hundert Jahren nicht gegen dich antreten könnenDOTS"
+
 .elseif LANG_EN
 .endif
 

@@ -279,12 +279,12 @@
 				},
 				{
 					"target_index": "10",
-					"picture": "238",
+					"picture": "187",
 					"field_2": 0,
-					"x": "53",
-					"y": "68",
+					"x": "38",
+					"y": "69",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -297,13 +297,13 @@
 					"field_B": 0,
 					"value": {
 						"item": 0,
-						"species": "POKEMON_BIBOR",
+						"species": "0",
 						"berry_tree_idx": 0,
 						"type": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
-						"script_std": "PERSON_POKEMON",
+						"script_std": "PERSON_UPSTREAM",
 						"in_connection": "0"
 					}
 				},
@@ -432,7 +432,7 @@
 					"picture": "95",
 					"field_2": 0,
 					"x": "24",
-					"y": "17",
+					"y": "16",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -939,10 +939,10 @@
 				},
 				{
 					"target_index": "32",
-					"picture": 95,
+					"picture": "187",
 					"field_2": 0,
-					"x": 25,
-					"y": 17,
+					"x": "63",
+					"y": "9",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -951,8 +951,8 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_cut_tree",
-					"flag": "0x13",
+					"script": "0",
+					"flag": "0",
 					"field_D": 0,
 					"field_B": 0,
 					"value": {
@@ -963,7 +963,7 @@
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
-						"script_std": 0,
+						"script_std": "PERSON_UPSTREAM",
 						"in_connection": "0"
 					}
 				},
@@ -1364,7 +1364,7 @@
 					"x": "37",
 					"y": "84",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -1763,7 +1763,7 @@
 				{
 					"target_index": "60",
 					"picture": "236",
-					"x": "26",
+					"x": "25",
 					"y": "85",
 					"level": 0,
 					"behaviour": 0,
@@ -1936,7 +1936,7 @@
 				},
 				{
 					"x": "38",
-					"y": "70",
+					"y": "69",
 					"level": 0,
 					"target_warp_idx": "3",
 					"target_map": "3",

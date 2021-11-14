@@ -5,6 +5,7 @@
 .global ow_script_amonia_person_1
 .global ow_script_amonia_person_2
 .global ow_script_amonia_person_3
+.global ow_script_amonia_person_4
 
 ow_script_amonia_person_0:
     loadpointer 0x0 str_0
@@ -22,6 +23,10 @@ ow_script_amonia_person_3:
     loadpointer 0x0 str_3
     callstd MSG_FACE
     end
+ow_script_amonia_person_4:
+    loadpointer 0x0 str_4
+    callstd MSG_FACE
+    end
 
 .ifdef LANG_GER
 
@@ -33,6 +38,8 @@ str_2:
     .autostring 34 2 "Ich bin in Anemoia aufgewachsen, musst du wissen.\pUnd immer noch immer bin ich dieses schönen Sees nicht müde."
 str_3:
     .autostring 34 2 "Meine Freunde sagen, dass Anemonia öde ist.\pAber wusstest du, dass an diesem See ein Kappa-Pokémon leben soll?"
+str_4:
+    .autostring 34 2 "RIVAL, bist du das?\pNein, du hast ja ganz blondes Haar.\pDas Haar von meinem Enkel RIVAL ist feuerrot!\pGenauso wie das von meinem Sohn.\pUnd auch ich hatte in meiner Jugend einmal eine rote MähneDOTS"
 .elseif LANG_EN
 str_0:
     .autostring 34 2 "Look, I have a pokémon!\pGo, Azurill!\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pIt would rather cuddle than fightDOTS"

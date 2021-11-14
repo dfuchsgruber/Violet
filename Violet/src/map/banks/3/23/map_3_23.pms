@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_93",
 		"events": {
-			"person_cnt": 43,
+			"person_cnt": 45,
 			"warp_cnt": 2,
 			"trigger_cnt": 0,
 			"signpost_cnt": 8,
@@ -1245,6 +1245,62 @@
 					"script_std_and_in_connection": {
 						"script_std": "PERSON_SECRET_POWER_VINE",
 						"in_connection": "0"
+					}
+				},
+				{
+					"target_index": "44",
+					"picture": "187",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_UPSTREAM",
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "33",
+					"y": "15",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "45",
+					"picture": "187",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_UPSTREAM",
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "23",
+					"y": "36",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
 					}
 				}
 			],

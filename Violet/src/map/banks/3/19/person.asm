@@ -11,6 +11,7 @@
 .global ow_script_0x8f6111
 .global ow_script_map_3_19_trainer_1
 .global ow_script_map_3_19_trainer_4
+.global ow_script_map_3_19_person_1
 
 ow_script_map_3_19_person_0:
 lock
@@ -21,9 +22,16 @@ release
 end
 
 
+ow_script_map_3_19_person_1:
+    loadpointer 0 str_1
+    callstd MSG_FACE
+    end
+
 .ifdef LANG_GER
 str_0x804215:
     .autostring 34 2 "Du willst gegen mich kämpfen?\pTja, Pech gehabt.\nIch habe gar kein Pokémon!"
+str_1:
+    .autostring 34 2 "Mein Pokémon ist ganz aufgeregt!\pDabei habe ich meine Abschlussprüfung doch erst in ein paar WochenDOTS"
 .elseif LANG_EN
 str_0x804215:
     .autostring 34 2 "You want to challange me?\pWell, I don't even have a Pokémon, so that's that."

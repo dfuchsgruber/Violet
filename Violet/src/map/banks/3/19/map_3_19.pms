@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_89",
 		"events": {
-			"person_cnt": 21,
+			"person_cnt": 23,
 			"warp_cnt": 1,
 			"trigger_cnt": 11,
 			"signpost_cnt": 3,
@@ -605,6 +605,62 @@
 					"is_trainer": 0,
 					"alert_radius": 0,
 					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "22",
+					"picture": "238",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
+					},
+					"argument": 0,
+					"x": "4",
+					"y": "45",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_UP_LEFT_DOWN_RIGHT",
+					"behaviour_range": {
+						"x": "4",
+						"y": "4"
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_STARALILI",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "23",
+					"picture": "18",
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "2",
+					"y": "43",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_ROTATE_COUNTERCLOCKWISE",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_map_3_19_person_1",
 					"flag": 0,
 					"value": {
 						"item": 0,

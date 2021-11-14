@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_78",
 		"events": {
-			"person_cnt": 16,
+			"person_cnt": 20,
 			"warp_cnt": 4,
 			"trigger_cnt": 0,
 			"signpost_cnt": 5,
@@ -70,8 +70,8 @@
 				{
 					"target_index": "2",
 					"picture": "23",
-					"x": "32",
-					"y": "9",
+					"x": "35",
+					"y": "7",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -459,6 +459,118 @@
 					"script_std_and_in_connection": {
 						"script_std": 0,
 						"in_connection": "0"
+					}
+				},
+				{
+					"target_index": "17",
+					"picture": "187",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_UPSTREAM",
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "35",
+					"y": "2",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "18",
+					"picture": "35",
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "31",
+					"y": "5",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_amonia_person_4",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "19",
+					"picture": "238",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "32",
+					"y": "6",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_SCHLURP",
+						"berry_tree_idx": 0,
+						"type": 0
+					}
+				},
+				{
+					"target_index": "20",
+					"picture": "237",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_BERRY_TREE",
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "35",
+					"y": "8",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "51",
+						"type": 0
 					}
 				}
 			],
