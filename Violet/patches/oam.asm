@@ -68,16 +68,17 @@ _blxr4_oam:
     bx r0
     .pool
 
-
 .org 0x08006b28
     ldr r0, =oam_proceed | 1
     bx r0
     .pool
 
+
 .org 0x08006b74
     ldr r0, =oam_calculate_position | 1
     bx r0
     .pool
+
 
 .org 0x08006c38
     ldr r0, =oam_calculate_priority | 1
@@ -92,15 +93,20 @@ _blxr4_oam:
 .org 0x08007590
     ldr r0, =oam_copy_requests_proceed | 1
     bx r0
-    .pool
-/*
- */
-
-
+    .pool 
+  
 .org 0x08006adc
     ldr r0, =oam_animations_proceed | 1
     bx r0
     .pool
+  
+/*
+    */
+
+/*
+ */
+
+
 
 /* 
 .org 0x0805fb08

@@ -202,6 +202,7 @@ typedef struct { // Subject to change, I guess...
 enum {
   OAM_ALLOC_FREE_START = NUM_OAMS,
   OAM_ALLOC_ACTIVE_START,
+  OAM_ALLOC_ACTIVE_MIDDLE, // this thing is there to separate elements that have been inserted FIFO and LIFO (front and back)
   OAM_ALLOC_ACTIVE_END,
   OAM_ALLOC_LIST_SIZE,
 };
