@@ -94,8 +94,13 @@ typedef struct npc {
     u8 movement_direction_previous;
     u8 step_countdown;
     u8 player_copyable_movement;
-    u8 field_23;
+    u8 collision_type;
 } npc;
+
+enum {
+    COLLISION_TYPE_NORMAL = 0,
+    COLLISION_TYPE_NO_COLLISION,
+};
 
 enum {
     RUNNING_STATE_NOT_MOVING,
@@ -839,6 +844,14 @@ void npc_clear (npc *n);
  * @param n the npc to update
  **/
 void npc_set_dynamic_picture(npc *n);
+
+/**
+ * Checks if two heights are compatible (i.e. they are deemed "on the same level")
+ * @param height_0 the first height
+ * @param height_1 the second height
+ * @return if the two heights are on the same level
+ **/
+bool heights_compatible(u8 height_0, u8 height_b);
 
 // Initial facing direction per behaviour
 extern u8 behaviour_initial_facing_directions[80];

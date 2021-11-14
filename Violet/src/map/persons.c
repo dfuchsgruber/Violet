@@ -2,6 +2,7 @@
 #include "save.h"
 #include "map/event.h"
 #include "debug.h"
+#include "constants/person_script_stds.h"
 
 map_event_person *person_get_by_target_index(u8 target_index, map_event_person *persons, u8 num_persons){
     if(target_index == 254)
@@ -90,6 +91,16 @@ void persons_load_from_header() {
     }
 }
 
+static u8 npc_get_collision_type_by_script_std(int script_std) {
+    switch (script_std)  {
+        default:
+            return COLLISION_TYPE_NORMAL;
+        case PERSON_UPSTREAM:
+        case PERSON_SCRIPT_NO_COLLISION:
+            return COLLISION_TYPE_NO_COLLISION;
+    }
+}
+
 // @0x0805e080
 u8 npc_create_by_person(map_event_person *p, u8 map_idx, u8 bank) {
     s16 x = (s16)(p->x + 7);
@@ -130,6 +141,7 @@ u8 npc_create_by_person(map_event_person *p, u8 map_idx, u8 bank) {
     n->sight_range = (u8)(p->alert_radius);
     n->map = map_idx;
     n->bank = bank;
+    n->collision_type = npc_get_collision_type_by_script_std(p->script_std);
     n->movement_direction_previous = behaviour_initial_facing_directions[n->behavior_type];
     npc_set_direction(n, n->movement_direction_previous);
     npc_set_dynamic_picture(n);

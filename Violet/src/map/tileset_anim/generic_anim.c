@@ -42,7 +42,7 @@ void generic_tileset_anim_proceed_all(tileset_animation_header *anim_header,
 }
 
 void tileset_secondary_animation_initialize_() {
-    map_cloud_upstream_new();
+    // map_cloud_upstream_new();
     tileset_anim_clk1 = 0;
     tileset_anim_clk1_cycle = 0;
     tileset_anim_1 = NULL;

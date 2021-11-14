@@ -50,6 +50,18 @@ bool npc_player_surfing_towards_waterfall(u8 direction) {
     return false;
 }
 
+bool npc_collides_with_other_npc_at(npc *n, s16 x, s16 y) {
+    for (int i = 0; i < NUM_NPCS; i++) {
+        npc *other = npcs + i;
+        if (other->flags.active && other != n && other->collision_type != COLLISION_TYPE_NO_COLLISION && 
+                ((other->from_x == x && other->from_y == y) || (other->dest_x == x && other->dest_y == y)) &&
+                heights_compatible(other->height.current, n->height.current)) {
+            return true;
+        }
+    }
+    return false;
+}
+
 bool block_cloud_ledge_triggered(s16 x, s16 y, u8 direction) {
     (void)direction;
     if ((player_state.state & PLAYER_STATE_BIKING) && (checkflag(FLAG_CLOUD_HAS_WINGS) || DEBUG_PLAYER_HAS_ALL_CLOUD_FEATURES)) {

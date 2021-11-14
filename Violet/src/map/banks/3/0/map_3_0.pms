@@ -33,7 +33,7 @@
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
-						"script_std": 0,
+						"script_std": "PERSON_SCRIPT",
 						"in_connection": "0"
 					}
 				},

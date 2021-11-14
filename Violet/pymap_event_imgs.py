@@ -98,23 +98,25 @@ picture_idx_to_png = {
     184 : "asset/gfx/overworld/npcs/gfx_ow_apple.png",
     185 : "asset/gfx/overworld/misc/gfx_overworld_secret_power_cave.png",
     186 : "asset/gfx/overworld/npcs/gfx_ow_recipe2.png",
+    187 : "asset/gfx/overworld/npcs/gfx_ow_upstream.png",
 }
 
 # Images that hold an entire spritesheet
 spritesheet_images = {
-    80 : (16, 32),
-    81 : (16, 32),
-    93 : (16, 16),
-    176 : (16, 32),
-    177 : (16, 32),
-    178 : (16, 32),
-    179 : (16, 32),
-    180 : (32, 16),
-    182 : (16, 32),
-    183 : (32, 32),
-    184 : (16, 16),
-    185 : (32, 32),
-    186 : (16, 16),
+    80 : (0, 0, 16, 32,),
+    81 : (0, 0, 16, 32),
+    93 : (0, 0, 16, 16),
+    176 : (0, 0, 16, 32),
+    177 : (0, 0, 16, 32),
+    178 : (0, 0, 16, 32),
+    179 : (0, 0, 16, 32),
+    180 : (0, 0, 32, 16),
+    182 : (0, 0, 16, 32),
+    183 : (0, 0, 32, 32),
+    184 : (0, 0, 16, 16),
+    185 : (0, 0, 32, 32),
+    186 : (0, 0, 16, 16),
+    187 : (0, 8 * 32, 64, 8 * 32 + 32),
 }
 
 # Tutor crystal images
@@ -190,8 +192,7 @@ class Event_to_image:
             image, palette = agbimage.from_file(picture_idx_to_png[picture_idx])
             image = image.to_pil_image(palette.to_pil_palette(), transparent=0)
             if picture_idx in spritesheet_images:
-                w, h = spritesheet_images[picture_idx]
-                image = image.crop((0, 0, w, h))
+                image = image.crop(spritesheet_images[picture_idx])
         elif isinstance(picture_idx, str):
             path = picture_idx
             if not os.path.exists(path):

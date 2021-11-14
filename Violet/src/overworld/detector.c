@@ -66,7 +66,11 @@ static gfx_frame *static_detector_animations[] = {
 static void static_detector_arrow_callback(oam_object *self) {
     if (!(self->flags & OAM_FLAG_INVISIBLE)) {
         self->x = oams[player_state.oam_idx].x;
-        self->y = (s16)(oams[player_state.oam_idx].y - 10);
+        if (player_state.state & PLAYER_STATE_BIKING) {
+            self->y = (s16)(oams[player_state.oam_idx].y - 18);
+        } else {
+            self->y = (s16)(oams[player_state.oam_idx].y - 10);
+        }
         self->private[0] = (u16)((self->private[0] + 1) % ARROW_SINE_PERIOD);
         FIXED theta = FIXED_DIV(INT_TO_FIXED(self->private[0]), INT_TO_FIXED(ARROW_SINE_PERIOD));
         self->y2 = (s16)FIXED_TO_INT(FIXED_MUL(FIXED_SIN(theta), INT_TO_FIXED(2)));
@@ -76,6 +80,11 @@ static void static_detector_arrow_callback(oam_object *self) {
         } else {
             oam_try_set_rotation_and_scale(self, true, 0x100, 0x100, (u16)(self->private[1] + 0x8000)); 
             oam_gfx_anim_start_if_not_current(self, (u8)self->private[2]);
+        }
+        if (self->y < -16 || self->y > 172 || self->x < -16 || self->y > 256) {
+            self->flags |= OAM_FLAG_INVISIBLE;
+        } else {
+            self->flags &= (u16)(~OAM_FLAG_INVISIBLE);
         }
 
 

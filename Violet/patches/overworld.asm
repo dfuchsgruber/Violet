@@ -591,3 +591,9 @@ blxr4_npc_create_camera:
 
 .org 0x083a29a4
     .halfword 0xFFFF
+
+
+.org 0x08063904
+    ldr r3, =npc_collides_with_other_npc_at | 1
+    bx r3
+    .pool

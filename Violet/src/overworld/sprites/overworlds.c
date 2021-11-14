@@ -1,5 +1,5 @@
 #include "types.h"
-#include "overworld/sprite.h"
+#include "overworld/sprite.h" 
 #include "oam.h" 
 #include "vars.h"
 #include "debug.h"
@@ -1754,7 +1754,7 @@ static graphic overworld_sprite_recipe_sprites[] = {
 
 static gfx_frame gfx_animation_recipe[] = {
 	{.data = 0, .duration = 0}, {.data = 0, .duration = 8}, {.data = 1, .duration = 8}, 
-	{.data = 2, .duration = 8}, {.data = 3, .duration = 8}, {.data = 2, .duration = 4},
+	{.data = 2, .duration = 8}, {.data = 3, .duration = 48}, {.data = 2, .duration = 4},
 	{.data = 1, .duration = 4}, {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
@@ -1768,7 +1768,73 @@ overworld_sprite ow_recipe = {
 	oam_rotscale_anim_table_null
 };
 
+static graphic overworld_sprite_upstream_graphics[] = {
+	{gfx_ow_upstreamTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), GRAPHIC_SIZE_4BPP(64, 64), 0}, // Idle
+	// Upper layer
+	{gfx_ow_upstreamTiles + 1 * GRAPHIC_SIZE_4BPP(64, 64), GRAPHIC_SIZE_4BPP(64, 64), 0},
+	{gfx_ow_upstreamTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), GRAPHIC_SIZE_4BPP(64, 64), 0},
+	{gfx_ow_upstreamTiles + 3 * GRAPHIC_SIZE_4BPP(64, 64), GRAPHIC_SIZE_4BPP(64, 64), 0},
+	{gfx_ow_upstreamTiles + 4 * GRAPHIC_SIZE_4BPP(64, 64), GRAPHIC_SIZE_4BPP(64, 64), 0},
+	{gfx_ow_upstreamTiles + 5 * GRAPHIC_SIZE_4BPP(64, 64), GRAPHIC_SIZE_4BPP(64, 64), 0},
+	{gfx_ow_upstreamTiles + 6 * GRAPHIC_SIZE_4BPP(64, 64), GRAPHIC_SIZE_4BPP(64, 64), 0},
+	{gfx_ow_upstreamTiles + 7 * GRAPHIC_SIZE_4BPP(64, 64), GRAPHIC_SIZE_4BPP(64, 64), 0},
+	{gfx_ow_upstreamTiles + 8 * GRAPHIC_SIZE_4BPP(64, 64), GRAPHIC_SIZE_4BPP(64, 64), 0},
+	{gfx_ow_upstreamTiles + 9 * GRAPHIC_SIZE_4BPP(64, 64), GRAPHIC_SIZE_4BPP(64, 64), 0},
+	{gfx_ow_upstreamTiles + 10 * GRAPHIC_SIZE_4BPP(64, 64), GRAPHIC_SIZE_4BPP(64, 64), 0},
+};
 
+static gfx_frame gfx_animation_upstream[] = {
+	{.data = 0, .duration = 0}, {.data = 1, .duration = 4}, 
+	{.data = 2, .duration = 4}, {.data = 3, .duration = 4}, {.data = 4, .duration = 4},
+	{.data = 5, .duration = 4}, {.data = 6, .duration = 4}, {.data = 7, .duration = 4},
+	{.data = 8, .duration = 4}, {.data = 9, .duration = 4}, {.data = 10, .duration = 4},
+	{.data = 8, .duration = 4}, {.data = 9, .duration = 4}, {.data = 10, .duration = 4},
+	{.data = 0, .duration = 24}, {.data = GFX_ANIM_JUMP, .duration = 0},
+};
+
+static gfx_frame *gfx_animations_upstream[] = {gfx_animation_upstream};
+
+static sprite upstream_sprite = {
+	.attr0 = ATTR0_SHAPE_HORIZONTAL,
+	.attr1 = ATTR1_SIZE_64_32,
+	.attr2 = ATTR2_PRIO(2),
+};
+
+static subsprite upstream_subsprites[2] = {
+	{
+		.x = -32, 
+		.y = -16, 
+		.shape = ATTR0_SHAPE_HORIZONTAL >> 14, 
+		.size = ATTR1_SIZE_64_32 >> 14, 
+		.tile_offset = 0 * GRAPHIC_SIZE_4BPP(64, 32) / GRAPHIC_SIZE_4BPP(8, 8),
+		.priority = 1,
+	},
+	{
+		.x = -32, 
+		.y = -16, 
+		.shape = ATTR0_SHAPE_HORIZONTAL >> 14, 
+		.size = ATTR1_SIZE_64_32 >> 14, 
+		.tile_offset = 1 * GRAPHIC_SIZE_4BPP(64, 32) / GRAPHIC_SIZE_4BPP(8, 8),
+		.priority = 2,
+	},
+};
+
+static subsprite_table upstream_subsprite_tables[] = {
+	{.subsprites = upstream_subsprites, .num_subsprites = ARRAY_COUNT(upstream_subsprites),},
+	{.subsprites = upstream_subsprites, .num_subsprites = ARRAY_COUNT(upstream_subsprites),},
+	{.subsprites = upstream_subsprites, .num_subsprites = ARRAY_COUNT(upstream_subsprites),},
+	{.subsprites = upstream_subsprites, .num_subsprites = ARRAY_COUNT(upstream_subsprites),},
+	{.subsprites = upstream_subsprites, .num_subsprites = ARRAY_COUNT(upstream_subsprites),},
+	{.subsprites = upstream_subsprites, .num_subsprites = ARRAY_COUNT(upstream_subsprites),},
+};
+
+overworld_sprite ow_upstream = {
+	0xffff, OW_PAL_TAG_UPSTREAM, 0x11ff, GRAPHIC_SIZE_4BPP(64, 64),
+	64, 32, 0, 0, false, 0, 0x1, 0x0, 0x8,
+	&upstream_sprite, upstream_subsprite_tables,
+	gfx_animations_upstream, overworld_sprite_upstream_graphics,
+	oam_rotscale_anim_table_null,
+};
 
 //The overworld table
 overworld_sprite *overworld_sprites[] = {
@@ -1978,6 +2044,7 @@ overworld_sprite *overworld_sprites[] = {
 	[184] = &ow_apple,
 	[185] = &ow_secret_power_cave,
 	[186] = &ow_recipe,
+	[187] = &ow_upstream,
 
 	[OVERWORLD_SPRITE_TUTOR_CRYSTAL] = &ow_tutor_crystal_dummy,
 	[OVERWORLD_SPRITE_MISC] = &ow_misc_16_16,

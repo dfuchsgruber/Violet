@@ -502,11 +502,11 @@ void map_cloud_static_upstream_new_at_position(s16 x, s16 y, u8 bank, u8 map_idx
 }
 
 void map_cloud_upstream_new() {
-    for (u8 i = 0; i < mapheader_virtual.events->warp_cnt; i++) {
-        map_event_warp *warp = mapheader_virtual.events->warps + i;
-        u16 behaviour = block_get_behaviour_by_pos((s16)(warp->x + 7), (s16)(warp->y + 7));
-        if (behaviour == MB_CLOUD_UPSTREAM_WARP) {
-            map_cloud_static_upstream_new_at_position((s16)(warp->x), (s16)(warp->y), save1->bank, save1->map);
-        }
-    }
+    // for (u8 i = 0; i < mapheader_virtual.events->warp_cnt; i++) {
+    //     map_event_warp *warp = mapheader_virtual.events->warps + i;
+    //     u16 behaviour = block_get_behaviour_by_pos((s16)(warp->x + 7), (s16)(warp->y + 7));
+    //     if (behaviour == MB_CLOUD_UPSTREAM_WARP) {
+    //         map_cloud_static_upstream_new_at_position((s16)(warp->x), (s16)(warp->y), save1->bank, save1->map);
+    //     }
+    // }
 }

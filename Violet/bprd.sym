@@ -1674,3 +1674,4 @@ oam_copy_requests = 0x02021844;
 oam_delete = 0x08007200 | 1;
 battle_animation_battler_get_oam_idx = 0x08074938 | 1;
 oam_new_at = 0x08007014 | 1;
+heights_compatible = 0x08068364 | 1;
