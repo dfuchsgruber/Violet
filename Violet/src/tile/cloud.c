@@ -104,7 +104,7 @@ bool cloud_not_dismountable() {
 		if (mapheader_virtual.footer->tileset1 == &maptileset_clouds) {
 			position_t pos;
 			player_get_position(&pos);
-			dprintf("Position is %d,%d, with battle bg %d\n", pos.coordinates.x, pos.coordinates.y, block_get_field_by_pos(pos.coordinates.x, pos.coordinates.y, FIELD_BATTLE_BG));
+			// dprintf("Position is %d,%d, with battle bg %d\n", pos.coordinates.x, pos.coordinates.y, block_get_field_by_pos(pos.coordinates.x, pos.coordinates.y, FIELD_BATTLE_BG));
 
 			if (block_get_field_by_pos(pos.coordinates.x, pos.coordinates.y, FIELD_BATTLE_BG) == BATTLE_BG_SKY_ISLAND) {
 				return false; // These are all land tiles, more or less...
