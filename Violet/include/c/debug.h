@@ -40,6 +40,16 @@ extern "C" {
     void dprintf(const char * str, ...);
     void derrf(const char *str, ...);
     
+    /**
+     * Starts benchmarking, i.e. starts a timer
+     **/
+    void benchmark_start(void);
+
+    /**
+     * Ends benchmarking, i.e. ends the timer and returns the time elapsed (in cycles)
+     * @return the cycles that have elapsed
+     **/
+    u32 benchmark_end(void);
 
 #ifdef	__cplusplus
 }

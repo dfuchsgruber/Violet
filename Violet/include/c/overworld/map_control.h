@@ -72,6 +72,21 @@ void overworld_callback1_proceed_only();
 void overworld_proceed();
 
 /**
+ * Proceeds the overworld script state
+ **/
+void overworld_script_proceed();
+
+/**
+ * Proceeds the overworld camera.
+ **/
+void overworld_camera_proceed();
+
+/**
+ * Proceeds the overworld camera panning
+ **/
+void overworld_camera_panning_proceed();
+
+/**
  * Sets up the data for warping the player
  * @param bank the target map bank
  * @param map the target map id

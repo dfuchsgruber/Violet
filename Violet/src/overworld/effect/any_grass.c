@@ -20,6 +20,7 @@
  * A table states which grass animation is on which map-bank combination
  */
 
+extern const unsigned int gfx_high_grassTiles[];
 extern const unsigned int gfx_grass_ashTiles[];
 extern const unsigned short gfx_grass_ashPal[];
 extern unsigned int gfx_rock_climb_animTiles[];
@@ -40,12 +41,21 @@ sprite overworld_effect_grass_sprite = {
     ATTR0_SHAPE_SQUARE, ATTR1_SIZE_16_16, ATTR2_PRIO(3), 0
 };
 
+
+graphic high_grass_graphics[5] = {
+    {&gfx_high_grassTiles[0x0], 0x80, 0},
+    {&gfx_high_grassTiles[0x20], 0x80, 0},
+    {&gfx_high_grassTiles[0x40], 0x80, 0},
+    {&gfx_high_grassTiles[0x60], 0x80, 0},
+    {&gfx_high_grassTiles[0x80], 0x80, 0}
+};
+
 graphic haweiland_grass_graphics[] = {
     {&gfx_grass_haweilandTiles[0x0], 0x80, 0},
     {&gfx_grass_haweilandTiles[0x20], 0x80, 0},
     {&gfx_grass_haweilandTiles[0x40], 0x80, 0},
-    {&gfx_grass_haweilandTiles[0x60], 0x80, 0},
-    {NULL, 0x80, 0}
+    {&gfx_grass_haweilandTiles[0x60], 0x80, 0}, 
+    {&gfx_grass_haweilandTiles[0x80], 0x80, 0}, 
 };    
 
 graphic ash_grass_graphics[] = {
@@ -53,7 +63,7 @@ graphic ash_grass_graphics[] = {
     {&gfx_grass_ashTiles[0x20], 0x80, 0},
     {&gfx_grass_ashTiles[0x40], 0x80, 0},
     {&gfx_grass_ashTiles[0x60], 0x80, 0},
-    {NULL, 0x80, 0}
+    {&gfx_grass_ashTiles[0x80], 0x80, 0},
 };
 
 graphic graveyard_grass_graphics[] = {
@@ -61,7 +71,7 @@ graphic graveyard_grass_graphics[] = {
     {&gfx_graveyard_grassTiles[0x20], 0x80, 0},
     {&gfx_graveyard_grassTiles[0x40], 0x80, 0},
     {&gfx_graveyard_grassTiles[0x60], 0x80, 0},
-    {NULL, 0x80, 0}
+    {&gfx_graveyard_grassTiles[0x80], 0x80, 0},
 };
 
 graphic cloud_grass_graphics[] = {
@@ -69,7 +79,7 @@ graphic cloud_grass_graphics[] = {
     {&gfx_grass_cloudTiles[0x20], 0x80, 0},
     {&gfx_grass_cloudTiles[0x40], 0x80, 0},
     {&gfx_grass_cloudTiles[0x60], 0x80, 0},
-    {NULL, 0x80, 0}
+    {&gfx_grass_cloudTiles[0x80], 0x80, 0},
 };
 
 palette any_grass_pals[] = {

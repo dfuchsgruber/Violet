@@ -853,6 +853,23 @@ void npc_set_dynamic_picture(npc *n);
  **/
 bool heights_compatible(u8 height_0, u8 height_b);
 
+/**
+ * Shifts the coordinates of all active npcs at camera update.
+ **/
+void npc_shift_coordinates_at_camera_update();
+
+/**
+ * Deletes all npcs outside the viewport
+ **/
+void npc_delete_all_outside_viewport();
+
+/**
+ * Creates all npcs within the viewport if they are not already present
+ * @param camera_x the camera offset with which to load
+ * @param camera_y the camera offset with which to load
+ **/
+void npc_create_all_in_viewport_if_not_present(s16 camera_x, s16 camera_y);
+
 // Initial facing direction per behaviour
 extern u8 behaviour_initial_facing_directions[80];
 extern u8 behaviour_has_range[80];

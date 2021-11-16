@@ -358,7 +358,7 @@ static sprite overworld_effect_rainbow_sparkles_sprite = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(2),
 };
 
-#define RAINBOW_SPARKLES_FRAME_DURATION 4
+#define RAINBOW_SPARKLES_FRAME_DURATION 2 
 
 static gfx_frame overworld_effect_rainbow_sparkles_animation[] = {
     {.data = 0, .duration = 0},

@@ -326,7 +326,7 @@ bool battler_drop_next_item(u8 battler_idx, u16 *item, u8 *cnt) {
 static void battle_item_drop_compact(u8 battler_idx) {
     for (int i = 0; i < BATTLE_STATE2->num_items_dropped[battler_idx]; i++) {
         u16 item = BATTLE_STATE2->items_dropped[battler_idx][i];
-        for (int j = i + 1; j < BATTLE_STATE2->num_items_dropped[battler_idx]; j++) {
+        for (int j = i + 1; j < BATTLE_STATE2->num_items_dropped[battler_idx] && j < MAX_ITEMS_DROPPED_PER_BATTLER; j++) {
             if (BATTLE_STATE2->items_dropped[battler_idx][j] == item) {
                 dprintf("compactifying items at slot %d and %d\n", i, j);
                 // Aggregate the same items

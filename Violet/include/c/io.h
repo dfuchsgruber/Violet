@@ -66,6 +66,20 @@
 
 #define IO_IME (*(vu16*) (IO_ADDRESS + 0x208))
 
+// timer
+#define TIMER_1CLK        0x00
+#define TIMER_64CLK       0x01
+#define TIMER_256CLK      0x02
+#define TIMER_1024CLK     0x03
+#define TIMER_INTR_ENABLE 0x40
+#define TIMER_ENABLE   0x80
+#define IO_TM2CNT (*(vu32*) (IO_ADDRESS + 0x108))
+#define IO_TM2CNT_L (*(vu16*) (IO_ADDRESS + 0x108))
+#define IO_TM2CNT_H (*(vu16*) (IO_ADDRESS + 0x10a))
+#define IO_TM3CNT (*(vu32*) (IO_ADDRESS + 0x10c))
+#define IO_TM3CNT_L (*(vu16*) (IO_ADDRESS + 0x10c))
+#define IO_TM3CNT_H  (*(vu16*) (IO_ADDRESS + 0x10e))
+
 
 
 /**

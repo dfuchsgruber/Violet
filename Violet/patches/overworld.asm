@@ -597,3 +597,18 @@ blxr4_npc_create_camera:
     ldr r3, =npc_collides_with_other_npc_at | 1
     bx r3
     .pool
+
+.org 0x08056598
+    ldr r0, =overworld_proceed | 1
+    bx r0
+    .pool
+
+
+// Sandstorm
+
+/* 
+.org 0x0807d5de
+    lsl r0, #0 // Don't create multiple sandstorm sprites
+.org 0x0807d4d6
+    lsl r0, #0 // Don't destroy more than one sandstorm sprites
+*/

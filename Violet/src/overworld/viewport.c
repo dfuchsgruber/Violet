@@ -6,6 +6,13 @@
 #include "overworld/map_control.h"
 #include "vars.h"
 
+#define BENCHMARK 0
+#if BENCHMARK
+    #define BENCHMARK_WRAP(x) x
+#else
+    #define BENCHMARK_WRAP(x) ;
+#endif
+
 void overworld_viewport_set_position(s16 x, s16 y) {
     overworld_viewport_move_and_update_all(
         (s16)(x - save1->x_cam_orig),

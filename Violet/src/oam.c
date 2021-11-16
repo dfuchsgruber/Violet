@@ -6,11 +6,22 @@
 #include "dma.h"
 
 #define DEBUG_OAMS 0
+#define BENCHMARK 0
+
 #if DEBUG_OAMS
     #define DEBUG(...) dprintf (__VA_ARGS__)
 #else
     #define DEBUG(...) 
 #endif
+
+#if BENCHMARK
+    #define BENCHMARK_WRAP(x) x
+#else
+    #define BENCHMARK_WRAP(x) ;
+#endif
+
+extern u8 oam_order_iram[NUM_OAMS];
+extern u32 oam_priorities_iram[NUM_OAMS];
 
 // Functions that (by my design) should not be called externally
 u8 oam_new_at(u8 idx, oam_template *template, s16 x, s16 y, u8 subpriority);
@@ -87,60 +98,27 @@ void oam_allocation_initialize() {
 
 // Compresses the oam_order to [0...i, i+1...n_active-1], where all >= i+1 are active, but invisible and need not to be rendered
 static inline size_t oam_compress_and_calculate_visible_cnt() {
+    // s16 *ys = fmem.oam_ys;
     int tail = oam_active_cnt - 1;
     int i = 0;
     while(i <= tail) {
         // Search the last non-invisible element
-        while (tail >= 0 && (oams[oam_order[tail]].flags & (OAM_FLAG_INVISIBLE)))
+        while (tail >= 0 && (oams[oam_order_iram[tail]].flags & (OAM_FLAG_INVISIBLE)))
             tail--;
         // Tail now points the last non-invisible element
         if (i > tail) 
             break; // whole range [i...NUM_OAMS] is invisible, done
-        else if ((oams[oam_order[i]].flags & (OAM_FLAG_INVISIBLE))) {
+        else if ((oams[oam_order_iram[i]].flags & (OAM_FLAG_INVISIBLE))) {
             // i is an invisible oam, swap with tail and continue
-            u8 tmp = oam_order[i];
-            oam_order[i] = oam_order[tail]; // i is now a visible oam
-            oam_order[tail] = tmp;
+            u8 tmp = oam_order_iram[tail];
+            oam_order_iram[tail] = oam_order_iram[i]; // i is now a visible oam
+            oam_order_iram[i] = tmp;
         }
-        i++; // either i was active to begin with or it was swapped with tail, which was active by definition
-    }
-    oam_visible_cnt = (u8)i;
-    return oam_visible_cnt;
-}
 
-static inline int oam_get_y(oam_object *o) {
-    int y = o->final_oam.attr0 & 0xFF;
-    if (y >= 160)
-        y -= 256;
-    if ((o->final_oam.attr0 & (ATTR0_ROTSCALE | ATTR0_DSIZE)) == (ATTR0_ROTSCALE | ATTR0_DSIZE) &&
-        (o->final_oam.attr1 >> 14)  == (ATTR1_SIZE_64_64 >> 14)) {
-        u32 shape = (o->final_oam.attr0 >> 14) & 3;
-        if (shape == (ATTR0_SHAPE_SQUARE >> 14) || shape == (ATTR0_SHAPE_VERTICAL >> 14)) {
-            if (y > 128)
-                y -= 256;
-        }
-    }
-    return y;
-}
+        u8 oam_idx = oam_order_iram[i];
+        oam_object *o = oams + oam_idx;
 
-static inline bool oam_priority_greater(size_t idx_first, size_t idx_second) {
-    idx_first = oam_order[idx_first];
-    idx_second = oam_order[idx_second];
-    u16 prio_first = oam_priorities[idx_first];
-    u16 prio_second = oam_priorities[idx_second];
-    if (prio_first > prio_second)
-        return true;
-    else if (prio_second > prio_first)
-        return false;
-    else {
-        return oam_get_y(oams + idx_first) < oam_get_y(oams + idx_second);
-    }
-}
-
-void oam_calculate_position() {
-    int cnt = oam_visible_cnt;
-    for (int i = 0; i < cnt; i++) {
-        oam_object *o = oams + oam_order[i];
+        // Update position
         if (o->flags & OAM_FLAG_CENTERED) {
             o->final_oam.attr1 = (u16)(((o->final_oam.attr1 >> 9) << 9) | ((
                 (o->x + o->x2 + o->x_centre + coordinate_camera_x_offset) & 0x1FF
@@ -155,39 +133,124 @@ void oam_calculate_position() {
             o->final_oam.attr0 = (u16)(((o->final_oam.attr0 >> 8) << 8) | (
                 (o->y + o->y2 + o->y_centre) & 0xFF
             ));
-
         }
+
+        // Update y-coordinate
+        int y = o->final_oam.attr0 & 0xFF;
+        if (y >= 160)
+            y -= 256;
+        if ((o->final_oam.attr0 & (ATTR0_ROTSCALE | ATTR0_DSIZE)) == (ATTR0_ROTSCALE | ATTR0_DSIZE) &&
+            (o->final_oam.attr1 >> 14)  == (ATTR1_SIZE_64_64 >> 14)) {
+            u32 shape = (o->final_oam.attr0 >> 14) & 3;
+            if (shape == (ATTR0_SHAPE_SQUARE >> 14) || shape == (ATTR0_SHAPE_VERTICAL >> 14)) {
+                if (y > 128)
+                    y -= 256;
+            }
+        }
+
+        // Calculate priority
+        oam_priorities_iram[oam_idx] = (u32)(
+            (o->priority_on_layer << 16) | 
+            (((o->final_oam.attr2 >> 10) & 3) << 24) |
+            (0x8000 - y)
+        );
+        i++; // either i was active to begin with or it was swapped with tail, which was active by definition
     }
+    oam_visible_cnt = (u8)i;
+    return oam_visible_cnt;
+}
+
+static void oam_calculate_y() {
+    // int cnt = oam_visible_cnt;
+    // s16 *ys = fmem.oam_ys;
+    // u8 *order = oam_order;
+    // for (int i = 0; i < cnt; i++) {
+    //     oam_object *o = oams + order[i];
+    //     int y = o->final_oam.attr0 & 0xFF;
+    //     if (y >= 160)
+    //         y -= 256;
+    //     if ((o->final_oam.attr0 & (ATTR0_ROTSCALE | ATTR0_DSIZE)) == (ATTR0_ROTSCALE | ATTR0_DSIZE) &&
+    //         (o->final_oam.attr1 >> 14)  == (ATTR1_SIZE_64_64 >> 14)) {
+    //         u32 shape = (o->final_oam.attr0 >> 14) & 3;
+    //         if (shape == (ATTR0_SHAPE_SQUARE >> 14) || shape == (ATTR0_SHAPE_VERTICAL >> 14)) {
+    //             if (y > 128)
+    //                 y -= 256;
+    //         }
+    //     }
+    //     ys[i] = (s16)y;
+    // }
+}
+
+void oam_calculate_position() {
+    // int cnt = oam_visible_cnt;
+    // for (int i = 0; i < cnt; i++) {
+    //     oam_object *o = oams + oam_order[i];
+    //     if (o->flags & OAM_FLAG_CENTERED) {
+    //         o->final_oam.attr1 = (u16)(((o->final_oam.attr1 >> 9) << 9) | ((
+    //             (o->x + o->x2 + o->x_centre + coordinate_camera_x_offset) & 0x1FF
+    //         ) & 0x1FF));
+    //         o->final_oam.attr0 = (u16)(((o->final_oam.attr0 >> 8) << 8) | (
+    //             (o->y + o->y2 + o->y_centre + coordinate_camera_y_offset) & 0xFF
+    //         ));
+    //     } else {
+    //         o->final_oam.attr1 = (u16)(((o->final_oam.attr1 >> 9) << 9) | ((
+    //             (o->x + o->x2 + o->x_centre) & 0x1FF
+    //         ) & 0x1FF));
+    //         o->final_oam.attr0 = (u16)(((o->final_oam.attr0 >> 8) << 8) | (
+    //             (o->y + o->y2 + o->y_centre) & 0xFF
+    //         ));
+
+    //     }
+    // }
 }
 
 void oam_calculate_priority() {
-    int cnt = oam_visible_cnt;
-    for (int i = 0; i < cnt; i++) {
-        u8 oam_idx = oam_order[i];
-        oam_object *o = oams + oam_idx;
-        oam_priorities[oam_idx] = (u16)(o->priority_on_layer | (((o->final_oam.attr2 >> 10) & 3) << 8));
-    }
+    // int cnt = oam_visible_cnt;
+    // for (int i = 0; i < cnt; i++) {
+    //     u8 oam_idx = oam_order[i];
+    //     oam_object *o = oams + oam_idx;
+    //     oam_priorities[oam_idx] = (u16)(o->priority_on_layer | (((o->final_oam.attr2 >> 10) & 3) << 8));
+    // }
 }
 
 void oam_sort() {
     size_t n = oam_visible_cnt;
     if (n == 0)
         return;
-    bool swapped;
-    size_t swaps = 0;
-    do {
-        swapped = false;
-        for (size_t i = 0; i < n - 1; i++) {
-            if (oam_priority_greater(i, i + 1)) {
-                u8 tmp = oam_order[i];
-                oam_order[i] = oam_order[i + 1];
-                oam_order[i + 1] = tmp;
-                swapped = true;
-                swaps++;
-            }
+    
+    // u8 idx_first, idx_second;
+    // bool swapped;
+    // do {
+    //     swapped = false;
+    //     for (size_t i = 0; i < n - 1; i++) {
+    //         idx_first = oam_order_iram[i];
+    //         idx_second = oam_order_iram[i + 1];
+    //         if (
+    //                 oam_priorities_iram[idx_first] > oam_priorities_iram[idx_second] 
+    //                 // || (oam_priorities_iram[idx_first] == oam_priorities_iram[idx_second] && oam_ys_iram[idx_first] < oam_ys_iram[idx_second])
+    //             ) {
+    //             u8 tmp = oam_order_iram[i];
+    //             oam_order_iram[i] = oam_order_iram[i + 1];
+    //             oam_order_iram[i + 1] = tmp;
+    //             swapped = true;
+    //         }
+    //     }
+    //     n--;
+    // } while (swapped);
+    
+    u8 current;
+    u32 j;
+    for (u32 i = 1; i < n; i++) {
+        current = oam_order_iram[i];
+        j = i;
+        while(j > 0 && oam_priorities_iram[oam_order_iram[j - 1]] > oam_priorities_iram[current]) {
+            u8 tmp = oam_order_iram[j];
+            oam_order_iram[j] = oam_order_iram[j - 1];
+            oam_order_iram[j - 1] = tmp;
+            j--;
         }
-        n--;
-    } while (swapped);
+        oam_order_iram[j] = current;
+    }  
 }
 
 static sprite oam_empty = {
@@ -198,9 +261,10 @@ void oam_copy_to_oam_buffer() {
     u8 cnt = 0;
     int vis_cnt = oam_visible_cnt;
     for (int i = 0; i < vis_cnt; i++) {
-        if (oam_add_to_buffer(oams + oam_order[i], &cnt))
+        if (oam_add_to_buffer(oams + oam_order_iram[i], &cnt))
             return;
     }
+    // dprintf("Oam buffer %d / %d full\n", cnt, oam_buffer_size);
     while(cnt < oam_buffer_size) {
         super.oam_attributes[cnt++] = oam_empty;
     }
@@ -210,17 +274,45 @@ void oam_proceed() {
     #if DEBUG_OAMS
         // oam_print_allocation_list();
     #endif
+
+    BENCHMARK_WRAP(benchmark_start();)
     oam_compress_and_calculate_visible_cnt(); // compresses the oam_order such that the first indices are the ones to render
+    BENCHMARK_WRAP(u32 t_compress = benchmark_end();)
+
     // dprintf("Visible %d\n", oam_visible_cnt);
+    BENCHMARK_WRAP(benchmark_start();)
     oam_calculate_position();
+    BENCHMARK_WRAP(u32 t_pos = benchmark_end();)
+
+    BENCHMARK_WRAP(benchmark_start();)
     oam_calculate_priority();
+    BENCHMARK_WRAP(u32 t_prio = benchmark_end();)
+
+    BENCHMARK_WRAP(benchmark_start();)
+    oam_calculate_y();
+    BENCHMARK_WRAP(u32 t_y = benchmark_end();)
+
+    BENCHMARK_WRAP(benchmark_start();)
     oam_sort();
+    BENCHMARK_WRAP(u32 t_sort = benchmark_end();)
+
     u8 tmp = super.disable_oams;
     super.disable_oams = true;
+
+    BENCHMARK_WRAP(benchmark_start();)
     oam_copy_to_oam_buffer();
+    BENCHMARK_WRAP(u32 t_copy = benchmark_end();)
+
+    BENCHMARK_WRAP(benchmark_start();)
     oam_copy_rotscale_to_buffer();
+    BENCHMARK_WRAP(u32 t_affine = benchmark_end();)
     super.disable_oams = (u8)(tmp & 1);
     oam_copy_requests_enabled = true;
+
+    BENCHMARK_WRAP(dprintf("\tOam sum %d, Vis %d, compr %d, pos %d, prio %d, sort %d, cpy %d, rs %d, y %d\n", 
+    t_compress + t_pos + t_prio +  t_y + t_sort + t_copy + t_affine,
+    
+    oam_visible_cnt, t_compress, t_pos, t_prio, t_sort, t_copy, t_affine, t_y);)
 }
 
 void oam_clear(oam_object *o); // Declare it here so no other file is tempted to use it. This should only be called internally
@@ -230,7 +322,7 @@ void oam_clear_all() {
     oam_active_cnt = 0;
     for (i = 0; i < NUM_OAMS; i++) {
         oam_clear(oams + i);
-        oam_order[i] = i;
+        oam_order_iram[i] = i;
     }
     oam_clear(oams + i);
     oam_allocation_initialize();
@@ -318,10 +410,24 @@ void oam_animations_proceed() {
                 // DEBUG("Animated sprite %d with callback %x andd template %x\n", current, current_object->callback, current_object->oam_template);
             }
             if (current_object->flags & OAM_FLAG_ACTIVE) {
-                oam_order[oam_active_cnt++] = current;
+                oam_order_iram[oam_active_cnt++] = current;
             } else {
-                oam_allocation_remove(list, current);
-                oam_allocation_insert_after(list, current, OAM_ALLOC_FREE_START);
+                // Remove from active list
+                u8 prev = list[current].previous;
+                list[prev].next = next;
+                list[next].previous = prev;
+
+                // Insert into free list
+                u8 free_start = list[OAM_ALLOC_FREE_START].next;
+                list[OAM_ALLOC_FREE_START].next = current;
+                list[current].previous = OAM_ALLOC_FREE_START;
+                list[current].next = free_start;
+                list[free_start].previous = current;
+
+
+
+                // oam_allocation_remove(list, current);
+                // oam_allocation_insert_after(list, current, OAM_ALLOC_FREE_START);
                 DEBUG("Garbage collection on %d\n", current);
             }
         }

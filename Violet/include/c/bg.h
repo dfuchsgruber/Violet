@@ -204,6 +204,11 @@ extern "C" {
      **/
     void bg_set_attribute(u8 bg_idx, u8 attribute, u8 value);
 
+    /**
+     * Executes all bg copy requests that were pushed so far
+     **/
+    void bg_virtual_sync_reqeust_proceed();
+
 #ifdef	__cplusplus
 }
 #endif
