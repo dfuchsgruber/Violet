@@ -1,10 +1,3 @@
-/* 
- * File:   debug.h
- * Author: Domi
- *
- * Created on 12. November 2016, 16:22
- */
-
 #ifndef DEBUG_H
 #define	DEBUG_H
 
@@ -14,31 +7,29 @@ extern "C" {
 
 #include "types.h"
 #include <stdarg.h>
+#include "mgba/mgba.h"
     
-#define ERR_UNKOWN_GRASS_ANIMATION 0
-#define ERR_TAN_16_COS_16_EQUALS_ZERO 1 
-#define ERR_HIDDEN_FLAG_CHUNK_GT_3 2
-#define ERR_FLAG_ACCESS_INVALID 3
-#define ERR_NO_REPEL_ITEM 4
-#define ERR_DUNGEON_GEN_PATTERN_MISMATCH_SEG_0 5
-#define ERR_DUNGEON_GEN_PATTERN_MISMATCH_SEG_1 6
-#define ERR_DUNGEON_GEN_PATTERN_MISMATCH_SEG_2 7
-#define ERR_DUNGEON_GEN_PATTERN_MISMATCH_SEG_3 8
-#define ERR_MEGA_CALLBACK_NOT_ACCESSIBLE 9
-#define ERR_GENERIC 10
-#define ERR_TRADE_EVO_NOT_IMPLEMENTED 11
-    
-    
-    void debug1(int a);
-    void debug2(int a, int b);
-    void debug3(int a, int b, int c);
-    void debug4(int a, int b, int c, int d);
-    void debugn(int *n);
-    void err(int e);
-    void err2(int e, int p);
+    #define NONE 0
+    #define MGBA 1
 
-    void dprintf(const char * str, ...);
-    void derrf(const char *str, ...);
+    #define DEBUG_TYPE MGBA
+
+    #if DEBUG_TYPE == MGBA
+        #define DEBUG(...) (mgba_printf(MGBA_LOG_DEBUG, __VA_ARGS__))
+        #define WARN(...) (mgba_printf(MGBA_LOG_WARN, __VA_ARGS__))
+        #define ERROR(...) (mgba_printf(MGBA_LOG_ERROR, __VA_ARGS__))
+    #endif
+
+    // void debug1(int a);
+    // void debug2(int a, int b);
+    // void debug3(int a, int b, int c);
+    // void debug4(int a, int b, int c, int d);
+    // void debugn(int *n);
+    // void err(int e);
+    // void err2(int e, int p);
+
+    // void dprintf(const char * str, ...);
+    // void derrf(const char *str, ...);
     
     /**
      * Starts benchmarking, i.e. starts a timer

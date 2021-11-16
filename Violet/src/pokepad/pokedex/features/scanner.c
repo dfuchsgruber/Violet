@@ -318,7 +318,7 @@ void pokedex_feature_scanner_print_generic_list(u16 entries[][2], int size){
         tbox_print_string(box_id, 2, 70, (u16)(16 * line), 0, 0,
                 &pokedex_feature_scanner_fontcolmap, 0, strbuf);
         
-        dprintf("Printing species %d with p %d\n", species, prob);
+        DEBUG("Printing species %d with p %d\n", species, prob);
     }
     bg_virtual_sync(0);
 }

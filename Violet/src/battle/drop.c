@@ -290,7 +290,7 @@ void battler_drop_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     for (size_t i = 0; i < ARRAY_COUNT(dropping_type_probabilities); i++) {
         u16 item = 0; u8 cnt = 0; 
         if (dropping_functions[i](battler_idx, &item, &cnt)) {
-            dprintf("Type %d made item %d droppable (absolute mass %d)\n", i, item, dropping_type_probabilities[i]);
+            DEBUG("Type %d made item %d droppable (absolute mass %d)\n", i, item, dropping_type_probabilities[i]);
             p[p_size] = dropping_type_probabilities[i];
             items[p_size] = item;
             cnts[p_size] = cnt;
@@ -328,7 +328,7 @@ static void battle_item_drop_compact(u8 battler_idx) {
         u16 item = BATTLE_STATE2->items_dropped[battler_idx][i];
         for (int j = i + 1; j < BATTLE_STATE2->num_items_dropped[battler_idx] && j < MAX_ITEMS_DROPPED_PER_BATTLER; j++) {
             if (BATTLE_STATE2->items_dropped[battler_idx][j] == item) {
-                dprintf("compactifying items at slot %d and %d\n", i, j);
+                DEBUG("compactifying items at slot %d and %d\n", i, j);
                 // Aggregate the same items
                 BATTLE_STATE2->items_dropped_cnt[battler_idx][i] = (u8) (BATTLE_STATE2->items_dropped_cnt[battler_idx][i] + 
                     BATTLE_STATE2->items_dropped_cnt[battler_idx][j]);
@@ -398,7 +398,7 @@ static void item_drop_summary_battle_gp_tbox_draw(u8 mode) {
 **/
 
 void bsc_cmd_itemdrop_and_payday() {
-    // dprintf("Payday in state %d\n", BATTLE_STATE2->item_dropping_state);
+    // DEBUG("Payday in state %d\n", BATTLE_STATE2->item_dropping_state);
     switch (BATTLE_STATE2->item_dropping_state) {
         case DROPPING_PAYDAY: {
             BATTLE_STATE2->item_dropping_state++;
@@ -430,7 +430,7 @@ void bsc_cmd_itemdrop_and_payday() {
                             BATTLE_STATE2->items_dropped[i][BATTLE_STATE2->num_items_dropped[i]] = item;
                             BATTLE_STATE2->items_dropped_cnt[i][BATTLE_STATE2->num_items_dropped[i]] = cnt;
                             BATTLE_STATE2->num_items_dropped[i]++;
-                            dprintf("Battler %d dropped item %d (cnt=%d)\n", i, item, cnt);
+                            DEBUG("Battler %d dropped item %d (cnt=%d)\n", i, item, cnt);
                         } else {
                             break;
                         }
@@ -448,7 +448,7 @@ void bsc_cmd_itemdrop_and_payday() {
                     **/
                     // Debugging:
                     for (int j = 0; j < BATTLE_STATE2->num_items_dropped[i]; j++) {
-                        dprintf("Player obtained item %d %d-times from battler %d\n", BATTLE_STATE2->items_dropped[i][j], BATTLE_STATE2->items_dropped_cnt[i][j], j);
+                        DEBUG("Player obtained item %d %d-times from battler %d\n", BATTLE_STATE2->items_dropped[i][j], BATTLE_STATE2->items_dropped_cnt[i][j], j);
                     }
                 } else {
                     BATTLE_STATE2->num_items_dropped[i] = 0; // Only opponents can drop items

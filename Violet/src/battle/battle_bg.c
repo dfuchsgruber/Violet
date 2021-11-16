@@ -271,14 +271,14 @@ void battle_bg_get(u8 id, const void **set, const void **map, const void **pal){
 
 u8 battle_bg_get_id(){
     u16 *var_override = var_access(BATTLE_BG_OVERRIDE);
-    //dprintf("Battle bg var override is %d\n", *var_override);
+    //DEBUG("Battle bg var override is %d\n", *var_override);
     if(*var_override)
         return (u8)(*var_override - 1);
     coordinate_t pos;
     player_get_coordinates(&pos.x, &pos.y);
     u8 bg_id = (u8)block_get_field_by_pos(pos.x, pos.y, 3);
     // In regions that use the Haweiland-Tileset, the shore background is replaced by the haweiland tileset
-    // dprintf("bgid %d, ts2 %x, mtshaw %x\n", bg_id, &mapfooter_virtual.tileset2, &maptileset_haweiland);
+    // DEBUG("bgid %d, ts2 %x, mtshaw %x\n", bg_id, &mapfooter_virtual.tileset2, &maptileset_haweiland);
     if (bg_id == BATTLE_BG_SHORE && mapheader_virtual.footer->tileset2 == &maptileset_haweiland) {
         bg_id = BATTLE_BG_HAWEILAND;
     }

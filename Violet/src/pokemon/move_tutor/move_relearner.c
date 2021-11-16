@@ -62,7 +62,7 @@ void move_relearner_initialize_list_menu() {
     u8 nickname[11]; 
     pokemon *p = player_pokemon + move_relearner_state->party_idx;
     int type = *var_access(VAR_ACCESIBLE_MOVE_TUTOR_TYPE);
-    dprintf("Relearner with type %d\n", type);
+    DEBUG("Relearner with type %d\n", type);
     if (type == 0) {
         move_relearner_state->num_learnable_moves = move_relearner_get_moves(p, move_relearner_state->learnable_moves);
     } else {
@@ -86,7 +86,7 @@ void move_relearner_initialize_list_menu() {
     gp_list_menu_template = move_relearner_list_menu_template;
     gp_list_menu_template.items = move_relearner_state->list_menu_items;
     gp_list_menu_template.item_cnt = (u16)(count + 1);
-    dprintf("Num learnable moves is %d\n", move_relearner_state->num_learnable_moves);
+    DEBUG("Num learnable moves is %d\n", move_relearner_state->num_learnable_moves);
 
     // A bit whack to put this here, but w/e
     // Turns off alpha blending effect

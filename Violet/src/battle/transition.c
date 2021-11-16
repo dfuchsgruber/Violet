@@ -41,7 +41,7 @@ u8 battle_trainer_get_transition_type() {
         return BATTLE_TRANSITION_REVOLUTIONARY;
 
     u8 transition_type = battle_transition_type_get_by_map();
-    dprintf("Trainer transition type is %d\n", transition_type);
+    DEBUG("Trainer transition type is %d\n", transition_type);
     int player_total_level;
     int opponent_total_level;
     if (fmem.trainers_cnt > 1) {

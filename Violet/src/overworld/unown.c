@@ -54,7 +54,7 @@ bool player_party_spells_unown_message() {
             party_message[j++] = (u8) pokemon_unown_get_letter(pid);
         }
     }
-    dprintf("Player party spells %d %d %d %d %d %d %d\n", party_message[0], party_message[1], party_message[2], 
+    DEBUG("Player party spells %d %d %d %d %d %d %d\n", party_message[0], party_message[1], party_message[2], 
         party_message[3], party_message[4], party_message[5], party_message[6]);
     party_message[j++] = 0xFF;
     int i;
@@ -108,7 +108,7 @@ void overworld_unown_wait_message(u8 self) {
 
 void overworld_unown_print_message() {
     u8 *message = unown_message_get(*var_access(0x8004));
-    dprintf("Printing unown message 0x%x\n", message);
+    DEBUG("Printing unown message 0x%x\n", message);
     fmem.gp_state = malloc(sizeof(overworld_unown_state_t));
     for (OVERWORLD_UNOWN_MESSAGE_STATE->message_length = 0; message[OVERWORLD_UNOWN_MESSAGE_STATE->message_length] != 0xFF; 
         OVERWORLD_UNOWN_MESSAGE_STATE->message_length++) {}

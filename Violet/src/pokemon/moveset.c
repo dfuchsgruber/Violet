@@ -14,7 +14,7 @@ static u16 pokemon_attempt_learning_move_by_evolution(pokemon_move *moveset) {
                 skip--;
             } else {
                 // Learn this new move
-                dprintf("Pokemon learns evolution move at index %d\n", fmem.pokemon_move_learning_evolution_move_idx);
+                DEBUG("Pokemon learns evolution move at index %d\n", fmem.pokemon_move_learning_evolution_move_idx);
                 return moveset[i].move_id;
             }
         }
@@ -30,7 +30,7 @@ u16 pokemon_attempt_learning_move_consider_evolution_moves(pokemon *p, u8 is_fir
         return 0;
 
     if (is_first_move) {
-        dprintf("Pokemon tries to learn its first move after evolution.\n");
+        DEBUG("Pokemon tries to learn its first move after evolution.\n");
         // First scroll through the moves to find the right idx
         pokemon_move_learning_current_move_idx = 0;
         fmem.pokemon_move_learning_evolution_move_idx = 0;
@@ -40,7 +40,7 @@ u16 pokemon_attempt_learning_move_consider_evolution_moves(pokemon *p, u8 is_fir
             }
             pokemon_move_learning_current_move_idx++;
         }
-        dprintf("First move is at idx %d: 0x%x\n", pokemon_move_learning_current_move_idx, moveset[pokemon_move_learning_current_move_idx].move_id);
+        DEBUG("First move is at idx %d: 0x%x\n", pokemon_move_learning_current_move_idx, moveset[pokemon_move_learning_current_move_idx].move_id);
     }
     // Check if we have any more evolution moves to learn
     u16 evolution_move = pokemon_attempt_learning_move_by_evolution(moveset);

@@ -27,7 +27,7 @@ void apply_final_damage_modifiers(){
         }
             
     }
-    dprintf("Attacker ability is %d\n", attacking_battler);
+    DEBUG("Attacker ability is %d\n", attacking_battler);
     switch(attacker->ability){
         case ANPASSUNG:{
             if(attacks[active_attack].type == attacker->type1 ||
@@ -46,7 +46,7 @@ void apply_final_damage_modifiers(){
         case ALLROUNDER:{
             if(attacks[active_attack].type != attacker->type1 &&
                     attacks[active_attack].type != attacker->type2){
-                dprintf("Allrounder activated for battler %d\n",
+                DEBUG("Allrounder activated for battler %d\n",
                         attacking_battler);
                 damage_apply_multiplier(1200);
             }
@@ -75,7 +75,7 @@ void apply_final_damage_modifiers(){
 
 
 void apply_pre_damage_modifiers(){
-    dprintf("Applying pre-demage modifiers... Damage before %d\n", damage_to_apply);
+    DEBUG("Applying pre-demage modifiers... Damage before %d\n", damage_to_apply);
     battler *attacker = &battlers[attacking_battler];
     battler *defender = &battlers[defending_battler];
     switch(attacker->ability){
@@ -107,20 +107,20 @@ void apply_pre_damage_modifiers(){
         }
     }
     if (BATTLE_STATE2->status_custom[defending_battler] & CUSTOM_STATUS_FLOATING_ROCKS) {
-        dprintf("Reduce damage caused to rock type battler %d.\n", defending_battler);
+        DEBUG("Reduce damage caused to rock type battler %d.\n", defending_battler);
         BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~CUSTOM_STATUS_FLOATING_ROCKS);
         damage_apply_multiplier(500);
     }
     if (BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_GEM_USED) {
-        dprintf("Gem increased damage for battler %d.\n", attacking_battler);
+        DEBUG("Gem increased damage for battler %d.\n", attacking_battler);
         // BATTLE_STATE2->status_custom[attacking_battler] &= (u32)(~CUSTOM_STATUS_GEM_USED);
         damage_apply_multiplier(1500);
     }
     if (BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY) {
-        dprintf("Berry decreased damage for battler %d.\n", defending_battler);
+        DEBUG("Berry decreased damage for battler %d.\n", defending_battler);
         damage_apply_multiplier(500);
     }
-    dprintf("Damage before bsc 0x6 %d\n", damage_to_apply);
+    DEBUG("Damage before bsc 0x6 %d\n", damage_to_apply);
     bsc_command_x06_typecalc();
     if ((battle_flags & BATTLE_TRAINER) && (trainer_vars.rival_flags & 4) && battler_is_opponent(defending_battler)) {
         // When battling Lucius, you're not allowed to do any significant damage
@@ -128,6 +128,6 @@ void apply_pre_damage_modifiers(){
     }
 
     apply_final_damage_modifiers();
-    dprintf("Damage after all modifiers %d\n", damage_to_apply);
+    DEBUG("Damage after all modifiers %d\n", damage_to_apply);
 }
 

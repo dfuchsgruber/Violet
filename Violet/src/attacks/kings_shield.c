@@ -15,9 +15,9 @@
 extern u8 bsc_kings_shield_drop[];
 
 void bsc_command_setprotect_apply_kings_shield(){
-    dprintf("Kings shield tried for battler %d\n", attacking_battler);
+    DEBUG("Kings shield tried for battler %d\n", attacking_battler);
     if(attacks[active_attack].effect == 0xE3){
-        dprintf("Kings shield triggered for battler %d\n", attacking_battler);
+        DEBUG("Kings shield triggered for battler %d\n", attacking_battler);
         BATTLE_STATE2->status_custom[attacking_battler] |= CUSTOM_STATUS_KINGS_SHIELD;
         battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 2;
         battler_statuses[attacking_battler].protect = true;
@@ -30,14 +30,14 @@ bool attack_is_protecting_move(u16 move){
 }
 
 bool protect_attack_succeeds(){
-    dprintf("Trying to apply protect state\n");
+    DEBUG("Trying to apply protect state\n");
     battler *attacker = &battlers[attacking_battler];
     if(BATTLE_STATE2->status_custom[defending_battler] & 
         CUSTOM_STATUS_KINGS_SHIELD){
-        dprintf("Defender %d is behind kings shield\n", defending_battler);
+        DEBUG("Defender %d is behind kings shield\n", defending_battler);
         //king shield protect, check if the move hits
         if(!(attacks[active_attack].flags & AFFECTED_BY_PROTECT)) return true;
-        dprintf("Category of attack is %d\n", attacks[active_attack].category);
+        DEBUG("Category of attack is %d\n", attacks[active_attack].category);
         if(attacks[active_attack].category == CATEGORY_STATUS) return true;
         if(attack_needs_charging(active_attack) && !(attacker->status2 &
                 STATUS2_ATTACK_CHARGED)) return true;

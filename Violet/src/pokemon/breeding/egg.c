@@ -21,7 +21,7 @@ u8 str_egg[] = LANGDEP(PSTRING("Ei"), PSTRING("Egg"));
 
 void overworld_egg_new(u16 species, int catch_location, pokemon *dst) {
   pokemon_new_egg(dst, species, true);
-  dprintf("Egg has language: %d\n", pokemon_get_attribute(dst, ATTRIBUTE_LANGUAGE, 0));
+  DEBUG("Egg has language: %d\n", pokemon_get_attribute(dst, ATTRIBUTE_LANGUAGE, 0));
   // Apply 31-ivs
   u8 iv = 31;
   for (int i = 0; i < 6; i++) {
@@ -33,7 +33,7 @@ void overworld_egg_new(u16 species, int catch_location, pokemon *dst) {
   // Apply hidden ability
   pokemon_set_hidden_ability(&dst->box);
   pokemon_set_attribute(dst, ATTRIBUTE_CATCH_LOCATION, &catch_location);
-  dprintf("Egg has language: %d\n", pokemon_get_attribute(dst, ATTRIBUTE_LANGUAGE, 0));
+  DEBUG("Egg has language: %d\n", pokemon_get_attribute(dst, ATTRIBUTE_LANGUAGE, 0));
 }
 
 int overworld_script_egg_with_custom_catch_location(u16 species, int catch_location) {

@@ -128,11 +128,11 @@ void battle_controller_partner_handle_choose_move() {
                 if (battlers_absent & int_bitmasks[defending_battler]) // If the left is absent, target the right one...
                     defending_battler = battler_get_by_position(BATTLE_POSITION_OPPONENT_RIGHT);
             }
-            dprintf("The chosen target of the partner was %d\n", defending_battler);
+            DEBUG("The chosen target of the partner was %d\n", defending_battler);
             // TODO: battle_controller_emit_move_chosen instead for link compatibility?
 
             // Mega evolution
-            // dprintf("Mega evolution for partner %d: %x\n", active_battler, battler_get_available_mega_evolution(active_battler));
+            // DEBUG("Mega evolution for partner %d: %x\n", active_battler, battler_get_available_mega_evolution(active_battler));
             if (battler_get_available_mega_evolution(active_battler)) {
                 MEGA_STATE.marked_for_mega_evolution[active_battler] = 1;
             }
@@ -159,15 +159,15 @@ void battle_controller_partner_handle_choose_action() {
 void battle_controller_partner_handle_choose_pokemon() {
     u8 target_idx;
     if (battle_state->battler_to_switch_into[active_battler] == 6) {
-        dprintf("Partner decides a suitable mon to switch into.\n");
+        DEBUG("Partner decides a suitable mon to switch into.\n");
         target_idx = battle_ai_get_pokemon_to_switch_into();
         if (target_idx == 6)
-            dprintf("No pokemon to switch into (partner) for battler %d\n", active_battler);
+            DEBUG("No pokemon to switch into (partner) for battler %d\n", active_battler);
     } else {
         target_idx = battle_state->battler_to_switch_into[active_battler];
     }
     battle_state->battler_to_switch_into[active_battler] = target_idx;
-    dprintf("Partner chose party idx %d\n", target_idx);
+    DEBUG("Partner chose party idx %d\n", target_idx);
     battle_controller_opponent_emit_chosen_pokemon(1, target_idx, NULL);
     battle_controller_player_or_partner_execution_finished();
 }
@@ -180,12 +180,12 @@ void battle_controller_partner_handle_choose_item() {
 }
 
 void battle_controller_partner_handle_exp_update() {
-    dprintf("Partner handle exp upadte\n");
+    DEBUG("Partner handle exp upadte\n");
     battle_controller_player_or_partner_execution_finished();
 }
 
 void battle_controller_partner_handle_draw_trainer_picture() {
-    dprintf("Load ally backsprite idx %d\n", fmem.ally_trainer_backsprite_idx);
+    DEBUG("Load ally backsprite idx %d\n", fmem.ally_trainer_backsprite_idx);
     battle_trainer_load_backsprite_palette(fmem.ally_trainer_backsprite_idx, active_battler);    
     trainer_gfx_initialize_gp_oam_template(fmem.ally_trainer_backsprite_idx, battler_get_position(active_battler));
     u8 oam_idx = oam_new_forward_search(&gp_oam_template, 90, 
@@ -200,7 +200,7 @@ void battle_controller_partner_handle_draw_trainer_picture() {
 }
 
 void battle_controller_partner_intro_ball_throw_allocate_palette() {
-    dprintf("Allocating pal %x\n", battle_is_tag() && battler_get_position(active_battler) == BATTLE_POSITION_PLAYER_RIGHT);
+    DEBUG("Allocating pal %x\n", battle_is_tag() && battler_get_position(active_battler) == BATTLE_POSITION_PLAYER_RIGHT);
     u8 pal_idx;
     if (battle_is_tag() && battler_get_position(active_battler) == BATTLE_POSITION_PLAYER_RIGHT) {
         pal_idx = oam_allocate_palette(0xd6f9);

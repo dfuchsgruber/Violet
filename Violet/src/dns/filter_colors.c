@@ -68,7 +68,7 @@ void pal_apply_shaders(u16 start_color, u16 number_colors) {
             if (dns_on()) {
                 filter_active = true;
                 filter = color_multiply(filter, dns_colors[pal_shaders]);
-                dprintf("DNS filter color %x\n", filter);
+                DEBUG("DNS filter color %x\n", filter);
             }
             break;
         case SHADER_CEOMETRIA_GYM_PUNISHMENT_ROOM:
@@ -78,13 +78,13 @@ void pal_apply_shaders(u16 start_color, u16 number_colors) {
         default:
             break;
     }
-    dprintf("Set filter to map weather %d\n", save1->map_weather);
+    DEBUG("Set filter to map weather %d\n", save1->map_weather);
     weather_set_filter(save1->map_weather);
     if (fmem.weather_blend_active) {
         filter_active = true;
         filter = color_multiply(filter, fmem.weather_blend);
     }
-    dprintf("Pal apply filters to color %d (num %d), filter 0x%x, filter active %d\n", start_color, number_colors, filter, filter_active);
+    DEBUG("Pal apply filters to color %d (num %d), filter 0x%x, filter active %d\n", start_color, number_colors, filter, filter_active);
     if (filter_active) {
         pal_color_multiply(start_color, number_colors, filter);
         cpuset(&pal_restore[start_color], &pals[start_color], CPUSET_HALFWORD | CPUSET_COPY | CPUSET_HALFWORD_SIZE(number_colors * sizeof(color_t)));

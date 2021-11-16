@@ -117,7 +117,7 @@ void dungeon2_set_encounter() {
 	  dungeon2_set_encounter_ocean();
 	  break;
   default:
-    derrf("Unknown dungeon type for overworld encounters %d\n", dungeon_get_type());
+    ERROR("Unknown dungeon type for overworld encounters %d\n", dungeon_get_type());
   }
 
 }

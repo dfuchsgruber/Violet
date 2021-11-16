@@ -96,7 +96,7 @@ oam_template ev_menu_oam_template_ev_hexagon = {
 void ev_menu_set_pixel(int x, int y) {
 	x += 32; y += 32; // Shift to the center
 	if (x < 0 || x >= 64 || y < 0 || y >= 64) {
-		dprintf("Attempt to set pixel outside the stat chart (%d, %d)\n", x ,y);
+		DEBUG("Attempt to set pixel outside the stat chart (%d, %d)\n", x ,y);
 		return;
 	}
 	int *sprite = fmem.ev_menu_state->render_sprite;

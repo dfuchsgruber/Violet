@@ -35,7 +35,7 @@ u8 player_pokemon_get_highest_level_flash_user() {
     if (idx < 6) {
         pokemon_party_menu_current_index = idx;
     }
-    dprintf("Highest flash user level is for index %d\n", idx);
+    DEBUG("Highest flash user level is for index %d\n", idx);
     return idx;
 }
 
@@ -59,6 +59,6 @@ void overworld_get_flash_level() {
         flash_level--;
     if (level > 50)
         flash_level--;
-    dprintf("Set flash level to %d because user has level %d\n", flash_level, level);
+    DEBUG("Set flash level to %d because user has level %d\n", flash_level, level);
     *var_access(LASTRESULT) = (u16)MAX(0, flash_level);
 }

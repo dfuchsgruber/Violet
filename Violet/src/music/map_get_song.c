@@ -7,7 +7,7 @@
 #include "debug.h"
 
 u16 map_get_song() {
-    dprintf("Saved music is %d\n", save1->map_music_override);
+    DEBUG("Saved music is %d\n", save1->map_music_override);
     u16 forced = *var_access(SONG_OVERRIDE);
     if(forced == 0xFFFF)return 0;
     if (forced) return forced;

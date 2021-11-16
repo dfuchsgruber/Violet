@@ -131,7 +131,7 @@ static void bruchfels_gym_facing_movement_free_callback(u8 self) {
     npc *n = npcs + npc_idx;
     if (!npc_movement_callback_is_active(n->overworld_id, n->map, n->bank)) {
         u8 *sequence = (u8*) big_callback_get_int(self, 2);
-        dprintf("Boulder rotation / mirroring finished.\n");
+        DEBUG("Boulder rotation / mirroring finished.\n");
         free(sequence);
         big_callback_delete(self);
     }
@@ -247,7 +247,7 @@ static u8 direction_flip_and_rotate(u8 direction, bool horizontal, bool vertical
 
 bool boulder_push_attempt(s16 x, s16 y, u8 direction) {
     u8 npc_idx = npc_get_by_position(x, y);
-    dprintf("Boulder push for npc %d @0x%x, 0x%x\n", npc_idx, x, y);
+    DEBUG("Boulder push for npc %d @0x%x, 0x%x\n", npc_idx, x, y);
     if (npc_idx == NUM_NPCS || npcs[npc_idx].sprite != OVERWORLD_SPRITE_STRENGTH_BOULDER) 
         return false;
     npc *n = npcs + npc_idx;
@@ -266,10 +266,10 @@ bool boulder_push_attempt(s16 x, s16 y, u8 direction) {
         }
         case PERSON_PUZZLE_BOULDER: {
             u32 pushable_directions = gym_puzzle_boulder_get_pushable_directions(npc_idx);
-            dprintf("Try to push boulder in direction %d with flags 0x%x\n", direction, pushable_directions);
+            DEBUG("Try to push boulder in direction %d with flags 0x%x\n", direction, pushable_directions);
             if ((pushable_directions & int_bitmasks[direction]) && npc_get_collision(n, dest_x, dest_y, direction) == COLLISION_NONE && 
                 !behaviour_is_non_animated_warp((u8)behaviour) && gym_puzzle_behaviour_is_pushable_lane(behaviour)) {
-                    dprintf("Boulder pushed\n");
+                    DEBUG("Boulder pushed\n");
                     boulder_animation_start(npc_idx, direction);
                     return true;
             }
@@ -280,9 +280,9 @@ bool boulder_push_attempt(s16 x, s16 y, u8 direction) {
 }
 
 static void npc_save_position_and_facing_to_person(npc *n) {
-    dprintf("Update boulder position for person %d to 0x%x, 0x%x\n", n->overworld_id, (u16)(n->dest_x - 7), (u16)(n->dest_y - 7));
+    DEBUG("Update boulder position for person %d to 0x%x, 0x%x\n", n->overworld_id, (u16)(n->dest_x - 7), (u16)(n->dest_y - 7));
     person_set_position(n->overworld_id, (s16)(n->dest_x - 7), (s16)(n->dest_y - 7));
-    dprintf("update facing to %d\n", n->direction.facing);
+    DEBUG("update facing to %d\n", n->direction.facing);
     switch (n->direction.facing) {
         case DIR_DOWN:
             person_set_behaviour(n->overworld_id, BEHAVIOUR_FACE_DOWN); break;
@@ -330,11 +330,11 @@ static void bruchfels_gym_puzzle_flip_and_rotate_boulders(bool horizontal, bool 
             u8 npc_idx = 0;
             if (!npc_get_id_by_overworld_id(p->target_index, save1->map, save1->bank, &npc_idx)) {
                 if (direction != npcs[npc_idx].direction.facing) {
-                    dprintf("Warning: Boulder with person idx %d had person direction %d but npc direction %d\n", i, direction, npcs[npc_idx].direction.facing);
+                    DEBUG("Warning: Boulder with person idx %d had person direction %d but npc direction %d\n", i, direction, npcs[npc_idx].direction.facing);
                     direction = npcs[npc_idx].direction.facing;
                     direction_new = direction_flip_and_rotate(direction, horizontal, vertical, rotate);
                 }
-                dprintf("Npc %d gets a new direction %d (person is %d)\n", npc_idx, direction_new, p->target_index);
+                DEBUG("Npc %d gets a new direction %d (person is %d)\n", npc_idx, direction_new, p->target_index);
                 npc *n = npcs + npc_idx;
                 npc_set_facing(n, direction_new);
                 npc_save_position_and_facing_to_person(n);

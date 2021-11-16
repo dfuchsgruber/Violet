@@ -47,7 +47,7 @@ bool trainerschool_wildbattle_initialize_secondary_starter() {
 			species = POKEMON_BISASAM;
 			break;
 		default:
-			derrf("Unkown starter selection value %d\n", *var_access(STARTER_SELECTED));
+			ERROR("Unkown starter selection value %d\n", *var_access(STARTER_SELECTED));
 		}
 		pokemon_clear_opponent_party();
 		// Spawn the encounter with the seed algorithm

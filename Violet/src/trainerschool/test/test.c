@@ -168,8 +168,8 @@ static void trainerschool_clock_callback(oam_object *self) {
         return;
     }
     u8 anim_idx = (u8)(TRAINER_SCHOOL_TEST_STATE->timer * 4 / TEST_TIME);
-    // dprintf("Anim idx %d\n", anim_idx);
-    dprintf("Timer %d\n", TRAINER_SCHOOL_TEST_STATE->timer);
+    // DEBUG("Anim idx %d\n", anim_idx);
+    DEBUG("Timer %d\n", TRAINER_SCHOOL_TEST_STATE->timer);
     if (anim_idx != self->anim_number) {
         self->anim_number = anim_idx;
         oam_gfx_anim_init(self, 0);
@@ -203,10 +203,10 @@ u8 str_trainerschool_test_cursor[] = PSTRING("▶");
 
 void trainerschool_test_load_answers(){
     u8 question = TRAINER_SCHOOL_TEST_STATE->current_question;
-    dprintf("Question %d\n", question);
+    DEBUG("Question %d\n", question);
     int i;
     for(i = 0; i < 5; i++){
-        dprintf("Printing answer %d\n", i);
+        DEBUG("Printing answer %d\n", i);
         tbox_flush_set((u8)(i + 1), 0);
         tbox_tilemap_draw((u8)(i + 1));
         
@@ -220,7 +220,7 @@ void trainerschool_test_load_answers(){
                     strbuf);
             
         }else{
-            dprintf("clearing answer %d\n", i);
+            DEBUG("clearing answer %d\n", i);
             //tbox_flush_map((u8)(i + 1));
             u8 str_none[] = {0xFF};
             tbox_print_string((u8)(i + 1), 2, 0, 0, 0, 0, 

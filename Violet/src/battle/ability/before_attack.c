@@ -58,7 +58,7 @@ bool battle_abilities_before_attack(){
     battler *attacker = &battlers[attacking_battler];
     switch(attacker->ability){
         case WANDLUNGSK:{
-            // dprintf("Lauched ability 'Wandlungsk.'");
+            // DEBUG("Lauched ability 'Wandlungsk.'");
             u8 attack_type = attacks[active_attack].type;
             if(attacker->type1 != attack_type || attacker->type2 != attack_type){
                 defending_battler_ability = attacker->ability;
@@ -82,7 +82,7 @@ bool battle_abilities_before_attack(){
                 battle_animation_user = attacking_battler;
                 battle_animation_target = attacking_battler;
                 battle_scripting.battler_idx = attacking_battler;
-                // dprintf("User index %d, target index %d\n", attacking_battler, attacking_battler);
+                // DEBUG("User index %d, target index %d\n", attacking_battler, attacking_battler);
                 bsc_offset = bsc_stance_change_to_attack;
                 return true;
                 
@@ -95,7 +95,7 @@ bool battle_abilities_before_attack(){
                 battle_animation_user = attacking_battler;
                 battle_animation_target = attacking_battler;
                 battle_scripting.battler_idx = attacking_battler;
-                dprintf("User index %d, target index %d\n", attacking_battler, 
+                DEBUG("User index %d, target index %d\n", attacking_battler, 
                         attacking_battler);
                 bsc_offset = bsc_stance_change_to_defense;
                 return true;

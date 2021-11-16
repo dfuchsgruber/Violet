@@ -2057,9 +2057,9 @@ overworld_sprite *overworld_sprites[] = {
 
 overworld_sprite *overworld_get (u16 picture){
     if(picture >= 0xF0){
-		// dprintf("Picture is %d\n", *var_access((u16)(0x4010+picture-0xF0)));
+		// DEBUG("Picture is %d\n", *var_access((u16)(0x4010+picture-0xF0)));
         return overworld_sprites[*var_access((u16)(0x4010 + picture - 0xF0))];
     }
-	// dprintf("Var STORY PROGRESS @0x%x is %d\n", var_access(STORY_PROGRESS), *var_access(STORY_PROGRESS));
+	// DEBUG("Var STORY PROGRESS @0x%x is %d\n", var_access(STORY_PROGRESS), *var_access(STORY_PROGRESS));
     return overworld_sprites[picture];
 }

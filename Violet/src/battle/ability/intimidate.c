@@ -22,7 +22,7 @@ extern u8 bsc_letzte_glocke_end3[];
 bool battle_abilities_intimidate2() {
     for (u8 i = 0; i < battler_cnt; i++) {
         if (battler_statuses3[i] & STATUS3_INTIMIDATE_POKES) {
-            dprintf("Battler %d intimidates2 with ability %d\n", i, battlers[i].ability);
+            DEBUG("Battler %d intimidates2 with ability %d\n", i, battlers[i].ability);
             if (battlers[i].ability == BEDROHER) {
                 defending_battler_ability = battlers[i].ability;
                 battler_statuses3[i] &= (u32)(~STATUS3_INTIMIDATE_POKES);
@@ -60,7 +60,7 @@ bool battle_abilities_intimidate2() {
 bool battle_abilities_intimidate1() {
     for (u8 i = 0; i < battler_cnt; i++) {
         if (battler_statuses3[i] & STATUS3_INTIMIDATE_POKES) {
-            dprintf("Battler %d intimidates1 with ability %d\n", i, battlers[i].ability);
+            DEBUG("Battler %d intimidates1 with ability %d\n", i, battlers[i].ability);
             if (battlers[i].ability == BEDROHER) {
                 defending_battler_ability = BEDROHER;
                 battler_statuses3[i] &= (u32)(~STATUS3_INTIMIDATE_POKES);

@@ -19,9 +19,9 @@ void ow_script_fadescreen_palette_backup() {
 }
 
 bool script_cmd_x97_fadescreen(ow_script_state *ow_state){
-    //dprintf("Script state is %x\n", ow_state->script);
+    //DEBUG("Script state is %x\n", ow_state->script);
     u8 type = *(ow_state->script++);
-    //dprintf("Script state is %x\n", ow_state->script);
+    //DEBUG("Script state is %x\n", ow_state->script);
     if(type == FADE_FROM_BLACK || type == FADE_FROM_WHITE){
         //Fade back from black or white
         cpuset(pal_tmp, pal_restore, 0x4000100);
@@ -46,7 +46,7 @@ void _pal_load_comp(const void *src, u16 color, u16 bytes){
 
 void overworld_fadescreen(bool fade_from) {
     u8 delay = (u8)(*var_access(VAR_MAP_TRANSITION_FADING_DELAY));
-    dprintf("Overworld fadescreen with delay %d, fade from %d\n", delay, fade_from);
+    DEBUG("Overworld fadescreen with delay %d, fade from %d\n", delay, fade_from);
     if (map_transition_is_exit(map_previous_get_type(), map_current_get_type())) {
         if (fade_from) {
             pal_set_all_to_white(); 

@@ -1335,7 +1335,7 @@ overworld_sprite *overworld_sprite_get_by_berry_idx(u8 berry, u8 stage, bool fer
 	else if (stage == BERRY_STAGE_SPROUT)
 		return &overworld_berry_tree_sprout;
     overworld_sprite *r = &overworlds_berry_trees[berry][stage - BERRY_STAGE_TALLER];
-	//dprintf("Is @0x%x\n", r);
+	//DEBUG("Is @0x%x\n", r);
 	return r;
 }
 

@@ -15,7 +15,7 @@ u16 generic_tileset_anim_get_clk(tileset_animation_header *anim_header){
         clk_cycle = kgv(clk_cycle, anim_header->animations[i].cycle *
                 anim_header->animations[i].speed);
     if(clk_cycle > 0xFFFF){
-        dprintf("Tileset animation init failed: no common clk cycle found: %d\n", clk_cycle);
+        DEBUG("Tileset animation init failed: no common clk cycle found: %d\n", clk_cycle);
         clk_cycle = 640 * 9; //has a lot of common divisors (2^7 * 5 * 3^2)
     }
     return (u16)clk_cycle;

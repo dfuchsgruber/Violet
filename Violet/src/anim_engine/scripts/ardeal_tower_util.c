@@ -121,7 +121,7 @@ void animation_ardeal_tower_falling_bg_animation(u8 self) {
         tilemap_src = *frame ? gfx_ardeal_tower_hiro_falling2Map : gfx_ardeal_tower_hiro_falling1Map;
     }
     bg_copy_vram(BG_IDX, tileset_src, 0x2000, 0, BG_COPY_TILESET);
-    // dprintf("Tileset %x, frame %d\n", tileset_src, *frame);
+    // DEBUG("Tileset %x, frame %d\n", tileset_src, *frame);
     lz77uncompwram(tilemap_src, bg_get_tilemap(BG_IDX));
     bg_copy_vram(BG_IDX, bg_get_tilemap(BG_IDX), 0x800, 0, BG_COPY_TILEMAP);
     *frame ^= 1;

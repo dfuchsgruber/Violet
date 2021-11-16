@@ -188,7 +188,7 @@ bool pokeradar_step() {
     u16 steps = (*var_access(POKERADAR_ENEMY_STATE))++;
     int r = FIXED_TO_INT(FIXED_MUL(rnd_normal(), INT_TO_FIXED(3)) + INT_TO_FIXED(6)); // Normal distribution that peaks at 6 steps with a spread of 3 steps
     r = MIN(10, MAX(2, r)); // A Pokémon stays for at least 2 steps without changing position and at most 10 steps
-    // dprintf("Pokeradar movement treshold is %d\n", r);
+    // DEBUG("Pokeradar movement treshold is %d\n", r);
     if (steps > r) {
 
         //we either do a pos change (0,75) or a flee (0,25)

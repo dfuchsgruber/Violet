@@ -16,7 +16,7 @@ void battle_controller_emit_move_chosen(u8 buffer_idx, u8 chosen_move_idx, u8 ta
     battle_buffer_transfer[3] = target_battler_idx;
     battle_buffer_transfer[4] = mega_evolution;
     battle_buffer_request_data_transfer(buffer_idx, battle_buffer_transfer, 5);
-    dprintf("Emitted move chosen for battler %d\n", target_battler_idx);
+    DEBUG("Emitted move chosen for battler %d\n", target_battler_idx);
 }
 
 // TODO: This function must replace a code block in the battle callback, i.e. 

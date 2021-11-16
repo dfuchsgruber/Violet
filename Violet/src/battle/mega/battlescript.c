@@ -41,7 +41,7 @@ void battler_update_after_form_change(u8 battler_idx) {
 void battler_form_change(u8 battler_idx, u16 species) {
     int party_idx = battler_idx_to_party_idx(battler_idx);
     pokemon *mon = !battler_is_opponent(battler_idx) ? player_pokemon + party_idx : opponent_pokemon + party_idx;
-    // dprintf("Mon is %x for battler %d\n", mon, battler_idx);
+    // DEBUG("Mon is %x for battler %d\n", mon, battler_idx);
     pokemon_set_attribute(mon, ATTRIBUTE_SPECIES, &species);
     pokemon_calculate_stats(mon);
     battler_update_after_form_change(battler_idx);
@@ -51,7 +51,7 @@ void battler_form_change(u8 battler_idx, u16 species) {
 }
 
 bool battle_execute_action_mega_evolution() {
-    // dprintf("Exectute mega in state %d\n", MEGA_STATE.mega_action_state);
+    // DEBUG("Exectute mega in state %d\n", MEGA_STATE.mega_action_state);
     switch (MEGA_STATE.mega_action_state) {
         case MEGA_ACTION_INITIALIZE:
             MEGA_STATE.mega_action_current_slot = 0;
@@ -83,7 +83,7 @@ bool battle_execute_action_mega_evolution() {
                                 trainer_idx = trainer_vars.trainer_id;
                                 break;
                         }
-                        // dprintf("Trainer idx for the string is %d\n", trainer_idx);
+                        // DEBUG("Trainer idx for the string is %d\n", trainer_idx);
                         if (trainer_idx == 0xFFFF) { // Player
                             bsc_string_buffer0[0] = 0xFF; // No trainer class
                             strcpy(bsc_string_buffer1, save2->player_name);
@@ -102,15 +102,15 @@ bool battle_execute_action_mega_evolution() {
                         else if (MEGA_STATE.marked_for_mega_evolution[battler_idx] == REGENT_EVOLUTION) {
                             battlescript_init_and_interrupt_battle(battlescript_regent_evolution);
                         } else {
-                            derrf("Unkown mega type for script initialization %d\n", MEGA_STATE.marked_for_mega_evolution[battler_idx]);
+                            ERROR("Unkown mega type for script initialization %d\n", MEGA_STATE.marked_for_mega_evolution[battler_idx]);
                         }
                     } else {
-                        dprintf("Battler %d appearently was marked for mega evolution but has no available mega evolution. That is weird and should not happen...", battler_idx);
+                        DEBUG("Battler %d appearently was marked for mega evolution but has no available mega evolution. That is weird and should not happen...", battler_idx);
                     }
                     active_battler = battler_idx;
                     MEGA_STATE.mega_action_state = MEGA_ACTION_BATTLE_ENTER_ABILITIES;
                     MEGA_STATE.marked_for_mega_evolution[battler_idx] = 0;
-                    // dprintf("Returning true\n");
+                    // DEBUG("Returning true\n");
                     return true;
                 }
             }

@@ -95,7 +95,7 @@ void dungeon_map_set_tiles() {
 					block_set_by_pos((s16)(x + 8), (s16)(y + 8), 0x277 | BLOCK_SOLID);
 
 				} else {
-					derrf("Unkown dungeon type to spawn %d\n", dungeon_locations[i].type);
+					ERROR("Unkown dungeon type to spawn %d\n", dungeon_locations[i].type);
 				}
 			}
 		}
@@ -142,13 +142,13 @@ int dungeon_get_location_idx_player_is_facing() {
 int dungeon_map_entrance_get_type() {
 	int dungeon_idx = dungeon_get_location_idx_player_is_facing();
 	if (dungeon_idx == -1) {
-		derrf("No dungeon matches the current entrance\n");
+		ERROR("No dungeon matches the current entrance\n");
 	}
 	return dungeon_locations[dungeon_idx].type;
 }
 
 void dungeon_map_entrance_set_flag() {
-	dprintf("Set flag for dungeon %d\n", *var_access(0x8000));
+	DEBUG("Set flag for dungeon %d\n", *var_access(0x8000));
 	dungeon_flag_set(*var_access(0x8000));
 }
 
@@ -157,5 +157,5 @@ void dungeon2_seed_init() {
 	u32 dungeon_idx = *var_access(0x8000);
 	u32 seq[1] = {dungeon_idx};
 	cmem.dg2.initial_seed = daily_events_hash(seq, 1);
-	dprintf("Setup seed for dungeon %d to %d\n", dungeon_idx, cmem.dg2.initial_seed);
+	DEBUG("Setup seed for dungeon %d to %d\n", dungeon_idx, cmem.dg2.initial_seed);
 }

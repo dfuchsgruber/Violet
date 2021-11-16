@@ -63,7 +63,7 @@ static u8 ceometria_gym_generate_room() {
             room = (u8)(ceometria_gym_rnd() % NUM_CEOMETRIA_GYM_ROOM_TYPES);
         }
     }
-    if (room == NUM_CEOMETRIA_GYM_ROOM_TYPES) derrf("Couldn't sample any room type.\n");
+    if (room == NUM_CEOMETRIA_GYM_ROOM_TYPES) ERROR("Couldn't sample any room type.\n");
     return room;
 }
 
@@ -191,7 +191,7 @@ bool ceometria_gym_room_is_negative(u8 type) {
         case CEOMETRIA_GYM_REDUCE_PP_ROOM:
             return true;
         default:
-            derrf("Unkown room type (%d) to hint\n", type);
+            ERROR("Unkown room type (%d) to hint\n", type);
             return false;
     }
 }
@@ -201,7 +201,7 @@ void ceometria_gym_waiting_room_person_get_script() {
     int variant = cmem.ceometria_gym_state.persons[person_idx].variant % 8;
     int target_room = cmem.ceometria_gym_state.persons[person_idx].target % 3;
     u8 target_room_type = cmem.ceometria_gym_state.next_rooms[target_room];
-    dprintf("Type is %d\n", cmem.ceometria_gym_state.persons[person_idx].type);
+    DEBUG("Type is %d\n", cmem.ceometria_gym_state.persons[person_idx].type);
     switch (cmem.ceometria_gym_state.persons[person_idx].type) {
         case CEOMETRIA_GYM_SAY_NOTHING: {
             overworld_script_virtual_ptr = ceometria_gym_person_scripts_say_nothing[variant];
@@ -225,7 +225,7 @@ void ceometria_gym_waiting_room_person_get_script() {
             break;
         }
         default:
-            derrf("Unkown person type %d\n", cmem.ceometria_gym_state.persons[person_idx].type);
+            ERROR("Unkown person type %d\n", cmem.ceometria_gym_state.persons[person_idx].type);
     }
 
 }

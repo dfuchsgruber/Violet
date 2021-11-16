@@ -56,7 +56,7 @@ void fata_morgana_update_blocks_dont_redraw() {
     fata_morgana_setmaptiles(true);
     s16 coordinates[2];
     player_get_coordinates(&coordinates[0], &coordinates[1]);
-    dprintf("Fata morgana player at %d, %d\n", coordinates[0], coordinates[1]);
+    DEBUG("Fata morgana player at %d, %d\n", coordinates[0], coordinates[1]);
 }
 
 

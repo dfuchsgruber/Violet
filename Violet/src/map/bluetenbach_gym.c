@@ -34,11 +34,11 @@ static void rotating_doors_set_blocks() {
     u16 rotation = *var_access(VAR_BLUETENBACH_GYM_ROTATION);
     for (u8 idx = 0; idx < ARRAY_COUNT(rotating_walls); idx++) {
         u32 height = rotating_walls[idx].footer->height / 4; // Each footer has all 4 "frames" already
-        // dprintf("Drawing wall %d, rotation %d at height %d\n", idx, rotation, height);
+        // DEBUG("Drawing wall %d, rotation %d at height %d\n", idx, rotation, height);
         for (u16 i = 0; i < rotating_walls[idx].footer->width; i++) {
             for (u16 j = 0; j < height; j++) {
                 u32 block_idx = (rotation * height + j) * rotating_walls[idx].footer->width + i;
-                // dprintf("At (%d, %d) get block idx %d\n", i, j, block_idx);
+                // DEBUG("At (%d, %d) get block idx %d\n", i, j, block_idx);
                 u16 block = rotating_walls[idx].footer->map[block_idx].block_id;
                 block = (u16)(block | (rotating_walls[idx].footer->map[block_idx].level << 10));
                 block_set_by_pos((s16)(rotating_walls[idx].x + i), (s16)(rotating_walls[idx].y + j), block);

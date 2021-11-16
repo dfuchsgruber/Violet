@@ -485,7 +485,7 @@ void pokedex_habitats_update() {
     pokedex_habitats_load_namespace();
     //update the rarity oams
     pokedex_habitat_pair *habitats = fmem.dex_mem->habitats;
-    dprintf("Habitats @%x\n", habitats);
+    DEBUG("Habitats @%x\n", habitats);
     int cursor_x = fmem.dex_mem->habitat_cursor_x;
     int cursor_y = fmem.dex_mem->habitat_cursor_y;
     for (int habitat_type = 0; habitat_type < 6; habitat_type++) {

@@ -372,11 +372,11 @@ u16 trainer_idx_by_battler_idx(u8 battler_idx) {
 }
 
 u8 *trainer_get_name(u16 trainer_idx) {
-        dprintf("Return dynamic trainer name.\n");
+        DEBUG("Return dynamic trainer name.\n");
     if (trainers[trainer_idx].trainerclass == TRAINERCLASS_RIVALE || trainers[trainer_idx].trainerclass == TRAINERCLASS_RIVALE2) {
         return string_get_placeholder(6);
     } else if (trainer_idx >= 0x1e0 && trainer_idx < 0x1e4) {
-        dprintf("Return dynamic trainer name.\n");
+        DEBUG("Return dynamic trainer name.\n");
         return fmem.dynamic_trainer_name;
     }
     else

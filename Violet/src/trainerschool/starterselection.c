@@ -176,7 +176,7 @@ void trainerschool_selection_show_species_text(){
 
 void trainerschool_selection_delete_species_text(){
     u8 box_id = (u8)(TSS_MEM->cursor + 1);
-    dprintf("Delete text with boxid %d\n", box_id);
+    DEBUG("Delete text with boxid %d\n", box_id);
     tbox_flush_set(box_id, 0);
     tbox_sync(box_id, TBOX_SYNC_MAP_AND_SET);
     tbox_flush_map(0);

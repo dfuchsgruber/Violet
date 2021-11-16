@@ -63,7 +63,7 @@ static u8 *item_effect_result_strings[] = {
 
 void item_effect_print_result(u16 item) {
     u8 item_effect_type = item_get_effect_type(item);
-    dprintf("Item %d has effect type %d\n", item, item_effect_type);
+    DEBUG("Item %d has effect type %d\n", item, item_effect_type);
     switch (item_effect_type) {
         case ITEM_EFFECT_HEAL_BURN: {
             u8 s[] = LANGDEP(PSTRING("Verbrennung"), PSTRING("burn"));

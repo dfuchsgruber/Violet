@@ -34,7 +34,7 @@ bool rock_climb_block_is_climbable() {
 		// Check if the adjacent tile is climbable
 		u32 hm_usage = block_get_field_by_pos((s16)(faced_pos.coordinates.x),
 				(s16)(faced_pos.coordinates.y), BDATA_HM_USAGE);
-		dprintf("Check position %d, %d, rock climb: %d\n", faced_pos.coordinates.x,
+		DEBUG("Check position %d, %d, rock climb: %d\n", faced_pos.coordinates.x,
 				faced_pos.coordinates.y, hm_usage);
 		return (hm_usage & HM_USAGE_ROCK_CLIMB) > 0;
 	}

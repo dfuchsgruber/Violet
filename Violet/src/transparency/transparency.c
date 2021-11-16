@@ -31,7 +31,7 @@ const color_t tbox_palette_transparent [16] = {
 };
 
 bool transparency_is_on() {
-    //dprintf("Transparency used by weather %d, bypassed %d\n", transparency_used_by_weather(), checkflag(FLAG_BYPASS_TRANSPARENCY));
+    //DEBUG("Transparency used by weather %d, bypassed %d\n", transparency_used_by_weather(), checkflag(FLAG_BYPASS_TRANSPARENCY));
     return !checkflag(TRANS_DISABLE) && !transparency_used_by_weather();
 }
 

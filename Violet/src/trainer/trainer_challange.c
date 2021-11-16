@@ -26,12 +26,12 @@ void special_player_facing() {
     coordinate_t position;
     player_get_coordinates(&position.x, &position.y);
     u8 person_idx = (u8) (*var_access(LASTTALKED));
-        dprintf("Lasttalked is %d\n", *var_access(LASTTALKED));
+        DEBUG("Lasttalked is %d\n", *var_access(LASTTALKED));
     if (person_idx == 0) // No target person chosen
         return;
     u8 npc_id;
     if (!npc_get_id_by_overworld_id(person_idx, save1->map, save1->bank, &npc_id)) {
-        dprintf("Target npc %d\n", npc_id);
+        DEBUG("Target npc %d\n", npc_id);
         s16 npc_x = npcs[npc_id].dest_x;
         s16 npc_y = npcs[npc_id].dest_y;
         if (ABS(position.x - npc_x) > ABS(position.y - npc_y)) {
@@ -110,7 +110,7 @@ int trainerbattle_initialize_by_npc_idx(u8 npc_idx) {
             num_trainers = 1;
         }
         fmem.trainers_npc_idxs[fmem.trainers_cnt] = npc_idx;
-        dprintf("Register script %x for trainer %d\n", script, fmem.trainers_cnt);
+        DEBUG("Register script %x for trainer %d\n", script, fmem.trainers_cnt);
         fmem.trainers_scripts[fmem.trainers_cnt] = script;
         fmem.trainers_cnt++;
         trainer_npc_move_to_player(npcs + npc_idx, (u8)(distance - 1)); 
@@ -275,12 +275,12 @@ bool trigger_npc_spotting() {
 u8 trainer_get_current_npc_idx() {
     trainer_npc_idx = fmem.trainers_npc_idxs[fmem.current_trainer];
     *var_access(LASTTALKED) = npcs[trainer_npc_idx].overworld_id;
-    dprintf("Current npc idx is %d\n", trainer_npc_idx);
+    DEBUG("Current npc idx is %d\n", trainer_npc_idx);
     return trainer_npc_idx;
 }
 
 void trainer_approach_second() {
-    dprintf("Trainer approach second %d of %d\n", fmem.current_trainer, fmem.trainers_cnt);
+    DEBUG("Trainer approach second %d of %d\n", fmem.current_trainer, fmem.trainers_cnt);
     if (fmem.current_trainer < fmem.trainers_cnt - 1) {
         fmem.current_trainer++;
         npc_update_oam_delay_all(); // Unfreezes npcs
@@ -360,16 +360,16 @@ static trainerbattle_configuration trainerbattle_configuration_ally_two_trainers
 };
 
 void trainer_configuration_print(trainer_variables *v) {
-    dprintf("Trainer id %x\n", v->trainer_id);
-    dprintf("Ow target %x\n", v->overworld_target);
-    dprintf("Padding id %x\n", v->padding);
-    dprintf("challange_text id %x\n", v->challange_text);
-    dprintf("defeat text %x\n", v->defeat_text);
-    dprintf("victory text %x\n", v->victory_text);
-    dprintf("unable to battle text %x\n", v->unable_to_battle_text);
-    dprintf("scr later %x\n", v->script_later);
-    dprintf("scr cont %x\n", v->script_continue);
-    dprintf("rival flag %x\n", v->rival_flags);
+    DEBUG("Trainer id %x\n", v->trainer_id);
+    DEBUG("Ow target %x\n", v->overworld_target);
+    DEBUG("Padding id %x\n", v->padding);
+    DEBUG("challange_text id %x\n", v->challange_text);
+    DEBUG("defeat text %x\n", v->defeat_text);
+    DEBUG("victory text %x\n", v->victory_text);
+    DEBUG("unable to battle text %x\n", v->unable_to_battle_text);
+    DEBUG("scr later %x\n", v->script_later);
+    DEBUG("scr cont %x\n", v->script_continue);
+    DEBUG("rival flag %x\n", v->rival_flags);
 }
 
 extern u8 ow_script_trainerbattle_pirate_challange_after_approach[];
@@ -420,7 +420,7 @@ u8 *trainer_configure_by_overworld_script(u8 *ow_script) {
             trainerbattle_configure(trainerbattle_configuration_ally, ow_script);
             trainerbattle_load_target_npc();
             *var_access(VAR_ALLY) = fmem.ally_trainer_idx;
-            dprintf("Ally is %d\n", *var_access(VAR_ALLY));
+            DEBUG("Ally is %d\n", *var_access(VAR_ALLY));
             trainer_configuration_print(&trainer_vars);
             return ow_script_trainerbattle_double_dont_check_enough_pokemon; // We don't check for double battles, as the ally always should have one pokemon...
         case TRAINER_BATTLE_ALLY_TWO_TRAINERS:
@@ -428,18 +428,18 @@ u8 *trainer_configure_by_overworld_script(u8 *ow_script) {
             trainerbattle_configure(trainerbattle_configuration_ally_two_trainers, ow_script);
             trainerbattle_load_target_npc();
             *var_access(VAR_ALLY) = fmem.ally_trainer_idx;
-            dprintf("Ally is %d\n", *var_access(VAR_ALLY));
+            DEBUG("Ally is %d\n", *var_access(VAR_ALLY));
             trainer_configuration_print(&trainer_vars);
             return ow_script_trainerbattle_double_dont_check_enough_pokemon; // We don't check for double battles, as the ally always should have one pokemon...
         case TRAINER_BATTLE_SINGLE:
         default: { // For spotted trainer double battles
             if (fmem.current_trainer == 0) { // Initialize trainerA 
-                dprintf("Configure trainerA @%x\n", ow_script);
+                DEBUG("Configure trainerA @%x\n", ow_script);
                 trainerbattle_configure(trainerbattle_configuration_single, ow_script);  
                 // print_trainer_configuration(&trainer_vars);
                 trainerbattle_load_target_npc();
             } else { // Initialize trainerB
-                dprintf("Configure trainerB @%x\n", ow_script);
+                DEBUG("Configure trainerB @%x\n", ow_script);
                 trainerbattle_configure(trainerbattle_configuration_single_to_trainerB, ow_script);
                 *var_access(VAR_SECOND_TRAINER) = fmem.trainer_varsB.trainer_id;
                 // print_trainer_configuration(&fmem.trainer_varsB);
@@ -459,7 +459,7 @@ void trainer_play_encounter_music() {
         trainer_idx = fmem.trainer_varsB.trainer_id;
         kind = fmem.trainer_varsB.kind_of_battle;
     }
-    dprintf("Encounter for trainer %d\n", trainer_idx);
+    DEBUG("Encounter for trainer %d\n", trainer_idx);
     if (kind != TRAINER_BATTLE_CONTINUE_SCRIPT_NO_MUSIC && kind != TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC &&
         kind != TRAINER_BATTLE_ALLY_ONE_TRAINER) {
         u16 music;

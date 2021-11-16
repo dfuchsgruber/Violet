@@ -108,7 +108,7 @@ void attack_calculate_damage_from_target_name() {
             default: battle_dynamic_base_power = 180; break;
         }
     }
-    dprintf("Damage for runengleich %d\n", battle_dynamic_base_power);
+    DEBUG("Damage for runengleich %d\n", battle_dynamic_base_power);
 }
 
 void bsc_cmd_switch_out_abilites() {
@@ -160,7 +160,7 @@ bool bsc_cmd_x8f_random_switch_out_replace_in_wild_double_battle() {
 
 void bsc_roar_failure() {
     if (BATTLE_IS_WILD_DOUBLE) {
-        // dprintf("Roar failure in double wild battles.\n");
+        // DEBUG("Roar failure in double wild battles.\n");
         // Roar fails if a) player uses it against two wild mons b) a wild mon uses it against a wild mon
         if (!battler_is_opponent(attacking_battler) && battler_is_opponent(defending_battler) && battler_is_alive(defending_battler) &&
             battler_is_alive(PARTNER(defending_battler))) {
@@ -177,7 +177,7 @@ void bsc_cmd_x8f_random_switch_out() {
         // a) trainer battles
         // b) wild double battles, when the wild pokemon attacks the player and both player mons are alive
         // c) wild double battles, when the player attacks his partner
-        dprintf("Random switchout forced, select something.\n");
+        DEBUG("Random switchout forced, select something.\n");
         u8 first = 6, last = 6, partner = 4, foe = 4, foe_partner = 4;
         pokemon *party = battler_load_party_range(defending_battler, &first, &last);
         battler_get_partner_and_foes(defending_battler, &partner, &foe, &foe_partner);
@@ -204,7 +204,7 @@ void bsc_cmd_x8f_random_switch_out() {
         
     } else {
         // Roar will succced regardless of the level, like in generations >= V, so if we reach this point roar will succed!
-        dprintf("Roar ends battle.\n");
+        DEBUG("Roar ends battle.\n");
         bsc_offset = bsc_roar_sucess_end_battle;
     }
 }
@@ -244,9 +244,9 @@ static int trainer_pricemoney_get(u16 trainer_idx) {
             average_level += party[i].level;
     }
     average_level = MAX(1, 1000 * average_level / trainers[trainer_idx].pokemon_cnt); // Higher resultion by multplying with 1000
-    dprintf("Trainer %d has an average level of %d / 1000\n", trainer_idx, average_level);
+    DEBUG("Trainer %d has an average level of %d / 1000\n", trainer_idx, average_level);
     int money = average_level * battle_state->money_multiplier * trainer_class_money_multipliers[trainers[trainer_idx].trainerclass] * 4;
-    dprintf("Trainer %d yields %d / 1000 money. Multiplier is %d, class multiplier is %d\n", trainer_idx, 
+    DEBUG("Trainer %d yields %d / 1000 money. Multiplier is %d, class multiplier is %d\n", trainer_idx, 
         money, battle_state->money_multiplier, trainer_class_money_multipliers[trainers[trainer_idx].trainerclass]);
     return money / 2048;
 }
@@ -262,7 +262,7 @@ u32 money_lost() {
     }
     if (pokemon_cnt) average_player_level = MAX(1, average_player_level * 1000 / pokemon_cnt);
     else average_player_level = 1;
-    dprintf("Average player level is %d / 1000.\n", average_player_level);
+    DEBUG("Average player level is %d / 1000.\n", average_player_level);
     int money = money_lost_multipliers_by_number_of_badges[badges_number_get()] * 4 * average_player_level;
     switch (*var_access(DIFFICULTY)) {
         case DIFFICULTY_EASY: money -= money / 2; break;
@@ -298,7 +298,7 @@ void bsc_cmd_pricemoney() {
 
 void bsc_cmd_opponent_use_item() {
     battler_in_party_menu = attacking_battler;
-    dprintf("Bsc opp use item for attacking battler %d\n", attacking_battler);
+    DEBUG("Bsc opp use item for attacking battler %d\n", attacking_battler);
     pokemon *p = (battler_is_opponent(attacking_battler) ? opponent_pokemon : player_pokemon) + battler_idx_to_party_idx(attacking_battler);
     item_effect(p, bsc_last_used_item, battler_idx_to_party_idx(attacking_battler), 0, true, false);
     bsc_offset++;
@@ -320,7 +320,7 @@ void bsc_cmd_before_attack() {
     BATTLE_STATE2->status_custom[attacking_battler] &= (u32)(~(CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY | CUSTOM_STATUS_GEM_USED));
     bool effect = false;
     while(!effect) {
-        dprintf("Executing before attack events in state %d\n", BATTLE_STATE2->before_attack_state);
+        DEBUG("Executing before attack events in state %d\n", BATTLE_STATE2->before_attack_state);
         switch (BATTLE_STATE2->before_attack_state) {
             case 0: { // Abilities
                 if (battle_abilities_before_attack())
@@ -374,11 +374,11 @@ void bsc_cmd_x49_attack_done_new() {
         BATTLE_STATE2->attack_done_substate = 255; // Only one state was supposed to be executed whatsoever
     }; 
     u8 last_state = bsc_offset[2];
-    // dprintf("mode is %d, arg is %d\n", mode, last_state);
+    // DEBUG("mode is %d, arg is %d\n", mode, last_state);
     switch (battle_scripting.attack_done_state) {
         case 0 ... 17: return; // The original function has not terminated 
         case 18: { // We enter this case when the original function whould have terminated
-            //dprintf("Initialize new attack done effects.\n");
+            //DEBUG("Initialize new attack done effects.\n");
             BATTLE_STATE2->attack_done_substate = 0;
             BATTLE_STATE2->switch_in_handicap_effects_cnt = 0;
             battle_scripting.attack_done_state++;
@@ -389,7 +389,7 @@ void bsc_cmd_x49_attack_done_new() {
             // Just watch out to respect the limits of the original function
             bool effect = false;
             while (!effect) {
-                dprintf("Executing substate %d\n", BATTLE_STATE2->attack_done_substate);
+                DEBUG("Executing substate %d\n", BATTLE_STATE2->attack_done_substate);
                 switch(BATTLE_STATE2->attack_done_substate) {
                     case 0: {
                         if (mode != 2 || last_state > 5) { // State 5 is the original attacker abilities (i.e. synchronize)
@@ -466,7 +466,7 @@ void bsc_cmd_x49_attack_done_new() {
 void bsc_teleport_set_outcome() {
     active_battler = attacking_battler;
     if ((battle_flags & BATTLE_DOUBLE) && battler_is_opponent(active_battler) && battler_is_alive(PARTNER(active_battler))) {
-        dprintf("Setting teleport outcome s.t. the battle goes on.\n");
+        DEBUG("Setting teleport outcome s.t. the battle goes on.\n");
         // Teleporting only "removes" the teleported mon, but the battle continues
         battlers_absent |= (u8)int_bitmasks[active_battler];
         bsc_status_flags |= BSC_STATUS_FLAG_FAINTED(active_battler);
@@ -475,11 +475,11 @@ void bsc_teleport_set_outcome() {
         battle_healthbox_set_invisible(battle_healthbox_oams[active_battler]);
         battle_clear_active_battler_data();
     } else if (battler_is_opponent(active_battler)) {
-        dprintf("Setting teleport outcome s.t. the opponent fled.\n");
+        DEBUG("Setting teleport outcome s.t. the opponent fled.\n");
         // TODO: BATTLE_RESULT_OPPONENT_TELEPORTED is not supported by the engine so far, maybe we should?
         battle_result = BATTLE_RESULT_PLAYER_TELEPORTED;
     } else {
-        dprintf("Setting teleport outcome s.t. the player fled.\n");
+        DEBUG("Setting teleport outcome s.t. the player fled.\n");
         battle_result = BATTLE_RESULT_PLAYER_TELEPORTED;
     }
 }
@@ -666,7 +666,7 @@ static inline void apply_random_damage_multiplier() {
 extern u8 bsc_battler_hung_on_with_sturdy[];
 
 void battlescript_jump_to_sturdy_script_if_set() {
-    dprintf("Decide which sturdy script to take %d\n", battler_damage_taken[defending_battler].used_sturdy);
+    DEBUG("Decide which sturdy script to take %d\n", battler_damage_taken[defending_battler].used_sturdy);
     if (battler_damage_taken[defending_battler].used_sturdy) {
         bsc_offset = (u8*)UNALIGNED_32_GET(bsc_offset);
     } else {
@@ -698,7 +698,7 @@ static void adjustnormaldamage(bool consider_false_swipe, bool random_damage_mul
         battle_record_ability(defending_battler, battlers[defending_battler].ability);
         defending_battler_ability = battlers[defending_battler].ability;
         battler_damage_taken[defending_battler].used_sturdy = true;
-        dprintf("Defender uses sturdy\n");
+        DEBUG("Defender uses sturdy\n");
     }
     if (!(battlers[defending_battler].status2 & STATUS2_SUBSTITUTE)
         && ((attacks[active_attack].effect == 0x65 && consider_false_swipe) || battler_statuses[defending_battler].endure || 
@@ -803,14 +803,14 @@ void bsc_command_x93_setohkodamage(void) {
 void bsc_jump_if_item_effect() {
     u8 battler_idx = battlescript_argument_to_battler_idx(bsc_offset[1]);
     u8 item_effect = bsc_offset[2];
-    // dprintf("Bsc jump if battler %d has item effect %d, bsc : 0x%x\n", battler_idx, item_effect, bsc_offset);
+    // DEBUG("Bsc jump if battler %d has item effect %d, bsc : 0x%x\n", battler_idx, item_effect, bsc_offset);
     if (item_get_hold_effect(battlers[battler_idx].item) == item_effect) {
         bsc_last_used_item = battlers[battler_idx].item;
         bsc_offset = (u8*)UNALIGNED_32_GET(bsc_offset + 3);
     } else {
         bsc_offset += 7;
     }
-    // dprintf("Bsc jump if battler %d has item effect %d, after jump bsc : 0x%x\n", battler_idx, item_effect, bsc_offset);
+    // DEBUG("Bsc jump if battler %d has item effect %d, after jump bsc : 0x%x\n", battler_idx, item_effect, bsc_offset);
 }
 
 void bsc_try_set_perishsong_no_attack() {

@@ -276,7 +276,6 @@ int fata_morgana_index_by_block(u16 block){
         case 0x295:
             return 37;
     }
-    dprintf("No morgana anim specified for block %d\n", block);
-    err(ERR_GENERIC);
+    ERROR("No fata morgana anim specified for block %d\n", block);
     return -1;
 }

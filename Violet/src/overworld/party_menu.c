@@ -47,7 +47,7 @@ u8 pokemon_party_menu_layout_by_battle_type() {
 }
 
 bool pokemon_party_menu_can_switch_into_index(u8 index) {
-    // dprintf("Can switch into %d?\n", index);
+    // DEBUG("Can switch into %d?\n", index);
     if(!battle_is_multi_double() && !battle_is_tag()) return true;
     else return index != 1 && index != 4 && index != 5;
 }

@@ -40,7 +40,7 @@ void battle_allocate_new() {
 
 void ally_battle_restore_party() {
     if (battle_flags & BATTLE_ALLY) {
-        dprintf("Restoring player party after ally battle...\n");
+        DEBUG("Restoring player party after ally battle...\n");
         pokemon *party = malloc_and_clear(sizeof(pokemon) * 3);
         memcpy(party, player_pokemon, sizeof(pokemon) * 3);
         player_restore_party();
@@ -83,7 +83,7 @@ void ally_battle_revive_pokemon() {
 
 
 void battle_end_actions() {
-    dprintf("Do battle end actions...\n");
+    DEBUG("Do battle end actions...\n");
     battle_alternative_forms_revert();
     ally_battle_restore_party();
     ally_battle_revive_pokemon();

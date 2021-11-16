@@ -36,7 +36,7 @@ int dungeon2_node_distance(int nodes[][2], int idx, dungeon_generator2 *dg2) {
     FIXED l2_dist = FIXED_SQRT(INT_TO_FIXED(dx * dx + dy * dy));
     min_dist = MIN(min_dist, l2_dist);
     mean_dist = FIXED_ADD(mean_dist, l2_dist);
-    //dprintf("L2 dist %d, Mean dist %d\n", FIXED_TO_INT(l2_dist), FIXED_TO_INT(mean_dist));
+    //DEBUG("L2 dist %d, Mean dist %d\n", FIXED_TO_INT(l2_dist), FIXED_TO_INT(mean_dist));
   }
   mean_dist = FIXED_DIV(mean_dist, INT_TO_FIXED(idx));
   // Weight the two norms
@@ -55,7 +55,7 @@ void dungeon2_sample_node(int nodes[][2], int idx, dungeon_generator2 *dg2) {
   int xrange = width - 2 * margin;
   int yrange = height - 2 * margin;
   if (xrange <= 0 || yrange <= 0) {
-    derrf("Parameters for dungeon2 do not allow node generation!\n");
+    ERROR("Parameters for dungeon2 do not allow node generation!\n");
     return;
   }
 
@@ -76,7 +76,7 @@ void dungeon2_sample_node(int nodes[][2], int idx, dungeon_generator2 *dg2) {
     }
   }
   // Return this node
-  dprintf("Sampled node (%d, %d)\n", best_x, best_y);
+  DEBUG("Sampled node (%d, %d)\n", best_x, best_y);
   nodes[idx][0] = best_x;
   nodes[idx][1] = best_y;
 }
@@ -90,7 +90,7 @@ void dungeon2_get_nodes(int nodes[][2], int num_nodes, dungeon_generator2 *dg2, 
   for (int node_idx = 0 ; node_idx < num_nodes; node_idx++) {
     // Sample a node
     do {
-      dprintf("Sampling node %d\n", node_idx);
+      DEBUG("Sampling node %d\n", node_idx);
       dungeon2_sample_node(nodes, node_idx, dg2);
     } while (!dungeon2_propose_node(nodes, node_idx, dg2));
 
@@ -130,7 +130,7 @@ void dungeon2_connect_nodes_rnd_next_step(int p[2], int q[2], dungeon_generator2
 }
 
 void dungeon2_connect_nodes(int p[2], int q[2], dungeon_generator2 *dg2, u8 *map) {
-  dprintf("Connecting (%d, %d) @ %x to (%d, %d) @%x \n", p[0], p[1], (int)p, q[0], q[1], (int)q);
+  DEBUG("Connecting (%d, %d) @ %x to (%d, %d) @%x \n", p[0], p[1], (int)p, q[0], q[1], (int)q);
   int strategy = STATE_SP;
   int from[2] = {p[0], p[1]};
   FIXED prob = dg2->path_randomness;
@@ -191,7 +191,7 @@ void dungeon2_print_map_with_nodes(u8 *map, dungeon_generator2 *dg2, int nodes[]
         charmap[x++] = (char) (48 + y % 10);
         charmap[x++] = '\n';
         charmap[x++] = 0;
-        dprintf(charmap);
+        DEBUG(charmap);
        }
 }
 

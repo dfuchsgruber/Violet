@@ -100,7 +100,7 @@ static int party_setup_by_trainer_idx(pokemon *dst_party, u16 trainer_id) {
 		shuffle(idxs, trainers[trainer_id].pokemon_cnt, NULL);
 	}
 	for (int j = 0; j < trainers[trainer_id].pokemon_cnt; j++)
-		dprintf("Shuffled team order %d : %d\n", j, idxs[j]);
+		DEBUG("Shuffled team order %d : %d\n", j, idxs[j]);
 	for (int j = 0; j < trainers[trainer_id].pokemon_cnt; j++) {
 		if (trainers[trainer_id].uses_custom_items &&
 				trainers[trainer_id].uses_custom_moves) {
@@ -216,7 +216,7 @@ void trainer_pokemon_new(pokemon *poke, union union_build_field field) {
 			pid.fields.gender_partial = (u32)((trainer_builds[field.bitfield.build_idx].gender >> 1) & 0x7F); // TODO?
 		}
 
-		dprintf("Building pokemon species %d with ability bit %d -> ability is %d\n", pokemon_get_attribute(poke, ATTRIBUTE_SPECIES, 0), ability, pokemon_get_ability(poke));
+		DEBUG("Building pokemon species %d with ability bit %d -> ability is %d\n", pokemon_get_attribute(poke, ATTRIBUTE_SPECIES, 0), ability, pokemon_get_ability(poke));
 	}
 	pid.fields.is_shiny = field.bitfield.is_shiny > 0;
 	pokemon_set_attribute(poke, ATTRIBUTE_PID, &pid);

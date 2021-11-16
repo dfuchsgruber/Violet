@@ -143,7 +143,7 @@ u8 mega_trigger_oam_idx_get(u8 battler_idx) {
 }
 
 void mega_trigger_new(u8 battler_idx) {
-    dprintf("Attempt spawning mega trigger for battler %d\n", battler_idx);
+    DEBUG("Attempt spawning mega trigger for battler %d\n", battler_idx);
     if (battle_flags & (BATTLE_SAFARI | BATTLE_TUTORIAL))
         return;
     // Check if the battler can perform mega evolution

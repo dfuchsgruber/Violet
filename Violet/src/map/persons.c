@@ -63,7 +63,7 @@ static void person_in_connection_set_coordinates(u8 connection_type, map_event_p
             *y = (s16)(target->y + connection->displacement);
             break;
     }
-    // dprintf("Setting coordinates to in connection person to %d,%d\n", *x, *y);
+    // DEBUG("Setting coordinates to in connection person to %d,%d\n", *x, *y);
 }
 
 void persons_load_from_header() {
@@ -73,7 +73,7 @@ void persons_load_from_header() {
         if (p->in_connection) {
             map_event_person *target = person_in_connection_get_target(p->in_connection, p->argument);
             if (!target) {
-                dprintf("Didnt find target person %d on adjacency %d\n", p->argument, p->in_connection);
+                DEBUG("Didnt find target person %d on adjacency %d\n", p->argument, p->in_connection);
                 continue;
             }
             save1->persons[j] = *target;
@@ -83,7 +83,7 @@ void persons_load_from_header() {
             // These values are needed to mark the person as in-connection even though it has been fully loaded otherwise.
             save1->persons[j].in_connection = p->in_connection;
             save1->persons[j].argument = p->argument;
-            // dprintf("Made person %d as in-connection with target to %d\n", j, p->argument);
+            // DEBUG("Made person %d as in-connection with target to %d\n", j, p->argument);
             j++;
         } else {
             save1->persons[j++] = *p;
@@ -107,15 +107,15 @@ u8 npc_create_by_person(map_event_person *p, u8 map_idx, u8 bank) {
     s16 y = (s16)(p->y + 7);
     if (p->in_connection) {
         if (!person_in_connection_get_bank_and_map(p->in_connection, &bank, &map_idx)) {
-            derrf("Adjacent map not found!\n");
+            ERROR("Adjacent map not found!\n");
             return NUM_NPCS;
         }
         p = person_in_connection_get_target(p->in_connection, p->argument);
         if (!p) {
-            derrf("Adjacent target person %d not found for adjacecy %\n", p->argument, p->in_connection);
+            ERROR("Adjacent target person %d not found for adjacecy %\n", p->argument, p->in_connection);
             return NUM_NPCS;
         }
-        // dprintf("Create npc for person in-connection with target %d at %d.%d, position %d.%d\n", p->overworld_index, bank, map_idx, p->x, p->y);
+        // DEBUG("Create npc for person in-connection with target %d at %d.%d, position %d.%d\n", p->overworld_index, bank, map_idx, p->x, p->y);
     }
     u8 npc_idx = NUM_NPCS;
     if (npc_get_empty_idx(p->target_index, map_idx, bank, &npc_idx))

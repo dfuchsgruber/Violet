@@ -18,7 +18,7 @@ enum {
 };
 
 void battle_ai_choose_action() {
-    dprintf("*** AI ACTION CHOOSING (battler %d) ***\n", active_battler);
+    DEBUG("*** AI ACTION CHOOSING (battler %d) ***\n", active_battler);
     int scores[3] = {0};
     u8 actions[3] = {0};
     size_t num_actions = 0;
@@ -40,20 +40,20 @@ void battle_ai_choose_action() {
     // Normalize scores to [-16, 16]
     for (size_t i = 0; i < num_actions; i++) {
         scores[i] = MIN(16, MAX(-16, scores[i]));
-        dprintf("Score for action %d is %d\n", actions[i], scores[i]);
+        DEBUG("Score for action %d is %d\n", actions[i], scores[i]);
     }
     // Select an action
     size_t chosen_action = softmax_choice(scores, num_actions, -16, 16, NULL);
     switch (actions[chosen_action]) {
         case ACTION_ITEM: {
-            dprintf("Use item.\n");
+            DEBUG("Use item.\n");
             TRAINER_AI_STATE2->chosen_item_idxs[active_battler] = item_idx_to_use;
             battle_scripting.battler_idx = active_battler;
             battle_controller_emit_two_values(1, BATTLE_ACTION_USE_ITEM, 0);
             break;
         }
         case ACTION_SWITCH: {
-            dprintf("Switch.\n");
+            DEBUG("Switch.\n");
             battle_state->battler_to_switch_into[active_battler] = switch_into;
             battle_scripting.battler_idx = active_battler;
             battle_state->ai_switch_target_chosen &= (u8) int_bitmasks[active_battler];
@@ -61,7 +61,7 @@ void battle_ai_choose_action() {
             break;
         }
         case ACTION_MOVE: {
-            dprintf("Use move.\n");
+            DEBUG("Use move.\n");
             battle_controller_emit_two_values(1, BATTLE_ACTION_USE_MOVE, (u16)(OPPONENT(active_battler) << 8));
             break;
         }
@@ -71,7 +71,7 @@ void battle_ai_choose_action() {
 }
 
 void ai_setup(u16 trainer_idx) {
-    dprintf("AI is setup for trainer %d.\n", trainer_idx);
+    DEBUG("AI is setup for trainer %d.\n", trainer_idx);
     ai_thinking_state_t *ai = battle_ressources->ai;
     memset(ai, 0, sizeof(ai_thinking_state_t));
     BATTLE_STATE2->fleeing_rng_seed = (u32)(rnd16() | (rnd16() << 16));
@@ -109,5 +109,5 @@ void ai_setup(u16 trainer_idx) {
     if (*var_access(DIFFICULTY) == DIFFICULTY_HARD && !(battle_flags & (BATTLE_TRAINER | BATTLE_LEGENDARY | BATTLE_WILD_SCRIPTED))) {
         ai->ai_flags |= TRAINER_AI_CONSIDER_FLEEING; // Normal wild encounters might flee in hard mode
     }
-    dprintf("AI flags 0x%x, battle flags 0x%x\n", ai->ai_flags, battle_flags);
+    DEBUG("AI flags 0x%x, battle flags 0x%x\n", ai->ai_flags, battle_flags);
 }

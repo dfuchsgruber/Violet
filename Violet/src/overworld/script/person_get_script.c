@@ -55,7 +55,7 @@ void battle_initialize_misc_ecounter() {
 
 u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank) {
 	map_event_person *p = map_get_person(target_idx, map_id, bank);
-	// dprintf("Get script of person idx %d at %d.%d. Person offset is 0x%x\n", target_idx, bank, map_id, p);
+	// DEBUG("Get script of person idx %d at %d.%d. Person offset is 0x%x\n", target_idx, bank, map_id, p);
 	if (p->script)
 		return p->script;
 	switch(p->script_std) {
@@ -68,7 +68,7 @@ u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank) {
 			*var_access(0x8001) = MAX(1, p->argument);
 			return ow_script_person_pokeball;
 		case PERSON_EGG:
-			// dprintf("Person egg\n");
+			// DEBUG("Person egg\n");
 			*var_access(0x8000) = p->value;
 			return ow_script_person_egg;
 		case PERSON_POKEMON:

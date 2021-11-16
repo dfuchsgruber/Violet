@@ -17,7 +17,7 @@
 void cloud_force() {
     if ((player_state.state & 1) && cloud_not_dismountable()) {
         npc_player_set_bike_state(2);
-        dprintf("Forced to bike.\n");
+        DEBUG("Forced to bike.\n");
     }
 }
 
@@ -104,7 +104,7 @@ bool cloud_not_dismountable() {
 		if (mapheader_virtual.footer->tileset1 == &maptileset_clouds) {
 			position_t pos;
 			player_get_position(&pos);
-			// dprintf("Position is %d,%d, with battle bg %d\n", pos.coordinates.x, pos.coordinates.y, block_get_field_by_pos(pos.coordinates.x, pos.coordinates.y, FIELD_BATTLE_BG));
+			// DEBUG("Position is %d,%d, with battle bg %d\n", pos.coordinates.x, pos.coordinates.y, block_get_field_by_pos(pos.coordinates.x, pos.coordinates.y, FIELD_BATTLE_BG));
 
 			if (block_get_field_by_pos(pos.coordinates.x, pos.coordinates.y, FIELD_BATTLE_BG) == BATTLE_BG_SKY_ISLAND) {
 				return false; // These are all land tiles, more or less...

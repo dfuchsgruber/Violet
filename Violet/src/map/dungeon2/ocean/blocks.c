@@ -208,7 +208,7 @@ void dungeon2_ocean_draw_map(u8 *map, u8 *is_map_border, int type, dungeon_gener
 	while (!ring_queue_empty(&queue)) {
 		int head = ring_queue_pop(&queue);
 		int x = COORDINATE_UNPACK_X(head), y = COORDINATE_UNPACK_Y(head);
-		//dprintf("Fixing (%d, %d)\n", x, y);
+		//DEBUG("Fixing (%d, %d)\n", x, y);
 		// There are no 1-block rocks in the water tileset -> make them traversable as well
 		block_set_by_pos_with_level((s16)(x + 7), (s16)(y + 7), 0x1CD | 0x1000);
 		map[y * dg2->width + x] = DG2_ROCK;
@@ -244,14 +244,14 @@ void dungeon2_ocean_flood_fill_borders(u8 *map, u8 *is_map_border, dungeon_gener
 	  int y = COORDINATE_UNPACK_Y(packed);
 	  if (map[y * dg2->height + x] == DG2_WALL &&
 			  !(is_map_border[y * dg2->height + x] & DG2_OCEAN_IS_BORDER)) {
-		  // dprintf("Flood fill %d, %d\n", x, y);
+		  // DEBUG("Flood fill %d, %d\n", x, y);
 		  is_map_border[y * dg2->height + x] |= DG2_OCEAN_IS_BORDER;
 		  for (int i = 0; i < 4; i++) {
 			  int x2 = x + dg2_cross_neighbourhood[i][0];
 			  int y2 = y + dg2_cross_neighbourhood[i][1];
 			  if (x2 >= 0 && x2 < dg2->width && y >= 0 && y < dg2->height) {
 				  stack[stack_size++] = COORDINATE_PACK(x2, y2);
-				  // dprintf("Stack size %d\n", stack_size);
+				  // DEBUG("Stack size %d\n", stack_size);
 			  }
 		  }
 	  }

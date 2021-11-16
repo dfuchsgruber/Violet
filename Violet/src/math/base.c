@@ -14,7 +14,7 @@
 
 FIXED FIXED_SQRT(FIXED x) {
   if(x < 0) {
-    derrf("Sqrt not defined for negative values %d\n", x);
+    ERROR("Sqrt not defined for negative values %d\n", x);
     return 0;
   } else {
     u16 rem = sqrt32((u32)x);

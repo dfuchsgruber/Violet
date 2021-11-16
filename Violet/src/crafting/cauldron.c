@@ -187,7 +187,7 @@ static void cauldron_item_set_parabolic_trajectory(u8 oam_idx, s16 ymax, s16 dx,
     o->private[1] = (u16)ymax;
     o->private[2] = (u16)dx;
     o->private[3] = dt;
-    // dprintf("New trajectory for %d with ymax %d, dx %d and dt %d\n", oam_idx, ymax, dx, dt);
+    // DEBUG("New trajectory for %d with ymax %d, dx %d and dt %d\n", oam_idx, ymax, dx, dt);
     o->callback = cauldron_item_move_along_parabola;
     oam_rotscale_anim_init(o, 1);
 }

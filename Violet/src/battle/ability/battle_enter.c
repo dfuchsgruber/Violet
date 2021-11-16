@@ -16,10 +16,10 @@ extern u8 bsc_hagelalarm[];
 extern u8 bsc_tollwut[];
 
 bool abilities_battle_enter(u8 ability, u8 index) {
-    dprintf("Battle enter for ability %d, index %d\n", ability, index);
+    DEBUG("Battle enter for ability %d, index %d\n", ability, index);
     if(ability == HAGELALARM && !(battle_weather & BATTLE_WEATHER_HAIL)){
         battle_weather = BATTLE_WEATHER_HAIL;
-        dprintf("Hail triggered\n");
+        DEBUG("Hail triggered\n");
         battlescript_init_and_interrupt_battle(bsc_hagelalarm);
     	bsc_global.battler_idx = index;
         return true;

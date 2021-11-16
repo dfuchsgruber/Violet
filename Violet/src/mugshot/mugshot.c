@@ -302,7 +302,7 @@ void mugshot_create_oam(int side, int idx, int emotion) {
 	mugshot_template->callback = oam_null_callback;
 
 	if (oam_vram_allocation_table_get_index(tag) == 0xFF) {
-		dprintf("Allocated new mugshot vram\n");
+		DEBUG("Allocated new mugshot vram\n");
 		// Allocate a graphic, that is released once the mugshot is destroyed
 		graphic *g = (graphic*) malloc(sizeof (graphic));
 		g->sprite = mugshot_get_emotion_gfx(idx, emotion);

@@ -54,7 +54,7 @@ void overworld_proceed() {
     bg_virtual_sync_reqeust_proceed();
     BENCHMARK_WRAP(u32 time_bg_cpy = benchmark_end();)
 
-    BENCHMARK_WRAP(dprintf("Sum %d, owscr %d, bigcb %d, oamanim %d, cam %d, campan %d, oam %d, fade %d, tsanim %d, bgcpy %d\n",
+    BENCHMARK_WRAP(DEBUG("Sum %d, owscr %d, bigcb %d, oamanim %d, cam %d, campan %d, oam %d, fade %d, tsanim %d, bgcpy %d\n",
         time_ow_script +  time_big_cb + time_oam_anim + time_cam + time_cam_pan + time_oam + time_fading + time_ts_anim + time_bg_cpy,
         time_ow_script, time_big_cb, time_oam_anim, time_cam, time_cam_pan, time_oam, time_fading, time_ts_anim, time_bg_cpy);)
 }

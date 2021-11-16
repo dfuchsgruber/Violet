@@ -26,7 +26,7 @@
 // when at some point refactoring the battle ai, we do not have to return this value
 u8 _item_effect_get_hp_healed_offset(u16 item, u8 effect_byte, u8 effect_bit) {
     if (effect_byte != 4 || effect_bit != 4) {
-        derrf("Item effect argument offset other than hp requested: byte %d bit %d\n", effect_byte, effect_bit);
+        ERROR("Item effect argument offset other than hp requested: byte %d bit %d\n", effect_byte, effect_bit);
     }
     if (ITEM_HAS_TABLE_EFFECT(item) && item_effects[item - ITEM_TRANK]) {
         return 12; // This offset of the hp to be healed in an item effect -> this is hacky...
@@ -83,11 +83,11 @@ bool item_effect_execute_battle_effects(pokemon *p, u16 item, u8 battler_idx, u8
 bool item_effect_execute_level_up(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect, 
     item_effect_t *effect, bool calculate_heal_only, bool check_only) {
     (void) battler_idx; (void) move_idx; (void) party_idx; (void) hold_effect; (void) calculate_heal_only; (void) item;
-    dprintf("Level up %d, %d %d\n", effect->increase_level, effect->level, pokemon_get_attribute(p, ATTRIBUTE_LEVEL, 0));
+    DEBUG("Level up %d, %d %d\n", effect->increase_level, effect->level, pokemon_get_attribute(p, ATTRIBUTE_LEVEL, 0));
     if (effect->increase_level && pokemon_get_attribute(p, ATTRIBUTE_LEVEL, 0) < 100) {
         if (!check_only) {
             int level = MIN(100, pokemon_get_attribute(p, ATTRIBUTE_LEVEL, 0) + effect->level);
-            dprintf("Increase to level %d with amount of %d\n", level, effect->level);
+            DEBUG("Increase to level %d with amount of %d\n", level, effect->level);
             pokemon_set_attribute(p, ATTRIBUTE_EXP, 
                 &pokemon_experience_tables[basestats[pokemon_get_attribute(p, ATTRIBUTE_SPECIES, 0)].level_up_type][level]);
             pokemon_calculate_stats(p);
@@ -248,7 +248,7 @@ bool item_effect_execute_hp_heal(pokemon *p, u16 item, u8 battler_idx, u8 move_i
                 hp_to_heal = effect->hp;
                 break;
         }
-        dprintf("Hp to heal %d\n", hp_to_heal);
+        DEBUG("Hp to heal %d\n", hp_to_heal);
         if (hp_difference > 0) {
             if (!check_only) {
                 if (calculate_heal_only) {
@@ -290,7 +290,7 @@ bool item_effect_heal_pp(pokemon *p, u8 battler_idx, u8 move_idx, u8 amount, boo
             } else {
                 pp = MIN(max_pp, pp + amount);
             }
-            dprintf("Increase pp of move %d to %d on mon %x\n", move_idx, pp, p);
+            DEBUG("Increase pp of move %d to %d on mon %x\n", move_idx, pp, p);
             pokemon_set_attribute(p, ATTRIBUTE_PP1 + move_idx, &pp);
             if (super.in_battle && battler_idx != 4 && !(battlers[battler_idx].status2 & STATUS2_TRANSFORMED) &&
                 !(battler_disable[battler_idx].mimicked_moves & int_bitmasks[move_idx])) {
@@ -375,7 +375,7 @@ bool item_effect_execute_golden_apple(pokemon *p, u16 item, u8 battler_idx, u8 m
     if (effect->golden_apple && battler_idx < 4) {
         if (!check_only) 
             BATTLE_STATE2->status_custom_persistent[battler_idx] |= CUSTOM_STATUS_PERSISTENT_GOLDEN_APPLE_PROTECTION;
-        dprintf("Golden Apple protection battler %d, status is %x\n", battler_idx, BATTLE_STATE2->status_custom_persistent[battler_idx]);
+        DEBUG("Golden Apple protection battler %d, status is %x\n", battler_idx, BATTLE_STATE2->status_custom_persistent[battler_idx]);
         return true;
     }
     return false;
@@ -397,7 +397,7 @@ bool (*item_effect_functions[NUMBER_ITEM_EFFECT_FUNCTIONS])(pokemon*, u16, u8, u
 
 
 bool item_effect(pokemon *p, u16 item, u8 party_idx, u8 move_idx, bool calculate_heal_only, bool check_only) {
-    dprintf("Item effect by table with p : %x, item %x, party_idx %d, move_idx %d, calculate_heal_only %d, check_only %d\n",
+    DEBUG("Item effect by table with p : %x, item %x, party_idx %d, move_idx %d, calculate_heal_only %d, check_only %d\n",
         p, item, party_idx, move_idx, calculate_heal_only, check_only);
     u8 hold_effect = 0;
     u16 held_item = (u16)pokemon_get_attribute(p, ATTRIBUTE_ITEM, 0);
@@ -410,14 +410,14 @@ bool item_effect(pokemon *p, u16 item, u8 party_idx, u8 move_idx, bool calculate
     u8 battler_idx = 4;
     if (super.in_battle) {
         active_battler = battler_in_party_menu;
-        dprintf("Item effect for active battler %d\n", active_battler);
+        DEBUG("Item effect for active battler %d\n", active_battler);
         for (u8 i = 0; i < battler_cnt; i++) {
             if (battler_is_opponent(i) == battler_is_opponent(active_battler) && party_idx == battler_idx_to_party_idx(i)) {
                 battler_idx = i;
                 break;
             }
         }
-        dprintf("Found battler %d with party slot %d\n", battler_idx, party_idx);
+        DEBUG("Found battler %d with party slot %d\n", battler_idx, party_idx);
     } else {
         active_battler = 0;
     }

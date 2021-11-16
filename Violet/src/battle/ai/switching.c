@@ -25,7 +25,7 @@
 #include "battle/ressources.h"
 
 #define AI_DEBUG_SWITCHING_ON true
-#define AI_DEBUG_SWITCHING(str, ...) ({if (AI_DEBUG_SWITCHING_ON) dprintf(str, __VA_ARGS__);})
+#define AI_DEBUG_SWITCHING(str, ...) ({if (AI_DEBUG_SWITCHING_ON) DEBUG(str, __VA_ARGS__);})
 
 void battle_ai_attack_apply_effectiveness_multiplier_with_abilities(u8 attack_type, u8 defender_ability, u8 defender_type1, u8 defender_type2, 
     u8 *multiplier) {
@@ -262,7 +262,7 @@ int battle_ai_score_attacks_foes(pokemon *p, u8 foe, u8 foe_partner) {
 }
 
 int battle_ai_switch_weight_scores(pokemon *p, int offensive_score, int defensive_score) {
-    // dprintf("Weighting scores off %d, def %d for %x\n", offensive_score, defensive_score, p);
+    // DEBUG("Weighting scores off %d, def %d for %x\n", offensive_score, defensive_score, p);
     int attack = pokemon_get_attribute(p, ATTRIBUTE_ATK, 0);
     int special_attack = pokemon_get_attribute(p, ATTRIBUTE_SATK, 0);
     int defense = pokemon_get_attribute(p, ATTRIBUTE_DEF, 0);
@@ -381,7 +381,7 @@ void battle_ai_should_switch_consider_foe_as_threat(int *score, u8 target) {
     }
     int threat_level_active = battle_ai_threat_score_by_level_difference(score_active_to_foes);
     int threat_level_target = battle_ai_threat_score_by_level_difference(score_target_to_foes);
-    dprintf("The foes have a threat level of %d towards active mon (%d) and a level of %d towards target (%d)\n", threat_level_active, active_battler, threat_level_target, target);
+    DEBUG("The foes have a threat level of %d towards active mon (%d) and a level of %d towards target (%d)\n", threat_level_active, active_battler, threat_level_target, target);
     if (threat_level_active <= 0) { // We don't generally want to switch if the foes are no threat level-wise
         *score += threat_level_active;
         return;

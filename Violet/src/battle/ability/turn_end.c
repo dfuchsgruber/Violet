@@ -30,13 +30,13 @@ bool battle_abilities_turn_end(u8 ability, battler *target){
     int weather_negating_ability_present = ability_execute(0x13, 0,
             WOLKE_SIEBEN, 0, 0) || ability_execute(0x13, 0, KLIMASCHUTZ, 0,
             0);
-    dprintf("Turn end abilties triggered, ability %d, weather negated %d, attacking battler %d, "
+    DEBUG("Turn end abilties triggered, ability %d, weather negated %d, attacking battler %d, "
     		"consumed item %d\n",
     		ability, weather_negating_ability_present,
 			attacking_battler, battle_state->items_consumed[attacking_battler]);
     if(ability == SOLARKRAFT && (battle_weather & BATTLE_WEATHER_SUN) &&
             !weather_negating_ability_present){
-        dprintf("Solarkraft triggered\n");
+        DEBUG("Solarkraft triggered\n");
         turn_end_apply_recoil_dmg(target);
         return true;
     }else if(ability == REGENMUT && (battle_weather & BATTLE_WEATHER_RAIN) &&
@@ -77,7 +77,7 @@ bool battle_abilities_turn_end(u8 ability, battler *target){
 }
 
 void turn_end_tollwut_attack_boost(){
-    dprintf("Tollwut attack check for battler %d, stat change %d\n", 
+    DEBUG("Tollwut attack check for battler %d, stat change %d\n", 
             attacking_battler, battlers[attacking_battler].stat_changes[1]);
     if(battlers[attacking_battler].stat_changes[1] < 8){
         battlescript_callstack_push_next_command();

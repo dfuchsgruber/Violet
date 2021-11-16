@@ -16,7 +16,7 @@ void repel_use(){
             *var_access(0x4020) = 250;
             break;
         default:
-            err2(ERR_NO_REPEL_ITEM, *var_access(0x800E));
+            ERROR("No repel item %d\n", *var_access(0x800E));
             break;
     }
 }

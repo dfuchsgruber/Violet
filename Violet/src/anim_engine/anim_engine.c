@@ -96,7 +96,7 @@ void anim_engine_initiatlize(u8 *script) {
     u8 callback_id = big_callback_new(anim_engine_callback, 0);
     ae_memory *mem = malloc_and_clear(sizeof(ae_memory));
     big_callback_set_int(callback_id, 1, (int)mem);
-    dprintf("Ae script %x initializing...\n", script);
+    DEBUG("Ae script %x initializing...\n", script);
     fmem.ae_mem = mem;
     mem->script = script;
     mem->callback_id = callback_id;
@@ -116,9 +116,9 @@ void anim_engine_callback(u8 callback_id) {
         return;
     }
     while (!mem->paused && mem->delayed <= 0 && mem->active) {
-        // dprintf("Script offset is %x\n", mem->script);
+        // DEBUG("Script offset is %x\n", mem->script);
         u8 command = anim_engine_read_byte(mem);
-        // dprintf("Running ae command %d\n", command);
+        // DEBUG("Running ae command %d\n", command);
         if (command == 0xFF) break;
         commands[command](mem);
     }
@@ -388,7 +388,7 @@ void cmdx19_objmove(ae_memory* mem) {
         anim_engine_task *t = anim_engine_task_new(0, _obj_move_linear_trace,
                 5 * sizeof(u16), mem->root);
         
-        dprintf("Spawned linear trace @%x\n", t);
+        DEBUG("Spawned linear trace @%x\n", t);
         u16 *vars = (u16*)(t->vars);
         vars[0] = oam_id;
         vars[1] = (u16) x;
@@ -631,7 +631,7 @@ void anim_engine_bg_scroller(anim_engine_task *self) {
         int x_1 = (current_frame * hdelta) / duration;
         int y_0 = ((current_frame - 1) * vdelta) / duration;
         int y_1 = (current_frame * vdelta) / duration;
-        //dprintf("Frame %d: x_0 %d, x_1 %d, y_0 %d, y_1, %d\n", current_frame, x_0, x_1, y_0, y_1);f
+        //DEBUG("Frame %d: x_0 %d, x_1 %d, y_0 %d, y_1, %d\n", current_frame, x_0, x_1, y_0, y_1);f
         io_set(bg_hreg, (u16)(x + x_1 - x_0));
         io_set(bg_vreg, (u16)(y + y_1 - y_0));
 
@@ -675,8 +675,7 @@ void anim_engine_bg_free_task(anim_engine_task *self) {
     void **vars = (void**)(self->vars);
     free(*vars);
     if(anim_engine_task_delete(self) < 0){
-        dprintf("Error at deleting bg free task!\n");
-        err( ERR_GENERIC);
+        ERROR("Error at deleting bg free task!\n");
     }
 }
 
@@ -756,22 +755,22 @@ void cmdx35_pal_restore_snapshot(ae_memory *mem){
     if(anim_engine_read_byte(mem)){
         //Create snapshot pal_restore
         if(mem->pal_restore_save){
-            dprintf("Warning: Trying to snapshot pal restore when there is already a snapshot!\n");
+            DEBUG("Warning: Trying to snapshot pal restore when there is already a snapshot!\n");
         }
         mem->pal_restore_save = malloc(sizeof(color_t) * 1024);
         // Do not save the restore! This causes mapreload to not fade into black
         // cpuset(pal_restore, mem->pal_restore_save, 0x4000100);
         cpuset(pal_tmp, &(mem->pal_restore_save[512]), 0x4000100);
-        dprintf("Pal restore snap alloc\n");
+        DEBUG("Pal restore snap alloc\n");
     }else{
         if(!mem->pal_restore_save){
-            dprintf("Warning: Trying to load a not present snapshot for pal restore\n");
+            DEBUG("Warning: Trying to load a not present snapshot for pal restore\n");
         }
         //cpuset(mem->pal_restore_save, pal_restore, 0x4000100);
         cpuset(&(mem->pal_restore_save[512]), pal_tmp, 0x4000100);
         free(mem->pal_restore_save);
         mem->pal_restore_save = NULL;
-        dprintf("Pal restore snap free\n");
+        DEBUG("Pal restore snap free\n");
     }
 }
 
@@ -870,7 +869,7 @@ void cmdx37_obj_move_trace(ae_memory *mem){
             var_space[4] = period;
             var_space[5] = on_y_axis;
             var_space[6] = trace;
-            dprintf("Spawned trig trace task @%x\n", t);
+            DEBUG("Spawned trig trace task @%x\n", t);
             break;
         }
         case 6:{
@@ -888,8 +887,7 @@ void cmdx37_obj_move_trace(ae_memory *mem){
             break;
         }
         default:
-            dprintf("Trace %d not specified\n", trace);
-            err(ERR_GENERIC);
+            ERROR("Trace %d not specified\n", trace);
     }
 }
 
@@ -990,6 +988,6 @@ static void cmdx3C_task_new(ae_memory *mem) {
     int priority = (int)anim_engine_read_word(mem);
     void (*callback)(struct anim_engine_task*) = (void (*)(struct anim_engine_task*))anim_engine_read_word(mem);
     size_t var_size = (size_t)anim_engine_read_word(mem);
-    dprintf("New task with prop %d, callback 0x%x, size %d\n", priority, callback, var_size);
+    DEBUG("New task with prop %d, callback 0x%x, size %d\n", priority, callback, var_size);
     anim_engine_task_new(priority, callback, var_size, mem->root);
 }

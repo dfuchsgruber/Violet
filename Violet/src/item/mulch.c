@@ -20,7 +20,7 @@ extern u8 ow_script_fertilize_berry_tree[];
 
 static void item_mulch_overworld_continuation_print_string(u8 self) {
     overworld_script_init(ow_script_fertilize_berry_tree);
-    dprintf("Var 0x8000: %d, LASTTALKED %d\n", *var_access(0x8000), *var_access(LASTTALKED));
+    DEBUG("Var 0x8000: %d, LASTTALKED %d\n", *var_access(0x8000), *var_access(LASTTALKED));
     big_callback_delete(self);
 }
 
@@ -28,7 +28,7 @@ void item_effect_mulch(u8 self) {
     position_t faced_position;
     player_get_position_faced(&faced_position);
     u8 npc_idx = npc_get_by_position(faced_position.coordinates.x, faced_position.coordinates.y);
-    dprintf("Npc idx is %d\n", npc_idx);
+    DEBUG("Npc idx is %d\n", npc_idx);
     if (npc_idx < NUM_NPCS) {
 	    map_event_person *p = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
         if (p && p->script_std == PERSON_BERRY_TREE) {

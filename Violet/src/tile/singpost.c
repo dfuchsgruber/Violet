@@ -31,7 +31,7 @@ u16 hidden_flag_by_chunk(u8 flag, u8 hidden_chunk){
         case 3:
             return (u16)(0xd00 + flag);
         default:
-            err2( ERR_HIDDEN_FLAG_CHUNK_GT_3, hidden_chunk);
+            ERROR("Invalid hidden chunk %d\n", hidden_chunk);
             return 0;
     }
 }
@@ -39,7 +39,7 @@ u16 hidden_flag_by_chunk(u8 flag, u8 hidden_chunk){
 void _test_flags() {
     for (u16 i = 1000; i < 1100; i++) {
         if (checkflag(i)) {
-            dprintf("flag set %d\n", i);
+            DEBUG("flag set %d\n", i);
         }
     }
 }

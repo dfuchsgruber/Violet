@@ -133,7 +133,7 @@ void pokedex_build_list() {
             }
             if (!is_alternative_form) {
                 if ((i < POKEMON_LOCKSCHAL && i > POKEMON_CELEBI) || i > POKEMON_DEOXYS) {
-                    dprintf("Warning: Pokédex lists species %d (dex no %d (at 0x%x)), is that intended?\n", i, pokedex_get_id(i), pokedex_order + i - 1);
+                    DEBUG("Warning: Pokédex lists species %d (dex no %d (at 0x%x)), is that intended?\n", i, pokedex_get_id(i), pokedex_order + i - 1);
                 }
                 list[list_size].species = i;
                 list[list_size].dex_id = dex_idx;
@@ -144,7 +144,7 @@ void pokedex_build_list() {
         }
     }
     if (list_size > POKEDEX_CNT) {
-        derrf("Pokedex registers %d species, however only %d are allowed.\n", list_size, POKEDEX_CNT);
+        ERROR("Pokedex registers %d species, however only %d are allowed.\n", list_size, POKEDEX_CNT);
     }
 }
 

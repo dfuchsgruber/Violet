@@ -41,7 +41,7 @@ extern u8 ow_script_dungeon_item[];
 map_header_t *dungeon2_init_header_ocean(dungeon_generator2 *dg2) {
 
     //save1->flash_circle_size = 1;
-    dprintf("D2 header init\n");
+    DEBUG("D2 header init\n");
     fmem.dmap_header_initialized = 1;
     fmem.dmapheader.levelscripts = dungeon2_lscr;
     fmem.dmapheader.connections = &dungeon2_connections;
@@ -57,7 +57,7 @@ map_header_t *dungeon2_init_header_ocean(dungeon_generator2 *dg2) {
 }
 
 map_footer_t *dungeon2_init_footer_ocean(dungeon_generator2 *dg2){
-    dprintf("D2 footer init\n");
+    DEBUG("D2 footer init\n");
     fmem.dmapfooter.width = (u32)dg2->width;
     fmem.dmapfooter.height = (u32)dg2->height;
     fmem.dmapfooter.tileset1 = &maptileset0;
@@ -70,7 +70,7 @@ map_footer_t *dungeon2_init_footer_ocean(dungeon_generator2 *dg2){
 }
 
 map_event_header_t *dungeon2_init_events_ocean(dungeon_generator2 *dg2){
-    dprintf("D2 event init, dg2 seed %d, num nodes %d\n", dg2->initial_seed, dg2->nodes);
+    DEBUG("D2 event init, dg2 seed %d, num nodes %d\n", dg2->initial_seed, dg2->nodes);
     (void)dg2;
 
     fmem.dmapevents.warp_cnt = 0;
@@ -109,7 +109,7 @@ map_event_header_t *dungeon2_init_events_ocean(dungeon_generator2 *dg2){
 
       fmem.dpersons[person_idx].x = (s16)(nodes[node_idx][0]);
       fmem.dpersons[person_idx].y = (s16)(nodes[node_idx][1]);
-      dprintf("Person at (%d, %d)\n", nodes[node_idx][0], nodes[node_idx][1]);
+      DEBUG("Person at (%d, %d)\n", nodes[node_idx][0], nodes[node_idx][1]);
       fmem.dpersons[person_idx].target_index = (u8)(person_idx + 1);
       fmem.dpersons[person_idx].overworld_index = 92;
       fmem.dpersons[person_idx].flag = (u16)(0x13 + i);
@@ -124,10 +124,10 @@ map_event_header_t *dungeon2_init_events_ocean(dungeon_generator2 *dg2){
 
 void dungeon2_compute_ocean(){
     if (fmem.dmap_blocks_initialized) {
-      dprintf("D2 already computed...\n");
+      DEBUG("D2 already computed...\n");
       return;
     }
-    dprintf("D2 compute...\n");
+    DEBUG("D2 compute...\n");
 
     fmem.dmap_blocks_initialized = 1;
 
@@ -170,7 +170,7 @@ void dungeon2_ocean_init_state(dungeon_generator2 *dg2) {
 
 void dungeon2_init_ocean(){
     if (fmem.dmap_header_initialized) {
-      dprintf("D2 header already initialized...\n");
+      DEBUG("D2 header already initialized...\n");
       return;
     }
 
@@ -209,7 +209,7 @@ void dungeon2_enter_ocean() {
   dg2->previous_position.y = (s16)(dg2->previous_position.y - 7);
   dg2->previous_bank = save1->bank;
   dg2->previous_map = save1->map;
-  dprintf("Saved player @ (%d, %d) on %d.%d\n", dg2->previous_position.x, dg2->previous_position.y,
+  DEBUG("Saved player @ (%d, %d) on %d.%d\n", dg2->previous_position.x, dg2->previous_position.y,
       dg2->previous_bank, dg2->previous_map);
 
   transparency_off();

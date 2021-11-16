@@ -22,7 +22,7 @@
 #include "item/pokeball.h"
 
 void _pokemon_get_egg_moves_stub(){
-    derrf("Rom called old invalid stub for pokemon_get_egg_moves!\n");
+    ERROR("Rom called old invalid stub for pokemon_get_egg_moves!\n");
 }
 
 u16 *pokemon_get_egg_moves(u16 species, int *size){
@@ -257,7 +257,7 @@ bool box_pokemon_hatching_proceed(box_pokemon *egg, bool consider_zero_cycles,
   if (!box_pokemon_get_attribute(egg, ATTRIBUTE_IS_EGG, 0)) return false;
   if (box_pokemon_get_attribute(egg, ATTRIBUTE_SANITY_IS_BAD_EGG, 0)) return false;
   int cycles = box_pokemon_get_attribute(egg, ATTRIBUTE_HAPPINESS, 0);
-  // dprintf("Proceed egg @%x with %d cycles\n", egg, cycles);
+  // DEBUG("Proceed egg @%x with %d cycles\n", egg, cycles);
   if ((cycles == BREEDING_CYCLES_HATCH_IMMEDIATLEY && consider_immediate_hatching) ||
       (consider_zero_cycles && cycles == 0)) return true;
   if (cycles != BREEDING_CYCLES_HATCH_IMMEDIATLEY) cycles = MAX(0, cycles - proceed_cycles);
@@ -336,7 +336,7 @@ u16 incubator_add_hatched_pokemon_to_party_or_box() {
 		// Add the mon to a box
 		result = 1; // Added to box
 	} else {
-		derrf("Hatched egg that has no room for hatching...\n");
+		ERROR("Hatched egg that has no room for hatching...\n");
 		result = 2;
 	}
 	memcpy(player_pokemon, opponent_pokemon + 1, sizeof(pokemon)); // Restore the original player's first mon

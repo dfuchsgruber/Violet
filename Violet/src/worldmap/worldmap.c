@@ -25,7 +25,7 @@ void worldmap_locate_player() {
 	int segment_y = y / segment_height;
 	worldmap_state->cursor_x = (u16)(worldmap_positions[bank][map_idx].x + segment_x);
 	worldmap_state->cursor_y = (u16)(worldmap_positions[bank][map_idx].y + segment_y);
-	// dprintf("Map width %d, height %d\n", width, height);
-	// dprintf("Segment width %d, height %d\n", segment_width, segment_height);
-	// dprintf("Segment x %d, y %d\n", segment_x, segment_y);
+	// DEBUG("Map width %d, height %d\n", width, height);
+	// DEBUG("Segment width %d, height %d\n", segment_width, segment_height);
+	// DEBUG("Segment x %d, y %d\n", segment_x, segment_y);
 }

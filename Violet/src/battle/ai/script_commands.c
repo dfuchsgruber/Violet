@@ -34,7 +34,7 @@ void battle_ai_script_command_random_flee() {
     if ((battle_ai_fleeing_prng() % battlers[battler_idx].max_hp) > battlers[battler_idx].current_hp / (*var_access(DIFFICULTY) == DIFFICULTY_HARD ? 2 : 1))
         base_rate += base_rate / 2;
 
-    dprintf("Considering fleeing with a rate of %d\n", base_rate);
+    DEBUG("Considering fleeing with a rate of %d\n", base_rate);
 
     if (battle_ai_fleeing_prng() % 255 < base_rate) {
         battle_ai_script = (u8*)UNALIGNED_32_GET(battle_ai_script + 1);

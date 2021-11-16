@@ -16,7 +16,7 @@
 u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
     u16 species = (u16) pokemon_get_attribute(p, ATTRIBUTE_SPECIES, 0);
     u16 held_item = (u16) pokemon_get_attribute(p, ATTRIBUTE_ITEM, 0);
-	dprintf("Pokemon evolutions[species] @%x\n", pokemon_evolutions[species]);
+	DEBUG("Pokemon evolutions[species] @%x\n", pokemon_evolutions[species]);
     if (pokemon_evolutions[species]) {
         pokemon_evolution *evolutions = pokemon_evolutions[species];
         switch (type) {
@@ -24,7 +24,7 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
         {   //The usual case
             arg = (u8) pokemon_get_attribute(p, ATTRIBUTE_LEVEL, 0);
             for (int i = 0; evolutions[i].method != EVOLUTION_METHOD_NONE; i++) {
-            	dprintf("Checking evolution index %d with method %d @ %x\n", i, evolutions[i].method, &evolutions[i]);
+            	DEBUG("Checking evolution index %d with method %d @ %x\n", i, evolutions[i].method, &evolutions[i]);
                 switch (evolutions[i].method) {
                 case EVOLUTION_METHOD_FRIENDSHIP:
                 {
@@ -37,7 +37,7 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
                 {
                     u8 friendship = (u8) pokemon_get_attribute(p, ATTRIBUTE_HAPPINESS, 0);
                     if (!time_test())
-                        dprintf("A Pokemon that evolves at day has leveled up but your time seems to be turned off!\n");
+                        DEBUG("A Pokemon that evolves at day has leveled up but your time seems to be turned off!\n");
                     rtc_timestamp time = {
                         0
                     };
@@ -50,12 +50,12 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
                 {
                     u8 friendship = (u8) pokemon_get_attribute(p, ATTRIBUTE_HAPPINESS, 0);
                     if (!time_test())
-                        dprintf("A Pokemon that evolves at night has leveled up but your time seems to be turned off!\n");
+                        DEBUG("A Pokemon that evolves at night has leveled up but your time seems to be turned off!\n");
                     rtc_timestamp time = {
                         0
                     };
                     time_read( & time);
-                    dprintf("Night evolution with friendship at %d\n", friendship);
+                    DEBUG("Night evolution with friendship at %d\n", friendship);
                     if ((time.hour <= 6 || time.hour >= 22) && friendship >= 220)
                         return evolutions[i].target;
                     break;
@@ -63,7 +63,7 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
                 case EVOLUTION_METHOD_SPAWN_SECOND:
                 case EVOLUTION_METHOD_LEVEL_UP:
                 {
-                    dprintf("Level up called with arg %d and cond %d\n", arg, evolutions[i].condition);
+                    DEBUG("Level up called with arg %d and cond %d\n", arg, evolutions[i].condition);
                     if (evolutions[i].condition <= arg)
                         return evolutions[i].target;
                     break;
@@ -143,7 +143,7 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
                 case EVOLUTION_METHOD_HOLD_ITEM_AND_NIGHT:
                 {
                     if (!time_test())
-                        dprintf("A Pokemon that evolves at night has leveled up but your RTC seems to be turned off!\n");
+                        DEBUG("A Pokemon that evolves at night has leveled up but your RTC seems to be turned off!\n");
                     rtc_timestamp time = {
                         0
                     };
@@ -159,7 +159,7 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
                 case EVOLUTION_METHOD_HOLD_ITEM_AND_DAY:
                 {
                     if (!time_test())
-                        dprintf("A Pokemon that evolves at day has leveled up but your RTC seems to be turned off!\n");
+                        DEBUG("A Pokemon that evolves at day has leveled up but your RTC seems to be turned off!\n");
                     rtc_timestamp time = {
                         0
                     };
@@ -189,7 +189,7 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
         case EVOLUTION_TRIGGER_ITEM2:
         case EVOLUTION_TRIGGER_ITEM_AND_REMOVE_HOLD_ITEM:
         {
-            dprintf("Item evolution with type %d\n", type);
+            DEBUG("Item evolution with type %d\n", type);
             //Check for evolutions triggered by an item
             int i;
             for (i = 0; evolutions[i].method != EVOLUTION_METHOD_NONE; i++) {
@@ -260,10 +260,10 @@ u16 pokemon_get_basis_stage (u16 species) {
 
 static size_t pokemon_get_evolution_item_line_dfs(u16 species, u16 *items, size_t max_size, size_t depth) {
     if (depth > 2) {
-        dprintf("Scanning for all items in a evolution line for species %d reached a depth greater than 2.\n", species);
+        DEBUG("Scanning for all items in a evolution line for species %d reached a depth greater than 2.\n", species);
         return 0;
     }
-    dprintf("Evolution item DFS for species %d at depth %d, items %x, max_items %d\n", species, depth, items, max_size);
+    DEBUG("Evolution item DFS for species %d at depth %d, items %x, max_items %d\n", species, depth, items, max_size);
     size_t cnt = 0; // count how  many items were already added
     pokemon_evolution *evolutions = pokemon_evolutions[species];
     if (evolutions) {
@@ -279,15 +279,15 @@ static size_t pokemon_get_evolution_item_line_dfs(u16 species, u16 *items, size_
             }
         }
     }
-    dprintf("Evolution item DFS for species %d at depth %d found %d items.\n", species, depth, cnt);
+    DEBUG("Evolution item DFS for species %d at depth %d found %d items.\n", species, depth, cnt);
     return cnt;
 }
 
 
 size_t pokemon_get_evolution_item_line(u16 species, u16 *items, size_t max_size) {
-    dprintf("Basis stage of %d\n ", species);
+    DEBUG("Basis stage of %d\n ", species);
     species = pokemon_get_basis_stage(species);
-    dprintf("Is %d\n", species);
+    DEBUG("Is %d\n", species);
     // Unfold the dfs tree of this species, we assume no cycles and therefore don't save visited nodes
     return pokemon_get_evolution_item_line_dfs(species, items, max_size, 0);
 }
@@ -296,6 +296,6 @@ void pokemon_get_evolution_item_line_test() {
     u16 items[10];
     size_t cnt = pokemon_get_evolution_item_line(POKEMON_PORYGON2, items, ARRAY_COUNT(items));
     for (size_t i = 0; i < cnt; i++) {
-        dprintf("Item %d is %d\n", i, items[i]);
+        DEBUG("Item %d is %d\n", i, items[i]);
     }
 }

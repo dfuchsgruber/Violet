@@ -245,7 +245,7 @@ static void crafting_ui_setup_recipies_and_list_menu_items() {
         CRAFTING_UI_STATE->list_menu_items[type] = malloc_and_clear(sizeof(list_menu_item) * (recipe_cnt + 1));
         CRAFTING_UI_STATE->list_menu_item_strings[type] = malloc_and_clear(sizeof(u8*) * recipe_cnt);
 
-        dprintf("Allocated recipies @%x, list_menu_items @%x\n", CRAFTING_UI_STATE->recipies[type], CRAFTING_UI_STATE->list_menu_items[type]);
+        DEBUG("Allocated recipies @%x, list_menu_items @%x\n", CRAFTING_UI_STATE->recipies[type], CRAFTING_UI_STATE->list_menu_items[type]);
 
         for (u8 idx = 0; idx < recipe_cnt; idx++) {
             if (recipies[idx].flag == 0 || recipies[idx].flag == 0xFFFF || checkflag(recipies[idx].flag)) {
@@ -278,7 +278,7 @@ static void crafting_ui_setup_recipies_and_list_menu_items() {
         int exit_idx = CRAFTING_UI_STATE->num_crafting_recipies[type];
         CRAFTING_UI_STATE->list_menu_items[type][exit_idx].text = str_exit;
         CRAFTING_UI_STATE->list_menu_items[type][exit_idx].idx = (exit_idx + 1);
-        dprintf("Set up %d recipies for category %d\n", CRAFTING_UI_STATE->num_crafting_recipies[type], type);
+        DEBUG("Set up %d recipies for category %d\n", CRAFTING_UI_STATE->num_crafting_recipies[type], type);
     }
 }
 
@@ -648,7 +648,7 @@ static void crafting_ui_setup_list_menu() {
     u16 type = CRAFTING_UI_STATE->type;
     CRAFTING_UI_STATE->recipe_selection_list_menu_template.item_cnt = (u16)(CRAFTING_UI_STATE->num_crafting_recipies[type] + 1); 
     CRAFTING_UI_STATE->recipe_selection_list_menu_template.items = CRAFTING_UI_STATE->list_menu_items[type];
-    dprintf("Set up list menu for type %d with cursor @%d and %d above.\n", type, CRAFTING_UI_STATE->list_menu_cursor_positions[type], CRAFTING_UI_STATE->list_menu_cursor_above[type]);
+    DEBUG("Set up list menu for type %d with cursor @%d and %d above.\n", type, CRAFTING_UI_STATE->list_menu_cursor_positions[type], CRAFTING_UI_STATE->list_menu_cursor_above[type]);
     CRAFTING_UI_STATE->recipe_selection_list_menu_callback = list_menu_new(&CRAFTING_UI_STATE->recipe_selection_list_menu_template, 
         CRAFTING_UI_STATE->list_menu_cursor_positions[type], CRAFTING_UI_STATE->list_menu_cursor_above[type]);
     crafting_ui_synchronize_current_recipe_with_list_menu_cursor();
@@ -663,7 +663,7 @@ static void crafting_ui_switch_type_callback1() {
     fading_proceed();
     if (fading_is_active() || dma3_busy(-1))
         return;
-    // dprintf("Updating in state %d\n", CRAFTING_UI_STATE->setup_state);
+    // DEBUG("Updating in state %d\n", CRAFTING_UI_STATE->setup_state);
     switch (CRAFTING_UI_STATE->setup_state) {
         case 0: {
             bg_hide(ui_tboxes[TBOX_INGREDIENTS].bg_id); // Hides the bg
@@ -734,7 +734,7 @@ static void crafting_ui_setup() {
     *(u16*)0x02038604 = 0; //no idea why to do this, but needs to be done for some reason
     if (fading_is_active() || dma3_busy(-1))
         return;
-    // dprintf("Ui setup in state %d\n", CRAFTING_UI_STATE->setup_state);
+    // DEBUG("Ui setup in state %d\n", CRAFTING_UI_STATE->setup_state);
     switch (CRAFTING_UI_STATE->setup_state) {
         case 0: {
             crafting_ui_setup_recipies_and_list_menu_items();

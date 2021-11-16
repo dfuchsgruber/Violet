@@ -13,7 +13,7 @@ u16 tile_hash_by_position(s16 x, s16 y, u8 bank, u8 map_idx, size_t m) {
         (u32)x, (u32)y, bank, map_idx,
     };
     u16 hash = (u16) daily_events_hash(seq, 4);
-    dprintf("Hash value %x\n", hash);
+    DEBUG("Hash value %x\n", hash);
     return (u16)(hash % m);
 }
 
@@ -54,7 +54,7 @@ u32 dungeon_hash(int dungeon_id) {
 }
 
 bool dungeon_flag_check(int dungeon_id) {
-	dprintf("get dungeon flag %d\n", dungeon_id);
+	DEBUG("get dungeon flag %d\n", dungeon_id);
 	if (dungeon_id < 128) {
 		return checkflag((u16)(FLAG_DUNGEON_BASE + dungeon_id));
 	}
@@ -62,7 +62,7 @@ bool dungeon_flag_check(int dungeon_id) {
 }
 
 void dungeon_flag_set(int dungeon_id) {
-	dprintf("Set dungeon flag %d\n", dungeon_id);
+	DEBUG("Set dungeon flag %d\n", dungeon_id);
 	setflag((u16)(FLAG_DUNGEON_BASE + dungeon_id));
 }
 

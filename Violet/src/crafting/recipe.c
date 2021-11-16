@@ -856,7 +856,7 @@ u16 recipe_max_count_with_requirements_fulfilled(crafting_recipe *r) {
                     break;
                 }
             } 
-            dprintf("After ingredient %d with item %d the max count is %d\n", i, ingredient->item, max_count);
+            DEBUG("After ingredient %d with item %d the max count is %d\n", i, ingredient->item, max_count);
         }
         while (!item_has_room(r->item, (u16)(r->count * max_count)) && max_count > 0)
             max_count--;

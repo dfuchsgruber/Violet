@@ -52,7 +52,7 @@ bool dungeon2_find_empty_space_for_pattern(int *space_x, int *space_y, u8 *cente
 }
 
 void dungeon2_place_pattern(int pattern_x, int pattern_y, map_footer_t *pattern, dungeon_generator2 *dg2) {
-    dprintf("Place pattern with dimensions %d,%d at %d,%d\n", pattern->width, pattern->height, pattern_x, pattern_y);
+    DEBUG("Place pattern with dimensions %d,%d at %d,%d\n", pattern->width, pattern->height, pattern_x, pattern_y);
     for (u8 i = 0; i < pattern->width; i++) {
         for (u8 j = 0; j < pattern->height; j++) {
             u16 *block = (u16*) pattern->map + (j * pattern->width + i);
@@ -89,7 +89,7 @@ u16 dungeon2_seeded_rnd16(dungeon_generator2 *dg2, u32 seed) {
 
 u8 dungeon2_get_number_trainers(dungeon_generator2 *dg2) {
     u8 num_trainers = (u8)(dungeon2_seeded_rnd16(dg2, DG2_RANDOM_SEED_NUM_TRAINERS) % (DG2_MAX_NUM_TRAINERS + 1));
-    // dprintf("Dungeon has %d trainers\n", num_trainers);
+    // DEBUG("Dungeon has %d trainers\n", num_trainers);
     return num_trainers;
 }
 
@@ -97,7 +97,7 @@ u8 dungeon2_get_number_items(dungeon_generator2 *dg2) {
     u8 num_trainers = dungeon2_get_number_trainers(dg2);
     int max_num_items = MAX(0, MIN(dg2->nodes - DG2_NODE_TRAINER_OR_ITEM - num_trainers, DG2_MAX_NUM_TRAINER_OR_ITEM_NODES - num_trainers));
     u8 num_items = (u8)(dungeon2_seeded_rnd16(dg2, DG2_RANDOM_SEED_NUM_ITEMS) % (max_num_items + 1));
-    // dprintf("Dungeon has %d (%d possible) items\n", num_items, max_num_items);
+    // DEBUG("Dungeon has %d (%d possible) items\n", num_items, max_num_items);
     return num_items;
 }
 
@@ -141,7 +141,7 @@ void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(
     fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_STATIC_ENCOUNTER][1]);
     u16 species = *var_access(DUNGEON_OVERWORLD_SPECIES);
     fmem.dpersons[num_persons].overworld_index = overworld_get_sprite_idx_by_species(species);
-    dprintf("Static encounter has gotten overworld idx %d\n", fmem.dpersons[num_persons].overworld_index);
+    DEBUG("Static encounter has gotten overworld idx %d\n", fmem.dpersons[num_persons].overworld_index);
     fmem.dpersons[num_persons].value = species;
     fmem.dpersons[num_persons].behavior = BEHAVIOUR_WANDER_AROUND;
     fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
@@ -189,7 +189,7 @@ u16 dungeon_mushroom_get_type(u16 mushroom_idx) {
         return MUSHROOM_TYPE_PLUCKED;
     u32 seq[1] = {mushroom_idx};
     fmem.gp_rng = hash_sequence(seq, ARRAY_COUNT(seq), cmem.dg2.initial_seed);
-    dprintf("GP rnd seeded with mushroom dungeon hash 0x%x\n", fmem.gp_rng);
+    DEBUG("GP rnd seeded with mushroom dungeon hash 0x%x\n", fmem.gp_rng);
     return (u8)choice(dungeon_mushroom_rates, ARRAY_COUNT(dungeon_mushroom_rates), gp_rnd16);
 }
 

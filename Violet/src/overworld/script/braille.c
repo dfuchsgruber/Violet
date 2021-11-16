@@ -22,7 +22,7 @@ bool overworld_script_command_braille(overworld_script_state_t *state) {
             height = MIN((u8)(height + 3), 18);
         }
     }
-    dprintf("braille height %d\n", height);
+    DEBUG("braille height %d\n", height);
     u8 x = (u8)((30 - width) / 2);
     u8 y = (u8)((20 - height) / 2);
 

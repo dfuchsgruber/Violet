@@ -14,7 +14,7 @@ bool overworld_script_command_xd4_bufferitemnameplural(overworld_script_state_t 
     u16 item_idx =  var_get(overworld_script_read_hword(state));
     u16 cnt = var_get(overworld_script_read_hword(state));
     u8 *dst = ow_script_string_buffers[buffer_idx];
-    dprintf("buffer item name plural for item %d, count %d, buffer %d\n", item_idx, cnt, buffer_idx);
+    DEBUG("buffer item name plural for item %d, count %d, buffer %d\n", item_idx, cnt, buffer_idx);
     dst[0] = 0xFF;
     if (cnt > 1) {
         u8 str_cnt[8];

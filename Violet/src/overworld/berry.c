@@ -87,14 +87,14 @@ void berry_tree_calculate_yield(u8 berry_tree_idx) {
             yield += MAX(1, yield / 2);
         }
     }
-    dprintf("Unfertilized yield is %d\n", yield);
+    DEBUG("Unfertilized yield is %d\n", yield);
     if (cmem.berry_trees[berry_tree_idx].fertilized) {
         yield += MAX(1, 3 * yield / 2);
-        dprintf("Fertilized yield is %d\n", yield);
+        DEBUG("Fertilized yield is %d\n", yield);
     }
     yield = MIN(7, yield);
     cmem.berry_trees[berry_tree_idx].yield = (u8)(yield & 7);
-    // dprintf("Initialized berry tree %d with yield %d\n", berry_tree_idx, yield);
+    // DEBUG("Initialized berry tree %d with yield %d\n", berry_tree_idx, yield);
 }
 
 
@@ -136,7 +136,7 @@ u16 berry_tree_get_yield() {
 void berry_tree_update_gfx() {
     u8 person_idx = (u8)(*var_access(LASTTALKED));
     u8 npc_idx = npc_get_by_person_idx(person_idx, save1->map, save1->bank);
-    dprintf("Berry update, npc idx %d for person %d\n", npc_idx, person_idx);
+    DEBUG("Berry update, npc idx %d for person %d\n", npc_idx, person_idx);
     if (npc_idx < 16) {
         u8 oam_idx = npcs[npc_idx].oam_id;
         npcs[npc_idx].flags.active = 0; // Temporarily disable the npc such that the pal can be released
@@ -145,7 +145,7 @@ void berry_tree_update_gfx() {
         npcs[npc_idx].flags.active = 1; // Set the npc to active again
         overworld_npc_update_palette(npcs + npc_idx, oams + oam_idx);
         overworld_sprite *ow = overworld_get_by_npc(npcs + npc_idx);
-        dprintf("Updated overworld sprite %d with @0x%x\n", person_idx, ow);
+        DEBUG("Updated overworld sprite %d with @0x%x\n", person_idx, ow);
         oams[oam_idx].gfx_table = ow->graphics;
         oam_gfx_anim_start(oams + oam_idx, 0);
     }
@@ -154,7 +154,7 @@ void berry_tree_update_gfx() {
 bool berry_pick() {
     u16 item_idx = (u16)(BERRY_IDX_TO_ITEM_IDX(cmem.berry_trees[*var_access(0x8000)].berry));
     u8 count = cmem.berry_trees[*var_access(0x8000)].yield;
-    dprintf("Picked %d times %d\n", count, item_idx);
+    DEBUG("Picked %d times %d\n", count, item_idx);
     if (!item_has_room(item_idx, count)) return false;
     item_add(item_idx, count);
     cmem.berry_trees[*var_access(0x8000)].picked_once = 1;
@@ -203,7 +203,7 @@ bool special_berry_tree_grow() {
 }
 
 void berry_proceed_minutes(u16 minutes) {
-    // dprintf("Proceeding berries by %d minutes\n", minutes);
+    // DEBUG("Proceeding berries by %d minutes\n", minutes);
     for (size_t i = 0; i < ARRAY_COUNT(cmem.berry_trees); i++) {
         berry_tree *tree = cmem.berry_trees + i;
         if (tree->stage != BERRY_STAGE_NO_BERRY) {
@@ -211,14 +211,14 @@ void berry_proceed_minutes(u16 minutes) {
             while (time) {
                 if (tree->minutes_to_next_stage > time) {
                     tree->minutes_to_next_stage = (u16)(tree->minutes_to_next_stage - time);
-                    // dprintf("For tree %d there are %d min remaining for the next stage.\n", i, tree->minutes_to_next_stage);
+                    // DEBUG("For tree %d there are %d min remaining for the next stage.\n", i, tree->minutes_to_next_stage);
                     break;
                 }
                 // We can entirely finished a stage
                 time = (u16)(time - tree->minutes_to_next_stage);
                 if(!berry_tree_grow((u8)i)) 
                     break; // The tree can't grow anymore
-                dprintf("Tree %d grew to stage %d\n", i, tree->stage);
+                DEBUG("Tree %d grew to stage %d\n", i, tree->stage);
             }
         }
     }
@@ -229,18 +229,18 @@ void berry_proceed() {
 	if (!fmem.berry_tree_time_last_updated_initialized) {
         time_read(&fmem.berry_tree_time_last_update);
         fmem.berry_tree_time_last_updated_initialized = 1;
-        dprintf("Reference timestamp for berry tree updated initialized.\n");
+        DEBUG("Reference timestamp for berry tree updated initialized.\n");
 	}
     rtc_timestamp time = {0};
     time_read(&time);
     u64 lseconds_last_update = rtc_timestamp_to_seconds(&fmem.berry_tree_time_last_update);
     u64 lseconds_current = rtc_timestamp_to_seconds(&time);
     if (lseconds_current < lseconds_last_update) {
-        dprintf("Timestamp of last update is %d.%d.%d clock time: %d:%d (%d s)\n", fmem.berry_tree_time_last_update.day, fmem.berry_tree_time_last_update.month, fmem.berry_tree_time_last_update.year,
+        DEBUG("Timestamp of last update is %d.%d.%d clock time: %d:%d (%d s)\n", fmem.berry_tree_time_last_update.day, fmem.berry_tree_time_last_update.month, fmem.berry_tree_time_last_update.year,
             fmem.berry_tree_time_last_update.hour, fmem.berry_tree_time_last_update.minute, fmem.berry_tree_time_last_update.second);
-        dprintf("Timestamp current is %d.%d.%d clock time: %d:%d (%d s)\n", time.day, time.month, time.year,
+        DEBUG("Timestamp current is %d.%d.%d clock time: %d:%d (%d s)\n", time.day, time.month, time.year,
             time.hour, time.minute, time.second);
-        dprintf("Warning: The current time is before the last berry tree update, this most likely is a bug...\n");
+        DEBUG("Warning: The current time is before the last berry tree update, this most likely is a bug...\n");
         return;
     }
     u64 ldelta_minutes = MIN(60 * 24 * 7, (lseconds_current - lseconds_last_update) / 64); // We do not care about delays longer than a week...
@@ -282,7 +282,7 @@ void overworld_effect_berry_tree_growth_sparkle() {
     u8 person_idx = (u8)(*var_access(LASTTALKED));
     u8 npc_idx = npc_get_by_person_idx(person_idx, save1->map, save1->bank);
     if (npc_idx >= 16) { // Should never happen
-        derrf("Overworld effect berry tree growth sparkle could not be located.\n");
+        ERROR("Overworld effect berry tree growth sparkle could not be located.\n");
     }
     overworld_effect_state.x = npcs[npc_idx].dest_x;
     overworld_effect_state.y = npcs[npc_idx].dest_y;

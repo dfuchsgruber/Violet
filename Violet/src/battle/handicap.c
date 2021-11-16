@@ -93,7 +93,7 @@ bool battle_handicap_switch_in_effects(u8 battler_idx) {
                         battlers[battler_idx].type2 != TYPE_FEUER && !battle_side_statuses[battler_idx].status_safeguard
                         && !(BATTLE_STATE2->status_custom_persistent[battler_idx] & CUSTOM_STATUS_PERSISTENT_HANDICAP_APPLIED)) { 
                         // Battler can be affected by extreme heat
-                        dprintf("Execute extreme heat for battler %d\n", battler_idx);
+                        DEBUG("Execute extreme heat for battler %d\n", battler_idx);
                         attacking_battler = battler_idx; // Set those for synchronize I suppose...
                         defending_battler = battler_idx; 
                         battle_scripting.battler_idx = battler_idx;
@@ -174,7 +174,7 @@ bool battle_handicap_attack_done() {
             && attacker->stat_changes[1] < 12 && 
             (attacker->type1 == TYPE_KAMPF || attacker->type2 == TYPE_KAMPF) &&
             attacks[active_attack].type == TYPE_KAMPF){
-            //dprintf("Handicap attack done with attacker %d\n", attacking_battler);
+            //DEBUG("Handicap attack done with attacker %d\n", attacking_battler);
             attacker->stat_changes[1]++; // attack boost
             battle_scripting.battler_idx = attacking_battler;
             battle_scripting.animation_user = attacking_battler;
@@ -202,7 +202,7 @@ void battle_handicap_groudon_calculate_damage() {
     size_t magnitude = choice(magnitude_p, ARRAY_COUNT(magnitude_p), NULL) + 4;
     // The lower Groudon's health, the higher the magnitude
     size_t increase = (size_t)((battlers[1].max_hp - battlers[1].current_hp) * 4 / battlers[1].max_hp);
-    dprintf("Magnitude %d, increase %d, total %d\n", magnitude, increase, MIN(10, magnitude + increase));
+    DEBUG("Magnitude %d, increase %d, total %d\n", magnitude, increase, MIN(10, magnitude + increase));
     magnitude = MIN(10, magnitude + increase);
     battle_dynamic_base_power = groudon_magnitude_magnitude_power[magnitude - 4];
     // Find a target

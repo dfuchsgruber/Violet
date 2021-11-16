@@ -66,14 +66,14 @@ bool battler_has_no_switching_targets(u8 battler_idx, u8 party_idx, u8 partner_p
         party_idx = (u8) battler_idx_to_party_idx(battler_idx);
     if (partner_party_idx == 6)
         partner_party_idx = (u8) battler_idx_to_party_idx(PARTNER(battler_idx));
-    dprintf("Battler %d has switching target?\nparty_idx %d, partner_party_idx %d\n", battler_idx, party_idx, partner_party_idx);
+    DEBUG("Battler %d has switching target?\nparty_idx %d, partner_party_idx %d\n", battler_idx, party_idx, partner_party_idx);
     for (int i = first; i < last; i++) {
         if (POKEMON_IS_VIABLE(party + i) && i != party_idx && i != partner_party_idx) {
-            dprintf("Party idx %d is viable.\n", i);
+            DEBUG("Party idx %d is viable.\n", i);
             return false;
         }
     }
-    dprintf("Battler %d has no swichting targets.\n", battler_idx);
+    DEBUG("Battler %d has no swichting targets.\n", battler_idx);
     return true;
 }
 

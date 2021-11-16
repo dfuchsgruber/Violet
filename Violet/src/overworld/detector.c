@@ -94,7 +94,7 @@ static void static_detector_arrow_callback(oam_object *self) {
         s16 oam_x = 0;
         s16 oam_y = 0;
         map_position_to_oam_position(coords.x, (s16)(coords.y - 1), &oam_x, &oam_y);
-        dprintf("Player at %d.%d\n", coords.x, coords.y);
+        DEBUG("Player at %d.%d\n", coords.x, coords.y);
         self->x = (s16)(oam_x - 8);
         self->y = (s16)(oam_y - 8);
         */
@@ -136,7 +136,7 @@ void overworld_static_detector_callback(u8 self) {
         if (coords.x != vars[DETECTOR_CB_VAR_X] || coords.y != vars[DETECTOR_CB_VAR_Y] || 
             save1->bank != vars[DETECTOR_CB_VAR_BANK] || save1->map != vars[DETECTOR_CB_VAR_MAP_IDX] 
             || flag_based_update) { // Update detector
-            // dprintf("Updating detector arrow for position %d.%d\n", coords.x, coords.y);
+            // DEBUG("Updating detector arrow for position %d.%d\n", coords.x, coords.y);
             vars[DETECTOR_CB_VAR_X] = (u16)coords.x;
             vars[DETECTOR_CB_VAR_Y] = (u16)coords.y;
             vars[DETECTOR_CB_VAR_BANK] = save1->bank;
@@ -161,7 +161,7 @@ void overworld_static_detector_callback(u8 self) {
                     // Precise direction
                     oams[oam_idx].private[1] = negative_arctan2((s16)vars[HIDDEN_ITEM_CB_VAR_DX], (s16)vars[HIDDEN_ITEM_CB_VAR_DY]);
                 } else {
-                    // dprintf("Direction is %d\n", direction);
+                    // DEBUG("Direction is %d\n", direction);
                     // For now, we don't want an arrow at all, so we just have no rotscale
                     oams[oam_idx].private[1] = 0x8000;
                     if (oams[oam_idx].private[2] < 4) // Non-directional animation
@@ -188,7 +188,7 @@ void overworld_static_detector_callback(u8 self) {
                     }
                     **/
                 }
-                // dprintf("Have found hidden item at %d.%d\n", vars[HIDDEN_ITEM_CB_VAR_DX], vars[HIDDEN_ITEM_CB_VAR_DY]);
+                // DEBUG("Have found hidden item at %d.%d\n", vars[HIDDEN_ITEM_CB_VAR_DX], vars[HIDDEN_ITEM_CB_VAR_DY]);
             } else {
                 oams[oam_idx].flags |= OAM_FLAG_INVISIBLE;
             }

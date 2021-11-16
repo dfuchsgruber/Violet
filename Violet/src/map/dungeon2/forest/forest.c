@@ -554,7 +554,7 @@ void dungeon2_set_encounter_forest() {
 }
 
 map_header_t *dungeon2_init_header_forest(dungeon_generator2 *dg2) {
-    dprintf("D2 header init\n");
+    DEBUG("D2 header init\n");
     fmem.dmap_header_initialized = 1;
     fmem.dmapheader.levelscripts = dungeon2_lscr;
     fmem.dmapheader.connections = &dungeon2_connections;
@@ -895,7 +895,7 @@ void dungeon2_compute_layout_forest_callback(u8 self) {
     u8 *map = (u8*)big_callback_get_int(self, 4);
     u8 *over = (u8*)big_callback_get_int(self, 8);
     u16 *vars = big_callbacks[self].params;
-    // dprintf("Forest callback superstate %d\n", vars[0]);
+    // DEBUG("Forest callback superstate %d\n", vars[0]);
     switch (vars[0]) {
         case 0: {
             big_callback_set_int(self, 4, (int)malloc(sizeof(u8) * (size_t)dg2->width * (size_t)dg2->height));
@@ -934,7 +934,7 @@ void dungeon2_compute_layout_forest_callback(u8 self) {
             int excluded_nodes_mask = 0;
             for (int i = DG2_NODE_PATTERN; i < DG2_NODE_PATTERN + num_patterns; i++)
                 excluded_nodes_mask |= 1 << i;
-            // dprintf("Excluded vertices mask 0x%x\n", excluded_nodes_mask);
+            // DEBUG("Excluded vertices mask 0x%x\n", excluded_nodes_mask);
             vars[1] = dungeon2_create_patch_layout_with_callback(dg2, save1->dungeon_nodes, over, excluded_nodes_mask);
             vars[0]++;
             break;
@@ -998,6 +998,6 @@ void dungeon2_enter_forest() {
     dg2->previous_position.y = (s16)(dg2->previous_position.y - 7);
     dg2->previous_bank = save1->bank;
     dg2->previous_map = save1->map;
-    dprintf("Saved player @ (%d, %d) on %d.%d\n", dg2->previous_position.x, dg2->previous_position.y,
+    DEBUG("Saved player @ (%d, %d) on %d.%d\n", dg2->previous_position.x, dg2->previous_position.y,
         dg2->previous_bank, dg2->previous_map);
 }

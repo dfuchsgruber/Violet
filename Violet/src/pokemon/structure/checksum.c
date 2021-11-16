@@ -40,7 +40,7 @@ pid_t pokemon_new_pid() {
 
 	// Force shinyness via variable
 	u16 *next_shiny_pokemon = var_access(NEXT_POKEMON_SHINY);
-	dprintf("Next shinies %d\n", *next_shiny_pokemon);
+	DEBUG("Next shinies %d\n", *next_shiny_pokemon);
 	if(*next_shiny_pokemon > 0){
 		p.fields.is_shiny = 1;
 		(*next_shiny_pokemon)--;
@@ -64,7 +64,7 @@ u16 pokemon_calculate_checksum(pokemon *p){
 u8 pokemon_nature_by_pid(pid_t p){
     u8 nat = (u8)p.fields.nature;
     if(nat > 24) {
-    	dprintf("Nature value too high! %d\n", nat);
+    	DEBUG("Nature value too high! %d\n", nat);
     	nat /= 2;
     }
     return nat;
@@ -81,7 +81,7 @@ bool pokemon_is_shiny(u32 tid, pid_t p){
 }
 
 palette *pokemon_get_pal_struct(u16 species, u32 tid, pid_t p){
-    //dprintf("Pokemon get pal struct for species %d, pid %x, tid %x\n", species, p.fields.shinyness, tid);
+    //DEBUG("Pokemon get pal struct for species %d, pid %x, tid %x\n", species, p.fields.shinyness, tid);
     if(pokemon_is_shiny(tid, p))
         return &pokemon_shiny_pals[species];
     else
@@ -94,7 +94,7 @@ const void *pokemon_get_pal(u16 species, u32 tid, pid_t p){
 }
 
 void box_pokemon_set_pokeball_in_substructure (pokemon_substructure_section_D *subs, u8 pokeball_idx) {
-	dprintf("Set pokeball of 0x%x to %d\n", subs, pokeball_idx);
+	DEBUG("Set pokeball of 0x%x to %d\n", subs, pokeball_idx);
 	subs->pokeball = (u8)(pokeball_idx & 0x1F);
 }
 

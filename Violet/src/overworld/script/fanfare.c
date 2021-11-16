@@ -25,7 +25,7 @@ void fanfare_by_fanfare_idx(u8 fanfare_idx) {
     // Omit Quest-Log stuff
     mplay_stop(mplay_info_background_music);
     fanfare_delay = fanfares[fanfare_idx].duration;
-    dprintf("Playing song idx %d as fanfare\n", fanfares[fanfare_idx].song_idx);
+    DEBUG("Playing song idx %d as fanfare\n", fanfares[fanfare_idx].song_idx);
     mplay_start_song(fanfares[fanfare_idx].song_idx);
 }
 

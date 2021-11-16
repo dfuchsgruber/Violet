@@ -50,7 +50,7 @@ void roamer_initialize(int roamer_idx) {
     roamer_state_t *roamer = &cmem.roamers[roamer_idx];
     pid.value = (u32)pokemon_get_attribute(opponent_pokemon, ATTRIBUTE_PID, 0);
     roamer->pid = pid;
-    dprintf("Roamer %d initialized with pid %x (shiny: %d)\n", roamer_idx, roamer->pid, roamer->pid.fields.is_shiny);
+    DEBUG("Roamer %d initialized with pid %x (shiny: %d)\n", roamer_idx, roamer->pid, roamer->pid.fields.is_shiny);
     roamer->ivs = (u32)pokemon_get_attribute(opponent_pokemon, ATTRIBUTE_IVS, 0);
     roamer->hp = (u16)pokemon_get_attribute(opponent_pokemon, ATTRIBUTE_TOTAL_HP, 0);
     for (int i = 0; i < 4; i++) {
@@ -93,7 +93,7 @@ void roamer_randomize_position(int roamer_idx) {
         } while (new_bank == cmem.roamer_locations[roamer_idx].bank && new_map_idx == cmem.roamer_locations[roamer_idx].map_idx);
         cmem.roamer_locations[roamer_idx].bank = new_bank;
         cmem.roamer_locations[roamer_idx].map_idx = new_map_idx;
-        dprintf("Roamer %d randomized position to %d.%d\n", roamer_idx, new_bank, new_map_idx);
+        DEBUG("Roamer %d randomized position to %d.%d\n", roamer_idx, new_bank, new_map_idx);
     }
 }
 
@@ -109,7 +109,7 @@ void roamer_move_all() {
             if (rnd16() % 16 == 0) {
                 // 1/16 chance that the roamer randomly changes their location
                 roamer_randomize_position(i);
-                dprintf("Roamer %d randomly changed their location\n", i);
+                DEBUG("Roamer %d randomly changed their location\n", i);
             } else {
                 u8 bank = cmem.roamer_locations[i].bank;
                 u8 map_idx = cmem.roamer_locations[i].map_idx;
@@ -134,9 +134,9 @@ void roamer_move_all() {
                     int new_idx = rnd16() % num_adjacent_maps;
                     cmem.roamer_locations[i].bank = adjacent_maps[new_idx].bank;
                     cmem.roamer_locations[i].map_idx = adjacent_maps[new_idx].map_idx;
-                    dprintf("Roamer %d moved to %d.%d\n", i, adjacent_maps[new_idx].bank, adjacent_maps[new_idx].map_idx);
+                    DEBUG("Roamer %d moved to %d.%d\n", i, adjacent_maps[new_idx].bank, adjacent_maps[new_idx].map_idx);
                 } else {
-                    dprintf("Roamer %d stayed on %d.%d\n", i, cmem.roamer_locations[i].bank, cmem.roamer_locations[i].map_idx);
+                    DEBUG("Roamer %d stayed on %d.%d\n", i, cmem.roamer_locations[i].bank, cmem.roamer_locations[i].map_idx);
                 }
             }
         }
@@ -144,9 +144,9 @@ void roamer_move_all() {
 }
 
 void pokemon_new_roamer(int roamer_idx) {
-    dprintf("New roamer spawning with pid %x\n", cmem.roamers[roamer_idx].pid);
+    DEBUG("New roamer spawning with pid %x\n", cmem.roamers[roamer_idx].pid);
     pokemon_new_and_set_ivs(opponent_pokemon, roamer_species[roamer_idx], ROAMER_LEVEL, cmem.roamers[roamer_idx].ivs, cmem.roamers[roamer_idx].pid);
-    dprintf("New roamer spawned with pid %x\n", pokemon_get_attribute(opponent_pokemon, ATTRIBUTE_PID, 0));
+    DEBUG("New roamer spawned with pid %x\n", pokemon_get_attribute(opponent_pokemon, ATTRIBUTE_PID, 0));
     pokemon_set_attribute(opponent_pokemon, ATTRIBUTE_STATUS, &cmem.roamers[roamer_idx].status);
     pokemon_set_attribute(opponent_pokemon, ATTRIBUTE_CURRENT_HP, &cmem.roamers[roamer_idx].hp);
     for (int i = 0; i < 4; i++) {
@@ -161,7 +161,7 @@ bool roamer_is_present(u8 bank, u8 map_idx, int roamer_idx) {
 
 bool wild_pokemon_spawn_roamer() {
     for (u8 i = 0; i < NUM_ROAMERS; i++) {
-        dprintf("Roamer %d is present %d at %d.%d\n", i, cmem.roamers[i].is_present, cmem.roamer_locations[i].bank, cmem.roamer_locations[i].map_idx);
+        DEBUG("Roamer %d is present %d at %d.%d\n", i, cmem.roamers[i].is_present, cmem.roamer_locations[i].bank, cmem.roamer_locations[i].map_idx);
         if (roamer_is_present(save1->bank, save1->map, i) && rnd16() % 2 == 0) {
             pokemon_new_roamer(i);
             fmem.roamer_last_encountered = i;

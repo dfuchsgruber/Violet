@@ -100,7 +100,7 @@ u8 battler_get_owner(u8 battler_idx) {
         case BATTLE_POSITION_PLAYER_RIGHT: return battle_flags & BATTLE_ALLY ? OWNER_ALLY : OWNER_PLAYER;
         case BATTLE_POSITION_OPPONENT_RIGHT: return battle_flags & BATTLE_TWO_TRAINERS ? OWNER_TRAINER_B : OWNER_TRAINER_A;
     }
-    derrf("Cant get owner of battler %d, position %d\n", battler_idx, battler_get_position(battler_idx)); return 0xFF;
+    ERROR("Cant get owner of battler %d, position %d\n", battler_idx, battler_get_position(battler_idx)); return 0xFF;
 }
 
 mega_evolution_t *battler_get_available_mega_evolution(u8 battler_idx) {

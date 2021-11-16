@@ -8,10 +8,10 @@ int pokemon_unown_get_letter(pid_t p) {
 
 pid_t pokemon_unown_generate_letter_pid(u32 letter) {
     if (letter >= 28) {
-        derrf("Attempting to generate an unown with letter >= 28 %d\n", letter);
+        ERROR("Attempting to generate an unown with letter >= 28 %d\n", letter);
     }
     pid_t p = pokemon_new_pid();
     p.fields.unown_letter = (u32)(letter & 31);
-    dprintf("Created unown with letter %d and pid %x\n", letter, p);
+    DEBUG("Created unown with letter %d and pid %x\n", letter, p);
     return p;
 }

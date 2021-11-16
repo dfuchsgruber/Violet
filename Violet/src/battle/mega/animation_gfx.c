@@ -81,7 +81,7 @@ void battle_animation_mega_callback_load_gfx(u8 self) {
                 g = &graphic_regent_rayquaza_sparkle;
                 break;
             default:
-                derrf("Unknown species for regent evolution %d\n", mega_evolution->species);
+                ERROR("Unknown species for regent evolution %d\n", mega_evolution->species);
                 break;
         }
     }
@@ -121,7 +121,7 @@ static void battle_animation_update_battler_callback_step(u8 self) {
     u16 *state = big_callbacks[self].params + 10;
     u8 battler_idx = (u8)(big_callbacks[self].params[12]);
     u8 oam_idx = battler_oams[battler_idx];
-    dprintf("Update state %d\n", *state);
+    DEBUG("Update state %d\n", *state);
     switch (*state) {
         case 0: {
             strcpy(buffer2, pokemon_names[battlers[battler_idx].species]);

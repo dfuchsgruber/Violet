@@ -40,7 +40,7 @@ static void indicator_callback (oam_object *self) {
         } else if (mega_evolution->type == REGENT_EVOLUTION) {
             animation = 1;
         } else {
-            derrf("Unknown mega evolution type %d for creating an indicator.\n", mega_evolution->type);
+            ERROR("Unknown mega evolution type %d for creating an indicator.\n", mega_evolution->type);
         }
         if (self->anim_number != animation) {
             self->anim_number = animation;
@@ -50,7 +50,7 @@ static void indicator_callback (oam_object *self) {
         // Mirror priority of healthbox
         self->final_oam.attr2 &= (u16)(~ATTR2_PRIO(3));
         int healthbox_priority = (healthbox->final_oam.attr2 >> 10) & 3;
-        // dprintf("Healthbox prio %d\n", healthbox_priority);
+        // DEBUG("Healthbox prio %d\n", healthbox_priority);
         self->final_oam.attr2 |= (u16)ATTR2_PRIO(healthbox_priority);
 
         // Anchor indicator next to the "Lv." string

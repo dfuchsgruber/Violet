@@ -308,7 +308,7 @@ void npc_apply_jump(npc *n, oam_object *target, u8 direction, u8 speed, u8 heigh
 }
 
 static void npc_anim_init_jump_no_shadow(npc *n, oam_object *target, u8 direction, u8 speed, u8 height) {
-    dprintf("jump no shadow with dir %d, speed %d, height %d\n", direction, speed, height);
+    DEBUG("jump no shadow with dir %d, speed %d, height %d\n", direction, speed, height);
     npc_apply_jump(n, target, direction, speed, height);
     u8 anim_idx = npc_get_animation_idx_by_movement_direction(n->direction.facing);
     npc_apply_animation_looping(n, target, anim_idx);

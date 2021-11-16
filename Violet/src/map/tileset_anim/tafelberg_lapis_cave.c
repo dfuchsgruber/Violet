@@ -99,7 +99,7 @@ static void oam_callback_move_left(oam_object *self) {
     s16 *privates = (s16*)(self->private);
     if (++privates[7] <= 12 * 16) {
         privates[4]--;
-        //dprintf("Privates 4 is %d\n", privates[4]);
+        //DEBUG("Privates 4 is %d\n", privates[4]);
         oam_callback_bb_ship(self);
     } else {
         oam_free(self);

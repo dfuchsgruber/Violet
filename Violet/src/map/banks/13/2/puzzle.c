@@ -30,7 +30,7 @@ s16 route_9_cave_puzzle_get_state() {
         for (int j = 0; j < 5; j++) {
             // Check if only the lines of a pentagram are drawn
             bool is_drawn = route_9_cave_puzzle_connection_check(i, j);
-            // dprintf("Line from %d to %d drawn: %d\n", i, j, is_drawn);
+            // DEBUG("Line from %d to %d drawn: %d\n", i, j, is_drawn);
             if ((i + 2) % 5 == j || (i + 3) % 5 == j) {
                 if (is_drawn) number_connections++;
             } else {

@@ -25,7 +25,7 @@ void battle_controller_opponent_handle_choose_action() {
 
 void battle_controller_opponent_handle_choose_item() {
     u16 *item = BATTLE_STATE2->items[battler_get_owner(active_battler)] + TRAINER_AI_STATE2->chosen_item_idxs[active_battler];
-    dprintf("Emitting item %d\n", *item);
+    DEBUG("Emitting item %d\n", *item);
     battle_controller_emit_one_value(1, *item);
     *item = 0;
     battle_controller_opponent_execution_finished();
@@ -39,7 +39,7 @@ void battle_controller_opponent_handle_choose_pokemon() {
     } else {
         target_idx = battle_ai_get_pokemon_to_switch_into();
         if (target_idx == 6)
-            dprintf("No pokemon to switch into for battler %d\n", active_battler);
+            DEBUG("No pokemon to switch into for battler %d\n", active_battler);
     }
     battle_state->battler_to_switch_into[active_battler] = target_idx;
     battle_controller_opponent_emit_chosen_pokemon(1, target_idx, NULL);
@@ -70,7 +70,7 @@ void battle_controller_opponent_handle_choose_move() {
                     if (battlers_absent & int_bitmasks[defending_battler]) // If the left is absent, target the right one...
                         defending_battler = battler_get_by_position(BATTLE_POSITION_PLAYER_RIGHT);
                 }
-                dprintf("The chosen target of the opponent was %d\n", defending_battler);
+                DEBUG("The chosen target of the opponent was %d\n", defending_battler);
                 // TODO: battle_controller_emit_move_chosen instead for link compatibility?
                 battle_controller_emit_two_values(1, BATTLE_ACTION_EXECUTE_SCRIPT, (u16)(move_idx | (defending_battler << 8)));
 
@@ -101,7 +101,7 @@ void battle_controller_opponent_handle_choose_move() {
         } else {
             defending_battler = battler_get_by_position(BATTLE_POSITION_PLAYER_LEFT);
         }
-        dprintf("The randomly chosen target of the opponent was %d\n", defending_battler);
+        DEBUG("The randomly chosen target of the opponent was %d\n", defending_battler);
         battle_controller_emit_two_values(1, BATTLE_ACTION_EXECUTE_SCRIPT, (u16)(move_idx | (defending_battler << 8)));
 
     }
@@ -115,7 +115,7 @@ u8 battle_controller_opponent_get_trainer_pic() {
         trainer_idx = active_battler == 1 ? trainer_vars.trainer_id : fmem.trainer_varsB.trainer_id;
     else
         trainer_idx = trainer_vars.trainer_id;
-    dprintf("Get trainer idx for battler %d: %d\n", active_battler, trainer_idx);
+    DEBUG("Get trainer idx for battler %d: %d\n", active_battler, trainer_idx);
     return trainers[trainer_idx].sprite;
 }
 
@@ -125,7 +125,7 @@ u8 battle_controller_opponent_create_trainer_pic_oam(u8 relative_prio, s16 y) {
         x = battler_get_position(active_battler) & 2 ? 152 : 200;
     else 
         x = 176;
-    dprintf("y is %d\n", y);
+    DEBUG("y is %d\n", y);
     return oam_new_forward_search(&gp_oam_template, x, y, relative_prio);
 }
 

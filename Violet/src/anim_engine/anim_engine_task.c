@@ -28,7 +28,7 @@ anim_engine_task anim_engine_task_root = {
  */
 void anim_engine_tasks_execute(anim_engine_task *root){
     while(root){
-        //dprintf("Executing anim engine task @%x with func = %x\n", root, root->callback);
+        //DEBUG("Executing anim engine task @%x with func = %x\n", root, root->callback);
         anim_engine_task *next = root->next;
         root->callback(root);
         root = next;
@@ -56,7 +56,7 @@ int anim_engine_task_delete(anim_engine_task *self){
  */
 void anim_engine_task_delete_all(anim_engine_task *root){
     while(root->next){ // Never drop the root callback
-        dprintf("Deleting task %x\n", root->next->callback);
+        DEBUG("Deleting task %x\n", root->next->callback);
         anim_engine_task_delete(root->next);
     }
 }
@@ -81,7 +81,7 @@ anim_engine_task *anim_engine_task_new(int priority, void (*callback)(anim_engin
         next = next->next;
     }
     //Insert between root (root->priority <= priority) and next (either NULL or next->priority > priority)
-    //dprintf("New task inserted between prev @%x, next @%x\n", root, next);
+    //DEBUG("New task inserted between prev @%x, next @%x\n", root, next);
     anim_engine_task *t = malloc_and_clear(sizeof(anim_engine_task));
     if(!t) 
         return NULL;

@@ -92,11 +92,6 @@ ow_script_test:
 	setflag FLAG_SILVANIA_FOREST_HYDRO_PUMP_1
 	end
 
-
-	callasm print_flags
-	callasm print_vars
-	end
-
 	clearflag (KASKADA_IGVA | 0x8000)
 	end
 	givepokemon POKEMON_DARTIRI 26 0 0 0 0

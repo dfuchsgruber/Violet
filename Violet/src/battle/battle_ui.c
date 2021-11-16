@@ -27,13 +27,13 @@ bool battle_healthbox_add_mega_indicator(u8 oam_idx) {
     if (mega) {
         switch (mega->type) {
             case MEGA_EVOLUTION: {
-                dprintf("Print mega indicator to tile %d\n", tile_num);
+                DEBUG("Print mega indicator to tile %d\n", tile_num);
                 cpuset(gfx_mega_indicatorTiles + 0 * GRAPHIC_SIZE_4BPP(16, 8), OAMCHARBASE(tile_num + offset), CPUSET_COPY | CPUSET_WORD | CPUSET_WORD_SIZE(GRAPHIC_SIZE_4BPP(16, 8)));
                 return true;
                 break;
             }
             case REGENT_EVOLUTION: {
-                dprintf("Print regent to tile %d\n", tile_num);
+                DEBUG("Print regent to tile %d\n", tile_num);
                 cpuset(gfx_mega_indicatorTiles + 1 * GRAPHIC_SIZE_4BPP(16, 8), OAMCHARBASE(tile_num + offset), CPUSET_COPY | CPUSET_WORD | CPUSET_WORD_SIZE(GRAPHIC_SIZE_4BPP(16, 8)));
                 return true;
                 break;

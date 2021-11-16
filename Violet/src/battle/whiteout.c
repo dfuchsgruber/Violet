@@ -106,7 +106,7 @@ static int healingplace_get_current() {
 		stru_flight_position *position = flightposition_by_id(i);
 		if (save1->healingplace.bank == position->bank && save1->healingplace.map == position->map &&
 			save1->healingplace.x == position->x && save1->healingplace.y == position->y) {
-				dprintf("Current healingplace is %d\n", i);
+				DEBUG("Current healingplace is %d\n", i);
 				return i;
 		}
 	}
@@ -127,7 +127,7 @@ extern u8 ow_script_whiteout_desert[];
 
 void whiteout_callback_print_text(u8 self) {
 	u16 *state = big_callbacks[self].params + 0;
-	dprintf("Whiteout state %d\n", *state);
+	DEBUG("Whiteout state %d\n", *state);
 	switch (*state) {
 		case 0: {
 			u8 tbox_idx = tbox_new(&tboxdata_whiteout_text);

@@ -9,9 +9,9 @@
 #define BENCHMARK 0
 
 #if DEBUG_OAMS
-    #define DEBUG(...) dprintf (__VA_ARGS__)
+    #define OAM_DEBUG(...) DEBUG (__VA_ARGS__)
 #else
-    #define DEBUG(...) 
+    #define OAM_DEBUG(...) 
 #endif
 
 #if BENCHMARK
@@ -43,14 +43,14 @@ static inline void oam_allocation_insert_after(oam_alloc_list_element_t *list, u
 
 void oam_print_allocation_list() {
     oam_alloc_list_element_t *list = fmem.oam_allocation_list;
-    DEBUG("Oam alloc list: ");
+    OAM_DEBUG("Oam alloc list: ");
     u8 idx = OAM_ALLOC_FREE_START;
     while (true) {
-        DEBUG(" %d", idx);
+        OAM_DEBUG(" %d", idx);
         if (idx == OAM_ALLOC_ACTIVE_END) break;
         idx = list[idx].next;
     }
-    DEBUG("\n");
+    OAM_DEBUG("\n");
 }
 
 u8 oam_allocate(u8 where) {
@@ -69,10 +69,10 @@ u8 oam_allocate(u8 where) {
                 oam_active_cnt++;
                 break;
         }
-        DEBUG("allocated %d, where: %d\n", idx, where);
+        OAM_DEBUG("allocated %d, where: %d\n", idx, where);
         return idx;
     } else {
-        DEBUG("couldnt allocate\n", idx);
+        OAM_DEBUG("couldnt allocate\n", idx);
         return NUM_OAMS; // no free slots
     }
 }
@@ -264,7 +264,7 @@ void oam_copy_to_oam_buffer() {
         if (oam_add_to_buffer(oams + oam_order_iram[i], &cnt))
             return;
     }
-    // dprintf("Oam buffer %d / %d full\n", cnt, oam_buffer_size);
+    // OAM_DEBUG("Oam buffer %d / %d full\n", cnt, oam_buffer_size);
     while(cnt < oam_buffer_size) {
         super.oam_attributes[cnt++] = oam_empty;
     }
@@ -279,7 +279,7 @@ void oam_proceed() {
     oam_compress_and_calculate_visible_cnt(); // compresses the oam_order such that the first indices are the ones to render
     BENCHMARK_WRAP(u32 t_compress = benchmark_end();)
 
-    // dprintf("Visible %d\n", oam_visible_cnt);
+    // OAM_DEBUG("Visible %d\n", oam_visible_cnt);
     BENCHMARK_WRAP(benchmark_start();)
     oam_calculate_position();
     BENCHMARK_WRAP(u32 t_pos = benchmark_end();)
@@ -309,7 +309,7 @@ void oam_proceed() {
     super.disable_oams = (u8)(tmp & 1);
     oam_copy_requests_enabled = true;
 
-    BENCHMARK_WRAP(dprintf("\tOam sum %d, Vis %d, compr %d, pos %d, prio %d, sort %d, cpy %d, rs %d, y %d\n", 
+    BENCHMARK_WRAP(OAM_DEBUG("\tOam sum %d, Vis %d, compr %d, pos %d, prio %d, sort %d, cpy %d, rs %d, y %d\n", 
     t_compress + t_pos + t_prio +  t_y + t_sort + t_copy + t_affine,
     
     oam_visible_cnt, t_compress, t_pos, t_prio, t_sort, t_copy, t_affine, t_y);)
@@ -407,7 +407,7 @@ void oam_animations_proceed() {
                 if (current_object->flags & OAM_FLAG_ACTIVE) {
                     oam_animation_proceed(current_object);
                 }
-                // DEBUG("Animated sprite %d with callback %x andd template %x\n", current, current_object->callback, current_object->oam_template);
+                // OAM_DEBUG("Animated sprite %d with callback %x andd template %x\n", current, current_object->callback, current_object->oam_template);
             }
             if (current_object->flags & OAM_FLAG_ACTIVE) {
                 oam_order_iram[oam_active_cnt++] = current;
@@ -428,7 +428,7 @@ void oam_animations_proceed() {
 
                 // oam_allocation_remove(list, current);
                 // oam_allocation_insert_after(list, current, OAM_ALLOC_FREE_START);
-                DEBUG("Garbage collection on %d\n", current);
+                OAM_DEBUG("Garbage collection on %d\n", current);
             }
         }
         current = next;
@@ -438,7 +438,7 @@ void oam_animations_proceed() {
         current = list[OAM_ALLOC_FREE_START].next;
         while (current != OAM_ALLOC_ACTIVE_START) {
             if (oams[current].flags & OAM_FLAG_ACTIVE) {
-                dprintf("Error: Oam %d is in inactive list, but is active! (build from %x), callback %x\n", current, 
+                OAM_DEBUG("Error: Oam %d is in inactive list, but is active! (build from %x), callback %x\n", current, 
                     oams[current].oam_template, oams[current].callback);
             }
             current = list[current].next;
@@ -449,6 +449,6 @@ void oam_animations_proceed() {
             cnt_active++;
             current = list[current].next;
         }
-        // DEBUG("List active %d, list free %d\n", cnt_active, cnt_free);
+        // OAM_DEBUG("List active %d, list free %d\n", cnt_active, cnt_free);
     #endif
 }

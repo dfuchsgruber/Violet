@@ -25,7 +25,7 @@ bool field_move_check_flash() {
     // Check Regirock's cave
     position_t pos;
     player_get_position(&pos);
-    dprintf("@ %d.%d with position %x,%x\n", save1->bank, save1->map,  pos.coordinates.x, pos.coordinates.y);
+    DEBUG("@ %d.%d with position %x,%x\n", save1->bank, save1->map,  pos.coordinates.x, pos.coordinates.y);
     if (save1->bank == 28 && save1->map == 0 && pos.coordinates.x - 7 == 0x9 && 
         pos.coordinates.y - 7 == 0x1F && !checkflag(FLAG_REGIROCK_PUZZLE_SOLVED)) {
         pokemon_party_menu_continuation = pokemon_party_menu_return_and_execute_field_move;

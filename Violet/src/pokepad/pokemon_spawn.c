@@ -69,7 +69,7 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 defau
     if (egg_move_cnt) {
     	u16 *egg_moves = malloc(sizeof(u16) * (u32)egg_move_cnt);
     	memcpy(egg_moves, egg_moves_rom, sizeof(u16) * (u32)egg_move_cnt);
-      dprintf("Returned egg moves %x for species %d of size %d\n", egg_moves, species, egg_move_cnt);
+      DEBUG("Returned egg moves %x for species %d of size %d\n", egg_moves, species, egg_move_cnt);
       for (int attached = 0; attached < 4 && egg_move_cnt > 0; attached++) {
         //we attach a random egg move
         if (feature_generator() >= 32) continue; 

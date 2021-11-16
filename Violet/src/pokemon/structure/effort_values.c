@@ -32,7 +32,7 @@ u8 potential_ev_attributes[6] = {
 };
 
 void pokemon_set_effective_ev(pokemon *p, int stat, u8 ev) {
-	dprintf("Set ev for stat %d to %d\n", stat, ev);
+	DEBUG("Set ev for stat %d to %d\n", stat, ev);
 	int value = pokemon_get_attribute(p, effective_ev_attributes[stat], 0) & (~0x3F);
 	value |= ev;
 	pokemon_set_attribute(p, effective_ev_attributes[stat], &value);
@@ -86,9 +86,9 @@ void pokemon_get_evs(pokemon *p, u16 defeated_species) {
 	}
 	for (int i = STAT_HP; i <= STAT_SPECIAL_DEFENSE; i++) {
 		int ev = pokemon_get_potential_ev(p, i);
-		// dprintf("Pokemon 0x%x has pot ev %d (stat %d)\n", p, ev, i);
+		// DEBUG("Pokemon 0x%x has pot ev %d (stat %d)\n", p, ev, i);
 		ev = MIN(255, ev + multiplier * evs[i]);
-		// dprintf("Raised ev to %d\n", ev);
+		// DEBUG("Raised ev to %d\n", ev);
 		pokemon_set_potential_ev(p, i, (u8)ev);
 	}
 }

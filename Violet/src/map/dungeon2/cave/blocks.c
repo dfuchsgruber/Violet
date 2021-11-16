@@ -139,7 +139,7 @@ void dungeon2_cave_set_wall(int x, int y, u8 *map, int type, dungeon_generator2 
       break;
     }
     default : {
-      derrf("Invalid adjacency pattern for position %x,%x to set a ground wall: 0x%x\n", x, y, pattern_adjacent);
+      ERROR("Invalid adjacency pattern for position %x,%x to set a ground wall: 0x%x\n", x, y, pattern_adjacent);
       block = 0; // Should not happen
     }
   }
@@ -220,7 +220,7 @@ void dungeon2_cave_draw_map(u8 *map, int type, dungeon_generator2 *dg2) {
         } else {
           // Enqueue this wall as it can not be drawn
           if (y == 0)
-            dprintf("Enqueue wall at %d, %d\n", x, y);
+            DEBUG("Enqueue wall at %d, %d\n", x, y);
           ring_queue_enqueue(&queue, COORDINATE_PACK(x, y));
         }
       } else if (type == WALL_SET_GROUND){
@@ -234,7 +234,7 @@ void dungeon2_cave_draw_map(u8 *map, int type, dungeon_generator2 *dg2) {
   while (!ring_queue_empty(&queue)) {
     int head = ring_queue_pop(&queue);
     int x = COORDINATE_UNPACK_X(head), y = COORDINATE_UNPACK_Y(head);
-    //dprintf("Fixing (%d, %d)\n", x, y);
+    //DEBUG("Fixing (%d, %d)\n", x, y);
     // Set this to a rock
     dungeon2_cave_set_rock(x, y, type, dg2);
     map[y * dg2->width + x] = DG2_ROCK;

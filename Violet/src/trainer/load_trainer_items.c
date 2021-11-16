@@ -47,7 +47,7 @@ static void trainer_load_items(u16 trainer_idx, u16 *items, u8 *num_items, bool 
 
 void trainer_load_items_and_ai() {
 	memset(battle_struct->history, 0, sizeof(battle_history_t));
-	dprintf("Active Battler %d\n", active_battler);
+	DEBUG("Active Battler %d\n", active_battler);
 	for (active_battler = 0; active_battler < 4; active_battler++) {
 		BATTLE_STATE2->num_items[active_battler] = 0;
 		// trainer_load_ai(battler_); I suppose we don't need this? // Todo Load AI thinking struct for the active battler only

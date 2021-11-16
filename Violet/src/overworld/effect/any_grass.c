@@ -222,7 +222,7 @@ int tile_any_grass_init(){
     s16 x = (s16)(overworld_effect_state.x), y = (s16)(overworld_effect_state.y);
     u8 behavior = (u8)block_get_behaviour_by_pos((s16)(overworld_effect_state.x), (s16)(overworld_effect_state.y));
     any_grass *g = any_grass_get_on_current_map_by_behaviour(behavior);
-    dprintf("New any grass init: 0x%x, behaviour %d.\n", g, behavior);
+    DEBUG("New any grass init: 0x%x, behaviour %d.\n", g, behavior);
     if (g) {
         if (g->init_func) 
             g->init_func(overworld_effect_state.reinitialize);
@@ -255,7 +255,7 @@ int tile_any_grass_init(){
             return 0;
         }   
     }
-    dprintf("No grass animation possible for behaviour %d on current map.\n", behavior);
+    DEBUG("No grass animation possible for behaviour %d on current map.\n", behavior);
     return 0;
 }
 

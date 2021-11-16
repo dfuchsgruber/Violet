@@ -147,7 +147,7 @@ bool script_cmd_x88_pokemart3(overworld_script_state_t *script_state){
         }
     }
     for (size_t i = 0; UNALIGNED_16_GET(items + 2 * i) && item_cnt < ARRAY_COUNT(fmem.dmart); i++) {
-        dprintf("Reading additional item %d\n", UNALIGNED_16_GET(items + 2 * i));
+        DEBUG("Reading additional item %d\n", UNALIGNED_16_GET(items + 2 * i));
         pokemart_add_item(UNALIGNED_16_GET(items + 2 * i), &item_cnt);
     }
 

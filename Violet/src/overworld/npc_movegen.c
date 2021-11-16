@@ -41,7 +41,7 @@ void overworld_person_get_position() {
         return;
     *var_access(0x8004) = (u16)(npcs[npc_id].dest_x - 7);
     *var_access(0x8005) = (u16)(npcs[npc_id].dest_y - 7);
-    dprintf("Player @(%d, %d)\n", *var_access(0x8004), *var_access(0x8005));
+    DEBUG("Player @(%d, %d)\n", *var_access(0x8004), *var_access(0x8005));
 }
 
 void npc_move_to_block_movements() {
@@ -170,7 +170,7 @@ static void overworld_person_face_to_person(u8 person_idx_facing, u8 person_idx_
     }
     int dx = npcs[npc_idx_facing].dest_x - target_x;
     int dy = npcs[npc_idx_facing].dest_y - target_y;
-    dprintf("Distance from %d to %d is dx %d dy %d\n", person_idx_facing, person_idx_target, dx, dy);
+    DEBUG("Distance from %d to %d is dx %d dy %d\n", person_idx_facing, person_idx_target, dx, dy);
     bool horizontal = true;
     if (ABS(dy) > ABS(dx)) {
         horizontal = false;

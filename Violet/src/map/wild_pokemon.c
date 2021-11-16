@@ -55,7 +55,7 @@ u8 map_wildbattle_init_seed(u32 triggers_wildbattle) {
   if(frequency >= 80) return 0;
   if(frequency <= 9) return 8;
   u8 result = (u8)(8 - (frequency / 10));
-  // dprintf("Result is %d\n", result);
+  // DEBUG("Result is %d\n", result);
   return result;
 }
 
@@ -93,7 +93,7 @@ int map_wildbattle_init(bdata current, u16 behaviour_previous_tile) {
   }
   // Check if a roamer appears
   if (wild_pokemon_spawn_roamer()) {
-    dprintf("Roamer to be spawned, allowed by repel %d\n", wildbattle_is_allowed_by_repel(ROAMER_LEVEL));
+    DEBUG("Roamer to be spawned, allowed by repel %d\n", wildbattle_is_allowed_by_repel(ROAMER_LEVEL));
     if (wildbattle_is_allowed_by_repel(ROAMER_LEVEL)) {
       battle_initialize_roamer();
       return true;
@@ -106,7 +106,7 @@ int map_wildbattle_init(bdata current, u16 behaviour_previous_tile) {
   }
   if (*var_access(TRAINERSCHOOL_PROGRESS) <= 6) {
 	  // Start a wildbattle script instead
-	  dprintf("Started script\n");
+	  DEBUG("Started script\n");
 	  overworld_script_init(ow_script_trainerschool_wildbattle);
   } else {
 	  wildbattle_start();
@@ -131,7 +131,7 @@ bool wildbattle_initialize_by_habitat(wild_pokemon_habitat *habitat, int pdf_typ
 			break;
 		}
 		default : {
-			derrf("Unsupported pdf type %d\n", pdf_type);
+			ERROR("Unsupported pdf type %d\n", pdf_type);
 			break;
 		}
 	}
@@ -162,7 +162,7 @@ int wildbattle_sample_from_pdf(u8 *pdf, int size) {
 		if (p < pdf[i]) return i;
 		p -= pdf[i];
 	}
-	derrf("Pdf @x, size %d does not sum up to 100\n", pdf, size);
+	ERROR("Pdf @x, size %d does not sum up to 100\n", pdf, size);
 	return -1;
 }
 

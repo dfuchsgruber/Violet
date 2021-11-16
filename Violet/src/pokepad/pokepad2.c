@@ -148,7 +148,7 @@ static void cursor_callback(oam_object *self) {
         u8 pal_idx = oam_palette_get_index(POKEPAD_CURSOR_TAG);
         FIXED t = INT_TO_FIXED((self->private[0])++);
         FIXED alpha = FIXED_MUL(INT_TO_FIXED(8), FIXED_COS(FIXED_DIV(t, INT_TO_FIXED(64))));
-        // dprintf("Alpha cursor %d\n", FIXED_TO_INT(alpha));
+        // DEBUG("Alpha cursor %d\n", FIXED_TO_INT(alpha));
         color_t white = {.rgb = {31, 31, 31}};
         pal_alpha_blending((u16)(256 + 16 * pal_idx), 16, (u8)(8 - FIXED_TO_INT(alpha)), white);
     }

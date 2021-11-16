@@ -7817,6 +7817,6 @@ u8 overworld_get_sprite_idx_by_species(u16 species) {
 		return OVERWORLD_SPRITE_POKEMON_32_32;
 	if (sprite->width == 64 && sprite->height == 64)
 		return OVERWORLD_SPRITE_POKEMON_64_64;
-	derrf("No overworld sprite idx associated with measures %d, %d\n", sprite->width, sprite->height);
+	ERROR("No overworld sprite idx associated with measures %d, %d\n", sprite->width, sprite->height);
 	return 0;
 }

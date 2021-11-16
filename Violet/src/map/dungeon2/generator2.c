@@ -15,7 +15,7 @@
 #include "circle.h"
 
 void dungeon2_fill_rectangle(u8 *map, int x, int y, int w, int h, u8 fill, dungeon_generator2 *dg2) {
-    dprintf("Fill rectangle at %d,%d with measures %d,%d with value %d\n", x, y, w, h, fill);
+    DEBUG("Fill rectangle at %d,%d with measures %d,%d with value %d\n", x, y, w, h, fill);
     for (int i = 0; i < w; i++) {
         for (int j = 0; j < h; j++) {
             map[dg2->width * (y + j) + x + i] = fill;
@@ -24,7 +24,7 @@ void dungeon2_fill_rectangle(u8 *map, int x, int y, int w, int h, u8 fill, dunge
 };
 
 void dungeon2_iterate(u8 *map, u8 *map2, int near_lower_bound, int far_upper_bound, dungeon_generator2 *dg2){
-    dprintf("Iterating map with nlb %d and hub %d\n", near_lower_bound, far_upper_bound);
+    DEBUG("Iterating map with nlb %d and hub %d\n", near_lower_bound, far_upper_bound);
     for(int x = 1; x < dg2->width - 1; x++){
         for(int y = 1; y < dg2->height - 1; y++){
             //Count wall neighbours of x, y

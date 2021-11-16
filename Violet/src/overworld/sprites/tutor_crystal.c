@@ -169,6 +169,6 @@ static overworld_sprite ow_tutor_crystals[] = {
 overworld_sprite ow_mega_stone;
 
 overworld_sprite *overworld_sprite_get_by_tutor_crystal_type(u16 type) {
-    dprintf("Getting ow sprite of crystal type %d\n", type);
+    DEBUG("Getting ow sprite of crystal type %d\n", type);
     return ow_tutor_crystals + type;
 }

@@ -29,7 +29,7 @@ bool ring_queue_enqueue(ring_queue_t *queue, int element) {
 
 int ring_queue_pop(ring_queue_t *queue) {
   if (queue->size == 0) {
-    derrf("Can not pop from emtpy queue\n");
+    ERROR("Can not pop from emtpy queue\n");
     return -1;
   }
   int element = queue->elems[queue->head];

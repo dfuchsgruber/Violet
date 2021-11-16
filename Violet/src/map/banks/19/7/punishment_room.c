@@ -51,14 +51,14 @@ void ceometria_gym_punishment_room_get_script() {
             overworld_script_virtual_ptr = ow_script_ceometria_gym_punishment_reduce_pp;
             break;
         default:
-            derrf("Unkown punishment room type %d\n", room_type);
+            ERROR("Unkown punishment room type %d\n", room_type);
     }
 }
 
 void ceometria_gym_punishment_healing() {
     int idx = (u16)ceometria_gym_rnd() % player_pokemon_cnt;
     pokemon_heal(&player_pokemon[idx]);
-    dprintf("Healed idx %d\n", idx);
+    DEBUG("Healed idx %d\n", idx);
 }
 
 s16 ceometria_gym_punishment_get_eligible_index() {
@@ -119,7 +119,7 @@ s16 ceometria_gym_punishment_get_eligible_index() {
         return -1;
     } else {
         s16 idx = indices[(u16)ceometria_gym_rnd() % num_eligible];
-        dprintf("Eligible party idx %d of %d\n", idx, num_eligible);
+        DEBUG("Eligible party idx %d of %d\n", idx, num_eligible);
         return idx;
     }
 }
@@ -165,7 +165,7 @@ void ceometria_gym_punishment_apply() {
             return;
         }
         default:
-            derrf("Unknown room type for punishment %d\n", room_type);
+            ERROR("Unknown room type for punishment %d\n", room_type);
     }
     pokemon_set_attribute(dst, ATTRIBUTE_STATUS, &status);
 }
@@ -218,9 +218,9 @@ void ceometria_gym_update_scores() {
             CEOMETRIA_GYM_NON_TRAINER_SCORE_ADD(12);
             break;
         default:
-            derrf("Unknown room type for score updates %d\n", room_type);
+            ERROR("Unknown room type for score updates %d\n", room_type);
     }
-    dprintf("Ceometria gym: punishment score %d, non-trainer score %d\n", cmem.ceometria_gym_state.punishment_score, cmem.ceometria_gym_state.non_trainer_score);
+    DEBUG("Ceometria gym: punishment score %d, non-trainer score %d\n", cmem.ceometria_gym_state.punishment_score, cmem.ceometria_gym_state.non_trainer_score);
 }
 
 void ceometria_gym_punishment_room_create_npc() {

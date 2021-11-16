@@ -496,24 +496,24 @@ void incubator_callback1_party_menu_continuation() {
     if (*var_access(0x8006)) {
        u8 box_idx = (u8)(*var_access(0x8004));
       u8 slot = (u8)(*var_access(0x8005));
-      dprintf("Selected from box %d, slot %d\n", box_idx, slot);
+      DEBUG("Selected from box %d, slot %d\n", box_idx, slot);
       box_pokemon *p = pokemon_get_by_box(box_idx, slot);
       if (incubator_pokemon_can_be_imported(p)) {
         box_pokemon_copy(box_idx, slot, target);
-        dprintf("Imported %x to %x\n", p, target);
+        DEBUG("Imported %x to %x\n", p, target);
         box_pokemon_clear_by_box_idx_and_slot(box_idx, slot);
         fmem.incubator_state->hide_current_egg_icon = true;  
       } else {
         fmem.incubator_state->imported_party_idx = 255;
       }
     } else {
-      dprintf("Nothing selected from box\n");
+      DEBUG("Nothing selected from box\n");
       fmem.incubator_state->imported_party_idx = 6; // Indicates B-press
     }
   } else {
     u8 party_idx = (u8)*var_access(0x8004);
     fmem.incubator_state->imported_party_idx = party_idx;
-    dprintf("Selected party idx %d\n", party_idx);
+    DEBUG("Selected party idx %d\n", party_idx);
     if (party_idx < 6 && incubator_pokemon_can_be_imported(&player_pokemon[party_idx].box)) {
       memcpy(target, &player_pokemon[party_idx], sizeof(box_pokemon));
       pokemon_clear(&player_pokemon[party_idx]);

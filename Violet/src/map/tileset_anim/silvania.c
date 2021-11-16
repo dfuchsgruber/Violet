@@ -74,7 +74,7 @@ static oam_template hydro_pump_template = {
 
 static void hydro_pumps_initialize() {
   u8 pal_idx = oam_allocate_palette(SILVANIA_FOREST_HYDRO_PUMP_TAG);
-  // dprintf("Applying shaders to hydro pump sprites\n");
+  // DEBUG("Applying shaders to hydro pump sprites\n");
   pal_decompress(gfx_silvania_forest_hydro_pumpsPal, (u16)(256 + 16 * pal_idx), 16 * sizeof(color_t));
   pal_apply_shaders_by_oam_palette_idx(pal_idx);
   oam_load_graphic(&hydro_pump_graphic);

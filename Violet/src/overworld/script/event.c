@@ -15,7 +15,7 @@ bool overworld_script_command_spritebehave (overworld_script_state_t *state) {
     if (npc_idx < NUM_NPCS) {
         npcs[npc_idx].behavior_type = behaviour;
         oams[npcs[npc_idx].oam_id].callback = npc_movements_oam_callbacks[behaviour];
-        dprintf("Person %d (npc %d) got behaviour %d\n", person_idx, npc_idx, behaviour);
+        DEBUG("Person %d (npc %d) got behaviour %d\n", person_idx, npc_idx, behaviour);
     }
     return false;
 }

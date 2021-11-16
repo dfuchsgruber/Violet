@@ -16,7 +16,7 @@ void pokedex_habitats_add_position(int x, int y, pokedex_habitat_pair *dst, int 
             return;
         }
     }
-    dprintf("Add habitat position (%d, %d)\n", x, y);
+    DEBUG("Add habitat position (%d, %d)\n", x, y);
     dst[*size].worldmap_x = (u8)x;
     dst[*size].worldmap_y = (u8)y;
     dst[*size].probability = (u8)probability;
@@ -27,8 +27,8 @@ void pokedex_habitats_add_position(int x, int y, pokedex_habitat_pair *dst, int 
 
 
 void pokedex_habitats_add(u8 bank, u8 map_idx, pokedex_habitat_pair *dst, int *size, int probability, int habitat_type, int map_type) {
-    dprintf("Size of habitats %d\n", *size);
-    dprintf("Found species at %d.%d with m_type %d, h_type %d and probability of %d percent.\n", bank, map_idx, map_type, habitat_type, probability);
+    DEBUG("Size of habitats %d\n", *size);
+    DEBUG("Found species at %d.%d with m_type %d, h_type %d and probability of %d percent.\n", bank, map_idx, map_type, habitat_type, probability);
     for (int i = 0; i < worldmap_positions[bank][map_idx].width; i++) {
         for (int j = 0; j < worldmap_positions[bank][map_idx].height; j++) {
             pokedex_habitats_add_position(worldmap_positions[bank][map_idx].x + i,
@@ -114,7 +114,7 @@ int pokedex_get_habitats_of_species(pokedex_habitat_pair *dst, u16 species) {
         pokedex_habitats_add(bank, map_idx, dst, &cnt, 50, HABITAT_TYPE_GRASS, map_type);
         pokedex_habitats_add(bank, map_idx, dst, &cnt, 50, HABITAT_TYPE_WASSER, map_type);
     }
-    dprintf("Number of habitats is %d @%x\n", cnt, dst);
+    DEBUG("Number of habitats is %d @%x\n", cnt, dst);
     return cnt;
 }
 

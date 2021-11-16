@@ -32,7 +32,7 @@ static void a_star_big_callback(u8 self) {
         if (hashmap_contains((u32)key.value, state->closed))
             continue;
         hashmap_put((u32)key.value, 0, state->closed); // Close this vertex
-        dprintf("Expanding 0x%x, 0x%x with heading %d\n", key.state.x - 7, key.state.y - 7, key.state.heading);
+        DEBUG("Expanding 0x%x, 0x%x with heading %d\n", key.state.x - 7, key.state.y - 7, key.state.heading);
         if (key.state.x == state->x_destination && key.state.y == state->y_destination) {
             a_star_reconstruct(state->path, key, state->predecessor, state->speed);
             // Free resources
@@ -66,7 +66,7 @@ static void a_star_big_callback(u8 self) {
         steps++;
     }
     if (state->queue->size == 0) {
-        dprintf("Could not find an a-star path\n");
+        DEBUG("Could not find an a-star path\n");
         state->path[0] = STOP;
         a_star_state_delete(state);
         big_callbacks[self].function = a_star_done;
@@ -74,7 +74,7 @@ static void a_star_big_callback(u8 self) {
 }
 
 u8 a_star_compute_path(u8 *path, s16 x_destination, s16 y_destination, npc *original_walker, u8 speed, int steps_per_frame) {
-    dprintf("A star for warlker person %d \n", original_walker->overworld_id);
+    DEBUG("A star for warlker person %d \n", original_walker->overworld_id);
     a_star_state *state = malloc(sizeof(a_star_state));
     state->original_walker = *original_walker;
 

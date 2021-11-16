@@ -173,7 +173,7 @@ void river_puzzle_locate(int side, int position, s16 *x, s16 *y) {
 }
 
 int river_puzzle_pokemon_get_boat(int pokemon_idx) {
-  dprintf("Get Boat for pokemon %d\n", pokemon_idx);
+  DEBUG("Get Boat for pokemon %d\n", pokemon_idx);
   if (RIVER_PUZZLE_STATE->boat[0] == pokemon_idx) return 0;
   else if (RIVER_PUZZLE_STATE->boat[1] == pokemon_idx) return 1;
   else return -1;
@@ -694,7 +694,7 @@ void river_puzzle_callback1_initialize() {
 void river_puzzle_initialize() {
   *var_access(LASTRESULT) = 0;
   fmem.gp_state = malloc_and_clear(sizeof(river_puzzle_state_t));
-  dprintf("Positions @%x\n", RIVER_PUZZLE_STATE);
+  DEBUG("Positions @%x\n", RIVER_PUZZLE_STATE);
   RIVER_PUZZLE_STATE->cursor = 0;
   RIVER_PUZZLE_STATE->cursor_side = RIVER_PUZZLE_WEST;
   for (int i = 0; i < 6; i++) {

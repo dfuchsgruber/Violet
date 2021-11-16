@@ -140,7 +140,7 @@ static void overworld_effect_npc_transparent_flicker_big_callback(u8 self) {
             FIXED t = FIXED_DIV(INT_TO_FIXED(*frame), INT_TO_FIXED(2 * period));
             int y = FIXED_TO_INT(FIXED_MUL(FIXED_SIN(t), INT_TO_FIXED(amplitude)));
             io_set(IO_BLDALPHA, (u16)(IO_BLDALPHA_EVA(31 - y) | IO_BLDALPHA_EVB(y)));
-            dprintf("Set eva to %d, evb to %d\n", 31 - y, y);
+            DEBUG("Set eva to %d, evb to %d\n", 31 - y, y);
             ++*frame;
             return;
         } else {
@@ -182,7 +182,7 @@ static void overworld_effect_npc_transparent_fade_big_callback(u8 self) {
             FIXED m = FIXED_DIV(dy, dx);
             int y = FIXED_TO_INT(FIXED_ADD(INT_TO_FIXED(from), FIXED_MUL(m, INT_TO_FIXED(*frame))));
             io_set(IO_BLDALPHA, (u16)(IO_BLDALPHA_EVA(31 - y) | IO_BLDALPHA_EVB(y)));
-            dprintf("Set eva to %d, evb to %d\n", 31 - y, y);
+            DEBUG("Set eva to %d, evb to %d\n", 31 - y, y);
             if (31 <= y) {
                 oams[npcs[npc_idx].oam_id].flags |= OAM_FLAG_INVISIBLE;
             } else {

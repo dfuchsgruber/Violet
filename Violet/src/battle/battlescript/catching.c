@@ -69,9 +69,9 @@ void battle_handle_ball_throw() {
 
 void bsc_pokemon_caught(){
     pokemon *p = opponent_pokemon + battler_idx_to_party_idx(bsc_cmd_xEF_determine_target_to_catch());
-    //dprintf("Bsc before caught %x\n", bsc_offset);
+    //DEBUG("Bsc before caught %x\n", bsc_offset);
     u16 species = (u16)pokemon_get_attribute(p, ATTRIBUTE_SPECIES, 0);
-    dprintf("Bsc pokemon caught with battler %d, species %d\n", bsc_cmd_xEF_determine_target_to_catch(), species);
+    DEBUG("Bsc pokemon caught with battler %d, species %d\n", bsc_cmd_xEF_determine_target_to_catch(), species);
     u16 dex_id = pokedex_get_id(species);
     pid_t pid = {.value = (u32)pokemon_get_attribute(p, ATTRIBUTE_PID, 0)};
     bool caught = pokedex_operator(species,POKEDEX_GET | POKEDEX_CAUGHT, true);
@@ -90,7 +90,7 @@ void bsc_pokemon_caught(){
             bsc_offset = (u8*)((int)(bsc_offset) + 5);   
         }
     }
-    //dprintf("Bsc after caught %x\n", bsc_offset);
+    //DEBUG("Bsc after caught %x\n", bsc_offset);
 }
 
 
@@ -197,7 +197,7 @@ void bsc_command_xEF_handleballthrow(void) {
                         ball_multiplier = 10;
                 }
             }
-            dprintf("Ball multiplier of item %d (=ball %d) is %d\n", bsc_last_used_item, ball_idx, ball_multiplier);
+            DEBUG("Ball multiplier of item %d (=ball %d) is %d\n", bsc_last_used_item, ball_idx, ball_multiplier);
             odds = (u32)((catch_rate * ball_multiplier / 10) *
                     (battlers[defending_battler].max_hp * 3 - battlers[defending_battler].current_hp * 2)
                     / (3 * battlers[defending_battler].max_hp));
@@ -205,7 +205,7 @@ void bsc_command_xEF_handleballthrow(void) {
                 odds *= 2;
             if (battlers[defending_battler].status1 & (STATUS1_POISONED_ANY | STATUS1_BURNED | STATUS1_PARALYZED))
                 odds = (15 * odds) / 10;
-            dprintf("Odds are 0x%x\n", odds);
+            DEBUG("Odds are 0x%x\n", odds);
             if (ball_idx != BALL_SAFARI) {
                 if (ball_idx == BALL_MASTER)
                     battle_results.master_ball_used = true;
@@ -221,11 +221,11 @@ void bsc_command_xEF_handleballthrow(void) {
                 else {
                     odds = sqrt32(sqrt32(16711680 / odds));
                     odds = 1048560 / odds;
-                    dprintf("Probability for a single shake is 0x%x\n", odds);
+                    DEBUG("Probability for a single shake is 0x%x\n", odds);
                     for (shakes = 0; shakes < 4 && rnd16() < odds; ++shakes);
                 }
             }
-            dprintf("%d shakes!\n", shakes);
+            DEBUG("%d shakes!\n", shakes);
             battle_controller_emit_ball_throw_animation(0, shakes);
             battler_mark_for_controller_execution(active_battler);
             if (shakes == BALL_THROW_ANIMATION_SUCCESS) {

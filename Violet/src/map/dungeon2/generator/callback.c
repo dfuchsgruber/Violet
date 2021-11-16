@@ -191,7 +191,7 @@ static void dungeon2_initialize_map_by_paths_callback(u8 self) {
     dungeon_generator2 *dg2 = (dungeon_generator2*) big_callback_get_int(self, 7);
     int excluded_nodes_mask = big_callback_get_int(self, 9);
     int step = 0;
-    dprintf("Initialize by path callback; progress %d/%d, steps per frame %d\n", vars[0], vars[1], vars[2]);
+    DEBUG("Initialize by path callback; progress %d/%d, steps per frame %d\n", vars[0], vars[1], vars[2]);
     while (step < vars[1] && vars[0] < vars[2]) {
         int node_idx = vars[0]++;
         if (excluded_nodes_mask & (1 << node_idx))
@@ -268,7 +268,7 @@ void dungeon2_apply_space_foldable(u8 *src, u8 *dst, dungeon_generator2 *dg2, in
 static void dungeon2_create_connected_layout_callback(u8 self) {
   create_connected_layout_state_t *state = (create_connected_layout_state_t*) big_callback_get_int(self, 0);
   dungeon_generator2 *dg2 = state->dg2;
-  dprintf("Create connected layout in state %d\n", state->state);
+  DEBUG("Create connected layout in state %d\n", state->state);
   switch (state->state) {
     case 0: { // Initialize maps
       int _dg2_wall = DG2_WALL | (DG2_WALL << 8);
@@ -406,13 +406,13 @@ static void dungeon2_get_nodes_callback(u8 self) {
                 yoffset += dg2->pattern_margin;
             }
             FIXED best_score = big_callback_get_int(self, 8);
-            // dprintf("Sampling for node %d: %d / %d candidates.\n", vars[0], vars[7], dg2->node_samples);
+            // DEBUG("Sampling for node %d: %d / %d candidates.\n", vars[0], vars[7], dg2->node_samples);
             while (step < DG2_NODE_SAMPLES_PER_FRAME && vars[7] < dg2->node_samples) {
                 // Odd node coordinates ensure the correct placements of patterns
                 nodes[idx][0] = (xoffset + dungeon2_rnd_16(dg2) % xrange) | 1; 
                 nodes[idx][1] = (yoffset + dungeon2_rnd_16(dg2) % yrange) | 1;
                 FIXED score = score_node(nodes, idx, dg2);
-                // dprintf("Cadidate %d,%d: Score 0x%x\n", nodes[idx][0], nodes[idx][1], score);
+                // DEBUG("Cadidate %d,%d: Score 0x%x\n", nodes[idx][0], nodes[idx][1], score);
                 if (score > best_score) {
                     best_score = score;
                     vars[10] = (u16)nodes[idx][0];
@@ -432,7 +432,7 @@ static void dungeon2_get_nodes_callback(u8 self) {
             nodes[idx][0] = vars[10];
             nodes[idx][1] = vars[11];
             if (dungeon2_propose_node(nodes, idx, dg2)) { // Node was accepted
-                dprintf("Callback sampled node %d: %d,%d\n", vars[0], vars[10], vars[11]);
+                DEBUG("Callback sampled node %d: %d,%d\n", vars[0], vars[10], vars[11]);
                 vars[0]++;
                 if (vars[0] >= vars[1]) { // All nodes have been sampled
                     big_callbacks[self].function = dungeon2_callback_done;
@@ -482,7 +482,7 @@ static void dungeon2_create_patch_layout_callback(u8 self) {
             while (step < DG2_CREATE_PATCH_LAYOUT_NODES_PER_FRAME && vars[1] < dg2->nodes) {
                 int node_idx = vars[1]++;
                 if (excluded_node_mask & (1 << node_idx)) {
-                    dprintf("Dont create patch arround node %d\n", node_idx);
+                    DEBUG("Dont create patch arround node %d\n", node_idx);
                     continue;
                 }
                 step++;

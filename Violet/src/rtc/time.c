@@ -16,7 +16,7 @@ bool time_test() {
 	case TIME_TYPE_INGAME_CLOCK:
 		return save2->hours_played != 999 || save2->minutes_played != 59;
 	default:
-		derrf("Unkown time type %d (test)\n", *var_access(TIME_TYPE));
+		ERROR("Unkown time type %d (test)\n", *var_access(TIME_TYPE));
 		return false;
 	}
 }
@@ -49,7 +49,7 @@ void time_read(rtc_timestamp *s) {
 		time_ingame_clock_read(s);
 		break;
 	default :
-		derrf("Unkown time type %d\n", *var_access(TIME_TYPE));
+		ERROR("Unkown time type %d\n", *var_access(TIME_TYPE));
 	}
 }
 

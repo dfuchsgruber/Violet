@@ -59,10 +59,10 @@ present_t presents[NUM_PRESENTS] = {
 
 u8 *present_get_matching_md(u8 *md){
     for(int i = 0; i < NUM_PRESENTS; i++){
-        //dprintf("Checking present %d\n", i);
+        //DEBUG("Checking present %d\n", i);
         bool matched = true;
         for(int j = 0; j < SHA3_MDLEN; j++){
-            //dprintf("Input md: %d, Expected md: %d\n", md[j], presents[i].md[j]);
+            //DEBUG("Input md: %d, Expected md: %d\n", md[j], presents[i].md[j]);
             if(presents[i].md[j] != md[j]){
                 matched = false;
                 break;
@@ -87,7 +87,7 @@ void present_query_closure(){
         u8 md[SHA3_MDLEN] = {0};
         sha3(input, md);
         for (int i = 0; i < SHA3_MDLEN; i++) {
-            dprintf("Input md[%d]: %d\n", i, md[i]);
+            DEBUG("Input md[%d]: %d\n", i, md[i]);
         }
         
         

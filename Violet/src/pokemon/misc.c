@@ -46,7 +46,7 @@ bool pokemon_has_type() {
     int type = *var_access(0x8005);
     if (pokemon_get_attribute(player_pokemon + index, ATTRIBUTE_IS_EGG, 0)) return false;
     int species = pokemon_get_attribute(player_pokemon + index, ATTRIBUTE_SPECIES, 0);
-    dprintf("Species %d, type %d\n");
+    DEBUG("Species %d, type %d\n");
     return basestats[species].type1 == type || basestats[species].type2 == type;
 }
 

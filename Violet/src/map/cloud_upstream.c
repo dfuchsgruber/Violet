@@ -443,7 +443,7 @@ static oam_template overworld_cloud_upstream_oam_templates[] = {
 oam_cloud_upstream_state_t *map_cloud_upstream_whirlwind_at(s16 x, s16 y) {
     oam_palette_load_if_not_present_and_apply_shaders(&overworld_cloud_upstream_palette);
     oam_cloud_upstream_state_t *state = malloc_and_clear(sizeof(oam_cloud_upstream_state_t));
-    dprintf("Upstream at %d, %d: state allocated @0x%x\n", x, y, state);
+    DEBUG("Upstream at %d, %d: state allocated @0x%x\n", x, y, state);
     for (u8 i = 0; i < CLOUD_UPSTREAM_NUM_OAMS; i++) {
         for (int j = 0; j < 2; j++) {
             u8 oam_idx = oam_new_backward_search(&overworld_cloud_upstream_oam_templates[j], 0, 0, 200);

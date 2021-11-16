@@ -30,7 +30,7 @@ static void overworld_step_callback_generic_cracked_floor(u8 self, u16 (*get_cra
                 s16 x = (s16)params[5]; s16 y = (s16)params[6];
                 block_set_by_pos(x, y, get_cracked_block_idx(x, y));
                 map_redraw_block_at_position(x, y);
-                // dprintf("Clk 0 draws at %d, %d\n", x, y);
+                // DEBUG("Clk 0 draws at %d, %d\n", x, y);
                 if (crack_sound_idx)
                     play_sound(crack_sound_idx);
             }
@@ -38,7 +38,7 @@ static void overworld_step_callback_generic_cracked_floor(u8 self, u16 (*get_cra
                 s16 x = (s16)params[9]; s16 y = (s16)params[10];
                 block_set_by_pos(x, y, get_cracked_block_idx(x, y));
                 map_redraw_block_at_position(x, y);
-                // dprintf("Clk 1 draws at %d, %d\n", x, y);
+                // DEBUG("Clk 1 draws at %d, %d\n", x, y);
                 if (crack_sound_idx)
                     play_sound(crack_sound_idx);
             }
@@ -65,7 +65,7 @@ static void overworld_step_callback_generic_cracked_floor(u8 self, u16 (*get_cra
                         params[9] = (u16)pos.coordinates.x;
                         params[10] = (u16)pos.coordinates.y;
                     } else {
-                        derrf("On step callback fall through cracked floor: Player is too fast, no free clock to store tiles!");
+                        ERROR("On step callback fall through cracked floor: Player is too fast, no free clock to store tiles!");
                     }
                 }
             }

@@ -480,7 +480,7 @@ void dungeon2_set_encounter_cave() {
 }
 
 map_header_t *dungeon2_init_header_cave(dungeon_generator2 *dg2) {
-    dprintf("D2 header init\n");
+    DEBUG("D2 header init\n");
     fmem.dmap_header_initialized = 1;
     fmem.dmapheader.levelscripts = dungeon2_lscr;
     fmem.dmapheader.connections = &dungeon2_connections;
@@ -555,7 +555,7 @@ void dungeon2_compute_layout_cave_callback(u8 self) {
     u8 *map = (u8*)big_callback_get_int(self, 4);
     u8 *over = (u8*)big_callback_get_int(self, 8);
     u16 *vars = big_callbacks[self].params;
-    // dprintf("cave callback superstate %d\n", vars[0]);
+    // DEBUG("cave callback superstate %d\n", vars[0]);
     switch (vars[0]) {
         case 0: {
             big_callback_set_int(self, 4, (int)malloc(sizeof(u8) * (size_t)dg2->width * (size_t)dg2->height));
@@ -675,6 +675,6 @@ void dungeon2_enter_cave() {
     dg2->previous_position.y = (s16)(dg2->previous_position.y - 7);
     dg2->previous_bank = save1->bank;
     dg2->previous_map = save1->map;
-    dprintf("Saved player @ (%d, %d) on %d.%d\n", dg2->previous_position.x, dg2->previous_position.y,
+    DEBUG("Saved player @ (%d, %d) on %d.%d\n", dg2->previous_position.x, dg2->previous_position.y,
         dg2->previous_bank, dg2->previous_map);
 }

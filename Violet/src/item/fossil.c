@@ -46,11 +46,11 @@ void fossil_print_multichoice() {
     }
     
     *var_access(0x4077) = displayed;
-    dprintf("Displaying %d choices\n", displayed);
+    DEBUG("Displaying %d choices\n", displayed);
     if (displayed) {
         overworld_script_state.pointer_banks[0] = (u8*) choices;
         if (multichoice(0, 0, 0, false)) {
-            dprintf("Halting for dchoice\n");
+            DEBUG("Halting for dchoice\n");
             overworld_script_halt();
             lastresult = 1;
         }

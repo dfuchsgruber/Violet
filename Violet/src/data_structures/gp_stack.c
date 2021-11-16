@@ -20,7 +20,7 @@ int gp_stack_peek(){
     if(fmem.gp_stack_size > 0){
         return fmem.gp_stack[fmem.gp_stack_size - 1];
     }
-    derrf("Trying to peek from empty gp stack\n");
+    ERROR("Trying to peek from empty gp stack\n");
     return -1;
 }
 
@@ -28,6 +28,6 @@ int gp_stack_pop(){
     if(fmem.gp_stack_size > 0){
         return fmem.gp_stack[--(fmem.gp_stack_size)];
     }
-    derrf("Trying to pop from empty gp stack\n");
+    ERROR("Trying to pop from empty gp stack\n");
     return -1;
 }

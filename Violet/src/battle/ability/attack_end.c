@@ -114,7 +114,7 @@ bool battle_abilities_attack_done_attacker_new() {
 bool battle_abilities_attack_done_defender_new() {
     battler *attacker = battlers + attacking_battler;
     battler *defender = battlers + defending_battler;
-    dprintf("Defender ability %d\n", defender->ability);
+    DEBUG("Defender ability %d\n", defender->ability);
     defending_battler_ability = defender->ability;
     if(defender->ability == FLUFFIG && !(attack_result & ATTACK_NO_EFFECT_ANY) &&
             (attacks[active_attack].flags & MAKES_CONTACT) && !battler_statuses[attacking_battler].hurt_in_confusion && 
@@ -143,7 +143,7 @@ bool battle_abilities_attack_done_defender_new() {
             // battle_scripting.animation_targets = defending_battler;
             // battle_animation_user = defending_battler;
             // battle_animation_target = attacking_battler;
-            dprintf("Attacking battler %d, defending battler %d\n", attacking_battler, defending_battler);
+            DEBUG("Attacking battler %d, defending battler %d\n", attacking_battler, defending_battler);
             battle_scripting.animation_arguments[0] = STAT_ANIM_MINUS2(STAT_ACCURACY);
             battle_scripting.animation_arguments[1] = 0;
             // effect_battler = attacking_battler;

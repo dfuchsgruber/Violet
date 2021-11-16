@@ -161,7 +161,7 @@ overworld_sprite *overworld_sprite_get_by_shell_idx(u16 shell_idx) {
 }
 
 overworld_sprite *overworld_sprite_get_by_trash_idx(u16 trash_idx) {
-    dprintf("Trash can %d has type %d\n", trash_idx, trash_get_type(trash_idx));
+    DEBUG("Trash can %d has type %d\n", trash_idx, trash_get_type(trash_idx));
     switch (trash_get_type(trash_idx)) {
         case TRASH_TYPE_EMPTY:
             return &overworld_trash_empty;
@@ -253,7 +253,7 @@ void mushroom_pluck() {
 
 u16 special_shell_get_stage() {
     u16 stage = shell_get_stage(map_get_person((u8)(*var_access(LASTTALKED)), save1->map, save1->bank)->value);
-    dprintf("Shell stage is %d\n", stage);
+    DEBUG("Shell stage is %d\n", stage);
     return stage;
 }
 
@@ -338,7 +338,7 @@ u16 shell_get_encounter() {
     u32 seq[1] = {shell_idx};
     gp_rng_seed(daily_events_hash(seq, ARRAY_COUNT(seq)));
     u16 species = (u16)choice(shell_encounters, ARRAY_COUNT(shell_encounters), gp_rnd16);
-    dprintf("Shell encounter %d\n", species);
+    DEBUG("Shell encounter %d\n", species);
     return species;
 }
 
@@ -408,9 +408,9 @@ void overworld_recipe_buffer_name() {
     u16 flag = *var_access(0x8004);
     u16 item_idx = recipe_get_item_idx_by_flag(flag);
     if (item_idx == RECIPE_FLAG_AMBIGUOUS) {
-        derrf("Ambiguous recipe flag %d\n", flag);
+        ERROR("Ambiguous recipe flag %d\n", flag);
     } else if (item_idx == 0) {
-        derrf("No recipe matching with flag %d\n", flag);
+        ERROR("No recipe matching with flag %d\n", flag);
     }
     strcpy(buffer0, item_get_name(item_idx));
 }

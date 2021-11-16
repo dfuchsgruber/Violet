@@ -46,7 +46,7 @@ void battle_intro_draw_pokemon_or_trainer_sprite_draw_second_trainer() {
 void battle_intro_try_second_trainer_ball_throw() {
     if (battle_flags & (BATTLE_MULTI | BATTLE_TWO_TRAINERS) && 
             battler_get_position(active_battler) == BATTLE_POSITION_OPPONENT_RIGHT) {
-        dprintf("Add second ball throw \n");
+        DEBUG("Add second ball throw \n");
         battle_controller_emit_intro_trainer_ball_throw(0);
         battler_mark_for_controller_execution(active_battler);
     }
@@ -55,7 +55,7 @@ void battle_intro_try_second_trainer_ball_throw() {
 void battle_intro_try_partner_ball_throw() {
     if ((battle_flags & (BATTLE_MULTI | BATTLE_ALLY)) && 
             battler_get_position(active_battler) == BATTLE_POSITION_PLAYER_RIGHT) {
-        dprintf("Add partner ball throw \n");
+        DEBUG("Add partner ball throw \n");
         battle_controller_emit_intro_trainer_ball_throw(0);
         battler_mark_for_controller_execution(active_battler);
     }
@@ -77,7 +77,7 @@ void battle_action_use_item() {
     battle_bg0_y = 0;
     battler_remove_fury_cutter_destiny_bond_grudge(attacking_battler);
     bsc_last_used_item = UNALIGNED_16_GET(battle_general_buffers1[attacking_battler] + 1);
-    dprintf("Used item is %d\n", bsc_last_used_item);
+    DEBUG("Used item is %d\n", bsc_last_used_item);
     if (item_get_pocket(bsc_last_used_item) == POCKET_POKEBALLS) {
         // All pokeballs but safari ball are handled similarly, so in the interest of allowing balls with high idx
         // We call the pokeball function for all non-safari balls
@@ -98,7 +98,7 @@ void battle_action_use_item() {
         if (bsc_last_used_item == ITEM_TOP_GENESUNG || bsc_last_used_item == ITEM_GOLDAPFEL) {
             bsc_offset = battlescripts_use_item[1];
         } else {
-            dprintf("Item has effect %d\n", item_get_effect_type(bsc_last_used_item));
+            DEBUG("Item has effect %d\n", item_get_effect_type(bsc_last_used_item));
             u8 effect_type = item_get_effect_type(bsc_last_used_item);
             switch (effect_type) {
                 case ITEM_EFFECT_HEAL_HP:
@@ -230,7 +230,7 @@ void battle_initialize_graphics_or_preview() {
 void battle_ally_save_and_setup_party() {
     for (int i = 0; i < 3; i++) {
         cmem.ally_battle_selected_party_idxs[i] = player_party_selected_idxs[i];
-        dprintf("Selected party idx slot %d: %d\n", i, player_party_selected_idxs[i]);
+        DEBUG("Selected party idx slot %d: %d\n", i, player_party_selected_idxs[i]);
     }
     player_save_party();
     player_party_reduce_to_selection();
@@ -275,7 +275,7 @@ static bool battle_end_turn_golden_apple_effects() {
     bool effect = false;
     for (; BATTLE_STATE2->golden_apple_battler_idx < battler_cnt; ++BATTLE_STATE2->golden_apple_battler_idx) {
         active_battler = BATTLE_STATE2->golden_apple_battler_idx;
-        dprintf("Golden apple battler %d, status %d\n", active_battler, BATTLE_STATE2->status_custom_persistent[active_battler]);
+        DEBUG("Golden apple battler %d, status %d\n", active_battler, BATTLE_STATE2->status_custom_persistent[active_battler]);
         if (BATTLE_STATE2->status_custom_persistent[active_battler] & CUSTOM_STATUS_PERSISTENT_GOLDEN_APPLE_PROTECTION) {
             BATTLE_STATE2->status_custom_persistent[active_battler] &= (u32)(~CUSTOM_STATUS_PERSISTENT_GOLDEN_APPLE_PROTECTION);
             battle_scripting.battler_idx = active_battler;
@@ -292,7 +292,7 @@ static bool battle_end_turn_golden_apple_effects() {
 extern u8 battlescript_golden_apple_protection_active[];
 
 void battle_golden_apple_print_protection() {
-    dprintf("Golden apple check for battler %d, status 0x%x\n", attacking_battler, BATTLE_STATE2->status_custom_persistent[attacking_battler]);
+    DEBUG("Golden apple check for battler %d, status 0x%x\n", attacking_battler, BATTLE_STATE2->status_custom_persistent[attacking_battler]);
     if (BATTLE_STATE2->status_custom_persistent[attacking_battler] & CUSTOM_STATUS_PERSISTENT_GOLDEN_APPLE_PROTECTION) {
         battle_scripting.battler_idx = attacking_battler;
         active_battler = attacking_battler;
@@ -343,7 +343,7 @@ bool battle_end_turn_wrap() {
             } else {
                 damage_to_apply = MAX(1, battlers[active_battler].max_hp / 16);
             }
-            dprintf("Damage for wrap %d\n", damage_to_apply);
+            DEBUG("Damage for wrap %d\n", damage_to_apply);
         } else { // broke free
             bsc_string_buffer0[0] = BSC_BUFFER_BEGIN;
             bsc_string_buffer0[1] = BSC_BUFFER_DISPLAY_MOVE;
@@ -415,7 +415,7 @@ void battle_wild_pokemon_sprite_fade_palettes(oam_object *oam, bool back) {
         affects |= 1 << (PARTNER(battler_idx) + 16);
     }
     color_t c = {.rgb = {.red = 8, .green = 8, .blue = 8}};
-    dprintf("Fading with affects 0x%x, rgb 0x%x\n", affects, c.value);
+    DEBUG("Fading with affects 0x%x, rgb 0x%x\n", affects, c.value);
     fadescreen((u32)affects, 0, 10, back ? 0 : 10, c.value);
 }
 
@@ -429,8 +429,8 @@ bool battle_handle_turn_selection_actions_are_prevented() {
     if (BATTLE_IS_WILD_DOUBLE && battler_get_position(active_battler) == BATTLE_POSITION_PLAYER_RIGHT &&
         (battler_action_chosen[battler_get_by_position(BATTLE_POSITION_PLAYER_LEFT)] == BATTLE_ACTION_RUN || BATTLE_STATE2->throwing_pokeball)) {
         // In a wild double battle, the right mon may not move if the left mon is running or throwing a pokeball
-        dprintf("Battler at position %d can't do any action.\n", battler_get_position(active_battler));
-        dprintf("Marked for pokeball throw %d\n", BATTLE_STATE2->throwing_pokeball);
+        DEBUG("Battler at position %d can't do any action.\n", battler_get_position(active_battler));
+        DEBUG("Marked for pokeball throw %d\n", BATTLE_STATE2->throwing_pokeball);
         if (BATTLE_STATE2->throwing_pokeball)
             BATTLE_STATE2->throwing_pokeball = false;
         battler_action_chosen[active_battler] = BATTLE_ACTION_NOTHING_FAINTED;
@@ -446,7 +446,7 @@ void battle_handle_selection_actions_item_selected() {
         item_activated = item;
         if (item_get_pocket(item_activated) == POCKET_POKEBALLS) {
             BATTLE_STATE2->throwing_pokeball = true; // Mark that this battler is throwing a pokéball, i.e. the right battler musn't do any action
-            dprintf("Battler at position %d marked for pokeball throw.\n", battler_get_position(active_battler));
+            DEBUG("Battler at position %d marked for pokeball throw.\n", battler_get_position(active_battler));
         }
         battle_communication[active_battler]++;
     } else {

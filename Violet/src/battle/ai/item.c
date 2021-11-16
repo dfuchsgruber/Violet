@@ -15,7 +15,7 @@
 #include "constants/battle/battle_ai_item_flags.h"
 
 #define AI_DEBUG_ITEMS_ON true
-#define AI_DEBUG_ITEMS(str, ...) ({if (AI_DEBUG_ITEMS_ON) dprintf(str, __VA_ARGS__);})
+#define AI_DEBUG_ITEMS(str, ...) ({if (AI_DEBUG_ITEMS_ON) DEBUG(str, __VA_ARGS__);})
 
 static u8 ai_get_item_type(u16 item, item_effect_t *effect) {
     if (item == ITEM_TOP_GENESUNG || item == ITEM_GOLDAPFEL)

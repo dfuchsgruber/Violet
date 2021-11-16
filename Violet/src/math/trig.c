@@ -51,7 +51,7 @@ FIXED FIXED_TRIANGLE_TAN(FIXED theta) {
   FIXED sin = FIXED_TRIANGLE_SIN(theta);
   FIXED cos = FIXED_TRIANGLE_COS(theta);
   if (!cos) {
-    derrf("Triangle tangens not defined for theta %d\n", theta);
+    ERROR("Triangle tangens not defined for theta %d\n", theta);
     return -1;
   }
   return FIXED_DIV(sin, cos);
@@ -103,7 +103,7 @@ FIXED FIXED_TAN(FIXED theta) {
   FIXED sin = FIXED_SIN(theta);
   FIXED cos = FIXED_COS(theta);
   if (!cos) {
-    derrf("Tangens not defined for theta %d\n", theta);
+    ERROR("Tangens not defined for theta %d\n", theta);
     return -1;
   }
   return FIXED_DIV(sin, cos);
