@@ -319,3 +319,52 @@ void overworld_weather_load_palette(const color_t *pal) {
     pal_copy(pal, (u16)(256 + overworld_weather.alternative_gamma_oam_pal_idx * 16), 16 * sizeof(color_t));
     pal_apply_shaders_by_oam_palette_idx(overworld_weather.alternative_gamma_oam_pal_idx);
 }
+
+extern graphic overworld_weather_sandstorm_graphic;
+extern color_t overworld_weather_sandstormPal[16];
+extern oam_template overworld_weather_sandstorm_template;
+
+// map out a 6x4 rectangle of 64x64 sprites:
+// [192 x 128] [192 x 128]
+// [192 x 128] [192 x 128]
+
+static subsprite sandstorm_subsprites_192x128[] = {
+    {.x = -64, .y = 0, .shape = ATTR0_SHAPE_SQUARE >> 14, .size = ATTR1_SIZE_64_64 >> 14, .tile_offset = 0, .priority = 1,},
+    {.x = 0, .y = 0, .shape = ATTR0_SHAPE_SQUARE >> 14, .size = ATTR1_SIZE_64_64 >> 14, .tile_offset = 0, .priority = 1,},
+    {.x = 64, .y = 0, .shape = ATTR0_SHAPE_SQUARE >> 14, .size = ATTR1_SIZE_64_64 >> 14, .tile_offset = 0, .priority = 1,},
+    {.x = -64, .y = 64, .shape = ATTR0_SHAPE_SQUARE >> 14, .size = ATTR1_SIZE_64_64 >> 14, .tile_offset = 0, .priority = 1,},
+    {.x = 0, .y = 64, .shape = ATTR0_SHAPE_SQUARE >> 14, .size = ATTR1_SIZE_64_64 >> 14, .tile_offset = 0, .priority = 1,},
+    {.x = 64, .y = 64, .shape = ATTR0_SHAPE_SQUARE >> 14, .size = ATTR1_SIZE_64_64 >> 14, .tile_offset = 0, .priority = 1,},
+};
+
+static subsprite_table sandstorm_subsprite_tables[] = {
+    {.subsprites = sandstorm_subsprites_192x128, .num_subsprites = ARRAY_COUNT(sandstorm_subsprites_192x128)},
+};
+
+static void sandstorm_callback(oam_object *o) {
+    o->x2 = (s16)((o->x2 - 3) & 63);
+    o->y2 = (s16)((o->y2 - 1) & 63);
+    // o->y2 = (s16)(overworld_weather.sandstorm_y_offset & 63);
+    // o->y2 = (s16)(overworld_weather.sandstorm_y_offset);
+}
+
+void overworld_weather_sandstorm_oams_create() {
+    if (!overworld_weather.sandstorm_oams_created) {
+        oam_load_graphic_uncompressed(&overworld_weather_sandstorm_graphic);
+        overworld_weather_load_palette(overworld_weather_sandstormPal);
+        for (int i = 0; i < 4; i++) {
+            u8 oam_idx = oam_new_backward_search(
+                &overworld_weather_sandstorm_template, (s16)((i & 1) * 192), (s16)((i >> 1) * 128), 1);
+            if (oam_idx != NUM_OAMS) {
+                overworld_weather.sprites.s2.sandstormSprites1[i] = oams + oam_idx;
+                oam_set_subsprite_table(oams + oam_idx, sandstorm_subsprite_tables);
+                oams[oam_idx].private[0] = (u16)((i % 2) * 192);
+                oams[oam_idx].private[1] = (u16)((i >> 2) * 128);
+                oams[oam_idx].callback = sandstorm_callback;
+            }
+        }
+        for (u32 i = 4; i < ARRAY_COUNT(overworld_weather.sprites.s2.sandstormSprites1); i++)
+            overworld_weather.sprites.s2.sandstormSprites1[i] = NULL;
+        overworld_weather.sandstorm_oams_created = true;
+    }
+}

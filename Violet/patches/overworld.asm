@@ -606,9 +606,7 @@ blxr4_npc_create_camera:
 
 // Sandstorm
 
-/* 
-.org 0x0807d5de
-    lsl r0, #0 // Don't create multiple sandstorm sprites
-.org 0x0807d4d6
-    lsl r0, #0 // Don't destroy more than one sandstorm sprites
-*/
+.org 0x0807d53c
+    ldr r0, =overworld_weather_sandstorm_oams_create | 1
+    bx r0
+    .pool

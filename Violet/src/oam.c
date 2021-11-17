@@ -294,10 +294,10 @@ void oam_proceed() {
 
     BENCHMARK_WRAP(benchmark_start();)
     oam_sort();
-    BENCHMARK_WRAP(u32 t_sort = benchmark_end();)
 
     u8 tmp = super.disable_oams;
     super.disable_oams = true;
+    BENCHMARK_WRAP(u32 t_sort = benchmark_end();)
 
     BENCHMARK_WRAP(benchmark_start();)
     oam_copy_to_oam_buffer();
@@ -305,11 +305,11 @@ void oam_proceed() {
 
     BENCHMARK_WRAP(benchmark_start();)
     oam_copy_rotscale_to_buffer();
-    BENCHMARK_WRAP(u32 t_affine = benchmark_end();)
     super.disable_oams = (u8)(tmp & 1);
     oam_copy_requests_enabled = true;
+    BENCHMARK_WRAP(u32 t_affine = benchmark_end();)
 
-    BENCHMARK_WRAP(OAM_DEBUG("\tOam sum %d, Vis %d, compr %d, pos %d, prio %d, sort %d, cpy %d, rs %d, y %d\n", 
+    BENCHMARK_WRAP(DEBUG("\tOam sum %d, Vis %d, compr %d, pos %d, prio %d, sort %d, cpy %d, rs %d, y %d\n", 
     t_compress + t_pos + t_prio +  t_y + t_sort + t_copy + t_affine,
     
     oam_visible_cnt, t_compress, t_pos, t_prio, t_sort, t_copy, t_affine, t_y);)
