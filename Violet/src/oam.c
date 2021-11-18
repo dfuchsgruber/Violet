@@ -161,89 +161,28 @@ static inline size_t oam_compress_and_calculate_visible_cnt() {
 }
 
 static void oam_calculate_y() {
-    // int cnt = oam_visible_cnt;
-    // s16 *ys = fmem.oam_ys;
-    // u8 *order = oam_order;
-    // for (int i = 0; i < cnt; i++) {
-    //     oam_object *o = oams + order[i];
-    //     int y = o->final_oam.attr0 & 0xFF;
-    //     if (y >= 160)
-    //         y -= 256;
-    //     if ((o->final_oam.attr0 & (ATTR0_ROTSCALE | ATTR0_DSIZE)) == (ATTR0_ROTSCALE | ATTR0_DSIZE) &&
-    //         (o->final_oam.attr1 >> 14)  == (ATTR1_SIZE_64_64 >> 14)) {
-    //         u32 shape = (o->final_oam.attr0 >> 14) & 3;
-    //         if (shape == (ATTR0_SHAPE_SQUARE >> 14) || shape == (ATTR0_SHAPE_VERTICAL >> 14)) {
-    //             if (y > 128)
-    //                 y -= 256;
-    //         }
-    //     }
-    //     ys[i] = (s16)y;
-    // }
 }
 
 void oam_calculate_position() {
-    // int cnt = oam_visible_cnt;
-    // for (int i = 0; i < cnt; i++) {
-    //     oam_object *o = oams + oam_order[i];
-    //     if (o->flags & OAM_FLAG_CENTERED) {
-    //         o->final_oam.attr1 = (u16)(((o->final_oam.attr1 >> 9) << 9) | ((
-    //             (o->x + o->x2 + o->x_centre + coordinate_camera_x_offset) & 0x1FF
-    //         ) & 0x1FF));
-    //         o->final_oam.attr0 = (u16)(((o->final_oam.attr0 >> 8) << 8) | (
-    //             (o->y + o->y2 + o->y_centre + coordinate_camera_y_offset) & 0xFF
-    //         ));
-    //     } else {
-    //         o->final_oam.attr1 = (u16)(((o->final_oam.attr1 >> 9) << 9) | ((
-    //             (o->x + o->x2 + o->x_centre) & 0x1FF
-    //         ) & 0x1FF));
-    //         o->final_oam.attr0 = (u16)(((o->final_oam.attr0 >> 8) << 8) | (
-    //             (o->y + o->y2 + o->y_centre) & 0xFF
-    //         ));
-
-    //     }
-    // }
 }
 
 void oam_calculate_priority() {
-    // int cnt = oam_visible_cnt;
-    // for (int i = 0; i < cnt; i++) {
-    //     u8 oam_idx = oam_order[i];
-    //     oam_object *o = oams + oam_idx;
-    //     oam_priorities[oam_idx] = (u16)(o->priority_on_layer | (((o->final_oam.attr2 >> 10) & 3) << 8));
-    // }
 }
 
-void oam_sort() {
-    size_t n = oam_visible_cnt;
-    if (n == 0)
-        return;
-    
-    // u8 idx_first, idx_second;
-    // bool swapped;
-    // do {
-    //     swapped = false;
-    //     for (size_t i = 0; i < n - 1; i++) {
-    //         idx_first = oam_order_iram[i];
-    //         idx_second = oam_order_iram[i + 1];
-    //         if (
-    //                 oam_priorities_iram[idx_first] > oam_priorities_iram[idx_second] 
-    //                 // || (oam_priorities_iram[idx_first] == oam_priorities_iram[idx_second] && oam_ys_iram[idx_first] < oam_ys_iram[idx_second])
-    //             ) {
-    //             u8 tmp = oam_order_iram[i];
-    //             oam_order_iram[i] = oam_order_iram[i + 1];
-    //             oam_order_iram[i + 1] = tmp;
-    //             swapped = true;
-    //         }
-    //     }
-    //     n--;
-    // } while (swapped);
-    
+#define SWAP(i, j) \
+    u8 tmp = oam_order_iram[i]; \
+    oam_order_iram[i] = oam_order_iram[j]; \
+    oam_order_iram[j] = tmp;
+
+static inline void oam_insertion_sort(u32 from, u32 to) {
+    return;
+    // DEBUG("Insertion sort on %d from %d to %d\n", to-from, from, to);
     u8 current;
     u32 j;
-    for (u32 i = 1; i < n; i++) {
+    for (u32 i = from; i < to; i++) {
         current = oam_order_iram[i];
         j = i;
-        while(j > 0 && oam_priorities_iram[oam_order_iram[j - 1]] > oam_priorities_iram[current]) {
+        while(j > from && oam_priorities_iram[oam_order_iram[j - 1]] > oam_priorities_iram[current]) {
             u8 tmp = oam_order_iram[j];
             oam_order_iram[j] = oam_order_iram[j - 1];
             oam_order_iram[j - 1] = tmp;
@@ -251,6 +190,97 @@ void oam_sort() {
         }
         oam_order_iram[j] = current;
     }  
+}
+
+static inline void heapsort_sift_down(int idx, u8 *arr, int size) {
+    while (idx < size) {
+        int largest = idx;
+        int left = (idx << 1) + 1;
+        int right = (idx << 1) + 2;
+        if (left < size && oam_priorities_iram[arr[largest]] < oam_priorities_iram[arr[left]])
+            largest = left;
+        if (right < size && oam_priorities_iram[arr[largest]] < oam_priorities_iram[arr[right]])
+            largest = right;
+        if (largest != idx) {
+            u8 tmp = arr[largest];
+            arr[largest] = arr[idx];
+            arr[idx] = tmp;
+            idx = largest;
+        } else {
+            return;
+        }
+    }
+}
+
+static inline void oam_heapsort(u32 from, u32 to) {
+    int size = (int)(to - from);
+    if (size == 0)
+        return;
+    // 1. Build a max-heap
+    u8 *heap = oam_order_iram + from;
+    for (int i = (size >> 1) - 1; i >= 0; i--) {
+        heapsort_sift_down(i, heap, size);
+    }
+    // 2. Run heapsort, successively remove elements from the heap
+    // DEBUG("Heapsort removal order, size is \n");
+    for (int i = size - 1; i >= 0; i--) {
+        u8 tmp = heap[0];
+        // DEBUG("%d ", oam_priorities_iram[tmp]);
+        heap[0] = heap[i];
+        heap[i] = tmp;
+        heapsort_sift_down(0, heap, i);
+    }
+    // DEBUG("\n");
+}
+
+void oam_sort() {
+    size_t n = oam_visible_cnt;
+    if (n == 0)
+        return;
+    // First, perform radix sort on the bg-priority (0-3)
+    u32 prio_1_start = 0, prio_3_start = n;
+    u32 i = 0;
+    while (i < prio_3_start) {
+        if ((oam_priorities_iram[oam_order_iram[i]] >> 24) == 0) {
+            // Place all with bg prio 0 at the beginning (before prio_1_start)
+            SWAP(i, prio_1_start);
+            prio_1_start++;
+            i++;
+        } else if ((oam_priorities_iram[oam_order_iram[i]] >> 24) == 3) {
+            // Place all with bg prio 3 at the end (after prio_3_start)
+            prio_3_start--;
+            SWAP(i, prio_3_start);
+        } else {
+            i++; // Ignore bg priorities 1 and 2 for now
+        }
+    }
+    // Sort the bg priotities 1 und 2 between prio_1 start and prio_3_start
+    i = prio_1_start;
+    u32 prio_2_start = i;
+    while (i < prio_3_start) {
+        if ((oam_priorities_iram[oam_order_iram[i]] >> 24) == 1) {
+            SWAP(i, prio_2_start);
+            prio_2_start++;
+        }
+        i++;
+    }
+    // For each bucket, sort either with insertion sort for small arrays or heapsort for large arrays
+    if (prio_1_start > 10)
+        oam_heapsort(0, prio_1_start);
+    else
+        oam_insertion_sort(0, prio_1_start);
+    if (prio_2_start - prio_1_start > 10)
+        oam_heapsort(prio_1_start, prio_2_start);
+    else
+        oam_insertion_sort(0, prio_1_start);
+    if (prio_3_start - prio_2_start > 10)
+        oam_heapsort(prio_2_start, prio_3_start);
+    else
+        oam_insertion_sort(prio_2_start, prio_3_start);
+    if (n - prio_3_start > 10)
+        oam_heapsort(prio_3_start, n);
+    else
+        oam_insertion_sort(prio_3_start, n);
 }
 
 static sprite oam_empty = {
