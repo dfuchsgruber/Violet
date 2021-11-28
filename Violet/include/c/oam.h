@@ -109,6 +109,7 @@ extern oam_template gp_oam_template; // Multi-use oam template
 #define OAM_FLAG_ACTIVE 0x1
 #define OAM_FLAG_CENTERED 0x2
 #define OAM_FLAG_INVISIBLE 0x4
+#define OAM_FLAG_IN_GROUP 0x8
 #define OAM_FLAG_HFLIP 0x100
 #define OAM_FLAG_VFLIP 0x200
 #define OAM_FLAG_GFX_ANIM_START 0x400
@@ -213,6 +214,13 @@ typedef struct {
 } oam_alloc_list_element_t;
 
 extern u8 oam_rotscale_disabled;
+
+/**
+ * Adds an oam to an oam group
+ * @param oam_idx the oam to add to the group
+ * @param group_head the group to add to (identified by a single oam, the group head)
+ **/
+void oam_add_to_group(u8 oam_idx, u8 group_head);
 
 /**
  * Sets the subsprite table of an oam

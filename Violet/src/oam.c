@@ -69,12 +69,19 @@ u8 oam_allocate(u8 where) {
                 oam_active_cnt++;
                 break;
         }
+        fmem.oam_groups[idx] = NUM_OAMS;
         OAM_DEBUG("allocated %d, where: %d\n", idx, where);
         return idx;
     } else {
         OAM_DEBUG("couldnt allocate\n", idx);
         return NUM_OAMS; // no free slots
     }
+}
+
+void oam_add_to_group(u8 oam_idx, u8 group_head) {
+    oams[oam_idx].flags |= OAM_FLAG_IN_GROUP;
+    fmem.oam_groups[oam_idx] = fmem.oam_groups[group_head];
+    fmem.oam_groups[group_head] = oam_idx;
 }
 
 void oam_allocation_initialize() {
@@ -102,16 +109,16 @@ static inline size_t oam_compress_and_calculate_visible_cnt() {
     int tail = oam_active_cnt - 1;
     int i = 0;
     while(i <= tail) {
-        // Search the last non-invisible element
-        while (tail >= 0 && (oams[oam_order_iram[tail]].flags & (OAM_FLAG_INVISIBLE)))
+        // Search the last element to sort
+        while (tail >= 0 && (oams[oam_order_iram[tail]].flags & (OAM_FLAG_INVISIBLE | OAM_FLAG_IN_GROUP)))
             tail--;
-        // Tail now points the last non-invisible element
+        // Tail now points the last element to sort
         if (i > tail) 
-            break; // whole range [i...NUM_OAMS] is invisible, done
-        else if ((oams[oam_order_iram[i]].flags & (OAM_FLAG_INVISIBLE))) {
-            // i is an invisible oam, swap with tail and continue
+            break; // whole range [i...NUM_OAMS] is not to sort, done
+        else if ((oams[oam_order_iram[i]].flags & (OAM_FLAG_INVISIBLE | OAM_FLAG_IN_GROUP))) {
+            // i is an oam not to sort, swap with tail and continue
             u8 tmp = oam_order_iram[tail];
-            oam_order_iram[tail] = oam_order_iram[i]; // i is now a visible oam
+            oam_order_iram[tail] = oam_order_iram[i]; // i is now an oam to sort
             oam_order_iram[i] = tmp;
         }
 
@@ -345,7 +352,7 @@ void oam_proceed() {
     oam_visible_cnt, t_compress, t_pos, t_prio, t_sort, t_copy, t_affine, t_y);)
 }
 
-void oam_clear(oam_object *o); // Declare it here so no other file is tempted to use it. This should only be called internally
+void oam_clear(oam_object *o); // Declare it here so no other file can use it. This should only be called internally
 
 void oam_clear_all() {
     u8 i;
@@ -431,34 +438,52 @@ void oam_animations_proceed() {
     while (current != OAM_ALLOC_ACTIVE_END) {
         u8 next = list[current].next;
         if (current != OAM_ALLOC_ACTIVE_MIDDLE) {
-            oam_object *current_object = oams + current;
-            if (current_object->flags & OAM_FLAG_ACTIVE) {
-                current_object->callback(current_object);
-                if (current_object->flags & OAM_FLAG_ACTIVE) {
-                    oam_animation_proceed(current_object);
+            if (!(oams[current].flags & OAM_FLAG_IN_GROUP)) {
+                // `current` is the head of an oam group, so process current's group
+                u8 oam_idx = current;
+                u8 previous = NUM_OAMS;
+                while (oam_idx < NUM_OAMS) {
+                    // Process the whole group at `current`
+                    oam_object *current_object = oams + oam_idx;
+                    if (current_object->flags & OAM_FLAG_ACTIVE) {
+                        current_object->callback(current_object);
+                        if (current_object->flags & OAM_FLAG_ACTIVE) {
+                            oam_animation_proceed(current_object);
+                        }
+                    }
+                    if (!(current_object->flags & OAM_FLAG_ACTIVE)) {
+                        // Garbage collection: Remove the oam from the allocation list
+
+                        // Remove from active list
+                        u8 _prev = list[oam_idx].previous;
+                        u8 _next = list[oam_idx].next;
+                        list[_prev].next = _next;
+                        list[_next].previous = _prev;
+
+                        // Insert into free list
+                        u8 free_start = list[OAM_ALLOC_FREE_START].next;
+                        list[OAM_ALLOC_FREE_START].next = oam_idx;
+                        list[oam_idx].previous = OAM_ALLOC_FREE_START;
+                        list[oam_idx].next = free_start;
+                        list[free_start].previous = oam_idx;
+
+                        // Also compress the oam group
+                        if (previous < NUM_OAMS) { // Is not the group head
+                            fmem.oam_groups[previous] = fmem.oam_groups[oam_idx];
+                        } else { // Group head became inactive, make the first group element the new head
+                            _next = fmem.oam_groups[oam_idx];
+                            if (_next < NUM_OAMS) {
+                                oams[_next].flags &= (u16)(~OAM_FLAG_IN_GROUP);
+                            }
+                        }
+                    }
+                    // Next element in the group
+                    previous = oam_idx;
+                    oam_idx = fmem.oam_groups[oam_idx];
                 }
-                // OAM_DEBUG("Animated sprite %d with callback %x andd template %x\n", current, current_object->callback, current_object->oam_template);
-            }
-            if (current_object->flags & OAM_FLAG_ACTIVE) {
-                oam_order_iram[oam_active_cnt++] = current;
-            } else {
-                // Remove from active list
-                u8 prev = list[current].previous;
-                list[prev].next = next;
-                list[next].previous = prev;
-
-                // Insert into free list
-                u8 free_start = list[OAM_ALLOC_FREE_START].next;
-                list[OAM_ALLOC_FREE_START].next = current;
-                list[current].previous = OAM_ALLOC_FREE_START;
-                list[current].next = free_start;
-                list[free_start].previous = current;
-
-
-
-                // oam_allocation_remove(list, current);
-                // oam_allocation_insert_after(list, current, OAM_ALLOC_FREE_START);
-                OAM_DEBUG("Garbage collection on %d\n", current);
+                if (oams[current].flags & OAM_FLAG_ACTIVE) {
+                    oam_order_iram[oam_active_cnt++] = current;
+                }
             }
         }
         current = next;
