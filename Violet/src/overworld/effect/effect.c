@@ -687,22 +687,27 @@ void overworld_effect_feathers_initialize() {
     overworld_effect_ow_coordinates_to_screen_coordinates(&x, &y, 8, 0);
     // Create a controller oam
     u8 controller_oam_idx = oam_new_forward_search(&overworld_effect_feathers_oam_template_controller, 0, 0, 0);
+    if (controller_oam_idx == NUM_OAMS)
+        return;
     oams[controller_oam_idx].flags |= OAM_FLAG_INVISIBLE;
     for (u8 i = 0; i < ARRAY_COUNT(feather_positions); i++) {
         u8 oam_idx = oam_new_forward_search(&overworld_effect_feathers_oam_template, x, y ,10);
-        oam_set_priority_by_height(oams + oam_idx, (u8)overworld_effect_state.height);
-        oams[oam_idx].flags |= OAM_FLAG_CENTERED;
-        oams[oam_idx].private[0] = (u16)(overworld_effect_state.x + 7);
-        oams[oam_idx].private[1] = (u16)(overworld_effect_state.y + 7);
-        oams[oam_idx].private[2] = (u16)overworld_effect_state.height;
-        oams[oam_idx].private[3] = (u16)overworld_effect_state.target_ow_bank;
-        oams[oam_idx].private[4] = (u16)overworld_effect_state.target_ow_and_their_map;
-        oams[oam_idx].private[5] = feather_types[i];
-        oams[oam_idx].private[6] = feather_delays[i];
-        oams[oam_idx].private[7] = false;
-        oams[oam_idx].x2 = feather_positions[i].x;
-        oams[oam_idx].y2 = feather_positions[i].y;
-        oams[controller_oam_idx].private[i] = oam_idx;
+        if (oam_idx < NUM_OAMS) {
+            oam_set_priority_by_height(oams + oam_idx, (u8)overworld_effect_state.height);
+            oams[oam_idx].flags |= OAM_FLAG_CENTERED;
+            oams[oam_idx].private[0] = (u16)(overworld_effect_state.x + 7);
+            oams[oam_idx].private[1] = (u16)(overworld_effect_state.y + 7);
+            oams[oam_idx].private[2] = (u16)overworld_effect_state.height;
+            oams[oam_idx].private[3] = (u16)overworld_effect_state.target_ow_bank;
+            oams[oam_idx].private[4] = (u16)overworld_effect_state.target_ow_and_their_map;
+            oams[oam_idx].private[5] = feather_types[i];
+            oams[oam_idx].private[6] = feather_delays[i];
+            oams[oam_idx].private[7] = false;
+            oams[oam_idx].x2 = feather_positions[i].x;
+            oams[oam_idx].y2 = feather_positions[i].y;
+            oams[controller_oam_idx].private[i] = oam_idx;
+            oam_add_to_group(oam_idx, controller_oam_idx);
+        }
     }
 }
 

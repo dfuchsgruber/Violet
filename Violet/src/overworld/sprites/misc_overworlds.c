@@ -161,7 +161,7 @@ overworld_sprite *overworld_sprite_get_by_shell_idx(u16 shell_idx) {
 }
 
 overworld_sprite *overworld_sprite_get_by_trash_idx(u16 trash_idx) {
-    DEBUG("Trash can %d has type %d\n", trash_idx, trash_get_type(trash_idx));
+    // DEBUG("Trash can %d has type %d\n", trash_idx, trash_get_type(trash_idx));
     switch (trash_get_type(trash_idx)) {
         case TRASH_TYPE_EMPTY:
             return &overworld_trash_empty;

@@ -211,6 +211,11 @@ typedef struct custom_memory {
 #define DMAP_WARPS 8
 
 typedef struct {
+    u8 next;
+    u8 previous;
+} oam_group_list_element_t;
+
+typedef struct {
     int _hook_tmp_; // This variable is used to save r0 values while trying to hook something that uses r0-r3 already
     u8 dmap_header_initialized : 1;
     u8 dmap_blocks_initialized : 1;
@@ -239,7 +244,7 @@ typedef struct {
     // u16 tile_anim_clks_0[8];
     // u16 tile_anim_clks_1[8];
     oam_alloc_list_element_t oam_allocation_list[OAM_ALLOC_LIST_SIZE];
-    u8 oam_groups[NUM_OAMS];
+    oam_group_list_element_t oam_groups[NUM_OAMS];
     map_header_t dmapheader;
     map_footer_t dmapfooter;
     map_event_header_t dmapevents;

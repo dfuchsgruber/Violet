@@ -5,6 +5,7 @@
 #include "oam.h"
 #include "fading.h"
 #include "bg.h"
+#include "superstate.h"
 
 #define BENCHMARK 0
 #if BENCHMARK
@@ -15,6 +16,7 @@
 
 void overworld_proceed() {
 
+    u32 frame = super.local_vlbank_cnt;
 
     BENCHMARK_WRAP(benchmark_start();)
     overworld_script_proceed();
@@ -54,7 +56,11 @@ void overworld_proceed() {
     bg_virtual_sync_reqeust_proceed();
     BENCHMARK_WRAP(u32 time_bg_cpy = benchmark_end();)
 
-    BENCHMARK_WRAP(DEBUG("Sum %d, owscr %d, bigcb %d, oamanim %d, cam %d, campan %d, oam %d, fade %d, tsanim %d, bgcpy %d\n",
+    size_t frames_elapsed = super.local_vlbank_cnt - frame;
+    (void)frames_elapsed;
+
+    BENCHMARK_WRAP(DEBUG("Frames elapsed %d, Sum %d, owscr %d, bigcb %d, oamanim %d, cam %d, campan %d, oam %d, fade %d, tsanim %d, bgcpy %d\n",
+        frames_elapsed,
         time_ow_script +  time_big_cb + time_oam_anim + time_cam + time_cam_pan + time_oam + time_fading + time_ts_anim + time_bg_cpy,
         time_ow_script, time_big_cb, time_oam_anim, time_cam, time_cam_pan, time_oam, time_fading, time_ts_anim, time_bg_cpy);)
 }

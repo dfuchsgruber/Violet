@@ -605,8 +605,20 @@ blxr4_npc_create_camera:
 
 
 // Sandstorm
-
+/* 
+*/
 .org 0x0807d53c
     ldr r0, =overworld_weather_sandstorm_oams_create | 1
+    bx r0
+    .pool
+
+.org 0x0807d5fc
+    ldr r0, =overworld_weather_sandstorm_swirl_oams_create | 1
+    bx r0
+    .pool
+
+// Rain
+.org 0x0807bb7c
+    ldr r0, =overworld_weather_create_rain_oam | 1
     bx r0
     .pool

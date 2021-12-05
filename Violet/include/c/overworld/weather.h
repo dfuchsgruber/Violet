@@ -63,16 +63,37 @@ typedef struct {
     u8 fadescreen_cnt;
     u8 ready_to_initialize;
     u8 callback_idx;
-    u8 field_1738;
-    u8 field_1739;
+    u8 is_fade_in_active;
+    u8 fade_in_counter;
     u16 init_step;
     u16 finish_step;
     u8 current_weather;
     u8 next_weather;
     u8 weather_gfx_loaded;
     u8 weather_change_done;
+    u8 custom_weather_oam_pal_idx;
     u8 alternative_gamma_oam_pal_idx;
-    u8 unknown2[31];
+    u16 rain_sprite_visible_count;
+    u8 current_rain_oam_idx;
+    u8 target_rain_oam_count;
+    u8 rain_oam_count;
+    u8 rain_oam_visible_delay;
+    u8 rain_is_downpour;
+    u8 rain_strength;
+    u8 cloud_sprites_created;
+    u16 snowflake_visible_count;
+    u16 unknown_6E2;
+    u8 snowflake_sprite_count;
+    u8 target_snowflake_sprite_count;
+    u16 unknown_6E6;
+    u16 thunder_cnt;
+    u8 unknown_6EA;
+    u8 unknown_6EB;
+    u8 unknown_6EC;
+    u8 is_thunder_triggered;
+    u16 fog_x_scroll_position;
+    u16 fog_x_scroll_counter;
+    u16 fog_x_scroll_offset;
     u8 static_fog_affected_pal_idxs[6]; // These palettes correspond to fog oams and have a different filter
     u8 static_fot_number_affected_pal_idxs;
     u8 fog_h_oam_created;
@@ -81,7 +102,8 @@ typedef struct {
     u8 ash_oams_created;
     u32 sandstorm_x_offset;
     u32 sandstorm_y_offset;
-    u8 filler_70C[2];
+    u8 rain_group_head;
+    u8 filler_70D[1];
     u16 sandstorm_base_oam_x;
     u16 sandstorm_y;
     u16 sandstorm_wave_idx;
@@ -232,5 +254,36 @@ void weather_weather_0f_initialize_variables();
 void weather_weather_0f_main();
 void weather_weather_0f_initialize_all();
 bool weather_weather_0f_closure();
+
+/**
+ * Waits for the sandstorm oam delay to finish and then runs the normal sandstorm callback
+ * @param self self-reference
+ **/
+void overworld_weather_sandstorm_oam_callback_wait_for_delay(oam_object *self);
+
+/**
+ * Starts rain fall for a rain weather oam
+ * @param o the oam
+ **/
+void overworld_weather_rain_oam_start_fall(oam_object *o);
+
+/**
+ * Starts the movement of a rain weather oam
+ * @param o the oam
+ * @param seed the seed
+ **/
+void overworld_weather_rain_oam_start_movement(oam_object *o, u16 seed);
+
+/**
+ * Waits for the rain delay to finish
+ * @param self self-reference
+ **/
+void overworld_weather_rain_oam_callback_wait_for_delay(oam_object *self);
+
+/**
+ * Updates the rain oam after its delay is finished
+ * @param self self-reference
+ **/
+void overworld_weather_rain_oam_callback_update(oam_object *self);
 
 #endif
