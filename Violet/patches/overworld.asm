@@ -622,3 +622,27 @@ blxr4_npc_create_camera:
     ldr r0, =overworld_weather_create_rain_oam | 1
     bx r0
     .pool
+
+// Snow
+.org 0x0807bf68
+    ldr r0, =overworld_weather_create_snowflake_oam | 1
+    bx r0
+    .pool
+
+// Static fog
+/* 
+*/
+.org 0x0807cab0
+    ldr r0, =overworld_weather_static_fog_create_oams | 1
+    bx r0
+    .pool
+
+.org 0x0807cd70
+    ldr r0, =overworld_weather_ash_create_oams | 1
+    bx r0
+    .pool
+
+.org 0x0807d0f4
+    ldr r0, =overworld_weather_dynamic_fog_create_oams | 1
+    bx r0
+    .pool

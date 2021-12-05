@@ -423,3 +423,98 @@ bool overworld_weather_create_rain_oam() {
     }
     return true;
 }
+
+extern oam_template overworld_weather_snowflake_template;
+
+bool overworld_weather_create_snowflake_oam() {
+    u8 oam_idx = oam_new_backward_search(&overworld_weather_snowflake_template, 0, 0, 78);
+    if (oam_idx == NUM_OAMS)
+        return false;
+    
+    oams[oam_idx].private[4] = overworld_weather.snowflake_sprite_count;
+    overworld_weather_snowflake_initialize(oams + oam_idx);
+    oams[oam_idx].flags |= OAM_FLAG_CENTERED;
+    if (overworld_weather.snowflake_sprite_count > 0) {
+        oam_add_to_group(oam_idx, overworld_weather.snow_group_head);
+    } else {
+        overworld_weather.snow_group_head = oam_idx;
+    }
+    overworld_weather.sprites.s1.snowflakeSprites[overworld_weather.snowflake_sprite_count++] = oams + oam_idx;
+    return true;
+}
+
+extern graphic overworld_weather_static_fog_graphic;
+extern oam_template overworld_weather_static_fog_oam_template;
+
+void overworld_weather_static_fog_create_oams() {
+    if (!overworld_weather.fog_h_oam_created) {
+        oam_load_graphic_uncompressed(&overworld_weather_static_fog_graphic);
+        u8 group_head = NUM_OAMS;
+        for (int i = 0; i < 20; i++) {
+            u8 oam_idx = oam_new_backward_search(&overworld_weather_static_fog_oam_template, 0, 0, 0xFF);
+            if (oam_idx != NUM_OAMS) {
+                if (group_head == NUM_OAMS)
+                    group_head = oam_idx;
+                if (oam_idx != group_head)
+                    oam_add_to_group(oam_idx, group_head);
+                oams[oam_idx].private[0] = (u16)(i % 5);
+                oams[oam_idx].x = (s16)((i % 5) * 64 + 32);
+                oams[oam_idx].y = (s16)((i / 5) * 64 + 32);
+                overworld_weather.sprites.s2.fogHSprites[i] = oams + oam_idx;
+            } else {
+                overworld_weather.sprites.s2.fogHSprites[i] = NULL;
+            }
+        }
+    }
+    overworld_weather.fog_h_oam_created = true;
+}
+
+extern oam_template overworld_weather_ash_template;
+
+void overworld_weather_ash_create_oams() {
+    if (!overworld_weather.ash_oams_created) {
+        u8 group_head = NUM_OAMS;
+        for (int i = 0; i < 20; i++) {
+            u8 oam_idx = oam_new_backward_search(&overworld_weather_ash_template, 0, 0, 0x4E);
+            if (oam_idx != NUM_OAMS) {
+                if (group_head == NUM_OAMS)
+                    group_head = oam_idx;
+                if (oam_idx != group_head)
+                    oam_add_to_group(oam_idx, group_head);
+                oams[oam_idx].private[1] = 0;
+                oams[oam_idx].private[2] = (u16)(i % 5);
+                oams[oam_idx].private[3] = (u16)(i / 5);
+                oams[oam_idx].private[0] = (u16)(oams[oam_idx].private[3] * 64 + 32);
+                overworld_weather.sprites.s2.ashSprites[i] = oams + oam_idx;
+            } else {
+                overworld_weather.sprites.s2.ashSprites[i] = NULL;
+            }
+        }
+    }
+    overworld_weather.ash_oams_created = true;
+}
+
+extern oam_template overworld_weather_dynamic_fog_oam_template;
+extern graphic overworld_weather_dynamic_fog_graphic;
+
+void overworld_weather_dynamic_fog_create_oams() {
+    if (!overworld_weather.fog_d_sprites_created) {
+        oam_load_graphic_uncompressed(&overworld_weather_dynamic_fog_graphic);
+        u8 group_head = NUM_OAMS;
+        for (int i = 0; i < 20; i++) {
+            u8 oam_idx = oam_new_backward_search(&overworld_weather_dynamic_fog_oam_template, 0, (s16)((i / 5) * 64), 0xFF);
+            if (oam_idx != NUM_OAMS) {
+                if (group_head == NUM_OAMS)
+                    group_head = oam_idx;
+                if (oam_idx != group_head)
+                    oam_add_to_group(oam_idx, group_head);
+                oams[oam_idx].private[0] = (u16)(i % 5);
+                oams[oam_idx].private[1] = (u16)(i / 5);
+                overworld_weather.sprites.s2.fogDSprites[i] = oams + oam_idx;
+            } else {
+                overworld_weather.sprites.s2.fogDSprites[i] = NULL;
+            }
+        }
+    }
+    overworld_weather.fog_d_sprites_created = true;
+}

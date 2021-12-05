@@ -103,7 +103,7 @@ typedef struct {
     u32 sandstorm_x_offset;
     u32 sandstorm_y_offset;
     u8 rain_group_head;
-    u8 filler_70D[1];
+    u8 snow_group_head;
     u16 sandstorm_base_oam_x;
     u16 sandstorm_y;
     u16 sandstorm_wave_idx;
@@ -285,5 +285,11 @@ void overworld_weather_rain_oam_callback_wait_for_delay(oam_object *self);
  * @param self self-reference
  **/
 void overworld_weather_rain_oam_callback_update(oam_object *self);
+
+/**
+ * Initializes the movement of a snowflake oam
+ * @param self self-reference
+ **/
+void overworld_weather_snowflake_initialize(oam_object *self);
 
 #endif
