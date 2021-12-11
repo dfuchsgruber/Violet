@@ -588,7 +588,7 @@ static void overworld_effect_feathers_oam_callback_center(oam_object *self) {
         self->private[3] = save1->bank;
         self->private[4] = save1->map;
     }
-    if (self->private[6] > 0 && ~overworld_effect_is_oam_outside_camera_view((s16)self->private[0], (s16)self->private[1], 16, 16)) {
+    if (self->private[6] > 0 && !(overworld_effect_is_oam_outside_camera_view((s16)self->private[0], (s16)self->private[1], 16, 16))) {
         if (self->private[5] > 0) {
             self->private[5]--;
             return;
