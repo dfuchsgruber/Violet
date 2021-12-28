@@ -24,7 +24,7 @@ LANGUAGE=LANG_GER
 # Define compiler flags
 ASFLAGS=-mthumb -Iinclude/as/ -Iinclude/as/constants/ -mcpu=arm7tdmi -march=armv4t --defsym $(LANGUAGE)=1
 MIDFLAGS=-V92
-CFLAGS=-c -std=c99 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -mlong-calls -march=armv4t -Wall -Werror -Wextra -Wconversion -O2 -Iinclude/c/ -D$(LANGUAGE)
+CFLAGS=-c -std=c99 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -mlong-calls -march=armv4t -Wall -Werror -Wno-builtin-declaration-mismatch -Wextra -Wconversion -O2 -Iinclude/c/ -D$(LANGUAGE)
 LDFLAGS=-z muldefs -Ilibm
 GRITFLAGS=-fh! -ftc
 CRYFLAGS=-c

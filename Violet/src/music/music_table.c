@@ -775,5 +775,7 @@ song song_table[] = {
 	{mus_bbship, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	[MUS_BB_BATTLE] = {mus_bb_battle, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	[FANFARE_GONG] = {fanfare_gong, SONG_TYPE_FANFARE, SONG_TYPE_FANFARE},
+	[MUS_CLOUDS_THEME] = {mus_clouds_theme, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	[MUS_CLOUDS_VARIATION_1] = {mus_clouds_theme_var1, SONG_TYPE_SONG, SONG_TYPE_SONG},
 
 };

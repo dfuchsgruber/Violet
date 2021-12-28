@@ -224,6 +224,8 @@ extern const unsigned char mus_dark_queen2[];
 extern const unsigned char mus_bbship[];
 extern const unsigned char mus_bb_battle[];
 extern const unsigned char fanfare_gong[];
+extern const unsigned char mus_clouds_theme[];
+extern const unsigned char mus_clouds_theme_var1[];
 
 
 #endif	/* MUSIC_H */
