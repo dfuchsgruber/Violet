@@ -1,0 +1,128 @@
+Firered Drumset
+Firered Piano
+DPP Piano
+DPP Piano (Base)
+Soft Pads
+Soft Pads (brighter)
+Steel Guitar
+Glockenspiel
+Some Piano (very bright)
+E-Piano
+Bright Bells
+Xylophone (dark)
+Xylophone (bright) 
+Xylophone (full)
+Tubular Bells
+Bells (mid range)
+Percussive Organ
+Piano (harsh)
+Reed Organ
+Church Organ
+Church Organ (brighter)
+Accordion
+Some Synth Pads ?
+Percussive Organ DPP
+Acoustic Guitar Firered
+Synth Pads
+Accordion DPP
+Harmonica
+Some CD sondeffect ?
+Overdriven Guitar
+Distortion Guitar
+E Guitar (3)
+Acoustic Bass
+Electric Bass
+Electric Bass DPP
+Fretless Bass
+Synth Bass
+E Guitar (pick ?)
+Acoustic Bass DPP ?
+Electric Bass DPP 2
+Violin Firered
+Wind SFX
+Cello
+E Guitar DPP ?
+E Guitar DPP 2
+Pizzicato Strings
+Orchestral Harp
+Timpani Firered
+Some DPP Bass
+Some DPP Bass (synth)
+Some DPP Bass 2
+Some DPP Bass (synth) 2
+Choir Aahs
+Aggressive Bass
+Even more agressive Bass
+Buzzy Guitar (bass??)
+Trumpet Firered
+Full Synth Bass DPP (funky)
+Trumpet DPP
+Strings DPP
+French Horn
+Some E Guitar
+Major Synth Chord
+Square-Like Sound (non square Channel)
+Soothing string-like thingy?
+Wind SFX (higher)
+Soothing string-like thingy? (lower)
+Aggressive Noise
+Pizzicato Strings DPP
+Harp DPP
+Timpani DPP
+Synth Lead DPP
+Soft Flute (lower)
+Eletric Strings (bass)
+Some Wooden Bass instrument
+Pan Flute
+Timpani 2
+Square Wave (Direct Sound)
+Whistle
+Ocarina
+Square Wave 1
+Square Wave 2
+Square Wave 2 (Direct Sound)
+Bubbles SFX
+Orchestral Hit
+Brass Like Synth
+Tuba Like Synth
+Piano 3
+Bass Pad
+Lower Brass Pad
+French Horn DPP
+E Guitar Like Pad
+Square Like Direct Sound
+Funky Square Like Bass
+Saxophone
+Soft Acoustic Bass ?
+Rain SFX
+Square Wave (Direct Sound) 2
+Some woodwind ?
+Some electric pad ?
+Clarinette ? 
+Ahhh Pad
+Glass Bottle ?
+Icy Wind SFX
+Deep Choir Ohs
+Deep Choir Ahs
+High Choir Ahs
+High Whistle
+Major Orchestral Hit DPP
+Minor Orchestral Hit DPP
+Square Wave (Direct Sound) 3
+Square Wave (Direct Sound) 4
+Timpani DPP 2
+Square Wave 2 (Variation)
+Japanese Guitar ?
+Drumset 2
+Drumset 3 (more Japanese?)
+Drumset 4
+Timpani 3
+Reverse Cymbal
+Drumset 5
+Drumset 6
+Steeldrums
+Harpsichord
+WaveForm
+White Noise
+White Noise 2
+White Noise 3
