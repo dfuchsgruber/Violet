@@ -284,19 +284,19 @@ overworld_sprite ow_lester = {
 };
 
 static graphic overworld_sprite_faun_sprites[] = {
-	{&gfx_ow_faun_0Tiles, 0x100, 0},
-	{&gfx_ow_faun_1Tiles, 0x100, 0},
-	{&gfx_ow_faun_2Tiles, 0x100, 0},
-	{&gfx_ow_faun_3Tiles, 0x100, 0},
-	{&gfx_ow_faun_4Tiles, 0x100, 0},
-	{&gfx_ow_faun_5Tiles, 0x100, 0},
-	{&gfx_ow_faun_6Tiles, 0x100, 0},
-	{&gfx_ow_faun_7Tiles, 0x100, 0},
-	{&gfx_ow_faun_8Tiles, 0x100, 0}
+	{gfx_ow_faunTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_faunTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_faunTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_faunTiles + 3 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_faunTiles + 4 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_faunTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_faunTiles + 6 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_faunTiles + 7 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_faunTiles + 8 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
 };
 
 overworld_sprite ow_faun = {
-	0xffff, 0x1106, 0x11ff, 0x100,
+	0xffff, OW_PAL_TAG_FAUN, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
 	&ow_final_oam_16_32, &ow_formation_16_32,
 	ow_anim_standard_npc, overworld_sprite_faun_sprites, 

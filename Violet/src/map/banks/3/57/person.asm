@@ -60,7 +60,7 @@ end
 
 .ifdef LANG_GER
 str_before_faun_appeared:
-	.autostring 35 2 "Ich kann es wirklich kaum erwarten, diesen Kindergarten hier hinter mir zu lassen.\pDiesen ganzen Unsinn habe ich meinem Vater zu verdankenDOTS"
+	.autostring 35 2 "Ich kann es wirklich kaum erwarten, diesen Kindergarten hier hinter mir zu lassen."
 str_has_received_pkmn:
 	.autostring 35 2 "So wenig ich für den altne Knacker übrig habeDOTS\pDas Pokémon, das er mir gegeben hat, ist nicht von schlechten Eltern!"
 
@@ -456,7 +456,7 @@ str_blaise_refuses:
 str_call_blaise_again:
 	.autostring 35 2 "Wie bitte?\pIch hoffe, ich habe mich da verhört!"
 str_blaise_leaves:
-	.autostring 35 2 "Nein, Sie haben ganz richtig gehört.\pIch habe viel zu lange meine Zeit mit diesen Unsinn verschwendet.\pDamit ist jetzt Schluss.\pIch lasse mich nicht länger einschüchtern.\pLeben Sie wohl, Herr Faun!"
+	.autostring 35 2 "Nein, Sie haben ganz richtig gehört.\pIch habe viel zu lange meine Zeit mit diesen Unsinn verschwendet.\pDamit ist jetzt Schluss.\pIch mache bei diesem Kindergarten nicht länger mit.\pAdieu."
 str_faun_angry_at_blaise:
 	.autostring 35 2 "Dieser verdammte Bengel!\pWas fällt ihm einDOTS"
 str_continue_with_field_test:
@@ -674,7 +674,7 @@ str_battle_felix:
 str_results_felix:
 	.autostring 35 2 "Ich bin ja so glücklich!\nOpi ist bestimmt stolz auf mich!"
 str_goodbye_felix:
-	.autostring 35 2 "Großartig, was?\pJetzt sind wir alle also Trainer!\pHast du schon Pläne?\pIch will am Liebsten wie Opi irgendetwas Sinnvolles tunDOTS\pWeißt du, was ich meine?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pMir wird schon was einfallen!\pMach's gut, PLAYER!"
+	.autostring 35 2 "Großartig, was?\pJetzt sind wir alle also Trainer!\pHast du schon Pläne?\pIch will auf jeden Fall ein Polizist werden!\pWie mein Papa eben.\pDen Leuten helfen und so etwasDOTS\pMach's gut, PLAYER!"
 .elseif LANG_EN
 str_before_faun_appeared_felix:
 	.autostring 35 2 "Now we can show grandpa what we're made of, PLAYER!\pAfter all we had an excellent teacher, right?"

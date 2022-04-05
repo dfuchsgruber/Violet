@@ -7,7 +7,8 @@ GRIT=@grit
 CC=@arm-none-eabi-gcc
 NM=@arm-none-eabi-nm
 ARS=@armips
-MID2AGB=@mid2agb
+#MID2AGB=@mid2agb
+MID2AGB=midi2agb
 #MID2AGB=/media/d/romhacking/midi2agb/midi2agb
 PY3=@python3
 BIN2S=@bin2s.py
@@ -24,7 +25,7 @@ LANGUAGE=LANG_GER
 # Define compiler flags
 ASFLAGS=-mthumb -Iinclude/as/ -Iinclude/as/constants/ -mcpu=arm7tdmi -march=armv4t --defsym $(LANGUAGE)=1
 MIDFLAGS=-V92
-CFLAGS=-c -std=c99 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -mlong-calls -march=armv4t -Wall -Werror -Wno-builtin-declaration-mismatch -Wextra -Wconversion -O2 -Iinclude/c/ -D$(LANGUAGE)
+CFLAGS=-c -std=c99 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -fno-builtin -mlong-calls -march=armv4t -Wall -Werror -Wno-builtin-declaration-mismatch -Wextra -Wconversion -O2 -Iinclude/c/ -D$(LANGUAGE)
 LDFLAGS=-z muldefs -Ilibm
 GRITFLAGS=-fh! -ftc
 CRYFLAGS=-c

@@ -184,6 +184,10 @@ static palette overworld_palette_upstream = {
     .pal = gfx_ow_upstreamPal, .tag = OW_PAL_TAG_UPSTREAM,
 }; 
 
+static palette overworld_palette_faun = {
+    .pal = gfx_ow_faunPal, .tag = OW_PAL_TAG_FAUN,
+};
+
 static palette *overworld_npc_palette_get_by_tag(u16 tag) {
     if (tag >= OW_PAL_TAG_POKEMON_BASE && tag < OW_PAL_TAG_POKEMON_END) {
         return overworld_palette_get_by_species((u16)(tag - OW_PAL_TAG_POKEMON_BASE));
@@ -209,6 +213,7 @@ static palette *overworld_npc_palette_get_by_tag(u16 tag) {
         case OW_PAL_TAG_APPLE: return &overworld_palette_apple;
         case OW_PAL_TAG_RECIPE: return &overworld_palette_recipe;
         case OW_PAL_TAG_UPSTREAM: return &overworld_palette_upstream;
+        case OW_PAL_TAG_FAUN: return &overworld_palette_faun;
     }
     u8 idx = overworld_npc_palette_get_idx(tag);
     // OW_DEBUG("Tag 0x%x is at idx %d in pal-table.\n", tag, idx);

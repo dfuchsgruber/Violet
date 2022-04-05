@@ -267,9 +267,11 @@ static void crafting_ui_setup_recipies_and_list_menu_items() {
                     strcpy(line_str, font_size_small);
                     strcat(line_str, item_get_name(CRAFTING_UI_STATE->recipies[type][recipe_idx].item));
                     u8 str_clear_to[] = PSTRING("SKIP\x42×");
+                    // u8 str_clear_to[] = PSTRING("SKIP");
                     line_str = strcat(line_str, str_clear_to);
                     itoa(line_str, CRAFTING_UI_STATE->recipies[type][recipe_idx].count, ITOA_NO_PADDING, 1);
                 #endif
+                DEBUG("Allocated recipe target name @0x%x, char 3 0x%x item name 0x%x\n\n", line_str, line_str[3], item_get_name(CRAFTING_UI_STATE->recipies[type][recipe_idx].item));
                 CRAFTING_UI_STATE->list_menu_items[type][recipe_idx].text = CRAFTING_UI_STATE->list_menu_item_strings[type][recipe_idx];
                 CRAFTING_UI_STATE->list_menu_items[type][recipe_idx].idx = (recipe_idx + 1);
             }
