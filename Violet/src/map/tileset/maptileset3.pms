@@ -17498,15 +17498,15 @@
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 1018,
+					"tile_idx": 779,
 					"palette_idx": 9,
-					"horizontal_flip": 0,
+					"horizontal_flip": 1,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 1019,
+					"tile_idx": 778,
 					"palette_idx": 9,
-					"horizontal_flip": 0,
+					"horizontal_flip": 1,
 					"vertical_flip": 0
 				},
 				{

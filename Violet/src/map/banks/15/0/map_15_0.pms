@@ -101,8 +101,8 @@
 					"target_index": "4",
 					"picture": 110,
 					"field_2": 0,
-					"x": 45,
-					"y": 41,
+					"x": "40",
+					"y": "45",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
@@ -1796,7 +1796,7 @@
 				{
 					"target_index": "61",
 					"picture": "238",
-					"x": "40",
+					"x": "45",
 					"y": "44",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",

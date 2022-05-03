@@ -179,7 +179,7 @@ end
 .ifdef LANG_GER
 
 str_0x88bc91:
-    .string "Westen: Route 2\nOsten: Blütenbach"
+    .string "LEFT_ARROW Route 2\nRIGHT_ARROW Blütenbach"
 
 
 .elseif LANG_EN

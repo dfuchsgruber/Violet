@@ -88,8 +88,8 @@ applymovement 37 ow_script_movs_0x8a69da
 waitmovement 0x0
 loadpointer 0x0 str_0x8a6b0d
 show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT emotion=MUGSHOT_ANGRY
-    npc_move_to 0xFF 0x13 0x39 waitmovement=0
-    npc_move_to 37 0x12 0x38 waitmovement=0
+    npc_move_to 0xFF 0x11 0x39 waitmovement=0
+    npc_move_to 37 0x10 0x38 waitmovement=0
     waitmovement 0
     applymovement 0xFF mov_face_right
     applymovement 37 mov_face_right
@@ -317,7 +317,7 @@ str_0x8a6f16:
 str_0x8a6bac:
     .autostring 34 2 "Lasst den Professor in Ruhe!"
 str_0x8a6b82:
-    .autostring 34 2 "RIVAL! PLAYER!\pHilfe!\nDiese Leute hier wollen mich nicht in Ruhe lassen!"
+    .autostring 34 2 "RIVAL! PLAYER!\pHilfe!"
 str_0x8a6bfa:
 	.autostring 34 2 "Zwei Kinder, was?\nDas soll uns Angst einjagen?\pDer Professor muss doch nichts weiter tun, als uns das zu verraten, was wir wissen wollen, dann ist dieser ganze Unsinn hier schnell wieder vorbei.\pMischt euch gefälligst nicht in unsere Angelegenheiten ein, ihr Gören!"
 str_0x8a6b0d:

@@ -37,6 +37,13 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+
+	setvar 0x8004 0x11
+	special SPECIAL_CUTSCENE_SHOW
+	waitstate
+	end
+
+	
 	setflag PLAYER_ABLE_TO_MEGA_EVOLVE
 	givepokemon POKEMON_PALIMPALIM 20 ITEM_PALIMPALIMNIT 0 0 0
 	end

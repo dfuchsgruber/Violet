@@ -980,21 +980,21 @@
 		"footer_idx": 183,
 		"namespace": "MAP_TANNS_LABOR",
 		"flash_type": "FLASH_NONE",
-		"weather": "MAP_WEATHER_DYNAMIC_FOG",
+		"weather": "MAP_WEATHER_OUTSIDE",
 		"type": "MAP_TYPE_VILLAGE",
 		"bike_usable": "1",
 		"flags": {
-			"allow_escape_rope": 0,
+			"allow_escape_rope": "0",
 			"allow_run": "1",
 			"show_name": "1",
-			"flag_3": 0,
-			"flag_4": 0,
-			"flag_5": 0,
-			"flag_6": 0,
-			"flag_7": 0
+			"flag_3": "0",
+			"flag_4": "0",
+			"flag_5": "0",
+			"flag_6": "0",
+			"flag_7": "0"
 		},
-		"level": 0,
-		"battle_style": 0
+		"level": "0",
+		"battle_style": "0"
 	},
 	"label": "map_r2_village",
 	"type": "header"

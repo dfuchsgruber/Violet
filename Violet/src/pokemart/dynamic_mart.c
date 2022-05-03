@@ -100,7 +100,7 @@ static mart_item mart_item_elixier[] = {
 };
 
 static mart_item mart_item_abra_doll[] = {
-    {FLAG_MART_SELLS_ABRA_DOLL, ITEM_ABRA_PUPPE},
+    {0, ITEM_ABRA_PUPPE},
     {0xFFFF, 0}
 };
 

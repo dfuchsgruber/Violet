@@ -189,19 +189,25 @@ ae_script_aktania_beam:
     set_io_to_val 0 0x12
     set_io_to_val 0 0x14
     set_io_to_val 0 0x16
-    set_io_to_val 0 0x18
+    set_io_to_val ((8) & 0xFFFF), 0x18
     set_io_to_val 0x28 0x1C
     bg_override 2 gfx_anim_dark_aktania_back_0Tiles 0x6000 0 COPYSET
     bg_override 2 gfx_anim_dark_aktania_back_0Map 0x1000 0 COPYMAP
+    pause 1
     bg_override 1 gfx_anim_dark_aktania_waves_backTiles 0x1000 0 COPYSET
     bg_override 1 gfx_anim_dark_aktania_waves_backMap 0x800 0 COPYMAP
+    pause 1
     bg_override 0 gfx_anim_dark_aktania_waves_frontTiles 0x1000 0 COPYSET
     bg_override 0 gfx_anim_dark_aktania_waves_frontMap 0x800 0 COPYMAP
+    pause 1
     loadpal gfx_anim_dark_aktania_back_0Pal 0 32 UNCOMP RESTORE
     loadpal gfx_anim_dark_aktania_waves_backPal 16 32 UNCOMP RESTORE
     pause 1
-    bg_scroll 0 1000 0xF830 0
-    bg_scroll 1 1000 0xFC18 0
+    bg_scroll 0 1024, (-1024 - 512) & 0xFFFF, 0
+    bg_scroll 1 1024,(-1024) & 0xFFFF, 0
+    
+    bg_scroll 2 80, (-8) & 0xFFFF, 0
+
     fadescreen 0 0 512 16 16 0
     pause 2 * 64
     bg_scroll 0 0x28 0 0xFFD8
