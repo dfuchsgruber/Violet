@@ -118,13 +118,13 @@ static bool is_leap_year(int year) {
 }
 
 int rtc_timestamp_to_days(rtc_timestamp *t) {
-    int days = 0;
+    int days = t->day;
     for (int i = 0; i < t->year; i++) {
         days += 365;
         if (is_leap_year(i))
             days++;
     }
-    for (int i = 0; i < t->month - 1; i++) {
+    for (int i = 0; i < t->month; i++) {
         days += days_per_month[i];
     }
     if (is_leap_year(t->year) && t->month > 2)

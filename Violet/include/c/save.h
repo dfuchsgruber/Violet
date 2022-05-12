@@ -281,8 +281,8 @@ typedef struct {
     rtc_timestamp berry_tree_time_last_update; // When were berry trees last updated?
     u8 berry_tree_time_last_updated_initialized : 1;
     u32 gp_rng;
-    u8 gold_candy_active : 1;
-    u8 gold_candy_levels_remaining : 7;
+    u8 rare_candy_levels_remaining : 7;
+    u8 rare_candy_item_removed : 1;
     color_t weather_blend;
     u8 weather_blend_active : 1;
     u8 weather_blend_delay;

@@ -140,37 +140,194 @@ primus_done:
 	show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT emotion=MUGSHOT_SCARED
 	releaseall
 	end
-ow_script_kaskada_black_blaise:
-	lock
-	faceplayer
-	pause 32
-	sound 0x15
-	applymovement LASTTALKED mov_exclam
+
+
+blaise_all_face_to_warden:
+	applymovement 39 mov_fr
+	applymovement 0xFF mov_fr
+	applymovement 38 mov_fu
+	applymovement 20 mov_fu
 	waitmovement 0
-	checksound
+	return
+
+blaise_all_face_igva:
+	applymovement 37 mov_fl
+	applymovement 38 mov_fl
+	applymovement 20 mov_fl
+	applymovement 0xFF mov_fl
+	waitmovement 0
+	return
+
+blaise_all_face_blaise:
+	applymovement 37 mov_fd
+	applymovement 38 mov_fu
+	applymovement 0xFF mov_fr
+	applymovement 39 mov_fr
+	waitmovement 0
+	return
+
+
+ow_script_kaskada_black_blaise:
+	lockall
 	loadpointer 0 str_blaise_0
-	show_mugshot MUGSHOT_BLAISE MUGSHOT_LEFT message_type=MSG_KEEPOPEN emotion=MUGSHOT_SHOCKED hide_mugshot=0
+	show_mugshot MUGSHOT_BLAISE MUGSHOT_LEFT emotion=MUGSHOT_ANGRY message_type=MSG_KEEPOPEN
+	msgbox_with_name str_warden_0 str_warden alignment=MUGSHOT_RIGHT message_type=MSG
+	applymovement 20 mov_fu_fd_delayed
+	waitmovement 0
+	pause 16
 	loadpointer 0 str_blaise_1
-	update_mugshot_emotion MUGSHOT_NORMAL
-	callstd MSG_KEEPOPEN
+	show_mugshot MUGSHOT_BLAISE MUGSHOT_LEFT emotion=MUGSHOT_ANGRY message_type=MSG
+    clearflag (FLAG_KASKADA_BLAISE_EVENT_IGVA | 0x8000)
+	showsprite 39
+	applymovement 39 mov_7r
+	waitmovement 0
+	call blaise_all_face_igva
+	sound 0x15
+	applymovement 39 mov_exclam
+	checksound
+	pause 16
+	loadpointer 0 str_blaise_igva_0
+	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED hide_mugshot=1 message_type=MSG
+	applymovement 0xFF mov_fr
+	waitmovement 0
+	call blaise_all_face_blaise
 	loadpointer 0 str_blaise_2
-	update_mugshot_emotion MUGSHOT_ANGRY
-	callstd MSG_KEEPOPEN
-	loadpointer 0 str_blaise_3
-	update_mugshot_emotion MUGSHOT_NORMAL
-	callstd MSG_KEEPOPEN
-	loadpointer 0 str_blaise_4
-	update_mugshot_emotion MUGSHOT_HAPPY
-	callstd MSG_KEEPOPEN
-	loadpointer 0 str_blaise_5
+	show_mugshot MUGSHOT_BLAISE MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED hide_mugshot=1 message_type=MSG
+	call blaise_all_face_igva
+	loadpointer 0 str_blaise_igva_1
+	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED hide_mugshot=1 message_type=MSG
+    call blaise_all_face_to_warden
+	msgbox_with_name str_warden_1 str_warden alignment=MUGSHOT_RIGHT message_type=MSG
+	call blaise_all_face_igva
+	loadpointer 0 str_blaise_igva_1_2
+	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED hide_mugshot=0 message_type=MSG_KEEPOPEN
+	loadpointer 0 str_blaise_igva_2
 	update_mugshot_emotion MUGSHOT_NORMAL
 	callstd MSG_KEEPOPEN
 	closeonkeypress
 	hide_mugshot
-	npc_move_to 20 0x1d 0x24
+	loadpointer 0 str_blaise_3
+	show_mugshot MUGSHOT_BLAISE MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED hide_mugshot=1 message_type=MSG
+	call blaise_all_face_to_warden
+	msgbox_with_name str_warden_2 str_warden alignment=MUGSHOT_RIGHT message_type=MSG
+	call blaise_all_face_igva
+	loadpointer 0 str_blaise_igva_3
+	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED hide_mugshot=0 message_type=MSG_KEEPOPEN
+	loadpointer 0 str_blaise_igva_4
+	update_mugshot_emotion MUGSHOT_NORMAL
+	callstd MSG_KEEPOPEN
+	closeonkeypress
+	hide_mugshot
+    pause 32
+	call blaise_all_face_to_warden
+	msgbox_with_name str_warden_3 str_warden alignment=MUGSHOT_RIGHT message_type=MSG
+	pause 16
+	applymovement 37 mov_3r
+	waitmovement 0
+	pause 16
+	applymovement 37 mov_fl
+	waitmovement 0
+	applymovement 38 mov_fr
+	applymovement 39 mov_fr
+	applymovement 0xFF mov_fr
+	applymovement 20 mov_fr
+	msgbox_with_name str_warden_4 str_warden alignment=MUGSHOT_RIGHT message_type=MSG
+	sound 0x15
+	applymovement 38 mov_exclam
+	waitmovement 0
+	checksound
+	applymovement 37 mov_warden_away
+	applymovement 38 mov_warden2_away
+	waitmovement 0
+	pause 24
+	hidesprite 37
+	hidesprite 38
+
+@ // The wardens are gone
+	call blaise_all_face_blaise
+	loadpointer 0 str_blaise_4
+	show_mugshot MUGSHOT_BLAISE MUGSHOT_LEFT emotion=MUGSHOT_NORMAL hide_mugshot=1 message_type=MSG
+	call blaise_all_face_igva
+	loadpointer 0 str_blaise_igva_5
+	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT emotion=MUGSHOT_ANGRY hide_mugshot=1 message_type=MSG
+	call blaise_all_face_blaise
+	loadpointer 0 str_blaise_5
+	show_mugshot MUGSHOT_BLAISE MUGSHOT_LEFT emotion=MUGSHOT_RUMINATIVE hide_mugshot=1 message_type=MSG
+	call blaise_all_face_igva
+	sound 0x15
+	applymovement 39 mov_exclam
+	waitmovement 0
+	checksound
+	pause 16
+	loadpointer 0 str_blaise_igva_6
+	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED hide_mugshot=1 message_type=MSG
+	call blaise_all_face_blaise
+	loadpointer 0 str_blaise_6
+	show_mugshot MUGSHOT_BLAISE MUGSHOT_LEFT emotion=MUGSHOT_ANGRY hide_mugshot=1 message_type=MSG
+	call blaise_all_face_igva
+	loadpointer 0 str_blaise_igva_7
+	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED hide_mugshot=1 message_type=MSG
+	call blaise_all_face_blaise
+	loadpointer 0 str_blaise_7
+	show_mugshot MUGSHOT_BLAISE MUGSHOT_LEFT emotion=MUGSHOT_ANGRY hide_mugshot=1 message_type=MSG
+	call blaise_all_face_igva
+	loadpointer 0 str_blaise_igva_8
+	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED hide_mugshot=1 message_type=MSG
+	call blaise_all_face_blaise
+	loadpointer 0 str_blaise_8
+	show_mugshot MUGSHOT_BLAISE MUGSHOT_LEFT emotion=MUGSHOT_ANGRY hide_mugshot=1 message_type=MSG
+	call blaise_all_face_igva
+	loadpointer 0 str_blaise_igva_9
+	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT emotion=MUGSHOT_HAPPY hide_mugshot=1 message_type=MSG
+	call blaise_all_face_blaise
+	loadpointer 0 str_blaise_9
+	show_mugshot MUGSHOT_BLAISE MUGSHOT_LEFT emotion=MUGSHOT_NORMAL hide_mugshot=1 message_type=MSG
+	applymovement 20 mov_2r
+	waitmovement 0
+	pause 32
+	applymovement 20 mov_fl
+	waitmovement 0
+	loadpointer 0 str_blaise_10
+	show_mugshot MUGSHOT_BLAISE MUGSHOT_LEFT emotion=MUGSHOT_NORMAL hide_mugshot=1 message_type=MSG
+	applymovement 20 mov_blaise_away
+	waitmovement 0
 	hidesprite 20
+	pause 32
+	call blaise_all_face_igva
+	loadpointer 0 str_blaise_igva_10
+	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT emotion=MUGSHOT_ANNOYED hide_mugshot=0 message_type=MSG_KEEPOPEN
+	loadpointer 0 str_blaise_igva_11
+	update_mugshot_emotion MUGSHOT_HAPPY
+	callstd MSG_KEEPOPEN
+	closeonkeypress
+	hide_mugshot
+	sound 0x15
+	applymovement 39 mov_exclam
+	waitmovement 0
+	checksound
+	pause 24
+	loadpointer 0 str_blaise_igva_12
+	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED hide_mugshot=0 message_type=MSG_KEEPOPEN
+	loadpointer 0 str_blaise_igva_13
+	update_mugshot_emotion MUGSHOT_NORMAL
+	callstd MSG_KEEPOPEN
+	closeonkeypress
+	hide_mugshot
+	npc_move_to 39 0x2f 0x1c
+	hidesprite 39
 	releaseall
 	end
+
+mov_fu_fd_delayed:
+	.byte PAUSE_32, LOOK_DOWN_DELAYED, PAUSE_32, LOOK_UP_DELAYED, PAUSE_32, STOP
+mov_warden_away:
+	.byte STEP_RIGHT, STEP_RIGHT, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STOP
+mov_warden2_away:
+	.byte STEP_RIGHT_FAST, STEP_RIGHT_FAST, STEP_UP_FAST, STEP_RIGHT_FAST, STEP_RIGHT_FAST, STEP_RIGHT_FAST, STEP_UP_FAST, STEP_UP_FAST, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STOP
+mov_blaise_away:
+	.byte STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STOP
+
+
 
 ow_script_kaskada_blackmarket_coin_game:
 	showmoney 0x0 0x0 0x0
@@ -430,64 +587,123 @@ str_13:
 	.autostring 34 2 "Ich warte hier sicher schon seit StundenDOTS\pImmerhin Igva hat sich jetzt blicken lassenDOTS\pFehlen aber noch immer Lucky und der Boss, bis wir hier die Düse machen können."
 str_14:
 	.autostring 34 2 "Wo bleibt denn nur Lucky?\pIch hoffe, dass er wenigstens Blackbeard als Verbündeten gewinnen kann, wenn er sich schon so viel Zeit lässtDOTS"
+
+
 str_igva_0:
-	.autostring 34 2 "PLAYER!\pWir sind immer noch auf der Suche nach einem unserer LeuteDOTS\pEr heißt Lucky und soll hier den Piratenkapitän Blackbeard für unsere Sache gewinnenDOTS"
+	.autostring 34 2 "PLAYER!\pIch bin wirklich am verzweifelnDOTS"
 str_igva_1:
-	.autostring 34 2 "Hast du ihn hier vielleicht irgendwo gesehen?"
+	.autostring 34 2 "Hast du unseren Mitstreiter gefunden?\pLucky wollte uns hier eigentlich treffenDOTS"
 str_igva_2:
-	.autostring 34 2 "Was soll das heißen?\pDu hast ihn an Board von Blackbeards Schiff gehen sehen?\pUnd dann hat das Schiff direkt abgelegt?"
+	.autostring 34 2 "Was soll das heißen?\pDu hast ihn an Board eines Schiffs gehen sehen?\pUnd dann hat das Schiff direkt abgelegt?"
 str_igva_3:
-	.autostring 34 2 "Was denkt sich Lucky denn dabei!\pDer Plan war doch unmissverständlich, Blackbeard für unsere Sache zu gewinnen.\pUnd jetzt verschwindet er einfach mit diesem PiratenpackDOTS"
+	.autostring 34 2 "Was denkt sich Lucky denn dabei!\pUnser Plan war doch unmissverständlich, Blackbeard für unsere Sache zu gewinnen.\pUnd jetzt verschwindet er einfach mit diesem PiratenpackDOTS"
 str_igva_4:
 	.autostring 34 2 "Das wird unseren Anführer wirklich nicht freuenDOTS"
 str_albus_0:
 	.autostring 34 2 "Igva!\nEntschuldige bitte, dass ich mich verspäte.\pIch hatte noch etwas mit einem altem Freund zu klärenDOTS"
 str_albus_1:
-	.autostring 34 2 "Was macht denn das Kind hier?\pUnd wo ist überhaupt Lucky?"
+	.autostring 34 2 "Was macht denn das Kind hier?\pUnd wo ist Lucky?"
 str_igva_5:
 	.autostring 34 2 "Nun jaDOTS\nDie Sache ist die, dass Lucky wohlDOTSTEXT_DELAY_SHORT\pEr ist wohl irgendwie mit den Blackbeard Piraten zusammen verschwundenDOTS"
 str_albus_2:
 	.autostring 34 2 "Wie bitte?\pEr ist gemeinsam mit Blackbeard verschwunden?"
 str_albus_3:
-	.autostring 34 2 "Dabei hat er diese Bande doch schon vor langer Zeit verlassenDOTS"
+	.autostring 34 2 "Dabei hat er mir doch versichert, mit dieser Bande nichts mehr am Hut zu habenDOTS"
 str_igva_6:
 	.autostring 34 2 "Und das hierDOTS\pDas ist PLAYER!"
 str_igva_7:
-	.autostring 34 2 "Ein neuer Mitstreiter für unsere Sache!"
-str_igva_8:
-	.autostring 34 2 "W-was?\nDu bist ein Schüler von Faun?\pAlso hast du gar nicht vor, mit uns gegen die Pokémon-Liga zu kämpfenDOTS"
+	.autostring 34 2 "Ich glaube, er könnte ein toller Mitstreiter für unsere Sache werden!"
 str_albus_4:
-	.autostring 34 2 "Igva, meine LiebeDOTS\pPLAYER wird sich unserer Sache nicht einfach so anschließenDOTS\pImmerhin ist BUFFER_1 ein Schüler vom Pinken FaunDOTS"
+	.autostring 34 2 "IgvaDOTS\pIch glaube ehrlichgesagt kaum, dass sich PLAYER so einfach unserer Bewegung anschließen wird.\pIch habe ihn vorhin bereits flüchtig kennengelernt.\pEr ist ein ehemaliger Schüler vom alten Faun."
+str_igva_8:
+	.autostring 34 2 "W-was?\nDu bist ein Schüler vom Pinken Faun?\pD-Dann bist du auf der Seite der Pokémon-Liga?"
 str_albus_5:
-	.autostring 34 2 "IgvaDOTS\nDu lässt sich immer viel zu schnell mitreißenDOTS\pErinnerst du dich nicht, was mit dem letzten Mitglied passiert ist, das du für unsere Sache angeworben hast?\pWie war noch gleich sein Name?"
+	.autostring 34 2 "IgvaDOTS\nDu lässt sich immer viel zu schnell mitreißenDOTS\pErinnerst du dich nicht, was mit dem letzten Mitglied passiert ist, das du für unsere Sache angeworben hast?"
 str_igva_9:
 	.autostring 34 2 "DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT"
+str_albus_6:
+	.autostring 34 2 "Wie dem auch sei.\pHör mir gut zu, PLAYER."
+str_albus_7:
+	.autostring 34 2 "Ich kann verstehen, dass du in mir einen Feind siehst.\pIch will das System verändern, für das dein ehemaliger Lehrer so verbissen eintritt.\pAber lass mich dir einen Ratschlag erteilen.\pUrteile nicht all zu schnell darüber, für wen und wessen Ansichten du kämpfen solltest.\pDieser Untergrundmarkt ist das perfekte Beispiel dafür, warum die Pokémon-Liga zu Fall gebracht werden muss.\pAber ich möchte dich nicht zu einer Entscheidung drängen.\pDu bist ein junger Trainer und hast einen weiten Weg vor dir.\pVielleicht kommst du eines Tages zu der gleichen Einsicht wie wir, die wir uns entschlossen haben, für ein besseres System zu kämpfen.\pVielleicht stehen wir uns aber auch als Gegner gegenüber.\pFolge stets deinem Sinn für Rechtschaffenheit, PLAYER.\pDas ist alles, worauf es ankommt."
+str_albus_8:
+	.autostring 34 2 "Gut.\nNachdem Lucky wohl auch nicht mehr auftauchen wirdDOTS\pSehe ich die potentielle Allianz mit den Blackbeard Piraten als gescheitert an.\pWir sollten wir uns zurückziehen."
 str_igva_10:
-	.autostring 34 2 "PLAYERDOTS\pEntschuldige bitte, wenn ich etwas zu aufdringlich warDOTS\pWär hätte ahnen können, dass du ein Schüler vom legendären Pinken Faun bist?"
+	.autostring 34 2 "PLAYERDOTS\pEntschuldige bitte, wenn ich etwas zu aufdringlich gewesen binDOTS"
 str_igva_11:
-	.autostring 34 2 "Aber nur, weil unsere Mentoren im Zwist miteinander stehen, heißt das ja noch lange nicht, dass wir keine Freunde sein können, oder?\pUnd ich kann mir trotz allem gut vorstellen, dass du dich irgendwann unserer Sache anschließen wirst."
+	.autostring 34 2 "Aber weißt duDOTS\pNur, weil unsere Mentoren im Zwist miteinander stehen, heißt das ja noch lange nicht, dass wir keine Freunde sein können, oder?\pUnd es zwingt dich auch niemand dazu, an der Seite deines alten Lehrers zu kämpfen.\pNiemand hindert dich daran, die richtige Seite in diesem Konflikt zu wählen."
 str_igva_12:
 	.autostring 34 2 "Ich muss mich jetzt aber wirklich beeilen.\pSonst verliere ich noch meine Mitstreiter."
 str_igva_13:
-	.autostring 34 2 "Halt die Ohren steif, PLAYER!"
-str_albus_6:
-	.autostring 34 2 "Wie dem auch sei.\pPLAYER ist also dein Name, richtig?"
-str_albus_7:
-	.autostring 34 2 "Ich nehme an, du willst gegen mich kämpfen, oder?\pAber es wäre nicht fair, wenn ein so erfahrener Trainer wie ich gegen einen Neuling antritt.\pDOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT\pAußerdem hast du hier die Gelegenheit gehabt, einen wahren Blick auf das Gesicht der Pokémon-Liga zu erhaschen.\pVielleicht willst du selbst eines Tages lieber an unserer Seite kämpfen, als für das marode System deines Lehrers einzustehen.\pUnd wenn du erst einmal ein großer Trainer geworden bist und dich noch immer unserer Revolutionsbewegung entgegenstellen willstDOTS\pDann werde ich einen Kampf mit dir austragen.\pAber lass mich dir einen Ratschlag erteilen.\pUrteile nicht all zu schnell darüber, für wen und wessen Ansichten du kämpfen solltest."
-str_albus_8:
-	.autostring 34 2 "Gut.\nNachdem Lucky ja wohl auch nicht mehr auftauchen wirdDOTS\pSehe ich die Allianz mit Blackbeard als gescheitert an.\pWir sollten wir uns am Besten zurückziehen."
+	.autostring 34 2 "Halt die Ohren steif, PLAYER!\pIch bin mir sicher, dass wir uns bald wiedersehen werden!"
 str_blaise_0:
-	.autostring 34 2 "PLAYER!\pDich hätte ich an einem solchen Ort sicher nicht erwartetDOTS"
+	.autostring 34 2 "Lasst mich in Ruhe!\pFinger weg!"
+str_warden_0:
+	.autostring 34 2 "Nichts da!\pGlaubst du, dass du hier einfach Randale machen kannst und wir bloß zuschauen?"
 str_blaise_1:
-	.autostring 34 2 "Es wird dich vielleicht wundern, aberDOTS\pDieser Markt hier wird von niemand anderem geführt, als meinem Vater.\pUnd das, obwohl er ebenfalls ein Mitglied der Top Vier ist."
+	.autostring 34 2 "Argh, euch werd' ich's zeigen!"
+str_blaise_igva_0:
+	.autostring 34 2 "Was ist hier denn los?"
 str_blaise_2:
-	.autostring 34 2 "Wenn ich das hier so sehe, dann würde ich am Liebsten alles kurz und klein schlagen.\pVerstehst du, was ich meine?"
+	.autostring 34 2 "PLAYER?!\pWas treibst du denn hier?"
+str_blaise_igva_1:
+	.autostring 34 2 "K-kennst du diesen Jungen, PLAYER?"
+str_warden_1:
+	.autostring 34 2 "Igva!\pGehört dieser Bengel zu euch?"
+str_blaise_igva_1_2:
+	.autostring 34 2 "Ä-ÄhmDOTS\nDOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT"
+str_blaise_igva_2:
+	.autostring 34 2 "J-Ja, er ist einer von unsDOTS"
 str_blaise_3:
-	.autostring 34 2 "Es ist nicht gerecht, dass jemand, der so verdorben ist, wie mein VaterDOTS\pDOTSdass so jemand so viel Macht und Einfluss hat."
+	.autostring 34 2 "W-Was?\nDas stimmt doch-"
+str_warden_2:
+	.autostring 34 2 "GrrDOTS\pDann bring deine Leute unter Kontrolle, ja?\pNur, weil er zur Revolutionsbewegung gehört, kann er hier noch lang nicht alles kurz und klein schlagen, verstanden?\pAuch für euch gelten hier Regeln!"
+str_blaise_igva_3:
+	.autostring 34 2 "J-Ja natürlich!"
+str_blaise_igva_4:
+	.autostring 34 2 "Ich werde mit ihm ein ernstes Wörtchen reden.\pIhr habt mein Wort!"
+str_warden_3:
+	.autostring 34 2 "Na gut, dann wäre hier ja alles geklärt."
+str_warden_4:
+	.autostring 34 2 "Was ist denn?\pKommst du nun?"
 str_blaise_4:
-	.autostring 34 2 "Aber, das würdest du sowieso nicht verstehen, oder?"
+	.autostring 34 2 "Was zum Teufel war das denn?"
+str_blaise_igva_5:
+	.autostring 34 2 "Wie wäre es mit etwas Dankbarkeit?\pIch hab dir gerade mächtig aus der Patsche geholfen.\pWas wollten die Aufseher eigentlich von dir?"
 str_blaise_5:
-	.autostring 34 2 "Man sieht sich, PLAYER."
+	.autostring 34 2 "HmmDOTS\pVielleicht hat es ihnen nicht gefallen, dass ich im Begriff war, diesen Untergrundmarkt in Schutt und Asche zu legenDOTS"
+str_blaise_igva_6:
+	.autostring 34 2 "W-Was?\pIst das dein Ernst?\pWeißt du denn nicht, wer hinter diesem Untergrundmarkt steht?"
+str_blaise_6:
+	.autostring 34 2 "Und wie ich das weiß!\pGenau deswegen will ich ihn ja dem Erdboden gleichmachen."
+str_blaise_igva_7:
+	.autostring 34 2 "D-Du willst dich allen Ernstes mit den Top Vier anlegen?\pGanz alleine?"
+str_blaise_7:
+	.autostring 34 2 "Mein Vater ist der Kopf hinter diesem Schwarzmarkt.\pUnd ich werde ihm einen dicken Strich durch die Rechnung machen!"
+str_blaise_igva_8:
+	.autostring 34 2 "DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT\nDOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT\pH-hör mal zu, Kleiner.\pDu kannst unmöglich alleine jemanden von den Top Vier direkt herausfordern.\pDu hättest keine ChanceDOTS"
+str_blaise_8:
+	.autostring 34 2 "Ach ja?\nWer sagt das?\pDu etwa?\pIch lasse mir doch von einer Revoluzzerin nicht sagen, was ich nicht kann.\pUnd überhaupt, was soll ich sonst tun?\pMich in einen grünen Mantel werfen und eurer niederträchtigen Vereinigung beitreten?"
+str_blaise_igva_9:
+	.autostring 34 2 "Wieso nicht?\pWir haben das gleiche Ziel.\pUnsere Gruppe will die Top Vier auch stürzen, weißt du?\pUnd wir haben jemanden auf unserer Seite, der es mit ihnen aufnehmen kann."
+str_blaise_9:
+	.autostring 34 2 "Pah.\nNein danke!\pSo tief bin ich noch nicht gesunken.\pIch erledige die Dinge auf meine Weise.\pAdieu!"
+str_blaise_10:
+	.autostring 34 2 "Ach, und PLAYER.\pAn deiner Stelle würde ich dringend überdenken, mit wem ich mich abgebe.\pNur ein gut gemeinter Rat eines alten Klassenkammeraden."
+str_blaise_igva_10:
+	.autostring 34 2 "Du hast ja nette Freunde, PLAYER.\pWas für ein undankbarer Bengel."
+str_blaise_igva_11:
+	.autostring 34 2 "Aber immerhin kämpft er für die richtige Sache.\pOrte wie diesen, sollte es nicht geben dürfen.\pDOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT"
+str_blaise_igva_12:
+	.autostring 34 2 "Ach du Schande!\pDiese ganze Geschichte hier hat uns wirklich lange aufgehalten."
+str_blaise_igva_13:
+	.autostring 34 2 "Wir sollten schnellstens nach meinem Freund Lucky suchen, ja PLAYER?"
+
+
+
+
+str_warden:
+	.string "Aufseher"
+
 str_primus_0:
 	.autostring 34 2 "O-Oh!\nPLAYER, wie unerwartet!\pW-Was ich hier treibe?\pÄhm, ja, das ist eine gute FrageDOTS\pIchDOTS\pIch muss bloß einige Besorgungen anstellenDOTS\pF-Für meine ForschungDOTS\pAlso nichts, worüber du dir den Kopf zerbrechen solltestDOTS"
 str_primus_1:

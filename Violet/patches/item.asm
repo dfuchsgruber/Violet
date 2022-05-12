@@ -125,7 +125,7 @@
     ldr r1, =fmem
     str r0, [r1]
     pop {r1}
-    ldr r0, =item_effect_unapplicable | 1
+    ldr r0, =_item_effect_unapplicable_fmem_hooked | 1
     bx r0
     .pool
 
@@ -355,3 +355,9 @@ _bxr1:
 
 .org 0x08043718 // Pokemon add friendship
 	cmp r0, #10 // Luxury ball
+
+// Rare candy item callback step does not remove the item
+// This functionality is removed to the rare candy item callback instead
+.org 0x0812640a
+	lsl r0, #0
+	lsl r0, #0

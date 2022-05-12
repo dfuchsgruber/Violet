@@ -684,22 +684,22 @@
 					"picture": "238",
 					"x": "49",
 					"y": "12",
-					"level": 0,
+					"level": "0",
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_UP_RIGHT_LEFT",
 					"behaviour_range": {
 						"x": "2",
-						"y": "4"
+						"y": "3"
 					},
-					"field_B": 0,
+					"field_B": "0",
 					"is_trainer": "1",
 					"alert_radius": "4",
-					"script": 0,
+					"script": "0",
 					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
 					"value": {
-						"item": 0,
+						"item": "0",
 						"species": "POKEMON_KINGLER",
-						"berry_tree_idx": 0,
-						"type": 0
+						"berry_tree_idx": "0",
+						"type": "0"
 					},
 					"argument": "40",
 					"script_std_and_in_connection": {
@@ -908,22 +908,22 @@
 					"picture": "238",
 					"x": "57",
 					"y": "30",
-					"level": 0,
+					"level": "0",
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_RIGHT_UP_LEFT",
 					"behaviour_range": {
 						"x": "4",
-						"y": "4"
+						"y": "2"
 					},
-					"field_B": 0,
+					"field_B": "0",
 					"is_trainer": "1",
 					"alert_radius": "4",
-					"script": 0,
+					"script": "0",
 					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_1",
 					"value": {
-						"item": 0,
+						"item": "0",
 						"species": "POKEMON_MASCHOCK",
-						"berry_tree_idx": 0,
-						"type": 0
+						"berry_tree_idx": "0",
+						"type": "0"
 					},
 					"argument": "30",
 					"script_std_and_in_connection": {

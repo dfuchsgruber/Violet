@@ -5846,7 +5846,7 @@ attack attacks[ATTACK_CNT] = {
 		0x2b, //Effect-id (in table)
 		115, //Base Power
 		TYPE_WASSER,
-		80, //Accuracy
+		75, //Accuracy
 		15, //PP
 		30, //Effect accuracy
 		SELECTED_TARGET,
@@ -5859,11 +5859,11 @@ attack attacks[ATTACK_CNT] = {
 	// ATTACK_STAHLSTREICH
 	{
 		0xe0, //Effect-id (in table)
-		85, //Base Power
+		65, //Base Power
 		TYPE_STAHL,
-		100, //Accuracy
+		95, //Accuracy
 		20, //PP
-		30, //Effect accuracy
+		10, //Effect accuracy
 		SELECTED_TARGET,
 		0, //Priority
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
@@ -5889,7 +5889,7 @@ attack attacks[ATTACK_CNT] = {
 	// ATTACK_SUPERNOVA
 	{
 		4, //Effect-id (in table)
-		60, //Base Power
+		55, //Base Power
 		TYPE_FEUER,
 		90, //Accuracy
 		5, //PP

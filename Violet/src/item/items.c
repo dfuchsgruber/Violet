@@ -1739,6 +1739,10 @@ static u8 str_item_jugongnit_description[] = LANGDEP(
 	PSTRING("Wird er von einem Jugong\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
 	PSTRING("If held by a Dewgong in\nbattle it can perform\na mega evolution.")
 );
+static u8 str_item_wirbelpilz_description[] = LANGDEP(
+	PSTRING("Item (Tragen), das\nKp regeneriert, wenn der\nTräger ausgetauscht wird."),
+	PSTRING("Item to be held that\nregenerates Hp if its\nholder is switched out.")
+);
 
 
 item items[] = {
@@ -2842,7 +2846,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a1821, //field_usage
+		item_rare_candy_field_effect, //field_usage
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -2906,7 +2910,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a1821, //field_usage
+		item_gold_candy_field_effect, //field_usage
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -8121,6 +8125,14 @@ item items[] = {
 		.index = ITEM_JUGONGNIT,
 		.description = str_item_jugongnit_description, .pocket = POCKET_ITEMS, .type = 4,
 		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_WIRBELPILZ] = {
+		.name = LANGDEP(PSTRING("Wirbelpilz"), PSTRING("Vortex-Shroom")),
+		.index = ITEM_WIRBELPILZ,
+		.description = str_item_wirbelpilz_description, .pocket = POCKET_ITEMS, .type=4,
+		.field_usage = (void(*)(u8))0x80a2325,
+		.holding_effect_id = HOLD_EFFECT_VORTEX_SHROOM,
+		.holding_effect_param = 25,
 	},
 };
 

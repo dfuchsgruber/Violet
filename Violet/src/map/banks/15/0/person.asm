@@ -362,19 +362,15 @@ str_0x87c237:
 
 
 str_0x87c116:
-    .string "Du schon wieder! Du hast mich zwar\nauf Route 2 besiegt, aber mit\lmeinen neuen Bibor werde ich dich\lbesiegen, ob sie nun wollen oder\lnicht!"
-
-
+    .autostring 34 2 "Huh?\pWas willst du, Rotzgöre?\pJa ganz recht!\nIch habe mir von diesem Imker auf Route 3 ein paar Bibor gestohlen.\pUnd weißt du was?\pJetzt werde ich dich mit ihnen besiegen!"
 
 str_0x87c1a4:
-    .string "Zwei Niederlagen an einem Tag!"
+    .string "Uff!\nSo war das nicht geplantDOTS"
 
 
 
 str_0x87c1da:
-    .string "Gut! Nimm die dummen Bibor, sie\nsind sowieso nicht zum kämpfen\lgeeignet! Ich verzieh mich."
-
-
+    .autostring 34 2 "Schon gut, schon gut!\pDu kannst diese Bibor wiederhabenDOTS\pWie du siehst, taugen sie sowieso nicht zum KämpfenDOTS"
 .elseif LANG_EN
 
 .endif

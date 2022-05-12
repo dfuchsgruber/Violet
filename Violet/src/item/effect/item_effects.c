@@ -233,7 +233,7 @@ item_effect_t item_effect_gold_candy = {
     .hp = ITEM_EFFECT_HEAL_HP_DYANMIC, .increase_friendship_low = true,
     .increase_friendship_mid = true, .increase_friendship_high = true,
     .friendship_low = 5, .friendship_mid = 3, .friendship_high = 2,
-    .level = 3,
+    .level = 1,
 };
 
 item_effect_t item_effect_sweet_candy = {

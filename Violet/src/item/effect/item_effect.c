@@ -441,7 +441,7 @@ bool item_effect(pokemon *p, u16 item, u8 party_idx, u8 move_idx, bool calculate
     return effect_applied;
 }
 
-bool item_effect_unapplicable(pokemon *p, u16 item, u8 party_idx, u8 move_idx) {
+bool _item_effect_unapplicable_fmem_hooked(pokemon *p, u16 item, u8 party_idx, u8 move_idx) {
     (void)p;
     return !item_effect((pokemon*)fmem._hook_tmp_, item, party_idx, move_idx, false, true);
 }

@@ -112,6 +112,7 @@ extern "C" {
     extern const unsigned short gfx_mug_igva_scaredTiles[];
     extern const unsigned short gfx_mug_igva_happyTiles[];
     extern const unsigned short gfx_mug_igva_thoughtfulTiles[];
+    extern const unsigned short gfx_mug_igva_annoyedTiles[];
     extern const unsigned short gfx_mug_igvaPal[];
     extern const unsigned short gfx_mug_blackbeardTiles[];
     extern const unsigned short gfx_mug_blackbeard_shockedTiles[];

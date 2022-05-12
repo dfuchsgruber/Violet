@@ -26,6 +26,8 @@ typedef struct {
 
 extern pokemon_evolution *pokemon_evolutions[POKEMON_CNT];
 
+extern void (*evolution_continuation)();
+
 /**
  * Uses a limited-depth dfs to find all items occuring anywhere in the evolution line of a pokemon
  * @param species the species to check: dfs is initialized from its base stage

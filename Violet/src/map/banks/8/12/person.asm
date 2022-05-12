@@ -7,6 +7,7 @@
 .include "movements.s"
 .include "species.s"
 .include "ingame_trades.s"
+.include "pathfinding.s"
 
 .global ow_script_kaskada_tea_house_person_0
 .global ow_script_kaskada_tea_house_person_1
@@ -63,7 +64,84 @@ unlocked:
     callstd MSG_FACE
     end
 ow_script_kaskada_tea_house_igva:
+    lock
     faceplayer
+    checkflag FLAG_KASKADA_IGVA_TEAHOUSE_INITAL_TALK
+    gotoif EQUAL igva_initial_talk_done
+@ Have a talk with igva
+
+    loadpointer 0 str_igva_2
+    show_mugshot MUGSHOT_IGVA MUGSHOT_RIGHT message_type=MSG_KEEPOPEN hide_mugshot=0
+    loadpointer 0 str_igva_3
+    update_mugshot_emotion MUGSHOT_HAPPY
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_igva_4
+    update_mugshot_emotion MUGSHOT_NORMAL
+    callstd MSG_KEEPOPEN
+    closeonkeypress
+    hide_mugshot
+    pause 32
+    fadescreen 1
+    movesprite 0xFF 0x4 0x7
+	special SPECIAL_OVERWORLD_VIEWPORT_SET_TO_PLAYER_POSITION
+    pause 1
+    applymovement 0xFF mov_fl
+    applymovement 11 mov_fr
+    waitmovement 0
+    fadescreen 0
+    pause 48
+    loadpointer 0 str_igva_5
+    show_mugshot MUGSHOT_IGVA MUGSHOT_RIGHT emotion=MUGSHOT_RUMINATIVE message_type=MSG_KEEPOPEN hide_mugshot=0
+    loadpointer 0 str_igva_6
+    update_mugshot_emotion MUGSHOT_NORMAL
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_igva_6_2
+    update_mugshot_emotion MUGSHOT_RUMINATIVE
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_igva_7
+    update_mugshot_emotion MUGSHOT_HAPPY
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_igva_8
+    update_mugshot_emotion MUGSHOT_SAD
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_igva_9
+    update_mugshot_emotion MUGSHOT_NORMAL
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_igva_10
+    update_mugshot_emotion MUGSHOT_HAPPY
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_igva_11
+    update_mugshot_emotion MUGSHOT_SCARED
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_igva_12
+    update_mugshot_emotion MUGSHOT_NORMAL
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_igva_13
+    update_mugshot_emotion MUGSHOT_HAPPY
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_igva_14
+    update_mugshot_emotion MUGSHOT_NORMAL
+    callstd MSG_KEEPOPEN
+    closeonkeypress
+    hide_mugshot
+    applymovement 11 mov_igva_1
+    waitmovement 0
+    pause 32
+    applymovement 11 mov_fl
+    applymovement 0xFF mov_fr
+    waitmovement 0
+    loadpointer 0 str_igva_15
+    show_mugshot MUGSHOT_IGVA MUGSHOT_RIGHT message_type=MSG
+    lockall
+    npc_move_to 11 0x6 0x4
+    applymovement 11 mov_fu
+    waitmovement 0
+    setflag FLAG_KASKADA_IGVA_TEAHOUSE_INITAL_TALK
+    releaseall
+    end
+
+
+igva_initial_talk_done:
     loadpointer 0 str_igva_0
     show_mugshot MUGSHOT_IGVA MUGSHOT_RIGHT message_type=MSG
     applymovement 11 mov_fu
@@ -138,12 +216,46 @@ already_traded:
 
 mov_step_inplace:
     .byte STEP_IN_PLACE_UP, STEP_IN_PLACE_UP, STOP
+mov_igva_1:
+    .byte STEP_UP, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STOP
+
 
 .ifdef LANG_GER
 str_igva_0:
-    .autostring 34 2 "Ich werde dir jetzt einmal ein Geheimnis verraten, PLAYER!\pHinter dem Teehaus hier steckt viel mehr, als der Anschein verraten mag.\pDu musst nämlich wissen, dass es hier im Untergrund einen Handelsplatz gibt.\pNatürlich kommt man da nicht einfach so hinein.\pAber mit mir zusammen ist das gar kein Problem.\pPass mal auf!"
+    .autostring 34 2 "Ich werde dir jetzt ein Geheimnis verraten, PLAYER!\pHinter dem Teehaus hier steckt viel mehr, als der Anschein verraten mag.\pDu musst nämlich wissen, dass es im Untergrund der Stadt einen Handelsplatz gibt.\pNatürlich kommt man da nicht einfach so hinein.\pAber mit mir zusammen ist das gar kein Problem.\pPass mal auf!"
 str_igva_1:
-    .autostring 34 2 "Siehst du?\nGanz leicht, oder?\pJetzt müssen wir uns aber beeilen, wenn wir unseren Anführer noch treffen wollenDOTS"
+    .autostring 34 2 "Siehst du?\nGanz leicht, oder?\pBeeilen wir uns am Besten, PLAYER"
+str_igva_2:
+    .autostring 34 2 "PLAYER!"
+str_igva_3:
+    .autostring 34 2 "Wie schön, dass du gekommen bist!"
+str_igva_4:
+    .autostring 34 2 "Setz' dich doch zu mirDOTS"
+str_igva_5:
+    .autostring 34 2 "AlsoDOTSTEXT_DELAY_SHORT\pWo fange ich bloß an?"
+str_igva_6:
+    .autostring 34 2 "Vielleicht sollte ich mich zuerst einmal entschuldigen, dich einfach so überrumpelt zu haben.\pEs ist normalerweise auch gar nicht meine Art, irgendwelche Menschen einfach so anzusprechenDOTS"
+str_igva_6_2:
+    .autostring 34 2 "Zumindest nichtDOTSTEXT_DELAY_SHORT\nDOTSTEXT_DELAY_SHORT immer!"
+str_igva_7:
+    .autostring 34 2 "Aber du hast dieses Feuer in den Augen!"
+str_igva_8:
+    .autostring 34 2 "Und das hat mich an einen ehemaligen Freund erinnertDOTS"
+str_igva_9:
+    .autostring 34 2 "Wir beide wollten damals etwas verändern!\pWeißt du, was ich meine?\pDieses ganze System der Pokémon-LigaDOTS\pEs dient doch schon lange nur noch denen, die ganz oben stehen und tut rein gar nichts mehr für die Menschen in dieser Region, oder?"
+str_igva_10:
+    .autostring 34 2 "Deswegen kämpfe ich für eine Veränderung!"
+str_igva_11:
+    .autostring 34 2 "DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT\pH-Habe ich zu viel gesagt?\pD-Du siehst mich so verurteilend a-anDOTS"
+str_igva_12:
+    .autostring 34 2 "Dabei kann ich deine Skepsis ja verstehen.\pEs hat auch für mich gedauert, bis ich eingesehen habe, dass wir Veränderung brauchen."
+str_igva_13:
+    .autostring 34 2 "Ich mache dir ein Angebot, PLAYER, ja?"
+str_igva_14:
+    .autostring 34 2 "Lass mich dir etwas zeigen, das dir die Augen öffnen wird.\pEin schmutziges Geheimnis dieser StadtDOTS\pUnd das nicht nur unter den Augen der Top Vier, sondern sogar von ihnen unterhalten!\pIch werde dir zeigen, in welche Machenschaften die Pokémon-Liga verstrickt ist!"
+str_igva_15:
+    .autostring 34 2 "Na mach schon, PLAYER!\pWorauf wartest du denn?"
+
 str_0:
     .autostring 34 2 "Im Teehaus ist immer sehr viel los.\pAn manchen Wochenenden bekommt man nicht einmal mehr einen Platz.\pAber das ist kaum verwunderlich bei all dem guten Tee hier!"
 str_1:

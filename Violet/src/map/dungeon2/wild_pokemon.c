@@ -43,6 +43,7 @@ void dungeon2_pick_wild_pokemon(u16 *dst, size_t number, u16 *src, size_t src_si
 }
 
 void dungeon2_get_wild_pokemon_level_distribution(u8 *mean, u8 *std_deviation) {
+  DEBUG("Story state is %d\n", *var_access(VAR_STORY_STATE));
   switch (*var_access(VAR_STORY_STATE)) {
     default: {
       *mean = 5;
@@ -62,6 +63,11 @@ void dungeon2_get_wild_pokemon_level_distribution(u8 *mean, u8 *std_deviation) {
     case STORY_STATE_FELSIGE_ODENIS_RIVAL_DONE: {
       *mean = 20;
       *std_deviation = 2;
+      break;
+    }
+    case STORY_STATE_SILVANIA_FOREST_DONE: {
+      *mean = 27,
+      *std_deviation= 2;
       break;
     }
     case STORY_STATE_KUESTENBERG_DONE: {

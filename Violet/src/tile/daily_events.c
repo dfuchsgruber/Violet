@@ -72,6 +72,9 @@ void daily_events_proceed() {
     time_read(&current_time);
     u64 seconds_current = rtc_timestamp_to_seconds(&current_time);
     u64 seconds_update = (u64) (rtc_timestamp_to_seconds(&cmem.daily_events_last_update) + 24 * 60 * 60);
+
+    DEBUG("Seconds to update dailty: %d\n", seconds_update - seconds_current);
+
     if (seconds_current >= seconds_update) {
         daily_events_new_seed();
         daily_events_reset();

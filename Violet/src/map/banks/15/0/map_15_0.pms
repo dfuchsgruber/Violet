@@ -581,8 +581,8 @@
 					"target_index": "20",
 					"picture": 35,
 					"field_2": 0,
-					"x": 13,
-					"y": 18,
+					"x": "13",
+					"y": "18",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_RIGHT",
 					"behaviour_range": {

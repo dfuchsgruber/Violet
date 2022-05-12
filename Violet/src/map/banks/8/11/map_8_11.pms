@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_453",
 		"events": {
-			"person_cnt": 36,
+			"person_cnt": 39,
 			"warp_cnt": 2,
 			"trigger_cnt": 9,
 			"signpost_cnt": 1,
@@ -11,29 +11,29 @@
 					"is_trainer": "0",
 					"script": "ow_script_map_8_10_person_0",
 					"y": "31",
-					"target_index": 2,
-					"picture": 86,
+					"target_index": "1",
+					"picture": "86",
 					"flag": "KASKADA_BLACKMARKET_IGVA",
 					"x": "13",
 					"field_2": 0,
-					"level": 0,
-					"alert_radius": 0,
+					"level": "0",
+					"alert_radius": "0",
 					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"field_D": 0,
-					"field_B": 0,
+					"field_B": "0",
 					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": 0
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
 					},
-					"argument": 0,
+					"argument": "0",
 					"script_std_and_in_connection": {
-						"script_std": 0,
+						"script_std": "0",
 						"in_connection": "0"
 					}
 				},
@@ -520,30 +520,30 @@
 				{
 					"is_trainer": "0",
 					"script": "ow_script_kaskada_black_glasses",
-					"y": "35",
-					"target_index": 18,
-					"picture": 28,
+					"y": "31",
+					"target_index": "18",
+					"picture": "28",
 					"flag": "0x0",
-					"x": "34",
+					"x": "35",
 					"field_2": 0,
-					"level": 0,
-					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"level": "0",
+					"alert_radius": "0",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"field_D": 0,
-					"field_B": 0,
+					"field_B": "0",
 					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": 0
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
 					},
-					"argument": 0,
+					"argument": "0",
 					"script_std_and_in_connection": {
-						"script_std": 0,
+						"script_std": "0",
 						"in_connection": "0"
 					}
 				},
@@ -580,30 +580,30 @@
 				{
 					"is_trainer": "0",
 					"script": "ow_script_kaskada_black_blaise",
-					"y": "31",
-					"target_index": 20,
-					"picture": 89,
+					"y": "35",
+					"target_index": "20",
+					"picture": "89",
 					"flag": "KASKADA_BLACKMARKET_BLAISE",
-					"x": "37",
+					"x": "42",
 					"field_2": 0,
-					"level": 0,
-					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"level": "0",
+					"alert_radius": "0",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"field_D": 0,
-					"field_B": 0,
+					"field_B": "0",
 					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": 0
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
 					},
-					"argument": 0,
+					"argument": "0",
 					"script_std_and_in_connection": {
-						"script_std": 0,
+						"script_std": "0",
 						"in_connection": "0"
 					}
 				},
@@ -641,29 +641,29 @@
 					"is_trainer": "0",
 					"script": "ow_script_kaskada_blackmarket_person_9",
 					"y": "35",
-					"target_index": 22,
-					"picture": 26,
+					"target_index": "22",
+					"picture": "26",
 					"flag": "0x0",
 					"x": "49",
 					"field_2": 0,
-					"level": 0,
-					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"level": "0",
+					"alert_radius": "0",
+					"behaviour": "BEHAVIOUR_WANDER_UP_AND_DOWN",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"field_D": 0,
-					"field_B": 0,
+					"field_B": "0",
 					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": 0
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
 					},
-					"argument": 0,
+					"argument": "0",
 					"script_std_and_in_connection": {
-						"script_std": 0,
+						"script_std": "0",
 						"in_connection": "0"
 					}
 				},
@@ -1083,6 +1083,90 @@
 					"script_std_and_in_connection": {
 						"script_std": 0,
 						"in_connection": "0"
+					}
+				},
+				{
+					"target_index": "37",
+					"picture": "68",
+					"script_std_and_in_connection": {
+						"script_std": "0",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "42",
+					"y": "34",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "ow_script_kaskada_black_blaise",
+					"flag": "KASKADA_BLACKMARKET_BLAISE",
+					"value": {
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "38",
+					"picture": "68",
+					"script_std_and_in_connection": {
+						"script_std": "0",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "42",
+					"y": "36",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "ow_script_kaskada_black_blaise",
+					"flag": "KASKADA_BLACKMARKET_BLAISE",
+					"value": {
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "39",
+					"picture": "86",
+					"script_std_and_in_connection": {
+						"script_std": "0",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "33",
+					"y": "35",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "FLAG_KASKADA_BLAISE_EVENT_IGVA | 0x8000",
+					"value": {
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
 					}
 				}
 			],

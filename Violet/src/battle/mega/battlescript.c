@@ -46,8 +46,6 @@ void battler_form_change(u8 battler_idx, u16 species) {
     pokemon_calculate_stats(mon);
     battler_update_after_form_change(battler_idx);
     // Emit event for link-consistency: TODO: Which request to emit? Set all mon data should cover everything...
-    battle_controller_emit_set_pokemon_data(0, 0, 0, sizeof(battler), battlers + battler_idx); // Request: SET_ALL_MON_DATA ??
-    battler_mark_for_controller_execution(battler_idx);
 }
 
 bool battle_execute_action_mega_evolution() {
@@ -95,6 +93,8 @@ bool battle_execute_action_mega_evolution() {
                         bsc_last_used_item = mega_evolution->mega_item;
                         battle_scripting.battler_idx = battler_idx; // Target for non-buffer-strings (after species transform)
                         battler_form_change(battler_idx, mega_evolution->mega_species);
+                        battle_controller_emit_set_pokemon_data(0, 0, 0, sizeof(battler), battlers + battler_idx); // Request: SET_ALL_MON_DATA ??
+                        battler_mark_for_controller_execution(battler_idx);
                         if (mega_evolution->type == MEGA_EVOLUTION)
                             MEGA_STATE.owner_mega_evolved[battler_get_owner(battler_idx)] = 1;
                         if (MEGA_STATE.marked_for_mega_evolution[battler_idx] == MEGA_EVOLUTION)

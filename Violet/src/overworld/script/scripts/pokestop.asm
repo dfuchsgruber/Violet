@@ -44,7 +44,7 @@ mart:
 ow_script_nurse_joy:
     preparemsg str_joy_intro
     waitmsg
-    multichoice 0x13 0x8 0x0 0x2
+    multichoice 0x13 0x8 0x0 0x0
     copyvar 0x8000 LASTRESULT
     compare 0x8000 0x0
     gotoif EQUAL ow_script_0x877467

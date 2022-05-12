@@ -136,4 +136,16 @@ bool item_effect_execute_hp_heal(pokemon *p, u16 item, u8 battler_idx, u8 move_i
  **/
 bool item_effect(pokemon *p, u16 item, u8 party_idx, u8 move_idx, bool calculate_heal_only, bool check_only);
 
+/**
+ * @brief DO NOT CALL! This is just a vanilla patch
+ * 
+ * 
+ * @param p the pokemon to apply to (ignored, instead the value in `fmem._tmp_hook`) is used
+ * @param item the item to check
+ * @param party_idx the party idx this pokemon corresponds to
+ * @param move_idx the move slot to apply the effect to
+ * @return if the effect is unapplicable
+ */
+bool item_effect_unapplicable(pokemon *p, u16 item, u8 party_idx, u8 move_idx);
+
 #endif

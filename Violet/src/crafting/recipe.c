@@ -63,28 +63,26 @@ static crafting_recipe crafting_recipies_healing[] = {
         },
         .count = 1,
     },
-    */{
-        .item = ITEM_BELEBER, 
+    */
+    {
+        .item = ITEM_WIRBELPILZ, 
         .ingredients = {
-            [0] = {.item = ITEM_BITTERKRAUT, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_APFEL, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_HYPERHEILER, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_MINIPILZ, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_BITTERKRAUT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .count = 1,
-        .flag = FRBADGE_2,
     },{
         .item = ITEM_BELEBER, 
         .ingredients = {
-            [0] = {.item = ITEM_BITTERKRAUT, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_APFEL, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_PRUNUSBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_BITTERKRAUT, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_APFEL, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .count = 1,
-        .flag = FRBADGE_1,
+        .flag = 0,
     },{
         .item = ITEM_TOP_BELEBER, 
         .ingredients = {
-            [0] = {.item = ITEM_BITTERKRAUT, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_BITTERKRAUT, .count = 20, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_RIESENAPFEL, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [3] = {.item = ITEM_BELEBER, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},

@@ -37,6 +37,17 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	additem ITEM_GOLDBONBON 1
+	end
+	clearflag KASKADA_BLACKMARKET_BLAISE
+	end
+	setvar STORY_PROGRESS, 0x21
+	clearflag KASKADA_BLACKMARKET_IGVA
+	end
+
+	clearflag FLAG_KASKADA_TEAHOUSE_BLACK_MARKET_UNLOCKED
+    clearflag (FLAG_KASKADA_IGVA_TEAHOUSE | 0x8000)
+	end
 
 	setvar 0x8004 0x11
 	special SPECIAL_CUTSCENE_SHOW

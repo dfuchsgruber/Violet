@@ -203,7 +203,7 @@ bool special_berry_tree_grow() {
 }
 
 void berry_proceed_minutes(u16 minutes) {
-    // DEBUG("Proceeding berries by %d minutes\n", minutes);
+    DEBUG("Proceeding berries by %d minutes\n", minutes);
     for (size_t i = 0; i < ARRAY_COUNT(cmem.berry_trees); i++) {
         berry_tree *tree = cmem.berry_trees + i;
         if (tree->stage != BERRY_STAGE_NO_BERRY) {

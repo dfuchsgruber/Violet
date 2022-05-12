@@ -2596,8 +2596,8 @@
 		"weight" : 216,
 		"basestats": {
 			"hp": 70,
-			"attack": 90,
-			"defense": 90,
+			"attack": 82,
+			"defense": 82,
 			"speed": 70,
 			"special-attack": 65,
 			"special-defense": 60
@@ -2787,8 +2787,8 @@
 		"weight" : 1337,
 		"basestats": {
 			"hp": 95,
-			"attack": 115,
-			"defense": 115,
+			"attack": 105,
+			"defense": 105,
 			"speed": 95,
 			"special-attack": 65,
 			"special-defense": 70
@@ -3170,10 +3170,10 @@
 		"weight" : 195,
 		"basestats": {
 			"hp": 75,
-			"attack": 85,
+			"attack": 82,
 			"defense": 60,
 			"speed": 65,
-			"special-attack": 85,
+			"special-attack": 82,
 			"special-defense": 60
 		},
 		"type_0": "Feuer",
@@ -3364,10 +3364,10 @@
 		"weight" : 520,
 		"basestats": {
 			"hp": 80,
-			"attack": 125,
+			"attack": 115,
 			"defense": 62,
 			"speed": 90,
-			"special-attack": 120,
+			"special-attack": 110,
 			"special-defense": 65
 		},
 		"type_0": "Feuer",
@@ -3745,10 +3745,10 @@
 		"weight" : 280,
 		"basestats": {
 			"hp": 55,
-			"attack": 85,
+			"attack": 75,
 			"defense": 65,
 			"speed": 95,
-			"special-attack": 85,
+			"special-attack": 75,
 			"special-defense": 65
 		},
 		"type_0": "Wasser",
@@ -3936,10 +3936,10 @@
 		"weight" : 819,
 		"basestats": {
 			"hp": 75,
-			"attack": 95,
+			"attack": 88,
 			"defense": 70,
 			"speed": 135,
-			"special-attack": 125,
+			"special-attack": 115,
 			"special-defense": 70
 		},
 		"type_0": "Wasser",

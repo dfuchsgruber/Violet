@@ -56,6 +56,9 @@ ow_script_0x81c55e:
 	update_mugshot_emotion MUGSHOT_NORMAL
 	loadpointer 0 str_1
 	callstd MSG_KEEPOPEN
+	update_mugshot_emotion MUGSHOT_HAPPY
+	loadpointer 0 str_1_2
+	callstd MSG_KEEPOPEN
 	update_mugshot_emotion MUGSHOT_RUMINATIVE
 	loadpointer 0 str_2
 	callstd MSG
@@ -108,7 +111,9 @@ mov_run3l:
 str_0:
 	.autostring 34 2 "PLAYER!\nDas ist ja eine schöne Überraschung, dich hier zu treffen!"
 str_1:
-	.autostring 34 2 "Wie ist es dir auf deiner Reise ergangen?\pIch habe tatsächlich einen Weg gefunden, wie ich den Menschen in dieser Region helfen kannDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDOTSund habe mich der Polizei von Theto angeschlossen!\pWahnsinn, nicht?"
+	.autostring 34 2 "Wie ist es dir auf deiner Reise ergangen?\pIch bin vor Aufregung fast am Platzen!\pWeißt du, ich wollte ja zur Polizei von ThetoDOTS\pUnd wie soll ich es sagenDOTS"
+str_1_2:
+	.autostring 34 2 "Ich bin jetzt ein Anwärter!"
 str_2:
 	.autostring 34 2 "Aber ich muss zugeben, dass hier bei der Polizei nicht alles so läuft, wie ich es mir vorgestellt habe.\pDie Top Vier sind sich über sehr wenig einig und deshalb bekommen wir oft gar keine oder widersprüchliche AnweisungenDOTS\pHast du zum Beispiel schon von einer Organisation namens Team Violet gehört?"
 str_3:

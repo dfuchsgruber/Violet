@@ -15,7 +15,8 @@ static void abra_doll_field_continuation(u8 self) {
 }
 
 void item_field_effect_abra_doll(u8 self) {
-    if (map_type_enables_fly_or_teleport(mapheader_virtual.type)) {
+    // if (map_type_enables_fly_or_teleport(mapheader_virtual.type)) {
+    if (true) {
         item_use_continuation = abra_doll_field_continuation;
         item_close_bag_and_return_to_overworld(self);
     } else {

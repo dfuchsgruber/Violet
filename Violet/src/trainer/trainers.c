@@ -6009,9 +6009,9 @@ trainer trainers[TRAINER_CNT] = {
         .party = (trainer_pokemon*) trainer_party_x144_route_7_trainer_5,
     },
     [0x145] = {
-        .trainerclass = TRAINERCLASS_SCHNOESEL, .sprite = 3,
-        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Betina"),
-            PSTRING("Betina")), .pokemon_cnt = 2,
+        .trainerclass = TRAINERCLASS_SCHNOESEL, .sprite = 13,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Bertram"),
+            PSTRING("Bertram")), .pokemon_cnt = 2,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x145_route_7_trainer_6,
         .items = {ITEM_TOP_GENESUNG, ITEM_TOP_TRANK}
@@ -6970,7 +6970,7 @@ trainer trainers[TRAINER_CNT] = {
         .party = (trainer_pokemon*) trainer_party_x1c7_route_4_trainer_5,
     },
     [0x1c8] = {
-        .trainerclass = TRAINERCLASS_SCHNOESEL, .sprite = 3,
+        .trainerclass = TRAINERCLASS_SCHNOESEL, .sprite = 13,
         .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Igor"),
             PSTRING("Igor")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1c8_route_4_trainer_6),
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
@@ -6987,7 +6987,7 @@ trainer trainers[TRAINER_CNT] = {
     [0x1ca] = {
       .uses_custom_moves = true, .uses_custom_items = true,
       .trainerclass = TRAINERCLASS_MALERIN, .encounter_and_gender = {1, 1} , .sprite = 147,
-      .name = LANGDEP(PSTRING("Jamie"), PSTRING("Jamie")),
+      .name = LANGDEP(PSTRING("Jimea"), PSTRING("Jimea")),
       .items = {ITEM_SUPERTRANK, ITEM_GEGENGIFT, ITEM_APFEL, 0},
       .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
       .battle_state = 0, .pokemon_cnt = ARRAY_COUNT(trainer_party_x1ca_route_4_cave_south_painter), .party = (trainer_pokemon*) trainer_party_x1ca_route_4_cave_south_painter,

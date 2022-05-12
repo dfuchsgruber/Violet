@@ -103,6 +103,7 @@ void buffer_time() {
 }
 
 void time_based_events_run() {
+	DEBUG("Time Proceed.\n");
 	berry_proceed();
     daily_events_proceed();
 	// update_timezone();

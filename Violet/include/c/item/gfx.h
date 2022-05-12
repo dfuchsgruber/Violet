@@ -890,5 +890,7 @@ extern const u8 gfx_item_zobirisnitTiles[];
 extern const u8 gfx_item_zobirisnitPal[];
 extern const u8 gfx_item_sengonitTiles[];
 extern const u8 gfx_item_sengonitPal[];
+extern const u8 gfx_item_wirbelpilzTiles[];
+extern const u8 gfx_item_wirbelpilzPal[];
 
 #endif

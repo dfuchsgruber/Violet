@@ -235,10 +235,24 @@ void item_field_fade_to_scene_and_execute_callback(u8 self);
 void item_callback_rare_candy(u8 self, void (*failure_continuation)(u8));
 
 /**
+ * Item callback for executing rare candy step (after it has already been ensured it can be applied).
+ * @param self self-reference
+ * @param failure_continuation where to continue in case of a failure
+ **/
+void item_callback_rare_candy_step(u8 self, void (*failure_continuation)(u8));
+
+/**
  * Field effect callback for the gold candy.
  * @param self self-reference
  **/
 void item_gold_candy_field_effect(u8 self);
+
+/**
+ * @brief Field effect callback for the rare candy.
+ * 
+ * @param self self-reference
+ */
+void item_rare_candy_field_effect(u8 self);
 
 /**
  * Prints the string that an item can not be used currently (oak says that)
@@ -266,7 +280,12 @@ void item_field_effect_abra_doll(u8 self);
  **/
 bool item_is_mail_and_can_be_written(u16 item_idx);
 
-
+/**
+ * @brief Checks if any more rare candy level-ups / exp gains are issued
+ * 
+ * @return if any more exp gains are issued
+ */
+bool item_rare_candy_is_issued();
 
 typedef struct {
     const u8 *gfx;

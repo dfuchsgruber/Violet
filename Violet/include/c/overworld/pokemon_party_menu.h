@@ -75,6 +75,14 @@ extern pokemon_party_menu_state_t pokemon_party_menu_state;
 extern u8 pokemon_party_menu_current_index;
 extern u8 pokemon_party_menu_current_index2;
 extern u16 item_activated;
+extern struct {
+    u8 type : 4;
+    u8 unknown : 4;
+} pokemon_party_menu_type;
+
+extern u8 pokemon_party_menu_use_return_callback;
+
+extern u8 str_item_has_no_effect[];
 
 /**
  * Fades the party menu back to overworld and executes the field move callback. Used as continuation
@@ -153,9 +161,30 @@ void pokemon_party_menu_return_and_execute_callback(u8 self);
 void pokemon_party_menu_print_question(u8 self);
 
 /**
+ * @brief Waits for the current textbox to finish and then closes the party menu
+ * 
+ * @param self self-reference
+ */
+void pokemon_party_menu_wait_for_text_and_close(u8 self);
+
+/**
  * Returns to the pokemon party menu (callback)
  */
 void pokemon_party_menu_return_to();
+
+/**
+ * @brief Executes rare candy level ups if these are issued and if not waits for a textbox and closes the party menu.
+ * 
+ * @param self self reference
+ */
+void item_callback_do_rare_candy_if_issued(u8 self);
+
+/**
+ * @brief Does the animation for using an item (removed in this game) and executes `item_callback_after_pokemon_selected`
+ * 
+ * @param self self-reference
+ */
+void pokemon_party_menu_do_item_use_animation(u8 self);
 
 #define PARTY_LAYOUT_SINGLE          0
 #define PARTY_LAYOUT_DOUBLE          1

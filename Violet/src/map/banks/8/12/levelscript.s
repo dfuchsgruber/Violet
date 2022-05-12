@@ -15,9 +15,16 @@ kaskada_teahouse_levelscripts:
 lsrc_movesprites:
 	checkflag FLAG_KASKADA_TEAHOUSE_BLACK_MARKET_UNLOCKED
 	callif EQUAL move_sprites
+	checkflag FLAG_KASKADA_IGVA_TEAHOUSE_INITAL_TALK
+	callif EQUAL move_igva
 	end
 
 move_sprites:
-	movesprite2 1 0x8 0x3
+	movesprite2 1 0x7 0x3
 	spritebehave 1 BEHAVIOUR_FACE_RIGHT
+	return
+
+move_igva:
+	movesprite2 11 0x6 0x4
+	spritebehave 11 BEHAVIOUR_FACE_UP
 	return

@@ -115,12 +115,20 @@ void bsc_cmd_switch_out_abilites() {
     bsc_offset++;
     active_battler = battlescript_argument_to_battler_idx(*bsc_offset);
     bsc_offset++;
+    bool update_battler = false;
     if (battlers[active_battler].ability == INNERE_KRAFT) {
         battlers[active_battler].status1 = 0;
-        battle_controller_emit_set_pokemon_data(0, 0x28, (u8)int_bitmasks[battle_state->switch_out_party_idxs[active_battler]], 4, 
-            &battlers[active_battler].status1);
-        battler_mark_for_controller_execution(active_battler);
+        update_battler = true;
     }
+    if (item_get_hold_effect(battlers[active_battler].item) == HOLD_EFFECT_VORTEX_SHROOM) {
+        int percentage = item_get_hold_effect_parameter(battlers[active_battler].item);
+        update_battler = true;
+        battlers[active_battler].current_hp = (u16)MIN(battlers[active_battler].max_hp, battlers[active_battler].current_hp + 
+        (percentage * battlers[active_battler].max_hp) / 100
+        );
+        battlers[active_battler].item = 0;
+    }
+
     /** else if (battlers[active_battler].ability == 0xFF) { // TODO: This is code for a potential regenerator ability
     
         battlers[active_battler].current_hp = (u16) MIN(battlers[active_battler].max_hp, battlers[active_battler].current_hp +
@@ -132,7 +140,15 @@ void bsc_cmd_switch_out_abilites() {
     }**/
     if (battlers[active_battler].species == POKEMON_DURENGARD_OFFENSIVE) {
         battler_form_change(active_battler, POKEMON_DURENGARD);
+        update_battler = true;
     }
+    if (update_battler) {
+        battle_controller_emit_set_pokemon_data(0, 0, (u8)int_bitmasks[battle_state->switch_out_party_idxs[active_battler]], sizeof(battler), 
+            &battlers[active_battler]);
+        battler_mark_for_controller_execution(active_battler);
+    }
+
+
 }
 
 void bsc_cmd_x4f_jump_if_unable_to_switch() {

@@ -297,6 +297,27 @@ ow_script_kaskada_igva:
 	loadpointer 0 str_igva5
 	update_mugshot_emotion MUGSHOT_NORMAL
 	callstd MSG_KEEPOPEN
+	loadpointer 0 str_igva6
+	update_mugshot_emotion MUGSHOT_SCARED
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_igva7
+	update_mugshot_emotion MUGSHOT_HAPPY
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_igva8
+	update_mugshot_emotion MUGSHOT_NORMAL
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_igva8
+	update_mugshot_emotion MUGSHOT_RUMINATIVE
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_igva9
+	update_mugshot_emotion MUGSHOT_NORMAL
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_igva10
+	update_mugshot_emotion MUGSHOT_HAPPY
+	callstd MSG_KEEPOPEN
+	loadpointer 0 str_igva11
+	update_mugshot_emotion MUGSHOT_NORMAL
+	callstd MSG_KEEPOPEN
 	closeonkeypress
 	hide_mugshot
 	npc_move_to 36 0x38 0x2f
@@ -382,7 +403,19 @@ str_igva3:
 str_igva4:
 	.autostring 34 2 "Aber irgendetwas an dir sagt mir, dass ich dir vertrauen kann."
 str_igva5:
-	.autostring 34 2 "Weißt du, ich bin nämlich von der Revolutionsbewegung.\pUnd ich will mich hier in Kaskada mit unserem Anführer treffen.\pEr ist ein sehr weiser Mann, der mir viel beigebracht hat.\pDu solltest ihn unbedingt kennenlernen, PLAYER.\pWir haben ausgemacht, uns im Teehaus zu treffen.\pKomm doch auch einfach vorbei, ja?"
+	.autostring 34 2 "Hast du nicht vielleicht LustDOTS"
+str_igva6:
+	.autostring 34 2 "NajaDOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT"
+str_igva7:
+	.autostring 34 2 "Dich mit mir bei einem Tee zu unterhalten?"
+str_igva8:
+	.autostring 34 2 "Hier in Kaskada gibt es ein ganz besonders interessantes Teehaus!"
+str_igva9:
+	.autostring 34 2 "Ich werde uns dort einen schönen Platz besorgen."
+str_igva10:
+	.autostring 34 2 "Dann können wir ein wenig plaudern, PLAYER."
+str_igva11:
+	.autostring 34 2 "Und denk gar nicht daran, mich zu versetzten!"
 
 str_intro_evolithe:
 	.autostring 34 2 "Für viele Trainer geht es nur darum, ihre Pokémon möglichst stark zu machen.\pSie zwingen sie sogar dazu, sich gegen ihren Willen zu entwickeln.\pWenn Trainer so einen Druck auf ihre Pokémon ausübenDOTS\pDas macht mich sehr traurigDOTS\pDabei können doch auch nicht entwickelte Pokémon stark sein, findest du nicht auch?"

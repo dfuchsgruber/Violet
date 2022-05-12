@@ -187,6 +187,7 @@ mugshot mugshots[] = {
 			[MUGSHOT_SCARED] = gfx_mug_igva_scaredTiles,
 			[MUGSHOT_SHOCKED] = gfx_mug_igva_shockedTiles,
 			[MUGSHOT_RUMINATIVE] = gfx_mug_igva_thoughtfulTiles,
+			[MUGSHOT_ANNOYED] = gfx_mug_igva_annoyedTiles,
 		}, 
 		gfx_mug_igvaPal, str_mug_igva},
     [MUGSHOT_BLACKBEARD] = {

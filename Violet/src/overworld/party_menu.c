@@ -10,6 +10,8 @@
 #include "item/tm_hm.h"
 #include "attack.h"
 #include "callbacks.h"
+#include "pokemon/evolution.h"
+#include "item/item.h"
 
 void pokemon_party_menu_options_build(pokemon *base, u8 index) {
     pokemon_party_menu_options_state_t *options_state = pokemon_party_menu_state.options_state;
@@ -110,4 +112,39 @@ void pokemon_party_menu_big_callback_learned_move(u8 self) {
     pokemon_party_menu_init_text_rendering(strbuf, true);
     bg_virtual_sync_reqeust_push(2);
     big_callbacks[self].function = pokemon_party_menu_play_fanfare_after_text_finished;
+}
+
+static void pokemon_party_menu_evolution_continuation() {
+    if (item_rare_candy_is_issued()) {
+        // Return to the party menu and directly issue more executions of the candy 
+        pokemon_party_menu_init(pokemon_party_menu_type.type, KEEP_PARTY_LAYOUT, PARTY_ACTION_CHOOSE_MON, pokemon_party_menu_current_index, PARTY_MSG_NONE,
+            item_callback_do_rare_candy_if_issued, pokemon_party_menu_state.callback);
+
+    } else {
+        pokemon_party_menu_state.callback(); // Normal exit callback from the party menu
+    }
+}
+
+void pokemon_party_menu_attempt_evolution(u8 self) {
+    pokemon *p = player_pokemon + pokemon_party_menu_current_index;
+    u16 target_species = pokemon_get_evolution(p, EVOLUTION_TRIGGER_LEVEL_UP, 0);
+    if (target_species) {
+        // TODO: Remaining candy levels afterwards
+        pokemon_party_menu_free();
+        evolution_continuation = pokemon_party_menu_evolution_continuation;
+        pokemon_initialize_evolution(p, target_species, true, pokemon_party_menu_current_index);
+        big_callback_delete(self);
+    } else {
+        big_callbacks[self].function = item_callback_do_rare_candy_if_issued; // Will close the party menu if no more level ups are issued
+    }
+}
+
+static void pokemon_party_menu_skip_item_use_animation(u8 self) {
+    item_callback_after_pokemon_selected(self, pokemon_party_menu_wait_for_text_and_close);
+}
+
+void pokemon_party_menu_do_item_use_animation(u8 self) {
+    // We do not want this ***cking animation...
+    big_callbacks[self].function = pokemon_party_menu_skip_item_use_animation;
+
 }

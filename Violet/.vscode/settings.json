@@ -147,6 +147,9 @@
         "header.h": "c",
         "block.h": "c",
         "transition.h": "c",
-        "map_weathers.h": "c"
+        "map_weathers.h": "c",
+        "gfx.h": "c",
+        "evolution.h": "c",
+        "evolution_methods.h": "c"
     }
 }
