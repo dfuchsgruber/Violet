@@ -148,6 +148,13 @@ void volume_set(void *song_controller, u16 affects_tracks, u16 volume);
  **/
 void sound_set_pokemon_cries_stereo(bool is_mono);
 
+/**
+ * @brief Plays a fanfare using its fanfare idx
+ * 
+ * @param fanfare_idx the fanfare idx
+ */
+void fanfare_by_fanfare_idx(u8 fanfare_idx);
+
 extern const unsigned char mus_rin_battle[];
 extern const unsigned char mus_encounter_violet[];
 extern const unsigned char mus_deoxys_battle[];

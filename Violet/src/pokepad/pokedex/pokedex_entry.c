@@ -35,6 +35,8 @@ extern const unsigned short gfx_pokedex_entry_uiPal[];
 extern const unsigned short gfx_pokedex_bottom_1Pal[];
 extern const unsigned short gfx_pokedex_formsPal[];
 
+#define HAS_HABITAT true 
+//#define HAS_HABITAT(checkflag(POKEDEX_FEATURE_HABITAT))
 
 tbox_font_colormap pokedex_entry_title_fontcolmap = {0, 1, 2, 0};
 
@@ -108,7 +110,7 @@ void pokedex_entry_load_strings() {
     tbox_flush_set(4, 0);
     tbox_tilemap_draw(4);
 
-    bool has_habitat = true; //checkflag(POKEDEX_FEATURE_HABITAT);
+    bool has_habitat = HAS_HABITAT;
 
     u8 *buf = strbuf;
     *buf = 0xFF;
@@ -426,7 +428,7 @@ void pokedex_callback_entry_idle() {
                 io_set(0x1A, (u16) (bg2hscroll + 4));
             }
 
-        } else if (super.keys_new.keys.A && checkflag(POKEDEX_FEATURE_HABITAT)) {
+        } else if (super.keys_new.keys.A && HAS_HABITAT) {
             play_sound(5);
             fadescreen_all(1, 0);
             callback1_set(pokedex_init_habitat);

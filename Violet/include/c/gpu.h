@@ -31,4 +31,17 @@ void gpu_render_line(int x0, int y0, int x1, int y1, void (*set_pixel)(int, int)
 void gpu_render_polygon_by_radius(FIXED *ratios, int num_edges, int max_radius,
 		void (*set_pixel)(int, int));
 
+/**
+ * @brief Fills a rectangle in a tiled 4bpp graphic.
+ * 
+ * @param sprite Where the 4bpp tiles are
+ * @param x0 upper left corner x
+ * @param y0 upper left corner y
+ * @param x1 lower right corner x (exclusive)
+ * @param y1 lower right corner y (exclusive)
+ * @param color the color to fill with (4-bit value)
+ * @param area_width the width of the entire graphic (needs to be divisible by 8)
+ */
+void gpu_fill_rectangle_4bpp(void *sprite, int x0, int y0, int x1, int y1, u32 color, size_t area_width);
+
 #endif /* INCLUDE_C_GPU_H_ */

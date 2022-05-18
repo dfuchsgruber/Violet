@@ -84,6 +84,6 @@ u16 pokedex_get_species_by_dex_id(u16 dex_id);
  */
 void pokedex_set_caught_and_load_pid(u16 dex_id, u8 flags, pid_t pid);
 
-u16 pokedex_order[POKEMON_CNT - 1];
+u16 pokedex_order[POKEMON_CNT];
 
 #endif /* INCLUDE_C_POKEPAD_POKEDEX_OPERATOR_H_ */

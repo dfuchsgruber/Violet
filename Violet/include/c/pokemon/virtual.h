@@ -190,6 +190,14 @@ s16 player_pokemon_compact();
 u8 player_pokemon_recount_pokemon();
 
 /**
+ * @brief Gets the hp, attack, defense, speed, sp. attack and sp. defense of a pokemon
+ * 
+ * @param p pokemon the pokemon to get
+ * @param dst where to put the stats
+ */
+void pokemon_get_stats(pokemon *p, u16 *dst);
+
+/**
  * Gets the attribute of a virtual pokemon
  * @param p The offset of the virtual pokemon
  * @param requested_attribute Id of the attribute to get

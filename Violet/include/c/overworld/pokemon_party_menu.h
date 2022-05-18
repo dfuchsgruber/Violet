@@ -27,7 +27,7 @@ typedef struct {
     u8 field_22;
     u8 number_options;
     u8 field_24[512];
-    u16 outdoor_move_idx;
+    s16 data[16];
 
 } pokemon_party_menu_options_state_t;
 
@@ -138,9 +138,9 @@ void pokemon_party_menu_wait_for_keypress_and_return_to_opts(u8 self);
 /**
  * Inits the rendering of text in the pokemon party menu
  * @param text the text to print
- * @param unknown TODO
+ * @param keep_open if the text should be kept open
  */
-void pokemon_party_menu_init_text_rendering(u8 *text, u8 unknown);
+void pokemon_party_menu_init_text_rendering(u8 *text, bool keep_open);
 
 /**
  * Pokemenu callback to wait for a text to be rendered
@@ -168,6 +168,13 @@ void pokemon_party_menu_print_question(u8 self);
 void pokemon_party_menu_wait_for_text_and_close(u8 self);
 
 /**
+ * @brief Checks if a text printer in the party menu is active
+ * 
+ * @return if a text printer is active in the party menu
+ */
+bool pokemon_party_menu_is_text_printer_active();
+
+/**
  * Returns to the pokemon party menu (callback)
  */
 void pokemon_party_menu_return_to();
@@ -185,6 +192,14 @@ void item_callback_do_rare_candy_if_issued(u8 self);
  * @param self self-reference
  */
 void pokemon_party_menu_do_item_use_animation(u8 self);
+
+/**
+ * @brief Updates the graphical display of a pokemon party menu slot
+ * 
+ * @param slot_idx the slot to update
+ * @param p with which data to update it
+ */
+void pokemon_party_menu_update_slot_display(u8 slot_idx, pokemon *p);
 
 #define PARTY_LAYOUT_SINGLE          0
 #define PARTY_LAYOUT_DOUBLE          1
@@ -323,5 +338,12 @@ void pokemon_party_menu_continuation_apply_item_effect(u8 self);
  * @param self self-reference
  **/
 void pokemon_party_menu_play_fanfare_after_text_finished(u8 self);
+
+/**
+ * @brief Callback that displays the first page of the rare candy stat update
+ * 
+ * @param self self-reference
+ */
+void pokemon_party_menu_rare_candy_display_page_0(u8 self);
 
 #endif /* INCLUDE_C_OVERWORLD_POKEMON_PARTY_MENU_H_ */

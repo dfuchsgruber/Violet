@@ -735,6 +735,11 @@
         bx r3
         .pool
 
+.org 0x08043198
+	ldr r3, = pokedex_get_id | 1
+	bx r3
+	.pool
+
 .org 0x8106904
 	.word pokedex_habitats
 

@@ -685,19 +685,51 @@ static crafting_recipe crafting_recipies_nutrients[] = {
         .flag = FLAG_PP_ITEM_RECIPE,
         .count = 1,
     },{
-        .item = ITEM_SONDERBONBON, 
-        .ingredients = {
-            [0] = {.item = ITEM_BITTERKRAUT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_ENERGIEQUARZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-        },
-        .flag = FLAG_RARE_CANDY_RECIPE,
-        .count = 1,
-    },{
         .item = ITEM_SUESSBONBON, 
         .ingredients = {
             [0] = {.item = ITEM_BITTERKRAUT, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
         },
+        .count = 1,
+    },{
+        .item = ITEM_EP_BONBON_S, 
+        .ingredients = {
+            [0] = {.item = ITEM_BITTERKRAUT, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FLAG_RARE_CANDY_RECIPE,
+        .count = 1,
+    },{
+        .item = ITEM_EP_BONBON_M, 
+        .ingredients = {
+            [0] = {.item = ITEM_BITTERKRAUT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_MINIPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FLAG_RARE_CANDY_RECIPE,
+        .count = 1,
+    },{
+        .item = ITEM_EP_BONBON_L, 
+        .ingredients = {
+            [0] = {.item = ITEM_BITTERKRAUT, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_RIESENPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FLAG_RARE_CANDY_RECIPE,
+        .count = 1,
+    },{
+        .item = ITEM_EP_BONBON_XL, 
+        .ingredients = {
+            [0] = {.item = ITEM_BITTERKRAUT, .count = 20, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_MINIPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.item = ITEM_RIESENPILZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FLAG_RARE_CANDY_RECIPE,
+        .count = 1,
+    },{
+        .item = ITEM_SONDERBONBON, 
+        .ingredients = {
+            [0] = {.item = ITEM_BITTERKRAUT, .count = 20, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_ENERGIEQUARZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FLAG_RARE_CANDY_RECIPE,
         .count = 1,
     },{
         .item = ITEM_GOLDBONBON, 

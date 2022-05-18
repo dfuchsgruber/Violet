@@ -17,4 +17,4 @@ def export_pokedex_order(stats, project, language='LANG_GER'):
     pokedex_order : list
         The pokedex order.
     """
-    return [stat.get('dex_number', 0) for stat in stats]
+    return [stat.get('dex_number', 0) for stat in stats] # Omit the first pokemon, the table is offset by 1

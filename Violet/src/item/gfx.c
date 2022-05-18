@@ -437,6 +437,10 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_FIRNONTORNIT] = {.gfx = gfx_item_firnontornitTiles, .pal = gfx_item_firnontornitPal},
     [ITEM_JUGONGNIT] = {.gfx = gfx_item_jugongnitTiles, .pal = gfx_item_jugongnitPal},
     [ITEM_WIRBELPILZ] = {.gfx = gfx_item_wirbelpilzTiles, .pal = gfx_item_wirbelpilzPal},
+    [ITEM_EP_BONBON_S] = {.gfx = gfx_item_ep_bonbon_sTiles, .pal = gfx_item_ep_bonbon_sPal},
+    [ITEM_EP_BONBON_M] = {.gfx = gfx_item_ep_bonbon_mTiles, .pal = gfx_item_ep_bonbon_mPal},
+    [ITEM_EP_BONBON_L] = {.gfx = gfx_item_ep_bonbon_lTiles, .pal = gfx_item_ep_bonbon_lPal},
+    [ITEM_EP_BONBON_XL] = {.gfx = gfx_item_ep_bonbon_xlTiles, .pal = gfx_item_ep_bonbon_xlPal},
 };
 
 const u8 *item_get_resource(u16 item_idx, u8 get_palette) {

@@ -19,9 +19,13 @@ u16 pokedex_get_species_by_dex_id(u16 dex_id) {
     if (!dex_id)
         return 0;
     u16 i;
-    for (i = 0; i < POKEMON_CNT - 1; i++) {
+    for (i = 0; i < POKEMON_CNT; i++) {
         if (pokedex_order[i] == dex_id)
-            return i;
+            return (u16)i;
     }
     return 0;
+}
+
+u16 pokedex_get_id(u16 species) {
+    return pokedex_order[species];
 }

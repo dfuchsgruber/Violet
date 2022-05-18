@@ -133,8 +133,9 @@ void pokedex_build_list() {
             }
             if (!is_alternative_form) {
                 if ((i < POKEMON_LOCKSCHAL && i > POKEMON_CELEBI) || i > POKEMON_DEOXYS) {
-                    DEBUG("Warning: Pokédex lists species %d (dex no %d (at 0x%x)), is that intended?\n", i, pokedex_get_id(i), pokedex_order + i - 1);
+                    DEBUG("Warning: Pokédex lists species %d (dex no %d (at 0x%x)), is that intended?\n", i, pokedex_get_id(i), pokedex_order + i);
                 }
+                DEBUG("Species %d has dex id %d\n", i, dex_idx);
                 list[list_size].species = i;
                 list[list_size].dex_id = dex_idx;
                 list[list_size].seen = pokedex_operator_by_dex_id(dex_idx, 0);

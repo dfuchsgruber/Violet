@@ -300,8 +300,8 @@ static u8 str_item_ap_top_description[] = LANGDEP(
 	PSTRING("Raises the PP of a selected move\nto its maximum level for one\nPokémon.")
 );
 static u8 str_item_goldbonbon_description[] = LANGDEP(
-	PSTRING("Ein besonderes Bonbon, das\nden Level eines Pokémon um\nbis zu drei anhebt."),
-	PSTRING("A special candy. It raises\nthe level of a Pokémon by up to\nthree.")
+	PSTRING("Ein besonderes Bonbon, das\nden Level eines Pokémon um\nbis zu fünf anhebt."),
+	PSTRING("A special candy. It raises\nthe level of a Pokémon by up to\nfive.")
 );
 static u8 str_item_megablock_description[] = LANGDEP(
 	PSTRING("Eine mögliche Statusänderung der\nPokémon im Team wird für\nfünf Runden verhindert."),
@@ -1742,6 +1742,22 @@ static u8 str_item_jugongnit_description[] = LANGDEP(
 static u8 str_item_wirbelpilz_description[] = LANGDEP(
 	PSTRING("Item (Tragen), das\nKp regeneriert, wenn der\nTräger ausgetauscht wird."),
 	PSTRING("Item to be held that\nregenerates Hp if its\nholder is switched out.")
+);
+static u8 str_item_ep_bonbon_s_description[] = LANGDEP(
+	PSTRING("Ein Bonbon, das voller Energie\nsteckt. Liefert beim Verzehr eine\nkleine Menge an EP."),
+	PSTRING("A candy full of energy. Eating\nit will supply a small amount of\nExp. to a Pokémon.")
+);
+static u8 str_item_ep_bonbon_m_description[] = LANGDEP(
+	PSTRING("Ein Bonbon, das voller Energie\nsteckt. Liefert beim Verzehr eine\ngewisse Menge an EP."),
+	PSTRING("A candy full of energy. Eating\nit will supply a medium amount of\nExp. to a Pokémon.")
+);
+static u8 str_item_ep_bonbon_l_description[] = LANGDEP(
+	PSTRING("Ein Bonbon, das voller Energie\nsteckt. Liefert beim Verzehr eine\ngroße Menge an EP."),
+	PSTRING("A candy full of energy. Eating\nit will supply a large amount of\nExp. to a Pokémon.")
+);
+static u8 str_item_ep_bonbon_xl_description[] = LANGDEP(
+	PSTRING("Ein Bonbon, das voller Energie\nsteckt. Liefert beim Verzehr eine\nsehr große Menge an EP."),
+	PSTRING("A candy full of energy. Eating\nit will supply a very large amount of\nExp. to a Pokémon.")
 );
 
 
@@ -8133,6 +8149,30 @@ item items[] = {
 		.field_usage = (void(*)(u8))0x80a2325,
 		.holding_effect_id = HOLD_EFFECT_VORTEX_SHROOM,
 		.holding_effect_param = 25,
+	},
+	[ITEM_EP_BONBON_S] = {
+		.name = LANGDEP(PSTRING("EP-Bonbon S"), PSTRING("Exp. Candy S")),
+		.index = ITEM_EP_BONBON_S,
+		.description = str_item_ep_bonbon_s_description, .pocket = POCKET_ITEMS, .type=1,
+		.field_usage = item_exp_candy_s_field_effect,
+	},
+	[ITEM_EP_BONBON_M] = {
+		.name = LANGDEP(PSTRING("EP-Bonbon M"), PSTRING("Exp. Candy M")),
+		.index = ITEM_EP_BONBON_M,
+		.description = str_item_ep_bonbon_m_description, .pocket = POCKET_ITEMS, .type=1,
+		.field_usage = item_exp_candy_m_field_effect,
+	},
+	[ITEM_EP_BONBON_L] = {
+		.name = LANGDEP(PSTRING("EP-Bonbon L"), PSTRING("Exp. Candy L")),
+		.index = ITEM_EP_BONBON_L,
+		.description = str_item_ep_bonbon_l_description, .pocket = POCKET_ITEMS, .type=1,
+		.field_usage = item_exp_candy_l_field_effect,
+	},
+	[ITEM_EP_BONBON_XL] = {
+		.name = LANGDEP(PSTRING("EP-Bonbon XL"), PSTRING("Exp. Candy XL")),
+		.index = ITEM_EP_BONBON_XL,
+		.description = str_item_ep_bonbon_xl_description, .pocket = POCKET_ITEMS, .type=1,
+		.field_usage = item_exp_candy_xl_field_effect,
 	},
 };
 

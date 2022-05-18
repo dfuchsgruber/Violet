@@ -115,7 +115,7 @@ void pokemon_party_menu_option_outdoor_move(u8 callback_self) {
                             				(u8) save1->healingplace.map)->map_namespace);
                             string_decrypt(strbuf, str_field_move_return_to_healing_place);
                             pokemon_party_menu_print_question(callback_self);
-                            options_state->outdoor_move_idx = (u8) index;
+                            options_state->data[0] = (u8) index;
                             return;
                         case FIELD_MOVE_DIG:
                             //Dig
@@ -124,7 +124,7 @@ void pokemon_party_menu_option_outdoor_move(u8 callback_self) {
                             				save1->last_outdoor_map.map)->map_namespace);
                             string_decrypt(strbuf, (u8*) str_field_move_return_dig);
                             pokemon_party_menu_print_question(callback_self);
-                            options_state->outdoor_move_idx = (u8) index;
+                            options_state->data[0] = (u8) index;
                             return;
                         case FIELD_MOVE_SOFTBOILED:
                         case FIELD_MOVE_MILK_DRINK:

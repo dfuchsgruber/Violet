@@ -255,6 +255,34 @@ void item_gold_candy_field_effect(u8 self);
 void item_rare_candy_field_effect(u8 self);
 
 /**
+ * @brief Field effect callback for the exp candy s
+ * 
+ * @param self self-reference
+ */
+void item_exp_candy_s_field_effect(u8 self);
+
+/**
+ * @brief Field effect callback for the exp candy m
+ * 
+ * @param self self-reference
+ */
+void item_exp_candy_m_field_effect(u8 self);
+
+/**
+ * @brief Field effect callback for the exp candy l
+ * 
+ * @param self self-reference
+ */
+void item_exp_candy_l_field_effect(u8 self);
+
+/**
+ * @brief Field effect callback for the exp candy xl
+ * 
+ * @param self self-reference
+ */
+void item_exp_candy_xl_field_effect(u8 self);
+
+/**
  * Prints the string that an item can not be used currently (oak says that)
  * @param self self-reference
  * @param from_overworld if the item was used in the overworld (or in the bag)

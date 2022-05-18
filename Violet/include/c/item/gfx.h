@@ -892,5 +892,13 @@ extern const u8 gfx_item_sengonitTiles[];
 extern const u8 gfx_item_sengonitPal[];
 extern const u8 gfx_item_wirbelpilzTiles[];
 extern const u8 gfx_item_wirbelpilzPal[];
+extern const u8 gfx_item_ep_bonbon_sTiles[];
+extern const u8 gfx_item_ep_bonbon_sPal[];
+extern const u8 gfx_item_ep_bonbon_mTiles[];
+extern const u8 gfx_item_ep_bonbon_mPal[];
+extern const u8 gfx_item_ep_bonbon_lTiles[];
+extern const u8 gfx_item_ep_bonbon_lPal[];
+extern const u8 gfx_item_ep_bonbon_xlTiles[];
+extern const u8 gfx_item_ep_bonbon_xlPal[];
 
 #endif
