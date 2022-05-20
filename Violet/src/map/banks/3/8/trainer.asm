@@ -65,7 +65,7 @@ str_trainer2_challange:
 str_trainer2_defeat:
 	.autostring 34 2 "Du bist zumindest nicht zimperlig, wenn es um Käfer-Pokémon geht."
 str_trainer3_challange:
-	.autostring 34 2 "Ich habe meine Pokémon in der Pension von Laubdorf aufgezogen.\pMal sehen, ob sie schon bereit für den Kampf sind."
+	.autostring 34 2 "Ich habe meine Pokémon in der Pension von Laubkind-Dorf aufgezogen.\pMal sehen, ob sie schon bereit für den Kampf sind."
 str_trainer3_defeat:
 	.autostring 34 2 "Vielleicht sollte ich meinen Pokémon noch etwas Zeit gebenDOTS"
 str_trainer4_challange:

@@ -128,7 +128,7 @@ mov_exclam:
 
 .ifdef LANG_GER
 str_0:
-    .autostring 34 2 "Laubdorf wirkt auf mich wie ein großes Nest.\pHier sind alle eine Familie, egal ob Mensch oder Pokémon."
+    .autostring 34 2 "Laubkind-Dorf wirkt auf mich wie ein großes Nest.\pHier sind alle eine Familie, egal ob Mensch oder Pokémon."
 str_1:
     .autostring 34 2 "Manche Pokémon lassen sich nur züchten, wenn ihre Eltern ein bestimmtes Item tragen."
 str_2:

@@ -38,8 +38,7 @@ typedef struct {
 	u16 offspring_present : 1;
 	u16 offspring_unused : 15;
 	// u16 offspring_personality_lower; // why would you only store this, thats akward!
-	u8 step_counter;
-	u8 field_283;
+	u16 step_counter;
 } daycare_stru;
 
 typedef struct {
@@ -76,7 +75,7 @@ void _daycare_spawn_egg();
  * Calculates how many steps the current egg cycle needs.
  * @return the length of a cycle for an egg
  */
-u8 breeding_get_cycle_steps();
+u16 breeding_get_cycle_steps();
 
 /**
  * Checks if an egg can hatch.
@@ -125,5 +124,15 @@ void breeding_egg_add_move_if_known_by_parent(pokemon *egg, box_pokemon *father,
  * @param daycare the daycare structure
  */
 void daycare_remove_egg(daycare_stru *daycare);
+
+
+#define PARTY_TEMPERATURE_MAX 20000
+
+/**
+ * @brief Gets the temperature of the player party. 
+ * 
+ * @return A temperature in ]0, PARTY_TEMPERATURE_MAX], with the default temperature being at 500
+ */
+u32 breeding_get_party_temperature();
 
 #endif /* INCLUDE_C_POKEMON_EGG_MOVES_H_ */

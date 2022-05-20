@@ -60,3 +60,24 @@ bool box_has_empty_slot() {
     }
     return false;
 }
+
+
+u8 player_party_count_with_ability(u8 ability) {
+  u8 count = 0;
+  for (int i = 0; i < player_pokemon_cnt; i++) {
+    if (pokemon_get_ability(player_pokemon + i) == ability)
+      count++;
+  }
+  return count;
+}
+
+
+u8 player_party_count_of_type(u8 type) {
+  u8 count = 0;
+  for (int i = 0; i < player_pokemon_cnt; i++) {
+    u16 species = (u16)pokemon_get_attribute(player_pokemon + i, ATTRIBUTE_SPECIES, NULL);
+    if (basestats[species].type1 == type || basestats[species].type2 == type)
+      count++;
+  }
+  return count;
+}

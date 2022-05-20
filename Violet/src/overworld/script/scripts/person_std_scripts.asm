@@ -525,7 +525,7 @@ ow_script_person_accessible_move_tutor:
 	callstd MSG_KEEPOPEN
 	checkitem ITEM_ENERGIEQUARZ, 1
 	compare LASTRESULT 1
-	gotoif NOT_EQUAL no_quarz
+	gotoif NOT_EQUAL no_quarz_in_bag
 	loadpointer 0 str_ask_quarz
 	callstd MSG_YES_NO
 	compare LASTRESULT 0
@@ -572,6 +572,10 @@ accessible_move_tutor_no_moves:
 no_quarz:
 	closeonkeypress
 	goto accessible_move_tutor_end
+no_quarz_in_bag:
+	loadpointer 0 str_no_quarz
+	callstd MSG_KEEPOPEN
+	goto no_quarz
 
 ow_script_recipe:
 	copyvar 0x8004 0x8000
@@ -591,6 +595,8 @@ str_which_mon_to_tutor:
 	.autostring 34 2 "Welchen Angriff soll BUFFER_1 erlernen?"
 str_quarz_intro:
 	.autostring 34 2 "Eine mysteriöse Energie scheint diesen Kristall zu umgebenDOTS"
+str_no_quarz:
+	.autostring 34 2 "Das Leuchten errinnert an einen EnergiequarzDOTS"
 str_ask_quarz:
 	.autostring 34 2 "Möchtest du Energiequarz in den Kristall einsetzen?"
 str_crystal_ask_mon:

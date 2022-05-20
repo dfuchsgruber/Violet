@@ -232,7 +232,7 @@ end
 .ifdef LANG_GER
 
 str_0x8c0f86:
-    .autostring 34 2 "Wenn eines meiner Pokémon Surfer beherrschen würde, könnte ich von hier aus auf den Wellen bis nach Laubdorf reiten!"
+    .autostring 34 2 "Wenn eines meiner Pokémon Surfer beherrschen würde, könnte ich von hier aus auf den Wellen bis nach Laubkind-Dorf reiten!"
 
 
 .elseif LANG_EN

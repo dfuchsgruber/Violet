@@ -89,6 +89,7 @@ void special_item_obtain_show() {
             item_get_description(item_idx));
 		fmem.item_obtain_tb_id = box_id;
 	}
+	DEBUG("Item description box %d\n", fmem.item_obtain_tb_id);
 
     // Create the oam
     u16 tile = oam_vram_get_tile(ITEM_OBTAIN_TAG);

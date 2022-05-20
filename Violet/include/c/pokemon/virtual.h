@@ -576,4 +576,20 @@ void pokemon_add_friendship(pokemon *p, s8 value);
  **/
 u8 pokemon_get_pokerus(pokemon *p, u8 mask);
 
+/**
+ * @brief Counts the pokemon in the player party with an ability
+ * 
+ * @param ability The ability to count
+ * @return u8 how many pokemon in the player party have the ability
+ */
+u8 player_party_count_with_ability(u8 ability);
+
+/**
+ * @brief Counts the pokemon in the player party with a given type
+ * 
+ * @param type The type to check
+ * @return u8 How many pokemon in the player have this type
+ */
+u8 player_party_count_of_type(u8 type);
+
 #endif /* INCLUDE_C_POKEMON_VIRTUAL_H_ */

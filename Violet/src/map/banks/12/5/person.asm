@@ -10,7 +10,7 @@ ow_script_laubdorf_clouds_person_0:
 
 .ifdef LANG_GER
 str_0:
-    .autostring 34 2 "Selbst über den Wolken hat Laubdorf eine äußert beruhigende Wirkung, findest du nicht?"
+    .autostring 34 2 "Selbst über den Wolken hat Laubkind-Dorf eine äußert beruhigende Wirkung, findest du nicht?"
 .elseif LANG_EN
 str_0:
     .autostring 34 2 "Even above the clouds, Leaf Village has a very soothing effect, don't you agree?"

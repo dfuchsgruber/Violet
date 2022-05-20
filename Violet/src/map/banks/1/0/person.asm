@@ -380,7 +380,7 @@ end
 .ifdef LANG_GER
 
 str_0x8f45a3:
-    .autostring 34 2 "Warst du schon in Laubdorf?\pDort gibt es eine Pokémon-Pension.\pDie Leute da sind so nett!"
+    .autostring 34 2 "Warst du schon in Laubkind-Dorf?\pDort gibt es eine Pokémon-Pension.\pDie Leute da sind so nett!"
 
 .elseif LANG_EN
 

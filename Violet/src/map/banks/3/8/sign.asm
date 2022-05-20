@@ -15,7 +15,7 @@ ow_script_route_8_sign_1:
 
 .ifdef LANG_GER
 str_sign_0:
-	.autostring 34 2 "Route 8\nUP_ARROWLaubdorf\lDOWN_ARROWKranzwald"
+	.autostring 34 2 "Route 8\nUP_ARROWLaubkind-Dorf\lDOWN_ARROWKranzwald"
 str_sign_1:
 	.autostring 34 2 "Hügel der Gelassenheit"
 

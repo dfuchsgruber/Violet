@@ -242,14 +242,11 @@ bool pokemon_party_has_flamebody(){
     return false;
 }
 
-u8 breeding_get_cycle_steps() {
-  int cycle = 255;
-  int hot_spring_boost = *var_access(HATCHING_BOOST_STEPS) + 1000;
-  cycle *= 1000;
-  cycle /= hot_spring_boost;
-  if (pokemon_party_has_flamebody())
-    cycle /= 2;
-  return (u8)(MAX(1, MIN(255, cycle)));
+u16 breeding_get_cycle_steps() {
+  u32 base_cycle = 256;
+  base_cycle *= 500;
+  base_cycle /= breeding_get_party_temperature();
+  return (u16)MIN(4096, MAX(1, base_cycle));
 }
 
 bool box_pokemon_hatching_proceed(box_pokemon *egg, bool consider_zero_cycles,

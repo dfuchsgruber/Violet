@@ -35,6 +35,8 @@
 #include "math.h"
 #include "constants/vars.h"
 #include "pc.h"
+#include "constants/abilities.h"
+#include "constants/pokemon_types.h"
 
 sprite oam_sprite_incubator_egg = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_64_64,
     .attr2 = ATTR2_PRIO(2)};
@@ -164,9 +166,24 @@ void incubator_context_menu_item_print_callback(u8 tbox_idx, int idx, u8 y) {
   (void)y;
 }
 
-void incubator_load_temperature() {
-  u16 pixels = (u16)(((1000 - *var_access(HATCHING_BOOST_STEPS)) * INCUBATOR_TEMPERATURE_PIXELS)
-      / 1000);
+u32 breeding_get_party_temperature() {
+
+  int temperature = *var_access(HATCHING_BOOST_STEPS) + 500;
+  if (player_party_count_with_ability(FLAMMKOERPER) > 0) {
+    temperature += 500;
+  }
+  if (player_party_count_with_ability(FROSTSCHICHT) > 0) {
+    temperature -= 400;
+  }
+  temperature += 100 * player_party_count_of_type(TYPE_FEUER);
+  temperature -= 50 * player_party_count_of_type(TYPE_EIS);
+  return (u32)MIN(2000, MAX(1, temperature));
+}
+
+void incubator_load_temperature() { 
+  u32 temperature = breeding_get_party_temperature();
+  DEBUG("Party temperature is %d\n", temperature);
+  u16 pixels = (u16)((2000 - temperature) * INCUBATOR_TEMPERATURE_PIXELS / 2000);
   io_set(IO_BGVOFS(3), (u16)(-pixels));
 }
 

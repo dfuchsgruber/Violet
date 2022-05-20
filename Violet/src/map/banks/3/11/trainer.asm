@@ -84,7 +84,7 @@ str_trainer3_challange:
 str_trainer3_defeat:
     .autostring 34 2 "Du rechnest bestimmt mit einer tiefgründigen Antwort.\pAber das Interessanteste am Schwimmen sind natürlich die Schwimmerinen!"
 str_trainer4_challange:
-    .autostring 34 2 "Mein tägliches Training sieht es vor, vom Küstenberg bis nach Laubdorf zu schwimmen!"
+    .autostring 34 2 "Mein tägliches Training sieht es vor, vom Küstenberg bis nach Laubkind-Dorf zu schwimmen!"
 str_trainer4_defeat:
     .autostring 34 2 "ArghDOTS\nDu bist auch nicht von schlechten ElternDOTS"
 str_trainer5_challange:

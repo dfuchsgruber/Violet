@@ -20,7 +20,7 @@ ow_script_laubdorf_sign_2:
 
 .ifdef LANG_GER
 str_0:
-    .autostring 34 2 "Laubdorf\pWo Mensch und Pokémon eine Familie sind."
+    .autostring 34 2 "Laubkind-Dorf\pWo Mensch und Pokémon eine Familie sind."
 str_1:
     .autostring 34 2 "Pokémon-Pension"
 str_2:

@@ -133,7 +133,7 @@ str_after_6:
 str_later_6:
     .autostring 34 2 "Ist schon in Ordnung, denke ich.\pDu bist stark genug, an so einem Ort auf dich selbst aufzupassen."
 str_before_7:
-    .autostring 34 2 "Ich habe das Pokémon-Züchten in Laubdorf gelernt.\pViele der Exemplare, die ich züchte, verschicke ich im Wundertausch.\pAber starke Pokémon ziehe ich zum Kampf auf!"
+    .autostring 34 2 "Ich habe das Pokémon-Züchten in Laubkind-Dorf gelernt.\pViele der Exemplare, die ich züchte, verschicke ich im Wundertausch.\pAber starke Pokémon ziehe ich zum Kampf auf!"
 str_after_7:
     .autostring 34 2 "Beeindruckend!\pHast du deine Pokémon selbst aufgezogen?"
 str_later_7:
