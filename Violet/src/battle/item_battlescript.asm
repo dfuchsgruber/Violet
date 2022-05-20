@@ -38,6 +38,7 @@ bsc_blizzard_egg:
     playanimation BANK_SCRIPTING BATTLE_ANIM_HAIL_CONTINUES 0
     waitmessage 0x40
     removeitem BANK_SCRIPTING
+    call bsc_form_changes_by_weather
     end3
 
 .global bsc_desert_egg
@@ -49,6 +50,7 @@ bsc_desert_egg:
     playanimation BANK_SCRIPTING BATTLE_ANIM_SANDSTORM_CONTINUES 0
     waitmessage 0x40
     removeitem BANK_SCRIPTING
+    call bsc_form_changes_by_weather
     end3
 
 .global bsc_sun_egg
@@ -60,6 +62,7 @@ bsc_sun_egg:
     playanimation BANK_SCRIPTING BATTLE_ANIM_SUN_CONTINUES 0
     waitmessage 0x40
     removeitem BANK_SCRIPTING
+    call bsc_form_changes_by_weather
     end3
 
 .global bsc_storm_egg
@@ -71,6 +74,7 @@ bsc_storm_egg:
     playanimation BANK_SCRIPTING BATTLE_ANIM_RAIN_CONTINUES 0
     waitmessage 0x40
     removeitem BANK_SCRIPTING
+    call bsc_form_changes_by_weather
     end3
 
 .global bsc_energiequarz

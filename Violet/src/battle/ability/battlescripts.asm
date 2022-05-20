@@ -122,7 +122,7 @@ pause 0x20
 printstring 0x187
 waitstate
 playanimation 0x7 0xD 0x0
-call 0x81DD572
+call bsc_form_changes_by_weather
 end3
 
 bsc_ability_inflicts_damage:
