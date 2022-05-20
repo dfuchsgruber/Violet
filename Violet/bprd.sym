@@ -1714,3 +1714,7 @@ overworld_weather_dynamic_fog_oam_template = 0x083c6650;
 overworld_weather_dynamic_fog_graphic = 0x083c6634;
 item_callback_rare_candy_step = 0x081263a0 | 1;
 str_pokemon_reached_level = 0x08416f0e;
+gfx_pokemon_formeo_frontspriteTiles = 0x08E26780;
+gfx_pokemon_formeo_backspriteTiles = 0x08E27288;
+gfx_pokemon_formeo_frontspritePal = 0x08E27208;
+gfx_pokemon_formeo_backspritepal = 0x08E27C44;
