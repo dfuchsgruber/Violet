@@ -51,6 +51,7 @@ ow_script_pick_up_item:
     hidesprite LASTTALKED
     additem 0x8004, 0x8005
     special2 LASTRESULT, SPECIAL_BUFFER_TM_HM_MOVE_NAME
+    copyvar 0x8008, LASTRESULT
     special SPECIAL_ITEM_OBTAIN_SHOW_DESCRIPTION
     compare 0x8008, 1
     callif EQUAL ow_script_find_hm_tm

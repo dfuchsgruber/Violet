@@ -28,9 +28,8 @@ ow_script_sonnaufeld_clouds_icarus_trigger:
     callstd MSG_KEEPOPEN
     closeonkeypress
     hide_mugshot
-    npc_move_to 1 0x1e 0x14 waitmovement=0
-    npc_move_to 2 0x1e 0x15 waitmovement=0
-    waitmovement 0
+    npc_move_to 1 0x1e 0x14 waitmovement=1
+    npc_move_to 2 0x1e 0x15 waitmovement=1
     movesprite2 1 0x1e 0x14
     movesprite2 2 0x1e 0x15
     applymovement 1 mov_fu

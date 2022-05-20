@@ -598,7 +598,7 @@
 				{
 					"target_index": "22",
 					"picture": "238",
-					"x": "18",
+					"x": "17",
 					"y": "42",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_RIGHT_LEFT_DOWN_UP",

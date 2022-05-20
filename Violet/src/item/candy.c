@@ -143,6 +143,7 @@ static void exp_candy_wait_level_up_fanfare(u8 self) {
 static void exp_candy_wait_keypress_and_close_pokemon_party_menu(u8 self) {
     if (super.keys_new.keys.A || super.keys_new.keys.B) {
         exp_candy_delete_bar_and_free(false);
+        DEBUG("Use return callback %d, is @0x%x\n", pokemon_party_menu_use_return_callback, pokemon_party_menu_state.callback);
         if (!pokemon_party_menu_use_return_callback)
             pokemon_party_menu_state.callback = NULL;
         pokemon_party_menu_return_and_execute_callback(self);
@@ -159,7 +160,7 @@ static void exp_candy_wait_keypress_and_close_pokemon_party_menu(u8 self) {
 static void exp_candy_step(u8 self) {
     (void)self;
     if (!big_callback_is_active(exp_candy_fill_exp_bar)) {
-
+        pokemon_party_menu_use_return_callback = true;
         if (fmem.rare_candy_exp_leveled_up) {
             u8 party_idx = pokemon_party_menu_current_index;
             pokemon *p = player_pokemon + party_idx;
@@ -176,6 +177,7 @@ static void exp_candy_step(u8 self) {
             big_callbacks[self].function = exp_candy_wait_level_up_fanfare;
             //item_callback_rare_candy_step(self, pokemon_party_menu_wait_for_text_and_close);
         } else {
+            DEBUG("Not leveled up.\n");
             big_callbacks[self].function = exp_candy_wait_keypress_and_close_pokemon_party_menu;
         }
     }
@@ -337,7 +339,7 @@ void item_rare_candy_field_effect(u8 self) {
 void item_exp_candy_s_field_effect(u8 self) {
     item_callback_after_pokemon_selected = item_callback_exp_candy;
     rare_candy_reset();
-    fmem.rare_candy_exp_remaining = 500;
+    fmem.rare_candy_exp_remaining = 500;//500;
     item_field_fade_to_scene_and_execute_callback(self);
 }
 
