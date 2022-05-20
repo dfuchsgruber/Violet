@@ -95,6 +95,7 @@ typedef struct overworld_sprite {
 #define OW_PAL_TAG_RECIPE 0x2E0E
 #define OW_PAL_TAG_UPSTREAM 0x2E0F
 #define OW_PAL_TAG_FAUN 0x2E10
+#define OW_PAL_TAG_SPECIAL_SHELL 0x2E11
 #define OW_PAL_TAG_END 0x3000
 
 /**
@@ -149,6 +150,12 @@ overworld_sprite *overworld_sprite_get_by_shell_idx(u16 shell_idx);
  * @return the palette sprite
  **/
 palette *overworld_palette_get_by_shell();
+
+/**
+ * Returns the overworld palette of a special shell
+ * @return the palette sprite
+ **/
+palette *overworld_palette_get_by_special_shell();
 
 /**
  * Returns the overworld sprite of a trash
@@ -280,6 +287,14 @@ enum {
  * @param oam_idx the oam to free
  **/
 void npc_delete_rage_sprite(u8 oam_idx);
+
+/**
+ * @brief Checks if a shell idx is a special shell with the current daily seed
+ * 
+ * @param shell_idx The shell to check
+ * @return if the shell is special
+ */
+bool shell_is_special(u16 shell_idx);
 
 extern u8 gfx_ow_bisasamTiles[];
 extern color_t gfx_ow_bisasamPal[16];
@@ -1849,7 +1864,9 @@ extern const color_t gfx_tutor_crystal_waterPal[16];
 extern const u8 gfx_ow_mushroomTiles[];
 extern const color_t gfx_ow_mushroomPal[];
 extern const u8 gfx_ow_shellTiles[];
+extern const u8 gfx_ow_special_shellTiles[];
 extern const color_t gfx_ow_shellPal[];
+extern const color_t gfx_ow_special_shellPal[];
 extern const u8 gfx_ow_boulder_gym_puzzleTiles[];
 extern const u8 gfx_ow_boulder_hayTiles[];
 extern const color_t gfx_ow_boulder_gym_puzzlePal[];

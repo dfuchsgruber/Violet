@@ -37,6 +37,22 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+
+	copyvarifnotzero 0x8000 ITEM_TM43
+	copyvarifnotzero 0x8001 1
+	callstd ITEM_OBTAIN
+	releaseall
+	end
+
+	clearflag ROUTE_5_CLOUD_RECEIVED
+	clearflag FLAG_ROUTE_5_CLOUD_ARIADOS_DEFEATED
+	clearflag FLAG_ROUTE_5_CLOUD_QUEST_TAKEN
+	settrainerflag 0x1da
+
+	end
+	clearflag FLAG_PROFESSOR_TANN_GONE
+	clearflag FLAG_ELISE_GONE
+	end
 	additem ITEM_GOLDBONBON 1
 	end
 	clearflag KASKADA_BLACKMARKET_BLAISE

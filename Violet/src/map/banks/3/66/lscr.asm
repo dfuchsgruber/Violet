@@ -10,6 +10,7 @@
 .include "levelscript_types.s"
 .include "healingplaces.s"
 .include "story_states.s"
+.include "specials.s"
 
 .global lscr_0x718dc8
 
@@ -383,10 +384,13 @@ goto ow_script_0x8aac32
 ow_script_0x8ab100:
 fanfare 0x13e
 additem ITEM_POKEBALL 0x5
+setvar 0x8004, ITEM_POKEBALL
+special SPECIAL_ITEM_OBTAIN_SHOW_DESCRIPTION
 loadpointer 0x0 str_0x8ad201
 callstd MSG_KEEPOPEN
 closeonkeypress
 waitfanfare
+special SPECIAL_ITEM_OBTAIN_DELETE_DESCRIPTION
 return
 
 

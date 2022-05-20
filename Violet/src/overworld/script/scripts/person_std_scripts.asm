@@ -280,7 +280,8 @@ load_str_want_to_harvest_single:
 loaded_str_want_to_harvest_single:
 	callstd MSG_YES_NO
 	compare LASTRESULT 0
-	gotoif EQUAL dont_harvest
+	gotoif EQUAL dont_harvest 
+    special SPECIAL_ITEM_OBTAIN_SHOW_DESCRIPTION
 	fanfare 262
 	special2 LASTRESULT SPECIAL_BERRY_TREE_PICK
 	compare LASTRESULT 0
@@ -294,6 +295,7 @@ load_str_harvest_single:
 loaded_str_harvest:
 	callstd MSG_KEEPOPEN
 	waitfanfare
+    special SPECIAL_ITEM_OBTAIN_DELETE_DESCRIPTION
 	compare 0x8005 1
 	gotoif EQUAL load_str_harvested_single
 	loadpointer 0 str_harvested

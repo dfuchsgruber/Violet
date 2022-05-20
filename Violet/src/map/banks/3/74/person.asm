@@ -121,7 +121,6 @@ goto ow_script_0x8ecbfa
 
 
 ow_script_0x8ecbfa:
-additem ITEM_SONDERBONBON 0x63
 loadpointer 0x0 str_0x81c4e9
 show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 fadescreen 0x1

@@ -307,6 +307,10 @@ special_table equ 0x0815FCC0
         .word trash_get_encounter_or_item | 1
 .org (special_table + 207 * 4)
         .word special_overworld_effect_lightning | 1
+.org (special_table + 208 * 4)
+        .word special_item_obtain_show | 1
+.org (special_table + 209 * 4)
+        .word special_item_obtain_delete | 1
 // 207 <= free <= 211
 
 .org (special_table + (0x129 * 4))

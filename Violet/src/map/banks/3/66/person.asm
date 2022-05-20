@@ -323,41 +323,41 @@ str_4:
 str_5:
 	.autostring 34 2 "Schön, dass ihr nun beide hier seid, PLAYER und RIVAL."
 str_6:
-	.autostring 34 2 "Ihr wisst vermutlich schon, warum ich euch herbestellt habe, oder?\pIch werde mich auf eine gefährliche Expedition begeben.\pVielleicht bin ich erst einmal eine ganze Weile unterwegs."
+	.autostring 34 2 "Ich will euch auch gar nicht länger auf die Folter spannen und euch sagen, warum ihr hier seid.\pIch werde mich auf eine gefährliche Expedition begeben.\pVielleicht bin ich erst einmal eine ganze Weile unterwegs."
 str_7:
 	.autostring 34 2 "Eine Expedition?\pDas klingt ganz schön gefährlichDOTS"
 str_8:
-	.autostring 34 2 "Aber auch super aufregend!\pWohin geht diese Expedition denn, Papa?"
+	.autostring 34 2 "Aber auch super aufregend!"
 str_9:
-	.autostring 34 2 "Freut mich, dass du frägst, RIVAL."
+	.autostring 34 2 "Das ist eine Untertreibung!"
 str_10:
-	.autostring 34 2 "Ich bin schon seit einiger Zeit auf der Spur eines sagenumwobenen Relikts, das man oft einfach als Alte Karte bezeichnet.\pIm Grunde handelt es sich dabei um einen Wegweiser, der einen direkt zur versunkenen Stadt Atlantea führen soll."
+	.autostring 34 2 "Ich bin schon seit einiger Zeit auf der Spur eines sagenumwobenen Relikts names Alte Karte.\pIm Grunde handelt es sich dabei um einen Wegweiser, der einen direkt zur versunkenen Stadt Atlantea führen soll."
 str_11:
 	.autostring 34 2 "Die versunkene Stadt Atlantea?"
 str_12:
-	.autostring 34 2 "Aber gibt es die denn wirklich, Papa?\pIch dachte immer, das wäre bloß eine Geschichte."
+	.autostring 34 2 "Aber gibt es die denn wirklich, Papa?\pIch dachte immer, das wäre bloß ein Märchen."
 str_13:
-	.autostring 34 2 "Das weiß niemand so genau, RIVAL.\pSicherlich ist die Legende der versunkenen Stadt Atlantea auch einfach ein Seefahrermärchen.\pUnd viele der Erzählungen davon sind vermutlich mit einigen Übertreibungen ausgeschmückt."
+	.autostring 34 2 "Ganz ohne Zweifel sind viele der Erzählungen über diese Stadt mit der ein oder anderen Übertreibung ausgeschmücktDOTS"
 str_14:
-	.autostring 34 2 "Aber gleichzeitigDOTS\pGibt es auch viele Hinweise darauf, dass es eine solche Stadt tatsächlich einmal gegeben haben könnte."
+	.autostring 34 2 "Aber gleichzeitigDOTS\pGibt es auch viele Hinweise darauf, dass es eine solche Stadt tatsächlich einmal gegeben hat."
 str_15:
-	.autostring 34 2 "Und wie aufregend es wäre, wenn jemand diese Stadt entdecken würde!\pWir könnten so viel über die Menschen lernen, die in Theto vor Jahrhunderten gelebt haben."
+	.autostring 34 2 "Und ist es nicht aufregend, nach dieser Stadt zu suchen?\pWir könnten so viel über die Menschen lernen, die in Theto vor Jahrhunderten gelebt haben."
 str_16:
-	.autostring 34 2 "So eine versunkene Stadt zu erkundenDOTS\pDas hört sich nach einem aufregenden Abenteuer an!"
+	.autostring 34 2 "Eine versunkene Stadt zu erkundenDOTS\pDas hört sich nach einem tollen Abenteuer an!"
 str_17:
-	.autostring 34 2 "Aber das bedeutet auch, dass ihr mich erst einmal eine Weile nicht sehen werdet.\pVielleicht bin ich für Wochen oder sogar Monate unterwegs."
+	.autostring 34 2 "Aber es bedeutet auch, dass ich mich einigen Gefahren aussetzen muss.\pIn letzter Zeit ist es immer gefährlicher geworden, in See zu stechenDOTS\pDie Blackbeard Piratenbande treibt auf dem Meer ihr UnwesenDOTS\pUnd ich weiß nicht, wie lange mich diese Expedition beschäftigen wird."
 str_18:
 	.autostring 34 2 "Und ich kann natürlich nicht einfach gehen, ohne mich von euch zu verabschieden, oder?"
 str_19:
-	.autostring 34 2 "Alles klar, Papa!\pIch verstehe schon!\nDu gehst jetzt auch auf ein Abenteuer."
+	.autostring 34 2 "Alles klar, Papa!\pIch verstehe schon!"
 str_20:
-	.autostring 34 2 "Das liegt wohl bei uns in der Familie!"
+	.autostring 34 2 "Das Abenteuer liegt bei uns in der Familie!"
 str_21:
-	.autostring 34 2 "Und außerdem ist das perfekt.\pDu findest diese versunkene Stadt und dann werde ich der Trainer sein, der sie erkundet."
+	.autostring 34 2 "Und außerdem ist das perfekt.\pWenn du herausfindest, wo diese versunkene Stadt liegtDOTS\pDann kann ich sie als erster Trainer erkunden!"
 str_22:
-	.autostring 34 2 "Ich bin ja sowas von aufgeregt!"
+	.autostring 34 2 "Da wird man ganz hibbelig!"
 str_23:
-	.autostring 34 2 "Also, worauf warten wir noch, PLAYER?\pDa draußen warten Abenteuer auf uns!"
+	.autostring 34 2 "PLAYER!\pWir haben keine Zeit, hier herumzutrödeln.\pDa draußen warten unzählige Abenteuer auf uns!"
 str_24:
 	.autostring 34 2 "J-Jetzt warte doch 'mal, RIVAL!"
 str_25:
@@ -369,17 +369,17 @@ str_27:
 str_28:
 	.autostring 34 2 "Und wenn wir schon dabei sindDOTS"
 str_29:
-	.autostring 34 2 "Kannst du am besten auch gleich noch auf RIVAL aufpassen."
+	.autostring 34 2 "Pass bitte auch auf RIVAL auf, ja?\pDu siehst ja, dass sein Hitzkopf manchmal etwas mit ihm durchgehtDOTS"
 str_30:
 	.autostring 34 2 "Und bevor ich es vergesseDOTS"
 str_31:
-	.autostring 34 2 "Meine Assistentin Elise wollte dich und RIVAL noch sprechen.\pEs klang so, als hätte sie etwas für euch."
+	.autostring 34 2 "Meine Assistentin Elise wollte euch beide auch noch sprechen.\pEs klang so, als hätte sie etwas für euch."
 str_32:
 	.autostring 34 2 "Aber RIVAL ist wohl schon längst über alle BergeDOTS"
 str_33:
-	.autostring 34 2 "Also sei doch so lieb und sprich mit ihr, bevor du dich wieder auf den Weg machst, ja?"
+	.autostring 34 2 "Also sei doch so lieb und sprich wenigstens du mit ihr, bevor du dich wieder auf den Weg machst, ja?"
 str_34:
-	.autostring 34 2 "Bis dann, PLAYER!\pVielleicht sehen wir uns beim nächsten Mal ja in der versunkenen Stadt Atlantea wieder.\pHalt die Ohren steif!"
+	.autostring 34 2 "Bis dann, PLAYER!\pVielleicht kann ich dir bei unserem nächsten Treffen die sagenumwobene versunkene Stadt Atlantea zeigen!\pHalt die Ohren steif!"
 
 str_0x843a47:
 	.autostring 35 2 "Wie geht es dir, PLAYER?\pVerfolgst du immer noch deine Träume?\pLass dich auf deinem Weg von niemanden abhalten!"
@@ -509,7 +509,7 @@ str_0x8ab119:
 str_0x8a7951:
     .autostring 35 2 "Hallo PLAYER!\pWie geht es dir?\pSammelst du auch fleißig Daten für den Pokédex?"
 str_expedition2:
-    .autostring 34 2 "Professor Tann will dich sehen.\pEr begibt sich bald auf eine Expedition."
+    .autostring 34 2 "Professor Tann will dich sehen."
 str_elise_0:
 	.autostring 34 2 "PLAYER!\pSchön, dich zu sehen."
 str_elise_1:
@@ -521,7 +521,7 @@ str_elise_3:
 str_elise_4:
 	.autostring 34 2 "Und um ehrlich zu sein, ist uns in der Laz. Corp. ein Durchbruch gelungen."
 str_elise_5:
-	.autostring 34 2 "Aber ich will die Überraschung nicht vorweg nehmen.\pKomm einfach in das Hauptgebäude der Laz. Corp. in Orina City.\pDort werde ich mit meiner Überraschung auf dich warten, ja?"
+	.autostring 34 2 "Aber ich will die Überraschung nicht vorweg nehmen.\pKomm einfach in das Hauptgebäude der Laz. Corp. in Orina City.\pDort werde ich auf dich warten, ja?"
 str_elise_6:
 	.autostring 34 2 "Orina City liegt westlich von Route 2, also nicht weit von hier."
 str_elise_7:

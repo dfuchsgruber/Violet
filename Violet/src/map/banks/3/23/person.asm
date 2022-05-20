@@ -90,7 +90,7 @@ ow_script_route_5_icarus:
     faceplayer
     checktrainerflag 0x1da
     gotoif EQUAL dont_fight_icarus
-    load_mugshot MUGSHOT_ICARUS mask_name=1
+    draw_mugshot MUGSHOT_ICARUS mask_name=1
     trainerbattlecont 1 0x1da 0 str_icarus_before_battle str_icarus_after icarus_defeated
 dont_fight_icarus:
     checkflag ROUTE_5_CLOUD_RECEIVED
@@ -100,9 +100,10 @@ dont_fight_icarus:
     checkflag FLAG_ROUTE_5_CLOUD_QUEST_TAKEN
     gotoif EQUAL icarus_quest_taken
     loadpointer 0 str_icarus_reask_quest
-    show_mugshot MUGSHOT_ICARUS hide_mugshot=0 message_type=MSG_YES_NO
+    show_mugshot MUGSHOT_ICARUS hide_mugshot=0 message_type=MSG_KEEPOPEN
+    yesnobox 23 7
     compare LASTRESULT 0
-    gotoif EQUAL icarus_refuse_quest
+    gotoif EQUAL icarus_refuse_quest 
     goto take_quest
 icarus_defeated:
     loadpointer 0 str_icarus_take_quest
@@ -116,9 +117,10 @@ icarus_defeated:
     loadpointer 0 str_icarus_take_quest4
     update_mugshot_emotion MUGSHOT_NORMAL
     callstd MSG_KEEPOPEN
-    loadpointer 0 str_icarus_take_quest4
+    loadpointer 0 str_icarus_take_quest5
     update_mugshot_emotion MUGSHOT_HAPPY
-    callstd MSG_YES_NO
+    callstd MSG_KEEPOPEN
+    yesnobox 23 7
     compare LASTRESULT 0
     gotoif EQUAL icarus_refuse_quest
 take_quest:
@@ -147,8 +149,11 @@ icarus_done:
     end
 receive_cloud:
     call ow_script_route_5_icarus_receive_cloud
+    closeonkeypress
+    hide_mugshot
     fadescreen 1
     hidesprite LASTTALKED
+    hidesprite 40
     fadescreen 0
     release
     end
@@ -160,17 +165,20 @@ ow_script_route_5_icarus_receive_cloud:
     loadpointer 0 str_icarus_make_cloud
     show_mugshot MUGSHOT_ICARUS message_type=MSG
     fadescreen 1
-    pause 20
+    pause 64
     fadescreen 0
     loadpointer 0 str_icarus_give_cloud
     show_mugshot MUGSHOT_ICARUS message_type=MSG_KEEPOPEN
     fanfare 0x13e
     additem ITEM_FAHRRAD 0x1
+    setvar 0x8004, ITEM_FAHRRAD
+    special SPECIAL_ITEM_OBTAIN_SHOW_DESCRIPTION
     loadpointer 0 str_receive_cloud
     callstd MSG_KEEPOPEN
     waitfanfare
     closeonkeypress
     removeitem ITEM_WOLKENGARN 0x1
+    special SPECIAL_ITEM_OBTAIN_DELETE_DESCRIPTION
     loadpointer 0 str_icarus_explain_cloud
     show_mugshot MUGSHOT_ICARUS message_type=MSG_KEEPOPEN hide_mugshot=0
     update_mugshot_emotion MUGSHOT_HAPPY
@@ -184,23 +192,31 @@ ow_script_route_5_icarus_receive_cloud:
     return
 
 icarus_refuse_quest:
+    update_mugshot_emotion MUGSHOT_SHOCKED
     loadpointer 0 str_icarus_refuse_quest
-    show_mugshot MUGSHOT_ICARUS message_type=MSG_FACE
+    callstd MSG_KEEPOPEN
+    hide_mugshot
+    closeonkeypress
     end
 
 icarus_quest_taken:
     loadpointer 0 str_icarus_ask_up_again
-    show_mugshot MUGSHOT_ICARUS message_type=MSG_YES_NO
+    show_mugshot MUGSHOT_ICARUS message_type=MSG_KEEPOPEN hide_mugshot=0
+    yesnobox 23 7
     compare LASTRESULT 0
     gotoif EQUAL icarus_dont_go_up_again
     loadpointer 0 str_icarus_up_again
-    show_mugshot MUGSHOT_ICARUS message_type=MSG_KEEPOPEN
+    callstd MSG_KEEPOPEN
     closeonkeypress
+    hide_mugshot
     goto icarus_fly_up
 
 icarus_dont_go_up_again:
     loadpointer 0 str_icarus_not_up_again
-    show_mugshot MUGSHOT_ICARUS message_type=MSG_FACE
+    callstd MSG_KEEPOPEN
+    closeonkeypress
+    hide_mugshot
+    release
     end
 
 mov_fly_out:

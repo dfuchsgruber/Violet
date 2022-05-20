@@ -8,6 +8,7 @@
 .include "overworld_script.s"
 .include "items.s"
 .include "pathfinding.s"
+.include "specials.s"
 
 .macro npc_face_npc person_idx:req npc_target:req
     setvar 0x8004 \person_idx
@@ -143,10 +144,13 @@ not_occupied:
     closeonkeypress
     pause 16
     fanfare 0x13E
+    setvar 0x8004, ITEM_KARTE
     additem ITEM_KARTE 1
+    special SPECIAL_ITEM_OBTAIN_SHOW_DESCRIPTION
     loadpointer 0 str_karte
     callstd MSG_KEEPOPEN
     waitfanfare
+    special SPECIAL_ITEM_OBTAIN_DELETE_DESCRIPTION
     pause 16
     loadpointer 0 str_larissa_7
     show_mugshot MUGSHOT_LARISSA MUGSHOT_LEFT message_type=MSG_KEEPOPEN hide_mugshot=0 emotion=MUGSHOT_NORMAL

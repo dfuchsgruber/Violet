@@ -1080,7 +1080,7 @@ static u8 str_item_wettb_karte_description[] = LANGDEP(
 	PSTRING("The pass required for entering\nPokémon Contests. It has a\ndrawing of an award ribbon on it.")
 );
 static u8 str_item_wolkengarn_description[] = LANGDEP(
-	PSTRING("Sehr weicher durchsichtiger\nFaden. Er fühlt sich etwas\pwie Watte an."),
+	PSTRING("Sehr weicher durchsichtiger\nFaden. Er fühlt sich etwas\nwie Watte an."),
 	PSTRING("Very soft and transparent\nthread. It feels a bit\nlike cotton wool.")
 );
 static u8 str_item_wailmerkanne_description[] = LANGDEP(
@@ -1168,7 +1168,7 @@ static u8 str_item_devon_scope_description[] = LANGDEP(
 	PSTRING("A scope that signals the presence\nof any unseeable Pokémon.\nIt is made by the Devon Corp.")
 );
 static u8 str_item_tm01_description[] = LANGDEP(
-	PSTRING(" ngriff, der zu-\nletzt erfolgt. Der\nAnwender schreckt\nevtl. zurück."),
+	PSTRING("Angriff, der zu-\nletzt erfolgt. Der\nAnwender schreckt\nevtl. zurück."),
 	PSTRING("An attack that is\nexecuted last.\nThe user flinches\nif hit beforehand.")
 );
 static u8 str_item_tm02_description[] = LANGDEP(
@@ -1176,7 +1176,7 @@ static u8 str_item_tm02_description[] = LANGDEP(
 	PSTRING("Sharp, huge claws\nhook and slash the\nfoe quickly and\nwith great power.")
 );
 static u8 str_item_tm03_description[] = LANGDEP(
-	PSTRING(" ngriff mit Wasser-\nwelle, die den\nGegner evtl.\nverwirren kann."),
+	PSTRING("Angriff mit Wasser-\nwelle, die den\nGegner evtl.\nverwirren kann."),
 	PSTRING("An attack with a\npulsing blast of\nwater. It may also\nconfuse the foe.")
 );
 static u8 str_item_tm04_description[] = LANGDEP(
@@ -1188,7 +1188,7 @@ static u8 str_item_tm05_description[] = LANGDEP(
 	PSTRING("The foe is made to\nswitch out with an\nally. In the wild,\nthe battle ends.")
 );
 static u8 str_item_tm06_description[] = LANGDEP(
-	PSTRING(" ergiftet den\nGegner mit\neinem potenten\nToxin."),
+	PSTRING("Vergiftet den\nGegner mit\neinem potenten\nToxin."),
 	PSTRING("A move that badly\npoisons the foe.\nIts poison damage\nworsens every turn.")
 );
 static u8 str_item_tm07_description[] = LANGDEP(
@@ -1208,7 +1208,7 @@ static u8 str_item_tm10_description[] = LANGDEP(
 	PSTRING("An attack that\nvaries in type and\nintensity depending\non the user.")
 );
 static u8 str_item_tm11_description[] = LANGDEP(
-	PSTRING(" rhöht Stärke\nvon Feuer-\nAttacken 5\nRunden lang."),
+	PSTRING("Erhöht Stärke\nvon Feuer-\nAttacken 5\nRunden lang."),
 	PSTRING("The sun blazes for\nfive turns, powering\nup Fire-type\nmoves.")
 );
 static u8 str_item_tm12_description[] = LANGDEP(
@@ -1216,7 +1216,7 @@ static u8 str_item_tm12_description[] = LANGDEP(
 	PSTRING("The foe is taunted\ninto a rage that\nallows it to use\nonly attack moves.")
 );
 static u8 str_item_tm13_description[] = LANGDEP(
-	PSTRING(" er Gegner wird von\neinem Eisstrahl\ngetroffen und\nfriert evtl. ein."),
+	PSTRING("Der Gegner wird von\neinem Eisstrahl\ngetroffen und\nfriert evtl. ein."),
 	PSTRING("The foe is struck\nwith an icy beam.\nIt may freeze the\nfoe solid.")
 );
 static u8 str_item_tm14_description[] = LANGDEP(
@@ -1240,11 +1240,11 @@ static u8 str_item_tm18_description[] = LANGDEP(
 	PSTRING("A heavy rain falls\nfor five turns,\npowering up Water-\ntype moves.")
 );
 static u8 str_item_tm19_description[] = LANGDEP(
-	PSTRING(" tarke Attacke!\nAbsorbiert die\nHälfte des ange-\nrichteten Schadens."),
+	PSTRING("Starke Attacke!\nAbsorbiert die\nHälfte des ange-\nrichteten Schadens."),
 	PSTRING("A harsh attack that\nabsorbs half the\ndamage it inflicted\nto restore HP.")
 );
 static u8 str_item_tm20_description[] = LANGDEP(
-	PSTRING(" eam d. Anwenders\nist 5 Runden vor\nStatusproblemen\ngeschützt."),
+	PSTRING("Team d. Anwenders\nist 5 Runden vor\nStatusproblemen\ngeschützt."),
 	PSTRING("It protects the\nuser’s party from\nall status problems\nfor five turns.")
 );
 static u8 str_item_tm21_description[] = LANGDEP(
@@ -1336,7 +1336,7 @@ static u8 str_item_tm42_description[] = LANGDEP(
 	PSTRING("An attack that is\nboosted if user is\nburned, poisoned,\nor paralyzed.")
 );
 static u8 str_item_tm43_description[] = LANGDEP(
-	PSTRING(" ngriff, der ab-\nhängig vom Ort\nnoch einen\nZusatzeffekt hat."),
+	PSTRING("Angriff, der ab-\nhängig vom Ort\nnoch einen\nZusatzeffekt hat."),
 	PSTRING("An attack that may\nhave an additional\neffect that varies\nwith the terrain.")
 );
 static u8 str_item_tm44_description[] = LANGDEP(
@@ -1740,8 +1740,8 @@ static u8 str_item_jugongnit_description[] = LANGDEP(
 	PSTRING("If held by a Dewgong in\nbattle it can perform\na mega evolution.")
 );
 static u8 str_item_wirbelpilz_description[] = LANGDEP(
-	PSTRING("Item (Tragen), das\nKp regeneriert, wenn der\nTräger ausgetauscht wird."),
-	PSTRING("Item to be held that\nregenerates Hp if its\nholder is switched out.")
+	PSTRING("Item (Tragen), das Kp regeneriert,\nwenn der Träger ausgetauscht wird.\nEs wird dabei verbraucht."),
+	PSTRING("Item to be held that regenerates\nHp if its holder is switched out.\nIt is thereby consumed.")
 );
 static u8 str_item_ep_bonbon_s_description[] = LANGDEP(
 	PSTRING("Ein Bonbon, das voller Energie\nsteckt. Liefert beim Verzehr eine\nkleine Menge an EP."),
@@ -5272,7 +5272,7 @@ item items[] = {
 		0xdb, //index
 		200, //price
 		62, //holding_effect_id
-		8, //holding_effect_param
+		5, //holding_effect_param
 		str_item_seegesang_description,
 		0, // Importance
 		0, // exits_bag_on_use

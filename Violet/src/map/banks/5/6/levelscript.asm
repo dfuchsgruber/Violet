@@ -112,7 +112,7 @@ str_0:
 str_1:
 	.autostring 34 2 "PLAYER hat den BUFFER_3 von Manuel erhalten."
 str_2:
-	.autostring 34 2 "Dieser Orden erlaubt es dir, die Versteckte Maschine Fliegen außerhalb des Kampfes einzusetzen.\pZudem gehorchen dir jetzt getauschte Pokémon bis Level 50.\pDOTS DOTS DOTS\pUnd als kleine Entschulding dafür, dass ich dich vorhin auf Route 4 unterschätzt habeDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pNaja, sieh' es als Wiedergutmachung, ja?"
+	.autostring 34 2 "Dieser Orden erlaubt es dir, die Versteckte Maschine Fliegen außerhalb des Kampfes einzusetzen.\pZudem gehorchen dir jetzt getauschte Pokémon bis Level 50.\pDOTS DOTS DOTS\pUnd als kleine Entschulding dafür, dass ich dich vorhin auf Route 5 unterschätzt habeDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pNaja, sieh' es als Wiedergutmachung, ja?"
 str_3:
 	.autostring 34 2 "Diese Technische Maschine enthält die Attacke Power-Punch.\pSie trifft mit einer unaufhaltsamen KraftDOTS\pAber für ihr Gelingen, bedarf es höchster Konzentration.\pNur jemand, dessen Geist den Körper beherrscht, kann diesen Angriff meistern.\pJemand wie du ist einer solchen Herausforderung sicherlich mehr als gewachsen!"
 .elseif LANG_EN

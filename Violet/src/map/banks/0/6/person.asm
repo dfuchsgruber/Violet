@@ -7,6 +7,7 @@
 .include "overworld_script.s"
 .include "species.s"
 .include "items.s"
+.include "specials.s"
 
 .global ow_script_0x8fe431
 .global ow_script_map_0_6_trainer_11
@@ -438,6 +439,7 @@ checkitemroom ITEM_WURZELFOSSIL 0x1
 compare LASTRESULT 0x0
 callif EQUAL ow_script_0x92738e
 additem ITEM_WURZELFOSSIL 0x1
+setvar 0x800A, ITEM_WURZELFOSSIL
 clearflag CLAW_FOSSIL_TAKEN
 return
 
@@ -454,6 +456,7 @@ checkitemroom ITEM_KLAUENFOSSIL 0x1
 compare LASTRESULT 0x0
 callif EQUAL ow_script_0x92738e
 additem ITEM_KLAUENFOSSIL 0x1
+setvar 0x800A, ITEM_KLAUENFOSSIL
 setflag CLAW_FOSSIL_TAKEN
 return
 
@@ -491,10 +494,15 @@ callif EQUAL ow_script_0x8fe513
 compare 0x8005 0x21
 callif EQUAL ow_script_0x8fe518
 fanfare 0x13e
+copyvar 0x8009, 0x8004
+copyvar 0x8004, 0x800A
+special SPECIAL_ITEM_OBTAIN_SHOW_DESCRIPTION
+copyvar 0x8004, 0x8009
 loadpointer 0x0 str_0x8fe4dd
 callstd MSG_KEEPOPEN
 waitfanfare
 closeonkeypress
+special SPECIAL_ITEM_OBTAIN_DELETE_DESCRIPTION
 compare 0x8005 0x20
 callif EQUAL ow_script_0x8fe4bb
 compare 0x8005 0x21

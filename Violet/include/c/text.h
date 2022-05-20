@@ -72,6 +72,17 @@ extern "C" {
      * @param sync_type What should be synchronized
      */
     void tbox_sync(u8 box_id, u8 sync_type);
+
+    /**
+     * @brief Replaces all occurences of one character with another.
+     * 
+     * @param src Source string.
+     * @param dst Destination for the new string.
+     * @param find The character to replace.
+     * @param replace The character to replace with.
+     * @return u8* The destination (for command chaining)
+     */
+    u8 *string_replace(u8 *src, u8 *dst, u8 find, u8 replace);
     
     /**
      * Creates a new textbox data instance at given memory

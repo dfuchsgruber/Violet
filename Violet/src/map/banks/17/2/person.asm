@@ -21,7 +21,8 @@ ow_script_route_5_clouds_icarus:
     checkflag FLAG_ROUTE_5_CLOUD_ARIADOS_DEFEATED
     gotoif EQUAL make_cloud
     loadpointer 0 str_2
-    show_mugshot MUGSHOT_ICARUS hide_mugshot=0 message_type=MSG_YES_NO
+    show_mugshot MUGSHOT_ICARUS hide_mugshot=0 message_type=MSG_KEEPOPEN
+    yesnobox 23 7
     compare LASTRESULT 1
     gotoif EQUAL icarus_down
     loadpointer 0 str_4
@@ -42,8 +43,10 @@ make_cloud:
     faceplayer
     call ow_script_route_5_icarus_receive_cloud
     closeonkeypress
+    hide_mugshot
     fadescreen 1
     hidesprite LASTTALKED
+    hidesprite 19
     fadescreen 0
     release
     end

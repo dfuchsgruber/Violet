@@ -240,6 +240,8 @@ typedef struct {
     u8 mugshot_oam_id;
     u8 mugshot_tb_id;
     u8 mugshot_active : 1;
+    u8 item_obtain_oam_id;
+    u8 item_obtain_tb_id;
     multichoice_t dynamic_choice;
     // u16 tile_anim_clks_0[8];
     // u16 tile_anim_clks_1[8];

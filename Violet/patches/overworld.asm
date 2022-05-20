@@ -656,3 +656,6 @@ blxr4_npc_create_camera:
     ldr r0, =overworld_weather_dynamic_fog_create_oams | 1
     bx r0
     .pool
+
+.org 0x081a953e
+    .word ow_script_std_0_obtain_item

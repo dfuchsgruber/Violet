@@ -8,6 +8,7 @@
 .include "flags.s"
 .include "items.s"
 .include "pathfinding.s"
+.include "specials.s"
 
 .global ow_script_trainerschool_rival_outside
 .global ow_script_trainerschool_faun_outside
@@ -316,10 +317,13 @@ loadpointer 0 str_player_receives_pokeballs
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 additem ITEM_POKEBALL 5
 fanfare 0x101
+setvar 0x8004, ITEM_POKEBALL
+special SPECIAL_ITEM_OBTAIN_SHOW_DESCRIPTION
 loadpointer 0x0 str_pokeball_obtention_message
 callstd MSG_KEEPOPEN
 waitfanfare
 closeonkeypress
+special SPECIAL_ITEM_OBTAIN_DELETE_DESCRIPTION
 applymovement 0x4 mov_face_up
 waitmovement 0x0
 addvar TRAINERSCHOOL_PROGRESS 1

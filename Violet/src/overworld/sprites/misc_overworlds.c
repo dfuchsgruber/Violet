@@ -56,7 +56,6 @@ static graphic overworld_gfx_mushrooms[] = {
 	[5] = {gfx_ow_mushroomTiles + 4 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
 };
 
-
 static graphic overworld_gfx_shells[] = {
 	[0] = {gfx_ow_shellTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
 	[1] = {gfx_ow_shellTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
@@ -68,6 +67,19 @@ static graphic overworld_gfx_shells[] = {
 	[7] = {gfx_ow_shellTiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
 	[8] = {gfx_ow_shellTiles + 4 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
 	[9] = {gfx_ow_shellTiles + 5 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+};
+
+static graphic overworld_gfx_special_shells[] = {
+	[0] = {gfx_ow_special_shellTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+	[1] = {gfx_ow_special_shellTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+	[2] = {gfx_ow_special_shellTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+	[3] = {gfx_ow_special_shellTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+	[4] = {gfx_ow_special_shellTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+	[5] = {gfx_ow_special_shellTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+	[6] = {gfx_ow_special_shellTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+	[7] = {gfx_ow_special_shellTiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+	[8] = {gfx_ow_special_shellTiles + 4 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
+	[9] = {gfx_ow_special_shellTiles + 5 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},
 };
 
 static graphic overworld_gfx_trash[] = {
@@ -114,6 +126,20 @@ overworld_sprite overworld_shell = {
         .graphics = overworld_gfx_shells + 5, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
+overworld_sprite overworld_special_shell_empty = {
+		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_SPECIAL_SHELL,
+        .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 16), .width = 16, .height = 16,
+        .final_oam = &ow_final_oam_16_16, .subsprite_table = &ow_formation_16_16, .gfx_animation = gfx_animations_shell,
+        .graphics = overworld_gfx_special_shells + 0, .rotscale_animation = oam_rotscale_anim_table_null, .inanimate = true,
+};
+
+overworld_sprite overworld_special_shell = {
+		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_SPECIAL_SHELL,
+        .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 16), .width = 16, .height = 16,
+        .final_oam = &ow_final_oam_16_16, .subsprite_table = &ow_formation_16_16, .gfx_animation = gfx_animations_shell,
+        .graphics = overworld_gfx_special_shells + 5, .rotscale_animation = oam_rotscale_anim_table_null,
+};
+
 overworld_sprite overworld_trash_empty = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_TRASH,
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
@@ -135,6 +161,10 @@ palette overworld_shell_palette = {
     .pal = gfx_ow_shellPal, .tag = OW_PAL_TAG_SHELL,
 };
 
+palette overworld_special_shell_palette = {
+    .pal = gfx_ow_special_shellPal, .tag = OW_PAL_TAG_SPECIAL_SHELL,
+};
+
 palette overworld_trash_palette = {
     .pal = gfx_ow_trashPal, .tag = OW_PAL_TAG_TRASH,
 };
@@ -151,12 +181,30 @@ overworld_sprite *overworld_sprite_get_by_mushroom_idx(u16 mushroom_idx) {
     }
 }
 
+#define SALT_SPECIAL_SHELL 123456
+
+bool shell_is_special(u16 shell_idx) {
+    u32 seq[] = {shell_idx, SALT_SPECIAL_SHELL};
+    gp_rng_seed(daily_events_hash(seq, ARRAY_COUNT(seq)));
+    return (gp_rnd16() % 8) == 0;
+    // return true;
+}
+
 overworld_sprite *overworld_sprite_get_by_shell_idx(u16 shell_idx) {
-    switch (shell_get_stage(shell_idx)) {
-        case SHELL_TYPE_EMPTY:
-            return &overworld_shell_empty;
-        default:
-            return &overworld_shell;
+    if (shell_is_special(shell_idx)) {
+        switch (shell_get_stage(shell_idx)) {
+            case SHELL_TYPE_EMPTY:
+                return &overworld_special_shell_empty;
+            default:
+                return &overworld_special_shell;
+        }
+    } else {
+        switch (shell_get_stage(shell_idx)) {
+            case SHELL_TYPE_EMPTY:
+                return &overworld_shell_empty;
+            default:
+                return &overworld_shell;
+        }
     }
 }
 
@@ -176,6 +224,10 @@ palette *overworld_palette_get_by_mushroom() {
 
 palette *overworld_palette_get_by_shell() {
     return &overworld_shell_palette;
+}
+
+palette *overworld_palette_get_by_special_shell() {
+    return &overworld_special_shell_palette;
 }
 
 palette *overworld_palette_get_by_trash() {
@@ -220,11 +272,6 @@ void special_misc_encounter_overworld_new() {
     oams[oam_idx].callback = misc_counter_overworld_oam_callback;
 }
 
-// These special shells will spawn either shoal salt or shoal shell
-static u16 shell_idx_with_shoal_salt_or_shoal_shell[] = {
-    0x1337 // stub
-};
-
 u16 special_mushroom_get_stage() {
     return mushroom_get_stage(map_get_person((u8)(*var_access(LASTTALKED)), save1->map, save1->bank)->value);
 }
@@ -264,17 +311,10 @@ u16 shell_get_stage(u16 shell_idx) {
     if (gp_flag_get(shell_idx, cmem.shell_flags)) {
         return SHELL_TYPE_EMPTY;
     }
+    bool is_special_shell = shell_is_special(shell_idx);
     u32 seq[1] = {shell_idx};
     gp_rng_seed(daily_events_hash(seq, ARRAY_COUNT(seq)));
-    // Check if we have special shell
-    bool special_shell = false;
-    for(size_t i = 0; i < ARRAY_COUNT(shell_idx_with_shoal_salt_or_shoal_shell); i++) {
-        if (shell_idx_with_shoal_salt_or_shoal_shell[i] == shell_idx) {
-            special_shell = true;
-            break;
-        }
-    }
-    if (special_shell) {
+    if (is_special_shell) {
         return (u16)choice(species_shell_rates, ARRAY_COUNT(species_shell_rates), gp_rnd16);
     } else {
         return (u16)choice(shell_rates, ARRAY_COUNT(shell_rates), gp_rnd16);

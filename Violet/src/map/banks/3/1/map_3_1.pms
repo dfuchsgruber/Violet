@@ -1406,22 +1406,22 @@
 					"picture": "0",
 					"x": "71",
 					"y": "29",
-					"level": 0,
-					"behaviour": 0,
+					"level": "0",
+					"behaviour": "0",
 					"behaviour_range": {
-						"x": 0,
-						"y": 0
+						"x": "0",
+						"y": "0"
 					},
-					"field_B": 0,
-					"is_trainer": 0,
-					"alert_radius": 0,
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
 					"script": "ow_script_test",
 					"flag": "0",
 					"value": {
 						"item": "0",
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": 0
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
 					},
 					"argument": "5",
 					"script_std_and_in_connection": {
@@ -1749,7 +1749,7 @@
 		"type": "MAP_TYPE_VILLAGE",
 		"battle_style": "BATTLE_TYPE_RANDOM",
 		"bike_usable": "1",
-		"level": 0,
+		"level": "0",
 		"flags": {
 			"allow_escape_rope": "0",
 			"allow_run": "1",

@@ -201,6 +201,7 @@ static palette *overworld_npc_palette_get_by_tag(u16 tag) {
     switch (tag) {
         case OW_PAL_TAG_MUSHROOM: return overworld_palette_get_by_mushroom();
         case OW_PAL_TAG_SHELL: return overworld_palette_get_by_shell();
+        case OW_PAL_TAG_SPECIAL_SHELL: return overworld_palette_get_by_special_shell();
         case OW_PAL_TAG_BOULDER_GYM_PUZZLE: return overworld_palette_get_gym_puzzle_boulder();
         case OW_PAL_TAG_BOULDER_HAY_BALE: return overworld_palette_get_hay_bale_boulder();
         case OW_PAL_TAG_ROMAN: return &overworld_palette_roman;

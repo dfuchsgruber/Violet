@@ -391,20 +391,15 @@ str_rival_4:
 str_rival_5:
     .autostring 34 2 "Deswegen habe ich dich aber eigentlich nicht gesucht, PLAYER."
 str_rival_6:
-    .autostring 34 2 "Und ich fürchte, dass wir leider auch keine Zeit haben, gegeneinander zu kämpfen."
+    .autostring 34 2 "Ich würde zwar gerne gegen dich kämpfenDOTS"
 str_rival_7:
-    .autostring 34 2 "Weißt du, ich habe vorhin einen Anruf von Papi erhalten.\pUnd du wirst nie erraten, was er mir erzählt hat, PLAYER!"
+    .autostring 34 2 "Aber weißt du, ich habe vorhin einen Anruf von Papi erhalten.\pUnd er meinte, dass er uns beide unbedingt sehen will."
 str_rival_8:
-    .autostring 34 2 "Papi wird sich auf eine gefährliche Expedition begeben und für einige Zeit unterwegs sein."
+    .autostring 34 2 "Er klang wirklich aufgeregt!"
 str_rival_9:
-    .autostring 34 2 "Und da wollte er sich davor noch von uns beiden verabschieden.\pAlso müssen wir unseren Kampf vertagen, PLAYER.\pIch weiß nicht, wie lange Papi noch hier sein wird, also sollten wir uns besser beeilen, ja?"
+    .autostring 34 2 "Also müssen wir unseren Kampf vertagen, PLAYER.\pPapi meinte, dass wir so schnell wie möglich kommen sollen."
 str_rival_10:
-    .autostring 34 2 "Wer zuletzt in seinem Labor in Sonnenaufeld ist, schuldet dem anderen einen Tee aus Kaskada, ja?\pUnd dir gebe ich ganz sicher nichts aus, PLAYER!"
+    .autostring 34 2 "Wer zuletzt in seinem Labor in Sonnenaufeld ist, schuldet dem anderen einen Tee im Kaskada Teehaus, ja?\pUnd dir gebe ich ganz sicher nichts aus, PLAYER!"
 
-
-str_elise:
-	.autostring 34 2 "Hallo PLAYER!\nSchön, dich zu sehen!\pIch muss dir wirklich noch einmal danken, dass du im Kranzwald meinen Vater vor Team Violet gerettet hast.\pEs will mir nicht in den Kopf gehen, dass solche Leute es auf meinen Vater abgesehen habenDOTS\pAber ich bin aus einem ganz anderen Grund hier.\pProfessor Tann schickt mich, weil er dir und RIVAL etwas verkünden möchte.\pEigentlich sollte ich es nicht verraten, aber er wird sich auf eine sehr gefährliche Expedition begeben und will euch beide zuvor noch einmal sehen.\pAm Besten besuchst du uns in Professor Tanns Labor auf Route 2.\pBis dann, PLAYER!"
 .elseif LANG_EN
-str_elise:
-    .autostring 34 2 "Hello PLAYER!\pNice to see you!\nHow are you doing?\pI really have to thank you again for saving my father in the Kranzdorf-Forest from Team Violet.\pIt just doesn't make sense to me why people like these are after my dad.\pBut actually I am here for a completely different reason.\pProfessor Fir sends me because he wants to tell something to you and RIVAL.\pTo be honest I was told not to spoil it, but the professor is going on a very dangerous expedition and before he wants to see you guys once more.\pBest you visit him in the Professor's lab on Route 2.\pSee you, PLAYER!"
 .endif

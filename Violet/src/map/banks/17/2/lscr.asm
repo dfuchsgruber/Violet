@@ -36,7 +36,7 @@ ow_script_explain_quest:
 	call ow_script_move_camera_at_position
 	setvar 0x8004 0x30
     setvar 0x8005 0xf
-	call ow_script_move_camera_at_position
+	call ow_script_move_camera_at_position 
 	special SPECIAL_OVERWORLD_VIEWPORT_SET_TO_PLAYER_POSITION
 	fadescreen 0
 	pause 32
@@ -60,7 +60,7 @@ ow_script_explain_quest:
 	special SPECIAL_OVERWORLD_VIEWPORT_SET_TO_PLAYER_POSITION
 	fadescreen 0
 	loadpointer 0 str_3
-	show_mugshot MUGSHOT_ICARUS message_type=MSG_KEEPOPEN emotion=MUGSHOT_SCARED
+	show_mugshot MUGSHOT_ICARUS message_type=MSG_KEEPOPEN emotion=MUGSHOT_SCARED hide_mugshot=0
 	loadpointer 0 str_3_2
 	update_mugshot_emotion MUGSHOT_ANNOYED
 	callstd MSG_KEEPOPEN

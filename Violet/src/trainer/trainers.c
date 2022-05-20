@@ -7101,7 +7101,7 @@ trainer trainers[TRAINER_CNT] = {
     },
     [0x1da] = {
       .uses_custom_moves = true, .uses_custom_items = true,
-      .trainerclass = TRAINERCLASS_PKMN_TRAINER, .encounter_and_gender = {1, 0} , .sprite = 77,
+      .trainerclass = TRAINERCLASS_PKMN_TRAINER, .encounter_and_gender = {1, 0} , .sprite = 76,
       .name = LANGDEP(PSTRING("Ikarus"), PSTRING("Ikarus")),
       .items = {ITEM_HYPERTRANK, ITEM_HYPERHEILER, 0, 0},
       .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,

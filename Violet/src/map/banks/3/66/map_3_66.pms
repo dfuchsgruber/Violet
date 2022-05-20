@@ -101,7 +101,7 @@
 					"target_index": "4",
 					"picture": "72",
 					"x": "7",
-					"y": "7",
+					"y": "10",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {

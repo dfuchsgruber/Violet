@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_13",
 		"events": {
-			"person_cnt": 20,
+			"person_cnt": 21,
 			"warp_cnt": 3,
 			"trigger_cnt": 0,
 			"signpost_cnt": 2,
@@ -303,24 +303,24 @@
 					"picture": "235",
 					"x": "63",
 					"y": "24",
-					"level": 0,
-					"behaviour": 0,
+					"level": "0",
+					"behaviour": "0",
 					"behaviour_range": {
-						"x": 0,
-						"y": 0
+						"x": "0",
+						"y": "0"
 					},
-					"field_B": 0,
-					"is_trainer": 0,
-					"alert_radius": 0,
-					"script": 0,
-					"flag": 0,
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
 					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": "TYPE_BODEN"
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "TYPE_FLUG"
 					},
-					"argument": 0,
+					"argument": "0",
 					"script_std_and_in_connection": {
 						"script_std": "PERSON_ACCESSIBLE_MOVE_TUTOR",
 						"in_connection": "0"
@@ -576,6 +576,34 @@
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0
+					}
+				},
+				{
+					"target_index": "21",
+					"picture": "238",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_AGGRESSIVE_POKEMON",
+						"in_connection": "0"
+					},
+					"argument": "35",
+					"x": "8",
+					"y": "47",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_FACE_UP_AND_RIGHT",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "1",
+					"alert_radius": "3",
+					"script": "0",
+					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"value": {
+						"item": "0",
+						"species": "POKEMON_SCHWALBOSS",
+						"berry_tree_idx": "0",
+						"type": "0"
 					}
 				}
 			],

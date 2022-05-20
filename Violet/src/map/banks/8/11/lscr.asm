@@ -57,9 +57,11 @@ ow_script_on_frame_table:
 	end
 
 ow_script_move_camera_at_position:
+	callasm pal_set_all_to_black
 	special SPECIAL_OVERWORLD_VIEWPORT_SET_POSITION
 	callasm pal_set_all_to_black
 	pause 1
+	callasm pal_set_all_to_black
 	special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
 	applymovement 0x7f mov_rslow
 	pause 1

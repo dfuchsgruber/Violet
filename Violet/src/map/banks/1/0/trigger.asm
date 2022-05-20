@@ -659,9 +659,9 @@ rin_battle_cont:
     hidesprite 2
     hidesprite 55
     setflag SILVANIA_FOREST_RIN
-    setflag FLAG_PROFESSOR_TANN_GONE
-    setflag FLAG_ELISE_GONE
-    clearflag FLAG_PROFESSOR_TANN_GONE_IN_DESERT_TENT
+    @// setflag FLAG_PROFESSOR_TANN_GONE
+    @// setflag FLAG_ELISE_GONE
+    @// clearflag FLAG_PROFESSOR_TANN_GONE_IN_DESERT_TENT
     releaseall
     end
 
