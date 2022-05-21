@@ -152,6 +152,7 @@
         "evolution.h": "c",
         "evolution_methods.h": "c",
         "gpu.h": "c",
-        "breeding.h": "c"
+        "breeding.h": "c",
+        "options.h": "c"
     }
 }

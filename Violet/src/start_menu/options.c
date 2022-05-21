@@ -122,6 +122,17 @@ TWO_OPTIONS_STRINGS(
 static int option_wonderdust_getter() { return cmem.settings.wonder_dust_automatic_quantity_disabled ? OPTION_OFF : OPTION_ON; }
 static void option_wonderdust_setter(int is_off) { cmem.settings.wonder_dust_automatic_quantity_disabled = (u8)(is_off & 1); }
 
+TWO_OPTIONS_STRINGS(
+    item_obtain_descriptions,
+    LANGDEP(PSTRING("Item Beschreibung"), PSTRING("Item Description")),
+    LANGDEP(PSTRING("An"), PSTRING("On")),
+    LANGDEP(PSTRING("Beschreibungen werden beim\nItem Erhalt dargestellt."), PSTRING("Descriptions are displayed when\nobtaining items.")),
+    LANGDEP(PSTRING("Aus"), PSTRING("Off")),
+    LANGDEP(PSTRING("Beschreibungen werden beim\nItem Erhalt nicht dargestellt."), PSTRING("Descriptions are not displayed\nwhen obtaining items."))
+);
+static int option_item_obtain_descriptions_getter() { return cmem.settings.item_obtaining_descriptions_disabled ? OPTION_OFF : OPTION_ON; }
+static void option_item_obtain_descriptions_setter(int is_off) { cmem.settings.item_obtaining_descriptions_disabled = (u8)(is_off & 1); }
+
 option_t options[NUM_OPTIONS] = {
     [OPTION_FRAME_STYLE] = {
         .name = str_option_frame_style_name,
@@ -193,6 +204,14 @@ option_t options[NUM_OPTIONS] = {
         .num_options = ARRAY_COUNT(option_wonderdust_names),
         .options = option_wonderdust_names,
         .option_descriptions = option_wonderdust_descriptions,
+    },
+    [OPTION_ITEM_OBTAIN_DESCRIPTION] = {
+        .name = str_option_item_obtain_descriptions_name,
+        .getter = option_item_obtain_descriptions_getter,
+        .setter = option_item_obtain_descriptions_setter,
+        .num_options = ARRAY_COUNT(option_item_obtain_descriptions_names),
+        .options = option_item_obtain_descriptions_names,
+        .option_descriptions = option_item_obtain_descriptions_descriptions,
     },
 };
 
@@ -454,4 +473,8 @@ bool start_menu_options_initialize() {
 
 bool automatic_hm_usage_active() {
     return options[OPTION_AUTOMATIC_HM_USAGE].getter() == OPTION_ON;
+}
+
+bool item_obtain_should_show_description() {
+    return options[OPTION_ITEM_OBTAIN_DESCRIPTION].getter() == OPTION_ON;
 }

@@ -30,6 +30,7 @@ enum {
     OPTION_DNS_COLORS, 
     OPTION_AUTOMATIC_HM_USAGE,
     OPTION_DETECTOR,
+    OPTION_ITEM_OBTAIN_DESCRIPTION,
     OPTION_TEXT_SPEED,
     OPTION_WONDER_DUST_AUTOMATIC_USAGE,
     OPTION_BATTLE_ANIMATIONS,
@@ -76,5 +77,12 @@ extern u8 gfx_options_uiPal[];
  * @return if hms are used automatically
  **/
 bool automatic_hm_usage_active();
+
+/**
+ * @brief Returns if item descriptions should be displayed on obtention.
+ * 
+ * @return If item descriptions are displayed on obtention.
+ */
+bool item_obtain_should_show_description();
 
 #endif
