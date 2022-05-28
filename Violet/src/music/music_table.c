@@ -777,8 +777,9 @@ song song_table[] = {
 	[FANFARE_GONG] = {fanfare_gong, SONG_TYPE_FANFARE, SONG_TYPE_FANFARE},
 	// [MUS_CLOUDS_THEME] = {mus_clouds_theme, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	[MUS_CLOUDS_THEME] = {mus_clouds_theme_ardour, SONG_TYPE_SONG, SONG_TYPE_SONG},
-	[MUS_CLOUDS_VARIATION_1] = {mus_clouds_theme_var1, SONG_TYPE_SONG, SONG_TYPE_SONG},
-	[MUS_CLOUDS_VARIATION_2] = {mus_clouds_theme_var2, SONG_TYPE_SONG, SONG_TYPE_SONG},
-	[MUS_CLOUDS_VARIATION_3] = {mus_clouds_theme_var3, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	[MUS_CLOUDS_VARIATION_1_BASE] = {mus_clouds_theme_ardour, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	[MUS_CLOUDS_VARIATION_2_E_GUITAR] = {mus_clouds_theme_var2, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	[MUS_CLOUDS_VARIATION_3_SLOW] = {mus_clouds_theme_var3, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	[MUS_CLOUDS_VARIATION_4_WALTZ] = {mus_clouds_theme_waltz, SONG_TYPE_SONG, SONG_TYPE_SONG},
 
 };

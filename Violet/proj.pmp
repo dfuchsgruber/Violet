@@ -2532,6 +2532,7 @@
 		"gfx_maptileset_dungeon_fossil_caveTiles": "asset/gfx/tileset/gfx_maptileset_dungeon_fossil_cave.png",
 		"gfx_maptileset_clouds_gearTiles": "asset/gfx/tileset/gfx_maptileset_clouds_gear.png",
 		"gfx_maptileset_cloud_spider_webTiles": "asset/gfx/tileset/gfx_maptileset_cloud_spider_web.png",
-		"gfx_maptileset_clouds_variousTiles": "asset/gfx/tileset/gfx_maptileset_clouds_various.png"
+		"gfx_maptileset_clouds_variousTiles": "asset/gfx/tileset/gfx_maptileset_clouds_various.png",
+		"gfx_maptileset_clouds_route_2_snowyTiles": "asset/gfx/tileset/gfx_maptileset_clouds_route_2_snowy.png"
 	}
 }

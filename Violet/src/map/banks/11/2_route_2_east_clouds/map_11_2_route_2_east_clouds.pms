@@ -469,11 +469,11 @@
 		"footer_idx": 11,
 		"namespace": "MAP_ROUTE_2",
 		"flash_type": "FLASH_NONE",
-		"weather": "MAP_WEATHER_OUTSIDE",
+		"weather": "MAP_WEATHER_SNOW",
 		"type": "MAP_TYPE_CLOUD",
 		"battle_style": "BATTLE_TYPE_RANDOM",
 		"bike_usable": "1",
-		"level": 0,
+		"level": "0",
 		"flags": {
 			"allow_escape_rope": "0",
 			"allow_run": "0",
