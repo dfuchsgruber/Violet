@@ -86,5 +86,6 @@
 	"fata_morgana" : "constants/fata_morgana.const",
 	"ingame_trades" : "constants/ingame_trades.const",
 	"dungeon/dungeon_forest_types" : "constants/dungeon/dungeon_forest_types.const",
-	"dungeon/dungeon_cave_types" : "constants/dungeon/dungeon_cave_types.const"
+	"dungeon/dungeon_cave_types" : "constants/dungeon/dungeon_cave_types.const",
+	"overworld/ground_effects" : "constants/overworld/ground_effects.const"
 }

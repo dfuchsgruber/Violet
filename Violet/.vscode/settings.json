@@ -153,6 +153,8 @@
         "evolution_methods.h": "c",
         "gpu.h": "c",
         "breeding.h": "c",
-        "options.h": "c"
+        "options.h": "c",
+        "effect.h": "c",
+        "ground_effect.h": "c"
     }
 }

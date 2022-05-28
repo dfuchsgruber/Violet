@@ -11,6 +11,7 @@
 .global overworld_effect_script_lightning
 .global overworld_effect_script_rainbow_sparkles
 .global overworld_effect_script_feathers
+.global overworld_effect_script_snow_tracks
 
 overworld_effect_script_explosion:
     loadpalwithshaders_and_callasm overworld_effect_explosion_palette overworld_effect_explosion_initialize
@@ -48,4 +49,8 @@ overworld_effect_script_rainbow_sparkles:
     end
 overworld_effect_script_feathers:
     loadpalwithshaders_and_callasm overworld_effect_feathers_palette overworld_effect_feathers_initialize
+    end
+
+overworld_effect_script_snow_tracks:
+    loadpalwithshaders_and_callasm overworld_effect_general_palette_0 overworld_effect_snow_tracks_initialize
     end

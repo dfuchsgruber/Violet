@@ -194,6 +194,13 @@ bool behaviour_is_surf_strong_stream(u8 behaviour);
 bool behaviour_is_waterfall(u8 behaviour);
 
 /**
+ * @brief Checks if the behaviour is sand, i.e. makes tracks appear
+ * @param behaviour the behaviour to check
+ * @return if the tile behaviour induces tracks
+ */
+bool behaviour_is_sand(u8 behaviour);
+
+/**
  * Checks if a tile's behaviour is that of a non-animated door, i.e. cave entrance
  * @param behaviour the behaviour byte to check
  * @return if the tile behaviour is a non animated door

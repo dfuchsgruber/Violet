@@ -171,7 +171,7 @@
 				"MAP_ROUTE_7"
 			],
 			"70": [
-				"map_3_70",
+				"map_route_2_cave",
 				"src/map/banks/3/70/map_3_70.pms",
 				"MAP_ROUTE_2"
 			],
@@ -797,7 +797,7 @@
 				"MAP_ROUTE_2"
 			],
 			"2": [
-				"map_11_2_route_2_east_clouds",
+				"map_route_2_clouds",
 				"src/map/banks/11/2_route_2_east_clouds/map_11_2_route_2_east_clouds.pms",
 				"MAP_ROUTE_2"
 			],
@@ -2451,7 +2451,8 @@
 		"maptileset_dungeon_fossil": "src/map/tileset/maptileset_dungeon_fossil.pms",
 		"maptileset_clouds_gear": "src/map/tileset/maptileset_clouds_gear.pms",
 		"maptileset_cloud_spider_web": "src/map/tileset/maptileset_cloud_spider_web.pms",
-		"maptileset_cloud_various": "src/map/tileset/maptileset_clouds_various.pms"
+		"maptileset_cloud_various": "src/map/tileset/maptileset_clouds_various.pms",
+		"maptileset_cloud_route_2_snowy": "src/map/tileset/maptileset_cloud_route_2_snowy.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",

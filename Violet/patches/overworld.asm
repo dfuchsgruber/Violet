@@ -659,3 +659,13 @@ blxr4_npc_create_camera:
 
 .org 0x081a953e
     .word ow_script_std_0_obtain_item
+
+.org 0x08067d30
+    ldr r3, = ground_effect_get_tracks | 1
+    bx r3
+    .pool 
+
+.org 0x08068754
+    ldr r3, = ground_effects_do_flagged | 1
+    bx r3
+    .pool

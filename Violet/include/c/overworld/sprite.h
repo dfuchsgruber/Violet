@@ -64,7 +64,7 @@ typedef struct overworld_sprite {
     u8 shadow_size : 2;
     u8 inanimate : 1;
     u8 disable_reflection : 1; // unused in violet
-    u8 field_D;
+    u8 tracks;
     u8 field_E;
     u8 field_F;
     sprite *final_oam; //NSE := Pointer 1

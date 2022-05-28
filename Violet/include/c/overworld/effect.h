@@ -5,7 +5,6 @@
 #include "color.h"
 #include "constants/overworld/overworld_effects.h"
 
-
 #include "oam.h"
 #include "map/tileset.h"
 
@@ -145,6 +144,13 @@ extern oam_template overworld_effect_arrow_template;
  **/
 void overworld_effect_teleport_after_showing_pokemon();
 
+/**
+ * @brief Callback for oams of sand tracks that make the tracks fade
+ * 
+ * @param o self-reference
+ */
+void overworld_effect_sand_tracks_oam_callback(oam_object *o);
+
 #define GFX_TAG_OVERWORLD_EFFECT_EXPLOSION 0x1773
 #define GFX_TAG_OVERWORLD_EFFECT_SOUND_WAVE 0x1774
 #define GFX_TAG_OVERWORLD_EFFECT_LIGHTNING 0x1775
@@ -163,6 +169,7 @@ extern const u8 gfx_overworld_effect_rainbow_sparklesTiles[];
 extern const color_t gfx_overworld_effect_rainbow_sparklesPal[16];
 extern const u8 gfx_overworld_effect_featherTiles[];
 extern const color_t gfx_overworld_effect_featherPal[16];
+extern const u8 gfx_overworld_effect_snow_tracksTiles[];
 
 extern const u8 overworld_effect_script_exclamation_mark_icon[];
 extern const u8 overworld_effect_script_use_cut_on_grass[];
@@ -243,5 +250,8 @@ extern const u8 overworld_effect_script_whirlwind[];
 extern const u8 overworld_effect_script_lightning[];
 extern const u8 overworld_effect_script_rainbow_sparkles[];
 extern const u8 overworld_effect_script_feathers[];
+extern const u8 overworld_effect_script_snow_tracks[];
+
+extern gfx_frame *overworld_effect_sand_tracks_animations[];
 
 #endif

@@ -114,6 +114,8 @@ enum {
     BIKE_STATE_SLOPE
 };
 
+#define OVERWORLD_IDX_VIEWPORT 0x7F
+
 typedef struct {
     u8 state;
     u8 field1;

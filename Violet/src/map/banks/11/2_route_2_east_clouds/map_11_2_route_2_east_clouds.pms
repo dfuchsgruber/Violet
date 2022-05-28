@@ -242,27 +242,27 @@
 					"picture": "238",
 					"script_std_and_in_connection": {
 						"script_std": "PERSON_AGGRESSIVE_POKEMON",
-						"in_connection": 0
+						"in_connection": "0"
 					},
 					"argument": "37",
 					"x": "60",
 					"y": "25",
-					"level": 0,
+					"level": "0",
 					"behaviour": "BEHAVIOUR_ROTATE_CLOCKWISE",
 					"behaviour_range": {
-						"x": 0,
-						"y": 0
+						"x": "0",
+						"y": "0"
 					},
-					"field_B": 0,
+					"field_B": "0",
 					"is_trainer": "1",
 					"alert_radius": "4",
-					"script": 0,
-					"flag": 0,
+					"script": "0",
+					"flag": "0",
 					"value": {
-						"item": 0,
-						"species": "POKEMON_PUPPANCE",
-						"berry_tree_idx": 0,
-						"type": 0
+						"item": "0",
+						"species": "POKEMON_SHNEBEDECK",
+						"berry_tree_idx": "0",
+						"type": "0"
 					}
 				},
 				{
@@ -485,6 +485,6 @@
 			"flag_7": "0"
 		}
 	},
-	"label": "map_11_2_route_2_east_clouds",
+	"label": "map_route_2_clouds",
 	"type": "header"
 }

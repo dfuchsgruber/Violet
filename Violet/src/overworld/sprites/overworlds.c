@@ -697,11 +697,11 @@ static graphic overworld_sprite_mskate_sprites[] = {
 
 overworld_sprite ow_mskate = {
     0xFFFF, 0x1100 + 0, 0x1102, 0x200,
-    32, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
+    32, 32, 0, 1, 0, 0, 0x0, 0x0, 0x0,
     &ow_final_oam_32_32, &ow_formation_32_32,
     ow_anim_standard_npc, overworld_sprite_mskate_sprites,
     oam_rotscale_anim_table_null
-};
+}; 
 
 
 static graphic overworld_sprite_fskate_sprites[] = {
@@ -718,7 +718,7 @@ static graphic overworld_sprite_fskate_sprites[] = {
 
 overworld_sprite ow_fskate = {
     0xFFFF, 0x1100 + 0, 0x1102, 0x200,
-    32, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
+    32, 32, 0, 1, 0, 0, 0x0, 0x0, 0x0,
     &ow_final_oam_32_32, &ow_formation_32_32,
     ow_anim_standard_npc, overworld_sprite_fskate_sprites,
     oam_rotscale_anim_table_null
