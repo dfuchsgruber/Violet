@@ -508,10 +508,10 @@ _blxr4:
 .org 0x083c2b00
     .word overworld_weather_fade_in_with_filter | 1
 
-.org 0x0807a100
-    ldr r0, =overworld_weather_fade_in_rain_and_clouds | 1
-    bx r0
-    .pool
+.org 0x0807a77c
+    ldr r2, = fadescreen_all | 1
+    bx r2
+    .pool 
 
 .org 0x0807ab24
     ldr r1, =overworld_weather_load_palette | 1
@@ -633,6 +633,12 @@ blxr4_npc_create_camera:
     bx r0
     .pool
 
+// Snowflakes cycle
+.org 0x0807c0c4
+    lsl r0, r0, #0
+
+/* 
+*/
 // Snow
 .org 0x0807bf68
     ldr r0, =overworld_weather_create_snowflake_oam | 1
@@ -640,8 +646,6 @@ blxr4_npc_create_camera:
     .pool
 
 // Static fog
-/* 
-*/
 .org 0x0807cab0
     ldr r0, =overworld_weather_static_fog_create_oams | 1
     bx r0

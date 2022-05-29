@@ -12,6 +12,7 @@
 #include "callbacks.h"
 #include "agbmemory.h"
 #include "vars.h"
+#include "fading.h"
 
 WEATHER_FUNCTION_WITH_BLEND(weather_inside_initialize_variables);
 WEATHER_FUNCTION_WITH_BLEND(weather_inside_initialize_all);
@@ -159,11 +160,11 @@ void pal_gamma_shift(u8 start_pal_idx, u8 num_pals, s8 gamma_idx) {
         num_pals = (u8)(num_pals + start_pal_idx);
         current_pal_idx = start_pal_idx;
         
-        cpufastset(pal_restore + pal_offset, pals + pal_offset, CPUFASTSET_COPY | CPUFASTSET_SIZE(16 * sizeof(u16)));
         while (current_pal_idx < num_pals) {
             if (palette_get_gamma_type(current_pal_idx) == GAMMA_NONE) {
                 // No palette change.
-                pal_offset = (u8)(pal_offset + 16);
+                cpufastset(pal_restore + pal_offset, pals + pal_offset, CPUFASTSET_COPY | CPUFASTSET_SIZE(16 * sizeof(u16)));
+                pal_offset = (u16)(pal_offset + 16);
             }
             else {
                 for (i = 0; i < 16; i++)
@@ -189,6 +190,8 @@ bool overworld_weather_drought_load_palettes() {
     }
     return false;
 }
+
+
 
 
 bool overworld_weather_static_fog_palette_affected(u8 pal_idx) {
@@ -293,27 +296,199 @@ void overworld_weather_fade_in_with_filter() {
     overworld_weather_fade_in();
 }
 
-bool overworld_weather_fade_in_rain_and_clouds() {
-    // DEBUG("Fade in rain etc. with fadescreen cnt %d (delay %d of %d)\n", overworld_weather.fadescreen_cnt, fmem.weather_blend_delay, *var_access(VAR_MAP_TRANSITION_FADING_DELAY));
-    if (overworld_weather.fadescreen_cnt == 16)
-        return false;
-    // Consider a slower fading also for weather effects
+static s8 weather_gammas[] = {
+    [MAP_WEATHER_RAIN] = 3,
+    [MAP_WEATHER_THUNDER] = 3,
+    [MAP_WEATHER_EXTREME_THUNDER] = 3,
+    [MAP_WEATHER_CLOUDY] = 3,
+    [MAP_WEATHER_EXTREME_SUN] = -6,
+    [MAP_WEATHER_BURNING_TREES] = -6,
+};
+
+void overworld_weather_fade_in() {
+    if (++overworld_weather.fade_in_counter > 1)
+        overworld_weather.is_fade_in_active = false;
+    
+    s8 target_gamma = weather_gammas[overworld_weather.current_weather];
+    switch (overworld_weather.current_weather) {
+        case MAP_WEATHER_RAIN:
+        case MAP_WEATHER_THUNDER:
+        case MAP_WEATHER_EXTREME_THUNDER:
+        case MAP_WEATHER_CLOUDY: {
+            if (!overworld_weather_fade_in_with_gamma(target_gamma)) {
+                // Fade-in with gamma filter
+                overworld_weather.gamma = target_gamma;
+                overworld_weather.pal_processing_state = OVERWORLD_WEATHER_PAL_PROCESSING_STATE_IDLE;
+            }
+            break;
+        }
+        case MAP_WEATHER_EXTREME_SUN:
+        case MAP_WEATHER_BURNING_TREES: {
+            if (!overworld_weather_fade_in_with_gamma_and_drought(target_gamma)) {
+                overworld_weather.gamma = target_gamma;
+                overworld_weather.pal_processing_state = OVERWORLD_WEATHER_PAL_PROCESSING_STATE_IDLE;
+            }
+            break;
+        }
+        case MAP_WEATHER_STATIC_FOG: {
+            if (!overworld_weather_fade_in_static_fog()) {
+                overworld_weather.gamma = target_gamma;
+                overworld_weather.pal_processing_state = OVERWORLD_WEATHER_PAL_PROCESSING_STATE_IDLE;
+            }
+            break;
+        }
+        default: {
+            if (!fading_control.active) {
+                overworld_weather.gamma = overworld_weather.gamma_to;
+                overworld_weather.pal_processing_state = OVERWORLD_WEATHER_PAL_PROCESSING_STATE_IDLE;
+            }
+            break;
+        }
+    }
+}
+
+static bool overworld_weather_fade_in_is_delayed_and_delay_proceed() {
     int delay = *var_access(VAR_MAP_TRANSITION_FADING_DELAY);
     if (fmem.weather_blend_delay >= delay) {
         fmem.weather_blend_delay = 0;
+        return false;
     } else {
         fmem.weather_blend_delay++;
         return true;
     }
+}
+
+bool overworld_weather_fade_in_with_gamma(s8 gamma) {
+    if (overworld_weather.fadescreen_cnt == 16)
+        return false;
+    if (overworld_weather_fade_in_is_delayed_and_delay_proceed())
+        return true;
     if (++overworld_weather.fadescreen_cnt >= 16) {
-        pal_gamma_shift(0, 32, 3);
+        pal_gamma_shift(0, 32, gamma);
         overworld_weather.fadescreen_cnt = 16;
         return false;
     } else {
-        pal_gamma_shift_with_blend(0, 32, 3, (u8)(16 - overworld_weather.fadescreen_cnt), overworld_weather.fadescreen_target_color);
+        pal_gamma_shift_with_blend(0, 32, gamma, (u8)(16 - overworld_weather.fadescreen_cnt), overworld_weather.fadescreen_target_color);
         return true;
     }
 }
+
+bool overworld_weather_fade_in_with_gamma_and_drought(s8 gamma) {
+    DEBUG("Fade-in with drought, fadescreen cnt %d.\n", overworld_weather.fadescreen_cnt);
+    if (overworld_weather.fadescreen_cnt == 16)
+        return false;
+    if (overworld_weather_fade_in_is_delayed_and_delay_proceed())
+        return true;
+    if (++overworld_weather.fadescreen_cnt >= 16) {
+        pal_gamma_shift(0, 32, gamma);
+        overworld_weather.fadescreen_cnt = 16;
+        return false;
+    } else {
+        pal_gamma_shift_and_blend_and_drought(gamma, (u8)(16 - overworld_weather.fadescreen_cnt), overworld_weather.fadescreen_target_color);
+        return true;
+    }
+}
+
+void pal_gamma_shift_and_blend_and_drought(s8 gamma, u8 alpha, color_t target) {
+    gamma = (s8)(-gamma - 1);
+    u8 rblend = target.rgb.red;
+    u8 gblend = target.rgb.green;
+    u8 bblend = target.rgb.blue;
+    u16 color_idx = 0;
+    for (u8 pal_idx = 0; pal_idx < 32; pal_idx++) {
+        if ((palette_get_gamma_type(pal_idx) == GAMMA_NONE)) {
+            pal_alpha_blending(color_idx, 16, alpha, target);
+            color_idx = (u16)(color_idx + 16);
+        } else {
+            for (int i = 0; i < 16; i++) {
+                color_t c = drought_colors[gamma][DROUGHT_COLOR_INDEX(pal_restore[color_idx].value)];
+                u8 r2 = c.rgb.red;
+                u8 g2 = c.rgb.green;
+                u8 b2 = c.rgb.blue;
+                color_t new = {
+                    .rgb = {
+                        .red = (u8)((
+                            r2 + (((rblend - r2) * alpha) >> 4)
+                        ) & 0x1F),
+                        .blue = (u8)((
+                            b2 + (((bblend - b2) * alpha) >> 4)
+                        ) & 0x1F),
+                        .green = (u8)((
+                            g2 + (((gblend - g2) * alpha) >> 4)
+                        ) & 0x1F),
+                    }
+                };
+                pals[color_idx++] = new;
+            }
+        }
+    }
+}
+
+bool overworld_weather_fade_in_static_fog() {
+    if (overworld_weather.fadescreen_cnt == 16)
+        return false;
+    if (overworld_weather_fade_in_is_delayed_and_delay_proceed())
+        return true;
+    overworld_weather.fadescreen_cnt++;
+    pal_fog_blend_apply((u8)(16 - overworld_weather.fadescreen_cnt), overworld_weather.fadescreen_target_color);
+    return true;
+}
+
+static bool weather_affects_palette[] = {
+    [MAP_WEATHER_RAIN] = true,
+    [MAP_WEATHER_THUNDER] = true,
+    [MAP_WEATHER_EXTREME_THUNDER] = true,
+    [MAP_WEATHER_STATIC_FOG] = true,
+    [MAP_WEATHER_CLOUDY] = true,
+    [MAP_WEATHER_EXTREME_SUN] = true,
+    [MAP_WEATHER_BURNING_TREES] = true,
+};
+
+void fadescreen_all(u8 mode, u8 delay) {
+    bool fade_out;
+    bool use_weather_pal = weather_affects_palette[overworld_weather.current_weather];
+    u16 color;
+
+    switch (mode) {
+        case FADE_FROM_BLACK:
+            fade_out = false;
+            color = 0;
+            break;
+        case FADE_FROM_WHITE:
+            fade_out = false;
+            color = 0xFFFF;
+            break;
+        case FADE_TO_BLACK:
+            fade_out = true;
+            color = 0;
+            break;
+        case FADE_TO_WHITE:
+            fade_out = true;
+            color = 0xFFFF;
+            break;
+        default:
+            return;
+    }
+    if (fade_out) {
+        if (use_weather_pal)
+            cpufastset(pals, pal_restore, CPUFASTSET_COPY | CPUFASTSET_SIZE(sizeof(pals)));
+        fadescreen(0xFFFFFFFF, delay, 0, 16, color);
+        overworld_weather.pal_processing_state = OVERWORLD_WEATHER_PAL_PROCESSING_STATE_FADING_OUT;
+    } else {
+        // Fade-in
+        overworld_weather.fadescreen_target_color.value = color;
+        if (use_weather_pal)
+            overworld_weather.fadescreen_cnt = 0;
+        else
+            fadescreen(0xFFFFFFFF, delay, 16, 0, color);
+        overworld_weather.pal_processing_state = OVERWORLD_WEATHER_PAL_PROCESSING_STATE_FADING_IN;
+        overworld_weather.is_fade_in_active = true;
+        overworld_weather.fade_in_counter = 0;
+        overworld_weather_set_blend_coefficients((u8)overworld_weather.blend_eva_from, (u8)overworld_weather.blend_evb_from);
+        overworld_weather.ready_to_initialize = true;
+    }
+}
+
 
 void overworld_weather_load_palette(const color_t *pal) {
     pal_copy(pal, (u16)(256 + overworld_weather.alternative_gamma_oam_pal_idx * 16), 16 * sizeof(color_t));
@@ -427,6 +602,7 @@ bool overworld_weather_create_rain_oam() {
 extern oam_template overworld_weather_snowflake_template;
 
 bool overworld_weather_create_snowflake_oam() {
+    DEBUG("Create snowflake, currently %d visible.\n", overworld_weather.snowflake_sprite_count);
     u8 oam_idx = oam_new_backward_search(&overworld_weather_snowflake_template, 0, 0, 78);
     if (oam_idx == NUM_OAMS)
         return false;
@@ -517,4 +693,32 @@ void overworld_weather_dynamic_fog_create_oams() {
         }
     }
     overworld_weather.fog_d_sprites_created = true;
+}
+
+void weather_snow_initialize_variables() {
+    DEBUG("Snow init vars.\n");
+    overworld_weather.init_step = 0;
+    // overworld_weather.weather_gfx_loaded = true;
+    overworld_weather.gamma_to = 11;
+    overworld_weather.gamma_step_delay = 20;
+    // overworld_weather.target_snowflake_sprite_count = 16;
+    // overworld_weather.snowflake_visible_count = 0;
+}
+
+void weather_snow_main() {
+    // DEBUG("Snow main.\n");
+    DEBUG("Snow main, gamma %d, gamma to %d\n", overworld_weather.gamma,
+        overworld_weather.gamma_to);
+}
+
+void weather_snow_initialize_all() {
+    DEBUG("Snow init all.\n");
+    weather_snow_initialize_variables();
+    // TODO
+}
+
+
+bool weather_snow_closure() {
+    DEBUG("Snow close.\n");
+    return false;
 }

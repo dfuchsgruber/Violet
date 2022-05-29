@@ -183,6 +183,55 @@ void overworld_weather_fade_in();
  **/
 void weather_set_filter(u8 weather);
 
+/**
+ * @brief Sets the alpha blending coefficients of the overworld weather state
+ * 
+ * @param eva the a coefficient
+ * @param evb the b coefficient
+ */
+void overworld_weather_set_blend_coefficients(u8 eva, u8 evb);
+
+/**
+ * @brief Fade-in with a fixed gamma value
+ * 
+ * @param gamma the gamma value
+ * @return if the fading is still ongoing
+ */
+bool overworld_weather_fade_in_with_gamma(s8 gamma);
+
+/**
+ * @brief Fade-in with a fixed gamma value and the extreme sun filter
+ * 
+ * @param gamma the gamma value
+ * @return if the fading is still ongoing
+ */
+bool overworld_weather_fade_in_with_gamma_and_drought(s8 gamma);
+
+/**
+ * @brief Fade-in with the static fog filter
+ * 
+ * @param gamma the gamma value
+ * @return if the fading is still ongoing
+ */
+bool overworld_weather_fade_in_static_fog();
+
+/**
+ * @brief Applies a gamma shift and blending to all palettes and the extreme sun effect (drought)
+ * 
+ * @param gamma the gamma coefficient
+ * @param alpha the alpha blending coefficient
+ * @param target_color the target color to blend into
+ */
+void pal_gamma_shift_and_blend_and_drought(s8 gamma, u8 alpha, color_t target_color);
+
+/**
+ * @brief Applies fog alpha blending to all affected pals
+ * 
+ * @param alpha the coefficient
+ * @param target_color the overlay color
+ */
+void pal_fog_blend_apply(u8 alpha, color_t target_color);
+
 typedef struct {
     void (*initialize_variables)();
     void (*main)();
