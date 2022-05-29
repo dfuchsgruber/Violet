@@ -547,6 +547,7 @@ void overworld_weather_sandstorm_swirl_oams_create() {
                 if (group_head != NUM_OAMS && oam_idx != group_head) {
                     oam_add_to_group(oam_idx, group_head);
                 }
+                overworld_weather.sprites.s2.sandstormSprites2[i] = oams + oam_idx;
             } else {
                 overworld_weather.sprites.s2.sandstormSprites2[i] = NULL;
             }
