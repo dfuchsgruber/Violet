@@ -554,19 +554,19 @@ static wild_pokemon_entry wild_pokemon_route_2_clouds_grass_entries[12] = {
 	[WILD_POKEMON_DENSITY_GRASS_1_20_PERCENT] = 
 		{.level_min = 32, .level_max = 35, .species = POKEMON_SCHWALBINI},
 	[WILD_POKEMON_DENSITY_GRASS_2_10_PERCENT] = 
-		{.level_min = 33, .level_max = 35, .species = POKEMON_PUPPANCE},
+		{.level_min = 33, .level_max = 35, .species = POKEMON_SHNEBEDECK},
 	[WILD_POKEMON_DENSITY_GRASS_3_10_PERCENT] = 
-		{.level_min = 33, .level_max = 35, .species = POKEMON_PUPPANCE},
+		{.level_min = 33, .level_max = 35, .species = POKEMON_QUIEKEL},
 	[WILD_POKEMON_DENSITY_GRASS_4_10_PERCENT] = 
 		{.level_min = 33, .level_max = 35, .species = POKEMON_SCHWALBINI},
 	[WILD_POKEMON_DENSITY_GRASS_5_10_PERCENT] = 
 		{.level_min = 33, .level_max = 35, .species = POKEMON_KRAMURX},
 	[WILD_POKEMON_DENSITY_GRASS_6_5_PERCENT] = 
-		{.level_min = 33, .level_max = 35, .species = POKEMON_PUPPANCE},
+		{.level_min = 33, .level_max = 35, .species = POKEMON_SHNEBEDECK},
 	[WILD_POKEMON_DENSITY_GRASS_7_5_PERCENT] = 
 		{.level_min = 34, .level_max = 35, .species = POKEMON_SCHWALBINI},
 	[WILD_POKEMON_DENSITY_GRASS_8_4_PERCENT] = 
-		{.level_min = 34, .level_max = 36, .species = POKEMON_PUPPANCE},
+		{.level_min = 34, .level_max = 36, .species = POKEMON_QUIEKEL},
 	[WILD_POKEMON_DENSITY_GRASS_9_4_PERCENT] = 
 		{.level_min = 34, .level_max = 36, .species = POKEMON_KRAMURX},
 	[WILD_POKEMON_DENSITY_GRASS_10_1_PERCENT] = 

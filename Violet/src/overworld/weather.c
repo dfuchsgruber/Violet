@@ -746,7 +746,7 @@ static void weather_snow_oam_callback_fall(oam_object *self) {
     // Sprite will be invisible if it is outside the visible range
     // x: visible [0, 240 + 4]
     // y : visible [0, 160 + 4] ... [252, 0] (wrap arround)
-    if ((x >= 240 + 4) || (y >= 164 && y < 252)) {
+    if ((y >= 164 && y < 252)) {
         self->flags |= OAM_FLAG_INVISIBLE;
         self->y = 250;
     } else if (y >= self->t_y_end && y <= 164) {
