@@ -174,6 +174,8 @@ overworld_sprite *overworld_sprite_get_by_mushroom_idx(u16 mushroom_idx) {
         default:
         case MUSHROOM_TYPE_PLUCKED:
             return &overworld_mushroom_plucked;
+        case MUSHROOM_TYPE_ENCOUNTER:
+        case MUSHROOM_TYPE_ENCOUNTER_LARGE:
         case MUSHROOM_TYPE_TINY_MUSHROOM:
             return &overworld_mushroom_tiny;
         case MUSHROOM_TYPE_LARGE_MUSHROOM:
@@ -277,7 +279,7 @@ u16 special_mushroom_get_stage() {
 }
 
 
-static u32 mushroom_rates[] = {[MUSHROOM_TYPE_LARGE_MUSHROOM] = 1, [MUSHROOM_TYPE_TINY_MUSHROOM] = 5};
+static u32 mushroom_rates[] = {[MUSHROOM_TYPE_LARGE_MUSHROOM] = 1, [MUSHROOM_TYPE_TINY_MUSHROOM] = 5, [MUSHROOM_TYPE_ENCOUNTER] = 5, [MUSHROOM_TYPE_ENCOUNTER_LARGE] = 1};
 
 u16 mushroom_get_stage(u16 mushroom_idx) {
     if (mushroom_idx >= DUNGEON_MISC_IDX_START)
@@ -304,7 +306,7 @@ u16 special_shell_get_stage() {
     return stage;
 }
 
-static u32 shell_rates[] = {[SHELL_TYPE_HEART_SCALE] = 1, [SHELL_TYPE_PEARL] = 6, [SHELL_TYPE_LARGE_PEARL] = 2, [SHELL_TYPE_ENCOUNTER] = 10};
+static u32 shell_rates[] = {[SHELL_TYPE_HEART_SCALE] = 1, [SHELL_TYPE_PEARL] = 8, [SHELL_TYPE_LARGE_PEARL] = 2, [SHELL_TYPE_ENCOUNTER] = 15};
 static u32 species_shell_rates[] = {[SHELL_TYPE_SHOAL_SALT] = 3, [SHELL_TYPE_SHOAL_SHELL] = 3, [SHELL_TYPE_ENCOUNTER] = 1};
 
 u16 shell_get_stage(u16 shell_idx) {
@@ -363,11 +365,16 @@ void overworld_misc_intialize() {
 static u32 mushroom_encounters[] = {[POKEMON_KNILZ] = 1, [POKEMON_WAUMPEL] = 1, [POKEMON_SAMURZEL] = 1, [POKEMON_MYRAPLA] = 1, [POKEMON_KNOFENSA] = 1, [0] = 6};
 
 u16 mushroom_get_encounter() {
+    bool needs_encounter = *var_access(0x8004) != 0;
     map_event_person *p = map_get_person((u8)(*var_access(LASTTALKED)), save1->map, save1->bank);
     u16 mushroom_idx = p->value;
     u32 seq[1] = {mushroom_idx};
     gp_rng_seed(daily_events_hash(seq, ARRAY_COUNT(seq)));
-    return (u16)choice(mushroom_encounters, ARRAY_COUNT(mushroom_encounters), gp_rnd16);
+    while (true) {
+        u16 species = (u16)choice(mushroom_encounters, ARRAY_COUNT(mushroom_encounters), gp_rnd16);
+        if (species != 0 || (!needs_encounter))
+            return species;
+    }
 }
 
 static u32 shell_encounters[] = {[POKEMON_MUSCHAS] = 3, [POKEMON_PERLU] = 2, [POKEMON_KRABBY] = 2, [POKEMON_KREBSCORPS] = 1};

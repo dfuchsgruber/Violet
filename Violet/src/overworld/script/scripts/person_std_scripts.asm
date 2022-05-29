@@ -324,7 +324,11 @@ ow_script_mushroom:
 	compare LASTRESULT MUSHROOM_TYPE_TINY_MUSHROOM
 	gotoif EQUAL mushroom_tiny
 	compare LASTRESULT MUSHROOM_TYPE_LARGE_MUSHROOM
-	gotoif EQUAL mushroom_large
+	gotoif EQUAL mushroom_large 
+	compare LASTRESULT MUSHROOM_TYPE_ENCOUNTER
+	gotoif EQUAL mushroom_encounter
+	compare LASTRESULT MUSHROOM_TYPE_ENCOUNTER_LARGE
+	gotoif EQUAL mushroom_encounter
 	releaseall
 	end
 mushroom_plucked:
@@ -335,6 +339,19 @@ mushroom_plucked:
 mushroom_tiny:
 	setvar 0x8000 ITEM_MINIPILZ
 	goto mushroom_plucking
+mushroom_encounter:
+	setvar 0x8004 1
+	special2 0x8004 SPECIAL_MUSHROOM_GET_ENCOUNTER
+	call misc_encounter
+	callasm mushroom_pluck
+	special SPECIAL_BERRY_TREE_UPDATE_GFX
+	bufferpokemon 0 0x8004
+	loadpointer 0 str_mushroom_no_pluck
+	callstd MSG_KEEPOPEN
+	releaseall
+	end
+
+
 mushroom_large: 
 	setvar 0x8000 ITEM_RIESENPILZ
 mushroom_plucking:
@@ -346,6 +363,7 @@ mushroom_plucking:
 	checkitemroom 0x8000 0x1
 	compare LASTRESULT 0
 	gotoif EQUAL no_room_for_mushroom
+	setvar 0x8004 0
 	special2 0x8004 SPECIAL_MUSHROOM_GET_ENCOUNTER
 	compare 0x8004 0
 	callif NOT_EQUAL misc_encounter
@@ -681,6 +699,8 @@ str_player_found_recipe:
 	.autostring 34 2 "Rezept zur Herstellung von BUFFER_1 gefunden!"
 str_recipe_can_be_used:
 	.autostring 34 2 "Das Rezept kann an einem Laz. Kessel in einem Pokéstop verwendet werden."
+str_mushroom_no_pluck:
+	.autostring 34 2 "Schade!\nDas BUFFER_1 hat den Pilz bereits gegegessenDOTS"
 .elseif LANG_EN
 str_mon0:
 	.autostring 34 2 "BUFFER_1! BUFFER_1!"
