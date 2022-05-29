@@ -82,7 +82,7 @@ typedef struct {
     u8 rain_strength;
     u8 cloud_sprites_created;
     u16 snowflake_visible_count;
-    u16 unknown_6E2;
+    u16 snowflake_sprites_created; //unknown_6E2;
     u8 snowflake_sprite_count;
     u8 target_snowflake_sprite_count;
     u16 unknown_6E6;
@@ -238,6 +238,10 @@ typedef struct {
     void (*initialize_all)();
     bool (*closure)();
 } weather_callbacks_t;
+
+extern sprite overworld_weather_snow_sprite;
+extern gfx_frame *overworld_weather_snow_animations[];
+extern graphic overworld_weather_snow_graphics[];
 
 void weather_inside_initialize_variables();
 void weather_inside_main();

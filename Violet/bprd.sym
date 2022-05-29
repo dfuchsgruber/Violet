@@ -1741,3 +1741,6 @@ ground_effect_seaweed = 0x8068734 | 1;
 overworld_effect_general_palette_0 = 0x083a5204;
 overworld_effect_sand_tracks_animations = 0x083a55a4;
 overworld_effect_sand_tracks_oam_callback = 0x080dbd20 | 1;
+overworld_weather_snow_sprite = 0x083c6520;
+overworld_weather_snow_animations = 0x083c6548;
+overworld_weather_snow_graphics = 0x083c6528;
