@@ -1744,3 +1744,6 @@ overworld_effect_sand_tracks_oam_callback = 0x080dbd20 | 1;
 overworld_weather_snow_sprite = 0x083c6520;
 overworld_weather_snow_animations = 0x083c6548;
 overworld_weather_snow_graphics = 0x083c6528;
+overworld_weather_main = 0x08079d70 | 1;
+overworld_weather_build_gamma_shift_lookup_tables = 0x08079e4c | 1;
+overworld_weather_callback_initialize = 0x08079d20 | 1;

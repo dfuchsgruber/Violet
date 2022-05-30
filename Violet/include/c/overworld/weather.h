@@ -39,7 +39,8 @@ typedef struct {
         struct
         {
             struct oam_object *rainSprites[MAX_RAIN_SPRITES];
-            struct oam_object *snowflakeSprites[101];
+            struct oam_object *snowflakeSprites[51];
+            struct oam_object *cherry_tree_sprites[50];
             struct oam_object *cloudSprites[NUM_CLOUD_SPRITES];
         } s1;
         struct
@@ -95,8 +96,8 @@ typedef struct {
     u16 fog_x_scroll_counter;
     u16 fog_x_scroll_offset;
     u8 static_fog_affected_pal_idxs[6]; // These palettes correspond to fog oams and have a different filter
-    u8 static_fot_number_affected_pal_idxs;
-    u8 fog_h_oam_created;
+    u8 static_fog_number_affected_pal_idxs;
+    u8 fog_h_oams_created;
     u16 ash_base_oam_x;
     u16 unknown_6FE;
     u8 ash_oams_created;
@@ -116,7 +117,7 @@ typedef struct {
     u16 fog_d_y_scroll;
     u16 fog_d_x_offset;
     u16 fog_d_y_offset;
-    u8 fog_d_sprites_created;
+    u8 fog_d_oams_created;
     u16 bubbles_delay_cnt;
     u16 bubbles_delay_idx;
     u16 bubbles_coordinates_idx;
@@ -133,7 +134,11 @@ typedef struct {
     s16 unknown_73E;
     s16 unknown_740;
     s16 unknown_742;
-    u8 filler_744[0xD-4];
+    u8 cherry_tree_num_oams;
+    u8 cherry_tree_target_num_oams;
+    u8 cherry_tree_new_timer;
+    u8 cherry_tree_oam_group_head;
+    u8 filler_744[0xD-8];
     s8 load_drought_pals_index;
     u8 load_drought_pals_offset;
 } overworld_weather_stru;
@@ -232,6 +237,13 @@ void pal_gamma_shift_and_blend_and_drought(s8 gamma, u8 alpha, color_t target_co
  */
 void pal_fog_blend_apply(u8 alpha, color_t target_color);
 
+/**
+ * @brief Loads an uncompressed palette and applies weather effects
+ * 
+ * @param pal The palette to load
+ */
+void overworld_weather_load_palette(const color_t *pal);
+
 typedef struct {
     void (*initialize_variables)();
     void (*main)();
@@ -239,9 +251,32 @@ typedef struct {
     bool (*closure)();
 } weather_callbacks_t;
 
+/**
+ * @brief Main callback for executing the weather
+ * 
+ * @param self self-reference
+ */
+void overworld_weather_main(u8 self);
+
+/**
+ * @brief Computes the lookup tables for gamma shift effects
+ * 
+ */
+void overworld_weather_build_gamma_shift_lookup_tables();
+
+/**
+ * @brief Callback for the initialization step of the weather callback
+ * 
+ * @param self self-reference
+ */
+void overworld_weather_callback_initialize(u8 self);
+
 extern sprite overworld_weather_snow_sprite;
 extern gfx_frame *overworld_weather_snow_animations[];
 extern graphic overworld_weather_snow_graphics[];
+
+
+extern color_t gfx_weather_defaultPal[16];
 
 void weather_inside_initialize_variables();
 void weather_inside_main();
@@ -307,6 +342,10 @@ void weather_weather_0f_initialize_variables();
 void weather_weather_0f_main();
 void weather_weather_0f_initialize_all();
 bool weather_weather_0f_closure();
+void weather_cherry_tree_leaves_initialize_variables();
+void weather_cherry_tree_leaves_main();
+void weather_cherry_tree_leaves_initialize_all();
+bool weather_cherry_tree_leaves_closure();
 
 /**
  * Waits for the sandstorm oam delay to finish and then runs the normal sandstorm callback

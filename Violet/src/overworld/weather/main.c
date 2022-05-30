@@ -48,6 +48,8 @@ WEATHER_FUNCTION_WITH_BLEND(weather_weather_0f_initialize_variables);
 WEATHER_FUNCTION_WITH_BLEND(weather_weather_0f_initialize_all);
 WEATHER_FUNCTION_WITH_BLEND(weather_static_fog_initialize_variables);
 WEATHER_FUNCTION_WITH_BLEND(weather_static_fog_initialize_all);
+WEATHER_FUNCTION_WITH_BLEND(weather_cherry_tree_leaves_initialize_variables);
+WEATHER_FUNCTION_WITH_BLEND(weather_cherry_tree_leaves_initialize_all);
 
 #define CEMETERY_BANK 3
 #define CEMETERY_MAP 14
@@ -85,20 +87,8 @@ void weather_set_filter(u8 weather) {
     }
 }
 
-void weather_burning_trees_update_pal_restore_and_tmp() {
-    weather_set_filter(MAP_WEATHER_BURNING_TREES);
-    for (u8 pal_idx = 0; pal_idx < 32; pal_idx++) {
-        u8 gamma_type = palette_get_gamma_type(pal_idx);
-        if (gamma_type != GAMMA_NONE) {
-            pal_color_multiply((u16)(16 * pal_idx), 16, fmem.weather_blend);
-            // DEBUG("blending pal %d\n", pal_idx);
-        }
-    }
-    cpuset(pal_restore, pal_tmp, CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(32 * 16 * sizeof(color_t)));
-}
 
-
-weather_callbacks_t weather_callbacks[] = {
+weather_callbacks_t weather_callbacks[NUM_MAP_WEATHERS] = {
     [MAP_WEATHER_INSIDE] = {.initialize_variables = weather_inside_initialize_variables_with_blend, .main = weather_inside_main, .initialize_all = weather_inside_initialize_all_with_blend, .closure = weather_inside_closure },
     [MAP_WEATHER_SUNNY_WITH_CLOUD_REFLECTION] = {.initialize_variables = weather_sunny_with_cloud_reflection_initialize_variables_with_blend, .main = weather_sunny_with_cloud_reflection_main, .initialize_all = weather_sunny_with_cloud_reflection_initialize_all_with_blend, .closure = weather_sunny_with_cloud_reflection_closure },
     [MAP_WEATHER_OUTSIDE] = {.initialize_variables = weather_outside_initialize_variables_with_blend, .main = weather_outside_main, .initialize_all = weather_outside_initialize_all_with_blend, .closure = weather_outside_closure },
@@ -117,6 +107,7 @@ weather_callbacks_t weather_callbacks[] = {
     [MAP_WEATHER_WEATHER_0F] = {.initialize_variables = weather_weather_0f_initialize_variables_with_blend, .main = weather_weather_0f_main, .initialize_all = weather_weather_0f_initialize_all_with_blend, .closure = weather_weather_0f_closure },
     [MAP_WEATHER_BURNING_TREES] = {.initialize_variables = weather_extreme_sun_initialize_variables_with_blend, .main = weather_extreme_sun_main, .initialize_all = weather_extreme_sun_initialize_all_with_blend, .closure = weather_extreme_sun_closure },
     [MAP_WEATHER_COLD_BLUE] = {.initialize_variables = weather_inside_initialize_variables_with_blend, .main = weather_inside_main, .initialize_all = weather_inside_initialize_all_with_blend, .closure = weather_inside_closure},
+    [MAP_WEATHER_CHERRY_TREE_LEAVES] = {.initialize_variables = weather_cherry_tree_leaves_initialize_variables_with_blend, .main = weather_cherry_tree_leaves_main, .initialize_all = weather_cherry_tree_leaves_initialize_all_with_blend, .closure = weather_cherry_tree_leaves_closure},
 };
 
 void pal_gamma_shift(u8 start_pal_idx, u8 num_pals, s8 gamma_idx) {
@@ -183,14 +174,6 @@ void pal_gamma_shift(u8 start_pal_idx, u8 num_pals, s8 gamma_idx) {
         // No palette blending.
         cpufastset(pal_restore + start_pal_idx * 16, pals + start_pal_idx * 16, CPUFASTSET_COPY | CPUFASTSET_SIZE((u32)(num_pals) * 16 * sizeof(u16)));
     }
-}
-
-bool overworld_weather_drought_load_palettes() {
-    if (overworld_weather.load_drought_pals_index < 32) {
-        overworld_weather.load_drought_pals_index = 32;
-        overworld_weather.load_drought_pals_offset = 32;
-    }
-    return false;
 }
 
 
@@ -298,7 +281,7 @@ void overworld_weather_fade_in_with_filter() {
     overworld_weather_fade_in();
 }
 
-static s8 weather_gammas[] = {
+static s8 weather_gammas[NUM_MAP_WEATHERS] = {
     [MAP_WEATHER_RAIN] = 3,
     [MAP_WEATHER_THUNDER] = 3,
     [MAP_WEATHER_EXTREME_THUNDER] = 3,
@@ -436,7 +419,7 @@ bool overworld_weather_fade_in_static_fog() {
     return true;
 }
 
-static bool weather_affects_palette[] = {
+static bool weather_affects_palette[NUM_MAP_WEATHERS] = {
     [MAP_WEATHER_RAIN] = true,
     [MAP_WEATHER_THUNDER] = true,
     [MAP_WEATHER_EXTREME_THUNDER] = true,
@@ -478,6 +461,7 @@ void fadescreen_all(u8 mode, u8 delay) {
         overworld_weather.pal_processing_state = OVERWORLD_WEATHER_PAL_PROCESSING_STATE_FADING_OUT;
     } else {
         // Fade-in
+        // DEBUG("Fade in with weather colors %d\n", use_weather_pal);
         overworld_weather.fadescreen_target_color.value = color;
         if (use_weather_pal)
             overworld_weather.fadescreen_cnt = 0;
@@ -497,393 +481,35 @@ void overworld_weather_load_palette(const color_t *pal) {
     pal_apply_shaders_by_oam_palette_idx(overworld_weather.alternative_gamma_oam_pal_idx);
 }
 
-extern graphic overworld_weather_sandstorm_graphic;
-extern color_t overworld_weather_sandstormPal[16];
-extern oam_template overworld_weather_sandstorm_template;
 
-void overworld_weather_sandstorm_oams_create() {
-    if (!overworld_weather.sandstorm_oams_created) {
-        oam_load_graphic_uncompressed(&overworld_weather_sandstorm_graphic);
-        overworld_weather_load_palette(overworld_weather_sandstormPal);
-        u8 group_head = NUM_OAMS;
-        for (int i = 0; i < 20; i++) {
-            u8 oam_idx = oam_new_backward_search(
-                &overworld_weather_sandstorm_template, 0, (s16)((i / 5) * 64), 1);
-            if (group_head == NUM_OAMS)
-                group_head = oam_idx;
-            if (oam_idx != NUM_OAMS) {
-                overworld_weather.sprites.s2.sandstormSprites1[i] = oams + oam_idx;
-                oams[oam_idx].private[0] = (u16)(i % 5);
-                oams[oam_idx].private[1] = (u16)(i / 5);
-                if (group_head != NUM_OAMS && oam_idx != group_head) {
-                    oam_add_to_group(oam_idx, group_head);
-                }
-            } else {
-                overworld_weather.sprites.s2.sandstormSprites1[i] = NULL;
-            }
-        }
-        overworld_weather.sandstorm_oams_created = true;
+void weather_initialize() {
+    if (!big_callback_is_active(overworld_weather_main)) {
+        u8 pal_idx = oam_allocate_palette(0x1200);
+        cpuset(gfx_weather_defaultPal, pal_restore + 256 + 16 * pal_idx, CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(sizeof(gfx_weather_defaultPal)));
+        pal_apply_shaders_by_oam_palette_idx(pal_idx);
+        overworld_weather_build_gamma_shift_lookup_tables();
+        overworld_weather.alternative_gamma_oam_pal_idx = pal_idx;
+        overworld_weather.custom_weather_oam_pal_idx = pal_idx;
+
+        // Reset #oams
+        overworld_weather.rain_oam_count = 0;
+        overworld_weather.current_rain_oam_idx = 0;
+        overworld_weather.cloud_sprites_created = false;
+        overworld_weather.snowflake_sprite_count = 0;
+        overworld_weather.ash_oams_created = false;
+        overworld_weather.fog_h_oams_created = false;
+        overworld_weather.fog_d_oams_created = false;
+        overworld_weather.sandstorm_oams_created = false;
+        overworld_weather.sandstorm_swirl_oams_created = false;
+        overworld_weather.bubbles_oams_created = false;
+        overworld_weather.static_fog_number_affected_pal_idxs = 0;
+        overworld_weather.cherry_tree_num_oams = 0;
+        overworld_weather_set_blend_coefficients(16, 0);
+
+        overworld_weather.current_weather = MAP_WEATHER_INSIDE;
+        overworld_weather.pal_processing_state = OVERWORLD_WEATHER_PAL_PROCESSING_STATE_IDLE;
+        overworld_weather.ready_to_initialize = false;
+        overworld_weather.weather_change_done = true;
+        overworld_weather.callback_idx = big_callback_new(overworld_weather_callback_initialize, 80);
     }
 }
-
-extern u16 overworld_weather_sandstorm_swirl_oam_delays[5];
-
-void overworld_weather_sandstorm_swirl_oams_create() {
-    if (!overworld_weather.sandstorm_swirl_oams_created) {
-        u8 group_head = NUM_OAMS;
-        for (int i = 0; i < 5; i++) {
-            u8 oam_idx = oam_new_backward_search(&overworld_weather_sandstorm_template, (s16)(i * 48 + 24), 208, 1);
-            if (group_head == NUM_OAMS)
-                group_head = oam_idx;
-            if (oam_idx != NUM_OAMS) {
-                oam_object *o = oams + oam_idx;
-                o->final_oam.attr1 = (u16)((o->final_oam.attr1 & (~ATTR1_SIZE_64_64)) | ATTR1_SIZE_32_32);
-                o->private[1] = (u16)(i * 51);
-                o->private[0] = 8;
-                o->private[2] = 0;
-                o->private[4] = 0x6730;
-                o->private[3] = overworld_weather_sandstorm_swirl_oam_delays[i];
-                oam_gfx_anim_start(o, 1);
-                oam_calculate_center_coordinates(o, ATTR0_SHAPE_SQUARE >> 14, ATTR1_SIZE_32_32 >> 14, 0);
-                o->callback = overworld_weather_sandstorm_oam_callback_wait_for_delay;
-                if (group_head != NUM_OAMS && oam_idx != group_head) {
-                    oam_add_to_group(oam_idx, group_head);
-                }
-                overworld_weather.sprites.s2.sandstormSprites2[i] = oams + oam_idx;
-            } else {
-                overworld_weather.sprites.s2.sandstormSprites2[i] = NULL;
-            }
-        }   
-        overworld_weather.sandstorm_swirl_oams_created = true;
-    }
-}
-
-extern oam_template overworld_weather_rain_template;
-extern coordinate_t overworld_weather_rain_positions[];
-
-bool overworld_weather_create_rain_oam() {
-    if (overworld_weather.rain_oam_count >= 24)
-        return false;
-    if (overworld_weather.rain_oam_count == 0)
-        overworld_weather.rain_group_head = NUM_OAMS;
-    u8 idx = overworld_weather.rain_oam_count;
-    u8 oam_idx = oam_new_backward_search(&overworld_weather_rain_template,
-        overworld_weather_rain_positions[idx].x, overworld_weather_rain_positions[idx].y, 78);
-    if (overworld_weather.rain_group_head == NUM_OAMS)
-        overworld_weather.rain_group_head = oam_idx;
-    if (oam_idx < NUM_OAMS) {
-        oams[oam_idx].private[5] = 0;
-        oams[oam_idx].private[1] = (u16)((idx * 145));
-        while (oams[oam_idx].private[1] >= 600)
-            oams[oam_idx].private[1] = (u16)(oams[oam_idx].private[1] - 600);
-
-        overworld_weather_rain_oam_start_fall(oams + oam_idx);
-        overworld_weather_rain_oam_start_movement(oams + oam_idx, (u16)(9 * idx));
-        oams[oam_idx].flags |= OAM_FLAG_INVISIBLE;
-        overworld_weather.sprites.s1.rainSprites[idx] = oams + oam_idx;
-        if (oam_idx != overworld_weather.rain_group_head)
-            oam_add_to_group(oam_idx, overworld_weather.rain_group_head);
-    } else {
-        overworld_weather.sprites.s1.rainSprites[idx] = NULL;
-    }
-    overworld_weather.rain_oam_count++;
-    if (overworld_weather.rain_oam_count == 24) {
-        for (int i = 0; i < 24; i++) {
-            oam_object *o = overworld_weather.sprites.s1.rainSprites[i];
-            if (o) {
-                if (o->private[6] == 0)
-                    o->callback = overworld_weather_rain_oam_callback_update;
-                else
-                    o->callback = overworld_weather_rain_oam_callback_wait_for_delay;
-            }
-        }
-        return false;
-    }
-    return true;
-}
-
-extern oam_template overworld_weather_snowflake_template;
-
-bool overworld_weather_create_snowflake_oam() {
-    DEBUG("Create snowflake, currently %d visible.\n", overworld_weather.snowflake_sprite_count);
-    u8 oam_idx = oam_new_backward_search(&overworld_weather_snowflake_template, 0, 0, 78);
-    if (oam_idx == NUM_OAMS)
-        return false;
-    
-    oams[oam_idx].private[4] = overworld_weather.snowflake_sprite_count;
-    overworld_weather_snowflake_initialize(oams + oam_idx);
-    oams[oam_idx].flags |= OAM_FLAG_CENTERED;
-    if (overworld_weather.snowflake_sprite_count > 0) {
-        oam_add_to_group(oam_idx, overworld_weather.snow_group_head);
-    } else {
-        overworld_weather.snow_group_head = oam_idx;
-    }
-    overworld_weather.sprites.s1.snowflakeSprites[overworld_weather.snowflake_sprite_count++] = oams + oam_idx;
-    return true;
-}
-
-extern graphic overworld_weather_static_fog_graphic;
-extern oam_template overworld_weather_static_fog_oam_template;
-
-void overworld_weather_static_fog_create_oams() {
-    if (!overworld_weather.fog_h_oam_created) {
-        oam_load_graphic_uncompressed(&overworld_weather_static_fog_graphic);
-        u8 group_head = NUM_OAMS;
-        for (int i = 0; i < 20; i++) {
-            u8 oam_idx = oam_new_backward_search(&overworld_weather_static_fog_oam_template, 0, 0, 0xFF);
-            if (oam_idx != NUM_OAMS) {
-                if (group_head == NUM_OAMS)
-                    group_head = oam_idx;
-                if (oam_idx != group_head)
-                    oam_add_to_group(oam_idx, group_head);
-                oams[oam_idx].private[0] = (u16)(i % 5);
-                oams[oam_idx].x = (s16)((i % 5) * 64 + 32);
-                oams[oam_idx].y = (s16)((i / 5) * 64 + 32);
-                overworld_weather.sprites.s2.fogHSprites[i] = oams + oam_idx;
-            } else {
-                overworld_weather.sprites.s2.fogHSprites[i] = NULL;
-            }
-        }
-    }
-    overworld_weather.fog_h_oam_created = true;
-}
-
-extern oam_template overworld_weather_ash_template;
-
-void overworld_weather_ash_create_oams() {
-    if (!overworld_weather.ash_oams_created) {
-        u8 group_head = NUM_OAMS;
-        for (int i = 0; i < 20; i++) {
-            u8 oam_idx = oam_new_backward_search(&overworld_weather_ash_template, 0, 0, 0x4E);
-            if (oam_idx != NUM_OAMS) {
-                if (group_head == NUM_OAMS)
-                    group_head = oam_idx;
-                if (oam_idx != group_head)
-                    oam_add_to_group(oam_idx, group_head);
-                oams[oam_idx].private[1] = 0;
-                oams[oam_idx].private[2] = (u16)(i % 5);
-                oams[oam_idx].private[3] = (u16)(i / 5);
-                oams[oam_idx].private[0] = (u16)(oams[oam_idx].private[3] * 64 + 32);
-                overworld_weather.sprites.s2.ashSprites[i] = oams + oam_idx;
-            } else {
-                overworld_weather.sprites.s2.ashSprites[i] = NULL;
-            }
-        }
-    }
-    overworld_weather.ash_oams_created = true;
-}
-
-extern oam_template overworld_weather_dynamic_fog_oam_template;
-extern graphic overworld_weather_dynamic_fog_graphic;
-
-void overworld_weather_dynamic_fog_create_oams() {
-    if (!overworld_weather.fog_d_sprites_created) {
-        oam_load_graphic_uncompressed(&overworld_weather_dynamic_fog_graphic);
-        u8 group_head = NUM_OAMS;
-        for (int i = 0; i < 20; i++) {
-            u8 oam_idx = oam_new_backward_search(&overworld_weather_dynamic_fog_oam_template, 0, (s16)((i / 5) * 64), 0xFF);
-            if (oam_idx != NUM_OAMS) {
-                if (group_head == NUM_OAMS)
-                    group_head = oam_idx;
-                if (oam_idx != group_head)
-                    oam_add_to_group(oam_idx, group_head);
-                oams[oam_idx].private[0] = (u16)(i % 5);
-                oams[oam_idx].private[1] = (u16)(i / 5);
-                overworld_weather.sprites.s2.fogDSprites[i] = oams + oam_idx;
-            } else {
-                overworld_weather.sprites.s2.fogDSprites[i] = NULL;
-            }
-        }
-    }
-    overworld_weather.fog_d_sprites_created = true;
-}
-
-// Snow
-
-#define SNOW_PERIOD 256
-#define SNOW_NEW_PERIOD 30
-
-#define t_x private[0]
-#define t_y private[1]
-// in 256-th
-#define t_dydt private[2]
-#define t_frame private[3]
-#define t_xduration private[4]
-#define t_theta_frame_offset private[5]
-#define t_x_amplitude private[6]
-#define t_y_end private[7]
-
-static void weather_snow_oam_callback_initialize(oam_object *self);
-static void weather_snow_oam_callback_fall(oam_object *self);
-static void weather_snow_oam_callback_wait(oam_object *self);
-
-static void weather_snow_oam_callback_initialize(oam_object *self) {
-    self->t_x = (u16)(rnd16() % 256);
-    self->t_y = (u16)((-coordinate_camera_y_offset - 8) & 0xFF); // Spawn slightly above 0
-    self->t_dydt = (u16)(64 + (rnd16() % 128));
-    self->t_xduration = (u16)(160 + (rnd16() % 80));
-    self->t_frame = 0;
-    self->t_theta_frame_offset = (u16)(rnd16() % 80);
-    self->t_x_amplitude = (u16)(1 + (rnd16() % 3));
-    self->t_y_end = (u16)(125 + (rnd16() % 25));
-    oam_gfx_anim_start(self, rnd16() & 1 ? 0 : 1);
-    self->flags &= (u16)(~OAM_FLAG_INVISIBLE);
-    self->callback = weather_snow_oam_callback_fall;
-    // self->flags |= OAM_FLAG_CENTERED;
-}
-
-static void weather_snow_oam_callback_fall(oam_object *self) {
-    int dy = self->t_dydt * self->t_frame / 256;
-    // amplitude * sin(2pi / duration * 3t/2)
-    int theta = FIXED_DIV(FIXED_MUL(FIXED_DIV(INT_TO_FIXED(3), INT_TO_FIXED(2)), INT_TO_FIXED(self->t_frame + self->t_theta_frame_offset)), INT_TO_FIXED(self->t_xduration));
-    int dx = FIXED_TO_INT(FIXED_MUL(INT_TO_FIXED(self->t_x_amplitude), FIXED_SIN(theta)));
-    int x = (self->t_x + coordinate_camera_x_offset + dx) & 0xFF;
-    int y = (self->t_y + dy + coordinate_camera_y_offset) & 0xFF;
-    self->x = (s16)x;
-    self->y = (s16)y;
-    self->t_frame++;
-
-    // Sprite will be invisible if it is outside the visible range
-    // x: visible [0, 240 + 4]
-    // y : visible [0, 160 + 4] ... [252, 0] (wrap arround)
-    if ((y >= 164 && y < 252)) {
-        self->flags |= OAM_FLAG_INVISIBLE;
-        self->y = 250;
-    } else if (y >= self->t_y_end && y <= 164) {
-        // Sprite has reached the ground, it should disappear (i.e. the cycle resets)
-        self->flags |= OAM_FLAG_INVISIBLE;
-        self->y = 250;
-        self->callback = weather_snow_oam_callback_wait;
-    } else {
-        self->flags &= (u16)(~OAM_FLAG_INVISIBLE);
-    }
-}
-
-static void weather_snow_oam_callback_wait(oam_object *self) {
-    u16 frame = self->t_frame++;
-    if (frame >= SNOW_PERIOD) {
-        weather_snow_oam_callback_initialize(self);
-    }
-}
-
-static oam_template weather_snow_oam_template = {
-    .tiles_tag = 0xFFFF, .pal_tag = 0x1200,
-    .oam = &overworld_weather_snow_sprite,
-    .animation = overworld_weather_snow_animations,
-    .graphics = overworld_weather_snow_graphics,
-    .rotscale = oam_rotscale_anim_table_null,
-    .callback = weather_snow_oam_callback_initialize,
-};
-
-void weather_snow_initialize_variables() {
-    DEBUG("Snow init vars.\n");
-    overworld_weather.init_step = 0;
-    overworld_weather.weather_gfx_loaded = false;
-    overworld_weather.gamma_to = 0;
-    overworld_weather.gamma_step_delay = 20;
-    overworld_weather.target_snowflake_sprite_count = 16;
-    overworld_weather.snowflake_visible_count = 0;
-}
-
-static void weather_snow_create_oam() {
-    if (overworld_weather.snowflake_sprite_count == 0)
-        overworld_weather.snow_group_head = NUM_OAMS;
-
-    u8 idx = overworld_weather.snowflake_sprite_count;
-    u8 oam_idx = oam_new_backward_search(&weather_snow_oam_template, 0, 250, 78);
-    if (overworld_weather.snow_group_head == NUM_OAMS)
-        overworld_weather.snow_group_head = oam_idx;
-
-    if (oam_idx < NUM_OAMS) {
-        overworld_weather.sprites.s1.snowflakeSprites[idx] = oams + oam_idx;
-        if (oam_idx != overworld_weather.snow_group_head)
-            oam_add_to_group(oam_idx, overworld_weather.snow_group_head);
-    } else {    
-        overworld_weather.sprites.s1.snowflakeSprites[idx] = NULL;
-    }
-    DEBUG("Created new snowflake oam with idx %d as the %d-th.\n", oam_idx, idx);
-    overworld_weather.snowflake_sprite_count++;
-}
-
-static void weather_snow_delete_oam() {
-    if (overworld_weather.snowflake_sprite_count > 0) {
-        oam_object **o = overworld_weather.sprites.s1.snowflakeSprites + (--overworld_weather.snowflake_sprite_count);
-        if (*o)
-            oam_delete(*o);
-        DEBUG("Deleted new snowflake oam at 0x%x with snowflake idx %d\n", *o, overworld_weather.snowflake_sprite_count);
-        *o = NULL;
-    }
-}
-
-static bool weather_snow_create_or_delete_oam() {
-    if (overworld_weather.snowflake_sprite_count < overworld_weather.target_snowflake_sprite_count) {
-        weather_snow_create_oam();
-    } else if (overworld_weather.snowflake_sprite_count > overworld_weather.target_snowflake_sprite_count) {
-        weather_snow_delete_oam();
-    }
-    return overworld_weather.snowflake_sprite_count != overworld_weather.target_snowflake_sprite_count;
-}
-
-
-void weather_snow_main() {
-    switch (overworld_weather.init_step){
-        case 0: {
-            // Periodically create a new snowflake oam until all created
-            if (++overworld_weather.snowflake_visible_count > SNOW_NEW_PERIOD) {
-                overworld_weather.snowflake_visible_count = 0; // Reset the timer
-                if (!weather_snow_create_or_delete_oam())
-                    overworld_weather.init_step++;
-            }
-            break;
-        }
-        case 1: {
-            break;
-        }
-    }
-}
-
-void weather_snow_initialize_all() {
-    DEBUG("Snow init all.\n");
-    weather_snow_initialize_variables();
-    // Initialize all snowflakes
-    for (int i = 0; i < overworld_weather.target_snowflake_sprite_count; i++){
-        int idx = overworld_weather.snowflake_sprite_count;
-        weather_snow_create_oam();
-        oam_object *o = overworld_weather.sprites.s1.snowflakeSprites[idx];
-        if (o) {
-            weather_snow_oam_callback_initialize(o);
-            o->t_frame = ((u16)(i * SNOW_NEW_PERIOD) % SNOW_PERIOD);
-        }
-    }
-}
-
-bool weather_snow_closure() {
-    switch (overworld_weather.finish_step) {
-        case 0: {   
-            overworld_weather.target_snowflake_sprite_count = 0;
-            overworld_weather.snowflake_visible_count = 0; // Timer
-            overworld_weather.finish_step++;
-            FALL_THROUGH;
-        }
-        case 1 : {
-            // Periodically delete a  snowflake oam until all deleted
-            if (++overworld_weather.snowflake_visible_count > SNOW_NEW_PERIOD) {
-                overworld_weather.snowflake_visible_count = 0; // Reset the timer
-                if (!weather_snow_create_or_delete_oam()) {
-                    overworld_weather.finish_step++;
-                    return false;
-                }
-            }
-            return true;
-        }
-    }
-    return false;
-}
-
-#undef t_x
-#undef t_y
-#undef t_dy
-#undef t_frame
-#undef t_duration
-#undef t_theta_frame_offset
-#undef t_x_amplitude

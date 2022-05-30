@@ -155,6 +155,7 @@
         "breeding.h": "c",
         "options.h": "c",
         "effect.h": "c",
-        "ground_effect.h": "c"
+        "ground_effect.h": "c",
+        "coordinate.h": "c"
     }
 }
