@@ -10,6 +10,8 @@
 ow_script_kaskada_clouds_move_tutor:
     lock
     faceplayer
+    setvar 0x8004 MOVE_TUTOR_DRACHENPULS
+    callasm move_tutor_set_flag
     loadpointer 0x0 str_0
     callstd MSG_KEEPOPEN
     call move_tutor_item_check

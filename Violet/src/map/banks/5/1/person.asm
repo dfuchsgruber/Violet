@@ -8,6 +8,7 @@
 .global ow_script_meriana_city_clouds_person_0
 .global ow_script_meriana_city_clouds_person_1
 .global ow_script_meriana_city_clouds_person_2
+.global ow_script_meriana_city_clouds_person_3
 
 ow_script_meriana_city_clouds_person_0:
     loadpointer 0 str_0
@@ -15,6 +16,10 @@ ow_script_meriana_city_clouds_person_0:
     end
 ow_script_meriana_city_clouds_person_1:
     loadpointer 0 str_1
+    callstd MSG_FACE
+    end
+ow_script_meriana_city_clouds_person_3:
+    loadpointer 0 str_3
     callstd MSG_FACE
     end
 
@@ -62,6 +67,8 @@ str_0:
     .autostring 34 2 "Bis heute streiten sich die Menschen darüber, wie einerseits ganze Städte im Himmel erbaut werden konnten und andererseits, wieso diese wohl antike Zivilisation überhaupt untergegangen ist."
 str_1:
     .autostring 34 2 "Es ist wirklich nervig, dass so viele Menschen, die vom Wolkenreiten gar nichts verstehen, heutzutage auf Wolken unterwegs sindDOTS"
+str_3:
+    .autostring 34 2 "Diese Ruinen auf schwebenden InselnDOTS\pWürde ich es nicht mit eigenen Augen sehen, ich würde es dir nicht glauben!"
 str_ask:
     .autostring 34 2 "Es gibt für mich kein interessanteres Pokémon, als Porenta.\pSeine Anmut, seine Stärke!\pUnd erst die Lauchstange, die es bei sich trägt!\pDOTS DOTS DOTS\pFindest du nicht auch, dass Porenta ohnegleichen ist?"
 str_receive_lauchstange:

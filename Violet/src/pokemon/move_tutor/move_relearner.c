@@ -10,6 +10,7 @@
 #include "transparency.h"
 #include "io.h"
 #include "oam.h"
+#include "flags.h"
 
 extern color_t gfx_text_std_borderPal[16];
 
@@ -55,6 +56,14 @@ void pokemon_get_number_of_accessible_moves_in_lastresult() {
     *var_access(LASTRESULT) = pokemon_get_accesible_learnable_moves(player_pokemon + *var_access(0x8004), moves, (u8)type);
 }
 
+void accessible_move_tutor_set_flag() {
+    setflag((u16)(FLAG_TUTOR_CRYSTAL_BASE + *var_access(VAR_ACCESIBLE_MOVE_TUTOR_TYPE) - 1));
+}
+
+void move_tutor_set_flag() {
+    setflag((u16)(FLAG_MOVE_TUTOR_BASE + *var_access(0x8004)));
+
+}
 
 static u8 str_back[] = LANGDEP(PSTRING("Zurück"), PSTRING("Cancel"));
 

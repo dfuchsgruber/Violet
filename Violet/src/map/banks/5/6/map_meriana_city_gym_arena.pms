@@ -86,21 +86,21 @@
 		"footer_idx": 148,
 		"namespace": "MAP_MERIANA_CITY",
 		"flash_type": "FLASH_NONE",
-		"weather": "MAP_WEATHER_INSIDE",
+		"weather": "MAP_WEATHER_CHERRY_TREE_LEAVES",
 		"type": "MAP_TYPE_INSIDE",
 		"bike_usable": "0",
 		"flags": {
 			"allow_escape_rope": "1",
-			"allow_run": 0,
-			"show_name": 0,
-			"flag_3": 0,
-			"flag_4": 0,
-			"flag_5": 0,
-			"flag_6": 0,
-			"flag_7": 0
+			"allow_run": "0",
+			"show_name": "0",
+			"flag_3": "0",
+			"flag_4": "0",
+			"flag_5": "0",
+			"flag_6": "0",
+			"flag_7": "0"
 		},
-		"level": 0,
-		"battle_style": 0
+		"level": "0",
+		"battle_style": "0"
 	},
 	"label": "map_meriana_city_gym_arena",
 	"type": "header"

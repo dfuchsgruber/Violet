@@ -272,6 +272,8 @@ str_after_receiving_black_belt:
 .endif
 
 ow_script_map_bluetenbach_move_tutor_rock_slide:
+    setvar 0x8004 MOVE_TUTOR_STEINHAGEL
+    callasm move_tutor_set_flag
     loadpointer 0x0 str_move_tutor_intro
     callstd MSG_FACE
     call move_tutor_item_check

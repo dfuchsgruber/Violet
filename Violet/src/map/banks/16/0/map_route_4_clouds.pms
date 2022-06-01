@@ -794,7 +794,7 @@
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_SOUTH",
-					"displacement": "3",
+					"displacement": "2",
 					"bank": "5",
 					"map_idx": "1",
 					"field_A": 0,

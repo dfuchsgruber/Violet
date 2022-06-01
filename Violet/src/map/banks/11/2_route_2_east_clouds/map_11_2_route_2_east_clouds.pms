@@ -441,7 +441,7 @@
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_EAST",
-					"displacement": "8",
+					"displacement": "-5",
 					"bank": "5",
 					"map_idx": "1",
 					"field_A": 0,

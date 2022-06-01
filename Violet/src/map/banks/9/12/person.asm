@@ -66,6 +66,8 @@ str_0x84c6fa:
 ow_script_map_9_12_person_1:
 lock
 faceplayer
+setvar 0x8004 MOVE_TUTOR_LICHTKANONE
+callasm move_tutor_set_flag
 loadpointer 0x0 str_0x945f3c
 callstd MSG_KEEPOPEN
 call move_tutor_item_check

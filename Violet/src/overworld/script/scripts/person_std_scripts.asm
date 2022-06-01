@@ -539,6 +539,7 @@ dont_open_trash:
 
 ow_script_person_accessible_move_tutor:
 	//setvar VAR_ACCESIBLE_MOVE_TUTOR_TYPE, 0
+	callasm accessible_move_tutor_set_flag
 	loadpointer 0 str_quarz_intro
 	callstd MSG_KEEPOPEN
 	checkitem ITEM_ENERGIEQUARZ, 1

@@ -36,7 +36,7 @@ void battle_ai_script_command_random_flee() {
 
     DEBUG("Considering fleeing with a rate of %d\n", base_rate);
 
-    if (battle_ai_fleeing_prng() % 255 < base_rate) {
+    if (battle_ai_fleeing_prng() % 512 < base_rate) {
         battle_ai_script = (u8*)UNALIGNED_32_GET(battle_ai_script + 1);
     } else {
         battle_ai_script += 5;

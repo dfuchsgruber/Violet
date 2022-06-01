@@ -74,6 +74,8 @@ u8 berry_tree_initial_items[256] = {
     [49] = ITEM_IDX_TO_BERRY_IDX(ITEM_WILBIRBEERE),
     [50] = ITEM_IDX_TO_BERRY_IDX(ITEM_APIKOBEERE),
     [51] = ITEM_IDX_TO_BERRY_IDX(ITEM_SINELBEERE),
+    [52] = ITEM_IDX_TO_BERRY_IDX(ITEM_PERSIMBEERE),
+    [53] = ITEM_IDX_TO_BERRY_IDX(ITEM_AMRENABEERE),
 };
 
 void berry_tree_calculate_yield(u8 berry_tree_idx) {
@@ -84,7 +86,7 @@ void berry_tree_calculate_yield(u8 berry_tree_idx) {
     if ((rnd16() % 100) < num_berries_planted) {
         yield++;
         if (rnd16() % 3) {
-            yield += MAX(1, yield / 2);
+            yield += MAX(1, yield / 2); 
         }
     }
     DEBUG("Unfertilized yield is %d\n", yield);
