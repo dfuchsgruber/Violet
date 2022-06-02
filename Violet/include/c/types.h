@@ -10,6 +10,8 @@
  #define FALL_THROUGH ((void)0)
 #endif /* __GNUC__ >= 7 */
 
+#define ALIGNED(n) __attribute__((aligned(n)))
+
 #define LOW 0
 #define HIGH 1
 

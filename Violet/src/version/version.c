@@ -22,6 +22,7 @@
 #include "berry.h"
 #include "overworld/misc.h"
 #include "item/tm_hm.h"
+#include "agbmemory.h"
 
 void version_init(){
     *var_access(SGM_VER) = VERSION_LATEST;
@@ -38,8 +39,11 @@ void version_transfer(){
     while(*var_access(SGM_VER) != VERSION_LATEST){
         //transfer savegames to a higher version until we reach the latest
         switch(*var_access(SGM_VER)){
-            case VERSION_ALPHA_3_0:
+            case VERSION_ALPHA_3_1: 
                 // Latest
+                break;
+            case VERSION_ALPHA_3_0:
+                version_upgrade_alpha_3_0_to_3_1();
                 break;
         	case VERSION_ALPHA_2_2:
 				version_upgrade_alpha_2_2_to_3_0();
@@ -203,6 +207,27 @@ void version_upgrade_alpha_2_2_to_3_0() {
 			alpha_3_0_fix_pokemon_pokeball(pokemon_get_by_box(box_idx, idx));
 		}
 	}
+}
+
+void version_upgrade_alpha_3_0_to_3_1() {
+    // Fix the items
+    items_old *old = (items_old*)malloc(sizeof(items_old));
+    DEBUG("Old first item %d\n", old->bag_pocket_items[0].item_idx);
+    DEBUG("Old first kitem %d\n", old->bag_pocket_key_items[0].item_idx);
+
+    memcpy(old, save1->pc_items, sizeof(items_old));
+    memcpy(save1->pc_items, old->pc_items, sizeof(old->pc_items));
+    memcpy(save1->bag_pocket_items, old->bag_pocket_items, sizeof(old->bag_pocket_items));
+    memcpy(save1->bag_pocket_key_items, old->bag_pocket_key_items, sizeof(old->bag_pocket_key_items));
+    memcpy(save1->bag_pocket_pokeballs, old->bag_pocket_pokeballs, sizeof(old->bag_pocket_pokeballs));
+    memcpy(save1->bag_pocket_tm_hms, old->bag_pocket_tm_hms, sizeof(old->bag_pocket_tm_hms));
+    memcpy(save1->bag_pocket_berries, old->pc_items, sizeof(old->bag_pocket_berries));
+    bag_clear_slots(save1->bag_pocket_bait, MAX_NUM_BAG_BAIT);
+    free(old);
+}
+
+void fix_hm_tm() {
+    bag_clear_slots(bag_pockets[POCKET_TM_HM- 1].items, bag_pockets[POCKET_TM_HM - 1].capacity);
 }
 
 u16 version_is_latest(){

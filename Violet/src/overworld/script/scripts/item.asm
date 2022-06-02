@@ -3,6 +3,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "specials.s"
+.include "constants/item_pockets.s"
 
 .global ow_script_no_room_for_giveitem
 .global ow_script_std_1_find_item
@@ -47,6 +48,52 @@ ow_script_std_1_find_item:
     release
     end
 
+ow_script_buffer_item_pocket_name_and_play_item_fanfare:
+    compare LASTRESULT, POCKET_ITEMS
+    gotoif EQUAL buffer_pocket_items
+    compare LASTRESULT, POCKET_KEY_ITEMS
+    gotoif EQUAL buffer_pocket_key_items
+    compare LASTRESULT, POCKET_POKEBALLS
+    gotoif EQUAL buffer_pocket_pokeballs
+    compare LASTRESULT, POCKET_TM_HM
+    gotoif EQUAL buffer_pocket_tm_hm
+    compare LASTRESULT, POCKET_BERRIES
+    gotoif EQUAL buffer_pocket_berries
+    compare LASTRESULT, POCKET_BAIT
+    gotoif EQUAL buffer_pocket_bait
+    end
+
+buffer_pocket_items:
+    bufferstd 2, 0x18
+    compare 0x8007, 1
+    callif EQUAL play_item_fanfare_std
+    return
+buffer_pocket_key_items:
+    bufferstd 2, 0x19
+    compare 0x8007, 1
+    callif EQUAL play_item_fanfare_std
+    return
+buffer_pocket_pokeballs:
+    bufferstd 2, 0x1a
+    compare 0x8007, 1
+    callif EQUAL play_item_fanfare_std
+    return
+buffer_pocket_tm_hm:
+    bufferstd 2, 0x1b
+    compare 0x8007, 1
+    callif EQUAL play_item_fanfare_tm_hm
+    return
+buffer_pocket_berries:
+    bufferstd 2, 0x1c
+    compare 0x8007, 1
+    callif EQUAL play_item_fanfare_std
+    return
+buffer_pocket_bait:
+    bufferstring 2, str_bait
+    compare 0x8007, 1
+    callif EQUAL play_item_fanfare_std
+    return
+
 ow_script_pick_up_item:
     hidesprite LASTTALKED
     additem 0x8004, 0x8005
@@ -75,13 +122,16 @@ ow_script_obtain_item_print_text:
     special SPECIAL_ITEM_OBTAIN_DELETE_DESCRIPTION
     waitstate
     loadpointer 0 str_put_item_away
-    callstd MSG_KEEPOPEN
+    callstd MSG
     return
 
 
 .ifdef LANG_GER
 str_no_room_for_giveitem:
     .autostring 34 2 "Sieht so aus, als hättest du keinen Platz für BUFFER_2.\pKomm wieder, wenn du Platz für das Item geschaffen hast."
+str_bait:
+    .autostring 34 2 "Ködertasche"
+
 .elseif LANG_EN
 str_no_room_for_giveitem:
     .autostring 34 2 "Looks like you don't have room for that.\pCome back once you made room for the item."

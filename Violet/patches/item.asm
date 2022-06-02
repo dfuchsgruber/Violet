@@ -361,3 +361,58 @@ _bxr1:
 .org 0x0812640a
 	lsl r0, #0
 	lsl r0, #0
+
+
+.org 0x08099f48
+	ldr r0, =bag_set_pocket_pointers | 1
+	bx r0
+	.pool
+
+.org 0x0809a3c0
+	ldr r0, =bag_clear | 1
+	bx r0
+	.pool
+
+.org 0x8099f38
+	.word bag_pockets
+.org 0x8099f88
+	.word bag_pockets
+.org 0x8099fd4
+	.word bag_pockets
+.org 0x809a010
+	.word bag_pockets
+.org 0x809a078
+	.word bag_pockets
+.org 0x809a138
+	.word bag_pockets
+.org 0x809a1c4
+	.word bag_pockets
+.org 0x809a290
+	.word bag_pockets
+.org 0x809a32c
+	.word bag_pockets
+.org 0x809a3e4
+	.word bag_pockets
+.org 0x809a894
+	.word bag_pockets
+.org 0x809a8bc
+	.word bag_pockets
+.org 0x81085b8
+	.word bag_pockets
+.org 0x8108eb8
+	.word bag_pockets
+.org 0x81096c4
+	.word bag_pockets
+.org 0x81319dc
+	.word bag_pockets + 24
+.org 0x8131c90
+	.word bag_pockets + 24
+.org 0x8131d78
+	.word bag_pockets + 24
+.org 0x8132168
+	.word bag_pockets + 24
+.org 0x813d31c
+	.word bag_pockets + 32
+.org 0x813d9a0
+	.word bag_pockets + 32
+

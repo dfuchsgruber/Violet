@@ -5884,7 +5884,7 @@ item items[] = {
 		str_item_koeder_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_BAIT, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		0, // battle_effect
@@ -5900,7 +5900,7 @@ item items[] = {
 		str_item_goldkoeder_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_BAIT, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		0, // battle_effect

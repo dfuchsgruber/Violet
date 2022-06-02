@@ -37,6 +37,38 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	callasm fix_hm_tm
+	copyvarifnotzero 0x8000 ITEM_TM43
+	copyvarifnotzero 0x8001 1
+	callstd ITEM_OBTAIN
+	loadpointer 0 str_beforea
+	callstd MSG
+	additem ITEM_VM01 1
+	additem ITEM_VM02 1
+	additem ITEM_VM03 1
+	additem ITEM_VM04 1
+	additem ITEM_VM05 1
+	additem ITEM_VM06 1
+	additem ITEM_VM07 1
+	additem ITEM_VM08 1
+
+	copyvarifnotzero 0x8000 ITEM_KOEDER
+	copyvarifnotzero 0x8001 1
+	callstd ITEM_OBTAIN
+	end
+
+	@// additem ITEM_KOEDER 1
+	additem ITEM_KOEDER 1
+	additem ITEM_FAHRRAD 1
+	additem ITEM_ZUGANGSKARTE 1
+	additem ITEM_KARTE 1
+	additem ITEM_ANGEL 1
+	end
+
+
+
+	callasm debug_structure
+	end
 
 	copyvarifnotzero 0x8000 ITEM_TM43
 	copyvarifnotzero 0x8001 1

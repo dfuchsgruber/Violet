@@ -12,6 +12,9 @@ typedef struct {
     u16 cursor_position[3];
 } bag_state_t;
 
+// Theoretically, there is now space for 8 pockets
+#define MAX_NUM_POCKETS 8
+
 extern bag_state_t bag_state;
 
 typedef struct {
@@ -22,10 +25,17 @@ typedef struct {
 typedef struct {
     bag_item_t *items;
     u8 capacity;
-} bag_pocket_t;
+} bag_pocket_t; 
 
-extern bag_pocket_t bag_pockets[5];
+extern bag_pocket_t bag_pockets[MAX_NUM_POCKETS];
 
+#define MAX_NUM_PC_ITEMS      30
+#define MAX_NUM_BAG_ITEMS     50
+#define MAX_NUM_BAG_KEY_ITEMS  30
+#define MAX_NUM_BAG_POKEBALLS 20
+#define MAX_NUM_BAG_TM_HMS     58
+#define MAX_NUM_BAG_BERRIES   44
+#define MAX_NUM_BAG_BAIT   8 
 
 /**
  * Prints a string in the bag and continues with a contnmuation function.
@@ -47,6 +57,13 @@ void bag_return_from_context_menu(u8 self);
  **/
 void bag_initialize_close_animation();
 
+/**
+ * @brief Clears bag slots
+ * 
+ * @param slots The bag slots to clear
+ * @param count How many slots to clear
+ */
+void bag_clear_slots(bag_item_t *slots, u8 count);
 
 /**
  * Initializes fading to dark and then conitinues with the exit continuation of the bag

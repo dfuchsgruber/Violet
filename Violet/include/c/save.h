@@ -1,6 +1,7 @@
 #ifndef HSAVE
 #define HSAVE
 
+#include "types.h"
 #include "dungeon/dungeon2.h"
 #include "pokepad/state.h"
 #include "pokepad/pokedex/state.h"
@@ -24,6 +25,7 @@
 #include "overworld/palette.h"
 #include "color.h"
 #include "oam.h"
+#include "item/bag.h"
 
 #define GP_STACK_SIZE 16
 
@@ -79,7 +81,17 @@ typedef struct saveblock1 {
     u8 field_37; // Probably 0x35 to 0x37 are padding
     pokemon saved_party[6];
     u32 money;
-    u8 unknown_2_2[1612];
+    /*0x0294*/ u16 coins;
+    /*0x0296*/ u16 registered_item; // registered for use with SELECT button
+    /*0x0298*/ bag_item_t pc_items[MAX_NUM_PC_ITEMS];
+    /*0x0310*/ bag_item_t bag_pocket_items[MAX_NUM_BAG_ITEMS];
+    /*0x03b8*/ bag_item_t bag_pocket_key_items[MAX_NUM_BAG_KEY_ITEMS];
+    /*0x0430*/ bag_item_t bag_pocket_pokeballs[MAX_NUM_BAG_POKEBALLS];
+    /*0x0464*/ bag_item_t bag_pocket_tm_hms[MAX_NUM_BAG_TM_HMS];
+    /*0x054c*/ bag_item_t bag_pocket_berries[MAX_NUM_BAG_BERRIES];
+    /*0x0638*/ u16 trainer_rematch_step_counter;
+    /*0x063A*/ u8 ALIGNED(2) trainer_rematches[100];
+    /*0x06A0*/ npc npcs[NUM_NPCS];
     // 0x8e0
     map_event_person persons[64];
     // 0x20E0
@@ -89,7 +101,8 @@ typedef struct saveblock1 {
     u16 dungeon_blocks[56 * 56]; // Previously questlog
     int dungeon_nodes[16][2];
     u8 tm_used_flags[16];
-    u8 questlog[144];
+    bag_item_t bag_pocket_bait[MAX_NUM_BAG_BAIT];
+    u8 questlog[112];
     u8 field_4864[80];
     u16 mail_words[2][9]; // Might be there are more than 2 mails
     u8 unknown_4[620];
@@ -133,7 +146,7 @@ typedef struct saveblock2 {
     u8 pokedex_caught_flags[0x34]; //416 flags
     u8 pokedex_seen_flags[0x34]; //416 flags
     u8 unknown_6[3728];
-    u32 money;
+    u32 encryption_key;
 } saveblock2;
 
 #define PLAYER_TID (u32)(save2->tid_0 + (save2->tid_1 << 8) + (save2->tid_2 << 16) + (save2->tid_3 << 24))
