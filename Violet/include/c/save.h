@@ -205,6 +205,9 @@ typedef struct custom_memory {
         u8 field_2;
         u8 field_3; 
     } settings;
+    u8 bag_pocket;
+    u8 bag_pocket_cursor_positions[MAX_NUM_POCKETS];
+    bag_item_t bag_pocket_medicine[MAX_NUM_BAG_MEDICINE];
     
     /**
     struct {
@@ -242,6 +245,7 @@ typedef struct {
     incubator_state_stru *incubator_state;
     ev_menu_state_stru *ev_menu_state;
     void *gp_state;
+    void *bag2_state;
     u8 *additional_levelscript_4;
     u16 dmart[32]; //max 32 items per mart
     ae_memory *ae_mem;

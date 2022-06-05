@@ -3,6 +3,7 @@
 #include "callbacks.h"
 #include "language.h"
 #include "save.h"
+#include "agbmemory.h"
 
 static u8 str_cant_write_mail_here[] = LANGDEP(
     PSTRING("Du kannst jetzt keinen Brief\nschreiben!"),
@@ -41,6 +42,7 @@ void bag_item_selected_give_from_pc(u8 self) {
 }
 
 void bag_set_pocket_pointers() {
+    memset(bag_pockets, 0, sizeof(bag_pockets));
     bag_pockets[POCKET_ITEMS - 1].items = save1->bag_pocket_items;
     bag_pockets[POCKET_ITEMS - 1].capacity = MAX_NUM_BAG_ITEMS;
     bag_pockets[POCKET_KEY_ITEMS - 1].items = save1->bag_pocket_key_items;
@@ -53,9 +55,11 @@ void bag_set_pocket_pointers() {
     bag_pockets[POCKET_BERRIES - 1].capacity = MAX_NUM_BAG_BERRIES;
     bag_pockets[POCKET_BAIT - 1].items = save1->bag_pocket_bait;
     bag_pockets[POCKET_BAIT - 1].capacity = MAX_NUM_BAG_BAIT;
+    bag_pockets[POCKET_MEDICINE - 1].items = cmem.bag_pocket_medicine;
+    bag_pockets[POCKET_MEDICINE - 1].capacity = MAX_NUM_BAG_MEDICINE;
 }
 
 void bag_clear() {
-    for (int i = 0; i < NUM_POCKETS; i++)
+    for (int i = 0; i < NUM_POCKETS - 1; i++)
         bag_clear_slots(bag_pockets[i].items, bag_pockets[i].capacity);
 }

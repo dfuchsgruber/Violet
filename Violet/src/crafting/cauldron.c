@@ -31,6 +31,7 @@ static bg_config cauldron_bg_configs[] = {
 
 static tboxdata cauldron_tboxes[] = {
     [0] = {.bg_id = 0, .x = 2, .y = 15, .w = 26, .h = 4, .pal = 15, .start_tile = 1},
+    [1] = {.bg_id = 0xFF},
 };
 
 static void cauldron_bg_scrolling_proceed() {

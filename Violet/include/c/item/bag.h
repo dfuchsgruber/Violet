@@ -35,6 +35,7 @@ extern bag_pocket_t bag_pockets[MAX_NUM_POCKETS];
 #define MAX_NUM_BAG_POKEBALLS 20
 #define MAX_NUM_BAG_TM_HMS     58
 #define MAX_NUM_BAG_BERRIES   44
+#define MAX_NUM_BAG_MEDICINE 32
 #define MAX_NUM_BAG_BAIT   8 
 
 /**

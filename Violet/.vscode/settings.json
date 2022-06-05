@@ -157,6 +157,9 @@
         "effect.h": "c",
         "ground_effect.h": "c",
         "coordinate.h": "c",
-        "bag.h": "c"
+        "bag.h": "c",
+        "menu_util.h": "c",
+        "item_pockets.h": "c",
+        "bag2.h": "c"
     }
 }

@@ -61,6 +61,12 @@ void generic_callback1();
 void generic_vblank_handler();
 
 /**
+ * @brief Resets hblank and vblank callbacks
+ * 
+ */
+void reset_hblank_and_vblank_callbacks();
+
+/**
  * Sets the callback1
  * @param f the callback function to set
  */

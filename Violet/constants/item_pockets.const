@@ -8,6 +8,7 @@
 		"POCKET_TM_HM",
 		"POCKET_BERRIES",
 		"POCKET_BAIT",
+		"POCKET_MEDICINE",
 		"NUM_POCKETS"
 	],
 	"base": 0

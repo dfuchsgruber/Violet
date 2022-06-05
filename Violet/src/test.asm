@@ -37,6 +37,10 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	callasm test_bag2
+	end
+
+
 	callasm fix_hm_tm
 	copyvarifnotzero 0x8000 ITEM_TM43
 	copyvarifnotzero 0x8001 1
