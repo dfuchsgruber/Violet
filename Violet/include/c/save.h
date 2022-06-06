@@ -205,8 +205,7 @@ typedef struct custom_memory {
         u8 field_2;
         u8 field_3; 
     } settings;
-    u8 bag_pocket;
-    u8 bag_pocket_cursor_positions[MAX_NUM_POCKETS];
+    u16 bag_pocket;
     bag_item_t bag_pocket_medicine[MAX_NUM_BAG_MEDICINE];
     
     /**
@@ -309,6 +308,8 @@ typedef struct {
     u8 weather_blend_delay;
     u8 pokemon_move_learning_evolution_move_idx;
     u8 blackbeard_ship_oam_idx;
+    u16 bag_cursor_position[MAX_NUM_POCKETS];
+    u16 bag_cursor_items_above[MAX_NUM_POCKETS];
 } floating_memory;
 
 

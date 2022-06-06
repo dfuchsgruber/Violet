@@ -19,19 +19,34 @@
 #include "transparency.h"
 #include "language.h"
 #include "debug.h"
+#include "list_menu.h"
+#include "item/item.h"
+#include "music.h"
+#include "menu_indicators.h"
 
 static void bag_cb_initialize();
 static bool bag_cb_initialize_step();
 static void bag_fadescreen_and_return();
 static void bag_free();
 static void bag_load_pocket();
+static void bag_build_item_list();
+static void bag_initialize_compute_item_counts();
+static void bag_win0_animation(u8 self);
+static void bag_new_scroll_indicators_pockets();
+static void bag_switch_pockets(u8 self, int pocket_to);
 
 enum {
     TBOX_POCKET_NAME,
     TBOX_DESCRIPTION,
     TBOX_HINT,
+    TBOX_LIST,
     NUM_TBOXES,
 };
+
+
+static tbox_font_colormap font_colormap_std = {.background = 0, .body = 2, .edge = 3}; 
+
+#define BAG2_MAX_ITEMS_SHOWN 6
 
 static u8 bag_pocket_order[] = {
     POCKET_ITEMS, POCKET_MEDICINE, POCKET_POKEBALLS, POCKET_TM_HM, POCKET_BERRIES, POCKET_KEY_ITEMS, POCKET_BAIT,
@@ -41,11 +56,12 @@ static u8 bag_get_current_pocket() {
     return bag_pocket_order[cmem.bag_pocket];
 }
 
-static u8 str_hint_give[] = LANGDEP(PSTRING("Welches Item einem\nPokémon geben?"), PSTRING("Give which item\nto a Pokémon?"));
+static u8 str_hint_give[] = LANGDEP(PSTRING("Welches Item\ngeben?"), PSTRING("Give which item\nto a Pokémon?"));
 static u8 str_hint_deposit[] = LANGDEP(PSTRING("Welches Item\nablegen?"), PSTRING("Deposit which\nitem?"));
 static u8 str_hint_recharge[] = LANGDEP(PSTRING("Welche Tm\naufladen?"), PSTRING("Recharge which\nTm?"));
 static u8 str_hint_compost[] = LANGDEP(PSTRING("Welche Beere\nkompostieren?"), PSTRING("Compost which\nberry?"));
 static u8 str_hint_sell[] = LANGDEP(PSTRING("Welches Item\nverkaufen?"), PSTRING("Sell which\nitem?"));
+static u8 str_hint_plant_berry[] = LANGDEP(PSTRING("Welche Beere\npflanzen?"), PSTRING("Plant which\nberry?"));
 
 static u8 *bag_context_hints[NUM_BAG_CONTEXTS] = {
     [BAG_CONTEXT_PARTY_GIVE] = str_hint_give,
@@ -54,10 +70,49 @@ static u8 *bag_context_hints[NUM_BAG_CONTEXTS] = {
     [BAG_CONTEXT_BOX_GIVE] = str_hint_give,
     [BAG_CONTEXT_RECHARGE_TM_HM] = str_hint_recharge,
     [BAG_CONTEXT_COMPOST] = str_hint_compost,
+    [BAG_CONTEXT_PLANT_BERRY] = str_hint_plant_berry,
 };
 
 static u8 *bag_get_context_hint() {
     return bag_context_hints[BAG2_STATE->context];
+}
+
+static int bag_pockets_process_input() {
+    if (BAG2_STATE->pocket_switching_disabled)
+        return 0;
+    else if (super.keys_new.keys.left && cmem.bag_pocket > 0)
+        return -1;
+    else if (super.keys_new.keys.right && cmem.bag_pocket < ARRAY_COUNT(bag_pocket_order) - 1)
+        return 1;
+    else
+        return 0;
+}
+
+static void bag_idle_callback_default(u8 self) {
+    (void)(self);
+
+    if (fading_control.active || menu_util_link_is_busy() || big_callback_is_active(bag_win0_animation))
+        return;
+    int switch_pockets_input = bag_pockets_process_input();
+    if (switch_pockets_input != 0) {
+        play_sound(246);
+        bag_switch_pockets(self, cmem.bag_pocket + switch_pockets_input);
+        return;
+    }
+    u8 pocket = bag_get_current_pocket();
+    int input = list_menu_process_input(BAG2_STATE->list_menu_cb_idx);
+    list_menu_get_scroll_and_row(BAG2_STATE->list_menu_cb_idx, fmem.bag_cursor_position + pocket - 1, fmem.bag_cursor_items_above + pocket - 1);
+    switch (input) {
+        case LIST_MENU_NOTHING_CHOSEN:
+            return;
+    }
+}
+
+static u8 bag_idle_callback_new() {
+    switch (BAG2_STATE->context) {
+        default:
+            return big_callback_new(bag_idle_callback_default, 0);
+    }
 }
 
 void bag_cb1(){
@@ -79,8 +134,16 @@ void bag_vblank_handler() {
 
 static void bag_free() {
     // TODO
-    free(BAG2_STATE->bg0_map);
-    free(BAG2_STATE->bg1_map);
+    if (BAG2_STATE->bg0_map)
+        free(BAG2_STATE->bg0_map);
+    if (BAG2_STATE->bg1_map)
+        free(BAG2_STATE->bg1_map);
+    if (BAG2_STATE->bg2_map)
+        free(BAG2_STATE->bg2_map);
+    if (BAG2_STATE->list_menu_items)
+        free(BAG2_STATE->list_menu_items);
+    if (BAG2_STATE->list_menu_item_texts)
+        free(BAG2_STATE->list_menu_item_texts);
     free(fmem.bag2_state);
 }
 
@@ -116,6 +179,7 @@ void bag_open(u8 context, u8 open_which, void (*continuation)()) {
                     break;
             }
         }
+        bag_initialize_compute_item_counts();
         callback1_set(bag_cb_initialize);
     }
 }
@@ -129,21 +193,6 @@ static void bag_cb_initialize() {
         if (menu_util_link_is_active())
             break;
     }
-}
-
-
-static bool bag_allocate_list_menu() {
-    size_t num = 0;
-    for (int i = 0; i < MAX_NUM_POCKETS - 1; i++)
-        num = MAX(bag_pockets[i].capacity, num);
-    num++; // For the cancel option
-    BAG2_STATE->list_menu_items = malloc_and_clear(num * sizeof(list_menu_item));
-    if (!BAG2_STATE->list_menu_items)
-        return false;
-    BAG2_STATE->list_menu_texts = malloc_and_clear(num * sizeof(u8*));
-    if (!BAG2_STATE->list_menu_texts)
-        return false;
-    return true;
 }
 
 
@@ -197,10 +246,24 @@ static bool bag_allocate_bgs() {
     return true;
 }
 
-static bool bag_allocate() {
-    if (!bag_allocate_list_menu())
+static bool bag_allocate_list() {
+    size_t num = 1;
+    for (u32 i = 0; i < ARRAY_COUNT(bag_pockets); i++) {
+        num = MAX(num, bag_pockets[i].capacity + 1u);
+    }
+    BAG2_STATE->list_menu_items = malloc(num * sizeof(list_menu_item));
+    if (!BAG2_STATE->list_menu_items)
         return false;
+    BAG2_STATE->list_menu_item_texts = malloc(num * sizeof(*BAG2_STATE->list_menu_item_texts));
+    if (!BAG2_STATE->list_menu_item_texts)
+        return false;
+    return true;
+}
+
+static bool bag_allocate() {
     if (!bag_allocate_bgs())
+        return false;
+    if (!bag_allocate_list())
         return false;
     // return if the allocation is successful
     return true;
@@ -249,13 +312,13 @@ static bool bag_load_gfx() {
 static sprite bag_sprite = {.attr0 = ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE | ATTR0_DSIZE, .attr1 = ATTR1_SIZE_64_64, .attr2 = ATTR2_PRIO(1)};
 
 static gfx_frame bag_anim_idle[] = {{.data = 0, .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame bag_anim_items[] = {{.data = 0, .duration = 5}, {.data = 64 * 3, .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame bag_anim_key_items[] = {{.data = 0, .duration = 5}, {.data = 64 * 5, .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame bag_anim_pokeballs[] = {{.data = 0, .duration = 5}, {.data = 64 * 1, .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame bag_anim_berries[] = {{.data = 0, .duration = 5}, {.data = 64 * 2, .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame bag_anim_medicine[] = {{.data = 0, .duration = 5}, {.data = 64 * 4, .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame bag_anim_bait[] = {{.data = 0, .duration = 5}, {.data = 64 * 6, .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame bag_anim_tms[] = {{.data = 0, .duration = 5}, {.data = 64 * 7, .duration = 0}, {.data = GFX_ANIM_END}};
+static gfx_frame bag_anim_items[] = {{.data = 64 * 3, .duration = 0}, {.data = GFX_ANIM_END}};
+static gfx_frame bag_anim_key_items[] = {{.data = 64 * 5, .duration = 0}, {.data = GFX_ANIM_END}};
+static gfx_frame bag_anim_pokeballs[] = {{.data = 64 * 1, .duration = 0}, {.data = GFX_ANIM_END}};
+static gfx_frame bag_anim_berries[] = {{.data = 64 * 2, .duration = 0}, {.data = GFX_ANIM_END}};
+static gfx_frame bag_anim_medicine[] = {{.data = 64 * 4, .duration = 0}, {.data = GFX_ANIM_END}};
+static gfx_frame bag_anim_bait[] = {{.data = 64 * 6, .duration = 0}, {.data = GFX_ANIM_END}};
+static gfx_frame bag_anim_tms[] = {{.data = 64 * 7, .duration = 0}, {.data = GFX_ANIM_END}};
 
 static gfx_frame *bag_anims[] = {
     [POCKET_NONE] = bag_anim_idle,
@@ -306,9 +369,21 @@ static void bag_oam_switch_pockets(u8 pocket) {
     oam_gfx_anim_start(o, pocket);
 }
 
+static sprite sprite_item = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(1)};
+
+static oam_template oam_template_item = {
+    .tiles_tag = BAG_ITEM_OAM_TAG, .pal_tag = BAG_ITEM_OAM_TAG,
+    .graphics = NULL, .oam = &sprite_item, .animation = oam_gfx_anim_table_null,
+    .rotscale = oam_rotscale_anim_table_null, .callback = oam_null_callback,
+};
+
 static void bag_initialize_oams() {
     BAG2_STATE->oam_idx_bag = oam_new_forward_search(&bag_oam_template, 40, bag_get_context_hint() ? 84 : 72, 0);
     bag_oam_switch_pockets(bag_get_current_pocket());
+    BAG2_STATE->oam_item_base_tile = oam_vram_alloc(GRAPHIC_SIZE_4BPP(32, 32) / GRAPHIC_SIZE_4BPP(8, 8));
+    oam_vram_allocation_table_add(BAG_ITEM_OAM_TAG, BAG2_STATE->oam_item_base_tile, GRAPHIC_SIZE_4BPP(32, 32) / GRAPHIC_SIZE_4BPP(8, 8));
+    BAG2_STATE->pal_idx_item = oam_allocate_palette(BAG_ITEM_OAM_TAG);
+    BAG2_STATE->oam_idx_item = oam_new_forward_search(&oam_template_item, 24, 140, 0);
 };
 
 static void bag_win0_animation(u8 self) {
@@ -318,7 +393,6 @@ static void bag_win0_animation(u8 self) {
     if ((params[1] > 0 && params[0] >= 160) || (params[1] < 0 && params[0] <= 0))
         big_callback_delete(self);
 }
-
 
 static void bag_show() {
     color_t backdrop = {.rgb = {0, 0, 0}};
@@ -345,6 +419,7 @@ static tboxdata bag_tboxes[] = {
     [TBOX_POCKET_NAME] = {.bg_id = 0, .x = 1, .y = 1, .w = 9, .h = 2, .pal = 15, .start_tile = 1},
     [TBOX_HINT] = {.bg_id = 2, .x = 1, .y = 4, .w = 8, .h = 4, .pal = 11, .start_tile = 1 + 9 * 2},
     [TBOX_DESCRIPTION] = {.bg_id = 0, .x = 5, .y = 14, .w = 0x19, .h = 6, .pal = 15, .start_tile = 1 + 9 * 2 + 9 * 4},
+    [TBOX_LIST] = {.bg_id = 0, .x = 11, .y = 1, .w = 18, .h = 12, .pal = 15, .start_tile = 1 + 9 * 2 + 9 * 4 + 0x19 * 6},
     [NUM_TBOXES] = {.bg_id = 0xFF},
 };
 
@@ -382,6 +457,37 @@ static void bag_load_hint() {
     } else {
         tbox_flush_set(TBOX_HINT, 0x00);
         tbox_flush_map(TBOX_HINT);
+    }
+}
+
+static void bag_initialize_compute_item_counts() {
+    for (int pocket_idx = 1; pocket_idx < NUM_POCKETS; pocket_idx++) {
+        BAG2_STATE->pocket_size[pocket_idx] = 0;
+        bag_pocket_t *pocket = bag_pockets + pocket_idx - 1;
+        for (int i = 0; i < pocket->capacity; i++) {
+            if (pocket->items[i].item_idx == 0)
+                break;
+            BAG2_STATE->pocket_size[pocket_idx]++;
+        }
+        BAG2_STATE->pocket_max_shown[pocket_idx] = (u8)MIN(BAG2_STATE->pocket_size[pocket_idx] + 1u, 6u);
+    }
+}
+
+void bag_initialize_list_cursor_positions() {
+    for (int pocket = 1; pocket < NUM_POCKETS; pocket++) {
+
+        u16 *cursor_pos = fmem.bag_cursor_position + pocket - 1;
+        u16 *items_above = fmem.bag_cursor_items_above + pocket - 1;
+
+        if (*cursor_pos != 0 && *cursor_pos + BAG2_STATE->pocket_max_shown[pocket] > BAG2_STATE->pocket_size[pocket] + 1) {
+            *cursor_pos = (u16)(BAG2_STATE->pocket_size[pocket] + 1 - BAG2_STATE->pocket_max_shown[pocket]);
+        }
+        if (*cursor_pos + *items_above >= BAG2_STATE->pocket_size[pocket] + 1) {
+            if (BAG2_STATE->pocket_size[pocket] + 1 < 2)
+                *items_above = 0;
+            else
+                *items_above = BAG2_STATE->pocket_size[pocket];
+        }
     }
 }
 
@@ -462,11 +568,23 @@ static bool bag_cb_initialize_step() {
             break;
         }
         case 13: {
-            bag_show();
+            u8 pocket_idx = bag_get_current_pocket();
+            BAG2_STATE->idle_cb_idx = bag_idle_callback_new();
+            BAG2_STATE->list_menu_cb_idx = list_menu_new(&gp_list_menu_template, fmem.bag_cursor_position[pocket_idx - 1], fmem.bag_cursor_items_above[pocket_idx - 1]);
             BAG2_STATE->initialization_state++;
             break;
         }
         case 14: {
+            bag_new_scroll_indicators_pockets();
+            BAG2_STATE->initialization_state++;
+            break;
+        }
+        case 15: {
+            bag_show();
+            BAG2_STATE->initialization_state++;
+            break;
+        }
+        case 16: {
             fading_control.buffer_transfer_disabled = false;
             bg_sync_display_and_show(0);
             bg_sync_display_and_show(1);
@@ -511,16 +629,259 @@ static u8 *bag_pocket_names[] = {
     [POCKET_BAIT] = str_pocket_bait,
 };
 
+static u8 str_bag_font_color_regular[] = PSTRING("COLOR_HIGHLIGHT_SHADOW\x02\x00\x03");
+static u8 str_cancel[] = LANGDEP(PSTRING("Zurück"), PSTRING("Cancel"));
+
+static void bag_format_item_string(u8 *dst, u16 item_idx) {
+    // TODO: Highlight colors for empty tms
+    strcpy(dst, str_bag_font_color_regular);
+    DEBUG("Format string called with %d\n", item_idx);
+    if (item_idx == 0xFFFF)
+        strcat(dst, str_cancel);
+    else
+        strcat(dst, item_get_name(item_idx));
+}
+
+static u8 str_bag_item_count[] = PSTRING("×BUFFER_1");
+extern u8 bag_select_icon[];
+
+static void bag_list_menu_cursor_print_callback(u8 tbox_idx, int idx, u8 y) {
+    u8 pocket = bag_get_current_pocket();
+    if (idx != LIST_MENU_B_PRESSED && idx != BAG2_STATE->pocket_size[pocket]) {
+        u16 item_idx = item_get_idx_by_pocket_position(pocket, (u16)idx);
+        u16 count = item_get_quantity_by_pocket_position(pocket, (u16)idx);
+        if (pocket != POCKET_KEY_ITEMS && !item_get_importance(item_idx)) {
+            itoa(buffer0, count, ITOA_PAD_SPACES, 3);
+            string_decrypt(strbuf, str_bag_item_count);
+            tbox_print_string(tbox_idx, 0, 0x6e, y, 0, 0, &font_colormap_std, 0xFF, strbuf);
+        } else if (save1->registered_item != 0 && save1->registered_item == item_idx) {
+            tbox_blit(tbox_idx, bag_select_icon, 0, 0, 24, 16, 0x70, y, 24, 16);
+        }
+    }
+}
+
+static void bag_oam_callback_bag_shaking(oam_object *self) {
+    if (self->flags & OAM_FLAG_GFX_ROTSCALE_ANIM_END) {
+        oam_rotscale_anim_init(self, 0);
+        self->callback = oam_null_callback;
+    }
+}
+
+static void bag_shake_oam() {
+    oam_object *o = oams + BAG2_STATE->oam_idx_bag;
+    if (o->flags & OAM_FLAG_GFX_ROTSCALE_ANIM_END) {
+        oam_rotscale_anim_init(o, 1);
+        o->callback = bag_oam_callback_bag_shaking;
+    }
+}
+
+static u8 str_close_bag[] = LANGDEP(PSTRING("Beutel schließen"), PSTRING("Close bag"));
+
+static tbox_font_colormap font_colormap_description = {.background = 0, .body = 1, .edge = 2};
+
+static void bag_print_item_description(u16 slot) {
+    u8 pocket = bag_get_current_pocket();
+    u8 *description;
+    if (slot == BAG2_STATE->pocket_size[pocket])
+        description = str_close_bag;
+    else
+        description = item_get_description(item_get_idx_by_pocket_position(pocket, slot));
+    tbox_flush_set(TBOX_DESCRIPTION, 0x00);
+    tbox_print_string(TBOX_DESCRIPTION, 2, 0, 3, 0, 0, &font_colormap_description, 0, description);
+}
+
+static void bag_oam_item_callback_update(oam_object *self) {
+    switch (self->private[1]) {
+        case 0: {
+            const u8 *pal = item_get_resource(self->private[0], true);
+            pal_decompress(pal, (u16)(256 + 16 * BAG2_STATE->pal_idx_item), 16 * sizeof(color_t));
+            break;
+        }
+        case 1: {
+            u16 tile = BAG2_STATE->oam_item_base_tile;
+            const u8 *gfx = item_get_resource(self->private[0], false);
+            lz77uncompwram(gfx, gp_tmp_buf);
+            for (int x = 0; x < 3; x++) {
+                for (int y = 0; y < 3; y++) {
+                    cpuset(gp_tmp_buf + (3 * y + x) * GRAPHIC_SIZE_4BPP(8, 8), (u8*)OAMCHARBASE(tile) + (4 * y + x) * GRAPHIC_SIZE_4BPP(8, 8),
+                        CPUSET_COPY | CPUSET_HALFWORD_SIZE(GRAPHIC_SIZE_4BPP(8, 8) | CPUSET_HALFWORD));
+                }
+            }
+            break;
+        }
+        default: {
+            self->flags &= (u16)(~OAM_FLAG_INVISIBLE);
+            self->callback = oam_null_callback;
+            break;
+        }
+    }
+    self->private[1]++;
+}
+
+static void bag_update_item(u16 slot) {
+    u8 pocket = bag_get_current_pocket();
+    u16 item_idx;
+    if (slot == BAG2_STATE->pocket_size[pocket])
+        item_idx = ITEM_NA;
+    else
+        item_idx = item_get_idx_by_pocket_position(pocket, slot);
+    oam_object *o = oams + BAG2_STATE->oam_idx_item;
+    o->flags |= OAM_FLAG_INVISIBLE;
+    o->private[0] = item_idx;
+    o->private[1] = 0;
+    o->callback = bag_oam_item_callback_update;
+}
+
+static void bag_list_menu_cursor_move_callback(int idx, u8 is_initializing, list_menu_t *list) {
+    (void)list; (void)idx;
+    if (!is_initializing) {
+        play_sound(245);
+        bag_shake_oam();
+    }
+    bag_print_item_description((u16)idx);
+    bag_update_item((u16)idx);
+}
+
+static void bag_build_item_list() {
+    u8 pocket_idx = bag_get_current_pocket();
+    bag_pocket_t *pocket = bag_pockets + pocket_idx - 1;
+    // TODO: berries, hms, etc
+    u8 num_items = BAG2_STATE->pocket_size[pocket_idx];
+    for (int i = 0; i <= num_items; i++) {
+        if (i < num_items)
+            bag_format_item_string(BAG2_STATE->list_menu_item_texts[i], pocket->items[i].item_idx);
+        else
+            bag_format_item_string(BAG2_STATE->list_menu_item_texts[i], 0xFFFF);
+        BAG2_STATE->list_menu_items[i].idx = i;
+        BAG2_STATE->list_menu_items[i].text = BAG2_STATE->list_menu_item_texts[i];
+    }
+    gp_list_menu_template.items = BAG2_STATE->list_menu_items;
+    gp_list_menu_template.item_cnt = (u16)(BAG2_STATE->pocket_size[pocket_idx] + 1);
+    gp_list_menu_template.tbox_idx = TBOX_LIST;
+    gp_list_menu_template.header_x = 0;
+    gp_list_menu_template.item_x = 9;
+    gp_list_menu_template.cursor_x = 1;
+    gp_list_menu_template.letter_spacing = 0;
+    gp_list_menu_template.item_vertical_padding = 2;
+    gp_list_menu_template.up_text_y = 2;
+    gp_list_menu_template.max_items_showed = BAG2_STATE->pocket_max_shown[pocket_idx];
+    gp_list_menu_template.font = 2;
+    gp_list_menu_template.cursor_pal = 2;
+    gp_list_menu_template.fill_value = 0;
+    gp_list_menu_template.cursor_shadow_color = 3;
+    gp_list_menu_template.cursor_kind = 0;
+    gp_list_menu_template.scroll_multiple = 0;
+    // TODO
+    gp_list_menu_template.cursor_moved_callback = bag_list_menu_cursor_move_callback; 
+    gp_list_menu_template.item_print_callback = bag_list_menu_cursor_print_callback;
+}
+
+static void bag_delete_scroll_indcators_items() {
+    scroll_indicator_delete(BAG2_STATE->scroll_indicator_items_cb_idx);
+}
+
+static void bag_new_scroll_indicators_items() {
+    u8 pocket_idx = bag_get_current_pocket();
+    scroll_indicator_template indicator_template = {
+        .arrow0_type = SCROLL_ARROW_UP, .arrow0_x = 160, .arrow0_y = 8,
+        .arrow1_type = SCROLL_ARROW_DOWN, .arrow1_x = 160, .arrow1_y = 104,
+        .arrow0_threshold = 0, 
+        .arrow1_threshold = (u16) MAX(0, BAG2_STATE->pocket_size[pocket_idx] - BAG2_STATE->pocket_max_shown[pocket_idx] + 1),
+        .tiles_tag = 110,
+        .pal_tag = 110,
+    };
+    BAG2_STATE->scroll_indicator_items_cb_idx = scroll_indicator_new(&indicator_template,
+        fmem.bag_cursor_position + pocket_idx - 1);
+    scroll_indicator_set_oam_priority(BAG2_STATE->scroll_indicator_items_cb_idx, 1, 1);
+}
+
+static scroll_indicator_template scroll_indicator_template_pockets = {
+    .arrow0_type = SCROLL_ARROW_LEFT, .arrow0_x = 8, .arrow0_y = 72,
+    .arrow1_type = SCROLL_ARROW_RIGHT, .arrow1_x = 72, .arrow1_y = 72,
+    .arrow0_threshold = 0, .arrow1_threshold = ARRAY_COUNT(bag_pocket_order) - 1,
+    .tiles_tag = 111, .pal_tag = 111,
+};
+
+static void bag_new_scroll_indicators_pockets() {
+    BAG2_STATE->scroll_indicator_pockets_cb_idx = scroll_indicator_new(&scroll_indicator_template_pockets,
+        &cmem.bag_pocket);
+    scroll_indicator_set_oam_priority(BAG2_STATE->scroll_indicator_pockets_cb_idx, 1, 1);
+}
+
 static tbox_font_colormap font_colormap_pocket_name = {.background = 0, .body = 1, .edge = 2}; 
 
 static void bag_load_pocket() {
     u8 pocket = bag_get_current_pocket();
     u8 *name = bag_pocket_names[pocket];
     u16 name_width = string_get_width(2, name, 0);
+    tbox_flush_set(TBOX_POCKET_NAME, 0x00);
     tbox_print_string(TBOX_POCKET_NAME, 2, 
         (u16)((bag_tboxes[TBOX_POCKET_NAME].w * 8 - name_width) / 2),
         0, 0, 0, &font_colormap_pocket_name, 0, name
         );
+    bag_build_item_list();
+    bag_new_scroll_indicators_items();
+}
+
+static void bag_oam_switch_pocket_callback(oam_object *self) {
+    if (self->y2 < 0)
+        self->y2++;
+    else
+        self->callback = oam_null_callback;
+}
+
+static void bag_oam_switch_pocket(u8 pocket_idx) {
+    oam_object *o = oams + BAG2_STATE->oam_idx_bag; 
+    oam_gfx_anim_start(o, pocket_idx);
+    o->y2 = -5;
+    o->callback = bag_oam_switch_pocket_callback;
+}
+
+void bag_switch_pockets_callback(u8 self) {
+    if (menu_util_link_is_busy() || fading_control.active || dma3_busy(-1))
+        return;
+    switch (big_callbacks[self].params[10]) {
+        case 0: {
+            u8 pocket_idx = bag_get_current_pocket();
+            tbox_flush_map(TBOX_DESCRIPTION);
+            tbox_flush_map(TBOX_LIST);
+            tbox_flush_map(TBOX_POCKET_NAME);
+            bag_delete_scroll_indcators_items();
+            oams[BAG2_STATE->oam_idx_item].flags |= OAM_FLAG_INVISIBLE;
+            list_menu_remove(BAG2_STATE->list_menu_cb_idx, fmem.bag_cursor_position + pocket_idx - 1, fmem.bag_cursor_items_above + pocket_idx - 1);
+            bg_virtual_sync_reqeust_push(0);
+            big_callbacks[self].params[10]++;
+            break;
+        }
+        case 1: {
+            cmem.bag_pocket = big_callbacks[self].params[11];
+            u8 pocket_idx = bag_get_current_pocket();
+            bag_load_pocket();
+            bag_oam_switch_pocket(pocket_idx);
+            BAG2_STATE->list_menu_cb_idx = list_menu_new(&gp_list_menu_template, fmem.bag_cursor_position[pocket_idx - 1], fmem.bag_cursor_items_above[pocket_idx - 1]);
+            big_callbacks[self].params[10]++;
+            break;
+        }
+        case 2: {
+            tbox_tilemap_draw(TBOX_DESCRIPTION);
+            tbox_tilemap_draw(TBOX_LIST);
+            tbox_tilemap_draw(TBOX_POCKET_NAME);
+            bg_virtual_sync_reqeust_push(0);
+            big_callbacks[self].params[10]++;
+            break;
+        }
+        default: {
+            big_callback_set_function_to_continuation(self);
+            break;
+        }
+    }
+}
+
+void bag_switch_pockets(u8 self, int pocket_idx_to) {
+    big_callbacks[self].params[10] = 0; // state
+    big_callbacks[self].params[11] = (u16)pocket_idx_to; // state
+    big_callback_set_function_and_continuation(self, bag_switch_pockets_callback, big_callbacks[self].function);
+    big_callbacks[self].function(self);
 }
 
 void test_bag2() {

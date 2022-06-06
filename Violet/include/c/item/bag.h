@@ -80,6 +80,15 @@ void item_menu_fade_and_continue(u8 self);
 u16 item_get_idx_by_pocket_position(u16 pocket, u16 idx);
 
 /**
+ * @brief Gets the number of items in a given position in a pocket
+ * 
+ * @param pocket The pocket in which to find the item
+ * @param idx The slot in the pocket
+ * @return u16 The quantity
+ */
+u16 item_get_quantity_by_pocket_position(u16 pocket, u16 idx);
+
+/**
  * Closes the bag and returns to the overworld, where a continuation is executed
  * @param self self-reference
  **/
