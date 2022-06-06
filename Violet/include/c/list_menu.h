@@ -144,4 +144,26 @@ void list_menu_print(u8 callback_idx);
  **/
 void gp_list_menu_yes_no_new(tboxdata *tbox, u8 font, u8 x, u8 y, u16 border_base_tile, u8 pal, u8 initial_cursor_position);
 
+/**
+ * @brief Gets the y coordinate (in pixels) of the cursor of a list menu
+ * 
+ * @param list_menu_cb_idx The list menu
+ * @return u8 The y coordinate of the cursor in pixels
+ */
+u8 list_menu_get_cursor_y_pixel(u8 list_menu_cb_idx);
+
+enum {
+  CURSOR_DIMENSION_WIDTH = 0,
+  CURSOR_DIMENSION_HEIGHT,
+};
+
+/**
+ * @brief Gets the dimension of a list cursor in a given font
+ * 
+ * @param font The font of the cursor
+ * @param dimension The dimension to get (one of CURSOR_DIMENSION_WIDTH, CURSOR_DIMENSION_HEIGHT)
+ * @return u16 the dimension
+ */
+u16 list_menu_get_cursor_dimension(u8 font, u8 dimension);
+
 #endif /* INCLUDE_C_LIST_MENU_H_ */
