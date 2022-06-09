@@ -147,4 +147,13 @@ void bag_print_string_item_cant_be_held(u8 self);
  **/
 void bag_initialize_from_start_menu();
 
+/**
+ * @brief Moves an item in a pocket
+ * 
+ * @param slots The pocket
+ * @param from The index of the item to move
+ * @param to Where to put the item
+ */
+void item_move_in_pocket(bag_item_t *slots, u32 from, u32 to);
+
 #endif

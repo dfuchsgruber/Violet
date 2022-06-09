@@ -208,9 +208,9 @@ void incubator_load_current_egg() {
     tbox_print_string(INCUBATOR_TBOX_EGG, 2,
         (u8)((incubator_tboxes[INCUBATOR_TBOX_EGG].w * 8 - str_egg_width) / 2), 2, 0, 0,
         &incubator_font_colormap_std_light, 0, strbuf);
-    tbox_draw_type_icon_by_type_p1(INCUBATOR_TBOX_TYPES, (u8) (basestats[species].type1 + 1), 0, 3);
+    tbox_blit_move_info_icon(INCUBATOR_TBOX_TYPES, (u8) (basestats[species].type1 + 1), 0, 3);
     if (basestats[species].type1 != basestats[species].type2) {
-      tbox_draw_type_icon_by_type_p1(INCUBATOR_TBOX_TYPES, (u8) (basestats[species].type2 + 1),
+      tbox_blit_move_info_icon(INCUBATOR_TBOX_TYPES, (u8) (basestats[species].type2 + 1),
           32, 3);
     }
     oams[fmem.incubator_state->oam_egg_idx].flags &= (u16)(~OAM_FLAG_INVISIBLE);

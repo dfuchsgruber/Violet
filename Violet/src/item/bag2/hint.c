@@ -20,18 +20,28 @@ static u8 *bag_context_hints[NUM_BAG_CONTEXTS] = {
 };
 
 u8 *bag_get_context_hint() {
-    return bag_context_hints[BAG2_STATE->context];
+    u8 pocket = bag_get_current_pocket();
+    if (pocket == POCKET_TM_HM)
+        return NULL;
+    else
+        return bag_context_hints[BAG2_STATE->context];
 }
 
-static tbox_font_colormap font_colormap_pocket_hint = {.background = 0, .body = 2, .edge = 1}; 
+tbox_font_colormap bag_font_colormap_pocket_hint = {.background = 0, .body = 2, .edge = 1}; 
 
 void bag_print_hint(u8 *hint) {
-    if (hint) {
-        tbox_flush_set(BAG_TBOX_HINT, 0x11);
+    if (bag_get_current_pocket() == POCKET_TM_HM) {
+        tbox_fill_rectangle(BAG_TBOX_HINT, 0x11, 0, 0, 9 * 8 + 4, 10 * 8);
+        tbox_sync(BAG_TBOX_HINT, TBOX_SYNC_SET);
         tbox_tilemap_draw(BAG_TBOX_HINT);
-        tbox_print_string(BAG_TBOX_HINT, 0, 2, 0, 0, 0, &font_colormap_pocket_hint, 0, hint);
+    } else if (hint) {
+        tbox_flush_set(BAG_TBOX_HINT, 0x00);
+        tbox_fill_rectangle(BAG_TBOX_HINT, 0x11, 0, 0, 9 * 8 + 4, 4 * 8);
+        tbox_tilemap_draw(BAG_TBOX_HINT);
+        tbox_print_string(BAG_TBOX_HINT, 0, 2, 0, 0, 0, &bag_font_colormap_pocket_hint, 0, hint);
     } else {
         tbox_flush_set(BAG_TBOX_HINT, 0x00);
         tbox_flush_map(BAG_TBOX_HINT);
     }
+    bg_virtual_sync_reqeust_push(2);
 }

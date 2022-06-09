@@ -21,6 +21,10 @@
 #include "callbacks.h"
 #include "music.h"
 #include "superstate.h"
+#include "item/bag2.h"
+#include "debug.h"
+#include "attack.h"
+#include "constants/attacks.h"
 
 u16 tm_hm_to_attack[NUM_TMS + NUM_HMS] = {
 	 ATTACK_POWER_PUNCH,
@@ -158,6 +162,8 @@ static u8 str_text_small[] = PSTRING("FONT_SIZE_SMALL");
 static u8 str_color_red[] = PSTRING("COLOR_FG_BG_SHADOW\x04\x00\x05"); //PSTRING("TEXT_SET_FG\x04TEXT_SET_SHADOW\x05");
 static u8 str_color_grey[] = PSTRING("COLOR_FG_BG_SHADOW\x02\x00\x03"); //PSTRING("TEXT_SET_FG\x02TEXT_SET_SHADOW\x03");
 static u8 str_clear_to_x12[] = PSTRING("CLEAR_TO\x12");
+static u8 str_clear_to_x13[] = PSTRING("CLEAR_TO\x13");
+static u8 str_clear_to_xtm[] = PSTRING("CLEAR_TO\x17");
 static u8 str_xf9_x08_clear_to_x1[] = {0xF9, 0x8, 0xFC, 0x11, 0x1, 0xFF};
 static u8 str_space[] = PSTRING(" ");
 static u8 str_font_size_big[] = PSTRING("FONT_SIZE_BIG");
@@ -165,8 +171,10 @@ static u8 str_font_size_big[] = PSTRING("FONT_SIZE_BIG");
 void tm_hm_get_str_number_and_name(u8 *dst, u16 item_idx) {
 	strcpy(strbuf, str_text_small);
 	if (item_is_hm(item_idx)) {
-		strcat(strbuf, str_clear_to_x12);
-		strcat(strbuf, str_xf9_x08_clear_to_x1);
+		strcat(strbuf, str_clear_to_x13);
+		// strcat(strbuf, str_xf9_x08_clear_to_x1);
+		(void)str_clear_to_x12;
+		(void)str_clear_to_xtm;
 		itoa(buffer0, ITEM_IDX_TO_HM_IDX(item_idx) + 1, ITOA_PAD_ZEROS, 1);
 		strcat(strbuf, buffer0);
 	} else {
@@ -176,13 +184,16 @@ void tm_hm_get_str_number_and_name(u8 *dst, u16 item_idx) {
 		strcat(strbuf, str_xf9_x08_clear_to_x1);
 		itoa(buffer0, ITEM_IDX_TO_TM_IDX(item_idx) + 1, ITOA_PAD_ZEROS, 2);
 		strcat(strbuf, buffer0);
+		strcat(strbuf, str_clear_to_xtm);
 	}
 	strcat(strbuf, str_space);
 	strcat(strbuf, str_font_size_big);
 	strcat(strbuf, attack_names[item_idx_to_attack(item_idx)]);
 	strcat(strbuf, str_color_grey);
 	strcpy(dst, strbuf);
+	DEBUG("Formatted item %d (is hm %d) to 0x%x\n", item_idx, item_is_hm(item_idx), dst);
 }
+
 
 u8 str_lb_is_selected[] = LANGDEP(PSTRING(" \nist ausgewählt!"), PSTRING(" \nis selected!"));
 
@@ -306,4 +317,94 @@ static void tm_hm_intialize_from_recharge() {
 void item_field_effect_energiedisk(u8 self) {
 	bag_set_continuation(tm_hm_intialize_from_recharge);
 	bag_fade_out_and_continuation(self);
+}
+
+// *** New stuff for bag2 *** //
+// TODO: remove / migrate old stuff
+
+
+static inline int bag_tm_hm_sort_cmp(u16 item_first, u16 item_second) {
+	int key_first = (item_is_hm(item_first) << 16) | item_first;
+	int key_second = (item_is_hm(item_second) << 16) | item_second;
+	return key_first - key_second;
+}
+
+void bag_tm_hm_sort() {
+	bag_item_t *list = bag_pockets[POCKET_TM_HM - 1].items;
+	size_t list_size = 0;
+	while (list[list_size].item_idx != ITEM_NONE)
+		list_size++;
+	bag_sort_pocket(list, list_size, bag_tm_hm_sort_cmp);
+}
+
+void bag_tm_hm_pocket_load_move_info_icons() {
+	tbox_flush_set(BAG_TBOX_MOVE_INFO, 0x00);
+	tbox_tilemap_draw(BAG_TBOX_MOVE_INFO);
+	tbox_blit_move_info_icon(BAG_TBOX_MOVE_INFO, MOVE_INFO_TYPE, 3, 0 + 1);
+	tbox_blit_move_info_icon(BAG_TBOX_MOVE_INFO, MOVE_INFO_CATEGORY, 3, 14 * 1 + 1);
+	tbox_blit_move_info_icon(BAG_TBOX_MOVE_INFO, MOVE_INFO_POWER, 3, 14 * 2 + 1);
+	tbox_blit_move_info_icon(BAG_TBOX_MOVE_INFO, MOVE_INFO_ACCURACY, 3, 14 * 3 + 1);
+	tbox_blit_move_info_icon(BAG_TBOX_MOVE_INFO, MOVE_INFO_PP, 3, 14 * 4 + 1);
+	tbox_sync(BAG_TBOX_MOVE_INFO, TBOX_SYNC_SET);
+}
+
+void bag_tm_hm_pocket_delete_move_info_icons() {
+	tbox_flush_map(BAG_TBOX_MOVE_INFO);
+}
+
+static u8 str_move_info_none[] = PSTRING("---");
+static tbox_font_colormap font_colmap_move_info = {.background = 0, .body = 15, .edge = 14};
+
+void bag_tm_hm_pocket_load_move_info(u16 slot) {
+
+
+	u8 pocket_idx = bag_get_current_pocket();
+	u8 power = 0, accuracy = 0, type = 0xFF, pp = 0, category = 0xFF;
+	if (slot < BAG2_STATE->pocket_size[pocket_idx]) {
+		u16 attack_idx = tm_hm_to_attack[ITEM_IDX_TO_TM_IDX(item_get_idx_by_pocket_position(pocket_idx, slot))];
+		if (attack_idx < ATTACK_CNT) {
+			power = attacks[attack_idx].base_power;
+			accuracy = attacks[attack_idx].accuracy;
+			pp = attacks[attack_idx].pp;
+			type = attacks[attack_idx].type;
+			category = attacks[attack_idx].category;
+		}
+	}
+
+	// tbox_flush_set(BAG_TBOX_ATTACK_DETAILS_HEADER, 0x00);
+	tbox_fill_rectangle(BAG_TBOX_MOVE_INFO, 0x00, 40 + 4, 0, (u16)(bag_tboxes[BAG_TBOX_MOVE_INFO].w * 8 - 40 + 4), (u16)(bag_tboxes[BAG_TBOX_MOVE_INFO].h * 8));
+
+	if (type != 0xFF)
+		tbox_blit_move_info_icon(BAG_TBOX_MOVE_INFO, (u8)(MOVE_INFO_TYPE_BASE + type), 
+			40 + 4, 0 * 14 + 2);
+	else
+		tbox_print_string(BAG_TBOX_MOVE_INFO, 2, 40 + 17, 0 * 14 + 2, 0, 0, 
+			&font_colmap_move_info, 0, str_move_info_none);
+
+	if (category != 0xFF)
+		tbox_blit_move_info_icon(BAG_TBOX_MOVE_INFO, (u8)(MOVE_INFO_PHYSICAL + category), 40 + 4, 1 * 14 + 2);
+	else
+		tbox_print_string(BAG_TBOX_MOVE_INFO, 2, 40 + 17, 1 * 14 + 2, 0, 0, 
+			&font_colmap_move_info, 0, str_move_info_none);
+
+	if (power)
+		itoa(buffer0, power, ITOA_PAD_SPACES, 3);
+	else
+		strcpy(buffer0, str_move_info_none);
+	tbox_print_string(BAG_TBOX_MOVE_INFO, 2, 40 + 17, 2 * 14 + 2, 0, 0, 
+		&font_colmap_move_info, 0, buffer0);
+
+	if (accuracy)
+		itoa(buffer1, accuracy, ITOA_PAD_SPACES, 3);
+	else
+		strcpy(buffer1, str_move_info_none);
+	tbox_print_string(BAG_TBOX_MOVE_INFO, 2, 40 + 17, 3 * 14 + 2, 0, 0, 
+		&font_colmap_move_info, 0, buffer1);
+
+	if (pp)
+		itoa(buffer2, pp, ITOA_PAD_SPACES, 3);
+	else
+		strcpy(buffer2, str_move_info_none);
+	tbox_print_string(BAG_TBOX_MOVE_INFO, 2, 40 + 17, 4 * 14 + 2, 0, 0, 
+		&font_colmap_move_info, 0, buffer2);
 }

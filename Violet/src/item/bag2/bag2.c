@@ -141,11 +141,17 @@ static u8 str_cancel[] = LANGDEP(PSTRING("Zurück"), PSTRING("Cancel"));
 void bag_format_item_string(u8 *dst, u16 item_idx) {
     // TODO: Highlight colors for empty tms
     strcpy(dst, str_bag_font_color_regular);
+    u8 pocket_idx = item_get_pocket(item_idx);
     DEBUG("Format string called with %d\n", item_idx);
     if (item_idx == 0xFFFF)
         strcat(dst, str_cancel);
-    else
+    else if (pocket_idx == POCKET_TM_HM) {
+        tm_hm_get_str_number_and_name(dst, item_idx);
+    } else if (pocket_idx == POCKET_BERRIES) {
+        berry_get_str_number_and_name(dst, item_idx); 
+    } else {
         strcat(dst, item_get_name(item_idx));
+    }
 }
 
 
@@ -191,7 +197,7 @@ void bag_new_scroll_indicators_items() {
     };
     BAG2_STATE->scroll_indicator_items_cb_idx = scroll_indicator_new(&indicator_template,
         fmem.bag_cursor_position + pocket_idx - 1);
-    scroll_indicator_set_oam_priority(BAG2_STATE->scroll_indicator_items_cb_idx, 1, 1);
+    scroll_indicator_set_oam_priority(BAG2_STATE->scroll_indicator_items_cb_idx, 2, 2);
 }
 
 static scroll_indicator_template scroll_indicator_template_pockets = {
@@ -204,7 +210,7 @@ static scroll_indicator_template scroll_indicator_template_pockets = {
 void bag_new_scroll_indicators_pockets() {
     BAG2_STATE->scroll_indicator_pockets_cb_idx = scroll_indicator_new(&scroll_indicator_template_pockets,
         &cmem.bag_pocket);
-    scroll_indicator_set_oam_priority(BAG2_STATE->scroll_indicator_pockets_cb_idx, 1, 1);
+    scroll_indicator_set_oam_priority(BAG2_STATE->scroll_indicator_pockets_cb_idx, 2, 2);
 }
 
 static void bag_close_wait_fadescreen_and_continue(u8 self) {
@@ -270,4 +276,9 @@ static void bag_wait_for_fadescreen_and_initialize(u8 self) {
 void test_bag2() {
     fadescreen(0xFFFFFFFF, (u8)-2, 0, 16, 0);
     big_callback_new(bag_wait_for_fadescreen_and_initialize, 0);
+}
+
+
+void empty_pocket_berries() {
+    bag_clear_slots(bag_pockets[POCKET_BERRIES - 1].items, bag_pockets[POCKET_BERRIES - 1].capacity);
 }

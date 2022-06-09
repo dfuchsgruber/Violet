@@ -166,4 +166,42 @@ enum {
  */
 u16 list_menu_get_cursor_dimension(u8 font, u8 dimension);
 
+enum {
+    LIST_MENU_ATTRIBUTE_MOVECURSORFUNC = 0,
+    LIST_MENU_ATTRIBUTE_MOVECURSORFUNC2,
+    LIST_MENU_ATTRIBUTE_TOTALITEMS,
+    LIST_MENU_ATTRIBUTE_MAXSHOWED,
+    LIST_MENU_ATTRIBUTE_WINDOWID,
+    LIST_MENU_ATTRIBUTE_HEADERX,
+    LIST_MENU_ATTRIBUTE_ITEMX,
+    LIST_MENU_ATTRIBUTE_CURSORX,
+    LIST_MENU_ATTRIBUTE_UPTEXTY,
+    LIST_MENU_ATTRIBUTE_CURSORPAL,
+    LIST_MENU_ATTRIBUTE_FILLVALUE,
+    LIST_MENU_ATTRIBUTE_CURSORSHADOWPAL,
+    LIST_MENU_ATTRIBUTE_LETTERSPACING,
+    LIST_MENU_ATTRIBUTE_ITEMVERTICALPADDING,
+    LIST_MENU_ATTRIBUTE_SCROLLMULTIPLE,
+    LIST_MENU_ATTRIBUTE_FONTID,
+    LIST_MENU_ATTRIBUTE_CURSORKIND,
+};
+
+/**
+ * @brief Sets an attribute of a list menu
+ * 
+ * @param list_menu_cb_idx the list menu
+ * @param attribute the attribute to set
+ * @param value the value to set the attribute to
+ */
+void list_menu_set_attribute(u8 list_menu_cb_idx, u8 attribute, int value);
+
+/**
+ * @brief Gets an attribute of a list menu
+ * 
+ * @param list_menu_cb_idx the list menu
+ * @param attribute the attribute to get
+ * @return int the attribute
+ */
+int list_menu_get_attribute(u8 list_menu_cb_idx, u8 attribute);
+
 #endif /* INCLUDE_C_LIST_MENU_H_ */

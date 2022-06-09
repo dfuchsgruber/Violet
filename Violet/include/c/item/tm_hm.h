@@ -4,6 +4,7 @@
 #include "types.h"
 #include "list_menu.h"
 #include "constants/items.h"
+#include "color.h"
 
 #define TM_HM_LIST_MENU_STR_LENGTH 0x30
 
@@ -41,6 +42,8 @@ typedef struct {
 } tm_hm_state_t;
 
 tm_hm_state_t *tm_hm_state;
+
+extern color_t pal_hm_symbol[2];
 
 /**
  * Initializes the tm / hm used flags
@@ -135,5 +138,14 @@ void tm_hm_initialize(u8 context, void (*continuation)(), u8 param2);
  * @param self self-reference
  **/
 void item_field_effect_energiedisk(u8 self);
+
+/**
+ * @brief Checks if an item as a hm
+ * 
+ * @param item_idx the item to check
+ * @return true 
+ * @return false 
+ */
+bool item_is_hm(u16 item_idx);
 
 #endif

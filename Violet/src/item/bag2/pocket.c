@@ -7,6 +7,7 @@
 #include "dma.h"
 #include "language.h"
 #include "text.h"
+#include "constants/pokemon_types.h"
 
 static tbox_font_colormap font_colormap_pocket_name = {.background = 0, .body = 1, .edge = 2}; 
 
@@ -30,6 +31,23 @@ static u8 *bag_pocket_names[] = {
 
 void bag_load_pocket() {
     u8 pocket = bag_get_current_pocket();
+    switch (pocket) {
+        case POCKET_TM_HM: {
+            bag_tm_hm_sort();
+            bag_tm_hm_pocket_load_move_info_icons();
+            break;
+        }
+        case POCKET_BERRIES:
+            bag_berries_sort();
+            FALL_THROUGH;
+        default:
+            bag_tm_hm_pocket_delete_move_info_icons();
+            break;
+    }
+    // Reload the hint / black box for tm / hms
+    bag_print_hint(bag_get_context_hint());
+
+    bg_virtual_sync_reqeust_push(bag_tboxes[BAG_TBOX_MOVE_INFO].bg_id);
     u8 *name = bag_pocket_names[pocket];
     u16 name_width = string_get_width(2, name, 0);
     tbox_flush_set(BAG_TBOX_POCKET_NAME, 0x00);
@@ -39,6 +57,9 @@ void bag_load_pocket() {
         );
     bag_build_item_list();
     bag_new_scroll_indicators_items();
+
+
+	// Draw the background box tilemap
 }
 
 static void bag_oam_switch_pocket_callback(oam_object *self) {

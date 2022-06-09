@@ -37,6 +37,9 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	callasm empty_pocket_berries
+	additem ITEM_GRANABEERE 1
+	additem ITEM_AMRENABEERE 1
 	callasm test_bag2
 	end
 
@@ -47,6 +50,7 @@ ow_script_test:
 	callstd ITEM_OBTAIN
 	loadpointer 0 str_beforea
 	callstd MSG
+	additem ITEM_TM03 1
 	additem ITEM_VM01 1
 	additem ITEM_VM02 1
 	additem ITEM_VM03 1

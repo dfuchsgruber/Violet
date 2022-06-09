@@ -40,8 +40,10 @@ void bag_update_item(u16 slot) {
     else
         item_idx = item_get_idx_by_pocket_position(pocket, slot);
     oam_object *o = oams + BAG2_STATE->oam_idx_item;
-    o->flags |= OAM_FLAG_INVISIBLE;
-    o->private[0] = item_idx;
-    o->private[1] = 0;
-    o->callback = bag_oam_item_callback_update;
+    if (o->private[0] != item_idx) {
+        o->flags |= OAM_FLAG_INVISIBLE;
+        o->private[0] = item_idx;
+        o->private[1] = 0;
+        o->callback = bag_oam_item_callback_update;
+    }
 }

@@ -113,7 +113,7 @@ extern u8 gfx_attack_classesTiles[];
 
 void move_relearner_update_move_info(u16 move) {
     u8 buffer[50];
-    tbox_draw_type_icon_by_type_p1(2, (u8)(attacks[move].type + 1), 1, 4);
+    tbox_blit_move_info_icon(2, (u8)(attacks[move].type + 1), 1, 4);
     if (attacks[move].base_power < 2) {
         move_relearner_print_string(3, str_three_hyphens, 1, 4, 0, 0);
     } else {

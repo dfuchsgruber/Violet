@@ -24,37 +24,41 @@
 #include "music.h"
 #include "menu_indicators.h"
 #include "overworld/pokemon_party_menu.h"
+#include "item/tm_hm.h"
 
 static bool bag_cb_initialize_step();
 
 static tbox_font_colormap bag_font_colormap_std = {.background = 0, .body = 2, .edge = 3}; 
 
 tboxdata bag_tboxes[NUM_BAG_TBOXES + 1] = {
-    [BAG_TBOX_POCKET_NAME] = {.bg_id = 0, .x = 1, .y = 1, .w = 9, .h = 2, .pal = 15, .start_tile = 1},
-    [BAG_TBOX_HINT] = {.bg_id = 2, .x = 1, .y = 4, .w = 8, .h = 4, .pal = 11, .start_tile = 1 + 9 * 2},
-    [BAG_TBOX_DESCRIPTION] = {.bg_id = 0, .x = 5, .y = 14, .w = 0x19, .h = 6, .pal = 15, .start_tile = 1 + 9 * 2 + 9 * 4},
-    [BAG_TBOX_LIST] = {.bg_id = 0, .x = 11, .y = 1, .w = 18, .h = 12, .pal = 15, .start_tile = 1 + 9 * 2 + 9 * 4 + 0x19 * 6},
+    [BAG_TBOX_POCKET_NAME] = {.bg_id = 0, .x = 1, .y = 1, .w = 9, .h = 2, .pal = 15, .start_tile = 2},
+    [BAG_TBOX_HINT] = {.bg_id = 2, .x = 0, .y = 4, .w = 10, .h = 9, .pal = 11, .start_tile = 2 + 9 * 2},
+    [BAG_TBOX_DESCRIPTION] = {.bg_id = 0, .x = 5, .y = 14, .w = 0x19, .h = 6, .pal = 15, .start_tile = 2 + 9 * 2 + 9 * 10},
+    [BAG_TBOX_LIST] = {.bg_id = 0, .x = 11, .y = 1, .w = 18, .h = 12, .pal = 15, .start_tile = 2 + 9 * 2 + 9 * 10 + 0x19 * 6},
+    [BAG_TBOX_MOVE_INFO] = {.bg_id = 0, .x = 0, .y = 4, .w = 10, .h = 9, .pal = 4, .start_tile = 2 + 9 * 2 + 9 * 10 + 0x19 * 6 + 18 * 12},
     [NUM_BAG_TBOXES] = {.bg_id = 0xFF},
 };
 
 extern color_t bag_tboxPal[16];
 
 static bg_config bag_bg_cnfgs[] = {
-    {
+    [0] = {
         .bg_id = 0,
         .char_base = 0,
         .map_base = 31,
-        .priority = 1,
-    }, {
+        .priority = 0,
+    }, 
+    [1] = {
         .bg_id = 1,
         .char_base = 3,
         .map_base = 30,
         .priority = 2,
-    }, {
+    },
+    [2] = {
         .bg_id = 2,
         .char_base = 0,
         .map_base = 29,
-        .priority = 0,
+        .priority = 1,
     },
 };
 
@@ -96,7 +100,7 @@ static bool bag_allocate_bgs() {
     io_set(IO_BLDCNT, 0);
     io_set(IO_BGHOFS(2), (u16)(-2));
     io_set(IO_BLDCNT, IO_BLDCNT_BG2_FIRST | IO_BLDCNT_ALPHA_BLENDING | IO_BLDCNT_SECOND_ALL);
-    io_set(IO_BLDALPHA, IO_BLDALPHA_EVA(15) | IO_BLDALPHA_EVB(12));
+    io_set(IO_BLDALPHA, IO_BLDALPHA_EVA(15) | IO_BLDALPHA_EVB(7));
     return true;
 }
 
@@ -124,7 +128,7 @@ static bool bag_allocate() {
 }
 
 static bool bag_load_gfx() {
-    DEBUG("Load gfx step %d\n", BAG2_STATE->gfx_initialization_state);
+    // DEBUG("Load gfx step %d\n", BAG2_STATE->gfx_initialization_state);
     switch (BAG2_STATE->gfx_initialization_state) {
         case 0: {
             lz77uncompvram(gfx_bag_backgroundTiles, CHARBASE(3));
@@ -167,6 +171,18 @@ static bool bag_load_gfx() {
             BAG2_STATE->gfx_initialization_state++;
             break;
         }
+        case 7: {
+            pal_copy(typechart_icon_pal, (u16)(bag_tboxes[BAG_TBOX_MOVE_INFO].pal * 16), 32);
+            BAG2_STATE->gfx_initialization_state++;
+            break;
+        }
+        // case 8: {
+        //     // background for the tm/hm move info
+        //     u16 fill = 0x1111;
+        //     cpuset(&fill, (u8*)CHARBASE(bag_bg_cnfgs[2].char_base) + GRAPHIC_SIZE_4BPP(8, 8), CPUSET_FILL | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(GRAPHIC_SIZE_4BPP(8, 8)));
+        //     BAG2_STATE->gfx_initialization_state++;
+        //     break;
+        // }
         default:
             return true;
     }
@@ -210,6 +226,7 @@ static void bag_initialize_tboxes() {
     tbox_context_init_border_set_style(0, 0x200, 16 * 14);
     pal_copy(tbox_palette_transparent, 11 * 16, 16 * sizeof(color_t));
     pal_copy(bag_tboxPal, 15 * 16, 16 * sizeof(color_t));
+    pal_copy(pal_hm_symbol, 15 * 16 + 6, sizeof(pal_hm_symbol));
     for (u8 i = 0; bag_tboxes[i].bg_id != 0xFF; i++) {
         tbox_flush_set(i, 0x00);
         tbox_flush_map(i);
@@ -267,8 +284,8 @@ static oam_template bag_oam_template_insert_bar = {
 
 static void bag_create_insert_bars() {
     for (int i = 0; i < 9; i++) {
-        BAG2_STATE->oam_idx_insert_bar[i] = oam_new_forward_search(&bag_oam_template_insert_bar, (s16)(i * 16 + 0x60), 7, 0);
-        oam_object *o = oams + BAG2_STATE->oam_idx_insert_bar[i];
+        BAG2_STATE->oam_idx_move_item_bar[i] = oam_new_forward_search(&bag_oam_template_insert_bar, (s16)(i * 16 + 0x60), 7, 0);
+        oam_object *o = oams + BAG2_STATE->oam_idx_move_item_bar[i];
         switch (i) {
             case 0:
                 break;
@@ -324,7 +341,7 @@ static void bag_fadescreen_and_return() {
 static u8 str_bag_item_count[] = PSTRING("×BUFFER_1");
 extern u8 bag_select_icon[];
 
-static void bag_list_menu_cursor_print_callback(u8 tbox_idx, int idx, u8 y) {
+static void bag_list_menu_item_print_callback(u8 tbox_idx, int idx, u8 y) {
     u8 pocket = bag_get_current_pocket();
     if (idx != LIST_MENU_B_PRESSED && idx != BAG2_STATE->pocket_size[pocket]) {
         u16 item_idx = item_get_idx_by_pocket_position(pocket, (u16)idx);
@@ -336,6 +353,17 @@ static void bag_list_menu_cursor_print_callback(u8 tbox_idx, int idx, u8 y) {
         } else if (save1->registered_item != 0 && save1->registered_item == item_idx) {
             tbox_blit(tbox_idx, bag_select_icon, 0, 0, 24, 16, 0x70, y, 24, 16);
         }
+        if (pocket == POCKET_TM_HM && item_is_hm(item_idx)) {
+			tm_hm_place_hm_in_tbox(tbox_idx, 10, y);
+        }
+
+    }
+    // Print the cursor of the item to move when moving items
+    if (BAG2_STATE->is_moving_item) {
+        if (BAG2_STATE->moving_item_original_position == idx)
+            bag_item_list_print_cursor_at(y, 2);
+        else
+            bag_item_list_print_cursor_at(y, 0xFF);
     }
 }
 
@@ -345,8 +373,13 @@ static void bag_list_menu_cursor_move_callback(int idx, u8 is_initializing, list
         play_sound(245);
         bag_shake_oam();
     }
-    bag_print_item_description((u16)idx);
-    bag_update_item((u16)idx);
+    if (!BAG2_STATE->is_moving_item) {
+        bag_print_item_description((u16)idx);
+        bag_update_item((u16)idx);
+    }
+    if (bag_get_current_pocket() == POCKET_TM_HM) {
+        bag_tm_hm_pocket_load_move_info((u16)idx);
+    }
 }
 
 void bag_build_item_list() {
@@ -380,11 +413,11 @@ void bag_build_item_list() {
     gp_list_menu_template.scroll_multiple = 0;
     // TODO
     gp_list_menu_template.cursor_moved_callback = bag_list_menu_cursor_move_callback; 
-    gp_list_menu_template.item_print_callback = bag_list_menu_cursor_print_callback;
+    gp_list_menu_template.item_print_callback = bag_list_menu_item_print_callback;
 }
 
 static bool bag_cb_initialize_step() {
-    DEBUG("Init step %d, vlbankcb 0x%x", BAG2_STATE->initialization_state, super.vblank_callback);
+    // DEBUG("Init step %d, vlbankcb 0x%x", BAG2_STATE->initialization_state, super.vblank_callback);
     switch (BAG2_STATE->initialization_state) {
         case 0: {
             reset_hblank_and_vblank_callbacks();

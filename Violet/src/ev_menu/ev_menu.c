@@ -257,7 +257,7 @@ void ev_menu_load_pokemon() {
 	tbox_flush_set(EV_MENU_TBOX_HIDDEN_POWER_TYPE, 0);
 	tbox_tilemap_draw(EV_MENU_TBOX_HIDDEN_POWER_TYPE);
 	if (!is_egg) {
-		tbox_draw_type_icon_by_type_p1(EV_MENU_TBOX_HIDDEN_POWER_TYPE,
+		tbox_blit_move_info_icon(EV_MENU_TBOX_HIDDEN_POWER_TYPE,
 				(u8) (hidden_power_get_type(pid) + 1), 0, 0);
 		u8 str_none[] = PSTRING("");
 		tbox_print_string(EV_MENU_TBOX_HIDDEN_POWER_TYPE, 2, 40, 0, 0, 0,

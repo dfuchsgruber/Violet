@@ -5,7 +5,7 @@
 graphic bag_graphic_bag = {.sprite = gfx_bag2Tiles, .size = 8 * GRAPHIC_SIZE_4BPP(64, 64), .tag = BAG_OAM_TAG};
 graphic bag_graphic_insert_bar = {.sprite = gfx_bag_insert_barTiles, .size = 2 * GRAPHIC_SIZE_4BPP(16, 16), .tag = BAG_INSERT_OAM_TAG};
 
-static sprite bag_sprite = {.attr0 = ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE | ATTR0_DSIZE, .attr1 = ATTR1_SIZE_64_64, .attr2 = ATTR2_PRIO(1)};
+static sprite bag_sprite = {.attr0 = ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE | ATTR0_DSIZE, .attr1 = ATTR1_SIZE_64_64, .attr2 = ATTR2_PRIO(2)};
 
 static gfx_frame bag_anim_idle[] = {{.data = 0, .duration = 0}, {.data = GFX_ANIM_END}};
 static gfx_frame bag_anim_items[] = {{.data = 64 * 3, .duration = 0}, {.data = GFX_ANIM_END}};

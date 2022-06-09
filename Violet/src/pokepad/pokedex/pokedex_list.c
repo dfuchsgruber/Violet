@@ -200,10 +200,10 @@ void pokedex_update_list() {
             //now we draw the types
             u8 type1 = (u8) (basestats[list[first].species].type1 + 1);
             u8 type2 = (u8) (basestats[list[first].species].type2 + 1);
-            tbox_draw_type_icon_by_type_p1(POKEDEX_TBOX_LIST_TYPES, type1, 0, y_pixel);
+            tbox_blit_move_info_icon(POKEDEX_TBOX_LIST_TYPES, type1, 0, y_pixel);
             if (type1 != type2)
-                tbox_draw_type_icon_by_type_p1(POKEDEX_TBOX_LIST_TYPES, type2, 0x20, y_pixel);
-            tbox_draw_type_icon_by_type_p1(POKEDEX_TBOX_LIST_CAPTURE, 0, 0, y_pixel);
+                tbox_blit_move_info_icon(POKEDEX_TBOX_LIST_TYPES, type2, 0x20, y_pixel);
+            tbox_blit_move_info_icon(POKEDEX_TBOX_LIST_CAPTURE, 0, 0, y_pixel);
         } else {
 
         }

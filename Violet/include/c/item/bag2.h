@@ -2,10 +2,12 @@
 #define H_ITEM_BAG_2
 
 #include "types.h"
+#include "bg.h"
 #include "bag.h"
 #include "save.h"
 #include "list_menu.h"
 #include "constants/item_pockets.h"
+#include "text.h"
 
 enum {
     BAG_OPEN_ITEMS = 0,
@@ -41,6 +43,7 @@ enum {
     BAG_TBOX_DESCRIPTION,
     BAG_TBOX_HINT,
     BAG_TBOX_LIST,
+    BAG_TBOX_MOVE_INFO,
     NUM_BAG_TBOXES,
 };
 
@@ -52,13 +55,13 @@ typedef struct {
     void (*continuation)();
     void (*internal_continuation)(); // Use this if you want to override the actual continuation (e.g. for giving an item)
     list_menu_item *list_menu_items;
-    u8 (*list_menu_item_texts)[19];
-    void *bg0_map;
-    void *bg1_map;
-    void *bg2_map;
+    u8 (*list_menu_item_texts)[40];
+    bg_tile (*bg0_map)[32];
+    bg_tile (*bg1_map)[32];
+    bg_tile (*bg2_map)[32];
     u8 oam_idx_bag;
     u8 oam_idx_item;
-    u8 oam_idx_insert_bar[9];
+    u8 oam_idx_move_item_bar[9];
     u8 pal_idx_item;
     u16 oam_item_base_tile;
     u16 cursor_items_above[NUM_POCKETS];
@@ -95,6 +98,8 @@ graphic bag_graphic_bag;
 graphic bag_graphic_insert_bar;
 oam_template bag_oam_template;
 oam_template bag_oam_template_item;
+
+tbox_font_colormap bag_font_colormap_pocket_hint;
 
 /**
  * @brief Opens the bag menu
@@ -290,5 +295,74 @@ void bag_initialize_compute_item_counts();
  * @param pocket which pocket to switch to (1-based)
  */
 void bag_oam_switch_pockets(u8 pocket);
+
+/**
+ * @brief Sorts a pocket (item list) using insertion sort (efficient on nearly-sorted arrays)
+ * 
+ * @param list the list to sort
+ * @param size the size of the list
+ * @param cmp a comparator that compares two item idxs a, b and outputs negative values if a < b, zero if a == b and positive values if a > b
+ */
+static inline void bag_sort_pocket(bag_item_t *list, size_t size, int (*cmp)(u16, u16)) {
+	// This array is almost always nearly sorted -> insertion sort
+	bag_item_t tmp;
+	size_t j;
+	for (size_t i = 1; i < size; i++) {
+		tmp = list[i];
+		j = i;
+		while (j > 0 && cmp(list[j - 1].item_idx, tmp.item_idx) > 0) {
+			list[j] = list[j - 1];
+			j--;
+		}
+		list[j] = tmp;
+	}
+}
+
+/**
+ * @brief Sorts the tm/hm pocket.
+ * 
+ */
+void bag_tm_hm_sort();
+
+/**
+ * @brief Gets the string of tms and hms to print in the bag
+ * 
+ * @param dst where to put the string
+ * @param item_idx the item to query the name of
+ */
+void tm_hm_get_str_number_and_name(u8 *dst, u16 item_idx);
+
+/**
+ * @brief Prints the move info icons in the tm hm box
+ * 
+ */
+void bag_tm_hm_pocket_load_move_info_icons();
+
+/**
+ * @brief Hides the move info icons int he tm hm box
+ * 
+ */
+void bag_tm_hm_pocket_delete_move_info_icons();
+
+/**
+ * @brief Prints the move info values in the tm hm box
+ * 
+ * @param slot the slot in the pocket
+ */
+void bag_tm_hm_pocket_load_move_info(u16 slot);
+
+/**
+ * @brief Sorts the berries pocket.
+ * 
+ */
+void bag_berries_sort();
+
+/**
+ * @brief Gets the name and number of a berry
+ * 
+ * @param dst where to put the string
+ * @þaram item_idx the idx of the berry to get the number of 
+ */
+void berry_get_str_number_and_name(u8 *dst, u16 item_idx);
 
 #endif

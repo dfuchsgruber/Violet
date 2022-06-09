@@ -301,6 +301,27 @@ extern "C" {
      */
     void tbox_flush_and_free_if_present(u8 *box_id_ptr);
 
+
+    typedef struct {
+        u8 width;
+        u8 height;
+        u16 offset;
+    } move_info_gfx_t;
+
+    enum {
+        MOVE_INFO_NONE = 0,
+        MOVE_INFO_TYPE_BASE = 1,
+        MOVE_INFO_TYPE = 19,
+        MOVE_INFO_POWER,
+        MOVE_INFO_ACCURACY,
+        MOVE_INFO_PP,
+        MOVE_INFO_EFFECT,
+        MOVE_INFO_CATEGORY,
+        MOVE_INFO_PHYSICAL,
+        MOVE_INFO_SPECIAL,
+        MOVE_INFO_STATUS,
+    };
+
     /**
      * Draws the icon for a type on a textbox
      * @param box_id the box id
@@ -308,7 +329,7 @@ extern "C" {
      * @param x_offset the x displacement
      * @param y_offset the y displacement
      */
-    void tbox_draw_type_icon_by_type_p1(u8 box_id, u8 type_p1, u16 x_offset, u16 y_offset);
+    void tbox_blit_move_info_icon(u8 box_id, u8 type_p1, u16 x_offset, u16 y_offset);
 
     /**
      * Clears the bottom line of the tbox (sets tile to color 0)
