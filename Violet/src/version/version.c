@@ -227,7 +227,7 @@ void version_upgrade_alpha_3_0_to_3_1() {
 }
 
 void fix_hm_tm() {
-    bag_clear_slots(bag_pockets[POCKET_TM_HM- 1].items, bag_pockets[POCKET_TM_HM - 1].capacity);
+    bag_clear_slots(bag_pockets[POCKET_TO_BAG_POCKETS_IDX(POCKET_TM_HM)].items, bag_pockets[POCKET_TO_BAG_POCKETS_IDX(POCKET_TM_HM)].capacity);
 }
 
 u16 version_is_latest(){

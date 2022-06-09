@@ -44,7 +44,6 @@ void bag_delete_scroll_indicators_pockets() {
 void bag_win0_animation(u8 self) {
     s16 *params = (s16*)big_callbacks[self].params;
     params[0] = (s16)(params[0] + params[1]);
-    DEBUG("Win0 anim with p0 %d\n", params[0]);
     io_set(IO_WIN0V, (u16)IO_WINV(0, MAX(0, MIN(160, params[0]))));
     if ((params[1] > 0 && params[0] >= 160) || (params[1] < 0 && params[0] <= 0))
         big_callback_delete(self);
@@ -280,5 +279,5 @@ void test_bag2() {
 
 
 void empty_pocket_berries() {
-    bag_clear_slots(bag_pockets[POCKET_BERRIES - 1].items, bag_pockets[POCKET_BERRIES - 1].capacity);
+    bag_clear_slots(bag_pockets[POCKET_TO_BAG_POCKETS_IDX(POCKET_BERRIES)].items, bag_pockets[POCKET_BERRIES - 1].capacity);
 }

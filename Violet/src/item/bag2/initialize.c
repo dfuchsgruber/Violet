@@ -240,7 +240,7 @@ static void bag_initialize_tboxes() {
 void bag_initialize_compute_item_counts() {
     for (int pocket_idx = 1; pocket_idx < NUM_POCKETS; pocket_idx++) {
         BAG2_STATE->pocket_size[pocket_idx] = 0;
-        bag_pocket_t *pocket = bag_pockets + pocket_idx - 1;
+        bag_pocket_t *pocket = bag_pockets + POCKET_TO_BAG_POCKETS_IDX(pocket_idx);
         for (int i = 0; i < pocket->capacity; i++) {
             if (pocket->items[i].item_idx == 0)
                 break;
@@ -384,7 +384,7 @@ static void bag_list_menu_cursor_move_callback(int idx, u8 is_initializing, list
 
 void bag_build_item_list() {
     u8 pocket_idx = bag_get_current_pocket();
-    bag_pocket_t *pocket = bag_pockets + pocket_idx - 1;
+    bag_pocket_t *pocket = bag_pockets + POCKET_TO_BAG_POCKETS_IDX(pocket_idx);
     // TODO: berries, hms, etc
     u8 num_items = BAG2_STATE->pocket_size[pocket_idx];
     for (int i = 0; i <= num_items; i++) {

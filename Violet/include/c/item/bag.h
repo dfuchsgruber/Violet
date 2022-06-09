@@ -29,6 +29,8 @@ typedef struct {
 
 extern bag_pocket_t bag_pockets[MAX_NUM_POCKETS];
 
+#define POCKET_TO_BAG_POCKETS_IDX(pocket) ((u8)(pocket - 1))
+
 #define MAX_NUM_PC_ITEMS      30
 #define MAX_NUM_BAG_ITEMS     50
 #define MAX_NUM_BAG_KEY_ITEMS  30
@@ -37,6 +39,14 @@ extern bag_pocket_t bag_pockets[MAX_NUM_POCKETS];
 #define MAX_NUM_BAG_BERRIES   44
 #define MAX_NUM_BAG_MEDICINE 32
 #define MAX_NUM_BAG_BAIT   8 
+
+/**
+ * @brief Applies a new encryption key to an quantity encrypted with save1->encryption_key
+ * 
+ * @param dst the quantity to re-encrypt
+ * @param key the key to encrypt with
+ */
+void bag_item_apply_new_encryption_key(u16 *dst, u32 key);
 
 /**
  * Prints a string in the bag and continues with a contnmuation function.
@@ -87,6 +97,22 @@ u16 item_get_idx_by_pocket_position(u16 pocket, u16 idx);
  * @return u16 The quantity
  */
 u16 item_get_quantity_by_pocket_position(u16 pocket, u16 idx);
+
+/**
+ * @brief Gets the quantity of an encrypted bag item slot
+ * 
+ * @param encrypted the encrypted quantity
+ * @return u16 The quantity
+ */
+u16 item_slot_get_quantity(u16 *encrypted);
+
+/**
+ * @brief Sets the quantity of an item in an encrypted bag slot
+ * 
+ * @param dst Where to put the quantity
+ * @param quantity The quantity to set
+ */
+void item_slot_set_quantity(u16 *dst, u16 quantity);
 
 /**
  * Closes the bag and returns to the overworld, where a continuation is executed

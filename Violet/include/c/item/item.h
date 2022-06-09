@@ -93,8 +93,9 @@ void item_select_target_pokemon(u8 self);
  * Removes a number of exemplars of items from the player's bag
  * @param item_id the item to remove
  * @param count the number of exemplars to remove
+ * @return if the removal was successful
  */
-void item_remove(u16 item_id, u16 count);
+bool item_remove(u16 item_id, u16 count);
 
 /**
  * Callback that waits for the text renderer to finish and returns to the bag afterwards
@@ -121,8 +122,9 @@ void item_print_string(u8 cb_id, u8 unknown, u8 unknown2, u8 *str);
  * Adds a certain amount of exemplars of an item to the player's bag
  * @param item the item
  * @param cnt the number of exemplars to add
+ * @return if the adding was succesfull
  */
-void item_add(u16 item, u16 cnt);
+bool item_add(u16 item, u16 cnt);
 
 /**
  * Removes an item from the player's pc

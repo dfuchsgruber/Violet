@@ -50,7 +50,7 @@ static void bag_move_item_update_bgs(u8 self) {
         }
         case 1: {
             u8 pocket_idx = bag_get_current_pocket();
-            BAG2_STATE->list_menu_cb_idx = list_menu_new(&gp_list_menu_template, fmem.bag_cursor_position[pocket_idx - 1], fmem.bag_cursor_items_above[pocket_idx - 1]);
+            BAG2_STATE->list_menu_cb_idx = list_menu_new(&gp_list_menu_template, fmem.bag_cursor_position[POCKET_TO_BAG_POCKETS_IDX(pocket_idx)], fmem.bag_cursor_items_above[POCKET_TO_BAG_POCKETS_IDX(pocket_idx)]);
             break;
         }
         case 2: {
@@ -74,11 +74,11 @@ static void bag_move_item_update_bgs(u8 self) {
 static void bag_move_item(u8 cb_idx, u16 position_old, u16 position_new) {
     u8 pocket_idx = bag_get_current_pocket();
     if (position_old != position_new && position_old != position_new - 1) {
-        item_move_in_pocket(bag_pockets[pocket_idx - 1].items, position_old, position_new);
+        item_move_in_pocket(bag_pockets[POCKET_TO_BAG_POCKETS_IDX(pocket_idx)].items, position_old, position_new);
     }
-    list_menu_remove(BAG2_STATE->list_menu_cb_idx, fmem.bag_cursor_position + pocket_idx - 1, fmem.bag_cursor_items_above + pocket_idx - 1);
+    list_menu_remove(BAG2_STATE->list_menu_cb_idx, fmem.bag_cursor_position + POCKET_TO_BAG_POCKETS_IDX(pocket_idx), fmem.bag_cursor_items_above + POCKET_TO_BAG_POCKETS_IDX(pocket_idx));
     if (position_old < position_new)
-        fmem.bag_cursor_items_above[pocket_idx - 1]--;
+        fmem.bag_cursor_items_above[POCKET_TO_BAG_POCKETS_IDX(pocket_idx)]--;
     BAG2_STATE->is_moving_item = false;
     big_callbacks[cb_idx].params[0] = 0;
     big_callbacks[cb_idx].function = bag_move_item_update_bgs;
@@ -89,8 +89,8 @@ static void bag_moving_item_handle_input(u8 self) {
         return;
     int input = list_menu_process_input(BAG2_STATE->list_menu_cb_idx);
     u8 pocket = bag_get_current_pocket();
-    list_menu_get_scroll_and_row(BAG2_STATE->list_menu_cb_idx, fmem.bag_cursor_position + pocket - 1, fmem.bag_cursor_items_above + pocket - 1);
-    u16 pos = (u16)(fmem.bag_cursor_position[pocket - 1] + fmem.bag_cursor_items_above[pocket - 1]);
+    list_menu_get_scroll_and_row(BAG2_STATE->list_menu_cb_idx, fmem.bag_cursor_position + POCKET_TO_BAG_POCKETS_IDX(pocket), fmem.bag_cursor_items_above + POCKET_TO_BAG_POCKETS_IDX(pocket));
+    u16 pos = (u16)(fmem.bag_cursor_position[POCKET_TO_BAG_POCKETS_IDX(pocket)] + fmem.bag_cursor_items_above[POCKET_TO_BAG_POCKETS_IDX(pocket)]);
     bag_set_insert_bar_set_y(list_menu_get_cursor_y_pixel(BAG2_STATE->list_menu_cb_idx));
     if (super.keys_new.keys.select) {
         input = pos;

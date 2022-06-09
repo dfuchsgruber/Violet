@@ -154,7 +154,7 @@ void tm_vm_print_item(u8 tbox_idx, int item_idx, u8 y) {
 }
 
 void tm_hm_alloc_list_menu_buffers() {
-	tm_hm_list_menu_items = malloc(bag_pockets[POCKET_TM_HM - 1].capacity * sizeof(list_menu_item));
+	tm_hm_list_menu_items = malloc(bag_pockets[POCKET_TO_BAG_POCKETS_IDX(POCKET_TM_HM)].capacity * sizeof(list_menu_item));
 	tm_hm_list_menu_strs = malloc((size_t)(tm_hm_state->num_tms * TM_HM_LIST_MENU_STR_LENGTH));
 }
 
@@ -200,7 +200,7 @@ u8 str_lb_is_selected[] = LANGDEP(PSTRING(" \nist ausgewählt!"), PSTRING(" \nis
 static u8 str_close[] = LANGDEP(PSTRING("Schliessen"), PSTRING("Close"));
 
 void tm_hm_initialize_list_menu() {
-	bag_pocket_t *pocket = bag_pockets + POCKET_TM_HM - 1;
+	bag_pocket_t *pocket = bag_pockets + POCKET_TO_BAG_POCKETS_IDX(POCKET_TM_HM);
     u16 i;
     for (i = 0; i < tm_hm_state->num_tms; i++) {
         tm_hm_get_str_number_and_name(tm_hm_list_menu_strs[i], pocket->items[i].item_idx);
@@ -330,7 +330,7 @@ static inline int bag_tm_hm_sort_cmp(u16 item_first, u16 item_second) {
 }
 
 void bag_tm_hm_sort() {
-	bag_item_t *list = bag_pockets[POCKET_TM_HM - 1].items;
+	bag_item_t *list = bag_pockets[POCKET_TO_BAG_POCKETS_IDX(POCKET_TM_HM)].items;
 	size_t list_size = 0;
 	while (list[list_size].item_idx != ITEM_NONE)
 		list_size++;

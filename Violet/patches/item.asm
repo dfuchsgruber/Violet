@@ -416,3 +416,27 @@ _bxr1:
 .org 0x813d9a0
 	.word bag_pockets + 32
 
+.org 0x0809a024
+	ldr r3, =item_check | 1
+	bx r3
+	.pool
+
+.org 0x0809a0e4
+	ldr r3, =item_has_room | 1
+	bx r3
+	.pool
+
+.org 0x0809A168
+	ldr r3, =item_add | 1
+	bx r3
+	.pool
+
+.org 0x0809A2BC
+	ldr r3, =item_remove | 1
+	bx r3
+	.pool
+
+.org 0x08099ee4
+	ldr r1, =bag_apply_new_encryption | 1
+	bx r1
+	.pool
