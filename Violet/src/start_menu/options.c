@@ -306,7 +306,7 @@ static void options_callback_idle(u8 self) {
             list_menu_print(OPTIONS_STATE->list_menu_callback_idx);
             options_print_description(idx);
             if (idx == OPTION_FRAME_STYLE)
-                tbox_context_init_border_set_style(TBOX_LIST, 1, 13 * 16);
+                tbox_init_frame_set_style(TBOX_LIST, 1, 13 * 16);
         }
     } else {
         int input = list_menu_process_input(OPTIONS_STATE->list_menu_callback_idx);
@@ -419,12 +419,12 @@ static void options_initialize() {
             tbox_flush_set(TBOX_DESCRIPTION, 0);
             tbox_flush_set(TBOX_TITLE, 0);
             tbox_flush_set(TBOX_LIST, 0);
-            tbox_context_init_border_set_style(TBOX_LIST, 1, 13 * 16);
+            tbox_init_frame_set_style(TBOX_LIST, 1, 13 * 16);
 
             tbox_tilemap_draw(TBOX_DESCRIPTION);
             tbox_tilemap_draw(TBOX_TITLE);
             tbox_tilemap_draw(TBOX_LIST);
-            tbox_border_draw(TBOX_LIST, 1, 13);
+            tbox_frame_draw_outer(TBOX_LIST, 1, 13);
             u8 str_title[] = LANGDEP(
                 PSTRING("Optionen"),
                 PSTRING("Options")

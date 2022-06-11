@@ -182,4 +182,12 @@ void bag_initialize_from_start_menu();
  */
 void item_move_in_pocket(bag_item_t *slots, u32 from, u32 to);
 
+/**
+ * @brief Compacts the a bag pocket
+ * 
+ * @param slots the slots to compact 
+ * @param capacity the capacity of the pocket
+ */
+void bag_pocket_compact(bag_item_t *slots, size_t capacity);
+
 #endif

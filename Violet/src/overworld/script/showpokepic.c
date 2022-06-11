@@ -22,7 +22,7 @@ bool overworld_script_show_pokemon_picture (u16 species, u8 x, u8 y) {
     big_callbacks[cb_idx].params[2] = oam_idx;
     oams[oam_idx].callback = oam_null_callback;
     oams[oam_idx].final_oam.attr0 = (u16)(oams[oam_idx].final_oam.attr0 & (~(3 << 10))); // priority 0
-    tbox_init_border_standard_style(tbox_idx, true);
+    tbox_init_frame_std_at_default_tile_and_pal(tbox_idx, true);
     if (transparency_is_on()) {
         transparency_on();
         pal_copy(tbox_palette_transparent, 14 * 16, 16 * sizeof(color_t)); // Override border palette

@@ -493,7 +493,7 @@ void bsc_cmd_itemdrop_and_payday() {
             bg_sync_display_and_show(0);
             bg_sync_display_and_show(1);
             BATTLE_STATE2->item_dropping_summary_tbox_idx = battle_item_drop_summary_tbox_new();
-            tbox_border_draw(BATTLE_STATE2->item_dropping_summary_tbox_idx, 34, 1);
+            tbox_frame_draw_outer(BATTLE_STATE2->item_dropping_summary_tbox_idx, 34, 1);
             // item_drop_summary_battle_gp_tbox_draw(BATTLE_GP_TBOX_BG_1 | BATTLE_GP_TBOX_DRAW);
             BATTLE_STATE2->item_dropping_state++;
             break;

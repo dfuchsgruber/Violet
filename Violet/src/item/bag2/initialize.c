@@ -28,14 +28,17 @@
 
 static bool bag_cb_initialize_step();
 
-static tbox_font_colormap bag_font_colormap_std = {.background = 0, .body = 2, .edge = 3}; 
+tbox_font_colormap bag_font_colormap_std = {.background = 0, .body = 2, .edge = 3}; 
 
 tboxdata bag_tboxes[NUM_BAG_TBOXES + 1] = {
     [BAG_TBOX_POCKET_NAME] = {.bg_id = 0, .x = 1, .y = 1, .w = 9, .h = 2, .pal = 15, .start_tile = 2},
     [BAG_TBOX_HINT] = {.bg_id = 2, .x = 0, .y = 4, .w = 10, .h = 9, .pal = 11, .start_tile = 2 + 9 * 2},
     [BAG_TBOX_DESCRIPTION] = {.bg_id = 0, .x = 5, .y = 14, .w = 0x19, .h = 6, .pal = 15, .start_tile = 2 + 9 * 2 + 9 * 10},
+    [BAG_TBOX_CONTEXT_MENU_TEXT] = {.bg_id = 0, .x = 5, .y = 14, .w = 10, .h = 6, .pal = 15, .start_tile = 2 + 9 * 2 + 9 * 10}, // same star tile as description, as both are never visible at the same time
     [BAG_TBOX_LIST] = {.bg_id = 0, .x = 11, .y = 1, .w = 18, .h = 12, .pal = 15, .start_tile = 2 + 9 * 2 + 9 * 10 + 0x19 * 6},
     [BAG_TBOX_MOVE_INFO] = {.bg_id = 0, .x = 0, .y = 4, .w = 10, .h = 9, .pal = 4, .start_tile = 2 + 9 * 2 + 9 * 10 + 0x19 * 6 + 18 * 12},
+    [BAG_TBOX_MESSAGE] =  {.bg_id = 0, .x = 2, .y = 15, .w = 26, .h = 4, .pal = 13, .start_tile = 2 + 9 * 2 + 9 * 10 + 0x19 * 6 + 18 * 12 + 9 * 10},
+    [BAG_TBOX_MESSAGE_WITH_YES_NO] = {.bg_id = 0, .x = 6, .y = 15, .w = 15, .h = 4, .pal = 13, .start_tile = 2 + 9 * 2 + 9 * 10 + 0x19 * 6 + 18 * 12 + 9 * 10},
     [NUM_BAG_TBOXES] = {.bg_id = 0xFF},
 };
 
@@ -221,13 +224,15 @@ static void bag_show() {
 static void bag_initialize_tboxes() {
     tbox_free_all();
     tbox_sync_with_virtual_bg_and_init_all(bag_tboxes);
-    tbox_message_init_border(0, 0x210, 16 * 12);
-    tbox_message_init(0, 0x210, 16 * 13);
-    tbox_context_init_border_set_style(0, 0x200, 16 * 14);
+    tbox_init_frame_message(0, BAG_START_TILE_BORDER_MESSAGE, 16 * BAG_PAL_IDX_BORDER_MESSAGE);
+    tbox_init_frame_std(0, BAG_START_TILE_BORDER_STD, 16 * BAG_PAL_IDX_BORDER_STD);
+    tbox_init_frame_set_style(0, BAG_START_TILE_BORDER_SET_STYLE, 16 * BAG_PAL_IDX_SET_STYLE);
     pal_copy(tbox_palette_transparent, 11 * 16, 16 * sizeof(color_t));
     pal_copy(bag_tboxPal, 15 * 16, 16 * sizeof(color_t));
     pal_copy(pal_hm_symbol, 15 * 16 + 6, sizeof(pal_hm_symbol));
     for (u8 i = 0; bag_tboxes[i].bg_id != 0xFF; i++) {
+        if (i == BAG_TBOX_CONTEXT_MENU_TEXT || i == BAG_TBOX_MESSAGE || i == BAG_TBOX_MESSAGE_WITH_YES_NO)
+            continue;
         tbox_flush_set(i, 0x00);
         tbox_flush_map(i);
         tbox_tilemap_draw(i);
@@ -241,6 +246,7 @@ void bag_initialize_compute_item_counts() {
     for (int pocket_idx = 1; pocket_idx < NUM_POCKETS; pocket_idx++) {
         BAG2_STATE->pocket_size[pocket_idx] = 0;
         bag_pocket_t *pocket = bag_pockets + POCKET_TO_BAG_POCKETS_IDX(pocket_idx);
+        bag_pocket_compact(pocket->items, pocket->capacity);
         for (int i = 0; i < pocket->capacity; i++) {
             if (pocket->items[i].item_idx == 0)
                 break;
@@ -496,7 +502,7 @@ static bool bag_cb_initialize_step() {
         case 13: {
             u8 pocket_idx = bag_get_current_pocket();
             BAG2_STATE->idle_cb_idx = bag_idle_callback_new();
-            BAG2_STATE->list_menu_cb_idx = list_menu_new(&gp_list_menu_template, fmem.bag_cursor_position[pocket_idx - 1], fmem.bag_cursor_items_above[pocket_idx - 1]);
+            BAG2_STATE->list_menu_cb_idx = list_menu_new(&gp_list_menu_template, fmem.bag_cursor_position[POCKET_TO_BAG_POCKETS_IDX(pocket_idx)], fmem.bag_cursor_items_above[POCKET_TO_BAG_POCKETS_IDX(pocket_idx)]);
             BAG2_STATE->initialization_state++;
             break;
         }

@@ -45,7 +45,7 @@ bool overworld_script_command_close_braille(overworld_script_state_t *state) {
     tbox_flush_all(fmem.tbox_idx_braille, 0);
     tbox_flush_map(fmem.tbox_idx_braille);
     tbox_sync(fmem.tbox_idx_braille, TBOX_SYNC_MAP_AND_SET);
-    tbox_border_flush(fmem.tbox_idx_braille);
+    tbox_flush_map_and_frame(fmem.tbox_idx_braille);
     tbox_free(fmem.tbox_idx_braille);
     return false;
 }

@@ -37,41 +37,6 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
-
-
-	callasm item_remove_tm_case_and_berry_pouch
-	additem ITEM_GRANABEERE 3
-	additem ITEM_AMRENABEERE 2
-	additem ITEM_GIEFEBEERE 55
-	additem ITEM_AMRENABEERE 5
-	additem ITEM_AMRENABEERE 99
-	additem ITEM_AMRENABEERE 99
-	additem ITEM_AMRENABEERE 99
-	additem ITEM_AMRENABEERE 99
-	additem ITEM_AMRENABEERE 99
-	additem ITEM_AMRENABEERE 99
-	additem ITEM_AMRENABEERE 99
-	additem ITEM_AMRENABEERE 99
-	additem ITEM_AMRENABEERE 99
-	additem ITEM_AMRENABEERE 99
-	additem ITEM_AMRENABEERE 99
-	additem ITEM_AMRENABEERE 99
-
-
-	additem ITEM_LOTUS_BALL 99
-	additem ITEM_LOTUS_BALL 99
-	additem ITEM_LOTUS_BALL 99
-	additem ITEM_LOTUS_BALL 99
-	additem ITEM_LOTUS_BALL 99
-	additem ITEM_LOTUS_BALL 99
-	additem ITEM_LOTUS_BALL 99
-	additem ITEM_LOTUS_BALL 99
-	additem ITEM_LOTUS_BALL 99
-	additem ITEM_LOTUS_BALL 99
-	additem ITEM_LOTUS_BALL 99
-	additem ITEM_LOTUS_BALL 99
-	additem ITEM_LOTUS_BALL 99
-
 	callasm test_bag2
 	end
 

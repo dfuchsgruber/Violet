@@ -95,7 +95,7 @@ static void callback_transparency_disable(u8 self){
 void overworld_tbox_delete() {
     //big_callback_new(callback_transparency_disable, 0); // 1 frame later
     overworld_tbox_remove_task();
-    tbox_remove_dialog(0, 1);
+    tbox_clear_message(0, 1);
     overworld_tbox_state = 0;
     if (transparency_is_on())
         transparency_off();

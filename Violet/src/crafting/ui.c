@@ -472,7 +472,7 @@ static void crafting_ui_print_message(u8 callback_idx, u8 *message, void (*conti
 static void crafting_ui_message_continuation_delete_message_and_return_to_selection(u8 self) {
     // Wait for a key-press
     if (super.keys_new.value) {
-        tbox_remove_dialog(TBOX_MESSAGE, true);
+        tbox_clear_message(TBOX_MESSAGE, true);
         // bg_virtual_sync(ui_tboxes[TBOX_MESSAGE].bg_id);
         callback1_set(generic_callback1);
         big_callback_delete(self);
@@ -500,7 +500,7 @@ static void crafting_ui_process_yes_no_start_crafting(u8 self) {
         case -1: // Why is that not the standard values for the list menu input??
         case 1:
             callback1_set(generic_callback1);
-            tbox_remove_dialog(TBOX_MESSAGE, true);
+            tbox_clear_message(TBOX_MESSAGE, true);
             big_callback_delete(self);
             crafting_ui_setup_scroll_indicators();
             crafting_ui_setup_scroll_indicators_left_right();
@@ -550,10 +550,10 @@ static void crafting_ui_handle_count_selection(u8 self) {
         crafting_ui_setup_scroll_indicators_left_right();
         tbox_flush_map(TBOX_CRAFTING_CNT);
         tbox_flush_map(TBOX_POSSESION);
-        tbox_border_flush(TBOX_CRAFTING_CNT);
-        tbox_border_flush(TBOX_POSSESION);
+        tbox_flush_map_and_frame(TBOX_CRAFTING_CNT);
+        tbox_flush_map_and_frame(TBOX_POSSESION);
         bg_virtual_sync(0);
-        tbox_remove_dialog(TBOX_MESSAGE, true);
+        tbox_clear_message(TBOX_MESSAGE, true);
         big_callback_delete(self);
         crafting_ui_setup_list_menu();
     }
@@ -567,9 +567,9 @@ static void crafting_ui_message_continuation_prompt_count(u8 self) {
     tbox_print_string(TBOX_POSSESION, 2, 0, 0, 0, 0, &fontcolmap_black_letters, 0xFF, str_possesion);
     itoa(strbuf, item_get_count(crafting_ui_get_current_recipe()->item), ITOA_PAD_SPACES, 3);
     tbox_print_string(TBOX_POSSESION, 1, 40, 0, 0, 0, &fontcolmap_black_letters, 0, strbuf);
-    tbox_message_init_border(TBOX_POSSESION, 1 + 26 * 4 + 5 * 4 + 8 * 2, 13 * 16);
-    tbox_border_draw(TBOX_CRAFTING_CNT, 1 + 26 * 4 + 5 * 4 + 8 * 2, 13);
-    tbox_border_draw(TBOX_POSSESION, 1 + 26 * 4 + 5 * 4 + 8 * 2, 13);
+    tbox_init_frame_message(TBOX_POSSESION, 1 + 26 * 4 + 5 * 4 + 8 * 2, 13 * 16);
+    tbox_frame_draw_outer(TBOX_CRAFTING_CNT, 1 + 26 * 4 + 5 * 4 + 8 * 2, 13);
+    tbox_frame_draw_outer(TBOX_POSSESION, 1 + 26 * 4 + 5 * 4 + 8 * 2, 13);
     tbox_tilemap_draw(TBOX_CRAFTING_CNT);
     tbox_tilemap_draw(TBOX_POSSESION);
     if (CRAFTING_UI_STATE->max_quantity > 1) {
@@ -820,8 +820,8 @@ static void crafting_ui_setup() {
         case 7: {
             pal_decompress(gfx_crafting_menu_bg3Pal, 0, sizeof(color_t) * 16);
             pal_decompress(gfx_crafting_menu_bg2Pal, 16, sizeof(color_t) * 16);
-            tbox_message_init(TBOX_MESSAGE, 256, 15 * 16);
-            tbox_context_init_border_set_style(TBOX_MESSAGE, 256 + 20, 14 * 16);
+            tbox_init_frame_std(TBOX_MESSAGE, 256, 15 * 16);
+            tbox_init_frame_set_style(TBOX_MESSAGE, 256 + 20, 14 * 16);
             // pal_copy(tbox_palette_transparent, 14 * 16, 32);
             pal_set_all_to_black();
             CRAFTING_UI_STATE->setup_state++;

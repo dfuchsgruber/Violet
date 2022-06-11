@@ -8,6 +8,16 @@
 #include "list_menu.h"
 #include "constants/item_pockets.h"
 #include "text.h"
+#include "text.h"
+
+#define BAG_START_TILE_BORDER_BASE (1023 - TBOX_FRAME_STD_NUM_TILES - TBOX_FRAME_SET_STYLE_NUM_TILES - TBOX_FRAME_MESSAGE_NUM_TILES)
+#define BAG_START_TILE_BORDER_STD (BAG_START_TILE_BORDER_BASE)
+#define BAG_START_TILE_BORDER_SET_STYLE (BAG_START_TILE_BORDER_BASE + TBOX_FRAME_STD_NUM_TILES)
+#define BAG_START_TILE_BORDER_MESSAGE (BAG_START_TILE_BORDER_BASE + TBOX_FRAME_STD_NUM_TILES + TBOX_FRAME_SET_STYLE_NUM_TILES)
+
+#define BAG_PAL_IDX_BORDER_MESSAGE 12
+#define BAG_PAL_IDX_BORDER_STD 13
+#define BAG_PAL_IDX_SET_STYLE 14
 
 enum {
     BAG_OPEN_ITEMS = 0,
@@ -44,7 +54,18 @@ enum {
     BAG_TBOX_HINT,
     BAG_TBOX_LIST,
     BAG_TBOX_MOVE_INFO,
+    BAG_TBOX_CONTEXT_MENU_TEXT,
+    BAG_TBOX_MESSAGE,
+    BAG_TBOX_MESSAGE_WITH_YES_NO,
     NUM_BAG_TBOXES,
+};
+
+enum {
+    BAG_CONTEXT_MENU_USE,
+    BAG_CONTEXT_MENU_GIVE,
+    BAG_CONTEXT_MENU_TOSS,
+    BAG_CONTEXT_MENU_CANCEL,
+    NUM_BAG_CONTEXT_MENU_ITEMS,
 };
 
 typedef struct {
@@ -64,8 +85,6 @@ typedef struct {
     u8 oam_idx_move_item_bar[9];
     u8 pal_idx_item;
     u16 oam_item_base_tile;
-    u16 cursor_items_above[NUM_POCKETS];
-    u16 cursor_position[NUM_POCKETS];
     u8 pocket_size[NUM_POCKETS];
     u8 pocket_max_shown[NUM_POCKETS];
     u8 idle_cb_idx;
@@ -75,6 +94,13 @@ typedef struct {
     u8 pocket_switching_disabled;
     u8 is_moving_item;
     u16 moving_item_original_position;
+    u8 context_menu_items[8];
+    u8 num_context_menu_items;
+    u8 tbox_context_menu;
+    u8 tbox_quantity;
+    u8 scroll_indicator_quantity_cb_idx;
+    u16 toss_max_number;
+    u16 toss_current_number;
 } bag2_state_t;
 
 #define BAG2_STATE ((bag2_state_t*)fmem.bag2_state)
@@ -100,6 +126,11 @@ oam_template bag_oam_template;
 oam_template bag_oam_template_item;
 
 tbox_font_colormap bag_font_colormap_pocket_hint;
+tbox_font_colormap bag_font_colormap_description;
+tbox_font_colormap bag_font_colormap_std;
+
+// Callbacks for selecting an item in a given bag context
+void (*bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8);
 
 /**
  * @brief Opens the bag menu
@@ -109,6 +140,12 @@ tbox_font_colormap bag_font_colormap_pocket_hint;
  * @param continuation the continuation on close
  */
 void bag_open(u8 context, u8 open_which, void (*continuation)());
+
+/**
+ * @brief Initializes the cursor positions for all pockets in the bag.
+ * 
+ */
+void bag_initialize_list_cursor_positions();
 
 /**
  * @brief Checks if items can be moved in the bag
@@ -364,5 +401,40 @@ void bag_berries_sort();
  * @þaram item_idx the idx of the berry to get the number of 
  */
 void berry_get_str_number_and_name(u8 *dst, u16 item_idx);
+
+/**
+ * @brief Function that reinitializes scroll menu indicators and then resumes the standard overworld (item use) idle callback
+ * 
+ * @param self self-reference
+ */
+void bag_reinitialize_scroll_menu_indicators_and_return_to_idle_callback(u8 self);
+
+/**
+ * @brief Reinitializes the list menu (also calculates the cursor positions), then calls `bag_reinitialize_scroll_menu_indicators_and_return_to_idle_callback`
+ * 
+ * @param self self-reference
+ */
+void bag_reinitialize_list_and_scroll_menu_indicators_and_return_to_idle_callback(u8 self);
+
+/**
+ * @brief Waits for the player to press A, plays the corresponding sound effect and then calls `bag_reinitialize_list_and_scroll_menu_indicators_and_return_to_idle_callback`
+ * 
+ * @param self self-reference
+ */
+void bag_wait_a_button_and_close_message_and_return_to_idle_callback(u8 self);
+
+/**
+ * @brief Redraws the description, then redraws the scroll menu indicators and then returns to the idle callback.
+ * 
+ * @param self 
+ */
+void bag_menu_cancel_redraw_description_and_scroll_menu_indicators_and_return_to_idle_callback(u8 self);
+
+/**
+ * @brief Gets the slot in the current pocket in the bag
+ * 
+ * @return u16 the slot
+ */
+u16 bag_get_current_slot_in_current_pocket() ;
 
 #endif

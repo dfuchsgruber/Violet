@@ -148,4 +148,13 @@ void item_field_effect_energiedisk(u8 self);
  */
 bool item_is_hm(u16 item_idx);
 
+/**
+ * @brief Checks if an item is a tm
+ * 
+ * @param item_idx the item to check
+ * @return true 
+ * @return false 
+ */
+bool item_is_tm(u16 item_idx);
+
 #endif

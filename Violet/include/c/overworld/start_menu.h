@@ -92,11 +92,6 @@ void start_menu_clear_additional_box();
 bool start_menu_draw_items(u8 *items_drawn_total, u8 items_to_draw);
 
 /**
- * TODO
- **/
-u8 sub_0810f888(int uParm1,int uParm2,int uParm3,int uParm4,int param_1,int param_2, int param_3);
-
-/**
  * Returns the box idx of the start menu box.
  * @return the box idx of the start menu box
  **/

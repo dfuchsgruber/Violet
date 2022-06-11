@@ -99,10 +99,11 @@ void bag_idle_callback_default(u8 self) {
         }
     }
     int input = list_menu_process_input(BAG2_STATE->list_menu_cb_idx);
-    list_menu_get_scroll_and_row(BAG2_STATE->list_menu_cb_idx, fmem.bag_cursor_position + pocket - 1, fmem.bag_cursor_items_above + pocket - 1);
+    list_menu_get_scroll_and_row(BAG2_STATE->list_menu_cb_idx, fmem.bag_cursor_position + POCKET_TO_BAG_POCKETS_IDX(pocket), fmem.bag_cursor_items_above + POCKET_TO_BAG_POCKETS_IDX(pocket));
     switch (input) {
         case LIST_MENU_B_PRESSED: {
         exit_bag:
+            item_activated = ITEM_NONE;
             play_sound(5);
             bag_close(self, ITEM_NONE, true);
             break;
@@ -112,6 +113,9 @@ void bag_idle_callback_default(u8 self) {
         default: {
             if (input == BAG2_STATE->pocket_size[pocket]) {
                 goto exit_bag;
+            } else {
+                item_activated = item_get_idx_by_pocket_position(pocket, (u16)(input));
+                bag_item_selected_by_context[BAG2_STATE->context](self);
             }
         }
     }
@@ -171,7 +175,7 @@ void bag_shake_oam() {
 
 static u8 str_close_bag[] = LANGDEP(PSTRING("Beutel schließen"), PSTRING("Close bag"));
 
-static tbox_font_colormap font_colormap_description = {.background = 0, .body = 1, .edge = 2};
+tbox_font_colormap bag_font_colormap_description = {.background = 0, .body = 1, .edge = 2};
 
 void bag_print_item_description(u16 slot) {
     u8 pocket = bag_get_current_pocket();
@@ -181,7 +185,8 @@ void bag_print_item_description(u16 slot) {
     else
         description = item_get_description(item_get_idx_by_pocket_position(pocket, slot));
     tbox_flush_set(BAG_TBOX_DESCRIPTION, 0x00);
-    tbox_print_string(BAG_TBOX_DESCRIPTION, 2, 0, 3, 0, 0, &font_colormap_description, 0, description);
+    tbox_print_string(BAG_TBOX_DESCRIPTION, 2, 0, 3, 0, 0, &bag_font_colormap_description, 0, description);
+    bg_virtual_sync_reqeust_push(bag_tboxes[BAG_TBOX_DESCRIPTION].bg_id);
 }
 
 void bag_new_scroll_indicators_items() {
@@ -216,7 +221,7 @@ static void bag_close_wait_fadescreen_and_continue(u8 self) {
     if (fading_control.active || big_callback_is_active(bag_win0_animation))
         return;
     u8 pocket_idx = bag_get_current_pocket();
-    list_menu_remove(BAG2_STATE->list_menu_cb_idx, fmem.bag_cursor_position + pocket_idx - 1, fmem.bag_cursor_items_above + pocket_idx - 1);
+    list_menu_remove(BAG2_STATE->list_menu_cb_idx, fmem.bag_cursor_position + POCKET_TO_BAG_POCKETS_IDX(pocket_idx), fmem.bag_cursor_items_above + POCKET_TO_BAG_POCKETS_IDX(pocket_idx));
     bag_delete_scroll_indicators_pockets();
     bag_delete_scroll_indicators_items();
     if (BAG2_STATE->internal_continuation)
@@ -258,6 +263,7 @@ void bag_open(u8 context, u8 open_which, void (*continuation)()) {
             }
         }
         bag_initialize_compute_item_counts();
+        bag_initialize_list_cursor_positions();
         callback1_set(bag_cb_initialize);
     }
 }
@@ -280,4 +286,9 @@ void test_bag2() {
 
 void empty_pocket_berries() {
     bag_clear_slots(bag_pockets[POCKET_TO_BAG_POCKETS_IDX(POCKET_BERRIES)].items, bag_pockets[POCKET_BERRIES - 1].capacity);
+}
+
+u16 bag_get_current_slot_in_current_pocket() {
+    u8 pocket = bag_get_current_pocket();
+    return (u16)(fmem.bag_cursor_position[POCKET_TO_BAG_POCKETS_IDX(pocket)] + fmem.bag_cursor_items_above[POCKET_TO_BAG_POCKETS_IDX(pocket)]);
 }

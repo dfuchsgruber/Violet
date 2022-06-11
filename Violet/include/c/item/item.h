@@ -224,6 +224,21 @@ const u8 *item_get_resource(u16 item, u8 get_palette);
 u16 item_get_count(u16 item_idx);
 
 /**
+ * @brief Returns the field function associated with an item
+ * 
+ * @param item_idx the item
+ */
+void (*item_get_field_function(u16 item_idx))(u8);
+
+/**
+ * @brief Gets the item type of an item
+ * 
+ * @param item_idx the item
+ * @return u16 the item type
+ */
+u16 item_get_type(u16 item_idx);
+
+/**
  * Fades to a scene that fits the item to use (either overworld or party menu) and executes the item callback there.
  * @param self self-reference
  **/
@@ -322,5 +337,13 @@ typedef struct {
     const u8 *pal;
 } item_gfx_pair;
 
+/**
+ * @brief Checks if an item can be tossed
+ * 
+ * @param item_idx the item to check
+ * @return true 
+ * @return false 
+ */
+bool item_can_be_tossed(u16 item_idx);
 
 #endif /* INCLUDE_C_ITEM_ITEM_H_ */

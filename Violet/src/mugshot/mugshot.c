@@ -347,8 +347,8 @@ void mugshot_create_text(int side, u8 *text) {
 		u8 box_id = tbox_new(&tbdata);
 		tbox_flush_set(box_id, 0x11);
 		tbox_tilemap_draw(box_id);
-		tbox_message_init_border(box_id, 1, 15 * 16);
-		tbox_border_draw(box_id, 1, 0xF);
+		tbox_init_frame_message(box_id, 1, 15 * 16);
+		tbox_frame_draw_outer(box_id, 1, 0xF);
 		tbox_font_colormap fontcolmap = {1, 2, 1, 3};
 		tbox_print_string(box_id, 2, 16, 0, 0, 0, &fontcolmap, 0, strbuf);
 		fmem.mugshot_tb_id = box_id;
@@ -448,7 +448,7 @@ void mugshot_delete_text(u8 self) {
 			tbox_flush_map(tb_id);
 			tbox_sync(tb_id, TBOX_SYNC_MAP_AND_SET);
 			if(!transparency_is_on()) 
-				tbox_border_flush(tb_id);
+				tbox_flush_map_and_frame(tb_id);
 			tbox_free(tb_id);
 			++*state;
 			break;

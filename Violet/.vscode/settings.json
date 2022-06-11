@@ -160,6 +160,10 @@
         "bag.h": "c",
         "menu_util.h": "c",
         "item_pockets.h": "c",
-        "bag2.h": "c"
+        "bag2.h": "c",
+        "tm_hm.h": "c"
+    },
+    "files.exclude": {
+        "bld": true
     }
 }

@@ -440,3 +440,15 @@ _bxr1:
 	ldr r1, =bag_apply_new_encryption | 1
 	bx r1
 	.pool
+
+// **** Replace old bag functions ***/
+
+.org 0x08108eec
+	push {r4}
+	ldr r4, =bag_print_string | 1
+	bl _blxr4_bag_print_string
+	pop {r0}
+	bx r0
+_blxr4_bag_print_string:
+	bx r4
+	.pool

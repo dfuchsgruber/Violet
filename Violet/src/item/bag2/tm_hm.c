@@ -241,7 +241,7 @@ static void tm_hm_print_hm_used(u8 self) {
 void tm_hm_context_menu_action_use(u8 self) {
 	tm_hm_context_menu_delete(&tm_hm_state->tbox_idx_context);
 	tbox_flush_set(2, 0);
-	tbox_border_flush(2);
+	tbox_flush_map_and_frame(2);
 	tbox_flush_map(2);
 	tbox_tilemap_draw(0);
 	bg_virtual_sync_reqeust_push(0);
