@@ -155,7 +155,8 @@ void berry_pouch_get_context_menu_options_standard() {
 static void composter_big_callback_free_overworld_and_initialize(u8 self) {
     if (!fading_is_active()) {
         overworld_free();
-        berry_pouch_initialize(BERRY_POUCH_CONTEXT_COMPOSTING, map_reload, true);
+        bag_open(BAG_CONTEXT_COMPOST, BAG_OPEN_BERRIES, map_reload);
+        // berry_pouch_initialize(BERRY_POUCH_CONTEXT_COMPOSTING, map_reload, true);
         overworld_script_resume();
         big_callback_delete(self);
     }

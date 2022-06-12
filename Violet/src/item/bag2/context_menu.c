@@ -593,10 +593,82 @@ static void bag_item_selected_deposit(u8 self) {
     }
 }
 
+static u8 str_no_space_for_mulch[] = LANGDEP(PSTRING("Du hast keinen Platz\nfür BUFFER_1 ×BUFFER_2."), PSTRING("You have no room for\nBUFFER_1 ×BUFFER_2."));
+static u8 str_composted[] = LANGDEP(PSTRING("Du hast BUFFER_1 ×BUFFER_2\nzu BUFFER_3 kompostiert."), PSTRING("You composted BUFFER_1 ×BUFFER_2\nto BUFFER_3."));
+
+static void bag_compost_item(u8 self) {
+    if (item_has_room(ITEM_MULCH, BAG2_STATE->toss_current_number)) {
+        item_remove(item_activated, BAG2_STATE->toss_current_number);
+        item_add(ITEM_MULCH, BAG2_STATE->toss_current_number);
+        strcpy(buffer0, item_get_name(item_activated));
+        itoa(buffer1, BAG2_STATE->toss_current_number, ITOA_NO_PADDING, 3);
+        strcpy(buffer2, item_get_name(ITEM_MULCH));
+        string_decrypt(strbuf, str_composted);
+        bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+        // tbox_draw_std_frame_by_base_tile_and_pal(BAG_TBOX_MESSAGE, true, BAG_START_TILE_BORDER_STD, BAG_PAL_IDX_BORDER_STD);
+        // tbox_print_string(BAG_TBOX_MESSAGE, 2, 0, 0, 0, 0, &bag_font_colormap_std, 0, strbuf);
+        // bg_virtual_sync_reqeust_push(0);
+        // big_callbacks[self].function = bag_compost_wait_a_or_b_press_and_redraw_all;
+    } else {
+        strcpy(buffer0, item_get_name(ITEM_MULCH));
+        itoa(buffer1, BAG2_STATE->toss_current_number, ITOA_NO_PADDING, 3);
+        string_decrypt(strbuf, str_no_space_for_mulch);
+        bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+    }
+}
+
+static void bag_select_quantity_to_compost(u8 self) {
+    (void)self;
+    if (bag_toss_or_sell_process_input()) {
+        play_sound(5);
+        bag_toss_or_sell_update_quantity(3);
+    } else if (super.keys_new.keys.A) {
+        play_sound(5);
+        tbox_flush_set(BAG2_STATE->tbox_quantity, 0x00);
+        tbox_flush_map_and_frame(BAG2_STATE->tbox_quantity);
+        tbox_free_2(BAG2_STATE->tbox_quantity);
+        bg_virtual_sync_reqeust_push(0);
+        scroll_indicator_delete(BAG2_STATE->scroll_indicator_quantity_cb_idx);
+        bag_compost_item(self);
+    } else if (super.keys_new.keys.B) {
+        play_sound(5);
+        tbox_flush_set(BAG2_STATE->tbox_quantity, 0x00);
+        tbox_flush_map_and_frame(BAG2_STATE->tbox_quantity);
+        tbox_free_2(BAG2_STATE->tbox_quantity);
+        bg_virtual_sync_reqeust_push(0);
+        scroll_indicator_delete(BAG2_STATE->scroll_indicator_quantity_cb_idx);
+        bag_reinitialize_list_and_scroll_menu_indicators_and_return_to_idle_callback(self);
+    }
+}
+
+static u8 str_cant_compost[] = LANGDEP(PSTRING("BUFFER_1 kann nicht\nkompostiert werden."), PSTRING("BUFFER_1 can not\nbe composted."));
+static u8 str_compost_how_many[] = LANGDEP(PSTRING("Wie viele\nkompostieren?"), PSTRING("How many to\ncompost?"));
+
+static void bag_item_selected_compost(u8 self) {
+    bag_disable_ui();
+    if (item_can_be_tossed(item_activated)) {
+        u8 pocket = bag_get_current_pocket();
+        u16 quantity = item_get_quantity_by_pocket_position(pocket, bag_get_current_slot_in_current_pocket());
+        BAG2_STATE->toss_max_number = MIN(999, quantity);
+        BAG2_STATE->toss_current_number = 1;
+        if (quantity == 1) {
+            bag_compost_item(self);
+        } else {
+            bag_toss_or_sell_initiaize_quantity(str_compost_how_many, 3);
+            big_callbacks[self].function = bag_select_quantity_to_compost;
+        }
+    } else {
+        strcpy(buffer0, item_get_name(item_activated));
+        string_decrypt(strbuf, str_cant_compost);
+        bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+    }
+}
+
 
 void (*bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8) = {
     [BAG_CONTEXT_OVERWORLD] = bag_item_selected_overworld,
     [BAG_CONTEXT_PARTY_GIVE] = bag_item_selected_party_give,
     [BAG_CONTEXT_SELL] = bag_item_selected_sell,
     [BAG_CONTEXT_DEPOSIT] = bag_item_selected_deposit,
+    [BAG_CONTEXT_COMPOST] = bag_item_selected_compost,
 };

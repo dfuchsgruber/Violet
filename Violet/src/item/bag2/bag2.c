@@ -38,6 +38,12 @@ static u8 bag_open_pocket_to_pocket[NUM_BAG_OPEN] = {
     [BAG_OPEN_BAIT] = POCKET_BAIT,
 };
 
+static u8 bag_pocket_switching_disabled_by_context[NUM_BAG_CONTEXTS] = {
+    [BAG_CONTEXT_COMPOST] = true,
+    [BAG_CONTEXT_PLANT_BERRY] = true,
+    [BAG_CONTEXT_RECHARGE_TM_HM] = true,
+};
+
 u8 bag_get_current_pocket() {
     return bag_pocket_order[cmem.bag_pocket];
 }
@@ -225,9 +231,13 @@ static scroll_indicator_template scroll_indicator_template_pockets = {
 };
 
 void bag_new_scroll_indicators_pockets() {
-    BAG2_STATE->scroll_indicator_pockets_cb_idx = scroll_indicator_new(&scroll_indicator_template_pockets,
-        &cmem.bag_pocket);
-    scroll_indicator_set_oam_priority(BAG2_STATE->scroll_indicator_pockets_cb_idx, 2, 2);
+    if (BAG2_STATE->pocket_switching_disabled) {
+        BAG2_STATE->scroll_indicator_pockets_cb_idx = 0xFF;
+    } else {
+        BAG2_STATE->scroll_indicator_pockets_cb_idx = scroll_indicator_new(&scroll_indicator_template_pockets,
+            &cmem.bag_pocket);
+        scroll_indicator_set_oam_priority(BAG2_STATE->scroll_indicator_pockets_cb_idx, 2, 2);
+    }
 }
 
 static void bag_close_wait_fadescreen_and_continue(u8 self) {
@@ -286,6 +296,7 @@ void bag_open(u8 context, u8 open_which, void (*continuation)()) {
                 ERROR("Can not associate pocket with open_which %d\n", open_which);
             }
         }
+        BAG2_STATE->pocket_switching_disabled = bag_pocket_switching_disabled_by_context[fmem.bag_context];
         bag_initialize_compute_item_counts();
         bag_initialize_list_cursor_positions();
         callback1_set(bag_cb_initialize);
