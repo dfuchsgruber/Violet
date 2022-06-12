@@ -41,7 +41,7 @@ enum {
     BAG_CONTEXT_TTVSCR_CATCHING,
     BAG_CONTEXT_TTVSCR_REGISTER,
     BAG_CONTEXT_TTVSCR_TMS,
-    BAG_CONTEXT_TTVSCR_LAST,
+    BAG_CONTEXT_LAST,
     BAG_CONTEXT_RECHARGE_TM_HM,
     BAG_CONTEXT_COMPOST,
     BAG_CONTEXT_PLANT_BERRY,
@@ -71,9 +71,6 @@ enum {
 typedef struct {
     u8 initialization_state;
     u8 gfx_initialization_state;
-    u8 context;
-    u8 open_which;
-    void (*continuation)();
     void (*internal_continuation)(); // Use this if you want to override the actual continuation (e.g. for giving an item)
     list_menu_item *list_menu_items;
     u8 (*list_menu_item_texts)[40];
@@ -436,5 +433,11 @@ void bag_menu_cancel_redraw_description_and_scroll_menu_indicators_and_return_to
  * @return u16 the slot
  */
 u16 bag_get_current_slot_in_current_pocket() ;
+
+/**
+ * @brief Callback1 that initializes the bag2 at the last pocket in the last used context
+ * 
+ */
+void bag2_return_to_last();
 
 #endif

@@ -307,7 +307,7 @@ static void bag_create_insert_bars() {
 }
 
 static u8 bag_idle_callback_new() {
-    switch (BAG2_STATE->context) {
+    switch (fmem.bag_context) {
         default:
             return big_callback_new(bag_idle_callback_default, 0);
     }
@@ -325,12 +325,13 @@ void bag_free() {
         free(BAG2_STATE->list_menu_items);
     if (BAG2_STATE->list_menu_item_texts)
         free(BAG2_STATE->list_menu_item_texts);
+    tbox_free_all();
     free(fmem.bag2_state);
 }
 
 static void bag_wait_for_fadescreen_and_return(u8 self) {
     if (!fading_control.active) {
-        callback1_set(BAG2_STATE->continuation);
+        callback1_set(fmem.bag_continuation);
         bag_free();
         big_callback_delete(self);
     }

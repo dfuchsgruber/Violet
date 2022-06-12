@@ -1775,3 +1775,4 @@ tbox_draw_std_frame_by_base_tile_and_pal = 0x0810f36c | 1;
 gp_menu_process_input_no_wrap_around = 0x0810fab4 | 1;
 item_get_field_function = 0x0809ab04 | 1;
 item_get_type = 0x0809aae0 | 1;
+pokemon_party_menu_big_callback_select_pokemon = 0x0811fb5c | 1;

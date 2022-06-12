@@ -24,7 +24,7 @@ u8 *bag_get_context_hint() {
     if (pocket == POCKET_TM_HM)
         return NULL;
     else
-        return bag_context_hints[BAG2_STATE->context];
+        return bag_context_hints[fmem.bag_context];
 }
 
 tbox_font_colormap bag_font_colormap_pocket_hint = {.background = 0, .body = 2, .edge = 1}; 

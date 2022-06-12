@@ -67,7 +67,7 @@ void bag_menu_cancel_redraw_description_and_scroll_menu_indicators_and_return_to
 
 static u8 str_there_is_no_pokemon[] = LANGDEP(PSTRING("Du hast keine\nPokémon."), PSTRING("There is no\nPokémon."));
 
-static void bag_menu_context_menu_item_use(u8 self) {
+static void bag_context_menu_item_use(u8 self) {
     void (*field_function)(u8) = item_get_field_function(item_activated);
     DEBUG("Use item %d with field func 0x%x", item_activated, field_function);
     if (field_function) {
@@ -86,7 +86,7 @@ static void bag_menu_context_menu_item_use(u8 self) {
     }
 }
 
-static void bag_menu_context_menu_item_cancel(u8 self) {
+static void bag_context_menu_item_cancel(u8 self) {
     tbox_flush_all(BAG2_STATE->tbox_context_menu, 0x00);
     tbox_flush_map(BAG2_STATE->tbox_context_menu);
     tbox_free_2(BAG2_STATE->tbox_context_menu);
@@ -214,7 +214,7 @@ static void bag_select_quantity_to_toss(u8 self) {
 
 static u8 str_toss_how_many[] = LANGDEP(PSTRING("Wie viel\nwegwerfen?"), PSTRING("Toss how many?"));
 
-static void bag_menu_context_menu_item_toss(u8 self) {
+static void bag_context_menu_item_toss(u8 self) {
     // Close the context menu and hide tboxes
     tbox_flush_all(BAG2_STATE->tbox_context_menu, 0x00);
     tbox_flush_map(BAG2_STATE->tbox_context_menu);
@@ -238,11 +238,39 @@ static void bag_menu_context_menu_item_toss(u8 self) {
 
 }
 
+static void bag_context_menu_item_give_continuation() {
+    pokemon_party_menu_state.bag_item = item_activated;
+    pokemon_party_menu_init(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_GIVE_ITEM, false, PARTY_MSG_GIVE_TO_WHICH_MON, pokemon_party_menu_big_callback_select_pokemon, bag2_return_to_last);
+}
+
+static u8 str_cant_be_given[] = LANGDEP(PSTRING("BUFFER_1 kann nicht\ngetragen werden."), PSTRING("BUFFER_1 can't be held."));
+
+static void bag_context_menu_item_give(u8 self) {
+    tbox_flush_all(BAG2_STATE->tbox_context_menu, 0x00);
+    tbox_flush_map(BAG2_STATE->tbox_context_menu);
+    tbox_free_2(BAG2_STATE->tbox_context_menu);
+    tbox_flush_map(BAG_TBOX_CONTEXT_MENU_TEXT);
+    tbox_tilemap_draw(BAG_TBOX_LIST);
+    bg_virtual_sync_reqeust_push(0);
+    if (item_can_be_tossed(item_activated)) {
+        if (pokemon_get_number_in_party() == 0) {
+            bag_print_string(self, 2, str_there_is_no_pokemon, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+        } else {
+            BAG2_STATE->internal_continuation = bag_context_menu_item_give_continuation;
+            bag_close(self, item_activated, false);
+        }
+    } else {
+        strcpy(buffer0, item_get_name(item_activated));
+        string_decrypt(strbuf, str_cant_be_given);
+        bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+    }
+}
+
 menu_action_t bag_context_menu_items[NUM_BAG_CONTEXT_MENU_ITEMS] = {
-    [BAG_CONTEXT_MENU_USE] = {.text = str_use, .function = {.void_u8 = bag_menu_context_menu_item_use}},
-    [BAG_CONTEXT_MENU_GIVE] = {.text = str_give},
-    [BAG_CONTEXT_MENU_TOSS] = {.text = str_toss, .function = {.void_u8 = bag_menu_context_menu_item_toss}},
-    [BAG_CONTEXT_MENU_CANCEL] = {.text = str_cancel, .function = {.void_u8 = bag_menu_context_menu_item_cancel}},
+    [BAG_CONTEXT_MENU_USE] = {.text = str_use, .function = {.void_u8 = bag_context_menu_item_use}},
+    [BAG_CONTEXT_MENU_GIVE] = {.text = str_give, .function = {.void_u8 = bag_context_menu_item_give}},
+    [BAG_CONTEXT_MENU_TOSS] = {.text = str_toss, .function = {.void_u8 = bag_context_menu_item_toss}},
+    [BAG_CONTEXT_MENU_CANCEL] = {.text = str_cancel, .function = {.void_u8 = bag_context_menu_item_cancel}},
 };
 
 

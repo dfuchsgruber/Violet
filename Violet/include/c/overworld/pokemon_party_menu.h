@@ -346,4 +346,11 @@ void pokemon_party_menu_play_fanfare_after_text_finished(u8 self);
  */
 void pokemon_party_menu_rare_candy_display_page_0(u8 self);
 
+/**
+ * @brief Big callback that handles selecting one pokemon in the party menu and then executes something based on the context
+ * 
+ * @param self self-reference
+ */
+void pokemon_party_menu_big_callback_select_pokemon(u8 self);
+
 #endif /* INCLUDE_C_OVERWORLD_POKEMON_PARTY_MENU_H_ */

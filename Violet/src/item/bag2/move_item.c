@@ -131,7 +131,7 @@ void bag_start_moving_item(u8 cb_idx, u16 position) {
 }
 
 bool bag_can_items_be_moved() {
-    if (BAG2_STATE->context != BAG_CONTEXT_OVERWORLD)
+    if (fmem.bag_context != BAG_CONTEXT_OVERWORLD)
         return false;
     u8 pocket_idx = bag_get_current_pocket();
     if (pocket_idx == POCKET_TM_HM || pocket_idx == POCKET_BERRIES)

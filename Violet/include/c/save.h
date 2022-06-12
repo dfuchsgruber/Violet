@@ -308,8 +308,12 @@ typedef struct {
     u8 weather_blend_delay;
     u8 pokemon_move_learning_evolution_move_idx;
     u8 blackbeard_ship_oam_idx;
+    // Persistent bag state (that can not be allocated)
     u16 bag_cursor_position[MAX_NUM_POCKETS];
     u16 bag_cursor_items_above[MAX_NUM_POCKETS];
+    void (*bag_continuation)();
+    u8 bag_context;
+
 } floating_memory;
 
 

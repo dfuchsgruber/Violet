@@ -34,11 +34,15 @@ u8 bag_get_current_pocket() {
 }
 
 void bag_delete_scroll_indicators_items() {
-    scroll_indicator_delete(BAG2_STATE->scroll_indicator_items_cb_idx);
+    if (BAG2_STATE->scroll_indicator_items_cb_idx != 0xFF)
+        scroll_indicator_delete(BAG2_STATE->scroll_indicator_items_cb_idx);
+    BAG2_STATE->scroll_indicator_items_cb_idx = 0xFF;
 }
 
 void bag_delete_scroll_indicators_pockets() {
-    scroll_indicator_delete(BAG2_STATE->scroll_indicator_pockets_cb_idx);
+    if (BAG2_STATE->scroll_indicator_pockets_cb_idx != 0xFF)
+        scroll_indicator_delete(BAG2_STATE->scroll_indicator_pockets_cb_idx);
+    BAG2_STATE->scroll_indicator_pockets_cb_idx = 0xFF;
 }
 
 void bag_win0_animation(u8 self) {
@@ -115,7 +119,7 @@ void bag_idle_callback_default(u8 self) {
                 goto exit_bag;
             } else {
                 item_activated = item_get_idx_by_pocket_position(pocket, (u16)(input));
-                bag_item_selected_by_context[BAG2_STATE->context](self);
+                bag_item_selected_by_context[fmem.bag_context](self);
             }
         }
     }
@@ -227,7 +231,7 @@ static void bag_close_wait_fadescreen_and_continue(u8 self) {
     if (BAG2_STATE->internal_continuation)
         callback1_set(BAG2_STATE->internal_continuation);
     else
-        callback1_set(BAG2_STATE->continuation);
+        callback1_set(fmem.bag_continuation);
     bag_free();
     big_callback_delete(self);
 }
@@ -253,9 +257,12 @@ void bag_open(u8 context, u8 open_which, void (*continuation)()) {
         return;
     } else {
         BAG2_STATE->initialization_state = 0;
-        BAG2_STATE->context = context;
-        BAG2_STATE->open_which = open_which;
-        BAG2_STATE->continuation = continuation;
+        if (continuation)
+            fmem.bag_continuation = continuation;
+        if (context != BAG_CONTEXT_LAST)
+            fmem.bag_context = context;
+        BAG2_STATE->scroll_indicator_pockets_cb_idx = 0xFF;
+        BAG2_STATE->scroll_indicator_items_cb_idx = 0xFF;
         if (open_which != BAG_OPEN_LAST) {
             for (cmem.bag_pocket = 0; cmem.bag_pocket <= ARRAY_COUNT(bag_pocket_order); cmem.bag_pocket++) {
                 if (bag_pocket_order[cmem.bag_pocket] == open_which)
@@ -266,6 +273,10 @@ void bag_open(u8 context, u8 open_which, void (*continuation)()) {
         bag_initialize_list_cursor_positions();
         callback1_set(bag_cb_initialize);
     }
+}
+
+void bag2_return_to_last() {
+    bag_open(BAG_CONTEXT_LAST, BAG_OPEN_LAST, NULL);
 }
 
 
