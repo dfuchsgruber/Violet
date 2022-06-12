@@ -14,6 +14,9 @@
 #include "pokemon/virtual.h"
 #include "music.h"
 #include "menu_indicators.h"
+#include "berry.h"
+#include "constants/sav_keys.h"
+#include "vars.h"
 
 static u8 str_use[] = LANGDEP(PSTRING("O.K."), PSTRING("Use"));
 static u8 str_give[] = LANGDEP(PSTRING("Geben"), PSTRING("Give"));
@@ -664,6 +667,24 @@ static void bag_item_selected_compost(u8 self) {
     }
 }
 
+static u8 str_cant_be_planted[] = LANGDEP(PSTRING("BUFFER_1 kann nicht\ngepflanzt werden."), PSTRING("BUFFER_1 can not\nbe planted."));
+
+static void bag_item_selected_plant_berry(u8 self) {
+    bag_disable_ui();
+    if (item_can_be_tossed(item_activated)) {
+        *var_access(LASTRESULT) = 1; // Berry planted
+        save_increment_key(SAV_KEY_PLANTED_BERRIES);
+        item_remove(item_activated, 1);
+        u8 berry_tree_idx = (u8)*var_access(0x8000);
+        berry_tree_initialize(berry_tree_idx, (u8)ITEM_IDX_TO_BERRY_IDX(item_activated), BERRY_STAGE_DIRT_PILE);
+        cmem.berry_trees[berry_tree_idx].replanted = 1;
+        bag_close(self, item_activated, true);
+    } else {
+        strcpy(buffer0, item_get_name(item_activated));
+        string_decrypt(strbuf, str_cant_be_planted);
+        bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+    }
+}
 
 void (*bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8) = {
     [BAG_CONTEXT_OVERWORLD] = bag_item_selected_overworld,
@@ -671,4 +692,5 @@ void (*bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8) = {
     [BAG_CONTEXT_SELL] = bag_item_selected_sell,
     [BAG_CONTEXT_DEPOSIT] = bag_item_selected_deposit,
     [BAG_CONTEXT_COMPOST] = bag_item_selected_compost,
+    [BAG_CONTEXT_PLANT_BERRY] = bag_item_selected_plant_berry,
 };
