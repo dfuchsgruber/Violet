@@ -39,7 +39,16 @@ tboxdata bag_tboxes[NUM_BAG_TBOXES + 1] = {
     [BAG_TBOX_MOVE_INFO] = {.bg_id = 0, .x = 0, .y = 4, .w = 10, .h = 9, .pal = 4, .start_tile = 2 + 9 * 2 + 9 * 10 + 0x19 * 6 + 18 * 12},
     [BAG_TBOX_MESSAGE] =  {.bg_id = 0, .x = 2, .y = 15, .w = 26, .h = 4, .pal = 13, .start_tile = 2 + 9 * 2 + 9 * 10 + 0x19 * 6 + 18 * 12 + 9 * 10},
     [BAG_TBOX_MESSAGE_WITH_YES_NO] = {.bg_id = 0, .x = 6, .y = 15, .w = 15, .h = 4, .pal = 13, .start_tile = 2 + 9 * 2 + 9 * 10 + 0x19 * 6 + 18 * 12 + 9 * 10},
+    [BAG_TBOX_MESSAGE_WITH_SELL_QUANTITY] = {.bg_id = 0, .x = 6, .y = 15, .w = 10, .h = 4, .pal = 13, .start_tile = 2 + 9 * 2 + 9 * 10 + 0x19 * 6 + 18 * 12 + 9 * 10}, 
     [NUM_BAG_TBOXES] = {.bg_id = 0xFF},
+};
+
+// These will not be drawn onto the standard bag screen on initialize
+static u8 bag_tbox_invisible_at_initialize[NUM_BAG_TBOXES] = {
+    [BAG_TBOX_CONTEXT_MENU_TEXT] = true,
+    [BAG_TBOX_MESSAGE] = true,
+    [BAG_TBOX_MESSAGE_WITH_YES_NO] = true,
+    [BAG_TBOX_MESSAGE_WITH_SELL_QUANTITY] = true,
 };
 
 extern color_t bag_tboxPal[16];
@@ -231,7 +240,7 @@ static void bag_initialize_tboxes() {
     pal_copy(bag_tboxPal, 15 * 16, 16 * sizeof(color_t));
     pal_copy(pal_hm_symbol, 15 * 16 + 6, sizeof(pal_hm_symbol));
     for (u8 i = 0; bag_tboxes[i].bg_id != 0xFF; i++) {
-        if (i == BAG_TBOX_CONTEXT_MENU_TEXT || i == BAG_TBOX_MESSAGE || i == BAG_TBOX_MESSAGE_WITH_YES_NO)
+        if (bag_tbox_invisible_at_initialize[i])
             continue;
         tbox_flush_set(i, 0x00);
         tbox_flush_map(i);

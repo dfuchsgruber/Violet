@@ -116,12 +116,21 @@ static bool bag_toss_or_sell_process_input() {
         if (BAG2_STATE->toss_current_number == 0)
             BAG2_STATE->toss_current_number = BAG2_STATE->toss_max_number;
         return true;
-    } else {
-        return false;
+    } else if (super.keys_new.keys.right) {
+        if (BAG2_STATE->toss_current_number < BAG2_STATE->toss_max_number) {
+            BAG2_STATE->toss_current_number = (u16)MIN(BAG2_STATE->toss_max_number, BAG2_STATE->toss_current_number + 10);
+            return true;
+        }
+    } else if (super.keys_new.keys.left) {
+        if (BAG2_STATE->toss_current_number > 1) {
+            BAG2_STATE->toss_current_number = (u16)MAX(1, BAG2_STATE->toss_current_number - 10);
+            return true;
+        }
     }
+    return false;
 }
 
-static u8 str_tossed_items[] = LANGDEP(PSTRING("BUFFER_1×BUFFER_2\nweggeworfen."), PSTRING("Tossed BUFFER_1×BUFFER_2."));
+static u8 str_tossed_items[] = LANGDEP(PSTRING("BUFFER_1 ×BUFFER_2\nweggeworfen."), PSTRING("Tossed BUFFER_1 ×BUFFER_2."));
 
 static void bag_toss_confirm_yes(u8 self) {
     // tbox_clear_message(BAG_TBOX_MESSAGE_WITH_YES_NO, false);
@@ -145,7 +154,7 @@ static yes_no_box_callbacks_t yes_no_callbacks_toss = {
     .yes_callback = bag_toss_confirm_yes,
 };
 
-static u8 str_confirm_toss[] = LANGDEP(PSTRING("BUFFER_1×BUFFER_2\nwirklich wegwerfen?"), PSTRING("Toss\nBUFFER_1×BUFFER_2?"));
+static u8 str_confirm_toss[] = LANGDEP(PSTRING("BUFFER_1 ×BUFFER_2\nwirklich wegwerfen?"), PSTRING("Toss\nBUFFER_1 ×BUFFER_2?"));
 
 static void bag_confirm_toss(u8 self) {
     strcpy(buffer0, item_get_name(item_activated));
@@ -167,9 +176,18 @@ static void bag_toss_or_sell_update_quantity(u8 number_digits) {
     tbox_print_string(BAG2_STATE->tbox_quantity, 0, 4, 10, 1, 0, &bag_font_colormap_std, 0, strbuf);
 }
 
-static scroll_indicator_template scroll_indicator_quantity_template = {
+static scroll_indicator_template scroll_indicator_quantity_toss_template = {
     .arrow0_type = SCROLL_ARROW_UP, .arrow0_x = 212, .arrow0_y = 120,
     .arrow1_type = SCROLL_ARROW_DOWN, .arrow1_x = 212, .arrow1_y = 152,
+    .arrow0_threshold = 0, 
+    .arrow1_threshold = 1000,
+    .tiles_tag = 110,
+    .pal_tag = 110,
+};
+
+static scroll_indicator_template scroll_indicator_quantity_sell_template = {
+    .arrow0_type = SCROLL_ARROW_UP, .arrow0_x = 168, .arrow0_y = 120,
+    .arrow1_type = SCROLL_ARROW_DOWN, .arrow1_x = 168, .arrow1_y = 152,
     .arrow0_threshold = 0, 
     .arrow1_threshold = 1000,
     .tiles_tag = 110,
@@ -185,7 +203,7 @@ static void bag_toss_or_sell_initiaize_quantity(u8 *str, u8 number_digits) {
     tbox_tilemap_draw(BAG2_STATE->tbox_quantity);
     tbox_draw_std_frame_by_base_tile_and_pal(BAG2_STATE->tbox_quantity, false, BAG_START_TILE_BORDER_SET_STYLE, BAG_PAL_IDX_SET_STYLE);
     bag_toss_or_sell_update_quantity(number_digits);
-    BAG2_STATE->scroll_indicator_quantity_cb_idx = scroll_indicator_new(&scroll_indicator_quantity_template, &BAG2_STATE->toss_current_number);
+    BAG2_STATE->scroll_indicator_quantity_cb_idx = scroll_indicator_new(&scroll_indicator_quantity_toss_template, &BAG2_STATE->toss_current_number);
 }
 
 static void bag_select_quantity_to_toss(u8 self) {
@@ -228,7 +246,7 @@ static void bag_context_menu_item_toss(u8 self) {
     BAG2_STATE->toss_max_number = quantity;
     BAG2_STATE->toss_current_number = 1;
 
-    DEBUG("Quantity is %d, item is %d\n", quantity, item_get_idx_by_pocket_position(pocket, bag_get_current_slot_in_current_pocket()));
+    // DEBUG("Quantity is %d, item is %d\n", quantity, item_get_idx_by_pocket_position(pocket, bag_get_current_slot_in_current_pocket()));
     if (quantity <= 1) { // Confirm a single toss
         big_callbacks[self].function = bag_confirm_toss;
     } else { // Select quantity to toss
@@ -330,6 +348,16 @@ static void bag_context_menu_overworld_handle_input(u8 self) {
     }
 }
 
+static void bag_item_selected_party_give(u8 self) {
+    bag_disable_ui();
+    if (item_can_be_tossed(item_activated)) {
+        bag_close(self, item_activated, true);
+    } else {
+        strcpy(buffer0, item_get_name(item_activated));
+        string_decrypt(strbuf, str_cant_be_given);
+        bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+    }
+}
 
 static u8 bag_context_menu_overworld[] = {BAG_CONTEXT_MENU_USE, BAG_CONTEXT_MENU_GIVE, BAG_CONTEXT_MENU_TOSS, BAG_CONTEXT_MENU_CANCEL};
 static u8 bag_context_menu_overworld_unique[] = {BAG_CONTEXT_MENU_USE, BAG_CONTEXT_MENU_CANCEL};
@@ -344,8 +372,155 @@ static void bag_item_selected_overworld(u8 self) {
     // big_callbacks[self].function = (void(*)(u8))nullsub;
 };
 
+static void bag_print_money() {
+    tboxdata template = {.bg_id = 0, .h = 3, .w = 8, .x = 1, .y = 1, .pal = 14, .start_tile = (u16)(bag_context_menu_get_start_tile() + 50)};
+    BAG2_STATE->tbox_money = tbox_new(&template);
+    tbox_tilemap_draw(BAG2_STATE->tbox_money);
+    tbox_print_money_and_frame(BAG2_STATE->tbox_money, BAG_START_TILE_BORDER_STD, BAG_PAL_IDX_BORDER_STD, money_get(&save1->money));
+}
+
+static void bag_sell_confirm_no(u8 self) {
+    // tbox_clear_message(BAG_TBOX_MESSAGE_WITH_YES_NO, false);
+    tbox_flush_map_and_frame(BAG2_STATE->tbox_money);
+    tbox_free_2(BAG2_STATE->tbox_money);
+    tbox_flush_map_and_frame(BAG_TBOX_MESSAGE_WITH_YES_NO);
+    tbox_tilemap_draw(BAG_TBOX_POCKET_NAME);
+    bg_virtual_sync_reqeust_push(0);
+    bag_print_item_description(bag_get_current_slot_in_current_pocket());
+    big_callbacks[self].function = (void(*)(u8))bag_menu_cancel_redraw_description_and_scroll_menu_indicators_and_return_to_idle_callback;
+}
+
+static void bag_sold_item_wait_a_b_press(u8 self) {
+    if (sound_is_playing())
+        return;
+    if (super.keys_new.keys.A || super.keys_new.keys.B) {
+        play_sound(5);
+        tbox_flush_map_and_frame(BAG2_STATE->tbox_money);
+        tbox_free_2(BAG2_STATE->tbox_money);
+        tbox_clear_message(BAG_TBOX_MESSAGE, false);
+        bag_print_item_description(bag_get_current_slot_in_current_pocket());
+        tbox_tilemap_draw(BAG_TBOX_DESCRIPTION);
+        tbox_tilemap_draw(BAG_TBOX_POCKET_NAME);
+        bg_virtual_sync_reqeust_push(0);
+        big_callbacks[self].function = bag_reinitialize_scroll_menu_indicators_and_return_to_idle_callback;
+    }
+}
+
+static void bag_sold_item(u8 self) {
+    play_sound(248);
+    item_remove(item_activated, BAG2_STATE->toss_current_number);
+    int money = item_get_price(item_activated) / 2 * BAG2_STATE->toss_current_number;
+    money_add(&save1->money, (u32)money);
+    tbox_update_money(BAG2_STATE->tbox_money, money_get(&save1->money), 0);
+    u8 pocket_idx = bag_get_current_pocket();
+    list_menu_remove(BAG2_STATE->list_menu_cb_idx, fmem.bag_cursor_position + POCKET_TO_BAG_POCKETS_IDX(pocket_idx), fmem.bag_cursor_items_above + POCKET_TO_BAG_POCKETS_IDX(pocket_idx));
+    bag_initialize_compute_item_counts();
+    bag_initialize_list_cursor_positions();
+    bag_build_item_list();
+    BAG2_STATE->list_menu_cb_idx = list_menu_new(&gp_list_menu_template, fmem.bag_cursor_position[POCKET_TO_BAG_POCKETS_IDX(pocket_idx)], fmem.bag_cursor_items_above[POCKET_TO_BAG_POCKETS_IDX(pocket_idx)]);
+    bg_virtual_sync_reqeust_push(0);
+    big_callbacks[self].function = bag_sold_item_wait_a_b_press;
+}
+
+static u8 str_sold_item[] = LANGDEP(PSTRING("BUFFER_1 ×BUFFER_2 wurde im\nTausch gegen BUFFER_3POKEDOLLAR übergeben."), PSTRING("Exchanged BUFFER_1 ×BUFFER_2\nagainst BUFFER_3POKEDOLLAR."));
+
+static void bag_sell_confirm_yes(u8 self) {
+    tbox_flush_map_and_frame(BAG_TBOX_MESSAGE_WITH_YES_NO);
+    bg_virtual_sync_reqeust_push(0);
+    bag_print_string(self, 2, str_sold_item, bag_sold_item);
+}
+
+
+static yes_no_box_callbacks_t yes_no_callbacks_sell = {
+    .no_callback = bag_sell_confirm_no,
+    .yes_callback = bag_sell_confirm_yes,
+};
+
+static u8 str_confirm_sell[] = LANGDEP(PSTRING("BUFFER_1 ×BUFFER_2 für\nBUFFER_3POKEDOLLAR verkaufen?"), PSTRING("Sell BUFFER_1 ×BUFFER_2\nfor BUFFER_3POKEDOLLAR?"));
+
+static void bag_confirm_sell(u8 self) {
+    int money = item_get_price(item_activated) / 2 * BAG2_STATE->toss_current_number;
+    itoa(buffer2, money, ITOA_NO_PADDING, 7);
+    strcpy(buffer0, item_get_name(item_activated));
+    itoa(buffer1, BAG2_STATE->toss_current_number, ITOA_NO_PADDING, 3);
+    string_decrypt(strbuf, str_confirm_sell);
+    tbox_draw_std_frame_by_base_tile_and_pal(BAG_TBOX_MESSAGE_WITH_YES_NO, true, BAG_START_TILE_BORDER_STD, BAG_PAL_IDX_BORDER_STD);
+    tbox_print_string(BAG_TBOX_MESSAGE_WITH_YES_NO, 2, 0, 0, 0, 0, &bag_font_colormap_std, 0, strbuf);
+    bg_virtual_sync_reqeust_push(0);
+    tboxdata template = {.bg_id = 0, .h = 2 * 2, .w = 5, .x = 30 - 5 - 1, .y = (u8)(20 - 1 - (2 * 2)), .pal = 14, .start_tile = bag_context_menu_get_start_tile()};
+    gp_list_menu_yes_no_new_with_callbacks(self, &template, 2, 0, 0, BAG_START_TILE_BORDER_STD, BAG_PAL_IDX_BORDER_STD, &yes_no_callbacks_sell);
+}
+
+static void bag_sell_initialize_quantity(u8 *str, u8 number_digits) {
+    tbox_draw_std_frame_by_base_tile_and_pal(BAG_TBOX_MESSAGE_WITH_SELL_QUANTITY, true, BAG_START_TILE_BORDER_STD, BAG_PAL_IDX_BORDER_STD);
+    tbox_print_string(BAG_TBOX_MESSAGE_WITH_SELL_QUANTITY, 2, 0, 0, 0, 0, &bag_font_colormap_std, 0, str);
+    bg_virtual_sync_reqeust_push(0);
+    tboxdata template = {.bg_id = 0, .h = 2 * 2, .w = 10, .x = 30 - 10 - 1, .y = (u8)(20 - 1 - (2 * 2)), .pal = 14, .start_tile = bag_context_menu_get_start_tile()};
+    BAG2_STATE->tbox_quantity = tbox_new(&template);
+    tbox_tilemap_draw(BAG2_STATE->tbox_quantity);
+    tbox_draw_std_frame_by_base_tile_and_pal(BAG2_STATE->tbox_quantity, false, BAG_START_TILE_BORDER_SET_STYLE, BAG_PAL_IDX_SET_STYLE);
+    bag_toss_or_sell_update_quantity(number_digits);
+    BAG2_STATE->scroll_indicator_quantity_cb_idx = scroll_indicator_new(&scroll_indicator_quantity_sell_template, &BAG2_STATE->toss_current_number);
+}
+static void bag_sell_update_money() {
+    tbox_print_money_at(BAG2_STATE->tbox_quantity, 40, 10, (u32)(item_get_price(item_activated) / 2 * BAG2_STATE->toss_current_number), 0);
+}
+
+static void bag_select_quantity_to_sell(u8 self) {
+    if (bag_toss_or_sell_process_input()) {
+        play_sound(5);
+        bag_toss_or_sell_update_quantity(3);
+        bag_sell_update_money();
+    } else if (super.keys_new.keys.A) {
+        play_sound(5);
+        tbox_flush_map_and_frame(BAG2_STATE->tbox_quantity);
+        tbox_free_2(BAG2_STATE->tbox_quantity);
+        bg_virtual_sync_reqeust_push(0);
+        scroll_indicator_delete(BAG2_STATE->scroll_indicator_quantity_cb_idx);
+        bag_confirm_sell(self);
+    } else if (super.keys_new.keys.B) {
+        play_sound(5);
+        tbox_flush_map_and_frame(BAG2_STATE->tbox_quantity);
+        tbox_free_2(BAG2_STATE->tbox_quantity);
+        tbox_flush_map_and_frame(BAG2_STATE->tbox_money);
+        tbox_free_2(BAG2_STATE->tbox_money);
+        tbox_tilemap_draw(BAG_TBOX_POCKET_NAME);
+        bg_virtual_sync_reqeust_push(0);
+        scroll_indicator_delete(BAG2_STATE->scroll_indicator_quantity_cb_idx);
+        bag_reinitialize_list_and_scroll_menu_indicators_and_return_to_idle_callback(self);
+    }
+    (void)self;
+}
+
+static u8 str_cant_sell_that[] = LANGDEP(PSTRING("BUFFER_1? Tut mir leid,\naber das kann ich nicht kaufen."), PSTRING("BUFFER_1?\nSorry but I can't buy that."));
+static u8 str_sell_how_many[] = LANGDEP(PSTRING("Wie viele\nverkaufen?"), PSTRING("Sell how many?"));
+
+static void bag_item_selected_sell(u8 self) {
+    bag_disable_ui();
+    if (item_can_be_tossed(item_activated) && item_get_price(item_activated) > 0) {
+        bag_print_money();
+        u8 pocket = bag_get_current_pocket();
+        u16 quantity = item_get_quantity_by_pocket_position(pocket, bag_get_current_slot_in_current_pocket());
+        BAG2_STATE->toss_max_number = MIN(999, quantity);
+        BAG2_STATE->toss_current_number = 1;
+        if (BAG2_STATE->toss_max_number == 1) {
+            big_callbacks[self].function = bag_confirm_sell;
+        } else {
+            bag_sell_initialize_quantity(str_sell_how_many, 3);
+            bag_sell_update_money();
+            big_callbacks[self].function = bag_select_quantity_to_sell;
+        }
+
+    } else {
+        strcpy(buffer0, item_get_name(item_activated));
+        string_decrypt(strbuf, str_cant_sell_that);
+        bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+    }
+}
 
 
 void (*bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8) = {
     [BAG_CONTEXT_OVERWORLD] = bag_item_selected_overworld,
+    [BAG_CONTEXT_PARTY_GIVE] = bag_item_selected_party_give,
+    [BAG_CONTEXT_SELL] = bag_item_selected_sell
 };

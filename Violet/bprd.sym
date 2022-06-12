@@ -1776,3 +1776,6 @@ gp_menu_process_input_no_wrap_around = 0x0810fab4 | 1;
 item_get_field_function = 0x0809ab04 | 1;
 item_get_type = 0x0809aae0 | 1;
 pokemon_party_menu_big_callback_select_pokemon = 0x0811fb5c | 1;
+tbox_print_money_and_frame = 0x080a003c | 1;
+tbox_update_money = 0x0809ff34 | 1;
+tbox_print_money_at = 0x0809ffb8 | 1;

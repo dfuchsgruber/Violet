@@ -279,7 +279,6 @@ void bag2_return_to_last() {
     bag_open(BAG_CONTEXT_LAST, BAG_OPEN_LAST, NULL);
 }
 
-
 /** Test the code **/
 
 static void bag_wait_for_fadescreen_and_initialize(u8 self) {

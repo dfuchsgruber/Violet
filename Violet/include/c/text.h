@@ -581,6 +581,36 @@ extern "C" {
      */
     u8 font_get_attribute(u8 font, u8 attribute);
 
+    /**
+     * @brief Prints an amount of money in a box and also draws the frame around the box
+     * 
+     * @param tbox_idx the box to print money in
+     * @param frame_start_tile the start tile of the frame
+     * @param frame_pal_idx the pal idx of the frame
+     * @param money the amount of money to print
+     */
+    void tbox_print_money_and_frame(u8 tbox_idx, u16 frame_start_tile, u8 frame_pal_idx, u32 money);
+
+    /**
+     * @brief Updates the money amount displayed in a box drawn by `tbox_print_money_and_frame`
+     * 
+     * @param tbox_idx the tbox to update
+     * @param amount the new amount
+     * @param font in which font (standard is 0)
+     */
+    void tbox_update_money(u8 tbox_idx, u32 amount, u8 font);
+
+    /**
+     * @brief Prints a money string that is right-aligned at an offset in the tbox
+     * 
+     * @param tbox_idx the box in which to print
+     * @param x horizontal offset of the upper left corner of the (space-padded) money quantity
+     * @param y vertical offset of the upper left corner of the (space-padded) money quantity
+     * @param amount the amount to print
+     * @param speed in which speed to print
+     */
+    void tbox_print_money_at(u8 tbox_idx, u8 x, u8 y, u32 amount, u8 speed);
+
     extern u8 overworld_tbox_state;
 
     typedef struct {

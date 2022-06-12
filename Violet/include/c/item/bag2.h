@@ -57,6 +57,7 @@ enum {
     BAG_TBOX_CONTEXT_MENU_TEXT,
     BAG_TBOX_MESSAGE,
     BAG_TBOX_MESSAGE_WITH_YES_NO,
+    BAG_TBOX_MESSAGE_WITH_SELL_QUANTITY,
     NUM_BAG_TBOXES,
 };
 
@@ -98,6 +99,7 @@ typedef struct {
     u8 scroll_indicator_quantity_cb_idx;
     u16 toss_max_number;
     u16 toss_current_number;
+    u8 tbox_money;
 } bag2_state_t;
 
 #define BAG2_STATE ((bag2_state_t*)fmem.bag2_state)

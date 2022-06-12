@@ -452,3 +452,8 @@ _bxr1:
 _blxr4_bag_print_string:
 	bx r4
 	.pool
+
+.org 0x08107e30
+	ldr r3, =bag_open | 1
+	bx r3
+	.pool

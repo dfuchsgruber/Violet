@@ -85,6 +85,7 @@ static void bag_switch_pockets_callback(u8 self) {
             tbox_flush_map(BAG_TBOX_DESCRIPTION);
             tbox_flush_map(BAG_TBOX_LIST);
             tbox_flush_map(BAG_TBOX_POCKET_NAME);
+            tbox_flush_map(BAG_TBOX_MOVE_INFO);
             bag_delete_scroll_indicators_items();
             oams[BAG2_STATE->oam_idx_item].flags |= OAM_FLAG_INVISIBLE;
             list_menu_remove(BAG2_STATE->list_menu_cb_idx, fmem.bag_cursor_position + pocket_idx - 1, fmem.bag_cursor_items_above + pocket_idx - 1);
