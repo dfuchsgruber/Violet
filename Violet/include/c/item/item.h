@@ -346,4 +346,13 @@ typedef struct {
  */
 bool item_can_be_tossed(u16 item_idx);
 
+/**
+ * @brief Adds an item to the item pc
+ * 
+ * @param item_idx the item to add
+ * @param quantity how many exemplars to add
+ * @return if there was space
+ */
+bool item_add_to_pc(u16 item_idx, u16 quantity);
+
 #endif /* INCLUDE_C_ITEM_ITEM_H_ */

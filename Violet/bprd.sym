@@ -1779,3 +1779,4 @@ pokemon_party_menu_big_callback_select_pokemon = 0x0811fb5c | 1;
 tbox_print_money_and_frame = 0x080a003c | 1;
 tbox_update_money = 0x0809ff34 | 1;
 tbox_print_money_at = 0x0809ffb8 | 1;
+item_add_to_pc = 0x0809a4ac | 1;

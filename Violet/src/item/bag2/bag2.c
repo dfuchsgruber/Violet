@@ -29,6 +29,15 @@ static u8 bag_pocket_order[] = {
     POCKET_ITEMS, POCKET_MEDICINE, POCKET_POKEBALLS, POCKET_TM_HM, POCKET_BERRIES, POCKET_KEY_ITEMS, POCKET_BAIT,
 };
 
+static u8 bag_open_pocket_to_pocket[NUM_BAG_OPEN] = {
+    [BAG_OPEN_ITEMS] = POCKET_ITEMS,
+    [BAG_OPEN_KEYITEMS] = POCKET_KEY_ITEMS,
+    [BAG_OPEN_POKEBALLS] = POCKET_POKEBALLS,
+    [BAG_OPEN_TM_HM] = POCKET_TM_HM,
+    [BAG_OPEN_BERRIES] = POCKET_BERRIES,
+    [BAG_OPEN_BAIT] = POCKET_BAIT,
+};
+
 u8 bag_get_current_pocket() {
     return bag_pocket_order[cmem.bag_pocket];
 }
@@ -251,6 +260,7 @@ void bag_close(u8 cb_idx, u16 item_result, bool set_bag_closed) {
 
 void bag_open(u8 context, u8 open_which, void (*continuation)()) {
     // Todo reset state
+    DEBUG("Open bag in context %d and pocket %d with continuation 0x%x\n", context, open_which, continuation);
     fmem.bag2_state = malloc_and_clear(sizeof(bag2_state_t));
     if (!fmem.bag2_state) {
         callback1_set(continuation);
@@ -264,9 +274,16 @@ void bag_open(u8 context, u8 open_which, void (*continuation)()) {
         BAG2_STATE->scroll_indicator_pockets_cb_idx = 0xFF;
         BAG2_STATE->scroll_indicator_items_cb_idx = 0xFF;
         if (open_which != BAG_OPEN_LAST) {
-            for (cmem.bag_pocket = 0; cmem.bag_pocket <= ARRAY_COUNT(bag_pocket_order); cmem.bag_pocket++) {
-                if (bag_pocket_order[cmem.bag_pocket] == open_which)
-                    break;
+            if (open_which < ARRAY_COUNT(bag_open_pocket_to_pocket)) {
+                u8 pocket = bag_open_pocket_to_pocket[open_which];
+                for (cmem.bag_pocket = 0; cmem.bag_pocket < ARRAY_COUNT(bag_pocket_order); cmem.bag_pocket++) {
+                    if (bag_pocket_order[cmem.bag_pocket] == pocket)
+                        break;
+                }
+                if (cmem.bag_pocket >= ARRAY_COUNT(bag_pocket_order))
+                    ERROR("Did not find an index in bag_pocket_order to match the target pocket %d\n", pocket);
+            } else {
+                ERROR("Can not associate pocket with open_which %d\n", open_which);
             }
         }
         bag_initialize_compute_item_counts();

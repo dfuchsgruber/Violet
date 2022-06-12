@@ -1,6 +1,7 @@
 #include "types.h"
 #include "item/bag2.h"
 #include "language.h"
+#include "debug.h"
 
 static u8 str_hint_give[] = LANGDEP(PSTRING("Welches Item\ngeben?"), PSTRING("Give which item\nto a Pokémon?"));
 static u8 str_hint_deposit[] = LANGDEP(PSTRING("Welches Item\nablegen?"), PSTRING("Deposit which\nitem?"));
@@ -20,6 +21,7 @@ static u8 *bag_context_hints[NUM_BAG_CONTEXTS] = {
 };
 
 u8 *bag_get_context_hint() {
+    // DEBUG("Bag context is %d for hint 0x%x\n", fmem.bag_context, bag_context_hints[fmem.bag_context]);
     u8 pocket = bag_get_current_pocket();
     if (pocket == POCKET_TM_HM)
         return NULL;

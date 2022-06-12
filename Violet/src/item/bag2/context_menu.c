@@ -519,8 +519,84 @@ static void bag_item_selected_sell(u8 self) {
 }
 
 
+static void bag_deposit_wait_a_or_b_press_and_redraw_all(u8 self) {
+    if (super.keys_new.keys.A || super.keys_new.keys.B) {
+        play_sound(5);
+        item_remove(item_activated, BAG2_STATE->toss_current_number);
+        tbox_clear_message(BAG_TBOX_MESSAGE_WITH_YES_NO, false);
+        bg_virtual_sync_reqeust_push(0);
+        bag_reinitialize_list_and_scroll_menu_indicators_and_return_to_idle_callback(self);
+    }
+}
+
+static u8 str_no_space_to_deposit[] = LANGDEP(PSTRING("Auf deinem Pc ist kein\nPlatz dafür!"), PSTRING("There is no room on your\nitem pc."));
+static u8 str_deposited[] = LANGDEP(PSTRING("BUFFER_1 ×BUFFER_2\nwurde abgelegt."), PSTRING("Deposited\nBUFFER_1 ×BUFFER_2"));
+
+static void bag_deposit_item(u8 self) {
+    if (item_add_to_pc(item_activated, BAG2_STATE->toss_current_number)) {
+        strcpy(buffer0, item_get_name(item_activated));
+        itoa(buffer1, BAG2_STATE->toss_current_number, ITOA_NO_PADDING, 3);
+        string_decrypt(strbuf, str_deposited);
+        tbox_draw_std_frame_by_base_tile_and_pal(BAG_TBOX_MESSAGE_WITH_YES_NO, true, BAG_START_TILE_BORDER_STD, BAG_PAL_IDX_BORDER_STD);
+        tbox_print_string(BAG_TBOX_MESSAGE_WITH_YES_NO, 2, 0, 0, 0, 0, &bag_font_colormap_std, 0, strbuf);
+        bg_virtual_sync_reqeust_push(0);
+        big_callbacks[self].function = bag_deposit_wait_a_or_b_press_and_redraw_all;
+    } else {
+        bag_print_string(self, 2, str_no_space_to_deposit, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+    }
+}
+
+static void bag_select_quantity_to_deposit(u8 self) {
+    (void)self;
+    if (bag_toss_or_sell_process_input()) {
+        play_sound(5);
+        bag_toss_or_sell_update_quantity(3);
+    } else if (super.keys_new.keys.A) {
+        play_sound(5);
+        tbox_flush_set(BAG2_STATE->tbox_quantity, 0x00);
+        tbox_flush_map_and_frame(BAG2_STATE->tbox_quantity);
+        tbox_free_2(BAG2_STATE->tbox_quantity);
+        bg_virtual_sync_reqeust_push(0);
+        scroll_indicator_delete(BAG2_STATE->scroll_indicator_quantity_cb_idx);
+        bag_deposit_item(self);
+    } else if (super.keys_new.keys.B) {
+        play_sound(5);
+        tbox_flush_set(BAG2_STATE->tbox_quantity, 0x00);
+        tbox_flush_map_and_frame(BAG2_STATE->tbox_quantity);
+        tbox_free_2(BAG2_STATE->tbox_quantity);
+        bg_virtual_sync_reqeust_push(0);
+        scroll_indicator_delete(BAG2_STATE->scroll_indicator_quantity_cb_idx);
+        bag_reinitialize_list_and_scroll_menu_indicators_and_return_to_idle_callback(self);
+    }
+}
+
+static u8 str_cant_deposit[] = LANGDEP(PSTRING("BUFFER_1 kann nicht\nabgelegt werden."), PSTRING("BUFFER_1 can not\nbe deposited."));
+static u8 str_deposit_how_many[] = LANGDEP(PSTRING("Wie viele\nablegen?"), PSTRING("How many to\ndeposit?"));
+
+static void bag_item_selected_deposit(u8 self) {
+    bag_disable_ui();
+    if (item_can_be_tossed(item_activated)) {
+        u8 pocket = bag_get_current_pocket();
+        u16 quantity = item_get_quantity_by_pocket_position(pocket, bag_get_current_slot_in_current_pocket());
+        BAG2_STATE->toss_max_number = MIN(999, quantity);
+        BAG2_STATE->toss_current_number = 1;
+        if (quantity == 1) {
+            bag_deposit_item(self);
+        } else {
+            bag_toss_or_sell_initiaize_quantity(str_deposit_how_many, 3);
+            big_callbacks[self].function = bag_select_quantity_to_deposit;
+        }
+    } else {
+        strcpy(buffer0, item_get_name(item_activated));
+        string_decrypt(strbuf, str_cant_deposit);
+        bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+    }
+}
+
+
 void (*bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8) = {
     [BAG_CONTEXT_OVERWORLD] = bag_item_selected_overworld,
     [BAG_CONTEXT_PARTY_GIVE] = bag_item_selected_party_give,
-    [BAG_CONTEXT_SELL] = bag_item_selected_sell
+    [BAG_CONTEXT_SELL] = bag_item_selected_sell,
+    [BAG_CONTEXT_DEPOSIT] = bag_item_selected_deposit,
 };

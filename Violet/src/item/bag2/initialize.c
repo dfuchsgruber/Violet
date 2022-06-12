@@ -505,7 +505,7 @@ static bool bag_cb_initialize_step() {
             break;
         }
         case 12: {
-            bag_print_hint(bag_get_context_hint());
+            // bag_print_hint(bag_get_context_hint());
             BAG2_STATE->initialization_state++;
             break;
         }

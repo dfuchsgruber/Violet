@@ -27,6 +27,7 @@ enum {
     BAG_OPEN_TM_HM = 4,
     BAG_OPEN_BERRIES = 5,
     BAG_OPEN_BAIT = 6,
+    NUM_BAG_OPEN,
 };
 
 enum {

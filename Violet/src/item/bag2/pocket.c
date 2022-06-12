@@ -8,6 +8,7 @@
 #include "language.h"
 #include "text.h"
 #include "constants/pokemon_types.h"
+#include "debug.h"
 
 static tbox_font_colormap font_colormap_pocket_name = {.background = 0, .body = 1, .edge = 2}; 
 
@@ -57,9 +58,6 @@ void bag_load_pocket() {
         );
     bag_build_item_list();
     bag_new_scroll_indicators_items();
-
-
-	// Draw the background box tilemap
 }
 
 static void bag_oam_switch_pocket_callback(oam_object *self) {
