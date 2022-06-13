@@ -1,9 +1,4 @@
-/*
- * tm_hm.c
- *
- *  Created on: Oct 1, 2018
- *      Author: dominik
- */
+
 #include "types.h"
 #include "constants/attacks.h"
 #include "constants/items.h"
