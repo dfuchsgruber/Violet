@@ -157,4 +157,18 @@ bool item_is_hm(u16 item_idx);
  */
 bool item_is_tm(u16 item_idx);
 
+/**
+ * @brief Sets a tm to unused (and therefore usable)
+ * 
+ * @param tm_idx the index of the tm (not item_idx! use ITEM_IDX_TO_TM_IDX to get the tm index in that case)
+ */
+void tm_set_unused(int tm_idx);
+
+/**
+ * @brief Field functions for all tms and hms
+ * 
+ * @param self self-reference
+ */
+void tm_hm_field_function(u8 self);
+
 #endif

@@ -17,6 +17,7 @@
 #include "berry.h"
 #include "constants/sav_keys.h"
 #include "vars.h"
+#include "item/tm_hm.h"
 
 static u8 str_use[] = LANGDEP(PSTRING("O.K."), PSTRING("Use"));
 static u8 str_give[] = LANGDEP(PSTRING("Geben"), PSTRING("Give"));
@@ -37,16 +38,20 @@ void bag_reinitialize_scroll_menu_indicators_and_return_to_idle_callback(u8 self
     big_callbacks[self].function = bag_idle_callback_default;
 }
 
-void bag_reinitialize_list_and_scroll_menu_indicators_and_return_to_idle_callback(u8 self) {
+static void bag_reinitialize_list() {
     u8 pocket_idx = bag_get_current_pocket();
     list_menu_remove(BAG2_STATE->list_menu_cb_idx, fmem.bag_cursor_position + POCKET_TO_BAG_POCKETS_IDX(pocket_idx), fmem.bag_cursor_items_above + POCKET_TO_BAG_POCKETS_IDX(pocket_idx));
     bag_initialize_compute_item_counts();
     bag_initialize_list_cursor_positions();
     bag_build_item_list();
     BAG2_STATE->list_menu_cb_idx = list_menu_new(&gp_list_menu_template, fmem.bag_cursor_position[POCKET_TO_BAG_POCKETS_IDX(pocket_idx)], fmem.bag_cursor_items_above[POCKET_TO_BAG_POCKETS_IDX(pocket_idx)]);
+    bg_virtual_sync_reqeust_push(0);
+}
+
+void bag_reinitialize_list_and_scroll_menu_indicators_and_return_to_idle_callback(u8 self) {
+    bag_reinitialize_list();
     bag_print_item_description(bag_get_current_slot_in_current_pocket());
     tbox_tilemap_draw(BAG_TBOX_DESCRIPTION);
-    bg_virtual_sync_reqeust_push(0);
     big_callbacks[self].function = bag_reinitialize_scroll_menu_indicators_and_return_to_idle_callback;
 }
 
@@ -57,6 +62,16 @@ void bag_wait_a_button_and_close_message_and_return_to_idle_callback(u8 self) {
         tbox_clear_message(BAG_TBOX_MESSAGE, false);
         bg_virtual_sync_reqeust_push(0);
         bag_reinitialize_list_and_scroll_menu_indicators_and_return_to_idle_callback(self);
+    }
+} 
+
+void bag_wait_a_button_and_close_message_and_close_bag(u8 self) {
+    if (super.keys_new.keys.A) {
+        play_sound(5);
+        // tbox_flush_map(BAG_TBOX_MESSAGE);
+        tbox_clear_message(BAG_TBOX_MESSAGE, false);
+        bg_virtual_sync_reqeust_push(0);
+        bag_close(self, ITEM_NONE, false);
     }
 } 
 
@@ -80,12 +95,11 @@ static void bag_context_menu_item_use(u8 self) {
         tbox_flush_map(BAG_TBOX_CONTEXT_MENU_TEXT);
         tbox_tilemap_draw(BAG_TBOX_LIST);
         bg_virtual_sync_reqeust_push(0);
-        if (true || (item_get_type(item_activated) && pokemon_get_number_in_party() == 0)) {
+        if ((item_get_type(item_activated) && pokemon_get_number_in_party() == 0)) {
             bag_print_string(self, 2, str_there_is_no_pokemon, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
         } else {
             field_function(self);
         }
-
     }
 }
 
@@ -686,6 +700,49 @@ static void bag_item_selected_plant_berry(u8 self) {
     }
 }
 
+static u8 str_tm_recharged[] = LANGDEP(
+	PSTRING("BUFFER_1\nwurde wieder aufgeladen."),
+	PSTRING("BUFFER_1\nwas recharged.")
+);
+
+static void bag_recharge_wait_for_sound(u8 self) {
+    if (!sound_is_playing()) {
+        bag_reinitialize_list();
+        strcpy(buffer0, item_get_name(item_activated));
+        string_decrypt(strbuf, str_tm_recharged);
+        bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_close_bag);
+    }
+}
+
+static u8 str_hms_cant_be_recharged[] = LANGDEP(
+	PSTRING("Vms müssen nicht aufgeladen werden!"),
+	PSTRING("Hms don't need to be recharged!")
+);
+
+static u8 str_tm_doesnt_need_recharge[] = LANGDEP(
+	PSTRING("BUFFER_1\nmuss nicht aufgeladen werden!"),
+	PSTRING("BUFFER_1\ndoesn't need to be recharged!")
+);
+
+static void bag_item_selected_recharge(u8 self) {
+    bag_disable_ui();
+    if (!item_is_tm(item_activated)) {
+        strcpy(buffer0, item_get_name(item_activated));
+        string_decrypt(strbuf, str_hms_cant_be_recharged);
+        bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+    } else if (!tm_is_used(ITEM_IDX_TO_TM_IDX(item_activated))) {
+        strcpy(buffer0, item_get_name(item_activated));
+        string_decrypt(strbuf, str_tm_doesnt_need_recharge);
+        bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+    } else {
+        item_remove(ITEM_ENERGIEDISK, 1);
+		tm_set_unused(ITEM_IDX_TO_TM_IDX(item_activated));
+		play_sound(27);
+		big_callbacks[self].function = bag_recharge_wait_for_sound;
+    }
+}
+
+
 void (*bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8) = {
     [BAG_CONTEXT_OVERWORLD] = bag_item_selected_overworld,
     [BAG_CONTEXT_PARTY_GIVE] = bag_item_selected_party_give,
@@ -693,4 +750,5 @@ void (*bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8) = {
     [BAG_CONTEXT_DEPOSIT] = bag_item_selected_deposit,
     [BAG_CONTEXT_COMPOST] = bag_item_selected_compost,
     [BAG_CONTEXT_PLANT_BERRY] = bag_item_selected_plant_berry,
+    [BAG_CONTEXT_RECHARGE_TM_HM] = bag_item_selected_recharge,
 };

@@ -37,6 +37,7 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	additem ITEM_ENERGIEDISK 1
 	callasm test_bag2
 	end
 

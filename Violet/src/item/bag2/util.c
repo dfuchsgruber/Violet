@@ -18,3 +18,7 @@ bool item_can_be_tossed(u16 item_idx) {
         return false;
     return true;
 }
+
+void bag_set_continuation(void (*continuation)()) {
+    BAG2_STATE->internal_continuation = continuation;
+}

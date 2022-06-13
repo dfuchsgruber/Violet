@@ -264,7 +264,11 @@ void bag_close(u8 cb_idx, u16 item_result, bool set_bag_closed) {
         params[0] = -16;
         params[1] = 16;
     }
-    big_callbacks[cb_idx].function = bag_close_wait_fadescreen_and_continue;
+    bag_fade_out_and_continuation(cb_idx);
+}
+
+void bag_fade_out_and_continuation(u8 self) {
+    big_callbacks[self].function = bag_close_wait_fadescreen_and_continue;
     fadescreen(0xFFFFFFFF, (u8)-2, 0, 16, 0);
 }
 

@@ -457,3 +457,21 @@ _blxr4_bag_print_string:
 	ldr r3, =bag_open | 1
 	bx r3
 	.pool
+
+.org 0x08108f5c
+	ldr r3, = bag_set_continuation | 1
+	bx r3
+	.pool
+
+.org 0x08108bcc
+	ldr r3, =bag_fade_out_and_continuation | 1
+	bx r3
+	.pool
+
+.org 0x08124d6a
+	mov r0, #0
+	lsl r0, #0 // Always return to the bag (not the tm case or anything...)
+
+.org 0x08124d96
+	mov r0, #0
+	lsl r0, #0 // Always return to the bag (not the tm case or anything...)

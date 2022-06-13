@@ -6398,7 +6398,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6414,7 +6414,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6430,7 +6430,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6446,7 +6446,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6462,7 +6462,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6478,7 +6478,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6494,7 +6494,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6510,7 +6510,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6526,7 +6526,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6542,7 +6542,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6558,7 +6558,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6574,7 +6574,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6590,7 +6590,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6606,7 +6606,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6622,7 +6622,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6638,7 +6638,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6654,7 +6654,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6670,7 +6670,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6686,7 +6686,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6702,7 +6702,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6718,7 +6718,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6734,7 +6734,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6750,7 +6750,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6766,7 +6766,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6782,7 +6782,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6798,7 +6798,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6814,7 +6814,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6830,7 +6830,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6846,7 +6846,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6862,7 +6862,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6878,7 +6878,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6894,7 +6894,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6910,7 +6910,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6926,7 +6926,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6942,7 +6942,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6958,7 +6958,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6974,7 +6974,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -6990,7 +6990,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -7006,7 +7006,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -7022,7 +7022,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -7038,7 +7038,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -7054,7 +7054,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -7070,7 +7070,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -7086,7 +7086,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -7102,7 +7102,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -7118,7 +7118,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -7134,7 +7134,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -7150,7 +7150,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -7166,7 +7166,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -7182,7 +7182,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -7198,7 +7198,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -7214,7 +7214,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -7230,7 +7230,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -7246,7 +7246,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -7262,7 +7262,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -7278,7 +7278,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -7294,7 +7294,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx
@@ -7310,7 +7310,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
 		(void(*)(u8))0x0, //battle_usage2
 		0, // secondary_idx

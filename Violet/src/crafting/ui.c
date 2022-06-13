@@ -820,7 +820,7 @@ static void crafting_ui_setup() {
         case 7: {
             pal_decompress(gfx_crafting_menu_bg3Pal, 0, sizeof(color_t) * 16);
             pal_decompress(gfx_crafting_menu_bg2Pal, 16, sizeof(color_t) * 16);
-            tbox_init_frame_std(TBOX_MESSAGE, 256, 15 * 16);
+            tbox_init_frame_message(TBOX_MESSAGE, 256, 15 * 16);
             tbox_init_frame_set_style(TBOX_MESSAGE, 256 + 20, 14 * 16);
             // pal_copy(tbox_palette_transparent, 14 * 16, 32);
             pal_set_all_to_black();
