@@ -231,6 +231,13 @@ u16 item_get_count(u16 item_idx);
 void (*item_get_field_function(u16 item_idx))(u8);
 
 /**
+ * @brief Returns the battle function assoicated with an item
+ * 
+ * @param item_idx the item
+ */
+void (*item_get_battle_function(u16 item_idx))(u8);
+
+/**
  * @brief Gets the item type of an item
  * 
  * @param item_idx the item

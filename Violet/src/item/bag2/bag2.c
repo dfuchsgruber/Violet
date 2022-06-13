@@ -204,6 +204,7 @@ void bag_print_item_description(u16 slot) {
     else
         description = item_get_description(item_get_idx_by_pocket_position(pocket, slot));
     tbox_flush_set(BAG_TBOX_DESCRIPTION, 0x00);
+    tbox_tilemap_draw(BAG_TBOX_DESCRIPTION);
     tbox_print_string(BAG_TBOX_DESCRIPTION, 2, 0, 3, 0, 0, &bag_font_colormap_description, 0, description);
     bg_virtual_sync_reqeust_push(bag_tboxes[BAG_TBOX_DESCRIPTION].bg_id);
 }

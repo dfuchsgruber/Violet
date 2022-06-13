@@ -18,11 +18,15 @@
 #include "constants/sav_keys.h"
 #include "vars.h"
 #include "item/tm_hm.h"
+#include "overworld/map_control.h"
 
 static u8 str_use[] = LANGDEP(PSTRING("O.K."), PSTRING("Use"));
 static u8 str_give[] = LANGDEP(PSTRING("Geben"), PSTRING("Give"));
 static u8 str_toss[] =  LANGDEP(PSTRING("Müll"), PSTRING("Toss"));
 static u8 str_cancel[] = LANGDEP(PSTRING("Zurück"), PSTRING("Cancel"));
+static u8 str_select[] = LANGDEP(PSTRING("Select"), PSTRING("Select"));
+static u8 str_deselect[] = LANGDEP(PSTRING("Select"), PSTRING("Select"));
+static u8 str_walk[] = LANGDEP(PSTRING("Laufen"), PSTRING("Walk"));
 
 static u16 bag_context_menu_get_start_tile() {
     u16 start_tile = 0;
@@ -301,11 +305,40 @@ static void bag_context_menu_item_give(u8 self) {
     }
 }
 
+static void bag_context_menu_item_toggle_select(u8 self) {
+    if (save1->registered_item == item_activated)
+        save1->registered_item = ITEM_NONE;
+    else
+        save1->registered_item = item_activated;
+    bag_reinitialize_list();
+    // tbox_flush_map(BAG_TBOX_MESSAGE_WITH_YES_NO);
+    bg_virtual_sync_reqeust_push(0);
+    bag_context_menu_item_cancel(self);
+}
+
+static void bag_context_menu_item_battle_use(u8 self) {
+    void (*battle_function)(u8) = item_get_battle_function(item_activated);
+    DEBUG("Use item %d with battle func 0x%x", item_activated, battle_function);
+    if (battle_function) {
+        tbox_flush_all(BAG2_STATE->tbox_context_menu, 0x00);
+        tbox_flush_map(BAG2_STATE->tbox_context_menu);
+        tbox_free_2(BAG2_STATE->tbox_context_menu);
+        tbox_flush_map(BAG_TBOX_CONTEXT_MENU_TEXT);
+        tbox_tilemap_draw(BAG_TBOX_LIST);
+        bg_virtual_sync_reqeust_push(0);
+        battle_function(self);
+    }
+}
+
 menu_action_t bag_context_menu_items[NUM_BAG_CONTEXT_MENU_ITEMS] = {
     [BAG_CONTEXT_MENU_USE] = {.text = str_use, .function = {.void_u8 = bag_context_menu_item_use}},
     [BAG_CONTEXT_MENU_GIVE] = {.text = str_give, .function = {.void_u8 = bag_context_menu_item_give}},
     [BAG_CONTEXT_MENU_TOSS] = {.text = str_toss, .function = {.void_u8 = bag_context_menu_item_toss}},
     [BAG_CONTEXT_MENU_CANCEL] = {.text = str_cancel, .function = {.void_u8 = bag_context_menu_item_cancel}},
+    [BAG_CONTEXT_MENU_SELECT] = {.text = str_select, .function = {.void_u8 = bag_context_menu_item_toggle_select}},
+    [BAG_CONTEXT_MENU_DESELECT] = {.text = str_deselect, .function = {.void_u8 = bag_context_menu_item_toggle_select}},
+    [BAG_CONTEXT_MENU_WALK] = {.text = str_walk, .function = {.void_u8 = bag_context_menu_item_use}},
+    [BAG_CONTEXT_MENU_BATTLE_USE] = {.text = str_use, .function = {.void_u8 = bag_context_menu_item_battle_use}},
 };
 
 
@@ -378,10 +411,19 @@ static void bag_item_selected_party_give(u8 self) {
 
 static u8 bag_context_menu_overworld[] = {BAG_CONTEXT_MENU_USE, BAG_CONTEXT_MENU_GIVE, BAG_CONTEXT_MENU_TOSS, BAG_CONTEXT_MENU_CANCEL};
 static u8 bag_context_menu_overworld_unique[] = {BAG_CONTEXT_MENU_USE, BAG_CONTEXT_MENU_CANCEL};
+static u8 bag_context_menu_overworld_key_item[] = {BAG_CONTEXT_MENU_USE, BAG_CONTEXT_MENU_SELECT, BAG_CONTEXT_MENU_CANCEL};
 
 static void bag_item_selected_overworld(u8 self) {
     bag_disable_ui();
-    if (item_can_be_tossed(item_activated))
+    if (item_get_pocket(item_activated) == POCKET_KEY_ITEMS) {
+        u8 context_items[ARRAY_COUNT(bag_context_menu_overworld_key_item)];
+        memcpy(context_items, bag_context_menu_overworld_key_item, sizeof(bag_context_menu_overworld_key_item));
+        if (save1->registered_item == item_activated)
+            context_items[1] = BAG_CONTEXT_MENU_DESELECT;
+        if (item_activated == ITEM_FAHRRAD && overworld_flag_get(PLAYER_STATE_BIKING))
+            context_items[0] = BAG_CONTEXT_MENU_WALK;
+        bag_open_context_menu(context_items, ARRAY_COUNT(context_items));
+    } else if (item_can_be_tossed(item_activated))
         bag_open_context_menu(bag_context_menu_overworld, ARRAY_COUNT(bag_context_menu_overworld));
     else
         bag_open_context_menu(bag_context_menu_overworld_unique, ARRAY_COUNT(bag_context_menu_overworld_unique));
@@ -742,6 +784,18 @@ static void bag_item_selected_recharge(u8 self) {
     }
 }
 
+static u8 bag_context_menu_battle[] = {BAG_CONTEXT_MENU_BATTLE_USE, BAG_CONTEXT_MENU_CANCEL};
+static u8 bag_context_menu_battle_no_function[] = {BAG_CONTEXT_MENU_CANCEL};
+
+static void bag_item_selected_battle(u8 self) {
+    bag_disable_ui();
+    if (item_get_battle_function(item_activated))
+        bag_open_context_menu(bag_context_menu_battle, ARRAY_COUNT(bag_context_menu_battle));
+    else
+        bag_open_context_menu(bag_context_menu_battle_no_function, ARRAY_COUNT(bag_context_menu_battle_no_function));
+    big_callbacks[self].function = bag_context_menu_overworld_handle_input;
+}
+
 
 void (*bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8) = {
     [BAG_CONTEXT_OVERWORLD] = bag_item_selected_overworld,
@@ -751,4 +805,5 @@ void (*bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8) = {
     [BAG_CONTEXT_COMPOST] = bag_item_selected_compost,
     [BAG_CONTEXT_PLANT_BERRY] = bag_item_selected_plant_berry,
     [BAG_CONTEXT_RECHARGE_TM_HM] = bag_item_selected_recharge,
+    [BAG_CONTEXT_BATTLE] = bag_item_selected_battle,
 };

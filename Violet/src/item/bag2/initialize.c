@@ -31,15 +31,15 @@ static bool bag_cb_initialize_step();
 tbox_font_colormap bag_font_colormap_std = {.background = 0, .body = 2, .edge = 3}; 
 
 tboxdata bag_tboxes[NUM_BAG_TBOXES + 1] = {
-    [BAG_TBOX_POCKET_NAME] = {.bg_id = 0, .x = 1, .y = 1, .w = 9, .h = 2, .pal = 15, .start_tile = 2},
-    [BAG_TBOX_HINT] = {.bg_id = 2, .x = 0, .y = 4, .w = 10, .h = 9, .pal = 11, .start_tile = 2 + 9 * 2},
-    [BAG_TBOX_DESCRIPTION] = {.bg_id = 0, .x = 5, .y = 14, .w = 0x19, .h = 6, .pal = 15, .start_tile = 2 + 9 * 2 + 9 * 10},
-    [BAG_TBOX_CONTEXT_MENU_TEXT] = {.bg_id = 0, .x = 5, .y = 14, .w = 10, .h = 6, .pal = 15, .start_tile = 2 + 9 * 2 + 9 * 10}, // same star tile as description, as both are never visible at the same time
-    [BAG_TBOX_LIST] = {.bg_id = 0, .x = 11, .y = 1, .w = 18, .h = 12, .pal = 15, .start_tile = 2 + 9 * 2 + 9 * 10 + 0x19 * 6},
-    [BAG_TBOX_MOVE_INFO] = {.bg_id = 0, .x = 0, .y = 4, .w = 10, .h = 9, .pal = 4, .start_tile = 2 + 9 * 2 + 9 * 10 + 0x19 * 6 + 18 * 12},
-    [BAG_TBOX_MESSAGE] =  {.bg_id = 0, .x = 2, .y = 15, .w = 26, .h = 4, .pal = 13, .start_tile = 2 + 9 * 2 + 9 * 10 + 0x19 * 6 + 18 * 12 + 9 * 10},
-    [BAG_TBOX_MESSAGE_WITH_YES_NO] = {.bg_id = 0, .x = 6, .y = 15, .w = 15, .h = 4, .pal = 13, .start_tile = 2 + 9 * 2 + 9 * 10 + 0x19 * 6 + 18 * 12 + 9 * 10},
-    [BAG_TBOX_MESSAGE_WITH_SELL_QUANTITY] = {.bg_id = 0, .x = 6, .y = 15, .w = 10, .h = 4, .pal = 13, .start_tile = 2 + 9 * 2 + 9 * 10 + 0x19 * 6 + 18 * 12 + 9 * 10}, 
+    [BAG_TBOX_POCKET_NAME] = {.bg_id = 0, .x = 1, .y = 1, .w = 9, .h = 2, .pal = 15, .start_tile = 1},
+    [BAG_TBOX_HINT] = {.bg_id = 2, .x = 0, .y = 4, .w = 10, .h = 9, .pal = 11, .start_tile = 1 + 9 * 2},
+    [BAG_TBOX_DESCRIPTION] = {.bg_id = 0, .x = 5, .y = 14, .w = 0x19, .h = 6, .pal = 15, .start_tile = 1 + 9 * 2 + 9 * 11},
+    [BAG_TBOX_CONTEXT_MENU_TEXT] = {.bg_id = 0, .x = 5, .y = 14, .w = 10, .h = 6, .pal = 15, .start_tile = 1 + 9 * 2 + 9 * 11 + 0x19 * 6}, // same star tile as description, as both are never visible at the same time
+    [BAG_TBOX_LIST] = {.bg_id = 0, .x = 11, .y = 1, .w = 18, .h = 12, .pal = 15, .start_tile = 1 + 9 * 2 + 9 * 11 + 0x19 * 6 + 10 * 6},
+    [BAG_TBOX_MOVE_INFO] = {.bg_id = 0, .x = 0, .y = 4, .w = 10, .h = 9, .pal = 4, .start_tile = 1 + 9 * 2 + 9 * 11 + 0x19 * 6 + 10 * 6 + 18 * 12},
+    [BAG_TBOX_MESSAGE] =  {.bg_id = 0, .x = 2, .y = 15, .w = 26, .h = 4, .pal = 13, .start_tile = 1 + 9 * 2 + 9 * 11 + 0x19 * 6 + 10 * 6 + 18 * 12 + 10 * 9},
+    [BAG_TBOX_MESSAGE_WITH_YES_NO] = {.bg_id = 0, .x = 6, .y = 15, .w = 15, .h = 4, .pal = 13, .start_tile = 1 + 9 * 2 + 9 * 11 + 0x19 * 6 + 10 * 6 + 18 * 12 + 10 * 9 + 26 * 4},
+    [BAG_TBOX_MESSAGE_WITH_SELL_QUANTITY] = {.bg_id = 0, .x = 6, .y = 15, .w = 10, .h = 4, .pal = 13, .start_tile = 1 + 9 * 2 + 9 * 11 + 0x19 * 6 + 10 * 6 + 18 * 12 + 10 * 9 + 26 * 4 + 15 * 4}, 
     [NUM_BAG_TBOXES] = {.bg_id = 0xFF},
 };
 
