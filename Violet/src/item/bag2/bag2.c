@@ -311,6 +311,29 @@ void bag2_return_to_last() {
     bag_open(BAG_CONTEXT_LAST, BAG_OPEN_LAST, NULL);
 }
 
+void bag_set_pocket_pointers() {
+    memset(bag_pockets, 0, sizeof(bag_pockets));
+    bag_pockets[POCKET_ITEMS - 1].items = save1->bag_pocket_items;
+    bag_pockets[POCKET_ITEMS - 1].capacity = MAX_NUM_BAG_ITEMS;
+    bag_pockets[POCKET_KEY_ITEMS - 1].items = save1->bag_pocket_key_items;
+    bag_pockets[POCKET_KEY_ITEMS - 1].capacity = MAX_NUM_BAG_KEY_ITEMS;
+    bag_pockets[POCKET_POKEBALLS - 1].items = save1->bag_pocket_pokeballs;
+    bag_pockets[POCKET_POKEBALLS - 1].capacity = MAX_NUM_BAG_POKEBALLS;
+    bag_pockets[POCKET_TM_HM - 1].items = save1->bag_pocket_tm_hms;
+    bag_pockets[POCKET_TM_HM - 1].capacity = MAX_NUM_BAG_TM_HMS;
+    bag_pockets[POCKET_BERRIES - 1].items = save1->bag_pocket_berries;
+    bag_pockets[POCKET_BERRIES - 1].capacity = MAX_NUM_BAG_BERRIES;
+    bag_pockets[POCKET_BAIT - 1].items = save1->bag_pocket_bait;
+    bag_pockets[POCKET_BAIT - 1].capacity = MAX_NUM_BAG_BAIT;
+    bag_pockets[POCKET_MEDICINE - 1].items = cmem.bag_pocket_medicine;
+    bag_pockets[POCKET_MEDICINE - 1].capacity = MAX_NUM_BAG_MEDICINE;
+}
+
+void bag_clear() {
+    for (int i = 0; i < NUM_POCKETS - 1; i++)
+        bag_clear_slots(bag_pockets[i].items, bag_pockets[i].capacity);
+}
+
 /** Test the code **/
 
 static void bag_wait_for_fadescreen_and_initialize(u8 self) {
@@ -334,3 +357,4 @@ u16 bag_get_current_slot_in_current_pocket() {
     u8 pocket = bag_get_current_pocket();
     return (u16)(fmem.bag_cursor_position[POCKET_TO_BAG_POCKETS_IDX(pocket)] + fmem.bag_cursor_items_above[POCKET_TO_BAG_POCKETS_IDX(pocket)]);
 }
+
