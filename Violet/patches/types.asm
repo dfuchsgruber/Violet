@@ -1,6 +1,9 @@
 .org 0x08107E2C
     .word gfx_typechartTiles
 
+.org 0x08107e28
+	.word move_info_icon_gfxs
+
 .org 0x08107DE0
     .word gfx_typechartPal
 

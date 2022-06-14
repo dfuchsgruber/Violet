@@ -47,6 +47,8 @@ void (*item_callback_after_pokemon_selected)(u8, void (*)(u8));
 
 void (*item_use_continuation)(u8);
 
+void (*evolution_continuation)();
+
 #define ITEM_HAS_TABLE_EFFECT(item) ((item) >= ITEM_TRANK && (item) <= (ITEM_ENIGMABEERE))
 
 /**
@@ -93,8 +95,9 @@ void item_select_target_pokemon(u8 self);
  * Removes a number of exemplars of items from the player's bag
  * @param item_id the item to remove
  * @param count the number of exemplars to remove
+ * @return if the removal was successful
  */
-void item_remove(u16 item_id, u16 count);
+bool item_remove(u16 item_id, u16 count);
 
 /**
  * Callback that waits for the text renderer to finish and returns to the bag afterwards
@@ -121,8 +124,9 @@ void item_print_string(u8 cb_id, u8 unknown, u8 unknown2, u8 *str);
  * Adds a certain amount of exemplars of an item to the player's bag
  * @param item the item
  * @param cnt the number of exemplars to add
+ * @return if the adding was succesfull
  */
-void item_add(u16 item, u16 cnt);
+bool item_add(u16 item, u16 cnt);
 
 /**
  * Removes an item from the player's pc
@@ -151,6 +155,12 @@ bool item_has_room(u16 item, u16 quantity);
  * @param self reference to the callback
  **/
 void item_field_by_effect_table(u8 self);
+/**
+ * @brief Battle effect for items that use table-based effects for medicine
+ * 
+ * @param self self-reference
+ */
+void item_battle_effect_medicine(u8 self);
 
 /**
  * Item field function for null syrup.
@@ -220,6 +230,28 @@ const u8 *item_get_resource(u16 item, u8 get_palette);
  * @return count the number of copies of this item in the bag
  **/
 u16 item_get_count(u16 item_idx);
+
+/**
+ * @brief Returns the field function associated with an item
+ * 
+ * @param item_idx the item
+ */
+void (*item_get_field_function(u16 item_idx))(u8);
+
+/**
+ * @brief Returns the battle function assoicated with an item
+ * 
+ * @param item_idx the item
+ */
+void (*item_get_battle_function(u16 item_idx))(u8);
+
+/**
+ * @brief Gets the item type of an item
+ * 
+ * @param item_idx the item
+ * @return u16 the item type
+ */
+u16 item_get_type(u16 item_idx);
 
 /**
  * Fades to a scene that fits the item to use (either overworld or party menu) and executes the item callback there.
@@ -320,5 +352,36 @@ typedef struct {
     const u8 *pal;
 } item_gfx_pair;
 
+/**
+ * @brief Checks if an item can be tossed
+ * 
+ * @param item_idx the item to check
+ * @return true 
+ * @return false 
+ */
+bool item_can_be_tossed(u16 item_idx);
+
+/**
+ * @brief Adds an item to the item pc
+ * 
+ * @param item_idx the item to add
+ * @param quantity how many exemplars to add
+ * @return if there was space
+ */
+bool item_add_to_pc(u16 item_idx, u16 quantity);
+
+/**
+ * @brief Prints the string that an item can't be used. `big_callbacks[self].params[3]` is interpreted as "from overworld" (if true, from overworld, if false, from bag)
+ * 
+ * @param self self-reference
+ */
+void item_field_function_print_string_can_not_be_used(u8 self);
+
+/**
+ * @brief Item callback for evolution stones
+ * 
+ * @param self self-reference
+ */
+void item_field_function_evolution_stone(u8 self);
 
 #endif /* INCLUDE_C_ITEM_ITEM_H_ */

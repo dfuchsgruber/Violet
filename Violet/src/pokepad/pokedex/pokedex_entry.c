@@ -156,9 +156,9 @@ void pokedex_entry_load_strings() {
     if (is_caught) {
         u8 type1 = (u8) (basestats[fmem.dex_mem->current_species].type1 + 1);
         u8 type2 = (u8) (basestats[fmem.dex_mem->current_species].type2 + 1);
-        tbox_draw_type_icon_by_type_p1(3, type1, 0, 0);
+        tbox_blit_move_info_icon(3, type1, 0, 0);
         if (type1 != type2)
-            tbox_draw_type_icon_by_type_p1(3, type2, 0x20, 0);
+            tbox_blit_move_info_icon(3, type2, 0x20, 0);
     }
     tbox_print_string(3, 2, 0, 0, 0, 0, &pokedex_fontcolmap, 0, str_none);
 

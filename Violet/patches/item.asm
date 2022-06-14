@@ -172,44 +172,8 @@ _bxr1:
 .org 0x0805d2fc
     .word fishing_big_callback_bait | 1
 
-.org 0x0813dc4c
-    .word berry_pouch_callbacks
-
 .org 0x0801bce4
     .word hook_battle_item_switch_in_effects
-
-.org 0x0813dd18
-    ldr r0, =berry_pouch_get_context_menu_options_standard_hook | 1
-    bx r0 
-    .pool
-    
-.org 0x0813dfc8
-    ldr r0, =berry_pouch_toss_hook_print_string_how_many | 1
-    bx r0
-    .pool
-
-.org 0x0813e020
-    ldr r0, =berry_pouch_toss_hook_get_string_confirm_quantity_to_toss | 1
-    bx r0
-    .pool
-
-.org 0x08465430
-    .word berry_pouch_toss_or_compost_confirmed | 1
-
-.org 0x08465460
-    .word berry_pouch_context_menu_option_compost_text
-    .word berry_pouch_context_menu_option_toss
-
-.org 0x0810a3f0
-    ldr r1, =bag_item_selected_give | 1
-    bx r1
-    .pool
-
-.org 0x0810a4e8
-    ldr r1, =bag_item_selected_give_from_pc | 1
-    bx r1
-    .pool
-
 
 /** POKEBALLS */
 
@@ -373,6 +337,10 @@ _bxr1:
 	bx r0
 	.pool
 
+
+.org 0x0809a8d8
+	.word bag_pockets - 8
+
 .org 0x8099f38
 	.word bag_pockets
 .org 0x8099f88
@@ -416,3 +384,81 @@ _bxr1:
 .org 0x813d9a0
 	.word bag_pockets + 32
 
+.org 0x0809a024
+	ldr r3, =item_check | 1
+	bx r3
+	.pool
+
+.org 0x0809a0e4
+	ldr r3, =item_has_room | 1
+	bx r3
+	.pool
+
+.org 0x0809A168
+	ldr r3, =item_add | 1
+	bx r3
+	.pool
+
+.org 0x0809A2BC
+	ldr r3, =item_remove | 1
+	bx r3
+	.pool
+
+.org 0x08099ee4
+	ldr r1, =bag_apply_new_encryption | 1
+	bx r1
+	.pool
+
+// **** Replace old bag functions ***/
+
+.org 0x08108eec
+	push {r4, lr}
+	ldr r4, =bag_print_string | 1
+	bl _blxr4_bag_print_string
+	pop {r4}
+	pop {r0}
+	bx r0
+_blxr4_bag_print_string:
+	bx r4
+	.pool
+
+.org 0x08107e30
+	ldr r3, =bag_open | 1
+	bx r3
+	.pool
+
+.org 0x08108f5c
+	ldr r3, = bag_set_continuation | 1
+	bx r3
+	.pool
+
+.org 0x08108bcc
+	ldr r3, =bag_fade_out_and_continuation | 1
+	bx r3
+	.pool
+
+.org 0x08127a84
+	mov r0, #0
+	lsl r0, #0 // Always return to the bag (not the tm case or anything...)
+
+.org 0x08124d6a
+	mov r0, #0
+	lsl r0, #0 // Always return to the bag (not the tm case or anything...)
+
+.org 0x08124d96
+	mov r0, #0
+	lsl r0, #0 // Always return to the bag (not the tm case or anything...)
+
+.org 0x080a206e
+	mov r0, #0
+	lsl r0, #0 // Always return the the bag (not the tm case or anything...)
+
+.org 0x080a10dc
+	mov r0, #0
+	lsl r0, #0 // Always return the the bag (not the tm case or anything...)
+
+
+.org 0x0810a278
+	ldr r1, =bag_close_message_and_return_to_idle_callback | 1
+	bx r1
+	.pool

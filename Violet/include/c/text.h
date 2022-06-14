@@ -113,6 +113,16 @@ extern "C" {
     void tbox_flush_map(u8 box_id);
 
     /**
+     * @brief Draws a frame around a box with the given box tiles at a start_tile and the pal idx
+     * 
+     * @param tbox_idx the tbox to draw the border of
+     * @param copy_to_vram if tiles should be copied to vram
+     * @param start_tile to which tile to copy
+     * @param pal_idx the pal idx
+     */
+    void tbox_draw_std_frame_by_base_tile_and_pal(u8 tbox_idx, u8 copy_to_vram, u16 start_tile, u8 pal_idx);
+
+    /**
      * Calculates the width (in pixels) of a string
      * @param font Font of the string (usually 2)
      * @param str The string to determine width of
@@ -207,22 +217,34 @@ extern "C" {
     void tbox_load_gfx_and_print_string_on_bg0_and_continue(u8 callback_idx, u8 font, u8 *str, void (*continuation)(u8));
 
     /**
-     * Removes a dialog textbox.
+     * Removes a tbox that is initialized with frame type "message" (i.e. it clears the actual text and the frame around it)
      * @param tbox_idx the index of the textbox
      * @param copy_to_vram if the changes shall trigger a vram copy request
      */
-    void tbox_remove_dialog(u8 tbox_idx, u8 copy_to_vram);
+    void tbox_clear_message(u8 tbox_idx, u8 copy_to_vram);
 
-#define TBOX_MESSAGE_NUM_TILES 0x28
+#define TBOX_FRAME_STD_NUM_TILES 9
     /**
-     * Loads tileset and palette of the standard textbox gfx for messages.
+     * Initializes the border of a textbox with a standard grey frame
      * @param box_id The id of the textbox
      * @param set_displace Offset of the border in pixels
      * @param dst_color The first color the border uses
      */
-    void tbox_message_init(u8 box_id, u16 set_displace, u16 dst_color);
+    void tbox_init_frame_std(u8 box_id, u16 set_displace, u16 dst_color);
 
-#define TBOX_CONTEXT_BORDER_NUM_TILES 0x12 // 0x12 Tiles are copied but it seems only 0x8 are used
+
+#define TBOX_FRAME_STD_BASE_TILE 0x214
+#define TBOX_FRAME_STD_PAL_IDX 14
+
+    /**
+     * Loads gfx and palette of the standard border to a tbox at the standard tile and palette position.
+     * @param box_idx The tbox to load the border to
+     * @param copy_to_vram Whether the loaded gfx is to be synched with vram by enqueuing a copy request
+     **/
+    void tbox_init_frame_std_at_default_tile_and_pal(u8 box_idx, bool copy_to_vram);
+    
+
+#define TBOX_FRAME_SET_STYLE_NUM_TILES 9
 
     /**
      * Initializes the border of a textbox for context menus with the border according to the
@@ -231,24 +253,26 @@ extern "C" {
      * @param set_displace Offset of the border in pixels
      * @param dst_color The first color the border uses
      */
-    void tbox_context_init_border_set_style(u8 box_id, u16 set_displace, u16 dst_color);
+    void tbox_init_frame_set_style(u8 box_id, u16 set_displace, u16 dst_color);
 
-
-    /**
-     * Loads gfx and palette of the standard border to a tbox.
-     * @param box_idx The tbox to load the border to
-     * @param copy_to_vram Whether the loaded gfx is to be synched with vram by enqueuing a copy request
-     **/
-    void tbox_init_border_standard_style(u8 box_idx, bool copy_to_vram);
-
-#define TBOX_MESSAGE_BORDER_NUM_TILES 0x8
+#define TBOX_FRAME_MESSAGE_NUM_TILES 20
     /**
      * Initializes the border of a textbox to display messages with default style.
      * @param box_id The id of the textbox
      * @param set_displace Offset of the border in pixels
      * @param dst_color The first color the border uses (probably wrong tho)
      */
-    void tbox_message_init_border(u8 box_id, u16 set_displace, u16 dst_color);
+    void tbox_init_frame_message(u8 box_id, u16 set_displace, u16 dst_color);
+
+    /**
+     * @brief Flushes the set of a tbox, draws its tilemap and the frame at a given position for a message type frame (`TBOX_FRAME_MESSAGE_NUM_TILES` tiles)
+     * 
+     * @param box_idx in which tbox to draw
+     * @param copy_to_vram if the changes should be copied to vram
+     * @param base_tile the tile where the frame lies
+     * @param pal_idx the pal used by the frame
+     */
+    void tbox_draw_frame_message_and_flush_set(u8 box_idx, u8 copy_to_vram, u16 base_tile, u16 pal_idx);
 
     /**
      * Draws the border of a textbox
@@ -256,13 +280,13 @@ extern "C" {
      * @param tile the tile index the border uses
      * @param dst_pal The palette the border uses
      */
-    void tbox_border_draw(u8 box_id, u16 tile, u8 dest_pal);
+    void tbox_frame_draw_outer(u8 box_id, u16 tile, u8 dest_pal);
 
     /**
-     * Flushes the border of a textbox
+     * Flushes the tilemap of a tbox and its frame (the 1x1 frame around it)
      * @param box_id The id of the textbox
      */
-    void tbox_border_flush(u8 box_id);
+    void tbox_flush_map_and_frame(u8 box_id);
     
     /**
      * Frees a textbox
@@ -301,6 +325,27 @@ extern "C" {
      */
     void tbox_flush_and_free_if_present(u8 *box_id_ptr);
 
+
+    typedef struct {
+        u8 width;
+        u8 height;
+        u16 offset;
+    } move_info_gfx_t;
+
+    enum {
+        MOVE_INFO_NONE = 0,
+        MOVE_INFO_TYPE_BASE = 1,
+        MOVE_INFO_TYPE = 19,
+        MOVE_INFO_POWER,
+        MOVE_INFO_ACCURACY,
+        MOVE_INFO_PP,
+        MOVE_INFO_EFFECT,
+        MOVE_INFO_CATEGORY,
+        MOVE_INFO_PHYSICAL,
+        MOVE_INFO_SPECIAL,
+        MOVE_INFO_STATUS,
+    };
+
     /**
      * Draws the icon for a type on a textbox
      * @param box_id the box id
@@ -308,7 +353,7 @@ extern "C" {
      * @param x_offset the x displacement
      * @param y_offset the y displacement
      */
-    void tbox_draw_type_icon_by_type_p1(u8 box_id, u8 type_p1, u16 x_offset, u16 y_offset);
+    void tbox_blit_move_info_icon(u8 box_id, u8 type_p1, u16 x_offset, u16 y_offset);
 
     /**
      * Clears the bottom line of the tbox (sets tile to color 0)
@@ -514,6 +559,57 @@ extern "C" {
      * @param amount the amount to print
      **/
     void tbox_print_money(u8 tbox_idx, u16 start_tile, u8 pal_idx, u32 amount);
+
+    enum
+    {
+        FONT_ATTRIBUTE_MAX_LETTER_WIDTH,
+        FONT_ATTRIBUTE_MAX_LETTER_HEIGHT,
+        FONT_ATTRIBUTE_LETTER_SPACING,
+        FONT_ATTRIBUTE_LINE_SPACING,
+        FONT_ATTRIBUTE_UNKNOWN,   // dunno what this is yet
+        FONT_ATTRIBUTE_COLOR_FOREGROUND,
+        FONT_ATTRIBUTE_COLOR_BACKGROUND,
+        FONT_ATTRIBUTE_COLOR_SHADOW
+    };
+
+    /**
+     * @brief Gets an attribute associated with a font
+     * 
+     * @param font the font of which to get attributes
+     * @param attribute the attirbute to get
+     * @return u8 the value
+     */
+    u8 font_get_attribute(u8 font, u8 attribute);
+
+    /**
+     * @brief Prints an amount of money in a box and also draws the frame around the box
+     * 
+     * @param tbox_idx the box to print money in
+     * @param frame_start_tile the start tile of the frame
+     * @param frame_pal_idx the pal idx of the frame
+     * @param money the amount of money to print
+     */
+    void tbox_print_money_and_frame(u8 tbox_idx, u16 frame_start_tile, u8 frame_pal_idx, u32 money);
+
+    /**
+     * @brief Updates the money amount displayed in a box drawn by `tbox_print_money_and_frame`
+     * 
+     * @param tbox_idx the tbox to update
+     * @param amount the new amount
+     * @param font in which font (standard is 0)
+     */
+    void tbox_update_money(u8 tbox_idx, u32 amount, u8 font);
+
+    /**
+     * @brief Prints a money string that is right-aligned at an offset in the tbox
+     * 
+     * @param tbox_idx the box in which to print
+     * @param x horizontal offset of the upper left corner of the (space-padded) money quantity
+     * @param y vertical offset of the upper left corner of the (space-padded) money quantity
+     * @param amount the amount to print
+     * @param speed in which speed to print
+     */
+    void tbox_print_money_at(u8 tbox_idx, u8 x, u8 y, u32 amount, u8 speed);
 
     extern u8 overworld_tbox_state;
 

@@ -19,6 +19,7 @@ typedef unsigned char u8;
 typedef unsigned short int u16;
 typedef unsigned int u32;
 typedef unsigned long long int u64;
+typedef u8 LZ77COMPRESSED[]; 
 
 typedef u8 UNALIGNED_16[2];
 typedef u8 UNALIGNED_32[4];

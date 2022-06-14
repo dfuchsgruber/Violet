@@ -70,4 +70,20 @@ int big_callback_get_int(u8 callback, u8 var);
  */
 void big_callback_proceed();
 
+/**
+ * @brief Sets the function of a callback to a value and saves a continuation in params[14,15]
+ * 
+ * @param cb_idx The callback to set the function of
+ * @param function The new callback function
+ * @param continuation The continuation
+ */
+void big_callback_set_function_and_continuation(u8 cb_idx, void (*function)(u8), void (*continuation)(u8));
+
+/**
+ * @brief Sets the function of a callback to the continuation saved in params[14, 15] (e.g. by `big_callback_set_function_and_continuation`)
+ * 
+ * @param cb_idx The callback to set the function of
+ */
+void big_callback_set_function_to_continuation(u8 cb_idx);
+
 #endif

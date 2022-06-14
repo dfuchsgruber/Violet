@@ -205,6 +205,8 @@ typedef struct custom_memory {
         u8 field_2;
         u8 field_3; 
     } settings;
+    bag_item_t __attribute__((aligned(4))) bag_pocket_medicine[MAX_NUM_BAG_MEDICINE];
+    u16 bag_pocket;
     
     /**
     struct {
@@ -242,6 +244,7 @@ typedef struct {
     incubator_state_stru *incubator_state;
     ev_menu_state_stru *ev_menu_state;
     void *gp_state;
+    void *bag2_state;
     u8 *additional_levelscript_4;
     u16 dmart[32]; //max 32 items per mart
     ae_memory *ae_mem;
@@ -305,6 +308,12 @@ typedef struct {
     u8 weather_blend_delay;
     u8 pokemon_move_learning_evolution_move_idx;
     u8 blackbeard_ship_oam_idx;
+    // Persistent bag state (that can not be allocated)
+    u16 bag_cursor_position[MAX_NUM_POCKETS];
+    u16 bag_cursor_items_above[MAX_NUM_POCKETS];
+    void (*bag_continuation)();
+    u8 bag_context;
+
 } floating_memory;
 
 

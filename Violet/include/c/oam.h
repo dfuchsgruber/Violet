@@ -75,7 +75,7 @@ typedef union rotscale_frame {
   struct {
     s16 affine_x_value;
     s16 affine_y_value;
-    u8 rotation;
+    s8 rotation;
     u8 duration;
     u16 field_6;
   } affine;

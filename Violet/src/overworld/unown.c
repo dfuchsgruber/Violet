@@ -151,7 +151,7 @@ void overworld_unown_delete_message() {
     tbox_flush_all(OVERWORLD_UNOWN_MESSAGE_STATE->box_idx, 0);
     tbox_flush_map(OVERWORLD_UNOWN_MESSAGE_STATE->box_idx);
     tbox_sync(OVERWORLD_UNOWN_MESSAGE_STATE->box_idx, TBOX_SYNC_MAP_AND_SET);
-    tbox_border_flush(OVERWORLD_UNOWN_MESSAGE_STATE->box_idx);
+    tbox_flush_map_and_frame(OVERWORLD_UNOWN_MESSAGE_STATE->box_idx);
     tbox_free(OVERWORLD_UNOWN_MESSAGE_STATE->box_idx);
     for (int i = 0; i < OVERWORLD_UNOWN_MESSAGE_STATE->message_length; i++) {
         oam_free(oams + OVERWORLD_UNOWN_MESSAGE_STATE->oams[i]);

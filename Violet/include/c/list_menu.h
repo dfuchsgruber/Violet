@@ -144,4 +144,83 @@ void list_menu_print(u8 callback_idx);
  **/
 void gp_list_menu_yes_no_new(tboxdata *tbox, u8 font, u8 x, u8 y, u16 border_base_tile, u8 pal, u8 initial_cursor_position);
 
+typedef struct {
+  void (*yes_callback)(u8);
+  void (*no_callback)(u8);
+} yes_no_box_callbacks_t;
+
+/**
+ * @brief Prints a yes / no box on the gp list template in a callback and executes pre-defined functions on key-press.
+ * 
+ * @param cb_idx The callback to handle the yes / no box
+ * @param tbox in which tbox
+ * @param font in which font
+ * @param x left margin within the box (in pixels)
+ * @param y top marign within the box (in pixels)
+ * @param frame_base_tile at which base tile the frame is located
+ * @param frame_pal in which pal to print the box
+ * @param callbacks the callbacks to execute on yes / no press
+ */
+void gp_list_menu_yes_no_new_with_callbacks(u8 cb_idx, tboxdata *tbox, u8 font, u8 x, u8 y, u16 frame_base_tile, u8 frame_pal, yes_no_box_callbacks_t *callbacks);
+
+/**
+ * @brief Gets the y coordinate (in pixels) of the cursor of a list menu
+ * 
+ * @param list_menu_cb_idx The list menu
+ * @return u8 The y coordinate of the cursor in pixels
+ */
+u8 list_menu_get_cursor_y_pixel(u8 list_menu_cb_idx);
+
+enum {
+  CURSOR_DIMENSION_WIDTH = 0,
+  CURSOR_DIMENSION_HEIGHT,
+};
+
+/**
+ * @brief Gets the dimension of a list cursor in a given font
+ * 
+ * @param font The font of the cursor
+ * @param dimension The dimension to get (one of CURSOR_DIMENSION_WIDTH, CURSOR_DIMENSION_HEIGHT)
+ * @return u16 the dimension
+ */
+u16 list_menu_get_cursor_dimension(u8 font, u8 dimension);
+
+enum {
+    LIST_MENU_ATTRIBUTE_MOVECURSORFUNC = 0,
+    LIST_MENU_ATTRIBUTE_MOVECURSORFUNC2,
+    LIST_MENU_ATTRIBUTE_TOTALITEMS,
+    LIST_MENU_ATTRIBUTE_MAXSHOWED,
+    LIST_MENU_ATTRIBUTE_WINDOWID,
+    LIST_MENU_ATTRIBUTE_HEADERX,
+    LIST_MENU_ATTRIBUTE_ITEMX,
+    LIST_MENU_ATTRIBUTE_CURSORX,
+    LIST_MENU_ATTRIBUTE_UPTEXTY,
+    LIST_MENU_ATTRIBUTE_CURSORPAL,
+    LIST_MENU_ATTRIBUTE_FILLVALUE,
+    LIST_MENU_ATTRIBUTE_CURSORSHADOWPAL,
+    LIST_MENU_ATTRIBUTE_LETTERSPACING,
+    LIST_MENU_ATTRIBUTE_ITEMVERTICALPADDING,
+    LIST_MENU_ATTRIBUTE_SCROLLMULTIPLE,
+    LIST_MENU_ATTRIBUTE_FONTID,
+    LIST_MENU_ATTRIBUTE_CURSORKIND,
+};
+
+/**
+ * @brief Sets an attribute of a list menu
+ * 
+ * @param list_menu_cb_idx the list menu
+ * @param attribute the attribute to set
+ * @param value the value to set the attribute to
+ */
+void list_menu_set_attribute(u8 list_menu_cb_idx, u8 attribute, int value);
+
+/**
+ * @brief Gets an attribute of a list menu
+ * 
+ * @param list_menu_cb_idx the list menu
+ * @param attribute the attribute to get
+ * @return int the attribute
+ */
+int list_menu_get_attribute(u8 list_menu_cb_idx, u8 attribute);
+
 #endif /* INCLUDE_C_LIST_MENU_H_ */

@@ -80,6 +80,12 @@ extern "C" {
      * @param unkown TODO (usually 0)
      */
     void bg_reset(u8 unkown);
+    
+    /**
+     * @brief Resets the bg cntrl IO registers and displacements for all backgrounds
+     * 
+     */
+    void bg_reset_control_and_displacement();
 
     /**
      * Synchronizes a bg with its dispcntrl and makes it visible
@@ -126,6 +132,12 @@ extern "C" {
      * @param bg_id the bg id
      */
     void bg_virtual_sync_reqeust_push(u8 bg_id);
+
+    /**
+     * @brief Resets all copy requests for bg syncs.
+     * 
+     */
+    void bg_vritual_sync_reset();
 
     /**
      * Syncs a bg with its virutal settings

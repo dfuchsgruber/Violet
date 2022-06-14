@@ -293,8 +293,8 @@ void river_puzzle_callback_confirm_exit_handle_list(u8 self) {
     play_sound(5);
     list_menu_remove(RIVER_PUZZLE_STATE->callback_idx_list, NULL, NULL);
     tbox_flush_set(RIVER_PUZZLE_TBOX_LIST, 0);
-    tbox_border_flush(RIVER_PUZZLE_TBOX_LIST);
-    tbox_remove_dialog(RIVER_PUZZLE_TBOX_MESSAGE, false);
+    tbox_flush_map_and_frame(RIVER_PUZZLE_TBOX_LIST);
+    tbox_clear_message(RIVER_PUZZLE_TBOX_MESSAGE, false);
     bg_virtual_sync(0);
     if (item == 1) {
       fadescreen_all(1, 0);
@@ -308,7 +308,7 @@ void river_puzzle_callback_confirm_exit_handle_list(u8 self) {
 void river_puzzle_callback_confirm_exit(u8 self) {
   gp_list_menu_template = river_puzzle_list_template_yes_no;
   tbox_tilemap_draw(RIVER_PUZZLE_TBOX_LIST);
-  tbox_border_draw(RIVER_PUZZLE_TBOX_LIST, RIVER_PUZZLE_UI_NUM_TILES, 14);
+  tbox_frame_draw_outer(RIVER_PUZZLE_TBOX_LIST, RIVER_PUZZLE_UI_NUM_TILES, 14);
   RIVER_PUZZLE_STATE->callback_idx_list = list_menu_new(&gp_list_menu_template,
       0, 0);
   bg_virtual_sync(0);
@@ -316,7 +316,7 @@ void river_puzzle_callback_confirm_exit(u8 self) {
 }
 
 void river_puzzle_callback_remove_dialog_and_return_to_idle(u8 self) {
-  tbox_remove_dialog(RIVER_PUZZLE_TBOX_MESSAGE, true);
+  tbox_clear_message(RIVER_PUZZLE_TBOX_MESSAGE, true);
   big_callbacks[self].function = river_puzzle_callback_idle;
 }
 
@@ -431,7 +431,7 @@ void river_puzzle_cursor_move_left() {
 void river_puzzle_callback_wait_for_fanfare(u8 self) {
   if (!big_callback_is_active(fanfare_callback_wait)) {
     tbox_print_string_and_continue(self, RIVER_PUZZLE_TBOX_MESSAGE,
-        RIVER_PUZZLE_UI_NUM_TILES + TBOX_CONTEXT_BORDER_NUM_TILES, 15, 2, tbox_get_set_speed(),
+        RIVER_PUZZLE_UI_NUM_TILES + TBOX_FRAME_SET_STYLE_NUM_TILES, 15, 2, tbox_get_set_speed(),
         str_river_puzzle_solved, river_puzzle_callback_solved);
   }
 }
@@ -454,12 +454,12 @@ void river_puzzle_callback_idle(u8 self) {
     if (super.keys_new.keys.start) {
       // Print help
       tbox_print_string_and_continue(self, RIVER_PUZZLE_TBOX_MESSAGE,
-          RIVER_PUZZLE_UI_NUM_TILES + TBOX_CONTEXT_BORDER_NUM_TILES, 15, 2, tbox_get_set_speed(),
+          RIVER_PUZZLE_UI_NUM_TILES + TBOX_FRAME_SET_STYLE_NUM_TILES, 15, 2, tbox_get_set_speed(),
           str_river_puzzle_help, river_puzzle_callback_remove_dialog_and_return_to_idle);
     } else if (super.keys_new.keys.B) {
       // Print exit message and ask for confirmation
       tbox_print_string_and_continue(self, RIVER_PUZZLE_TBOX_MESSAGE,
-          RIVER_PUZZLE_UI_NUM_TILES + TBOX_CONTEXT_BORDER_NUM_TILES, 15, 2, tbox_get_set_speed(),
+          RIVER_PUZZLE_UI_NUM_TILES + TBOX_FRAME_SET_STYLE_NUM_TILES, 15, 2, tbox_get_set_speed(),
           str_river_puzzle_confirm_exit, river_puzzle_callback_confirm_exit);
     } else if (super.keys_new.keys.down && RIVER_PUZZLE_STATE->cursor / 2 < 2) {
       RIVER_PUZZLE_STATE->cursor = (u8)(RIVER_PUZZLE_STATE->cursor + 2);
@@ -531,7 +531,7 @@ void river_puzzle_callback_idle(u8 self) {
         strcpy(buffer0, pokemon_names[river_puzzle_species[invalid_baby]]);
         strcpy(buffer1, pokemon_names[river_puzzle_species[cause]]);
         tbox_print_string_and_continue(self, RIVER_PUZZLE_TBOX_MESSAGE,
-            RIVER_PUZZLE_UI_NUM_TILES + TBOX_CONTEXT_BORDER_NUM_TILES, 15, 2,
+            RIVER_PUZZLE_UI_NUM_TILES + TBOX_FRAME_SET_STYLE_NUM_TILES, 15, 2,
             tbox_get_set_speed(), str_river_puzzle_invalid_configuration,
             river_puzzle_callback_remove_dialog_and_return_to_idle);
         play_sound(5);
@@ -625,9 +625,9 @@ void river_puzzle_callback1_initialize() {
     river_puzzle_compute_map();
 
     tbox_sync_with_virtual_bg_and_init_all(river_puzzle_tboxes);
-    tbox_context_init_border_set_style(RIVER_PUZZLE_TBOX_MESSAGE, RIVER_PUZZLE_UI_NUM_TILES, 14 * 16);
-    tbox_message_init(RIVER_PUZZLE_TBOX_MESSAGE,
-        RIVER_PUZZLE_UI_NUM_TILES + TBOX_CONTEXT_BORDER_NUM_TILES, 15 * 16);
+    tbox_init_frame_set_style(RIVER_PUZZLE_TBOX_MESSAGE, RIVER_PUZZLE_UI_NUM_TILES, 14 * 16);
+    tbox_init_frame_std(RIVER_PUZZLE_TBOX_MESSAGE,
+        RIVER_PUZZLE_UI_NUM_TILES + TBOX_FRAME_SET_STYLE_NUM_TILES, 15 * 16);
     tbox_flush_set(RIVER_PUZZLE_TBOX_TITLE, 0x44);
     tbox_tilemap_draw(RIVER_PUZZLE_TBOX_TITLE);
     u8 str_title[] = LANGDEP(PSTRING("Hilf den Pokémon!"),

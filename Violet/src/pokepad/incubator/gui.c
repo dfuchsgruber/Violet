@@ -208,9 +208,9 @@ void incubator_load_current_egg() {
     tbox_print_string(INCUBATOR_TBOX_EGG, 2,
         (u8)((incubator_tboxes[INCUBATOR_TBOX_EGG].w * 8 - str_egg_width) / 2), 2, 0, 0,
         &incubator_font_colormap_std_light, 0, strbuf);
-    tbox_draw_type_icon_by_type_p1(INCUBATOR_TBOX_TYPES, (u8) (basestats[species].type1 + 1), 0, 3);
+    tbox_blit_move_info_icon(INCUBATOR_TBOX_TYPES, (u8) (basestats[species].type1 + 1), 0, 3);
     if (basestats[species].type1 != basestats[species].type2) {
-      tbox_draw_type_icon_by_type_p1(INCUBATOR_TBOX_TYPES, (u8) (basestats[species].type2 + 1),
+      tbox_blit_move_info_icon(INCUBATOR_TBOX_TYPES, (u8) (basestats[species].type2 + 1),
           32, 3);
     }
     oams[fmem.incubator_state->oam_egg_idx].flags &= (u16)(~OAM_FLAG_INVISIBLE);
@@ -327,7 +327,7 @@ list_menu_item incubator_context_menu_items_empty[3] = {
 
 void incubator_callback_delete_message_and_reload_egg(u8 self) {
   // Restore the text for the types
-  tbox_remove_dialog(INCUBATOR_TBOX_MESSAGE, true);
+  tbox_clear_message(INCUBATOR_TBOX_MESSAGE, true);
   incubator_load_current_egg();
   big_callback_delete(self);
   callback1_set(incubator_callback1_idle);
@@ -372,7 +372,7 @@ void incubator_callback_context_menu_egg(u8 self) {
     play_sound(5);
     list_menu_remove(fmem.incubator_state->context_menu_callback_idx, NULL, NULL);
     tbox_flush_set(INCUBATOR_TBOX_CONTEXT_MENU_EGG, 0);
-    tbox_border_flush(INCUBATOR_TBOX_CONTEXT_MENU_EGG);
+    tbox_flush_map_and_frame(INCUBATOR_TBOX_CONTEXT_MENU_EGG);
     bg_virtual_sync(0);
     callback1_set(incubator_callback1_idle);
     big_callback_delete(self);
@@ -380,7 +380,7 @@ void incubator_callback_context_menu_egg(u8 self) {
     // Try to push it to the team
     list_menu_remove(fmem.incubator_state->context_menu_callback_idx, NULL, NULL);
     tbox_flush_set(INCUBATOR_TBOX_CONTEXT_MENU_EGG, 0);
-    tbox_border_flush(INCUBATOR_TBOX_CONTEXT_MENU_EGG);
+    tbox_flush_map_and_frame(INCUBATOR_TBOX_CONTEXT_MENU_EGG);
     box_pokemon *egg = &cmem.incubator_slots[fmem.incubator_state->cursor_idx];
     box_pokemon_get_attribute(egg, ATTRIBUTE_NICKNAME, buffer0);
     if (player_pokemon_cnt < 6) {
@@ -392,7 +392,7 @@ void incubator_callback_context_menu_egg(u8 self) {
           PSTRING("BUFFER_1 wurde deinem\nTeam hinzugefügt.PAUSE_UNTIL_PRESS"),
           PSTRING("BUFFER_1 was added\nto your party.PAUSE_UNTIL_PRESS"));
       tbox_print_string_and_continue(self, INCUBATOR_TBOX_MESSAGE,
-          1 + TBOX_CONTEXT_BORDER_NUM_TILES, 14, 2, tbox_get_set_speed(),
+          1 + TBOX_FRAME_SET_STYLE_NUM_TILES, 14, 2, tbox_get_set_speed(),
           str_sent_to_team,
           incubator_callback_delete_message_and_reload_egg_after_egg_icon_animation);
       incubator_remove_egg_from_ui(fmem.incubator_state->cursor_idx);
@@ -401,14 +401,14 @@ void incubator_callback_context_menu_egg(u8 self) {
           PSTRING("In deinem Team ist kein Platz\nfür BUFFER_1.PAUSE_UNTIL_PRESS"),
           PSTRING("There is no room for\nBUFFER_1 in your party.PAUSE_UNTIL_PRESS"));
       tbox_print_string_and_continue(self, INCUBATOR_TBOX_MESSAGE,
-          1 + TBOX_CONTEXT_BORDER_NUM_TILES, 14, 2, tbox_get_set_speed(),
+          1 + TBOX_FRAME_SET_STYLE_NUM_TILES, 14, 2, tbox_get_set_speed(),
           str_no_space, incubator_callback_delete_message_and_reload_egg);
     }
   } else if (item == 2) {
     // Try to push it to a box
     list_menu_remove(fmem.incubator_state->context_menu_callback_idx, NULL, NULL);
     tbox_flush_set(INCUBATOR_TBOX_CONTEXT_MENU_EGG, 0);
-    tbox_border_flush(INCUBATOR_TBOX_CONTEXT_MENU_EGG);
+    tbox_flush_map_and_frame(INCUBATOR_TBOX_CONTEXT_MENU_EGG);
     box_pokemon *egg = &cmem.incubator_slots[fmem.incubator_state->cursor_idx];
     box_pokemon_get_attribute(egg, ATTRIBUTE_NICKNAME, buffer0);
     pokemon *tmp = malloc(sizeof(pokemon));
@@ -425,7 +425,7 @@ void incubator_callback_context_menu_egg(u8 self) {
           PSTRING("BUFFER_1 was sent\nto the Pc.\pIt was placed in box BUFFER_2."
               "PAUSE_UNTIL_PRESS"));
       tbox_print_string_and_continue(self, INCUBATOR_TBOX_MESSAGE,
-          1 + TBOX_CONTEXT_BORDER_NUM_TILES, 14, 2, tbox_get_set_speed(),
+          1 + TBOX_FRAME_SET_STYLE_NUM_TILES, 14, 2, tbox_get_set_speed(),
           str_sent_to_box,
           incubator_callback_delete_message_and_reload_egg_after_egg_icon_animation);
       incubator_remove_egg_from_ui(fmem.incubator_state->cursor_idx);
@@ -434,7 +434,7 @@ void incubator_callback_context_menu_egg(u8 self) {
           PSTRING("Auf dem Pc ist kein Platz\nfür BUFFER_1.PAUSE_UNTIL_PRESS"),
           PSTRING("There is no room for\nBUFFER_1 on your Pc.PAUSE_UNTIL_PRESS"));
       tbox_print_string_and_continue(self, INCUBATOR_TBOX_MESSAGE,
-          1 + TBOX_CONTEXT_BORDER_NUM_TILES, 14, 2, tbox_get_set_speed(),
+          1 + TBOX_FRAME_SET_STYLE_NUM_TILES, 14, 2, tbox_get_set_speed(),
           str_no_space, incubator_callback_delete_message_and_reload_egg);
     }
     free(tmp);
@@ -477,20 +477,20 @@ void incubator_callback_context_menu_empty(u8 self) {
     play_sound(5);
     list_menu_remove(fmem.incubator_state->context_menu_callback_idx, NULL, NULL);
     tbox_flush_set(INCUBATOR_TBOX_CONTEXT_MENU_EMPTY, 0);
-    tbox_border_flush(INCUBATOR_TBOX_CONTEXT_MENU_EMPTY);
+    tbox_flush_map_and_frame(INCUBATOR_TBOX_CONTEXT_MENU_EMPTY);
     bg_virtual_sync(0);
     callback1_set(incubator_callback1_idle);
     big_callback_delete(self);
   } else if (item == 1) {
     list_menu_remove(fmem.incubator_state->context_menu_callback_idx, NULL, NULL);
     tbox_flush_set(INCUBATOR_TBOX_CONTEXT_MENU_EMPTY, 0);
-    tbox_border_flush(INCUBATOR_TBOX_CONTEXT_MENU_EMPTY);
+    tbox_flush_map_and_frame(INCUBATOR_TBOX_CONTEXT_MENU_EMPTY);
     fadescreen_all(1, 0);
     callback1_set(incubator_callback_initialize_party_menu);
   } else if (item == 2) {
     list_menu_remove(fmem.incubator_state->context_menu_callback_idx, NULL, NULL);
     tbox_flush_set(INCUBATOR_TBOX_CONTEXT_MENU_EMPTY, 0);
-    tbox_border_flush(INCUBATOR_TBOX_CONTEXT_MENU_EMPTY);
+    tbox_flush_map_and_frame(INCUBATOR_TBOX_CONTEXT_MENU_EMPTY);
     fadescreen_all(1, 0);
     callback1_set(incubator_callback_initialize_pc_selection);
   }
@@ -559,7 +559,7 @@ void incubator_callback_pokemon_imported(u8 self) {
           PSTRING("BUFFER_1 wurde im Inkubator platizert.PAUSE_UNTIL_PRESS"),
           PSTRING("BUFFER_1 was placed in the incubator.PAUSE_UNTIL_PRESS"));
       tbox_print_string_and_continue(self, INCUBATOR_TBOX_MESSAGE,
-          1 + TBOX_CONTEXT_BORDER_NUM_TILES, 14, 2, tbox_get_set_speed(),
+          1 + TBOX_FRAME_SET_STYLE_NUM_TILES, 14, 2, tbox_get_set_speed(),
           str_placed_in_incubator,
           incubator_callback_delete_message_and_reload_egg_after_egg_icon_animation);
       u8 callback_idx = big_callback_new(incubator_callback_wait_for_egg_icon_animation, 0);
@@ -572,7 +572,7 @@ void incubator_callback_pokemon_imported(u8 self) {
           PSTRING("Es können nur Eier im Inkubator\nplatziert werden.PAUSE_UNTIL_PRESS"),
           PSTRING("Only eggs can be placed in the\nincubator.PAUSE_UNTIL_PRESS"));
       tbox_print_string_and_continue(self, INCUBATOR_TBOX_MESSAGE,
-          1 + TBOX_CONTEXT_BORDER_NUM_TILES, 14, 2, tbox_get_set_speed(),
+          1 + TBOX_FRAME_SET_STYLE_NUM_TILES, 14, 2, tbox_get_set_speed(),
           str_only_eggs_can_be_placed, incubator_callback_delete_message_and_reload_egg);
     } else {
       callback1_set(incubator_callback1_idle);
@@ -611,7 +611,7 @@ void incubator_callback1_idle() {
         gp_list_menu_template.tbox_idx = INCUBATOR_TBOX_CONTEXT_MENU_EGG;
         gp_list_menu_template.items = incubator_context_menu_items_egg;
         tbox_tilemap_draw(INCUBATOR_TBOX_CONTEXT_MENU_EGG);
-        tbox_border_draw(INCUBATOR_TBOX_CONTEXT_MENU_EGG, 1, 13);
+        tbox_frame_draw_outer(INCUBATOR_TBOX_CONTEXT_MENU_EGG, 1, 13);
         fmem.incubator_state->context_menu_callback_idx = list_menu_new(&gp_list_menu_template,
             0, 0);
         bg_virtual_sync(0);
@@ -623,7 +623,7 @@ void incubator_callback1_idle() {
         gp_list_menu_template.tbox_idx = INCUBATOR_TBOX_CONTEXT_MENU_EMPTY;
         gp_list_menu_template.items = incubator_context_menu_items_empty;
         tbox_tilemap_draw(INCUBATOR_TBOX_CONTEXT_MENU_EMPTY);
-        tbox_border_draw(INCUBATOR_TBOX_CONTEXT_MENU_EMPTY, 1, 13);
+        tbox_frame_draw_outer(INCUBATOR_TBOX_CONTEXT_MENU_EMPTY, 1, 13);
         fmem.incubator_state->context_menu_callback_idx = list_menu_new(&gp_list_menu_template,
             0, 0);
         bg_virtual_sync(0);
@@ -684,8 +684,8 @@ void incubator_initialize_ui() {
   bg_set_tilemap(3, malloc_and_clear(0x800));
 
   tbox_sync_with_virtual_bg_and_init_all(incubator_tboxes);
-  tbox_context_init_border_set_style(INCUBATOR_TBOX_MESSAGE, 1, 13 * 16);
-  tbox_message_init(INCUBATOR_TBOX_MESSAGE, 1 + TBOX_CONTEXT_BORDER_NUM_TILES, 14 * 16);
+  tbox_init_frame_set_style(INCUBATOR_TBOX_MESSAGE, 1, 13 * 16);
+  tbox_init_frame_std(INCUBATOR_TBOX_MESSAGE, 1 + TBOX_FRAME_SET_STYLE_NUM_TILES, 14 * 16);
   tbox_flush_set(INCUBATOR_TBOX_TITLE, 0);
   tbox_tilemap_draw(INCUBATOR_TBOX_TITLE);
   u8 str_title[] = LANGDEP(PSTRING("Inkubator"), PSTRING("Incubator"));

@@ -16,6 +16,7 @@
 #include "overworld/effect.h"
 #include "constants/sav_keys.h"
 #include "options.h"
+#include "item/bag2.h"
 
 u8 berry_tree_get_berry(u8 berry_tree_idx) {
     return cmem.berry_trees[berry_tree_idx].berry;
@@ -175,7 +176,8 @@ void berry_fertilize() {
 
 void berry_plant_callback_initialize_berry_pouch(u8 self) {
     if (!fading_control.active) {
-        berry_pouch_initialize(BERRY_POUCH_CONTEXT_PLANTING, map_reload, 0);
+        // berry_pouch_initialize(BERRY_POUCH_CONTEXT_PLANTING, map_reload, 0);
+        bag_open(BAG_CONTEXT_PLANT_BERRY, BAG_OPEN_BERRIES, map_reload);
         big_callback_delete(self);
     }
 }

@@ -10,7 +10,6 @@
 #include "item/custom.h"
 #include "item/tm_hm.h"
 
-
 static u8 str_item_none_description[] = LANGDEP(
 	PSTRING(" ????"),
 	PSTRING("?????")
@@ -1168,236 +1167,236 @@ static u8 str_item_devon_scope_description[] = LANGDEP(
 	PSTRING("A scope that signals the presence\nof any unseeable Pokémon.\nIt is made by the Devon Corp.")
 );
 static u8 str_item_tm01_description[] = LANGDEP(
-	PSTRING("Angriff, der zu-\nletzt erfolgt. Der\nAnwender schreckt\nevtl. zurück."),
-	PSTRING("An attack that is\nexecuted last.\nThe user flinches\nif hit beforehand.")
+	PSTRING("Angriff, der zuletzt erfolgt.\nDer Anwender schreckt evtl.\nzurück."),
+	PSTRING("An attack that is executed last.\nThe user flinches if hit\nbeforehand.")
 );
 static u8 str_item_tm02_description[] = LANGDEP(
-	PSTRING("Der Gegner wird mit\nriesigen, scharfen\nKlauen stark\nverletzt."),
-	PSTRING("Sharp, huge claws\nhook and slash the\nfoe quickly and\nwith great power.")
+	PSTRING("Der Gegner wird mit riesigen,\nscharfen Klauen stark verletzt."),
+	PSTRING("Sharp, huge claws hook and slash\nthe foe quickly and with great\npower.")
 );
 static u8 str_item_tm03_description[] = LANGDEP(
-	PSTRING("Angriff mit Wasser-\nwelle, die den\nGegner evtl.\nverwirren kann."),
-	PSTRING("An attack with a\npulsing blast of\nwater. It may also\nconfuse the foe.")
+	PSTRING("Angriff mit Wasserwelle, die den\nGegner evtl. verwirren kann."),
+	PSTRING("An attack with a pulsing blast of\nwater. It may also confuse the\nfoe.")
 );
 static u8 str_item_tm04_description[] = LANGDEP(
-	PSTRING("Erhöht SP. Ang.\nund SP. Ver.\ndurch\nKonzentration."),
-	PSTRING("The user focuses\nits mind to raise\nthe SP. Atk and\nSP. Def stats.")
+	PSTRING("Erhöht SP. Ang. und SP. Ver. durch\nKonzentration."),
+	PSTRING("The user focuses its mind to raise\nthe SP. Atk and SP. Def stats.")
 );
 static u8 str_item_tm05_description[] = LANGDEP(
-	PSTRING("Verjagt den Gegner\nund beendet den\nKampf in der\nWildnis."),
-	PSTRING("The foe is made to\nswitch out with an\nally. In the wild,\nthe battle ends.")
+	PSTRING("Verjagt den Gegner und beendet\nden Kampf in der Wildnis."),
+	PSTRING("The foe is made to switch out with\nan ally. In the wild, the battle\nends.")
 );
 static u8 str_item_tm06_description[] = LANGDEP(
-	PSTRING("Vergiftet den\nGegner mit\neinem potenten\nToxin."),
-	PSTRING("A move that badly\npoisons the foe.\nIts poison damage\nworsens every turn.")
+	PSTRING("Vergiftet den Gegner mit einem\npotenten Toxin."),
+	PSTRING("A move that badly poisons the foe.\nIts poison damage worsens every\nturn.")
 );
 static u8 str_item_tm07_description[] = LANGDEP(
-	PSTRING("Hagelsturm für 5\nRunden. Schadet\nallen, außer\nEis-Pokémon."),
-	PSTRING("A hailstorm lasting\nfive turns damages\nall Pokémon except\nthe Ice-type.")
+	PSTRING("Hagelsturm für 5 Runden. Schadet\nallen, außer Eis-Pokémon."),
+	PSTRING("A hailstorm lasting five turns\ndamages all Pokémon except the\nIce-type.")
 );
 static u8 str_item_tm08_description[] = LANGDEP(
-	PSTRING("Pumpt den Körper\nauf, um den Angr.\nund die Vert. \nzu erhöhen."),
-	PSTRING("The user bulks up\nits body to boost\nboth its Attack and\nDefense stats.")
+	PSTRING("Pumpt den Körper auf, um den Angr.\nund die Vert.  zu erhöhen."),
+	PSTRING("The user bulks up its body to boost\nboth its Attack and Defense\nstats.")
 );
 static u8 str_item_tm09_description[] = LANGDEP(
-	PSTRING("Verschießt 2 bis 5\nSamen gleichzeitig\nauf den Gegner."),
-	PSTRING("The user shoots\nseeds at the foe.\nTwo to five seeds\nare shot at once.")
+	PSTRING("Verschießt 2 bis 5 Samen\ngleichzeitig auf den Gegner."),
+	PSTRING("The user shoots seeds at the foe.\nTwo to five seeds are shot at once.")
 );
 static u8 str_item_tm10_description[] = LANGDEP(
-	PSTRING("Die Wirkung und\nElementklasse der\nAttacke hängt\nvom Benutzer ab."),
-	PSTRING("An attack that\nvaries in type and\nintensity depending\non the user.")
+	PSTRING("Die Wirkung und Elementklasse\nder Attacke hängt vom Benutzer\nab."),
+	PSTRING("An attack that varies in type and\nintensity depending on the user.")
 );
 static u8 str_item_tm11_description[] = LANGDEP(
-	PSTRING("Erhöht Stärke\nvon Feuer-\nAttacken 5\nRunden lang."),
-	PSTRING("The sun blazes for\nfive turns, powering\nup Fire-type\nmoves.")
+	PSTRING("Erhöht Stärke von FeuerAttacken\n5 Runden lang."),
+	PSTRING("The sun blazes for five turns,\npowering up Fire-type moves.")
 );
 static u8 str_item_tm12_description[] = LANGDEP(
-	PSTRING("Legt den Gegner\nrein. Er benutzt\nnur noch Angriffe."),
-	PSTRING("The foe is taunted\ninto a rage that\nallows it to use\nonly attack moves.")
+	PSTRING("Legt den Gegner rein. Er benutzt\nnur noch Angriffe."),
+	PSTRING("The foe is taunted into a rage that\nallows it to use only attack\nmoves.")
 );
 static u8 str_item_tm13_description[] = LANGDEP(
-	PSTRING("Der Gegner wird von\neinem Eisstrahl\ngetroffen und\nfriert evtl. ein."),
-	PSTRING("The foe is struck\nwith an icy beam.\nIt may freeze the\nfoe solid.")
+	PSTRING("Der Gegner wird von einem\nEisstrahl getroffen und friert\nevtl. ein."),
+	PSTRING("The foe is struck with an icy beam.\nIt may freeze the foe solid.")
 );
 static u8 str_item_tm14_description[] = LANGDEP(
-	PSTRING("Ein Schneesturm,\nder den Gegner\neinfrieren kann,\nwütet."),
-	PSTRING("The foe is blasted\nwith a blizzard.\nIt may freeze the\nfoe solid.")
+	PSTRING("Ein Schneesturm, der den Gegner\neinfrieren kann, wütet."),
+	PSTRING("The foe is blasted with a\nblizzard. It may freeze the foe\nsolid.")
 );
 static u8 str_item_tm15_description[] = LANGDEP(
-	PSTRING("Starke Attacke, die\nden Angreifer\nzwingt, eine Runde\nauszusetzen."),
-	PSTRING("A severely damaging\nattack that makes\nthe user rest on\nthe next turn.")
+	PSTRING("Starke Attacke, die den\nAngreifer zwingt, eine Runde\nauszusetzen."),
+	PSTRING("A severely damaging attack that\nmakes the user rest on the next\nturn.")
 );
 static u8 str_item_tm16_description[] = LANGDEP(
-	PSTRING("Erzeugt Lichtwand\nund senkt Schaden\ndurch SP. Ang.\nfür 5 Runden."),
-	PSTRING("A wall of light\ncuts damage from\nSP. Atk attacks\nfor five turns.")
+	PSTRING("Erzeugt Lichtwand und senkt\nSchaden durch SP. Ang. für 5\nRunden."),
+	PSTRING("A wall of light cuts damage from\nSP. Atk attacks for five turns.")
 );
 static u8 str_item_tm17_description[] = LANGDEP(
-	PSTRING("Anwender weicht\njeder Attacke aus.\nScheitert evtl. bei\nWiederholung."),
-	PSTRING("Enables the user to\nevade all attacks.\nIt may fail if used\nin succession.")
+	PSTRING("Anwender weicht jeder Attacke\naus. Scheitert evtl. bei\nWiederholung."),
+	PSTRING("Enables the user to evade all\nattacks. It may fail if used in\nsuccession.")
 );
 static u8 str_item_tm18_description[] = LANGDEP(
-	PSTRING("Erhöht Stärke\nvon Wasser-\nAttacken 5 \nRunden lang."),
-	PSTRING("A heavy rain falls\nfor five turns,\npowering up Water-\ntype moves.")
+	PSTRING("Erhöht Stärke von\nWasserAttacken 5  Runden lang."),
+	PSTRING("A heavy rain falls for five turns,\npowering up Watertype moves.")
 );
 static u8 str_item_tm19_description[] = LANGDEP(
-	PSTRING("Starke Attacke!\nAbsorbiert die\nHälfte des ange-\nrichteten Schadens."),
-	PSTRING("A harsh attack that\nabsorbs half the\ndamage it inflicted\nto restore HP.")
+	PSTRING("Starke Attacke! Absorbiert die\nHälfte des angerichteten\nSchadens."),
+	PSTRING("A harsh attack that absorbs half\nthe damage it inflicted to\nrestore HP.")
 );
 static u8 str_item_tm20_description[] = LANGDEP(
-	PSTRING("Team d. Anwenders\nist 5 Runden vor\nStatusproblemen\ngeschützt."),
-	PSTRING("It protects the\nuser’s party from\nall status problems\nfor five turns.")
+	PSTRING("Team d. Anwenders ist 5 Runden vor\nStatusproblemen geschützt."),
+	PSTRING("It protects the user’s party from\nall status problems for five\nturns.")
 );
 static u8 str_item_tm21_description[] = LANGDEP(
-	PSTRING("Die Attacke ist\nstärker bei\nverhassten\nTRAINERn."),
-	PSTRING("This attack move\ngrows more powerful\nthe less the user\nlikes its Trainer.")
+	PSTRING("Die Attacke ist stärker bei\nverhassten TRAINERn."),
+	PSTRING("This attack move grows more\npowerful the less the user likes\nits Trainer.")
 );
 static u8 str_item_tm22_description[] = LANGDEP(
-	PSTRING("Absorbiert Licht in\nder 1. Runde.\nIn Runde 2\nerfolgt der Angriff."),
-	PSTRING("A 2-turn move that\nblasts the foe with\nabsorbed energy in\nthe 2nd turn.")
+	PSTRING("Absorbiert Licht in der 1. Runde.\nIn Runde 2 erfolgt der Angriff."),
+	PSTRING("A 2-turn move that blasts the foe\nwith absorbed energy in the 2nd\nturn.")
 );
 static u8 str_item_tm23_description[] = LANGDEP(
-	PSTRING("Attacke mit hartem\nEisenschweif.\nSenkt evtl. den\nVert.-Wert."),
-	PSTRING("An attack with a\nsteel-hard tail.\nIt may lower the\nfoe’s Defense stat.")
+	PSTRING("Attacke mit hartem\nEisenschweif. Senkt evtl. den\nVert.-Wert."),
+	PSTRING("An attack with a steel-hard tail.\nIt may lower the foe’s Defense\nstat.")
 );
 static u8 str_item_tm24_description[] = LANGDEP(
-	PSTRING("Eine starke\nElektro-Attacke,\ndie den Gegner\nevtl. paralysiert."),
-	PSTRING("A strong electrical\nattack that may\nalso leave the foe\nparalyzed.")
+	PSTRING("Eine starke Elektro-Attacke,\ndie den Gegner evtl.\nparalysiert."),
+	PSTRING("A strong electrical attack that\nmay also leave the foe paralyzed.")
 );
 static u8 str_item_tm25_description[] = LANGDEP(
-	PSTRING("Eine verheerende\nElektro-Attacke,\ndie den Gegner\nevtl. paralysiert."),
-	PSTRING("A brutal lightning\nattack that may\nalso leave the foe\nparalyzed.")
+	PSTRING("Eine verheerende\nElektro-Attacke, die den Gegner\nevtl. paralysiert."),
+	PSTRING("A brutal lightning attack that\nmay also leave the foe paralyzed.")
 );
 static u8 str_item_tm26_description[] = LANGDEP(
-	PSTRING("Ein mächtiges\nBeben, das außer\nfliegende Gegner\nalle trifft."),
-	PSTRING("An earthquake that\nstrikes all Pokémon\nin battle excluding\nthe user.")
+	PSTRING("Ein mächtiges Beben, das außer\nfliegende Gegner alle trifft."),
+	PSTRING("An earthquake that strikes all\nPokémon in battle excluding the\nuser.")
 );
 static u8 str_item_tm27_description[] = LANGDEP(
-	PSTRING("Angriff, dessen\nKraft bei Freund-\nschaft zum Trai-\nner größer wird."),
-	PSTRING("This attack move\ngrows more powerful\nthe more the user\nlikes its Trainer.")
+	PSTRING("Angriff, dessen Kraft bei\nFreundschaft zum Trainer größer\nwird."),
+	PSTRING("This attack move grows more\npowerful the more the user likes\nits Trainer.")
 );
 static u8 str_item_tm28_description[] = LANGDEP(
-	PSTRING("1. Runde eingrab-\nen und 2. an-\ngreifen. Flucht\naus Höhlen möglich."),
-	PSTRING("An attack that hits\non the 2nd turn.\nCan also be used\nto exit dungeons.")
+	PSTRING("1. Runde eingraben und 2.\nangreifen. Flucht aus Höhlen\nmöglich."),
+	PSTRING("An attack that hits on the 2nd\nturn. Can also be used to exit\ndungeons.")
 );
 static u8 str_item_tm29_description[] = LANGDEP(
-	PSTRING("Starke Psycho-\nAttacke, die evtl.\ndie SP. Ver.\nsenkt."),
-	PSTRING("A strong telekinetic\nattack. It may also\nlower the foe’s\nSP. Def stat.")
+	PSTRING("Starke PsychoAttacke, die evtl.\ndie SP. Ver. senkt."),
+	PSTRING("A strong telekinetic attack. It\nmay also lower the foe’s SP. Def\nstat.")
 );
 static u8 str_item_tm30_description[] = LANGDEP(
-	PSTRING("Bewirft Gegner mit\ngruseligem Ball\nund senkt evtl.\ndie SP. Ver."),
-	PSTRING("A shadowy blob is\nhurled at the foe.\nMay also lower the\nfoe’s SP. Def.")
+	PSTRING("Bewirft Gegner mit gruseligem\nBall und senkt evtl. die SP. Ver."),
+	PSTRING("A shadowy blob is hurled at the\nfoe. May also lower the foe’s SP.\nDef.")
 );
 static u8 str_item_tm31_description[] = LANGDEP(
-	PSTRING("Durchbricht Barri-\neren wie Licht-\nschild und\nReflektor."),
-	PSTRING("An attack that also\nbreaks any barrier\nlike Light Screen\nand Reflect.")
+	PSTRING("Durchbricht Barrieren wie\nLichtschild und Reflektor."),
+	PSTRING("An attack that also breaks any\nbarrier like Light Screen and\nReflect.")
 );
 static u8 str_item_tm32_description[] = LANGDEP(
-	PSTRING("Erzeugt Eben-\nbilder, um \nFluchtwert\nzu erhöhen."),
-	PSTRING("The user creates\nillusory copies of\nitself to raise its\nevasiveness.")
+	PSTRING("Erzeugt Ebenbilder, um \nFluchtwert zu erhöhen."),
+	PSTRING("The user creates illusory copies\nof itself to raise its\nevasiveness.")
 );
 static u8 str_item_tm33_description[] = LANGDEP(
-	PSTRING("Lichtwand, die\n5 Runden leicht\nvor physischen\nAngriffen schützt."),
-	PSTRING("A wall of light\ncuts damage from\nphysical attacks\nfor five turns.")
+	PSTRING("Lichtwand, die 5 Runden leicht\nvor physischen Angriffen\nschützt."),
+	PSTRING("A wall of light cuts damage from\nphysical attacks for five turns.")
 );
 static u8 str_item_tm34_description[] = LANGDEP(
-	PSTRING("Angriff mit schnel-\nlem Elektro-Schlag.\nAusweichen nicht\nmöglich."),
-	PSTRING("A rapid jolt of\nelectricity strikes\nthe foe. It can’t\nbe evaded.")
+	PSTRING("Angriff mit schnellem\nElektro-Schlag. Ausweichen\nnicht möglich."),
+	PSTRING("A rapid jolt of electricity\nstrikes the foe. It can’t be\nevaded.")
 );
 static u8 str_item_tm35_description[] = LANGDEP(
-	PSTRING("Starke Feuer-\nAttacke, die evtl.\nden Gegner\nverbrennt."),
-	PSTRING("The foe is scorched\nwith intense flames.\nThe foe may suffer\na burn.")
+	PSTRING("Starke FeuerAttacke, die evtl.\nden Gegner verbrennt."),
+	PSTRING("The foe is scorched with intense\nflames. The foe may suffer a burn.")
 );
 static u8 str_item_tm36_description[] = LANGDEP(
-	PSTRING("Gegner wird mit \ndreckigem Schlamm\nbeworfen,\nvergiftet ihn evtl."),
-	PSTRING("Filthy sludge is\nhurled at the foe.\nIt may poison the\ntarget.")
+	PSTRING("Gegner wird mit  dreckigem\nSchlamm beworfen, vergiftet ihn\nevtl."),
+	PSTRING("Filthy sludge is hurled at the\nfoe. It may poison the target.")
 );
 static u8 str_item_tm37_description[] = LANGDEP(
-	PSTRING("Sandsturm für 5\nRunden. Kein Ef-\nfekt bei Gestein,\nBoden und Stahl."),
-	PSTRING("A 5-turn sandstorm\nthat damages all\ntypes except Rock,\nGround, and Steel.")
+	PSTRING("Sandsturm für 5 Runden. Kein\nEffekt bei Gestein, Boden und\nStahl."),
+	PSTRING("A 5-turn sandstorm that damages\nall types except Rock, Ground,\nand Steel.")
 );
 static u8 str_item_tm38_description[] = LANGDEP(
-	PSTRING("Feuersbrunst, die\nalles versengt.\nVerbrennt den\nGegner evtl."),
-	PSTRING("The foe is hit with\nan intense flame.\nIt may leave the\ntarget with a burn.")
+	PSTRING("Feuersbrunst, die alles\nversengt. Verbrennt den Gegner\nevtl."),
+	PSTRING("The foe is hit with an intense\nflame. It may leave the target\nwith a burn.")
 );
 static u8 str_item_tm39_description[] = LANGDEP(
-	PSTRING("Angriff mit Felsen.\nBei Erfolg wird\nder Init.-Wert des\nGegners gesenkt."),
-	PSTRING("Boulders are hurled\nat the foe. It also\nlowers the foe’s\nSpeed if it hits.")
+	PSTRING("Angriff mit Felsen. Bei Erfolg\nwird der Init.-Wert des Gegners\ngesenkt."),
+	PSTRING("Boulders are hurled at the foe. It\nalso lowers the foe’s Speed if it\nhits.")
 );
 static u8 str_item_tm40_description[] = LANGDEP(
-	PSTRING("Eine extrem\nschnelle und\nunausweichbare\nAttacke."),
-	PSTRING("An extremely fast\nattack against one\ntarget. It can’t be\nevaded.")
+	PSTRING("Eine extrem schnelle und\nunausweichbare Attacke."),
+	PSTRING("An extremely fast attack against\none target. It can’t be evaded.")
 );
 static u8 str_item_tm41_description[] = LANGDEP(
-	PSTRING("Erzürnt Gegner, um\nwiederholten Ein-\nsatz derselben Att.\nzu verhindern."),
-	PSTRING("It enrages the foe,\nmaking it incapable\nof using the same\nmove successively.")
+	PSTRING("Erzürnt Gegner, um wiederholten\nEinsatz derselben Att. zu\nverhindern."),
+	PSTRING("It enrages the foe, making it\nincapable of using the same move\nsuccessively.")
 );
 static u8 str_item_tm42_description[] = LANGDEP(
-	PSTRING("Erhöht Angr. nach\nVerbrennung,\nParalyse oder\nVergiftung."),
-	PSTRING("An attack that is\nboosted if user is\nburned, poisoned,\nor paralyzed.")
+	PSTRING("Erhöht Angr. nach Verbrennung,\nParalyse oder Vergiftung."),
+	PSTRING("An attack that is boosted if user\nis burned, poisoned, or\nparalyzed.")
 );
 static u8 str_item_tm43_description[] = LANGDEP(
-	PSTRING("Angriff, der ab-\nhängig vom Ort\nnoch einen\nZusatzeffekt hat."),
-	PSTRING("An attack that may\nhave an additional\neffect that varies\nwith the terrain.")
+	PSTRING("Angriff, der abhängig vom Ort\nnoch einen Zusatzeffekt hat."),
+	PSTRING("An attack that may have an\nadditional effect that varies\nwith the terrain.")
 );
 static u8 str_item_tm44_description[] = LANGDEP(
-	PSTRING("Anwender schläft 2\nRunden, um KP\nund Status voll\nzu erneuern."),
-	PSTRING("The user sleeps for\ntwo turns to fully\nrestore HP and heal\nany status problem.")
+	PSTRING("Anwender schläft 2 Runden, um KP\nund Status voll zu erneuern."),
+	PSTRING("The user sleeps for two turns to\nfully restore HP and heal any\nstatus problem.")
 );
 static u8 str_item_tm45_description[] = LANGDEP(
-	PSTRING("Angriff des anderen\nGeschlechts\nunwahrscheinlich."),
-	PSTRING("If it is the other\ngender, the foe is\nmade infatuated and\nunlikely to attack.")
+	PSTRING("Angriff des anderen Geschlechts\nunwahrscheinlich."),
+	PSTRING("If it is the other gender, the foe\nis made infatuated and unlikely\nto attack.")
 );
 static u8 str_item_tm46_description[] = LANGDEP(
-	PSTRING("Das vom Gegner\ngehaltene Item\nkann gestohlen\nwerden."),
-	PSTRING("An attack that may\ntake the foe’s held\nitem if the user\nisn’t holding one.")
+	PSTRING("Das vom Gegner gehaltene Item\nkann gestohlen werden."),
+	PSTRING("An attack that may take the foe’s\nheld item if the user isn’t\nholding one.")
 );
 static u8 str_item_tm47_description[] = LANGDEP(
-	PSTRING("Trifft den Gegner\nmit Stahlflügeln.\nAnwenders Vert.\nsteigt evtl."),
-	PSTRING("The foe is hit with\nwings of steel.\nIt may also raise\nthe user’s Defense.")
+	PSTRING("Trifft den Gegner mit\nStahlflügeln. Anwenders Vert.\nsteigt evtl."),
+	PSTRING("The foe is hit with wings of steel.\nIt may also raise the user’s\nDefense.")
 );
 static u8 str_item_tm48_description[] = LANGDEP(
-	PSTRING("Anwender tauscht\nSpezialfähigkeit mit\ngegnerischem\nPokémon."),
-	PSTRING("The user employs\nits psychic power\nto swap abilities\nwith the foe.")
+	PSTRING("Anwender tauscht\nSpezialfähigkeit mit\ngegnerischem Pokémon."),
+	PSTRING("The user employs its psychic\npower to swap abilities with the\nfoe.")
 );
 static u8 str_item_tm49_description[] = LANGDEP(
-	PSTRING("Raubt den Effekt\nder gegn. heilenden\noder Status ver-\nändernden Attacke."),
-	PSTRING("Steals the effects\nof the foe’s\nhealing or status-\nchanging move.")
+	PSTRING("Raubt den Effekt der gegn.\nheilenden oder Status\nverändernden Attacke."),
+	PSTRING("Steals the effects of the foe’s\nhealing or statuschanging move.")
 );
 static u8 str_item_tm50_description[] = LANGDEP(
-	PSTRING("Angriff mit voller\nKraft, der den SP.\nAng. d. Anwenders \ndeutlich senkt."),
-	PSTRING("An intense attack\nthat also sharply\nreduces the user’s\nSP. Atk stat.")
+	PSTRING("Angriff mit voller Kraft, der den\nSP. Ang. d. Anwenders  deutlich\nsenkt."),
+	PSTRING("An intense attack that also\nsharply reduces the user’s SP.\nAtk stat.")
 );
 static u8 str_item_vm01_description[] = LANGDEP(
-	PSTRING("Ein Basisangriff.\nDamit können\nkleine Bäume\ngefällt werden."),
-	PSTRING("A basic attack.\nIt can be used to\ncut down thin trees\nand grass.")
+	PSTRING("Ein Basisangriff. Damit können\nkleine Bäume gefällt werden."),
+	PSTRING("A basic attack. It can be used to\ncut down thin trees and grass.")
 );
 static u8 str_item_vm02_description[] = LANGDEP(
-	PSTRING("Sttigt in der 1.\nRunde empor und\ntrifft den Gegner\nin Runde 2."),
-	PSTRING("A 2-turn move that\nhits on the 2nd\nturn. Use it to fly\nto any known town.")
+	PSTRING("Sttigt in der 1. Runde empor und\ntrifft den Gegner in Runde 2."),
+	PSTRING("A 2-turn move that hits on the 2nd\nturn. Use it to fly to any known\ntown.")
 );
 static u8 str_item_vm03_description[] = LANGDEP(
-	PSTRING("Eine Welle bricht\nüber den Gegner\nherein. Surfen\ndamit möglich."),
-	PSTRING("A big wave crashes\ndown on the foe.\nCan also be used\nfor crossing water.")
+	PSTRING("Eine Welle bricht über den Gegner\nherein. Surfen damit möglich."),
+	PSTRING("A big wave crashes down on the foe.\nCan also be used for crossing\nwater.")
 );
 static u8 str_item_vm04_description[] = LANGDEP(
-	PSTRING("Gegner wird extrem\nstark getroffen. \nVerschieben von\nFelsen möglich."),
-	PSTRING("The foe is slugged\nat maximum power.\nCan also be used\nto move boulders.")
+	PSTRING("Gegner wird extrem stark\ngetroffen.  Verschieben von\nFelsen möglich."),
+	PSTRING("The foe is slugged at maximum\npower. Can also be used to move\nboulders.")
 );
 static u8 str_item_vm05_description[] = LANGDEP(
-	PSTRING("Erzeugt helles\nLicht, das nie\nverfehlt."),
-	PSTRING("A blast of light\nthat cuts the foe’s\naccuracy. It also\nilluminates caves.")
+	PSTRING("Erzeugt helles Licht, das nie\nverfehlt."),
+	PSTRING("A blast of light that cuts the\nfoe’s accuracy. It also\nilluminates caves.")
 );
 static u8 str_item_vm06_description[] = LANGDEP(
-	PSTRING("Zertrümmernder An-\ngriff, auch bei\nSteinen. Senkt evtl.\ndie Vert."),
-	PSTRING("An attack that may\nalso cut Defense.\nIt can also smash\ncracked boulders.")
+	PSTRING("Zertrümmernder Angriff, auch\nbei Steinen. Senkt evtl. die\nVert."),
+	PSTRING("An attack that may also cut\nDefense. It can also smash\ncracked boulders.")
 );
 static u8 str_item_vm07_description[] = LANGDEP(
-	PSTRING("Eine mächtige\nAttacke. Wasser-\nfälle können damit\nerklommen werden."),
-	PSTRING("A powerful charge\nattack. It can also\nbe used to climb\na waterfall.")
+	PSTRING("Eine mächtige Attacke.\nWasserfälle können damit\nerklommen werden."),
+	PSTRING("A powerful charge attack. It can\nalso be used to climb a waterfall.")
 );
 static u8 str_item_vm08_description[] = LANGDEP(
-	PSTRING("Erklimmt Felswände und\nverwirrt den Gegner\neventuell."),
-	PSTRING("Climbs rock faces\nand possibly confuses\nthe opponent.")
+	PSTRING("Erklimmt Felswände und verwirrt\nden Gegner eventuell."),
+	PSTRING("Climbs rock faces and possibly\nconfuses the opponent.")
 );
 static u8 str_item_schwarzpulver_description[] = LANGDEP(
 	PSTRING("Verstärkt Explosionen. Träger\nexplodiert, wenn von\nFeuer getroffen."),
@@ -1584,23 +1583,23 @@ static u8 str_unlichtjuwel_description[] = LANGDEP(
 	PSTRING("An item to be held by a Pokémon.\nBoosts Unlicht attacks\nonce.")
 );
 static u8 str_item_solarstueck_description[] = LANGDEP(
-	PSTRING("Eine orangene Scherbe eines antiken\nWerkzeugs, das vor langer Zeit\nangefertigt wurde."),
+	PSTRING("Eine orangene Scherbe eines\nantiken Werkzeugs, das vor langer\nZeit angefertigt wurde."),
 	PSTRING("A small orange shard.\nIt appears to be from some sort of\na tool made long ago.")
 );
 static u8 str_item_lunarstueck_description[] = LANGDEP(
-	PSTRING("Eine graue Scherbe eines antiken\nWerkzeugs, das vor langer Zeit\nangefertigt wurde."),
+	PSTRING("Eine graue Scherbe eines\nantiken Werkzeugs, das vor langer\nZeit angefertigt wurde."),
 	PSTRING("A small grey shard.\nIt appears to be from some sort of\na tool made long ago.")
 );
 static u8 str_item_duesterstueck_description[] = LANGDEP(
-	PSTRING("Eine dunkle Scherbe eines antiken\nWerkzeugs, das vor langer Zeit\nangefertigt wurde."),
+	PSTRING("Eine dunkle Scherbe eines\nantiken Werkzeugs, das vor langer\nZeit angefertigt wurde."),
 	PSTRING("A small dark shard.\nIt appears to be from some sort of\na tool made long ago.")
 );
 static u8 str_item_glitzerstueck_description[] = LANGDEP(
-	PSTRING("Eine funkelnde Scherbe eines antiken\nWerkzeugs, das vor langer Zeit\nangefertigt wurde."),
+	PSTRING("Eine funkelnde Scherbe eines\nantiken Werkzeugs, das vor langer\nZeit angefertigt wurde."),
 	PSTRING("A small sparkling shard.\nIt appears to be from some sort of\na tool made long ago.")
 );
 static u8 str_item_lichtstueck_description[] = LANGDEP(
-	PSTRING("Eine leuchtende Scherbe eines antiken\nWerkzeugs, das vor langer Zeit\nangefertigt wurde."),
+	PSTRING("Eine leuchtende Scherbe eines\nantiken Werkzeugs, das vor langer\nZeit angefertigt wurde."),
 	PSTRING("A small shining shard.\nIt appears to be from some sort of\na tool made long ago.")
 );
 static u8 str_item_mininugget_description[] = LANGDEP(
@@ -1774,9 +1773,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x0, //field_usage
+		NULL, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_MEISTERBALL
@@ -1790,7 +1789,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		0, //type
-		(void(*)(u8))0x0, //field_usage
+		NULL, //field_usage
 		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
 		0, // secondary_idx
@@ -1806,7 +1805,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		NULL, //field_usage
 		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
 		0, // secondary_idx
@@ -1822,7 +1821,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		2, //type
-		(void(*)(u8))0x0, //field_usage
+		NULL, //field_usage
 		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
 		0, // secondary_idx
@@ -1838,7 +1837,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		3, //type
-		(void(*)(u8))0x0, //field_usage
+		NULL, //field_usage
 		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
 		0, // secondary_idx
@@ -1854,7 +1853,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		4, //type
-		(void(*)(u8))0x0, //field_usage
+		NULL, //field_usage
 		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
 		0, // secondary_idx
@@ -1870,7 +1869,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		5, //type
-		(void(*)(u8))0x0, //field_usage
+		NULL, //field_usage
 		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
 		0, // secondary_idx
@@ -1886,7 +1885,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		6, //type
-		(void(*)(u8))0x0, //field_usage
+		NULL, //field_usage
 		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
 		0, // secondary_idx
@@ -1902,7 +1901,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		7, //type
-		(void(*)(u8))0x0, //field_usage
+		NULL, //field_usage
 		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
 		0, // secondary_idx
@@ -1918,7 +1917,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		8, //type
-		(void(*)(u8))0x0, //field_usage
+		NULL, //field_usage
 		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
 		0, // secondary_idx
@@ -1934,7 +1933,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		9, //type
-		(void(*)(u8))0x0, //field_usage
+		NULL, //field_usage
 		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
 		0, // secondary_idx
@@ -1950,7 +1949,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		10, //type
-		(void(*)(u8))0x0, //field_usage
+		NULL, //field_usage
 		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
 		0, // secondary_idx
@@ -1966,7 +1965,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		11, //type
-		(void(*)(u8))0x0, //field_usage
+		NULL, //field_usage
 		2, // battle_effect
 		item_pokeball_battle, //battle_usage2
 		0, // secondary_idx
@@ -1980,11 +1979,11 @@ item items[] = {
 		str_item_trank_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_GEGENGIFT
@@ -1996,11 +1995,11 @@ item items[] = {
 		str_item_gegengift_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_FEUERHEILER
@@ -2012,11 +2011,11 @@ item items[] = {
 		str_item_feuerheiler_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_EISHEILER
@@ -2028,11 +2027,11 @@ item items[] = {
 		str_item_eisheiler_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_AUFWECKER
@@ -2044,11 +2043,11 @@ item items[] = {
 		str_item_aufwecker_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_PARA_HEILER
@@ -2060,11 +2059,11 @@ item items[] = {
 		str_item_para_heiler_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_TOP_GENESUNG
@@ -2076,11 +2075,11 @@ item items[] = {
 		str_item_top_genesung_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_TOP_TRANK
@@ -2092,11 +2091,11 @@ item items[] = {
 		str_item_top_trank_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_HYPERTRANK
@@ -2108,11 +2107,11 @@ item items[] = {
 		str_item_hypertrank_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_SUPERTRANK
@@ -2124,11 +2123,11 @@ item items[] = {
 		str_item_supertrank_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_HYPERHEILER
@@ -2140,11 +2139,11 @@ item items[] = {
 		str_item_hyperheiler_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_BELEBER
@@ -2156,11 +2155,11 @@ item items[] = {
 		str_item_beleber_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_TOP_BELEBER
@@ -2172,11 +2171,11 @@ item items[] = {
 		str_item_top_beleber_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_TAFELWASSER
@@ -2188,11 +2187,11 @@ item items[] = {
 		str_item_co_mix_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_SPRUDEL
@@ -2204,11 +2203,11 @@ item items[] = {
 		str_item_c_saft_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_LIMONADE
@@ -2220,11 +2219,11 @@ item items[] = {
 		str_item_c_serum_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_KUHMUH_MILCH
@@ -2236,11 +2235,11 @@ item items[] = {
 		str_item_kuhmuh_milch_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_ENERGIESTAUB
@@ -2252,11 +2251,11 @@ item items[] = {
 		str_item_energiestaub_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_KRAFTWURZEL
@@ -2268,11 +2267,11 @@ item items[] = {
 		str_item_kraftwurzel_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_HEILPUDER
@@ -2284,11 +2283,11 @@ item items[] = {
 		str_item_heilpuder_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_VITALKRAUT
@@ -2300,11 +2299,11 @@ item items[] = {
 		str_item_vitalkraut_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_AETHER
@@ -2316,7 +2315,7 @@ item items[] = {
 		str_item_aether_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
 		(void(*)(u8))0x80a17e9, //field_usage
 		1, // battle_effect
@@ -2332,7 +2331,7 @@ item items[] = {
 		str_item_top_aether_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
 		(void(*)(u8))0x80a17e9, //field_usage
 		1, // battle_effect
@@ -2348,7 +2347,7 @@ item items[] = {
 		str_item_elixier_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
 		(void(*)(u8))0x80a17e9, //field_usage
 		1, // battle_effect
@@ -2364,7 +2363,7 @@ item items[] = {
 		str_item_top_elixier_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
 		(void(*)(u8))0x80a17e9, //field_usage
 		1, // battle_effect
@@ -2380,11 +2379,11 @@ item items[] = {
 		str_item_lavakeks_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_BLAUE_FLOETE
@@ -2398,9 +2397,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_GELBE_FLOETE
@@ -2414,9 +2413,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_ROTE_FLOETE
@@ -2430,9 +2429,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_SCHW_FLOETE
@@ -2448,7 +2447,7 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a1b81, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_WEISSE_FLOETE
@@ -2464,7 +2463,7 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a1b81, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_BEERENSAFT
@@ -2476,11 +2475,11 @@ item items[] = {
 		str_item_beerensaft_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_ZAUBERASCHE
@@ -2492,11 +2491,11 @@ item items[] = {
 		str_item_zauberasche_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
 		(void(*)(u8))0x80a1859, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_KUESTENSALZ
@@ -2510,9 +2509,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_KUESTENSCHALE
@@ -2526,9 +2525,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_PURPURSTUECK
@@ -2542,9 +2541,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_INDIGOSTUECK
@@ -2558,9 +2557,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_GELBSTUECK
@@ -2574,9 +2573,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_GRUENSTUECK
@@ -2590,9 +2589,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_MAGMAISIERER
@@ -2606,9 +2605,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_STROMISIERER
@@ -2622,9 +2621,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SCHOENSCHUPPE
@@ -2638,9 +2637,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_DUBIOSDISK
@@ -2654,9 +2653,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_DUESTERUMHANG
@@ -2670,9 +2669,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SCHUETZER
@@ -2686,9 +2685,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_LEBEN_ORB
@@ -2702,9 +2701,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_EVOLITH
@@ -2718,9 +2717,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SCHARFZAHN
@@ -2734,9 +2733,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ITEM_3D
@@ -2750,9 +2749,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ABRA_PUPPE
@@ -2768,7 +2767,7 @@ item items[] = {
 		2, //type
 		item_field_effect_abra_doll, //
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_KP_PLUS
@@ -2782,9 +2781,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_PROTEIN
@@ -2798,9 +2797,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_EISEN
@@ -2814,9 +2813,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_CARBON
@@ -2830,9 +2829,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_KALZIUM
@@ -2846,9 +2845,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SONDERBONBON
@@ -2864,7 +2863,7 @@ item items[] = {
 		1, //type
 		item_rare_candy_field_effect, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_AP_PLUS
@@ -2880,7 +2879,7 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a1805, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ZINK
@@ -2894,9 +2893,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_AP_TOP
@@ -2912,7 +2911,7 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a1805, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_GOLDBONBON
@@ -2928,7 +2927,7 @@ item items[] = {
 		1, //type
 		item_gold_candy_field_effect, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_MEGABLOCK
@@ -2940,9 +2939,9 @@ item items[] = {
 		str_item_megablock_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		2, // battle_effect
 		(void(*)(u8))0x80a1f69, //battle_usage2
 		0, // secondary_idx
@@ -2956,9 +2955,9 @@ item items[] = {
 		str_item_angriffplus_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		2, // battle_effect
 		(void(*)(u8))0x80a1f69, //battle_usage2
 		0, // secondary_idx
@@ -2972,9 +2971,9 @@ item items[] = {
 		str_item_x_angriff_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		2, // battle_effect
 		(void(*)(u8))0x80a1f69, //battle_usage2
 		0, // secondary_idx
@@ -2988,9 +2987,9 @@ item items[] = {
 		str_item_x_abwehr_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		2, // battle_effect
 		(void(*)(u8))0x80a1f69, //battle_usage2
 		0, // secondary_idx
@@ -3004,9 +3003,9 @@ item items[] = {
 		str_item_x_tempo_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		2, // battle_effect
 		(void(*)(u8))0x80a1f69, //battle_usage2
 		0, // secondary_idx
@@ -3020,9 +3019,9 @@ item items[] = {
 		str_item_x_treffer_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		2, // battle_effect
 		(void(*)(u8))0x80a1f69, //battle_usage2
 		0, // secondary_idx
@@ -3036,9 +3035,9 @@ item items[] = {
 		str_item_x_spezial_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		2, // battle_effect
 		(void(*)(u8))0x80a1f69, //battle_usage2
 		0, // secondary_idx
@@ -3054,7 +3053,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		2, // battle_effect
 		(void(*)(u8))0x80a20fd, //battle_usage2
 		0, // secondary_idx
@@ -3070,7 +3069,7 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		2, // battle_effect
 		(void(*)(u8))0x80a20fd, //battle_usage2
 		0, // secondary_idx
@@ -3086,9 +3085,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SUPERSCHUTZ
@@ -3104,7 +3103,7 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a1a85, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TOP_SCHUTZ
@@ -3120,7 +3119,7 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a1a85, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_FLUCHTSEIL
@@ -3136,7 +3135,7 @@ item items[] = {
 		2, //type
 		(void(*)(u8))0x80a1c99, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SCHUTZ
@@ -3152,7 +3151,7 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a1a85, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		// ITEM_KRAFTSTAUB
@@ -3166,9 +3165,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_NULLSAFT
@@ -3184,7 +3183,7 @@ item items[] = {
 		1, //type
 		item_field_null_syrup, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ITEM_59
@@ -3196,11 +3195,11 @@ item items[] = {
 		str_item_apfel_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_ITEM_5A
@@ -3212,11 +3211,11 @@ item items[] = {
 		str_item_goldapfel_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_ITEM_5B
@@ -3228,11 +3227,11 @@ item items[] = {
 		str_item_bitterkraut_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_RIESENAPFEL
@@ -3244,11 +3243,11 @@ item items[] = {
 		str_item_riesenapfel_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_MEDICINE, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_SONNENSTEIN
@@ -3262,9 +3261,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a183d, //field_usage
+		item_field_function_evolution_stone, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_MONDSTEIN
@@ -3278,9 +3277,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a183d, //field_usage
+		item_field_function_evolution_stone, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_FEUERSTEIN
@@ -3294,9 +3293,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a183d, //field_usage
+		item_field_function_evolution_stone, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_DONNERSTEIN
@@ -3310,9 +3309,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a183d, //field_usage
+		item_field_function_evolution_stone, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_WASSERSTEIN
@@ -3326,9 +3325,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a183d, //field_usage
+		item_field_function_evolution_stone, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_BLATTSTEIN
@@ -3342,9 +3341,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a183d, //field_usage
+		item_field_function_evolution_stone, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_LINKKABEL
@@ -3358,9 +3357,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a183d, //field_usage
+		item_field_function_evolution_stone, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_FINSTERSTEIN
@@ -3374,9 +3373,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a183d, //field_usage
+		item_field_function_evolution_stone, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_LEUCHTSTEIN
@@ -3390,9 +3389,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a183d, //field_usage
+		item_field_function_evolution_stone, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_FUNKELSTEIN
@@ -3406,9 +3405,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a183d, //field_usage
+		item_field_function_evolution_stone, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_MINIPILZ
@@ -3422,9 +3421,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_RIESENPILZ
@@ -3438,9 +3437,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SPV_ORB_N
@@ -3454,9 +3453,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x9008d01, //field_usage
+		item_field_nature_stone, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_PERLE
@@ -3470,9 +3469,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_RIESENPERLE
@@ -3486,9 +3485,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_STERNENSTAUB
@@ -3502,9 +3501,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_STERNENSTUECK
@@ -3518,9 +3517,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_NUGGET
@@ -3534,9 +3533,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_HERZSCHUPPE
@@ -3550,9 +3549,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ANGR_ORB_P
@@ -3566,9 +3565,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x9008d01, //field_usage
+		item_field_nature_stone, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ANGR_ORB_N
@@ -3582,9 +3581,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x9008d01, //field_usage
+		item_field_nature_stone, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_VERT_ORB_P
@@ -3598,9 +3597,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x9008d01, //field_usage
+		item_field_nature_stone, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_VERT_ORB_N
@@ -3614,9 +3613,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x9008d01, //field_usage
+		item_field_nature_stone, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_INIT_ORB_P
@@ -3630,9 +3629,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x9008d01, //field_usage
+		item_field_nature_stone, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_INIT_ORB_N
@@ -3646,9 +3645,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x9008d01, //field_usage
+		item_field_nature_stone, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SPA_ORB_P
@@ -3662,9 +3661,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x9008d01, //field_usage
+		item_field_nature_stone, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SPA_ORB_N
@@ -3678,9 +3677,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x9008d01, //field_usage
+		item_field_nature_stone, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SPV_ORB_P
@@ -3694,9 +3693,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x9008d01, //field_usage
+		item_field_nature_stone, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_79
@@ -3710,9 +3709,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		0, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_HAFENBRIEF
@@ -3728,7 +3727,7 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_GLITZERBRIEF
@@ -3744,7 +3743,7 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_EILBRIEF
@@ -3760,7 +3759,7 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_WALDBRIEF
@@ -3776,7 +3775,7 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_WELLENBRIEF
@@ -3792,7 +3791,7 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_PERLENBRIEF
@@ -3808,7 +3807,7 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_DUNKELBRIEF
@@ -3824,7 +3823,7 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TROPENBRIEF
@@ -3840,7 +3839,7 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TRAUMBRIEF
@@ -3856,7 +3855,7 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_EDELBRIEF
@@ -3872,7 +3871,7 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_RETROBRIEF
@@ -3888,7 +3887,7 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_AMRENABEERE
@@ -3902,9 +3901,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_MARONBEERE
@@ -3918,9 +3917,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_PIRSIFBEERE
@@ -3934,9 +3933,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_FRAGIABEERE
@@ -3950,9 +3949,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_WILBIRBEERE
@@ -3966,9 +3965,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_JONAGOBEERE
@@ -3998,9 +3997,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_PERSIMBEERE
@@ -4014,9 +4013,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_PRUNUSBEERE
@@ -4030,9 +4029,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_TSITRUBEERE
@@ -4046,9 +4045,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		1, //type
-		(void(*)(u8))item_field_by_effect_table, //field_usage
+		item_field_by_effect_table,
 		1, // battle_effect
-		(void(*)(u8))0x80a20a9, //battle_usage2
+		item_battle_effect_medicine,
 		0, // secondary_idx
 	},{
 		//ITEM_GIEFEBEERE
@@ -4062,9 +4061,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_WIKIBEERE
@@ -4078,9 +4077,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_MAGOBEERE
@@ -4094,9 +4093,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_GAUVEBEERE
@@ -4110,9 +4109,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_YAPABEERE
@@ -4126,9 +4125,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_HIMMIHBEERE
@@ -4142,9 +4141,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_MORBBEERE
@@ -4158,9 +4157,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_NANABBEERE
@@ -4174,9 +4173,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_NIRBEBEERE
@@ -4190,9 +4189,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SANANABEERE
@@ -4206,9 +4205,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_GRANABEERE
@@ -4222,9 +4221,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SETANGBEERE
@@ -4238,9 +4237,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_QUALOTBEERE
@@ -4254,9 +4253,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_HONMELBEERE
@@ -4270,9 +4269,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_LABRUSBEERE
@@ -4286,9 +4285,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TAMOTBEERE
@@ -4302,9 +4301,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SAIMBEERE
@@ -4318,9 +4317,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_MAGOSTBEERE
@@ -4334,9 +4333,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_RABUTABEERE
@@ -4350,9 +4349,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TRONZIBEERE
@@ -4366,9 +4365,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_KIWANBEERE
@@ -4382,9 +4381,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_PALLMBEERE
@@ -4398,9 +4397,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_WASMELBEERE
@@ -4414,9 +4413,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_DURINBEERE
@@ -4430,9 +4429,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_MYRTILBEERE
@@ -4446,9 +4445,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_LYDZIBEERE
@@ -4462,9 +4461,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_LINGANBEERE
@@ -4478,9 +4477,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SALKABEERE
@@ -4494,9 +4493,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TAHAYBEERE
@@ -4510,9 +4509,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_APIKOBEERE
@@ -4526,9 +4525,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_LANSATBEERE
@@ -4542,9 +4541,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_KRAMBOBEERE
@@ -4558,9 +4557,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ENIGMABEERE
@@ -4590,9 +4589,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_WAHLGLAS
@@ -4606,9 +4605,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_WAHLSCHAL
@@ -4622,9 +4621,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_BLENDPUDER
@@ -4638,9 +4637,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SCHLOHKRAUT
@@ -4654,9 +4653,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_MACHOBAND
@@ -4670,9 +4669,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_EP_TEILER
@@ -4686,9 +4685,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_FLINKKLAUE
@@ -4702,9 +4701,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SANFTGLOCKE
@@ -4718,9 +4717,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_MENTALKRAUT
@@ -4734,9 +4733,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_WAHLBAND
@@ -4750,9 +4749,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_KING_STEIN
@@ -4766,9 +4765,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SILBERSTAUB
@@ -4782,9 +4781,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_MUENZAMULETT
@@ -4798,9 +4797,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SCHUTZBAND
@@ -4814,9 +4813,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SEELENTAU
@@ -4830,9 +4829,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ABYSSZAHN
@@ -4846,9 +4845,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ABYSSPLATTE
@@ -4862,9 +4861,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_RAUCHBALL
@@ -4878,9 +4877,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_EWIGSTEIN
@@ -4894,9 +4893,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_FOKUS_BAND
@@ -4910,9 +4909,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_GLUECKS_EI
@@ -4926,9 +4925,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SCOPE_LINSE
@@ -4942,9 +4941,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_METALLMANTEL
@@ -4958,9 +4957,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_UEBERRESTE
@@ -4974,9 +4973,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_DRACHENHAUT
@@ -4990,9 +4989,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_KUGELBLITZ
@@ -5006,9 +5005,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_PUDERSAND
@@ -5022,9 +5021,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_GRANITSTEIN
@@ -5038,9 +5037,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_WUNDERSAAT
@@ -5054,9 +5053,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SCHATTENGLAS
@@ -5070,9 +5069,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SCHWARZGURT
@@ -5086,9 +5085,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_MAGNET
@@ -5102,9 +5101,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ZAUBERWASSER
@@ -5118,9 +5117,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_HACKATTACK
@@ -5134,9 +5133,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_GIFTSTICH
@@ -5150,9 +5149,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_EWIGES_EIS
@@ -5166,9 +5165,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_BANNSTICKER
@@ -5182,9 +5181,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_KRUEMMLOEFFEL
@@ -5198,9 +5197,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_HOLZKOHLE
@@ -5214,9 +5213,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_DRACHENZAHN
@@ -5230,9 +5229,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SEIDENSCHAL
@@ -5246,9 +5245,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_UP_GRADE
@@ -5262,9 +5261,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SEEGESANG
@@ -5278,9 +5277,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SEERAUCH
@@ -5294,9 +5293,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_LAXRAUCH
@@ -5310,9 +5309,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_LUCKY_PUNCH
@@ -5326,9 +5325,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_METALLSTAUB
@@ -5342,9 +5341,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_KAMPFKNOCHEN
@@ -5358,9 +5357,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_LAUCHSTANGE
@@ -5374,9 +5373,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_BISAFLORNIT
@@ -5390,9 +5389,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_GLURAKNIT
@@ -5406,9 +5405,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TURTOKNIT
@@ -5422,9 +5421,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		// ITEM_ZOBIRISNIT
@@ -5438,9 +5437,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_FLUNKIFERNIT
@@ -5454,9 +5453,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SENGONIT
@@ -5470,9 +5469,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_VIPITISNIT
@@ -5486,9 +5485,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_PALIMPALIMNIT
@@ -5502,9 +5501,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_altarianit
@@ -5518,9 +5517,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_AMPHAROSNIT
@@ -5534,9 +5533,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_banettenit
@@ -5550,9 +5549,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_BIBORNIT
@@ -5566,9 +5565,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ITEM_EE
@@ -5582,9 +5581,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ITEM_EF
@@ -5598,9 +5597,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TROPIUSNIT
@@ -5614,9 +5613,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_OCTILLERYNIT
@@ -5630,9 +5629,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ITEM_F2
@@ -5646,9 +5645,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ITEM_F3
@@ -5662,9 +5661,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ITEM_F4
@@ -5678,9 +5677,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket 
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ITEM_F5
@@ -5694,9 +5693,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ARIADOSNIT
@@ -5710,9 +5709,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ITEM_F7
@@ -5726,9 +5725,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ITEM_F8
@@ -5742,9 +5741,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ITEM_F9
@@ -5758,9 +5757,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ITEM_FA
@@ -5774,9 +5773,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ITEM_FB
@@ -5790,9 +5789,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ITEM_FC
@@ -5806,9 +5805,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ITEM_FD
@@ -5822,9 +5821,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ROTER_SCHAL
@@ -5838,9 +5837,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_BLAUER_SCHAL
@@ -5854,9 +5853,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ROSA_SCHAL
@@ -5870,9 +5869,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_KOEDER
@@ -5886,9 +5885,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BAIT, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_GOLDENER_KOEDER
@@ -5902,9 +5901,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_BAIT, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//
@@ -5916,11 +5915,11 @@ item items[] = {
 		str_item_leuchtkoeder_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_BAIT, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_MUENZKORB
@@ -5936,7 +5935,7 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a154d, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_DETEKTOR
@@ -5952,7 +5951,7 @@ item items[] = {
 		2, //type
 		(void(*)(u8))0x80a1525, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ANGEL
@@ -5968,7 +5967,7 @@ item items[] = {
 		2, //type
 		(void(*)(u8))0x80a1425, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_PROFIANGEL
@@ -5984,7 +5983,7 @@ item items[] = {
 		2, //type
 		(void(*)(u8))0x80a1425, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		1 // secondary_idx
 	},{
 		//ITEM_SUPERANGEL
@@ -6000,7 +5999,7 @@ item items[] = {
 		2, //type
 		(void(*)(u8))0x80a1425, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		2 // secondary_idx
 	},{
 		//ITEM_BOOTSTICKET
@@ -6014,9 +6013,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_WETTB_KARTE
@@ -6030,9 +6029,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_WOLKENGARN
@@ -6046,9 +6045,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_WAILMERKANNE
@@ -6062,9 +6061,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		// ITEM_GLUECKSMUENZE
@@ -6078,9 +6077,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ASCHETASCHE
@@ -6094,9 +6093,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))item_ashbag_field, //field_usage
+		item_ashbag_field,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_GEISTERSCHLUESSEL
@@ -6110,9 +6109,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_KUNSTRAD
@@ -6128,7 +6127,7 @@ item items[] = {
 		2, //type
 		(void(*)(u8))0x80a1319, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_BOX
@@ -6142,9 +6141,9 @@ item items[] = {
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_BRIEF
@@ -6158,9 +6157,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_AEON_TICKET
@@ -6174,9 +6173,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SPIRITKERN
@@ -6190,9 +6189,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_BLAUES_ZAHNRAD
@@ -6206,9 +6205,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ROTES_ZAHNRAD
@@ -6222,9 +6221,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_GELBES_ZAHNRAD
@@ -6238,9 +6237,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_GRUENES_ZAHNRAD
@@ -6254,9 +6253,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		// ITEM_GOLDSCHLUESSEL
@@ -6270,9 +6269,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ZELLENSCHUESSEL
@@ -6286,9 +6285,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_K4_SCHLUESSEL
@@ -6302,9 +6301,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_K6_SCHLUESSEL
@@ -6318,9 +6317,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_L_SCHLUESSEL
@@ -6334,9 +6333,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_WURZELFOSSIL
@@ -6350,9 +6349,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_KLAUENFOSSIL
@@ -6366,9 +6365,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_DEVON_SCOPE
@@ -6382,9 +6381,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM01
@@ -6398,9 +6397,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM02
@@ -6414,9 +6413,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM03
@@ -6430,9 +6429,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM04
@@ -6446,9 +6445,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM05
@@ -6462,9 +6461,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM06
@@ -6478,9 +6477,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM07
@@ -6494,9 +6493,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM08
@@ -6510,9 +6509,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM09
@@ -6526,9 +6525,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM10
@@ -6542,9 +6541,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM11
@@ -6558,9 +6557,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM12
@@ -6574,9 +6573,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM13
@@ -6590,9 +6589,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM14
@@ -6606,9 +6605,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM15
@@ -6622,9 +6621,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM16
@@ -6638,9 +6637,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM17
@@ -6654,9 +6653,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM18
@@ -6670,9 +6669,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM19
@@ -6686,9 +6685,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM20
@@ -6702,9 +6701,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM21
@@ -6718,9 +6717,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM22
@@ -6734,9 +6733,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM23
@@ -6750,9 +6749,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM24
@@ -6766,9 +6765,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM25
@@ -6782,9 +6781,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM26
@@ -6798,9 +6797,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM27
@@ -6814,9 +6813,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM28
@@ -6830,9 +6829,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM29
@@ -6846,9 +6845,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM30
@@ -6862,9 +6861,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM31
@@ -6878,9 +6877,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM32
@@ -6894,9 +6893,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM33
@@ -6910,9 +6909,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM34
@@ -6926,9 +6925,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM35
@@ -6942,9 +6941,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM36
@@ -6958,9 +6957,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM37
@@ -6974,9 +6973,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM38
@@ -6990,9 +6989,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM39
@@ -7006,9 +7005,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM40
@@ -7022,9 +7021,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM41
@@ -7038,9 +7037,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM42
@@ -7054,9 +7053,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM43
@@ -7070,9 +7069,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM44
@@ -7086,9 +7085,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM45
@@ -7102,9 +7101,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM46
@@ -7118,9 +7117,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM47
@@ -7134,9 +7133,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM48
@@ -7150,9 +7149,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM49
@@ -7166,9 +7165,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TM50
@@ -7182,9 +7181,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_VM01
@@ -7198,9 +7197,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_VM02
@@ -7214,9 +7213,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_VM03
@@ -7230,9 +7229,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_VM04
@@ -7246,9 +7245,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_VM05
@@ -7262,9 +7261,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_VM06
@@ -7278,9 +7277,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_VM07
@@ -7294,9 +7293,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_VM08
@@ -7310,9 +7309,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0x0, //field_usage
+		tm_hm_field_function,
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SCHWARZPULVER
@@ -7326,9 +7325,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		// ITEM_VIERBLATT
@@ -7342,9 +7341,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_EICHS_PAKET
@@ -7358,13 +7357,13 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_POKEFLOETE
-		LANGDEP(PSTRING("Pok▶löte"), PSTRING("Poké Flute")),
+		LANGDEP(PSTRING("Pokéflöte"), PSTRING("Poké Flute")),
 		0x15e, //index
 		0, //price
 		0, //holding_effect_id
@@ -7390,9 +7389,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_RAD_COUPON
@@ -7406,9 +7405,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_PKMCORDER
@@ -7422,9 +7421,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x0, //field_usage
+		NULL, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_ALTBERNSTEIN
@@ -7438,9 +7437,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TUEROEFFNER
@@ -7454,9 +7453,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_LIFTOEFFNER
@@ -7470,9 +7469,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_HELIXFOSSIL
@@ -7486,9 +7485,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_DOMFOSSIL
@@ -7502,9 +7501,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SILPH_SCOPE
@@ -7518,9 +7517,9 @@ item items[] = {
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_FAHRRAD
@@ -7536,7 +7535,7 @@ item items[] = {
 		2, //type
 		(void(*)(u8))0x80a1319, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_KARTE
@@ -7552,7 +7551,7 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a1d4d, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_KAMPFFAHNDER
@@ -7568,7 +7567,7 @@ item items[] = {
 		2, //type
 		(void(*)(u8))0x80a1e89, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_RUHMESDATEI
@@ -7584,7 +7583,7 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a1de5, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_VMTM_BOX
@@ -7600,7 +7599,7 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a1875, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_BEERENTUETE
@@ -7632,7 +7631,7 @@ item items[] = {
 		2, //type
 		(void(*)(u8))0x80a19d9, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_TRI_PASS
@@ -7646,9 +7645,9 @@ item items[] = {
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_BUNT_PASS
@@ -7662,9 +7661,9 @@ item items[] = {
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_MEGA_AMULETT
@@ -7678,9 +7677,9 @@ item items[] = {
 		0, // Exits Bag on
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0,
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_GEHEIMTICKET
@@ -7694,9 +7693,9 @@ item items[] = {
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_AURORATICKET
@@ -7710,9 +7709,9 @@ item items[] = {
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_PUDERDOESCHEN
@@ -7728,7 +7727,7 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a15d5, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_RUBIN
@@ -7742,9 +7741,9 @@ item items[] = {
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
 		//ITEM_SAPHIR
@@ -7758,9 +7757,9 @@ item items[] = {
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		item_field_function_print_string_can_not_be_used, //field_usage
 		0, // battle_effect
-		(void(*)(u8))0x0, //battle_usage2
+		NULL, //battle_usage2
 		0, // secondary_idx
 	},
 	[ITEM_NORMALJUWEL] = {
@@ -7768,174 +7767,174 @@ item items[] = {
 		.index = 0x178, .price = 200, 
 		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_NORMAL,
 		.description = str_normaljuwel_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_KAMPFJUWEL] = {
 		.name = LANGDEP(PSTRING("Kampfjuwel"), PSTRING("Kampfgem")),
 		.index = 0x179, .price = 200,
 		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_KAMPF,
 		.description = str_kampfjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_FLUGJUWEL] = {
 		.name = LANGDEP(PSTRING("Flugjuwel"), PSTRING("Fluggem")),
 		.index = 0x17a, .price = 200,
 		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_FLUG,
 		.description = str_flugjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_GIFTJUWEL] = {
 		.name = LANGDEP(PSTRING("Giftjuwel"), PSTRING("Giftgem")),
 		.index = 0x17b, .price = 200,
 		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_GIFT,
 		.description = str_giftjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_BODENJUWEL] = {
 		.name = LANGDEP(PSTRING("Bodenjuwel"), PSTRING("Bodengem")),
 		.index = 0x17c, .price = 200,
 		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_BODEN,
 		.description = str_bodenjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_GESTEINJUWEL] = {
 		.name = LANGDEP(PSTRING("Gesteinjuwel"), PSTRING("Gesteingem")),
 		.index = 0x17d, .price = 200,
 		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_GESTEIN,
 		.description = str_gesteinjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_KAEFERJUWEL] = {
 		.name = LANGDEP(PSTRING("Kaeferjuwel"), PSTRING("Kaefergem")),
 		.index = 0x17e, .price = 200,
 		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_KAEFER,
 		.description = str_kaeferjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_GEISTJUWEL] = {
 		.name = LANGDEP(PSTRING("Geistjuwel"), PSTRING("Geistgem")),
 		.index = 0x17f, .price = 200,
 		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_GEIST,
 		.description = str_geistjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_STAHLJUWEL] = {
 		.name = LANGDEP(PSTRING("Stahljuwel"), PSTRING("Stahlgem")),
 		.index = 0x180, .price = 200,
 		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_STAHL,
 		.description = str_stahljuwel_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_FEEJUWEL] = {
 		.name = LANGDEP(PSTRING("Feejuwel"), PSTRING("Feegem")),
 		.index = 0x181, .price = 200,
 		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_FEE,
 		.description = str_feejuwel_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_FEUERJUWEL] = {
 		.name = LANGDEP(PSTRING("Feuerjuwel"), PSTRING("Feuergem")),
 		.index = 0x182, .price = 200,
 		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_FEUER,
 		.description = str_feuerjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_WASSERJUWEL] = {
 		.name = LANGDEP(PSTRING("Wasserjuwel"), PSTRING("Wassergem")),
 		.index = 0x183, .price = 200,
 		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_WASSER,
 		.description = str_wasserjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_PFLANZEJUWEL] = {
 		.name = LANGDEP(PSTRING("Pflanzejuwel"), PSTRING("Pflanzegem")),
 		.index = 0x184, .price = 200,
 		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_PFLANZE,
 		.description = str_pflanzejuwel_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_ELEKTROJUWEL] = {
 		.name = LANGDEP(PSTRING("Elektrojuwel"), PSTRING("Elektrogem")),
 		.index = 0x185, .price = 200,
 		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_ELEKTRO,
 		.description = str_elektrojuwel_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_PSYCHOJUWEL] = {
 		.name = LANGDEP(PSTRING("Psychojuwel"), PSTRING("Psychogem")),
 		.index = 0x186, .price = 200,
 		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_PSYCHO,
 		.description = str_psychojuwel_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_EISJUWEL] = {
 		.name = LANGDEP(PSTRING("Eisjuwel"), PSTRING("Eisgem")),
 		.index = 0x187, .price = 200,
 		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_EIS,
 		.description = str_eisjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_DRACOJUWEL] = {
 		.name = LANGDEP(PSTRING("Drachejuwel"), PSTRING("Drachegem")),
 		.index = 0x0, .price = 200,
 		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_DRACHE,
 		.description = str_drachejuwel_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_UNLICHTJUWEL] = {
 		.name = LANGDEP(PSTRING("Unlichtjuwel"), PSTRING("Unlichtgem")),
 		.index = 0x189, .price = 200,
 		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_UNLICHT,
 		.description = str_unlichtjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_LUNARSTUECK] = {
-		.name = LANGDEP(PSTRING("Lunarstueck"), PSTRING("Lunar Piece")),
+		.name = LANGDEP(PSTRING("Lunarstück"), PSTRING("Lunar Piece")),
 		.index = 0x18a, .price = 200,
 		.description = str_item_lunarstueck_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_SOLARSTUECK] = {
-		.name = LANGDEP(PSTRING("Solarstueck"), PSTRING("Solar Piece")),
+		.name = LANGDEP(PSTRING("Solarstück"), PSTRING("Solar Piece")),
 		.index = 0x18b, .price = 200,
 		.description = str_item_solarstueck_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_DUESTERSTUECK] = {
-		.name = LANGDEP(PSTRING("Düsterstuck"), PSTRING("Dusk Piece")),
+		.name = LANGDEP(PSTRING("Düsterstück"), PSTRING("Dusk Piece")),
 		.index = 0x18c, .price = 200,
 		.description = str_item_duesterstueck_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_GLITZERSTUECK] = {
-		.name = LANGDEP(PSTRING("Glitzerstueck"), PSTRING("Sparkle Piece")),
+		.name = LANGDEP(PSTRING("Glitzerstück"), PSTRING("Sparkle Piece")),
 		.index = 0x18d, .price = 200,
 		.description = str_item_glitzerstueck_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_LICHTSTUECK] = {
-		.name = LANGDEP(PSTRING("Lichtstueck"), PSTRING("Light Piece")),
+		.name = LANGDEP(PSTRING("Lichtstück"), PSTRING("Light Piece")),
 		.index = 0x18e, .price = 200,
 		.description = str_item_lichtstueck_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_MININUGGET] = {
 		.name = LANGDEP(PSTRING("Mininugget"), PSTRING("Mini Nugget")),
 		.index = ITEM_MININUGGET, .price = 1000,
 		.description = str_item_mininugget_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_QUARZSTAUB] = {
 		.name = LANGDEP(PSTRING("Quarzstaub"), PSTRING("Quartz Dust")),
 		.index = ITEM_QUARZSTAUB, .price = 50,
 		.description = str_item_quarzstaub_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_ENERGIEQUARZ] = {
 		.name = LANGDEP(PSTRING("Energiequarz"), PSTRING("Energy Quartz")),
 		.index = ITEM_ENERGIEQUARZ, .price = 1000,
 		.description = str_item_energiequarz_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 		.holding_effect_id = HOLD_EFFECT_ENERGY_QUARZ,
 	},
 	[ITEM_MULCH] = {
@@ -7949,28 +7948,28 @@ item items[] = {
 		.index = ITEM_WUESTEN_EI, .price = 100,
 		.description = str_item_wuesten_ei_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_WEATHER_EGG, .holding_effect_param = WEATHER_ROCK_SANDSTORM,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_TUNDRA_EI] = {
 		.name = LANGDEP(PSTRING("Blizzard-Ei"), PSTRING("Blizzard-Egg")),
 		.index = ITEM_TUNDRA_EI, .price = 100,
 		.description = str_item_tundra_ei_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_WEATHER_EGG, .holding_effect_param = WEATHER_ROCK_HAIL,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_GEWITTER_EI] = {
 		.name = LANGDEP(PSTRING("Gewitter-Ei"), PSTRING("Storm-Egg")),
 		.index = ITEM_TUNDRA_EI, .price = 100,
 		.description = str_item_gewitter_ei_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_WEATHER_EGG, .holding_effect_param = WEATHER_ROCK_RAIN,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_SONNEN_EI] = {
 		.name = LANGDEP(PSTRING("Sonnen-Ei"), PSTRING("Sun-Egg")),
 		.index = ITEM_SONNEN_EI, .price = 100,
 		.description = str_item_sonnen_ei_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_WEATHER_EGG, .holding_effect_param = WEATHER_ROCK_SUN,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_ENERGIEDISK] = {
 		.name = LANGDEP(PSTRING("Energiedisk"), PSTRING("Energy Disc")),
@@ -7983,91 +7982,91 @@ item items[] = {
 		.index = ITEM_BEULENHELM, .price = 200,
 		.description = str_item_beulenhelm_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_BEULENHELM, .holding_effect_param = 6,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_EXPERTENGURT] = {
 		.name = LANGDEP(PSTRING("Expertengurt"), PSTRING("Expert Belt")),
 		.index = ITEM_EXPERTENGURT, .price = 200,
 		.description = str_item_expertengurt_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_EXPERT_BELT, .holding_effect_param = 20,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_ENERGIEKRAUT] = {
 		.name = LANGDEP(PSTRING("Energiekraut"), PSTRING("Power Herb")),
 		.index = ITEM_ENERGIEKRAUT, .price = 200,
 		.description = str_item_energiekraut_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_POWER_HERB,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_FOKUSGURT] = {
 		.name = LANGDEP(PSTRING("Fokusgurt"), PSTRING("Focus Sash")),
 		.index = ITEM_FOKUSGURT, .price = 200,
 		.description = str_item_fokusgurt_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_FOCUS_SASH,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_GROSSLINSE] = {
 		.name = LANGDEP(PSTRING("Großlinse"), PSTRING("Wide Lens")),
 		.index = ITEM_GROSSLINSE, .price = 200,
 		.description = str_item_grosslinse_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_BOOST_ACCURACY, .holding_effect_param = 20,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_GIFTSCHLEIM] = {
 		.name = LANGDEP(PSTRING("Giftschleim"), PSTRING("Black Sludge")),
 		.index = ITEM_GIFTSCHLEIM, .price = 200,
 		.description = str_item_giftschleim_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_RECOVERS_HP_AT_END_OF_TURN_FOR_TYPE, .holding_effect_param = TYPE_GIFT,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_MUSKELBAND] = {
 		.name = LANGDEP(PSTRING("Muskelband"), PSTRING("Muscle Band")),
 		.index = ITEM_MUSKELBAND, .price = 200,
 		.description = str_item_muskelband_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_BOOST_PHYSICAL_MOVES, .holding_effect_param = 10,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_SCHLAUBRILLE] = {
 		.name = LANGDEP(PSTRING("Schlaubrille"), PSTRING("Wise Glasses")),
 		.index = ITEM_SCHLAUBRILLE, .price = 200,
 		.description = str_item_schlaubrille_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_BOOST_SPECIAL_MOVES, .holding_effect_param = 10,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_HEISS_ORB] = {
 		.name = LANGDEP(PSTRING("Heiß-Orb"), PSTRING("Flame Orb")),
 		.index = ITEM_HEISS_ORB, .price = 200,
 		.description = str_item_heiss_orb_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_CAUSES_BURN, .holding_effect_param = 100,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_TOXIK_ORB] = {
 		.name = LANGDEP(PSTRING("Toxik-Orb"), PSTRING("Toxic Orb")),
 		.index = ITEM_TOXIK_ORB, .price = 200,
 		.description = str_item_toxik_orb_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_CAUSES_POISON, .holding_effect_param = 100,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_OFFENSIVWESTE] = {
 		.name = LANGDEP(PSTRING("Offensivweste"), PSTRING("Assault Vest")),
 		.index = ITEM_OFFENSIVWESTE, .price = 200,
 		.description = str_item_offensivweste_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_ASSAULT_VEST,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_SCHWAECHENSCHUTZ] = {
 		.name = LANGDEP(PSTRING("Schw.-Schutz"), PSTRING("Weakness Policy")),
 		.index = ITEM_SCHWAECHENSCHUTZ, .price = 200,
 		.description = str_item_schwaechenschutz_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_WEAKNESS_POLICY,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_KLAMMERBAND] = {
 		.name = LANGDEP(PSTRING("Klammerband"), PSTRING("Binding Band")),
 		.index = ITEM_KLAMMERBAND, .price = 200,
 		.description = str_item_klammerband_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_BINDING_BAND,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_LOTUS_BALL] = {
 		.name = LANGDEP(PSTRING("Lotus-Ball"), PSTRING("Lotus Ball")),
@@ -8128,25 +8127,25 @@ item items[] = {
 		.index = ITEM_KRYO_ORB, .price = 200,
 		.description = str_item_kryo_orb_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_CAUSES_FREEZE, .holding_effect_param = 50,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_FIRNONTORNIT] = {
 		.name = LANGDEP(PSTRING("Firnontornit"), ("Glalienite")),
 		.index = ITEM_FIRNONTORNIT,
 		.description = str_item_firnontornit_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_JUGONGNIT] = {
 		.name = LANGDEP(PSTRING("Jugongnit"), ("Jugongnit")),
 		.index = ITEM_JUGONGNIT,
 		.description = str_item_jugongnit_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_WIRBELPILZ] = {
 		.name = LANGDEP(PSTRING("Wirbelpilz"), PSTRING("Vortex-Shroom")),
 		.index = ITEM_WIRBELPILZ,
 		.description = str_item_wirbelpilz_description, .pocket = POCKET_ITEMS, .type=4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 		.holding_effect_id = HOLD_EFFECT_VORTEX_SHROOM,
 		.holding_effect_param = 25,
 	},

@@ -12,7 +12,7 @@
 #include "save.h"
 #include "superstate.h"
 #include "language.h"
-
+#include "gp_menu.h"
 
 
 static tboxdata start_menu_clock_tboxdata = {
@@ -82,7 +82,7 @@ bool start_menu_initilize() {
             break;
         case 5: {
             u8 box_idx = start_menu_get_tbox_idx();
-            start_menu_state.cursor = sub_0810f888(box_idx, 2, 0, 0, 15, 
+            start_menu_state.cursor = gp_menu_initialize_with_unmuted_a_press(box_idx, 2, 0, 0, 15, 
                 start_menu_state.number_items, start_menu_state.cursor);
             if (!sub_080bf8d8() && !is_bank_x0_and_map_x40()) {
                 start_menu_print_item_description(start_menu_item_descriptions[start_menu_state.items[start_menu_state.cursor]]);

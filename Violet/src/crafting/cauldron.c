@@ -31,6 +31,7 @@ static bg_config cauldron_bg_configs[] = {
 
 static tboxdata cauldron_tboxes[] = {
     [0] = {.bg_id = 0, .x = 2, .y = 15, .w = 26, .h = 4, .pal = 15, .start_tile = 1},
+    [1] = {.bg_id = 0xFF},
 };
 
 static void cauldron_bg_scrolling_proceed() {
@@ -518,7 +519,7 @@ void cauldron_scene_setup() {
             pal_decompress(gfx_crafting_cauldronPal, 0, sizeof(color_t) * 256);
             pal_decompress(gfx_crafting_cauldron_lightsPal, (u16)(256 + 16 * oam_allocate_palette(CAULDRON_LIGHT_TAG)), 16 * sizeof(color_t));
             battle_animation_load_oam_palette(&battle_animation_palettes[11]);
-            tbox_message_init(0, 1 + 26 * 4, 15 * 16);
+            tbox_init_frame_std(0, 1 + 26 * 4, 15 * 16);
             // tbox_context_init_border_set_style(0, 256 + 20, 14 * 16);
             pal_set_all_to_black();
             break;

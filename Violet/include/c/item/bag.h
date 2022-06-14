@@ -29,13 +29,24 @@ typedef struct {
 
 extern bag_pocket_t bag_pockets[MAX_NUM_POCKETS];
 
+#define POCKET_TO_BAG_POCKETS_IDX(pocket) ((u8)(pocket - 1))
+
 #define MAX_NUM_PC_ITEMS      30
 #define MAX_NUM_BAG_ITEMS     50
 #define MAX_NUM_BAG_KEY_ITEMS  30
 #define MAX_NUM_BAG_POKEBALLS 20
 #define MAX_NUM_BAG_TM_HMS     58
 #define MAX_NUM_BAG_BERRIES   44
+#define MAX_NUM_BAG_MEDICINE 32
 #define MAX_NUM_BAG_BAIT   8 
+
+/**
+ * @brief Applies a new encryption key to an quantity encrypted with save1->encryption_key
+ * 
+ * @param dst the quantity to re-encrypt
+ * @param key the key to encrypt with
+ */
+void bag_item_apply_new_encryption_key(u16 *dst, u32 key);
 
 /**
  * Prints a string in the bag and continues with a contnmuation function.
@@ -77,6 +88,31 @@ void item_menu_fade_and_continue(u8 self);
  * @param which position in the pocket
  **/
 u16 item_get_idx_by_pocket_position(u16 pocket, u16 idx);
+
+/**
+ * @brief Gets the number of items in a given position in a pocket
+ * 
+ * @param pocket The pocket in which to find the item
+ * @param idx The slot in the pocket
+ * @return u16 The quantity
+ */
+u16 item_get_quantity_by_pocket_position(u16 pocket, u16 idx);
+
+/**
+ * @brief Gets the quantity of an encrypted bag item slot
+ * 
+ * @param encrypted the encrypted quantity
+ * @return u16 The quantity
+ */
+u16 item_slot_get_quantity(u16 *encrypted);
+
+/**
+ * @brief Sets the quantity of an item in an encrypted bag slot
+ * 
+ * @param dst Where to put the quantity
+ * @param quantity The quantity to set
+ */
+void item_slot_set_quantity(u16 *dst, u16 quantity);
 
 /**
  * Closes the bag and returns to the overworld, where a continuation is executed
@@ -136,5 +172,22 @@ void bag_print_string_item_cant_be_held(u8 self);
  * Initializes the bag after selecting it in the start menu as an option
  **/
 void bag_initialize_from_start_menu();
+
+/**
+ * @brief Moves an item in a pocket
+ * 
+ * @param slots The pocket
+ * @param from The index of the item to move
+ * @param to Where to put the item
+ */
+void item_move_in_pocket(bag_item_t *slots, u32 from, u32 to);
+
+/**
+ * @brief Compacts the a bag pocket
+ * 
+ * @param slots the slots to compact 
+ * @param capacity the capacity of the pocket
+ */
+void bag_pocket_compact(bag_item_t *slots, size_t capacity);
 
 #endif
