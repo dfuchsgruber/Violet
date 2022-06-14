@@ -384,4 +384,13 @@ void item_field_function_print_string_can_not_be_used(u8 self);
  */
 void item_field_function_evolution_stone(u8 self);
 
+/**
+ * @brief Modifies the nature of a pokemon according to a nature stone (mint)
+ * 
+ * @param nature the nature to modify
+ * @param item_idx the nature stone / mint
+ * @return u32 the modified nature
+ */
+u32 item_nature_stone_modify_nature(u8 nature, u16 item_idx);
+
 #endif /* INCLUDE_C_ITEM_ITEM_H_ */

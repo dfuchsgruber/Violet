@@ -19,7 +19,7 @@ pokemon_party_menu_options:  @format : string, function pointer
     .word str_nehmen
     .word 0x8123c89
     .word str_fp_menu
-    .word ev_menu_init
+    .word ev_menu_initialize_from_party_menu
     .word 0x84167f2 @//brief nehmen (deprecated)
     .word 0x8123e5d
     .word 0x84167f9 @//brief lesen

@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_276_indoor_layout_0",
 		"events": {
-			"person_cnt": 1,
+			"person_cnt": 2,
 			"warp_cnt": 1,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
@@ -34,6 +34,34 @@
 					"script_std_and_in_connection": {
 						"script_std": 0,
 						"in_connection": "0"
+					}
+				},
+				{
+					"target_index": "2",
+					"picture": "186",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_RECIPE",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "8",
+					"y": "6",
+					"level": "0",
+					"behaviour": "0",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "FLAG_RECIPE_EXP_CANDY_M",
+						"berry_tree_idx": "0",
+						"type": "0"
 					}
 				}
 			],

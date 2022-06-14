@@ -38,6 +38,8 @@ typedef struct {
 	// Picture and color the currently rendered polygon uses
 	int *render_sprite;
 	u8 render_color;
+	void (*idle_callback)();
+	void (*continuation)();
 } ev_menu_state_stru;
 
 /**
@@ -118,11 +120,16 @@ void ev_menu_callback_return();
  */
 void ev_menu_callback_setup();
 
+/**
+ * @brief Function to initialize the ev_menu to change nature and repoen the bag afterwards
+ *  
+ */
+void ev_menu_initialize_change_nature();
+
 #define EV_MENU_BG_COUNT 3
 bg_config ev_menu_bg_configs[EV_MENU_BG_COUNT];
 
 
-#define EV_MENU_TBOX_COUNT 13
 #define EV_MENU_TBOX_NAME 0
 #define EV_MENU_TBOX_HEADER 1
 #define EV_MENU_TBOX_HIDDEN_POWER 2
@@ -136,8 +143,12 @@ bg_config ev_menu_bg_configs[EV_MENU_BG_COUNT];
 #define EV_MENU_TBOX_CURRENT_IV 10
 #define EV_MENU_TBOX_CURRENT_EV 11
 #define EV_MENU_TBOX_HIDDEN_POWER_HEADER 12
+#define EV_MENU_TBOX_MESSAGE 13
+#define EV_MENU_TBOX_COUNT 14
 
 tboxdata ev_menu_tboxes[EV_MENU_TBOX_COUNT + 1];
+
+#define EV_MENU_MESSAGE_FRAME_START_TILE (511 - TBOX_FRAME_MESSAGE_NUM_TILES)
 
 extern u16 gfx_ev_menu_bgTiles[];
 extern u16 gfx_ev_menu_bgMap[];

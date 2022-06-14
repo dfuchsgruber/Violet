@@ -35,6 +35,8 @@
 #include "vram.h"
 #include "constants/species.h"
 #include "transparency.h"
+#include "item/item.h"
+#include "data_structures.h"
 
 tbox_font_colormap ev_menu_font_colormap_std_dark = {
     0, 2, 1, 3
@@ -110,7 +112,7 @@ void ev_menu_set_pixel(int x, int y) {
 	*pixel = (*pixel & ~pixel_mask) | (color << pixel_shift);
 }
 
-void ev_menu_load_stat() {
+static void ev_menu_load_stat_header() {
 	pokemon *p = &player_pokemon[fmem.ev_menu_state->party_idx];
 	bool is_egg = pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, 0);
     tbox_flush_set(EV_MENU_TBOX_CURRENT_STAT_HEADER, 0);
@@ -137,6 +139,12 @@ void ev_menu_load_stat() {
 			str_stat_name_width) / 2);
 	tbox_print_string(EV_MENU_TBOX_CURRENT_STAT_HEADER, 2, x_offset, 0, 0, 0, stat_name_colormap, 0,
 			strbuf);
+}
+
+void ev_menu_load_stat() {
+	ev_menu_load_stat_header();
+	pokemon *p = &player_pokemon[fmem.ev_menu_state->party_idx];
+	bool is_egg = pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, 0);
 
 	int iv = pokemon_get_attribute(p, (u8)(ATTRIBUTE_HP_IV + fmem.ev_menu_state->stat_idx), 0);
 	int effective_ev = pokemon_get_effective_ev(p, fmem.ev_menu_state->stat_idx) * 4;
@@ -232,6 +240,43 @@ void ev_menu_load_evs_and_ivs() {
 	ev_menu_load_ev_chart();
 }
 
+static u16 stat_coordinates[6][2] = {{34, 0}, {58, 12}, {58, 52}, {32, 64}, {2, 52}, {2, 12}};
+
+static void ev_menu_draw_print_stat_names() {
+	pokemon *p = &player_pokemon[fmem.ev_menu_state->party_idx];
+	bool is_egg = pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, 0);
+	int stat_increased, stat_decreased;
+	if (!is_egg) {
+		u8 nature = pokemon_get_nature(p);
+		stat_increased = nature / 5 + 1;
+		stat_decreased = nature % 5 + 1;
+	} else {
+		stat_increased = -1;
+		stat_decreased = -1;
+	}
+	if (stat_increased == stat_decreased) {
+		stat_increased = -1;
+		stat_decreased = -1;
+	}
+	for (u8 stat = 0; stat < 6; stat++) {
+		tbox_font_colormap *colmap;
+		if (stat == stat_increased)
+			colmap = &ev_menu_font_colormap_plus;
+		else if (stat == stat_decreased) 
+			colmap = &ev_menu_font_colormap_minus;
+		else
+			colmap = &ev_menu_font_colormap_std_light;
+
+		u8 *str_stat_name = pokemon_stat_names_abbreviated[stat];
+		tbox_print_string(EV_MENU_TBOX_CHART_STATS, 0,
+				stat_coordinates[stat][0], stat_coordinates[stat][1], 0, 0,
+				colmap, 0, str_stat_name);
+		tbox_print_string(EV_MENU_TBOX_CHART_STATS, 0,
+				(u16)(stat_coordinates[stat][0] + 80), stat_coordinates[stat][1], 0, 0,
+				colmap, 0, str_stat_name);
+	}
+}
+
 void ev_menu_load_pokemon() {
 
 	pokemon *p = &player_pokemon[fmem.ev_menu_state->party_idx];
@@ -281,6 +326,7 @@ void ev_menu_load_pokemon() {
 		big_callback_set_int(callback_idx, 0, 0); // Set the time value to zero
 	    pokemon_play_cry(species, 0);
 	}
+	ev_menu_draw_print_stat_names();
 	ev_menu_load_evs_and_ivs();
 }
 
@@ -331,7 +377,7 @@ void ev_menu_callback_return() {
         free(fmem.ev_menu_state->ev_hexagon_sprite);
         free(fmem.ev_menu_state);
         tbox_free_all();
-        callback1_set(pokemon_party_menu_return_callback);
+        callback1_set(fmem.ev_menu_state->continuation); 
     }
     generic_callback1();
 }
@@ -390,6 +436,68 @@ void ev_menu_callback_idle() {
     }
 }
 
+
+static u8 str_nature_stone[] = LANGDEP(
+    PSTRING("BUFFER_1 hat jetzt\ndas Wesen BUFFER_2.PAUSE_UNTIL_PRESS"),
+    PSTRING("BUFFER_1\'s nature has\nchanged to BUFFER_2.PAUSE_UNTIL_PRESS")
+);
+
+static u8 str_used_nature_stone[] = LANGDEP(
+	PSTRING("BUFFER_2 wird\nbei BUFFER_1 eingesetzt.PAUSE_UNTIL_PRESS"),
+	PSTRING("BUFFER_2 is\nused on BUFFER_1.PAUSE_UNTIL_PRESS")
+);
+
+static void ev_menu_change_nature_step_finish(u8 self) {
+	callback1_set(ev_menu_callback_return);
+	fadescreen_all(1, 0);
+	big_callback_delete(self);
+}
+
+static void ev_menu_change_nature_step_has_changed(u8 self) {
+	if (sound_is_playing())
+		return;
+	ev_menu_load_stat_header();
+	ev_menu_draw_print_stat_names();
+	string_decrypt(strbuf, str_nature_stone);
+	tbox_print_string_and_continue(self, EV_MENU_TBOX_MESSAGE, EV_MENU_MESSAGE_FRAME_START_TILE, 13, 2, tbox_get_set_speed(), 
+		strbuf, ev_menu_change_nature_step_finish);
+}
+
+static void ev_menu_change_nature_step_sound(u8 self) {
+	if (sound_is_playing())
+		return;
+	pokemon *p = player_pokemon + fmem.ev_menu_state->party_idx;
+	pid_t pid = {.value = (u32)pokemon_get_attribute(p, ATTRIBUTE_PID, NULL)};
+	u32 new_nature = item_nature_stone_modify_nature((u8)pid.fields.nature, item_activated);
+	pid.fields.nature = new_nature & 0x1F;
+	pokemon_set_attribute(p, ATTRIBUTE_PID, &pid);
+	pokemon_calculate_stats(p);
+	pokemon_load_name_as_string(p, buffer0);
+	strcpy(buffer1, pokemon_nature_strings[new_nature]);
+	play_sound(240);
+	big_callbacks[self].function = ev_menu_change_nature_step_has_changed;
+}
+
+static void ev_menu_change_nature_step_is_used(u8 self) {
+	pokemon *p = player_pokemon + fmem.ev_menu_state->party_idx;
+	pokemon_load_name_as_string(p, buffer0);
+	strcpy(buffer1, item_get_name(item_activated));
+	string_decrypt(strbuf, str_used_nature_stone);
+	tbox_draw_frame_message_and_flush_set(EV_MENU_TBOX_MESSAGE, true, EV_MENU_MESSAGE_FRAME_START_TILE, 13);
+	tbox_print_string_and_continue(self, EV_MENU_TBOX_MESSAGE, EV_MENU_MESSAGE_FRAME_START_TILE, 13, 2, tbox_get_set_speed(), 
+			strbuf, ev_menu_change_nature_step_sound);
+}
+
+
+static void ev_menu_change_nature_callback() {
+    generic_callback1();
+	if (!fading_is_active()) {
+		big_callback_new(ev_menu_change_nature_step_is_used, 0);
+		callback1_set(generic_callback1);
+	}
+
+}
+
 void ev_menu_callback_show() {
     generic_callback1();
     if (!fading_is_active()) {
@@ -402,7 +510,7 @@ void ev_menu_callback_show() {
         io_set(IO_BLDCNT, IO_BLDCNT_BG3_SECOND | IO_BLDCNT_BG2_SECOND | IO_BLDCNT_BG1_SECOND |
         		IO_BLDCNT_BG0_SECOND | IO_BLDCNT_ALPHA_BLENDING);
         io_set(IO_BLDALPHA, IO_BLDALPHA_EVA(7) | IO_BLDALPHA_EVB(11));
-        callback1_set(ev_menu_callback_idle);
+        callback1_set(fmem.ev_menu_state->idle_callback);
     }
 }
 
@@ -479,16 +587,7 @@ void ev_menu_callback_setup() {
 		// Textboxes for the charts
 		tbox_flush_set(EV_MENU_TBOX_CHART_STATS, 0);
 		tbox_tilemap_draw(EV_MENU_TBOX_CHART_STATS);
-		u16 stat_coordinates[6][2] = {{34, 0}, {58, 12}, {58, 52}, {32, 64}, {2, 52}, {2, 12}};
-		for (u8 stat = 0; stat < 6; stat++) {
-			u8 *str_stat_name = pokemon_stat_names_abbreviated[stat];
-			tbox_print_string(EV_MENU_TBOX_CHART_STATS, 0,
-					stat_coordinates[stat][0], stat_coordinates[stat][1], 0, 0,
-					&ev_menu_font_colormap_std_light, 0, str_stat_name);
-			tbox_print_string(EV_MENU_TBOX_CHART_STATS, 0,
-					(u16)(stat_coordinates[stat][0] + 80), stat_coordinates[stat][1], 0, 0,
-					&ev_menu_font_colormap_std_light, 0, str_stat_name);
-		}
+		
 
         // Initialize oams
 		u16 oam_pokepic_tile = oam_vram_alloc(64);
@@ -522,8 +621,9 @@ void ev_menu_callback_setup() {
         pal_decompress(gfx_ev_menu_hexagonPal, (u16)(256 + 16 * iv_hexagon_pal), 32);
         pal_decompress(gfx_ev_menu_hexagonPal, (u16)(256 + 16 * ev_hexagon_pal), 32);
         pal_copy(tbox_palette_transparent, 14 * 16, 32);
-        pal_set_all_to_black();
-
+        tbox_init_frame_message(EV_MENU_TBOX_MESSAGE, EV_MENU_MESSAGE_FRAME_START_TILE, 13 * 16);
+		pal_set_all_to_black();
+	
         bg_virtual_sync(0);
         bg_virtual_sync(1);
         bg_virtual_sync(2);
@@ -533,16 +633,26 @@ void ev_menu_callback_setup() {
     }
 }
 
-void ev_menu_init(u8 self) {
+static void ev_menu_initialize_internal(u8 party_idx, u8 stat_idx, void (*idle_callback)(), void (*continuation)()) {
     fmem.ev_menu_state = (ev_menu_state_stru*) malloc_and_clear(sizeof (ev_menu_state_stru));
-    fmem.ev_menu_state->party_idx = pokemon_party_menu_current_index;
-    fmem.ev_menu_state->stat_idx = 0;
+    fmem.ev_menu_state->party_idx = party_idx;
+    fmem.ev_menu_state->stat_idx = stat_idx;
     fmem.ev_menu_state->pokemon_sprite = malloc_and_clear(0x800);
     fmem.ev_menu_state->iv_hexagon_sprite = malloc_and_clear(0x800);
     fmem.ev_menu_state->ev_hexagon_sprite = malloc_and_clear(0x800);
-    fadescreen_all(1, 0);
+	fmem.ev_menu_state->idle_callback = idle_callback;
+	fmem.ev_menu_state->continuation = continuation;
     callback1_set(ev_menu_callback_setup);
-    big_callback_delete(self);
+}
+
+void ev_menu_initialize_from_party_menu(u8 self) {
+	ev_menu_initialize_internal(pokemon_party_menu_current_index, 0, ev_menu_callback_idle, pokemon_party_menu_return_callback);
+    fadescreen_all(1, 0);
+	big_callback_delete(self);
+}
+
+void ev_menu_initialize_change_nature() {
+	ev_menu_initialize_internal(pokemon_party_menu_current_index, 0, ev_menu_change_nature_callback, party_menu_continuation_return_to_bag);
 }
 
 bg_config ev_menu_bg_configs[EV_MENU_BG_COUNT] = {
@@ -577,5 +687,6 @@ tboxdata ev_menu_tboxes[EV_MENU_TBOX_COUNT + 1] = {
 				.start_tile = 387},
 	[EV_MENU_TBOX_HIDDEN_POWER_HEADER] = {.bg_id = 0, .x = 1, .y = 16, .w = 8, .h = 2, .pal = 15,
 				.start_tile = 424},
+	[EV_MENU_TBOX_MESSAGE] = {.bg_id = 0, .x = 2, .y = 15, .w = 26, .h = 4, .pal = 13, .start_tile = 424 + 16 * 8},
 	[EV_MENU_TBOX_COUNT] = {.bg_id = 255},
 };

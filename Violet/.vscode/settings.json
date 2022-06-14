@@ -161,7 +161,8 @@
         "menu_util.h": "c",
         "item_pockets.h": "c",
         "bag2.h": "c",
-        "tm_hm.h": "c"
+        "tm_hm.h": "c",
+        "species.h": "c"
     },
     "files.exclude": {
         "bld": true

@@ -696,7 +696,7 @@ static crafting_recipe crafting_recipies_nutrients[] = {
         .ingredients = {
             [0] = {.item = ITEM_BITTERKRAUT, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
         },
-        .flag = FLAG_RARE_CANDY_RECIPE,
+        .flag = FLAG_RECIPE_EXP_CANDY_S,
         .count = 1,
     },{
         .item = ITEM_EP_BONBON_M, 
@@ -704,7 +704,7 @@ static crafting_recipe crafting_recipies_nutrients[] = {
             [0] = {.item = ITEM_BITTERKRAUT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_MINIPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
         },
-        .flag = FLAG_RARE_CANDY_RECIPE,
+        .flag = FLAG_RECIPE_EXP_CANDY_M,
         .count = 1,
     },{
         .item = ITEM_EP_BONBON_L, 
@@ -712,7 +712,7 @@ static crafting_recipe crafting_recipies_nutrients[] = {
             [0] = {.item = ITEM_BITTERKRAUT, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_RIESENPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
         },
-        .flag = FLAG_RARE_CANDY_RECIPE,
+        .flag = FLAG_RECIPE_EXP_CANDY_L,
         .count = 1,
     },{
         .item = ITEM_EP_BONBON_XL, 
@@ -721,7 +721,7 @@ static crafting_recipe crafting_recipies_nutrients[] = {
             [1] = {.item = ITEM_MINIPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_RIESENPILZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
         },
-        .flag = FLAG_RARE_CANDY_RECIPE,
+        .flag = FLAG_RECIPE_EXP_CANDY_XL,
         .count = 1,
     },{
         .item = ITEM_SONDERBONBON, 
