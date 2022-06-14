@@ -37,6 +37,8 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	additem ITEM_NULLSAFT 1
+	end
 	additem ITEM_ASCHETASCHE 1
 	additem ITEM_POKEFLOETE 1
 	additem ITEM_EP_BONBON_S 1

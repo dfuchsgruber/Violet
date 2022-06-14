@@ -194,6 +194,16 @@ void ev_menu_load_iv_chart() {
     oams[fmem.ev_menu_state->oam_iv_hexagon_idx].flags &= (u16)(~OAM_FLAG_INVISIBLE);
 }
 
+static void ev_menu_print_ev_chart(FIXED *ev_ratios) {
+	fmem.ev_menu_state->render_sprite = fmem.ev_menu_state->ev_hexagon_sprite;
+	fmem.ev_menu_state->render_color = 1;
+	memset(fmem.ev_menu_state->render_sprite, 0, 0x800);
+	gpu_render_polygon_by_radius(ev_ratios, 6, 31, ev_menu_set_pixel);
+	memcpy(OAMCHARBASE(fmem.ev_menu_state->oam_ev_hexagon_tile),
+			fmem.ev_menu_state->ev_hexagon_sprite, 0x800);
+    oams[fmem.ev_menu_state->oam_ev_hexagon_idx].flags &= (u16)(~OAM_FLAG_INVISIBLE);
+}
+
 void ev_menu_load_ev_chart() {
 	pokemon *p = &player_pokemon[fmem.ev_menu_state->party_idx];
 	FIXED ev_ratios[6] = {0};
@@ -203,13 +213,7 @@ void ev_menu_load_ev_chart() {
 				(is_egg ? 0 : pokemon_get_effective_ev(p, i)) + EV_MENU_EV_CHART_MIN_VALUE);
 		ev_ratios[i] = FIXED_DIV(ev, INT_TO_FIXED(63 + EV_MENU_EV_CHART_MIN_VALUE));
 	}
-	fmem.ev_menu_state->render_sprite = fmem.ev_menu_state->ev_hexagon_sprite;
-	fmem.ev_menu_state->render_color = 1;
-	memset(fmem.ev_menu_state->render_sprite, 0, 0x800);
-	gpu_render_polygon_by_radius(ev_ratios, 6, 31, ev_menu_set_pixel);
-	memcpy(OAMCHARBASE(fmem.ev_menu_state->oam_ev_hexagon_tile),
-			fmem.ev_menu_state->ev_hexagon_sprite, 0x800);
-    oams[fmem.ev_menu_state->oam_ev_hexagon_idx].flags &= (u16)(~OAM_FLAG_INVISIBLE);
+	ev_menu_print_ev_chart(ev_ratios);
 }
 
 void ev_menu_load_effective_ev_total() {
@@ -479,6 +483,8 @@ static void ev_menu_change_nature_step_sound(u8 self) {
 }
 
 static void ev_menu_change_nature_step_is_used(u8 self) {
+	if (!cry_has_finished())
+		return;
 	pokemon *p = player_pokemon + fmem.ev_menu_state->party_idx;
 	pokemon_load_name_as_string(p, buffer0);
 	strcpy(buffer1, item_get_name(item_activated));
@@ -492,10 +498,72 @@ static void ev_menu_change_nature_step_is_used(u8 self) {
 static void ev_menu_change_nature_callback() {
     generic_callback1();
 	if (!fading_is_active()) {
-		big_callback_new(ev_menu_change_nature_step_is_used, 0);
+		u8 cb_idx = big_callback_new(ev_menu_change_nature_step_is_used, 0);
+		big_callbacks[cb_idx].params[0] = 8;
 		callback1_set(generic_callback1);
 	}
+}
 
+static u8 str_used_null_syrup[] = LANGDEP(
+	PSTRING("Die Fleiß-Punkte von\nBUFFER_1 wurden zurückgesetzt.PAUSE_UNTIL_PRESS"),
+	PSTRING("The effort values of is\nBUFFER_1 were reset.PAUSE_UNTIL_PRESS")
+);
+
+static void ev_menu_reset_effective_has_changed(u8 self) {
+	if (sound_is_playing())
+		return;
+	string_decrypt(strbuf, str_used_null_syrup);
+	tbox_print_string_and_continue(self, EV_MENU_TBOX_MESSAGE, EV_MENU_MESSAGE_FRAME_START_TILE, 13, 2, tbox_get_set_speed(), 
+		strbuf, ev_menu_change_nature_step_finish);
+}
+
+static void ev_menu_reset_effective_evs_animation(u8 self) {
+	u16 *evs = big_callbacks[self].params;
+	bool all_zero = true;
+	FIXED fev_ratios[6];
+	for (int i = 0; i < 6; i++) {
+		if (evs[i] > 0) {
+			evs[i] = (u16)MAX(0, evs[i] - 1);
+			all_zero = false;
+		}
+		fev_ratios[i] = INT_TO_FIXED(evs[i] + EV_MENU_EV_CHART_MIN_VALUE);
+		fev_ratios[i] = FIXED_DIV(fev_ratios[i], INT_TO_FIXED(63 + EV_MENU_EV_CHART_MIN_VALUE));
+	}
+	ev_menu_print_ev_chart(fev_ratios);
+	if (all_zero && !sound_is_playing())
+		big_callbacks[self].function = ev_menu_reset_effective_has_changed;
+}
+
+static void ev_menu_reset_effective_evs_step_1_sound_and_initialize_animation(u8 self) {
+	play_sound(238);
+	pokemon *p = &player_pokemon[fmem.ev_menu_state->party_idx];
+	u16 *evs = big_callbacks[self].params;
+	for (int i = 0; i < 6; i++) {
+		evs[i] = pokemon_get_effective_ev(p, i);
+		pokemon_set_effective_ev(p, i, 0);
+	}
+	big_callbacks[self].function = ev_menu_reset_effective_evs_animation;
+}
+
+static void ev_menu_reset_effective_evs_step_0(u8 self) {
+	if (!cry_has_finished())
+		return;
+	pokemon *p = player_pokemon + fmem.ev_menu_state->party_idx;
+	pokemon_load_name_as_string(p, buffer0);
+	strcpy(buffer1, item_get_name(item_activated));
+	string_decrypt(strbuf, str_used_nature_stone);
+	tbox_draw_frame_message_and_flush_set(EV_MENU_TBOX_MESSAGE, true, EV_MENU_MESSAGE_FRAME_START_TILE, 13);
+	tbox_print_string_and_continue(self, EV_MENU_TBOX_MESSAGE, EV_MENU_MESSAGE_FRAME_START_TILE, 13, 2, tbox_get_set_speed(), 
+			strbuf, ev_menu_reset_effective_evs_step_1_sound_and_initialize_animation);
+}
+
+static void ev_menu_reset_effective_evs_callback() {
+    generic_callback1();
+	if (!fading_is_active()) {
+		u8 cb_idx = big_callback_new(ev_menu_reset_effective_evs_step_0, 0);
+		big_callbacks[cb_idx].params[0] = 8;
+		callback1_set(generic_callback1);
+	}
 }
 
 void ev_menu_callback_show() {
@@ -653,6 +721,10 @@ void ev_menu_initialize_from_party_menu(u8 self) {
 
 void ev_menu_initialize_change_nature() {
 	ev_menu_initialize_internal(pokemon_party_menu_current_index, 0, ev_menu_change_nature_callback, party_menu_continuation_return_to_bag);
+}
+
+void ev_menu_initialize_clear_effective_ev() {
+	ev_menu_initialize_internal(pokemon_party_menu_current_index, 0, ev_menu_reset_effective_evs_callback, party_menu_continuation_return_to_bag);
 }
 
 bg_config ev_menu_bg_configs[EV_MENU_BG_COUNT] = {

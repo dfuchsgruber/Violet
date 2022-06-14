@@ -48,7 +48,7 @@ bool item_has_room(u16 item, u16 quantity) {
                 break; // Only check a single slot
         }
     }
-    // DEBUG("Reamining to check %d\n", quantity);
+    DEBUG("Reamining to check %d\n", quantity);
     return quantity == 0;
 }
 

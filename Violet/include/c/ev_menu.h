@@ -126,6 +126,12 @@ void ev_menu_callback_setup();
  */
 void ev_menu_initialize_change_nature();
 
+/**
+ * @brief Function to initialize the ev_menu to reset all effective evs and reopen the bag afterwards
+ * 
+ */
+void ev_menu_initialize_clear_effective_ev();
+
 #define EV_MENU_BG_COUNT 3
 bg_config ev_menu_bg_configs[EV_MENU_BG_COUNT];
 

@@ -61,6 +61,8 @@ ow_script_buffer_item_pocket_name_and_play_item_fanfare:
     gotoif EQUAL buffer_pocket_berries
     compare LASTRESULT, POCKET_BAIT
     gotoif EQUAL buffer_pocket_bait
+    compare LASTRESULT, POCKET_MEDICINE
+    gotoif EQUAL buffer_pocket_medicine
     end
 
 buffer_pocket_items:
@@ -90,6 +92,11 @@ buffer_pocket_berries:
     return
 buffer_pocket_bait:
     bufferstring 2, str_bait
+    compare 0x8007, 1
+    callif EQUAL play_item_fanfare_std
+    return
+buffer_pocket_medicine:
+    bufferstring 2, str_medicine
     compare 0x8007, 1
     callif EQUAL play_item_fanfare_std
     return
@@ -131,7 +138,8 @@ str_no_room_for_giveitem:
     .autostring 34 2 "Sieht so aus, als hättest du keinen Platz für BUFFER_2.\pKomm wieder, wenn du Platz für das Item geschaffen hast."
 str_bait:
     .autostring 34 2 "Ködertasche"
-
+str_medicine:
+    .autostring 34 2 "Medizin-Tasche"
 .elseif LANG_EN
 str_no_room_for_giveitem:
     .autostring 34 2 "Looks like you don't have room for that.\pCome back once you made room for the item."
