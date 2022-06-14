@@ -359,3 +359,26 @@ u16 bag_get_current_slot_in_current_pocket() {
     return (u16)(fmem.bag_cursor_position[POCKET_TO_BAG_POCKETS_IDX(pocket)] + fmem.bag_cursor_items_above[POCKET_TO_BAG_POCKETS_IDX(pocket)]);
 }
 
+void bag_fix_pockets() {
+    bool fixed_point;
+    do {
+        fixed_point = false;
+        for (int i = 1; i < NUM_POCKETS; i++) {
+            bag_pocket_t *p = bag_pockets + POCKET_TO_BAG_POCKETS_IDX(i);
+            for (int j = 0; j < p->capacity; j++) {
+                if (p->items[j].item_idx != ITEM_NONE) {
+                    item_slot_set_quantity(&p->items[j].quantity, MIN(999, item_slot_get_quantity(&p->items[j].quantity)));
+                    if (item_get_pocket(p->items[j].item_idx) != i) {
+                        item_add(p->items[j].item_idx, item_slot_get_quantity(&p->items[j].quantity));
+                        fixed_point = true;
+                        p->items[j].item_idx = ITEM_NONE;
+                        item_slot_set_quantity(&p->items[j].quantity, 0);
+                    }
+                }
+            }
+            bag_pocket_compact(p->items, p->capacity);
+        }
+    } while (fixed_point);
+
+
+}

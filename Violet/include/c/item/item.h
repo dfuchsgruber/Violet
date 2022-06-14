@@ -47,6 +47,8 @@ void (*item_callback_after_pokemon_selected)(u8, void (*)(u8));
 
 void (*item_use_continuation)(u8);
 
+void (*evolution_continuation)();
+
 #define ITEM_HAS_TABLE_EFFECT(item) ((item) >= ITEM_TRANK && (item) <= (ITEM_ENIGMABEERE))
 
 /**
@@ -153,6 +155,12 @@ bool item_has_room(u16 item, u16 quantity);
  * @param self reference to the callback
  **/
 void item_field_by_effect_table(u8 self);
+/**
+ * @brief Battle effect for items that use table-based effects for medicine
+ * 
+ * @param self self-reference
+ */
+void item_battle_effect_medicine(u8 self);
 
 /**
  * Item field function for null syrup.
@@ -361,5 +369,19 @@ bool item_can_be_tossed(u16 item_idx);
  * @return if there was space
  */
 bool item_add_to_pc(u16 item_idx, u16 quantity);
+
+/**
+ * @brief Prints the string that an item can't be used. `big_callbacks[self].params[3]` is interpreted as "from overworld" (if true, from overworld, if false, from bag)
+ * 
+ * @param self self-reference
+ */
+void item_field_function_print_string_can_not_be_used(u8 self);
+
+/**
+ * @brief Item callback for evolution stones
+ * 
+ * @param self self-reference
+ */
+void item_field_function_evolution_stone(u8 self);
 
 #endif /* INCLUDE_C_ITEM_ITEM_H_ */

@@ -37,6 +37,38 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	additem ITEM_ASCHETASCHE 1
+	additem ITEM_POKEFLOETE 1
+	additem ITEM_EP_BONBON_S 1
+	end
+	additem ITEM_FEUERSTEIN 1
+	additem ITEM_MUENZKORB 1
+	additem ITEM_ANGEL 1
+	additem ITEM_DETEKTOR 1
+	additem ITEM_FEUERSTEIN 1
+	additem ITEM_FEUERSTEIN 1
+	additem ITEM_ANGR_ORB_P 1
+	givepokemon POKEMON_EVOLI 20 ITEM_PALIMPALIMNIT 0 0 0
+	end
+	additem ITEM_ZAUBERASCHE 1
+	additem ITEM_KP_PLUS 1
+	additem ITEM_X_ANGRIFF 1
+	additem ITEM_ENECO_RUTE 1
+	additem ITEM_SUESSBONBON 1
+	additem ITEM_NULLSAFT 1
+	end
+
+	additem ITEM_BLAUE_FLOETE 1
+	additem ITEM_GELBE_FLOETE 1
+	additem ITEM_ROTE_FLOETE 1
+	additem ITEM_SCHW_FLOETE 1
+	additem ITEM_WEISSE_FLOETE  1
+	end
+
+	callasm bag_fix_pockets
+	end
+	additem ITEM_AMRENABEERE 1
+	end
 	additem ITEM_ENERGIEDISK 1
 	callasm test_bag2
 	end

@@ -205,8 +205,8 @@ typedef struct custom_memory {
         u8 field_2;
         u8 field_3; 
     } settings;
+    bag_item_t __attribute__((aligned(4))) bag_pocket_medicine[MAX_NUM_BAG_MEDICINE];
     u16 bag_pocket;
-    bag_item_t bag_pocket_medicine[MAX_NUM_BAG_MEDICINE];
     
     /**
     struct {

@@ -428,6 +428,13 @@ void bag_reinitialize_list_and_scroll_menu_indicators_and_return_to_idle_callbac
 void bag_wait_a_button_and_close_message_and_return_to_idle_callback(u8 self);
 
 /**
+ * @brief Calls `bag_reinitialize_list_and_scroll_menu_indicators_and_return_to_idle_callback` after flushing the message tbox
+ * 
+ * @param self self-reference
+ */
+void bag_close_message_and_return_to_idle_callback(u8 self);
+
+/**
  * @brief Redraws the description, then redraws the scroll menu indicators and then returns to the idle callback.
  * 
  * @param self 

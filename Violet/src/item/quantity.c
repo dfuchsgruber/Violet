@@ -96,6 +96,7 @@ bool item_remove(u16 item_idx, u16 quantity) {
     u8 pocket = item_get_pocket(item_idx);
     if (pocket == 0 || pocket >= NUM_POCKETS)
         return false;
+    bool needs_compacting = false;
     for (int i = 0; i < bag_pockets[POCKET_TO_BAG_POCKETS_IDX(pocket)].capacity && quantity > 0; i++) {
         bag_item_t *slot = bag_pockets[POCKET_TO_BAG_POCKETS_IDX(pocket)].items + i;
         if (slot->item_idx == item_idx) {
@@ -104,12 +105,17 @@ bool item_remove(u16 item_idx, u16 quantity) {
             in_slot = (u16)(in_slot - to_remove);
             quantity = (u16)(quantity - to_remove);
             item_slot_set_quantity(&slot->quantity, in_slot);
-            if (in_slot == 0)
+            DEBUG("Set quantity at slot 0x%x to %d\n", &slot->quantity, in_slot);
+            if (in_slot == 0) {
                 slot->item_idx = ITEM_NONE;
+                needs_compacting = true;
+            }
             if (pocket_has_singleton_stacks[pocket])
                 break; // Only check a single slot
         }
     }
+    if (needs_compacting)
+        bag_pocket_compact(bag_pockets[POCKET_TO_BAG_POCKETS_IDX(pocket)].items, bag_pockets[POCKET_TO_BAG_POCKETS_IDX(pocket)].capacity);
     if (quantity > 0) {
         ERROR("Item removing failed for %d after enough exemplars have been found, there must be a bug in your code.\n", item_idx);
     }

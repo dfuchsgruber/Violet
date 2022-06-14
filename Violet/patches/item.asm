@@ -337,6 +337,10 @@ _bxr1:
 	bx r0
 	.pool
 
+
+.org 0x0809a8d8
+	.word bag_pockets - 8
+
 .org 0x8099f38
 	.word bag_pockets
 .org 0x8099f88
@@ -408,9 +412,10 @@ _bxr1:
 // **** Replace old bag functions ***/
 
 .org 0x08108eec
-	push {r4}
+	push {r4, lr}
 	ldr r4, =bag_print_string | 1
 	bl _blxr4_bag_print_string
+	pop {r4}
 	pop {r0}
 	bx r0
 _blxr4_bag_print_string:
@@ -432,6 +437,10 @@ _blxr4_bag_print_string:
 	bx r3
 	.pool
 
+.org 0x08127a84
+	mov r0, #0
+	lsl r0, #0 // Always return to the bag (not the tm case or anything...)
+
 .org 0x08124d6a
 	mov r0, #0
 	lsl r0, #0 // Always return to the bag (not the tm case or anything...)
@@ -439,3 +448,17 @@ _blxr4_bag_print_string:
 .org 0x08124d96
 	mov r0, #0
 	lsl r0, #0 // Always return to the bag (not the tm case or anything...)
+
+.org 0x080a206e
+	mov r0, #0
+	lsl r0, #0 // Always return the the bag (not the tm case or anything...)
+
+.org 0x080a10dc
+	mov r0, #0
+	lsl r0, #0 // Always return the the bag (not the tm case or anything...)
+
+
+.org 0x0810a278
+	ldr r1, =bag_close_message_and_return_to_idle_callback | 1
+	bx r1
+	.pool

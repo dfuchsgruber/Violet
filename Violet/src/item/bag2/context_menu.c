@@ -59,13 +59,17 @@ void bag_reinitialize_list_and_scroll_menu_indicators_and_return_to_idle_callbac
     big_callbacks[self].function = bag_reinitialize_scroll_menu_indicators_and_return_to_idle_callback;
 }
 
+void bag_close_message_and_return_to_idle_callback(u8 self)  {
+    // tbox_flush_map(BAG_TBOX_MESSAGE);
+    tbox_clear_message(BAG_TBOX_MESSAGE, false);
+    bg_virtual_sync_reqeust_push(0);
+    bag_reinitialize_list_and_scroll_menu_indicators_and_return_to_idle_callback(self);
+}
+
 void bag_wait_a_button_and_close_message_and_return_to_idle_callback(u8 self) {
     if (super.keys_new.keys.A) {
         play_sound(5);
-        // tbox_flush_map(BAG_TBOX_MESSAGE);
-        tbox_clear_message(BAG_TBOX_MESSAGE, false);
-        bg_virtual_sync_reqeust_push(0);
-        bag_reinitialize_list_and_scroll_menu_indicators_and_return_to_idle_callback(self);
+        bag_close_message_and_return_to_idle_callback(self);
     }
 } 
 
@@ -102,6 +106,7 @@ static void bag_context_menu_item_use(u8 self) {
         if ((item_get_type(item_activated) && pokemon_get_number_in_party() == 0)) {
             bag_print_string(self, 2, str_there_is_no_pokemon, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
         } else {
+            big_callbacks[self].params[3] = false;
             field_function(self);
         }
     }
@@ -409,24 +414,27 @@ static void bag_item_selected_party_give(u8 self) {
     }
 }
 
-static u8 bag_context_menu_overworld[] = {BAG_CONTEXT_MENU_USE, BAG_CONTEXT_MENU_GIVE, BAG_CONTEXT_MENU_TOSS, BAG_CONTEXT_MENU_CANCEL};
-static u8 bag_context_menu_overworld_unique[] = {BAG_CONTEXT_MENU_USE, BAG_CONTEXT_MENU_CANCEL};
-static u8 bag_context_menu_overworld_key_item[] = {BAG_CONTEXT_MENU_USE, BAG_CONTEXT_MENU_SELECT, BAG_CONTEXT_MENU_CANCEL};
-
 static void bag_item_selected_overworld(u8 self) {
     bag_disable_ui();
-    if (item_get_pocket(item_activated) == POCKET_KEY_ITEMS) {
-        u8 context_items[ARRAY_COUNT(bag_context_menu_overworld_key_item)];
-        memcpy(context_items, bag_context_menu_overworld_key_item, sizeof(bag_context_menu_overworld_key_item));
-        if (save1->registered_item == item_activated)
-            context_items[1] = BAG_CONTEXT_MENU_DESELECT;
+    u8 context_menu[4];
+    u8 num_items = 0;
+    if (item_get_field_function(item_activated)) {
         if (item_activated == ITEM_FAHRRAD && overworld_flag_get(PLAYER_STATE_BIKING))
-            context_items[0] = BAG_CONTEXT_MENU_WALK;
-        bag_open_context_menu(context_items, ARRAY_COUNT(context_items));
-    } else if (item_can_be_tossed(item_activated))
-        bag_open_context_menu(bag_context_menu_overworld, ARRAY_COUNT(bag_context_menu_overworld));
-    else
-        bag_open_context_menu(bag_context_menu_overworld_unique, ARRAY_COUNT(bag_context_menu_overworld_unique));
+            context_menu[num_items++] = BAG_CONTEXT_MENU_WALK;
+        else
+            context_menu[num_items++] = BAG_CONTEXT_MENU_USE;
+    }
+    if (item_get_pocket(item_activated) == POCKET_KEY_ITEMS) {
+        if (save1->registered_item == item_activated)
+            context_menu[num_items++] = BAG_CONTEXT_MENU_DESELECT;
+        else
+            context_menu[num_items++] = BAG_CONTEXT_MENU_SELECT;
+    } else if (item_can_be_tossed(item_activated)) {
+            context_menu[num_items++] = BAG_CONTEXT_MENU_GIVE;
+            context_menu[num_items++] = BAG_CONTEXT_MENU_TOSS;
+    }
+    context_menu[num_items++] = BAG_CONTEXT_MENU_CANCEL;
+    bag_open_context_menu(context_menu, num_items);
     big_callbacks[self].function = bag_context_menu_overworld_handle_input;
     // big_callbacks[self].function = (void(*)(u8))nullsub;
 };
@@ -581,6 +589,7 @@ static void bag_item_selected_sell(u8 self) {
 static void bag_deposit_wait_a_or_b_press_and_redraw_all(u8 self) {
     if (super.keys_new.keys.A || super.keys_new.keys.B) {
         play_sound(5);
+        DEBUG("Item activated %d x %d\n", item_activated, BAG2_STATE->toss_current_number);
         item_remove(item_activated, BAG2_STATE->toss_current_number);
         tbox_clear_message(BAG_TBOX_MESSAGE_WITH_YES_NO, false);
         bg_virtual_sync_reqeust_push(0);

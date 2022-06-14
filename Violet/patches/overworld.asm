@@ -214,7 +214,7 @@ _blxr1:
 .org 0x08124e10
     ldr r1, =pokemon_party_menu_do_item_use_animation | 1
     bx r1
-    .pool
+   .pool
 
 .org 0x08122A34
     ldr r3, =pokemon_party_menu_options_build | 1

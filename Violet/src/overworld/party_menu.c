@@ -140,6 +140,7 @@ void pokemon_party_menu_attempt_evolution(u8 self) {
 }
 
 static void pokemon_party_menu_skip_item_use_animation(u8 self) {
+    DEBUG("Item callback after selected 0x%x\n", item_callback_after_pokemon_selected);
     item_callback_after_pokemon_selected(self, pokemon_party_menu_wait_for_text_and_close);
 }
 
