@@ -208,8 +208,8 @@
 				{
 					"x": "22",
 					"y": "50",
-					"level": 0,
-					"target_warp_idx": "9",
+					"level": "0",
+					"target_warp_idx": "7",
 					"target_map": "7",
 					"target_bank": "3"
 				},

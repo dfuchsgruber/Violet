@@ -531,6 +531,126 @@ static graphic overworld_sprite_hiro_rod_sprites[] = {
 	{&gfx_ow_hiro_rod_11Tiles, 0x200, 0}
 };
 
+static gfx_frame hiro_rod_animations_0[] = {
+	{.data = 8, .duration = 4},
+	{.data = 9, .duration = 4},
+	{.data = 10, .duration = 4},
+	{.data = 11, .duration = 4},
+	{.data = GFX_ANIM_END, .duration = 0},
+};
+
+static gfx_frame hiro_rod_animations_1[] = {
+	{.data = 4, .duration = 4},
+	{.data = 5, .duration = 4},
+	{.data = 6, .duration = 4},
+	{.data = 7, .duration = 4},
+	{.data = GFX_ANIM_END, .duration = 0},
+};
+
+static gfx_frame hiro_rod_animations_2[] = {
+	{.data = 0, .duration = 4},
+	{.data = 1, .duration = 4},
+	{.data = 2, .duration = 4},
+	{.data = 3, .duration = 4},
+	{.data = GFX_ANIM_END, .duration = 0},
+};
+
+static gfx_frame hiro_rod_animations_3[] = {
+	{.data = 0, .duration = 4 | GFX_ANIM_HFLIP},
+	{.data = 1, .duration = 4 | GFX_ANIM_HFLIP},
+	{.data = 2, .duration = 4 | GFX_ANIM_HFLIP},
+	{.data = 3, .duration = 4 | GFX_ANIM_HFLIP},
+	{.data = GFX_ANIM_END, .duration = 0},
+};
+
+static gfx_frame hiro_rod_animations_4[] = {
+	{.data = 11, .duration = 4},
+	{.data = 10, .duration = 6},
+	{.data = 9, .duration = 6},
+	{.data = 8, .duration = 6},
+	{.data = GFX_ANIM_END, .duration = 0},
+};
+
+static gfx_frame hiro_rod_animations_5[] = {
+	{.data = 7, .duration = 4},
+	{.data = 6, .duration = 6},
+	{.data = 5, .duration = 6},
+	{.data = 4, .duration = 6},
+	{.data = GFX_ANIM_END, .duration = 0},
+};
+
+static gfx_frame hiro_rod_animations_6[] = {
+	{.data = 3, .duration = 4},
+	{.data = 2, .duration = 4},
+	{.data = 1, .duration = 4},
+	{.data = 0, .duration = 4},
+	{.data = GFX_ANIM_END, .duration = 0},
+};
+
+static gfx_frame hiro_rod_animations_7[] = {
+	{.data = 3, .duration = 4 | GFX_ANIM_HFLIP},
+	{.data = 2, .duration = 4 | GFX_ANIM_HFLIP},
+	{.data = 1, .duration = 4 | GFX_ANIM_HFLIP},
+	{.data = 0, .duration = 4 | GFX_ANIM_HFLIP},
+	{.data = GFX_ANIM_END, .duration = 0},
+};
+
+static gfx_frame hiro_rod_animations_8[] = {
+	{.data = 10, .duration = 6},
+	{.data = 11, .duration = 6},
+	{.data = GFX_ANIM_JUMP_LOOP_START, .duration = 1},
+	{.data = 11, .duration = 30},
+	{.data = GFX_ANIM_JUMP, .duration = 0},
+};
+
+static gfx_frame hiro_rod_animations_9[] = {
+	{.data = 6, .duration = 6},
+	{.data = 7, .duration = 6},
+	{.data = GFX_ANIM_JUMP_LOOP_START, .duration = 1},
+	{.data = 7, .duration = 30},
+	{.data = GFX_ANIM_JUMP, .duration = 0},
+};
+
+static gfx_frame hiro_rod_animations_10[] = {
+	{.data = 2, .duration = 6},
+	{.data = 3, .duration = 6},
+	{.data = GFX_ANIM_JUMP_LOOP_START, .duration = 1},
+	{.data = 3, .duration = 30},
+	{.data = GFX_ANIM_JUMP, .duration = 0},
+};
+
+static gfx_frame hiro_rod_animations_11[] = {
+	{.data = 2, .duration = 6 | GFX_ANIM_HFLIP},
+	{.data = 3, .duration = 6 | GFX_ANIM_HFLIP},
+	{.data = GFX_ANIM_JUMP_LOOP_START, .duration = 1},
+	{.data = 3, .duration = 30 | GFX_ANIM_HFLIP},
+	{.data = GFX_ANIM_JUMP, .duration = 0},
+};
+
+static gfx_frame hiro_rod_animations_12_reach_back_north[] = {{.data = 8, .duration = 0}, {.data = GFX_ANIM_END}};
+static gfx_frame hiro_rod_animations_13_reach_back_south[] = {{.data = 4, .duration = 0}, {.data = GFX_ANIM_END}};
+static gfx_frame hiro_rod_animations_14_reach_back_left[] = {{.data = 0, .duration = 0}, {.data = GFX_ANIM_END}};
+static gfx_frame hiro_rod_animations_15_reach_back_right[] = {{.data = 0, .duration = 0 | GFX_ANIM_HFLIP}, {.data = GFX_ANIM_END}};
+
+gfx_frame *ow_anim_hiro_rod[] = {
+	[0] = hiro_rod_animations_0,
+	[1] = hiro_rod_animations_1,
+	[2] = hiro_rod_animations_2,
+	[3] = hiro_rod_animations_3,
+	[4] = hiro_rod_animations_4,
+	[5] = hiro_rod_animations_5,
+	[6] = hiro_rod_animations_6,
+	[7] = hiro_rod_animations_7,
+	[8] = hiro_rod_animations_8,
+	[9] = hiro_rod_animations_9,
+	[10] = hiro_rod_animations_10,
+	[11] = hiro_rod_animations_11,
+	[12] = hiro_rod_animations_12_reach_back_north,
+	[13] = hiro_rod_animations_13_reach_back_south,
+	[14] = hiro_rod_animations_14_reach_back_left,
+	[15] = hiro_rod_animations_15_reach_back_right,
+};
+
 overworld_sprite ow_hiro_rod = {
 	0xffff, 0x1100, 0x1102, 0x200,
 	32, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,

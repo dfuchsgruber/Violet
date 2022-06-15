@@ -312,6 +312,7 @@ dont_harvest:
 	closeonkeypress
 	end
 no_room_for_berries:
+	special SPECIAL_ITEM_OBTAIN_DELETE_DESCRIPTION
 	loadpointer 0 str_no_room_for_berries
 	callstd MSG
 	end

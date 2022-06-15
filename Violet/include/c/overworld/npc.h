@@ -872,6 +872,32 @@ void npc_delete_all_outside_viewport();
  **/
 void npc_create_all_in_viewport_if_not_present(s16 camera_x, s16 camera_y);
 
+/**
+ * @brief Clears the held movement of an npc if the movement is active
+ * 
+ * @param n the npc
+ */
+void npc_clear_held_movement_if_active(npc *n);
+
+enum {
+    PLAYER_TRANSITION_NORMAL,
+    PLAYER_TRANSITION_BIKE,
+    PLAYER_TRANSITION_FISH,
+    PLAYER_TRANSITION_SURF,
+    PLAYER_TRANSITION_STOP_SURFING_SOUTH,
+    PLAYER_TRANSITION_STOP_SURFING_NORTH,
+    PLAYER_TRANSITION_STOP_SURFING_WEST,
+    PLAYER_TRANSITION_STOP_SURFING_EAST,
+    PLAYER_TRANSITION_VS_SEEKER,
+};
+
+/**
+ * @brief Executes a player state transition
+ * 
+ * @param player_transition_type the transition type
+ */
+void player_transition(u8 player_transition_type);
+
 // Initial facing direction per behaviour
 extern u8 behaviour_initial_facing_directions[80];
 extern u8 behaviour_has_range[80];

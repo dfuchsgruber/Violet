@@ -164,6 +164,12 @@ _bxr1:
 	bx r1
 	.pool
 
+
+
+.org 0x0805d2fc
+	.word fishing_big_callback | 1	
+
+/**
 .org 0x08082ac8
     ldr r1, = fishing_create_pokemon | 1
     bx r1 
@@ -171,6 +177,8 @@ _bxr1:
 
 .org 0x0805d2fc
     .word fishing_big_callback_bait | 1
+*/
+
 
 .org 0x0801bce4
     .word hook_battle_item_switch_in_effects
