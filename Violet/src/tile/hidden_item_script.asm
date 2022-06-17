@@ -80,6 +80,14 @@ no_ashbag:
     releaseall
     end
 
+ow_script_item_obtainable:
+    additem 0x8005, 0x8006
+    copyvar 0x8007, LASTRESULT
+    bufferitem 1, 0x8005
+    checkitemtype 0x8005
+    call ow_script_buffer_item_pocket_name_and_play_item_fanfare
+    return
+
 
 @ // Define strings
 

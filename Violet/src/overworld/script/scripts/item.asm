@@ -8,6 +8,7 @@
 .global ow_script_no_room_for_giveitem
 .global ow_script_std_1_find_item
 .global ow_script_std_0_obtain_item
+.global ow_script_buffer_item_pocket_name_and_play_item_fanfare
 
 ow_script_no_room_for_giveitem:
     lock

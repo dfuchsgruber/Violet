@@ -2972,7 +2972,7 @@ bsc_strings:
 		.string "BSC_LAST_ITEM lässt\nBSC_ATK_NAME_WITH_PREFIX sofort angreifen!"
 
 	str_battle_x1C5:
-		.string "BSC_DEF_NAME_WITH_PREFIX\nhält dank BSC_SCR_ACTIVE_ABILITY durch!"
+		.string "BSC_DEF_NAME_WITH_PREFIX\nhält dank BSC_LAST_ABILITY durch!"
 
 	str_battle_x1C6:
 		.string "BSC_ATK_NAME_WITH_PREFIX wurde von\nBSC_LAST_ITEM verletzt!"

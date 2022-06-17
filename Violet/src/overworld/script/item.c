@@ -65,10 +65,10 @@ static tboxdata tboxdata_tm_hm_non_transparent = {
 
 void special_item_obtain_show() {
 	if (item_obtain_should_show_description()) {
-		DEBUG("Item is %d\n", var_get(0x8000));
+		// DEBUG("Item is %d\n", var_get(0x8000));
 		u16 item_idx = var_get(0x8004);
-		bool is_tm_hm = item_get_pocket(item_idx) == POCKET_TM_HM;
-		DEBUG("Found hm item %d\n", is_tm_hm);
+		bool is_tm_hm = false; // item_get_pocket(item_idx) == POCKET_TM_HM;
+		// DEBUG("Found hm item %d\n", is_tm_hm);
 		if (transparency_is_on()) {
 			tboxdata *tbdata = is_tm_hm ? &tboxdata_tm_hm : &tboxdata_non_tm_hm;
 			u8 box_id = tbox_new(tbdata);

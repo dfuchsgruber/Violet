@@ -9,7 +9,7 @@ void pp_reduce(u8 amount){
     if(BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_AP_SPARER){
         //remove the status to save pp
         DEBUG("No pp reduce because of AP sparer.\n");
-        BATTLE_STATE2->status_custom[attacking_battler] &= !(CUSTOM_STATUS_AP_SPARER);
+        BATTLE_STATE2->status_custom[attacking_battler] &= (u32)(~CUSTOM_STATUS_AP_SPARER);
     }else{
         if(b->current_pp[active_attack_slot] >= amount){
             b->current_pp[active_attack_slot] = (u8)(

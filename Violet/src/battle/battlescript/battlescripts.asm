@@ -309,4 +309,4 @@ bsc_battler_hung_on_with_sturdy:
     playanimation BANK_TARGET, BATTLE_ANIM_HANGED_ON, 0
     printstring 0x1c5
     waitmessage 0x40
-    return
+    return 

@@ -611,6 +611,31 @@ extern "C" {
      */
     void tbox_print_money_at(u8 tbox_idx, u8 x, u8 y, u32 amount, u8 speed);
 
+    /**
+     * @brief Prints a string in a tbox with explicitly set font colors
+     * Line and letter spacing are set to 1, x is set to 0 and y to 1
+     * 
+     * @param tbox_idx the box to print in
+     * @param font the font in which to print
+     * @param str the text to print
+     * @param speed with which speed
+     * @param callback a printer callback
+     * @param color_body the color of the text body
+     * @param color_background the color of the text background
+     * @param shadow_color the color of the text shadow
+     * @return u16 
+     */
+    u16 tbox_print_string_set_font_colors_and_spacing_1(u8 tbox_idx, u8 font, const u8 *str, u8 speed, 
+        void (*callback)(tbox*, u16), u8 color_body, u8 color_background, u8 shadow_color);
+
+    /**
+     * @brief Initializes the frame of a message textbox and draws the corresponding tilemap
+     * 
+     * @param tbox_idx the tbox to initilaize
+     * @param copy_to_vram if the changes should be copied to the vram
+     */
+    void tbox_init_frame_message_and_draw_tilemap(u8 tbox_idx, bool copy_to_vram);
+
     extern u8 overworld_tbox_state;
 
     typedef struct {

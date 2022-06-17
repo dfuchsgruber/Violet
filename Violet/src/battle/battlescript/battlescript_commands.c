@@ -697,7 +697,7 @@ static void adjustnormaldamage(bool consider_false_swipe, bool random_damage_mul
     if (battlers[defending_battler].item == ITEM_ENIGMABEERE) {
         hold_effect = enigma_berries[defending_battler].hold_effect;
         hold_effect_param = enigma_berries[defending_battler].hold_effect_parameter;
-    } else {
+    } else { 
         hold_effect = item_get_hold_effect(battlers[defending_battler].item);
         hold_effect_param = item_get_hold_effect_parameter(battlers[defending_battler].item);
     }
@@ -781,7 +781,8 @@ void bsc_command_x93_setohkodamage(void) {
         attack_result |= ATTACK_MISSED;
         defending_battler_ability  = battlers[defending_battler].ability;
         battle_record_ability(defending_battler, battlers[defending_battler].ability);
-        bsc_offset = bsc_sturdy_prevents_ohko;;
+        defending_battler_ability = battlers[defending_battler].ability;
+        bsc_offset = bsc_sturdy_prevents_ohko;
     } else {
         bool hits;
         int level_difference = battlers[attacking_battler].level - battlers[defending_battler].level;

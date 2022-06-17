@@ -327,17 +327,17 @@
 				{
 					"x": "19",
 					"y": "19",
-					"level": 0,
+					"level": "0",
 					"type": "SIGNPOST_HIDDEN_ITEM",
-					"flag": 0,
+					"flag": "0",
 					"value": {
 						"item": {
 							"item": "ITEM_EISJUWEL",
-							"flag": "42",
+							"flag": "43",
 							"amount": "1",
-							"chunk": 0
+							"chunk": "0"
 						},
-						"script": 0
+						"script": "0"
 					}
 				}
 			]

@@ -781,6 +781,15 @@ void npc_update_coordinates(npc *n, s16 x, s16 y);
  **/
 void npc_update_coordinates_with_current(npc *n);
 
+/**
+ * @brief Sets the offset of the surf blob under a player
+ * 
+ * @param oam_idx_surf the oam idx of the surf blob
+ * @param has_offset if it has an offset
+ * @param offset the offset to set
+ */
+void player_npc_set_surf_blob_offset(u8 oam_idx_surf, bool has_offset, u16 offset);
+
 enum {
     JUMP_HEIGHT_12,
     JUMP_HEIGHT_6,
