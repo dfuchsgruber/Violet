@@ -31,12 +31,23 @@ enum {
     FISHING_STATE_BITE_REACT_TO_EXCLAMATION_MARK,
     FISHING_STATE_INTIALIZE_CATCHING,
     FISHING_STATE_CATCHING,
+    FISHING_STATE_DELETE_CATCHING_AND_DO_CONTINUATION_STATE,
+    FISHING_STATE_WAIT_CAUGHT_STARS,
+    FISHING_STATE_CAUGHT,
     FISHING_STATE_IT_GOT_AWAY,
     FISHING_STATE_NOT_EVEN_A_NIBBLE,
     FISHING_STATE_WAIT_FRAME_TO_PRINT_TEXT,
     FISHING_STATE_RESET_PLAYER_STATE_AND_PRINT_TEXT,
-    FISHING_STATE_PRINT_TEXT,
+    FISHING_STATE_PRINT_TEXT_AND_RELEASE,
+    FISHING_STATE_PRINT_TEXT_AND_START_ENCOUNTER,
+    FISHING_STATE_START_ENCOUNTER,
     NUM_FISHING_STATES,
+};
+
+enum {
+    FISHING_STAR_STATE_PROGRESS = 0,
+    FISHING_STAR_STATE_COLLECT,
+    FISHING_STAR_STATE_WAIT_COLLECTING,
 };
 
 enum {
@@ -45,6 +56,14 @@ enum {
     FISHING_STAR_2,
     FISHING_STAR_3,
     FISHING_STAR_FULL,
+    NUM_FISHING_STAR_ANIMATIONS,
+};
+
+enum {
+    FISHING_STAR_RS_NONE,
+    FISHING_STAR_RS_APPEAR,
+    FISHING_STAR_RS_DISAPPEAR,
+    FISHING_STAR_RS_COLLECT,
 };
 
 #define FISHING_THROW_PROGRESS_MARGIN 3
@@ -55,6 +74,7 @@ enum {
 
 #define FISHING_CATCHING_FRAME_TOTAL_HEIGHT (96 - 3 * 2)
 #define FISHING_CATCHING_BAR_HEIGHT 16
+#define FISHING_CATCHING_STAR_HEIGHT 12
 #define FISHING_CATCHING_BAR_G FIXED_DIV(INT_TO_FIXED(1), INT_TO_FIXED(4))
 #define FISHING_CATCHING_BAR_VELOCITY_LOSS FIXED_DIV(INT_TO_FIXED(3), INT_TO_FIXED(2))
 #define FISHING_CATCHING_BAR_MAX_VELOCITY INT_TO_FIXED(8)
@@ -62,6 +82,9 @@ enum {
 
 #define FISHING_CATCHING_FISH_HEIGHT 8
 #define CATCHING_DURATION 512
+#define CATCHING_STAR_DURATION 64
+#define CATCHING_MAX_NUM_STARS 3
+#define CATCHING_NEW_STAR_MAX_ATTEMPTS 100
 
 // For assembling the catching bar gfx
 // Y-positions of each line in the gfx from which to assemble the actual bar
@@ -75,6 +98,8 @@ enum {
 typedef struct {
     u8 state;
     u8 substate;
+    u8 continuation_state;
+    u8 star_state;
     u8 backup_overworld_idx;
     u8 oam_idx_throw_bar;
     u8 oam_idx_throw_bar_progress;
@@ -83,6 +108,7 @@ typedef struct {
     u8 oam_idx_catching_progress_bar;
     u8 oam_idx_catching_bar;
     u8 oam_idx_catching_fish;
+    u8 oam_idx_catching_star;
     void *sprite_throw_bar_progress;
     void *sprite_catching_progress_bar;
     u8 throw_bar_value;
@@ -93,7 +119,12 @@ typedef struct {
     FIXED catching_bar_position;
     FIXED catching_bar_velocity;
     FIXED catching_fish_position;
+    FIXED catching_star_position;
+    u8 catching_star_is_present : 1;
+    u8 catching_succesfull : 1;
     u16 catching_progress;
+    u16 star_progress;
+    u8 num_stars_collected;
 } fishing_state_t;
 
 

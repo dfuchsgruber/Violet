@@ -18,6 +18,7 @@
 #include "text.h"
 #include "language.h"
 #include "overworld/effect.h"
+#include "constants/sav_keys.h"
 
 extern LZ77COMPRESSED gfx_fishing_throw_barTiles;
 extern LZ77COMPRESSED gfx_fishing_throw_barPal;
@@ -103,13 +104,13 @@ static oam_template oam_template_throw_bar_progress = {
     .rotscale = oam_rotscale_anim_table_null, .callback = oam_callback_throw_bar_shake,
 };
 
-static sprite sprite_star = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(0)};
+static sprite sprite_star = {.attr0 = ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE | ATTR0_DSIZE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(0)};
 
-static gfx_frame animation_star_empty[] = {{.data = 1 * GRAPHIC_SIZE_4BPP(32, 32) / GRAPHIC_SIZE_4BPP(8, 8), .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame animation_star_1[] = {{.data = 2 * GRAPHIC_SIZE_4BPP(32, 32) / GRAPHIC_SIZE_4BPP(8, 8), .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame animation_star_2[] = {{.data = 3 * GRAPHIC_SIZE_4BPP(32, 32) / GRAPHIC_SIZE_4BPP(8, 8), .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame animation_star_3[] = {{.data = 4 * GRAPHIC_SIZE_4BPP(32, 32) / GRAPHIC_SIZE_4BPP(8, 8), .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame animation_star_full[] = {{.data = 0 * GRAPHIC_SIZE_4BPP(32, 32) / GRAPHIC_SIZE_4BPP(8, 8), .duration = 0}, {.data = GFX_ANIM_END}};
+static gfx_frame animation_star_empty[] = {{.data = 1 * GRAPHIC_SIZE_4BPP(16, 16) / GRAPHIC_SIZE_4BPP(8, 8), .duration = 0}, {.data = GFX_ANIM_END}};
+static gfx_frame animation_star_1[] = {{.data = 2 * GRAPHIC_SIZE_4BPP(16, 16) / GRAPHIC_SIZE_4BPP(8, 8), .duration = 0}, {.data = GFX_ANIM_END}};
+static gfx_frame animation_star_2[] = {{.data = 3 * GRAPHIC_SIZE_4BPP(16, 16) / GRAPHIC_SIZE_4BPP(8, 8), .duration = 0}, {.data = GFX_ANIM_END}};
+static gfx_frame animation_star_3[] = {{.data = 4 * GRAPHIC_SIZE_4BPP(16, 16) / GRAPHIC_SIZE_4BPP(8, 8), .duration = 0}, {.data = GFX_ANIM_END}};
+static gfx_frame animation_star_full[] = {{.data = 0 * GRAPHIC_SIZE_4BPP(16, 16) / GRAPHIC_SIZE_4BPP(8, 8), .duration = 0}, {.data = GFX_ANIM_END}};
 
 static gfx_frame *animations_star[] = {
     [FISHING_STAR_EMPTY] = animation_star_empty,
@@ -119,10 +120,40 @@ static gfx_frame *animations_star[] = {
     [FISHING_STAR_FULL] = animation_star_full,
 };
 
+static rotscale_frame rs_star_none[] = {
+    {.affine = {.affine_x_value = 0x100, .affine_y_value = 0x100, .duration = 0}},
+    {.command = {.command = ROTSCALE_ANIM_END}}
+};
+
+static rotscale_frame rs_star_appear[] = {
+    {.affine = {.affine_x_value = 8, .affine_y_value = 8, .duration = 0}},
+    {.affine = {.affine_x_value = 8, .affine_y_value = 8, .duration = 31}},
+    {.command = {.command = ROTSCALE_ANIM_END}}
+};
+
+static rotscale_frame rs_star_disappear[] = {
+    {.affine = {.affine_x_value = 0x100, .affine_y_value = 0x100, .duration = 0}},
+    {.affine = {.affine_x_value = -8, .affine_y_value = -8, .duration = 31}},
+    {.command = {.command = ROTSCALE_ANIM_END}}
+};
+
+static rotscale_frame rs_star_collect[] = {
+    {.affine = {.affine_x_value = 0x100, .affine_y_value = 0x100, .duration = 0}},
+    {.affine = {.affine_x_value = 8, .affine_y_value = 8, .duration = 15}},
+    {.command = {.command = ROTSCALE_ANIM_END}}
+};
+
+static rotscale_frame *rs_anims_star[] = {
+    [FISHING_STAR_RS_NONE] = rs_star_none,
+    [FISHING_STAR_RS_APPEAR] = rs_star_appear,
+    [FISHING_STAR_RS_DISAPPEAR] = rs_star_disappear,
+    [FISHING_STAR_RS_COLLECT] = rs_star_collect,
+};
+
 static oam_template oam_template_star = {
     .tiles_tag = FISHING_OAM_TAG_STAR, .pal_tag = FISHING_OAM_TAG_THROW,
     .graphics = NULL, .oam = &sprite_star, .animation = animations_star,
-    .rotscale = oam_rotscale_anim_table_null, .callback = oam_null_callback,
+    .rotscale = rs_anims_star, .callback = oam_null_callback,
 };
 
 static int fishing_get_bite_bonus() {
@@ -137,12 +168,22 @@ static bool fishing_state_lock(u8 self) {
     return true;
 }
 
+static void oam_callback_vibrate(oam_object *self) {
+    self->private[1]++;
+    if (self->private[0] && self->x2 == 0 && (self->private[1] & 3) == 0) {
+        self->x2 = 1;
+    } else {
+        self->x2 = 0;
+    }
+}
+
 static u8 fishing_reach_back_animations[] = {
     [DIR_DOWN] = 12,
     [DIR_UP] = 13,
     [DIR_LEFT] = 14,
     [DIR_RIGHT] = 15,
 };
+
 static bool fishing_state_reach_back(u8 self) {
     fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
     npc *n = npcs + player_state.npc_idx;
@@ -236,30 +277,25 @@ static void star_animation_disappear(oam_object *self) {
 
 static s16 star_x_anchors[3] = {120, 110, 130};
 
-static bool fishing_state_thrown(u8 self) {
-    fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
-    u8 num_stars = fishing_get_throw_rating(state->throw_bar_value);
-    state->num_star_sounds = num_stars;
-    state->delay = 0;
-    oam_load_graphic(&graphic_star);
-    for (int i = 0; i < num_stars; i++) {
-        s16 x = (s16)(star_x_anchors[i] + (rnd16() % 8));
-        s16 y = (s16)(30 - (rnd16() % 10));
+static void fishing_create_stars(fishing_state_t *state, u8 num_stars) {
+    for (size_t i = 0; i < num_stars; i++) {
+        // s16 x = (s16)(star_x_anchors[i] + (rnd16() % 8));
+        // s16 y = (s16)(30 - (rnd16() % 10));
+        s16 x = star_x_anchors[i];
+        s16 y = 24;
         state->oam_idx_star[i] = oam_new_forward_search(&oam_template_star, x, y, 1);
         oam_object *o = oams + state->oam_idx_star[i];
         o->y2 = 20;
-        o->private[0] = (u16)(rnd16() % 16);
+        // o->private[0] = (u16)(rnd16() % 16);
+        o->private[0] = (u16)(i * 10);
         oam_gfx_anim_start(o, FISHING_STAR_FULL);
         o->callback = star_animation_disappear;
         o->callback(o);
     }
-    state->state++;
-    return true;
+    state->num_star_sounds = num_stars;
 }
 
-static bool fishing_state_wait_throw_stars(u8 self) {
-    fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
-    u8 num_stars = fishing_get_throw_rating(state->throw_bar_value);
+static bool fishing_wait_for_stars(fishing_state_t *state, u8 num_stars) {
     bool finished = true;
     for (int i = 0; i < num_stars; i++) {
         if (oams[state->oam_idx_star[i]].callback == star_animation_disappear) {
@@ -281,8 +317,26 @@ static bool fishing_state_wait_throw_stars(u8 self) {
         for (int i = 0; i < num_stars; i++) {
             oam_delete(oams + state->oam_idx_star[i]);
         }
-        state->state++;
+        return true;
     }
+    return false;
+}
+
+static bool fishing_state_thrown(u8 self) {
+    fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
+    u8 num_stars = fishing_get_throw_rating(state->throw_bar_value);
+    state->delay = 0;
+    oam_load_graphic(&graphic_star);
+    fishing_create_stars(state, num_stars);
+    state->state++;
+    return true;
+}
+
+static bool fishing_state_wait_throw_stars(u8 self) {
+    fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
+    u8 num_stars = fishing_get_throw_rating(state->throw_bar_value);
+    if (fishing_wait_for_stars(state, num_stars))
+        state->state++;
     return false;
 }
 
@@ -375,25 +429,33 @@ static bool fishing_wait_frame_to_print_text(u8 self) {
     return false;
 }
 
+static void fishing_reset_player_state(fishing_state_t *state) {
+    oam_object *o = oams + player_state.oam_idx; 
+    npc *n = npcs + player_state.npc_idx;
+    npc_update_picture(n, state->backup_overworld_idx);
+    npc_set_facing(n, n->direction.movement);
+    if (player_state.state & PLAYER_STATE_SURFING) {
+        player_npc_set_surf_blob_offset(n->oam_surf, false, 0);
+    }
+    o->x2 = 0;
+    o->y2 = 0;
+}
+
 static bool fishing_reset_player_state_and_print_text(u8 self) {
     oam_object *o = oams + player_state.oam_idx; 
     fishing_proceed_and_align_oams(o);
     fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
     if (o->flags & OAM_FLAG_GFX_ANIM_END) {
-        npc *n = npcs + player_state.npc_idx;
-        npc_update_picture(n, state->backup_overworld_idx);
-        npc_set_facing(n, n->direction.movement);
-        if (player_state.state & PLAYER_STATE_SURFING) {
-            player_npc_set_surf_blob_offset(n->oam_surf, false, 0);
-        }
-        o->x2 = 0;
-        o->y2 = 0;
-        state->state = FISHING_STATE_PRINT_TEXT;
+        fishing_reset_player_state(state);
+        if (state->catching_succesfull)
+            state->state = FISHING_STATE_PRINT_TEXT_AND_START_ENCOUNTER;
+        else
+            state->state = FISHING_STATE_PRINT_TEXT_AND_RELEASE;
     }
     return false;
 }
 
-static bool fishing_wait_print_text(u8 self) {
+static bool fishing_wait_print_text_and_release(u8 self) {
     fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
     tbox_proceed();
     if (!tbox_printer_is_active(0)) {
@@ -407,8 +469,38 @@ static bool fishing_wait_print_text(u8 self) {
     return false;
 }
 
+static bool fishing_wait_print_text_and_start_encounter(u8 self) {
+    fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
+    tbox_proceed();
+    if (!tbox_printer_is_active(0)) {
+        fishing_reset_player_state(state);
+        tbox_clear_message(0, true);
+        state->state = FISHING_STATE_START_ENCOUNTER;
+    }
+    return false;
+}
+
+static void fishing_pokemon_new(fishing_state_t *state) {
+    (void)state;
+    pid_t pid = {0};
+    pokemon_clear_opponent_party();
+    pokemon_new(opponent_pokemon, 5, 5, POKEMON_NEW_RANDOM_IVS, false, pid, false, 0);
+    
+}
+
+static bool fishing_start_encounter(u8 self) {
+    fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
+    save_increment_key(SAV_KEY_FISHING_ENCOUNTERS);
+    overworld_script_set_inactive();
+    fishing_pokemon_new(state);
+    wildbattle_start();
+    player_state.is_locked = false;
+    fishing_free(state);
+    big_callback_delete(self);
+    return false;
+}
+
 static bool fishing_exclamation_mark(u8 self) {
-    fishing_proceed_and_align_oams(oams + player_state.oam_idx);
     fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
     npc *n = npcs + player_state.npc_idx;
     overworld_effect_state.x = 0xFF;
@@ -483,7 +575,7 @@ static void fishing_update_catching_progress(fishing_state_t *state) {
     int y = 96 - progress;
     gpu_fill_rectangle_4bpp(state->sprite_catching_progress_bar, 0, 0, 8, y, 0, 8);
     gpu_fill_rectangle_4bpp(state->sprite_catching_progress_bar, 0, y, 8, 96, color, 8);
-    DEBUG("Catching progress bar at 0x%x, progress %d, y%d, color %d\n", state->sprite_catching_progress_bar, progress, y);
+    // DEBUG("Catching progress bar at 0x%x, progress %d, y%d, color %d\n", state->sprite_catching_progress_bar, progress, y);
     cpuset(state->sprite_catching_progress_bar, OAMCHARBASE(state->progress_tile_idx), CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(GRAPHIC_SIZE_4BPP(8, 96)));
 }
 
@@ -540,10 +632,19 @@ static sprite sprite_catching_fish = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR
 static oam_template oam_template_catching_fish = {
     .tiles_tag = FISHING_OAM_TAG_CATCHING_FISH, .pal_tag = FISHING_OAM_TAG_THROW,
     .animation = oam_gfx_anim_table_null, .rotscale = oam_rotscale_anim_table_null,
-    .callback = oam_null_callback, .oam = &sprite_catching_fish,
+    .callback = oam_callback_vibrate, .oam = &sprite_catching_fish,
 };
 
+static void fishing_catching_get_anchor_position(s16 *x, s16 *y) {
+    *y = 160 - (96 / 2) - 20;
+    if (player_get_facing() == DIR_RIGHT)
+        *x = 120 - 32;
+    else
+        *x = 120 + 16;
+}
+
 static bool fishing_initialize_catching(u8 self) {
+    fishing_proceed_and_align_oams(oams + player_state.oam_idx);
     fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
     switch (state->substate) {
         case 0:
@@ -561,12 +662,8 @@ static bool fishing_initialize_catching(u8 self) {
             state->substate++;
             return false;
         default: {
-            s16 anchor_x;
-            s16 anchor_y = 160 - (96 / 2) - 20;
-            if (player_get_facing() == DIR_RIGHT)
-                anchor_x = 120 - 32;
-            else
-                anchor_x = 120 + 16;
+            s16 anchor_x, anchor_y;
+            fishing_catching_get_anchor_position(&anchor_x, &anchor_y);
             state->oam_idx_catching_frame = oam_new_forward_search(&oam_template_catching_frame, anchor_x, anchor_y, 31);
             oam_set_subsprite_table(oams + state->oam_idx_catching_frame, &subsprite_table_catching_frame);
             state->oam_idx_catching_progress_bar = oam_new_forward_search(&oam_template_catching_progress_bar, anchor_x, anchor_y, 0);
@@ -607,28 +704,109 @@ static void fishing_catching_fish_proceed(fishing_state_t *state) {
     state->catching_fish_position = pos;
 }
 
+static inline bool intervals_overlap(FIXED a1, FIXED a2, FIXED b1, FIXED b2) {
+    return a1 <= b2 && b1 <= a2;
+}
+
+
+static void fishing_catching_new_star(fishing_state_t *state) {
+    for (int i = 0; i < CATCHING_NEW_STAR_MAX_ATTEMPTS; i++) {
+        state->catching_star_position = INT_TO_FIXED(rnd16() % (FISHING_CATCHING_FRAME_TOTAL_HEIGHT - FISHING_CATCHING_STAR_HEIGHT));
+        FIXED y0_bar = state->catching_bar_position;
+        FIXED y1_bar = FIXED_ADD(y0_bar, INT_TO_FIXED(FISHING_CATCHING_BAR_HEIGHT + 2 * fishing_get_catching_bonus()));
+        FIXED y0_fish = state->catching_fish_position;
+        FIXED y1_fish = FIXED_ADD(y0_fish, INT_TO_FIXED(FISHING_CATCHING_FISH_HEIGHT));
+        FIXED y0_star = state->catching_star_position;
+        FIXED y1_star = FIXED_ADD(y0_star, INT_TO_FIXED(FISHING_CATCHING_STAR_HEIGHT));
+        if (!intervals_overlap(y0_bar, y1_bar, y0_star, y1_star) && 
+            !intervals_overlap(y0_fish, y1_fish, y0_star, y1_star)) {
+
+            DEBUG("New star at [%d, %d], bar at [%d, %d], fish at [%d, %d]\n", 
+                FIXED_TO_INT(y0_star), FIXED_TO_INT(y1_star), FIXED_TO_INT(y0_bar), 
+                FIXED_TO_INT(y1_bar), FIXED_TO_INT(y0_fish), FIXED_TO_INT(y1_fish));
+            break;
+        }
+    }
+}
+
+static void fishing_catching_new_star_proceed(fishing_state_t *state) {
+    if (!state->catching_star_is_present && state->num_stars_collected < CATCHING_MAX_NUM_STARS && 
+            (rnd16() % 512) == 0) {
+        // Find a position that does not overlap the bar and the fish (if possible)
+        fishing_catching_new_star(state);
+        s16 anchor_x, anchor_y;
+        fishing_catching_get_anchor_position(&anchor_x, &anchor_y);
+        state->oam_idx_catching_star = oam_new_forward_search(&oam_template_star, 
+            (s16)(anchor_x + 11), (s16)(anchor_y + 23), 1);
+        oam_rotscale_anim_init(oams + state->oam_idx_catching_star, FISHING_STAR_RS_APPEAR);
+        oams[state->oam_idx_catching_star].y2 = (s16)(-FIXED_TO_INT(state->catching_star_position));
+        oams[state->oam_idx_catching_star].callback = oam_callback_vibrate;
+        state->star_progress = 0;
+        state->catching_star_is_present = true;
+    }
+}
+
+static void fishing_star_progress_proceed(fishing_state_t *state) {
+    oam_object *o = oams + state->oam_idx_catching_star;
+    switch(state->star_state) {
+        case FISHING_STAR_STATE_PROGRESS: {
+            if (state->catching_star_is_present) {
+                FIXED y0_box = state->catching_bar_position;
+                FIXED y1_box = FIXED_ADD(y0_box, INT_TO_FIXED(FISHING_CATCHING_BAR_HEIGHT + 2 * fishing_get_catching_bonus()));
+                FIXED y0_star = state->catching_star_position;
+                FIXED y1_star = FIXED_ADD(y0_star, INT_TO_FIXED(FISHING_CATCHING_STAR_HEIGHT));
+                if (intervals_overlap(y0_box, y1_box, y0_star, y1_star)) {
+                    state->star_progress = (u16)MIN(CATCHING_STAR_DURATION, state->star_progress + 1);
+                    o->private[0] = true;
+                } else {
+                    state->star_progress = (u16)MAX(0, state->star_progress - 1);
+                    o->private[0] = false;
+                }
+                u8 anim_idx = (u8)((NUM_FISHING_STAR_ANIMATIONS - 1) * state->star_progress / CATCHING_STAR_DURATION);
+                oam_gfx_anim_start(o, anim_idx);
+                if (state->star_progress == CATCHING_STAR_DURATION) {
+                    play_sound(244);
+                    state->star_state = FISHING_STAR_STATE_COLLECT;
+                    state->num_stars_collected++;
+                }
+            }
+            break;
+        }
+        case FISHING_STAR_STATE_COLLECT: {
+            oam_rotscale_anim_init(o, FISHING_STAR_RS_COLLECT);
+            state->star_state = FISHING_STAR_STATE_WAIT_COLLECTING;
+            FALL_THROUGH;
+        }
+        case FISHING_STAR_STATE_WAIT_COLLECTING: {
+            if (o->flags & OAM_FLAG_ROTSCALE_ANIM_END) {
+                oam_delete(o);
+                state->catching_star_is_present = false;
+                state->star_state = FISHING_STAR_STATE_PROGRESS;
+            }
+            break;
+        }
+    }
+    
+}
+
 static void fishing_catching_progress_proceed(fishing_state_t *state) {
     // Check if the intervals defined by the fish and the box intersect
     FIXED y0_box = state->catching_bar_position;
     FIXED y1_box = FIXED_ADD(y0_box, INT_TO_FIXED(FISHING_CATCHING_BAR_HEIGHT + 2 * fishing_get_catching_bonus()));
     FIXED y0_fish = state->catching_fish_position;
     FIXED y1_fish = FIXED_ADD(y0_fish, INT_TO_FIXED(FISHING_CATCHING_FISH_HEIGHT));
-
-    DEBUG("box [%d, %d], fish [%d, %d], overlapping %d\n", 
-        FIXED_TO_INT(y0_box), FIXED_TO_INT(y1_box), 
-        FIXED_TO_INT(y0_fish), FIXED_TO_INT(y1_fish),
-        (y0_box <= y1_fish) && (y0_fish <= y1_box));
-
-    if ((y0_box <= y1_fish) && (y0_fish <= y1_box)) {
-        // Overlap between the intervals
+    if (intervals_overlap(y0_box, y1_box, y0_fish, y1_fish)) {
         state->catching_progress = (u16)MIN(CATCHING_DURATION, state->catching_progress + 1);
+        oams[state->oam_idx_catching_fish].private[0] = true;
     } else {
         state->catching_progress = (u16)MAX(0, state->catching_progress - 2);
+        oams[state->oam_idx_catching_fish].private[0] = false;
     }
     fishing_update_catching_progress(state);
 }
 
 static bool fishing_catching(u8 self) {
+    fishing_proceed_and_align_oams(oams + player_state.oam_idx);
     fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
     if (super.keys_new.keys.A) { // Burst
         state->catching_bar_velocity = MIN(FISHING_CATCHING_BAR_MAX_VELOCITY, 
@@ -640,11 +818,72 @@ static bool fishing_catching(u8 self) {
     // DEBUG("Pos 0x%x, veclocity 0x%x\n", state->catching_bar_position, state->catching_bar_velocity);
     fishing_catching_bar_proceed(state);
     fishing_catching_fish_proceed(state);
+    fishing_catching_new_star_proceed(state);
+    fishing_star_progress_proceed(state);
     fishing_catching_progress_proceed(state);
-    (void)self;
+    if (super.keys_new.keys.B || state->catching_progress == 0) {
+        state->state = FISHING_STATE_DELETE_CATCHING_AND_DO_CONTINUATION_STATE;
+        state->continuation_state = FISHING_STATE_IT_GOT_AWAY;
+        fanfare(271);
+    } else if  (state->catching_progress == CATCHING_DURATION) {
+        oams[state->oam_idx_catching_fish].private[0] = false; // Stop vibration
+        if (state->catching_star_is_present)
+            oams[state->oam_idx_catching_star].private[0] = false; // Stop vibration
+        fishing_create_stars(state, state->num_stars_collected);
+        state->catching_succesfull = true;
+        state->state = FISHING_STATE_WAIT_CAUGHT_STARS;
+    }
+    return false;
+}
+static bool fishing_wait_caught_stars(u8 self) {
+    fishing_proceed_and_align_oams(oams + player_state.oam_idx);
+    fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
+    if (fishing_wait_for_stars(state, state->num_stars_collected)) {
+        state->state = FISHING_STATE_DELETE_CATCHING_AND_DO_CONTINUATION_STATE;
+        state->continuation_state = FISHING_STATE_CAUGHT;
+    }
     return false;
 }
 
+static u8 str_got_one_on_hook[] = LANGDEP(
+    PSTRING("Du hast ein Pokémon am Haken!PAUSE_UNTIL_PRESS"), 
+    PSTRING("You got a Pokémon on the hook!PAUSE_UNTIL_PRESS")
+);
+
+static bool fishing_caught(u8 self) {
+    fishing_proceed_and_align_oams(oams + player_state.oam_idx);
+    fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
+    (void)str_got_one_on_hook;
+    oam_gfx_anim_start(oams + player_state.oam_idx, fishing_get_no_bite_animation_idx_by_facing_direction(player_get_facing()));
+    tbox_init_frame_message_and_draw_tilemap(0, true);
+    tbox_flush_set(0, 0x11);
+    tbox_print_string_set_font_colors_and_spacing_1(0, 2, str_got_one_on_hook, tbox_get_set_speed(), NULL, 2, 1, 3);
+    state->state = FISHING_STATE_WAIT_FRAME_TO_PRINT_TEXT;
+    return true;
+}
+
+static bool fishing_delete_catching_and_do_continuation_state(u8 self) {
+    fishing_proceed_and_align_oams(oams + player_state.oam_idx);
+    fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
+    if (state->delay) {
+        state->delay--;
+        return false;
+    }
+    if (big_callback_is_active(fanfare_callback_wait))
+        return false;
+    oam_delete(oams + state->oam_idx_catching_progress_bar);
+    oam_delete(oams + state->oam_idx_catching_bar);
+    oam_delete(oams + state->oam_idx_catching_fish);
+    oam_delete(oams + state->oam_idx_catching_frame);
+    if (state->catching_star_is_present)
+        oam_delete(oams + state->oam_idx_catching_star);
+    oam_free_vram_by_tag(FISHING_OAM_TAG_CATCHING_FRAME);
+    oam_free_vram_by_tag(FISHING_OAM_TAG_CATCHING_BAR);
+    oam_free_vram_by_tag(FISHING_OAM_TAG_CATCHING_FISH);
+    oam_free_vram_by_tag(FISHING_OAM_TAG_CATCHING_PROGRESS);
+    state->state = state->continuation_state;
+    return false;
+}
 
 static u8 str_it_got_away[] = LANGDEP(
     PSTRING("Es ist entkommenDOTSPAUSE_UNTIL_PRESS"), 
@@ -678,19 +917,25 @@ bool (*fishing_callbacks[NUM_FISHING_STATES])(u8) = {
     [FISHING_STATE_WAIT_FOR_BITE] = fishing_wait_for_bite,
     [FISHING_STATE_NOT_EVEN_A_NIBBLE] = fishing_not_even_a_nibble,
     [FISHING_STATE_WAIT_FRAME_TO_PRINT_TEXT] = fishing_wait_frame_to_print_text,
-    [FISHING_STATE_PRINT_TEXT] = fishing_wait_print_text,
+    [FISHING_STATE_PRINT_TEXT_AND_RELEASE] = fishing_wait_print_text_and_release,
     [FISHING_STATE_RESET_PLAYER_STATE_AND_PRINT_TEXT] = fishing_reset_player_state_and_print_text,
     [FISHING_STATE_BITE_EXCLAMATION_MARK] = fishing_exclamation_mark,
     [FISHING_STATE_BITE_REACT_TO_EXCLAMATION_MARK] = fishing_react_to_exclamation_mark,
     [FISHING_STATE_IT_GOT_AWAY] = fishing_it_got_away,
     [FISHING_STATE_INTIALIZE_CATCHING] = fishing_initialize_catching,
     [FISHING_STATE_CATCHING] = fishing_catching,
+    [FISHING_STATE_DELETE_CATCHING_AND_DO_CONTINUATION_STATE] = fishing_delete_catching_and_do_continuation_state,
+    [FISHING_STATE_WAIT_CAUGHT_STARS] = fishing_wait_caught_stars,
+    [FISHING_STATE_CAUGHT] = fishing_caught,
+    [FISHING_STATE_PRINT_TEXT_AND_START_ENCOUNTER] = fishing_wait_print_text_and_start_encounter,
+    [FISHING_STATE_START_ENCOUNTER] = fishing_start_encounter,
 };
 
 static void fishing_big_callback_do(u8 self) {
     fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
     if (state->state >= ARRAY_COUNT(fishing_callbacks))
         return;
+    DEBUG("Fishing state %d\n", state->state);
     while (fishing_callbacks[state->state](self)) {}
 }
 

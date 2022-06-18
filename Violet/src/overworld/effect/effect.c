@@ -88,7 +88,7 @@ static rotscale_frame overworld_effect_sound_wave_rotscale_anim[] = {
 
 static void overworld_effect_sound_wave_oam_callback(oam_object *self) {
     // if (self->private[0]++ >= overworld_effect_sound_wave_rotscale_anim[1].affine.duration) {
-    if (self->flags & OAM_FLAG_GFX_ROTSCALE_ANIM_END) {
+    if (self->flags & OAM_FLAG_ROTSCALE_ANIM_END) {
         oam_rotscale_free(self);
         overworld_effect_delete(self, OVERWORLD_EFFECT_SOUND_WAVE);
     }

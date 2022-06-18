@@ -115,7 +115,7 @@ extern oam_template gp_oam_template; // Multi-use oam template
 #define OAM_FLAG_GFX_ANIM_START 0x400
 #define OAM_FLAG_ROTSCALE_ANIM_START 0x800
 #define OAM_FLAG_GFX_ANIM_END 0x1000
-#define OAM_FLAG_GFX_ROTSCALE_ANIM_END 0x2000
+#define OAM_FLAG_ROTSCALE_ANIM_END 0x2000
 #define OAM_FLAG_SPRITES 0x4000
 
 typedef struct {

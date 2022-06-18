@@ -178,7 +178,7 @@ void bag_format_item_string(u8 *dst, u16 item_idx) {
 
 
 static void bag_oam_callback_bag_shaking(oam_object *self) {
-    if (self->flags & OAM_FLAG_GFX_ROTSCALE_ANIM_END) {
+    if (self->flags & OAM_FLAG_ROTSCALE_ANIM_END) {
         oam_rotscale_anim_init(self, 0);
         self->callback = oam_null_callback;
     }
@@ -186,7 +186,7 @@ static void bag_oam_callback_bag_shaking(oam_object *self) {
 
 void bag_shake_oam() {
     oam_object *o = oams + BAG2_STATE->oam_idx_bag;
-    if (o->flags & OAM_FLAG_GFX_ROTSCALE_ANIM_END) {
+    if (o->flags & OAM_FLAG_ROTSCALE_ANIM_END) {
         oam_rotscale_anim_init(o, 1);
         o->callback = bag_oam_callback_bag_shaking;
     }
