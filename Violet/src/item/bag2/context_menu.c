@@ -19,6 +19,8 @@
 #include "vars.h"
 #include "item/tm_hm.h"
 #include "overworld/map_control.h"
+#include "item/fishing.h"
+#include "data_structures.h"
 
 static u8 str_use[] = LANGDEP(PSTRING("O.K."), PSTRING("Use"));
 static u8 str_give[] = LANGDEP(PSTRING("Geben"), PSTRING("Give"));
@@ -27,6 +29,8 @@ static u8 str_cancel[] = LANGDEP(PSTRING("Zurück"), PSTRING("Cancel"));
 static u8 str_select[] = LANGDEP(PSTRING("Select"), PSTRING("Select"));
 static u8 str_deselect[] = LANGDEP(PSTRING("Select"), PSTRING("Select"));
 static u8 str_walk[] = LANGDEP(PSTRING("Laufen"), PSTRING("Walk"));
+static u8 str_equip_bait[] = LANGDEP(PSTRING("Ausrüsten"), PSTRING("Equip"));
+static u8 str_unequip_bait[] = LANGDEP(PSTRING("Entfernen"), PSTRING("Unequip"));
 
 static u16 bag_context_menu_get_start_tile() {
     u16 start_tile = 0;
@@ -335,6 +339,90 @@ static void bag_context_menu_item_battle_use(u8 self) {
     }
 }
 
+static void bag_equip_bait_continuation() {
+    u16 item_idx_rod = (u16)gp_stack_pop();
+    if (item_activated != ITEM_NONE) {
+        item_rod_equip_bait(item_idx_rod, item_activated);
+    }
+	bag_open(BAG_CONTEXT_OVERWORLD, BAG_OPEN_KEYITEMS, NULL);
+}
+
+static void bag_initalize_with_context_equip_bait() {
+	bag_open(BAG_CONTEXT_EQUIP_BAIT, BAG_OPEN_BAIT, NULL);
+	bag_set_continuation(bag_equip_bait_continuation);
+}
+
+static void bag_equip_bait(u8 self) {
+    gp_stack_push(item_activated);
+	bag_set_continuation(bag_initalize_with_context_equip_bait);
+	bag_fade_out_and_continuation(self);
+}
+
+
+static void bag_equip_bait_confirm_yes(u8 self) {
+    // tbox_clear_message(BAG_TBOX_MESSAGE_WITH_YES_NO, false);
+    tbox_flush_map_and_frame(BAG_TBOX_MESSAGE_WITH_YES_NO);
+    bag_equip_bait(self);
+}
+
+static yes_no_box_callbacks_t yes_no_callbacks_equip_bait = {
+    .no_callback = bag_toss_confirm_no,
+    .yes_callback = bag_equip_bait_confirm_yes,
+};
+
+static u8 str_confirm_equip_bait[] = LANGDEP(
+    PSTRING("BUFFER_2 ist\nausgerüstet. Wechsel?"),
+    PSTRING("BUFFER_2 is\nequipped. Continue?")
+);
+
+static void bag_confirm_equip(u8 self) {
+    strcpy(buffer0, item_get_name(item_activated));
+    strcpy(buffer1, item_get_name(item_rod_get_equipped_bait(item_activated)));
+    string_decrypt(strbuf, str_confirm_equip_bait);
+    tbox_draw_std_frame_by_base_tile_and_pal(BAG_TBOX_MESSAGE_WITH_YES_NO, true, BAG_START_TILE_BORDER_STD, BAG_PAL_IDX_BORDER_STD);
+    tbox_print_string(BAG_TBOX_MESSAGE_WITH_YES_NO, 2, 0, 0, 0, 0, &bag_font_colormap_std, 0, strbuf);
+    bg_virtual_sync_reqeust_push(0);
+    tboxdata template = {.bg_id = 0, .h = 2 * 2, .w = 5, .x = 30 - 5 - 1, .y = (u8)(20 - 1 - (2 * 2)), .pal = 14, .start_tile = bag_context_menu_get_start_tile()};
+    gp_list_menu_yes_no_new_with_callbacks(self, &template, 2, 0, 0, BAG_START_TILE_BORDER_STD, BAG_PAL_IDX_BORDER_STD, &yes_no_callbacks_equip_bait);
+}
+
+static void bag_context_menu_item_equip_bait(u8 self) {
+    // Close the context menu and hide tboxes
+    tbox_flush_all(BAG2_STATE->tbox_context_menu, 0x00);
+    tbox_flush_map(BAG2_STATE->tbox_context_menu);
+    tbox_free_2(BAG2_STATE->tbox_context_menu);
+    tbox_flush_map(BAG_TBOX_CONTEXT_MENU_TEXT);
+    tbox_tilemap_draw(BAG_TBOX_LIST);
+    bg_virtual_sync_reqeust_push(0);
+
+    if (item_rod_get_equipped_bait(item_activated) != ITEM_NONE) {
+        big_callbacks[self].function = bag_confirm_equip;
+    } else {
+        bag_equip_bait(self);
+    }   
+}
+
+static u8 str_unequiped_bait[] = LANGDEP(
+    PSTRING("BUFFER_1 wurde von\nBUFFER_2 entfernt."),
+    PSTRING("BUFFER_1 was\nremoved from BUFFER_2.")
+);
+
+static void bag_context_menu_item_unequip_bait(u8 self) {
+    // Close the context menu and hide tboxes
+    tbox_flush_all(BAG2_STATE->tbox_context_menu, 0x00);
+    tbox_flush_map(BAG2_STATE->tbox_context_menu);
+    tbox_free_2(BAG2_STATE->tbox_context_menu);
+    tbox_flush_map(BAG_TBOX_CONTEXT_MENU_TEXT);
+    tbox_tilemap_draw(BAG_TBOX_LIST);
+    bg_virtual_sync_reqeust_push(0);
+    
+    strcpy(buffer0, item_get_name(item_rod_get_equipped_bait(item_activated)));
+    strcpy(buffer1, item_get_name(item_activated));
+    string_decrypt(strbuf, str_unequiped_bait);
+    item_rod_equip_bait(item_activated, ITEM_NONE);
+    bag_print_string(self, 2, strbuf, bag_toss_or_sell_wait_a_or_b_press_and_redraw_all);
+}
+
 menu_action_t bag_context_menu_items[NUM_BAG_CONTEXT_MENU_ITEMS] = {
     [BAG_CONTEXT_MENU_USE] = {.text = str_use, .function = {.void_u8 = bag_context_menu_item_use}},
     [BAG_CONTEXT_MENU_GIVE] = {.text = str_give, .function = {.void_u8 = bag_context_menu_item_give}},
@@ -344,6 +432,8 @@ menu_action_t bag_context_menu_items[NUM_BAG_CONTEXT_MENU_ITEMS] = {
     [BAG_CONTEXT_MENU_DESELECT] = {.text = str_deselect, .function = {.void_u8 = bag_context_menu_item_toggle_select}},
     [BAG_CONTEXT_MENU_WALK] = {.text = str_walk, .function = {.void_u8 = bag_context_menu_item_use}},
     [BAG_CONTEXT_MENU_BATTLE_USE] = {.text = str_use, .function = {.void_u8 = bag_context_menu_item_battle_use}},
+    [BAG_CONTEXT_MENU_EQUIP_BAIT] = {.text = str_equip_bait, .function = {.void_u8 = bag_context_menu_item_equip_bait}},
+    [BAG_CONTEXT_MENU_UNEQUIP_BAIT] = {.text = str_unequip_bait, .function = {.void_u8 = bag_context_menu_item_unequip_bait}},
 };
 
 
@@ -423,6 +513,11 @@ static void bag_item_selected_overworld(u8 self) {
             context_menu[num_items++] = BAG_CONTEXT_MENU_WALK;
         else
             context_menu[num_items++] = BAG_CONTEXT_MENU_USE;
+    }
+    if (item_is_rod(item_activated)) {
+        context_menu[num_items++] = BAG_CONTEXT_MENU_EQUIP_BAIT;
+        if (item_rod_get_equipped_bait(item_activated) != ITEM_NONE)
+            context_menu[num_items++] = BAG_CONTEXT_MENU_UNEQUIP_BAIT;
     }
     if (item_get_pocket(item_activated) == POCKET_KEY_ITEMS) {
         if (save1->registered_item == item_activated)
@@ -805,6 +900,11 @@ static void bag_item_selected_battle(u8 self) {
     big_callbacks[self].function = bag_context_menu_overworld_handle_input;
 }
 
+static void bag_item_selected_equip_bait(u8 self) {
+    bag_disable_ui();
+    bag_close(self, item_activated, true);
+}
+
 
 void (*bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8) = {
     [BAG_CONTEXT_OVERWORLD] = bag_item_selected_overworld,
@@ -815,4 +915,5 @@ void (*bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8) = {
     [BAG_CONTEXT_PLANT_BERRY] = bag_item_selected_plant_berry,
     [BAG_CONTEXT_RECHARGE_TM_HM] = bag_item_selected_recharge,
     [BAG_CONTEXT_BATTLE] = bag_item_selected_battle,
+    [BAG_CONTEXT_EQUIP_BAIT]  = bag_item_selected_equip_bait,
 };

@@ -3,6 +3,7 @@
 
 #include "types.h"
 #include "oam.h"
+#include "constants/wild_pokemon_densities.h"
 
 enum {
     FISHING_OAM_TAG_THROW = 0xEAAA,
@@ -11,6 +12,14 @@ enum {
     FISHING_OAM_TAG_CATCHING_BAR,
     FISHING_OAM_TAG_CATCHING_FISH,
     FISHING_OAM_TAG_CATCHING_PROGRESS,
+};
+
+enum {
+    FISHING_OAM_PRIORITY_FISH,
+    FISHING_OAM_PRIORITY_STAR,
+    FISHING_OAM_PRIORITY_BAR,
+    FISHING_OAM_PRIORITY_PROGRESS,
+    FISHING_OAM_PRIORITY_FRAME,
 };
 
 enum {
@@ -66,6 +75,30 @@ enum {
     FISHING_STAR_RS_COLLECT,
 };
 
+enum {
+    // FISH_PATTERN_NONE initializes a new random pattern
+    FISH_PATTERN_NEW,
+    // These patterns initialize coordinates to move to
+    FISH_PATTERN_MOVE_SLOW_CLOSE,
+    FISH_PATTERN_MOVE_FAST_CLOSE,
+    FISH_PATTERN_MOVE_FAST_FAR,
+    FISH_PATTERN_OSCILLATE,
+    // These patterns actually move to coordinates
+    FISH_PATTERN_MOVE_TO_TARGET_POSITION,
+    FISH_PATTERN_DO_OSCILLATION,
+    NUM_FISH_PATTERNS,
+};
+
+#define FISH_PATTERN_NUM_PROPOSALS_CLOSE 4
+#define FISH_PATTERN_NUM_PROPOSALS_FAR 2
+
+enum {
+    ROD_TYPE_NONE = -1,
+    ROD_TYPE_OLD_ROD = 0,
+    ROD_TYPE_GOOD_ROD,
+    ROD_TYPE_SUPER_ROD,
+};
+
 #define FISHING_THROW_PROGRESS_MARGIN 3
 #define FISHING_THROW_PROGRESS_TOTAL_WIDTH (64 - (FISHING_THROW_PROGRESS_MARGIN * 2))
 
@@ -75,9 +108,9 @@ enum {
 #define FISHING_CATCHING_FRAME_TOTAL_HEIGHT (96 - 3 * 2)
 #define FISHING_CATCHING_BAR_HEIGHT 16
 #define FISHING_CATCHING_STAR_HEIGHT 12
-#define FISHING_CATCHING_BAR_G FIXED_DIV(INT_TO_FIXED(1), INT_TO_FIXED(4))
-#define FISHING_CATCHING_BAR_VELOCITY_LOSS FIXED_DIV(INT_TO_FIXED(3), INT_TO_FIXED(2))
-#define FISHING_CATCHING_BAR_MAX_VELOCITY INT_TO_FIXED(8)
+#define FISHING_CATCHING_BAR_G FIXED_DIV(INT_TO_FIXED(1), INT_TO_FIXED(5))
+#define FISHING_CATCHING_BAR_VELOCITY_LOSS FIXED_DIV(INT_TO_FIXED(5), INT_TO_FIXED(2))
+#define FISHING_CATCHING_BAR_MAX_VELOCITY FIXED_DIV(INT_TO_FIXED(7), INT_TO_FIXED(2))
 #define FISHING_CATCHING_BAR_BOOST FIXED_DIV(INT_TO_FIXED(5), INT_TO_FIXED(3))
 
 #define FISHING_CATCHING_FISH_HEIGHT 8
@@ -86,14 +119,19 @@ enum {
 #define CATCHING_MAX_NUM_STARS 3
 #define CATCHING_NEW_STAR_MAX_ATTEMPTS 100
 
+#define MAX_FISH_RATING 8
+
 // For assembling the catching bar gfx
 // Y-positions of each line in the gfx from which to assemble the actual bar
 
-#define CATCHING_BAR_Y_TOP 0
-#define CATCHING_BAR_Y_DEFAULT 1
-#define CATCHING_BAR_Y_TOP_SHINE 2
-#define CATCHING_BAR_Y_BOTTOM_SHADOW 3
-#define CATCHING_BAR_Y_BOTTOM 4
+enum {
+    CATCHING_BAR_Y_TOP,
+    CATCHING_BAR_Y_DEFAULT,
+    CATCHING_BAR_Y_TOP_SHINE,
+    CATCHING_BAR_Y_BOTTOM_SHADOW,
+    CATCHING_BAR_Y_BOTTOM,
+    NUM_CATCHING_BAR_COMPONENTS,
+};
 
 typedef struct {
     u8 state;
@@ -101,6 +139,7 @@ typedef struct {
     u8 continuation_state;
     u8 star_state;
     u8 backup_overworld_idx;
+    u8 rod_type;
     u8 oam_idx_throw_bar;
     u8 oam_idx_throw_bar_progress;
     u8 oam_idx_star[3];
@@ -125,6 +164,14 @@ typedef struct {
     u16 catching_progress;
     u16 star_progress;
     u8 num_stars_collected;
+    u8 fish_rating;
+    u16 bait;
+    u8 fish_pattern;
+    u8 fish_pattern_state;
+    FIXED fish_origin_position;
+    FIXED fish_target_position;
+    u16 fish_t;
+    u16 fish_pattern_duration;
 } fishing_state_t;
 
 
@@ -177,5 +224,54 @@ u8 fishing_get_bite_animation_idx_by_facing_direction(u8 direction);
  * @return u8 the animation index
  */
 u8 fishing_get_no_bite_animation_idx_by_facing_direction(u8 direction);
+
+/**
+ * @brief Checks if an item is a rod
+ * 
+ * @param item_idx the item to check
+ * @return true 
+ * @return false 
+ */
+bool item_is_rod(u16 item_idx);
+
+/**
+ * @brief Gets the bait equipped to a rod
+ * 
+ * @param item_idx the rod
+ * @return u16 the bait or ITEM_NONE if no bait is equipped
+ */
+u16 item_rod_get_equipped_bait(u16 item_idx);
+
+/**
+ * @brief Sets the bait equipped to a rod
+ * 
+ * @param rod_item_idx the rod to equip to
+ * @param bait_item_idx the bait to equip
+ */
+void item_rod_equip_bait(u16 rod_item_idx, u16 bait_item_idx);
+
+/**
+ * @brief Uses up a bait on a rod
+ * 
+ * @param rod_item_idx The rod item to use the bait of
+ * @return u16 The bait that was used or ITEM_NONE if none was equipped to the rod
+ */
+u16 item_rod_use_bait(u16 rod_item_idx);
+
+/**
+ * @brief Gets the rod associated with an item
+ * 
+ * @param item_idx the item idx
+ * @return int the associated rod or ROD_TYPE_NONE if no rod matches
+ */
+int item_idx_to_rod_idx(u16 item_idx);
+
+/**
+ * @brief Gets the item associated with a rod
+ * 
+ * @param rod_idx the rod type
+ * @return u16 the item or ITEM_NONE if the rod idx is invalid
+ */
+u16 rod_idx_to_item_idx(int rod_idx);
 
 #endif

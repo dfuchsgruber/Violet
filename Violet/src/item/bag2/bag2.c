@@ -24,6 +24,7 @@
 #include "music.h"
 #include "menu_indicators.h"
 #include "overworld/pokemon_party_menu.h"
+#include "item/fishing.h"
 
 static u8 bag_pocket_order[] = {
     POCKET_ITEMS, POCKET_MEDICINE, POCKET_POKEBALLS, POCKET_TM_HM, POCKET_BERRIES, POCKET_KEY_ITEMS, POCKET_BAIT,
@@ -42,6 +43,7 @@ static u8 bag_pocket_switching_disabled_by_context[NUM_BAG_CONTEXTS] = {
     [BAG_CONTEXT_COMPOST] = true,
     [BAG_CONTEXT_PLANT_BERRY] = true,
     [BAG_CONTEXT_RECHARGE_TM_HM] = true,
+    [BAG_CONTEXT_EQUIP_BAIT] = true,
 };
 
 u8 bag_get_current_pocket() {
@@ -207,6 +209,42 @@ void bag_print_item_description(u16 slot) {
     tbox_tilemap_draw(BAG_TBOX_DESCRIPTION);
     tbox_print_string(BAG_TBOX_DESCRIPTION, 2, 0, 3, 0, 0, &bag_font_colormap_description, 0, description);
     bg_virtual_sync_reqeust_push(bag_tboxes[BAG_TBOX_DESCRIPTION].bg_id);
+}
+
+static u8 str_equipped_bait[] = LANGDEP(
+    PSTRING("Ausgerüstet:"),
+    PSTRING("Equipped:")
+);
+static u8 str_bait_none[] = PSTRING("---");
+static u8 str_bait_quantity[] = PSTRING("×BUFFER_1");
+
+void bag_print_rod_bait(u16 slot) {
+    u8 pocket = bag_get_current_pocket();
+    u16 item_idx;
+    if (slot == BAG2_STATE->pocket_size[pocket])
+        item_idx = ITEM_NONE;
+    else
+        item_idx = item_get_idx_by_pocket_position(pocket, slot);
+    if (item_is_rod(item_idx)) {
+        tbox_flush_set(BAG_TBOX_ROD_DETAILS, 0x00);
+        tbox_fill_rectangle(BAG_TBOX_ROD_DETAILS, 0x11, 0, 0, 76, (u8)(bag_tboxes[BAG_TBOX_ROD_DETAILS].y * 8));
+        tbox_tilemap_draw(BAG_TBOX_ROD_DETAILS);
+        tbox_print_string(BAG_TBOX_ROD_DETAILS, 0, 2, 2, 0, 0, &bag_font_colormap_pocket_hint, 0, str_equipped_bait);
+        u16 bait = item_rod_get_equipped_bait(item_idx);
+        u8 *bait_name;
+        if (bait == ITEM_NONE) {
+            bait_name = str_bait_none;
+        } else {
+            bait_name = item_get_name(bait);
+            itoa(buffer0, MIN(999, item_get_count(bait)), ITOA_PAD_SPACES, 3);
+            string_decrypt(strbuf, str_bait_quantity);
+            tbox_print_string(BAG_TBOX_ROD_DETAILS, 0, 10, 40, 0, 0, &bag_font_colormap_pocket_hint, 0, strbuf);
+        }
+        tbox_print_string(BAG_TBOX_ROD_DETAILS, 0, 10, 16, 0, 0, &bag_font_colormap_pocket_hint, 0, bait_name);
+    } else {
+        tbox_flush_map(BAG_TBOX_ROD_DETAILS);
+    }
+    bg_virtual_sync_reqeust_push(bag_tboxes[BAG_TBOX_ROD_DETAILS].bg_id);
 }
 
 void bag_new_scroll_indicators_items() {

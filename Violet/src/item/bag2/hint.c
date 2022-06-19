@@ -9,6 +9,7 @@ static u8 str_hint_recharge[] = LANGDEP(PSTRING("Welche Tm\naufladen?"), PSTRING
 static u8 str_hint_compost[] = LANGDEP(PSTRING("Welche Beere\nkompostieren?"), PSTRING("Compost which\nberry?"));
 static u8 str_hint_sell[] = LANGDEP(PSTRING("Welches Item\nverkaufen?"), PSTRING("Sell which\nitem?"));
 static u8 str_hint_plant_berry[] = LANGDEP(PSTRING("Welche Beere\npflanzen?"), PSTRING("Plant which\nberry?"));
+static u8 str_hint_equip_bait[] = LANGDEP(PSTRING("Welchen Köder\nausrüsten?"), PSTRING("Equip which\nbait?"));
 
 static u8 *bag_context_hints[NUM_BAG_CONTEXTS] = {
     [BAG_CONTEXT_PARTY_GIVE] = str_hint_give,
@@ -18,6 +19,7 @@ static u8 *bag_context_hints[NUM_BAG_CONTEXTS] = {
     [BAG_CONTEXT_RECHARGE_TM_HM] = str_hint_recharge,
     [BAG_CONTEXT_COMPOST] = str_hint_compost,
     [BAG_CONTEXT_PLANT_BERRY] = str_hint_plant_berry,
+    [BAG_CONTEXT_EQUIP_BAIT] = str_hint_equip_bait,
 };
 
 u8 *bag_get_context_hint() {

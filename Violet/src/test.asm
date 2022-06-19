@@ -38,6 +38,8 @@ str_afterb:
 
 ow_script_test:
 	additem ITEM_NULLSAFT 1
+	additem ITEM_KOEDER 2
+	additem ITEM_GOLDKOEDER 1
 	end
 	additem ITEM_ASCHETASCHE 1
 	additem ITEM_POKEFLOETE 1

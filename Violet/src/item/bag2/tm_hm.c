@@ -282,8 +282,6 @@ static void tm_hm_intialize_from_recharge() {
 void item_field_effect_energiedisk(u8 self) {
 	bag_set_continuation(tm_hm_intialize_from_recharge);
 	bag_fade_out_and_continuation(self);
-	tm_set_used(42);
-	tm_set_used(43);
 }
 
 static u8 str_needs_to_be_recharged[] = LANGDEP(PSTRING("BUFFER_1 muss erst\nwieder aufgeladen werden!"), PSTRING("BUFFER_1 needs to\nbe recharged first!"));

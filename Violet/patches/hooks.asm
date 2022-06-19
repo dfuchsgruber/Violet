@@ -54,6 +54,8 @@
 // No questlog logging
 .org 0x08113614
     bx lr
+.org 0x08112514
+    bx lr
 
 //PRNG xorshift
 .org 0x08044DCC

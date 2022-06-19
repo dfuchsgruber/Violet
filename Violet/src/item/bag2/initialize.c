@@ -40,6 +40,7 @@ tboxdata bag_tboxes[NUM_BAG_TBOXES + 1] = {
     [BAG_TBOX_MESSAGE] =  {.bg_id = 0, .x = 2, .y = 15, .w = 26, .h = 4, .pal = 13, .start_tile = 1 + 9 * 2 + 9 * 11 + 0x19 * 6 + 10 * 6 + 18 * 12 + 10 * 9},
     [BAG_TBOX_MESSAGE_WITH_YES_NO] = {.bg_id = 0, .x = 6, .y = 15, .w = 15, .h = 4, .pal = 13, .start_tile = 1 + 9 * 2 + 9 * 11 + 0x19 * 6 + 10 * 6 + 18 * 12 + 10 * 9 + 26 * 4},
     [BAG_TBOX_MESSAGE_WITH_SELL_QUANTITY] = {.bg_id = 0, .x = 6, .y = 15, .w = 10, .h = 4, .pal = 13, .start_tile = 1 + 9 * 2 + 9 * 11 + 0x19 * 6 + 10 * 6 + 18 * 12 + 10 * 9 + 26 * 4 + 15 * 4}, 
+    [BAG_TBOX_ROD_DETAILS] = {.bg_id = 2, .x = 0, .y = 10, .w = 10, .h = 4, .pal = 11, .start_tile = 1 + 9 * 2 + 9 * 11 + 0x19 * 6 + 10 * 6 + 18 * 12},
     [NUM_BAG_TBOXES] = {.bg_id = 0xFF},
 };
 
@@ -49,6 +50,7 @@ static u8 bag_tbox_invisible_at_initialize[NUM_BAG_TBOXES] = {
     [BAG_TBOX_MESSAGE] = true,
     [BAG_TBOX_MESSAGE_WITH_YES_NO] = true,
     [BAG_TBOX_MESSAGE_WITH_SELL_QUANTITY] = true,
+    [BAG_TBOX_ROD_DETAILS] = true,
 };
 
 extern color_t bag_tboxPal[16];
@@ -391,6 +393,7 @@ static void bag_list_menu_cursor_move_callback(int idx, u8 is_initializing, list
     }
     if (!BAG2_STATE->is_moving_item) {
         bag_print_item_description((u16)idx);
+        bag_print_rod_bait((u16)idx);
         bag_update_item((u16)idx);
     }
     if (bag_get_current_pocket() == POCKET_TM_HM) {

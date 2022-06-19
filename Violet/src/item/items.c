@@ -9,6 +9,7 @@
 #include "constants/items.h"
 #include "item/custom.h"
 #include "item/tm_hm.h"
+#include "item/fishing.h"
 
 static u8 str_item_none_description[] = LANGDEP(
 	PSTRING(" ????"),
@@ -5968,7 +5969,7 @@ item items[] = {
 		(void(*)(u8))0x80a1425, //field_usage
 		0, // battle_effect
 		NULL, //battle_usage2
-		0, // secondary_idx
+		ROD_TYPE_OLD_ROD, // secondary_idx
 	},{
 		//ITEM_PROFIANGEL
 		LANGDEP(PSTRING("Profiangel"), PSTRING("Good Rod")),
@@ -5984,7 +5985,7 @@ item items[] = {
 		(void(*)(u8))0x80a1425, //field_usage
 		0, // battle_effect
 		NULL, //battle_usage2
-		1 // secondary_idx
+		ROD_TYPE_GOOD_ROD // secondary_idx
 	},{
 		//ITEM_SUPERANGEL
 		LANGDEP(PSTRING("Superangel"), PSTRING("Super Rod")),
@@ -6000,7 +6001,7 @@ item items[] = {
 		(void(*)(u8))0x80a1425, //field_usage
 		0, // battle_effect
 		NULL, //battle_usage2
-		2 // secondary_idx
+		ROD_TYPE_SUPER_ROD // secondary_idx
 	},{
 		//ITEM_BOOTSTICKET
 		LANGDEP(PSTRING("Bootsticket"), PSTRING("S.S. Ticket")),

@@ -19,6 +19,8 @@
 #include "language.h"
 #include "overworld/effect.h"
 #include "constants/sav_keys.h"
+#include "map/wild_pokemon.h"
+#include "data_structures.h"
 
 extern LZ77COMPRESSED gfx_fishing_throw_barTiles;
 extern LZ77COMPRESSED gfx_fishing_throw_barPal;
@@ -73,8 +75,28 @@ static u8 fishing_get_throw_rating(u8 throw_bar_value) {
         return 3;
 }
 
-static u8 fishing_get_catching_bonus() {
-    return 5; // TODO, for testing
+static int fishing_get_catching_bonus(fishing_state_t *state) {
+    int catching_bonus = 0;
+    switch (state->rod_type) {
+        case ROD_TYPE_OLD_ROD:
+            catching_bonus += 2;
+            break;
+        case ROD_TYPE_GOOD_ROD:
+            catching_bonus += 1;
+            break;
+        case ROD_TYPE_SUPER_ROD:
+            catching_bonus -= 2;
+            break;
+    }
+    switch (state->bait) {
+        case ITEM_KOEDER:
+            catching_bonus += 2;
+            break;
+        case ITEM_GOLDKOEDER:
+            catching_bonus += 7;
+            break;
+    }
+    return catching_bonus;
 }
 
 static void oam_callback_throw_bar_shake(oam_object *self) {
@@ -156,8 +178,18 @@ static oam_template oam_template_star = {
     .rotscale = rs_anims_star, .callback = oam_null_callback,
 };
 
-static int fishing_get_bite_bonus() {
-    return 0; // TODO
+static int fishing_get_bite_bonus(fishing_state_t *state) {
+    int bite_bonus = 0;
+    bite_bonus += 2 * fishing_get_throw_rating(state->throw_bar_value);
+    switch (state->bait) {
+        case ITEM_KOEDER:
+            bite_bonus += 5;
+            break;
+        case ITEM_GOLDKOEDER:
+            bite_bonus += 10;
+            break;
+    }
+    return bite_bonus;
 }
 
 static bool fishing_state_lock(u8 self) {
@@ -200,10 +232,10 @@ static bool fishing_state_initialize_throwing(u8 self) {
     fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
     state->progress_tile_idx = oam_load_graphic(&graphic_throw_bar);
     oam_load_palette_using_heap(&palette_throw_bar);
-    state->oam_idx_throw_bar = oam_new_forward_search(&oam_template_throw_bar, 120, 40, 0);
+    state->oam_idx_throw_bar = oam_new_forward_search(&oam_template_throw_bar, 120, 40, FISHING_OAM_PRIORITY_FRAME);
     oam_set_subsprite_table(oams + state->oam_idx_throw_bar, &subsprite_table_throw_bar);
     oams[state->oam_idx_throw_bar].private[0] = self;
-    state->oam_idx_throw_bar_progress = oam_new_forward_search(&oam_template_throw_bar_progress, 120, 45, 0);
+    state->oam_idx_throw_bar_progress = oam_new_forward_search(&oam_template_throw_bar_progress, 120, 45, FISHING_OAM_PRIORITY_PROGRESS);
     oam_set_subsprite_table(oams + state->oam_idx_throw_bar_progress, &subsprite_table_throw_bar_progress);
     oams[state->oam_idx_throw_bar_progress].private[0] = self;
     state->sprite_throw_bar_progress = malloc_and_clear(GRAPHIC_SIZE_4BPP(64, 8));
@@ -283,7 +315,7 @@ static void fishing_create_stars(fishing_state_t *state, u8 num_stars) {
         // s16 y = (s16)(30 - (rnd16() % 10));
         s16 x = star_x_anchors[i];
         s16 y = 24;
-        state->oam_idx_star[i] = oam_new_forward_search(&oam_template_star, x, y, 1);
+        state->oam_idx_star[i] = oam_new_forward_search(&oam_template_star, x, y, FISHING_OAM_PRIORITY_STAR);
         oam_object *o = oams + state->oam_idx_star[i];
         o->y2 = 20;
         // o->private[0] = (u16)(rnd16() % 16);
@@ -386,10 +418,11 @@ static bool fishing_wait_for_bite(u8 self) {
             return true;
         }
         state->delay--;
-        int p = MAX(1, 4 + fishing_get_bite_bonus()); // Base change is 4 / 256 = 1 / 64
-        if (map_current_has_wild_habitat_rod() && ((rnd16() % 256) < p || true)) { // something bites
+        int p = MAX(1, 2 + fishing_get_bite_bonus(state)); // Base change is 4 / 256 = 1 / 64
+        if (map_current_has_wild_habitat_rod() && ((rnd16() % 256) < p)) { // something bites
             // oam_gfx_anim_start(oams + player_state.oam_idx, fishing_get_bite_animation_idx_by_facing_direction());
             state->state = FISHING_STATE_BITE_EXCLAMATION_MARK;
+            state->bait = item_rod_use_bait(rod_idx_to_item_idx(state->rod_type));
             oam_gfx_anim_start(oams + player_state.oam_idx, fishing_get_bite_animation_idx_by_facing_direction(player_get_facing()));
             return true;
         }
@@ -480,11 +513,47 @@ static bool fishing_wait_print_text_and_start_encounter(u8 self) {
     return false;
 }
 
+static int fishing_get_total_rating(fishing_state_t *state) {
+    int rating = 0;
+    rating += 5 * fishing_get_throw_rating(state->throw_bar_value);
+    rating += 11 * state->num_stars_collected;
+    rating += 17 * state->fish_rating;
+    switch (state->bait) {
+        case ITEM_KOEDER:
+            rating += 5;
+            break;
+        case ITEM_GOLDKOEDER:
+            rating += 33;
+            break;
+    }
+    return rating;
+}
+
+static u16 feature_generator_fishing() {
+    fishing_state_t *state = (fishing_state_t*)gp_stack_peek();
+    int improvement = 3 * fishing_get_total_rating(state) + MIN(100, save_get_key(SAV_KEY_FISHING_ENCOUNTERS));
+    DEBUG("Feature generator fishing improvement %d\n", improvement);
+    return (u16)(rnd16() % MAX(32, 512 - improvement));
+}
+
 static void fishing_pokemon_new(fishing_state_t *state) {
-    (void)state;
-    pid_t pid = {0};
-    pokemon_clear_opponent_party();
-    pokemon_new(opponent_pokemon, 5, 5, POKEMON_NEW_RANDOM_IVS, false, pid, false, 0);
+    wild_pokemon_data *data = map_wild_pokemon_get_current();
+    wild_pokemon_entry *entry = data->rod->data + wildbattle_sample_from_rod_pdf(state->rod_type);
+    // Sample the level multiple times (the higher the rating, the more samples) 
+    u8 level = 1;
+    for (int i = 0; i < 1 + fishing_get_total_rating(state) / 8; i++) {
+        level = (u8)MAX(level, entry->level_min + (rnd16() % (entry->level_max - entry->level_min + 1)));
+    }
+    gp_stack_push((int)state);
+    pid_t pid = {.value = 0};
+    pokemon_spawn_by_seed_algorithm(opponent_pokemon, entry->species, level, POKEMON_NEW_RANDOM_IVS,
+        false, pid, false, 0, feature_generator_fishing, NULL);
+    if (state->bait == ITEM_LEUCHTKOEDER) {
+        pid.value = (u32)pokemon_get_attribute(opponent_pokemon, ATTRIBUTE_PID, NULL);
+        pid.fields.is_shiny = true;
+        pokemon_set_attribute(opponent_pokemon, ATTRIBUTE_PID, &pid);
+    }
+    gp_stack_pop();
     
 }
 
@@ -528,12 +597,35 @@ static bool fishing_react_to_exclamation_mark(u8 self) {
     return false;
 }
 
+static u8 fishing_catching_bar_lines[3][NUM_CATCHING_BAR_COMPONENTS] = {
+    [ROD_TYPE_OLD_ROD] = {
+        [CATCHING_BAR_Y_TOP] = 0,
+        [CATCHING_BAR_Y_DEFAULT] = 1,
+        [CATCHING_BAR_Y_TOP_SHINE] = 2,
+        [CATCHING_BAR_Y_BOTTOM_SHADOW] = 3,
+        [CATCHING_BAR_Y_BOTTOM] = 4,
+    },
+    [ROD_TYPE_GOOD_ROD] = {
+        [CATCHING_BAR_Y_TOP] = 5,
+        [CATCHING_BAR_Y_DEFAULT] = 6,
+        [CATCHING_BAR_Y_TOP_SHINE] = 7,
+        [CATCHING_BAR_Y_BOTTOM_SHADOW] = 9,
+        [CATCHING_BAR_Y_BOTTOM] = 9,
+    },
+    [ROD_TYPE_SUPER_ROD] = {
+        [CATCHING_BAR_Y_TOP] = 10,
+        [CATCHING_BAR_Y_DEFAULT] = 11,
+        [CATCHING_BAR_Y_TOP_SHINE] = 12,
+        [CATCHING_BAR_Y_BOTTOM_SHADOW] = 13,
+        [CATCHING_BAR_Y_BOTTOM] = 14,
+    },
+};
 
-static void fishing_initialize_catching_bar() {
+static void fishing_initialize_catching_bar(fishing_state_t *state) {
     // Manually decompress and manipulate the catching bar according to the bonus
     u32 *src = malloc(graphic_catching_bar.size);
     lz77uncompwram(graphic_catching_bar.sprite, src);
-    int bonus = fishing_get_catching_bonus();
+    int bonus = fishing_get_catching_bonus(state);
     int height = FISHING_CATCHING_BAR_HEIGHT + 2 * bonus;
     int margin = (32 - height) / 2;
     gpu_fill_rectangle_4bpp(gp_tmp_buf, 0, 0, 16, margin, 0, 16);
@@ -543,15 +635,15 @@ static void fishing_initialize_catching_bar() {
     for (int i = 0; i < height; i++) {
         int y_src;
         if (i == 0)
-            y_src = CATCHING_BAR_Y_TOP;
+            y_src = fishing_catching_bar_lines[state->rod_type][CATCHING_BAR_Y_TOP];
         else if (i == 2)
-            y_src = CATCHING_BAR_Y_TOP_SHINE;
+            y_src = fishing_catching_bar_lines[state->rod_type][CATCHING_BAR_Y_TOP_SHINE];
         else if (i == height - 2)
-            y_src = CATCHING_BAR_Y_BOTTOM_SHADOW;
+            y_src = fishing_catching_bar_lines[state->rod_type][CATCHING_BAR_Y_BOTTOM_SHADOW];
         else if (i == height - 1)
-            y_src = CATCHING_BAR_Y_BOTTOM;
+            y_src = fishing_catching_bar_lines[state->rod_type][CATCHING_BAR_Y_BOTTOM];
         else
-            y_src = CATCHING_BAR_Y_DEFAULT;
+            y_src = fishing_catching_bar_lines[state->rod_type][CATCHING_BAR_Y_DEFAULT];
         int y_dst = margin + i;
         dst[8 * 2 * (y_dst / 8) + (y_dst % 8)] = src[8 * 2 * (y_src / 8) + (y_src % 8)];
         dst[8 * 2 * (y_dst / 8) + (y_dst % 8) + 8] = src[8 * 2 * (y_src / 8) + (y_src % 8) + 8];
@@ -648,6 +740,8 @@ static bool fishing_initialize_catching(u8 self) {
     fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
     switch (state->substate) {
         case 0:
+            state->fish_rating = (u8)(rnd16() % MAX_FISH_RATING);
+            DEBUG("Fish rated %d\n", state->fish_rating);
             state->catching_progress = CATCHING_DURATION / 4;
             state->substate++;
             FALL_THROUGH;
@@ -657,21 +751,21 @@ static bool fishing_initialize_catching(u8 self) {
             state->substate++;
             return false;
         case 2:
-            fishing_initialize_catching_bar();
+            fishing_initialize_catching_bar(state);
             fishing_initialize_catching_progress(state);
             state->substate++;
             return false;
         default: {
             s16 anchor_x, anchor_y;
             fishing_catching_get_anchor_position(&anchor_x, &anchor_y);
-            state->oam_idx_catching_frame = oam_new_forward_search(&oam_template_catching_frame, anchor_x, anchor_y, 31);
+            state->oam_idx_catching_frame = oam_new_forward_search(&oam_template_catching_frame, anchor_x, anchor_y, FISHING_OAM_PRIORITY_FRAME);
             oam_set_subsprite_table(oams + state->oam_idx_catching_frame, &subsprite_table_catching_frame);
-            state->oam_idx_catching_progress_bar = oam_new_forward_search(&oam_template_catching_progress_bar, anchor_x, anchor_y, 0);
+            state->oam_idx_catching_progress_bar = oam_new_forward_search(&oam_template_catching_progress_bar, anchor_x, anchor_y, FISHING_OAM_PRIORITY_PROGRESS);
             oam_set_subsprite_table(oams + state->oam_idx_catching_progress_bar, &subsprite_table_catching_progress_bar);
             oams[state->oam_idx_catching_progress_bar].x2 = 21;
             oams[state->oam_idx_catching_progress_bar].y2 = -FISHING_CATCHING_PROGRESS_BAR_MARGIN;
-            state->oam_idx_catching_bar = oam_new_forward_search(&oam_template_catching_bar, (s16)(anchor_x + 11), (s16)(anchor_y + 21), 2);
-            state->oam_idx_catching_fish = oam_new_forward_search(&oam_template_catching_fish, (s16)(anchor_x + 11), (s16)(anchor_y + 24), 1);
+            state->oam_idx_catching_bar = oam_new_forward_search(&oam_template_catching_bar, (s16)(anchor_x + 11), (s16)(anchor_y + 21), FISHING_OAM_PRIORITY_BAR);
+            state->oam_idx_catching_fish = oam_new_forward_search(&oam_template_catching_fish, (s16)(anchor_x + 11), (s16)(anchor_y + 24), FISHING_OAM_PRIORITY_FISH);
             state->state = FISHING_STATE_CATCHING;
             return true;
         }
@@ -680,7 +774,7 @@ static bool fishing_initialize_catching(u8 self) {
 
 static void fishing_catching_bar_proceed(fishing_state_t *state) {
     FIXED pos = FIXED_ADD(state->catching_bar_position, state->catching_bar_velocity);
-    FIXED pmax = INT_TO_FIXED(FISHING_CATCHING_FRAME_TOTAL_HEIGHT - 2 * fishing_get_catching_bonus() - (FISHING_CATCHING_BAR_HEIGHT / 1));
+    FIXED pmax = INT_TO_FIXED(FISHING_CATCHING_FRAME_TOTAL_HEIGHT - 2 * fishing_get_catching_bonus(state) - (FISHING_CATCHING_BAR_HEIGHT / 1));
     if (pos < 0) {
         // pos = FIXED_SUB(pmin, pos); // Reflect
         pos = 0;
@@ -691,15 +785,136 @@ static void fishing_catching_bar_proceed(fishing_state_t *state) {
         state->catching_bar_velocity = FIXED_ADD(-state->catching_bar_velocity, FISHING_CATCHING_BAR_VELOCITY_LOSS);
     }
     // Proceed the velocity
-    oams[state->oam_idx_catching_bar].y2 = (s16)(-FIXED_TO_INT(pos) - fishing_get_catching_bonus());
+    oams[state->oam_idx_catching_bar].y2 = (s16)(-FIXED_TO_INT(pos) - fishing_get_catching_bonus(state));
     state->catching_bar_position = pos;
     state->catching_bar_velocity = MAX(-FISHING_CATCHING_BAR_MAX_VELOCITY, FIXED_SUB(state->catching_bar_velocity, FISHING_CATCHING_BAR_G));
 }
 
+static FIXED fish_position_new(fishing_state_t *state) {
+    while (true) {
+        FIXED pos = INT_TO_FIXED(rnd16() % (FISHING_CATCHING_FRAME_TOTAL_HEIGHT - FISHING_CATCHING_FISH_HEIGHT));
+        if (pos != state->catching_fish_position)
+            return pos;
+    }
+}
+
+static size_t fish_pattern_probabilities[MAX_FISH_RATING][NUM_FISH_PATTERNS] = {
+    {[FISH_PATTERN_MOVE_SLOW_CLOSE] = 9, [FISH_PATTERN_MOVE_FAST_CLOSE] = 1},
+    {[FISH_PATTERN_MOVE_SLOW_CLOSE] = 8, [FISH_PATTERN_MOVE_FAST_CLOSE] = 2,},
+    {[FISH_PATTERN_MOVE_SLOW_CLOSE] = 7, [FISH_PATTERN_MOVE_FAST_CLOSE] = 2, [FISH_PATTERN_MOVE_FAST_FAR] = 1},
+    {[FISH_PATTERN_MOVE_SLOW_CLOSE] = 6, [FISH_PATTERN_MOVE_FAST_CLOSE] = 3, [FISH_PATTERN_MOVE_FAST_FAR] = 2},
+    {[FISH_PATTERN_MOVE_SLOW_CLOSE] = 5, [FISH_PATTERN_MOVE_FAST_CLOSE] = 2, [FISH_PATTERN_MOVE_FAST_FAR] = 3},
+    {[FISH_PATTERN_MOVE_SLOW_CLOSE] = 3, [FISH_PATTERN_MOVE_FAST_CLOSE] = 3, [FISH_PATTERN_MOVE_FAST_FAR] = 3, [FISH_PATTERN_OSCILLATE] = 1},
+    {[FISH_PATTERN_MOVE_SLOW_CLOSE] = 2, [FISH_PATTERN_MOVE_FAST_CLOSE] = 3, [FISH_PATTERN_MOVE_FAST_FAR] = 4, [FISH_PATTERN_OSCILLATE] = 1},
+    {[FISH_PATTERN_MOVE_SLOW_CLOSE] = 1, [FISH_PATTERN_MOVE_FAST_CLOSE] = 4, [FISH_PATTERN_MOVE_FAST_FAR] = 3, [FISH_PATTERN_OSCILLATE] = 2},
+};
+
+static void fish_pattern_new(fishing_state_t *state) {
+    state->fish_pattern = (u8)choice(fish_pattern_probabilities[state->fish_rating], NUM_FISH_PATTERNS, NULL);
+    state->fish_pattern_state = 0;
+    state->fish_t = 0;
+    // state->fish_pattern = FISH_PATTERN_OSCILLATE;
+}
+
+static FIXED fish_position_close_new(fishing_state_t *state) {
+    FIXED pos = fish_position_new(state);
+    for (int i = 0; i < FISH_PATTERN_NUM_PROPOSALS_CLOSE - 1; i++) {
+        FIXED proposed = fish_position_new(state);
+        if (ABS(FIXED_SUB(pos, state->catching_fish_position)) > ABS(FIXED_SUB(proposed, state->catching_fish_position))) {
+            pos = proposed;
+        }
+    }
+    return pos;
+}
+
+static FIXED fish_position_far_new(fishing_state_t *state) {
+    FIXED pos = fish_position_new(state);
+    for (int i = 0; i < FISH_PATTERN_NUM_PROPOSALS_FAR - 1; i++) {
+        FIXED proposed = fish_position_new(state);
+        if (ABS(FIXED_SUB(pos, state->catching_fish_position)) < ABS(FIXED_SUB(proposed, state->catching_fish_position))) {
+            pos = proposed;
+        }
+    }
+    return pos;
+}
+
+static void fish_pattern_move_slow_close(fishing_state_t *state) {
+    state->fish_origin_position = state->catching_fish_position;
+    state->fish_target_position = fish_position_close_new(state);
+    state->fish_pattern_duration = (u16)(80 + rnd16() % 32);
+    state->fish_pattern = FISH_PATTERN_MOVE_TO_TARGET_POSITION;
+}
+
+static void fish_pattern_move_fast_close(fishing_state_t *state) {
+    state->fish_origin_position = state->catching_fish_position;
+    state->fish_target_position = fish_position_close_new(state);
+    state->fish_pattern_duration = (u16)(48 + rnd16() % 16);
+    state->fish_pattern = FISH_PATTERN_MOVE_TO_TARGET_POSITION;
+}
+
+static void fish_pattern_move_fast_far(fishing_state_t *state) {
+    state->fish_origin_position = state->catching_fish_position;
+    state->fish_target_position = fish_position_far_new(state);
+    state->fish_pattern_duration = (u16)(64 + rnd16() % 16);
+    state->fish_pattern = FISH_PATTERN_MOVE_TO_TARGET_POSITION;
+}
+
+static void fish_move_to_target_position(fishing_state_t *state) {
+    u16 t = ++state->fish_t;
+    FIXED dy = FIXED_SUB(state->fish_target_position, state->fish_origin_position);
+    // DEBUG("t is %d, dy is %d, duration is %d\n", t, FIXED_TO_INT(dy), state->fish_pattern_duration);
+    // y = y0 + t * dy/dt
+    state->catching_fish_position = FIXED_ADD(state->fish_origin_position, FIXED_MUL(INT_TO_FIXED(t), FIXED_DIV(dy, INT_TO_FIXED(state->fish_pattern_duration))));
+    if (t >= state->fish_pattern_duration) {
+        state->fish_pattern = FISH_PATTERN_NEW;
+    }
+}
+
+static void fish_osciallate(fishing_state_t *state) {
+    state->fish_origin_position = state->catching_fish_position;
+    state->fish_target_position = fish_position_far_new(state);
+    // DEBUG("Oscillate from %d to %d\n", FIXED_TO_INT(state->fish_origin_position), FIXED_TO_INT(state->fish_target_position));
+    state->fish_pattern_duration = (u16)(48 + rnd16() % 16);
+    state->fish_pattern_state = 0;
+    state->fish_t = 0;
+    state->fish_pattern = FISH_PATTERN_DO_OSCILLATION;
+
+}
+
+static void fish_pattern_do_oscillation(fishing_state_t *state) {
+    u16 t = ++state->fish_t;
+    FIXED dy = FIXED_SUB(state->fish_target_position, state->fish_origin_position);
+    state->catching_fish_position = FIXED_ADD(state->fish_origin_position, FIXED_MUL(INT_TO_FIXED(t), FIXED_DIV(dy, INT_TO_FIXED(state->fish_pattern_duration))));
+    if (t >= state->fish_pattern_duration) {
+        if (++state->fish_pattern_state < 3) {
+            // Next segment in osciallation
+            FIXED tmp = state->fish_origin_position;
+            state->fish_origin_position = state->fish_target_position;
+            state->fish_target_position = tmp;
+            state->fish_t = 0;
+        } else {
+            state->fish_pattern = FISH_PATTERN_NEW;
+        }
+    }
+}
+
+static void (*fish_patterns[NUM_FISH_PATTERNS])(fishing_state_t*) = {
+    [FISH_PATTERN_NEW] = fish_pattern_new,
+    [FISH_PATTERN_MOVE_SLOW_CLOSE] = fish_pattern_move_slow_close,
+    [FISH_PATTERN_MOVE_FAST_CLOSE] = fish_pattern_move_fast_close,
+    [FISH_PATTERN_MOVE_FAST_FAR] = fish_pattern_move_fast_far,
+    [FISH_PATTERN_OSCILLATE] = fish_osciallate,
+    [FISH_PATTERN_MOVE_TO_TARGET_POSITION] = fish_move_to_target_position,
+    [FISH_PATTERN_DO_OSCILLATION] = fish_pattern_do_oscillation,
+};
+
+
 static void fishing_catching_fish_proceed(fishing_state_t *state) {
     // FIXED pmin = 0;
     // FIXED pmax = INT_TO_FIXED(FISHING_CATCHING_FRAME_TOTAL_HEIGHT - FISHING_CATCHING_FISH_HEIGHT);
-    FIXED pos = 0;
+    // DEBUG("Fish pattern %d\n", state->fish_pattern);
+    fish_patterns[state->fish_pattern](state);
+    FIXED pos = state->catching_fish_position;
     oams[state->oam_idx_catching_fish].y2 = (s16)(-FIXED_TO_INT(pos));
     state->catching_fish_position = pos;
 }
@@ -713,7 +928,7 @@ static void fishing_catching_new_star(fishing_state_t *state) {
     for (int i = 0; i < CATCHING_NEW_STAR_MAX_ATTEMPTS; i++) {
         state->catching_star_position = INT_TO_FIXED(rnd16() % (FISHING_CATCHING_FRAME_TOTAL_HEIGHT - FISHING_CATCHING_STAR_HEIGHT));
         FIXED y0_bar = state->catching_bar_position;
-        FIXED y1_bar = FIXED_ADD(y0_bar, INT_TO_FIXED(FISHING_CATCHING_BAR_HEIGHT + 2 * fishing_get_catching_bonus()));
+        FIXED y1_bar = FIXED_ADD(y0_bar, INT_TO_FIXED(FISHING_CATCHING_BAR_HEIGHT + 2 * fishing_get_catching_bonus(state)));
         FIXED y0_fish = state->catching_fish_position;
         FIXED y1_fish = FIXED_ADD(y0_fish, INT_TO_FIXED(FISHING_CATCHING_FISH_HEIGHT));
         FIXED y0_star = state->catching_star_position;
@@ -737,7 +952,7 @@ static void fishing_catching_new_star_proceed(fishing_state_t *state) {
         s16 anchor_x, anchor_y;
         fishing_catching_get_anchor_position(&anchor_x, &anchor_y);
         state->oam_idx_catching_star = oam_new_forward_search(&oam_template_star, 
-            (s16)(anchor_x + 11), (s16)(anchor_y + 23), 1);
+            (s16)(anchor_x + 11), (s16)(anchor_y + 23), FISHING_OAM_PRIORITY_STAR);
         oam_rotscale_anim_init(oams + state->oam_idx_catching_star, FISHING_STAR_RS_APPEAR);
         oams[state->oam_idx_catching_star].y2 = (s16)(-FIXED_TO_INT(state->catching_star_position));
         oams[state->oam_idx_catching_star].callback = oam_callback_vibrate;
@@ -752,7 +967,7 @@ static void fishing_star_progress_proceed(fishing_state_t *state) {
         case FISHING_STAR_STATE_PROGRESS: {
             if (state->catching_star_is_present) {
                 FIXED y0_box = state->catching_bar_position;
-                FIXED y1_box = FIXED_ADD(y0_box, INT_TO_FIXED(FISHING_CATCHING_BAR_HEIGHT + 2 * fishing_get_catching_bonus()));
+                FIXED y1_box = FIXED_ADD(y0_box, INT_TO_FIXED(FISHING_CATCHING_BAR_HEIGHT + 2 * fishing_get_catching_bonus(state)));
                 FIXED y0_star = state->catching_star_position;
                 FIXED y1_star = FIXED_ADD(y0_star, INT_TO_FIXED(FISHING_CATCHING_STAR_HEIGHT));
                 if (intervals_overlap(y0_box, y1_box, y0_star, y1_star)) {
@@ -792,7 +1007,7 @@ static void fishing_star_progress_proceed(fishing_state_t *state) {
 static void fishing_catching_progress_proceed(fishing_state_t *state) {
     // Check if the intervals defined by the fish and the box intersect
     FIXED y0_box = state->catching_bar_position;
-    FIXED y1_box = FIXED_ADD(y0_box, INT_TO_FIXED(FISHING_CATCHING_BAR_HEIGHT + 2 * fishing_get_catching_bonus()));
+    FIXED y1_box = FIXED_ADD(y0_box, INT_TO_FIXED(FISHING_CATCHING_BAR_HEIGHT + 2 * fishing_get_catching_bonus(state)));
     FIXED y0_fish = state->catching_fish_position;
     FIXED y1_fish = FIXED_ADD(y0_fish, INT_TO_FIXED(FISHING_CATCHING_FISH_HEIGHT));
     if (intervals_overlap(y0_box, y1_box, y0_fish, y1_fish)) {
@@ -821,7 +1036,7 @@ static bool fishing_catching(u8 self) {
     fishing_catching_new_star_proceed(state);
     fishing_star_progress_proceed(state);
     fishing_catching_progress_proceed(state);
-    if (super.keys_new.keys.B || state->catching_progress == 0) {
+    if (super.keys_new.keys.B || (state->catching_progress == 0 && true)) {
         state->state = FISHING_STATE_DELETE_CATCHING_AND_DO_CONTINUATION_STATE;
         state->continuation_state = FISHING_STATE_IT_GOT_AWAY;
         fanfare(271);
@@ -935,14 +1150,79 @@ static void fishing_big_callback_do(u8 self) {
     fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
     if (state->state >= ARRAY_COUNT(fishing_callbacks))
         return;
-    DEBUG("Fishing state %d\n", state->state);
+    // DEBUG("Fishing state %d\n", state->state);
     while (fishing_callbacks[state->state](self)) {}
 }
 
 void fishing_big_callback(u8 self) {
     fishing_state_t *state = malloc_and_clear(sizeof(fishing_state_t));
+    state->rod_type = (u8)big_callbacks[self].params[15];
     big_callback_set_int(self, 0, (int)state);
     big_callbacks[self].function = fishing_big_callback_do;
     big_callbacks[self].function(self);
 }
 
+
+u16 rod_idx_to_item_idx(int rod_idx) {
+    switch(rod_idx) {
+        case ROD_TYPE_OLD_ROD:
+            return ITEM_ANGEL;
+        case ROD_TYPE_GOOD_ROD:
+            return ITEM_PROFIANGEL;
+        case ROD_TYPE_SUPER_ROD:
+            return ITEM_SUPERANGEL;
+        default:
+            return ITEM_NONE;
+    }
+}
+
+int item_idx_to_rod_idx(u16 item_idx) {
+    switch(item_idx) {
+        case ITEM_ANGEL:
+            return ROD_TYPE_OLD_ROD;
+        case ITEM_PROFIANGEL:
+            return ROD_TYPE_GOOD_ROD;
+        case ITEM_SUPERANGEL:
+            return ROD_TYPE_SUPER_ROD;
+        default:
+            return ROD_TYPE_NONE;
+    }
+}
+
+bool item_is_rod(u16 item_idx) {
+    return item_idx_to_rod_idx(item_idx) != -1;
+}
+
+static void item_rod_update_equipped_bait() {
+    for (size_t i = 0; i < ARRAY_COUNT(cmem.rod_equipped_bait); i++) {
+        u16 bait = cmem.rod_equipped_bait[i];
+        if (bait != ITEM_NONE && !item_check(bait, 1))
+            cmem.rod_equipped_bait[i] = ITEM_NONE;
+    }
+}
+
+u16 item_rod_get_equipped_bait(u16 item_idx) {
+    item_rod_update_equipped_bait();
+    if (item_is_rod(item_idx)) {
+        return cmem.rod_equipped_bait[item_idx_to_rod_idx(item_idx)];
+    } else {
+        return ITEM_NONE;
+    }
+}
+
+void item_rod_equip_bait(u16 rod_item_idx, u16 bait_item_idx) {
+    if (item_is_rod(rod_item_idx)) {
+        cmem.rod_equipped_bait[item_idx_to_rod_idx(rod_item_idx)] = bait_item_idx;
+    }
+    item_rod_update_equipped_bait();
+}
+
+u16 item_rod_use_bait(u16 rod_item_idx) {
+    item_rod_update_equipped_bait();
+    u16 bait_item_idx = item_rod_get_equipped_bait(rod_item_idx);
+    if (bait_item_idx != ITEM_NONE) {
+        item_remove(bait_item_idx, 1);
+    }
+    item_rod_update_equipped_bait();
+    return bait_item_idx;
+}

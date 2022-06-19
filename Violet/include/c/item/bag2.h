@@ -46,6 +46,7 @@ enum {
     BAG_CONTEXT_RECHARGE_TM_HM,
     BAG_CONTEXT_COMPOST,
     BAG_CONTEXT_PLANT_BERRY,
+    BAG_CONTEXT_EQUIP_BAIT,
     NUM_BAG_CONTEXTS,
 };
 
@@ -59,6 +60,7 @@ enum {
     BAG_TBOX_MESSAGE,
     BAG_TBOX_MESSAGE_WITH_YES_NO,
     BAG_TBOX_MESSAGE_WITH_SELL_QUANTITY,
+    BAG_TBOX_ROD_DETAILS,
     NUM_BAG_TBOXES,
 };
 
@@ -71,6 +73,8 @@ enum {
     BAG_CONTEXT_MENU_SELECT,
     BAG_CONTEXT_MENU_DESELECT,
     BAG_CONTEXT_MENU_WALK,
+    BAG_CONTEXT_MENU_EQUIP_BAIT,
+    BAG_CONTEXT_MENU_UNEQUIP_BAIT,
     NUM_BAG_CONTEXT_MENU_ITEMS,
 };
 
@@ -303,6 +307,13 @@ void bag_print_hint(u8 *hint);
  * @param slot Where the cursor is
  */
 void bag_print_item_description(u16 slot);
+
+/**
+ * @brief Prints the bait equipped with a rod or clears this selection
+ * 
+ * @param slot the slot of the potential rod
+ */
+void bag_print_rod_bait(u16 slot);
 
 /**
  * @brief Updates the bag item based on where the cursor is
