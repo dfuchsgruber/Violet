@@ -58,6 +58,7 @@ static sprite sprite_throw_bar = {.attr0 = ATTR0_SHAPE_HORIZONTAL, .attr1 = ATTR
 
 static void fishing_free(fishing_state_t *state) {
     free(state->sprite_throw_bar_progress);
+    free(state->sprite_catching_progress_bar);
     oam_free_vram_by_tag(FISHING_OAM_TAG_STAR);
     oam_free_vram_by_tag(FISHING_OAM_TAG_THROW);
     oam_palette_free(FISHING_OAM_TAG_THROW);
@@ -96,7 +97,7 @@ static int fishing_get_catching_bonus(fishing_state_t *state) {
             catching_bonus += 7;
             break;
     }
-    return catching_bonus;
+    return MIN(8, catching_bonus);
 }
 
 static void oam_callback_throw_bar_shake(oam_object *self) {
@@ -243,13 +244,37 @@ static bool fishing_state_initialize_throwing(u8 self) {
     return false;
 }
 
+static void fishing_reset_player_state(fishing_state_t *state) {
+    oam_object *o = oams + player_state.oam_idx; 
+    npc *n = npcs + player_state.npc_idx;
+    npc_update_picture(n, state->backup_overworld_idx);
+    npc_set_facing(n, n->direction.movement);
+    if (player_state.state & PLAYER_STATE_SURFING) {
+        player_npc_set_surf_blob_offset(n->oam_surf, false, 0);
+    }
+    o->x2 = 0;
+    o->y2 = 0;
+}
+
 static bool fishing_state_wait_for_a_to_start_throwing(u8 self) {
+    fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
     if (super.keys_new.keys.A) {
         play_sound(5);
-        fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
         state->throw_bar_value = 0;
         state->state++;
         return true;
+    } else if (super.keys_new.keys.B) {
+        oam_delete(oams + state->oam_idx_throw_bar);
+        oam_delete(oams + state->oam_idx_throw_bar_progress);
+        // state->state = FISHING_STATE_NOT_EVEN_A_NIBBLE;
+        // oam_gfx_anim_start(oams + player_state.oam_idx, fishing_get_no_bite_animation_idx_by_facing_direction(player_get_facing()));
+        fishing_reset_player_state(state);
+        player_state.is_locked = false;
+        overworld_script_set_inactive();
+        npc_update_oam_delay_all();
+        fishing_free(state);
+        big_callback_delete(self);
+
     }
     return false;
 }
@@ -460,18 +485,6 @@ static bool fishing_wait_frame_to_print_text(u8 self) {
     fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
     state->state = FISHING_STATE_RESET_PLAYER_STATE_AND_PRINT_TEXT;
     return false;
-}
-
-static void fishing_reset_player_state(fishing_state_t *state) {
-    oam_object *o = oams + player_state.oam_idx; 
-    npc *n = npcs + player_state.npc_idx;
-    npc_update_picture(n, state->backup_overworld_idx);
-    npc_set_facing(n, n->direction.movement);
-    if (player_state.state & PLAYER_STATE_SURFING) {
-        player_npc_set_surf_blob_offset(n->oam_surf, false, 0);
-    }
-    o->x2 = 0;
-    o->y2 = 0;
 }
 
 static bool fishing_reset_player_state_and_print_text(u8 self) {
@@ -730,7 +743,7 @@ static oam_template oam_template_catching_fish = {
 static void fishing_catching_get_anchor_position(s16 *x, s16 *y) {
     *y = 160 - (96 / 2) - 20;
     if (player_get_facing() == DIR_RIGHT)
-        *x = 120 - 32;
+        *x = 120 - 48;
     else
         *x = 120 + 16;
 }

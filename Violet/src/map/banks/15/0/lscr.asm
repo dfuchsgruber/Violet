@@ -49,7 +49,7 @@ dont_move_woman:
 movesprite2 0x6 0x1c 0x31
 spritebehave 0x6 BEHAVIOUR_LOOK_AROUND
 movesprite2 25 38 8
-movesprite2 26 35 37
+movesprite2 26 35 42
 movesprite2 27 34 41
 movesprite2 28 52 41
 movesprite2 29 55 40

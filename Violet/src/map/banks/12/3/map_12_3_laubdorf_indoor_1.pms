@@ -56,10 +56,10 @@
 					"is_trainer": "0",
 					"alert_radius": "0",
 					"script": "0",
-					"flag": "0",
+					"flag": "FLAG_RECIPE_EXP_CANDY_M",
 					"value": {
 						"item": "0",
-						"species": "FLAG_RECIPE_EXP_CANDY_M",
+						"species": "0",
 						"berry_tree_idx": "0",
 						"type": "0"
 					}

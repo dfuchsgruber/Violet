@@ -44,6 +44,7 @@ static u8 bag_pocket_switching_disabled_by_context[NUM_BAG_CONTEXTS] = {
     [BAG_CONTEXT_PLANT_BERRY] = true,
     [BAG_CONTEXT_RECHARGE_TM_HM] = true,
     [BAG_CONTEXT_EQUIP_BAIT] = true,
+    [BAG_CONTEXT_SELECT_ROD_TO_EQUIP_BAIT] = true,
 };
 
 u8 bag_get_current_pocket() {
@@ -160,11 +161,15 @@ void bag_vblank_handler() {
 }
 
 static u8 str_bag_font_color_regular[] = PSTRING("COLOR_HIGHLIGHT_SHADOW\x02\x00\x03");
+static u8 str_bag_font_color_grey[] = PSTRING("COLOR_HIGHLIGHT_SHADOW\x03\x00\x00");
 static u8 str_cancel[] = LANGDEP(PSTRING("Zurück"), PSTRING("Cancel"));
 
 void bag_format_item_string(u8 *dst, u16 item_idx) {
     // TODO: Highlight colors for empty tms
-    strcpy(dst, str_bag_font_color_regular);
+    if (fmem.bag_context == BAG_CONTEXT_SELECT_ROD_TO_EQUIP_BAIT && item_idx != 0xFFFF && !item_is_rod(item_idx))
+        strcpy(dst, str_bag_font_color_grey);
+    else
+        strcpy(dst, str_bag_font_color_regular);
     u8 pocket_idx = item_get_pocket(item_idx);
     DEBUG("Format string called with %d\n", item_idx);
     if (item_idx == 0xFFFF)
@@ -236,11 +241,11 @@ void bag_print_rod_bait(u16 slot) {
             bait_name = str_bait_none;
         } else {
             bait_name = item_get_name(bait);
-            itoa(buffer0, MIN(999, item_get_count(bait)), ITOA_PAD_SPACES, 3);
+            itoa(buffer0, MIN(99, item_get_count(bait)), ITOA_PAD_SPACES, 2);
             string_decrypt(strbuf, str_bait_quantity);
-            tbox_print_string(BAG_TBOX_ROD_DETAILS, 0, 10, 40, 0, 0, &bag_font_colormap_pocket_hint, 0, strbuf);
+            tbox_print_string(BAG_TBOX_ROD_DETAILS, 0, 56, 16, 0, 0, &bag_font_colormap_pocket_hint, 0, strbuf);
         }
-        tbox_print_string(BAG_TBOX_ROD_DETAILS, 0, 10, 16, 0, 0, &bag_font_colormap_pocket_hint, 0, bait_name);
+        tbox_print_string(BAG_TBOX_ROD_DETAILS, 0, 2, 16, 0, 0, &bag_font_colormap_pocket_hint, 0, bait_name);
     } else {
         tbox_flush_map(BAG_TBOX_ROD_DETAILS);
     }

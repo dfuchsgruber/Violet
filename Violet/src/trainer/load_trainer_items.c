@@ -27,13 +27,16 @@ static void trainer_load_items(u16 trainer_idx, u16 *items, u8 *num_items, bool 
 			case DIFFICULTY_HARD: {
 				u16 additional_item = ITEM_TRANK;
 				int num_additional_items = 1;
-				if (checkflag(FRBADGE_6)) {
+				if (checkflag(FRBADGE_7)) {
 					additional_item = ITEM_TOP_GENESUNG;
 					num_additional_items = 4;
-				} else if (checkflag(FRBADGE_4)) {
+				} else if (checkflag(FRBADGE_5)) {
+					additional_item = ITEM_TOP_TRANK;
+					num_additional_items = 4;
+				} else if (checkflag(FRBADGE_3)) {
 					additional_item = ITEM_HYPERTRANK;
 					num_additional_items = 3;
-				} else if (checkflag(FRBADGE_2)) {
+				} else if (checkflag(FRBADGE_1)) {
 					additional_item = ITEM_SUPERTRANK;
 					num_additional_items = 2;
 				}

@@ -10,6 +10,7 @@ static u8 str_hint_compost[] = LANGDEP(PSTRING("Welche Beere\nkompostieren?"), P
 static u8 str_hint_sell[] = LANGDEP(PSTRING("Welches Item\nverkaufen?"), PSTRING("Sell which\nitem?"));
 static u8 str_hint_plant_berry[] = LANGDEP(PSTRING("Welche Beere\npflanzen?"), PSTRING("Plant which\nberry?"));
 static u8 str_hint_equip_bait[] = LANGDEP(PSTRING("Welchen Köder\nausrüsten?"), PSTRING("Equip which\nbait?"));
+static u8 str_hint_select_rod[] = LANGDEP(PSTRING("Welche Angel\nausrüsten?"), PSTRING("Equip to\nwhich rod?"));
 
 static u8 *bag_context_hints[NUM_BAG_CONTEXTS] = {
     [BAG_CONTEXT_PARTY_GIVE] = str_hint_give,
@@ -20,6 +21,7 @@ static u8 *bag_context_hints[NUM_BAG_CONTEXTS] = {
     [BAG_CONTEXT_COMPOST] = str_hint_compost,
     [BAG_CONTEXT_PLANT_BERRY] = str_hint_plant_berry,
     [BAG_CONTEXT_EQUIP_BAIT] = str_hint_equip_bait,
+    [BAG_CONTEXT_SELECT_ROD_TO_EQUIP_BAIT] = str_hint_select_rod,
 };
 
 u8 *bag_get_context_hint() {

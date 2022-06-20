@@ -47,6 +47,7 @@ enum {
     BAG_CONTEXT_COMPOST,
     BAG_CONTEXT_PLANT_BERRY,
     BAG_CONTEXT_EQUIP_BAIT,
+    BAG_CONTEXT_SELECT_ROD_TO_EQUIP_BAIT,
     NUM_BAG_CONTEXTS,
 };
 
@@ -75,6 +76,7 @@ enum {
     BAG_CONTEXT_MENU_WALK,
     BAG_CONTEXT_MENU_EQUIP_BAIT,
     BAG_CONTEXT_MENU_UNEQUIP_BAIT,
+    BAG_CONTEXT_MENU_EQUIP_BAIT_FROM_BAIT_POCKET,
     NUM_BAG_CONTEXT_MENU_ITEMS,
 };
 
@@ -109,6 +111,7 @@ typedef struct {
     u16 toss_max_number;
     u16 toss_current_number;
     u8 tbox_money;
+    u8 delay;
 } bag2_state_t;
 
 #define BAG2_STATE ((bag2_state_t*)fmem.bag2_state)

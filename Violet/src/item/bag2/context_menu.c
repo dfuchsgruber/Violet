@@ -423,6 +423,34 @@ static void bag_context_menu_item_unequip_bait(u8 self) {
     bag_print_string(self, 2, strbuf, bag_toss_or_sell_wait_a_or_b_press_and_redraw_all);
 }
 
+static void bag_equip_bait_from_bait_pocket_continuation() {
+    u16 item_idx_rod = (u16)gp_stack_pop();
+    (void)item_idx_rod; // The rod was already equipped 
+	bag_open(BAG_CONTEXT_OVERWORLD, BAG_OPEN_BAIT, NULL);
+}
+
+static void bag_initalize_with_context_equip_bait_from_bait_pocket() {
+	bag_open(BAG_CONTEXT_SELECT_ROD_TO_EQUIP_BAIT, BAG_OPEN_KEYITEMS, NULL);
+	bag_set_continuation(bag_equip_bait_from_bait_pocket_continuation);
+}
+
+static void bag_context_menu_item_equip_bait_from_bait_pocket(u8 self) {
+
+    // Close the context menu and hide tboxes
+    tbox_flush_all(BAG2_STATE->tbox_context_menu, 0x00);
+    tbox_flush_map(BAG2_STATE->tbox_context_menu);
+    tbox_free_2(BAG2_STATE->tbox_context_menu);
+    tbox_flush_map(BAG_TBOX_CONTEXT_MENU_TEXT);
+    tbox_tilemap_draw(BAG_TBOX_LIST);
+    bg_virtual_sync_reqeust_push(0);
+
+    gp_stack_push(item_activated);
+	bag_set_continuation(bag_initalize_with_context_equip_bait_from_bait_pocket);
+	bag_fade_out_and_continuation(self);
+}
+
+
+
 menu_action_t bag_context_menu_items[NUM_BAG_CONTEXT_MENU_ITEMS] = {
     [BAG_CONTEXT_MENU_USE] = {.text = str_use, .function = {.void_u8 = bag_context_menu_item_use}},
     [BAG_CONTEXT_MENU_GIVE] = {.text = str_give, .function = {.void_u8 = bag_context_menu_item_give}},
@@ -434,6 +462,7 @@ menu_action_t bag_context_menu_items[NUM_BAG_CONTEXT_MENU_ITEMS] = {
     [BAG_CONTEXT_MENU_BATTLE_USE] = {.text = str_use, .function = {.void_u8 = bag_context_menu_item_battle_use}},
     [BAG_CONTEXT_MENU_EQUIP_BAIT] = {.text = str_equip_bait, .function = {.void_u8 = bag_context_menu_item_equip_bait}},
     [BAG_CONTEXT_MENU_UNEQUIP_BAIT] = {.text = str_unequip_bait, .function = {.void_u8 = bag_context_menu_item_unequip_bait}},
+    [BAG_CONTEXT_MENU_EQUIP_BAIT_FROM_BAIT_POCKET] = {.text = str_equip_bait, .function = {.void_u8 = bag_context_menu_item_equip_bait_from_bait_pocket}}, 
 };
 
 
@@ -508,7 +537,9 @@ static void bag_item_selected_overworld(u8 self) {
     bag_disable_ui();
     u8 context_menu[4];
     u8 num_items = 0;
-    if (item_get_field_function(item_activated)) {
+    if (item_get_pocket(item_activated) == POCKET_BAIT) {
+            context_menu[num_items++] = BAG_CONTEXT_MENU_EQUIP_BAIT_FROM_BAIT_POCKET;
+    } else if (item_get_field_function(item_activated)) {
         if (item_activated == ITEM_FAHRRAD && overworld_flag_get(PLAYER_STATE_BIKING))
             context_menu[num_items++] = BAG_CONTEXT_MENU_WALK;
         else
@@ -902,9 +933,47 @@ static void bag_item_selected_battle(u8 self) {
 
 static void bag_item_selected_equip_bait(u8 self) {
     bag_disable_ui();
-    bag_close(self, item_activated, true);
+    bag_close(self, item_activated, false);
 }
 
+static void bag_wait_sound_effect_and_close_bag(u8 self) {
+    if (!sound_is_playing()) {
+        if (BAG2_STATE->delay > 0) {
+            BAG2_STATE->delay--;
+        } else {
+            bag_close(self, item_activated, false);
+        }
+    }
+}
+
+static u8 str_is_no_rod[] = LANGDEP(PSTRING("Nur eine Angel kann mit\nBUFFER_2 ausgerüstet werden."), PSTRING("BUFFER_2 can only\nbe equipped to a rod."));
+static u8 str_is_already_equipped[] = LANGDEP(PSTRING("BUFFER_1 ist bereits\nmit BUFFER_2 ausgerüstet."), PSTRING("BUFFER_2 is already\nequipped to BUFFER_1."));
+
+static void bag_item_selected_equip_to_rod(u8 self) {
+    bag_disable_ui();
+    u16 bait_idx = (u16)gp_stack_peek();
+    if (item_is_rod(item_activated)) {
+        if (item_rod_get_equipped_bait(item_activated) == bait_idx) {
+            strcpy(buffer0, item_get_name(item_activated));
+            strcpy(buffer1, item_get_name(bait_idx));
+            string_decrypt(strbuf, str_is_already_equipped);
+            bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+        } else {
+            play_sound(29);
+            BAG2_STATE->delay = 40;
+            item_rod_equip_bait(item_activated, bait_idx);
+            bag_reinitialize_list();
+            bag_print_item_description(bag_get_current_slot_in_current_pocket());
+            tbox_tilemap_draw(BAG_TBOX_DESCRIPTION);
+            big_callbacks[self].function = bag_wait_sound_effect_and_close_bag;
+        }
+    } else {
+        strcpy(buffer0, item_get_name(item_activated));
+        strcpy(buffer1, item_get_name(bait_idx));
+        string_decrypt(strbuf, str_is_no_rod);
+        bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+    }
+}
 
 void (*bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8) = {
     [BAG_CONTEXT_OVERWORLD] = bag_item_selected_overworld,
@@ -916,4 +985,5 @@ void (*bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8) = {
     [BAG_CONTEXT_RECHARGE_TM_HM] = bag_item_selected_recharge,
     [BAG_CONTEXT_BATTLE] = bag_item_selected_battle,
     [BAG_CONTEXT_EQUIP_BAIT]  = bag_item_selected_equip_bait,
+    [BAG_CONTEXT_SELECT_ROD_TO_EQUIP_BAIT] = bag_item_selected_equip_to_rod,
 };
