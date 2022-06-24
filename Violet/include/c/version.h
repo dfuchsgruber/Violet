@@ -69,6 +69,11 @@ void alpha_3_0_fix_pokemon_pokeball(box_pokemon *p);
      */
     void version_transfer_pokedex();
 
+/**
+ * @brief Initializes the savegame versioning system
+ * 
+ */
+void version_init();
 
 #ifdef	__cplusplus
 }

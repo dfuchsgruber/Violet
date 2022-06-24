@@ -185,9 +185,15 @@ void warp_teleport_start_player_warp_out_animation();
 void map_fade_out_music();
 
 /**
- * Enables the warp flags
+ * Resets the intial player state to be facing south and being on foot
  */
-void warp_enable_flags();
+void warp_reset_initial_player_state();
+
+/**
+ * @brief Executs a warp-in once the warp out has been done already (fading etc.)
+ * 
+ */
+void warp_do();
 
 /**
  * Sets the warp history (last used warp)

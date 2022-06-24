@@ -163,7 +163,10 @@
         "bag2.h": "c",
         "tm_hm.h": "c",
         "species.h": "c",
-        "fishing.h": "c"
+        "fishing.h": "c",
+        "difficulty_settings.h": "c",
+        "roamers.h": "c",
+        "misc.h": "c"
     },
     "files.exclude": {
         "bld": true

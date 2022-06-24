@@ -24,7 +24,8 @@ typedef union {
   u16 text_value;
 } bg_tile;
 
-#define CHARBASE(x) ((u32*)(0x06000000 + 0x4000 * (x)))
+#define CHARBASE_PLUS_OFFSET(charbase, offset) ((u32*)(0x06000000 + 0x4000 * (charbase) + 32 * (offset)))
+#define CHARBASE(charbase) (CHARBASE_PLUS_OFFSET(charbase, 0))
 #define MAPBASE(x) ((bg_tile*)(0x06000000 + 0x800 * (x)))
 #define OAMCHARBASE(x) ((u32*)(0x06010000 + 32 * (x)))
 

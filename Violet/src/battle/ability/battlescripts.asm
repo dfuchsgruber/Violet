@@ -21,7 +21,6 @@
 .global bsc_ability_inflicts_damage
 .global bsc_heal
 .global bsc_tollwut
-.global bsc_tollwut_attack_boost
 .global bsc_lucid
 .global bsc_robustheit
 .global bsc_harvest
@@ -145,36 +144,52 @@ end3
 
 
 bsc_tollwut:
-printstring 0x196
-waitmessage 0x40
-callasm turn_end_tollwut_attack_boost
-setbyte bsc_status_effect_to_apply 0x92
-call bsc_turn_end_statchange
-setbyte bsc_status_effect_to_apply 0x95
-call bsc_turn_end_statchange
-end3
+    backup_user BACKUP_STORE
+    copyarray attacking_battler BATTLE_SCRIPTING_BATTLER_IDX 1
+    jumpifability BANK_USER NEUTRALTORSO tollwut_failed
+    jumpifability BANK_USER PULVERRAUCH tollwut_failed
+    setstatchange STAT_ATTACK 1 0
+    statbuffchange STAT_BUF_CHANGE_AFFECTS_USER | STAT_BUF_IGNORE_PROTECT | STAT_BUF_CHANGE_FAILURE_CONTINUATION, tollwut_failed
+    jumpifbyte GREATER_THAN battle_communication + BATTLE_COMMUNICATION_MULTISTRING_CHOOSER 1 tollwut_failed
+    printstring 0x196
+    setgraphicalstatchangevalues
+    playanimation BANK_USER ANIMATION_STAT_CHANGE ANIMATION_ARG_0
+    printfromtable bsc_string_table_stat_changes
+    waitmessage 0x40
+    setstatchange STAT_DEFENSE 2 1
+    statbuffchange STAT_BUF_CHANGE_AFFECTS_USER | STAT_BUF_IGNORE_PROTECT | STAT_BUF_CHANGE_FAILURE_CONTINUATION, tollwut_failed
+    jumpifbyte GREATER_THAN battle_communication + BATTLE_COMMUNICATION_MULTISTRING_CHOOSER 1 tollwut_lower_special_defense
+    setgraphicalstatchangevalues
+    playanimation BANK_USER ANIMATION_STAT_CHANGE ANIMATION_ARG_0
+    printfromtable bsc_string_table_stat_changes
+    waitmessage 0x40
+tollwut_lower_special_defense:
+    setstatchange STAT_SPECIAL_DEFENSE 2 1
+    statbuffchange STAT_BUF_CHANGE_AFFECTS_USER | STAT_BUF_IGNORE_PROTECT | STAT_BUF_CHANGE_FAILURE_CONTINUATION, tollwut_failed
+    jumpifbyte GREATER_THAN battle_communication + BATTLE_COMMUNICATION_MULTISTRING_CHOOSER 1 tollwut_failed
+    setgraphicalstatchangevalues
+    playanimation BANK_USER ANIMATION_STAT_CHANGE ANIMATION_ARG_0
+    printfromtable bsc_string_table_stat_changes
+    waitmessage 0x40
+tollwut_failed:
+    backup_user BACKUP_RESTORE
+    end3
 
 bsc_turn_end_statchange:
-statbuffchange 0x41 0x81DAEED
-jumpifbyte 0x3 0x2023E87 0x2 bsc_turn_end_stat_change_success
-jumpifbyte 0x0 0x2023E87 0x3 bsc_turn_end_stat_change_failure
-printfromtable 0x83FE534
-waitmessage 0x40
-return
+    statbuffchange 0x41 0x81DAEED
+    jumpifbyte 0x3 0x2023E87 0x2 bsc_turn_end_stat_change_success
+    jumpifbyte 0x0 0x2023E87 0x3 bsc_turn_end_stat_change_failure
+    printfromtable 0x83FE534
+    waitmessage 0x40
+    return
 
 bsc_turn_end_stat_change_success:
-setgraphicalstatchangevalues
-playanimation BANK_USER 0x1 battle_scripting + 16
-printfromtable 0x83FE534
-waitmessage 0x40
-bsc_turn_end_stat_change_failure:
-return
-
-bsc_tollwut_attack_boost:
-setbyte bsc_status_effect_to_apply 0x11
-call bsc_turn_end_statchange
-return
-
+    setgraphicalstatchangevalues
+    playanimation BANK_USER 0x1 battle_scripting + 16
+    printfromtable 0x83FE534
+    waitmessage 0x40
+    bsc_turn_end_stat_change_failure:
+    return
 
 bsc_lucid:
 printstring 0x18E

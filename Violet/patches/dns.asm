@@ -29,16 +29,26 @@
 
 
 .org 0x8059A90
-        ldr r3, =tileset_load_pal_as_ts0 | 1
+        ldr r3, =tileset_load_pal_as_primary | 1
         bx r3
         .pool
 
 .org 0x8059AA0
-        ldr r3, =tileset_load_pal_as_ts1 | 1
+        ldr r3, =tileset_load_pal_as_secondary | 1
         bx r3
         .pool
 
-.org 0x80558EC
-        ldr r0, =mapchange_tileset_pal_load_hook | 1
-        bx r0
-        .pool
+.org 0x080558e4
+	ldr r0, =map_transition_update_tilesets | 1
+	bl map_transition_update_tilesets_blxr0
+	b 0x080558f2
+	.pool
+map_transition_update_tilesets_blxr0:
+	bx r0
+
+/**
+**/
+.org 0x08059ad8
+	ldr r1, =overworld_load_tileset_pals | 1
+	bx r1
+	.pool

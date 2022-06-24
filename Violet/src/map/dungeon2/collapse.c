@@ -57,7 +57,7 @@ void dungeon2_exit() {
   warp_setup(dg2->previous_bank, dg2->previous_map, 0xFF, dg2->previous_position.x,
       dg2->previous_position.y);
   warp_setup_callbacks();
-  warp_enable_flags();
+  warp_reset_initial_player_state();
   fmem.dmap_header_initialized = false;
   fmem.dmap_blocks_initialized = false;
   transparency_off();

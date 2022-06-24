@@ -37,6 +37,12 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	callasm test_tollwut
+	end
+	callasm difficulty_settings_ui_test
+	waitstate
+	end
+
 	additem ITEM_NULLSAFT 1
 	additem ITEM_KOEDER 2
 	additem ITEM_GOLDKOEDER 1

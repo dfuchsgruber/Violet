@@ -14,7 +14,6 @@
 
 extern u8 bsc_heal[];
 extern u8 bsc_lucid[];
-extern u8 bsc_tollwut_attack_boost[];
 extern u8 bsc_ability_inflicts_damage[];
 extern u8 bsc_harvest[];
 
@@ -74,13 +73,4 @@ bool battle_abilities_turn_end(u8 ability, battler *target){
     	return true;
     }
     return false;
-}
-
-void turn_end_tollwut_attack_boost(){
-    DEBUG("Tollwut attack check for battler %d, stat change %d\n", 
-            attacking_battler, battlers[attacking_battler].stat_changes[1]);
-    if(battlers[attacking_battler].stat_changes[1] < 8){
-        battlescript_callstack_push_next_command();
-        bsc_offset = bsc_tollwut_attack_boost;
-    }
 }

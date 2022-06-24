@@ -221,6 +221,12 @@ extern "C" {
      **/
     void bg_virtual_sync_reqeust_proceed();
 
+    /**
+     * @brief Resets all IO scroll registers for bgs to 0
+     * 
+     */
+    void bg_reset_scroll();
+
 #ifdef	__cplusplus
 }
 #endif

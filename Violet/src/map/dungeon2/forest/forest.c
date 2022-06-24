@@ -990,7 +990,7 @@ void dungeon2_enter_forest() {
     warp_last_map_set(0, save1->bank, save1->map, 0xFF, (s16)(save1->x_cam_orig - 7),
             (s16)(save1->y_cam_orig - 7));
     warp_setup_callbacks();
-    warp_enable_flags();
+    warp_reset_initial_player_state();
 
     // Setup warpback
     player_get_coordinates(&(dg2->previous_position.x), &(dg2->previous_position.y));

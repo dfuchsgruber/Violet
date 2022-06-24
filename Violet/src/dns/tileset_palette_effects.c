@@ -20,7 +20,7 @@ static color_t dns_color_light_yellow_light = {.rgb = {.red = 248 / 8, .green = 
 static color_t dns_color_flame_yellow = {.rgb = {.red = 31, .green = 25, .blue = 7}};
 static color_t dns_color_flame_orange = {.rgb = {.red = 31, .green = 17, .blue = 7}};
 
-void tile_init(map_footer_t *foot) {
+void overworld_tilesets_apply_palette_effects(map_footer_t *foot) {
 
     if (dns_on()) {
         if (foot->tileset1 == &maptileset0 || foot->tileset1 == &maptileset0_kaskada ||
@@ -122,20 +122,33 @@ void tile_init(map_footer_t *foot) {
     }
 }
 
-void tileset_load_pal_as_ts0(map_footer_t *foot){
+void tileset_load_pal_as_primary(map_footer_t *foot){
     fmem.current_tileset_1 = foot->tileset1;
     overworld_load_tileset_pal(foot->tileset1, 0, 0xE0);
 
 }
 
-void tileset_load_pal_as_ts1(map_footer_t *foot){
+void tileset_load_pal_as_secondary(map_footer_t *foot){
     fmem.current_tileset_2 = foot->tileset2;
     overworld_load_tileset_pal(foot->tileset2, 0x70, 0xC0);
 }
 
-void map_change_load_ts1_pal(map_footer_t *foot){
-    tileset *t = foot->tileset2;
-    if(fmem.current_tileset_2 != t){
-        tileset_load_pal_as_ts1(foot);
+void overworld_load_tileset_pals(map_footer_t *footer) {
+    if (footer) {
+        tileset_load_pal_as_primary(footer);
+        tileset_load_pal_as_secondary(footer);
+        overworld_tilesets_apply_palette_effects(footer);
+    }
+}
+
+void map_transition_update_tilesets() {
+    map_footer_t *footer = mapheader_virtual.footer;
+    if (footer) {
+        tileset_load_pal_as_primary(footer);
+        if (fmem.current_tileset_2 != footer->tileset2) {
+            tileset_load_pal_as_secondary(footer);
+            overworld_tilesets_apply_palette_effects(footer);
+        }
+        overworld_load_tilesets(footer);
     }
 }

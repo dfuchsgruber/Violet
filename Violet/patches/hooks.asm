@@ -34,6 +34,7 @@
 .include "patches/pc.asm"
 .include "patches/summary.asm"
 .include "patches/oam.asm"
+.include "patches/new_game.asm"
 
 //Memleak debug
 .org 0x0800296C

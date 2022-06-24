@@ -398,7 +398,7 @@ static void bag_list_menu_cursor_move_callback(int idx, u8 is_initializing, list
     }
     if (bag_get_current_pocket() == POCKET_TM_HM) {
         bag_tm_hm_pocket_load_move_info((u16)idx);
-    }
+    } 
 }
 
 void bag_build_item_list() {
@@ -466,6 +466,7 @@ static bool bag_cb_initialize_step() {
             break;
         }
         case 5: {
+            bg_reset_control_and_displacement();
             // ResetItemMenuIconState
             BAG2_STATE->initialization_state++;
             break;

@@ -19,15 +19,6 @@
 #include "berry.h"
 #include "overworld/misc.h"
 
-void custom_memory_init() {
-  memset(&cmem, 0, sizeof(custom_memory));
-  setflag(POKERADAR_POKEMON_SPAWNED);  // set corresponds to a pokemon already spawned
-  incubator_clear();
-  overworld_misc_intialize();
-  berry_trees_initialize_all();
-}
-
-
 u8 *dma0_dump = ((floating_memory*) 0x0203CEC4)->dma0_dump;
 
 void fmem_init(){

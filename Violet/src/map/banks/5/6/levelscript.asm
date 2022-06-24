@@ -62,7 +62,7 @@ ow_script_fight:
 	compare DIFFICULTY DIFFICULTY_HARD
 	gotoif EQUAL battle_difficulty_hard
 
-	@ DIFFICULTY_NORMAL : 
+	@ DIFFICULTY_EASY : 
 	trainerbattlecont 0x1 0x1cb 0x0 str_before str_after later
 battle_difficulty_normal:
 	trainerbattlecont 0x1 0xb8 0x0 str_before str_after later

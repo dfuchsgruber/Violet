@@ -5,8 +5,8 @@
 .global ae_script_intro
 
 ae_script_intro:
-    fadescreen 0 0 512 128 16 8
-    pause 200
+    @fadescreen 0 0 512 128 16 8
+    @pause 200
     fadescreen 0 0 512 128 8 16
     pause 128
     song MUS_SPIELHALLE_VERSION_3 0

@@ -173,6 +173,8 @@ extern "C" {
     void tbox_print_string(u8 box_id, u8 font, u16 x, u16 y, u8 letter_spacing,
         u8 line_spacing, tbox_font_colormap* color_map, u8 speed, u8* str);
 
+    #define TBOX_SETUP_TAIL {.bg_id = 0xFF}
+
     /**
      * Initializes multiple boxes on the virtual background
      * @param boxes Array of tboxdata instances terminated by a tbox on bg 0xFF

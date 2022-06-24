@@ -2822,7 +2822,7 @@ bsc_strings:
 	.global str_battle_x196
 
 	str_battle_x196:
-		.string "BSC_ATK_NAME_WITH_PREFIX verfällt in\nTollwut!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX verfällt in\nTollwut!" 
 
 	str_battle_x197:
 		.string "BSC_ATK_NAME_WITH_PREFIX erntet\nBSC_LAST_ITEM!"
@@ -2972,7 +2972,7 @@ bsc_strings:
 		.string "BSC_LAST_ITEM lässt\nBSC_ATK_NAME_WITH_PREFIX sofort angreifen!"
 
 	str_battle_x1C5:
-		.string "BSC_DEF_NAME_WITH_PREFIX\nhält dank BSC_LAST_ABILITY durch!"
+		.string "BSC_DEF_NAME_WITH_PREFIX\nhält dank BSC_DEF_ABILITY durch!"
 
 	str_battle_x1C6:
 		.string "BSC_ATK_NAME_WITH_PREFIX wurde von\nBSC_LAST_ITEM verletzt!"
@@ -4966,7 +4966,7 @@ bsc_strings:
 	.global str_battle_x196
 
 	str_battle_x196:
-		.string "ATTACK_NAME fell in\nrabies!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX fell in\nrabies!"
 	str_battle_x197:
 		.string "ATTACK_NAME harvests\nLAST_ITEM!"
 
@@ -5113,7 +5113,7 @@ bsc_strings:
 		.string "BSC_LAST_ITEM lets\nBSC_ATK_NAME_WITH_PREFIX attack\lthis turn!"
 
 	str_battle_x1C5:
-		.string "BSC_DEF_NAME_WITH_PREFIX hangs on\ndue to BSC_SCR_ACTIVE_ABILITY!"
+		.string "BSC_DEF_NAME_WITH_PREFIX hangs on\ndue to BSC_DEF_ABILITY!"
 
 	str_battle_x1C6:
 		.string "BSC_ATK_NAME_WITH_PREFIX was hurt\nby BSC_LAST_ITEM!"

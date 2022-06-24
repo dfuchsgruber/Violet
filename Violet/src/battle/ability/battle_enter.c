@@ -36,6 +36,7 @@ bool abilities_battle_enter(u8 ability, u8 index) {
     		battlers[index].stat_changes[STAT_DEFENSE] > 0
 			|| battlers[index].stat_changes[STAT_SPECIAL_DEFENSE] > 0) && !battler_damage_taken[index].intimdated_foe) {
         battler_damage_taken[index].intimdated_foe = 1; // Abuse that one a bit I suppose...
+    	bsc_global.battler_idx = index;
 		battlescript_init_and_interrupt_battle(bsc_tollwut);
 		return true;
     } else if (ability == GEGENWIND && !battler_damage_taken[index].intimdated_foe) {
@@ -48,7 +49,7 @@ bool abilities_battle_enter(u8 ability, u8 index) {
         return true;
     } else if (ability == FINALGLOCKE && !battler_damage_taken[index].intimdated_foe) {
         battler_statuses3[index] |= STATUS3_INTIMIDATE_POKES;
-        battler_damage_taken[index].intimdated_foe =1;
+        battler_damage_taken[index].intimdated_foe = 1;
     } else if (ability == GLUECKSPILZ) {
         BATTLE_STATE2->item_dropping_chance_increased_by_ability = true;
         return false;

@@ -11,11 +11,6 @@
 	ldr r0, =hook_get_behavior_script | 1
 	bx r0
 	.pool
-
-.org 0x08059AE4
-	ldr r0, =hook_tile_init | 1
-	bx r0
-	.pool
 	
 .org 0x0806CA94
         ldr r0, =pokepad_outdoor_trigger | 1
@@ -110,7 +105,14 @@
 .org 0x0815D60C
 	bx lr
 .org 0x0815D4D8
-	bx lr
+	ldr r0, =new_game_initialize_custom_data | 1
+    bx r0
+    .pool
+
+.org 0x08054a18
+    ldr r0, =new_game_warp_to_initial_map | 1
+    bx r0
+    .pool
 
 .org 0x0806D4AC
 	ldr r3, =tile_trigger_water_scripts | 1

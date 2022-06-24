@@ -847,9 +847,19 @@ void bsc_try_set_perishsong_no_attack() {
     }
 }
 
+static void bsc_backup_attacking_battler() {
+    if (bsc_offset[1])
+        BATTLE_STATE2->attacking_battler_backup = attacking_battler;
+    else
+        attacking_battler = BATTLE_STATE2->attacking_battler_backup;
+    bsc_offset += 2;
+}
+
+
 static void (*bsc_multibyte_commands[])() = {
     [0] = bsc_jump_if_item_effect,
     [1] = bsc_try_set_perishsong_no_attack,
+    [2] = bsc_backup_attacking_battler,
 };
 
 void bsc_cmd_multibyte_command() {

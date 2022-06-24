@@ -153,5 +153,5 @@ void animation_ardeal_tower_warp() {
     money_set(&save1->money, 0);
 	warp_setup_by_event(WARP_BANK, WARP_MAP_IDX, WARP_WARP_IDX);
     warp_setup_muted_callback();
-    warp_enable_flags();
+    warp_reset_initial_player_state();
 }

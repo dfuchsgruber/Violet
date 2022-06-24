@@ -65,7 +65,7 @@
 .endm
 
 .equ BATTLE_SCRIPTING_STAT_CHANGE_ANIMATION, (battle_scripting + 0x1B)
-
+.equ BATTLE_SCRIPTING_BATTLER_IDX, (battle_scripting + 24)
 
 @@ Index commands
 .macro attackcanceler
@@ -1328,6 +1328,15 @@ various \battler, 2
 
 .macro beforeattack
 .byte 0xFC
+.endm
+
+.equ BACKUP_STORE, 1
+.equ BACKUP_RESTORE, 0
+
+.macro backup_user push_backup:req
+    .byte 0xFD
+    .byte 0x2
+    .byte \push_backup
 .endm
 
 @ Jumps to an adress if a battler has an item with a given effect

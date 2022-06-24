@@ -2,135 +2,58 @@
 	"data": {
 		"footer": "map_footer_2",
 		"events": {
-			"person_cnt": 2,
+			"person_cnt": 0,
 			"warp_cnt": 2,
 			"trigger_cnt": 0,
-			"signpost_cnt": 3,
-			"persons": [
-				{
-					"target_index": "1",
-					"picture": "0",
-					"field_2": 0,
-					"x": "14",
-					"y": "14",
-					"level": "0",
-					"behaviour": "BEHAVIOUR_NONE",
-					"behaviour_range": {
-						"x": "0",
-						"y": "0"
-					},
-					"is_trainer": "0",
-					"alert_radius": "0",
-					"script": "ow_script_test",
-					"flag": "0",
-					"field_D": 0,
-					"field_B": "0",
-					"value": {
-						"item": "0",
-						"species": "0",
-						"berry_tree_idx": "0",
-						"type": "0"
-					},
-					"argument": "0",
-					"script_std_and_in_connection": {
-						"script_std": "0",
-						"in_connection": "0"
-					}
-				},
-				{
-					"target_index": 2,
-					"picture": 0,
-					"field_2": 0,
-					"x": 1,
-					"y": 0,
-					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
-					"behaviour_range": {
-						"x": "0",
-						"y": "0"
-					},
-					"is_trainer": "0",
-					"alert_radius": 0,
-					"script": 0,
-					"flag": 0,
-					"field_D": 0,
-					"field_B": 0,
-					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": 0
-					},
-					"argument": 0,
-					"script_std_and_in_connection": {
-						"script_std": 0,
-						"in_connection": "0"
-					}
-				}
-			],
+			"signpost_cnt": 2,
+			"persons": [],
 			"warps": [
 				{
-					"x": 12,
-					"y": 13,
-					"level": 3,
-					"target_bank": 4,
-					"target_map": 0,
-					"target_warp_idx": 1
+					"x": "4",
+					"y": "2",
+					"level": "3",
+					"target_bank": "4",
+					"target_map": "0",
+					"target_warp_idx": "1"
 				},
 				{
-					"x": 16,
-					"y": 16,
-					"level": 0,
-					"target_bank": 0,
-					"target_map": 0,
-					"target_warp_idx": 0
+					"x": "8",
+					"y": "6",
+					"level": "0",
+					"target_bank": "0",
+					"target_map": "0",
+					"target_warp_idx": "0"
 				}
 			],
 			"triggers": [],
 			"signposts": [
 				{
-					"x": 16,
-					"y": 13,
-					"level": 0,
+					"x": "8",
+					"y": "2",
+					"level": "0",
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_4_1_sign_0",
 						"item": {
 							"item": "0",
 							"flag": "0",
-							"amount": 0,
-							"chunk": 0
+							"amount": "0",
+							"chunk": "0"
 						}
 					},
 					"flag": "0"
 				},
 				{
-					"x": 8,
-					"y": 0,
-					"level": 0,
+					"x": "4",
+					"y": "5",
+					"level": "0",
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
-						"script": 0,
 						"item": {
 							"item": "0",
 							"flag": "0",
-							"amount": 0,
-							"chunk": 0
-						}
-					},
-					"flag": "0"
-				},
-				{
-					"x": "13",
-					"y": "16",
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"item": {
-							"item": 0,
-							"flag": 0,
-							"amount": 0,
-							"chunk": 0
+							"amount": "0",
+							"chunk": "0"
 						},
 						"script": "ow_script_debugger"
 					},
@@ -138,7 +61,7 @@
 				}
 			]
 		},
-		"levelscripts": "lscr_0x71a500",
+		"levelscripts": "map_player_bedroom_levelscripts",
 		"connections": {
 			"connection_cnt": 0,
 			"connections": []
@@ -150,8 +73,8 @@
 		"weather": "MAP_WEATHER_INSIDE",
 		"type": "MAP_TYPE_INSIDE",
 		"battle_style": "BATTLE_TYPE_RANDOM",
-		"bike_usable": 0,
-		"level": 0,
+		"bike_usable": "0",
+		"level": "0",
 		"flags": {
 			"allow_escape_rope": "0",
 			"allow_run": "0",

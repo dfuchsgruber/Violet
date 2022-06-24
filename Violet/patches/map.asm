@@ -62,13 +62,6 @@
 .org 0x805526C
     .word mapbanks
 
-//start position of player
-.org 0x08054A20
-    mov r0, #5
-    str r0, [sp] //y
-    mov r0, #4 //bank
-    mov r1, #1 //map
-    mov r3, #8 //x
 
 //enable running shoes everywhere
 .org 0x080BD584

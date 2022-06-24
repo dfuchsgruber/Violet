@@ -11,6 +11,7 @@
 #include "dma.h"
 #include "debug.h"
 #include "overworld/weather.h"
+#include "flags.h"
 
 static color_t dns_colors[] = {
     [SHADER_NIGHT] = {.rgb = {.red = 15, .green = 15, .blue = 28}},
@@ -51,6 +52,13 @@ void pal_apply_shaders(u16 start_color, u16 number_colors) {
     bool filter_active = false;
     color_t filter = {.rgb = {31, 31, 31}};
 
+    if (checkflag(FLAG_FILTER_COLOR_ACTIVE)) {
+        color_t c = {.value = *var_access(VAR_FILTER_COLOR)};
+        filter_active = true;
+        filter = color_multiply(filter, c);
+
+    }
+            
     switch (pal_shaders) {
         case SHADER_GREYSCALE:
             pal_apply_greyscale(&pal_restore[start_color], number_colors);

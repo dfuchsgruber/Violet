@@ -756,7 +756,7 @@ static void crafting_ui_setup() {
             break;
         }
         case 2: {
-            bg_reset(0);
+            bg_reset(0); 
             bg_setup(0, crafting_ui_bg_configs, ARRAY_COUNT(crafting_ui_bg_configs));
             bg_virtual_map_displace(0, 0, 0);
             bg_virtual_set_displace(0, 0, 0);

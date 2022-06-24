@@ -47,7 +47,7 @@ void cloud_enter() {
 	}
 	warp_last_map_set_on_current_position(warp_idx, save1->bank, save1->map, warp_idx);
     warp_setup_muted_callback();
-    warp_enable_flags();
+    warp_reset_initial_player_state();
     clearflag(TRANS_PALETTE_FETCH);
 }
 
@@ -68,7 +68,7 @@ void warp_to_pos_with_facing() {
     warp_setup((u8) bank, (u8) map, 0xFF, (s16) x, (s16) y);
     //warp_setup_callbacks();
     warp_setup_muted_callback();
-    warp_enable_flags();
+    warp_reset_initial_player_state();
     clearflag(TRANS_PALETTE_FETCH);
 }
 

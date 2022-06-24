@@ -32,7 +32,12 @@ extern map_footer_t *mapfooters[];
 
 map_footer_t *get_mapfooter();
 
-void tile_init(map_footer_t *foot);
+/**
+ * @brief Loads the tiles of the primary and secondary tileset
+ * 
+ * @param footer the footer to load tiles of
+ */
+void overworld_load_tilesets(map_footer_t *footer);
 
 /**
  * Draws a block onto the bg and schedules a vram copy for bg1-bg3.
