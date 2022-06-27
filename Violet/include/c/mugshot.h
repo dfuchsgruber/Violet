@@ -12,13 +12,13 @@
 extern "C" {
 #endif
 
-
-#define MUGSHOT_BASE_TAG 0x1340
-#define IS_MUGSHOT_PAL_TAG(tag)((tag >= MUGSHOT_BASE_TAG) && (tag < MUGSHOT_BASE_TAG + 0xC0))
-
 #include "types.h"
 #include "constants/mugshot_emotions.h"
 #include "constants/mugshot_character.h"
+
+#define MUGSHOT_BASE_TAG 0x1340
+#define IS_MUGSHOT_PAL_TAG(tag)((tag >= MUGSHOT_BASE_TAG) && (tag < MUGSHOT_BASE_TAG + NUM_MUGSHOTS))
+
 
     typedef struct mugshot {
         const void *gfx[MUGSHOT_EMOTION_COUNT]; // lz77 compressed

@@ -2989,11 +2989,11 @@ static wild_pokemon_entry wild_pokemon_3_76_other_entries[5] = {
 	[WILD_POKEMON_DENSITY_OTHER_0_30_PERCENT] = 
 		{.level_min = 35, .level_max = 37, .species = POKEMON_WABLU},
 	[WILD_POKEMON_DENSITY_OTHER_1_25_PERCENT] = 
-		{.level_min = 35, .level_max = 37, .species = POKEMON_KRAMURX},
+		{.level_min = 35, .level_max = 37, .species = POKEMON_GERADAKS},
 	[WILD_POKEMON_DENSITY_OTHER_2_20_PERCENT] = 
 		{.level_min = 35, .level_max = 37, .species = POKEMON_LEDIAN},
 	[WILD_POKEMON_DENSITY_OTHER_3_15_PERCENT] = 
-		{.level_min = 35, .level_max = 37, .species = POKEMON_PUPPANCE},
+		{.level_min = 35, .level_max = 37, .species = POKEMON_KNUDDELUFF},
 	[WILD_POKEMON_DENSITY_OTHER_4_10_PERCENT] = 
 		{.level_min = 35, .level_max = 37, .species = POKEMON_KRAMURX},
 };

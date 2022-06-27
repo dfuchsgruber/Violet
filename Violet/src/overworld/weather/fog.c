@@ -2,6 +2,7 @@
 #include "types.h"
 #include "overworld/weather.h"
 #include "oam.h"
+#include "debug.h"
 
 extern oam_template overworld_weather_dynamic_fog_oam_template;
 extern graphic overworld_weather_dynamic_fog_graphic;
@@ -52,4 +53,42 @@ void overworld_weather_static_fog_create_oams() {
         }
     }
     overworld_weather.fog_h_oams_created = true;
+}
+
+void weather_light_static_fog_main() {
+    overworld_weather.fog_x_scroll_position = (u16)((coordinate_camera_x_offset - overworld_weather.fog_x_scroll_offset) & 0xFF);
+    if (++overworld_weather.fog_x_scroll_counter > 3) {
+        overworld_weather.fog_x_scroll_counter = 0;
+        overworld_weather.fog_x_scroll_offset++;
+    }
+    switch (overworld_weather.init_step) {
+        case 0: {
+            overworld_weather_static_fog_create_oams();
+            if (overworld_weather.current_weather == MAP_WEATHER_STATIC_FOG) {
+                overworld_weather_set_target_blend_coefficients(12, 8, 3);
+            } else if (overworld_weather.current_weather == MAP_WEATHER_LIGHT_STATIC_FOG) {
+                overworld_weather_set_target_blend_coefficients(5, 12, 3);
+            } else {
+                // Is that used for bubbles ?? Probably this line could be commented out
+                overworld_weather_set_target_blend_coefficients(4, 16, 3);
+            }
+            DEBUG("Set light static fog bld coefs to %d, %d\n");
+            overworld_weather.init_step++;
+            break;
+        }
+        case 1: {
+            if (overworld_weather_update_blend()) {
+                overworld_weather.weather_gfx_loaded = true;
+                overworld_weather.init_step++;
+            }
+            break;
+        }
+    }
+}
+
+void weather_light_static_fog_initialize_all() {
+    weather_static_fog_initialize_variables();
+    while (!overworld_weather.weather_gfx_loaded) {
+        weather_light_static_fog_main();
+    }
 }

@@ -106,7 +106,7 @@ static void weather_snow_create_oam() {
     } else {    
         overworld_weather.sprites.s1.snowflakeSprites[idx] = NULL;
     }
-    DEBUG("Created new snowflake oam with idx %d as the %d-th.\n", oam_idx, idx);
+    // DEBUG("Created new snowflake oam with idx %d as the %d-th.\n", oam_idx, idx);
     overworld_weather.snowflake_sprite_count++;
 }
 
@@ -115,7 +115,7 @@ static void weather_snow_delete_oam() {
         oam_object **o = overworld_weather.sprites.s1.snowflakeSprites + (--overworld_weather.snowflake_sprite_count);
         if (*o)
             oam_delete(*o);
-        DEBUG("Deleted new snowflake oam at 0x%x with snowflake idx %d\n", *o, overworld_weather.snowflake_sprite_count);
+        // DEBUG("Deleted new snowflake oam at 0x%x with snowflake idx %d\n", *o, overworld_weather.snowflake_sprite_count);
         *o = NULL;
     }
 }

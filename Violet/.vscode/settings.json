@@ -166,7 +166,8 @@
         "fishing.h": "c",
         "difficulty_settings.h": "c",
         "roamers.h": "c",
-        "misc.h": "c"
+        "misc.h": "c",
+        "mugshot_character.h": "c"
     },
     "files.exclude": {
         "bld": true

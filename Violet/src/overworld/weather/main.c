@@ -50,6 +50,7 @@ WEATHER_FUNCTION_WITH_BLEND(weather_static_fog_initialize_variables);
 WEATHER_FUNCTION_WITH_BLEND(weather_static_fog_initialize_all);
 WEATHER_FUNCTION_WITH_BLEND(weather_cherry_tree_leaves_initialize_variables);
 WEATHER_FUNCTION_WITH_BLEND(weather_cherry_tree_leaves_initialize_all);
+WEATHER_FUNCTION_WITH_BLEND(weather_light_static_fog_initialize_all);
 
 #define CEMETERY_BANK 3
 #define CEMETERY_MAP 14
@@ -108,6 +109,7 @@ weather_callbacks_t weather_callbacks[NUM_MAP_WEATHERS] = {
     [MAP_WEATHER_BURNING_TREES] = {.initialize_variables = weather_extreme_sun_initialize_variables_with_blend, .main = weather_extreme_sun_main, .initialize_all = weather_extreme_sun_initialize_all_with_blend, .closure = weather_extreme_sun_closure },
     [MAP_WEATHER_COLD_BLUE] = {.initialize_variables = weather_inside_initialize_variables_with_blend, .main = weather_inside_main, .initialize_all = weather_inside_initialize_all_with_blend, .closure = weather_inside_closure},
     [MAP_WEATHER_CHERRY_TREE_LEAVES] = {.initialize_variables = weather_cherry_tree_leaves_initialize_variables_with_blend, .main = weather_cherry_tree_leaves_main, .initialize_all = weather_cherry_tree_leaves_initialize_all_with_blend, .closure = weather_cherry_tree_leaves_closure},
+    [MAP_WEATHER_LIGHT_STATIC_FOG] = {.initialize_variables = weather_static_fog_initialize_variables_with_blend, .main = weather_light_static_fog_main, .initialize_all = weather_light_static_fog_initialize_all_with_blend, .closure = weather_static_fog_closure },
 };
 
 void pal_gamma_shift(u8 start_pal_idx, u8 num_pals, s8 gamma_idx) {
@@ -263,13 +265,10 @@ static bool overworld_weather_update_gamma_shift() {
 }
 
 
-static bool overworld_weather_update_blend() {
-    return false; // No continuous blending so far
-};
 
 void overworld_weather_update_gamma_shift_and_filter() {
     // DEBUG("updating blend and gamma\n");
-    if (!overworld_weather_update_gamma_shift() && !overworld_weather_update_blend()) {
+    if (!overworld_weather_update_gamma_shift()) {
         overworld_weather.pal_processing_state = OVERWORLD_WEATHER_PAL_PROCESSING_STATE_IDLE;
     } else {
         pal_gamma_shift(0, 32, overworld_weather.gamma);
@@ -315,7 +314,8 @@ void overworld_weather_fade_in() {
             }
             break;
         }
-        case MAP_WEATHER_STATIC_FOG: {
+        case MAP_WEATHER_STATIC_FOG:
+        {
             if (!overworld_weather_fade_in_static_fog()) {
                 overworld_weather.gamma = target_gamma;
                 overworld_weather.pal_processing_state = OVERWORLD_WEATHER_PAL_PROCESSING_STATE_IDLE;
@@ -423,6 +423,7 @@ static bool weather_affects_palette[NUM_MAP_WEATHERS] = {
     [MAP_WEATHER_RAIN] = true,
     [MAP_WEATHER_THUNDER] = true,
     [MAP_WEATHER_EXTREME_THUNDER] = true,
+    // [MAP_WEATHER_LIGHT_STATIC_FOG] = true,
     [MAP_WEATHER_STATIC_FOG] = true,
     [MAP_WEATHER_CLOUDY] = true,
     [MAP_WEATHER_EXTREME_SUN] = true,

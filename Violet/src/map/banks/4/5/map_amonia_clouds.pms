@@ -2,10 +2,10 @@
 	"data": {
 		"footer": "map_footer_amonia_clouds",
 		"events": {
-			"person_cnt": 16,
+			"person_cnt": 22,
 			"warp_cnt": 3,
 			"trigger_cnt": 0,
-			"signpost_cnt": 2,
+			"signpost_cnt": 3,
 			"persons": [
 				{
 					"target_index": "1",
@@ -39,8 +39,8 @@
 				{
 					"target_index": "2",
 					"picture": "171",
-					"x": "32",
-					"y": "14",
+					"x": "55",
+					"y": "16",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -236,24 +236,24 @@
 				{
 					"target_index": "9",
 					"picture": "238",
-					"x": "39",
-					"y": "20",
-					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"x": "44",
+					"y": "23",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_LEFT_UP_DOWN_RIGHT",
 					"behaviour_range": {
-						"x": 0,
-						"y": 0
+						"x": "5",
+						"y": "3"
 					},
-					"field_B": 0,
+					"field_B": "0",
 					"is_trainer": "1",
-					"alert_radius": "3",
-					"script": 0,
+					"alert_radius": "5",
+					"script": "0",
 					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_1",
 					"value": {
-						"item": 0,
-						"species": "POKEMON_GEOROK",
-						"berry_tree_idx": 0,
-						"type": 0
+						"item": "0",
+						"species": "POKEMON_PUMMELUFF",
+						"berry_tree_idx": "0",
+						"type": "0"
 					},
 					"argument": "35",
 					"script_std_and_in_connection": {
@@ -456,6 +456,174 @@
 						"berry_tree_idx": "0",
 						"type": "0"
 					}
+				},
+				{
+					"target_index": "17",
+					"picture": "32",
+					"script_std_and_in_connection": {
+						"script_std": "0",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "33",
+					"y": "13",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "ow_script_amonia_clouds_person_4",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "18",
+					"picture": "56",
+					"script_std_and_in_connection": {
+						"script_std": "0",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "27",
+					"y": "11",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "ow_script_amonia_clouds_person_5",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "19",
+					"picture": "238",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "7",
+					"y": "30",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "POKEMON_KNUDDELUFF",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "20",
+					"picture": "238",
+					"script_std_and_in_connection": {
+						"script_std": "0",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "32",
+					"y": "33",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "POKEMON_PUPPANCE",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "21",
+					"picture": "238",
+					"script_std_and_in_connection": {
+						"script_std": "0",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "60",
+					"y": "25",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "POKEMON_STARALILI",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "22",
+					"picture": "238",
+					"script_std_and_in_connection": {
+						"script_std": "0",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "51",
+					"y": "0",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "POKEMON_ZIGZACHS",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
 				}
 			],
 			"warps": [
@@ -517,6 +685,22 @@
 						},
 						"script": "0"
 					}
+				},
+				{
+					"x": "31",
+					"y": "11",
+					"level": "0",
+					"type": "SIGNPOST_SCRIPT",
+					"flag": "0",
+					"value": {
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": "0",
+							"chunk": "0"
+						},
+						"script": "ow_script_amonia_clouds_sign_0"
+					}
 				}
 			]
 		},
@@ -546,7 +730,7 @@
 		"footer_idx": 48,
 		"namespace": "MAP_AMONIA",
 		"flash_type": "FLASH_NONE",
-		"weather": "MAP_WEATHER_OUTSIDE",
+		"weather": "MAP_WEATHER_LIGHT_STATIC_FOG",
 		"type": "MAP_TYPE_CLOUD",
 		"bike_usable": "1",
 		"level": "0",

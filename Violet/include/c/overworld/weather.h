@@ -197,6 +197,23 @@ void weather_set_filter(u8 weather);
 void overworld_weather_set_blend_coefficients(u8 eva, u8 evb);
 
 /**
+ * @brief Sets the target alpha blending coefficients to "transtion" to
+ * 
+ * @param eva the a coefficient
+ * @param evb the b coefficient
+ * @param delay the step delay
+ */
+void overworld_weather_set_target_blend_coefficients(u8 eva, u8 evb, u8 delay);
+
+/**
+ * @brief Updates the current alpha blending coefficients towards the target coefficients
+ * 
+ * @return true if the target coefficients have been reached
+ * @return false 
+ */
+bool overworld_weather_update_blend();
+
+/**
  * @brief Fade-in with a fixed gamma value
  * 
  * @param gamma the gamma value
@@ -346,6 +363,8 @@ void weather_cherry_tree_leaves_initialize_variables();
 void weather_cherry_tree_leaves_main();
 void weather_cherry_tree_leaves_initialize_all();
 bool weather_cherry_tree_leaves_closure();
+void weather_light_static_fog_main();
+void weather_light_static_fog_initialize_all();
 
 /**
  * Waits for the sandstorm oam delay to finish and then runs the normal sandstorm callback

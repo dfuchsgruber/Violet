@@ -159,7 +159,7 @@
 					"target_index": "6",
 					"picture": "238",
 					"x": "14",
-					"y": "26",
+					"y": "22",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_DOWN_AND_UP",
 					"behaviour_range": {
