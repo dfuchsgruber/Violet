@@ -196,22 +196,34 @@ bool overworld_weather_static_fog_palette_affected(u8 pal_idx) {
 void pal_fog_alpha_blending(u16 first, u16 num_cols) {
     color_t fog_col = dns_get_fog_overlay();
     // DEBUG("Fog overlay is 0x%x\n", fog_col);
+    int coef_a = 16, coef_b = 0;
+    switch (overworld_weather.current_weather) {
+        case MAP_WEATHER_LIGHT_STATIC_FOG:
+            coef_a = 12;
+            coef_b = 5;
+            break;
+        case MAP_WEATHER_STATIC_FOG:
+            coef_a = 8;
+            coef_b = 12;
+            break;
+    }
+
     for (int i = 0; i < num_cols; i++) {
         color_t new = {.rgb = {
-            .red = (u16)(MIN(31, (8 * pal_restore[first + i].rgb.red + 12 * fog_col.rgb.red) / 16) & 31),
-            .green = (u16)(MIN(31, (8 * pal_restore[first + i].rgb.green + 12 * fog_col.rgb.green) / 16) & 31),
-            .blue = (u16)(MIN(31, (8 * pal_restore[first + i].rgb.blue + 12 * fog_col.rgb.blue) / 16) & 31),
+            .red = (u16)(MIN(31, (coef_a * pal_restore[first + i].rgb.red + coef_b * fog_col.rgb.red) / 16) & 31),
+            .green = (u16)(MIN(31, (coef_a * pal_restore[first + i].rgb.green + coef_b * fog_col.rgb.green) / 16) & 31),
+            .blue = (u16)(MIN(31, (coef_a * pal_restore[first + i].rgb.blue + coef_b * fog_col.rgb.blue) / 16) & 31),
         }};
         pals[first + i] = new;
     }
 }
 
 void pal_oam_apply_fading(u8 oam_pal_idx) {
-    // DEBUG("Pal idx %d, pr state %d, Shader state %d\n", oam_pal_idx, overworld_weather.pal_processing_state, pal_shaders);
+    DEBUG("Pal idx %d, pr state %d, Shader state %d\n", oam_pal_idx, overworld_weather.pal_processing_state, pal_shaders);
     u8 pal_idx = (u8)(oam_pal_idx + 16);
     if (overworld_weather.pal_processing_state == OVERWORLD_WEATHER_PAL_PROCESSING_STATE_FADING_IN) {
         if (overworld_weather.is_fade_in_active) {
-            if (overworld_weather.current_weather == MAP_WEATHER_STATIC_FOG) {
+            if (overworld_weather.current_weather == MAP_WEATHER_STATIC_FOG || overworld_weather.current_weather != MAP_WEATHER_LIGHT_STATIC_FOG) {
                 overworld_weather_static_fog_add_affected_pal_idx(pal_idx);
             }
             for (int i = 0; i < 16; i++) {
@@ -224,7 +236,7 @@ void pal_oam_apply_fading(u8 oam_pal_idx) {
         color_t overlay = {.value = fading_control.color};
         pal_alpha_blending((u16)(pal_idx * 16), 16, fading_control.target_alpha, overlay);
     } else {
-        if (overworld_weather.current_weather != MAP_WEATHER_STATIC_FOG) {
+        if (overworld_weather.current_weather != MAP_WEATHER_STATIC_FOG && overworld_weather.current_weather != MAP_WEATHER_LIGHT_STATIC_FOG) {
             if (palette_get_gamma_type(pal_idx) == GAMMA_NORMAL)
                 pal_gamma_shift(pal_idx, 1, overworld_weather.gamma);
         } else {
@@ -290,6 +302,7 @@ static s8 weather_gammas[NUM_MAP_WEATHERS] = {
 };
 
 void overworld_weather_fade_in() {
+    DEBUG("Fade in pal processing state %d\n", overworld_weather.pal_processing_state);
     if (++overworld_weather.fade_in_counter > 1)
         overworld_weather.is_fade_in_active = false;
     
@@ -315,6 +328,7 @@ void overworld_weather_fade_in() {
             break;
         }
         case MAP_WEATHER_STATIC_FOG:
+        case MAP_WEATHER_LIGHT_STATIC_FOG:
         {
             if (!overworld_weather_fade_in_static_fog()) {
                 overworld_weather.gamma = target_gamma;
@@ -410,6 +424,7 @@ void pal_gamma_shift_and_blend_and_drought(s8 gamma, u8 alpha, color_t target) {
 }
 
 bool overworld_weather_fade_in_static_fog() {
+    DEBUG("Static fog fade in fadescreen cnt %d\n", overworld_weather.fadescreen_cnt);
     if (overworld_weather.fadescreen_cnt == 16)
         return false;
     if (overworld_weather_fade_in_is_delayed_and_delay_proceed())
@@ -423,7 +438,7 @@ static bool weather_affects_palette[NUM_MAP_WEATHERS] = {
     [MAP_WEATHER_RAIN] = true,
     [MAP_WEATHER_THUNDER] = true,
     [MAP_WEATHER_EXTREME_THUNDER] = true,
-    // [MAP_WEATHER_LIGHT_STATIC_FOG] = true,
+    [MAP_WEATHER_LIGHT_STATIC_FOG] = true,
     [MAP_WEATHER_STATIC_FOG] = true,
     [MAP_WEATHER_CLOUDY] = true,
     [MAP_WEATHER_EXTREME_SUN] = true,

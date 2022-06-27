@@ -515,7 +515,7 @@
 		"type": "MAP_TYPE_CLOUD",
 		"battle_style": "BATTLE_TYPE_RANDOM",
 		"bike_usable": "1",
-		"level": 0,
+		"level": "0",
 		"flags": {
 			"allow_escape_rope": "0",
 			"allow_run": "1",

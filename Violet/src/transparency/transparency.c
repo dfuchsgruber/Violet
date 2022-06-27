@@ -10,6 +10,7 @@
 #include "bg.h"
 #include "debug.h"
 #include "callbacks.h"
+#include "constants/map_weathers.h"
 
 const color_t tbox_palette_transparent [16] = {
     {0x0},
@@ -35,9 +36,16 @@ bool transparency_is_on() {
     return !checkflag(TRANS_DISABLE) && !transparency_used_by_weather();
 }
 
+static u8 weather_uses_transparency[NUM_MAP_WEATHERS] = {
+    [MAP_WEATHER_STATIC_FOG] = true,
+    [MAP_WEATHER_SANDSTORM] = true,
+    [MAP_WEATHER_DYNAMIC_FOG] = true,
+    [MAP_WEATHER_DENSE_FOG] = true,
+    [MAP_WEATHER_LIGHT_STATIC_FOG] = true,
+};
+
 bool transparency_used_by_weather() {
-    u8 current_weather =  map_get_current_weather();
-    return current_weather == 6 || current_weather == 8 || current_weather == 9 || current_weather == 0xA;
+    return weather_uses_transparency[map_get_current_weather()];
 }
 
 void transparency_on() {

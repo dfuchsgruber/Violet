@@ -545,7 +545,7 @@
 					"target_index": "20",
 					"picture": "238",
 					"script_std_and_in_connection": {
-						"script_std": "0",
+						"script_std": "PERSON_POKEMON",
 						"in_connection": "0"
 					},
 					"argument": "0",

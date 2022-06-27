@@ -82,6 +82,7 @@ extern tileset maptileset_laubdorf;
 extern tileset maptileset_ceometria;
 extern tileset maptileset_haweiland;
 extern tileset maptileset_clouds;
+extern tileset maptileset_clouds_dark_green;
 extern tileset maptileset_cloud_ruins;
 extern tileset maptileset_cloud_ardeal;
 extern tileset maptileset_blackbeard_ship;
