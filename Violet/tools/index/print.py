@@ -46,7 +46,7 @@ def print_hidden_index(items):
                 bank = location.get('bank', None)
                 map_idx = location.get('map_idx', None)
                 namespace = location.get('namespace', None)
-                chunk = location['chunk']
+                chunk = int(location['chunk'])
                 chunks[chunk][int(location['flag'])].append(f'{namespace} [{bank}.{map_idx}]')
     index = ''
     for chunk in chunks:

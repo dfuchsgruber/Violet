@@ -483,7 +483,7 @@
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_SOUTH",
-					"displacement": "12",
+					"displacement": "6",
 					"bank": "4",
 					"map_idx": "5",
 					"field_A": 0,

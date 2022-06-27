@@ -2,15 +2,15 @@
 	"data": {
 		"footer": "map_footer_amonia_clouds",
 		"events": {
-			"person_cnt": 12,
-			"warp_cnt": 1,
+			"person_cnt": 16,
+			"warp_cnt": 3,
 			"trigger_cnt": 0,
-			"signpost_cnt": 1,
+			"signpost_cnt": 2,
 			"persons": [
 				{
 					"target_index": "1",
 					"picture": "170",
-					"x": "13",
+					"x": "15",
 					"y": "15",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
@@ -39,8 +39,8 @@
 				{
 					"target_index": "2",
 					"picture": "171",
-					"x": "23",
-					"y": "10",
+					"x": "32",
+					"y": "14",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -68,8 +68,8 @@
 				{
 					"target_index": "3",
 					"picture": "92",
-					"x": "7",
-					"y": "6",
+					"x": "24",
+					"y": "14",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -96,24 +96,24 @@
 				{
 					"target_index": "4",
 					"picture": "238",
-					"x": "9",
-					"y": "8",
-					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"x": "17",
+					"y": "22",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_FACE_UP_AND_RIGHT",
 					"behaviour_range": {
-						"x": 0,
-						"y": 0
+						"x": "0",
+						"y": "0"
 					},
-					"field_B": 0,
+					"field_B": "0",
 					"is_trainer": "1",
 					"alert_radius": "4",
-					"script": 0,
+					"script": "0",
 					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
 					"value": {
-						"item": 0,
-						"species": "POKEMON_KRAMURX",
-						"berry_tree_idx": 0,
-						"type": 0
+						"item": "0",
+						"species": "POKEMON_GERADAKS",
+						"berry_tree_idx": "0",
+						"type": "0"
 					},
 					"argument": "35",
 					"script_std_and_in_connection": {
@@ -124,8 +124,8 @@
 				{
 					"target_index": "5",
 					"picture": "235",
-					"x": "44",
-					"y": "17",
+					"x": "28",
+					"y": "8",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -152,8 +152,8 @@
 				{
 					"target_index": "6",
 					"picture": "238",
-					"x": "39",
-					"y": "14",
+					"x": "44",
+					"y": "7",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_RIGHT_AND_LEFT",
 					"behaviour_range": {
@@ -180,8 +180,8 @@
 				{
 					"target_index": "7",
 					"picture": "238",
-					"x": "8",
-					"y": "18",
+					"x": "11",
+					"y": "9",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -236,8 +236,8 @@
 				{
 					"target_index": "9",
 					"picture": "238",
-					"x": "37",
-					"y": "23",
+					"x": "39",
+					"y": "20",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -264,8 +264,8 @@
 				{
 					"target_index": "10",
 					"picture": "27",
-					"x": "28",
-					"y": "24",
+					"x": "25",
+					"y": "32",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -292,8 +292,8 @@
 				{
 					"target_index": "11",
 					"picture": "19",
-					"x": "45",
-					"y": "23",
+					"x": "43",
+					"y": "14",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -320,58 +320,202 @@
 				{
 					"target_index": "12",
 					"picture": "56",
-					"x": "39",
+					"x": "35",
 					"y": "28",
-					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_LEFT",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
-						"x": 0,
-						"y": 0
+						"x": "0",
+						"y": "0"
 					},
-					"field_B": 0,
+					"field_B": "0",
 					"is_trainer": "1",
 					"alert_radius": "3",
 					"script": "ow_script_anemonia_clouds_trainer_0",
-					"flag": 0,
+					"flag": "0",
 					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": 0
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
 					},
-					"argument": 0,
+					"argument": "0",
 					"script_std_and_in_connection": {
-						"script_std": 0,
+						"script_std": "0",
 						"in_connection": "0"
+					}
+				},
+				{
+					"target_index": "13",
+					"picture": "95",
+					"script_std_and_in_connection": {
+						"script_std": "0",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "25",
+					"y": "16",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "ow_script_cut_tree",
+					"flag": "1",
+					"value": {
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "14",
+					"picture": "96",
+					"script_std_and_in_connection": {
+						"script_std": "0",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "10",
+					"y": "22",
+					"level": "0",
+					"behaviour": "0",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "ow_script_rock_smash",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "15",
+					"picture": "92",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_ITEM",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "17",
+					"y": "33",
+					"level": "0",
+					"behaviour": "0",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "FLAG_ANEMONIA_CLOUDS_ITEM_1",
+					"value": {
+						"item": "ITEM_SCHWAECHENSCHUTZ",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "0",
+					"picture": "0",
+					"script_std_and_in_connection": {
+						"script_std": "0",
+						"in_connection": "MAP_CONNECTION_NORTH"
+					},
+					"argument": "4",
+					"x": "20",
+					"y": "-4",
+					"level": "0",
+					"behaviour": "0",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
 					}
 				}
 			],
 			"warps": [
 				{
-					"x": "29",
-					"y": "9",
+					"x": "56",
+					"y": "3",
 					"level": 0,
 					"target_warp_idx": "3",
 					"target_map": 0,
 					"target_bank": "3"
+				},
+				{
+					"x": "36",
+					"y": "25",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": 0
+				},
+				{
+					"x": "50",
+					"y": "19",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": 0
 				}
 			],
 			"triggers": [],
 			"signposts": [
 				{
-					"x": "20",
-					"y": "20",
-					"level": 0,
+					"x": "58",
+					"y": "19",
+					"level": "0",
 					"type": "SIGNPOST_HIDDEN_ITEM",
-					"flag": 0,
+					"flag": "0",
 					"value": {
 						"item": {
-							"item": "ITEM_MININUGGET",
+							"item": "ITEM_LOTUS_BALL",
 							"flag": "106",
-							"amount": "1",
-							"chunk": 0
+							"amount": "3",
+							"chunk": "0"
 						},
-						"script": 0
+						"script": "0"
+					}
+				},
+				{
+					"x": "23",
+					"y": "38",
+					"level": "0",
+					"type": "SIGNPOST_HIDDEN_ITEM",
+					"flag": "0",
+					"value": {
+						"item": {
+							"item": "ITEM_FUNKELSTEIN",
+							"flag": "44",
+							"amount": "1",
+							"chunk": "0"
+						},
+						"script": "0"
 					}
 				}
 			]
@@ -382,7 +526,7 @@
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_NORTH",
-					"displacement": "-12",
+					"displacement": "-6",
 					"bank": "3",
 					"map_idx": "76",
 					"field_A": 0,
@@ -405,7 +549,7 @@
 		"weather": "MAP_WEATHER_OUTSIDE",
 		"type": "MAP_TYPE_CLOUD",
 		"bike_usable": "1",
-		"level": 0,
+		"level": "0",
 		"battle_style": "BATTLE_TYPE_RANDOM",
 		"flags": {
 			"allow_escape_rope": "0",

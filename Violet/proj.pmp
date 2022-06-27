@@ -2454,7 +2454,8 @@
 		"maptileset_cloud_spider_web": "src/map/tileset/maptileset_cloud_spider_web.pms",
 		"maptileset_cloud_various": "src/map/tileset/maptileset_clouds_various.pms",
 		"maptileset_cloud_route_2_snowy": "src/map/tileset/maptileset_cloud_route_2_snowy.pms",
-		"maptileset_cloud_cherry_tree": "src/map/tileset/maptileset_cloud_cherry_tree.pms"
+		"maptileset_cloud_cherry_tree": "src/map/tileset/maptileset_cloud_cherry_tree.pms",
+		"maptileset_cloud_anemonia": "src/map/tileset/maptileset_cloud_anemonia.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2537,6 +2538,7 @@
 		"gfx_maptileset_cloud_spider_webTiles": "asset/gfx/tileset/gfx_maptileset_cloud_spider_web.png",
 		"gfx_maptileset_clouds_variousTiles": "asset/gfx/tileset/gfx_maptileset_clouds_various.png",
 		"gfx_maptileset_clouds_route_2_snowyTiles": "asset/gfx/tileset/gfx_maptileset_clouds_route_2_snowy.png",
-		"gfx_maptileset_cloud_cherry_treeTiles": "asset/gfx/tileset/gfx_maptileset_cloud_cherry_tree.png"
+		"gfx_maptileset_cloud_cherry_treeTiles": "asset/gfx/tileset/gfx_maptileset_cloud_cherry_tree.png",
+		"gfx_maptileset_cloud_anemoniaTiles": "asset/gfx/tileset/gfx_maptileset_cloud_anemonia.png"
 	}
 }

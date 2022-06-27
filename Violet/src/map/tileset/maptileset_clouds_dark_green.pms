@@ -423,29 +423,29 @@
 					"green": 0
 				},
 				{
-					"red": 10,
-					"blue": 15,
-					"green": 8
+					"red": 7,
+					"blue": 14,
+					"green": 9
 				},
 				{
-					"red": 13,
-					"blue": 20,
+					"red": 6,
+					"blue": 13,
+					"green": 7
+				},
+				{
+					"red": 9,
+					"blue": 17,
 					"green": 10
 				},
 				{
-					"red": 18,
-					"blue": 26,
+					"red": 13,
+					"blue": 22,
 					"green": 15
 				},
 				{
-					"red": 19,
-					"blue": 26,
-					"green": 16
-				},
-				{
-					"red": 19,
-					"blue": 28,
-					"green": 17
+					"red": 11,
+					"blue": 20,
+					"green": 13
 				},
 				{
 					"red": 7,
@@ -458,44 +458,44 @@
 					"green": 0
 				},
 				{
-					"red": 0,
+					"red": 6,
+					"blue": 2,
+					"green": 2
+				},
+				{
+					"red": 11,
+					"blue": 4,
+					"green": 4
+				},
+				{
+					"red": 15,
+					"blue": 3,
+					"green": 3
+				},
+				{
+					"red": 18,
+					"blue": 4,
+					"green": 4
+				},
+				{
+					"red": 22,
+					"blue": 3,
+					"green": 3
+				},
+				{
+					"red": 25,
 					"blue": 0,
 					"green": 0
 				},
 				{
-					"red": 0,
+					"red": 29,
 					"blue": 0,
 					"green": 0
 				},
 				{
-					"red": 0,
-					"blue": 0,
-					"green": 0
-				},
-				{
-					"red": 0,
-					"blue": 0,
-					"green": 0
-				},
-				{
-					"red": 0,
-					"blue": 0,
-					"green": 0
-				},
-				{
-					"red": 0,
-					"blue": 0,
-					"green": 0
-				},
-				{
-					"red": 0,
-					"blue": 0,
-					"green": 0
-				},
-				{
-					"red": 0,
-					"blue": 0,
-					"green": 0
+					"red": 23,
+					"blue": 22,
+					"green": 6
 				}
 			],
 			[
@@ -555,9 +555,9 @@
 					"green": 14
 				},
 				{
-					"red": 14,
-					"blue": 24,
-					"green": 14
+					"red": 8,
+					"blue": 18,
+					"green": 10
 				},
 				{
 					"red": 18,
@@ -570,9 +570,9 @@
 					"green": 31
 				},
 				{
-					"red": 18,
-					"blue": 28,
-					"green": 16
+					"red": 11,
+					"blue": 20,
+					"green": 13
 				},
 				{
 					"red": 31,
