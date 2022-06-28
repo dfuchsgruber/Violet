@@ -210,24 +210,24 @@
 					"picture": "238",
 					"x": "25",
 					"y": "2",
-					"level": 0,
+					"level": "0",
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_RIGHT_LEFT_UP",
 					"behaviour_range": {
 						"x": "5",
-						"y": "5"
+						"y": "2"
 					},
-					"field_B": 0,
-					"is_trainer": 0,
-					"alert_radius": 0,
-					"script": 0,
-					"flag": 0,
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
 					"value": {
-						"item": 0,
+						"item": "0",
 						"species": "POKEMON_STARAVIA",
-						"berry_tree_idx": 0,
-						"type": 0
+						"berry_tree_idx": "0",
+						"type": "0"
 					},
-					"argument": 0,
+					"argument": "0",
 					"script_std_and_in_connection": {
 						"script_std": "PERSON_POKEMON",
 						"in_connection": "0"
@@ -573,7 +573,7 @@
 					"target_index": "21",
 					"picture": "238",
 					"script_std_and_in_connection": {
-						"script_std": "0",
+						"script_std": "PERSON_POKEMON",
 						"in_connection": "0"
 					},
 					"argument": "0",

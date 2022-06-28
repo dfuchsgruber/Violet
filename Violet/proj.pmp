@@ -296,6 +296,11 @@
 				"map_amonia_clouds",
 				"src/map/banks/4/5/map_amonia_clouds.pms",
 				"MAP_AMONIA"
+			],
+			"6": [
+				"map_anemonia_clouds_cave",
+				"src/map/banks/4/6/map_anemonia_clouds_cave.pms",
+				"MAP_AMONIA"
 			]
 		},
 		"5": {
@@ -2364,6 +2369,10 @@
 		"map_footer_route_2_clouds_cave_ice_room": [
 			189,
 			"src/map/banks/11/9/map_footer_route_2_clouds_cave_ice_room.pms"
+		],
+		"map_footer_anemonia_clouds_cave": [
+			190,
+			"src/map/banks/4/6/map_footer_anemonia_clouds_cave.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -2375,7 +2384,8 @@
 		"maptileset0_aktania": "src/map/tileset/maptileset0_aktania.pms",
 		"maptileset0_kaskada": "src/map/tileset/maptileset0_kaskada.pms",
 		"maptileset0_route_4": "src/map/tileset/maptileset0_route_4.pms",
-		"maptileset_clouds_dark_green": "src/map/tileset/maptileset_clouds_dark_green.pms"
+		"maptileset_clouds_dark_green": "src/map/tileset/maptileset_clouds_dark_green.pms",
+		"maptileset_cave_mossy": "src/map/tileset/maptileset_cave_mossy.pms"
 	},
 	"tilesets_secondary": {
 		"maptileset45": "src/map/tileset/maptileset45.pms",
