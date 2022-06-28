@@ -23,6 +23,10 @@
 
 #define DROUGHT_COLOR_INDEX(color) ((((color) >> 1) & 0xF) | (((color) >> 2) & 0xF0) | (((color) >> 3) & 0xF00))
 
+enum {
+    OVERWORLD_WEATHER_CHERRY_TREE_LEAVES_GFX_TAG = 0x1210,
+};
+
 color_t drought_colors[6][0x1000];
 
 // Ugly macro to create wrappers that initialize the weather filters
@@ -138,7 +142,8 @@ typedef struct {
     u8 cherry_tree_target_num_oams;
     u8 cherry_tree_new_timer;
     u8 cherry_tree_oam_group_head;
-    u8 filler_744[0xD-8];
+    u8 cherry_tree_num_oams_visible;
+    u8 filler_744[0xD-7];
     s8 load_drought_pals_index;
     u8 load_drought_pals_offset;
 } overworld_weather_stru;

@@ -40,8 +40,10 @@
 
 #define ATTR2_PRIO(x) (x<<10)
 
-#define GRAPHIC_SIZE_4BPP(width, height) (width * height / 2)
-#define GRAPHIC_SIZE_8BPP(width, height) (width * height)
+#define GRAPHIC_SIZE_4BPP(width, height) ((width) * (height) / 2)
+#define GRAPHIC_SIZE_4BPP_TO_NUM_TILES(width, height) (GRAPHIC_SIZE_4BPP(width, height) / GRAPHIC_SIZE_4BPP(8, 8))
+#define GRAPHIC_SIZE_8BPP(width, height) ((width) * (height))
+#define GRAPHIC_SIZE_8BPP_TO_NUM_TILES(width, height) (GRAPHIC_SIZE_8BPP(width, height) / GRAPHIC_SIZE_8BPP(8, 8))
 
 struct oam_object;
 typedef struct oam_object oam_object;

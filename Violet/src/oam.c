@@ -511,7 +511,7 @@ void oam_animations_proceed() {
                     }
                 }
                 if (group_next < NUM_OAMS) {
-                    fmem.oam_groups[group_next].previous = prev;
+                    fmem.oam_groups[group_next].previous = group_prev;
                 }
                 // oam_allocation_remove(list, current);
                 // oam_allocation_insert_after(list, current, OAM_ALLOC_FREE_START);
