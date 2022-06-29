@@ -7,7 +7,9 @@
 #include "prng.h"
 
 #define NEW_PERIOD 28
-#define DELETE_PERIOD 16
+#define DELETE_PERIOD 8
+#define MAX_TIME_DELETE 512
+#define MIN_TIME_DELETE 256
 #define CHERRY_TREE_LEAVES_NUM_OAMS 28
 #define MAX_NUM_VISIBLE 32
 
@@ -37,6 +39,8 @@ typedef struct {
     u8 y0;
     u8 idx;
     u16 spin_frame; // frame at which the oam spins
+    u16 deletion_timer;
+    // TODO: this struct is "full", if you want more members, allocate it on the heap (the heap space oh no :( )
 } cherry_tree_leave_state_t;
 
 static void weather_cherry_tree_leaves_oam_callback_initialize(oam_object *self);
@@ -59,7 +63,7 @@ static void weather_cherry_tree_leaves_oam_start_animation_by_slope(oam_object *
 // We have 32 oams that are distributed evenly in x-boxes of size 32 (8 boxes)
 
 static inline bool weather_cherry_tree_leaves_oam_is_off_screen(s16 y) {
-    return y >= 160 + MARGIN && y <= 160 + 2 * MARGIN;
+    return y >= 160 + MARGIN && y <= 256 - MARGIN;
 }
 
 static void weather_cherry_tree_leaves_calculate_position(oam_object *self) {
@@ -242,7 +246,7 @@ static void weather_cherry_tree_leaves_oam_callback_delete_oam(oam_object *self)
     ++state->frame;
     weather_cherry_tree_leaves_calculate_position(self);
     // DEBUG("Leave %d waits for deletion at %d\n", state->idx, self->y);
-    if (weather_cherry_tree_leaves_oam_is_off_screen(self->y)) {
+    if (weather_cherry_tree_leaves_oam_is_off_screen(self->y) || --state->deletion_timer == 0) {
         // Sprite is off-screen, we can hide it
         // DEBUG("[0x%x] : Idx %d is off-screen at %d, remaining %d\n", _main_rnd & 0xFF, state->idx, self->y, overworld_weather.cherry_tree_num_oams_visible);
         oam_clear(self);
@@ -253,8 +257,11 @@ static void weather_cherry_tree_leaves_oam_callback_delete_oam(oam_object *self)
 static void weather_cherry_tree_leaves_delete_oam() {
     if (overworld_weather.cherry_tree_num_oams > 0) {
         oam_object **o = overworld_weather.sprites.s1.cherry_tree_sprites + (--overworld_weather.cherry_tree_num_oams);
-        if (*o)
+        if (*o) {
+            cherry_tree_leave_state_t *state = (cherry_tree_leave_state_t*) (*o)->private;
+            state->deletion_timer = (u16)((rnd16() % (MAX_TIME_DELETE - MIN_TIME_DELETE)) + MIN_TIME_DELETE);
             (*o)->callback = weather_cherry_tree_leaves_oam_callback_delete_oam;
+        }
         *o = NULL;
     }
 }
