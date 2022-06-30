@@ -26,3 +26,8 @@ void pokemon_set_hidden_ability(box_pokemon *p) {
 	hp_ev_earned |= 0x80;
 	box_pokemon_set_attribute(p, ATTRIBUTE_COOLNESS, &hp_ev_earned);
 }
+
+bool pokemon_has_hidden_ability(box_pokemon *p) {
+	int hp_ev_earned = box_pokemon_get_attribute(p, ATTRIBUTE_COOLNESS, NULL);
+	return (hp_ev_earned & 0x80) > 0;
+}

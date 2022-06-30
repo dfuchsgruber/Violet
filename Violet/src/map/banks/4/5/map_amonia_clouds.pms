@@ -601,7 +601,7 @@
 					"target_index": "22",
 					"picture": "238",
 					"script_std_and_in_connection": {
-						"script_std": "0",
+						"script_std": "PERSON_POKEMON",
 						"in_connection": "0"
 					},
 					"argument": "0",
@@ -638,18 +638,18 @@
 				{
 					"x": "36",
 					"y": "25",
-					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"level": "0",
+					"target_warp_idx": "0",
+					"target_map": "6",
+					"target_bank": "4"
 				},
 				{
 					"x": "50",
 					"y": "19",
-					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"level": "0",
+					"target_warp_idx": "1",
+					"target_map": "6",
+					"target_bank": "4"
 				}
 			],
 			"triggers": [],

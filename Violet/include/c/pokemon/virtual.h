@@ -318,6 +318,13 @@ u8 *box_get_name(u8 box_idx);
  */
 void pokemon_set_hidden_ability(box_pokemon *p);
 
+/**
+ * @brief Checks if a pokemon has a hidden ability
+ * 
+ * @param p the pokemon to check
+ * @return if the pokemon has its hidden ability
+ */
+bool pokemon_has_hidden_ability(box_pokemon *p);
 
 u16 pokemon_append_attack(pokemon *p, u16 attack);
 void pokemon_rotate_and_push_attack(pokemon *p, u16 attack);

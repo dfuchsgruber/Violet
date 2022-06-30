@@ -393,4 +393,11 @@ void item_field_function_evolution_stone(u8 self);
  */
 u32 item_nature_stone_modify_nature(u8 nature, u16 item_idx);
 
+/**
+ * @brief Item callback for ability patch
+ * 
+ * @param self self-reference
+ */
+void item_ability_patch_field_effect(u8 self);
+
 #endif /* INCLUDE_C_ITEM_ITEM_H_ */

@@ -1759,6 +1759,10 @@ static u8 str_item_ep_bonbon_xl_description[] = LANGDEP(
 	PSTRING("Ein Bonbon, das voller Energie\nsteckt. Liefert beim Verzehr eine\nsehr große Menge an EP."),
 	PSTRING("A candy full of energy. Eating\nit will supply a very large amount of\nExp. to a Pokémon.")
 );
+static u8 str_item_faehigk_pflaster_description[] = LANGDEP(
+	PSTRING("Ein Pflaster, das die reguläre\nFähigkeit eines Pokémon zu seiner\nversteckten Fähigkeit ändert."),
+	PSTRING("A plaster that changes the\nregular ability of a\nPokémon to its hidden ability.")
+);
 
 
 item items[] = {
@@ -8174,6 +8178,12 @@ item items[] = {
 		.description = str_item_ep_bonbon_xl_description, .pocket = POCKET_ITEMS, .type=1,
 		.field_usage = item_exp_candy_xl_field_effect,
 	},
+	[ITEM_FAEHIGK_PFLASTER] = {
+		.name = LANGDEP(PSTRING("Fäh.-Pflaster"), PSTRING("Ability Patch")),
+		.index = ITEM_FAEHIGK_PFLASTER,
+		.description = str_item_faehigk_pflaster_description, .pocket = POCKET_ITEMS, .type=1,
+		.field_usage = item_ability_patch_field_effect,
+	}
 };
 
 u16 item_idx_saniztize(u16 item_idx) {
