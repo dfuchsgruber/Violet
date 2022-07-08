@@ -67,6 +67,7 @@ icarus_shrine_visible:
     special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
     setvar 0x8004 0x1d
     setvar 0x8005 0xa
+    setvar 0x8006, A_STAR_SPEED_FAST
     special SPECIAL_OVERWORLD_VIEWPOINT_MOVE_TO
     waitmovement 0
     special SPECIAL_OVERWORLD_VIEWPORT_LOCK
@@ -87,6 +88,7 @@ icarus_shrine_visible:
     special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
     setvar 0x8004 0xFF
     special SPECIAL_PERSON_GET_POSITION
+    setvar 0x8006, A_STAR_SPEED_FAST
     special SPECIAL_OVERWORLD_VIEWPOINT_MOVE_TO
     waitmovement 0
     special SPECIAL_OVERWORLD_VIEWPORT_LOCK

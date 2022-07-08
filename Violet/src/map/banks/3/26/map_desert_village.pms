@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_desert_village",
 		"events": {
-			"person_cnt": 18,
+			"person_cnt": 19,
 			"warp_cnt": 8,
 			"trigger_cnt": 3,
 			"signpost_cnt": 6,
@@ -510,6 +510,34 @@
 						"script_std": "PERSON_POKEMON",
 						"in_connection": "0"
 					}
+				},
+				{
+					"target_index": "19",
+					"picture": "52",
+					"script_std_and_in_connection": {
+						"script_std": "0",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "21",
+					"y": "9",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "1",
+					"alert_radius": "3",
+					"script": "ow_script_basis_trockentag_trainer_cryptic_0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
 				}
 			],
 			"warps": [
@@ -564,8 +592,8 @@
 				{
 					"x": "16",
 					"y": "8",
-					"level": 0,
-					"target_warp_idx": "8",
+					"level": "0",
+					"target_warp_idx": "3",
 					"target_map": "5",
 					"target_bank": "0"
 				},

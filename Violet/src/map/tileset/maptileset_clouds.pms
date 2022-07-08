@@ -53736,14 +53736,14 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": "0x0",
-				"hm_usage": 0,
-				"field_2": 0,
+				"behaviour": "MB_JUMP_SOUTH",
+				"hm_usage": "0",
+				"field_2": "0",
 				"battle_bg": "BATTLE_BG_SKY_ISLAND",
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": "1",
-				"field_7": 0
+				"encounter_type": "0",
+				"field_5": "0",
+				"priority": "0",
+				"field_7": "0"
 			},
 			{
 				"behaviour": "0x0",

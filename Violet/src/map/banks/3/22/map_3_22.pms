@@ -3,7 +3,7 @@
 		"footer": "map_footer_92",
 		"events": {
 			"person_cnt": 64,
-			"warp_cnt": 4,
+			"warp_cnt": 5,
 			"trigger_cnt": 1,
 			"signpost_cnt": 4,
 			"persons": [
@@ -1436,29 +1436,29 @@
 				},
 				{
 					"target_index": "51",
-					"picture": "238",
-					"x": "7",
-					"y": "12",
-					"level": 0,
-					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"picture": "187",
+					"x": "48",
+					"y": "37",
+					"level": "0",
+					"behaviour": "0",
 					"behaviour_range": {
-						"x": 0,
-						"y": 0
+						"x": "0",
+						"y": "0"
 					},
-					"field_B": 0,
-					"is_trainer": 0,
-					"alert_radius": 0,
-					"script": 0,
-					"flag": 0,
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
 					"value": {
-						"item": 0,
+						"item": "0",
 						"species": "POKEMON_MARILL",
-						"berry_tree_idx": 0,
-						"type": 0
+						"berry_tree_idx": "0",
+						"type": "0"
 					},
-					"argument": 0,
+					"argument": "0",
 					"script_std_and_in_connection": {
-						"script_std": "PERSON_POKEMON",
+						"script_std": "PERSON_UPSTREAM",
 						"in_connection": "0"
 					}
 				},
@@ -1858,6 +1858,14 @@
 					"level": 0,
 					"target_warp_idx": 0,
 					"target_map": 0,
+					"target_bank": "16"
+				},
+				{
+					"x": "48",
+					"y": "37",
+					"level": "0",
+					"target_warp_idx": "1",
+					"target_map": "0",
 					"target_bank": "16"
 				}
 			],

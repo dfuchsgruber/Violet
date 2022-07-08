@@ -30,10 +30,15 @@ static u8 unown_message_steel[] = {
     UNOWN_LETTER('S'), UNOWN_LETTER('T'), UNOWN_LETTER('E'), UNOWN_LETTER('E'), UNOWN_LETTER('L'), 0xFF
 };
 
+static u8 unown_message_aero[] = {
+    UNOWN_LETTER('A'), UNOWN_LETTER('E'), UNOWN_LETTER('R'), UNOWN_LETTER('O'), 0xFF
+};
+
 static u8 *unown_messages[] = {
     [UNOWN_MESSAGE_ROCK] = unown_message_rock, 
     [UNOWN_MESSAGE_ICE] = unown_message_ice, 
-    [UNOWN_MESSAGE_STEEL] = unown_message_steel
+    [UNOWN_MESSAGE_STEEL] = unown_message_steel,
+    [UNOWN_MESSAGE_AERO] = unown_message_aero,
 };
 
 static u8 *unown_message_get(int idx) {
@@ -44,10 +49,53 @@ static u8 *unown_message_get(int idx) {
     }
 }
 
+// static inline bool find_sequence(u8 *text, u8 *seq, size_t size_text, size_t size_seq, size_t *result) {
+//     for (size_t start = 0; start <= (size_text - size_seq); start++) {
+//         bool matches = true;
+//         for (size_t i = 0; i < size_seq; i++) {
+//             if (text[start + i] != seq[i]) {
+//                 matches = false;
+//                 break;
+//             }
+//         }
+//         if (matches) {
+//             *result = start;
+//             return true;
+//         }
+//     }
+//     return false;
+// }
+
+// static bool longest_common_subsequence(u8 *first, u8 *second, size_t num_first, size_t num_second, size_t *pos_match,  size_t *length) {
+//     for (*length = num_first; *length > 0; (*length)--) {
+//         for (int start_first = 0; start_first < *length; start_first++) {
+//             // Look for the subsequence first[start_first : start_first + *length] in second
+//             if (find_sequence(first + start_first, second, num_first - start_first, num_second, pos_match))
+//                 return true;
+//         }
+//     }
+//     return false;
+// }
+
+// static void player_party_get_biggest_unown_message_match(u8 *message, size_t message_size, size_t *index, size_t *length) {
+//     u8 player_party_message[6] = {0xFF};
+//     for (int i = 0; i < player_pokemon_cnt; i++) {
+//         if (pokemon_get_attribute(player_pokemon + i, ATTRIBUTE_SPECIES, 0) == POKEMON_ICOGNITO) {
+//             pid_t pid = {.value = (u32)pokemon_get_attribute(player_pokemon + i, ATTRIBUTE_PID, 0)};
+//             player_party_message[i] = (u8) pokemon_unown_get_letter(pid);
+//         }
+//     }
+//     longest_common_subsequence(player_party_message, message, player_pokemon_cnt, message_size, index, length);
+// }
+
+
 bool player_party_spells_unown_message() {
     u8 *message = unown_message_get(*var_access(0x8004));
+    size_t message_len = 0;
+    while(message[message_len] != 0xFF)
+        message_len++;
     u8 party_message[7] = {0xFF};
-    int j = 0;
+    size_t j = 0;
     for (int i = 0; i < player_pokemon_cnt; i++) {
         if (pokemon_get_attribute(player_pokemon + i, ATTRIBUTE_SPECIES, 0) == POKEMON_ICOGNITO) {
             pid_t pid = {.value = (u32)pokemon_get_attribute(player_pokemon + i, ATTRIBUTE_PID, 0)};
@@ -57,12 +105,21 @@ bool player_party_spells_unown_message() {
     DEBUG("Player party spells %d %d %d %d %d %d %d\n", party_message[0], party_message[1], party_message[2], 
         party_message[3], party_message[4], party_message[5], party_message[6]);
     party_message[j++] = 0xFF;
-    int i;
-    for (i = 0; party_message[i] != 0xFF && message[i] != 0xFF; i++) {
-        if (message[i] != party_message[i]) return false;
+    // Find the unown message (can start at any index in the party)
+    for (size_t start = 0; start < j - message_len; start++) {
+        bool matches = true;
+        for (size_t i = 0; i < message_len; i++) {
+            if (party_message[start + i] != message[i]) {
+                matches = false;
+                break;
+            }
+        }
+        if (matches)
+            return true;
     }
-    return message[i] == party_message[i];
+    return false;
 }
+
 static sprite unown_message_oam_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_64_64, .attr2 = ATTR2_PRIO(0)};
 
 static oam_template unown_message_oam_templates[UNOWN_MESSAGE_MAX_LEN] = {
@@ -159,5 +216,11 @@ void overworld_unown_delete_message() {
     free(OVERWORLD_UNOWN_MESSAGE_STATE);
 }
 
-
-
+void test_give_unowns() {
+    for (int i = 0; i < 28; i++) {
+        pid_t pid = pokemon_new_pid();
+        pid.fields.unown_letter = (u32)(i & 31);
+        pokemon_new(opponent_pokemon, POKEMON_ICOGNITO, 5, false, true, pid, false, 0);
+        pokemon_give(opponent_pokemon);
+    }
+}

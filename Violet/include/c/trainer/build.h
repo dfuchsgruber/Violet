@@ -18,6 +18,7 @@ typedef struct build {
     u8 hidden_power_strength; // If 255, use random strength
     u8 use_gender : 1; // If true, a gender is assigned
     u8 gender;
+    u8 unown_letter : 5;
 } trainer_build_t;
 
 trainer_build_t trainer_builds[NUM_TRAINER_BUILDS];

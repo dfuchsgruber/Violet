@@ -1577,10 +1577,10 @@
 				{
 					"x": "15",
 					"y": "6",
-					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": "0",
-					"target_bank": "28"
+					"level": "0",
+					"target_warp_idx": "8",
+					"target_map": "5",
+					"target_bank": "0"
 				},
 				{
 					"x": "9",

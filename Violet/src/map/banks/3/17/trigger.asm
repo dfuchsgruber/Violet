@@ -4,6 +4,7 @@
 .include "callstds.s"
 .include "movements.s"
 .include "songs.s"
+.include "pathfinding.s"
 
 .global ow_script_haweiland_pirates_trigger
 
@@ -15,6 +16,7 @@ ow_script_haweiland_pirates_trigger:
     special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
     setvar 0x8004 0x3a
     setvar 0x8005 0xf
+    setvar 0x8006, A_STAR_SPEED_FAST
     special SPECIAL_OVERWORLD_VIEWPOINT_MOVE_TO
     waitmovement 0
     special SPECIAL_OVERWORLD_VIEWPORT_LOCK
@@ -79,6 +81,7 @@ ow_script_haweiland_pirates_trigger:
     special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
     setvar 0x8004 0xFF
     special SPECIAL_PERSON_GET_POSITION
+    setvar 0x8006, A_STAR_SPEED_FAST
     special SPECIAL_OVERWORLD_VIEWPOINT_MOVE_TO
     waitmovement 0
     special SPECIAL_OVERWORLD_VIEWPORT_LOCK

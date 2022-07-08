@@ -12,6 +12,7 @@
 .include "movements.s"
 .include "healingplaces.s"
 .include "person_behaviours.s"
+.include "pathfinding.s"
 
 .global map_blackbeard_ship_deck_levelscripts
 .global ow_script_blackbeard_ship_deck_open_captain_cabin
@@ -53,6 +54,7 @@ ow_script_tann_plank:
     getplayerpos 0x8008 0x8009
     setvar 0x8004 0x14
     setvar 0x8005 0x26
+    setvar 0x8006, A_STAR_SPEED_FAST
     special SPECIAL_OVERWORLD_VIEWPOINT_MOVE_TO
     waitmovement 0
     pause 32
@@ -101,6 +103,7 @@ ow_script_tann_plank:
     fadescreen 0
     copyvar 0x8004 0x8008
     copyvar 0x8005 0x8009
+    setvar 0x8006, A_STAR_SPEED_FAST
     special SPECIAL_OVERWORLD_VIEWPOINT_MOVE_TO
     waitmovement 0
     special SPECIAL_OVERWORLD_VIEWPORT_LOCK

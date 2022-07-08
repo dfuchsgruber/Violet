@@ -37,6 +37,8 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	callasm test_give_unowns
+	end
 	additem ITEM_FAEHIGK_PFLASTER 1
 	end
 	callasm test_tollwut

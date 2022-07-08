@@ -2846,4 +2846,11 @@ static trainer_pokemon_default_item_default_attacks trainer_party_x1fc_route2_cl
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,37, POKEMON_QUABBEL),
 };
 
+static trainer_pokemon_default_item_default_attacks trainer_party_x1fd_basis_trockentag_cryptic[] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0, TRAINER_BUILD_UNOWN_LETTER_R, 0, false, false, 27, POKEMON_ICOGNITO),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0, TRAINER_BUILD_UNOWN_LETTER_O, 0, false, false, 27, POKEMON_ICOGNITO),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0, TRAINER_BUILD_UNOWN_LETTER_C, 0, false, false, 27, POKEMON_ICOGNITO),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0, TRAINER_BUILD_UNOWN_LETTER_K, 0, false, false, 27, POKEMON_ICOGNITO),
+};
+
 #endif 

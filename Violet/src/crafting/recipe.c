@@ -109,6 +109,16 @@ static crafting_recipe crafting_recipies_healing[] = {
             [1] = {.item = ITEM_NUGGET, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .count = 1,
+    },{
+        .item = ITEM_FAEHIGK_PFLASTER,
+        .ingredients = {
+            [2] = {.item = ITEM_RIESENPILZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_QUARZSTAUB, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_BITTERKRAUT, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
+            [3] = {.count = CRAFTING_INGREDIENT_ASH_TO_COUNT(1500), .type = CRAFTING_INGREDIENT_ASH},
+        },
+        .count = 1,
+        .flag = FLAG_RECIPE_FAEHIGK_PFLASTER,
     }
 };
 static crafting_recipe crafting_recipies_jewels[] = {

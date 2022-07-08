@@ -7353,6 +7353,13 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x1fc_route2_clouds_fisherman_2,
     },
+    [0x1fd] = {
+      .trainerclass = TRAINERCLASS_KRYPTIKER, .sprite = 28, .encounter_and_gender = {0, 0},
+      .name = LANGDEP( PSTRING("Meinhardt"), PSTRING("Meinhardt") ),
+      .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+      .party = (trainer_pokemon*) trainer_party_x1fd_basis_trockentag_cryptic,
+      .pokemon_cnt = ARRAY_COUNT(trainer_party_x1fd_basis_trockentag_cryptic),
+    },
 
     [0x300] = {
       .uses_custom_moves = true, .uses_custom_items = true,

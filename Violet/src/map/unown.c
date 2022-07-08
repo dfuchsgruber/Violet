@@ -10,7 +10,7 @@ static wild_pokemon_unown_t wild_pokemon_unowns[] = {
 		UNOWN_LETTER('C'), UNOWN_LETTER('Y'), UNOWN_LETTER('H'), POKEMON_ICOGNITO_EXCLAMATION - POKEMON_EGG, 0xFF
 	}},
 	{.bank = 6, .map_idx = 7, .letters = {
-		UNOWN_LETTER('A'), UNOWN_LETTER('V'), UNOWN_LETTER('K'), POKEMON_ICOGNITO_QUESTION - POKEMON_EGG, 0xFF
+		UNOWN_LETTER('A'), UNOWN_LETTER('V'), UNOWN_LETTER('K'), POKEMON_ICOGNITO_QUESTION - POKEMON_EGG, 0xFF 
 	}},
 	{.bank = 8, .map_idx = 2, .letters = {
 		UNOWN_LETTER('B'), UNOWN_LETTER('U'), UNOWN_LETTER('M'), UNOWN_LETTER('W'), 0xFF

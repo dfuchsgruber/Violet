@@ -22,6 +22,7 @@ enum {
 
 // The count for ash as an ingredient is in multiples of 50
 #define CRAFTING_INGREDIENT_ASH_MULTIPLIER 50
+#define CRAFTING_INGREDIENT_ASH_TO_COUNT(x) ((x) / CRAFTING_INGREDIENT_ASH_MULTIPLIER)
 
 typedef struct {
     u8 count;

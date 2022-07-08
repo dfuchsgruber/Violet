@@ -97,40 +97,44 @@ void npc_move_to(u8 ow_id, s16 dest_x, s16 dest_y, u8 speed) {
 }
 
 
+static u8 move_camera_movements_normal[][3][3] = {
+    [A_STAR_SPEED_NORMAL] = {
+        {STEP_NORTH_WEST, STEP_UP, STEP_NORTH_EAST},
+        {STEP_LEFT, STOP, STEP_RIGHT},
+        {STEP_SOUTH_WEST, STEP_DOWN, STEP_SOUTH_EAST},
+    },
+    [A_STAR_SPEED_SLOW] = {
+        {STEP_NORTH_WEST, STEP_UP_VERY_SLOW, STEP_NORTH_EAST},
+        {STEP_LEFT_VERY_SLOW, STOP, STEP_RIGHT_VERY_SLOW},
+        {STEP_SOUTH_WEST, STEP_DOWN_VERY_SLOW, STEP_SOUTH_EAST},
+    },
+    [A_STAR_SPEED_FAST] = {
+        {STEP_NORTH_WEST_RIDING, STEP_UP_FAST, STEP_NORTH_EAST_RIDING},
+        {STEP_LEFT_FAST, STOP, STEP_RIGHT_FAST},
+        {STEP_SOUTH_WEST_RIDING, STEP_DOWN_FAST, STEP_SOUTH_EAST_RIDING},
+    },
+};
+
 void npc_move_camera_to() {
     s16 x_destination = (s16) (*var_access(0x8004) + 7);
-    s16 y_destination = (s16) (*var_access(0x8005) + 7); 
+    s16 y_destination = (s16) (*var_access(0x8005) + 7);
+    u8 speed = (u8)(*var_access(0x8006));
     u8 npc_idx = 0;
     if (npc_get_id_by_overworld_id(0x7F, save1->map, save1->bank, &npc_idx))
         return;
     trainer_npc_idx = npc_idx;
-    s16 x = npcs[npc_idx].dest_x;
-    s16 y = npcs[npc_idx].dest_y;
+    int x = npcs[npc_idx].dest_x;
+    int y = npcs[npc_idx].dest_y;
     int i = 0;
     u8 *moves = (u8*) malloc(256); 
-
-    bool horizontal = ABS(x - x_destination) > ABS(y - y_destination);
-
-    while (x != x_destination || y != y_destination) {
-        if (horizontal) {
-            if (x_destination > x) {
-                moves[i++] = STEP_RIGHT;
-                x++;
-            } else {
-                moves[i++] = STEP_LEFT;
-                x--;
-            }
-            if (x == x_destination) horizontal = false;
-        } else if (!horizontal) {
-            if (y_destination > y) {
-                moves[i++] = STEP_DOWN;
-                y++;
-            } else {
-                moves[i++] = STEP_UP;
-                y--;
-            }
-            if (y == y_destination) horizontal = true;
-        }
+    // bool horizontal = ABS(x - x_destination) > ABS(y - y_destination);
+    // DEBUG("Viewport from [%d, %d] to  [%d, %d]\n", x, y, x_destination, y_destination);
+    while ((x != x_destination || y != y_destination) && i < 256 - 1) {
+        u8 move = move_camera_movements_normal[speed][1 + SGN(y_destination - y)][1 + SGN(x_destination - x)];
+        moves[i++] = move;
+        x += SGN(x_destination - x);
+        y += SGN(y_destination - y);
+        // DEBUG("Step to [%d, %d] with movement %d\n", x, y, move);
     }
     moves[i++] = STOP;
     npc_apply_movement(0x7F, save1->map, save1->bank, moves);

@@ -47,7 +47,7 @@ u8 trainer_class_names[TRAINERCLASS_CNT][13] = {
 	LANGDEP(PSTRING("Matrose"), PSTRING("Sailor")),
 	LANGDEP(PSTRING("Snowboarder"), PSTRING("Boarder")),
 	LANGDEP(PSTRING("PKMN-Sammler"), PSTRING("Collector")),
-	LANGDEP(PSTRING("PKMN-Trainer"), PSTRING("PKMN Trainer")),
+	LANGDEP(PSTRING("Kryptiker"), PSTRING("Cryptic")),
 	LANGDEP(PSTRING("PKMN-Züchter"), PSTRING("PKMN Breeder")),
 	LANGDEP(PSTRING("PKMN-Ranger"), PSTRING("PKMN Ranger")),
 	LANGDEP(PSTRING("Chefkoch"), PSTRING("Chef")),

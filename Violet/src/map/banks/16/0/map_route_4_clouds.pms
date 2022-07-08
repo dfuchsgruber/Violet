@@ -5,7 +5,7 @@
 			"person_cnt": 26,
 			"warp_cnt": 3,
 			"trigger_cnt": 0,
-			"signpost_cnt": 1,
+			"signpost_cnt": 4,
 			"persons": [
 				{
 					"target_index": "1",
@@ -39,8 +39,8 @@
 				{
 					"target_index": "2",
 					"picture": "22",
-					"x": "43",
-					"y": "52",
+					"x": "49",
+					"y": "40",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_UP_AND_LEFT",
 					"behaviour_range": {
@@ -97,29 +97,29 @@
 				{
 					"target_index": "4",
 					"picture": "170",
-					"x": "38",
-					"y": "49",
-					"level": 0,
-					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_RIGHT_DOWN_LEFT_UP",
+					"x": "39",
+					"y": "50",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_LEFT_RIGHT_UP_DOWN",
 					"behaviour_range": {
-						"x": "3",
+						"x": "4",
 						"y": "3"
 					},
-					"field_B": 0,
+					"field_B": "0",
 					"is_trainer": "1",
 					"field_D": 0,
 					"alert_radius": "5",
 					"script": "ow_script_route_4_clouds_trainer_1",
-					"flag": 0,
+					"flag": "0",
 					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": 0
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
 					},
-					"argument": 0,
+					"argument": "0",
 					"script_std_and_in_connection": {
-						"script_std": 0,
+						"script_std": "0",
 						"in_connection": "0"
 					}
 				},
@@ -548,8 +548,8 @@
 				{
 					"target_index": "20",
 					"picture": "236",
-					"x": "19",
-					"y": "59",
+					"x": "22",
+					"y": "63",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -771,8 +771,8 @@
 			"triggers": [],
 			"signposts": [
 				{
-					"x": "34",
-					"y": "51",
+					"x": "53",
+					"y": "36",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"flag": 0,
@@ -784,6 +784,54 @@
 							"chunk": 0
 						},
 						"script": 0
+					}
+				},
+				{
+					"x": "38",
+					"y": "52",
+					"level": "0",
+					"type": "SIGNPOST_SCRIPT",
+					"flag": "0",
+					"value": {
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": "0",
+							"chunk": "0"
+						},
+						"script": "ow_script_route_5_clouds_unown_message"
+					}
+				},
+				{
+					"x": "39",
+					"y": "52",
+					"level": "0",
+					"type": "SIGNPOST_SCRIPT",
+					"flag": "0",
+					"value": {
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": "0",
+							"chunk": "0"
+						},
+						"script": "ow_script_route_5_clouds_unown_message"
+					}
+				},
+				{
+					"x": "40",
+					"y": "52",
+					"level": "0",
+					"type": "SIGNPOST_SCRIPT",
+					"flag": "0",
+					"value": {
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": "0",
+							"chunk": "0"
+						},
+						"script": "ow_script_route_5_clouds_unown_message"
 					}
 				}
 			]

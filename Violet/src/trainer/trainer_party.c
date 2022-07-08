@@ -215,6 +215,8 @@ void trainer_pokemon_new(pokemon *poke, union union_build_field field) {
 		if (trainer_builds[field.bitfield.build_idx].use_gender) {
 			pid.fields.gender_partial = (u32)((trainer_builds[field.bitfield.build_idx].gender >> 1) & 0x7F); // TODO?
 		}
+		// Apply unown letter
+		pid.fields.unown_letter = trainer_builds[field.bitfield.build_idx].unown_letter;
 
 		DEBUG("Building pokemon species %d with ability bit %d -> ability is %d\n", pokemon_get_attribute(poke, ATTRIBUTE_SPECIES, 0), ability, pokemon_get_ability(poke));
 	}
