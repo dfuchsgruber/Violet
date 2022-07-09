@@ -41,8 +41,6 @@ static gfx_frame gfx_animation_trash_empty[] = {
     {.data = GFX_ANIM_END, .duration = 0},
 };
 
-
-
 static gfx_frame *gfx_animations_mushroom[1] = {gfx_animation_mushroom_idle};
 static gfx_frame *gfx_animations_shell[1] = {gfx_animation_shell_idle};
 static gfx_frame *gfx_animations_trash[2] = {gfx_animation_trash_idle, gfx_animation_trash_empty};
@@ -153,6 +151,7 @@ overworld_sprite overworld_trash = {
         .final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_trash + 0,
         .graphics = overworld_gfx_trash, .rotscale_animation = oam_rotscale_anim_table_null,
 };
+
 palette overworld_mushroom_palette = {
     .pal = gfx_ow_mushroomPal, .tag = OW_PAL_TAG_MUSHROOM,
 };

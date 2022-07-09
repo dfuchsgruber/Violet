@@ -106,16 +106,18 @@ bool player_party_spells_unown_message() {
         party_message[3], party_message[4], party_message[5], party_message[6]);
     party_message[j++] = 0xFF;
     // Find the unown message (can start at any index in the party)
-    for (size_t start = 0; start < j - message_len; start++) {
-        bool matches = true;
-        for (size_t i = 0; i < message_len; i++) {
-            if (party_message[start + i] != message[i]) {
-                matches = false;
-                break;
+    if (message_len < j) {
+        for (size_t start = 0; start < j - message_len; start++) {
+            bool matches = true;
+            for (size_t i = 0; i < message_len; i++) {
+                if (party_message[start + i] != message[i]) {
+                    matches = false;
+                    break;
+                }
             }
+            if (matches)
+                return true;
         }
-        if (matches)
-            return true;
     }
     return false;
 }

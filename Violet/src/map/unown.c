@@ -5,6 +5,8 @@
 #include "constants/wild_pokemon_densities.h"
 #include "debug.h"
 
+// TODO: final unown cave with n.a. letters L,O,R,S
+
 static wild_pokemon_unown_t wild_pokemon_unowns[] = {
 	{.bank = 11, .map_idx = 4, .letters = {
 		UNOWN_LETTER('C'), UNOWN_LETTER('Y'), UNOWN_LETTER('H'), POKEMON_ICOGNITO_EXCLAMATION - POKEMON_EGG, 0xFF

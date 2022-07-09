@@ -99,6 +99,10 @@ picture_idx_to_png = {
     185 : "asset/gfx/overworld/misc/gfx_overworld_secret_power_cave.png",
     186 : "asset/gfx/overworld/npcs/gfx_ow_recipe2.png",
     187 : "asset/gfx/overworld/npcs/gfx_ow_upstream.png",
+    188 : "asset/gfx/overworld/npcs/gfx_ow_blue_gear.png",
+    189 : "asset/gfx/overworld/npcs/gfx_ow_red_gear.png",
+    190 : "asset/gfx/overworld/npcs/gfx_ow_green_gear.png",
+    191 : "asset/gfx/overworld/npcs/gfx_ow_yellow_gear.png",
 }
 
 # Images that hold an entire spritesheet
@@ -117,6 +121,10 @@ spritesheet_images = {
     185 : (0, 0, 32, 32),
     186 : (0, 0, 16, 16),
     187 : (0, 8 * 32, 64, 8 * 32 + 32),
+    188 : (0, 0, 16, 16),
+    189 : (0, 0, 16, 16),
+    190 : (0, 0, 16, 16),
+    191 : (0, 0, 16, 16),
 }
 
 # Tutor crystal images

@@ -263,6 +263,8 @@ static void weather_cherry_tree_leaves_delete_oam() {
             (*o)->callback = weather_cherry_tree_leaves_oam_callback_delete_oam;
         }
         *o = NULL;
+    } else {
+        DEBUG("Attempting to delete oams that are not there. There is a bug!\n");
     }
 }
 
@@ -331,6 +333,7 @@ void weather_cherry_tree_leaves_initialize_all() {
 }
 
 bool weather_cherry_tree_leaves_closure() {
+    DEBUG("Weather cherry tree closure in step %d, num visible %d\n", overworld_weather.finish_step, overworld_weather.cherry_tree_num_oams_visible);
     switch (overworld_weather.finish_step) {
         case 0: {   
             overworld_weather.cherry_tree_target_num_oams = 0;

@@ -75,28 +75,35 @@ typedef struct overworld_sprite {
 } overworld_sprite;
 
 
-#define OW_PAL_TAG_POKEMON_BASE 0x2000
-#define OW_PAL_TAG_POKEMON_END 0x2200
-#define OW_PAL_TAG_TUTOR_CRYSTAL_BASE 0x2900
-#define OW_PAL_TAG_MUSHROOM 0x2E00
-#define OW_PAL_TAG_SHELL 0x2E01
-#define OW_PAL_TAG_BOULDER_GYM_PUZZLE 0x2E02
-#define OW_PAL_TAG_MEGA_STONE 0x2E03
-#define OW_PAL_TAG_ROMAN 0x2E04
-#define OW_PAL_TAG_BOULDER_HAY_BALE 0x2E05
-#define OW_PAL_TAG_RAGE_SIGN 0x2E06
-#define OW_PAL_TAG_ROSALIE 0x2E07
-#define OW_PAL_TAG_ICARUS 0x2E08
-#define OW_PAL_TAG_TRASH 0x2E09
-#define OW_PAL_TAG_SECRET_POWER_VINES 0x2E0A
-#define OW_PAL_TAG_SECRET_POWER_CAVE 0x2E0B
-#define OW_PAL_TAG_SECRET_POWER_WHIRLPOOL 0x2E0C
-#define OW_PAL_TAG_APPLE 0x2E0D
-#define OW_PAL_TAG_RECIPE 0x2E0E
-#define OW_PAL_TAG_UPSTREAM 0x2E0F
-#define OW_PAL_TAG_FAUN 0x2E10
-#define OW_PAL_TAG_SPECIAL_SHELL 0x2E11
-#define OW_PAL_TAG_END 0x3000
+enum {
+    OW_PAL_TAG_POKEMON_BASE = 0x2000,
+    OW_PAL_TAG_POKEMON_END = 0x2200,
+    OW_PAL_TAG_TUTOR_CRYSTAL_BASE = 0x2900,
+    OW_PAL_TAG_MUSHROOM = 0x2E00,
+    OW_PAL_TAG_SHELL,
+    OW_PAL_TAG_BOULDER_GYM_PUZZLE,
+    OW_PAL_TAG_MEGA_STONE,
+    OW_PAL_TAG_ROMAN,
+    OW_PAL_TAG_BOULDER_HAY_BALE,
+    OW_PAL_TAG_RAGE_SIGN,
+    OW_PAL_TAG_ROSALIE,
+    OW_PAL_TAG_ICARUS,
+    OW_PAL_TAG_TRASH,
+    OW_PAL_TAG_SECRET_POWER_VINES,
+    OW_PAL_TAG_SECRET_POWER_CAVE,
+    OW_PAL_TAG_SECRET_POWER_WHIRLPOOL,
+    OW_PAL_TAG_APPLE,
+    OW_PAL_TAG_RECIPE,
+    OW_PAL_TAG_UPSTREAM,
+    OW_PAL_TAG_FAUN,
+    OW_PAL_TAG_SPECIAL_SHELL,
+    OW_PAL_TAG_BLUE_GEAR,
+    OW_PAL_TAG_GREEN_GEAR,
+    OW_PAL_TAG_RED_GEAR,
+    OW_PAL_TAG_YELLOW_GEAR,
+    OW_PAL_TAG_END = 0x3000,
+};
+
 
 /**
  * Returns the palette of an overworld species.
@@ -1839,6 +1846,10 @@ extern const u8 gfx_ow_appleTiles[];
 extern const u8 gfx_ow_recipeTiles[];
 extern const u8 gfx_ow_recipe2Tiles[];
 extern const u8 gfx_ow_faunTiles[];
+extern const u8 gfx_ow_blue_gearTiles[GRAPHIC_SIZE_4BPP(16, 16)];
+extern const u8 gfx_ow_red_gearTiles[GRAPHIC_SIZE_4BPP(16, 16)];
+extern const u8 gfx_ow_green_gearTiles[GRAPHIC_SIZE_4BPP(16, 16)];
+extern const u8 gfx_ow_yellow_gearTiles[GRAPHIC_SIZE_4BPP(16, 16)];
 
 
 extern const u8 gfx_tutor_crystal_bugTiles[];
@@ -1888,6 +1899,10 @@ extern const color_t gfx_ow_recipe2Pal[16];
 extern const u8 gfx_ow_upstreamTiles[];
 extern const color_t gfx_ow_upstreamPal[16];
 extern const color_t gfx_ow_faunPal[];
+extern const color_t gfx_ow_blue_gearPal[16];
+extern const color_t gfx_ow_green_gearPal[16];
+extern const color_t gfx_ow_red_gearPal[16];
+extern const color_t gfx_ow_yellow_gearPal[16];
 
 extern overworld_sprite overworld_sprite_strength_boulder;
 

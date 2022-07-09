@@ -186,6 +186,22 @@ static palette overworld_palette_upstream = {
 
 static palette overworld_palette_faun = {
     .pal = gfx_ow_faunPal, .tag = OW_PAL_TAG_FAUN,
+}; 
+
+palette overworld_palette_blue_gear = {
+    .pal = gfx_ow_blue_gearPal, .tag = OW_PAL_TAG_BLUE_GEAR,
+};
+
+palette overworld_palette_red_gear = {
+    .pal = gfx_ow_red_gearPal, .tag = OW_PAL_TAG_RED_GEAR,
+};
+
+palette overworld_palette_green_gear = {
+    .pal = gfx_ow_green_gearPal, .tag = OW_PAL_TAG_GREEN_GEAR,
+};
+
+palette overworld_palette_yellow_gear = {
+    .pal = gfx_ow_yellow_gearPal, .tag = OW_PAL_TAG_YELLOW_GEAR,
 };
 
 static palette *overworld_npc_palette_get_by_tag(u16 tag) {
@@ -215,6 +231,10 @@ static palette *overworld_npc_palette_get_by_tag(u16 tag) {
         case OW_PAL_TAG_RECIPE: return &overworld_palette_recipe;
         case OW_PAL_TAG_UPSTREAM: return &overworld_palette_upstream;
         case OW_PAL_TAG_FAUN: return &overworld_palette_faun;
+        case OW_PAL_TAG_BLUE_GEAR: return &overworld_palette_blue_gear;
+        case OW_PAL_TAG_RED_GEAR: return &overworld_palette_red_gear;
+        case OW_PAL_TAG_GREEN_GEAR: return &overworld_palette_green_gear;
+        case OW_PAL_TAG_YELLOW_GEAR: return &overworld_palette_yellow_gear;
     }
     u8 idx = overworld_npc_palette_get_idx(tag);
     // OW_DEBUG("Tag 0x%x is at idx %d in pal-table.\n", tag, idx);

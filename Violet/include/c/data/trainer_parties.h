@@ -1546,13 +1546,13 @@ static trainer_pokemon_default_item_default_attacks trainer_party_x11e_route_4_c
 };
 
 static trainer_pokemon_default_item_default_attacks trainer_party_x11f_kaskada_clouds_trainer_0[1] = {
-  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 35, POKEMON_LEPUMENTAS),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 37, POKEMON_LEPUMENTAS),
 };
 
 static trainer_pokemon_default_item_default_attacks trainer_party_x120_kaskada_clouds_trainer_1[3] = {
-  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 29, POKEMON_NIDORINO),
-  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 32, POKEMON_RASAFF),
-  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 30, POKEMON_MAGNAYEN),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 34, POKEMON_NIDORINO),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 35, POKEMON_RASAFF),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 33, POKEMON_MAGNAYEN),
 };
 
 static trainer_pokemon_default_item_default_attacks trainer_party_x121_felsige_oednis_clouds_trainer_0[2] = {

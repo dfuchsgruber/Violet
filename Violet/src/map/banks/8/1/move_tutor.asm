@@ -59,7 +59,7 @@ mov_exclam:
 
 .ifdef LANG_GER
 str_0:
-    .autostring 34 2 "Ich bin ein Schüler von Lucius, dem ehemaligen Champion.\pGemeinsam mit Dany habe ich die Kunst, Drachenpokémon zu beherrschen, erlernt.\pWenn du mir drei Minipilze oder einen Riesenpilz bringst, kann ich einem deiner Pokémon die Attacke Drachenpuls bebringen."
+    .autostring 34 2 "Ich bin ein Schüler von Lucius, dem ehemaligen Champion.\pGemeinsam mit Dany von den Top Vier habe ich die Kunst, Drachenpokémon zu beherrschen, erlernt.\pWenn du mir drei Minipilze oder einen Riesenpilz bringst, kann ich einem deiner Pokémon die Attacke Drachenpuls bebringen."
 str_can_pay:
     .autostring 34 2 "Hervorragend!\pDu hast BUFFER_2-mal\nBUFFER_1 dabei!\pMöchtest du, dass ich einem deiner Pokémon Drachenpuls beibringe?"
 str_choose_pokemon:

@@ -1467,24 +1467,24 @@
 					"picture": "238",
 					"x": "7",
 					"y": "28",
-					"level": 0,
+					"level": "0",
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
-						"x": 0,
-						"y": 0
+						"x": "0",
+						"y": "0"
 					},
-					"field_B": 0,
-					"is_trainer": 0,
-					"alert_radius": 0,
-					"script": 0,
-					"flag": 0,
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
 					"value": {
-						"item": 0,
+						"item": "0",
 						"species": "POKEMON_MACHOLLO",
-						"berry_tree_idx": 0,
-						"type": 0
+						"berry_tree_idx": "0",
+						"type": "0"
 					},
-					"argument": 0,
+					"argument": "0",
 					"script_std_and_in_connection": {
 						"script_std": "PERSON_POKEMON",
 						"in_connection": "0"
@@ -1747,24 +1747,24 @@
 					"picture": "101",
 					"x": "9",
 					"y": "36",
-					"level": 0,
+					"level": "0",
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
-						"x": 0,
-						"y": 0
+						"x": "0",
+						"y": "0"
 					},
-					"field_B": 0,
-					"is_trainer": 0,
-					"alert_radius": 0,
-					"script": 0,
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
 					"flag": "FLAG_ROUTE_4_EGG_2",
 					"value": {
-						"item": 0,
-						"species": "POKEMON_LARVITAR",
-						"berry_tree_idx": 0,
-						"type": 0
+						"item": "0",
+						"species": "POKEMON_MACHOLLO",
+						"berry_tree_idx": "0",
+						"type": "0"
 					},
-					"argument": 0,
+					"argument": "0",
 					"script_std_and_in_connection": {
 						"script_std": "PERSON_EGG",
 						"in_connection": "0"

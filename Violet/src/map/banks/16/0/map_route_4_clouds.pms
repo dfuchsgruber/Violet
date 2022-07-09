@@ -604,8 +604,8 @@
 				{
 					"target_index": "22",
 					"picture": "238",
-					"x": "28",
-					"y": "10",
+					"x": "36",
+					"y": "6",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_DOWN_AND_UP",
 					"behaviour_range": {
@@ -850,7 +850,7 @@
 				},
 				{
 					"direction": "MAP_CONNECTION_NORTH",
-					"displacement": 0,
+					"displacement": "-7",
 					"bank": "8",
 					"map_idx": "1",
 					"field_A": 0,

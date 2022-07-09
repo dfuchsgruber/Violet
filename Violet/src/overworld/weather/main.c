@@ -520,6 +520,7 @@ void weather_initialize() {
         overworld_weather.bubbles_oams_created = false;
         overworld_weather.static_fog_number_affected_pal_idxs = 0;
         overworld_weather.cherry_tree_num_oams = 0;
+        overworld_weather.cherry_tree_num_oams_visible = 0;
         overworld_weather_set_blend_coefficients(16, 0);
 
         overworld_weather.current_weather = MAP_WEATHER_INSIDE;
