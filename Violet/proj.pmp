@@ -1001,9 +1001,9 @@
 				"MAP_KAKTUSLABYRINTH"
 			],
 			"1": [
-				"map_felsige_oednis_west_clouds",
+				"map_tafelberg_clouds_west",
 				"src/map/banks/22/1/map_felsige_oednis_west_clouds.pms",
-				"MAP_FELSIGE_OEDNIS"
+				"MAP_KUESTENBERG"
 			],
 			"2": [
 				"map_felsige_oednis_cave_3",
@@ -1050,7 +1050,7 @@
 		},
 		"24": {
 			"0": [
-				"map_kuestenberg_clouds",
+				"map_tafelberg_clouds_north",
 				"src/map/banks/24/0/map_kuestenberg_clouds.pms",
 				"MAP_KUESTENBERG"
 			]

@@ -7360,6 +7360,13 @@ trainer trainers[TRAINER_CNT] = {
       .party = (trainer_pokemon*) trainer_party_x1fd_basis_trockentag_cryptic,
       .pokemon_cnt = ARRAY_COUNT(trainer_party_x1fd_basis_trockentag_cryptic),
     },
+    [0x1fe] = {
+        .trainerclass = TRAINERCLASS_ANGLER, .sprite = 0x26,
+        .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Cody"),
+            PSTRING("Cody")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1fe_kaskada_clouds_trainer_2),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1fe_kaskada_clouds_trainer_2,
+    },
 
     [0x300] = {
       .uses_custom_moves = true, .uses_custom_items = true,

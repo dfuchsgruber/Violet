@@ -105,7 +105,7 @@
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_EAST",
-					"displacement": "4",
+					"displacement": "2",
 					"bank": "8",
 					"map_idx": "1",
 					"field_A": 0,

@@ -106,7 +106,7 @@
 		},
 		"music": "MUS_CLOUDS",
 		"footer_idx": 67,
-		"namespace": "MAP_FELSIGE_OEDNIS",
+		"namespace": "MAP_KUESTENBERG",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_OUTSIDE",
 		"type": "MAP_TYPE_CLOUD",
@@ -124,6 +124,6 @@
 			"flag_7": "0"
 		}
 	},
-	"label": "map_felsige_oednis_west_clouds",
+	"label": "map_tafelberg_clouds_west",
 	"type": "header"
 }

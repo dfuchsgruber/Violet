@@ -11,16 +11,16 @@
 				{
 					"x": "9",
 					"y": "16",
-					"level": 0,
-					"target_warp_idx": "4",
+					"level": "0",
+					"target_warp_idx": "0",
 					"target_map": "1",
 					"target_bank": "8"
 				},
 				{
 					"x": "10",
 					"y": "16",
-					"level": 0,
-					"target_warp_idx": "5",
+					"level": "0",
+					"target_warp_idx": "0",
 					"target_map": "1",
 					"target_bank": "8"
 				}

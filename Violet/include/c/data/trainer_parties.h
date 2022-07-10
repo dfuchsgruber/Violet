@@ -2853,4 +2853,10 @@ static trainer_pokemon_default_item_default_attacks trainer_party_x1fd_basis_tro
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0, TRAINER_BUILD_UNOWN_LETTER_K, 0, false, false, 27, POKEMON_ICOGNITO),
 };
 
+static trainer_pokemon_default_item_default_attacks trainer_party_x1fe_kaskada_clouds_trainer_2[] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0, 0, 0, false, false, 33, POKEMON_QUABBEL),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0, 0, 0, false, false, 34, POKEMON_STERNDU),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0, 0, 0, false, false, 33, POKEMON_TENTACHA),
+};
+
 #endif 

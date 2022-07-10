@@ -586,9 +586,9 @@
 				},
 				{
 					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 0,
@@ -23075,18 +23075,6 @@
 			],
 			[
 				{
-					"tile_idx": 218,
-					"palette_idx": 0,
-					"horizontal_flip": 1,
-					"vertical_flip": 1
-				},
-				{
-					"tile_idx": 217,
-					"palette_idx": 0,
-					"horizontal_flip": 1,
-					"vertical_flip": 1
-				},
-				{
 					"tile_idx": 214,
 					"palette_idx": 0,
 					"horizontal_flip": 1,
@@ -23097,6 +23085,18 @@
 					"palette_idx": 0,
 					"horizontal_flip": 1,
 					"vertical_flip": 1
+				},
+				{
+					"tile_idx": 213,
+					"palette_idx": 0,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 214,
+					"palette_idx": 0,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 0,
@@ -47940,13 +47940,13 @@
 		],
 		"behaviours": [
 			{
-				"behaviour": "0x0",
+				"behaviour": "MB_CLOUD_UPSTREAM_WARP",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "1",
+				"priority": "0x1",
 				"battle_bg": "0"
 			},
 			{
@@ -50980,7 +50980,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_B8",
+				"behaviour": "MB_CLOUD_UPSTREAM_WARP",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",

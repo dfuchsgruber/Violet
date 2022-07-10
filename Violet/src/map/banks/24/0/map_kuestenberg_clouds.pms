@@ -3,7 +3,7 @@
 		"footer": "map_footer_kuestenberg_clouds",
 		"events": {
 			"person_cnt": 5,
-			"warp_cnt": 0,
+			"warp_cnt": 2,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
 			"persons": [
@@ -131,7 +131,7 @@
 						"in_connection": "0"
 					},
 					"argument": "0",
-					"x": "48",
+					"x": "54",
 					"y": "23",
 					"level": "0",
 					"behaviour": "0",
@@ -152,7 +152,24 @@
 					}
 				}
 			],
-			"warps": [],
+			"warps": [
+				{
+					"x": "38",
+					"y": "12",
+					"level": "0",
+					"target_warp_idx": "2",
+					"target_map": "59",
+					"target_bank": "1"
+				},
+				{
+					"x": "7",
+					"y": "27",
+					"level": "0",
+					"target_warp_idx": "1",
+					"target_map": "59",
+					"target_bank": "1"
+				}
+			],
 			"triggers": [],
 			"signposts": []
 		},
@@ -170,7 +187,7 @@
 				},
 				{
 					"direction": "MAP_CONNECTION_SOUTH",
-					"displacement": "-9",
+					"displacement": "-3",
 					"bank": "8",
 					"map_idx": "1",
 					"field_A": 0,
@@ -206,6 +223,6 @@
 			"flag_7": "0"
 		}
 	},
-	"label": "map_kuestenberg_clouds",
+	"label": "map_tafelberg_clouds_north",
 	"type": "header"
 }
