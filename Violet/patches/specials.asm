@@ -71,7 +71,7 @@ special_table equ 0x0815FCC0
         .word cloud_force | 1
         .pool
 
-.org (special_table + (0x2C * 4))
+.org (special_table + (0x2C * 4)) 
         .word cloud_enter | 1
         .pool
 

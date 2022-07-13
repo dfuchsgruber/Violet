@@ -100,7 +100,7 @@ u8 trainer_class_names[TRAINERCLASS_CNT][13] = {
 	LANGDEP(PSTRING("Junges Glück"), PSTRING("Young Couple")),
 	LANGDEP(PSTRING("Mühlensippe"), PSTRING("Crush Kin")),
 	LANGDEP(PSTRING("Geschwister"), PSTRING("Sis And Bro")),
-	LANGDEP(PSTRING("PKMN Prof."), PSTRING("PKMN Prof.")),
+	LANGDEP(PSTRING("Antike Wache"), PSTRING("Ancient Guard")),
 	LANGDEP(PSTRING("Spieler"), PSTRING("Player")),
 	LANGDEP(PSTRING("Mühlenmädel"), PSTRING("Crush Girl")),
 	LANGDEP(PSTRING("Planscher"), PSTRING("Tuber")),
@@ -111,3 +111,11 @@ u8 trainer_class_names[TRAINERCLASS_CNT][13] = {
 	LANGDEP(PSTRING("Lady"), PSTRING("Lady")),
 	LANGDEP(PSTRING("Malerin"), PSTRING("Painter")),
 };
+
+
+extern u8 trainer_class_names[][13];
+
+u8 *trainer_get_class_name(int unkown, u16 trainer_id){
+	(void)(unkown);
+    return trainer_class_names[trainers[trainer_id].trainerclass];
+}

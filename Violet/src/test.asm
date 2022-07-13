@@ -37,6 +37,14 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	setvar VAR_TAFELBERG_CLOUDS_GEAR_SCRIPT 0
+	end
+
+    setvar VAR_ROUTE_6_RIVAL 0x0
+	warp 3 24 0xff 0x48 0x19
+	waitstate
+	end
+
 	callasm test_give_unowns
 	end
 	additem ITEM_FAEHIGK_PFLASTER 1

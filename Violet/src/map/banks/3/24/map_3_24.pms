@@ -121,14 +121,14 @@
 					"var": "VAR_ROUTE_6_RIVAL"
 				},
 				{
-					"x": 72,
-					"y": 25,
-					"level": 0,
-					"field_5": 0,
+					"x": "72",
+					"y": "25",
+					"level": "0",
+					"field_5": "0",
 					"value": "0",
 					"script": "ow_script_map_3_24_trigger_0",
-					"field_A": 0,
-					"field_B": 0,
+					"field_A": "0",
+					"field_B": "0",
 					"var": "VAR_ROUTE_6_RIVAL"
 				},
 				{

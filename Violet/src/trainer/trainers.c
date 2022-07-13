@@ -7367,13 +7367,21 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x1fe_kaskada_clouds_trainer_2,
     },
+    [0x1ff] = {
+        .trainerclass = TRAINERCLASS_ANTIKE_WACHE, .sprite = 77,
+        .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Sarwes"),
+            PSTRING("Tawer")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x1ff_tafelberg_clouds_ancient_guard_blue),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1ff_tafelberg_clouds_ancient_guard_blue,
+        .uses_custom_moves = true, .uses_custom_items = true,
+    },
 
     [0x300] = {
       .uses_custom_moves = true, .uses_custom_items = true,
       .trainerclass = TRAINERCLASS_CHEFKOCH, .encounter_and_gender = {1, 0} , .sprite = 0x74,
       .name = LANGDEP(PSTRING("Lester"), PSTRING("Lester")),
       .items = {ITEM_GOLDAPFEL, ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG},
-      .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+      .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE | TRAINER_AI_STATUS_MOVES_PREFERED_IN_FIRST_ROUND,
       .battle_state = BATTLE_DOUBLE, .pokemon_cnt = 2, .party = (trainer_pokemon*) trainer_party_test,
 	  },
 }; 

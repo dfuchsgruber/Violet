@@ -52,12 +52,14 @@
     callasm mugshot_update
 .endm
 
-.macro msgbox_with_name message:req name:req alignment=MUGSHOT_LEFT message_type=MSG
+.macro msgbox_with_name message:req name:req alignment=MUGSHOT_LEFT message_type=MSG hide_name=1
     setvar 0x8000 \alignment
     loadpointer 0 \name
     special SPECIAL_NAME_SHOW
     loadpointer 0 \message
     callstd \message_type
-    special SPECIAL_NAME_DELETE
-    waitstate
+    .if \hide_name != 0
+        special SPECIAL_NAME_DELETE
+        waitstate
+    .endif
 .endm 

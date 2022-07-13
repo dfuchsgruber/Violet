@@ -2,9 +2,9 @@
 	"data": {
 		"footer": "map_footer_kuestenberg_clouds",
 		"events": {
-			"person_cnt": 5,
+			"person_cnt": 6,
 			"warp_cnt": 2,
-			"trigger_cnt": 0,
+			"trigger_cnt": 1,
 			"signpost_cnt": 0,
 			"persons": [
 				{
@@ -150,6 +150,34 @@
 						"berry_tree_idx": "0",
 						"type": "0"
 					}
+				},
+				{
+					"target_index": "6",
+					"picture": "0",
+					"script_std_and_in_connection": {
+						"script_std": "0",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "29",
+					"y": "17",
+					"level": "0",
+					"behaviour": "0",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "ow_script_tafelberg_clouds_gear_trigger_0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
 				}
 			],
 			"warps": [
@@ -170,7 +198,19 @@
 					"target_bank": "1"
 				}
 			],
-			"triggers": [],
+			"triggers": [
+				{
+					"x": "54",
+					"y": "25",
+					"level": "0",
+					"field_5": "0",
+					"var": "VAR_TAFELBERG_CLOUDS_GEAR_SCRIPT",
+					"value": "0",
+					"field_A": "0",
+					"field_B": "0",
+					"script": "ow_script_tafelberg_clouds_gear_trigger_0"
+				}
+			],
 			"signposts": []
 		},
 		"levelscripts": "map_14_0_route_9_clouds_levelscripts",
