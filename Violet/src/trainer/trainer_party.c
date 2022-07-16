@@ -24,69 +24,106 @@ u16 trainer_pokemon_prng() {
 	return (u16)_prng_xorshift(&(fmem.trainer_prng_state));
 }
 
-static u8 trainer_pokemon_get_level(u8 level) {
-	if (level == TRAINER_POKEMON_LEVEL_STORY_BASED) {
-		u8 mean = 5;
-		u8 std = 0;
-		dungeon2_get_wild_pokemon_level_distribution(&mean, &std);
-		level = mean;
-	} else if (level == TRAINER_POKEMON_LEVEL_STORY_BASED_PLUS_ONE_STD) {
-		u8 mean = 5;
-		u8 std = 0;
-		dungeon2_get_wild_pokemon_level_distribution(&mean, &std);
-		level = (u8)(mean + std);
+u8 trainer_pokemon_get_level(u8 level) {
+	u8 mean = 5, std = 0;
+	dungeon2_get_wild_pokemon_level_distribution(&mean, &std);
+	switch (level) {
+		case TRAINER_POKEMON_LEVEL_STORY_BASED:
+			level = mean;
+			break;
+		case TRAINER_POKEMON_LEVEL_STORY_BASED_PLUS_ONE_STD:
+			level = (u8)(level + std);
+			break;
+	}
+	switch (*var_access(DIFFICULTY)) {
+		case DIFFICULTY_EASY:
+			level = (u8)MAX(1, mean - std);
+			break;
+		case DIFFICULTY_HARD:
+			level = (u8)MIN(100, mean + std + (std / 2));
+			break;
 	}
 	return MIN(100, MAX(1, level));
 }
 
-void trainer_pokemon_new_custom_item_default_attacks(pokemon *dst,
-		trainer_pokemon_custom_item_default_attacks *party) {
-	// Obtain the prng state that was seeded with the trainer id
-	pid_t pid = pokemon_new_pid_by_prng(trainer_pokemon_prng);
-	pid.fields.is_shiny = 0;
-	pokemon_new(dst, party->species, trainer_pokemon_get_level(party->level), party->ivs, true, pid, false, 0);
-	trainer_pokemon_new(dst, party->build);
-	// Custom item
-	pokemon_set_attribute(dst, ATTRIBUTE_ITEM, &(party->item));
-}
-
-void trainer_pokemon_new_custom_item_custom_attacks(pokemon *dst,
-		trainer_pokemon_custom_item_custom_attacks *party) {
-	// Obtain the prng state that was seeded with the trainer id
-	pid_t pid = pokemon_new_pid_by_prng(trainer_pokemon_prng);
-	pid.fields.is_shiny = 0;
-	pokemon_new(dst, party->species, trainer_pokemon_get_level(party->level), party->ivs, true, pid, false, 0);
-	trainer_pokemon_new(dst, party->build);
-	// Custom item
-	pokemon_set_attribute(dst, ATTRIBUTE_ITEM, &(party->item));
-	// Custom attacks
-	for (int i = 0; i < 4; i++) {
-		pokemon_set_attribute(dst, (u8)(ATTRIBUTE_ATTACK1 + i), &(party->moves[i]));
-		pokemon_set_attribute(dst, (u8)(ATTRIBUTE_PP1 + i), &(attacks[party->moves[i]].pp));
+static u8 get_default_ev() {
+	switch (*var_access(VAR_STORY_STATE)) {
+		case STORY_STATE_SILVANIA_FOREST_DONE: 
+		case STORY_STATE_FELSIGE_ODENIS_RIVAL_DONE:
+		case STORY_STATE_BLUETENBACH_GYM_DONE:
+		case STORY_STATE_ROUTE_6_MISTRAL_IGVA_DONE:
+			return 28;
+		case STORY_STATE_VULCANO_DONE: 
+			return 16;
+		default:
+			return 0;
 	}
 }
 
-void trainer_pokemon_new_default_item_custom_attacks(pokemon *dst,
-		trainer_pokemon_default_item_custom_attacks *party) {
-	// Obtain the prng state that was seeded with the trainer id
-	pid_t pid = pokemon_new_pid_by_prng(trainer_pokemon_prng);
-	pid.fields.is_shiny = 0;
-	pokemon_new(dst, party->species, trainer_pokemon_get_level(party->level), party->ivs, true, pid, false, 0);
-	trainer_pokemon_new(dst, party->build);
-	// Custom attacks
-	for (int i = 0; i < 4; i++) {
-		pokemon_set_attribute(dst, (u8)(ATTRIBUTE_ATTACK1 + i), &(party->moves[i]));
-		pokemon_set_attribute(dst, (u8)(ATTRIBUTE_PP1 + i), &(attacks[party->moves[i]].pp));
+static u8 get_default_iv() {
+	switch (*var_access(VAR_STORY_STATE)) {
+		case STORY_STATE_SILVANIA_FOREST_DONE: 
+		case STORY_STATE_FELSIGE_ODENIS_RIVAL_DONE:
+		case STORY_STATE_BLUETENBACH_GYM_DONE:
+		case STORY_STATE_ROUTE_6_MISTRAL_IGVA_DONE:
+			return 9;
+		default:
+			return 0;
 	}
+
 }
 
-void trainer_pokemon_new_default_item_default_attacks(pokemon *dst,
-		trainer_pokemon_default_item_default_attacks *party) {
-	// Obtain the prng state that was seeded with the trainer id
-	pid_t pid = pokemon_new_pid_by_prng(trainer_pokemon_prng);
-	pid.fields.is_shiny = 0;
-	pokemon_new(dst, party->species, trainer_pokemon_get_level(party->level), party->ivs, true, pid, false, 0);
-	trainer_pokemon_new(dst, party->build);
+static void trainer_pokemon_new(pokemon *p, trainer_pokemon *template) {
+	pid_t pid = pokemon_new_pid_by_prng(template->species, trainer_pokemon_prng);
+	pid.fields.is_shiny = false; // by default, trainers will not have shinies
+	if (template->ability_set)
+		pid.fields.ability = template->pid.fields.ability;
+	if (template->gender_set)
+		pid.fields.is_female = template->pid.fields.is_female;
+	if (template->shiny_set)
+		pid.fields.is_shiny = template->pid.fields.is_shiny;
+	if (template->hidden_power_type_set)
+		pid.fields.hidden_power_type = template->pid.fields.hidden_power_type;
+	if (template->hidden_power_strength_set)
+		pid.fields.hidden_power_strength = template->pid.fields.hidden_power_strength;
+	if (template->unown_letter_set)
+		pid.fields.unown_letter = template->pid.fields.unown_letter;
+	if (template->nature_set)
+		pid.fields.nature = template->pid.fields.nature;
+	if (template->form_set)
+		pid.fields.form = template->pid.fields.form;
+	pokemon_new(p, template->species, trainer_pokemon_get_level(template->level), 0, true, pid, false, 0);
+	u8 default_ev = get_default_ev();
+	u8 default_iv = get_default_iv();
+	for (int i = 0; i < 6; i++) {
+		pokemon_set_attribute(p, ATTRIBUTE_HP_IV + i, 
+			template->ivs_set ? template->ivs + i : &default_iv);
+		pokemon_set_effective_ev(p, i,
+			(u8)(template->evs_set ? template->evs[i] / 4 : default_ev / 4));
+		pokemon_set_potential_ev(p, i,
+			template->evs_set ? template->evs[i] : default_ev);
+	}
+	if (template->held_item)
+		pokemon_set_attribute(p, ATTRIBUTE_ITEM, &template->held_item);
+	if (template->moves_set) {
+		for (int i = 0; i < 4; i++) {
+			pokemon_set_attribute(p, ATTRIBUTE_ATTACK1 + i, template->moves + i);
+			pokemon_set_attribute(p, ATTRIBUTE_PP1 + i, &attacks[template->moves[i]].pp);
+		}
+	}
+	if (template->hidden_ability)
+		pokemon_set_hidden_ability(&p->box);
+	if (template->nickname)
+		pokemon_set_attribute(p, ATTRIBUTE_NICKNAME, template->nickname);
+	pokemon_calculate_stats(p);
+	// DEBUG("Trainer mon effective evs [%d, %d, %d, %d, %d, %d]\n",
+	// 	pokemon_get_effective_ev(p, 0), pokemon_get_effective_ev(p, 1), pokemon_get_effective_ev(p, 2),
+	// 	pokemon_get_effective_ev(p, 3), pokemon_get_effective_ev(p, 4), pokemon_get_effective_ev(p, 5));
+	DEBUG("Trainer mon stats [%d, %d, %d, %d, %d, %d]\n",
+		pokemon_get_attribute(p, ATTRIBUTE_TOTAL_HP, NULL), pokemon_get_attribute(p, ATTRIBUTE_ATK, NULL),
+		pokemon_get_attribute(p, ATTRIBUTE_DEF, NULL), pokemon_get_attribute(p, ATTRIBUTE_INIT, NULL),
+		pokemon_get_attribute(p, ATTRIBUTE_SATK, NULL), pokemon_get_attribute(p, ATTRIBUTE_SDEF, NULL)
+		);
 }
 
 
@@ -102,28 +139,10 @@ static int party_setup_by_trainer_idx(pokemon *dst_party, u16 trainer_id) {
 	for (int j = 0; j < trainers[trainer_id].pokemon_cnt; j++)
 		DEBUG("Shuffled team order %d : %d\n", j, idxs[j]);
 	for (int j = 0; j < trainers[trainer_id].pokemon_cnt; j++) {
-		if (trainers[trainer_id].uses_custom_items &&
-				trainers[trainer_id].uses_custom_moves) {
-			trainer_pokemon_custom_item_custom_attacks* party =
-					(trainer_pokemon_custom_item_custom_attacks*)trainers[trainer_id].party;
-			trainer_pokemon_new_custom_item_custom_attacks(&dst_party[j], &party[idxs[j]]);
-		} else if (trainers[trainer_id].uses_custom_items) {
-			trainer_pokemon_custom_item_default_attacks* party =
-					(trainer_pokemon_custom_item_default_attacks*)trainers[trainer_id].party;
-			trainer_pokemon_new_custom_item_default_attacks(&dst_party[j], &party[idxs[j]]);
-		} else if (trainers[trainer_id].uses_custom_moves) {
-			trainer_pokemon_default_item_custom_attacks* party =
-					(trainer_pokemon_default_item_custom_attacks*)trainers[trainer_id].party;
-			trainer_pokemon_new_default_item_custom_attacks(&dst_party[j], &party[idxs[j]]);
-		} else {
-			trainer_pokemon_default_item_default_attacks* party =
-					(trainer_pokemon_default_item_default_attacks*)trainers[trainer_id].party;
-			trainer_pokemon_new_default_item_default_attacks(&dst_party[j], &party[idxs[j]]);
-		}
+		trainer_pokemon_new(dst_party + j, trainers[trainer_id].party + j);
 	}
 	battle_flags |= trainers[trainer_id].battle_state;
 	return trainers[trainer_id].pokemon_cnt;
-	
 }
 
 
@@ -156,78 +175,3 @@ void ally_party_setup() {
 	}
 }
 
-void trainer_pokemon_new(pokemon *poke, union union_build_field field) {
-	pid_t pid = {.value = (u32)pokemon_get_attribute(poke, 0, 0)};
-	u8 ev_difficulty = 0; // EVs that are applied due to difficulty
-	switch(*var_access(DIFFICULTY)) {
-		case DIFFICULTY_HARD: ev_difficulty = 21; break; // 84 EVs on each stat
-		}
-	if (field.bitfield.build_idx == TRAINER_BUILD_NONE) {
-		// Distribute evs according to difficulty
-		for (int i = 0; i < 6; i++) {
-			pokemon_set_effective_ev(poke, i, ev_difficulty);
-			pokemon_set_potential_ev(poke, i, (u8)(4 * ev_difficulty));
-		}
-	} else {
-		// Apply the build of the trainer
-		u8 effective_ev_story;
-		switch(*var_access(VAR_STORY_STATE)) {
-			case STORY_STATE_SILVANIA_FOREST_DONE: 
-			case STORY_STATE_FELSIGE_ODENIS_RIVAL_DONE:
-			case STORY_STATE_BLUETENBACH_GYM_DONE:
-			case STORY_STATE_ROUTE_6_MISTRAL_IGVA_DONE:
-				effective_ev_story = 7; 
-				break;
-			case STORY_STATE_VULCANO_DONE: 
-				effective_ev_story = 15; 
-				break;
-			default:
-				effective_ev_story = 0;
-				break;
-		}
-		effective_ev_story = (u8)(effective_ev_story + ev_difficulty);
-		for (int i = 0; i < 6; i++) {
-			u8 ev = trainer_builds[field.bitfield.build_idx].evs[i];
-			if (ev == 255) ev = effective_ev_story;
-			pokemon_set_effective_ev(poke, i, ev);
-			pokemon_set_potential_ev(poke, i, (u8)(4 * ev));
-		}
-		// Apply nature if present
-		u8 nature = trainer_builds[field.bitfield.build_idx].nature;
-		if (nature != 255) {
-			pid.fields.nature = (u8)(nature & 0x1F);
-		}
-		// Apply hidden power type
-		u8 hidden_power_type = trainer_builds[field.bitfield.build_idx].hidden_power_type;
-		if (hidden_power_type != 255) {
-			pid.fields.hidden_power_type = (u8)(hidden_power_type & 0x1F);
-		}
-		// Apply hidden power strength
-		u8 hidden_power_strength = trainer_builds[field.bitfield.build_idx].hidden_power_strength;
-		if (hidden_power_strength != 255) {
-			pid.fields.hidden_power_strength = (u8)(hidden_power_strength & 7);
-		}
-		// Apply the ability bit to the pokemon
-		int ability = field.bitfield.ability > 0;
-		pokemon_set_attribute(poke, ATTRIBUTE_ABILITY, &ability);
-
-		// Apply gender, if persent
-		if (trainer_builds[field.bitfield.build_idx].use_gender) {
-			pid.fields.gender_partial = (u32)((trainer_builds[field.bitfield.build_idx].gender >> 1) & 0x7F); // TODO?
-		}
-		// Apply unown letter
-		pid.fields.unown_letter = trainer_builds[field.bitfield.build_idx].unown_letter;
-
-		DEBUG("Building pokemon species %d with ability bit %d -> ability is %d\n", pokemon_get_attribute(poke, ATTRIBUTE_SPECIES, 0), ability, pokemon_get_ability(poke));
-	}
-	pid.fields.is_shiny = field.bitfield.is_shiny > 0;
-	pokemon_set_attribute(poke, ATTRIBUTE_PID, &pid);
-	if (field.bitfield.has_hidden_ability)
-			pokemon_set_hidden_ability(&poke->box);
-
-	if (!pokemon_get_attribute(poke, ATTRIBUTE_ITEM, 0)) {
-		pokemon_set_attribute(poke, ATTRIBUTE_ITEM,
-				&trainer_builds[field.bitfield.build_idx].prefered_item);
-	}
-	pokemon_calculate_stats(poke);
-}

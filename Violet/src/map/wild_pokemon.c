@@ -149,7 +149,7 @@ bool wildbattle_initialize_by_habitat(wild_pokemon_habitat *habitat, int pdf_typ
 
 void wild_pokemon_new(u16 species, u8 level, int unown_letter_idx) {
 		pokemon_clear_opponent_party();
-		pid_t p = pokemon_new_pid();
+		pid_t p = pokemon_new_pid(species);
 		if (species == POKEMON_ICOGNITO) {
 			p = pokemon_unown_generate_letter_pid(wild_pokemon_get_current_unown_letters()[unown_letter_idx]);
 		}

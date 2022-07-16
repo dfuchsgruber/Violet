@@ -62,7 +62,7 @@ void dungeon2_init_trainer(u16 trainer_idx) {
     } else {
         strcpy(fmem.dynamic_trainer_name, person_names[PERSON_NAME_MALE][gp_rnd16() % ARRAY_COUNT(person_names[PERSON_NAME_MALE])]);
     }
-    trainer_pokemon_default_item_default_attacks *trainer_party = (trainer_pokemon_default_item_default_attacks *)fmem.dynamic_trainer_party;
+    trainer_pokemon *trainer_party = fmem.dynamic_trainer_party;
     int species_picked = 0;
     while (species_picked < 3) {
         u16 species = dungeon2_trainer_species[gp_rnd16() % ARRAY_COUNT(dungeon2_trainer_species)];
@@ -84,7 +84,8 @@ void dungeon2_init_trainer(u16 trainer_idx) {
             continue;
         trainer_party[species_picked].species = species;
         trainer_party[species_picked].level = (u8)MIN(100, MAX(5, level_mean - level_std + (gp_rnd16() % 2 * level_std)));
-        trainer_party[species_picked].ivs = 17;
+        for (int i = 0; i < 6; i++)
+            trainer_party[species_picked].ivs[i] = 17;
         species_picked++;
     }
 }

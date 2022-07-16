@@ -15,57 +15,34 @@
 #include "pokemon/virtual.h"
 
 typedef struct {
-	u8 ivs;
-	union_build_field build;
+    pid_t pid;
+    u32 ability_set : 1;
+    u32 gender_set : 1;
+    u32 shiny_set : 1;
+    u32 hidden_power_type_set : 1;
+    u32 hidden_power_strength_set : 1;
+    u32 unown_letter_set : 1;
+    u32 nature_set : 1;
+    u32 form_set : 1;
+    u32 moves_set : 1;
+    u32 hidden_ability : 1;
+    u32 evs_set : 1;
+    u32 ivs_set : 1;
+    u8 ivs[6];
+    u8 evs[6];
     u8 level;
-    u8 field_3;
     u16 species;
-    u16 field_6;
-} trainer_pokemon_default_item_default_attacks;
-
-typedef struct {
-	u8 ivs;
-	union_build_field build;
-    u8 level;
-    u8 field_3;
-    u16 species;
-    u16 item;
-} trainer_pokemon_custom_item_default_attacks;
-
-typedef struct {
-	u8 ivs;
-	union_build_field build;
-    u8 level;
-    u8 field_3;
-    u16 species;
+    u16 held_item;
     u16 moves[4];
-    u16 field_6;
-} trainer_pokemon_default_item_custom_attacks;
-
-typedef struct {
-	u8 ivs;
-	union_build_field build;
-    u8 level;
-    u8 field_3;
-    u16 species;
-    u16 item;
-    u16 moves[4];
-} trainer_pokemon_custom_item_custom_attacks;
-
-typedef union{
-    trainer_pokemon_default_item_default_attacks default_item_default_attacks;
-    trainer_pokemon_custom_item_default_attacks custom_item_default_attacks;
-    trainer_pokemon_default_item_custom_attacks default_item_custom_attacks;
-    trainer_pokemon_custom_item_custom_attacks custom_item_custom_attacks;
+    u8 *nickname;
 } trainer_pokemon;
 
-
 /**
- * Builds / modifies a trainer pokemon based on its build field
- * @param poke the pokemon to modify
- * @param field the build field that encodes the information about the trainer
+ * @brief Gets the level of a trainer pokemon
+ * 
+ * @param level the level to translate (respect constants)
+ * @return u8 the actual level
  */
-void trainer_pokemon_new(pokemon *poke, union union_build_field field);
-
+u8 trainer_pokemon_get_level(u8 level);
 
 #endif /* INCLUDE_C_TRAINER_PARTY_H_ */

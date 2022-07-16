@@ -125,6 +125,8 @@ void breeding_egg_add_move_if_known_by_parent(pokemon *egg, box_pokemon *father,
  */
 void daycare_remove_egg(daycare_stru *daycare);
 
+#define PARENT_SLOT_MOTHER_OR_DITTO 0
+#define PARENT_SLOT_FATHER 1
 
 #define PARTY_TEMPERATURE_MAX 20000
 

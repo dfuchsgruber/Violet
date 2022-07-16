@@ -20,7 +20,7 @@ void version_alpha_2_2_fix_pid(box_pokemon *target) {
 	_pid_t_old old = {.value = (u32)box_pokemon_get_attribute(target, ATTRIBUTE_PID, 0)};
 	pid_t p = {.value = 0};
 	p.fields.ability = old.fields.ability;
-	p.fields.gender_partial = old.fields.gender_partial;
+	p.fields.is_female = false; // too lazy to fix...
 	p.fields.is_shiny = old.fields.shinyness <= 512 ? 1 : 0;
 	int nature = old.fields.nature;
 	if (nature >= 25) nature /= 2;

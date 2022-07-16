@@ -242,28 +242,15 @@ void bsc_cmd_trainerslidein() {
 static int trainer_pricemoney_get(u16 trainer_idx) {
     // Calculate the average level of the trainer pokemon
     int average_level = 0;
-    if (trainers[trainer_idx].uses_custom_items && trainers[trainer_idx].uses_custom_items) {
-        trainer_pokemon_custom_item_custom_attacks *party = (trainer_pokemon_custom_item_custom_attacks*) trainers[trainer_idx].party;
-        for (int i = 0; i < trainers[trainer_idx].pokemon_cnt; i++)
-            average_level += party[i].level;
-    } else if (trainers[trainer_idx].uses_custom_items) {
-        trainer_pokemon_custom_item_default_attacks *party = (trainer_pokemon_custom_item_default_attacks*) trainers[trainer_idx].party;
-        for (int i = 0; i < trainers[trainer_idx].pokemon_cnt; i++)
-            average_level += party[i].level;
-    } else if (trainers[trainer_idx].uses_custom_moves) {
-        trainer_pokemon_default_item_custom_attacks *party = (trainer_pokemon_default_item_custom_attacks*) trainers[trainer_idx].party;
-        for (int i = 0; i < trainers[trainer_idx].pokemon_cnt; i++)
-            average_level += party[i].level;
-    } else {
-        trainer_pokemon_default_item_default_attacks *party = (trainer_pokemon_default_item_default_attacks*) trainers[trainer_idx].party;
-        for (int i = 0; i < trainers[trainer_idx].pokemon_cnt; i++)
-            average_level += party[i].level;
-    }
+    for (int i = 0; i < trainers[trainer_idx].pokemon_cnt; i++)
+        average_level += trainer_pokemon_get_level(trainers[trainer_idx].party[i].level);
     average_level = MAX(1, 1000 * average_level / trainers[trainer_idx].pokemon_cnt); // Higher resultion by multplying with 1000
     DEBUG("Trainer %d has an average level of %d / 1000\n", trainer_idx, average_level);
     int money = average_level * battle_state->money_multiplier * trainer_class_money_multipliers[trainers[trainer_idx].trainerclass] * 4;
     DEBUG("Trainer %d yields %d / 1000 money. Multiplier is %d, class multiplier is %d\n", trainer_idx, 
         money, battle_state->money_multiplier, trainer_class_money_multipliers[trainers[trainer_idx].trainerclass]);
+    if (trainers[trainer_idx].money_multiplier > 0)
+        money *= trainers[trainer_idx].money_multiplier;
     return money / 2048;
 }
 

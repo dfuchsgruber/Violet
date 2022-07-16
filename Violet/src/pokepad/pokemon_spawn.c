@@ -39,7 +39,7 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 defau
 
     //first we random a pid
     if (!pid_determined)
-      pid = pokemon_new_pid();
+      pid = pokemon_new_pid(species);
 
     if (!feature_generator()) {
         pid.fields.is_shiny = 1;

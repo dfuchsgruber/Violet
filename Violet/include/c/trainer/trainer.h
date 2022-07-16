@@ -15,15 +15,10 @@
 #include "oam.h"
 
 typedef struct {
-    u8 uses_custom_moves : 1;
-    u8 uses_custom_items : 1;
-    u8 field_0_filler : 6;
+    u8 money_multiplier;
     u8 trainerclass;
-
-    struct encounter_and_gender {
-        u8 encounter : 7;
-        u8 gender : 1;
-    } encounter_and_gender;
+    u8 encounter : 7;
+    u8 gender : 1;
     u8 sprite;
     u8 name[12];
     u16 items[4];
@@ -35,7 +30,6 @@ typedef struct {
     u8 field_22;
     u8 field_23;
     trainer_pokemon *party;
-
 } trainer;
 
 trainer trainers[TRAINER_CNT];

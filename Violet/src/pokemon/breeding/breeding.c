@@ -112,8 +112,38 @@ bool breeding_inherit_hidden_ability(daycare_stru *daycare) {
 	return false;
 }
 
+
+u16 breeding_get_egg_species_and_parents(daycare_stru* daycare, u8 *parents) {
+	u16 species[2];
+	for (u8 i = 0; i < 2; i++) {
+		species[i] = (u16) box_pokemon_get_attribute(&daycare->pokemon[i].pokemon,
+				ATTRIBUTE_SPECIES, 0);
+		if (species[i] == POKEMON_DITTO) {
+			parents[0] = i^1;
+			parents[1] = i;
+		} else if (box_pokemon_get_gender(&daycare->pokemon[i].pokemon) == POKEMON_GENDER_FEMALE) {
+			parents[0] = i;
+			parents[1] = i^1;
+		}
+	}
+	u16 egg_species = pokemon_get_basis_stage(species[parents[0]]);
+	// Change the species gender for Nidoran (Ilumise has been removed)
+	if (egg_species == POKEMON_NIDORANW && cmem.daycare_offspring_male)
+		egg_species = POKEMON_NIDORANM;
+	// If Ditto mates with a male /genderless pokemon, it is set to the mother
+	if (species[parents[1]] == POKEMON_DITTO &&
+			box_pokemon_get_gender(&daycare->pokemon[parents[0]].pokemon) != POKEMON_GENDER_FEMALE) {
+		u8 tmp = parents[1];
+		parents[1] = parents[0];
+		parents[0] = tmp;
+	}
+	return egg_species;
+}
+
 pid_t breeding_new_pid(daycare_stru *daycare) {
-	pid_t pid = pokemon_new_pid();
+	u8 parent_slots[2];
+	u16 offspring_species = breeding_get_egg_species_and_parents(daycare, parent_slots);
+	pid_t pid = pokemon_new_pid(offspring_species);
 	cmem.daycare_offspring_has_hidden_ability = 0;
 	// Inherit nature from parent with everstone
 	for (int i = 0; i < 2; i++) {
@@ -127,33 +157,6 @@ pid_t breeding_new_pid(daycare_stru *daycare) {
 		}
 	}
 	return pid;
-}
-
-u16 breeding_get_egg_species_and_parents(daycare_stru* daycare, u8 *parents) {
-	u16 species[2];
-	for (u8 i = 0; i < 2; i++) {
-		species[i] = (u16) box_pokemon_get_attribute(&daycare->pokemon[i].pokemon,
-				ATTRIBUTE_SPECIES, 0);
-		if (species[i] == POKEMON_DITTO) {
-			parents[0] = i^1;
-			parents[1] = i;
-		} else if (pokemon_get_gender(&daycare->pokemon[i].pokemon) == GENDER_FEMALE) {
-			parents[0] = i;
-			parents[1] = i^1;
-		}
-	}
-	u16 egg_species = pokemon_get_basis_stage(species[parents[0]]);
-	// Change the species gender for Nidoran (Ilumise has been removed)
-	if (egg_species == POKEMON_NIDORANW && cmem.daycare_offspring_male)
-		egg_species = POKEMON_NIDORANM;
-	// If Ditto mates with a male /genderless pokemon, it is set to the mother
-	if (species[parents[1]] == POKEMON_DITTO &&
-			pokemon_get_gender(&daycare->pokemon[parents[0]].pokemon) != GENDER_FEMALE) {
-		u8 tmp = parents[1];
-		parents[1] = parents[0];
-		parents[0] = tmp;
-	}
-	return egg_species;
 }
 
 void breeding_spawn_egg(daycare_stru *daycare) {

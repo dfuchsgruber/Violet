@@ -12,6 +12,10 @@
 #include "constants/pokemon_attributes.h"
 #include "constants/species.h"
 
+#define POKEMON_GENDER_MALE 0
+#define POKEMON_GENDER_FEMALE 254
+#define POKEMON_GENDER_GENDERLESS 255
+
 typedef struct marking {
     u8 circle : 1;
     u8 square : 1;
@@ -25,7 +29,8 @@ typedef union {
 
     struct {
         u32 ability : 1;
-        u32 gender_partial : 7;
+        u32 is_female : 1;
+		u32 unused2 : 6;
         u32 is_shiny : 1;
         u32 hidden_power_type : 5;
         u32 hidden_power_strength : 3;
@@ -124,10 +129,13 @@ typedef union {
 	u16 values[6];
 } pokemon_substructure_section;
 
+// Does not include the end-of-sequence symbol (i.e. allocate arrays of size POKEMON_NAME_LENGTH + 1)
+#define POKEMON_NAME_LENGTH 10
+
 typedef struct {
 	pid_t pid;
 	u32 tid;
-	u8 nickname[10];
+	u8 nickname[POKEMON_NAME_LENGTH];
 	u8 language;
 	u8 is_bad_egg : 1;
 	u8 has_species : 1;
@@ -389,15 +397,6 @@ bool pokemon_knows_hm(box_pokemon *p);
  */
 void pokemon_heal_player_party();
 
-#define GENDER_MALE 0
-#define GENDER_FEMALE 254
-#define GENDER_NONE 255
-/**
- *
- * @param p the pokemon to get the gender of
- * @return 0 := male, 0xFE := female i guess? 0xFF := no gender at all
- */
-u8 pokemon_get_gender(box_pokemon *p);
 
 u8 pokemon_get_nature(pokemon *target);
 
@@ -413,16 +412,18 @@ void pokemon_clear_opponent_party();
 
 /**
  * Creates a valid pid for a pokemon.
+ * @param species for which mon to build a pid
  * @return the pid
  */
-pid_t pokemon_new_pid();
+pid_t pokemon_new_pid(u16 species);
 
 /**
  * Creates a valid pid for a pokemon using a certain prng.
+ * @param species for which species to randomize a new personality
  * @param rnd prng function that yields random 16-bit values
  * @return the pid
  */
-pid_t pokemon_new_pid_by_prng(u16 (*rnd)());
+pid_t pokemon_new_pid_by_prng(u16 species, u16 (*rnd)());
 
 /**
  * Sets the effective evs of a pokemon (in multiples of 4).
@@ -598,5 +599,30 @@ u8 player_party_count_with_ability(u8 ability);
  * @return u8 How many pokemon in the player have this type
  */
 u8 player_party_count_of_type(u8 type);
+
+/**
+ * @brief Gets the gender of a pokemon by its species and personality
+ * 
+ * @param species the species of the pokemon
+ * @param pid the associated personality
+ * @return u8 the gender
+ */
+u8 pokemon_get_gender_by_pid(u16 species, pid_t pid);
+
+/**
+ * @brief Gets the gender of a box pokemon
+ * 
+ * @param p the box pokemon structure
+ * @return u8 the gender
+ */
+u8 box_pokemon_get_gender(box_pokemon *p);
+
+/**
+ * @brief Gets the gender of a pokemon
+ * 
+ * @param p the pokemon
+ * @return u8 the gender
+ */
+u8 pokemon_get_gender(pokemon *p);
 
 #endif /* INCLUDE_C_POKEMON_VIRTUAL_H_ */

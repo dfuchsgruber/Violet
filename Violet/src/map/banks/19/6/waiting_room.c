@@ -22,10 +22,9 @@ u16 ceometria_gym_trainer_pokemon[] = {
 void ceometria_gym_build_trainer_party(u8 min_level, u8 max_level) {
     int num_species = 0;
     while (ceometria_gym_trainer_pokemon[num_species] != 0xFFFF) num_species++;
-    trainer_pokemon_default_item_default_attacks *dst = (trainer_pokemon_default_item_default_attacks*)&fmem.dynamic_trainer_party;
+    trainer_pokemon *dst = fmem.dynamic_trainer_party;
     for (int i = 0; i < 3; i++) {
         dst[i].species = ceometria_gym_trainer_pokemon[(u16)ceometria_gym_rnd() % num_species];
-        dst[i].build.bitfield.build_idx = TRAINER_BUILD_NONE;
         dst[i].level = (u8)(min_level + ((u16)ceometria_gym_rnd() % (max_level - min_level + 1)));
     }
 }

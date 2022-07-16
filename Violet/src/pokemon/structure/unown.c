@@ -10,7 +10,7 @@ pid_t pokemon_unown_generate_letter_pid(u32 letter) {
     if (letter >= 28) {
         ERROR("Attempting to generate an unown with letter >= 28 %d\n", letter);
     }
-    pid_t p = pokemon_new_pid();
+    pid_t p = pokemon_new_pid(POKEMON_ICOGNITO);
     p.fields.unown_letter = (u32)(letter & 31);
     DEBUG("Created unown with letter %d and pid %x\n", letter, p);
     return p;

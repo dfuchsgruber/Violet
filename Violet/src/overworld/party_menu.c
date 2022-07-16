@@ -65,7 +65,7 @@ void pokemon_party_menu_load_partner_party(pokemon *p) {
         pokemon_party_menu_partner_party[i].status = (u16) pokemon_get_attribute(p + i, ATTRIBUTE_STATUS, 0);
         pid_t pid = {.value = (u32)pokemon_get_attribute(p + i, ATTRIBUTE_PID, 0)};
         pokemon_party_menu_partner_party[i].pid = pid;
-        pokemon_party_menu_partner_party[i].gender = pokemon_get_gender(&p[i].box);
+        pokemon_party_menu_partner_party[i].gender = box_pokemon_get_gender(&p[i].box);
         pokemon_party_menu_partner_party[i].language = (u8) pokemon_get_attribute(p + i, ATTRIBUTE_LANGUAGE, 0);
         // Pad Name string (we simply ignore japanese names)
         u8 j;

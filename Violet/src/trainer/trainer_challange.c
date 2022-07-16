@@ -471,7 +471,7 @@ void trainer_play_encounter_music() {
             case TRAINERCLASS_PIRATE: 
                 music = MUS_PIRATE; break;
             default:
-                music = (u16)((trainers[trainer_idx].encounter_and_gender.encounter % 3) + 283);
+                music = (u16)((trainers[trainer_idx].encounter % 3) + 283);
         }
         if (song_get_current() != music)
             song_play_by_controller(music);

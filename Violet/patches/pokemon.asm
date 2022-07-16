@@ -1231,3 +1231,18 @@ lsr r0, #0x1A
 
 .org 0x0803db52
 	mov r0, #0 // Givepokemon : Set the pokeball idx to 0 (=Pokeball) 
+
+.org 0x0803f620
+	ldr r1, =pokemon_get_gender | 1
+	bx r1
+	.pool
+
+.org 0x0803f630
+	ldr r1, =box_pokemon_get_gender | 1
+	bx r1
+	.pool
+
+.org 0x0803f68c
+	ldr r2, =pokemon_get_gender_by_pid | 1
+	bx r2
+	.pool

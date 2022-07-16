@@ -220,7 +220,7 @@ void overworld_unown_delete_message() {
 
 void test_give_unowns() {
     for (int i = 0; i < 28; i++) {
-        pid_t pid = pokemon_new_pid();
+        pid_t pid = pokemon_new_pid(POKEMON_ICOGNITO);
         pid.fields.unown_letter = (u32)(i & 31);
         pokemon_new(opponent_pokemon, POKEMON_ICOGNITO, 5, false, true, pid, false, 0);
         pokemon_give(opponent_pokemon);

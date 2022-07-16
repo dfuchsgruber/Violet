@@ -5,6 +5,8 @@
 
 .thumb_func
 pokemon_new_pid_hook:
+mov r1, sp
+ldrh r0, [r1, #0xE] @ species
 bl pokemon_new_pid
 mov r4, r0
 ldr r0, =0x0803DA12 | 1
