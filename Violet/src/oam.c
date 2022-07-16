@@ -312,6 +312,11 @@ void oam_sort() {
         oam_heapsort(prio_3_start, n);
     else
         oam_insertion_sort(prio_3_start, n);
+
+    // Debug the sorting
+    // for (size_t i = 0; i < n; i++) {
+    //     DEBUG("oam @%d has bg prio %d, in list %d\n", i, (oams[oam_order_iram[i]].final_oam.attr2 >> 10) & 3, oam_priorities_iram[oam_order_iram[i]]);
+    // }
 }
 
 static sprite oam_empty = {
@@ -334,6 +339,7 @@ void oam_copy_to_oam_buffer() {
                 // t = benchmark_end();
                 if (result)
                     return;
+                // DEBUG("Added oam with priority %d at iram order %d\n", (oams[current].final_oam.attr2 >> 10) & 3, i);
             }
             // if (t > 1000)
             //     DEBUG("    Copying of %d (iter %d) took %d, has subsprites %d\n", current, iters, t, oams[current].sprite_mode);
@@ -383,6 +389,8 @@ void oam_proceed() {
     BENCHMARK_WRAP(benchmark_start();)
     oam_copy_to_oam_buffer();
     BENCHMARK_WRAP(u32 t_copy = benchmark_end();)
+
+    // Debug
 
     BENCHMARK_WRAP(benchmark_start();)
     oam_copy_rotscale_to_buffer();

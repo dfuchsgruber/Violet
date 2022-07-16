@@ -1567,8 +1567,8 @@ trainer_pokemon trainer_party_x12c_aktania_clouds_trainer_0[] = {
 };
 
 trainer_pokemon trainer_party_x12d_kuestenberg_clouds_trainer_0[] = {
-	{.level = 34, .species = POKEMON_TENTACHA},
-	{.level = 36, .species = POKEMON_SCHILLOK},
+	{.level = 39, .species = POKEMON_TENTACHA},
+	{.level = 41, .species = POKEMON_SCHILLOK},
 };
 
 trainer_pokemon trainer_party_x12e_route_11_clouds_trainer_0[] = {
@@ -2741,6 +2741,15 @@ trainer_pokemon trainer_party_x1ff_tafelberg_clouds_ancient_guard_blue[] = {
 	{.held_item = ITEM_GEWITTER_EI, .moves_set = true, .moves = {ATTACK_HYDROPUMPE, ATTACK_EISSTRAHL, ATTACK_REGENTANZ, ATTACK_PSYCHOKINESE}, .level = 40, .species = POKEMON_SAGANABYSS, .evs = {[STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 252, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
 	{.held_item = ITEM_UEBERRESTE, .moves_set = true, .moves = {ATTACK_WHIRLPOOL, ATTACK_TOXIN, ATTACK_SCHUTZSCHILD, ATTACK_TAUCHER}, .level = 40, .species = POKEMON_AMOROSO, .evs = {[STAT_HP] = 252, [STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
 	{.held_item = ITEM_FOKUSGURT, .moves_set = true, .moves = {ATTACK_KASKADE, ATTACK_SCHWERTTANZ, ATTACK_WASSERDUESE, ATTACK_STEINKANTE}, .level = 40, .species = POKEMON_KABUTOPS, .evs = {[STAT_HP] = 252, [STAT_DEFENSE] = 252, [STAT_ATTACK] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_PFIFFIG}}},
+};
+
+trainer_pokemon trainer_party_x200_kuestenberg_clouds_trainer_0[] = {
+	{.level = 34, .species = POKEMON_DARTIGNIS},
+	{.level = 34, .species = POKEMON_SCHWALBINI},
+};
+
+trainer_pokemon trainer_party_x201_kuestenberg_clouds_trainer_1[] = {
+	{.level = 38, .species = POKEMON_BANETTE},
 };
 
 

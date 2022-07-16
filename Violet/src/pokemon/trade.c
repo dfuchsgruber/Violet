@@ -146,6 +146,34 @@ ingame_trade_t ingame_trades[NUM_INGAME_TRADES] = {
         .hidden_ability = 1,
         .requested_species = POKEMON_GEOROK,
     },
+    [INGAME_TRADE_SEEMON]  = {
+        .nickname = LANGDEP(PSTRING("Hufel"), PSTRING("Hufel")),
+        .species = POKEMON_SEEMON,
+        .ivs = {
+            [STAT_HP] = 31,
+            [STAT_ATTACK] = 8,
+            [STAT_DEFENSE] = 28,
+            [STAT_SPEED] = 27,
+            [STAT_SPECIAL_ATTACK] = 31,
+            [STAT_SPECIAL_DEFENSE] = 31,
+        },
+        .tid = 6371333,
+        .pid = {
+            .fields = {
+                .ability = 0,
+                .is_female = true,
+                .is_shiny = 0,
+                .hidden_power_type = TYPE_ELEKTRO,
+                .hidden_power_strength = 7,
+                .nature = NATURE_SCHEU,
+            }
+        },
+        .item = ITEM_APFEL,
+        .ot_name = LANGDEP(PSTRING("Magda"), PSTRING("Magda")),
+        .ot_is_female = 1,
+        .hidden_ability = 1,
+        .requested_species = POKEMON_PIKACHU,
+    }
 };
 
 

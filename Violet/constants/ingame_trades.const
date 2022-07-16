@@ -7,6 +7,7 @@
         "INGAME_TRADE_ZWIRRLICHT",
         "INGAME_TRADE_MOLUNK",
         "INGAME_TRADE_MAGNETON",
+        "INGAME_TRADE_SEEMON",
         "NUM_INGAME_TRADES"
     ]
 }

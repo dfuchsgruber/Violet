@@ -6635,6 +6635,20 @@ trainer trainers[TRAINER_CNT] = {
         .party = trainer_party_x1ff_tafelberg_clouds_ancient_guard_blue,
          
     },
+    [0x200] = {
+        .trainerclass = TRAINERCLASS_VOGELFAENGER, .sprite = 0x2e,
+        .encounter = 1,  .gender = 0, .name = LANGDEP(PSTRING("Heribald"),
+            PSTRING("Heribald")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x200_kuestenberg_clouds_trainer_0),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = trainer_party_x200_kuestenberg_clouds_trainer_0,
+    },
+    [0x201] = {
+        .trainerclass = TRAINERCLASS_HEXE, .sprite = 10,
+        .encounter = 1,  .gender = 1, .name = LANGDEP(PSTRING("Albame"),
+            PSTRING("Albame")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x201_kuestenberg_clouds_trainer_1),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = trainer_party_x201_kuestenberg_clouds_trainer_1
+    },
 
     [0x300] = {
        

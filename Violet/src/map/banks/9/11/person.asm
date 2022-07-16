@@ -79,7 +79,7 @@ ow_script_orina_city_ingame_trade:
 	faceplayer
 	setvar 0x8008, INGAME_TRADE_MAGNETON
 	call ow_script_ingame_trade_get_species_info
-	checkflag FLAG_KASKADA_INGAME_TRADE
+	checkflag FLAG_ORINA_CITY_INGAME_TRADE
     gotoif 1 already_traded
     loadpointer 0 str_want_to_trade
     callstd MSG_YES_NO

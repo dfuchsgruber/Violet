@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_kaskada_clouds",
 		"events": {
-			"person_cnt": 27,
+			"person_cnt": 28,
 			"warp_cnt": 2,
 			"trigger_cnt": 0,
 			"signpost_cnt": 3,
@@ -765,6 +765,34 @@
 					"value": {
 						"item": "0",
 						"species": "POKEMON_WINGULL",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "28",
+					"picture": "0",
+					"script_std_and_in_connection": {
+						"script_std": "0",
+						"in_connection": "MAP_CONNECTION_NORTH"
+					},
+					"argument": "2",
+					"x": "32",
+					"y": "-4",
+					"level": "0",
+					"behaviour": "0",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "0",
 						"berry_tree_idx": "0",
 						"type": "0"
 					}
