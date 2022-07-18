@@ -1691,7 +1691,6 @@ oam_update_base_tile_by_gfx_animation = 0x08008488 | 1;
 oam_rotscale_animation_initialize = 0x0800858c | 1;
 coordinate_camera_x_offset = 0x02021bc8;
 coordinate_camera_y_offset = 0x02021bca;
-oam_add_to_buffer = 0x080089e4 | 1;
 oam_buffer_size = 0x02021b44;
 oam_copy_rotscale_to_buffer = 0x08006e38 | 1;
 oam_copy_requests_enabled = 0x02021840;
@@ -1708,8 +1707,9 @@ bg_virtual_sync_reqeust_proceed = 0x080f6a4c | 1;
 npc_shift_coordinates_at_camera_update = 0x0805f82c | 1;
 npc_delete_all_outside_viewport = 0x0805ed10 | 1;
 npc_create_all_in_viewport_if_not_present = 0x0805ec30 | 1;
-oam_order_iram = 0x03007500;
-oam_priorities_iram = 0x03007540;
+
+oam_priorities_iram = 0x03007500;
+
 overworld_weather_sandstorm_graphic = 0x083c66a0;
 overworld_weather_sandstormPal = 0x083c2b6c;
 overworld_weather_sandstorm_template = 0x083c6688;
@@ -1792,3 +1792,4 @@ item_get_battle_function = 0x0809ab4c | 1;
 item_battle_effect_medicine = 0x080a20a9 | 1;
 npc_clear_held_movement_if_active = 0x08063d1c | 1;
 new_game_callback1 = 0x08056664 | 1;
+oam_sizes = 0x08231c78;

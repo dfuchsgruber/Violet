@@ -1927,7 +1927,7 @@ static subsprite upstream_subsprites[2] = {
 		.shape = ATTR0_SHAPE_HORIZONTAL >> 14, 
 		.size = ATTR1_SIZE_64_32 >> 14, 
 		.tile_offset = 0 * GRAPHIC_SIZE_4BPP(64, 32) / GRAPHIC_SIZE_4BPP(8, 8),
-		.priority = 2,
+		.priority = 1, // fixed (?)
 	},
 	{
 		.x = -32, 

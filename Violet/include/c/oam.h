@@ -22,6 +22,7 @@
 #define ATTR0_SHAPE_SQUARE 0
 #define ATTR0_SHAPE_HORIZONTAL 0x4000
 #define ATTR0_SHAPE_VERTICAL 0x8000
+#define ATTR0_SHAPE_MASK (ATTR0_SHAPE_HORIZONTAL | ATTR0_SHAPE_VERTICAL)
 
 #define ATTR1_HFLIP 0x1000
 #define ATTR1_VFLIP 0x2000
@@ -37,8 +38,10 @@
 #define ATTR1_SIZE_64_64 0xC000
 #define ATTR1_SIZE_64_32 0xC000
 #define ATTR1_SIZE_32_64 0xC000
+#define ATTR1_SIZE_MASK 0xC000
 
-#define ATTR2_PRIO(x) (x<<10)
+#define ATTR2_PRIO(x) ((x)<<10)
+#define ATTR2_PRIO_MASK (ATTR2_PRIO(3))
 
 #define GRAPHIC_SIZE_4BPP(width, height) ((width) * (height) / 2)
 #define GRAPHIC_SIZE_4BPP_TO_NUM_TILES(width, height) (GRAPHIC_SIZE_4BPP(width, height) / GRAPHIC_SIZE_4BPP(8, 8))
@@ -133,6 +136,21 @@ typedef struct {
   u8 num_subsprites;
   subsprite *subsprites;
 } subsprite_table;
+
+enum {
+    SUBSPRITES_OFF,
+    SUBSPRITES_ON,
+    SUBSPRITES_ON_AND_IGNORE_PRIORITY,
+};
+
+typedef struct {
+  s8 width;
+  s8 height;
+  u16 filler;
+} oam_size_t;
+
+// Indexed by [shape][size]
+extern oam_size_t oam_sizes[3][4];
 
 typedef struct oam_object {
     sprite final_oam;
@@ -533,14 +551,6 @@ void oam_update_base_tile_by_gfx_animation(oam_object *o);
  * @param o the object
  **/
 void oam_rotscale_animation_initialize(oam_object *o);
-
-/**
- * Adds an oam object (and its subsprites) to `super`s oam buffer.
- * @param o the object to add
- * @param cnt is incremented by how many GBA-OAMs were added
- * @return true on failure ( full buffer!)
- **/
-bool oam_add_to_buffer(oam_object *o, u8 *cnt);
 
 /**
  * Copies all rotscale (affine) groups to `super`'s oam buffer.

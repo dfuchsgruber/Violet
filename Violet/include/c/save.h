@@ -232,6 +232,11 @@ typedef struct {
 } oam_group_list_element_t;
 
 typedef struct {
+    u8 oam_idx;
+    u8 subsprite_idx;
+} oams_to_sort_t;
+
+typedef struct {
     int _hook_tmp_; // This variable is used to save r0 values while trying to hook something that uses r0-r3 already
     u8 dmap_header_initialized : 1;
     u8 dmap_blocks_initialized : 1;
@@ -264,6 +269,8 @@ typedef struct {
     // u16 tile_anim_clks_1[8];
     oam_alloc_list_element_t oam_allocation_list[OAM_ALLOC_LIST_SIZE];
     oam_group_list_element_t oam_groups[NUM_OAMS];
+    oams_to_sort_t oams_to_sort[NUM_OAMS]; // These oams will be sorted. Subsprites are listed as entries each here.
+    u8 oam_order_sorted[NUM_OAMS]; // Indices refering to `oams_to_sort`
     map_header_t dmapheader;
     map_footer_t dmapfooter;
     map_event_header_t dmapevents;
