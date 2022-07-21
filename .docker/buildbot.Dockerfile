@@ -8,7 +8,8 @@ RUN apt-get update --fix-missing && \
         gcc-arm-none-eabi \
         bc \
         cmake \
-        python3-pip && \
+        python3-pip \
+        ssh && \
     rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --upgrade pip
