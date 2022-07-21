@@ -10,7 +10,6 @@
 #include "debug.h"
 #include "constants/vars.h"
 #include "constants/species.h"
-#include "constants/trainer_builds.h"
 
 u16 ceometria_gym_trainer_pokemon[] = {
     POKEMON_NEBULAK, POKEMON_ALPOLLO, POKEMON_TRAUNFUGIL, POKEMON_TRAUNMAGIL,
@@ -170,7 +169,6 @@ void ceometria_gym_person_buffer_target_room() {
             strcpy(buffer0, s);
             break;
         }
-
     }
 } 
 

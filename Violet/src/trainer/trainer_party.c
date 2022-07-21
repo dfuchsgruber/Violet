@@ -1,6 +1,4 @@
 #include "types.h"
-#include <stdbool.h>
-#include "trainer/build.h"
 #include "pokemon/virtual.h"
 #include "constants/natures.h"
 #include "constants/pokemon_attributes.h"
@@ -16,7 +14,6 @@
 #include "battle/state.h"
 #include "trainer/trainer.h"
 #include "save.h"
-#include "constants/trainer_builds.h"
 #include "debug.h"
 #include "dungeon/dungeon2.h"
 

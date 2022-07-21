@@ -58,6 +58,12 @@ RUN \
         install -t /usr/local/bin ./out/* && \
         cd $directory && \
         unset directory
+RUN adduser \
+     --disabled-password \
+     --uid 1002 \
+     --home /home/violet \
+     "violet"
 
 WORKDIR /workspace
 COPY .docker/buildbot-entrypoint.sh /usr/local/bin/violet-entrypoint
+USER violet

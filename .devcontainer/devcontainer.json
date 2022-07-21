@@ -16,5 +16,6 @@
 		"ms-python.python",
 		"ms-vscode.cpptools",
 		"ms-vscode.hexeditor"
-	]
+	],
+	"updateRemoteUserUID": true
 }
