@@ -258,10 +258,12 @@ static sprite oam_empty = {
 };
 
 static void oam_add_to_buffer(oam_object *o, u8 subsprite_idx, sprite *dst) {
+    *dst = o->final_oam;
     if (o->sprite_mode != SUBSPRITES_OFF) {;
         subsprite_table *subsprites_table = o->subsprites + o->sprite_idx;
-        if (!subsprites_table || !(subsprites_table->subsprites) || subsprite_idx >= subsprites_table->num_subsprites)
+        if (!subsprites_table || !(subsprites_table->subsprites) || subsprite_idx >= subsprites_table->num_subsprites) {
             return;
+        }
         int tile_num = o->final_oam.attr2 & 0x3FF;
         int x = o->final_oam.attr1 & 0x1FF;
         int y = o->final_oam.attr0 & 0xFF;
@@ -281,8 +283,6 @@ static void oam_add_to_buffer(oam_object *o, u8 subsprite_idx, sprite *dst) {
             dy += oam_sizes[subsprite->shape][subsprite->size].height;
             dy = ~dy + 1;
         }
-        *dst = o->final_oam;
-        (void) tile_num;
         dst->attr0 = (u16)((dst->attr0 & (~ATTR0_SHAPE_MASK)) | (subsprite->shape << 14));
         dst->attr1 = (u16)((dst->attr1 & (~ATTR1_SIZE_MASK)) | (subsprite->size << 14));
         dst->attr2 = (u16)((dst->attr2 & (~0x3FF)) | (((tile_num + subsprite->tile_offset) & 0x3FF) << 0));
