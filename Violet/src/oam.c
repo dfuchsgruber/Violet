@@ -285,9 +285,9 @@ static void oam_add_to_buffer(oam_object *o, u8 subsprite_idx, sprite *dst) {
         (void) tile_num;
         dst->attr0 = (u16)((dst->attr0 & (~ATTR0_SHAPE_MASK)) | (subsprite->shape << 14));
         dst->attr1 = (u16)((dst->attr1 & (~ATTR1_SIZE_MASK)) | (subsprite->size << 14));
-        dst->attr2 = (u16)((dst->attr2 & (~0x3FF)) | ((tile_num + subsprite->tile_offset) << 0));
-        dst->attr0 = (u16)((dst->attr0 & (~0xFF)) | ((y + dy) << 0));
-        dst->attr1 = (u16)((dst->attr1 & (~0x1FF)) | ((x + dx) << 0));
+        dst->attr2 = (u16)((dst->attr2 & (~0x3FF)) | (((tile_num + subsprite->tile_offset) & 0x3FF) << 0));
+        dst->attr0 = (u16)((dst->attr0 & (~0xFF)) | (((y + dy) & 0xFF) << 0));
+        dst->attr1 = (u16)((dst->attr1 & (~0x1FF)) | (((x + dx) & 0x1FF) << 0));
         if (o->sprite_mode != SUBSPRITES_ON_AND_IGNORE_PRIORITY)
             dst->attr2 = (u16)((dst->attr2 & (~ATTR2_PRIO_MASK)) | ATTR2_PRIO(subsprite->priority));
     } else {
