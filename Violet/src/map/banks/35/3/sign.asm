@@ -75,6 +75,15 @@ ow_script_sonnaufeld_clouds_yellow_lock:
     end
 
 show_shrine:
+    checkflag FLAG_ROTES_ZAHNRAD_PLACED
+    gotoif NOT_EQUAL locked
+    checkflag FLAG_BLAUES_ZAHNRAD_PLACED
+    gotoif NOT_EQUAL locked
+    checkflag FLAG_GELBES_ZAHNRAD_PLACED
+    gotoif NOT_EQUAL locked
+    checkflag FLAG_GRUENES_ZAHNRAD_PLACED
+    gotoif NOT_EQUAL locked
+
     fadescreen 1
     setvar 0x8004 0x1d
     setvar 0x8005 0xb

@@ -5,7 +5,7 @@
 			"person_cnt": 16,
 			"warp_cnt": 2,
 			"trigger_cnt": 1,
-			"signpost_cnt": 0,
+			"signpost_cnt": 1,
 			"persons": [
 				{
 					"target_index": "1",
@@ -143,7 +143,7 @@
 					"is_trainer": "0",
 					"alert_radius": "0",
 					"script": "0",
-					"flag": "0",
+					"flag": "FLAG_BLAUES_ZAHNRAD",
 					"value": {
 						"item": "0",
 						"species": "0",
@@ -491,7 +491,24 @@
 					"script": "ow_script_tafelberg_clouds_gear_trigger_0"
 				}
 			],
-			"signposts": []
+			"signposts": [
+				{
+					"x": "54",
+					"y": "24",
+					"level": "0",
+					"type": "SIGNPOST_SCRIPT",
+					"flag": "FLAG_BLAUES_ZAHNRAD",
+					"value": {
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": "0",
+							"chunk": "0"
+						},
+						"script": "ow_script_kuestenberg_clouds_blue_gear"
+					}
+				}
+			]
 		},
 		"levelscripts": "map_14_0_route_9_clouds_levelscripts",
 		"connections": {
