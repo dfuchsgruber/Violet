@@ -93,6 +93,12 @@ static int fishing_get_catching_bonus(fishing_state_t *state) {
         case ITEM_KOEDER:
             catching_bonus += 2;
             break;
+        case ITEM_LOTUS_KOEDER:
+            catching_bonus += 3;
+            break;
+        case ITEM_ELITEKOEDER:
+            catching_bonus += 4;
+            break;
         case ITEM_GOLDKOEDER:
             catching_bonus += 7;
             break;
@@ -184,6 +190,9 @@ static int fishing_get_bite_bonus(fishing_state_t *state) {
     bite_bonus += 2 * fishing_get_throw_rating(state->throw_bar_value);
     switch (state->bait) {
         case ITEM_KOEDER:
+        case ITEM_ELITEKOEDER:
+        case ITEM_LOTUS_KOEDER:
+        case ITEM_LEUCHTKOEDER:
             bite_bonus += 5;
             break;
         case ITEM_GOLDKOEDER:
@@ -561,13 +570,14 @@ static void fishing_pokemon_new(fishing_state_t *state) {
     pid_t pid = {.value = 0};
     pokemon_spawn_by_seed_algorithm(opponent_pokemon, entry->species, level, POKEMON_NEW_RANDOM_IVS,
         false, pid, false, 0, feature_generator_fishing, NULL);
+    pid.value = (u32)pokemon_get_attribute(opponent_pokemon, ATTRIBUTE_PID, NULL);
     if (state->bait == ITEM_LEUCHTKOEDER) {
-        pid.value = (u32)pokemon_get_attribute(opponent_pokemon, ATTRIBUTE_PID, NULL);
         pid.fields.is_shiny = true;
-        pokemon_set_attribute(opponent_pokemon, ATTRIBUTE_PID, &pid);
+    } else if (state->bait == ITEM_LOTUS_KOEDER && (rnd16() & 1)) {
+        pokemon_set_hidden_ability(&opponent_pokemon->box);
     }
+    pokemon_set_attribute(opponent_pokemon, ATTRIBUTE_PID, &pid);
     gp_stack_pop();
-    
 }
 
 static bool fishing_start_encounter(u8 self) {
@@ -748,12 +758,23 @@ static void fishing_catching_get_anchor_position(s16 *x, s16 *y) {
         *x = 120 + 16;
 }
 
+static int fishing_get_rating_bonus(fishing_state_t *state) {
+    switch (state->bait) {
+        default:
+            return 0;
+        case ITEM_ELITEKOEDER:
+            return rnd16() % 4;
+        case ITEM_GOLDKOEDER:
+            return rnd16() % 2;
+    }
+}
+
 static bool fishing_initialize_catching(u8 self) {
     fishing_proceed_and_align_oams(oams + player_state.oam_idx);
     fishing_state_t *state = (fishing_state_t*)big_callback_get_int(self, 0);
     switch (state->substate) {
         case 0:
-            state->fish_rating = (u8)(rnd16() % MAX_FISH_RATING);
+            state->fish_rating = (u8)MIN(MAX_FISH_RATING - 1, (rnd16() % MAX_FISH_RATING) + fishing_get_rating_bonus(state));
             DEBUG("Fish rated %d\n", state->fish_rating);
             state->catching_progress = CATCHING_DURATION / 4;
             state->substate++;

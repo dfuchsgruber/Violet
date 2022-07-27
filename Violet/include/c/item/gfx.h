@@ -901,4 +901,8 @@ extern LZ77COMPRESSED gfx_item_ep_bonbon_xlTiles;
 extern LZ77COMPRESSED gfx_item_ep_bonbon_xlPal;
 extern LZ77COMPRESSED gfx_item_faehigk_pflasterTiles;
 extern LZ77COMPRESSED gfx_item_faehigk_pflasterPal;
+extern LZ77COMPRESSED gfx_item_lotus_koederTiles;
+extern LZ77COMPRESSED gfx_item_lotus_koederPal;
+extern LZ77COMPRESSED gfx_item_elite_koederTiles;
+extern LZ77COMPRESSED gfx_item_elite_koederPal;
 #endif

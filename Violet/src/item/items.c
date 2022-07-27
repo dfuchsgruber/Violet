@@ -1763,6 +1763,14 @@ static u8 str_item_faehigk_pflaster_description[] = LANGDEP(
 	PSTRING("Ein Pflaster, das die reguläre\nFähigkeit eines Pokémon zu seiner\nversteckten Fähigkeit ändert."),
 	PSTRING("A plaster that changes the\nregular ability of a\nPokémon to its hidden ability.")
 );
+static u8 str_item_lotus_koeder_description[] = LANGDEP(
+	PSTRING("Erhöht beim Angeln die Wahr-\nscheinlichkeit Pokémon mit\nversteckter Fähigkeit zu finden."),
+	PSTRING("Increases the probablity to find\nPokémon with a hidden ability\nwhen fishing.")
+);
+static u8 str_item_elite_koeder_description[] = LANGDEP(
+	PSTRING("Beim Angeln mit diesem Köder\nbeißen stärkere und seltenere\nPokémon an."),
+	PSTRING("When fishing the Pokémon that\nbite are rarer and stronger.")
+);
 
 
 item items[] = {
@@ -8183,7 +8191,20 @@ item items[] = {
 		.index = ITEM_FAEHIGK_PFLASTER,
 		.description = str_item_faehigk_pflaster_description, .pocket = POCKET_ITEMS, .type=1,
 		.field_usage = item_ability_patch_field_effect,
-	}
+	},
+	[ITEM_LOTUS_KOEDER] = {
+		.name = LANGDEP(PSTRING("Lotus-Köder"), PSTRING("Lotus bait")),
+		.index = ITEM_LOTUS_KOEDER,
+		.description = str_item_lotus_koeder_description, .pocket = POCKET_BAIT, .type = 4,
+		.field_usage = item_field_function_print_string_can_not_be_used,
+	},
+	[ITEM_ELITEKOEDER] = {
+		.name = LANGDEP(PSTRING("Elite-Köder"), PSTRING("Elite bait")),
+		.index = ITEM_ELITEKOEDER,
+		.description = str_item_elite_koeder_description, .pocket = POCKET_BAIT, .type = 4,
+		.field_usage = item_field_function_print_string_can_not_be_used,
+	},
+
 };
 
 u16 item_idx_saniztize(u16 item_idx) {
