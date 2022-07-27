@@ -39,8 +39,8 @@
 				{
 					"target_index": "2",
 					"picture": "59",
-					"x": "28",
-					"y": "35",
+					"x": "29",
+					"y": "36",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {

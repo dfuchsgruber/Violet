@@ -882,7 +882,7 @@
 				},
 				{
 					"direction": "MAP_CONNECTION_WEST",
-					"displacement": "-2",
+					"displacement": "-3",
 					"bank": "22",
 					"map_idx": 0,
 					"field_A": 0,

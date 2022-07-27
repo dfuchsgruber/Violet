@@ -23,7 +23,7 @@ def get_habitat_index(rompath, symbolspath, projectpath):
     wild_pokemon_offset = symbols['wild_pokemon']
     wild_pokemon = datatype.from_data(rom, wild_pokemon_offset, project, [], [])
     for entry in wild_pokemon:
-        bank, map_idx = _canonical_form(entry['bank']), _canonical_form(entry['map_idx'])
+        bank, map_idx = _canonical_form(entry['bank']), _canonical_form(entry['map_idx']) 
         label, path, namespace = project.headers[bank][map_idx]
         for habitat in ('grass', 'water', 'other', 'odd_rod', 'good_rod', 'super_rod'):
             if 'rod' in habitat: # Parse rod separately

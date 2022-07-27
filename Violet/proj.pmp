@@ -996,13 +996,8 @@
 		},
 		"22": {
 			"0": [
-				"map_felisge_oednis_clouds",
-				"src/map/banks/22/0/map_felisge_oednis_clouds.pms",
-				"MAP_KAKTUSLABYRINTH"
-			],
-			"1": [
 				"map_tafelberg_clouds_west",
-				"src/map/banks/22/1/map_felsige_oednis_west_clouds.pms",
+				"src/map/banks/22/0/map_felisge_oednis_clouds.pms",
 				"MAP_KUESTENBERG"
 			],
 			"2": [
@@ -1966,10 +1961,6 @@
 			66,
 			"src/map/banks/27/0/map_footer_haweiland_clouds.pms"
 		],
-		"map_footer_felsige_oednis_west_clouds": [
-			67,
-			"src/map/banks/22/1/map_footer_felsige_oednis_west_clouds.pms"
-		],
 		"map_footer_route_2_cloud_ruins": [
 			68,
 			"src/map/banks/11/4/map_footer_route_2_cloud_ruins.pms"
@@ -2466,7 +2457,8 @@
 		"maptileset_cloud_route_2_snowy": "src/map/tileset/maptileset_cloud_route_2_snowy.pms",
 		"maptileset_cloud_cherry_tree": "src/map/tileset/maptileset_cloud_cherry_tree.pms",
 		"maptileset_cloud_anemonia": "src/map/tileset/maptileset_cloud_anemonia.pms",
-		"maptileset_cloud_kaskada_ruins": "src/map/tileset/maptileset_cloud_kaskada_ruins.pms"
+		"maptileset_cloud_kaskada_ruins": "src/map/tileset/maptileset_cloud_kaskada_ruins.pms",
+		"maptileset_cloud_old_house": "src\\map\\tileset\\maptileset_cloud_old_house.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2552,6 +2544,7 @@
 		"gfx_maptileset_clouds_route_2_snowyTiles": "asset/gfx/tileset/gfx_maptileset_clouds_route_2_snowy.png",
 		"gfx_maptileset_cloud_cherry_treeTiles": "asset/gfx/tileset/gfx_maptileset_cloud_cherry_tree.png",
 		"gfx_maptileset_cloud_anemoniaTiles": "asset/gfx/tileset/gfx_maptileset_cloud_anemonia.png",
-		"gfx_maptileset_cloud_ruins_kaskadaTiles": "asset/gfx/tileset/gfx_maptileset_cloud_ruins_kaskada.png"
+		"gfx_maptileset_cloud_ruins_kaskadaTiles": "asset/gfx/tileset/gfx_maptileset_cloud_ruins_kaskada.png",
+		"gfx_maptileset_clouds_old_houseTiles": "asset\\gfx\\tileset\\gfx_maptileset_clouds_old_house.png"
 	}
 }

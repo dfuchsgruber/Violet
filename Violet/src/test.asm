@@ -27,6 +27,9 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	warp 22 0 0xff 0x20 0xe
+	waitstate
+	end
 	trainerbattlestd 0 0x300 0 str_beforea str_beforeb
 	end
 	setvar VAR_TAFELBERG_CLOUDS_GEAR_SCRIPT 0

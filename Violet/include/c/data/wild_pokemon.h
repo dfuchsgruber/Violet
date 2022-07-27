@@ -3967,10 +3967,6 @@ wild_pokemon_data wild_pokemon[] = {
 		.grass = &wild_pokemon_felsige_oednis_clouds_grass,
 	},
 	{
-		.bank = 22, .map = 1,
-		.grass = &wild_pokemon_felsige_oednis_clouds_grass,
-	},
-	{
 		.bank = 7, .map = 0,
 		.grass = &wild_pokemon_silvania_clouds_grass,
 	},
