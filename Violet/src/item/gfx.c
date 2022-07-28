@@ -444,6 +444,7 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_FAEHIGK_PFLASTER] = {.gfx = gfx_item_faehigk_pflasterTiles, .pal = gfx_item_faehigk_pflasterPal},
     [ITEM_LOTUS_KOEDER] = {.gfx = gfx_item_lotus_koederTiles, .pal = gfx_item_lotus_koederPal},
     [ITEM_ELITEKOEDER] = {.gfx = gfx_item_elite_koederTiles, .pal = gfx_item_elite_koederPal},
+    [ITEM_RUNENBAND] = {.gfx = gfx_item_runenbandTiles, .pal = gfx_item_runenbandPal},
 };
 
 const u8 *item_get_resource(u16 item_idx, u8 get_palette) {

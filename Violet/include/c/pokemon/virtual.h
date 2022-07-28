@@ -625,4 +625,13 @@ u8 box_pokemon_get_gender(box_pokemon *p);
  */
 u8 pokemon_get_gender(pokemon *p);
 
+/**
+ * @brief Counts the occurences of an unown letter in a string
+ * 
+ * @param str the string to check (0xFF terminated)
+ * @param unown_letter the unown letter
+ * @return int how many occurences of the unown letter are in the string `str`
+ */
+int string_count_unown_letters(u8 *str, int unown_letter);
+
 #endif /* INCLUDE_C_POKEMON_VIRTUAL_H_ */

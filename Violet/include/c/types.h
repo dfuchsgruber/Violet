@@ -127,4 +127,13 @@ static inline FIXED INT_TO_FIXED(int a) {
 
 extern u32 int_bitmasks[32];
 
+/**
+ * @brief Counts the number of zero bits that are trailing (i.e. the size of the largest zero sequence in `i` starting at the lsb)
+ * 
+ * @param i the number to check
+ * @return u8 how many trailing zeros are in `i`
+ */
+u8 count_trailing_zero_bits(int i);
+
+
 #endif

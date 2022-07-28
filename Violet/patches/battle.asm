@@ -842,3 +842,14 @@ end_turn_wrap_no_effect:
 	ldr r1, =battler_oam_clone_and_set_blend | 1
 	bx r1
 	.pool
+
+.org 0x08019258
+    ldr r0, =battle_attack_canceler_try_cancel_by_unable_to_move | 1
+	bx r0
+	.pool
+	
+.org 0x080172d8
+    ldr r1, =battler_was_unable_to_use_move | 1
+	bx r1
+	.pool
+	

@@ -2,10 +2,10 @@
 	"data": {
 		"footer": "map_footer_felsige_oednis_clouds",
 		"events": {
-			"person_cnt": 12,
+			"person_cnt": 13,
 			"warp_cnt": 0,
 			"trigger_cnt": 0,
-			"signpost_cnt": 0,
+			"signpost_cnt": 2,
 			"persons": [
 				{
 					"target_index": "1",
@@ -123,233 +123,294 @@
 					}
 				},
 				{
-					"target_index": 0,
-					"picture": 0,
+					"target_index": "5",
+					"picture": "237",
 					"script_std_and_in_connection": {
-						"script_std": 0,
-						"in_connection": 0
+						"script_std": "PERSON_BERRY_TREE",
+						"in_connection": "0"
 					},
-					"argument": 0,
+					"argument": "0",
 					"x": "17",
 					"y": "23",
-					"level": 0,
-					"behaviour": 0,
+					"level": "0",
+					"behaviour": "0",
 					"behaviour_range": {
-						"x": 0,
-						"y": 0
+						"x": "0",
+						"y": "0"
 					},
-					"field_B": 0,
-					"is_trainer": 0,
-					"alert_radius": 0,
-					"script": 0,
-					"flag": 0,
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
 					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": 0
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "54",
+						"type": "0"
 					}
 				},
 				{
-					"target_index": 0,
-					"picture": 0,
+					"target_index": "6",
+					"picture": "237",
 					"script_std_and_in_connection": {
-						"script_std": 0,
-						"in_connection": 0
+						"script_std": "PERSON_BERRY_TREE",
+						"in_connection": "0"
 					},
-					"argument": 0,
+					"argument": "0",
 					"x": "18",
 					"y": "23",
-					"level": 0,
-					"behaviour": 0,
+					"level": "0",
+					"behaviour": "0",
 					"behaviour_range": {
-						"x": 0,
-						"y": 0
+						"x": "0",
+						"y": "0"
 					},
-					"field_B": 0,
-					"is_trainer": 0,
-					"alert_radius": 0,
-					"script": 0,
-					"flag": 0,
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
 					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": 0
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "55",
+						"type": "0"
 					}
 				},
 				{
-					"target_index": 0,
-					"picture": 0,
+					"target_index": "7",
+					"picture": "57",
 					"script_std_and_in_connection": {
-						"script_std": 0,
-						"in_connection": 0
+						"script_std": "0",
+						"in_connection": "0"
 					},
-					"argument": 0,
+					"argument": "0",
 					"x": "29",
-					"y": "12",
-					"level": 0,
-					"behaviour": 0,
+					"y": "13",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
-						"x": 0,
-						"y": 0
+						"x": "0",
+						"y": "0"
 					},
-					"field_B": 0,
-					"is_trainer": 0,
-					"alert_radius": 0,
-					"script": 0,
-					"flag": 0,
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "ow_script_tafelberg_clouds_west_bait_gift",
+					"flag": "0",
 					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": 0
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
 					}
 				},
 				{
-					"target_index": 0,
-					"picture": 0,
+					"target_index": "8",
+					"picture": "238",
 					"script_std_and_in_connection": {
-						"script_std": 0,
-						"in_connection": 0
+						"script_std": "PERSON_AGGRESSIVE_POKEMON",
+						"in_connection": "0"
 					},
-					"argument": 0,
+					"argument": "36",
 					"x": "30",
 					"y": "21",
-					"level": 0,
-					"behaviour": 0,
+					"level": "0",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
-						"x": 0,
-						"y": 0
+						"x": "0",
+						"y": "0"
 					},
-					"field_B": 0,
-					"is_trainer": 0,
-					"alert_radius": 0,
-					"script": 0,
-					"flag": 0,
+					"field_B": "0",
+					"is_trainer": "1",
+					"alert_radius": "4",
+					"script": "0",
+					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_75_PERCENT",
 					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": 0
+						"item": "0",
+						"species": "POKEMON_MORLORD",
+						"berry_tree_idx": "0",
+						"type": "0"
 					}
 				},
 				{
-					"target_index": 0,
-					"picture": 0,
+					"target_index": "9",
+					"picture": "92",
 					"script_std_and_in_connection": {
-						"script_std": 0,
-						"in_connection": 0
+						"script_std": "PERSON_ITEM",
+						"in_connection": "0"
 					},
-					"argument": 0,
+					"argument": "0",
 					"x": "30",
 					"y": "28",
-					"level": 0,
-					"behaviour": 0,
+					"level": "0",
+					"behaviour": "0",
 					"behaviour_range": {
-						"x": 0,
-						"y": 0
+						"x": "0",
+						"y": "0"
 					},
-					"field_B": 0,
-					"is_trainer": 0,
-					"alert_radius": 0,
-					"script": 0,
-					"flag": 0,
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "FLAG_TAFELBERG_CLOUDS_ITEM_0",
 					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": 0
+						"item": "ITEM_LICHTLEHM",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
 					}
 				},
 				{
-					"target_index": 0,
-					"picture": 0,
+					"target_index": "10",
+					"picture": "95",
 					"script_std_and_in_connection": {
-						"script_std": 0,
-						"in_connection": 0
+						"script_std": "0",
+						"in_connection": "0"
 					},
-					"argument": 0,
+					"argument": "0",
 					"x": "32",
 					"y": "35",
-					"level": 0,
-					"behaviour": 0,
+					"level": "0",
+					"behaviour": "0",
 					"behaviour_range": {
-						"x": 0,
-						"y": 0
+						"x": "0",
+						"y": "0"
 					},
-					"field_B": 0,
-					"is_trainer": 0,
-					"alert_radius": 0,
-					"script": 0,
-					"flag": 0,
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "ow_script_cut_tree",
+					"flag": "1",
 					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": 0
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
 					}
 				},
 				{
-					"target_index": 0,
-					"picture": 0,
+					"target_index": "11",
+					"picture": "26",
 					"script_std_and_in_connection": {
-						"script_std": 0,
-						"in_connection": 0
+						"script_std": "0",
+						"in_connection": "0"
 					},
-					"argument": 0,
+					"argument": "0",
 					"x": "34",
 					"y": "6",
-					"level": 0,
-					"behaviour": 0,
+					"level": "0",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
-						"x": 0,
-						"y": 0
+						"x": "0",
+						"y": "0"
 					},
-					"field_B": 0,
-					"is_trainer": 0,
-					"alert_radius": 0,
-					"script": 0,
-					"flag": 0,
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "ow_script_feslige_oednis_clouds_person_2",
+					"flag": "0",
 					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": 0
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
 					}
 				},
 				{
-					"target_index": 0,
-					"picture": 0,
+					"target_index": "0",
+					"picture": "0",
 					"script_std_and_in_connection": {
-						"script_std": 0,
-						"in_connection": 0
+						"script_std": "0",
+						"in_connection": "0"
 					},
-					"argument": 0,
+					"argument": "0",
 					"x": "36",
 					"y": "15",
-					"level": 0,
-					"behaviour": 0,
+					"level": "0",
+					"behaviour": "0",
 					"behaviour_range": {
-						"x": 0,
-						"y": 0
+						"x": "0",
+						"y": "0"
 					},
-					"field_B": 0,
-					"is_trainer": 0,
-					"alert_radius": 0,
-					"script": 0,
-					"flag": 0,
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "FLAG_TAFELBERG_CLOUDS_CRYPTICS",
 					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": 0
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "13",
+					"picture": "92",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_ITEM_MULTIPLE_COPIES",
+						"in_connection": "0"
+					},
+					"argument": "5",
+					"x": "44",
+					"y": "23",
+					"level": "0",
+					"behaviour": "0",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "FLAG_TAFELBERG_CLOUDS_ITEM_1",
+					"value": {
+						"item": "ITEM_WOLKENBALL",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
 					}
 				}
 			],
 			"warps": [],
 			"triggers": [],
-			"signposts": []
+			"signposts": [
+				{
+					"x": "38",
+					"y": "15",
+					"level": "0",
+					"type": "SIGNPOST_SCRIPT_NORTH",
+					"flag": "0",
+					"value": {
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": "0",
+							"chunk": "0"
+						},
+						"script": "ow_script_tafelberg_clouds_west_sign_cryiptic_base"
+					}
+				},
+				{
+					"x": "44",
+					"y": "27",
+					"level": "0",
+					"type": "SIGNPOST_HIDDEN_ITEM",
+					"flag": "0",
+					"value": {
+						"item": {
+							"item": "ITEM_KRAFTWURZEL",
+							"flag": "117",
+							"amount": "3",
+							"chunk": "0"
+						},
+						"script": "0"
+					}
+				}
+			]
 		},
 		"levelscripts": "lscr_route_2_east_clouds",
 		"connections": {

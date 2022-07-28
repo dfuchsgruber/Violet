@@ -122,6 +122,19 @@ bsc_attack_disabled_by_assault_vest:
     printselectionstring 0x1c7
 	endselectionscript
 
+.global bsc_attack_disabled_by_runenband
+.global bsc_move_used_disabled_by_runenband
+
+bsc_attack_disabled_by_runenband:
+    printselectionstring 0x1cc
+	endselectionscript
+
+bsc_move_used_disabled_by_runenband:
+    printstring 0x1cd
+    waitmessage 0x40
+    goto battlescript_attack_end
+
+
 .global bsc_weakness_policy
 
 bsc_weakness_policy:

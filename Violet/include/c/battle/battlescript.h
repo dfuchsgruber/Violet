@@ -58,7 +58,7 @@ extern battlescript_global_stru bsc_global;
 
 typedef struct  {
     u32 pain_split_damage;
-    u32 bide_damage;
+    int bide_damage;
     u8 multihit_string[6];
     u8 damage_multiplier;
     u8 charging_move_string_idx;

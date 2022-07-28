@@ -6649,6 +6649,14 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = trainer_party_x201_kuestenberg_clouds_trainer_1
     },
+    [0x202] = {
+      .trainerclass = TRAINERCLASS_KRYPTIKER, .sprite = 28, .encounter = 0, .gender = 0,
+      .name = LANGDEP( PSTRING("Matze"), PSTRING("Matze") ),
+      .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+      .party = trainer_party_x202_tafelberg_clouds_west_cryptic_0,
+      .pokemon_cnt = ARRAY_COUNT(trainer_party_x202_tafelberg_clouds_west_cryptic_0),
+      .battle_state = BATTLE_DOUBLE,
+    },
 
     [0x300] = {
        

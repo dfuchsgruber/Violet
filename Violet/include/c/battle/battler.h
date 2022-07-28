@@ -58,7 +58,7 @@ typedef struct battler_status{
     u32 love_immobility : 1;
     u32 used_disabled_move : 1;
     u32 used_taunted_move : 1;
-    u32 bit_10 : 1;
+    u32 used_move_blocked_by_glyphs : 1;
     u32 flinched : 1;
     u32 not_first_strike : 1;
 	int physical_damage;
@@ -124,6 +124,11 @@ typedef struct battler_damage_taken_stru {
 	u8 physical_damage_battler;
 	u8 special_damage_battler;
 } battler_damage_taken_stru;
+
+// The damage taken by each battler accumulated over all moves
+extern int battler_damage_taken_accumulated[4];
+// Which battler last caused damage in `battler_damage_taken_accumulated` ( will be the target for bide)
+extern u8 battler_damage_taken_accumulated_caused_by_battler_idx[4];
 
 typedef struct {
     u8 reflect_turns;
@@ -406,5 +411,20 @@ void battler_get_hold_item_effect_and_parameter(u8 battler_idx, u8 *hold_effect,
  * @param battler_idx the battler to cancel multiturn moves of
  **/
 void battler_cancel_multiturn_moves(u8 battler_idx);
+
+/**
+ * @brief Calcualtes the base damage of a move
+ * 
+ * @param attacker the attacking battler
+ * @param defender the defending battler
+ * @param move the move to used
+ * @param sideStatus status effects for the defending battler side (reflect, light screen etc)
+ * @param powerOverride override the power of the move (if set to 0, the base power of `move` is used)
+ * @param typeOverride override the type of the move (if set to 0, the type of `move` is used)
+ * @param battlerIdAtk the index of the attacking battler
+ * @param battlerIdDef the index of the defending battler
+ * @return int the base power (before type effectiveness etc.)
+ */
+int battle_base_damage_calculate(battler *attacker, battler *defender, u32 move, u16 sideStatus, u16 powerOverride, u8 typeOverride, u8 battlerIdAtk, u8 battlerIdDef);
 
 #endif /* INCLUDE_C_BATTLE_BATTLER_H_ */

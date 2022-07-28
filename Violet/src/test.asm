@@ -27,12 +27,10 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
-	additem ITEM_KOEDER 1
-	additem ITEM_GOLDKOEDER 1
-	additem ITEM_LEUCHTKOEDER 1
-	additem ITEM_LOTUS_KOEDER 1
-	additem ITEM_ELITEKOEDER 1
+	settrainerflag 0x202
+	trainerbattlestd 0x0 0x202 0 str_beforeb str_afterb
 	end
+
 	warp 22 0 0xff 0x20 0xe
 	waitstate
 	end

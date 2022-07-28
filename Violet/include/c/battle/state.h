@@ -566,4 +566,13 @@ void battle_record_ability(u8 battler_idx, u8 ability);
  **/
 void battle_record_item_effect(u8 battler_idx, u8 hold_effect);
 
+/**
+ * @brief Chgecks if a sleeping battler is woken up by another battler using uproar. If so, the battler is stored into `battle_scripting.battler_idx`
+ * 
+ * @param battler_idx the battler to check
+ * @return true 
+ * @return false 
+ */
+bool battler_is_woken_up_by_uproar(u8 battler_idx);
+
 #endif /* INCLUDE_C_BATTLE_STATE_H_ */

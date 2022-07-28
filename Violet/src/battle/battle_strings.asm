@@ -451,6 +451,8 @@ bsc_strings:
 .word str_battle_x1C9
 .word str_battle_x1CA
 .word str_battle_x1CB
+.word str_battle_x1CC
+.word str_battle_x1CD
 
 @ // Define the strings
 
@@ -2992,6 +2994,12 @@ bsc_strings:
 	str_battle_x1CB:
 		.string "BSC_DEF_ABILITY von\nBSC_DEF_NAME_WITH_PREFIX schützt es vor\nBSC_SCR_ACTIVE_ABILITY!"
 
+	str_battle_x1CC:
+		.string "BSC_LAST_ITEM von\nBSC_DEF_NAME_WITH_PREFIX verhindert\lden Einsatz von Angriffen, die\lein BSC_COPY_BUFFER0 im Namen enthalten.\p"
+
+	str_battle_x1CD:
+		.string "BSC_LAST_ITEM von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX verhindert\lden Einsatz von Angriffen, die\lein BSC_COPY_BUFFER0 im Namen enthalten.\p"
+
 .elseif LANG_EN
 	.global str_battle_xc
 
@@ -5132,6 +5140,12 @@ bsc_strings:
 
 	str_battle_x1CB:
 		.string "BSC_DEF_NAME_WITH_PREFIX's\nBSC_DEF_ABILITY protects it from es \nBSC_SCR_ACTIVE_ABILITY!"
+
+	str_battle_x1CC:
+		.string "BSC_LAST_ITEM of\nBSC_DEF_NAME_WITH_PREFIX prevents\lattacks that contain BSC_COPY_BUFFER0\nin their names."
+
+	str_battle_x1CD:
+		.string "BSC_LAST_ITEM of\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX prevents\lattacks that contain BSC_COPY_BUFFER0\nin their names."
 .endif
 
 

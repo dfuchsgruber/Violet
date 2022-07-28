@@ -127,7 +127,7 @@ later_4:
     faceplayer
     loadpointer 0 str_reward
     callstd MSG_KEEPOPEN
-    copyvarifnotzero 0x8000 ITEM_SONDERBONBON
+    copyvarifnotzero 0x8000 ITEM_GOLDBONBON
     copyvarifnotzero 0x8001 1
     callstd ITEM_OBTAIN
     compare LASTRESULT 0x0

@@ -1771,7 +1771,10 @@ static u8 str_item_elite_koeder_description[] = LANGDEP(
 	PSTRING("Beim Angeln mit diesem Köder\nbeißen stärkere und seltenere\nPokémon an."),
 	PSTRING("When fishing the Pokémon that\nbite are rarer and stronger.")
 );
-
+static u8 str_item_runenband_description[] = LANGDEP(
+	PSTRING("Verhindert, dass Gegner Attacken\neinsetzten, die den Icognito-\nBuchstaben des Trägers enthalten."),
+	PSTRING("Prevents opponents from using\nmoves that contain the Unown\nletter of its holder.")
+);
 
 item items[] = {
 	{
@@ -8204,7 +8207,13 @@ item items[] = {
 		.description = str_item_elite_koeder_description, .pocket = POCKET_BAIT, .type = 4,
 		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
-
+	[ITEM_RUNENBAND] = {
+		.name = LANGDEP(PSTRING("Runenband"), PSTRING("Glyph Scarf")),
+		.index = ITEM_RUNENBAND,
+		.description = str_item_runenband_description, .pocket = POCKET_ITEMS, .type = 4,
+		.holding_effect_id = HOLD_EFFECT_LIMIT_MOVES_BY_UNOWN_LETTER,
+		.field_usage = item_field_function_print_string_can_not_be_used,
+	}
 };
 
 u16 item_idx_saniztize(u16 item_idx) {

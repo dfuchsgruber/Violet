@@ -905,4 +905,6 @@ extern LZ77COMPRESSED gfx_item_lotus_koederTiles;
 extern LZ77COMPRESSED gfx_item_lotus_koederPal;
 extern LZ77COMPRESSED gfx_item_elite_koederTiles;
 extern LZ77COMPRESSED gfx_item_elite_koederPal;
+extern LZ77COMPRESSED gfx_item_runenbandTiles;
+extern LZ77COMPRESSED gfx_item_runenbandPal;
 #endif
