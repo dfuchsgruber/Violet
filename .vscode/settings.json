@@ -20,7 +20,8 @@
         "system_error": "c",
         "thread": "c",
         "map": "c",
-        "random": "c"
+        "random": "c",
+        "typeindex": "c"
     },
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,

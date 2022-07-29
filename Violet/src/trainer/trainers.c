@@ -6655,7 +6655,27 @@ trainer trainers[TRAINER_CNT] = {
       .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
       .party = trainer_party_x202_tafelberg_clouds_west_cryptic_0,
       .pokemon_cnt = ARRAY_COUNT(trainer_party_x202_tafelberg_clouds_west_cryptic_0),
-      .battle_state = BATTLE_DOUBLE,
+    },
+    [0x203] = {
+      .trainerclass = TRAINERCLASS_KRYPTIKER, .sprite = 28, .encounter = 0, .gender = 0,
+      .name = LANGDEP( PSTRING("Abadin"), PSTRING("Abadin") ),
+      .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+      .party = trainer_party_x203_tafelberg_clouds_west_cryptic_1,
+      .pokemon_cnt = ARRAY_COUNT(trainer_party_x203_tafelberg_clouds_west_cryptic_1),
+    },
+    [0x204] = {
+      .trainerclass = TRAINERCLASS_KRYPTIKER, .sprite = 28, .encounter = 0, .gender = 0,
+      .name = LANGDEP( PSTRING("Edon"), PSTRING("Edon") ),
+      .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+      .party = trainer_party_x204_tafelberg_clouds_west_cryptic_2,
+      .pokemon_cnt = ARRAY_COUNT(trainer_party_x204_tafelberg_clouds_west_cryptic_2),
+    },
+    [0x205] = {
+      .trainerclass = TRAINERCLASS_KRYPTIKER, .sprite = 28, .encounter = 0, .gender = 0,
+      .name = LANGDEP( PSTRING("Einar"), PSTRING("Einar") ),
+      .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+      .party = trainer_party_x205_tafelberg_clouds_west_cryptic_3,
+      .pokemon_cnt = ARRAY_COUNT(trainer_party_x205_tafelberg_clouds_west_cryptic_3),
     },
 
     [0x300] = {

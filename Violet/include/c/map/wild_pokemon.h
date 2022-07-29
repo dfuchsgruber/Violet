@@ -57,6 +57,8 @@ u8 *wild_pokemon_get_current_unown_letters();
 u8 *wild_pokemon_get_unown_letters_of_header(u8 bank, u8 map_idx);
 
 #define UNOWN_LETTER(char) (char - 'A')
+#define UNOWN_LETTER_EXCLAMATION_MARK 26
+#define UNOWN_LETTER_QUESTION_MARK 27
 
 u8 wild_pokemon_disabled;
 

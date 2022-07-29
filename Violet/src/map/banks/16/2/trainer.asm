@@ -90,7 +90,7 @@ ow_script_route_4_south_cave_revo:
 revo_later:
     loadpointer 0 str_revo_defeated
     callstd MSG_KEEPOPEN
-    copyvarifnotzero 0x8000 ITEM_TM10
+    copyvarifnotzero 0x8000 ITEM_TM42
     copyvarifnotzero 0x8001 1
     callstd ITEM_OBTAIN
     compare LASTRESULT 0x0

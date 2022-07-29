@@ -1034,6 +1034,11 @@
 				"map_desert_blue_tent",
 				"src/map/banks/22/8/map_desert_blue_tent.pms",
 				"MAP_DESERT_VILLAGE"
+			],
+			"1": [
+				"map_tafelberg_clouds_west_cryptic_house",
+				"src/map/banks/22/1/map_tafelberg_clouds_west_cryptic_house.pms",
+				"MAP_KUESTENBERG"
 			]
 		},
 		"23": {
@@ -2458,7 +2463,7 @@
 		"maptileset_cloud_cherry_tree": "src/map/tileset/maptileset_cloud_cherry_tree.pms",
 		"maptileset_cloud_anemonia": "src/map/tileset/maptileset_cloud_anemonia.pms",
 		"maptileset_cloud_kaskada_ruins": "src/map/tileset/maptileset_cloud_kaskada_ruins.pms",
-		"maptileset_cloud_old_house": "src\\map\\tileset\\maptileset_cloud_old_house.pms"
+		"maptileset_cloud_old_house": "src/map/tileset/maptileset_cloud_old_house.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2545,6 +2550,6 @@
 		"gfx_maptileset_cloud_cherry_treeTiles": "asset/gfx/tileset/gfx_maptileset_cloud_cherry_tree.png",
 		"gfx_maptileset_cloud_anemoniaTiles": "asset/gfx/tileset/gfx_maptileset_cloud_anemonia.png",
 		"gfx_maptileset_cloud_ruins_kaskadaTiles": "asset/gfx/tileset/gfx_maptileset_cloud_ruins_kaskada.png",
-		"gfx_maptileset_clouds_old_houseTiles": "asset\\gfx\\tileset\\gfx_maptileset_clouds_old_house.png"
+		"gfx_maptileset_clouds_old_houseTiles": "asset/gfx/tileset/gfx_maptileset_clouds_old_house.png"
 	}
 }

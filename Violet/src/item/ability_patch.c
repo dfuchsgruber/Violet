@@ -8,6 +8,7 @@
 #include "music.h"
 #include "callbacks.h"
 #include "language.h"
+#include "pokemon/basestat.h"
 
 static u8 str_success[] = LANGDEP(PSTRING("Die Fähigkeit von BUFFER_2\nwurde zu BUFFER_1.PAUSE_UNTIL_PRESS"), PSTRING("The ability of BUFFER_2\nwas changed to BUFFER_1.PAUSE_UNTIL_PRESS"));
 
@@ -29,6 +30,7 @@ static void wait_sound_and_print_success_text(u8 self) {
 
 static void item_callback_ability_patch(u8 self, void (*exit_continuation)(u8)) {
     u8 party_idx = pokemon_party_menu_current_index;
+    // u16 species = (u16)pokemon_get_attribute(player_pokemon + party_idx, ATTRIBUTE_SPECIES, NULL);
     if (pokemon_has_hidden_ability(&player_pokemon[party_idx].box)) {
         pokemon_party_menu_use_return_callback = false;
         pokemon_party_menu_init_text_rendering(str_item_has_no_effect, self);

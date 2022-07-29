@@ -6,6 +6,7 @@
 #include "constants/attacks.h"
 #include "constants/species.h"
 #include "constants/natures.h"
+#include "constants/pokemon_types.h"
 #include "trainer/party.h"
 #include "trainer/nickname.h"
 
@@ -2753,10 +2754,41 @@ trainer_pokemon trainer_party_x201_kuestenberg_clouds_trainer_1[] = {
 };
 
 trainer_pokemon trainer_party_x202_tafelberg_clouds_west_cryptic_0[] = {
-	{.level = 5, .species = POKEMON_ICOGNITO, .unown_letter_set = true, .pid = {.fields = {.unown_letter = UNOWN_LETTER('X')}}, .held_item = ITEM_RUNENBAND},
-	{.level = 5, .species = POKEMON_ICOGNITO, .unown_letter_set = true, .pid = {.fields = {.unown_letter = UNOWN_LETTER('X')}}, .held_item = ITEM_RUNENBAND},
-	{.level = 5, .species = POKEMON_ICOGNITO, .unown_letter_set = true, .pid = {.fields = {.unown_letter = UNOWN_LETTER('Z')}}, .held_item = ITEM_RUNENBAND},
+	{.level = 37, .species = POKEMON_ICOGNITO, .pid = {.fields = {.unown_letter = UNOWN_LETTER('W'), .hidden_power_strength = 7, .hidden_power_type = TYPE_EIS}}, 
+		.held_item = ITEM_RUNENBAND, .hidden_power_type_set = true, .hidden_power_strength_set = true, .unown_letter_set = true},
+	{.level = 37, .species = POKEMON_ICOGNITO, .pid = {.fields = {.unown_letter = UNOWN_LETTER('I'), .hidden_power_strength = 7, .hidden_power_type = TYPE_BODEN}}, 
+		.held_item = ITEM_RUNENBAND, .hidden_power_type_set = true, .hidden_power_strength_set = true, .unown_letter_set = true},
+	{.level = 37, .species = POKEMON_ICOGNITO, .pid = {.fields = {.unown_letter = UNOWN_LETTER('R'), .hidden_power_strength = 7, .hidden_power_type = TYPE_UNLICHT}}, 
+		.held_item = ITEM_RUNENBAND, .hidden_power_type_set = true, .hidden_power_strength_set = true, .unown_letter_set = true},
 };
 
+trainer_pokemon trainer_party_x203_tafelberg_clouds_west_cryptic_1[] = {
+	{.level = 35, .species = POKEMON_ICOGNITO, .pid = {.fields = {.unown_letter = UNOWN_LETTER('S'), .hidden_power_strength = 7, .hidden_power_type = TYPE_FEUER}}, 
+		.held_item = ITEM_RUNENBAND, .hidden_power_type_set = true, .hidden_power_strength_set = true, .unown_letter_set = true},
+	{.level = 35, .species = POKEMON_ICOGNITO, .pid = {.fields = {.unown_letter = UNOWN_LETTER('I'), .hidden_power_strength = 7, .hidden_power_type = TYPE_WASSER}}, 
+		.held_item = ITEM_RUNENBAND, .hidden_power_type_set = true, .hidden_power_strength_set = true, .unown_letter_set = true},
+	{.level = 35, .species = POKEMON_ICOGNITO, .pid = {.fields = {.unown_letter = UNOWN_LETTER('N'), .hidden_power_strength = 7, .hidden_power_type = TYPE_FEE}}, 
+		.held_item = ITEM_RUNENBAND, .hidden_power_type_set = true, .hidden_power_strength_set = true, .unown_letter_set = true},
+	{.level = 35, .species = POKEMON_ICOGNITO, .pid = {.fields = {.unown_letter = UNOWN_LETTER('D'), .hidden_power_strength = 7, .hidden_power_type = TYPE_PFLANZE}}, 
+		.held_item = ITEM_RUNENBAND, .hidden_power_type_set = true, .hidden_power_strength_set = true, .unown_letter_set = true},
+};
+
+trainer_pokemon trainer_party_x204_tafelberg_clouds_west_cryptic_2[] = {
+	{.level = 34, .species = POKEMON_ICOGNITO, .pid = {.fields = {.unown_letter = UNOWN_LETTER('S'), .hidden_power_strength = 7, .hidden_power_type = TYPE_GEIST}}, 
+		.held_item = ITEM_RUNENBAND, .hidden_power_type_set = true, .hidden_power_strength_set = true, .unown_letter_set = true},
+	{.level = 34, .species = POKEMON_ICOGNITO, .pid = {.fields = {.unown_letter = UNOWN_LETTER('T'), .hidden_power_strength = 7, .hidden_power_type = TYPE_STAHL}}, 
+		.held_item = ITEM_RUNENBAND, .hidden_power_type_set = true, .hidden_power_strength_set = true, .unown_letter_set = true},
+	{.level = 34, .species = POKEMON_ICOGNITO, .pid = {.fields = {.unown_letter = UNOWN_LETTER('A'), .hidden_power_strength = 7, .hidden_power_type = TYPE_GESTEIN}}, 
+		.held_item = ITEM_RUNENBAND, .hidden_power_type_set = true, .hidden_power_strength_set = true, .unown_letter_set = true},
+	{.level = 34, .species = POKEMON_ICOGNITO, .pid = {.fields = {.unown_letter = UNOWN_LETTER('R'), .hidden_power_strength = 7, .hidden_power_type = TYPE_PSYCHO}}, 
+		.held_item = ITEM_RUNENBAND, .hidden_power_type_set = true, .hidden_power_strength_set = true, .unown_letter_set = true},
+	{.level = 34, .species = POKEMON_ICOGNITO, .pid = {.fields = {.unown_letter = UNOWN_LETTER('K'), .hidden_power_strength = 7, .hidden_power_type = TYPE_KAEFER}}, 
+		.held_item = ITEM_RUNENBAND, .hidden_power_type_set = true, .hidden_power_strength_set = true, .unown_letter_set = true},
+};
+
+trainer_pokemon trainer_party_x205_tafelberg_clouds_west_cryptic_3[] = {
+	{.level = 40, .species = POKEMON_ICOGNITO, .pid = {.fields = {.unown_letter = UNOWN_LETTER_EXCLAMATION_MARK, .hidden_power_strength = 7, .hidden_power_type = TYPE_DRACHE}}, 
+		.held_item = ITEM_RUNENBAND, .hidden_power_type_set = true, .hidden_power_strength_set = true, .unown_letter_set = true},
+};
 
 #endif

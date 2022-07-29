@@ -27,9 +27,6 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
-	settrainerflag 0x202
-	trainerbattlestd 0x0 0x202 0 str_beforeb str_afterb
-	end
 
 	warp 22 0 0xff 0x20 0xe
 	waitstate

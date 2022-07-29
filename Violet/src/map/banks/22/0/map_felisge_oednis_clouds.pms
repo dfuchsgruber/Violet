@@ -2,8 +2,8 @@
 	"data": {
 		"footer": "map_footer_felsige_oednis_clouds",
 		"events": {
-			"person_cnt": 13,
-			"warp_cnt": 0,
+			"person_cnt": 16,
+			"warp_cnt": 1,
 			"trigger_cnt": 0,
 			"signpost_cnt": 2,
 			"persons": [
@@ -319,8 +319,8 @@
 					}
 				},
 				{
-					"target_index": "0",
-					"picture": "0",
+					"target_index": "12",
+					"picture": "52",
 					"script_std_and_in_connection": {
 						"script_std": "0",
 						"in_connection": "0"
@@ -337,7 +337,7 @@
 					"field_B": "0",
 					"is_trainer": "0",
 					"alert_radius": "0",
-					"script": "0",
+					"script": "ow_script_tafelberg_clouds_west_cryptics",
 					"flag": "FLAG_TAFELBERG_CLOUDS_CRYPTICS",
 					"value": {
 						"item": "0",
@@ -373,16 +373,109 @@
 						"berry_tree_idx": "0",
 						"type": "0"
 					}
+				},
+				{
+					"target_index": "14",
+					"picture": "238",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "39",
+					"y": "5",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "POKEMON_STARALILI",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "15",
+					"picture": "238",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "17",
+					"y": "31",
+					"level": "0",
+					"behaviour": "0",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "POKEMON_FELINO",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "16",
+					"picture": "238",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "4",
+					"y": "34",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_WALK_DOWN_AND_UP",
+					"behaviour_range": {
+						"x": "0",
+						"y": "7"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "POKEMON_SCHWALBOSS",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
 				}
 			],
-			"warps": [],
+			"warps": [
+				{
+					"x": "36",
+					"y": "14",
+					"level": "0",
+					"target_warp_idx": "0",
+					"target_map": "1",
+					"target_bank": "22"
+				}
+			],
 			"triggers": [],
 			"signposts": [
 				{
 					"x": "38",
 					"y": "15",
 					"level": "0",
-					"type": "SIGNPOST_SCRIPT_NORTH",
+					"type": "SIGNPOST_SCRIPT",
 					"flag": "0",
 					"value": {
 						"item": {
@@ -434,14 +527,14 @@
 				}
 			]
 		},
-		"music": "MUS_CLOUDS",
+		"music": "MUS_CLOUDS_VARIATION_1_BASE",
 		"footer_idx": 51,
 		"namespace": "MAP_KUESTENBERG",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_OUTSIDE",
 		"type": "MAP_TYPE_CLOUD",
 		"bike_usable": "1",
-		"level": 0,
+		"level": "0",
 		"battle_style": "BATTLE_TYPE_RANDOM",
 		"flags": {
 			"allow_escape_rope": "0",
