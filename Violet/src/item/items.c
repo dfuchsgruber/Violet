@@ -568,8 +568,8 @@ static u8 str_item_jonagobeere_description[] = LANGDEP(
 	PSTRING("When held by a Pokémon, it will be\nused in battle to restore 10 PP.")
 );
 static u8 str_item_sinelbeere_description[] = LANGDEP(
-	PSTRING("Item (Tragen) füllt KP im Kampf um\n10 Punkte auf."),
-	PSTRING("When held by a Pokémon, it will be\nused in battle to restore 10 HP.")
+	PSTRING("Item (Tragen) füllt KP im Kampf um\n20 Punkte auf."),
+	PSTRING("When held by a Pokémon, it will be\nused in battle to restore 20 HP.")
 );
 static u8 str_item_persimbeere_description[] = LANGDEP(
 	PSTRING("Item (Tragen) bewirkt im Kampf\nSelbstheilung bei Verwirrung."),
@@ -1774,6 +1774,18 @@ static u8 str_item_elite_koeder_description[] = LANGDEP(
 static u8 str_item_runenband_description[] = LANGDEP(
 	PSTRING("Verhindert, dass Gegner Attacken\neinsetzten, die den Icognito-\nBuchstaben des Trägers enthalten."),
 	PSTRING("Prevents opponents from using\nmoves that contain the Unown\nletter of its holder.")
+);
+static u8 str_item_lotusbluete[] = LANGDEP(
+	PSTRING("Eine seltene Blüte, deren Duft\ndas verborgene Potential eines\nPokémon zum Vorschein bringen kann."),
+	PSTRING("A rare blossom with a scent\nthat can reveal the hidden potential\nof a Pokémon")
+);
+static u8 str_item_regulear_pflaster[] = LANGDEP(
+	PSTRING("Ein Pflaster, das die versteckte\nFähigkeit eines Pokémon zu seiner\ngewöhnlichen Fähigkeit ändert."),
+	PSTRING("A regular patch that changes the\nhidden ability of a Pokémon to\nits regular one.")
+);
+static u8 str_item_faehigkeit_kapsel[] = LANGDEP(
+	PSTRING("Tauscht die Fähigkeit eines\nPokémon, das zwei verschiedene\nFähigkeiten haben kann."),
+	PSTRING("Switches the ability of a\nPokémon that can have two\nabilities")
 );
 
 item items[] = {
@@ -4007,7 +4019,7 @@ item items[] = {
 		0x8b, //index
 		20, //price
 		1, //holding_effect_id
-		10, //holding_effect_param
+		20, //holding_effect_param
 		str_item_sinelbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -8085,7 +8097,7 @@ item items[] = {
 		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_LOTUS_BALL] = {
-		.name = LANGDEP(PSTRING("Lotus-Ball"), PSTRING("Lotus Ball")),
+		.name = LANGDEP(PSTRING("Lotusball"), PSTRING("Lotus Ball")),
 		.index = ITEM_LOTUS_BALL, .price = 500,
 		.description = str_item_lotus_ball_description, .pocket = POCKET_POKEBALLS, .type = 0,
 		.battle_effect = 2, .battle_usage = item_pokeball_battle,
@@ -8190,13 +8202,13 @@ item items[] = {
 		.field_usage = item_exp_candy_xl_field_effect,
 	},
 	[ITEM_FAEHIGK_PFLASTER] = {
-		.name = LANGDEP(PSTRING("Fäh.-Pflaster"), PSTRING("Ability Patch")),
+		.name = LANGDEP(PSTRING("Lotuspflaster"), PSTRING("Lotus Patch")),
 		.index = ITEM_FAEHIGK_PFLASTER,
 		.description = str_item_faehigk_pflaster_description, .pocket = POCKET_ITEMS, .type=1,
 		.field_usage = item_ability_patch_field_effect,
 	},
 	[ITEM_LOTUS_KOEDER] = {
-		.name = LANGDEP(PSTRING("Lotus-Köder"), PSTRING("Lotus bait")),
+		.name = LANGDEP(PSTRING("Lotusköder"), PSTRING("Lotus bait")),
 		.index = ITEM_LOTUS_KOEDER,
 		.description = str_item_lotus_koeder_description, .pocket = POCKET_BAIT, .type = 4,
 		.field_usage = item_field_function_print_string_can_not_be_used,
@@ -8213,7 +8225,25 @@ item items[] = {
 		.description = str_item_runenband_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_LIMIT_MOVES_BY_UNOWN_LETTER,
 		.field_usage = item_field_function_print_string_can_not_be_used,
-	}
+	},
+	[ITEM_LOTUSBLUETE] = {
+		.name = LANGDEP(PSTRING("Lotusblüte"), PSTRING("Lotus Flower")),
+		.index = ITEM_LOTUSBLUETE,
+		.description = str_item_lotusbluete, .pocket = POCKET_ITEMS, .type = 1,
+		.field_usage = item_field_function_print_string_can_not_be_used,
+	},
+	[ITEM_REGULAER_PFLASTER] = {
+		.name = LANGDEP(PSTRING("Reg.-Pflaster"), PSTRING("Regular Patch")),
+		.index = ITEM_REGULAER_PFLASTER,
+		.description = str_item_regulear_pflaster, .pocket = POCKET_ITEMS, .type=1,
+		.field_usage = item_anti_ability_patch_field_effect,
+	},
+	[ITEM_FAEHIGK_KAPSEL] = {
+		.name = LANGDEP(PSTRING("Fähig.-Kapsel"), PSTRING("Ability Capsule")),
+		.index = ITEM_FAEHIGK_KAPSEL,
+		.description = str_item_faehigkeit_kapsel, .pocket = POCKET_ITEMS, .type=1,
+		.field_usage = item_ability_capsule_field_effect,
+	},
 };
 
 u16 item_idx_saniztize(u16 item_idx) {

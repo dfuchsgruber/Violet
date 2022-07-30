@@ -907,4 +907,12 @@ extern LZ77COMPRESSED gfx_item_elite_koederTiles;
 extern LZ77COMPRESSED gfx_item_elite_koederPal;
 extern LZ77COMPRESSED gfx_item_runenbandTiles;
 extern LZ77COMPRESSED gfx_item_runenbandPal;
+extern LZ77COMPRESSED gfx_item_lotusblueteTiles;
+extern LZ77COMPRESSED gfx_item_lotusbluetePal;
+extern LZ77COMPRESSED gfx_item_reg_pflasterTiles;
+extern LZ77COMPRESSED gfx_item_reg_pflasterPal;
+extern LZ77COMPRESSED gfx_item_faehigkeit_kapselTiles;
+extern LZ77COMPRESSED gfx_item_faehigkeit_kapselPal;
+
+
 #endif

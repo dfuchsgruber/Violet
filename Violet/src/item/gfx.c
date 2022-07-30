@@ -445,6 +445,9 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_LOTUS_KOEDER] = {.gfx = gfx_item_lotus_koederTiles, .pal = gfx_item_lotus_koederPal},
     [ITEM_ELITEKOEDER] = {.gfx = gfx_item_elite_koederTiles, .pal = gfx_item_elite_koederPal},
     [ITEM_RUNENBAND] = {.gfx = gfx_item_runenbandTiles, .pal = gfx_item_runenbandPal},
+    [ITEM_LOTUSBLUETE] = {.gfx = gfx_item_lotusblueteTiles, .pal = gfx_item_lotusbluetePal},
+    [ITEM_REGULAER_PFLASTER] = {.gfx = gfx_item_reg_pflasterTiles, .pal = gfx_item_reg_pflasterPal},
+    [ITEM_FAEHIGK_KAPSEL] = {.gfx = gfx_item_faehigkeit_kapselTiles, .pal = gfx_item_faehigkeit_kapselPal},
 };
 
 const u8 *item_get_resource(u16 item_idx, u8 get_palette) {

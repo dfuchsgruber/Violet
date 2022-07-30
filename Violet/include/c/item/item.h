@@ -400,4 +400,18 @@ u32 item_nature_stone_modify_nature(u8 nature, u16 item_idx);
  */
 void item_ability_patch_field_effect(u8 self);
 
+/**
+ * @brief Item callback for anti ability patch
+ * 
+ * @param self self-reference
+ */
+void item_anti_ability_patch_field_effect(u8 self);
+
+/**
+ * @brief Item callback for the ability capsule
+ * 
+ * @param self self-reference
+ */
+void item_ability_capsule_field_effect(u8 self);
+
 #endif /* INCLUDE_C_ITEM_ITEM_H_ */

@@ -27,6 +27,12 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	
+	additem ITEM_FAEHIGK_PFLASTER 5
+	additem ITEM_REGULAER_PFLASTER 5
+	additem ITEM_LOTUSBLUETE 5
+	additem ITEM_FAEHIGK_KAPSEL 5
+	end
 
 	warp 22 0 0xff 0x20 0xe
 	waitstate

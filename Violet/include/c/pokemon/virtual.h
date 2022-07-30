@@ -28,7 +28,7 @@ typedef union {
     u32 value;
 
     struct {
-        u32 ability : 1;
+        u32 ability : 1; // keep in mind that for whatever reason, this is only used at initialization and afterwards a different substructure attribute is used
         u32 is_female : 1;
 		u32 unused2 : 6;
         u32 is_shiny : 1;
@@ -326,6 +326,12 @@ u8 *box_get_name(u8 box_idx);
  */
 void pokemon_set_hidden_ability(box_pokemon *p);
 
+/**
+ * @brief Removes the hidden ability of a pokemon.
+ * 
+ * @param p the pokemon to remove the hidden ability of
+ */
+void pokemon_remove_hidden_ability(box_pokemon *p);
 /**
  * @brief Checks if a pokemon has a hidden ability
  * 
