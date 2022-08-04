@@ -94,7 +94,7 @@ void berry_tree_calculate_yield(u8 berry_tree_idx) {
     }
     DEBUG("Unfertilized yield is %d\n", yield);
     if (cmem.berry_trees[berry_tree_idx].fertilized) {
-        yield += MAX(1, 3 * yield / 2);
+        yield += MAX(1, yield / 2);
         DEBUG("Fertilized yield is %d\n", yield);
     }
     yield = MIN(7, yield);
@@ -105,7 +105,7 @@ void berry_tree_calculate_yield(u8 berry_tree_idx) {
 
 u16 berry_get_stage_duration(u8 berry_tree_idx) {
     berry *b = berry_get(cmem.berry_trees[berry_tree_idx].berry);
-    return (u16)(b->stage_duration * 5); // Where as in the original game the unit of stage duration would be hours, we simply make a stage 12 times faster (5 minutes)
+    return (u16)(b->stage_duration * 10); // Where as in the original game the unit of stage duration would be hours, we simply make a stage 6 times faster (10 minutes)
 }
 
 
@@ -190,42 +190,38 @@ void berry_plant() {
     fadescreen_all(1, 0);
 }
 
-bool berry_tree_grow(u8 berry_tree_idx) {
+bool berry_tree_grow(u8 berry_tree_idx, size_t minutes) {
     berry_tree *tree = cmem.berry_trees + berry_tree_idx;
-    switch(tree->stage) {
-        case BERRY_STAGE_NO_BERRY: return false; // Can't grow obviously
-        case BERRY_STAGE_BERRIES: return false; // Can't grow any more, I will *not* destroy trees that were not harvested in time...
-        case BERRY_STAGE_BLOSSOM:
-            berry_tree_calculate_yield(berry_tree_idx);
+    if (tree->stage == BERRY_STAGE_NO_BERRY || tree->stage == BERRY_STAGE_BERRIES)
+        return false;
+    while(minutes > 0) {
+        if (tree->minutes_to_next_stage <= minutes) {
+            minutes -= tree->minutes_to_next_stage;
+            if (tree->stage == BERRY_STAGE_BLOSSOM)
+                berry_tree_calculate_yield(berry_tree_idx);
+            tree->stage++;
+            if (tree->stage == BERRY_STAGE_BERRIES)
+                break;
+            tree->minutes_to_next_stage = berry_get_stage_duration(berry_tree_idx);
+        } else {
+            tree->minutes_to_next_stage = (u16)(tree->minutes_to_next_stage - minutes);
+            minutes = 0;
             break;
+        }
     }
-    tree->stage++;
-    tree->minutes_to_next_stage = berry_get_stage_duration(berry_tree_idx);
     return true;
 }
 
 bool special_berry_tree_grow() {
-    return berry_tree_grow((u8)*var_access(0x8000));
+    return berry_tree_grow((u8)*var_access(0x8000), 15);
 }
 
 void berry_proceed_minutes(u16 minutes) {
     DEBUG("Proceeding berries by %d minutes\n", minutes);
     for (size_t i = 0; i < ARRAY_COUNT(cmem.berry_trees); i++) {
         berry_tree *tree = cmem.berry_trees + i;
-        if (tree->stage != BERRY_STAGE_NO_BERRY) {
-            u16 time = minutes; // This is the time left to be used up by the berry for growing
-            while (time) {
-                if (tree->minutes_to_next_stage > time) {
-                    tree->minutes_to_next_stage = (u16)(tree->minutes_to_next_stage - time);
-                    // DEBUG("For tree %d there are %d min remaining for the next stage.\n", i, tree->minutes_to_next_stage);
-                    break;
-                }
-                // We can entirely finished a stage
-                time = (u16)(time - tree->minutes_to_next_stage);
-                if(!berry_tree_grow((u8)i)) 
-                    break; // The tree can't grow anymore
-                DEBUG("Tree %d grew to stage %d\n", i, tree->stage);
-            }
+        if (tree->stage != BERRY_STAGE_NO_BERRY && tree->stage != BERRY_STAGE_BERRIES) {
+            berry_tree_grow((u8)i, minutes);
         }
     }
 }
