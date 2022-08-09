@@ -147,6 +147,7 @@ ow_script_berry_tree:
 	gotoif EQUAL plant_berries
 	special2 0x8004 SPECIAL_BERRY_TREE_GET_ITEM
 	special2 0x8005 SPECIAL_BERRY_TREE_GET_YIELD
+	special2 0x8006 SPECIAL_BERRY_TREE_GET_YIELDS_FLOWER
 	bufferitem 0 0x8004
 	buffernumber 1 0x8005
 	compare LASTRESULT BERRY_STAGE_DIRT_PILE
@@ -201,42 +202,76 @@ ask_planting:
 	end
 
 dirt_pile:
+	compare 0x8004 ITEM_ANTIKER_SAMEN
+	gotoif EQUAL load_str_dirt_pile_male
 	loadpointer 0 str_dirt_pile
+	goto loaded_str_dirt_pile
+load_str_dirt_pile_male:
+	loadpointer 0 str_dirt_pile_male
+	goto loaded_str_dirt_pile
+loaded_str_dirt_pile:
 	callstd MSG_KEEPOPEN
 	checkitem ITEM_WUNDERSTAUB 1
 	compare LASTRESULT 0x1
 	gotoif 1 ask_use_wonder_dust
 	goto dont_harvest
 sprout:
+	compare 0x8004 ITEM_ANTIKER_SAMEN
+	gotoif EQUAL load_str_sprout_pile_male
 	loadpointer 0 str_sprout
+	goto loaded_str_sprout
+load_str_sprout_pile_male:
+	loadpointer 0 str_sprout_male
+	goto loaded_str_sprout
+loaded_str_sprout:
 	callstd MSG_KEEPOPEN
 	checkitem ITEM_WUNDERSTAUB 1
 	compare LASTRESULT 0x1
 	gotoif 1 ask_use_wonder_dust
 	goto dont_harvest
 taller:
+	compare 0x8004 ITEM_ANTIKER_SAMEN
+	gotoif EQUAL load_str_taller_male
 	loadpointer 0 str_taller
+	goto loaded_str_taller
+load_str_taller_male:
+	loadpointer 0 str_taller_male
+	goto loaded_str_taller
+loaded_str_taller:
 	callstd MSG_KEEPOPEN
 	checkitem ITEM_WUNDERSTAUB 1
 	compare LASTRESULT 0x1
 	gotoif 1 ask_use_wonder_dust
 	goto dont_harvest
 blossom:
+	compare 0x8004 ITEM_ANTIKER_SAMEN
+	gotoif EQUAL load_str_blossom_male
 	loadpointer 0 str_blossom
+	goto loaded_str_blossom
+load_str_blossom_male:
+	loadpointer 0 str_blossom_male
+	goto loaded_str_blossom
+loaded_str_blossom:
 	callstd MSG_KEEPOPEN
 	checkitem ITEM_WUNDERSTAUB 1
 	compare LASTRESULT 0x1
 	gotoif 1 ask_use_wonder_dust
 	goto dont_harvest
 ask_use_wonder_dust:
+	compare 0x8004 ITEM_ANTIKER_SAMEN
+	gotoif EQUAL load_str_wonder_dust_single_male
 	loadpointer 0 str_ask_wonder_dust
+	goto loaded_str_ask_wonder_dust
+load_str_wonder_dust_single_male:
+	loadpointer 0 str_ask_wonder_dust_single_male
+	goto loaded_str_ask_wonder_dust
+loaded_str_ask_wonder_dust:
 	callstd MSG_YES_NO
 	compare LASTRESULT 0
 	gotoif EQUAL dont_harvest
 	callasm berry_tree_option_all_wonderdust_enabled
 	compare LASTRESULT 1
 	gotoif EQUAL use_max_wonderdust
-
 	removeitem ITEM_WUNDERSTAUB 1
 	loadpointer 0 str_use_wonder_dust
 	callstd MSG_KEEPOPEN
@@ -247,7 +282,14 @@ wonderdust_update_gfx:
 	doanimation 23
 	checkanimation 23
 	checksound
+	compare 0x8004 ITEM_ANTIKER_SAMEN
+	gotoif EQUAL load_str_grown_single_male
 	loadpointer 0 str_grown
+	goto loaded_str_grown
+load_str_grown_single_male:
+	loadpointer 0 str_grown_single_male
+	goto loaded_str_grown
+loaded_str_grown:
 	callstd MSG
 	end
 
@@ -269,14 +311,19 @@ use_max_wonderdust_loop_end:
 	loadpointer 0 str_use_wonder_dust_multiple
 	callstd MSG_KEEPOPEN
 	goto wonderdust_update_gfx
-
 harvest_berries:
 	compare 0x8005 1
 	gotoif EQUAL load_str_want_to_harvest_single
 	loadpointer 0 str_want_to_harvest
 	goto loaded_str_want_to_harvest_single
 load_str_want_to_harvest_single:
+	compare 0x8004 ITEM_ANTIKER_SAMEN
+	gotoif EQUAL load_str_want_to_harvest_single_male
 	loadpointer 0 str_want_to_harvest_single
+	goto loaded_str_want_to_harvest_single
+load_str_want_to_harvest_single_male:
+	loadpointer 0 str_want_to_harvest_single_male
+	goto loaded_str_want_to_harvest_single
 loaded_str_want_to_harvest_single:
 	callstd MSG_YES_NO
 	compare LASTRESULT 0
@@ -290,8 +337,15 @@ loaded_str_want_to_harvest_single:
 	gotoif EQUAL load_str_harvest_single
 	loadpointer 0 str_harvest
 	goto loaded_str_harvest
+	loadpointer 0 str_harvest
 load_str_harvest_single:
+	compare 0x8004 ITEM_ANTIKER_SAMEN
+	gotoif EQUAL load_str_harvest_single_male
 	loadpointer 0 str_harvest_single
+	goto loaded_str_harvest
+load_str_harvest_single_male:
+	loadpointer 0 str_harvest_single_male
+	goto loaded_str_harvest
 loaded_str_harvest:
 	callstd MSG_KEEPOPEN
 	waitfanfare
@@ -301,10 +355,18 @@ loaded_str_harvest:
 	loadpointer 0 str_harvested
 	goto loaded_str_harvested_single
 load_str_harvested_single:
+	compare 0x8004 ITEM_ANTIKER_SAMEN
+	gotoif EQUAL load_str_harvested_single_male
 	loadpointer 0 str_harvested_single
+	goto loaded_str_harvested_single
+load_str_harvested_single_male:
+	loadpointer 0 str_harvested_single_male
+	goto loaded_str_harvested_single
 loaded_str_harvested_single:
 	callstd MSG_KEEPOPEN
 	special SPECIAL_BERRY_TREE_UPDATE_GFX
+	compare 0x8006 1
+	callif EQUAL harvest_flower
 	loadpointer 0 str_ground_muddy
 	callstd MSG
 	end
@@ -316,6 +378,23 @@ no_room_for_berries:
 	loadpointer 0 str_no_room_for_berries
 	callstd MSG
 	end
+harvest_flower:
+	closeonkeypress
+	sound 0x15
+	applymovement 0xFF mov_exclam
+	waitmovement 0
+	checksound
+	loadpointer 0 str_harvest_flower
+	callstd MSG_KEEPOPEN
+	copyvarifnotzero 0x8000 ITEM_LOTUSBLUETE
+	copyvarifnotzero 0x8001 1
+	callstd ITEM_OBTAIN
+    compare LASTRESULT 0x0
+    gotoif NOT_EQUAL harvest_flower_return
+	loadpointer 0 str_harvest_flower_no_space
+	callstd MSG_KEEPOPEN
+harvest_flower_return:
+	return
 
 ow_script_mushroom:
 	lockall
@@ -640,15 +719,21 @@ str_attacks:
 str_want_to_harvest:
 	.string "Dort wachsen BUFFER_2 BUFFER_1n!\pMöchtest du die BUFFER_1n\npflücken?"
 str_want_to_harvest_single:
-	.string "Dort wächst eine BUFFER_1!\pMöchtest du die BUFFER_1n\npflücken?"
+	.string "Dort wächst eine BUFFER_1!\pMöchtest du die BUFFER_1\npflücken?"
+str_want_to_harvest_single_male:
+	.string "Dort wächt ein BUFFER_1!\pMöchtest du den BUFFER_1\npflücken?"
 str_harvest:
 	.autostring 34 2 "PLAYER pflückt die BUFFER_1n."
 str_harvest_single:
-	.autostring 34 2 "PLAYER pflückt die BUFFER_1n."
+	.autostring 34 2 "PLAYER pflückt die BUFFER_1."
+str_harvest_single_male:
+	.autostring 34 2 "PLAYER pflückt den BUFFER_1."
 str_harvested:
-	.autostring 34 2 "PLAYER packt die BUFFER_1n in die Beerentüte."
+	.autostring 34 2 "PLAYER packt die BUFFER_1n in die Beerentasche."
 str_harvested_single:
-	.autostring 34 2 "PLAYER packt die BUFFER_1 in die Beerentüte."
+	.autostring 34 2 "PLAYER packt die BUFFER_1 in die Beerentasche."
+str_harvested_single_male:
+	.autostring 34 2 "PLAYER packt den BUFFER_1 in die Beerentasche."
 str_ground_muddy:
 	.autostring 34 2 "Der Boden ist wieder weich und lehmig."
 str_no_room_for_berries:
@@ -663,20 +748,36 @@ str_want_to_plant:
 	.autostring 34 2 "Möchtest du eine Beere pflanzen?"
 str_dirt_pile:
 	.autostring 34 2 "Hier wurde eine BUFFER_1 angepflanzt."
+str_dirt_pile_male:
+	.autostring 34 2 "Hier wurde ein BUFFER_1 angepflanzt."
 str_sprout:
 	.autostring 34 2 "Es scheint, als wäre die BUFFER_1 ausgetrieben!"
+str_sprout_male:
+	.autostring 34 2 "Es scheint, als wäre der BUFFER_1 ausgetrieben!"
 str_taller:
-	.autostring 34 2 "Die BUFFER_1n scheinen gut zu gedeihen!"
+	.autostring 34 2 "Die BUFFER_1 scheint gut zu gedeihen!"
+str_taller_male:
+	.autostring 34 2 "Der BUFFER_1 scheint gut zu gedeihen!"
 str_blossom:
-	.autostring 34 2 "Die BUFFER_1n stehen in voller Blüte!"
+	.autostring 34 2 "Die BUFFER_1 steht in voller Blüte!"
+str_blossom_male:
+	.autostring 34 2 "Der BUFFER_1 steht in voller Blüte!"
 str_ask_wonder_dust:
 	.autostring 34 2 "Möchtest du Wunderstaub benutzen, um die BUFFER_1n wachsen zu lassen?"
+str_ask_wonder_dust_single_male:
+	.autostring 34 2 "Möchtest du Wunderstaub benutzen, um den BUFFER_1 wachsen zu lassen?"
 str_use_wonder_dust:
 	.autostring 34 2 "PLAYER benutzt Wunderstaub."
 str_use_wonder_dust_multiple:
 	.autostring 34 2 "PLAYER benutzt BUFFER_2-Mal Wunderstaub."
 str_grown:
 	.autostring 34 2 "Die BUFFER_1n sind gewachsen!"
+str_grown_single_male:
+	.autostring 34 2 "Der BUFFER_1 ist gewachsen!"
+str_harvest_flower:
+	.autostring 34 2 "Was ist das?"
+str_harvest_flower_no_space:
+	.autostring 34 2 "Du hast keinen Platz mehr dafürDOTS"
 str_mushroom_plucked:
 	.autostring 34 2 "Es scheint, als wären hier einmal Plize gewachsen, aber irgendwer muss sie gepflückt habenDOTS\pEs dauert wohl noch, bis wieder neue Pilze gewachsen sind."
 str_mushrooms_are_growing:

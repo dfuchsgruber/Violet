@@ -17,7 +17,9 @@ def constantize_berry(item_idx, project):
     raise RuntimeError(f'No item found for berry {item_idx}')
 
 def berry_idx_to_item_idx(berry_idx, project):
-    item_idx = berry_idx + project.constants['items'][FIRST_BERRY]
+    if berry_idx == 0:
+        return None
+    item_idx = berry_idx + project.constants['items'][FIRST_BERRY] - 1
     return constantize_berry(item_idx, project)
 
 
@@ -36,7 +38,8 @@ def get_berry_index(rompath, symbolspath, projectpath):
         constantize_berry(item_idx, project) : [] for item_idx in range(project.constants['items'][FIRST_BERRY], project.constants['items'][LAST_BERRY] + 1)
     }
     for flag, berry in enumerate(berries):
-        berry_to_flag[berry].append(flag)
+        if berry is not None:
+            berry_to_flag[berry].append(flag)
     flag_to_map = [[] for _ in range(NUM_BERRY_TREES)]
 
     for bank in project.headers:

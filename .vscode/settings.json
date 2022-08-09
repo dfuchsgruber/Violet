@@ -21,7 +21,9 @@
         "thread": "c",
         "map": "c",
         "random": "c",
-        "typeindex": "c"
+        "typeindex": "c",
+        "bitset": "c",
+        "chrono": "c"
     },
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,

@@ -170,7 +170,7 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_PALLMBEERE] = { .gfx = gfx_item_pallmbeereTiles, .pal = gfx_item_pallmbeerePal },
     [ITEM_WASMELBEERE] = { .gfx = gfx_item_wasmelbeereTiles, .pal = gfx_item_wasmelbeerePal },
     [ITEM_DURINBEERE] = { .gfx = gfx_item_durinbeereTiles, .pal = gfx_item_durinbeerePal },
-    [ITEM_MYRTILBEERE] = { .gfx = gfx_item_myrtilbeereTiles, .pal = gfx_item_myrtilbeerePal },
+    [ITEM_ANTIKER_SAMEN] = { .gfx = gfx_item_antiker_samenTiles, .pal = gfx_item_antiker_samenPal },
     [ITEM_LYDZIBEERE] = { .gfx = gfx_item_lydzibeereTiles, .pal = gfx_item_lydzibeerePal },
     [ITEM_LINGANBEERE] = { .gfx = gfx_item_linganbeereTiles, .pal = gfx_item_linganbeerePal },
     [ITEM_SALKABEERE] = { .gfx = gfx_item_salkabeereTiles, .pal = gfx_item_salkabeerePal },

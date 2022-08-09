@@ -679,9 +679,9 @@ static u8 str_item_durinbeere_description[] = LANGDEP(
 	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
 	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
 );
-static u8 str_item_myrtilbeere_description[] = LANGDEP(
-	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
-	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+static u8 str_item_antiker_samen_description[] = LANGDEP(
+	PSTRING("Extrem seltener Samen einer\nPflanze, die vor langer Zeit\ngewachsen istDOTS"),
+	PSTRING("Extremely rare seed of a\nplant that was growing a long\ntime agoDOTS")
 );
 static u8 str_item_lydzibeere_description[] = LANGDEP(
 	PSTRING("Item (Tragen) hebt Angr.-Wert\nin einer Notlage."),
@@ -4462,13 +4462,13 @@ item items[] = {
 		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
-		//ITEM_MYRTILBEERE
-		LANGDEP(PSTRING("Myrtilbeere"), PSTRING("Belue Berry")),
+		//ITEM_ANTIKER_SAMEN
+		LANGDEP(PSTRING("Antiker Samen"), PSTRING("Ancient Seed")),
 		0xa7, //index
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_myrtilbeere_description,
+		str_item_antiker_samen_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket

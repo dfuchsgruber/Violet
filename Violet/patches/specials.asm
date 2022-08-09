@@ -311,6 +311,8 @@ special_table equ 0x0815FCC0
         .word special_item_obtain_show | 1
 .org (special_table + 209 * 4)
         .word special_item_obtain_delete | 1
+.org (special_table + 210 * 4)
+        .word berry_yields_flower | 1
 // 207 <= free <= 211
 
 .org (special_table + (0x129 * 4))

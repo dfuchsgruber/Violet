@@ -109,16 +109,6 @@ static crafting_recipe crafting_recipies_healing[] = {
             [1] = {.item = ITEM_NUGGET, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .count = 1,
-    },{
-        .item = ITEM_FAEHIGK_PFLASTER,
-        .ingredients = {
-            [2] = {.item = ITEM_RIESENPILZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [0] = {.item = ITEM_QUARZSTAUB, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_BITTERKRAUT, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
-            [3] = {.count = CRAFTING_INGREDIENT_ASH_TO_COUNT(1500), .type = CRAFTING_INGREDIENT_ASH},
-        },
-        .count = 1,
-        .flag = FLAG_RECIPE_FAEHIGK_PFLASTER,
     }
 };
 static crafting_recipe crafting_recipies_jewels[] = {
@@ -382,7 +372,7 @@ static crafting_recipe crafting_recipies_pokeballs[] = {
         .item = ITEM_LOTUS_BALL, 
         .ingredients = {
             [0] = {.item = ITEM_POKEBALL, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_LOTUSBLUETE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .count = 5,
         .flag = FLAG_RECIPE_LOTUS_BALL,
@@ -748,6 +738,24 @@ static crafting_recipe crafting_recipies_nutrients[] = {
             [1] = {.item = ITEM_NUGGET, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
         },
         .flag = FLAG_GOLD_CANDY_RECIPE,
+        .count = 1,
+    },{
+        .item = ITEM_REGULAER_PFLASTER,
+        .ingredients = {
+            [2] = {.item = ITEM_RIESENPILZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_QUARZSTAUB, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_BITTERKRAUT, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
+            [3] = {.count = CRAFTING_INGREDIENT_ASH_TO_COUNT(1500), .type = CRAFTING_INGREDIENT_ASH},
+        },
+        .count = 1,
+        .flag = FLAG_RECIPE_REGULAERES_PFLASTER,
+    },{
+        .item = ITEM_FAEHIGK_PFLASTER, 
+        .ingredients = {
+            [0] = {.item = ITEM_REGULAER_PFLASTER, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_LOTUSBLUETE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FLAG_RECIPE_LOTUS_ITEMS,
         .count = 1,
     }
 };

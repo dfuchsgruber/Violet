@@ -470,3 +470,7 @@ _blxr4_bag_print_string:
 	ldr r1, =bag_close_message_and_return_to_idle_callback | 1
 	bx r1
 	.pool
+
+.org 0x0809c9c4
+	.word berries
+	

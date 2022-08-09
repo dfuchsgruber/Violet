@@ -913,6 +913,7 @@ extern LZ77COMPRESSED gfx_item_reg_pflasterTiles;
 extern LZ77COMPRESSED gfx_item_reg_pflasterPal;
 extern LZ77COMPRESSED gfx_item_faehigkeit_kapselTiles;
 extern LZ77COMPRESSED gfx_item_faehigkeit_kapselPal;
-
+extern LZ77COMPRESSED gfx_item_antiker_samenTiles;
+extern LZ77COMPRESSED gfx_item_antiker_samenPal;
 
 #endif

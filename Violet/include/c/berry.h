@@ -12,9 +12,11 @@
 #define NUM_OW_PAL_TAGS_BERRY 6
 #define TAG_BERRY_GROWTH_SPARKLE 0x2880
 
+#define NUM_BERRY_TREES 256
+
 #define ITEM_FIRST_BERRY ITEM_AMRENABEERE
-#define ITEM_IDX_TO_BERRY_IDX(item_idx) ((item_idx) - ITEM_FIRST_BERRY)
-#define BERRY_IDX_TO_ITEM_IDX(berry_idx) ((berry_idx) + ITEM_FIRST_BERRY)
+#define ITEM_IDX_TO_BERRY_IDX(item_idx) ((item_idx) - ITEM_FIRST_BERRY + 1)
+#define BERRY_IDX_TO_ITEM_IDX(berry_idx) ((berry_idx) + ITEM_FIRST_BERRY - 1)
 
 typedef struct { // From pokeemerald
     /*0x00*/ u8 name[7];
@@ -32,6 +34,13 @@ typedef struct { // From pokeemerald
     /*0x19*/ u8 sour;
     /*0x1A*/ u8 smoothness;
 } berry;
+
+typedef struct {
+    size_t count;
+    u8 adjacent_berry_tree_idxs[4];
+} berry_adjacency_t;
+
+extern berry_adjacency_t berry_tree_adjacency[NUM_BERRY_TREES];
 
 typedef struct {
     void (*continuation)(void);
@@ -156,6 +165,7 @@ extern u8 gfx_ow_berry_pamtreTiles[];
 extern u8 gfx_ow_berry_durinTiles[];
 extern u8 gfx_ow_berry_liechiTiles[];
 extern u8 gfx_ow_berry_lansatTiles[];
+extern u8 gfx_ow_antiker_samenTiles[];
 
 extern u8 gfx_ow_berry_noneTiles[];
 extern u8 gfx_ow_berry_none_fertilizedTiles[];
@@ -169,5 +179,6 @@ extern color_t gfx_ow_berry_pal2Pal[16];
 extern color_t gfx_ow_berry_pal3Pal[16];
 extern color_t gfx_ow_berry_pal4Pal[16];
 extern color_t gfx_ow_berry_pal5Pal[16];
+extern color_t gfx_ow_antiker_samenPal[16];
 
 #endif
