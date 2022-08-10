@@ -92,6 +92,7 @@ u8 *signpost_get_script(position_t *position, u8 behaviour, u8 direction) {
             *var_access(0x8004) = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_FLAG);
             *var_access(0x8006) = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_COUNT);
             *var_access(0x8007) = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_CHUNK);
+            DEBUG("Flag of hidden item is 0x%x and is set %d\n", *var_access(0x8004), checkflag(*var_access(0x8004)));
             if (checkflag(*var_access(0x8004))) 
                 return NULL;
             *var_access(PLAYERFACING) = direction;

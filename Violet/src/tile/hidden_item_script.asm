@@ -35,6 +35,7 @@ ow_script_hidden_item_obtain:
     waitstate
     loadpointer 0 str_put_item_away
     callstd MSG_KEEPOPEN
+    copyvar 0x8004, 0x8008
     special SPECIAL_HIDDEN_ITEM_SET_FLAG
     releaseall
     end
