@@ -10,6 +10,7 @@
 #include "battle/bg.h"
 #include "constants/battle/battle_bgs.h"
 #include "constants/battle/battle_effects.h"
+#include "battle/communication.h"
 #include "battle/state.h"
 #include "constants/attacks.h"
 #include "battle/attack.h"
@@ -18,31 +19,31 @@
 void bsc_cmd_xE4_secret_power() {
 	switch (battle_bg_get_id()) {
 	case BATTLE_BG_GRASS:
-		battle_effects[3] = BATTLE_EFFECT_POISON;
+		battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = BATTLE_EFFECT_POISON;
 		break;
 	case BATTLE_BG_STREET:
 	case BATTLE_BG_GYM:
 	case BATTLE_BG_POWER_PLANT:
-		battle_effects[3] = BATTLE_EFFECT_PARALYSIS;
+		battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = BATTLE_EFFECT_PARALYSIS;
 		break;
 	case BATTLE_BG_MOUNTAIN:
 	case BATTLE_BG_HAWEILAND:
-		battle_effects[3] = BATTLE_EFFECT_CONFUSION;
+		battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = BATTLE_EFFECT_CONFUSION;
 		break;
 	case BATTLE_BG_POND:
-		battle_effects[3] = BATTLE_EFFECT_LOWER_INITIATIVE;
+		battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = BATTLE_EFFECT_LOWER_INITIATIVE;
 		break;
 	case BATTLE_BG_CLOUD:
 	case BATTLE_BG_ARDEAL_CLOUD:
 	case BATTLE_BG_SKY_ISLAND:
-		battle_effects[3] = BATTLE_EFFECT_ICE;
+		battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = BATTLE_EFFECT_ICE;
 		break;
 	case BATTLE_BG_SHORE:
 	case BATTLE_BG_MILL:
-		battle_effects[3] = BATTLE_EFFECT_LOWER_ACCURACY;
+		battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = BATTLE_EFFECT_LOWER_ACCURACY;
 		break;
 	case BATTLE_BG_OCEAN:
-		battle_effects[3] = BATTLE_EFFECT_LOWER_ATTACK;
+		battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = BATTLE_EFFECT_LOWER_ATTACK;
 		break;
 	case BATTLE_BG_CAVE:
 	case BATTLE_BG_WATER_CAVE:
@@ -53,33 +54,33 @@ void bsc_cmd_xE4_secret_power() {
 	case BATTLE_BG_ROUTE_5_CAVE:
 	case BATTLE_BG_INSIDE_STD:
 	case BATTLE_BG_DUNGEON_FOREST_TENT_INSIDE:
-		battle_effects[3] = BATTLE_EFFECT_FLINCH;
+		battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = BATTLE_EFFECT_FLINCH;
 		break;
 	case BATTLE_BG_DESERT:
-		battle_effects[3] = BATTLE_EFFECT_RESIDUAL_DAMAGE;
+		battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = BATTLE_EFFECT_RESIDUAL_DAMAGE;
 		break;
 	case BATTLE_BG_MUSEUM:
 	case BATTLE_BG_DARK_TOWER:
-		battle_effects[3] = BATTLE_EFFECT_LOWER_SPECIAL_DEFENSE;
+		battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = BATTLE_EFFECT_LOWER_SPECIAL_DEFENSE;
 		break;
 	case BATTLE_BG_FIRE:
-		battle_effects[3] = BATTLE_EFFECT_FIRE;
+		battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = BATTLE_EFFECT_FIRE;
 		break;
 	case BATTLE_BG_GRAVEYARD:
-		battle_effects[3] = BATTLE_EFFECT_LOWER_SPECIAL_DEFENSE;
+		battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = BATTLE_EFFECT_LOWER_SPECIAL_DEFENSE;
 		break;
 	case BATTLE_BG_CARGO_HALL:
 	case BATTLE_BG_BBSHIP_INSIDE:
 	case BATTLE_BG_BBSHIP_OUTSIDE:
-		battle_effects[3] = BATTLE_EFFECT_LOWER_EVASIVENESS;
+		battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = BATTLE_EFFECT_LOWER_EVASIVENESS;
 		break;
 	default:
 	case BATTLE_BG_EVOLUTION:
 	case BATTLE_BG_CAPTURE:
-		battle_effects[3] = BATTLE_EFFECT_NONE;
+		battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = BATTLE_EFFECT_NONE;
 		break;
 	case BATTLE_BG_ICE_CAVE:
-		battle_effects[3] = BATTLE_EFFECT_LOWER_INITIATIVE;
+		battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = BATTLE_EFFECT_LOWER_INITIATIVE;
 		break;
 	}
 	bsc_offset++;

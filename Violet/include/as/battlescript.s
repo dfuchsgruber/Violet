@@ -27,8 +27,7 @@
  * @brief Preprocessor Macros for writing PKMN Battle Scripts
  */
 
-
-#include <attack_names.h>
+.include "constants/battle/battle_effects.s"
 
 @@ Banks
 .equ BANK_TARGET, 0
@@ -1362,5 +1361,5 @@ setbyte bsc_status_effect_to_apply \stat | \amount << 4 | \decrease << 7
 .endm
 
 .macro setbattleeffect effect:req
-    setbyte (battle_effects + 3), \effect
+    setbyte (battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT), \effect
 .endm

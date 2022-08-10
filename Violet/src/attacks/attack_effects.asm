@@ -5,6 +5,7 @@
 .include "constants/battle/battle_animations.s"
 .include "constants/abilities.s"
 .include "constants/battle/battle_weathers.s"
+.include "constants/battle/battle_effects.s"
 
 .global attack_effects
 .global bsc_roar_success_force_out
@@ -233,7 +234,7 @@
     .word bsc_attack_effect_xda @0xda
     .word bsc_attack_effect_xdb @0xdb
     .word bsc_attack_effect_fire_fang @0xdc
-    .word bsc_attack_effect_xdd @0xdd
+    .word bsc_attack_effect_hammer_arm @0xdd
     .word bsc_attack_effect_xde @0xde
     .word bsc_attack_effect_xdf @0xdf
     .word bsc_attack_effect_xe0 @0xe0
@@ -341,32 +342,9 @@ bsc_attack_effect_fire_fang:
     setbyte battle_communication + BATTLE_COMMUNICATION_BATTLE_EFFECT, 0x3
     goto bsc_effect_and_flinch
 
-bsc_attack_effect_xdd:
-    attackcanceler
-    accuracycheck bsc_miss_pp_reduce 0x0
-    attackstring
-    ppreduce
-    calculatedamage
-    attackanimation
-    waitanimation
-    missmessage
-    hitanimation BANK_TARGET
-    waitstate
-    graphicalhpupdate 0x0
-    datahpupdate 0x0
-    critmessage
-    waitmessage 0x40
-    resultmessage
-    waitmessage 0x40
-    jumpifbyte 0x4 attack_result 0x29 bsc_faint_pokemon
-    jumpifstat 0x1 0x0 0x3 0x0 bsc_faint_pokemon
-    setbyte 0x2023FDF 0x0
-    playstatchangeanimation 0x1 0x8 0x9
-    setbyte 0x2023FDE 0x93
-    statbuffchange 0xC1 bsc_faint_pokemon
-    printfromtable bsc_failure_strings
-    waitmessage 0x40
-    goto bsc_faint_pokemon
+bsc_attack_effect_hammer_arm:
+    setbattleeffect BATTLE_EFFECT_LOWER_INITIATIVE | BATTLE_EFFECT_AFFECTS_USER | BATTLE_EFFECT_CERTAIN
+    goto bsc_attack_effect_hit
 
 bsc_attack_effect_xde:
     attackcanceler

@@ -312,7 +312,6 @@ extern u32 battle_flags;
 extern u8 battle_trainer_kind;
 extern u8 battle_result;
 extern u16 battle_trainer_id;
-extern u8 battle_effects[4]; // Probably there even more, 0x3 is the target effect
 extern u16 battle_dynamic_base_power;
 extern u16 battle_current_turn_seed; // Random state that is fixed for one turn
 extern u8 battle_action_current_turn; // idx from 0 to battler_cnt, not indexing the battlers but rather the turns themselfes (i.e. battlers ordered by turn order)

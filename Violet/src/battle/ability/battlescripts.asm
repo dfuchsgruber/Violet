@@ -4,7 +4,6 @@
 .include "constants/abilities.s"
 .include "constants/battle/battle_communication.s"
 .include "constants/battle/battle_animations.s"
-.include "constants/battle/battle_effects.s"
 
 .global bsc_wandlungskunst
 .global bsc_stance_change_to_attack

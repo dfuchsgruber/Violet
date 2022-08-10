@@ -442,7 +442,6 @@ warp_setup_by_event = 0x080553E8 | 1;
 warp_last_map_set_on_current_position = 0x08055408 | 1;
 map_type_is_outside = 0x080561F8 | 1;
 warp_set_last_outdoor_map = 0x080555C0 | 1;
-battle_effects = 0x02023E82;
 attack_anim_script = 0x02037ED4;
 overworld_effect_state = 0x020386E0;
 box_pokemon_get_attribute = 0x0803FC44 | 1;
