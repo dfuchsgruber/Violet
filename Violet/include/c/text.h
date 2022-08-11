@@ -297,12 +297,6 @@ extern "C" {
     void tbox_free(u8 box_id);
 
     /**
-     * Frees a textbox
-     * @param box_id The id of the textbox
-     */
-    void tbox_free_2(u8 box_idx);
-
-    /**
      * Flushes the tilest and border of a textbox.
      * @param box_idx the box to flush
      * @param tile the tile pattern to flush with

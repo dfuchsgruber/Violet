@@ -103,7 +103,7 @@ static void bag_context_menu_item_use(u8 self) {
     if (field_function) {
         tbox_flush_all(BAG2_STATE->tbox_context_menu, 0x00);
         tbox_flush_map(BAG2_STATE->tbox_context_menu);
-        tbox_free_2(BAG2_STATE->tbox_context_menu);
+        tbox_free(BAG2_STATE->tbox_context_menu);
         tbox_flush_map(BAG_TBOX_CONTEXT_MENU_TEXT);
         tbox_tilemap_draw(BAG_TBOX_LIST);
         bg_virtual_sync_reqeust_push(0);
@@ -119,7 +119,7 @@ static void bag_context_menu_item_use(u8 self) {
 static void bag_context_menu_item_cancel(u8 self) {
     tbox_flush_all(BAG2_STATE->tbox_context_menu, 0x00);
     tbox_flush_map(BAG2_STATE->tbox_context_menu);
-    tbox_free_2(BAG2_STATE->tbox_context_menu);
+    tbox_free(BAG2_STATE->tbox_context_menu);
     tbox_flush_map(BAG_TBOX_CONTEXT_MENU_TEXT);
     bag_print_item_description(bag_get_current_slot_in_current_pocket());
     big_callbacks[self].function = (void(*)(u8))bag_menu_cancel_redraw_description_and_scroll_menu_indicators_and_return_to_idle_callback;
@@ -245,7 +245,7 @@ static void bag_select_quantity_to_toss(u8 self) {
         play_sound(5);
         tbox_flush_set(BAG2_STATE->tbox_quantity, 0x00);
         tbox_flush_map_and_frame(BAG2_STATE->tbox_quantity);
-        tbox_free_2(BAG2_STATE->tbox_quantity);
+        tbox_free(BAG2_STATE->tbox_quantity);
         bg_virtual_sync_reqeust_push(0);
         scroll_indicator_delete(BAG2_STATE->scroll_indicator_quantity_cb_idx);
         bag_confirm_toss(self);
@@ -253,7 +253,7 @@ static void bag_select_quantity_to_toss(u8 self) {
         play_sound(5);
         tbox_flush_set(BAG2_STATE->tbox_quantity, 0x00);
         tbox_flush_map_and_frame(BAG2_STATE->tbox_quantity);
-        tbox_free_2(BAG2_STATE->tbox_quantity);
+        tbox_free(BAG2_STATE->tbox_quantity);
         bg_virtual_sync_reqeust_push(0);
         scroll_indicator_delete(BAG2_STATE->scroll_indicator_quantity_cb_idx);
         bag_reinitialize_list_and_scroll_menu_indicators_and_return_to_idle_callback(self);
@@ -266,7 +266,7 @@ static void bag_context_menu_item_toss(u8 self) {
     // Close the context menu and hide tboxes
     tbox_flush_all(BAG2_STATE->tbox_context_menu, 0x00);
     tbox_flush_map(BAG2_STATE->tbox_context_menu);
-    tbox_free_2(BAG2_STATE->tbox_context_menu);
+    tbox_free(BAG2_STATE->tbox_context_menu);
     tbox_flush_map(BAG_TBOX_CONTEXT_MENU_TEXT);
     tbox_tilemap_draw(BAG_TBOX_LIST);
     bg_virtual_sync_reqeust_push(0);
@@ -296,7 +296,7 @@ static u8 str_cant_be_given[] = LANGDEP(PSTRING("BUFFER_1 kann nicht\ngetragen w
 static void bag_context_menu_item_give(u8 self) {
     tbox_flush_all(BAG2_STATE->tbox_context_menu, 0x00);
     tbox_flush_map(BAG2_STATE->tbox_context_menu);
-    tbox_free_2(BAG2_STATE->tbox_context_menu);
+    tbox_free(BAG2_STATE->tbox_context_menu);
     tbox_flush_map(BAG_TBOX_CONTEXT_MENU_TEXT);
     tbox_tilemap_draw(BAG_TBOX_LIST);
     bg_virtual_sync_reqeust_push(0);
@@ -331,7 +331,7 @@ static void bag_context_menu_item_battle_use(u8 self) {
     if (battle_function) {
         tbox_flush_all(BAG2_STATE->tbox_context_menu, 0x00);
         tbox_flush_map(BAG2_STATE->tbox_context_menu);
-        tbox_free_2(BAG2_STATE->tbox_context_menu);
+        tbox_free(BAG2_STATE->tbox_context_menu);
         tbox_flush_map(BAG_TBOX_CONTEXT_MENU_TEXT);
         tbox_tilemap_draw(BAG_TBOX_LIST);
         bg_virtual_sync_reqeust_push(0);
@@ -390,7 +390,7 @@ static void bag_context_menu_item_equip_bait(u8 self) {
     // Close the context menu and hide tboxes
     tbox_flush_all(BAG2_STATE->tbox_context_menu, 0x00);
     tbox_flush_map(BAG2_STATE->tbox_context_menu);
-    tbox_free_2(BAG2_STATE->tbox_context_menu);
+    tbox_free(BAG2_STATE->tbox_context_menu);
     tbox_flush_map(BAG_TBOX_CONTEXT_MENU_TEXT);
     tbox_tilemap_draw(BAG_TBOX_LIST);
     bg_virtual_sync_reqeust_push(0);
@@ -411,7 +411,7 @@ static void bag_context_menu_item_unequip_bait(u8 self) {
     // Close the context menu and hide tboxes
     tbox_flush_all(BAG2_STATE->tbox_context_menu, 0x00);
     tbox_flush_map(BAG2_STATE->tbox_context_menu);
-    tbox_free_2(BAG2_STATE->tbox_context_menu);
+    tbox_free(BAG2_STATE->tbox_context_menu);
     tbox_flush_map(BAG_TBOX_CONTEXT_MENU_TEXT);
     tbox_tilemap_draw(BAG_TBOX_LIST);
     bg_virtual_sync_reqeust_push(0);
@@ -439,7 +439,7 @@ static void bag_context_menu_item_equip_bait_from_bait_pocket(u8 self) {
     // Close the context menu and hide tboxes
     tbox_flush_all(BAG2_STATE->tbox_context_menu, 0x00);
     tbox_flush_map(BAG2_STATE->tbox_context_menu);
-    tbox_free_2(BAG2_STATE->tbox_context_menu);
+    tbox_free(BAG2_STATE->tbox_context_menu);
     tbox_flush_map(BAG_TBOX_CONTEXT_MENU_TEXT);
     tbox_tilemap_draw(BAG_TBOX_LIST);
     bg_virtual_sync_reqeust_push(0);
@@ -575,7 +575,7 @@ static void bag_print_money() {
 static void bag_sell_confirm_no(u8 self) {
     // tbox_clear_message(BAG_TBOX_MESSAGE_WITH_YES_NO, false);
     tbox_flush_map_and_frame(BAG2_STATE->tbox_money);
-    tbox_free_2(BAG2_STATE->tbox_money);
+    tbox_free(BAG2_STATE->tbox_money);
     tbox_flush_map_and_frame(BAG_TBOX_MESSAGE_WITH_YES_NO);
     tbox_tilemap_draw(BAG_TBOX_POCKET_NAME);
     bg_virtual_sync_reqeust_push(0);
@@ -589,7 +589,7 @@ static void bag_sold_item_wait_a_b_press(u8 self) {
     if (super.keys_new.keys.A || super.keys_new.keys.B) {
         play_sound(5);
         tbox_flush_map_and_frame(BAG2_STATE->tbox_money);
-        tbox_free_2(BAG2_STATE->tbox_money);
+        tbox_free(BAG2_STATE->tbox_money);
         tbox_clear_message(BAG_TBOX_MESSAGE, false);
         bag_print_item_description(bag_get_current_slot_in_current_pocket());
         tbox_tilemap_draw(BAG_TBOX_DESCRIPTION);
@@ -667,16 +667,16 @@ static void bag_select_quantity_to_sell(u8 self) {
     } else if (super.keys_new.keys.A) {
         play_sound(5);
         tbox_flush_map_and_frame(BAG2_STATE->tbox_quantity);
-        tbox_free_2(BAG2_STATE->tbox_quantity);
+        tbox_free(BAG2_STATE->tbox_quantity);
         bg_virtual_sync_reqeust_push(0);
         scroll_indicator_delete(BAG2_STATE->scroll_indicator_quantity_cb_idx);
         bag_confirm_sell(self);
     } else if (super.keys_new.keys.B) {
         play_sound(5);
         tbox_flush_map_and_frame(BAG2_STATE->tbox_quantity);
-        tbox_free_2(BAG2_STATE->tbox_quantity);
+        tbox_free(BAG2_STATE->tbox_quantity);
         tbox_flush_map_and_frame(BAG2_STATE->tbox_money);
-        tbox_free_2(BAG2_STATE->tbox_money);
+        tbox_free(BAG2_STATE->tbox_money);
         tbox_tilemap_draw(BAG_TBOX_POCKET_NAME);
         bg_virtual_sync_reqeust_push(0);
         scroll_indicator_delete(BAG2_STATE->scroll_indicator_quantity_cb_idx);
@@ -749,7 +749,7 @@ static void bag_select_quantity_to_deposit(u8 self) {
         play_sound(5);
         tbox_flush_set(BAG2_STATE->tbox_quantity, 0x00);
         tbox_flush_map_and_frame(BAG2_STATE->tbox_quantity);
-        tbox_free_2(BAG2_STATE->tbox_quantity);
+        tbox_free(BAG2_STATE->tbox_quantity);
         bg_virtual_sync_reqeust_push(0);
         scroll_indicator_delete(BAG2_STATE->scroll_indicator_quantity_cb_idx);
         bag_deposit_item(self);
@@ -757,7 +757,7 @@ static void bag_select_quantity_to_deposit(u8 self) {
         play_sound(5);
         tbox_flush_set(BAG2_STATE->tbox_quantity, 0x00);
         tbox_flush_map_and_frame(BAG2_STATE->tbox_quantity);
-        tbox_free_2(BAG2_STATE->tbox_quantity);
+        tbox_free(BAG2_STATE->tbox_quantity);
         bg_virtual_sync_reqeust_push(0);
         scroll_indicator_delete(BAG2_STATE->scroll_indicator_quantity_cb_idx);
         bag_reinitialize_list_and_scroll_menu_indicators_and_return_to_idle_callback(self);
@@ -820,7 +820,7 @@ static void bag_select_quantity_to_compost(u8 self) {
         play_sound(5);
         tbox_flush_set(BAG2_STATE->tbox_quantity, 0x00);
         tbox_flush_map_and_frame(BAG2_STATE->tbox_quantity);
-        tbox_free_2(BAG2_STATE->tbox_quantity);
+        tbox_free(BAG2_STATE->tbox_quantity);
         bg_virtual_sync_reqeust_push(0);
         scroll_indicator_delete(BAG2_STATE->scroll_indicator_quantity_cb_idx);
         bag_compost_item(self);
@@ -828,7 +828,7 @@ static void bag_select_quantity_to_compost(u8 self) {
         play_sound(5);
         tbox_flush_set(BAG2_STATE->tbox_quantity, 0x00);
         tbox_flush_map_and_frame(BAG2_STATE->tbox_quantity);
-        tbox_free_2(BAG2_STATE->tbox_quantity);
+        tbox_free(BAG2_STATE->tbox_quantity);
         bg_virtual_sync_reqeust_push(0);
         scroll_indicator_delete(BAG2_STATE->scroll_indicator_quantity_cb_idx);
         bag_reinitialize_list_and_scroll_menu_indicators_and_return_to_idle_callback(self);

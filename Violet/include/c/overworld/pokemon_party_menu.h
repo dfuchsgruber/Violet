@@ -353,4 +353,34 @@ void pokemon_party_menu_rare_candy_display_page_0(u8 self);
  */
 void pokemon_party_menu_big_callback_select_pokemon(u8 self);
 
+/**
+ * @brief Creates a new yes/no menu in the party menu
+ * 
+ */
+void pokemon_party_menu_yes_no_menu_new();
+
+/**
+ * @brief Prints a string in the party menu and destroys task after the text is displayed
+ * 
+ * @param str the string to display
+ * @param keep_open if the text should be kept open
+ * @return u8 the callback idx of the task that waits for the printer to finish
+ */
+u8 pokemon_party_menu_print_string_and_wait(const u8 *str, u8 keep_open);
+
+/**
+ * @brief Prints a string in the party menu
+ * 
+ * @param str the string to print
+ */
+void pokemon_party_menu_print_string(const u8 *str);
+
+/**
+ * @brief Checks if a tbox printer is active in the party menu
+ * 
+ * @return true 
+ * @return false 
+ */
+bool pokemon_party_menu_tbox_printer_is_active();
+
 #endif /* INCLUDE_C_OVERWORLD_POKEMON_PARTY_MENU_H_ */

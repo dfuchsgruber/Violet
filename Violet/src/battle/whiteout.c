@@ -157,7 +157,7 @@ void whiteout_callback_print_text(u8 self) {
 			u8 tbox_idx = (u8)big_callbacks[self].params[1];
 			tbox_flush_map(tbox_idx);
 			tbox_copy_to_vram(tbox_idx, 1);
-			tbox_free_2(tbox_idx);
+			tbox_free(tbox_idx);
 			pal_set_all_to_black();
 			fadescreen_and_clear_dma3_source();
 			++*state;

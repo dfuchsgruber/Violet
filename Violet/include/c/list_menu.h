@@ -95,8 +95,6 @@ void list_menu_generic_cursor_callback(int idx, u8 on_initialize, list_menu *lis
  */
 u8 list_menu_new(list_menu_template *_template, u16 scroll_offset, u16 selected_row);
 
-#define LIST_MENU_NOTHING_CHOSEN -1
-#define LIST_MENU_B_PRESSED -2
 /**
  * Processes the input of a list handler.
  * @param list_menu_handler_callback_idx callback index of the list menu handler
@@ -119,6 +117,9 @@ void list_menu_get_scroll_and_row(u8 list_menu_handler_callback_idx, u16 *scroll
  * @param selected_row if not null, places the currently selected row at this memory location
  */
 void list_menu_remove(u8 list_menu_handler_callback_idx, u16 *scroll_offset, u16 *selected_row);
+
+// Dont ask me why this is inconsistent with the list_menu's constants for key presses
+#define GP_LIST_MENU_B_PRESSED -1
 
 /**
  * Processes the input of the gp list menu and closes it upon selection (or B press).
