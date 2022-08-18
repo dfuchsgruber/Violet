@@ -313,6 +313,8 @@ special_table equ 0x0815FCC0
         .word special_item_obtain_delete | 1
 .org (special_table + 210 * 4)
         .word berry_yields_flower | 1
+.org (special_table + 211 * 4)
+        .word overworld_accessible_move_tutor_select_pokemon | 1
 // 207 <= free <= 211
 
 .org (special_table + (0x129 * 4))

@@ -210,7 +210,7 @@ void pokemon_party_menu_update_slot_display(u8 slot_idx, pokemon *p);
 
 #define PARTY_MENU_TYPE_FIELD                     0 
 #define PARTY_MENU_TYPE_IN_BATTLE                 1 
-#define PARTY_MENU_TYPE_CONTEST                   2 
+#define PARTY_MENU_TYPE_CHOOSE_MON_WITH_GENERIC_RESTRICTIONS                   2 
 #define PARTY_MENU_TYPE_CHOOSE_MON                3 
 #define PARTY_MENU_TYPE_CHOOSE_HALF               4  // multi battles, eReader battles, and some battle facilities
 #define PARTY_MENU_TYPE_MULTI_SHOWCASE            5
@@ -382,5 +382,41 @@ void pokemon_party_menu_print_string(const u8 *str);
  * @return false 
  */
 bool pokemon_party_menu_tbox_printer_is_active();
+
+/**
+ * @brief Callback function that waits for fadescreen and then initializes the pokemon party menu to select a pokemon
+ * The type is set to `big_callbacks[self].params[0]`
+ * 
+ * @param self self-reference
+ */
+void pokemon_party_menu_initialize_and_select_pokemon_after_fadescreen(u8 self);
+
+/**
+ * @brief Displays the information to learn a move in the party menu for a slot
+ * 
+ * @param slot the slot to display info for
+ * @param item the item used (in case of Tms and Hms)
+ * @param move_tutor_idx the move tutor idx used
+ */
+void pokemon_party_menu_render_box_display_learn_move_information(u8 slot, u16 item, u8 move_tutor_idx);
+
+#define PARTY_MENU_BOX_DESCRIPTION_NO_USE      0
+#define PARTY_MENU_BOX_DESCRIPTION_ABLE_3      1
+#define PARTY_MENU_BOX_DESCRIPTION_FIRST       2
+#define PARTY_MENU_BOX_DESCRIPTION_SECOND      3
+#define PARTY_MENU_BOX_DESCRIPTION_THIRD       4
+#define PARTY_MENU_BOX_DESCRIPTION_ABLE        5
+#define PARTY_MENU_BOX_DESCRIPTION_NOT_ABLE    6
+#define PARTY_MENU_BOX_DESCRIPTION_ABLE_2      7
+#define PARTY_MENU_BOX_DESCRIPTION_NOT_ABLE_2  8
+#define PARTY_MENU_BOX_DESCRIPTION_LEARNED     9
+
+/**
+ * @brief Displays an info string for the box to be rendered of a slot in the party menu
+ * 
+ * @param slot in which slot
+ * @param party_msg_idx the message to display
+ */
+void pokemon_party_menu_render_box_display_description(u8 slot, u8 party_msg_idx);
 
 #endif /* INCLUDE_C_OVERWORLD_POKEMON_PARTY_MENU_H_ */

@@ -321,6 +321,7 @@ typedef struct {
     u16 bag_cursor_position[MAX_NUM_POCKETS];
     u16 bag_cursor_items_above[MAX_NUM_POCKETS];
     void (*bag_continuation)();
+    bool (*pokemon_party_menu_choose_mon_generic_mon_is_eligible)(pokemon*);
     u8 bag_context;
 
 } floating_memory;

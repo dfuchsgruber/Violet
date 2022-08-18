@@ -56,4 +56,14 @@ void move_relearner_print_string(u8 tbox_idx, const u8 *str, u8 x, u8 y, int spe
 
 list_menu_template move_relearner_list_menu_template; // static ROM structure
 
+/**
+ * @brief Gets the moves to be learned by a accessible move tutor of a type
+ * 
+ * @param p the pokemon
+ * @param moves where to put the moves
+ * @param type the type of the move tutor
+ * @return u8 how many moves are applicable
+ */
+u8 pokemon_get_accesible_learnable_moves(pokemon *p, u16 *moves, u8 type);
+
 #endif

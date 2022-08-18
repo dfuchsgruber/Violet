@@ -679,3 +679,8 @@ blxr4_npc_create_camera:
     ldr r0, = weather_initialize | 1
     bx r0
     .pool
+
+.org 0x0811f464
+    ldr r1, =pokemon_party_menu_display_party_pokemon_data_for_move_tutor_or_evolution_item | 1
+    bx r1
+    .pool

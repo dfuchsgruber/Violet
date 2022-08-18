@@ -11,6 +11,11 @@
         bx r3
         .pool
 
+.org 0x080a123c
+        ldr r1, = item_is_tm_or_evolution_stone | 1
+        bx r1
+        .pool
+
 .org 0x08041F2E
         mov r1, #4 //Type of check evolution that does also remove the item
 //	

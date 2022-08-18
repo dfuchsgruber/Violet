@@ -414,4 +414,18 @@ void item_anti_ability_patch_field_effect(u8 self);
  */
 void item_ability_capsule_field_effect(u8 self);
 
+enum {
+    ITEM_EVOLUTION_OR_TM_NONE = 0,
+    ITEM_EVOLUTION_OR_TM_TM,
+    ITEM_EVOLUTION_OR_TM_EVOLUTION,
+};
+
+/**
+ * @brief Checks if an item is a tm or an evolution stone
+ * 
+ * @param item_idx the item to check
+ * @return u8 if the item is an evolution stone (`ITEM_EVOLUTION_OR_TM_EVOLUTION`) or a tm (`ITEM_EVOLUTION_OR_TM_TM`) or none of these (`ITEM_EVOLUTION_OR_TM_NONE`)
+ */
+u8 item_is_tm_or_evolution_stone(u16 item_idx);
+
 #endif /* INCLUDE_C_ITEM_ITEM_H_ */

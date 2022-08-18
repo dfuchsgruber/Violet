@@ -635,7 +635,7 @@ ow_script_person_accessible_move_tutor:
 	special SPECIAL_BUFFER_TYPE_NAME
 	loadpointer 0 str_crystal_ask_mon
 	callstd MSG_KEEPOPEN
-	special SPECIAL_MOVE_RELEARNER_SELECT_POKEMON
+	special SPECIAL_SELECT_PARTY_POKEMON_ACCESSIBLE_MOVE_TUTOR @ SPECIAL_MOVE_RELEARNER_SELECT_POKEMON
 	waitstate
 	compare 0x8004 6
 	gotoif EQUAL accessible_move_tutor_end

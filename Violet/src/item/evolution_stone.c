@@ -24,3 +24,13 @@ void item_field_function_evolution_stone(u8 self) {
     item_callback_after_pokemon_selected = item_evolution_stone;
     item_select_target_pokemon(self);
 }
+
+u8 item_is_tm_or_evolution_stone(u16 item_idx) {
+    if (item_get_pocket(item_idx) == POCKET_TM_HM) {
+        return ITEM_EVOLUTION_OR_TM_TM;
+    } else if (item_get_field_function(item_idx) == item_field_function_evolution_stone) {
+        return ITEM_EVOLUTION_OR_TM_EVOLUTION;
+    } else {
+        return ITEM_EVOLUTION_OR_TM_NONE;
+    }
+}

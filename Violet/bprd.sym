@@ -1818,3 +1818,6 @@ pokemon_party_menu_yes_no_menu_new = 0x08122044 | 1;
 pokemon_party_menu_print_string_and_wait = 0x0812032c | 1;
 pokemon_party_menu_print_string = 0x08121ff8 | 1;
 pokemon_party_menu_tbox_printer_is_active = 0x081203a4 | 1;
+pokemon_party_menu_initialize_and_select_pokemon_after_fadescreen = 0x080bfb4c | 1;
+pokemon_party_menu_render_box_display_learn_move_information = 0x0811f504 | 1;
+pokemon_party_menu_render_box_display_description = 0x0811f330 | 1;

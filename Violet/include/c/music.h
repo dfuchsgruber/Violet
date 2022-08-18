@@ -159,6 +159,7 @@ extern const unsigned char mus_rin_battle[];
 extern const unsigned char mus_encounter_violet[];
 extern const unsigned char mus_deoxys_battle[];
 extern const unsigned char mus_titlescreen[];
+extern const unsigned char mus_titlescreen2[];
 extern const unsigned char mus_graveyard[];
 extern const unsigned char mus_encounter_beethoven[];
 extern const unsigned char mus_encounter_staccato[];

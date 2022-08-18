@@ -560,7 +560,7 @@ song song_table[] = {
 	//Song 277
 	{(void*) 0x86c310c, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 278
-	{mus_titlescreen, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	{mus_titlescreen2, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 279
 	{(void*) 0x86c5054, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 280

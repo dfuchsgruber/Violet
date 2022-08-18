@@ -1,17 +1,23 @@
 #include "types.h"
 #include "pokemon/virtual.h"
 #include "field_move.h"
+#include "overworld/script.h"
 #include "overworld/pokemon_party_menu.h"
 #include "constants/pokemon_attributes.h"
 #include "battle/state.h"
 #include "debug.h"
 #include "agbmemory.h"
+#include "item/item.h"
 #include "item/animation.h"
 #include "item/tm_hm.h"
 #include "attack.h"
 #include "callbacks.h"
 #include "pokemon/evolution.h"
 #include "item/item.h"
+#include "fading.h"
+#include "vars.h"
+#include "pokemon/move_relearner.h"
+#include "constants/move_tutor.h"
 
 void pokemon_party_menu_options_build(pokemon *base, u8 index) {
     pokemon_party_menu_options_state_t *options_state = pokemon_party_menu_state.options_state;
@@ -148,4 +154,58 @@ void pokemon_party_menu_do_item_use_animation(u8 self) {
     // We do not want this ***cking animation...
     big_callbacks[self].function = pokemon_party_menu_skip_item_use_animation;
 
+}
+
+static bool accessible_move_tutor_pokemon_is_eligible(pokemon *p) {
+    u8 type = (u8)(*var_access(VAR_ACCESIBLE_MOVE_TUTOR_TYPE) - 1);
+    u16 moves[25];
+    int num_moves = pokemon_get_accesible_learnable_moves(p, moves, type);
+    DEBUG("Slot 0x%x is eligible %d\n", p, num_moves > 0);
+    return num_moves > 0;
+}
+
+void overworld_accessible_move_tutor_select_pokemon() {
+    overworld_script_set_active();
+    fmem.pokemon_party_menu_choose_mon_generic_mon_is_eligible = accessible_move_tutor_pokemon_is_eligible;
+    u8 cb_idx = big_callback_new(pokemon_party_menu_initialize_and_select_pokemon_after_fadescreen, 10);
+    big_callbacks[cb_idx].params[0] = PARTY_MENU_TYPE_CHOOSE_MON_WITH_GENERIC_RESTRICTIONS;
+    fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
+}
+
+bool pokemon_party_menu_display_party_pokemon_data_for_move_tutor_or_evolution_item(u8 slot) {
+    pokemon *p = player_pokemon + slot;
+    u16 item = item_activated;
+    if (pokemon_party_menu_state.menu_type == PARTY_MENU_TYPE_CHOOSE_MON_WITH_GENERIC_RESTRICTIONS &&
+        fmem.pokemon_party_menu_choose_mon_generic_mon_is_eligible) {
+        if (fmem.pokemon_party_menu_choose_mon_generic_mon_is_eligible(p)) {
+            pokemon_party_menu_render_box_display_description(slot, PARTY_MENU_BOX_DESCRIPTION_ABLE);
+        } else { 
+            pokemon_party_menu_render_box_display_description(slot, PARTY_MENU_BOX_DESCRIPTION_NOT_ABLE);
+        }
+        return true;
+    }
+    if (pokemon_party_menu_state.action == PARTY_ACTION_MOVE_TUTOR) {
+        lastresult = false;
+        if (*var_access(0x8005) >= NUM_MOVE_TUTORS)
+            return false;
+        pokemon_party_menu_render_box_display_learn_move_information(slot, 0, (u8)(*var_access(0x8005)));
+    } else {
+        if (pokemon_party_menu_state.action != PARTY_ACTION_USE_ITEM)
+            return false;
+        switch (item_is_tm_or_evolution_stone(item)) {
+        default: {
+            return false;
+        }
+        case ITEM_EVOLUTION_OR_TM_TM: // TM/HM
+            pokemon_party_menu_render_box_display_learn_move_information(slot, item, 0);
+            break;
+        case ITEM_EVOLUTION_OR_TM_EVOLUTION: // Evolution stone
+            if (!pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, NULL) && 
+                pokemon_get_evolution(p, EVOLUTION_TRIGGER_ITEM, item) != POKEMON_POKEMON_0)
+                return false;
+            pokemon_party_menu_render_box_display_description(slot, PARTY_MENU_BOX_DESCRIPTION_NO_USE);
+            break;
+        }
+    }
+    return true;
 }
