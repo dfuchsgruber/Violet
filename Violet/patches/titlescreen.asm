@@ -41,7 +41,7 @@
 
 //frames the titlescreen lasts till reset
 .org 0x08078B80
-    .word 0xe00
+    .word 0x1800
 
 .org 0x083BF9E8
     .word gfx_ts_flamesTiles
