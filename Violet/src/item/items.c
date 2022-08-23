@@ -675,9 +675,9 @@ static u8 str_item_wasmelbeere_description[] = LANGDEP(
 	PSTRING("Schwächt gegnerische sehr effektive\nUnlicht Angriffe (Tragen)."),
 	PSTRING("Weakens very effective Unlicht\nwhen being hold.")
 );
-static u8 str_item_durinbeere_description[] = LANGDEP(
-	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
-	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+static u8 str_item_unbekannter_samen_description[] = LANGDEP(
+	PSTRING("Samen, aus dem eine\nzufällige Beere erwächst."),
+	PSTRING("Seed that grows into a\nrandom berry.")
 );
 static u8 str_item_antiker_samen_description[] = LANGDEP(
 	PSTRING("Extrem seltener Samen einer\nPflanze, die vor langer Zeit\ngewachsen istDOTS"),
@@ -4446,13 +4446,13 @@ item items[] = {
 		NULL, //battle_usage2
 		0, // secondary_idx
 	},{
-		//ITEM_DURINBEERE
-		LANGDEP(PSTRING("Durinbeere"), PSTRING("Durin Berry")),
+		//ITEM_UNBEKANNTER_SAMEN
+		LANGDEP(PSTRING("?-Samen"), PSTRING("?-Seed")),
 		0xa6, //index
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_durinbeere_description,
+		str_item_unbekannter_samen_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket

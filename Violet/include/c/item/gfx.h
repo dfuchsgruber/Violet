@@ -915,5 +915,7 @@ extern LZ77COMPRESSED gfx_item_faehigkeit_kapselTiles;
 extern LZ77COMPRESSED gfx_item_faehigkeit_kapselPal;
 extern LZ77COMPRESSED gfx_item_antiker_samenTiles;
 extern LZ77COMPRESSED gfx_item_antiker_samenPal;
+extern LZ77COMPRESSED gfx_item_unbekannter_samenTiles;
+extern LZ77COMPRESSED gfx_item_unbekannter_samenPal;
 
 #endif

@@ -204,6 +204,8 @@ ask_planting:
 dirt_pile:
 	compare 0x8004 ITEM_ANTIKER_SAMEN
 	gotoif EQUAL load_str_dirt_pile_male
+	compare 0x8004 ITEM_UNBEKANNTER_SAMEN
+	gotoif EQUAL load_str_dirt_pile_male
 	loadpointer 0 str_dirt_pile
 	goto loaded_str_dirt_pile
 load_str_dirt_pile_male:
@@ -217,6 +219,8 @@ loaded_str_dirt_pile:
 	goto dont_harvest
 sprout:
 	compare 0x8004 ITEM_ANTIKER_SAMEN
+	gotoif EQUAL load_str_sprout_pile_male
+	compare 0x8004 ITEM_UNBEKANNTER_SAMEN
 	gotoif EQUAL load_str_sprout_pile_male
 	loadpointer 0 str_sprout
 	goto loaded_str_sprout
@@ -232,6 +236,8 @@ loaded_str_sprout:
 taller:
 	compare 0x8004 ITEM_ANTIKER_SAMEN
 	gotoif EQUAL load_str_taller_male
+	compare 0x8004 ITEM_UNBEKANNTER_SAMEN
+	gotoif EQUAL load_str_taller_male
 	loadpointer 0 str_taller
 	goto loaded_str_taller
 load_str_taller_male:
@@ -246,6 +252,8 @@ loaded_str_taller:
 blossom:
 	compare 0x8004 ITEM_ANTIKER_SAMEN
 	gotoif EQUAL load_str_blossom_male
+	compare 0x8004 ITEM_UNBEKANNTER_SAMEN
+	gotoif EQUAL load_str_blossom_male
 	loadpointer 0 str_blossom
 	goto loaded_str_blossom
 load_str_blossom_male:
@@ -259,6 +267,8 @@ loaded_str_blossom:
 	goto dont_harvest
 ask_use_wonder_dust:
 	compare 0x8004 ITEM_ANTIKER_SAMEN
+	gotoif EQUAL load_str_wonder_dust_single_male
+	compare 0x8004 ITEM_UNBEKANNTER_SAMEN
 	gotoif EQUAL load_str_wonder_dust_single_male
 	loadpointer 0 str_ask_wonder_dust
 	goto loaded_str_ask_wonder_dust
@@ -283,6 +293,8 @@ wonderdust_update_gfx:
 	checkanimation 23
 	checksound
 	compare 0x8004 ITEM_ANTIKER_SAMEN
+	gotoif EQUAL load_str_grown_single_male
+	compare 0x8004 ITEM_UNBEKANNTER_SAMEN
 	gotoif EQUAL load_str_grown_single_male
 	loadpointer 0 str_grown
 	goto loaded_str_grown
@@ -319,6 +331,8 @@ harvest_berries:
 load_str_want_to_harvest_single:
 	compare 0x8004 ITEM_ANTIKER_SAMEN
 	gotoif EQUAL load_str_want_to_harvest_single_male
+	compare 0x8004 ITEM_UNBEKANNTER_SAMEN
+	gotoif EQUAL load_str_want_to_harvest_single_male
 	loadpointer 0 str_want_to_harvest_single
 	goto loaded_str_want_to_harvest_single
 load_str_want_to_harvest_single_male:
@@ -341,6 +355,8 @@ loaded_str_want_to_harvest_single:
 load_str_harvest_single:
 	compare 0x8004 ITEM_ANTIKER_SAMEN
 	gotoif EQUAL load_str_harvest_single_male
+	compare 0x8004 ITEM_UNBEKANNTER_SAMEN
+	gotoif EQUAL load_str_harvest_single_male
 	loadpointer 0 str_harvest_single
 	goto loaded_str_harvest
 load_str_harvest_single_male:
@@ -356,6 +372,8 @@ loaded_str_harvest:
 	goto loaded_str_harvested_single
 load_str_harvested_single:
 	compare 0x8004 ITEM_ANTIKER_SAMEN
+	gotoif EQUAL load_str_harvested_single_male
+	compare 0x8004 ITEM_UNBEKANNTER_SAMEN
 	gotoif EQUAL load_str_harvested_single_male
 	loadpointer 0 str_harvested_single
 	goto loaded_str_harvested_single

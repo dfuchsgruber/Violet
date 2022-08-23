@@ -65,6 +65,7 @@ static bool drop_standard_item(u8 battler_idx, u16 *item, u8 *cnt) {
 }
 
 static u32 standard_item_rare_drop_rates[][2] = {
+    {ITEM_UNBEKANNTER_SAMEN, 4},
     {ITEM_MININUGGET, 5},
     {ITEM_RIESENAPFEL, 3},
 };
@@ -86,7 +87,7 @@ static bool drop_rare_item(u8 battler_idx, u16 *item, u8 *cnt) {
 
 #define P_ARRAY_ADD_ITEM(p, items, item, prob, p_size) {p[p_size] = prob; items[p_size] = item; p_size++;}
 
-static u32 drop_type_item_count_rates[] = {0, 1};
+static u32 drop_type_item_count_rates[] = {[1] = 1};
 
 static bool drop_type_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     u32 p[16]; u16 items[16];
@@ -218,8 +219,6 @@ static u32 berry_dropping_probabilities[] = {
     [ITEM_IDX_TO_BERRY_IDX(ITEM_KIWANBEERE)] = 6,
     [ITEM_IDX_TO_BERRY_IDX(ITEM_PALLMBEERE)] = 6,
     [ITEM_IDX_TO_BERRY_IDX(ITEM_WASMELBEERE)] = 6,
-    [ITEM_IDX_TO_BERRY_IDX(ITEM_DURINBEERE)] = 6,
-    // [ITEM_IDX_TO_BERRY_IDX(ITEM_MYRTILBEERE)] = 6,
     [ITEM_IDX_TO_BERRY_IDX(ITEM_LYDZIBEERE)] = 2,
     [ITEM_IDX_TO_BERRY_IDX(ITEM_LINGANBEERE)] = 2,
     [ITEM_IDX_TO_BERRY_IDX(ITEM_SALKABEERE)] = 2,

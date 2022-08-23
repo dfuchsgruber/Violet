@@ -251,10 +251,10 @@ berry berries[] = {
         .spicy = 0, .dry = 0, .sweet = 40,
         .bitter = 10, .sour = 0, .smoothness = 70,
     },
-    [ITEM_IDX_TO_BERRY_IDX(ITEM_DURINBEERE) - 1]  = {
-        .name = LANGDEP(PSTRING("Durin"), PSTRING("Durin")),
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_UNBEKANNTER_SAMEN) - 1]  = {
+        .name = LANGDEP(PSTRING("Samen"), PSTRING("Samen")),
         .firmness = 3, .size = 280,
-        .max_yield = 2, .min_yield = 1, .stage_duration = 18,
+        .max_yield = 2, .min_yield = 1, .stage_duration = 7,
         .spicy = 0, .dry = 0, .sweet = 0,
         .bitter = 40, .sour = 10, .smoothness = 70,
     },
@@ -542,6 +542,54 @@ void berry_plant() {
     fadescreen_all(1, 0);
 }
 
+static u32 unknown_seed_probabilities[] = {
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_AMRENABEERE)] = 7,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_MARONBEERE)] = 7,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_PIRSIFBEERE)] = 7,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_FRAGIABEERE)] = 7,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_WILBIRBEERE)] = 7,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_JONAGOBEERE)] = 4,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_SINELBEERE)] = 7,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_PERSIMBEERE)] = 7,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_PRUNUSBEERE)] = 1,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_TSITRUBEERE)] = 5,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_GIEFEBEERE)] = 5,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_WIKIBEERE)] = 5,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_MAGOBEERE)] = 5,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_GAUVEBEERE)] = 5,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_YAPABEERE)] = 5,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_HIMMIHBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_MORBBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_NANABBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_NIRBEBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_SANANABEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_GRANABEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_SETANGBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_QUALOTBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_HONMELBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_LABRUSBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_TAMOTBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_SAIMBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_MAGOSTBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_RABUTABEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_TRONZIBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_KIWANBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_PALLMBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_WASMELBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_LYDZIBEERE)] = 2,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_LINGANBEERE)] = 2,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_SALKABEERE)] = 2,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_TAHAYBEERE)] = 2,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_APIKOBEERE)] = 2,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_LANSATBEERE)] = 2,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_KRAMBOBEERE)] = 1,
+};
+
+static void berry_tree_unknown_seed_randomize_berry(u8 berry_tree_idx) {
+    size_t idx = choice(unknown_seed_probabilities, ARRAY_COUNT(unknown_seed_probabilities), NULL);
+    cmem.berry_trees[berry_tree_idx].berry = (u8)(idx & 63);
+}
+
 bool berry_tree_grow(u8 berry_tree_idx, size_t minutes) {
     berry_tree *tree = cmem.berry_trees + berry_tree_idx;
     if (tree->stage == BERRY_STAGE_NO_BERRY || tree->stage == BERRY_STAGE_BERRIES)
@@ -549,6 +597,8 @@ bool berry_tree_grow(u8 berry_tree_idx, size_t minutes) {
     while(minutes > 0) {
         if (tree->minutes_to_next_stage <= minutes) {
             minutes -= tree->minutes_to_next_stage;
+            if (tree->stage == BERRY_STAGE_DIRT_PILE && tree->berry == ITEM_IDX_TO_BERRY_IDX(ITEM_UNBEKANNTER_SAMEN)) 
+                berry_tree_unknown_seed_randomize_berry(berry_tree_idx); // The unknown seed grows into a random plant
             if (tree->stage == BERRY_STAGE_BLOSSOM)
                 berry_tree_calculate_yield(berry_tree_idx);
             tree->stage++;

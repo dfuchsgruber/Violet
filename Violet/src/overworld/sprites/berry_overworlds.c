@@ -1068,7 +1068,7 @@ overworld_sprite overworlds_berry_trees[][3] = {
 			.graphics = overworld_gfxs_watmel_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
-	[ITEM_DURINBEERE - ITEM_FIRST_BERRY] = {
+	[ITEM_UNBEKANNTER_SAMEN - ITEM_FIRST_BERRY] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,

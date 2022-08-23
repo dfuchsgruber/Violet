@@ -27,7 +27,7 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
-	additem ITEM_ANTIKER_SAMEN 30
+	additem ITEM_UNBEKANNTER_SAMEN 30
 	end
 
 
