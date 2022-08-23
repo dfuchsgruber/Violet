@@ -3,7 +3,7 @@
 		"footer": "map_footer_30_route_10",
 		"events": {
 			"person_cnt": 13,
-			"warp_cnt": 8,
+			"warp_cnt": 1,
 			"trigger_cnt": 0,
 			"signpost_cnt": 1,
 			"persons": [
@@ -387,67 +387,11 @@
 			],
 			"warps": [
 				{
-					"x": "27",
-					"y": "16",
-					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": "14"
-				},
-				{
-					"x": "28",
-					"y": "16",
-					"level": 0,
-					"target_warp_idx": "1",
-					"target_map": 0,
-					"target_bank": "14"
-				},
-				{
-					"x": "27",
-					"y": "17",
-					"level": 0,
-					"target_warp_idx": "2",
-					"target_map": 0,
-					"target_bank": "14"
-				},
-				{
-					"x": "28",
-					"y": "17",
-					"level": 0,
-					"target_warp_idx": "3",
-					"target_map": 0,
-					"target_bank": "14"
-				},
-				{
-					"x": "31",
-					"y": "44",
-					"level": 0,
-					"target_warp_idx": "4",
-					"target_map": 0,
-					"target_bank": "14"
-				},
-				{
-					"x": "32",
-					"y": "44",
-					"level": 0,
-					"target_warp_idx": "5",
-					"target_map": 0,
-					"target_bank": "14"
-				},
-				{
 					"x": "31",
 					"y": "45",
-					"level": 0,
-					"target_warp_idx": "6",
-					"target_map": 0,
-					"target_bank": "14"
-				},
-				{
-					"x": "32",
-					"y": "45",
-					"level": 0,
-					"target_warp_idx": "7",
-					"target_map": 0,
+					"level": "0",
+					"target_warp_idx": "0",
+					"target_map": "0",
 					"target_bank": "14"
 				}
 			],

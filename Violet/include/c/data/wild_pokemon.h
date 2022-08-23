@@ -749,33 +749,52 @@ static wild_pokemon_habitat wild_pokemon_route_9_clouds_grass = {
 
 static wild_pokemon_entry wild_pokemon_route_10_clouds_grass_entries[12] = {
 	[WILD_POKEMON_DENSITY_GRASS_0_20_PERCENT] = 
-		{.level_min = 30, .level_max = 33, .species = POKEMON_WINGULL},
+		{.level_min = 33, .level_max = 33, .species = POKEMON_WINGULL},
 	[WILD_POKEMON_DENSITY_GRASS_1_20_PERCENT] = 
-		{.level_min = 30, .level_max = 33, .species = POKEMON_SCHWALBINI},
+		{.level_min = 33, .level_max = 34, .species = POKEMON_KLEINSTEIN},
 	[WILD_POKEMON_DENSITY_GRASS_2_10_PERCENT] = 
-		{.level_min = 30, .level_max = 33, .species = POKEMON_NATU},
+		{.level_min = 33, .level_max = 34, .species = POKEMON_MEDITIE},
 	[WILD_POKEMON_DENSITY_GRASS_3_10_PERCENT] = 
-		{.level_min = 30, .level_max = 33, .species = POKEMON_WINGULL},
+		{.level_min = 33, .level_max = 34, .species = POKEMON_SKORGLA},
 	[WILD_POKEMON_DENSITY_GRASS_4_10_PERCENT] = 
-		{.level_min = 31, .level_max = 33, .species = POKEMON_WABLU},
+		{.level_min = 34, .level_max = 34, .species = POKEMON_MACHOLLO},
 	[WILD_POKEMON_DENSITY_GRASS_5_10_PERCENT] = 
-		{.level_min = 31, .level_max = 34, .species = POKEMON_WINGULL},
+		{.level_min = 35, .level_max = 35, .species = POKEMON_NINCADA},
 	[WILD_POKEMON_DENSITY_GRASS_6_5_PERCENT] = 
-		{.level_min = 31, .level_max = 34, .species = POKEMON_NATU},
+		{.level_min = 34, .level_max = 35, .species = POKEMON_NINCADA},
 	[WILD_POKEMON_DENSITY_GRASS_7_5_PERCENT] = 
-		{.level_min = 31, .level_max = 34, .species = POKEMON_SCHWALBINI},
+		{.level_min = 34, .level_max = 35, .species = POKEMON_SKORGLA},
 	[WILD_POKEMON_DENSITY_GRASS_8_4_PERCENT] = 
-		{.level_min = 32, .level_max = 34, .species = POKEMON_WINGULL},
+		{.level_min = 35, .level_max = 35, .species = POKEMON_KLEINSTEIN},
 	[WILD_POKEMON_DENSITY_GRASS_9_4_PERCENT] = 
-		{.level_min = 32, .level_max = 35, .species = POKEMON_WABLU},
+		{.level_min = 35, .level_max = 35, .species = POKEMON_GEOROK},
 	[WILD_POKEMON_DENSITY_GRASS_10_1_PERCENT] = 
-		{.level_min = 33, .level_max = 35, .species = POKEMON_WABLU},
+		{.level_min = 35, .level_max = 35, .species = POKEMON_NINJASK},
 	[WILD_POKEMON_DENSITY_GRASS_11_1_PERCENT] = 
-		{.level_min = 35, .level_max = 38, .species = POKEMON_PELIPPER},
+		{.level_min = 36, .level_max = 37, .species = POKEMON_PELIPPER},
 };
 
 static wild_pokemon_habitat wild_pokemon_route_10_clouds_grass = {
-	.frequency = 2, .data = wild_pokemon_route_10_clouds_grass_entries
+	.frequency = 25, .data = wild_pokemon_route_10_clouds_grass_entries
+};
+
+
+static wild_pokemon_entry wild_pokemon_route_10_clouds_other_entries[12] = {
+	[WILD_POKEMON_DENSITY_OTHER_0_30_PERCENT] = 
+		{.level_min = 35, .level_max = 37, .species = POKEMON_NINJASK},
+	[WILD_POKEMON_DENSITY_OTHER_1_25_PERCENT] = 
+		{.level_min = 35, .level_max = 37, .species = POKEMON_PHANPY},
+	[WILD_POKEMON_DENSITY_OTHER_2_20_PERCENT] = 
+		{.level_min = 35, .level_max = 38, .species = POKEMON_ONIX},
+	[WILD_POKEMON_DENSITY_OTHER_3_15_PERCENT] = 
+		{.level_min = 36, .level_max = 38, .species = POKEMON_NINJASK},
+	[WILD_POKEMON_DENSITY_OTHER_4_10_PERCENT] = 
+		{.level_min = 37, .level_max = 39, .species = POKEMON_DONPHAN},
+};
+
+
+static wild_pokemon_habitat wild_pokemon_route_10_clouds_other = {
+	.frequency = 165, .data = wild_pokemon_route_10_clouds_other_entries
 };
 
 static wild_pokemon_entry wild_pokemon_15_0_grass_entries[12] = {
@@ -3939,7 +3958,7 @@ wild_pokemon_data wild_pokemon[] = {
 	{
 		.bank = 14, .map = 0,
 		.water = NULL, .rod = NULL,
-		.grass = &wild_pokemon_route_10_clouds_grass, .other = NULL
+		.grass = &wild_pokemon_route_10_clouds_grass, .other = &wild_pokemon_route_10_clouds_other
 
 	},
 	{

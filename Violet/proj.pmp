@@ -49,7 +49,7 @@
 				"MAP_VULCANO"
 			],
 			"59": [
-				"map_1_59",
+				"map_tafelberg_north",
 				"src/map/banks/1/59/map_1_59.pms",
 				"MAP_KUESTENBERG"
 			],
@@ -2381,7 +2381,8 @@
 		"maptileset0_kaskada": "src/map/tileset/maptileset0_kaskada.pms",
 		"maptileset0_route_4": "src/map/tileset/maptileset0_route_4.pms",
 		"maptileset_clouds_dark_green": "src/map/tileset/maptileset_clouds_dark_green.pms",
-		"maptileset_cave_mossy": "src/map/tileset/maptileset_cave_mossy.pms"
+		"maptileset_cave_mossy": "src/map/tileset/maptileset_cave_mossy.pms",
+		"maptileset_clouds_canyon": "src\\map\\tileset\\maptileset_clouds_canyon.pms"
 	},
 	"tilesets_secondary": {
 		"maptileset45": "src/map/tileset/maptileset45.pms",
@@ -2463,7 +2464,8 @@
 		"maptileset_cloud_cherry_tree": "src/map/tileset/maptileset_cloud_cherry_tree.pms",
 		"maptileset_cloud_anemonia": "src/map/tileset/maptileset_cloud_anemonia.pms",
 		"maptileset_cloud_kaskada_ruins": "src/map/tileset/maptileset_cloud_kaskada_ruins.pms",
-		"maptileset_cloud_old_house": "src/map/tileset/maptileset_cloud_old_house.pms"
+		"maptileset_cloud_old_house": "src/map/tileset/maptileset_cloud_old_house.pms",
+		"maptileset_clouds_canyon_secondary": "src\\map\\tileset\\maptileset_clouds_canyon_secondary.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2550,6 +2552,7 @@
 		"gfx_maptileset_cloud_cherry_treeTiles": "asset/gfx/tileset/gfx_maptileset_cloud_cherry_tree.png",
 		"gfx_maptileset_cloud_anemoniaTiles": "asset/gfx/tileset/gfx_maptileset_cloud_anemonia.png",
 		"gfx_maptileset_cloud_ruins_kaskadaTiles": "asset/gfx/tileset/gfx_maptileset_cloud_ruins_kaskada.png",
-		"gfx_maptileset_clouds_old_houseTiles": "asset/gfx/tileset/gfx_maptileset_clouds_old_house.png"
+		"gfx_maptileset_clouds_old_houseTiles": "asset/gfx/tileset/gfx_maptileset_clouds_old_house.png",
+		"gfx_maptileset_clouds_canyon_secondaryTiles": "asset\\gfx\\tileset\\gfx_maptileset_clouds_canyon_secondary.png"
 	}
 }
