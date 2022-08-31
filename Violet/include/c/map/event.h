@@ -11,7 +11,7 @@
 #include "types.h"
 #include "tile/coordinate.h"
 #include "tile/hidden_item.h"
-
+#include "constants/signpost_types.h"
 
 typedef struct map_event_person {
     u8 target_index; // Used as a reference id for the person

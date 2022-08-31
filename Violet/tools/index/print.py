@@ -3,6 +3,7 @@
 # Module to output the index in very compressed human readable form
 
 import argparse, pickle
+import enum
 from collections import defaultdict
 import yaml
 import pprint
@@ -120,6 +121,21 @@ def print_dungeon_index(dungeons):
         index += f'\t {idx}\t: ' + ', '.join(locations) + '\n'
     return index
 
+def print_treasure_map_index(treasure_maps):
+    index = ''
+    for idx, entry in enumerate(treasure_maps):
+            if entry is None:
+                index += f'\t{idx}:\n'
+            else:
+                bank = entry['bank']
+                map_idx = entry['map_idx']
+                namespace = entry['namespace']
+                sign_idx = entry['sign_idx']
+                item = entry['item']
+                count = entry['count']
+                index += f'\t{idx}:\t {namespace} [{bank}.{map_idx}] Sign {sign_idx}, {count} x {item}\n'
+    return index
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Creates an index pickle for all species habitats.')
     parser.add_argument('pickle', help='The pickle to output in readable format')
@@ -133,6 +149,7 @@ if __name__ == '__main__':
     group.add_argument('--tutor_crystal', dest='index_type', action='store_const', const='tutor_crystal', help='Output the index for tutor crystals')
     group.add_argument('--dungeon', dest='index_type', action='store_const', const='dungeon', help='Output the index for dungeons')
     group.add_argument('--pokemon', dest='index_type', action='store_const', const='pokemon_data', help='Output all basestat data for all pokemon.')
+    group.add_argument('--treasure_map', dest='index_type', action='store_const', const='treasure_map', help='Output all basestat data for all pokemon.')
     args = parser.parse_args()
 
     with open(args.pickle, 'rb') as f:
@@ -151,6 +168,8 @@ if __name__ == '__main__':
         readable = print_tutor_crystal_index(index)
     elif args.index_type == 'dungeon':
         readable = print_dungeon_index(index)
+    elif args.index_type == 'treasure_map':
+        readable = print_treasure_map_index(index)
     elif args.index_type == 'pokemon_data':
         readable = pprint.pformat(index, indent=4)
     with open(args.output, 'w+') as f:

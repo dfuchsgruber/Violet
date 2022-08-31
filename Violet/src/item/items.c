@@ -676,8 +676,8 @@ static u8 str_item_wasmelbeere_description[] = LANGDEP(
 	PSTRING("Weakens very effective Unlicht\nwhen being hold.")
 );
 static u8 str_item_unbekannter_samen_description[] = LANGDEP(
-	PSTRING("Samen, aus dem eine\nzufällige Beere erwächst."),
-	PSTRING("Seed that grows into a\nrandom berry.")
+	PSTRING("Ein gewöhnlicher Samen. Es\pist nicht zu erkennen, welche\nBeere daraus wachsen wird."),
+	PSTRING("A plain seed. It is not\npossible to tell which berry\nis going to grow from it.")
 );
 static u8 str_item_antiker_samen_description[] = LANGDEP(
 	PSTRING("Extrem seltener Samen einer\nPflanze, die vor langer Zeit\ngewachsen istDOTS"),

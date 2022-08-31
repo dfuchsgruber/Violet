@@ -40,6 +40,20 @@ map_footer_t *get_mapfooter();
 void overworld_load_tilesets(map_footer_t *footer);
 
 /**
+ * @brief Loads the palettes of tilesets and applies dns effects (highlights certain colors)
+ * 
+ * @param footer the footer to load pals of
+ */
+void overworld_load_tileset_pals(map_footer_t *footer);
+
+/**
+ * @brief Loads the palettes of tilesets as are (does not apply palette effects)
+ * 
+ * @param footer the footer to load the pals of
+ */
+void overworld_load_tileset_pals_without_palette_effects(map_footer_t *footer);
+
+/**
  * Draws a block onto the bg and schedules a vram copy for bg1-bg3.
  * @param f the footer to use
  * @param offset at which offset to put the block

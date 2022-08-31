@@ -5,7 +5,7 @@
 			"person_cnt": 53,
 			"warp_cnt": 8,
 			"trigger_cnt": 2,
-			"signpost_cnt": 6,
+			"signpost_cnt": 7,
 			"persons": [
 				{
 					"target_index": 1,
@@ -1728,6 +1728,22 @@
 						"script": 0
 					},
 					"flag": "0"
+				},
+				{
+					"x": "72",
+					"y": "31",
+					"level": "0",
+					"type": "SIGNPOST_HIDDEN_TREASURE",
+					"flag": "0",
+					"value": {
+						"item": {
+							"item": "ITEM_POKEBALL",
+							"flag": "1",
+							"amount": "5",
+							"chunk": "0"
+						},
+						"script": "0"
+					}
 				}
 			]
 		},

@@ -128,7 +128,8 @@ extern "C" {
     void bg_virtual_set_displace(u8 bg_id, u16 value, int mode);
 
     /**
-     * Pushes a request to sync the bg vram with its virutal tilemap
+     * Pushes a request to copy the virtual bg tilemap to vram
+     * To that end, the active vblank callback should call `bg_virtual_sync_reqeust_proceed`
      * @param bg_id the bg id
      */
     void bg_virtual_sync_reqeust_push(u8 bg_id);
@@ -217,7 +218,7 @@ extern "C" {
     void bg_set_attribute(u8 bg_idx, u8 attribute, u8 value);
 
     /**
-     * Executes all bg copy requests that were pushed so far
+     * Copies all request for copying bg virtual tilemaps to vram. This should be called in the vblank callback.
      **/
     void bg_virtual_sync_reqeust_proceed();
 

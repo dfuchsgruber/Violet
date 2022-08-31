@@ -60,10 +60,16 @@ def get_item_index(rompath, symbolspath, projectpath):
                     raise e
             for sign_idx, sign in enumerate(header['events']['signposts']):
                 try:
+                    if sign['type'] == 'SIGNPOST_HIDDEN_ITEM':
+                        _type = 'hidden'
+                    elif sign['type'] == 'SIGNPOST_HIDDEN_TREASURE':
+                        _type = 'treasure'
+                    else:
+                        continue
                     item = sign['value']['item']['item']
                     if item in items:
                         items[item]['locations'].append({
-                            'type' : 'hidden',
+                            'type' : _type,
                             'bank' : bank,
                             'map_idx' : map_idx,
                             'flag' : sign['value']['item']['flag'],

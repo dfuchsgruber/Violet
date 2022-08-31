@@ -122,6 +122,7 @@ void overworld_tilesets_apply_palette_effects(map_footer_t *foot) {
     }
 }
 
+
 void tileset_load_pal_as_primary(map_footer_t *foot){
     fmem.current_tileset_1 = foot->tileset1;
     overworld_load_tileset_pal(foot->tileset1, 0, 0xE0);
@@ -138,6 +139,17 @@ void overworld_load_tileset_pals(map_footer_t *footer) {
         tileset_load_pal_as_primary(footer);
         tileset_load_pal_as_secondary(footer);
         overworld_tilesets_apply_palette_effects(footer);
+    }
+}
+
+static void overworld_load_tileset_pal_without_palette_effect(tileset *ts, u16 dst_color, u16 size) {
+    pal_copy(ts->info.color_section ? ts->colors + 7 * 16 : ts->colors, dst_color, size);
+}
+
+void overworld_load_tileset_pals_without_palette_effects(map_footer_t *footer) {
+    if (footer) {
+        overworld_load_tileset_pal_without_palette_effect(footer->tileset1, 0, sizeof(color_t) * 7 * 16);
+        overworld_load_tileset_pal_without_palette_effect(footer->tileset2, 7 * 16, sizeof(color_t) * 6 * 16);
     }
 }
 

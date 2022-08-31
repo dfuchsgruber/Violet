@@ -27,6 +27,9 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	setflag FLAG_TREASURE_MAP_BASE + 1
+	end
+
 	additem ITEM_UNBEKANNTER_SAMEN 30
 	end
 

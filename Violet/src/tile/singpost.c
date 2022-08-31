@@ -57,6 +57,10 @@ int hidden_item_get_field(hidden_item_t hidden_item, u8 field){
             return (u8)hidden_item.detector_disabled;
         case HIDDEN_CHUNK:
             return (u8)hidden_item.chunk;
+        case HIDDEN_TREASURE_FLAG:
+            return (u16)(FLAG_TREASURE_BASE + hidden_item.flag);
+        case HIDDEN_TREASURE_MAP_FLAG:
+            return (u16)(FLAG_TREASURE_MAP_BASE + hidden_item.flag);
         default:
             return 0;
     }
@@ -64,6 +68,7 @@ int hidden_item_get_field(hidden_item_t hidden_item, u8 field){
 
 extern u8 ow_script_signpost_null[];
 extern u8 ow_script_hidden_item_find[];
+extern u8 ow_script_treasure_find[];
 
 u8 *signpost_get_script(position_t *position, u8 behaviour, u8 direction) {
     map_event_signpost *sign = map_get_signpost_by_position(&mapheader_virtual, (s16)(position->coordinates.x - 7), (s16)(position->coordinates.y - 7), position->height);
@@ -97,6 +102,22 @@ u8 *signpost_get_script(position_t *position, u8 behaviour, u8 direction) {
             *var_access(PLAYERFACING) = direction;
             overworld_static_detector_issue_update_when_flag_set(*var_access(0x8004));
             return ow_script_hidden_item_find;
+        }
+        case SIGNPOST_HIDDEN_TREASURE: {
+            u16 flag = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_TREASURE_MAP_FLAG);
+            DEBUG("Treasure map flag 0x%x checked, is %d.\n", flag, checkflag(flag));
+            if (!checkflag(flag))
+                return NULL;
+            u16 treasure_flag = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_TREASURE_FLAG);
+            *var_access(0x8004) = treasure_flag;
+            *var_access(0x8005) = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_ITEM_IDX);
+            *var_access(0x8006) = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_COUNT);
+            *var_access(0x8007) = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_CHUNK);
+            DEBUG("Treasure flag 0x%x is %d\n", *var_access(0x8004), checkflag(*var_access(0x8004)));
+            if (checkflag(treasure_flag)) 
+                return NULL;
+            *var_access(PLAYERFACING) = direction;
+            return ow_script_treasure_find;
         }
     }
     // Signpost scripts

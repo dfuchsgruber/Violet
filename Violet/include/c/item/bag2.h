@@ -8,7 +8,6 @@
 #include "list_menu.h"
 #include "constants/item_pockets.h"
 #include "text.h"
-#include "text.h"
 
 #define BAG_START_TILE_BORDER_BASE (1023 - TBOX_FRAME_STD_NUM_TILES - TBOX_FRAME_SET_STYLE_NUM_TILES - TBOX_FRAME_MESSAGE_NUM_TILES)
 #define BAG_START_TILE_BORDER_STD (BAG_START_TILE_BORDER_BASE)

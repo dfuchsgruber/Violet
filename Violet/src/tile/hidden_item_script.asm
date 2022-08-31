@@ -6,6 +6,7 @@
 .include "specials.s"
 
 .global ow_script_hidden_item_find
+.global ow_script_hidden_item_obtainable
 
 ow_script_hidden_item_find:
     lockall

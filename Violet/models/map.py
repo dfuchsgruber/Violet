@@ -131,7 +131,8 @@ signpost_value_type = agb.types.UnionType({
         "SIGNPOST_SCRIPT_WEST" : 'script',
         "SIGNPOST_5" : 'item',
         "SIGNPOST_6" : 'item',
-        "SIGNPOST_HIDDEN_ITEM" : 'item'
+        "SIGNPOST_HIDDEN_ITEM" : 'item',
+        "SIGNPOST_HIDDEN_TREASURE" : 'item',
     }[parents[-1]['type']]
 )
 

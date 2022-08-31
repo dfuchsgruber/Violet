@@ -701,6 +701,4 @@ void battle_animation_callback_create_item_sprite(u8 self) {
         }
 
     }
-
-
 }

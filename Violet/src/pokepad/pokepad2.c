@@ -4,6 +4,7 @@
 #include "pokepad/pokeradar.h"
 #include "pokepad/wondertrade.h"
 #include "pokepad/incubator.h"
+#include "pokepad/treasure_map.h"
 #include "save.h"
 #include "bg.h"
 #include "color.h"
@@ -52,6 +53,7 @@ static u8 wondertrade_name[] = LANGDEP(PSTRING("Wundert."), PSTRING("Wondert."))
 static u8 pokedex_name[] = LANGDEP(PSTRING("Pokédex"), PSTRING("Pokédex"));
 static u8 pokeradar_name[] = LANGDEP(PSTRING("Pokéradar"), PSTRING("Pokéradar"));
 static u8 incubator_name[] = LANGDEP(PSTRING("Inkubator"), PSTRING("Incubator"));
+static u8 treasure_map_name[] = LANGDEP(PSTRING("Karten"), PSTRING("Maps"));
 
 static u8 wondertrade_description[] = LANGDEP(
     PSTRING("Tausche Pokémon mit Trainern aus aller\nWelt."),
@@ -68,6 +70,10 @@ static u8 pokeradar_description[] = LANGDEP(
 static u8 incubator_description[] = LANGDEP(
     PSTRING("Brüte Eier aus und überprüfe deren\nStatus."),
     PSTRING("Hatch eggs and check on their status.")
+);
+static u8 treasure_map_description[] = LANGDEP(
+    PSTRING("Sieh dir Schatzkarten an, die\ndu gefunden hast."),
+    PSTRING("Look at treasure maps you found.")
 );
 
 static pokepad2_item pokepad2_items[] = {
@@ -121,6 +127,19 @@ static pokepad2_item pokepad2_items[] = {
         },
         .icon_palette = {
             .pal = gfx_pokepad_icon_incubatorPal, .tag = POKEPAD_ITEM_ICON_BASE_TAG + POKEPAD_ITEM_INCUBATOR,
+        },
+    }, 
+    [POKEPAD_ITEM_TREASURE_MAP] = {
+        .name = treasure_map_name,
+        .description = treasure_map_description,
+        .flag = POKEDEX,
+        .initialize = treasure_map_initialize,
+        .icon_graphic = {
+            .sprite = gfx_pokepad_icon_treasure_mapTiles, .size = GRAPHIC_SIZE_4BPP(32, 32), 
+            .tag = POKEPAD_ITEM_ICON_BASE_TAG + POKEPAD_ITEM_TREASURE_MAP,
+        },
+        .icon_palette = {
+            .pal = gfx_pokepad_icon_treasure_mapPal, .tag = POKEPAD_ITEM_ICON_BASE_TAG + POKEPAD_ITEM_TREASURE_MAP,
         },
     }
 };
