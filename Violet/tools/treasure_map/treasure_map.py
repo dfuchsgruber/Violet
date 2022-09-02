@@ -24,13 +24,13 @@ def get_treasure_maps(project: pymap.project.Project) -> List:
             for sign_idx, sign in enumerate(header['events']['signposts']):
                 try:
                     if sign['type'] == 'SIGNPOST_HIDDEN_TREASURE':
-                        idx = string_to_int(sign['value']['item']['flag'])
+                        idx = string_to_int(sign['value']['treasure_map']['idx'])
                         idx_to_treasure[idx].append({
                             'bank' : bank,
                             'map_idx' : map_idx,
                             'sign_idx' : sign_idx,
-                            'item' : sign['value']['item']['item'],
-                            'count' : sign['value']['item']['amount'],
+                            'item' : sign['value']['treasure_map']['item'],
+                            'count' : sign['value']['treasure_map']['amount'],
                             'namespace' : namespace,
                         })
                 except Exception as e:

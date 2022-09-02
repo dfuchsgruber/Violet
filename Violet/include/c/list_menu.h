@@ -51,8 +51,8 @@ typedef struct {
 typedef struct list_menu
 {
     list_menu_template _template;
-    u16 scroll_offset;
-    u16 current_row;
+    u16 cursor_position;
+    u16 items_above;
     u8 unk_1C;
     u8 unk_1D;
     u8 callback_idx;
@@ -223,5 +223,43 @@ void list_menu_set_attribute(u8 list_menu_cb_idx, u8 attribute, int value);
  * @return int the attribute
  */
 int list_menu_get_attribute(u8 list_menu_cb_idx, u8 attribute);
+
+/**
+ * @brief Updates the `cursor_position` and `items_above` attributes of `list` for scrolling once
+ * 
+ * @param list the list to update
+ * @param is_moving_down if to scroll down or up
+ * @return u8 the result
+ */
+u8 list_menu_update_cursor_position_and_items_above(list_menu *list, bool is_moving_down);
+
+/**
+ * @brief Prints items to the box of the list menu
+ * 
+ * @param list the list to print
+ * @param start_index starting from which index
+ * @param y_offset at which y offset
+ * @param num_items how many items to print
+ */
+void list_menu_print_items(list_menu *list, u16 start_index, u16 y_offset, u16 num_items);
+
+/**
+ * @brief Calls the cursor move callback if present
+ * 
+ * @param list the list on which the callback is to be called
+ * @param on_init if the cursor is moved on initialization
+ */
+
+void list_menu_call_cursor_move_callback(list_menu *list, bool on_init);
+/**
+ * @brief Searches for an item in the list menu and places the cursor there
+ * 
+ * @param cb_idx the callback of the list menu
+ * @param item_idx which item to find: an item is selected if its `idx` attribute matches `item_idx`
+ * @param call_cursor_move_callback if true, the cursor_move callback is invoked
+ * @return true 
+ * @return false 
+ */
+bool list_menu_search(u8 cb_idx, int item_idx, bool call_cursor_move_callback);
 
 #endif /* INCLUDE_C_LIST_MENU_H_ */

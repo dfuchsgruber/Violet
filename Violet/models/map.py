@@ -107,6 +107,14 @@ signpost_item_type = agb.types.BitfieldType('u32', [
     ('chunk', None, 3)
 ])
 
+signpost_treasure_map_type = agb.types.BitfieldType('u32', [
+    ('item', 'items', 16),
+    ('idx', None, 5),
+    ('amount', None, 5),
+    ('center_x', None, 3),
+    ('center_y', None, 3),
+])
+
 signpost_type = agb.types.Structure([
     ('x', 's16', 0),
     ('y', 's16', 0),
@@ -119,7 +127,8 @@ signpost_type = agb.types.Structure([
 
 signpost_value_type = agb.types.UnionType({
         'item' : 'event.signpost_item',
-        'script' : 'ow_script_pointer'
+        'script' : 'ow_script_pointer',
+        'treasure_map' : 'event.signpost_treasure_map',
     },
     lambda project, context, parents: {
         "0" : 'script',
@@ -132,7 +141,7 @@ signpost_value_type = agb.types.UnionType({
         "SIGNPOST_5" : 'item',
         "SIGNPOST_6" : 'item',
         "SIGNPOST_HIDDEN_ITEM" : 'item',
-        "SIGNPOST_HIDDEN_TREASURE" : 'item',
+        "SIGNPOST_HIDDEN_TREASURE" : 'treasure_map',
     }[parents[-1]['type']]
 )
 
@@ -226,6 +235,7 @@ models_to_export = {
     'event.person' : person_type,
     'event.trigger' : trigger_type,
     'event.signpost_item' : signpost_item_type,
+    'event.signpost_treasure_map' : signpost_treasure_map_type,
     'event.signpost_value' : signpost_value_type,
     'event.signpost' : signpost_type,
     'connection.direction' : connection_direction_type,

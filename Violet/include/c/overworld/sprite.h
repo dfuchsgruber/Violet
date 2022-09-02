@@ -101,6 +101,7 @@ enum {
     OW_PAL_TAG_GREEN_GEAR,
     OW_PAL_TAG_RED_GEAR,
     OW_PAL_TAG_YELLOW_GEAR,
+    OW_PAL_TAG_TREASURE_MAP,
     OW_PAL_TAG_END = 0x3000,
 };
 
@@ -1850,7 +1851,7 @@ extern const u8 gfx_ow_blue_gearTiles[GRAPHIC_SIZE_4BPP(16, 16)];
 extern const u8 gfx_ow_red_gearTiles[GRAPHIC_SIZE_4BPP(16, 16)];
 extern const u8 gfx_ow_green_gearTiles[GRAPHIC_SIZE_4BPP(16, 16)];
 extern const u8 gfx_ow_yellow_gearTiles[GRAPHIC_SIZE_4BPP(16, 16)];
-
+extern const u8 gfx_ow_treasure_mapTiles[GRAPHIC_SIZE_4BPP(16, 16)];
 
 extern const u8 gfx_tutor_crystal_bugTiles[];
 extern const color_t gfx_tutor_crystal_bugPal[16];
@@ -1903,6 +1904,7 @@ extern const color_t gfx_ow_blue_gearPal[16];
 extern const color_t gfx_ow_green_gearPal[16];
 extern const color_t gfx_ow_red_gearPal[16];
 extern const color_t gfx_ow_yellow_gearPal[16];
+extern const color_t gfx_ow_treasure_mapPal[16];
 
 extern overworld_sprite overworld_sprite_strength_boulder;
 

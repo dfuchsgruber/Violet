@@ -5,7 +5,7 @@
 			"person_cnt": 6,
 			"warp_cnt": 2,
 			"trigger_cnt": 0,
-			"signpost_cnt": 0,
+			"signpost_cnt": 1,
 			"persons": [
 				{
 					"target_index": "1",
@@ -195,7 +195,31 @@
 				}
 			],
 			"triggers": [],
-			"signposts": []
+			"signposts": [
+				{
+					"x": "17",
+					"y": "19",
+					"level": "0",
+					"type": "SIGNPOST_HIDDEN_TREASURE",
+					"flag": "0",
+					"value": {
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": "0",
+							"chunk": "0"
+						},
+						"script": "0",
+						"treasure_map": {
+							"item": "ITEM_TOXIK_ORB",
+							"idx": "0",
+							"amount": "1",
+							"center_x": "-3",
+							"center_y": "-2"
+						}
+					}
+				}
+			]
 		},
 		"levelscripts": "0",
 		"connections": {

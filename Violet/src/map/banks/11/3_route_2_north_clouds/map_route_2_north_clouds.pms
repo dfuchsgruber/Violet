@@ -5,7 +5,7 @@
 			"person_cnt": 37,
 			"warp_cnt": 4,
 			"trigger_cnt": 0,
-			"signpost_cnt": 2,
+			"signpost_cnt": 3,
 			"persons": [
 				{
 					"target_index": "1",
@@ -1098,7 +1098,14 @@
 							"amount": 0,
 							"chunk": 0
 						},
-						"script": "ow_script_route_2_clouds_ruins_entrance_sign"
+						"script": "ow_script_route_2_clouds_ruins_entrance_sign",
+						"treasure_map": {
+							"item": "0",
+							"idx": "0",
+							"amount": "0",
+							"center_x": "0",
+							"center_y": "0"
+						}
 					}
 				},
 				{
@@ -1114,7 +1121,37 @@
 							"amount": "1",
 							"chunk": 0
 						},
-						"script": 0
+						"script": 0,
+						"treasure_map": {
+							"item": "0",
+							"idx": "0",
+							"amount": "0",
+							"center_x": "0",
+							"center_y": "0"
+						}
+					}
+				},
+				{
+					"x": "28",
+					"y": "66",
+					"level": "0",
+					"type": "SIGNPOST_HIDDEN_TREASURE",
+					"flag": "0",
+					"value": {
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": "0",
+							"chunk": "0"
+						},
+						"script": "0",
+						"treasure_map": {
+							"item": "ITEM_HELIXFOSSIL",
+							"idx": "4",
+							"amount": "1",
+							"center_x": "0",
+							"center_y": "0"
+						}
 					}
 				}
 			]

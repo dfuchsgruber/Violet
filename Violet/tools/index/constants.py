@@ -1,0 +1,1 @@
+SRC_ROOT = 'src/map/banks'

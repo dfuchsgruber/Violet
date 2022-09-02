@@ -1336,6 +1336,13 @@
 							"flag": 45,
 							"amount": 1,
 							"chunk": 0
+						},
+						"treasure_map": {
+							"item": "0",
+							"idx": "0",
+							"amount": "0",
+							"center_x": "0",
+							"center_y": "0"
 						}
 					},
 					"flag": "0"
@@ -1352,6 +1359,13 @@
 							"flag": 46,
 							"amount": 1,
 							"chunk": 0
+						},
+						"treasure_map": {
+							"item": "0",
+							"idx": "0",
+							"amount": "0",
+							"center_x": "0",
+							"center_y": "0"
 						}
 					},
 					"flag": "0"
@@ -1368,6 +1382,13 @@
 							"flag": "70",
 							"amount": "1",
 							"chunk": 0
+						},
+						"treasure_map": {
+							"item": "0",
+							"idx": "0",
+							"amount": "0",
+							"center_x": "0",
+							"center_y": "0"
 						}
 					},
 					"flag": "0"
@@ -1385,7 +1406,14 @@
 							"amount": "1",
 							"chunk": 0
 						},
-						"script": 0
+						"script": 0,
+						"treasure_map": {
+							"item": "0",
+							"idx": "0",
+							"amount": "0",
+							"center_x": "0",
+							"center_y": "0"
+						}
 					}
 				},
 				{
@@ -1401,7 +1429,14 @@
 							"amount": "1",
 							"chunk": 0
 						},
-						"script": 0
+						"script": 0,
+						"treasure_map": {
+							"item": "0",
+							"idx": "0",
+							"amount": "0",
+							"center_x": "0",
+							"center_y": "0"
+						}
 					}
 				},
 				{
@@ -1417,7 +1452,14 @@
 							"amount": 0,
 							"chunk": 0
 						},
-						"script": "ow_script_map_route_5_sign_1"
+						"script": "ow_script_map_route_5_sign_1",
+						"treasure_map": {
+							"item": "0",
+							"idx": "0",
+							"amount": "0",
+							"center_x": "0",
+							"center_y": "0"
+						}
 					}
 				},
 				{
@@ -1433,7 +1475,14 @@
 							"amount": 0,
 							"chunk": 0
 						},
-						"script": "ow_script_map_route_5_sign_1"
+						"script": "ow_script_map_route_5_sign_1",
+						"treasure_map": {
+							"item": "0",
+							"idx": "0",
+							"amount": "0",
+							"center_x": "0",
+							"center_y": "0"
+						}
 					}
 				},
 				{
@@ -1449,7 +1498,14 @@
 							"amount": 0,
 							"chunk": 0
 						},
-						"script": "ow_script_map_route_5_sign_0"
+						"script": "ow_script_map_route_5_sign_0",
+						"treasure_map": {
+							"item": "0",
+							"idx": "0",
+							"amount": "0",
+							"center_x": "0",
+							"center_y": "0"
+						}
 					}
 				}
 			]

@@ -99,6 +99,8 @@ extern "C" {
     tboxdata* tbox_data_new(tboxdata *target, u8 bg_id, u8 x, u8 y, u8 w, u8 h, u8 pal,
         u16 start_tile);
 
+    #define PIXEL_FILL(col_idx) (((col_idx) & 0xF) | (((col_idx) & 0xF) << 4))
+
     /**
      * Flushes the tileset of a textbox with a pixel value (4-Bit)
      * @param box_id The id of the textbox to flush the tileset

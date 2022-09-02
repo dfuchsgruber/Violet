@@ -7,6 +7,9 @@ import argparse
 from collections import defaultdict
 from symbols import parse_symbols
 import pickle
+from constants import SRC_ROOT
+import os
+import re
 
 NUM_TREASURE_MAPS = 32
 
@@ -16,8 +19,34 @@ def string_to_int(i):
     else:
         return int(i, 0)
 
+def get_treasure_map_locations() -> defaultdict:
+    """ Gets scripts that set a treasure map flag. """
+    idx_to_location = defaultdict(list)
+    # Parse script files
+    for subdir, dirs, files in os.walk(SRC_ROOT):
+        for file in files:
+            filepath = subdir + os.sep + file
+            if filepath.endswith('.asm'):
+                with open(filepath) as f:
+                    content = f.read()
+                    # Match callstd giveitems
+                    matches = list(re.findall('setvar 0x8004 (.*)$\n.*call ow_script_obtain_treasure_map', content, flags=re.M))
+                    if len(matches):
+                        # Reconstruct the bank and map idx and context from the path
+                        bank, map_idx = re.findall(f'{SRC_ROOT}/(.*?)/(.*?)/.*', filepath)[0]
+                        for treasure_map_idx in matches:
+                            idx_to_location[treasure_map_idx]['locations'].append({
+                                'type' : 'script',
+                                'context' : '',
+                                'bank' : bank,
+                                'map_idx' : map_idx,
+                            })
+    return idx_to_location
+
+
 def get_treasure_maps(project: pymap.project.Project) -> List:
     """ Gets treasure maps in the project as a list of dicts."""
+    map_locations = get_treasure_map_locations()
     idx_to_treasure = defaultdict(list)
 
     for bank in project.headers:
@@ -26,14 +55,15 @@ def get_treasure_maps(project: pymap.project.Project) -> List:
             for sign_idx, sign in enumerate(header['events']['signposts']):
                 try:
                     if sign['type'] == 'SIGNPOST_HIDDEN_TREASURE':
-                        idx = string_to_int(sign['value']['item']['flag'])
+                        idx = string_to_int(sign['value']['treasure_map']['idx'])
                         idx_to_treasure[idx].append({
                             'bank' : bank,
                             'map_idx' : map_idx,
                             'sign_idx' : sign_idx,
-                            'item' : sign['value']['item']['item'],
-                            'count' : sign['value']['item']['amount'],
+                            'item' : sign['value']['treasure_map']['item'],
+                            'count' : sign['value']['treasure_map']['amount'],
                             'namespace' : namespace,
+                            'map_locations' : map_locations[idx]
                         })
                 except Exception as e:
                     print(f'Error in parsing item of sign {sign_idx} on map {bank},{map_idx}')

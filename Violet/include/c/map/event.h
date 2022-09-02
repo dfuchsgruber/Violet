@@ -55,6 +55,14 @@ typedef struct map_event_script { //TODO
     u8 *script;
 } map_event_script;
 
+typedef struct {
+    u32 item : 16;
+    u32 idx : 5;
+    u32 amount : 5;
+    s32 center_x : 3;
+    s32 center_y : 3;
+} treasure_map_event_t;
+
 typedef struct map_event_singpost { //TODO
     s16 x;
     s16 y;
@@ -64,6 +72,7 @@ typedef struct map_event_singpost { //TODO
     union {
         u8 *script;
         hidden_item_t hidden_item;
+        treasure_map_event_t treasure_map;
     } value;
 } map_event_signpost;
 

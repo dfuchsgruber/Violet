@@ -101,7 +101,14 @@
 							"amount": 0,
 							"chunk": 0
 						},
-						"script": "ow_script_ardeal_dungeon_spiritomb"
+						"script": "ow_script_ardeal_dungeon_spiritomb",
+						"treasure_map": {
+							"item": "0",
+							"idx": "0",
+							"amount": "0",
+							"center_x": "0",
+							"center_y": "0"
+						}
 					},
 					"flag": "0"
 				}

@@ -5,6 +5,7 @@ from collections import defaultdict
 import os, re
 from pprint import pprint
 import argparse, pickle
+from constants import SRC_ROOT
 
 def get_item_index(rompath, symbolspath, projectpath):
     """ Creates an index for items. """
@@ -20,8 +21,7 @@ def get_item_index(rompath, symbolspath, projectpath):
     }
 
     # Parse script files
-    root = 'src/map/banks'
-    for subdir, dirs, files in os.walk(root):
+    for subdir, dirs, files in os.walk(SRC_ROOT):
         for file in files:
             filepath = subdir + os.sep + file
             if filepath.endswith('.asm'):
@@ -31,7 +31,7 @@ def get_item_index(rompath, symbolspath, projectpath):
                     matches = list(re.findall('copyvarifnotzero 0x8000 (.*)$\n.*copyvarifnotzero 0x8001 (.*)', content, flags=re.M)) + list(re.findall('additem (.*) (.*)\n', content, flags=re.M))
                     if len(matches):
                         # Reconstruct the bank and map idx and context from the path
-                        bank, map_idx = re.findall(f'{root}/(.*?)/(.*?)/.*', filepath)[0]
+                        bank, map_idx = re.findall(f'{SRC_ROOT}/(.*?)/(.*?)/.*', filepath)[0]
                         for item, amount in matches:
                             items[item]['locations'].append({
                                 'type' : 'script',
@@ -61,22 +61,31 @@ def get_item_index(rompath, symbolspath, projectpath):
             for sign_idx, sign in enumerate(header['events']['signposts']):
                 try:
                     if sign['type'] == 'SIGNPOST_HIDDEN_ITEM':
-                        _type = 'hidden'
+                        item = sign['value']['item']['item']
+                        if item in items:
+                            items[item]['locations'].append({
+                                'type' : 'hidden',
+                                'bank' : bank,
+                                'map_idx' : map_idx,
+                                'flag' : sign['value']['item']['flag'],
+                                'namespace' : namespace,
+                                'amount' : sign['value']['item']['amount'],
+                                'chunk' : sign['value']['item']['chunk'],
+                            })
                     elif sign['type'] == 'SIGNPOST_HIDDEN_TREASURE':
-                        _type = 'treasure'
+                        item = sign['value']['treasure_map']['item']
+                        if item in items:
+                            items[item]['locations'].append({
+                                'type' : 'treasure',
+                                'bank' : bank,
+                                'map_idx' : map_idx,
+                                'idx' : sign['value']['treasure_map']['idx'],
+                                'namespace' : namespace,
+                                'amount' : sign['value']['treasure_map']['amount'],
+                            })
                     else:
                         continue
-                    item = sign['value']['item']['item']
-                    if item in items:
-                        items[item]['locations'].append({
-                            'type' : _type,
-                            'bank' : bank,
-                            'map_idx' : map_idx,
-                            'flag' : sign['value']['item']['flag'],
-                            'namespace' : namespace,
-                            'amount' : sign['value']['item']['amount'],
-                            'chunk' : sign['value']['item']['chunk'],
-                        })
+                    
                 except Exception as e:
                     print(f'Error in parsing item of sign {sign_idx} on map {bank},{map_idx}')
                     raise e

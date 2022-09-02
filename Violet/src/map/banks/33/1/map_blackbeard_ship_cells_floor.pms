@@ -109,7 +109,14 @@
 							"amount": 0,
 							"chunk": 0
 						},
-						"script": "ow_script_blackbeard_ship_cells_floor_lucky_door"
+						"script": "ow_script_blackbeard_ship_cells_floor_lucky_door",
+						"treasure_map": {
+							"item": "0",
+							"idx": "0",
+							"amount": "0",
+							"center_x": "0",
+							"center_y": "0"
+						}
 					}
 				}
 			]

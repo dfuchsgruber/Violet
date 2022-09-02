@@ -1821,3 +1821,6 @@ pokemon_party_menu_tbox_printer_is_active = 0x081203a4 | 1;
 pokemon_party_menu_initialize_and_select_pokemon_after_fadescreen = 0x080bfb4c | 1;
 pokemon_party_menu_render_box_display_learn_move_information = 0x0811f504 | 1;
 pokemon_party_menu_render_box_display_description = 0x0811f330 | 1;
+list_menu_update_cursor_position_and_items_above = 0x081077f0 | 1;
+list_menu_print_items = 0x08107558 | 1;
+list_menu_call_cursor_move_callback = 0x08107af0 | 1;

@@ -14,8 +14,6 @@ enum hidden_item_field{
     HIDDEN_COUNT = 2,
     HIDDEN_UNDERFOOT = 3,
     HIDDEN_CHUNK = 4,
-    HIDDEN_TREASURE_FLAG = 5,
-    HIDDEN_TREASURE_MAP_FLAG = 6,
 };
 
 typedef struct {

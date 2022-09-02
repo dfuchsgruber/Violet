@@ -9,6 +9,7 @@
 #include "vars.h"
 #include "flags.h"
 #include "constants/signpost_types.h"
+#include "pokepad/treasure_map.h"
 
 u8 *singpost_behavior_xBC(){
     //trigger script by block id (since we do not have enough behaviorbytes...)
@@ -57,10 +58,6 @@ int hidden_item_get_field(hidden_item_t hidden_item, u8 field){
             return (u8)hidden_item.detector_disabled;
         case HIDDEN_CHUNK:
             return (u8)hidden_item.chunk;
-        case HIDDEN_TREASURE_FLAG:
-            return (u16)(FLAG_TREASURE_BASE + hidden_item.flag);
-        case HIDDEN_TREASURE_MAP_FLAG:
-            return (u16)(FLAG_TREASURE_MAP_BASE + hidden_item.flag);
         default:
             return 0;
     }
@@ -104,15 +101,17 @@ u8 *signpost_get_script(position_t *position, u8 behaviour, u8 direction) {
             return ow_script_hidden_item_find;
         }
         case SIGNPOST_HIDDEN_TREASURE: {
-            u16 flag = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_TREASURE_MAP_FLAG);
+            u16 flag = treasure_map_get_map_flag(sign->value.treasure_map.idx);
             DEBUG("Treasure map flag 0x%x checked, is %d.\n", flag, checkflag(flag));
             if (!checkflag(flag))
                 return NULL;
-            u16 treasure_flag = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_TREASURE_FLAG);
+            u16 treasure_flag = treasure_map_get_flag(sign->value.treasure_map.idx);
             *var_access(0x8004) = treasure_flag;
-            *var_access(0x8005) = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_ITEM_IDX);
-            *var_access(0x8006) = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_COUNT);
-            *var_access(0x8007) = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_CHUNK);
+            *var_access(0x8005) = (u16)sign->value.treasure_map.item;
+            *var_access(0x8006) = (u16)sign->value.treasure_map.amount;
+            DEBUG("sizeof treasure map %d\n", sizeof(sign->value.treasure_map));
+            DEBUG("Treasure item @0x%x\n", &sign->value.treasure_map);
+            DEBUG("Treasure item %d (x %d)\n", *var_access(0x8005), *var_access(0x8006));
             DEBUG("Treasure flag 0x%x is %d\n", *var_access(0x8004), checkflag(*var_access(0x8004)));
             if (checkflag(treasure_flag)) 
                 return NULL;

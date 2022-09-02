@@ -189,6 +189,13 @@
 							"flag": "0",
 							"amount": 0,
 							"chunk": 0
+						},
+						"treasure_map": {
+							"item": "0",
+							"idx": "0",
+							"amount": "0",
+							"center_x": "0",
+							"center_y": "0"
 						}
 					},
 					"flag": "0"
@@ -206,7 +213,14 @@
 							"amount": "1",
 							"chunk": 0
 						},
-						"script": 0
+						"script": 0,
+						"treasure_map": {
+							"item": "0",
+							"idx": "0",
+							"amount": "0",
+							"center_x": "0",
+							"center_y": "0"
+						}
 					}
 				}
 			]

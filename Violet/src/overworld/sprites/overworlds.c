@@ -2026,6 +2026,20 @@ overworld_sprite overworld_green_gear = {
     .graphics = overworld_gfx_green_gear, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
+static graphic overworld_gfx_treasure_map[] = {
+    [0] = {gfx_ow_treasure_mapTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
+    [1] = {gfx_ow_treasure_mapTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
+    [2] = {gfx_ow_treasure_mapTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
+};
+
+overworld_sprite overworld_treasure_map = {
+    .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_TREASURE_MAP,
+    .unknown = 0x1FFF, .size = GRAPHIC_SIZE_4BPP(16, 16), .width = 16, .height = 16,
+	.inanimate = true,
+    .final_oam = &ow_final_oam_16_16, .subsprite_table = &ow_formation_16_16, .gfx_animation = ow_anim_standard_npc,
+    .graphics = overworld_gfx_treasure_map, .rotscale_animation = oam_rotscale_anim_table_null,
+};
+
 //The overworld table
 overworld_sprite *overworld_sprites[] = {
     	&ow_hiro,
@@ -2239,6 +2253,7 @@ overworld_sprite *overworld_sprites[] = {
 	[189] = &overworld_red_gear,
 	[190] = &overworld_green_gear,
 	[191] = &overworld_yellow_gear,
+	[192] = &overworld_treasure_map,
 
 	[OVERWORLD_SPRITE_TUTOR_CRYSTAL] = &ow_tutor_crystal_dummy,
 	[OVERWORLD_SPRITE_MISC] = &ow_misc_16_16,

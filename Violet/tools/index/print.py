@@ -134,6 +134,15 @@ def print_treasure_map_index(treasure_maps):
                 item = entry['item']
                 count = entry['count']
                 index += f'\t{idx}:\t {namespace} [{bank}.{map_idx}] Sign {sign_idx}, {count} x {item}\n'
+                map_locations = entry['map_locations']
+                if len(map_locations):
+                    index += '\tMap flag set in:'
+                    for map_location in map_locations:
+                        map_bank = map_location['bank']
+                        map_map_idx = map_location['map_idx']
+                        map_type = map_locations['type']
+                        index += f'\t\t[{map_bank}.{map_map_idx}] ({map_type})'
+
     return index
 
 if __name__ == '__main__':
