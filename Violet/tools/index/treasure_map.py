@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from nis import match
 from typing import List
 import agb.types
 import pymap.project
@@ -30,17 +31,17 @@ def get_treasure_map_locations() -> defaultdict:
                 with open(filepath) as f:
                     content = f.read()
                     # Match callstd giveitems
-                    matches = list(re.findall('setvar 0x8004 (.*)$\n.*call ow_script_obtain_treasure_map', content, flags=re.M))
+                    matches = list(re.findall('give_treasure_map (.*)', content, flags=re.M))
                     if len(matches):
                         # Reconstruct the bank and map idx and context from the path
                         bank, map_idx = re.findall(f'{SRC_ROOT}/(.*?)/(.*?)/.*', filepath)[0]
-                        for treasure_map_idx in matches:
-                            idx_to_location[treasure_map_idx]['locations'].append({
-                                'type' : 'script',
-                                'context' : '',
-                                'bank' : bank,
-                                'map_idx' : map_idx,
-                            })
+                        treasure_map_idx = [t for t in matches[0].split(' ') if 'treasure_map_idx' in t][0].split('=')[1].strip()
+                        idx_to_location[string_to_int(treasure_map_idx)].append({
+                            'type' : 'script',
+                            'context' : '',
+                            'bank' : bank,
+                            'map_idx' : map_idx,
+                        })
     return idx_to_location
 
 
@@ -68,7 +69,6 @@ def get_treasure_maps(project: pymap.project.Project) -> List:
                 except Exception as e:
                     print(f'Error in parsing item of sign {sign_idx} on map {bank},{map_idx}')
                     raise e
-    
     treasure_maps = [None for _ in range(NUM_TREASURE_MAPS)] # result
     for idx, locations in idx_to_treasure.items():
         if idx not in range(NUM_TREASURE_MAPS):

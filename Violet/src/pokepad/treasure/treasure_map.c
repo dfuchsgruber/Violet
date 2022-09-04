@@ -16,6 +16,7 @@
 #include "music.h"
 #include "pokepad/pokepad2.h"
 #include "menu_indicators.h"
+#include "overworld/script.h"
 
 
 static u8 treasure_map_context_has_scroll_indicators[NUM_TREASURE_MAP_CONTEXTS] = {
@@ -35,15 +36,23 @@ static void treasure_map_free() {
     free(TREASURE_MAP_STATE);
 }
 
+static void treasure_map_continue_ow_script(u8 self) {
+    if (!fading_control.active && super.callback1 == overworld_callback1) {
+        big_callback_delete(self);
+    }
+}
+
 static void treasure_map_free_callback(u8 self) {
     if (!fading_control.active) {
         if (TREASURE_MAP_STATE->from_outdoor) {
             callback1_set(map_reload);
+            overworld_script_resume();
+            big_callbacks[self].function = treasure_map_continue_ow_script;
         } else {
             callback1_set(pokepad2_callback_initialize);
+            big_callback_delete(self);
         }
         treasure_map_free();
-        big_callback_delete(self);
     }
 }
 
@@ -547,4 +556,12 @@ u16 treasure_map_get_flag(int idx) {
 
 u16 treasure_map_get_map_flag(int idx) {
     return (u16)(FLAG_TREASURE_MAP_BASE + idx);
+}
+
+void treasure_map_set_flag() {
+    setflag(treasure_map_get_map_flag(*var_access(0x8004)));
+}
+
+void treasure_map_buffer_number() {
+    itoa(buffer0, *var_access(0x8004) + 1, ITOA_PAD_ZEROS, 2);
 }

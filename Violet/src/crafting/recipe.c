@@ -837,30 +837,38 @@ static crafting_recipe crafting_recipies_battle[] = {
     },
 };
 
+crafting_recipe *crafting_recipies[CRAFTING_TYPE_CNT] = {
+    [CRAFTING_HEALING] = crafting_recipies_healing,
+    [CRAFTING_POKEBALLS] = crafting_recipies_pokeballs,
+    [CRAFTING_JEWELS] = crafting_recipies_jewels,
+    [CRAFTING_EVOLUTION] = crafting_recipies_evolution,
+    [CRAFTING_MINTS] = crafting_recipies_mints,
+    [CRAFTING_NUTRIENTS] = crafting_recipies_nutrients,
+    [CRAFTING_BATTLE] = crafting_recipies_battle,
+};
+
+u8 crafting_num_recipies_by_type[CRAFTING_TYPE_CNT] = {
+    [CRAFTING_HEALING] = ARRAY_COUNT(crafting_recipies_healing),
+    [CRAFTING_POKEBALLS] = ARRAY_COUNT(crafting_recipies_pokeballs),
+    [CRAFTING_JEWELS] = ARRAY_COUNT(crafting_recipies_jewels),
+    [CRAFTING_EVOLUTION] = ARRAY_COUNT(crafting_recipies_evolution),
+    [CRAFTING_MINTS] = ARRAY_COUNT(crafting_recipies_mints),
+    [CRAFTING_NUTRIENTS] = ARRAY_COUNT(crafting_recipies_nutrients),
+    [CRAFTING_BATTLE] = ARRAY_COUNT(crafting_recipies_battle),
+};
+
 size_t crafting_get_num_recipies_by_type(u16 type) {
-    switch (type) {
-        case CRAFTING_HEALING: return ARRAY_COUNT(crafting_recipies_healing);
-        case CRAFTING_POKEBALLS: return ARRAY_COUNT(crafting_recipies_pokeballs);
-        case CRAFTING_JEWELS: return ARRAY_COUNT(crafting_recipies_jewels);
-        case CRAFTING_EVOLUTION: return ARRAY_COUNT(crafting_recipies_evolution);
-        case CRAFTING_MINTS: return ARRAY_COUNT(crafting_recipies_mints);
-        case CRAFTING_NUTRIENTS: return ARRAY_COUNT(crafting_recipies_nutrients);
-        case CRAFTING_BATTLE: return ARRAY_COUNT(crafting_recipies_battle);
-        default: return 0;
-    }
+    if (type < CRAFTING_TYPE_CNT)
+        return crafting_num_recipies_by_type[type];
+    else
+        return 0;
 }
 
 crafting_recipe *crafting_recipies_get_by_type(u16 type) {
-    switch (type) {
-        case CRAFTING_HEALING: return crafting_recipies_healing;
-        case CRAFTING_POKEBALLS: return crafting_recipies_pokeballs;
-        case CRAFTING_JEWELS: return crafting_recipies_jewels;
-        case CRAFTING_EVOLUTION: return crafting_recipies_evolution;
-        case CRAFTING_MINTS: return crafting_recipies_mints;
-        case CRAFTING_NUTRIENTS: return crafting_recipies_nutrients;
-        case CRAFTING_BATTLE: return crafting_recipies_battle;
-        default: return 0;
-    }
+    if (type < CRAFTING_TYPE_CNT)
+        return crafting_recipies[type];
+    else
+        return NULL;
 }
 
 bool ingredient_requirements_fulfilled(crafting_ingredient *ingredient, u16 count) {

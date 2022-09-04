@@ -125,7 +125,7 @@ def print_treasure_map_index(treasure_maps):
     index = ''
     for idx, entry in enumerate(treasure_maps):
             if entry is None:
-                index += f'\t{idx}:\n'
+                index += f'{idx}:\n'
             else:
                 bank = entry['bank']
                 map_idx = entry['map_idx']
@@ -133,16 +133,28 @@ def print_treasure_map_index(treasure_maps):
                 sign_idx = entry['sign_idx']
                 item = entry['item']
                 count = entry['count']
-                index += f'\t{idx}:\t {namespace} [{bank}.{map_idx}] Sign {sign_idx}, {count} x {item}\n'
+                index += f'{idx}:\t {namespace} [{bank}.{map_idx}] Sign {sign_idx}, {count} x {item}\n'
                 map_locations = entry['map_locations']
                 if len(map_locations):
-                    index += '\tMap flag set in:'
+                    index += '\tMap flag set in:\n'
                     for map_location in map_locations:
                         map_bank = map_location['bank']
                         map_map_idx = map_location['map_idx']
-                        map_type = map_locations['type']
-                        index += f'\t\t[{map_bank}.{map_map_idx}] ({map_type})'
+                        map_type = map_location['type']
+                        index += f'\t\t[{map_bank}.{map_map_idx}] ({map_type})\n'
 
+    return index
+
+def print_recipe_flags_index(recipie_flags):
+    index = ''
+    for idx, entries in recipie_flags.items():
+        index += (f', '.join(reversed(sorted(list(map(str, idx)))))) + '\n'
+        for entry in entries:
+            if entry is not None:
+                bank = entry['bank']
+                map_idx = entry['map_idx']
+                _type =  entry['type']
+                index += f'\t [{bank}.{map_idx}: {_type}\n'
     return index
 
 if __name__ == '__main__':
@@ -159,6 +171,7 @@ if __name__ == '__main__':
     group.add_argument('--dungeon', dest='index_type', action='store_const', const='dungeon', help='Output the index for dungeons')
     group.add_argument('--pokemon', dest='index_type', action='store_const', const='pokemon_data', help='Output all basestat data for all pokemon.')
     group.add_argument('--treasure_map', dest='index_type', action='store_const', const='treasure_map', help='Output all basestat data for all pokemon.')
+    group.add_argument('--recipe_flags', dest='index_type', action='store_const', const='recipe_flags', help='Output all basestat data for all pokemon.')
     args = parser.parse_args()
 
     with open(args.pickle, 'rb') as f:
@@ -179,6 +192,8 @@ if __name__ == '__main__':
         readable = print_dungeon_index(index)
     elif args.index_type == 'treasure_map':
         readable = print_treasure_map_index(index)
+    elif args.index_type == 'recipe_flags':
+        readable = print_recipe_flags_index(index)
     elif args.index_type == 'pokemon_data':
         readable = pprint.pformat(index, indent=4)
     with open(args.output, 'w+') as f:

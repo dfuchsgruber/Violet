@@ -240,35 +240,7 @@ str_0x93bb5e:
 .endif
 
 ow_script_map_16_3_trainer_6:
-lock
-faceplayer
-checkflag POKEDEX_FEATURE_HABITAT
-gotoif EQUAL ow_script_0x937c8a
-loadpointer 0x0 str_0x937bb1
-callstd MSG_KEEPOPEN
-setvar 0x8004 0x1
-special2 0x800d SPECIAL_POKEDEX_GET_STATS
-buffernumber 0x2 0x8006
-compare 0x8006 25
-gotoif LESS ow_script_0x8f3bfd
-sound 0x15
-applymovement 0x800f mov_say_exclam
-waitmovement 0x0
-loadpointer 0x0 str_0x937ae9
-callstd MSG_KEEPOPEN
-fanfare 0x13e
-lock
-faceplayer
-loadpointer 0x0 str_0x937b72
-callstd MSG_KEEPOPEN
-lock
-faceplayer
-waitfanfare
-lock
-faceplayer
-setflag POKEDEX_FEATURE_HABITAT
-goto ow_script_0x937c8a
-
+    end
 
 ow_script_0x937c8a:
 lock

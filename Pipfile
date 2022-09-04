@@ -6,9 +6,9 @@ name = "pypi"
 [packages]
 "beautifulsoup4" = "*"
 "html5lib" = "*"
-pyagb = {git = "https://github.com/WodkaRHR/pyagb.git"}
 requests = "*"
 pyaml = "*"
+pyagb = {git = "https://github.com/WodkaRHR/pyagb.git"}
 
 [dev-packages]
 ipykernel = "*"

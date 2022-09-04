@@ -1,0 +1,14 @@
+{
+    "type" : "enum",
+    "base" : 0,
+    "values" : [   
+        "CRAFTING_HEALING",
+        "CRAFTING_BATTLE",
+        "CRAFTING_POKEBALLS",
+        "CRAFTING_JEWELS",
+        "CRAFTING_EVOLUTION",
+        "CRAFTING_MINTS",
+        "CRAFTING_NUTRIENTS",
+        "CRAFTING_TYPE_CNT"
+    ]
+}

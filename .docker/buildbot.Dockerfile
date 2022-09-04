@@ -67,4 +67,6 @@ RUN adduser \
 
 WORKDIR /workspace
 COPY .docker/buildbot-entrypoint.sh /usr/local/bin/violet-entrypoint
+RUN mkdir -p /venv || true
+RUN chmod 777 /venv
 USER violet

@@ -59,7 +59,7 @@ ow_script_laubdorf_assistant:
     callstd MSG
     setvar 0x8004 1
     special2 LASTRESULT SPECIAL_POKEDEX_GET_STATS
-    compare 0x8006 25
+    compare 0x8006 20
     gotoif LESS end_assistant
     buffernumber 0 0x8006
     sound 0x15
@@ -142,7 +142,7 @@ str_5:
 str_6:
     .autostring 34 2 "Der Traum eines jeden Anglers ist es, ein rotes Garados zu besitzen!\pUnd nur, wer immerzu seine Rute ins Wasser wirft, kann das schaffen!"
 str_check_dex:
-    .autostring 34 2 "Hallo PLAYER.\nIch bin ein Assistent von Professor Tann.\pWenn du 25 verschiedene Pokémon in deinem Pokédex als gefangen registriert hast, erhältst du von mir eine Belohnung."
+    .autostring 34 2 "Hallo PLAYER.\nIch bin ein Assistent von Professor Tann.\pWenn du 20 verschiedene Pokémon in deinem Pokédex als gefangen registriert hast, erhältst du von mir eine Belohnung."
 str_has_enough_caught:
     .autostring 34 2 "Wunderbar, du hast bereits BUFFER_1 verschiedene Spezies registriert.\pAls Belohnung dafür werde ich dir einen Inkubator geben."
 str_received_incubator:

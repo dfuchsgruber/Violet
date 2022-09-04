@@ -27,19 +27,17 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
-	setflag FLAG_TREASURE_MAP_BASE + 0
-	setflag FLAG_TREASURE_MAP_BASE + 1
-	setflag FLAG_TREASURE_MAP_BASE + 2
-	setflag FLAG_TREASURE_MAP_BASE + 3
-	setflag FLAG_TREASURE_MAP_BASE + 4
-	setflag FLAG_TREASURE_MAP_BASE + 5
-	setflag FLAG_TREASURE_MAP_BASE + 6
-	setflag FLAG_TREASURE_MAP_BASE + 7
-	setflag FLAG_TREASURE_MAP_BASE + 8
-	setflag FLAG_TREASURE_MAP_BASE + 9
-	setflag FLAG_TREASURE_MAPS_APP
-	setvar 0x8004 7
-	call ow_script_obtain_treasure_map
+	clearflag FLAG_TREASURE_MAP_BASE + 0
+	clearflag FLAG_TREASURE_MAP_BASE + 1
+	clearflag FLAG_TREASURE_MAP_BASE + 2
+	clearflag FLAG_TREASURE_MAP_BASE + 3
+	clearflag FLAG_TREASURE_MAP_BASE + 4
+	clearflag FLAG_TREASURE_MAP_BASE + 5
+	clearflag FLAG_TREASURE_MAP_BASE + 6
+	clearflag FLAG_TREASURE_MAP_BASE + 7
+	clearflag FLAG_TREASURE_MAP_BASE + 8
+	clearflag FLAG_TREASURE_MAP_BASE + 9
+	clearflag FLAG_TREASURE_MAPS_APP
 	end
 
 	additem ITEM_UNBEKANNTER_SAMEN 30

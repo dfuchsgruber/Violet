@@ -132,7 +132,7 @@ static pokepad2_item pokepad2_items[] = {
     [POKEPAD_ITEM_TREASURE_MAP] = {
         .name = treasure_map_name,
         .description = treasure_map_description,
-        .flag = POKEDEX,
+        .flag = FLAG_TREASURE_MAPS_APP,
         .initialize = treasure_map_initialize,
         .icon_graphic = {
             .sprite = gfx_pokepad_icon_treasure_mapTiles, .size = GRAPHIC_SIZE_4BPP(32, 32), 

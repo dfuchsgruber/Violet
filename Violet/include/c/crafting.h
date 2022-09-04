@@ -4,21 +4,11 @@
 #include "types.h"
 #include "save.h"
 #include "constants/crafting_ingredient_types.h"
+#include "constants/crafting_recipe_types.h"
 #include "list_menu.h"
 
 #define MAX_NUM_INGREDIENTS 4
 #define CRAFTING_OAM_BASE_TAG 0x1534
-
-enum {
-    CRAFTING_HEALING,
-    CRAFTING_BATTLE,
-    CRAFTING_POKEBALLS,
-    CRAFTING_JEWELS,
-    CRAFTING_EVOLUTION,
-    CRAFTING_MINTS,
-    CRAFTING_NUTRIENTS,
-    CRAFTING_TYPE_CNT,
-};
 
 // The count for ash as an ingredient is in multiples of 50
 #define CRAFTING_INGREDIENT_ASH_MULTIPLIER 50
@@ -35,6 +25,7 @@ typedef struct {
     u16 item;
     u16 flag;
     u8 count;
+    u8 filler[3];
 } crafting_recipe;
 
 typedef struct {
