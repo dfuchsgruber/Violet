@@ -14,6 +14,9 @@
 #define CRAFTING_INGREDIENT_ASH_MULTIPLIER 50
 #define CRAFTING_INGREDIENT_ASH_TO_COUNT(x) ((x) / CRAFTING_INGREDIENT_ASH_MULTIPLIER)
 
+// If a flag is not uniquely tied to one recipe
+#define RECIPE_FLAG_AMBIGUOUS 0xFFFF
+
 typedef struct {
     u8 count;
     u8 type;

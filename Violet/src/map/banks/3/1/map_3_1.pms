@@ -1517,7 +1517,7 @@
 					"target_index": "53",
 					"picture": "192",
 					"script_std_and_in_connection": {
-						"script_std": "PERSON_ITEM",
+						"script_std": "PERSON_RECIPE",
 						"in_connection": "0"
 					},
 					"argument": "0",
@@ -1533,7 +1533,7 @@
 					"is_trainer": "0",
 					"alert_radius": "0",
 					"script": "0",
-					"flag": "0",
+					"flag": "FLAG_LINK_CABLE_RECIPE",
 					"value": {
 						"item": "ITEM_TRANK",
 						"species": "0",

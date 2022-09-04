@@ -698,10 +698,13 @@ ow_script_recipe:
 	copyvar 0x8004 0x8000
 	callasm overworld_recipe_buffer_name
 	hidesprite LASTTALKED
+	callasm recipe_obtain_show
 	fanfare 261
 	loadpointer 0 str_player_found_recipe
 	callstd MSG_KEEPOPEN
 	waitfanfare
+    special SPECIAL_ITEM_OBTAIN_DELETE_DESCRIPTION
+    waitstate
 	loadpointer 0 str_recipe_can_be_used
 	callstd MSG_KEEPOPEN
 	releaseall

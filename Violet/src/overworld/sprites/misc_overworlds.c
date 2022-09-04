@@ -426,37 +426,3 @@ void misc_encounter_setup() {
     pid_t pid = {0};
     pokemon_spawn_by_seed_algorithm(opponent_pokemon + 0, species, (u8)level, 32, false, pid, false, 0, misc_feature_generator, NULL);
 }
-
-#define RECIPE_FLAG_AMBIGUOUS 0xFFFF
-
-static u16 recipe_get_item_idx_by_flag(u16 flag) {
-    bool ambiguos = false;
-    u16 item_idx = 0;
-    for (u16 type = 0; type < CRAFTING_TYPE_CNT; type++) {
-        crafting_recipe *recipies = crafting_recipies_get_by_type(type);
-        size_t num_recipies = crafting_get_num_recipies_by_type(type);
-        for (u16 idx = 0; idx < num_recipies; idx++) {
-            if (recipies[idx].flag == flag) {
-                if (item_idx != 0)
-                    ambiguos = true;
-                item_idx = recipies[idx].item;
-            }
-        }
-    }
-    if (ambiguos)
-        return RECIPE_FLAG_AMBIGUOUS;
-    else
-        return item_idx;
-}
-
-
-void overworld_recipe_buffer_name() {
-    u16 flag = *var_access(0x8004);
-    u16 item_idx = recipe_get_item_idx_by_flag(flag);
-    if (item_idx == RECIPE_FLAG_AMBIGUOUS) {
-        ERROR("Ambiguous recipe flag %d\n", flag);
-    } else if (item_idx == 0) {
-        ERROR("No recipe matching with flag %d\n", flag);
-    }
-    strcpy(buffer0, item_get_name(item_idx));
-}

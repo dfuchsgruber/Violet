@@ -506,6 +506,7 @@ static crafting_recipe crafting_recipies_evolution[] = {
             [1] = {.item = ITEM_ENERGIEQUARZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.count = 25, .type = CRAFTING_INGREDIENT_ASH},
         },
+        .count = 1,
         .flag = FLAG_LINK_CABLE_RECIPE,
     },
 };
