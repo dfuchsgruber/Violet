@@ -60,16 +60,17 @@ static oam_template template_recipe_item = {
 };
 
 static tboxdata tbox_template_recipe_transparent = {
-    .bg_id = 0, .x = 1, .y = 3, .w = 28, .h = 11, .pal = 15, .start_tile = 60
+    .bg_id = 0, .x = 1, .y = 1, .w = 28, .h = 13, .pal = 15, .start_tile = 44
 };
 
 
 static tboxdata tbox_template_recipe_non_transparent = {
-    .bg_id = 0, .x = 1, .y = 4, .w = 28, .h = 11, .pal = 15, .start_tile = 60
+    .bg_id = 0, .x = 1, .y = 2, .w = 28, .h = 13, .pal = 15, .start_tile = 44
 };
 
 static u8 str_cross[] = PSTRING("x ");
 static u8 str_ash[] = LANGDEP(PSTRING("Asche"), PSTRING("Ash"));
+static u8 str_recipe_for[] = LANGDEP(PSTRING("Rezept für BUFFER_1:"), PSTRING("Recipe for BUFFER_1:"));
 
 void recipe_obtain_show() {
     crafting_recipe *recipe;
@@ -83,7 +84,7 @@ void recipe_obtain_show() {
 			tbox_flush_set(box_id, 0x11);
 			tbox_tilemap_draw(box_id);
 			tbox_clear_bottom_line(box_id);
-			tbox_print_string(box_id, 0, 32 + 4, 2 + 40, 0, 0, &fontcolmap, 0,
+			tbox_print_string(box_id, 0, 32 + 4, 2 + 56, 0, 0, &fontcolmap, 0,
 				item_get_description(recipe->item));
 			fmem.item_obtain_tb_id = box_id;
 		} else {
@@ -93,7 +94,7 @@ void recipe_obtain_show() {
 			tbox_tilemap_draw(box_id);
 			tbox_init_frame_message(box_id, 1, 15 * 16);
 			tbox_frame_draw_outer(box_id, 1, 0xF);
-			tbox_print_string(box_id, 0, 32 + 4, 2 + 40, 0, 0, &fontcolmap, 0,
+			tbox_print_string(box_id, 0, 32 + 4, 2 + 56, 0, 0, &fontcolmap, 0,
 				item_get_description(recipe->item));
 			fmem.item_obtain_tb_id = box_id;
 		}
@@ -125,11 +126,14 @@ void recipe_obtain_show() {
                 strcat(strbuf, name);
                 tbox_print_string(box_id, 0, 
                     (u16)(32 + 4 + 96 * (i / 2)), 
-                    (u16)(4 + 16 * (i % 2)),
-                    0, 0, &fontcolmap, 0, 
+                    (u16)(4 + 16 + 16 * (i % 2)),
+                    0, 0, &fontcolmap, 0xFF, 
                     strbuf); 
             }
         }
+        strcpy(buffer0, item_get_name(recipe->item));
+        string_decrypt(strbuf, str_recipe_for);
+        tbox_print_string(box_id, 0, 4, 0, 0, 0, &fontcolmap, 0, strbuf);
 
 		// Create the oam
 		u16 tile = oam_vram_get_tile(RECIPE_ITEM_TAG);

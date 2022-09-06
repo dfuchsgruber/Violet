@@ -241,24 +241,24 @@
 					"picture": "235",
 					"x": "37",
 					"y": "73",
-					"level": 0,
-					"behaviour": 0,
+					"level": "0",
+					"behaviour": "0",
 					"behaviour_range": {
-						"x": 0,
-						"y": 0
+						"x": "0",
+						"y": "0"
 					},
-					"field_B": 0,
-					"is_trainer": 0,
-					"alert_radius": 0,
-					"script": 0,
-					"flag": 0,
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
 					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": "TYPE_KAEFER"
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "TYPE_FEE"
 					},
-					"argument": 0,
+					"argument": "0",
 					"script_std_and_in_connection": {
 						"script_std": "PERSON_ACCESSIBLE_MOVE_TUTOR",
 						"in_connection": "0"

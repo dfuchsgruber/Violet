@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_13",
 		"events": {
-			"person_cnt": 21,
+			"person_cnt": 29,
 			"warp_cnt": 3,
 			"trigger_cnt": 0,
 			"signpost_cnt": 3,
@@ -301,7 +301,7 @@
 				{
 					"target_index": "11",
 					"picture": "235",
-					"x": "63",
+					"x": "64",
 					"y": "24",
 					"level": "0",
 					"behaviour": "0",
@@ -318,7 +318,7 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "TYPE_FLUG"
+						"type": "TYPE_KAEFER"
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -358,7 +358,7 @@
 					"target_index": "13",
 					"picture": "238",
 					"x": "13",
-					"y": "22",
+					"y": "21",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_RIGHT_LEFT_DOWN_UP",
 					"behaviour_range": {
@@ -601,7 +601,231 @@
 					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
 					"value": {
 						"item": "0",
-						"species": "POKEMON_SCHWALBOSS",
+						"species": "POKEMON_WATTZAPF",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "22",
+					"picture": "238",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "10",
+					"y": "7",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "POKEMON_KNILZ",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "23",
+					"picture": "238",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "15",
+					"y": "23",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "POKEMON_WEBARAK",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "24",
+					"picture": "238",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "14",
+					"y": "44",
+					"level": "0",
+					"behaviour": "0",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "POKEMON_PANEKON",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "25",
+					"picture": "238",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "33",
+					"y": "50",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "POKEMON_TROMBORK",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "26",
+					"picture": "238",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "4",
+					"y": "52",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "POKEMON_PARAGONI",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "27",
+					"picture": "238",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "65",
+					"y": "27",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "POKEMON_WEBARAK",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "28",
+					"picture": "238",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "63",
+					"y": "21",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "POKEMON_WATTZAPF",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "29",
+					"picture": "238",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
+					},
+					"argument": "0",
+					"x": "66",
+					"y": "25",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_FACE_UP_AND_LEFT",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "POKEMON_ARIADOS",
 						"berry_tree_idx": "0",
 						"type": "0"
 					}
@@ -740,11 +964,11 @@
 		"footer_idx": 13,
 		"namespace": "MAP_ROUTE_6",
 		"flash_type": "FLASH_NONE",
-		"weather": "MAP_WEATHER_OUTSIDE",
+		"weather": "MAP_WEATHER_CLOUDY",
 		"type": "MAP_TYPE_CLOUD",
 		"battle_style": "BATTLE_TYPE_RANDOM",
 		"bike_usable": "1",
-		"level": 0,
+		"level": "0",
 		"flags": {
 			"allow_escape_rope": "0",
 			"allow_run": "0",
