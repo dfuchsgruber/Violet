@@ -419,4 +419,10 @@ void pokemon_party_menu_render_box_display_learn_move_information(u8 slot, u16 i
  */
 void pokemon_party_menu_render_box_display_description(u8 slot, u8 party_msg_idx);
 
+/**
+ * @brief big callback that waits for fading and then sets the cb1 for initializing the move relearner
+ * @param self self-reference
+ **/
+void move_relearner_initialize_after_fading(u8 self);
+
 #endif /* INCLUDE_C_OVERWORLD_POKEMON_PARTY_MENU_H_ */

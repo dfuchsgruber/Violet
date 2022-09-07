@@ -169,7 +169,8 @@ void overworld_accessible_move_tutor_select_pokemon() {
     fmem.pokemon_party_menu_choose_mon_generic_mon_is_eligible = accessible_move_tutor_pokemon_is_eligible;
     u8 cb_idx = big_callback_new(pokemon_party_menu_initialize_and_select_pokemon_after_fadescreen, 10);
     big_callbacks[cb_idx].params[0] = PARTY_MENU_TYPE_CHOOSE_MON_WITH_GENERIC_RESTRICTIONS;
-    fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
+    // fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
+    fadescreen_all(FADE_TO_BLACK, 0);
 }
 
 bool pokemon_party_menu_display_party_pokemon_data_for_move_tutor_or_evolution_item(u8 slot) {

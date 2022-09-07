@@ -1824,3 +1824,4 @@ pokemon_party_menu_render_box_display_description = 0x0811f330 | 1;
 list_menu_update_cursor_position_and_items_above = 0x081077f0 | 1;
 list_menu_print_items = 0x08107558 | 1;
 list_menu_call_cursor_move_callback = 0x08107af0 | 1;
+move_relearner_initialize_after_fading = 0x080e4884 | 1;

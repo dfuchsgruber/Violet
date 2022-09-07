@@ -45,6 +45,8 @@
 	.pool
 map_transition_update_tilesets_blxr0:
 	bx r0
+.org 0x080558f2
+	mov r4, #0 // gamma shift is applied to tsp pals as well
 
 /**
 **/
