@@ -17,6 +17,13 @@
 // If a flag is not uniquely tied to one recipe
 #define RECIPE_FLAG_AMBIGUOUS 0xFFFF
 
+
+#define CRAFTING_PAL_IDX_FRAME_STD 14
+#define CRAFTING_BASE_TILE_FRAME_STD (1023 - TBOX_FRAME_SET_STYLE_NUM_TILES)
+
+#define CRAFTING_CAULDRON_PAL_IDX_MESSAGE 15
+#define CRAFTING_CAULDRON_BASE_TILE_MESSAGE (128 - TBOX_FRAME_MESSAGE_NUM_TILES)
+
 typedef struct {
     u8 count;
     u8 type;

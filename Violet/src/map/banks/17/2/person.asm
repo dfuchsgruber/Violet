@@ -53,9 +53,9 @@ make_cloud:
 
 .ifdef LANG_GER
 str_0:
-    .autostring 34 2 "Ich erforsche die Ruinen hier über den Wolken.\pDie antiken Icognito-Schriftzeichen stehen wohl im Zusammenhang mit den legendären Pokémon."
+    .autostring 34 2 "Ich erforsche diese schwebenden Inseln schon mein halbes Leben lang.\pIch frage mich, wieso diese Insel von Käfer-Pokémon geradezu überrannt wurdeDOTS"
 str_1:
-    .autostring 34 2 "Vor langer Zeit hat eine antike Zivilisation im Himmelreich gelebt.\pWas wohl aus ihr geworden ist?"
+    .autostring 34 2 "Diese Spinnennetze machen mich ganz kirreDOTS\pEgal wo man hinsieht, ist man von ihnen umgeben!\pMan fühlt sich einfach unwohlDOTS"
 str_2:
     .autostring 34 2 "Wenn du willst, dass ich dir eine Wolke webe, musst du mir den Wolkenfaden schon beschaffen.\pOder willst du etwa, dass ich dich wieder auf den Boden bringe?"
 str_3:
@@ -63,9 +63,4 @@ str_3:
 str_4:
     .autostring 34 2 "Sehr gut!\pDann mal los, oder?\pManche der Käfer-Pokémon in dieser Höhle sind in der Lage, den seltenen Wolkengarn herzustellen."
 .elseif LANG_EN
-
-str_0:
-    .autostring 34 2 "I do reserach on the ruins above the clouds.\pThe ancient Unown letters probably somehow relate to the legendary pokémon."
-str_1:
-    .autostring 34 2 "A long time ago a civilisation lived in the sky realm.\pWhat could have happened to it?"
 .endif

@@ -330,7 +330,8 @@ static void cauldron_scene_step9_success_string(u16 frame) {
     u8 cb_idx = big_callback_new(cauldron_scene_big_callback_null, 0);
     itoa(buffer1, CAULDRON_SCENE_STATE->count * CAULDRON_SCENE_STATE->recipe.count, ITOA_NO_PADDING, 3);
     string_decrypt(strbuf, str_crafted);
-    tbox_print_string_and_continue(cb_idx, 0, 1 + 26 * 4, 15, 2, tbox_get_set_speed(), strbuf, cauldron_scene_end_on_keypress);
+    tbox_print_string_and_continue(cb_idx, 0, CRAFTING_CAULDRON_BASE_TILE_MESSAGE, CRAFTING_CAULDRON_PAL_IDX_MESSAGE, 
+        2, tbox_get_set_speed(), strbuf, cauldron_scene_end_on_keypress);
     CAULDRON_SCENE_STATE->bg_vertical_scrolling[0] = (s16)(-CAULDRON_SCENE_STATE->bg_vertical_origin);
     cauldron_scene_next_step(cauldron_scene_step_none);
 }
@@ -519,7 +520,7 @@ void cauldron_scene_setup() {
             pal_decompress(gfx_crafting_cauldronPal, 0, sizeof(color_t) * 256);
             pal_decompress(gfx_crafting_cauldron_lightsPal, (u16)(256 + 16 * oam_allocate_palette(CAULDRON_LIGHT_TAG)), 16 * sizeof(color_t));
             battle_animation_load_oam_palette(&battle_animation_palettes[11]);
-            tbox_init_frame_std(0, 1 + 26 * 4, 15 * 16);
+            tbox_init_frame_message(0, CRAFTING_CAULDRON_BASE_TILE_MESSAGE, CRAFTING_CAULDRON_PAL_IDX_MESSAGE * 16);
             // tbox_context_init_border_set_style(0, 256 + 20, 14 * 16);
             pal_set_all_to_black();
             break;

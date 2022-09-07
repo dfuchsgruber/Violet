@@ -7,19 +7,19 @@
 
 ow_script_route_5_clouds_trainer_0:
     trainerbattlestd 0x0 0x89 0x0 str_challange_0 str_defeat_0
-    loadpointer 0x0 str_defeat_0
+    loadpointer 0x0 str_after_0
     callstd MSG_FACE
     end
 
 ow_script_route_5_clouds_trainer_1:
     trainerbattlestd 0x0 0x8a 0x0 str_challange_1 str_defeat_1
-    loadpointer 0x0 str_defeat_1
+    loadpointer 0x0 str_after_1
     callstd MSG_FACE
     end
 
 ow_script_route_5_clouds_trainer_2:
     trainerbattlestd 0x0 0x116 0x0 str_challange_2 str_defeat_2
-    loadpointer 0x0 str_defeat_2
+    loadpointer 0x0 str_after_2
     callstd MSG_FACE
     end
 
@@ -29,15 +29,20 @@ str_challange_0:
     .autostring 34 2 "Du scheinst mir noch nicht so vertraut zu sein, mit dem Wolkenreiten!\pEs wird Zeit, dass du auf einer Wolke kämpfst!"
 str_defeat_0:
     .autostring 34 2 "Oh je!\pDu hast ja richtig Talent, Kindchen!"
+str_after_0:
+    .autostring 34 2 "Nicht übel, Kindchen!\pWenn du so weitermachst, könntest du einer der berühmtesten Wolkenreiter werden."
 str_challange_1:
     .autostring 34 2 "Weißt du, wie man zum Boden zurückkehrt?\pIch verrate es dir, wenn du mich besiegen kannst!"
 str_defeat_1:
-    .autostring 34 2 "Siehst du dunkle Löcher in den Wolken, kannst du dort wieder zum Boden hinabsteigen."
+    .autostring 34 2 "Ich werde dir also verraten müssen, wie man zum Boden zurückkehrtDOTS"
+str_after_1:
+    .autostring 34 2 "Wenn du etwas dunklere Löcher in den Wolken siehst, bedeutet das, dass ein Luftstrom dich sanft zurück zum Boden tragen kann.\pAber nimm dich in Acht!\pAnderswo solltest du nicht von deiner Wolke fallen."
 str_challange_2:
     .autostring 34 2 "Bist du überrascht, einen Triathlet über den Wolken zu treffen?\pDie Luft hier trainiert meine Lungen!"
 str_defeat_2:
-    .autostring 34 2 "Du solltest zum Beispiel einmal im Woklenwasser schwimmen!"
-
+    .autostring 34 2 "Mein ganzes TrainingDOTS\pUmsonst!"
+str_after_2:
+    .autostring 34 2 "Ich frage mich, ob es andere Orte gibt, an denen ich mein Training noch effektiver gestalten kann!"
 .elseif LANG_EN
 str_challange_0:
     .autostring 34 2 "You don't seem to be used to cloud riding!\pTime for your first battle on a cloud!"

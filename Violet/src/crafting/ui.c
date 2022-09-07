@@ -567,9 +567,8 @@ static void crafting_ui_message_continuation_prompt_count(u8 self) {
     tbox_print_string(TBOX_POSSESION, 2, 0, 0, 0, 0, &fontcolmap_black_letters, 0xFF, str_possesion);
     itoa(strbuf, item_get_count(crafting_ui_get_current_recipe()->item), ITOA_PAD_SPACES, 3);
     tbox_print_string(TBOX_POSSESION, 1, 40, 0, 0, 0, &fontcolmap_black_letters, 0, strbuf);
-    tbox_init_frame_message(TBOX_POSSESION, 1 + 26 * 4 + 5 * 4 + 8 * 2, 13 * 16);
-    tbox_frame_draw_outer(TBOX_CRAFTING_CNT, 1 + 26 * 4 + 5 * 4 + 8 * 2, 13);
-    tbox_frame_draw_outer(TBOX_POSSESION, 1 + 26 * 4 + 5 * 4 + 8 * 2, 13);
+    tbox_frame_draw_outer(TBOX_CRAFTING_CNT, CRAFTING_BASE_TILE_FRAME_STD, CRAFTING_PAL_IDX_FRAME_STD);
+    tbox_frame_draw_outer(TBOX_POSSESION, CRAFTING_BASE_TILE_FRAME_STD, CRAFTING_PAL_IDX_FRAME_STD);
     tbox_tilemap_draw(TBOX_CRAFTING_CNT);
     tbox_tilemap_draw(TBOX_POSSESION);
     if (CRAFTING_UI_STATE->max_quantity > 1) {
@@ -821,7 +820,7 @@ static void crafting_ui_setup() {
             pal_decompress(gfx_crafting_menu_bg3Pal, 0, sizeof(color_t) * 16);
             pal_decompress(gfx_crafting_menu_bg2Pal, 16, sizeof(color_t) * 16);
             tbox_init_frame_message(TBOX_MESSAGE, 256, 15 * 16);
-            tbox_init_frame_set_style(TBOX_MESSAGE, 256 + 20, 14 * 16);
+            tbox_init_frame_set_style(TBOX_MESSAGE, CRAFTING_BASE_TILE_FRAME_STD, CRAFTING_PAL_IDX_FRAME_STD * 16);
             // pal_copy(tbox_palette_transparent, 14 * 16, 32);
             pal_set_all_to_black();
             CRAFTING_UI_STATE->setup_state++;

@@ -4931,7 +4931,7 @@ trainer trainers[TRAINER_CNT] = {
     [0x116] = {
         .trainerclass = TRAINERCLASS_TRIATHLET, .sprite = 0x29,
         .encounter = 2,  .gender = 0, .name = LANGDEP(PSTRING("Sakim"),
-            PSTRING("Sakim")), .pokemon_cnt = 2,
+            PSTRING("Sakim")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x116_route_5_clouds_trainer_2),
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = trainer_party_x116_route_5_clouds_trainer_2,
     },
