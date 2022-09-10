@@ -3676,6 +3676,99 @@ static wild_pokemon_habitat wild_pokemon_anemonia_clouds_cave_grass = {
 	.frequency = 2, .data = wild_pokemon_anemonia_clouds_cave_grass_entries
 };
 
+static wild_pokemon_entry wild_pokemon_route_3_clouds_fairy_grass_entries[12] = {
+	[WILD_POKEMON_DENSITY_GRASS_0_20_PERCENT] = 
+		{.level_min = 33, .level_max = 35, .species = POKEMON_WABLU},
+	[WILD_POKEMON_DENSITY_GRASS_1_20_PERCENT] = 
+		{.level_min = 33, .level_max = 35, .species = POKEMON_TRASLA},
+	[WILD_POKEMON_DENSITY_GRASS_2_10_PERCENT] = 
+		{.level_min = 33, .level_max = 35, .species = POKEMON_PUMMELUFF},
+	[WILD_POKEMON_DENSITY_GRASS_3_10_PERCENT] = 
+		{.level_min = 33, .level_max = 35, .species = POKEMON_FLABEBE},
+	[WILD_POKEMON_DENSITY_GRASS_4_10_PERCENT] = 
+		{.level_min = 33, .level_max = 35, .species = POKEMON_SNUBBULL},
+	[WILD_POKEMON_DENSITY_GRASS_5_10_PERCENT] = 
+		{.level_min = 33, .level_max = 35, .species = POKEMON_MARILL},
+	[WILD_POKEMON_DENSITY_GRASS_6_5_PERCENT] = 
+		{.level_min = 33, .level_max = 35, .species = POKEMON_KIRLIA},
+	[WILD_POKEMON_DENSITY_GRASS_7_5_PERCENT] = 
+		{.level_min = 34, .level_max = 35, .species = POKEMON_FLOETTE},
+	[WILD_POKEMON_DENSITY_GRASS_8_4_PERCENT] = 
+		{.level_min = 34, .level_max = 36, .species = POKEMON_WABLU},
+	[WILD_POKEMON_DENSITY_GRASS_9_4_PERCENT] = 
+		{.level_min = 34, .level_max = 36, .species = POKEMON_PUMMELUFF},
+	[WILD_POKEMON_DENSITY_GRASS_10_1_PERCENT] = 
+		{.level_min = 34, .level_max = 36, .species = POKEMON_AZUMARILL},
+	[WILD_POKEMON_DENSITY_GRASS_11_1_PERCENT] = 
+		{.level_min = 35, .level_max = 37, .species = POKEMON_GRANBULL},
+};
+
+static wild_pokemon_habitat wild_pokemon_route_3_clouds_fairy_grass = {
+	.frequency = 9, .data = wild_pokemon_route_3_clouds_fairy_grass_entries
+};
+
+static wild_pokemon_entry wild_pokemon_route_3_clouds_fairy_rod_entries[10] = {
+	[WILD_POKEMON_DENSITY_OLD_ROD_0_70_PERCENT] = 
+		{.level_min = 9, .level_max = 11, .species = POKEMON_SCHMERBE},
+	[WILD_POKEMON_DENSITY_OLD_ROD_1_30_PERCENT] = 
+		{.level_min = 9, .level_max = 11, .species = POKEMON_KANIVANHA},
+	[WILD_POKEMON_DENSITY_GOOD_ROD_0_60_PERCENT] = 
+		{.level_min = 25, .level_max = 35, .species = POKEMON_SCHMERBE},
+	[WILD_POKEMON_DENSITY_GOOD_ROD_1_20_PERCENT] = 
+		{.level_min = 25, .level_max = 35, .species = POKEMON_KANIVANHA},
+	[WILD_POKEMON_DENSITY_GOOD_ROD_2_20_PERCENT] = 
+		{.level_min = 25, .level_max = 35, .species = POKEMON_FLEGMON},
+	[WILD_POKEMON_DENSITY_SUPER_ROD_0_40_PERCENT] = 
+		{.level_min = 25, .level_max = 35, .species = POKEMON_SCHMERBE},
+	[WILD_POKEMON_DENSITY_SUPER_ROD_1_40_PERCENT] = 
+		{.level_min = 45, .level_max = 50, .species = POKEMON_KANIVANHA},
+	[WILD_POKEMON_DENSITY_SUPER_ROD_2_15_PERCENT] = 
+		{.level_min = 45, .level_max = 50, .species = POKEMON_WELSAR},
+	[WILD_POKEMON_DENSITY_SUPER_ROD_3_4_PERCENT] = 
+		{.level_min = 45, .level_max = 50, .species = POKEMON_LAHMUS},
+	[WILD_POKEMON_DENSITY_SUPER_ROD_4_1_PERCENT] = 
+		{.level_min = 45, .level_max = 55, .species = POKEMON_TOHAIDO},
+};
+
+static wild_pokemon_habitat wild_pokemon_route_3_clouds_fairy_rod = {
+	.frequency = 49, .data = wild_pokemon_route_3_clouds_fairy_rod_entries
+};
+
+static wild_pokemon_entry wild_pokemon_route_3_clouds_fairy_water_entries[5] = {
+	[WILD_POKEMON_DENSITY_WATER_0_60_PERCENT] = 
+		{.level_min = 37, .level_max = 39, .species = POKEMON_LOTURZEL},
+	[WILD_POKEMON_DENSITY_WATER_1_30_PERCENT] = 
+		{.level_min = 37, .level_max = 40, .species = POKEMON_MARILL},
+	[WILD_POKEMON_DENSITY_WATER_2_5_PERCENT] = 
+		{.level_min = 38, .level_max = 40, .species = POKEMON_LOMBRERO},
+	[WILD_POKEMON_DENSITY_WATER_3_4_PERCENT] = 
+		{.level_min = 38, .level_max = 41, .species = POKEMON_GEHWEIHER},
+	[WILD_POKEMON_DENSITY_WATER_3_1_PERCENT] = 
+		{.level_min = 39, .level_max = 42, .species = POKEMON_AZUMARILL},
+};
+
+static wild_pokemon_habitat wild_pokemon_route_3_clouds_fairy_water = {
+	.frequency = 7, .data = wild_pokemon_route_3_clouds_fairy_water_entries
+};
+
+static wild_pokemon_entry wild_pokemon_route_3_clouds_fairy_other_entries[5] = {
+	[WILD_POKEMON_DENSITY_OTHER_0_30_PERCENT] = 
+		{.level_min = 37, .level_max = 40, .species = POKEMON_FLOETTE},
+	[WILD_POKEMON_DENSITY_OTHER_1_25_PERCENT] = 
+		{.level_min = 37, .level_max = 40, .species = POKEMON_CLAVION},
+	[WILD_POKEMON_DENSITY_OTHER_2_20_PERCENT] = 
+		{.level_min = 37, .level_max = 40, .species = POKEMON_KIRLIA},
+	[WILD_POKEMON_DENSITY_OTHER_3_15_PERCENT] = 
+		{.level_min = 37, .level_max = 40, .species = POKEMON_DUFLOR},
+	[WILD_POKEMON_DENSITY_OTHER_4_10_PERCENT] = 
+		{.level_min = 37, .level_max = 40, .species = POKEMON_GUARDEVOIR},
+};
+
+static wild_pokemon_habitat wild_pokemon_route_3_clouds_fairy_other = {
+	.frequency = 2, .data = wild_pokemon_route_3_clouds_fairy_other_entries
+};
+
+
 wild_pokemon_data wild_pokemon[] = {
   {
 		.bank = 3, .map = 0,
@@ -3934,13 +4027,14 @@ wild_pokemon_data wild_pokemon[] = {
 		.grass = &wild_pokemon_route_2_clouds_grass,
 		.water = &wild_pokemon_route_2_clouds_water,
 		.rod = &wild_pokemon_route_2_clouds_rod,
+		.other = &wild_pokemon_route_2_clouds_other,
 	},
 	{
 		.bank = 11, .map = 3,
-		.grass = &wild_pokemon_route_2_clouds_grass,
-		.water = &wild_pokemon_route_2_clouds_water,
-		.rod = &wild_pokemon_route_2_clouds_rod,
-		.other = &wild_pokemon_route_2_clouds_other,
+		.grass = &wild_pokemon_route_3_clouds_fairy_grass,
+		.water = &wild_pokemon_route_3_clouds_fairy_water,
+		.rod = &wild_pokemon_route_3_clouds_fairy_rod,
+		.other = &wild_pokemon_route_3_clouds_fairy_other,
 	},
 	{
 	    .bank = 3, .map = 8,

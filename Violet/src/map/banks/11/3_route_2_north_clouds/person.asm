@@ -69,24 +69,20 @@ after_receiving_gift:
 str_intro_gift:
     .autostring 34 2 "Siehst du den Kristall da auf dem See?\pHeute morgen bin ich dorthin geschwommen und habe ein Stück davon abgebrochen.\pDu kannst es gerne haben, ich weiß sowieso nichts damit anzufangen."
 str_after_receiving_gift:
-    .autostring 34 2 "Dieses Juwel scheint wohl auf Käfer-Angriffe zu reagierenDOTS\pOb sich das im Kampf lohnt?"
+    .autostring 34 2 "Dieses Juwel scheint wohl auf Fee-Angriffe zu reagierenDOTS\pOb sich das im Kampf lohnt?"
 str_5:
-    .autostring 34 2 "Ich erinnere mich an einen Burschen namens Lucius.\pEr hat sich das Wolkenreiten selbst beigebracht."
+    .autostring 34 2 "Ich erinnere mich an einen Burschen namens Lucius.\pEr war wirklich ein talentierter Trainer.\pDas Wolkenreiten hat er sich ganz alleine beigebracht."
 str_6:
-    .autostring 34 2 "Als Kind hat mir mein Vater oft von den Ruinen hier oben erzählt.\pJetzt kann ich sie endlich selbst erkunden!"
+    .autostring 34 2 "Als Kind hat mir mein Vater oft von den Ruinen hier oben erzählt.\pJetzt kann ich sie endlich selbst erkunden!\pEs gibt viele Geschichten über die antike Zivilisation, die einmal hier oben existiert hat."
 str_7:
-    .autostring 34 2 "Meine Käfer-Pokémon fühlen sich zu diesem See hingezogen.\pIch vermute, der Kristall dort zieht sie irgendwie anDOTS"
+    .autostring 34 2 "Meine Fee-Pokémon fühlen sich zu diesem See hingezogen.\pIch vermute, der Kristall dort zieht sie irgendwie anDOTS"
 str_8:
-    .autostring 34 2 "Ist es nicht fantastisch, dass es mittlerweile für viele Trainer möglich ist, diese Himmels-Inseln zu erkunden?\pDas Wolkenweben hat uns wirklich eine neue Welt eröffnet!"
+    .autostring 34 2 "Ist es nicht fantastisch, dass es mittlerweile für viele Trainer möglich ist, diese Himmels-Inseln zu erkunden?\pDas Wolkenweben hat uns Trainern wirklich eine neue Welt eröffnet!"
 str_9:
-    .autostring 34 2 "Mein Freund und ich erkunden diese schwebenden Inseln schon seit einiger Zeit.\pAngeblich war es der ehemalige Champion, der sie zuerst wiederentdeckt hat!"
+    .autostring 34 2 "Mein Freund und ich erkunden diese schwebenden Inseln schon seit einiger Zeit.\pWusstest du, dass er ehemalige Champion der erste war, der es sich zur Aufgabe gemacht hat, diese verlorene Welt wiederzuentdecken?"
 str_10:
     .autostring 34 2 "MhmDOTS\pIst es nicht seltsam, dass die Blumen hier oben anders reichen als auf dem Boden?"
 str_11:
     .autostring 34 2 "Dieser Teich ist wirklich faszinierend.\pSiehst du den Kristall in seiner Mitte?\pIch frage mich, was es damit auf sich hatDOTS"
 .elseif LANG_EN
-str_5:
-    .autostring 34 2 "I remember the boy Lucius, who later became champion.\pHe taught the cloud riding to himself."
-str_6:
-    .autostring 34 2 "When I was a child my father used to tell me about the ruins up here.\pNow I can explore them myself!"
 .endif

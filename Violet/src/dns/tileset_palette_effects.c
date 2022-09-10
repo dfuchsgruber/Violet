@@ -20,6 +20,10 @@ static color_t dns_color_light_yellow_light = {.rgb = {.red = 248 / 8, .green = 
 static color_t dns_color_flame_yellow = {.rgb = {.red = 31, .green = 25, .blue = 7}};
 static color_t dns_color_flame_orange = {.rgb = {.red = 31, .green = 17, .blue = 7}};
 
+bool tileset_primary_is_clouds(tileset *tsp) {
+    return (tsp == &maptileset_clouds) || (tsp == &maptileset_clouds_canyon) || (tsp == &maptileset_clouds_pink) || (tsp == &maptileset_clouds_dark_green);
+}
+
 void overworld_tilesets_apply_palette_effects(map_footer_t *foot) {
 
     if (dns_on()) {
@@ -29,7 +33,7 @@ void overworld_tilesets_apply_palette_effects(map_footer_t *foot) {
             pal_restore[0x21] = dns_color_light_yellow;
             pal_restore[0x22] = dns_color_light_yellow;
             pal_restore[0x25] = dns_color_light_yellow_dark;
-        } else if (foot->tileset1 == &maptileset_clouds) {
+        } else if (tileset_primary_is_clouds(foot->tileset1)) {
             pal_restore[2 * 16 + 14] = dns_color_flame_yellow;
             pal_restore[2 * 16 + 15] = dns_color_flame_orange;
         }

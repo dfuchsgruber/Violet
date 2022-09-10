@@ -101,7 +101,7 @@ static bool cloud_current_block_dismountable(u16 *blocks) {
 
 bool cloud_not_dismountable() {
 	if (map_is_cloud() && !player_state_disables_bike()) {
-		if (mapheader_virtual.footer->tileset1 == &maptileset_clouds || mapheader_virtual.footer->tileset1 == &maptileset_clouds_dark_green) {
+		if (tileset_primary_is_clouds(mapheader_virtual.footer->tileset1)) {
 			position_t pos;
 			player_get_position(&pos);
 			// DEBUG("Position is %d,%d, with battle bg %d\n", pos.coordinates.x, pos.coordinates.y, block_get_field_by_pos(pos.coordinates.x, pos.coordinates.y, FIELD_BATTLE_BG));

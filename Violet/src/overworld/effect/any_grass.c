@@ -181,11 +181,24 @@ any_grass any_grasses[] = {
         any_grass_step, any_grass_player_step_null},
     {&maptileset_haweiland, MB_BB, any_grass_templates + ANY_GRASS_HAWEILAND, any_grass_pals + ANY_GRASS_HAWEILAND, 
         any_grass_step, any_grass_player_step_null},
+    // Clouds, grass
     {&maptileset_clouds, 2, any_grass_templates + ANY_GRASS_CLOUD, any_grass_pals + ANY_GRASS_CLOUD, 
         any_grass_step, any_grass_player_step_null},
     {&maptileset_clouds_dark_green, 2, any_grass_templates + ANY_GRASS_CLOUD_DARK_GREEN, any_grass_pals + ANY_GRASS_CLOUD_DARK_GREEN, 
         any_grass_step, any_grass_player_step_null},
+    {&maptileset_clouds_canyon, 2, any_grass_templates + ANY_GRASS_CLOUD, any_grass_pals + ANY_GRASS_CLOUD, 
+        any_grass_step, any_grass_player_step_null},
+    {&maptileset_clouds_pink, 2, any_grass_templates + ANY_GRASS_CLOUD, any_grass_pals + ANY_GRASS_CLOUD, 
+        any_grass_step, any_grass_player_step_null},
+
+    // Clouds, rock climb
     {&maptileset_clouds, MB_BB, &rock_climb_sky_island_template, &rock_climb_sky_island_pal, 
+        rock_climb_step, any_grass_player_step_null},
+    {&maptileset_clouds_dark_green, MB_BB, &rock_climb_sky_island_template, &rock_climb_sky_island_pal, 
+        rock_climb_step, any_grass_player_step_null},
+    {&maptileset_clouds_pink, MB_BB, &rock_climb_sky_island_template, &rock_climb_sky_island_pal, 
+        rock_climb_step, any_grass_player_step_null},
+    {&maptileset_clouds_canyon, MB_BB, &rock_climb_sky_island_template, &rock_climb_sky_island_pal, 
         rock_climb_step, any_grass_player_step_null},
 };
 

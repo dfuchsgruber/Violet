@@ -20,11 +20,16 @@
 #define NUM_FOG_DIAGONAL_SPRITES     20
 #define NUM_SANDSTORM_SPRITES        20
 #define NUM_SWIRL_SANDSTORM_SPRITES  5
+#define CHERRY_TREE_LEAVES_NUM_OAMS 28
+#define COLORFUL_PETALS_NUM_OAMS 28
+
+#define OVERWORLD_WEATHER_COLORFUL_PETALS_GAMMA -2
 
 #define DROUGHT_COLOR_INDEX(color) ((((color) >> 1) & 0xF) | (((color) >> 2) & 0xF0) | (((color) >> 3) & 0xF00))
 
 enum {
     OVERWORLD_WEATHER_CHERRY_TREE_LEAVES_GFX_TAG = 0x1210,
+    OVERWORLD_WEATHER_COLORFUL_PETALS_GFX_TAG,
 };
 
 color_t drought_colors[6][0x1000];
@@ -44,7 +49,7 @@ typedef struct {
         {
             struct oam_object *rainSprites[MAX_RAIN_SPRITES];
             struct oam_object *snowflakeSprites[51];
-            struct oam_object *cherry_tree_sprites[50];
+            struct oam_object *any_leave_sprites[50];
             struct oam_object *cloudSprites[NUM_CLOUD_SPRITES];
         } s1;
         struct
@@ -143,7 +148,12 @@ typedef struct {
     u8 cherry_tree_new_timer;
     u8 cherry_tree_oam_group_head;
     u8 cherry_tree_num_oams_visible;
-    u8 filler_744[0xD-7];
+    u8 colorful_petals_num_oams;
+    u8 colorful_petals_target_num_oams;
+    u8 colorful_petals_new_timer;
+    u8 colorful_petals_oam_group_head;
+    u8 colorful_petals_num_oams_visible;
+    u8 filler_744[0xD-12];
     s8 load_drought_pals_index;
     u8 load_drought_pals_offset;
 } overworld_weather_stru;
@@ -368,6 +378,10 @@ void weather_cherry_tree_leaves_initialize_variables();
 void weather_cherry_tree_leaves_main();
 void weather_cherry_tree_leaves_initialize_all();
 bool weather_cherry_tree_leaves_closure();
+void weather_colorful_petals_initialize_variables();
+void weather_colorful_petals_main();
+void weather_colorful_petals_initialize_all();
+bool weather_colorful_petals_closure();
 void weather_light_static_fog_main();
 void weather_light_static_fog_initialize_all();
 

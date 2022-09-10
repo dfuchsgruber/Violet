@@ -68,6 +68,13 @@ void _tileset_secondary_animation_initialize();
  */
 void tileset_anim_proceed();
 
+/**
+ * Checks if a primary tileset is a cloud primary tileset
+ * @param tsp the tileset
+ * @return if the tileset is a cloud tileset
+ **/
+bool tileset_primary_is_clouds(tileset *tsp);
+
 extern tileset maptileset0;
 extern tileset maptileset1;
 extern tileset maptileset2;
@@ -83,6 +90,8 @@ extern tileset maptileset_ceometria;
 extern tileset maptileset_haweiland;
 extern tileset maptileset_clouds;
 extern tileset maptileset_clouds_dark_green;
+extern tileset maptileset_clouds_canyon;
+extern tileset maptileset_clouds_pink;
 extern tileset maptileset_cloud_ruins;
 extern tileset maptileset_cloud_ardeal;
 extern tileset maptileset_blackbeard_ship;

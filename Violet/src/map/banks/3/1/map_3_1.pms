@@ -1404,8 +1404,8 @@
 				{
 					"target_index": "49",
 					"picture": "0",
-					"x": "71",
-					"y": "29",
+					"x": "90",
+					"y": "16",
 					"level": "0",
 					"behaviour": "0",
 					"behaviour_range": {
@@ -1521,8 +1521,8 @@
 						"in_connection": "0"
 					},
 					"argument": "0",
-					"x": "70",
-					"y": "30",
+					"x": "89",
+					"y": "16",
 					"level": "0",
 					"behaviour": "0",
 					"behaviour_range": {

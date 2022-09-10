@@ -2382,7 +2382,8 @@
 		"maptileset0_route_4": "src/map/tileset/maptileset0_route_4.pms",
 		"maptileset_clouds_dark_green": "src/map/tileset/maptileset_clouds_dark_green.pms",
 		"maptileset_cave_mossy": "src/map/tileset/maptileset_cave_mossy.pms",
-		"maptileset_clouds_canyon": "src\\map\\tileset\\maptileset_clouds_canyon.pms"
+		"maptileset_clouds_canyon": "src\\map\\tileset\\maptileset_clouds_canyon.pms",
+		"maptileset_clouds_pink": "src\\map\\tileset\\maptileset_clouds_pink.pms"
 	},
 	"tilesets_secondary": {
 		"maptileset45": "src/map/tileset/maptileset45.pms",
@@ -2465,7 +2466,8 @@
 		"maptileset_cloud_kaskada_ruins": "src/map/tileset/maptileset_cloud_kaskada_ruins.pms",
 		"maptileset_cloud_old_house": "src/map/tileset/maptileset_cloud_old_house.pms",
 		"maptileset_clouds_canyon_secondary": "src\\map\\tileset\\maptileset_clouds_canyon_secondary.pms",
-		"maptileset_clouds_spider_web_forest": "src/map/tileset/maptileset_clouds_various.pms"
+		"maptileset_clouds_spider_web_forest": "src/map/tileset/maptileset_clouds_various.pms",
+		"maptileset_cloud_flowers": "src\\map\\tileset\\maptileset_cloud_flowers.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2554,6 +2556,7 @@
 		"gfx_maptileset_clouds_old_houseTiles": "asset/gfx/tileset/gfx_maptileset_clouds_old_house.png",
 		"gfx_maptileset_clouds_canyon_secondaryTiles": "asset\\gfx\\tileset\\gfx_maptileset_clouds_canyon_secondary.png",
 		"gfx_maptileset_cloud_spider_web_forestTiles": "asset\\gfx\\tileset\\gfx_maptileset_cloud_spider_web_forest.png",
-		"gfx_maptileset_cloud_spider_webTiles": "asset/gfx/tileset/gfx_maptileset_cloud_spider_web.png"
+		"gfx_maptileset_cloud_spider_webTiles": "asset/gfx/tileset/gfx_maptileset_cloud_spider_web.png",
+		"gfx_maptileset_clouds_flowersTiles": "asset\\gfx\\tileset\\gfx_maptileset_clouds_flowers.png"
 	}
 }

@@ -50,6 +50,8 @@ WEATHER_FUNCTION_WITH_BLEND(weather_static_fog_initialize_variables);
 WEATHER_FUNCTION_WITH_BLEND(weather_static_fog_initialize_all);
 WEATHER_FUNCTION_WITH_BLEND(weather_cherry_tree_leaves_initialize_variables);
 WEATHER_FUNCTION_WITH_BLEND(weather_cherry_tree_leaves_initialize_all);
+WEATHER_FUNCTION_WITH_BLEND(weather_colorful_petals_initialize_variables);
+WEATHER_FUNCTION_WITH_BLEND(weather_colorful_petals_initialize_all);
 WEATHER_FUNCTION_WITH_BLEND(weather_light_static_fog_initialize_all);
 
 #define CEMETERY_BANK 3
@@ -110,9 +112,11 @@ weather_callbacks_t weather_callbacks[NUM_MAP_WEATHERS] = {
     [MAP_WEATHER_COLD_BLUE] = {.initialize_variables = weather_inside_initialize_variables_with_blend, .main = weather_inside_main, .initialize_all = weather_inside_initialize_all_with_blend, .closure = weather_inside_closure},
     [MAP_WEATHER_CHERRY_TREE_LEAVES] = {.initialize_variables = weather_cherry_tree_leaves_initialize_variables_with_blend, .main = weather_cherry_tree_leaves_main, .initialize_all = weather_cherry_tree_leaves_initialize_all_with_blend, .closure = weather_cherry_tree_leaves_closure},
     [MAP_WEATHER_LIGHT_STATIC_FOG] = {.initialize_variables = weather_static_fog_initialize_variables_with_blend, .main = weather_light_static_fog_main, .initialize_all = weather_light_static_fog_initialize_all_with_blend, .closure = weather_static_fog_closure },
+    [MAP_WEATHER_BRIGHT_AND_COLORFUL_PETALS] = {.initialize_variables = weather_colorful_petals_initialize_variables_with_blend, .main = weather_colorful_petals_main, .initialize_all = weather_colorful_petals_initialize_all_with_blend, .closure = weather_colorful_petals_closure},
 };
 
 void pal_gamma_shift(u8 start_pal_idx, u8 num_pals, s8 gamma_idx) {
+    DEBUG("Pal gamma shift from %d, num %d, gamma %d\n", start_pal_idx, num_pals, gamma_idx);
     u8 current_pal_idx;
     u16 pal_offset;
     u8 *gamma_table;
@@ -299,6 +303,7 @@ static s8 weather_gammas[NUM_MAP_WEATHERS] = {
     [MAP_WEATHER_CLOUDY] = 3,
     [MAP_WEATHER_EXTREME_SUN] = -6,
     [MAP_WEATHER_BURNING_TREES] = -6,
+    [MAP_WEATHER_BRIGHT_AND_COLORFUL_PETALS] = OVERWORLD_WEATHER_COLORFUL_PETALS_GAMMA,
 };
 
 void overworld_weather_fade_in() {
@@ -320,7 +325,8 @@ void overworld_weather_fade_in() {
             break;
         }
         case MAP_WEATHER_EXTREME_SUN:
-        case MAP_WEATHER_BURNING_TREES: {
+        case MAP_WEATHER_BURNING_TREES:
+        case MAP_WEATHER_BRIGHT_AND_COLORFUL_PETALS: {
             if (!overworld_weather_fade_in_with_gamma_and_drought(target_gamma)) {
                 overworld_weather.gamma = target_gamma;
                 overworld_weather.pal_processing_state = OVERWORLD_WEATHER_PAL_PROCESSING_STATE_IDLE;
@@ -443,6 +449,7 @@ static bool weather_affects_palette[NUM_MAP_WEATHERS] = {
     [MAP_WEATHER_CLOUDY] = true,
     [MAP_WEATHER_EXTREME_SUN] = true,
     [MAP_WEATHER_BURNING_TREES] = true,
+    [MAP_WEATHER_BRIGHT_AND_COLORFUL_PETALS] = true,
 };
 
 void fadescreen_all(u8 mode, u8 delay) {
@@ -521,6 +528,8 @@ void weather_initialize() {
         overworld_weather.static_fog_number_affected_pal_idxs = 0;
         overworld_weather.cherry_tree_num_oams = 0;
         overworld_weather.cherry_tree_num_oams_visible = 0;
+        overworld_weather.colorful_petals_num_oams = 0;
+        overworld_weather.colorful_petals_num_oams_visible = 0;
         overworld_weather_set_blend_coefficients(16, 0);
 
         overworld_weather.current_weather = MAP_WEATHER_INSIDE;

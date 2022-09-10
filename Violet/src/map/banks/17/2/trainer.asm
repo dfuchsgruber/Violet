@@ -38,11 +38,11 @@ str_defeat_1:
 str_after_1:
     .autostring 34 2 "Wenn du etwas dunklere Löcher in den Wolken siehst, bedeutet das, dass ein Luftstrom dich sanft zurück zum Boden tragen kann.\pAber nimm dich in Acht!\pAnderswo solltest du nicht von deiner Wolke fallen."
 str_challange_2:
-    .autostring 34 2 "Bist du überrascht, einen Triathlet über den Wolken zu treffen?\pDie Luft hier trainiert meine Lungen!"
+    .autostring 34 2 "Sind dir hier oben schon einmal leuchtende Kristalle aufgefallen?\pAls Ass-Trainer weiß ich natürlich, was es damit auf sich hat!"
 str_defeat_2:
-    .autostring 34 2 "Mein ganzes TrainingDOTS\pUmsonst!"
+    .autostring 34 2 "M-Moment!\nIch habe verloren?"
 str_after_2:
-    .autostring 34 2 "Ich frage mich, ob es andere Orte gibt, an denen ich mein Training noch effektiver gestalten kann!"
+    .autostring 34 2 "Da habe ich meinen Pokémon mittels der leuchtenden Kristalle sogar neue Attacken beigebrachtDOTS\pUnd trotzdem habe ich verloren!"
 .elseif LANG_EN
 str_challange_0:
     .autostring 34 2 "You don't seem to be used to cloud riding!\pTime for your first battle on a cloud!"

@@ -1449,8 +1449,22 @@ trainer_pokemon trainer_party_x115_route_2_clouds_trainer_4[] = {
 };
 
 trainer_pokemon trainer_party_x116_route_5_clouds_trainer_2[] = {
-	{.level = 36, .species = POKEMON_DODU},
-	{.level = 36, .species = POKEMON_MAGNETON},
+	{.ivs_set = true, .ivs = {31, 31, 31, 31, 31, 31}, .held_item = ITEM_BLENDPUDER, .moves_set = true, 
+		.moves = {ATTACK_SCHUTZSCHILD, ATTACK_SCHWERTTANZ, ATTACK_KREUZSCHERE, ATTACK_DOPPELTEAM}, .level = 39, 
+		.species = POKEMON_NINJASK, .evs = {[STAT_SPEED] = 252, [STAT_ATTACK] = 252, [STAT_HP] = 4}, 
+		.nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
+	{.ivs_set = true, .ivs = {31, 31, 31, 31, 31, 31}, .held_item = ITEM_LEBEN_ORB, .moves_set = true, 
+		.moves = {ATTACK_FEUERSTURM, ATTACK_FALTERREIGEN, ATTACK_PSYCHOKINESE, ATTACK_KAEFERGEBRUMM}, .level = 41, 
+		.species = POKEMON_NINJASK, .evs = {[STAT_SPEED] = 252, [STAT_SPECIAL_ATTACK] = 252, [STAT_HP] = 4}, 
+		.nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_SCHEU}}},
+	{.ivs_set = true, .ivs = {31, 31, 31, 31, 31, 31}, .held_item = ITEM_TAMOTBEERE, .moves_set = true, 
+		.moves = {ATTACK_PATRONENHIEB, ATTACK_KREUZSCHERE, ATTACK_NAHKAMPF, ATTACK_AGILITAET}, .level = 41, 
+		.species = POKEMON_NINJASK, .evs = {[STAT_SPEED] = 252, [STAT_ATTACK] = 252, [STAT_HP] = 4}, 
+		.nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
+	{.ivs_set = true, .ivs = {31, 31, 31, 31, 31, 31}, .held_item = ITEM_FOKUSGURT, .moves_set = true, 
+		.moves = {ATTACK_DONNERBLITZ, ATTACK_KAEFERGEBRUMM, ATTACK_ENERGIEBALL, ATTACK_DONNERWELLE}, .level = 41, 
+		.species = POKEMON_VOLTULA, .evs = {[STAT_SPEED] = 252, [STAT_SPECIAL_ATTACK] = 252, [STAT_HP] = 4}, 
+		.nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
 };
 
 trainer_pokemon trainer_party_x117_orina_city_clouds_trainer_0[] = {
