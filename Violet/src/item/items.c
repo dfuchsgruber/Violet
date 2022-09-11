@@ -1787,6 +1787,10 @@ static u8 str_item_faehigkeit_kapsel[] = LANGDEP(
 	PSTRING("Tauscht die Fähigkeit eines\nPokémon, das zwei verschiedene\nFähigkeiten haben kann."),
 	PSTRING("Switches the ability of a\nPokémon that can have two\nabilities")
 );
+static u8 str_item_kandisschleife[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverstärkt Fee-Attacken."),
+	PSTRING("An item to be held by a Pokémon.\nA seed imbued with life that boosts\nthe power of Fairy-type moves.")
+);
 
 item items[] = {
 	{
@@ -8244,6 +8248,13 @@ item items[] = {
 		.description = str_item_faehigkeit_kapsel, .pocket = POCKET_ITEMS, .type=1,
 		.field_usage = item_ability_capsule_field_effect,
 	},
+	[ITEM_KANDISSCHELIFE] = {
+		.name = LANGDEP(PSTRING("Kandischleife"), PSTRING("Candy Ribbon")),
+		.index = ITEM_KANDISSCHELIFE,
+		.description = str_item_kandisschleife, .pocket = POCKET_ITEMS,
+		.type = 4, .field_usage = item_field_function_print_string_can_not_be_used,
+		.holding_effect_id = HOLD_EFFECT_FAIRY_POWER, .holding_effect_param = 20,
+	}
 };
 
 u16 item_idx_saniztize(u16 item_idx) {

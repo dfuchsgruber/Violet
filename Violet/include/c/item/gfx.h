@@ -917,5 +917,7 @@ extern LZ77COMPRESSED gfx_item_antiker_samenTiles;
 extern LZ77COMPRESSED gfx_item_antiker_samenPal;
 extern LZ77COMPRESSED gfx_item_unbekannter_samenTiles;
 extern LZ77COMPRESSED gfx_item_unbekannter_samenPal;
+extern LZ77COMPRESSED gfx_item_kandisschleifeTiles;
+extern LZ77COMPRESSED gfx_item_kandisschleifePal;
 
 #endif

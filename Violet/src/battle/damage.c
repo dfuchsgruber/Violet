@@ -48,6 +48,7 @@ static const u8 hold_effect_to_type[][2] = {
     {HOLD_EFFECT_FIRE_POWER, TYPE_FEUER},
     {HOLD_EFFECT_DRAGON_POWER, TYPE_DRACHE},
     {HOLD_EFFECT_NORMAL_POWER, TYPE_NORMAL},
+    {HOLD_EFFECT_FAIRY_POWER, TYPE_FEE},
 };
 
 #define APPLY_STAT_MOD(var, mon, stat, statIndex)                                   \
