@@ -2383,7 +2383,8 @@
 		"maptileset_clouds_dark_green": "src/map/tileset/maptileset_clouds_dark_green.pms",
 		"maptileset_cave_mossy": "src/map/tileset/maptileset_cave_mossy.pms",
 		"maptileset_clouds_canyon": "src\\map\\tileset\\maptileset_clouds_canyon.pms",
-		"maptileset_clouds_pink": "src\\map\\tileset\\maptileset_clouds_pink.pms"
+		"maptileset_clouds_pink": "src\\map\\tileset\\maptileset_clouds_pink.pms",
+		"maptileset_clouds_blue": "src\\map\\tileset\\maptileset_clouds_blue.pms"
 	},
 	"tilesets_secondary": {
 		"maptileset45": "src/map/tileset/maptileset45.pms",

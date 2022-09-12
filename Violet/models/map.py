@@ -158,6 +158,37 @@ tileset_behaviour_type = agb.types.BitfieldType('u32', [
     ('field_7', None, 1)
 ])
 
+# Tilesets
+tileset_primary_type = agb.types.Structure([
+    ('gfx_compressed', 'u8', 0),
+    ('palette_displaced', 'u8', 0),
+    ('field_2', 'u8', 0),
+    ('field_3', 'u8', 0),
+    ('gfx', 'tileset.gfx_pointer', 0),
+    ('palettes', 'tileset.palette_array_primary_pointer', 0),
+    ('blocks', 'tileset.block_tilemap_array_primary_pointer', 0),
+    ('animation_initialize', 'u32', 0),
+    ('behaviours', 'tileset.behaviour_array_primary_pointer', 0),
+    ('any_grasses', 'u32', 0),
+], hidden_members=set([
+    'gfx', 'behaviours', 'blocks'
+]))
+
+tileset_secondary_type = agb.types.Structure([
+    ('gfx_compressed', 'u8', 0),
+    ('palette_displaced', 'u8', 0),
+    ('field_2', 'u8', 0),
+    ('field_3', 'u8', 0),
+    ('gfx', 'tileset.gfx_pointer', 0),
+    ('palettes', 'tileset.palette_array_secondary_pointer', 0),
+    ('blocks', 'tileset.block_tilemap_array_secondary_pointer', 0),
+    ('animation_initialize', 'u32', 0),
+    ('behaviours', 'tileset.behaviour_array_secondary_pointer', 0),
+    ('any_grasses', 'u32', 0),
+], hidden_members=set([
+    'gfx', 'behaviours', 'blocks'
+]))
+
 # Map connections
 
 connection_type = agb.types.Structure([
@@ -243,5 +274,7 @@ models_to_export = {
     'bank_map_pair' : bank_map_pair_type,
     'cloud_maps_list' : cloud_maps_list_type,
     'tileset.block_tilemap' : block_tilemap_type,
-    'header' : header_type
+    'header' : header_type,
+    'tileset_primary' : tileset_primary_type,
+    'tileset_secondary' : tileset_secondary_type,
 }

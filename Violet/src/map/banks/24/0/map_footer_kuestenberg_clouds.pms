@@ -11294,7 +11294,7 @@
 				}
 			]
 		],
-		"tileset_primary": "maptileset_clouds",
+		"tileset_primary": "maptileset_clouds_blue",
 		"tileset_secondary": "maptileset_cloud_kaskada_ruins",
 		"field_1A": 0
 	},

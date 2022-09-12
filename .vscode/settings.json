@@ -23,7 +23,8 @@
         "random": "c",
         "typeindex": "c",
         "bitset": "c",
-        "chrono": "c"
+        "chrono": "c",
+        "variant": "c"
     },
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,

@@ -6,8 +6,6 @@
 #include "constants/overworld/overworld_effects.h"
 
 #include "oam.h"
-#include "map/tileset.h"
-
 
 enum {
     ANY_GRASS_ASH,
@@ -15,6 +13,7 @@ enum {
     ANY_GRASS_HAWEILAND,
     ANY_GRASS_CLOUD,
     ANY_GRASS_CLOUD_DARK_GREEN,
+    ANY_GRASS_CLOUD_BLUE,
 };
 
 enum {
@@ -23,19 +22,24 @@ enum {
     TAG_ANY_GRASS_HAWEILAND,
     TAG_ANY_GRASS_CLOUD,
     TAG_ANY_GRASS_CLOUD_DARK_GREEN,
+    TAG_ANY_GRASS_CLOUD_BLUE,
     TAG_ROCK_CLIMB,
     TAG_ROCK_CLIMB_SKY_ISLANG,
     TAG_PLAYER_PALETTE_VANILLA,
 } any_grass_tags;
 
 typedef struct{
-    tileset *tileset; // NULL if on all tilesets
     u8 triggered_by_behavior;
     oam_template *temp;
     palette *pal;
     void (*init_func)(bool reinitialize);
     u8 *(*player_step_cb)();
-}any_grass;
+} any_grass;
+
+typedef struct {
+    any_grass *any_grasses;
+    size_t number_any_grasses;
+} any_grass_header_t;
 
 typedef struct {
 	int x, y;

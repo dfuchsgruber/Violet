@@ -27,6 +27,7 @@ typedef struct tileset {
     bg_tile *blocks;
     void *(*animation_init)();
     block_data *behaviours;
+    any_grass_header_t *any_grasses;
 } tileset;
 
 typedef struct {
@@ -92,6 +93,7 @@ extern tileset maptileset_clouds;
 extern tileset maptileset_clouds_dark_green;
 extern tileset maptileset_clouds_canyon;
 extern tileset maptileset_clouds_pink;
+extern tileset maptileset_clouds_blue;
 extern tileset maptileset_cloud_ruins;
 extern tileset maptileset_cloud_ardeal;
 extern tileset maptileset_blackbeard_ship;

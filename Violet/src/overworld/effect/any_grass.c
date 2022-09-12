@@ -36,6 +36,8 @@ extern unsigned int gfx_grass_cloudTiles[];
 extern color_t gfx_grass_cloudPal[16];
 extern u8 gfx_grass_cloud_dark_greenTiles[];
 extern color_t gfx_grass_cloud_dark_greenPal[16];
+extern u8 gfx_grass_cloud_blueTiles[];
+extern color_t gfx_grass_cloud_bluePal[16];
 
 extern gfx_frame *overworld_effect_gfx_anim_table_grass[];
 
@@ -92,12 +94,21 @@ graphic cloud_dark_green_grass_graphics[] = {
     {&gfx_grass_cloud_dark_greenTiles[4 * GRAPHIC_SIZE_4BPP(16, 16)], GRAPHIC_SIZE_4BPP(16, 16), 0},
 };
 
+graphic cloud_blue_grass_graphics[] = {
+    {&gfx_grass_cloud_blueTiles[0 * GRAPHIC_SIZE_4BPP(16, 16)], GRAPHIC_SIZE_4BPP(16, 16), 0},
+    {&gfx_grass_cloud_blueTiles[1 * GRAPHIC_SIZE_4BPP(16, 16)], GRAPHIC_SIZE_4BPP(16, 16), 0},
+    {&gfx_grass_cloud_blueTiles[2 * GRAPHIC_SIZE_4BPP(16, 16)], GRAPHIC_SIZE_4BPP(16, 16), 0},
+    {&gfx_grass_cloud_blueTiles[3 * GRAPHIC_SIZE_4BPP(16, 16)], GRAPHIC_SIZE_4BPP(16, 16), 0},
+    {&gfx_grass_cloud_blueTiles[4 * GRAPHIC_SIZE_4BPP(16, 16)], GRAPHIC_SIZE_4BPP(16, 16), 0},
+};
+
 palette any_grass_pals[] = {
     [ANY_GRASS_ASH] = {gfx_grass_ashPal, TAG_ANY_GRASS_ASH, 0},
     [ANY_GRASS_GRAVEYARD] = {gfx_graveyard_grassPal, TAG_ANY_GRASS_GRAVEYARD, 0},
     [ANY_GRASS_HAWEILAND] = {gfx_grass_haweilandPal, TAG_ANY_GRASS_HAWEILAND, 0},
     [ANY_GRASS_CLOUD] = {gfx_grass_cloudPal, TAG_ANY_GRASS_CLOUD, 0},
     [ANY_GRASS_CLOUD_DARK_GREEN] = {gfx_grass_cloud_dark_greenPal, TAG_ANY_GRASS_CLOUD_DARK_GREEN, 0},
+    [ANY_GRASS_CLOUD_BLUE] = {gfx_grass_cloud_bluePal, TAG_ANY_GRASS_CLOUD_BLUE, 0},
 };
 
 oam_template any_grass_templates[] = {
@@ -111,6 +122,8 @@ oam_template any_grass_templates[] = {
     cloud_grass_graphics, oam_rotscale_anim_table_null, overworld_effect_oam_callback_grass},
     [ANY_GRASS_CLOUD_DARK_GREEN] = {0xFFFF, TAG_ANY_GRASS_CLOUD_DARK_GREEN, &overworld_effect_grass_sprite, overworld_effect_gfx_anim_table_grass,
     cloud_dark_green_grass_graphics, oam_rotscale_anim_table_null, overworld_effect_oam_callback_grass},
+    [ANY_GRASS_CLOUD_BLUE] = {0xFFFF, TAG_ANY_GRASS_CLOUD_BLUE, &overworld_effect_grass_sprite, overworld_effect_gfx_anim_table_grass,
+    cloud_blue_grass_graphics, oam_rotscale_anim_table_null, overworld_effect_oam_callback_grass},
 };
 
 gfx_frame rock_climb_gfx_anim[] = {
@@ -190,6 +203,8 @@ any_grass any_grasses[] = {
         any_grass_step, any_grass_player_step_null},
     {&maptileset_clouds_pink, 2, any_grass_templates + ANY_GRASS_CLOUD, any_grass_pals + ANY_GRASS_CLOUD, 
         any_grass_step, any_grass_player_step_null},
+    {&maptileset_clouds_blue, 2, any_grass_templates + ANY_GRASS_CLOUD_BLUE, any_grass_pals + ANY_GRASS_CLOUD_BLUE, 
+        any_grass_step, any_grass_player_step_null},
 
     // Clouds, rock climb
     {&maptileset_clouds, MB_BB, &rock_climb_sky_island_template, &rock_climb_sky_island_pal, 
@@ -199,6 +214,8 @@ any_grass any_grasses[] = {
     {&maptileset_clouds_pink, MB_BB, &rock_climb_sky_island_template, &rock_climb_sky_island_pal, 
         rock_climb_step, any_grass_player_step_null},
     {&maptileset_clouds_canyon, MB_BB, &rock_climb_sky_island_template, &rock_climb_sky_island_pal, 
+        rock_climb_step, any_grass_player_step_null},
+    {&maptileset_clouds_blue, MB_BB, &rock_climb_sky_island_template, &rock_climb_sky_island_pal, 
         rock_climb_step, any_grass_player_step_null},
 };
 

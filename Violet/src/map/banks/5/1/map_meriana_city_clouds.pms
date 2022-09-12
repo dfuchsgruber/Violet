@@ -39,7 +39,7 @@
 				{
 					"target_index": "2",
 					"picture": "92",
-					"x": "39",
+					"x": "38",
 					"y": "4",
 					"level": "0",
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
@@ -436,8 +436,8 @@
 			"triggers": [],
 			"signposts": [
 				{
-					"x": "38",
-					"y": "31",
+					"x": "39",
+					"y": "26",
 					"level": "0",
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"flag": "0",
