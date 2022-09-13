@@ -10,6 +10,7 @@
 
 #include "tile/block.h"
 #include "bg.h"
+#include "overworld/effect.h"
 
 typedef struct map_tileset_info {
     u8 compression_used;

@@ -32759,7 +32759,8 @@
 		"field_2": 0,
 		"field_3": 0,
 		"animation_initialize": "tileset_251828_anim_init",
-		"palette_displaced": 0
+		"palette_displaced": 0,
+		"any_grasses": "any_grasses_header_ash"
 	},
 	"label": "maptileset251828",
 	"type": "tileset_secondary"

@@ -22,7 +22,7 @@ u8 *player_step_on_behavior(){
     player_get_coordinates(&pos[0], &pos[1]);
     u8 behavior = (u8)block_get_behaviour_by_pos(pos[0], pos[1]);
     any_grass *g = any_grass_get_on_current_map_by_behaviour(behavior);
-    if (g && g->player_step_cb)
-        return g->player_step_cb();
+    if (g && g->on_player_step)
+        return g->on_player_step();
     return NULL;
 }

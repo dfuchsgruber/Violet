@@ -54345,7 +54345,8 @@
 		"field_2": 0,
 		"field_3": 0,
 		"animation_initialize": "tileset_0_anim_init",
-		"palette_displaced": 0
+		"palette_displaced": 0,
+		"any_grasses": "any_grasses_header_default"
 	},
 	"label": "maptileset0_route_4",
 	"type": "tileset_primary"

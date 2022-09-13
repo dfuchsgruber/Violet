@@ -37199,7 +37199,8 @@
 				"priority": 0,
 				"field_7": 0
 			}
-		]
+		],
+		"any_grasses": 0
 	},
 	"label": "maptileset_dungeon_ice_cave",
 	"type": "tileset_secondary"

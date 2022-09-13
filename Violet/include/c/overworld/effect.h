@@ -30,10 +30,10 @@ enum {
 
 typedef struct{
     u8 triggered_by_behavior;
-    oam_template *temp;
-    palette *pal;
-    void (*init_func)(bool reinitialize);
-    u8 *(*player_step_cb)();
+    oam_template *template;
+    palette *palette;
+    void (*initialize)(bool reinitialize);
+    u8 *(*on_player_step)();
 } any_grass;
 
 typedef struct {

@@ -54345,7 +54345,8 @@
 				"priority": 0,
 				"field_7": 0
 			}
-		]
+		],
+		"any_grasses": "any_grasses_header_clouds"
 	},
 	"label": "maptileset_clouds_canyon",
 	"type": "tileset_primary"

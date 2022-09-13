@@ -32759,7 +32759,8 @@
 				"priority": 0,
 				"field_7": 0
 			}
-		]
+		],
+		"any_grasses": 0
 	},
 	"label": "maptileset_blackbeard_ship",
 	"type": "tileset_secondary"

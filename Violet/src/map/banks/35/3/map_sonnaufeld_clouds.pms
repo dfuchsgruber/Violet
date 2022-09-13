@@ -122,7 +122,7 @@
 				{
 					"target_index": "5",
 					"picture": "170",
-					"x": "14",
+					"x": "17",
 					"y": "39",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_UP",
@@ -1002,7 +1002,7 @@
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_WEST",
-					"displacement": "-44",
+					"displacement": "-23",
 					"bank": "11",
 					"map_idx": "3",
 					"field_A": 0,

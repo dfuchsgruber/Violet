@@ -171,7 +171,7 @@ tileset_primary_type = agb.types.Structure([
     ('behaviours', 'tileset.behaviour_array_primary_pointer', 0),
     ('any_grasses', 'u32', 0),
 ], hidden_members=set([
-    'gfx', 'behaviours', 'blocks'
+    'gfx', 'behaviours', 'blocks', 'palettes', 'gfx_compressed', 'palette_displaced', 'field_2', 'field_3',
 ]))
 
 tileset_secondary_type = agb.types.Structure([
@@ -186,7 +186,7 @@ tileset_secondary_type = agb.types.Structure([
     ('behaviours', 'tileset.behaviour_array_secondary_pointer', 0),
     ('any_grasses', 'u32', 0),
 ], hidden_members=set([
-    'gfx', 'behaviours', 'blocks'
+    'gfx', 'behaviours', 'blocks', 'palettes', 'gfx_compressed', 'palette_displaced', 'field_2', 'field_3',
 ]))
 
 # Map connections

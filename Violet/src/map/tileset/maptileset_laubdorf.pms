@@ -32759,7 +32759,8 @@
 				"field_7": 0,
 				"battle_bg": "0"
 			}
-		]
+		],
+		"any_grasses": 0
 	},
 	"label": "maptileset_laubdorf",
 	"type": "tileset_secondary"
