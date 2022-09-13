@@ -381,7 +381,7 @@
 					"target_index": "14",
 					"picture": "56",
 					"x": "33",
-					"y": "60",
+					"y": "58",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -521,7 +521,7 @@
 					"target_index": "19",
 					"picture": "23",
 					"x": "45",
-					"y": "60",
+					"y": "59",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_RIGHT",
 					"behaviour_range": {
@@ -548,8 +548,8 @@
 				{
 					"target_index": "20",
 					"picture": "236",
-					"x": "22",
-					"y": "63",
+					"x": "21",
+					"y": "57",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
