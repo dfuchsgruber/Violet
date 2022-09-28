@@ -12,8 +12,6 @@ RUN apt-get update --fix-missing && \
         ssh && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install --upgrade pip
-RUN pip3 install pipenv
 RUN mkdir -p /etc/violet
 WORKDIR /etc/violet
 
@@ -59,6 +57,10 @@ RUN \
         install -t /usr/local/bin ./out/* && \
         cd $directory && \
         unset directory
+
+RUN pip3 install --upgrade pip
+RUN pip3 install pipenv
+
 RUN adduser \
      --disabled-password \
      --uid 1002 \
