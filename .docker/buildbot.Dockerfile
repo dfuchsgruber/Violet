@@ -1,9 +1,14 @@
-FROM devkitpro/devkitarm:20210726
+FROM gcc:8
 CMD [ "/usr/local/bin/violet-entrypoint" ]
 ENV WORKON_HOME /venv
+ENV DEVKITPRO /opt/devkitpro
+ENV DEVKITARM ${DEVKITPRO}/devkitARM
+ENV DEVKITPPC ${DEVKITPRO}/devkitPPC
+ENV PATH ${DEVKITPRO}/tools/bin:$PATH
 
 RUN apt-get update --fix-missing && \
     apt-get install -y \
+        apt-transport-https \
         libgl1-mesa-dev \
         gcc-arm-none-eabi \
         bc \
@@ -14,6 +19,18 @@ RUN apt-get update --fix-missing && \
 
 RUN mkdir -p /etc/violet
 WORKDIR /etc/violet
+
+RUN \
+        apt-get update && \
+        mkdir -p /usr/local/share/keyring/ && \
+        wget -O /usr/local/share/keyring/devkitpro-pub.gpg https://apt.devkitpro.org/devkitpro-pub.gpg && \
+        echo "deb [signed-by=/usr/local/share/keyring/devkitpro-pub.gpg] https://apt.devkitpro.org stable main" > /etc/apt/sources.list.d/devkitpro.list && \
+        apt-get update && \
+        apt-get install -y devkitpro-pacman && \
+    rm -rf /var/lib/apt/lists/* && \
+    ln -s /proc/self/mounts /etc/mtab && \
+    dkp-pacman -S --noconfirm gba-dev && \
+    rm /etc/mtab
 
 RUN \
         git clone https://github.com/ipatix/wav2agb.git && \
