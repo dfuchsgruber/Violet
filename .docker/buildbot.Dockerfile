@@ -57,9 +57,11 @@ RUN \
         git clone https://github.com/Kingcom/armips.git && \
         directory=$(pwd) && \
         cd armips && \
-        git checkout v0.11.0 && \
-        cmake . && \
-        make && \
+        git checkout be0124c9cb7610ecd88206f9ccbff954d6ae1897 && \
+        git submodule update --init --recursive && \
+        mkdir build && cd build && \
+        cmake -DCMAKE_BUILD_TYPE=Release .. && \
+        cmake --build . && \
         chmod 744 armips && \
         install -t /usr/local/bin ./armips && \
         cd $directory && \
