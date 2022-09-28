@@ -76,6 +76,16 @@ RUN \
         install -t /usr/local/bin ./out/* && \
         cd $directory && \
         unset directory
+RUN \
+        git clone https://github.com/ipatix/midi2agb.git && \
+        directory=$(pwd) && \
+        cd midi2agb && \
+        git checkout ff820bf5453a0e2b6a4612da2cd1d5fc8c220b20 && \
+        git submodule update --init --recursive && \
+        make && \
+        install -t /usr/local/bin midi2agb && \
+        cd $directory && \
+        unset directory
 
 RUN pip3 install --upgrade pip
 RUN pip3 install pipenv
