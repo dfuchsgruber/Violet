@@ -15,4 +15,4 @@ ipykernel = "*"
 pylint = "*"
 
 [requires]
-python_version = "3.7.3"
+python_version = "3.9.2"
