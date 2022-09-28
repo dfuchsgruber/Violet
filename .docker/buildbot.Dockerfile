@@ -70,7 +70,7 @@ RUN \
         git clone https://github.com/WodkaRHR/gba-mus-ripper.git && \
         directory=$(pwd) && \
         cd gba-mus-ripper && \
-        git checkout a1c8ed924420fa7f2a311f61a88915aed8018bf9 && \
+        git checkout 1211a9b8426fa79d2e29e394fa900c8ad56865b5 && \
         make && \
         chmod 744 ./* && \
         install -t /usr/local/bin ./out/* && \
