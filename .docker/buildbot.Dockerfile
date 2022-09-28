@@ -1,4 +1,4 @@
-FROM gcc:8
+FROM gcc:12
 CMD [ "/usr/local/bin/violet-entrypoint" ]
 ENV WORKON_HOME /venv
 ENV DEVKITPRO /opt/devkitpro
