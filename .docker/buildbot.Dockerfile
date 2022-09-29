@@ -14,7 +14,8 @@ RUN apt-get update --fix-missing && \
         bc \
         cmake \
         python3-pip \
-        ssh && \
+        ssh \
+        sudo && \
     rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /etc/violet
@@ -95,6 +96,9 @@ RUN adduser \
      --uid 1002 \
      --home /home/violet \
      "violet"
+
+RUN usermod -aG sudo violet
+RUN echo '%sudo ALL=(ALL:ALL) NOPASSWD: ALL' > /etc/sudoers.d/violet
 
 WORKDIR /workspace
 COPY .docker/buildbot-entrypoint.sh /usr/local/bin/violet-entrypoint
