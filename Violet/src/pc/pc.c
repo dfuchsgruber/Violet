@@ -138,7 +138,7 @@ static void pc_handle_confirm_selection(u8 self) {
 }
 
 void pc_handle_context_on_pokemon_consider_new_modes() {
-    DEBUG("Pc context on mon.\n");
+    DEBUG("PC context on mon.\n");
     // Wrapper arround the original function, as it is big and I am too lazy to reimplement and test it from scratch...
     if (pc_state->mode == PC_MODE_SELECT && pc_state->state == 2) {
         switch (pc_context_menu_handle_inputs()) {
