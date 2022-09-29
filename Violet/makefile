@@ -221,7 +221,7 @@ soundfont: $(BLDROM)
 	$(foreach vcg,000 001 002, \
 	$(SOUNDFONTRIPPER) $(BLDROM) $(BLDPATH)/soundfont/vcg$(vcg).sf2 $(PSG_DATA) $(GOLDENSUN_SYNTH) -n soundfont/instrument_names_vcg$(vcg).txt -mv12 $(shell grep "voicegroup$(vcg)" $(BLDPATH)/symbols | cut -d' ' -f1 | sed -e "s/.*/obase\=16\;ibase\=16\;&-8000000/" | bc | sed -e "s/^/0x/");)
 
-$(BLDROM): $(CONSTANTSHAS) $(CONSTANTSHC) $(BLDPATH)/asset.o $(BLDPATH)/map.o $(BLDPATH)/src.o $(EXPORTED_STATS_OBJ) $(PATCHES) $(BASESYMBOLS)
+$(BLDROM): $(CONSTANTSHAS) $(CONSTANTSHC) $(BLDPATH)/asset.o $(BLDPATH)/map.o $(BLDPATH)/src.o $(EXPORTED_STATS_OBJ) $(PATCHES) patches.asm $(BASESYMBOLS)
 	@echo "Creating rom object..."
 	$(LD) $(LDFLAGS) -T linker.ld -T $(BASESYMBOLS) --relocatable -o $(BLDPATH)/linked.o $(BLDPATH)/map.o $(BLDPATH)/asset.o $(BLDPATH)/src.o $(EXPORTED_STATS_OBJ)
 	$(ARS) patches.asm -sym $(SYMBOLDUMP) -strequ bldrom $(BLDROM) -strequ base $(BASEROM)
