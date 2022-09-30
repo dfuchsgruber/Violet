@@ -88,6 +88,12 @@ RUN \
         cd $directory && \
         unset directory
 
+RUN \
+        binName=/usr/local/bin/oh-my-posh && \
+        wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/v11.1.1/posh-linux-amd64 -O $binName && \
+        chmod a+x $binName && \
+        unset binName
+
 RUN pip3 install --upgrade pip
 RUN pip3 install pipenv
 
@@ -105,3 +111,12 @@ COPY .docker/buildbot-entrypoint.sh /usr/local/bin/violet-entrypoint
 RUN mkdir -p /venv || true
 RUN chmod 777 /venv
 USER violet
+
+RUN \
+        configFile="/workspace/.devcontainer/omp.json" && \
+        command="oh-my-posh init bash" && \
+        echo '[ -f '"$configFile"' ] || eval "$('"$command"')"' >> ~/.bashrc && \
+        echo '[ -f '"$configFile"' ] && eval "$('"$command"' --config '"$configFile"')"' >> ~/.bashrc && \
+        echo 'eval "$(oh-my-posh completion bash)"' >> ~/.bashrc && \
+        unset configFile && \
+        unset command
