@@ -30,7 +30,7 @@ static void new_game_initialize_custom_vars() {
 }
 
 static void new_game_initialize_time() {
-    *var_access(TIME_TYPE) = TIME_TYPE_INGAME_CLOCK; // TODO: get the rtc working!
+    *var_access(TIME_TYPE) = TIME_TYPE_RTC; // TODO: get the rtc working!
 }
 
 void new_game_initialize_custom_data() {
