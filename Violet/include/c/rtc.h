@@ -44,7 +44,7 @@ void one_day_events_reset();
 /**
  * Represents the data of the section section used for the communication with GPIO chips.
  */
-typedef struct gpio {
+typedef struct gpio_data {
     /**
      * The data shared between the game and the ROM-chip.
      */
@@ -59,7 +59,7 @@ typedef struct gpio {
      * A value indicating whether the GPIO is used in Write-Only mode (false) or in Read-Write mode (true).
      */
     bool portControl;
-} gpio;
+} gpio_data;
 
 u8 ingame_clock_status;
 
@@ -111,6 +111,6 @@ void time_based_events_proceed(u16 *vars);
 /**
  * The data-section for communicating with the GPIO chip.
  */
-gpio gpios;
+gpio_data gpio;
 
 #endif

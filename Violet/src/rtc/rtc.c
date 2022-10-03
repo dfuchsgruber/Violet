@@ -28,10 +28,10 @@ static u8 to_dec(u8 val) {
  * Reads the current time information and stores it into the timestamp space
  **/
 void rtc_read(rtc_timestamp *s) {
-    gpios.pinDirection = 5; //pins are all out except sio, which is in
+    gpio.pinDirection = 5; //pins are all out except sio, which is in
 
-    gpios.portControl = 1; //r/w
-    gpios.pinDirection = 7; //pins are all out
+    gpio.portControl = 1; //r/w
+    gpio.pinDirection = 7; //pins are all out
 
     //init cs = LOW, !sck = HIGH
     gpio_send_data(
@@ -51,7 +51,7 @@ void rtc_read(rtc_timestamp *s) {
 
     rtc_send_byte(0x65);
 
-    gpios.pinDirection = 5; //pins are all out except sio, which is in
+    gpio.pinDirection = 5; //pins are all out except sio, which is in
 
     //Now we can read bytewise
     s->year = to_dec(rtc_read_byte());
@@ -95,7 +95,7 @@ u8 rtc_read_byte() {
 
         rtc_chip_wait();
 
-        value |= ((gpios.data & 2) << i);
+        value |= ((gpio.data & 2) << i);
         i++;
     }
 
@@ -149,7 +149,7 @@ void rtc_chip_wait() {
  */
 void gpio_send_data(rtc_data data) {
     u16 value = (u16) (data.clock | (data.serialIO << 1) | (data.carrierSense << 2));
-    gpios.data = value;
+    gpio.data = value;
 }
 
 static bool is_leap_year(int year) {
