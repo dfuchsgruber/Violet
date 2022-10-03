@@ -3,9 +3,28 @@
 #ifndef RTC
 #define RTC
 
+#include <stdbool.h>
 
 // Define how many seconds one inamge second is equivalent to
 #define INGAME_CLOCK_SPEED_UP 6
+
+/**
+ * Represents data for communicating with the GPIO chip.
+ */
+typedef struct rtc_data {
+    /**
+     * The clock signal for synchronizing the serial data flow.
+     */
+    bool clock : 1;
+    /**
+     * The bit to send.
+     */
+    bool serialIO : 1;
+    /**
+     * Gets or sets a value indicating whether the GPIO communication is blocked.
+     */
+    bool carrierSense : 1;
+} rtc_data;
 
 typedef struct rtc_timestamp {
     u8 year;
@@ -46,7 +65,7 @@ u8 ingame_clock_status;
 
 void rtc_read(rtc_timestamp *s);
 void rtc_send_byte(u8 byte);
-void gpio_set_data(bool sck, bool sio, bool cs);
+void gpio_set_data(rtc_data data);
 u8 rtc_read_byte();
 u16 special_time_get();
 void rtc_chip_wait();

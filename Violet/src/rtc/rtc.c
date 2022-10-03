@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #include "types.h"
 #include "rtc.h"
 #include "debug.h"
@@ -27,17 +28,26 @@ static u8 to_dec(u8 val) {
  * Reads the current time information and stores it into the timestamp space
  **/
 void rtc_read(rtc_timestamp *s) {
-
     gpios.pinDirection = 5; //pins are all out except sio, which is in
 
     gpios.portControl = 1; //r/w
     gpios.pinDirection = 7; //pins are all out
 
     //init cs = LOW, !sck = HIGH
-    gpio_set_data(HIGH, LOW, LOW);
+    gpio_set_data(
+        (rtc_data){
+            .clock = true,
+            .serialIO = 0,
+            .carrierSense = true
+        });
 
     //switch cs to HIGH
-    gpio_set_data(HIGH, LOW, HIGH);
+    gpio_set_data(
+        (rtc_data){
+            .clock = true,
+            .serialIO = false,
+            .carrierSense = true
+        });
 
     rtc_send_byte(0x65);
 
@@ -53,7 +63,12 @@ void rtc_read(rtc_timestamp *s) {
     s->second = to_dec(rtc_read_byte());
 
     //data transfer closed, cs = LOW
-    gpio_set_data(LOW, LOW, LOW);
+    gpio_set_data(
+        (rtc_data){
+            .clock = false,
+            .serialIO = 0,
+            .carrierSense = false
+        });
 }
 
 u8 rtc_read_byte() {
@@ -62,17 +77,29 @@ u8 rtc_read_byte() {
     int i = 0;
     int value = 0;
     while (i < 8) {
+        gpio_set_data( //we do not send anything to chip but have to time the clock
+            (rtc_data){
+                .clock = false,
+                .serialIO = 0,
+                .carrierSense = false
+            });
 
-        gpio_set_data(LOW, LOW, LOW); //we do not send anything to chip but have to time the clock
         rtc_chip_wait();
-        gpio_set_data(HIGH, LOW, LOW); //time the clock again
+
+        gpio_set_data(
+            (rtc_data){
+                .clock = true,
+                .serialIO = 0,
+                .carrierSense = false
+            });
+
         rtc_chip_wait();
 
         value |= ((gpios.data & 2) << i);
         i++;
     }
-    return (u8) (value >> 1);
 
+    return (u8) (value >> 1);
 }
 
 void rtc_send_byte(u8 value) {
@@ -85,9 +112,22 @@ void rtc_send_byte(u8 value) {
         u8 bit = (u8) ((v & 0x80) >> 7);
         v <<= 1;
 
-        gpio_set_data(LOW, bit, LOW); //send bit to chip
+        gpio_set_data( //send bit to chip
+            (rtc_data){
+                .clock = false,
+                .serialIO = bit,
+                .carrierSense = false
+            });
+
         rtc_chip_wait();
-        gpio_set_data(HIGH, bit, LOW); //wait for response from chip
+
+        gpio_set_data( // wait for response from chip
+            (rtc_data){
+                .clock = true,
+                .serialIO = bit,
+                .carrierSense = false
+            });
+
         rtc_chip_wait();
     }
 
@@ -105,12 +145,11 @@ void rtc_chip_wait() {
 }
 
 /**
- * Configure gpio_data
- **/
-void gpio_set_data(bool sck, bool sio, bool cs) {
-    u16 value = (u16) (sck | (sio << 1) | (cs << 2));
+ * Sends data to the GPIO chip.
+ */
+void gpio_set_data(rtc_data data) {
+    u16 value = (u16) (data.clock | (data.serialIO << 1) | (data.carrierSense << 2));
     gpios.data = value;
-
 }
 
 static bool is_leap_year(int year) {
