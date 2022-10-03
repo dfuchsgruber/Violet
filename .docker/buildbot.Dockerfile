@@ -15,7 +15,8 @@ RUN apt-get update --fix-missing && \
         cmake \
         python3-pip \
         ssh \
-        sudo && \
+        sudo \
+        vim && \
     rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /etc/violet
