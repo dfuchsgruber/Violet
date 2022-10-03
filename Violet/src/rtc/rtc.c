@@ -72,16 +72,15 @@ void rtc_read(rtc_timestamp *s) {
 }
 
 u8 rtc_read_byte() {
-
-
     int i = 0;
     int value = 0;
+
     while (i < 8) {
         gpio_send_data( //we do not send anything to chip but have to time the clock
             (rtc_data){
                 .clock = false,
                 .serialIO = 0,
-                .carrierSense = false
+                .carrierSense = true
             });
 
         rtc_chip_wait();
@@ -90,7 +89,7 @@ u8 rtc_read_byte() {
             (rtc_data){
                 .clock = true,
                 .serialIO = 0,
-                .carrierSense = false
+                .carrierSense = true
             });
 
         rtc_chip_wait();
@@ -116,7 +115,7 @@ void rtc_send_byte(u8 value) {
             (rtc_data){
                 .clock = false,
                 .serialIO = bit,
-                .carrierSense = false
+                .carrierSense = true
             });
 
         rtc_chip_wait();
@@ -125,7 +124,7 @@ void rtc_send_byte(u8 value) {
             (rtc_data){
                 .clock = true,
                 .serialIO = bit,
-                .carrierSense = false
+                .carrierSense = true
             });
 
         rtc_chip_wait();
