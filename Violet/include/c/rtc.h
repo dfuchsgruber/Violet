@@ -65,7 +65,7 @@ u8 ingame_clock_status;
 
 void rtc_read(rtc_timestamp *s);
 void rtc_send_byte(u8 byte);
-void gpio_set_data(rtc_data data);
+void gpio_send_data(rtc_data data);
 u8 rtc_read_byte();
 u16 special_time_get();
 void rtc_chip_wait();

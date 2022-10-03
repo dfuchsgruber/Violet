@@ -34,7 +34,7 @@ void rtc_read(rtc_timestamp *s) {
     gpios.pinDirection = 7; //pins are all out
 
     //init cs = LOW, !sck = HIGH
-    gpio_set_data(
+    gpio_send_data(
         (rtc_data){
             .clock = true,
             .serialIO = 0,
@@ -42,7 +42,7 @@ void rtc_read(rtc_timestamp *s) {
         });
 
     //switch cs to HIGH
-    gpio_set_data(
+    gpio_send_data(
         (rtc_data){
             .clock = true,
             .serialIO = false,
@@ -63,7 +63,7 @@ void rtc_read(rtc_timestamp *s) {
     s->second = to_dec(rtc_read_byte());
 
     //data transfer closed, cs = LOW
-    gpio_set_data(
+    gpio_send_data(
         (rtc_data){
             .clock = false,
             .serialIO = 0,
@@ -77,7 +77,7 @@ u8 rtc_read_byte() {
     int i = 0;
     int value = 0;
     while (i < 8) {
-        gpio_set_data( //we do not send anything to chip but have to time the clock
+        gpio_send_data( //we do not send anything to chip but have to time the clock
             (rtc_data){
                 .clock = false,
                 .serialIO = 0,
@@ -86,7 +86,7 @@ u8 rtc_read_byte() {
 
         rtc_chip_wait();
 
-        gpio_set_data(
+        gpio_send_data(
             (rtc_data){
                 .clock = true,
                 .serialIO = 0,
@@ -112,7 +112,7 @@ void rtc_send_byte(u8 value) {
         u8 bit = (u8) ((v & 0x80) >> 7);
         v <<= 1;
 
-        gpio_set_data( //send bit to chip
+        gpio_send_data( //send bit to chip
             (rtc_data){
                 .clock = false,
                 .serialIO = bit,
@@ -121,7 +121,7 @@ void rtc_send_byte(u8 value) {
 
         rtc_chip_wait();
 
-        gpio_set_data( // wait for response from chip
+        gpio_send_data( // wait for response from chip
             (rtc_data){
                 .clock = true,
                 .serialIO = bit,
@@ -147,7 +147,7 @@ void rtc_chip_wait() {
 /**
  * Sends data to the GPIO chip.
  */
-void gpio_set_data(rtc_data data) {
+void gpio_send_data(rtc_data data) {
     u16 value = (u16) (data.clock | (data.serialIO << 1) | (data.carrierSense << 2));
     gpios.data = value;
 }
