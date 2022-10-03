@@ -22,9 +22,23 @@ typedef struct rtc_timestamp {
  */
 void one_day_events_reset();
 
+/**
+ * Represents the data of the section section used for the communication with GPIO chips.
+ */
 typedef struct gpio {
+    /**
+     * The data shared between the game and the ROM-chip.
+     */
     u16 data;
+
+    /**
+     * A bit-flagged value indicating whether the bit 0-3 of the `data` are sent in (0) or out (1).
+     */
     u16 pinDirection;
+
+    /**
+     * A value indicating whether the GPIO is used in Write-Only mode (false) or in Read-Write mode (true).
+     */
     bool portControl;
 } gpio;
 
@@ -75,6 +89,9 @@ void time_reset_events();
  **/
 void time_based_events_proceed(u16 *vars);
 
+/**
+ * The data-section for communicating with the GPIO chip.
+ */
 gpio gpios;
 
 #endif
