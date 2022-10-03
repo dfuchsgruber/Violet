@@ -38,7 +38,7 @@ void rtc_read(rtc_timestamp *s) {
         (rtc_data){
             .clock = true,
             .serialIO = 0,
-            .carrierSense = true
+            .carrierSense = false
         });
 
     //switch cs to HIGH
