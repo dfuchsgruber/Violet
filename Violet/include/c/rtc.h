@@ -24,9 +24,8 @@ void one_day_events_reset();
 
 typedef struct gpio {
     u16 data;
-    u16 out;
-    u16 cntrl;
-
+    u16 pinDirection;
+    u16 portControl;
 } gpio;
 
 u8 ingame_clock_status;

@@ -28,10 +28,10 @@ static u8 to_dec(u8 val) {
  **/
 void rtc_read(rtc_timestamp *s) {
 
-    gpios.out = 5; //pins are all out except sio, which is in
+    gpios.pinDirection = 5; //pins are all out except sio, which is in
 
-    gpios.cntrl = 1; //r/w
-    gpios.out = 7; //pins are all out
+    gpios.portControl = 1; //r/w
+    gpios.pinDirection = 7; //pins are all out
 
     //init cs = LOW, !sck = HIGH
     gpio_set_data(HIGH, LOW, LOW);
@@ -41,7 +41,7 @@ void rtc_read(rtc_timestamp *s) {
 
     rtc_send_byte(0x65);
 
-    gpios.out = 5; //pins are all out except sio, which is in
+    gpios.pinDirection = 5; //pins are all out except sio, which is in
 
     //Now we can read bytewise
     s->year = to_dec(rtc_read_byte());
