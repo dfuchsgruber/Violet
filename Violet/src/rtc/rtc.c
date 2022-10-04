@@ -76,14 +76,14 @@ u8 rtc_read_byte() {
     int value = 0;
 
     while (i < 8) {
-        gpio_send_data( //we do not send anything to chip but have to time the clock
-            (rtc_data){
-                .clock = false,
-                .serialIO = 0,
-                .carrierSense = true
-            });
-
-        rtc_chip_wait();
+        for (int j = 0; j < 3; j++) {
+            gpio_send_data( //we do not send anything to chip but have to time the clock
+                (rtc_data){
+                    .clock = false,
+                    .serialIO = 0,
+                    .carrierSense = true
+                });
+        }
 
         gpio_send_data(
             (rtc_data){
@@ -115,25 +115,12 @@ void rtc_send_byte(u8 value) {
                 .carrierSense = true
             });
 
-        rtc_chip_wait();
-
         gpio_send_data( // wait for response from chip
             (rtc_data){
                 .clock = true,
                 .serialIO = bit,
                 .carrierSense = true
             });
-    }
-
-}
-
-void rtc_chip_wait() {
-
-    int i = 100;
-    while (--i) {
-        __asm__ __volatile__(
-                "nop\n\r"
-                );
     }
 
 }

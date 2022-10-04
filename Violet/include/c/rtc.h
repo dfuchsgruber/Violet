@@ -68,7 +68,6 @@ void rtc_send_byte(u8 byte);
 void gpio_send_data(rtc_data data);
 u8 rtc_read_byte();
 u16 special_time_get();
-void rtc_chip_wait();
 u64 rtc_timestamp_to_seconds(rtc_timestamp *t);
 /**
  * Initializes year, month and day of a timestamp with a certain amount of days that has passed.
