@@ -58,7 +58,7 @@ typedef struct gpio_data {
     /**
      * A value indicating whether the GPIO is used in Write-Only mode (false) or in Read-Write mode (true).
      */
-    bool portControl;
+    u16 portControl;
 } gpio_data;
 
 u8 ingame_clock_status;
