@@ -92,8 +92,6 @@ u8 rtc_read_byte() {
                 .carrierSense = true
             });
 
-        rtc_chip_wait();
-
         value |= ((gpio.data & 2) << i);
         i++;
     }
@@ -107,7 +105,6 @@ void rtc_send_byte(u8 value) {
 
     int i = 8;
     while (i--) {
-
         u8 bit = (u8) ((v & 0x80) >> 7);
         v <<= 1;
 
@@ -126,8 +123,6 @@ void rtc_send_byte(u8 value) {
                 .serialIO = bit,
                 .carrierSense = true
             });
-
-        rtc_chip_wait();
     }
 
 }
