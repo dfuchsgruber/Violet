@@ -4,6 +4,33 @@
 #include "debug.h"
 #include "vars.h"
 
+static const char daysOfWeek[7][10] =
+{
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+};
+
+static const char months[12][10] =
+{
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+};
+
 static const int days_per_month[12] =
 {
     31,
@@ -61,6 +88,25 @@ void rtc_read(rtc_timestamp *s) {
     s->hour = to_dec(rtc_read_byte());
     s->minute = to_dec(rtc_read_byte());
     s->second = to_dec(rtc_read_byte());
+
+    char *daySuffix;
+
+    switch (s->day % 10) {
+        case 1:
+            daySuffix = "st";
+            break;
+        case 2:
+            daySuffix = "nd";
+            break;
+        case 3:
+            daySuffix = "rd";
+            break;
+        default:
+            daySuffix = "th";
+            break;
+    }
+
+    DEBUG("I think, it's %s, the %d%s of %s %d, %02d:%02d:%02d", daysOfWeek[s->day_of_week - 1], s->day, daySuffix, months[s->month - 1], 2000 + s->year, s->hour, s->minute, s->second);
 
     //data transfer closed, cs = LOW
     gpio_send_data(
