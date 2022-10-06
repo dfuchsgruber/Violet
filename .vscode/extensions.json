@@ -10,6 +10,7 @@
 		"ms-azuretools.vscode-docker",
 		"ms-python.python",
 		"ms-vscode.cpptools",
-		"ms-vscode.hexeditor"
+		"ms-vscode.hexeditor",
+		"ms-vscode.makefile-tools"
 	]
 }
