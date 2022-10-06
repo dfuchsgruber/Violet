@@ -107,14 +107,14 @@ RUN adduser \
 RUN usermod -aG sudo violet
 RUN echo '%sudo ALL=(ALL:ALL) NOPASSWD: ALL' > /etc/sudoers.d/violet
 
-WORKDIR /workspace
+WORKDIR /workspace/Violet
 COPY .docker/buildbot-entrypoint.sh /usr/local/bin/violet-entrypoint
 RUN mkdir -p /venv || true
 RUN chmod 777 /venv
 USER violet
 
 RUN \
-        configFile="/workspace/.devcontainer/omp.json" && \
+        configFile="/workspace/Violet/.devcontainer/omp.json" && \
         command="oh-my-posh init bash" && \
         echo '[ -f '"$configFile"' ] || eval "$('"$command"')"' >> ~/.bashrc && \
         echo '[ -f '"$configFile"' ] && eval "$('"$command"' --config '"$configFile"')"' >> ~/.bashrc && \

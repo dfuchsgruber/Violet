@@ -2,10 +2,10 @@
 	"name": "Violet",
 	"dockerComposeFile": [
 		"../docker-compose.yml",
-		"docker-compose.yml",
+		"docker-compose.yml"
 	],
 	"service": "buildbot",
-	"workspaceFolder": "/workspace",
+	"workspaceFolder": "/workspace/Violet",
 	"settings": {},
 	"postCreateCommand": "pipenv install",
 	"extensions": [
