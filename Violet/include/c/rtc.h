@@ -21,9 +21,9 @@ typedef struct rtc_data {
      */
     bool serialIO : 1;
     /**
-     * Gets or sets a value indicating whether the GPIO communication is blocked.
+     * Gets or sets a value indicating whether the RTC chip may use the system BUS.
      */
-    bool carrierSense : 1;
+    bool chipSelect : 1;
 } rtc_data;
 
 typedef struct rtc_timestamp {

@@ -65,7 +65,7 @@ void rtc_read(rtc_timestamp *s) {
         (rtc_data){
             .clock = true,
             .serialIO = 0,
-            .carrierSense = false
+            .chipSelect = false
         });
 
     //switch cs to HIGH
@@ -73,7 +73,7 @@ void rtc_read(rtc_timestamp *s) {
         (rtc_data){
             .clock = true,
             .serialIO = false,
-            .carrierSense = true
+            .chipSelect = true
         });
 
     rtc_send_byte(0x65);
@@ -113,7 +113,7 @@ void rtc_read(rtc_timestamp *s) {
         (rtc_data){
             .clock = false,
             .serialIO = 0,
-            .carrierSense = false
+            .chipSelect = false
         });
 }
 
@@ -127,7 +127,7 @@ u8 rtc_read_byte() {
                 (rtc_data){
                     .clock = false,
                     .serialIO = 0,
-                    .carrierSense = true
+                    .chipSelect = true
                 });
         }
 
@@ -135,7 +135,7 @@ u8 rtc_read_byte() {
             (rtc_data){
                 .clock = true,
                 .serialIO = 0,
-                .carrierSense = true
+                .chipSelect = true
             });
 
         value |= ((gpio.data & 2) << i);
@@ -158,14 +158,14 @@ void rtc_send_byte(u8 value) {
             (rtc_data){
                 .clock = false,
                 .serialIO = bit,
-                .carrierSense = true
+                .chipSelect = true
             });
 
         gpio_send_data( // wait for response from chip
             (rtc_data){
                 .clock = true,
                 .serialIO = bit,
-                .carrierSense = true
+                .chipSelect = true
             });
     }
 
@@ -175,7 +175,7 @@ void rtc_send_byte(u8 value) {
  * Sends data to the GPIO chip.
  */
 void gpio_send_data(rtc_data data) {
-    u16 value = (u16) (data.clock | (data.serialIO << 1) | (data.carrierSense << 2));
+    u16 value = (u16) (data.clock | (data.serialIO << 1) | (data.chipSelect << 2));
     gpio.data = value;
 }
 
