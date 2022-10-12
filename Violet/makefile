@@ -28,6 +28,7 @@ MIDFLAGS=-V92
 CFLAGS=-c -std=c99 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -fno-builtin -mlong-calls -march=armv4t -Wall -Werror -Wno-builtin-declaration-mismatch -Wextra -Wconversion -O2 -Iinclude/c/ -D$(LANGUAGE)
 LDFLAGS=-z muldefs -Ilibm
 GRITFLAGS=-fh! -ftc
+GRITDEFAULTS=asset/gfx/defaults.grit
 CRYFLAGS=-c
 WAVFLAGS=
 MAPTILESETGRITFLAGS=-gu32 -gzl -gB 4 -gt -m! -p!
@@ -144,8 +145,9 @@ $(MIDOBJS): %.o: %.s
 	
 $(GFXC): $(BLDPATH)/%.c: %.png %.grit
 	@echo "$<"
+	$(eval $<_GRITFILE := $(shell config=$(basename $<).grit; test -f $$config && echo $$config || echo $(GRITDEFAULTS)))
 	$(shell mkdir -p $(dir $(GFXC)))
-	$(GRIT) $< $(GRITFLAGS) -ff $(basename $<).grit -o $@ 
+	$(GRIT) $< $(GRITFLAGS) -ff $($@_GRITFILE) -o $@ 
 	
 	
 $(GFXOBJS): %.o: %.c
