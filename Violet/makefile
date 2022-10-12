@@ -29,6 +29,7 @@ CFLAGS=-c -std=c99 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -fno-bui
 LDFLAGS=-z muldefs -Ilibm
 GRITFLAGS=-fh! -ftc
 GRITDEFAULTS=default.grit
+GRITDEFAULTFILES=$(shell find -type f -name '$(GRITDEFAULTS)')
 CRYFLAGS=-c
 WAVFLAGS=
 MAPTILESETGRITFLAGS=-gu32 -gzl -gB 4 -gt -m! -p!
@@ -143,7 +144,7 @@ $(MIDOBJS): %.o: %.s
 	$(shell mkdir -p $(dir $@))
 	$(AS) $(ASFLAGS) $< -o $@	
 	
-$(GFXC): $(BLDPATH)/%.c: %.png $(wildcard %.grit)
+$(GFXC): $(BLDPATH)/%.c: %.png $(wildcard %.grit) $(GRITDEFAULTFILES)
 	@echo "$<"
 
 	$(eval $<_GRITFILE := $(shell \
