@@ -143,7 +143,7 @@ $(MIDOBJS): %.o: %.s
 	$(shell mkdir -p $(dir $@))
 	$(AS) $(ASFLAGS) $< -o $@	
 	
-$(GFXC): $(BLDPATH)/%.c: %.png %.grit
+$(GFXC): $(BLDPATH)/%.c: %.png $(wildcard %.grit)
 	@echo "$<"
 	$(eval $<_GRITFILE := $(shell config=$(basename $<).grit; test -f $$config && echo $$config || echo $(GRITDEFAULTS)))
 	@echo "Using config $($<_GRITFILE)"
