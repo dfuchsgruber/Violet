@@ -28,7 +28,8 @@ MIDFLAGS=-V92
 CFLAGS=-c -std=c99 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -fno-builtin -mlong-calls -march=armv4t -Wall -Werror -Wno-builtin-declaration-mismatch -Wextra -Wconversion -O2 -Iinclude/c/ -D$(LANGUAGE)
 LDFLAGS=-z muldefs -Ilibm
 GRITFLAGS=-fh! -ftc
-GRITDEFAULTS=default.grit
+GRITEXTENSION=.grit
+GRITDEFAULTS=default$(GRITEXTENSION)
 GRITDEFAULTFILES=$(shell find -type f -name '$(GRITDEFAULTS)')
 CRYFLAGS=-c
 WAVFLAGS=
@@ -100,6 +101,16 @@ CLOSEPAREN := )
 
 include pokeapi/makefile tools/fata_morgana/makefile tools/index/makefile tools/cloud_maps/makefile tools/worldmap/makefile tools/berry_adjacency/makefile tools/treasure_map/makefile
 
+find_up=$(shell \
+	file="$(basename $(1))$(2)"; \
+	dir="$$(dirname $(1))"; \
+	while [ ! -f "$$file" ] && [ "$$dir" != "." ]; \
+	do \
+		file="$$dir/$(3)"; \
+		dir=$$(dirname $$dir); \
+	done; \
+	echo $$file;)
+
 define build_list
 	$(file >$(1),INPUT$(OPENPAREN))
 	$(foreach file,$(2),$(file >>$(1),    $(file)))
@@ -146,17 +157,7 @@ $(MIDOBJS): %.o: %.s
 	
 $(GFXC): $(BLDPATH)/%.c: %.png $(wildcard %.grit) $(GRITDEFAULTFILES)
 	@echo "$<"
-
-	$(eval $<_GRITFILE := $(shell \
-		config=$(basename $<).grit; \
-		dir=$$(dirname $<); \
-		while [ ! -f $$config ] && [ "$$dir" != "." ]; \
-		do \
-			config=$$dir/$(GRITDEFAULTS); \
-			dir=$$(dirname $$dir); \
-		done; \
-		echo $$config;))
-
+	$(eval $<_GRITFILE:= $(call find_up,$<,$(GRITEXTENSION),$(GRITDEFAULTS)))
 	@echo "Using config $($<_GRITFILE)"
 	$(shell mkdir -p $(dir $(GFXC)))
 	$(GRIT) $< $(GRITFLAGS) -ff $($@_GRITFILE) -o $@ 
