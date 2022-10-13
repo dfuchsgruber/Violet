@@ -40,7 +40,7 @@ MAPTILESETGRITFLAGS=-gu32 -gzl -gB 4 -gt -m! -p!
 
 BLDPATH=bld
 BLDROM=$(BLDPATH)/violet.gba
-BASEROM=base/bprd.gba
+BASEROM ?= base/bprd.gba
 MAPPROJ=proj.pmp
 SYMBOLDUMP=$(BLDPATH)/symbols
 BASESYMBOLS=bprd.sym
@@ -51,8 +51,8 @@ PKLPATH=pkl
 MOVESETPKL=$(addprefix $(PKLPATH)/, $(addsuffix .pkl, $(shell tools/pokemon_move_generator/get_species.py $(MAPPROJ) $(SPECIESCONSTANTTABLE))))
 
 # Soundfont ripper
-PSG_DATA=psg_data.raw
-GOLDENSUN_SYNTH=goldensun_synth.raw
+PSG_DATA ?= psg_data.raw
+GOLDENSUN_SYNTH ?= goldensun_synth.raw
 
 rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))#
 

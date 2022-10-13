@@ -5,6 +5,8 @@ ENV DEVKITPRO /opt/devkitpro
 ENV DEVKITARM ${DEVKITPRO}/devkitARM
 ENV DEVKITPPC ${DEVKITPRO}/devkitPPC
 ENV PATH ${DEVKITPRO}/tools/bin:$PATH
+ENV PSG_DATA=/etc/violet/gba-mus-ripper/psg_data.raw
+ENV GOLDENSUN_SYNTH=/etc/violet/gba-mus-ripper/goldensun_synth.raw
 
 RUN apt-get update --fix-missing && \
     apt-get install -y \
