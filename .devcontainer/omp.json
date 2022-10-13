@@ -87,6 +87,17 @@
                     "template": " {{ if gt .Code 0 }}❎{{ else }}✅{{ end }} ",
                     "trailing_diamond": "\ue0b4",
                     "type": "exit"
+                },
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "template": "\n"
+                },
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "foreground": "blue",
+                    "template": "{{ if .Root }}#{{ else }}${{ end }}"
                 }
             ],
             "type": "prompt"
