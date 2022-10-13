@@ -166,7 +166,7 @@ $(GFXC): $(BLDPATH)/%.c: %.png $(wildcard %.grit) $(GRITDEFAULTFILES)
 	$(eval $<_GRITFILE:= $(call find_up,$<,$(GRITEXTENSION),$(GRITDEFAULTS)))
 	@echo "Using config $($<_GRITFILE)"
 	$(shell mkdir -p $(dir $(GFXC)))
-	$(GRIT) $< $(GRITFLAGS) -ff $($@_GRITFILE) -o $@ 
+	$(GRIT) $< $(GRITFLAGS) -ff $($<_GRITFILE) -o $@ 
 	
 	
 $(GFXOBJS): %.o: %.c
