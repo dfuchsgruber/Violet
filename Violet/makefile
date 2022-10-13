@@ -25,6 +25,9 @@ LANGUAGE=LANG_GER
 # Define compiler flags
 ASFLAGS=-mthumb -Iinclude/as/ -Iinclude/as/constants/ -mcpu=arm7tdmi -march=armv4t --defsym $(LANGUAGE)=1
 MIDFLAGS=-V92
+MIDFLAGEXTENSION=.flags
+MIDDEFAULTFLAGS=default$(MIDFLAGEXTENSION)
+MIDFLAGDEFAULTFILES=$(shell find -type f -name '$(MIDDEFAULTFLAGS)')
 CFLAGS=-c -std=c99 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -fno-builtin -mlong-calls -march=armv4t -Wall -Werror -Wno-builtin-declaration-mismatch -Wextra -Wconversion -O2 -Iinclude/c/ -D$(LANGUAGE)
 LDFLAGS=-z muldefs -Ilibm
 GRITFLAGS=-fh! -ftc
@@ -147,8 +150,11 @@ $(COBJS): $(BLDPATH)/%.o: %.c
 	$(PYPREPROC) -o $(BLDPATH)/$*.c $< $(MAPPROJ)   
 	$(CC) $(CFLAGS) -MMD $(BLDPATH)/$*.c -o $@
 	
-$(MIDAS): $(BLDPATH)/%.s: %.mid
+$(MIDAS): $(BLDPATH)/%.s: %.mid $(wildcard %.flags) $(MIDFLAGDEFAULTFILES)
 	$(shell mkdir -p $(dir $@))
+	@echo "$<"
+	$(eval $<_FLAGFILE:= $(call find_up,$<,$(MIDFLAGEXTENSION),$(MIDDEFAULTFLAGS)))
+	@echo "Using config $($<_FLAGFILE)"
 	$(MID2AGB) $(shell cat $(basename $<).flags) $< $@ > /dev/null
 	
 $(MIDOBJS): %.o: %.s
