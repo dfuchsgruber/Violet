@@ -110,6 +110,6 @@ void time_based_events_proceed(u16 *vars);
 /**
  * The data-section for communicating with the GPIO chip.
  */
-gpio_data gpio;
+volatile gpio_data gpio;
 
 #endif
