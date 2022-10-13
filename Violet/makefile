@@ -155,7 +155,7 @@ $(MIDAS): $(BLDPATH)/%.s: %.mid $(wildcard %.flags) $(MIDFLAGDEFAULTFILES)
 	@echo "$<"
 	$(eval $<_FLAGFILE:= $(call find_up,$<,$(MIDFLAGEXTENSION),$(MIDDEFAULTFLAGS)))
 	@echo "Using config $($<_FLAGFILE)"
-	$(MID2AGB) $(shell cat $(basename $<).flags) $< $@ > /dev/null
+	$(MID2AGB) $(shell cat $($<_FLAGFILE)) $< $@ > /dev/null
 	
 $(MIDOBJS): %.o: %.s
 	$(shell mkdir -p $(dir $@))
