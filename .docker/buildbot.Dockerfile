@@ -97,6 +97,17 @@ RUN \
         chmod a+x $binName && \
         unset binName
 
+RUN \
+        directory=$(pwd) && \
+        cd /tmp/ && \
+        pkgName=logo-ls.deb && \
+        wget https://github.com/Yash-Handa/logo-ls/releases/download/v1.3.7/logo-ls_amd64.deb -O $pkgName && \
+        dpkg -i $pkgName && \
+        rm $pkgName && \
+        unset pkgName && \
+        cd $directory && \
+        unset directory
+
 RUN pip3 install --upgrade pip
 RUN pip3 install pipenv
 
@@ -121,5 +132,9 @@ RUN \
         echo '[ -f '"$configFile"' ] || eval "$('"$command"')"' >> ~/.bashrc && \
         echo '[ -f '"$configFile"' ] && eval "$('"$command"' --config '"$configFile"')"' >> ~/.bashrc && \
         echo 'eval "$(oh-my-posh completion bash)"' >> ~/.bashrc && \
+        echo "alias ls='logo-ls -iD'" >> ~/.bashrc && \
+        echo "alias ll='ls -al'" >> ~/.bashrc && \
+        echo "alias la='ls -A'" >> ~/.bashrc && \
+        echo "alias l='ls'" >> ~/.bashrc && \
         unset configFile && \
         unset command
