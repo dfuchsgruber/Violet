@@ -17,6 +17,5 @@
     "workbench.editorAssociations": {
         "*.gba": "hexEditor.hexedit",
         "*.ipynb": "jupyter-notebook"
-    },
-    "keyboard.dispatch": "keyCode"
+    }
 }
