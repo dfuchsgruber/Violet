@@ -8,7 +8,8 @@
         "*.pmp": "json",
         "*.pms": "json",
         "*.grit": "plaintext",
-        "*.flags": "plaintext"
+        "*.flags": "plaintext",
+        "**/*.h": "c"
     },
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
