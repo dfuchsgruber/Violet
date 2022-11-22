@@ -32,7 +32,7 @@ RUN \
         apt-get update && \
         apt-get install -y devkitpro-pacman && \
     rm -rf /var/lib/apt/lists/* && \
-    ln -s /proc/self/mounts /etc/mtab && \
+    { ln -s /proc/self/mounts /etc/mtab || true } && \
     dkp-pacman -S --noconfirm gba-dev && \
     rm /etc/mtab
 
