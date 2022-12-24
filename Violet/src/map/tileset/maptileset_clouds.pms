@@ -37980,7 +37980,7 @@
 				{
 					"tile_idx": 455,
 					"palette_idx": 3,
-					"horizontal_flip": 0,
+					"horizontal_flip": 1,
 					"vertical_flip": 0
 				},
 				{

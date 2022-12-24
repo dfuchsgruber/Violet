@@ -7,6 +7,7 @@
 .global ow_script_route_4_clouds_person_3
 .global ow_script_route_4_clouds_person_4
 .global ow_script_route_4_clouds_person_5
+.global ow_script_route_4_clouds_person_6
 
 ow_script_route_4_clouds_person_0:
     loadpointer 0 str_0
@@ -32,20 +33,27 @@ ow_script_route_4_clouds_person_5:
     loadpointer 0 str_5
     callstd MSG_FACE
     end
+ow_script_route_4_clouds_person_6:
+    loadpointer 0 str_6
+    callstd MSG_FACE
+    end
+
 
 .ifdef LANG_GER
 str_0:
-    .autostring 34 2 "Es hat Tradition, auf Wolken, welche von Altaria gewoben wurden, zu fliegen.\pDie Kunst des Wolkenwebens beherrschen nur wenige Menschen."
+    .autostring 34 2 "Es hat Tradition, auf Wolken, welche von Altaria gewoben wurden, zu fliegen.\pDie Kunst des Wolkenwebens beherrschen nur wenige Menschen.\pSie zu reiten, ist weitaus einfacher!"
 str_1:
-    .autostring 34 2 "Seitdem Lucius nicht länger Champion ist, trifft man viel weniger Menschen auf den Wolken."
+    .autostring 34 2 "Der ehemalige Champion war ein Pionier, was die Welt über den Wolken angeht.\pEr hat diese Inseln gewissermaßen erschlossen!"
 str_2:
-    .autostring 34 2 "Ich laufe hier über den Wolken, weil du Luft dünner ist.\pSo werden meine Lungen viel stärker!"
+    .autostring 34 2 "Diese Insel ist wirklich faszinierend.\pVerlassene Mienenschächte einer antiken ZivilisationDOTS\pWenn das nicht der Stoff für allerhand Geschichten ist!"
 str_3:
     .autostring 34 2 "Als ich das Wolkenreiten gelernt habe, war ich total überrascht, wie viel es über dem Festland zu erkunden gibt."
 str_4:
-    .autostring 34 2 "Ist es nicht aufregend, dass hier oben einmal Menschen Städte erbaut haben?\pIch frage mich, wie das Leben zu dieser Zeit wohl gewesen sein muss."
+    .autostring 34 2 "Ist es nicht aufregend, dass hier oben einmal Menschen Erze abgebaut haben?\pIch frage mich, wie das Leben zu dieser Zeit wohl gewesen sein muss."
 str_5:
-    .autostring 34 2 "Wenn man auf Wolken unterwegs ist, muss man tierisch aufpassen, wo man hintritt.\pEin falscher Schritt und man fällt in sein Verderben."
+    .autostring 34 2 "Wenn man auf Wolken unterwegs ist, muss man tierisch aufpassen, wo man hintritt.\pEin falscher Schritt und man fällt in sein Verderben.\pOb schwebend oder nichtDOTS\pIch fühle mich sicherer, mit festem Boden unter den Füßen."
+str_6:
+    .autostring 34 2 "Ich frage mich, wie es wohl gewesen sein muss, vor langer Zeit hier Metalle geschürft zu haben.\pWie wohl das Leben in einer solchen antiken Zivilisation gewesen sein muss?"
 .elseif LANG_EN
 str_0:
     .autostring 34 2 "It is a long tradition to fly on clouds made by Altaria.\pThe art of cloud weaving is only known to a few people."

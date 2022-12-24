@@ -2469,7 +2469,8 @@
 		"maptileset_clouds_canyon_secondary": "src\\map\\tileset\\maptileset_clouds_canyon_secondary.pms",
 		"maptileset_clouds_spider_web_forest": "src/map/tileset/maptileset_clouds_various.pms",
 		"maptileset_cloud_flowers": "src\\map\\tileset\\maptileset_cloud_flowers.pms",
-		"maptileset_cloud_mines_outside": "src\\map\\tileset\\maptileset_cloud_mines_outside.pms"
+		"maptileset_cloud_mines_outside": "src\\map\\tileset\\maptileset_cloud_mines_outside.pms",
+		"maptileset_cave_mine": "src\\map\\tileset\\maptileset_cave_mine.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2560,6 +2561,7 @@
 		"gfx_maptileset_cloud_spider_web_forestTiles": "asset\\gfx\\tileset\\gfx_maptileset_cloud_spider_web_forest.png",
 		"gfx_maptileset_cloud_spider_webTiles": "asset/gfx/tileset/gfx_maptileset_cloud_spider_web.png",
 		"gfx_maptileset_clouds_flowersTiles": "asset\\gfx\\tileset\\gfx_maptileset_clouds_flowers.png",
-		"gfx_maptileset_clouds_mine_outsideTiles": "asset\\gfx\\tileset\\gfx_maptileset_clouds_mine_outside.png"
+		"gfx_maptileset_clouds_mine_outsideTiles": "asset\\gfx\\tileset\\gfx_maptileset_clouds_mine_outside.png",
+		"gfx_maptileset_cave_mineTiles": "asset\\gfx\\tileset\\gfx_maptileset_cave_mine.png"
 	}
 }

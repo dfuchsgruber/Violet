@@ -714,6 +714,7 @@ PALETTE = FC 05 @ used in credits
 SIZE = FC 06 @ note that anything other than "SMALL" is invalid
 FONT_SIZE_SMALL = FC 06 00
 FONT_SIZE_BIG = FC 06 02
+FONT_UNOWN = FC 06 05
 UNKNOWN_7 = FC 07
 PAUSE = FC 08 @ manually print the wait byte after this, havent mapped them
 PAUSE_UNTIL_PRESS = FC 09

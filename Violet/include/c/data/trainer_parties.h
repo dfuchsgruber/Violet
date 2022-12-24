@@ -1499,7 +1499,7 @@ trainer_pokemon trainer_party_x11c_inferior_clouds_trainer_0[] = {
 
 trainer_pokemon trainer_party_x11d_route_4_clouds_trainer_0[] = {
 	{.level = 34, .species = POKEMON_DODU},
-	{.level = 34, .species = POKEMON_WABLU},
+	{.level = 36, .species = POKEMON_WABLU},
 };
 
 trainer_pokemon trainer_party_x11e_route_4_clouds_trainer_1[] = {
@@ -2544,8 +2544,8 @@ trainer_pokemon trainer_party_x1d7_route_4_clouds_trainer_3[] = {
 };
 
 trainer_pokemon trainer_party_x1d8_route_4_clouds_trainer_4[] = {
-	{.level = 34, .species = POKEMON_QUABBEL},
-	{.level = 35, .species = POKEMON_TENTACHA},
+	{.level = 34, .species = POKEMON_MASCHOCK},
+	{.level = 35, .species = POKEMON_KLEINSTEIN},
 };
 
 trainer_pokemon trainer_party_x1d9_route_4_clouds_trainer_5[] = {

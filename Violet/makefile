@@ -17,6 +17,7 @@ PYPREPROC=@pypreproc.py
 PYMAPCONSTEX=pymapconstex.py
 READELF=@arm-none-eabi-readelf
 SOUNDFONTRIPPER=sound_font_ripper
+FONT2S=tools/font/font2s.py
 
 # Py-Preprocessor settings (pypreproc.py)
 LANGUAGE=LANG_GER
@@ -59,6 +60,7 @@ GFXSRC:=$(call rwildcard,asset/gfx/,*.png)
 CRYSRC:=$(call rwildcard,asset/cry,*.wav)
 WAVSRC:=$(call rwildcard,asset/sample,*.wav)
 PATCHES:=$(call rwildcard,patches/,*.asm)
+FONTSRC:=$(call rwildcard,asset/font/,*.png)
 
 SAMPLESRC:=$(call rwildcard,asset/sample/,*.bin)
 PYAGBSRC:=$(call rwildcard,src/,*.pms)
@@ -76,6 +78,9 @@ MIDOBJS= $(MIDAS:%.s=%.o)
 	
 GFXC= $(GFXSRC:%.png=$(BLDPATH)/%.c)
 GFXOBJS= $(GFXC:%.c=%.o)
+
+FONTAS= $(FONTSRC:%.png=$(BLDPATH)/%.s)
+FONTOBJS= $(FONTAS:%.s=%.o)
 	
 CRYAS = $(CRYSRC:%.wav=$(BLDPATH)/%.s)
 CRYOBJS = $(CRYAS:%.s=%.o)
@@ -147,11 +152,17 @@ $(GFXC): $(BLDPATH)/%.c: %.png
 	$(shell mkdir -p $(dir $(GFXC)))
 	$(GRIT) $< $(GRITFLAGS) -ff $(basename $<).grit -o $@ 
 	
-	
 $(GFXOBJS): %.o: %.c
 	$(shell mkdir -p $(dir $@))
 	$(CC) $(CFLAGS) $< -o $@
 	
+$(FONTAS): $(BLDPATH)/%.s: %.png
+	$(shell mkdir -p $(dir $@))
+	$(FONT2S) $< $(basename $(notdir $<)) -o $@
+
+$(FONTOBJS): %.o: %.s
+	$(shell mkdir -p $(dir $@))
+	$(AS) $(ASFLAGS) $< -o $@
 	
 $(CRYAS): $(BLDPATH)/%.s: %.wav
 	$(shell mkdir -p $(dir $(CRYAS)))
@@ -210,9 +221,9 @@ $(BLDPATH)/map.o: $(PYAGBOBJS) $(BLDPATH)/$(basename $(MAPPROJ)).o $(BLDPATH)/fa
 	$(LD) $(LDFLAGS) -T linker.ld -T $(BASESYMBOLS) -T $(BLDPATH)/map.ld --relocatable -o $(BLDPATH)/map.o $(BLDPATH)/fata_morgana.o 
 	
 	
-$(BLDPATH)/src.o: $(ASOBJS1) $(ASOBJS2) $(COBJS) $(CLOUD_MAPS_OBJ) $(WORLDMAPOBJS) $(BASESYMBOLS) $(BERRYADJACENCY_OBJ) $(TREASUREMAP_OBJ)
+$(BLDPATH)/src.o: $(ASOBJS1) $(ASOBJS2) $(COBJS) $(CLOUD_MAPS_OBJ) $(WORLDMAPOBJS) $(BASESYMBOLS) $(BERRYADJACENCY_OBJ) $(TREASUREMAP_OBJ) $(FONTOBJS)
 	@echo "Linking src files..."
-	$(call build_list,$(BLDPATH)/sources.ld,$(ASOBJS1) $(ASOBJS2) $(COBJS) $(CLOUD_MAPS_OBJ) $(WORLDMAPOBJS) $(BERRYADJACENCY_OBJ) $(TREASUREMAP_OBJ))
+	$(call build_list,$(BLDPATH)/sources.ld,$(ASOBJS1) $(ASOBJS2) $(COBJS) $(CLOUD_MAPS_OBJ) $(WORLDMAPOBJS) $(BERRYADJACENCY_OBJ) $(TREASUREMAP_OBJ) $(FONTOBJS))
 	$(LD) $(LDFLAGS) -T linker.ld -T $(BASESYMBOLS) -T $(BLDPATH)/sources.ld --relocatable -o $(BLDPATH)/src.o
 		
 	

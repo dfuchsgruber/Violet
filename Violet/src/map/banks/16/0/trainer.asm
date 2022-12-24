@@ -58,19 +58,19 @@ str_trainer2_challange:
 str_trainer2_defeat:
     .autostring 34 2 "Wo sind all die schönen Blüten?"
 str_trainer2_after:
-    .autostring 34 2 "Ob es an der dünnen Luft liegt, dass hier oben kaum Blumen wachsen?"
+    .autostring 34 2 "Ob es an der dünnen Luft liegt, dass hier oben kaum Blumen wachsen?\pOder ist der Boden hier einfach so karg?"
 str_trainer3_challange:
-    .autostring 34 2 "Irgendein Spaßvogel hat einen Mechaniker hierher bestellt.\pUnd hier bin ich nunDOTS\pWas soll ich denn jetzt bitte machen?"
+    .autostring 34 2 "Irgendein Spaßvogel hat einen Mechaniker hierher bestellt.\pUnd hier bin ich nunDOTS\pWas soll ich denn jetzt bitte machen?\pEtwa, diese vermoderten Mienenschächte reparieren?"
 str_trainer3_defeat:
     .autostring 34 2 "Ein Mechaniker über den WolkenDOTS"
 str_trainer3_after:
     .autostring 34 2 "Wenn ich die Göre in die Finger kriege, die sich diesen Streich mit mir erlaubt hatDOTS"
 str_trainer4_challange:
-    .autostring 34 2 "Ich hatte gehofft, hier oben einige seltene Pokémon angeln zu können, aber stattdessen beißen hier wohl die selben Pokémon, wie auch auf dem Boden."
+    .autostring 34 2 "Ich bin auf der längsten Wanderung überhaupt!\pWas fällt dir ein, mich dabei zu stören?"
 str_trainer4_defeat:
-    .autostring 34 2 "Siehst du?\pMit solchen Fängen kann man nicht gewinnen."
+    .autostring 34 2 "M-Moment!\nSo sollte das nicht laufenDOTS"
 str_trainer4_after:
-    .autostring 34 2 "Wie kann es sein, dass man hier oben keine seltenen Pokémon angeln kann?"
+    .autostring 34 2 "Wenn ich erst einmal alle Himmelsinseln überquert habe, wird man allerorts von mir als dem größten Wanderer überhaupt sprechen!"
 str_trainer5_challange:
     .autostring 34 2 "Ich hatte gehofft, hier oben einige seltene Pokémon angeln zu können, aber stattdessen beißen hier wohl die selben Pokémon, wie auch auf dem Boden."
 str_trainer5_defeat:

@@ -27,6 +27,12 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	loadpointer 0 str_unown
+	callstd MSG_FACE
+	end
+
+str_unown:
+	.autostring 22 2 "Ich kann FONT_UNOWNAUCH IN ICOGNITO SCHRIFT SPRECHEN!\pCOOL ODER?"
 	clearflag FLAG_TREASURE_MAP_BASE + 0
 	clearflag FLAG_TREASURE_MAP_BASE + 1
 	clearflag FLAG_TREASURE_MAP_BASE + 2

@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_kaskada_clouds",
 		"events": {
-			"person_cnt": 28,
+			"person_cnt": 30,
 			"warp_cnt": 2,
 			"trigger_cnt": 0,
 			"signpost_cnt": 4,
@@ -796,6 +796,62 @@
 						"berry_tree_idx": "0",
 						"type": "0"
 					}
+				},
+				{
+					"target_index": "29",
+					"picture": "0",
+					"script_std_and_in_connection": {
+						"script_std": "0",
+						"in_connection": "MAP_CONNECTION_SOUTH"
+					},
+					"argument": "35",
+					"x": "22",
+					"y": "51",
+					"level": "0",
+					"behaviour": "0",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "30",
+					"picture": "0",
+					"script_std_and_in_connection": {
+						"script_std": "0",
+						"in_connection": "MAP_CONNECTION_SOUTH"
+					},
+					"argument": "14",
+					"x": "23",
+					"y": "51",
+					"level": "0",
+					"behaviour": "0",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
 				}
 			],
 			"warps": [
@@ -918,7 +974,7 @@
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_SOUTH",
-					"displacement": "7",
+					"displacement": "-6",
 					"bank": "16",
 					"map_idx": 0,
 					"field_A": 0,

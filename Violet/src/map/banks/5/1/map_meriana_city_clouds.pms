@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_meriana_city_clouds",
 		"events": {
-			"person_cnt": 15,
+			"person_cnt": 17,
 			"warp_cnt": 0,
 			"trigger_cnt": 0,
 			"signpost_cnt": 1,
@@ -423,6 +423,62 @@
 					"is_trainer": "0",
 					"alert_radius": "0",
 					"script": "ow_script_meriana_city_clouds_person_3",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "16",
+					"picture": "0",
+					"script_std_and_in_connection": {
+						"script_std": "0",
+						"in_connection": "MAP_CONNECTION_NORTH"
+					},
+					"argument": "27",
+					"x": "1",
+					"y": "0",
+					"level": "0",
+					"behaviour": "0",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
+					"flag": "0",
+					"value": {
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0"
+					}
+				},
+				{
+					"target_index": "17",
+					"picture": "0",
+					"script_std_and_in_connection": {
+						"script_std": "0",
+						"in_connection": "MAP_CONNECTION_NORTH"
+					},
+					"argument": "28",
+					"x": "0",
+					"y": "0",
+					"level": "0",
+					"behaviour": "0",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": "0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "0",
 					"flag": "0",
 					"value": {
 						"item": "0",

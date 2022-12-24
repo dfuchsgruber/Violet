@@ -12,8 +12,11 @@
 extern "C" {
 #endif
 
-    #define TBOX_FONT_STD 2
-    #define TBOX_FONT_BRAILLE 6
+    enum {
+        TBOX_FONT_STD = 2,
+        TBOX_FONT_UNOWN = 5,
+        TBOX_FONT_BRAILLE = 6,
+    };
 
     typedef struct {
         u8 bg_id;
