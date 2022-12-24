@@ -422,7 +422,7 @@ void incubator_callback_context_menu_egg(u8 self) {
       u8 str_sent_to_box[] = LANGDEP(
           PSTRING("BUFFER_1 wurde an den\nPc gesendet.\pEs wurde in BUFFER_2 platziert."
               "PAUSE_UNTIL_PRESS"),
-          PSTRING("BUFFER_1 was sent\nto the Pc.\pIt was placed in box BUFFER_2."
+          PSTRING("BUFFER_1 was sent\nto the PC.\pIt was placed in box BUFFER_2."
               "PAUSE_UNTIL_PRESS"));
       tbox_print_string_and_continue(self, INCUBATOR_TBOX_MESSAGE,
           1 + TBOX_FRAME_SET_STYLE_NUM_TILES, 14, 2, tbox_get_set_speed(),
@@ -431,8 +431,8 @@ void incubator_callback_context_menu_egg(u8 self) {
       incubator_remove_egg_from_ui(fmem.incubator_state->cursor_idx);
     } else {
       u8 str_no_space[] = LANGDEP(
-          PSTRING("Auf dem Pc ist kein Platz\nfür BUFFER_1.PAUSE_UNTIL_PRESS"),
-          PSTRING("There is no room for\nBUFFER_1 on your Pc.PAUSE_UNTIL_PRESS"));
+          PSTRING("Auf dem PC ist kein Platz\nfür BUFFER_1.PAUSE_UNTIL_PRESS"),
+          PSTRING("There is no room for\nBUFFER_1 on your PC.PAUSE_UNTIL_PRESS"));
       tbox_print_string_and_continue(self, INCUBATOR_TBOX_MESSAGE,
           1 + TBOX_FRAME_SET_STYLE_NUM_TILES, 14, 2, tbox_get_set_speed(),
           str_no_space, incubator_callback_delete_message_and_reload_egg);

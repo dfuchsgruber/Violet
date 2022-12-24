@@ -723,7 +723,7 @@ static void bag_deposit_wait_a_or_b_press_and_redraw_all(u8 self) {
     }
 }
 
-static u8 str_no_space_to_deposit[] = LANGDEP(PSTRING("Auf deinem Pc ist kein\nPlatz dafür!"), PSTRING("There is no room on your\nitem pc."));
+static u8 str_no_space_to_deposit[] = LANGDEP(PSTRING("Auf deinem PC ist kein\nPlatz dafür!"), PSTRING("There is no room on your\nitem pc."));
 static u8 str_deposited[] = LANGDEP(PSTRING("BUFFER_1 ×BUFFER_2\nwurde abgelegt."), PSTRING("Deposited\nBUFFER_1 ×BUFFER_2"));
 
 static void bag_deposit_item(u8 self) {

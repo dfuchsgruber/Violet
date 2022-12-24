@@ -1,7 +1,35 @@
+#include <stdbool.h>
 #include "types.h"
 #include "rtc.h"
 #include "debug.h"
 #include "vars.h"
+
+static const char daysOfWeek[7][10] =
+{
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+};
+
+static const char months[12][10] =
+{
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+};
 
 static const int days_per_month[12] =
 {
@@ -27,21 +55,30 @@ static u8 to_dec(u8 val) {
  * Reads the current time information and stores it into the timestamp space
  **/
 void rtc_read(rtc_timestamp *s) {
+    gpio.pinDirection = 5; //pins are all out except sio, which is in
 
-    gpios.out = 5; //pins are all out except sio, which is in
-
-    gpios.cntrl = 1; //r/w
-    gpios.out = 7; //pins are all out
+    gpio.portControl = 1; //r/w
+    gpio.pinDirection = 7; //pins are all out
 
     //init cs = LOW, !sck = HIGH
-    gpio_set_data(HIGH, LOW, LOW);
+    gpio_send_data(
+        (rtc_data){
+            .clock = true,
+            .serialIO = 0,
+            .chipSelect = false
+        });
 
     //switch cs to HIGH
-    gpio_set_data(HIGH, LOW, HIGH);
+    gpio_send_data(
+        (rtc_data){
+            .clock = true,
+            .serialIO = false,
+            .chipSelect = true
+        });
 
     rtc_send_byte(0x65);
 
-    gpios.out = 5; //pins are all out except sio, which is in
+    gpio.pinDirection = 5; //pins are all out except sio, which is in
 
     //Now we can read bytewise
     s->year = to_dec(rtc_read_byte());
@@ -52,27 +89,60 @@ void rtc_read(rtc_timestamp *s) {
     s->minute = to_dec(rtc_read_byte());
     s->second = to_dec(rtc_read_byte());
 
+    char *daySuffix;
+
+    switch (s->day % 10) {
+        case 1:
+            daySuffix = "st";
+            break;
+        case 2:
+            daySuffix = "nd";
+            break;
+        case 3:
+            daySuffix = "rd";
+            break;
+        default:
+            daySuffix = "th";
+            break;
+    }
+
+    DEBUG("I think, it's %s, the %d%s of %s %d, %02d:%02d:%02d", daysOfWeek[s->day_of_week - 1], s->day, daySuffix, months[s->month - 1], 2000 + s->year, s->hour, s->minute, s->second);
+
     //data transfer closed, cs = LOW
-    gpio_set_data(LOW, LOW, LOW);
+    gpio_send_data(
+        (rtc_data){
+            .clock = false,
+            .serialIO = 0,
+            .chipSelect = false
+        });
 }
 
 u8 rtc_read_byte() {
-
-
     int i = 0;
     int value = 0;
+
     while (i < 8) {
+        for (int j = 0; j < 3; j++) {
+            gpio_send_data( //we do not send anything to chip but have to time the clock
+                (rtc_data){
+                    .clock = false,
+                    .serialIO = 0,
+                    .chipSelect = true
+                });
+        }
 
-        gpio_set_data(LOW, LOW, LOW); //we do not send anything to chip but have to time the clock
-        rtc_chip_wait();
-        gpio_set_data(HIGH, LOW, LOW); //time the clock again
-        rtc_chip_wait();
+        gpio_send_data(
+            (rtc_data){
+                .clock = true,
+                .serialIO = 0,
+                .chipSelect = true
+            });
 
-        value |= ((gpios.data & 2) << i);
+        value |= ((gpio.data & 2) << i);
         i++;
     }
-    return (u8) (value >> 1);
 
+    return (u8) (value >> 1);
 }
 
 void rtc_send_byte(u8 value) {
@@ -81,36 +151,32 @@ void rtc_send_byte(u8 value) {
 
     int i = 8;
     while (i--) {
-
         u8 bit = (u8) ((v & 0x80) >> 7);
         v <<= 1;
 
-        gpio_set_data(LOW, bit, LOW); //send bit to chip
-        rtc_chip_wait();
-        gpio_set_data(HIGH, bit, LOW); //wait for response from chip
-        rtc_chip_wait();
-    }
+        gpio_send_data( //send bit to chip
+            (rtc_data){
+                .clock = false,
+                .serialIO = bit,
+                .chipSelect = true
+            });
 
-}
-
-void rtc_chip_wait() {
-
-    int i = 100;
-    while (--i) {
-        __asm__ __volatile__(
-                "nop\n\r"
-                );
+        gpio_send_data( // wait for response from chip
+            (rtc_data){
+                .clock = true,
+                .serialIO = bit,
+                .chipSelect = true
+            });
     }
 
 }
 
 /**
- * Configure gpio_data
- **/
-void gpio_set_data(bool sck, bool sio, bool cs) {
-    u16 value = (u16) (sck | (sio << 1) | (cs << 2));
-    gpios.data = value;
-
+ * Sends data to the GPIO chip.
+ */
+void gpio_send_data(rtc_data data) {
+    u16 value = (u16) (data.clock | (data.serialIO << 1) | (data.chipSelect << 2));
+    gpio.data = value;
 }
 
 static bool is_leap_year(int year) {

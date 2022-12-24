@@ -26,16 +26,22 @@ LANGUAGE=LANG_GER
 # Define compiler flags
 ASFLAGS=-mthumb -Iinclude/as/ -Iinclude/as/constants/ -mcpu=arm7tdmi -march=armv4t --defsym $(LANGUAGE)=1
 MIDFLAGS=-V92
+MIDFLAGEXTENSION=.flags
+MIDDEFAULTFLAGS=default$(MIDFLAGEXTENSION)
+MIDFLAGDEFAULTFILES=$(shell find -type f -name '$(MIDDEFAULTFLAGS)')
 CFLAGS=-c -std=c99 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -fno-builtin -mlong-calls -march=armv4t -Wall -Werror -Wno-builtin-declaration-mismatch -Wextra -Wconversion -O2 -Iinclude/c/ -D$(LANGUAGE)
 LDFLAGS=-z muldefs -Ilibm
 GRITFLAGS=-fh! -ftc
+GRITEXTENSION=.grit
+GRITDEFAULTS=default$(GRITEXTENSION)
+GRITDEFAULTFILES=$(shell find -type f -name '$(GRITDEFAULTS)')
 CRYFLAGS=-c
 WAVFLAGS=
 MAPTILESETGRITFLAGS=-gu32 -gzl -gB 4 -gt -m! -p!
 
 BLDPATH=bld
 BLDROM=$(BLDPATH)/violet.gba
-BASEROM=base/bprd.gba
+BASEROM ?= base/bprd.gba
 MAPPROJ=proj.pmp
 SYMBOLDUMP=$(BLDPATH)/symbols
 BASESYMBOLS=bprd.sym
@@ -46,8 +52,8 @@ PKLPATH=pkl
 MOVESETPKL=$(addprefix $(PKLPATH)/, $(addsuffix .pkl, $(shell tools/pokemon_move_generator/get_species.py $(MAPPROJ) $(SPECIESCONSTANTTABLE))))
 
 # Soundfont ripper
-PSG_DATA=psg_data.raw
-GOLDENSUN_SYNTH=goldensun_synth.raw
+PSG_DATA ?= psg_data.raw
+GOLDENSUN_SYNTH ?= goldensun_synth.raw
 
 rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))#
 
@@ -103,6 +109,16 @@ CLOSEPAREN := )
 
 include pokeapi/makefile tools/fata_morgana/makefile tools/index/makefile tools/cloud_maps/makefile tools/worldmap/makefile tools/berry_adjacency/makefile tools/treasure_map/makefile
 
+find_up=$(shell \
+	file="$(basename $(1))$(2)"; \
+	dir="$$(dirname $(1))"; \
+	while [ ! -f "$$file" ] && [ "$$dir" != "." ]; \
+	do \
+		file="$$dir/$(3)"; \
+		dir=$$(dirname $$dir); \
+	done; \
+	echo $$file;)
+
 define build_list
 	$(file >$(1),INPUT$(OPENPAREN))
 	$(foreach file,$(2),$(file >>$(1),    $(file)))
@@ -139,18 +155,23 @@ $(COBJS): $(BLDPATH)/%.o: %.c
 	$(PYPREPROC) -o $(BLDPATH)/$*.c $< $(MAPPROJ)   
 	$(CC) $(CFLAGS) -MMD $(BLDPATH)/$*.c -o $@
 	
-$(MIDAS): $(BLDPATH)/%.s: %.mid
+$(MIDAS): $(BLDPATH)/%.s: %.mid $(wildcard %.flags) $(MIDFLAGDEFAULTFILES)
 	$(shell mkdir -p $(dir $@))
-	$(MID2AGB) $(shell cat $(basename $<).flags) $< $@ > /dev/null
+	@echo "$<"
+	$(eval $<_FLAGFILE:= $(call find_up,$<,$(MIDFLAGEXTENSION),$(MIDDEFAULTFLAGS)))
+	@echo "Using config $($<_FLAGFILE)"
+	$(MID2AGB) $(shell cat $($<_FLAGFILE)) $< $@ > /dev/null
 	
 $(MIDOBJS): %.o: %.s
 	$(shell mkdir -p $(dir $@))
 	$(AS) $(ASFLAGS) $< -o $@	
 	
-$(GFXC): $(BLDPATH)/%.c: %.png
+$(GFXC): $(BLDPATH)/%.c: %.png $(wildcard %.grit) $(GRITDEFAULTFILES)
 	@echo "$<"
+	$(eval $<_GRITFILE:= $(call find_up,$<,$(GRITEXTENSION),$(GRITDEFAULTS)))
+	@echo "Using config $($<_GRITFILE)"
 	$(shell mkdir -p $(dir $(GFXC)))
-	$(GRIT) $< $(GRITFLAGS) -ff $(basename $<).grit -o $@ 
+	$(GRIT) $< $(GRITFLAGS) -ff $($<_GRITFILE) -o $@ 
 	
 $(GFXOBJS): %.o: %.c
 	$(shell mkdir -p $(dir $@))
@@ -232,7 +253,7 @@ soundfont: $(BLDROM)
 	$(foreach vcg,000 001 002, \
 	$(SOUNDFONTRIPPER) $(BLDROM) $(BLDPATH)/soundfont/vcg$(vcg).sf2 $(PSG_DATA) $(GOLDENSUN_SYNTH) -n soundfont/instrument_names_vcg$(vcg).txt -mv12 $(shell grep "voicegroup$(vcg)" $(BLDPATH)/symbols | cut -d' ' -f1 | sed -e "s/.*/obase\=16\;ibase\=16\;&-8000000/" | bc | sed -e "s/^/0x/");)
 
-$(BLDROM): $(CONSTANTSHAS) $(CONSTANTSHC) $(BLDPATH)/asset.o $(BLDPATH)/map.o $(BLDPATH)/src.o $(EXPORTED_STATS_OBJ) $(PATCHES) $(BASESYMBOLS)
+$(BLDROM): $(CONSTANTSHAS) $(CONSTANTSHC) $(BLDPATH)/asset.o $(BLDPATH)/map.o $(BLDPATH)/src.o $(EXPORTED_STATS_OBJ) $(PATCHES) patches.asm $(BASESYMBOLS)
 	@echo "Creating rom object..."
 	$(LD) $(LDFLAGS) -T linker.ld -T $(BASESYMBOLS) --relocatable -o $(BLDPATH)/linked.o $(BLDPATH)/map.o $(BLDPATH)/asset.o $(BLDPATH)/src.o $(EXPORTED_STATS_OBJ)
 	$(ARS) patches.asm -sym $(SYMBOLDUMP) -strequ bldrom $(BLDROM) -strequ base $(BASEROM)

@@ -3,9 +3,28 @@
 #ifndef RTC
 #define RTC
 
+#include <stdbool.h>
 
 // Define how many seconds one inamge second is equivalent to
 #define INGAME_CLOCK_SPEED_UP 6
+
+/**
+ * Represents data for communicating with the GPIO chip.
+ */
+typedef struct rtc_data {
+    /**
+     * The clock signal for synchronizing the serial data flow.
+     */
+    bool clock : 1;
+    /**
+     * The bit to send.
+     */
+    bool serialIO : 1;
+    /**
+     * Gets or sets a value indicating whether the RTC chip may use the system BUS.
+     */
+    bool chipSelect : 1;
+} rtc_data;
 
 typedef struct rtc_timestamp {
     u8 year;
@@ -22,21 +41,33 @@ typedef struct rtc_timestamp {
  */
 void one_day_events_reset();
 
-typedef struct gpio {
+/**
+ * Represents the data of the section section used for the communication with GPIO chips.
+ */
+typedef struct gpio_data {
+    /**
+     * The data shared between the game and the ROM-chip.
+     */
     u16 data;
-    u16 out;
-    u16 cntrl;
 
-} gpio;
+    /**
+     * A bit-flagged value indicating whether the bit 0-3 of the `data` are sent in (0) or out (1).
+     */
+    u16 pinDirection;
+
+    /**
+     * A value indicating whether the GPIO is used in Write-Only mode (false) or in Read-Write mode (true).
+     */
+    u16 portControl;
+} gpio_data;
 
 u8 ingame_clock_status;
 
 void rtc_read(rtc_timestamp *s);
 void rtc_send_byte(u8 byte);
-void gpio_set_data(bool sck, bool sio, bool cs);
+void gpio_send_data(rtc_data data);
 u8 rtc_read_byte();
 u16 special_time_get();
-void rtc_chip_wait();
 u64 rtc_timestamp_to_seconds(rtc_timestamp *t);
 /**
  * Initializes year, month and day of a timestamp with a certain amount of days that has passed.
@@ -76,6 +107,9 @@ void time_reset_events();
  **/
 void time_based_events_proceed(u16 *vars);
 
-gpio gpios;
+/**
+ * The data-section for communicating with the GPIO chip.
+ */
+volatile gpio_data gpio;
 
 #endif

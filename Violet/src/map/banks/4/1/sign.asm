@@ -56,10 +56,10 @@ end
 
 .ifdef LANG_GER
 str_0x1a8124:
-    .string "PLAYER schaltet den Pc ein."
+    .string "PLAYER schaltet den PC ein."
 .elseif LANG_EN
 str_0x1a8124:
-    .string "PLAYER turns on the Pc."
+    .string "PLAYER turns on the PC."
 .endif
 
 ow_script_debugger:

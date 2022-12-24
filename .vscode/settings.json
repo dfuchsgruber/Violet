@@ -24,7 +24,10 @@
         "typeindex": "c",
         "bitset": "c",
         "chrono": "c",
-        "variant": "c"
+        "variant": "c",
+        "*.grit": "plaintext",
+        "*.flags": "plaintext",
+        "**/*.h": "c"
     },
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
@@ -32,6 +35,5 @@
     "workbench.editorAssociations": {
         "*.gba": "hexEditor.hexedit",
         "*.ipynb": "jupyter-notebook"
-    },
-    "keyboard.dispatch": "keyCode"
+    }
 }

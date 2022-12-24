@@ -1,21 +1,41 @@
-FROM devkitpro/devkitarm:20210726
+FROM gcc:12
 CMD [ "/usr/local/bin/violet-entrypoint" ]
 ENV WORKON_HOME /venv
+ENV DEVKITPRO /opt/devkitpro
+ENV DEVKITARM ${DEVKITPRO}/devkitARM
+ENV DEVKITPPC ${DEVKITPRO}/devkitPPC
+ENV PATH ${DEVKITPRO}/tools/bin:$PATH
+ENV PSG_DATA=/etc/violet/gba-mus-ripper/psg_data.raw
+ENV GOLDENSUN_SYNTH=/etc/violet/gba-mus-ripper/goldensun_synth.raw
 
 RUN apt-get update --fix-missing && \
     apt-get install -y \
+        apt-transport-https \
         libgl1-mesa-dev \
         gcc-arm-none-eabi \
         bc \
         cmake \
         python3-pip \
-        ssh && \
+        ssh \
+        sudo \
+        vim && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install --upgrade pip
-RUN pip3 install pipenv
 RUN mkdir -p /etc/violet
 WORKDIR /etc/violet
+
+RUN \
+        apt-get update && \
+        mkdir -p /usr/local/share/keyring/ && \
+        wget -O /usr/local/share/keyring/devkitpro-pub.gpg https://apt.devkitpro.org/devkitpro-pub.gpg && \
+        echo "deb [signed-by=/usr/local/share/keyring/devkitpro-pub.gpg] https://apt.devkitpro.org stable main" > /etc/apt/sources.list.d/devkitpro.list && \
+        apt-get update && \
+        apt-get install -y devkitpro-pacman && \
+    rm -rf /var/lib/apt/lists/* && \
+    [ ! -f /etc/mtab ] hotfix=1 \
+    [ -z ${hotfix+z} ] && ln -s /proc/self/mounts /etc/mtab || true && \
+    dkp-pacman -S --noconfirm gba-dev && \
+    [ -z ${hotfix+z} ] && rm /etc/mtab || true
 
 RUN \
         git clone https://github.com/ipatix/wav2agb.git && \
@@ -42,9 +62,11 @@ RUN \
         git clone https://github.com/Kingcom/armips.git && \
         directory=$(pwd) && \
         cd armips && \
-        git checkout v0.11.0 && \
-        cmake . && \
-        make && \
+        git checkout be0124c9cb7610ecd88206f9ccbff954d6ae1897 && \
+        git submodule update --init --recursive && \
+        mkdir build && cd build && \
+        cmake -DCMAKE_BUILD_TYPE=Release .. && \
+        cmake --build . && \
         chmod 744 armips && \
         install -t /usr/local/bin ./armips && \
         cd $directory && \
@@ -53,20 +75,67 @@ RUN \
         git clone https://github.com/WodkaRHR/gba-mus-ripper.git && \
         directory=$(pwd) && \
         cd gba-mus-ripper && \
-        git checkout a1c8ed924420fa7f2a311f61a88915aed8018bf9 && \
+        git checkout 1211a9b8426fa79d2e29e394fa900c8ad56865b5 && \
         make && \
         chmod 744 ./* && \
         install -t /usr/local/bin ./out/* && \
         cd $directory && \
         unset directory
+RUN \
+        git clone https://github.com/ipatix/midi2agb.git && \
+        directory=$(pwd) && \
+        cd midi2agb && \
+        git checkout ff820bf5453a0e2b6a4612da2cd1d5fc8c220b20 && \
+        git submodule update --init --recursive && \
+        make && \
+        install -t /usr/local/bin midi2agb && \
+        cd $directory && \
+        unset directory
+
+RUN \
+        binName=/usr/local/bin/oh-my-posh && \
+        wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/v11.1.1/posh-linux-amd64 -O $binName && \
+        chmod a+x $binName && \
+        unset binName
+
+RUN \
+        directory=$(pwd) && \
+        cd /tmp/ && \
+        pkgName=logo-ls.deb && \
+        wget https://github.com/Yash-Handa/logo-ls/releases/download/v1.3.7/logo-ls_amd64.deb -O $pkgName && \
+        dpkg -i $pkgName && \
+        rm $pkgName && \
+        unset pkgName && \
+        cd $directory && \
+        unset directory
+
+RUN pip3 install --upgrade pip
+RUN pip3 install pipenv
+
 RUN adduser \
      --disabled-password \
      --uid 1002 \
      --home /home/violet \
      "violet"
 
-WORKDIR /workspace
+RUN usermod -aG sudo violet
+RUN echo '%sudo ALL=(ALL:ALL) NOPASSWD: ALL' > /etc/sudoers.d/violet
+
+WORKDIR /workspace/Violet
 COPY .docker/buildbot-entrypoint.sh /usr/local/bin/violet-entrypoint
 RUN mkdir -p /venv || true
 RUN chmod 777 /venv
 USER violet
+
+RUN \
+        configFile="/workspace/Violet/.devcontainer/omp.json" && \
+        command="oh-my-posh init bash" && \
+        echo '[ -f '"$configFile"' ] || eval "$('"$command"')"' >> ~/.bashrc && \
+        echo '[ -f '"$configFile"' ] && eval "$('"$command"' --config '"$configFile"')"' >> ~/.bashrc && \
+        echo 'eval "$(oh-my-posh completion bash)"' >> ~/.bashrc && \
+        echo "alias ls='logo-ls -iD'" >> ~/.bashrc && \
+        echo "alias ll='ls -al'" >> ~/.bashrc && \
+        echo "alias la='ls -A'" >> ~/.bashrc && \
+        echo "alias l='ls'" >> ~/.bashrc && \
+        unset configFile && \
+        unset command

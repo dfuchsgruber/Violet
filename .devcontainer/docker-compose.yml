@@ -2,7 +2,7 @@ version: '2'
 services:
   buildbot:
     volumes:
-      - .:/workspace:cached
+      - .:/workspace/Violet:cached
       - venv:/venv
     command: /bin/sh -c "while sleep 1000; do :; done"
 

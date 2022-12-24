@@ -8,11 +8,11 @@ name = "pypi"
 "html5lib" = "*"
 requests = "*"
 pyaml = "*"
-pyagb = {git = "https://github.com/WodkaRHR/pyagb.git"}
+pyagb = {git = "https://github.com/WodkaRHR/pyagb.git", ref = "e7ab499a48732d09f7a8a82c44ae60bc56d4515c"}
 
 [dev-packages]
 ipykernel = "*"
 pylint = "*"
 
 [requires]
-python_version = "3.7.3"
+python_version = "3.9.2"

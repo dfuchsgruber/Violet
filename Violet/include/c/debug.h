@@ -14,11 +14,15 @@ extern "C" {
 
     #define DEBUG_TYPE MGBA
 
-    #if DEBUG_TYPE == MGBA
-        #define DEBUG(...) (mgba_printf(MGBA_LOG_DEBUG, __VA_ARGS__))
-        #define WARN(...) (mgba_printf(MGBA_LOG_WARN, __VA_ARGS__))
-        #define ERROR(...) (mgba_printf(MGBA_LOG_ERROR, __VA_ARGS__))
+    #if DEBUG_TYPE != MGBA
+        #define LOG(...) while (0) { mgba_printf(__VA_ARGS__); }
+    #else
+        #define LOG(...) (mgba_printf(__VA_ARGS__))
     #endif
+
+    #define DEBUG(...) LOG(MGBA_LOG_DEBUG, __VA_ARGS__)
+    #define WARN(...) LOG(MGBA_LOG_WARN, __VA_ARGS__)
+    #define ERROR(...) LOG(MGBA_LOG_ERROR, __VA_ARGS__)
 
     // void debug1(int a);
     // void debug2(int a, int b);
