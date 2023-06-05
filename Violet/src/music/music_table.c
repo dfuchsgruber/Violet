@@ -781,5 +781,6 @@ song song_table[] = {
 	[MUS_CLOUDS_VARIATION_2_E_GUITAR] = {mus_clouds_theme_var2, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	[MUS_CLOUDS_VARIATION_3_SLOW] = {mus_clouds_theme_var3, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	[MUS_CLOUDS_VARIATION_4_WALTZ] = {mus_clouds_theme_waltz, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	[MUS_CLOUDS_VARIATION_5_TRUMPETS] = {mus_clouds_theme_var_trumpets, SONG_TYPE_SONG, SONG_TYPE_SONG},
 
 };

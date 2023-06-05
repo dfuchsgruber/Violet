@@ -34,7 +34,7 @@ RUN \
     rm -rf /var/lib/apt/lists/* && \
     [ ! -f /etc/mtab ] hotfix=1 \
     [ -z ${hotfix+z} ] && ln -s /proc/self/mounts /etc/mtab || true && \
-    dkp-pacman -S --noconfirm gba-dev && \
+    dkp-pacman -S --noconfirm gba-dev grit && \
     [ -z ${hotfix+z} ] && rm /etc/mtab || true
 
 RUN \

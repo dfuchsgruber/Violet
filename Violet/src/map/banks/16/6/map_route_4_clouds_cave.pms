@@ -10,8 +10,8 @@
 				{
 					"target_index": "1",
 					"picture": "181",
-					"x": "28",
-					"y": "12",
+					"x": "18",
+					"y": "16",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -38,8 +38,8 @@
 				{
 					"target_index": "2",
 					"picture": "238",
-					"x": "19",
-					"y": "25",
+					"x": "9",
+					"y": "29",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_RIGHT_UP_LEFT_DOWN",
 					"behaviour_range": {
@@ -66,8 +66,8 @@
 			],
 			"warps": [
 				{
-					"x": "28",
-					"y": "41",
+					"x": "18",
+					"y": "45",
 					"level": 0,
 					"target_warp_idx": "2",
 					"target_map": 0,
@@ -76,8 +76,8 @@
 			],
 			"triggers": [
 				{
-					"x": "17",
-					"y": "29",
+					"x": "7",
+					"y": "33",
 					"level": 0,
 					"field_5": 0,
 					"var": "0x4004",
@@ -87,8 +87,8 @@
 					"script": "ow_script_route_4_clouds_cave_west_button"
 				},
 				{
-					"x": "40",
-					"y": "29",
+					"x": "30",
+					"y": "33",
 					"level": 0,
 					"field_5": 0,
 					"var": "0x4002",
@@ -98,8 +98,8 @@
 					"script": "ow_script_route_4_clouds_cave_east_button"
 				},
 				{
-					"x": "34",
-					"y": "43",
+					"x": "24",
+					"y": "47",
 					"level": 0,
 					"field_5": 0,
 					"var": "0x4003",
@@ -109,8 +109,8 @@
 					"script": "ow_script_route_4_clouds_cave_south_button"
 				},
 				{
-					"x": "32",
-					"y": "19",
+					"x": "22",
+					"y": "23",
 					"level": 0,
 					"field_5": 0,
 					"var": "0x4001",
@@ -122,8 +122,8 @@
 			],
 			"signposts": [
 				{
-					"x": "28",
-					"y": "34",
+					"x": "18",
+					"y": "38",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"flag": 0,
@@ -145,8 +145,8 @@
 					}
 				},
 				{
-					"x": "29",
-					"y": "34",
+					"x": "19",
+					"y": "38",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"flag": 0,

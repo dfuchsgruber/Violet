@@ -35,5 +35,7 @@
     "workbench.editorAssociations": {
         "*.gba": "hexEditor.hexedit",
         "*.ipynb": "jupyter-notebook"
-    }
+    },
+    "editor.tabCompletion": "on",
+    "diffEditor.codeLens": true
 }

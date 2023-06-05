@@ -238,6 +238,7 @@ extern const unsigned char mus_clouds_theme_var1[];
 extern const unsigned char mus_clouds_theme_var2[];
 extern const unsigned char mus_clouds_theme_var3[];
 extern const unsigned char mus_clouds_theme_waltz[];
+extern const unsigned char mus_clouds_theme_var_trumpets[];
 
 
 #endif	/* MUSIC_H */
