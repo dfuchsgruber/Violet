@@ -8,16 +8,20 @@
 #ifndef INCLUDE_C_POKEPAD_POKEDEX_HABITAT_H_
 #define INCLUDE_C_POKEPAD_POKEDEX_HABITAT_H_
 
-#define HABITAT_TYPE_GRASS 0
-#define HABITAT_TYPE_WASSER 1
-#define HABITAT_TYPE_RADAR 2
-#define HABITAT_TYPE_ROD 3
-#define HABITAT_TYPE_GOOD_ROD 4
-#define HABITAT_TYPE_SUPER_ROD 5
+enum {
+    HABITAT_TYPE_GRASS = 0,
+    HABITAT_TYPE_WATER,
+    HABITAT_TYPE_RADAR,
+    HABITAT_TYPE_OLD_ROD,
+    HABITAT_TYPE_GOOD_ROD,
+    HABITAT_TYPE_SUPER_ROD,
+    NUM_HABITAT_TYPES,
+};
 
-#define HABITAT_OUTSIDE 0
-#define HABITAT_CAVE 1
-#define HABITAT_CLOUD 2
+enum {
+    HABITAT_MAP_TYPE_OUTSIDE = 0,
+    HABITAT_MAP_TYPE_CAVE,
+};
 
 typedef struct {
         u16 *data;
@@ -34,8 +38,40 @@ typedef struct {
         u8 worldmap_y;
         u8 probability;
         u8 habitat_type;
+        u8 worldmap_idx;
+        u8 layer;
         u8 map_type;
     } pokedex_habitat_pair;
+
+    #define POKEDEX_HABITAT_LIST_MAX_SIZE 2048
+
+    typedef struct {
+        pokedex_habitat_pair *list;
+        size_t num_elements;
+        size_t array_size;
+        size_t max_array_size; // Error is thrown if `array_size` would exceed this
+    } pokedex_habitat_list_t;
+
+    /**
+     * Creates a new list to collect habitats of a species by worldmap
+     * @param initial_array_size the initial array size of the list
+     * @param max_array_size how big the array is allowed to grow at max
+     * @return the newly created list
+    */
+    pokedex_habitat_list_t *pokedex_habitat_list_new(size_t initial_array_size, size_t max_array_size);
+
+    /**
+     * Deletes (and frees) a habitat list for a species
+     * @param list the list to delete
+    */
+    void pokedex_habitat_list_delete(pokedex_habitat_list_t *list);
+
+    /**
+     * Fills the list of habitats of a certain species by worldmap position
+     * @param list the list to fill
+     * @param species for which species
+    */
+    void pokedex_habitat_list_compute_by_species(pokedex_habitat_list_t *list, u16 species);
 
     void pokedex_habitat_callback_idle();
     void pokedex_habitat_callback_init_entry();

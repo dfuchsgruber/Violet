@@ -298,9 +298,9 @@ void pokedex_init_habitat() {
 
         for (i = 0; i < 6; i++) {
             for (int j = 0; j < 3; j++) {
-                if (i >= HABITAT_TYPE_ROD) {
+                if (i >= HABITAT_TYPE_OLD_ROD) {
                     fmem.dex_mem->habitat_oams_rarity[i][j] = oam_new_forward_search(
-                        &pokedex_habitat_type_template, (s16) (8 + j * 16), (s16)(120 + (i - HABITAT_TYPE_ROD) * 16), 0);
+                        &pokedex_habitat_type_template, (s16) (8 + j * 16), (s16)(120 + (i - HABITAT_TYPE_OLD_ROD) * 16), 0);
                 } else {
                     fmem.dex_mem->habitat_oams_rarity[i][j] = oam_new_forward_search(
                         &pokedex_habitat_type_template, (s16) (8 + j * 16), (s16) (16 + i * 32 + 6), 0);
@@ -463,7 +463,7 @@ void pokedex_habitats_load_namespace() {
     u8 str_blank [] = {0, 0, 0xFF};
     u8 namespace = worldmap_get_namespace_by_pos(fmem.dex_mem->current_worldmap, 0, fmem.dex_mem->habitat_cursor_y, fmem.dex_mem->habitat_cursor_x);
     if (namespace != 0xC5) {
-        strcat(strcat(strcpy(strbuf, str_blank), map_namespaces[namespace - 0x58]), str_blank);
+        strcat(strcat(strcpy(strbuf, str_blank), map_namespaces[MAP_NAMESPACE_TO_IDX(namespace)]), str_blank);
     } else {
         *strbuf = 0xFF;
     }

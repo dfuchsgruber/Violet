@@ -27,7 +27,22 @@
         "variant": "c",
         "*.grit": "plaintext",
         "*.flags": "plaintext",
-        "**/*.h": "c"
+        "**/*.h": "c",
+        "any": "c",
+        "bit": "c",
+        "codecvt": "c",
+        "compare": "c",
+        "condition_variable": "c",
+        "cstddef": "c",
+        "forward_list": "c",
+        "list": "c",
+        "future": "c",
+        "limits": "c",
+        "new": "c",
+        "ranges": "c",
+        "regex": "c",
+        "type_traits": "c",
+        "mutex": "c"
     },
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
@@ -37,5 +52,6 @@
         "*.ipynb": "jupyter-notebook"
     },
     "editor.tabCompletion": "on",
-    "diffEditor.codeLens": true
+    "diffEditor.codeLens": true,
+    "cmake.configureOnOpen": false
 }

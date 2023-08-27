@@ -368,7 +368,7 @@ void difficulty_settings_ui_initialize_callback() {
             lz77uncompvram(gfx_difficulty_settingTiles, CHARBASE(2));
             pal_decompress(gfx_difficulty_settingPal, 0, 16 * sizeof(color_t));
             lz77uncompwram(gfx_difficulty_setting_linesMap, DIFFICULTY_SETTINGS_STATE->bg_3_map);
-            lz77uncompvram(gfx_difficulty_setting_linesTiles, CHARBASE_PLUS_OFFSET(1, DIFFICULTY_SETTINGS_LINES_CHARBASE_OFFSET));
+            lz77uncompvram(gfx_difficulty_setting_linesTiles, CHARBASE_PLUS_OFFSET_4BPP(1, DIFFICULTY_SETTINGS_LINES_CHARBASE_OFFSET));
             pal_decompress(gfx_difficulty_setting_linesPal, 16, 16 * sizeof(color_t));
             DIFFICULTY_SETTINGS_STATE->state++;
             break;

@@ -48,6 +48,9 @@
 #define GRAPHIC_SIZE_8BPP(width, height) ((width) * (height))
 #define GRAPHIC_SIZE_8BPP_TO_NUM_TILES(width, height) (GRAPHIC_SIZE_8BPP(width, height) / GRAPHIC_SIZE_8BPP(8, 8))
 
+#define GRAPHIC_ARRAY_4BPP(index, array, width, height) [(index)] = {.sprite = (array) + GRAPHIC_SIZE_4BPP(width, height) * index, .size = GRAPHIC_SIZE_4BPP(width, height)}
+#define GRAPHIC_ARRAY_8BPP(index, array, width, height) [(index)] = {.sprite = (array) + GRAPHIC_SIZE_8BPP(width, height) * index, .size = GRAPHIC_SIZE_8BPP(width, height)}
+
 struct oam_object;
 typedef struct oam_object oam_object;
 struct gfx_frame;

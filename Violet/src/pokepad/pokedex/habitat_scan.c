@@ -37,6 +37,12 @@ void pokedex_habitats_add(u8 bank, u8 map_idx, pokedex_habitat_pair *dst, int *s
     }
 }
 
+enum {
+    HABITAT_OUTSIDE,
+    HABITAT_CAVE,
+    HABITAT_CLOUD,
+};
+
 static u8 pokdex_map_type_to_habitat_map_type[] = {
     [MAP_TYPE_STD] = HABITAT_OUTSIDE,
     [MAP_TYPE_VILLAGE] = HABITAT_OUTSIDE,
@@ -71,7 +77,7 @@ int pokedex_get_habitats_of_species(pokedex_habitat_pair *dst, u16 species) {
                     probability += wild_pokemon_water_pdf[j];
                 }
             }
-            if (probability > 0) pokedex_habitats_add(wild_pokemon[i].bank, wild_pokemon[i].map, dst, &cnt, probability, HABITAT_TYPE_WASSER, map_type);
+            if (probability > 0) pokedex_habitats_add(wild_pokemon[i].bank, wild_pokemon[i].map, dst, &cnt, probability, HABITAT_TYPE_WATER, map_type);
         }
         if (wild_pokemon[i].other) {
             int probability = 0;
@@ -89,7 +95,7 @@ int pokedex_get_habitats_of_species(pokedex_habitat_pair *dst, u16 species) {
                     probability += wild_pokemon_rod_pdf[j];
                 }
             }
-            if (probability > 0) pokedex_habitats_add(wild_pokemon[i].bank, wild_pokemon[i].map, dst, &cnt, probability, HABITAT_TYPE_ROD, map_type);
+            if (probability > 0) pokedex_habitats_add(wild_pokemon[i].bank, wild_pokemon[i].map, dst, &cnt, probability, HABITAT_TYPE_OLD_ROD, map_type);
             probability = 0;
             for (int j = 0; j < 3; j++) {
                 if (wild_pokemon[i].rod->data[2 + j].species == species) {
@@ -112,7 +118,7 @@ int pokedex_get_habitats_of_species(pokedex_habitat_pair *dst, u16 species) {
         u8 map_idx = cmem.roamer_locations[roamer_idx].map_idx;
         int map_type = pokdex_map_type_to_habitat_map_type[get_mapheader(bank, map_idx)->type];
         pokedex_habitats_add(bank, map_idx, dst, &cnt, 50, HABITAT_TYPE_GRASS, map_type);
-        pokedex_habitats_add(bank, map_idx, dst, &cnt, 50, HABITAT_TYPE_WASSER, map_type);
+        pokedex_habitats_add(bank, map_idx, dst, &cnt, 50, HABITAT_TYPE_WATER, map_type);
     }
     DEBUG("Number of habitats is %d @%x\n", cnt, dst);
     return cnt;
