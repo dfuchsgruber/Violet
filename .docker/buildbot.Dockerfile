@@ -1,5 +1,6 @@
 FROM gcc:12
 CMD [ "/usr/local/bin/violet-entrypoint" ]
+ENV LANG=en_US.UTF-8
 ENV WORKON_HOME /venv
 ENV DEVKITPRO /opt/devkitpro
 ENV DEVKITARM ${DEVKITPRO}/devkitARM
@@ -15,6 +16,8 @@ RUN apt-get update --fix-missing && \
         gcc-arm-none-eabi \
         bc \
         cmake \
+        python3 \
+        python-is-python3 \
         python3-pip \
         ssh \
         sudo \
@@ -109,8 +112,8 @@ RUN \
         cd $directory && \
         unset directory
 
-RUN pip3 install --upgrade pip
-RUN pip3 install pipenv
+RUN pip3 install --break-system-packages --upgrade pip
+RUN pip3 install --break-system-packages pipenv
 
 RUN adduser \
      --disabled-password \
@@ -126,6 +129,12 @@ COPY .docker/buildbot-entrypoint.sh /usr/local/bin/violet-entrypoint
 RUN mkdir -p /venv || true
 RUN chmod 777 /venv
 USER violet
+
+RUN curl https://pyenv.run | bash
+RUN \
+        echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc && \
+        echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc && \
+        echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 
 RUN \
         configFile="/workspace/Violet/.devcontainer/omp.json" && \
