@@ -506,9 +506,10 @@ void bsc_cmd_itemdrop_and_payday() {
             break;
         }
         case SUMMARY_WAIT_FOR_DMA3: {
-            if (!dma3_busy(-1))
+            if (!dma3_busy(-1)) {
                 battle_bg1_y = 0;
                 BATTLE_STATE2->item_dropping_state++;
+            }
             break;
         }
         case SUMMARY_WAIT_FOR_INPUT: {

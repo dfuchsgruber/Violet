@@ -254,8 +254,6 @@ bool worldmap_ui_callback_initialize_base() {
             return true;
         }
         case WORLDMAP_UI_INITIALIZATION_STATE_SETUP_TBOXES: {
-            tbox_init_frame_set_style()
-
             return true;
         }
         case WORLDMAP_UI_INITIALIZATION_STATE_LOAD_BG_GFX: {

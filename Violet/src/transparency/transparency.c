@@ -12,7 +12,7 @@
 #include "callbacks.h"
 #include "constants/map_weathers.h"
 
-const color_t tbox_palette_transparent [16] = {
+color_t tbox_palette_transparent [16] = {
     {0x0},
     {0x0},
     {0x7FFF},

@@ -112,8 +112,13 @@ RUN \
         cd $directory && \
         unset directory
 
+<<<<<<< Updated upstream
 RUN pip3 install --break-system-packages --upgrade pip
 RUN pip3 install --break-system-packages pipenv
+=======
+RUN pip3 install --upgrade pip --break-system-packages
+RUN pip3 install pipenv --break-system-packages
+>>>>>>> Stashed changes
 
 RUN adduser \
      --disabled-password \

@@ -418,7 +418,7 @@ static u8 *habitat_names[] = {
 };
 
 static tboxdata worldmap_ui_habitat_tboxes[NUM_WORLDMAP_UI_HABITAT_TBOXES + 1] = {
-    [WORLDMAP_UI_HABITAT_TBOX_HEADER] = {.bg_id = 0, .x = 7, .y = 0, .w = 18, .h = 2, .pal = 15, .start_tile = 2 + },
+    [WORLDMAP_UI_HABITAT_TBOX_HEADER] = {.bg_id = 0, .x = 7, .y = 0, .w = 18, .h = 2, .pal = 15, .start_tile = 2},
     [WORLDMAP_UI_TBOX_IDX_NAMESPACE] = {.bg_id = 2, .x = 7, .y = 2, .w = 18, .h = 2, .pal = 15, .start_tile = 2 + 2 * 18},
     [WORLDMAP_UI_HABITAT_TBOX_HABITAT_NAMES + HABITAT_TYPE_GRASS] = {.bg_id = 0, .x = 2, .y = 0, .w = 5, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 0 * 2 * 5},
     [WORLDMAP_UI_HABITAT_TBOX_HABITAT_NAMES + HABITAT_TYPE_WATER] = {.bg_id = 0, .x = 2, .y = 4, .w = 5, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 1 * 2 * 5},
