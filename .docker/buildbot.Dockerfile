@@ -15,6 +15,7 @@ RUN apt-get update --fix-missing && \
         gcc-arm-none-eabi \
         bc \
         cmake \
+        python3 \
         python3-pip \
         ssh \
         sudo \
