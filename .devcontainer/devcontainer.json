@@ -6,6 +6,13 @@
 	],
 	"service": "buildbot",
 	"workspaceFolder": "/workspace/Violet",
+	"mounts": [
+		{
+			"source": "${localEnv:HOME}/.ssh",
+			"target": "/home/violet/.ssh",
+			"type": "bind"
+		}
+	],
 	"postCreateCommand": "sudo chown -R violet:violet /venv && pipenv install",
 	"customizations": {
 		"vscode": {
