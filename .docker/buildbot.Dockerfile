@@ -1,5 +1,6 @@
 FROM gcc:12
 CMD [ "/usr/local/bin/violet-entrypoint" ]
+ENV LANG=en_US.UTF-8
 ENV WORKON_HOME /venv
 ENV DEVKITPRO /opt/devkitpro
 ENV DEVKITARM ${DEVKITPRO}/devkitARM
