@@ -6,17 +6,21 @@
 	],
 	"service": "buildbot",
 	"workspaceFolder": "/workspace/Violet",
-	"settings": {},
 	"postCreateCommand": "pipenv install",
-	"extensions": [
-		"bungcip.better-toml",
-		"dan-c-underwood.arm",
-		"janisdd.vscode-edit-csv",
-		"mhutchie.git-graph",
-		"ms-azuretools.vscode-docker",
-		"ms-python.python",
-		"ms-vscode.hexeditor",
-		"ms-vscode.cpptools-extension-pack"
-	],
+	"customizations": {
+		"vscode": {
+			"settings": {},
+			"extensions": [
+				"bungcip.better-toml",
+				"dan-c-underwood.arm",
+				"janisdd.vscode-edit-csv",
+				"mhutchie.git-graph",
+				"ms-azuretools.vscode-docker",
+				"ms-python.python",
+				"ms-vscode.hexeditor",
+				"ms-vscode.cpptools-extension-pack"
+			]
+		}
+	},
 	"updateRemoteUserUID": true
 }
