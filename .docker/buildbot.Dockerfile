@@ -109,8 +109,8 @@ RUN \
         cd $directory && \
         unset directory
 
-RUN pip3 install --upgrade pip
-RUN pip3 install pipenv
+RUN pip3 install --break-system-packages --upgrade pip
+RUN pip3 install --break-system-packages pipenv
 
 RUN adduser \
      --disabled-password \
