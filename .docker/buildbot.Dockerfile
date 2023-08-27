@@ -16,6 +16,7 @@ RUN apt-get update --fix-missing && \
         bc \
         cmake \
         python3 \
+        python-is-python3 \
         python3-pip \
         ssh \
         sudo \
@@ -127,6 +128,12 @@ COPY .docker/buildbot-entrypoint.sh /usr/local/bin/violet-entrypoint
 RUN mkdir -p /venv || true
 RUN chmod 777 /venv
 USER violet
+
+RUN curl https://pyenv.run | bash
+RUN \
+        echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc && \
+        echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc && \
+        echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 
 RUN \
         configFile="/workspace/Violet/.devcontainer/omp.json" && \
