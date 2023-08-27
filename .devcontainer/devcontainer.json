@@ -6,7 +6,7 @@
 	],
 	"service": "buildbot",
 	"workspaceFolder": "/workspace/Violet",
-	"postCreateCommand": "pipenv install",
+	"postCreateCommand": "sudo chown -R violet:violet /venv && pipenv install",
 	"customizations": {
 		"vscode": {
 			"settings": {},
