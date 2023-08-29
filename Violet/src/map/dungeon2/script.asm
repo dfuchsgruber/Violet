@@ -4,6 +4,8 @@
 .include "callstds.s"
 .include "ordinals.s"
 .include "attacks.s"
+.include "constants/dungeon/dungeon_types.s"
+.include "specials.s"
 
 .global ow_script_dungeon_item
 
@@ -34,12 +36,12 @@ ow_script_dungeon_encounter:
 .global ow_script_dungeon_enter_field
 
 ow_script_dungeon_enter:
-	special2 0x8004 0x4B
-	compare 0x8004 1
+	special2 0x8004 SPECIAL_GET_DUNGEON_TYPE_BY_PERSON_FACED
+	compare 0x8004 DUNGEON_TYPE_FOREST
 	gotoif EQUAL ow_script_dungeon2_enter_forest
-	compare 0x8004 2
+	compare 0x8004 DUNGEON_TYPE_CAVE
 	gotoif EQUAL ow_script_dungeon2_enter_cave
-	compare 0x8004 3
+	compare 0x8004 DUNGEON_TYPE_OCEAN
 	gotoif EQUAL ow_script_dungeon2_enter_ocean
 	end
 
@@ -47,12 +49,12 @@ ow_script_dungeon_enter_field:
 	setanimation 0x0 LASTRESULT
 	bufferpartypokemon 0x0 LASTRESULT
 	bufferattack 0x1 ATTACK_GEHEIMPOWER
-	special2 0x8004 0x4B
-	compare 0x8004 1
+	special2 0x8004 SPECIAL_GET_DUNGEON_TYPE_BY_PERSON_FACED
+	compare 0x8004 DUNGEON_TYPE_FOREST
 	gotoif EQUAL ow_script_dungeon2_enter_forest_field
-	compare 0x8004 2
+	compare 0x8004 DUNGEON_TYPE_CAVE
 	gotoif EQUAL ow_script_dungeon2_enter_cave_field
-	compare 0x8004 3
+	compare 0x8004 DUNGEON_TYPE_OCEAN
 	gotoif EQUAL ow_script_dungeon2_enter_ocean_field
 	end
 

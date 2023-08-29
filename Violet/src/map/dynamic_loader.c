@@ -42,10 +42,10 @@ map_header_t *get_mapheader(u8 bank, u8 map) {
     if (dungeon_get_type() && bank == DG2_BANK && map == DG2_MAP) {
         if (!fmem.dmap_header_initialized) {
             switch(dungeon_get_type()) {
-                case DTYPE_FOREST:
+                case DUNGEON_TYPE_FOREST:
                     dungeon2_initialize_forest();
                     break;
-                case DTYPE_CAVE:
+                case DUNGEON_TYPE_CAVE:
                     dungeon2_initialize_cave();
                     break;
             }

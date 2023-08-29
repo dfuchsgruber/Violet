@@ -716,6 +716,15 @@ extern void (*npc_movements_oam_callbacks[])(oam_object*);
 u8 npc_get_by_position(s16 x, s16);
 
 /**
+ * Gets an npc at a position if its height matches
+ * @param x the x coordinate
+ * @param y the y coordinate
+ * @param height at which height one would interact with the npc
+ * @return npc_idx the idx of the npc at this position. If None, returns NUM_NPCS.
+*/
+u8 npc_get_by_position_and_height(s16 x, s16 y, u8 height);
+
+/**
  * Tries to create a new npc from a person and its oam as well
  * @param person the person from which to create the npc from
  * @param template the oam template for the oam

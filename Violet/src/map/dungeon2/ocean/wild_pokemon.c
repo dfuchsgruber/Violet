@@ -120,9 +120,9 @@ void dungeon2_init_wild_pokemon_ocean(dungeon_generator2 *dg2) {
   fmem.dwild_pokemon.water = &(fmem.dwild_habitat_water);
   fmem.dwild_pokemon.other = NULL;
   fmem.dwild_pokemon.rod = &(fmem.dwild_habitat_rod);
-  fmem.dwild_habitat_water.frequency = DTYPE_OCEAN_WILD_POKEMON_FREQUENCY_WATER;
+  fmem.dwild_habitat_water.frequency = DUNGEON_TYPE_OCEAN_WILD_POKEMON_FREQUENCY_WATER;
   fmem.dwild_habitat_water.data = fmem.dwild_data_water;
-  fmem.dwild_habitat_rod.frequency = DTYPE_OCEAN_WILD_POKEMON_FREQUENCY_ROD;
+  fmem.dwild_habitat_rod.frequency = DUNGEON_TYPE_OCEAN_WILD_POKEMON_FREQUENCY_ROD;
   fmem.dwild_habitat_rod.data = fmem.dwild_data_rod;
 
   // Water

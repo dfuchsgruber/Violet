@@ -147,8 +147,8 @@ special_table equ 0x0815FCC0
         .word special_query_present_code | 1
         .pool
 
-.org (special_table+ (0x4B * 4))
-		.word dungeon_map_entrance_get_type | 1
+.org (special_table + (0x4B * 4))
+		.word dungeon2_get_dungeon_type_by_person_faced
 		.pool
 
 .org (special_table + (0x4C * 4))

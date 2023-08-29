@@ -1827,3 +1827,4 @@ list_menu_update_cursor_position_and_items_above = 0x081077f0 | 1;
 list_menu_print_items = 0x08107558 | 1;
 list_menu_call_cursor_move_callback = 0x08107af0 | 1;
 move_relearner_initialize_after_fading = 0x080e4884 | 1;
+npc_get_by_position_and_height = 0x0805f894 | 1;

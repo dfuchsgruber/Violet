@@ -21,7 +21,6 @@ void map_init_levelscript_4() {
 
 void map_init_levelscript_1() {
 	// Apply map changes due to dungeons on map
-	dungeon_map_set_tiles();
 	map_levelscript_init_no_var_check(LEVELSCRIPT_TYPE_ON_LOAD);
 }
 

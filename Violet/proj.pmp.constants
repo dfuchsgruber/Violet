@@ -87,5 +87,6 @@
 	"dungeon/dungeon_forest_types" : "constants/dungeon/dungeon_forest_types.const",
 	"dungeon/dungeon_cave_types" : "constants/dungeon/dungeon_cave_types.const",
 	"overworld/ground_effects" : "constants/overworld/ground_effects.const",
-	"crafting_recipe_types" : "constants/crafting_recipe_types.const"
+	"crafting_recipe_types" : "constants/crafting_recipe_types.const",
+	"dungeon/dungeon_types" : "constants/dungeon/dungeon_types.const"
 }

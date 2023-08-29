@@ -5,7 +5,7 @@
 .include "ordinals.s"
 .include "attacks.s"
 
-.equ DTYPE_CAVE, 2
+.equ DUNGEON_TYPE_CAVE, 2
 
 
 .global ow_script_dungeon_cave_collapsing

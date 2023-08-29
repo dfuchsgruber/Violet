@@ -424,7 +424,7 @@ void dungeon2_init_wild_pokemon_cave(dungeon_generator2 *dg2) {
     fmem.dwild_pokemon.water = NULL;
     fmem.dwild_pokemon.other = NULL;
     fmem.dwild_pokemon.rod = NULL;
-    fmem.dwild_habitat_grass.frequency = DTYPE_CAVE_WILD_POKEMON_FREQUENCY;
+    fmem.dwild_habitat_grass.frequency = DUNGEON_TYPE_CAVE_WILD_POKEMON_FREQUENCY;
     fmem.dwild_habitat_grass.data = fmem.dwild_data_grass;
 
     // Each of the common pokemon has a 20% probability
@@ -651,7 +651,7 @@ void dungeon2_compute_layout_cave_continue_overworld_script_if_finished() {
 
 void dungeon2_enter_cave() {
 
-    *var_access(DUNGEON_TYPE) = DTYPE_CAVE;
+    *var_access(DUNGEON_TYPE) = DUNGEON_TYPE_CAVE;
     *var_access(DUNGEON_STEPS) = 0;
     dungeon2_reset_flags();
 

@@ -1,0 +1,10 @@
+{
+    "type" : "enum",
+    "base" : 0,
+    "values" : [
+        "DUNGEON_TYPE_NONE",
+        "DUNGEON_TYPE_FOREST",
+        "DUNGEON_TYPE_CAVE",
+        "DUNGEON_TYPE_OCEAN"
+    ]
+}

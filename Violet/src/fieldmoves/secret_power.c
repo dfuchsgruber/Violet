@@ -21,7 +21,7 @@ void field_move_secret_power_overworld() {
 bool field_move_check_secret_power() {
 	if (checkflag(PLAYER_CAN_ENTER_DUNGEONS)) {
 		// Check if there is a dungeon to enter
-		if (dungeon_get_location_idx_player_is_facing() != -1) {
+		if (dungeon2_get_dungeon_type_by_person_faced() != DUNGEON_TYPE_NONE) {
 			pokemon_party_menu_continuation = pokemon_party_menu_return_and_execute_field_move;
 			field_move_overworld_continuation = field_move_secret_power_overworld;
 			return true;

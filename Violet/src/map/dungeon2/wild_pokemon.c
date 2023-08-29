@@ -113,13 +113,13 @@ u16 dungeon2_encounter_rnd_generator() {
 
 void dungeon2_set_encounter() {
   switch (dungeon_get_type()) {
-  case DTYPE_FOREST:
+  case DUNGEON_TYPE_FOREST:
     dungeon2_set_encounter_forest();
     break;
-  case DTYPE_CAVE:
+  case DUNGEON_TYPE_CAVE:
     dungeon2_set_encounter_cave();
     break;
-  case DTYPE_OCEAN:
+  case DUNGEON_TYPE_OCEAN:
 	  dungeon2_set_encounter_ocean();
 	  break;
   default:

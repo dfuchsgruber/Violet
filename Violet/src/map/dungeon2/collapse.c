@@ -20,7 +20,7 @@ extern u8 ow_script_dungeon_ocean_collapsing[];
 bool dungeon2_step_is_collapsing(){
     u16 *steps = var_access(DUNGEON_STEPS);
     switch (dungeon_get_type()) {
-      case DTYPE_FOREST: {
+      case DUNGEON_TYPE_FOREST: {
         if (++(*steps) >= ((DG2_FOREST_WIDTH * DG2_FOREST_HEIGHT) / 6)) {
           // Collapse
           overworld_script_init(ow_script_dungeon_forest_collapsing);
@@ -29,7 +29,7 @@ bool dungeon2_step_is_collapsing(){
         }
         break;
       }
-      case DTYPE_CAVE: {
+      case DUNGEON_TYPE_CAVE: {
         if (++(*steps) >= ((DG2_CAVE_WIDTH * DG2_CAVE_HEIGHT) / 6)) {
           // Collapse
           overworld_script_init(ow_script_dungeon_cave_collapsing);
@@ -38,7 +38,7 @@ bool dungeon2_step_is_collapsing(){
         }
         break;
       }
-      case DTYPE_OCEAN: {
+      case DUNGEON_TYPE_OCEAN: {
           if (++(*steps) >= ((DG2_OCEAN_WIDTH * DG2_OCEAN_HEIGHT) / 6)) {
             // Collapse
             overworld_script_init(ow_script_dungeon_ocean_collapsing);

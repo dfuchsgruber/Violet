@@ -263,4 +263,4 @@ $(BLDROM): $(CONSTANTSHAS) $(CONSTANTSHC) $(BLDPATH)/asset.o $(BLDPATH)/map.o $(
 all: $(BLDROM) soundfont
 		
 clean:
-	rm -rf $(BLDPATH)
+	bash -O extglob -c "rm -rf $(BLDPATH)/!(*.sav|*.sgm)"

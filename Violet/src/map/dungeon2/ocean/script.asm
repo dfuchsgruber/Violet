@@ -5,7 +5,7 @@
 .include "ordinals.s"
 .include "attacks.s"
 
-.equ DTYPE_OCEAN, 3
+.equ DUNGEON_TYPE_OCEAN, 3
 
 
 .global ow_script_dungeon_ocean_collapsing

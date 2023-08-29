@@ -18,6 +18,7 @@ extern "C" {
 #include "map/event.h"
 #include "map/wild_pokemon.h"
 #include "constants/flags.h"
+#include "constants/dungeon/dungeon_types.h"
 
     // Linear congruency rnd parameters
     #define DG2_RND_MULTIPLIER 0x41C64E6D
@@ -26,10 +27,6 @@ extern "C" {
 #define DG2_BANK 126
 #define DG2_MAP 126
 #define DG2_FOOTER_IDX 0x8000
-
-#define DTYPE_FOREST 1
-#define DTYPE_CAVE 2
-#define DTYPE_OCEAN 3
 
 #define DG2_WALL 1
 #define DG2_SPACE 2
@@ -96,6 +93,12 @@ extern "C" {
     };
 
     /**
+     * Gets the type of dungeon faced by the player
+     * @return which dungeon type if faced by the player or 0 if none is faced
+    */
+    u8 dungeon2_get_dungeon_type_by_person_faced();
+
+    /**
      * Clears flags of all dungeon events.
      **/
     void dungeon2_reset_flags();
@@ -106,56 +109,6 @@ extern "C" {
      * @param item_picker a function that picks an item given a dungeon generator
      **/
     void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(dungeon_generator2*));
-
-
-
-// #define NUM_DUNGEON_LOCATIONS 40
-#define NUM_DUNGEON_LOCATIONS 0
-    
-    typedef struct{
-      u8 bank;
-      u8 map;
-      s16 x;
-      s16 y;
-      u8 type;
-    } dungeon_location;
-
-    dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS];
-
-    /**
-     * Gets the index of a dungeon location by a coordinate the player interacted with. If no
-     * match could be found -1 is returned instead.
-     * @param bank the map bank of the entrance
-     * @param map the map id of the entrance
-     * @param x the x coordinate of the entrance
-     * @param y the y coordinate of the entrance
-     * @return the dungeon idx to match the parameters or -1 if none matches
-     */
-    int dungeon_get_location_idx(u8 bank, u8 map, s16 x, s16 y);
-
-    /**
-     * Gets the index of the dungeon of which the player is currently facing the entrance
-     * @return the idx of the dungeon entrance the player is facing or -1 if player is not
-     * facing any dungeon entrance
-     */
-    int dungeon_get_location_idx_player_is_facing();
-
-    /**
-     * Returns the type of dungeon that is associated with the block the player is facing
-     * @return the type of dungeon the player is facing
-     */
-    int dungeon_map_entrance_get_type();
-
-    /**
-     * Sets the flag of the dungeon of which the player is currently facing the entrance
-     */
-    void dungeon_map_entrance_set_flag();
-
-    /**
-     * Performs set_block on all map blocks that correspond to proper dungeon entries
-     * Should be performed at execution time of levelscript type 1
-     */
-    void dungeon_map_set_tiles();
 
     void dungeon2_compute(int dungeon_type);
     

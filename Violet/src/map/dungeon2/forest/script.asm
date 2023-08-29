@@ -8,7 +8,7 @@
 .include "species.s"
 .include "specials.s"
 
-.equ DTYPE_FOREST, 1
+.equ DUNGEON_TYPE_FOREST, 1
 
 .global ow_script_dungeon_forest_collapsing
 .global ow_script_dungeon_exit
