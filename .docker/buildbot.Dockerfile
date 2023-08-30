@@ -131,7 +131,6 @@ RUN \
         echo '[ -f '"$configFile"' ] || eval "$('"$command"')"' >> ~/.bashrc && \
         echo '[ -f '"$configFile"' ] && eval "$('"$command"' --config '"$configFile"')"' >> ~/.bashrc && \
         echo 'eval "$(oh-my-posh completion bash)"' >> ~/.bashrc && \
-        echo "alias ls='logo-ls -iD'" >> ~/.bashrc && \
         echo "alias ll='ls -al'" >> ~/.bashrc && \
         echo "alias la='ls -A'" >> ~/.bashrc && \
         echo "alias l='ls'" >> ~/.bashrc && \
