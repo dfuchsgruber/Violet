@@ -37,14 +37,14 @@ RUN \
     rm -rf /var/lib/apt/lists/* && \
     [ ! -f /etc/mtab ] hotfix=1 \
     [ -z ${hotfix+z} ] && ln -s /proc/self/mounts /etc/mtab || true && \
-    dkp-pacman -S --noconfirm gba-dev grit && \
+    dkp-pacman -Syu --noconfirm gba-dev grit && \
     [ -z ${hotfix+z} ] && rm /etc/mtab || true
 
 RUN \
         git clone https://github.com/ipatix/wav2agb.git && \
         directory=$(pwd) && \
         cd wav2agb && \
-        git checkout 8d09076bd53d32c15ef2829d157ba87556f50de0 && \
+        git checkout b461c20e1da68a95b4084456bf5fe651eb10a17f && \
         make && \
         chmod 744 wav2agb && \
         install -t /usr/local/bin ./wav2agb && \
@@ -55,7 +55,7 @@ RUN \
         git clone https://github.com/pret/pokefirered.git && \
         directory=$(pwd) && \
         cd pokefirered/tools/mid2agb && \
-        git checkout 471608b56abbdf70a452896a0d895ffa5b4b06f9 && \
+        git checkout f484b96062f866d00c28bec5b33b032e14280ea1 && \
         make && \
         chmod 744 mid2agb && \
         install -t /usr/local/bin ./mid2agb && \
@@ -65,7 +65,7 @@ RUN \
         git clone https://github.com/Kingcom/armips.git && \
         directory=$(pwd) && \
         cd armips && \
-        git checkout be0124c9cb7610ecd88206f9ccbff954d6ae1897 && \
+        git checkout 4f414f39aa3aaa54dd83e04b0c5f9e246d4837b4 && \
         git submodule update --init --recursive && \
         mkdir build && cd build && \
         cmake -DCMAKE_BUILD_TYPE=Release .. && \
@@ -97,20 +97,9 @@ RUN \
 
 RUN \
         binName=/usr/local/bin/oh-my-posh && \
-        wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/v11.1.1/posh-linux-amd64 -O $binName && \
+        wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/v18.5.0/posh-linux-amd64 -O $binName && \
         chmod a+x $binName && \
         unset binName
-
-RUN \
-        directory=$(pwd) && \
-        cd /tmp/ && \
-        pkgName=logo-ls.deb && \
-        wget https://github.com/Yash-Handa/logo-ls/releases/download/v1.3.7/logo-ls_amd64.deb -O $pkgName && \
-        dpkg -i $pkgName && \
-        rm $pkgName && \
-        unset pkgName && \
-        cd $directory && \
-        unset directory
 
 RUN pip3 install --upgrade pip
 RUN pip3 install pipenv
