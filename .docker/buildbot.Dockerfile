@@ -125,6 +125,8 @@ RUN \
         echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc && \
         echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 
+RUN chmod 777 /home/violet/.pyenv
+
 RUN \
         configFile="/workspace/Violet/.devcontainer/omp.json" && \
         command="oh-my-posh init bash" && \
