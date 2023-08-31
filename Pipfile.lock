@@ -1,11 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b10f80e1a67733a1692b2e9932cb75c209c464e2ea2394005176b1920dd7d2f6"
+            "sha256": "79e3f3be06f87d8f600527c0554baf0a8b1bec071acc42fc188238869f7e26ed"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3.11.2"
+            "python_version": "3.11.5"
         },
         "sources": [
             {
@@ -281,7 +281,7 @@
         },
         "pyagb": {
             "git": "git+https://github.com/dfuchsgruber/pyagb.git",
-            "ref": "6d5da1f6adc943ed16fd108f60706b4e09be15c7"
+            "ref": null
         },
         "pyaml": {
             "hashes": [
@@ -526,11 +526,11 @@
         },
         "tifffile": {
             "hashes": [
-                "sha256:0a3ebcdfe71eb61a487dd22eaf21ed8962c511e6eb692153c7ac15f81798dfa4",
-                "sha256:40318485b59e9acb62e7139f22bd46e6760f92daea562b79900bfce3ee2613b7"
+                "sha256:62364eef35a6fdcc7bc2ad6f97dd270f577efb01b31260ff800af76a66c1e145",
+                "sha256:6a8c53b012a286b75d09a1498ab32f202f24cc6270a105b5d5911dc4426f162a"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==2023.8.25"
+            "version": "==2023.8.30"
         },
         "urllib3": {
             "hashes": [
