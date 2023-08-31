@@ -16,6 +16,7 @@ RUN apt-get update --fix-missing && \
         gcc-arm-none-eabi \
         bc \
         cmake \
+        locales \
         python3 \
         python-is-python3 \
         python3-pip \
@@ -23,6 +24,10 @@ RUN apt-get update --fix-missing && \
         sudo \
         vim && \
     rm -rf /var/lib/apt/lists/*
+
+RUN \
+        sed -i "s/^#\? \?\(en_US.*UTF.*\)$/\1/" /etc/locale.gen && \
+        locale-gen
 
 RUN mkdir -p /etc/violet
 WORKDIR /etc/violet
