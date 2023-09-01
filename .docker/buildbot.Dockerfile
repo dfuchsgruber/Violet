@@ -1,4 +1,4 @@
-FROM gcc:12.1
+FROM gcc:12.2
 CMD [ "/usr/local/bin/violet-entrypoint" ]
 ENV LANG=en_US.UTF-8
 ENV WORKON_HOME /venv
