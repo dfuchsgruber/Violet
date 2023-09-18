@@ -228,14 +228,13 @@ $(BLDPATH)/$(basename $(MAPPROJ)).o: $(MAPPROJ)
 $(BLDPATH)/midi.ld: $(MIDOBJS) $(BASESYMBOLS)
 	$(call build_list,$(BLDPATH)/midi.ld,$(MIDOBJS))
 
-$(BLDPATH)/asset.ld: $(GFXOBJS) $(CRYOBJS) $(SAMPLEOBJS) $(WAVOBJS) $(BLDPATH)/asset/mus.o $(BASESYMBOLS)
+$(BLDPATH)/asset.ld: $(GFXOBJS) $(CRYOBJS) $(SAMPLEOBJS) $(WAVOBJS) $(BASESYMBOLS)
 #	Create a ld script
 	$(call build_list,$(BLDPATH)/asset.ld,$(GFXOBJS) $(CRYOBJS) $(SAMPLEOBJS) $(WAVOBJS))
 	
 $(BLDPATH)/map.ld: $(PYAGBOBJS) $(BLDPATH)/$(basename $(MAPPROJ)).o $(BASESYMBOLS)
 #	Create a ld script
 	$(call build_list,$(BLDPATH)/map.ld,$(PYAGBOBJS) $(BLDPATH)/$(basename $(MAPPROJ)).o)
-	
 	
 $(BLDPATH)/sources.ld: $(ASOBJS1) $(ASOBJS2) $(COBJS) $(CLOUD_MAPS_OBJ) $(WORLDMAPOBJS) $(BASESYMBOLS) $(BERRYADJACENCY_OBJ) $(TREASUREMAP_OBJ) $(FONTOBJS) $(FATAMORGANA_OBJ)
 	@echo "Linking src files..."
@@ -247,7 +246,7 @@ soundfont: $(BLDROM)
 	$(foreach vcg,000 001 002, \
 	$(SOUNDFONTRIPPER) $(BLDROM) $(BLDPATH)/soundfont/vcg$(vcg).sf2 $(PSG_DATA) $(GOLDENSUN_SYNTH) -n soundfont/instrument_names_vcg$(vcg).txt -mv12 $(shell grep "voicegroup$(vcg)" $(BLDPATH)/symbols | cut -d' ' -f1 | sed -e "s/.*/obase\=16\;ibase\=16\;&-8000000/" | bc | sed -e "s/^/0x/");)
 
-$(BLDROM): $(CONSTANTSHAS) $(CONSTANTSHC) $(BLDPATH)/asset.ld $(BLDPATH)/map.ld $(BLDPATH)/sources.ld $(EXPORTED_STATS_OBJ) $(PATCHES) patches.asm $(BASESYMBOLS)
+$(BLDROM): $(CONSTANTSHAS) $(CONSTANTSHC) $(BLDPATH)/asset.ld $(BLDPATH)/map.ld $(BLDPATH)/sources.ld $(BLDPATH)/midi.ld $(EXPORTED_STATS_OBJ) $(PATCHES) patches.asm $(BASESYMBOLS)
 	@echo "Creating rom object..."
 	$(LD) $(LDFLAGS) -T linker.ld -T $(BASESYMBOLS) -T $(BLDPATH)/midi.ld -T $(BLDPATH)/asset.ld --relocatable -T $(BLDPATH)/map.ld -T $(BLDPATH)/sources.ld -o $(BLDPATH)/linked.o $(EXPORTED_STATS_OBJ)
 	$(ARS) patches.asm -sym $(SYMBOLDUMP) -strequ bldrom $(BLDROM) -strequ base $(BASEROM)
