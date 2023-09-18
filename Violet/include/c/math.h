@@ -6,7 +6,7 @@
 
 #define SIN_LUT_BITS 9
 
-u16 sin_lut[1 << SIN_LUT_BITS];
+extern const u16 sin_lut[1 << SIN_LUT_BITS];
 
 /**
  * Returns the sin(2pi * theta) (sine with period 1.0)
@@ -65,7 +65,7 @@ FIXED FIXED_SQRT(FIXED x);
  * @param num_coefs the number of coefficients (degree + 1)
  * @return p(x)
  */
-FIXED FIXED_HORNER_SCHEME(FIXED x, FIXED *coefs, int num_coefs);
+FIXED FIXED_HORNER_SCHEME(FIXED x, const FIXED *coefs, int num_coefs);
 
 #define FIXED_LOG2 45426
 

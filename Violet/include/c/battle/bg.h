@@ -24,7 +24,7 @@ typedef struct  {
     const void *map;
 } battle_anim_bg;
 
-battle_bg battle_bgs[256];
+extern const battle_bg battle_bgs[256];
 
 extern u16 battle_bg0_x;
 extern u16 battle_bg0_y;

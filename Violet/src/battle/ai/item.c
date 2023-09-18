@@ -17,7 +17,7 @@
 #define AI_DEBUG_ITEMS_ON true
 #define AI_DEBUG_ITEMS(str, ...) ({if (AI_DEBUG_ITEMS_ON) DEBUG(str, __VA_ARGS__);})
 
-static u8 ai_get_item_type(u16 item, item_effect_t *effect) {
+static u8 ai_get_item_type(u16 item, const item_effect_t *effect) {
     if (item == ITEM_TOP_GENESUNG || item == ITEM_GOLDAPFEL)
         return AI_ITEM_FULL_RESTORE;
     else if (effect->heal_hp)
@@ -70,7 +70,7 @@ u8 battle_ai_should_use_item(int *score) {
         AI_DEBUG_ITEMS("Checking if item %d is applicable...\n", i);
         u16 item = BATTLE_STATE2->items[owner][i];
         if (item == 0 || item < ITEM_TRANK) continue;
-        item_effect_t *effect = item_effects[item - ITEM_TRANK];
+        const item_effect_t *effect = item_effects[item - ITEM_TRANK];
         ai_item_types[i] = ai_get_item_type(item, effect);
         ai_item_flags[i] = 0;
         int item_score = 0;

@@ -7,7 +7,7 @@
 #include "overworld/sprite.h"
 #include "overworld/effect.h"
 
-static void (*ground_effects[NUM_GROUND_EFFECTS])(npc *, oam_object *) = {
+static void (*const ground_effects[NUM_GROUND_EFFECTS])(npc *, oam_object *) = {
     [GROUND_EFFECT_FLAG_TALL_GRASS_ON_SPAWN] = ground_effect_tall_grass_on_spawn,
     [GROUND_EFFECT_FLAG_TALL_GRASS_ON_MOVE] = ground_effect_tall_grass_on_move,
     [GROUND_EFFECT_FLAG_LONG_GRASS_ON_SPAWN] = ground_effect_long_grass_on_spawn,
@@ -68,13 +68,13 @@ static void ground_effect_snow_tracks_bike(npc *n, oam_object *o) {
     (void)n; (void)o; 
 }
 
-static void (*ground_effect_snow_tracks[])(npc *, oam_object *) = {
+static void (*const ground_effect_snow_tracks[])(npc *, oam_object *) = {
     [0] = ground_effect_snow_tracks_none,
     [1] = ground_effect_snow_tracks_normal,
     [2] = ground_effect_snow_tracks_bike,
 };
 
 void ground_effect_snow(npc *n, oam_object *o) {
-    overworld_sprite *sprite = overworld_get_by_npc(n);
+    const overworld_sprite *sprite = overworld_get_by_npc(n);
     ground_effect_snow_tracks[MIN(ARRAY_COUNT(ground_effect_snow_tracks), sprite->tracks)](n, o);
 }

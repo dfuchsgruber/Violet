@@ -7,7 +7,7 @@
 #include "debug.h"
 #include "callbacks.h"
 
-void bag_print_string(u8 callback_idx, u8 font, u8 *str, void (*continuation)(u8)) {
+void bag_print_string(u8 callback_idx, u8 font, const u8 *str, void (*continuation)(u8)) {
     // ERROR("%d, %d, 0x%x, 0x%x\n", callback_idx, font, str, continuation);
     tbox_flush_set(BAG_TBOX_MESSAGE, 0x11);
     tbox_tilemap_draw(BAG_TBOX_MESSAGE);

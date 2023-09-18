@@ -33,7 +33,7 @@ typedef struct {
     u16 species;
     u16 held_item;
     u16 moves[4];
-    u8 *nickname;
+    const u8 *nickname;
 } trainer_pokemon;
 
 /**

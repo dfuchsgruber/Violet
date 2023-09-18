@@ -36,14 +36,14 @@ extern const unsigned short gfx_hiroine_headTiles[];
 extern const unsigned short gfx_hiro_headPal[];
 extern const unsigned short gfx_hiroine_headPal[];
 
-bg_config pokedex_bg_habitat_configs [] = {
+const bg_config pokedex_bg_habitat_configs [] = {
     {0, 0, 31, 0, 0, 0},
     {1, 0, 30, 0, 0, 2},
     {2, 3, 29, 0, 0, 1},
     {3, 1, 28, 0, 1, 3}
 };
 
-tboxdata pokedex_habitat_tboxes [] = {
+const tboxdata pokedex_habitat_tboxes [] = {
     {0, 6, 0, 24, 2, 15, 2}, //Title Line := 0x0
     {0, 1, 0, 5, 2, 15, 50}, //Grass := 0x1
     {0, 1, 4, 5, 2, 15, 60}, //Water := 0x2
@@ -54,49 +54,49 @@ tboxdata pokedex_habitat_tboxes [] = {
     {0xFF, 0, 0, 0, 0, 0, 0},
 };
 
-graphic pokedex_habitat_cursor_graphic = {
+const graphic pokedex_habitat_cursor_graphic = {
     (void*) 0x083EED38,
     0x100,
     0xA014
 };
 
-graphic pokedex_habitat_male_graphic = {
+const graphic pokedex_habitat_male_graphic = {
     gfx_hiro_headTiles,
     0x80,
     0xA015
 };
 
-graphic pokedex_habitat_female_graphic = {
+const graphic pokedex_habitat_female_graphic = {
     gfx_hiroine_headTiles,
     0x80,
     0xA015
 };
 
-graphic pokedex_habitat_type_graphic = {
+const graphic pokedex_habitat_type_graphic = {
     &gfx_pokedex_habitat_type_iconsTiles,
     0x80 * 9,
     0xA016
 };
 
-sprite pokedex_habitat_cursor_sprite = {
+const sprite pokedex_habitat_cursor_sprite = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(0)
 };
 
-sprite pokedex_habitat_head_sprite = {
+const sprite pokedex_habitat_head_sprite = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(0)
 };
 
-gfx_frame pokedex_habitat_cursor_gfx_anim[] = {
+const gfx_frame pokedex_habitat_cursor_gfx_anim[] = {
     {0, 32},
     {4, 32},
     {0xFFFE, 0}
 };
 
-gfx_frame *pokedex_habitat_cursor_gfx_anim_table[] = {
+const gfx_frame *pokedex_habitat_cursor_gfx_anim_table[] = {
     pokedex_habitat_cursor_gfx_anim
 };
 
-static gfx_frame pokedex_habitat_type_gfx_frames[] = {
+static const gfx_frame pokedex_habitat_type_gfx_frames[] = {
     {.data = 0, .duration = 0}, {.data = GFX_ANIM_END},
     {.data = 4, .duration = 0}, {.data = GFX_ANIM_END},
     {.data = 8, .duration = 0}, {.data = GFX_ANIM_END},
@@ -109,7 +109,7 @@ static gfx_frame pokedex_habitat_type_gfx_frames[] = {
 };
 
 
-static gfx_frame *pokedex_habitat_type_gfx_anim_table[] = {
+static const gfx_frame *pokedex_habitat_type_gfx_anim_table[] = {
     pokedex_habitat_type_gfx_frames,
     pokedex_habitat_type_gfx_frames + 2,
     pokedex_habitat_type_gfx_frames + 4,
@@ -121,7 +121,7 @@ static gfx_frame *pokedex_habitat_type_gfx_anim_table[] = {
     pokedex_habitat_type_gfx_frames + 16,
 };
 
-oam_template pokedex_habitat_cursor_template = {
+const oam_template pokedex_habitat_cursor_template = {
     0xA014,
     0xA014,
     &pokedex_habitat_cursor_sprite,
@@ -131,7 +131,7 @@ oam_template pokedex_habitat_cursor_template = {
     oam_null_callback
 };
 
-oam_template pokedex_habitat_head_template = {
+const oam_template pokedex_habitat_head_template = {
     0xA015,
     0xA015,
     &pokedex_habitat_head_sprite,
@@ -141,7 +141,7 @@ oam_template pokedex_habitat_head_template = {
     oam_null_callback
 };
 
-static oam_template pokedex_habitat_type_template = {
+static const oam_template pokedex_habitat_type_template = {
     0xA016,
     0xA016,
     &pokedex_habitat_cursor_sprite,
@@ -152,9 +152,9 @@ static oam_template pokedex_habitat_type_template = {
 };
 
 
-tbox_font_colormap pokedex_fontcolmap_namespace = {3, 2, 1, 0};
+const tbox_font_colormap pokedex_fontcolmap_namespace = {3, 2, 1, 0};
 
-int *worldmap_tilemaps[4] = {
+const int *worldmap_tilemaps[4] = {
     (int*) gfx_worldmapMap,
     (int*) 0x083F0354,
     (int*) 0x083F0464,

@@ -26,11 +26,11 @@
 #include "overworld/pokemon_party_menu.h"
 #include "item/fishing.h"
 
-static u8 bag_pocket_order[] = {
+static const u8 bag_pocket_order[] = {
     POCKET_ITEMS, POCKET_MEDICINE, POCKET_POKEBALLS, POCKET_TM_HM, POCKET_BERRIES, POCKET_KEY_ITEMS, POCKET_BAIT,
 };
 
-static u8 bag_open_pocket_to_pocket[NUM_BAG_OPEN] = {
+static const u8 bag_open_pocket_to_pocket[NUM_BAG_OPEN] = {
     [BAG_OPEN_ITEMS] = POCKET_ITEMS,
     [BAG_OPEN_KEYITEMS] = POCKET_KEY_ITEMS,
     [BAG_OPEN_POKEBALLS] = POCKET_POKEBALLS,
@@ -39,7 +39,7 @@ static u8 bag_open_pocket_to_pocket[NUM_BAG_OPEN] = {
     [BAG_OPEN_BAIT] = POCKET_BAIT,
 };
 
-static u8 bag_pocket_switching_disabled_by_context[NUM_BAG_CONTEXTS] = {
+static const u8 bag_pocket_switching_disabled_by_context[NUM_BAG_CONTEXTS] = {
     [BAG_CONTEXT_COMPOST] = true,
     [BAG_CONTEXT_PLANT_BERRY] = true,
     [BAG_CONTEXT_RECHARGE_TM_HM] = true,
@@ -71,8 +71,8 @@ void bag_win0_animation(u8 self) {
         big_callback_delete(self);
 }
 
-static tbox_font_colormap font_colmap_cursor_inactive = {.background = 0, .body = 3, .edge = 2};
-static u8 str_cursor[] = PSTRING("▶");
+static const tbox_font_colormap font_colmap_cursor_inactive = {.background = 0, .body = 3, .edge = 2};
+static const u8 str_cursor[] = PSTRING("▶");
 
 void bag_item_list_print_cursor_at(u16 y, u8 color_idx) {
     if (color_idx == 0xFF) {
@@ -160,9 +160,9 @@ void bag_vblank_handler() {
     dma3_queue_proceed();
 }
 
-static u8 str_bag_font_color_regular[] = PSTRING("COLOR_HIGHLIGHT_SHADOW\x02\x00\x03");
-static u8 str_bag_font_color_grey[] = PSTRING("COLOR_HIGHLIGHT_SHADOW\x03\x00\x00");
-static u8 str_cancel[] = LANGDEP(PSTRING("Zurück"), PSTRING("Cancel"));
+static const u8 str_bag_font_color_regular[] = PSTRING("COLOR_HIGHLIGHT_SHADOW\x02\x00\x03");
+static const u8 str_bag_font_color_grey[] = PSTRING("COLOR_HIGHLIGHT_SHADOW\x03\x00\x00");
+static const u8 str_cancel[] = LANGDEP(PSTRING("Zurück"), PSTRING("Cancel"));
 
 void bag_format_item_string(u8 *dst, u16 item_idx) {
     // TODO: Highlight colors for empty tms
@@ -199,13 +199,13 @@ void bag_shake_oam() {
     }
 }
 
-static u8 str_close_bag[] = LANGDEP(PSTRING("Beutel schließen"), PSTRING("Close bag"));
+static const u8 str_close_bag[] = LANGDEP(PSTRING("Beutel schließen"), PSTRING("Close bag"));
 
-tbox_font_colormap bag_font_colormap_description = {.background = 0, .body = 1, .edge = 2};
+const tbox_font_colormap bag_font_colormap_description = {.background = 0, .body = 1, .edge = 2};
 
 void bag_print_item_description(u16 slot) {
     u8 pocket = bag_get_current_pocket();
-    u8 *description;
+    const u8 *description;
     if (slot == BAG2_STATE->pocket_size[pocket])
         description = str_close_bag;
     else
@@ -216,12 +216,12 @@ void bag_print_item_description(u16 slot) {
     bg_virtual_sync_reqeust_push(bag_tboxes[BAG_TBOX_DESCRIPTION].bg_id);
 }
 
-static u8 str_equipped_bait[] = LANGDEP(
+static const u8 str_equipped_bait[] = LANGDEP(
     PSTRING("Ausgerüstet:"),
     PSTRING("Equipped:")
 );
-static u8 str_bait_none[] = PSTRING("---");
-static u8 str_bait_quantity[] = PSTRING("×BUFFER_1");
+static const u8 str_bait_none[] = PSTRING("---");
+static const u8 str_bait_quantity[] = PSTRING("×BUFFER_1");
 
 void bag_print_rod_bait(u16 slot) {
     u8 pocket = bag_get_current_pocket();
@@ -236,7 +236,7 @@ void bag_print_rod_bait(u16 slot) {
         tbox_tilemap_draw(BAG_TBOX_ROD_DETAILS);
         tbox_print_string(BAG_TBOX_ROD_DETAILS, 0, 2, 2, 0, 0, &bag_font_colormap_pocket_hint, 0, str_equipped_bait);
         u16 bait = item_rod_get_equipped_bait(item_idx);
-        u8 *bait_name;
+        const u8 *bait_name;
         if (bait == ITEM_NONE) {
             bait_name = str_bait_none;
         } else {
@@ -267,7 +267,7 @@ void bag_new_scroll_indicators_items() {
     scroll_indicator_set_oam_priority(BAG2_STATE->scroll_indicator_items_cb_idx, 2, 2);
 }
 
-static scroll_indicator_template scroll_indicator_template_pockets = {
+static const scroll_indicator_template scroll_indicator_template_pockets = {
     .arrow0_type = SCROLL_ARROW_LEFT, .arrow0_x = 8, .arrow0_y = 72,
     .arrow1_type = SCROLL_ARROW_RIGHT, .arrow1_x = 72, .arrow1_y = 72,
     .arrow0_threshold = 0, .arrow1_threshold = ARRAY_COUNT(bag_pocket_order) - 1,

@@ -2,9 +2,9 @@
 #include "overworld/weather.h"
 #include "oam.h"
 
-extern graphic overworld_weather_sandstorm_graphic;
-extern color_t overworld_weather_sandstormPal[16];
-extern oam_template overworld_weather_sandstorm_template;
+extern const graphic overworld_weather_sandstorm_graphic;
+extern const color_t overworld_weather_sandstormPal[16];
+extern const oam_template overworld_weather_sandstorm_template;
 
 void overworld_weather_sandstorm_oams_create() {
     if (!overworld_weather.sandstorm_oams_created) {
@@ -31,7 +31,7 @@ void overworld_weather_sandstorm_oams_create() {
     }
 }
 
-extern u16 overworld_weather_sandstorm_swirl_oam_delays[5];
+extern const u16 overworld_weather_sandstorm_swirl_oam_delays[5];
 
 void overworld_weather_sandstorm_swirl_oams_create() {
     if (!overworld_weather.sandstorm_swirl_oams_created) {

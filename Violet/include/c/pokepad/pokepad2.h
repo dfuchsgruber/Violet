@@ -40,9 +40,9 @@ typedef struct {
 
 typedef struct {
     u16 flag;
-    u8 *name;
+    const u8 *name;
     void (*initialize)(bool from_overworld);
-    u8 *description;
+    const u8 *description;
     graphic icon_graphic;
     palette icon_palette;
 } pokepad2_item;

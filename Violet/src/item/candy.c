@@ -47,31 +47,31 @@ void item_callback_rare_candy(u8 self, void (*exit_continuation)(u8)) {
 extern const u8 gfx_pokemon_party_menu_exp_barTiles[];
 extern const u8 gfx_pokemon_party_menu_exp_barPal[];
 
-static graphic graphic_exp_bar = {
+static const graphic graphic_exp_bar = {
     .sprite = gfx_pokemon_party_menu_exp_barTiles, .size = GRAPHIC_SIZE_4BPP(64, 16), .tag = OAM_TAG_PARTY_MENU_EXP_BAR,
 };
 
-static palette palette_exp_bar = {
+static const palette palette_exp_bar = {
     .pal = gfx_pokemon_party_menu_exp_barPal, .tag = OAM_TAG_PARTY_MENU_EXP_BAR,
 };
 
-static sprite sprite_exp_bar = {
+static const sprite sprite_exp_bar = {
     .attr0 = ATTR0_SHAPE_HORIZONTAL, .attr1 = ATTR1_SIZE_32_16, .attr2 = ATTR2_PRIO(1),
 };
 
-static gfx_frame gfx_anim_exp_bar_left[] = {
+static const gfx_frame gfx_anim_exp_bar_left[] = {
     {.data = 0, .duration = 0}, {.data = GFX_ANIM_END}
 };
 
-static gfx_frame gfx_anim_exp_bar_right[] = {
+static const gfx_frame gfx_anim_exp_bar_right[] = {
     {.data = 8, .duration = 0}, {.data = GFX_ANIM_END}
 };
 
-static gfx_frame *gfx_anims_exp_bar[] = {
+static const gfx_frame *gfx_anims_exp_bar[] = {
     gfx_anim_exp_bar_left, gfx_anim_exp_bar_right
 };
 
-static oam_template template_exp_bar = {
+static const oam_template template_exp_bar = {
     .tiles_tag = OAM_TAG_PARTY_MENU_EXP_BAR, .pal_tag = OAM_TAG_PARTY_MENU_EXP_BAR,
     .oam = &sprite_exp_bar, .animation = gfx_anims_exp_bar,
     .graphics = NULL, .rotscale = oam_rotscale_anim_table_null, 
@@ -121,7 +121,7 @@ static void exp_candy_fill_exp_bar(u8 self) {
     }
 }
 
-extern u8 str_pokemon_reached_level[];
+extern const u8 str_pokemon_reached_level[];
 
 static void exp_candy_delete_bar_and_free(bool delete_oams) {
     // Delete the boxes

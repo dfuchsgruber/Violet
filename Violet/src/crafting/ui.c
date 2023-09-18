@@ -44,14 +44,14 @@ static void crafting_ui_free();
 static void crafting_ui_process_list_menu(u8 self);
 static void crafting_ui_setup_list_menu();
 
-static bg_config crafting_ui_bg_configs[4] = {
+static const bg_config crafting_ui_bg_configs[4] = {
     {.bg_id = 0, .char_base = 0, .map_base = 28, .size = 0, .color_mode = 0, .priority = 0},
     {.bg_id = 1, .char_base = 1, .map_base = 29, .size = 0, .color_mode = 0, .priority = 1},
     {.bg_id = 2, .char_base = 2, .map_base = 30, .size = 0, .color_mode = 0, .priority = 2},
     {.bg_id = 3, .char_base = 3, .map_base = 31, .size = 0, .color_mode = 0, .priority = 3},
 };
 
-static u8 str_category[CRAFTING_TYPE_CNT][11] = {
+static const u8 str_category[CRAFTING_TYPE_CNT][11] = {
     [CRAFTING_HEALING] = LANGDEP(PSTRING("Medizin"), PSTRING("Medicine")),
     [CRAFTING_POKEBALLS] = LANGDEP(PSTRING("Pokébälle"), PSTRING("Pokéballs")),
     [CRAFTING_JEWELS] = LANGDEP(PSTRING("Wertvolles"), PSTRING("Valuables")),
@@ -61,14 +61,14 @@ static u8 str_category[CRAFTING_TYPE_CNT][11] = {
     [CRAFTING_BATTLE] = LANGDEP(PSTRING("Kampf"), PSTRING("Battle")),
 };
 
-static u8 str_recipe[] = LANGDEP(PSTRING("Rezept"), PSTRING("Recipe"));
+static const u8 str_recipe[] = LANGDEP(PSTRING("Rezept"), PSTRING("Recipe"));
 
-static u8 str_textcolor_red[] = PSTRING("TEXT_SET_FG\x04TEXT_SET_SHADOW\x05");
-static u8 str_textcolor_black[] = PSTRING("TEXT_SET_FG\x02TEXT_SET_SHADOW\x03");
+static const u8 str_textcolor_red[] = PSTRING("TEXT_SET_FG\x04TEXT_SET_SHADOW\x05");
+static const u8 str_textcolor_black[] = PSTRING("TEXT_SET_FG\x02TEXT_SET_SHADOW\x03");
 
 enum {TBOX_MESSAGE, TBOX_TYPE, TBOX_RECIPE, TBOX_DESCRIPTION, TBOX_INGREDIENTS, TBOX_LIST_MENU, TBOX_POSSESION, TBOX_CRAFTING_CNT, TBOX_CNT,};
 
-static tboxdata ui_tboxes[] = {
+static const tboxdata ui_tboxes[] = {
     [TBOX_MESSAGE] = {.bg_id = 0, .x = 2, .y = 15, .w = 26, .h = 4, .pal = 14, .start_tile = 1},
     [TBOX_TYPE] = {.bg_id = 1, .x = 2, .y = 0, .w = 8, .h = 2, .pal = 15, .start_tile = 1},
     [TBOX_RECIPE] = {.bg_id = 1, .x = 19, .y = 0, .w = 5, .h = 2, .pal = 15, .start_tile = 1 + (2 * 13)},
@@ -82,12 +82,12 @@ static tboxdata ui_tboxes[] = {
     [TBOX_CNT] = {.bg_id = 0xFF},
 };
 
-static tboxdata ui_yes_no_box = {
+static const tboxdata ui_yes_no_box = {
     .bg_id = 0, .x = 21, .y = 9, .w = 6, .h = 4, .pal = 14, .start_tile = 1 + 15 * 26,
 };
 
-static tbox_font_colormap fontcolmap_white_letters = {0, 1, 2, 3};
-static tbox_font_colormap fontcolmap_black_letters = {0, 2, 3, 1};
+static const tbox_font_colormap fontcolmap_white_letters = {0, 1, 2, 3};
+static const tbox_font_colormap fontcolmap_black_letters = {0, 2, 3, 1};
 
 static crafting_recipe *crafting_ui_get_current_recipe() {
     u16 type = CRAFTING_UI_STATE->type;
@@ -117,12 +117,12 @@ static void crafting_ui_update_ingredient_boxes() {
 
 static void crafting_ui_update_tbox_type() {
     tbox_flush_set(TBOX_TYPE, 0);
-    u8 *str = str_category[CRAFTING_UI_STATE->type];
+    const u8 *str = str_category[CRAFTING_UI_STATE->type];
     u16 x = (u16)((8 * ui_tboxes[TBOX_TYPE].w - string_get_width(2, str, 0)) / 2);
     tbox_print_string(TBOX_TYPE, 2, x, 1, 0, 0, &fontcolmap_white_letters, 0, str);
 }
 
-static u8 str_exit_description[] = LANGDEP(PSTRING("Verlasse die Maschine."), PSTRING("Exit the machine."));
+static const u8 str_exit_description[] = LANGDEP(PSTRING("Verlasse die Maschine."), PSTRING("Exit the machine."));
 
 static void crafting_ui_update_description() {
     tbox_flush_set(TBOX_DESCRIPTION, 0);
@@ -190,7 +190,7 @@ static void crafting_ui_hide_oams() {
     oams[CRAFTING_UI_STATE->oam_item].flags |= OAM_FLAG_INVISIBLE;
 }
 
-static u8 str_ash[] = LANGDEP(PSTRING("Asche"), PSTRING("Ash"));
+static const u8 str_ash[] = LANGDEP(PSTRING("Asche"), PSTRING("Ash"));
 
 static void crafting_ui_update_ingredient_texts() {
     tbox_flush_set(TBOX_INGREDIENTS, 0);
@@ -200,7 +200,7 @@ static void crafting_ui_update_ingredient_texts() {
             if (recipe->ingredients[i].count > 0) {
                 bool requirements_fulfilled = ingredient_requirements_fulfilled(recipe->ingredients + i, 1);
                 u16 y = (u16)(5 + 24 * i);
-                u8 *name;
+                const u8 *name;
                 int required, posessed;
                 if (recipe->ingredients[i].type == CRAFTING_INGREDIENT_ASH) {
                     name = str_ash;
@@ -235,11 +235,11 @@ static void crafting_ui_update_ingredient_texts() {
     }
 }
 
-static u8 str_exit[] = LANGDEP(PSTRING("Beenden"), PSTRING("Exit"));
+static const u8 str_exit[] = LANGDEP(PSTRING("Beenden"), PSTRING("Exit"));
 
 static void crafting_ui_setup_recipies_and_list_menu_items() {
     for (u16 type = 0; type < CRAFTING_TYPE_CNT; type++) {
-        crafting_recipe *recipies = crafting_recipies_get_by_type(type);
+        const crafting_recipe *recipies = crafting_recipies_get_by_type(type);
         size_t recipe_cnt = crafting_get_num_recipies_by_type(type);
         CRAFTING_UI_STATE->recipies[type] = malloc_and_clear(sizeof(crafting_recipe) * recipe_cnt);
         CRAFTING_UI_STATE->list_menu_items[type] = malloc_and_clear(sizeof(list_menu_item) * (recipe_cnt + 1));
@@ -288,7 +288,7 @@ static void list_menu_print_callback_null(u8 tbox_idx, int idx, u8 y) {
     (void)tbox_idx; (void)idx; (void)y;
 } 
 
-static list_menu_template recipe_selection_list_menu_template = {
+static const list_menu_template recipe_selection_list_menu_template = {
     .items = NULL,
     .cursor_moved_callback = list_menu_generic_cursor_callback,
     .item_print_callback = list_menu_print_callback_null,
@@ -461,7 +461,7 @@ static void crafting_ui_list_menu_remove() {
         big_callback_delete(big_callback_get_id(crafting_ui_process_list_menu));
 }
 
-static void crafting_ui_print_message(u8 callback_idx, u8 *message, void (*continuation)(u8)) {
+static void crafting_ui_print_message(u8 callback_idx, const u8 *message, void (*continuation)(u8)) {
     tbox_flush_set(TBOX_MESSAGE, 0);
     tbox_tilemap_draw(TBOX_MESSAGE);
     tbox_print_string_and_continue(callback_idx, TBOX_MESSAGE, 256, 15, 2, tbox_get_set_speed(), message, continuation);
@@ -528,7 +528,7 @@ static void crafting_ui_print_quantity_to_craft() {
         8, 0, 0, &fontcolmap_black_letters, 0, strbuf);
 }
 
-static u8 str_possesion[] = LANGDEP(
+static const u8 str_possesion[] = LANGDEP(
     PSTRING("Besitz: "),
     PSTRING("Posession:")
 );
@@ -578,22 +578,22 @@ static void crafting_ui_message_continuation_prompt_count(u8 self) {
     big_callbacks[self].function = crafting_ui_handle_count_selection;
 }
 
-static u8 str_cant_craft[] = LANGDEP(
+static const u8 str_cant_craft[] = LANGDEP(
     PSTRING("Du hast nicht die nötigen Zutaten,\num dieses Item herzustellen."),
     PSTRING("You can't craft this item, because you\ndont posess all ingredients.")
 );
 
-static u8 str_no_room[] = LANGDEP(
+static const u8 str_no_room[] = LANGDEP(
     PSTRING("Du hast nicht den nötigen Platz\nim Beutel dafür!"),
     PSTRING("Your bag doesn't have the necessary\nspace for that!")
 );
 
-static u8 str_ask_crafting[] = LANGDEP(
+static const u8 str_ask_crafting[] = LANGDEP(
     PSTRING("Möchtest du BUFFER_1\nherstellen?"),
     PSTRING("Do you want to craft\nBUFFER_1?")
 ); 
 
-static u8 str_ask_crafting_cnt[] = LANGDEP(
+static const u8 str_ask_crafting_cnt[] = LANGDEP(
     PSTRING("Wie oft willst du das Rezept\nfür BUFFER_1 anwenden?"),
     PSTRING("How many times do you want to\nuse the recipe for BUFFER_1?")
 );

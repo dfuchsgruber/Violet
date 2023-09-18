@@ -31,12 +31,12 @@
 #include "list_menu.h"
 #include "menu_indicators.h"
 
-u8 str_pokepad_description[] = LANGDEP(
+const u8 str_pokepad_description[] = LANGDEP(
     PSTRING("Benutze verschiedene Apps, die auf dem\nPoképad installiert sind."),
     PSTRING("Use different apps installed on the\nPoképad.")
 );
 
-static pokepad_wallpaper pokepad_wallpapers[POKEPAD_NUM_WALLPAPERS] = {
+static const pokepad_wallpaper pokepad_wallpapers[POKEPAD_NUM_WALLPAPERS] = {
     {
         .tileset = gfx_pokepad_wallpaper_startersTiles, .tilemap = gfx_pokepad_wallpaper_startersMap,
         .palette = gfx_pokepad_wallpaper_startersPal, .flag = 0,
@@ -49,34 +49,34 @@ static pokepad_wallpaper pokepad_wallpapers[POKEPAD_NUM_WALLPAPERS] = {
     },
 };
 
-static u8 wondertrade_name[] = LANGDEP(PSTRING("Wundert."), PSTRING("Wondert."));
-static u8 pokedex_name[] = LANGDEP(PSTRING("Pokédex"), PSTRING("Pokédex"));
-static u8 pokeradar_name[] = LANGDEP(PSTRING("Pokéradar"), PSTRING("Pokéradar"));
-static u8 incubator_name[] = LANGDEP(PSTRING("Inkubator"), PSTRING("Incubator"));
-static u8 treasure_map_name[] = LANGDEP(PSTRING("Karten"), PSTRING("Maps"));
+static const u8 wondertrade_name[] = LANGDEP(PSTRING("Wundert."), PSTRING("Wondert."));
+static const u8 pokedex_name[] = LANGDEP(PSTRING("Pokédex"), PSTRING("Pokédex"));
+static const u8 pokeradar_name[] = LANGDEP(PSTRING("Pokéradar"), PSTRING("Pokéradar"));
+static const u8 incubator_name[] = LANGDEP(PSTRING("Inkubator"), PSTRING("Incubator"));
+static const u8 treasure_map_name[] = LANGDEP(PSTRING("Karten"), PSTRING("Maps"));
 
-static u8 wondertrade_description[] = LANGDEP(
+static const u8 wondertrade_description[] = LANGDEP(
     PSTRING("Tausche Pokémon mit Trainern aus aller\nWelt."),
     PSTRING("Trade Pokémon with trainers all over\nthe world.")
 );
-static u8 pokedex_description[] = LANGDEP(
+static const u8 pokedex_description[] = LANGDEP(
     PSTRING("Betrachte Aufzeichnungen zu gefangenen\nund gesehenen Pokémon."),
     PSTRING("View records of caught and seen Pokémon.")
 );
-static u8 pokeradar_description[] = LANGDEP(
+static const u8 pokeradar_description[] = LANGDEP(
     PSTRING("Spüre seltene Pokémon in der Nähe auf."),
     PSTRING("Identify rare Pokémon nearby.")
 );
-static u8 incubator_description[] = LANGDEP(
+static const u8 incubator_description[] = LANGDEP(
     PSTRING("Brüte Eier aus und überprüfe deren\nStatus."),
     PSTRING("Hatch eggs and check on their status.")
 );
-static u8 treasure_map_description[] = LANGDEP(
+static const u8 treasure_map_description[] = LANGDEP(
     PSTRING("Sieh dir Schatzkarten an, die\ndu gefunden hast."),
     PSTRING("Look at treasure maps you found.")
 );
 
-static pokepad2_item pokepad2_items[] = {
+static const pokepad2_item pokepad2_items[] = {
     [POKEPAD_ITEM_WONDERTRADE] = {
         .name = wondertrade_name,
         .description = wondertrade_description,
@@ -150,15 +150,15 @@ enum {
     PRIORITY_CURSOR,
 };
 
-static graphic cursor_graphic = {
+static const graphic cursor_graphic = {
     .sprite = gfx_pokepad_cursorTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEPAD_CURSOR_TAG,
 };
 
-static palette cursor_palette = {
+static const palette cursor_palette = {
     .pal = gfx_pokepad_cursorPal, .tag = POKEPAD_CURSOR_TAG,
 };
 
-static sprite cursor_sprite = {
+static const sprite cursor_sprite = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_64_64, .attr2 = ATTR2_PRIO(1),
 };
 
@@ -173,31 +173,31 @@ static void cursor_callback(oam_object *self) {
     }
 }
 
-static graphic left_indicator_graphic = {
+static const graphic left_indicator_graphic = {
     .sprite = gfx_pokepad_indicator_leftTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEPAD_LEFT_INDICATOR_TAG,
 };
 
-static graphic right_indicator_graphic = {
+static const graphic right_indicator_graphic = {
     .sprite = gfx_pokepad_indicator_rightTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEPAD_RIGHT_INDICATOR_TAG,
 };
 
-static palette lr_indicator_palette = {
+static const palette lr_indicator_palette = {
     .pal = gfx_pokepad_indicator_leftPal, .tag = POKEPAD_LEFT_INDICATOR_TAG,
 };
 
-static oam_template cursor_template = {
+static const oam_template cursor_template = {
     .tiles_tag = POKEPAD_CURSOR_TAG, .pal_tag = POKEPAD_CURSOR_TAG,
     .animation = oam_gfx_anim_table_null, .rotscale = oam_rotscale_anim_table_null,
     .graphics = NULL, .oam = &cursor_sprite, .callback = cursor_callback,
 };
 
-static oam_template indicator_left_template = {
+static const oam_template indicator_left_template = {
     .tiles_tag = POKEPAD_LEFT_INDICATOR_TAG, .pal_tag = POKEPAD_LEFT_INDICATOR_TAG,
     .animation = oam_gfx_anim_table_null, .rotscale = oam_rotscale_anim_table_null,
     .graphics = NULL, .oam = &cursor_sprite, .callback = oam_null_callback,
 };
 
-static oam_template indicator_right_template = {
+static const oam_template indicator_right_template = {
     .tiles_tag = POKEPAD_RIGHT_INDICATOR_TAG, .pal_tag = POKEPAD_LEFT_INDICATOR_TAG,
     .animation = oam_gfx_anim_table_null, .rotscale = oam_rotscale_anim_table_null,
     .graphics = NULL, .oam = &cursor_sprite, .callback = oam_null_callback,
@@ -258,7 +258,7 @@ enum {
     NUM_TBOXES,
 };
 
-static tboxdata pokepad_tboxes[] = {
+static const tboxdata pokepad_tboxes[] = {
     [TBOX_DESCRIPTION] = {
         .bg_id = 0, .x = 0, .y = 15, .w = 30, .h = 5, .pal = 15, .start_tile = 1,
     },
@@ -276,7 +276,7 @@ static tboxdata pokepad_tboxes[] = {
     }
 };
 
-static list_menu_template motive_list_menu = {
+static const list_menu_template motive_list_menu = {
     .items = NULL,
     .cursor_moved_callback = list_menu_generic_cursor_callback,
     .item_print_callback = incubator_context_menu_item_print_callback,
@@ -286,13 +286,13 @@ static list_menu_template motive_list_menu = {
     .font = 2
 };
 
-static bg_config bg_configs[] = {
+static const bg_config bg_configs[] = {
     {.bg_id = 0, .char_base = 2, .map_base = 31, .size = 0, .color_mode = 0, .priority = 1},
     {.bg_id = 1, .char_base = 0, .map_base = 29, .size = 0, .color_mode = 1, .priority = 2},
     {.bg_id = 2, .char_base = 3, .map_base = 30, .size = 0, .color_mode = 0, .priority = 0},
 };
 
-static pokepad_wallpaper *pokepad_get_wallpaper() {
+static const pokepad_wallpaper *pokepad_get_wallpaper() {
     return pokepad_wallpapers + *var_access(VAR_POKEPAD_WALLPAPER);
 }
 
@@ -316,26 +316,26 @@ static void callback1_free() {
     }
 }
 
-static tbox_font_colormap description_fontcolmap = {
+static const tbox_font_colormap description_fontcolmap = {
     .background = 1, .body = 2, .edge = 1,
 };
 
 static void pokepad2_update_description() {
-    pokepad2_item *item = pokepad2_items + POKEPAD_STATE->items[POKEPAD_STATE->cursor_idx];
+    const pokepad2_item *item = pokepad2_items + POKEPAD_STATE->items[POKEPAD_STATE->cursor_idx];
     tbox_flush_set(TBOX_DESCRIPTION, 0x11);
     tbox_print_string(TBOX_DESCRIPTION, 2, 8, 6, 0, 0, &description_fontcolmap, 0, item->description);
 }
 
-static u8 str_key_l[] = PSTRING("KEY_L");
+static const u8 str_key_l[] = PSTRING("KEY_L");
 
-static u8 str_key_r[] = PSTRING("KEY_R");
+static const u8 str_key_r[] = PSTRING("KEY_R");
 
-static u8 str_registered[] = LANGDEP(
+static const u8 str_registered[] = LANGDEP(
     PSTRING("Die BUFFER_1-App wurde auf der\nBUFFER_2 Taste registriert.PAUSE_UNTIL_PRESS"),
     PSTRING("The BUFFER_1-App was registered\non the BUFFER_2 key.PAUSE_UNTIL_PRESS")
 );
 
-static u8 str_deregistered[] = LANGDEP(
+static const u8 str_deregistered[] = LANGDEP(
     PSTRING("Die BUFFER_1-App ist nicht länger auf\nder BUFFER_2 Taste registriert.PAUSE_UNTIL_PRESS"),
     PSTRING("The BUFFER_1-App is no longer registered\non the BUFFER_2 key.PAUSE_UNTIL_PRESS")
 );
@@ -349,7 +349,7 @@ static void pokepad2_tbox_description_run_printer_and_continue(u8 self) {
     }
 }
 
-static void pokepad2_tbox_description_print_message(u8 callback_idx, u8 *text) {
+static void pokepad2_tbox_description_print_message(u8 callback_idx, const u8 *text) {
     string_decrypt(strbuf, text);
     tbox_flush_set(TBOX_DESCRIPTION, 0x11);
     tbox_printer_flags.can_a_b_speed_up_printing = true;
@@ -370,7 +370,7 @@ static u16 pokepad2_build_wallpaper_list() {
 }
 
 static void pokepad2_update_wallpaper_palette() {
-    pokepad_wallpaper *wallpaper = pokepad_get_wallpaper();
+    const pokepad_wallpaper *wallpaper = pokepad_get_wallpaper();
     pal_decompress(wallpaper->palette, 0, 10 * 16 * sizeof(color_t)); // Probably a bit too much...
     color_t black = {.rgb={0, 0, 0}};
     pal_gamma_shift_with_blend(0, 10, 3, 4, black);
@@ -378,7 +378,7 @@ static void pokepad2_update_wallpaper_palette() {
 }
 
 static void pokepad2_update_wallpaper_bg() {
-    pokepad_wallpaper *wallpaper = pokepad_get_wallpaper();
+    const pokepad_wallpaper *wallpaper = pokepad_get_wallpaper();
     lz77uncompvram(wallpaper->tileset, CHARBASE(0));
     lz77uncompwram(wallpaper->tilemap, bg_get_tilemap(1));
 }
@@ -456,7 +456,7 @@ static void pokepad2_context_menu(u8 self) {
     }
 }
 
-static u8 str_select_motive[] = LANGDEP(
+static const u8 str_select_motive[] = LANGDEP(
     PSTRING("Wähle ein Hintergrundmotiv aus."),
     PSTRING("Choose a background motive.")
 );
@@ -566,11 +566,11 @@ static void pokepad2_idle(u8 self) {
     }
 }
 
-static sprite app_icon_sprite = {
+static const sprite app_icon_sprite = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(1),
 };
 
-static tbox_font_colormap app_name_fontcolmap = {
+static const tbox_font_colormap app_name_fontcolmap = {
     .background = 0, .body = 2, .edge = 0,
 };
 
@@ -578,7 +578,7 @@ static bool pokepad2_initialize_app_oams(int num_to_initialize) {
     while (POKEPAD_STATE->num_app_oams < POKEPAD_STATE->num_items) {
         if (num_to_initialize <= 0)
             return false;
-        pokepad2_item *item = pokepad2_items + POKEPAD_STATE->items[POKEPAD_STATE->num_app_oams];
+        const pokepad2_item *item = pokepad2_items + POKEPAD_STATE->items[POKEPAD_STATE->num_app_oams];
         oam_load_graphic(&item->icon_graphic);
         oam_palette_load_if_not_present(&item->icon_palette);
         int row = POKEPAD_STATE->num_app_oams / 4;

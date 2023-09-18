@@ -1,16 +1,16 @@
 #include "types.h"
 #include "map/tileset.h"
 
-extern u8 gfx_tileset_anim_power_plant_inside_sparksTiles[];
+extern const u8 gfx_tileset_anim_power_plant_inside_sparksTiles[];
 
-static tileset_animation tileset_power_plant_inside_animations[] = {
+static const tileset_animation tileset_power_plant_inside_animations[] = {
     {
 		.cycle = 2, .speed = 8, .start_tile = 0x390, .num_tiles = 32,
 		.gfx = gfx_tileset_anim_power_plant_inside_sparksTiles
     }
 };
 
-static tileset_animation_header tileset_power_plant_inside_animations_head = {
+static const tileset_animation_header tileset_power_plant_inside_animations_head = {
     ARRAY_COUNT(tileset_power_plant_inside_animations), tileset_power_plant_inside_animations
 };
 

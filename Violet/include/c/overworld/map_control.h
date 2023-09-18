@@ -131,7 +131,7 @@ void warp_setup_lavaridge_1f_callback();
 void warp_setup_union_room_callback();
 
 // Overworld script for falling hole warps
-extern u8 ow_script_fall_warp[];
+extern const u8 ow_script_fall_warp[];
 
 /**
  * Sets up target data for where to warp to
@@ -139,7 +139,7 @@ extern u8 ow_script_fall_warp[];
  * @param warp_idx which warp event to use
  * @param position at which position to warp from (7 shifted)
  **/
-void warp_setup_by_event_and_position(map_header_t *header, s8 warp_idx, position_t *position);
+void warp_setup_by_event_and_position(const map_header_t *header, s8 warp_idx, const position_t *position);
 
 /**
  * Sets the target warp map number to a dynamic idx (for escalators etc)
@@ -301,7 +301,7 @@ void ambient_cry_proceed(u16 *state, u16 *delay);
  * @param y the y coordinate
  * @return -1 on failure, otherwise the offset in the bg tilemaps
  **/
-int map_position_to_bg_tilemap_offset(map_camera_offset_t *c, s16 x, s16 y);
+int map_position_to_bg_tilemap_offset(const map_camera_offset_t *c, s16 x, s16 y);
 
 /**
  * Shows the name of the map namespace as popup.
@@ -347,7 +347,7 @@ void overworld_rain_sound_fade_out();
  * @param y upper left corner
  * @param footer the footer to draw
  **/
-void map_draw_all_by_position_and_footer(int x, int y, map_footer_t *footer);
+void map_draw_all_by_position_and_footer(int x, int y, const map_footer_t *footer);
 
 /**
  * Translates a map position into the displacement of the tilemap
@@ -355,7 +355,7 @@ void map_draw_all_by_position_and_footer(int x, int y, map_footer_t *footer);
  * @param x x coordinate
  * @param y y coordinate
  **/
-int map_position_to_tilemap_offset(map_camera_offset_t *camera, int x, int y);
+int map_position_to_tilemap_offset(const map_camera_offset_t *camera, int x, int y);
 
 /**
  * Draws a block on a map
@@ -364,7 +364,7 @@ int map_position_to_tilemap_offset(map_camera_offset_t *camera, int x, int y);
  * @param x the x coordinate
  * @param y the y coordinate
  **/
-void map_draw_block_at(map_footer_t *footer, int offset, int x, int y);
+void map_draw_block_at(const map_footer_t *footer, int offset, int x, int y);
 
 /**
  * Draws a certain block at an offset in the tilemap

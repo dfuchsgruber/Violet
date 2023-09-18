@@ -1,4 +1,4 @@
-FROM gcc:12.2
+FROM gcc:12
 CMD [ "/usr/local/bin/violet-entrypoint" ]
 ENV LANG=en_US.UTF-8
 ENV WORKON_HOME /venv
@@ -106,8 +106,8 @@ RUN \
         chmod a+x $binName && \
         unset binName
 
-RUN pip3 install --upgrade pip
-RUN pip3 install pipenv
+RUN pip3 install --upgrade pip --break-system-packages
+RUN pip3 install pipenv --break-system-packages
 
 RUN adduser \
      --disabled-password \

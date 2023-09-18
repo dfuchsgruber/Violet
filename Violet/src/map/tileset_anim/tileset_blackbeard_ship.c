@@ -1,16 +1,16 @@
 #include "types.h"
 #include "map/tileset.h"
 
-extern u16 gfx_maptileset_blackbeard_ship_light_animTiles[];
+extern const u16 gfx_maptileset_blackbeard_ship_light_animTiles[];
 
-tileset_animation tileset_blackbeard_ship_animations[] = {
+static const tileset_animation tileset_blackbeard_ship_animations[] = {
     {
 		.cycle = 4, .speed = 32, .start_tile = 0x338, .num_tiles = 4,
 		.gfx = gfx_maptileset_blackbeard_ship_light_animTiles
     }
 };
 
-tileset_animation_header tileset_blackbeard_ship_animations_head = {
+static const tileset_animation_header tileset_blackbeard_ship_animations_head = {
     1, tileset_blackbeard_ship_animations
 };
 

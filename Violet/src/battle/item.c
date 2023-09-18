@@ -21,14 +21,14 @@
 #include "battle/communication.h"
 #include "constants/battle/battle_effects.h"
 
-extern u8 bsc_life_orb[];
-extern u8 bsc_sun_egg[];
-extern u8 bsc_storm_egg[];
-extern u8 bsc_desert_egg[];
-extern u8 bsc_blizzard_egg[];
-extern u8 bsc_energiequarz[];
-extern u8 bsc_beulenhelm[];
-extern u8 bsc_weakness_policy[];
+extern const u8 bsc_life_orb[];
+extern const u8 bsc_sun_egg[];
+extern const u8 bsc_storm_egg[];
+extern const u8 bsc_desert_egg[];
+extern const u8 bsc_blizzard_egg[];
+extern const u8 bsc_energiequarz[];
+extern const u8 bsc_beulenhelm[];
+extern const u8 bsc_weakness_policy[];
 
 u8 battle_items_switch_in_effects(u8 battler_idx) { // Return 0 if no effect was used, 0xFF if an effect was used, but no bsc was triggered and a suitable effect type else
     u8 hold_effect = item_get_hold_effect(bsc_last_used_item);
@@ -166,7 +166,7 @@ bool battle_items_attack_done_defender() {
     return false;
 }
 
-extern u8 bsc_gunpowder[];
+extern const u8 bsc_gunpowder[];
 
 bool battle_items_gunpowder() {
     switch (item_get_hold_effect(battlers[defending_battler].item)) {
@@ -233,7 +233,7 @@ bool battle_item_before_attack_attacker() {
     return false;
 }
 
-extern u8 battlescript_battle_item_hold_effect_restore_hp[];
+extern const u8 battlescript_battle_item_hold_effect_restore_hp[];
 
 bool battle_item_restore_hp(u8 battler_idx, u8 move_turn, int hold_effect_parameter) {
     if (battlers[battler_idx].current_hp <= battlers[battler_idx].max_hp / 2 && !move_turn) {
@@ -262,9 +262,9 @@ bool battle_item_restore_hp(u8 battler_idx, u8 move_turn, int hold_effect_parame
     return false;
 }
 
-extern u8 bsc_heal_hp_by_item_end2[];
-extern u8 bsc_deal_damage_by_item_end2[];
-extern u8 bsc_status_orb[];
+extern const u8 bsc_heal_hp_by_item_end2[];
+extern const u8 bsc_deal_damage_by_item_end2[];
+extern const u8 bsc_status_orb[];
 
 int battle_item_effect_after_attack(u8 battler_idx, bool move_turn) {
     u8 hold_effect, hold_effect_param;

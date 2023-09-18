@@ -23,7 +23,7 @@ bool battle_healthbox_add_mega_indicator(u8 oam_idx) {
         offset = 0x1a;
     // u8 healthbar_oam_idx = (u8)oams[oam_idx].private[5];
     u16 tile_num = oams[oam_idx].final_oam.attr2 & 1023;
-    mega_evolution_t *mega = mega_evolution_get_by_mega_species(battlers[battler_idx].species);
+    const mega_evolution_t *mega = mega_evolution_get_by_mega_species(battlers[battler_idx].species);
     if (mega) {
         switch (mega->type) {
             case MEGA_EVOLUTION: {

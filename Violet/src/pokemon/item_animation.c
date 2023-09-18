@@ -1,7 +1,7 @@
 #include "types.h"
 #include "pokemon/count.h"
 
-u8 pokemon_item_animations[POKEMON_CNT][5] = {
+const u8 pokemon_item_animations[POKEMON_CNT][5] = {
     // POKEMON_POKEMON_0
     {0x16, 0x1b, 0x30, 0x16, 0x29},
     // POKEMON_BISASAM

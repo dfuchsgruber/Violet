@@ -12,7 +12,7 @@
 #include "debug.h"
 #include "vars.h"
 
-dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS] = {
+const dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS] = {
 	/*
     {3, 0, 0x25, 0xd, DTYPE_FOREST}, // Anomia
     {3, 19, 0x2, 0x28, DTYPE_FOREST}, // Route 1

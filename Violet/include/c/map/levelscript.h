@@ -20,7 +20,7 @@ typedef struct {
  * @param type the levelscript type to trigger
  * @return the levelscript
  */
-u8 *map_levelscript_get_if_triggered(u8 type);
+const u8 *map_levelscript_get_if_triggered(u8 type);
 
 /**
  * Triggers a levelscript of a certain type on the current map if it provides one. No varchecks

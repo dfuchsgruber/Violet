@@ -28,9 +28,9 @@
 
 static bool bag_cb_initialize_step();
 
-tbox_font_colormap bag_font_colormap_std = {.background = 0, .body = 2, .edge = 3}; 
+const tbox_font_colormap bag_font_colormap_std = {.background = 0, .body = 2, .edge = 3}; 
 
-tboxdata bag_tboxes[NUM_BAG_TBOXES + 1] = {
+const tboxdata bag_tboxes[NUM_BAG_TBOXES + 1] = {
     [BAG_TBOX_POCKET_NAME] = {.bg_id = 0, .x = 1, .y = 1, .w = 9, .h = 2, .pal = 15, .start_tile = 1},
     [BAG_TBOX_HINT] = {.bg_id = 2, .x = 0, .y = 4, .w = 10, .h = 9, .pal = 11, .start_tile = 1 + 9 * 2},
     [BAG_TBOX_DESCRIPTION] = {.bg_id = 0, .x = 5, .y = 14, .w = 0x19, .h = 6, .pal = 15, .start_tile = 1 + 9 * 2 + 9 * 11},
@@ -45,7 +45,7 @@ tboxdata bag_tboxes[NUM_BAG_TBOXES + 1] = {
 };
 
 // These will not be drawn onto the standard bag screen on initialize
-static u8 bag_tbox_invisible_at_initialize[NUM_BAG_TBOXES] = {
+static const u8 bag_tbox_invisible_at_initialize[NUM_BAG_TBOXES] = {
     [BAG_TBOX_CONTEXT_MENU_TEXT] = true,
     [BAG_TBOX_MESSAGE] = true,
     [BAG_TBOX_MESSAGE_WITH_YES_NO] = true,
@@ -53,9 +53,9 @@ static u8 bag_tbox_invisible_at_initialize[NUM_BAG_TBOXES] = {
     [BAG_TBOX_ROD_DETAILS] = true,
 };
 
-extern color_t bag_tboxPal[16];
+extern const color_t bag_tboxPal[16];
 
-static bg_config bag_bg_cnfgs[] = {
+static const bg_config bag_bg_cnfgs[] = {
     [0] = {
         .bg_id = 0,
         .char_base = 0,
@@ -285,14 +285,14 @@ void bag_initialize_list_cursor_positions() {
     }
 }
 
-static sprite bag_insert_bar_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(1)};
+static const sprite bag_insert_bar_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(1)};
 
-static gfx_frame bag_insert_bar_anim_left[] = {{.data = 0 * 4, .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame bag_insert_bar_anim_mid[] = {{.data = 1 * 4, .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame bag_insert_bar_anim_right[] = {{.data = 0 * 4, .duration = 0 | GFX_ANIM_HFLIP}, {.data = GFX_ANIM_END}};
-static gfx_frame *bag_insert_bar_animations[] = {bag_insert_bar_anim_left, bag_insert_bar_anim_mid, bag_insert_bar_anim_right};
+static const gfx_frame bag_insert_bar_anim_left[] = {{.data = 0 * 4, .duration = 0}, {.data = GFX_ANIM_END}};
+static const gfx_frame bag_insert_bar_anim_mid[] = {{.data = 1 * 4, .duration = 0}, {.data = GFX_ANIM_END}};
+static const gfx_frame bag_insert_bar_anim_right[] = {{.data = 0 * 4, .duration = 0 | GFX_ANIM_HFLIP}, {.data = GFX_ANIM_END}};
+static const gfx_frame *bag_insert_bar_animations[] = {bag_insert_bar_anim_left, bag_insert_bar_anim_mid, bag_insert_bar_anim_right};
 
-static oam_template bag_oam_template_insert_bar = {
+static const oam_template bag_oam_template_insert_bar = {
     .tiles_tag = BAG_INSERT_OAM_TAG, .pal_tag = BAG_INSERT_OAM_TAG,
     .oam = &bag_insert_bar_sprite, .graphics = NULL,
     .animation = bag_insert_bar_animations, .rotscale = oam_rotscale_anim_table_null,
@@ -356,8 +356,8 @@ static void bag_fadescreen_and_return() {
 }
 
 
-static u8 str_bag_item_count[] = PSTRING("×BUFFER_1");
-extern u8 bag_select_icon[];
+static const u8 str_bag_item_count[] = PSTRING("×BUFFER_1");
+extern const u8 bag_select_icon[];
 
 static void bag_list_menu_item_print_callback(u8 tbox_idx, int idx, u8 y) {
     u8 pocket = bag_get_current_pocket();

@@ -12,7 +12,7 @@ extern const u8 gfx_tileset_bluetenbach_gym_rotating_wallsTiles[];
 extern const u8 gfx_tileset_bluetenbach_gym_rotating_wallsPal[];
 
 typedef struct  {
-    map_footer_t *footer;
+    const map_footer_t *footer;
     s16 x;
     s16 y;
 } bluetenbach_gym_rotating_wall_t;

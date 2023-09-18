@@ -52,7 +52,7 @@ typedef struct {
  * @param battler_idx the idx of the battler
  * @return the mega evolution structure if any is possible
  **/
-mega_evolution_t *battler_get_available_mega_evolution(u8 battler_idx);
+const mega_evolution_t *battler_get_available_mega_evolution(u8 battler_idx);
 
 /** Gets the oam idx of a mega trigger that affects a certain battler.
  * @param battler_idx the battler to affect. If 4 is given, any mega trigger will be found.
@@ -92,6 +92,6 @@ u16 battler_get_keystone(u8 battler_idx);
  * @param species the species of the mega evolved pokemon
  * @return the mega evolution associated with the mega species or NULL
  **/
-mega_evolution_t *mega_evolution_get_by_mega_species(u16 species);
+const mega_evolution_t *mega_evolution_get_by_mega_species(u16 species);
 
 #endif

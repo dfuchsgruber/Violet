@@ -5,7 +5,7 @@
 #include "mega.h"
 
 u16 pokemon_get_display_number(u16 species) {
-    mega_evolution_t *mega_evolution = mega_evolution_get_by_mega_species(species);
+    const mega_evolution_t *mega_evolution = mega_evolution_get_by_mega_species(species);
 	if (mega_evolution)
 		return mega_evolution->species;
     u16 id = pokedex_get_id(species);

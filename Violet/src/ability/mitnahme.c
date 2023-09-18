@@ -7,7 +7,7 @@
 #include "battle/battlescript.h"
 #include "prng.h"
 
-u16 mitnahme_items[10][11] = {
+static const u16 mitnahme_items[10][11] = {
   //1, 1, 3, 3, 3, 3, 3, 3, 5, 10, 30 in %
     {ITEM_NUGGET, ITEM_HYPERTRANK, ITEM_HYPERBALL, ITEM_HYPERTRANK, ITEM_PARA_HEILER, ITEM_FLUCHTSEIL, ITEM_SCHUTZ, ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_GEGENGIFT, ITEM_TRANK},
     {ITEM_KING_STEIN, ITEM_NUGGET, ITEM_BELEBER, ITEM_HYPERBALL, ITEM_HYPERTRANK, ITEM_PARA_HEILER, ITEM_FLUCHTSEIL, ITEM_SCHUTZ, ITEM_SUPERBALL, ITEM_SUPERTRANK, ITEM_GEGENGIFT},
@@ -22,7 +22,7 @@ u16 mitnahme_items[10][11] = {
     
 };
 
-u16 *mitnahme_pick_item(pokemon *p){
+const u16 *mitnahme_pick_item(pokemon *p){
     int l = (pokemon_get_attribute(p, ATTRIBUTE_LEVEL, 0)-1) / 10;
     int r = rnd16() % 100;
     if(r < 1) return &mitnahme_items[l][0];

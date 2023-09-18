@@ -8,7 +8,7 @@
 #include "pokepad/pokepad2.h"
 #include "overworld/script.h"
 
-extern u8 ow_script_dungeon_exit[];
+extern const u8 ow_script_dungeon_exit[];
 
 static bool start_menu_leave_dungeon_initialize() {
     bool result = start_menu_close();
@@ -16,17 +16,17 @@ static bool start_menu_leave_dungeon_initialize() {
     return result;
 }
 
-static u8 str_pokepad[] = LANGDEP(PSTRING("Poképad"), PSTRING("Poképad"));
-static u8 str_pokemon[] = LANGDEP(PSTRING("Pokémon"), PSTRING("Pokémon"));
-static u8 str_bag[] = LANGDEP(PSTRING("Beutel"), PSTRING("Bag"));
-static u8 str_player[] = LANGDEP(PSTRING("PLAYER"), PSTRING("PLAYER"));
-static u8 str_save[] = LANGDEP(PSTRING("Sichern"), PSTRING("Save"));
-static u8 str_option[] = LANGDEP(PSTRING("Option."), PSTRING("Options"));
-static u8 str_exit[] = LANGDEP(PSTRING("Beenden"), PSTRING("Exit"));
-static u8 str_retire[] = LANGDEP(PSTRING("Schluss"), PSTRING("Retire"));
-static u8 str_leave[] = LANGDEP(PSTRING("Flucht"), PSTRING("Leave"));
+static const u8 str_pokepad[] = LANGDEP(PSTRING("Poképad"), PSTRING("Poképad"));
+static const u8 str_pokemon[] = LANGDEP(PSTRING("Pokémon"), PSTRING("Pokémon"));
+static const u8 str_bag[] = LANGDEP(PSTRING("Beutel"), PSTRING("Bag"));
+static const u8 str_player[] = LANGDEP(PSTRING("PLAYER"), PSTRING("PLAYER"));
+static const u8 str_save[] = LANGDEP(PSTRING("Sichern"), PSTRING("Save"));
+static const u8 str_option[] = LANGDEP(PSTRING("Option."), PSTRING("Options"));
+static const u8 str_exit[] = LANGDEP(PSTRING("Beenden"), PSTRING("Exit"));
+static const u8 str_retire[] = LANGDEP(PSTRING("Schluss"), PSTRING("Retire"));
+static const u8 str_leave[] = LANGDEP(PSTRING("Flucht"), PSTRING("Leave"));
 
-start_menu_item_t start_menu_items[NUM_START_MENU_ITEMS] = {
+const start_menu_item_t start_menu_items[NUM_START_MENU_ITEMS] = {
     [START_MENU_POKEPAD] = {
         .name = str_pokepad,
         .initialize = start_menu_pokepad_initialize,
@@ -69,52 +69,52 @@ start_menu_item_t start_menu_items[NUM_START_MENU_ITEMS] = {
     },
 };
 
-static u8 str_pokepad_description[] = LANGDEP(
+static const u8 str_pokepad_description[] = LANGDEP(
     PSTRING("Benutze verschiedene Apps, die auf dem\nPoképad installiert sind."),
     PSTRING("Use different apps that are installed\non the Poképad.")
 );
 
-static u8 str_pokemon_description[] = LANGDEP(
+static const u8 str_pokemon_description[] = LANGDEP(
     PSTRING("Überprüfe und organisiere die Pokémon,\ndie sich in deinem Team befinden."),
     PSTRING("Check and organize the Pokémon that are\nin your party.")
 );
 
-static u8 str_bag_description[] = LANGDEP(
+static const u8 str_bag_description[] = LANGDEP(
     PSTRING("Enthält Taschen für Items, die du gekauft,\nerhalten oder gefunden hast."),
     PSTRING("Has pockets for items you have bought,\nreceived or found.")
 );
 
-static u8 str_trainer_card_description[] = LANGDEP(
+static const u8 str_trainer_card_description[] = LANGDEP(
     PSTRING("Überprüfe Geldbestand und Spieldaten\nauf deinem Trainerpass."),
     PSTRING("Check money and game stats on your\ntrainer card.")
 );
 
-static u8 str_save_description[] = LANGDEP(
+static const u8 str_save_description[] = LANGDEP(
     PSTRING("Sichere deinen Spielfortschritt und\nmache eine Pause."),
     PSTRING("Save your game progress and take\na break.")
 );
 
-static u8 str_option_description[] = LANGDEP(
+static const u8 str_option_description[] = LANGDEP(
     PSTRING("Verändere Spieleinstellungen wie\nTexttempo, Regeln etc."),
     PSTRING("Change game settings like text speed\nrules etc.")
 );
 
-static u8 str_exit_description[] = LANGDEP(
+static const u8 str_exit_description[] = LANGDEP(
     PSTRING("Schließe dieses Menü."),
     PSTRING("Close this menu.")
 );
 
-static u8 str_retire_description[] = LANGDEP(
+static const u8 str_retire_description[] = LANGDEP(
     PSTRING("Beende das Safari-Spiel und kehre\nzum Eingang zurück."),
     PSTRING("Quit the safari game and return to\nthe entrance.")
 );
 
-static u8 str_leave_dungeon_description[] = LANGDEP(
+static const u8 str_leave_dungeon_description[] = LANGDEP(
     PSTRING("Verlasse das Areal und kehre zum\nEingang zurück."),
     PSTRING("Leave the area and return to the\nentrance.")
 );
 
-u8 *start_menu_item_descriptions[NUM_START_MENU_ITEMS] = {
+const u8 *const start_menu_item_descriptions[NUM_START_MENU_ITEMS] = {
     [START_MENU_POKEPAD] = str_pokepad_description,
     [START_MENU_POKEMON] = str_pokemon_description,
     [START_MENU_BAG] = str_bag_description,

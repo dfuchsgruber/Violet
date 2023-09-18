@@ -46,7 +46,7 @@ int incubator_available_slots();
  * @param egg the egg to get the progress of
  * @return the progress of the egg (value between 0 and 64, corresponding to 0% and 100%)
  */
-int incubator_egg_get_progress(box_pokemon *egg);
+int incubator_egg_get_progress(const box_pokemon *egg);
 
 /**
  * Removes an egg from the incubator.
@@ -132,24 +132,24 @@ void incubator_initialize(bool from_outdoor);
 // How many pixels the temperature can span maximally
 #define INCUBATOR_TEMPERATURE_PIXELS 98
 
-tboxdata incubator_tboxes[INCUBATOR_TBOX_CNT + 1];
+extern const tboxdata incubator_tboxes[INCUBATOR_TBOX_CNT + 1];
 
-extern u16 gfx_incubator_ui_0Tiles[];
-extern u16 gfx_incubator_ui_0Map[];
-extern u16 gfx_incubator_ui_0Pal[];
-extern u16 gfx_incubator_ui_boxTiles[];
-extern u16 gfx_incubator_ui_boxMap[];
-extern u16 gfx_incubator_ui_boxPal[];
-extern u16 gfx_incubator_ui_box_greyPal[];
-extern u16 gfx_incubator_ui_1Tiles[];
-extern u16 gfx_incubator_ui_1Map[];
-extern u16 gfx_incubator_ui_1Pal[];
-extern u16 gfx_incubator_progress_barTiles[];
-extern u16 gfx_incubator_progress_barPal[];
-extern u16 gfx_incubator_ui_glassTiles[];
-extern u16 gfx_incubator_ui_glassPal[];
-extern u16 gfx_incubator_ui_glassMap[];
-extern u16 gfx_incubator_selectionTiles[];
-extern u16 gfx_incubator_selectionPal[];
+extern const u16 gfx_incubator_ui_0Tiles[];
+extern const u16 gfx_incubator_ui_0Map[];
+extern const u16 gfx_incubator_ui_0Pal[];
+extern const u16 gfx_incubator_ui_boxTiles[];
+extern const u16 gfx_incubator_ui_boxMap[];
+extern const u16 gfx_incubator_ui_boxPal[];
+extern const u16 gfx_incubator_ui_box_greyPal[];
+extern const u16 gfx_incubator_ui_1Tiles[];
+extern const u16 gfx_incubator_ui_1Map[];
+extern const u16 gfx_incubator_ui_1Pal[];
+extern const u16 gfx_incubator_progress_barTiles[];
+extern const u16 gfx_incubator_progress_barPal[];
+extern const u16 gfx_incubator_ui_glassTiles[];
+extern const u16 gfx_incubator_ui_glassPal[];
+extern const u16 gfx_incubator_ui_glassMap[];
+extern const u16 gfx_incubator_selectionTiles[];
+extern const u16 gfx_incubator_selectionPal[];
 
 #endif /* INCLUDE_C_POKEPAD_INCUBATOR_H_ */

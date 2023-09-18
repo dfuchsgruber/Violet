@@ -13,16 +13,16 @@
 #include "list_menu.h"
 #include "agbmemory.h"
 
-static u8 str_success[] = LANGDEP(
+static const u8 str_success[] = LANGDEP(
     PSTRING("Die Fähigkeit von BUFFER_2\nwurde zu BUFFER_1.PAUSE_UNTIL_PRESS"), 
     PSTRING("The ability of BUFFER_2\nwas changed to BUFFER_1.PAUSE_UNTIL_PRESS")
 );
-static u8 str_ask_change_ability[] = LANGDEP(
+static const u8 str_ask_change_ability[] = LANGDEP(
     PSTRING("Die Fähigkeit von BUFFER_2\nzu BUFFER_1 ändern?"),
     PSTRING("Change BUFFER_2's\nability to BUFFER_1?")
 );
 
-static tboxdata tboxdata_ability_description = {
+static const tboxdata tboxdata_ability_description = {
     .bg_id = 2, .x = 1, .y = 1, .w = 28, .h = 4, .pal = 15, .start_tile = 0x2BF + 6 * 4
 };
 

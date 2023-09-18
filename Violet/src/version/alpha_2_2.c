@@ -31,7 +31,7 @@ void version_alpha_2_2_fix_pid(box_pokemon *target) {
 	box_pokemon_set_attribute(target, ATTRIBUTE_PID, &p);
 }
 
-u16 pokedex_order_old[POKEMON_CNT - 1] = {
+const u16 pokedex_order_old[POKEMON_CNT - 1] = {
     // POKEMON_BISASAM
     0x1,
     // POKEMON_BISAKNOSP

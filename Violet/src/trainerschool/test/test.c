@@ -27,13 +27,13 @@
 
 #define TEST_TIME (60 * 60) // 1 minutes?
 
-bg_config trainerschool_test_bg_configs[3] = {
+const bg_config trainerschool_test_bg_configs[3] = {
     {0, 2, 31, 0, 0, 1}, //text on bg0
     {1, 1, 30, 0, 0, 0}, //bg1 is above bg0 to show paper sliding
     {2, 0, 29, 0, 0, 2}
 };
 
-tboxdata trainerschool_test_tboxes [] = {
+const tboxdata trainerschool_test_tboxes [] = {
     {0, 8, 1, 12, 8, 0, 1}, //0 := question
     {0, 9, 10, 14, 2, 0, 97}, //1 + x = answer x
     {0, 9, 12, 14, 2, 0, 125},
@@ -58,64 +58,64 @@ extern const short gfx_trainerschool_wrongTiles[];
 extern const u8 gfx_trainerschool_clockTiles[];
 extern const short gfx_trainerschool_clockPal[];
 
-static tbox_font_colormap trainerschool_test_fontcolmap_std = {
+static const tbox_font_colormap trainerschool_test_fontcolmap_std = {
     0, 6, 7, 3
 };
 
-static graphic trainerschool_test_graphic_correct = {
+static const graphic trainerschool_test_graphic_correct = {
     &gfx_trainerschool_correctTiles,
     0x800,
     0xA0E0
 };
 
-static graphic trainerschool_test_graphic_wrong = {
+static const graphic trainerschool_test_graphic_wrong = {
     &gfx_trainerschool_wrongTiles,
     0x800,
     0xA0E1
 };
 
 /**
-static graphic trainerschool_graphic_clock = {
+static const graphic trainerschool_graphic_clock = {
     &gfx_trainerschool_clockTiles,
     GRAPHIC_SIZE_4BPP(32, 512),
     0xA0E2,
 };
 **/
 
-static sprite trainerschool_test_sprite = {
+static const sprite trainerschool_test_sprite = {
     .attr0 = ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE | ATTR0_DSIZE, 
     .attr1 = ATTR1_SIZE_64_64, 
     .attr2 = ATTR2_PRIO(0),
 };
 
-static sprite trainerschool_clock_sprite = {
+static const sprite trainerschool_clock_sprite = {
     .attr0 = ATTR0_SHAPE_VERTICAL | ATTR0_ROTSCALE | ATTR0_DSIZE, 
     .attr1 = ATTR1_SIZE_32_64, 
     .attr2 = ATTR2_PRIO(0), 
 };
 
 
-static rotscale_frame trainerschool_test_rotscal_anim[] = {
+static const rotscale_frame trainerschool_test_rotscal_anim[] = {
     {.affine = {0x200, 0x200, 0, 0, 0}}, {.affine = {-36, -36, 0, 12, 0}},
     {.command = {ROTSCALE_ANIM_END, 0, 0, 0}}
 };
 
 /**
-static gfx_frame trainerschool_clock_gfx_animation[] = {
+static const gfx_frame trainerschool_clock_gfx_animation[] = {
     {.data = 0, .duration = 0}, {.data = 0, .duration = 8}, {.data = 32, .duration = 8}, {.data = GFX_ANIM_JUMP, .duration = 1},
     {.data = 64, .duration = 0}, {.data = 64, .duration = 8}, {.data = 96, .duration = 8}, {.data = GFX_ANIM_JUMP, .duration = 5},
     {.data = 128, .duration = 0}, {.data = 128, .duration = 8}, {.data = 160, .duration = 8}, {.data = GFX_ANIM_JUMP, .duration = 9},
     {.data = 192, .duration = 0}, {.data = 192, .duration = 8}, {.data = 224, .duration = 8}, {.data = GFX_ANIM_JUMP, .duration = 13},
 };
 **/
-static gfx_frame trainerschool_clock_gfx_animation[] = {
+static const gfx_frame trainerschool_clock_gfx_animation[] = {
     {.data = 0, .duration = 0}, {.data = 0, .duration = 8}, {.data = 1, .duration = 8}, {.data = GFX_ANIM_JUMP, .duration = 0},
     {.data = 2, .duration = 0}, {.data = 2, .duration = 8}, {.data = 3, .duration = 8}, {.data = GFX_ANIM_JUMP, .duration = 0},
     {.data = 4, .duration = 0}, {.data = 4, .duration = 8}, {.data = 5, .duration = 8}, {.data = GFX_ANIM_JUMP, .duration = 0},
     {.data = 6, .duration = 0}, {.data = 6, .duration = 8}, {.data = 7, .duration = 8}, {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
-static graphic trainerschool_clock_gfx_table[] = {
+static const graphic trainerschool_clock_gfx_table[] = {
     {gfx_trainerschool_clockTiles + 0 * GRAPHIC_SIZE_4BPP(32, 64), .size = GRAPHIC_SIZE_4BPP(32, 64)},
     {gfx_trainerschool_clockTiles + 1 * GRAPHIC_SIZE_4BPP(32, 64), .size = GRAPHIC_SIZE_4BPP(32, 64)},
     {gfx_trainerschool_clockTiles + 2 * GRAPHIC_SIZE_4BPP(32, 64), .size = GRAPHIC_SIZE_4BPP(32, 64)},
@@ -126,12 +126,12 @@ static graphic trainerschool_clock_gfx_table[] = {
     {gfx_trainerschool_clockTiles + 7 * GRAPHIC_SIZE_4BPP(32, 64), .size = GRAPHIC_SIZE_4BPP(32, 64)},
 };
 
-static gfx_frame *trainerschool_clock_gfx_animations[] = {
+static const gfx_frame *const trainerschool_clock_gfx_animations[] = {
     trainerschool_clock_gfx_animation + 0, trainerschool_clock_gfx_animation + 4, trainerschool_clock_gfx_animation + 8,
     trainerschool_clock_gfx_animation + 12,
 };
 
-static rotscale_frame trainerschool_clock_rotscale_animation[] = {
+static const rotscale_frame trainerschool_clock_rotscale_animation[] = {
     {.affine = {0x100, 0x100, 0, 0, 0}},
     {.affine = {0, 0, 1, 3, 0}},
     {.affine = {0, 0, 0, 24, 0}},
@@ -141,11 +141,11 @@ static rotscale_frame trainerschool_clock_rotscale_animation[] = {
     {.command = {ROTSCALE_ANIM_JUMP, 1, 0, 0}}
 };
 
-static rotscale_frame *trainerschool_test_rotscale_table[] = {trainerschool_test_rotscal_anim};
-static rotscale_frame *trainerschool_clock_rotscale_animations[] = {trainerschool_clock_rotscale_animation};
+static const rotscale_frame *const trainerschool_test_rotscale_table[] = {trainerschool_test_rotscal_anim};
+static const rotscale_frame *const trainerschool_clock_rotscale_animations[] = {trainerschool_clock_rotscale_animation};
 
 
-static oam_template trainerschool_test_oam_template_correct = {
+static const oam_template trainerschool_test_oam_template_correct = {
     0xA0E0, 0xA0E0,
     &trainerschool_test_sprite,
     oam_gfx_anim_table_null,
@@ -154,7 +154,7 @@ static oam_template trainerschool_test_oam_template_correct = {
     oam_null_callback,
 };
 
-static oam_template trainerschool_test_oam_template_wrong = {
+static const oam_template trainerschool_test_oam_template_wrong = {
     0xA0E1, 0xA0E0,
     &trainerschool_test_sprite,
     oam_gfx_anim_table_null,
@@ -189,7 +189,7 @@ static void trainerschool_clock_callback(oam_object *self) {
     }
 }
 
-static oam_template trainerschool_test_oam_template_clock = {
+static const oam_template trainerschool_test_oam_template_clock = {
     0xFFFF, 0xA0E2,
     &trainerschool_clock_sprite,
     trainerschool_clock_gfx_animations,
@@ -198,8 +198,8 @@ static oam_template trainerschool_test_oam_template_clock = {
     trainerschool_clock_callback,
 };
 
-u8 str_trainerschool_test_list[] = PSTRING("-");
-u8 str_trainerschool_test_cursor[] = PSTRING("▶");
+const u8 str_trainerschool_test_list[] = PSTRING("-");
+const u8 str_trainerschool_test_cursor[] = PSTRING("▶");
 
 void trainerschool_test_load_answers(){
     u8 question = TRAINER_SCHOOL_TEST_STATE->current_question;

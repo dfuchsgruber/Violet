@@ -71,7 +71,7 @@ static void weather_snow_oam_callback_wait(oam_object *self) {
     }
 }
 
-static oam_template weather_snow_oam_template = {
+static const oam_template weather_snow_oam_template = {
     .tiles_tag = 0xFFFF, .pal_tag = 0x1200,
     .oam = &overworld_weather_snow_sprite,
     .animation = overworld_weather_snow_animations,

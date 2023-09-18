@@ -39,14 +39,14 @@ extern const unsigned short gfx_pokedex_bottom_1Pal[];
 extern const unsigned short gfx_pokedex_bottom_0Pal[];
 
 
-bg_config pokedex_bg_main_configs [] = {
+const bg_config pokedex_bg_main_configs [] = {
     {0, 2, 31, 0, 0, 0},
     {1, 0, 30, 0, 0, 1},
     {2, 1, 29, 0, 0, 2},
     {3, 1, 28, 0, 0, 2}
 };
 
-tboxdata pokedex_main_tboxes [] = {
+const tboxdata pokedex_main_tboxes [] = {
     {0, 11, 0, 3, 2, 15, 1}, //tbox seen
     {0, 11, 2, 3, 2, 15, 7}, //tbox caught
     {0, 14, 5, 8, 14, 15, 13}, //tbox list
@@ -60,33 +60,33 @@ tboxdata pokedex_main_tboxes [] = {
 };
 
 
-sprite pokedex_cursor_sprite = {
+const sprite pokedex_cursor_sprite = {
     0, 0x8000, 0, 0
 };
 
-gfx_frame pokedex_cursor_gfx_anim_idle[] = {
+const gfx_frame pokedex_cursor_gfx_anim_idle[] = {
     {0, 0},
     {0xFFFF, 0}
 };
 
-gfx_frame pokedex_cursor_gfx_anim_active[] = {
+const gfx_frame pokedex_cursor_gfx_anim_active[] = {
     {0, 32},
     {16, 32},
     {0xFFFE, 0}
 };
 
-gfx_frame *pokedex_cursor_anims[] = {
+const gfx_frame *const pokedex_cursor_anims[] = {
     pokedex_cursor_gfx_anim_idle,
     pokedex_cursor_gfx_anim_active
 };
 
-graphic pokedex_cursor_graphic = {
+const graphic pokedex_cursor_graphic = {
     &gfx_pokedex_sort_cursorTiles,
     0x400,
     0xA013
 };
 
-oam_template pokedex_cursor_template = {
+const oam_template pokedex_cursor_template = {
     0xA013,
     0xA013,
     &pokedex_cursor_sprite,
@@ -96,12 +96,12 @@ oam_template pokedex_cursor_template = {
     oam_null_callback
 };
 
-tbox_font_colormap pokedex_fontcolmap = {0, 2, 1, 0};
-tbox_font_colormap pokedex_features_active_fontcolmap = {0, 15, 13, 1};
-tbox_font_colormap pokedex_features_fontcolmap = {0, 10, 13, 1};
+const tbox_font_colormap pokedex_fontcolmap = {0, 2, 1, 0};
+const tbox_font_colormap pokedex_features_active_fontcolmap = {0, 15, 13, 1};
+const tbox_font_colormap pokedex_features_fontcolmap = {0, 10, 13, 1};
 
-u16 pokedex_colors[16] = {0, 0x2927, 0x7FFF, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-u16 pokedex_colors_nr[16] = {0, 0x7FFF, 0x2927, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+const u16 pokedex_colors[16] = {0, 0x2927, 0x7FFF, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+const u16 pokedex_colors_nr[16] = {0, 0x7FFF, 0x2927, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 int pokedex_get_first_seen() {
     pokedex_list_element *list = fmem.dex_mem->list;
@@ -179,7 +179,7 @@ void pokedex_draw_feature_strings(){
     }
 }
 
-u16 feature_flags[] = {
+const u16 feature_flags[] = {
     POKEDEX_FEATURE_0,
     POKEDEX_FEATURE_1,
     POKEDEX_FEATURE_2

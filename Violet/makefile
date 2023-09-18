@@ -30,7 +30,7 @@ MIDFLAGEXTENSION=.flags
 MIDDEFAULTFLAGS=default$(MIDFLAGEXTENSION)
 MIDFLAGDEFAULTFILES=$(shell find -type f -name '$(MIDDEFAULTFLAGS)')
 CFLAGS=-c -std=c99 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -fno-builtin -mlong-calls -march=armv4t -Wall -Werror -Wno-builtin-declaration-mismatch -Wextra -Wconversion -O2 -Iinclude/c/ -D$(LANGUAGE)
-LDFLAGS=-z muldefs -Ilibm
+LDFLAGS=-n -N -z nodefaultlib
 GRITFLAGS=-fh! -ftc
 GRITEXTENSION=.grit
 GRITDEFAULTS=default$(GRITEXTENSION)
@@ -56,7 +56,6 @@ PSG_DATA ?= psg_data.raw
 GOLDENSUN_SYNTH ?= goldensun_synth.raw
 
 rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))#
-
 
 ASSRC1:= $(call rwildcard,src/,*.asm)
 ASSRC2:= $(call rwildcard,src/,*.s)

@@ -82,7 +82,7 @@ void bsc_cmd_callasm(){
     function();
 }
 
-int string_count_unown_letters(u8 *str, int unown_letter) {
+int string_count_unown_letters(const u8 *str, int unown_letter) {
     int matches = 0;
     for (int i = 0; str[i] != 0xFF; i++) {
         switch (unown_letter) {
@@ -663,8 +663,8 @@ void bsc_command_x06_typecalc_scan_effectiveness_table(u8 move_type) {
     }
 }
 
-extern u8 battlescript_gem_used[];
-extern u8 battlescript_weakened_by_berry[];
+extern const u8 battlescript_gem_used[];
+extern const u8 battlescript_weakened_by_berry[];
 
 static inline void apply_random_damage_multiplier() {
     if (damage_to_apply != 0) {
@@ -674,7 +674,7 @@ static inline void apply_random_damage_multiplier() {
     }
 }
 
-extern u8 bsc_battler_hung_on_with_sturdy[];
+extern const u8 bsc_battler_hung_on_with_sturdy[];
 
 void battlescript_jump_to_sturdy_script_if_set() {
     DEBUG("Decide which sturdy script to take %d\n", battler_damage_taken[defending_battler].used_sturdy);
@@ -753,7 +753,7 @@ void bsc_command_x69_adjustsetdamage() {
     adjustnormaldamage(true, false);
 }
 
-extern u8 bsc_sturdy_prevents_ohko[];
+extern const u8 bsc_sturdy_prevents_ohko[];
 
 void bsc_command_x93_setohkodamage(void) {
     u8 hold_effect, hold_effect_param;
@@ -851,7 +851,7 @@ static void bsc_backup_attacking_battler() {
 }
 
 
-static void (*bsc_multibyte_commands[])() = {
+static void (*const bsc_multibyte_commands[])() = {
     [0] = bsc_jump_if_item_effect,
     [1] = bsc_try_set_perishsong_no_attack,
     [2] = bsc_backup_attacking_battler,

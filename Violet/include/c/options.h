@@ -6,24 +6,24 @@
 #include "list_menu.h"
 
 #define TWO_OPTIONS_STRINGS(symbol, name, first_option_name, first_option_description, second_option_name, second_option_description) \
-    static u8 str_option_##symbol##_name[] = name; \
-    static u8 str_option_##symbol##_option0_name[] = first_option_name; \
-    static u8 str_option_##symbol##_option0_description[] = first_option_description; \
-    static u8 str_option_##symbol##_option1_name[] = second_option_name; \
-    static u8 str_option_##symbol##_option1_description[] = second_option_description; \
-    static u8 *option_##symbol##_names[2] = {[0] = str_option_##symbol##_option0_name, [1] = str_option_##symbol##_option1_name }; \
-    static u8 *option_##symbol##_descriptions[2] = {[0] = str_option_##symbol##_option0_description, [1] = str_option_##symbol##_option1_description };
+    static const u8 str_option_##symbol##_name[] = name; \
+    static const u8 str_option_##symbol##_option0_name[] = first_option_name; \
+    static const u8 str_option_##symbol##_option0_description[] = first_option_description; \
+    static const u8 str_option_##symbol##_option1_name[] = second_option_name; \
+    static const u8 str_option_##symbol##_option1_description[] = second_option_description; \
+    static const u8 *const option_##symbol##_names[2] = {[0] = str_option_##symbol##_option0_name, [1] = str_option_##symbol##_option1_name }; \
+    static const u8 *const option_##symbol##_descriptions[2] = {[0] = str_option_##symbol##_option0_description, [1] = str_option_##symbol##_option1_description };
 
 #define THREE_OPTIONS_STRINGS(symbol, name, first_option_name, first_option_description, second_option_name, second_option_description, third_option_name, third_option_description) \
-    static u8 str_option_##symbol##_name[] = name; \
-    static u8 str_option_##symbol##_option0_name[] = first_option_name; \
-    static u8 str_option_##symbol##_option0_description[] = first_option_description; \
-    static u8 str_option_##symbol##_option1_name[] = second_option_name; \
-    static u8 str_option_##symbol##_option1_description[] = second_option_description; \
-    static u8 str_option_##symbol##_option2_name[] = third_option_name; \
-    static u8 str_option_##symbol##_option2_description[] = third_option_description; \
-    static u8 *option_##symbol##_names[3] = {[0] = str_option_##symbol##_option0_name, [1] = str_option_##symbol##_option1_name, [2] = str_option_##symbol##_option2_name }; \
-    static u8 *option_##symbol##_descriptions[3] = {[0] = str_option_##symbol##_option0_description, [1] = str_option_##symbol##_option1_description, [2] = str_option_##symbol##_option2_description };
+    static const u8 str_option_##symbol##_name[] = name; \
+    static const u8 str_option_##symbol##_option0_name[] = first_option_name; \
+    static const u8 str_option_##symbol##_option0_description[] = first_option_description; \
+    static const u8 str_option_##symbol##_option1_name[] = second_option_name; \
+    static const u8 str_option_##symbol##_option1_description[] = second_option_description; \
+    static const u8 str_option_##symbol##_option2_name[] = third_option_name; \
+    static const u8 str_option_##symbol##_option2_description[] = third_option_description; \
+    static const u8 *const option_##symbol##_names[3] = {[0] = str_option_##symbol##_option0_name, [1] = str_option_##symbol##_option1_name, [2] = str_option_##symbol##_option2_name }; \
+    static const u8 *const option_##symbol##_descriptions[3] = {[0] = str_option_##symbol##_option0_description, [1] = str_option_##symbol##_option1_description, [2] = str_option_##symbol##_option2_description };
 
 enum {
     OPTION_FRAME_STYLE = 0,
@@ -55,20 +55,20 @@ enum {
 };
 
 typedef struct {
-    u8 *name;
+    const u8 *name;
     u8 num_options;
     bool (*available)();
     void (*setter)(int);
     int (*getter)();
-    u8 **options;
-    u8 **option_descriptions;
+    const u8 *const *const options;
+    const u8 *const *const option_descriptions;
 } option_t;
 
-option_t options[NUM_OPTIONS];
+extern const option_t options[NUM_OPTIONS];
 
-extern u8 gfx_options_uiTiles[];
-extern u8 gfx_options_uiMap[];
-extern u8 gfx_options_uiPal[];
+extern const u8 gfx_options_uiTiles[];
+extern const u8 gfx_options_uiMap[];
+extern const u8 gfx_options_uiPal[];
 
 #define OPTIONS_STATE ((options_state_t*)fmem.gp_state)
 

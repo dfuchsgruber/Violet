@@ -49,7 +49,7 @@ static u16 fishing_rng_shining_bait() {
     return (u16)(r % (16 - MIN(save_get_key(SAV_KEY_FISHING_ENCOUNTERS), 8)));
 }
 
-u16 fishing_create_pokemon(wild_pokemon_habitat *habitat, u8 rod_type) {
+u16 fishing_create_pokemon(const wild_pokemon_habitat *habitat, u8 rod_type) {
     int idx = wildbattle_sample_from_rod_pdf(rod_type);
     u8 level = wildbattle_sample_level(habitat->data + idx);
     u16 species = habitat->data[idx].species;
@@ -103,7 +103,7 @@ void fishing_big_callback_bait(u8 self) {
     big_callbacks[self].function = fishing_big_callback_wait_bait_selection;
 }
 
-static u8 str_no_bait[] = LANGDEP(PSTRING("Kein Köder"), LANGDEP("No bait"));
+static const u8 str_no_bait[] = LANGDEP(PSTRING("Kein Köder"), LANGDEP("No bait"));
 
 static u16 fishing_build_selection_list(list_menu_item *list) {
     u16 num_displayed = 0;

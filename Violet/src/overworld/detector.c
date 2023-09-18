@@ -14,18 +14,18 @@
 #include "options.h"
 #include "math.h"
 
-static sprite static_detector_arrow_sprite = {
+static const sprite static_detector_arrow_sprite = {
     .attr0 = ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE | ATTR0_DSIZE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(1),
 };
 
-static rotscale_frame static_detector_rs_anim[] = {
+static const rotscale_frame static_detector_rs_anim[] = {
     {.affine = {.affine_x_value = 0x100, .affine_y_value = 0x100, .duration = 0}},
     {.command = {.command = ROTSCALE_ANIM_END}}
 }; 
 
-static rotscale_frame *static_detector_rs_anims[] = {static_detector_rs_anim};
+static const rotscale_frame *const static_detector_rs_anims[] = {static_detector_rs_anim};
 
-static graphic static_detector_graphics[] = {
+static const graphic static_detector_graphics[] = {
     {.sprite = gfx_item_finder_arrow_staticTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
     {.sprite = gfx_item_finder_arrow_staticTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
     {.sprite = gfx_item_finder_arrow_staticTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
@@ -37,7 +37,7 @@ static graphic static_detector_graphics[] = {
     {.sprite = gfx_item_finder_arrow_staticTiles + 8 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
 };
 
-static gfx_frame static_detector_frames[][2] = {
+static const gfx_frame static_detector_frames[][2] = {
     {{.data = 0, .duration = 0}, {.data = GFX_ANIM_END}},
     {{.data = 1, .duration = 0}, {.data = GFX_ANIM_END}},
     {{.data = 2, .duration = 0}, {.data = GFX_ANIM_END}},
@@ -49,7 +49,7 @@ static gfx_frame static_detector_frames[][2] = {
     {{.data = 8, .duration = 0}, {.data = GFX_ANIM_END}},
 };
 
-static gfx_frame *static_detector_animations[] = {
+static const gfx_frame *const static_detector_animations[] = {
     static_detector_frames[0],
     static_detector_frames[1],
     static_detector_frames[2],
@@ -101,11 +101,11 @@ static void static_detector_arrow_callback(oam_object *self) {
     }
 }
 
-static palette static_detector_arrow_palette = {
+static const palette static_detector_arrow_palette = {
     .pal = gfx_item_finder_arrow_staticPal, .tag = ITEM_FINDER_STATIC_TAG,
 };
 
-static oam_template static_detector_arrow_template = {
+static const oam_template static_detector_arrow_template = {
     .tiles_tag = 0xFFFF, .pal_tag = ITEM_FINDER_STATIC_TAG, .oam = &static_detector_arrow_sprite, .graphics = static_detector_graphics,
     .animation = static_detector_animations, .rotscale = static_detector_rs_anims, .callback = static_detector_arrow_callback,
 };

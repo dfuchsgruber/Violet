@@ -30,9 +30,9 @@ typedef struct {
     u8 map_idx;
 } roamer_history_entry_t;
 
-extern roamer_history_entry_t cloud_maps[];
+extern const roamer_history_entry_t cloud_maps[];
 
-u16 roamer_species[NUM_ROAMERS];
+extern const u16 roamer_species[NUM_ROAMERS];
 
 /**
  * Gets the index of a random cloud map to spawn a roamer on.

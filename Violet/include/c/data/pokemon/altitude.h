@@ -4,7 +4,7 @@
 #include "types.h"
 #include "constants/species.h"
 
-u8 pokemon_altitude[POKEMON_CNT] = {
+const u8 pokemon_altitude[POKEMON_CNT] = {
     [POKEMON_POKEMON_0] = 0,
     [POKEMON_BISASAM] = 0,
     [POKEMON_BISAKNOSP] = 0,

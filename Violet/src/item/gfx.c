@@ -2,7 +2,7 @@
 #include "item/item.h"
 #include "item/gfx.h" 
 
-static item_gfx_pair item_gfx_pairs[] = {
+static const item_gfx_pair item_gfx_pairs[] = {
     [ITEM_NONE] = { .gfx = gfx_item_noneTiles, .pal = gfx_item_nonePal },
     [ITEM_MEISTERBALL] = { .gfx = gfx_item_meisterballTiles, .pal = gfx_item_meisterballPal },
     [ITEM_HYPERBALL] = { .gfx = gfx_item_hyperballTiles, .pal = gfx_item_hyperballPal },

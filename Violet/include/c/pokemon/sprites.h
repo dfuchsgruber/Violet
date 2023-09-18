@@ -12,7 +12,7 @@
 #include "pokemon/count.h"
 #include "oam.h"
 
-extern sprite_coordinates_t trainer_sprite_coordinates[];
+extern const sprite_coordinates_t trainer_sprite_coordinates[];
 
 /**
  * Loads the gfx of a trainer (graphic and palette) into the pokemon buffer of a battler's position.
@@ -28,7 +28,7 @@ void trainer_gfx_load(u16 sprite_idx, u8 battler_idx);
  * @param species the species to load
  * @param pid the pid of the pokemon (for Unown, Spinda)
  */
-void pokemon_load_gfx_by_graphic(graphic *g, void *dst, u16 species, pid_t pid);
+void pokemon_load_gfx_by_graphic(const graphic *g, void *dst, u16 species, pid_t pid);
 
 
 /**
@@ -38,7 +38,7 @@ void pokemon_load_gfx_by_graphic(graphic *g, void *dst, u16 species, pid_t pid);
  * @param dst where the gfx is located (uncompressed)
  * @param load_frontsprite if a frontsprite is loaded
  **/
-void pokemon_spinda_draw_pattern(u16 species,pid_t pid, void *dst,bool load_frontsprite);
+void pokemon_spinda_draw_pattern(u16 species, pid_t pid, void *dst,bool load_frontsprite);
 
 /**
  * Creates an oam with the sprite of a pokemon.
@@ -54,7 +54,7 @@ u8 pokemon_oam_new(u16 species, s16 x, s16 y);
  * @param p the pokemon to retrieve the palette of
  * @return pointer to the palette structure
  */
-palette *pokemon_get_palette(pokemon *p);
+const palette *pokemon_get_palette(const pokemon *p);
 
 // Make this thing round correctly, therefore add 8 / 2 = 4
 #define POKEMON_COORDINATE_SIZE(x) (((x) + 4) >> 3)
@@ -67,16 +67,16 @@ typedef struct {
     u8 field3;
 } pokemon_coordinate_t;
 
-graphic pokemon_frontsprites[POKEMON_CNT];
-graphic pokemon_backsprites[POKEMON_CNT];
-palette pokemon_pals[POKEMON_CNT];
-palette pokemon_shiny_pals[POKEMON_CNT];
-u8 pokemon_icon_usage[POKEMON_CNT];
-const void *pokemon_icons[POKEMON_CNT];
+extern const graphic pokemon_frontsprites[POKEMON_CNT];
+extern const graphic pokemon_backsprites[POKEMON_CNT];
+extern const palette pokemon_pals[POKEMON_CNT];
+extern const palette pokemon_shiny_pals[POKEMON_CNT];
+extern const u8 pokemon_icon_usage[POKEMON_CNT];
+extern const void *const pokemon_icons[POKEMON_CNT];
 
-pokemon_coordinate_t pokemon_player_y[POKEMON_CNT];
-pokemon_coordinate_t pokemon_enemy_y[POKEMON_CNT];
-u8 pokemon_altitude[POKEMON_CNT];
-u16 icon_pals[3][16];
+extern const pokemon_coordinate_t pokemon_player_y[POKEMON_CNT];
+extern const pokemon_coordinate_t pokemon_enemy_y[POKEMON_CNT];
+extern const u8 pokemon_altitude[POKEMON_CNT];
+extern const u16 icon_pals[3][16];
 
 #endif /* INCLUDE_C_POKEMON_SPRITES_H_ */

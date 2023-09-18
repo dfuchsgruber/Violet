@@ -28,7 +28,7 @@ struct list_menu;
 typedef struct list_menu list_menu;
 
 typedef struct {
-  list_menu_item *items;
+  const list_menu_item *items;
   void (*cursor_moved_callback)(int idx, u8 on_initialize, list_menu *list);
   void (*item_print_callback)(u8 tbox_idx, int idx, u8 y);
   u16 item_cnt;
@@ -143,7 +143,7 @@ void list_menu_print(u8 callback_idx);
  * @param pal the palette of the border frame
  * @param border_base_tile where to initially place the cursor
  **/
-void gp_list_menu_yes_no_new(tboxdata *tbox, u8 font, u8 x, u8 y, u16 border_base_tile, u8 pal, u8 initial_cursor_position);
+void gp_list_menu_yes_no_new(const tboxdata *tbox, u8 font, u8 x, u8 y, u16 border_base_tile, u8 pal, u8 initial_cursor_position);
 
 typedef struct {
   void (*yes_callback)(u8);
@@ -162,7 +162,7 @@ typedef struct {
  * @param frame_pal in which pal to print the box
  * @param callbacks the callbacks to execute on yes / no press
  */
-void gp_list_menu_yes_no_new_with_callbacks(u8 cb_idx, tboxdata *tbox, u8 font, u8 x, u8 y, u16 frame_base_tile, u8 frame_pal, yes_no_box_callbacks_t *callbacks);
+void gp_list_menu_yes_no_new_with_callbacks(u8 cb_idx, const tboxdata *tbox, u8 font, u8 x, u8 y, u16 frame_base_tile, u8 frame_pal, const yes_no_box_callbacks_t *callbacks);
 
 /**
  * @brief Gets the y coordinate (in pixels) of the cursor of a list menu

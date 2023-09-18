@@ -18,10 +18,10 @@
 #include "constants/mugshot_character.h"
 #include "bg.h"
 
-sprite mugshot_sprite = {0, 0xC000,  ATTR2_PRIO(1), 0};
-sprite mugshot_sprite_prio0 = {0, 0xC000, ATTR2_PRIO(0), 0};
+const sprite mugshot_sprite = {0, 0xC000,  ATTR2_PRIO(1), 0};
+const sprite mugshot_sprite_prio0 = {0, 0xC000, ATTR2_PRIO(0), 0};
 
-mugshot mugshots[] = {
+const mugshot mugshots[] = {
     [MUGSHOT_RIN] = {{
 			[MUGSHOT_NORMAL] = gfx_mug_rinTiles,
 			[MUGSHOT_SHOCKED] = gfx_mug_rin_shockedTiles, 
@@ -325,7 +325,7 @@ void mugshot_create_oam(int side, int idx, int emotion) {
 	fmem.mugshot_active = 1;
 }
 
-void mugshot_create_text(int side, u8 *text) {
+void mugshot_create_text(int side, const u8 *text) {
 	string_decrypt(strbuf, text);
 	u8 width = string_get_width(2, strbuf, 0);
 	if(transparency_is_on()){
@@ -418,7 +418,7 @@ void mugshot_delete_oam(u8 self) {
 	switch(*state) {
 		case 0: {
 			u8 oam_id = (u8)big_callbacks[self].params[0];
-			free(oams[oam_id].oam_template->graphics);
+			free((oams[oam_id].oam_template->graphics));
 			free(oams[oam_id].oam_template);
 			oam_free(&oams[oam_id]);
 			++*state;
@@ -472,7 +472,7 @@ void special_show_name() {
 	}
 
 	// Show the text
-	u8 *text = overworld_script_state.pointer_banks[0];
+	const u8 *text = overworld_script_state.pointer_banks[0];
 	int side = *var_access(0x8000);
 	mugshot_create_text(side, text);
 }

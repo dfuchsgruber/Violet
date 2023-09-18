@@ -17,7 +17,7 @@
 #include "pokemon/cry.h"
 
 // Just copy the player's battle controller essentially...
-void (*battle_controller_partner[BATTLE_CONTROLLER_COMMAND_CNT])() = {
+void (*const battle_controller_partner[BATTLE_CONTROLLER_COMMAND_CNT])() = {
     [0x0] = (void (*)(void))0x8030a91,
     [0x1] = (void (*)(void))0x80312b1,
     [0x2] = (void (*)(void))0x8031339,

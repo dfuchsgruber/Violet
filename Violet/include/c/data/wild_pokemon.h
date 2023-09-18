@@ -3787,7 +3787,7 @@ static wild_pokemon_habitat wild_pokemon_route_3_clouds_fairy_other = {
 };
 
 
-wild_pokemon_data wild_pokemon[] = {
+const wild_pokemon_data wild_pokemon[] = {
   {
 		.bank = 3, .map = 0,
 		.grass = NULL,

@@ -110,7 +110,7 @@ static void bag_moving_item_handle_input(u8 self) {
 }
 
 
-static u8 str_where_should_item_be_moved[] = LANGDEP(PSTRING("Wohin\nverschieben?"), PSTRING("Move to\nwhere?"));
+static const u8 str_where_should_item_be_moved[] = LANGDEP(PSTRING("Wohin\nverschieben?"), PSTRING("Move to\nwhere?"));
 
 void bag_start_moving_item(u8 cb_idx, u16 position) {
     DEBUG("Start moving item in bag\n");

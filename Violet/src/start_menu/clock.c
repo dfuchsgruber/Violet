@@ -15,17 +15,17 @@
 #include "gp_menu.h"
 
 
-static tboxdata start_menu_clock_tboxdata = {
+static const tboxdata start_menu_clock_tboxdata = {
     .bg_id = 0, .x = 1, .y = 1, .w = 6, .h = 4, .pal = 14, .start_tile = 8 
 };
 
-static u8 start_menu_clock_text[] = LANGDEP(
+static const u8 start_menu_clock_text[] = LANGDEP(
     PSTRING("Uhrzeit"), PSTRING("Time")
 );
 
-static u8 start_menu_clock_colon[] = PSTRING(":");
+static const u8 start_menu_clock_colon[] = PSTRING(":");
 
-static u16 clock_digit_x_positions[4] = {2, 11, 27, 37};
+static const u16 clock_digit_x_positions[4] = {2, 11, 27, 37};
 
 static void start_menu_clock_update() {
     tbox_print_string_parametrized(start_menu_state.safari_tbox_idx, 2, start_menu_clock_text, 0, 0, 0, NULL);

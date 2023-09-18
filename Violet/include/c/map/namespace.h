@@ -8,7 +8,7 @@
 #ifndef INCLUDE_C_MAP_NAMESPACE_H_
 #define INCLUDE_C_MAP_NAMESPACE_H_
 
-extern u8 *map_namespaces[];
+extern const u8 *const map_namespaces[];
 
 /**
  * Loads the string of a namespace to a given buffer

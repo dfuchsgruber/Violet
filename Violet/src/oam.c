@@ -24,7 +24,7 @@
 extern u32 oam_priorities_iram[NUM_OAMS];
 
 // Functions that (by my design) should not be called externally
-u8 oam_new_at(u8 idx, oam_template *template, s16 x, s16 y, u8 subpriority);
+u8 oam_new_at(u8 idx, const oam_template *template, s16 x, s16 y, u8 subpriority);
 
 static inline void oam_allocation_remove(oam_alloc_list_element_t *list, u8 idx) {
     u8 prev = list[idx].previous;
@@ -253,14 +253,14 @@ void oam_sort() {
         fmem.oam_order_sorted[i] = oam_radix_sort_buffer[toggle][i];
 }
 
-static sprite oam_empty = {
+static const sprite oam_empty = {
     .attr0 = 160 | ATTR0_SHAPE_SQUARE, .attr1 = 304 | ATTR1_SIZE_8_8, .attr2 = ATTR2_PRIO(3),
 };
 
 static void oam_add_to_buffer(oam_object *o, u8 subsprite_idx, sprite *dst) {
     *dst = o->final_oam;
     if (o->sprite_mode != SUBSPRITES_OFF) {;
-        subsprite_table *subsprites_table = o->subsprites + o->sprite_idx;
+        const subsprite_table *subsprites_table = o->subsprites + o->sprite_idx;
         if (!subsprites_table || !(subsprites_table->subsprites) || subsprite_idx >= subsprites_table->num_subsprites) {
             return;
         }
@@ -270,7 +270,7 @@ static void oam_add_to_buffer(oam_object *o, u8 subsprite_idx, sprite *dst) {
         x -= o->x_centre;
         y -= o->y_centre;
 
-        subsprite *subsprite = subsprites_table->subsprites + subsprite_idx;
+        const subsprite *subsprite = subsprites_table->subsprites + subsprite_idx;
 
         int dx = subsprite->x;
         int dy = subsprite->y;
@@ -388,7 +388,7 @@ void oam_clear_all() {
     oam_allocation_initialize();
 }
 
-u8 oam_new_forward_search(oam_template *template, s16 x, s16 y, u8 priority_on_layer) {
+u8 oam_new_forward_search(const oam_template *template, s16 x, s16 y, u8 priority_on_layer) {
     u8 idx = oam_allocate(OAM_ALLOCATE_AT_START);
     if (idx != NUM_OAMS) {
         return oam_new_at(idx, template, x, y, priority_on_layer);
@@ -397,7 +397,7 @@ u8 oam_new_forward_search(oam_template *template, s16 x, s16 y, u8 priority_on_l
     }
 }
 
-u8 oam_new_backward_search(oam_template *template, s16 x, s16 y, u8 priority_on_layer) {
+u8 oam_new_backward_search(const oam_template *template, s16 x, s16 y, u8 priority_on_layer) {
     u8 idx = oam_allocate(OAM_ALLOCATE_AT_END);
     if (idx != NUM_OAMS) {
         return oam_new_at(idx, template, x, y, priority_on_layer);
@@ -406,7 +406,7 @@ u8 oam_new_backward_search(oam_template *template, s16 x, s16 y, u8 priority_on_
     }
 }
 
-u8 oam_new_forward_search_and_animation(oam_template *template, s16 x, s16 y, u8 priority_on_layer) {
+u8 oam_new_forward_search_and_animation(const oam_template *template, s16 x, s16 y, u8 priority_on_layer) {
     u8 idx = oam_new_forward_search(template, x, y, priority_on_layer);
     if (idx != NUM_OAMS) {
         oams[idx].callback(oams + idx);
@@ -417,7 +417,7 @@ u8 oam_new_forward_search_and_animation(oam_template *template, s16 x, s16 y, u8
     return idx;
 }
 
-u8 oam_copy_forward_search(oam_object *src, s16 x, s16 y, u8 priority_on_layer) {
+u8 oam_copy_forward_search(const oam_object *src, s16 x, s16 y, u8 priority_on_layer) {
     u8 idx = oam_allocate(OAM_ALLOCATE_AT_START);
     if (idx != NUM_OAMS) {
         oams[idx] = *src;
@@ -428,7 +428,7 @@ u8 oam_copy_forward_search(oam_object *src, s16 x, s16 y, u8 priority_on_layer) 
     return idx;
 }
 
-u8 oam_copy_backward_search(oam_object *src, s16 x, s16 y, u8 priority_on_layer) {
+u8 oam_copy_backward_search(const oam_object *src, s16 x, s16 y, u8 priority_on_layer) {
     u8 idx = oam_allocate(OAM_ALLOCATE_AT_END);
     if (idx != NUM_OAMS) {
         oams[idx] = *src;
@@ -510,7 +510,7 @@ void oam_animations_proceed() {
             fmem.oams_to_sort[oam_active_cnt].subsprite_idx = 0;
             oam_active_cnt++;
             if (oams[current].sprite_mode) {
-                subsprite_table *table = oams[current].subsprites + oams[current].sprite_idx;
+                const subsprite_table *table = oams[current].subsprites + oams[current].sprite_idx;
                 if (table && table->subsprites) {
                     // Add all subsprites, they need to be sorted as well
                     for (u8 i = 1; i < table->num_subsprites; i++) {

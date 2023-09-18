@@ -29,7 +29,7 @@ static bg_config cauldron_bg_configs[] = {
     {.bg_id = 3, .char_base = 2, .map_base = 31, .size = 0, .color_mode = 1, .priority = 3},
 };
 
-static tboxdata cauldron_tboxes[] = {
+static const tboxdata cauldron_tboxes[] = {
     [0] = {.bg_id = 0, .x = 2, .y = 15, .w = 26, .h = 4, .pal = 15, .start_tile = 1},
     [1] = {.bg_id = 0xFF},
 };
@@ -48,11 +48,11 @@ static void cauldron_vblank_handler() {
     generic_vblank_handler();
 }
 
-static graphic cauldron_lights_graphic = {
+static const graphic cauldron_lights_graphic = {
     .sprite = gfx_crafting_cauldron_lightsTiles, .tag = CAULDRON_LIGHT_TAG, .size = 6 * GRAPHIC_SIZE_4BPP(32, 32),
 };
 
-static gfx_frame cauldron_light_gfx_frames[] = {
+static const gfx_frame cauldron_light_gfx_frames[] = {
     {.data = 0, .duration = 0}, {.data = GFX_ANIM_END},
     {.data = 16, .duration = 0}, {.data = GFX_ANIM_END},
     {.data = 32, .duration = 0}, {.data = GFX_ANIM_END},
@@ -61,7 +61,7 @@ static gfx_frame cauldron_light_gfx_frames[] = {
     {.data = 80, .duration = 0}, {.data = GFX_ANIM_END},
 };
 
-static gfx_frame *cauldron_light_gfx_animations[] = {
+static const gfx_frame *cauldron_light_gfx_animations[] = {
     [0] = cauldron_light_gfx_frames + 0 * 2,
     [1] = cauldron_light_gfx_frames + 1 * 2,
     [2] = cauldron_light_gfx_frames + 2 * 2,
@@ -95,26 +95,26 @@ static void cauldron_light_initialize_all(u16 duration) {
 }
 
 
-static sprite cauldron_light_final_oam = {
+static const sprite cauldron_light_final_oam = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(3),
 };
 
-static oam_template cauldron_light_oam_template = {
+static const oam_template cauldron_light_oam_template = {
     .tiles_tag = CAULDRON_LIGHT_TAG, .pal_tag = CAULDRON_LIGHT_TAG, .oam = &cauldron_light_final_oam,
     .animation = cauldron_light_gfx_animations, .graphics = NULL, .rotscale = oam_rotscale_anim_table_null,
     .callback = cauldron_light_oam_callback
 };
 
-static sprite cauldron_spark_final_oam = {
+static const sprite cauldron_spark_final_oam = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(0),
 };
 
-static gfx_frame cauldron_spark_gfx_animation[] = {
+static const gfx_frame cauldron_spark_gfx_animation[] = {
     {.data = 0, .duration = 0}, {.data = 0, .duration = 4}, {.data = 4, .duration = 4}, 
     {.data = 8, .duration = 4}, {.data = GFX_ANIM_END},
 };
 
-static gfx_frame *cauldron_spark_gfx_animations[] = {
+static const gfx_frame *cauldron_spark_gfx_animations[] = {
     [0] = cauldron_spark_gfx_animation,
 };
 
@@ -123,14 +123,14 @@ static void cauldron_spark_oam_callback(oam_object *self) {
         oam_delete(self);
 }
 
-static oam_template cauldron_spark_oam_template = {
+static const oam_template cauldron_spark_oam_template = {
     .tiles_tag = BATTLE_ANIMATION_OAM_BASE + 11, .pal_tag = BATTLE_ANIMATION_OAM_BASE + 11,
     .oam = &cauldron_spark_final_oam, .animation = cauldron_spark_gfx_animations, .graphics = NULL,
     .rotscale = oam_rotscale_anim_table_null, .callback = cauldron_spark_oam_callback,
 };
 
 
-static sprite cauldron_item_final_oam = {
+static const sprite cauldron_item_final_oam = {
     .attr0 = ATTR0_DSIZE | ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE, .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(3)
 };
 
@@ -193,29 +193,29 @@ static void cauldron_item_set_parabolic_trajectory(u8 oam_idx, s16 ymax, s16 dx,
     oam_rotscale_anim_init(o, 1);
 }
 
-static rotscale_frame cauldron_item_rotscale_animation0[] = {
+static const rotscale_frame cauldron_item_rotscale_animation0[] = {
     {.affine = {.affine_x_value = 0x180, .affine_y_value = 0x180, .duration = 0}},
     {.affine = {.rotation = 4, .duration = CAULDRON_ITEM_DT}},
     {.command = {.command = ROTSCALE_ANIM_END}},
 };
 
-static rotscale_frame cauldron_item_rotscale_animation1[] = {
+static const rotscale_frame cauldron_item_rotscale_animation1[] = {
     {.affine = {.affine_x_value = 0x180, .affine_y_value = 0x180, .duration = 0}},
     {.affine = {.rotation = 8, .duration = 128}},
     {.command = {.command = ROTSCALE_ANIM_END}},
 };
 
-static rotscale_frame *cauldron_item_rotscale_animations[] = {
+static const rotscale_frame *cauldron_item_rotscale_animations[] = {
     [0] = cauldron_item_rotscale_animation0, [1] = cauldron_item_rotscale_animation1,
 };
 
-static oam_template cauldron_item_template = {
+static const oam_template cauldron_item_template = {
     .oam = &cauldron_item_final_oam, .animation = oam_gfx_anim_table_null, .graphics = NULL,
     .rotscale = cauldron_item_rotscale_animations, .callback = cauldron_item_callback,
 };
 
 
-static coordinate_t cauldron_light_positions[3] = {
+static const coordinate_t cauldron_light_positions[3] = {
     {.x = 74, .y = 179},
     {.x = 120, .y = 194},
     {.x = 165, .y = 179},
@@ -252,7 +252,7 @@ static void cauldron_scene_step_none(u16 frame) {
     (void)frame;
 }
 
-static coordinate_t cauldron_item_positions[4] = {
+static const coordinate_t cauldron_item_positions[4] = {
     {.x = 147, .y = -16 - 64},
     {.x = 152, .y = -16 - 64},
     {.x = 157, .y = -16 - 64},
@@ -292,7 +292,7 @@ static void cauldron_scene_big_callback_null(u8 self) {
     (void)self;
 }
 
-static u8 str_crafted[] = LANGDEP(
+static const u8 str_crafted[] = LANGDEP(
     PSTRING("PLAYER hat BUFFER_2x BUFFER_1\nhergestellt!"),
     PSTRING("PLAYER crafted BUFFER_2x BUFFER_1!")
 );
@@ -576,7 +576,7 @@ void cauldron_scene_setup() {
 
 
 
-void cauldron_scene_initialize(crafting_recipe *recipe, crafting_ui_state *ui_state) {
+void cauldron_scene_initialize(const crafting_recipe *recipe, crafting_ui_state *ui_state) {
     fmem.gp_state = malloc_and_clear(sizeof(cauldron_scene_state));
     for (u8 i = 0; i < ARRAY_COUNT(CAULDRON_SCENE_STATE->oams_items); i++) {
         CAULDRON_SCENE_STATE->oams_items[i] = 0x40;

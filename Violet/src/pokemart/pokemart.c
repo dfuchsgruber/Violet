@@ -42,7 +42,7 @@ void pokemart_create_npc_oams() {
     for (int i = 0; i < 16; i++) {
         if (pokemart_viewport_npcs[i].npc_idx == 16) 
             continue;
-        overworld_sprite *ow = overworld_get_by_npc(npcs + pokemart_viewport_npcs[i].npc_idx);
+        const overworld_sprite *ow = overworld_get_by_npc(npcs + pokemart_viewport_npcs[i].npc_idx);
         u8 oam_idx = overworld_create_oam_with_callback_by_npc(npcs + pokemart_viewport_npcs[i].npc_idx, oam_null_callback,
             (s16)(pokemart_viewport_npcs[i].x * 16 - 8), 
             (s16)(pokemart_viewport_npcs[i].y * 16 + 48 - ow->height / 2), 2);

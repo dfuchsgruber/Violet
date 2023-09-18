@@ -61,7 +61,7 @@ void battle_intro_try_partner_ball_throw() {
     }
 }
 
-u16 item_effect_trainer_item_cured_status_battle_string_idxs[] = {
+const u16 item_effect_trainer_item_cured_status_battle_string_idxs[] = {
     [ITEM_EFFECT_HEAL_CONFUSION] = 296,
     [ITEM_EFFECT_HEAL_PARALYSIS] = 291,
     [ITEM_EFFECT_HEAL_FREEZE] = 294,
@@ -92,7 +92,7 @@ void battle_action_use_item() {
     } else if (battler_get_owner(attacking_battler) == OWNER_PLAYER) {
         bsc_offset = battlescripts_use_item[0];
     } else { // AI used item, set-up proper battlescript
-        item_effect_t *effect = item_effects[bsc_last_used_item - ITEM_TRANK];
+        const item_effect_t *effect = item_effects[bsc_last_used_item - ITEM_TRANK];
         u8 first = 0, last = 0;
         pokemon *p = battler_load_party_range(attacking_battler, &first, &last) + battler_idx_to_party_idx(attacking_battler);
         if (bsc_last_used_item == ITEM_TOP_GENESUNG || bsc_last_used_item == ITEM_GOLDAPFEL) {
@@ -155,7 +155,7 @@ void battle_action_use_item() {
     battle_action = BATTLE_ACTION_EXECUTE_SCRIPT;
 }
 
-extern u8 battlescript_introduce_aggresive_battler[];
+extern const u8 battlescript_introduce_aggresive_battler[];
 
 void battle_aggresive_battlers_introduce() {
     if (battle_flags & BATTLE_AGGRESSIVE_WILD) {
@@ -242,10 +242,6 @@ bool battle_has_two_players() {
     return battle_is_tag() || battle_is_multi_double();
 }
 
-bool battle_has_two_opponents() {
-    return (battle_flags & (BATTLE_TWO_TRAINERS | BATTLE_MULTI)) > 0;
-}
-
 bool battle_controller_double_battle_should_send_out_only_one_pokemon() {
     if (battle_has_two_opponents()) return true; // Each battler has their own controller, that only sends out one mon
     return false;
@@ -260,7 +256,7 @@ void battle_clear_temporary_custom_effects(bool clear_all){
     }
 }
 
-extern u8 battlescript_before_attack[];
+extern const u8 battlescript_before_attack[];
 
 void battle_before_attack_effects() {
     BATTLE_STATE2->status_custom[attacking_battler] = 0;
@@ -269,7 +265,7 @@ void battle_before_attack_effects() {
     bsc_offset = battlescript_before_attack; // This script executes all effects before the battle...
 }
 
-extern u8 battlescript_golden_apple_protection_weared_off[];
+extern const u8 battlescript_golden_apple_protection_weared_off[];
 
 static bool battle_end_turn_golden_apple_effects() {
     bool effect = false;
@@ -289,7 +285,7 @@ static bool battle_end_turn_golden_apple_effects() {
     return effect;
 }
 
-extern u8 battlescript_golden_apple_protection_active[];
+extern const u8 battlescript_golden_apple_protection_active[];
 
 void battle_golden_apple_print_protection() {
     DEBUG("Golden apple check for battler %d, status 0x%x\n", attacking_battler, BATTLE_STATE2->status_custom_persistent[attacking_battler]);
@@ -321,8 +317,8 @@ void battle_end_turn_handle_battle_continues_wrapper() {
     }
 }
 
-extern u8 bsc_wrap_broke_free[];
-extern u8 bsc_wrap_continues[];
+extern const u8 bsc_wrap_broke_free[];
+extern const u8 bsc_wrap_continues[];
 
 bool battle_end_turn_wrap() {
     if ((battlers[active_battler].status2 & STATUS2_WRAPPED) && battlers[active_battler].current_hp > 0) {

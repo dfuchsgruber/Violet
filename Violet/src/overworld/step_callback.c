@@ -86,7 +86,7 @@ static void overworld_step_callback_route_5_cave(u8 self) {
     overworld_step_callback_generic_cracked_floor(self, overworld_step_callback_route_5_get_cracked_floor_block_idx, 35, true);
 }
 
-void (*overworld_step_callbacks[])(u8) = {
+void (*const overworld_step_callbacks[])(u8) = {
     [OVERWORLD_STEP_CALLBACK_NONE] = overworld_step_callback_none,
     [OVERWORLD_STEP_CALLBACK_ROUTE_5_CAVE] = overworld_step_callback_route_5_cave,
 };

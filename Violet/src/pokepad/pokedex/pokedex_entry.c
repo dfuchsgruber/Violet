@@ -38,16 +38,16 @@ extern const unsigned short gfx_pokedex_formsPal[];
 #define HAS_HABITAT true 
 //#define HAS_HABITAT(checkflag(POKEDEX_FEATURE_HABITAT))
 
-tbox_font_colormap pokedex_entry_title_fontcolmap = {0, 1, 2, 0};
+const tbox_font_colormap pokedex_entry_title_fontcolmap = {0, 1, 2, 0};
 
-bg_config pokedex_bg_entry_configs [] = {
+const bg_config pokedex_bg_entry_configs [] = {
     {0, 2, 31, 0, 0, 0},
     {1, 0, 30, 0, 0, 1},
     {2, 1, 29, 0, 0, 2},
     {3, 3, 28, 0, 0, 2}
 };
 
-tboxdata pokedex_entry_tboxes [] = {
+const tboxdata pokedex_entry_tboxes [] = {
     {0, 9, 1, 19, 2, 14, 1},
     {0, 0, 5, 15, 6, 15, 45},
     {2, 0, 12, 30, 12, 15, 1},
@@ -56,15 +56,15 @@ tboxdata pokedex_entry_tboxes [] = {
     {0xFF, 0, 0, 0, 0, 0, 0}
 };
 
-sprite pokedex_form_sprite = {
+const sprite pokedex_form_sprite = {
     0, 0x8000, 0, 0
 };
 
-sprite pokedex_pokepic_sprite = {
+const sprite pokedex_pokepic_sprite = {
     0, 0xC000, 0, 0
 };
 
-oam_template pokedex_form_template = {
+const oam_template pokedex_form_template = {
     0xA00C,
     0xA00C,
     &pokedex_form_sprite,
@@ -74,7 +74,7 @@ oam_template pokedex_form_template = {
     oam_null_callback
 };
 
-oam_template pokedex_pokepic_template = {
+const oam_template pokedex_pokepic_template = {
     0xA00A,
     0xA00A,
     &pokedex_pokepic_sprite,
@@ -193,8 +193,8 @@ void pokedex_entry_load_pokepic() {
     cpuset(&gfx_pokedex_formsTiles[form * 256], offset, 256);
 }
 
-u16 pokedex_colors[16];
-u16 pokedex_colors_nr[16];
+extern const u16 pokedex_colors[16];
+extern const u16 pokedex_colors_nr[16];
 
 void pokedex_callback_init_entry_load_elements(){
    //disable window

@@ -38,62 +38,62 @@
 #include "constants/abilities.h"
 #include "constants/pokemon_types.h"
 
-sprite oam_sprite_incubator_egg = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_64_64,
+const sprite oam_sprite_incubator_egg = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_64_64,
     .attr2 = ATTR2_PRIO(2)};
 
-sprite oam_sprite_incubator_progress_bar = {.attr0 = ATTR0_SHAPE_HORIZONTAL,
+const sprite oam_sprite_incubator_progress_bar = {.attr0 = ATTR0_SHAPE_HORIZONTAL,
     .attr1 = ATTR1_SIZE_32_8, .attr2 = ATTR2_PRIO(2)};
 
-sprite oam_sprite_incubator_egg_icon = {.attr0 = ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE,
+const sprite oam_sprite_incubator_egg_icon = {.attr0 = ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE,
     .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(1)
 };
 
-sprite oam_sprite_incubator_selection = {.attr0 = ATTR0_SHAPE_HORIZONTAL,
+const sprite oam_sprite_incubator_selection = {.attr0 = ATTR0_SHAPE_HORIZONTAL,
     .attr1 = ATTR1_SIZE_32_64, .attr2 = ATTR2_PRIO(1)};
 
-graphic graphic_incubator_progress_bar = {.size = (32 * 8 / 2),
+const graphic graphic_incubator_progress_bar = {.size = (32 * 8 / 2),
     .tag = INCUBATOR_EGG_PROGRESS_TAG, .sprite = gfx_incubator_progress_barTiles
 };
 
-graphic graphic_incubator_selection = {.size = (64 * 64 / 2),
+const graphic graphic_incubator_selection = {.size = (64 * 64 / 2),
     .tag = INCUBATOR_SELECTION_TAG_LEFT, .sprite = gfx_incubator_selectionTiles
 };
 
-gfx_frame gfx_animation_incubator_egg_icon[] = {
+const gfx_frame gfx_animation_incubator_egg_icon[] = {
     {.data = 0, .duration = 16}, {.data = 16, .duration = 16},
     {.data = GFX_ANIM_JUMP, .duration = 0}
 };
 
-gfx_frame *gfx_animation_table_incubator_egg_icon[] = {
+const gfx_frame *gfx_animation_table_incubator_egg_icon[] = {
     gfx_animation_incubator_egg_icon
 };
 
-gfx_frame gfx_animation_incubator_selection_right[] = {
+const gfx_frame gfx_animation_incubator_selection_right[] = {
     {.data = 32, .duration = 0}, {.data = GFX_ANIM_END}
 };
 
-gfx_frame *gfx_animation_table_incubator_selection_right[] = {
+const gfx_frame *gfx_animation_table_incubator_selection_right[] = {
     gfx_animation_incubator_selection_right
 };
 
-rotscale_frame rotscale_animation_incubator_egg_icon_none[] = {
+const rotscale_frame rotscale_animation_incubator_egg_icon_none[] = {
     {.affine = {.affine_x_value = 0x100, .affine_y_value = 0x100, .duration = 0}},
     {.command = {.command = ROTSCALE_ANIM_END}}
 };
 
-rotscale_frame rotscale_animation_incubator_egg_icon_shrink[] = {
+const rotscale_frame rotscale_animation_incubator_egg_icon_shrink[] = {
     {.affine = {.affine_x_value = 0x100, .affine_y_value = 0x100, .duration = 0}},
     {.affine = {.affine_x_value = -4, .affine_y_value = -4, .duration = 63}},
     {.command = {.command = ROTSCALE_ANIM_END}}
 };
 
-rotscale_frame rotscale_animation_incubator_egg_icon_expand[] = {
+const rotscale_frame rotscale_animation_incubator_egg_icon_expand[] = {
     {.affine = {.affine_x_value = 4, .affine_y_value = 4, .duration = 0}},
     {.affine = {.affine_x_value = 4, .affine_y_value = 4, .duration = 63}},
     {.command = {.command = ROTSCALE_ANIM_END}}
 };
 
-rotscale_frame *rotscale_animation_table_incubator_egg_icon[] = {
+const rotscale_frame *const rotscale_animation_table_incubator_egg_icon[] = {
     rotscale_animation_incubator_egg_icon_none,
     rotscale_animation_incubator_egg_icon_shrink,
     rotscale_animation_incubator_egg_icon_expand
@@ -105,20 +105,20 @@ void incubator_oam_egg_callback(oam_object *self) {
   self->y2 = (s16)(FIXED_TO_INT(dy));
 }
 
-oam_template oam_template_incubator_egg = {
+const oam_template oam_template_incubator_egg = {
     .oam = &oam_sprite_incubator_egg, .tiles_tag = INCUBATOR_EGG_TAG, .pal_tag = INCUBATOR_EGG_TAG,
     .callback = incubator_oam_egg_callback, .graphics = NULL, .animation = oam_gfx_anim_table_null,
     .rotscale = oam_rotscale_anim_table_null
 };
 
-oam_template oam_template_incubator_progress_bar = {
+const oam_template oam_template_incubator_progress_bar = {
     .oam = &oam_sprite_incubator_progress_bar, .tiles_tag = INCUBATOR_EGG_PROGRESS_TAG,
     .pal_tag = INCUBATOR_EGG_PROGRESS_TAG,
     .callback = oam_null_callback, .graphics = NULL, .animation = oam_gfx_anim_table_null,
     .rotscale = oam_rotscale_anim_table_null
 };
 
-oam_template oam_template_incubator_egg_icon = {
+const oam_template oam_template_incubator_egg_icon = {
     .oam = &oam_sprite_incubator_egg_icon, .tiles_tag = INCUBATOR_EGG_ICON_TAG,
     .pal_tag = INCUBATOR_EGG_ICON_TAG,
     .callback = oam_null_callback, .graphics = NULL,
@@ -126,31 +126,31 @@ oam_template oam_template_incubator_egg_icon = {
     .rotscale = rotscale_animation_table_incubator_egg_icon
 };
 
-oam_template oam_template_incubator_selection_left = {
+const oam_template oam_template_incubator_selection_left = {
     .oam = &oam_sprite_incubator_selection, .tiles_tag = INCUBATOR_SELECTION_TAG_LEFT,
     .pal_tag = INCUBATOR_SELECTION_TAG_LEFT, .callback = oam_null_callback, .graphics = NULL,
     .animation = oam_gfx_anim_table_null, .rotscale = oam_rotscale_anim_table_null
 };
 
-oam_template oam_template_incubator_selection_right = {
+const oam_template oam_template_incubator_selection_right = {
     .oam = &oam_sprite_incubator_selection, .tiles_tag = INCUBATOR_SELECTION_TAG_LEFT,
     .pal_tag = INCUBATOR_SELECTION_TAG_LEFT, .callback = oam_null_callback, .graphics = NULL,
     .animation = gfx_animation_table_incubator_selection_right,
     .rotscale = oam_rotscale_anim_table_null
 };
 
-bg_config incubator_bg_configs[4] = {
+const bg_config incubator_bg_configs[4] = {
     {.bg_id = 0, .char_base = 2, .map_base = 29, .color_mode = 0, .priority = 0, .size = 0},
     {.bg_id = 1, .char_base = 1, .map_base = 30, .color_mode = 0, .priority = 1, .size = 0},
     {.bg_id = 2, .char_base = 0, .map_base = 31, .color_mode = 0, .priority = 2, .size = 0},
     {.bg_id = 3, .char_base = 3, .map_base = 28, .color_mode = 0, .priority = 3, .size = 0},
 };
 
-tbox_font_colormap incubator_font_colormap_std_light = {
+const tbox_font_colormap incubator_font_colormap_std_light = {
     0, 1, 2, 3
 };
 
-list_menu_template incubator_context_menu_template = {
+const list_menu_template incubator_context_menu_template = {
     .items = NULL,
     .cursor_moved_callback = list_menu_generic_cursor_callback,
     .item_print_callback = incubator_context_menu_item_print_callback,
@@ -307,19 +307,19 @@ void incubator_callback1_return() {
     }
 }
 
-u8 str_incubator_into_party[] = LANGDEP(PSTRING("Ins Team"), PSTRING("Into Party"));
-u8 str_incubator_into_box[] = LANGDEP(PSTRING("Auf Box"), PSTRING("To Box"));
-u8 str_incubator_return[] = LANGDEP(PSTRING("Zurück"), PSTRING("Return"));
-u8 str_incubator_from_party[] = LANGDEP(PSTRING("Vom Team"), PSTRING("From Party"));
-u8 str_incubator_from_box[] = LANGDEP(PSTRING("Von Box"), PSTRING("From Box"));
+const u8 str_incubator_into_party[] = LANGDEP(PSTRING("Ins Team"), PSTRING("Into Party"));
+const u8 str_incubator_into_box[] = LANGDEP(PSTRING("Auf Box"), PSTRING("To Box"));
+const u8 str_incubator_return[] = LANGDEP(PSTRING("Zurück"), PSTRING("Return"));
+const u8 str_incubator_from_party[] = LANGDEP(PSTRING("Vom Team"), PSTRING("From Party"));
+const u8 str_incubator_from_box[] = LANGDEP(PSTRING("Von Box"), PSTRING("From Box"));
 
-list_menu_item incubator_context_menu_items_egg[3] = {
+const list_menu_item incubator_context_menu_items_egg[3] = {
     {str_incubator_into_party, 1},
     {str_incubator_into_box, 2},
     {str_incubator_return, 3}
 };
 
-list_menu_item incubator_context_menu_items_empty[3] = {
+const list_menu_item incubator_context_menu_items_empty[3] = {
     {str_incubator_from_party, 1},
     {str_incubator_from_box, 2},
     {str_incubator_return, 3},
@@ -787,7 +787,7 @@ void incubator_initialize(bool from_outdoor) {
   callback1_set(incubator_callback1_initialize);
 }
 
-tboxdata incubator_tboxes[INCUBATOR_TBOX_CNT + 1] = {
+const tboxdata incubator_tboxes[INCUBATOR_TBOX_CNT + 1] = {
   [INCUBATOR_TBOX_TITLE] = {.bg_id = 0, .x = 11, .y = 0, .w = 8, .h = 2, .pal = 14,
       .start_tile = INCUBATOR_TBOX_START_TILE},
   [INCUBATOR_TBOX_EGG] = {.bg_id = 0, .x = 3, .y = 3, .w = 4, .h = 2, .pal = 14,

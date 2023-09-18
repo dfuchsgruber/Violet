@@ -16,7 +16,7 @@
 #include "overworld/script.h"
 #include "item/bag.h"
 
-extern u8 ow_script_fertilize_berry_tree[];
+extern const u8 ow_script_fertilize_berry_tree[];
 
 static void item_mulch_overworld_continuation_print_string(u8 self) {
     overworld_script_init(ow_script_fertilize_berry_tree);
@@ -30,7 +30,7 @@ void item_effect_mulch(u8 self) {
     u8 npc_idx = npc_get_by_position(faced_position.coordinates.x, faced_position.coordinates.y);
     DEBUG("Npc idx is %d\n", npc_idx);
     if (npc_idx < NUM_NPCS) {
-	    map_event_person *p = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
+	    const map_event_person *p = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
         if (p && p->script_std == PERSON_BERRY_TREE) {
             u16 berry_tree_idx = p->value;
             if (cmem.berry_trees[berry_tree_idx].stage == BERRY_STAGE_NO_BERRY && !cmem.berry_trees[berry_tree_idx].fertilized) {

@@ -36,7 +36,7 @@ typedef struct {
 extern pc_state_t *pc_state;
 
 typedef struct {
-    u8 *text;
+    const u8 *text;
     int format;
 } pc_context_text_t;
 

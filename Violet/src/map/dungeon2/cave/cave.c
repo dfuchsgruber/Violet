@@ -29,22 +29,22 @@
 #include "callbacks.h"
 #include "overworld/script.h"
 
-extern map_footer_t map_footer_dungeon_cave_normal;
-extern map_footer_t map_footer_dungeon_cave_tent_and_campfire;
-extern map_footer_t map_footer_dungeon_ice_cave;
-extern map_footer_t map_footer_dungeon_sand_cave;
-extern map_footer_t map_footer_dungeon_dragon_cave;
-extern map_footer_t map_footer_dungeon_steel_cave;
-extern map_footer_t map_footer_dungeon_fossil_cave;
+extern const map_footer_t map_footer_dungeon_cave_normal;
+extern const map_footer_t map_footer_dungeon_cave_tent_and_campfire;
+extern const map_footer_t map_footer_dungeon_ice_cave;
+extern const map_footer_t map_footer_dungeon_sand_cave;
+extern const map_footer_t map_footer_dungeon_dragon_cave;
+extern const map_footer_t map_footer_dungeon_steel_cave;
+extern const map_footer_t map_footer_dungeon_fossil_cave;
 
-u16 dungeon2_cave_borders[4] = {0x281, 0x281, 0x281, 0x281};
+const u16 dungeon2_cave_borders[4] = {0x281, 0x281, 0x281, 0x281};
 
-map_block dungeon2_cave_map_empty[DG2_CAVE_WIDTH * DG2_CAVE_HEIGHT] = {0};
+const map_block dungeon2_cave_map_empty[DG2_CAVE_WIDTH * DG2_CAVE_HEIGHT] = {0};
 
-extern u8 ow_script_dungeon_encounter[];
-extern u8 ow_script_dungeon_item[];
+extern const u8 ow_script_dungeon_encounter[];
+extern const u8 ow_script_dungeon_item[];
 
-static u32 dungeon2_cave_type_rates[NUM_DUNGEON_CAVE_TYPES] = {
+static const u32 dungeon2_cave_type_rates[NUM_DUNGEON_CAVE_TYPES] = {
     [DUNGEON_CAVE_TYPE_NORMAL] = 6,
     [DUNGEON_CAVE_TYPE_TENT] = 1,
     [DUNGEON_CAVE_TYPE_ICE] = 2,
@@ -59,18 +59,18 @@ u8 dungeon2_get_cave_type(dungeon_generator2 *dg2) {
     return (u8)choice(dungeon2_cave_type_rates, NUM_DUNGEON_CAVE_TYPES, gp_rnd16);
 }
 
-static map_footer_t *dungeon2_get_cave_type_pattern(dungeon_generator2 *dg2) {
+static const map_footer_t *dungeon2_get_cave_type_pattern(dungeon_generator2 *dg2) {
     return dungeon_cave_types[dungeon2_get_cave_type(dg2)].footer;
 }
 
 static int dungeon2_get_cave_num_patterns(dungeon_generator2 *dg2) {
-    dungeon_cave_t *type = dungeon_cave_types + dungeon2_get_cave_type(dg2);
+    const dungeon_cave_t *type = dungeon_cave_types + dungeon2_get_cave_type(dg2);
     gp_rng_seed(dungeon2_seeded_rnd16(dg2, DG2_RANDOM_SEED_NUM_PATTERNS));
     return MIN(DG2_MAX_NUM_PATTERNS, type->min_num_patterns + (gp_rnd16() % (type->max_num_patterns - type->min_num_patterns + 1)));
 }
 
 map_footer_t *dungeon2_init_footer_cave(dungeon_generator2 *dg2){
-    map_footer_t *footer = dungeon2_get_cave_type_pattern(dg2);
+    const map_footer_t *footer = dungeon2_get_cave_type_pattern(dg2);
     fmem.dmapfooter.width = (u32)dg2->width;
     fmem.dmapfooter.height = (u32)dg2->height;
     fmem.dmapfooter.tileset1 = footer->tileset1;
@@ -133,11 +133,11 @@ static void dungeon_dragon_cave_initialize_events(dungeon_generator2 *dg2) {
     fmem.dmapevents.warp_cnt = num_warps;
 }
 
-u16 dungeon_steel_cave_special_items[] = {
+const u16 dungeon_steel_cave_special_items[] = {
     ITEM_METALLMANTEL, ITEM_NUGGET, ITEM_TOP_BELEBER,
 };
 
-static s16 dungeon_steel_cave_special_item_positions[3][2] = {
+static const s16 dungeon_steel_cave_special_item_positions[3][2] = {
     {-1, 1}, {1, 1}, {1, -1}
 };
 
@@ -159,7 +159,7 @@ static void dungeon_steel_cave_initialize_events(dungeon_generator2 *dg2) {
     fmem.dmapevents.person_cnt = num_persons;
 }
 
-u16 dungeon_fossil_cave_fossils[] = {
+const u16 dungeon_fossil_cave_fossils[] = {
     ITEM_DOMFOSSIL, ITEM_HELIXFOSSIL, ITEM_WURZELFOSSIL, ITEM_KLAUENFOSSIL,
 };
 
@@ -204,7 +204,7 @@ static void dungeon_cave_normal_initialize_events(dungeon_generator2 *dg2) {
     (void)dg2;
 }
 
-dungeon_cave_t dungeon_cave_types[NUM_DUNGEON_CAVE_TYPES] = {
+const dungeon_cave_t dungeon_cave_types[NUM_DUNGEON_CAVE_TYPES] = {
     [DUNGEON_CAVE_TYPE_NORMAL] = {
         .footer = &map_footer_dungeon_cave_normal,
         .min_num_patterns = 0,
@@ -408,7 +408,7 @@ u16 dungeon_cave_pick_item(dungeon_generator2 *dg2) {
 
 void dungeon2_init_wild_pokemon_cave(dungeon_generator2 *dg2) {
 
-    dungeon_cave_t *cave_type = dungeon_cave_types + dungeon2_get_cave_type(dg2);
+    const dungeon_cave_t *cave_type = dungeon_cave_types + dungeon2_get_cave_type(dg2);
 
     u16 common_pokemon[4];
     u16 rare_pokemon[2];
@@ -505,8 +505,8 @@ map_event_header_t *dungeon2_init_events_cave(dungeon_generator2 *dg2){
 
 static void dungeon2_compute_blocks_cave(u8 *map, u8 *over, dungeon_generator2 *dg2){
     int (*nodes)[2] = save1->dungeon_nodes;
-    dungeon_cave_t *cave_type = dungeon_cave_types + dungeon2_get_cave_type(dg2);
-    map_footer_t *pattern = dungeon2_get_cave_type_pattern(dg2);
+    const dungeon_cave_t *cave_type = dungeon_cave_types + dungeon2_get_cave_type(dg2);
+    const map_footer_t *pattern = dungeon2_get_cave_type_pattern(dg2);
     int num_patterns = dungeon2_get_cave_num_patterns(dg2);
 
     // Fill map to fit the pattern
@@ -538,7 +538,7 @@ void dungeon2_cave_initialize_state(dungeon_generator2 *dg2) {
   dg2->node_metric_lambda_l2 = DG2_CAVE_NODE_METRIC_LAMBDA_MEAN;
   dg2->node_metric_lambda_min = DG2_CAVE_NODE_METRIC_LAMBDA_MIN;
   dg2->node_samples = DG2_CAVE_NODE_SAMPLES;
-  map_footer_t *pattern = dungeon2_get_cave_type_pattern(dg2);
+  const map_footer_t *pattern = dungeon2_get_cave_type_pattern(dg2);
   dg2->pattern_margin = (u8)(((MAX(pattern->width, pattern->height) + 1) / 2) & 0xF);
 }
 

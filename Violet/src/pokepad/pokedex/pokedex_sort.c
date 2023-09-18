@@ -154,8 +154,8 @@ int pokedex_quicksort_list_compare(u8 comparator, int a, int b) {
             break;
         case 1:
         {//by name
-            u8 *name_a = pokemon_names[list[a].species];
-            u8 *name_b = pokemon_names[list[b].species];
+            const u8 *name_a = pokemon_names[list[a].species];
+            const u8 *name_b = pokemon_names[list[b].species];
             int i = 0;
             while (true) {
                 if (name_a[i] - name_b[i])

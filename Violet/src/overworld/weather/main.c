@@ -61,9 +61,9 @@ static bool is_cemetery_map() {
     return save1->bank == CEMETERY_BANK && save1->map == CEMETERY_MAP;
 }
 
-static color_t weather_burning_trees_filter = {.rgb = {.red = 31, .blue = 16, .green = 15}};
-static color_t weather_fog_cemetery_filter = {.rgb = {.red = 15, .green = 15, .blue = 28}};
-static color_t weather_cold_blue_filter = {.rgb = {.red = 200 / 8, .green = 232 / 8, .blue = 248 / 8}};
+static const color_t weather_burning_trees_filter = {.rgb = {.red = 31, .blue = 16, .green = 15}};
+static const color_t weather_fog_cemetery_filter = {.rgb = {.red = 15, .green = 15, .blue = 28}};
+static const color_t weather_cold_blue_filter = {.rgb = {.red = 200 / 8, .green = 232 / 8, .blue = 248 / 8}};
 
 void weather_set_filter(u8 weather) {
     // DEBUG("Weather filter set according to weather %d\n", weather);
@@ -91,7 +91,7 @@ void weather_set_filter(u8 weather) {
 }
 
 
-weather_callbacks_t weather_callbacks[NUM_MAP_WEATHERS] = {
+const weather_callbacks_t weather_callbacks[NUM_MAP_WEATHERS] = {
     [MAP_WEATHER_INSIDE] = {.initialize_variables = weather_inside_initialize_variables_with_blend, .main = weather_inside_main, .initialize_all = weather_inside_initialize_all_with_blend, .closure = weather_inside_closure },
     [MAP_WEATHER_SUNNY_WITH_CLOUD_REFLECTION] = {.initialize_variables = weather_sunny_with_cloud_reflection_initialize_variables_with_blend, .main = weather_sunny_with_cloud_reflection_main, .initialize_all = weather_sunny_with_cloud_reflection_initialize_all_with_blend, .closure = weather_sunny_with_cloud_reflection_closure },
     [MAP_WEATHER_OUTSIDE] = {.initialize_variables = weather_outside_initialize_variables_with_blend, .main = weather_outside_main, .initialize_all = weather_outside_initialize_all_with_blend, .closure = weather_outside_closure },
@@ -296,7 +296,7 @@ void overworld_weather_fade_in_with_filter() {
     overworld_weather_fade_in();
 }
 
-static s8 weather_gammas[NUM_MAP_WEATHERS] = {
+static const s8 weather_gammas[NUM_MAP_WEATHERS] = {
     [MAP_WEATHER_RAIN] = 3,
     [MAP_WEATHER_THUNDER] = 3,
     [MAP_WEATHER_EXTREME_THUNDER] = 3,
@@ -440,7 +440,7 @@ bool overworld_weather_fade_in_static_fog() {
     return true;
 }
 
-static bool weather_affects_palette[NUM_MAP_WEATHERS] = {
+static const bool weather_affects_palette[NUM_MAP_WEATHERS] = {
     [MAP_WEATHER_RAIN] = true,
     [MAP_WEATHER_THUNDER] = true,
     [MAP_WEATHER_EXTREME_THUNDER] = true,

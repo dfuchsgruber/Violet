@@ -2,7 +2,7 @@
 #include "music.h"
 #include "constants/songs.h"
 
-song song_table[] = {
+const song song_table[] = {
 	//Song 0
 	{(void*) 0x86b3c64, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 1

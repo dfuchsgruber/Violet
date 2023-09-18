@@ -33,14 +33,14 @@ extern const unsigned short gfx_ts_bgTiles[];
 extern const unsigned short gfx_ts_bgMap[];
 extern const color_t gfx_ts_bgPal[];
 
-const unsigned short *ts_deoxysTiles[] = {
+const unsigned short *const ts_deoxysTiles[] = {
     gfx_ts_deoxys_0Tiles,
     gfx_ts_deoxys_1Tiles,
     gfx_ts_deoxys_2Tiles,
     gfx_ts_deoxys_1Tiles
 };
 
-const unsigned short *ts_deoxysMap[] = {
+const unsigned short *const ts_deoxysMap[] = {
     gfx_ts_deoxys_0Map,
     gfx_ts_deoxys_1Map,
     gfx_ts_deoxys_2Map,

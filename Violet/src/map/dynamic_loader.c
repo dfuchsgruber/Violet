@@ -16,14 +16,14 @@
 #include "oam.h"
 
 
-map_connection_header_t dungeon2_connections = {0, NULL};
+const map_connection_header_t dungeon2_connections = {0, NULL};
 
-levelscript_header_t dungeon2_lscr [] = {
+const levelscript_header_t dungeon2_lscr [] = {
     {0, {0, 0, 0, 0} }
 };
 
 void map_initialize_blocks(map_header_t *header) {
-    map_footer_t *footer = header->footer;
+    const map_footer_t *footer = header->footer;
     int fill = 0x03FF03FF;
     cpufastset(&fill, map_changes, CPUFASTSET_FILL | CPUFASTSET_SIZE(sizeof(map_changes)));
     map_blocks_virtual.blocks = map_changes;
@@ -38,7 +38,7 @@ void map_initialize_blocks(map_header_t *header) {
     map_copy_adjacent_maps_to_virtual_blocks(header);
 }
 
-map_header_t *get_mapheader(u8 bank, u8 map) {
+const map_header_t *get_mapheader(u8 bank, u8 map) {
     if (dungeon_get_type() && bank == DG2_BANK && map == DG2_MAP) {
         if (!fmem.dmap_header_initialized) {
             switch(dungeon_get_type()) {
@@ -56,7 +56,7 @@ map_header_t *get_mapheader(u8 bank, u8 map) {
     }
 }
 
-map_footer_t *get_mapfooter() {
+const map_footer_t *get_mapfooter() {
     if (save1->current_footer_id == DG2_FOOTER_IDX) {
         return &(fmem.dmapfooter);
     }

@@ -11,7 +11,7 @@
 #include "data/trainer_parties.h"
 
 
-trainer trainers[TRAINER_CNT] = {
+const trainer trainers[TRAINER_CNT] = {
   {
     //Trainer 0x0
     0, // money multiplier

@@ -11,7 +11,7 @@
 #include "constants/vars.h"
 #include "constants/species.h"
 
-u16 ceometria_gym_trainer_pokemon[] = {
+const u16 ceometria_gym_trainer_pokemon[] = {
     POKEMON_NEBULAK, POKEMON_ALPOLLO, POKEMON_TRAUNFUGIL, POKEMON_TRAUNMAGIL,
     POKEMON_ZWIRRLICHT, POKEMON_ZWIRRKLOP, POKEMON_LICHTEL,
     POKEMON_LATERNECTO, POKEMON_PARAGONI, POKEMON_QUABBEL, POKEMON_APOQUALLYP,
@@ -41,11 +41,11 @@ void ceometria_gym_initialize() {
     cmem.ceometria_gym_state.last_room = NUM_CEOMETRIA_GYM_ROOM_TYPES;
 }
 
-u8 ceometria_gym_overworld_pictures_male[] = {
+const u8 ceometria_gym_overworld_pictures_male[] = {
     27, 32, 26, 30
 };
 
-u8 ceometria_gym_overworld_pictures_female[] = {
+const u8 ceometria_gym_overworld_pictures_female[] = {
     23, 28, 35, 58
 };
 
@@ -101,7 +101,7 @@ void ceometria_gym_next_waiting_room() {
 }
 
 
-u8 *ceometria_gym_person_scripts_trainerbattle[8] = {
+const u8 *const ceometria_gym_person_scripts_trainerbattle[8] = {
     ow_script_ceometria_gym_trainer_variant_0,
     ow_script_ceometria_gym_trainer_variant_1,
     ow_script_ceometria_gym_trainer_variant_2,
@@ -112,7 +112,7 @@ u8 *ceometria_gym_person_scripts_trainerbattle[8] = {
     ow_script_ceometria_gym_trainer_variant_7,
 };
 
-u8 *ceometria_gym_person_scripts_say_nothing[8] = {
+const u8 *const ceometria_gym_person_scripts_say_nothing[8] = {
     ow_script_ceometria_gym_say_nothing_variant_0,
     ow_script_ceometria_gym_say_nothing_variant_1,
     ow_script_ceometria_gym_say_nothing_variant_2,
@@ -123,7 +123,7 @@ u8 *ceometria_gym_person_scripts_say_nothing[8] = {
     ow_script_ceometria_gym_say_nothing_variant_7,
 };
 
-u8 *ceometria_gym_person_scripts_reveal_room[] = {
+const u8 *const ceometria_gym_person_scripts_reveal_room[] = {
     [CEOMETRIA_GYM_NOTHING] = ow_script_ceometria_gym_reveal_room_nothing,
     [CEOMETRIA_GYM_TRAINER_ROOM] = ow_script_ceometria_gym_reveal_room_trainer,
     [CEOMETRIA_GYM_POISON_ROOM] = ow_script_ceometria_gym_reveal_room_poison,
@@ -137,14 +137,14 @@ u8 *ceometria_gym_person_scripts_reveal_room[] = {
     [CEOMETRIA_GYM_REDUCE_PP_ROOM] = ow_script_ceometria_gym_reveal_room_reduce_any
 };
 
-u8 *ceometria_gym_room_hint_room_not_negative[4] = {
+const u8 *const ceometria_gym_room_hint_room_not_negative[4] = {
     ow_script_ceometria_gym_hint_room_not_negative_variant_0,
     ow_script_ceometria_gym_hint_room_not_negative_variant_1,
     ow_script_ceometria_gym_hint_room_not_negative_variant_2,
     ow_script_ceometria_gym_hint_room_not_negative_variant_3
 };
 
-u8 *ceometria_gym_room_hint_room_negative[4] = {
+const u8 *const ceometria_gym_room_hint_room_negative[4] = {
     ow_script_ceometria_gym_hint_room_negative_variant_0,
     ow_script_ceometria_gym_hint_room_negative_variant_1,
     ow_script_ceometria_gym_hint_room_negative_variant_2,

@@ -44,7 +44,7 @@ extern "C" {
 
     typedef struct {
     	int num_shapes;
-    	worldmap_shape_t *shapes;
+    	const worldmap_shape_t *shapes;
     } worldmap_pattern_t;
 
     typedef struct {
@@ -54,11 +54,11 @@ extern "C" {
     } worldmap_shape_association_t;
 
     #define NUM_WORLDMAP_SHAPE_ASSOCIATIONS 6
-    worldmap_shape_association_t worldmap_shape_associations[NUM_WORLDMAP_SHAPE_ASSOCIATIONS];
+    extern const worldmap_shape_association_t worldmap_shape_associations[NUM_WORLDMAP_SHAPE_ASSOCIATIONS];
 
     extern worldmap_state_t *worldmap_state;
 
-    stru_flight_position flight_positions[NUM_HEALING_PLACES]; // Each flight position is associated with a healing place
+    extern const stru_flight_position flight_positions[NUM_HEALING_PLACES]; // Each flight position is associated with a healing place
 
     typedef struct {
         u8 bank;
@@ -67,10 +67,10 @@ extern "C" {
     } flight_position_association_t;
     
     // Associates map namespaces with healing place idxs
-    flight_position_association_t flight_position_associations[MAP_NAMESPACE_NONE - MAP_AMONIA];
+    extern const flight_position_association_t flight_position_associations[MAP_NAMESPACE_NONE - MAP_AMONIA];
 
-    int *worldmap_tilemaps[4];
-    u8 *namespace_worldmap_associations;
+    extern const int *worldmap_tilemaps[4];
+    extern const u8 *namespace_worldmap_associations;
     extern const unsigned short gfx_worldmapTiles[];
     extern const unsigned short gfx_worldmapMap[];
     extern const unsigned short gfx_worldmapPal[];
@@ -88,7 +88,7 @@ extern "C" {
      * @param idx_plus_one the index of the flight position plus one
      * @return the flight pos offset
      */
-    stru_flight_position *flightposition_by_id(int idx_plus_one);
+    const stru_flight_position *flightposition_by_id(int idx_plus_one);
 
     /**
      * Gets the namespace id associated with a position on the worldmap
@@ -125,7 +125,7 @@ extern "C" {
     } worldmap_position_t;
 
     // Locates maps exactly on the worldmap
-    worldmap_position_t *worldmap_positions[256];
+    extern const worldmap_position_t *const worldmap_positions[256];
 
 #define WORLDMAP_FLAG_CHECK_INVALID 0
 #define WORLDMAP_FLAG_CHECK_NO_FLAG 1

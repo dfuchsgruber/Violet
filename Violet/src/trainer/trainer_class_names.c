@@ -2,7 +2,7 @@
 #include "language.h"
 #include "trainer/trainer.h"
 
-u8 trainer_class_names[TRAINERCLASS_CNT][13] = {
+const u8 trainer_class_names[TRAINERCLASS_CNT][13] = {
 	LANGDEP(PSTRING("PKMN-Trainer"), PSTRING("PKMN Trainer")),
 	LANGDEP(PSTRING("PKMN-Trainer"), PSTRING("PKMN Trainer")),
 	LANGDEP(PSTRING("Polizist"), PSTRING("Aqua Leader")),
@@ -113,9 +113,9 @@ u8 trainer_class_names[TRAINERCLASS_CNT][13] = {
 };
 
 
-extern u8 trainer_class_names[][13];
+extern const u8 trainer_class_names[][13];
 
-u8 *trainer_get_class_name(int unkown, u16 trainer_id){
+const u8 *trainer_get_class_name(int unkown, u16 trainer_id){
 	(void)(unkown);
     return trainer_class_names[trainers[trainer_id].trainerclass];
 }

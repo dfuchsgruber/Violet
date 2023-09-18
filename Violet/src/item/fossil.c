@@ -12,7 +12,7 @@
 #include "overworld/script.h"
 #include "list_menu.h"
 
-u16 fossils [5] = {
+static const u16 fossils [5] = {
     ITEM_ALTBERNSTEIN,
     ITEM_DOMFOSSIL,
     ITEM_HELIXFOSSIL,
@@ -20,7 +20,7 @@ u16 fossils [5] = {
     ITEM_WURZELFOSSIL
 };
 
-u16 fossil_species[5] = {
+static const u16 fossil_species[5] = {
     POKEMON_AERODACTYL,
     POKEMON_KABUTO,
     POKEMON_AMONITAS,

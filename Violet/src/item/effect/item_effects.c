@@ -3,62 +3,62 @@
 #include "constants/pokemon_stat_names.h"
 #include "constants/items.h"
 
-item_effect_t item_effect_potion = {.heal_hp = true, .hp = 20};
+static const item_effect_t item_effect_potion = {.heal_hp = true, .hp = 20};
 
-item_effect_t item_effect_berry_juice = {.heal_hp = true, .hp = 75};
+static const item_effect_t item_effect_berry_juice = {.heal_hp = true, .hp = 75};
 
-item_effect_t item_effect_antidote = {.heal_poison = true};
+static const item_effect_t item_effect_antidote = {.heal_poison = true};
 
-item_effect_t item_effect_burn_heal = {.heal_burn = true};
+static const item_effect_t item_effect_burn_heal = {.heal_burn = true};
 
-item_effect_t item_effect_ice_heal = {.heal_freeze = true};
+static const item_effect_t item_effect_ice_heal = {.heal_freeze = true};
 
-item_effect_t item_effect_awakening = {.heal_sleep = true};
+static const item_effect_t item_effect_awakening = {.heal_sleep = true};
 
-item_effect_t item_effect_paralyze_heal = {.heal_paralysis = true};
+static const item_effect_t item_effect_paralyze_heal = {.heal_paralysis = true};
 
-item_effect_t item_effect_full_restore = {
+static const item_effect_t item_effect_full_restore = {
     .heal_poison = true, .heal_burn = true, .heal_freeze = true, .heal_sleep = true,
     .heal_paralysis = true, .heal_confusion = true, .heal_infatuation = true,
     .heal_hp = true, .hp = ITEM_EFFECT_HEAL_HP_ALL,
 };
 
-item_effect_t item_effect_max_potion = {.heal_hp = true, .hp = ITEM_EFFECT_HEAL_HP_ALL};
+static const item_effect_t item_effect_max_potion = {.heal_hp = true, .hp = ITEM_EFFECT_HEAL_HP_ALL};
 
-item_effect_t item_effect_hyper_potion = {.heal_hp = true, .hp = 200};
+static const item_effect_t item_effect_hyper_potion = {.heal_hp = true, .hp = 200};
 
-item_effect_t item_effect_super_potion = {.heal_hp = true, .hp = 50};
+static const item_effect_t item_effect_super_potion = {.heal_hp = true, .hp = 50};
 
-item_effect_t item_effect_full_heal = {
+static const item_effect_t item_effect_full_heal = {
     .heal_poison = true, .heal_burn = true, .heal_freeze = true, .heal_sleep = true,
     .heal_paralysis = true, .heal_confusion = true, .heal_infatuation = true,
 };
 
-item_effect_t item_effect_revive = {.revives = true, .heal_hp = true, .hp = ITEM_EFFECT_HEAL_HP_HALF};
+static const item_effect_t item_effect_revive = {.revives = true, .heal_hp = true, .hp = ITEM_EFFECT_HEAL_HP_HALF};
 
-item_effect_t item_effect_max_revive = {.revives = true, .heal_hp = true, .hp = ITEM_EFFECT_HEAL_HP_ALL};
+static const item_effect_t item_effect_max_revive = {.revives = true, .heal_hp = true, .hp = ITEM_EFFECT_HEAL_HP_ALL};
 
-item_effect_t item_effect_fresh_water = {.heal_hp = true, .hp = ITEM_EFFECT_HEAL_HP_HALF};
+static const item_effect_t item_effect_fresh_water = {.heal_hp = true, .hp = ITEM_EFFECT_HEAL_HP_HALF};
 
-item_effect_t item_effect_soda_pop = {.heal_pp = true, .heal_pp_one_move = true, .pp = 5};
+static const item_effect_t item_effect_soda_pop = {.heal_pp = true, .heal_pp_one_move = true, .pp = 5};
 
-item_effect_t item_effect_lemonade = {.heal_hp = true, .hp = 225};
+static const item_effect_t item_effect_lemonade = {.heal_hp = true, .hp = 225};
 
-item_effect_t item_effect_moomoo_milk = {.heal_hp = true, .hp = 100};
+static const item_effect_t item_effect_moomoo_milk = {.heal_hp = true, .hp = 100};
 
-item_effect_t item_effect_energy_powder = {
+static const item_effect_t item_effect_energy_powder = {
     .heal_hp = true, .hp = 50, .increase_friendship_low = true, .friendship_low = -5,
     .increase_friendship_mid = true, .friendship_mid = -5, .increase_friendship_high = true,
     .friendship_high = -10, 
 };
 
-item_effect_t item_effect_energy_root = {
+static const item_effect_t item_effect_energy_root = {
     .heal_hp = true, .hp = 200, .increase_friendship_low = true, .friendship_low = -10,
     .increase_friendship_mid = true, .friendship_mid = -10, .increase_friendship_high = true,
     .friendship_high = -15, 
 };
 
-item_effect_t item_effect_heal_powder = {
+static const item_effect_t item_effect_heal_powder = {
     .heal_poison = true, .heal_burn = true, .heal_freeze = true, .heal_sleep = true,
     .heal_paralysis = true, .heal_confusion = true, .heal_infatuation = true,
     .increase_friendship_low = true, .friendship_low = -5,
@@ -66,66 +66,66 @@ item_effect_t item_effect_heal_powder = {
     .friendship_high = -10, 
 };
 
-item_effect_t item_effect_revival_herb = {
+static const item_effect_t item_effect_revival_herb = {
     .heal_hp = true, .revives = true, .hp = ITEM_EFFECT_HEAL_HP_ALL,
     .increase_friendship_low = true, .friendship_low = -15,
     .increase_friendship_mid = true, .friendship_mid = -15, .increase_friendship_high = true,
     .friendship_high = -20, 
 };
 
-item_effect_t item_effect_ether = {
+static const item_effect_t item_effect_ether = {
     .heal_pp = true, .heal_pp_one_move = true, .pp = 10
 };
 
-item_effect_t item_effect_max_ether = {
+static const item_effect_t item_effect_max_ether = {
     .heal_pp = true, .heal_pp_one_move = true, .pp = ITEM_EFFECT_PP_ALL
 };
 
-item_effect_t item_effect_elixir = {
+static const item_effect_t item_effect_elixir = {
     .heal_pp = true, .heal_pp_one_move = false, .pp = 10
 };
 
-item_effect_t item_effect_max_elixir = {
+static const item_effect_t item_effect_max_elixir = {
     .heal_pp = true, .heal_pp_one_move = false, .pp = ITEM_EFFECT_PP_ALL
 };
 
-item_effect_t item_effect_yellow_flute = {.heal_confusion = true};
+static const item_effect_t item_effect_yellow_flute = {.heal_confusion = true};
 
-item_effect_t item_effect_red_flute = {.heal_infatuation = true};
+static const item_effect_t item_effect_red_flute = {.heal_infatuation = true};
 
-item_effect_t item_effect_sacred_ash = {.sacred_ash = true, .heal_hp = true, .revives = true, .hp = ITEM_EFFECT_HEAL_HP_ALL};
+static const item_effect_t item_effect_sacred_ash = {.sacred_ash = true, .heal_hp = true, .revives = true, .hp = ITEM_EFFECT_HEAL_HP_ALL};
 
-item_effect_t item_effect_hp_up = {
+static const item_effect_t item_effect_hp_up = {
     .increase_ev_hp = true, .evs = {[STAT_HP] = 12}, .increase_friendship_low = true,
     .increase_friendship_mid = true, .increase_friendship_high = true,
     .friendship_low = 5, .friendship_mid = 3, .friendship_high = 2,
 };
 
-item_effect_t item_effect_protein = {
+static const item_effect_t item_effect_protein = {
     .increase_ev_attack = true, .evs = {[STAT_ATTACK] = 12}, .increase_friendship_low = true,
     .increase_friendship_mid = true, .increase_friendship_high = true,
     .friendship_low = 5, .friendship_mid = 3, .friendship_high = 2,
 };
 
-item_effect_t item_effect_iron = {
+static const item_effect_t item_effect_iron = {
     .increase_ev_defense = true, .evs = {[STAT_DEFENSE] = 12}, .increase_friendship_low = true,
     .increase_friendship_mid = true, .increase_friendship_high = true,
     .friendship_low = 5, .friendship_mid = 3, .friendship_high = 2,
 };
 
-item_effect_t item_effect_calcium = {
+static const item_effect_t item_effect_calcium = {
     .increase_ev_special_attack = true, .evs = {[STAT_SPECIAL_ATTACK] = 12}, .increase_friendship_low = true,
     .increase_friendship_mid = true, .increase_friendship_high = true,
     .friendship_low = 5, .friendship_mid = 3, .friendship_high = 2,
 };
 
-item_effect_t item_effect_carbos = {
+static const item_effect_t item_effect_carbos = {
     .increase_ev_speed = true, .evs = {[STAT_SPEED] = 12}, .increase_friendship_low = true,
     .increase_friendship_mid = true, .increase_friendship_high = true,
     .friendship_low = 5, .friendship_mid = 3, .friendship_high = 2,
 };
 
-item_effect_t item_effect_rare_candy = {
+static const item_effect_t item_effect_rare_candy = {
     .increase_level = true, .revives = true, .heal_hp = true,
     .hp = ITEM_EFFECT_HEAL_HP_DYANMIC, .increase_friendship_low = true,
     .increase_friendship_mid = true, .increase_friendship_high = true,
@@ -133,102 +133,102 @@ item_effect_t item_effect_rare_candy = {
     .level = 1,
 };
 
-item_effect_t item_effect_pp_up = {
+static const item_effect_t item_effect_pp_up = {
     .pp_up = true, .increase_friendship_low = true,
     .increase_friendship_mid = true, .increase_friendship_high = true,
     .friendship_low = 5, .friendship_mid = 3, .friendship_high = 2,
 };
 
-item_effect_t item_effect_zinc = {
+static const item_effect_t item_effect_zinc = {
     .increase_ev_special_defense = true, .evs = {[STAT_SPECIAL_DEFENSE] = 12}, .increase_friendship_low = true,
     .increase_friendship_mid = true, .increase_friendship_high = true,
     .friendship_low = 5, .friendship_mid = 3, .friendship_high = 2,
 };
 
-item_effect_t item_effect_pp_max = {
+static const item_effect_t item_effect_pp_max = {
     .pp_max = true, .increase_friendship_low = true,
     .increase_friendship_mid = true, .increase_friendship_high = true,
     .friendship_low = 5, .friendship_mid = 3, .friendship_high = 2,
 };
 
-item_effect_t item_effect_guard_spec = {
+static const item_effect_t item_effect_guard_spec = {
     .creates_mist = true, .increase_friendship_low = true, .increase_friendship_mid = true,
     .friendship_low = 1, .friendship_mid = 1,
 };
 
-item_effect_t item_effect_dire_hit = {
+static const item_effect_t item_effect_dire_hit = {
     .increase_critical_ratio = true, .increase_friendship_low = true, .increase_friendship_mid = true,
     .friendship_low = 1, .friendship_mid = 1,
 };
 
-item_effect_t item_effect_x_attack = {
+static const item_effect_t item_effect_x_attack = {
     .x_attack = 1, .increase_friendship_low = true, .increase_friendship_mid = true,
     .friendship_low = 1, .friendship_mid = 1,
 };
 
-item_effect_t item_effect_x_defend = {
+static const item_effect_t item_effect_x_defend = {
     .x_defense = 1, .increase_friendship_low = true, .increase_friendship_mid = true,
     .friendship_low = 1, .friendship_mid = 1,
 };
 
-item_effect_t item_effect_x_speed = {
+static const item_effect_t item_effect_x_speed = {
     .x_speed = 1, .increase_friendship_low = true, .increase_friendship_mid = true,
     .friendship_low = 1, .friendship_mid = 1,
 };
 
-item_effect_t item_effect_x_accuracy = {
+static const item_effect_t item_effect_x_accuracy = {
     .x_accuracy = 1, .increase_friendship_low = true, .increase_friendship_mid = true,
     .friendship_low = 1, .friendship_mid = 1,
 };
 
-item_effect_t item_effect_x_special = {
+static const item_effect_t item_effect_x_special = {
     .x_special_attack = 1, .increase_friendship_low = true, .increase_friendship_mid = true,
     .friendship_low = 1, .friendship_mid = 1,
 };
 
-item_effect_t item_effect_evolution_stone = {.trigger_evolution = true};
+static const item_effect_t item_effect_evolution_stone = {.trigger_evolution = true};
 
-item_effect_t item_effect_oran_berry = {.heal_hp = true, .hp = 10};
+static const item_effect_t item_effect_oran_berry = {.heal_hp = true, .hp = 10};
 
-item_effect_t item_effect_sitrus_berry = {.heal_hp = true, .hp = ITEM_EFFECT_HEAL_HP_QUARTER};
+static const item_effect_t item_effect_sitrus_berry = {.heal_hp = true, .hp = ITEM_EFFECT_HEAL_HP_QUARTER};
 
-item_effect_t item_effect_pomeg_berry = {
+static const item_effect_t item_effect_pomeg_berry = {
     .increase_ev_hp = true, .evs = {[STAT_HP] = -10}, .increase_friendship_low = true,
     .increase_friendship_mid = true, .increase_friendship_high = true,
     .friendship_low = 10, .friendship_mid = 5, .friendship_high = 2,
 };
 
-item_effect_t item_effect_kelpsy_berry = {
+static const item_effect_t item_effect_kelpsy_berry = {
     .increase_ev_attack = true, .evs = {[STAT_ATTACK] = -10}, .increase_friendship_low = true,
     .increase_friendship_mid = true, .increase_friendship_high = true,
     .friendship_low = 10, .friendship_mid = 5, .friendship_high = 2,
 };
 
-item_effect_t item_effect_qualot_berry = {
+static const item_effect_t item_effect_qualot_berry = {
     .increase_ev_defense = true, .evs = {[STAT_DEFENSE] = -10}, .increase_friendship_low = true,
     .increase_friendship_mid = true, .increase_friendship_high = true,
     .friendship_low = 10, .friendship_mid = 5, .friendship_high = 2,
 };
 
-item_effect_t item_effect_hondrew_berry = {
+static const item_effect_t item_effect_hondrew_berry = {
     .increase_ev_special_attack = true, .evs = {[STAT_SPECIAL_ATTACK] = -10}, .increase_friendship_low = true,
     .increase_friendship_mid = true, .increase_friendship_high = true,
     .friendship_low = 10, .friendship_mid = 5, .friendship_high = 2,
 };
 
-item_effect_t item_effect_grepy_berry = {
+static const item_effect_t item_effect_grepy_berry = {
     .increase_ev_special_defense = true, .evs = {[STAT_SPECIAL_DEFENSE] = -10}, .increase_friendship_low = true,
     .increase_friendship_mid = true, .increase_friendship_high = true,
     .friendship_low = 10, .friendship_mid = 5, .friendship_high = 2,
 };
 
-item_effect_t item_effect_tomato_berry = {
+static const item_effect_t item_effect_tomato_berry = {
     .increase_ev_speed = true, .evs = {[STAT_SPEED] = -10}, .increase_friendship_low = true,
     .increase_friendship_mid = true, .increase_friendship_high = true,
     .friendship_low = 10, .friendship_mid = 5, .friendship_high = 2,
 };
 
-item_effect_t item_effect_gold_candy = {
+static const item_effect_t item_effect_gold_candy = {
     .increase_level = true, .revives = true, .heal_hp = true,
     .hp = ITEM_EFFECT_HEAL_HP_DYANMIC, .increase_friendship_low = true,
     .increase_friendship_mid = true, .increase_friendship_high = true,
@@ -236,12 +236,12 @@ item_effect_t item_effect_gold_candy = {
     .level = 1,
 };
 
-item_effect_t item_effect_sweet_candy = {
+static const item_effect_t item_effect_sweet_candy = {
     .increase_friendship_low = true, .increase_friendship_mid = true, .increase_friendship_high = true,
     .friendship_low = 25, .friendship_mid = 15, .friendship_high = 5,
 };
 
-static item_effect_t item_effect_null_syrup = {
+static const item_effect_t item_effect_null_syrup = {
     .increase_ev_hp = true, .increase_ev_attack = true, .increase_ev_defense = true,
     .increase_ev_speed = true, .increase_ev_special_defense = true, .increase_ev_special_attack = true,
     .increase_friendship_mid = true, .increase_friendship_high = true,
@@ -252,17 +252,17 @@ static item_effect_t item_effect_null_syrup = {
     }
 };
 
-static item_effect_t item_effect_golden_apple = {
+static const item_effect_t item_effect_golden_apple = {
     .heal_poison = true, .heal_burn = true, .heal_freeze = true, .heal_sleep = true,
     .heal_paralysis = true, .heal_confusion = true, .heal_infatuation = true,
     .heal_hp = true, .hp = ITEM_EFFECT_HEAL_HP_ALL, .golden_apple = true,
 };
 
-item_effect_t item_effect_apple = {.heal_hp = true, .hp = ITEM_EFFECT_HEAL_HP_HALF};
+static const item_effect_t item_effect_apple = {.heal_hp = true, .hp = ITEM_EFFECT_HEAL_HP_HALF};
 
-item_effect_t item_effect_bitter_herb = {.heal_hp = true, .hp = 1};
+static const item_effect_t item_effect_bitter_herb = {.heal_hp = true, .hp = 1};
 
-item_effect_t *item_effects[] = {
+const item_effect_t *const item_effects[] = {
     [ITEM_TRANK- ITEM_TRANK] = &item_effect_potion,
     [ITEM_GEGENGIFT- ITEM_TRANK] = &item_effect_antidote,
     [ITEM_FEUERHEILER- ITEM_TRANK] = &item_effect_burn_heal,

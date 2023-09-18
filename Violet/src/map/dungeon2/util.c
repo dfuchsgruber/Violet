@@ -17,7 +17,8 @@
 #include "hash.h"
 #include "callbacks.h"
 
-bool dungeon2_find_empty_space(int *space_x, int *space_y, u8 *center_node, int nodes[][2], int width, int height, u8 *map, dungeon_generator2 *dg2) {
+bool dungeon2_find_empty_space(int *space_x, int *space_y, u8 *center_node, int nodes[][2], int width, int height, 
+    const u8 *map, dungeon_generator2 *dg2) {
     // For each node, see if we can expand the window arround it
     int valid_positions[dg2->nodes][2];
     u8 num_valid_positions = 0;
@@ -47,11 +48,12 @@ bool dungeon2_find_empty_space(int *space_x, int *space_y, u8 *center_node, int 
     return false;
 }
 
-bool dungeon2_find_empty_space_for_pattern(int *space_x, int *space_y, u8 *center_node, int nodes[][2], map_footer_t *pattern, u8 *map, dungeon_generator2 *dg2) {
+bool dungeon2_find_empty_space_for_pattern(int *space_x, int *space_y, u8 *center_node, int nodes[][2], 
+        const map_footer_t *pattern, const u8 *map, dungeon_generator2 *dg2) {
     return dungeon2_find_empty_space(space_x, space_y, center_node, nodes, (int)pattern->width, (int)pattern->height, map, dg2);
 }
 
-void dungeon2_place_pattern(int pattern_x, int pattern_y, map_footer_t *pattern, dungeon_generator2 *dg2) {
+void dungeon2_place_pattern(int pattern_x, int pattern_y, const map_footer_t *pattern, dungeon_generator2 *dg2) {
     DEBUG("Place pattern with dimensions %d,%d at %d,%d\n", pattern->width, pattern->height, pattern_x, pattern_y);
     for (u8 i = 0; i < pattern->width; i++) {
         for (u8 j = 0; j < pattern->height; j++) {
@@ -63,17 +65,17 @@ void dungeon2_place_pattern(int pattern_x, int pattern_y, map_footer_t *pattern,
     }
 }
 
-extern u8 ow_script_dungeon_encounter[];
-extern u8 ow_script_dungeon_trainer_0[];
-extern u8 ow_script_dungeon_trainer_1[];
-extern u8 ow_script_dungeon_trainer_2[];
-extern u8 ow_script_dungeon_trainer_3[];
-extern u8 ow_script_dungeon_trainer_4[];
-extern u8 ow_script_dungeon_trainer_5[];
-extern u8 ow_script_dungeon_trainer_6[];
-extern u8 ow_script_dungeon_trainer_7[];
+extern const u8 ow_script_dungeon_encounter[];
+extern const u8 ow_script_dungeon_trainer_0[];
+extern const u8 ow_script_dungeon_trainer_1[];
+extern const u8 ow_script_dungeon_trainer_2[];
+extern const u8 ow_script_dungeon_trainer_3[];
+extern const u8 ow_script_dungeon_trainer_4[];
+extern const u8 ow_script_dungeon_trainer_5[];
+extern const u8 ow_script_dungeon_trainer_6[];
+extern const u8 ow_script_dungeon_trainer_7[];
 
-static u8 *dungeon2_trainer_scripts[4][2] = {
+static const u8 *const dungeon2_trainer_scripts[4][2] = {
     {ow_script_dungeon_trainer_0, ow_script_dungeon_trainer_4}, 
     {ow_script_dungeon_trainer_1, ow_script_dungeon_trainer_5}, 
     {ow_script_dungeon_trainer_2, ow_script_dungeon_trainer_6},
@@ -179,7 +181,7 @@ void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(
     fmem.dmapevents.warp_cnt = num_warps;
 }
 
-static u32 dungeon_mushroom_rates[] = {
+static const u32 dungeon_mushroom_rates[] = {
     [MUSHROOM_TYPE_TINY_MUSHROOM] = 2, [MUSHROOM_TYPE_LARGE_MUSHROOM] = 1,
 };
 

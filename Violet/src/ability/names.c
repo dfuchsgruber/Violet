@@ -1,7 +1,7 @@
 #include "types.h"
 #include "language.h"
 
-u8 ability_names[][13] = {
+const u8 ability_names[][13] = {
 	LANGDEP(PSTRING("--------"), PSTRING("-------")),
 	LANGDEP(PSTRING("Duftnote"), PSTRING("Stench")),
 	LANGDEP(PSTRING("Niesel"), PSTRING("Drizzle")),

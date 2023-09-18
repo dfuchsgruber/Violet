@@ -70,7 +70,7 @@ static u8 get_default_iv() {
 
 }
 
-static void trainer_pokemon_new(pokemon *p, trainer_pokemon *template) {
+static void trainer_pokemon_new(pokemon *p, const trainer_pokemon *template) {
 	pid_t pid = pokemon_new_pid_by_prng(template->species, trainer_pokemon_prng);
 	pid.fields.is_shiny = false; // by default, trainers will not have shinies
 	if (template->ability_set)

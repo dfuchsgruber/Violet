@@ -24,7 +24,7 @@ typedef struct {
         u16 baby_trigger_item;
     } pokemon_evolution;
 
-extern pokemon_evolution *pokemon_evolutions[POKEMON_CNT];
+extern const pokemon_evolution *const pokemon_evolutions[POKEMON_CNT];
 
 extern void (*evolution_continuation)();
 
@@ -57,7 +57,7 @@ bool pokemon_can_evolve (u16 species);
  * @param arg an argument that is passed depending on the trigger type, e.g. the item of an evolution stone
  * @return the species the pokemon evolves into or 0 if no such species exists
  **/
-u16 pokemon_get_evolution(pokemon * p, u8 trigger_type, u16 arg);
+u16 pokemon_get_evolution(pokemon *p, u8 trigger_type, u16 arg);
 
 /**
  * Initializes callbacks and a scene for evolving a pokemon.

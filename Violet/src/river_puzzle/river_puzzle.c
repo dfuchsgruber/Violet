@@ -32,26 +32,26 @@
 #include "constants/songs.h"
 #include "overworld/script.h"
 
-tbox_font_colormap river_puzzle_font_colmap_std = {
+const tbox_font_colormap river_puzzle_font_colmap_std = {
     4, 1, 2, 4
 };
 
-bg_config river_puzzle_bg_configs[4] = {
+const bg_config river_puzzle_bg_configs[4] = {
     {.bg_id = 0, .char_base = 2, .map_base = 31, .priority = 0, .size = 0, .color_mode = 0},
     {.bg_id = 1, .char_base = 2, .map_base = 30, .priority = 1, .size = 0, .color_mode = 0},
     {.bg_id = 2, .char_base = 0, .map_base = 29, .priority = 2, .size = 0, .color_mode = 0},
     {.bg_id = 3, .char_base = 0, .map_base = 28, .priority = 3, .size = 0, .color_mode = 0}
 };
 
-graphic graphic_river_puzzle_boat = {
+const graphic graphic_river_puzzle_boat = {
     .sprite = gfx_river_puzzle_boatTiles, .tag = RIVER_PUZZLE_BOAT_TAG, .size = 64 * 32 / 2
 };
 
-graphic graphic_river_puzzle_cursor = {
+const graphic graphic_river_puzzle_cursor = {
     .sprite = gfx_river_puzzle_cursorTiles, .tag = RIVER_PUZZLE_CURSOR_TAG, .size = 16 * 16 / 2
 };
 
-graphic graphic_river_puzzle_pokemons[] = {
+const graphic graphic_river_puzzle_pokemons[] = {
     [RIVER_PUZZLE_WIGGLYTUFF] = {.sprite = &gfx_river_puzzle_wigglytuff_lineTiles[0], .tag = 0,
         .size = 0x200},
     [RIVER_PUZZLE_IGGLYTUFF] = {.sprite = &gfx_river_puzzle_wigglytuff_lineTiles[128], .tag = 0,
@@ -66,30 +66,30 @@ graphic graphic_river_puzzle_pokemons[] = {
         .size = 0x200},
 };
 
-sprite sprite_river_puzzle_boat = {
+const sprite sprite_river_puzzle_boat = {
     .attr0 = ATTR0_SHAPE_HORIZONTAL, .attr1 = ATTR1_SIZE_64_32, .attr2 = ATTR2_PRIO(1)
 };
 
-sprite sprite_river_puzzle_pokemon = {
+const sprite sprite_river_puzzle_pokemon = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(1)
 };
 
-sprite sprite_river_puzzle_cursor = {
+const sprite sprite_river_puzzle_cursor = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(1)
 };
 
-gfx_frame gfx_anim_river_puzzle_pokemon[] = {{.data = 0, .duration = 0}, {.data = GFX_ANIM_END}};
-gfx_frame *gfx_anim_table_river_puzzle_pokemon[] = {
+const gfx_frame gfx_anim_river_puzzle_pokemon[] = {{.data = 0, .duration = 0}, {.data = GFX_ANIM_END}};
+const gfx_frame *const gfx_anim_table_river_puzzle_pokemon[] = {
     gfx_anim_river_puzzle_pokemon
 };
 
-oam_template oam_template_river_puzzle_boat = {
+const oam_template oam_template_river_puzzle_boat = {
     .tiles_tag = RIVER_PUZZLE_BOAT_TAG, .pal_tag = RIVER_PUZZLE_BOAT_TAG, .graphics = NULL,
     .oam = &sprite_river_puzzle_boat, .animation = oam_gfx_anim_table_null,
     .rotscale = oam_rotscale_anim_table_null, .callback = oam_null_callback
 };
 
-oam_template oam_template_river_puzzle_pokemons[] = {
+const oam_template oam_template_river_puzzle_pokemons[] = {
     [RIVER_PUZZLE_WIGGLYTUFF] = {
         .tiles_tag = 0xFFFF, .pal_tag = RIVER_PUZZLE_POKEMON_TAG + RIVER_PUZZLE_WIGGLYTUFF_LINE,
         .graphics = &graphic_river_puzzle_pokemons[RIVER_PUZZLE_WIGGLYTUFF],
@@ -129,21 +129,21 @@ void river_puzzle_cursor_callback(oam_object *self) {
   self->y2 = (s16)(FIXED_TO_INT(dy));
 }
 
-oam_template oam_template_river_puzzle_cursor = {
+const oam_template oam_template_river_puzzle_cursor = {
     .tiles_tag = RIVER_PUZZLE_CURSOR_TAG, .pal_tag = RIVER_PUZZLE_CURSOR_TAG, .graphics = NULL,
     .oam = &sprite_river_puzzle_cursor, .animation = oam_gfx_anim_table_null,
     .rotscale = oam_rotscale_anim_table_null, .callback = river_puzzle_cursor_callback
 };
 
-u8 river_puzzle_str_yes[] = LANGDEP(PSTRING("Ja"), PSTRING("Yes"));
-u8 river_puzzle_str_no[] = LANGDEP(PSTRING("Nein"), PSTRING("No"));
+const u8 river_puzzle_str_yes[] = LANGDEP(PSTRING("Ja"), PSTRING("Yes"));
+const u8 river_puzzle_str_no[] = LANGDEP(PSTRING("Nein"), PSTRING("No"));
 
-list_menu_item river_puzzle_list_items_yes_no[] = {
+const list_menu_item river_puzzle_list_items_yes_no[] = {
     {.idx = 1, .text = river_puzzle_str_yes},
     {.idx = 2, .text = river_puzzle_str_no}
 };
 
-list_menu_template river_puzzle_list_template_yes_no = {
+const list_menu_template river_puzzle_list_template_yes_no = {
     .items = river_puzzle_list_items_yes_no,
     .cursor_moved_callback = list_menu_generic_cursor_callback,
     .item_print_callback = incubator_context_menu_item_print_callback,
@@ -153,7 +153,7 @@ list_menu_template river_puzzle_list_template_yes_no = {
     .font = 2
 };
 
-u16 river_puzzle_species[6] = {
+const u16 river_puzzle_species[6] = {
     POKEMON_KNUDDELUFF, POKEMON_FLUFFELUFF, POKEMON_ELEVOLTEK, POKEMON_ELEKID, POKEMON_MAGBRANT,
     POKEMON_MAGBY
 };
@@ -579,7 +579,7 @@ void river_puzzle_compute_map() {
   bg_tile *bg2map = bg_get_tilemap(2);
   int width = (int)map_footer_22_river_puzzle.width;
   int height = (int)map_footer_22_river_puzzle.height;
-  bg_tile *blocks = map_footer_22_river_puzzle.tileset1->blocks;
+  const bg_tile *blocks = map_footer_22_river_puzzle.tileset1->blocks;
   // Draw the background
   for (int y = 0; y < height; y++) {
     for (int x = 0; x < width; x++) {
@@ -707,7 +707,7 @@ void river_puzzle_initialize() {
   callback1_set(river_puzzle_callback1_initialize);
 }
 
-tboxdata river_puzzle_tboxes[RIVER_PUZZLE_TBOX_CNT + 1] = {
+const tboxdata river_puzzle_tboxes[RIVER_PUZZLE_TBOX_CNT + 1] = {
     [RIVER_PUZZLE_TBOX_TITLE] = {.bg_id = 1, .w = 18, .h = 2, .x = 6, .y = 0,
         .start_tile = RIVER_PUZZLE_TBOX_START_TILE , .pal = 13},
     [RIVER_PUZZLE_TBOX_CONTEXT] = {.bg_id = 1, .w = 28, .h = 2, .x = 1, .y = 18,

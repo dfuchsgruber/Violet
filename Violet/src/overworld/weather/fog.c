@@ -4,8 +4,8 @@
 #include "oam.h"
 #include "debug.h"
 
-extern oam_template overworld_weather_dynamic_fog_oam_template;
-extern graphic overworld_weather_dynamic_fog_graphic;
+extern const oam_template overworld_weather_dynamic_fog_oam_template;
+extern const graphic overworld_weather_dynamic_fog_graphic;
 
 void overworld_weather_dynamic_fog_create_oams() {
     if (!overworld_weather.fog_d_oams_created) {
@@ -29,8 +29,8 @@ void overworld_weather_dynamic_fog_create_oams() {
     overworld_weather.fog_d_oams_created = true;
 }
 
-extern graphic overworld_weather_static_fog_graphic;
-extern oam_template overworld_weather_static_fog_oam_template;
+extern const graphic overworld_weather_static_fog_graphic;
+extern const oam_template overworld_weather_static_fog_oam_template;
 
 void overworld_weather_static_fog_create_oams() {
     if (!overworld_weather.fog_h_oams_created) {

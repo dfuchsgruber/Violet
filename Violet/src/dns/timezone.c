@@ -70,8 +70,7 @@ void update_timezone() {
 }
 
 bool is_inside_map(u8 bank, u8 map) {
-
-    map_header_t *head = get_mapheader(bank, map);
+    const map_header_t *head = get_mapheader(bank, map);
     u8 type = head->type;
     return (type == MAP_TYPE_BASEMENT) || (type == MAP_TYPE_INSIDE) || (type == MAP_TYPE_SECRET_BASE);
 }

@@ -54,7 +54,7 @@ static u8 aggressive_wild_pokemon_get_spawn_rate(u16 flag) {
     return 0;
 }
 
-static u16 aggresive_wild_pokemon_flags[] = {
+static const u16 aggresive_wild_pokemon_flags[] = {
     FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0, FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_1, FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_2, FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_3,
     FLAG_AGGRESIVE_WILD_SPAWN_75_PERCENT, FLAG_AGGRESIVE_WILD_SPAWN_50_PERCENT, FLAG_AGGRESIVE_WILD_SPAWN_25_PERCENT, FLAG_AGGRESIVE_WILD_SPAWN_5_PERCENT
 };
@@ -80,7 +80,7 @@ void map_reset_temporary_flags_and_vars() {
 
 }
 
-overworld_sprite *overworld_get_by_person(map_event_person *person) {
+const overworld_sprite *overworld_get_by_person(const map_event_person *person) {
     if (person->overworld_index == OVERWORLD_SPRITE_POKEMON_32_32) {
         return overworld_sprite_get_by_species(person->value);
     } else if (person->overworld_index == OVERWORLD_SPRITE_POKEMON_64_64) {
@@ -110,8 +110,8 @@ overworld_sprite *overworld_get_by_person(map_event_person *person) {
     return overworld_get(person->overworld_index);
 }
 
-overworld_sprite *overworld_get_by_npc(npc *n) {
-    map_event_person *person = map_get_person(n->overworld_id, n->map, n->bank);
+const overworld_sprite *overworld_get_by_npc(const npc *n) {
+    const map_event_person *person = map_get_person(n->overworld_id, n->map, n->bank);
     // OW_DEBUG("Ow get by npc: npc is @0x%x\n", n);
     // if (person)
         // OW_DEBUG("Has person at 0x%x with sprite %d\n", person, person->overworld_index);
@@ -152,63 +152,63 @@ void overworld_npc_palettes_initialize(u8 mode) {
     oam_palette_allocation_reset();
 }
 
-static palette overworld_palette_roman = {
+static const palette overworld_palette_roman = {
     .pal = gfx_ow_romanPal, .tag = OW_PAL_TAG_ROMAN,
 };
 
-static palette overworld_palette_rosalie = {
+static const palette overworld_palette_rosalie = {
     .pal = gfx_ow_rosaliePal, .tag = OW_PAL_TAG_ROSALIE,
 };
 
-static palette overworld_palette_icarus = {
+static const palette overworld_palette_icarus = {
     .pal = gfx_ow_icarusPal, .tag = OW_PAL_TAG_ICARUS,
 };
 
-static palette overworld_palette_apple = {
+static const palette overworld_palette_apple = {
     .pal = gfx_ow_applePal, .tag = OW_PAL_TAG_APPLE,
 };
 
-static palette overworld_palette_secret_power_vine = {
+static const palette overworld_palette_secret_power_vine = {
     .pal = gfx_overworld_secret_power_vinesPal, .tag = OW_PAL_TAG_SECRET_POWER_VINES,
 }; 
 
-static palette overworld_palette_secret_power_cave = {
+static const palette overworld_palette_secret_power_cave = {
     .pal = gfx_overworld_secret_power_cavePal, .tag = OW_PAL_TAG_SECRET_POWER_CAVE,
 }; 
 
-static palette overworld_palette_recipe = {
+static const palette overworld_palette_recipe = {
     .pal = gfx_ow_recipe2Pal, .tag = OW_PAL_TAG_RECIPE,
 }; 
 
-static palette overworld_palette_upstream = {
+static const palette overworld_palette_upstream = {
     .pal = gfx_ow_upstreamPal, .tag = OW_PAL_TAG_UPSTREAM,
 }; 
 
-static palette overworld_palette_faun = {
+static const palette overworld_palette_faun = {
     .pal = gfx_ow_faunPal, .tag = OW_PAL_TAG_FAUN,
 }; 
 
-palette overworld_palette_blue_gear = {
+const palette overworld_palette_blue_gear = {
     .pal = gfx_ow_blue_gearPal, .tag = OW_PAL_TAG_BLUE_GEAR,
 };
 
-palette overworld_palette_red_gear = {
+const palette overworld_palette_red_gear = {
     .pal = gfx_ow_red_gearPal, .tag = OW_PAL_TAG_RED_GEAR,
 };
 
-palette overworld_palette_green_gear = {
+const palette overworld_palette_green_gear = {
     .pal = gfx_ow_green_gearPal, .tag = OW_PAL_TAG_GREEN_GEAR,
 };
 
-palette overworld_palette_yellow_gear = {
+const palette overworld_palette_yellow_gear = {
     .pal = gfx_ow_yellow_gearPal, .tag = OW_PAL_TAG_YELLOW_GEAR,
 };
 
-palette overworld_palette_treasure_map = {
+const palette overworld_palette_treasure_map = {
     .pal = gfx_ow_treasure_mapPal, .tag = OW_PAL_TAG_TREASURE_MAP,
 };
 
-static palette *overworld_npc_palette_get_by_tag(u16 tag) {
+static const palette *overworld_npc_palette_get_by_tag(u16 tag) {
     if (tag >= OW_PAL_TAG_POKEMON_BASE && tag < OW_PAL_TAG_POKEMON_END) {
         return overworld_palette_get_by_species((u16)(tag - OW_PAL_TAG_POKEMON_BASE));
     }
@@ -249,7 +249,7 @@ static palette *overworld_npc_palette_get_by_tag(u16 tag) {
     return NULL;
 }
 
-u8 oam_palette_load_if_not_present_and_apply_shaders(palette *pal) {
+u8 oam_palette_load_if_not_present_and_apply_shaders(const palette *pal) {
     if (!pal)
         return 0xFF;
     u8 oam_pal_idx = oam_palette_get_index(pal->tag);
@@ -263,14 +263,14 @@ u8 oam_palette_load_if_not_present_and_apply_shaders(palette *pal) {
 
 u8 overworld_npc_palette_load(u16 tag) {
     OW_DEBUG("Loading oam palette for tag 0x%x\n", tag);
-    palette *pal = overworld_npc_palette_get_by_tag(tag);
+    const palette *pal = overworld_npc_palette_get_by_tag(tag);
     if (pal) {
        return oam_palette_load_if_not_present_and_apply_shaders(pal); 
     }
     return 0xFF;
 }
 
-void overworld_npc_load_palette_by_template(oam_template *template) {
+void overworld_npc_load_palette_by_template(const oam_template *template) {
     // OW_DEBUG("Find palette 0x%x via template\n", template->pal_tag);
     if (template->pal_tag != 0xFFFF) {
         // OW_DEBUG("Loading oam pal from tag 0x%x\n", template->pal_tag);
@@ -279,7 +279,7 @@ void overworld_npc_load_palette_by_template(oam_template *template) {
 }
 
 void overworld_npc_update_palette(npc *n, oam_object *oam) {
-    overworld_sprite *sprite = overworld_get_by_npc(n);
+    const overworld_sprite *sprite = overworld_get_by_npc(n);
     u8 pal_idx = overworld_npc_palette_load(sprite->pal_tag);
     oam->final_oam.attr2 = (u16)((pal_idx << 12) | (oam->final_oam.attr2 & ~(15 << 12)));
 }
@@ -300,7 +300,7 @@ void overworld_npc_reflection_brighten_palette(u8 pal_idx) {
 // static color_t reflection_blue_channel = {.rgb = {.red = 12, .green = 20, .blue = 27}}; 
 
 void overworld_npc_load_reflection_palette(npc *n, oam_object *oam) {
-    overworld_sprite *sprite = overworld_get_by_npc(n);
+    const overworld_sprite *sprite = overworld_get_by_npc(n);
     u16 tag = sprite->pal_tag;
     u16 reflection_tag = NPC_PAL_TAG_TO_REFLECTION_TAG(tag);
     OW_DEBUG("Try to set up reflection tag 0x%x for tag 0x%x\n", reflection_tag, tag);
@@ -310,7 +310,7 @@ void overworld_npc_load_reflection_palette(npc *n, oam_object *oam) {
         return;
     }
     // OW_DEBUG("Reflection tag not yet allocated...\n");
-    palette *pal = overworld_npc_palette_get_by_tag(tag);
+    const palette *pal = overworld_npc_palette_get_by_tag(tag);
     if (pal == NULL) 
         return; // The original palette doesn't exist...
     palette reflection_palette = *pal;
@@ -402,11 +402,11 @@ oam_object *overworld_effect_fly_allocate_pal(u8 oam_idx) { // Probably for fly.
 static const u16 overworld_effect_shadow_vertical_offsets[4] = {4, 4, 4, 16,};
 static const u8 overworld_effect_shadow_template_idxs[4] = {0, 1, 2, 3};
 
-extern color_t gfx_npc_player_palette_vanilla[16];
+extern const color_t gfx_npc_player_palette_vanilla[16];
 
 u32 overworld_effect_shadow(void) {
     u8 npc_idx = npc_get_by_person_idx((u8)(overworld_effect_state.x), (u8)(overworld_effect_state.y), (u8)(overworld_effect_state.height));
-    overworld_sprite *ow = overworld_get_by_npc(npcs + npc_idx);
+    const overworld_sprite *ow = overworld_get_by_npc(npcs + npc_idx);
     u8 oam_idx = oam_new_backward_search(overworld_effect_oam_templates[overworld_effect_shadow_template_idxs[ow->shadow_size]], 0, 0, 0x94);
     if (oam_idx != 64) {
         oam_object *o = oams + oam_idx;
@@ -466,7 +466,7 @@ u8 overworld_effect_warp_arrow_and_detector_arrow_new() {
     return oam_idx;
 }
 
-extern oam_template oam_template_item_finder_arrow;
+extern const oam_template oam_template_item_finder_arrow;
 
 void itemfinder_create_arrow_sprite(u8 anim_idx, u8 direction) {
     // OW_DEBUG("Item finder create arrow in direction %d\n", direction);
@@ -546,10 +546,10 @@ u8 item_finder_create_star() {
     return oam_idx;
 }
 
-extern graphic graphic_item_finder_arrow;
-extern color_t gfx_item_finder_arrowPal[];
+extern const graphic graphic_item_finder_arrow;
+extern const color_t gfx_item_finder_arrowPal[];
 
-palette palette_item_finder_arrow = {
+const palette palette_item_finder_arrow = {
     .pal = gfx_item_finder_arrowPal, .tag = ITEM_FINDER_TAG,
 };
 
@@ -564,7 +564,7 @@ void item_finder_free_gfx_and_pal() {
 }
 
 
-static void overworld_create_oam_template_by_overworld_sprite_with_callback(overworld_sprite *sprite, u16 movement_callback_idx, oam_template *template, subsprite_table **subsprites) {
+static void overworld_create_oam_template_by_overworld_sprite_with_callback(const overworld_sprite *sprite, u16 movement_callback_idx, oam_template *template, const subsprite_table **subsprites) {
     template->tiles_tag = sprite->tiles_tag;
     template->pal_tag = sprite->pal_tag;
     template->oam = sprite->final_oam;
@@ -577,32 +577,32 @@ static void overworld_create_oam_template_by_overworld_sprite_with_callback(over
         *subsprites = sprite->subsprite_table;
 }
 
-void overworld_create_oam_template_by_npc_with_movement_callback(npc *n, u16 movement_callback_idx, oam_template *template, subsprite_table **subsprites) {
-    overworld_sprite *sprite = overworld_get_by_npc(n);
+void overworld_create_oam_template_by_npc_with_movement_callback(const npc *n, u16 movement_callback_idx, oam_template *template, const subsprite_table **subsprites) {
+    const overworld_sprite *sprite = overworld_get_by_npc(n);
     overworld_create_oam_template_by_overworld_sprite_with_callback(sprite, movement_callback_idx, template, subsprites);
 }
 
-void overworld_create_oam_template_by_person(map_event_person *person, oam_template *template, subsprite_table **subsprites) {
-    overworld_sprite *sprite = overworld_get_by_person(person);
+void overworld_create_oam_template_by_person(const map_event_person *person, oam_template *template, const subsprite_table **subsprites) {
+    const overworld_sprite *sprite = overworld_get_by_person(person);
     overworld_create_oam_template_by_overworld_sprite_with_callback(sprite, person->behavior, template, subsprites);
 }
 
-static graphic graphics_rage[] = {
+static const graphic graphics_rage[] = {
     [RAGE_SPRITE_RAGE] = {gfx_ow_rageTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
     [RAGE_SPRITE_QUESTION_MARK] = {gfx_ow_rageTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
 };
 
-static gfx_frame gfx_animation_rage[] = {
+static const gfx_frame gfx_animation_rage[] = {
     {.data = 0, .duration = 0}, {.data = GFX_ANIM_END},
 };
 
-static gfx_frame gfx_animation_question_mark[] = {
+static const gfx_frame gfx_animation_question_mark[] = {
     {.data = 1, .duration = 0}, {.data = GFX_ANIM_END},
 };
 
-static gfx_frame *gfx_animations_rage[] = {gfx_animation_rage, gfx_animation_question_mark};
+static const gfx_frame *const gfx_animations_rage[] = {gfx_animation_rage, gfx_animation_question_mark};
 
-static rotscale_frame rotscale_animation_rage_grow[] = {
+static const rotscale_frame rotscale_animation_rage_grow[] = {
     {.affine = {.affine_x_value = 16, .affine_y_value = 16, .rotation = 0, .duration = 0}},
     {.affine = {.affine_x_value = 256 / 16, .affine_y_value = 256 / 16, .rotation = 0, .duration = 15}},
     {.affine = {.affine_x_value = 0, .affine_y_value = 0, .rotation = 0, .duration = 11}},
@@ -610,17 +610,17 @@ static rotscale_frame rotscale_animation_rage_grow[] = {
     {.command = {.command = ROTSCALE_ANIM_END}},
 };
 
-static rotscale_frame rotscale_animation_rage_idle[] = {
+static const rotscale_frame rotscale_animation_rage_idle[] = {
     {.affine = {.affine_x_value = 256, .affine_y_value = 256, .rotation = 0, .duration = 0}},
     {.command = {.command = ROTSCALE_ANIM_END}},
 };
 
-static rotscale_frame *rotscale_animations_rage[] = {
+static const rotscale_frame *const rotscale_animations_rage[] = {
     [0] = rotscale_animation_rage_idle,
     [1] = rotscale_animation_rage_grow,
 };
 
-static sprite sprite_rage = {
+static const sprite sprite_rage = {
     .attr0 = ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(1),
 };
 
@@ -658,13 +658,13 @@ static void oam_callback_rage(oam_object *self) {
     }
 }
 
-static oam_template oam_template_rage = {
+static const oam_template oam_template_rage = {
     .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_RAGE_SIGN, .oam = &sprite_rage,
     .animation = gfx_animations_rage, .graphics = graphics_rage,
     .rotscale = rotscale_animations_rage, .callback = oam_callback_rage,
 };
 
-static palette palette_rage = {.pal = gfx_ow_ragePal, .tag = OW_PAL_TAG_RAGE_SIGN};
+static const palette palette_rage = {.pal = gfx_ow_ragePal, .tag = OW_PAL_TAG_RAGE_SIGN};
 
 static bool npc_rage_sprite_active() {
     for (u8 i = 0; i < NUM_NPCS; i++) {
@@ -714,10 +714,10 @@ u8 overworld_create_rage_sprite(u8 npc_idx, u8 type) {
     return oam_idx;
 }
 
-u8 overworld_create_oam_by_person(map_event_person *person, u8 a1, s16 x, s16 y, u8 z, u8 direction) {
-    overworld_sprite *ow = overworld_get_by_person(person);
+u8 overworld_create_oam_by_person(const map_event_person *person, u8 a1, s16 x, s16 y, u8 z, u8 direction) {
+    const overworld_sprite *ow = overworld_get_by_person(person);
     oam_template template = {0};
-    subsprite_table *subsprites = NULL;
+    const subsprite_table *subsprites = NULL;
     overworld_create_oam_template_by_person(person, &template, &subsprites);
     x = (s16)(x + 7);
     y = (s16)(y + 7);
@@ -745,9 +745,9 @@ u8 overworld_create_oam_by_person(map_event_person *person, u8 a1, s16 x, s16 y,
 
 u8 overworld_create_npc_and_oam_by_person(map_event_person *person, u8 map, u8 bank, s16 cam_x, s16 cam_y) {
     oam_template template;
-    subsprite_table *subsprite_tables = NULL;
+    const subsprite_table *subsprite_tables = NULL;
     graphic g;
-    overworld_sprite *ow = overworld_get_by_person(person);
+    const overworld_sprite *ow = overworld_get_by_person(person);
     overworld_create_oam_template_by_person(person, &template, &subsprite_tables);
     g.size = ow->size;
     template.graphics = &g;
@@ -768,7 +768,7 @@ u8 overworld_create_npc_and_oam_by_person(map_event_person *person, u8 map, u8 b
 }
 
 void overworld_create_rage_if_needed(u8 npc_idx) {
-    map_event_person *p = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
+    const map_event_person *p = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
     if (p && p->script_std == PERSON_AGGRESSIVE_POKEMON) {
         npcs[npc_idx].flags.has_rage_sprite = 1;
         npcs[npc_idx].oam_surf = overworld_create_rage_sprite(npc_idx, RAGE_SPRITE_RAGE);
@@ -778,9 +778,9 @@ void overworld_create_rage_if_needed(u8 npc_idx) {
     }
 }
 
-u8 overworld_create_oam_with_callback_by_npc(npc *n, void (*callback)(oam_object*), s16 x, s16 y, u8 subpriority) {
+u8 overworld_create_oam_with_callback_by_npc(const npc *n, void (*callback)(oam_object*), s16 x, s16 y, u8 subpriority) {
     oam_template template;
-    subsprite_table *subsprites;
+    const subsprite_table *subsprites;
     overworld_create_oam_template_by_npc_with_movement_callback(n, 0, &template, &subsprites);
     template.callback = callback;
     overworld_npc_load_palette_by_template(&template);
@@ -853,7 +853,7 @@ u8 npc_create_camera(u8 picture,u8 behaviour,u8 person_idx,s16 x,s16 y,u8 level)
 }
 
 u16 person_get_flag(u8 person_idx, u8 map_idx, u8 bank) {
-    map_event_person *person = map_get_person(person_idx, map_idx, bank);
+    const map_event_person *person = map_get_person(person_idx, map_idx, bank);
     if (!person) // Bug-fix from initial game: Attempted to read from NULL, which results in undefined behaviour on emulators.
         return 0;
     else

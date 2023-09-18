@@ -63,8 +63,8 @@ bool special_x36_check_loaded_trainerflag() {
     return true; // Don't battle
 }
 
-u8 *trainer_get_challange_message() {
-    u8 *msg = NULL;
+const u8 *trainer_get_challange_message() {
+    const u8 *msg = NULL;
     switch (fmem.current_trainer) {
         case 0: msg = trainer_vars.challange_text; break;
         case 1: msg = fmem.trainer_varsB.challange_text; break;
@@ -92,12 +92,12 @@ void trainer_variables_initialize() {
 }
 
 int trainerbattle_initialize_by_npc_idx(u8 npc_idx) {
-    map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
+    const map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
     if (person->script_std == PERSON_AGGRESSIVE_POKEMON)
         return 0; // Aggresive wild pokemon can not be trainers
     int num_trainers = 0;
 
-    u8 *script = npc_get_script(npc_idx);
+    const u8 *script = npc_get_script(npc_idx);
     if (!script) return 0;
     if (npc_trainer_check_flag(script)) return 0;
     u8 distance = npc_sees_player(npcs + npc_idx);
@@ -118,7 +118,7 @@ int trainerbattle_initialize_by_npc_idx(u8 npc_idx) {
     return num_trainers;
 }
 
-extern u8 ow_script_trainerbattle_pirate_challange[];
+extern const u8 ow_script_trainerbattle_pirate_challange[];
 
 bool trainerbattle_pirate_alert(u8 npc_idx) {
     if (!checkflag(FLAG_PLAYER_PARTY_STOLEN)) return false;
@@ -134,10 +134,10 @@ bool trainerbattle_pirate_alert(u8 npc_idx) {
     return false;
 }
 
-extern u8 ow_script_aggresive_wild_spotted[];
+extern const u8 ow_script_aggresive_wild_spotted[];
 
 int trainerbattle_aggressive_wild_pokemon_alert(u8 npc_idx) {
-    map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
+    const map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
     if (person->script_std != PERSON_AGGRESSIVE_POKEMON) 
         return 0;
     if(checkflag(person->flag)) 
@@ -172,7 +172,7 @@ void aggresive_wild_pokemon_create() {
     for (int i = 0; i < fmem.trainers_cnt; i++) {
         // Setup the wild mons
         u8 npc_idx = fmem.trainers_npc_idxs[i];
-        map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
+        const map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
         pid_t pid = {0};
         pokemon_spawn_by_seed_algorithm(opponent_pokemon + i, person->value, person->argument, 32, false, pid, false, 0, aggressive_wild_pokemon_feature_generator, NULL);
     }
@@ -201,7 +201,7 @@ bool trigger_aggressive_wild_pokemons() {
 
 u16 aggressive_wild_get_approaching_species() {
     u8 npc_idx = fmem.trainers_npc_idxs[fmem.current_trainer];
-    map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
+    const map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
     return person->value;
 }
 
@@ -301,7 +301,7 @@ enum {
     LOAD_SCRIPT_OFFSET_AND_END,
 };
 
-static trainerbattle_configuration trainerbattle_configuration_single_to_trainerB[] = {
+static const trainerbattle_configuration trainerbattle_configuration_single_to_trainerB[] = {
     {.dst = &trainer_vars.kind_of_battle, .command = LOAD_BYTE},
     {.dst = &fmem.trainer_varsB.trainer_id, .command = LOAD_HWORD},
     {.dst = &trainer_vars.overworld_target, .command = LOAD_HWORD},
@@ -311,7 +311,7 @@ static trainerbattle_configuration trainerbattle_configuration_single_to_trainer
     {.dst = &fmem.trainer_varsB.script_continue, .command = LOAD_SCRIPT_OFFSET_AND_END},
 };
 
-static trainerbattle_configuration trainerbattle_configuration_two_trainers[] = {
+static const trainerbattle_configuration trainerbattle_configuration_two_trainers[] = {
     {.dst = &trainer_vars.kind_of_battle, .command = LOAD_BYTE},
     {.dst = &trainer_vars.trainer_id, .command = LOAD_HWORD},
     {.dst = &fmem.trainer_varsB.trainer_id, .command = LOAD_HWORD},
@@ -327,7 +327,7 @@ static trainerbattle_configuration trainerbattle_configuration_two_trainers[] = 
 
 };
 
-static trainerbattle_configuration trainerbattle_configuration_ally[] = {
+static const trainerbattle_configuration trainerbattle_configuration_ally[] = {
     {.dst = &trainer_vars.kind_of_battle, .command = LOAD_BYTE},
     {.dst = &trainer_vars.trainer_id, .command = LOAD_HWORD},
     {.dst = &fmem.ally_trainer_idx, .command = LOAD_HWORD},
@@ -342,7 +342,7 @@ static trainerbattle_configuration trainerbattle_configuration_ally[] = {
     {.dst = &trainer_vars.script_continue, .command = LOAD_SCRIPT_OFFSET_AND_END},
 };
 
-static trainerbattle_configuration trainerbattle_configuration_ally_two_trainers[] = {
+static const trainerbattle_configuration trainerbattle_configuration_ally_two_trainers[] = {
     {.dst = &trainer_vars.kind_of_battle, .command = LOAD_BYTE},
     {.dst = &trainer_vars.trainer_id, .command = LOAD_HWORD},
     {.dst = &fmem.trainer_varsB.trainer_id, .command = LOAD_HWORD},
@@ -372,9 +372,9 @@ void trainer_configuration_print(trainer_variables *v) {
     DEBUG("rival flag %x\n", v->rival_flags);
 }
 
-extern u8 ow_script_trainerbattle_pirate_challange_after_approach[];
+extern const u8 ow_script_trainerbattle_pirate_challange_after_approach[];
 
-u8 *trainer_configure_by_overworld_script(u8 *ow_script) {
+const u8 *trainer_configure_by_overworld_script(const u8 *ow_script) {
     if (checkflag(FLAG_PLAYER_PARTY_STOLEN)) return ow_script_trainerbattle_pirate_challange_after_approach;
     trainer_variables_initialize();
     u8 kind = ow_script[0];

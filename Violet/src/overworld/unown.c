@@ -26,22 +26,22 @@ static u8 unown_message_ice[] = {
     UNOWN_LETTER('I'), UNOWN_LETTER('C'), UNOWN_LETTER('E'), 0xFF
 };
 
-static u8 unown_message_steel[] = {
+static const u8 unown_message_steel[] = {
     UNOWN_LETTER('S'), UNOWN_LETTER('T'), UNOWN_LETTER('E'), UNOWN_LETTER('E'), UNOWN_LETTER('L'), 0xFF
 };
 
-static u8 unown_message_aero[] = {
+static const u8 unown_message_aero[] = {
     UNOWN_LETTER('A'), UNOWN_LETTER('E'), UNOWN_LETTER('R'), UNOWN_LETTER('O'), 0xFF
 };
 
-static u8 *unown_messages[] = {
+static const u8 *const unown_messages[] = {
     [UNOWN_MESSAGE_ROCK] = unown_message_rock, 
     [UNOWN_MESSAGE_ICE] = unown_message_ice, 
     [UNOWN_MESSAGE_STEEL] = unown_message_steel,
     [UNOWN_MESSAGE_AERO] = unown_message_aero,
 };
 
-static u8 *unown_message_get(int idx) {
+static const u8 *unown_message_get(int idx) {
     if (idx == UNOWN_MESSAGE_BY_HEADER) {
         return wild_pokemon_get_unown_letters_of_header((u8)*var_access(0x8005), (u8)*var_access(0x8006));
     } else {
@@ -90,7 +90,7 @@ static u8 *unown_message_get(int idx) {
 
 
 bool player_party_spells_unown_message() {
-    u8 *message = unown_message_get(*var_access(0x8004));
+    const u8 *message = unown_message_get(*var_access(0x8004));
     size_t message_len = 0;
     while(message[message_len] != 0xFF)
         message_len++;
@@ -122,9 +122,9 @@ bool player_party_spells_unown_message() {
     return false;
 }
 
-static sprite unown_message_oam_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_64_64, .attr2 = ATTR2_PRIO(0)};
+static const sprite unown_message_oam_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_64_64, .attr2 = ATTR2_PRIO(0)};
 
-static oam_template unown_message_oam_templates[UNOWN_MESSAGE_MAX_LEN] = {
+static const oam_template unown_message_oam_templates[UNOWN_MESSAGE_MAX_LEN] = {
     [0] = {
         .tiles_tag = UNOWN_MESSAGE_TAG + 0, .pal_tag = UNOWN_MESSAGE_TAG,
         .oam = &unown_message_oam_sprite, .animation = oam_gfx_anim_table_null,
@@ -166,7 +166,7 @@ void overworld_unown_wait_message(u8 self) {
 }
 
 void overworld_unown_print_message() {
-    u8 *message = unown_message_get(*var_access(0x8004));
+    const u8 *message = unown_message_get(*var_access(0x8004));
     DEBUG("Printing unown message 0x%x\n", message);
     fmem.gp_state = malloc(sizeof(overworld_unown_state_t));
     for (OVERWORLD_UNOWN_MESSAGE_STATE->message_length = 0; message[OVERWORLD_UNOWN_MESSAGE_STATE->message_length] != 0xFF; 

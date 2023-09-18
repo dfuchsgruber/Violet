@@ -66,7 +66,7 @@ typedef union union_block_data {
 #define DIR_DIASE 7
 #define DIR_DIASW 8
 
-extern coordinate_t walking_directions[];
+extern const coordinate_t walking_directions[];
 
 /** Moves a position in any direction.
  * @param direction the direction in which to move in
@@ -132,7 +132,7 @@ extern u16 map_changes[10240];
  * @param src_width width of the map to copy
  * @param src_height height of the map to copy
  **/
-void map_copy_blocks_to_virtual_blocks_with_padding(u16 *src, u16 src_width, u16 src_height);
+void map_copy_blocks_to_virtual_blocks_with_padding(const u16 *src, u16 src_width, u16 src_height);
 
 #define BLOCK_SOLID 0xC00
 

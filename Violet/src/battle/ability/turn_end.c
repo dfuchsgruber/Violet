@@ -12,10 +12,10 @@
 #include "prng.h"
 #include "constants/items.h"
 
-extern u8 bsc_heal[];
-extern u8 bsc_lucid[];
-extern u8 bsc_ability_inflicts_damage[];
-extern u8 bsc_harvest[];
+extern const u8 bsc_heal[];
+extern const u8 bsc_lucid[];
+extern const u8 bsc_ability_inflicts_damage[];
+extern const u8 bsc_harvest[];
 
 
 void turn_end_apply_recoil_dmg(battler *target){

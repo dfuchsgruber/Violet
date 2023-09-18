@@ -2,13 +2,13 @@
 #include "types.h"
 #include "map/tileset.h"
 
-extern u16 gfx_maptileset_dungeon_tent_and_campfire_anim_fireTiles[];
+extern const u16 gfx_maptileset_dungeon_tent_and_campfire_anim_fireTiles[];
 
-static tileset_animation tileset_dungeon_forest_tent_animations[] = {
+static const tileset_animation tileset_dungeon_forest_tent_animations[] = {
     {.cycle = 4, .speed = 16, .start_tile = 0x310, .num_tiles = 6, .gfx = gfx_maptileset_dungeon_tent_and_campfire_anim_fireTiles},
 };
 
-static tileset_animation_header tileset_dungeon_forest_tent_animation_head = {
+static const tileset_animation_header tileset_dungeon_forest_tent_animation_head = {
     1, tileset_dungeon_forest_tent_animations
 };
 

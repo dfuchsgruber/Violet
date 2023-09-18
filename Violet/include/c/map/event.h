@@ -27,7 +27,7 @@ typedef struct map_event_person {
     u8 behavior_range_y : 4;
     u16 trainer_type_and_strength_flag;
     u16 alert_radius;
-    u8 *script;
+    const u8 *script;
     u16 flag;
     u16 value;
 } map_event_person;
@@ -70,9 +70,9 @@ typedef struct map_event_singpost { //TODO
     u8 type;
     u16 flag;
     union {
-        u8 *script;
-        hidden_item_t hidden_item;
-        treasure_map_event_t treasure_map;
+        const u8 *script;
+        const hidden_item_t hidden_item;
+        const treasure_map_event_t treasure_map;
     } value;
 } map_event_signpost;
 
@@ -81,10 +81,10 @@ typedef struct map_events {
     u8 warp_cnt;
     u8 script_cnt;
     u8 signpost_cnt;
-    map_event_person *persons;
-    map_event_warp *warps;
-    map_event_script *scripts;
-    map_event_signpost *signposts;
+    const map_event_person *persons;
+    const map_event_warp *warps;
+    const map_event_script *scripts;
+    const map_event_signpost *signposts;
 } map_event_header_t;
 
 /**
@@ -94,7 +94,7 @@ typedef struct map_events {
  * @param bank mapbank which contains the map the person is on
  * @return pointer to the person
  */
-map_event_person *map_get_person(u8 target_idx, u8 map_id, u8 bank);
+const map_event_person *map_get_person(u8 target_idx, u8 map_id, u8 bank);
 
 /**
  * Gets the script of an person event.
@@ -103,7 +103,7 @@ map_event_person *map_get_person(u8 target_idx, u8 map_id, u8 bank);
  * @param bank mapbank which contains the map the person is on
  * @return the script associated with the person event
  */
-u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank);
+const u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank);
 
 /**
  * Deletes the npc of a person and sets it flag if it is present.

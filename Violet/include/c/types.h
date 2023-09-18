@@ -125,7 +125,7 @@ static inline FIXED INT_TO_FIXED(int a) {
   return a << FIXED_SHIFT;
 }
 
-extern u32 int_bitmasks[32];
+extern const u32 int_bitmasks[32];
 
 /**
  * @brief Counts the number of zero bits that are trailing (i.e. the size of the largest zero sequence in `i` starting at the lsb)

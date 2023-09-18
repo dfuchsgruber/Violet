@@ -4,6 +4,6 @@
 #include "types.h"
 #include "pokemon/virtual.h"
 
-u8 trainer_pokemon_nickname_test[POKEMON_NAME_LENGTH + 1];
+extern const u8 trainer_pokemon_nickname_test[POKEMON_NAME_LENGTH + 1];
 
 #endif

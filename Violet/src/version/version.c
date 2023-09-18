@@ -28,7 +28,7 @@ void version_init(){
     *var_access(SGM_VER) = VERSION_LATEST;
 }
 
-u8 str_version_alpha_1_0[] = LANGDEP(
+const u8 str_version_alpha_1_0[] = LANGDEP(
     PSTRING("Herzlichen Glückwunsch!\nDeine Version wurde von\lBUFFER_1.X auf BUFFER_2.X"
         "\lgeupdated.\pSetze dein Abenteuer im Osten\nder Felsigen Ödnis fort."),
     PSTRING("Congratulations!\nYour version was updated from\lBUFFER_1.X to BUFFER_2.X."

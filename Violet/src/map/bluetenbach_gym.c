@@ -10,16 +10,16 @@
 #include "save.h"
 #include "vars.h"
 
-extern map_footer_t map_footer_meriana_city_gym_rotating_door_0;
-extern map_footer_t map_footer_meriana_city_gym_rotating_door_1;
-extern map_footer_t map_footer_meriana_city_gym_rotating_wall_2;
-extern map_footer_t map_footer_meriana_city_gym_rotating_wall_3;
-extern map_footer_t map_footer_meriana_city_gym_rotating_wall_4;
-extern map_footer_t map_footer_meriana_city_gym_rotating_wall_5;
-extern map_footer_t map_footer_meriana_city_gym_rotating_wall_6;
-extern map_footer_t map_footer_meriana_city_gym_rotating_wall_7;
+extern const map_footer_t map_footer_meriana_city_gym_rotating_door_0;
+extern const map_footer_t map_footer_meriana_city_gym_rotating_door_1;
+extern const map_footer_t map_footer_meriana_city_gym_rotating_wall_2;
+extern const map_footer_t map_footer_meriana_city_gym_rotating_wall_3;
+extern const map_footer_t map_footer_meriana_city_gym_rotating_wall_4;
+extern const map_footer_t map_footer_meriana_city_gym_rotating_wall_5;
+extern const map_footer_t map_footer_meriana_city_gym_rotating_wall_6;
+extern const map_footer_t map_footer_meriana_city_gym_rotating_wall_7;
 
-static bluetenbach_gym_rotating_wall_t rotating_walls[] = {
+static const bluetenbach_gym_rotating_wall_t rotating_walls[] = {
     [0] = {.footer = &map_footer_meriana_city_gym_rotating_door_0, .x = 6 + 7, 8 + 7},
     [1] = {.footer = &map_footer_meriana_city_gym_rotating_door_1, .x = 0 + 7, 6 + 7},
     [2] = {.footer = &map_footer_meriana_city_gym_rotating_wall_2, .x = 0xb + 7, 0x5 + 7},

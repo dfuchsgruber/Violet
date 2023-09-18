@@ -33,42 +33,42 @@
 #include "map/orina_city_wanted_posters.h"
 #include "menu_indicators.h"
 
-static u8 str_rin_description[] = LANGDEP(
+static const u8 str_rin_description[] = LANGDEP(
     PSTRING("Team Violet\nKommandant.\nGesucht wegen\nEntführung\nvon Prof.\nPrimus. Sehr gefährlich!"),
     PSTRING("Team Violet Commander.\nWanted for kidnapping of\nProfessor Primus.\nCaution! She is said to be\nvery violent.")
 );
 
-static u8 str_mistral_description[] = LANGDEP(
+static const u8 str_mistral_description[] = LANGDEP(
     PSTRING("Team Violet\nKommandant.\nEhem. Mitglied\nder Revolu-\ntionsbewegung.\nGesucht wegen Diebstahl."),
     PSTRING("Team Violet Commander.\nFormer member of the revolutionary\nmovement.\nWanted for theft and\nsubversive activities.")
 );
 
-static u8 str_lucius_description[] = LANGDEP(
+static const u8 str_lucius_description[] = LANGDEP(
     PSTRING("Team Violet\nKommandant.\nRanghöchster\nKommandant\nder Gruppe.\nIdentität ungeklärt."),
     PSTRING("Team Violet Commander.\nHighest ranked commandant\nwithin the team. Any\nhints concering their\nidentity must be forwared\nto the local police office.")
 );
 
-static u8 str_lucky_description[] = LANGDEP(
+static const u8 str_lucky_description[] = LANGDEP(
     PSTRING("Revolutionär.\nEhem. Mitglied\nder Black-\nbeard Pi-\nraten. Ge-\nsucht wegen Piraterie."),
     PSTRING("Revolutionary.\nFormer member of the Blackbeard\npirates. Wanted for\npiracy and conspiracy against\nthe Elite Four.")
 );
 
-static u8 str_albus_description[] = LANGDEP(
+static const u8 str_albus_description[] = LANGDEP(
     PSTRING("Anführer der\nRevolution.\nGefährlichster\nMann der\nRegion.\nJeden Kontakt vermeiden!"),
     PSTRING("Leader of revolution.\nClassified as the most\ndangerous man in the region.\nAvoid contact to this\nperson at any cost!")
 );
 
-static u8 str_blackbeard_description[] = LANGDEP(
+static const u8 str_blackbeard_description[] = LANGDEP(
     PSTRING("Kapitän der\nBlackbeard\nPiraten.\nGesucht für\nPiraterie\nund Pokémon-Diebstahl."),
     PSTRING("Captain of the Blackbeard\npirates. Wanted for\npiracy and Pokémon-\ntheft.")
 );
 
-static u8 str_rin[] = LANGDEP(PSTRING("Rin"), PSTRING("Rin"));
-static u8 str_mistral[] = LANGDEP(PSTRING("Mistral"), PSTRING("Mistral"));
-static u8 str_lucius[] = LANGDEP(PSTRING("Lucius"), PSTRING("Lucius"));
-static u8 str_lucky[] = LANGDEP(PSTRING("Lucky"), PSTRING("Lucky"));
-static u8 str_albus[] = LANGDEP(PSTRING("Albus"), PSTRING("Albus"));
-static u8 str_blackbeard[] = LANGDEP(PSTRING("Blackbeard"), PSTRING("Blackbeard"));
+static const u8 str_rin[] = LANGDEP(PSTRING("Rin"), PSTRING("Rin"));
+static const u8 str_mistral[] = LANGDEP(PSTRING("Mistral"), PSTRING("Mistral"));
+static const u8 str_lucius[] = LANGDEP(PSTRING("Lucius"), PSTRING("Lucius"));
+static const u8 str_lucky[] = LANGDEP(PSTRING("Lucky"), PSTRING("Lucky"));
+static const u8 str_albus[] = LANGDEP(PSTRING("Albus"), PSTRING("Albus"));
+static const u8 str_blackbeard[] = LANGDEP(PSTRING("Blackbeard"), PSTRING("Blackbeard"));
 
 static wanted_poster_t wanted_posters[] = {
     {
@@ -105,9 +105,9 @@ static wanted_poster_t wanted_posters[] = {
     },
 };
 
-static sprite mugshot_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_64_64, .attr2 = ATTR2_PRIO(0)};
+static const sprite mugshot_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_64_64, .attr2 = ATTR2_PRIO(0)};
 
-static oam_template mugshot_template = {
+static const oam_template mugshot_template = {
     .tiles_tag = OAM_TAG_WANTED_POSTER, .pal_tag = OAM_TAG_WANTED_POSTER,
     .graphics = NULL, .animation = oam_gfx_anim_table_null, .rotscale = oam_rotscale_anim_table_null,
     .callback = oam_null_callback, .oam = &mugshot_sprite,
@@ -119,7 +119,7 @@ static void wanted_posters_item_print_callback(u8 tbox_idx, int idx, u8 y) {
   (void)y;
 }
 
-static list_menu_template wanted_posters_list_menu_template = {
+static const list_menu_template wanted_posters_list_menu_template = {
     .items = NULL,
     .cursor_moved_callback = list_menu_generic_cursor_callback,
     .item_print_callback = wanted_posters_item_print_callback,
@@ -139,7 +139,7 @@ static list_menu_template wanted_posters_list_menu_template = {
 #define t_scroll_indicator_cb_idx params[7]
 #define t_list_cursor_position params[8]
 
-static tbox_font_colormap description_fontcolmap = {0, 2, 1, 0};
+static const tbox_font_colormap description_fontcolmap = {0, 2, 1, 0};
 
 static void mugshot_oam_callback_update(oam_object *self) {
     u16 idx = self->private[1];
@@ -206,12 +206,12 @@ static void wanted_posters_callback(u8 self) {
     }
 }
 
-static tboxdata description_boxdata = {
+static const tboxdata description_boxdata = {
     .bg_id = 0, .x = 11, .y = 1, .w = 18, .h = 12, .pal = 15,
     .start_tile = 176,
 };
 
-static u8 str_unknown[] = PSTRING("?????");
+static const u8 str_unknown[] = PSTRING("?????");
 
 void map_orina_city_wanted_posters() {
     overworld_script_halt();

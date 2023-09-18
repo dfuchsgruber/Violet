@@ -22,7 +22,7 @@
 #include "prng.h"
 
 // The chance of landing a critical hit at crit. stat i equals 1 / x[i]
-u16 critical_hit_chances[5] = {
+const u16 critical_hit_chances[5] = {
 		10, 8, 4, 2, 1
 };
 

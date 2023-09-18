@@ -33,23 +33,23 @@ static void big_callback_cloud_upstream_warp_waiting(u8 self) {
     }
 }
 
-void warp_setup_by_event_and_position(map_header_t *header, s8 warp_idx, position_t *position) {
+void warp_setup_by_event_and_position(const map_header_t *header, s8 warp_idx, const position_t *position) {
     (void) header;
-    map_event_warp *warp = mapheader_virtual.events->warps + warp_idx;
+    const map_event_warp *warp = mapheader_virtual.events->warps + warp_idx;
     if (warp->target_map == 0x7F) {
         warp_set_dynamic_map_idx(warp->target_warp_id);
     } else { 
         warp_setup_by_event(warp->target_bank, warp->target_map, warp->target_warp_id);
         warp_update_last_outdoor_map(position->coordinates.x, position->coordinates.y);
-        map_header_t *header = get_mapheader(warp->target_bank, warp->target_map);
+        const map_header_t *header = get_mapheader(warp->target_bank, warp->target_map);
         if (header->events->warps[warp->target_warp_id].target_map == 0x7F)
             warp_last_map_set_on_current_position((s8)header->events->warps[warp_idx].target_warp_id, save1->bank, save1->map, warp_idx);
     }
 }
 
-extern u8 ow_script_lockall_and_pause[];
+extern const u8 ow_script_lockall_and_pause[];
 
-bool step_on_warp(position_t *position, u8 behaviour) {
+bool step_on_warp(const position_t *position, u8 behaviour) {
     s8 warp_idx = map_get_warp_idx_by_position(&mapheader_virtual, position);
     if (warp_idx == -1) {
         return false;

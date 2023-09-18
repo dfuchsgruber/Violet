@@ -449,7 +449,7 @@ extern const unsigned short gfx_pkmn_species_441_pokemon_kecleon_p_iconTiles[];
 extern const unsigned short gfx_pkmn_crystal_onix_iconTiles[];
 
 
-const void *pokemon_icons[POKEMON_CNT] = {
+const void *const pokemon_icons[POKEMON_CNT] = {
     gfx_pkmn_species_000_pokemon_pokemon_0_iconTiles,
     gfx_pkmn_species_001_pokemon_bisasam_iconTiles,
     gfx_pkmn_species_002_pokemon_bisaknosp_iconTiles,

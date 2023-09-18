@@ -38,7 +38,7 @@ int ring_queue_pop(ring_queue_t *queue) {
   return element;
 }
 
-bool ring_queue_empty(ring_queue_t *queue) {
+bool ring_queue_empty(const ring_queue_t *queue) {
   return queue->size == 0;
 }
 

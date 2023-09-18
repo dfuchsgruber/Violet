@@ -17,7 +17,7 @@ extern "C" {
 #define ACCESS_CARD_ELEMENT_CNT 4
 #define ACCESS_CARD_INDEX_ATRIUM 3
 
-    extern u8 **access_card_element_names;
+    extern const u8 *const *const access_card_element_names;
 
     typedef struct {
         u16 flag;

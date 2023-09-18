@@ -3,7 +3,7 @@
 #include "music.h"
 #include "debug.h"
 
-static fanfare_t fanfares[] = {
+static const fanfare_t fanfares[] = {
     { MUS_ITEM_GEFUNDEN,      80 },
     { MUS_ITEM_ERHALTEN,     160 },
     { MUS_POKEMON_GEFANGEN,     220 },

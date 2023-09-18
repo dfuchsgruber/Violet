@@ -2,7 +2,7 @@
 #include "constants/species.h"
 #include "pokemon/cry.h"
 
-pokemon_cry pokemon_cries_forward[POKEMON_CNT] = {
+const pokemon_cry pokemon_cries_forward[POKEMON_CNT] = {
 	[POKEMON_POKEMON_0] =  { .header = { 0x20, 0x3c, 0x0, 0x0 }, .data = cry_icognito, .vol_curve = { 0xff, 0x0, 0xff, 0x0 }},
 	[POKEMON_BISASAM] =  { .header = { 0x20, 0x3c, 0x0, 0x0 }, .data = cry_bisasam, .vol_curve = { 0xff, 0x0, 0xff, 0x0 }},
 	[POKEMON_BISAKNOSP] =  { .header = { 0x20, 0x3c, 0x0, 0x0 }, .data = cry_bisaknosp, .vol_curve = { 0xff, 0x0, 0xff, 0x0 }},

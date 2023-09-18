@@ -15,51 +15,51 @@ extern const unsigned short gfx_groudon_leg_leftTiles[];
 extern const unsigned short gfx_groudon_leg_rightTiles[];
 extern const unsigned short gfx_groudon_diseraktTiles[];
 
-graphic graphic_groudon_head = {
+const graphic graphic_groudon_head = {
     gfx_groudon_headTiles,
     0x800,
     0xA0A0
 };
 
-graphic graphic_groudon_arm_left = {
+const graphic graphic_groudon_arm_left = {
     gfx_groudon_arm_leftTiles,
     0x400,
     0xA0A1
 };
 
-graphic graphic_groudon_arm_right = {
+const graphic graphic_groudon_arm_right = {
     gfx_groudon_arm_rightTiles,
     0x400,
     0xA0A2
 };
 
-graphic graphic_groudon_leg_left = {
+const graphic graphic_groudon_leg_left = {
     gfx_groudon_leg_leftTiles,
     0x400,
     0xA0A3
 };
 
-graphic graphic_groudon_leg_right = {
+const graphic graphic_groudon_leg_right = {
     gfx_groudon_leg_rightTiles,
     0x400,
     0xA0A4
 };
 
-graphic graphic_groudon_diserakt = {
+const graphic graphic_groudon_diserakt = {
     gfx_groudon_diseraktTiles,
     0x800,
     0xA0A5
 };
 
-sprite sprite_groudon_32_16_back = {
+const sprite sprite_groudon_32_16_back = {
     ATTR0_SHAPE_VERTICAL, ATTR1_SIZE_32_64, ATTR2_PRIO(2), 0
 };
 
-sprite sprite_groudon_32_16_front = { 
+const sprite sprite_groudon_32_16_front = { 
     ATTR0_SHAPE_VERTICAL, ATTR1_SIZE_32_64, ATTR2_PRIO(1), 0
 };
 
-sprite sprite_groudon_head = {
+const sprite sprite_groudon_head = {
     ATTR0_SHAPE_SQUARE, ATTR1_SIZE_64_64, ATTR2_PRIO(1), 0
 };
 
@@ -288,7 +288,7 @@ void groudon_cb_grey_fade(u8 self){
     }
 }
 
-oam_template oam_template_groudon_head = {
+const oam_template oam_template_groudon_head = {
     0xA0A0,
     0xA0A0,
     &sprite_groudon_head,
@@ -298,7 +298,7 @@ oam_template oam_template_groudon_head = {
     oam_callback_groudon_head
 };
 
-oam_template oam_template_groudon_arm_left = {
+const oam_template oam_template_groudon_arm_left = {
     0xA0A1,
     0xA0A0,
     &sprite_groudon_32_16_front,
@@ -308,7 +308,7 @@ oam_template oam_template_groudon_arm_left = {
     oam_callback_groudon_arm
 };
 
-oam_template oam_template_groudon_arm_right = {
+const oam_template oam_template_groudon_arm_right = {
     0xA0A2,
     0xA0A0,
     &sprite_groudon_32_16_back,
@@ -318,7 +318,7 @@ oam_template oam_template_groudon_arm_right = {
     oam_callback_groudon_arm
 };
 
-oam_template oam_template_groudon_leg_left = {
+const oam_template oam_template_groudon_leg_left = {
     0xA0A3,
     0xA0A0,
     &sprite_groudon_32_16_front,
@@ -328,7 +328,7 @@ oam_template oam_template_groudon_leg_left = {
     oam_null_callback
 };
 
-oam_template oam_template_groudon_leg_right = {
+const oam_template oam_template_groudon_leg_right = {
     0xA0A4,
     0xA0A0,
     &sprite_groudon_32_16_back,
@@ -338,7 +338,7 @@ oam_template oam_template_groudon_leg_right = {
     oam_null_callback
 };
 
-oam_template oam_template_groudon_diserakt = {
+const oam_template oam_template_groudon_diserakt = {
     0xA0A5,
     0xA0A1,
     &sprite_groudon_head,

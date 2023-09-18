@@ -31,7 +31,7 @@ bool incubator_has_empty_slots() {
   return false;
 }
 
-int incubator_egg_get_progress(box_pokemon *egg) {
+int incubator_egg_get_progress(const box_pokemon *egg) {
   int species = box_pokemon_get_attribute(egg, ATTRIBUTE_SPECIES, 0);
   if (species == 0) return 0;
   int cycles_total = basestats[species].egg_cycles;

@@ -22,15 +22,15 @@
 #include "item/fishing.h"
 #include "data_structures.h"
 
-static u8 str_use[] = LANGDEP(PSTRING("O.K."), PSTRING("Use"));
-static u8 str_give[] = LANGDEP(PSTRING("Geben"), PSTRING("Give"));
-static u8 str_toss[] =  LANGDEP(PSTRING("Müll"), PSTRING("Toss"));
-static u8 str_cancel[] = LANGDEP(PSTRING("Zurück"), PSTRING("Cancel"));
-static u8 str_select[] = LANGDEP(PSTRING("Select"), PSTRING("Select"));
-static u8 str_deselect[] = LANGDEP(PSTRING("Select"), PSTRING("Select"));
-static u8 str_walk[] = LANGDEP(PSTRING("Laufen"), PSTRING("Walk"));
-static u8 str_equip_bait[] = LANGDEP(PSTRING("Ausrüsten"), PSTRING("Equip"));
-static u8 str_unequip_bait[] = LANGDEP(PSTRING("Entfernen"), PSTRING("Unequip"));
+static const u8 str_use[] = LANGDEP(PSTRING("O.K."), PSTRING("Use"));
+static const u8 str_give[] = LANGDEP(PSTRING("Geben"), PSTRING("Give"));
+static const u8 str_toss[] =  LANGDEP(PSTRING("Müll"), PSTRING("Toss"));
+static const u8 str_cancel[] = LANGDEP(PSTRING("Zurück"), PSTRING("Cancel"));
+static const u8 str_select[] = LANGDEP(PSTRING("Select"), PSTRING("Select"));
+static const u8 str_deselect[] = LANGDEP(PSTRING("Select"), PSTRING("Select"));
+static const u8 str_walk[] = LANGDEP(PSTRING("Laufen"), PSTRING("Walk"));
+static const u8 str_equip_bait[] = LANGDEP(PSTRING("Ausrüsten"), PSTRING("Equip"));
+static const u8 str_unequip_bait[] = LANGDEP(PSTRING("Entfernen"), PSTRING("Unequip"));
 
 static u16 bag_context_menu_get_start_tile() {
     u16 start_tile = 0;
@@ -95,7 +95,7 @@ void bag_menu_cancel_redraw_description_and_scroll_menu_indicators_and_return_to
 }
 
 
-static u8 str_there_is_no_pokemon[] = LANGDEP(PSTRING("Du hast keine\nPokémon."), PSTRING("There is no\nPokémon."));
+static const u8 str_there_is_no_pokemon[] = LANGDEP(PSTRING("Du hast keine\nPokémon."), PSTRING("There is no\nPokémon."));
 
 static void bag_context_menu_item_use(u8 self) {
     void (*field_function)(u8) = item_get_field_function(item_activated);
@@ -160,7 +160,7 @@ static bool bag_toss_or_sell_process_input() {
     return false;
 }
 
-static u8 str_tossed_items[] = LANGDEP(PSTRING("BUFFER_1 ×BUFFER_2\nweggeworfen."), PSTRING("Tossed BUFFER_1 ×BUFFER_2."));
+static const u8 str_tossed_items[] = LANGDEP(PSTRING("BUFFER_1 ×BUFFER_2\nweggeworfen."), PSTRING("Tossed BUFFER_1 ×BUFFER_2."));
 
 static void bag_toss_confirm_yes(u8 self) {
     // tbox_clear_message(BAG_TBOX_MESSAGE_WITH_YES_NO, false);
@@ -179,12 +179,12 @@ static void bag_toss_confirm_no(u8 self) {
     big_callbacks[self].function = (void(*)(u8))bag_menu_cancel_redraw_description_and_scroll_menu_indicators_and_return_to_idle_callback;
 }
 
-static yes_no_box_callbacks_t yes_no_callbacks_toss = {
+static const yes_no_box_callbacks_t yes_no_callbacks_toss = {
     .no_callback = bag_toss_confirm_no,
     .yes_callback = bag_toss_confirm_yes,
 };
 
-static u8 str_confirm_toss[] = LANGDEP(PSTRING("BUFFER_1 ×BUFFER_2\nwirklich wegwerfen?"), PSTRING("Toss\nBUFFER_1 ×BUFFER_2?"));
+static const u8 str_confirm_toss[] = LANGDEP(PSTRING("BUFFER_1 ×BUFFER_2\nwirklich wegwerfen?"), PSTRING("Toss\nBUFFER_1 ×BUFFER_2?"));
 
 static void bag_confirm_toss(u8 self) {
     strcpy(buffer0, item_get_name(item_activated));
@@ -197,7 +197,7 @@ static void bag_confirm_toss(u8 self) {
     gp_list_menu_yes_no_new_with_callbacks(self, &template, 2, 0, 0, BAG_START_TILE_BORDER_STD, BAG_PAL_IDX_BORDER_STD, &yes_no_callbacks_toss);
 }
 
-static u8 str_quantity_x[] = PSTRING("×BUFFER_1");
+static const u8 str_quantity_x[] = PSTRING("×BUFFER_1");
 
 static void bag_toss_or_sell_update_quantity(u8 number_digits) {
     tbox_flush_set(BAG2_STATE->tbox_quantity, 0x11);
@@ -206,7 +206,7 @@ static void bag_toss_or_sell_update_quantity(u8 number_digits) {
     tbox_print_string(BAG2_STATE->tbox_quantity, 0, 4, 10, 1, 0, &bag_font_colormap_std, 0, strbuf);
 }
 
-static scroll_indicator_template scroll_indicator_quantity_toss_template = {
+static const scroll_indicator_template scroll_indicator_quantity_toss_template = {
     .arrow0_type = SCROLL_ARROW_UP, .arrow0_x = 212, .arrow0_y = 120,
     .arrow1_type = SCROLL_ARROW_DOWN, .arrow1_x = 212, .arrow1_y = 152,
     .arrow0_threshold = 0, 
@@ -215,7 +215,7 @@ static scroll_indicator_template scroll_indicator_quantity_toss_template = {
     .pal_tag = 110,
 };
 
-static scroll_indicator_template scroll_indicator_quantity_sell_template = {
+static const scroll_indicator_template scroll_indicator_quantity_sell_template = {
     .arrow0_type = SCROLL_ARROW_UP, .arrow0_x = 168, .arrow0_y = 120,
     .arrow1_type = SCROLL_ARROW_DOWN, .arrow1_x = 168, .arrow1_y = 152,
     .arrow0_threshold = 0, 
@@ -224,7 +224,7 @@ static scroll_indicator_template scroll_indicator_quantity_sell_template = {
     .pal_tag = 110,
 };
 
-static void bag_toss_or_sell_initiaize_quantity(u8 *str, u8 number_digits) {
+static void bag_toss_or_sell_initiaize_quantity(const u8 *str, u8 number_digits) {
     tbox_draw_std_frame_by_base_tile_and_pal(BAG_TBOX_MESSAGE_WITH_YES_NO, true, BAG_START_TILE_BORDER_STD, BAG_PAL_IDX_BORDER_STD);
     tbox_print_string(BAG_TBOX_MESSAGE_WITH_YES_NO, 2, 0, 0, 0, 0, &bag_font_colormap_std, 0, str);
     bg_virtual_sync_reqeust_push(0);
@@ -260,7 +260,7 @@ static void bag_select_quantity_to_toss(u8 self) {
     }
 }
 
-static u8 str_toss_how_many[] = LANGDEP(PSTRING("Wie viel\nwegwerfen?"), PSTRING("Toss how many?"));
+static const u8 str_toss_how_many[] = LANGDEP(PSTRING("Wie viel\nwegwerfen?"), PSTRING("Toss how many?"));
 
 static void bag_context_menu_item_toss(u8 self) {
     // Close the context menu and hide tboxes
@@ -291,7 +291,7 @@ static void bag_context_menu_item_give_continuation() {
     pokemon_party_menu_init(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_GIVE_ITEM, false, PARTY_MSG_GIVE_TO_WHICH_MON, pokemon_party_menu_big_callback_select_pokemon, bag2_return_to_last);
 }
 
-static u8 str_cant_be_given[] = LANGDEP(PSTRING("BUFFER_1 kann nicht\ngetragen werden."), PSTRING("BUFFER_1 can't be held."));
+static const u8 str_cant_be_given[] = LANGDEP(PSTRING("BUFFER_1 kann nicht\ngetragen werden."), PSTRING("BUFFER_1 can't be held."));
 
 static void bag_context_menu_item_give(u8 self) {
     tbox_flush_all(BAG2_STATE->tbox_context_menu, 0x00);
@@ -365,12 +365,12 @@ static void bag_equip_bait_confirm_yes(u8 self) {
     bag_equip_bait(self);
 }
 
-static yes_no_box_callbacks_t yes_no_callbacks_equip_bait = {
+static const yes_no_box_callbacks_t yes_no_callbacks_equip_bait = {
     .no_callback = bag_toss_confirm_no,
     .yes_callback = bag_equip_bait_confirm_yes,
 };
 
-static u8 str_confirm_equip_bait[] = LANGDEP(
+static const u8 str_confirm_equip_bait[] = LANGDEP(
     PSTRING("BUFFER_2 ist\nausgerüstet. Wechsel?"),
     PSTRING("BUFFER_2 is\nequipped. Continue?")
 );
@@ -402,7 +402,7 @@ static void bag_context_menu_item_equip_bait(u8 self) {
     }   
 }
 
-static u8 str_unequiped_bait[] = LANGDEP(
+static const u8 str_unequiped_bait[] = LANGDEP(
     PSTRING("BUFFER_1 wurde von\nBUFFER_2 entfernt."),
     PSTRING("BUFFER_1 was\nremoved from BUFFER_2.")
 );
@@ -451,7 +451,7 @@ static void bag_context_menu_item_equip_bait_from_bait_pocket(u8 self) {
 
 
 
-menu_action_t bag_context_menu_items[NUM_BAG_CONTEXT_MENU_ITEMS] = {
+const menu_action_t bag_context_menu_items[NUM_BAG_CONTEXT_MENU_ITEMS] = {
     [BAG_CONTEXT_MENU_USE] = {.text = str_use, .function = {.void_u8 = bag_context_menu_item_use}},
     [BAG_CONTEXT_MENU_GIVE] = {.text = str_give, .function = {.void_u8 = bag_context_menu_item_give}},
     [BAG_CONTEXT_MENU_TOSS] = {.text = str_toss, .function = {.void_u8 = bag_context_menu_item_toss}},
@@ -466,7 +466,7 @@ menu_action_t bag_context_menu_items[NUM_BAG_CONTEXT_MENU_ITEMS] = {
 };
 
 
-static u8 str_item_is_selected[] = LANGDEP(PSTRING("BUFFER_1\nist ausgewählt!"), PSTRING("BUFFER_1\nis selected!"));
+static const u8 str_item_is_selected[] = LANGDEP(PSTRING("BUFFER_1\nist ausgewählt!"), PSTRING("BUFFER_1\nis selected!"));
 
 
 static void bag_disable_ui() {
@@ -478,7 +478,7 @@ static void bag_disable_ui() {
     bg_virtual_sync_reqeust_push(0);
 }
 
-static void bag_open_context_menu(u8 *items, size_t num_items) {
+static void bag_open_context_menu(const u8 *items, size_t num_items) {
     (void)items;(void)num_items;
 
     BAG2_STATE->num_context_menu_items = (u8)num_items;
@@ -615,7 +615,7 @@ static void bag_sold_item(u8 self) {
     big_callbacks[self].function = bag_sold_item_wait_a_b_press;
 }
 
-static u8 str_sold_item[] = LANGDEP(PSTRING("BUFFER_1 ×BUFFER_2 wurde im\nTausch gegen BUFFER_3POKEDOLLAR übergeben."), PSTRING("Exchanged BUFFER_1 ×BUFFER_2\nagainst BUFFER_3POKEDOLLAR."));
+static const u8 str_sold_item[] = LANGDEP(PSTRING("BUFFER_1 ×BUFFER_2 wurde im\nTausch gegen BUFFER_3POKEDOLLAR übergeben."), PSTRING("Exchanged BUFFER_1 ×BUFFER_2\nagainst BUFFER_3POKEDOLLAR."));
 
 static void bag_sell_confirm_yes(u8 self) {
     tbox_flush_map_and_frame(BAG_TBOX_MESSAGE_WITH_YES_NO);
@@ -624,12 +624,12 @@ static void bag_sell_confirm_yes(u8 self) {
 }
 
 
-static yes_no_box_callbacks_t yes_no_callbacks_sell = {
+static const yes_no_box_callbacks_t yes_no_callbacks_sell = {
     .no_callback = bag_sell_confirm_no,
     .yes_callback = bag_sell_confirm_yes,
 };
 
-static u8 str_confirm_sell[] = LANGDEP(PSTRING("BUFFER_1 ×BUFFER_2 für\nBUFFER_3POKEDOLLAR verkaufen?"), PSTRING("Sell BUFFER_1 ×BUFFER_2\nfor BUFFER_3POKEDOLLAR?"));
+static const u8 str_confirm_sell[] = LANGDEP(PSTRING("BUFFER_1 ×BUFFER_2 für\nBUFFER_3POKEDOLLAR verkaufen?"), PSTRING("Sell BUFFER_1 ×BUFFER_2\nfor BUFFER_3POKEDOLLAR?"));
 
 static void bag_confirm_sell(u8 self) {
     int money = item_get_price(item_activated) / 2 * BAG2_STATE->toss_current_number;
@@ -644,7 +644,7 @@ static void bag_confirm_sell(u8 self) {
     gp_list_menu_yes_no_new_with_callbacks(self, &template, 2, 0, 0, BAG_START_TILE_BORDER_STD, BAG_PAL_IDX_BORDER_STD, &yes_no_callbacks_sell);
 }
 
-static void bag_sell_initialize_quantity(u8 *str, u8 number_digits) {
+static void bag_sell_initialize_quantity(const u8 *str, u8 number_digits) {
     tbox_draw_std_frame_by_base_tile_and_pal(BAG_TBOX_MESSAGE_WITH_SELL_QUANTITY, true, BAG_START_TILE_BORDER_STD, BAG_PAL_IDX_BORDER_STD);
     tbox_print_string(BAG_TBOX_MESSAGE_WITH_SELL_QUANTITY, 2, 0, 0, 0, 0, &bag_font_colormap_std, 0, str);
     bg_virtual_sync_reqeust_push(0);
@@ -685,8 +685,8 @@ static void bag_select_quantity_to_sell(u8 self) {
     (void)self;
 }
 
-static u8 str_cant_sell_that[] = LANGDEP(PSTRING("BUFFER_1? Tut mir leid,\naber das kann ich nicht kaufen."), PSTRING("BUFFER_1?\nSorry but I can't buy that."));
-static u8 str_sell_how_many[] = LANGDEP(PSTRING("Wie viele\nverkaufen?"), PSTRING("Sell how many?"));
+static const u8 str_cant_sell_that[] = LANGDEP(PSTRING("BUFFER_1? Tut mir leid,\naber das kann ich nicht kaufen."), PSTRING("BUFFER_1?\nSorry but I can't buy that."));
+static const u8 str_sell_how_many[] = LANGDEP(PSTRING("Wie viele\nverkaufen?"), PSTRING("Sell how many?"));
 
 static void bag_item_selected_sell(u8 self) {
     bag_disable_ui();
@@ -723,8 +723,8 @@ static void bag_deposit_wait_a_or_b_press_and_redraw_all(u8 self) {
     }
 }
 
-static u8 str_no_space_to_deposit[] = LANGDEP(PSTRING("Auf deinem PC ist kein\nPlatz dafür!"), PSTRING("There is no room on your\nitem pc."));
-static u8 str_deposited[] = LANGDEP(PSTRING("BUFFER_1 ×BUFFER_2\nwurde abgelegt."), PSTRING("Deposited\nBUFFER_1 ×BUFFER_2"));
+static const u8 str_no_space_to_deposit[] = LANGDEP(PSTRING("Auf deinem PC ist kein\nPlatz dafür!"), PSTRING("There is no room on your\nitem pc."));
+static const u8 str_deposited[] = LANGDEP(PSTRING("BUFFER_1 ×BUFFER_2\nwurde abgelegt."), PSTRING("Deposited\nBUFFER_1 ×BUFFER_2"));
 
 static void bag_deposit_item(u8 self) {
     if (item_add_to_pc(item_activated, BAG2_STATE->toss_current_number)) {
@@ -764,8 +764,8 @@ static void bag_select_quantity_to_deposit(u8 self) {
     }
 }
 
-static u8 str_cant_deposit[] = LANGDEP(PSTRING("BUFFER_1 kann nicht\nabgelegt werden."), PSTRING("BUFFER_1 can not\nbe deposited."));
-static u8 str_deposit_how_many[] = LANGDEP(PSTRING("Wie viele\nablegen?"), PSTRING("How many to\ndeposit?"));
+static const u8 str_cant_deposit[] = LANGDEP(PSTRING("BUFFER_1 kann nicht\nabgelegt werden."), PSTRING("BUFFER_1 can not\nbe deposited."));
+static const u8 str_deposit_how_many[] = LANGDEP(PSTRING("Wie viele\nablegen?"), PSTRING("How many to\ndeposit?"));
 
 static void bag_item_selected_deposit(u8 self) {
     bag_disable_ui();
@@ -787,8 +787,8 @@ static void bag_item_selected_deposit(u8 self) {
     }
 }
 
-static u8 str_no_space_for_mulch[] = LANGDEP(PSTRING("Du hast keinen Platz\nfür BUFFER_1 ×BUFFER_2."), PSTRING("You have no room for\nBUFFER_1 ×BUFFER_2."));
-static u8 str_composted[] = LANGDEP(PSTRING("Du hast BUFFER_1 ×BUFFER_2\nzu BUFFER_3 kompostiert."), PSTRING("You composted BUFFER_1 ×BUFFER_2\nto BUFFER_3."));
+static const u8 str_no_space_for_mulch[] = LANGDEP(PSTRING("Du hast keinen Platz\nfür BUFFER_1 ×BUFFER_2."), PSTRING("You have no room for\nBUFFER_1 ×BUFFER_2."));
+static const u8 str_composted[] = LANGDEP(PSTRING("Du hast BUFFER_1 ×BUFFER_2\nzu BUFFER_3 kompostiert."), PSTRING("You composted BUFFER_1 ×BUFFER_2\nto BUFFER_3."));
 
 static void bag_compost_item(u8 self) {
     if (item_has_room(ITEM_MULCH, BAG2_STATE->toss_current_number)) {
@@ -835,8 +835,8 @@ static void bag_select_quantity_to_compost(u8 self) {
     }
 }
 
-static u8 str_cant_compost[] = LANGDEP(PSTRING("BUFFER_1 kann nicht\nkompostiert werden."), PSTRING("BUFFER_1 can not\nbe composted."));
-static u8 str_compost_how_many[] = LANGDEP(PSTRING("Wie viele\nkompostieren?"), PSTRING("How many to\ncompost?"));
+static const u8 str_cant_compost[] = LANGDEP(PSTRING("BUFFER_1 kann nicht\nkompostiert werden."), PSTRING("BUFFER_1 can not\nbe composted."));
+static const u8 str_compost_how_many[] = LANGDEP(PSTRING("Wie viele\nkompostieren?"), PSTRING("How many to\ncompost?"));
 
 static void bag_item_selected_compost(u8 self) {
     bag_disable_ui();
@@ -858,7 +858,7 @@ static void bag_item_selected_compost(u8 self) {
     }
 }
 
-static u8 str_cant_be_planted[] = LANGDEP(PSTRING("BUFFER_1 kann nicht\ngepflanzt werden."), PSTRING("BUFFER_1 can not\nbe planted."));
+static const u8 str_cant_be_planted[] = LANGDEP(PSTRING("BUFFER_1 kann nicht\ngepflanzt werden."), PSTRING("BUFFER_1 can not\nbe planted."));
 
 static void bag_item_selected_plant_berry(u8 self) {
     bag_disable_ui();
@@ -877,7 +877,7 @@ static void bag_item_selected_plant_berry(u8 self) {
     }
 }
 
-static u8 str_tm_recharged[] = LANGDEP(
+static const u8 str_tm_recharged[] = LANGDEP(
 	PSTRING("BUFFER_1\nwurde wieder aufgeladen."),
 	PSTRING("BUFFER_1\nwas recharged.")
 );
@@ -891,12 +891,12 @@ static void bag_recharge_wait_for_sound(u8 self) {
     }
 }
 
-static u8 str_hms_cant_be_recharged[] = LANGDEP(
+static const u8 str_hms_cant_be_recharged[] = LANGDEP(
 	PSTRING("Vms müssen nicht aufgeladen werden!"),
 	PSTRING("Hms don't need to be recharged!")
 );
 
-static u8 str_tm_doesnt_need_recharge[] = LANGDEP(
+static const u8 str_tm_doesnt_need_recharge[] = LANGDEP(
 	PSTRING("BUFFER_1\nmuss nicht aufgeladen werden!"),
 	PSTRING("BUFFER_1\ndoesn't need to be recharged!")
 );
@@ -919,8 +919,8 @@ static void bag_item_selected_recharge(u8 self) {
     }
 }
 
-static u8 bag_context_menu_battle[] = {BAG_CONTEXT_MENU_BATTLE_USE, BAG_CONTEXT_MENU_CANCEL};
-static u8 bag_context_menu_battle_no_function[] = {BAG_CONTEXT_MENU_CANCEL};
+static const u8 bag_context_menu_battle[] = {BAG_CONTEXT_MENU_BATTLE_USE, BAG_CONTEXT_MENU_CANCEL};
+static const u8 bag_context_menu_battle_no_function[] = {BAG_CONTEXT_MENU_CANCEL};
 
 static void bag_item_selected_battle(u8 self) {
     bag_disable_ui();
@@ -946,8 +946,8 @@ static void bag_wait_sound_effect_and_close_bag(u8 self) {
     }
 }
 
-static u8 str_is_no_rod[] = LANGDEP(PSTRING("Nur eine Angel kann mit\nBUFFER_2 ausgerüstet werden."), PSTRING("BUFFER_2 can only\nbe equipped to a rod."));
-static u8 str_is_already_equipped[] = LANGDEP(PSTRING("BUFFER_1 ist bereits\nmit BUFFER_2 ausgerüstet."), PSTRING("BUFFER_2 is already\nequipped to BUFFER_1."));
+static const u8 str_is_no_rod[] = LANGDEP(PSTRING("Nur eine Angel kann mit\nBUFFER_2 ausgerüstet werden."), PSTRING("BUFFER_2 can only\nbe equipped to a rod."));
+static const u8 str_is_already_equipped[] = LANGDEP(PSTRING("BUFFER_1 ist bereits\nmit BUFFER_2 ausgerüstet."), PSTRING("BUFFER_2 is already\nequipped to BUFFER_1."));
 
 static void bag_item_selected_equip_to_rod(u8 self) {
     bag_disable_ui();
@@ -975,7 +975,7 @@ static void bag_item_selected_equip_to_rod(u8 self) {
     }
 }
 
-void (*bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8) = {
+void (*const bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8) = {
     [BAG_CONTEXT_OVERWORLD] = bag_item_selected_overworld,
     [BAG_CONTEXT_PARTY_GIVE] = bag_item_selected_party_give,
     [BAG_CONTEXT_SELL] = bag_item_selected_sell,

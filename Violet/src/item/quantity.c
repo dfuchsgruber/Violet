@@ -6,7 +6,7 @@
 
 #define MAX_SLOT_CAPACITY 999
 
-static bool pocket_has_singleton_stacks[NUM_POCKETS] = {
+static const bool pocket_has_singleton_stacks[NUM_POCKETS] = {
     [POCKET_TM_HM] = true,
     [POCKET_BERRIES] = true,
 };

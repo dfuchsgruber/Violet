@@ -23,7 +23,7 @@
 #include "berry.h"
 #include "pokemon/evolution.h"
 
-static u32 standard_item_drop_rates[][2] = {
+static const u32 standard_item_drop_rates[][2] = {
     {ITEM_BITTERKRAUT, 100},
     {ITEM_QUARZSTAUB, 50},
     {ITEM_WUNDERSTAUB, 75},
@@ -49,7 +49,7 @@ static u32 standard_item_drop_rates[][2] = {
     **/
 };
 
-static u32 standard_item_count_rates[] = {[1] = 19, [2] = 4, [3] = 1};
+static const u32 standard_item_count_rates[] = {[1] = 19, [2] = 4, [3] = 1};
 
 static bool drop_standard_item(u8 battler_idx, u16 *item, u8 *cnt) {
     u32 p[ARRAY_COUNT(standard_item_drop_rates)];
@@ -64,13 +64,13 @@ static bool drop_standard_item(u8 battler_idx, u16 *item, u8 *cnt) {
     return true;
 }
 
-static u32 standard_item_rare_drop_rates[][2] = {
+static const u32 standard_item_rare_drop_rates[][2] = {
     {ITEM_UNBEKANNTER_SAMEN, 4},
     {ITEM_MININUGGET, 5},
     {ITEM_RIESENAPFEL, 3},
 };
 
-static u32 standard_item_rare_count_rates[] = {[1] = 1};
+static const u32 standard_item_rare_count_rates[] = {[1] = 1};
 
 static bool drop_rare_item(u8 battler_idx, u16 *item, u8 *cnt) {
     u32 p[ARRAY_COUNT(standard_item_rare_drop_rates)];
@@ -87,7 +87,7 @@ static bool drop_rare_item(u8 battler_idx, u16 *item, u8 *cnt) {
 
 #define P_ARRAY_ADD_ITEM(p, items, item, prob, p_size) {p[p_size] = prob; items[p_size] = item; p_size++;}
 
-static u32 drop_type_item_count_rates[] = {[1] = 1};
+static const u32 drop_type_item_count_rates[] = {[1] = 1};
 
 static bool drop_type_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     u32 p[16]; u16 items[16];
@@ -126,7 +126,7 @@ static bool drop_type_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
 }
 
 
-static u32 drop_color_item_count_rates[] = {[1] = 1};
+static const u32 drop_color_item_count_rates[] = {[1] = 1};
 
 static bool drop_color_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     int color = basestats[battlers[battler_idx].species].color_flip_field & 0x7F;
@@ -185,7 +185,7 @@ static bool drop_species_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     }
 }
 
-static u32 berry_dropping_probabilities[] = {
+static const u32 berry_dropping_probabilities[] = {
     [ITEM_IDX_TO_BERRY_IDX(ITEM_AMRENABEERE)] = 10,
     [ITEM_IDX_TO_BERRY_IDX(ITEM_MARONBEERE)] = 10,
     [ITEM_IDX_TO_BERRY_IDX(ITEM_PIRSIFBEERE)] = 10,
@@ -229,7 +229,7 @@ static u32 berry_dropping_probabilities[] = {
 };
 
 
-static u32 drop_berry_item_count_rates[] = {[1] = 13, [2] = 4, [3] = 2, [4] = 1};
+static const u32 drop_berry_item_count_rates[] = {[1] = 13, [2] = 4, [3] = 2, [4] = 1};
 
 static bool drop_berry_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     (void) battler_idx;
@@ -261,7 +261,7 @@ enum {
     DROP_EVOLUTION_ITEM,
 };
 
-static bool (*dropping_functions[])(u8, u16*, u8*) = {
+static bool (*const dropping_functions[])(u8, u16*, u8*) = {
     [DROP_STANDARD_ITEM] = drop_standard_item,
     [DROP_RARE_ITEM] = drop_rare_item,
     [DROP_TYPE_ITEM] = drop_type_item,
@@ -271,7 +271,7 @@ static bool (*dropping_functions[])(u8, u16*, u8*) = {
     [DROP_EVOLUTION_ITEM] = drop_evolution_item,
 };
 
-static u32 dropping_type_probabilities[] = {
+static const u32 dropping_type_probabilities[] = {
     [DROP_STANDARD_ITEM] = 30,
     [DROP_RARE_ITEM] = 2,
     [DROP_TYPE_ITEM] = 3,
@@ -339,10 +339,10 @@ static void battle_item_drop_compact(u8 battler_idx) {
     }
 }
 
-extern u8 battlescript_itemdrop[];
-extern u8 battlescript_print_payday_money[];
-extern u8 battlescript_itemdrop_picked_up[];
-extern u8 battlescript_itemdrop_picked_up_no_space[];
+extern const u8 battlescript_itemdrop[];
+extern const u8 battlescript_print_payday_money[];
+extern const u8 battlescript_itemdrop_picked_up[];
+extern const u8 battlescript_itemdrop_picked_up_no_space[];
 
 enum {
     DROPPING_PAYDAY = 0,
@@ -357,7 +357,7 @@ enum {
     SUMMARY_DONE,
 };
 
-static tbox_font_colormap item_drop_summary_fontcolmap = { .background = 0xE, .body = 0xD, .edge = 0xF};
+static const tbox_font_colormap item_drop_summary_fontcolmap = { .background = 0xE, .body = 0xD, .edge = 0xF};
 
 static u8 battle_item_drop_summary_tbox_new() {
     int height = 2 * BATTLE_STATE2->num_items_dropped[BATTLE_STATE2->item_dropping_battler];
@@ -506,9 +506,10 @@ void bsc_cmd_itemdrop_and_payday() {
             break;
         }
         case SUMMARY_WAIT_FOR_DMA3: {
-            if (!dma3_busy(-1))
+            if (!dma3_busy(-1)) {
                 battle_bg1_y = 0;
                 BATTLE_STATE2->item_dropping_state++;
+            }
             break;
         }
         case SUMMARY_WAIT_FOR_INPUT: {
@@ -563,7 +564,7 @@ void bsc_cmd_itemdrop_and_payday() {
     }
 }
 
-static coordinate_t item_dropping_animation_offsets[MAX_ITEMS_DROPPED_PER_BATTLER] = {
+static const coordinate_t item_dropping_animation_offsets[MAX_ITEMS_DROPPED_PER_BATTLER] = {
     {.x = 4, .y = 0}, {.x = 20, .y = -4}, {.x = -20, .y = 0}, {.x = -8, .y = -2},
 };
 

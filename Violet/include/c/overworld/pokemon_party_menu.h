@@ -46,7 +46,7 @@ typedef struct {
     s16 learn_move_state;
 } pokemon_party_menu_state_t;
 
-bool (*pokemon_party_menu_continuation)();
+extern bool (*pokemon_party_menu_continuation)();
 
 
 typedef struct {
@@ -82,7 +82,7 @@ extern struct {
 
 extern u8 pokemon_party_menu_use_return_callback;
 
-extern u8 str_item_has_no_effect[];
+extern const u8 str_item_has_no_effect[];
 
 /**
  * Fades the party menu back to overworld and executes the field move callback. Used as continuation
@@ -140,7 +140,7 @@ void pokemon_party_menu_wait_for_keypress_and_return_to_opts(u8 self);
  * @param text the text to print
  * @param keep_open if the text should be kept open
  */
-void pokemon_party_menu_init_text_rendering(u8 *text, bool keep_open);
+void pokemon_party_menu_init_text_rendering(const u8 *text, bool keep_open);
 
 /**
  * Pokemenu callback to wait for a text to be rendered

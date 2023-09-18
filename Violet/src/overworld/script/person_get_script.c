@@ -16,22 +16,22 @@
 #include "prng.h"
 #include "battle/state.h"
 
-extern u8 ow_script_person_pokeball[];
-extern u8 ow_script_person_egg[];
-extern u8 ow_script_person_pokemon[];
-extern u8 ow_script_aggressive_wild[];
-extern u8 ow_script_berry_tree[];
-extern u8 ow_script_mushroom[];
-extern u8 ow_script_shell[];
-extern u8 ow_script_boulder_gym_puzzle[];
-extern u8 ow_script_boulder_hay_bale[];
-extern u8 ow_script_person_pokemon_non_facing[];
-extern u8 ow_script_person_accessible_move_tutor[];
-extern u8 ow_script_trash_can[];
-extern u8 ow_script_dungeon2_enter_forest[];
-extern u8 ow_script_static_berry_tree[];
-extern u8 ow_script_dungeon2_enter_cave[];
-extern u8 ow_script_recipe[];
+extern const u8 ow_script_person_pokeball[];
+extern const u8 ow_script_person_egg[];
+extern const u8 ow_script_person_pokemon[];
+extern const u8 ow_script_aggressive_wild[];
+extern const u8 ow_script_berry_tree[];
+extern const u8 ow_script_mushroom[];
+extern const u8 ow_script_shell[];
+extern const u8 ow_script_boulder_gym_puzzle[];
+extern const u8 ow_script_boulder_hay_bale[];
+extern const u8 ow_script_person_pokemon_non_facing[];
+extern const u8 ow_script_person_accessible_move_tutor[];
+extern const u8 ow_script_trash_can[];
+extern const u8 ow_script_dungeon2_enter_forest[];
+extern const u8 ow_script_static_berry_tree[];
+extern const u8 ow_script_dungeon2_enter_cave[];
+extern const u8 ow_script_recipe[];
 
 void battle_initialize_aggressive_wild() {
 	super.saved_callback = battle_continuation_wild_legendary_battle_end;
@@ -53,8 +53,8 @@ void battle_initialize_misc_ecounter() {
 	overworld_script_halt();
 }
 
-u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank) {
-	map_event_person *p = map_get_person(target_idx, map_id, bank);
+const u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank) {
+	const map_event_person *p = map_get_person(target_idx, map_id, bank);
 	// DEBUG("Get script of person idx %d at %d.%d. Person offset is 0x%x\n", target_idx, bank, map_id, p);
 	if (p->script)
 		return p->script;

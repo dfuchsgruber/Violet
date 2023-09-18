@@ -28,15 +28,15 @@
 #include "constants/map_types.h"
 #include "overworld/sprite.h"
 
-extern tileset maptileset0;
-extern tileset maptileset_cave;
+extern const tileset maptileset0;
+extern const tileset maptileset_cave;
 
-u16 dungeon2_ocean_borders[4] = {0x1cd, 0x1cd, 0x1cd, 0x1cd};
+const u16 dungeon2_ocean_borders[4] = {0x1cd, 0x1cd, 0x1cd, 0x1cd};
 
-map_block dungeon2_ocean_map_empty[DG2_OCEAN_WIDTH * DG2_OCEAN_HEIGHT] = {0};
+const map_block dungeon2_ocean_map_empty[DG2_OCEAN_WIDTH * DG2_OCEAN_HEIGHT] = {0};
 
-extern u8 ow_script_dungeon_encounter[];
-extern u8 ow_script_dungeon_item[];
+extern const u8 ow_script_dungeon_encounter[];
+extern const u8 ow_script_dungeon_item[];
 
 map_header_t *dungeon2_init_header_ocean(dungeon_generator2 *dg2) {
 

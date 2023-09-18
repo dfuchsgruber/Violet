@@ -16,7 +16,7 @@
 #include "constants/item_hold_effects.h"
 #include "constants/items.h"
 
-static mega_evolution_t mega_evolutions[] = {
+static const mega_evolution_t mega_evolutions[] = {
     {POKEMON_GROUDON, ITEM_MAGMAHERZ, POKEMON_GROUDON_REGENT, REGENT_EVOLUTION},
     {POKEMON_GEOWAZ, ITEM_GEOWAZNIT, POKEMON_MEGA_GEOWAZ, MEGA_EVOLUTION},
     {POKEMON_TROPIUS, ITEM_TROPIUSNIT, POKEMON_MEGA_TROPIUS, MEGA_EVOLUTION},
@@ -49,7 +49,7 @@ bool battler_can_lose_item(u8 battler_idx) {
     return true;
 }
 
-mega_evolution_t *mega_evolution_get_by_mega_species(u16 species) {
+const mega_evolution_t *mega_evolution_get_by_mega_species(u16 species) {
     for (int i = 0; mega_evolutions[i].species != 0xFFFF; i++) {
         if (mega_evolutions[i].mega_species == species)
             return mega_evolutions + i;
@@ -103,11 +103,11 @@ u8 battler_get_owner(u8 battler_idx) {
     ERROR("Cant get owner of battler %d, position %d\n", battler_idx, battler_get_position(battler_idx)); return 0xFF;
 }
 
-mega_evolution_t *battler_get_available_mega_evolution(u8 battler_idx) {
+const mega_evolution_t *battler_get_available_mega_evolution(u8 battler_idx) {
     u8 owner = battler_get_owner(battler_idx);
     if (owner == 0 && !checkflag(PLAYER_ABLE_TO_MEGA_EVOLVE))
         return NULL;
-    mega_evolution_t *mega_evolution = NULL;
+    const mega_evolution_t *mega_evolution = NULL;
     for (int i = 0; mega_evolutions[i].species != 0xFFFF; i++) {
         if (mega_evolutions[i].species == battlers[battler_idx].species && mega_evolutions[i].mega_item == battlers[battler_idx].item) {
             mega_evolution = mega_evolutions + i;

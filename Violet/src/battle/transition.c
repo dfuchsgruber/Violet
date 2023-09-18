@@ -15,12 +15,12 @@
 static void battle_transition_phase_2_team_violet (u8 self);
 static void battle_transition_phase_2_revolutionary (u8 self);
 
-static u8 trainer_transitions_weak_opponent[] = {
+static const u8 trainer_transitions_weak_opponent[] = {
     BATTLE_TRANSITION_SLIDING_POKEBALLS, BATTLE_TRANSITION_HORIZONTAL_CORRUGATE,
     BATTLE_TRANSITION_BLUR, BATTLE_TRANSITION_DISTORTED_WAVE,
 };
 
-static u8 trainer_transitions_strong_opponent[] = {
+static const u8 trainer_transitions_strong_opponent[] = {
     BATTLE_TRANSITION_BLACK_DOODLES, BATTLE_TRANSITION_BIG_POKEBALL,
     BATTLE_TRANSITION_GRID_SQUARES, BATTLE_TRANSITION_FULLSCREEN_WAVE,
 };
@@ -80,9 +80,9 @@ static bool battle_transition_phase_2_pause(big_callback *self) {
     return false;
 }
 
-extern u16 gfx_battle_transition_team_violet_logoMap[20][32];
-extern u8 gfx_battle_transition_team_violet_logoTiles[];
-extern color_t gfx_battle_transition_team_violet_logoPal[16];
+extern const u16 gfx_battle_transition_team_violet_logoMap[20][32];
+extern const u8 gfx_battle_transition_team_violet_logoTiles[];
+extern const color_t gfx_battle_transition_team_violet_logoPal[16];
 
 static bool battle_transition_team_violet_phase_2_initialize_gfx(big_callback *self) {
     u16 *tilemap = 0;
@@ -133,7 +133,7 @@ static bool battle_transition_team_violet_phase_2_circle_effect(big_callback *se
 }
 
 
-static bool (*battle_transition_phase_2_team_violet_steps[])(big_callback *) = {
+static bool (*const battle_transition_phase_2_team_violet_steps[])(big_callback *) = {
     battle_transition_big_pokeball_phase_2_initialize,
     battle_transition_team_violet_phase_2_initialize_gfx,
     battle_transition_team_violet_phase_2_initialize_tilemap_and_wave,
@@ -151,9 +151,9 @@ static void battle_transition_phase_2_team_violet (u8 self) {
 }
 
 
-extern u16 gfx_battle_transition_revolutionary_logoMap[20][32];
-extern u8 gfx_battle_transition_revolutionary_logoTiles[];
-extern color_t gfx_battle_transition_revolutionary_logoPal[16];
+extern const u16 gfx_battle_transition_revolutionary_logoMap[20][32];
+extern const u8 gfx_battle_transition_revolutionary_logoTiles[];
+extern const color_t gfx_battle_transition_revolutionary_logoPal[16];
 
 static bool battle_transition_revolutionary_phase_2_initialize_gfx(big_callback *self) {
     u16 *tilemap = 0;
@@ -204,7 +204,7 @@ static bool battle_transition_revolutionary_phase_2_circle_effect(big_callback *
 }
 
 
-static bool (*battle_transition_phase_2_revolutionary_steps[])(big_callback *) = {
+static bool (*const battle_transition_phase_2_revolutionary_steps[])(big_callback *) = {
     battle_transition_big_pokeball_phase_2_initialize,
     battle_transition_revolutionary_phase_2_initialize_gfx,
     battle_transition_revolutionary_phase_2_initialize_tilemap_and_wave,
@@ -221,12 +221,12 @@ static void battle_transition_phase_2_revolutionary (u8 self) {
     while (battle_transition_phase_2_revolutionary_steps[big_cb->params[0]](big_cb));
 }
 
-void (*battle_transition_phase_1_callbacks[BATTLE_TRANSITION_COUNT])(u8) = {
+void (*const battle_transition_phase_1_callbacks[BATTLE_TRANSITION_COUNT])(u8) = {
     [0 ... BATTLE_TRANSITION_COUNT - 1] = battle_transition_phase_1_blink
 };
 
 
-void (*battle_transition_phase_2_callbacks[BATTLE_TRANSITION_COUNT])(u8) = {
+void (*const battle_transition_phase_2_callbacks[BATTLE_TRANSITION_COUNT])(u8) = {
     [BATTLE_TRANSITION_BLUR] = battle_transition_phase_2_blur,
     [BATTLE_TRANSITION_DISTORTED_WAVE] = battle_transition_phase_2_distorted_wave,
     [BATTLE_TRANSITION_HORIZONTAL_CORRUGATE] = battle_transition_phase_2_horizontal_corrugate,

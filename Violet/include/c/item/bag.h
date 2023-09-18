@@ -55,7 +55,7 @@ void bag_item_apply_new_encryption_key(u16 *dst, u32 key);
  * @param str the string to print
  * @param continuation the continuation function after printing the string
  **/
-void bag_print_string(u8 callback_idx, u8 font, u8 *str, void (*continuation)(u8));
+void bag_print_string(u8 callback_idx, u8 font, const u8 *str, void (*continuation)(u8));
 
 /**
  * Callback function that continues the bag functionality after a context menu has been executed
@@ -104,7 +104,7 @@ u16 item_get_quantity_by_pocket_position(u16 pocket, u16 idx);
  * @param encrypted the encrypted quantity
  * @return u16 The quantity
  */
-u16 item_slot_get_quantity(u16 *encrypted);
+u16 item_slot_get_quantity(const u16 *encrypted);
 
 /**
  * @brief Sets the quantity of an item in an encrypted bag slot
@@ -127,7 +127,7 @@ void item_close_bag_and_return_to_overworld(u8 self);
  * @param str the string to print
  * @param continuation the function to invoke after printing the text
  **/
-void bag_print_string_with_continuation(u8 self, u8 font, u8 *str, void (*continuation)(u8));
+void bag_print_string_with_continuation(u8 self, u8 font, const u8 *str, void (*continuation)(u8));
 
 /**
  * Waits for A to be pressed and then ends the current context (e.g. give, give from pc, ...)

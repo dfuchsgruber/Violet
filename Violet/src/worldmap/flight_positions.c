@@ -3,7 +3,7 @@
 #include "map/healing_place.h"
 #include "constants/map_namespaces.h"
 
-flight_position_association_t flight_position_associations[MAP_NAMESPACE_NONE - MAP_AMONIA] = {
+const flight_position_association_t flight_position_associations[MAP_NAMESPACE_NONE - MAP_AMONIA] = {
     [MAP_AMONIA - MAP_AMONIA] = {.bank = 3, .map_idx = 0, .healing_place_idx = HEALINGPLACE_AMONIA},
     [MAP_MERIANA_CITY - MAP_AMONIA] = {.bank = 3, .map_idx = 1, .healing_place_idx = HEALINGPLACE_MERIANA_CITY},
     [MAP_AKTANIA - MAP_AMONIA] = {.bank = 3, .map_idx = 2, .healing_place_idx = HEALINGPLACE_AKTANIA},
@@ -124,7 +124,7 @@ int map_get_flightposition(u8 bank, u8 map){
     return 0;
 }
 
-stru_flight_position *flightposition_by_id(int id){
+const stru_flight_position *flightposition_by_id(int id){
     if(!id) return 0;
     return &flight_positions[id - 1];
 }

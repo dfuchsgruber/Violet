@@ -14,7 +14,7 @@ void worldmap_locate_player() {
 	u8 map_idx = save1->map;
 	s16 x = save1->x_cam_orig;
 	s16 y = save1->y_cam_orig;
-	map_header_t *header = get_mapheader(bank, map_idx);
+	const map_header_t *header = get_mapheader(bank, map_idx);
 	int width = (int)(header->footer->width);
 	int height = (int)(header->footer->height);
 	

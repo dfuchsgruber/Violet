@@ -7,16 +7,16 @@
 #include "types.h"
 #include "map/tileset.h"
 
-extern u16 gfx_tileset_ardeal_anim_chandelierTiles[];
+extern const u16 gfx_tileset_ardeal_anim_chandelierTiles[];
 
-tileset_animation tileset_ardeal_animations[] = {
+static const tileset_animation tileset_ardeal_animations[] = {
     {
 		.cycle = 4, .speed = 16, .start_tile = 0x3E0, .num_tiles = 8,
 		.gfx = gfx_tileset_ardeal_anim_chandelierTiles
     }
 };
 
-tileset_animation_header tileset_ardeal_animations_head = {
+static const tileset_animation_header tileset_ardeal_animations_head = {
     1, tileset_ardeal_animations
 };
 

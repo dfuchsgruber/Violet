@@ -23,7 +23,7 @@
 static void cmdx3B_loop_sound_with_pan_and_volume_decay(ae_memory *mem);
 static void cmdx3C_task_new(ae_memory *mem);
 
-static void (*commands[])(ae_memory *) = {
+static void (*const commands[])(ae_memory *) = {
         cmdx00_end,
         cmdx01_call,
         cmdx02_jump,
@@ -92,7 +92,7 @@ void init_anim_engine_by_table() {
     anim_engine_initiatlize(ae_scripts[index]);
 }
 
-void anim_engine_initiatlize(u8 *script) {
+void anim_engine_initiatlize(const u8 *script) {
     u8 callback_id = big_callback_new(anim_engine_callback, 0);
     ae_memory *mem = malloc_and_clear(sizeof(ae_memory));
     big_callback_set_int(callback_id, 1, (int)mem);

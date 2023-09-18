@@ -56,7 +56,7 @@ bool battle_abilities_attack_done_defender_new();
 #define ABILITY_PRESENT(ability)(ability_execute(ABILITY_CONTEXT_CHECK_PRESENT, 0, ability, 0, 0))
 #define ABILITY_PRESENT2(ability)(ability_execute(ABILITY_CONTEXT_FIELD_SPORT, 0, ability, 0, 0))
 
-extern u8 ability_names[ABILITY_CNT][0xD];
-u8 *ability_descriptions[ABILITY_CNT];
+extern const u8 ability_names[ABILITY_CNT][0xD];
+extern const u8 *ability_descriptions[ABILITY_CNT];
 
 #endif

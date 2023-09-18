@@ -10,14 +10,14 @@
 #include "abilities.h"
 #include "debug.h"
 
-extern u8 bsc_intimidate[];
-extern u8 bsc_intimidate_end3[];
-extern u8 bsc_gegenwind[];
-extern u8 bsc_gegenwind_end3[];
-extern u8 bsc_giftnebel[];
-extern u8 bsc_giftnebel_end3[];
-extern u8 bsc_letzte_glocke[];
-extern u8 bsc_letzte_glocke_end3[];
+extern const u8 bsc_intimidate[];
+extern const u8 bsc_intimidate_end3[];
+extern const u8 bsc_gegenwind[];
+extern const u8 bsc_gegenwind_end3[];
+extern const u8 bsc_giftnebel[];
+extern const u8 bsc_giftnebel_end3[];
+extern const u8 bsc_letzte_glocke[];
+extern const u8 bsc_letzte_glocke_end3[];
 
 bool battle_abilities_intimidate2() {
     for (u8 i = 0; i < battler_cnt; i++) {

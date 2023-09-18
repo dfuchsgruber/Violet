@@ -102,10 +102,10 @@ typedef struct sprite {
 typedef struct {
     u16 tiles_tag;
     u16 pal_tag;
-    sprite *oam;
-    gfx_frame **animation;
-    graphic *graphics;
-    rotscale_frame **rotscale;
+    const sprite *oam;
+    const gfx_frame *const *animation;
+    const graphic *graphics;
+    const rotscale_frame *const *rotscale;
     void (*callback)(oam_object *self);
 } oam_template;
 
@@ -134,7 +134,7 @@ typedef struct {
 
 typedef struct {
   u8 num_subsprites;
-  subsprite *subsprites;
+  const subsprite *subsprites;
 } subsprite_table;
 
 enum {
@@ -150,15 +150,15 @@ typedef struct {
 } oam_size_t;
 
 // Indexed by [shape][size]
-extern oam_size_t oam_sizes[3][4];
+extern const oam_size_t oam_sizes[3][4];
 
 typedef struct oam_object {
     sprite final_oam;
-    gfx_frame **animation_table;
-    graphic *gfx_table;
-    rotscale_frame **rotscale_table;
-    oam_template *oam_template;
-    subsprite_table *subsprites;
+    const gfx_frame *const *animation_table;
+    const graphic *gfx_table;
+    const rotscale_frame *const *rotscale_table;
+    const oam_template *oam_template;
+    const subsprite_table *subsprites;
     void (*callback)(oam_object*);
     s16 x;
     s16 y;
@@ -197,7 +197,7 @@ extern u8 oam_copy_requests_enabled;
 extern u8 oam_copy_requests_cnt;
 
 typedef struct {
-  void *src;
+  const void *src;
   void *dst;
   u16 size;
   u16 filler;
@@ -208,10 +208,10 @@ extern oam_copy_request_t oam_copy_requests[64];
 extern s16 coordinate_camera_x_offset;
 extern s16 coordinate_camera_y_offset;
 
-extern oam_object oam_object_empty;
+extern const oam_object oam_object_empty;
 
-extern rotscale_frame *oam_rotscale_anim_table_null[];
-extern gfx_frame *oam_gfx_anim_table_null[];
+extern const rotscale_frame *oam_rotscale_anim_table_null[];
+extern const gfx_frame *oam_gfx_anim_table_null[];
 
 typedef struct { // Subject to change, I guess...
   u8 y_offset;
@@ -267,7 +267,7 @@ void oam_reset();
  * @param y Y-coordinate of the oam's center
  * @param prio The priority relative to other oams on the same layer (0 being lowest)
  */
-u8 oam_new_forward_search(oam_template *template, s16 x, s16 y, u8 prio);
+u8 oam_new_forward_search(const oam_template *template, s16 x, s16 y, u8 prio);
 
 /**
  * Creates a new oam object by backward searching the buffer for free entries
@@ -276,7 +276,7 @@ u8 oam_new_forward_search(oam_template *template, s16 x, s16 y, u8 prio);
  * @param y Y-coordinate of the oam's center
  * @param prio The priority relative to other oams on the same layer (0 being lowest)
  */
-u8 oam_new_backward_search(oam_template * template, s16 x, s16 y, u8 prio);
+u8 oam_new_backward_search(const oam_template * template, s16 x, s16 y, u8 prio);
 
 /**
  * Allocates oam vram and decompresses a graphic resource into the allocated vram. Places the
@@ -284,21 +284,21 @@ u8 oam_new_backward_search(oam_template * template, s16 x, s16 y, u8 prio);
  * @param graphic The graphic resource to load
  * @return The oam vram tile id that was allocated
  */
-u16 oam_load_graphic(graphic*g);
+u16 oam_load_graphic(const graphic*g);
 
 /**
  * Loads lz77 compressed graphic by allocating heap space, decompressing and then copying.
  * @param g the graphic to load
  * @return if the graphic could be loaded
  **/
-bool oam_load_graphic_using_heap(graphic *g);
+bool oam_load_graphic_using_heap(const graphic *g);
 
 /**
  * Loads lz77 compressed palette by allocating heap space, decompressing and then copying.
  * @param p the palette to load
  * @return if the palette could be loaded
  **/
-bool oam_load_palette_using_heap(palette *p);
+bool oam_load_palette_using_heap(const palette *p);
 
 /**
  * Frees allocated oam vram an oam holds but keeps the graphic's tag in the oam vram allocation
@@ -344,14 +344,14 @@ void oam_palette_free(u16 tag);
  * @param p the palettes struct, referring to an uncompressed color array
  * @return the idx of the palette or 0xFF on failure
  **/
-u8 oam_palette_load_if_not_present(palette *p);
+u8 oam_palette_load_if_not_present(const palette *p);
 
 /**
  * Loads (and possibly allocates) a oam palette, if it is not already present and applies shaders if and only if it was not present.
  * @param p the palettes struct, referring to an uncompressed color array
  * @return the idx of the palette or 0xFF on failure
  **/
-u8 oam_palette_load_if_not_present_and_apply_shaders(palette *p);
+u8 oam_palette_load_if_not_present_and_apply_shaders(const palette *p);
 /**
  * Clears an oam object (but does not free resources held by the object).
  * @param oam The oam object to clear
@@ -487,7 +487,7 @@ void oam_animation_proceed(oam_object *o);
  * @param o the object to get the rotscale group of
  * @return the index of the affine group or 0
  */
-u8 oam_rotscale_get(oam_object *o);
+u8 oam_rotscale_get(const oam_object *o);
 
 /**
  * Flips an oam (i.e. turns the current flip if set)
@@ -508,7 +508,7 @@ void oam_delete(oam_object *o);
  * @param g the graphic to copy, the sprite is expected to be uncompressed
  * @return t the tile where to graphic was copied to or 0xFFFF on failure
  **/
-u16 oam_load_graphic_uncompressed(graphic *g);
+u16 oam_load_graphic_uncompressed(const graphic *g);
 
 /**
  * Starts a certain gfx animation.
@@ -576,7 +576,7 @@ u8 oam_allocate(u8 where);
  * @param priority_on_layer its priority on the layer
  * @return the idx of the oam_object or NUM_OAMS if no slot could be allocated
  **/
-u8 oam_copy_forward_search(oam_object *src, s16 x, s16 y, u8 priority_on_layer);
+u8 oam_copy_forward_search(const oam_object *src, s16 x, s16 y, u8 priority_on_layer);
 
 /**
  * Copies an oam by allocating at the end of the list
@@ -586,6 +586,6 @@ u8 oam_copy_forward_search(oam_object *src, s16 x, s16 y, u8 priority_on_layer);
  * @param priority_on_layer its priority on the layer
  * @return the idx of the oam_object or NUM_OAMS if no slot could be allocated
  **/
-u8 oam_copy_backward_search(oam_object *src, s16 x, s16 y, u8 priority_on_layer);
+u8 oam_copy_backward_search(const oam_object *src, s16 x, s16 y, u8 priority_on_layer);
 
 #endif

@@ -24,7 +24,7 @@
 #include "constants/flags.h"
 #include "superstate.h"
 
-static field_move_t field_move_checks[NUM_FIELD_MOVES] = {
+static const field_move_t field_move_checks[NUM_FIELD_MOVES] = {
     [FIELD_MOVE_FLASH] = {.function = field_move_check_flash, .failure_message_idx = 13},
 	[FIELD_MOVE_CUT] = {.function = field_move_check_cut, .failure_message_idx = 7},
 	[FIELD_MOVE_FLY] = {.function = field_move_check_fly, .failure_message_idx = 13},
@@ -41,7 +41,7 @@ static field_move_t field_move_checks[NUM_FIELD_MOVES] = {
 	[FIELD_MOVE_SECRET_POWER] = {.function = field_move_check_secret_power, .failure_message_idx = 13},
 };
 
-u16 field_moves[NUM_FIELD_MOVES + 1] = {
+const u16 field_moves[NUM_FIELD_MOVES + 1] = {
     [FIELD_MOVE_FLASH] = ATTACK_BLITZ,
 	[FIELD_MOVE_CUT] = ATTACK_ZERSCHNEIDER,
 	[FIELD_MOVE_FLY] = ATTACK_FLIEGEN,
@@ -59,7 +59,7 @@ u16 field_moves[NUM_FIELD_MOVES + 1] = {
     [NUM_FIELD_MOVES] = 0xFFFF
 };
 
-u8 *field_move_descriptions[NUM_FIELD_MOVES] = {
+const u8 *field_move_descriptions[NUM_FIELD_MOVES] = {
     [FIELD_MOVE_FLASH] = str_field_move_description_flash,
 	[FIELD_MOVE_CUT] = str_field_move_description_cut,
 	[FIELD_MOVE_FLY] = str_field_move_description_fly,
@@ -76,7 +76,7 @@ u8 *field_move_descriptions[NUM_FIELD_MOVES] = {
 	[FIELD_MOVE_SECRET_POWER] = str_field_move_description_secret_power,
 };
 
-u16 field_move_flags[] = {FRBADGE_1, FRBADGE_2, FRBADGE_3, FRBADGE_5, FRBADGE_4, FRBADGE_6,
+const u16 field_move_flags[] = {FRBADGE_1, FRBADGE_2, FRBADGE_3, FRBADGE_5, FRBADGE_4, FRBADGE_6,
 		FRBADGE_7, FRBADGE_8};
 
 

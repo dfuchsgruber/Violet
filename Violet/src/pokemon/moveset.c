@@ -6,7 +6,7 @@
 #include "debug.h"
 #include "save.h"
 
-static u16 pokemon_attempt_learning_move_by_evolution(pokemon_move *moveset) {
+static u16 pokemon_attempt_learning_move_by_evolution(const pokemon_move *moveset) {
     u8 skip = fmem.pokemon_move_learning_evolution_move_idx;
     for (u16 i = 0; moveset[i].level <= 100; i++) {
         if (moveset[i].level == POKEMON_MOVE_BY_EVOLUTION) {
@@ -25,7 +25,7 @@ static u16 pokemon_attempt_learning_move_by_evolution(pokemon_move *moveset) {
 u16 pokemon_attempt_learning_move_consider_evolution_moves(pokemon *p, u8 is_first_move) {
     u16 species = (u16)pokemon_get_attribute(p, ATTRIBUTE_SPECIES, 0);
     u8 level = (u8)pokemon_get_attribute(p, ATTRIBUTE_LEVEL, 0);
-    pokemon_move *moveset = pokemon_moves[species];
+    const pokemon_move *moveset = pokemon_moves[species];
     if (!moveset)
         return 0;
 

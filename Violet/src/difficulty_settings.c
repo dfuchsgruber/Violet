@@ -26,26 +26,26 @@ enum {
     NUM_TBOXES,
 };
 
-static bg_config bg_configs[] = {
+static const bg_config bg_configs[] = {
     {.bg_id = 0, .char_base = 0, .map_base = 31, .priority = 0, .size = 0, .color_mode = 0,},
     {.bg_id = 1, .char_base = 2, .map_base = 30, .priority = 1, .size = 0, .color_mode = 0,},
     {.bg_id = 2, .char_base = 0, .map_base = 29, .priority = 2, .size = 0, .color_mode = 0,},
     {.bg_id = 3, .char_base = 1, .map_base = 28, .priority = 3, .size = 0, .color_mode = 0,},
 };
 
-static tboxdata difficulty_settings_tboxes[NUM_TBOXES + 1] = {
+static const tboxdata difficulty_settings_tboxes[NUM_TBOXES + 1] = {
     [TBOX_LIST] = {.bg_id = 2, .x = 2, .y = 1, .w = 18, .h = DIFFICULTY_LIST_MAX_TEXT_HEIGHT, .start_tile = 1, .pal = DIFFICULTY_SETTINGS_MESSAGE_PAL_IDX},
     [TBOX_DIFFICULTY] = {.bg_id = 0, .x = 21, .y = 5, .w = 7, .h = 2, .pal = DIFFICULTY_SETTINGS_MESSAGE_PAL_IDX, .start_tile = 1 + 18 * DIFFICULTY_LIST_MAX_TEXT_HEIGHT},   
     [TBOX_TEXT] = {.bg_id = 0, .x = 2, .y = 15, .w = 26, .h = 5, .pal = DIFFICULTY_SETTINGS_SET_STYLE_PAL_IDX, .start_tile = 1 + 18 * DIFFICULTY_LIST_MAX_TEXT_HEIGHT + 7 * 2},
     [NUM_TBOXES] = TBOX_SETUP_TAIL,    
 };
 
-extern LZ77COMPRESSED gfx_difficulty_settingTiles;
-extern LZ77COMPRESSED gfx_difficulty_settingMap;
-extern LZ77COMPRESSED gfx_difficulty_settingPal;
-extern LZ77COMPRESSED gfx_difficulty_setting_linesTiles;
-extern LZ77COMPRESSED gfx_difficulty_setting_linesMap;
-extern LZ77COMPRESSED gfx_difficulty_setting_linesPal;
+extern const LZ77COMPRESSED gfx_difficulty_settingTiles;
+extern const LZ77COMPRESSED gfx_difficulty_settingMap;
+extern const LZ77COMPRESSED gfx_difficulty_settingPal;
+extern const LZ77COMPRESSED gfx_difficulty_setting_linesTiles;
+extern const LZ77COMPRESSED gfx_difficulty_setting_linesMap;
+extern const LZ77COMPRESSED gfx_difficulty_setting_linesPal;
 
 static void difficulty_settings_list_set_bg_v_offset() {
     io_set(IO_BGVOFS(2), (u16)((DIFFICULTY_SETTINGS_STATE->list_offset * 16 + DIFFICULTY_SETTINGS_STATE->list_pixel_offset)));
@@ -71,59 +71,59 @@ static void difficulty_settings_vblank_handler() {
 }
 
 
-u8 str_description[] = LANGDEP(
+const u8 str_description[] = LANGDEP(
     PSTRING("Wähle den Schwierigkeitsgrad aus, in\ndem du das Spiel spielen möchtest."),
     PSTRING("Choose the difficulty in which to\nplay the game.")
 );
 
-static tbox_font_colormap font_colors_text = {.background = 0, .body = 1, .edge = 2}; 
+static const tbox_font_colormap font_colors_text = {.background = 0, .body = 1, .edge = 2}; 
 
 static void difficulty_settings_print_description() {
     tbox_flush_set(TBOX_TEXT, 0x00);
     tbox_print_string(TBOX_TEXT, 2, 0, 6, 0, 0, &font_colors_text, 0, str_description);
 }
 
-static u8 str_easy[] = LANGDEP(PSTRING("Leicht"), PSTRING("Easy"));
-static u8 str_normal[] = LANGDEP(PSTRING("Normal"), PSTRING("Normal"));
-static u8 str_hard[] = LANGDEP(PSTRING("Schwer"), PSTRING("Hard"));
+static const u8 str_easy[] = LANGDEP(PSTRING("Leicht"), PSTRING("Easy"));
+static const u8 str_normal[] = LANGDEP(PSTRING("Normal"), PSTRING("Normal"));
+static const u8 str_hard[] = LANGDEP(PSTRING("Schwer"), PSTRING("Hard"));
 
-static u8 *str_difficulties[NUM_DIFFICULTIES]  = {
+static const u8 *const str_difficulties[NUM_DIFFICULTIES]  = {
     [DIFFICULTY_NORMAL] = str_normal,
     [DIFFICULTY_EASY] = str_easy,
     [DIFFICULTY_HARD] = str_hard,
 };
 
-static u8 str_description_hard[] = LANGDEP(
+static const u8 str_description_hard[] = LANGDEP(
     PSTRING("× Wilde PKMN können fliehen\n× Radar PKMN fliehen oft\n× Höherer Geldverlust\n× Weniger Preisgeld\n× Weniger EP\n× Größeres Arenaleiter-Team\n× Höheres Gegnerlevel\n× Zusätzliche Trainer-Items\n× Zufällige Teamreihenfolge\n× Mehr Fleiß-Punkte (Genger)"),
     PSTRING("× Wild PKMN may flee\n× Radar PKMN flee more ofen\n× Higher money loss on defeat\n× Less price money\n× Less experience points\n× Bigger gym leader parties\n× Higher foe level\n× Additional trainer items\n× Shuffled trainer parties\n× Foes use more effort values")
 );
 
-static u8 str_description_easy[] = LANGDEP(
+static const u8 str_description_easy[] = LANGDEP(
     PSTRING("× Geringerer Geldverlust\n× Mehr Preisgeld\n× Mehr EP\n× Keine Arena-Rückkämpfe\n× Schwächere Arenaleiter"),
     PSTRING("× Lower money loss on defeat\n× More price money\n× More experience points\n× No gym rematches\n× Weaker gym leader parties")
 );
 
-static u8 str_description_normal[] = LANGDEP(
+static const u8 str_description_normal[] = LANGDEP(
     PSTRING("\n\n    Keine Modifkationen"),
     PSTRING("\n\n    No modifications")
 );
 
-static u8 *str_descriptions[NUM_DIFFICULTIES] = {
+static const u8 *const str_descriptions[NUM_DIFFICULTIES] = {
     [DIFFICULTY_NORMAL] = str_description_normal,
     [DIFFICULTY_EASY] = str_description_easy,
     [DIFFICULTY_HARD] = str_description_hard,
 };
 
-static tbox_font_colormap font_colors_difficulty = {.background = 0, .body = 2, .edge = 3};
+static const tbox_font_colormap font_colors_difficulty = {.background = 0, .body = 2, .edge = 3};
 
 static void difficulty_settings_print_difficulty() {
     tbox_flush_set(TBOX_DIFFICULTY, 0x00);
-    u8 *str = str_difficulties[*var_access(DIFFICULTY)];
+    const u8 *str = str_difficulties[*var_access(DIFFICULTY)];
     int pos = (8 * difficulty_settings_tboxes[TBOX_DIFFICULTY].w - string_get_width(2, str, 0)) / 2;
     tbox_print_string(TBOX_DIFFICULTY, 2, (u16)pos, 3, 0, 0, &font_colors_difficulty, 0, str);
 }
 
-static u8 *difficulty_settings_get_list() {
+static const u8 *difficulty_settings_get_list() {
     return str_descriptions[*var_access(DIFFICULTY)];
 }
 
@@ -132,7 +132,7 @@ static void difficulty_settings_print_list() {
     tbox_print_string(TBOX_LIST, 0, 0, 2, 0, 3, &font_colors_difficulty, 0, difficulty_settings_get_list());
 }
 
-static u16 difficulty_settings_list_count_lines(u8 *str) {
+static u16 difficulty_settings_list_count_lines(const u8 *str) {
     u16 num_lines = 1;
     for (int i = 0; str[i] != 0xFF; i++)
         if (str[i] == 0xFE)
@@ -245,7 +245,7 @@ static void difficulty_settings_confirm_no(u8 self) {
     big_callbacks[self].function = difficulity_settings_handle_input;
 }
 
-static yes_no_box_callbacks_t yes_no_menu_confirmation = {
+static const yes_no_box_callbacks_t yes_no_menu_confirmation = {
     .no_callback = difficulty_settings_confirm_no,
     .yes_callback = difficulty_settings_confirm_yes,
 };
@@ -253,13 +253,13 @@ static yes_no_box_callbacks_t yes_no_menu_confirmation = {
 
 static void difficulty_settings_wait_for_confirmation_text(u8 self) {
     if (!tbox_printer_is_active(TBOX_TEXT)) {
-        tboxdata template = {.bg_id = 0, .h = 2 * 2, .w = 5, .x = 30 - 5 - 1, .y = (u8)(20 - 1 - (2 * 2) - 5), .pal = 14, .start_tile = 320};
+        const tboxdata template = {.bg_id = 0, .h = 2 * 2, .w = 5, .x = 30 - 5 - 1, .y = (u8)(20 - 1 - (2 * 2) - 5), .pal = 14, .start_tile = 320};
         gp_list_menu_yes_no_new_with_callbacks(self, &template, 2, 0, 0, DIFFICULTY_SETTINGS_START_TILE_BORDER_SET_STYLE, DIFFICULTY_SETTINGS_SET_STYLE_PAL_IDX, 
             &yes_no_menu_confirmation);
     }
 }
 
-static u8 str_confirm[] = LANGDEP(
+static const u8 str_confirm[] = LANGDEP(
     PSTRING("Diese Einstellung ist endgültig und\nkann später nicht verändert werden.\pDas Spiel auf BUFFER_1 spielen?"),
     PSTRING("This setting is final and can not\nbe changed later on.\pPlay the game on BUFFER_1?")
 );

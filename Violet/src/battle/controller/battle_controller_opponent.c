@@ -75,7 +75,7 @@ void battle_controller_opponent_handle_choose_move() {
                 battle_controller_emit_two_values(1, BATTLE_ACTION_EXECUTE_SCRIPT, (u16)(move_idx | (defending_battler << 8)));
 
                 if (battle_flags & BATTLE_TRAINER) {
-                    mega_evolution_t *mega = battler_get_available_mega_evolution(active_battler);
+                    const mega_evolution_t *mega = battler_get_available_mega_evolution(active_battler);
                     if (mega)
                         MEGA_STATE.marked_for_mega_evolution[active_battler] = (u8)mega->type;
                 }

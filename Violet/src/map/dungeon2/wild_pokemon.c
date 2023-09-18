@@ -20,7 +20,7 @@
 #include "vars.h"
 #include "constants/story_states.h"
 
-void dungeon2_pick_wild_pokemon(u16 *dst, size_t number, u16 *src, size_t src_size, dungeon_generator2 *dg2) {
+void dungeon2_pick_wild_pokemon(u16 *dst, size_t number, const u16 *src, size_t src_size, dungeon_generator2 *dg2) {
   for(size_t picked = 0; picked < number; picked++) {
     // Pick an index not in dst[:picked]
     while(1) {

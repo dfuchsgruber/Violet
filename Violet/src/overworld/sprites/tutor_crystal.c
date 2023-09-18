@@ -14,7 +14,7 @@
 #include "music.h"
 #include "constants/pokemon_types.h"
 
-static palette overworld_tutor_crystal_pals[] = {
+static const palette overworld_tutor_crystal_pals[] = {
     [TYPE_NORMAL] = {.pal = gfx_tutor_crystal_normalPal, .tag = OW_PAL_TAG_TUTOR_CRYSTAL_BASE + TYPE_NORMAL},
     [TYPE_KAMPF] = {.pal = gfx_tutor_crystal_fightingPal, .tag = OW_PAL_TAG_TUTOR_CRYSTAL_BASE + TYPE_KAMPF},
     [TYPE_FLUG] = {.pal = gfx_tutor_crystal_flyingPal, .tag = OW_PAL_TAG_TUTOR_CRYSTAL_BASE + TYPE_FLUG},
@@ -35,11 +35,11 @@ static palette overworld_tutor_crystal_pals[] = {
     [TYPE_UNLICHT] = {.pal = gfx_tutor_crystal_darkPal, .tag = OW_PAL_TAG_TUTOR_CRYSTAL_BASE + TYPE_UNLICHT},
 };
 
-palette *overworld_palette_tutor_crystal_get_by_tag(u16 tag) {
+const palette *overworld_palette_tutor_crystal_get_by_tag(u16 tag) {
     return overworld_tutor_crystal_pals + tag - OW_PAL_TAG_TUTOR_CRYSTAL_BASE;
 };
 
-static graphic overworld_tutor_crystal_graphics[] = {
+static const graphic overworld_tutor_crystal_graphics[] = {
     [0] = {.sprite = gfx_tutor_crystal_bugTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = OW_PAL_TAG_TUTOR_CRYSTAL_BASE},
     [1] = {.sprite = gfx_tutor_crystal_bugTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = OW_PAL_TAG_TUTOR_CRYSTAL_BASE},
     [2] = {.sprite = gfx_tutor_crystal_bugTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = OW_PAL_TAG_TUTOR_CRYSTAL_BASE},
@@ -47,13 +47,13 @@ static graphic overworld_tutor_crystal_graphics[] = {
     [4] = {.sprite = gfx_tutor_crystal_bugTiles + 4 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = OW_PAL_TAG_TUTOR_CRYSTAL_BASE},
 };
 
-static gfx_frame gfx_animation_tutor_crystal[] = {
+static const gfx_frame gfx_animation_tutor_crystal[] = {
 	{.data = 0, .duration = 0}, {.data = 0, .duration = 12}, {.data = 1, .duration = 12}, 
     {.data = 2, .duration = 12}, {.data = 3, .duration = 12}, {.data = 4, .duration = 12},
     {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
-static gfx_frame *gfx_animations_tutor_crystal[1] = {gfx_animation_tutor_crystal};
+static const gfx_frame *const gfx_animations_tutor_crystal[1] = {gfx_animation_tutor_crystal};
 
 static overworld_sprite ow_tutor_crystals[] = {
 	[TYPE_NORMAL] = {
@@ -166,9 +166,9 @@ static overworld_sprite ow_tutor_crystals[] = {
     },
 };
 
-overworld_sprite ow_mega_stone;
+extern const overworld_sprite ow_mega_stone;
 
-overworld_sprite *overworld_sprite_get_by_tutor_crystal_type(u16 type) {
+const overworld_sprite *overworld_sprite_get_by_tutor_crystal_type(u16 type) {
     DEBUG("Getting ow sprite of crystal type %d\n", type);
     return ow_tutor_crystals + type;
 }

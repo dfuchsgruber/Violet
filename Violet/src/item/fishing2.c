@@ -22,39 +22,39 @@
 #include "map/wild_pokemon.h"
 #include "data_structures.h"
 
-extern LZ77COMPRESSED gfx_fishing_throw_barTiles;
-extern LZ77COMPRESSED gfx_fishing_throw_barPal;
-extern LZ77COMPRESSED gfx_fishing_starTiles;
-extern LZ77COMPRESSED gfx_fishing_catching_fishTiles;
-extern LZ77COMPRESSED gfx_fishing_catching_barTiles;
-extern LZ77COMPRESSED gfx_fishing_catching_frameTiles;
+extern const LZ77COMPRESSED gfx_fishing_throw_barTiles;
+extern const LZ77COMPRESSED gfx_fishing_throw_barPal;
+extern const LZ77COMPRESSED gfx_fishing_starTiles;
+extern const LZ77COMPRESSED gfx_fishing_catching_fishTiles;
+extern const LZ77COMPRESSED gfx_fishing_catching_barTiles;
+extern const LZ77COMPRESSED gfx_fishing_catching_frameTiles;
 
-static graphic graphic_throw_bar = {.sprite = gfx_fishing_throw_barTiles, .tag = FISHING_OAM_TAG_THROW, .size = 2 * GRAPHIC_SIZE_4BPP(32, 16) + 2 * GRAPHIC_SIZE_4BPP(32, 8)};
-static graphic graphic_star = {.sprite = gfx_fishing_starTiles, .tag = FISHING_OAM_TAG_STAR, .size = 5 * GRAPHIC_SIZE_4BPP(16, 16)};
-static graphic graphic_catching_frame = {.sprite = gfx_fishing_catching_frameTiles, .tag = FISHING_OAM_TAG_CATCHING_FRAME, .size = GRAPHIC_SIZE_4BPP(32, 96)};
-static graphic graphic_catching_bar = {.sprite = gfx_fishing_catching_barTiles, .tag = FISHING_OAM_TAG_CATCHING_BAR, .size = GRAPHIC_SIZE_4BPP(16, 32)};
-static graphic graphic_catching_fish = {.sprite = gfx_fishing_catching_fishTiles, .tag = FISHING_OAM_TAG_CATCHING_FISH, .size = GRAPHIC_SIZE_4BPP(32, 32)};
-static palette palette_throw_bar = {.pal = gfx_fishing_throw_barPal, .tag = FISHING_OAM_TAG_THROW,};
+static const graphic graphic_throw_bar = {.sprite = gfx_fishing_throw_barTiles, .tag = FISHING_OAM_TAG_THROW, .size = 2 * GRAPHIC_SIZE_4BPP(32, 16) + 2 * GRAPHIC_SIZE_4BPP(32, 8)};
+static const graphic graphic_star = {.sprite = gfx_fishing_starTiles, .tag = FISHING_OAM_TAG_STAR, .size = 5 * GRAPHIC_SIZE_4BPP(16, 16)};
+static const graphic graphic_catching_frame = {.sprite = gfx_fishing_catching_frameTiles, .tag = FISHING_OAM_TAG_CATCHING_FRAME, .size = GRAPHIC_SIZE_4BPP(32, 96)};
+static const graphic graphic_catching_bar = {.sprite = gfx_fishing_catching_barTiles, .tag = FISHING_OAM_TAG_CATCHING_BAR, .size = GRAPHIC_SIZE_4BPP(16, 32)};
+static const graphic graphic_catching_fish = {.sprite = gfx_fishing_catching_fishTiles, .tag = FISHING_OAM_TAG_CATCHING_FISH, .size = GRAPHIC_SIZE_4BPP(32, 32)};
+static const palette palette_throw_bar = {.pal = gfx_fishing_throw_barPal, .tag = FISHING_OAM_TAG_THROW,};
 
-static subsprite subsprites_throw_bar[] = {
+static const subsprite subsprites_throw_bar[] = {
     {.x = -32, .y = 0, .shape = ATTR0_SHAPE_HORIZONTAL >> 14, .size = ATTR1_SIZE_32_16 >> 14, .tile_offset = 0},
     {.x = 0, .y = 0, .shape = ATTR0_SHAPE_HORIZONTAL >> 14, .size = ATTR1_SIZE_32_16 >> 14, .tile_offset = GRAPHIC_SIZE_4BPP(32, 16) / GRAPHIC_SIZE_4BPP(8, 8)},
 };
 
-static subsprite_table subsprite_table_throw_bar = {
+static const subsprite_table subsprite_table_throw_bar = {
     .num_subsprites = ARRAY_COUNT(subsprites_throw_bar), .subsprites = subsprites_throw_bar,
 };
 
-static subsprite subsprites_throw_bar_progress[] = {
+static const subsprite subsprites_throw_bar_progress[] = {
     {.x = -32, .y = 0, .shape = ATTR0_SHAPE_HORIZONTAL >> 14, .size = ATTR1_SIZE_32_8 >> 14, .tile_offset = GRAPHIC_SIZE_4BPP(32, 32) / GRAPHIC_SIZE_4BPP(8, 8)},
     {.x = 0, .y = 0, .shape = ATTR0_SHAPE_HORIZONTAL >> 14, .size = ATTR1_SIZE_32_8 >> 14, .tile_offset = GRAPHIC_SIZE_4BPP(32, 40) / GRAPHIC_SIZE_4BPP(8, 8)},
 };
 
-static subsprite_table subsprite_table_throw_bar_progress = {
+static const subsprite_table subsprite_table_throw_bar_progress = {
     .num_subsprites = ARRAY_COUNT(subsprites_throw_bar_progress), .subsprites = subsprites_throw_bar_progress,
 };
 
-static sprite sprite_throw_bar = {.attr0 = ATTR0_SHAPE_HORIZONTAL, .attr1 = ATTR1_SIZE_32_16, .attr2 = ATTR2_PRIO(1)};
+static const sprite sprite_throw_bar = {.attr0 = ATTR0_SHAPE_HORIZONTAL, .attr1 = ATTR1_SIZE_32_16, .attr2 = ATTR2_PRIO(1)};
 
 static void fishing_free(fishing_state_t *state) {
     free(state->sprite_throw_bar_progress);
@@ -119,29 +119,29 @@ static void oam_callback_throw_bar_shake(oam_object *self) {
     }
 }
 
-static oam_template oam_template_throw_bar = {
+static const oam_template oam_template_throw_bar = {
     .tiles_tag = FISHING_OAM_TAG_THROW, .pal_tag = FISHING_OAM_TAG_THROW,
     .graphics = NULL, .oam = &sprite_throw_bar, .animation = oam_gfx_anim_table_null,
     .rotscale = oam_rotscale_anim_table_null, .callback = oam_callback_throw_bar_shake,
 };
 
-static sprite sprite_throw_bar_progress = {.attr0 = ATTR0_SHAPE_HORIZONTAL, .attr1 = ATTR1_SIZE_32_8, .attr2 = ATTR2_PRIO(1)};
+static const sprite sprite_throw_bar_progress = {.attr0 = ATTR0_SHAPE_HORIZONTAL, .attr1 = ATTR1_SIZE_32_8, .attr2 = ATTR2_PRIO(1)};
 
-static oam_template oam_template_throw_bar_progress = {
+static const oam_template oam_template_throw_bar_progress = {
     .tiles_tag = FISHING_OAM_TAG_THROW, .pal_tag = FISHING_OAM_TAG_THROW,
     .graphics = NULL, .oam = &sprite_throw_bar_progress, .animation = oam_gfx_anim_table_null,
     .rotscale = oam_rotscale_anim_table_null, .callback = oam_callback_throw_bar_shake,
 };
 
-static sprite sprite_star = {.attr0 = ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE | ATTR0_DSIZE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(0)};
+static const sprite sprite_star = {.attr0 = ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE | ATTR0_DSIZE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(0)};
 
-static gfx_frame animation_star_empty[] = {{.data = 1 * GRAPHIC_SIZE_4BPP(16, 16) / GRAPHIC_SIZE_4BPP(8, 8), .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame animation_star_1[] = {{.data = 2 * GRAPHIC_SIZE_4BPP(16, 16) / GRAPHIC_SIZE_4BPP(8, 8), .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame animation_star_2[] = {{.data = 3 * GRAPHIC_SIZE_4BPP(16, 16) / GRAPHIC_SIZE_4BPP(8, 8), .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame animation_star_3[] = {{.data = 4 * GRAPHIC_SIZE_4BPP(16, 16) / GRAPHIC_SIZE_4BPP(8, 8), .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame animation_star_full[] = {{.data = 0 * GRAPHIC_SIZE_4BPP(16, 16) / GRAPHIC_SIZE_4BPP(8, 8), .duration = 0}, {.data = GFX_ANIM_END}};
+static const gfx_frame animation_star_empty[] = {{.data = 1 * GRAPHIC_SIZE_4BPP(16, 16) / GRAPHIC_SIZE_4BPP(8, 8), .duration = 0}, {.data = GFX_ANIM_END}};
+static const gfx_frame animation_star_1[] = {{.data = 2 * GRAPHIC_SIZE_4BPP(16, 16) / GRAPHIC_SIZE_4BPP(8, 8), .duration = 0}, {.data = GFX_ANIM_END}};
+static const gfx_frame animation_star_2[] = {{.data = 3 * GRAPHIC_SIZE_4BPP(16, 16) / GRAPHIC_SIZE_4BPP(8, 8), .duration = 0}, {.data = GFX_ANIM_END}};
+static const gfx_frame animation_star_3[] = {{.data = 4 * GRAPHIC_SIZE_4BPP(16, 16) / GRAPHIC_SIZE_4BPP(8, 8), .duration = 0}, {.data = GFX_ANIM_END}};
+static const gfx_frame animation_star_full[] = {{.data = 0 * GRAPHIC_SIZE_4BPP(16, 16) / GRAPHIC_SIZE_4BPP(8, 8), .duration = 0}, {.data = GFX_ANIM_END}};
 
-static gfx_frame *animations_star[] = {
+static const gfx_frame *const animations_star[] = {
     [FISHING_STAR_EMPTY] = animation_star_empty,
     [FISHING_STAR_1] = animation_star_1,
     [FISHING_STAR_2] = animation_star_2,
@@ -149,37 +149,37 @@ static gfx_frame *animations_star[] = {
     [FISHING_STAR_FULL] = animation_star_full,
 };
 
-static rotscale_frame rs_star_none[] = {
+static const rotscale_frame rs_star_none[] = {
     {.affine = {.affine_x_value = 0x100, .affine_y_value = 0x100, .duration = 0}},
     {.command = {.command = ROTSCALE_ANIM_END}}
 };
 
-static rotscale_frame rs_star_appear[] = {
+static const rotscale_frame rs_star_appear[] = {
     {.affine = {.affine_x_value = 8, .affine_y_value = 8, .duration = 0}},
     {.affine = {.affine_x_value = 8, .affine_y_value = 8, .duration = 31}},
     {.command = {.command = ROTSCALE_ANIM_END}}
 };
 
-static rotscale_frame rs_star_disappear[] = {
+static const rotscale_frame rs_star_disappear[] = {
     {.affine = {.affine_x_value = 0x100, .affine_y_value = 0x100, .duration = 0}},
     {.affine = {.affine_x_value = -8, .affine_y_value = -8, .duration = 31}},
     {.command = {.command = ROTSCALE_ANIM_END}}
 };
 
-static rotscale_frame rs_star_collect[] = {
+static const rotscale_frame rs_star_collect[] = {
     {.affine = {.affine_x_value = 0x100, .affine_y_value = 0x100, .duration = 0}},
     {.affine = {.affine_x_value = 8, .affine_y_value = 8, .duration = 15}},
     {.command = {.command = ROTSCALE_ANIM_END}}
 };
 
-static rotscale_frame *rs_anims_star[] = {
+static const rotscale_frame *rs_anims_star[] = {
     [FISHING_STAR_RS_NONE] = rs_star_none,
     [FISHING_STAR_RS_APPEAR] = rs_star_appear,
     [FISHING_STAR_RS_DISAPPEAR] = rs_star_disappear,
     [FISHING_STAR_RS_COLLECT] = rs_star_collect,
 };
 
-static oam_template oam_template_star = {
+static const oam_template oam_template_star = {
     .tiles_tag = FISHING_OAM_TAG_STAR, .pal_tag = FISHING_OAM_TAG_THROW,
     .graphics = NULL, .oam = &sprite_star, .animation = animations_star,
     .rotscale = rs_anims_star, .callback = oam_null_callback,
@@ -219,7 +219,7 @@ static void oam_callback_vibrate(oam_object *self) {
     }
 }
 
-static u8 fishing_reach_back_animations[] = {
+static const u8 fishing_reach_back_animations[] = {
     [DIR_DOWN] = 12,
     [DIR_UP] = 13,
     [DIR_LEFT] = 14,
@@ -341,7 +341,7 @@ static void star_animation_disappear(oam_object *self) {
     }
 }
 
-static s16 star_x_anchors[3] = {120, 110, 130};
+static const s16 star_x_anchors[3] = {120, 110, 130};
 
 static void fishing_create_stars(fishing_state_t *state, u8 num_stars) {
     for (size_t i = 0; i < num_stars; i++) {
@@ -471,7 +471,7 @@ static bool fishing_wait_for_bite(u8 self) {
     return false;
 }
 
-static u8 str_not_even_a_nibble[] = LANGDEP(
+static const u8 str_not_even_a_nibble[] = LANGDEP(
     PSTRING("Nicht einmal ein kleines KnabbernDOTSPAUSE_UNTIL_PRESS"), 
     PSTRING("Not even a nibbleDOTSPAUSE_UNTIL_PRESS")
 );
@@ -559,8 +559,8 @@ static u16 feature_generator_fishing() {
 }
 
 static void fishing_pokemon_new(fishing_state_t *state) {
-    wild_pokemon_data *data = map_wild_pokemon_get_current();
-    wild_pokemon_entry *entry = data->rod->data + wildbattle_sample_from_rod_pdf(state->rod_type);
+    const wild_pokemon_data *data = map_wild_pokemon_get_current();
+    const wild_pokemon_entry *entry = data->rod->data + wildbattle_sample_from_rod_pdf(state->rod_type);
     // Sample the level multiple times (the higher the rating, the more samples) 
     u8 level = 1;
     for (int i = 0; i < 1 + fishing_get_total_rating(state) / 8; i++) {
@@ -620,7 +620,7 @@ static bool fishing_react_to_exclamation_mark(u8 self) {
     return false;
 }
 
-static u8 fishing_catching_bar_lines[3][NUM_CATCHING_BAR_COMPONENTS] = {
+static const u8 fishing_catching_bar_lines[3][NUM_CATCHING_BAR_COMPONENTS] = {
     [ROD_TYPE_OLD_ROD] = {
         [CATCHING_BAR_Y_TOP] = 0,
         [CATCHING_BAR_Y_DEFAULT] = 1,
@@ -703,48 +703,48 @@ static void fishing_initialize_catching_progress(fishing_state_t *state) {
     fishing_update_catching_progress(state);
 }
 
-static sprite sprite_catching_frame = {.attr0 = ATTR0_SHAPE_VERTICAL, .attr1 = ATTR1_SIZE_32_64, .attr2 = ATTR2_PRIO(0)};
+static const sprite sprite_catching_frame = {.attr0 = ATTR0_SHAPE_VERTICAL, .attr1 = ATTR1_SIZE_32_64, .attr2 = ATTR2_PRIO(0)};
 
-static oam_template oam_template_catching_frame = {
+static const oam_template oam_template_catching_frame = {
     .tiles_tag = FISHING_OAM_TAG_CATCHING_FRAME, .pal_tag = FISHING_OAM_TAG_THROW,
     .animation = oam_gfx_anim_table_null, .rotscale = oam_rotscale_anim_table_null,
     .callback = oam_null_callback, .oam = &sprite_catching_frame,
 };
 
-static subsprite subsprites_catching_frame[] = {
+static const subsprite subsprites_catching_frame[] = {
     {.x = 0, .y = -64, .shape = ATTR0_SHAPE_VERTICAL >> 14, .size = ATTR1_SIZE_32_64 >> 14, .tile_offset = 0},
     {.x = 0, .y = 0, .shape = ATTR0_SHAPE_SQUARE >> 14, .size = ATTR1_SIZE_32_32 >> 14, .tile_offset = GRAPHIC_SIZE_4BPP(32, 64) / GRAPHIC_SIZE_4BPP(8, 8)},
 };
 
-static subsprite_table subsprite_table_catching_frame = {.subsprites = subsprites_catching_frame, .num_subsprites = ARRAY_COUNT(subsprites_catching_frame)};
+static const subsprite_table subsprite_table_catching_frame = {.subsprites = subsprites_catching_frame, .num_subsprites = ARRAY_COUNT(subsprites_catching_frame)};
 
-static sprite sprite_catching_progress_bar = {.attr0 = ATTR0_SHAPE_VERTICAL, .attr1 = ATTR1_SIZE_8_32, .attr2 = ATTR2_PRIO(0)};
+static const sprite sprite_catching_progress_bar = {.attr0 = ATTR0_SHAPE_VERTICAL, .attr1 = ATTR1_SIZE_8_32, .attr2 = ATTR2_PRIO(0)};
 
-static oam_template oam_template_catching_progress_bar = {
+static const oam_template oam_template_catching_progress_bar = {
     .tiles_tag = FISHING_OAM_TAG_CATCHING_PROGRESS, .pal_tag = FISHING_OAM_TAG_THROW,
     .animation = oam_gfx_anim_table_null, .rotscale = oam_rotscale_anim_table_null,
     .callback = oam_null_callback, .oam = &sprite_catching_progress_bar,
 };
 
-static subsprite subsprites_catching_progress_bar[] = {
+static const subsprite subsprites_catching_progress_bar[] = {
     {.x = 0, .y = -64, .shape = ATTR0_SHAPE_VERTICAL >> 14, .size = ATTR1_SIZE_8_32 >> 14, .tile_offset = 0 * GRAPHIC_SIZE_4BPP(8, 32) / GRAPHIC_SIZE_4BPP(8, 8)},
     {.x = 0, .y = -32, .shape = ATTR0_SHAPE_VERTICAL >> 14, .size = ATTR1_SIZE_8_32 >> 14, .tile_offset = 1 * GRAPHIC_SIZE_4BPP(8, 32) / GRAPHIC_SIZE_4BPP(8, 8)},
     {.x = 0, .y = 0, .shape = ATTR0_SHAPE_VERTICAL >> 14, .size = ATTR1_SIZE_8_32 >> 14, .tile_offset = 2 * GRAPHIC_SIZE_4BPP(8, 32) / GRAPHIC_SIZE_4BPP(8, 8)},
 };
 
-static subsprite_table subsprite_table_catching_progress_bar = {.subsprites = subsprites_catching_progress_bar, .num_subsprites = ARRAY_COUNT(subsprites_catching_progress_bar)};
+static const subsprite_table subsprite_table_catching_progress_bar = {.subsprites = subsprites_catching_progress_bar, .num_subsprites = ARRAY_COUNT(subsprites_catching_progress_bar)};
 
-static sprite sprite_catching_bar = {.attr0 = ATTR0_SHAPE_VERTICAL, .attr1 = ATTR1_SIZE_16_32, .attr2 = ATTR2_PRIO(0)};
+static const sprite sprite_catching_bar = {.attr0 = ATTR0_SHAPE_VERTICAL, .attr1 = ATTR1_SIZE_16_32, .attr2 = ATTR2_PRIO(0)};
 
-static oam_template oam_template_catching_bar = {
+static const oam_template oam_template_catching_bar = {
     .tiles_tag = FISHING_OAM_TAG_CATCHING_BAR, .pal_tag = FISHING_OAM_TAG_THROW,
     .animation = oam_gfx_anim_table_null, .rotscale = oam_rotscale_anim_table_null,
     .callback = oam_null_callback, .oam = &sprite_catching_bar,
 };
 
-static sprite sprite_catching_fish = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(0)};
+static const sprite sprite_catching_fish = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(0)};
 
-static oam_template oam_template_catching_fish = {
+static const oam_template oam_template_catching_fish = {
     .tiles_tag = FISHING_OAM_TAG_CATCHING_FISH, .pal_tag = FISHING_OAM_TAG_THROW,
     .animation = oam_gfx_anim_table_null, .rotscale = oam_rotscale_anim_table_null,
     .callback = oam_callback_vibrate, .oam = &sprite_catching_fish,
@@ -832,7 +832,7 @@ static FIXED fish_position_new(fishing_state_t *state) {
     }
 }
 
-static size_t fish_pattern_probabilities[MAX_FISH_RATING][NUM_FISH_PATTERNS] = {
+static const size_t fish_pattern_probabilities[MAX_FISH_RATING][NUM_FISH_PATTERNS] = {
     {[FISH_PATTERN_MOVE_SLOW_CLOSE] = 9, [FISH_PATTERN_MOVE_FAST_CLOSE] = 1},
     {[FISH_PATTERN_MOVE_SLOW_CLOSE] = 8, [FISH_PATTERN_MOVE_FAST_CLOSE] = 2,},
     {[FISH_PATTERN_MOVE_SLOW_CLOSE] = 7, [FISH_PATTERN_MOVE_FAST_CLOSE] = 2, [FISH_PATTERN_MOVE_FAST_FAR] = 1},
@@ -932,7 +932,7 @@ static void fish_pattern_do_oscillation(fishing_state_t *state) {
     }
 }
 
-static void (*fish_patterns[NUM_FISH_PATTERNS])(fishing_state_t*) = {
+static void (*const fish_patterns[NUM_FISH_PATTERNS])(fishing_state_t*) = {
     [FISH_PATTERN_NEW] = fish_pattern_new,
     [FISH_PATTERN_MOVE_SLOW_CLOSE] = fish_pattern_move_slow_close,
     [FISH_PATTERN_MOVE_FAST_CLOSE] = fish_pattern_move_fast_close,
@@ -1094,7 +1094,7 @@ static bool fishing_wait_caught_stars(u8 self) {
     return false;
 }
 
-static u8 str_got_one_on_hook[] = LANGDEP(
+static const u8 str_got_one_on_hook[] = LANGDEP(
     PSTRING("Du hast ein Pokémon am Haken!PAUSE_UNTIL_PRESS"), 
     PSTRING("You got a Pokémon on the hook!PAUSE_UNTIL_PRESS")
 );
@@ -1134,7 +1134,7 @@ static bool fishing_delete_catching_and_do_continuation_state(u8 self) {
     return false;
 }
 
-static u8 str_it_got_away[] = LANGDEP(
+static const u8 str_it_got_away[] = LANGDEP(
     PSTRING("Es ist entkommenDOTSPAUSE_UNTIL_PRESS"), 
     PSTRING("It got awayDOTSPAUSE_UNTIL_PRESS")
 );
@@ -1150,7 +1150,7 @@ static bool fishing_it_got_away(u8 self) {
     return true;
 }
 
-bool (*fishing_callbacks[NUM_FISHING_STATES])(u8) = {
+static bool (*const fishing_callbacks[NUM_FISHING_STATES])(u8) = {
     [FISHING_STATE_LOCK_PLAYER] = fishing_state_lock,
     [FISHING_STATE_REACH_BACK] = fishing_state_reach_back,
     [FISHING_STATE_INITIALIZE_THROWING] = fishing_state_initialize_throwing,

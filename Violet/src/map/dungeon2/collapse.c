@@ -13,9 +13,9 @@
 #include "transparency.h"
 
 
-extern u8 ow_script_dungeon_forest_collapsing[];
-extern u8 ow_script_dungeon_cave_collapsing[];
-extern u8 ow_script_dungeon_ocean_collapsing[];
+extern const u8 ow_script_dungeon_forest_collapsing[];
+extern const u8 ow_script_dungeon_cave_collapsing[];
+extern const u8 ow_script_dungeon_ocean_collapsing[];
 
 bool dungeon2_step_is_collapsing(){
     u16 *steps = var_access(DUNGEON_STEPS);

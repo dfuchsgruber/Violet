@@ -100,7 +100,7 @@ void sub_08124f4c(void) {
     }
 }
 
-extern u8 str_pokemon_learned_move[];
+extern const u8 str_pokemon_learned_move[];
 
 void pokemon_party_menu_big_callback_learned_move(u8 self) {
     pokemon *p = player_pokemon + pokemon_party_menu_state.slot_idx;

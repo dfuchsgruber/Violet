@@ -8,11 +8,11 @@
 #include "vars.h"
 #include "debug.h"
 
-u8 str_present_query[] = LANGDEP(
+const u8 str_present_query[] = LANGDEP(
     PSTRING("Geschenkcode?"),
     PSTRING("Present Code?"));
 
-pstring_query_string pstring_query_string_present = {
+const pstring_query_string pstring_query_string_present = {
     0,
     10,
     3,
@@ -24,16 +24,16 @@ pstring_query_string pstring_query_string_present = {
     str_present_query
 };
     
-pstring_query_string *pstring_query_strings[] = {
-    (pstring_query_string *) 0x083E195C,
-    (pstring_query_string *) 0x083E1968,
-    (pstring_query_string *) 0x083E1974,
-    (pstring_query_string *) 0x083E1974,
-    (pstring_query_string *) 0x083E1980,
+const pstring_query_string *const pstring_query_strings[] = {
+    (const pstring_query_string *) 0x083E195C,
+    (const pstring_query_string *) 0x083E1968,
+    (const pstring_query_string *) 0x083E1974,
+    (const pstring_query_string *) 0x083E1974,
+    (const pstring_query_string *) 0x083E1980,
     &pstring_query_string_present
 };
 
-void (*pstring_query_string_initializers[])() = {
+void (*const pstring_query_string_initializers[])() = {
     (void(*)())(0x809F584 | 1),
     (void(*)())(0x809F584 | 1),
     (void(*)())(0x809F5D8 | 1),
@@ -43,10 +43,10 @@ void (*pstring_query_string_initializers[])() = {
     (void(*)())(0x809F584 | 1)
 };
 
-extern u8 ow_script_present_0[];
-extern u8 ow_script_present_purple_kecleon[];
+extern const u8 ow_script_present_0[];
+extern const u8 ow_script_present_purple_kecleon[];
 
-present_t presents[NUM_PRESENTS] = {
+const present_t presents[NUM_PRESENTS] = {
     {
         {0x62, 0xb7, 0xfb, 0xdf, 0xfa, 0x6a, 0x4e, 0x18},
         ow_script_present_0     
@@ -57,7 +57,7 @@ present_t presents[NUM_PRESENTS] = {
 	}
 };
 
-u8 *present_get_matching_md(u8 *md){
+static const u8 *present_get_matching_md(const u8 *md){
     for(int i = 0; i < NUM_PRESENTS; i++){
         //DEBUG("Checking present %d\n", i);
         bool matched = true;
@@ -91,7 +91,7 @@ void present_query_closure(){
         }
         
         
-        u8 *script = present_get_matching_md(md);
+        const u8 *script = present_get_matching_md(md);
         if(script){
             overworld_script_virtual_ptr = script;
             *var_access(0x800D) = 1;

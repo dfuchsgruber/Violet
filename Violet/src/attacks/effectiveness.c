@@ -5,7 +5,7 @@
 #include "battle/battler.h"
 #include "constants/battle/battle_handicaps.h"
 
-type_effectiveness type_effectivenesses[] = {
+const type_effectiveness type_effectivenesses[] = {
     {TYPE_NORMAL, TYPE_GESTEIN, 5},
     {TYPE_NORMAL, TYPE_STAHL, 5},
     {TYPE_FEUER, TYPE_FEUER, 5},

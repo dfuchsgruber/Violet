@@ -29,22 +29,22 @@
 #include "callbacks.h"
 #include "overworld/script.h"
 
-extern map_footer_t map_footer_dungeon_forest_normal;
-extern map_footer_t map_footer_dungeon_forest_apple_tree;
-extern map_footer_t map_footer_dungeon_forest_berry_spot;
-extern map_footer_t map_footer_dungeon_forest_nest;
-extern map_footer_t map_footer_dungeon_forest_mushrooms;
-extern map_footer_t map_footer_dungeon_forest_dusk;
-extern map_footer_t map_footer_dungeon_forest_tent_and_campfire;
+extern const map_footer_t map_footer_dungeon_forest_normal;
+extern const map_footer_t map_footer_dungeon_forest_apple_tree;
+extern const map_footer_t map_footer_dungeon_forest_berry_spot;
+extern const map_footer_t map_footer_dungeon_forest_nest;
+extern const map_footer_t map_footer_dungeon_forest_mushrooms;
+extern const map_footer_t map_footer_dungeon_forest_dusk;
+extern const map_footer_t map_footer_dungeon_forest_tent_and_campfire;
 
-u16 dungeon2_forest_borders[4] = {0x26, 0x27, 0x2c, 0x2d};
+const u16 dungeon2_forest_borders[4] = {0x26, 0x27, 0x2c, 0x2d};
 
-map_block dungeon2_forest_map_empty[DG2_FOREST_WIDTH * DG2_FOREST_HEIGHT] = {0};
+const map_block dungeon2_forest_map_empty[DG2_FOREST_WIDTH * DG2_FOREST_HEIGHT] = {0};
 
-extern u8 ow_script_dungeon_encounter[];
-extern u8 ow_script_dungeon_item[];
+extern const u8 ow_script_dungeon_encounter[];
+extern const u8 ow_script_dungeon_item[];
 
-static u32 dungeon2_forest_type_rates[NUM_DUNGEON_FOREST_TYPES] = {
+static const u32 dungeon2_forest_type_rates[NUM_DUNGEON_FOREST_TYPES] = {
     [DUNGEON_FOREST_TYPE_NORMAL] = 3,
     [DUNGEON_FOREST_TYPE_APPLE_FOREST] = 2,
     [DUNGEON_FOREST_TYPE_BERRY_FOREST] = 2,
@@ -59,18 +59,18 @@ u8 dungeon2_get_forest_type(dungeon_generator2 *dg2) {
     return (u8)choice(dungeon2_forest_type_rates, NUM_DUNGEON_FOREST_TYPES, gp_rnd16);
 }
 
-static map_footer_t *dungeon2_get_forest_type_pattern(dungeon_generator2 *dg2) {
+static const map_footer_t *dungeon2_get_forest_type_pattern(dungeon_generator2 *dg2) {
     return dungeon_forest_types[dungeon2_get_forest_type(dg2)].footer;
 }
 
 static int dungeon2_get_forest_num_patterns(dungeon_generator2 *dg2) {
-    dungeon_forest_t *type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
+    const dungeon_forest_t *type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
     gp_rng_seed(dungeon2_seeded_rnd16(dg2, DG2_RANDOM_SEED_NUM_PATTERNS));
     return MIN(DG2_MAX_NUM_PATTERNS, type->min_num_patterns + (gp_rnd16() % (type->max_num_patterns - type->min_num_patterns + 1)));
 }
 
 map_footer_t *dungeon2_init_footer_forest(dungeon_generator2 *dg2){
-    map_footer_t *footer = dungeon2_get_forest_type_pattern(dg2);
+    const map_footer_t *footer = dungeon2_get_forest_type_pattern(dg2);
     fmem.dmapfooter.width = (u32)dg2->width;
     fmem.dmapfooter.height = (u32)dg2->height;
     fmem.dmapfooter.tileset1 = footer->tileset1;
@@ -82,11 +82,11 @@ map_footer_t *dungeon2_init_footer_forest(dungeon_generator2 *dg2){
     return &(fmem.dmapfooter);
 }
 
-static s16 dungeon_forest_apple_displacements[][2] = {
+static const s16 dungeon_forest_apple_displacements[][2] = {
     {-1, 0}, {-1, 1}, {1, 0}, {1, 1}
 };
 
-u32 dungeon_forest_berries[] = {
+const u32 dungeon_forest_berries[] = {
     [ITEM_IDX_TO_BERRY_IDX(ITEM_AMRENABEERE)] = 6,
     [ITEM_IDX_TO_BERRY_IDX(ITEM_PIRSIFBEERE)] = 6,
     [ITEM_IDX_TO_BERRY_IDX(ITEM_MARONBEERE)] = 4,
@@ -99,7 +99,7 @@ u32 dungeon_forest_berries[] = {
     [11] = 0xFFFF,
 };
 
-u16 dungeon_forest_eggs[] = {
+const u16 dungeon_forest_eggs[] = {
     POKEMON_TOGEPI, POKEMON_MAEHIKEL, POKEMON_PIKACHU, POKEMON_FLABEBE, POKEMON_MYRAPLA, POKEMON_WATTZAPF,
     POKEMON_TRAUMATO, POKEMON_KANGAMA, POKEMON_PINSIR, POKEMON_SICHLOR,
     POKEMON_MOBAI, POKEMON_TANNZA, POKEMON_TEDDIURSA, POKEMON_MAMPFAXO, POKEMON_SAMURZEL,
@@ -183,7 +183,7 @@ static void dungeon_forest_berry_forest_initialize_events(dungeon_generator2 *dg
             fmem.dpersons[num_persons].overworld_index = OVERWORLD_SPRITE_BERRY;
             fmem.dpersons[num_persons].script_std = PERSON_STATIC_BERRY_TREE;
             u16 item = (u16)BERRY_IDX_TO_ITEM_IDX(choice(dungeon_forest_berries, ARRAY_COUNT(dungeon_forest_berries) - 1, gp_rnd16));
-            berry *b = berry_get((u8)ITEM_IDX_TO_BERRY_IDX(item));
+            const berry *b = berry_get((u8)ITEM_IDX_TO_BERRY_IDX(item));
             fmem.dpersons[num_persons].value = item;
             fmem.dpersons[num_persons].argument = b->min_yield;
             fmem.dpersons[num_persons].flag = (u16)(DG2_FLAG_PATTERN + 3 * j + i);
@@ -213,7 +213,7 @@ static void dungeon_forest_egg_forest_initialize_events(dungeon_generator2 *dg2)
     fmem.dmapevents.person_cnt = num_persons;
 }
 
-static s16 dungeon_forest_mushroom_displacements[][3] = {
+static const s16 dungeon_forest_mushroom_displacements[][3] = {
     {0, -2}, {-1, 0}, {1, 0},
 };
 
@@ -270,7 +270,7 @@ static void dungeon_tent_forest_initialize_events(dungeon_generator2 *dg2) {
     fmem.dmapevents.warp_cnt = num_warps;
 }
 
-dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
+const dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
     [DUNGEON_FOREST_TYPE_NORMAL] = {
         .footer = &map_footer_dungeon_forest_normal,
         .min_num_patterns = 0,
@@ -482,7 +482,7 @@ u16 dungeon_forest_pick_item(dungeon_generator2 *dg2) {
 
 void dungeon2_init_wild_pokemon_forest(dungeon_generator2 *dg2) {
 
-    dungeon_forest_t *forest_type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
+    const dungeon_forest_t *forest_type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
 
     u16 common_pokemon[4];
     u16 rare_pokemon[2];
@@ -577,7 +577,7 @@ map_event_header_t *dungeon2_init_events_forest(dungeon_generator2 *dg2){
     return &(fmem.dmapevents);
 }
 
-static u16 blocks_alternative_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
+static const u16 blocks_alternative_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
     [NB_GRASS] = {
         [0] = {{0x2b8 | BLOCK_SOLID, 0x2b9 | BLOCK_SOLID}, {0x2c0 | BLOCK_SOLID, 0x2c1 | BLOCK_SOLID}},
         [1] = {{0x2e8 | BLOCK_SOLID, 0x2e9 | BLOCK_SOLID}, {0x2f0 | BLOCK_SOLID, 0x2f1 | BLOCK_SOLID}},
@@ -608,7 +608,7 @@ static u16 blocks_alternative_tree[NUM_NBS][5][2][2] = { // [block_type_below][d
     },
 };
 
-static u16 blocks_1x1_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
+static const u16 blocks_1x1_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
     [NB_GRASS] = {
         [0] = {{0x29a | BLOCK_SOLID, 0x29a | BLOCK_SOLID}, {0x29a | BLOCK_SOLID, 0x29a | BLOCK_SOLID}},
         [1] = {{0x2e0 | BLOCK_SOLID, 0x2e0 | BLOCK_SOLID}, {0x2e0 | BLOCK_SOLID, 0x2e0 | BLOCK_SOLID}},
@@ -639,7 +639,7 @@ static u16 blocks_1x1_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoratio
     }
 };
 
-static u16 blocks_grass[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
+static const u16 blocks_grass[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
     [NB_GRASS] = { // Grass is decorated by a separate function
         [0] = {{0xFFFF, 0xFFFF}, {0xFFFF, 0xFFFF}},
         [1] = {{0xFFFF, 0xFFFF}, {0xFFFF, 0xFFFF}},
@@ -670,7 +670,7 @@ static u16 blocks_grass[NUM_NBS][5][2][2] = { // [block_type_below][decoration_i
     },
 };
 
-static u16 blocks_high_grass[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
+static const u16 blocks_high_grass[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
     [NB_GRASS] = {
         [0] = {{0x285, 0x285}, {0x285, 0x285}},
         [1] = {{0x285, 0x285}, {0x285, 0x285}},
@@ -701,7 +701,7 @@ static u16 blocks_high_grass[NUM_NBS][5][2][2] = { // [block_type_below][decorat
     },
 };
 
-static u16 blocks_2x2_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
+static const u16 blocks_2x2_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
     [NB_GRASS] = {
         [0] = {{0x298 | BLOCK_SOLID, 0x299 | BLOCK_SOLID}, {0x2a0 | BLOCK_SOLID, 0x2a1 | BLOCK_SOLID}},
         [1] = {{0x2d0 | BLOCK_SOLID, 0x2d1 | BLOCK_SOLID}, {0x2d8 | BLOCK_SOLID, 0x2d9 | BLOCK_SOLID}},
@@ -732,9 +732,9 @@ static u16 blocks_2x2_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoratio
     },
 };
 
-static u16 dungeon2_forest_branches[] = {0x288, 0x289};
-static u16 dungeon2_forest_decoratives[] = {0x28a, 0x28b, 0x28c, 0x28d, 0x28e, 0x28f};
-static u16 dungeon2_forest_tiny_grasses[] = {0x281, 0x282, 0x283};
+static const u16 dungeon2_forest_branches[] = {0x288, 0x289};
+static const u16 dungeon2_forest_decoratives[] = {0x28a, 0x28b, 0x28c, 0x28d, 0x28e, 0x28f};
+static const u16 dungeon2_forest_tiny_grasses[] = {0x281, 0x282, 0x283};
 
 static inline u16 dungeon2_get_grass_decoration(u8 *map, u8 *over, int x, int y, dungeon_generator2 *dg2) {
     (void) over;
@@ -767,7 +767,7 @@ static inline u16 dungeon2_get_grass_decoration(u8 *map, u8 *over, int x, int y,
 }
 
 static void dungeon2_set_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2) {
-    dungeon_forest_t *forest_type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
+    const dungeon_forest_t *forest_type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
     // To be able to have consistent decorations, we store them for each row
     u8 *decoration_idxs = malloc(sizeof(u8) * (size_t)dg2->width);
     for (int y = 0; y < dg2->height; y++) {
@@ -817,8 +817,8 @@ static void dungeon2_set_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg
 
 static void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2){
     int (*nodes)[2] = save1->dungeon_nodes;
-    dungeon_forest_t *forest_type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
-    map_footer_t *pattern = dungeon2_get_forest_type_pattern(dg2);
+    const dungeon_forest_t *forest_type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
+    const map_footer_t *pattern = dungeon2_get_forest_type_pattern(dg2);
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
 
     // Fill map to fit the pattern
@@ -878,7 +878,7 @@ void dungeon2_forest_initialize_state(dungeon_generator2 *dg2) {
   dg2->node_metric_lambda_l2 = DG2_FOREST_NODE_METRIC_LAMBDA_MEAN;
   dg2->node_metric_lambda_min = DG2_FOREST_NODE_METRIC_LAMBDA_MIN;
   dg2->node_samples = DG2_FOREST_NODE_SAMPLES;
-  map_footer_t *pattern = dungeon2_get_forest_type_pattern(dg2);
+  const map_footer_t *pattern = dungeon2_get_forest_type_pattern(dg2);
   dg2->pattern_margin = (u8)(((MAX(pattern->width, pattern->height) + 1) / 2) & 0xF);
 }
 

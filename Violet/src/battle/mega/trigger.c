@@ -83,24 +83,24 @@ static void mega_trigger_oam_callback(oam_object *self) {
     }
 }
 
-static gfx_frame trigger_gfx_anims[] = {
+static const gfx_frame trigger_gfx_anims[] = {
     {.data = 0, .duration = 0}, {.data = GFX_ANIM_END},
     {.data = 64, .duration = 0}, {.data = GFX_ANIM_END},
 };
 
-static gfx_frame *trigger_gfx_anim_table[] = {
+static const gfx_frame *trigger_gfx_anim_table[] = {
     trigger_gfx_anims + 0,
     trigger_gfx_anims + 2,
 };
 
-static sprite trigger_sprite = {ATTR0_MODE_SEMI_TRANSPARENT, ATTR1_SIZE_64_64, ATTR2_PRIO(1), 0};
+static const sprite trigger_sprite = {ATTR0_MODE_SEMI_TRANSPARENT, ATTR1_SIZE_64_64, ATTR2_PRIO(1), 0};
 
-static graphic trigger_graphics[] = {
+static const graphic trigger_graphics[] = {
     [MEGA_EVOLUTION] = {gfx_mega_triggerTiles, 0x1000, MEGA_TRIGGER_TAG},
     [REGENT_EVOLUTION] = {gfx_regent_triggerTiles, 0x1000, REGENT_TRIGGER_TAG},
 };
 
-static oam_template trigger_templates[] = {
+static const oam_template trigger_templates[] = {
     [MEGA_EVOLUTION] = {
         MEGA_TRIGGER_TAG,
         MEGA_TRIGGER_TAG,
@@ -126,7 +126,7 @@ static const void *trigger_pals[] = {
     [REGENT_EVOLUTION] = gfx_regent_triggerPal,
 };
 
-static u16 trigger_tags[] = {
+static const u16 trigger_tags[] = {
     [MEGA_EVOLUTION] = MEGA_TRIGGER_TAG,
     [REGENT_EVOLUTION] = REGENT_TRIGGER_TAG,
 };
@@ -147,7 +147,7 @@ void mega_trigger_new(u8 battler_idx) {
     if (battle_flags & (BATTLE_SAFARI | BATTLE_TUTORIAL))
         return;
     // Check if the battler can perform mega evolution
-    mega_evolution_t *mega_evolution = battler_get_available_mega_evolution(battler_idx);
+    const mega_evolution_t *mega_evolution = battler_get_available_mega_evolution(battler_idx);
     if (mega_evolution || MEGA_STATE.marked_for_mega_evolution[battler_idx]) {
         u8 mega_trigger_oam = mega_trigger_oam_idx_get(battler_idx);
         if (mega_trigger_oam >= 0x40) {
@@ -175,7 +175,7 @@ void _battle_controller_player_choose_move_hook(); // This function recovers the
 
 // Wraps the original handler. Don't change label to "battle_controller_player_choose_move", as the symbol is referrenced multiple times
 void _battle_controller_player_choose_move() {
-    mega_evolution_t *mega_evolution = battler_get_available_mega_evolution(active_battler);
+    const mega_evolution_t *mega_evolution = battler_get_available_mega_evolution(active_battler);
     if (super.keys_remapped.keys.B) {
         // Unmark the battler for mega evolution
         MEGA_STATE.marked_for_mega_evolution[active_battler] = 0;

@@ -43,7 +43,7 @@ u8 gp_menu_initialize_with_unmuted_a_press(u8 tbox_idx, u8 font, u8 x, u8 y, u8 
  * @param item_idxs the idxs of which items to print (must match `num_items` in length)
  */
 void gp_menu_print_items(u8 tbox_idx, u8 font, u8 left_margin, u8 top_margin, u8 letter_spacing,
-                        u8 line_height, u8 num_items, menu_action_t *items, u8 *item_idxs);
+                        u8 line_height, u8 num_items, const menu_action_t *items, const u8 *item_idxs);
 
 /**
  * @brief Processes inputs for the gp menu such that the cursor does not wrap around

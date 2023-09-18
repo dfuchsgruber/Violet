@@ -173,7 +173,7 @@ void attack_anim_task_secret_power(u8 self) {
 		attack = ATTACK_EISSTURM;
 		break;
 	}
-	u8 *animation = attack_anims[attack];
+	const u8 *animation = attack_anims[attack];
 	attack_anim_script = animation;
 	battle_animation_big_callback_delete(self);
 }

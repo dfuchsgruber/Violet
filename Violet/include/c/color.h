@@ -19,7 +19,7 @@ typedef union {
 } color_t;
 
 typedef struct {
-    color_t *palette;
+    const color_t *palette;
     u16 tag;
     u16 filler;
 } pal_resource;
@@ -31,8 +31,8 @@ extern color_t pal_restore[512];
 extern color_t pals[512];
 // Used for temporarily storing palettes when decompressing
 extern color_t pal_tmp[512];
-extern color_t typechart_icon_pal[16];
-extern color_t tbox_pokeball_pal[16];
+extern const color_t typechart_icon_pal[16];
+extern const color_t tbox_pokeball_pal[16];
 // ?
 extern color_t pal_backup[512];
 
@@ -48,7 +48,7 @@ color_t color_alpha_blend(color_t original, color_t overlay, u8 alpha);
 #define COLOR_MULTIPLY_IDENTITY 0x7FFF
 #define COLOR_MULTIPLY_ZERO 0
 
-u8 color_multiplication_lut[32][32];
+extern const u8 color_multiplication_lut[32][32];
 
 #define COLOR_MULTIPLY_ACCURATE_LUT 1
 
@@ -180,11 +180,11 @@ void pal_apply_shaders_by_oam_palette_idx(u8 oam_pal_idx);
 void pal_alpha_blending(u16 start_color, u16 number_colors, u8 alpha, color_t overlay);
 
 
-enum {
+enum gamma_type {
     GAMMA_NONE,
     GAMMA_NORMAL,
     GAMMA_ALTERNATIVE
-} gamma_types;
+};
 
 /**
  * Applies a gamma shift to a set of colors using the pal_restore to create colors in pals.

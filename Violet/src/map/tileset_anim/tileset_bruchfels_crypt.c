@@ -1,16 +1,16 @@
 #include "types.h"
 #include "map/tileset.h"
 
-extern u8 gfx_tileset_bruchfels_crypt_anim_torchTiles[];
+extern const u8 gfx_tileset_bruchfels_crypt_anim_torchTiles[];
 
 
-tileset_animation tileset_bruchfels_crypt_animations[] = {
+static const tileset_animation tileset_bruchfels_crypt_animations[] = {
     {
         .cycle = 4, .speed = 16, .start_tile = 0x2c2, .num_tiles = 2, gfx_tileset_bruchfels_crypt_anim_torchTiles,
     },
 };
 
-tileset_animation_header tileset_bruchfels_crypt_animations_head = {
+static const tileset_animation_header tileset_bruchfels_crypt_animations_head = {
     ARRAY_COUNT(tileset_bruchfels_crypt_animations), tileset_bruchfels_crypt_animations
 };
 

@@ -14,27 +14,27 @@
 #include "overworld/npc.h"
 #include "prng.h"
 
-static graphic overworld_effect_explosion_graphics[] = {
+static const graphic overworld_effect_explosion_graphics[] = {
     [0] = {.sprite = gfx_overworld_explosionTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0xFFFF},
     [1] = {.sprite = gfx_overworld_explosionTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0xFFFF},
     [2] = {.sprite = gfx_overworld_explosionTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0xFFFF},
     [3] = {.sprite = gfx_overworld_explosionTiles + 3 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0xFFFF},
 };
 
-palette overworld_effect_explosion_palette = {
+const palette overworld_effect_explosion_palette = {
     .pal = gfx_overworld_explosionPal, .tag = GFX_TAG_OVERWORLD_EFFECT_EXPLOSION,
 };
 
-static sprite overworld_effect_explosion_sprite = {
+static const sprite overworld_effect_explosion_sprite = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(1),
 };
 
-static gfx_frame overworld_effect_explosion_gfx_animation[] = {
+static const gfx_frame overworld_effect_explosion_gfx_animation[] = {
     {.data = 0, .duration = 0}, {.data = 0, .duration = 5}, {.data = 1, .duration = 5}, {.data = 2, .duration = 5}, 
     {.data = 3, .duration = 5}, {.data = GFX_ANIM_END}, 
 };
 
-static gfx_frame *overworld_effect_explosion_gfx_animations[] = {overworld_effect_explosion_gfx_animation};
+static const gfx_frame *overworld_effect_explosion_gfx_animations[] = {overworld_effect_explosion_gfx_animation};
 
 static void overworld_effect_explosion_oam_callback(oam_object *self) {
     if (self->flags & OAM_FLAG_GFX_ANIM_END) {
@@ -42,7 +42,7 @@ static void overworld_effect_explosion_oam_callback(oam_object *self) {
     }
 }
 
-static oam_template overworld_effect_explosion_oam_template = {
+static const oam_template overworld_effect_explosion_oam_template = {
     .tiles_tag = 0xFFFF, .pal_tag = GFX_TAG_OVERWORLD_EFFECT_EXPLOSION,
     .graphics = overworld_effect_explosion_graphics,
     .oam = &overworld_effect_explosion_sprite, .animation = overworld_effect_explosion_gfx_animations,
@@ -67,20 +67,20 @@ void special_overworld_effect_explosion() {
     overworld_effect_new(OVERWORLD_EFFECT_EXPLOSION);
 }
 
-static graphic overworld_effect_sound_wave_graphics[] = {
+static const graphic overworld_effect_sound_wave_graphics[] = {
     {.tag = 0xFFFF, .size = GRAPHIC_SIZE_4BPP(64, 64), .sprite = gfx_overworld_effect_sound_waveTiles},
 };
 
-palette overworld_effect_sound_wave_palette = {
+const palette overworld_effect_sound_wave_palette = {
     .pal = gfx_overworld_effect_sound_wavePal, .tag = GFX_TAG_OVERWORLD_EFFECT_SOUND_WAVE,
 };
 
-static sprite overworld_effect_sound_wave_sprite = {
+static const sprite overworld_effect_sound_wave_sprite = {
     .attr0 = ATTR0_SHAPE_SQUARE | ATTR0_DSIZE | ATTR0_ROTSCALE, .attr1 = ATTR1_SIZE_64_64, .attr2 = ATTR2_PRIO(1),
 };
 
 
-static rotscale_frame overworld_effect_sound_wave_rotscale_anim[] = {
+static const rotscale_frame overworld_effect_sound_wave_rotscale_anim[] = {
     {.affine = {.affine_x_value = 32, .affine_y_value = 32, .duration = 0}},
     {.affine = {.affine_x_value = 8, .affine_y_value = 8, .duration = 16}},
     {.command = {.command = ROTSCALE_ANIM_END}}
@@ -94,15 +94,15 @@ static void overworld_effect_sound_wave_oam_callback(oam_object *self) {
     }
 }
 
-static gfx_frame overworld_effect_sound_wave_gfx_animation[] = {
+static const gfx_frame overworld_effect_sound_wave_gfx_animation[] = {
     {.data = 0, .duration = 0}, {.data = GFX_ANIM_END}, 
 };
 
-static gfx_frame *overworld_effect_sound_wave_gfx_animations[] = {overworld_effect_sound_wave_gfx_animation};
+static const gfx_frame *overworld_effect_sound_wave_gfx_animations[] = {overworld_effect_sound_wave_gfx_animation};
 
-static rotscale_frame *overworld_effect_sound_wave_rotscale_animations[] = {overworld_effect_sound_wave_rotscale_anim};
+static const rotscale_frame *overworld_effect_sound_wave_rotscale_animations[] = {overworld_effect_sound_wave_rotscale_anim};
 
-static oam_template overworld_effect_sound_wave_oam_template = {
+static const oam_template overworld_effect_sound_wave_oam_template = {
     .tiles_tag = 0xFFFF, .pal_tag = GFX_TAG_OVERWORLD_EFFECT_SOUND_WAVE,
     .graphics = overworld_effect_sound_wave_graphics,
     .oam = &overworld_effect_sound_wave_sprite, .animation = overworld_effect_sound_wave_gfx_animations,
@@ -231,7 +231,7 @@ bool overworld_effect_is_oam_outside_camera_view(s16 x, s16 y, int width, int he
 }
 
 
-extern palette overworld_effect_pokeball_palette;
+extern const palette overworld_effect_pokeball_palette;
 
 void overworld_effect_sliding_pokeball_load_palette() {
     // Loads the palette without applying any filters (dns or weather)
@@ -248,7 +248,7 @@ u32 overworld_effect_whirlwind_initialize() {
     return 0;
 }
 
-static graphic overworld_effect_lightning_graphics[] = {
+static const graphic overworld_effect_lightning_graphics[] = {
     [0] = {.sprite = gfx_overworld_effect_lightningTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0xFFFF},
     [1] = {.sprite = gfx_overworld_effect_lightningTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0xFFFF},
     [2] = {.sprite = gfx_overworld_effect_lightningTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0xFFFF},
@@ -260,17 +260,17 @@ static graphic overworld_effect_lightning_graphics[] = {
     [8] = {.sprite = gfx_overworld_effect_lightningTiles + 8 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0xFFFF},
 };
 
-palette overworld_effect_lightning_palette = {
+const palette overworld_effect_lightning_palette = {
     .pal = gfx_overworld_effect_lightningPal, .tag = GFX_TAG_OVERWORLD_EFFECT_LIGHTNING,
 };
 
-static sprite overworld_effect_lightning_sprite = {
+static const sprite overworld_effect_lightning_sprite = {
     .attr0 = ATTR0_SHAPE_VERTICAL, .attr1 = ATTR1_SIZE_16_32, .attr2 = ATTR2_PRIO(1),
 };
 
 #define LIGHTNING_FRAME_DURATION 4
 
-static gfx_frame overworld_effect_lightning_gfx_animation[] = {
+static const gfx_frame overworld_effect_lightning_gfx_animation[] = {
     {.data = 0, .duration = 0},
     {.data = 0, .duration = LIGHTNING_FRAME_DURATION},
     {.data = 8, .duration = LIGHTNING_FRAME_DURATION}, // empty
@@ -289,7 +289,7 @@ static gfx_frame overworld_effect_lightning_gfx_animation[] = {
     {.data = GFX_ANIM_END}, 
 };
 
-static gfx_frame *overworld_effect_lightning_gfx_animations[] = {overworld_effect_lightning_gfx_animation};
+static const gfx_frame *overworld_effect_lightning_gfx_animations[] = {overworld_effect_lightning_gfx_animation};
 
 static void overworld_effect_lightning_oam_callback(oam_object *self) {
     if ((self->private[3] != save1->bank || self->private[4] != save1->map) && overworld_viewport.active) {
@@ -316,7 +316,7 @@ static void overworld_effect_lightning_oam_callback(oam_object *self) {
     }
 }
 
-static oam_template overworld_effect_lightning_oam_template = {
+static const oam_template overworld_effect_lightning_oam_template = {
     .tiles_tag = 0xFFFF, .pal_tag = GFX_TAG_OVERWORLD_EFFECT_LIGHTNING,
     .graphics = overworld_effect_lightning_graphics,
     .oam = &overworld_effect_lightning_sprite, .animation = overworld_effect_lightning_gfx_animations,
@@ -358,21 +358,21 @@ void special_overworld_effect_lightning() {
 //     [7] = {.sprite = gfx_overworld_effect_rainbow_sparklesTiles + 7 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
 // };
 
-static graphic overworld_effect_rainbow_sparkles_graphic = {
+static const graphic overworld_effect_rainbow_sparkles_graphic = {
     .sprite = gfx_overworld_effect_rainbow_sparklesTiles, .size = GRAPHIC_SIZE_4BPP(16, 16) * 8, .tag = GFX_TAG_OVERWORLD_EFFECT_RAINBOW_SPARKLES,
 };
 
-palette overworld_effect_rainbow_sparkles_palette = {
+const palette overworld_effect_rainbow_sparkles_palette = {
     .pal = gfx_overworld_effect_rainbow_sparklesPal, .tag = GFX_TAG_OVERWORLD_EFFECT_RAINBOW_SPARKLES,
 };
 
-static sprite overworld_effect_rainbow_sparkles_sprite = {
+static const sprite overworld_effect_rainbow_sparkles_sprite = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(2),
 };
 
 #define RAINBOW_SPARKLES_FRAME_DURATION 2 
 
-static gfx_frame overworld_effect_rainbow_sparkles_animation[] = {
+static const gfx_frame overworld_effect_rainbow_sparkles_animation[] = {
     {.data = 0, .duration = 0},
     {.data = 0 * 4, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
     {.data = 1 * 4, .duration = RAINBOW_SPARKLES_FRAME_DURATION},
@@ -385,7 +385,7 @@ static gfx_frame overworld_effect_rainbow_sparkles_animation[] = {
     {.data = GFX_ANIM_END}, 
 };
 
-static gfx_frame *overworld_effect_rainbow_sparkles_animations[] = {overworld_effect_rainbow_sparkles_animation};
+static const gfx_frame *overworld_effect_rainbow_sparkles_animations[] = {overworld_effect_rainbow_sparkles_animation};
 
 static void overworld_effect_rainbow_sparkles_oam_callback(oam_object *self) {
     oam_set_priority_by_height(self, (u8)self->private[2]);
@@ -405,7 +405,7 @@ static void overworld_effect_rainbow_sparkles_oam_callback(oam_object *self) {
     }
 }
 
-static oam_template overworld_effect_rainbow_sparkles_oam_template = {
+static const oam_template overworld_effect_rainbow_sparkles_oam_template = {
     .tiles_tag = GFX_TAG_OVERWORLD_EFFECT_RAINBOW_SPARKLES, .pal_tag = GFX_TAG_OVERWORLD_EFFECT_RAINBOW_SPARKLES,
     .graphics = NULL,
     .oam = &overworld_effect_rainbow_sparkles_sprite, .animation = overworld_effect_rainbow_sparkles_animations,
@@ -460,23 +460,23 @@ void special_overworld_effect_rainbow_sparkles() {
 //     [15] = {.sprite = gfx_overworld_effect_featherTiles + 15 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0xFFFF},
 // };
 
-static graphic overworld_effect_feathers_graphic = {
+static const graphic overworld_effect_feathers_graphic = {
     .sprite = gfx_overworld_effect_featherTiles, .size = GRAPHIC_SIZE_4BPP(16, 16) * 16, .tag = GFX_TAG_OVERWORLD_EFFECT_FEATHERS,
 };
 
-palette overworld_effect_feathers_palette = {
+const palette overworld_effect_feathers_palette = {
     .pal = gfx_overworld_effect_featherPal, .tag = GFX_TAG_OVERWORLD_EFFECT_FEATHERS,
 };
 
-static sprite overworld_effect_feathers_sprite = {
+static const sprite overworld_effect_feathers_sprite = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(2),
 };
 
-static sprite overworld_effect_feathers_sprite_controller = {
+static const sprite overworld_effect_feathers_sprite_controller = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(2),
 };
 
-static gfx_frame overworld_effect_feathers_animation_type_white[] = {
+static const gfx_frame overworld_effect_feathers_animation_type_white[] = {
     {.data = 0 * 4, .duration = 0}, 
     {.data = 0 * 4, .duration = 8}, 
     {.data = 1 * 4, .duration = 8}, 
@@ -486,7 +486,7 @@ static gfx_frame overworld_effect_feathers_animation_type_white[] = {
     {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
-static gfx_frame overworld_effect_feathers_animation_type_white_flipped[] = {
+static const gfx_frame overworld_effect_feathers_animation_type_white_flipped[] = {
     {.data = 0 * 4, .duration = 0  | GFX_ANIM_HFLIP}, 
     {.data = 0 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
     {.data = 1 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
@@ -496,7 +496,7 @@ static gfx_frame overworld_effect_feathers_animation_type_white_flipped[] = {
     {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
-static gfx_frame overworld_effect_feathers_animation_type_red[] = {
+static const gfx_frame overworld_effect_feathers_animation_type_red[] = {
     {.data = 4 * 4, .duration = 0}, 
     {.data = 4 * 4, .duration = 8}, 
     {.data = 5 * 4, .duration = 8}, 
@@ -506,7 +506,7 @@ static gfx_frame overworld_effect_feathers_animation_type_red[] = {
     {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
-static gfx_frame overworld_effect_feathers_animation_type_red_flipped[] = {
+static const gfx_frame overworld_effect_feathers_animation_type_red_flipped[] = {
     {.data = 4 * 4, .duration = 0 | GFX_ANIM_HFLIP}, 
     {.data = 4 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
     {.data = 5 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
@@ -516,7 +516,7 @@ static gfx_frame overworld_effect_feathers_animation_type_red_flipped[] = {
     {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
-static gfx_frame overworld_effect_feathers_animation_type_blue[] = {
+static const gfx_frame overworld_effect_feathers_animation_type_blue[] = {
     {.data = 8 * 4, .duration = 0}, 
     {.data = 8 * 4, .duration = 8}, 
     {.data = 9 * 4, .duration = 8}, 
@@ -526,7 +526,7 @@ static gfx_frame overworld_effect_feathers_animation_type_blue[] = {
     {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
-static gfx_frame overworld_effect_feathers_animation_type_blue_flipped[] = {
+static const gfx_frame overworld_effect_feathers_animation_type_blue_flipped[] = {
     {.data = 8 * 4, .duration = 0 | GFX_ANIM_HFLIP}, 
     {.data = 8 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
     {.data = 9 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
@@ -536,7 +536,7 @@ static gfx_frame overworld_effect_feathers_animation_type_blue_flipped[] = {
     {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
-static gfx_frame overworld_effect_feathers_animation_type_yellow[] = {
+static const gfx_frame overworld_effect_feathers_animation_type_yellow[] = {
     {.data = 12 * 4, .duration = 0}, 
     {.data = 12 * 4, .duration = 8}, 
     {.data = 13 * 4, .duration = 8}, 
@@ -546,7 +546,7 @@ static gfx_frame overworld_effect_feathers_animation_type_yellow[] = {
     {.data = GFX_ANIM_JUMP, .duration = 2}, 
 };
 
-static gfx_frame overworld_effect_feathers_animation_type_yellow_flipped[] = {
+static const gfx_frame overworld_effect_feathers_animation_type_yellow_flipped[] = {
     {.data = 12 * 4, .duration = 0 | GFX_ANIM_HFLIP}, 
     {.data = 12 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
     {.data = 13 * 4, .duration = 8 | GFX_ANIM_HFLIP}, 
@@ -567,7 +567,7 @@ enum {
     FEATHER_ANIMATION_TYPE_YELLOW_FLIPPED,
 };
 
-static gfx_frame *overworld_effect_feathers_animations[] = {
+static const gfx_frame *const overworld_effect_feathers_animations[] = {
     [FEATHER_ANIMATION_TYPE_WHITE] = overworld_effect_feathers_animation_type_white,
     [FEATHER_ANIMATION_TYPE_RED] = overworld_effect_feathers_animation_type_red,
     [FEATHER_ANIMATION_TYPE_BLUE] = overworld_effect_feathers_animation_type_blue,
@@ -578,7 +578,7 @@ static gfx_frame *overworld_effect_feathers_animations[] = {
     [FEATHER_ANIMATION_TYPE_YELLOW_FLIPPED] = overworld_effect_feathers_animation_type_yellow_flipped,
 };
 
-// static rotscale_frame overworld_effect_feathers_affine_animation[] = {
+// static const rotscale_frame overworld_effect_feathers_affine_animation[] = {
 //     {.affine = {.rotation = 1, .duration = 12}},
 //     {.affine = {.rotation = (u8)(-1), .duration = 24}}, 
 //     {.affine = {.rotation = 1, .duration = 12}},
@@ -633,7 +633,7 @@ static void overworld_effect_feathers_oam_callback_gfx_anim_with_delay(oam_objec
     }
 }
 
-static coordinate_t feather_positions[] = {
+static const coordinate_t feather_positions[] = {
     {.x = -9, .y = -4},
     {.x = 12, .y = -7},
     {.x = -13, .y = -11},
@@ -642,7 +642,7 @@ static coordinate_t feather_positions[] = {
     {.x = -5, .y = -4},
 };
 
-static u8 feather_types[] = {
+static const u8 feather_types[] = {
     FEATHER_ANIMATION_TYPE_BLUE,
     FEATHER_ANIMATION_TYPE_WHITE_FLIPPED,
     FEATHER_ANIMATION_TYPE_RED_FLIPPED,
@@ -653,7 +653,7 @@ static u8 feather_types[] = {
 
 #define FEATHER_START_FRAME 8
 
-static u8 feather_delays[] = {
+static const u8 feather_delays[] = {
     FEATHER_START_FRAME + 0,
     FEATHER_START_FRAME + 8,
     FEATHER_START_FRAME + 20,
@@ -679,14 +679,14 @@ static void overworld_effect_feathers_oam_callback_controller(oam_object *self) 
             oam_free_vram_by_tag(OVERWORLD_EFFECT_FEATHERS);
 }
 
-static oam_template overworld_effect_feathers_oam_template = {
+static const oam_template overworld_effect_feathers_oam_template = {
     .tiles_tag = GFX_TAG_OVERWORLD_EFFECT_FEATHERS, .pal_tag = GFX_TAG_OVERWORLD_EFFECT_FEATHERS,
     .graphics = NULL,
     .oam = &overworld_effect_feathers_sprite, .animation = overworld_effect_feathers_animations,
     .rotscale = oam_rotscale_anim_table_null, .callback = overworld_effect_feathers_oam_callback_gfx_anim_with_delay,
 };
 
-static oam_template overworld_effect_feathers_oam_template_controller = {
+static const oam_template overworld_effect_feathers_oam_template_controller = {
     .tiles_tag = GFX_TAG_OVERWORLD_EFFECT_FEATHERS, .pal_tag = 0xFFFF,
     .graphics = NULL,
     .oam = &overworld_effect_feathers_sprite_controller, .animation = oam_gfx_anim_table_null,
@@ -727,12 +727,12 @@ u32 overworld_effect_feathers_initialize() {
     return 0;
 }
 
-static graphic overworld_effect_snow_tracks_graphics[] = {
+static const graphic overworld_effect_snow_tracks_graphics[] = {
     [0] = {.sprite = gfx_overworld_effect_snow_tracksTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
     [1] = {.sprite = gfx_overworld_effect_snow_tracksTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
 };
 
-static oam_template overworld_effect_snow_tracks_template = {
+static const oam_template overworld_effect_snow_tracks_template = {
     .tiles_tag = 0xFFFF, .pal_tag = 0x1004,
     .oam = &ow_final_oam_16_16,
     .animation = overworld_effect_sand_tracks_animations,
@@ -755,7 +755,7 @@ u32 overworld_effect_snow_tracks_initialize() {
     return 0;
 }
 
-const u8 *overworld_effects[NUM_OVERWORLD_EFFECTS] = {
+const u8 *const overworld_effects[NUM_OVERWORLD_EFFECTS] = {
     [OVERWORLD_EFFECT_EXCLAMATION_MARK_ICON] = overworld_effect_script_exclamation_mark_icon,
     [OVERWORLD_EFFECT_USE_CUT_ON_GRASS] = overworld_effect_script_use_cut_on_grass,
     [OVERWORLD_EFFECT_USE_CUT_ON_TREE] = overworld_effect_script_use_cut_on_tree,

@@ -21,7 +21,7 @@
 #include "attack.h"
 #include "constants/attacks.h"
 
-u16 tm_hm_to_attack[NUM_TMS + NUM_HMS] = {
+const u16 tm_hm_to_attack[NUM_TMS + NUM_HMS] = {
 	 ATTACK_POWER_PUNCH,
 	 ATTACK_DRACHENKLAUE,
 	 ATTACK_AQUAWELLE,
@@ -148,15 +148,15 @@ void tm_vm_print_item(u8 tbox_idx, int item_idx, u8 y) {
 	}
 }
 
-static u8 str_text_small[] = PSTRING("FONT_SIZE_SMALL");
-static u8 str_color_red[] = PSTRING("COLOR_FG_BG_SHADOW\x04\x00\x05"); //PSTRING("TEXT_SET_FG\x04TEXT_SET_SHADOW\x05");
-static u8 str_color_grey[] = PSTRING("COLOR_FG_BG_SHADOW\x02\x00\x03"); //PSTRING("TEXT_SET_FG\x02TEXT_SET_SHADOW\x03");
-static u8 str_clear_to_x12[] = PSTRING("CLEAR_TO\x12");
-static u8 str_clear_to_x13[] = PSTRING("CLEAR_TO\x13");
-static u8 str_clear_to_xtm[] = PSTRING("CLEAR_TO\x17");
-static u8 str_xf9_x08_clear_to_x1[] = {0xF9, 0x8, 0xFC, 0x11, 0x1, 0xFF};
-static u8 str_space[] = PSTRING(" ");
-static u8 str_font_size_big[] = PSTRING("FONT_SIZE_BIG");
+static const u8 str_text_small[] = PSTRING("FONT_SIZE_SMALL");
+static const u8 str_color_red[] = PSTRING("COLOR_FG_BG_SHADOW\x04\x00\x05"); //PSTRING("TEXT_SET_FG\x04TEXT_SET_SHADOW\x05");
+static const u8 str_color_grey[] = PSTRING("COLOR_FG_BG_SHADOW\x02\x00\x03"); //PSTRING("TEXT_SET_FG\x02TEXT_SET_SHADOW\x03");
+static const u8 str_clear_to_x12[] = PSTRING("CLEAR_TO\x12");
+static const u8 str_clear_to_x13[] = PSTRING("CLEAR_TO\x13");
+static const u8 str_clear_to_xtm[] = PSTRING("CLEAR_TO\x17");
+static const u8 str_xf9_x08_clear_to_x1[] = {0xF9, 0x8, 0xFC, 0x11, 0x1, 0xFF};
+static const u8 str_space[] = PSTRING(" ");
+static const u8 str_font_size_big[] = PSTRING("FONT_SIZE_BIG");
 
 void tm_hm_get_str_number_and_name(u8 *dst, u16 item_idx) {
 	strcpy(strbuf, str_text_small);
@@ -213,8 +213,8 @@ void bag_tm_hm_pocket_delete_move_info_icons() {
 	tbox_flush_map(BAG_TBOX_MOVE_INFO);
 }
 
-static u8 str_move_info_none[] = PSTRING("---");
-static tbox_font_colormap font_colmap_move_info = {.background = 0, .body = 15, .edge = 14};
+static const u8 str_move_info_none[] = PSTRING("---");
+static const tbox_font_colormap font_colmap_move_info = {.background = 0, .body = 15, .edge = 14};
 
 void bag_tm_hm_pocket_load_move_info(u16 slot) {
 
@@ -284,7 +284,7 @@ void item_field_effect_energiedisk(u8 self) {
 	bag_fade_out_and_continuation(self);
 }
 
-static u8 str_needs_to_be_recharged[] = LANGDEP(PSTRING("BUFFER_1 muss erst\nwieder aufgeladen werden!"), PSTRING("BUFFER_1 needs to\nbe recharged first!"));
+static const u8 str_needs_to_be_recharged[] = LANGDEP(PSTRING("BUFFER_1 muss erst\nwieder aufgeladen werden!"), PSTRING("BUFFER_1 needs to\nbe recharged first!"));
 
 void tm_hm_field_function(u8 self) {
 	if (item_is_tm(item_activated) && tm_is_used(ITEM_IDX_TO_TM_IDX(item_activated))) {

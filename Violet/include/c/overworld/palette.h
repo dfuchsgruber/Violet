@@ -4,9 +4,9 @@
 #include "types.h"
 #include "oam.h"
 
-extern oam_template *overworld_effect_oam_templates[36];
+extern const oam_template *overworld_effect_oam_templates[36];
 
-extern palette overworld_npc_palettes[18]; // Standard npc palettes, we don't touch those but add own
+extern const palette overworld_npc_palettes[18]; // Standard npc palettes, we don't touch those but add own
 
 /**
  * Gets the index of a overworld npc palette in the table

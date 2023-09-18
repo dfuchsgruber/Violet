@@ -11,7 +11,7 @@
 #include "constants/signpost_types.h"
 #include "pokepad/treasure_map.h"
 
-u8 *singpost_behavior_xBC(){
+const u8 *singpost_behavior_xBC(){
     //trigger script by block id (since we do not have enough behaviorbytes...)
     coordinate_t pos;
     player_get_facing_position(&pos.x, &pos.y);
@@ -63,12 +63,12 @@ int hidden_item_get_field(hidden_item_t hidden_item, u8 field){
     }
 }
 
-extern u8 ow_script_signpost_null[];
-extern u8 ow_script_hidden_item_find[];
-extern u8 ow_script_treasure_find[];
+extern const u8 ow_script_signpost_null[];
+extern const u8 ow_script_hidden_item_find[];
+extern const u8 ow_script_treasure_find[];
 
-u8 *signpost_get_script(position_t *position, u8 behaviour, u8 direction) {
-    map_event_signpost *sign = map_get_signpost_by_position(&mapheader_virtual, (s16)(position->coordinates.x - 7), (s16)(position->coordinates.y - 7), position->height);
+const u8 *signpost_get_script(const position_t *position, u8 behaviour, u8 direction) {
+    const map_event_signpost *sign = map_get_signpost_by_position(&mapheader_virtual, (s16)(position->coordinates.x - 7), (s16)(position->coordinates.y - 7), position->height);
     if (!sign) return NULL;
     if (sign->flag && checkflag(sign->flag)) return NULL;
     if (!sign->value.script) return ow_script_signpost_null;

@@ -9,7 +9,7 @@
 #include "pokemon/names.h"
 #include "pokepad/pokedex/operator.h"
 
-static u16 quest_species[] = {
+static const u16 quest_species[] = {
     POKEMON_SKORGLA, POKEMON_SNUBBULL, POKEMON_PANDIR, POKEMON_KASTADUR, POKEMON_WATTZAPF, POKEMON_FUKANO, POKEMON_VOLTOBAL,
     POKEMON_SCHLURP, POKEMON_TANNZA, 0xFFFF
 };

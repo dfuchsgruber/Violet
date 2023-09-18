@@ -449,7 +449,7 @@ extern const u8 gfx_pokemon_groudon_regent_frontspriteTiles[];
 extern const u8 gfx_pokemon_kecleon_purple_frontspriteTiles[];
 extern const u8 gfx_pokemon_crystal_onix_frontspriteTiles[];
 
-graphic pokemon_frontsprites[POKEMON_CNT] = {
+const graphic pokemon_frontsprites[POKEMON_CNT] = {
 	[POKEMON_POKEMON_0] = {.sprite = gfx_pokemon_pokemon_0_frontspriteTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEMON_POKEMON_0,},
 	[POKEMON_BISASAM] = {.sprite = gfx_pokemon_bisasam_frontspriteTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEMON_BISASAM,},
 	[POKEMON_BISAKNOSP] = {.sprite = gfx_pokemon_bisaknosp_frontspriteTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEMON_BISAKNOSP,},

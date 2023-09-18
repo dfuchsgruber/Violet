@@ -19,7 +19,7 @@
 #include "overworld/script.h"
 
 
-static u8 treasure_map_context_has_scroll_indicators[NUM_TREASURE_MAP_CONTEXTS] = {
+static const u8 treasure_map_context_has_scroll_indicators[NUM_TREASURE_MAP_CONTEXTS] = {
     [TREASURE_MAP_CONTEXT_NONE] = true,
 };
 
@@ -79,7 +79,7 @@ static void treasure_map_idle_callback_show(u8 self) {
     }
 }
 
-static void (*treasure_map_idle_callbacks[NUM_TREASURE_MAP_CONTEXTS])(u8) = {
+static void (*const treasure_map_idle_callbacks[NUM_TREASURE_MAP_CONTEXTS])(u8) = {
     [TREASURE_MAP_CONTEXT_NONE] = treasure_map_idle_callback_none,
     [TREASURE_MAP_CONTEXT_SHOW] = treasure_map_idle_callback_show,
 };
@@ -101,7 +101,7 @@ static void treasure_map_vblank_callback() {
     dma3_queue_proceed();
 }
 
-static bg_config treasure_map_bg_configs[] = {
+static const bg_config treasure_map_bg_configs[] = {
     [0] = {
         .bg_id = 0, .char_base = 0, .map_base = 28, .priority = 1,
     },
@@ -116,7 +116,7 @@ static bg_config treasure_map_bg_configs[] = {
     },
 };
 
-static tboxdata treasure_map_tboxes[NUM_TREASURE_MAP_TBOXES + 1] = {
+static const tboxdata treasure_map_tboxes[NUM_TREASURE_MAP_TBOXES + 1] = {
     [TREASURE_MAP_TBOX_LIST] = {.bg_id = 3, .x = 1, .y = 1, .w = 7, .h = 18, .start_tile = 400, .pal = 15},
     [NUM_TREASURE_MAP_TBOXES] = {.bg_id = 0xFF},
 };
@@ -133,13 +133,13 @@ enum {
     SHOW,
 };
 
-static u8 str_text_small[] = PSTRING("FONT_SIZE_SMALL");
-static u8 str_xf9_x08_clear_to_x1[] = {0xF9, 0x8, 0xFC, 0x11, 0x3, 0xFF};
-static u8 str_clear_to_xtm[] = PSTRING("CLEAR_TO\x17");
-static u8 str_space[] = PSTRING(" ");
-static u8 str_font_size_big[] = PSTRING("FONT_SIZE_BIG");
-static u8 str_question_mark[] = PSTRING("???");
-static u8 str_back[] = LANGDEP(PSTRING("Zurück"), PSTRING("Cancel"));
+static const u8 str_text_small[] = PSTRING("FONT_SIZE_SMALL");
+static const u8 str_xf9_x08_clear_to_x1[] = {0xF9, 0x8, 0xFC, 0x11, 0x3, 0xFF};
+static const u8 str_clear_to_xtm[] = PSTRING("CLEAR_TO\x17");
+static const u8 str_space[] = PSTRING(" ");
+static const u8 str_font_size_big[] = PSTRING("FONT_SIZE_BIG");
+static const u8 str_question_mark[] = PSTRING("???");
+static const u8 str_back[] = LANGDEP(PSTRING("Zurück"), PSTRING("Cancel"));
 
 static void treasure_map_format_string(size_t treasure_map_idx, bool map_found, bool treasure_found, u8 *dst) {
     (void)treasure_found;
@@ -159,7 +159,7 @@ static void treasure_map_format_string(size_t treasure_map_idx, bool map_found, 
 }
 
 static void treasure_map_update_treasure_map_tilemap(bool treasure_map_visible) {
-    bg_tile *src = (!treasure_map_visible) ? gfx_treasure_map_ui_backgroundMap + 32 * 32 : gfx_treasure_map_ui_backgroundMap;
+    const bg_tile *src = (!treasure_map_visible) ? gfx_treasure_map_ui_backgroundMap + 32 * 32 : gfx_treasure_map_ui_backgroundMap;
     for (int x = 8; x <= 30; x++) {
         for (int y = 0; y <= 20; y++) {
             TREASURE_MAP_STATE->bg3_map[32 * y + x] = src[32 * y + x];
@@ -168,8 +168,8 @@ static void treasure_map_update_treasure_map_tilemap(bool treasure_map_visible) 
     bg_virtual_sync_reqeust_push(3);
 }
 
-static color_t map_over = {.rgb = {.red = 31, .green = 26, .blue = 13}};
-static color_t black = {.rgb = {.red = 0, .green = 0, .blue = 0}};
+static const color_t map_over = {.rgb = {.red = 31, .green = 26, .blue = 13}};
+static const color_t black = {.rgb = {.red = 0, .green = 0, .blue = 0}};
 
 static inline color_t treasure_map_minimize_color_loss(color_t c, color_t target) {
     // finds a color that is linearly dependent on `target`, i.e. a coefficient coef * target that is closest to `c`
@@ -195,8 +195,8 @@ static void treasure_map_minimize_palette_loss(u16 dst_color, u16 num_colors) {
 static void treasure_map_update_callback(u8 self) {
     u16 *state = big_callbacks[self].params + 1;
     u16 treasure_map_idx = big_callbacks[self].params[0];
-    map_header_t *header = get_mapheader(treasure_maps[treasure_map_idx].bank, treasure_maps[treasure_map_idx].map_idx);
-    map_event_signpost *sign = header->events->signposts + treasure_maps[treasure_map_idx].sign_idx;
+    const map_header_t *header = get_mapheader(treasure_maps[treasure_map_idx].bank, treasure_maps[treasure_map_idx].map_idx);
+    const map_event_signpost *sign = header->events->signposts + treasure_maps[treasure_map_idx].sign_idx;
     (void)sign;
     switch (*state) {
         case 0: {
@@ -234,8 +234,8 @@ static void treasure_map_update_callback(u8 self) {
         }
         case 3: { // Compute tilemaps
             // We show 9x7 blocks of the tilemap centered at the treasure
-            tileset *tsp = header->footer->tileset1;
-            tileset *tss = header->footer->tileset2;
+            const tileset *tsp = header->footer->tileset1;
+            const tileset *tss = header->footer->tileset2;
             int x_center = sign->x + sign->value.treasure_map.center_x;
             int y_center = sign->y + sign->value.treasure_map.center_y;
             bg_tile *targets[3] = {
@@ -251,8 +251,8 @@ static void treasure_map_update_callback(u8 self) {
                     int x = x_center + xx - 4;
                     int y = y_center + yy - 3;
                     if (x >= 0 && y >= 0 && x < (int)header->footer->width && y < (int)header->footer->height) {
-                        map_block *block = header->footer->map + y * (int)header->footer->width + x;
-                        bg_tile *tilemap = block->block_id < 0x280 ? tsp->blocks + 12 * block->block_id : tss->blocks + 12 * (block->block_id - 0x280);
+                        const map_block *block = header->footer->map + y * (int)header->footer->width + x;
+                        const bg_tile *tilemap = block->block_id < 0x280 ? tsp->blocks + 12 * block->block_id : tss->blocks + 12 * (block->block_id - 0x280);
                         for (int i = 0; i < 3; i++) {
                             targets[i][32 * (TREASURE_MAP_Y + 2 * yy) + TREASURE_MAP_X + 2 * xx] = tilemap[4 * i ];
                             targets[i][32 * (TREASURE_MAP_Y + 2 * yy) + TREASURE_MAP_X + 2 * xx + 1] = tilemap[4 * i + 1];
@@ -314,21 +314,21 @@ static void treasure_map_cursor_move_callback(int idx, u8 on_initialize, list_me
     treasure_map_update(idx);
 }
 
-static graphic treasure_map_cross_graphic = {.sprite = gfx_treasure_map_crossTiles, .tag = TREASURE_MAP_OAM_TAG_CROSS, .size = GRAPHIC_SIZE_4BPP(32, 64)};
-static palette treasure_map_cross_palette = {.pal = gfx_treasure_map_crossPal, .tag = TREASURE_MAP_OAM_TAG_CROSS};
-static sprite treasure_map_cross_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(0)};
-static gfx_frame treasure_map_cross_animation_cross[] = {{.data = 0, .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame treasure_map_cross_animation_check_mark[] = {{.data = GRAPHIC_SIZE_4BPP_TO_NUM_TILES(32, 32) * 1, .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame *treasure_map_cross_animations[] = {[false] = treasure_map_cross_animation_cross, [true] = treasure_map_cross_animation_check_mark};
-static oam_template treasure_map_cross_template = {
+static const graphic treasure_map_cross_graphic = {.sprite = gfx_treasure_map_crossTiles, .tag = TREASURE_MAP_OAM_TAG_CROSS, .size = GRAPHIC_SIZE_4BPP(32, 64)};
+static const palette treasure_map_cross_palette = {.pal = gfx_treasure_map_crossPal, .tag = TREASURE_MAP_OAM_TAG_CROSS};
+static const sprite treasure_map_cross_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(0)};
+static const gfx_frame treasure_map_cross_animation_cross[] = {{.data = 0, .duration = 0}, {.data = GFX_ANIM_END}};
+static const gfx_frame treasure_map_cross_animation_check_mark[] = {{.data = GRAPHIC_SIZE_4BPP_TO_NUM_TILES(32, 32) * 1, .duration = 0}, {.data = GFX_ANIM_END}};
+static const gfx_frame *const treasure_map_cross_animations[] = {[false] = treasure_map_cross_animation_cross, [true] = treasure_map_cross_animation_check_mark};
+static const oam_template treasure_map_cross_template = {
     .tiles_tag = TREASURE_MAP_OAM_TAG_CROSS, .pal_tag = TREASURE_MAP_OAM_TAG_CROSS, .oam = &treasure_map_cross_sprite,
     .animation = treasure_map_cross_animations, .rotscale = oam_rotscale_anim_table_null, .callback = oam_null_callback,
 };
 
-static graphic treasure_map_white_square_graphic = {.sprite = gfx_treasure_map_white_squareTiles, .tag = TREASURE_MAP_OAM_TAG_WHITE_SQUARE, .size = GRAPHIC_SIZE_4BPP(64, 64)};
-static palette treasure_map_white_square_palette = {.pal = gfx_treasure_map_white_squarePal, .tag = TREASURE_MAP_OAM_TAG_WHITE_SQUARE};
-static sprite treasure_map_white_square_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_64_64, .attr2 = ATTR2_PRIO(3)};
-static oam_template treasure_map_white_square_template = {
+static const graphic treasure_map_white_square_graphic = {.sprite = gfx_treasure_map_white_squareTiles, .tag = TREASURE_MAP_OAM_TAG_WHITE_SQUARE, .size = GRAPHIC_SIZE_4BPP(64, 64)};
+static const palette treasure_map_white_square_palette = {.pal = gfx_treasure_map_white_squarePal, .tag = TREASURE_MAP_OAM_TAG_WHITE_SQUARE};
+static const sprite treasure_map_white_square_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_64_64, .attr2 = ATTR2_PRIO(3)};
+static const oam_template treasure_map_white_square_template = {
     .tiles_tag = TREASURE_MAP_OAM_TAG_WHITE_SQUARE, .pal_tag = TREASURE_MAP_OAM_TAG_WHITE_SQUARE, .oam = &treasure_map_white_square_sprite,
     .animation = oam_gfx_anim_table_null, .rotscale = oam_rotscale_anim_table_null, .callback = oam_null_callback,
 };
@@ -391,10 +391,10 @@ static void treasure_map_callback_initialize() {
         case SETUP_LIST: {
             TREASURE_MAP_STATE->num_list_menu_items = 0;
             for (size_t i = 0; i < ARRAY_COUNT(treasure_maps); i++) {
-                treasure_map_t *map = treasure_maps + i;
+                const treasure_map_t *map = treasure_maps + i;
                 if (map->bank != 0xFF) {
-                    map_header_t *header = get_mapheader(map->bank, map->map_idx);
-                    map_event_signpost *sign = header->events->signposts + map->sign_idx;
+                    const map_header_t *header = get_mapheader(map->bank, map->map_idx);
+                    const map_event_signpost *sign = header->events->signposts + map->sign_idx;
                     if (sign->type != SIGNPOST_HIDDEN_TREASURE)
                         ERROR("Treasure map at map %d.%d, idx %d is not a treasure map!\n", map->bank, map->map_idx, map->sign_idx);
                     bool map_found = checkflag(treasure_map_get_map_flag(sign->value.treasure_map.idx));

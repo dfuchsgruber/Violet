@@ -26,8 +26,8 @@
 
 #define DEBUG_PLAYER_HAS_ALL_CLOUD_FEATURES true
 
-extern u8 ow_script_transition_start_surfing[];
-extern u8 ow_script_transition_start_waterfall[];
+extern const u8 ow_script_transition_start_surfing[];
+extern const u8 ow_script_transition_start_waterfall[];
 
 bool npc_player_attempt_transition_land_to_water() {
     return (checkflag(FRBADGE_4) && player_pokemon_has_surf() && player_can_use_surf_on_tile_faced() && !(player_state.state & PLAYER_STATE_SURFING) && automatic_hm_usage_active());
@@ -151,7 +151,7 @@ bool block_is_ledge_any_direction(u16 behaviour) {
     return behaviour == MB_JUMP_ALL;
 }
 
-extern bool (*block_is_ledge_by_direction[4])(u16);
+extern  bool (*const block_is_ledge_by_direction[4])(u16);
 
 u8 player_get_ledge_direction(s16 x, s16 y, u8 direction) {
     if (direction == DIR_NONE)
@@ -288,7 +288,7 @@ void npc_player_turn_in_place(u8 direction) {
     }
 }
 
-static u8 rainbow_movements[5] = {STEP_DOWN_RAINBOW, STEP_DOWN_RAINBOW, STEP_UP_RAINBOW, STEP_LEFT_RAINBOW, STEP_RIGHT_RAINBOW};
+static const u8 rainbow_movements[5] = {STEP_DOWN_RAINBOW, STEP_DOWN_RAINBOW, STEP_UP_RAINBOW, STEP_LEFT_RAINBOW, STEP_RIGHT_RAINBOW};
 
 void npc_player_init_move_rainbow(u8 direction) {
     // u8 movement_idx = npc_player_get_movement_idx_by_direction_sliding(direction);
@@ -296,7 +296,7 @@ void npc_player_init_move_rainbow(u8 direction) {
     npc_player_set_state_and_execute_tile_anim(movement_idx, 2);
 }
 
-static u8 jump_cloud_movements[5] = {JUMP_DOWN_3, JUMP_DOWN_3, JUMP_UP_3, JUMP_LEFT_3, JUMP_RIGHT_3};
+static const u8 jump_cloud_movements[5] = {JUMP_DOWN_3, JUMP_DOWN_3, JUMP_UP_3, JUMP_LEFT_3, JUMP_RIGHT_3};
 
 void npc_player_init_move_jump_cloud(u8 direction) {
     u8 movement_idx = jump_cloud_movements[MIN(ARRAY_COUNT(jump_cloud_movements), direction)];
@@ -359,7 +359,7 @@ void npc_player_initialize_move_on_bike(u8 direction, u8 unused, key keys_new, k
     }
 }
 
-extern u8 (*npc_player_bike_transitions[])(u8, u8, key, key);
+extern u8 (*const npc_player_bike_transitions[])(u8, u8, key, key);
 
 void player_npc_controll_biking(u8 direction, key keys_new, key keys_held) {
     u8 idx = player_npc_get_bike_transition_state(&direction, keys_new, keys_held);

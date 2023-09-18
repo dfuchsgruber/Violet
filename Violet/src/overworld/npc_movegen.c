@@ -97,7 +97,7 @@ void npc_move_to(u8 ow_id, s16 dest_x, s16 dest_y, u8 speed) {
 }
 
 
-static u8 move_camera_movements_normal[][3][3] = {
+static const u8 move_camera_movements_normal[][3][3] = {
     [A_STAR_SPEED_NORMAL] = {
         {STEP_NORTH_WEST, STEP_UP, STEP_NORTH_EAST},
         {STEP_LEFT, STOP, STEP_RIGHT},
@@ -168,7 +168,7 @@ static void overworld_person_face_to_person(u8 person_idx_facing, u8 person_idx_
         target_y = npcs[npc_target].dest_y;
         target_direction = npcs[npc_target].direction.facing;
     } else { // Get the position from map event
-        map_event_person *person_target = map_get_person(person_idx_target, save1->map, save1->bank);
+        const map_event_person *person_target = map_get_person(person_idx_target, save1->map, save1->bank);
         target_x = (s16)(person_target->x + 7);
         target_y = (s16)(person_target->y + 7);
     }

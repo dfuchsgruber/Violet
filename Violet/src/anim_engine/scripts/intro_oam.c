@@ -4,20 +4,20 @@
 #include "io.h"
 #include "bios.h"
 
-extern u16 gfx_intro_meteorTiles[];
-extern u16 gfx_intro_deoxys_headTiles[];
-extern u16 gfx_intro_deoxys_bodyTiles[];
-extern u16 gfx_intro_deoxys_bottomTiles[];
-extern u16 gfx_intro_deoxys_armTiles[];
-extern u16 gfx_intro_wavesTiles[];
+extern const u16 gfx_intro_meteorTiles[];
+extern const u16 gfx_intro_deoxys_headTiles[];
+extern const u16 gfx_intro_deoxys_bodyTiles[];
+extern const u16 gfx_intro_deoxys_bottomTiles[];
+extern const u16 gfx_intro_deoxys_armTiles[];
+extern const u16 gfx_intro_wavesTiles[];
 
-graphic graphic_intro_meteor = {
+const graphic graphic_intro_meteor = {
     gfx_intro_meteorTiles,
     0x1000,
     0xADE3
 };
 
-sprite oam_sprite_intro_meteor = {
+const sprite oam_sprite_intro_meteor = {
     ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE | ATTR0_DSIZE, 
     ATTR1_SIZE_64_64, 
     ATTR2_PRIO(0), 
@@ -32,20 +32,20 @@ void oam_intro_meteor_move(oam_object *self){
     if(++(self->private[0]) <= 70) self->y2--;
 }
 
-gfx_frame gfx_anim_intro_meteor[] = {
+const gfx_frame gfx_anim_intro_meteor[] = {
     {0, 8}, {64, 8}, {GFX_ANIM_JUMP, 0}
 };
 
-gfx_frame *gfx_anim_table_intro_meteor[] = {gfx_anim_intro_meteor};
+const gfx_frame *gfx_anim_table_intro_meteor[] = {gfx_anim_intro_meteor};
 
-rotscale_frame rotscal_anim_intro_meteor[] = {
+const rotscale_frame rotscal_anim_intro_meteor[] = {
     {.affine = {0x200, 0x200, 0, 0, 0}}, {.affine = {-8, -8, 0, 63, 0}},
     {.command = {ROTSCALE_ANIM_END, 0, 0, 0}}
 };
 
-rotscale_frame *rotscale_anim_table_intro_meteor[] = {rotscal_anim_intro_meteor};
+const rotscale_frame *rotscale_anim_table_intro_meteor[] = {rotscal_anim_intro_meteor};
 
-oam_template oam_template_intro_meteor = {
+const oam_template oam_template_intro_meteor = {
     0xADE3, 0xADE3,
     &oam_sprite_intro_meteor,
     gfx_anim_table_intro_meteor,
@@ -72,57 +72,57 @@ void anim_intro_earthquake(u8 self){
     }
 }
 
-graphic graphic_intro_deoxys_head = {
+const graphic graphic_intro_deoxys_head = {
     gfx_intro_deoxys_headTiles, 0x400, 0xADE4
 };
 
-graphic graphic_intro_deoxys_body = {
+const graphic graphic_intro_deoxys_body = {
     gfx_intro_deoxys_bodyTiles, 0x200, 0xADE5
 };
 
-graphic graphic_intro_deoxys_bottom = {
+const graphic graphic_intro_deoxys_bottom = {
     gfx_intro_deoxys_bottomTiles, 0x800, 0xADE6
 };
 
-graphic graphic_intro_deoxys_arm = {
+const graphic graphic_intro_deoxys_arm = {
     gfx_intro_deoxys_armTiles, 0xC00, 0xADE7
 };
 
-sprite oam_sprite_intro_deoxys_head = {
+const sprite oam_sprite_intro_deoxys_head = {
     ATTR0_SHAPE_HORIZONTAL, ATTR1_SIZE_64_32, ATTR2_PRIO(1), 0
 };
 
-sprite oam_sprite_intro_deoxys_body = {
+const sprite oam_sprite_intro_deoxys_body = {
     ATTR0_SHAPE_SQUARE, ATTR1_SIZE_32_32, ATTR2_PRIO(1), 0
 };
 
-sprite oam_sprite_intro_deoxys_bottom = {
+const sprite oam_sprite_intro_deoxys_bottom = {
     ATTR0_SHAPE_SQUARE, ATTR1_SIZE_64_64, ATTR2_PRIO(1), 0
 };
 
-sprite oam_sprite_intro_deoxys_arm_right = {
+const sprite oam_sprite_intro_deoxys_arm_right = {
     ATTR0_SHAPE_VERTICAL, ATTR1_SIZE_32_64, ATTR2_PRIO(1), 0
 };
 
-sprite oam_sprite_intro_deoxys_arm_left = {
+const sprite oam_sprite_intro_deoxys_arm_left = {
     ATTR0_SHAPE_VERTICAL, ATTR1_SIZE_32_64 | ATTR1_VFLIP, ATTR2_PRIO(1), 0
 };
 
-gfx_frame gfx_anim_intro_deoxys_arm_right[] = {
+const gfx_frame gfx_anim_intro_deoxys_arm_right[] = {
     {0, 16}, {32, 16}, 
     {64, 16}, {32, 16}, {0xFFFE, 0}
 };
 
-gfx_frame gfx_anim_intro_deoxys_arm_left[] = {
+const gfx_frame gfx_anim_intro_deoxys_arm_left[] = {
     {0, 16 | GFX_ANIM_HFLIP}, {32, 16| GFX_ANIM_HFLIP}, 
     {64, 16 | GFX_ANIM_HFLIP}, {32, 16 | GFX_ANIM_HFLIP}, {GFX_ANIM_JUMP, 0}
 };
 
-gfx_frame *gfx_anim_table_intro_deoxys_arm_right[] = {
+const gfx_frame *gfx_anim_table_intro_deoxys_arm_right[] = {
     gfx_anim_intro_deoxys_arm_right
 };
 
-gfx_frame *gfx_anim_table_intro_deoxys_arm_left[] = {
+const gfx_frame *gfx_anim_table_intro_deoxys_arm_left[] = {
     gfx_anim_intro_deoxys_arm_left
 };
 
@@ -146,9 +146,7 @@ void oam_intro_deoxys_leviate(oam_object *self){
     }
 }
 
-
-
-oam_template oam_template_intro_deoxys_head = {
+const oam_template oam_template_intro_deoxys_head = {
     0xADE4, 0xADE4,
     &oam_sprite_intro_deoxys_head,
     oam_gfx_anim_table_null,
@@ -157,7 +155,7 @@ oam_template oam_template_intro_deoxys_head = {
     oam_intro_deoxys_leviate,
 };
 
-oam_template oam_template_intro_deoxys_body = {
+const oam_template oam_template_intro_deoxys_body = {
     0xADE5, 0xADE4,
     &oam_sprite_intro_deoxys_body,
     oam_gfx_anim_table_null,
@@ -166,7 +164,7 @@ oam_template oam_template_intro_deoxys_body = {
     oam_intro_deoxys_leviate
 };
 
-oam_template oam_template_intro_deoxys_bottom = {
+const oam_template oam_template_intro_deoxys_bottom = {
     0xADE6, 0xADE4,
     &oam_sprite_intro_deoxys_bottom,
     oam_gfx_anim_table_null,
@@ -175,7 +173,7 @@ oam_template oam_template_intro_deoxys_bottom = {
     oam_intro_deoxys_leviate
 };
 
-oam_template oam_template_intro_deoxys_arm_right = {
+const oam_template oam_template_intro_deoxys_arm_right = {
     0xADE7, 0xADE4,
     &oam_sprite_intro_deoxys_arm_right,
     gfx_anim_table_intro_deoxys_arm_right,
@@ -184,7 +182,7 @@ oam_template oam_template_intro_deoxys_arm_right = {
     oam_intro_deoxys_leviate
 };
 
-oam_template oam_template_intro_deoxys_arm_left = {
+const oam_template oam_template_intro_deoxys_arm_left = {
     0xADE7, 0xADE4,
     &oam_sprite_intro_deoxys_arm_left,
     gfx_anim_table_intro_deoxys_arm_left,
@@ -194,11 +192,11 @@ oam_template oam_template_intro_deoxys_arm_left = {
     oam_intro_deoxys_leviate
 };
 
-graphic graphic_intro_waves = {
+const graphic graphic_intro_waves = {
     gfx_intro_wavesTiles, 0x1000, 0xADE8
 };
 
-sprite oam_sprite_intro_waves_front = {
+const sprite oam_sprite_intro_waves_front = {
     ATTR0_SHAPE_SQUARE | ATTR0_DSIZE | ATTR0_ROTSCALE, 
     ATTR1_SIZE_64_64, 
     ATTR2_PRIO(0),
@@ -206,7 +204,7 @@ sprite oam_sprite_intro_waves_front = {
 };
 
 /**
-sprite oam_sprite_intro_waves_back = {
+const sprite oam_sprite_intro_waves_back = {
     ATTR0_SHAPE_SQUARE, 
     ATTR1_SIZE_64_64, 
     ATTR2_PRIO(1),
@@ -214,17 +212,17 @@ sprite oam_sprite_intro_waves_back = {
 };**/
 
 
-gfx_frame gfx_anim_intro_waves[] = {
+const gfx_frame gfx_anim_intro_waves[] = {
     {0, 24}, {64, 24}, {GFX_ANIM_JUMP, 0}
 };
 
-gfx_frame *gfx_anim_table_intro_waves[] = {gfx_anim_intro_waves};
+const gfx_frame *gfx_anim_table_intro_waves[] = {gfx_anim_intro_waves};
 
-rotscale_frame rotscal_anim_intro_waves[] = {
+const rotscale_frame rotscal_anim_intro_waves[] = {
     {.affine = {0x200, 0x200, 0, 0, 0}}, {.command = {ROTSCALE_ANIM_END, 0, 0, 0}}
 };
 
-rotscale_frame *rotscale_anim_table_intro_waves[] = {rotscal_anim_intro_waves};
+const rotscale_frame *rotscale_anim_table_intro_waves[] = {rotscal_anim_intro_waves};
 
 /**
 void oam_intro_waves_back_move(oam_object *self){
@@ -243,7 +241,7 @@ void oam_intro_waves_front_move(oam_object *self){
     }
 }
 
-oam_template oam_template_intro_waves_front = {
+const oam_template oam_template_intro_waves_front = {
     0xADE8, 0xADE8,
     &oam_sprite_intro_waves_front,
     gfx_anim_table_intro_waves,
@@ -253,7 +251,7 @@ oam_template oam_template_intro_waves_front = {
 };
 
 /**
-oam_template oam_template_intro_waves_back = {
+const oam_template oam_template_intro_waves_back = {
     0xADE8, 0xADE9,
     &oam_sprite_intro_waves_back,
     GFX_ANIM_TABLE_NULL,

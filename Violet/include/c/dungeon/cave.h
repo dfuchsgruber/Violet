@@ -34,7 +34,7 @@
 
 
     typedef struct {
-        map_footer_t *footer; // A special pattern that only occurs in this dungeon
+        const map_footer_t *footer; // A special pattern that only occurs in this dungeon
         void (*event_init)(dungeon_generator2 *);
         u8 min_num_patterns;
         u8 max_num_patterns; // How often this pattern can occur
@@ -49,7 +49,7 @@
         u16 species_static_encounter[DUNGEON_CAVE_NUM_POKEMON_STATIC];
     } dungeon_cave_t;
 
-    dungeon_cave_t dungeon_cave_types[NUM_DUNGEON_CAVE_TYPES];
+    extern const dungeon_cave_t dungeon_cave_types[NUM_DUNGEON_CAVE_TYPES];
 
     enum {
         ADJ_MASK_SE = (1 << 0),

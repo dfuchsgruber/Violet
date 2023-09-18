@@ -5,7 +5,7 @@
 #include "constants/attack_categories.h"
 #include "constants/attack_flags.h"
 
-attack attacks[ATTACK_CNT] = {
+const attack attacks[ATTACK_CNT] = {
 	// ATTACK_NONE
 	{
 		0x0, //Effect-id (in table)

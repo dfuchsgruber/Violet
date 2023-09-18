@@ -11,13 +11,13 @@
 #include "constants/battle/battle_handicaps.h"
 #include "constants/battle/battle_statuses.h"
 
-extern u8 bsc_flinch_aura[];
-extern u8 bsc_flinch_raura[];
-extern u8 bsc_flinch_baura[];
-extern u8 bsc_flinch_gaura[];
-extern u8 battlescript_handicap_terrifying_atmosphere_apply[];
+extern const u8 bsc_flinch_aura[];
+extern const u8 bsc_flinch_raura[];
+extern const u8 bsc_flinch_baura[];
+extern const u8 bsc_flinch_gaura[];
+extern const u8 battlescript_handicap_terrifying_atmosphere_apply[];
 
-u8 *attack_negating_abilities(u8 defender_ability, u16 used_attack){
+const u8 *attack_negating_abilities(u8 defender_ability, u16 used_attack){
     
     if(defender_ability == R_KAISERAURA || defender_ability == B_KAISERAURA
             || defender_ability == G_KAISERAURA){

@@ -3,7 +3,7 @@
 #include "debug.h"
 
 
-morgana_anim morgana_anims[NUM_FATA_MORGANA_BLOCKS] = {
+const morgana_anim morgana_anims[NUM_FATA_MORGANA_BLOCKS] = {
     {
         {0x320, 0x322, 0x324, 0x326}, 0x0},
     {

@@ -16,23 +16,23 @@ typedef struct anim_engine_task{
 
 typedef struct ae_memory {
     u16 current_frame;
-    u8 *script;
+    const u8 *script;
     u8 callback_id;
     u8 active : 1;
     u8 paused : 1;
     int delayed;
     u8 num_printers_waited_for;
     u8 stack_size;
-    u8 *stack[8];
+    const u8 *stack[8];
     u16 vars[16];
     color_t *pal_restore_save;
     anim_engine_task *root; // Doubly-linked list, sorted by priority
 } ae_memory;
 
-extern u8 *ae_scripts[];
+extern const u8 *ae_scripts[];
 
 void init_anim_engine_by_table();
-void anim_engine_initiatlize(u8 *script);
+void anim_engine_initiatlize(const u8 *script);
 void anim_engine_callback(u8 callback_id);
 void anim_engine_execute_frame(ae_memory* mem);
 u8 anim_engine_read_byte(ae_memory* mem);

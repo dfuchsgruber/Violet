@@ -25,7 +25,7 @@ typedef struct {
 // A list containing map connections
 typedef struct {
     u32 count;
-    map_connection_t *connections;
+    const map_connection_t *connections;
 } map_connection_header_t;
 
 #endif /* INCLUDE_C_MAP_CONNECTION_H_ */

@@ -41,18 +41,18 @@ extern const unsigned short gfx_wondertrade_bg_upperPal[];
 extern const unsigned short gfx_wondertrade_bg_lowerPal[];
 
 
-graphic graphic_wondertrade_badges = {
+const graphic graphic_wondertrade_badges = {
     (void*) gfx_wondertrade_badgesTiles,
     0x80 * 4,
     0xA004
 };
 
-sprite sprite_wondertrade_badges = {
+const sprite sprite_wondertrade_badges = {
     0, 0x4000, 0, 0
 };
 
 
-oam_template oam_template_wondertrade_badges = {
+const oam_template oam_template_wondertrade_badges = {
     0xA004, 0xA004,
     &sprite_wondertrade_badges,
     oam_gfx_anim_table_null,
@@ -61,9 +61,9 @@ oam_template oam_template_wondertrade_badges = {
     oam_null_callback
 };
 
-tbox_font_colormap wondertrade_fontcolmap = {0, 2, 1, 0};
+const tbox_font_colormap wondertrade_fontcolmap = {0, 2, 1, 0};
 
-tboxdata wondertrade_tboxes[] = {
+const tboxdata wondertrade_tboxes[] = {
     {0, 10, 1, 10, 2, 15, 1}, //Wondertrade Title
     {0, 1, 4, 5, 2, 15, 21}, //Wondertrade Level Title
     {0, 2, 6, 5, 2, 15, 31}, //Wondertrade Level Text
@@ -78,7 +78,7 @@ tboxdata wondertrade_tboxes[] = {
 };
 
 
-u16 wondertrade_pokemon_bronze[] = {
+const u16 wondertrade_pokemon_bronze[] = {
     POKEMON_DARTIRI, POKEMON_HORNLIU, POKEMON_STARALILI, POKEMON_SANDAN,
     POKEMON_NIDORANM, POKEMON_NIDORANW, POKEMON_PUMMELUFF, POKEMON_ZUBAT,
     POKEMON_MYRAPLA, POKEMON_DIGDA, POKEMON_ENTON, POKEMON_MAGNETILO,
@@ -89,7 +89,7 @@ u16 wondertrade_pokemon_bronze[] = {
     POKEMON_ENECO, POKEMON_LAMPI, POKEMON_OWEI, 0xFFFF
 };
 
-u16 wondertrade_pokemon_silver[] = {
+const u16 wondertrade_pokemon_silver[] = {
     POKEMON_PIKACHU, POKEMON_VULPIX, POKEMON_KASTADUR, POKEMON_FUKANO,
     POKEMON_ABRA, POKEMON_PORENTA, POKEMON_SLEIMA, POKEMON_SMOGON,
     POKEMON_NEBULAK, POKEMON_SEEPER, POKEMON_MAGBY, POKEMON_TRAGOSSO,
@@ -98,19 +98,19 @@ u16 wondertrade_pokemon_silver[] = {
     POKEMON_STOLLUNIOR, POKEMON_STERNDU, 0xFFFF
 };
 
-u16 wondertrade_pokemon_gold[] = {
+const u16 wondertrade_pokemon_gold[] = {
     POKEMON_BISASAM, POKEMON_GLUMANDA, POKEMON_SCHIGGY,
     POKEMON_TOGEPI, POKEMON_CLAVION,
     POKEMON_PANZAERON,
     POKEMON_KECLEON, 0xFFFF
 };
 
-u16 wondertrade_pokemon_platinum[] = {
+const u16 wondertrade_pokemon_platinum[] = {
     POKEMON_CHANEIRA, POKEMON_IGNIVOR, POKEMON_EVOLI, POKEMON_LAPRAS,
     POKEMON_BARSCHWA, POKEMON_ABSOL, POKEMON_SICHLOR, 0xFFFF
 };
 
-u16 *wondertrade_pokemon[] = {
+const u16 *wondertrade_pokemon[] = {
     wondertrade_pokemon_bronze,
     wondertrade_pokemon_silver,
     wondertrade_pokemon_gold,
@@ -198,7 +198,7 @@ u16 wondertrade_next_seed() {
     return (u16) ((rnd16() & 511) / (wondertrade_get_level() + 1));
 }
 
-u32 tid_by_ot_name(u8 *ot_name) {
+u32 tid_by_ot_name(const u8 *ot_name) {
 	u32 tid = 1;
 	int i = 0;
 	while(ot_name[i] != 0xFF) {
@@ -207,12 +207,12 @@ u32 tid_by_ot_name(u8 *ot_name) {
     return tid;
 }
 
-static u8 str_wodka[] = PSTRING("Wodka");
+static const u8 str_wodka[] = PSTRING("Wodka");
 
 void wondertrade_spawn_pokemon() {
     u16 species = wondertrade_select_pokemon();
     bool female_ot = rnd16() % 1;
-    u8 *ot_name = species == POKEMON_MEW ? str_wodka : person_names[female_ot][rnd16() % 128];
+    const u8 *ot_name = species == POKEMON_MEW ? str_wodka : person_names[female_ot][rnd16() % 128];
     u32 tid = tid_by_ot_name(ot_name);
     pid_t p = {.value = 0};
     pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, 5, 32, false, p,
@@ -336,7 +336,7 @@ void wondertrade_show_components() {
     callback1_set(wondertrade_callback_idle);
 }
 
-bg_config wondertrade_bg_cnfgs [] = {
+const bg_config wondertrade_bg_cnfgs [] = {
     {0, 2, 31, 0, 0, 0},
     {1, 0, 29, 0, 0, 1},
     {2, 1, 27, 0, 0, 2}

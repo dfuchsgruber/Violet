@@ -27,10 +27,10 @@
 #include "constants/pokemon_types.h"
 #include "abilities.h"
 
-extern u8 bsc_wandlungskunst[];
-extern u8 bsc_stance_change_to_attack[];
-extern u8 bsc_stance_change_to_defense[];
-extern u8 bsc_ap_sparer[];
+extern const u8 bsc_wandlungskunst[];
+extern const u8 bsc_stance_change_to_attack[];
+extern const u8 bsc_stance_change_to_defense[];
+extern const u8 bsc_ap_sparer[];
 
 void stance_change_change_species(u8 target, u16 species){
     void *pokemon = (battler_is_opponent(target) ? opponent_pokemon : player_pokemon) + battler_idx_to_party_idx(target);

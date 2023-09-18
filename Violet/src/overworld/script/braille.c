@@ -4,13 +4,13 @@
 #include "save.h"
 #include "debug.h"
 
-static tbox_font_colormap braille_font_color_map = {
+static const tbox_font_colormap braille_font_color_map = {
     .background = 1, .body = 2, .edge = 3, .shadow = 3
 };
 
 bool overworld_script_command_braille(overworld_script_state_t *state) {
 
-    u8 *str = (u8*)overworld_script_read_word(state);
+    const u8 *str = (u8*)overworld_script_read_word(state);
     if (!str) {
         str = state->pointer_banks[0];
     }

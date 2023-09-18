@@ -19,7 +19,7 @@
 #include "item/bag2.h"
 #include "language.h"
 
-berry berries[] = {
+const berry berries[] = {
     [ITEM_IDX_TO_BERRY_IDX(ITEM_AMRENABEERE) - 1]  = {
         .name = LANGDEP(PSTRING("Amrena"), PSTRING("Cheri")),
         .firmness = 2, .size = 20,
@@ -327,7 +327,7 @@ u8 berry_tree_get_berry(u8 berry_tree_idx) {
     return cmem.berry_trees[berry_tree_idx].berry;
 }
 
-u8 berry_tree_initial_items[NUM_BERRY_TREES] = {
+const u8 berry_tree_initial_items[NUM_BERRY_TREES] = {
     [0] = ITEM_IDX_TO_BERRY_IDX(ITEM_SAIMBEERE),
     [1] = ITEM_IDX_TO_BERRY_IDX(ITEM_SAIMBEERE),
     [2] = ITEM_IDX_TO_BERRY_IDX(ITEM_SINELBEERE),
@@ -403,7 +403,7 @@ int berry_get_adjacent_berries_of_different_kind(u8 berry_tree_idx) {
 
 void berry_tree_calculate_yield(u8 berry_tree_idx) {
     u8 berry_idx = cmem.berry_trees[berry_tree_idx].berry;
-    berry *b = berry_get(berry_idx);
+    const berry *b = berry_get(berry_idx);
     if (berry_idx == ITEM_IDX_TO_BERRY_IDX(ITEM_ANTIKER_SAMEN)) {
         cmem.berry_trees[berry_tree_idx].yield = 1; // The lotus flower always only yields one new seed
         // A flower is yielded with a 1/2 chance and increased by 1/4 for fertiziling and growing berries close of different type
@@ -435,7 +435,7 @@ void berry_tree_calculate_yield(u8 berry_tree_idx) {
 }
 
 u16 berry_get_stage_duration(u8 berry_tree_idx) {
-    berry *b = berry_get(cmem.berry_trees[berry_tree_idx].berry);
+    const berry *b = berry_get(cmem.berry_trees[berry_tree_idx].berry);
     int factor;
     switch (berry_get_adjacent_berries_of_different_kind(berry_tree_idx)) {
         case 0:
@@ -454,7 +454,7 @@ u16 berry_get_stage_duration(u8 berry_tree_idx) {
 void berry_tree_initialize(u8 berry_tree_idx, u8 berry_idx, u8 stage) {
     cmem.berry_trees[berry_tree_idx].berry = (u8)(berry_idx & 63);
     cmem.berry_trees[berry_tree_idx].stage = (u8)(stage & 7);
-    berry *b = berry_get(cmem.berry_trees[berry_tree_idx].berry);
+    const berry *b = berry_get(cmem.berry_trees[berry_tree_idx].berry);
     cmem.berry_trees[berry_tree_idx].yield = (u8)(b->min_yield & 7);
     // cmem.berry_trees[berry_tree_idx].yield = 0; // Only when blossoming, the yield is determined
     cmem.berry_trees[berry_tree_idx].minutes_to_next_stage = berry_get_stage_duration(berry_tree_idx);
@@ -495,7 +495,7 @@ void berry_tree_update_gfx() {
         npc_free_palette_if_unused_by_slot(pal_idx_old);
         npcs[npc_idx].flags.active = 1; // Set the npc to active again
         overworld_npc_update_palette(npcs + npc_idx, oams + oam_idx);
-        overworld_sprite *ow = overworld_get_by_npc(npcs + npc_idx);
+        const overworld_sprite *ow = overworld_get_by_npc(npcs + npc_idx);
         DEBUG("Updated overworld sprite %d with @0x%x\n", person_idx, ow);
         oams[oam_idx].gfx_table = ow->graphics;
         oam_gfx_anim_start(oams + oam_idx, 0);
@@ -542,7 +542,7 @@ void berry_plant() {
     fadescreen_all(1, 0);
 }
 
-static u32 unknown_seed_probabilities[] = {
+static const u32 unknown_seed_probabilities[] = {
     [ITEM_IDX_TO_BERRY_IDX(ITEM_AMRENABEERE)] = 7,
     [ITEM_IDX_TO_BERRY_IDX(ITEM_MARONBEERE)] = 7,
     [ITEM_IDX_TO_BERRY_IDX(ITEM_PIRSIFBEERE)] = 7,
@@ -655,11 +655,11 @@ void berry_proceed() {
     }
 }
 
-palette berry_tree_growth_sparkle_palette = {
+const palette berry_tree_growth_sparkle_palette = {
     .pal = gfx_berry_tree_growth_sparklePal, .tag = TAG_BERRY_GROWTH_SPARKLE
 };
 
-graphic berry_tree_growth_sparkle_graphics[] = {
+const graphic berry_tree_growth_sparkle_graphics[] = {
     [0] = {.sprite = gfx_berry_tree_growth_sparkleTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = TAG_BERRY_GROWTH_SPARKLE},
     [1] = {.sprite = gfx_berry_tree_growth_sparkleTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = TAG_BERRY_GROWTH_SPARKLE},
     [2] = {.sprite = gfx_berry_tree_growth_sparkleTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = TAG_BERRY_GROWTH_SPARKLE},
@@ -668,14 +668,14 @@ graphic berry_tree_growth_sparkle_graphics[] = {
     [5] = {.sprite = gfx_berry_tree_growth_sparkleTiles + 5 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = TAG_BERRY_GROWTH_SPARKLE},
 };
 
-gfx_frame berry_tree_growth_sparkle_gfx_animation[] = {
+const gfx_frame berry_tree_growth_sparkle_gfx_animation[] = {
     {.data = 0, .duration = 0}, {.data = 0, .duration = 8},  {.data = 1, .duration = 8}, {.data = 2, .duration = 8},
     {.data = 3, .duration = 8},  {.data = 4, .duration = 8}, {.data = 5, .duration = 8}, {.data = GFX_ANIM_END, .duration = 0},
 };
 
-gfx_frame *berry_tree_growth_sparkle_gfx_animations[] = {berry_tree_growth_sparkle_gfx_animation};
+const gfx_frame *const berry_tree_growth_sparkle_gfx_animations[] = {berry_tree_growth_sparkle_gfx_animation};
 
-oam_template berry_tree_growth_sparkle_oam_template = {
+const oam_template berry_tree_growth_sparkle_oam_template = {
     .tiles_tag = 0xFFFF, .pal_tag = TAG_BERRY_GROWTH_SPARKLE, .oam = &ow_final_oam_16_16, .animation = berry_tree_growth_sparkle_gfx_animations,
     .graphics = berry_tree_growth_sparkle_graphics, .rotscale = oam_rotscale_anim_table_null,
     .callback = overworld_effect_oam_callback_wait_for_gfx_animation,

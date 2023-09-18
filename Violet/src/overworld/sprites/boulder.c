@@ -23,7 +23,7 @@
 #include "map/event.h"
 #include "constants/person_behaviours.h"
 
-static graphic overworld_gfx_boulder_gym_puzzle_unidirectional[] = {
+static const graphic overworld_gfx_boulder_gym_puzzle_unidirectional[] = {
     [0] = {gfx_ow_boulder_gym_puzzleTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0,},
     [1] = {gfx_ow_boulder_gym_puzzleTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0,},
     [2] = {gfx_ow_boulder_gym_puzzleTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0,},
@@ -35,7 +35,7 @@ static graphic overworld_gfx_boulder_gym_puzzle_unidirectional[] = {
     [8] = {gfx_ow_boulder_gym_puzzleTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0,},
 };
 
-static graphic overworld_gfx_boulder_gym_puzzle_bidirectional[] = {
+static const graphic overworld_gfx_boulder_gym_puzzle_bidirectional[] = {
     [0] = {gfx_ow_boulder_gym_puzzleTiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0,},
     [1] = {gfx_ow_boulder_gym_puzzleTiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0,},
     [2] = {gfx_ow_boulder_gym_puzzleTiles + 4 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0,},
@@ -47,25 +47,25 @@ static graphic overworld_gfx_boulder_gym_puzzle_bidirectional[] = {
     [8] = {gfx_ow_boulder_gym_puzzleTiles + 4 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0,},
 };
 
-overworld_sprite overworld_boulder_gym_puzzle_unidirectional = {
+const overworld_sprite overworld_boulder_gym_puzzle_unidirectional = {
     .tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BOULDER_GYM_PUZZLE,
     .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 16), .width = 16, .height = 16,
     .final_oam = &ow_final_oam_16_16, .subsprite_table = &ow_formation_16_16, .gfx_animation = ow_anim_standard_npc,
     .graphics = overworld_gfx_boulder_gym_puzzle_unidirectional, .rotscale_animation = oam_rotscale_anim_table_null, .inanimate = false,
 };
 
-overworld_sprite overworld_boulder_gym_puzzle_bidirectional = {
+const overworld_sprite overworld_boulder_gym_puzzle_bidirectional = {
     .tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BOULDER_GYM_PUZZLE,
     .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 16), .width = 16, .height = 16,
     .final_oam = &ow_final_oam_16_16, .subsprite_table = &ow_formation_16_16, .gfx_animation = ow_anim_standard_npc,
     .graphics = overworld_gfx_boulder_gym_puzzle_bidirectional, .rotscale_animation = oam_rotscale_anim_table_null, .inanimate = false,
 };
 
-palette overworld_boulder_gym_puzzle_palette = {
+const palette overworld_boulder_gym_puzzle_palette = {
     .pal = gfx_ow_boulder_gym_puzzlePal, .tag = OW_PAL_TAG_BOULDER_GYM_PUZZLE,
 };
 
-static graphic overworld_gfx_boulder_hay_bale[] = {
+static const graphic overworld_gfx_boulder_hay_bale[] = {
     [0] = {gfx_ow_boulder_hayTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0,},
     [1] = {gfx_ow_boulder_hayTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0,},
     [2] = {gfx_ow_boulder_hayTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0,},
@@ -77,18 +77,18 @@ static graphic overworld_gfx_boulder_hay_bale[] = {
     [8] = {gfx_ow_boulder_hayTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0,},
 };
 
-overworld_sprite overworld_boulder_hay_bale = {
+const overworld_sprite overworld_boulder_hay_bale = {
     .tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BOULDER_HAY_BALE,
     .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
     .final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
     .graphics = overworld_gfx_boulder_hay_bale, .rotscale_animation = oam_rotscale_anim_table_null, .inanimate = true,
 };
 
-palette overworld_boulder_hay_bale_palette = {
+const palette overworld_boulder_hay_bale_palette = {
     .pal = gfx_ow_boulder_hayPal, .tag = OW_PAL_TAG_BOULDER_HAY_BALE,
 };
 
-overworld_sprite *overworld_sprite_get_by_boulder_person_script_std(u8 person_script_std, u16 value) {
+const overworld_sprite *overworld_sprite_get_by_boulder_person_script_std(u8 person_script_std, u16 value) {
     switch (person_script_std) {
         case PERSON_PUZZLE_BOULDER:
             if (value)
@@ -102,17 +102,17 @@ overworld_sprite *overworld_sprite_get_by_boulder_person_script_std(u8 person_sc
     }
 }
 
-palette *overworld_palette_get_gym_puzzle_boulder() {
+const palette *overworld_palette_get_gym_puzzle_boulder() {
     return &overworld_boulder_gym_puzzle_palette;
 }
 
-palette *overworld_palette_get_hay_bale_boulder() {
+const palette *overworld_palette_get_hay_bale_boulder() {
     return &overworld_boulder_hay_bale_palette;
 }
 
 static u32 gym_puzzle_boulder_get_pushable_directions(u8 npc_idx) {
     npc *n = npcs + npc_idx;
-    map_event_person *person = map_get_person(n->overworld_id, n->map, n->bank);
+    const map_event_person *person = map_get_person(n->overworld_id, n->map, n->bank);
     u32 pushable_directions = int_bitmasks[n->direction.facing];
     bool bidirectional = person->value != 0;
     if (bidirectional) {
@@ -309,7 +309,7 @@ void npc_boulder_fall_trough_hole_and_update_person_coordinates(npc *n) {
 
 static void bruchfels_gym_puzzle_flip_and_rotate_boulders(bool horizontal, bool vertical, bool rotate) {
     for (u8 i = 0; i < ARRAY_COUNT(save1->persons); i++) {
-        map_event_person *p = save1->persons + i;
+        const map_event_person *p = save1->persons + i;
         if (p->script_std == PERSON_PUZZLE_BOULDER) {
             u8 direction = DIR_NONE;
             switch (p->behavior) {

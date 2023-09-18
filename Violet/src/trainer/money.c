@@ -2,7 +2,7 @@
 #include "trainer/trainer.h"
 #include "constants/trainerclasses.h"
 
-u8 trainer_class_money_multipliers[TRAINERCLASS_CNT] = {
+const u8 trainer_class_money_multipliers[TRAINERCLASS_CNT] = {
     [TRAINERCLASS_PKMN_TRAINER] = 1,
     [TRAINERCLASS_PKMN_TRAINER2] = 1,
     [TRAINERCLASS_POLIZIST] = 20,

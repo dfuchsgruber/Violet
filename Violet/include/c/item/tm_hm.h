@@ -41,9 +41,9 @@ typedef struct {
     u8 filler_14[8];
 } tm_hm_state_t;
 
-tm_hm_state_t *tm_hm_state;
+extern tm_hm_state_t *tm_hm_state;
 
-extern color_t pal_hm_symbol[2];
+extern const color_t pal_hm_symbol[2];
 
 /**
  * Initializes the tm / hm used flags

@@ -9,11 +9,11 @@
 #include "options.h"
 #include "language.h"
 
-static bool recipe_get_by_flag(u16 flag, crafting_recipe **result) {
+static bool recipe_get_by_flag(u16 flag, const crafting_recipe **result) {
     bool ambiguos = false;
     *result = NULL;
     for (u16 type = 0; type < CRAFTING_TYPE_CNT; type++) {
-        crafting_recipe *recipies = crafting_recipies_get_by_type(type);
+        const crafting_recipe *recipies = crafting_recipies_get_by_type(type);
         size_t num_recipies = crafting_get_num_recipies_by_type(type);
         for (u16 idx = 0; idx < num_recipies; idx++) {
             if (recipies[idx].flag == flag) {
@@ -27,7 +27,7 @@ static bool recipe_get_by_flag(u16 flag, crafting_recipe **result) {
 }
 
 static u16 recipe_get_item_idx_by_flag(u16 flag) {
-    crafting_recipe *recipe;
+    const crafting_recipe *recipe;
     bool ambiguos = recipe_get_by_flag(flag, &recipe);
     if (ambiguos)
         return RECIPE_FLAG_AMBIGUOUS;
@@ -49,37 +49,37 @@ void overworld_recipe_buffer_name() {
 
 #define RECIPE_ITEM_TAG 0xB111
 
-static sprite sprite_item_obtain = {
+static const sprite sprite_item_obtain = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(0)
     };
 
-static oam_template template_recipe_item = {
+static const oam_template template_recipe_item = {
     .tiles_tag = RECIPE_ITEM_TAG, .pal_tag = RECIPE_ITEM_TAG,
     .oam = &sprite_item_obtain, .graphics = NULL, .animation = oam_gfx_anim_table_null,
     .rotscale = oam_rotscale_anim_table_null, .callback = oam_null_callback,
 };
 
-static tboxdata tbox_template_recipe_transparent = {
+static const tboxdata tbox_template_recipe_transparent = {
     .bg_id = 0, .x = 1, .y = 1, .w = 28, .h = 13, .pal = 15, .start_tile = 44
 };
 
 
-static tboxdata tbox_template_recipe_non_transparent = {
+static const tboxdata tbox_template_recipe_non_transparent = {
     .bg_id = 0, .x = 1, .y = 2, .w = 28, .h = 13, .pal = 15, .start_tile = 44
 };
 
-static u8 str_cross[] = PSTRING("x ");
-static u8 str_ash[] = LANGDEP(PSTRING("Asche"), PSTRING("Ash"));
-static u8 str_recipe_for[] = LANGDEP(PSTRING("Rezept für BUFFER_1:"), PSTRING("Recipe for BUFFER_1:"));
+static const u8 str_cross[] = PSTRING("x ");
+static const u8 str_ash[] = LANGDEP(PSTRING("Asche"), PSTRING("Ash"));
+static const u8 str_recipe_for[] = LANGDEP(PSTRING("Rezept für BUFFER_1:"), PSTRING("Recipe for BUFFER_1:"));
 
 void recipe_obtain_show() {
-    crafting_recipe *recipe;
+    const crafting_recipe *recipe;
     bool ambigious = recipe_get_by_flag(*var_access(0x8004), &recipe);
     u8 box_id;
     tbox_font_colormap fontcolmap = {1, 2, 1, 3};
 	if (item_obtain_should_show_description() && (!ambigious)) {
 		if (transparency_is_on()) {
-			tboxdata *tbdata =  &tbox_template_recipe_transparent;
+			const tboxdata *tbdata =  &tbox_template_recipe_transparent;
 			box_id = tbox_new(tbdata);
 			tbox_flush_set(box_id, 0x11);
 			tbox_tilemap_draw(box_id);
@@ -88,7 +88,7 @@ void recipe_obtain_show() {
 				item_get_description(recipe->item));
 			fmem.item_obtain_tb_id = box_id;
 		} else {
-			tboxdata *tbdata = &tbox_template_recipe_non_transparent;
+			const tboxdata *tbdata = &tbox_template_recipe_non_transparent;
 			box_id = tbox_new(tbdata);
 			tbox_flush_set(box_id, 0x11);
 			tbox_tilemap_draw(box_id);
@@ -101,7 +101,7 @@ void recipe_obtain_show() {
         // Write out the recipe
         for (size_t i = 0; i < MAX_NUM_INGREDIENTS; i++) {
             if (recipe->ingredients[i].count > 0) {
-                u8 *name;
+                const u8 *name;
                 int count;
                 switch (recipe->ingredients[i].type) {
                     case CRAFTING_INGREDIENT_ITEM: {

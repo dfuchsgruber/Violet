@@ -5,7 +5,7 @@
 #include "constants/species.h"
 #include "pokemon/sprites.h"
 
-pokemon_coordinate_t pokemon_player_y[POKEMON_CNT] = {
+const pokemon_coordinate_t pokemon_player_y[POKEMON_CNT] = {
     [POKEMON_POKEMON_0] = {.width = POKEMON_COORDINATE_SIZE(64), .height = POKEMON_COORDINATE_SIZE(64), .y_offset = 0},
     [POKEMON_BISASAM] = {.width = POKEMON_COORDINATE_SIZE(32), .height = POKEMON_COORDINATE_SIZE(48), .y_offset = 16},
     [POKEMON_BISAKNOSP] = {.width = POKEMON_COORDINATE_SIZE(48), .height = POKEMON_COORDINATE_SIZE(56), .y_offset = 10},

@@ -4,8 +4,8 @@
 #include "types.h"
 
 typedef struct {
-    u8 *name;
-    u8 *description;
+    const u8 *name;
+    const u8 *description;
     const void *tiles;
     const void *palette;
     u16 flag;

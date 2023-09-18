@@ -20,7 +20,7 @@ void map_redraw_block_at_position(s16 x, s16 y) {
     }
 }
 
-void map_draw_block_to_bg(u8 layer_type, u16 *blocks, u16 offset) {
+void map_draw_block_to_bg(u8 layer_type, const u16 *blocks, u16 offset) {
     // The layer priority (bottom to top) is 3, 1, 2
     if (layer_type == 0xFF) { // Doors, TODO        
         overworld_bg3_tilemap[offset] = blocks[0];
@@ -59,7 +59,7 @@ void map_draw_block_to_bg(u8 layer_type, u16 *blocks, u16 offset) {
     bg_virtual_sync_reqeust_push(3);
 }
 
-void map_draw_block_at_position(map_footer_t *f, u16 offset, s16 x, s16 y) {
+void map_draw_block_at_position(const map_footer_t *f, u16 offset, s16 x, s16 y) {
     u16 block_idx = block_get_by_pos(x, y);
     if (block_idx >= 1024)
         block_idx = 0;
@@ -73,7 +73,7 @@ void map_draw_block_at_position(map_footer_t *f, u16 offset, s16 x, s16 y) {
     map_draw_block_to_bg(0, blocks + 12 * block_idx, offset);
 }
 
-void map_draw_door_at(s16 x, s16 y, u16 *block_tilemaps) {
+void map_draw_door_at(s16 x, s16 y, const u16 *block_tilemaps) {
     int offset = map_position_to_bg_tilemap_offset(&map_camera_offset, x, y);
     if (offset >= 0) {
         map_draw_block_to_bg(0xFF, block_tilemaps, (u16)offset);

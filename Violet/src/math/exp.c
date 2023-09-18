@@ -13,7 +13,7 @@
 /**
  * Coefficients for a polynomial to approximate log(x) for x in [1;2]
  */
-FIXED log_polynomial_coefs[5] = {-114150, 184890, -96335, 29306, -3707};
+const FIXED log_polynomial_coefs[5] = {-114150, 184890, -96335, 29306, -3707};
 
 FIXED FIXED_LOG(FIXED x) {
   if(x < 0) {

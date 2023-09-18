@@ -21,8 +21,8 @@
 #include "vars.h"
 #include "trainer/trainer.h"
 
-extern u8 battlescript_mega_evolution[];
-extern u8 battlescript_regent_evolution[];
+extern const u8 battlescript_mega_evolution[];
+extern const u8 battlescript_regent_evolution[];
 
 void battler_update_after_form_change(u8 battler_idx) {
     int party_idx = battler_idx_to_party_idx(battler_idx);
@@ -61,7 +61,7 @@ bool battle_execute_action_mega_evolution() {
                 u8 battler_idx = battler_attacking_order[MEGA_STATE.mega_action_current_slot];
                 if (MEGA_STATE.marked_for_mega_evolution[battler_idx]) {
                     // Perform a mega evolution
-                    mega_evolution_t *mega_evolution = battler_get_available_mega_evolution(battler_idx);
+                    const mega_evolution_t *mega_evolution = battler_get_available_mega_evolution(battler_idx);
                     if (mega_evolution) {
                         // Find the trainer idx of the battler
                         u16 trainer_idx = 0xFFFF;

@@ -10,17 +10,17 @@
 #include "constants/pokemon_types.h"
 #include "debug.h"
 
-static tbox_font_colormap font_colormap_pocket_name = {.background = 0, .body = 1, .edge = 2}; 
+static const tbox_font_colormap font_colormap_pocket_name = {.background = 0, .body = 1, .edge = 2}; 
 
-static u8 str_pocket_items[] = LANGDEP(PSTRING("Items"), ("Items"));
-static u8 str_pocket_key_items[] = LANGDEP(PSTRING("Basis-Items"), PSTRING("Key Items"));
-static u8 str_pocket_pokeballs[] = LANGDEP(PSTRING("Pokébälle"), PSTRING("Pokéballs"));
-static u8 str_pocket_medicine[] = LANGDEP(PSTRING("Medizin"), PSTRING("Medicine"));
-static u8 str_pocket_berries[] = LANGDEP(PSTRING("Beeren"), PSTRING("Berries"));
-static u8 str_pocket_tms[] = LANGDEP(PSTRING("Tms / Vms"), PSTRING("Tms / Hms"));
-static u8 str_pocket_bait[] = LANGDEP(PSTRING("Köder"), PSTRING("Bait"));
+static const u8 str_pocket_items[] = LANGDEP(PSTRING("Items"), ("Items"));
+static const u8 str_pocket_key_items[] = LANGDEP(PSTRING("Basis-Items"), PSTRING("Key Items"));
+static const u8 str_pocket_pokeballs[] = LANGDEP(PSTRING("Pokébälle"), PSTRING("Pokéballs"));
+static const u8 str_pocket_medicine[] = LANGDEP(PSTRING("Medizin"), PSTRING("Medicine"));
+static const u8 str_pocket_berries[] = LANGDEP(PSTRING("Beeren"), PSTRING("Berries"));
+static const u8 str_pocket_tms[] = LANGDEP(PSTRING("Tms / Vms"), PSTRING("Tms / Hms"));
+static const u8 str_pocket_bait[] = LANGDEP(PSTRING("Köder"), PSTRING("Bait"));
 
-static u8 *bag_pocket_names[] = {
+static const u8 *const bag_pocket_names[] = {
     [POCKET_ITEMS] = str_pocket_items,
     [POCKET_KEY_ITEMS] = str_pocket_key_items,
     [POCKET_POKEBALLS] = str_pocket_pokeballs,
@@ -49,7 +49,7 @@ void bag_load_pocket() {
     bag_print_hint(bag_get_context_hint());
 
     bg_virtual_sync_reqeust_push(bag_tboxes[BAG_TBOX_MOVE_INFO].bg_id);
-    u8 *name = bag_pocket_names[pocket];
+    const u8 *name = bag_pocket_names[pocket];
     u16 name_width = string_get_width(2, name, 0);
     tbox_flush_set(BAG_TBOX_POCKET_NAME, 0x00);
     tbox_print_string(BAG_TBOX_POCKET_NAME, 2, 

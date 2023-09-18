@@ -25,9 +25,9 @@ void _pokemon_get_egg_moves_stub(){
     ERROR("Rom called old invalid stub for pokemon_get_egg_moves!\n");
 }
 
-u16 *pokemon_get_egg_moves(u16 species, int *size){
+const u16 *pokemon_get_egg_moves(u16 species, int *size){
     *size = 0;
-    u16 *egg_moves = pokemon_egg_moves[species];
+    const u16 *egg_moves = pokemon_egg_moves[species];
     if (egg_moves) {
 		while(egg_moves[*size] != 0xFFFF) {
 			(*size)++;
@@ -194,7 +194,7 @@ void breeding_egg_new_into_incubator(daycare_stru *daycare) {
 	}
 }
 
-void breeding_egg_add_move_if_known_by_parent(pokemon *egg, box_pokemon *father, box_pokemon *mother, u16 move) {
+void breeding_egg_add_move_if_known_by_parent(pokemon *egg, const box_pokemon *father, const box_pokemon *mother, u16 move) {
 	for (int j = 0; j < 4; j++) {
 		if (box_pokemon_get_attribute(father, ATTRIBUTE_ATTACK1 + j, 0) == move ||
 				box_pokemon_get_attribute(mother, ATTRIBUTE_ATTACK1 + j, 0) == move) {
@@ -206,7 +206,7 @@ void breeding_egg_add_move_if_known_by_parent(pokemon *egg, box_pokemon *father,
 	}
 }
 
-void breeding_egg_create_moves(pokemon *egg, box_pokemon *father, box_pokemon *mother) {
+void breeding_egg_create_moves(pokemon *egg, const box_pokemon *father, const box_pokemon *mother) {
 	u16 species = (u16) pokemon_get_attribute(egg, ATTRIBUTE_SPECIES, 0);
 
 	// Scan if any parent has any of its levelup moves
@@ -223,7 +223,7 @@ void breeding_egg_create_moves(pokemon *egg, box_pokemon *father, box_pokemon *m
 
 	// Scan for egg moves that can be inherited from both parents
 	int num_egg_moves = 0;
-	u16 *egg_moves = pokemon_get_egg_moves(species, &num_egg_moves);
+	const u16 *egg_moves = pokemon_get_egg_moves(species, &num_egg_moves);
 	for (int i = 0; i < num_egg_moves; i++) {
 		breeding_egg_add_move_if_known_by_parent(egg, father, mother, egg_moves[i]);
 	}

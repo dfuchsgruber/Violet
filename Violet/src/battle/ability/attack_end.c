@@ -21,16 +21,16 @@
 #include "item/item.h"
 #include "constants/item_hold_effects.h"
 
-extern u8 bsc_hagelalarm[];
-extern u8 bsc_lernfaehig[];
-extern u8 bsc_hochmut[];
-extern u8 bsc_lebensraeuber[];
-extern u8 bsc_curator[];
-extern u8 bsc_extradorn[];
-extern u8 bsc_fluffy[];
-extern u8 bsc_tintenschuss[];
+extern const u8 bsc_hagelalarm[];
+extern const u8 bsc_lernfaehig[];
+extern const u8 bsc_hochmut[];
+extern const u8 bsc_lebensraeuber[];
+extern const u8 bsc_curator[];
+extern const u8 bsc_extradorn[];
+extern const u8 bsc_fluffy[];
+extern const u8 bsc_tintenschuss[];
 
-static u16 curator_relevant_attacks[] = {
+static const u16 curator_relevant_attacks[] = {
     ATTACK_GENESUNG, ATTACK_TAGEDIEB, ATTACK_SYNTHESE, ATTACK_MONDSCHEIN, ATTACK_ERHOLUNG, ATTACK_WUNSCHTRAUM,
     ATTACK_WEICHEI, ATTACK_AROMAKUR, ATTACK_VITALGLOCKE, ATTACK_MILCHGETRAENK
 };

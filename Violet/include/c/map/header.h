@@ -15,10 +15,10 @@
 #include "map/event.h"
 
 typedef struct map_header_t {
-    map_footer_t *footer;
-    map_event_header_t *events;
-    levelscript_header_t *levelscripts;
-    map_connection_header_t *connections;
+    const map_footer_t *footer;
+    const map_event_header_t *events;
+    const levelscript_header_t *levelscripts;
+    const map_connection_header_t *connections;
     u16 music;
     u16 footer_idx; //main table is used when map is loaded
     u8 map_namespace;
@@ -34,7 +34,7 @@ typedef struct map_header_t {
 
 int dungeon_get_type();
 
-extern map_header_t **mapbanks[];
+extern const map_header_t *const *const mapbanks[];
 extern map_header_t mapheader_virtual;
 
 /**
@@ -50,7 +50,7 @@ bool map_type_enables_fly_or_teleport(u8 type);
  * @param map the desired map id
  * @return the mapheader object
  */
-map_header_t *get_mapheader(u8 bank, u8 map);
+const map_header_t *get_mapheader(u8 bank, u8 map);
 
 /**
  * Checks if the current map is 40.0
@@ -64,7 +64,7 @@ bool map_is_x40_x0();
  * @param position the position where the warp is required to be
  * @return the warp idx or -1 if there is no warp
  */
-s8 map_get_warp_idx_by_position(map_header_t *map, position_t *position);
+s8 map_get_warp_idx_by_position(const map_header_t *map, const position_t *position);
 
 /**
  * Returns the signpost at a certain position.
@@ -74,7 +74,7 @@ s8 map_get_warp_idx_by_position(map_header_t *map, position_t *position);
  * @param level the level on which the event is supposed to be on
  * @return the event or NULL if none was found
  **/
-map_event_signpost *map_get_signpost_by_position(map_header_t *map, s16 x, s16 y, u8 level);
+const map_event_signpost *map_get_signpost_by_position(const map_header_t *map, s16 x, s16 y, u8 level);
 
 /**
  * Checks if a map type represents an outside map.
@@ -98,6 +98,6 @@ void map_current_play_song_if_not_playing();
  * Copies the blocks of adjacent maps into the virtual blocks of a map
  * @param header the header of the current map
  **/
-void map_copy_adjacent_maps_to_virtual_blocks(map_header_t *header);
+void map_copy_adjacent_maps_to_virtual_blocks(const map_header_t *header);
 
 #endif /* INCLUDE_C_MAP_HEADER_H_ */

@@ -13,7 +13,7 @@
 #include "bios.h"
 #include "options.h"
 
-static u8 str_times[] = PSTRING("FONT_SIZE_SMALL×FONT_SIZE_BIG");
+static const u8 str_times[] = PSTRING("FONT_SIZE_SMALL×FONT_SIZE_BIG");
 
 bool overworld_script_command_xd4_bufferitemnameplural(overworld_script_state_t *state) {
     u8 buffer_idx = state->script[0];
@@ -36,29 +36,29 @@ bool overworld_script_command_xd4_bufferitemnameplural(overworld_script_state_t 
 } 
 
 #define ITEM_OBTAIN_TAG 0xB110
-static sprite sprite_item_obtain = {
+static const sprite sprite_item_obtain = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(0)
     };
-static oam_template template_item_obtain = {
+static const oam_template template_item_obtain = {
     .tiles_tag = ITEM_OBTAIN_TAG, .pal_tag = ITEM_OBTAIN_TAG,
     .oam = &sprite_item_obtain, .graphics = NULL, .animation = oam_gfx_anim_table_null,
     .rotscale = oam_rotscale_anim_table_null, .callback = oam_null_callback,
 };
 
-static tboxdata tboxdata_non_tm_hm = {
+static const tboxdata tboxdata_non_tm_hm = {
     .bg_id = 0, .x = 1, .y = 8, .w = 28, .h = 6, .pal = 15, .start_tile = 0xE8
 };
 
-static tboxdata tboxdata_tm_hm = {
+static const tboxdata tboxdata_tm_hm = {
     .bg_id = 0, .x = 1, .y = 6, .w = 18, .h = 8, .pal = 15, .start_tile = 0xE8
 };
 
 
-static tboxdata tboxdata_non_tm_hm_non_transparent = {
+static const tboxdata tboxdata_non_tm_hm_non_transparent = {
     .bg_id = 0, .x = 1, .y = 7, .w = 28, .h = 6, .pal = 15, .start_tile = 0xE8
 };
 
-static tboxdata tboxdata_tm_hm_non_transparent = {
+static const tboxdata tboxdata_tm_hm_non_transparent = {
     .bg_id = 0, .x = 1, .y = 5, .w = 18, .h = 8, .pal = 15, .start_tile = 0xE8
 };
 
@@ -70,7 +70,7 @@ void special_item_obtain_show() {
 		bool is_tm_hm = false; // item_get_pocket(item_idx) == POCKET_TM_HM;
 		// DEBUG("Found hm item %d\n", is_tm_hm);
 		if (transparency_is_on()) {
-			tboxdata *tbdata = is_tm_hm ? &tboxdata_tm_hm : &tboxdata_non_tm_hm;
+			const tboxdata *tbdata = is_tm_hm ? &tboxdata_tm_hm : &tboxdata_non_tm_hm;
 			u8 box_id = tbox_new(tbdata);
 			tbox_flush_set(box_id, 0x11);
 			tbox_tilemap_draw(box_id);
@@ -80,7 +80,7 @@ void special_item_obtain_show() {
 				item_get_description(item_idx));
 			fmem.item_obtain_tb_id = box_id;
 		} else {
-			tboxdata *tbdata = is_tm_hm ? &tboxdata_tm_hm_non_transparent : &tboxdata_non_tm_hm_non_transparent;
+			const tboxdata *tbdata = is_tm_hm ? &tboxdata_tm_hm_non_transparent : &tboxdata_non_tm_hm_non_transparent;
 			u8 box_id = tbox_new(tbdata);
 			tbox_flush_set(box_id, 0x11);
 			tbox_tilemap_draw(box_id);

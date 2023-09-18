@@ -3,16 +3,16 @@
 #include "language.h"
 #include "debug.h"
 
-static u8 str_hint_give[] = LANGDEP(PSTRING("Welches Item\ngeben?"), PSTRING("Give which item\nto a Pokémon?"));
-static u8 str_hint_deposit[] = LANGDEP(PSTRING("Welches Item\nablegen?"), PSTRING("Deposit which\nitem?"));
-static u8 str_hint_recharge[] = LANGDEP(PSTRING("Welche Tm\naufladen?"), PSTRING("Recharge which\nTm?"));
-static u8 str_hint_compost[] = LANGDEP(PSTRING("Welche Beere\nkompostieren?"), PSTRING("Compost which\nberry?"));
-static u8 str_hint_sell[] = LANGDEP(PSTRING("Welches Item\nverkaufen?"), PSTRING("Sell which\nitem?"));
-static u8 str_hint_plant_berry[] = LANGDEP(PSTRING("Welche Beere\npflanzen?"), PSTRING("Plant which\nberry?"));
-static u8 str_hint_equip_bait[] = LANGDEP(PSTRING("Welchen Köder\nausrüsten?"), PSTRING("Equip which\nbait?"));
-static u8 str_hint_select_rod[] = LANGDEP(PSTRING("Welche Angel\nausrüsten?"), PSTRING("Equip to\nwhich rod?"));
+static const u8 str_hint_give[] = LANGDEP(PSTRING("Welches Item\ngeben?"), PSTRING("Give which item\nto a Pokémon?"));
+static const u8 str_hint_deposit[] = LANGDEP(PSTRING("Welches Item\nablegen?"), PSTRING("Deposit which\nitem?"));
+static const u8 str_hint_recharge[] = LANGDEP(PSTRING("Welche Tm\naufladen?"), PSTRING("Recharge which\nTm?"));
+static const u8 str_hint_compost[] = LANGDEP(PSTRING("Welche Beere\nkompostieren?"), PSTRING("Compost which\nberry?"));
+static const u8 str_hint_sell[] = LANGDEP(PSTRING("Welches Item\nverkaufen?"), PSTRING("Sell which\nitem?"));
+static const u8 str_hint_plant_berry[] = LANGDEP(PSTRING("Welche Beere\npflanzen?"), PSTRING("Plant which\nberry?"));
+static const u8 str_hint_equip_bait[] = LANGDEP(PSTRING("Welchen Köder\nausrüsten?"), PSTRING("Equip which\nbait?"));
+static const u8 str_hint_select_rod[] = LANGDEP(PSTRING("Welche Angel\nausrüsten?"), PSTRING("Equip to\nwhich rod?"));
 
-static u8 *bag_context_hints[NUM_BAG_CONTEXTS] = {
+static const u8 *const bag_context_hints[NUM_BAG_CONTEXTS] = {
     [BAG_CONTEXT_PARTY_GIVE] = str_hint_give,
     [BAG_CONTEXT_SELL] = str_hint_sell,
     [BAG_CONTEXT_DEPOSIT] = str_hint_deposit,
@@ -24,7 +24,7 @@ static u8 *bag_context_hints[NUM_BAG_CONTEXTS] = {
     [BAG_CONTEXT_SELECT_ROD_TO_EQUIP_BAIT] = str_hint_select_rod,
 };
 
-u8 *bag_get_context_hint() {
+const u8 *bag_get_context_hint() {
     // DEBUG("Bag context is %d for hint 0x%x\n", fmem.bag_context, bag_context_hints[fmem.bag_context]);
     u8 pocket = bag_get_current_pocket();
     if (pocket == POCKET_TM_HM)
@@ -33,9 +33,9 @@ u8 *bag_get_context_hint() {
         return bag_context_hints[fmem.bag_context];
 }
 
-tbox_font_colormap bag_font_colormap_pocket_hint = {.background = 0, .body = 2, .edge = 1}; 
+const tbox_font_colormap bag_font_colormap_pocket_hint = {.background = 0, .body = 2, .edge = 1}; 
 
-void bag_print_hint(u8 *hint) {
+void bag_print_hint(const u8 *hint) {
     if (bag_get_current_pocket() == POCKET_TM_HM) {
         tbox_fill_rectangle(BAG_TBOX_HINT, 0x11, 0, 0, 9 * 8 + 4, 10 * 8);
         tbox_sync(BAG_TBOX_HINT, TBOX_SYNC_SET);

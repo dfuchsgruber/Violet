@@ -15,11 +15,11 @@
 extern const u8 gfx_cutscene_unown_shrine_lightningTiles[];
 extern const u8 gfx_cutscene_unown_shrine_lightningPal[];
 
-static sprite lightning_sprite = {
+static const sprite lightning_sprite = {
     ATTR0_SHAPE_SQUARE, ATTR1_SIZE_64_64, ATTR2_PRIO(2), 0
 };
 
-static graphic unown_shrine_lightning_graphic[] = {
+static const graphic unown_shrine_lightning_graphic[] = {
     [0] = {.sprite = gfx_cutscene_unown_shrine_lightningTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = LIGHTNING_TAG},
     [1] = {.sprite = gfx_cutscene_unown_shrine_lightningTiles + 1 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = LIGHTNING_TAG},
     [2] = {.sprite = gfx_cutscene_unown_shrine_lightningTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = LIGHTNING_TAG},
@@ -45,11 +45,11 @@ static graphic unown_shrine_lightning_graphic[] = {
 #define LIGHTNING_FRAME_DURATION 4
 #define LIGHTNING_EMPTY 19
 
-static gfx_frame lightning_anim_idle[] = {
+static const gfx_frame lightning_anim_idle[] = {
     {.data = LIGHTNING_EMPTY, .duration = 0}, {.data = GFX_ANIM_END}
 };
 
-static gfx_frame lightning_anim_upper[] = {
+static const gfx_frame lightning_anim_upper[] = {
     {.data = LIGHTNING_EMPTY, .duration = 0},
     {.data = 0 * 2, .duration = LIGHTNING_FRAME_DURATION},
     {.data = LIGHTNING_EMPTY, .duration = LIGHTNING_FRAME_DURATION}, // empty
@@ -71,7 +71,7 @@ static gfx_frame lightning_anim_upper[] = {
     {.data = GFX_ANIM_JUMP, .duration = 0}, 
 };
 
-static gfx_frame lightning_anim_lower[] = {
+static const gfx_frame lightning_anim_lower[] = {
     {.data = LIGHTNING_EMPTY, .duration = 0},
     {.data = 0 * 2 + 1, .duration = LIGHTNING_FRAME_DURATION},
     {.data = LIGHTNING_EMPTY, .duration = LIGHTNING_FRAME_DURATION}, // empty
@@ -94,7 +94,7 @@ static gfx_frame lightning_anim_lower[] = {
 };
 
 
-static gfx_frame lightning_anim_upper_flipped[] = {
+static const gfx_frame lightning_anim_upper_flipped[] = {
     {.data = LIGHTNING_EMPTY, .duration = 0},
     {.data = 0 * 2, .duration = LIGHTNING_FRAME_DURATION | GFX_ANIM_HFLIP},
     {.data = LIGHTNING_EMPTY, .duration = LIGHTNING_FRAME_DURATION | GFX_ANIM_HFLIP}, // empty
@@ -116,7 +116,7 @@ static gfx_frame lightning_anim_upper_flipped[] = {
     {.data = GFX_ANIM_JUMP, .duration = 0}, 
 };
 
-static gfx_frame lightning_anim_lower_flipped[] = {
+static const gfx_frame lightning_anim_lower_flipped[] = {
     {.data = LIGHTNING_EMPTY, .duration = 0},
     {.data = 0 * 2 + 1, .duration = LIGHTNING_FRAME_DURATION | GFX_ANIM_HFLIP},
     {.data = LIGHTNING_EMPTY, .duration = LIGHTNING_FRAME_DURATION | GFX_ANIM_HFLIP}, // empty
@@ -139,7 +139,7 @@ static gfx_frame lightning_anim_lower_flipped[] = {
 };
 
 
-static gfx_frame *lightning_anims[] = {
+static const gfx_frame *const lightning_anims[] = {
     [0] = lightning_anim_idle,
     [2] = lightning_anim_lower,
     [1] = lightning_anim_upper,
@@ -147,7 +147,7 @@ static gfx_frame *lightning_anims[] = {
     [4] = lightning_anim_lower_flipped,
 };
 
-static u8 lightnings_anim_idxs[2][2] = {
+static const u8 lightnings_anim_idxs[2][2] = {
     {1, 2},
     {3, 4},
 };
@@ -164,7 +164,7 @@ static void lightning_sound_callback (oam_object *self) {
     }
 }
 
-static oam_template lightning_template = {
+static const oam_template lightning_template = {
     .tiles_tag = 0xFFFF, .pal_tag = LIGHTNING_TAG,
     .oam = &lightning_sprite, .animation = lightning_anims,
     .graphics = unown_shrine_lightning_graphic, .rotscale = oam_rotscale_anim_table_null,
@@ -173,18 +173,18 @@ static oam_template lightning_template = {
 
 #define NUM_LIGHTNINGS 4
 
-static s16 lightning_coordinates[NUM_LIGHTNINGS][2] = {
+static const s16 lightning_coordinates[NUM_LIGHTNINGS][2] = {
     {40, 64}, 
     {240 - 32, 64},
     {80, 72},
     {240 - 112, 69},
 };
 
-static u16 lightning_delays[NUM_LIGHTNINGS] = {
+static const u16 lightning_delays[NUM_LIGHTNINGS] = {
     0, 82, 104, 40,
 };
 
-static u8 lightning_flipped[NUM_LIGHTNINGS] = {false, true, true, false};
+static const u8 lightning_flipped[NUM_LIGHTNINGS] = {false, true, true, false};
 
 typedef struct {
     u8 state;

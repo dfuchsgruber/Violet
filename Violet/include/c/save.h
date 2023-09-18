@@ -40,8 +40,8 @@ typedef struct  {
     u16 size;
     u8 max_yield;
     u8 min_yield;
-    u8 * description_1;
-    u8 * description_2;
+    const u8 * description_1;
+    const u8 * description_2;
     u8 stage_duration;
     u8 spicy;
     u8 dry;
@@ -252,11 +252,11 @@ typedef struct {
     ev_menu_state_stru *ev_menu_state;
     void *gp_state;
     void *bag2_state;
-    u8 *additional_levelscript_4;
+    const u8 *additional_levelscript_4;
     u16 dmart[32]; //max 32 items per mart
     ae_memory *ae_mem;
-    tileset *current_tileset_1;
-    tileset *current_tileset_2;
+    const tileset *current_tileset_1;
+    const tileset *current_tileset_2;
     u8 dma0_dump[4];
     int gp_stack_size;
     int gp_stack[GP_STACK_SIZE];
@@ -299,7 +299,7 @@ typedef struct {
     u8 trainers_cnt; // How many trainers are approaching
     u8 current_trainer;
     u8 trainers_npc_idxs[2];
-    u8 *trainers_scripts[2];
+    const u8 *trainers_scripts[2];
     trainer_variables trainer_varsB;
     u16 ally_trainer_idx;
     u8 ally_trainer_backsprite_idx;

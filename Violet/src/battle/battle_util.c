@@ -124,14 +124,14 @@ u8 battle_get_unown_battler_that_disables_move(u16 move, u8 attacker) {
     return battler_cnt;
 }
 
-extern u8 bsc_attack_disabled[];
-extern u8 bsc_attack_disabled_by_torment[];
-extern u8 bsc_attack_disabled_by_taunt[];
-extern u8 bsc_attack_disabled_by_imprison[];
-extern u8 bsc_attack_disabled_by_choice_item[];
-extern u8 bsc_attack_has_no_pp[];
-extern u8 bsc_attack_disabled_by_assault_vest[];
-extern u8 bsc_attack_disabled_by_runenband[];
+extern const u8 bsc_attack_disabled[];
+extern const u8 bsc_attack_disabled_by_torment[];
+extern const u8 bsc_attack_disabled_by_taunt[];
+extern const u8 bsc_attack_disabled_by_imprison[];
+extern const u8 bsc_attack_disabled_by_choice_item[];
+extern const u8 bsc_attack_has_no_pp[];
+extern const u8 bsc_attack_disabled_by_assault_vest[];
+extern const u8 bsc_attack_disabled_by_runenband[];
 
 u8 battle_player_set_move_selection_battlescript() {
     u8 hold_effect, hold_effect_param;
@@ -247,26 +247,26 @@ enum {
     ATTACK_CANCELLER_END,
 };
 
-extern u8 bsc_move_used_battler_woke_up[];
-extern u8 bsc_move_used_is_fast_asleep[];
-extern u8 bsc_move_used_is_frozen_solid[];
-extern u8 bsc_move_used_unfroze[];
-extern u8 bsc_move_used_truant_active[];
-extern u8 bsc_move_used_must_recharge[];
-extern u8 bsc_move_used_flinched[];
-extern u8 bsc_move_used_is_disabled[];
-extern u8 bsc_move_used_is_taunted[];
-extern u8 bsc_move_used_is_imprisoned[];
-extern u8 bsc_move_used_snapped_out_of_confusion[];
-extern u8 bsc_move_used_is_confused[];
-extern u8 bsc_move_used_is_paralyzed[];
-extern u8 bsc_move_used_is_immobilized_by_infatuation[];
-extern u8 bsc_move_used_is_in_love[];
-extern u8 bsc_move_used_bide_is_storing_energy[];
-extern u8 bsc_move_used_bide_release_energy[];
-extern u8 bsc_move_used_bide_no_energy_to_release[];
-extern u8 bsc_move_used_unfroze[];
-extern u8 bsc_move_used_disabled_by_runenband[];
+extern const u8 bsc_move_used_battler_woke_up[];
+extern const u8 bsc_move_used_is_fast_asleep[];
+extern const u8 bsc_move_used_is_frozen_solid[];
+extern const u8 bsc_move_used_unfroze[];
+extern const u8 bsc_move_used_truant_active[];
+extern const u8 bsc_move_used_must_recharge[];
+extern const u8 bsc_move_used_flinched[];
+extern const u8 bsc_move_used_is_disabled[];
+extern const u8 bsc_move_used_is_taunted[];
+extern const u8 bsc_move_used_is_imprisoned[];
+extern const u8 bsc_move_used_snapped_out_of_confusion[];
+extern const u8 bsc_move_used_is_confused[];
+extern const u8 bsc_move_used_is_paralyzed[];
+extern const u8 bsc_move_used_is_immobilized_by_infatuation[];
+extern const u8 bsc_move_used_is_in_love[];
+extern const u8 bsc_move_used_bide_is_storing_energy[];
+extern const u8 bsc_move_used_bide_release_energy[];
+extern const u8 bsc_move_used_bide_no_energy_to_release[];
+extern const u8 bsc_move_used_unfroze[];
+extern const u8 bsc_move_used_disabled_by_runenband[];
 
 u8 battle_attack_canceler_try_cancel_by_unable_to_move() {
     u8 effect = 0;

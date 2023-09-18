@@ -38,34 +38,34 @@
 #include "item/item.h"
 #include "data_structures.h"
 
-tbox_font_colormap ev_menu_font_colormap_std_dark = {
+const tbox_font_colormap ev_menu_font_colormap_std_dark = {
     0, 2, 1, 3
 };
 
-tbox_font_colormap ev_menu_font_colormap_std_light = {
+const tbox_font_colormap ev_menu_font_colormap_std_light = {
     0, 1, 2, 3
 };
 
-tbox_font_colormap ev_menu_font_colormap_std_transparent = {
+const tbox_font_colormap ev_menu_font_colormap_std_transparent = {
     1, 2, 1, 1
 };
 
-tbox_font_colormap ev_menu_font_colormap_plus = {
+const tbox_font_colormap ev_menu_font_colormap_plus = {
     0, 1, 6, 3
 };
 
-tbox_font_colormap ev_menu_font_colormap_minus = {
+const tbox_font_colormap ev_menu_font_colormap_minus = {
     0, 1, 4, 3
 };
 
-sprite ev_menu_oam_sprite = {.attr1 = ATTR1_SIZE_64_64};
+const sprite ev_menu_oam_sprite = {.attr1 = ATTR1_SIZE_64_64};
 
-sprite ev_menu_oam_sprite_semi_transparent = {
+const sprite ev_menu_oam_sprite_semi_transparent = {
 		.attr0 = ATTR0_ROTSCALE | ATTR0_MODE_SEMI_TRANSPARENT, .attr1 = ATTR1_SIZE_64_64,
 		.attr2 = ATTR2_PRIO(1)};
 
 
-oam_template ev_menu_oam_template_pokemon = {
+const oam_template ev_menu_oam_template_pokemon = {
     EV_MENU_OAM_POKEPIC_TAG,
 	EV_MENU_OAM_POKEPIC_TAG,
     &ev_menu_oam_sprite,
@@ -75,7 +75,7 @@ oam_template ev_menu_oam_template_pokemon = {
 	oam_null_callback
 };
 
-oam_template ev_menu_oam_template_iv_hexagon = {
+const oam_template ev_menu_oam_template_iv_hexagon = {
 	EV_MENU_OAM_IV_HEXAGON_TAG,
 	EV_MENU_OAM_IV_HEXAGON_TAG,
     &ev_menu_oam_sprite_semi_transparent,
@@ -85,7 +85,7 @@ oam_template ev_menu_oam_template_iv_hexagon = {
 	oam_null_callback
 };
 
-oam_template ev_menu_oam_template_ev_hexagon = {
+const oam_template ev_menu_oam_template_ev_hexagon = {
 	EV_MENU_OAM_EV_HEXAGON_TAG,
 	EV_MENU_OAM_EV_HEXAGON_TAG,
     &ev_menu_oam_sprite_semi_transparent,
@@ -117,7 +117,7 @@ static void ev_menu_load_stat_header() {
 	bool is_egg = pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, 0);
     tbox_flush_set(EV_MENU_TBOX_CURRENT_STAT_HEADER, 0);
 	tbox_tilemap_draw(EV_MENU_TBOX_CURRENT_STAT_HEADER);
-	tbox_font_colormap *stat_name_colormap = &ev_menu_font_colormap_std_light;
+	const tbox_font_colormap *stat_name_colormap = &ev_menu_font_colormap_std_light;
 	strcpy(strbuf, pokemon_get_stat_name(fmem.ev_menu_state->stat_idx));
 	u8 str_stat_name_width = string_get_width(2, strbuf, 0);
 	if (!is_egg) {
@@ -244,7 +244,7 @@ void ev_menu_load_evs_and_ivs() {
 	ev_menu_load_ev_chart();
 }
 
-static u16 stat_coordinates[6][2] = {{34, 0}, {58, 12}, {58, 52}, {32, 64}, {2, 52}, {2, 12}};
+static const u16 stat_coordinates[6][2] = {{34, 0}, {58, 12}, {58, 52}, {32, 64}, {2, 52}, {2, 12}};
 
 static void ev_menu_draw_print_stat_names() {
 	pokemon *p = &player_pokemon[fmem.ev_menu_state->party_idx];
@@ -263,7 +263,7 @@ static void ev_menu_draw_print_stat_names() {
 		stat_decreased = -1;
 	}
 	for (u8 stat = 0; stat < 6; stat++) {
-		tbox_font_colormap *colmap;
+		const tbox_font_colormap *colmap;
 		if (stat == stat_increased)
 			colmap = &ev_menu_font_colormap_plus;
 		else if (stat == stat_decreased) 
@@ -271,7 +271,7 @@ static void ev_menu_draw_print_stat_names() {
 		else
 			colmap = &ev_menu_font_colormap_std_light;
 
-		u8 *str_stat_name = pokemon_stat_names_abbreviated[stat];
+		const u8 *str_stat_name = pokemon_stat_names_abbreviated[stat];
 		tbox_print_string(EV_MENU_TBOX_CHART_STATS, 0,
 				stat_coordinates[stat][0], stat_coordinates[stat][1], 0, 0,
 				colmap, 0, str_stat_name);
@@ -294,7 +294,7 @@ void ev_menu_load_pokemon() {
 	oams[fmem.ev_menu_state->oam_pokepic_idx].flags |= OAM_FLAG_INVISIBLE;
 	memcpy(OAMCHARBASE(fmem.ev_menu_state->oam_pokepic_tile), fmem.ev_menu_state->pokemon_sprite,
 			0x800);
-	palette *pal = pokemon_get_palette(&player_pokemon[fmem.ev_menu_state->party_idx]);
+	const palette *pal = pokemon_get_palette(&player_pokemon[fmem.ev_menu_state->party_idx]);
 	pal_decompress(pal, (u16)(256 + 16 * oam_palette_get_index(EV_MENU_OAM_POKEPIC_TAG)), 32);
     pokemon_get_attribute(p, ATTRIBUTE_NICKNAME, strbuf);
     tbox_flush_set(EV_MENU_TBOX_NAME, 0);
@@ -441,12 +441,12 @@ void ev_menu_callback_idle() {
 }
 
 
-static u8 str_nature_stone[] = LANGDEP(
+static const u8 str_nature_stone[] = LANGDEP(
     PSTRING("BUFFER_1 hat jetzt\ndas Wesen BUFFER_2.PAUSE_UNTIL_PRESS"),
     PSTRING("BUFFER_1\'s nature has\nchanged to BUFFER_2.PAUSE_UNTIL_PRESS")
 );
 
-static u8 str_used_nature_stone[] = LANGDEP(
+static const u8 str_used_nature_stone[] = LANGDEP(
 	PSTRING("BUFFER_2 wird\nbei BUFFER_1 eingesetzt.PAUSE_UNTIL_PRESS"),
 	PSTRING("BUFFER_2 is\nused on BUFFER_1.PAUSE_UNTIL_PRESS")
 );
@@ -504,7 +504,7 @@ static void ev_menu_change_nature_callback() {
 	}
 }
 
-static u8 str_used_null_syrup[] = LANGDEP(
+static const u8 str_used_null_syrup[] = LANGDEP(
 	PSTRING("Die Fleiß-Punkte von\nBUFFER_1 wurden zurückgesetzt.PAUSE_UNTIL_PRESS"),
 	PSTRING("The effort values of is\nBUFFER_1 were reset.PAUSE_UNTIL_PRESS")
 );
@@ -727,13 +727,13 @@ void ev_menu_initialize_clear_effective_ev() {
 	ev_menu_initialize_internal(pokemon_party_menu_current_index, 0, ev_menu_reset_effective_evs_callback, party_menu_continuation_return_to_bag);
 }
 
-bg_config ev_menu_bg_configs[EV_MENU_BG_COUNT] = {
+const bg_config ev_menu_bg_configs[EV_MENU_BG_COUNT] = {
 	{.bg_id = 0, .char_base = 2, .map_base = 31, .priority = 1, .size = 0, .color_mode = 0},
 	{.bg_id = 1, .char_base = 0, .map_base = 30, .priority = 2, .size = 0, .color_mode = 0},
 	{.bg_id = 2, .char_base = 1, .map_base = 29, .priority = 0, .size = 0, .color_mode = 0},
 };
 
-tboxdata ev_menu_tboxes[EV_MENU_TBOX_COUNT + 1] = {
+const tboxdata ev_menu_tboxes[EV_MENU_TBOX_COUNT + 1] = {
 	[EV_MENU_TBOX_NAME] = {.bg_id = 0, .x = 1, .y = 3, .w = 8, .h = 2, .start_tile = 1, .pal = 15},
 	[EV_MENU_TBOX_HEADER] = {.bg_id = 0, .x = 1, .y = 0, .w = 28, .h = 2, .pal = 15,
 			.start_tile = 17},

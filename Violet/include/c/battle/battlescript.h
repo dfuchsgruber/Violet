@@ -15,7 +15,7 @@
 #define BSC_STATUS_FLAG_FAINTED2(battler_idx) (0x10000000 << battler_idx)
 
 extern u32 bsc_status_flags;
-extern u8 *bsc_offset;
+extern const u8 *bsc_offset;
 extern u8 bsc_effect_to_apply;
 
 typedef struct {
@@ -49,7 +49,7 @@ typedef struct {
 } battlescript_global_stru;
 
 typedef struct {
-	u8 *scripts[8];
+	const u8 *scripts[8];
 	u8 size;
 } battlescript_stack_t;
 
@@ -92,13 +92,13 @@ extern battle_scripting_t battle_scripting;
 
 extern u16 bsc_last_used_item; // Used for the BSC_LAST_ITEM buffer
 
-extern u8 *battlescripts_pokeball[0xD]; // Battle-Scripts for using different pokeballs...
-extern u8 *battlescripts_run_by_item[]; // Battle-Scripts for running using different items
-extern u8 *battlescripts_use_item[]; // Battle-Scripts for using different item types
-extern u8 battlescript_apply_status1[]; // Battle-Script that applies a status1 condition (burn, posion, etc.). Uses battle communcitation and the MOVE_EFECT_BYTE
-extern u8 battlescript_attack_failed_no_pp_reduce[]; // Prints the "but if failed" message and doesn't reduce pp, ends the move afterwards
-extern u8 bsc_roar_success_force_out[]; // Forces a pokémon out, making the target select a new switch in target
-extern u8 bsc_roar_sucess_end_battle[]; // Uses roar to end a battle
+extern const u8 *battlescripts_pokeball[0xD]; // Battle-Scripts for using different pokeballs...
+extern const u8 *battlescripts_run_by_item[]; // Battle-Scripts for running using different items
+extern const u8 *battlescripts_use_item[]; // Battle-Scripts for using different item types
+extern const u8 battlescript_apply_status1[]; // Battle-Script that applies a status1 condition (burn, posion, etc.). Uses battle communcitation and the MOVE_EFECT_BYTE
+extern const u8 battlescript_attack_failed_no_pp_reduce[]; // Prints the "but if failed" message and doesn't reduce pp, ends the move afterwards
+extern const u8 bsc_roar_success_force_out[]; // Forces a pokémon out, making the target select a new switch in target
+extern const u8 bsc_roar_sucess_end_battle[]; // Uses roar to end a battle
 /**
  * Loads the graphic for the attack "transform"
  * @param user_index battler index of the user
@@ -112,7 +112,7 @@ void battlescript_transform_load_graphic(u8 user_index, u8 target_index, u8 unko
  * @param str the string to print
  * @param duration the number of frames for the string to be present
  */
-void battle_print_string(u8* str, u16 duration);
+void battle_print_string(const u8* str, u16 duration);
 
 /**
  * Initializes the battle script sequences for attacks
@@ -133,13 +133,13 @@ void battlescript_callstack_push_next_command();
  * Initializes a battle script and interrupts the battle engine meanwhile
  * @param bsc the battle script to initialize
  */
-void battlescript_init_and_interrupt_battle(u8 *bsc);
+void battlescript_init_and_interrupt_battle(const u8 *bsc);
 
 /**
  * Initializes a battlescript. The current battle callback is pushed.
  * @param script the script to run. Scripts should be ended using end2.
  **/
-void battlescript_init_and_push_current_callback(u8 *script);
+void battlescript_init_and_push_current_callback(const u8 *script);
 
 /**
  * Battle script command 0x6 applies the damage modifiers
@@ -162,7 +162,7 @@ void bsc_cmd_x49_attack_done();
  * Pushes a target script as return adress to the battlescript stack.
  * @param script the target script
  */
-void battlescript_callstack_push(u8 *script);
+void battlescript_callstack_push(const u8 *script);
 
 /**
  * Returns a word from the current bsc pointer and increments by 4.

@@ -17,15 +17,15 @@
 #include "constants/attacks.h"
 #include "constants/battle/battle_effects.h"
 
-extern u8 battlescript_handicap_extreme_heat[];
-extern u8 battlescript_handicap_floating_rocks[];
-extern u8 battlescript_handicap_grassy_field[];
-extern u8 battlescript_handicap_terrifying_atmosphere[];
-extern u8 battlescript_handicap_arena_encouragement[];
-extern u8 battlescript_handicap_groudon_magnitude[];
-extern u8 battlescript_handicap_focused_fighter[];
+extern const u8 battlescript_handicap_extreme_heat[];
+extern const u8 battlescript_handicap_floating_rocks[];
+extern const u8 battlescript_handicap_grassy_field[];
+extern const u8 battlescript_handicap_terrifying_atmosphere[];
+extern const u8 battlescript_handicap_arena_encouragement[];
+extern const u8 battlescript_handicap_groudon_magnitude[];
+extern const u8 battlescript_handicap_focused_fighter[];
 
-static u8 *battlescripts_handicap[32] = {
+static const u8 *battlescripts_handicap[32] = {
     [BATTLE_HANDICAP_FLOATING_ROCKS] = battlescript_handicap_floating_rocks,
     [BATTLE_HANDICAP_GRASSY_FIELD] = battlescript_handicap_grassy_field,
     [BATTLE_HANDICAP_ARENA_ENCOURAGEMENT] = battlescript_handicap_arena_encouragement,
@@ -77,9 +77,9 @@ void battle_handicap_clear() {
     fmem.battle_handicaps = 0;
 }
 
-extern u8 battlescript_handicap_extreme_heat_apply[];
-extern u8 battlescript_handicap_grassy_field_apply[];
-extern u8 battlescript_handicap_focused_fighter_apply[];
+extern const u8 battlescript_handicap_extreme_heat_apply[];
+extern const u8 battlescript_handicap_grassy_field_apply[];
+extern const u8 battlescript_handicap_focused_fighter_apply[];
 
 bool battle_handicap_switch_in_effects(u8 battler_idx) {
     if (!(battle_flags & BATTLE_WITH_HANDICAP)) 
@@ -137,7 +137,7 @@ bool battle_handicap_switch_in_effects(u8 battler_idx) {
     return false;
 }
 
-extern u8 battlescript_handicap_floating_rocks_apply[];
+extern const u8 battlescript_handicap_floating_rocks_apply[];
 
 bool battle_handicap_before_attack_events() {
     BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~(CUSTOM_STATUS_FLOATING_ROCKS));
@@ -160,7 +160,7 @@ bool battle_handicap_before_attack_events() {
     return false;
 }
 
-extern u8 battlescript_handicap_arena_encouragement_apply[];
+extern const u8 battlescript_handicap_arena_encouragement_apply[];
 
 bool battle_handicap_attack_done() {
     if (!(battle_flags & BATTLE_WITH_HANDICAP)) 
@@ -189,11 +189,11 @@ bool battle_handicap_attack_done() {
     return false;
 }
 
-static u32 magnitude_p[] = {
+static const u32 magnitude_p[] = {
     5, 10, 20, 30, 20, 10, 5
 };
 
-static u16 groudon_magnitude_magnitude_power[] = {
+static const u16 groudon_magnitude_magnitude_power[] = {
     10, 20, 25, 30, 50, 65, 80
 };
 
@@ -212,7 +212,7 @@ void battle_handicap_groudon_calculate_damage() {
     BSC_BUFFER_NUMBER(bsc_string_buffer0, 2, magnitude);
 }
 
-extern u8 battlescript_handicap_groudon_magnitude_hit[];
+extern const u8 battlescript_handicap_groudon_magnitude_hit[];
 
 bool battle_handicap_end_turn_effects() {
     if (!(battle_flags & BATTLE_WITH_HANDICAP)) 

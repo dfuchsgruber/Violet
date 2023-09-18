@@ -12,7 +12,7 @@
 #include "constants/pokemon_types.h"
 #include "battle/communication.h"
 
-extern u8 bsc_kings_shield_drop[];
+extern const u8 bsc_kings_shield_drop[];
 
 void bsc_command_setprotect_apply_kings_shield(){
     DEBUG("Kings shield tried for battler %d\n", attacking_battler);

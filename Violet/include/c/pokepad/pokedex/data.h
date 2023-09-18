@@ -38,7 +38,7 @@
     pokedex_entry *pokedex_get_data(u16 dex_id);
 
 
-    u16 pokedex_order[POKEMON_CNT];
-    extern pokedex_entry pokedex_entries[POKEDEX_CNT + 1];
+    extern const u16 pokedex_order[POKEMON_CNT];
+    extern const pokedex_entry pokedex_entries[POKEDEX_CNT + 1];
 
 #endif /* INCLUDE_C_POKEPAD_POKEDEX_DATA_H_ */

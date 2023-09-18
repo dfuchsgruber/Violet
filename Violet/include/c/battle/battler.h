@@ -205,7 +205,7 @@ extern u8 battler_positions[4];
 extern u16 battler_last_landed_move[4];
 extern u16 battler_last_hit_by_type[4];
 extern u8 fainted_battler;
-extern u8 *battler_move_selection_battlescripts[4]; // the battle script to execute for move selection (e.g. doing the attack or printing that it can't be selected)
+extern const u8 *battler_move_selection_battlescripts[4]; // the battle script to execute for move selection (e.g. doing the attack or printing that it can't be selected)
 
 #define STAT_CHANGE_MULTIPLIER_DIVIDEND 0
 #define STAT_CHANGE_MULTIPLIER_DIVISOR 1

@@ -18,7 +18,7 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
     u16 held_item = (u16) pokemon_get_attribute(p, ATTRIBUTE_ITEM, 0);
 	DEBUG("Pokemon evolutions[species] @%x\n", pokemon_evolutions[species]);
     if (pokemon_evolutions[species]) {
-        pokemon_evolution *evolutions = pokemon_evolutions[species];
+        const pokemon_evolution *evolutions = pokemon_evolutions[species];
         switch (type) {
         case EVOLUTION_TRIGGER_LEVEL_UP:
         {   //The usual case
@@ -236,7 +236,7 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
 
 bool pokemon_can_evolve (u16 species) {
     if (pokemon_evolutions[species]) {
-        pokemon_evolution *evolutions = pokemon_evolutions[species];
+        const pokemon_evolution *evolutions = pokemon_evolutions[species];
         // Has at least one evolution
         return evolutions[0].method != EVOLUTION_METHOD_NONE;
     }
@@ -246,7 +246,7 @@ bool pokemon_can_evolve (u16 species) {
 u16 pokemon_get_basis_stage (u16 species) {
 	for (u16 i = 0; i < POKEMON_CNT; i++) {
 		if (pokemon_evolutions[i]) {
-	        pokemon_evolution *evolutions = pokemon_evolutions[i];
+	        const pokemon_evolution *evolutions = pokemon_evolutions[i];
 			for (int j = 0; evolutions[j].method != EVOLUTION_METHOD_NONE; j++) {
 				if (evolutions[j].target == species) {
 					return pokemon_get_basis_stage(i);
@@ -265,7 +265,7 @@ static size_t pokemon_get_evolution_item_line_dfs(u16 species, u16 *items, size_
     }
     DEBUG("Evolution item DFS for species %d at depth %d, items %x, max_items %d\n", species, depth, items, max_size);
     size_t cnt = 0; // count how  many items were already added
-    pokemon_evolution *evolutions = pokemon_evolutions[species];
+    const pokemon_evolution *evolutions = pokemon_evolutions[species];
     if (evolutions) {
         for (int j = 0; evolutions[j].method != EVOLUTION_METHOD_NONE && cnt < max_size && j < 20; j++) { // j < 20 is a safety condition, a pokémon should not have more than 20 successors (i.e. mons it evolves into)
             if (evolutions[j].method == EVOLUTION_METHOD_TRADE_HOLD_ITEM || evolutions[j].method == EVOLUTION_METHOD_HOLD_ITEM ||

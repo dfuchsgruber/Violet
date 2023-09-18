@@ -110,7 +110,7 @@ extern "C" {
 
 
 // #define NUM_DUNGEON_LOCATIONS 40
-#define NUM_DUNGEON_LOCATIONS 0
+#define NUM_DUNGEON_LOCATIONS 2
     
     typedef struct{
       u8 bank;
@@ -120,7 +120,7 @@ extern "C" {
       u8 type;
     } dungeon_location;
 
-    dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS];
+    extern const dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS];
 
     /**
      * Gets the index of a dungeon location by a coordinate the player interacted with. If no
@@ -199,7 +199,7 @@ extern "C" {
      * become walls.
      * @param dg2
      */
-    void dungeon2_iterate(u8 *map, u8 *map2, int near_lower_bound, int far_upper_bound, dungeon_generator2 *dg2);
+    void dungeon2_iterate(const u8 *map, u8 *map2, int near_lower_bound, int far_upper_bound, dungeon_generator2 *dg2);
     
     /**
      * Fills the borders of the map with DG2_WALL
@@ -216,7 +216,7 @@ extern "C" {
      * @param map2 Memory for the new map
      * @param dg2
      */
-    void dungeon2_enlarge(u8 *map, u8 *map2, dungeon_generator2 *dg2);
+    void dungeon2_enlarge(const u8 *map, u8 *map2, dungeon_generator2 *dg2);
     
     /**
      * Applies src to dst, i.e. when src[x][y] == type, then dst[x][y] <- type
@@ -225,7 +225,7 @@ extern "C" {
      * @param type the element to apply
      * @param dg2 generator instance
      */
-    void dungeon2_apply(u8 *src, u8 *dst, u8 type, dungeon_generator2 *dg2);
+    void dungeon2_apply(const u8 *src, u8 *dst, u8 type, dungeon_generator2 *dg2);
 
     /**
      * Contracts the walkable map by counting neighbours in sqrt(3) neighbourhood
@@ -236,7 +236,7 @@ extern "C" {
      * @param map2
      * @param dg2
      */
-    void dungeon2_contract(u8 *map, u8 *map2, dungeon_generator2 *dg2);
+    void dungeon2_contract(const u8 *map, u8 *map2, dungeon_generator2 *dg2);
     
     /**
      * Scan line flood fill for a random space position
@@ -422,7 +422,7 @@ extern "C" {
      * @param src_size how many elements are in src
      * @param dg2 dungeon generator state
      */
-    void dungeon2_pick_wild_pokemon(u16 *dst, size_t number, u16 *src, size_t src_size, dungeon_generator2 *dg2);
+    void dungeon2_pick_wild_pokemon(u16 *dst, size_t number, const u16 *src, size_t src_size, dungeon_generator2 *dg2);
 
     /**
      * Gets the boundaries for wild pokemon levels based on a mean and standard deviation
@@ -446,11 +446,11 @@ extern "C" {
      */
     void dungeon_special_item_by_overworld_idx();
 
-    int dg2_cross_neighbourhood[4][2];
+    extern const int dg2_cross_neighbourhood[4][2];
 
-    map_connection_header_t dungeon2_connections;
+    extern const map_connection_header_t dungeon2_connections;
 
-    levelscript_header_t dungeon2_lscr[1];
+    extern const levelscript_header_t dungeon2_lscr[1];
 
     /**
      * Initializes the trainer party and name of a dungeon trainer
@@ -470,7 +470,8 @@ extern "C" {
      * @param dg2 the dungeon generator
      * @return true if such a rectangle was found
      **/
-    bool dungeon2_find_empty_space(int *space_x, int *space_y, u8 *center_node, int nodes[][2], int width, int height, u8 *map, dungeon_generator2 *dg2);
+    bool dungeon2_find_empty_space(int *space_x, int *space_y, u8 *center_node, int nodes[][2], int width, int height, const 
+        u8 *map, dungeon_generator2 *dg2);
 
     /**
      * Scans all node for being a suitable center for a pattern and picks one.
@@ -483,7 +484,8 @@ extern "C" {
      * @param dg2 the dungeon generator
      * @return true if such a rectangle was found
      **/
-    bool dungeon2_find_empty_space_for_pattern(int *space_x, int *space_y, u8 *center_node, int nodes[][2], map_footer_t *pattern, u8 *map, dungeon_generator2 *dg2);
+    bool dungeon2_find_empty_space_for_pattern(int *space_x, int *space_y, u8 *center_node, int nodes[][2], 
+        const map_footer_t *pattern, const u8 *map, dungeon_generator2 *dg2);
 
     /**
      * Places a pattern (mapfooter) centered at a position
@@ -492,7 +494,8 @@ extern "C" {
      * @param pattern the pattern to place
      * @param dg2 the dungeon generator state
      **/
-    void dungeon2_place_pattern(int pattern_x, int pattern_y, map_footer_t *pattern, dungeon_generator2 *dg2);
+    void dungeon2_place_pattern(int pattern_x, int pattern_y, 
+        const map_footer_t *pattern, dungeon_generator2 *dg2);
 
     /**
      * Fills a rectangle on a map

@@ -14,7 +14,7 @@
 #include "map/header.h"
 #include "constants/map_connections.h"
 
-u16 roamer_species[NUM_ROAMERS] = {
+const u16 roamer_species[NUM_ROAMERS] = {
     [ROAMER_ARKTOS] = POKEMON_ARKTOS,
     [ROAMER_ZAPDOS] = POKEMON_ZAPDOS,
     [ROAMER_LAVADOS] = POKEMON_LAVADOS
@@ -113,7 +113,7 @@ void roamer_move_all() {
             } else {
                 u8 bank = cmem.roamer_locations[i].bank;
                 u8 map_idx = cmem.roamer_locations[i].map_idx;
-                map_header_t *header = get_mapheader(bank, map_idx);
+                const map_header_t *header = get_mapheader(bank, map_idx);
                 roamer_history_entry_t adjacent_maps[4];
                 int num_adjacent_maps = 0;
                 for (u32 j = 0; j < header->connections->count; j++) {

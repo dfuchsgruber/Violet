@@ -37,7 +37,7 @@ extern "C" {
         u8 multiplicator;
     } type_effectiveness;
 
-    extern type_effectiveness type_effectivenesses[];
+    extern const type_effectiveness type_effectivenesses[];
 
     /**
      * Multiplies the overall damage with a multiplier and updates the attack result, i.e. if a move was effective.
@@ -46,14 +46,14 @@ extern "C" {
      */
     void battle_add_damage_multiplier_and_update_attack_result(u8 multiplier);
     
-    attack attacks[ATTACK_CNT];
-    u8 attack_names[ATTACK_CNT][13];
-    u8 *attack_descriptions[ATTACK_CNT - 1];
+    extern const attack attacks[ATTACK_CNT];
+    extern const u8 attack_names[ATTACK_CNT][13];
+    extern const u8 *const attack_descriptions[ATTACK_CNT - 1];
 
     /**
      * Battle scripts for each attack effect.
      */
-    extern u8 *attack_effects[];
+    extern const u8 *const attack_effects[];
 
     /**
      * Checks if an attack is a hidden machine

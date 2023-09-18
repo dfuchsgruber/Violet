@@ -15,10 +15,10 @@ static void battle_animation_oam_callback_ancient_power_rock_arbitrary_position(
     battle_animation_set_continuation(self, battle_animation_oam_delete);
 }
 
-extern sprite battle_animation_sprite_ancient_power;
-extern gfx_frame *battle_animation_gfx_animations_ancient_power[];
+extern const sprite battle_animation_sprite_ancient_power;
+extern const gfx_frame *battle_animation_gfx_animations_ancient_power[];
 
-oam_template battle_animation_oam_template_ancient_power_rock_arbitrary_position = {
+const oam_template battle_animation_oam_template_ancient_power_rock_arbitrary_position = {
     .tiles_tag = 0x274A, .pal_tag = 0x274A, .oam = &battle_animation_sprite_ancient_power,
     .animation = battle_animation_gfx_animations_ancient_power, .graphics = NULL,
     .rotscale = oam_rotscale_anim_table_null, .callback = battle_animation_oam_callback_ancient_power_rock_arbitrary_position,
@@ -35,9 +35,9 @@ static void battle_animation_oam_callback_root_arbitrary_position(oam_object *se
     self->callback = battle_animation_oam_callback_roots_flicker_out;
 }
 
-extern gfx_frame *battle_animation_gfx_animations_roots[];
+extern const gfx_frame *battle_animation_gfx_animations_roots[];
 
-oam_template battle_animation_oam_template_root_arbitrary_position = {
+const oam_template battle_animation_oam_template_root_arbitrary_position = {
     .tiles_tag = 0x27EF, .pal_tag = 0x27EF, .oam = &battle_animation_sprite_ancient_power,
     .animation = battle_animation_gfx_animations_roots, .graphics = NULL,
     .rotscale = oam_rotscale_anim_table_null, .callback = battle_animation_oam_callback_root_arbitrary_position,

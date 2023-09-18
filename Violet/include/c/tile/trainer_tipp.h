@@ -11,11 +11,11 @@
 
 #define TRAINER_TIPP_RELOAD 50
 
-extern u8 script_trainer_tipp_fp_menu[];
-extern u8 script_trainer_tipp_wondertrade[];
-extern u8 script_trainer_tipp_pokeradar[];
-extern u8 script_trainer_tipp_habitat[];
-extern u8 script_trainer_tipp_dns[];
-extern u8 script_trainer_tipp_cloud[];
+extern const u8 script_trainer_tipp_fp_menu[];
+extern const u8 script_trainer_tipp_wondertrade[];
+extern const u8 script_trainer_tipp_pokeradar[];
+extern const u8 script_trainer_tipp_habitat[];
+extern const u8 script_trainer_tipp_dns[];
+extern const u8 script_trainer_tipp_cloud[];
 
 #endif /* INCLUDE_C_TILE_TRAINER_TIPP_H_ */

@@ -20,7 +20,7 @@ typedef struct wild_pokemon_habitat {
     u8 field_1;
     u8 field_2;
     u8 field_3;
-    wild_pokemon_entry *data;
+    const wild_pokemon_entry *data;
 } wild_pokemon_habitat;
 
 typedef struct {
@@ -28,10 +28,10 @@ typedef struct {
     u8 map;
     u8 field_2;
     u8 field_3;
-    wild_pokemon_habitat *grass;
-    wild_pokemon_habitat *water;
-    wild_pokemon_habitat *other;
-    wild_pokemon_habitat *rod;
+    const wild_pokemon_habitat *grass;
+    const wild_pokemon_habitat *water;
+    const wild_pokemon_habitat *other;
+    const wild_pokemon_habitat *rod;
 
 } wild_pokemon_data;
 
@@ -47,22 +47,22 @@ typedef struct {
  * Returns a pointer to the NUM_UNOWN_LETTERS_PER_MAP letters that currently can appear on the current map.
  * @return pointer to NUM_UNOWN_LETTERS_PER_MAP chars representing the letters or NULL
  **/
-u8 *wild_pokemon_get_current_unown_letters();
+const u8 *wild_pokemon_get_current_unown_letters();
 
 /**
  * Returns a pointer to the NUM_UNOWN_LETTERS_PER_MAP letters that currently can appear on the map specified by
  * a bank in variable 0x8005 and a map_idx in variable 0x8006.
  * @return pointer to NUM_UNOWN_LETTERS_PER_MAP chars representing the letters or NULL
  **/
-u8 *wild_pokemon_get_unown_letters_of_header(u8 bank, u8 map_idx);
+const u8 *wild_pokemon_get_unown_letters_of_header(u8 bank, u8 map_idx);
 
 #define UNOWN_LETTER(char) (char - 'A')
 #define UNOWN_LETTER_EXCLAMATION_MARK 26
 #define UNOWN_LETTER_QUESTION_MARK 27
 
-u8 wild_pokemon_disabled;
+extern u8 wild_pokemon_disabled;
 
-extern wild_pokemon_data wild_pokemon[];
+extern const wild_pokemon_data wild_pokemon[];
 
 /**
  * Starts an already initialized wildbattle
@@ -76,7 +76,7 @@ void wildbattle_start();
  * @param consider_repel if repel should be considered when generating a battle
  * @return whether the initialization, i.e. the generation of a pokemon was successful
  */
-bool wildbattle_initialize_by_habitat(wild_pokemon_habitat *habitat, int type,
+bool wildbattle_initialize_by_habitat(const wild_pokemon_habitat *habitat, int type,
 		bool consider_repel);
 
 /**
@@ -89,7 +89,7 @@ void wild_pokemon_new(u16 species, u8 level, int icognoito_letter);
 /**
  * Gets the current wild_pokemon_data header or NULL if no data is availible
  */
-wild_pokemon_data *map_wildbattle_get_header();
+const wild_pokemon_data *map_wildbattle_get_header();
 
 u16 map_wild_pokemon_get_current_table_id(); //returns 0xFFFF if none matches
 
@@ -97,7 +97,7 @@ u16 map_wild_pokemon_get_current_table_id(); //returns 0xFFFF if none matches
  * Returns the wild pokemon data of the current map
  * @return pointer to the wild pokemon data
  */
-wild_pokemon_data *map_wild_pokemon_get_current();
+const wild_pokemon_data *map_wild_pokemon_get_current();
 
 /**
  * Checks if a wild pokemon appears by a frequency between [0;255]
@@ -119,7 +119,7 @@ void wildbattle_increase_chance(u8 frequency);
  * @paran size total size of the pdf
  * @return random index according to pdf
  */
-int wildbattle_sample_from_pdf(u8 *pdf, int size);
+int wildbattle_sample_from_pdf(const u8 *pdf, int size);
 
 /**
  * Checks if the wild pokemon is prevented by repel
@@ -133,7 +133,7 @@ bool wildbattle_is_allowed_by_repel(u8 level);
  * @param entry the pokemon to sample
  * @return the level
  */
-u8 wildbattle_sample_level(wild_pokemon_entry *entry);
+u8 wildbattle_sample_level(const wild_pokemon_entry *entry);
 
 /**
  * Samples an index in the rod table to be encountered.
@@ -161,16 +161,16 @@ bool trainerschool_wildbattle_initialize_secondary_starter();
  * in percent. (Encounters are actually hardwired with these values)
  */
 
-u8 wild_pokemon_grass_pdf[WILD_POKEMON_NUM_ENTRIES_GRASS];
+extern const u8 wild_pokemon_grass_pdf[WILD_POKEMON_NUM_ENTRIES_GRASS];
 
-u8 wild_pokemon_water_pdf[WILD_POKEMON_NUM_ENTRIES_WATER];
+extern const u8 wild_pokemon_water_pdf[WILD_POKEMON_NUM_ENTRIES_WATER];
 
-u8 wild_pokemon_rod_pdf[WILD_POKEMON_NUM_ENTRIES_ROD];
+extern const u8 wild_pokemon_rod_pdf[WILD_POKEMON_NUM_ENTRIES_ROD];
 
-u8 wild_pokemon_good_rod_pdf[WILD_POKEMON_NUM_ENTRIES_GOOD_ROD];
+extern const u8 wild_pokemon_good_rod_pdf[WILD_POKEMON_NUM_ENTRIES_GOOD_ROD];
 
-u8 wild_pokemon_super_rod_pdf[WILD_POKEMON_NUM_ENTRIES_SUPER_ROD];
+extern const u8 wild_pokemon_super_rod_pdf[WILD_POKEMON_NUM_ENTRIES_SUPER_ROD];
 
-u8 wild_pokemon_other_pdf[WILD_POKEMON_NUM_ENTRIES_OTHER];
+extern const u8 wild_pokemon_other_pdf[WILD_POKEMON_NUM_ENTRIES_OTHER];
 
 #endif /* INCLUDE_C_MAP_WILD_POKEMON_H_ */

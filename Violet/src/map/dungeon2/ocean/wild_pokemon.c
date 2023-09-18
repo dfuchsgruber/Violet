@@ -20,7 +20,7 @@
 #include "vars.h"
 #include "pokemon/virtual.h"
 
-u16 dungeon_ocean_wild_pokemon_water_common[] = {
+const u16 dungeon_ocean_wild_pokemon_water_common[] = {
 	POKEMON_TENTACHA,
 	POKEMON_JUROB,
 	POKEMON_QUABBEL,
@@ -32,7 +32,7 @@ u16 dungeon_ocean_wild_pokemon_water_common[] = {
 	0xFFFF
 };
 
-u16 dungeon_ocean_wild_pokemon_water_rare[] = {
+const u16 dungeon_ocean_wild_pokemon_water_rare[] = {
 	POKEMON_SEEJONG,
 	POKEMON_PELIPPER,
 	POKEMON_ENTORON,
@@ -43,7 +43,7 @@ u16 dungeon_ocean_wild_pokemon_water_rare[] = {
 	0xFFFF
 };
 
-u16 dungeon_ocean_wild_pokemon_water_super_rare[] = {
+const u16 dungeon_ocean_wild_pokemon_water_super_rare[] = {
 	POKEMON_GARADOS,
 	POKEMON_SEEMON,
 	POKEMON_OCTILLERY,
@@ -56,7 +56,7 @@ u16 dungeon_ocean_wild_pokemon_water_super_rare[] = {
 	0xFFFF
 };
 
-u16 dungeon_ocean_wild_pokemon_rod[] = {
+const u16 dungeon_ocean_wild_pokemon_rod[] = {
 	POKEMON_KARPADOR,
 	POKEMON_TENTACHA,
 	POKEMON_MUSCHAS,
@@ -65,7 +65,7 @@ u16 dungeon_ocean_wild_pokemon_rod[] = {
 	0xFFFF
 };
 
-u16 dungeon_ocean_wild_pokemon_good_rod[] = {
+const u16 dungeon_ocean_wild_pokemon_good_rod[] = {
 	POKEMON_SEEPER,
 	POKEMON_PERLU,
 	POKEMON_REMORAID,
@@ -73,7 +73,7 @@ u16 dungeon_ocean_wild_pokemon_good_rod[] = {
 	0xFFFF
 };
 
-u16 dungeon_ocean_wild_pokemon_super_rod[] = {
+const u16 dungeon_ocean_wild_pokemon_super_rod[] = {
 	POKEMON_TOHAIDO,
 	POKEMON_RELICANTH,
 	POKEMON_KREBUTACK,

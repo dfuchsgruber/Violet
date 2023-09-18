@@ -8,15 +8,15 @@
 #include "flags.h"
 #include "debug.h"
 
-extern u8 gfx_ow_bbshipPal[];
+extern const u8 gfx_ow_bbshipPal[];
 
 #define OAM_TAG_BB_SHIP 0x6666
 
-static palette palette_bb_ship = {
+static const palette palette_bb_ship = {
     .pal = gfx_ow_bbshipPal, .tag = OAM_TAG_BB_SHIP,
 };
 
-static sprite final_oam_bb_ship = {
+static const sprite final_oam_bb_ship = {
     .attr0 = ATTR0_SHAPE_HORIZONTAL, .attr1 = ATTR1_SIZE_64_32, .attr2 = ATTR2_PRIO(2),
 };
 
@@ -41,20 +41,20 @@ static void oam_callback_bb_ship(oam_object *self) {
     }
 }
 
-static oam_template template_bb_ship = {
+static const oam_template template_bb_ship = {
     .tiles_tag = OAM_TAG_BB_SHIP, .pal_tag = OAM_TAG_BB_SHIP, .oam = &final_oam_bb_ship,
     .animation = oam_gfx_anim_table_null, .rotscale = oam_rotscale_anim_table_null, 
     .callback = oam_callback_bb_ship,
 };
 
-static subsprite subsprites_bb_ship[4] = {
+static const subsprite subsprites_bb_ship[4] = {
     {.x = -64, .y = -32, .shape = 1, .size = 3, .tile_offset = 0 * (64 / 8) * (32 / 8 ), .priority = 2,},
     {.x = 0, .y = -32, .shape = 1, .size = 3, .tile_offset = 1 * (64 / 8) * (32 / 8 ), .priority = 2,},
     {.x = -64, .y = 0, .shape = 1, .size = 3, .tile_offset = 2 * (64 / 8) * (32 / 8 ), .priority = 3,},
     {.x = 0, .y = 0, .shape = 1, .size = 3, .tile_offset = 3 * (64 / 8) * (32 / 8 ), .priority = 3,},
 };
 
-static subsprite_table subsprite_table_bb_ship = {
+static const subsprite_table subsprite_table_bb_ship = {
     .num_subsprites = ARRAY_COUNT(subsprites_bb_ship), .subsprites = subsprites_bb_ship,
 };
 

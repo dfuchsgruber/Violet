@@ -15,7 +15,7 @@
 #include "constants/wild_pokemon_densities.h"
 #include "data/wild_pokemon.h"
 
-extern u8 ow_script_trainerschool_wildbattle[];
+extern const u8 ow_script_trainerschool_wildbattle[];
 
 u16 map_wild_pokemon_get_current_table_id(){
 		if (!wild_pokemon_get_current_unown_letters() || checkflag(FLAG_UNOWN_ENABLED)) {
@@ -28,7 +28,7 @@ u16 map_wild_pokemon_get_current_table_id(){
     return 0xFFFF;
 }
 
-wild_pokemon_data *map_wild_pokemon_get_current() {
+const wild_pokemon_data *map_wild_pokemon_get_current() {
   if(dungeon_get_type() && save1->bank == DG2_BANK && save1->map == DG2_MAP) {
     return &(fmem.dwild_pokemon);
   } else {
@@ -39,7 +39,7 @@ wild_pokemon_data *map_wild_pokemon_get_current() {
 }
 
 u8 map_wildbattle_init_seed(u32 triggers_wildbattle) {
-  wild_pokemon_data *header = map_wild_pokemon_get_current();
+  const wild_pokemon_data *header = map_wild_pokemon_get_current();
   u8 frequency;
   switch(triggers_wildbattle) {
     case TRIGGERS_WILDBATTLE_GRASS:
@@ -63,10 +63,10 @@ int map_wildbattle_init(bdata current, u16 behaviour_previous_tile) {
   if(wild_pokemon_disabled) return 0;
   if (*var_access(TRAINERSCHOOL_PROGRESS) <= 5) return 0; // Can not encounter until >= 6
 	if (!checkflag(POKERADAR_POKEMON_SPAWNED)) return 0; // Can not encounter while the radar has spawned a pokémon.
-  wild_pokemon_data *wild_pokemon_header = map_wild_pokemon_get_current();
+  const wild_pokemon_data *wild_pokemon_header = map_wild_pokemon_get_current();
   u8 pdf_type;
   u32 triggers_wildbattle = block_get_field(current, BDATA_TRIGGERS_WILDBATTLE);
-  wild_pokemon_habitat *habitat = NULL;
+  const wild_pokemon_habitat *habitat = NULL;
   switch(triggers_wildbattle) {
     case TRIGGERS_WILDBATTLE_GRASS: {
       habitat = wild_pokemon_header->grass;
@@ -114,7 +114,7 @@ int map_wildbattle_init(bdata current, u16 behaviour_previous_tile) {
   return 1;
 }
 
-bool wildbattle_initialize_by_habitat(wild_pokemon_habitat *habitat, int pdf_type,
+bool wildbattle_initialize_by_habitat(const wild_pokemon_habitat *habitat, int pdf_type,
 		bool consider_repel) {
 	int idx = -1;
 	switch(pdf_type) {
@@ -156,7 +156,7 @@ void wild_pokemon_new(u16 species, u8 level, int unown_letter_idx) {
 		pokemon_new(opponent_pokemon, species, level, POKEMON_NEW_RANDOM_IVS, true, p, false, 0);
 }
 
-int wildbattle_sample_from_pdf(u8 *pdf, int size) {
+int wildbattle_sample_from_pdf(const u8 *pdf, int size) {
 	int p = rnd16() % 100;
 	for (int i = 0; i < size; i++) {
 		if (p < pdf[i]) return i;
@@ -183,14 +183,14 @@ int wildbattle_sample_from_rod_pdf (u8 rod_type) {
 	return wildbattle_sample_from_pdf(pdf, size);
 }
 
-u8 wild_pokemon_grass_pdf[12] = { 20, 20, 10, 10, 10, 10, 5, 5, 4, 4, 1, 1 };
+const u8 wild_pokemon_grass_pdf[12] = { 20, 20, 10, 10, 10, 10, 5, 5, 4, 4, 1, 1 };
 
-u8 wild_pokemon_water_pdf[5] = { 35, 25, 20, 15, 5};
+const u8 wild_pokemon_water_pdf[5] = { 35, 25, 20, 15, 5};
 
-u8 wild_pokemon_rod_pdf[2] = { 70, 30 };
+const u8 wild_pokemon_rod_pdf[2] = { 70, 30 };
 
-u8 wild_pokemon_good_rod_pdf[3] = { 60, 20, 20 };
+const u8 wild_pokemon_good_rod_pdf[3] = { 60, 20, 20 };
 
-u8 wild_pokemon_super_rod_pdf[5] = { 40, 40, 15, 4, 1 };
+const u8 wild_pokemon_super_rod_pdf[5] = { 40, 40, 15, 4, 1 };
 
-u8 wild_pokemon_other_pdf[5] = { 40, 20, 20, 10, 10 };
+const u8 wild_pokemon_other_pdf[5] = { 40, 20, 20, 10, 10 };

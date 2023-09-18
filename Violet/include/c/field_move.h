@@ -13,14 +13,14 @@
 #include "pokemon/virtual.h"
 #include "constants/field_moves.h"
 
-u16 field_moves[NUM_FIELD_MOVES + 1];
+extern const u16 field_moves[NUM_FIELD_MOVES + 1];
 
 typedef struct {
     bool (*function)();
     int failure_message_idx;
 } field_move_t;
 
-void (*field_move_overworld_continuation)();
+extern void (*field_move_overworld_continuation)();
 
 /**
 * Tries to initialize the field move flash.
@@ -123,35 +123,35 @@ void field_move_surfer_print_error();
  * @param the pokemon executing the field move
  * @param index the field move index
  */
-void field_move_load_buffers(pokemon *pokemon, u8 index);
+void field_move_load_buffers(const pokemon *pokemon, u8 index);
 
 /**
  * Contiuation for flash in the overworld.
  **/
 void field_move_flash_overworld();
 
-extern u8 ow_script_dungeon_enter_field[];
-extern u8 ow_script_execute_rock_climb[];
-extern u8 ow_script_field_move_golem_regirock[];
+extern const u8 ow_script_dungeon_enter_field[];
+extern const u8 ow_script_execute_rock_climb[];
+extern const u8 ow_script_field_move_golem_regirock[];
 
-extern u8 str_field_move_description_flash[];
-extern u8 str_field_move_description_cut[];
-extern u8 str_field_move_description_fly[];
-extern u8 str_field_move_description_strength[];
-extern u8 str_field_move_description_surf[];
-extern u8 str_field_move_description_rock_smash[];
-extern u8 str_field_move_description_waterfall[];
-extern u8 str_field_move_description_rock_climb[];
-extern u8 str_field_move_description_teleport[];
-extern u8 str_field_move_description_dig[];
-extern u8 str_field_move_description_milk_drink[];
-extern u8 str_field_move_description_softboiled[];
-extern u8 str_field_move_description_sweet_scent[];
-extern u8 str_field_move_description_secret_power[];
+extern const u8 str_field_move_description_flash[];
+extern const u8 str_field_move_description_cut[];
+extern const u8 str_field_move_description_fly[];
+extern const u8 str_field_move_description_strength[];
+extern const u8 str_field_move_description_surf[];
+extern const u8 str_field_move_description_rock_smash[];
+extern const u8 str_field_move_description_waterfall[];
+extern const u8 str_field_move_description_rock_climb[];
+extern const u8 str_field_move_description_teleport[];
+extern const u8 str_field_move_description_dig[];
+extern const u8 str_field_move_description_milk_drink[];
+extern const u8 str_field_move_description_softboiled[];
+extern const u8 str_field_move_description_sweet_scent[];
+extern const u8 str_field_move_description_secret_power[];
 
-extern u8 str_field_move_usable_with_new_badge[];
-extern u8 str_field_move_return_to_healing_place[];
-extern u8 str_field_move_return_dig[];
+extern const u8 str_field_move_usable_with_new_badge[];
+extern const u8 str_field_move_return_to_healing_place[];
+extern const u8 str_field_move_return_dig[];
 
 #endif	/* FIELDMOVES_H */
 

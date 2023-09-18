@@ -37,7 +37,7 @@ void pokedex_habitats_add(u8 bank, u8 map_idx, pokedex_habitat_pair *dst, int *s
     }
 }
 
-static u8 pokdex_map_type_to_habitat_map_type[] = {
+static const u8 pokdex_map_type_to_habitat_map_type[] = {
     [MAP_TYPE_STD] = HABITAT_OUTSIDE,
     [MAP_TYPE_VILLAGE] = HABITAT_OUTSIDE,
     [MAP_TYPE_CITY] = HABITAT_OUTSIDE,

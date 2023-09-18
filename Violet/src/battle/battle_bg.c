@@ -18,7 +18,7 @@
 #include "map/tileset.h"
 #include "debug.h"  
  
-battle_bg battle_bgs[256] = {
+const battle_bg battle_bgs[256] = {
     // Battle street
     {
         gfx_battle_bg_streetTiles,
@@ -366,7 +366,7 @@ void bsc_cmd_xEB_set_type_to_terrain() {
 	}
 }
 
-u16 terrain_moves[] = {
+const u16 terrain_moves[] = {
     ATTACK_STERNSCHAUER,
     ATTACK_STACHELSPORE,
     ATTACK_STEINHAGEL,
@@ -409,11 +409,12 @@ void bsc_cmd_xCC_set_terrain_based_move(){
 	battle_flags &= (u32)(~BATTLE_ROAMER);
     active_attack = terrain_moves[battle_bg_get_id()];
 	defending_battler = attack_get_target_of_active_battler(active_attack, false);
-	u8 *attack_script = attack_effects[attacks[active_attack].effect];
+	const u8 *attack_script = attack_effects[attacks[active_attack].effect];
 	battlescript_callstack_push(attack_script);
 	bsc_offset++;
 }
-battle_anim_bg battle_anim_bgs[] = {
+
+const battle_anim_bg battle_anim_bgs[] = {
         {(void*)0x8d1c9bc, (void*)0x8d1cfb4, (void*)0x8d1cfd4}, //0x0
 	{(void*)0x8d1c9bc, (void*)0x8d1cfb4, (void*)0x8d1cfd4}, //0x1
 	{(void*)0x8e7bf7c, (void*)0x8e7cc44, (void*)0x8e7cc60}, //0x2

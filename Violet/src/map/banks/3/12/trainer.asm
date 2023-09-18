@@ -1,7 +1,6 @@
 .include "overworld_script.s"
 .include "callstds.s"
 
-.global ow_script_route_11_trainer_0
 .global ow_script_route_11_trainer_1
 .global ow_script_route_11_trainer_2
 .global ow_script_route_11_trainer_3
@@ -12,11 +11,6 @@
 .global ow_script_route_11_trainer_8
 .global ow_script_route_12_trainer_couple
 
-ow_script_route_11_trainer_0:
-    trainerbattlestd 0 0xe1 0 str_trainer0_challange str_trainer0_defeat
-    loadpointer 0 str_trainer0_defeat
-    callstd MSG_FACE
-    end
 ow_script_route_11_trainer_1:
     trainerbattlestd 0 0xe2 0 str_trainer1_challange str_trainer1_defeat
     loadpointer 0 str_trainer1_defeat

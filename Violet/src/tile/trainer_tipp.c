@@ -23,7 +23,7 @@ bool trigger_trainer_tipp(){
  * 
  * @return A new Trainer-Tipp Script if one is possible 
  */
-u8 *get_trainer_tipp(){
+const u8 *get_trainer_tipp(){
     if(!checkflag(TRAINER_TIPP_DNS)){
         if(!trigger_trainer_tipp()) return NULL;
         setflag(TRAINER_TIPP_DNS);

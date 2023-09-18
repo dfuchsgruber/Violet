@@ -32,10 +32,10 @@
         u8 cursor;
     } wondertrade_memory;
 
-    extern u8 str_wondertrade_not_possible_script[];
-    extern u8 script_wondertrade_failure[];
-    extern u8 str_wondertrade_name0[];
-    extern u8 *wondertrade_ot_names[];
+    extern const u8 str_wondertrade_not_possible_script[];
+    extern const u8 script_wondertrade_failure[];
+    extern const u8 str_wondertrade_name0[];
+    extern const u8 *wondertrade_ot_names[];
 
     /**
      * Callback responsible for scrolling the background of the wondertrade ui

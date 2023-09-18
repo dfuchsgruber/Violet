@@ -13,7 +13,7 @@ void anim_engine_task_nullsub(anim_engine_task *root) {
 
 /** Root node for the anim engine
  */
-anim_engine_task anim_engine_task_root = {
+const anim_engine_task anim_engine_task_root = {
     -1,
     0,
     NULL,
