@@ -51,5 +51,6 @@
         "*.ipynb": "jupyter-notebook"
     },
     "editor.tabCompletion": "on",
-    "diffEditor.codeLens": true
+    "diffEditor.codeLens": true,
+    "cmake.configureOnOpen": false
 }

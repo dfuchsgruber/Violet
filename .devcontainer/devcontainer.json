@@ -1,5 +1,5 @@
 {
-	"name": "Violet-broken",
+	"name": "Violet",
 	"dockerComposeFile": [
 		"../docker-compose.yml",
 		"docker-compose.yml"
