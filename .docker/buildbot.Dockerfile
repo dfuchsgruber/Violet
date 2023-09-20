@@ -67,10 +67,10 @@ RUN \
         cd $directory && \
         unset directory
 RUN \
-        git clone https://github.com/Kingcom/armips.git && \
+        git clone https://github.com/dfuchsgruber/armips.git && \
         directory=$(pwd) && \
         cd armips && \
-        git checkout 4f414f39aa3aaa54dd83e04b0c5f9e246d4837b4 && \
+        git checkout 7cbf7bfb78c1c25b47270cee85370d82a7849208 && \
         git submodule update --init --recursive && \
         mkdir build && cd build && \
         cmake -DCMAKE_BUILD_TYPE=Release .. && \
