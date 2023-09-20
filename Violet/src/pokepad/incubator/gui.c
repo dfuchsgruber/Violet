@@ -64,7 +64,7 @@ const gfx_frame gfx_animation_incubator_egg_icon[] = {
     {.data = GFX_ANIM_JUMP, .duration = 0}
 };
 
-const gfx_frame *gfx_animation_table_incubator_egg_icon[] = {
+const gfx_frame *const gfx_animation_table_incubator_egg_icon[] = {
     gfx_animation_incubator_egg_icon
 };
 
@@ -72,7 +72,7 @@ const gfx_frame gfx_animation_incubator_selection_right[] = {
     {.data = 32, .duration = 0}, {.data = GFX_ANIM_END}
 };
 
-const gfx_frame *gfx_animation_table_incubator_selection_right[] = {
+const gfx_frame *const gfx_animation_table_incubator_selection_right[] = {
     gfx_animation_incubator_selection_right
 };
 

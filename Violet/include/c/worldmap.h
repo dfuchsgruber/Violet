@@ -69,7 +69,7 @@ extern "C" {
     // Associates map namespaces with healing place idxs
     extern const flight_position_association_t flight_position_associations[MAP_NAMESPACE_NONE - MAP_AMONIA];
 
-    extern const int *worldmap_tilemaps[4];
+    extern const int *const worldmap_tilemaps[4];
     extern const u8 *namespace_worldmap_associations;
     extern const unsigned short gfx_worldmapTiles[];
     extern const unsigned short gfx_worldmapMap[];

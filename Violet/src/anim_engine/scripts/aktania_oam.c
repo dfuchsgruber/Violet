@@ -26,7 +26,7 @@ static const sprite sprite_aktania_sky_deoxys = {
     ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE | ATTR0_DSIZE, ATTR1_SIZE_64_64, ATTR2_PRIO(1), 0
 };
 
-oam_template oam_template_aktania_sky_deoxys = {
+const oam_template oam_template_aktania_sky_deoxys = {
     POKEMON_DEOXYS, POKEMON_DEOXYS,
     &sprite_aktania_sky_deoxys,
     oam_gfx_anim_table_null,

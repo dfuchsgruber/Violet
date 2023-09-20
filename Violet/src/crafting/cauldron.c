@@ -22,7 +22,7 @@
 
 static void cauldron_scene_step1_create_dropping_item(u16 frame);
 
-static bg_config cauldron_bg_configs[] = {
+static const bg_config cauldron_bg_configs[] = {
     {.bg_id = 0, .char_base = 3, .map_base = 28, .size = 0, .color_mode = 0, .priority = 0},
     {.bg_id = 1, .char_base = 0, .map_base = 29, .size = 0, .color_mode = 1, .priority = 1},
     {.bg_id = 2, .char_base = 1, .map_base = 30, .size = 0, .color_mode = 1, .priority = 2},
@@ -61,7 +61,7 @@ static const gfx_frame cauldron_light_gfx_frames[] = {
     {.data = 80, .duration = 0}, {.data = GFX_ANIM_END},
 };
 
-static const gfx_frame *cauldron_light_gfx_animations[] = {
+static const gfx_frame *const cauldron_light_gfx_animations[] = {
     [0] = cauldron_light_gfx_frames + 0 * 2,
     [1] = cauldron_light_gfx_frames + 1 * 2,
     [2] = cauldron_light_gfx_frames + 2 * 2,
@@ -114,7 +114,7 @@ static const gfx_frame cauldron_spark_gfx_animation[] = {
     {.data = 8, .duration = 4}, {.data = GFX_ANIM_END},
 };
 
-static const gfx_frame *cauldron_spark_gfx_animations[] = {
+static const gfx_frame *const cauldron_spark_gfx_animations[] = {
     [0] = cauldron_spark_gfx_animation,
 };
 
@@ -205,7 +205,7 @@ static const rotscale_frame cauldron_item_rotscale_animation1[] = {
     {.command = {.command = ROTSCALE_ANIM_END}},
 };
 
-static const rotscale_frame *cauldron_item_rotscale_animations[] = {
+static const rotscale_frame *const cauldron_item_rotscale_animations[] = {
     [0] = cauldron_item_rotscale_animation0, [1] = cauldron_item_rotscale_animation1,
 };
 

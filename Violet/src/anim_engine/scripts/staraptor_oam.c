@@ -35,7 +35,7 @@ const gfx_frame anim_staraptor_wings_flipped[] = {
 }; 
 
 
-const gfx_frame *anim_staraptor[] = {
+const gfx_frame *const anim_staraptor[] = {
     anim_staraptor_wings,
     anim_staraptor_wings_flipped
 };
@@ -107,7 +107,7 @@ const gfx_frame anim_staraptor_hiro_anim1[] = {
     {0, 0 | GFX_ANIM_HFLIP}, {GFX_ANIM_END, 0}  
 };
 
-const gfx_frame *anim_staraptor_hiro_anim_table[] = {
+const gfx_frame *const anim_staraptor_hiro_anim_table[] = {
     anim_staraptor_hiro_anim0,
     anim_staraptor_hiro_anim1
 };

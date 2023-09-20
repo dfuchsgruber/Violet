@@ -172,7 +172,7 @@ static const rotscale_frame rs_star_collect[] = {
     {.command = {.command = ROTSCALE_ANIM_END}}
 };
 
-static const rotscale_frame *rs_anims_star[] = {
+static const rotscale_frame *const rs_anims_star[] = {
     [FISHING_STAR_RS_NONE] = rs_star_none,
     [FISHING_STAR_RS_APPEAR] = rs_star_appear,
     [FISHING_STAR_RS_DISAPPEAR] = rs_star_disappear,

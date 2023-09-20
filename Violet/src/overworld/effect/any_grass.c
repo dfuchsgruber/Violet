@@ -130,7 +130,7 @@ const gfx_frame rock_climb_gfx_anim[] = {
 		{0, 10}, {1, 10}, {2, 10}, {3, 10}, {4, 10}, {GFX_ANIM_END, 0}
 };
 
-const gfx_frame *rock_climb_gfx_anim_table[] = {rock_climb_gfx_anim};
+const gfx_frame *const rock_climb_gfx_anim_table[] = {rock_climb_gfx_anim};
 
 const graphic rock_climb_graphics[] = {
 		{&gfx_rock_climb_animTiles[0 * 16 * 16 / 8], 16 * 16 / 2, 0},

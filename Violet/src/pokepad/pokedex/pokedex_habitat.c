@@ -92,7 +92,7 @@ const gfx_frame pokedex_habitat_cursor_gfx_anim[] = {
     {0xFFFE, 0}
 };
 
-const gfx_frame *pokedex_habitat_cursor_gfx_anim_table[] = {
+const gfx_frame *const pokedex_habitat_cursor_gfx_anim_table[] = {
     pokedex_habitat_cursor_gfx_anim
 };
 
@@ -109,7 +109,7 @@ static const gfx_frame pokedex_habitat_type_gfx_frames[] = {
 };
 
 
-static const gfx_frame *pokedex_habitat_type_gfx_anim_table[] = {
+static const gfx_frame *const pokedex_habitat_type_gfx_anim_table[] = {
     pokedex_habitat_type_gfx_frames,
     pokedex_habitat_type_gfx_frames + 2,
     pokedex_habitat_type_gfx_frames + 4,
@@ -154,7 +154,7 @@ static const oam_template pokedex_habitat_type_template = {
 
 const tbox_font_colormap pokedex_fontcolmap_namespace = {3, 2, 1, 0};
 
-const int *worldmap_tilemaps[4] = {
+const int *const worldmap_tilemaps[4] = {
     (int*) gfx_worldmapMap,
     (int*) 0x083F0354,
     (int*) 0x083F0464,

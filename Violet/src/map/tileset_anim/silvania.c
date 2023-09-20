@@ -26,7 +26,7 @@ static const gfx_frame hydro_pump_animation[] = {
   {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
-static const gfx_frame *hydro_pump_animations[] = {hydro_pump_animation};
+static const gfx_frame *const hydro_pump_animations[] = {hydro_pump_animation};
 
 static const s16 hydro_pump_locations[][2] = {
   {0x2d + 7, 0x12 + 7},

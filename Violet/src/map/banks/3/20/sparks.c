@@ -35,7 +35,7 @@ static const gfx_frame sparks_gfx_animation[] = {
     {.data = 0, .duration = 0}, {.data = 0, .duration = 8}, {.data = 1, .duration = 8}, {.data = GFX_ANIM_JUMP, .duration = 1},
 };
 
-static const gfx_frame *sparks_gfx_animations[] = {sparks_gfx_animation};
+static const gfx_frame *const sparks_gfx_animations[] = {sparks_gfx_animation};
 
 static const sprite sparks_sprite = {.attr0 = ATTR0_SHAPE_HORIZONTAL, .attr1 = ATTR1_SIZE_32_8, .attr2 = ATTR2_PRIO(1)};
 static const sprite sparks_sprite_vertical = {.attr0 = ATTR0_SHAPE_VERTICAL, .attr1 = ATTR1_SIZE_8_32, .attr2 = ATTR2_PRIO(1)};

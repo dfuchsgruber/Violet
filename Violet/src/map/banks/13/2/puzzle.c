@@ -6,7 +6,7 @@
 #include "map/route_9_puzzle.h"
 #include "debug.h"
 
-int route_9_cave_puzzle_connection_shifts[4] = {0, 4, 7, 9};
+static const int route_9_cave_puzzle_connection_shifts[4] = {0, 4, 7, 9};
 
 bool route_9_cave_puzzle_connection_check(int first, int second) {
     if (second < first) return route_9_cave_puzzle_connection_check(second, first);

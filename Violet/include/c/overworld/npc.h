@@ -407,7 +407,7 @@ bool npc_get_id_by_overworld_id(u8 overworld_id, u8 map, u8 bank, u8 *result);
  * @param bank the map bank the overworld is present in
  * @param moves the list of movements, terminated by 254
  */
-void npc_apply_movement(u8 overworld_id, u8 map, u8 bank, u8 *moves);
+void npc_apply_movement(u8 overworld_id, u8 map, u8 bank, const u8 *moves);
 
 /**
  * Checks if a callback for applymovement is active with that npc

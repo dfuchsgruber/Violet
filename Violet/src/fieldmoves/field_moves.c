@@ -59,7 +59,7 @@ const u16 field_moves[NUM_FIELD_MOVES + 1] = {
     [NUM_FIELD_MOVES] = 0xFFFF
 };
 
-const u8 *field_move_descriptions[NUM_FIELD_MOVES] = {
+const u8 *const field_move_descriptions[NUM_FIELD_MOVES] = {
     [FIELD_MOVE_FLASH] = str_field_move_description_flash,
 	[FIELD_MOVE_CUT] = str_field_move_description_cut,
 	[FIELD_MOVE_FLY] = str_field_move_description_fly,

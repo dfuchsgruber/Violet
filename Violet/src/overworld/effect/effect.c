@@ -34,7 +34,7 @@ static const gfx_frame overworld_effect_explosion_gfx_animation[] = {
     {.data = 3, .duration = 5}, {.data = GFX_ANIM_END}, 
 };
 
-static const gfx_frame *overworld_effect_explosion_gfx_animations[] = {overworld_effect_explosion_gfx_animation};
+static const gfx_frame *const overworld_effect_explosion_gfx_animations[] = {overworld_effect_explosion_gfx_animation};
 
 static void overworld_effect_explosion_oam_callback(oam_object *self) {
     if (self->flags & OAM_FLAG_GFX_ANIM_END) {
@@ -98,9 +98,9 @@ static const gfx_frame overworld_effect_sound_wave_gfx_animation[] = {
     {.data = 0, .duration = 0}, {.data = GFX_ANIM_END}, 
 };
 
-static const gfx_frame *overworld_effect_sound_wave_gfx_animations[] = {overworld_effect_sound_wave_gfx_animation};
+static const gfx_frame *const overworld_effect_sound_wave_gfx_animations[] = {overworld_effect_sound_wave_gfx_animation};
 
-static const rotscale_frame *overworld_effect_sound_wave_rotscale_animations[] = {overworld_effect_sound_wave_rotscale_anim};
+static const rotscale_frame *const overworld_effect_sound_wave_rotscale_animations[] = {overworld_effect_sound_wave_rotscale_anim};
 
 static const oam_template overworld_effect_sound_wave_oam_template = {
     .tiles_tag = 0xFFFF, .pal_tag = GFX_TAG_OVERWORLD_EFFECT_SOUND_WAVE,
@@ -289,7 +289,7 @@ static const gfx_frame overworld_effect_lightning_gfx_animation[] = {
     {.data = GFX_ANIM_END}, 
 };
 
-static const gfx_frame *overworld_effect_lightning_gfx_animations[] = {overworld_effect_lightning_gfx_animation};
+static const gfx_frame *const overworld_effect_lightning_gfx_animations[] = {overworld_effect_lightning_gfx_animation};
 
 static void overworld_effect_lightning_oam_callback(oam_object *self) {
     if ((self->private[3] != save1->bank || self->private[4] != save1->map) && overworld_viewport.active) {
@@ -385,7 +385,7 @@ static const gfx_frame overworld_effect_rainbow_sparkles_animation[] = {
     {.data = GFX_ANIM_END}, 
 };
 
-static const gfx_frame *overworld_effect_rainbow_sparkles_animations[] = {overworld_effect_rainbow_sparkles_animation};
+static const gfx_frame *const overworld_effect_rainbow_sparkles_animations[] = {overworld_effect_rainbow_sparkles_animation};
 
 static void overworld_effect_rainbow_sparkles_oam_callback(oam_object *self) {
     oam_set_priority_by_height(self, (u8)self->private[2]);

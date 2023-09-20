@@ -290,7 +290,7 @@ static const sprite bag_insert_bar_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1
 static const gfx_frame bag_insert_bar_anim_left[] = {{.data = 0 * 4, .duration = 0}, {.data = GFX_ANIM_END}};
 static const gfx_frame bag_insert_bar_anim_mid[] = {{.data = 1 * 4, .duration = 0}, {.data = GFX_ANIM_END}};
 static const gfx_frame bag_insert_bar_anim_right[] = {{.data = 0 * 4, .duration = 0 | GFX_ANIM_HFLIP}, {.data = GFX_ANIM_END}};
-static const gfx_frame *bag_insert_bar_animations[] = {bag_insert_bar_anim_left, bag_insert_bar_anim_mid, bag_insert_bar_anim_right};
+static const gfx_frame *const bag_insert_bar_animations[] = {bag_insert_bar_anim_left, bag_insert_bar_anim_mid, bag_insert_bar_anim_right};
 
 static const oam_template bag_oam_template_insert_bar = {
     .tiles_tag = BAG_INSERT_OAM_TAG, .pal_tag = BAG_INSERT_OAM_TAG,

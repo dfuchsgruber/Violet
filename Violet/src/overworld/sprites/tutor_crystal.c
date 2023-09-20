@@ -55,7 +55,7 @@ static const gfx_frame gfx_animation_tutor_crystal[] = {
 
 static const gfx_frame *const gfx_animations_tutor_crystal[1] = {gfx_animation_tutor_crystal};
 
-static overworld_sprite ow_tutor_crystals[] = {
+static const overworld_sprite ow_tutor_crystals[] = {
 	[TYPE_NORMAL] = {
         .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_TUTOR_CRYSTAL_BASE + TYPE_NORMAL,
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,

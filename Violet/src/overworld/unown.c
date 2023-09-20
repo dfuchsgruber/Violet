@@ -18,11 +18,11 @@
 #include "overworld/script.h"
 #include "music.h"
 
-static u8 unown_message_rock[] = {
+static const u8 unown_message_rock[] = {
     UNOWN_LETTER('R'), UNOWN_LETTER('O'), UNOWN_LETTER('C'), UNOWN_LETTER('K'), 0xFF
 };
 
-static u8 unown_message_ice[] = {
+static const u8 unown_message_ice[] = {
     UNOWN_LETTER('I'), UNOWN_LETTER('C'), UNOWN_LETTER('E'), 0xFF
 };
 

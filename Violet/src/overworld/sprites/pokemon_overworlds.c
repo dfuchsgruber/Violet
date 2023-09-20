@@ -5339,7 +5339,7 @@ static const graphic overworld_gfxs_crystal_onix[] = {
 	[8] = {.sprite = gfx_ow_crystal_onixTiles + 5 * GRAPHIC_SIZE_4BPP(32, 32), .size = GRAPHIC_SIZE_4BPP(32, 32), .tag = 0},
 };
 
-static overworld_sprite overworlds_pokemon[] = {
+static const overworld_sprite overworlds_pokemon[] = {
     [POKEMON_BISASAM] = {
         .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_BISASAM,
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,

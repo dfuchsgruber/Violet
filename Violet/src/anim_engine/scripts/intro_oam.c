@@ -36,14 +36,14 @@ const gfx_frame gfx_anim_intro_meteor[] = {
     {0, 8}, {64, 8}, {GFX_ANIM_JUMP, 0}
 };
 
-const gfx_frame *gfx_anim_table_intro_meteor[] = {gfx_anim_intro_meteor};
+const gfx_frame *const gfx_anim_table_intro_meteor[] = {gfx_anim_intro_meteor};
 
 const rotscale_frame rotscal_anim_intro_meteor[] = {
     {.affine = {0x200, 0x200, 0, 0, 0}}, {.affine = {-8, -8, 0, 63, 0}},
     {.command = {ROTSCALE_ANIM_END, 0, 0, 0}}
 };
 
-const rotscale_frame *rotscale_anim_table_intro_meteor[] = {rotscal_anim_intro_meteor};
+const rotscale_frame *const rotscale_anim_table_intro_meteor[] = {rotscal_anim_intro_meteor};
 
 const oam_template oam_template_intro_meteor = {
     0xADE3, 0xADE3,
@@ -118,11 +118,11 @@ const gfx_frame gfx_anim_intro_deoxys_arm_left[] = {
     {64, 16 | GFX_ANIM_HFLIP}, {32, 16 | GFX_ANIM_HFLIP}, {GFX_ANIM_JUMP, 0}
 };
 
-const gfx_frame *gfx_anim_table_intro_deoxys_arm_right[] = {
+const gfx_frame *const gfx_anim_table_intro_deoxys_arm_right[] = {
     gfx_anim_intro_deoxys_arm_right
 };
 
-const gfx_frame *gfx_anim_table_intro_deoxys_arm_left[] = {
+const gfx_frame *const gfx_anim_table_intro_deoxys_arm_left[] = {
     gfx_anim_intro_deoxys_arm_left
 };
 
@@ -216,13 +216,13 @@ const gfx_frame gfx_anim_intro_waves[] = {
     {0, 24}, {64, 24}, {GFX_ANIM_JUMP, 0}
 };
 
-const gfx_frame *gfx_anim_table_intro_waves[] = {gfx_anim_intro_waves};
+const gfx_frame *const gfx_anim_table_intro_waves[] = {gfx_anim_intro_waves};
 
 const rotscale_frame rotscal_anim_intro_waves[] = {
     {.affine = {0x200, 0x200, 0, 0, 0}}, {.command = {ROTSCALE_ANIM_END, 0, 0, 0}}
 };
 
-const rotscale_frame *rotscale_anim_table_intro_waves[] = {rotscal_anim_intro_waves};
+const rotscale_frame *const rotscale_anim_table_intro_waves[] = {rotscal_anim_intro_waves};
 
 /**
 void oam_intro_waves_back_move(oam_object *self){

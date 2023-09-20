@@ -16,7 +16,7 @@ static const gfx_frame bag_anim_medicine[] = {{.data = 64 * 4, .duration = 0}, {
 static const gfx_frame bag_anim_bait[] = {{.data = 64 * 6, .duration = 0}, {.data = GFX_ANIM_END}};
 static const gfx_frame bag_anim_tms[] = {{.data = 64 * 7, .duration = 0}, {.data = GFX_ANIM_END}};
 
-static const gfx_frame *bag_anims[] = {
+static const gfx_frame *const bag_anims[] = {
     [POCKET_NONE] = bag_anim_idle,
     [POCKET_ITEMS] = bag_anim_items,
     [POCKET_KEY_ITEMS] = bag_anim_key_items,
@@ -40,7 +40,7 @@ static const rotscale_frame bag_rs_anim_wiggle[] = {
     {.command = {.command = ROTSCALE_ANIM_END}}
 };
 
-static const rotscale_frame *bag_rs_anims[] = {
+static const rotscale_frame *const bag_rs_anims[] = {
     bag_rs_anim_idle,
     bag_rs_anim_wiggle, 
 };

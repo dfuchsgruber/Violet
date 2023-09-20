@@ -1596,35 +1596,35 @@ const overworld_sprite ow_lucky = {
 	oam_rotscale_anim_table_null
 };
 
-static overworld_sprite ow_pokemon_32_32 = {
+static const overworld_sprite ow_pokemon_32_32 = {
 	.tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE,
 	.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
 	.final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
 	.graphics = overworld_sprite_lucky, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
-static overworld_sprite ow_pokemon_64_64 = {
+static const overworld_sprite ow_pokemon_64_64 = {
 	.tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE,
 	.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(64, 64), .width = 64, .height = 64,
 	.final_oam = &ow_final_oam_64_64, .subsprite_table = &ow_formation_64_64, .gfx_animation = ow_anim_standard_npc,
 	.graphics = NULL, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
-static overworld_sprite ow_berry_tree = {
+static const overworld_sprite ow_berry_tree = {
 	.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE ,
 	.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
 	.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
 	.graphics = NULL + 0, .rotscale_animation = oam_rotscale_anim_table_null,	
 };
 
-static overworld_sprite ow_misc_16_16 = {
+static const overworld_sprite ow_misc_16_16 = {
 	.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE ,
 	.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 16), .width = 16, .height = 16,
 	.final_oam = &ow_final_oam_16_16, .subsprite_table = &ow_formation_16_16, .gfx_animation = ow_anim_standard_npc,
 	.graphics = NULL + 0, .rotscale_animation = oam_rotscale_anim_table_null,	
 };
 
-static overworld_sprite ow_tutor_crystal_dummy = {
+static const overworld_sprite ow_tutor_crystal_dummy = {
         .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_TUTOR_CRYSTAL_BASE,
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
         .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
@@ -1804,7 +1804,7 @@ static const graphic overworld_sprite_secret_power_vines_sprites[] = {
 	{gfx_overworld_secret_power_vinesTiles + 9 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
 };
 
-static overworld_sprite ow_secret_power_vine = {
+static const overworld_sprite ow_secret_power_vine = {
         .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_SECRET_POWER_VINES,
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
         .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = gfx_animations_secret_power_vines,
@@ -1843,7 +1843,7 @@ static const graphic overworld_sprite_secret_power_cave_sprites[] = {
 	{gfx_overworld_secret_power_caveTiles + 10 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
 };
 
-static overworld_sprite ow_secret_power_cave = {
+static const overworld_sprite ow_secret_power_cave = {
         .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_SECRET_POWER_CAVE,
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
         .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = gfx_animations_secret_power_cave,
@@ -1920,7 +1920,7 @@ static const sprite upstream_sprite = {
 	.attr2 = ATTR2_PRIO(2),
 };
 
-static subsprite upstream_subsprites[2] = {
+static const subsprite upstream_subsprites[2] = {
 	{
 		.x = -32, 
 		.y = -16, 
@@ -1939,7 +1939,7 @@ static subsprite upstream_subsprites[2] = {
 	},
 };
 
-static subsprite_table upstream_subsprite_tables[] = {
+static const subsprite_table upstream_subsprite_tables[] = {
 	{.subsprites = upstream_subsprites, .num_subsprites = ARRAY_COUNT(upstream_subsprites),},
 	{.subsprites = upstream_subsprites, .num_subsprites = ARRAY_COUNT(upstream_subsprites),},
 	{.subsprites = upstream_subsprites, .num_subsprites = ARRAY_COUNT(upstream_subsprites),},
@@ -2041,7 +2041,7 @@ const overworld_sprite overworld_treasure_map = {
 };
 
 //The overworld table
-const overworld_sprite *overworld_sprites[] = {
+const overworld_sprite *const overworld_sprites[] = {
     	&ow_hiro,
 	&ow_mskate,//(overworld_sprite*) 0x96d865c,
 	&ow_hiro_sit,

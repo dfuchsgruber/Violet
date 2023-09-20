@@ -88,7 +88,7 @@ static const gfx_frame trigger_gfx_anims[] = {
     {.data = 64, .duration = 0}, {.data = GFX_ANIM_END},
 };
 
-static const gfx_frame *trigger_gfx_anim_table[] = {
+static const gfx_frame *const trigger_gfx_anim_table[] = {
     trigger_gfx_anims + 0,
     trigger_gfx_anims + 2,
 };

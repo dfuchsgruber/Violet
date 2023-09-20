@@ -67,7 +67,7 @@ static const gfx_frame gfx_anim_exp_bar_right[] = {
     {.data = 8, .duration = 0}, {.data = GFX_ANIM_END}
 };
 
-static const gfx_frame *gfx_anims_exp_bar[] = {
+static const gfx_frame *const gfx_anims_exp_bar[] = {
     gfx_anim_exp_bar_left, gfx_anim_exp_bar_right
 };
 

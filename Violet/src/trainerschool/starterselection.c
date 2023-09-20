@@ -60,8 +60,8 @@ extern const u16 gfx_trainerschool_selection_backMap[];
 
 
 
-const palette *palette_trainerschool_selection_pokeball = (const palette*)0x082604F0;
-const graphic *graphic_trainerschool_selection_pokeball = (const graphic*)0x08260490;
+const palette *const palette_trainerschool_selection_pokeball = (const palette*)0x082604F0;
+const graphic *const graphic_trainerschool_selection_pokeball = (const graphic*)0x08260490;
 
 extern const u16 gfx_trainerschool_lockschalTiles[];
 extern const u16 gfx_trainerschool_lockschalPal[];

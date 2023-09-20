@@ -21,7 +21,7 @@ static const rotscale_frame route_3_mill_rotscale_animation[] = {
     {.affine = {.rotation = 1, .duration = 0xff}}, {.command = {.command = ROTSCALE_ANIM_JUMP, .parameter = 0}}, 
 };
 
-static const rotscale_frame *route_3_mill_rotscale_animations[] = {route_3_mill_rotscale_animation};
+static const rotscale_frame *const route_3_mill_rotscale_animations[] = {route_3_mill_rotscale_animation};
 
 static const sprite route_3_mill_final_oam = {
     .attr0 = ATTR0_DSIZE | ATTR0_ROTSCALE | ATTR0_SHAPE_SQUARE,

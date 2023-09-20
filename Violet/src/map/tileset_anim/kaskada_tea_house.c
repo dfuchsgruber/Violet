@@ -46,7 +46,7 @@ static const gfx_frame gfx_anim_smoke[] = {
     {.data = 0, .duration = 0}, {.data = 0, .duration = 16}, {.data = 4, .duration = 16}, {.data = 8, .duration = 16}, {.data = 12, .duration = 16}, {.data = GFX_ANIM_JUMP, .duration = 1},
 };
 
-static const gfx_frame *gfx_anims_smoke[] = {gfx_anim_smoke};
+static const gfx_frame *const gfx_anims_smoke[] = {gfx_anim_smoke};
 
 static const oam_template smoke_template = {
     .tiles_tag = KASKADA_TEA_HOUSE_SMOKE_TAG, .pal_tag = KASKADA_TEA_HOUSE_SMOKE_TAG,

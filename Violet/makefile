@@ -248,7 +248,7 @@ soundfont: $(BLDROM)
 
 $(BLDROM): $(CONSTANTSHAS) $(CONSTANTSHC) $(BLDPATH)/asset.ld $(BLDPATH)/map.ld $(BLDPATH)/sources.ld $(BLDPATH)/midi.ld $(EXPORTED_STATS_OBJ) $(PATCHES) patches.asm $(BASESYMBOLS)
 	@echo "Creating rom object..."
-	$(LD) $(LDFLAGS) -T linker.ld -T $(BASESYMBOLS) -T $(BLDPATH)/midi.ld -T $(BLDPATH)/asset.ld --relocatable -T $(BLDPATH)/map.ld -T $(BLDPATH)/sources.ld -o $(BLDPATH)/linked.o $(EXPORTED_STATS_OBJ)
+	$(LD) $(LDFLAGS) -T linker.ld -T $(BASESYMBOLS) -T $(BLDPATH)/midi.ld -T $(BLDPATH)/asset.ld -T $(BLDPATH)/map.ld -T $(BLDPATH)/sources.ld --relocatable -o $(BLDPATH)/linked.o $(EXPORTED_STATS_OBJ)
 	$(ARS) patches.asm -sym $(SYMBOLDUMP) -strequ bldrom $(BLDROM) -strequ base $(BASEROM)
 	# Validation
 	./tools/index/worldmap.py $(BLDROM) $(MAPPROJ) $(SYMBOLDUMP) worldmap_positions

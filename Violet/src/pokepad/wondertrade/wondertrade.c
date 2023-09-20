@@ -110,7 +110,7 @@ const u16 wondertrade_pokemon_platinum[] = {
     POKEMON_BARSCHWA, POKEMON_ABSOL, POKEMON_SICHLOR, 0xFFFF
 };
 
-const u16 *wondertrade_pokemon[] = {
+const u16 *const wondertrade_pokemon[] = {
     wondertrade_pokemon_bronze,
     wondertrade_pokemon_silver,
     wondertrade_pokemon_gold,
