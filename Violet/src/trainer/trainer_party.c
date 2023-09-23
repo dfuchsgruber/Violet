@@ -35,6 +35,7 @@ u8 trainer_pokemon_get_level(u8 level) {
 			level = (u8)(level + std);
 			break;
 	}
+	DEBUG("Difficulty for trainer party is %d @%x\n", *var_access(DIFFICULTY), var_access(DIFFICULTY));
 	switch (*var_access(DIFFICULTY)) {
 		case DIFFICULTY_EASY:
 			level = (u8)MAX(1, level - std);

@@ -34,7 +34,9 @@ static void new_game_initialize_time() {
 }
 
 void new_game_initialize_custom_data() {
+    u16 tmp = *var_access(DIFFICULTY); // the difficulty is chosen before the data is cleared, this is a bit hacky but w/e
     memset(&csave, 0, sizeof(custom_memory));
+    *var_access(DIFFICULTY) = tmp;
     setflag(POKERADAR_POKEMON_SPAWNED);  // set corresponds to a pokemon already spawned
     incubator_clear();
     overworld_misc_intialize();
