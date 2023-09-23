@@ -25,7 +25,7 @@ void battle_controller_emit_move_chosen(u8 buffer_idx, u8 chosen_move_idx, u8 ta
 void battle_main_read_chosen_move() {
     battle_state->chosen_move_slots[active_battler] = battle_general_buffers1[active_battler][2];
     battle_state->move_target[active_battler] = battle_general_buffers1[active_battler][3];
-    MEGA_STATE.marked_for_mega_evolution[active_battler] = battle_general_buffers1[active_battler][4];
+    mega_state->marked_for_mega_evolution[active_battler] = battle_general_buffers1[active_battler][4];
 }
 
 

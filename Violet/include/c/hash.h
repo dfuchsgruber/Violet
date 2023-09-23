@@ -10,6 +10,6 @@
  * @param seed with which value to seed the hashing
  * @return hash the hash value
  **/
-u32 hash_sequence(u32 seq[], size_t size, u32 seed);
+u32 hash_sequence(const u32 seq[], size_t size, u32 seed);
 
 #endif

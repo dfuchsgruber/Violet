@@ -2,7 +2,7 @@
 #include "types.h"
 
 // Pairs of cutable tiles and their respective cut-version
-u16 cut_table[][2] = {
+const u16 cut_table[][2] = {
 	{0x10, 0x11},
 	{0x1a, 0x1c},
 	{0x1b, 0x1d},

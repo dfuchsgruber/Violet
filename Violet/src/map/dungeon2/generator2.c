@@ -23,7 +23,7 @@ void dungeon2_fill_rectangle(u8 *map, int x, int y, int w, int h, u8 fill, dunge
     }
 };
 
-void dungeon2_iterate(u8 *map, u8 *map2, int near_lower_bound, int far_upper_bound, dungeon_generator2 *dg2){
+void dungeon2_iterate(const u8 *map, u8 *map2, int near_lower_bound, int far_upper_bound, dungeon_generator2 *dg2){
     DEBUG("Iterating map with nlb %d and hub %d\n", near_lower_bound, far_upper_bound);
     for(int x = 1; x < dg2->width - 1; x++){
         for(int y = 1; y < dg2->height - 1; y++){
@@ -62,11 +62,11 @@ void dungeon2_enclose(u8 *map, int width, int height){
     }
 }
 
-int dg2_cross_neighbourhood[4][2] = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+const int dg2_cross_neighbourhood[4][2] = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 
 
 
-void dungeon2_apply(u8 *src, u8 *dst, u8 type, dungeon_generator2 *dg2) {
+void dungeon2_apply(const u8 *src, u8 *dst, u8 type, dungeon_generator2 *dg2) {
   for (int x = 0; x < dg2->width; x++) {
     for (int y = 0; y < dg2->height; y++) {
       if (src[y * dg2->width + x] == type)
@@ -75,7 +75,7 @@ void dungeon2_apply(u8 *src, u8 *dst, u8 type, dungeon_generator2 *dg2) {
   }
 }
 
-void dungeon2_enlarge(u8 *map, u8 *map2, dungeon_generator2 *dg2){
+void dungeon2_enlarge(const u8 *map, u8 *map2, dungeon_generator2 *dg2){
     for(int x = 1; x < dg2->width - 1; x++){
         for(int y = 1; y < dg2->height - 1; y++){
             int adjacent_walls = 0;
@@ -94,7 +94,7 @@ void dungeon2_enlarge(u8 *map, u8 *map2, dungeon_generator2 *dg2){
 }
 
 
-void dungeon2_contract(u8 *map, u8 *map2, dungeon_generator2 *dg2){
+void dungeon2_contract(const u8 *map, u8 *map2, dungeon_generator2 *dg2){
     for(int x = 1; x < dg2->width - 1; x++){
         for(int y = 1; y < dg2->height - 1; y++){
             int adjacent_walls = 0;

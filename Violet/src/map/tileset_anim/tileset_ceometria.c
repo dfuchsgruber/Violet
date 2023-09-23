@@ -1,16 +1,16 @@
 #include "types.h"
 #include "map/tileset.h"
 
-extern u16 gfx_tileset_ceometria_anim_0Tiles[];
+extern const u16 gfx_tileset_ceometria_anim_0Tiles[];
 
-tileset_animation tileset_ceometria_animations[] = {
+static const tileset_animation tileset_ceometria_animations[] = {
     {
         .cycle = 2, .speed = 32, .start_tile = 0x3E7, .num_tiles = 6, 
         .gfx = gfx_tileset_ceometria_anim_0Tiles
     }
 };
 
-tileset_animation_header tileset_ceometria_animations_head = {
+static const tileset_animation_header tileset_ceometria_animations_head = {
     1, tileset_ceometria_animations
 };
 

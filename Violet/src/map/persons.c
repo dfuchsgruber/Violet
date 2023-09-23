@@ -4,9 +4,9 @@
 #include "debug.h"
 #include "constants/person_script_stds.h"
 
-map_event_person *person_get_by_target_index(u8 target_index, map_event_person *persons, u8 num_persons){
+const map_event_person *person_get_by_target_index(u8 target_index, const map_event_person *persons, u8 num_persons){
     if(target_index == 254)
-        return &(cmem.pokeradar_person);
+        return &(csave.pokeradar_person);
     for(u8 i = 0; i < num_persons; i++)
         if(persons[i].target_index == target_index) return &persons[i];
     return NULL;
@@ -23,17 +23,17 @@ static bool person_in_connection_get_bank_and_map(u8 in_connection, u8 *bank, u8
     return false;
 }
 
-static map_event_person *person_in_connection_get_target(u8 in_connection, u8 target_person) {
+static const map_event_person *person_in_connection_get_target(u8 in_connection, u8 target_person) {
     u8 bank, map_idx;
     if (!person_in_connection_get_bank_and_map(in_connection, &bank, &map_idx))
         return NULL;
-    map_header_t *adj = get_mapheader(bank, map_idx);
+    const map_header_t *adj = get_mapheader(bank, map_idx);
     return person_get_by_target_index(target_person, 
                 adj->events->persons, adj->events->person_cnt);
 }
 
-static void person_in_connection_set_coordinates(u8 connection_type, map_event_person *target, s16 *x, s16 *y) {
-    map_connection_t *connection = NULL;
+static void person_in_connection_set_coordinates(u8 connection_type, const map_event_person *target, s16 *x, s16 *y) {
+    const map_connection_t *connection = NULL;
     for (size_t k = 0; k < mapheader_virtual.connections->count; k++) {
         if (mapheader_virtual.connections->connections[k].direction == connection_type) {
             connection = mapheader_virtual.connections->connections + k;
@@ -42,7 +42,7 @@ static void person_in_connection_set_coordinates(u8 connection_type, map_event_p
     }
     if (!connection)
         return;
-    map_header_t *target_header = get_mapheader(connection->bank, connection->map);
+    const map_header_t *target_header = get_mapheader(connection->bank, connection->map);
     if (!target_header)
         return;
     switch (connection_type) {
@@ -69,9 +69,9 @@ static void person_in_connection_set_coordinates(u8 connection_type, map_event_p
 void persons_load_from_header() {
     int j = 0;
     for (int i = 0; i < mapheader_virtual.events->person_cnt; i++) {
-        map_event_person *p = mapheader_virtual.events->persons + i;
+        const map_event_person *p = mapheader_virtual.events->persons + i;
         if (p->in_connection) {
-            map_event_person *target = person_in_connection_get_target(p->in_connection, p->argument);
+            const map_event_person *target = person_in_connection_get_target(p->in_connection, p->argument);
             if (!target) {
                 DEBUG("Didnt find target person %d on adjacency %d\n", p->argument, p->in_connection);
                 continue;
@@ -102,7 +102,7 @@ static u8 npc_get_collision_type_by_script_std(int script_std) {
 }
 
 // @0x0805e080
-u8 npc_create_by_person(map_event_person *p, u8 map_idx, u8 bank) {
+u8 npc_create_by_person(const map_event_person *p, u8 map_idx, u8 bank) {
     s16 x = (s16)(p->x + 7);
     s16 y = (s16)(p->y + 7);
     if (p->in_connection) {

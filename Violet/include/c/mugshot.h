@@ -23,8 +23,16 @@ extern "C" {
     typedef struct mugshot {
         const void *gfx[MUGSHOT_EMOTION_COUNT]; // lz77 compressed
         const void *pal; // lz77 compressed
-        u8 *name;
+        const u8 *name;
     } mugshot;
+
+    typedef struct {
+        u8 active : 1;
+    } mugshot_flags_t;
+
+    extern EWRAM mugshot_flags_t mugshot_flags;
+    extern EWRAM u8 mugshot_oam_id;
+    extern EWRAM u8 mugshot_tb_id;
 
     /**
      * Creates the oam for a given mugshot and stores its idx in the floating memory
@@ -39,7 +47,7 @@ extern "C" {
      * @param side side to display the mugshot text (0 = left, 1 = right)
      * @param text pointer to the text to display
      */
-    void mugshot_create_text(int side, u8 *text);
+    void mugshot_create_text(int side, const u8 *text);
 
     /**
      * Special to show a mugshot. Index to display given in 0x8000, the side given in 0x8001.
@@ -251,37 +259,37 @@ extern "C" {
     extern const unsigned short gfx_mug_icarus_shockedTiles[];
     extern const unsigned short gfx_mug_icarus_thoughtfulTiles[];
 
-    extern u8 str_mug_mistral[];
-    extern u8 str_mug_hiro[];
-    extern u8 str_mug_lester[];
-    extern u8 str_mug_igva[];
-    extern u8 str_mug_blackbeard[];
-    extern u8 str_mug_rin[];
-    extern u8 str_mug_rival[];
-    extern u8 str_mug_brix[];
-    extern u8 str_mug_may[];
-    extern u8 str_mug_felix[];
-    extern u8 str_mug_felix[];
-    extern u8 str_mug_blaise[];
-    extern u8 str_mug_tann[];
-    extern u8 str_mug_faun[];
-    extern u8 str_mug_elise[];
-    extern u8 str_mug_emerys[];
-    extern u8 str_mug_rubys[];
-    extern u8 str_mug_saphira[];
-    extern u8 str_mug_harrenfeld[];
-    extern u8 str_mug_albus[];
-    extern u8 str_mug_larissa[];
-    extern u8 str_mug_primus[];
-    extern u8 str_mug_celebi[];
-    extern u8 str_mug_teah[];
-    extern u8 str_mug_narcissa[];
-    extern u8 str_mug_lucius[];
-    extern u8 str_mug_lucky[];
-    extern u8 str_mug_roman[];
-    extern u8 str_mug_rosalie[];
-    extern u8 str_mug_manus[];
-    extern u8 str_mug_icarus[];
+    extern const u8 str_mug_mistral[];
+    extern const u8 str_mug_hiro[];
+    extern const u8 str_mug_lester[];
+    extern const u8 str_mug_igva[];
+    extern const u8 str_mug_blackbeard[];
+    extern const u8 str_mug_rin[];
+    extern const u8 str_mug_rival[];
+    extern const u8 str_mug_brix[];
+    extern const u8 str_mug_may[];
+    extern const u8 str_mug_felix[];
+    extern const u8 str_mug_felix[];
+    extern const u8 str_mug_blaise[];
+    extern const u8 str_mug_tann[];
+    extern const u8 str_mug_faun[];
+    extern const u8 str_mug_elise[];
+    extern const u8 str_mug_emerys[];
+    extern const u8 str_mug_rubys[];
+    extern const u8 str_mug_saphira[];
+    extern const u8 str_mug_harrenfeld[];
+    extern const u8 str_mug_albus[];
+    extern const u8 str_mug_larissa[];
+    extern const u8 str_mug_primus[];
+    extern const u8 str_mug_celebi[];
+    extern const u8 str_mug_teah[];
+    extern const u8 str_mug_narcissa[];
+    extern const u8 str_mug_lucius[];
+    extern const u8 str_mug_lucky[];
+    extern const u8 str_mug_roman[];
+    extern const u8 str_mug_rosalie[];
+    extern const u8 str_mug_manus[];
+    extern const u8 str_mug_icarus[];
 
 #ifdef	__cplusplus
 }

@@ -8,8 +8,6 @@
 #include "math.h"
 #include "debug.h"
 
-
-
 FIXED FIXED_TRIANGLE_SIN(FIXED theta) {
   // This function can only handle positive angles
   if (theta < 0) return -FIXED_TRIANGLE_SIN(-theta);
@@ -109,7 +107,7 @@ FIXED FIXED_TAN(FIXED theta) {
   return FIXED_DIV(sin, cos);
 }
 
-u16 sin_lut[1 << SIN_LUT_BITS]= {
+const u16 sin_lut[1 << SIN_LUT_BITS]= {
   0x0000, 0x00C9, 0x0192, 0x025B, 0x0324, 0x03ED, 0x04B6, 0x057F,
   0x0648, 0x0711, 0x07DA, 0x08A3, 0x096C, 0x0A35, 0x0AFE, 0x0BC6,
   0x0C8F, 0x0D58, 0x0E21, 0x0EEA, 0x0FB2, 0x107B, 0x1144, 0x120C,

@@ -291,15 +291,15 @@ void battle_controller_player_wait_for_healthbox_delay_and_finish_execution();
  **/
 void battle_bounce_effect(u8 battler_idx, u8 target, u8, u8);
 
-u8 battle_selected_action[4];
+extern u8 battle_selected_action[4];
 
 extern void (*battle_controllers[4])();
 
 // Bitfield for each battler, if the battle controller command should be executed
-u32 battler_marked_for_controller_execution;
+extern u32 battler_marked_for_controller_execution;
 
 
-u8 battle_buffer_transfer[256]; // General purpose buffer for transfering data
+extern u8 battle_buffer_transfer[256]; // General purpose buffer for transfering data
 
 /**
  * Gets the player's multiplayer index.

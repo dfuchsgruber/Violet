@@ -162,7 +162,7 @@ typedef struct {
     u32 fleeing_rng;
 } battle_state2_t;
 
-#define BATTLE_STATE2 ((battle_state2_t*)fmem.battle_state2)
+extern EWRAM battle_state2_t *battle_state2;
 
 typedef struct {
 	void (*callbacks[8])(void);
@@ -326,6 +326,8 @@ extern void (*battle_end_turn_functions[])();
 
 extern u8 battle_general_buffers0[4][512];
 extern u8 battle_general_buffers1[4][512];
+
+extern EWRAM u32 battle_handicaps;
 
 /**
  * Checks if the battle is a double battle

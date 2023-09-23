@@ -1,17 +1,12 @@
 .include "overworld_script.s"
 .include "callstds.s"
 
-.global ow_script_ardeal_person_3
 .global ow_script_ardeal_person_4
 .global ow_script_ardeal_person_5
 .global ow_script_ardeal_person_6
 .global ow_script_ardeal_person_7
 .global ow_script_ardeal_person_8
 
-ow_script_ardeal_person_3:
-    loadpointer 0 str_0
-    callstd MSG_FACE
-    end
 ow_script_ardeal_person_4:
     loadpointer 0 str_1
     callstd MSG_FACE

@@ -11,54 +11,54 @@
 #include "save.h"
 
 /**
-static bluetenbach_gym_rotating_wall_t bluetenbach_gym_rotating_walls[] = {
+static const bluetenbach_gym_rotating_wall_t bluetenbach_gym_rotating_walls[] = {
     {.anchor_x = 0x8, .anchor_y = 0xC, .is_l_shape = false, .rotation = 3},
     {.anchor_x = 0xd, .anchor_y = 0xa, .is_l_shape = true, .rotation = 3},
 };
 
-static graphic rotating_walls_graphic = {
+static const graphic rotating_walls_graphic = {
     .sprite = gfx_tileset_bluetenbach_gym_rotating_wallsTiles, .tag = BLUTENBACH_GYM_ROTATING_WALL_TAG, .size = GRAPHIC_SIZE_4BPP(64, 64) * 4,
 };
 
-static sprite rotating_walls_oam_attributes = {
+static const sprite rotating_walls_oam_attributes = {
     .attr0 = ATTR0_SHAPE_SQUARE,
     .attr1 = ATTR1_SIZE_64_64,
     .attr2 = ATTR2_PRIO(1),
 };
 
-static gfx_frame rotating_wall_animation[] = {
+static const gfx_frame rotating_wall_animation[] = {
     {.data = 0 * 8 * 8, .duration = 0}, {.data = GFX_ANIM_END},
     {.data = 1 * 8 * 8, .duration = 0}, {.data = GFX_ANIM_END},
     {.data = 2 * 8 * 8, .duration = 0}, {.data = GFX_ANIM_END},
     {.data = 3 * 8 * 8, .duration = 0}, {.data = GFX_ANIM_END},
 };
 
-static gfx_frame *rotating_wall_animations[] = {
+static const gfx_frame *rotating_wall_animations[] = {
     rotating_wall_animation + 0, rotating_wall_animation + 2, rotating_wall_animation + 4, rotating_wall_animation + 6,
 };
 
-static coordinate_t rotating_wall_coordinate_offsets[4] = {
+static const coordinate_t rotating_wall_coordinate_offsets[4] = {
     {32, -16},
     {32, -16},
     {0, -16},
     {32, 16},
 };
 
-static coordinate_t rotating_wall_coordinate_offsets_l_shape[4] = {
+static const coordinate_t rotating_wall_coordinate_offsets_l_shape[4] = {
     {32, -16},
     {-16, -16},
     {-16, 32},
     {32, 16},
 };
 
-static u8 rotating_wall_gfx_animation_idxs[4] = {0, 1, 0, 1};
-static u8 rotating_wall_hflips[4] = {false, false, false, false};
-static u8 rotating_wall_gfx_animation_idxs_l_shape[4] = {2, 2, 3, 3};
-static u8 rotating_wall_hflips_l_shape[4] = {false, true, true, false};
+static const u8 rotating_wall_gfx_animation_idxs[4] = {0, 1, 0, 1};
+static const u8 rotating_wall_hflips[4] = {false, false, false, false};
+static const u8 rotating_wall_gfx_animation_idxs_l_shape[4] = {2, 2, 3, 3};
+static const u8 rotating_wall_hflips_l_shape[4] = {false, true, true, false};
 
 static void rotating_wall_callback(oam_object *self) {
     int idx = self->private[0];
-    u8 rotation = (u8)((bluetenbach_gym_rotating_walls[idx].rotation + cmem.bluetenbach_gym_rotating_wall_orientations[idx]) % 4);
+    u8 rotation = (u8)((bluetenbach_gym_rotating_walls[idx].rotation + csave.bluetenbach_gym_rotating_wall_orientations[idx]) % 4);
     map_position_to_oam_position((s16)(bluetenbach_gym_rotating_walls[idx].anchor_x + 7), (s16)(bluetenbach_gym_rotating_walls[idx].anchor_y + 7), &self->x, &self->y);
     u8 anim_idx, hflip;
     if (bluetenbach_gym_rotating_walls[idx].is_l_shape) {
@@ -76,7 +76,7 @@ static void rotating_wall_callback(oam_object *self) {
     oam_flip(self, hflip, false);
 }
 
-static oam_template rotating_wall_template = {
+static const oam_template rotating_wall_template = {
     .tiles_tag = BLUTENBACH_GYM_ROTATING_WALL_TAG, .pal_tag = BLUTENBACH_GYM_ROTATING_WALL_TAG,
     .oam = &rotating_walls_oam_attributes,
     .animation = rotating_wall_animations,

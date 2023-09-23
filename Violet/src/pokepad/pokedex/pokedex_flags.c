@@ -1,6 +1,7 @@
 #include "types.h"
 #include "save.h"
 #include "pokepad/pokedex/operator.h"
+#include "pokepad/pokedex/state.h"
 
 u8* pokedex_flag_access(u16 flag, bool seen) {
     if (flag < 416) {
@@ -9,7 +10,7 @@ u8* pokedex_flag_access(u16 flag, bool seen) {
         return seen ? &(save2->pokedex_seen_flags[index]) : &(save2->pokedex_caught_flags[index]);
     } else {
         int index = (416 - flag) / 8;
-        return seen ? &(cmem.pokedex_seen_extension[index]) : &(cmem.pokedex_caught_extension[index]);
+        return seen ? &(csave.pokedex_seen_extension[index]) : &(csave.pokedex_caught_extension[index]);
     }
 }
 

@@ -5,7 +5,7 @@
 #include "debug.h"
 #include "flags.h"
 
-static crafting_recipe crafting_recipies_healing[] = {
+static const crafting_recipe crafting_recipies_healing[] = {
     /*
     {
         .item = ITEM_TRANK, 
@@ -111,7 +111,7 @@ static crafting_recipe crafting_recipies_healing[] = {
         .count = 1,
     }
 };
-static crafting_recipe crafting_recipies_jewels[] = {
+static const crafting_recipe crafting_recipies_jewels[] = {
     {
         .item = ITEM_ENERGIEQUARZ, 
         .ingredients = {
@@ -303,7 +303,7 @@ static crafting_recipe crafting_recipies_jewels[] = {
         .flag = FLAG_JEWEL_RECIPIES,
     }
 };
-static crafting_recipe crafting_recipies_pokeballs[] = {
+static const crafting_recipe crafting_recipies_pokeballs[] = {
     {
         .item = ITEM_WOLKENBALL, 
         .ingredients = {
@@ -426,7 +426,7 @@ static crafting_recipe crafting_recipies_pokeballs[] = {
         .flag = FLAG_RECIPE_STAT_BALLS,
     },
 };
-static crafting_recipe crafting_recipies_evolution[] = {
+static const crafting_recipe crafting_recipies_evolution[] = {
     {
         .item = ITEM_BLATTSTEIN, 
         .ingredients = {
@@ -510,7 +510,7 @@ static crafting_recipe crafting_recipies_evolution[] = {
         .flag = FLAG_LINK_CABLE_RECIPE,
     },
 };
-static crafting_recipe crafting_recipies_mints[] = {
+static const crafting_recipe crafting_recipies_mints[] = {
     {
         .item = ITEM_ANGR_ORB_P, 
         .ingredients = {
@@ -603,7 +603,7 @@ static crafting_recipe crafting_recipies_mints[] = {
         .count = 1,
     },
 };
-static crafting_recipe crafting_recipies_nutrients[] = {
+static const crafting_recipe crafting_recipies_nutrients[] = {
     {
         .item = ITEM_KP_PLUS, 
         .ingredients = {
@@ -760,7 +760,7 @@ static crafting_recipe crafting_recipies_nutrients[] = {
         .count = 1,
     }
 };
-static crafting_recipe crafting_recipies_battle[] = {
+static const crafting_recipe crafting_recipies_battle[] = {
     {
         .item = ITEM_X_ANGRIFF, 
         .ingredients = {
@@ -838,7 +838,7 @@ static crafting_recipe crafting_recipies_battle[] = {
     },
 };
 
-crafting_recipe *crafting_recipies[CRAFTING_TYPE_CNT] = {
+const crafting_recipe *const crafting_recipies[CRAFTING_TYPE_CNT] = {
     [CRAFTING_HEALING] = crafting_recipies_healing,
     [CRAFTING_POKEBALLS] = crafting_recipies_pokeballs,
     [CRAFTING_JEWELS] = crafting_recipies_jewels,
@@ -848,7 +848,7 @@ crafting_recipe *crafting_recipies[CRAFTING_TYPE_CNT] = {
     [CRAFTING_BATTLE] = crafting_recipies_battle,
 };
 
-u8 crafting_num_recipies_by_type[CRAFTING_TYPE_CNT] = {
+const u8 crafting_num_recipies_by_type[CRAFTING_TYPE_CNT] = {
     [CRAFTING_HEALING] = ARRAY_COUNT(crafting_recipies_healing),
     [CRAFTING_POKEBALLS] = ARRAY_COUNT(crafting_recipies_pokeballs),
     [CRAFTING_JEWELS] = ARRAY_COUNT(crafting_recipies_jewels),
@@ -865,14 +865,14 @@ size_t crafting_get_num_recipies_by_type(u16 type) {
         return 0;
 }
 
-crafting_recipe *crafting_recipies_get_by_type(u16 type) {
+const crafting_recipe *crafting_recipies_get_by_type(u16 type) {
     if (type < CRAFTING_TYPE_CNT)
         return crafting_recipies[type];
     else
         return NULL;
 }
 
-bool ingredient_requirements_fulfilled(crafting_ingredient *ingredient, u16 count) {
+bool ingredient_requirements_fulfilled(const crafting_ingredient *ingredient, u16 count) {
     count = (u16)(count * ingredient->count);
     if (count == 0)
         return true;
@@ -888,7 +888,7 @@ bool ingredient_requirements_fulfilled(crafting_ingredient *ingredient, u16 coun
     return false;
 }
 
-bool recipe_requirements_fulfilled(crafting_recipe *r, u16 count) {
+bool recipe_requirements_fulfilled(const crafting_recipe *r, u16 count) {
     for (u8 i = 0; i < ARRAY_COUNT(r->ingredients); i++) {
         if (r->ingredients[i].count > 0) {
             if (!ingredient_requirements_fulfilled(r->ingredients + i, count))
@@ -898,10 +898,10 @@ bool recipe_requirements_fulfilled(crafting_recipe *r, u16 count) {
     return true;
 }
 
-u16 recipe_max_count_with_requirements_fulfilled(crafting_recipe *r) {
+u16 recipe_max_count_with_requirements_fulfilled(const crafting_recipe *r) {
     int max_count = INT_MAX;
     for (u8 i = 0; i < ARRAY_COUNT(r->ingredients); i++) {
-        crafting_ingredient *ingredient = r->ingredients + i;
+        const crafting_ingredient *ingredient = r->ingredients + i;
         if (ingredient->count > 0) {
             switch (ingredient->type) {
                 case CRAFTING_INGREDIENT_ITEM: {
@@ -921,7 +921,7 @@ u16 recipe_max_count_with_requirements_fulfilled(crafting_recipe *r) {
     return (u16) max_count;
 }
 
-bool recipe_use(crafting_recipe *r, u16 count) {
+bool recipe_use(const crafting_recipe *r, u16 count) {
     if (recipe_requirements_fulfilled(r, count) && item_has_room(r->item, count)) {
         for (u8 i = 0; i < ARRAY_COUNT(r->ingredients); i++) {
             if (r->ingredients[i].type == CRAFTING_INGREDIENT_ASH) {

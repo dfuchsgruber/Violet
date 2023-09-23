@@ -8,7 +8,7 @@
 #include "flags.h"
 #include "item/item.h"
 
-u8 str_item_ashbag[] = LANGDEP(
+static const u8 str_item_ashbag[] = LANGDEP(
     PSTRING("In der Aschetasche befindet\nsich BUFFER_1 Asche.PAUSE_UNTIL_PRESS"),
     PSTRING("The ashbag containsBUFFER_1\nashes.PAUSE_UNTIL_PRESS"));
 

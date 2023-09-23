@@ -23,47 +23,47 @@ extern const u8 gfx_mega_rayPal[];
 #define MEGA_TAG 43210
 #define REGENT_TAG 43211
 
-static graphic graphic_mega_sparkle = {
+static const graphic graphic_mega_sparkle = {
     .sprite = gfx_mega_sparkleTiles, .tag = MEGA_TAG, .size = 32 * 32 / 2,
 };
-static graphic graphic_regent_groudon_sparkle = {
+static const graphic graphic_regent_groudon_sparkle = {
     .sprite = gfx_regent_groudon_sparkleTiles, .tag = REGENT_TAG, .size = 32 * 32 / 2,
 };
-static graphic graphic_regent_kyogre_sparkle = {
+static const graphic graphic_regent_kyogre_sparkle = {
     .sprite = gfx_regent_kyogre_sparkleTiles, .tag = REGENT_TAG, .size = 32 * 32 / 2,
 };
-static graphic graphic_regent_rayquaza_sparkle = {
+static const graphic graphic_regent_rayquaza_sparkle = {
     .sprite = gfx_regent_rayquaza_sparkleTiles, .tag = REGENT_TAG, .size = 32 * 32 / 2,
 };
-static palette palette_mega_sparkle = {
+static const palette palette_mega_sparkle = {
     .pal = gfx_mega_sparklePal, .tag = MEGA_TAG,
 };
-static palette palette_regent_sparkle = {
+static const palette palette_regent_sparkle = {
     .pal = gfx_regent_kyogre_sparklePal, .tag = REGENT_TAG,
 };
 
 
-static sprite sparkle_sprite = {
+static const sprite sparkle_sprite = {
     .attr0 = ATTR0_SHAPE_SQUARE | ATTR0_MODE_SEMI_TRANSPARENT, .attr1 = ATTR1_SIZE_32_32, 
     .attr2 = ATTR2_PRIO(2),
 };
 
-oam_template battle_animation_mega_sparkle_template = {
+const oam_template battle_animation_mega_sparkle_template = {
     .tiles_tag = MEGA_TAG, .pal_tag = MEGA_TAG, .oam = &sparkle_sprite,
     .animation = oam_gfx_anim_table_null, .graphics = NULL, .rotscale = oam_rotscale_anim_table_null,
     .callback = battle_animation_oam_particle_emission_above_battler_callback,
 };
 
-oam_template battle_animation_regent_sparkle_template = {
+const oam_template battle_animation_regent_sparkle_template = {
     .tiles_tag = REGENT_TAG, .pal_tag = REGENT_TAG, .oam = &sparkle_sprite,
     .animation = oam_gfx_anim_table_null, .graphics = NULL, .rotscale = oam_rotscale_anim_table_null,
     .callback = battle_animation_oam_particle_emission_above_battler_callback,
 };
 
 void battle_animation_mega_callback_load_gfx(u8 self) {
-    u8 battler_idx = battler_attacking_order[MEGA_STATE.mega_action_current_slot];
-    mega_evolution_t *mega_evolution = mega_evolution_get_by_mega_species(battlers[battler_idx].species);
-    graphic *g = NULL; palette *p = NULL;
+    u8 battler_idx = battler_attacking_order[mega_state->mega_action_current_slot];
+    const mega_evolution_t *mega_evolution = mega_evolution_get_by_mega_species(battlers[battler_idx].species);
+    const graphic *g = NULL; const palette *p = NULL;
     if (mega_evolution->type == MEGA_EVOLUTION){
         g = &graphic_mega_sparkle;
         p = &palette_mega_sparkle;
@@ -95,7 +95,7 @@ void battle_animation_mega_callback_load_gfx(u8 self) {
 }
 
 void battle_animation_mega_intialize_vars(u8 self) {
-    u8 battler_idx = battler_attacking_order[MEGA_STATE.mega_action_current_slot];
+    u8 battler_idx = battler_attacking_order[mega_state->mega_action_current_slot];
     battle_animation_user = battler_idx;
     battle_animation_target = battler_idx;
     battle_animation_big_callback_delete(self);

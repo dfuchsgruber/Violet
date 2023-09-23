@@ -13,11 +13,11 @@
 extern u8 gfx_overworld_cloud_upstreamTiles[];
 extern u8 gfx_overworld_cloud_upstreamPal[];
 
-static palette overworld_cloud_upstream_palette = {
+static const palette overworld_cloud_upstream_palette = {
     .pal = gfx_overworld_cloud_upstreamPal, .tag = OAM_TAG_CLOUD_UPSTREAM,
 };
 
-static graphic overworld_cloud_upstream_graphics[] = {
+static const graphic overworld_cloud_upstream_graphics[] = {
     // Over npcs
     [0] = {.sprite = gfx_overworld_cloud_upstreamTiles + 0 * GRAPHIC_SIZE_4BPP(64, 32), .size = GRAPHIC_SIZE_4BPP(64, 32), .tag = 0xFFFF},
     [1] = {.sprite = gfx_overworld_cloud_upstreamTiles + 1 * GRAPHIC_SIZE_4BPP(64, 32), .size = GRAPHIC_SIZE_4BPP(64, 32), .tag = 0xFFFF},
@@ -42,9 +42,9 @@ static graphic overworld_cloud_upstream_graphics[] = {
     [18] = {.sprite = gfx_overworld_cloud_upstreamTiles + 18 * GRAPHIC_SIZE_4BPP(64, 32), .size = GRAPHIC_SIZE_4BPP(64, 32), .tag = 0xFFFF},
 };
 
-static sprite sprite_cloud_upstream_prio_1 = {.attr0 = ATTR0_SHAPE_HORIZONTAL, .attr1 = ATTR1_SIZE_64_32, .attr2 = ATTR2_PRIO(1)};
-static sprite sprite_cloud_upstream_prio_2 = {.attr0 = ATTR0_SHAPE_HORIZONTAL, .attr1 = ATTR1_SIZE_64_32, .attr2 = ATTR2_PRIO(2)};
-static sprite sprite_cloud_upstream_controller = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_8_8, .attr2 = ATTR2_PRIO(2)};
+static const sprite sprite_cloud_upstream_prio_1 = {.attr0 = ATTR0_SHAPE_HORIZONTAL, .attr1 = ATTR1_SIZE_64_32, .attr2 = ATTR2_PRIO(1)};
+static const sprite sprite_cloud_upstream_prio_2 = {.attr0 = ATTR0_SHAPE_HORIZONTAL, .attr1 = ATTR1_SIZE_64_32, .attr2 = ATTR2_PRIO(2)};
+static const sprite sprite_cloud_upstream_controller = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_8_8, .attr2 = ATTR2_PRIO(2)};
 
 static bool cloud_upstream_hide(oam_cloud_upstream_state_t *state) {
     if (overworld_effect_is_oam_outside_camera_view(state->x, (s16)(state->y), 64, 64)) {
@@ -307,7 +307,7 @@ static void oam_callback_cloud_upstream_step10(oam_object *self) {
     }
 }
 
-static gfx_frame overworld_cloud_upstream_animation_big_ring[] = {
+static const gfx_frame overworld_cloud_upstream_animation_big_ring[] = {
     {.data = 0, .duration = 0}, 
     // Small ring
     {.data = 0, .duration = 4}, {.data = 1, .duration = 4}, {.data = 2, .duration = 4}, {.data = 1, .duration = 4  | GFX_ANIM_HFLIP},
@@ -318,7 +318,7 @@ static gfx_frame overworld_cloud_upstream_animation_big_ring[] = {
     {.data = GFX_ANIM_JUMP, .duration = 9},
 };
 
-static gfx_frame overworld_cloud_upstream_animation_big_ring_bg[] = {
+static const gfx_frame overworld_cloud_upstream_animation_big_ring_bg[] = {
     {.data = 10, .duration = 0}, 
     // Small ring
     {.data = 10, .duration = 4}, {.data = 11, .duration = 4}, {.data = 12, .duration = 4}, {.data = 11, .duration = 4  | GFX_ANIM_HFLIP},
@@ -329,7 +329,7 @@ static gfx_frame overworld_cloud_upstream_animation_big_ring_bg[] = {
     {.data = GFX_ANIM_JUMP, .duration = 9},
 };
 
-static gfx_frame overworld_cloud_upstream_animation_normal_ring[] = {
+static const gfx_frame overworld_cloud_upstream_animation_normal_ring[] = {
     {.data = 3, .duration = 0}, 
     // Small ring
     {.data = 0, .duration = 4}, {.data = 1, .duration = 4}, {.data = 2, .duration = 4}, {.data = 1, .duration = 4  | GFX_ANIM_HFLIP},
@@ -338,7 +338,7 @@ static gfx_frame overworld_cloud_upstream_animation_normal_ring[] = {
     {.data = GFX_ANIM_JUMP, .duration = 5},
 };
 
-static gfx_frame overworld_cloud_upstream_animation_normal_ring_bg[] = {
+static const gfx_frame overworld_cloud_upstream_animation_normal_ring_bg[] = {
     {.data = 13, .duration = 0}, 
     // Small ring
     {.data = 10, .duration = 4}, {.data = 11, .duration = 4}, {.data = 12, .duration = 4}, {.data = 11, .duration = 4  | GFX_ANIM_HFLIP},
@@ -347,21 +347,21 @@ static gfx_frame overworld_cloud_upstream_animation_normal_ring_bg[] = {
     {.data = GFX_ANIM_JUMP, .duration = 5},
 };
 
-static gfx_frame overworld_cloud_upstream_animation_small_ring[] = {
+static const gfx_frame overworld_cloud_upstream_animation_small_ring[] = {
     {.data = 3, .duration = 0}, 
     // Small ring
     {.data = 0, .duration = 4}, {.data = 1, .duration = 4}, {.data = 2, .duration = 4}, {.data = 1, .duration = 4  | GFX_ANIM_HFLIP},
     {.data = GFX_ANIM_JUMP, .duration = 1},
 };
 
-static gfx_frame overworld_cloud_upstream_animation_small_ring_bg[] = {
+static const gfx_frame overworld_cloud_upstream_animation_small_ring_bg[] = {
     {.data = 13, .duration = 0}, 
     // Small ring
     {.data = 10, .duration = 4}, {.data = 11, .duration = 4}, {.data = 12, .duration = 4}, {.data = 11, .duration = 4  | GFX_ANIM_HFLIP},
     {.data = GFX_ANIM_JUMP, .duration = 1},
 };
 
-static gfx_frame overworld_cloud_upstream_animation_static_upstream[] = {
+static const gfx_frame overworld_cloud_upstream_animation_static_upstream[] = {
     {.data = 3, .duration = 0}, 
     // Small ring
     {.data = 0, .duration = 4}, {.data = 1, .duration = 4}, {.data = 2, .duration = 4}, {.data = 1, .duration = 4  | GFX_ANIM_HFLIP},
@@ -370,7 +370,7 @@ static gfx_frame overworld_cloud_upstream_animation_static_upstream[] = {
     {.data = GFX_ANIM_JUMP, .duration = 1},
 };
 
-static gfx_frame overworld_cloud_upstream_animation_static_upstream_bg[] = {
+static const gfx_frame overworld_cloud_upstream_animation_static_upstream_bg[] = {
     {.data = 3, .duration = 0}, 
     // Small ring
     {.data = 10, .duration = 4}, {.data = 11, .duration = 4}, {.data = 12, .duration = 4}, {.data = 11, .duration = 4  | GFX_ANIM_HFLIP},
@@ -379,11 +379,11 @@ static gfx_frame overworld_cloud_upstream_animation_static_upstream_bg[] = {
     {.data = GFX_ANIM_JUMP, .duration = 1},
 };
 
-static gfx_frame overworld_cloud_upstream_animation_no_ring[] = {
+static const gfx_frame overworld_cloud_upstream_animation_no_ring[] = {
     {.data = 9, .duration = 0}, {.data = GFX_ANIM_END}
 }; 
 
-static gfx_frame *overworld_cloud_upstream_animations[] = {
+static const gfx_frame *const overworld_cloud_upstream_animations[] = {
     [CLOUD_UPSTREAM_ANIM_BIG_RING] = overworld_cloud_upstream_animation_big_ring,
     [CLOUD_UPSTREAM_ANIM_NORMAL_RING] = overworld_cloud_upstream_animation_normal_ring,
     [CLOUD_UPSTREAM_ANIM_SMALL_RING] = overworld_cloud_upstream_animation_small_ring,
@@ -419,7 +419,7 @@ static void overworld_cloud_static_upstream_callback (oam_object *self) {
     }
 }
 
-static oam_template overworld_cloud_upstream_oam_templates[] = {
+static const oam_template overworld_cloud_upstream_oam_templates[] = {
     {
         .tiles_tag = 0xFFFF, .pal_tag = OAM_TAG_CLOUD_UPSTREAM,
         .graphics = overworld_cloud_upstream_graphics,

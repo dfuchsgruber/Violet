@@ -17,7 +17,7 @@
 #include "constants/trainerclasses.h"
 #include "vars.h"
 
-short_pair trainer_music_table [] = {
+const short_pair trainer_music_table [] = {
     {TRAINERCLASS_RIVALE, MUS_RIVAL_BATTLE},
     {TRAINERCLASS_TEAM_VIOLET, MUS_VIOLET_BATTLE},
     {TRAINERCLASS_ARENALEITER, MUS_GYMLEADER_NEW},

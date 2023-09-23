@@ -17,11 +17,11 @@ bool player_step_force_on_cloud() {
     return false;
 }
 
-u8 *player_step_on_behavior(){
+const u8 *player_step_on_behavior(){
     s16 pos[2];
     player_get_coordinates(&pos[0], &pos[1]);
     u8 behavior = (u8)block_get_behaviour_by_pos(pos[0], pos[1]);
-    any_grass *g = any_grass_get_on_current_map_by_behaviour(behavior);
+    const any_grass *g = any_grass_get_on_current_map_by_behaviour(behavior);
     if (g && g->on_player_step)
         return g->on_player_step();
     return NULL;

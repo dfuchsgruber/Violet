@@ -18,6 +18,9 @@
 #include "constants/movements.h"
 #include "debug.h"
 
+EWRAM u8 pathfinding_npc_movements_waiting = false;
+EWRAM u8 npc_facing_movements[2] = {0};
+
 void special_move_npc_to_player() {
     s16 pos[2];
     player_get_facing_position(&pos[0], &pos[1]);
@@ -45,11 +48,11 @@ void overworld_person_get_position() {
 }
 
 void npc_move_to_block_movements() {
-    fmem.pathfinding_npc_movements_waiting = true;
+    pathfinding_npc_movements_waiting = true;
 }
 
 void npc_move_to_unblock_movements() {
-    fmem.pathfinding_npc_movements_waiting = false;
+    pathfinding_npc_movements_waiting = false;
 }
 
 void npc_move_to_freeing_callback(u8 self) {
@@ -60,7 +63,7 @@ void npc_move_to_freeing_callback(u8 self) {
 }
 
 static void npc_move_to_do_moves(u8 self) {
-    if (!fmem.pathfinding_npc_movements_waiting) {
+    if (!pathfinding_npc_movements_waiting) {
         u8 *moves = (u8*)big_callback_get_int(self, 0);
         u8 person_idx = (u8)big_callbacks[self].params[2];
         npc_apply_movement(person_idx, save1->map, save1->bank, moves);
@@ -97,7 +100,7 @@ void npc_move_to(u8 ow_id, s16 dest_x, s16 dest_y, u8 speed) {
 }
 
 
-static u8 move_camera_movements_normal[][3][3] = {
+static const u8 move_camera_movements_normal[][3][3] = {
     [A_STAR_SPEED_NORMAL] = {
         {STEP_NORTH_WEST, STEP_UP, STEP_NORTH_EAST},
         {STEP_LEFT, STOP, STEP_RIGHT},
@@ -168,7 +171,7 @@ static void overworld_person_face_to_person(u8 person_idx_facing, u8 person_idx_
         target_y = npcs[npc_target].dest_y;
         target_direction = npcs[npc_target].direction.facing;
     } else { // Get the position from map event
-        map_event_person *person_target = map_get_person(person_idx_target, save1->map, save1->bank);
+        const map_event_person *person_target = map_get_person(person_idx_target, save1->map, save1->bank);
         target_x = (s16)(person_target->x + 7);
         target_y = (s16)(person_target->y + 7);
     }
@@ -185,17 +188,17 @@ static void overworld_person_face_to_person(u8 person_idx_facing, u8 person_idx_
     }
     if (horizontal) {
             if (dx >= 0)
-                fmem.npc_facing_movements[0] = LOOK_LEFT;
+                npc_facing_movements[0] = LOOK_LEFT;
             else
-                fmem.npc_facing_movements[0] = LOOK_RIGHT;
+                npc_facing_movements[0] = LOOK_RIGHT;
         } else {
             if (dy >= 0)
-                fmem.npc_facing_movements[0] = LOOK_UP;
+                npc_facing_movements[0] = LOOK_UP;
             else
-                fmem.npc_facing_movements[0] = LOOK_DOWN;
+                npc_facing_movements[0] = LOOK_DOWN;
         }
-        fmem.npc_facing_movements[1] = STOP;
-        npc_apply_movement(person_idx_facing, save1->map, save1->bank, fmem.npc_facing_movements);
+        npc_facing_movements[1] = STOP;
+        npc_apply_movement(person_idx_facing, save1->map, save1->bank, npc_facing_movements);
         npc_movement_target_person_idx = person_idx_facing;
 }
 

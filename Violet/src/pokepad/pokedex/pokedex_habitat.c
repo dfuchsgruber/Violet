@@ -22,6 +22,7 @@
 #include "worldmap.h"
 #include "dma.h"
 #include "debug.h"
+#include "pokepad/pokedex/state.h"
 
 extern const unsigned short gfx_pokedex_habitat_uiTiles[];
 extern const unsigned short gfx_pokedex_habitat_uiMap[];
@@ -36,14 +37,14 @@ extern const unsigned short gfx_hiroine_headTiles[];
 extern const unsigned short gfx_hiro_headPal[];
 extern const unsigned short gfx_hiroine_headPal[];
 
-bg_config pokedex_bg_habitat_configs [] = {
+const bg_config pokedex_bg_habitat_configs [] = {
     {0, 0, 31, 0, 0, 0},
     {1, 0, 30, 0, 0, 2},
     {2, 3, 29, 0, 0, 1},
     {3, 1, 28, 0, 1, 3}
 };
 
-tboxdata pokedex_habitat_tboxes [] = {
+const tboxdata pokedex_habitat_tboxes [] = {
     {0, 6, 0, 24, 2, 15, 2}, //Title Line := 0x0
     {0, 1, 0, 5, 2, 15, 50}, //Grass := 0x1
     {0, 1, 4, 5, 2, 15, 60}, //Water := 0x2
@@ -54,49 +55,49 @@ tboxdata pokedex_habitat_tboxes [] = {
     {0xFF, 0, 0, 0, 0, 0, 0},
 };
 
-graphic pokedex_habitat_cursor_graphic = {
+const graphic pokedex_habitat_cursor_graphic = {
     (void*) 0x083EED38,
     0x100,
     0xA014
 };
 
-graphic pokedex_habitat_male_graphic = {
+const graphic pokedex_habitat_male_graphic = {
     gfx_hiro_headTiles,
     0x80,
     0xA015
 };
 
-graphic pokedex_habitat_female_graphic = {
+const graphic pokedex_habitat_female_graphic = {
     gfx_hiroine_headTiles,
     0x80,
     0xA015
 };
 
-graphic pokedex_habitat_type_graphic = {
+const graphic pokedex_habitat_type_graphic = {
     &gfx_pokedex_habitat_type_iconsTiles,
     0x80 * 9,
     0xA016
 };
 
-sprite pokedex_habitat_cursor_sprite = {
+const sprite pokedex_habitat_cursor_sprite = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(0)
 };
 
-sprite pokedex_habitat_head_sprite = {
+const sprite pokedex_habitat_head_sprite = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(0)
 };
 
-gfx_frame pokedex_habitat_cursor_gfx_anim[] = {
+const gfx_frame pokedex_habitat_cursor_gfx_anim[] = {
     {0, 32},
     {4, 32},
     {0xFFFE, 0}
 };
 
-gfx_frame *pokedex_habitat_cursor_gfx_anim_table[] = {
+const gfx_frame *const pokedex_habitat_cursor_gfx_anim_table[] = {
     pokedex_habitat_cursor_gfx_anim
 };
 
-static gfx_frame pokedex_habitat_type_gfx_frames[] = {
+static const gfx_frame pokedex_habitat_type_gfx_frames[] = {
     {.data = 0, .duration = 0}, {.data = GFX_ANIM_END},
     {.data = 4, .duration = 0}, {.data = GFX_ANIM_END},
     {.data = 8, .duration = 0}, {.data = GFX_ANIM_END},
@@ -109,7 +110,7 @@ static gfx_frame pokedex_habitat_type_gfx_frames[] = {
 };
 
 
-static gfx_frame *pokedex_habitat_type_gfx_anim_table[] = {
+static const gfx_frame *const pokedex_habitat_type_gfx_anim_table[] = {
     pokedex_habitat_type_gfx_frames,
     pokedex_habitat_type_gfx_frames + 2,
     pokedex_habitat_type_gfx_frames + 4,
@@ -121,7 +122,7 @@ static gfx_frame *pokedex_habitat_type_gfx_anim_table[] = {
     pokedex_habitat_type_gfx_frames + 16,
 };
 
-oam_template pokedex_habitat_cursor_template = {
+const oam_template pokedex_habitat_cursor_template = {
     0xA014,
     0xA014,
     &pokedex_habitat_cursor_sprite,
@@ -131,7 +132,7 @@ oam_template pokedex_habitat_cursor_template = {
     oam_null_callback
 };
 
-oam_template pokedex_habitat_head_template = {
+const oam_template pokedex_habitat_head_template = {
     0xA015,
     0xA015,
     &pokedex_habitat_head_sprite,
@@ -141,7 +142,7 @@ oam_template pokedex_habitat_head_template = {
     oam_null_callback
 };
 
-static oam_template pokedex_habitat_type_template = {
+static const oam_template pokedex_habitat_type_template = {
     0xA016,
     0xA016,
     &pokedex_habitat_cursor_sprite,
@@ -152,9 +153,9 @@ static oam_template pokedex_habitat_type_template = {
 };
 
 
-tbox_font_colormap pokedex_fontcolmap_namespace = {3, 2, 1, 0};
+const tbox_font_colormap pokedex_fontcolmap_namespace = {3, 2, 1, 0};
 
-int *worldmap_tilemaps[4] = {
+const int *const worldmap_tilemaps[4] = {
     (int*) gfx_worldmapMap,
     (int*) 0x083F0354,
     (int*) 0x083F0464,
@@ -185,7 +186,7 @@ void pokedex_init_habitat() {
 
         //we find the current worldmap
         int i, j;
-        fmem.dex_mem->current_worldmap = 0;
+        pokedex_state->current_worldmap = 0;
 
         free(bg_get_tilemap(0));
         free(bg_get_tilemap(1));
@@ -226,7 +227,7 @@ void pokedex_init_habitat() {
         u16 *gp_tmp = (u16*) 0x0201C000;
 
         lz77uncompvram(gfx_worldmapTiles, (void*) 0x06004000);
-        lz77uncompwram(worldmap_tilemaps[fmem.dex_mem->current_worldmap], gp_tmp);
+        lz77uncompwram(worldmap_tilemaps[pokedex_state->current_worldmap], gp_tmp);
         lz77uncompvram(gfx_pokedex_habitat_uiTiles, (void*) 0x0600C000);
         lz77uncompwram(gfx_pokedex_habitat_uiMap, bg2map);
         lz77uncompvram(gfx_pokedex_habitat_maskTiles, (void*) 0x06000000);
@@ -249,7 +250,7 @@ void pokedex_init_habitat() {
         tbox_tilemap_draw(0);
         u8 str_title[] = LANGDEP(PSTRING(" Fundorte v. "), PSTRING(" Habitats of "));
         u8 *title = strcpy(strbuf, str_title);
-        title = strcat(title, pokemon_names[fmem.dex_mem->current_species]);
+        title = strcat(title, pokemon_names[pokedex_state->current_species]);
         tbox_print_string(0, 2, 0, 0, 0, 0, &pokedex_fontcolmap, 0, strbuf);
         u8 str_back[] = LANGDEP(PSTRING("KEY_B Zur."), PSTRING("KEY_B Back"));
         tbox_print_string(0, 2, 144, 0, 0, 0, &pokedex_fontcolmap, 0, str_back);
@@ -286,37 +287,37 @@ void pokedex_init_habitat() {
         pal_set_all_to_black();
 
         //oam
-        s16 origin_x = (s16) ((fmem.dex_mem->habitat_cursor_x + 7) * 8 + 4);
-        s16 origin_y = (s16) ((fmem.dex_mem->habitat_cursor_y + 4) * 8 + 4);
+        s16 origin_x = (s16) ((pokedex_state->habitat_cursor_x + 7) * 8 + 4);
+        s16 origin_y = (s16) ((pokedex_state->habitat_cursor_y + 4) * 8 + 4);
         if (save2->player_is_female) {
             oam_load_graphic(&pokedex_habitat_female_graphic);
         } else {
             oam_load_graphic(&pokedex_habitat_male_graphic);
         }
-        fmem.dex_mem->oam_habitat_head = oam_new_forward_search(&pokedex_habitat_head_template, origin_x, origin_y, 1);
+        pokedex_state->oam_habitat_head = oam_new_forward_search(&pokedex_habitat_head_template, origin_x, origin_y, 1);
         oam_load_graphic(&pokedex_habitat_type_graphic);
 
         for (i = 0; i < 6; i++) {
             for (int j = 0; j < 3; j++) {
                 if (i >= HABITAT_TYPE_OLD_ROD) {
-                    fmem.dex_mem->habitat_oams_rarity[i][j] = oam_new_forward_search(
+                    pokedex_state->habitat_oams_rarity[i][j] = oam_new_forward_search(
                         &pokedex_habitat_type_template, (s16) (8 + j * 16), (s16)(120 + (i - HABITAT_TYPE_OLD_ROD) * 16), 0);
                 } else {
-                    fmem.dex_mem->habitat_oams_rarity[i][j] = oam_new_forward_search(
+                    pokedex_state->habitat_oams_rarity[i][j] = oam_new_forward_search(
                         &pokedex_habitat_type_template, (s16) (8 + j * 16), (s16) (16 + i * 32 + 6), 0);
                 }
-                oams[fmem.dex_mem->habitat_oams_rarity[i][j]].flags |= OAM_FLAG_INVISIBLE;
+                oams[pokedex_state->habitat_oams_rarity[i][j]].flags |= OAM_FLAG_INVISIBLE;
             }
             
         }
         oam_load_graphic(&pokedex_habitat_cursor_graphic);
-        fmem.dex_mem->oam_habitat_cursor = oam_new_forward_search(&pokedex_habitat_cursor_template, origin_x, origin_y, 0);
+        pokedex_state->oam_habitat_cursor = oam_new_forward_search(&pokedex_habitat_cursor_template, origin_x, origin_y, 0);
 
         pokedex_habitats_update();
 
         callback1_set(pokedex_habitat_callback_idle);
         vblank_handler_set(generic_vblank_handler);
-        fmem.dex_mem->habitat_cursor_is_moving = false;
+        pokedex_state->habitat_cursor_is_moving = false;
         fadescreen_all(0, 0);
 
         bg_virtual_sync(0);
@@ -337,7 +338,7 @@ void pokedex_init_habitat() {
 }
 
 void pokedex_habitat_big_callback_cursor_movement(u8 self) {
-    oam_object *obj = &oams[fmem.dex_mem->oam_habitat_cursor];
+    oam_object *obj = &oams[pokedex_state->oam_habitat_cursor];
     switch (big_callbacks[self].params[0]) {
         case 0: //down
             obj->y2 = (s16) (obj->y2 + 2);
@@ -354,7 +355,7 @@ void pokedex_habitat_big_callback_cursor_movement(u8 self) {
     }
     if (!--big_callbacks[self].params[1]) {
         pokedex_habitats_update();
-        fmem.dex_mem->habitat_cursor_is_moving = false;
+        pokedex_state->habitat_cursor_is_moving = false;
         big_callback_delete(self);
     }
 
@@ -362,20 +363,20 @@ void pokedex_habitat_big_callback_cursor_movement(u8 self) {
 
 void pokedex_habitat_callback_idle() {
     generic_callback1();
-    if (!fading_is_active() && !fmem.dex_mem->habitat_cursor_is_moving) {
-        if (fmem.dex_mem->habitat_fading_countdown) {
-            fmem.dex_mem->habitat_fading_countdown--;
+    if (!fading_is_active() && !pokedex_state->habitat_cursor_is_moving) {
+        if (pokedex_state->habitat_fading_countdown) {
+            pokedex_state->habitat_fading_countdown--;
         } else {
             //process the habitat fading
-            if (fmem.dex_mem->habitat_fading_mode) {
-                if (!--fmem.dex_mem->habitat_fading_index)
-                    fmem.dex_mem->habitat_fading_mode = 0;
+            if (pokedex_state->habitat_fading_mode) {
+                if (!--pokedex_state->habitat_fading_index)
+                    pokedex_state->habitat_fading_mode = 0;
             } else {
-                if (++fmem.dex_mem->habitat_fading_index == 8)
-                    fmem.dex_mem->habitat_fading_mode = 1;
+                if (++pokedex_state->habitat_fading_index == 8)
+                    pokedex_state->habitat_fading_mode = 1;
             }
-				if (fmem.dex_mem->habitat_found) {
-				int ea = fmem.dex_mem->habitat_fading_index;
+				if (pokedex_state->habitat_found) {
+				int ea = pokedex_state->habitat_fading_index;
 				int eb = 16 - ea;
 				u16 colev = (u16)((eb << 8) | ea);
 				pokedex_habitat_draw_scanline(colev);
@@ -383,38 +384,38 @@ void pokedex_habitat_callback_idle() {
             	// Standard transparency always
 				pokedex_habitat_draw_scanline(0xA0F);
             }
-            fmem.dex_mem->habitat_fading_countdown = 2;
+            pokedex_state->habitat_fading_countdown = 2;
         }
 
         u8 cb_id;
-        if (super.keys.keys.down && fmem.dex_mem->habitat_cursor_y < 14) {
+        if (super.keys.keys.down && pokedex_state->habitat_cursor_y < 14) {
             cb_id = big_callback_new(pokedex_habitat_big_callback_cursor_movement, 0);
             big_callbacks[cb_id].params[1] = 4;
             big_callbacks[cb_id].params[0] = 0;
-            fmem.dex_mem->habitat_cursor_is_moving = true;
-            fmem.dex_mem->habitat_cursor_y++;
-        } else if (super.keys.keys.up && fmem.dex_mem->habitat_cursor_y) {
+            pokedex_state->habitat_cursor_is_moving = true;
+            pokedex_state->habitat_cursor_y++;
+        } else if (super.keys.keys.up && pokedex_state->habitat_cursor_y) {
             cb_id = big_callback_new(pokedex_habitat_big_callback_cursor_movement, 0);
             big_callbacks[cb_id].params[1] = 4;
             big_callbacks[cb_id].params[0] = 1;
-            fmem.dex_mem->habitat_cursor_is_moving = true;
-            fmem.dex_mem->habitat_cursor_y--;
-        } else if (super.keys.keys.left && fmem.dex_mem->habitat_cursor_x) {
+            pokedex_state->habitat_cursor_is_moving = true;
+            pokedex_state->habitat_cursor_y--;
+        } else if (super.keys.keys.left && pokedex_state->habitat_cursor_x) {
             cb_id = big_callback_new(pokedex_habitat_big_callback_cursor_movement, 0);
             big_callbacks[cb_id].params[1] = 4;
             big_callbacks[cb_id].params[0] = 2;
-            fmem.dex_mem->habitat_cursor_is_moving = true;
-            fmem.dex_mem->habitat_cursor_x--;
-        } else if (super.keys.keys.right && fmem.dex_mem->habitat_cursor_x < 21) {
+            pokedex_state->habitat_cursor_is_moving = true;
+            pokedex_state->habitat_cursor_x--;
+        } else if (super.keys.keys.right && pokedex_state->habitat_cursor_x < 21) {
             cb_id = big_callback_new(pokedex_habitat_big_callback_cursor_movement, 0);
             big_callbacks[cb_id].params[1] = 4;
             big_callbacks[cb_id].params[0] = 3;
-            fmem.dex_mem->habitat_cursor_is_moving = true;
-            fmem.dex_mem->habitat_cursor_x++;
+            pokedex_state->habitat_cursor_is_moving = true;
+            pokedex_state->habitat_cursor_x++;
         } else if (super.keys.keys.B) {
             fadescreen_all(1, 0);
-            free(fmem.dex_mem->habitats);
-            fmem.dex_mem->entry_skip_cry = true;
+            free(pokedex_state->habitats);
+            pokedex_state->entry_skip_cry = true;
             callback1_set(pokedex_callback_init_entry);
         }
     }
@@ -422,10 +423,10 @@ void pokedex_habitat_callback_idle() {
 
 void pokedex_habitats_load_for_species(u16 *bg1map) {
     pokedex_habitat_pair *habitats = malloc(sizeof(pokedex_habitat_pair) * 6 * 22 * 15 * 7);
-    fmem.dex_mem->habitats = habitats;
-    int habitat_size = pokedex_get_habitats_of_species(habitats, fmem.dex_mem->current_species);
-    fmem.dex_mem->habitat_size = habitat_size;
-    fmem.dex_mem->habitat_found = false;
+    pokedex_state->habitats = habitats;
+    int habitat_size = pokedex_get_habitats_of_species(habitats, pokedex_state->current_species);
+    pokedex_state->habitat_size = habitat_size;
+    pokedex_state->habitat_found = false;
 
     // Locate the player on the map (use the old worldmap routine)
     worldmap_state_t *wm_state = malloc(sizeof(worldmap_state));
@@ -436,18 +437,18 @@ void pokedex_habitats_load_for_species(u16 *bg1map) {
     for (i = 0; i < 18; i++) {
         for (j = 0; j < 22; j++) {
             for (k = 0; k < 1; k++) {
-                u8 namespace = worldmap_get_namespace_by_pos(fmem.dex_mem->current_worldmap, (u8) k, (u16) i, (u16) j);
+                u8 namespace = worldmap_get_namespace_by_pos(pokedex_state->current_worldmap, (u8) k, (u16) i, (u16) j);
                 if (namespace != MAP_NAMESPACE_NONE) {
                     //Lets check if the namespace is present in our list
                     if (j == worldmap_state->cursor_x && i == worldmap_state->cursor_y) {
-                        fmem.dex_mem->habitat_cursor_x = j;
-                        fmem.dex_mem->habitat_cursor_y = i;
+                        pokedex_state->habitat_cursor_x = j;
+                        pokedex_state->habitat_cursor_y = i;
                     }
                     for (l = 0; l < habitat_size; l++) {
                         if (habitats[l].worldmap_x == j && habitats[l].worldmap_y == i) {
                         	// Set red block
                             bg1map[(i + 4) * 32 + j + 7] = 0x5001;
-                            fmem.dex_mem->habitat_found = true;
+                            pokedex_state->habitat_found = true;
                             break;
                         }
                     }
@@ -461,7 +462,7 @@ void pokedex_habitats_load_for_species(u16 *bg1map) {
 
 void pokedex_habitats_load_namespace() {
     u8 str_blank [] = {0, 0, 0xFF};
-    u8 namespace = worldmap_get_namespace_by_pos(fmem.dex_mem->current_worldmap, 0, fmem.dex_mem->habitat_cursor_y, fmem.dex_mem->habitat_cursor_x);
+    u8 namespace = worldmap_get_namespace_by_pos(pokedex_state->current_worldmap, 0, pokedex_state->habitat_cursor_y, pokedex_state->habitat_cursor_x);
     if (namespace != 0xC5) {
         strcat(strcat(strcpy(strbuf, str_blank), map_namespaces[MAP_NAMESPACE_TO_IDX(namespace)]), str_blank);
     } else {
@@ -472,7 +473,7 @@ void pokedex_habitats_load_namespace() {
     tbox_print_string(5, 2, 0, 1, 0, 0, &pokedex_fontcolmap_namespace, 0, strbuf);
 
     //print the not found string
-    if (!fmem.dex_mem->habitat_found) {
+    if (!pokedex_state->habitat_found) {
         u8 str_habitat_none[] = LANGDEP(PSTRING(" Keine Gebiete bekannt"), PSTRING("No habitats known"));
         strcat(strcat(strcpy(strbuf, str_blank), str_habitat_none), str_blank);
         tbox_flush_set(6, 0);
@@ -484,14 +485,14 @@ void pokedex_habitats_load_namespace() {
 void pokedex_habitats_update() {
     pokedex_habitats_load_namespace();
     //update the rarity oams
-    pokedex_habitat_pair *habitats = fmem.dex_mem->habitats;
+    pokedex_habitat_pair *habitats = pokedex_state->habitats;
     DEBUG("Habitats @%x\n", habitats);
-    int cursor_x = fmem.dex_mem->habitat_cursor_x;
-    int cursor_y = fmem.dex_mem->habitat_cursor_y;
+    int cursor_x = pokedex_state->habitat_cursor_x;
+    int cursor_y = pokedex_state->habitat_cursor_y;
     for (int habitat_type = 0; habitat_type < 6; habitat_type++) {
         for (int map_type = 0; map_type < 3; map_type ++) {
             int probability = 0;
-            for (int i = 0; i < fmem.dex_mem->habitat_size; i++) {
+            for (int i = 0; i < pokedex_state->habitat_size; i++) {
                 if (habitats[i].worldmap_x == cursor_x && habitats[i].worldmap_y == cursor_y && habitats[i].habitat_type == habitat_type &&
                     habitats[i].map_type == map_type) {
                         probability = habitats[i].probability;
@@ -503,11 +504,11 @@ void pokedex_habitats_update() {
                 if (probability >= 50) animation_idx = 2;
                 else if (probability >= 10) animation_idx = 1;
                 else animation_idx = 0;
-                oams[fmem.dex_mem->habitat_oams_rarity[habitat_type][map_type]].flags &= (u16)(~OAM_FLAG_INVISIBLE);
-                oams[fmem.dex_mem->habitat_oams_rarity[habitat_type][map_type]].anim_number = (u8)(3 * animation_idx + map_type);
-                oam_gfx_anim_init(oams + fmem.dex_mem->habitat_oams_rarity[habitat_type][map_type], 0);
+                oams[pokedex_state->habitat_oams_rarity[habitat_type][map_type]].flags &= (u16)(~OAM_FLAG_INVISIBLE);
+                oams[pokedex_state->habitat_oams_rarity[habitat_type][map_type]].anim_number = (u8)(3 * animation_idx + map_type);
+                oam_gfx_anim_init(oams + pokedex_state->habitat_oams_rarity[habitat_type][map_type], 0);
             } else {
-                oams[fmem.dex_mem->habitat_oams_rarity[habitat_type][map_type]].flags |= OAM_FLAG_INVISIBLE;
+                oams[pokedex_state->habitat_oams_rarity[habitat_type][map_type]].flags |= OAM_FLAG_INVISIBLE;
             }
         }
     }

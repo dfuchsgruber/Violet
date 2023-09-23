@@ -2,7 +2,7 @@
 #include "text.h"
 #include "language.h"
 
-u8 person_names[2][128][12] = {
+const u8 person_names[2][128][12] = {
     {   
         LANGDEP(PSTRING("August"), PSTRING("August")),
         LANGDEP(PSTRING("Achim"), PSTRING("Achim")),

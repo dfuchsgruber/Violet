@@ -17,8 +17,8 @@ typedef struct{
     u16 map;
 } stru_healing_place_map;
 
-stru_healing_place_map healing_place_maps[NUM_HEALING_PLACES];
-u8 healing_place_target_persons[NUM_HEALING_PLACES];
-coordinate_t healing_place_target_coordinates[NUM_HEALING_PLACES];
+extern const stru_healing_place_map healing_place_maps[NUM_HEALING_PLACES];
+extern const u8 healing_place_target_persons[NUM_HEALING_PLACES];
+extern const coordinate_t healing_place_target_coordinates[NUM_HEALING_PLACES];
 
 #endif /* INCLUDE_C_MAP_HEALING_PLACE_H_ */

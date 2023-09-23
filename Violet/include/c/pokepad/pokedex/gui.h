@@ -22,7 +22,7 @@
 
 #define POKEDEX_SCANNER_ICON_BASE_TAG 0xDDE0
 
-tbox_font_colormap pokedex_fontcolmap;
+extern const tbox_font_colormap pokedex_fontcolmap;
 
 // Main GUI
 /**

@@ -12,11 +12,11 @@
 #include "oam.h"
 #include "flags.h"
 
-extern color_t gfx_text_std_borderPal[16];
+extern const color_t gfx_text_std_borderPal[16];
 
-u8 pokemon_get_accesible_learnable_moves(pokemon *p, u16 *moves, u8 type) {
+u8 pokemon_get_accesible_learnable_moves(const pokemon *p, u16 *moves, u8 type) {
     u16 species = (u16)pokemon_get_attribute(p, ATTRIBUTE_SPECIES, 0);
-    u16 *accesible = pokemon_accessible_moves[species];
+    const u16 *accesible = pokemon_accessible_moves[species];
     if (!accesible)
         return 0;
     u16 current_moves[4];
@@ -65,7 +65,7 @@ void move_tutor_set_flag() {
 
 }
 
-static u8 str_back[] = LANGDEP(PSTRING("Zurück"), PSTRING("Cancel"));
+static const u8 str_back[] = LANGDEP(PSTRING("Zurück"), PSTRING("Cancel"));
 
 void move_relearner_initialize_list_menu() {
     u8 nickname[11]; 
@@ -79,7 +79,7 @@ void move_relearner_initialize_list_menu() {
     }
     u8 count = move_relearner_state->num_learnable_moves;
     for (int i = 0; i < count; i++) {
-        u8 *attack_name = attack_names[move_relearner_state->learnable_moves[i]];
+        const u8 *attack_name = attack_names[move_relearner_state->learnable_moves[i]];
         strcpy(move_relearner_state->learnable_move_strings[i], attack_name);
     }
     pokemon_get_attribute(p, ATTRIBUTE_NICKNAME, nickname);
@@ -107,9 +107,9 @@ void move_relearner_initialize_list_menu() {
     pal_copy(gfx_text_std_borderPal, 15 * 16, 16 * sizeof(color_t));
 }
 
-static u8 str_three_hyphens[] = PSTRING("---");
-// static u8 str_nop[] = PSTRING("");
-extern u8 gfx_attack_classesTiles[];
+static const u8 str_three_hyphens[] = PSTRING("---");
+// static const u8 str_nop[] = PSTRING("");
+extern const u8 gfx_attack_classesTiles[];
 
 void move_relearner_update_move_info(u16 move) {
     u8 buffer[50];

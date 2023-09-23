@@ -1,4 +1,4 @@
-FROM gcc:12.1
+FROM gcc:12
 CMD [ "/usr/local/bin/violet-entrypoint" ]
 ENV LANG=en_US.UTF-8
 ENV WORKON_HOME /venv
@@ -16,6 +16,7 @@ RUN apt-get update --fix-missing && \
         gcc-arm-none-eabi \
         bc \
         cmake \
+        locales \
         python3 \
         python-is-python3 \
         python3-pip \
@@ -23,6 +24,10 @@ RUN apt-get update --fix-missing && \
         sudo \
         vim && \
     rm -rf /var/lib/apt/lists/*
+
+RUN \
+        sed -i "s/^#\? \?\(en_US.*UTF.*\)$/\1/" /etc/locale.gen && \
+        locale-gen
 
 RUN mkdir -p /etc/violet
 WORKDIR /etc/violet
@@ -35,16 +40,16 @@ RUN \
         apt-get update && \
         apt-get install -y devkitpro-pacman && \
     rm -rf /var/lib/apt/lists/* && \
-    [ ! -f /etc/mtab ] hotfix=1 \
-    [ -z ${hotfix+z} ] && ln -s /proc/self/mounts /etc/mtab || true && \
-    dkp-pacman -S --noconfirm gba-dev grit && \
-    [ -z ${hotfix+z} ] && rm /etc/mtab || true
+    { [ -f /etc/mtab ] || hotfix=1; } && \
+    { [ ! -z ${hotfix+z} ] && ln -s /proc/self/mounts /etc/mtab || true; } && \
+    dkp-pacman -Syu --noconfirm gba-dev grit && \
+    { [ ! -z ${hotfix+z} ] && rm /etc/mtab || true; }
 
 RUN \
         git clone https://github.com/ipatix/wav2agb.git && \
         directory=$(pwd) && \
         cd wav2agb && \
-        git checkout 8d09076bd53d32c15ef2829d157ba87556f50de0 && \
+        git checkout b461c20e1da68a95b4084456bf5fe651eb10a17f && \
         make && \
         chmod 744 wav2agb && \
         install -t /usr/local/bin ./wav2agb && \
@@ -55,17 +60,17 @@ RUN \
         git clone https://github.com/pret/pokefirered.git && \
         directory=$(pwd) && \
         cd pokefirered/tools/mid2agb && \
-        git checkout 471608b56abbdf70a452896a0d895ffa5b4b06f9 && \
+        git checkout f484b96062f866d00c28bec5b33b032e14280ea1 && \
         make && \
         chmod 744 mid2agb && \
         install -t /usr/local/bin ./mid2agb && \
         cd $directory && \
         unset directory
 RUN \
-        git clone https://github.com/Kingcom/armips.git && \
+        git clone https://github.com/dfuchsgruber/armips.git && \
         directory=$(pwd) && \
         cd armips && \
-        git checkout be0124c9cb7610ecd88206f9ccbff954d6ae1897 && \
+        git checkout 7cbf7bfb78c1c25b47270cee85370d82a7849208 && \
         git submodule update --init --recursive && \
         mkdir build && cd build && \
         cmake -DCMAKE_BUILD_TYPE=Release .. && \
@@ -97,23 +102,12 @@ RUN \
 
 RUN \
         binName=/usr/local/bin/oh-my-posh && \
-        wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/v11.1.1/posh-linux-amd64 -O $binName && \
+        wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/v18.5.0/posh-linux-amd64 -O $binName && \
         chmod a+x $binName && \
         unset binName
 
-RUN \
-        directory=$(pwd) && \
-        cd /tmp/ && \
-        pkgName=logo-ls.deb && \
-        wget https://github.com/Yash-Handa/logo-ls/releases/download/v1.3.7/logo-ls_amd64.deb -O $pkgName && \
-        dpkg -i $pkgName && \
-        rm $pkgName && \
-        unset pkgName && \
-        cd $directory && \
-        unset directory
-
-RUN pip3 install --upgrade pip
-RUN pip3 install pipenv
+RUN pip3 install --upgrade pip --break-system-packages
+RUN pip3 install pipenv --break-system-packages
 
 RUN adduser \
      --disabled-password \
@@ -136,13 +130,14 @@ RUN \
         echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc && \
         echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 
+RUN chmod 777 /home/violet/.pyenv
+
 RUN \
         configFile="/workspace/Violet/.devcontainer/omp.json" && \
         command="oh-my-posh init bash" && \
         echo '[ -f '"$configFile"' ] || eval "$('"$command"')"' >> ~/.bashrc && \
         echo '[ -f '"$configFile"' ] && eval "$('"$command"' --config '"$configFile"')"' >> ~/.bashrc && \
         echo 'eval "$(oh-my-posh completion bash)"' >> ~/.bashrc && \
-        echo "alias ls='logo-ls -iD'" >> ~/.bashrc && \
         echo "alias ll='ls -al'" >> ~/.bashrc && \
         echo "alias la='ls -A'" >> ~/.bashrc && \
         echo "alias l='ls'" >> ~/.bashrc && \

@@ -6,7 +6,7 @@
 #include "bg.h"
 #include "callbacks.h"
 
-extern u8 str_item_has_no_effect[];
+extern const u8 ow_script_item_has_no_effect[];
 
 static void item_evolution_stone(u8 self, void (*item_field_usage_on_poke_callback_failure)(u8)) {
     if (item_effect(player_pokemon + pokemon_party_menu_state.slot_idx, item_activated, pokemon_party_menu_state.slot_idx, 0, false, false)) {

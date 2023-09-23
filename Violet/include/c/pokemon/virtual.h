@@ -203,7 +203,7 @@ u8 player_pokemon_recount_pokemon();
  * @param p pokemon the pokemon to get
  * @param dst where to put the stats
  */
-void pokemon_get_stats(pokemon *p, u16 *dst);
+void pokemon_get_stats(const pokemon *p, u16 *dst);
 
 /**
  * Gets the attribute of a virtual pokemon
@@ -211,7 +211,7 @@ void pokemon_get_stats(pokemon *p, u16 *dst);
  * @param requested_attribute Id of the attribute to get
  * @param result Storage for the result if it is no scalar type (pass 0 otherwise)
  */
-int pokemon_get_attribute(pokemon* p, int requested_attribute, void *result);
+int pokemon_get_attribute(const pokemon* p, int requested_attribute, void *result);
 
 /**
  * Gets the attribute of a virtual pokemon's substructre
@@ -219,7 +219,7 @@ int pokemon_get_attribute(pokemon* p, int requested_attribute, void *result);
  * @param requested_attribute idx of the attribute to get
  * @param result Storage for the result if it is no scalar type (pass 0 otherwise)
  */
-int box_pokemon_get_attribute(box_pokemon *p, int requested_attribute, void *result);
+int box_pokemon_get_attribute(const box_pokemon *p, int requested_attribute, void *result);
 
 /**
  * Sets the attribute of a virtual pokemon
@@ -227,7 +227,7 @@ int box_pokemon_get_attribute(box_pokemon *p, int requested_attribute, void *res
  * @param requested_attribute Id of the attribute to set
  * @param value Pointer to the value to apply
  */
-void pokemon_set_attribute(pokemon* p, int requested_attribute, void* value);
+void pokemon_set_attribute(pokemon* p, int requested_attribute, const void* value);
 
 /**
  * Sets the attribute of a virtual pokemon's substructure
@@ -235,7 +235,7 @@ void pokemon_set_attribute(pokemon* p, int requested_attribute, void* value);
  * @param requested_attribute idx of the attribute to set
  * @param value Pointer to the value to apply
  */
-void box_pokemon_set_attribute(box_pokemon* p, int requested_attribute, void* value);
+void box_pokemon_set_attribute(box_pokemon* p, int requested_attribute, const void* value);
 
 /**
  * Calculates the stats of a pokemon.
@@ -258,7 +258,7 @@ box_pokemon *pokemon_get_by_box(int box_idx, int idx);
  */
 u8 pokemon_get_number_in_party();
 
-void pokemon_load_name_as_string(pokemon *pokemon, u8 *buffer);
+void pokemon_load_name_as_string(const pokemon *pokemon, u8 *buffer);
 
 #define POKEMON_NEW_RANDOM_IVS 32
 
@@ -287,10 +287,10 @@ void pokemon_new_egg(pokemon *dst, u16 species, bool set_special_catch_location)
 /**
  * Tries to add the pokemon to the player's party. If this fails, it tries to add it to any box.
  * Also OT-Name, TID and OT-Gender attributes of the pokemon are set.
- * @param dst the pokemon to be added to the player's collection.
+ * @param src the pokemon to be added to the player's collection.
  * @return 0 if added to the party, 1 if added to the box, 2 if everything failed
  */
-u8 pokemon_give(pokemon *dst);
+u8 pokemon_give(const pokemon *src);
 
 /**
  * Tries to add the pokemon to the player's party. If this fails, it tries to add it to any box.
@@ -298,14 +298,14 @@ u8 pokemon_give(pokemon *dst);
  * @param dst the pokemon to be added to the player's collection.
  * @return 0 if added to the party, 1 if added to the box, 2 if everything failed
  */
-int pokemon_give_with_player_not_ot(pokemon *p);
+int pokemon_give_with_player_not_ot(const pokemon *p);
 
 /**
  * Tries to put a pokemon on the box system.
  * @param dst the pokemon to put.
  * @return 1 on success, 2 on failure
  */
-int pokemon_to_box(pokemon *dst);
+int pokemon_to_box(const pokemon *dst);
 
 /**
  * Checks if there is room in any box
@@ -338,7 +338,7 @@ void pokemon_remove_hidden_ability(box_pokemon *p);
  * @param p the pokemon to check
  * @return if the pokemon has its hidden ability
  */
-bool pokemon_has_hidden_ability(box_pokemon *p);
+bool pokemon_has_hidden_ability(const box_pokemon *p);
 
 u16 pokemon_append_attack(pokemon *p, u16 attack);
 void pokemon_rotate_and_push_attack(pokemon *p, u16 attack);
@@ -370,7 +370,7 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_sp
  * @param ot_name the original trainer name
  * @return the tid as product of all characters
  */
-u32 tid_by_ot_name(u8 *ot_name);
+u32 tid_by_ot_name(const u8 *ot_name);
 
 /**
  * Creates a new pokemon and sets its ivs.
@@ -382,21 +382,15 @@ u32 tid_by_ot_name(u8 *ot_name);
  **/
 void pokemon_new_and_set_ivs(pokemon *dst, u16 species, u8 level, u32 ivs, pid_t pid);
 
-/**
- * Checks if a pokemon has its hidden ability.
- * @param p the pokemon to load the hidden ability from
- * @return if the pokemon has its hidden ability
- */
-bool pokemon_has_hidden_ability(box_pokemon *p);
-u8 pokemon_get_ability(pokemon *poke);
-u8 battler_load_ability_as_defender(pokemon *poke);
+u8 pokemon_get_ability(const pokemon *poke);
+u8 battler_load_ability_as_defender(const pokemon *poke);
 /**
  * Special that heals the players party pokemon located at index stored in variable 0x8004
  */
 void special_player_party_heal_index();
 void pokemon_team_remove();
 void pokemon_team_knows_hm();
-bool pokemon_knows_hm(box_pokemon *p);
+bool pokemon_knows_hm(const box_pokemon *p);
 
 /**
  * Heals all pokemon in the player's party
@@ -404,7 +398,7 @@ bool pokemon_knows_hm(box_pokemon *p);
 void pokemon_heal_player_party();
 
 
-u8 pokemon_get_nature(pokemon *target);
+u8 pokemon_get_nature(const pokemon *target);
 
 /**
  * Clears a pokemon entry
@@ -445,7 +439,7 @@ void pokemon_set_effective_ev(pokemon *p, int stat, u8 ev);
  * @param stat the stat index to get the ev of
  * @return the ev value in multiples of 4
  */
-u8 pokemon_get_effective_ev(pokemon *p, int stat);
+u8 pokemon_get_effective_ev(const pokemon *p, int stat);
 
 /**
  * Sets the potential ev of a pokemon.
@@ -461,7 +455,7 @@ void pokemon_set_potential_ev(pokemon *p, int stat, u8 ev);
  * @param stat the stat index to set the ev of
  * @return ev the potential ev value
  */
-u8 pokemon_get_potential_ev(pokemon *p, int stat);
+u8 pokemon_get_potential_ev(const pokemon *p, int stat);
 
 /**
  * Calculates how many pp a move has in total given its pp up values.
@@ -473,9 +467,9 @@ u8 pokemon_get_potential_ev(pokemon *p, int stat);
 u8 attack_get_pp(u16 attack, u8 pp_ups, u8 index);
 
 // Masks for isolating the pp ups of a certain move
-extern u8 pokemon_pp_up_set_masks[4];
-extern u8 pokemon_pp_up_clear_masks[4];
-extern u8 pokemon_pp_up_add_masks[4];
+extern const u8 pokemon_pp_up_set_masks[4];
+extern const u8 pokemon_pp_up_clear_masks[4];
+extern const u8 pokemon_pp_up_add_masks[4];
 
 /**
  * Restores hp, pp and status of a pokemon.
@@ -487,7 +481,7 @@ void pokemon_heal(pokemon *dst);
  * Checks if a pokémon is at its full health (hp, pp, status)
  * @return if a pokémon has max hp, pp and no primary status condition
  **/
-bool pokemon_is_healed(pokemon *dst);
+bool pokemon_is_healed(const pokemon *dst);
 
 /**
  * Checks if a party pokemon has a certain status condition.
@@ -496,7 +490,7 @@ bool pokemon_is_healed(pokemon *dst);
  * @param status_mask the conditions to check for
  * @return if the pokemon has the status condition
  **/ 
-bool pokemon_has_status_condition(pokemon *p, int party_idx, u32 status_mask);
+bool pokemon_has_status_condition(const pokemon *p, int party_idx, u32 status_mask);
 
 /**
  * Checks if a party pokemon has a certain status condition and if so, removes it.
@@ -588,7 +582,7 @@ void pokemon_add_friendship(pokemon *p, s8 value);
  * @param mask mask for all party idxs requested for the pokerus check, if POKERUS_GET_SINGLE_POKEMON is passed, a simple bool value for p is returned
  * @return pokerus_state the requested pokerus state
  **/
-u8 pokemon_get_pokerus(pokemon *p, u8 mask);
+u8 pokemon_get_pokerus(const pokemon *p, u8 mask);
 
 /**
  * @brief Counts the pokemon in the player party with an ability
@@ -621,7 +615,7 @@ u8 pokemon_get_gender_by_pid(u16 species, pid_t pid);
  * @param p the box pokemon structure
  * @return u8 the gender
  */
-u8 box_pokemon_get_gender(box_pokemon *p);
+u8 box_pokemon_get_gender(const box_pokemon *p);
 
 /**
  * @brief Gets the gender of a pokemon
@@ -629,7 +623,7 @@ u8 box_pokemon_get_gender(box_pokemon *p);
  * @param p the pokemon
  * @return u8 the gender
  */
-u8 pokemon_get_gender(pokemon *p);
+u8 pokemon_get_gender(const pokemon *p);
 
 /**
  * @brief Counts the occurences of an unown letter in a string
@@ -638,6 +632,6 @@ u8 pokemon_get_gender(pokemon *p);
  * @param unown_letter the unown letter
  * @return int how many occurences of the unown letter are in the string `str`
  */
-int string_count_unown_letters(u8 *str, int unown_letter);
+int string_count_unown_letters(const u8 *str, int unown_letter);
 
 #endif /* INCLUDE_C_POKEMON_VIRTUAL_H_ */

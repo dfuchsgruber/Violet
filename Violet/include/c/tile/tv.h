@@ -11,6 +11,6 @@
 
 
 void load_tv_text();
-u8 *get_tv_text();
+const u8 *get_tv_text();
 
 #endif /* INCLUDE_C_TILE_TV_H_ */

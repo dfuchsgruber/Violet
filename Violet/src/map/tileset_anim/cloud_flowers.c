@@ -2,14 +2,14 @@
 #include "types.h"
 #include "map/tileset.h"
 
-extern u16 gfx_tileset_clouds_flowers_anim_flowersTiles[];
-extern u16 gfx_tileset_clouds_gear_anim_frameTiles[];
+extern const u16 gfx_tileset_clouds_flowers_anim_flowersTiles[];
+extern const u16 gfx_tileset_clouds_gear_anim_frameTiles[];
 
-static tileset_animation tileset_cloud_flowers_animations[] = {
+static const tileset_animation tileset_cloud_flowers_animations[] = {
     {.cycle = 4, .speed = 32, .start_tile = 0x396, .num_tiles = 8, .gfx = gfx_tileset_clouds_flowers_anim_flowersTiles},
 };
 
-static tileset_animation_header tileset_cloud_flowers_animation_head = {
+static const tileset_animation_header tileset_cloud_flowers_animation_head = {
     ARRAY_COUNT(tileset_cloud_flowers_animations), tileset_cloud_flowers_animations
 };
 

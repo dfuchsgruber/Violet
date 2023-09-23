@@ -7,16 +7,16 @@
 #include "types.h"
 #include "map/tileset.h"
 
-extern u16 gfx_tileset_inferior_gym_anim_0Tiles[];
+extern const u16 gfx_tileset_inferior_gym_anim_0Tiles[];
 
-tileset_animation tileset_inferior_gym_animations[] = {
+static const tileset_animation tileset_inferior_gym_animations[] = {
     {
 		.cycle = 4, .speed = 16, .start_tile = 0x2E0, .num_tiles = 4,
 		.gfx = gfx_tileset_inferior_gym_anim_0Tiles
     }
 };
 
-tileset_animation_header tileset_inferior_gym_animations_head = {
+static const tileset_animation_header tileset_inferior_gym_animations_head = {
     1, tileset_inferior_gym_animations
 };
 

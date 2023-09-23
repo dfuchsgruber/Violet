@@ -14,7 +14,7 @@
 
 
 // The namespace -> worldmapflag association is hardcoded unfortunately...
-stru_flight_position flight_positions[NUM_HEALING_PLACES] = {
+const stru_flight_position flight_positions[NUM_HEALING_PLACES] = {
     // bank, map, x, y, d
     [HEALINGPLACE_AMONIA - 1] = {3, 0, 0xe, 0x10, 0}, // Amonia
     [HEALINGPLACE_MERIANA_CITY - 1] = {3, 1, 72, 29, 0}, // Meriana City
@@ -42,7 +42,7 @@ stru_flight_position flight_positions[NUM_HEALING_PLACES] = {
  * We simply copy this system and extra extend it by a table for positions to spawn the hiro at
  */
 
-stru_healing_place_map healing_place_maps[NUM_HEALING_PLACES] = {
+const stru_healing_place_map healing_place_maps[NUM_HEALING_PLACES] = {
     [HEALINGPLACE_AMONIA - 1] = {4, 0}, 
     [HEALINGPLACE_MERIANA_CITY - 1] = {5, 4}, 
     [HEALINGPLACE_AKTANIA - 1] = {6, 5}, 
@@ -59,7 +59,7 @@ stru_healing_place_map healing_place_maps[NUM_HEALING_PLACES] = {
     [NUM_HEALING_PLACES - 1] = {0xFFFF, 0xFFFF}
 };
 
-u8 healing_place_target_persons[NUM_HEALING_PLACES] = {
+const u8 healing_place_target_persons[NUM_HEALING_PLACES] = {
     [HEALINGPLACE_AMONIA - 1] = 1,
     [HEALINGPLACE_MERIANA_CITY - 1] = 1,
     [HEALINGPLACE_AKTANIA - 1] = 3,
@@ -76,7 +76,7 @@ u8 healing_place_target_persons[NUM_HEALING_PLACES] = {
     [NUM_HEALING_PLACES - 1] = 0xFF
 };
 
-coordinate_t healing_place_target_coordinates[NUM_HEALING_PLACES] = {
+const coordinate_t healing_place_target_coordinates[NUM_HEALING_PLACES] = {
 		[HEALINGPLACE_AMONIA - 1] = {0x12, 0x6}, 
 		[HEALINGPLACE_MERIANA_CITY - 1] = {0x7, 0x4}, 
 		[HEALINGPLACE_AKTANIA - 1] = {0x7, 0x4}, 

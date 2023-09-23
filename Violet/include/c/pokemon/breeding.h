@@ -47,8 +47,8 @@ typedef struct {
 
 #define BREEDING_CYCLES_HATCH_IMMEDIATLEY 255
 
-extern u16 *pokemon_egg_moves[];
-extern u8 str_egg[];
+extern const u16 *const pokemon_egg_moves[];
+extern const u8 str_egg[];
 
 /**
  * Returns a pointer to a list of attacks describing the egg moves obtainable by
@@ -57,7 +57,7 @@ extern u8 str_egg[];
  * @param size A pointer where the function stores the size of the egg move list.
  * @return Egg moves array.
  */
-u16 *pokemon_get_egg_moves(u16 species, int *size);
+const u16 *pokemon_get_egg_moves(u16 species, int *size);
 
 /**
  * Gets the compatibility score for the pokemon currently in the daycare
@@ -108,7 +108,7 @@ void overworld_egg_new(u16 species, int catch_location, pokemon *dst);
  * @param father father pokemon 
  * @param mother mother pokemon
  */
-void breeding_egg_create_moves(pokemon *egg, box_pokemon *father, box_pokemon *mother);
+void breeding_egg_create_moves(pokemon *egg, const box_pokemon *father, const box_pokemon *mother);
 
 /**
  * Adds a move to the egg if any of its parents knows it.
@@ -117,7 +117,7 @@ void breeding_egg_create_moves(pokemon *egg, box_pokemon *father, box_pokemon *m
  * @param mother the mother pokemon
  * @param move the move to add to the egg
  */
-void breeding_egg_add_move_if_known_by_parent(pokemon *egg, box_pokemon *father, box_pokemon *mother, u16 move);
+void breeding_egg_add_move_if_known_by_parent(pokemon *egg, const box_pokemon *father, const box_pokemon *mother, u16 move);
 
 /**
  * Removes the egg from the daycare

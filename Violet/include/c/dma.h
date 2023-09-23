@@ -27,7 +27,7 @@ void dma3_queue_proceed();
  * @param dst the destination
  * @param size the size
  */
-void dma3_queue_add(void *src, void *dst, u16 size);
+void dma3_queue_add(const void *src, void *dst, u16 size);
 
 /**
  * Checks if the dma3 is busy copying stuff (probably into vram).
@@ -51,7 +51,7 @@ void dma0_reset_callback();
 // (or 2 * 540 = 1080 hwords)
 // cast to another type for setting i.e. ioregs
 // usually the first hword / word is a default value
-u16 dma0_scanline_frames[2][480 * 2];
+extern u16 dma0_scanline_frames[2][480 * 2];
 
 typedef union {
 	struct {
@@ -99,6 +99,6 @@ typedef union {
 #define DMA_DST_RELOAD (3 << 21)
 #define DMA_SIZE(x) (x)
 
-void dma0_init_scanline (void *dst, int dma0_cntrl, dma0_scanline_flipflop_t flipflop);
+void dma0_init_scanline (const void *dst, int dma0_cntrl, dma0_scanline_flipflop_t flipflop);
 
 #endif /* INCLUDE_C_DMA_H_ */

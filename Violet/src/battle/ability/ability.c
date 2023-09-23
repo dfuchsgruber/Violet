@@ -7,11 +7,11 @@
 #include "mega.h"
 #include "constants/pokemon_attributes.h"
 
-bool pokemon_has_hidden_ability(box_pokemon *p) {
+bool pokemon_has_hidden_ability(const box_pokemon *p) {
 	return (box_pokemon_get_attribute(p, ATTRIBUTE_COOLNESS, 0) & 0x80) > 0;
 }
 
-u8 pokemon_get_ability(pokemon *poke) {
+u8 pokemon_get_ability(const pokemon *poke) {
 
     bool ability_bit = pokemon_get_attribute(poke, ATTRIBUTE_ABILITY, 0);
     bool hidden_ability_bit = pokemon_has_hidden_ability(&poke->box);
@@ -25,7 +25,7 @@ u8 pokemon_get_ability(pokemon *poke) {
     return basestats[species].ability1;
 }
 
-u8 battler_load_ability_as_defender(pokemon *poke) {
+u8 battler_load_ability_as_defender(const pokemon *poke) {
 	defending_battler_ability = pokemon_get_ability(poke);
     return defending_battler_ability;
 

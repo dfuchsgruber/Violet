@@ -67,7 +67,7 @@ typedef struct {
 #define ITEM_EFFECT_HEAL_HP_PERCENTAGE 250
 #define ITEM_EFFECT_PP_ALL 127
 
-item_effect_t *item_effects[ITEM_ENIGMABEERE - ITEM_TRANK];
+extern const item_effect_t *const item_effects[ITEM_ENIGMABEERE - ITEM_TRANK];
 
 /**
  * Gets the effect type of an item.
@@ -90,7 +90,7 @@ u8 item_get_effect_type(u16 item);
  * @return if the item effect was applicable
  **/
 bool item_effect_execute_status_heals(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect, 
-    item_effect_t *effect, bool calculate_heal_only, bool check_only);
+    const item_effect_t *effect, bool calculate_heal_only, bool check_only);
 
 /**
  * Executes in-battle effects (including status2 heals) and applies them to the battler.
@@ -106,7 +106,7 @@ bool item_effect_execute_status_heals(pokemon *p, u16 item, u8 battler_idx, u8 m
  * @return if the item effect was applicable
  **/
 bool item_effect_execute_battle_effects(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect, 
-    item_effect_t *effect, bool calculate_heal_only, bool check_only);
+    const item_effect_t *effect, bool calculate_heal_only, bool check_only);
 
 /**
  * Executes healing effects (potion, max restore, ...) and applies them to the battler and party.
@@ -122,7 +122,7 @@ bool item_effect_execute_battle_effects(pokemon *p, u16 item, u8 battler_idx, u8
  * @return if the item effect was applicable
  **/
 bool item_effect_execute_hp_heal(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect, 
-    item_effect_t *effect, bool calculate_heal_only, bool check_only);
+    const item_effect_t *effect, bool calculate_heal_only, bool check_only);
 
 /**
  * Executes all item effects (in-battle and non in-battle)

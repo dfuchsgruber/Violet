@@ -15,7 +15,7 @@
 #include "item/item.h"
 #include "constants/items.h"
 
-u16 dungeon_ocean_items_common[] = {
+const u16 dungeon_ocean_items_common[] = {
     ITEM_POKEBALL,
     ITEM_SUPERBALL,
     ITEM_TRANK,
@@ -30,7 +30,7 @@ u16 dungeon_ocean_items_common[] = {
     0xFFFF
 };
 
-u16 dungeon_ocean_items_rare[] = {
+const u16 dungeon_ocean_items_rare[] = {
     ITEM_ABYSSPLATTE,
     ITEM_SONDERBONBON,
     ITEM_RIESENPERLE,
@@ -42,7 +42,7 @@ u16 dungeon_ocean_items_rare[] = {
 };
 
 u16 dungeon_ocean_pick_item(dungeon_generator2 *dg2) {
-  u16 *items;
+  const u16 *items;
   if (dungeon2_rnd_16(dg2) < 0x3000) {
     // 3/16 chance
     items = dungeon_ocean_items_rare;

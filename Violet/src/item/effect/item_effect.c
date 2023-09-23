@@ -35,7 +35,7 @@ u8 _item_effect_get_hp_healed_offset(u16 item, u8 effect_byte, u8 effect_bit) {
 }
 
 bool item_effect_execute_battle_effects(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect, 
-    item_effect_t *effect, bool calculate_heal_only, bool check_only) {
+    const item_effect_t *effect, bool calculate_heal_only, bool check_only) {
     (void) p; (void) calculate_heal_only; (void) move_idx; (void) party_idx; (void) hold_effect; (void) item;
     bool effect_applied = false;
     if (super.in_battle && battler_idx != 4) {
@@ -81,7 +81,7 @@ bool item_effect_execute_battle_effects(pokemon *p, u16 item, u8 battler_idx, u8
 }
 
 bool item_effect_execute_level_up(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect, 
-    item_effect_t *effect, bool calculate_heal_only, bool check_only) {
+    const item_effect_t *effect, bool calculate_heal_only, bool check_only) {
     (void) battler_idx; (void) move_idx; (void) party_idx; (void) hold_effect; (void) calculate_heal_only; (void) item;
     DEBUG("Level up %d, %d %d\n", effect->increase_level, effect->level, pokemon_get_attribute(p, ATTRIBUTE_LEVEL, 0));
     if (effect->increase_level && pokemon_get_attribute(p, ATTRIBUTE_LEVEL, 0) < 100) {
@@ -98,7 +98,7 @@ bool item_effect_execute_level_up(pokemon *p, u16 item, u8 battler_idx, u8 move_
 }
 
 bool item_effect_execute_status_heals(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect, 
-    item_effect_t *effect, bool calculate_heal_only, bool check_only) {
+    const item_effect_t *effect, bool calculate_heal_only, bool check_only) {
     (void) hold_effect; (void) move_idx; (void) calculate_heal_only; (void) item;
     bool effect_applied = false;
     if (effect->heal_sleep && pokemon_has_status_condition(p, party_idx, STATUS1_SLEEPING)) {
@@ -128,7 +128,7 @@ bool item_effect_execute_status_heals(pokemon *p, u16 item, u8 battler_idx, u8 m
 }
 
 bool item_effect_execute_ev_increase(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect, 
-    item_effect_t *effect, bool calculate_heal_only, bool check_only) {
+    const item_effect_t *effect, bool calculate_heal_only, bool check_only) {
     (void) battler_idx; (void) move_idx; (void) party_idx; (void) hold_effect; (void) calculate_heal_only; (void) item;
     bool increase_evs[6] = {[STAT_HP] = effect->increase_ev_hp, [STAT_ATTACK] = effect->increase_ev_attack, 
                             [STAT_DEFENSE] = effect->increase_ev_defense, [STAT_SPEED] = effect->increase_ev_speed, 
@@ -167,7 +167,7 @@ bool item_effect_execute_ev_increase(pokemon *p, u16 item, u8 battler_idx, u8 mo
 }
 
 bool item_effect_execute_pp_increase(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect, 
-    item_effect_t *effect, bool calculate_heal_only, bool check_only) {
+    const item_effect_t *effect, bool calculate_heal_only, bool check_only) {
     (void) party_idx; (void) hold_effect; (void) battler_idx; (void) calculate_heal_only; (void) item;
     if (effect->pp_up || effect->pp_max) {
         // Calculate the pp ups for this move
@@ -194,7 +194,7 @@ bool item_effect_execute_pp_increase(pokemon *p, u16 item, u8 battler_idx, u8 mo
 }
 
 bool item_effect_execute_hp_heal(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect, 
-    item_effect_t *effect, bool calculate_heal_only, bool check_only) {
+    const item_effect_t *effect, bool calculate_heal_only, bool check_only) {
     (void) move_idx; (void) hold_effect; (void) item;
     bool effect_applied = false;
     if (effect->heal_hp) {
@@ -303,7 +303,7 @@ bool item_effect_heal_pp(pokemon *p, u8 battler_idx, u8 move_idx, u8 amount, boo
 }
 
 bool item_effect_execute_pp_heal(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect, 
-    item_effect_t *effect, bool calculate_heal_only, bool check_only) {
+    const item_effect_t *effect, bool calculate_heal_only, bool check_only) {
     (void) party_idx; (void) calculate_heal_only; (void) hold_effect; (void) item;
     bool effect_applied = false;
     if (effect->heal_pp) {
@@ -338,7 +338,7 @@ bool item_effect_increase_friendship(pokemon *p, u8 hold_effect, int amount, boo
 }
 
 bool item_effect_execute_friendship(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect, 
-    item_effect_t *effect, bool calculate_heal_only, bool check_only) {
+    const item_effect_t *effect, bool calculate_heal_only, bool check_only) {
     (void) party_idx; (void) calculate_heal_only; (void) move_idx; (void) battler_idx; (void) item;
     int friendship = pokemon_get_attribute(p, ATTRIBUTE_HAPPINESS, 0);
     if (effect->increase_friendship_low && friendship < 100) {
@@ -352,7 +352,7 @@ bool item_effect_execute_friendship(pokemon *p, u16 item, u8 battler_idx, u8 mov
 }
 
 bool item_effect_execute_evolution(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect, 
-    item_effect_t *effect, bool calculate_heal_only, bool check_only) {
+    const item_effect_t *effect, bool calculate_heal_only, bool check_only) {
     (void) party_idx; (void) calculate_heal_only; (void) move_idx; (void) battler_idx; (void) hold_effect; (void) effect;
     u16 target;
     if (check_only) {   
@@ -370,19 +370,19 @@ bool item_effect_execute_evolution(pokemon *p, u16 item, u8 battler_idx, u8 move
 }
 
 bool item_effect_execute_golden_apple(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect, 
-    item_effect_t *effect, bool calculate_heal_only, bool check_only) {
+    const item_effect_t *effect, bool calculate_heal_only, bool check_only) {
     (void)p; (void)item; (void)move_idx; (void)party_idx; (void)hold_effect; (void) calculate_heal_only;
     if (effect->golden_apple && battler_idx < 4) {
         if (!check_only) 
-            BATTLE_STATE2->status_custom_persistent[battler_idx] |= CUSTOM_STATUS_PERSISTENT_GOLDEN_APPLE_PROTECTION;
-        DEBUG("Golden Apple protection battler %d, status is %x\n", battler_idx, BATTLE_STATE2->status_custom_persistent[battler_idx]);
+            battle_state2->status_custom_persistent[battler_idx] |= CUSTOM_STATUS_PERSISTENT_GOLDEN_APPLE_PROTECTION;
+        DEBUG("Golden Apple protection battler %d, status is %x\n", battler_idx, battle_state2->status_custom_persistent[battler_idx]);
         return true;
     }
     return false;
 }
   
 
-bool (*item_effect_functions[NUMBER_ITEM_EFFECT_FUNCTIONS])(pokemon*, u16, u8, u8, u8, u8, item_effect_t*, bool, bool) = {
+bool (*const item_effect_functions[NUMBER_ITEM_EFFECT_FUNCTIONS])(pokemon*, u16, u8, u8, u8, u8, const item_effect_t*, bool, bool) = {
     item_effect_execute_battle_effects,
     item_effect_execute_level_up,
     item_effect_execute_status_heals,
@@ -423,7 +423,7 @@ bool item_effect(pokemon *p, u16 item, u8 party_idx, u8 move_idx, bool calculate
     }
     if (!ITEM_HAS_TABLE_EFFECT(item))
         return true;
-    item_effect_t *effect = item_effects[item - ITEM_TRANK];
+    const item_effect_t *effect = item_effects[item - ITEM_TRANK];
     if (!effect && item != ITEM_ENIGMABEERE)
         return true;
     bool effect_applied = false;
@@ -443,17 +443,17 @@ bool item_effect(pokemon *p, u16 item, u8 party_idx, u8 move_idx, bool calculate
 
 bool _item_effect_unapplicable_fmem_hooked(pokemon *p, u16 item, u8 party_idx, u8 move_idx) {
     (void)p;
-    return !item_effect((pokemon*)fmem._hook_tmp_, item, party_idx, move_idx, false, true);
+    return !item_effect((pokemon*)hook_tmp, item, party_idx, move_idx, false, true);
 }
 
 bool item_effect_apply(pokemon *p, u16 item, u8 party_idx, u8 move_idx, bool calculate_hp_heal_only) {
     (void)p;
-    return !item_effect((pokemon*)fmem._hook_tmp_, item, party_idx, move_idx, calculate_hp_heal_only, false);
+    return !item_effect((pokemon*)hook_tmp, item, party_idx, move_idx, calculate_hp_heal_only, false);
 }
 
 u8 item_get_effect_type(u16 item) {
     if (!ITEM_HAS_TABLE_EFFECT(item)) return ITEM_EFFECT_NONE;
-    item_effect_t* effect;
+    const item_effect_t* effect;
     if (item == ITEM_ENIGMABEERE) {
         effect = (item_effect_t*)&save1->enigma_berry.item_effect;
     } else {

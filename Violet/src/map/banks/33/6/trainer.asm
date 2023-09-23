@@ -1,16 +1,10 @@
 .include "overworld_script.s"
 .include "callstds.s"
 
-.global ow_script_blackbeard_ship_cells_trainer0
 .global ow_script_blackbeard_ship_cells_trainer1
 .global ow_script_blackbeard_ship_cells_trainer2
 .global ow_script_blackbeard_ship_cells_trainer3
 
-ow_script_blackbeard_ship_cells_trainer0:
-    trainerbattlestd 0 0x18e 0 str_before0 str_after0
-    loadpointer 0 str_after0
-    callstd MSG_FACE
-    end
 ow_script_blackbeard_ship_cells_trainer1:
     trainerbattlestd 0 0x18f 0 str_before1 str_after1
     loadpointer 0 str_after1

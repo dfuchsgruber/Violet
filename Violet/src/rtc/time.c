@@ -55,10 +55,10 @@ void time_read(rtc_timestamp *s) {
 
 void time_reset_events() {
 	// Reset the a_gen_time
-    time_read(&(cmem.daily_events_last_update));
+    time_read(&(csave.daily_events_last_update));
     // Reset the fossil gen time
-    time_read(&(cmem.fossil_gen_time));
-	fmem.berry_tree_time_last_updated_initialized = 0;
+    time_read(&(csave.fossil_gen_time));
+	berry_tree_time_last_updated_initialized = 0;
 }
 
 void time_reset_ingame_clock() {

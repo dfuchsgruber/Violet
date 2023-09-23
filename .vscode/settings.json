@@ -28,6 +28,8 @@
         "*.grit": "plaintext",
         "*.flags": "plaintext",
         "**/*.h": "c",
+        "memory_resource": "c",
+        "regex": "c",
         "any": "c",
         "bit": "c",
         "codecvt": "c",
@@ -38,11 +40,8 @@
         "list": "c",
         "future": "c",
         "limits": "c",
-        "new": "c",
-        "ranges": "c",
-        "regex": "c",
-        "type_traits": "c",
-        "mutex": "c"
+        "mutex": "c",
+        "new": "c"
     },
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,

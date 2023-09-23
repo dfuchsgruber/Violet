@@ -2,7 +2,7 @@
 #include "language.h"
 #include "constants/attacks.h"
 
-u8 attack_names[ATTACK_CNT][13] = {
+const u8 attack_names[ATTACK_CNT][13] = {
 	LANGDEP(PSTRING("-"), PSTRING("-")),
 	LANGDEP(PSTRING("Pfund"), PSTRING("Pound")),
 	LANGDEP(PSTRING("Karateschlag"), PSTRING("Karate Chop")),

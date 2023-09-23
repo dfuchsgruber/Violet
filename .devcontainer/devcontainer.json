@@ -13,7 +13,7 @@
 			"type": "bind"
 		}
 	],
-	"postCreateCommand": "sudo chown -R violet:violet /venv && pipenv install",
+	"postCreateCommand": "sudo chown -R violet:violet /venv ~/.pyenv && pyenv install -s 3.11.5 && pipenv install --python ~/.pyenv/versions/3.11.5/bin/python",
 	"customizations": {
 		"vscode": {
 			"settings": {},

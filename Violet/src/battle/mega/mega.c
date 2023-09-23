@@ -16,7 +16,7 @@
 #include "constants/item_hold_effects.h"
 #include "constants/items.h"
 
-static mega_evolution_t mega_evolutions[] = {
+static const mega_evolution_t mega_evolutions[] = {
     {POKEMON_GROUDON, ITEM_MAGMAHERZ, POKEMON_GROUDON_REGENT, REGENT_EVOLUTION},
     {POKEMON_GEOWAZ, ITEM_GEOWAZNIT, POKEMON_MEGA_GEOWAZ, MEGA_EVOLUTION},
     {POKEMON_TROPIUS, ITEM_TROPIUSNIT, POKEMON_MEGA_TROPIUS, MEGA_EVOLUTION},
@@ -49,7 +49,7 @@ bool battler_can_lose_item(u8 battler_idx) {
     return true;
 }
 
-mega_evolution_t *mega_evolution_get_by_mega_species(u16 species) {
+const mega_evolution_t *mega_evolution_get_by_mega_species(u16 species) {
     for (int i = 0; mega_evolutions[i].species != 0xFFFF; i++) {
         if (mega_evolutions[i].mega_species == species)
             return mega_evolutions + i;
@@ -82,7 +82,7 @@ u16 battler_get_keystone(u8 battler_idx) {
             break;
         }
         case OWNER_TRAINER_B: {
-            keystone = trainer_get_keystone(fmem.trainer_varsB.trainer_id);
+            keystone = trainer_get_keystone(trainer_varsB.trainer_id);
             if (keystone == 0xFFFF) keystone = *var_access(OPPONENT_MEGA_ITEM);
             break;
         }
@@ -103,11 +103,11 @@ u8 battler_get_owner(u8 battler_idx) {
     ERROR("Cant get owner of battler %d, position %d\n", battler_idx, battler_get_position(battler_idx)); return 0xFF;
 }
 
-mega_evolution_t *battler_get_available_mega_evolution(u8 battler_idx) {
+const mega_evolution_t *battler_get_available_mega_evolution(u8 battler_idx) {
     u8 owner = battler_get_owner(battler_idx);
     if (owner == 0 && !checkflag(PLAYER_ABLE_TO_MEGA_EVOLVE))
         return NULL;
-    mega_evolution_t *mega_evolution = NULL;
+    const mega_evolution_t *mega_evolution = NULL;
     for (int i = 0; mega_evolutions[i].species != 0xFFFF; i++) {
         if (mega_evolutions[i].species == battlers[battler_idx].species && mega_evolutions[i].mega_item == battlers[battler_idx].item) {
             mega_evolution = mega_evolutions + i;
@@ -115,12 +115,12 @@ mega_evolution_t *battler_get_available_mega_evolution(u8 battler_idx) {
     }
     if (!mega_evolution)
         return NULL;
-    if (MEGA_STATE.owner_mega_evolved[owner] && mega_evolution->type == MEGA_EVOLUTION)
+    if (mega_state->owner_mega_evolved[owner] && mega_evolution->type == MEGA_EVOLUTION)
         return NULL;
     // Check if any other battler with the same owner is marked for mega evolution
     if (mega_evolution->type == MEGA_EVOLUTION) {
         for (u8 i = 0; i < battler_cnt; i++) {
-            if (i != battler_idx && battler_get_owner(i) == owner && MEGA_STATE.marked_for_mega_evolution[i] == MEGA_EVOLUTION)
+            if (i != battler_idx && battler_get_owner(i) == owner && mega_state->marked_for_mega_evolution[i] == MEGA_EVOLUTION)
                 return NULL; 
         }
     }

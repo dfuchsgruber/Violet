@@ -12,13 +12,16 @@
 #include "debug.h"
 #include "constants/battle/battle_results.h"
 #include "battle/whiteout.h"
+#include "trainer/trainer.h"
 
-
+EWRAM mega_state_t *mega_state = NULL;
+EWRAM trainer_ai_state2_t *trainer_ai_state2 = NULL;
+EWRAM battle_state2_t *battle_state2 = NULL;
 
 void battle_initialize_trainerbattle() {
     battle_flags = BATTLE_TRAINER;
     super.saved_callback = battle_trainerbattle_continuation;
-    if (fmem.trainers_cnt == 2 || trainer_vars.kind_of_battle == TRAINER_BATTLE_TWO_TRAINERS 
+    if (trainers_cnt == 2 || trainer_vars.kind_of_battle == TRAINER_BATTLE_TWO_TRAINERS 
         || trainer_vars.kind_of_battle == TRAINER_BATTLE_ALLY_TWO_TRAINERS) {
         battle_flags |= BATTLE_DOUBLE | BATTLE_TWO_TRAINERS;
     }
@@ -33,9 +36,9 @@ void battle_initialize_trainerbattle() {
 
 
 void battle_allocate_new() {
-    fmem.mega_state = malloc_and_clear(sizeof(mega_state_t));
-    fmem.trainer_ai_state2 = malloc_and_clear(sizeof(trainer_ai_state2_t));
-    fmem.battle_state2 = malloc_and_clear(sizeof(battle_state2_t));
+    mega_state = malloc_and_clear(sizeof(mega_state_t));
+    trainer_ai_state2 = malloc_and_clear(sizeof(trainer_ai_state2_t));
+    battle_state2 = malloc_and_clear(sizeof(battle_state2_t));
 }
 
 void ally_battle_restore_party() {
@@ -46,8 +49,8 @@ void ally_battle_restore_party() {
         player_restore_party();
         // Update the pokemon that parttook in the battle
         for (int i = 0; i < 3; i++) {
-            if (cmem.ally_battle_selected_party_idxs[i]) {
-                memcpy(player_pokemon + cmem.ally_battle_selected_party_idxs[i] - 1, party + i , sizeof(pokemon));
+            if (csave.ally_battle_selected_party_idxs[i]) {
+                memcpy(player_pokemon + csave.ally_battle_selected_party_idxs[i] - 1, party + i , sizeof(pokemon));
             }
         }
         free(party);
@@ -93,25 +96,25 @@ void battle_end_actions() {
 
 void battle_free_new() {
     battle_end_actions();
-    if (fmem.mega_state) {
-        free(fmem.mega_state);
-        fmem.mega_state = NULL;
+    if (mega_state) {
+        free(mega_state);
+        mega_state = NULL;
     }
-    if (TRAINER_AI_STATE2) {
-        free(TRAINER_AI_STATE2);
-        fmem.trainer_ai_state2 = NULL;
+    if (trainer_ai_state2) {
+        free(trainer_ai_state2);
+        trainer_ai_state2 = NULL;
     }
-    if (BATTLE_STATE2) {
-        free(BATTLE_STATE2);
-        fmem.battle_state2 = NULL;
+    if (battle_state2) {
+        free(battle_state2);
+        battle_state2 = NULL;
     }
 }
 
 void battle_switch_in_clear_new() {
     for (int i = 0; i < 4; i++)
-        TRAINER_AI_STATE2->known_moves[active_battler][i] = 0;
-    BATTLE_STATE2->status_custom[active_battler] = 0;
-    BATTLE_STATE2->status_custom_persistent[active_battler] = 0;
+        trainer_ai_state2->known_moves[active_battler][i] = 0;
+    battle_state2->status_custom[active_battler] = 0;
+    battle_state2->status_custom_persistent[active_battler] = 0;
 }
 
 void wild_battle_legendary_initialize() {

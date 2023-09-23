@@ -5,7 +5,7 @@
 #include "constants/species.h"
 #include "pokemon/sprites.h"
 
-u8 pokemon_icon_usage[POKEMON_CNT] = {
+const u8 pokemon_icon_usage[POKEMON_CNT] = {
     [POKEMON_POKEMON_0] = 0,
     [POKEMON_BISASAM] = 1,
     [POKEMON_BISAKNOSP] = 1,

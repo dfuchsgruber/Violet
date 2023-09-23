@@ -2,7 +2,7 @@
 #include "overworld/weather.h"
 #include "oam.h"
 
-extern oam_template overworld_weather_ash_template;
+extern const oam_template overworld_weather_ash_template;
 
 void overworld_weather_ash_create_oams() {
     if (!overworld_weather.ash_oams_created) {

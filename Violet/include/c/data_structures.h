@@ -50,15 +50,15 @@ hashmap *hashmap_init(int buckets);
 
 void hashmap_free(hashmap *map);
 
-int hashmap_hash(u32 key, hashmap *map);
+int hashmap_hash(u32 key, const hashmap *map);
 
-bool hashmap_contains(u32 key, hashmap *map);
+bool hashmap_contains(u32 key, const hashmap *map);
 
 void hashmap_put(u32 key, int value, hashmap *map);
 
 int hashmap_remove(u32 key, hashmap *map);
 
-int hashmap_get(u32 key, hashmap *map);
+int hashmap_get(u32 key, const hashmap *map);
 
 #define A_STAR_INITIAL_QUEUE_SIZE 256
 #define A_STAR_NUM_BUCKETS 39
@@ -135,7 +135,7 @@ int ring_queue_pop(ring_queue_t *queue);
  * @param queue the queue
  * @return if the queue is empty
  */
-bool ring_queue_empty(ring_queue_t *queue);
+bool ring_queue_empty(const ring_queue_t *queue);
 
 /**
  * Frees the elements of a ring queue

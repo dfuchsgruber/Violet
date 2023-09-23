@@ -3,7 +3,7 @@
 #include "trainer/backsprite.h"
 
 
-graphic gfx_trainer_backsprite_hiro[5] = {
+const graphic gfx_trainer_backsprite_hiro[5] = {
     {.sprite = gfx_trainer_backsprite_hiroTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_hiroTiles + 1 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_hiroTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
@@ -11,7 +11,7 @@ graphic gfx_trainer_backsprite_hiro[5] = {
     {.sprite = gfx_trainer_backsprite_hiroTiles + 4 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
 };
 
-graphic gfx_trainer_backsprite_hiroine[5] = {
+const graphic gfx_trainer_backsprite_hiroine[5] = {
     {.sprite = gfx_trainer_backsprite_hiroineTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_hiroineTiles + 1 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_hiroineTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
@@ -19,56 +19,56 @@ graphic gfx_trainer_backsprite_hiroine[5] = {
     {.sprite = gfx_trainer_backsprite_hiroineTiles + 4 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
 };
 
-graphic gfx_trainer_backsprite_brendan[4] = {
+const graphic gfx_trainer_backsprite_brendan[4] = {
     {.sprite = gfx_trainer_backsprite_brendanTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_brendanTiles + 1 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_brendanTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_brendanTiles + 3 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
 };
 
-graphic gfx_trainer_backsprite_may[4] = {
+const graphic gfx_trainer_backsprite_may[4] = {
     {.sprite = gfx_trainer_backsprite_mayTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_mayTiles + 1 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_mayTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_mayTiles + 3 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
 };
 
-graphic gfx_trainer_backsprite_pokedude[4] = {
+const graphic gfx_trainer_backsprite_pokedude[4] = {
     {.sprite = gfx_trainer_backsprite_pokedudeTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_pokedudeTiles + 1 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_pokedudeTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_pokedudeTiles + 3 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
 };
 
-graphic gfx_trainer_backsprite_old_man[4] = {
+const graphic gfx_trainer_backsprite_old_man[4] = {
     {.sprite = gfx_trainer_backsprite_old_manTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_old_manTiles + 1 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_old_manTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_old_manTiles + 3 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
 };
 
-graphic gfx_trainer_backsprite_rival[4] = {
+const graphic gfx_trainer_backsprite_rival[4] = {
     {.sprite = gfx_trainer_backsprite_rivalTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_rivalTiles + 1 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_rivalTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_rivalTiles + 3 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
 };
 
-graphic gfx_trainer_backsprite_felix[4] = {
+const graphic gfx_trainer_backsprite_felix[4] = {
     {.sprite = gfx_trainer_backsprite_felixTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_felixTiles + 1 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_felixTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_felixTiles + 3 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
 };
 
-graphic gfx_trainer_backsprite_igva[4] = {
+const graphic gfx_trainer_backsprite_igva[4] = {
     {.sprite = gfx_trainer_backsprite_igvaTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_igvaTiles + 1 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_igvaTiles + 2 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
     {.sprite = gfx_trainer_backsprite_igvaTiles + 3 * GRAPHIC_SIZE_4BPP(64, 64), .size = GRAPHIC_SIZE_4BPP(64, 64)},
 };
 
-oam_template trainer_backsprite_templates[TRAINER_BACKSPRITE_CNT] = {
+const oam_template trainer_backsprite_templates[TRAINER_BACKSPRITE_CNT] = {
     [TRAINER_BACKSPRITE_HIRO] = {
         .tiles_tag = 0xFFFF,
         .pal_tag = 0,
@@ -152,15 +152,15 @@ oam_template trainer_backsprite_templates[TRAINER_BACKSPRITE_CNT] = {
     },
 };
 
-static gfx_frame trainer_backsprite_animation_frame_0[] = {
+static const gfx_frame trainer_backsprite_animation_frame_0[] = {
     {.data = 0, .duration = 0}, {.data = GFX_ANIM_END}
 };
 
-static gfx_frame trainer_backsprite_animation_frame_3[] = {
+static const gfx_frame trainer_backsprite_animation_frame_3[] = {
     {.data = 3, .duration = 0}, {.data = GFX_ANIM_END}
 };
 
-static gfx_frame trainer_backsprite_animation_throw_hiro[] = {
+static const gfx_frame trainer_backsprite_animation_throw_hiro[] = {
     {.data = 1, .duration = 20},
     {.data = 2, .duration = 6},
     {.data = 3, .duration = 6},
@@ -169,7 +169,7 @@ static gfx_frame trainer_backsprite_animation_throw_hiro[] = {
     {.data = GFX_ANIM_END}
 };
 
-static gfx_frame trainer_backsprite_animation_throw_brendan[] = {
+static const gfx_frame trainer_backsprite_animation_throw_brendan[] = {
     {.data = 0, .duration = 24},
     {.data = 1, .duration = 9},
     {.data = 2, .duration = 24},
@@ -178,7 +178,7 @@ static gfx_frame trainer_backsprite_animation_throw_brendan[] = {
     {.data = GFX_ANIM_END}
 };
 
-static gfx_frame trainer_backsprite_animation_throw_pokedude[] = {
+static const gfx_frame trainer_backsprite_animation_throw_pokedude[] = {
     {.data = 1, .duration = 24},
     {.data = 2, .duration = 9},
     {.data = 3, .duration = 24},
@@ -186,43 +186,43 @@ static gfx_frame trainer_backsprite_animation_throw_pokedude[] = {
     {.data = GFX_ANIM_END}
 };
 
-static gfx_frame *trainer_backsprite_animations_hiro[] = {
+static const gfx_frame *const trainer_backsprite_animations_hiro[] = {
     trainer_backsprite_animation_frame_0, trainer_backsprite_animation_throw_hiro
 };
 
-static gfx_frame *trainer_backsprite_animations_hiroine[] = {
+static const gfx_frame *const trainer_backsprite_animations_hiroine[] = {
     trainer_backsprite_animation_frame_0, trainer_backsprite_animation_throw_hiro
 };
 
-static gfx_frame *trainer_backsprite_animations_brendan[] = {
+static const gfx_frame *const trainer_backsprite_animations_brendan[] = {
     trainer_backsprite_animation_frame_3, trainer_backsprite_animation_throw_brendan
 };
 
-static gfx_frame *trainer_backsprite_animations_may[] = {
+static const gfx_frame *const trainer_backsprite_animations_may[] = {
     trainer_backsprite_animation_frame_3, trainer_backsprite_animation_throw_brendan
 };
 
-static gfx_frame *trainer_backsprite_animations_pokedude[] = {
+static const gfx_frame *const trainer_backsprite_animations_pokedude[] = {
     trainer_backsprite_animation_frame_0, trainer_backsprite_animation_throw_pokedude
 };
 
-static gfx_frame *trainer_backsprite_animations_old_man[] = {
+static const gfx_frame *const trainer_backsprite_animations_old_man[] = {
     trainer_backsprite_animation_frame_0, trainer_backsprite_animation_throw_pokedude
 };
 
-static gfx_frame *trainer_backsprite_animations_rival[] = {
+static const gfx_frame *const trainer_backsprite_animations_rival[] = {
     trainer_backsprite_animation_frame_3, trainer_backsprite_animation_throw_brendan
 };
 
-static gfx_frame *trainer_backsprite_animations_felix[] = {
+static const gfx_frame *const trainer_backsprite_animations_felix[] = {
     trainer_backsprite_animation_frame_3, trainer_backsprite_animation_throw_brendan
 };
 
-static gfx_frame *trainer_backsprite_animations_igva[] = {
+static const gfx_frame *const trainer_backsprite_animations_igva[] = {
     trainer_backsprite_animation_frame_3, trainer_backsprite_animation_throw_brendan
 };
 
-palette trainer_backsprite_palettes[TRAINER_BACKSPRITE_CNT] = {
+const palette trainer_backsprite_palettes[TRAINER_BACKSPRITE_CNT] = {
     [TRAINER_BACKSPRITE_HIRO] = {.pal = gfx_trainer_backsprite_hiroPal, .tag = TRAINER_BACKSPRITE_HIRO},
     [TRAINER_BACKSPRITE_HIROINE] = {.pal = gfx_trainer_backsprite_hiroinePal, .tag = TRAINER_BACKSPRITE_HIROINE},
     [TRAINER_BACKSPRITE_BRENDAN] = {.pal = gfx_trainer_backsprite_brendanPal, .tag = TRAINER_BACKSPRITE_BRENDAN},
@@ -234,7 +234,7 @@ palette trainer_backsprite_palettes[TRAINER_BACKSPRITE_CNT] = {
     [TRAINER_BACKSPRITE_IGVA] = {.pal = gfx_trainer_backsprite_igvaPal, .tag = TRAINER_BACKSPRITE_IGVA},
 };
 
-sprite_coordinates_t trainer_backsprite_coordinates[TRAINER_BACKSPRITE_CNT] = {
+const sprite_coordinates_t trainer_backsprite_coordinates[TRAINER_BACKSPRITE_CNT] = {
     [TRAINER_BACKSPRITE_HIRO] = {.y_offset = 8, .frames = 5},
     [TRAINER_BACKSPRITE_HIROINE] = {.y_offset = 8, .frames = 5},
     [TRAINER_BACKSPRITE_BRENDAN] = {.y_offset = 8, .frames = 4},
@@ -246,7 +246,7 @@ sprite_coordinates_t trainer_backsprite_coordinates[TRAINER_BACKSPRITE_CNT] = {
     [TRAINER_BACKSPRITE_IGVA] = {.y_offset = 8, .frames = 4},
 };
 
-gfx_frame **trainer_backsprite_animations[] = {
+const gfx_frame *const *const trainer_backsprite_animations[] = {
     [TRAINER_BACKSPRITE_HIRO] = trainer_backsprite_animations_hiro,
     [TRAINER_BACKSPRITE_HIROINE] = trainer_backsprite_animations_hiroine,
     [TRAINER_BACKSPRITE_BRENDAN] = trainer_backsprite_animations_brendan,

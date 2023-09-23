@@ -29,21 +29,29 @@ typedef struct {
     u8 field_21;
     u8 field_22;
     u8 field_23;
-    trainer_pokemon *party;
+    const trainer_pokemon *party;
 } trainer;
 
-trainer trainers[TRAINER_CNT];
+extern const trainer trainers[TRAINER_CNT];
+extern const u8 trainer_class_names[TRAINERCLASS_CNT][13];
+extern const u8 trainer_class_money_multipliers[TRAINERCLASS_CNT];
 
-u8 trainer_class_names[TRAINERCLASS_CNT][13];
-
-u8 trainer_class_money_multipliers[TRAINERCLASS_CNT];
+extern EWRAM u32 trainer_prng_state;
+extern EWRAM u8 dynamic_trainer_name[12];
+extern EWRAM u8 trainers_cnt;
+extern EWRAM u8 current_trainer;
+extern EWRAM u8 trainers_npc_idxs[2];
+extern EWRAM const u8 *trainers_scripts[2];
+extern EWRAM u16 ally_trainer_idx;
+extern EWRAM u8 ally_trainer_backsprite_idx;
+extern EWRAM u8 ally_trainer_party_preview;
 
 /**
  * Configures a trainerbattle by parameters of an overworld script command.
  * @param script the parameter list
  * @return the challange script
  **/
-u8 *trainer_configure_by_overworld_script(u8 *script);
+const u8 *trainer_configure_by_overworld_script(const u8 *script);
 
 /**
  * Checks the flag of a trainer
@@ -81,7 +89,7 @@ bool trainerbattle_not_initializable();
  * @param script the trainerscript command
  * @return if the trainerflag is set
  **/
-bool npc_trainer_check_flag(u8 *script);
+bool npc_trainer_check_flag(const u8 *script);
 
 /**
  * Checks if the player is able to participate in a double battle.

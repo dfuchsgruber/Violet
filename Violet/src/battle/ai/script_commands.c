@@ -14,12 +14,12 @@
 #include "item/item.h"
 
 static u16 battle_ai_fleeing_prng() {
-    return (u16)_prng_xorshift(&BATTLE_STATE2->fleeing_rng);
+    return (u16)_prng_xorshift(&battle_state2->fleeing_rng);
 }
 
 void battle_ai_script_command_random_flee() {
     u8 battler_idx = battler_get_by_position(BATTLE_POSITION_OPPONENT_LEFT);
-    BATTLE_STATE2->fleeing_rng = BATTLE_STATE2->fleeing_rng_seed;
+    battle_state2->fleeing_rng = battle_state2->fleeing_rng_seed;
     int base_rate = basestats[battlers[battler_idx].species].exp_yield;
     // Some aliments may make fleeing harder
     if (battlers[defending_battler].status1 & STATUS1_FROZEN)

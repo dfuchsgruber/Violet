@@ -14,11 +14,12 @@
 /**
  * Coefficients for a polynomial to erf^-1(x)'s tail
  */
-FIXED erfinv_tail_polynomial_coefs[5] = {98396, 16163, -273, -82, 14};
+const FIXED erfinv_tail_polynomial_coefs[5] = {98396, 16163, -273, -82, 14};
+
 /**
  * Coefficients for a polynomial to erf^-1(x)'s center
  */
-FIXED erfinv_center_polynomial_coefs[9] = {185661, 65645, 618, -499, 376, -240, 88, 6, -13};
+const FIXED erfinv_center_polynomial_coefs[9] = {185661, 65645, 618, -499, 376, -240, 88, 6, -13};
 
 // https://people.maths.ox.ac.uk/gilesm/files/gems_erfinv.pdf
 FIXED FIXED_ERFINV(FIXED x) {

@@ -7,39 +7,39 @@
 #include "constants/pokemon_stat_names.h"
 #include "debug.h"
 
-static u8 str_item_effect_result_heal_status[] = LANGDEP(
+static const u8 str_item_effect_result_heal_status[] = LANGDEP(
     PSTRING("Die BUFFER_2 von BUFFER_1\nwurde geheilt.PAUSE_UNTIL_PRESS"),
     PSTRING("The BUFFER_2 of BUFFER_1\nwas cured.PAUSE_UNTIL_PRESS"));
 
-static u8 str_item_effect_result_heal_sleep[] = LANGDEP(
+static const u8 str_item_effect_result_heal_sleep[] = LANGDEP(
     PSTRING("BUFFER_1 ist aufgewacht.PAUSE_UNTIL_PRESS"), PSTRING("BUFFER_2 woke up.PAUSE_UNTIL_PRESS")
 );
 
-static u8 str_item_effect_result_full_heal[] = LANGDEP(
+static const u8 str_item_effect_result_full_heal[] = LANGDEP(
     PSTRING("BUFFER_1 erholte sich.PAUSE_UNTIL_PRESS"), PSTRING("BUFFER_2 recovered.PAUSE_UNTIL_PRESS")
 );
 
-static u8 str_item_effect_result_ev[] = LANGDEP(
+static const u8 str_item_effect_result_ev[] = LANGDEP(
     PSTRING("BUFFER_2 Fleiß-Punkte von\nBUFFER_1 wurden angehoben.PAUSE_UNTIL_PRESS"), PSTRING("BUFFER_1's BUFFER_2\neffort values were raised.PAUSE_UNTIL_PRESS")
 );
 
-static u8 str_item_effect_result_increase_pp[] = LANGDEP(
+static const u8 str_item_effect_result_increase_pp[] = LANGDEP(
     PSTRING("Ap von BUFFER_1\nwurden angehoben.PAUSE_UNTIL_PRESS"), PSTRING("PP of BUFFER_2\nwere raised.PAUSE_UNTIL_PRESS")
 );
 
-static u8 str_item_effect_result_heal_pp[] = LANGDEP(
+static const u8 str_item_effect_result_heal_pp[] = LANGDEP(
     PSTRING("Ap wurden aufgefüllt.PAUSE_UNTIL_PRESS"), PSTRING("PP were recovered.PAUSE_UNTIL_PRESS")
 );
 
-static u8 str_item_effect_result_none[] = LANGDEP(
+static const u8 str_item_effect_result_none[] = LANGDEP(
     PSTRING("Es wird keine Wirkung haben.PAUSE_UNTIL_PRESS"), PSTRING("It has no effect.PAUSE_UNTIL_PRESS")
 );
 
-static u8 str_item_effect_result_friendship[] = LANGDEP(
+static const u8 str_item_effect_result_friendship[] = LANGDEP(
     PSTRING("BUFFER_1 wurde\nzutraulicher.PAUSE_UNTIL_PRESS"), PSTRING("BUFFER_1 became\nmore friendly.PAUSE_UNTIL_PRESS")
 );
 
-static u8 *item_effect_result_strings[] = {
+static const u8 *const item_effect_result_strings[] = {
     [ITEM_EFFECT_HEAL_POISON] = str_item_effect_result_heal_status,
     [ITEM_EFFECT_HEAL_CONFUSION] = str_item_effect_result_heal_status,
     [ITEM_EFFECT_HEAL_FREEZE] = str_item_effect_result_heal_status,

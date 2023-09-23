@@ -25,6 +25,7 @@
 #include "music.h"
 #include "pokemon/cry.h"
 #include "flags.h"
+#include "pokepad/pokedex/state.h"
 
 extern const unsigned short gfx_pokedex_formsTiles[];
 extern const unsigned short gfx_pokedex_entry_uiMap[];
@@ -38,16 +39,16 @@ extern const unsigned short gfx_pokedex_formsPal[];
 #define HAS_HABITAT true 
 //#define HAS_HABITAT(checkflag(POKEDEX_FEATURE_HABITAT))
 
-tbox_font_colormap pokedex_entry_title_fontcolmap = {0, 1, 2, 0};
+const tbox_font_colormap pokedex_entry_title_fontcolmap = {0, 1, 2, 0};
 
-bg_config pokedex_bg_entry_configs [] = {
+const bg_config pokedex_bg_entry_configs [] = {
     {0, 2, 31, 0, 0, 0},
     {1, 0, 30, 0, 0, 1},
     {2, 1, 29, 0, 0, 2},
     {3, 3, 28, 0, 0, 2}
 };
 
-tboxdata pokedex_entry_tboxes [] = {
+const tboxdata pokedex_entry_tboxes [] = {
     {0, 9, 1, 19, 2, 14, 1},
     {0, 0, 5, 15, 6, 15, 45},
     {2, 0, 12, 30, 12, 15, 1},
@@ -56,15 +57,15 @@ tboxdata pokedex_entry_tboxes [] = {
     {0xFF, 0, 0, 0, 0, 0, 0}
 };
 
-sprite pokedex_form_sprite = {
+const sprite pokedex_form_sprite = {
     0, 0x8000, 0, 0
 };
 
-sprite pokedex_pokepic_sprite = {
+const sprite pokedex_pokepic_sprite = {
     0, 0xC000, 0, 0
 };
 
-oam_template pokedex_form_template = {
+const oam_template pokedex_form_template = {
     0xA00C,
     0xA00C,
     &pokedex_form_sprite,
@@ -74,7 +75,7 @@ oam_template pokedex_form_template = {
     oam_null_callback
 };
 
-oam_template pokedex_pokepic_template = {
+const oam_template pokedex_pokepic_template = {
     0xA00A,
     0xA00A,
     &pokedex_pokepic_sprite,
@@ -86,11 +87,11 @@ oam_template pokedex_pokepic_template = {
 
 void pokedex_entry_load_strings() {
     tbox_flush_set(0, 0); //0 is the name header
-    pokedex_tbox_draw_num(0, 0, fmem.dex_mem->current_species, 0, 0);
+    pokedex_tbox_draw_num(0, 0, pokedex_state->current_species, 0, 0);
     tbox_tilemap_draw(0);
     tbox_print_string(0, 2, 30, 0, 0, 0, &pokedex_entry_title_fontcolmap, 0,
-        pokemon_names[fmem.dex_mem->current_species]);
-    u16 dex_id = pokedex_get_id(fmem.dex_mem->current_species);
+        pokemon_names[pokedex_state->current_species]);
+    u16 dex_id = pokedex_get_id(pokedex_state->current_species);
     DEBUG("Pokedex entry load for dex idx %d\n", dex_id);
 
     tbox_flush_set(1, 0);
@@ -114,7 +115,7 @@ void pokedex_entry_load_strings() {
 
     u8 *buf = strbuf;
     *buf = 0xFF;
-    if(fmem.dex_mem->from_battle){
+    if(pokedex_state->from_battle){
         u8 str_buttons_battle[] = LANGDEP(PSTRING("KEY_START Ruf  KEY_A Weiter"),
             PSTRING("KEY_START Cry  KEY_A Proceed"));
         strcpy(buf, str_buttons_battle);
@@ -129,7 +130,7 @@ void pokedex_entry_load_strings() {
     }
     tbox_print_string(4, 2, 0, 0, 0, 0, &pokedex_fontcolmap, 0, strbuf);
 
-    bool is_caught = fmem.dex_mem->list[fmem.dex_mem->current_list_index].caught;
+    bool is_caught = pokedex_state->list[pokedex_state->current_list_index].caught;
 
     u8 str_none[1] = PSTRING("");
     u8 str_qmark[] = PSTRING("?");
@@ -154,8 +155,8 @@ void pokedex_entry_load_strings() {
     tbox_print_string(2, 2, 0, 0, 0, 1, &pokedex_fontcolmap, 0, is_caught ?
         pokedex_get_data(dex_id)->page0 : str_qmark);
     if (is_caught) {
-        u8 type1 = (u8) (basestats[fmem.dex_mem->current_species].type1 + 1);
-        u8 type2 = (u8) (basestats[fmem.dex_mem->current_species].type2 + 1);
+        u8 type1 = (u8) (basestats[pokedex_state->current_species].type1 + 1);
+        u8 type2 = (u8) (basestats[pokedex_state->current_species].type2 + 1);
         tbox_blit_move_info_icon(3, type1, 0, 0);
         if (type1 != type2)
             tbox_blit_move_info_icon(3, type2, 0x20, 0);
@@ -168,40 +169,40 @@ void pokedex_entry_load_strings() {
 }
 
 void pokedex_entry_load_pokepic() {
-    if (fmem.dex_mem->entry_skip_cry) {
-        fmem.dex_mem->entry_skip_cry = false;
+    if (pokedex_state->entry_skip_cry) {
+        pokedex_state->entry_skip_cry = false;
     } else {
-        pokemon_play_cry(fmem.dex_mem->current_species, 0);
+        pokemon_play_cry(pokedex_state->current_species, 0);
     }
-    if (fmem.dex_mem->tile_pokepic == 0xFFFF) {
+    if (pokedex_state->tile_pokepic == 0xFFFF) {
         //allocate obj vram
-        fmem.dex_mem->tile_pokepic = oam_vram_alloc(64);
-        oam_vram_allocation_table_add(0xA00A, fmem.dex_mem->tile_pokepic, 64);
+        pokedex_state->tile_pokepic = oam_vram_alloc(64);
+        oam_vram_allocation_table_add(0xA00A, pokedex_state->tile_pokepic, 64);
     }
-    if (fmem.dex_mem->pal_pokepic == 0xFF) {
-        fmem.dex_mem->pal_pokepic = oam_allocate_palette(0xA00A);
+    if (pokedex_state->pal_pokepic == 0xFF) {
+        pokedex_state->pal_pokepic = oam_allocate_palette(0xA00A);
     }
-    pal_decompress(pokemon_pals[fmem.dex_mem->current_species].pal, (u16) (256 + fmem.dex_mem->pal_pokepic * 16), 32);
+    pal_decompress(pokemon_pals[pokedex_state->current_species].pal, (u16) (256 + pokedex_state->pal_pokepic * 16), 32);
     pal_set_all_to_black();
 
-    void *offset = (void*) (0x06010000 + 32 * fmem.dex_mem->tile_pokepic);
-    lz77uncompvram(pokemon_frontsprites[fmem.dex_mem->current_species].sprite, offset);
+    void *offset = (void*) (0x06010000 + 32 * pokedex_state->tile_pokepic);
+    lz77uncompvram(pokemon_frontsprites[pokedex_state->current_species].sprite, offset);
 
     //load form
-    offset = (void*) (0x06010000 + 32 * fmem.dex_mem->tile_form);
-    u8 form = basestats[fmem.dex_mem->current_species].form;
+    offset = (void*) (0x06010000 + 32 * pokedex_state->tile_form);
+    u8 form = basestats[pokedex_state->current_species].form;
     cpuset(&gfx_pokedex_formsTiles[form * 256], offset, 256);
 }
 
-u16 pokedex_colors[16];
-u16 pokedex_colors_nr[16];
+extern const u16 pokedex_colors[16];
+extern const u16 pokedex_colors_nr[16];
 
 void pokedex_callback_init_entry_load_elements(){
    //disable window
     io_set(0, (u16) (io_get(0) &~0x6000));
 
-    fmem.dex_mem->tile_pokepic = 0xFFFF;
-    fmem.dex_mem->pal_pokepic = 0xFF;
+    pokedex_state->tile_pokepic = 0xFFFF;
+    pokedex_state->pal_pokepic = 0xFF;
 
 
     oam_reset();
@@ -236,16 +237,16 @@ void pokedex_callback_init_entry_load_elements(){
     pokedex_entry_load_strings();
 
     //oam
-    fmem.dex_mem->pal_form = (u8) (oam_allocate_palette(0xA00C) + 0x10);
-    fmem.dex_mem->tile_form = oam_vram_alloc(16);
-    oam_vram_allocation_table_add(0xA00C, fmem.dex_mem->tile_form, 16);
+    pokedex_state->pal_form = (u8) (oam_allocate_palette(0xA00C) + 0x10);
+    pokedex_state->tile_form = oam_vram_alloc(16);
+    oam_vram_allocation_table_add(0xA00C, pokedex_state->tile_form, 16);
     pokedex_entry_load_pokepic();
-    fmem.dex_mem->oam_pokepic = oam_new_forward_search(&pokedex_pokepic_template, 192, 64, 0);
-    fmem.dex_mem->oam_form = oam_new_forward_search(&pokedex_form_template, 108, 72, 0);
+    pokedex_state->oam_pokepic = oam_new_forward_search(&pokedex_pokepic_template, 192, 64, 0);
+    pokedex_state->oam_form = oam_new_forward_search(&pokedex_form_template, 108, 72, 0);
 
     pal_decompress(gfx_pokedex_entry_uiPal, 0, 32);
     pal_decompress(gfx_pokedex_bottom_1Pal, 16, 32);
-    pal_decompress(gfx_pokedex_formsPal, (u16) (fmem.dex_mem->pal_form * 16), 32);
+    pal_decompress(gfx_pokedex_formsPal, (u16) (pokedex_state->pal_form * 16), 32);
     pal_copy((void*) 0x08E95DDC, 3 * 16, 32);
     pal_copy((void*) 0x08E95DBC, 4 * 16, 32);
     pal_copy(pokedex_colors_nr, 14 * 16, 32);
@@ -295,7 +296,7 @@ void pokedex_entry_from_battle_cb(u8 self){
 
                 } else if (super.keys.keys.right) {
                     //first we count the lines in page1
-                    u16 dex_id = pokedex_get_id(fmem.dex_mem->current_species);
+                    u16 dex_id = pokedex_get_id(pokedex_state->current_species);
                     pokedex_entry *data = pokedex_get_data(dex_id);
                     //we count the lines
                     int i;
@@ -313,7 +314,7 @@ void pokedex_entry_from_battle_cb(u8 self){
                     fadescreen((u32)-1, 0, 0, 16, 0);
                     big_callbacks[self].params[0]++;
                 } else if (super.keys_new.keys.start) {
-                     pokemon_play_cry(fmem.dex_mem->current_species, 0);
+                     pokemon_play_cry(pokedex_state->current_species, 0);
                 }
                 break;
             }
@@ -334,10 +335,10 @@ void pokedex_entry_from_battle_cb(u8 self){
 
 u8 pokedex_init_entry_from_battle(u16 species){
     //First allocate dex_mem
-    pokedex_memory *dex_mem = (pokedex_memory*)malloc_and_clear(sizeof(pokedex_memory));
+    pokedex_state_t *dex_mem = (pokedex_state_t*)malloc_and_clear(sizeof(pokedex_state_t));
     dex_mem->current_species = species;
     dex_mem->from_battle = true;
-    fmem.dex_mem = dex_mem;
+    pokedex_state = dex_mem;
     pokedex_callback_init_entry_load_elements();
     u8 cb_id = big_callback_new(pokedex_entry_from_battle_cb, 0);
     big_callbacks[cb_id].params[0] = 0;
@@ -373,7 +374,7 @@ void pokedex_callback_entry_back() {
 void pokedex_entry_update() {
     generic_callback1();
     if (!fading_is_active()) {
-        fmem.dex_mem->current_species = fmem.dex_mem->list[fmem.dex_mem->current_list_index].species;
+        pokedex_state->current_species = pokedex_state->list[pokedex_state->current_list_index].species;
         pokedex_entry_load_strings();
         pokedex_entry_load_pokepic();
         io_set(0x1A, 0);
@@ -393,17 +394,17 @@ void pokedex_callback_entry_idle() {
             volume_set(mplay_info_background_music, 0xFFFF, 0x100);
             callback1_set(pokedex_callback_entry_back);
         } else if (super.keys_new.keys.start) {
-            pokemon_play_cry(fmem.dex_mem->current_species, 0);
-        } else if (super.keys_new.keys.up && fmem.dex_mem->current_list_index > pokedex_get_first_seen()) {
+            pokemon_play_cry(pokedex_state->current_species, 0);
+        } else if (super.keys_new.keys.up && pokedex_state->current_list_index > pokedex_get_first_seen()) {
             do {
-                fmem.dex_mem->current_list_index--;
-            } while (!fmem.dex_mem->list[fmem.dex_mem->current_list_index].seen);
+                pokedex_state->current_list_index--;
+            } while (!pokedex_state->list[pokedex_state->current_list_index].seen);
             callback1_set(pokedex_entry_update);
             fadescreen_all(1, 0);
-        } else if (super.keys_new.keys.down && fmem.dex_mem->current_list_index < pokedex_get_last_seen()) {
+        } else if (super.keys_new.keys.down && pokedex_state->current_list_index < pokedex_get_last_seen()) {
             do {
-                fmem.dex_mem->current_list_index++;
-            } while (!fmem.dex_mem->list[fmem.dex_mem->current_list_index].seen);
+                pokedex_state->current_list_index++;
+            } while (!pokedex_state->list[pokedex_state->current_list_index].seen);
             callback1_set(pokedex_entry_update);
             fadescreen_all(1, 0);
         } else if (super.keys.keys.left) {
@@ -414,11 +415,11 @@ void pokedex_callback_entry_idle() {
 
         } else if (super.keys.keys.right) {
             //first we count the lines in page1
-            pokedex_entry *data = pokedex_get_data(fmem.dex_mem->list[fmem.dex_mem->current_list_index].dex_id);
+            pokedex_entry *data = pokedex_get_data(pokedex_state->list[pokedex_state->current_list_index].dex_id);
             //we count the lines
             int i;
             int line_cnt = 1;
-            for (i = 1; data->page0[i] != 0xFF && fmem.dex_mem->list[fmem.dex_mem->current_list_index].caught; i++) {
+            for (i = 1; data->page0[i] != 0xFF && pokedex_state->list[pokedex_state->current_list_index].caught; i++) {
                 if (data->page0[i] == 0xFE)
                     line_cnt++;
             }

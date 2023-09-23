@@ -25,9 +25,9 @@ void _pokemon_get_egg_moves_stub(){
     ERROR("Rom called old invalid stub for pokemon_get_egg_moves!\n");
 }
 
-u16 *pokemon_get_egg_moves(u16 species, int *size){
+const u16 *pokemon_get_egg_moves(u16 species, int *size){
     *size = 0;
-    u16 *egg_moves = pokemon_egg_moves[species];
+    const u16 *egg_moves = pokemon_egg_moves[species];
     if (egg_moves) {
 		while(egg_moves[*size] != 0xFFFF) {
 			(*size)++;
@@ -89,7 +89,7 @@ void breeding_inherit_ivs(pokemon *egg, daycare_stru *daycare) {
 
 void breeding_pokemon_new(pokemon *p, u16 species, daycare_stru *daycare) {
 	(void)(daycare);
-	pokemon_new(p, species, 5, 32, true, cmem.daycare_offspring_pid, false, 0);
+	pokemon_new(p, species, 5, 32, true, csave.daycare_offspring_pid, false, 0);
 	u8 ball = BALL_POKE;
 	pokemon_set_attribute(p, ATTRIBUTE_CATCH_INFO, &ball);
 	pokemon_set_attribute(p, ATTRIBUTE_NICKNAME, str_egg);
@@ -98,7 +98,7 @@ void breeding_pokemon_new(pokemon *p, u16 species, daycare_stru *daycare) {
 	pokemon_set_attribute(p, ATTRIBUTE_CATCH_LEVEL, &level_met);
 	u8 language = LANGUAGE_GERMAN;
 	pokemon_set_attribute(p, ATTRIBUTE_LANGUAGE, &language);
-	if (cmem.daycare_offspring_has_hidden_ability)
+	if (csave.daycare_offspring_has_hidden_ability)
 		pokemon_set_hidden_ability(&p->box);
 }
 
@@ -128,7 +128,7 @@ u16 breeding_get_egg_species_and_parents(daycare_stru* daycare, u8 *parents) {
 	}
 	u16 egg_species = pokemon_get_basis_stage(species[parents[0]]);
 	// Change the species gender for Nidoran (Ilumise has been removed)
-	if (egg_species == POKEMON_NIDORANW && cmem.daycare_offspring_male)
+	if (egg_species == POKEMON_NIDORANW && csave.daycare_offspring_male)
 		egg_species = POKEMON_NIDORANM;
 	// If Ditto mates with a male /genderless pokemon, it is set to the mother
 	if (species[parents[1]] == POKEMON_DITTO &&
@@ -144,7 +144,7 @@ pid_t breeding_new_pid(daycare_stru *daycare) {
 	u8 parent_slots[2];
 	u16 offspring_species = breeding_get_egg_species_and_parents(daycare, parent_slots);
 	pid_t pid = pokemon_new_pid(offspring_species);
-	cmem.daycare_offspring_has_hidden_ability = 0;
+	csave.daycare_offspring_has_hidden_ability = 0;
 	// Inherit nature from parent with everstone
 	for (int i = 0; i < 2; i++) {
 		u16 parent_item = (u16) box_pokemon_get_attribute(&daycare->pokemon[i].pokemon,
@@ -160,17 +160,17 @@ pid_t breeding_new_pid(daycare_stru *daycare) {
 }
 
 void breeding_spawn_egg(daycare_stru *daycare) {
-	cmem.daycare_offspring_pid = breeding_new_pid(daycare);
-	cmem.daycare_offspring_male = (rnd16() & 1) > 0;
-	cmem.daycare_offspring_has_hidden_ability = breeding_inherit_hidden_ability(daycare);
+	csave.daycare_offspring_pid = breeding_new_pid(daycare);
+	csave.daycare_offspring_male = (rnd16() & 1) > 0;
+	csave.daycare_offspring_has_hidden_ability = breeding_inherit_hidden_ability(daycare);
 	daycare->offspring_present = 1;
 	setflag(FLAG_DAYCARE_EGG_SPAWNED);
 }
 
 void breeding_spawn_male_egg(daycare_stru *daycare) {
-	cmem.daycare_offspring_pid = breeding_new_pid(daycare);
-	cmem.daycare_offspring_male = true;
-	cmem.daycare_offspring_has_hidden_ability = breeding_inherit_hidden_ability(daycare);
+	csave.daycare_offspring_pid = breeding_new_pid(daycare);
+	csave.daycare_offspring_male = true;
+	csave.daycare_offspring_has_hidden_ability = breeding_inherit_hidden_ability(daycare);
 	daycare->offspring_present = 1;
 	setflag(FLAG_DAYCARE_EGG_SPAWNED);
 }
@@ -186,15 +186,15 @@ void breeding_egg_new_into_incubator(daycare_stru *daycare) {
   u8 is_egg = 1;
   pokemon_set_attribute(&tmp, ATTRIBUTE_IS_EGG, &is_egg);
 	for (int i = 0; i < incubator_available_slots(); i++) {
-    if (box_pokemon_get_attribute(&cmem.incubator_slots[i], ATTRIBUTE_SPECIES, 0) == 0) {
-      memcpy(&cmem.incubator_slots[i], &tmp, sizeof(box_pokemon));
+    if (box_pokemon_get_attribute(&csave.incubator_slots[i], ATTRIBUTE_SPECIES, 0) == 0) {
+      memcpy(&csave.incubator_slots[i], &tmp, sizeof(box_pokemon));
 			daycare_remove_egg(daycare);
   		return;
 		}
 	}
 }
 
-void breeding_egg_add_move_if_known_by_parent(pokemon *egg, box_pokemon *father, box_pokemon *mother, u16 move) {
+void breeding_egg_add_move_if_known_by_parent(pokemon *egg, const box_pokemon *father, const box_pokemon *mother, u16 move) {
 	for (int j = 0; j < 4; j++) {
 		if (box_pokemon_get_attribute(father, ATTRIBUTE_ATTACK1 + j, 0) == move ||
 				box_pokemon_get_attribute(mother, ATTRIBUTE_ATTACK1 + j, 0) == move) {
@@ -206,7 +206,7 @@ void breeding_egg_add_move_if_known_by_parent(pokemon *egg, box_pokemon *father,
 	}
 }
 
-void breeding_egg_create_moves(pokemon *egg, box_pokemon *father, box_pokemon *mother) {
+void breeding_egg_create_moves(pokemon *egg, const box_pokemon *father, const box_pokemon *mother) {
 	u16 species = (u16) pokemon_get_attribute(egg, ATTRIBUTE_SPECIES, 0);
 
 	// Scan if any parent has any of its levelup moves
@@ -223,7 +223,7 @@ void breeding_egg_create_moves(pokemon *egg, box_pokemon *father, box_pokemon *m
 
 	// Scan for egg moves that can be inherited from both parents
 	int num_egg_moves = 0;
-	u16 *egg_moves = pokemon_get_egg_moves(species, &num_egg_moves);
+	const u16 *egg_moves = pokemon_get_egg_moves(species, &num_egg_moves);
 	for (int i = 0; i < num_egg_moves; i++) {
 		breeding_egg_add_move_if_known_by_parent(egg, father, mother, egg_moves[i]);
 	}
@@ -303,10 +303,10 @@ u8 daycare_proceed(daycare_stru *daycare) {
     }
     // Proceed incubator
     for (int i = 0; i < incubator_available_slots(); i++) {
-      if (box_pokemon_hatching_proceed(&cmem.incubator_slots[i], true, true, 2)){
+      if (box_pokemon_hatching_proceed(&csave.incubator_slots[i], true, true, 2)){
         // Mark the pokemon to hatch immediatley
         int cycles = BREEDING_CYCLES_HATCH_IMMEDIATLEY;
-        box_pokemon_set_attribute(&cmem.incubator_slots[i], ATTRIBUTE_HAPPINESS, &cycles);
+        box_pokemon_set_attribute(&csave.incubator_slots[i], ATTRIBUTE_HAPPINESS, &cycles);
 		// Check if this egg can be hatched directly, i.e. if there is team or box space for the egg
 		if (player_pokemon_recount_pokemon() < 6 || box_has_empty_slot()) {
 			// There is some room to hatch the egg into

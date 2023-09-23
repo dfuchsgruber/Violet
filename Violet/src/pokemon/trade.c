@@ -5,7 +5,7 @@
 #include "constants/natures.h"
 #include "constants/items.h"
 
-ingame_trade_t ingame_trades[NUM_INGAME_TRADES] = {
+const ingame_trade_t ingame_trades[NUM_INGAME_TRADES] = {
     [INGAME_TRADE_CAMAUB] = {
         .nickname = LANGDEP(PSTRING("Carmella"), PSTRING("Carmella")),
         .species = POKEMON_CAMAUB,
@@ -178,7 +178,7 @@ ingame_trade_t ingame_trades[NUM_INGAME_TRADES] = {
 
 
 void ingame_trade_pokemon_new(u8 party_idx, u8 ingame_trade_idx) { 
-    ingame_trade_t *trade = ingame_trades + ingame_trade_idx;
+    const ingame_trade_t *trade = ingame_trades + ingame_trade_idx;
     u8 level = (u8)pokemon_get_attribute(player_pokemon + party_idx, ATTRIBUTE_LEVEL, 0);
     pokemon *p = &opponent_pokemon[0];
     pokemon_new(p, trade->species, level, POKEMON_NEW_RANDOM_IVS, true, trade->pid, true, trade->tid);

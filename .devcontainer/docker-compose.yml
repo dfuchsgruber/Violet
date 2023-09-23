@@ -4,7 +4,9 @@ services:
     volumes:
       - .:/workspace/Violet:cached
       - venv:/venv
+      - pyenv:/home/violet/.pyenv/versions
     command: /bin/sh -c "while sleep 1000; do :; done"
 
 volumes:
   venv:
+  pyenv:

@@ -19,7 +19,7 @@ u8 *typetoa_long(u8 *dst, u8 type) {
 }
 
 
-u8 str_types[][7] = {
+const u8 str_types[][7] = {
 	LANGDEP(PSTRING("Normal"), PSTRING("Normal")),
 	LANGDEP(PSTRING("Kampf"), PSTRING("Fight.")),
 	LANGDEP(PSTRING("Flug"), PSTRING("Flying")),
@@ -40,7 +40,7 @@ u8 str_types[][7] = {
 	LANGDEP(PSTRING("Unl."), PSTRING("Dark"))
 };
 
-u8 str_types_long[][8] = {
+const u8 str_types_long[][8] = {
 	LANGDEP(PSTRING("Normal"), PSTRING("Normal")),
 	LANGDEP(PSTRING("Kampf"), PSTRING("Fighting")),
 	LANGDEP(PSTRING("Flug"), PSTRING("Flying")),

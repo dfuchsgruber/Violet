@@ -43,8 +43,7 @@ typedef struct {
 
 extern u8 *battle_ai_script;
 
-#define TRAINER_AI_STATE2 ((trainer_ai_state2_t*)fmem.trainer_ai_state2)
-
+extern EWRAM trainer_ai_state2_t *trainer_ai_state2;
 
 #define AI_CHOICE_FLEE 4
 #define AI_CHOICE_WATCH 5

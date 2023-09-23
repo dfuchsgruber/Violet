@@ -5,14 +5,14 @@
 #include "save.h"
 #include "superstate.h"
 
-static u8 movements_normal[][2] = {
+static const u8 movements_normal[][2] = {
     [DIR_DOWN] = {STEP_DOWN, STOP},
     [DIR_UP] = {STEP_UP, STOP},
     [DIR_LEFT] = {STEP_LEFT, STOP},
     [DIR_RIGHT] = {STEP_RIGHT, STOP},
 };
 
-static u8 movements_fast[][2] = {
+static const u8 movements_fast[][2] = {
     [DIR_DOWN] = {STEP_DOWN_FAST, STOP},
     [DIR_UP] = {STEP_UP_FAST, STOP},
     [DIR_LEFT] = {STEP_LEFT_FAST, STOP},

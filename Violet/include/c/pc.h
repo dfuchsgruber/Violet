@@ -36,12 +36,13 @@ typedef struct {
 extern pc_state_t *pc_state;
 
 typedef struct {
-    u8 *text;
+    const u8 *text;
     int format;
 } pc_context_text_t;
 
 extern u8 pc_slot_in_box;
 extern u8 pc_last_used_mode;
+extern EWRAM u8 pc_selection_context;
 
 /**
  * Initializes the pc.

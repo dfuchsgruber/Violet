@@ -61,14 +61,14 @@ typedef struct gpio_data {
     u16 portControl;
 } gpio_data;
 
-u8 ingame_clock_status;
+extern u8 ingame_clock_status;
 
 void rtc_read(rtc_timestamp *s);
 void rtc_send_byte(u8 byte);
 void gpio_send_data(rtc_data data);
 u8 rtc_read_byte();
 u16 special_time_get();
-u64 rtc_timestamp_to_seconds(rtc_timestamp *t);
+u64 rtc_timestamp_to_seconds(const rtc_timestamp *t);
 /**
  * Initializes year, month and day of a timestamp with a certain amount of days that has passed.
  * @param days how many days have passed
@@ -110,6 +110,6 @@ void time_based_events_proceed(u16 *vars);
 /**
  * The data-section for communicating with the GPIO chip.
  */
-volatile gpio_data gpio;
+extern volatile gpio_data gpio;
 
 #endif

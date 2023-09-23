@@ -9,15 +9,15 @@
 #define KASKADA_TEA_HOUSE_BANK 8
 #define KASKADA_TEA_HOUSE_MAP_IDX 12
 
-extern u16 gfx_maptileset_kaskada_tea_house_light_animTiles[];
+extern const u16 gfx_maptileset_kaskada_tea_house_light_animTiles[];
 extern const u8 gfx_maptileset_kaskada_tea_house_smokeTiles[];
 extern const u8 gfx_maptileset_kaskada_tea_house_smokePal[];
 
-static graphic smoke_graphic = {
+static const graphic smoke_graphic = {
     .sprite = gfx_maptileset_kaskada_tea_house_smokeTiles, .tag = KASKADA_TEA_HOUSE_SMOKE_TAG, .size = GRAPHIC_SIZE_4BPP(16, 16) * 4,
 };
 
-static sprite smoke_final_oam = {
+static const sprite smoke_final_oam = {
     .attr0 = ATTR0_SHAPE_SQUARE,
     .attr1 = ATTR1_SIZE_16_16,
     .attr2 = ATTR2_PRIO(1),
@@ -42,13 +42,13 @@ static void oam_callback_smoke(oam_object *self) {
     }
 }
 
-static gfx_frame gfx_anim_smoke[] = {
+static const gfx_frame gfx_anim_smoke[] = {
     {.data = 0, .duration = 0}, {.data = 0, .duration = 16}, {.data = 4, .duration = 16}, {.data = 8, .duration = 16}, {.data = 12, .duration = 16}, {.data = GFX_ANIM_JUMP, .duration = 1},
 };
 
-static gfx_frame *gfx_anims_smoke[] = {gfx_anim_smoke};
+static const gfx_frame *const gfx_anims_smoke[] = {gfx_anim_smoke};
 
-static oam_template smoke_template = {
+static const oam_template smoke_template = {
     .tiles_tag = KASKADA_TEA_HOUSE_SMOKE_TAG, .pal_tag = KASKADA_TEA_HOUSE_SMOKE_TAG,
     .oam = &smoke_final_oam,
     .animation = gfx_anims_smoke,
@@ -56,7 +56,7 @@ static oam_template smoke_template = {
     .callback = oam_callback_smoke,
 };
 
-static coordinate_t smoke_positions[] = {
+static const coordinate_t smoke_positions[] = {
     {.x = 2, .y = 7}, {.x = 0xA, .y = 7}, {.x = 9, .y = 3},
 };
 
@@ -75,14 +75,14 @@ static void smoke_initialize() {
     }
 }
 
-tileset_animation tileset_kaskada_tea_house_animations[] = {
+static const tileset_animation tileset_kaskada_tea_house_animations[] = {
     {
 		.cycle = 4, .speed = 32, .start_tile = 0x330, .num_tiles = 9,
 		.gfx = gfx_maptileset_kaskada_tea_house_light_animTiles
     }
 };
 
-tileset_animation_header tileset_kaskada_tea_house_animations_head = {
+static const tileset_animation_header tileset_kaskada_tea_house_animations_head = {
     1, tileset_kaskada_tea_house_animations
 };
 

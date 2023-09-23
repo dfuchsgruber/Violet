@@ -43,11 +43,11 @@ typedef struct {
 } hidden_item_respawnable_chunk_t;
 
 // Hidden item flags that respawn daily (this feature is turned of by tile.asm patch)
-hidden_item_respawnable_chunk_t hidden_item_respawnable[15];
+extern const hidden_item_respawnable_chunk_t hidden_item_respawnable[15];
 
-extern u8 ow_script_hidden_item_mushroom[];
-extern u8 ow_script_hidden_item_mushroom_already_plucked[];
-extern u8 ow_script_hidden_item_shell[];
-extern u8 ow_script_hidden_item_shell_already_found[];
+extern const u8 ow_script_hidden_item_mushroom[];
+extern const u8 ow_script_hidden_item_mushroom_already_plucked[];
+extern const u8 ow_script_hidden_item_shell[];
+extern const u8 ow_script_hidden_item_shell_already_found[];
 
 #endif /* INCLUDE_C_TILE_HIDDEN_ITEM_H_ */

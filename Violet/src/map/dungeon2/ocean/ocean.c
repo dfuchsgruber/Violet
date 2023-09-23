@@ -28,55 +28,55 @@
 #include "constants/map_types.h"
 #include "overworld/sprite.h"
 
-extern tileset maptileset0;
-extern tileset maptileset_cave;
+extern const tileset maptileset0;
+extern const tileset maptileset_cave;
 
-u16 dungeon2_ocean_borders[4] = {0x1cd, 0x1cd, 0x1cd, 0x1cd};
+const u16 dungeon2_ocean_borders[4] = {0x1cd, 0x1cd, 0x1cd, 0x1cd};
 
-map_block dungeon2_ocean_map_empty[DG2_OCEAN_WIDTH * DG2_OCEAN_HEIGHT] = {0};
+const map_block dungeon2_ocean_map_empty[DG2_OCEAN_WIDTH * DG2_OCEAN_HEIGHT] = {0};
 
-extern u8 ow_script_dungeon_encounter[];
-extern u8 ow_script_dungeon_item[];
+extern const u8 ow_script_dungeon_encounter[];
+extern const u8 ow_script_dungeon_item[];
 
 map_header_t *dungeon2_init_header_ocean(dungeon_generator2 *dg2) {
 
     //save1->flash_circle_size = 1;
     DEBUG("D2 header init\n");
-    fmem.dmap_header_initialized = 1;
-    fmem.dmapheader.levelscripts = dungeon2_lscr;
-    fmem.dmapheader.connections = &dungeon2_connections;
-    fmem.dmapheader.music = 0x14b;
-    fmem.dmapheader.map_namespace = mapheader_virtual.map_namespace;
-    fmem.dmapheader.flash_type = 0;
-    fmem.dmapheader.weather = MAP_WEATHER_INSIDE;
-    fmem.dmapheader.type = MAP_TYPE_INSIDE;
-    fmem.dmapheader.show_name = 0;
-    fmem.dmapheader.battle_style = 0;
-    fmem.dmapheader.events = dungeon2_init_events_ocean(dg2);
-    return &(fmem.dmapheader);
+    dmap_flags.header_initialized = 1;
+    dynamic_map_header.levelscripts = dungeon2_lscr;
+    dynamic_map_header.connections = &dungeon2_connections;
+    dynamic_map_header.music = 0x14b;
+    dynamic_map_header.map_namespace = mapheader_virtual.map_namespace;
+    dynamic_map_header.flash_type = 0;
+    dynamic_map_header.weather = MAP_WEATHER_INSIDE;
+    dynamic_map_header.type = MAP_TYPE_INSIDE;
+    dynamic_map_header.show_name = 0;
+    dynamic_map_header.battle_style = 0;
+    dynamic_map_header.events = dungeon2_init_events_ocean(dg2);
+    return &(dynamic_map_header);
 }
 
 map_footer_t *dungeon2_init_footer_ocean(dungeon_generator2 *dg2){
     DEBUG("D2 footer init\n");
-    fmem.dmapfooter.width = (u32)dg2->width;
-    fmem.dmapfooter.height = (u32)dg2->height;
-    fmem.dmapfooter.tileset1 = &maptileset0;
-    fmem.dmapfooter.tileset2 = &maptileset_cave;
-    fmem.dmapfooter.border_blocks = dungeon2_ocean_borders;
-    fmem.dmapfooter.border_width = 2;
-    fmem.dmapfooter.border_height = 2;
-    fmem.dmapfooter.map = dungeon2_ocean_map_empty;
-    return &(fmem.dmapfooter);
+    dynamic_map_footer.width = (u32)dg2->width;
+    dynamic_map_footer.height = (u32)dg2->height;
+    dynamic_map_footer.tileset1 = &maptileset0;
+    dynamic_map_footer.tileset2 = &maptileset_cave;
+    dynamic_map_footer.border_blocks = dungeon2_ocean_borders;
+    dynamic_map_footer.border_width = 2;
+    dynamic_map_footer.border_height = 2;
+    dynamic_map_footer.map = dungeon2_ocean_map_empty;
+    return &(dynamic_map_footer);
 }
 
 map_event_header_t *dungeon2_init_events_ocean(dungeon_generator2 *dg2){
     DEBUG("D2 event init, dg2 seed %d, num nodes %d\n", dg2->initial_seed, dg2->nodes);
     (void)dg2;
 
-    fmem.dmapevents.warp_cnt = 0;
-    fmem.dmapevents.script_cnt = 0;
-    fmem.dmapevents.signpost_cnt = 0;
-    fmem.dmapevents.persons = fmem.dpersons;
+    dynamic_map_event_header.warp_cnt = 0;
+    dynamic_map_event_header.script_cnt = 0;
+    dynamic_map_event_header.signpost_cnt = 0;
+    dynamic_map_event_header.persons = dynamic_persons;
 
     // Get the nodes of the dungeon
     int nodes[dg2->nodes][2];
@@ -85,18 +85,18 @@ map_event_header_t *dungeon2_init_events_ocean(dungeon_generator2 *dg2){
     int zero = 0;
 
     // Place the super rare pokemon at the second node
-    cpuset(&zero, &(fmem.dpersons[0]), CPUSET_FILL | CPUSET_HALFWORD |
+    cpuset(&zero, &(dynamic_persons[0]), CPUSET_FILL | CPUSET_HALFWORD |
         CPUSET_HALFWORD_SIZE(sizeof(map_event_person)));
-    fmem.dpersons[0].x = (s16)(nodes[1][0]);
-    fmem.dpersons[0].y = (s16)(nodes[1][1]);
+    dynamic_persons[0].x = (s16)(nodes[1][0]);
+    dynamic_persons[0].y = (s16)(nodes[1][1]);
     u16 species = *var_access(DUNGEON_OVERWORLD_SPECIES);
-    fmem.dpersons[0].overworld_index = overworld_get_sprite_idx_by_species(species);
-    fmem.dpersons[0].value = species;
-    fmem.dpersons[0].behavior = BEHAVIOUR_WANDER_AROUND;
-    fmem.dpersons[0].target_index = 1;
-    fmem.dpersons[0].script = ow_script_dungeon_encounter;
-    fmem.dpersons[0].flag = 0x12;
-    fmem.dpersons[0].level = 1; // Surf
+    dynamic_persons[0].overworld_index = overworld_get_sprite_idx_by_species(species);
+    dynamic_persons[0].value = species;
+    dynamic_persons[0].behavior = BEHAVIOUR_WANDER_AROUND;
+    dynamic_persons[0].target_index = 1;
+    dynamic_persons[0].script = ow_script_dungeon_encounter;
+    dynamic_persons[0].flag = 0x12;
+    dynamic_persons[0].level = 1; // Surf
 
     // Determine how many items there will be
     int num_items = (dungeon2_rnd_16(dg2) % (dg2->nodes / 1 - 2)) + 1;
@@ -104,34 +104,34 @@ map_event_header_t *dungeon2_init_events_ocean(dungeon_generator2 *dg2){
     for (int i = 0; i < num_items; i++) {
       int person_idx = i + 1;
       int node_idx = i + 2;
-      cpuset(&zero, &(fmem.dpersons[person_idx]), CPUSET_FILL | CPUSET_HALFWORD |
+      cpuset(&zero, &(dynamic_persons[person_idx]), CPUSET_FILL | CPUSET_HALFWORD |
           CPUSET_HALFWORD_SIZE(sizeof(map_event_person)));
 
-      fmem.dpersons[person_idx].x = (s16)(nodes[node_idx][0]);
-      fmem.dpersons[person_idx].y = (s16)(nodes[node_idx][1]);
+      dynamic_persons[person_idx].x = (s16)(nodes[node_idx][0]);
+      dynamic_persons[person_idx].y = (s16)(nodes[node_idx][1]);
       DEBUG("Person at (%d, %d)\n", nodes[node_idx][0], nodes[node_idx][1]);
-      fmem.dpersons[person_idx].target_index = (u8)(person_idx + 1);
-      fmem.dpersons[person_idx].overworld_index = 92;
-      fmem.dpersons[person_idx].flag = (u16)(0x13 + i);
-      fmem.dpersons[person_idx].value = dungeon_ocean_pick_item(dg2);
-      fmem.dpersons[person_idx].script = ow_script_dungeon_item;
+      dynamic_persons[person_idx].target_index = (u8)(person_idx + 1);
+      dynamic_persons[person_idx].overworld_index = 92;
+      dynamic_persons[person_idx].flag = (u16)(0x13 + i);
+      dynamic_persons[person_idx].value = dungeon_ocean_pick_item(dg2);
+      dynamic_persons[person_idx].script = ow_script_dungeon_item;
     }
 
-    fmem.dmapevents.person_cnt = (u8)(1 + num_items);
-    return &(fmem.dmapevents);
+    dynamic_map_event_header.person_cnt = (u8)(1 + num_items);
+    return &(dynamic_map_event_header);
 }
 
 
 void dungeon2_compute_ocean(){
-    if (fmem.dmap_blocks_initialized) {
+    if (dmap_flags.blocks_initialized) {
       DEBUG("D2 already computed...\n");
       return;
     }
     DEBUG("D2 compute...\n");
 
-    fmem.dmap_blocks_initialized = 1;
+    dmap_flags.blocks_initialized = 1;
 
-    dungeon_generator2 *dg2 = &(cmem.dg2);
+    dungeon_generator2 *dg2 = &(csave.dg2);
     dungeon2_ocean_init_state(dg2);
 
     u8 *map = dungeon2_create_connected_layout(dg2, false);
@@ -152,7 +152,7 @@ void dungeon2_compute_ocean(){
     free(map2);
     free(over);
 
-    mapheader_virtual.footer = &(fmem.dmapfooter);
+    mapheader_virtual.footer = &(dynamic_map_footer);
 }
 
 void dungeon2_ocean_init_state(dungeon_generator2 *dg2) {
@@ -169,14 +169,14 @@ void dungeon2_ocean_init_state(dungeon_generator2 *dg2) {
 }
 
 void dungeon2_init_ocean(){
-    if (fmem.dmap_header_initialized) {
+    if (dmap_flags.header_initialized) {
       DEBUG("D2 header already initialized...\n");
       return;
     }
 
-    fmem.dmap_header_initialized = 1;
+    dmap_flags.header_initialized = 1;
 
-    dungeon_generator2 *dg2 = &(cmem.dg2);
+    dungeon_generator2 *dg2 = &(csave.dg2);
     dungeon2_ocean_init_state(dg2);
 
     dungeon2_init_wild_pokemon_ocean(dg2); // Initialize before events since persons depend
@@ -188,7 +188,7 @@ void dungeon2_init_ocean(){
 
 void dungeon2_enter_ocean() {
   // Get the warp node (first node in the ocean)
-  dungeon_generator2 *dg2 = &(cmem.dg2);
+  dungeon_generator2 *dg2 = &(csave.dg2);
   // dg2->initial_seed = 521151070;
   dungeon2_ocean_init_state(dg2);
   int nodes[dg2->nodes][2];

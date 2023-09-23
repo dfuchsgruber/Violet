@@ -2,14 +2,14 @@
 #include "map/tileset.h"
 #include "debug.h"
 
-extern u16 gfx_tileset_0_anim_0Tiles[];
-extern u16 gfx_tileset_0_anim_1Tiles[];
-extern u16 gfx_tileset_0_anim_2Tiles[];
-extern u16 gfx_tileset_0_anim_3Tiles[];
-extern u16 gfx_tileset_0_anim_4Tiles[];
-extern u16 gfx_tileset_0_anim_5Tiles[];
+extern const u16 gfx_tileset_0_anim_0Tiles[];
+extern const u16 gfx_tileset_0_anim_1Tiles[];
+extern const u16 gfx_tileset_0_anim_2Tiles[];
+extern const u16 gfx_tileset_0_anim_3Tiles[];
+extern const u16 gfx_tileset_0_anim_4Tiles[];
+extern const u16 gfx_tileset_0_anim_5Tiles[];
 
-tileset_animation tileset_0_animations[] = {
+static const tileset_animation tileset_0_animations[] = {
     {
         5, 16, 508, 48, gfx_tileset_0_anim_0Tiles
     },
@@ -27,7 +27,7 @@ tileset_animation tileset_0_animations[] = {
     },
 };
 
-tileset_animation_header tileset_0_animations_head = {
+static const tileset_animation_header tileset_0_animations_head = {
     5, tileset_0_animations
 };
 

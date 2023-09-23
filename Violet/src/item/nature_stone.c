@@ -16,7 +16,7 @@
 #include "ev_menu.h"
 #include "debug.h"
 
-extern u8 str_item_has_no_effect[];
+extern const u8 ow_script_item_has_no_effect[];
 
 void item_field_nature_stone(u8 self) {
     item_callback_after_pokemon_selected = item_nature_stone;

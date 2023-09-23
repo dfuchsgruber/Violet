@@ -5,27 +5,12 @@
 .include "vars.s"
 .include "ordinals.s"
 
-.global ow_script_route_2_clouds_person_5
-.global ow_script_route_2_clouds_person_6
-.global ow_script_route_2_clouds_person_7
 .global ow_script_route_2_clouds_person_8
 .global ow_script_route_2_clouds_person_9
 .global ow_script_route_2_clouds_person_10
 .global ow_script_route_2_clouds_person_11
 .global ow_script_route_3_clouds_gift
 
-ow_script_route_2_clouds_person_5:
-    loadpointer 0 str_5
-    callstd MSG_FACE
-    end
-ow_script_route_2_clouds_person_6:
-    loadpointer 0 str_6
-    callstd MSG_FACE
-    end
-ow_script_route_2_clouds_person_7:
-    loadpointer 0 str_7
-    callstd MSG_FACE
-    end
 ow_script_route_2_clouds_person_8:
     loadpointer 0 str_8
     callstd MSG_FACE

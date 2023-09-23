@@ -76,27 +76,27 @@ void bsc_pokemon_caught(){
     pid_t pid = {.value = (u32)pokemon_get_attribute(p, ATTRIBUTE_PID, 0)};
     bool caught = pokedex_operator(species,POKEDEX_GET | POKEDEX_CAUGHT, true);
     if(caught){
-      u8 *bsc_off_loc = &((bsc_offset)[1]);
+      const u8 *bsc_off_loc = &((bsc_offset)[1]);
       int target = UNALIGNED_32_GET(bsc_off_loc);
-      bsc_offset = (u8*)target;
+      bsc_offset = (const u8*)target;
     }else{
         //catch pokemon
         pokedex_set_caught_and_load_pid(dex_id, 0b11, pid);
         if(checkflag(CAUGHT_POKEDEX_DISABLE)){
-            u8 *bsc_off_loc = &((bsc_offset)[1]);
+            const u8 *bsc_off_loc = &((bsc_offset)[1]);
             int target = UNALIGNED_32_GET(bsc_off_loc);
-            bsc_offset = (u8*)target;
+            bsc_offset = (const u8*)target;
         }else{
-            bsc_offset = (u8*)((int)(bsc_offset) + 5);   
+            bsc_offset = (const u8*)((int)(bsc_offset) + 5);   
         }
     }
     //DEBUG("Bsc after caught %x\n", bsc_offset);
 }
 
 
-extern u8 bsc_trainer_blocks_catch_attempt[];
-extern u8 bsc_ball_throw_success[];
-extern u8 bsc_ball_throw_no_success[];
+extern const u8 bsc_trainer_blocks_catch_attempt[];
+extern const u8 bsc_ball_throw_success[];
+extern const u8 bsc_ball_throw_no_success[];
 
 static void bsc_ballthrow_success_set_pokemon_attribues(u8 battler_idx) {
     pokemon *p = opponent_pokemon + battler_idx_to_party_idx(battler_idx);

@@ -113,7 +113,11 @@ typedef struct {
     u8 delay;
 } bag2_state_t;
 
-#define BAG2_STATE ((bag2_state_t*)fmem.bag2_state)
+extern EWRAM bag2_state_t *bag2_state;
+extern EWRAM u16 bag_cursor_position[MAX_NUM_POCKETS];
+extern EWRAM u16 bag_cursor_items_above[MAX_NUM_POCKETS];
+extern EWRAM void (*bag_continuation)();
+extern EWRAM u8 bag_context;
 
 #define BAG_OAM_TAG 0x3173
 #define BAG_ITEM_OAM_TAG 0x3174
@@ -128,19 +132,19 @@ extern LZ77COMPRESSED gfx_bag_insert_barTiles;
 extern LZ77COMPRESSED gfx_bag_insert_barPal;
 
 // Textboxes in the bag ui
-tboxdata bag_tboxes[NUM_BAG_TBOXES + 1];
+extern const tboxdata bag_tboxes[NUM_BAG_TBOXES + 1];
 
-graphic bag_graphic_bag;
-graphic bag_graphic_insert_bar;
-oam_template bag_oam_template;
-oam_template bag_oam_template_item;
+extern const graphic bag_graphic_bag;
+extern const graphic bag_graphic_insert_bar;
+extern const oam_template bag_oam_template;
+extern const oam_template bag_oam_template_item;
 
-tbox_font_colormap bag_font_colormap_pocket_hint;
-tbox_font_colormap bag_font_colormap_description;
-tbox_font_colormap bag_font_colormap_std;
+extern const tbox_font_colormap bag_font_colormap_pocket_hint;
+extern const tbox_font_colormap bag_font_colormap_description;
+extern const tbox_font_colormap bag_font_colormap_std;
 
 // Callbacks for selecting an item in a given bag context
-void (*bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8);
+extern void (*const bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8);
 
 /**
  * @brief Opens the bag menu
@@ -226,7 +230,7 @@ void bag_delete_scroll_indicators_pockets();
  * 
  * @return u8* The hint
  */
-u8 *bag_get_context_hint();
+const u8 *bag_get_context_hint();
 
 /**
  * @brief Default idle callback for handling bag input to scroll through a pocket etc.
@@ -301,7 +305,7 @@ void bag_close(u8 cb_idx, u16 item_result, bool set_bag_closed);
  * 
  * @param hint The text to print
  */
-void bag_print_hint(u8 *hint);
+void bag_print_hint(const u8 *hint);
 
 /**
  * @brief Prints the desription of an item based on where the cursor is

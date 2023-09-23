@@ -183,7 +183,7 @@ static bool is_leap_year(int year) {
     return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
 }
 
-int rtc_timestamp_to_days(rtc_timestamp *t) {
+int rtc_timestamp_to_days(const rtc_timestamp *t) {
     int days = t->day;
     for (int i = 0; i < t->year; i++) {
         days += 365;
@@ -213,7 +213,7 @@ void days_to_rtc_timestamp(int days, rtc_timestamp *t) {
     t->day = (u8)(1 + days);
 }
 
-u64 rtc_timestamp_to_seconds(rtc_timestamp *t){
+u64 rtc_timestamp_to_seconds(const rtc_timestamp *t){
     return (u64)(rtc_timestamp_to_days(t) * 24 * 60 * 60 + t->hour * 60 * 60 + t->minute * 60 + t->second);
 }
 

@@ -36,7 +36,7 @@ void cloud_enter() {
 	// player_get_position_faced(&pos);
 	player_get_position(&pos);
 	s8 warp_idx = map_get_warp_idx_by_position(&mapheader_virtual, &pos);
-	map_event_warp *w = &(mapheader_virtual.events->warps[warp_idx]);
+	const map_event_warp *w = &(mapheader_virtual.events->warps[warp_idx]);
 	warp_setup_by_event(w->target_bank, w->target_map, w->target_warp_id);
 	// warp_update_last_outdoor_map(pos.coordinates.x, pos.coordinates.y);
 	// As MAP_TYPE_UNDERWATER is treaded as clouds as well, we need to update the last outdoor
@@ -64,7 +64,7 @@ void warp_to_pos_with_facing() {
 	warp_update_last_outdoor_map(pos.coordinates.x, pos.coordinates.y);
 	warp_last_map_set(0, save1->bank, save1->map, 0xFF, (s16)(pos.coordinates.x - 7),
 			(s16)(pos.coordinates.y - 7));
-    fmem.additional_levelscript_4 = script_cloud_facings[facing];
+    additional_levelscript_4 = script_cloud_facings[facing];
     warp_setup((u8) bank, (u8) map, 0xFF, (s16) x, (s16) y);
     //warp_setup_callbacks();
     warp_setup_muted_callback();
@@ -72,14 +72,14 @@ void warp_to_pos_with_facing() {
     clearflag(TRANS_PALETTE_FETCH);
 }
 
-static u16 cloud_dismountable_blocks[] = {
+static const u16 cloud_dismountable_blocks[] = {
 	0xD8, 0xD9, 0xDA, 0xDB, 0xDC, 0xDD, 0xDE, 0xDF, 
 	0xE2, 0xEA, 0xF2, 0xE4, 0xE5, 0xCA, 0xCB, 0xCC, 
 	0xC6, 0xCE, 0xD6, 0xEC, 0xF4,
 	0xFFFF,
 };
 
-static u16 cloud_ardeal_dismountable_blocks[] = {
+static const u16 cloud_ardeal_dismountable_blocks[] = {
 	0x281, 0x282, 0x298, 0x299, 0x2a0, 0x2a1, 0x2a8, 
 	0x2a9, 0x28b, 0x28c, 0x293, 0x29b, 0x2a4, 0x2d9, 
 	0x296, 0x295, 0x294, 0x29E,
@@ -87,7 +87,7 @@ static u16 cloud_ardeal_dismountable_blocks[] = {
 };
 
 
-static bool cloud_current_block_dismountable(u16 *blocks) {
+static bool cloud_current_block_dismountable(const u16 *blocks) {
 	position_t pos;
 	player_get_position(&pos);
 	u16 block = block_get_by_pos(pos.coordinates.x, pos.coordinates.y);

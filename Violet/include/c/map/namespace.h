@@ -12,7 +12,7 @@
 
 #define MAP_NAMESPACE_TO_IDX(namespace_idx) ((namespace_idx) - MAP_AMONIA)
 
-extern u8 *map_namespaces[];
+extern const u8 *const map_namespaces[];
 
 /**
  * Loads the string of a namespace to a given buffer

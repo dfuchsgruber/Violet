@@ -3,13 +3,13 @@
 #include "types.h"
 #include "map/tileset.h"
 
-extern u16 gfx_tileset_cloud_ruins_anim_torchTiles[];
+extern const u16 gfx_tileset_cloud_ruins_anim_torchTiles[];
 
-tileset_animation tileset_cloud_ruins_animations[] = {
+static const tileset_animation tileset_cloud_ruins_animations[] = {
     {.cycle = 4, .speed = 16, .start_tile = 0x2ad, .num_tiles = 2, .gfx = gfx_tileset_cloud_ruins_anim_torchTiles},
 };
 
-tileset_animation_header tileset_cloud_ruins_animation_head = {
+static const tileset_animation_header tileset_cloud_ruins_animation_head = {
     1, tileset_cloud_ruins_animations
 };
 

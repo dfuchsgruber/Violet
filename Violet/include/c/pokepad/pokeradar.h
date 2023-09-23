@@ -10,10 +10,10 @@
 
 #include "tile/coordinate.h"
 
- extern u8 *script_pokeradar;
-    extern u8 *script_pokeradar_alert;
-    extern u8 *script_pokeradar_poschange;
-    extern u8 *script_pokeradar_flee;
+extern const u8 *script_pokeradar;
+extern const u8 *script_pokeradar_alert;
+extern const u8 *script_pokeradar_poschange;
+extern const u8 *script_pokeradar_flee;
 
     bool pokeradar_npc_alert(u8 npc_id);
     bool pokeradar_determine_position(coordinate_t *result);

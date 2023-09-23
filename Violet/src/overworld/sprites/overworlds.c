@@ -5,7 +5,7 @@
 #include "debug.h"
 #include "berry.h"
 
-static graphic overworld_sprite_deoxys_normal_sprites[] = {
+static const graphic overworld_sprite_deoxys_normal_sprites[] = {
 	{&gfx_ow_deoxys_normal_0Tiles, 0x200, 0},
 	{&gfx_ow_deoxys_normal_1Tiles, 0x200, 0},
 	{&gfx_ow_deoxys_normal_2Tiles, 0x200, 0},
@@ -17,7 +17,7 @@ static graphic overworld_sprite_deoxys_normal_sprites[] = {
 	{&gfx_ow_deoxys_normal_8Tiles, 0x200, 0}
 };
 
-overworld_sprite ow_deoxys_normal = {
+const overworld_sprite ow_deoxys_normal = {
 	0xffff, 0x1103, 0x11ff, 0x200,
 	32, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
 	&ow_final_oam_32_32, &ow_formation_32_32,
@@ -25,7 +25,7 @@ overworld_sprite ow_deoxys_normal = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_registeel_sprites[] = {
+static const graphic overworld_sprite_registeel_sprites[] = {
 	{&gfx_ow_registeel_0Tiles, 0x200, 0},
 	{&gfx_ow_registeel_1Tiles, 0x200, 0},
 	{&gfx_ow_registeel_2Tiles, 0x200, 0},
@@ -37,7 +37,7 @@ static graphic overworld_sprite_registeel_sprites[] = {
 	{&gfx_ow_registeel_8Tiles, 0x200, 0}
 };
 
-overworld_sprite ow_registeel = {
+const overworld_sprite ow_registeel = {
 	0xffff, 0x1104, 0x11ff, 0x200,
 	32, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_32_32, &ow_formation_32_32,
@@ -45,7 +45,7 @@ overworld_sprite ow_registeel = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_regice_sprites[] = {
+static const graphic overworld_sprite_regice_sprites[] = {
 	{&gfx_ow_regice_0Tiles, 0x200, 0},
 	{&gfx_ow_regice_1Tiles, 0x200, 0},
 	{&gfx_ow_regice_2Tiles, 0x200, 0},
@@ -57,7 +57,7 @@ static graphic overworld_sprite_regice_sprites[] = {
 	{&gfx_ow_regice_8Tiles, 0x200, 0}
 };
 
-overworld_sprite ow_regice = {
+const overworld_sprite ow_regice = {
 	0xffff, 0x1104, 0x11ff, 0x200,
 	32, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_32_32, &ow_formation_32_32,
@@ -65,7 +65,7 @@ overworld_sprite ow_regice = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_regirock_sprites[] = {
+static const graphic overworld_sprite_regirock_sprites[] = {
 	{&gfx_ow_regirock_0Tiles, 0x200, 0},
 	{&gfx_ow_regirock_1Tiles, 0x200, 0},
 	{&gfx_ow_regirock_2Tiles, 0x200, 0},
@@ -77,7 +77,7 @@ static graphic overworld_sprite_regirock_sprites[] = {
 	{&gfx_ow_regirock_8Tiles, 0x200, 0}
 };
 
-overworld_sprite ow_regirock = {
+const overworld_sprite ow_regirock = {
 	0xffff, 0x1106, 0x11ff, 0x200,
 	32, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_32_32, &ow_formation_32_32,
@@ -85,7 +85,7 @@ overworld_sprite ow_regirock = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_voltilamm_sprites[] = {
+static const graphic overworld_sprite_voltilamm_sprites[] = {
 	{&gfx_ow_voltilamm_0Tiles, 0x100, 0},
 	{&gfx_ow_voltilamm_1Tiles, 0x100, 0},
 	{&gfx_ow_voltilamm_2Tiles, 0x100, 0},
@@ -97,7 +97,7 @@ static graphic overworld_sprite_voltilamm_sprites[] = {
 	{&gfx_ow_voltilamm_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_voltilamm = {
+const overworld_sprite ow_voltilamm = {
 	0xffff, 0x1103, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -105,7 +105,7 @@ overworld_sprite ow_voltilamm = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_staralili_sprites[] = {
+static const graphic overworld_sprite_staralili_sprites[] = {
 	{&gfx_ow_staralili_0Tiles, 0x80, 0},
 	{&gfx_ow_staralili_1Tiles, 0x80, 0},
 	{&gfx_ow_staralili_2Tiles, 0x80, 0},
@@ -117,7 +117,7 @@ static graphic overworld_sprite_staralili_sprites[] = {
 	{&gfx_ow_staralili_8Tiles, 0x80, 0}
 };
 
-overworld_sprite ow_staralili = {
+const overworld_sprite ow_staralili = {
 	0xffff, 0x1106, 0x11ff, 0x80,
 	16, 16, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_16_16, &ow_formation_16_16,
@@ -125,7 +125,7 @@ overworld_sprite ow_staralili = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_larissa_sprites[] = {
+static const graphic overworld_sprite_larissa_sprites[] = {
 	{&gfx_ow_larissa_0Tiles, 0x100, 0},
 	{&gfx_ow_larissa_1Tiles, 0x100, 0},
 	{&gfx_ow_larissa_2Tiles, 0x100, 0},
@@ -137,7 +137,7 @@ static graphic overworld_sprite_larissa_sprites[] = {
 	{&gfx_ow_larissa_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_larissa = {
+const overworld_sprite ow_larissa = {
 	0xffff, 0x1106, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -145,7 +145,7 @@ overworld_sprite ow_larissa = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_elise_sprites[] = {
+static const graphic overworld_sprite_elise_sprites[] = {
 	{&gfx_ow_elise_0Tiles, 0x100, 0},
 	{&gfx_ow_elise_1Tiles, 0x100, 0},
 	{&gfx_ow_elise_2Tiles, 0x100, 0},
@@ -157,7 +157,7 @@ static graphic overworld_sprite_elise_sprites[] = {
 	{&gfx_ow_elise_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_elise = {
+const overworld_sprite ow_elise = {
 	0xffff, 0x1103, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -165,7 +165,7 @@ overworld_sprite ow_elise = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_faun_young_sprites[] = {
+static const graphic overworld_sprite_faun_young_sprites[] = {
 	{&gfx_ow_faun_young_0Tiles, 0x100, 0},
 	{&gfx_ow_faun_young_1Tiles, 0x100, 0},
 	{&gfx_ow_faun_young_2Tiles, 0x100, 0},
@@ -177,7 +177,7 @@ static graphic overworld_sprite_faun_young_sprites[] = {
 	{&gfx_ow_faun_young_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_faun_young = {
+const overworld_sprite ow_faun_young = {
 	0xffff, 0x1105, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -185,7 +185,7 @@ overworld_sprite ow_faun_young = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_egg_sprites[] = {
+static const graphic overworld_sprite_egg_sprites[] = {
 	{&gfx_ow_egg_0Tiles, 0x80, 0},
 	{&gfx_ow_egg_0Tiles, 0x80, 0},
 	{&gfx_ow_egg_0Tiles, 0x80, 0},
@@ -196,7 +196,7 @@ static graphic overworld_sprite_egg_sprites[] = {
 	{&gfx_ow_egg_0Tiles, 0x80, 0},
 };
 
-overworld_sprite ow_egg = {
+const overworld_sprite ow_egg = {
 	0xffff, 0x1105, 0x11ff, 0x80,
 	16, 16, 0, 1, 1, 0, 0x0, 0x0, 0x0,
 	&ow_final_oam_16_16, &ow_formation_16_16,
@@ -204,7 +204,7 @@ overworld_sprite ow_egg = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_rin_sprites[] = {
+static const graphic overworld_sprite_rin_sprites[] = {
 	{&gfx_ow_rin_0Tiles, 0x100, 0},
 	{&gfx_ow_rin_1Tiles, 0x100, 0},
 	{&gfx_ow_rin_2Tiles, 0x100, 0},
@@ -216,14 +216,14 @@ static graphic overworld_sprite_rin_sprites[] = {
 	{&gfx_ow_rin_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_rin = {
+const overworld_sprite ow_rin = {
 	0xffff, 0x110b, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_16_32, &ow_formation_16_32,
 	ow_anim_standard_npc, overworld_sprite_rin_sprites, 
 	oam_rotscale_anim_table_null
 };
-static graphic overworld_sprite_blaise_sprites[] = {
+static const graphic overworld_sprite_blaise_sprites[] = {
 	{&gfx_ow_blaise_0Tiles, 0x100, 0},
 	{&gfx_ow_blaise_1Tiles, 0x100, 0},
 	{&gfx_ow_blaise_2Tiles, 0x100, 0},
@@ -235,7 +235,7 @@ static graphic overworld_sprite_blaise_sprites[] = {
 	{&gfx_ow_blaise_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_blaise = {
+const overworld_sprite ow_blaise = {
 	0xffff, 0x1103, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -243,7 +243,7 @@ overworld_sprite ow_blaise = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_mia_sprites[] = {
+static const graphic overworld_sprite_mia_sprites[] = {
 	{&gfx_ow_mia_0Tiles, 0x100, 0},
 	{&gfx_ow_mia_1Tiles, 0x100, 0},
 	{&gfx_ow_mia_2Tiles, 0x100, 0},
@@ -255,7 +255,7 @@ static graphic overworld_sprite_mia_sprites[] = {
 	{&gfx_ow_mia_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_mia = {
+const overworld_sprite ow_mia = {
 	0xffff, 0x1105, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -263,7 +263,7 @@ overworld_sprite ow_mia = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_lester_sprites[] = {
+static const graphic overworld_sprite_lester_sprites[] = {
 	{gfx_ow_lesterTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
 	{gfx_ow_lesterTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
 	{gfx_ow_lesterTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
@@ -275,7 +275,7 @@ static graphic overworld_sprite_lester_sprites[] = {
 	{gfx_ow_lesterTiles + 8 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
 };
 
-overworld_sprite ow_lester = {
+const overworld_sprite ow_lester = {
 	0xffff, 0x1106, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -283,7 +283,7 @@ overworld_sprite ow_lester = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_faun_sprites[] = {
+static const graphic overworld_sprite_faun_sprites[] = {
 	{gfx_ow_faunTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
 	{gfx_ow_faunTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
 	{gfx_ow_faunTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
@@ -295,14 +295,14 @@ static graphic overworld_sprite_faun_sprites[] = {
 	{gfx_ow_faunTiles + 8 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
 };
 
-overworld_sprite ow_faun = {
+const overworld_sprite ow_faun = {
 	0xffff, OW_PAL_TAG_FAUN, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
 	&ow_final_oam_16_32, &ow_formation_16_32,
 	ow_anim_standard_npc, overworld_sprite_faun_sprites, 
 	oam_rotscale_anim_table_null
 };
-static graphic overworld_sprite_revolutionary_sprites[] = {
+static const graphic overworld_sprite_revolutionary_sprites[] = {
 	{&gfx_ow_revolutionary_0Tiles, 0x100, 0},
 	{&gfx_ow_revolutionary_1Tiles, 0x100, 0},
 	{&gfx_ow_revolutionary_2Tiles, 0x100, 0},
@@ -314,7 +314,7 @@ static graphic overworld_sprite_revolutionary_sprites[] = {
 	{&gfx_ow_revolutionary_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_revolutionary = {
+const overworld_sprite ow_revolutionary = {
 	0xffff, 0x1105, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -322,7 +322,7 @@ overworld_sprite ow_revolutionary = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_rival_sprites[] = {
+static const graphic overworld_sprite_rival_sprites[] = {
 	{&gfx_ow_rival_0Tiles, 0x100, 0},
 	{&gfx_ow_rival_1Tiles, 0x100, 0},
 	{&gfx_ow_rival_2Tiles, 0x100, 0},
@@ -334,7 +334,7 @@ static graphic overworld_sprite_rival_sprites[] = {
 	{&gfx_ow_rival_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_rival = {
+const overworld_sprite ow_rival = {
 	0xffff, 0x1103, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -342,7 +342,7 @@ overworld_sprite ow_rival = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_rival_beaten_sprites[] = {
+static const graphic overworld_sprite_rival_beaten_sprites[] = {
 	{&gfx_ow_rival_beatenTiles, GRAPHIC_SIZE_4BPP(32, 32), 0},
 	{&gfx_ow_rival_beatenTiles, GRAPHIC_SIZE_4BPP(32, 32), 0},
 	{&gfx_ow_rival_beatenTiles, GRAPHIC_SIZE_4BPP(32, 32), 0},
@@ -354,7 +354,7 @@ static graphic overworld_sprite_rival_beaten_sprites[] = {
 	{&gfx_ow_rival_beatenTiles, GRAPHIC_SIZE_4BPP(32, 32), 0},
 };
 
-overworld_sprite ow_rival_beaten = {
+const overworld_sprite ow_rival_beaten = {
 	0xFFFF, 0x1103, 0x11ff, GRAPHIC_SIZE_4BPP(32, 32),
 	32, 32, 0, 1, 1, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_32_32, &ow_formation_32_32,
@@ -362,7 +362,7 @@ overworld_sprite ow_rival_beaten = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_tann_sprites[] = {
+static const graphic overworld_sprite_tann_sprites[] = {
 	{&gfx_ow_tann_0Tiles, 0x100, 0},
 	{&gfx_ow_tann_1Tiles, 0x100, 0},
 	{&gfx_ow_tann_2Tiles, 0x100, 0},
@@ -374,14 +374,14 @@ static graphic overworld_sprite_tann_sprites[] = {
 	{&gfx_ow_tann_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_tann = {
+const overworld_sprite ow_tann = {
 	0xffff, 0x1106, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_16_32, &ow_formation_16_32,
 	ow_anim_standard_npc, overworld_sprite_tann_sprites, 
 	oam_rotscale_anim_table_null
 };
-static graphic overworld_sprite_felix_sprites[] = {
+static const graphic overworld_sprite_felix_sprites[] = {
 	{&gfx_ow_felix_0Tiles, 0x100, 0},
 	{&gfx_ow_felix_1Tiles, 0x100, 0},
 	{&gfx_ow_felix_2Tiles, 0x100, 0},
@@ -393,14 +393,14 @@ static graphic overworld_sprite_felix_sprites[] = {
 	{&gfx_ow_felix_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_felix = {
+const overworld_sprite ow_felix = {
 	0xffff, 0x1103, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x9,
 	&ow_final_oam_16_32, &ow_formation_16_32,
 	ow_anim_standard_npc, overworld_sprite_felix_sprites, 
 	oam_rotscale_anim_table_null
 };
-static graphic overworld_sprite_albus_sprites[] = {
+static const graphic overworld_sprite_albus_sprites[] = {
 	{&gfx_ow_albus_0Tiles, 0x100, 0},
 	{&gfx_ow_albus_1Tiles, 0x100, 0},
 	{&gfx_ow_albus_2Tiles, 0x100, 0},
@@ -412,14 +412,14 @@ static graphic overworld_sprite_albus_sprites[] = {
 	{&gfx_ow_albus_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_albus = {
+const overworld_sprite ow_albus = {
 	0xffff, 0x1105, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
 	&ow_final_oam_16_32, &ow_formation_16_32,
 	ow_anim_standard_npc, overworld_sprite_albus_sprites, 
 	oam_rotscale_anim_table_null
 };
-static graphic overworld_sprite_violet_grunt_f_sprites[] = {
+static const graphic overworld_sprite_violet_grunt_f_sprites[] = {
 	{&gfx_ow_violet_grunt_f_0Tiles, 0x100, 0},
 	{&gfx_ow_violet_grunt_f_1Tiles, 0x100, 0},
 	{&gfx_ow_violet_grunt_f_2Tiles, 0x100, 0},
@@ -431,7 +431,7 @@ static graphic overworld_sprite_violet_grunt_f_sprites[] = {
 	{&gfx_ow_violet_grunt_f_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_violet_grunt_f = {
+const overworld_sprite ow_violet_grunt_f = {
 	0xffff, 0x110b, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -439,7 +439,7 @@ overworld_sprite ow_violet_grunt_f = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_violet_grunt_m_sprites[] = {
+static const graphic overworld_sprite_violet_grunt_m_sprites[] = {
 	{&gfx_ow_violet_grunt_m_0Tiles, 0x100, 0},
 	{&gfx_ow_violet_grunt_m_1Tiles, 0x100, 0},
 	{&gfx_ow_violet_grunt_m_2Tiles, 0x100, 0},
@@ -451,7 +451,7 @@ static graphic overworld_sprite_violet_grunt_m_sprites[] = {
 	{&gfx_ow_violet_grunt_m_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_violet_grunt_m = {
+const overworld_sprite ow_violet_grunt_m = {
 	0xffff, 0x110b, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -459,7 +459,7 @@ overworld_sprite ow_violet_grunt_m = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_primus_sprites[] = {
+static const graphic overworld_sprite_primus_sprites[] = {
 	{&gfx_ow_primus_0Tiles, 0x100, 0},
 	{&gfx_ow_primus_1Tiles, 0x100, 0},
 	{&gfx_ow_primus_2Tiles, 0x100, 0},
@@ -471,7 +471,7 @@ static graphic overworld_sprite_primus_sprites[] = {
 	{&gfx_ow_primus_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_primus = {
+const overworld_sprite ow_primus = {
 	0xffff, 0x1105, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -479,7 +479,7 @@ overworld_sprite ow_primus = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_hiro_call_bike_sprites[] = {
+static const graphic overworld_sprite_hiro_call_bike_sprites[] = {
 	{&gfx_ow_hiro_call_bike_0Tiles, 0x200, 0},
 	{&gfx_ow_hiro_call_bike_1Tiles, 0x200, 0},
 	{&gfx_ow_hiro_call_bike_2Tiles, 0x200, 0},
@@ -488,7 +488,7 @@ static graphic overworld_sprite_hiro_call_bike_sprites[] = {
 	{&gfx_ow_hiro_call_bike_5Tiles, 0x200, 0}
 };
 
-overworld_sprite ow_hiro_call_bike = {
+const overworld_sprite ow_hiro_call_bike = {
 	0xffff, 0x1109, 0x1102, 0x200,
 	32, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_32_32, &ow_formation_32_32,
@@ -496,7 +496,7 @@ overworld_sprite ow_hiro_call_bike = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_hiro_call2_sprites[] = {
+static const graphic overworld_sprite_hiro_call2_sprites[] = {
 	{&gfx_ow_hiro_call2_0Tiles, 0x100, 0},
 	{&gfx_ow_hiro_call2_1Tiles, 0x100, 0},
 	{&gfx_ow_hiro_call2_2Tiles, 0x100, 0},
@@ -508,7 +508,7 @@ static graphic overworld_sprite_hiro_call2_sprites[] = {
 	{&gfx_ow_hiro_call2_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_hiro_call2 = {
+const overworld_sprite ow_hiro_call2 = {
 	0xffff, 0x1100, 0x1102, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -516,7 +516,7 @@ overworld_sprite ow_hiro_call2 = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_hiro_rod_sprites[] = {
+static const graphic overworld_sprite_hiro_rod_sprites[] = {
 	{&gfx_ow_hiro_rod_0Tiles, 0x200, 0},
 	{&gfx_ow_hiro_rod_1Tiles, 0x200, 0},
 	{&gfx_ow_hiro_rod_2Tiles, 0x200, 0},
@@ -531,7 +531,7 @@ static graphic overworld_sprite_hiro_rod_sprites[] = {
 	{&gfx_ow_hiro_rod_11Tiles, 0x200, 0}
 };
 
-static gfx_frame hiro_rod_animations_0[] = {
+static const gfx_frame hiro_rod_animations_0[] = {
 	{.data = 8, .duration = 4},
 	{.data = 9, .duration = 4},
 	{.data = 10, .duration = 4},
@@ -539,7 +539,7 @@ static gfx_frame hiro_rod_animations_0[] = {
 	{.data = GFX_ANIM_END, .duration = 0},
 };
 
-static gfx_frame hiro_rod_animations_1[] = {
+static const gfx_frame hiro_rod_animations_1[] = {
 	{.data = 4, .duration = 4},
 	{.data = 5, .duration = 4},
 	{.data = 6, .duration = 4},
@@ -547,7 +547,7 @@ static gfx_frame hiro_rod_animations_1[] = {
 	{.data = GFX_ANIM_END, .duration = 0},
 };
 
-static gfx_frame hiro_rod_animations_2[] = {
+static const gfx_frame hiro_rod_animations_2[] = {
 	{.data = 0, .duration = 4},
 	{.data = 1, .duration = 4},
 	{.data = 2, .duration = 4},
@@ -555,7 +555,7 @@ static gfx_frame hiro_rod_animations_2[] = {
 	{.data = GFX_ANIM_END, .duration = 0},
 };
 
-static gfx_frame hiro_rod_animations_3[] = {
+static const gfx_frame hiro_rod_animations_3[] = {
 	{.data = 0, .duration = 4 | GFX_ANIM_HFLIP},
 	{.data = 1, .duration = 4 | GFX_ANIM_HFLIP},
 	{.data = 2, .duration = 4 | GFX_ANIM_HFLIP},
@@ -563,7 +563,7 @@ static gfx_frame hiro_rod_animations_3[] = {
 	{.data = GFX_ANIM_END, .duration = 0},
 };
 
-static gfx_frame hiro_rod_animations_4[] = {
+static const gfx_frame hiro_rod_animations_4[] = {
 	{.data = 11, .duration = 4},
 	{.data = 10, .duration = 6},
 	{.data = 9, .duration = 6},
@@ -571,7 +571,7 @@ static gfx_frame hiro_rod_animations_4[] = {
 	{.data = GFX_ANIM_END, .duration = 0},
 };
 
-static gfx_frame hiro_rod_animations_5[] = {
+static const gfx_frame hiro_rod_animations_5[] = {
 	{.data = 7, .duration = 4},
 	{.data = 6, .duration = 6},
 	{.data = 5, .duration = 6},
@@ -579,7 +579,7 @@ static gfx_frame hiro_rod_animations_5[] = {
 	{.data = GFX_ANIM_END, .duration = 0},
 };
 
-static gfx_frame hiro_rod_animations_6[] = {
+static const gfx_frame hiro_rod_animations_6[] = {
 	{.data = 3, .duration = 4},
 	{.data = 2, .duration = 4},
 	{.data = 1, .duration = 4},
@@ -587,7 +587,7 @@ static gfx_frame hiro_rod_animations_6[] = {
 	{.data = GFX_ANIM_END, .duration = 0},
 };
 
-static gfx_frame hiro_rod_animations_7[] = {
+static const gfx_frame hiro_rod_animations_7[] = {
 	{.data = 3, .duration = 4 | GFX_ANIM_HFLIP},
 	{.data = 2, .duration = 4 | GFX_ANIM_HFLIP},
 	{.data = 1, .duration = 4 | GFX_ANIM_HFLIP},
@@ -595,7 +595,7 @@ static gfx_frame hiro_rod_animations_7[] = {
 	{.data = GFX_ANIM_END, .duration = 0},
 };
 
-static gfx_frame hiro_rod_animations_8[] = {
+static const gfx_frame hiro_rod_animations_8[] = {
 	{.data = 10, .duration = 6},
 	{.data = 11, .duration = 6},
 	{.data = GFX_ANIM_JUMP_LOOP_START, .duration = 1},
@@ -603,7 +603,7 @@ static gfx_frame hiro_rod_animations_8[] = {
 	{.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
-static gfx_frame hiro_rod_animations_9[] = {
+static const gfx_frame hiro_rod_animations_9[] = {
 	{.data = 6, .duration = 6},
 	{.data = 7, .duration = 6},
 	{.data = GFX_ANIM_JUMP_LOOP_START, .duration = 1},
@@ -611,7 +611,7 @@ static gfx_frame hiro_rod_animations_9[] = {
 	{.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
-static gfx_frame hiro_rod_animations_10[] = {
+static const gfx_frame hiro_rod_animations_10[] = {
 	{.data = 2, .duration = 6},
 	{.data = 3, .duration = 6},
 	{.data = GFX_ANIM_JUMP_LOOP_START, .duration = 1},
@@ -619,7 +619,7 @@ static gfx_frame hiro_rod_animations_10[] = {
 	{.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
-static gfx_frame hiro_rod_animations_11[] = {
+static const gfx_frame hiro_rod_animations_11[] = {
 	{.data = 2, .duration = 6 | GFX_ANIM_HFLIP},
 	{.data = 3, .duration = 6 | GFX_ANIM_HFLIP},
 	{.data = GFX_ANIM_JUMP_LOOP_START, .duration = 1},
@@ -627,12 +627,12 @@ static gfx_frame hiro_rod_animations_11[] = {
 	{.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
-static gfx_frame hiro_rod_animations_12_reach_back_north[] = {{.data = 8, .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame hiro_rod_animations_13_reach_back_south[] = {{.data = 4, .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame hiro_rod_animations_14_reach_back_left[] = {{.data = 0, .duration = 0}, {.data = GFX_ANIM_END}};
-static gfx_frame hiro_rod_animations_15_reach_back_right[] = {{.data = 0, .duration = 0 | GFX_ANIM_HFLIP}, {.data = GFX_ANIM_END}};
+static const gfx_frame hiro_rod_animations_12_reach_back_north[] = {{.data = 8, .duration = 0}, {.data = GFX_ANIM_END}};
+static const gfx_frame hiro_rod_animations_13_reach_back_south[] = {{.data = 4, .duration = 0}, {.data = GFX_ANIM_END}};
+static const gfx_frame hiro_rod_animations_14_reach_back_left[] = {{.data = 0, .duration = 0}, {.data = GFX_ANIM_END}};
+static const gfx_frame hiro_rod_animations_15_reach_back_right[] = {{.data = 0, .duration = 0 | GFX_ANIM_HFLIP}, {.data = GFX_ANIM_END}};
 
-gfx_frame *ow_anim_hiro_rod[] = {
+const gfx_frame *const ow_anim_hiro_rod[] = {
 	[0] = hiro_rod_animations_0,
 	[1] = hiro_rod_animations_1,
 	[2] = hiro_rod_animations_2,
@@ -651,7 +651,7 @@ gfx_frame *ow_anim_hiro_rod[] = {
 	[15] = hiro_rod_animations_15_reach_back_right,
 };
 
-overworld_sprite ow_hiro_rod = {
+const overworld_sprite ow_hiro_rod = {
 	0xffff, 0x1100, 0x1102, 0x200,
 	32, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_32_32, &ow_formation_32_32,
@@ -660,7 +660,7 @@ overworld_sprite ow_hiro_rod = {
 };
 
 
-static graphic overworld_sprite_hiroine_rod_sprites[] = {
+static const graphic overworld_sprite_hiroine_rod_sprites[] = {
 	{&gfx_ow_hiroine_rod_0Tiles, 0x200, 0},
 	{&gfx_ow_hiroine_rod_1Tiles, 0x200, 0},
 	{&gfx_ow_hiroine_rod_2Tiles, 0x200, 0},
@@ -675,7 +675,7 @@ static graphic overworld_sprite_hiroine_rod_sprites[] = {
 	{&gfx_ow_hiroine_rod_11Tiles, 0x200, 0}
 };
 
-overworld_sprite ow_hiroine_rod = {
+const overworld_sprite ow_hiroine_rod = {
 	0xffff, 0x1100, 0x1102, 0x200,
 	32, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_32_32, &ow_formation_32_32,
@@ -684,7 +684,7 @@ overworld_sprite ow_hiroine_rod = {
 };
 
 
-static graphic overworld_sprite_hiro_call_sprites[] = {
+static const graphic overworld_sprite_hiro_call_sprites[] = {
 	{&gfx_ow_hiro_call_0Tiles, 0x100, 0},
 	{&gfx_ow_hiro_call_1Tiles, 0x100, 0},
 	{&gfx_ow_hiro_call_2Tiles, 0x100, 0},
@@ -696,7 +696,7 @@ static graphic overworld_sprite_hiro_call_sprites[] = {
 	{&gfx_ow_hiro_call_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_hiro_call = {
+const overworld_sprite ow_hiro_call = {
 	0xffff, 0x1100, 0x1102, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -704,7 +704,7 @@ overworld_sprite ow_hiro_call = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_hiroine_call_sprites[] = {
+static const graphic overworld_sprite_hiroine_call_sprites[] = {
 	{&gfx_ow_hiroine_call_0Tiles, 0x100, 0},
 	{&gfx_ow_hiroine_call_1Tiles, 0x100, 0},
 	{&gfx_ow_hiroine_call_2Tiles, 0x100, 0},
@@ -716,7 +716,7 @@ static graphic overworld_sprite_hiroine_call_sprites[] = {
 	{&gfx_ow_hiroine_call_5Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_hiroine_call = {
+const overworld_sprite ow_hiroine_call = {
 	0xffff, 0x1100, 0x1102, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -724,7 +724,7 @@ overworld_sprite ow_hiroine_call = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_hiro_sit_sprites[] = {
+static const graphic overworld_sprite_hiro_sit_sprites[] = {
 	{&gfx_ow_hiro_sit_0Tiles, 0x100, 0},
 	{&gfx_ow_hiro_sit_1Tiles, 0x100, 0},
 	{&gfx_ow_hiro_sit_2Tiles, 0x100, 0},
@@ -739,7 +739,7 @@ static graphic overworld_sprite_hiro_sit_sprites[] = {
 	{&gfx_ow_hiro_sit_11Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_hiro_sit = {
+const overworld_sprite ow_hiro_sit = {
 	0xffff, 0x1100, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -748,7 +748,7 @@ overworld_sprite ow_hiro_sit = {
 };
 
 
-static graphic overworld_sprite_hiroine_sit_sprites[] = {
+static const graphic overworld_sprite_hiroine_sit_sprites[] = {
 	{&gfx_ow_hiroine_sit_0Tiles, 0x100, 0},
 	{&gfx_ow_hiroine_sit_1Tiles, 0x100, 0},
 	{&gfx_ow_hiroine_sit_2Tiles, 0x100, 0},
@@ -764,7 +764,7 @@ static graphic overworld_sprite_hiroine_sit_sprites[] = {
 };
 
 
-overworld_sprite ow_hiroine_sit = {
+const overworld_sprite ow_hiroine_sit = {
 	0xffff, 0x1110, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -772,7 +772,7 @@ overworld_sprite ow_hiroine_sit = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_hiro_sprites[] = {
+static const graphic overworld_sprite_hiro_sprites[] = {
 	{&gfx_ow_hiro_0Tiles, 0x200, 0},
 	{&gfx_ow_hiro_1Tiles, 0x200, 0},
 	{&gfx_ow_hiro_2Tiles, 0x200, 0},
@@ -795,7 +795,7 @@ static graphic overworld_sprite_hiro_sprites[] = {
 	{&gfx_ow_hiro_19Tiles, 0x200, 0}
 };
 
-overworld_sprite ow_hiro = {
+const overworld_sprite ow_hiro = {
 	0xffff, 0x1100, 0x1102, 0x200,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -803,7 +803,7 @@ overworld_sprite ow_hiro = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_mskate_sprites[] = {
+static const graphic overworld_sprite_mskate_sprites[] = {
     {&gfx_pskate_0Tiles, 0x200, 0},
     {&gfx_pskate_1Tiles, 0x200, 0},
     {&gfx_pskate_2Tiles, 0x200, 0},
@@ -815,7 +815,7 @@ static graphic overworld_sprite_mskate_sprites[] = {
     {&gfx_pskate_8Tiles, 0x200, 0}
 };
 
-overworld_sprite ow_mskate = {
+const overworld_sprite ow_mskate = {
     0xFFFF, 0x1100 + 0, 0x1102, 0x200,
     32, 32, 0, 1, 0, 0, 0x0, 0x0, 0x0,
     &ow_final_oam_32_32, &ow_formation_32_32,
@@ -824,7 +824,7 @@ overworld_sprite ow_mskate = {
 }; 
 
 
-static graphic overworld_sprite_fskate_sprites[] = {
+static const graphic overworld_sprite_fskate_sprites[] = {
     {&gfx_pskatef_0Tiles, 0x200, 0},
     {&gfx_pskatef_1Tiles, 0x200, 0},
     {&gfx_pskatef_2Tiles, 0x200, 0},
@@ -836,7 +836,7 @@ static graphic overworld_sprite_fskate_sprites[] = {
     {&gfx_pskatef_8Tiles, 0x200, 0}
 };
 
-overworld_sprite ow_fskate = {
+const overworld_sprite ow_fskate = {
     0xFFFF, 0x1100 + 0, 0x1102, 0x200,
     32, 32, 0, 1, 0, 0, 0x0, 0x0, 0x0,
     &ow_final_oam_32_32, &ow_formation_32_32,
@@ -844,7 +844,7 @@ overworld_sprite ow_fskate = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_igva_sprites[] = {
+static const graphic overworld_sprite_igva_sprites[] = {
     {&gfx_ow_igva_0Tiles, 0x100, 0},
     {&gfx_ow_igva_1Tiles, 0x100, 0},
     {&gfx_ow_igva_2Tiles, 0x100, 0},
@@ -856,7 +856,7 @@ static graphic overworld_sprite_igva_sprites[] = {
     {&gfx_ow_igva_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_igva = {
+const overworld_sprite ow_igva = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -864,7 +864,7 @@ overworld_sprite ow_igva = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_botogel_sprites[] = {
+static const graphic overworld_sprite_botogel_sprites[] = {
     {&gfx_ow_botogel_0Tiles, 0x100, 0},
     {&gfx_ow_botogel_1Tiles, 0x100, 0},
     {&gfx_ow_botogel_2Tiles, 0x100, 0},
@@ -876,7 +876,7 @@ static graphic overworld_sprite_botogel_sprites[] = {
     {&gfx_ow_botogel_2Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_botogel = {
+const overworld_sprite ow_botogel = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -884,7 +884,7 @@ overworld_sprite ow_botogel = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_bbship_sprites[] = {
+static const graphic overworld_sprite_bbship_sprites[] = {
     {&gfx_ow_bbshipTiles, 0x1000, 0},
     {&gfx_ow_bbshipTiles, 0x1000, 0},
     {&gfx_ow_bbshipTiles, 0x1000, 0},
@@ -896,7 +896,7 @@ static graphic overworld_sprite_bbship_sprites[] = {
     {&gfx_ow_bbshipTiles, 0x1000, 0}
 };
 
-overworld_sprite ow_bbship = {
+const overworld_sprite ow_bbship = {
     0xFFFF, 0x1100 + 0x15, 0x11FF, 0x1000,
     128, 64, 0, 1, 0, 0, 0x0, 0x0, 0x0,
     &ow_final_oam_128_64, &ow_formation_128_64,
@@ -904,7 +904,7 @@ overworld_sprite ow_bbship = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_mpirate_sprites [] = {
+static const graphic overworld_sprite_mpirate_sprites [] = {
     {&gfx_ow_mpirate_0Tiles, 0x100, 0},
     {&gfx_ow_mpirate_1Tiles, 0x100, 0},
     {&gfx_ow_mpirate_2Tiles, 0x100, 0},
@@ -916,7 +916,7 @@ static graphic overworld_sprite_mpirate_sprites [] = {
     {&gfx_ow_mpirate_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_mpirate = {
+const overworld_sprite ow_mpirate = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -924,7 +924,7 @@ overworld_sprite ow_mpirate = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_shape_animal [] = {
+static const graphic overworld_sprite_shape_animal [] = {
     {&gfx_ow_shape_animal_0Tiles, 0x100, 0},
     {&gfx_ow_shape_animal_1Tiles, 0x100, 0},
     {&gfx_ow_shape_animal_2Tiles, 0x100, 0},
@@ -936,7 +936,7 @@ static graphic overworld_sprite_shape_animal [] = {
     {&gfx_ow_shape_animal_2Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_shape_animal = {
+const overworld_sprite ow_shape_animal = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -944,7 +944,7 @@ overworld_sprite ow_shape_animal = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_shape_human [] = {
+static const graphic overworld_sprite_shape_human [] = {
     {&gfx_ow_shape_human_0Tiles, 0x100, 0},
     {&gfx_ow_shape_human_1Tiles, 0x100, 0},
     {&gfx_ow_shape_human_2Tiles, 0x100, 0},
@@ -956,7 +956,7 @@ static graphic overworld_sprite_shape_human [] = {
     {&gfx_ow_shape_human_2Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_shape_human = {
+const overworld_sprite ow_shape_human = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -964,7 +964,7 @@ overworld_sprite ow_shape_human = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_shape_tail [] = {
+static const graphic overworld_sprite_shape_tail [] = {
     {&gfx_ow_shape_tail_0Tiles, 0x100, 0},
     {&gfx_ow_shape_tail_1Tiles, 0x100, 0},
     {&gfx_ow_shape_tail_2Tiles, 0x100, 0},
@@ -976,7 +976,7 @@ static graphic overworld_sprite_shape_tail [] = {
     {&gfx_ow_shape_tail_2Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_shape_tail = {
+const overworld_sprite ow_shape_tail = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -984,7 +984,7 @@ overworld_sprite ow_shape_tail = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_shape_snake [] = {
+static const graphic overworld_sprite_shape_snake [] = {
     {&gfx_ow_shape_snake_0Tiles, 0x100, 0},
     {&gfx_ow_shape_snake_1Tiles, 0x100, 0},
     {&gfx_ow_shape_snake_2Tiles, 0x100, 0},
@@ -996,7 +996,7 @@ static graphic overworld_sprite_shape_snake [] = {
     {&gfx_ow_shape_snake_2Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_shape_snake = {
+const overworld_sprite ow_shape_snake = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1004,7 +1004,7 @@ overworld_sprite ow_shape_snake = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_shape_winsect [] = {
+static const graphic overworld_sprite_shape_winsect [] = {
     {&gfx_ow_shape_winsect_0Tiles, 0x100, 0},
     {&gfx_ow_shape_winsect_1Tiles, 0x100, 0},
     {&gfx_ow_shape_winsect_2Tiles, 0x100, 0},
@@ -1016,7 +1016,7 @@ static graphic overworld_sprite_shape_winsect [] = {
     {&gfx_ow_shape_winsect_2Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_shape_winsect = {
+const overworld_sprite ow_shape_winsect = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1024,7 +1024,7 @@ overworld_sprite ow_shape_winsect = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_shape_winged [] = {
+static const graphic overworld_sprite_shape_winged [] = {
     {&gfx_ow_shape_winged_0Tiles, 0x100, 0},
     {&gfx_ow_shape_winged_1Tiles, 0x100, 0},
     {&gfx_ow_shape_winged_2Tiles, 0x100, 0},
@@ -1036,7 +1036,7 @@ static graphic overworld_sprite_shape_winged [] = {
     {&gfx_ow_shape_winged_2Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_shape_winged = {
+const overworld_sprite ow_shape_winged = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1044,7 +1044,7 @@ overworld_sprite ow_shape_winged = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_shape_insect [] = {
+static const graphic overworld_sprite_shape_insect [] = {
     {&gfx_ow_shape_insect_0Tiles, 0x100, 0},
     {&gfx_ow_shape_insect_1Tiles, 0x100, 0},
     {&gfx_ow_shape_insect_2Tiles, 0x100, 0},
@@ -1056,7 +1056,7 @@ static graphic overworld_sprite_shape_insect [] = {
     {&gfx_ow_shape_insect_2Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_shape_insect = {
+const overworld_sprite ow_shape_insect = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1064,7 +1064,7 @@ overworld_sprite ow_shape_insect = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_shape_head [] = {
+static const graphic overworld_sprite_shape_head [] = {
     {&gfx_ow_shape_head_0Tiles, 0x100, 0},
     {&gfx_ow_shape_head_1Tiles, 0x100, 0},
     {&gfx_ow_shape_head_2Tiles, 0x100, 0},
@@ -1076,7 +1076,7 @@ static graphic overworld_sprite_shape_head [] = {
     {&gfx_ow_shape_head_2Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_shape_head = {
+const overworld_sprite ow_shape_head = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1084,7 +1084,7 @@ overworld_sprite ow_shape_head = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_shape_arms [] = {
+static const graphic overworld_sprite_shape_arms [] = {
     {&gfx_ow_shape_arms_0Tiles, 0x100, 0},
     {&gfx_ow_shape_arms_1Tiles, 0x100, 0},
     {&gfx_ow_shape_arms_2Tiles, 0x100, 0},
@@ -1096,7 +1096,7 @@ static graphic overworld_sprite_shape_arms [] = {
     {&gfx_ow_shape_arms_2Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_shape_arms = {
+const overworld_sprite ow_shape_arms = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1104,7 +1104,7 @@ overworld_sprite ow_shape_arms = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_shape_legs [] = {
+static const graphic overworld_sprite_shape_legs [] = {
     {&gfx_ow_shape_legs_0Tiles, 0x100, 0},
     {&gfx_ow_shape_legs_1Tiles, 0x100, 0},
     {&gfx_ow_shape_legs_2Tiles, 0x100, 0},
@@ -1116,7 +1116,7 @@ static graphic overworld_sprite_shape_legs [] = {
     {&gfx_ow_shape_legs_2Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_shape_legs = {
+const overworld_sprite ow_shape_legs = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1124,7 +1124,7 @@ overworld_sprite ow_shape_legs = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_shape_tentacles [] = {
+static const graphic overworld_sprite_shape_tentacles [] = {
     {&gfx_ow_shape_tentacles_0Tiles, 0x100, 0},
     {&gfx_ow_shape_tentacles_1Tiles, 0x100, 0},
     {&gfx_ow_shape_tentacles_2Tiles, 0x100, 0},
@@ -1136,7 +1136,7 @@ static graphic overworld_sprite_shape_tentacles [] = {
     {&gfx_ow_shape_tentacles_2Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_shape_tentacles = {
+const overworld_sprite ow_shape_tentacles = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1144,7 +1144,7 @@ overworld_sprite ow_shape_tentacles = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_shape_fish [] = {
+static const graphic overworld_sprite_shape_fish [] = {
     {&gfx_ow_shape_fish_0Tiles, 0x100, 0},
     {&gfx_ow_shape_fish_1Tiles, 0x100, 0},
     {&gfx_ow_shape_fish_2Tiles, 0x100, 0},
@@ -1156,7 +1156,7 @@ static graphic overworld_sprite_shape_fish [] = {
     {&gfx_ow_shape_fish_2Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_shape_fish = {
+const overworld_sprite ow_shape_fish = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1164,7 +1164,7 @@ overworld_sprite ow_shape_fish = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_shape_ball [] = {
+static const graphic overworld_sprite_shape_ball [] = {
     {&gfx_ow_shape_ball_0Tiles, 0x100, 0},
     {&gfx_ow_shape_ball_1Tiles, 0x100, 0},
     {&gfx_ow_shape_ball_2Tiles, 0x100, 0},
@@ -1176,7 +1176,7 @@ static graphic overworld_sprite_shape_ball [] = {
     {&gfx_ow_shape_ball_2Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_shape_ball = {
+const overworld_sprite ow_shape_ball = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1184,7 +1184,7 @@ overworld_sprite ow_shape_ball = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_shape_multi [] = {
+static const graphic overworld_sprite_shape_multi [] = {
     {&gfx_ow_shape_multi_0Tiles, 0x100, 0},
     {&gfx_ow_shape_multi_1Tiles, 0x100, 0},
     {&gfx_ow_shape_multi_2Tiles, 0x100, 0},
@@ -1196,7 +1196,7 @@ static graphic overworld_sprite_shape_multi [] = {
     {&gfx_ow_shape_multi_2Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_shape_multi = {
+const overworld_sprite ow_shape_multi = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1204,7 +1204,7 @@ overworld_sprite ow_shape_multi = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_mistral [] = {
+static const graphic overworld_sprite_mistral [] = {
     {&gfx_ow_mistral_0Tiles, 0x100, 0},
     {&gfx_ow_mistral_1Tiles, 0x100, 0},
     {&gfx_ow_mistral_2Tiles, 0x100, 0},
@@ -1216,7 +1216,7 @@ static graphic overworld_sprite_mistral [] = {
     {&gfx_ow_mistral_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_mistral = {
+const overworld_sprite ow_mistral = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1224,7 +1224,7 @@ overworld_sprite ow_mistral = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_manus [] = {
+static const graphic overworld_sprite_manus [] = {
     {&gfx_ow_manus_0Tiles, 0x100, 0},
     {&gfx_ow_manus_1Tiles, 0x100, 0},
     {&gfx_ow_manus_2Tiles, 0x100, 0},
@@ -1236,7 +1236,7 @@ static graphic overworld_sprite_manus [] = {
     {&gfx_ow_manus_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_manus = {
+const overworld_sprite ow_manus = {
     0xFFFF, 0x1100 + 4, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1244,7 +1244,7 @@ overworld_sprite ow_manus = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_altaria [] = {
+static const graphic overworld_sprite_altaria [] = {
     {&gfx_ow_altaria_0Tiles, 0x200, 0},
     {&gfx_ow_altaria_0Tiles, 0x200, 0},
     {&gfx_ow_altaria_0Tiles, 0x200, 0},
@@ -1256,7 +1256,7 @@ static graphic overworld_sprite_altaria [] = {
     {&gfx_ow_altaria_1Tiles, 0x200, 0}
 };
 
-overworld_sprite ow_altaria = {
+const overworld_sprite ow_altaria = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x200,
     32, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
     &ow_final_oam_32_32, &ow_formation_32_32,
@@ -1264,7 +1264,7 @@ overworld_sprite ow_altaria = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_cloudrider_fem [] = {
+static const graphic overworld_sprite_cloudrider_fem [] = {
     {&gfx_ow_cloudrider_fem_0Tiles, 0x200, 0},
     {&gfx_ow_cloudrider_fem_1Tiles, 0x200, 0},
     {&gfx_ow_cloudrider_fem_2Tiles, 0x200, 0},
@@ -1276,7 +1276,7 @@ static graphic overworld_sprite_cloudrider_fem [] = {
     {&gfx_ow_cloudrider_fem_2Tiles, 0x200, 0}
 };
 
-overworld_sprite ow_cloudrider_fem = {
+const overworld_sprite ow_cloudrider_fem = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x200,
     32, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
     &ow_final_oam_32_32, &ow_formation_32_32,
@@ -1284,7 +1284,7 @@ overworld_sprite ow_cloudrider_fem = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_cloudrider_male [] = {
+static const graphic overworld_sprite_cloudrider_male [] = {
     {&gfx_ow_cloudrider_male_0Tiles, 0x200, 0},
     {&gfx_ow_cloudrider_male_1Tiles, 0x200, 0},
     {&gfx_ow_cloudrider_male_2Tiles, 0x200, 0},
@@ -1296,7 +1296,7 @@ static graphic overworld_sprite_cloudrider_male [] = {
     {&gfx_ow_cloudrider_male_2Tiles, 0x200, 0}
 };
 
-overworld_sprite ow_cloudrider_male = {
+const overworld_sprite ow_cloudrider_male = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x200,
     32, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
     &ow_final_oam_32_32, &ow_formation_32_32,
@@ -1304,7 +1304,7 @@ overworld_sprite ow_cloudrider_male = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_moltres [] = {
+static const graphic overworld_sprite_moltres [] = {
     {&gfx_ow_moltres_0Tiles, 0x800, 0},
     {&gfx_ow_moltres_0Tiles, 0x800, 0},
     {&gfx_ow_moltres_0Tiles, 0x800, 0},
@@ -1316,7 +1316,7 @@ static graphic overworld_sprite_moltres [] = {
     {&gfx_ow_moltres_1Tiles, 0x800, 0}
 };
 
-overworld_sprite ow_moltres = {
+const overworld_sprite ow_moltres = {
     0xFFFF, 0x1100 + 3, 0x11FF, 0x800,
     64, 64, 0, 1, 0, 0, 0x1, 0x0, 0,
     &ow_final_oam_64_64, &ow_formation_64_64,
@@ -1324,7 +1324,7 @@ overworld_sprite ow_moltres = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprites_diserakt [] = {
+static const graphic overworld_sprites_diserakt [] = {
     {&gfx_ow_diserakt_0Tiles, 0x100, 0},
     {&gfx_ow_diserakt_2Tiles, 0x100, 0},
     {&gfx_ow_diserakt_1Tiles, 0x100, 0},
@@ -1336,7 +1336,7 @@ static graphic overworld_sprites_diserakt [] = {
     {&gfx_ow_diserakt_1Tiles, 0x100, 0},
 };
 
-overworld_sprite ow_diserakt = {
+const overworld_sprite ow_diserakt = {
     0xFFFF, 0x1100 + 4, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1344,7 +1344,7 @@ overworld_sprite ow_diserakt = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_groudon [] = {
+static const graphic overworld_sprite_groudon [] = {
     {&gfx_ow_groudon_0Tiles, 0x800, 0},
     {&gfx_ow_groudon_0Tiles, 0x800, 0},
     {&gfx_ow_groudon_0Tiles, 0x800, 0},
@@ -1356,7 +1356,7 @@ static graphic overworld_sprite_groudon [] = {
     {&gfx_ow_groudon_2Tiles, 0x800, 0}
 };
 
-overworld_sprite ow_groudon = {
+const overworld_sprite ow_groudon = {
     0xFFFF, 0x1100 + 3, 0x11FF, 0x800,
     64, 64, 0, 1, 0, 0, 0x1, 0x0, 0,
     &ow_final_oam_64_64, &ow_formation_64_64,
@@ -1364,7 +1364,7 @@ overworld_sprite ow_groudon = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_rubys [] = {
+static const graphic overworld_sprite_rubys [] = {
     {&gfx_ow_rubys_0Tiles, 0x100, 0},
     {&gfx_ow_rubys_1Tiles, 0x100, 0},
     {&gfx_ow_rubys_2Tiles, 0x100, 0},
@@ -1376,7 +1376,7 @@ static graphic overworld_sprite_rubys [] = {
     {&gfx_ow_rubys_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_rubys = {
+const overworld_sprite ow_rubys = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1384,7 +1384,7 @@ overworld_sprite ow_rubys = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_hiroine_sprites[] = {
+static const graphic overworld_sprite_hiroine_sprites[] = {
 	{&gfx_ow_hiroine_0Tiles, 0x200, 0},
 	{&gfx_ow_hiroine_1Tiles, 0x200, 0},
 	{&gfx_ow_hiroine_2Tiles, 0x200, 0},
@@ -1407,7 +1407,7 @@ static graphic overworld_sprite_hiroine_sprites[] = {
 	{&gfx_ow_hiroine_19Tiles, 0x200, 0}
 };
 
-overworld_sprite ow_hiroine = {
+const overworld_sprite ow_hiroine = {
 	0xffff, 0x1110, 0x1102, 0x200,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -1415,7 +1415,7 @@ overworld_sprite ow_hiroine = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_mother_sprites[] = {
+static const graphic overworld_sprite_mother_sprites[] = {
 	{&gfx_ow_mother_0Tiles, 0x100, 0},
 	{&gfx_ow_mother_1Tiles, 0x100, 0},
 	{&gfx_ow_mother_2Tiles, 0x100, 0},
@@ -1427,7 +1427,7 @@ static graphic overworld_sprite_mother_sprites[] = {
 	{&gfx_ow_mother_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_mother = {
+const overworld_sprite ow_mother = {
 	0xffff, 0x1103, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -1435,7 +1435,7 @@ overworld_sprite ow_mother = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_drampa_sprites[] = {
+static const graphic overworld_sprite_drampa_sprites[] = {
   {&gfx_ow_drampaTiles[0 * 32 * 32 / 2 / 2], 0x200, 0},
   {&gfx_ow_drampaTiles[2 * 32 * 32 / 2 / 2], 0x200, 0},
   {&gfx_ow_drampaTiles[4 * 32 * 32 / 2 / 2], 0x200, 0},
@@ -1447,7 +1447,7 @@ static graphic overworld_sprite_drampa_sprites[] = {
   {&gfx_ow_drampaTiles[5 * 32 * 32 / 2 / 2], 0x200, 0},
 };
 
-overworld_sprite ow_drampa = {
+const overworld_sprite ow_drampa = {
   0xffff, 0x1104, 0x11ff, 0x200,
   32, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
   &ow_final_oam_32_32, &ow_formation_32_32,
@@ -1455,7 +1455,7 @@ overworld_sprite ow_drampa = {
   oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_blackbeard_sprites[] = {
+static const graphic overworld_sprite_blackbeard_sprites[] = {
 	{&gfx_ow_blackbeardTiles[0 * 16 * 32 / 2 / 2], 0x100, 0},
 	{&gfx_ow_blackbeardTiles[1 * 16 * 32 / 2 / 2], 0x100, 0},
 	{&gfx_ow_blackbeardTiles[2 * 16 * 32 / 2 / 2], 0x100, 0},
@@ -1467,7 +1467,7 @@ static graphic overworld_sprite_blackbeard_sprites[] = {
 	{&gfx_ow_blackbeardTiles[8 * 16 * 32 / 2 / 2], 0x100, 0},
 };
 
-overworld_sprite ow_blackbeard = {
+const overworld_sprite ow_blackbeard = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1475,7 +1475,7 @@ overworld_sprite ow_blackbeard = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_teah_sprites[] = {
+static const graphic overworld_sprite_teah_sprites[] = {
 	{&gfx_ow_teahTiles[0 * 16 * 32 / 2 / 2], 0x100, 0},
 	{&gfx_ow_teahTiles[1 * 16 * 32 / 2 / 2], 0x100, 0},
 	{&gfx_ow_teahTiles[2 * 16 * 32 / 2 / 2], 0x100, 0},
@@ -1487,7 +1487,7 @@ static graphic overworld_sprite_teah_sprites[] = {
 	{&gfx_ow_teahTiles[8 * 16 * 32 / 2 / 2], 0x100, 0},
 };
 
-overworld_sprite ow_teah = {
+const overworld_sprite ow_teah = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1495,7 +1495,7 @@ overworld_sprite ow_teah = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_narcissa_sprites[] = {
+static const graphic overworld_sprite_narcissa_sprites[] = {
 	{&gfx_ow_narcissaTiles[0 * 16 * 32 / 2 / 2], 0x100, 0},
 	{&gfx_ow_narcissaTiles[1 * 16 * 32 / 2 / 2], 0x100, 0},
 	{&gfx_ow_narcissaTiles[2 * 16 * 32 / 2 / 2], 0x100, 0},
@@ -1507,7 +1507,7 @@ static graphic overworld_sprite_narcissa_sprites[] = {
 	{&gfx_ow_narcissaTiles[8 * 16 * 32 / 2 / 2], 0x100, 0},
 };
 
-overworld_sprite ow_narcissa = {
+const overworld_sprite ow_narcissa = {
     0xFFFF, 0x1100 + 0xB, 0x11FF, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1516,7 +1516,7 @@ overworld_sprite ow_narcissa = {
 };
 
 
-graphic overworld_sprite_harrenfeld_sprites [] = {
+const graphic overworld_sprite_harrenfeld_sprites [] = {
     {&gfx_ow_harrenfeld_0Tiles, 0x100, 0},
     {&gfx_ow_harrenfeld_1Tiles, 0x100, 0},
     {&gfx_ow_harrenfeld_2Tiles, 0x100, 0},
@@ -1528,7 +1528,7 @@ graphic overworld_sprite_harrenfeld_sprites [] = {
     {&gfx_ow_harrenfeld_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_harrenfeld = {
+const overworld_sprite ow_harrenfeld = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1536,7 +1536,7 @@ overworld_sprite ow_harrenfeld = {
     oam_rotscale_anim_table_null
 };
 
-graphic overworld_sprite_butler_sprites [] = {
+const graphic overworld_sprite_butler_sprites [] = {
     {&gfx_ow_butler_0Tiles, 0x100, 0},
     {&gfx_ow_butler_1Tiles, 0x100, 0},
     {&gfx_ow_butler_2Tiles, 0x100, 0},
@@ -1548,7 +1548,7 @@ graphic overworld_sprite_butler_sprites [] = {
     {&gfx_ow_butler_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_butler = {
+const overworld_sprite ow_butler = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1556,7 +1556,7 @@ overworld_sprite ow_butler = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_lucius [] = {
+static const graphic overworld_sprite_lucius [] = {
     {&gfx_ow_lucius_0Tiles, 0x100, 0},
     {&gfx_ow_lucius_1Tiles, 0x100, 0},
     {&gfx_ow_lucius_2Tiles, 0x100, 0},
@@ -1568,7 +1568,7 @@ static graphic overworld_sprite_lucius [] = {
     {&gfx_ow_lucius_8Tiles, 0x100, 0}
 };
 
-overworld_sprite ow_lucius = {
+const overworld_sprite ow_lucius = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1576,7 +1576,7 @@ overworld_sprite ow_lucius = {
     oam_rotscale_anim_table_null
 };
 
-graphic overworld_sprite_lucky[] = {
+const graphic overworld_sprite_lucky[] = {
 	{gfx_ow_luckyTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
 	{gfx_ow_luckyTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
 	{gfx_ow_luckyTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
@@ -1588,7 +1588,7 @@ graphic overworld_sprite_lucky[] = {
 	{gfx_ow_luckyTiles + 8 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
 };
 
-overworld_sprite ow_lucky = {
+const overworld_sprite ow_lucky = {
 	0xffff, 0x1105, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -1596,42 +1596,42 @@ overworld_sprite ow_lucky = {
 	oam_rotscale_anim_table_null
 };
 
-static overworld_sprite ow_pokemon_32_32 = {
+static const overworld_sprite ow_pokemon_32_32 = {
 	.tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE,
 	.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
 	.final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
 	.graphics = overworld_sprite_lucky, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
-static overworld_sprite ow_pokemon_64_64 = {
+static const overworld_sprite ow_pokemon_64_64 = {
 	.tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE,
 	.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(64, 64), .width = 64, .height = 64,
 	.final_oam = &ow_final_oam_64_64, .subsprite_table = &ow_formation_64_64, .gfx_animation = ow_anim_standard_npc,
 	.graphics = NULL, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
-static overworld_sprite ow_berry_tree = {
+static const overworld_sprite ow_berry_tree = {
 	.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE ,
 	.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
 	.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
 	.graphics = NULL + 0, .rotscale_animation = oam_rotscale_anim_table_null,	
 };
 
-static overworld_sprite ow_misc_16_16 = {
+static const overworld_sprite ow_misc_16_16 = {
 	.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE ,
 	.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 16), .width = 16, .height = 16,
 	.final_oam = &ow_final_oam_16_16, .subsprite_table = &ow_formation_16_16, .gfx_animation = ow_anim_standard_npc,
 	.graphics = NULL + 0, .rotscale_animation = oam_rotscale_anim_table_null,	
 };
 
-static overworld_sprite ow_tutor_crystal_dummy = {
+static const overworld_sprite ow_tutor_crystal_dummy = {
         .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_TUTOR_CRYSTAL_BASE,
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
         .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
         .graphics = NULL, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
-graphic overworld_sprite_chef[] = {
+const graphic overworld_sprite_chef[] = {
 	{gfx_ow_chefTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
 	{gfx_ow_chefTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
 	{gfx_ow_chefTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
@@ -1643,7 +1643,7 @@ graphic overworld_sprite_chef[] = {
 	{gfx_ow_chefTiles + 8 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
 };
 
-overworld_sprite ow_chef = {
+const overworld_sprite ow_chef = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
     &ow_final_oam_16_32, &ow_formation_16_32,
@@ -1651,15 +1651,15 @@ overworld_sprite ow_chef = {
     oam_rotscale_anim_table_null
 };
 
-static gfx_frame gfx_animation_mega_stone[] = {
+static const gfx_frame gfx_animation_mega_stone[] = {
 	{.data = 0, .duration = 0}, {.data = 0, .duration = 12}, {.data = 1, .duration = 12}, 
     {.data = 2, .duration = 12}, {.data = 3, .duration = 12}, {.data = 4, .duration = 12},
     {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
-static gfx_frame *gfx_animations_mega_stone[1] = {gfx_animation_mega_stone};
+static const gfx_frame *const gfx_animations_mega_stone[1] = {gfx_animation_mega_stone};
 
-graphic overworld_gfxs_mega_stone[] = {
+const graphic overworld_gfxs_mega_stone[] = {
 	{gfx_ow_mega_stoneTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
 	{gfx_ow_mega_stoneTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
 	{gfx_ow_mega_stoneTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
@@ -1667,22 +1667,22 @@ graphic overworld_gfxs_mega_stone[] = {
 	{gfx_ow_mega_stoneTiles + 4 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
 };
 
-overworld_sprite ow_mega_stone = {
+const overworld_sprite ow_mega_stone = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_MEGA_STONE,
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 16), .width = 16, .height = 16,
         .final_oam = &ow_final_oam_16_16, .subsprite_table = &ow_formation_16_16, .gfx_animation = gfx_animations_mega_stone,
         .graphics = overworld_gfxs_mega_stone, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
-static palette overworld_mega_stone_palette = {
+static const palette overworld_mega_stone_palette = {
 	.pal = gfx_ow_mega_stonePal, .tag = OW_PAL_TAG_MEGA_STONE,
 };
 
-palette *overworld_palette_get_mega_stone() {
+const palette *overworld_palette_get_mega_stone() {
 	return &overworld_mega_stone_palette;
 }
 
-static graphic overworld_sprite_lester_young_sprites[] = {
+static const graphic overworld_sprite_lester_young_sprites[] = {
 	{gfx_ow_lester_youngTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
 	{gfx_ow_lester_youngTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
 	{gfx_ow_lester_youngTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
@@ -1694,7 +1694,7 @@ static graphic overworld_sprite_lester_young_sprites[] = {
 	{gfx_ow_lester_youngTiles + 8 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
 };
 
-overworld_sprite ow_lester_young = {
+const overworld_sprite ow_lester_young = {
 	0xffff, 0x1106, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -1702,7 +1702,7 @@ overworld_sprite ow_lester_young = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_roman_sprites[] = {
+static const graphic overworld_sprite_roman_sprites[] = {
 	{gfx_ow_romanTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
 	{gfx_ow_romanTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
 	{gfx_ow_romanTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
@@ -1714,7 +1714,7 @@ static graphic overworld_sprite_roman_sprites[] = {
 	{gfx_ow_romanTiles + 8 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
 };
 
-overworld_sprite ow_roman = {
+const overworld_sprite ow_roman = {
 	0xffff, OW_PAL_TAG_ROMAN, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -1722,7 +1722,7 @@ overworld_sprite ow_roman = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_rosalie_sprites[] = {
+static const graphic overworld_sprite_rosalie_sprites[] = {
 	{gfx_ow_rosalieTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
 	{gfx_ow_rosalieTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
 	{gfx_ow_rosalieTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
@@ -1734,7 +1734,7 @@ static graphic overworld_sprite_rosalie_sprites[] = {
 	{gfx_ow_rosalieTiles + 8 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
 };
 
-overworld_sprite ow_rosalie = {
+const overworld_sprite ow_rosalie = {
 	0xffff, OW_PAL_TAG_ROSALIE, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -1742,13 +1742,13 @@ overworld_sprite ow_rosalie = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_old_amber_sprites[] = {
+static const graphic overworld_sprite_old_amber_sprites[] = {
 	{gfx_ow_old_amberTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
 	{gfx_ow_old_amberTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
 	{gfx_ow_old_amberTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
 };
 
-overworld_sprite ow_old_amber = {
+const overworld_sprite ow_old_amber = {
 	0xffff, 0x1103, 0x11ff, 0x100,
 	16, 16, 0, 1, true, 0, 0x1, 0x0, 0x8,
 	&ow_final_oam_16_16, &ow_formation_16_16,
@@ -1756,7 +1756,7 @@ overworld_sprite ow_old_amber = {
 	oam_rotscale_anim_table_null,
 };
 
-static graphic overworld_sprite_icarus_sprites[] = {
+static const graphic overworld_sprite_icarus_sprites[] = {
 	{gfx_ow_icarusTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
 	{gfx_ow_icarusTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
 	{gfx_ow_icarusTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
@@ -1768,7 +1768,7 @@ static graphic overworld_sprite_icarus_sprites[] = {
 	{gfx_ow_icarusTiles + 8 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
 };
 
-overworld_sprite ow_icarus = {
+const overworld_sprite ow_icarus = {
 	0xffff, OW_PAL_TAG_ICARUS, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
 	&ow_final_oam_16_32, &ow_formation_16_32,
@@ -1776,22 +1776,22 @@ overworld_sprite ow_icarus = {
 	oam_rotscale_anim_table_null
 };
 
-static gfx_frame gfx_animation_secret_power_vines[] = {
+static const gfx_frame gfx_animation_secret_power_vines[] = {
 	{.data = 0, .duration = 0}, {.data = 0, .duration = 16}, {.data = 1, .duration = 16}, 
     {.data = 2, .duration = 16}, {.data = 1, .duration = 16},
     {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
-static gfx_frame gfx_animation_secret_power_vines_cut[] = {
+static const gfx_frame gfx_animation_secret_power_vines_cut[] = {
 	{.data = 0, .duration = 0}, {.data = 0, .duration = 6}, {.data = 4, .duration = 6}, 
     {.data = 5, .duration = 6}, {.data = 6, .duration = 6}, {.data = 7, .duration = 6}, 
     {.data = 8, .duration = 6}, {.data = 9, .duration = 0}, 
     {.data = GFX_ANIM_END, .duration = 0},
 };
 
-static gfx_frame *gfx_animations_secret_power_vines[2] = {gfx_animation_secret_power_vines, gfx_animation_secret_power_vines_cut};
+static const gfx_frame *const gfx_animations_secret_power_vines[2] = {gfx_animation_secret_power_vines, gfx_animation_secret_power_vines_cut};
 
-static graphic overworld_sprite_secret_power_vines_sprites[] = {
+static const graphic overworld_sprite_secret_power_vines_sprites[] = {
 	{gfx_overworld_secret_power_vinesTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
 	{gfx_overworld_secret_power_vinesTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
 	{gfx_overworld_secret_power_vinesTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
@@ -1804,14 +1804,14 @@ static graphic overworld_sprite_secret_power_vines_sprites[] = {
 	{gfx_overworld_secret_power_vinesTiles + 9 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
 };
 
-static overworld_sprite ow_secret_power_vine = {
+static const overworld_sprite ow_secret_power_vine = {
         .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_SECRET_POWER_VINES,
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
         .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = gfx_animations_secret_power_vines,
         .graphics = overworld_sprite_secret_power_vines_sprites, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
-static gfx_frame gfx_animation_secret_power_cave[] = {
+static const gfx_frame gfx_animation_secret_power_cave[] = {
 	{.data = 0, .duration = 0}, {.data = 0, .duration = 48}, {.data = 0, .duration = 32}, 
     {.data = 1, .duration = 16}, {.data = 2, .duration = 16}, {.data = 3, .duration = 48},
 	{.data = 3, .duration = 48}, {.data = 4, .duration = 8}, {.data = 0, .duration = 8},
@@ -1820,16 +1820,16 @@ static gfx_frame gfx_animation_secret_power_cave[] = {
     {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
-static gfx_frame gfx_animation_secret_power_cave_smashed[] = {
+static const gfx_frame gfx_animation_secret_power_cave_smashed[] = {
 	{.data = 0, .duration = 0}, {.data = 0, .duration = 8}, {.data = 5, .duration = 8}, 
     {.data = 6, .duration = 8}, {.data = 7, .duration = 8}, {.data = 8, .duration = 8},
     {.data = 9, .duration = 8}, {.data = 10, .duration = 8},
 	{.data = GFX_ANIM_END, .duration = 0},
 };
 
-static gfx_frame *gfx_animations_secret_power_cave[2] = {gfx_animation_secret_power_cave, gfx_animation_secret_power_cave_smashed};
+static const gfx_frame *const gfx_animations_secret_power_cave[2] = {gfx_animation_secret_power_cave, gfx_animation_secret_power_cave_smashed};
 
-static graphic overworld_sprite_secret_power_cave_sprites[] = {
+static const graphic overworld_sprite_secret_power_cave_sprites[] = {
 	{gfx_overworld_secret_power_caveTiles + 0 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
 	{gfx_overworld_secret_power_caveTiles + 1 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
 	{gfx_overworld_secret_power_caveTiles + 2 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
@@ -1843,7 +1843,7 @@ static graphic overworld_sprite_secret_power_cave_sprites[] = {
 	{gfx_overworld_secret_power_caveTiles + 10 * GRAPHIC_SIZE_4BPP(32, 32), GRAPHIC_SIZE_4BPP(32, 32), 0},
 };
 
-static overworld_sprite ow_secret_power_cave = {
+static const overworld_sprite ow_secret_power_cave = {
         .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_SECRET_POWER_CAVE,
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
         .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = gfx_animations_secret_power_cave,
@@ -1851,13 +1851,13 @@ static overworld_sprite ow_secret_power_cave = {
 };
 
 
-static graphic overworld_sprite_apple_sprites[] = {
+static const graphic overworld_sprite_apple_sprites[] = {
 	{gfx_ow_appleTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
 	{gfx_ow_appleTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
 	{gfx_ow_appleTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
 };
 
-overworld_sprite ow_apple = {
+const overworld_sprite ow_apple = {
 	0xffff, OW_PAL_TAG_APPLE, 0x11ff, 0x100,
 	16, 16, 0, 1, true, 0, 0x1, 0x0, 0x8,
 	&ow_final_oam_16_16, &ow_formation_16_16,
@@ -1865,22 +1865,22 @@ overworld_sprite ow_apple = {
 	oam_rotscale_anim_table_null 
 };
 
-static graphic overworld_sprite_recipe_sprites[] = {
+static const graphic overworld_sprite_recipe_sprites[] = {
 	{gfx_ow_recipe2Tiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
 	{gfx_ow_recipe2Tiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
 	{gfx_ow_recipe2Tiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
 	{gfx_ow_recipe2Tiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
 };
 
-static gfx_frame gfx_animation_recipe[] = {
+static const gfx_frame gfx_animation_recipe[] = {
 	{.data = 0, .duration = 0}, {.data = 0, .duration = 8}, {.data = 1, .duration = 8}, 
 	{.data = 2, .duration = 8}, {.data = 3, .duration = 48}, {.data = 2, .duration = 4},
 	{.data = 1, .duration = 4}, {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
-static gfx_frame *gfx_animations_recipe[] = {gfx_animation_recipe};
+static const gfx_frame *const gfx_animations_recipe[] = {gfx_animation_recipe};
 
-overworld_sprite ow_recipe = {
+const overworld_sprite ow_recipe = {
 	0xffff, OW_PAL_TAG_RECIPE, 0x11ff, 0x100,
 	16, 16, 0, 1, false, 0, 0x1, 0x0, 0x8,
 	&ow_final_oam_16_16, &ow_formation_16_16,
@@ -1888,7 +1888,7 @@ overworld_sprite ow_recipe = {
 	oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_upstream_graphics[] = {
+static const graphic overworld_sprite_upstream_graphics[] = {
 	{gfx_ow_upstreamTiles + 0 * GRAPHIC_SIZE_4BPP(64, 64), GRAPHIC_SIZE_4BPP(64, 64), 0}, // Idle
 	// Upper layer
 	{gfx_ow_upstreamTiles + 1 * GRAPHIC_SIZE_4BPP(64, 64), GRAPHIC_SIZE_4BPP(64, 64), 0},
@@ -1903,7 +1903,7 @@ static graphic overworld_sprite_upstream_graphics[] = {
 	{gfx_ow_upstreamTiles + 10 * GRAPHIC_SIZE_4BPP(64, 64), GRAPHIC_SIZE_4BPP(64, 64), 0},
 };
 
-static gfx_frame gfx_animation_upstream[] = {
+static const gfx_frame gfx_animation_upstream[] = {
 	{.data = 0, .duration = 0}, {.data = 1, .duration = 4}, 
 	{.data = 2, .duration = 4}, {.data = 3, .duration = 4}, {.data = 4, .duration = 4},
 	{.data = 5, .duration = 4}, {.data = 6, .duration = 4}, {.data = 7, .duration = 4},
@@ -1912,15 +1912,15 @@ static gfx_frame gfx_animation_upstream[] = {
 	{.data = 0, .duration = 24}, {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
-static gfx_frame *gfx_animations_upstream[] = {gfx_animation_upstream};
+static const gfx_frame *const gfx_animations_upstream[] = {gfx_animation_upstream};
 
-static sprite upstream_sprite = {
+static const sprite upstream_sprite = {
 	.attr0 = ATTR0_SHAPE_HORIZONTAL,
 	.attr1 = ATTR1_SIZE_64_32,
 	.attr2 = ATTR2_PRIO(2),
 };
 
-static subsprite upstream_subsprites[2] = {
+static const subsprite upstream_subsprites[2] = {
 	{
 		.x = -32, 
 		.y = -16, 
@@ -1939,7 +1939,7 @@ static subsprite upstream_subsprites[2] = {
 	},
 };
 
-static subsprite_table upstream_subsprite_tables[] = {
+static const subsprite_table upstream_subsprite_tables[] = {
 	{.subsprites = upstream_subsprites, .num_subsprites = ARRAY_COUNT(upstream_subsprites),},
 	{.subsprites = upstream_subsprites, .num_subsprites = ARRAY_COUNT(upstream_subsprites),},
 	{.subsprites = upstream_subsprites, .num_subsprites = ARRAY_COUNT(upstream_subsprites),},
@@ -1948,7 +1948,7 @@ static subsprite_table upstream_subsprite_tables[] = {
 	{.subsprites = upstream_subsprites, .num_subsprites = ARRAY_COUNT(upstream_subsprites),},
 };
 
-overworld_sprite ow_upstream = {
+const overworld_sprite ow_upstream = {
 	0xffff, OW_PAL_TAG_UPSTREAM, 0x11ff, GRAPHIC_SIZE_4BPP(64, 64),
 	64, 32, 0, 0, false, 0, 0x1, 0x0, 0x8,
 	&upstream_sprite, upstream_subsprite_tables,
@@ -1956,7 +1956,7 @@ overworld_sprite ow_upstream = {
 	oam_rotscale_anim_table_null,
 };
 
-static gfx_frame gfx_animation_gear_light_up[] = {
+static const gfx_frame gfx_animation_gear_light_up[] = {
     {.data = 0, .duration = 0},
     {.data = 0, .duration = 8},
     {.data = 1, .duration = 8},
@@ -1968,71 +1968,71 @@ static gfx_frame gfx_animation_gear_light_up[] = {
     {.data = GFX_ANIM_JUMP, .duration = 1},
 };
 
-static gfx_frame *gfx_animations_gear[1] = {gfx_animation_gear_light_up};
+static const gfx_frame *const gfx_animations_gear[1] = {gfx_animation_gear_light_up};
 
-static graphic overworld_gfx_blue_gear[] = {
+static const graphic overworld_gfx_blue_gear[] = {
     [0] = {gfx_ow_blue_gearTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
     [1] = {gfx_ow_blue_gearTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
     [2] = {gfx_ow_blue_gearTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
     [3] = {gfx_ow_blue_gearTiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
 };
 
-static graphic overworld_gfx_red_gear[] = {
+static const graphic overworld_gfx_red_gear[] = {
     [0] = {gfx_ow_red_gearTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
     [1] = {gfx_ow_red_gearTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
     [2] = {gfx_ow_red_gearTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
     [3] = {gfx_ow_red_gearTiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
 };
 
-static graphic overworld_gfx_green_gear[] = {
+static const graphic overworld_gfx_green_gear[] = {
     [0] = {gfx_ow_green_gearTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
     [1] = {gfx_ow_green_gearTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
     [2] = {gfx_ow_green_gearTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
     [3] = {gfx_ow_green_gearTiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
 };
 
-static graphic overworld_gfx_yellow_gear[] = {
+static const graphic overworld_gfx_yellow_gear[] = {
     [0] = {gfx_ow_yellow_gearTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
     [1] = {gfx_ow_yellow_gearTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
     [2] = {gfx_ow_yellow_gearTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
     [3] = {gfx_ow_yellow_gearTiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
 };
 
-overworld_sprite overworld_blue_gear = {
+const overworld_sprite overworld_blue_gear = {
     .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_BLUE_GEAR,
     .unknown = 0x1FFF, .size = GRAPHIC_SIZE_4BPP(16, 16), .width = 16, .height = 16,
     .final_oam = &ow_final_oam_16_16, .subsprite_table = &ow_formation_16_16, .gfx_animation = gfx_animations_gear,
     .graphics = overworld_gfx_blue_gear, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
-overworld_sprite overworld_red_gear = {
+const overworld_sprite overworld_red_gear = {
     .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_RED_GEAR,
     .unknown = 0x1FFF, .size = GRAPHIC_SIZE_4BPP(16, 16), .width = 16, .height = 16,
     .final_oam = &ow_final_oam_16_16, .subsprite_table = &ow_formation_16_16, .gfx_animation = gfx_animations_gear,
     .graphics = overworld_gfx_red_gear, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
-overworld_sprite overworld_yellow_gear = {
+const overworld_sprite overworld_yellow_gear = {
     .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_YELLOW_GEAR,
     .unknown = 0x1FFF, .size = GRAPHIC_SIZE_4BPP(16, 16), .width = 16, .height = 16,
     .final_oam = &ow_final_oam_16_16, .subsprite_table = &ow_formation_16_16, .gfx_animation = gfx_animations_gear,
     .graphics = overworld_gfx_yellow_gear, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
-overworld_sprite overworld_green_gear = {
+const overworld_sprite overworld_green_gear = {
     .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_GREEN_GEAR,
     .unknown = 0x1FFF, .size = GRAPHIC_SIZE_4BPP(16, 16), .width = 16, .height = 16,
     .final_oam = &ow_final_oam_16_16, .subsprite_table = &ow_formation_16_16, .gfx_animation = gfx_animations_gear,
     .graphics = overworld_gfx_green_gear, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
-static graphic overworld_gfx_treasure_map[] = {
+static const graphic overworld_gfx_treasure_map[] = {
     [0] = {gfx_ow_treasure_mapTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
     [1] = {gfx_ow_treasure_mapTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
     [2] = {gfx_ow_treasure_mapTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
 };
 
-overworld_sprite overworld_treasure_map = {
+const overworld_sprite overworld_treasure_map = {
     .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_TREASURE_MAP,
     .unknown = 0x1FFF, .size = GRAPHIC_SIZE_4BPP(16, 16), .width = 16, .height = 16,
 	.inanimate = true,
@@ -2041,7 +2041,7 @@ overworld_sprite overworld_treasure_map = {
 };
 
 //The overworld table
-overworld_sprite *overworld_sprites[] = {
+const overworld_sprite *const overworld_sprites[] = {
     	&ow_hiro,
 	&ow_mskate,//(overworld_sprite*) 0x96d865c,
 	&ow_hiro_sit,
@@ -2264,7 +2264,7 @@ overworld_sprite *overworld_sprites[] = {
 };
 
 
-overworld_sprite *overworld_get (u16 picture){
+const overworld_sprite *overworld_get (u16 picture){
     if(picture >= 0xF0){
 		// DEBUG("Picture is %d\n", *var_access((u16)(0x4010+picture-0xF0)));
         return overworld_sprites[*var_access((u16)(0x4010 + picture - 0xF0))];

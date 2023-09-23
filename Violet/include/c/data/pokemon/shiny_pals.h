@@ -449,7 +449,7 @@ extern const u8 gfx_pokemon_groudon_regent_backspritePal[];
 extern const u8 gfx_pokemon_kecleon_purple_backspritePal[];
 extern const u8 gfx_pokemon_crystal_onix_backspritePal[];
 
-palette pokemon_shiny_pals[POKEMON_CNT] = {
+const palette pokemon_shiny_pals[POKEMON_CNT] = {
     [POKEMON_POKEMON_0] = {.pal = gfx_pokemon_pokemon_0_backspritePal, .tag = POKEMON_POKEMON_0,},
 	[POKEMON_BISASAM] = {.pal = gfx_pokemon_bisasam_backspritePal, .tag = POKEMON_BISASAM,},
 	[POKEMON_BISAKNOSP] = {.pal = gfx_pokemon_bisaknosp_backspritePal, .tag = POKEMON_BISAKNOSP,},

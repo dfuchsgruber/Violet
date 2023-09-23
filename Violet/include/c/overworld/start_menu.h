@@ -9,7 +9,7 @@
 #define INCLUDE_C_OVERWORLD_START_MENU_H_
 
 typedef struct {
-    u8 *name;
+    const u8 *name;
     bool (*initialize)();
 } start_menu_item_t;
 
@@ -27,7 +27,7 @@ enum {
     NUM_START_MENU_ITEMS,
 };
 
-start_menu_item_t start_menu_items[NUM_START_MENU_ITEMS];
+extern const start_menu_item_t start_menu_items[NUM_START_MENU_ITEMS];
 
 typedef struct {
     bool (*callback)(void);
@@ -39,7 +39,7 @@ typedef struct {
     u8 safari_tbox_idx;
 } start_menu_state_t;
 
-u8 *start_menu_item_descriptions[NUM_START_MENU_ITEMS];
+extern const u8 *const start_menu_item_descriptions[NUM_START_MENU_ITEMS];
 
 extern start_menu_state_t start_menu_state;
 
@@ -48,8 +48,8 @@ enum start_menu_clock_digit{
     START_MENU_CLOCK_HOURS_10, START_MENU_CLOCK_HOURS_1, START_MENU_CLOCK_MINUTES_10, START_MENU_CLOCK_MINUTES_1
 };
 
-extern u8 gfx_start_menu_7_segmentTiles[];
-extern u8 gfx_start_menu_7_segmentPal[];
+extern const u8 gfx_start_menu_7_segmentTiles[];
+extern const u8 gfx_start_menu_7_segmentPal[];
 
 /**
  * Deletes the additional safari and clock windows of the start menu
@@ -101,7 +101,7 @@ u8 start_menu_get_tbox_idx();
  * Prints the description of an item for the start menu.
  * @param str the description string to print
  **/
-void start_menu_print_item_description(u8 *str);
+void start_menu_print_item_description(const u8 *str);
 
 /**
  * Start menu function that initializes saving the game

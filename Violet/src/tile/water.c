@@ -6,12 +6,12 @@
 #include "pokemon/virtual.h"
 #include "constants/attacks.h"
 
-extern u8 ow_script_surf_not_usable_stream_too_strong[];
-extern u8 ow_script_prompt_surf[];
-extern u8 ow_script_waterfall_not_available[];
-extern u8 ow_script_prompt_waterfall[];
+extern const u8 ow_script_surf_not_usable_stream_too_strong[];
+extern const u8 ow_script_prompt_surf[];
+extern const u8 ow_script_waterfall_not_available[];
+extern const u8 ow_script_prompt_waterfall[];
 
-u8 *tile_trigger_water_scripts(position_t *tile_position, u8 behaviour, u8 player_facing) {
+const u8 *tile_trigger_water_scripts(const position_t *tile_position, u8 behaviour, u8 player_facing) {
   (void)tile_position;
   (void)player_facing;
   if (behaviour_is_surf_strong_stream(behaviour) && player_pokemon_has_surf())

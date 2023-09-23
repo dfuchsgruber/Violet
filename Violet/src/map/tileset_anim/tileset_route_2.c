@@ -1,16 +1,16 @@
 #include "types.h"
 #include "map/tileset.h"
 
-extern u16 gfx_tileset_animation_route_2_sunflowerTiles[];
+extern const u16 gfx_tileset_animation_route_2_sunflowerTiles[];
 
-tileset_animation tileset_route_2_animations[] = {
+static const tileset_animation tileset_route_2_animations[] = {
     {
 		.cycle = 4, .speed = 16, .start_tile = 0x315, .num_tiles = 8,
 		.gfx = gfx_tileset_animation_route_2_sunflowerTiles
     }
 };
 
-tileset_animation_header tileset_route_2_animations_head = {
+static const tileset_animation_header tileset_route_2_animations_head = {
     1, tileset_route_2_animations
 };
 

@@ -42,7 +42,7 @@
     #define DUNGEON_FOREST_NUM_POKEMON_STATIC 4
 
     typedef struct {
-        map_footer_t *footer; // A special pattern that only occurs in this dungeon
+        const map_footer_t *footer; // A special pattern that only occurs in this dungeon
         void (*event_init)(dungeon_generator2 *);
         u8 min_num_patterns;
         u8 max_num_patterns; // How often this pattern can occur
@@ -60,7 +60,7 @@
         u16 species_static_encounter[DUNGEON_FOREST_NUM_POKEMON_STATIC];
     } dungeon_forest_t;
 
-    dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES];
+    extern const dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES];
 
     enum {
         BLOCK_NORMAL,

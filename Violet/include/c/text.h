@@ -85,7 +85,7 @@ extern "C" {
      * @param replace The character to replace with.
      * @return u8* The destination (for command chaining)
      */
-    u8 *string_replace(u8 *src, u8 *dst, u8 find, u8 replace);
+    u8 *string_replace(const u8 *src, u8 *dst, u8 find, u8 replace);
     
     /**
      * Creates a new textbox data instance at given memory
@@ -141,7 +141,7 @@ extern "C" {
      * @param boxdata The tboxdata instance to create the textbox from
      * @return The id of the newly created textbox
      */
-    u8 tbox_new(tboxdata *boxdata);
+    u8 tbox_new(const tboxdata *boxdata);
 
     /**
      * Draws the tilemap of a textbox on the corresponding bg
@@ -176,7 +176,7 @@ extern "C" {
      * @param str The string to print
      */
     void tbox_print_string(u8 box_id, u8 font, u16 x, u16 y, u8 letter_spacing,
-        u8 line_spacing, tbox_font_colormap* color_map, u8 speed, u8* str);
+        u8 line_spacing, const tbox_font_colormap *color_map, u8 speed, const u8 *str);
 
     #define TBOX_SETUP_TAIL {.bg_id = 0xFF}
 
@@ -184,7 +184,7 @@ extern "C" {
      * Initializes multiple boxes on the virtual background
      * @param boxes Array of tboxdata instances terminated by a tbox on bg 0xFF
      */
-    void tbox_sync_with_virtual_bg_and_init_all(tboxdata *boxes);
+    void tbox_sync_with_virtual_bg_and_init_all(const tboxdata *boxes);
 
     /**
      * Returns the speed value used for tboxes according to the user settings.
@@ -221,7 +221,7 @@ extern "C" {
      * @param str the text to display
      * @param continuation the function the callback executes once the text has been printed
      **/ 
-    void tbox_load_gfx_and_print_string_on_bg0_and_continue(u8 callback_idx, u8 font, u8 *str, void (*continuation)(u8));
+    void tbox_load_gfx_and_print_string_on_bg0_and_continue(u8 callback_idx, u8 font, const u8 *str, void (*continuation)(u8));
 
     /**
      * Removes a tbox that is initialized with frame type "message" (i.e. it clears the actual text and the frame around it)
@@ -313,7 +313,7 @@ extern "C" {
      * @param dst Memory where to place the decrypted string at
      * @param src The undecrypted string
      */
-    void string_decrypt(u8* dst, u8* src);
+    void string_decrypt(u8* dst, const u8* src);
 
     /**
      * Executes all textbox related requests for the next frame
@@ -394,7 +394,7 @@ extern "C" {
      * @param speed the speed in which to print
      * @param callback the callback for the printer after each char is printed
      **/
-    void tbox_print_string_parametrized(u8 tbox_idx, u8 font, u8 *text, u16 x_offset, u16 y_offset, u8 speed, void (*callback)(void*, u16));
+    void tbox_print_string_parametrized(u8 tbox_idx, u8 font, const u8 *text, u16 x_offset, u16 y_offset, u8 speed, void (*callback)(void*, u16));
     
     /**
      * Concatenates two strings (appends second to first string)
@@ -402,7 +402,7 @@ extern "C" {
      * @param second the second string
      * @return the offset of the terminating byte of the first string
      */
-    u8* strcat(u8* first, u8* second);
+    u8* strcat(u8* first, const u8* second);
 
     /**
      * Copies a string
@@ -410,7 +410,7 @@ extern "C" {
      * @param src the source string
      * @return the destination offset
      */
-    u8* strcpy(u8* dst, u8* src);
+    u8* strcpy(u8* dst, const u8* src);
 
     /**
      * Transforms the type of a pokemon into a string
@@ -434,21 +434,21 @@ extern "C" {
      * @param src the string to check
      * @return if src was NULL, an empty string is returned. Otherwise, src is kept as is
      **/
-    u8 *str_null_to_empty(u8 *src);
+    const u8 *str_null_to_empty(const u8 *src);
 
     /**
      * Gets a normal string placeholder (such as PLAYER, RIVAL, ...)
      * @param placeholder which placeholder to get
      * @return the string
      **/
-    u8 *string_get_placeholder(u8 placeholder);
+    const u8 *string_get_placeholder(u8 placeholder);
 
     /**
      * Gets the name of a trainer.
      * @param trainer_idx the idx of the trainer to get the name of
      * @return the name of the trainer
      **/
-    u8 *trainer_get_name(u16 trainer_idx);
+    const u8 *trainer_get_name(u16 trainer_idx);
 
     /**
      * Checks if the overworld textbox is a sign
@@ -493,7 +493,7 @@ extern "C" {
      * @param src_width width of the rectangle to copy
      * @param src_height height of the rectangle to copy
      **/
-    void tbox_blit(u8 tbox_idx, u8 *src, u16 src_x, u16 src_y, u16 src_width, u16 src_height, u16 dst_x,
+    void tbox_blit(u8 tbox_idx, const u8 *src, u16 src_x, u16 src_y, u16 src_width, u16 src_height, u16 dst_x,
               u16 dst_y, u16 width, u16 height);
     
     /**
@@ -523,7 +523,7 @@ extern "C" {
      * @param src_height height of the rectangle to copy
      * @param transparent_color the color idx to ignore, i.e. have it transparent
      **/
-    void tbox_blit_with_transparent_color(u8 tbox_idx, u8 *src, u16 src_x, u16 src_y, u16 src_width, u16 src_height, u16 dst_x,
+    void tbox_blit_with_transparent_color(u8 tbox_idx, const u8 *src, u16 src_x, u16 src_y, u16 src_width, u16 src_height, u16 dst_x,
               u16 dst_y, u16 width, u16 height, u8 transparent_color);
 
     /**
@@ -652,14 +652,14 @@ extern "C" {
     extern u8 buffer0[];
     extern u8 buffer1[];
     extern u8 buffer2[];
-    extern u8 str_types[][7];
-    extern u8 str_types_long[][8];
+    extern const u8 str_types[][7];
+    extern const u8 str_types_long[][8];
 
     enum {
         PERSON_NAME_MALE = 0,
         PERSON_NAME_FEMALE = 1,
     };
-    u8 person_names[2][128][12];
+    extern const u8 person_names[2][128][12];
 
 #ifdef	__cplusplus
 }

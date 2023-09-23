@@ -9,13 +9,13 @@
 #define INCLUDE_C_TILE_CLOUD_H_
 #include "stdbool.h"
 
-extern u8 *script_cloud_none_ref;
-extern u8 *script_use_cloud_ref;
-extern u8 *script_use_cloud_back_ref;
-extern u8 *script_cloud_facings[5];
-extern u8 *script_cloud_force_ref[5];
+extern const u8 *script_cloud_none_ref;
+extern const u8 *script_use_cloud_ref;
+extern const u8 *script_use_cloud_back_ref;
+extern const u8 *script_cloud_facings[5];
+extern const u8 *script_cloud_force_ref[5];
 
-u8 *cloud_trigger(bool back);
+const u8 *cloud_trigger(bool back);
 void cloud_enter();
 
 /**

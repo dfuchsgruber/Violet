@@ -24,6 +24,8 @@
 #include "music.h"
 #include "menu_indicators.h"
 
+EWRAM options_state_t *options_state = NULL;
+
 TWO_OPTIONS_STRINGS(
     dns_colors,
     LANGDEP(PSTRING("DNS-Farben"), PSTRING("DNS-Colors")),
@@ -32,8 +34,8 @@ TWO_OPTIONS_STRINGS(
     LANGDEP(PSTRING("Aus"), PSTRING("Off")),
     LANGDEP(PSTRING("Farben werden nicht von der\nTageszeit beeinflusst."), PSTRING("Colors are unaffected by the\ndaytime."))
 );
-static int option_dns_colors_getter() { return cmem.settings.dns_disabled ? OPTION_OFF : OPTION_ON; }
-static void option_dns_color_setter(int is_off) { cmem.settings.dns_disabled = (u8)(is_off & 1); }
+static int option_dns_colors_getter() { return csave.settings.dns_disabled ? OPTION_OFF : OPTION_ON; }
+static void option_dns_color_setter(int is_off) { csave.settings.dns_disabled = (u8)(is_off & 1); }
 
 TWO_OPTIONS_STRINGS(
     automatic_hm_usage,
@@ -43,8 +45,8 @@ TWO_OPTIONS_STRINGS(
     LANGDEP(PSTRING("Manuell"), PSTRING("Manual")),
     LANGDEP(PSTRING("VMs werden nicht automatisch benutzt."), PSTRING("HMs are not used automatically."))
 );
-static int option_automatic_hm_usage_getter() { return cmem.settings.manual_hm_usage ? OPTION_OFF : OPTION_ON; }
-static void option_automatic_hm_usage_setter(int is_off) { cmem.settings.manual_hm_usage = (u8)(is_off & 1); }
+static int option_automatic_hm_usage_getter() { return csave.settings.manual_hm_usage ? OPTION_OFF : OPTION_ON; }
+static void option_automatic_hm_usage_setter(int is_off) { csave.settings.manual_hm_usage = (u8)(is_off & 1); }
 
 THREE_OPTIONS_STRINGS(
     text_tempo,
@@ -103,13 +105,13 @@ TWO_OPTIONS_STRINGS(
     LANGDEP(PSTRING("Versteckte Items werden\nnicht angezeigt."), PSTRING("Hidden items are not\nindicated."))
 );
 
-static int option_detector_getter() { return cmem.settings.detector_notifications; }
-static void option_detector_setter(int value) { cmem.settings.detector_notifications = (u8)(value & 3); }
+static int option_detector_getter() { return csave.settings.detector_notifications; }
+static void option_detector_setter(int value) { csave.settings.detector_notifications = (u8)(value & 3); }
 
-static u8 str_option_frame_style_name[] = LANGDEP(PSTRING("Rahmen"), PSTRING("Frame"));
+static const u8 str_option_frame_style_name[] = LANGDEP(PSTRING("Rahmen"), PSTRING("Frame"));
 static int option_frame_style_getter() { return save2->tbox_style; }
 static void option_frame_style_setter(int style) { save2->tbox_style = (u8)(style & 31); } 
-static u8 str_option_frame_options_description[] = LANGDEP(PSTRING("Dargestellte Textrahmen entsprechen\nMotiv BUFFER_1."), PSTRING("Text frames are displayed in\nmotive BUFFER_1."));
+static const u8 str_option_frame_options_description[] = LANGDEP(PSTRING("Dargestellte Textrahmen entsprechen\nMotiv BUFFER_1."), PSTRING("Text frames are displayed in\nmotive BUFFER_1."));
 
 TWO_OPTIONS_STRINGS(
     wonderdust,
@@ -119,8 +121,8 @@ TWO_OPTIONS_STRINGS(
     LANGDEP(PSTRING("Eins"), PSTRING("One")),
     LANGDEP(PSTRING("Wunderstaub wird nur ein Mal\nbei Beeren benutzt."), PSTRING("Wonderdust is used only once\non berry trees."))
 );
-static int option_wonderdust_getter() { return cmem.settings.wonder_dust_automatic_quantity_disabled ? OPTION_OFF : OPTION_ON; }
-static void option_wonderdust_setter(int is_off) { cmem.settings.wonder_dust_automatic_quantity_disabled = (u8)(is_off & 1); }
+static int option_wonderdust_getter() { return csave.settings.wonder_dust_automatic_quantity_disabled ? OPTION_OFF : OPTION_ON; }
+static void option_wonderdust_setter(int is_off) { csave.settings.wonder_dust_automatic_quantity_disabled = (u8)(is_off & 1); }
 
 TWO_OPTIONS_STRINGS(
     item_obtain_descriptions,
@@ -130,10 +132,10 @@ TWO_OPTIONS_STRINGS(
     LANGDEP(PSTRING("Aus"), PSTRING("Off")),
     LANGDEP(PSTRING("Beschreibungen werden beim\nItem Erhalt nicht dargestellt."), PSTRING("Descriptions are not displayed\nwhen obtaining items."))
 );
-static int option_item_obtain_descriptions_getter() { return cmem.settings.item_obtaining_descriptions_disabled ? OPTION_OFF : OPTION_ON; }
-static void option_item_obtain_descriptions_setter(int is_off) { cmem.settings.item_obtaining_descriptions_disabled = (u8)(is_off & 1); }
+static int option_item_obtain_descriptions_getter() { return csave.settings.item_obtaining_descriptions_disabled ? OPTION_OFF : OPTION_ON; }
+static void option_item_obtain_descriptions_setter(int is_off) { csave.settings.item_obtaining_descriptions_disabled = (u8)(is_off & 1); }
 
-option_t options[NUM_OPTIONS] = {
+const option_t options[NUM_OPTIONS] = {
     [OPTION_FRAME_STYLE] = {
         .name = str_option_frame_style_name,
         .getter = option_frame_style_getter,
@@ -226,7 +228,7 @@ enum {
     FADE_TO_IDLE,
 };
 
-static bg_config bg_configs[] = {
+static const bg_config bg_configs[] = {
     {.bg_id = 0, .char_base = 2, .map_base = 31, .size = 0, .color_mode = 0, .priority = 0},
     {.bg_id = 1, .char_base = 0, .map_base = 29, .size = 0, .color_mode = 0, .priority = 1},
 };
@@ -238,7 +240,7 @@ enum {
     NUM_TBOXES,
 };
 
-static tboxdata options_tboxes[] = {
+static const tboxdata options_tboxes[] = {
     [TBOX_TITLE] = {
         .bg_id = 0, .x = 10, .y = 0, .w = 10, .h = 2, .pal = 15, .start_tile = 33,
     },
@@ -253,11 +255,11 @@ static tboxdata options_tboxes[] = {
     }
 };
 
-static tbox_font_colormap title_fontcolmap = {
+static const tbox_font_colormap title_fontcolmap = {
     .background = 0, .body = 2, .edge = 1,
 };
 
-static tbox_font_colormap setting_fontcolmap = {
+static const tbox_font_colormap setting_fontcolmap = {
     .background = 0, .body = 4, .edge = 5,
 };
 
@@ -269,13 +271,13 @@ static void options_callback_exit(u8 self) {
     callback1_set(super.saved_callback);
     tbox_free_all();
     sound_set_pokemon_cries_stereo(save2->sound_is_mono);
-    free(OPTIONS_STATE);
+    free(options_state);
     big_callback_delete(self);
 }
 
 static void options_print_description(int idx) {
-    option_t *opt = options + idx;
-    u8 *description;
+    const option_t *opt = options + idx;
+    const u8 *description;
     if (idx == OPTION_FRAME_STYLE) {
         itoa(buffer0, opt->getter() + 1, ITOA_NO_PADDING, 2);
         string_decrypt(strbuf, str_option_frame_options_description);
@@ -291,25 +293,25 @@ static void options_callback_idle(u8 self) {
     if (fading_is_active() || dma3_busy(-1))
         return;
     
-    list_menu_get_scroll_and_row(OPTIONS_STATE->list_menu_callback_idx, &(OPTIONS_STATE->cursor_position), &(OPTIONS_STATE->cursor_above));
+    list_menu_get_scroll_and_row(options_state->list_menu_callback_idx, &(options_state->cursor_position), &(options_state->cursor_above));
     int d = 0;
     if (super.keys_new.keys.left)
         d = -1;
     else if (super.keys_new.keys.right)
         d = 1;
     if (d != 0) {
-        int idx = OPTIONS_STATE->cursor_position + OPTIONS_STATE->cursor_above;
-        option_t *opt = options + idx;
+        int idx = options_state->cursor_position + options_state->cursor_above;
+        const option_t *opt = options + idx;
         int value = opt->getter() + d;
         if (value >= 0 && value < opt->num_options) {
             opt->setter(value);
-            list_menu_print(OPTIONS_STATE->list_menu_callback_idx);
+            list_menu_print(options_state->list_menu_callback_idx);
             options_print_description(idx);
             if (idx == OPTION_FRAME_STYLE)
                 tbox_init_frame_set_style(TBOX_LIST, 1, 13 * 16);
         }
     } else {
-        int input = list_menu_process_input(OPTIONS_STATE->list_menu_callback_idx);
+        int input = list_menu_process_input(options_state->list_menu_callback_idx);
         if (input == LIST_MENU_B_PRESSED) {
             fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
             big_callbacks[self].function = options_callback_exit;
@@ -318,8 +320,8 @@ static void options_callback_idle(u8 self) {
 }
 
 static void list_menu_print_callback_null(u8 tbox_idx, int idx, u8 y) {
-    option_t *opt = options + idx - 1;
-    u8 *setting;
+    const option_t *opt = options + idx - 1;
+    const u8 *setting;
     if (idx - 1 == OPTION_FRAME_STYLE) {
         itoa(buffer0, opt->getter() + 1, ITOA_NO_PADDING, 2);
         u8 str_motive[] = LANGDEP(PSTRING("Motiv BUFFER_1"), PSTRING("Motiv BUFFER_1"));
@@ -337,7 +339,7 @@ static void list_menu_cursor_moved_callback(int idx, u8 is_on_initialization, li
     options_print_description(idx - 1);
 }
 
-static list_menu_template list_template = {
+static const list_menu_template list_template = {
     .items = NULL,
     .cursor_moved_callback = list_menu_cursor_moved_callback,
     .item_print_callback = list_menu_print_callback_null,
@@ -348,7 +350,7 @@ static list_menu_template list_template = {
 };
 
 static void options_initialize() {
-    switch(OPTIONS_STATE->initialization_state) {
+    switch(options_state->initialization_state) {
         case RESET: {
             dma0_reset_callback();
             oam_reset();
@@ -358,7 +360,7 @@ static void options_initialize() {
             vblank_handler_set(NULL);
             bg_reset(0);
             bg_setup(0, bg_configs, ARRAY_COUNT(bg_configs));
-            ++(OPTIONS_STATE->initialization_state);
+            ++(options_state->initialization_state);
             break;
         }
         case BG_SETUP: {
@@ -371,7 +373,7 @@ static void options_initialize() {
             bg_virtual_set_displace(0, 0, 0);
             bg_virtual_map_displace(1, 0, 0);
             bg_virtual_set_displace(1, 0, 0);
-            ++(OPTIONS_STATE->initialization_state);
+            ++(options_state->initialization_state);
             break;
         }
         case GFX_LOAD: {
@@ -379,20 +381,20 @@ static void options_initialize() {
             cpuset(&zero, CHARBASE(bg_configs[0].char_base), CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(32) | CPUSET_FILL);
             lz77uncompvram(gfx_options_uiTiles, CHARBASE(bg_configs[1].char_base));
             lz77uncompwram(gfx_options_uiMap, bg_get_tilemap(1));
-            ++(OPTIONS_STATE->initialization_state);
+            ++(options_state->initialization_state);
             break;
         }
         case LIST_SETUP: {
             gp_list_menu_template = list_template;
-            gp_list_menu_template.items = OPTIONS_STATE->list_menu_items;
+            gp_list_menu_template.items = options_state->list_menu_items;
             for (u8 i = 0; i < NUM_OPTIONS; i++) {
                 if (options[i].available == NULL || options[i].available()) {
-                    gp_list_menu_template.items[gp_list_menu_template.item_cnt].idx = i + 1;
-                    gp_list_menu_template.items[gp_list_menu_template.item_cnt].text = options[i].name;
+                    options_state->list_menu_items[gp_list_menu_template.item_cnt].idx = i + 1;
+                    options_state->list_menu_items[gp_list_menu_template.item_cnt].text = options[i].name;
                     gp_list_menu_template.item_cnt++;
                 }
             }
-            OPTIONS_STATE->list_menu_callback_idx = list_menu_new(&gp_list_menu_template, 0, 0);
+            options_state->list_menu_callback_idx = list_menu_new(&gp_list_menu_template, 0, 0);
             scroll_indicator_template crafting_ui_scroll_indicator_template_up_down = {
                 .arrow0_type = SCROLL_ARROW_UP, .arrow0_x = 120, .arrow0_y = 32,
                 .arrow1_type = SCROLL_ARROW_DOWN, .arrow1_x = 120, .arrow1_y = 112,
@@ -401,16 +403,16 @@ static void options_initialize() {
                 .tiles_tag = 111,
                 .pal_tag = 111,
             };
-            u8 scroll_indicator_oam_idx = scroll_indicator_new(&crafting_ui_scroll_indicator_template_up_down, &(OPTIONS_STATE->cursor_position));
+            u8 scroll_indicator_oam_idx = scroll_indicator_new(&crafting_ui_scroll_indicator_template_up_down, &(options_state->cursor_position));
             scroll_indicator_set_oam_priority(scroll_indicator_oam_idx, 0, 0);
-            ++(OPTIONS_STATE->initialization_state);
+            ++(options_state->initialization_state);
             break;
         }
         case PAL_SETUP: {
             pal_decompress(gfx_options_uiPal, 0, 16 * sizeof(color_t));
             pal_copy(tbox_palette_transparent, 15 * 16, 16 * sizeof(color_t));
             pal_set_all_to_black();
-            ++(OPTIONS_STATE->initialization_state);
+            ++(options_state->initialization_state);
             break;
         }
         case TBOX_SETUP: {
@@ -431,30 +433,30 @@ static void options_initialize() {
             );
             int str_width = string_get_width(2, str_title, 0);
             tbox_print_string(TBOX_TITLE, 2, (u16)((options_tboxes[TBOX_TITLE].w * 8 - str_width) / 2), 0, 0, 0, &title_fontcolmap, 0, str_title);
-            ++(OPTIONS_STATE->initialization_state);
+            ++(options_state->initialization_state);
             break;
         }
         case BG_COPY: {
             bg_virtual_sync(0);
             bg_virtual_sync(1);
             bg_virtual_sync(2);
-            ++(OPTIONS_STATE->initialization_state);
+            ++(options_state->initialization_state);
             break;
         }
         case FADE_TO_IDLE: {
             callback1_set(generic_callback1);
             vblank_handler_set(generic_vblank_handler);
             fadescreen(0xFFFFFFFF, 0, 16, 0, 0);
-            OPTIONS_STATE->callback_idx = big_callback_new(options_callback_idle, 0);
-            ++(OPTIONS_STATE->initialization_state);
+            options_state->callback_idx = big_callback_new(options_callback_idle, 0);
+            ++(options_state->initialization_state);
             break;
         }
     }
 }
 
 static void options_callback_initalize() {
-    fmem.gp_state = malloc_and_clear(sizeof(options_state_t));
-    OPTIONS_STATE->initialization_state = 0;
+    options_state = malloc_and_clear(sizeof(options_state_t));
+    options_state->initialization_state = 0;
     callback1_set(options_initialize);
     io_bic(0, 0x6000);
 }

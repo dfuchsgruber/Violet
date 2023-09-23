@@ -2,17 +2,10 @@
 .include "callstds.s"
 
 .global ow_script_route_12_clouds_trainer_0
-.global ow_script_route_12_clouds_trainer_1
 
 ow_script_route_12_clouds_trainer_0:
     trainerbattlestd 0 0x133 0 str_trainer0_challange str_trainer0_defeat
     loadpointer 0 str_trainer0_defeat
-    callstd MSG_FACE
-    end
-
-ow_script_route_12_clouds_trainer_1:
-    trainerbattlestd 0 0x134 0 str_trainer1_challange str_trainer1_defeat
-    loadpointer 0 str_trainer1_defeat
     callstd MSG_FACE
     end
 

@@ -13,7 +13,7 @@
 #include "overworld/weather.h"
 #include "flags.h"
 
-static color_t dns_colors[] = {
+static const color_t dns_colors[] = {
     [SHADER_NIGHT] = {.rgb = {.red = 15, .green = 15, .blue = 28}},
     [SHADER_MORNING] = {.rgb = {.red = 28, .green = 31, .blue = 26}},
     [SHADER_EVENING] = {.rgb = {.red = 28, .green = 22, .blue = 22}},
@@ -27,7 +27,7 @@ static color_t dns_colors[] = {
 // There will always be some kind of inconsistencies here
 // Hint: Always try to match the ground arround high grass, that looks most realistic imo...
 
-static color_t dns_colors_fog[] = {
+static const color_t dns_colors_fog[] = {
     [SHADER_NIGHT] = {.rgb = {.red = 5, .green = 7, .blue = 17}}, //{.rgb = {.red = 13, .green = 13, .blue = 25}},
     [SHADER_MORNING] = {.rgb = {.red = 22, .green = 23, .blue = 21}},
     [SHADER_EVENING] = {.rgb = {.red = 25, .green = 18, .blue = 18}},
@@ -88,9 +88,9 @@ void pal_apply_shaders(u16 start_color, u16 number_colors) {
     }
     // DEBUG("Set filter to map weather %d\n", save1->map_weather);
     weather_set_filter(save1->map_weather);
-    if (fmem.weather_blend_active) {
+    if (weather_blend_active) {
         filter_active = true;
-        filter = color_multiply(filter, fmem.weather_blend);
+        filter = color_multiply(filter, weather_blend);
     }
     // DEBUG("Pal apply filters to color %d (num %d), filter 0x%x, filter active %d\n", start_color, number_colors, filter, filter_active);
     if (filter_active) {

@@ -24,7 +24,7 @@ void battle_controller_opponent_handle_choose_action() {
 }
 
 void battle_controller_opponent_handle_choose_item() {
-    u16 *item = BATTLE_STATE2->items[battler_get_owner(active_battler)] + TRAINER_AI_STATE2->chosen_item_idxs[active_battler];
+    u16 *item = battle_state2->items[battler_get_owner(active_battler)] + trainer_ai_state2->chosen_item_idxs[active_battler];
     DEBUG("Emitting item %d\n", *item);
     battle_controller_emit_one_value(1, *item);
     *item = 0;
@@ -75,9 +75,9 @@ void battle_controller_opponent_handle_choose_move() {
                 battle_controller_emit_two_values(1, BATTLE_ACTION_EXECUTE_SCRIPT, (u16)(move_idx | (defending_battler << 8)));
 
                 if (battle_flags & BATTLE_TRAINER) {
-                    mega_evolution_t *mega = battler_get_available_mega_evolution(active_battler);
+                    const mega_evolution_t *mega = battler_get_available_mega_evolution(active_battler);
                     if (mega)
-                        MEGA_STATE.marked_for_mega_evolution[active_battler] = (u8)mega->type;
+                        mega_state->marked_for_mega_evolution[active_battler] = (u8)mega->type;
                 }
                 break;
             }
@@ -112,7 +112,7 @@ u8 battle_controller_opponent_get_trainer_pic() {
     // Cut secret base, e-reader, trainer tower, duel tower trainers...
     u16 trainer_idx;
     if (battle_flags & BATTLE_TWO_TRAINERS)
-        trainer_idx = active_battler == 1 ? trainer_vars.trainer_id : fmem.trainer_varsB.trainer_id;
+        trainer_idx = active_battler == 1 ? trainer_vars.trainer_id : trainer_varsB.trainer_id;
     else
         trainer_idx = trainer_vars.trainer_id;
     DEBUG("Get trainer idx for battler %d: %d\n", active_battler, trainer_idx);

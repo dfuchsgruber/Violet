@@ -20,7 +20,7 @@ void pokemon_heal(pokemon *dst) {
     pokemon_set_attribute(dst, ATTRIBUTE_STATUS, &status);
 }
 
-bool pokemon_is_healed(pokemon *dst) {
+bool pokemon_is_healed(const pokemon *dst) {
     if (pokemon_get_attribute(dst, ATTRIBUTE_CURRENT_HP, 0) != pokemon_get_attribute(dst, ATTRIBUTE_TOTAL_HP, 0)) {
         return false;
     }

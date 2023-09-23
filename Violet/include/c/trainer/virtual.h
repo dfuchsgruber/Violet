@@ -19,12 +19,12 @@ typedef struct trainer_variables {
     u16 trainer_id;
     u16 overworld_target;
     u16 padding;
-    u8 *challange_text;
-    u8 *defeat_text;
-    u8 *victory_text;
-    u8 *unable_to_battle_text;
-    u8 *script_later;
-    u8 *script_continue;
+    const u8 *challange_text;
+    const u8 *defeat_text;
+    const u8 *victory_text;
+    const u8 *unable_to_battle_text;
+    const u8 *script_later;
+    const u8 *script_continue;
     u16 rival_flags;
 } trainer_variables;
 
@@ -33,21 +33,22 @@ typedef struct {
     u8 command;
 } trainerbattle_configuration;
 
-extern trainerbattle_configuration trainerbattle_configuration_single_with_continuation[];
-extern trainerbattle_configuration trainerbattle_configuration_single_no_intro_text[];
-extern trainerbattle_configuration trainerbattle_configuration_double[];
-extern trainerbattle_configuration trainerbattle_configuration_single[];
-extern trainerbattle_configuration trainerbattle_configuration_double_with_continuation[];
-extern trainerbattle_configuration trainerbattle_configuration_losable[];
+extern const trainerbattle_configuration trainerbattle_configuration_single_with_continuation[];
+extern const trainerbattle_configuration trainerbattle_configuration_single_no_intro_text[];
+extern const trainerbattle_configuration trainerbattle_configuration_double[];
+extern const trainerbattle_configuration trainerbattle_configuration_single[];
+extern const trainerbattle_configuration trainerbattle_configuration_double_with_continuation[];
+extern const trainerbattle_configuration trainerbattle_configuration_losable[];
 
 extern trainer_variables trainer_vars;
+extern EWRAM trainer_variables trainer_varsB;
 
 /**
  * Reads an unaligned hword form the trainer build mini script
  * @param src the source to read from
  * @return the hword that was read
  */
-u16 trainer_get_unaligned_hword(void *src);
+u16 trainer_get_unaligned_hword(const u8 *src);
 
 /**
  * Returns the flag associated with the current trainer
@@ -65,26 +66,27 @@ void trainer_set_flags();
  */
 void battle_trainerbattle_continuation();
 
+
 /**
  * Configures all trainer variables
  * @param configuration the configuration according to which variables are to be configured
  * @param parameters the trainerbattle parameters
  **/
-void trainerbattle_configure(trainerbattle_configuration *configuration, u8 *parameters);
+void trainerbattle_configure(const trainerbattle_configuration *configuration, const u8 *parameters);
 
 /**
  * Configures the trainer variables and initalizes a script for challanging the player, single battle.
  * @param npc_idx the npc to move
  * @param ow_script the trainer script
  **/
-void trainerbattle_configure_and_initialize_challange_script(u8 npc_idx, u8 *ow_script);
+void trainerbattle_configure_and_initialize_challange_script(u8 npc_idx, const u8 *ow_script);
 
 
 /**
  * Initializes and configures the trainer at fmem.current_trainer with a trainerbattle command.
  * @param script the trainerbattle command to initialize the trainer with.
  **/
-u8 *trainer_configure_by_overworld_script(u8 *ow_script);
+const u8 *trainer_configure_by_overworld_script(const u8 *ow_script);
 
 /**
  * Gets the npc idx of the currently approaching trainer npc and updates trainer_npc_idx and LASTTALKED.
@@ -126,21 +128,21 @@ u8 trainer_pokemon_get_total_level(u16 trainer_idx, u8 num);
 u16 trainer_get_rematch_idx(u16 trainer_idx);
 
 // Ow script that does encounter music, intro speech and starts the battle.
-extern u8 ow_script_trainerbatte_challange[];
+extern const u8 ow_script_trainerbatte_challange[];
 
 // For double battles
-extern u8 ow_script_trainerbattle_double[];
+extern const u8 ow_script_trainerbattle_double[];
 
 // For double battles in a rematch
-extern u8 ow_script_trainerbattle_rematch_double[];
+extern const u8 ow_script_trainerbattle_rematch_double[];
 
 // Ow script that does the rematch battle
-extern u8 ow_script_trainerbattle_rematch[];
+extern const u8 ow_script_trainerbattle_rematch[];
 
 // Challange script that executes the continuation afterwards
-extern u8 ow_script_trainerbattle_with_continuation[];
+extern const u8 ow_script_trainerbattle_with_continuation[];
 
 // Challange script for double battles, that omits checking if the player has two viable pokemon (for ally battles)
-extern u8 ow_script_trainerbattle_double_dont_check_enough_pokemon[];
+extern const u8 ow_script_trainerbattle_double_dont_check_enough_pokemon[];
 
 #endif /* INCLUDE_C_TRAINER_VIRTUAL_H_ */

@@ -11,7 +11,7 @@
 #include "vars.h"
 #include "list_menu.h"
 
-access_card_element access_card_elements [ACCESS_CARD_ELEMENT_CNT] = {
+static const access_card_element access_card_elements [ACCESS_CARD_ELEMENT_CNT] = {
     {0, 9, 13, 0, 8}, //Cybernetik
     {ORINA_CITY_VIOLET_GRUNTS, 9, 15, 0, 3}, //Fossil
 	{SECRET_POWER_LAB_ACCESS, 9, 19, 0, 2}, // Geheimpower

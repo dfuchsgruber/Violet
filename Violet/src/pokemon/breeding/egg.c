@@ -17,7 +17,7 @@
 #include "debug.h"
 #include "constants/languages.h"
 
-u8 str_egg[] = LANGDEP(PSTRING("Ei"), PSTRING("Egg"));
+const u8 str_egg[] = LANGDEP(PSTRING("Ei"), PSTRING("Egg"));
 
 void overworld_egg_new(u16 species, int catch_location, pokemon *dst) {
   pokemon_new_egg(dst, species, true);
@@ -55,10 +55,10 @@ int special_overworld_script_give_egg() {
 
 int special_overworld_script_give_egg_into_incubator_slots() {
   for (int i = 0; i < incubator_available_slots(); i++) {
-    if (box_pokemon_get_attribute(&cmem.incubator_slots[i], ATTRIBUTE_SPECIES, 0) == 0) {
+    if (box_pokemon_get_attribute(&csave.incubator_slots[i], ATTRIBUTE_SPECIES, 0) == 0) {
       pokemon *tmp = malloc(sizeof(pokemon));
       overworld_egg_new(*var_access(0x8000), CATCH_LOCATION_SPECIAL_EGG, tmp);
-      memcpy(&cmem.incubator_slots[i], tmp, sizeof(box_pokemon));
+      memcpy(&csave.incubator_slots[i], tmp, sizeof(box_pokemon));
       free(tmp);
       return i;
     }

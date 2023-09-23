@@ -11,7 +11,7 @@ bool move_tutor_is_compatible(u16 species, u8 move_tutor){
     return false;
 }
 
-u16 move_tutor_attacks[32] = {
+const u16 move_tutor_attacks[32] = {
     [MOVE_TUTOR_FOKUSSTOSS] = ATTACK_FOKUSSTOSS,
     [MOVE_TUTOR_GIFTHIEB] = ATTACK_GIFTHIEB,
     [MOVE_TUTOR_FINSTERAURA] = ATTACK_FINSTERAURA,

@@ -9,14 +9,14 @@
 #include "item/pokeball.h"
 #include "color.h"
 
-extern u8 str_pokeball_unusable_because_no_space[];
+extern const u8 str_pokeball_unusable_because_no_space[];
 
-u8 str_pokeball_unusable_cant_aim_at_two[] = LANGDEP(
+static const u8 str_pokeball_unusable_cant_aim_at_two[] = LANGDEP(
     PSTRING("Du kannst nicht auf zwei Pokémon\ngleichzeitig zielen!PAUSE_UNTIL_PRESS"),
     PSTRING("You can't aim at two Pokémon at\nthe same time!PAUSE_UNTIL_PRESS")
 );
 
-u8 str_pokeball_unusable_because_of_other_action[] = LANGDEP(
+static const u8 str_pokeball_unusable_because_of_other_action[] = LANGDEP(
     PSTRING("Du kannst keinen Ball werfen, wenn du\nbereits eine andere Aktion ausführst.PAUSE_UNTIL_PRESS"),
     PSTRING("You can't throw a ball while\nperforming another action.PAUSE_UNTIL_PRESS")
 );
@@ -67,7 +67,7 @@ u8 item_idx_to_pokeball_idx(u16 item_idx) {
     }
 }
 
-graphic pokeball_gfxs[NUM_POKEBALLS] = {
+const graphic pokeball_gfxs[NUM_POKEBALLS] = {
     [BALL_POKE] = {.sprite = gfx_pokeball_pokeTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_POKE},
     [BALL_GREAT] = {.sprite = gfx_pokeball_greatTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_GREAT},
     [BALL_SAFARI] = {.sprite = gfx_pokeball_safariTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_SAFARI},
@@ -85,7 +85,7 @@ graphic pokeball_gfxs[NUM_POKEBALLS] = {
     [BALL_DUSK] = {.sprite = gfx_pokeball_duskTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_DUSK},
 };
 
-palette pokeball_palettes[NUM_POKEBALLS] = {
+const palette pokeball_palettes[NUM_POKEBALLS] = {
     [BALL_POKE] = {.pal = gfx_pokeball_pokePal, .tag = OAM_TAG_POKEBALL_BASE + BALL_POKE},
     [BALL_GREAT] = {.pal = gfx_pokeball_greatPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_GREAT},
     [BALL_SAFARI] = {.pal = gfx_pokeball_safariPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_SAFARI},
@@ -103,7 +103,7 @@ palette pokeball_palettes[NUM_POKEBALLS] = {
     [BALL_DUSK] = {.pal = gfx_pokeball_duskPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_DUSK},
 };
 
-oam_template pokeball_oam_templates[NUM_POKEBALLS] = {
+const oam_template pokeball_oam_templates[NUM_POKEBALLS] = {
     [BALL_POKE] = POKEBALL_TEMPLATE_STANDARD(BALL_POKE),
     [BALL_GREAT] = POKEBALL_TEMPLATE_STANDARD(BALL_GREAT),
     [BALL_SAFARI] = POKEBALL_TEMPLATE_STANDARD(BALL_SAFARI),
@@ -121,9 +121,9 @@ oam_template pokeball_oam_templates[NUM_POKEBALLS] = {
     [BALL_DUSK] = POKEBALL_TEMPLATE_STANDARD(BALL_DUSK),
 };
 
-static sprite pokeball_partices_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_8_8, .attr2 = ATTR2_PRIO(2),};
+static const sprite pokeball_partices_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_8_8, .attr2 = ATTR2_PRIO(2),};
 
-graphic pokeball_particle_gfxs[NUM_POKEBALLS] = {
+const graphic pokeball_particle_gfxs[NUM_POKEBALLS] = {
     [BALL_POKE] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_POKE},
     [BALL_GREAT] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_GREAT},
     [BALL_SAFARI] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_SAFARI},
@@ -141,7 +141,7 @@ graphic pokeball_particle_gfxs[NUM_POKEBALLS] = {
     [BALL_DUSK] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_DUSK},
 };
 
-palette pokeball_particle_palettes[NUM_POKEBALLS] = {
+const palette pokeball_particle_palettes[NUM_POKEBALLS] = {
     [BALL_POKE] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_POKE},
     [BALL_GREAT] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_GREAT},
     [BALL_SAFARI] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_SAFARI},
@@ -159,7 +159,7 @@ palette pokeball_particle_palettes[NUM_POKEBALLS] = {
     [BALL_DUSK] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_DUSK},
 };
 
-u8 pokeball_particle_animation_idxs[NUM_POKEBALLS] = {
+const u8 pokeball_particle_animation_idxs[NUM_POKEBALLS] = {
     [BALL_POKE]    = 0,
     [BALL_GREAT]   = 0,
     [BALL_SAFARI]  = 0,
@@ -177,7 +177,7 @@ u8 pokeball_particle_animation_idxs[NUM_POKEBALLS] = {
     [BALL_DUSK] = BALL_PARTICLE_SMALL_GREEN_CROSSES,
 };
 
-void (*pokeball_particles_initializers[NUM_POKEBALLS])(u8) = {
+void (*const pokeball_particles_initializers[NUM_POKEBALLS])(u8) = {
     [BALL_POKE] = pokeball_particles_initialize_poke_ball,
     [BALL_GREAT] = pokeball_particles_initialize_great_ball,
     [BALL_SAFARI] = pokeball_particles_initialize_safari_ball,
@@ -195,7 +195,7 @@ void (*pokeball_particles_initializers[NUM_POKEBALLS])(u8) = {
     [BALL_DUSK] = pokeball_particles_initialize_nest_ball,
 };
 
-oam_template pokeball_particles_oam_templates[NUM_POKEBALLS] = {
+const oam_template pokeball_particles_oam_templates[NUM_POKEBALLS] = {
     [BALL_POKE] = POKEBALL_PARTICLE_TEMPLATE_STANDARD(BALL_POKE),
     [BALL_GREAT] = POKEBALL_PARTICLE_TEMPLATE_STANDARD(BALL_GREAT),
     [BALL_SAFARI] = POKEBALL_PARTICLE_TEMPLATE_STANDARD(BALL_SAFARI),
@@ -214,7 +214,7 @@ oam_template pokeball_particles_oam_templates[NUM_POKEBALLS] = {
 };
 
 // Battlers are faded to this palette when sent out in this ball
-color_t pokeball_open_fade_colors[] = {
+const color_t pokeball_open_fade_colors[] = {
     [BALL_POKE]    =  {.rgb = {.red = 31, .green = 22, .blue = 30}},
     [BALL_GREAT]    =  {.rgb = {.red = 16, .green = 23, .blue = 30}},
     [BALL_SAFARI]    =  {.rgb = {.red = 23, .green = 30, .blue = 20}},

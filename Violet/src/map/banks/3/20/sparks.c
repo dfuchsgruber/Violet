@@ -17,28 +17,28 @@ extern u8 gfx_overworld_effect_sparksTiles[];
 extern u8 gfx_overworld_effect_sparks_verticalTiles[];
 extern u8 gfx_overworld_effect_sparksPal[];
 
-static palette sparks_palette = {
+static const palette sparks_palette = {
     .pal = gfx_overworld_effect_sparksPal, .tag = OAM_TAG_SPARKS,
 };
 
-static graphic sparks_graphics[] = {
+static const graphic sparks_graphics[] = {
     [0] = {.sprite = gfx_overworld_effect_sparksTiles + 0 * GRAPHIC_SIZE_4BPP(8, 32), .size = GRAPHIC_SIZE_4BPP(8, 32), .tag = 0xFFFF},
     [1] = {.sprite = gfx_overworld_effect_sparksTiles + 1 * GRAPHIC_SIZE_4BPP(8, 32), .size = GRAPHIC_SIZE_4BPP(8, 32), .tag = 0xFFFF},
 };
 
-static graphic sparks_graphics_vertical[] = {
+static const graphic sparks_graphics_vertical[] = {
     [0] = {.sprite = gfx_overworld_effect_sparks_verticalTiles + 0 * GRAPHIC_SIZE_4BPP(8, 32), .size = GRAPHIC_SIZE_4BPP(8, 32), .tag = 0xFFFF},
     [1] = {.sprite = gfx_overworld_effect_sparks_verticalTiles + 1 * GRAPHIC_SIZE_4BPP(8, 32), .size = GRAPHIC_SIZE_4BPP(8, 32), .tag = 0xFFFF},
 };
 
-static gfx_frame sparks_gfx_animation[] = {
+static const gfx_frame sparks_gfx_animation[] = {
     {.data = 0, .duration = 0}, {.data = 0, .duration = 8}, {.data = 1, .duration = 8}, {.data = GFX_ANIM_JUMP, .duration = 1},
 };
 
-static gfx_frame *sparks_gfx_animations[] = {sparks_gfx_animation};
+static const gfx_frame *const sparks_gfx_animations[] = {sparks_gfx_animation};
 
-static sprite sparks_sprite = {.attr0 = ATTR0_SHAPE_HORIZONTAL, .attr1 = ATTR1_SIZE_32_8, .attr2 = ATTR2_PRIO(1)};
-static sprite sparks_sprite_vertical = {.attr0 = ATTR0_SHAPE_VERTICAL, .attr1 = ATTR1_SIZE_8_32, .attr2 = ATTR2_PRIO(1)};
+static const sprite sparks_sprite = {.attr0 = ATTR0_SHAPE_HORIZONTAL, .attr1 = ATTR1_SIZE_32_8, .attr2 = ATTR2_PRIO(1)};
+static const sprite sparks_sprite_vertical = {.attr0 = ATTR0_SHAPE_VERTICAL, .attr1 = ATTR1_SIZE_8_32, .attr2 = ATTR2_PRIO(1)};
 
 static void oam_callback_sparks(oam_object *self) {
     if (save1->bank != POWER_PLANT_BANK || save1->map != POWER_PLANT_MAP_IDX) {
@@ -64,7 +64,7 @@ static void oam_callback_sparks(oam_object *self) {
     }
 }
 
-static oam_template sparks_templates[2] =  {
+static const oam_template sparks_templates[2] =  {
     {
         .tiles_tag = 0xFFFF, .pal_tag = OAM_TAG_SPARKS,
         .graphics = sparks_graphics,
@@ -78,7 +78,7 @@ static oam_template sparks_templates[2] =  {
     },
 };
 
-static coordinate_t sparks_positions[] = {
+static const coordinate_t sparks_positions[] = {
     {.x = 0xe, .y = 0x17}, {.x = 0xe, .y = 0x14}, {.x = 0xc, .y = 0x15},
     {.x = 0x11, .y = 0x15}, {.x = 0xb, .y = 0xa}, {.x = 0xc, .y = 0xa},
     {.x = 0xb, .y = 0xb}, {.x = 0xc, .y = 0xb}, {.x = 0x14, .y = 0xc},

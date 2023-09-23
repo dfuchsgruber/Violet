@@ -26,18 +26,18 @@ enum {
     TAG_ROCK_CLIMB,
     TAG_ROCK_CLIMB_SKY_ISLANG,
     TAG_PLAYER_PALETTE_VANILLA,
-} any_grass_tags;
+};
 
 typedef struct{
     u8 triggered_by_behavior;
-    oam_template *template;
-    palette *palette;
+    const oam_template *template;
+    const palette *palette;
     void (*initialize)(bool reinitialize);
-    u8 *(*on_player_step)();
+    const u8 *(*on_player_step)();
 } any_grass;
 
 typedef struct {
-    any_grass *any_grasses;
+    const any_grass *any_grasses;
     size_t number_any_grasses;
 } any_grass_header_t;
 
@@ -107,12 +107,12 @@ void overworld_effect_remove_from_active_list(u8 effect_idx);
  * @param behaviour the behaviour to step on
  * @return the grass effect or NULL if none is associated
  **/
-any_grass *any_grass_get_on_current_map_by_behaviour(u8 behaviour);
+const any_grass *any_grass_get_on_current_map_by_behaviour(u8 behaviour);
 
 void rock_climb_step(bool reinitialize);
 void any_grass_step(bool reinitialize);
-u8 *ash_grass_player_step();
-u8 *any_grass_player_step_null();
+const u8 *ash_grass_player_step();
+const u8 *any_grass_player_step_null();
 
 /**
  * Callback for an oam spawned by the overworld effect of grass.
@@ -258,6 +258,6 @@ extern const u8 overworld_effect_script_rainbow_sparkles[];
 extern const u8 overworld_effect_script_feathers[];
 extern const u8 overworld_effect_script_snow_tracks[];
 
-extern gfx_frame *overworld_effect_sand_tracks_animations[];
+extern const gfx_frame *const overworld_effect_sand_tracks_animations[];
 
 #endif

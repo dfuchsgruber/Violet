@@ -47,7 +47,7 @@ enum {
  * @param cb_idx the callback where to store the results
  * @return if any item could be found
  **/
-bool hidden_item_is_within_player_range(map_event_header_t *event_header, u8 cb_idx);
+bool hidden_item_is_within_player_range(const map_event_header_t *event_header, u8 cb_idx);
 
 enum {
     ITEM_FINDER_ON_ITEM = 0,
@@ -77,6 +77,6 @@ extern const color_t gfx_item_finder_arrow_staticPal[16];
 #define ITEM_FINDER_TAG 2000
 #define ITEM_FINDER_STATIC_TAG 2222
 
-palette palette_item_finder_arrow;
+extern const palette palette_item_finder_arrow;
 
 #endif

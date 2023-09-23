@@ -1,10 +1,10 @@
 #include "types.h"
 #include "map/tileset.h"
 
-extern u16 gfx_tileset_251828_anim_0Tiles[];
-extern u16 gfx_tileset_251828_anim_1Tiles[];
+extern const u16 gfx_tileset_251828_anim_0Tiles[];
+extern const u16 gfx_tileset_251828_anim_1Tiles[];
 
-tileset_animation tileset_251828_animations[] = {
+static const tileset_animation tileset_251828_animations[] = {
     {
         4, 16, 656, 4, gfx_tileset_251828_anim_0Tiles
     },
@@ -13,7 +13,7 @@ tileset_animation tileset_251828_animations[] = {
     }
 };
 
-tileset_animation_header tileset_251828_animations_head = {
+static const tileset_animation_header tileset_251828_animations_head = {
     2, tileset_251828_animations
 };
 

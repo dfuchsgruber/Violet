@@ -26,7 +26,7 @@ void hashmap_free(hashmap *map) {
     free(map);
 }
 
-int hashmap_hash(u32 key, hashmap *map) {
+int hashmap_hash(u32 key, const hashmap *map) {
     int hash = 0;
     int i;
     for (i = 0; i < 4; i++) {
@@ -38,7 +38,7 @@ int hashmap_hash(u32 key, hashmap *map) {
     return hash %  map->map_size;
 }
 
-bool hashmap_contains(u32 key, hashmap *map) {
+bool hashmap_contains(u32 key, const hashmap *map) {
     int bucket = hashmap_hash(key, map);
     if (map->buckets[bucket]) {
         int i;
@@ -50,7 +50,7 @@ bool hashmap_contains(u32 key, hashmap *map) {
     return false;
 }
 
-int hashmap_get(u32 key, hashmap *map) {
+int hashmap_get(u32 key, const hashmap *map) {
     int bucket = hashmap_hash(key, map);
     if (map->buckets[bucket]) {
         int i;

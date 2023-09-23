@@ -3,7 +3,7 @@
 
 extern const int gfx_ow_surfTiles[];
 
-graphic ow_hiro_surf_graphics[] = {
+const graphic ow_hiro_surf_graphics[] = {
     {&gfx_ow_surfTiles[0x0], 0x200, 0},
     {&gfx_ow_surfTiles[0x80], 0x200, 0},
     {&gfx_ow_surfTiles[0x100], 0x200, 0},
@@ -14,7 +14,7 @@ graphic ow_hiro_surf_graphics[] = {
 
 extern const int gfx_ow_arrowTiles[];
 
-graphic ow_hiro_arrow_graphics[] = {
+const graphic ow_hiro_arrow_graphics[] = {
     {&gfx_ow_arrowTiles[0],0x80, 0},
     {&gfx_ow_arrowTiles[0x20],0x80, 0},
     {&gfx_ow_arrowTiles[0x40],0x80, 0},
@@ -27,7 +27,7 @@ graphic ow_hiro_arrow_graphics[] = {
 
 extern const int gfx_ow_emojiTiles[];
 
-graphic ow_hiro_emoji_graphics[] = {
+const graphic ow_hiro_emoji_graphics[] = {
     {&gfx_ow_emojiTiles[0x0], 0x80, 0},
     {&gfx_ow_emojiTiles[0x20], 0x80, 0},
     {&gfx_ow_emojiTiles[0x40], 0x80, 0},
@@ -47,7 +47,7 @@ graphic ow_hiro_emoji_graphics[] = {
 
 extern int gfx_ow_flyTiles[];
 
-graphic ow_hiro_fly_graphics[] = {
+const graphic ow_hiro_fly_graphics[] = {
     {&gfx_ow_flyTiles[0x0], 0x800, 0},
     {&gfx_ow_flyTiles[0x200], 0x800, 0},
     {&gfx_ow_flyTiles[0x400], 0x800, 0},

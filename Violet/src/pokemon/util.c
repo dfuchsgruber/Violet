@@ -23,7 +23,7 @@ void pokemon_team_knows_hm(){
     
 }
 
-bool pokemon_knows_hm(box_pokemon *p){
+bool pokemon_knows_hm(const box_pokemon *p){
     int i;
     for(i = 0; i < 4; i++){
         if(attack_is_hidden_machine((u16)box_pokemon_get_attribute(p, (u8)(ATTRIBUTE_ATTACK1+i), NULL)))

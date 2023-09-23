@@ -29,8 +29,8 @@ extern u16 battler_last_move[4];
 
 #define BATTLE_ANIMATION_OAM_BASE 10000
 
-extern graphic battle_animation_graphics[];
-extern palette battle_animation_palettes[];
+extern const graphic battle_animation_graphics[];
+extern const palette battle_animation_palettes[];
 
 /**
  * Probably associates a battler with an attack, and finds the target(s)...
@@ -51,12 +51,12 @@ void damage_apply_multiplier(int multiplier);
  */
 s8 battle_attack_priority_get(u16 attack, u8 battler_idx);
 
-extern u8 *attack_anim_script;
+extern const u8 *attack_anim_script;
 
-extern u8 *attack_anims[];
+extern const u8 *attack_anims[];
 
 // Battlescript for attack failed, reduces pp
-extern u8 bsc_attack_failed_pp_reduce[];
+extern const u8 bsc_attack_failed_pp_reduce[];
 
 /**
  * Clears the special-animation flag in the sprite data after the battle animation has finished.
@@ -103,7 +103,7 @@ extern u8 battle_animation_active;
  * Loads the palette for an oam for a battle animation.
  * @param p the palette to load
  **/
-void battle_animation_load_oam_palette(palette *p);
+void battle_animation_load_oam_palette(const palette *p);
 
 /**
  * Registers the tag of a gfx (oam) for battle animations.
@@ -111,7 +111,7 @@ void battle_animation_load_oam_palette(palette *p);
  **/
 void battle_animation_register_gfx_tag(u16 tag);
 
-void (*battle_animation_handler)();
+extern void (*battle_animation_handler)();
 
 /**
  * Battle animation handler that delays the animation script until the delay has finished.

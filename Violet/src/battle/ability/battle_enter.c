@@ -9,11 +9,11 @@
 #include "debug.h"
 #include "abilities.h"
 
-extern u8 bsc_eschat[];
-extern u8 bsc_hack[];
-extern u8 bsc_harvest[];
-extern u8 bsc_hagelalarm[];
-extern u8 bsc_tollwut[];
+extern const u8 bsc_eschat[];
+extern const u8 bsc_hack[];
+extern const u8 bsc_harvest[];
+extern const u8 bsc_hagelalarm[];
+extern const u8 bsc_tollwut[];
 
 bool abilities_battle_enter(u8 ability, u8 index) {
     DEBUG("Battle enter for ability %d, index %d\n", ability, index);
@@ -51,7 +51,7 @@ bool abilities_battle_enter(u8 ability, u8 index) {
         battler_statuses3[index] |= STATUS3_INTIMIDATE_POKES;
         battler_damage_taken[index].intimdated_foe = 1;
     } else if (ability == GLUECKSPILZ) {
-        BATTLE_STATE2->item_dropping_chance_increased_by_ability = true;
+        battle_state2->item_dropping_chance_increased_by_ability = true;
         return false;
     }
     return false;

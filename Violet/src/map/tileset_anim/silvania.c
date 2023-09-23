@@ -14,11 +14,11 @@
 extern const u8 gfx_silvania_forest_hydro_pumpsTiles[];
 extern const u8 gfx_silvania_forest_hydro_pumpsPal[];
 
-static graphic hydro_pump_graphic = {
+static const graphic hydro_pump_graphic = {
   .sprite = gfx_silvania_forest_hydro_pumpsTiles, .tag = SILVANIA_FOREST_HYDRO_PUMP_TAG, .size = 3 * GRAPHIC_SIZE_4BPP(16, 32),
 };
 
-static gfx_frame hydro_pump_animation[] = {
+static const gfx_frame hydro_pump_animation[] = {
   {.data = 0, .duration = 0},
   {.data = 0, .duration = 12},
   {.data = 8, .duration = 12},
@@ -26,20 +26,20 @@ static gfx_frame hydro_pump_animation[] = {
   {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
-static gfx_frame *hydro_pump_animations[] = {hydro_pump_animation};
+static const gfx_frame *const hydro_pump_animations[] = {hydro_pump_animation};
 
-static s16 hydro_pump_locations[][2] = {
+static const s16 hydro_pump_locations[][2] = {
   {0x2d + 7, 0x12 + 7},
   {0x31 + 7, 0x13 + 7},
 };
 
-static u16 hydro_pump_flags[] = {
+static const u16 hydro_pump_flags[] = {
   FLAG_SILVANIA_FOREST_HYDRO_PUMP_0,
   FLAG_SILVANIA_FOREST_HYDRO_PUMP_1,
 };
 
 
-static sprite hydro_pump_final_oam = {
+static const sprite hydro_pump_final_oam = {
     .attr0 = ATTR0_SHAPE_VERTICAL,
     .attr1 = ATTR1_SIZE_16_32,
     .attr2 = ATTR2_PRIO(2),
@@ -64,7 +64,7 @@ static void hydro_pump_oam_callback(oam_object *self) {
   }
 }
 
-static oam_template hydro_pump_template = {
+static const oam_template hydro_pump_template = {
     .tiles_tag = SILVANIA_FOREST_HYDRO_PUMP_TAG, .pal_tag = SILVANIA_FOREST_HYDRO_PUMP_TAG,
     .oam = &hydro_pump_final_oam,
     .animation = hydro_pump_animations,
@@ -87,10 +87,10 @@ static void hydro_pumps_initialize() {
 }
 
 
-extern u8 gfx_maptileset_silvania_animation_sparklesTiles[];
-extern u8 gfx_maptileset_silvania_animation_fireTiles[];
+extern const u8 gfx_maptileset_silvania_animation_sparklesTiles[];
+extern const u8 gfx_maptileset_silvania_animation_fireTiles[];
 
-tileset_animation tileset_silvania_animations[] = {
+static const tileset_animation tileset_silvania_animations[] = {
     {
 		.cycle = 6, .speed = 8, .start_tile = 0x282, .num_tiles = 4 * 3,
 		.gfx = gfx_maptileset_silvania_animation_sparklesTiles
@@ -101,7 +101,7 @@ tileset_animation tileset_silvania_animations[] = {
     },
 };
 
-tileset_animation_header tileset_silvania_animations_head = {
+static const tileset_animation_header tileset_silvania_animations_head = {
     ARRAY_COUNT(tileset_silvania_animations), tileset_silvania_animations
 };
 

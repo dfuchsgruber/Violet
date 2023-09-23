@@ -21,7 +21,7 @@ void battle_map_reload_and_play_map_music();
  **/
 void whiteout_callback1();
 
-extern tboxdata tboxdata_whiteout_text;
+extern const tboxdata tboxdata_whiteout_text;
 
 /**
  * Callback that prints the "ran to center..." text.
@@ -49,6 +49,6 @@ void whiteout_set_target_person(int idx_plus_one);
  * @param y y offset
  * @return if the text has finished
  **/
-bool whiteout_print_string(u8 self, u8 *str, u8 x, u8 y);
+bool whiteout_print_string(u8 self, const u8 *str, u8 x, u8 y);
 
 #endif /* INCLUDE_C_BATTLE_WHITEOUT_H_ */

@@ -103,7 +103,7 @@ void whiteout_setup_warp(warp_save_t *target) {
 
 static int healingplace_get_current() {
 	for (int i = 1; i <= NUM_HEALING_PLACES; i++) {
-		stru_flight_position *position = flightposition_by_id(i);
+		const stru_flight_position *position = flightposition_by_id(i);
 		if (save1->healingplace.bank == position->bank && save1->healingplace.map == position->map &&
 			save1->healingplace.x == position->x && save1->healingplace.y == position->y) {
 				DEBUG("Current healingplace is %d\n", i);
@@ -113,17 +113,17 @@ static int healingplace_get_current() {
 	return -1;
 }
 
-extern u8 str_whiteout[];
-extern u8 str_whiteout_mother[];
-extern u8 str_whiteout_bbship[];
-extern u8 str_whiteout_tann[];
-extern u8 str_whiteout_desert[];
+extern const u8 str_whiteout[];
+extern const u8 str_whiteout_mother[];
+extern const u8 str_whiteout_bbship[];
+extern const u8 str_whiteout_tann[];
+extern const u8 str_whiteout_desert[];
 
-extern u8 ow_script_whiteout_bbship[];
-extern u8 ow_script_whiteout_joy[];
-extern u8 ow_script_whiteout_mother[];
-extern u8 ow_script_whiteout_tann[];
-extern u8 ow_script_whiteout_desert[];
+extern const u8 ow_script_whiteout_bbship[];
+extern const u8 ow_script_whiteout_joy[];
+extern const u8 ow_script_whiteout_mother[];
+extern const u8 ow_script_whiteout_tann[];
+extern const u8 ow_script_whiteout_desert[];
 
 void whiteout_callback_print_text(u8 self) {
 	u16 *state = big_callbacks[self].params + 0;
@@ -140,7 +140,7 @@ void whiteout_callback_print_text(u8 self) {
 			break;
 		}
 		case 1: {
-			u8 *str;
+			const u8 *str;
 			u8 direction = DIR_UP;
 			switch(healingplace_get_current()) {
 				case HEALINGPLACE_AMONIA: str = str_whiteout_mother; break;
@@ -166,7 +166,7 @@ void whiteout_callback_print_text(u8 self) {
 		case 3: {
 			if (overworld_fading_effect_finished()) {
 				big_callback_delete(self);
-				u8 *script;
+				const u8 *script;
 				switch(healingplace_get_current()) {
 					case HEALINGPLACE_AMONIA: script = ow_script_whiteout_mother; break;
 					case HEALINGPLACE_BBSHIP: script = ow_script_whiteout_bbship; break;

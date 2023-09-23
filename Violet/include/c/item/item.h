@@ -20,7 +20,7 @@ typedef struct {
     u16 price;
     u8 holding_effect_id;
     u8 holding_effect_param;
-    u8 *description;
+    const u8 *description;
     u8 importance;
     u8 exit_bag_on_use;
     u8 pocket;
@@ -31,7 +31,19 @@ typedef struct {
     u8 secondary_idx;
 } item;
 
-item items[ITEM_CNT];
+extern const item items[ITEM_CNT];
+
+typedef struct {
+    void *sprite_rectangle;
+    u32 rare_candy_exp_remaining;
+    u8 rare_candy_levels_remaining : 7;
+    u8 rare_candy_item_removed : 1;
+    u8 rare_candy_exp_leveled_up : 1;
+} item_candy_state_t;
+
+extern EWRAM item_candy_state_t item_candy_state;
+extern EWRAM u8 item_obtain_oam_id;
+extern EWRAM u8 item_obtain_tb_id;
 
 typedef struct {
 	u8 hold_effect;
@@ -40,14 +52,13 @@ typedef struct {
 
 #define ITEM_HOLD_EFFECT_TYPE_BOOSTS_SIZE 17
 
-extern item_hold_effect_type_boost_stru
-item_hold_effect_type_boosts[ITEM_HOLD_EFFECT_TYPE_BOOSTS_SIZE];
+extern const item_hold_effect_type_boost_stru item_hold_effect_type_boosts[ITEM_HOLD_EFFECT_TYPE_BOOSTS_SIZE];
 
-void (*item_callback_after_pokemon_selected)(u8, void (*)(u8));
+extern void (*item_callback_after_pokemon_selected)(u8, void (*)(u8));
 
-void (*item_use_continuation)(u8);
+extern void (*item_use_continuation)(u8);
 
-void (*evolution_continuation)();
+extern void (*evolution_continuation)();
 
 #define ITEM_HAS_TABLE_EFFECT(item) ((item) >= ITEM_TRANK && (item) <= (ITEM_ENIGMABEERE))
 
@@ -195,7 +206,7 @@ u8 item_get_pocket(u16 item);
  **/
 u8 item_get_importance(u16 item);
 
-u16 tm_hm_to_attack[58];
+extern const u16 tm_hm_to_attack[58];
 
 /**
  * Creates a new oam for an item with the standard template

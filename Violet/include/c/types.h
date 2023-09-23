@@ -10,6 +10,8 @@
  #define FALL_THROUGH ((void)0)
 #endif /* __GNUC__ >= 7 */
 
+#define EWRAM __attribute__((section("free_ewram")))
+
 #define ALIGNED(n) __attribute__((aligned(n)))
 
 #define LOW 0
@@ -125,7 +127,7 @@ static inline FIXED INT_TO_FIXED(int a) {
   return a << FIXED_SHIFT;
 }
 
-extern u32 int_bitmasks[32];
+extern const u32 int_bitmasks[32];
 
 /**
  * @brief Counts the number of zero bits that are trailing (i.e. the size of the largest zero sequence in `i` starting at the lsb)

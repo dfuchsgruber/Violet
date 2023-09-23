@@ -19,7 +19,10 @@
 #include "item/bag2.h"
 #include "language.h"
 
-berry berries[] = {
+EWRAM rtc_timestamp berry_tree_time_last_update = {0};
+EWRAM u8 berry_tree_time_last_updated_initialized = false;
+
+const berry berries[] = {
     [ITEM_IDX_TO_BERRY_IDX(ITEM_AMRENABEERE) - 1]  = {
         .name = LANGDEP(PSTRING("Amrena"), PSTRING("Cheri")),
         .firmness = 2, .size = 20,
@@ -324,10 +327,10 @@ berry berries[] = {
 };
 
 u8 berry_tree_get_berry(u8 berry_tree_idx) {
-    return cmem.berry_trees[berry_tree_idx].berry;
+    return csave.berry_trees[berry_tree_idx].berry;
 }
 
-u8 berry_tree_initial_items[NUM_BERRY_TREES] = {
+const u8 berry_tree_initial_items[NUM_BERRY_TREES] = {
     [0] = ITEM_IDX_TO_BERRY_IDX(ITEM_SAIMBEERE),
     [1] = ITEM_IDX_TO_BERRY_IDX(ITEM_SAIMBEERE),
     [2] = ITEM_IDX_TO_BERRY_IDX(ITEM_SINELBEERE),
@@ -390,11 +393,11 @@ u8 berry_tree_initial_items[NUM_BERRY_TREES] = {
 
 
 int berry_get_adjacent_berries_of_different_kind(u8 berry_tree_idx) {
-    u16 berry_idx = cmem.berry_trees[berry_tree_idx].berry;
+    u16 berry_idx = csave.berry_trees[berry_tree_idx].berry;
     int num = 0;
     for (size_t i = 0; i < berry_tree_adjacency[berry_tree_idx].count; i++) {
         u8 other = berry_tree_adjacency[berry_tree_idx].adjacent_berry_tree_idxs[i];
-        if (cmem.berry_trees[other].stage != BERRY_STAGE_NO_BERRY && cmem.berry_trees[other].berry != berry_idx)
+        if (csave.berry_trees[other].stage != BERRY_STAGE_NO_BERRY && csave.berry_trees[other].berry != berry_idx)
             num++;
     }
     DEBUG("Berry tree %d with berry %d has %d different type berry tree neighbours\n", berry_tree_idx, berry_idx, num);
@@ -402,16 +405,16 @@ int berry_get_adjacent_berries_of_different_kind(u8 berry_tree_idx) {
 }
 
 void berry_tree_calculate_yield(u8 berry_tree_idx) {
-    u8 berry_idx = cmem.berry_trees[berry_tree_idx].berry;
-    berry *b = berry_get(berry_idx);
+    u8 berry_idx = csave.berry_trees[berry_tree_idx].berry;
+    const berry *b = berry_get(berry_idx);
     if (berry_idx == ITEM_IDX_TO_BERRY_IDX(ITEM_ANTIKER_SAMEN)) {
-        cmem.berry_trees[berry_tree_idx].yield = 1; // The lotus flower always only yields one new seed
+        csave.berry_trees[berry_tree_idx].yield = 1; // The lotus flower always only yields one new seed
         // A flower is yielded with a 1/2 chance and increased by 1/4 for fertiziling and growing berries close of different type
         int odds = 2 + 
-            (cmem.berry_trees[berry_tree_idx].fertilized ? 1 : 0) + 
+            (csave.berry_trees[berry_tree_idx].fertilized ? 1 : 0) + 
             (berry_get_adjacent_berries_of_different_kind(berry_tree_idx) > 0 ? 1 : 0);
-        cmem.berry_trees[berry_tree_idx].yields_flower = (rnd16() & 3) < odds;
-        DEBUG("Odds are %d, yields %d\n", odds, cmem.berry_trees[berry_tree_idx].yields_flower);
+        csave.berry_trees[berry_tree_idx].yields_flower = (rnd16() & 3) < odds;
+        DEBUG("Odds are %d, yields %d\n", odds, csave.berry_trees[berry_tree_idx].yields_flower);
     } else {  
         int yield = (rnd16() % (b->max_yield - b->min_yield + 1)) + b->min_yield;
         // Additional yield for planting many berries
@@ -423,19 +426,19 @@ void berry_tree_calculate_yield(u8 berry_tree_idx) {
             }
         }
         DEBUG("Unfertilized yield is %d\n", yield);
-        if (cmem.berry_trees[berry_tree_idx].fertilized) {
+        if (csave.berry_trees[berry_tree_idx].fertilized) {
             yield += MAX(1, yield / 2);
             DEBUG("Fertilized yield is %d\n", yield);
         }
         yield = MIN(7, yield);
-        cmem.berry_trees[berry_tree_idx].yield = (u8)(yield & 7);
-        cmem.berry_trees[berry_tree_idx].yields_flower = false;
+        csave.berry_trees[berry_tree_idx].yield = (u8)(yield & 7);
+        csave.berry_trees[berry_tree_idx].yields_flower = false;
         // DEBUG("Initialized berry tree %d with yield %d\n", berry_tree_idx, yield);
     }
 }
 
 u16 berry_get_stage_duration(u8 berry_tree_idx) {
-    berry *b = berry_get(cmem.berry_trees[berry_tree_idx].berry);
+    const berry *b = berry_get(csave.berry_trees[berry_tree_idx].berry);
     int factor;
     switch (berry_get_adjacent_berries_of_different_kind(berry_tree_idx)) {
         case 0:
@@ -452,17 +455,17 @@ u16 berry_get_stage_duration(u8 berry_tree_idx) {
 }
 
 void berry_tree_initialize(u8 berry_tree_idx, u8 berry_idx, u8 stage) {
-    cmem.berry_trees[berry_tree_idx].berry = (u8)(berry_idx & 63);
-    cmem.berry_trees[berry_tree_idx].stage = (u8)(stage & 7);
-    berry *b = berry_get(cmem.berry_trees[berry_tree_idx].berry);
-    cmem.berry_trees[berry_tree_idx].yield = (u8)(b->min_yield & 7);
-    // cmem.berry_trees[berry_tree_idx].yield = 0; // Only when blossoming, the yield is determined
-    cmem.berry_trees[berry_tree_idx].minutes_to_next_stage = berry_get_stage_duration(berry_tree_idx);
+    csave.berry_trees[berry_tree_idx].berry = (u8)(berry_idx & 63);
+    csave.berry_trees[berry_tree_idx].stage = (u8)(stage & 7);
+    const berry *b = berry_get(csave.berry_trees[berry_tree_idx].berry);
+    csave.berry_trees[berry_tree_idx].yield = (u8)(b->min_yield & 7);
+    // csave.berry_trees[berry_tree_idx].yield = 0; // Only when blossoming, the yield is determined
+    csave.berry_trees[berry_tree_idx].minutes_to_next_stage = berry_get_stage_duration(berry_tree_idx);
 }
 
 
 void berry_trees_initialize_all() {
-    memset(cmem.berry_trees, 0, sizeof(cmem.berry_trees));
+    memset(csave.berry_trees, 0, sizeof(csave.berry_trees));
     for (size_t i = 0; i < ARRAY_COUNT(berry_tree_initial_items); i++) {
         u8 berry_idx = berry_tree_initial_items[i];
         if (berry_idx > 0)
@@ -473,15 +476,15 @@ void berry_trees_initialize_all() {
 }
 
 u16 berry_tree_get_stage() {
-    return cmem.berry_trees[*var_access(0x8000)].stage;
+    return csave.berry_trees[*var_access(0x8000)].stage;
 }
 
 u16 berry_tree_get_item() {
-    return (u16)BERRY_IDX_TO_ITEM_IDX(cmem.berry_trees[*var_access(0x8000)].berry);
+    return (u16)BERRY_IDX_TO_ITEM_IDX(csave.berry_trees[*var_access(0x8000)].berry);
 }
 
 u16 berry_tree_get_yield() {
-    return cmem.berry_trees[*var_access(0x8000)].yield;
+    return csave.berry_trees[*var_access(0x8000)].yield;
 }
 
 void berry_tree_update_gfx() {
@@ -495,7 +498,7 @@ void berry_tree_update_gfx() {
         npc_free_palette_if_unused_by_slot(pal_idx_old);
         npcs[npc_idx].flags.active = 1; // Set the npc to active again
         overworld_npc_update_palette(npcs + npc_idx, oams + oam_idx);
-        overworld_sprite *ow = overworld_get_by_npc(npcs + npc_idx);
+        const overworld_sprite *ow = overworld_get_by_npc(npcs + npc_idx);
         DEBUG("Updated overworld sprite %d with @0x%x\n", person_idx, ow);
         oams[oam_idx].gfx_table = ow->graphics;
         oam_gfx_anim_start(oams + oam_idx, 0);
@@ -503,29 +506,29 @@ void berry_tree_update_gfx() {
 }
 
 bool berry_pick() {
-    u16 item_idx = (u16)(BERRY_IDX_TO_ITEM_IDX(cmem.berry_trees[*var_access(0x8000)].berry));
-    u8 count = cmem.berry_trees[*var_access(0x8000)].yield;
+    u16 item_idx = (u16)(BERRY_IDX_TO_ITEM_IDX(csave.berry_trees[*var_access(0x8000)].berry));
+    u8 count = csave.berry_trees[*var_access(0x8000)].yield;
     DEBUG("Picked %d times %d\n", count, item_idx);
     if (!item_has_room(item_idx, count))
         return false;
     item_add(item_idx, count);
-    cmem.berry_trees[*var_access(0x8000)].picked_once = true;
-    cmem.berry_trees[*var_access(0x8000)].stage = BERRY_STAGE_NO_BERRY;
-    cmem.berry_trees[*var_access(0x8000)].fertilized = false;
+    csave.berry_trees[*var_access(0x8000)].picked_once = true;
+    csave.berry_trees[*var_access(0x8000)].stage = BERRY_STAGE_NO_BERRY;
+    csave.berry_trees[*var_access(0x8000)].fertilized = false;
     return true;
 }
 
 bool berry_is_fertilized() {
-    return cmem.berry_trees[*var_access(0x8000)].fertilized;
+    return csave.berry_trees[*var_access(0x8000)].fertilized;
 }
 
 u16 berry_yields_flower() {
-    DEBUG("Berry tree %d yields flower %d\n", *var_access(0x8000), cmem.berry_trees[*var_access(0x8000)].yields_flower);
-    return cmem.berry_trees[*var_access(0x8000)].yields_flower;
+    DEBUG("Berry tree %d yields flower %d\n", *var_access(0x8000), csave.berry_trees[*var_access(0x8000)].yields_flower);
+    return csave.berry_trees[*var_access(0x8000)].yields_flower;
 }
 
 void berry_fertilize() {
-    cmem.berry_trees[*var_access(0x8000)].fertilized = true;
+    csave.berry_trees[*var_access(0x8000)].fertilized = true;
 }
 
 void berry_plant_callback_initialize_berry_pouch(u8 self) {
@@ -542,7 +545,7 @@ void berry_plant() {
     fadescreen_all(1, 0);
 }
 
-static u32 unknown_seed_probabilities[] = {
+static const u32 unknown_seed_probabilities[] = {
     [ITEM_IDX_TO_BERRY_IDX(ITEM_AMRENABEERE)] = 7,
     [ITEM_IDX_TO_BERRY_IDX(ITEM_MARONBEERE)] = 7,
     [ITEM_IDX_TO_BERRY_IDX(ITEM_PIRSIFBEERE)] = 7,
@@ -587,11 +590,11 @@ static u32 unknown_seed_probabilities[] = {
 
 static void berry_tree_unknown_seed_randomize_berry(u8 berry_tree_idx) {
     size_t idx = choice(unknown_seed_probabilities, ARRAY_COUNT(unknown_seed_probabilities), NULL);
-    cmem.berry_trees[berry_tree_idx].berry = (u8)(idx & 63);
+    csave.berry_trees[berry_tree_idx].berry = (u8)(idx & 63);
 }
 
 bool berry_tree_grow(u8 berry_tree_idx, size_t minutes) {
-    berry_tree *tree = cmem.berry_trees + berry_tree_idx;
+    berry_tree *tree = csave.berry_trees + berry_tree_idx;
     if (tree->stage == BERRY_STAGE_NO_BERRY || tree->stage == BERRY_STAGE_BERRIES)
         return false;
     while(minutes > 0) {
@@ -620,8 +623,8 @@ bool special_berry_tree_grow() {
 
 void berry_proceed_minutes(u16 minutes) {
     DEBUG("Proceeding berries by %d minutes\n", minutes);
-    for (size_t i = 0; i < ARRAY_COUNT(cmem.berry_trees); i++) {
-        berry_tree *tree = cmem.berry_trees + i;
+    for (size_t i = 0; i < ARRAY_COUNT(csave.berry_trees); i++) {
+        berry_tree *tree = csave.berry_trees + i;
         if (tree->stage != BERRY_STAGE_NO_BERRY && tree->stage != BERRY_STAGE_BERRIES) {
             berry_tree_grow((u8)i, minutes);
         }
@@ -630,18 +633,18 @@ void berry_proceed_minutes(u16 minutes) {
 
 void berry_proceed() {
     if (!time_test()) return;
-	if (!fmem.berry_tree_time_last_updated_initialized) {
-        time_read(&fmem.berry_tree_time_last_update);
-        fmem.berry_tree_time_last_updated_initialized = 1;
+	if (!berry_tree_time_last_updated_initialized) {
+        time_read(&berry_tree_time_last_update);
+        berry_tree_time_last_updated_initialized = 1;
         DEBUG("Reference timestamp for berry tree updated initialized.\n");
 	}
     rtc_timestamp time = {0};
     time_read(&time);
-    u64 lseconds_last_update = rtc_timestamp_to_seconds(&fmem.berry_tree_time_last_update);
+    u64 lseconds_last_update = rtc_timestamp_to_seconds(&berry_tree_time_last_update);
     u64 lseconds_current = rtc_timestamp_to_seconds(&time);
     if (lseconds_current < lseconds_last_update) {
-        DEBUG("Timestamp of last update is %d.%d.%d clock time: %d:%d (%d s)\n", fmem.berry_tree_time_last_update.day, fmem.berry_tree_time_last_update.month, fmem.berry_tree_time_last_update.year,
-            fmem.berry_tree_time_last_update.hour, fmem.berry_tree_time_last_update.minute, fmem.berry_tree_time_last_update.second);
+        DEBUG("Timestamp of last update is %d.%d.%d clock time: %d:%d (%d s)\n", berry_tree_time_last_update.day, berry_tree_time_last_update.month, berry_tree_time_last_update.year,
+            berry_tree_time_last_update.hour, berry_tree_time_last_update.minute, berry_tree_time_last_update.second);
         DEBUG("Timestamp current is %d.%d.%d clock time: %d:%d (%d s)\n", time.day, time.month, time.year,
             time.hour, time.minute, time.second);
         DEBUG("Warning: The current time is before the last berry tree update, this most likely is a bug...\n");
@@ -651,15 +654,15 @@ void berry_proceed() {
     if (ldelta_minutes > 0) {
         u16 delta_minutes = (u16)ldelta_minutes;
         berry_proceed_minutes(delta_minutes);
-        time_read(&fmem.berry_tree_time_last_update);
+        time_read(&berry_tree_time_last_update);
     }
 }
 
-palette berry_tree_growth_sparkle_palette = {
+const palette berry_tree_growth_sparkle_palette = {
     .pal = gfx_berry_tree_growth_sparklePal, .tag = TAG_BERRY_GROWTH_SPARKLE
 };
 
-graphic berry_tree_growth_sparkle_graphics[] = {
+const graphic berry_tree_growth_sparkle_graphics[] = {
     [0] = {.sprite = gfx_berry_tree_growth_sparkleTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = TAG_BERRY_GROWTH_SPARKLE},
     [1] = {.sprite = gfx_berry_tree_growth_sparkleTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = TAG_BERRY_GROWTH_SPARKLE},
     [2] = {.sprite = gfx_berry_tree_growth_sparkleTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = TAG_BERRY_GROWTH_SPARKLE},
@@ -668,14 +671,14 @@ graphic berry_tree_growth_sparkle_graphics[] = {
     [5] = {.sprite = gfx_berry_tree_growth_sparkleTiles + 5 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = TAG_BERRY_GROWTH_SPARKLE},
 };
 
-gfx_frame berry_tree_growth_sparkle_gfx_animation[] = {
+const gfx_frame berry_tree_growth_sparkle_gfx_animation[] = {
     {.data = 0, .duration = 0}, {.data = 0, .duration = 8},  {.data = 1, .duration = 8}, {.data = 2, .duration = 8},
     {.data = 3, .duration = 8},  {.data = 4, .duration = 8}, {.data = 5, .duration = 8}, {.data = GFX_ANIM_END, .duration = 0},
 };
 
-gfx_frame *berry_tree_growth_sparkle_gfx_animations[] = {berry_tree_growth_sparkle_gfx_animation};
+const gfx_frame *const berry_tree_growth_sparkle_gfx_animations[] = {berry_tree_growth_sparkle_gfx_animation};
 
-oam_template berry_tree_growth_sparkle_oam_template = {
+const oam_template berry_tree_growth_sparkle_oam_template = {
     .tiles_tag = 0xFFFF, .pal_tag = TAG_BERRY_GROWTH_SPARKLE, .oam = &ow_final_oam_16_16, .animation = berry_tree_growth_sparkle_gfx_animations,
     .graphics = berry_tree_growth_sparkle_graphics, .rotscale = oam_rotscale_anim_table_null,
     .callback = overworld_effect_oam_callback_wait_for_gfx_animation,

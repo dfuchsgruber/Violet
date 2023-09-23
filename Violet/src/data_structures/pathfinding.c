@@ -105,7 +105,7 @@ u8 a_star_compute_path(u8 *path, s16 x_destination, s16 y_destination, npc *orig
     return callback_idx;
 }
 
-static u8 direction_and_speed_to_movement[][5] = {
+static const u8 direction_and_speed_to_movement[][5] = {
     [A_STAR_SPEED_SLOW] = {
         [DIR_NONE] = 0,
         [DIR_DOWN] = STEP_DOWN_VERY_SLOW,

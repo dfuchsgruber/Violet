@@ -18,20 +18,20 @@ void gp_flag_clear(u16 flag, u8 *flags) {
 u8 *flag_access_ext(u16 flag) {
     if(flag < 0xD00){
         int index = (flag - 0x900) / 8;
-        return &(cmem.flag_extension[index]);
+        return &(csave.flag_extension[index]);
     } else if (flag < FLAG_MUSHROOM_BASE + 512) { // 0xD00 - 0xF00 are mapped to mushrooms
         int idx = (flag - FLAG_MUSHROOM_BASE) / 8;
-        return cmem.mushroom_flags + idx;
+        return csave.mushroom_flags + idx;
     } else if (flag < FLAG_SHELL_BASE + 128) { // 0xF00 - 0xF80 are mapped to shells
         int idx = (flag - FLAG_SHELL_BASE) / 8;
-        return cmem.shell_flags + idx;
+        return csave.shell_flags + idx;
     } else if (flag < FLAG_TRASH_CAN_BASE + 128) { // 0xF80 - 0x1000 are mapped to trash cans
         int idx = (flag - FLAG_TRASH_CAN_BASE);
-        return cmem.trash_flags + idx;
+        return csave.trash_flags + idx;
     } else if (flag < FLAG_DUNGEON_BASE + 128) { // 0x1000 - 0x1080 are mapped to dungeons
         int idx = (flag - FLAG_DUNGEON_BASE);
         DEBUG("Get dungeon flag hard %d\n", flag - 0x1000);
-        return cmem.dungeon_flags + idx;
+        return csave.dungeon_flags + idx;
     } else {
         ERROR("Invalid flag access: 0x%x\n", flag);
         return NULL;
@@ -40,7 +40,7 @@ u8 *flag_access_ext(u16 flag) {
 
 u16 *var_access_ext(u16 var) {
     int index = var - 0x5000;
-    return &(cmem.var_extension[index]);
+    return &(csave.var_extension[index]);
 }
 
 bool checkflag(u16 flag) {

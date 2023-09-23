@@ -40,7 +40,7 @@ extern "C" {
      * @param md byte array of size SHA3_MDLEN
      * @return md
      */
-    u8 *sha3(u8 *in, u8 *md);
+    u8 *sha3(const u8 in[SHA3_INLEN], u8 md[SHA3_MDLEN]);
     
     /*
      * Present section
@@ -55,19 +55,19 @@ extern "C" {
         u8 field_5;
         u8 field_6;
         u8 field_7;
-        u8 *query_string;
+        const u8 *query_string;
     } pstring_query_string;
 
-    pstring_query_string *pstring_query_strings[6];
+    extern const pstring_query_string *const pstring_query_strings[6];
 
     #define NUM_PRESENTS 2
     
     typedef struct{
         u8 md[SHA3_MDLEN];
-        u8 *script;
+        const u8 *script;
     } present_t;
     
-    present_t presents[NUM_PRESENTS];
+    extern const present_t presents[NUM_PRESENTS];
     
 
     /**

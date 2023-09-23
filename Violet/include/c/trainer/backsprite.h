@@ -5,11 +5,11 @@
 #include "oam.h"
 #include "constants/trainer_backsprites.h"
 
-palette trainer_backsprite_palettes[TRAINER_BACKSPRITE_CNT];
-sprite_coordinates_t trainer_backsprite_coordinates[TRAINER_BACKSPRITE_CNT];
+extern const palette trainer_backsprite_palettes[TRAINER_BACKSPRITE_CNT];
+extern const sprite_coordinates_t trainer_backsprite_coordinates[TRAINER_BACKSPRITE_CNT];
 
-extern sprite trainer_backsprite_sprite;
-extern rotscale_frame *trainer_backsprite_rotscale_anim_table[];
+extern const sprite trainer_backsprite_sprite;
+extern const rotscale_frame *trainer_backsprite_rotscale_anim_table[];
 
 /**
  * Oam callback for a trainer backsprite oam.

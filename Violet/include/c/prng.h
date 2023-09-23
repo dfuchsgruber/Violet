@@ -8,11 +8,14 @@
 #ifndef PRNG_H
 #define	PRNG_H
 
+#include "types.h"
+
 #ifdef	__cplusplus
 extern "C" {
 #endif
 
     extern u32 _main_rnd;
+    extern EWRAM u32 gp_rng;
 
     void rnd_init(); //Initializes the main rng module (xorshift)
 
@@ -74,7 +77,7 @@ extern "C" {
      * @param rng a random number generator. If NULL is given, rnd16 is used
      * @return an index in [0, size-1]
     */
-    size_t choice(u32 *p, size_t p_size, u16 (*rng)());
+    size_t choice(const u32 *p, size_t p_size, u16 (*rng)());
 
     /**
      * Chooses with probabilties derived from a scoring array using a softmax function with temperature 20 / 1024
@@ -85,7 +88,7 @@ extern "C" {
      * @param rng a random number generator. If NULL is given, rnd16 is used
      * @return an index in [0, size-1]
      **/
-    size_t softmax_choice(int *logits, size_t size, int min, int max, u16 (*rng)());
+    size_t softmax_choice(const int *logits, size_t size, int min, int max, u16 (*rng)());
 
     /**
      * Shuffles an array

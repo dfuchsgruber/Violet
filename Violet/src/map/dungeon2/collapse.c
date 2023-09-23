@@ -13,9 +13,9 @@
 #include "transparency.h"
 
 
-extern u8 ow_script_dungeon_forest_collapsing[];
-extern u8 ow_script_dungeon_cave_collapsing[];
-extern u8 ow_script_dungeon_ocean_collapsing[];
+extern const u8 ow_script_dungeon_forest_collapsing[];
+extern const u8 ow_script_dungeon_cave_collapsing[];
+extern const u8 ow_script_dungeon_ocean_collapsing[];
 
 bool dungeon2_step_is_collapsing(){
     u16 *steps = var_access(DUNGEON_STEPS);
@@ -53,12 +53,12 @@ bool dungeon2_step_is_collapsing(){
 }
 
 void dungeon2_exit() {
-  dungeon_generator2 *dg2 = &(cmem.dg2);
+  dungeon_generator2 *dg2 = &(csave.dg2);
   warp_setup(dg2->previous_bank, dg2->previous_map, 0xFF, dg2->previous_position.x,
       dg2->previous_position.y);
   warp_setup_callbacks();
   warp_reset_initial_player_state();
-  fmem.dmap_header_initialized = false;
-  fmem.dmap_blocks_initialized = false;
+  dmap_flags.header_initialized = false;
+  dmap_flags.blocks_initialized = false;
   transparency_off();
 }

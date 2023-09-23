@@ -2,32 +2,52 @@
 #define HSAVE
 
 #include "types.h"
-#include "dungeon/dungeon2.h"
-#include "pokepad/state.h"
-#include "pokepad/pokedex/state.h"
-#include "pokepad/incubator.h"
-#include "map/wild_pokemon.h"
-#include "map/event.h"
 #include "map/header.h"
-#include "map/footer.h"
-#include "pokepad/wondertrade.h"
-#include "anim_engine.h"
-#include "multichoice.h"
+#include "dungeon/dungeon2.h"
 #include "rtc.h"
-#include "ev_menu.h"
 #include "pokemon/virtual.h"
 #include "pokemon/breeding.h"
 #include "map/ceometria_gym.h"
 #include "trainer/party.h"
 #include "pokemon/roamer.h"
-#include "item/item_effect.h"
-#include "trainer/virtual.h"
-#include "overworld/palette.h"
+#include "overworld/npc.h"
 #include "color.h"
-#include "oam.h"
 #include "item/bag.h"
 
-#define GP_STACK_SIZE 16
+#define NUM_SECTORS 32
+#define NUM_SECTORS_PER_SAVEFILE 14
+
+#define SECTOR_SIZE 0x1000
+#define SECTOR_SIZE_FOOTER 128
+#define SECTOR_SIZE_DATA (SECTOR_SIZE - SECTOR_SIZE_FOOTER)
+
+typedef struct {
+    u16 offset;
+    u16 size;
+} save_section_locations_t;
+
+extern const save_section_locations_t save_section_locations[NUM_SECTORS_PER_SAVEFILE];
+
+typedef struct {
+    u8 data[SECTOR_SIZE_DATA];
+    u8 unused[SECTOR_SIZE_FOOTER - 12]; // Unused portion of the footer
+    u16 id;
+    u16 checksum;
+    u32 signature;
+    u32 counter;
+} save_sector_t;
+
+extern save_sector_t gp_save_sector_buffer;
+extern save_sector_t *save_sector_buffer;
+
+/**
+ * Reads a sector from the flash
+ * @param sector_id the id of the sector to read
+ * @param buffer where to put the entire sector
+ * @return unused
+*/
+bool read_flash_sector(u8 sector_id, save_sector_t *buffer);
+
 
 typedef struct warp_save_t {
 	u8 bank, map, exit, field_3;
@@ -40,8 +60,8 @@ typedef struct  {
     u16 size;
     u8 max_yield;
     u8 min_yield;
-    u8 * description_1;
-    u8 * description_2;
+    const u8 * description_1;
+    const u8 * description_2;
     u8 stage_duration;
     u8 spicy;
     u8 dry;
@@ -224,116 +244,9 @@ typedef struct custom_memory {
 
 } custom_memory;
 
-#define DMAP_PERSONS 25
-#define DMAP_WARPS 8
-
-typedef struct {
-    u8 next;
-    u8 previous;
-} oam_group_list_element_t;
-
-typedef struct {
-    u8 oam_idx;
-    u8 subsprite_idx;
-} oams_to_sort_t;
-
-typedef struct {
-    int _hook_tmp_; // This variable is used to save r0 values while trying to hook something that uses r0-r3 already
-    u8 dmap_header_initialized : 1;
-    u8 dmap_blocks_initialized : 1;
-    u8 pathfinding_npc_movements_waiting : 1;
-    u8 siirct_locked : 1;
-    u8 battle_bg_index;
-    u8 npc_facing_movements[2];
-    pokepad_memory *pad_mem; // TODO: migrate pointers to the gp state
-    wondertrade_memory *wtrade_mem;
-    pokedex_memory *dex_mem;
-    incubator_state_stru *incubator_state;
-    ev_menu_state_stru *ev_menu_state;
-    void *gp_state;
-    void *bag2_state;
-    u8 *additional_levelscript_4;
-    u16 dmart[32]; //max 32 items per mart
-    ae_memory *ae_mem;
-    tileset *current_tileset_1;
-    tileset *current_tileset_2;
-    u8 dma0_dump[4];
-    int gp_stack_size;
-    int gp_stack[GP_STACK_SIZE];
-    u8 mugshot_oam_id;
-    u8 mugshot_tb_id;
-    u8 mugshot_active : 1;
-    u8 item_obtain_oam_id;
-    u8 item_obtain_tb_id;
-    multichoice_t dynamic_choice;
-    // u16 tile_anim_clks_0[8];
-    // u16 tile_anim_clks_1[8];
-    oam_alloc_list_element_t oam_allocation_list[OAM_ALLOC_LIST_SIZE];
-    oam_group_list_element_t oam_groups[NUM_OAMS];
-    oams_to_sort_t oams_to_sort[NUM_OAMS]; // These oams will be sorted. Subsprites are listed as entries each here.
-    u8 oam_order_sorted[NUM_OAMS]; // Indices refering to `oams_to_sort`
-    map_header_t dmapheader;
-    map_footer_t dmapfooter;
-    map_event_header_t dmapevents;
-    map_event_person dpersons[DMAP_PERSONS];
-    map_event_warp dwarps[DMAP_WARPS];
-    wild_pokemon_data dwild_pokemon;
-    wild_pokemon_habitat dwild_habitat_grass;
-    wild_pokemon_habitat dwild_habitat_water;
-    wild_pokemon_habitat dwild_habitat_radar;
-    wild_pokemon_habitat dwild_habitat_rod;
-    wild_pokemon_entry dwild_data_grass[12];
-    wild_pokemon_entry dwild_data_water[5];
-    wild_pokemon_entry dwild_data_radar[5];
-    wild_pokemon_entry dwild_data_rod[10];
-    u32 trainer_prng_state;
-    trainer_pokemon dynamic_trainer_party[3];
-    u8 dynamic_trainer_name[12];
-    u8 roamer_last_encountered;
-    u8 start_menu_clock_oam_idxs[4];
-    u8 tbox_idx_braille;
-    u8 pc_selection_context;
-    void *mega_state;
-    void *trainer_ai_state2;
-    void *battle_state2;
-    u8 trainers_cnt; // How many trainers are approaching
-    u8 current_trainer;
-    u8 trainers_npc_idxs[2];
-    u8 *trainers_scripts[2];
-    trainer_variables trainer_varsB;
-    u16 ally_trainer_idx;
-    u8 ally_trainer_backsprite_idx;
-    u8 ally_trainer_party_preview;
-    u32 battle_handicaps;
-    rtc_timestamp berry_tree_time_last_update; // When were berry trees last updated?
-    u8 berry_tree_time_last_updated_initialized : 1;
-    u32 gp_rng;
-    u32 rare_candy_exp_remaining;
-    u8 rare_candy_levels_remaining : 7;
-    u8 rare_candy_item_removed : 1;
-    u8 rare_candy_exp_leveled_up : 1;
-    color_t weather_blend;
-    u8 weather_blend_active : 1;
-    u8 weather_blend_delay;
-    u8 pokemon_move_learning_evolution_move_idx;
-    u8 blackbeard_ship_oam_idx;
-    // Persistent bag state (that can not be allocated)
-    u16 bag_cursor_position[MAX_NUM_POCKETS];
-    u16 bag_cursor_items_above[MAX_NUM_POCKETS];
-    u16 treasure_map_cursor_position;
-    u16 treasure_map_items_above;
-    void (*bag_continuation)();
-    bool (*pokemon_party_menu_choose_mon_generic_mon_is_eligible)(pokemon*);
-    u8 bag_context;
-
-} floating_memory;
-
-
-
 extern saveblock1 *save1;
 extern saveblock2 *save2;
-extern custom_memory cmem;
-extern floating_memory fmem;
+extern EWRAM custom_memory csave;
 
 extern warp_save_t warp_recent; // Recent map, bank and positions (i.e. when transitioning)
 

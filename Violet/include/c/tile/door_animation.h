@@ -15,8 +15,8 @@ typedef struct {
     u16 block;
     u8 type;
     u8 double_tiled;
-    void *gfx;
-    u8 *palette_map;
+    const u8 *gfx;
+    const u8 *palette_map;
 } door_animation;
 
 

@@ -10,17 +10,17 @@
 #include "constants/pokemon_types.h"
 #include "debug.h"
 
-static tbox_font_colormap font_colormap_pocket_name = {.background = 0, .body = 1, .edge = 2}; 
+static const tbox_font_colormap font_colormap_pocket_name = {.background = 0, .body = 1, .edge = 2}; 
 
-static u8 str_pocket_items[] = LANGDEP(PSTRING("Items"), ("Items"));
-static u8 str_pocket_key_items[] = LANGDEP(PSTRING("Basis-Items"), PSTRING("Key Items"));
-static u8 str_pocket_pokeballs[] = LANGDEP(PSTRING("Pokébälle"), PSTRING("Pokéballs"));
-static u8 str_pocket_medicine[] = LANGDEP(PSTRING("Medizin"), PSTRING("Medicine"));
-static u8 str_pocket_berries[] = LANGDEP(PSTRING("Beeren"), PSTRING("Berries"));
-static u8 str_pocket_tms[] = LANGDEP(PSTRING("Tms / Vms"), PSTRING("Tms / Hms"));
-static u8 str_pocket_bait[] = LANGDEP(PSTRING("Köder"), PSTRING("Bait"));
+static const u8 str_pocket_items[] = LANGDEP(PSTRING("Items"), ("Items"));
+static const u8 str_pocket_key_items[] = LANGDEP(PSTRING("Basis-Items"), PSTRING("Key Items"));
+static const u8 str_pocket_pokeballs[] = LANGDEP(PSTRING("Pokébälle"), PSTRING("Pokéballs"));
+static const u8 str_pocket_medicine[] = LANGDEP(PSTRING("Medizin"), PSTRING("Medicine"));
+static const u8 str_pocket_berries[] = LANGDEP(PSTRING("Beeren"), PSTRING("Berries"));
+static const u8 str_pocket_tms[] = LANGDEP(PSTRING("Tms / Vms"), PSTRING("Tms / Hms"));
+static const u8 str_pocket_bait[] = LANGDEP(PSTRING("Köder"), PSTRING("Bait"));
 
-static u8 *bag_pocket_names[] = {
+static const u8 *const bag_pocket_names[] = {
     [POCKET_ITEMS] = str_pocket_items,
     [POCKET_KEY_ITEMS] = str_pocket_key_items,
     [POCKET_POKEBALLS] = str_pocket_pokeballs,
@@ -49,7 +49,7 @@ void bag_load_pocket() {
     bag_print_hint(bag_get_context_hint());
 
     bg_virtual_sync_reqeust_push(bag_tboxes[BAG_TBOX_MOVE_INFO].bg_id);
-    u8 *name = bag_pocket_names[pocket];
+    const u8 *name = bag_pocket_names[pocket];
     u16 name_width = string_get_width(2, name, 0);
     tbox_flush_set(BAG_TBOX_POCKET_NAME, 0x00);
     tbox_print_string(BAG_TBOX_POCKET_NAME, 2, 
@@ -68,7 +68,7 @@ static void bag_oam_switch_pocket_callback(oam_object *self) {
 }
 
 static void bag_oam_switch_pocket(u8 pocket_idx) {
-    oam_object *o = oams + BAG2_STATE->oam_idx_bag; 
+    oam_object *o = oams + bag2_state->oam_idx_bag; 
     oam_gfx_anim_start(o, pocket_idx);
     o->y2 = -5;
     o->callback = bag_oam_switch_pocket_callback;
@@ -85,18 +85,18 @@ static void bag_switch_pockets_callback(u8 self) {
             tbox_flush_map(BAG_TBOX_POCKET_NAME);
             tbox_flush_map(BAG_TBOX_MOVE_INFO);
             bag_delete_scroll_indicators_items();
-            oams[BAG2_STATE->oam_idx_item].flags |= OAM_FLAG_INVISIBLE;
-            list_menu_remove(BAG2_STATE->list_menu_cb_idx, fmem.bag_cursor_position + pocket_idx - 1, fmem.bag_cursor_items_above + pocket_idx - 1);
+            oams[bag2_state->oam_idx_item].flags |= OAM_FLAG_INVISIBLE;
+            list_menu_remove(bag2_state->list_menu_cb_idx, bag_cursor_position + pocket_idx - 1, bag_cursor_items_above + pocket_idx - 1);
             bg_virtual_sync_reqeust_push(0);
             big_callbacks[self].params[10]++;
             break;
         }
         case 1: {
-            cmem.bag_pocket = big_callbacks[self].params[11];
+            csave.bag_pocket = big_callbacks[self].params[11];
             u8 pocket_idx = bag_get_current_pocket();
             bag_load_pocket();
             bag_oam_switch_pocket(pocket_idx);
-            BAG2_STATE->list_menu_cb_idx = list_menu_new(&gp_list_menu_template, fmem.bag_cursor_position[pocket_idx - 1], fmem.bag_cursor_items_above[pocket_idx - 1]);
+            bag2_state->list_menu_cb_idx = list_menu_new(&gp_list_menu_template, bag_cursor_position[pocket_idx - 1], bag_cursor_items_above[pocket_idx - 1]);
             big_callbacks[self].params[10]++;
             break;
         }

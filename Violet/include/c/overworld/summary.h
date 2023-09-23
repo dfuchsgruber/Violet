@@ -24,6 +24,6 @@ typedef struct {
 
 extern summary_state_stru *summary_state;
 
-extern tbox_font_colormap summary_egg_memo_fontcolmap;
+extern const tbox_font_colormap summary_egg_memo_fontcolmap;
 
 #endif /* INCLUDE_C_OVERWORLD_SUMMARY_H_ */

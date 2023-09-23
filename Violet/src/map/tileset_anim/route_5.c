@@ -2,13 +2,13 @@
 #include "types.h"
 #include "map/tileset.h"
 
-extern u16 gfx_tileset_route_5_anim_torchTiles[];
+extern const u16 gfx_tileset_route_5_anim_torchTiles[];
 
-tileset_animation tileset_route_5_animations[] = {
+static const tileset_animation tileset_route_5_animations[] = {
     {.cycle = 4, .speed = 16, .start_tile = 0x28b, .num_tiles = 2, .gfx = gfx_tileset_route_5_anim_torchTiles},
 };
 
-tileset_animation_header tileset_route_5_animation_head = {
+static const tileset_animation_header tileset_route_5_animation_head = {
     1, tileset_route_5_animations
 };
 

@@ -27,8 +27,8 @@ enum ceometria_gym_person_types {
 
 #define CEOMETRIA_GYM_PUNISHMENT_SCORE_MAX 64
 #define CEOMETRIA_GYM_NON_TRAINER_SCORE_MAX 64
-#define CEOMETRIA_GYM_PUNISHMENT_SCORE_ADD(x) cmem.ceometria_gym_state.punishment_score = (u8)MIN(cmem.ceometria_gym_state.punishment_score + (x), CEOMETRIA_GYM_PUNISHMENT_SCORE_MAX)
-#define CEOMETRIA_GYM_NON_TRAINER_SCORE_ADD(x) cmem.ceometria_gym_state.non_trainer_score = (u8)MIN(cmem.ceometria_gym_state.non_trainer_score + (x), CEOMETRIA_GYM_NON_TRAINER_SCORE_MAX)
+#define CEOMETRIA_GYM_PUNISHMENT_SCORE_ADD(x) csave.ceometria_gym_state.punishment_score = (u8)MIN(csave.ceometria_gym_state.punishment_score + (x), CEOMETRIA_GYM_PUNISHMENT_SCORE_MAX)
+#define CEOMETRIA_GYM_NON_TRAINER_SCORE_ADD(x) csave.ceometria_gym_state.non_trainer_score = (u8)MIN(csave.ceometria_gym_state.non_trainer_score + (x), CEOMETRIA_GYM_NON_TRAINER_SCORE_MAX)
 
 
 typedef struct {
@@ -88,49 +88,49 @@ bool ceometria_gym_room_is_negative(u8 type);
  **/
 void ceometria_gym_build_trainer_party(u8 min_level, u8 max_level);
 
-extern u8 ow_script_ceometria_gym_say_nothing_variant_0[];
-extern u8 ow_script_ceometria_gym_say_nothing_variant_1[];
-extern u8 ow_script_ceometria_gym_say_nothing_variant_2[];
-extern u8 ow_script_ceometria_gym_say_nothing_variant_3[];
-extern u8 ow_script_ceometria_gym_say_nothing_variant_4[];
-extern u8 ow_script_ceometria_gym_say_nothing_variant_5[];
-extern u8 ow_script_ceometria_gym_say_nothing_variant_6[];
-extern u8 ow_script_ceometria_gym_say_nothing_variant_7[];
-extern u8 ow_script_ceometria_gym_trainer_variant_0[];
-extern u8 ow_script_ceometria_gym_trainer_variant_1[];
-extern u8 ow_script_ceometria_gym_trainer_variant_2[];
-extern u8 ow_script_ceometria_gym_trainer_variant_3[];
-extern u8 ow_script_ceometria_gym_trainer_variant_4[];
-extern u8 ow_script_ceometria_gym_trainer_variant_5[];
-extern u8 ow_script_ceometria_gym_trainer_variant_6[];
-extern u8 ow_script_ceometria_gym_trainer_variant_7[];
-extern u8 ow_script_ceometria_gym_reveal_room_nothing[];
-extern u8 ow_script_ceometria_gym_reveal_room_trainer[];
-extern u8 ow_script_ceometria_gym_reveal_room_poison[];
-extern u8 ow_script_ceometria_gym_reveal_room_sleep[];
-extern u8 ow_script_ceometria_gym_reveal_room_paralysis[];
-extern u8 ow_script_ceometria_gym_reveal_room_burn[];
-extern u8 ow_script_ceometria_gym_reveal_room_frozen[];
-extern u8 ow_script_ceometria_gym_reveal_room_healing[];
-extern u8 ow_script_ceometria_gym_reveal_room_reduce_any[];
-extern u8 ow_script_ceometria_gym_hint_room_not_negative_variant_0[];
-extern u8 ow_script_ceometria_gym_hint_room_not_negative_variant_1[];
-extern u8 ow_script_ceometria_gym_hint_room_not_negative_variant_2[];
-extern u8 ow_script_ceometria_gym_hint_room_not_negative_variant_3[];
-extern u8 ow_script_ceometria_gym_hint_room_negative_variant_0[];
-extern u8 ow_script_ceometria_gym_hint_room_negative_variant_1[];
-extern u8 ow_script_ceometria_gym_hint_room_negative_variant_2[];
-extern u8 ow_script_ceometria_gym_hint_room_negative_variant_3[];
-extern u8 ow_script_ceometria_gym_punishment_nothing[];
-extern u8 ow_script_ceometria_gym_punishment_healing[];
-extern u8 ow_script_ceometria_gym_punishment_poison[];
-extern u8 ow_script_ceometria_gym_punishment_bad_poison[];
-extern u8 ow_script_ceometria_gym_punishment_burn[];
-extern u8 ow_script_ceometria_gym_punishment_sleep[];
-extern u8 ow_script_ceometria_gym_punishment_freeze[];
-extern u8 ow_script_ceometria_gym_punishment_paralysis[];
-extern u8 ow_script_ceometria_gym_punishment_trainer[];
-extern u8 ow_script_ceometria_gym_punishment_reduce_hp[];
-extern u8 ow_script_ceometria_gym_punishment_reduce_pp[];
+extern const u8 ow_script_ceometria_gym_say_nothing_variant_0[];
+extern const u8 ow_script_ceometria_gym_say_nothing_variant_1[];
+extern const u8 ow_script_ceometria_gym_say_nothing_variant_2[];
+extern const u8 ow_script_ceometria_gym_say_nothing_variant_3[];
+extern const u8 ow_script_ceometria_gym_say_nothing_variant_4[];
+extern const u8 ow_script_ceometria_gym_say_nothing_variant_5[];
+extern const u8 ow_script_ceometria_gym_say_nothing_variant_6[];
+extern const u8 ow_script_ceometria_gym_say_nothing_variant_7[];
+extern const u8 ow_script_ceometria_gym_trainer_variant_0[];
+extern const u8 ow_script_ceometria_gym_trainer_variant_1[];
+extern const u8 ow_script_ceometria_gym_trainer_variant_2[];
+extern const u8 ow_script_ceometria_gym_trainer_variant_3[];
+extern const u8 ow_script_ceometria_gym_trainer_variant_4[];
+extern const u8 ow_script_ceometria_gym_trainer_variant_5[];
+extern const u8 ow_script_ceometria_gym_trainer_variant_6[];
+extern const u8 ow_script_ceometria_gym_trainer_variant_7[];
+extern const u8 ow_script_ceometria_gym_reveal_room_nothing[];
+extern const u8 ow_script_ceometria_gym_reveal_room_trainer[];
+extern const u8 ow_script_ceometria_gym_reveal_room_poison[];
+extern const u8 ow_script_ceometria_gym_reveal_room_sleep[];
+extern const u8 ow_script_ceometria_gym_reveal_room_paralysis[];
+extern const u8 ow_script_ceometria_gym_reveal_room_burn[];
+extern const u8 ow_script_ceometria_gym_reveal_room_frozen[];
+extern const u8 ow_script_ceometria_gym_reveal_room_healing[];
+extern const u8 ow_script_ceometria_gym_reveal_room_reduce_any[];
+extern const u8 ow_script_ceometria_gym_hint_room_not_negative_variant_0[];
+extern const u8 ow_script_ceometria_gym_hint_room_not_negative_variant_1[];
+extern const u8 ow_script_ceometria_gym_hint_room_not_negative_variant_2[];
+extern const u8 ow_script_ceometria_gym_hint_room_not_negative_variant_3[];
+extern const u8 ow_script_ceometria_gym_hint_room_negative_variant_0[];
+extern const u8 ow_script_ceometria_gym_hint_room_negative_variant_1[];
+extern const u8 ow_script_ceometria_gym_hint_room_negative_variant_2[];
+extern const u8 ow_script_ceometria_gym_hint_room_negative_variant_3[];
+extern const u8 ow_script_ceometria_gym_punishment_nothing[];
+extern const u8 ow_script_ceometria_gym_punishment_healing[];
+extern const u8 ow_script_ceometria_gym_punishment_poison[];
+extern const u8 ow_script_ceometria_gym_punishment_bad_poison[];
+extern const u8 ow_script_ceometria_gym_punishment_burn[];
+extern const u8 ow_script_ceometria_gym_punishment_sleep[];
+extern const u8 ow_script_ceometria_gym_punishment_freeze[];
+extern const u8 ow_script_ceometria_gym_punishment_paralysis[];
+extern const u8 ow_script_ceometria_gym_punishment_trainer[];
+extern const u8 ow_script_ceometria_gym_punishment_reduce_hp[];
+extern const u8 ow_script_ceometria_gym_punishment_reduce_pp[];
 
 #endif

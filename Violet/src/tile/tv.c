@@ -9,19 +9,19 @@
 
 void load_tv_text() {
 
-    u8 **ptrbank0 = (u8**) 0x03000f14;
+    const u8 **ptrbank0 = (const u8**) 0x03000f14;
     *ptrbank0 = get_tv_text();
 
 }
 
-u8 str_tv_albus[];
-u8 str_tv_violet[];
-u8 str_tv_champion_report[];
-u8 str_tv_primus[];
-u8 str_tv_aktania[];
+const u8 str_tv_albus[];
+const u8 str_tv_violet[];
+const u8 str_tv_champion_report[];
+const u8 str_tv_primus[];
+const u8 str_tv_aktania[];
 
 
-u8 *get_tv_text() {
+const u8 *get_tv_text() {
 
     u16 story_prog = *var_access(STORY_PROGRESS);
     if (story_prog < 0xB) {
@@ -39,7 +39,7 @@ u8 *get_tv_text() {
     return str_tv_violet;
 }
 
-u8 str_tv_albus[] = LANGDEP(
+const u8 str_tv_albus[] = LANGDEP(
 		PSTRING(
 				"DOTSEs läuft eine Exklusiv-Sendung\nder Theto-Polizei:\pBürger Thetos, der "
 				"gefährliche\nAnführer der Revolutionsbewegung\lAblus wurde nahe Kaskada\l"
@@ -58,7 +58,7 @@ u8 str_tv_albus[] = LANGDEP(
 				)
 		);
 
-u8 str_tv_violet[] = LANGDEP(
+const u8 str_tv_violet[] = LANGDEP(
 		PSTRING("DOTSEs läuft eine Theto-Polizei\nSondersendung:\pOberwachtmeister Harren: Lassen\n"
 				"Sie uns über die Organsation Team\lViolet sprechen.\pDie verbrecherische "
 				"Organisation\nist in drei Fraktionen unterteilt,\lan deren Spitze jeweils "
@@ -87,7 +87,7 @@ u8 str_tv_violet[] = LANGDEP(
 				)
 		);
 
-u8 str_tv_champion_report[] = LANGDEP(
+const u8 str_tv_champion_report[] = LANGDEP(
 		PSTRING("DOTSEs läuft eine Talkshow:\pKlaus: Nun, Uli, wissen wir denn\nschon etwas über "
 				"unseren neuen\lChampion?\pNein, Klaus, ich fürchte, dass\nsich der neue Champion "
 				"äußerst\lbedeckt hält. Ich habe aber\lgehört, er solle noch sehr jung\lsein.\p"
@@ -96,7 +96,7 @@ u8 str_tv_champion_report[] = LANGDEP(
 		PSTRING("Not translated yet.")
 		);
 
-u8 str_tv_primus[] = LANGDEP(
+const u8 str_tv_primus[] = LANGDEP(
 		PSTRING("DOTSEs laufen die Nachrichten:\pSprecher: Noch immer haben wir\nkeine Neuigkeiten "
 				"vom vermissten\lProfessor Primus.\pEr gilt seit vier Tagen als\nvermisst. "
 				"Zeugenangaben zufolge\lwurde er von Schergen der\lOrganisation Team Violet "
@@ -106,7 +106,7 @@ u8 str_tv_primus[] = LANGDEP(
 		PSTRING("Not translated yet.")
 		);
 
-u8 str_tv_aktania[] = LANGDEP(
+const u8 str_tv_aktania[] = LANGDEP(
 		PSTRING("DOTSEs läuft eine History-Doku:\pErzähler: Das Verhängnis von\nBruchfels, eine "
 				"Tragödie, die den\lganzen Kontinent ergriffen hat.\pAls ein Meteorit aus dem all "
 				"vor\nder Küste des einstigen\lFerienparadises Bruchfels einschlug,\lsollte sich das "

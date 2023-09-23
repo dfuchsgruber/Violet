@@ -13,17 +13,17 @@ extern const u8 gfx_tileset_route_3_millPal[];
 #define ROUTE_3_X 0x2D + 7 
 #define ROUTE_3_Y 0x7 + 7 
 
-static graphic route_3_mill_graphic = {
+static const graphic route_3_mill_graphic = {
     .sprite = gfx_tileset_route_3_millTiles, .tag = ROUTE_3_MILL_TAG, .size = GRAPHIC_SIZE_4BPP(64, 64),
 };
 
-static rotscale_frame route_3_mill_rotscale_animation[] = {
+static const rotscale_frame route_3_mill_rotscale_animation[] = {
     {.affine = {.rotation = 1, .duration = 0xff}}, {.command = {.command = ROTSCALE_ANIM_JUMP, .parameter = 0}}, 
 };
 
-static rotscale_frame *route_3_mill_rotscale_animations[] = {route_3_mill_rotscale_animation};
+static const rotscale_frame *const route_3_mill_rotscale_animations[] = {route_3_mill_rotscale_animation};
 
-static sprite route_3_mill_final_oam = {
+static const sprite route_3_mill_final_oam = {
     .attr0 = ATTR0_DSIZE | ATTR0_ROTSCALE | ATTR0_SHAPE_SQUARE,
     .attr1 = ATTR1_SIZE_64_64,
     .attr2 = ATTR2_PRIO(1),
@@ -46,7 +46,7 @@ static void oam_callback_route_3_mill(oam_object *self) {
     }
 }
 
-static oam_template route_3_mill_oam_template = {
+static const oam_template route_3_mill_oam_template = {
     .tiles_tag = ROUTE_3_MILL_TAG, .pal_tag = ROUTE_3_MILL_TAG,
     .oam = &route_3_mill_final_oam,
     .animation = oam_gfx_anim_table_null,

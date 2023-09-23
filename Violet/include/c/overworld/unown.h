@@ -13,7 +13,8 @@ typedef struct {
     u8 oams[UNOWN_MESSAGE_MAX_LEN + 1];
 } overworld_unown_state_t;
 
-#define OVERWORLD_UNOWN_MESSAGE_STATE ((overworld_unown_state_t*)fmem.gp_state)
+extern EWRAM overworld_unown_state_t *overworld_unown_state;
+
 
 
 #endif

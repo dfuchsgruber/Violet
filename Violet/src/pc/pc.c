@@ -16,6 +16,8 @@
 #include "pokepad/wondertrade.h"
 #include "pokepad/incubator.h"
 
+EWRAM u8 pc_selection_context = 0;
+
 void pc_initialize_for_selection_big_callback(u8 self) {
     if (!fading_control.active) {
         overworld_free();
@@ -28,7 +30,7 @@ void special_initialize_pc_for_selection() {
     *var_access(0x8004) = 0x0;
     *var_access(0x8005) = 0x0;
     *var_access(0x8006) = 0x0;
-    fmem.pc_selection_context = PC_SELECTION_CONTEXT_ANY;
+    pc_selection_context = PC_SELECTION_CONTEXT_ANY;
     fadescreen_all(1, 0);
     big_callback_new(pc_initialize_for_selection_big_callback, 0);
 }
@@ -36,7 +38,7 @@ void special_initialize_pc_for_selection() {
 void pc_exit() {
     pc_last_used_mode = pc_get_mode();
     if (pc_get_mode() ==  PC_MODE_SELECT) {
-        switch (fmem.pc_selection_context) {
+        switch (pc_selection_context) {
             case PC_SELECTION_CONTEXT_CHOOSE_WONDERTRADE:
                 callback1_set(wondertrade_callback_after_selection);
                 vblank_handler_set(generic_vblank_handler);
@@ -56,7 +58,7 @@ static void pc_selection_eligible(u8 self) {
     switch (pc_state->state) {
         case 0: {
             box_pokemon *p = pokemon_get_by_box(pc_box_idx_get(), pc_slot_in_box);
-            switch (fmem.pc_selection_context) {
+            switch (pc_selection_context) {
                 case PC_SELECTION_CONTEXT_ANY:
                     pc_state->state = 2;
                     break;

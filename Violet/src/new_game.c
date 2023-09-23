@@ -34,7 +34,7 @@ static void new_game_initialize_time() {
 }
 
 void new_game_initialize_custom_data() {
-    memset(&cmem, 0, sizeof(custom_memory));
+    memset(&csave, 0, sizeof(custom_memory));
     setflag(POKERADAR_POKEMON_SPAWNED);  // set corresponds to a pokemon already spawned
     incubator_clear();
     overworld_misc_intialize();

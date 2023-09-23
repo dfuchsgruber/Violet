@@ -19,6 +19,7 @@ typedef struct{
 } mart_state_t;
 
 
+extern EWRAM u16 dynamic_mart[32];
 extern mart_state_t mart_state;
 
 /**

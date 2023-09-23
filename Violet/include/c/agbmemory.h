@@ -5,6 +5,8 @@
  *      Author: dominik
  */
 
+#include "types.h"
+
 #ifndef INCLUDE_C_AGBMEMORY_H_
 #define INCLUDE_C_AGBMEMORY_H_
 
@@ -13,7 +15,7 @@
  * @param start start of the heap memory
  * @param size size of the heap memory
  */
-void malloc_init(void *start, u32 size);
+void malloc_init(void *start, size_t size);
 
 /**
  * Allocates heap memory.
@@ -26,7 +28,7 @@ void *malloc(size_t);
  * Frees allocated heap memory.
  * @param ptr Memory that was allocated on heap
  */
-void free(void* ptr);
+void free(const void* ptr);
 
 /**
  * Allocates heap memory and fills it with zeroes.

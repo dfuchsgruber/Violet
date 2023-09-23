@@ -7,6 +7,7 @@
 #include "math.h"
 #include "io.h"
 #include "bios.h"
+#include "anim_engine.h"
 
 extern const unsigned short gfx_groudon_headTiles[];
 extern const unsigned short gfx_groudon_arm_leftTiles[];
@@ -15,51 +16,51 @@ extern const unsigned short gfx_groudon_leg_leftTiles[];
 extern const unsigned short gfx_groudon_leg_rightTiles[];
 extern const unsigned short gfx_groudon_diseraktTiles[];
 
-graphic graphic_groudon_head = {
+const graphic graphic_groudon_head = {
     gfx_groudon_headTiles,
     0x800,
     0xA0A0
 };
 
-graphic graphic_groudon_arm_left = {
+const graphic graphic_groudon_arm_left = {
     gfx_groudon_arm_leftTiles,
     0x400,
     0xA0A1
 };
 
-graphic graphic_groudon_arm_right = {
+const graphic graphic_groudon_arm_right = {
     gfx_groudon_arm_rightTiles,
     0x400,
     0xA0A2
 };
 
-graphic graphic_groudon_leg_left = {
+const graphic graphic_groudon_leg_left = {
     gfx_groudon_leg_leftTiles,
     0x400,
     0xA0A3
 };
 
-graphic graphic_groudon_leg_right = {
+const graphic graphic_groudon_leg_right = {
     gfx_groudon_leg_rightTiles,
     0x400,
     0xA0A4
 };
 
-graphic graphic_groudon_diserakt = {
+const graphic graphic_groudon_diserakt = {
     gfx_groudon_diseraktTiles,
     0x800,
     0xA0A5
 };
 
-sprite sprite_groudon_32_16_back = {
+const sprite sprite_groudon_32_16_back = {
     ATTR0_SHAPE_VERTICAL, ATTR1_SIZE_32_64, ATTR2_PRIO(2), 0
 };
 
-sprite sprite_groudon_32_16_front = { 
+const sprite sprite_groudon_32_16_front = { 
     ATTR0_SHAPE_VERTICAL, ATTR1_SIZE_32_64, ATTR2_PRIO(1), 0
 };
 
-sprite sprite_groudon_head = {
+const sprite sprite_groudon_head = {
     ATTR0_SHAPE_SQUARE, ATTR1_SIZE_64_64, ATTR2_PRIO(1), 0
 };
 
@@ -118,9 +119,9 @@ void groudon_bg_scroll_cb(u8 self){
     if(!big_callbacks[self].params[0]){
         
         
-        oam_object *head = &oams[fmem.ae_mem->vars[0]];
-        oam_object *arm_left = &oams[fmem.ae_mem->vars[1]];
-        oam_object *arm_right = &oams[fmem.ae_mem->vars[2]];
+        oam_object *head = &oams[animation_engine_state->vars[0]];
+        oam_object *arm_left = &oams[animation_engine_state->vars[1]];
+        oam_object *arm_right = &oams[animation_engine_state->vars[2]];
         big_callbacks[self].params[1] ^= 1; //switch
         if( big_callbacks[self].params[1]){
             io_set(0x16, (u16)(io_get(0x16)+1));
@@ -143,7 +144,7 @@ void groudon_bg_scroll_diserakt_cb(u8 self){
     
     if(!(big_callbacks[self].params[0] & 31)){
         io_set(0x10, (u16)(io_get(0x10)-1));
-        oam_object *d = &oams[fmem.ae_mem->vars[0]];
+        oam_object *d = &oams[animation_engine_state->vars[0]];
         d->x++;
         if(!(big_callbacks[self].params[0] & 127)){   
             io_set(0x14, (u16)(io_get(0x14)-1));
@@ -162,9 +163,9 @@ void groudon_anim_step_cb(u8 self){
         
         int i;
         for(i = 0; i < 5; i++){
-            oams[fmem.ae_mem->vars[i]].x = (s16)(oams[fmem.ae_mem->vars[i]].x-1);
+            oams[animation_engine_state->vars[i]].x = (s16)(oams[animation_engine_state->vars[i]].x-1);
             if(big_callbacks[self].params[0] & 6)
-                oams[fmem.ae_mem->vars[i]].y = (s16)(oams[fmem.ae_mem->vars[i]].y-1);
+                oams[animation_engine_state->vars[i]].y = (s16)(oams[animation_engine_state->vars[i]].y-1);
         }
         io_set(0x14, (u16)(io_get(0x14)+1));
         if(big_callbacks[self].params[0] & 6)
@@ -208,7 +209,7 @@ void groudon_anim_earthquake_cb(u8 self){
         int dy = groudon_anim_earthquake_displacement(frame + 1, period, amplitude, cushion) - 
             groudon_anim_earthquake_displacement(frame, period, amplitude, cushion);
         for(int i = 0; i < 5; i++){
-            oams[fmem.ae_mem->vars[i]].x = (s16)(dy + oams[fmem.ae_mem->vars[i]].x);
+            oams[animation_engine_state->vars[i]].x = (s16)(dy + oams[animation_engine_state->vars[i]].x);
         }
         if (frame > 0) {
             // Use the dy from last frame to match the oam timingint 
@@ -224,7 +225,7 @@ void groudon_anim_earthquake_cb(u8 self){
 void groudon_anim_diserakt_cb (u8 self){
     
     
-    if(fmem.ae_mem->vars[1]){
+    if(animation_engine_state->vars[1]){
         big_callback_delete(self);
         return;
     }
@@ -288,7 +289,7 @@ void groudon_cb_grey_fade(u8 self){
     }
 }
 
-oam_template oam_template_groudon_head = {
+const oam_template oam_template_groudon_head = {
     0xA0A0,
     0xA0A0,
     &sprite_groudon_head,
@@ -298,7 +299,7 @@ oam_template oam_template_groudon_head = {
     oam_callback_groudon_head
 };
 
-oam_template oam_template_groudon_arm_left = {
+const oam_template oam_template_groudon_arm_left = {
     0xA0A1,
     0xA0A0,
     &sprite_groudon_32_16_front,
@@ -308,7 +309,7 @@ oam_template oam_template_groudon_arm_left = {
     oam_callback_groudon_arm
 };
 
-oam_template oam_template_groudon_arm_right = {
+const oam_template oam_template_groudon_arm_right = {
     0xA0A2,
     0xA0A0,
     &sprite_groudon_32_16_back,
@@ -318,7 +319,7 @@ oam_template oam_template_groudon_arm_right = {
     oam_callback_groudon_arm
 };
 
-oam_template oam_template_groudon_leg_left = {
+const oam_template oam_template_groudon_leg_left = {
     0xA0A3,
     0xA0A0,
     &sprite_groudon_32_16_front,
@@ -328,7 +329,7 @@ oam_template oam_template_groudon_leg_left = {
     oam_null_callback
 };
 
-oam_template oam_template_groudon_leg_right = {
+const oam_template oam_template_groudon_leg_right = {
     0xA0A4,
     0xA0A0,
     &sprite_groudon_32_16_back,
@@ -338,7 +339,7 @@ oam_template oam_template_groudon_leg_right = {
     oam_null_callback
 };
 
-oam_template oam_template_groudon_diserakt = {
+const oam_template oam_template_groudon_diserakt = {
     0xA0A5,
     0xA0A1,
     &sprite_groudon_head,

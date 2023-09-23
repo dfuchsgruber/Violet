@@ -1,13 +1,13 @@
 #include "types.h"
 #include "map/tileset.h"
 
-extern u16 gfx_tileset_anim_dark_tower_fireTiles[];
+extern const u16 gfx_tileset_anim_dark_tower_fireTiles[];
 
-static tileset_animation animations[] = {
+static const tileset_animation animations[] = {
     {.cycle = 4, .speed = 16, .start_tile = 0x31C, .num_tiles = 4, .gfx = gfx_tileset_anim_dark_tower_fireTiles},
 };
 
-static tileset_animation_header animation_header = {
+static const tileset_animation_header animation_header = {
     1, animations
 };
 

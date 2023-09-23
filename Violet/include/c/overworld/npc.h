@@ -141,7 +141,7 @@ typedef struct { // State with which the player is initialized after warping
     u8 field2;
 } player_initial_state_t; 
 
-player_initial_state_t player_initial_state;
+extern player_initial_state_t player_initial_state;
 
 /**
  * Keeps track of how many blocks the player has traversed with their bike
@@ -388,7 +388,7 @@ void special_move_npc_to();
  * @param npc_id the npc_id to target
  * @return the script
  */
-u8 *npc_get_script(u8 npc_id);
+const u8 *npc_get_script(u8 npc_id);
 
 /**
  * Finds an overworld in the npc object state if present and returns the npc id
@@ -407,7 +407,7 @@ bool npc_get_id_by_overworld_id(u8 overworld_id, u8 map, u8 bank, u8 *result);
  * @param bank the map bank the overworld is present in
  * @param moves the list of movements, terminated by 254
  */
-void npc_apply_movement(u8 overworld_id, u8 map, u8 bank, u8 *moves);
+void npc_apply_movement(u8 overworld_id, u8 map, u8 bank, const u8 *moves);
 
 /**
  * Checks if a callback for applymovement is active with that npc
@@ -436,7 +436,7 @@ bool npc_apply_movement_execute_movement(npc *n, u8 move);
 u16 npc_get_strength_flag(u8 overworld_idx, u8 map_idx, u8 bank);
 
 // Person idx that is targeted by npc_apply_movement
-u8 npc_movement_target_person_idx;
+extern u8 npc_movement_target_person_idx;
 
 /**
  * Sets the player state and executes the tile animation based on a movement he takes
@@ -917,7 +917,10 @@ enum {
 void player_transition(u8 player_transition_type);
 
 // Initial facing direction per behaviour
-extern u8 behaviour_initial_facing_directions[80];
-extern u8 behaviour_has_range[80];
+extern const u8 behaviour_initial_facing_directions[80];
+extern const u8 behaviour_has_range[80];
+
+extern EWRAM u8 pathfinding_npc_movements_waiting;
+extern EWRAM u8 npc_facing_movements[2];
 
 #endif /* INCLUDE_C_OVERWORLD_NPC_H_ */

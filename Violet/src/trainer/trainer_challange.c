@@ -22,6 +22,15 @@
 #include "constants/person_script_stds.h"
 #include "prng.h"
 
+EWRAM u8 trainers_cnt = 0;
+EWRAM u8 current_trainer = 0;
+EWRAM u8 trainers_npc_idxs[2] = {0};
+EWRAM const u8 *trainers_scripts[2] = {NULL};
+EWRAM u16 ally_trainer_idx = 0;
+EWRAM u8 ally_trainer_backsprite_idx = 0;
+EWRAM u8 ally_trainer_party_preview = 0;
+EWRAM trainer_variables trainer_varsB = {0};
+
 void special_player_facing() {
     coordinate_t position;
     player_get_coordinates(&position.x, &position.y);
@@ -36,38 +45,38 @@ void special_player_facing() {
         s16 npc_y = npcs[npc_id].dest_y;
         if (ABS(position.x - npc_x) > ABS(position.y - npc_y)) {
             if (position.x < npc_x) {
-                fmem.npc_facing_movements[0] = LOOK_RIGHT;
+                npc_facing_movements[0] = LOOK_RIGHT;
             } else {
-                fmem.npc_facing_movements[0] = LOOK_LEFT;
+                npc_facing_movements[0] = LOOK_LEFT;
             } 
         } else {
             if (position.y < npc_y) {
-                fmem.npc_facing_movements[0] = LOOK_DOWN;
+                npc_facing_movements[0] = LOOK_DOWN;
             } else {
-                fmem.npc_facing_movements[0] = LOOK_UP;
+                npc_facing_movements[0] = LOOK_UP;
             }
         }
-        fmem.npc_facing_movements[1] = STOP;
+        npc_facing_movements[1] = STOP;
     } else {
-        fmem.npc_facing_movements[0] = STOP;
+        npc_facing_movements[0] = STOP;
     }
-    npc_apply_movement(0xFF, save1->map, save1->bank, fmem.npc_facing_movements);
+    npc_apply_movement(0xFF, save1->map, save1->bank, npc_facing_movements);
     npc_movement_target_person_idx = 0xFF;
 }
 
 bool special_x36_check_loaded_trainerflag() {
-    switch (fmem.current_trainer) {
+    switch (current_trainer) {
         case 0: return checkflag(trainer_get_flag());
         case 1: return checkflag(trainerB_get_flag());
     }
     return true; // Don't battle
 }
 
-u8 *trainer_get_challange_message() {
-    u8 *msg = NULL;
-    switch (fmem.current_trainer) {
+const u8 *trainer_get_challange_message() {
+    const u8 *msg = NULL;
+    switch (current_trainer) {
         case 0: msg = trainer_vars.challange_text; break;
-        case 1: msg = fmem.trainer_varsB.challange_text; break;
+        case 1: msg = trainer_varsB.challange_text; break;
     }
     return str_null_to_empty(msg);
 }
@@ -85,40 +94,40 @@ static void trainer_variables_initialize_single_trainer(trainer_variables *vars)
 }
 
 void trainer_variables_initialize() {
-    if (fmem.current_trainer == 0)
+    if (current_trainer == 0)
         trainer_variables_initialize_single_trainer(&trainer_vars);
     else
-        trainer_variables_initialize_single_trainer(&fmem.trainer_varsB);
+        trainer_variables_initialize_single_trainer(&trainer_varsB);
 }
 
 int trainerbattle_initialize_by_npc_idx(u8 npc_idx) {
-    map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
+    const map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
     if (person->script_std == PERSON_AGGRESSIVE_POKEMON)
         return 0; // Aggresive wild pokemon can not be trainers
     int num_trainers = 0;
 
-    u8 *script = npc_get_script(npc_idx);
+    const u8 *script = npc_get_script(npc_idx);
     if (!script) return 0;
     if (npc_trainer_check_flag(script)) return 0;
     u8 distance = npc_sees_player(npcs + npc_idx);
     if (distance) {
         if (TRAINER_BATTLE_TYPE_IS_DOUBLE(script[1])) {
             if (player_party_get_double_battle_viability()) return 0;
-            if (fmem.trainers_cnt >= 1) return 0;
+            if (trainers_cnt >= 1) return 0;
             num_trainers = 2;
         } else {
             num_trainers = 1;
         }
-        fmem.trainers_npc_idxs[fmem.trainers_cnt] = npc_idx;
-        DEBUG("Register script %x for trainer %d\n", script, fmem.trainers_cnt);
-        fmem.trainers_scripts[fmem.trainers_cnt] = script;
-        fmem.trainers_cnt++;
+        trainers_npc_idxs[trainers_cnt] = npc_idx;
+        DEBUG("Register script %x for trainer %d\n", script, trainers_cnt);
+        trainers_scripts[trainers_cnt] = script;
+        trainers_cnt++;
         trainer_npc_move_to_player(npcs + npc_idx, (u8)(distance - 1)); 
     }
     return num_trainers;
 }
 
-extern u8 ow_script_trainerbattle_pirate_challange[];
+extern const u8 ow_script_trainerbattle_pirate_challange[];
 
 bool trainerbattle_pirate_alert(u8 npc_idx) {
     if (!checkflag(FLAG_PLAYER_PARTY_STOLEN)) return false;
@@ -134,18 +143,18 @@ bool trainerbattle_pirate_alert(u8 npc_idx) {
     return false;
 }
 
-extern u8 ow_script_aggresive_wild_spotted[];
+extern const u8 ow_script_aggresive_wild_spotted[];
 
 int trainerbattle_aggressive_wild_pokemon_alert(u8 npc_idx) {
-    map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
+    const map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
     if (person->script_std != PERSON_AGGRESSIVE_POKEMON) 
         return 0;
     if(checkflag(person->flag)) 
         return 0;
     u8 distance = npc_sees_player(npcs + npc_idx);
     if (distance) {
-        fmem.trainers_npc_idxs[fmem.trainers_cnt] = npc_idx;
-        fmem.trainers_cnt++;
+        trainers_npc_idxs[trainers_cnt] = npc_idx;
+        trainers_cnt++;
         trainer_npc_move_to_player(npcs + npc_idx, (u8)(distance - 1));
         return 1;
         /**
@@ -169,18 +178,18 @@ static u16 aggressive_wild_pokemon_feature_generator() {
 
 void aggresive_wild_pokemon_create() {
     pokemon_clear_opponent_party();
-    for (int i = 0; i < fmem.trainers_cnt; i++) {
+    for (int i = 0; i < trainers_cnt; i++) {
         // Setup the wild mons
-        u8 npc_idx = fmem.trainers_npc_idxs[i];
-        map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
+        u8 npc_idx = trainers_npc_idxs[i];
+        const map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
         pid_t pid = {0};
         pokemon_spawn_by_seed_algorithm(opponent_pokemon + i, person->value, person->argument, 32, false, pid, false, 0, aggressive_wild_pokemon_feature_generator, NULL);
     }
 }
 
 bool trigger_aggressive_wild_pokemons() {
-    fmem.trainers_cnt = 0;
-    fmem.current_trainer = 0;
+    trainers_cnt = 0;
+    current_trainer = 0;
     for (u8 i = 0; i < 16; i++) {
         if ((npcs[i].flags.active & 1) && (npcs[i].trainer_trigger == 1 || npcs[i].trainer_trigger == 3)) {
             int num = trainerbattle_aggressive_wild_pokemon_alert(i);
@@ -189,9 +198,9 @@ bool trigger_aggressive_wild_pokemons() {
             if (num == 1 && player_party_get_double_battle_viability()) break; // Don't search for other aggresive wild, player cant do a double battle
         }
     }
-    fmem.current_trainer = 0;
+    current_trainer = 0;
     aggresive_wild_pokemon_create();
-    if (fmem.trainers_cnt > 0) {
+    if (trainers_cnt > 0) {
         overworld_script_init(ow_script_aggresive_wild_spotted);
         overworld_script_set_active();
         return true;
@@ -200,29 +209,29 @@ bool trigger_aggressive_wild_pokemons() {
 }
 
 u16 aggressive_wild_get_approaching_species() {
-    u8 npc_idx = fmem.trainers_npc_idxs[fmem.current_trainer];
-    map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
+    u8 npc_idx = trainers_npc_idxs[current_trainer];
+    const map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
     return person->value;
 }
 
 void aggressive_wild_hidesprites_after_battle() {
-    for (int i = 0; i < fmem.trainers_cnt; i++) {
-        u8 npc_idx = fmem.trainers_npc_idxs[i];
+    for (int i = 0; i < trainers_cnt; i++) {
+        u8 npc_idx = trainers_npc_idxs[i];
         person_delete_npc_if_present(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
     }
 }
 
 void aggressive_wild_setup_by_person() {
     u8 npc_idx = npc_get_by_person_idx((u8)(*var_access(LASTTALKED)), save1->map, save1->bank);
-    fmem.trainers_cnt = 0;
-    fmem.trainers_npc_idxs[fmem.trainers_cnt] = npc_idx;
-    fmem.trainers_cnt++;
+    trainers_cnt = 0;
+    trainers_npc_idxs[trainers_cnt] = npc_idx;
+    trainers_cnt++;
     aggresive_wild_pokemon_create();
 }
 
 bool trigger_trainerbattles() {
-    fmem.trainers_cnt = 0;
-    fmem.current_trainer = 0;
+    trainers_cnt = 0;
+    current_trainer = 0;
     for (u8 i = 0; i < 16; i++) {
         if ((npcs[i].flags.active & 1) && (npcs[i].trainer_trigger == 1 || npcs[i].trainer_trigger == 3)) {
             int num = trainerbattle_initialize_by_npc_idx(i);
@@ -231,19 +240,19 @@ bool trigger_trainerbattles() {
             if (num == 1 && player_party_get_double_battle_viability()) break; // Don't search for other trainers, player can't handle it
         }
     }
-    if (fmem.trainers_cnt == 1) { // Single battle
-        fmem.current_trainer = 0;
-        trainerbattle_configure_and_initialize_challange_script(fmem.trainers_npc_idxs[fmem.current_trainer],
-            fmem.trainers_scripts[fmem.current_trainer]);
+    if (trainers_cnt == 1) { // Single battle
+        current_trainer = 0;
+        trainerbattle_configure_and_initialize_challange_script(trainers_npc_idxs[current_trainer],
+            trainers_scripts[current_trainer]);
         return true;
-    } else if (fmem.trainers_cnt == 2) { // Double trainer battle
-        fmem.current_trainer = 0;
-        trainerbattle_configure_and_initialize_challange_script(fmem.trainers_npc_idxs[fmem.current_trainer],
-            fmem.trainers_scripts[fmem.current_trainer]);
+    } else if (trainers_cnt == 2) { // Double trainer battle
+        current_trainer = 0;
+        trainerbattle_configure_and_initialize_challange_script(trainers_npc_idxs[current_trainer],
+            trainers_scripts[current_trainer]);
         // Only configure the second trainer, but don't launch a script with it
-        fmem.current_trainer = 1;
-        trainer_configure_by_overworld_script(fmem.trainers_scripts[fmem.current_trainer] + 1);
-        fmem.current_trainer = 0;
+        current_trainer = 1;
+        trainer_configure_by_overworld_script(trainers_scripts[current_trainer] + 1);
+        current_trainer = 0;
         return true;
     }
     return false;
@@ -252,8 +261,8 @@ bool trigger_trainerbattles() {
 bool trigger_npc_spotting() {
     if (trainerbattle_not_initializable())
         return false;
-    fmem.trainers_cnt = 0;
-    fmem.current_trainer = 0;
+    trainers_cnt = 0;
+    current_trainer = 0;
 
     // First check for special "spottings", as we don't wany any of those to be mixed with a trainer challange
     for (u8 i = 0; i < 16; i++) {
@@ -273,18 +282,18 @@ bool trigger_npc_spotting() {
 }
 
 u8 trainer_get_current_npc_idx() {
-    trainer_npc_idx = fmem.trainers_npc_idxs[fmem.current_trainer];
+    trainer_npc_idx = trainers_npc_idxs[current_trainer];
     *var_access(LASTTALKED) = npcs[trainer_npc_idx].overworld_id;
     DEBUG("Current npc idx is %d\n", trainer_npc_idx);
     return trainer_npc_idx;
 }
 
 void trainer_approach_second() {
-    DEBUG("Trainer approach second %d of %d\n", fmem.current_trainer, fmem.trainers_cnt);
-    if (fmem.current_trainer < fmem.trainers_cnt - 1) {
-        fmem.current_trainer++;
+    DEBUG("Trainer approach second %d of %d\n", current_trainer, trainers_cnt);
+    if (current_trainer < trainers_cnt - 1) {
+        current_trainer++;
         npc_update_oam_delay_all(); // Unfreezes npcs
-        npc_stop_all_movements_but_one(fmem.trainers_npc_idxs[fmem.current_trainer]);
+        npc_stop_all_movements_but_one(trainers_npc_idxs[current_trainer]);
         *var_access(LASTRESULT) = 1;
     } else {
         *var_access(LASTRESULT) = 0;
@@ -301,39 +310,39 @@ enum {
     LOAD_SCRIPT_OFFSET_AND_END,
 };
 
-static trainerbattle_configuration trainerbattle_configuration_single_to_trainerB[] = {
+static const trainerbattle_configuration trainerbattle_configuration_single_to_trainerB[] = {
     {.dst = &trainer_vars.kind_of_battle, .command = LOAD_BYTE},
-    {.dst = &fmem.trainer_varsB.trainer_id, .command = LOAD_HWORD},
+    {.dst = &trainer_varsB.trainer_id, .command = LOAD_HWORD},
     {.dst = &trainer_vars.overworld_target, .command = LOAD_HWORD},
-    {.dst = &fmem.trainer_varsB.challange_text, .command = LOAD_WORD},
-    {.dst = &fmem.trainer_varsB.defeat_text, .command = LOAD_WORD},
-    {.dst = &fmem.trainer_varsB.victory_text, .command = CLEAR_WORD},
-    {.dst = &fmem.trainer_varsB.script_continue, .command = LOAD_SCRIPT_OFFSET_AND_END},
+    {.dst = &trainer_varsB.challange_text, .command = LOAD_WORD},
+    {.dst = &trainer_varsB.defeat_text, .command = LOAD_WORD},
+    {.dst = &trainer_varsB.victory_text, .command = CLEAR_WORD},
+    {.dst = &trainer_varsB.script_continue, .command = LOAD_SCRIPT_OFFSET_AND_END},
 };
 
-static trainerbattle_configuration trainerbattle_configuration_two_trainers[] = {
+static const trainerbattle_configuration trainerbattle_configuration_two_trainers[] = {
     {.dst = &trainer_vars.kind_of_battle, .command = LOAD_BYTE},
     {.dst = &trainer_vars.trainer_id, .command = LOAD_HWORD},
-    {.dst = &fmem.trainer_varsB.trainer_id, .command = LOAD_HWORD},
+    {.dst = &trainer_varsB.trainer_id, .command = LOAD_HWORD},
     {.dst = &trainer_vars.overworld_target, .command = LOAD_HWORD},
     {.dst = &trainer_vars.challange_text, .command = LOAD_WORD},
     {.dst = &trainer_vars.defeat_text, .command = LOAD_WORD},
-    {.dst = &fmem.trainer_varsB.defeat_text, .command = LOAD_WORD},
+    {.dst = &trainer_varsB.defeat_text, .command = LOAD_WORD},
     {.dst = &trainer_vars.victory_text, .command = CLEAR_WORD},
-    {.dst = &fmem.trainer_varsB.victory_text, .command = CLEAR_WORD},
+    {.dst = &trainer_varsB.victory_text, .command = CLEAR_WORD},
     {.dst = &trainer_vars.unable_to_battle_text, .command = CLEAR_WORD},
     {.dst = &trainer_vars.script_later, .command = LOAD_WORD},
     {.dst = &trainer_vars.script_continue, .command = LOAD_SCRIPT_OFFSET_AND_END},
 
 };
 
-static trainerbattle_configuration trainerbattle_configuration_ally[] = {
+static const trainerbattle_configuration trainerbattle_configuration_ally[] = {
     {.dst = &trainer_vars.kind_of_battle, .command = LOAD_BYTE},
     {.dst = &trainer_vars.trainer_id, .command = LOAD_HWORD},
-    {.dst = &fmem.ally_trainer_idx, .command = LOAD_HWORD},
+    {.dst = &ally_trainer_idx, .command = LOAD_HWORD},
     {.dst = &trainer_vars.overworld_target, .command = LOAD_HWORD},
-    {.dst = &fmem.ally_trainer_backsprite_idx, .command = LOAD_BYTE},
-    {.dst = &fmem.ally_trainer_party_preview, .command = LOAD_BYTE},
+    {.dst = &ally_trainer_backsprite_idx, .command = LOAD_BYTE},
+    {.dst = &ally_trainer_party_preview, .command = LOAD_BYTE},
     {.dst = &trainer_vars.challange_text, .command = LOAD_WORD},
     {.dst = &trainer_vars.defeat_text, .command = LOAD_WORD},
     {.dst = &trainer_vars.victory_text, .command = CLEAR_WORD},
@@ -342,17 +351,17 @@ static trainerbattle_configuration trainerbattle_configuration_ally[] = {
     {.dst = &trainer_vars.script_continue, .command = LOAD_SCRIPT_OFFSET_AND_END},
 };
 
-static trainerbattle_configuration trainerbattle_configuration_ally_two_trainers[] = {
+static const trainerbattle_configuration trainerbattle_configuration_ally_two_trainers[] = {
     {.dst = &trainer_vars.kind_of_battle, .command = LOAD_BYTE},
     {.dst = &trainer_vars.trainer_id, .command = LOAD_HWORD},
-    {.dst = &fmem.trainer_varsB.trainer_id, .command = LOAD_HWORD},
-    {.dst = &fmem.ally_trainer_idx, .command = LOAD_HWORD},
+    {.dst = &trainer_varsB.trainer_id, .command = LOAD_HWORD},
+    {.dst = &ally_trainer_idx, .command = LOAD_HWORD},
     {.dst = &trainer_vars.overworld_target, .command = LOAD_HWORD},
-    {.dst = &fmem.ally_trainer_backsprite_idx, .command = LOAD_BYTE},
-    {.dst = &fmem.ally_trainer_party_preview, .command = LOAD_BYTE},
+    {.dst = &ally_trainer_backsprite_idx, .command = LOAD_BYTE},
+    {.dst = &ally_trainer_party_preview, .command = LOAD_BYTE},
     {.dst = &trainer_vars.challange_text, .command = LOAD_WORD},
     {.dst = &trainer_vars.defeat_text, .command = LOAD_WORD},
-    {.dst = &fmem.trainer_varsB.defeat_text, .command = LOAD_WORD},
+    {.dst = &trainer_varsB.defeat_text, .command = LOAD_WORD},
     {.dst = &trainer_vars.victory_text, .command = CLEAR_WORD},
     {.dst = &trainer_vars.unable_to_battle_text, .command = CLEAR_WORD},
     {.dst = &trainer_vars.script_later, .command = LOAD_WORD},
@@ -372,9 +381,9 @@ void trainer_configuration_print(trainer_variables *v) {
     DEBUG("rival flag %x\n", v->rival_flags);
 }
 
-extern u8 ow_script_trainerbattle_pirate_challange_after_approach[];
+extern const u8 ow_script_trainerbattle_pirate_challange_after_approach[];
 
-u8 *trainer_configure_by_overworld_script(u8 *ow_script) {
+const u8 *trainer_configure_by_overworld_script(const u8 *ow_script) {
     if (checkflag(FLAG_PLAYER_PARTY_STOLEN)) return ow_script_trainerbattle_pirate_challange_after_approach;
     trainer_variables_initialize();
     u8 kind = ow_script[0];
@@ -412,28 +421,28 @@ u8 *trainer_configure_by_overworld_script(u8 *ow_script) {
             trainerbattle_load_target_npc();
             return ow_script_trainerbattle_with_continuation;
         case TRAINER_BATTLE_TWO_TRAINERS:
-            fmem.trainers_cnt = 2;
+            trainers_cnt = 2;
             trainerbattle_configure(trainerbattle_configuration_two_trainers, ow_script);
             trainerbattle_load_target_npc();
             return ow_script_trainerbattle_double_dont_check_enough_pokemon; // Use special SPECIAL_CANT_DOUBLE_BATTLE before in your overworld script...
         case TRAINER_BATTLE_ALLY_ONE_TRAINER:
             trainerbattle_configure(trainerbattle_configuration_ally, ow_script);
             trainerbattle_load_target_npc();
-            *var_access(VAR_ALLY) = fmem.ally_trainer_idx;
+            *var_access(VAR_ALLY) = ally_trainer_idx;
             DEBUG("Ally is %d\n", *var_access(VAR_ALLY));
             trainer_configuration_print(&trainer_vars);
             return ow_script_trainerbattle_double_dont_check_enough_pokemon; // We don't check for double battles, as the ally always should have one pokemon...
         case TRAINER_BATTLE_ALLY_TWO_TRAINERS:
-            fmem.trainers_cnt = 2;
+            trainers_cnt = 2;
             trainerbattle_configure(trainerbattle_configuration_ally_two_trainers, ow_script);
             trainerbattle_load_target_npc();
-            *var_access(VAR_ALLY) = fmem.ally_trainer_idx;
+            *var_access(VAR_ALLY) = ally_trainer_idx;
             DEBUG("Ally is %d\n", *var_access(VAR_ALLY));
             trainer_configuration_print(&trainer_vars);
             return ow_script_trainerbattle_double_dont_check_enough_pokemon; // We don't check for double battles, as the ally always should have one pokemon...
         case TRAINER_BATTLE_SINGLE:
         default: { // For spotted trainer double battles
-            if (fmem.current_trainer == 0) { // Initialize trainerA 
+            if (current_trainer == 0) { // Initialize trainerA 
                 DEBUG("Configure trainerA @%x\n", ow_script);
                 trainerbattle_configure(trainerbattle_configuration_single, ow_script);  
                 // print_trainer_configuration(&trainer_vars);
@@ -441,8 +450,8 @@ u8 *trainer_configure_by_overworld_script(u8 *ow_script) {
             } else { // Initialize trainerB
                 DEBUG("Configure trainerB @%x\n", ow_script);
                 trainerbattle_configure(trainerbattle_configuration_single_to_trainerB, ow_script);
-                *var_access(VAR_SECOND_TRAINER) = fmem.trainer_varsB.trainer_id;
-                // print_trainer_configuration(&fmem.trainer_varsB);
+                *var_access(VAR_SECOND_TRAINER) = trainer_varsB.trainer_id;
+                // print_trainer_configuration(&trainer_varsB);
             }
             return ow_script_trainerbatte_challange;
         }
@@ -452,12 +461,12 @@ u8 *trainer_configure_by_overworld_script(u8 *ow_script) {
 
 void trainer_play_encounter_music() {
     u16 trainer_idx, kind;
-    if (fmem.current_trainer == 0) {
+    if (current_trainer == 0) {
         trainer_idx = trainer_vars.trainer_id;
         kind = trainer_vars.kind_of_battle;
     } else {
-        trainer_idx = fmem.trainer_varsB.trainer_id;
-        kind = fmem.trainer_varsB.kind_of_battle;
+        trainer_idx = trainer_varsB.trainer_id;
+        kind = trainer_varsB.kind_of_battle;
     }
     DEBUG("Encounter for trainer %d\n", trainer_idx);
     if (kind != TRAINER_BATTLE_CONTINUE_SCRIPT_NO_MUSIC && kind != TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC &&
@@ -479,7 +488,7 @@ void trainer_play_encounter_music() {
 }
 
 u16 trainerB_get_flag() {
-    return (u16)(0x500 + fmem.trainer_varsB.trainer_id);
+    return (u16)(0x500 + trainer_varsB.trainer_id);
 }
 
 void trainer_set_flags() {

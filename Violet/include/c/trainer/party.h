@@ -33,9 +33,12 @@ typedef struct {
     u16 species;
     u16 held_item;
     u16 moves[4];
-    u8 *nickname;
+    const u8 *nickname;
 } trainer_pokemon;
 
+#define NUM_DYNAMIC_TRAINER_POKEMON 3
+
+extern EWRAM trainer_pokemon dynamic_trainer_party[NUM_DYNAMIC_TRAINER_POKEMON];
 /**
  * @brief Gets the level of a trainer pokemon
  * 

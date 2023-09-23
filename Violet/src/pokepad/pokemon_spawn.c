@@ -65,7 +65,7 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 defau
     int r;
     //now we add egg moves
     int egg_move_cnt = 0;
-    u16 *egg_moves_rom = pokemon_get_egg_moves(species, &egg_move_cnt);
+    const u16 *egg_moves_rom = pokemon_get_egg_moves(species, &egg_move_cnt);
     if (egg_move_cnt) {
     	u16 *egg_moves = malloc(sizeof(u16) * (u32)egg_move_cnt);
     	memcpy(egg_moves, egg_moves_rom, sizeof(u16) * (u32)egg_move_cnt);
@@ -85,7 +85,7 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 defau
     //now we give the item
     r = feature_generator();
     if (r < 32) {
-        u16 *item = &basestats[species].common_item;
+        const u16 *item = &basestats[species].common_item;
         if (r < 8 && basestats[species].rare_item) {
             item = &basestats[species].rare_item;
         }

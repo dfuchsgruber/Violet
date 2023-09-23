@@ -29,22 +29,22 @@
 #include "callbacks.h"
 #include "overworld/script.h"
 
-extern map_footer_t map_footer_dungeon_forest_normal;
-extern map_footer_t map_footer_dungeon_forest_apple_tree;
-extern map_footer_t map_footer_dungeon_forest_berry_spot;
-extern map_footer_t map_footer_dungeon_forest_nest;
-extern map_footer_t map_footer_dungeon_forest_mushrooms;
-extern map_footer_t map_footer_dungeon_forest_dusk;
-extern map_footer_t map_footer_dungeon_forest_tent_and_campfire;
+extern const map_footer_t map_footer_dungeon_forest_normal;
+extern const map_footer_t map_footer_dungeon_forest_apple_tree;
+extern const map_footer_t map_footer_dungeon_forest_berry_spot;
+extern const map_footer_t map_footer_dungeon_forest_nest;
+extern const map_footer_t map_footer_dungeon_forest_mushrooms;
+extern const map_footer_t map_footer_dungeon_forest_dusk;
+extern const map_footer_t map_footer_dungeon_forest_tent_and_campfire;
 
-u16 dungeon2_forest_borders[4] = {0x26, 0x27, 0x2c, 0x2d};
+const u16 dungeon2_forest_borders[4] = {0x26, 0x27, 0x2c, 0x2d};
 
-map_block dungeon2_forest_map_empty[DG2_FOREST_WIDTH * DG2_FOREST_HEIGHT] = {0};
+const map_block dungeon2_forest_map_empty[DG2_FOREST_WIDTH * DG2_FOREST_HEIGHT] = {0};
 
-extern u8 ow_script_dungeon_encounter[];
-extern u8 ow_script_dungeon_item[];
+extern const u8 ow_script_dungeon_encounter[];
+extern const u8 ow_script_dungeon_item[];
 
-static u32 dungeon2_forest_type_rates[NUM_DUNGEON_FOREST_TYPES] = {
+static const u32 dungeon2_forest_type_rates[NUM_DUNGEON_FOREST_TYPES] = {
     [DUNGEON_FOREST_TYPE_NORMAL] = 3,
     [DUNGEON_FOREST_TYPE_APPLE_FOREST] = 2,
     [DUNGEON_FOREST_TYPE_BERRY_FOREST] = 2,
@@ -59,34 +59,34 @@ u8 dungeon2_get_forest_type(dungeon_generator2 *dg2) {
     return (u8)choice(dungeon2_forest_type_rates, NUM_DUNGEON_FOREST_TYPES, gp_rnd16);
 }
 
-static map_footer_t *dungeon2_get_forest_type_pattern(dungeon_generator2 *dg2) {
+static const map_footer_t *dungeon2_get_forest_type_pattern(dungeon_generator2 *dg2) {
     return dungeon_forest_types[dungeon2_get_forest_type(dg2)].footer;
 }
 
 static int dungeon2_get_forest_num_patterns(dungeon_generator2 *dg2) {
-    dungeon_forest_t *type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
+    const dungeon_forest_t *type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
     gp_rng_seed(dungeon2_seeded_rnd16(dg2, DG2_RANDOM_SEED_NUM_PATTERNS));
     return MIN(DG2_MAX_NUM_PATTERNS, type->min_num_patterns + (gp_rnd16() % (type->max_num_patterns - type->min_num_patterns + 1)));
 }
 
 map_footer_t *dungeon2_init_footer_forest(dungeon_generator2 *dg2){
-    map_footer_t *footer = dungeon2_get_forest_type_pattern(dg2);
-    fmem.dmapfooter.width = (u32)dg2->width;
-    fmem.dmapfooter.height = (u32)dg2->height;
-    fmem.dmapfooter.tileset1 = footer->tileset1;
-    fmem.dmapfooter.tileset2 = footer->tileset2;
-    fmem.dmapfooter.border_blocks = footer->border_blocks;
-    fmem.dmapfooter.border_width = footer->border_width;
-    fmem.dmapfooter.border_height = footer->border_height;
-    fmem.dmapfooter.map = dungeon2_forest_map_empty;
-    return &(fmem.dmapfooter);
+    const map_footer_t *footer = dungeon2_get_forest_type_pattern(dg2);
+    dynamic_map_footer.width = (u32)dg2->width;
+    dynamic_map_footer.height = (u32)dg2->height;
+    dynamic_map_footer.tileset1 = footer->tileset1;
+    dynamic_map_footer.tileset2 = footer->tileset2;
+    dynamic_map_footer.border_blocks = footer->border_blocks;
+    dynamic_map_footer.border_width = footer->border_width;
+    dynamic_map_footer.border_height = footer->border_height;
+    dynamic_map_footer.map = dungeon2_forest_map_empty;
+    return &(dynamic_map_footer);
 }
 
-static s16 dungeon_forest_apple_displacements[][2] = {
+static const s16 dungeon_forest_apple_displacements[][2] = {
     {-1, 0}, {-1, 1}, {1, 0}, {1, 1}
 };
 
-u32 dungeon_forest_berries[] = {
+const u32 dungeon_forest_berries[] = {
     [ITEM_IDX_TO_BERRY_IDX(ITEM_AMRENABEERE)] = 6,
     [ITEM_IDX_TO_BERRY_IDX(ITEM_PIRSIFBEERE)] = 6,
     [ITEM_IDX_TO_BERRY_IDX(ITEM_MARONBEERE)] = 4,
@@ -99,7 +99,7 @@ u32 dungeon_forest_berries[] = {
     [11] = 0xFFFF,
 };
 
-u16 dungeon_forest_eggs[] = {
+const u16 dungeon_forest_eggs[] = {
     POKEMON_TOGEPI, POKEMON_MAEHIKEL, POKEMON_PIKACHU, POKEMON_FLABEBE, POKEMON_MYRAPLA, POKEMON_WATTZAPF,
     POKEMON_TRAUMATO, POKEMON_KANGAMA, POKEMON_PINSIR, POKEMON_SICHLOR,
     POKEMON_MOBAI, POKEMON_TANNZA, POKEMON_TEDDIURSA, POKEMON_MAMPFAXO, POKEMON_SAMURZEL,
@@ -142,7 +142,7 @@ static void dungeon_forest_normal_initialize_events(dungeon_generator2 *dg2) {
 }
 
 static void dungeon_forest_apple_forest_initialize_events(dungeon_generator2 *dg2){
-    u8 num_persons = fmem.dmapevents.person_cnt;
+    u8 num_persons = dynamic_map_event_header.person_cnt;
     int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
     bool create_golden_apple = (dungeon2_rnd_16(dg2) % 4) == 0; // 1/4 of apple forests hold a golden apple
@@ -151,126 +151,126 @@ static void dungeon_forest_apple_forest_initialize_events(dungeon_generator2 *dg
     for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns); j++) {
         gp_rng_seed(dungeon2_seeded_rnd16(dg2, DG2_RANDOM_SEED_PATTERN_PARAMETER));
         shuffle(idxs_shuffled, ARRAY_COUNT(idxs_shuffled), gp_rnd16);
-        for (int i = 0; i < 4 && num_persons < ARRAY_COUNT(fmem.dpersons); i++) {
+        for (int i = 0; i < 4 && num_persons < ARRAY_COUNT(dynamic_persons); i++) {
             if (dungeon2_rnd_16(dg2) % 2) {
-                fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
-                fmem.dpersons[num_persons].overworld_index = 92;
-                fmem.dpersons[num_persons].script_std = PERSON_ITEM;
+                dynamic_persons[num_persons].target_index = (u8)(num_persons + 1);
+                dynamic_persons[num_persons].overworld_index = 92;
+                dynamic_persons[num_persons].script_std = PERSON_ITEM;
                 if (create_golden_apple) {
-                    fmem.dpersons[num_persons].value = ITEM_GOLDAPFEL;
+                    dynamic_persons[num_persons].value = ITEM_GOLDAPFEL;
                     create_golden_apple = false;
                 } else {
-                    fmem.dpersons[num_persons].value = (dungeon2_rnd_16(dg2) % 4) > 0 ? ITEM_APFEL : ITEM_RIESENAPFEL;
+                    dynamic_persons[num_persons].value = (dungeon2_rnd_16(dg2) % 4) > 0 ? ITEM_APFEL : ITEM_RIESENAPFEL;
                 }
-                fmem.dpersons[num_persons].flag = (u16)(DG2_FLAG_PATTERN + 4 * j + i);
-                fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] + dungeon_forest_apple_displacements[idxs_shuffled[i]][0]);
-                fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + dungeon_forest_apple_displacements[idxs_shuffled[i]][1]);
+                dynamic_persons[num_persons].flag = (u16)(DG2_FLAG_PATTERN + 4 * j + i);
+                dynamic_persons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] + dungeon_forest_apple_displacements[idxs_shuffled[i]][0]);
+                dynamic_persons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + dungeon_forest_apple_displacements[idxs_shuffled[i]][1]);
                 num_persons++;
             }
         }
     }
-    fmem.dmapevents.person_cnt = num_persons;
+    dynamic_map_event_header.person_cnt = num_persons;
 }
 
 static void dungeon_forest_berry_forest_initialize_events(dungeon_generator2 *dg2){
-    u8 num_persons = fmem.dmapevents.person_cnt;
+    u8 num_persons = dynamic_map_event_header.person_cnt;
     int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
     gp_rng_seed(dungeon2_seeded_rnd16(dg2, DG2_RANDOM_SEED_PATTERN_PARAMETER));
     for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns); j++) {
-        for (int i = 0; i < 3 && num_persons < ARRAY_COUNT(fmem.dpersons); i++) {
-            fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
-            fmem.dpersons[num_persons].overworld_index = OVERWORLD_SPRITE_BERRY;
-            fmem.dpersons[num_persons].script_std = PERSON_STATIC_BERRY_TREE;
+        for (int i = 0; i < 3 && num_persons < ARRAY_COUNT(dynamic_persons); i++) {
+            dynamic_persons[num_persons].target_index = (u8)(num_persons + 1);
+            dynamic_persons[num_persons].overworld_index = OVERWORLD_SPRITE_BERRY;
+            dynamic_persons[num_persons].script_std = PERSON_STATIC_BERRY_TREE;
             u16 item = (u16)BERRY_IDX_TO_ITEM_IDX(choice(dungeon_forest_berries, ARRAY_COUNT(dungeon_forest_berries) - 1, gp_rnd16));
-            berry *b = berry_get((u8)ITEM_IDX_TO_BERRY_IDX(item));
-            fmem.dpersons[num_persons].value = item;
-            fmem.dpersons[num_persons].argument = b->min_yield;
-            fmem.dpersons[num_persons].flag = (u16)(DG2_FLAG_PATTERN + 3 * j + i);
-            fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] + i - 1);
-            fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] - 1);
+            const berry *b = berry_get((u8)ITEM_IDX_TO_BERRY_IDX(item));
+            dynamic_persons[num_persons].value = item;
+            dynamic_persons[num_persons].argument = b->min_yield;
+            dynamic_persons[num_persons].flag = (u16)(DG2_FLAG_PATTERN + 3 * j + i);
+            dynamic_persons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] + i - 1);
+            dynamic_persons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] - 1);
             num_persons++;
         }
     }
-    fmem.dmapevents.person_cnt = num_persons;
+    dynamic_map_event_header.person_cnt = num_persons;
 }
 
 static void dungeon_forest_egg_forest_initialize_events(dungeon_generator2 *dg2){
-    u8 num_persons = fmem.dmapevents.person_cnt;
+    u8 num_persons = dynamic_map_event_header.person_cnt;
     int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
-    gp_rng_seed(cmem.dg2.seed);
-    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_persons < ARRAY_COUNT(fmem.dpersons); j++) {
-        fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
-        fmem.dpersons[num_persons].overworld_index = 101;
-        fmem.dpersons[num_persons].script_std = PERSON_EGG;
-        fmem.dpersons[num_persons].value = dungeon_forest_eggs[dungeon2_rnd_16(dg2) % (ARRAY_COUNT(dungeon_forest_eggs) - 1)];
-        fmem.dpersons[num_persons].flag = (u16)(DG2_FLAG_PATTERN + j);
-        fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0]);
-        fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] - 1);
+    gp_rng_seed(csave.dg2.seed);
+    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_persons < ARRAY_COUNT(dynamic_persons); j++) {
+        dynamic_persons[num_persons].target_index = (u8)(num_persons + 1);
+        dynamic_persons[num_persons].overworld_index = 101;
+        dynamic_persons[num_persons].script_std = PERSON_EGG;
+        dynamic_persons[num_persons].value = dungeon_forest_eggs[dungeon2_rnd_16(dg2) % (ARRAY_COUNT(dungeon_forest_eggs) - 1)];
+        dynamic_persons[num_persons].flag = (u16)(DG2_FLAG_PATTERN + j);
+        dynamic_persons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0]);
+        dynamic_persons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] - 1);
         num_persons++;
     }
-    fmem.dmapevents.person_cnt = num_persons;
+    dynamic_map_event_header.person_cnt = num_persons;
 }
 
-static s16 dungeon_forest_mushroom_displacements[][3] = {
+static const s16 dungeon_forest_mushroom_displacements[][3] = {
     {0, -2}, {-1, 0}, {1, 0},
 };
 
 static void dungeon_mushroom_forest_initialize_events(dungeon_generator2 *dg2) {
-    u8 num_persons = fmem.dmapevents.person_cnt;
+    u8 num_persons = dynamic_map_event_header.person_cnt;
     int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
     size_t idxs_shuffled[3] = {0, 1, 2};
     for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns); j++) {
         int num_mushrooms = 1 + dungeon2_rnd_16(dg2) % 3;
-        fmem.gp_rng = dg2->seed;
+        gp_rng = dg2->seed;
         shuffle(idxs_shuffled, ARRAY_COUNT(idxs_shuffled), gp_rnd16);
-        for (int i = 0; i < num_mushrooms && num_persons < ARRAY_COUNT(fmem.dpersons); i++) {
-            fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
-            fmem.dpersons[num_persons].overworld_index = OVERWORLD_SPRITE_MISC;
-            fmem.dpersons[num_persons].script_std = PERSON_MUSHROOM;
-            fmem.dpersons[num_persons].value = (u16)(DUNGEON_MISC_IDX_START + 3 * j + i);
-            fmem.dpersons[num_persons].flag = (u16)(DG2_FLAG_PATTERN + j);
-            fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] + dungeon_forest_mushroom_displacements[idxs_shuffled[i]][0]);
-            fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + dungeon_forest_mushroom_displacements[idxs_shuffled[i]][1]);
+        for (int i = 0; i < num_mushrooms && num_persons < ARRAY_COUNT(dynamic_persons); i++) {
+            dynamic_persons[num_persons].target_index = (u8)(num_persons + 1);
+            dynamic_persons[num_persons].overworld_index = OVERWORLD_SPRITE_MISC;
+            dynamic_persons[num_persons].script_std = PERSON_MUSHROOM;
+            dynamic_persons[num_persons].value = (u16)(DUNGEON_MISC_IDX_START + 3 * j + i);
+            dynamic_persons[num_persons].flag = (u16)(DG2_FLAG_PATTERN + j);
+            dynamic_persons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] + dungeon_forest_mushroom_displacements[idxs_shuffled[i]][0]);
+            dynamic_persons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + dungeon_forest_mushroom_displacements[idxs_shuffled[i]][1]);
             num_persons++;
         }
     }
-    fmem.dmapevents.person_cnt = num_persons;
+    dynamic_map_event_header.person_cnt = num_persons;
 }
 
 static void dungeon_dusk_forest_initialize_events(dungeon_generator2 *dg2) {
-    u8 num_warps = fmem.dmapevents.warp_cnt;
+    u8 num_warps = dynamic_map_event_header.warp_cnt;
     int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
-    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_warps <= ARRAY_COUNT(fmem.dwarps); j++) {
-        fmem.dwarps[num_warps].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] - 1);
-        fmem.dwarps[num_warps].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + 1);
-        fmem.dwarps[num_warps].target_warp_id = 0;
-        fmem.dwarps[num_warps].target_map = DG2_DUSK_FOREST_CABIN_MAP;
-        fmem.dwarps[num_warps].target_bank = DG2_BANK;
+    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_warps <= ARRAY_COUNT(dynamic_warps); j++) {
+        dynamic_warps[num_warps].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] - 1);
+        dynamic_warps[num_warps].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + 1);
+        dynamic_warps[num_warps].target_warp_id = 0;
+        dynamic_warps[num_warps].target_map = DG2_DUSK_FOREST_CABIN_MAP;
+        dynamic_warps[num_warps].target_bank = DG2_BANK;
         num_warps++;
     }
-    fmem.dmapevents.warp_cnt = num_warps;
+    dynamic_map_event_header.warp_cnt = num_warps;
 }
 
 static void dungeon_tent_forest_initialize_events(dungeon_generator2 *dg2) {
-    u8 num_warps = fmem.dmapevents.warp_cnt;
+    u8 num_warps = dynamic_map_event_header.warp_cnt;
     int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
-    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_warps <= ARRAY_COUNT(fmem.dwarps); j++) {
-        fmem.dwarps[num_warps].x = (s16)(nodes[DG2_NODE_PATTERN + j][0]);
-        fmem.dwarps[num_warps].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + 1);
-        fmem.dwarps[num_warps].target_warp_id = 0;
-        fmem.dwarps[num_warps].target_map = DG2_DUSK_FOREST_TENT_MAP;
-        fmem.dwarps[num_warps].target_bank = DG2_BANK;
+    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_warps <= ARRAY_COUNT(dynamic_warps); j++) {
+        dynamic_warps[num_warps].x = (s16)(nodes[DG2_NODE_PATTERN + j][0]);
+        dynamic_warps[num_warps].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + 1);
+        dynamic_warps[num_warps].target_warp_id = 0;
+        dynamic_warps[num_warps].target_map = DG2_DUSK_FOREST_TENT_MAP;
+        dynamic_warps[num_warps].target_bank = DG2_BANK;
         num_warps++;
     }
-    fmem.dmapevents.warp_cnt = num_warps;
+    dynamic_map_event_header.warp_cnt = num_warps;
 }
 
-dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
+const dungeon_forest_t dungeon_forest_types[NUM_DUNGEON_FOREST_TYPES] = {
     [DUNGEON_FOREST_TYPE_NORMAL] = {
         .footer = &map_footer_dungeon_forest_normal,
         .min_num_patterns = 0,
@@ -482,7 +482,7 @@ u16 dungeon_forest_pick_item(dungeon_generator2 *dg2) {
 
 void dungeon2_init_wild_pokemon_forest(dungeon_generator2 *dg2) {
 
-    dungeon_forest_t *forest_type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
+    const dungeon_forest_t *forest_type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
 
     u16 common_pokemon[4];
     u16 rare_pokemon[2];
@@ -494,30 +494,30 @@ void dungeon2_init_wild_pokemon_forest(dungeon_generator2 *dg2) {
 
     *var_access(DUNGEON_OVERWORLD_SPECIES) = super_rare_pokemon[0];
 
-    fmem.dwild_pokemon.grass = &(fmem.dwild_habitat_grass);
-    fmem.dwild_pokemon.water = NULL;
-    fmem.dwild_pokemon.other = NULL;
-    fmem.dwild_pokemon.rod = NULL;
-    fmem.dwild_habitat_grass.frequency = DUNGEON_TYPE_FOREST_WILD_POKEMON_FREQUENCY;
-    fmem.dwild_habitat_grass.data = fmem.dwild_data_grass;
+    dynamic_wild_pokemon.grass = &(dynamic_wild_pokemon_habitat_grass);
+    dynamic_wild_pokemon.water = NULL;
+    dynamic_wild_pokemon.other = NULL;
+    dynamic_wild_pokemon.rod = NULL;
+    dynamic_wild_pokemon_habitat_grass.frequency = DUNGEON_TYPE_FOREST_WILD_POKEMON_FREQUENCY;
+    dynamic_wild_pokemon_habitat_grass.data = dynamic_wild_pokemon_entries_grass;
 
     // Each of the common pokemon has a 20% probability
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_0_20_PERCENT].species = common_pokemon[0];
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_1_20_PERCENT].species = common_pokemon[1];
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_2_10_PERCENT].species = common_pokemon[2];
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_3_10_PERCENT].species = common_pokemon[2];
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_4_10_PERCENT].species = common_pokemon[3];
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_5_10_PERCENT].species = common_pokemon[3];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_0_20_PERCENT].species = common_pokemon[0];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_1_20_PERCENT].species = common_pokemon[1];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_2_10_PERCENT].species = common_pokemon[2];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_3_10_PERCENT].species = common_pokemon[2];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_4_10_PERCENT].species = common_pokemon[3];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_5_10_PERCENT].species = common_pokemon[3];
 
     // The first rare pokemon has a 14% probability
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_6_5_PERCENT].species = rare_pokemon[0];
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_7_5_PERCENT].species = rare_pokemon[0];
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_8_4_PERCENT].species = rare_pokemon[0];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_6_5_PERCENT].species = rare_pokemon[0];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_7_5_PERCENT].species = rare_pokemon[0];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_8_4_PERCENT].species = rare_pokemon[0];
 
     // The other rare pokemon has a 6% probability
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_9_4_PERCENT].species = rare_pokemon[1];
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_10_1_PERCENT].species = rare_pokemon[1];
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_11_1_PERCENT].species = rare_pokemon[1];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_9_4_PERCENT].species = rare_pokemon[1];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_10_1_PERCENT].species = rare_pokemon[1];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_11_1_PERCENT].species = rare_pokemon[1];
 
     u8 mean = 0;
     u8 std_deviation = 0;
@@ -528,13 +528,13 @@ void dungeon2_init_wild_pokemon_forest(dungeon_generator2 *dg2) {
     for(int i = 0; i < 12; i++) {
         dungeon2_wild_pokemon_sample_level_boundaries(&level_min, &level_max,
             (i < 6) ? mean : (u8)(mean + std_deviation), std_deviation, dg2);
-        fmem.dwild_data_grass[i].level_min = level_min;
-        fmem.dwild_data_grass[i].level_max = level_max;
+        dynamic_wild_pokemon_entries_grass[i].level_min = level_min;
+        dynamic_wild_pokemon_entries_grass[i].level_max = level_max;
     }
 }
 
 void dungeon2_set_encounter_forest() {
-  dungeon_generator2 *dg2 = &(cmem.dg2);
+  dungeon_generator2 *dg2 = &(csave.dg2);
   dungeon2_forest_initialize_state(dg2);
   pokemon_clear_opponent_party();
 
@@ -555,29 +555,29 @@ void dungeon2_set_encounter_forest() {
 
 map_header_t *dungeon2_init_header_forest(dungeon_generator2 *dg2) {
     DEBUG("D2 header init\n");
-    fmem.dmap_header_initialized = 1;
-    fmem.dmapheader.levelscripts = dungeon2_lscr;
-    fmem.dmapheader.connections = &dungeon2_connections;
-    fmem.dmapheader.music = 0x14b;
-    fmem.dmapheader.map_namespace = mapheader_virtual.map_namespace;
-    fmem.dmapheader.flash_type = 0;
-    fmem.dmapheader.weather = dungeon_forest_types[dungeon2_get_forest_type(dg2)].map_weather;
-    fmem.dmapheader.type = MAP_TYPE_INSIDE;
-    fmem.dmapheader.show_name = 0;
-    fmem.dmapheader.battle_style = 0;
-    fmem.dmapheader.events = dungeon2_init_events_forest(dg2);
-    fmem.dmapheader.footer = dungeon2_init_footer_forest(dg2);
-    fmem.dmapheader.footer_idx = DG2_FOOTER_IDX;
-    return &(fmem.dmapheader);
+    dmap_flags.header_initialized = 1;
+    dynamic_map_header.levelscripts = dungeon2_lscr;
+    dynamic_map_header.connections = &dungeon2_connections;
+    dynamic_map_header.music = 0x14b;
+    dynamic_map_header.map_namespace = mapheader_virtual.map_namespace;
+    dynamic_map_header.flash_type = 0;
+    dynamic_map_header.weather = dungeon_forest_types[dungeon2_get_forest_type(dg2)].map_weather;
+    dynamic_map_header.type = MAP_TYPE_INSIDE;
+    dynamic_map_header.show_name = 0;
+    dynamic_map_header.battle_style = 0;
+    dynamic_map_header.events = dungeon2_init_events_forest(dg2);
+    dynamic_map_header.footer = dungeon2_init_footer_forest(dg2);
+    dynamic_map_header.footer_idx = DG2_FOOTER_IDX;
+    return &(dynamic_map_header);
 }
 
 map_event_header_t *dungeon2_init_events_forest(dungeon_generator2 *dg2){
     dungeon2_initialize_std_events(dg2, dungeon_forest_pick_item);
     dungeon_forest_types[dungeon2_get_forest_type(dg2)].event_init(dg2);
-    return &(fmem.dmapevents);
+    return &(dynamic_map_event_header);
 }
 
-static u16 blocks_alternative_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
+static const u16 blocks_alternative_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
     [NB_GRASS] = {
         [0] = {{0x2b8 | BLOCK_SOLID, 0x2b9 | BLOCK_SOLID}, {0x2c0 | BLOCK_SOLID, 0x2c1 | BLOCK_SOLID}},
         [1] = {{0x2e8 | BLOCK_SOLID, 0x2e9 | BLOCK_SOLID}, {0x2f0 | BLOCK_SOLID, 0x2f1 | BLOCK_SOLID}},
@@ -608,7 +608,7 @@ static u16 blocks_alternative_tree[NUM_NBS][5][2][2] = { // [block_type_below][d
     },
 };
 
-static u16 blocks_1x1_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
+static const u16 blocks_1x1_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
     [NB_GRASS] = {
         [0] = {{0x29a | BLOCK_SOLID, 0x29a | BLOCK_SOLID}, {0x29a | BLOCK_SOLID, 0x29a | BLOCK_SOLID}},
         [1] = {{0x2e0 | BLOCK_SOLID, 0x2e0 | BLOCK_SOLID}, {0x2e0 | BLOCK_SOLID, 0x2e0 | BLOCK_SOLID}},
@@ -639,7 +639,7 @@ static u16 blocks_1x1_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoratio
     }
 };
 
-static u16 blocks_grass[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
+static const u16 blocks_grass[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
     [NB_GRASS] = { // Grass is decorated by a separate function
         [0] = {{0xFFFF, 0xFFFF}, {0xFFFF, 0xFFFF}},
         [1] = {{0xFFFF, 0xFFFF}, {0xFFFF, 0xFFFF}},
@@ -670,7 +670,7 @@ static u16 blocks_grass[NUM_NBS][5][2][2] = { // [block_type_below][decoration_i
     },
 };
 
-static u16 blocks_high_grass[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
+static const u16 blocks_high_grass[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
     [NB_GRASS] = {
         [0] = {{0x285, 0x285}, {0x285, 0x285}},
         [1] = {{0x285, 0x285}, {0x285, 0x285}},
@@ -701,7 +701,7 @@ static u16 blocks_high_grass[NUM_NBS][5][2][2] = { // [block_type_below][decorat
     },
 };
 
-static u16 blocks_2x2_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
+static const u16 blocks_2x2_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoration_idx][y][x]
     [NB_GRASS] = {
         [0] = {{0x298 | BLOCK_SOLID, 0x299 | BLOCK_SOLID}, {0x2a0 | BLOCK_SOLID, 0x2a1 | BLOCK_SOLID}},
         [1] = {{0x2d0 | BLOCK_SOLID, 0x2d1 | BLOCK_SOLID}, {0x2d8 | BLOCK_SOLID, 0x2d9 | BLOCK_SOLID}},
@@ -732,9 +732,9 @@ static u16 blocks_2x2_tree[NUM_NBS][5][2][2] = { // [block_type_below][decoratio
     },
 };
 
-static u16 dungeon2_forest_branches[] = {0x288, 0x289};
-static u16 dungeon2_forest_decoratives[] = {0x28a, 0x28b, 0x28c, 0x28d, 0x28e, 0x28f};
-static u16 dungeon2_forest_tiny_grasses[] = {0x281, 0x282, 0x283};
+static const u16 dungeon2_forest_branches[] = {0x288, 0x289};
+static const u16 dungeon2_forest_decoratives[] = {0x28a, 0x28b, 0x28c, 0x28d, 0x28e, 0x28f};
+static const u16 dungeon2_forest_tiny_grasses[] = {0x281, 0x282, 0x283};
 
 static inline u16 dungeon2_get_grass_decoration(u8 *map, u8 *over, int x, int y, dungeon_generator2 *dg2) {
     (void) over;
@@ -767,7 +767,7 @@ static inline u16 dungeon2_get_grass_decoration(u8 *map, u8 *over, int x, int y,
 }
 
 static void dungeon2_set_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2) {
-    dungeon_forest_t *forest_type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
+    const dungeon_forest_t *forest_type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
     // To be able to have consistent decorations, we store them for each row
     u8 *decoration_idxs = malloc(sizeof(u8) * (size_t)dg2->width);
     for (int y = 0; y < dg2->height; y++) {
@@ -817,8 +817,8 @@ static void dungeon2_set_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg
 
 static void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2){
     int (*nodes)[2] = save1->dungeon_nodes;
-    dungeon_forest_t *forest_type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
-    map_footer_t *pattern = dungeon2_get_forest_type_pattern(dg2);
+    const dungeon_forest_t *forest_type = dungeon_forest_types + dungeon2_get_forest_type(dg2);
+    const map_footer_t *pattern = dungeon2_get_forest_type_pattern(dg2);
     int num_patterns = dungeon2_get_forest_num_patterns(dg2);
 
     // Fill map to fit the pattern
@@ -878,16 +878,16 @@ void dungeon2_forest_initialize_state(dungeon_generator2 *dg2) {
   dg2->node_metric_lambda_l2 = DG2_FOREST_NODE_METRIC_LAMBDA_MEAN;
   dg2->node_metric_lambda_min = DG2_FOREST_NODE_METRIC_LAMBDA_MIN;
   dg2->node_samples = DG2_FOREST_NODE_SAMPLES;
-  map_footer_t *pattern = dungeon2_get_forest_type_pattern(dg2);
+  const map_footer_t *pattern = dungeon2_get_forest_type_pattern(dg2);
   dg2->pattern_margin = (u8)(((MAX(pattern->width, pattern->height) + 1) / 2) & 0xF);
 }
 
 void dungeon2_initialize_forest(){
-    dungeon_generator2 *dg2 = &(cmem.dg2);
+    dungeon_generator2 *dg2 = &(csave.dg2);
     dungeon2_forest_initialize_state(dg2);
     dungeon2_init_wild_pokemon_forest(dg2); // Initialize before events since persons depend
     dungeon2_init_header_forest(dg2);
-    fmem.dmap_header_initialized = 1;
+    dmap_flags.header_initialized = 1;
 }
 
 void dungeon2_compute_layout_forest_callback(u8 self) {
@@ -955,7 +955,7 @@ void dungeon2_compute_layout_forest_callback(u8 self) {
 
 
 void dungeon2_compute_layout_forest() {
-    dungeon_generator2 *dg2 = &(cmem.dg2);
+    dungeon_generator2 *dg2 = &(csave.dg2);
     dungeon2_forest_initialize_state(dg2);
     u8 cb_idx = big_callback_new(dungeon2_compute_layout_forest_callback, 0);
     big_callback_set_int(cb_idx, 2, (int)dg2);
@@ -979,7 +979,7 @@ void dungeon2_enter_forest() {
     dungeon2_reset_flags();
 
     // Get the warp node (first node in the forest)
-    dungeon_generator2 *dg2 = &(cmem.dg2);
+    dungeon_generator2 *dg2 = &(csave.dg2);
     dungeon2_forest_initialize_state(dg2);
     int (*nodes)[2] = save1->dungeon_nodes;
     s16 x = (s16)(nodes[0][0]);

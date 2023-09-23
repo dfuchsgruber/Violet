@@ -3,7 +3,6 @@
 
 .global ow_script_route_2_clouds_trainer_0
 .global ow_script_route_2_clouds_trainer_1
-.global ow_script_route_2_clouds_trainer_2
 
 ow_script_route_2_clouds_trainer_0:
     trainerbattlestd 0 0x111 0 str_trainer0_challange str_trainer0_defeat
@@ -14,12 +13,6 @@ ow_script_route_2_clouds_trainer_0:
 ow_script_route_2_clouds_trainer_1:
     trainerbattlestd 0 0x112 0 str_trainer1_challange str_trainer1_defeat
     loadpointer 0 str_trainer1_after
-    callstd MSG_FACE
-    end
-
-ow_script_route_2_clouds_trainer_2:
-    trainerbattlestd 0 0x1fc 0 str_trainer2_challange str_trainer2_defeat
-    loadpointer 0 str_trainer2_after
     callstd MSG_FACE
     end
 

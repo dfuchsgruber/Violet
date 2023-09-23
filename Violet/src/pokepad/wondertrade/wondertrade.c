@@ -31,6 +31,8 @@
 #include "pc.h"
 #include "debug.h"
 
+EWRAM wondertrade_memory_t *wondertrade_memory = NULL;
+
 extern const unsigned short gfx_wondertrade_bg_upperTiles[];
 extern const unsigned short gfx_wondertrade_bg_upperMap[];
 extern const unsigned short gfx_wondertrade_bg_lowerTiles[];
@@ -41,18 +43,18 @@ extern const unsigned short gfx_wondertrade_bg_upperPal[];
 extern const unsigned short gfx_wondertrade_bg_lowerPal[];
 
 
-graphic graphic_wondertrade_badges = {
+const graphic graphic_wondertrade_badges = {
     (void*) gfx_wondertrade_badgesTiles,
     0x80 * 4,
     0xA004
 };
 
-sprite sprite_wondertrade_badges = {
+const sprite sprite_wondertrade_badges = {
     0, 0x4000, 0, 0
 };
 
 
-oam_template oam_template_wondertrade_badges = {
+const oam_template oam_template_wondertrade_badges = {
     0xA004, 0xA004,
     &sprite_wondertrade_badges,
     oam_gfx_anim_table_null,
@@ -61,9 +63,9 @@ oam_template oam_template_wondertrade_badges = {
     oam_null_callback
 };
 
-tbox_font_colormap wondertrade_fontcolmap = {0, 2, 1, 0};
+const tbox_font_colormap wondertrade_fontcolmap = {0, 2, 1, 0};
 
-tboxdata wondertrade_tboxes[] = {
+const tboxdata wondertrade_tboxes[] = {
     {0, 10, 1, 10, 2, 15, 1}, //Wondertrade Title
     {0, 1, 4, 5, 2, 15, 21}, //Wondertrade Level Title
     {0, 2, 6, 5, 2, 15, 31}, //Wondertrade Level Text
@@ -78,7 +80,7 @@ tboxdata wondertrade_tboxes[] = {
 };
 
 
-u16 wondertrade_pokemon_bronze[] = {
+const u16 wondertrade_pokemon_bronze[] = {
     POKEMON_DARTIRI, POKEMON_HORNLIU, POKEMON_STARALILI, POKEMON_SANDAN,
     POKEMON_NIDORANM, POKEMON_NIDORANW, POKEMON_PUMMELUFF, POKEMON_ZUBAT,
     POKEMON_MYRAPLA, POKEMON_DIGDA, POKEMON_ENTON, POKEMON_MAGNETILO,
@@ -89,7 +91,7 @@ u16 wondertrade_pokemon_bronze[] = {
     POKEMON_ENECO, POKEMON_LAMPI, POKEMON_OWEI, 0xFFFF
 };
 
-u16 wondertrade_pokemon_silver[] = {
+const u16 wondertrade_pokemon_silver[] = {
     POKEMON_PIKACHU, POKEMON_VULPIX, POKEMON_KASTADUR, POKEMON_FUKANO,
     POKEMON_ABRA, POKEMON_PORENTA, POKEMON_SLEIMA, POKEMON_SMOGON,
     POKEMON_NEBULAK, POKEMON_SEEPER, POKEMON_MAGBY, POKEMON_TRAGOSSO,
@@ -98,19 +100,19 @@ u16 wondertrade_pokemon_silver[] = {
     POKEMON_STOLLUNIOR, POKEMON_STERNDU, 0xFFFF
 };
 
-u16 wondertrade_pokemon_gold[] = {
+const u16 wondertrade_pokemon_gold[] = {
     POKEMON_BISASAM, POKEMON_GLUMANDA, POKEMON_SCHIGGY,
     POKEMON_TOGEPI, POKEMON_CLAVION,
     POKEMON_PANZAERON,
     POKEMON_KECLEON, 0xFFFF
 };
 
-u16 wondertrade_pokemon_platinum[] = {
+const u16 wondertrade_pokemon_platinum[] = {
     POKEMON_CHANEIRA, POKEMON_IGNIVOR, POKEMON_EVOLI, POKEMON_LAPRAS,
     POKEMON_BARSCHWA, POKEMON_ABSOL, POKEMON_SICHLOR, 0xFFFF
 };
 
-u16 *wondertrade_pokemon[] = {
+const u16 *const wondertrade_pokemon[] = {
     wondertrade_pokemon_bronze,
     wondertrade_pokemon_silver,
     wondertrade_pokemon_gold,
@@ -118,7 +120,7 @@ u16 *wondertrade_pokemon[] = {
 };
 
 void wondertrade_color_callback(u8 self) {
-    if (fmem.wtrade_mem->error_m || !fmem.wtrade_mem->usable)
+    if (wondertrade_memory->error_m || !wondertrade_memory->usable)
         return;
     if (!fading_is_active()) {
         //first we adjust the mode
@@ -137,7 +139,7 @@ void wondertrade_color_callback(u8 self) {
         color_t overlay = {0x3FFF};
         for (i = 0; i < 32; i++) {
             if ((i & 0xF) == 2 || (i & 0xF) == 4 || (i & 0xF) == 8) {
-                if ((fmem.wtrade_mem->cursor == 1 && i >= 16) || (!fmem.wtrade_mem->cursor && i < 16)) {
+                if ((wondertrade_memory->cursor == 1 && i >= 16) || (!wondertrade_memory->cursor && i < 16)) {
                     color_t new = color_alpha_blend(pal_restore[i + 13 * 16], overlay, (u8) big_callbacks[self].params[1]);
                     pals[i + 13 * 16] = new;
                 } else {
@@ -198,7 +200,7 @@ u16 wondertrade_next_seed() {
     return (u16) ((rnd16() & 511) / (wondertrade_get_level() + 1));
 }
 
-u32 tid_by_ot_name(u8 *ot_name) {
+u32 tid_by_ot_name(const u8 *ot_name) {
 	u32 tid = 1;
 	int i = 0;
 	while(ot_name[i] != 0xFF) {
@@ -207,12 +209,12 @@ u32 tid_by_ot_name(u8 *ot_name) {
     return tid;
 }
 
-static u8 str_wodka[] = PSTRING("Wodka");
+static const u8 str_wodka[] = PSTRING("Wodka");
 
 void wondertrade_spawn_pokemon() {
     u16 species = wondertrade_select_pokemon();
     bool female_ot = rnd16() % 1;
-    u8 *ot_name = species == POKEMON_MEW ? str_wodka : person_names[female_ot][rnd16() % 128];
+    const u8 *ot_name = species == POKEMON_MEW ? str_wodka : person_names[female_ot][rnd16() % 128];
     u32 tid = tid_by_ot_name(ot_name);
     pid_t p = {.value = 0};
     pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, 5, 32, false, p,
@@ -264,13 +266,13 @@ void wondertrade_callback_after_selection() {
             callback1_set(ingame_trade_init_callback);
 
         } else {
-            fmem.wtrade_mem = (wondertrade_memory*) malloc(sizeof (wondertrade_memory));
-            fmem.wtrade_mem->from_outdoor = from_outdoor;
-            fmem.wtrade_mem->error_m = true;
-            fmem.wtrade_mem->usable = true;
-            fmem.wtrade_mem->cursor = 0;
+            wondertrade_memory = (wondertrade_memory_t*) malloc(sizeof (wondertrade_memory_t));
+            wondertrade_memory->from_outdoor = from_outdoor;
+            wondertrade_memory->error_m = true;
+            wondertrade_memory->usable = true;
+            wondertrade_memory->cursor = 0;
             wondertrade_init_components();
-            fmem.wtrade_mem->color_cb = big_callback_new(wondertrade_color_callback, 0);
+            wondertrade_memory->color_cb = big_callback_new(wondertrade_color_callback, 0);
             io_set(0x50, 0);
             io_set(0x52, 0);
             io_set(0x54, 0);
@@ -286,27 +288,27 @@ void wondertrade_callback_init_selection() {
     generic_callback1();
     if (!fading_is_active()) {
         fading_control.buffer_transfer_disabled = true;
-        gp_stack_push(fmem.wtrade_mem->from_outdoor);
+        gp_stack_push(wondertrade_memory->from_outdoor);
         wondertrade_free_components();
         pc_initialize(PC_MODE_SELECT);
         *var_access(0x8006) = 0;
-        fmem.pc_selection_context = PC_SELECTION_CONTEXT_CHOOSE_WONDERTRADE;
+        pc_selection_context = PC_SELECTION_CONTEXT_CHOOSE_WONDERTRADE;
     }
 }
 
 void wondertrade_callback_idle() {
     generic_callback1();
     if (!fading_is_active()) {
-        if (fmem.wtrade_mem->usable && !fmem.wtrade_mem->error_m) {
+        if (wondertrade_memory->usable && !wondertrade_memory->error_m) {
             if (super.keys_new.keys.right || super.keys_new.keys.left) {
                 play_sound(5);
-                fmem.wtrade_mem->cursor ^= 1;
+                wondertrade_memory->cursor ^= 1;
             } else if (super.keys_new.keys.B) {
                 play_sound(5);
                 callback1_set(wondertrade_callback_free_components_and_return);
                 fadescreen_all(1, 0);
             } else if (super.keys_new.keys.A) {
-                if (fmem.wtrade_mem->cursor) {
+                if (wondertrade_memory->cursor) {
                     callback1_set(wondertrade_callback_free_components_and_return);
                 } else {
                     callback1_set(wondertrade_callback_init_selection);
@@ -330,13 +332,13 @@ void wondertrade_show_components() {
     bg_sync_display_and_show(1);
     bg_sync_display_and_show(2);
     bg_display_sync();
-    if (fmem.wtrade_mem->usable)
-        fmem.wtrade_mem->scroll_cb = big_callback_new(wondertrade_bg_scroll_callback, 10);
+    if (wondertrade_memory->usable)
+        wondertrade_memory->scroll_cb = big_callback_new(wondertrade_bg_scroll_callback, 10);
     fadescreen_all(0, 0);
     callback1_set(wondertrade_callback_idle);
 }
 
-bg_config wondertrade_bg_cnfgs [] = {
+const bg_config wondertrade_bg_cnfgs [] = {
     {0, 2, 31, 0, 0, 0},
     {1, 0, 29, 0, 0, 1},
     {2, 1, 27, 0, 0, 2}
@@ -347,15 +349,15 @@ void wondertrade_free_components() {
     free(bg_get_tilemap(0));
     free(bg_get_tilemap(1));
     free(bg_get_tilemap(2));
-    oam_free(&oams[fmem.wtrade_mem->oam_badge]);
+    oam_free(&oams[wondertrade_memory->oam_badge]);
     tbox_free_all();
-    free(fmem.wtrade_mem);
+    free(wondertrade_memory);
 }
 
 void wondertrade_callback_free_components_and_return() {
     generic_callback1();
     if (!fading_is_active()) {
-        if (!fmem.wtrade_mem->from_outdoor) {
+        if (!wondertrade_memory->from_outdoor) {
             callback1_set(pokepad2_callback_initialize);
         } else {
             callback1_set(map_reload);
@@ -472,7 +474,7 @@ void wondertrade_init_components() {
     oam_load_graphic(&graphic_wondertrade_badges);
     u8 bpal = oam_allocate_palette(0xA004);
     pal_decompress(gfx_wondertrade_badgesPal, (u16) ((16 + bpal)*16), 32);
-    fmem.wtrade_mem->oam_badge = oam_new_forward_search(&oam_template_wondertrade_badges, 64, 50, 0);
+    wondertrade_memory->oam_badge = oam_new_forward_search(&oam_template_wondertrade_badges, 64, 50, 0);
     //now we change to the proper graphic
     int displacement = 0;
     switch (lvl) {
@@ -486,14 +488,14 @@ void wondertrade_init_components() {
             displacement += 4;
             break;
     }
-    u16 attr2 = oams[fmem.wtrade_mem->oam_badge].final_oam.attr2;
+    u16 attr2 = oams[wondertrade_memory->oam_badge].final_oam.attr2;
     u16 base = (u16) ((attr2 & 0x3FF) + displacement);
     attr2 = (u16) ((attr2 & (~0x3FF)) | base);
-    oams[fmem.wtrade_mem->oam_badge].final_oam.attr2 = attr2;
+    oams[wondertrade_memory->oam_badge].final_oam.attr2 = attr2;
 
     //Now we spawn either the not possible text or the two selections
-    if (fmem.wtrade_mem->usable) {
-        if (fmem.wtrade_mem->error_m) {
+    if (wondertrade_memory->usable) {
+        if (wondertrade_memory->error_m) {
             u8 str_error[] = LANGDEP(PSTRING("Diese Pokémon kennt eine\nVm oder ist ein Ei."),
                 PSTRING("This Pokémon knows a hm\nor is an egg."));
             tbox_flush_set(POKEPAD_WONDERTRADE_TBOX_RENDERER, 0);
@@ -533,7 +535,7 @@ void wondertrade_init_components() {
     pal_decompress(gfx_wondertrade_bg_upperPal, 0, 32);
     pal_decompress(gfx_wondertrade_bg_lowerPal, 1 * 16, 32);
     pal_copy(tbox_palette_transparent, 15 * 16, 32);
-    if (!fmem.wtrade_mem->usable) {
+    if (!wondertrade_memory->usable) {
         //greyscale all pals
         int i;
         color_t black = {0};
@@ -557,14 +559,14 @@ void wondertrade_init_components() {
 void wondertrade_init_callback() {
     generic_callback1();
     if (!fading_is_active()) {
-        if (fmem.wtrade_mem->from_outdoor) {
+        if (wondertrade_memory->from_outdoor) {
             overworld_free();
         } else {
             pokepad2_free();
         }
         //Now we initilize the graphic components
         wondertrade_init_components();
-        fmem.wtrade_mem->color_cb = big_callback_new(wondertrade_color_callback, 0);
+        wondertrade_memory->color_cb = big_callback_new(wondertrade_color_callback, 0);
         io_set(0x50, 0);
         io_set(0x52, 0);
         io_set(0x54, 0);
@@ -587,11 +589,11 @@ void wondertrade_init(bool is_outdoor) {
     }
     overworld_rain_sound_fade_out();
     fadescreen_all(1, 0);
-    fmem.wtrade_mem = (wondertrade_memory*) malloc(sizeof (wondertrade_memory));
-    fmem.wtrade_mem->from_outdoor = is_outdoor;
-    fmem.wtrade_mem->error_m = false;
-    fmem.wtrade_mem->usable = is_usable;
-    fmem.wtrade_mem->cursor = 0;
+    wondertrade_memory = (wondertrade_memory_t*) malloc(sizeof (wondertrade_memory_t));
+    wondertrade_memory->from_outdoor = is_outdoor;
+    wondertrade_memory->error_m = false;
+    wondertrade_memory->usable = is_usable;
+    wondertrade_memory->cursor = 0;
     callback1_set(wondertrade_init_callback);
 
 }

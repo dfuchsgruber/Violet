@@ -15,12 +15,12 @@ extern "C" {
 #include "types.h"
     
     typedef struct{
-        u8 **choices;
+        const u8 **choices;
         int size;
     } multichoice_t;
     
-    extern multichoice_t multichoices[];
-
+    extern const multichoice_t multichoices[];
+    extern EWRAM multichoice_t dynamic_multichoice;
 
 #ifdef	__cplusplus
 }

@@ -2,7 +2,7 @@
 #include "text.h"
 #include "constants/pokemon_types.h"
 
-move_info_gfx_t move_info_icon_gfxs[] = {
+const move_info_gfx_t move_info_icon_gfxs[] = {
     [MOVE_INFO_NONE] = { 12, 12, 0x00 },
     [MOVE_INFO_TYPE_BASE + TYPE_NORMAL] = { 32, 12, 0x20 },
     [MOVE_INFO_TYPE_BASE + TYPE_KAMPF] = { 32, 12, 0x64 },

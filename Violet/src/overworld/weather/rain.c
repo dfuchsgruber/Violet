@@ -3,8 +3,8 @@
 #include "oam.h"
 #include "tile/coordinate.h"
 
-extern oam_template overworld_weather_rain_template;
-extern coordinate_t overworld_weather_rain_positions[];
+extern const oam_template overworld_weather_rain_template;
+extern const coordinate_t overworld_weather_rain_positions[];
 
 bool overworld_weather_create_rain_oam() {
     if (overworld_weather.rain_oam_count >= 24)

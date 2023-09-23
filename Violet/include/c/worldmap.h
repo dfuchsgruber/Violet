@@ -118,9 +118,30 @@ enum {
 
     } worldmap_state_t;
 
+    // A pattern consists of multiple shapes, each of which can have displacement from the
+    // position anchor and its own rectangular dimension. To associate a map with a shape use
+    // the respective field in the mapheader structure
+    typedef struct {
+    	u8 x, y, width, height;
+    } worldmap_shape_t;
+
+    typedef struct {
+    	int num_shapes;
+    	const worldmap_shape_t *shapes;
+    } worldmap_pattern_t;
+
+    typedef struct {
+        u8 bank;
+        u8 map_idx;
+        u8 shape_idx;
+    } worldmap_shape_association_t;
+
+    #define NUM_WORLDMAP_SHAPE_ASSOCIATIONS 6
+    extern const worldmap_shape_association_t worldmap_shape_associations[NUM_WORLDMAP_SHAPE_ASSOCIATIONS];
+
     extern worldmap_state_t *worldmap_state;
 
-    stru_flight_position flight_positions[NUM_HEALING_PLACES]; // Each flight position is associated with a healing place
+    extern const stru_flight_position flight_positions[NUM_HEALING_PLACES]; // Each flight position is associated with a healing place
 
     typedef struct {
         u8 bank;
@@ -129,16 +150,16 @@ enum {
     } flight_position_association_t;
     
     // Associates map namespaces with healing place idxs
-    flight_position_association_t flight_position_associations[MAP_NAMESPACE_NONE - MAP_AMONIA];
+    extern const flight_position_association_t flight_position_associations[MAP_NAMESPACE_NONE - MAP_AMONIA];
 
-    int *worldmap_tilemaps[4];
-    u8 *namespace_worldmap_associations;
-    extern LZ77COMPRESSED gfx_worldmapTiles;
-    extern LZ77COMPRESSED gfx_worldmapMap;
-    extern color_t gfx_worldmapPal[80];
+    extern const int *const worldmap_tilemaps[4];
+    extern const u8 *namespace_worldmap_associations;
+    extern const LZ77COMPRESSED gfx_worldmapTiles;
+    extern const LZ77COMPRESSED gfx_worldmapMap;
+    extern const color_t gfx_worldmapPal[80];
 
-    extern LZ77COMPRESSED gfx_worldmap_icon_thetoTiles;
-    extern color_t gfx_worldmap_icon_thetoPal[16];
+    extern const LZ77COMPRESSED gfx_worldmap_icon_thetoTiles;
+    extern const color_t gfx_worldmap_icon_thetoPal[16];
 
     enum {
         WORLDMAP_THETO = 0,
@@ -174,7 +195,7 @@ enum {
      * @param idx_plus_one the index of the flight position plus one
      * @return the flight pos offset
      */
-    stru_flight_position *flightposition_by_id(int idx_plus_one);
+    const stru_flight_position *flightposition_by_id(int idx_plus_one);
 
     /**
      * Gets the namespace id associated with a position on the worldmap
@@ -260,53 +281,7 @@ enum {
     } worldmap_position_t;
 
     // Locates maps exactly on the worldmap
-    worldmap_position_t *worldmap_positions[256];
-
-    enum {
-        WORLDMAP_UI_HABITAT = 0,
-    } worldmap_ui_mode;
-
-    typedef struct {
-        u8 initialization_state;
-        u8 mode;
-        void *bg0_map;
-        void *bg1_map;
-        void *bg2_map;
-        void *bg3_map;
-
-        u8 worldmaps[NUM_WORLDMAPS]; // all worldmaps the player has unlocked
-        u8 num_worldmaps;
-        u8 worldmap_tile_x, worldmap_tile_y;
-        u8 icon_switch_maps_x, icon_switch_maps_y;
-        u8 switch_maps_dialoge_x, switch_maps_dialoge_y;
-
-        u8 header_pokemon_name_string_width;
-        u8 oam_idx_player, oam_idx_cursor, oam_idx_icon_switch_map, oam_idx_icon_switch_map_frame;
-        u8 oam_idx_percentages[NUM_HABITAT_TYPES];
-        
-        u8 cursor_locked : 1;
-        u8 cursor_invisible : 1;
-        u8 cursor_moving : 1;
-
-        worldmap_cursor_t player;
-        worldmap_cursor_t cursor;
-
-        void (*callback_cursor_moved)(u8); // triggered after the cursor is finished moving
-        void (*callback_cursor_starts_moving)(u8); // triggered once the cursor starts moving
-
-        u8 cb_idx_handle_inputs;
-
-        u16 species;
-        u8 current_namespace;
-
-        pokedex_habitat_list_t *habitats;
-        u8 red_overlay_should_be_active : 1;
-        u8 red_overlay_is_active : 1;
-        u8 other_red_should_be_active : 1;
-        u8 other_red_is_active : 1;
-    } worldmap_ui_state_t;
-
-    #define WORLDMAP_UI_STATE ((worldmap_ui_state_t*)fmem.gp_state)
+    extern const worldmap_position_t *worldmap_positions[256];
 
 #define WORLDMAP_FLAG_CHECK_INVALID 0
 #define WORLDMAP_FLAG_CHECK_NO_FLAG 1

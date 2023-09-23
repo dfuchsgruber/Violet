@@ -49,11 +49,11 @@ void bag_berries_sort() {
 	bag_sort_pocket(list, list_size, bag_berry_sort_cmp);
 }
 
-static u8 str_text_small[] = PSTRING("FONT_SIZE_SMALL");
-static u8 str_clear_to_xtm[] = PSTRING("CLEAR_TO\x17");
-static u8 str_xf9_x08_clear_to_x1[] = {0xF9, 0x8, 0xFC, 0x11, 0x1, 0xFF};
-static u8 str_space[] = PSTRING(" ");
-static u8 str_font_size_big[] = PSTRING("FONT_SIZE_BIG");
+static const u8 str_text_small[] = PSTRING("FONT_SIZE_SMALL");
+static const u8 str_clear_to_xtm[] = PSTRING("CLEAR_TO\x17");
+static const u8 str_xf9_x08_clear_to_x1[] = {0xF9, 0x8, 0xFC, 0x11, 0x1, 0xFF};
+static const u8 str_space[] = PSTRING(" ");
+static const u8 str_font_size_big[] = PSTRING("FONT_SIZE_BIG");
 
 void berry_get_str_number_and_name(u8 *dst, u16 item_idx) {
 	strcpy(strbuf, str_text_small);

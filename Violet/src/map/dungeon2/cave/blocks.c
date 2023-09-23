@@ -29,11 +29,11 @@ void dungeon2_cave_set_ground(int x, int y, dungeon_generator2 *dg2) {
   save1->dungeon_blocks[y * dg2->width + x] = block;
 }
 
-static u16 dungeon2_cave_rocks_ground[] = {
+static const u16 dungeon2_cave_rocks_ground[] = {
     0x286 | BLOCK_SOLID, 0x287 | BLOCK_SOLID
 };
 
-static u16 dungeon2_cave_rocks_level[] = {
+static const u16 dungeon2_cave_rocks_level[] = {
     0x28e | BLOCK_SOLID, 0x28f | BLOCK_SOLID
 };
 

@@ -41,7 +41,7 @@ typedef struct {
     u8 field3;
 } treasure_map_t;
 
-extern treasure_map_t treasure_maps[NUM_TREASURE_MAPS];
+extern const treasure_map_t treasure_maps[NUM_TREASURE_MAPS];
 
 typedef struct {
     bool from_outdoor;
@@ -61,18 +61,20 @@ typedef struct {
     u8 scroll_indicator_cb_idx;
 } treasure_map_state_t;
 
-#define TREASURE_MAP_STATE ((treasure_map_state_t*)fmem.gp_state)
+extern EWRAM treasure_map_state_t *treasure_map_state;
+extern EWRAM u16 treasure_map_cursor_position;
+extern EWRAM u16 treasure_map_items_above;
 
-extern LZ77COMPRESSED gfx_pokepad_icon_treasure_mapTiles;
-extern LZ77COMPRESSED gfx_pokepad_icon_treasure_mapPal;
-extern LZ77COMPRESSED gfx_treasure_map_ui_backgroundTiles;
-extern bg_tile gfx_treasure_map_ui_backgroundMap[64 * 32];
-extern LZ77COMPRESSED gfx_treasure_map_ui_backgroundPal;
-extern LZ77COMPRESSED gfx_treasure_map_crossTiles;
-extern color_t gfx_treasure_map_crossPal[16];
-extern u8 gfx_treasure_map_check_markTiles[];
-extern LZ77COMPRESSED gfx_treasure_map_white_squareTiles;
-extern color_t gfx_treasure_map_white_squarePal[16];
+extern const LZ77COMPRESSED gfx_pokepad_icon_treasure_mapTiles;
+extern const LZ77COMPRESSED gfx_pokepad_icon_treasure_mapPal;
+extern const LZ77COMPRESSED gfx_treasure_map_ui_backgroundTiles;
+extern const bg_tile gfx_treasure_map_ui_backgroundMap[64 * 32];
+extern const LZ77COMPRESSED gfx_treasure_map_ui_backgroundPal;
+extern const LZ77COMPRESSED gfx_treasure_map_crossTiles;
+extern const color_t gfx_treasure_map_crossPal[16];
+extern const u8 gfx_treasure_map_check_markTiles[];
+extern const LZ77COMPRESSED gfx_treasure_map_white_squareTiles;
+extern const color_t gfx_treasure_map_white_squarePal[16];
 
 /**
  * @brief Initializes the treasure map ui

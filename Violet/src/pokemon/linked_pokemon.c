@@ -8,7 +8,7 @@
 #include "constants/species.h"
 #include "pokemon/basestat.h"
 
-u16 pokemon_linked[LINKED_PKMN_CNT] = {
+const u16 pokemon_linked[LINKED_PKMN_CNT] = {
 		POKEMON_KECLEON_PURPLE,
 		POKEMON_ROTOM_FORST,
 		POKEMON_ROTOM_GRASS,

@@ -41,7 +41,7 @@ enum {
 #define OAM_TAG_POKEBALL_BASE 56020
 #define OAM_TAG_POKEBALL_PARTICLES_BASE 55020
 
-extern gfx_frame *pokeball_particles_gfx_animations[6];
+extern const gfx_frame *pokeball_particles_gfx_animations[6];
 
 #define POKEBALL_PARTICLE_TEMPLATE_STANDARD(ball_idx) {\
         .tiles_tag = OAM_TAG_POKEBALL_PARTICLES_BASE + ball_idx, \
@@ -50,9 +50,9 @@ extern gfx_frame *pokeball_particles_gfx_animations[6];
         .graphics = NULL, .rotscale = oam_rotscale_anim_table_null, .callback = oam_null_callback,\
     }
 
-extern sprite pokeball_sprite;
-extern gfx_frame *pokeball_gfx_animations[];
-extern rotscale_frame *pokeball_rotscale_animations[];
+extern const sprite pokeball_sprite;
+extern const gfx_frame *pokeball_gfx_animations[];
+extern const rotscale_frame *pokeball_rotscale_animations[];
 void pokeball_throw_oam_callback(oam_object *self);
 
 #define POKEBALL_TEMPLATE_STANDARD(ball_idx) {\

@@ -32,7 +32,7 @@ enum {
     OVERWORLD_WEATHER_COLORFUL_PETALS_GFX_TAG,
 };
 
-color_t drought_colors[6][0x1000];
+extern const color_t drought_colors[6][0x1000];
 
 // Ugly macro to create wrappers that initialize the weather filters
 
@@ -159,6 +159,10 @@ typedef struct {
 } overworld_weather_stru;
 
 extern overworld_weather_stru overworld_weather;
+
+extern EWRAM color_t weather_blend;
+extern EWRAM u8 weather_blend_active;
+extern EWRAM u8 weather_blend_delay;
 
 /**
  * Adds a palette idx that is affected by fog, i.e. it is blended with an average color of the fog oams.
@@ -303,12 +307,12 @@ void overworld_weather_build_gamma_shift_lookup_tables();
  */
 void overworld_weather_callback_initialize(u8 self);
 
-extern sprite overworld_weather_snow_sprite;
-extern gfx_frame *overworld_weather_snow_animations[];
-extern graphic overworld_weather_snow_graphics[];
+extern const sprite overworld_weather_snow_sprite;
+extern const gfx_frame *overworld_weather_snow_animations[];
+extern const graphic overworld_weather_snow_graphics[];
 
 
-extern color_t gfx_weather_defaultPal[16];
+extern const color_t gfx_weather_defaultPal[16];
 
 void weather_inside_initialize_variables();
 void weather_inside_main();

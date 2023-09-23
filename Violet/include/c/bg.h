@@ -30,7 +30,7 @@ extern "C" {
      * @param bg_configs Pointer to the configurations for each bg
      * @param config_cnt The number of configurations passed
      */
-    void bg_setup(u8 tile_mode, bg_config configs[], u8 config_cnt);
+    void bg_setup(u8 tile_mode, const bg_config *configs, u8 config_cnt);
 
     /**
      * Applies configurations to a bg.
@@ -65,7 +65,7 @@ extern "C" {
      * @param offset Offset from the destination in bytes
      * @param mode Target either the tileset (BG_COPY_TILESET) or tilemap (BG_COPY_TILEMAP)
      */
-    void bg_copy_vram(u8 bgid, void* src, u16 size, u16 offset, u8 mode);
+    void bg_copy_vram(u8 bgid, const void* src, u16 size, u16 offset, u8 mode);
 
 
     /**
@@ -165,7 +165,7 @@ extern "C" {
      * @param size how many bytes to copy
      * @param offset where in the charbase to place the tiles
      **/
-    void bg_load_tileset(u8 bg_idx, void *src, size_t size, u16 offset);
+    void bg_load_tileset(u8 bg_idx, const void *src, size_t size, u16 offset);
 
     /**
      * Fills a bg's virtual tilemap with a tile

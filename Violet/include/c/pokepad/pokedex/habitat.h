@@ -24,12 +24,12 @@ enum {
 };
 
 typedef struct {
-        u16 *data;
+        const u16 *data;
         int page_size;
     } pokedex_page;
 
     typedef struct {
-        pokedex_page *pages;
+        const pokedex_page *pages;
         int page_cnt;
     } pokedex_habitat;
 

@@ -175,7 +175,7 @@ typedef struct {
 } fishing_state_t;
 
 
-extern u8 ow_script_fishing[];
+extern const u8 ow_script_fishing[];
 
 /**
  * Callback to handle all fishing states.

@@ -12,7 +12,7 @@
 #include "callbacks.h"
 #include "constants/map_weathers.h"
 
-color_t tbox_palette_transparent [16] = {
+const color_t tbox_palette_transparent[16] = {
     {0x0},
     {0x0},
     {0x7FFF},
@@ -36,7 +36,7 @@ bool transparency_is_on() {
     return !checkflag(TRANS_DISABLE) && !transparency_used_by_weather();
 }
 
-static u8 weather_uses_transparency[NUM_MAP_WEATHERS] = {
+static const u8 weather_uses_transparency[NUM_MAP_WEATHERS] = {
     [MAP_WEATHER_STATIC_FOG] = true,
     [MAP_WEATHER_SANDSTORM] = true,
     [MAP_WEATHER_DYNAMIC_FOG] = true,
@@ -66,8 +66,8 @@ void transparency_off() {
 }
 
 
-extern void *gfx_text_std_borderTiles[];
-extern color_t gfx_text_std_borderPal[16];
+extern const void *gfx_text_std_borderTiles[];
+extern const color_t gfx_text_std_borderPal[16];
 
 void tbox_frame_std_load_gfx_and_pal(u8 tbox_idx, u16 tile_offset, u16 color_idx) {
     bg_load_tileset((u8)tbox_get_attribute(tbox_idx, TBOX_ATTRIBUTE_BG), gfx_text_std_borderTiles, 0x280, tile_offset);

@@ -52,19 +52,19 @@ void trainer_load_items_and_ai() {
 	memset(battle_struct->history, 0, sizeof(battle_history_t));
 	DEBUG("Active Battler %d\n", active_battler);
 	for (active_battler = 0; active_battler < 4; active_battler++) {
-		BATTLE_STATE2->num_items[active_battler] = 0;
+		battle_state2->num_items[active_battler] = 0;
 		// trainer_load_ai(battler_); I suppose we don't need this? // Todo Load AI thinking struct for the active battler only
 		for (int j = 0; j < 4; j++)
-			BATTLE_STATE2->items[active_battler][j] = 0;
+			battle_state2->items[active_battler][j] = 0;
 	}
 	active_battler = 0;
 	if (trainer_vars.trainer_id != 0x400 && !(battle_flags & (BATTLE_LINK | BATTLE_SAFARI | BATTLE_EREADER | BATTLE_TOWER |
 					BATTLE_FACTORY))) {
-		trainer_load_items(trainer_vars.trainer_id, BATTLE_STATE2->items[OWNER_TRAINER_A], BATTLE_STATE2->num_items + OWNER_TRAINER_A, true);
+		trainer_load_items(trainer_vars.trainer_id, battle_state2->items[OWNER_TRAINER_A], battle_state2->num_items + OWNER_TRAINER_A, true);
 		if (battle_flags & BATTLE_TWO_TRAINERS)
-			trainer_load_items(fmem.trainer_varsB.trainer_id, BATTLE_STATE2->items[OWNER_TRAINER_B], BATTLE_STATE2->num_items + OWNER_TRAINER_B, true);
+			trainer_load_items(trainer_varsB.trainer_id, battle_state2->items[OWNER_TRAINER_B], battle_state2->num_items + OWNER_TRAINER_B, true);
 		if (battle_flags & BATTLE_ALLY)
-			trainer_load_items(*var_access(VAR_ALLY), BATTLE_STATE2->items[OWNER_ALLY], BATTLE_STATE2->num_items + OWNER_ALLY, true);
+			trainer_load_items(*var_access(VAR_ALLY), battle_state2->items[OWNER_ALLY], battle_state2->num_items + OWNER_ALLY, true);
 	}
 }
 

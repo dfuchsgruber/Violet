@@ -35,8 +35,8 @@
         * @param pdf The associated pdf
         * @return The number of unique key, value pairs in dst
         */
-        int _pokedex_feature_scanner_build_entries(wild_pokemon_entry *wild_entries,
-               u16 dst[][2], int capacity, u8 pdf[]);
+        int _pokedex_feature_scanner_build_entries(const wild_pokemon_entry *wild_entries,
+               u16 dst[][2], int capacity, const u8 pdf[]);
 
         /**
          * Uses bubble sort to sort the entries in descending order based on their values

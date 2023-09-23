@@ -9,7 +9,6 @@
 .global ow_script_route_10_trainer_5
 .global ow_script_route_10_trainer_6
 .global ow_script_route_10_trainer_7
-.global ow_script_route_10_trainer_8
 
 ow_script_route_10_trainer_0:
     trainerbattlestd 0 0xd8 0 str_trainer0_challange str_trainer0_defeat
@@ -56,12 +55,6 @@ ow_script_route_10_trainer_6:
 ow_script_route_10_trainer_7:
     trainerbattlestd 0 0xdf 0 str_trainer7_challange str_trainer7_defeat
     loadpointer 0 str_trainer7_defeat
-    callstd MSG_FACE
-    end
-
-ow_script_route_10_trainer_8:
-    trainerbattledouble 4 0x178 0 str_trainer8_challange str_trainer8_defeat str_trainer8_cant_battle
-    loadpointer 0 str_trainer8_defeat
     callstd MSG_FACE
     end
 

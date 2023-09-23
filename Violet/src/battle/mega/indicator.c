@@ -13,18 +13,18 @@
 extern const u8 gfx_mega_indicatorTiles[];
 extern const u8 gfx_mega_indicatorPal[];
 
-static sprite indicator_sprite = {
+static const sprite indicator_sprite = {
     .attr0 = ATTR0_SHAPE_VERTICAL, .attr1 = ATTR1_SIZE_8_16, .attr2 = ATTR2_PRIO(0),
 };
 
-static graphic indicator_graphic = {.tag = MEGA_INDICATOR_TAG, .sprite = gfx_mega_indicatorTiles, .size = 8 * 32 / 2};
+static const graphic indicator_graphic = {.tag = MEGA_INDICATOR_TAG, .sprite = gfx_mega_indicatorTiles, .size = 8 * 32 / 2};
 
-static gfx_frame indicator_gfx_animation[] = {
+static const gfx_frame indicator_gfx_animation[] = {
     {.data = 0, .duration = 0}, {.data = GFX_ANIM_END},
     {.data = 2, .duration = 0}, {.data = GFX_ANIM_END},
 };
 
-static gfx_frame *indicator_gfx_animations[] = {
+static const gfx_frame *indicator_gfx_animations[] = {
     indicator_gfx_animation + 0, indicator_gfx_animation + 2,
 };
 
@@ -89,7 +89,7 @@ static void indicator_callback (oam_object *self) {
     }
 }
 
-static oam_template indicator_template = {
+static const oam_template indicator_template = {
     .tiles_tag = MEGA_INDICATOR_TAG, .pal_tag = MEGA_INDICATOR_TAG,
     .oam = &indicator_sprite, .animation = indicator_gfx_animations,
     .graphics = NULL, .rotscale = oam_rotscale_anim_table_null, .callback = indicator_callback,

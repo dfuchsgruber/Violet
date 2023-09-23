@@ -148,74 +148,74 @@ static void weather_cherry_tree_leaves_oam_callback_fall(oam_object *self) {
 }
 
 
-extern LZ77COMPRESSED gfx_weather_cherry_tree_leavesTiles;
-extern LZ77COMPRESSED gfx_weather_colorful_leavesTiles;
+extern const LZ77COMPRESSED gfx_weather_cherry_tree_leavesTiles;
+extern const LZ77COMPRESSED gfx_weather_colorful_leavesTiles;
 
-static sprite weather_any_leaves_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(1)};
+static const sprite weather_any_leaves_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(1)};
 
 #define NUM_COLORS_FRAMES_PER_COLOR 4
 #define GFX_COLOR_AND_FRAME(color_num, frame_num) ((frame_num + color_num * NUM_COLORS_FRAMES_PER_COLOR) * GRAPHIC_SIZE_4BPP_TO_NUM_TILES(16, 16))
 
-static gfx_frame weather_cherry_tree_leaves_animation_idle_0[] = {
+static const gfx_frame weather_cherry_tree_leaves_animation_idle_0[] = {
     {.data = GFX_COLOR_AND_FRAME(0, 0), .duration = 0}, {.data = GFX_ANIM_END},
 };
-static gfx_frame weather_cherry_tree_leaves_animation_idle_1[] = {
+static const gfx_frame weather_cherry_tree_leaves_animation_idle_1[] = {
     {.data = GFX_COLOR_AND_FRAME(1, 0), .duration = 0}, {.data = GFX_ANIM_END},
 };
-static gfx_frame weather_cherry_tree_leaves_animation_idle_2[] = {
+static const gfx_frame weather_cherry_tree_leaves_animation_idle_2[] = {
     {.data = GFX_COLOR_AND_FRAME(2, 0), .duration = 0}, {.data = GFX_ANIM_END},
 };
-static gfx_frame weather_cherry_tree_leaves_animation_idle_3[] = {
+static const gfx_frame weather_cherry_tree_leaves_animation_idle_3[] = {
     {.data = GFX_COLOR_AND_FRAME(3, 0), .duration = 0}, {.data = GFX_ANIM_END},
 };
 
-static gfx_frame weather_cherry_tree_leaves_animation_horizontal_0[] = {
+static const gfx_frame weather_cherry_tree_leaves_animation_horizontal_0[] = {
     {.data = GFX_COLOR_AND_FRAME(0, 3), .duration = 0}, 
     {.data = GFX_COLOR_AND_FRAME(0, 3), .duration = 24}, 
     {.data = GFX_COLOR_AND_FRAME(0, 3), .duration = 24 | GFX_ANIM_HFLIP},
     {.data = GFX_ANIM_JUMP, .duration = 0},
 };
-static gfx_frame weather_cherry_tree_leaves_animation_horizontal_1[] = {
+static const gfx_frame weather_cherry_tree_leaves_animation_horizontal_1[] = {
     {.data = GFX_COLOR_AND_FRAME(1, 3), .duration = 0}, 
     {.data = GFX_COLOR_AND_FRAME(1, 3), .duration = 24}, 
     {.data = GFX_COLOR_AND_FRAME(1, 3), .duration = 24 | GFX_ANIM_HFLIP},
     {.data = GFX_ANIM_JUMP, .duration = 0},
 };
-static gfx_frame weather_cherry_tree_leaves_animation_horizontal_2[] = {
+static const gfx_frame weather_cherry_tree_leaves_animation_horizontal_2[] = {
     {.data = GFX_COLOR_AND_FRAME(2, 3), .duration = 0}, 
     {.data = GFX_COLOR_AND_FRAME(2, 3), .duration = 24}, 
     {.data = GFX_COLOR_AND_FRAME(2, 3), .duration = 24 | GFX_ANIM_HFLIP},
     {.data = GFX_ANIM_JUMP, .duration = 0},
 };
-static gfx_frame weather_cherry_tree_leaves_animation_horizontal_3[] = {
+static const gfx_frame weather_cherry_tree_leaves_animation_horizontal_3[] = {
     {.data = GFX_COLOR_AND_FRAME(3, 3), .duration = 0}, 
     {.data = GFX_COLOR_AND_FRAME(3, 3), .duration = 24}, 
     {.data = GFX_COLOR_AND_FRAME(3, 3), .duration = 24 | GFX_ANIM_HFLIP},
     {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
-static gfx_frame weather_cherry_tree_leaves_animation_semi_horizontal_0[] = {
+static const gfx_frame weather_cherry_tree_leaves_animation_semi_horizontal_0[] = {
     {.data = GFX_COLOR_AND_FRAME(0, 2), .duration = 0}, 
     {.data = GFX_COLOR_AND_FRAME(0, 2), .duration = 16},
     {.data = GFX_COLOR_AND_FRAME(0, 3), .duration = 16}, 
     {.data = GFX_COLOR_AND_FRAME(0, 3), .duration = 16 | GFX_ANIM_HFLIP},
     {.data = GFX_ANIM_JUMP, .duration = 0},
 };
-static gfx_frame weather_cherry_tree_leaves_animation_semi_horizontal_1[] = {
+static const gfx_frame weather_cherry_tree_leaves_animation_semi_horizontal_1[] = {
     {.data = GFX_COLOR_AND_FRAME(1, 2), .duration = 0}, 
     {.data = GFX_COLOR_AND_FRAME(1, 2), .duration = 16},
     {.data = GFX_COLOR_AND_FRAME(1, 3), .duration = 16}, 
     {.data = GFX_COLOR_AND_FRAME(1, 3), .duration = 16 | GFX_ANIM_HFLIP},
     {.data = GFX_ANIM_JUMP, .duration = 0},
 };
-static gfx_frame weather_cherry_tree_leaves_animation_semi_horizontal_2[] = {
+static const gfx_frame weather_cherry_tree_leaves_animation_semi_horizontal_2[] = {
     {.data = GFX_COLOR_AND_FRAME(2, 2), .duration = 0}, 
     {.data = GFX_COLOR_AND_FRAME(2, 2), .duration = 16},
     {.data = GFX_COLOR_AND_FRAME(2, 3), .duration = 16}, 
     {.data = GFX_COLOR_AND_FRAME(2, 3), .duration = 16 | GFX_ANIM_HFLIP},
     {.data = GFX_ANIM_JUMP, .duration = 0},
 };
-static gfx_frame weather_cherry_tree_leaves_animation_semi_horizontal_3[] = {
+static const gfx_frame weather_cherry_tree_leaves_animation_semi_horizontal_3[] = {
     {.data = GFX_COLOR_AND_FRAME(3, 2), .duration = 0}, 
     {.data = GFX_COLOR_AND_FRAME(3, 2), .duration = 16},
     {.data = GFX_COLOR_AND_FRAME(3, 3), .duration = 16}, 
@@ -223,7 +223,7 @@ static gfx_frame weather_cherry_tree_leaves_animation_semi_horizontal_3[] = {
     {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
-static gfx_frame weather_cherry_tree_leaves_animation_diagonal_0[] = {
+static const gfx_frame weather_cherry_tree_leaves_animation_diagonal_0[] = {
     {.data = GFX_COLOR_AND_FRAME(0, 1), .duration = 0}, 
     {.data = GFX_COLOR_AND_FRAME(0, 1), .duration = 16},
     {.data = GFX_COLOR_AND_FRAME(0, 2), .duration = 16}, 
@@ -231,7 +231,7 @@ static gfx_frame weather_cherry_tree_leaves_animation_diagonal_0[] = {
     {.data = GFX_COLOR_AND_FRAME(0, 2), .duration = 16}, 
     {.data = GFX_ANIM_JUMP, .duration = 0},
 };
-static gfx_frame weather_cherry_tree_leaves_animation_diagonal_1[] = {
+static const gfx_frame weather_cherry_tree_leaves_animation_diagonal_1[] = {
     {.data = GFX_COLOR_AND_FRAME(1, 1), .duration = 0}, 
     {.data = GFX_COLOR_AND_FRAME(1, 1), .duration = 16},
     {.data = GFX_COLOR_AND_FRAME(1, 2), .duration = 16}, 
@@ -239,7 +239,7 @@ static gfx_frame weather_cherry_tree_leaves_animation_diagonal_1[] = {
     {.data = GFX_COLOR_AND_FRAME(1, 2), .duration = 16}, 
     {.data = GFX_ANIM_JUMP, .duration = 0},
 };
-static gfx_frame weather_cherry_tree_leaves_animation_diagonal_2[] = {
+static const gfx_frame weather_cherry_tree_leaves_animation_diagonal_2[] = {
     {.data = GFX_COLOR_AND_FRAME(2, 1), .duration = 0}, 
     {.data = GFX_COLOR_AND_FRAME(2, 1), .duration = 16},
     {.data = GFX_COLOR_AND_FRAME(2, 2), .duration = 16}, 
@@ -247,7 +247,7 @@ static gfx_frame weather_cherry_tree_leaves_animation_diagonal_2[] = {
     {.data = GFX_COLOR_AND_FRAME(2, 2), .duration = 16}, 
     {.data = GFX_ANIM_JUMP, .duration = 0},
 };
-static gfx_frame weather_cherry_tree_leaves_animation_diagonal_3[] = {
+static const gfx_frame weather_cherry_tree_leaves_animation_diagonal_3[] = {
     {.data = GFX_COLOR_AND_FRAME(3, 1), .duration = 0}, 
     {.data = GFX_COLOR_AND_FRAME(3, 1), .duration = 16},
     {.data = GFX_COLOR_AND_FRAME(3, 2), .duration = 16}, 
@@ -256,7 +256,7 @@ static gfx_frame weather_cherry_tree_leaves_animation_diagonal_3[] = {
     {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
-static gfx_frame weather_cherry_tree_leaves_animation_spin_0[] = {
+static const gfx_frame weather_cherry_tree_leaves_animation_spin_0[] = {
     {.data = GFX_COLOR_AND_FRAME(0, 2), .duration = 0}, 
     {.data = GFX_COLOR_AND_FRAME(0, 2), .duration = 4},
     {.data = GFX_COLOR_AND_FRAME(0, 3), .duration = 4}, 
@@ -271,7 +271,7 @@ static gfx_frame weather_cherry_tree_leaves_animation_spin_0[] = {
     {.data = GFX_COLOR_AND_FRAME(0, 3), .duration = 4}, 
     {.data = GFX_ANIM_END},
 };
-static gfx_frame weather_cherry_tree_leaves_animation_spin_1[] = {
+static const gfx_frame weather_cherry_tree_leaves_animation_spin_1[] = {
     {.data = GFX_COLOR_AND_FRAME(1, 2), .duration = 0}, 
     {.data = GFX_COLOR_AND_FRAME(1, 2), .duration = 4},
     {.data = GFX_COLOR_AND_FRAME(1, 3), .duration = 4}, 
@@ -286,7 +286,7 @@ static gfx_frame weather_cherry_tree_leaves_animation_spin_1[] = {
     {.data = GFX_COLOR_AND_FRAME(1, 3), .duration = 4}, 
     {.data = GFX_ANIM_END},
 };
-static gfx_frame weather_cherry_tree_leaves_animation_spin_2[] = {
+static const gfx_frame weather_cherry_tree_leaves_animation_spin_2[] = {
     {.data = GFX_COLOR_AND_FRAME(2, 2), .duration = 0}, 
     {.data = GFX_COLOR_AND_FRAME(2, 2), .duration = 4},
     {.data = GFX_COLOR_AND_FRAME(2, 3), .duration = 4}, 
@@ -301,7 +301,7 @@ static gfx_frame weather_cherry_tree_leaves_animation_spin_2[] = {
     {.data = GFX_COLOR_AND_FRAME(2, 3), .duration = 4}, 
     {.data = GFX_ANIM_END},
 };
-static gfx_frame weather_cherry_tree_leaves_animation_spin_3[] = {
+static const gfx_frame weather_cherry_tree_leaves_animation_spin_3[] = {
     {.data = GFX_COLOR_AND_FRAME(3, 2), .duration = 0}, 
     {.data = GFX_COLOR_AND_FRAME(3, 2), .duration = 4},
     {.data = GFX_COLOR_AND_FRAME(3, 3), .duration = 4}, 
@@ -317,7 +317,7 @@ static gfx_frame weather_cherry_tree_leaves_animation_spin_3[] = {
     {.data = GFX_ANIM_END},
 };
 
-static gfx_frame *weather_any_leaves_animations[] = {
+static const gfx_frame *const weather_any_leaves_animations[] = {
     [ANIM_IDLE + 0 * NUM_ANIMS] = weather_cherry_tree_leaves_animation_idle_0,
     [ANIM_HORIZONTAL + 0 * NUM_ANIMS] = weather_cherry_tree_leaves_animation_horizontal_0,
     [ANIM_SEMI_HORIZONTAL + 0 * NUM_ANIMS] = weather_cherry_tree_leaves_animation_semi_horizontal_0,
@@ -340,7 +340,7 @@ static gfx_frame *weather_any_leaves_animations[] = {
     [ANIM_SPIN + 3 * NUM_ANIMS] = weather_cherry_tree_leaves_animation_spin_3,
 };
 
-static oam_template weather_cherry_tree_leaves_template = {
+static const oam_template weather_cherry_tree_leaves_template = {
     .tiles_tag = OVERWORLD_WEATHER_CHERRY_TREE_LEAVES_GFX_TAG, .pal_tag = 0x1200,
     .oam = &weather_any_leaves_sprite,
     .animation = weather_any_leaves_animations,
@@ -426,7 +426,7 @@ static bool weather_cherry_tree_leaves_create_or_delete_oam() {
     return overworld_weather.cherry_tree_num_oams != overworld_weather.cherry_tree_target_num_oams;
 }
 
-static graphic graphic_cherry_tree_leaves = {
+static const graphic graphic_cherry_tree_leaves = {
     .sprite = gfx_weather_cherry_tree_leavesTiles, 
     .size = GRAPHIC_SIZE_4BPP(16, 64), 
     .tag = OVERWORLD_WEATHER_CHERRY_TREE_LEAVES_GFX_TAG
@@ -519,7 +519,7 @@ static void weather_colorful_petals_oam_callback_initialize(oam_object *self) {
     weather_any_leaves_oam_callback_initialize(self);
 }
 
-static oam_template weather_colorful_petals_template = {
+static const oam_template weather_colorful_petals_template = {
     .tiles_tag = OVERWORLD_WEATHER_COLORFUL_PETALS_GFX_TAG, .pal_tag = 0x1200,
     .oam = &weather_any_leaves_sprite,
     .animation = weather_any_leaves_animations,
@@ -605,7 +605,7 @@ static bool weather_colorful_petals_create_or_delete_oam() {
     return overworld_weather.colorful_petals_num_oams != overworld_weather.colorful_petals_target_num_oams;
 }
 
-static graphic graphic_colorful_petals = {
+static const graphic graphic_colorful_petals = {
     .sprite = gfx_weather_colorful_leavesTiles, 
     .size = 4 * 4 * GRAPHIC_SIZE_4BPP(16, 16), 
     .tag = OVERWORLD_WEATHER_COLORFUL_PETALS_GFX_TAG,

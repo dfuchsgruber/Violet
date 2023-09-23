@@ -10,8 +10,9 @@
 #include "pokepad/wondertrade.h"
 #include "text.h"
 #include "debug.h"
+#include "trainer/trainer.h"
 
-u16 dungeon2_trainer_species[] = {
+const u16 dungeon2_trainer_species[] = {
     POKEMON_BISAFLOR, POKEMON_GLURAK, POKEMON_TURTOK, POKEMON_FIARO,
     POKEMON_BIBOR, POKEMON_STARAPTOR, POKEMON_BRONZONG, POKEMON_CHEVRUMM,
     POKEMON_TROMBORK, POKEMON_RAICHU, POKEMON_SANDAMER, POKEMON_NIDOQUEEN,
@@ -53,23 +54,23 @@ u16 dungeon2_trainer_species[] = {
 void dungeon2_init_trainer(u16 trainer_idx) {
     u8 level_mean = 0, level_std = 0;
     dungeon2_get_wild_pokemon_level_distribution(&level_mean, &level_std);
-    fmem.gp_rng = cmem.dg2.initial_seed ;
+    gp_rng = csave.dg2.initial_seed ;
 
     for (u16 i = trainer_idx; i < 0x1e4; i++)
         gp_rnd16(); // Advance the rng
     if (trainer_idx == 0x1e1 || trainer_idx == 0x1e3) {
-        strcpy(fmem.dynamic_trainer_name, person_names[PERSON_NAME_FEMALE][gp_rnd16() % ARRAY_COUNT(person_names[PERSON_NAME_FEMALE])]);
+        strcpy(dynamic_trainer_name, person_names[PERSON_NAME_FEMALE][gp_rnd16() % ARRAY_COUNT(person_names[PERSON_NAME_FEMALE])]);
     } else {
-        strcpy(fmem.dynamic_trainer_name, person_names[PERSON_NAME_MALE][gp_rnd16() % ARRAY_COUNT(person_names[PERSON_NAME_MALE])]);
+        strcpy(dynamic_trainer_name, person_names[PERSON_NAME_MALE][gp_rnd16() % ARRAY_COUNT(person_names[PERSON_NAME_MALE])]);
     }
-    trainer_pokemon *trainer_party = fmem.dynamic_trainer_party;
+    trainer_pokemon *trainer_party = dynamic_trainer_party;
     int species_picked = 0;
     while (species_picked < 3) {
         u16 species = dungeon2_trainer_species[gp_rnd16() % ARRAY_COUNT(dungeon2_trainer_species)];
         bool duplicate = false;
         int type_matches = 0;
         for (int i = 0; i < species_picked; i++) {
-            u16 other_species = fmem.dynamic_trainer_party[i].species;
+            u16 other_species = dynamic_trainer_party[i].species;
             if (other_species == species)
                 duplicate = true;
             if (basestats[species].type1 == basestats[other_species].type1 ||

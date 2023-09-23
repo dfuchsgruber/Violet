@@ -15,22 +15,37 @@
 #include "tile/block.h"
 #include "oam.h"
 
+EWRAM map_header_t dynamic_map_header = {0};
+EWRAM map_footer_t dynamic_map_footer = {0};
+EWRAM map_event_header_t dynamic_map_event_header = {0};
+EWRAM map_event_person dynamic_persons[NUM_DYNAMIC_PERSONS] = {0};
+EWRAM map_event_warp dynamic_warps[NUM_DYNAMIC_WARPS] = {0};
+EWRAM wild_pokemon_data dynamic_wild_pokemon = {0};
+EWRAM wild_pokemon_habitat dynamic_wild_pokemon_habitat_grass = {0};
+EWRAM wild_pokemon_habitat dynamic_wild_pokemon_habitat_water = {0};
+EWRAM wild_pokemon_habitat dynamic_wild_pokemon_habitat_radar = {0};
+EWRAM wild_pokemon_habitat dynamic_wild_pokemon_habitat_rod = {0};
+EWRAM wild_pokemon_entry dynamic_wild_pokemon_entries_grass[WILD_POKEMON_NUM_ENTRIES_GRASS] = {0};
+EWRAM wild_pokemon_entry dynamic_wild_pokemon_entries_water[WILD_POKEMON_NUM_ENTRIES_WATER] = {0};
+EWRAM wild_pokemon_entry dynamic_wild_pokemon_entries_rod[WILD_POKEMON_NUM_ENTRIES_ROD + WILD_POKEMON_NUM_ENTRIES_GOOD_ROD + WILD_POKEMON_NUM_ENTRIES_SUPER_ROD] = {0};
+EWRAM wild_pokemon_entry dynamic_wild_pokemon_entries_radar[WILD_POKEMON_NUM_ENTRIES_OTHER] = {0};
 
-map_connection_header_t dungeon2_connections = {0, NULL};
+const map_connection_header_t dungeon2_connections = {0, NULL};
 
-levelscript_header_t dungeon2_lscr [] = {
+
+const levelscript_header_t dungeon2_lscr [] = {
     {0, {0, 0, 0, 0} }
 };
 
 void map_initialize_blocks(map_header_t *header) {
-    map_footer_t *footer = header->footer;
+    const map_footer_t *footer = header->footer;
     int fill = 0x03FF03FF;
     cpufastset(&fill, map_changes, CPUFASTSET_FILL | CPUFASTSET_SIZE(sizeof(map_changes)));
     map_blocks_virtual.blocks = map_changes;
     map_blocks_virtual.width = (int)footer->width + 15;
     map_blocks_virtual.height = (int)footer->height + 14;
     if (header->footer_idx == DG2_FOOTER_IDX) {
-        dungeon_generator2 *dg2 = &cmem.dg2;
+        dungeon_generator2 *dg2 = &csave.dg2;
         map_copy_blocks_to_virtual_blocks_with_padding(save1->dungeon_blocks, (u16)dg2->width, (u16)dg2->height);
     } else {   
         map_copy_blocks_to_virtual_blocks_with_padding((u16*)footer->map, (u16)footer->width, (u16)footer->height);
@@ -38,9 +53,9 @@ void map_initialize_blocks(map_header_t *header) {
     map_copy_adjacent_maps_to_virtual_blocks(header);
 }
 
-map_header_t *get_mapheader(u8 bank, u8 map) {
+const map_header_t *get_mapheader(u8 bank, u8 map) {
     if (dungeon_get_type() && bank == DG2_BANK && map == DG2_MAP) {
-        if (!fmem.dmap_header_initialized) {
+        if (!dmap_flags.header_initialized) {
             switch(dungeon_get_type()) {
                 case DUNGEON_TYPE_FOREST:
                     dungeon2_initialize_forest();
@@ -50,15 +65,15 @@ map_header_t *get_mapheader(u8 bank, u8 map) {
                     break;
             }
         }
-        return &(fmem.dmapheader);
+        return &(dynamic_map_header);
     } else {
         return mapbanks[bank][map];
     }
 }
 
-map_footer_t *get_mapfooter() {
+const map_footer_t *get_mapfooter() {
     if (save1->current_footer_id == DG2_FOOTER_IDX) {
-        return &(fmem.dmapfooter);
+        return &(dynamic_map_footer);
     }
     u16 current_footer = save1->current_footer_id;
     if (current_footer) {

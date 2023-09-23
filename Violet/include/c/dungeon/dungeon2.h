@@ -35,6 +35,13 @@ extern "C" {
 #define DG2_ALTERNATIVE_TILE 16
 #define DG2_ALTERNATIVE_TILE_PROHIBITED 32
     
+    typedef struct {
+        u8 header_initialized : 1;
+        u8 blocks_initialized : 1;
+    } dmap_flags_t;
+
+    extern EWRAM dmap_flags_t dmap_flags;
+
     typedef struct{
         // Initial seed of the dg2
         u32 initial_seed;
@@ -110,6 +117,56 @@ extern "C" {
      **/
     void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(dungeon_generator2*));
 
+
+
+// #define NUM_DUNGEON_LOCATIONS 40
+#define NUM_DUNGEON_LOCATIONS 2
+    
+    typedef struct{
+      u8 bank;
+      u8 map;
+      s16 x;
+      s16 y;
+      u8 type;
+    } dungeon_location;
+
+    extern const dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS];
+
+    /**
+     * Gets the index of a dungeon location by a coordinate the player interacted with. If no
+     * match could be found -1 is returned instead.
+     * @param bank the map bank of the entrance
+     * @param map the map id of the entrance
+     * @param x the x coordinate of the entrance
+     * @param y the y coordinate of the entrance
+     * @return the dungeon idx to match the parameters or -1 if none matches
+     */
+    int dungeon_get_location_idx(u8 bank, u8 map, s16 x, s16 y);
+
+    /**
+     * Gets the index of the dungeon of which the player is currently facing the entrance
+     * @return the idx of the dungeon entrance the player is facing or -1 if player is not
+     * facing any dungeon entrance
+     */
+    int dungeon_get_location_idx_player_is_facing();
+
+    /**
+     * Returns the type of dungeon that is associated with the block the player is facing
+     * @return the type of dungeon the player is facing
+     */
+    int dungeon_map_entrance_get_type();
+
+    /**
+     * Sets the flag of the dungeon of which the player is currently facing the entrance
+     */
+    void dungeon_map_entrance_set_flag();
+
+    /**
+     * Performs set_block on all map blocks that correspond to proper dungeon entries
+     * Should be performed at execution time of levelscript type 1
+     */
+    void dungeon_map_set_tiles();
+
     void dungeon2_compute(int dungeon_type);
     
     /**
@@ -152,7 +209,7 @@ extern "C" {
      * become walls.
      * @param dg2
      */
-    void dungeon2_iterate(u8 *map, u8 *map2, int near_lower_bound, int far_upper_bound, dungeon_generator2 *dg2);
+    void dungeon2_iterate(const u8 *map, u8 *map2, int near_lower_bound, int far_upper_bound, dungeon_generator2 *dg2);
     
     /**
      * Fills the borders of the map with DG2_WALL
@@ -169,7 +226,7 @@ extern "C" {
      * @param map2 Memory for the new map
      * @param dg2
      */
-    void dungeon2_enlarge(u8 *map, u8 *map2, dungeon_generator2 *dg2);
+    void dungeon2_enlarge(const u8 *map, u8 *map2, dungeon_generator2 *dg2);
     
     /**
      * Applies src to dst, i.e. when src[x][y] == type, then dst[x][y] <- type
@@ -178,7 +235,7 @@ extern "C" {
      * @param type the element to apply
      * @param dg2 generator instance
      */
-    void dungeon2_apply(u8 *src, u8 *dst, u8 type, dungeon_generator2 *dg2);
+    void dungeon2_apply(const u8 *src, u8 *dst, u8 type, dungeon_generator2 *dg2);
 
     /**
      * Contracts the walkable map by counting neighbours in sqrt(3) neighbourhood
@@ -189,7 +246,7 @@ extern "C" {
      * @param map2
      * @param dg2
      */
-    void dungeon2_contract(u8 *map, u8 *map2, dungeon_generator2 *dg2);
+    void dungeon2_contract(const u8 *map, u8 *map2, dungeon_generator2 *dg2);
     
     /**
      * Scan line flood fill for a random space position
@@ -375,7 +432,7 @@ extern "C" {
      * @param src_size how many elements are in src
      * @param dg2 dungeon generator state
      */
-    void dungeon2_pick_wild_pokemon(u16 *dst, size_t number, u16 *src, size_t src_size, dungeon_generator2 *dg2);
+    void dungeon2_pick_wild_pokemon(u16 *dst, size_t number, const u16 *src, size_t src_size, dungeon_generator2 *dg2);
 
     /**
      * Gets the boundaries for wild pokemon levels based on a mean and standard deviation
@@ -399,11 +456,11 @@ extern "C" {
      */
     void dungeon_special_item_by_overworld_idx();
 
-    int dg2_cross_neighbourhood[4][2];
+    extern const int dg2_cross_neighbourhood[4][2];
 
-    map_connection_header_t dungeon2_connections;
+    extern const map_connection_header_t dungeon2_connections;
 
-    levelscript_header_t dungeon2_lscr[1];
+    extern const levelscript_header_t dungeon2_lscr[1];
 
     /**
      * Initializes the trainer party and name of a dungeon trainer
@@ -423,7 +480,8 @@ extern "C" {
      * @param dg2 the dungeon generator
      * @return true if such a rectangle was found
      **/
-    bool dungeon2_find_empty_space(int *space_x, int *space_y, u8 *center_node, int nodes[][2], int width, int height, u8 *map, dungeon_generator2 *dg2);
+    bool dungeon2_find_empty_space(int *space_x, int *space_y, u8 *center_node, int nodes[][2], int width, int height, const 
+        u8 *map, dungeon_generator2 *dg2);
 
     /**
      * Scans all node for being a suitable center for a pattern and picks one.
@@ -436,7 +494,8 @@ extern "C" {
      * @param dg2 the dungeon generator
      * @return true if such a rectangle was found
      **/
-    bool dungeon2_find_empty_space_for_pattern(int *space_x, int *space_y, u8 *center_node, int nodes[][2], map_footer_t *pattern, u8 *map, dungeon_generator2 *dg2);
+    bool dungeon2_find_empty_space_for_pattern(int *space_x, int *space_y, u8 *center_node, int nodes[][2], 
+        const map_footer_t *pattern, const u8 *map, dungeon_generator2 *dg2);
 
     /**
      * Places a pattern (mapfooter) centered at a position
@@ -445,7 +504,8 @@ extern "C" {
      * @param pattern the pattern to place
      * @param dg2 the dungeon generator state
      **/
-    void dungeon2_place_pattern(int pattern_x, int pattern_y, map_footer_t *pattern, dungeon_generator2 *dg2);
+    void dungeon2_place_pattern(int pattern_x, int pattern_y, 
+        const map_footer_t *pattern, dungeon_generator2 *dg2);
 
     /**
      * Fills a rectangle on a map
@@ -513,6 +573,7 @@ extern "C" {
      * @return random 16-bit value
      **/
     u16 dungeon2_seeded_rnd16(dungeon_generator2 *dg2, u32 seed);
+
 
 #ifdef	__cplusplus
 }

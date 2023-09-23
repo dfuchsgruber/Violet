@@ -17,7 +17,7 @@
 #include "pokemon/cry.h"
 
 // Just copy the player's battle controller essentially...
-void (*battle_controller_partner[BATTLE_CONTROLLER_COMMAND_CNT])() = {
+void (*const battle_controller_partner[BATTLE_CONTROLLER_COMMAND_CNT])() = {
     [0x0] = (void (*)(void))0x8030a91,
     [0x1] = (void (*)(void))0x80312b1,
     [0x2] = (void (*)(void))0x8031339,
@@ -134,7 +134,7 @@ void battle_controller_partner_handle_choose_move() {
             // Mega evolution
             // DEBUG("Mega evolution for partner %d: %x\n", active_battler, battler_get_available_mega_evolution(active_battler));
             if (battler_get_available_mega_evolution(active_battler)) {
-                MEGA_STATE.marked_for_mega_evolution[active_battler] = 1;
+                mega_state->marked_for_mega_evolution[active_battler] = 1;
             }
             battle_controller_player_or_partner_execution_finished();
 
@@ -173,7 +173,7 @@ void battle_controller_partner_handle_choose_pokemon() {
 }
 
 void battle_controller_partner_handle_choose_item() {
-    u16 *item = BATTLE_STATE2->items[battler_get_owner(active_battler)] + TRAINER_AI_STATE2->chosen_item_idxs[active_battler];
+    u16 *item = battle_state2->items[battler_get_owner(active_battler)] + trainer_ai_state2->chosen_item_idxs[active_battler];
     battle_controller_emit_one_value(1, *item);
     *item = 0;
     battle_controller_player_or_partner_execution_finished();
@@ -185,11 +185,11 @@ void battle_controller_partner_handle_exp_update() {
 }
 
 void battle_controller_partner_handle_draw_trainer_picture() {
-    DEBUG("Load ally backsprite idx %d\n", fmem.ally_trainer_backsprite_idx);
-    battle_trainer_load_backsprite_palette(fmem.ally_trainer_backsprite_idx, active_battler);    
-    trainer_gfx_initialize_gp_oam_template(fmem.ally_trainer_backsprite_idx, battler_get_position(active_battler));
+    DEBUG("Load ally backsprite idx %d\n", ally_trainer_backsprite_idx);
+    battle_trainer_load_backsprite_palette(ally_trainer_backsprite_idx, active_battler);    
+    trainer_gfx_initialize_gp_oam_template(ally_trainer_backsprite_idx, battler_get_position(active_battler));
     u8 oam_idx = oam_new_forward_search(&gp_oam_template, 90, 
-        (s16)((8 - trainer_backsprite_coordinates[fmem.ally_trainer_backsprite_idx].y_offset) * 4 + 80), 
+        (s16)((8 - trainer_backsprite_coordinates[ally_trainer_backsprite_idx].y_offset) * 4 + 80), 
         battler_oam_get_relative_priority(active_battler));
     battler_oams[active_battler] = oam_idx;
     oams[oam_idx].final_oam.attr2 = (u16)((oams[oam_idx].final_oam.attr2 & 0xFFF) | (active_battler << 12));
@@ -204,7 +204,7 @@ void battle_controller_partner_intro_ball_throw_allocate_palette() {
     u8 pal_idx;
     if (battle_is_tag() && battler_get_position(active_battler) == BATTLE_POSITION_PLAYER_RIGHT) {
         pal_idx = oam_allocate_palette(0xd6f9);
-        pal_decompress(trainer_backsprite_palettes[fmem.ally_trainer_backsprite_idx].pal, (u16)(256 + 16 * pal_idx), 32);
+        pal_decompress(trainer_backsprite_palettes[ally_trainer_backsprite_idx].pal, (u16)(256 + 16 * pal_idx), 32);
     }
     else {
         pal_idx = oam_allocate_palette(0xd6f8);

@@ -35,7 +35,7 @@
 
 #define TSS_MEM ((trainerschool_selection_memory*)gp_stack_peek())
 
-bg_config trainerschool_selection_bg_configs[4] = {
+const bg_config trainerschool_selection_bg_configs[4] = {
     {0, 2, 31, 0, 0, 0}, //text on bg0
     {1, 3, 30, 0, 0, 1},
     {2, 1, 29, 0, 0, 2},
@@ -43,7 +43,7 @@ bg_config trainerschool_selection_bg_configs[4] = {
 };
 
 
-tboxdata trainerschool_selection_tboxes [] = {
+const tboxdata trainerschool_selection_tboxes [] = {
     {0, 0, 0, 30, 2, 15, 1}, //0 := text
     {0, 2, 17, 8, 2, 15, 61}, //x + 1 := name
     {0, 11, 18, 8, 2, 15, 77},
@@ -60,40 +60,40 @@ extern const u16 gfx_trainerschool_selection_backMap[];
 
 
 
-palette *palette_trainerschool_selection_pokeball = (palette*)0x082604F0;
-graphic *graphic_trainerschool_selection_pokeball = (graphic*)0x08260490;
+const palette *const palette_trainerschool_selection_pokeball = (const palette*)0x082604F0;
+const graphic *const graphic_trainerschool_selection_pokeball = (const graphic*)0x08260490;
 
-extern u16 gfx_trainerschool_lockschalTiles[];
-extern u16 gfx_trainerschool_lockschalPal[];
-graphic graphic_trainerschool_selection_lockschal = {
+extern const u16 gfx_trainerschool_lockschalTiles[];
+extern const u16 gfx_trainerschool_lockschalPal[];
+const graphic graphic_trainerschool_selection_lockschal = {
     gfx_trainerschool_lockschalTiles, 0x1000, 0xA440
 };
 
-extern u16 gfx_trainerschool_welunoTiles[];
-extern u16 gfx_trainerschool_welunoPal[];
-graphic graphic_trainerschool_selection_weluno = {
+extern const u16 gfx_trainerschool_welunoTiles[];
+extern const u16 gfx_trainerschool_welunoPal[];
+const graphic graphic_trainerschool_selection_weluno = {
     gfx_trainerschool_welunoTiles, 0x1000, 0xA441
 };
 
-extern u16 gfx_trainerschool_seekidTiles[];
-extern u16 gfx_trainerschool_seekidPal[];
-graphic graphic_trainerschool_selection_seekid = {
+extern const u16 gfx_trainerschool_seekidTiles[];
+extern const u16 gfx_trainerschool_seekidPal[];
+const graphic graphic_trainerschool_selection_seekid = {
     gfx_trainerschool_seekidTiles, 0x1000, 0xA442
 };
 
-sprite sprite_trainerschool_starter = {
+const sprite sprite_trainerschool_starter = {
     ATTR0_SHAPE_SQUARE, ATTR1_SIZE_64_64, ATTR2_PRIO(0), 0
 };
 
-gfx_frame gfx_anim_trainerschool_starter[] = {
+const gfx_frame gfx_anim_trainerschool_starter[] = {
     {0, 0}, {0, 32}, {64, 32}, {GFX_ANIM_JUMP, 0}
 };
 
-gfx_frame *gfx_anim_table_trainerschool_starter[] = {
+const gfx_frame *const gfx_anim_table_trainerschool_starter[] = {
     gfx_anim_trainerschool_starter
 };
 
-oam_template oam_template_trainerschool_lockschal = {
+const oam_template oam_template_trainerschool_lockschal = {
     0xA440, 0xA440,
     &sprite_trainerschool_starter,
     gfx_anim_table_trainerschool_starter,
@@ -102,7 +102,7 @@ oam_template oam_template_trainerschool_lockschal = {
     oam_null_callback
 };
 
-oam_template oam_template_trainerschool_weluno = {
+const oam_template oam_template_trainerschool_weluno = {
     0xA441, 0xA441,
     &sprite_trainerschool_starter,
     gfx_anim_table_trainerschool_starter,
@@ -111,7 +111,7 @@ oam_template oam_template_trainerschool_weluno = {
     oam_null_callback
 };
 
-oam_template oam_template_trainerschool_seekid = {
+const oam_template oam_template_trainerschool_seekid = {
     0xA442, 0xA442,
     &sprite_trainerschool_starter,
     gfx_anim_table_trainerschool_starter,
@@ -120,19 +120,19 @@ oam_template oam_template_trainerschool_seekid = {
     oam_null_callback
 };
 
-sprite sprite_trainerschool_pokeball = {
+const sprite sprite_trainerschool_pokeball = {
     ATTR0_SHAPE_SQUARE, ATTR1_SIZE_16_16, 0, 0
 };
 
-gfx_frame gfx_frame_trainerschool_ball_anim_ball_0[] = {
+const gfx_frame gfx_frame_trainerschool_ball_anim_ball_0[] = {
     {0, 0}, {GFX_ANIM_END, 0}
 };
 
-gfx_frame gfx_frame_trainerschool_ball_anim_ball_1[] = {
+const gfx_frame gfx_frame_trainerschool_ball_anim_ball_1[] = {
     {4, 0}, {GFX_ANIM_END, 0}
 };
 
-gfx_frame *gfx_anim_table_trainerschool_pokeball[] = {
+const gfx_frame *const gfx_anim_table_trainerschool_pokeball[] = {
     gfx_frame_trainerschool_ball_anim_ball_0,
     gfx_frame_trainerschool_ball_anim_ball_1
 };
@@ -150,7 +150,7 @@ void oam_callback_trainerschool_pokeball(oam_object *o){
     }
 }
 
-oam_template oam_template_trainerschool_pokeball = {
+const oam_template oam_template_trainerschool_pokeball = {
     0xD6D8, 0xD6D8,
     &sprite_trainerschool_pokeball,
     gfx_anim_table_trainerschool_pokeball,
@@ -159,14 +159,14 @@ oam_template oam_template_trainerschool_pokeball = {
     oam_callback_trainerschool_pokeball
 };
 
-u16 trainerschool_selection_species[] = {POKEMON_LOCKSCHAL, POKEMON_WELUNO, POKEMON_SEEKID};
+const u16 trainerschool_selection_species[] = {POKEMON_LOCKSCHAL, POKEMON_WELUNO, POKEMON_SEEKID};
 
 void trainerschool_selection_show_species_text(){
     u8 box_id = (u8)(TSS_MEM->cursor + 1);
     tbox_flush_set(box_id, 0x11);
     tbox_tilemap_draw(box_id);
     tbox_font_colormap fontcolmap = {1, 2, 1, 3};
-    u8 *name = pokemon_names[trainerschool_selection_species[TSS_MEM->cursor]];
+    const u8 *name = pokemon_names[trainerschool_selection_species[TSS_MEM->cursor]];
     int name_width_pixels = string_get_width(2, name, 0);
     int x_distance = (64 - name_width_pixels) >> 1;
     tbox_print_string(box_id, 2, (u8)x_distance, 0, 0, 0, &fontcolmap, 0,
@@ -182,7 +182,7 @@ void trainerschool_selection_delete_species_text(){
     tbox_flush_map(0);
 }
 
-u8 str_trainerschool_selection_text[] = LANGDEP(
+const u8 str_trainerschool_selection_text[] = LANGDEP(
     PSTRING("  KEY_A  Bestätigen              KEY_B  Abbruch"),
     PSTRING("  KEY_A  Confirm                 KEY_B  Abort"));
 

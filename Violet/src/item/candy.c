@@ -14,10 +14,12 @@
 #include "gpu.h"
 #include "pokemon/basestat.h"
 
+EWRAM item_candy_state_t item_candy_state = {0};
+
 static void rare_candy_reset() {
-    fmem.rare_candy_exp_remaining = 0;
-    fmem.rare_candy_levels_remaining = 0;
-    fmem.rare_candy_item_removed = false;
+    item_candy_state.rare_candy_exp_remaining = 0;
+    item_candy_state.rare_candy_levels_remaining = 0;
+    item_candy_state.rare_candy_item_removed = false;
 }
 
 void item_callback_rare_candy(u8 self, void (*exit_continuation)(u8)) {
@@ -33,9 +35,9 @@ void item_callback_rare_candy(u8 self, void (*exit_continuation)(u8)) {
         bg_virtual_sync_reqeust_push(2);
         big_callbacks[self].function = exit_continuation;
     } else {
-        if (!fmem.rare_candy_item_removed) {
+        if (!item_candy_state.rare_candy_item_removed) {
             item_remove(item_activated, 1);
-            fmem.rare_candy_item_removed = true;
+            item_candy_state.rare_candy_item_removed = true;
         }
         item_callback_after_pokemon_selected = item_callback_rare_candy_step;
         pokemon_party_menu_do_item_use_animation(self);
@@ -47,31 +49,31 @@ void item_callback_rare_candy(u8 self, void (*exit_continuation)(u8)) {
 extern const u8 gfx_pokemon_party_menu_exp_barTiles[];
 extern const u8 gfx_pokemon_party_menu_exp_barPal[];
 
-static graphic graphic_exp_bar = {
+static const graphic graphic_exp_bar = {
     .sprite = gfx_pokemon_party_menu_exp_barTiles, .size = GRAPHIC_SIZE_4BPP(64, 16), .tag = OAM_TAG_PARTY_MENU_EXP_BAR,
 };
 
-static palette palette_exp_bar = {
+static const palette palette_exp_bar = {
     .pal = gfx_pokemon_party_menu_exp_barPal, .tag = OAM_TAG_PARTY_MENU_EXP_BAR,
 };
 
-static sprite sprite_exp_bar = {
+static const sprite sprite_exp_bar = {
     .attr0 = ATTR0_SHAPE_HORIZONTAL, .attr1 = ATTR1_SIZE_32_16, .attr2 = ATTR2_PRIO(1),
 };
 
-static gfx_frame gfx_anim_exp_bar_left[] = {
+static const gfx_frame gfx_anim_exp_bar_left[] = {
     {.data = 0, .duration = 0}, {.data = GFX_ANIM_END}
 };
 
-static gfx_frame gfx_anim_exp_bar_right[] = {
+static const gfx_frame gfx_anim_exp_bar_right[] = {
     {.data = 8, .duration = 0}, {.data = GFX_ANIM_END}
 };
 
-static gfx_frame *gfx_anims_exp_bar[] = {
+static const gfx_frame *const gfx_anims_exp_bar[] = {
     gfx_anim_exp_bar_left, gfx_anim_exp_bar_right
 };
 
-static oam_template template_exp_bar = {
+static const oam_template template_exp_bar = {
     .tiles_tag = OAM_TAG_PARTY_MENU_EXP_BAR, .pal_tag = OAM_TAG_PARTY_MENU_EXP_BAR,
     .oam = &sprite_exp_bar, .animation = gfx_anims_exp_bar,
     .graphics = NULL, .rotscale = oam_rotscale_anim_table_null, 
@@ -92,10 +94,10 @@ static void exp_candy_fill_rectangle(void *sprite, int fraction) {
         int x0 = EXP_BAR_PAD;
         int x1 = x0 + width;
         if (2 + x1 > 32) {
-            gpu_fill_rectangle_4bpp(fmem.gp_state, x0, 4, 32, 10, 1, 32);
-            gpu_fill_rectangle_4bpp((u8*)fmem.gp_state + GRAPHIC_SIZE_4BPP(32, 16), 0, 4, x1 - 32, 10, 1, 32);
+            gpu_fill_rectangle_4bpp(item_candy_state.sprite_rectangle, x0, 4, 32, 10, 1, 32);
+            gpu_fill_rectangle_4bpp((u8*)item_candy_state.sprite_rectangle + GRAPHIC_SIZE_4BPP(32, 16), 0, 4, x1 - 32, 10, 1, 32);
         } else {
-            gpu_fill_rectangle_4bpp(fmem.gp_state, x0, 4, x1, 10, 1, 32);
+            gpu_fill_rectangle_4bpp(item_candy_state.sprite_rectangle, x0, 4, x1, 10, 1, 32);
         }
 
         cpuset(sprite, OAMCHARBASE(tile_num), CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(graphic_exp_bar.size));
@@ -114,14 +116,14 @@ static void exp_candy_fill_exp_bar(u8 self) {
         finished = true;
     }
     // DEBUG("Fill exp bar from %d to %d, current %d\n", r0, r1, r);
-    exp_candy_fill_rectangle(fmem.gp_state, (int)r);
+    exp_candy_fill_rectangle(item_candy_state.sprite_rectangle, (int)r);
     if (finished) {
         mplay_stop_song(27);
         big_callback_delete(self);
     }
 }
 
-extern u8 str_pokemon_reached_level[];
+extern const u8 str_pokemon_reached_level[];
 
 static void exp_candy_delete_bar_and_free(bool delete_oams) {
     // Delete the boxes
@@ -130,7 +132,7 @@ static void exp_candy_delete_bar_and_free(bool delete_oams) {
         oam_delete(oams + data[14]);
         oam_delete(oams + data[15]);
     }
-    free(fmem.gp_state);
+    free(item_candy_state.sprite_rectangle);
 }
 
 static void exp_candy_wait_level_up_fanfare(u8 self) {
@@ -161,7 +163,7 @@ static void exp_candy_step(u8 self) {
     (void)self;
     if (!big_callback_is_active(exp_candy_fill_exp_bar)) {
         pokemon_party_menu_use_return_callback = true;
-        if (fmem.rare_candy_exp_leveled_up) {
+        if (item_candy_state.rare_candy_exp_leveled_up) {
             u8 party_idx = pokemon_party_menu_current_index;
             pokemon *p = player_pokemon + party_idx;
             DEBUG("Leveled up.\n");
@@ -198,8 +200,8 @@ static void item_callback_exp_candy_setup(u8 self, void (*exit_contuation)(u8)) 
     u8 level = (u8)pokemon_get_attribute(p, ATTRIBUTE_LEVEL, NULL);
     u32 exp_current = (u32)pokemon_get_attribute(p, ATTRIBUTE_EXP, NULL);
     u32 exp_level_difference = pokemon_experience_tables[experience_group][level + 1] - pokemon_experience_tables[experience_group][level];
-    u32 to_distribute = MIN(pokemon_experience_tables[experience_group][level + 1] - exp_current, fmem.rare_candy_exp_remaining);
-    fmem.rare_candy_exp_remaining = (u32)(fmem.rare_candy_exp_remaining - to_distribute);
+    u32 to_distribute = MIN(pokemon_experience_tables[experience_group][level + 1] - exp_current, item_candy_state.rare_candy_exp_remaining);
+    item_candy_state.rare_candy_exp_remaining = (u32)(item_candy_state.rare_candy_exp_remaining - to_distribute);
     u32 exp_new = (u32)(exp_current + to_distribute);
 
     pokemon_get_stats(p, (u16*)(data + 0));
@@ -207,8 +209,8 @@ static void item_callback_exp_candy_setup(u8 self, void (*exit_contuation)(u8)) 
     pokemon_calculate_stats(p);
     pokemon_get_stats(p, (u16*)(data + 6));
     u8 level_new = (u8)pokemon_get_attribute(p, ATTRIBUTE_LEVEL, NULL);
-    fmem.rare_candy_exp_leveled_up = level_new > level;
-    if (fmem.rare_candy_exp_leveled_up) {
+    item_candy_state.rare_candy_exp_leveled_up = level_new > level;
+    if (item_candy_state.rare_candy_exp_leveled_up) {
         pokemon_party_menu_use_return_callback = true;
     }
 
@@ -220,7 +222,7 @@ static void item_callback_exp_candy_setup(u8 self, void (*exit_contuation)(u8)) 
     }
     void *sprite = malloc(graphic_exp_bar.size);
     lz77uncompwram(graphic_exp_bar.sprite, sprite);
-    fmem.gp_state = sprite;
+    item_candy_state.sprite_rectangle = sprite;
 
     oam_palette_load_if_not_present(&palette_exp_bar);
     big_callbacks[self].function = exp_candy_step;
@@ -271,9 +273,9 @@ void item_callback_exp_candy(u8 self, void (*exit_continuation)(u8)) {
         bg_virtual_sync_reqeust_push(2);
         big_callbacks[self].function = exit_continuation;
     } else {
-        if (!fmem.rare_candy_item_removed) {
+        if (!item_candy_state.rare_candy_item_removed) {
             item_remove(item_activated, 1);
-            fmem.rare_candy_item_removed = true;
+            item_candy_state.rare_candy_item_removed = true;
         }
         item_callback_after_pokemon_selected = item_callback_exp_candy_setup;
         pokemon_party_menu_do_item_use_animation(self);
@@ -283,12 +285,12 @@ void item_callback_exp_candy(u8 self, void (*exit_continuation)(u8)) {
 bool item_rare_candy_is_issued() {
     u8 party_idx = pokemon_party_menu_current_index;
     if (item_activated == ITEM_SONDERBONBON || item_activated == ITEM_GOLDBONBON) {
-        return fmem.rare_candy_levels_remaining > 0 && 
+        return item_candy_state.rare_candy_levels_remaining > 0 && 
             pokemon_get_attribute(player_pokemon + party_idx, ATTRIBUTE_LEVEL, NULL) < 100 &&
             item_effect(player_pokemon + party_idx, item_activated, party_idx, 0, false, true);
     } else if (item_activated == ITEM_EP_BONBON_S || item_activated == ITEM_EP_BONBON_M 
                     || item_activated == ITEM_EP_BONBON_L || item_activated == ITEM_EP_BONBON_XL) {
-        return fmem.rare_candy_exp_remaining > 0 && pokemon_get_attribute(player_pokemon + party_idx, ATTRIBUTE_LEVEL, NULL) < 100;
+        return item_candy_state.rare_candy_exp_remaining > 0 && pokemon_get_attribute(player_pokemon + party_idx, ATTRIBUTE_LEVEL, NULL) < 100;
     }
     return false;
 }
@@ -296,11 +298,11 @@ bool item_rare_candy_is_issued() {
 void item_callback_do_rare_candy_if_issued(u8 self) {
     // DEBUG("check if candy is issued\n");
     if (item_rare_candy_is_issued()) {
-        if (fmem.rare_candy_levels_remaining > 0) {
-            fmem.rare_candy_levels_remaining--;
+        if (item_candy_state.rare_candy_levels_remaining > 0) {
+            item_candy_state.rare_candy_levels_remaining--;
             item_callback_rare_candy(self, pokemon_party_menu_wait_for_text_and_close);
             return;
-        } else if (fmem.rare_candy_exp_leveled_up > 0) {
+        } else if (item_candy_state.rare_candy_exp_leveled_up > 0) {
             // TODO
             item_callback_exp_candy(self, pokemon_party_menu_wait_for_text_and_close);
             return;
@@ -313,7 +315,7 @@ void item_callback_do_rare_candy_if_issued(u8 self) {
 static void item_callback_do_rare_candy(u8 self) {
     // When giving N levels, at the first time we do not want to check if a level-up is
     // possible as we want the potential error message
-    fmem.rare_candy_levels_remaining--;
+    item_candy_state.rare_candy_levels_remaining--;
     item_callback_rare_candy(self, pokemon_party_menu_wait_for_text_and_close);
 }
 
@@ -325,41 +327,41 @@ static void item_callback_any_rare_candy(u8 self, void (*exit_continuation)(u8))
 void item_gold_candy_field_effect(u8 self) {
     item_callback_after_pokemon_selected = item_callback_any_rare_candy;
     rare_candy_reset();
-    fmem.rare_candy_levels_remaining = 5;
+    item_candy_state.rare_candy_levels_remaining = 5;
     item_field_fade_to_scene_and_execute_callback(self);
 }
 
 void item_rare_candy_field_effect(u8 self) {
     item_callback_after_pokemon_selected = item_callback_any_rare_candy;
     rare_candy_reset();
-    fmem.rare_candy_levels_remaining = 1;
+    item_candy_state.rare_candy_levels_remaining = 1;
     item_field_fade_to_scene_and_execute_callback(self);
 }
 
 void item_exp_candy_s_field_effect(u8 self) {
     item_callback_after_pokemon_selected = item_callback_exp_candy;
     rare_candy_reset();
-    fmem.rare_candy_exp_remaining = 500;//500;
+    item_candy_state.rare_candy_exp_remaining = 500;//500;
     item_field_fade_to_scene_and_execute_callback(self);
 }
 
 void item_exp_candy_m_field_effect(u8 self) {
     item_callback_after_pokemon_selected = item_callback_exp_candy;
     rare_candy_reset();
-    fmem.rare_candy_exp_remaining = 3000;
+    item_candy_state.rare_candy_exp_remaining = 3000;
     item_field_fade_to_scene_and_execute_callback(self);
 }
 
 void item_exp_candy_l_field_effect(u8 self) {
     item_callback_after_pokemon_selected = item_callback_exp_candy;
     rare_candy_reset();
-    fmem.rare_candy_exp_remaining = 10000;
+    item_candy_state.rare_candy_exp_remaining = 10000;
     item_field_fade_to_scene_and_execute_callback(self);
 }
 
 void item_exp_candy_xl_field_effect(u8 self) {
     item_callback_after_pokemon_selected = item_callback_exp_candy;
     rare_candy_reset();
-    fmem.rare_candy_exp_remaining = 30000;
+    item_candy_state.rare_candy_exp_remaining = 30000;
     item_field_fade_to_scene_and_execute_callback(self);
 }

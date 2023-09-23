@@ -11,14 +11,14 @@
 #include "types.h"
 #include "color.h"
 
-void transparency_handler(u8 *command);
+void transparency_handler(const u8 *command);
 bool transparency_is_on();
 bool transparency_used_by_weather();
 void transparency_on();
 void transparency_off();
 bool transparency_load_black_pal();
 
-color_t tbox_palette_transparent[16];
+extern const color_t tbox_palette_transparent[16];
 
 #endif	/* TRANSPARENCY_H */
 

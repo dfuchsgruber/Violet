@@ -1,13 +1,13 @@
 #include "types.h"
 #include "map/tileset.h"
 
-extern u16 gfx_maptileset_dungeon_sand_cave_anim_quicksandTiles[];
+extern const u16 gfx_maptileset_dungeon_sand_cave_anim_quicksandTiles[];
 
-static tileset_animation tileset_dungeon_sand_cave_animations[] = {
+static const tileset_animation tileset_dungeon_sand_cave_animations[] = {
     {.cycle = 3, .speed = 8, .start_tile = 0x2c6, .num_tiles = 4, .gfx = gfx_maptileset_dungeon_sand_cave_anim_quicksandTiles},
 };
 
-static tileset_animation_header tileset_dungeon_sand_cave_animation_head = {
+static const tileset_animation_header tileset_dungeon_sand_cave_animation_head = {
     1, tileset_dungeon_sand_cave_animations
 };
 

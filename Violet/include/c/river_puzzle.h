@@ -33,7 +33,7 @@ typedef struct {
   u8 delay;
 } river_puzzle_state_t;
 
-#define RIVER_PUZZLE_STATE ((river_puzzle_state_t*) fmem.gp_state)
+extern EWRAM river_puzzle_state_t *river_puzzle_state;
 
 /**
  * Callback to handle the state of the river puzzle.
@@ -80,7 +80,7 @@ extern const u8 str_river_puzzle_solved[];
 #define RIVER_PUZZLE_BOAT_TAG 0x67A0
 #define RIVER_PUZZLE_POKEMON_TAG 0x67A1
 
-extern map_footer_t map_footer_22_river_puzzle;
+extern const map_footer_t map_footer_22_river_puzzle;
 
 #define RIVER_PUZZLE_UI_NUM_TILES 64
 #define RIVER_PUZZLE_TBOX_START_TILE (TBOX_FRAME_SET_STYLE_NUM_TILES + TBOX_FRAME_STD_NUM_TILES + RIVER_PUZZLE_UI_NUM_TILES)
@@ -89,7 +89,8 @@ extern map_footer_t map_footer_22_river_puzzle;
 #define RIVER_PUZZLE_TBOX_CONTEXT 1
 #define RIVER_PUZZLE_TBOX_MESSAGE 2
 #define RIVER_PUZZLE_TBOX_LIST 3
-tboxdata river_puzzle_tboxes[RIVER_PUZZLE_TBOX_CNT + 1];
+
+extern const tboxdata river_puzzle_tboxes[RIVER_PUZZLE_TBOX_CNT + 1];
 
 
 #endif /* INCLUDE_C_RIVER_PUZZLE_H_ */

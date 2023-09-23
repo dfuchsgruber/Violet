@@ -94,7 +94,7 @@ u8 pokemon_nature_by_pid(pid_t p){
     return nat;
 }
 
-u8 pokemon_get_nature(pokemon *p){
+u8 pokemon_get_nature(const pokemon *p){
 	pid_t pid = {.value = (u32)pokemon_get_attribute(p, ATTRIBUTE_PID, 0)};
     return pokemon_nature_by_pid(pid);
 }
@@ -104,7 +104,7 @@ bool pokemon_is_shiny(u32 tid, pid_t p){
     return p.fields.is_shiny > 0;
 }
 
-palette *pokemon_get_pal_struct(u16 species, u32 tid, pid_t p){
+const palette *pokemon_get_pal_struct(u16 species, u32 tid, pid_t p){
     //DEBUG("Pokemon get pal struct for species %d, pid %x, tid %x\n", species, p.fields.shinyness, tid);
     if(pokemon_is_shiny(tid, p))
         return &pokemon_shiny_pals[species];
@@ -126,11 +126,11 @@ void box_pokemon_set_game_in_substructure (pokemon_substructure_section_D *subs,
 	subs->catch_game = (u8)(game & 7);
 }
 
-int box_pokemon_get_pokeball_in_substructure(pokemon_substructure_section_D *subs) {
+int box_pokemon_get_pokeball_in_substructure(const pokemon_substructure_section_D *subs) {
 	return subs->pokeball;
 }
 
-int box_pokemon_get_game_in_substructure(pokemon_substructure_section_D *subs) {
+int box_pokemon_get_game_in_substructure(const pokemon_substructure_section_D *subs) {
 	return subs->catch_game;
 }
 
@@ -148,11 +148,11 @@ u8 pokemon_get_gender_by_pid(u16 species, pid_t pid) {
 	}
 }
 
-u8 box_pokemon_get_gender(box_pokemon *p) {
+u8 box_pokemon_get_gender(const box_pokemon *p) {
 	pid_t pid = {.value = (u32)box_pokemon_get_attribute(p, ATTRIBUTE_PID, NULL)};
 	return pokemon_get_gender_by_pid((u16)box_pokemon_get_attribute(p, ATTRIBUTE_SPECIES, NULL), pid);
 }
 
-u8 pokemon_get_gender(pokemon *p) {
+u8 pokemon_get_gender(const pokemon *p) {
 	return box_pokemon_get_gender(&p->box);
 }

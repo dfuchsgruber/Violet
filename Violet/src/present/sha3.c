@@ -9,7 +9,7 @@
 
 
 // Round constants
-u64 keccakf_rndc[24] = {
+const u64 keccakf_rndc[24] = {
     0x0000000000000001, 0x0000000000008082, 0x800000000000808a,
     0x8000000080008000, 0x000000000000808b, 0x0000000080000001,
     0x8000000080008081, 0x8000000000008009, 0x000000000000008a,
@@ -20,13 +20,13 @@ u64 keccakf_rndc[24] = {
     0x8000000000008080, 0x0000000080000001, 0x8000000080008008
 };
 
-u8 keccak_f_rotc[] = {
+const u8 keccak_f_rotc[] = {
     1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 2, 14, 27, 41, 56, 8, 25, 43, 62,
     18, 39, 61, 20, 44
 };
 
 
-u8 keccakf_piln[24] = {
+const u8 keccakf_piln[24] = {
     10, 7, 11, 17, 18, 3, 5, 16, 8, 21, 24, 4, 15, 23, 19, 13, 12, 2, 20,
     14, 22, 9, 6, 1
 };
@@ -80,7 +80,7 @@ void sha3_init(sha3_state *s){
     s->bitrate = 200 - 2 * SHA3_MDLEN;
 }
 
-u8 *sha3(u8 *in, u8 *md){
+u8 *sha3(const u8 in[SHA3_INLEN], u8 md[SHA3_MDLEN]){
     sha3_state *sha3 = malloc(sizeof(sha3_state));
    
     sha3_init(sha3);

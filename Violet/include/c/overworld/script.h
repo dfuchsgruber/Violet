@@ -20,44 +20,44 @@ typedef struct overworld_script_state_t {
 	u8 field_2;
 	u8 field_3;
 	bool (*callback)(); // Returns true when the handler is supposed to be waiting
-	u8 *script;
+	const u8 *script;
 	u8 field_12[80];
 	bool (*commands)(overworld_script_state_t*);
 	bool (*last_command)(overworld_script_state_t*);
-	u8 *pointer_banks[4];
+	const u8 *pointer_banks[4];
 } overworld_script_state_t;
 
-u8 *ow_script_string_buffers[3];
+extern u8 *ow_script_string_buffers[3];
 
 extern overworld_script_state_t overworld_script_state;
 
-extern u8 *overworld_script_virtual_ptr;
+extern const u8 *overworld_script_virtual_ptr;
 extern u8 tbox_idx_money; // Money textbox uses that
 
 /**
  * Script command to initialize a mart
  * @param script_state the script state
  */
-bool overworld_script_cmd_x86_pokemart(void *script_state);
+bool overworld_script_cmd_x86_pokemart(const overworld_script_state_t *state);
 
 /**
  * Reads a word from the current script offset (unaligned)
  * @param script_state the overworld script state
  */
-int overworld_script_read_word(void *script_state);
+int overworld_script_read_word(const overworld_script_state_t *state);
 
 /**
  * Reads a 16-bit hword from the current script offset.
  * @param state the current script state
  * @return the 16-bit hword located at the current offset
  **/
-u16 overworld_script_read_hword(overworld_script_state_t *state);
+u16 overworld_script_read_hword(const overworld_script_state_t *state);
 
 /**
  * Initializes an overworld script
  * @param script The script offset to initialize
  */
-void overworld_script_init(void* script);
+void overworld_script_init(const u8* script);
 
 /**
  * Halts the script until the warp is executed
@@ -88,7 +88,7 @@ void overworld_script_set_inactive();
  * Initializes a muted overworld script
  * @param script the script to initialize
  */
-void overworld_script_init_muted(u8 *script);
+void overworld_script_init_muted(const u8 *script);
 
 /**
  * Big callback to process input of a yesnobox
