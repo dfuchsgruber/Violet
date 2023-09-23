@@ -41,7 +41,7 @@ typedef u8 worldmap_namespace_t[WORLDMAP_HEIGHT][WORLDMAP_WIDTH];
 
 #define NUM_FLIGHT_POSITONS 21
 
-enum {
+enum worldmap_initialization_state {
     WORLDMAP_UI_INITIALIZATION_STATE_DATA_SETUP = 0,
     WORLDMAP_UI_INITIALIZATION_STATE_RESET,
     WORLDMAP_UI_INITIALIZATION_STATE_SETUP_BGS,
@@ -50,11 +50,11 @@ enum {
     WORLDMAP_UI_INITIALIZATION_STATE_LOAD_BG_GFX,
     WORLDMAP_UI_INITIALIZATION_STATE_LOAD_OAM_GFX,
     WORLDMAP_UI_INITIALIZATION_STATE_SHOW,
-} worldmap_initialization_state;
+};
 
 
 // OAM gfx tags
-enum {
+enum worldmap_ui_gfx_tag {
     WORLDMAP_UI_GFX_TAG_ICON_GRASS = 0x1370,
     WORLDMAP_UI_GFX_TAG_ICON_WATER,
     WORLDMAP_UI_GFX_TAG_ICON_RADAR,
@@ -67,7 +67,7 @@ enum {
     WORLDMAP_UI_GFX_TAG_CURSOR,
     WORLDMAP_UI_GFX_TAG_SWITCH_MAPS_ICON,
     WORLDMAP_UI_GFX_TAG_PERCENTAGE,
-} worldmap_ui_gfx_tag;
+};
 
 enum {
     WORLDMAP_UI_TBOX_IDX_NAMESPACE = 0,
@@ -100,6 +100,8 @@ enum {
     WORLDMAP_UI_PERCENTAGE_100,
     WORLDMAP_UI_HABITAT_NUM_PERCENTAGES,
 };
+
+
 
     typedef struct{
         u8 bank;
@@ -161,11 +163,11 @@ enum {
     extern const LZ77COMPRESSED gfx_worldmap_icon_thetoTiles;
     extern const color_t gfx_worldmap_icon_thetoPal[16];
 
-    enum {
+    enum worldmap_idx_t {
         WORLDMAP_THETO = 0,
         WORLDMAP_ISLANDS = 1,
         NUM_WORLDMAPS
-    } worldmap_idx;
+    };
 
     enum {
         WORLDMAP_LAYER_GROUND = 0,
@@ -281,7 +283,54 @@ enum {
     } worldmap_position_t;
 
     // Locates maps exactly on the worldmap
-    extern const worldmap_position_t *worldmap_positions[256];
+    extern const worldmap_position_t *const worldmap_positions[256];
+
+    enum worldmap_ui_mode_t {
+        WORLDMAP_UI_HABITAT = 0,
+    };
+
+    typedef struct {
+        u8 initialization_state;
+        u8 mode;
+        void *bg0_map;
+        void *bg1_map;
+        void *bg2_map;
+        void *bg3_map;
+
+        u8 worldmaps[NUM_WORLDMAPS]; // all worldmaps the player has unlocked
+        u8 num_worldmaps;
+        u8 worldmap_tile_x, worldmap_tile_y;
+        u8 icon_switch_maps_x, icon_switch_maps_y;
+        u8 switch_maps_dialoge_x, switch_maps_dialoge_y;
+
+        u8 header_pokemon_name_string_width;
+        u8 oam_idx_player, oam_idx_cursor, oam_idx_icon_switch_map, oam_idx_icon_switch_map_frame;
+        u8 oam_idx_percentages[NUM_HABITAT_TYPES];
+        
+        u8 cursor_locked : 1;
+        u8 cursor_invisible : 1;
+        u8 cursor_moving : 1;
+
+        worldmap_cursor_t player;
+        worldmap_cursor_t cursor;
+
+        void (*callback_cursor_moved)(u8); // triggered after the cursor is finished moving
+        void (*callback_cursor_starts_moving)(u8); // triggered once the cursor starts moving
+
+        u8 cb_idx_handle_inputs;
+
+        u16 species;
+        u8 current_namespace;
+
+        pokedex_habitat_list_t *habitats;
+        u8 red_overlay_should_be_active : 1;
+        u8 red_overlay_is_active : 1;
+        u8 other_red_should_be_active : 1;
+        u8 other_red_is_active : 1;
+    } worldmap_ui_state_t;
+
+    extern EWRAM worldmap_ui_state_t *worldmap_ui_state;
+
 
 #define WORLDMAP_FLAG_CHECK_INVALID 0
 #define WORLDMAP_FLAG_CHECK_NO_FLAG 1
