@@ -8,6 +8,7 @@
 #ifndef INCLUDE_C_MAP_TILESET_H_
 #define INCLUDE_C_MAP_TILESET_H_
 
+#include "types.h"
 #include "tile/block.h"
 #include "bg.h"
 #include "overworld/effect.h"
@@ -50,6 +51,9 @@ extern u16 tileset_anim_clk1;
 extern u16 tileset_anim_clk1_cycle;
 extern void (*tileset_anim_0)(u16);
 extern void (*tileset_anim_1)(u16);
+
+extern EWRAM const tileset *current_tileset_1;
+extern EWRAM const tileset *current_tileset_2;
 
 u16 generic_tileset_anim_get_clk(const tileset_animation_header *anim_header);
 

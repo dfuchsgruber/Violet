@@ -10,6 +10,8 @@
 #include "save.h"
 #include "debug.h"
 
+EWRAM u32 gp_rng = 0;
+
 void rnd_init(){
     u16 timer = *(u16*)0x04000104;
     if(!timer) timer++; //Just any not zero number
@@ -29,15 +31,15 @@ FIXED rnd_normal() {
 }
 
 u16 gp_rnd16() {
-    return (u16)(_prng_xorshift(&fmem.gp_rng));
+    return (u16)(_prng_xorshift(&gp_rng));
 }
 
 void gp_rng_seed(u32 seed) {
-    fmem.gp_rng = seed;
+    gp_rng = seed;
 }
 
 FIXED gp_rnd_normal() {
-    return _prng_stdnormal(&fmem.gp_rng);
+    return _prng_stdnormal(&gp_rng);
 }
 
 void rnd_main_set_seed(u32 seed){

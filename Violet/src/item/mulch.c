@@ -33,7 +33,7 @@ void item_effect_mulch(u8 self) {
 	    const map_event_person *p = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
         if (p && p->script_std == PERSON_BERRY_TREE) {
             u16 berry_tree_idx = p->value;
-            if (cmem.berry_trees[berry_tree_idx].stage == BERRY_STAGE_NO_BERRY && !cmem.berry_trees[berry_tree_idx].fertilized) {
+            if (csave.berry_trees[berry_tree_idx].stage == BERRY_STAGE_NO_BERRY && !csave.berry_trees[berry_tree_idx].fertilized) {
                 // The berry can be fertilized with mulch
                 item_use_continuation = item_mulch_overworld_continuation_print_string;
                 item_close_bag_and_return_to_overworld(self);

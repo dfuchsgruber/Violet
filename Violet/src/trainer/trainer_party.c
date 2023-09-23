@@ -16,9 +16,12 @@
 #include "save.h"
 #include "debug.h"
 #include "dungeon/dungeon2.h"
+#include "trainer/virtual.h"
+
+EWRAM trainer_pokemon dynamic_trainer_party[NUM_DYNAMIC_TRAINER_POKEMON] = {0};
 
 u16 trainer_pokemon_prng() {
-	return (u16)_prng_xorshift(&(fmem.trainer_prng_state));
+	return (u16)_prng_xorshift(&(trainer_prng_state));
 }
 
 u8 trainer_pokemon_get_level(u8 level) {
@@ -34,10 +37,10 @@ u8 trainer_pokemon_get_level(u8 level) {
 	}
 	switch (*var_access(DIFFICULTY)) {
 		case DIFFICULTY_EASY:
-			level = (u8)MAX(1, mean - std);
+			level = (u8)MAX(1, level - std);
 			break;
 		case DIFFICULTY_HARD:
-			level = (u8)MIN(100, mean + std + (std / 2));
+			level = (u8)MIN(100, level + std + (std / 2));
 			break;
 	}
 	return MIN(100, MAX(1, level));
@@ -128,7 +131,7 @@ static int party_setup_by_trainer_idx(pokemon *dst_party, u16 trainer_id) {
 	if (trainer_id >= 0x1e0 && trainer_id < 0x1e4)
 		dungeon2_init_trainer(trainer_id);
 	// To generate a trainer consistent pid we use a pseudo rng
-	fmem.trainer_prng_state = trainer_id;
+	trainer_prng_state = trainer_id;
 	size_t idxs[6] = {0, 1, 2, 3, 4, 5};
 	if (*var_access(DIFFICULTY) == DIFFICULTY_HARD) {  // Shuffle
 		shuffle(idxs, trainers[trainer_id].pokemon_cnt, NULL);
@@ -152,7 +155,7 @@ int trainer_party_setup() {
 			num_pokemon_setup += party_setup_by_trainer_idx(opponent_pokemon, trainer_vars.trainer_id);
 		}
 		if ((battle_flags & BATTLE_TWO_TRAINERS) && (battle_flags & BATTLE_TRAINER))
-			num_pokemon_setup += party_setup_by_trainer_idx(opponent_pokemon + 3, fmem.trainer_varsB.trainer_id);
+			num_pokemon_setup += party_setup_by_trainer_idx(opponent_pokemon + 3, trainer_varsB.trainer_id);
 	}
 	return num_pokemon_setup;
 }
@@ -163,7 +166,7 @@ void ally_party_setup() {
 	party_setup_by_trainer_idx(player_pokemon + 3, trainer_idx);
 	u32 tid = (u32)(trainer_pokemon_prng() % 100000);
 	// Change OT-name
-	fmem.trainer_prng_state = trainer_idx;
+	trainer_prng_state = trainer_idx;
 	for (int i = 3; i < 6; i++) {
 		if (pokemon_get_attribute(player_pokemon + i, ATTRIBUTE_SPECIES, 0) != 0) {
 			pokemon_set_attribute(player_pokemon + i, ATTRIBUTE_OT_NAME, trainer_get_name(trainer_idx));

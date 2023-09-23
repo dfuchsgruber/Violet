@@ -42,6 +42,9 @@ typedef struct {
 	void (*continuation)();
 } ev_menu_state_stru;
 
+
+extern EWRAM ev_menu_state_stru *ev_menu_state;
+
 /**
  * Callback to animate the jump of a pokemon.
  * @param self index of the callback

@@ -42,8 +42,8 @@ u8 battle_ai_should_use_item(int *score) {
     // Check how many items the AI has still left in relation to the number of battlers
     u8 owner = battler_get_owner(active_battler);
     int num_items = 0, num_viable_pokemon = 0, party_size = 0;
-    for (u8 i = 0; i < BATTLE_STATE2->num_items[owner]; i++) {
-        if (BATTLE_STATE2->items[owner][i]) num_items++; 
+    for (u8 i = 0; i < battle_state2->num_items[owner]; i++) {
+        if (battle_state2->items[owner][i]) num_items++; 
     }
     AI_DEBUG_ITEMS("Battle ai for battler %d has %d items.\n", active_battler, num_items);
     if (num_items == 0)
@@ -55,8 +55,8 @@ u8 battle_ai_should_use_item(int *score) {
     }
     // Compare the ratios of pokemon in the party that are viable to items left
     // Negative bias towards item use, if the ratio of mons in the team exceeds the ratio of items
-    *score = -(num_viable_pokemon * BATTLE_STATE2->num_items[owner] / num_items / party_size);
-    AI_DEBUG_ITEMS("Viable Mons %d, Party Size %d, Num Items %d, Total Items %d\n", num_viable_pokemon, party_size, num_items, BATTLE_STATE2->num_items[owner]);
+    *score = -(num_viable_pokemon * battle_state2->num_items[owner] / num_items / party_size);
+    AI_DEBUG_ITEMS("Viable Mons %d, Party Size %d, Num Items %d, Total Items %d\n", num_viable_pokemon, party_size, num_items, battle_state2->num_items[owner]);
     AI_DEBUG_ITEMS("Bias towards items %d for owner %d\n", *score, owner);
 
     // Types and flags for each item, to communicate that the correct script is triggered
@@ -66,9 +66,9 @@ u8 battle_ai_should_use_item(int *score) {
     // Check if the item is eligible anyways
     u8 item_idx_to_choose = 4;
     int best_item_score = INT_MIN;;
-    for (u8 i = 0; i < BATTLE_STATE2->num_items[owner]; i++) {
+    for (u8 i = 0; i < battle_state2->num_items[owner]; i++) {
         AI_DEBUG_ITEMS("Checking if item %d is applicable...\n", i);
-        u16 item = BATTLE_STATE2->items[owner][i];
+        u16 item = battle_state2->items[owner][i];
         if (item == 0 || item < ITEM_TRANK) continue;
         const item_effect_t *effect = item_effects[item - ITEM_TRANK];
         ai_item_types[i] = ai_get_item_type(item, effect);
@@ -223,7 +223,7 @@ u8 battle_ai_should_use_item(int *score) {
         }
     }
     if (item_idx_to_choose < 4) {
-        AI_DEBUG_ITEMS("Chose item idx %d (is %d) with an item score of %d\n", item_idx_to_choose, BATTLE_STATE2->items[owner][item_idx_to_choose], best_item_score);
+        AI_DEBUG_ITEMS("Chose item idx %d (is %d) with an item score of %d\n", item_idx_to_choose, battle_state2->items[owner][item_idx_to_choose], best_item_score);
         *score += best_item_score;
         *score += (int)((battle_ressources->ai->ai_flags >> 12) & 3);
         // Setting ai item type and flags is not used anymore, as the proper reaction script is triggered in battle_main.c : battle_action_use_item

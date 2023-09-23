@@ -59,7 +59,7 @@ void bag_oam_switch_pockets_callback(oam_object *self) {
 }
 
 void bag_oam_switch_pockets(u8 pocket) {
-    oam_object *o = oams + BAG2_STATE->oam_idx_bag;
+    oam_object *o = oams + bag2_state->oam_idx_bag;
     o->y2 = -5;
     o->callback = bag_oam_switch_pockets_callback;
     oam_gfx_anim_start(o, pocket);

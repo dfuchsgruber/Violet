@@ -30,7 +30,9 @@
         u8 color_cb;
         u8 oam_badge;
         u8 cursor;
-    } wondertrade_memory;
+    } wondertrade_memory_t;
+
+    extern EWRAM wondertrade_memory_t *wondertrade_memory;
 
     extern const u8 str_wondertrade_not_possible_script[];
     extern const u8 script_wondertrade_failure[];

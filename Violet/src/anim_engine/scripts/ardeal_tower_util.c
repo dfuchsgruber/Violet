@@ -149,7 +149,7 @@ void animation_ardeal_tower_warp() {
     clearflag(PKMNMENU);
     clearflag(POKEDEX);
     // Player loses all money
-    money_set(&cmem.money_backup, money_get(&save1->money));
+    money_set(&csave.money_backup, money_get(&save1->money));
     money_set(&save1->money, 0);
 	warp_setup_by_event(WARP_BANK, WARP_MAP_IDX, WARP_WARP_IDX);
     warp_setup_muted_callback();

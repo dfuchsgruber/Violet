@@ -69,7 +69,7 @@ const u8 *attack_negating_abilities(u8 defender_ability, u16 used_attack){
         }
     }
     // Check for handicap here, it's a bit hacky, but w/e
-    if ((fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_TERRIFYING_ATMOSPHERE]) && battlers[defending_battler].type1 != TYPE_GEIST && 
+    if ((battle_handicaps & int_bitmasks[BATTLE_HANDICAP_TERRIFYING_ATMOSPHERE]) && battlers[defending_battler].type1 != TYPE_GEIST && 
             battlers[defending_battler].type2 != TYPE_GEIST && (rnd16() % 3) == 0) {
         if(battlers[attacking_battler].status2 & 0x1000){
             bsc_status_flags |= 0x800;

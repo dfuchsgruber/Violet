@@ -26,6 +26,9 @@
 #include "bios.h"
 #include "agbmemory.h"
 #include "overworld/map_control.h"
+#include "pokepad/pokedex/state.h"
+
+EWRAM pokedex_state_t *pokedex_state = NULL;
 
 extern const unsigned short gfx_pokedex_sort_cursorTiles[];
 extern const unsigned short gfx_pokedex_uiMap[];
@@ -104,7 +107,7 @@ const u16 pokedex_colors[16] = {0, 0x2927, 0x7FFF, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 const u16 pokedex_colors_nr[16] = {0, 0x7FFF, 0x2927, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 int pokedex_get_first_seen() {
-    pokedex_list_element *list = fmem.dex_mem->list;
+    pokedex_list_element *list = pokedex_state->list;
     int i;
     for (i = 0; i < POKEDEX_CNT; i++) {
         if (pokedex_operator_by_dex_id(list[i].dex_id, 0))
@@ -114,7 +117,7 @@ int pokedex_get_first_seen() {
 }
 
 int pokedex_get_last_seen() {
-    pokedex_list_element *list = fmem.dex_mem->list;
+    pokedex_list_element *list = pokedex_state->list;
     int i;
     for (i = POKEDEX_CNT - 1; i >= 0; i--) {
         if (pokedex_operator_by_dex_id(list[i].dex_id, 0))
@@ -135,16 +138,16 @@ void pokedex_callback_return() {
     if (!fading_is_active()) {
         //end pokedex
         tbox_free_all();
-        *var_access(POKEDEX_ACTIVE_COMPARATOR) = fmem.dex_mem->current_comparator;
-        *var_access(POKEDEX_LAST_SPECIES) = fmem.dex_mem->current_species;
+        *var_access(POKEDEX_ACTIVE_COMPARATOR) = pokedex_state->current_comparator;
+        *var_access(POKEDEX_LAST_SPECIES) = pokedex_state->current_species;
         pokedex_free_maps();
-        free(fmem.dex_mem->list);
-        if (fmem.dex_mem->from_outdoor) {
+        free(pokedex_state->list);
+        if (pokedex_state->from_outdoor) {
             callback1_set(map_reload);
         } else {
             callback1_set(pokepad2_callback_initialize);
         }
-        free(fmem.dex_mem);
+        free(pokedex_state);
     }
 }
 
@@ -155,7 +158,7 @@ void pokedex_draw_feature_strings(){
         tbox_flush_set(POKEDEX_TBOX_FEATURE_0, 0);
         tbox_tilemap_draw(POKEDEX_TBOX_FEATURE_0);
         tbox_print_string(POKEDEX_TBOX_FEATURE_0, 2, 2, 4, 0, 0,
-                fmem.dex_mem->current_feature == 0 ? 
+                pokedex_state->current_feature == 0 ? 
                     &pokedex_features_active_fontcolmap :
                     &pokedex_features_fontcolmap, 0, str_feature_0);
     }
@@ -164,7 +167,7 @@ void pokedex_draw_feature_strings(){
         tbox_flush_set(POKEDEX_TBOX_FEATURE_1, 0);
         tbox_tilemap_draw(POKEDEX_TBOX_FEATURE_1);
         tbox_print_string(POKEDEX_TBOX_FEATURE_1, 2, 2, 2, 0, 0,
-                fmem.dex_mem->current_feature == 1 ? 
+                pokedex_state->current_feature == 1 ? 
                     &pokedex_features_active_fontcolmap :
                     &pokedex_features_fontcolmap, 0, str_feature_1);
     }
@@ -173,7 +176,7 @@ void pokedex_draw_feature_strings(){
         tbox_flush_set(POKEDEX_TBOX_FEATURE_2, 0);
         tbox_tilemap_draw(POKEDEX_TBOX_FEATURE_2);
         tbox_print_string(POKEDEX_TBOX_FEATURE_2, 2, 2, 2, 0, 0,
-                fmem.dex_mem->current_feature == 2 ? 
+                pokedex_state->current_feature == 2 ? 
                     &pokedex_features_active_fontcolmap :
                     &pokedex_features_fontcolmap, 0, str_feature_2);
     }
@@ -189,7 +192,7 @@ void pokedex_callback_feature_selection(){
     generic_callback1();
     if(super.keys_new.keys.down || super.keys_new.keys.up){
         // Select next availble feature
-        u8 next_feature = fmem.dex_mem->current_feature;
+        u8 next_feature = pokedex_state->current_feature;
         do{
             if(super.keys_new.keys.down)
                 next_feature++;
@@ -197,13 +200,13 @@ void pokedex_callback_feature_selection(){
                 next_feature = (u8)(next_feature + 3 - 1);
             next_feature %= 3;
         }while(!checkflag(feature_flags[next_feature]));
-        if(next_feature == fmem.dex_mem->current_feature) return;
-        fmem.dex_mem->current_feature = next_feature;
+        if(next_feature == pokedex_state->current_feature) return;
+        pokedex_state->current_feature = next_feature;
         play_sound(5);
         pokedex_draw_feature_strings();
     }else if(super.keys_new.keys.B){
         // Return to group selection
-        fmem.dex_mem->current_feature = 0xFF;
+        pokedex_state->current_feature = 0xFF;
         pokedex_draw_feature_strings();
         callback1_set(pokedex_callback_group_selection);
         play_sound(5);
@@ -221,34 +224,34 @@ void pokedex_callback_group_selection() {
     if (!fading_is_active()) {
 
         //first we proceed in fading process of current group
-        if (fmem.dex_mem->group_fading_mode) {
+        if (pokedex_state->group_fading_mode) {
             //fade count decrease
-            if (fmem.dex_mem->group_fading_index) {
-                fmem.dex_mem->group_fading_index--;
+            if (pokedex_state->group_fading_index) {
+                pokedex_state->group_fading_index--;
             } else {
-                fmem.dex_mem->group_fading_mode = false;
+                pokedex_state->group_fading_mode = false;
             }
         } else {
             //fade count increase
-            if (fmem.dex_mem->group_fading_index < 16) {
-                fmem.dex_mem->group_fading_index++;
+            if (pokedex_state->group_fading_index < 16) {
+                pokedex_state->group_fading_index++;
             } else {
-                fmem.dex_mem->group_fading_mode = true;
+                pokedex_state->group_fading_mode = true;
             }
         }
 
 
         //Progress in input
         if (super.keys_new.keys.A) {
-            switch (fmem.dex_mem->current_group) {
+            switch (pokedex_state->current_group) {
                 case 0:
                     play_sound(5);
-                    fmem.dex_mem->list_countdown = 0;
-                    fmem.dex_mem->list_mode = 0;
-                    fmem.dex_mem->in_list = true;
+                    pokedex_state->list_countdown = 0;
+                    pokedex_state->list_mode = 0;
+                    pokedex_state->in_list = true;
                     callback1_set(pokedex_callback_list);
-                    fmem.dex_mem->group_fading_index = 16;
-                    fmem.dex_mem->group_fading_mode = true;
+                    pokedex_state->group_fading_index = 16;
+                    pokedex_state->group_fading_mode = true;
                     break;
                 case 1:
                     if (checkflag(POKEDEX_FEATURE_0) || checkflag(POKEDEX_FEATURE_1)
@@ -257,13 +260,13 @@ void pokedex_callback_group_selection() {
                         // Find a valid feature
                         for(u8 i = 0; i < 3; i++){
                             if(checkflag(feature_flags[i])){
-                                fmem.dex_mem->current_feature = i;
+                                pokedex_state->current_feature = i;
                                 break;
                             }
                         }
                         pokedex_draw_feature_strings();
-                        fmem.dex_mem->group_fading_index = 16;
-                        fmem.dex_mem->group_fading_mode = true;
+                        pokedex_state->group_fading_index = 16;
+                        pokedex_state->group_fading_mode = true;
                         callback1_set(pokedex_callback_feature_selection);
                     } else {
                         play_sound(26);
@@ -272,39 +275,39 @@ void pokedex_callback_group_selection() {
                 case 2:
 
                     play_sound(5);
-                    fmem.dex_mem->resorting = false;
-                    fmem.dex_mem->sort_cursor_pos = fmem.dex_mem->current_comparator & 0x3;
-                    fmem.dex_mem->group_fading_index = 16;
-                    fmem.dex_mem->group_fading_mode = true;
+                    pokedex_state->resorting = false;
+                    pokedex_state->sort_cursor_pos = pokedex_state->current_comparator & 0x3;
+                    pokedex_state->group_fading_index = 16;
+                    pokedex_state->group_fading_mode = true;
                     callback1_set(pokedex_callback_sort);
-                    oams[fmem.dex_mem->oam_sort_cursor].anim_number = 1;
-                    oam_gfx_anim_init(&oams[fmem.dex_mem->oam_sort_cursor], 0);
+                    oams[pokedex_state->oam_sort_cursor].anim_number = 1;
+                    oam_gfx_anim_init(&oams[pokedex_state->oam_sort_cursor], 0);
                     break;
             }
         } else if (super.keys_new.keys.B) {
             callback1_set(pokedex_callback_return);
             fadescreen_all(1, 0);
             play_sound(5);
-        } else if (super.keys_new.keys.left && !fmem.dex_mem->current_group) {
+        } else if (super.keys_new.keys.left && !pokedex_state->current_group) {
             //we switch to feature selection
-            fmem.dex_mem->current_group = 1;
+            pokedex_state->current_group = 1;
             pokedex_group_window_set();
             play_sound(5);
-        } else if (super.keys_new.keys.up && fmem.dex_mem->current_group <= 1) {
-            fmem.dex_mem->current_group = 2;
+        } else if (super.keys_new.keys.up && pokedex_state->current_group <= 1) {
+            pokedex_state->current_group = 2;
             pokedex_group_window_set();
             play_sound(5);
-        } else if (super.keys_new.keys.down && fmem.dex_mem->current_group == 2) {
-            fmem.dex_mem->current_group = 0;
+        } else if (super.keys_new.keys.down && pokedex_state->current_group == 2) {
+            pokedex_state->current_group = 0;
             pokedex_group_window_set();
             play_sound(5);
-        } else if (super.keys_new.keys.right && fmem.dex_mem->current_group == 1) {
-            fmem.dex_mem->current_group = 0;
+        } else if (super.keys_new.keys.right && pokedex_state->current_group == 1) {
+            pokedex_state->current_group = 0;
             pokedex_group_window_set();
             play_sound(5);
         }
         color_t over = {0x7FFF};
-        pals[17] = color_alpha_blend(pal_restore[17], over, fmem.dex_mem->group_fading_index);
+        pals[17] = color_alpha_blend(pal_restore[17], over, pokedex_state->group_fading_index);
 
 
     }
@@ -318,7 +321,7 @@ void pokedex_group_window_set() {
     u8 rightmost = 240;
     u8 topmost = 0;
     u8 bottommost = 160;
-    switch (fmem.dex_mem->current_group) {
+    switch (pokedex_state->current_group) {
         case 0://list group, we set the window
             topmost = 31;
             leftmost = 63;
@@ -406,8 +409,8 @@ void pokedex_init_components() {
 
     u8 cursor_pal = (u8) (oam_allocate_palette(0xA013) + 0x10);
     pal_decompress(gfx_pokedex_sort_cursorPal, (u16) (cursor_pal * 16), 32);
-    fmem.dex_mem->oam_sort_cursor = oam_new_forward_search(&pokedex_cursor_template, 128, 16, 0);
-    fmem.dex_mem->sort_cursor_pos = fmem.dex_mem->current_comparator & 3;
+    pokedex_state->oam_sort_cursor = oam_new_forward_search(&pokedex_cursor_template, 128, 16, 0);
+    pokedex_state->sort_cursor_pos = pokedex_state->current_comparator & 3;
     pokedex_sort_locate_cursor();
 
     pal_decompress(gfx_pokedex_uiPal, 0, 32);
@@ -457,14 +460,14 @@ void pokedex_init_components() {
 void pokedex_callback_init() {
     generic_callback1();
     if (!fading_is_active()) {
-        if (fmem.dex_mem->from_outdoor) {
+        if (pokedex_state->from_outdoor) {
             overworld_free();
         } else {
             pokepad2_free();
         }
         pokedex_init_components();
         pokedex_build_list();
-        pokedex_quicksort_list((u8) fmem.dex_mem->current_comparator, 0, POKEDEX_CNT - 1); //resort list
+        pokedex_quicksort_list((u8) pokedex_state->current_comparator, 0, POKEDEX_CNT - 1); //resort list
         pokedex_update_list();
         io_set(0x50, 0);
         io_set(0x52, 0);
@@ -476,13 +479,13 @@ void pokedex_callback_init() {
 
 void pokedex_init(bool from_outdoor) {
     overworld_rain_sound_fade_out();
-    fmem.dex_mem = malloc_and_clear(sizeof (pokedex_memory));
-    fmem.dex_mem->from_outdoor = from_outdoor;
-    fmem.dex_mem->current_group = 0;
-    fmem.dex_mem->current_species = *var_access(POKEDEX_LAST_SPECIES);
-    fmem.dex_mem->current_comparator = (u8) * var_access(POKEDEX_ACTIVE_COMPARATOR);
-    fmem.dex_mem->cursor_anchor = 0;
-    fmem.dex_mem->current_feature = 0xFF;
+    pokedex_state = malloc_and_clear(sizeof (pokedex_state_t));
+    pokedex_state->from_outdoor = from_outdoor;
+    pokedex_state->current_group = 0;
+    pokedex_state->current_species = *var_access(POKEDEX_LAST_SPECIES);
+    pokedex_state->current_comparator = (u8) * var_access(POKEDEX_ACTIVE_COMPARATOR);
+    pokedex_state->cursor_anchor = 0;
+    pokedex_state->current_feature = 0xFF;
     callback1_set(pokedex_callback_init);
     fadescreen_all(1, 0);
 }

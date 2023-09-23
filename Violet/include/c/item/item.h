@@ -34,6 +34,18 @@ typedef struct {
 extern const item items[ITEM_CNT];
 
 typedef struct {
+    void *sprite_rectangle;
+    u32 rare_candy_exp_remaining;
+    u8 rare_candy_levels_remaining : 7;
+    u8 rare_candy_item_removed : 1;
+    u8 rare_candy_exp_leveled_up : 1;
+} item_candy_state_t;
+
+extern EWRAM item_candy_state_t item_candy_state;
+extern EWRAM u8 item_obtain_oam_id;
+extern EWRAM u8 item_obtain_tb_id;
+
+typedef struct {
 	u8 hold_effect;
 	u8 type;
 } item_hold_effect_type_boost_stru;

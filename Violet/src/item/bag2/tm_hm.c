@@ -221,7 +221,7 @@ void bag_tm_hm_pocket_load_move_info(u16 slot) {
 
 	u8 pocket_idx = bag_get_current_pocket();
 	u8 power = 0, accuracy = 0, type = 0xFF, pp = 0, category = 0xFF;
-	if (slot < BAG2_STATE->pocket_size[pocket_idx]) {
+	if (slot < bag2_state->pocket_size[pocket_idx]) {
 		u16 attack_idx = tm_hm_to_attack[ITEM_IDX_TO_TM_IDX(item_get_idx_by_pocket_position(pocket_idx, slot))];
 		if (attack_idx < ATTACK_CNT) {
 			power = attacks[attack_idx].base_power;

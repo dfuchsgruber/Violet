@@ -107,9 +107,9 @@ int pokedex_get_habitats_of_species(pokedex_habitat_pair *dst, u16 species) {
         }
     }
     int roamer_idx = species_to_roamer_idx(species);
-    if (roamer_idx != -1 && cmem.roamers[roamer_idx].is_present) {
-        u8 bank = cmem.roamer_locations[roamer_idx].bank;
-        u8 map_idx = cmem.roamer_locations[roamer_idx].map_idx;
+    if (roamer_idx != -1 && csave.roamers[roamer_idx].is_present) {
+        u8 bank = csave.roamer_locations[roamer_idx].bank;
+        u8 map_idx = csave.roamer_locations[roamer_idx].map_idx;
         int map_type = pokdex_map_type_to_habitat_map_type[get_mapheader(bank, map_idx)->type];
         pokedex_habitats_add(bank, map_idx, dst, &cnt, 50, HABITAT_TYPE_GRASS, map_type);
         pokedex_habitats_add(bank, map_idx, dst, &cnt, 50, HABITAT_TYPE_WASSER, map_type);

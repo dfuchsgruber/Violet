@@ -130,11 +130,11 @@ u8 pokeradar_prepeare() {
             *var_access(POKERADAR_EMENY_SPECIES) = result;
             *var_access(POKERADAR_ENEMY_LEVEL) = (u16) level;
 
-            memcpy(&(cmem.pokeradar_person), &pokeradar_map_event_person, sizeof(map_event_person));
-            cmem.pokeradar_person.x = (s16)(npc_pos.x - 7);
-            cmem.pokeradar_person.y = (s16)(npc_pos.y - 7);
-            cmem.pokeradar_person.overworld_index = overworld_get_sprite_idx_by_species(result);
-            cmem.pokeradar_person.value = result;
+            memcpy(&(csave.pokeradar_person), &pokeradar_map_event_person, sizeof(map_event_person));
+            csave.pokeradar_person.x = (s16)(npc_pos.x - 7);
+            csave.pokeradar_person.y = (s16)(npc_pos.y - 7);
+            csave.pokeradar_person.overworld_index = overworld_get_sprite_idx_by_species(result);
+            csave.pokeradar_person.value = result;
             
             return 0;
         }
@@ -202,8 +202,8 @@ bool pokeradar_step() {
             *var_access(POKERADAR_ENEMY_STATE) = 0;
             coordinate_t npc_pos;
             if (pokeradar_determine_position(&npc_pos)) {
-                cmem.pokeradar_person.x = (s16) (npc_pos.x - 7);
-                cmem.pokeradar_person.y = (s16) (npc_pos.y - 7);
+                csave.pokeradar_person.x = (s16) (npc_pos.x - 7);
+                csave.pokeradar_person.y = (s16) (npc_pos.y - 7);
                 overworld_script_init(script_pokeradar_poschange);
                 overworld_script_set_active();
                 return true;

@@ -36,6 +36,7 @@ int dungeon_get_type();
 
 extern const map_header_t *const *const mapbanks[];
 extern map_header_t mapheader_virtual;
+extern EWRAM map_header_t dynamic_map_header;
 
 /**
  * Checks if the current map allows fly or teleport

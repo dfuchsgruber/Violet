@@ -64,7 +64,7 @@ void warp_to_pos_with_facing() {
 	warp_update_last_outdoor_map(pos.coordinates.x, pos.coordinates.y);
 	warp_last_map_set(0, save1->bank, save1->map, 0xFF, (s16)(pos.coordinates.x - 7),
 			(s16)(pos.coordinates.y - 7));
-    fmem.additional_levelscript_4 = script_cloud_facings[facing];
+    additional_levelscript_4 = script_cloud_facings[facing];
     warp_setup((u8) bank, (u8) map, 0xFF, (s16) x, (s16) y);
     //warp_setup_callbacks();
     warp_setup_muted_callback();

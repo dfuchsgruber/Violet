@@ -911,4 +911,7 @@ void player_transition(u8 player_transition_type);
 extern const u8 behaviour_initial_facing_directions[80];
 extern const u8 behaviour_has_range[80];
 
+extern EWRAM u8 pathfinding_npc_movements_waiting;
+extern EWRAM u8 npc_facing_movements[2];
+
 #endif /* INCLUDE_C_OVERWORLD_NPC_H_ */

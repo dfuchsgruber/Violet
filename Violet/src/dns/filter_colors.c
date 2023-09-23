@@ -88,9 +88,9 @@ void pal_apply_shaders(u16 start_color, u16 number_colors) {
     }
     // DEBUG("Set filter to map weather %d\n", save1->map_weather);
     weather_set_filter(save1->map_weather);
-    if (fmem.weather_blend_active) {
+    if (weather_blend_active) {
         filter_active = true;
-        filter = color_multiply(filter, fmem.weather_blend);
+        filter = color_multiply(filter, weather_blend);
     }
     // DEBUG("Pal apply filters to color %d (num %d), filter 0x%x, filter active %d\n", start_color, number_colors, filter, filter_active);
     if (filter_active) {

@@ -304,16 +304,16 @@ void battler_drop_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
 
 bool battler_drop_next_item(u8 battler_idx, u16 *item, u8 *cnt) {
     u32 p[2] = {
-        [0] = (u32)(1 + (1 << BATTLE_STATE2->num_items_dropped[battler_idx])),
+        [0] = (u32)(1 + (1 << battle_state2->num_items_dropped[battler_idx])),
         [1] = 2,
     };
     if (battle_flags & BATTLE_AGGRESSIVE_WILD)
         p[1]++;
     if (battle_flags & BATTLE_DOUBLE)
         p[1]++;
-    if (BATTLE_STATE2->item_dropping_chance_increased_by_item)
+    if (battle_state2->item_dropping_chance_increased_by_item)
         p[1]++;
-    if (BATTLE_STATE2->item_dropping_chance_increased_by_ability)
+    if (battle_state2->item_dropping_chance_increased_by_ability)
         p[1]++;
     if (choice(p, ARRAY_COUNT(p), NULL) != 0) {
         battler_drop_item(battler_idx, item, cnt);
@@ -323,17 +323,17 @@ bool battler_drop_next_item(u8 battler_idx, u16 *item, u8 *cnt) {
 }
 
 static void battle_item_drop_compact(u8 battler_idx) {
-    for (int i = 0; i < BATTLE_STATE2->num_items_dropped[battler_idx]; i++) {
-        u16 item = BATTLE_STATE2->items_dropped[battler_idx][i];
-        for (int j = i + 1; j < BATTLE_STATE2->num_items_dropped[battler_idx] && j < MAX_ITEMS_DROPPED_PER_BATTLER; j++) {
-            if (BATTLE_STATE2->items_dropped[battler_idx][j] == item) {
+    for (int i = 0; i < battle_state2->num_items_dropped[battler_idx]; i++) {
+        u16 item = battle_state2->items_dropped[battler_idx][i];
+        for (int j = i + 1; j < battle_state2->num_items_dropped[battler_idx] && j < MAX_ITEMS_DROPPED_PER_BATTLER; j++) {
+            if (battle_state2->items_dropped[battler_idx][j] == item) {
                 DEBUG("compactifying items at slot %d and %d\n", i, j);
                 // Aggregate the same items
-                BATTLE_STATE2->items_dropped_cnt[battler_idx][i] = (u8) (BATTLE_STATE2->items_dropped_cnt[battler_idx][i] + 
-                    BATTLE_STATE2->items_dropped_cnt[battler_idx][j]);
+                battle_state2->items_dropped_cnt[battler_idx][i] = (u8) (battle_state2->items_dropped_cnt[battler_idx][i] + 
+                    battle_state2->items_dropped_cnt[battler_idx][j]);
                 // Remove the aggregated item by swapping with the last one and reducing the list length
-                BATTLE_STATE2->num_items_dropped[battler_idx]--;
-                BATTLE_STATE2->items_dropped[battler_idx][j] = BATTLE_STATE2->items_dropped[battler_idx][BATTLE_STATE2->num_items_dropped[battler_idx]];
+                battle_state2->num_items_dropped[battler_idx]--;
+                battle_state2->items_dropped[battler_idx][j] = battle_state2->items_dropped[battler_idx][battle_state2->num_items_dropped[battler_idx]];
             }
         }
     }
@@ -360,7 +360,7 @@ enum {
 static const tbox_font_colormap item_drop_summary_fontcolmap = { .background = 0xE, .body = 0xD, .edge = 0xF};
 
 static u8 battle_item_drop_summary_tbox_new() {
-    int height = 2 * BATTLE_STATE2->num_items_dropped[BATTLE_STATE2->item_dropping_battler];
+    int height = 2 * battle_state2->num_items_dropped[battle_state2->item_dropping_battler];
     tboxdata template = {0};
     tbox_data_new(&template, 1, 14, (u8)(13 - height), 15, (u8)height, 5, 0x100); // Basically re-uses all the tiles of the "standard" gp battle tbox, which is too small
     return tbox_new(&template);
@@ -368,9 +368,9 @@ static u8 battle_item_drop_summary_tbox_new() {
 
 static void battle_item_drop_draw_summary_text() {
     // TODO
-    for (int i = 0; i < BATTLE_STATE2->num_items_dropped[BATTLE_STATE2->item_dropping_battler]; i++) {
-        u16 item = BATTLE_STATE2->items_dropped[BATTLE_STATE2->item_dropping_battler][i];
-        u8 cnt = BATTLE_STATE2->items_dropped_cnt[BATTLE_STATE2->item_dropping_battler][i];
+    for (int i = 0; i < battle_state2->num_items_dropped[battle_state2->item_dropping_battler]; i++) {
+        u16 item = battle_state2->items_dropped[battle_state2->item_dropping_battler][i];
+        u8 cnt = battle_state2->items_dropped_cnt[battle_state2->item_dropping_battler][i];
         if (!item_has_room(item, cnt))
             cnt = 0;
         itoa(strbuf, cnt, ITOA_NO_PADDING, 1);
@@ -378,13 +378,13 @@ static void battle_item_drop_draw_summary_text() {
         strcat(strbuf, str_x);
         strcat(strbuf, item_get_name(item));
 
-        tbox_print_string(BATTLE_STATE2->item_dropping_summary_tbox_idx, 2, 0, (u16)((16 * i)), 0, 0, 
+        tbox_print_string(battle_state2->item_dropping_summary_tbox_idx, 2, 0, (u16)((16 * i)), 0, 0, 
             &item_drop_summary_fontcolmap, 0xFF, strbuf);
 
         if (!item_has_room(item, cnt)) {
             u8 str_full[] = LANGDEP(PSTRING("voll"), PSTRING("full"));
             strcpy(strbuf, str_full);
-            tbox_print_string(BATTLE_STATE2->item_dropping_summary_tbox_idx, 2, 96, (u16)((16 * i)), 0, 0, 
+            tbox_print_string(battle_state2->item_dropping_summary_tbox_idx, 2, 96, (u16)((16 * i)), 0, 0, 
                 &item_drop_summary_fontcolmap, 0xFF, strbuf);
         }
     }
@@ -392,15 +392,15 @@ static void battle_item_drop_draw_summary_text() {
 
 /**
 static void item_drop_summary_battle_gp_tbox_draw(u8 mode) {
-    battle_gp_tbox_draw(18, 7, 29, (u8)(2 * BATTLE_STATE2->num_items_dropped[BATTLE_STATE2->item_dropping_battler] + 2 + 9), mode);
+    battle_gp_tbox_draw(18, 7, 29, (u8)(2 * battle_state2->num_items_dropped[battle_state2->item_dropping_battler] + 2 + 9), mode);
 }
 **/
 
 void bsc_cmd_itemdrop_and_payday() {
-    // DEBUG("Payday in state %d\n", BATTLE_STATE2->item_dropping_state);
-    switch (BATTLE_STATE2->item_dropping_state) {
+    // DEBUG("Payday in state %d\n", battle_state2->item_dropping_state);
+    switch (battle_state2->item_dropping_state) {
         case DROPPING_PAYDAY: {
-            BATTLE_STATE2->item_dropping_state++;
+            battle_state2->item_dropping_state++;
             if (!(battle_flags & BATTLE_LINK) && battle_payday_money > 0) {
                 u32 amount =(u32)(battle_payday_money * battle_state->money_multiplier);
                 money_add(&save1->money, amount);
@@ -409,16 +409,16 @@ void bsc_cmd_itemdrop_and_payday() {
                 bsc_offset = battlescript_print_payday_money;
             }
             if (battle_flags & BATTLE_TRAINER) {
-                BATTLE_STATE2->item_dropping_state = SUMMARY_DONE;
+                battle_state2->item_dropping_state = SUMMARY_DONE;
             } else {
-                BATTLE_STATE2->item_dropping_state = DROPPING_INIT;
+                battle_state2->item_dropping_state = DROPPING_INIT;
             }
             break;
         }
         case DROPPING_INIT:  {
-            BATTLE_STATE2->item_dropping_battler = 0;
+            battle_state2->item_dropping_battler = 0;
             for (int i = 0; i < MAX_ITEMS_DROPPED_PER_BATTLER; i++)
-                BATTLE_STATE2->items_dropped_oams[i] = 0xFF;
+                battle_state2->items_dropped_oams[i] = 0xFF;
 
             for (u8 i = 0; i < battler_cnt; i++) {
                 if (battler_is_opponent(i)) {
@@ -426,57 +426,57 @@ void bsc_cmd_itemdrop_and_payday() {
                     u8 cnt = 0;
                     do {
                         if (battler_drop_next_item(i, &item, &cnt)) {
-                            BATTLE_STATE2->items_dropped[i][BATTLE_STATE2->num_items_dropped[i]] = item;
-                            BATTLE_STATE2->items_dropped_cnt[i][BATTLE_STATE2->num_items_dropped[i]] = cnt;
-                            BATTLE_STATE2->num_items_dropped[i]++;
+                            battle_state2->items_dropped[i][battle_state2->num_items_dropped[i]] = item;
+                            battle_state2->items_dropped_cnt[i][battle_state2->num_items_dropped[i]] = cnt;
+                            battle_state2->num_items_dropped[i]++;
                             DEBUG("Battler %d dropped item %d (cnt=%d)\n", i, item, cnt);
                         } else {
                             break;
                         }
-                    } while (item != 0 && BATTLE_STATE2->num_items_dropped[i] < MAX_ITEMS_DROPPED_PER_BATTLER);
+                    } while (item != 0 && battle_state2->num_items_dropped[i] < MAX_ITEMS_DROPPED_PER_BATTLER);
                     battle_item_drop_compact(i);
                     /**
                     // Try to add the items to the player's inventory and remove non-addable items (i.e. bag full)
-                    for (int j = 0; j < BATTLE_STATE2->num_items_dropped[i]; j++) {
-                        item = BATTLE_STATE2->items_dropped[i][j];
+                    for (int j = 0; j < battle_state2->num_items_dropped[i]; j++) {
+                        item = battle_state2->items_dropped[i][j];
                         if (!item_has_room(item, 1)) { // This item can't be dropped, remove it from the list, i.e. swap it with the last element and shrink the list's size
-                            BATTLE_STATE2->items_dropped[i][j] = BATTLE_STATE2->items_dropped[i][BATTLE_STATE2->num_items_dropped[i] - 1];
-                            BATTLE_STATE2->num_items_dropped[i]--;
+                            battle_state2->items_dropped[i][j] = battle_state2->items_dropped[i][battle_state2->num_items_dropped[i] - 1];
+                            battle_state2->num_items_dropped[i]--;
                         }
                     }
                     **/
                     // Debugging:
-                    for (int j = 0; j < BATTLE_STATE2->num_items_dropped[i]; j++) {
-                        DEBUG("Player obtained item %d %d-times from battler %d\n", BATTLE_STATE2->items_dropped[i][j], BATTLE_STATE2->items_dropped_cnt[i][j], j);
+                    for (int j = 0; j < battle_state2->num_items_dropped[i]; j++) {
+                        DEBUG("Player obtained item %d %d-times from battler %d\n", battle_state2->items_dropped[i][j], battle_state2->items_dropped_cnt[i][j], j);
                     }
                 } else {
-                    BATTLE_STATE2->num_items_dropped[i] = 0; // Only opponents can drop items
+                    battle_state2->num_items_dropped[i] = 0; // Only opponents can drop items
                 }
             }
-            BATTLE_STATE2->item_dropping_state++;
+            battle_state2->item_dropping_state++;
         }
         FALL_THROUGH;
         case DROP_ITEM: {
-            for(; BATTLE_STATE2->item_dropping_battler < battler_cnt; BATTLE_STATE2->item_dropping_battler++) {
-                if (!(BATTLE_STATE2->items_dropped_done & int_bitmasks[BATTLE_STATE2->item_dropping_battler])) {
-                    BATTLE_STATE2->items_dropped_done = (u8)(BATTLE_STATE2->items_dropped_done | int_bitmasks[BATTLE_STATE2->item_dropping_battler]);
-                    if (BATTLE_STATE2->num_items_dropped[BATTLE_STATE2->item_dropping_battler] > 0) {
+            for(; battle_state2->item_dropping_battler < battler_cnt; battle_state2->item_dropping_battler++) {
+                if (!(battle_state2->items_dropped_done & int_bitmasks[battle_state2->item_dropping_battler])) {
+                    battle_state2->items_dropped_done = (u8)(battle_state2->items_dropped_done | int_bitmasks[battle_state2->item_dropping_battler]);
+                    if (battle_state2->num_items_dropped[battle_state2->item_dropping_battler] > 0) {
                         // Add the items
-                        for (int i = 0; i < BATTLE_STATE2->num_items_dropped[BATTLE_STATE2->item_dropping_battler]; i++) {
-                            u16 item = BATTLE_STATE2->items_dropped[BATTLE_STATE2->item_dropping_battler][i];
-                            u8 cnt = BATTLE_STATE2->items_dropped_cnt[BATTLE_STATE2->item_dropping_battler][i];
+                        for (int i = 0; i < battle_state2->num_items_dropped[battle_state2->item_dropping_battler]; i++) {
+                            u16 item = battle_state2->items_dropped[battle_state2->item_dropping_battler][i];
+                            u8 cnt = battle_state2->items_dropped_cnt[battle_state2->item_dropping_battler][i];
                             if (item_has_room(item, cnt))
                                 item_add(item, cnt);
                         }
-                        battle_scripting.battler_idx = BATTLE_STATE2->item_dropping_battler;
+                        battle_scripting.battler_idx = battle_state2->item_dropping_battler;
                         battlescript_callstack_push_next_command();
                         bsc_offset = battlescript_itemdrop;
-                        BATTLE_STATE2->item_dropping_state = SUMMARY_INIT;
+                        battle_state2->item_dropping_state = SUMMARY_INIT;
                         return;
                     }
                 }
             }
-            BATTLE_STATE2->item_dropping_state++;
+            battle_state2->item_dropping_state++;
         }
         FALL_THROUGH;
         case DROPPING_DONE: {
@@ -491,24 +491,24 @@ void bsc_cmd_itemdrop_and_payday() {
             bg_set_attribute(1, BG_ATTR_PRIORITY, 0);
             bg_sync_display_and_show(0);
             bg_sync_display_and_show(1);
-            BATTLE_STATE2->item_dropping_summary_tbox_idx = battle_item_drop_summary_tbox_new();
-            tbox_frame_draw_outer(BATTLE_STATE2->item_dropping_summary_tbox_idx, 34, 1);
+            battle_state2->item_dropping_summary_tbox_idx = battle_item_drop_summary_tbox_new();
+            tbox_frame_draw_outer(battle_state2->item_dropping_summary_tbox_idx, 34, 1);
             // item_drop_summary_battle_gp_tbox_draw(BATTLE_GP_TBOX_BG_1 | BATTLE_GP_TBOX_DRAW);
-            BATTLE_STATE2->item_dropping_state++;
+            battle_state2->item_dropping_state++;
             break;
         }
         case SUMMARY_DRAW_TEXT: {
-            tbox_flush_set(BATTLE_STATE2->item_dropping_summary_tbox_idx, 0xEE);
+            tbox_flush_set(battle_state2->item_dropping_summary_tbox_idx, 0xEE);
             battle_item_drop_draw_summary_text();
-            tbox_tilemap_draw(BATTLE_STATE2->item_dropping_summary_tbox_idx);
-            tbox_copy_to_vram(BATTLE_STATE2->item_dropping_summary_tbox_idx, TBOX_COPY_TILEMAP | TBOX_COPY_TILESET);
-            BATTLE_STATE2->item_dropping_state++;
+            tbox_tilemap_draw(battle_state2->item_dropping_summary_tbox_idx);
+            tbox_copy_to_vram(battle_state2->item_dropping_summary_tbox_idx, TBOX_COPY_TILEMAP | TBOX_COPY_TILESET);
+            battle_state2->item_dropping_state++;
             break;
         }
         case SUMMARY_WAIT_FOR_DMA3: {
             if (!dma3_busy(-1)) {
                 battle_bg1_y = 0;
-                BATTLE_STATE2->item_dropping_state++;
+                battle_state2->item_dropping_state++;
             }
             break;
         }
@@ -516,34 +516,34 @@ void bsc_cmd_itemdrop_and_payday() {
             
             if (!big_callback_is_active(fanfare_callback_wait) && super.keys_new.value) { // Any key press is ok...
                 play_sound(5);
-                tbox_flush_all(BATTLE_STATE2->item_dropping_summary_tbox_idx, 0);
+                tbox_flush_all(battle_state2->item_dropping_summary_tbox_idx, 0);
                 // item_drop_summary_battle_gp_tbox_draw(BATTLE_GP_TBOX_BG_1 | BATTLE_GP_TBOX_CLEAR);
-                BATTLE_STATE2->item_dropping_state++;
+                battle_state2->item_dropping_state++;
             }
             break;
         }
         case SUMMARY_CLEAR: {
-            tbox_flush_map(BATTLE_STATE2->item_dropping_summary_tbox_idx);
-            tbox_copy_to_vram(BATTLE_STATE2->item_dropping_summary_tbox_idx, TBOX_COPY_TILEMAP);
-            BATTLE_STATE2->item_dropping_state++;
+            tbox_flush_map(battle_state2->item_dropping_summary_tbox_idx);
+            tbox_copy_to_vram(battle_state2->item_dropping_summary_tbox_idx, TBOX_COPY_TILEMAP);
+            battle_state2->item_dropping_state++;
             break; 
         }
         case SUMMARY_DONE: {
             if (!dma3_busy(-1)) {
-                tbox_free(BATTLE_STATE2->item_dropping_summary_tbox_idx);
+                tbox_free(battle_state2->item_dropping_summary_tbox_idx);
                 bg_set_attribute(0, BG_ATTR_PRIORITY, 0);
                 bg_set_attribute(1, BG_ATTR_PRIORITY, 1);
                 bg_sync_display_and_show(0);
                 bg_sync_display_and_show(1);
-                BATTLE_STATE2->item_dropping_state = DROP_ITEM;
+                battle_state2->item_dropping_state = DROP_ITEM;
             }
             break;
         }
         /**
         case DROPPING_COLLECT_ITEM: {
-            if (BATTLE_STATE2->item_to_pickup < BATTLE_STATE2->num_items_dropped[BATTLE_STATE2->item_dropping_battler]) {
-                bsc_last_used_item = BATTLE_STATE2->items_dropped[BATTLE_STATE2->item_dropping_battler][BATTLE_STATE2->item_to_pickup];
-                oam_free(oams + BATTLE_STATE2->items_dropped_oams[BATTLE_STATE2->item_to_pickup]);
+            if (battle_state2->item_to_pickup < battle_state2->num_items_dropped[battle_state2->item_dropping_battler]) {
+                bsc_last_used_item = battle_state2->items_dropped[battle_state2->item_dropping_battler][battle_state2->item_to_pickup];
+                oam_free(oams + battle_state2->items_dropped_oams[battle_state2->item_to_pickup]);
                 if (item_has_room(bsc_last_used_item, 1)) {
                     battlescript_callstack_push_next_command();
                     bsc_offset = battlescript_itemdrop_picked_up;
@@ -553,10 +553,10 @@ void bsc_cmd_itemdrop_and_payday() {
                     battlescript_callstack_push_next_command();
                     bsc_offset = battlescript_itemdrop_picked_up_no_space;
                 }
-                BATTLE_STATE2->item_to_pickup++;
+                battle_state2->item_to_pickup++;
                 return;
             } else {
-                BATTLE_STATE2->item_dropping_state = DROP_ITEM;
+                battle_state2->item_dropping_state = DROP_ITEM;
             }
             break;
         }
@@ -661,13 +661,13 @@ void battle_animation_callback_create_item_sprite(u8 self) {
     }
     switch (*state) {
         case 0: { // Allocate resources
-            for (u8 i = 0; i < BATTLE_STATE2->num_items_dropped[BATTLE_STATE2->item_dropping_battler]; i++) {
-                u16 tag = (u16)(0x56A0 + MAX_ITEMS_DROPPED_PER_BATTLER * BATTLE_STATE2->item_dropping_battler + i);
-                u8 oam_idx = item_oam_new(tag, tag, BATTLE_STATE2->items_dropped[BATTLE_STATE2->item_dropping_battler][i]);
-                BATTLE_STATE2->items_dropped_oams[i] = oam_idx;
+            for (u8 i = 0; i < battle_state2->num_items_dropped[battle_state2->item_dropping_battler]; i++) {
+                u16 tag = (u16)(0x56A0 + MAX_ITEMS_DROPPED_PER_BATTLER * battle_state2->item_dropping_battler + i);
+                u8 oam_idx = item_oam_new(tag, tag, battle_state2->items_dropped[battle_state2->item_dropping_battler][i]);
+                battle_state2->items_dropped_oams[i] = oam_idx;
                 oams[oam_idx].x = (s16)(battler_get_coordinate(battle_scripting.battler_idx, BATTLER_COORD_X_2) + item_dropping_animation_offsets[i].x);
                 oams[oam_idx].y = (s16)(battler_get_coordinate(battle_scripting.battler_idx, BATTLER_COORD_Y) - 8 + item_dropping_animation_offsets[i].y);
-                oams[oam_idx].priority_on_layer = (u8)(battler_oam_get_relative_priority(BATTLE_STATE2->item_dropping_battler) + i);
+                oams[oam_idx].priority_on_layer = (u8)(battler_oam_get_relative_priority(battle_state2->item_dropping_battler) + i);
                 oams[oam_idx].flags |= OAM_FLAG_INVISIBLE;
                 oams[oam_idx].private[0] = self;
                 oams[oam_idx].private[1] = (u16)(i * 16); // delay
@@ -685,8 +685,8 @@ void battle_animation_callback_create_item_sprite(u8 self) {
             break;
         }
         case 2: {
-            for (u8 i = 0; i < BATTLE_STATE2->num_items_dropped[BATTLE_STATE2->item_dropping_battler]; i++) {
-                u8 oam_idx = BATTLE_STATE2->items_dropped_oams[i];
+            for (u8 i = 0; i < battle_state2->num_items_dropped[battle_state2->item_dropping_battler]; i++) {
+                u8 oam_idx = battle_state2->items_dropped_oams[i];
                 oams[oam_idx].private[ITEM_DROPPING_OAM_DELAY] = (u16)(i * 8); // delay
                 oams[oam_idx].private[ITEM_DROPPING_OAM_STATE] = ITEM_DROPPING_OAM_STATE_DELETE; // state
                 ++*num_oams_to_wait_for;

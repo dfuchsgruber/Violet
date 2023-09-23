@@ -57,6 +57,10 @@ WEATHER_FUNCTION_WITH_BLEND(weather_light_static_fog_initialize_all);
 #define CEMETERY_BANK 3
 #define CEMETERY_MAP 14
 
+EWRAM color_t weather_blend = {0};
+EWRAM u8 weather_blend_active = false;
+EWRAM u8 weather_blend_delay = 0;
+
 static bool is_cemetery_map() {
     return save1->bank == CEMETERY_BANK && save1->map == CEMETERY_MAP;
 }
@@ -69,23 +73,23 @@ void weather_set_filter(u8 weather) {
     // DEBUG("Weather filter set according to weather %d\n", weather);
     switch (weather) {
         case MAP_WEATHER_BURNING_TREES:
-            fmem.weather_blend_active = 1;
-            fmem.weather_blend = weather_burning_trees_filter;
+            weather_blend_active = 1;
+            weather_blend = weather_burning_trees_filter;
             break;
         case MAP_WEATHER_STATIC_FOG:
             if (is_cemetery_map()) {
-                fmem.weather_blend_active = 1;
-                fmem.weather_blend = weather_fog_cemetery_filter;
+                weather_blend_active = 1;
+                weather_blend = weather_fog_cemetery_filter;
             } else {
-                fmem.weather_blend_active = 0;
+                weather_blend_active = 0;
             }
             break;
         case MAP_WEATHER_COLD_BLUE:
-            fmem.weather_blend_active = 1;
-            fmem.weather_blend = weather_cold_blue_filter;
+            weather_blend_active = 1;
+            weather_blend = weather_cold_blue_filter;
             break;
         default:
-            fmem.weather_blend_active = 0;
+            weather_blend_active = 0;
             break;
     }
 }
@@ -354,11 +358,11 @@ void overworld_weather_fade_in() {
 
 static bool overworld_weather_fade_in_is_delayed_and_delay_proceed() {
     int delay = *var_access(VAR_MAP_TRANSITION_FADING_DELAY);
-    if (fmem.weather_blend_delay >= delay) {
-        fmem.weather_blend_delay = 0;
+    if (weather_blend_delay >= delay) {
+        weather_blend_delay = 0;
         return false;
     } else {
-        fmem.weather_blend_delay++;
+        weather_blend_delay++;
         return true;
     }
 }

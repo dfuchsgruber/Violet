@@ -28,8 +28,8 @@ static const u8 trainer_transitions_strong_opponent[] = {
 static bool battle_has_any_trainer_class(u8 trainerclass) {
     u8 trainerclass_first = trainers[trainer_vars.trainer_id].trainerclass;
     u8 trainerclass_second = trainerclass_first;
-    if (fmem.trainers_cnt > 1) {
-        trainerclass_second = trainers[fmem.trainer_varsB.trainer_id].trainerclass;
+    if (trainers_cnt > 1) {
+        trainerclass_second = trainers[trainer_varsB.trainer_id].trainerclass;
     }
     return trainerclass == trainerclass_first || trainerclass == trainerclass_second;
 }
@@ -44,10 +44,10 @@ u8 battle_trainer_get_transition_type() {
     DEBUG("Trainer transition type is %d\n", transition_type);
     int player_total_level;
     int opponent_total_level;
-    if (fmem.trainers_cnt > 1) {
+    if (trainers_cnt > 1) {
         player_total_level = player_pokemon_get_total_level(2);
         opponent_total_level = trainer_pokemon_get_total_level(trainer_vars.trainer_id, 1) +
-            trainer_pokemon_get_total_level(fmem.trainer_varsB.trainer_id, 1);
+            trainer_pokemon_get_total_level(trainer_varsB.trainer_id, 1);
 
     } else {
         if (trainers[trainer_vars.trainer_id].battle_state & BATTLE_DOUBLE) {

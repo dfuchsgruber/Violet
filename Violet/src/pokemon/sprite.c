@@ -18,7 +18,7 @@
 
 void pokemon_get_frontsprite(const graphic *g, void *dst, u16 species, pid_t p, u8 load_frontsprite) {
     (void) g;
-    g = (const graphic*)(fmem._hook_tmp_);
+    g = (const graphic*)(hook_tmp);
     if (species == POKEMON_ICOGNITO) {
         int letter_idx = pokemon_unown_get_letter(p);
         if (letter_idx > 0) {

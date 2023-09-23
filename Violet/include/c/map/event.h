@@ -87,6 +87,14 @@ typedef struct map_events {
     const map_event_signpost *signposts;
 } map_event_header_t;
 
+
+#define NUM_DYNAMIC_PERSONS 25
+#define NUM_DYNAMIC_WARPS 8
+
+extern EWRAM map_event_header_t dynamic_map_event_header;
+extern EWRAM map_event_person dynamic_persons[NUM_DYNAMIC_PERSONS];
+extern EWRAM map_event_warp dynamic_warps[NUM_DYNAMIC_WARPS];
+
 /**
  * Returns a person based on its target index and a bank, map tuple to identify it
  * @param target_idx target index of the person

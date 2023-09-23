@@ -37,8 +37,7 @@ typedef struct {
     u8 mega_action_current_slot;
 } mega_state_t;
 
-#define MEGA_STATE (*((mega_state_t*)(fmem.mega_state)))
-
+extern EWRAM mega_state_t *mega_state;
 
 typedef struct {
     u16 species;

@@ -33,7 +33,7 @@ typedef struct {
   u8 delay;
 } river_puzzle_state_t;
 
-#define RIVER_PUZZLE_STATE ((river_puzzle_state_t*) fmem.gp_state)
+extern EWRAM river_puzzle_state_t *river_puzzle_state;
 
 /**
  * Callback to handle the state of the river puzzle.

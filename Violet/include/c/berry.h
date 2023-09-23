@@ -7,6 +7,7 @@
 #include "save.h"
 #include "overworld/sprite.h"
 #include "oam.h"
+#include "rtc.h"
 
 #define OW_PAL_TAG_BERRY_BASE 0x2800
 #define NUM_OW_PAL_TAGS_BERRY 6
@@ -40,7 +41,10 @@ typedef struct {
     u8 adjacent_berry_tree_idxs[4];
 } berry_adjacency_t;
 
+
+extern EWRAM u8 berry_tree_time_last_updated_initialized;
 extern const berry_adjacency_t berry_tree_adjacency[NUM_BERRY_TREES];
+extern EWRAM rtc_timestamp berry_tree_time_last_update;
 
 typedef struct {
     void (*continuation)(void);

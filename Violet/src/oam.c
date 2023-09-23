@@ -22,6 +22,10 @@
 #endif
 
 extern u32 oam_priorities_iram[NUM_OAMS];
+EWRAM oam_alloc_list_element_t oam_allocation_list[OAM_ALLOC_LIST_SIZE] = {0};
+EWRAM oam_group_list_element_t oam_groups[NUM_OAMS] = {0};
+EWRAM oams_to_sort_t oams_to_sort[NUM_OAMS] = {0}; // These oams will be sorted. Subsprites are listed as entries each here.
+EWRAM u8 oam_order_sorted[NUM_OAMS] = {0}; // Indices refering to `oams_to_sort
 
 // Functions that (by my design) should not be called externally
 u8 oam_new_at(u8 idx, const oam_template *template, s16 x, s16 y, u8 subpriority);
@@ -42,7 +46,7 @@ static inline void oam_allocation_insert_after(oam_alloc_list_element_t *list, u
 }
 
 void oam_print_allocation_list() {
-    oam_alloc_list_element_t *list = fmem.oam_allocation_list;
+    oam_alloc_list_element_t *list = oam_allocation_list;
     OAM_DEBUG("Oam alloc list: ");
     u8 idx = OAM_ALLOC_FREE_START;
     while (true) {
@@ -54,7 +58,7 @@ void oam_print_allocation_list() {
 }
 
 u8 oam_allocate(u8 where) {
-    oam_alloc_list_element_t *list = fmem.oam_allocation_list;
+    oam_alloc_list_element_t *list = oam_allocation_list;
     u8 idx = list[OAM_ALLOC_FREE_START].next;
     if (idx != OAM_ALLOC_ACTIVE_START) {
         oam_allocation_remove(list, idx);
@@ -69,8 +73,8 @@ u8 oam_allocate(u8 where) {
                 oam_active_cnt++;
                 break;
         }
-        fmem.oam_groups[idx].next = NUM_OAMS;
-        fmem.oam_groups[idx].previous = NUM_OAMS;
+        oam_groups[idx].next = NUM_OAMS;
+        oam_groups[idx].previous = NUM_OAMS;
         OAM_DEBUG("allocated %d, where: %d\n", idx, where);
         return idx;
     } else {
@@ -81,15 +85,15 @@ u8 oam_allocate(u8 where) {
 
 void oam_add_to_group(u8 oam_idx, u8 group_head) {
     oams[oam_idx].flags |= OAM_FLAG_IN_GROUP;
-    while (fmem.oam_groups[group_head].next < NUM_OAMS)
-        group_head = fmem.oam_groups[group_head].next;
-    fmem.oam_groups[group_head].next = oam_idx;
-    fmem.oam_groups[oam_idx].previous = group_head;
-    fmem.oam_groups[oam_idx].next = NUM_OAMS;
+    while (oam_groups[group_head].next < NUM_OAMS)
+        group_head = oam_groups[group_head].next;
+    oam_groups[group_head].next = oam_idx;
+    oam_groups[oam_idx].previous = group_head;
+    oam_groups[oam_idx].next = NUM_OAMS;
 }
 
 void oam_allocation_initialize() {
-    oam_alloc_list_element_t *list = fmem.oam_allocation_list;
+    oam_alloc_list_element_t *list = oam_allocation_list;
     for (int i = 0; i < NUM_OAMS; i++) {
         list[i].previous = (u8)(i - 1);
         list[i].next = (u8)(i + 1);
@@ -131,7 +135,7 @@ static inline bool oam_should_sort(int oam_idx) {
     if (flags & OAM_FLAG_IN_GROUP)
         return false;
     // Check if the oam is a group head
-    if (fmem.oam_groups[oam_idx].next < NUM_OAMS && fmem.oam_groups[oam_idx].previous >= NUM_OAMS)
+    if (oam_groups[oam_idx].next < NUM_OAMS && oam_groups[oam_idx].previous >= NUM_OAMS)
         return true;
     else
         return !(flags & OAM_FLAG_INVISIBLE);
@@ -139,9 +143,9 @@ static inline bool oam_should_sort(int oam_idx) {
 
 
 #define SWAP(i, j) \
-    oams_to_sort_t tmp = fmem.oams_to_sort[i]; \
-    fmem.oams_to_sort[i] = fmem.oams_to_sort[j]; \
-    fmem.oams_to_sort[j] = tmp; 
+    oams_to_sort_t tmp = oams_to_sort[i]; \
+    oams_to_sort[i] = oams_to_sort[j]; \
+    oams_to_sort[j] = tmp; 
 
 // Compresses the oam_order to [0...i, i+1...n_active-1], where all >= i+1 are active, but invisible and need not to be rendered
 static inline size_t oam_compress_and_calculate_visible_cnt() {
@@ -149,26 +153,26 @@ static inline size_t oam_compress_and_calculate_visible_cnt() {
     int tail = oam_active_cnt - 1;
     int i;
     for(i = 0; i <= tail; i++) {
-        // DEBUG("Should sort %d: %d\n", fmem.oams_to_sort[i], oam_should_sort(i));
-        oam_object *o = oams + fmem.oams_to_sort[i].oam_idx;
+        // DEBUG("Should sort %d: %d\n", oams_to_sort[i], oam_should_sort(i));
+        oam_object *o = oams + oams_to_sort[i].oam_idx;
         if (!(o->flags & OAM_FLAG_INVISIBLE))
             oam_update_position(o);
     }
     i = 0;
     while(i <= tail) {
         // Search the last element to sort
-        while (tail >= 0 && !oam_should_sort(fmem.oams_to_sort[tail].oam_idx)) { //   (oams[fmem.oams_to_sort[tail]].flags & (OAM_FLAG_INVISIBLE | OAM_FLAG_IN_GROUP))) {
+        while (tail >= 0 && !oam_should_sort(oams_to_sort[tail].oam_idx)) { //   (oams[oams_to_sort[tail]].flags & (OAM_FLAG_INVISIBLE | OAM_FLAG_IN_GROUP))) {
             tail--;
         }
         // Tail now points the last element to sort
         if (i > tail) 
             break; // whole range [i...NUM_OAMS] is not to sort, done
-        else if  (!oam_should_sort(fmem.oams_to_sort[i].oam_idx)) { //((oams[fmem.oams_to_sort[i]].flags & (OAM_FLAG_INVISIBLE | OAM_FLAG_IN_GROUP))) {
+        else if  (!oam_should_sort(oams_to_sort[i].oam_idx)) { //((oams[oams_to_sort[i]].flags & (OAM_FLAG_INVISIBLE | OAM_FLAG_IN_GROUP))) {
             // i is an oam not to sort, swap with tail and continue
             SWAP(tail, i);
         }
 
-        u8 oam_idx = fmem.oams_to_sort[i].oam_idx;
+        u8 oam_idx = oams_to_sort[i].oam_idx;
         oam_object *o = oams + oam_idx;
 
         // Get y-coordinate
@@ -191,8 +195,8 @@ static inline size_t oam_compress_and_calculate_visible_cnt() {
                 bg_priority = ((o->final_oam.attr2 >> 10) & 3);
                 break;
             case SUBSPRITES_ON:
-                // DEBUG("Obj 0x%x with sprite_idx %d, subsprite idx %d\n", o, o->sprite_idx, fmem.oams_to_sort[i].subsprite_idx);
-                bg_priority = o->subsprites[o->sprite_idx].subsprites[fmem.oams_to_sort[i].subsprite_idx].priority;
+                // DEBUG("Obj 0x%x with sprite_idx %d, subsprite idx %d\n", o, o->sprite_idx, oams_to_sort[i].subsprite_idx);
+                bg_priority = o->subsprites[o->sprite_idx].subsprites[oams_to_sort[i].subsprite_idx].priority;
                 break;
         }
 
@@ -250,7 +254,7 @@ void oam_sort() {
         }
     }
     for (int i = 0; i < n; i++)
-        fmem.oam_order_sorted[i] = oam_radix_sort_buffer[toggle][i];
+        oam_order_sorted[i] = oam_radix_sort_buffer[toggle][i];
 }
 
 static const sprite oam_empty = {
@@ -301,8 +305,8 @@ void oam_copy_to_oam_buffer() {
     // u32 t_total = 0;
     // u8 iters = 0;
     for (int i = 0; i < vis_cnt; i++) {
-        u8 current = fmem.oams_to_sort[fmem.oam_order_sorted[i]].oam_idx;
-        u8 subsprite_idx_current = fmem.oams_to_sort[fmem.oam_order_sorted[i]].subsprite_idx;
+        u8 current = oams_to_sort[oam_order_sorted[i]].oam_idx;
+        u8 subsprite_idx_current = oams_to_sort[oam_order_sorted[i]].subsprite_idx;
         while (current < NUM_OAMS && cnt < ARRAY_COUNT(super.oam_attributes)) {
             // u32 t = 0;
             if (!(oams[current].flags & OAM_FLAG_INVISIBLE)) {
@@ -311,11 +315,11 @@ void oam_copy_to_oam_buffer() {
             }
             // if (t > 1000)
             //     DEBUG("    Copying of %d (iter %d) took %d, has subsprites %d\n", current, iters, t, oams[current].sprite_mode);
-            // DEBUG("   Copied %d (group %d)\n", current, fmem.oams_to_sort[i]);
+            // DEBUG("   Copied %d (group %d)\n", current, oams_to_sort[i]);
             // t_total += t;
             // iters++;
             if (subsprite_idx_current == 0)
-                current = fmem.oam_groups[current].next;
+                current = oam_groups[current].next;
             else
                 break; // Do not add all group oams for the children of a subsprite
         }
@@ -381,8 +385,8 @@ void oam_clear_all() {
     oam_active_cnt = 0;
     for (i = 0; i < NUM_OAMS; i++) {
         oam_clear(oams + i);
-        fmem.oams_to_sort[i].oam_idx = i;
-        fmem.oams_to_sort[i].subsprite_idx = 0;
+        oams_to_sort[i].oam_idx = i;
+        oams_to_sort[i].subsprite_idx = 0;
     }
     oam_clear(oams + i);
     oam_allocation_initialize();
@@ -452,7 +456,7 @@ void oam_copy_requests_proceed() {
 }
 
 void oam_animations_proceed() {
-    oam_alloc_list_element_t *list = fmem.oam_allocation_list;
+    oam_alloc_list_element_t *list = oam_allocation_list;
     // Also performs gargabe collection and builds the oam order
     // oam_print_allocation_list();
 
@@ -480,10 +484,10 @@ void oam_animations_proceed() {
                 list[current].next = free_start;
                 list[free_start].previous = current;
 
-                u8 group_prev = fmem.oam_groups[current].previous;
-                u8 group_next = fmem.oam_groups[current].next;
+                u8 group_prev = oam_groups[current].previous;
+                u8 group_next = oam_groups[current].next;
                 if (group_prev < NUM_OAMS) {
-                    fmem.oam_groups[group_prev].next = group_next;
+                    oam_groups[group_prev].next = group_next;
                 } else {
                     // Element was group head, make next element group head
                     if (group_next < NUM_OAMS) {
@@ -491,7 +495,7 @@ void oam_animations_proceed() {
                     }
                 }
                 if (group_next < NUM_OAMS) {
-                    fmem.oam_groups[group_next].previous = group_prev;
+                    oam_groups[group_next].previous = group_prev;
                 }
                 // oam_allocation_remove(list, current);
                 // oam_allocation_insert_after(list, current, OAM_ALLOC_FREE_START);
@@ -506,16 +510,16 @@ void oam_animations_proceed() {
         if (current == OAM_ALLOC_ACTIVE_MIDDLE)
             continue;
         if (oams[current].flags & OAM_FLAG_ACTIVE) {
-            fmem.oams_to_sort[oam_active_cnt].oam_idx = current;
-            fmem.oams_to_sort[oam_active_cnt].subsprite_idx = 0;
+            oams_to_sort[oam_active_cnt].oam_idx = current;
+            oams_to_sort[oam_active_cnt].subsprite_idx = 0;
             oam_active_cnt++;
             if (oams[current].sprite_mode) {
                 const subsprite_table *table = oams[current].subsprites + oams[current].sprite_idx;
                 if (table && table->subsprites) {
                     // Add all subsprites, they need to be sorted as well
                     for (u8 i = 1; i < table->num_subsprites; i++) {
-                        fmem.oams_to_sort[oam_active_cnt].oam_idx = current;
-                        fmem.oams_to_sort[oam_active_cnt].subsprite_idx = i;
+                        oams_to_sort[oam_active_cnt].oam_idx = current;
+                        oams_to_sort[oam_active_cnt].subsprite_idx = i;
                         oam_active_cnt++;
                     }
                 }

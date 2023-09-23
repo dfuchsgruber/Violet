@@ -111,7 +111,7 @@
 // r0-r3 are used already, so the hook is wrapped by something that saves r4
 .org 0x080412e4
     push {r1}
-    ldr r1, =fmem
+    ldr r1, =hook_tmp
     str r0, [r1]
     pop {r1}
     ldr r0, =item_effect_apply | 1
@@ -122,7 +122,7 @@
 // r0-r3 are used already, so the hook is wrapped by something that saves r4
 .org 0x08042314
     push {r1}
-    ldr r1, =fmem
+    ldr r1, =hook_tmp
     str r0, [r1]
     pop {r1}
     ldr r0, =_item_effect_unapplicable_fmem_hooked | 1

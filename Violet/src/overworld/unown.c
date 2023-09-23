@@ -18,6 +18,8 @@
 #include "overworld/script.h"
 #include "music.h"
 
+EWRAM overworld_unown_state_t *overworld_unown_state = NULL;
+
 static const u8 unown_message_rock[] = {
     UNOWN_LETTER('R'), UNOWN_LETTER('O'), UNOWN_LETTER('C'), UNOWN_LETTER('K'), 0xFF
 };
@@ -168,28 +170,28 @@ void overworld_unown_wait_message(u8 self) {
 void overworld_unown_print_message() {
     const u8 *message = unown_message_get(*var_access(0x8004));
     DEBUG("Printing unown message 0x%x\n", message);
-    fmem.gp_state = malloc(sizeof(overworld_unown_state_t));
-    for (OVERWORLD_UNOWN_MESSAGE_STATE->message_length = 0; message[OVERWORLD_UNOWN_MESSAGE_STATE->message_length] != 0xFF; 
-        OVERWORLD_UNOWN_MESSAGE_STATE->message_length++) {}
+    overworld_unown_state = malloc(sizeof(overworld_unown_state_t));
+    for (overworld_unown_state->message_length = 0; message[overworld_unown_state->message_length] != 0xFF; 
+        overworld_unown_state->message_length++) {}
 
-    u8 x = (u8)((30 - 4 * OVERWORLD_UNOWN_MESSAGE_STATE->message_length) / 2);
-    u8 width = (u8)(4 * OVERWORLD_UNOWN_MESSAGE_STATE->message_length);
+    u8 x = (u8)((30 - 4 * overworld_unown_state->message_length) / 2);
+    u8 width = (u8)(4 * overworld_unown_state->message_length);
 
     tboxdata boxdata = {
         .x = x, .w = width, .y = 4, .h = 4, .bg_id = 0, .pal = 14, .start_tile = 1
     };
-    OVERWORLD_UNOWN_MESSAGE_STATE->box_idx = tbox_new(&boxdata);
+    overworld_unown_state->box_idx = tbox_new(&boxdata);
     tbox_load_message_gfx_and_pal();
-    tbox_print_std_frame(OVERWORLD_UNOWN_MESSAGE_STATE->box_idx, false);
-    tbox_flush_set(OVERWORLD_UNOWN_MESSAGE_STATE->box_idx, 0x11);
-    tbox_tilemap_draw(OVERWORLD_UNOWN_MESSAGE_STATE->box_idx);
+    tbox_print_std_frame(overworld_unown_state->box_idx, false);
+    tbox_flush_set(overworld_unown_state->box_idx, 0x11);
+    tbox_tilemap_draw(overworld_unown_state->box_idx);
 
     *strbuf = 255;
-    tbox_print_string_parametrized(OVERWORLD_UNOWN_MESSAGE_STATE->box_idx, 2, strbuf, 0, 0, 255, NULL);
-    tbox_copy_to_vram(OVERWORLD_UNOWN_MESSAGE_STATE->box_idx, 3);
+    tbox_print_string_parametrized(overworld_unown_state->box_idx, 2, strbuf, 0, 0, 255, NULL);
+    tbox_copy_to_vram(overworld_unown_state->box_idx, 3);
 
 
-    for (int i = 0; i < OVERWORLD_UNOWN_MESSAGE_STATE->message_length; i++) {
+    for (int i = 0; i < overworld_unown_state->message_length; i++) {
         u32 letter_idx = message[i];
         pid_t pid = {.fields = {.unown_letter = (u32)(letter_idx & 31)}};
         pokemon_load_gfx_by_graphic(pokemon_frontsprites + POKEMON_ICOGNITO, gp_tmp_buf, POKEMON_ICOGNITO, pid);
@@ -198,7 +200,7 @@ void overworld_unown_print_message() {
         oam_load_graphic_uncompressed(&g);
         u8 pal_idx = oam_allocate_palette(UNOWN_MESSAGE_TAG);
         pal_decompress(pokemon_pals[POKEMON_ICOGNITO].pal, (u16)((pal_idx + 16) * 16), 32);
-        OVERWORLD_UNOWN_MESSAGE_STATE->oams[i] = oam_new_forward_search(unown_message_oam_templates + i, (s16)(8 * x + 32 * i + 16), 48, (u8)i);
+        overworld_unown_state->oams[i] = oam_new_forward_search(unown_message_oam_templates + i, (s16)(8 * x + 32 * i + 16), 48, (u8)i);
         (void)unown_message_oam_templates;
     }
 
@@ -207,15 +209,15 @@ void overworld_unown_print_message() {
 }
 
 void overworld_unown_delete_message() {
-    tbox_flush_all(OVERWORLD_UNOWN_MESSAGE_STATE->box_idx, 0);
-    tbox_flush_map(OVERWORLD_UNOWN_MESSAGE_STATE->box_idx);
-    tbox_sync(OVERWORLD_UNOWN_MESSAGE_STATE->box_idx, TBOX_SYNC_MAP_AND_SET);
-    tbox_flush_map_and_frame(OVERWORLD_UNOWN_MESSAGE_STATE->box_idx);
-    tbox_free(OVERWORLD_UNOWN_MESSAGE_STATE->box_idx);
-    for (int i = 0; i < OVERWORLD_UNOWN_MESSAGE_STATE->message_length; i++) {
-        oam_free(oams + OVERWORLD_UNOWN_MESSAGE_STATE->oams[i]);
+    tbox_flush_all(overworld_unown_state->box_idx, 0);
+    tbox_flush_map(overworld_unown_state->box_idx);
+    tbox_sync(overworld_unown_state->box_idx, TBOX_SYNC_MAP_AND_SET);
+    tbox_flush_map_and_frame(overworld_unown_state->box_idx);
+    tbox_free(overworld_unown_state->box_idx);
+    for (int i = 0; i < overworld_unown_state->message_length; i++) {
+        oam_free(oams + overworld_unown_state->oams[i]);
     }
-    free(OVERWORLD_UNOWN_MESSAGE_STATE);
+    free(overworld_unown_state);
 }
 
 void test_give_unowns() {

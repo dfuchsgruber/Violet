@@ -23,7 +23,7 @@ bool item_can_be_tossed(u16 item_idx) {
 }
 
 void bag_set_continuation(void (*continuation)()) {
-    BAG2_STATE->internal_continuation = continuation;
+    bag2_state->internal_continuation = continuation;
 }
 
 void item_field_function_print_string_can_not_be_used(u8 self) {

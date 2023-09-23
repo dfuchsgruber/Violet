@@ -14,7 +14,7 @@
 #include "constants/abilities.h"
 
 void ceometria_gym_punishment_room_get_script() {
-    int room_type = cmem.ceometria_gym_state.next_rooms[*var_access(CEOMETRIA_GYM_NEXT_ROOM)];
+    int room_type = csave.ceometria_gym_state.next_rooms[*var_access(CEOMETRIA_GYM_NEXT_ROOM)];
     switch (room_type) {
         case CEOMETRIA_GYM_NOTHING:
             overworld_script_virtual_ptr = ow_script_ceometria_gym_punishment_nothing;
@@ -62,7 +62,7 @@ void ceometria_gym_punishment_healing() {
 }
 
 s16 ceometria_gym_punishment_get_eligible_index() {
-    int room_type = cmem.ceometria_gym_state.next_rooms[*var_access(CEOMETRIA_GYM_NEXT_ROOM)];
+    int room_type = csave.ceometria_gym_state.next_rooms[*var_access(CEOMETRIA_GYM_NEXT_ROOM)];
     u8 indices[6] = {0};
     int num_eligible = 0;
     for (u8 i = 0; i < player_pokemon_cnt; i++) {
@@ -127,7 +127,7 @@ s16 ceometria_gym_punishment_get_eligible_index() {
 void ceometria_gym_punishment_apply() {
     pokemon *dst = &player_pokemon[*var_access(0x8004)];
     int status = pokemon_get_attribute(dst, ATTRIBUTE_STATUS, 0);
-    int room_type = cmem.ceometria_gym_state.next_rooms[*var_access(CEOMETRIA_GYM_NEXT_ROOM)];
+    int room_type = csave.ceometria_gym_state.next_rooms[*var_access(CEOMETRIA_GYM_NEXT_ROOM)];
     switch (room_type) {
         case CEOMETRIA_GYM_BADLY_POISON_ROOM:
             status |= STATUS_CONDITION_BAD_POISON;
@@ -171,15 +171,15 @@ void ceometria_gym_punishment_apply() {
 }
 
 void ceometria_gym_update_scores() {
-    int room_type = cmem.ceometria_gym_state.next_rooms[*var_access(CEOMETRIA_GYM_NEXT_ROOM)];
-    cmem.ceometria_gym_state.last_room = (u8)(room_type & 0xF);
+    int room_type = csave.ceometria_gym_state.next_rooms[*var_access(CEOMETRIA_GYM_NEXT_ROOM)];
+    csave.ceometria_gym_state.last_room = (u8)(room_type & 0xF);
     switch (room_type) {
         case CEOMETRIA_GYM_NOTHING:
             CEOMETRIA_GYM_NON_TRAINER_SCORE_ADD(20);
             break;
         case CEOMETRIA_GYM_TRAINER_ROOM:
             CEOMETRIA_GYM_PUNISHMENT_SCORE_ADD(11);
-            cmem.ceometria_gym_state.non_trainer_score = 0;
+            csave.ceometria_gym_state.non_trainer_score = 0;
             break;
         case CEOMETRIA_GYM_BADLY_POISON_ROOM:
             CEOMETRIA_GYM_PUNISHMENT_SCORE_ADD(12);
@@ -202,7 +202,7 @@ void ceometria_gym_update_scores() {
             CEOMETRIA_GYM_NON_TRAINER_SCORE_ADD(10);
             break;
         case CEOMETRIA_GYM_HEALING_ROOM:
-            cmem.ceometria_gym_state.punishment_score = 0;
+            csave.ceometria_gym_state.punishment_score = 0;
             CEOMETRIA_GYM_NON_TRAINER_SCORE_ADD(24);
             break;
         case CEOMETRIA_GYM_REDUCE_HP_ROOM:
@@ -220,11 +220,11 @@ void ceometria_gym_update_scores() {
         default:
             ERROR("Unknown room type for score updates %d\n", room_type);
     }
-    DEBUG("Ceometria gym: punishment score %d, non-trainer score %d\n", cmem.ceometria_gym_state.punishment_score, cmem.ceometria_gym_state.non_trainer_score);
+    DEBUG("Ceometria gym: punishment score %d, non-trainer score %d\n", csave.ceometria_gym_state.punishment_score, csave.ceometria_gym_state.non_trainer_score);
 }
 
 void ceometria_gym_punishment_room_create_npc() {
-    int room_type = cmem.ceometria_gym_state.next_rooms[*var_access(CEOMETRIA_GYM_NEXT_ROOM)];
+    int room_type = csave.ceometria_gym_state.next_rooms[*var_access(CEOMETRIA_GYM_NEXT_ROOM)];
     switch (room_type) {
         case CEOMETRIA_GYM_NOTHING:
             setflag(16);

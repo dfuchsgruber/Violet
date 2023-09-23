@@ -50,6 +50,13 @@ typedef struct superstate {
 
 extern superstate super;
 
+#define GP_STACK_SIZE 16
+
+extern EWRAM int hook_tmp;
+extern EWRAM u8 dma0_dump[4];
+extern EWRAM int gp_stack_size;
+extern EWRAM int gp_stack[GP_STACK_SIZE];
+
 /**
  * Generic callback1 that manages most of the game state (can be called inside other callback1s)
  */

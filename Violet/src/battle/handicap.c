@@ -17,6 +17,8 @@
 #include "constants/attacks.h"
 #include "constants/battle/battle_effects.h"
 
+EWRAM u32 battle_handicaps = 0;
+
 extern const u8 battlescript_handicap_extreme_heat[];
 extern const u8 battlescript_handicap_floating_rocks[];
 extern const u8 battlescript_handicap_grassy_field[];
@@ -39,29 +41,29 @@ void battle_introduce_handicap() {
     if (battler_marked_for_controller_execution)
         return;
     if (battle_flags & BATTLE_WITH_HANDICAP) {
-        while (BATTLE_STATE2->handicap_introduced < 32) {
+        while (battle_state2->handicap_introduced < 32) {
             bool script_initialized = false;
-            if (fmem.battle_handicaps & int_bitmasks[BATTLE_STATE2->handicap_introduced]) {
-                if (battlescripts_handicap[BATTLE_STATE2->handicap_introduced]) {
-                    if (BATTLE_STATE2->handicap_introduced == BATTLE_HANDICAP_GROUDON_BATTLE) {
+            if (battle_handicaps & int_bitmasks[battle_state2->handicap_introduced]) {
+                if (battlescripts_handicap[battle_state2->handicap_introduced]) {
+                    if (battle_state2->handicap_introduced == BATTLE_HANDICAP_GROUDON_BATTLE) {
                         battle_scripting.battler_idx = 1; // Opponent's battler 1
                         battle_animation_move_power = 100;
                     }
-                    battlescript_init_and_interrupt_battle(battlescripts_handicap[BATTLE_STATE2->handicap_introduced]);
+                    battlescript_init_and_interrupt_battle(battlescripts_handicap[battle_state2->handicap_introduced]);
                     script_initialized = true;
                 }
             } 
-            BATTLE_STATE2->handicap_introduced++;
+            battle_state2->handicap_introduced++;
             if (script_initialized)
                 return;
         }
     }
     // Directly execute switch-in effects for handicaps
-    while(BATTLE_STATE2->switch_in_handicap_effects_cnt < battler_cnt) {
+    while(battle_state2->switch_in_handicap_effects_cnt < battler_cnt) {
         bool script_initialized = false;
-        if (battle_handicap_switch_in_effects(BATTLE_STATE2->switch_in_handicap_effects_cnt))
+        if (battle_handicap_switch_in_effects(battle_state2->switch_in_handicap_effects_cnt))
             script_initialized = true;
-        BATTLE_STATE2->switch_in_handicap_effects_cnt++;
+        battle_state2->switch_in_handicap_effects_cnt++;
         if (script_initialized)
             return;
     }
@@ -70,11 +72,11 @@ void battle_introduce_handicap() {
 }
 
 void battle_handicap_set() {
-    fmem.battle_handicaps |= int_bitmasks[*var_access(0x8004)];
+    battle_handicaps |= int_bitmasks[*var_access(0x8004)];
 }
 
 void battle_handicap_clear() {
-    fmem.battle_handicaps = 0;
+    battle_handicaps = 0;
 }
 
 extern const u8 battlescript_handicap_extreme_heat_apply[];
@@ -85,19 +87,19 @@ bool battle_handicap_switch_in_effects(u8 battler_idx) {
     if (!(battle_flags & BATTLE_WITH_HANDICAP)) 
         return false;
     for (int i = 0; i < 32; i++) {
-        if (fmem.battle_handicaps & int_bitmasks[i]) { // Activate the i-th battle handicap for this battler
+        if (battle_handicaps & int_bitmasks[i]) { // Activate the i-th battle handicap for this battler
             switch (i) {
                 case BATTLE_HANDICAP_EXTREME_HEAT: {
                     if (battlers[battler_idx].max_hp > 0 && !(battlers[battler_idx].status1 & STATUS1_ANY) &&
                         battlers[battler_idx].ability != AQUAHUELLE && battlers[battler_idx].type1 != TYPE_FEUER && 
                         battlers[battler_idx].type2 != TYPE_FEUER && !battle_side_statuses[battler_idx].status_safeguard
-                        && !(BATTLE_STATE2->status_custom_persistent[battler_idx] & CUSTOM_STATUS_PERSISTENT_HANDICAP_APPLIED)) { 
+                        && !(battle_state2->status_custom_persistent[battler_idx] & CUSTOM_STATUS_PERSISTENT_HANDICAP_APPLIED)) { 
                         // Battler can be affected by extreme heat
                         DEBUG("Execute extreme heat for battler %d\n", battler_idx);
                         attacking_battler = battler_idx; // Set those for synchronize I suppose...
                         defending_battler = battler_idx; 
                         battle_scripting.battler_idx = battler_idx;
-                        BATTLE_STATE2->status_custom_persistent[battler_idx] |= CUSTOM_STATUS_PERSISTENT_HANDICAP_APPLIED; // Prevent looping
+                        battle_state2->status_custom_persistent[battler_idx] |= CUSTOM_STATUS_PERSISTENT_HANDICAP_APPLIED; // Prevent looping
                         battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = 0x40 | BATTLE_EFFECT_FIRE;
     	                battlescript_init_and_interrupt_battle(battlescript_handicap_extreme_heat_apply);
                         return true;
@@ -107,12 +109,12 @@ bool battle_handicap_switch_in_effects(u8 battler_idx) {
                 case BATTLE_HANDICAP_GRASSY_FIELD: {
                     if (battlers[battler_idx].max_hp > 0 && !(battler_statuses3[battler_idx] & STATUS3_ROOTED) &&
                         (battlers[battler_idx].type1 == TYPE_PFLANZE || battlers[battler_idx].type2 == TYPE_PFLANZE)
-                        && !(BATTLE_STATE2->status_custom_persistent[battler_idx] & CUSTOM_STATUS_PERSISTENT_HANDICAP_APPLIED)) {
+                        && !(battle_state2->status_custom_persistent[battler_idx] & CUSTOM_STATUS_PERSISTENT_HANDICAP_APPLIED)) {
                         battler_statuses3[battler_idx] |= STATUS3_ROOTED;
                         attacking_battler = battler_idx;
                         defending_battler = battler_idx; 
                         battle_scripting.battler_idx = battler_idx;
-                        BATTLE_STATE2->status_custom_persistent[battler_idx] |= CUSTOM_STATUS_PERSISTENT_HANDICAP_APPLIED; // Prevent looping
+                        battle_state2->status_custom_persistent[battler_idx] |= CUSTOM_STATUS_PERSISTENT_HANDICAP_APPLIED; // Prevent looping
     	                battlescript_init_and_interrupt_battle(battlescript_handicap_grassy_field_apply);
                         return true;
                     }
@@ -121,11 +123,11 @@ bool battle_handicap_switch_in_effects(u8 battler_idx) {
             case BATTLE_HANDICAP_FOCUSED_FIGHTERS: {
                 if (battlers[battler_idx].max_hp > 0 && (battlers[battler_idx].type1 == TYPE_KAMPF || battlers[battler_idx].type2 == TYPE_KAMPF) && 
                     (battlers[battler_idx].stat_changes[STAT_ATTACK] < 12 || battlers[battler_idx].stat_changes[STAT_ACCURACY] < 12)
-                     && !(BATTLE_STATE2->status_custom_persistent[battler_idx] & CUSTOM_STATUS_PERSISTENT_HANDICAP_APPLIED) ) {
+                     && !(battle_state2->status_custom_persistent[battler_idx] & CUSTOM_STATUS_PERSISTENT_HANDICAP_APPLIED) ) {
                         attacking_battler = battler_idx;
                         defending_battler = battler_idx; 
                         battle_scripting.battler_idx = battler_idx;
-                        BATTLE_STATE2->status_custom_persistent[battler_idx] |= CUSTOM_STATUS_PERSISTENT_HANDICAP_APPLIED; // Prevent looping
+                        battle_state2->status_custom_persistent[battler_idx] |= CUSTOM_STATUS_PERSISTENT_HANDICAP_APPLIED; // Prevent looping
     	                battlescript_init_and_interrupt_battle(battlescript_handicap_focused_fighter_apply);
                         return true;
                     }
@@ -140,19 +142,19 @@ bool battle_handicap_switch_in_effects(u8 battler_idx) {
 extern const u8 battlescript_handicap_floating_rocks_apply[];
 
 bool battle_handicap_before_attack_events() {
-    BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~(CUSTOM_STATUS_FLOATING_ROCKS));
+    battle_state2->status_custom[defending_battler] &= (u32)(~(CUSTOM_STATUS_FLOATING_ROCKS));
     if (!(battle_flags & BATTLE_WITH_HANDICAP)) 
         return false;
     /** 
      * This is not the effect of floating rocks anymore: Instead of lowering all damage, rock type mons have no weakness now
-    if (fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_FLOATING_ROCKS] && 
+    if (battle_handicaps & int_bitmasks[BATTLE_HANDICAP_FLOATING_ROCKS] && 
         (battlers[defending_battler].type1 == TYPE_GESTEIN || battlers[defending_battler].type2 == TYPE_GESTEIN)
         && battler_is_opponent(attacking_battler) != battler_is_opponent(defending_battler) && attacks[active_attack].base_power != 0) {
             battle_animation_user = defending_battler;
             battle_animation_target = defending_battler;
             battle_scripting.battler_idx = defending_battler;
             battlescript_callstack_push_next_command();
-            BATTLE_STATE2->status_custom[defending_battler] |= CUSTOM_STATUS_FLOATING_ROCKS;
+            battle_state2->status_custom[defending_battler] |= CUSTOM_STATUS_FLOATING_ROCKS;
             bsc_offset = battlescript_handicap_floating_rocks_apply;
             return true;
     }
@@ -167,7 +169,7 @@ bool battle_handicap_attack_done() {
         return false;
     battler *attacker = battlers + attacking_battler;
     // Apply handicap rules, step by step, the current state is fmem.gp_value
-    if (BATTLE_STATE2->switch_in_handicap_effects_cnt == BATTLE_HANDICAP_ARENA_ENCOURAGEMENT && (fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_ARENA_ENCOURAGEMENT]) &&
+    if (battle_state2->switch_in_handicap_effects_cnt == BATTLE_HANDICAP_ARENA_ENCOURAGEMENT && (battle_handicaps & int_bitmasks[BATTLE_HANDICAP_ARENA_ENCOURAGEMENT]) &&
             !(attack_result & ATTACK_NO_EFFECT_ANY) && 
             attacks[active_attack].base_power &&
             !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED
@@ -218,9 +220,9 @@ bool battle_handicap_end_turn_effects() {
     if (!(battle_flags & BATTLE_WITH_HANDICAP)) 
         return false;
     bool effect = false;
-    while (BATTLE_STATE2->end_of_turn_handicap_effects_cnt < 32) {
-        if (fmem.battle_handicaps & int_bitmasks[BATTLE_STATE2->end_of_turn_handicap_effects_cnt]) {
-            switch (BATTLE_STATE2->end_of_turn_handicap_effects_cnt) {
+    while (battle_state2->end_of_turn_handicap_effects_cnt < 32) {
+        if (battle_handicaps & int_bitmasks[battle_state2->end_of_turn_handicap_effects_cnt]) {
+            switch (battle_state2->end_of_turn_handicap_effects_cnt) {
                 case BATTLE_HANDICAP_GROUDON_BATTLE: 
                     if (rnd16() & 1) {
                         attacking_battler = 1; // Groudon
@@ -231,7 +233,7 @@ bool battle_handicap_end_turn_effects() {
                     break;
             }
         }
-        BATTLE_STATE2->end_of_turn_handicap_effects_cnt++;
+        battle_state2->end_of_turn_handicap_effects_cnt++;
         if (effect)
             return true;
     }

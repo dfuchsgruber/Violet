@@ -56,7 +56,7 @@ u16 fishing_create_pokemon(const wild_pokemon_habitat *habitat, u8 rod_type) {
     pid_t pid = {.value = 0};
     // Seed the fishing feature rng
     u32 seed = (u32)((rnd16() << 16) | rnd16());
-    DEBUG("Gp stack has size %d\n", fmem.gp_stack_size);
+    DEBUG("Gp stack has size %d\n", gp_stack_size);
     gp_stack_push((int)seed);
     if (checkflag(FLAG_FISHING_SHINING_BAIT_USED)) {
         pokemon_spawn_by_seed_algorithm(opponent_pokemon, species, (u8)(MIN(level + 8, 100)), 
@@ -128,23 +128,23 @@ static u16 fishing_build_selection_list(list_menu_item *list) {
     return num_displayed;
 }
 
+EWRAM list_menu_item *fishing_list_menu_items = NULL;
+
 void fishing_print_bait_selection() {
-    list_menu_item *list = malloc_and_clear(sizeof(list_menu_item) * 4);
-    u16 num_displayed = fishing_build_selection_list(list);
+    fishing_list_menu_items = (list_menu_item*) malloc_and_clear(sizeof(list_menu_item) * 4);
+    u16 num_displayed = fishing_build_selection_list(fishing_list_menu_items);
     *var_access(DYN_MULTICHOICE_ITEM_CNT) = num_displayed;
-    overworld_script_state.pointer_banks[0] = (u8*)list;
+    overworld_script_state.pointer_banks[0] = (u8*)fishing_list_menu_items;
     if (multichoice(0, 0, 0, true)) {
         overworld_script_halt();
     }
     DEBUG("Select %d options\n", num_displayed);
-    fmem.gp_state = list;
 }
 
 void fishing_execute_bait_selection() {
-    list_menu_item *list = (list_menu_item*)fmem.gp_state;
-    fishing_build_selection_list(list);
+    fishing_build_selection_list(fishing_list_menu_items);
     u16 idx = *var_access(LASTRESULT);
-    u16 flag = (u16)list[idx].idx;
+    u16 flag = (u16)fishing_list_menu_items[idx].idx;
     if (flag) {
         setflag(flag);
         *var_access(LASTRESULT) = 1;
@@ -155,5 +155,5 @@ void fishing_execute_bait_selection() {
         *var_access(LASTRESULT) = 0;
     }
     *var_access(DYN_MULTICHOICE_ITEM_CNT) = 0;
-    free(fmem.gp_state);
+    free(fishing_list_menu_items);
 }

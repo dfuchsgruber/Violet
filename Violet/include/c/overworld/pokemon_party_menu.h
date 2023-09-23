@@ -64,6 +64,7 @@ typedef struct {
 } pokemon_party_menu_partner_pokemon_t;
 
 extern pokemon_party_menu_partner_pokemon_t pokemon_party_menu_partner_party[3];
+extern EWRAM bool (*pokemon_party_menu_choose_mon_generic_mon_is_eligible)(pokemon*);
 
 /**
  * Loads the partner party from a normal party.

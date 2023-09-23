@@ -288,7 +288,7 @@ void bsc_cmd_pricemoney() {
         // Cut on trainer-tower stuff...
         money = trainer_pricemoney_get(trainer_vars.trainer_id);
         if (battle_flags & BATTLE_TWO_TRAINERS)
-            money += trainer_pricemoney_get(fmem.trainer_varsB.trainer_id);
+            money += trainer_pricemoney_get(trainer_varsB.trainer_id);
         else if (battle_flags & BATTLE_DOUBLE)
             money *= 2;
         switch(*var_access(DIFFICULTY)) {
@@ -328,15 +328,15 @@ bool bsc_cmd_switch_in_effects_check_ability_or_handicap() {
 }
 
 void bsc_cmd_before_attack() {
-    BATTLE_STATE2->status_custom[attacking_battler] &= (u32)(~(CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY | CUSTOM_STATUS_GEM_USED));
+    battle_state2->status_custom[attacking_battler] &= (u32)(~(CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY | CUSTOM_STATUS_GEM_USED));
     bool effect = false;
     while(!effect) {
-        DEBUG("Executing before attack events in state %d\n", BATTLE_STATE2->before_attack_state);
-        switch (BATTLE_STATE2->before_attack_state) {
+        DEBUG("Executing before attack events in state %d\n", battle_state2->before_attack_state);
+        switch (battle_state2->before_attack_state) {
             case 0: { // Abilities
                 if (battle_abilities_before_attack())
                     effect = true;
-                BATTLE_STATE2->before_attack_state++;
+                battle_state2->before_attack_state++;
                 if (effect)
                     return;
                 break;
@@ -344,7 +344,7 @@ void bsc_cmd_before_attack() {
             case 1: {
                 if (battle_handicap_before_attack_events())
                     effect = true;
-                BATTLE_STATE2->before_attack_state++;
+                battle_state2->before_attack_state++;
                 if (effect)
                     return;
                 break;
@@ -352,7 +352,7 @@ void bsc_cmd_before_attack() {
             case 2: {
                 if (battle_item_before_attack_attacker())
                     effect = true;
-                BATTLE_STATE2->before_attack_state++;
+                battle_state2->before_attack_state++;
                 if (effect)
                     return;
                 break;
@@ -360,7 +360,7 @@ void bsc_cmd_before_attack() {
             case 3: {
                 if (battle_item_before_attack_defender())
                     effect = true;
-                BATTLE_STATE2->before_attack_state++;
+                battle_state2->before_attack_state++;
                 if (effect)
                     return;
                 break;
@@ -382,7 +382,7 @@ void bsc_cmd_x49_attack_done_new() {
     // Mode 2 executes states smaller than last_state
     u8 mode = bsc_offset[1];
     if (mode == 1) {
-        BATTLE_STATE2->attack_done_substate = 255; // Only one state was supposed to be executed whatsoever
+        battle_state2->attack_done_substate = 255; // Only one state was supposed to be executed whatsoever
     }; 
     u8 last_state = bsc_offset[2];
     // DEBUG("mode is %d, arg is %d\n", mode, last_state);
@@ -390,8 +390,8 @@ void bsc_cmd_x49_attack_done_new() {
         case 0 ... 17: return; // The original function has not terminated 
         case 18: { // We enter this case when the original function whould have terminated
             //DEBUG("Initialize new attack done effects.\n");
-            BATTLE_STATE2->attack_done_substate = 0;
-            BATTLE_STATE2->switch_in_handicap_effects_cnt = 0;
+            battle_state2->attack_done_substate = 0;
+            battle_state2->switch_in_handicap_effects_cnt = 0;
             battle_scripting.attack_done_state++;
             break;
         }
@@ -400,15 +400,15 @@ void bsc_cmd_x49_attack_done_new() {
             // Just watch out to respect the limits of the original function
             bool effect = false;
             while (!effect) {
-                DEBUG("Executing substate %d\n", BATTLE_STATE2->attack_done_substate);
-                switch(BATTLE_STATE2->attack_done_substate) {
+                DEBUG("Executing substate %d\n", battle_state2->attack_done_substate);
+                switch(battle_state2->attack_done_substate) {
                     case 0: {
                         if (mode != 2 || last_state > 5) { // State 5 is the original attacker abilities (i.e. synchronize)
                             if (battle_abilities_attack_done_attacker_new()) {
                                 effect = true;
                             }
                         }
-                        BATTLE_STATE2->attack_done_substate++;
+                        battle_state2->attack_done_substate++;
                         break;
                     }
                     case 1: {
@@ -417,7 +417,7 @@ void bsc_cmd_x49_attack_done_new() {
                                 effect = true;
                             }
                         }
-                        BATTLE_STATE2->attack_done_substate++;
+                        battle_state2->attack_done_substate++;
                         break;
                     }
                     case 2: {
@@ -426,7 +426,7 @@ void bsc_cmd_x49_attack_done_new() {
                                 effect = true;
                             }
                         }
-                        BATTLE_STATE2->attack_done_substate++;
+                        battle_state2->attack_done_substate++;
                         break;
                     }
                     case 3: {
@@ -435,31 +435,31 @@ void bsc_cmd_x49_attack_done_new() {
                                 effect = true;
                             }
                         }
-                        BATTLE_STATE2->attack_done_substate++;
+                        battle_state2->attack_done_substate++;
                         break;
                     }
                     case 4 : {
                         if (mode != 2 || last_state > 16) { // Only if all effects will be executed, we consider gunpowder
                             if (battle_items_gunpowder()) effect = true;
                         }
-                        BATTLE_STATE2->attack_done_substate++;
+                        battle_state2->attack_done_substate++;
                         break;
                     }
                     case 5 : {
                         if (mode != 2 || last_state > 16) { // Only if all effects will be executed, we consider life-orb
                             if (battle_items_life_orb()) effect = true;
                         }
-                        BATTLE_STATE2->attack_done_substate++;
+                        battle_state2->attack_done_substate++;
                         break;
                     }
                     case 6: {
                         if ((mode != 2 || last_state > 16) 
-                            && BATTLE_STATE2->switch_in_handicap_effects_cnt < 32) { // Only when all attack-end effects are executed, we consider handicaps...
+                            && battle_state2->switch_in_handicap_effects_cnt < 32) { // Only when all attack-end effects are executed, we consider handicaps...
                             if (battle_handicap_attack_done())
                                 effect = true;
-                            BATTLE_STATE2->switch_in_handicap_effects_cnt++; // Next step -> Next Check next handycap
+                            battle_state2->switch_in_handicap_effects_cnt++; // Next step -> Next Check next handycap
                         } else {
-                            BATTLE_STATE2->attack_done_substate++;
+                            battle_state2->attack_done_substate++;
                         }
                         break;
                     }
@@ -529,7 +529,7 @@ void bsc_command_x06_typecalc() {
         battle_record_ability(defending_battler, defending_battler_ability);
     } else {
         bool no_weakness = false;
-        if ((battle_flags & BATTLE_WITH_HANDICAP) && (fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_FLOATING_ROCKS]) &&
+        if ((battle_flags & BATTLE_WITH_HANDICAP) && (battle_handicaps & int_bitmasks[BATTLE_HANDICAP_FLOATING_ROCKS]) &&
             (battlers[defending_battler].type1 == TYPE_GESTEIN || battlers[defending_battler].type2 == TYPE_GESTEIN)) {
                 no_weakness = true;
             } 
@@ -581,7 +581,7 @@ void bsc_command_x4a_typecalc2() {
         battle_record_ability(defending_battler, defending_battler_ability);
     } else {
         bool no_weakness = false;
-        if ((battle_flags & BATTLE_WITH_HANDICAP) && (fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_FLOATING_ROCKS]) &&
+        if ((battle_flags & BATTLE_WITH_HANDICAP) && (battle_handicaps & int_bitmasks[BATTLE_HANDICAP_FLOATING_ROCKS]) &&
             (battlers[defending_battler].type1 == TYPE_GESTEIN || battlers[defending_battler].type2 == TYPE_GESTEIN)) {
                 no_weakness = true;
             } 
@@ -638,7 +638,7 @@ void bsc_command_x4a_typecalc2() {
 
 void bsc_command_x06_typecalc_scan_effectiveness_table(u8 move_type) {
     bool no_weakness = false;
-    if ((battle_flags & BATTLE_WITH_HANDICAP) && (fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_FLOATING_ROCKS]) &&
+    if ((battle_flags & BATTLE_WITH_HANDICAP) && (battle_handicaps & int_bitmasks[BATTLE_HANDICAP_FLOATING_ROCKS]) &&
         (battlers[defending_battler].type1 == TYPE_GESTEIN || battlers[defending_battler].type2 == TYPE_GESTEIN)) {
             no_weakness = true;
         } 
@@ -723,18 +723,18 @@ static void adjustnormaldamage(bool consider_false_swipe, bool random_damage_mul
             attack_result |= ATTACK_ENDURED;
         }
     }
-    if ((BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_GEM_USED)
+    if ((battle_state2->status_custom[attacking_battler] & CUSTOM_STATUS_GEM_USED)
         && !(attack_result & ATTACK_NO_EFFECT_ANY) && battlers[attacking_battler].item != 0) {
         bsc_last_used_item = battlers[attacking_battler].item;
         battlescript_callstack_push_next_command();
         bsc_offset = battlescript_gem_used;
-        BATTLE_STATE2->status_custom[attacking_battler] &= (u32)(~CUSTOM_STATUS_GEM_USED);
+        battle_state2->status_custom[attacking_battler] &= (u32)(~CUSTOM_STATUS_GEM_USED);
     }
-    if ((BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY)) {
+    if ((battle_state2->status_custom[attacking_battler] & CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY)) {
         bsc_last_used_item = battlers[defending_battler].item;
         battlescript_callstack_push_next_command();
         bsc_offset = battlescript_weakened_by_berry;
-        BATTLE_STATE2->status_custom[attacking_battler] &= (u32)(~CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY);
+        battle_state2->status_custom[attacking_battler] &= (u32)(~CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY);
     }
 }
 
@@ -844,9 +844,9 @@ void bsc_try_set_perishsong_no_attack() {
 
 static void bsc_backup_attacking_battler() {
     if (bsc_offset[1])
-        BATTLE_STATE2->attacking_battler_backup = attacking_battler;
+        battle_state2->attacking_battler_backup = attacking_battler;
     else
-        attacking_battler = BATTLE_STATE2->attacking_battler_backup;
+        attacking_battler = battle_state2->attacking_battler_backup;
     bsc_offset += 2;
 }
 

@@ -27,21 +27,21 @@ u32 hash_sequence(u32 seq[], size_t size, u32 seed) {
 }
 
 u32 daily_events_hash(u32 seq[], size_t size) {
-	u32 seed = cmem.daily_events_seed;
+	u32 seed = csave.daily_events_seed;
 	return hash_sequence(seq, size, seed);
 }
 
 
 void daily_events_new_seed() {
-	cmem.daily_events_seed = (u32)((rnd16() << 16) | rnd16());
-    time_read(&(cmem.daily_events_last_update));
+	csave.daily_events_seed = (u32)((rnd16() << 16) | rnd16());
+    time_read(&(csave.daily_events_last_update));
 }
 
 void daily_events_reset() {
     int i;
     for (i = 0; i < 16; i++) {
-        cmem.any_tmp_flags[i] = 0;
-        cmem.dungeon_flags[i] = 0;
+        csave.any_tmp_flags[i] = 0;
+        csave.dungeon_flags[i] = 0;
     }
     overworld_misc_intialize();
 }
@@ -71,7 +71,7 @@ void daily_events_proceed() {
     rtc_timestamp current_time;
     time_read(&current_time);
     u64 seconds_current = rtc_timestamp_to_seconds(&current_time);
-    u64 seconds_update = (u64) (rtc_timestamp_to_seconds(&cmem.daily_events_last_update) + 24 * 60 * 60);
+    u64 seconds_update = (u64) (rtc_timestamp_to_seconds(&csave.daily_events_last_update) + 24 * 60 * 60);
 
     DEBUG("Seconds to update dailty: %d\n", seconds_update - seconds_current);
 

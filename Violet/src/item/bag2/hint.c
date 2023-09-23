@@ -25,12 +25,12 @@ static const u8 *const bag_context_hints[NUM_BAG_CONTEXTS] = {
 };
 
 const u8 *bag_get_context_hint() {
-    // DEBUG("Bag context is %d for hint 0x%x\n", fmem.bag_context, bag_context_hints[fmem.bag_context]);
+    // DEBUG("Bag context is %d for hint 0x%x\n", bag_context, bag_context_hints[bag_context]);
     u8 pocket = bag_get_current_pocket();
     if (pocket == POCKET_TM_HM)
         return NULL;
     else
-        return bag_context_hints[fmem.bag_context];
+        return bag_context_hints[bag_context];
 }
 
 const tbox_font_colormap bag_font_colormap_pocket_hint = {.background = 0, .body = 2, .edge = 1}; 

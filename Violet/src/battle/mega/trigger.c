@@ -27,7 +27,7 @@ static void trigger_callback_animation(oam_object *self) {
     u8 clk = (u8)((self->private[2]++) & 63); // Period of 64
     u8 battler_idx = (u8)(self->private[1]);
     u8 alpha, animation_idx;
-    if (MEGA_STATE.marked_for_mega_evolution[battler_idx]) {
+    if (mega_state->marked_for_mega_evolution[battler_idx]) {
         animation_idx = 1;
         if (clk <= 32) {
             alpha = clk;
@@ -148,7 +148,7 @@ void mega_trigger_new(u8 battler_idx) {
         return;
     // Check if the battler can perform mega evolution
     const mega_evolution_t *mega_evolution = battler_get_available_mega_evolution(battler_idx);
-    if (mega_evolution || MEGA_STATE.marked_for_mega_evolution[battler_idx]) {
+    if (mega_evolution || mega_state->marked_for_mega_evolution[battler_idx]) {
         u8 mega_trigger_oam = mega_trigger_oam_idx_get(battler_idx);
         if (mega_trigger_oam >= 0x40) {
             // Create a new mega trigger
@@ -178,14 +178,14 @@ void _battle_controller_player_choose_move() {
     const mega_evolution_t *mega_evolution = battler_get_available_mega_evolution(active_battler);
     if (super.keys_remapped.keys.B) {
         // Unmark the battler for mega evolution
-        MEGA_STATE.marked_for_mega_evolution[active_battler] = 0;
+        mega_state->marked_for_mega_evolution[active_battler] = 0;
     } else if (mega_evolution && (super.keys_new.keys.l || super.keys_new.keys.r) && super.keys.keys.l && super.keys.keys.r) {
         // Toggle marking
-        if (MEGA_STATE.marked_for_mega_evolution[active_battler]) {
-            MEGA_STATE.marked_for_mega_evolution[active_battler] = 0;
+        if (mega_state->marked_for_mega_evolution[active_battler]) {
+            mega_state->marked_for_mega_evolution[active_battler] = 0;
             play_sound(3);
         } else {
-            MEGA_STATE.marked_for_mega_evolution[active_battler] = (u8) mega_evolution->type;
+            mega_state->marked_for_mega_evolution[active_battler] = (u8) mega_evolution->type;
             play_sound(2);
         }
     }

@@ -1,10 +1,10 @@
 @//this is inspired and taken from JPANs Codes
 
-.equ BLOCK_0_TAIL_OFF, 0x0203c0c8
+.equ BLOCK_0_TAIL_OFF, csave
 .equ BLOCK_0_SIZE, 204
-.equ BLOCK_1_TAIL_OFF, 0x0203c320
+.equ BLOCK_1_TAIL_OFF, csave + BLOCK_0_SIZE
 .equ BLOCK_1_SIZE, 600
-.equ BLOCK_2_TAIL_OFF, 0x0203cec0
+.equ BLOCK_2_TAIL_OFF, csave + BLOCK_1_SIZE + BLOCK_2_SIZE
 .equ BLOCK_2_SIZE, 2976
 
 .global hook_save_block_load

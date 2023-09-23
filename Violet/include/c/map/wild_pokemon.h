@@ -8,6 +8,7 @@
 #ifndef INCLUDE_C_MAP_WILD_POKEMON_H_
 #define INCLUDE_C_MAP_WILD_POKEMON_H_
 
+#include "constants/wild_pokemon_densities.h"
 
 typedef struct wild_pokemon_entry {
     u8 level_min;
@@ -42,6 +43,16 @@ typedef struct {
     u8 map_idx;
     u8 letters[NUM_UNOWN_LETTERS_PER_MAP + 1];
 } wild_pokemon_unown_t;
+
+extern EWRAM wild_pokemon_data dynamic_wild_pokemon;
+extern EWRAM wild_pokemon_habitat dynamic_wild_pokemon_habitat_grass;
+extern EWRAM wild_pokemon_habitat dynamic_wild_pokemon_habitat_water;
+extern EWRAM wild_pokemon_habitat dynamic_wild_pokemon_habitat_radar;
+extern EWRAM wild_pokemon_habitat dynamic_wild_pokemon_habitat_rod;
+extern EWRAM wild_pokemon_entry dynamic_wild_pokemon_entries_grass[WILD_POKEMON_NUM_ENTRIES_GRASS];
+extern EWRAM wild_pokemon_entry dynamic_wild_pokemon_entries_water[WILD_POKEMON_NUM_ENTRIES_WATER];
+extern EWRAM wild_pokemon_entry dynamic_wild_pokemon_entries_rod[WILD_POKEMON_NUM_ENTRIES_ROD + WILD_POKEMON_NUM_ENTRIES_GOOD_ROD + WILD_POKEMON_NUM_ENTRIES_SUPER_ROD];
+extern EWRAM wild_pokemon_entry dynamic_wild_pokemon_entries_radar[WILD_POKEMON_NUM_ENTRIES_OTHER];
 
 /**
  * Returns a pointer to the NUM_UNOWN_LETTERS_PER_MAP letters that currently can appear on the current map.
@@ -147,14 +158,6 @@ int wildbattle_sample_from_rod_pdf (u8 rod_type);
  * @return if the pokemon will be encountered
  */
 bool trainerschool_wildbattle_initialize_secondary_starter();
-
-
-#define WILD_POKEMON_NUM_ENTRIES_GRASS 12
-#define WILD_POKEMON_NUM_ENTRIES_WATER 5
-#define WILD_POKEMON_NUM_ENTRIES_ROD 2
-#define WILD_POKEMON_NUM_ENTRIES_GOOD_ROD 3
-#define WILD_POKEMON_NUM_ENTRIES_SUPER_ROD 5
-#define WILD_POKEMON_NUM_ENTRIES_OTHER 5
 
 /*
  * Probability density functions for each type of encounter

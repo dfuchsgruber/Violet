@@ -31,6 +31,9 @@
 #include "constants/vars.h"
 #include "constants/songs.h"
 #include "overworld/script.h"
+#include "pokepad/incubator.h"
+
+EWRAM river_puzzle_state_t *river_puzzle_state = NULL;
 
 const tbox_font_colormap river_puzzle_font_colmap_std = {
     4, 1, 2, 4
@@ -174,8 +177,8 @@ void river_puzzle_locate(int side, int position, s16 *x, s16 *y) {
 
 int river_puzzle_pokemon_get_boat(int pokemon_idx) {
   DEBUG("Get Boat for pokemon %d\n", pokemon_idx);
-  if (RIVER_PUZZLE_STATE->boat[0] == pokemon_idx) return 0;
-  else if (RIVER_PUZZLE_STATE->boat[1] == pokemon_idx) return 1;
+  if (river_puzzle_state->boat[0] == pokemon_idx) return 0;
+  else if (river_puzzle_state->boat[1] == pokemon_idx) return 1;
   else return -1;
 }
 
@@ -185,14 +188,14 @@ void river_puzzle_callback_jump(u8 self) {
   int mode = big_callbacks[self].params[2];
   int boat_position = big_callbacks[self].params[3] == 0 ? RIVER_PUZZLE_POSITION_BOAT_WEST :
       RIVER_PUZZLE_POSITION_BOAT_EAST;
-  oam_object *pokemon_oam = &oams[RIVER_PUZZLE_STATE->pokemon_oams[pokemon_idx]];
+  oam_object *pokemon_oam = &oams[river_puzzle_state->pokemon_oams[pokemon_idx]];
   s16 x0 = -1, y0 = -1, x1 = -1, y1 = -1;
   if (mode == RIVER_PUZZLE_INTO_BOAT) {
-    river_puzzle_locate(RIVER_PUZZLE_STATE->pokemon[pokemon_idx], pokemon_idx, &x0, &y0);
-    river_puzzle_locate(RIVER_PUZZLE_STATE->pokemon[pokemon_idx], boat_position, &x1, &y1);
+    river_puzzle_locate(river_puzzle_state->pokemon[pokemon_idx], pokemon_idx, &x0, &y0);
+    river_puzzle_locate(river_puzzle_state->pokemon[pokemon_idx], boat_position, &x1, &y1);
   } else if (mode == RIVER_PUZZLE_FROM_BOAT) {
-    river_puzzle_locate(RIVER_PUZZLE_STATE->pokemon[pokemon_idx], boat_position, &x0, &y0);
-    river_puzzle_locate(RIVER_PUZZLE_STATE->pokemon[pokemon_idx], pokemon_idx, &x1, &y1);
+    river_puzzle_locate(river_puzzle_state->pokemon[pokemon_idx], boat_position, &x0, &y0);
+    river_puzzle_locate(river_puzzle_state->pokemon[pokemon_idx], pokemon_idx, &x1, &y1);
   }
   // Interpolate linear movement and add a sine vertical movement
    int dx = x1 - x0, dy = y1 - y0;
@@ -203,7 +206,7 @@ void river_puzzle_callback_jump(u8 self) {
     river_puzzle_draw_context_information();
     pokemon_oam->priority_on_layer = (u8)(8 - pokemon_idx - 1);
     // Set hflip to cursor side
-    if (RIVER_PUZZLE_STATE->cursor_side == RIVER_PUZZLE_WEST) {
+    if (river_puzzle_state->cursor_side == RIVER_PUZZLE_WEST) {
       pokemon_oam->final_oam.attr1 &= (u16)(~ATTR1_HFLIP);
     } else {
       pokemon_oam->final_oam.attr1 |= ATTR1_HFLIP;
@@ -214,7 +217,7 @@ void river_puzzle_callback_jump(u8 self) {
     if (mode == RIVER_PUZZLE_FROM_BOAT) {
       // The jump is "backwards" if position_new < position_old, for the duration of the jump set
       // the flip opposite to the normal one
-      if (RIVER_PUZZLE_STATE->cursor_side == RIVER_PUZZLE_WEST) {
+      if (river_puzzle_state->cursor_side == RIVER_PUZZLE_WEST) {
         pokemon_oam->final_oam.attr1 |= ATTR1_HFLIP;
       } else {
         pokemon_oam->final_oam.attr1 &= (u16)(~ATTR1_HFLIP);
@@ -224,8 +227,8 @@ void river_puzzle_callback_jump(u8 self) {
 }
 
 void river_puzzle_locate_cursor() {
-  oam_object *cursor_oam = &oams[RIVER_PUZZLE_STATE->cursor_oam];
-  river_puzzle_locate(RIVER_PUZZLE_STATE->cursor_side, RIVER_PUZZLE_STATE->cursor, &(cursor_oam->x),
+  oam_object *cursor_oam = &oams[river_puzzle_state->cursor_oam];
+  river_puzzle_locate(river_puzzle_state->cursor_side, river_puzzle_state->cursor, &(cursor_oam->x),
       &(cursor_oam->y));
   cursor_oam->y = (s16)(cursor_oam->y - 20);
 }
@@ -234,7 +237,7 @@ void river_puzzle_callback_depart(u8 self) {
   int frame = big_callbacks[self].params[0]++;
   s16 x0, x1;
   u8 opposite_side;
-  if (RIVER_PUZZLE_STATE->cursor_side == RIVER_PUZZLE_WEST) {
+  if (river_puzzle_state->cursor_side == RIVER_PUZZLE_WEST) {
     x0 = 80, x1 = 240 - 80;
     opposite_side = RIVER_PUZZLE_EAST;
   } else {
@@ -242,26 +245,26 @@ void river_puzzle_callback_depart(u8 self) {
     opposite_side = RIVER_PUZZLE_WEST;
   }
   int dx = (x1 - x0) * frame / 64;
-  oams[RIVER_PUZZLE_STATE->boat_oam].x = (s16)(x0 + dx);
-  oams[RIVER_PUZZLE_STATE->cursor_oam].x2 = (s16)(dx);
+  oams[river_puzzle_state->boat_oam].x = (s16)(x0 + dx);
+  oams[river_puzzle_state->cursor_oam].x2 = (s16)(dx);
   for (int i = 0; i < 2; i++) {
     int boat_position = i == 0 ? RIVER_PUZZLE_POSITION_BOAT_WEST : RIVER_PUZZLE_POSITION_BOAT_EAST;
-    if (RIVER_PUZZLE_STATE->boat[i] != RIVER_PUZZLE_BOAT_EMPTY) {
-      u8 pokemon_idx = RIVER_PUZZLE_STATE->boat[i];
-      oam_object *pokemon_oam = &oams[RIVER_PUZZLE_STATE->pokemon_oams[pokemon_idx]];
+    if (river_puzzle_state->boat[i] != RIVER_PUZZLE_BOAT_EMPTY) {
+      u8 pokemon_idx = river_puzzle_state->boat[i];
+      oam_object *pokemon_oam = &oams[river_puzzle_state->pokemon_oams[pokemon_idx]];
       if (frame < 64) {
         pokemon_oam->x2 = (s16) dx;
       } else {
         // Switch the side of all pokemon in the boat and relocate
-        RIVER_PUZZLE_STATE->pokemon[pokemon_idx] = opposite_side;
+        river_puzzle_state->pokemon[pokemon_idx] = opposite_side;
         river_puzzle_locate(opposite_side, boat_position, &pokemon_oam->x, &pokemon_oam->y);
         pokemon_oam->x2 = 0; pokemon_oam->y2 = 0;
       }
     }
   }
   if (frame >= 64) {
-    RIVER_PUZZLE_STATE->cursor_side = opposite_side;
-    oams[RIVER_PUZZLE_STATE->cursor_oam].x2 = 0;
+    river_puzzle_state->cursor_side = opposite_side;
+    oams[river_puzzle_state->cursor_oam].x2 = 0;
     river_puzzle_locate_cursor();
     big_callbacks[self].function = river_puzzle_callback_idle;
   }
@@ -274,7 +277,7 @@ void river_puzzle_callback_exit(u8 self) {
     free(bg_get_tilemap(1));
     free(bg_get_tilemap(2));
     free(bg_get_tilemap(3));
-    free(fmem.gp_state);
+    free(river_puzzle_state);
     callback1_set(map_reload);
     overworld_script_resume();
     big_callback_delete(self);
@@ -287,11 +290,11 @@ void river_puzzle_callback_solved(u8 self) {
 }
 
 void river_puzzle_callback_confirm_exit_handle_list(u8 self) {
-  int item = list_menu_process_input(RIVER_PUZZLE_STATE->callback_idx_list);
+  int item = list_menu_process_input(river_puzzle_state->callback_idx_list);
   if (item == LIST_MENU_NOTHING_CHOSEN) return;
   if (item == LIST_MENU_B_PRESSED || item == 1 || item == 2) {
     play_sound(5);
-    list_menu_remove(RIVER_PUZZLE_STATE->callback_idx_list, NULL, NULL);
+    list_menu_remove(river_puzzle_state->callback_idx_list, NULL, NULL);
     tbox_flush_set(RIVER_PUZZLE_TBOX_LIST, 0);
     tbox_flush_map_and_frame(RIVER_PUZZLE_TBOX_LIST);
     tbox_clear_message(RIVER_PUZZLE_TBOX_MESSAGE, false);
@@ -309,7 +312,7 @@ void river_puzzle_callback_confirm_exit(u8 self) {
   gp_list_menu_template = river_puzzle_list_template_yes_no;
   tbox_tilemap_draw(RIVER_PUZZLE_TBOX_LIST);
   tbox_frame_draw_outer(RIVER_PUZZLE_TBOX_LIST, RIVER_PUZZLE_UI_NUM_TILES, 14);
-  RIVER_PUZZLE_STATE->callback_idx_list = list_menu_new(&gp_list_menu_template,
+  river_puzzle_state->callback_idx_list = list_menu_new(&gp_list_menu_template,
       0, 0);
   bg_virtual_sync(0);
   big_callbacks[self].function = river_puzzle_callback_confirm_exit_handle_list;
@@ -321,8 +324,8 @@ void river_puzzle_callback_remove_dialog_and_return_to_idle(u8 self) {
 }
 
 int river_puzzle_pokemon_in_boat() {
-  return (RIVER_PUZZLE_STATE->boat[0] != RIVER_PUZZLE_BOAT_EMPTY ? 1 : 0) +
-      (RIVER_PUZZLE_STATE->boat[1] != RIVER_PUZZLE_BOAT_EMPTY ? 1 : 0);
+  return (river_puzzle_state->boat[0] != RIVER_PUZZLE_BOAT_EMPTY ? 1 : 0) +
+      (river_puzzle_state->boat[1] != RIVER_PUZZLE_BOAT_EMPTY ? 1 : 0);
 }
 
 bool river_puzzle_pokemon_on_same_side(u8 i, u8 j) {
@@ -331,7 +334,7 @@ bool river_puzzle_pokemon_on_same_side(u8 i, u8 j) {
   if (boat_i != -1 && boat_j != -1) {
     return true;
   } else if (boat_i == boat_j) {
-    return RIVER_PUZZLE_STATE->pokemon[i] == RIVER_PUZZLE_STATE->pokemon[j];
+    return river_puzzle_state->pokemon[i] == river_puzzle_state->pokemon[j];
   } else {
     return false;
   }
@@ -366,10 +369,10 @@ bool river_puzzle_configuration_valid(u8 *invalid_baby, u8 *cause) {
 
 bool river_puzzle_configuration_solved() {
   for (int i = 0; i < 6; i++) {
-    if (RIVER_PUZZLE_STATE->pokemon[i] != RIVER_PUZZLE_EAST) return false;
+    if (river_puzzle_state->pokemon[i] != RIVER_PUZZLE_EAST) return false;
   }
-  return RIVER_PUZZLE_STATE->boat[0] == RIVER_PUZZLE_BOAT_EMPTY &&
-      RIVER_PUZZLE_STATE->boat[1] == RIVER_PUZZLE_BOAT_EMPTY;
+  return river_puzzle_state->boat[0] == RIVER_PUZZLE_BOAT_EMPTY &&
+      river_puzzle_state->boat[1] == RIVER_PUZZLE_BOAT_EMPTY;
 }
 
 void river_puzzle_draw_context_information() {
@@ -383,14 +386,14 @@ void river_puzzle_draw_context_information() {
   u8 str_none[] = PSTRING("");
   strcpy(strbuf, str_none);
   strcat(strbuf, str_general_context);
-  if (RIVER_PUZZLE_STATE->cursor < 6) {
+  if (river_puzzle_state->cursor < 6) {
     // Selected pokemon on land
     if (river_puzzle_pokemon_in_boat() < 2) strcat(strbuf, str_into_boat);
   } else {
     // Selected pokemon in boat
     if (river_puzzle_pokemon_in_boat() > 0) strcat(strbuf, str_departure);
-    u8 boat_idx = RIVER_PUZZLE_STATE->cursor == RIVER_PUZZLE_POSITION_BOAT_WEST ? 0 : 1;
-    if (RIVER_PUZZLE_STATE->boat[boat_idx] != RIVER_PUZZLE_BOAT_EMPTY)
+    u8 boat_idx = river_puzzle_state->cursor == RIVER_PUZZLE_POSITION_BOAT_WEST ? 0 : 1;
+    if (river_puzzle_state->boat[boat_idx] != RIVER_PUZZLE_BOAT_EMPTY)
         strcat(strbuf, str_from_boat);
 
   }
@@ -399,13 +402,13 @@ void river_puzzle_draw_context_information() {
 }
 
 void river_puzzle_cursor_move_right() {
-  if (RIVER_PUZZLE_STATE->cursor < RIVER_PUZZLE_POSITION_BOAT_EAST) {
-    if (RIVER_PUZZLE_STATE->cursor < RIVER_PUZZLE_POSITION_BOAT_WEST &&
-        (RIVER_PUZZLE_STATE->cursor & RIVER_PUZZLE_BABY_POKEMON)) {
-      RIVER_PUZZLE_STATE->cursor = RIVER_PUZZLE_POSITION_BOAT_WEST;
+  if (river_puzzle_state->cursor < RIVER_PUZZLE_POSITION_BOAT_EAST) {
+    if (river_puzzle_state->cursor < RIVER_PUZZLE_POSITION_BOAT_WEST &&
+        (river_puzzle_state->cursor & RIVER_PUZZLE_BABY_POKEMON)) {
+      river_puzzle_state->cursor = RIVER_PUZZLE_POSITION_BOAT_WEST;
       river_puzzle_draw_context_information();
     } else {
-      RIVER_PUZZLE_STATE->cursor++;
+      river_puzzle_state->cursor++;
       river_puzzle_draw_context_information();
     }
     river_puzzle_locate_cursor();
@@ -414,13 +417,13 @@ void river_puzzle_cursor_move_right() {
 }
 
 void river_puzzle_cursor_move_left() {
-  if (RIVER_PUZZLE_STATE->cursor > 0) {
-    if (RIVER_PUZZLE_STATE->cursor == RIVER_PUZZLE_POSITION_BOAT_WEST) {
-      RIVER_PUZZLE_STATE->cursor = 3;
+  if (river_puzzle_state->cursor > 0) {
+    if (river_puzzle_state->cursor == RIVER_PUZZLE_POSITION_BOAT_WEST) {
+      river_puzzle_state->cursor = 3;
       river_puzzle_draw_context_information();
-    } else if (RIVER_PUZZLE_STATE->cursor > RIVER_PUZZLE_POSITION_BOAT_WEST ||
-        (RIVER_PUZZLE_STATE->cursor & RIVER_PUZZLE_BABY_POKEMON)) {
-      RIVER_PUZZLE_STATE->cursor--;
+    } else if (river_puzzle_state->cursor > RIVER_PUZZLE_POSITION_BOAT_WEST ||
+        (river_puzzle_state->cursor & RIVER_PUZZLE_BABY_POKEMON)) {
+      river_puzzle_state->cursor--;
       river_puzzle_draw_context_information();
     }
     river_puzzle_locate_cursor();
@@ -438,8 +441,8 @@ void river_puzzle_callback_wait_for_fanfare(u8 self) {
 
 
 void river_puzzle_callback_idle(u8 self) {
-  if (RIVER_PUZZLE_STATE->delay) {
-    RIVER_PUZZLE_STATE->delay--;
+  if (river_puzzle_state->delay) {
+    river_puzzle_state->delay--;
     return;
   }
   if (!fading_is_active()) {
@@ -461,60 +464,60 @@ void river_puzzle_callback_idle(u8 self) {
       tbox_print_string_and_continue(self, RIVER_PUZZLE_TBOX_MESSAGE,
           RIVER_PUZZLE_UI_NUM_TILES + TBOX_FRAME_SET_STYLE_NUM_TILES, 15, 2, tbox_get_set_speed(),
           str_river_puzzle_confirm_exit, river_puzzle_callback_confirm_exit);
-    } else if (super.keys_new.keys.down && RIVER_PUZZLE_STATE->cursor / 2 < 2) {
-      RIVER_PUZZLE_STATE->cursor = (u8)(RIVER_PUZZLE_STATE->cursor + 2);
+    } else if (super.keys_new.keys.down && river_puzzle_state->cursor / 2 < 2) {
+      river_puzzle_state->cursor = (u8)(river_puzzle_state->cursor + 2);
       river_puzzle_locate_cursor();
       play_sound(5);
-    } else if (super.keys_new.keys.up && RIVER_PUZZLE_STATE->cursor / 2 < 3 &&
-        RIVER_PUZZLE_STATE->cursor / 2 > 0) {
-      RIVER_PUZZLE_STATE->cursor = (u8)(RIVER_PUZZLE_STATE->cursor - 2);
+    } else if (super.keys_new.keys.up && river_puzzle_state->cursor / 2 < 3 &&
+        river_puzzle_state->cursor / 2 > 0) {
+      river_puzzle_state->cursor = (u8)(river_puzzle_state->cursor - 2);
       river_puzzle_locate_cursor();
       play_sound(5);
     } else if (super.keys_new.keys.left) {
-      if (RIVER_PUZZLE_STATE->cursor_side == RIVER_PUZZLE_WEST) {
+      if (river_puzzle_state->cursor_side == RIVER_PUZZLE_WEST) {
         river_puzzle_cursor_move_left();
       } else {
         river_puzzle_cursor_move_right();
       }
     } else if (super.keys_new.keys.right) {
-      if (RIVER_PUZZLE_STATE->cursor_side == RIVER_PUZZLE_WEST) {
+      if (river_puzzle_state->cursor_side == RIVER_PUZZLE_WEST) {
         river_puzzle_cursor_move_right();
       } else {
         river_puzzle_cursor_move_left();
       }
     } else if (super.keys_new.keys.A) {
-      u8 side_old = RIVER_PUZZLE_STATE->pokemon[RIVER_PUZZLE_STATE->cursor];
+      u8 side_old = river_puzzle_state->pokemon[river_puzzle_state->cursor];
       bool configuration_valid = true;
       u8 invalid_baby = 0, cause = 0;
-      if (RIVER_PUZZLE_STATE->cursor < RIVER_PUZZLE_POSITION_BOAT_WEST &&
+      if (river_puzzle_state->cursor < RIVER_PUZZLE_POSITION_BOAT_WEST &&
           river_puzzle_pokemon_in_boat() < 2 &&
-          side_old == RIVER_PUZZLE_STATE->cursor_side &&
-          river_puzzle_pokemon_get_boat(RIVER_PUZZLE_STATE->cursor) == -1) {
+          side_old == river_puzzle_state->cursor_side &&
+          river_puzzle_pokemon_get_boat(river_puzzle_state->cursor) == -1) {
         // Try a configuration where the current pokemon is in the boat
-        u8 boat_idx = RIVER_PUZZLE_STATE->boat[0] == RIVER_PUZZLE_BOAT_EMPTY ? 0 : 1;
-        RIVER_PUZZLE_STATE->boat[boat_idx] = RIVER_PUZZLE_STATE->cursor;
+        u8 boat_idx = river_puzzle_state->boat[0] == RIVER_PUZZLE_BOAT_EMPTY ? 0 : 1;
+        river_puzzle_state->boat[boat_idx] = river_puzzle_state->cursor;
         configuration_valid = river_puzzle_configuration_valid(&invalid_baby, &cause);
         if (!configuration_valid) {
-          RIVER_PUZZLE_STATE->boat[boat_idx] = RIVER_PUZZLE_BOAT_EMPTY;
+          river_puzzle_state->boat[boat_idx] = RIVER_PUZZLE_BOAT_EMPTY;
         } else {
           // The pokemon can be put into the boat
           big_callbacks[self].function = river_puzzle_callback_jump;
           big_callbacks[self].params[0] = 0; // Frame
-          big_callbacks[self].params[1] = RIVER_PUZZLE_STATE->cursor; // Pokemon Idx
+          big_callbacks[self].params[1] = river_puzzle_state->cursor; // Pokemon Idx
           big_callbacks[self].params[2] = RIVER_PUZZLE_INTO_BOAT;
           big_callbacks[self].params[3] = boat_idx;
           play_sound(10);
         }
 
-      } else if (RIVER_PUZZLE_STATE->cursor >= RIVER_PUZZLE_POSITION_BOAT_WEST){
-        u8 boat_idx = RIVER_PUZZLE_STATE->cursor == RIVER_PUZZLE_POSITION_BOAT_WEST ? 0 : 1;
-        u8 pokemon_idx = RIVER_PUZZLE_STATE->boat[boat_idx];
+      } else if (river_puzzle_state->cursor >= RIVER_PUZZLE_POSITION_BOAT_WEST){
+        u8 boat_idx = river_puzzle_state->cursor == RIVER_PUZZLE_POSITION_BOAT_WEST ? 0 : 1;
+        u8 pokemon_idx = river_puzzle_state->boat[boat_idx];
         if (pokemon_idx != RIVER_PUZZLE_BOAT_EMPTY) {
           // Try a configuration where the current pokemon is taken of the boat
-          RIVER_PUZZLE_STATE->boat[boat_idx] = RIVER_PUZZLE_BOAT_EMPTY;
+          river_puzzle_state->boat[boat_idx] = RIVER_PUZZLE_BOAT_EMPTY;
           configuration_valid = river_puzzle_configuration_valid(&invalid_baby, &cause);
           if (!configuration_valid) {
-            RIVER_PUZZLE_STATE->boat[boat_idx] = pokemon_idx;
+            river_puzzle_state->boat[boat_idx] = pokemon_idx;
           } else {
             // The pokemon can be put from the boat
             big_callbacks[self].function = river_puzzle_callback_jump;
@@ -537,16 +540,16 @@ void river_puzzle_callback_idle(u8 self) {
         play_sound(5);
       }
     } else if (super.keys_new.keys.select &&
-        RIVER_PUZZLE_STATE->cursor >= RIVER_PUZZLE_POSITION_BOAT_WEST &&
+        river_puzzle_state->cursor >= RIVER_PUZZLE_POSITION_BOAT_WEST &&
         river_puzzle_pokemon_in_boat() > 0) {
       // Switch pokemon in boat and cursor idx
-      u8 boat_tmp = RIVER_PUZZLE_STATE->boat[1];
-      RIVER_PUZZLE_STATE->boat[1] = RIVER_PUZZLE_STATE->boat[0];
-      RIVER_PUZZLE_STATE->boat[0] = boat_tmp;
-      if (RIVER_PUZZLE_STATE->cursor == RIVER_PUZZLE_POSITION_BOAT_WEST)
-        RIVER_PUZZLE_STATE->cursor = RIVER_PUZZLE_POSITION_BOAT_EAST;
+      u8 boat_tmp = river_puzzle_state->boat[1];
+      river_puzzle_state->boat[1] = river_puzzle_state->boat[0];
+      river_puzzle_state->boat[0] = boat_tmp;
+      if (river_puzzle_state->cursor == RIVER_PUZZLE_POSITION_BOAT_WEST)
+        river_puzzle_state->cursor = RIVER_PUZZLE_POSITION_BOAT_EAST;
       else
-        RIVER_PUZZLE_STATE->cursor = RIVER_PUZZLE_POSITION_BOAT_WEST;
+        river_puzzle_state->cursor = RIVER_PUZZLE_POSITION_BOAT_WEST;
       big_callbacks[self].params[0] = 0; // Frame
       big_callbacks[self].function = river_puzzle_callback_depart;
       play_sound(5);
@@ -660,15 +663,15 @@ void river_puzzle_callback1_initialize() {
             RIVER_PUZZLE_CURSOR_TAG))), 32);
     pal_set_all_to_black();
 
-    RIVER_PUZZLE_STATE->boat_oam = oam_new_forward_search(&oam_template_river_puzzle_boat,
+    river_puzzle_state->boat_oam = oam_new_forward_search(&oam_template_river_puzzle_boat,
         80, 80, 8);
     for (int i = 0; i < 6; i++) {
-      RIVER_PUZZLE_STATE->pokemon_oams[i] = oam_new_forward_search(
+      river_puzzle_state->pokemon_oams[i] = oam_new_forward_search(
           &oam_template_river_puzzle_pokemons[i], 0, 0, (u8)(8 - i - 1));
-      oam_object *pokemon_oam = &oams[RIVER_PUZZLE_STATE->pokemon_oams[i]];
-      river_puzzle_locate(RIVER_PUZZLE_STATE->cursor_side, i, &pokemon_oam->x, &pokemon_oam->y);
+      oam_object *pokemon_oam = &oams[river_puzzle_state->pokemon_oams[i]];
+      river_puzzle_locate(river_puzzle_state->cursor_side, i, &pokemon_oam->x, &pokemon_oam->y);
     }
-    RIVER_PUZZLE_STATE->cursor_oam = oam_new_forward_search(&oam_template_river_puzzle_cursor,
+    river_puzzle_state->cursor_oam = oam_new_forward_search(&oam_template_river_puzzle_cursor,
         0, 0, 0);
     river_puzzle_locate_cursor();
 
@@ -693,15 +696,15 @@ void river_puzzle_callback1_initialize() {
 
 void river_puzzle_initialize() {
   *var_access(LASTRESULT) = 0;
-  fmem.gp_state = malloc_and_clear(sizeof(river_puzzle_state_t));
-  DEBUG("Positions @%x\n", RIVER_PUZZLE_STATE);
-  RIVER_PUZZLE_STATE->cursor = 0;
-  RIVER_PUZZLE_STATE->cursor_side = RIVER_PUZZLE_WEST;
+  river_puzzle_state = malloc_and_clear(sizeof(river_puzzle_state_t));
+  DEBUG("Positions @%x\n", river_puzzle_state);
+  river_puzzle_state->cursor = 0;
+  river_puzzle_state->cursor_side = RIVER_PUZZLE_WEST;
   for (int i = 0; i < 6; i++) {
-    RIVER_PUZZLE_STATE->pokemon[i] = RIVER_PUZZLE_WEST;
+    river_puzzle_state->pokemon[i] = RIVER_PUZZLE_WEST;
   }
   for (int i = 0; i < 2; i++) {
-    RIVER_PUZZLE_STATE->boat[i] = RIVER_PUZZLE_BOAT_EMPTY;
+    river_puzzle_state->boat[i] = RIVER_PUZZLE_BOAT_EMPTY;
   }
   fadescreen_all(1, 0);
   callback1_set(river_puzzle_callback1_initialize);

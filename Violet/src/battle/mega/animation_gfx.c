@@ -61,7 +61,7 @@ const oam_template battle_animation_regent_sparkle_template = {
 };
 
 void battle_animation_mega_callback_load_gfx(u8 self) {
-    u8 battler_idx = battler_attacking_order[MEGA_STATE.mega_action_current_slot];
+    u8 battler_idx = battler_attacking_order[mega_state->mega_action_current_slot];
     const mega_evolution_t *mega_evolution = mega_evolution_get_by_mega_species(battlers[battler_idx].species);
     const graphic *g = NULL; const palette *p = NULL;
     if (mega_evolution->type == MEGA_EVOLUTION){
@@ -95,7 +95,7 @@ void battle_animation_mega_callback_load_gfx(u8 self) {
 }
 
 void battle_animation_mega_intialize_vars(u8 self) {
-    u8 battler_idx = battler_attacking_order[MEGA_STATE.mega_action_current_slot];
+    u8 battler_idx = battler_attacking_order[mega_state->mega_action_current_slot];
     battle_animation_user = battler_idx;
     battle_animation_target = battler_idx;
     battle_animation_big_callback_delete(self);

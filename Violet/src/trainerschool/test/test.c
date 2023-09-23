@@ -25,6 +25,8 @@
 #include "callbacks.h"
 #include "trainerschool_test.h"
 
+EWRAM trainerschool_test_state_t *trainerschool_test_state = NULL;
+
 #define TEST_TIME (60 * 60) // 1 minutes?
 
 const bg_config trainerschool_test_bg_configs[3] = {
@@ -164,12 +166,12 @@ static const oam_template trainerschool_test_oam_template_wrong = {
 };
 
 static void trainerschool_clock_callback(oam_object *self) {
-    if (TRAINER_SCHOOL_TEST_STATE->finished) {
+    if (trainerschool_test_state->finished) {
         return;
     }
-    u8 anim_idx = (u8)(TRAINER_SCHOOL_TEST_STATE->timer * 4 / TEST_TIME);
+    u8 anim_idx = (u8)(trainerschool_test_state->timer * 4 / TEST_TIME);
     // DEBUG("Anim idx %d\n", anim_idx);
-    DEBUG("Timer %d\n", TRAINER_SCHOOL_TEST_STATE->timer);
+    DEBUG("Timer %d\n", trainerschool_test_state->timer);
     if (anim_idx != self->anim_number) {
         self->anim_number = anim_idx;
         oam_gfx_anim_init(self, 0);
@@ -177,7 +179,7 @@ static void trainerschool_clock_callback(oam_object *self) {
     int frame = self->private[2]; // [0 to 63]
     self->private[2] = (u16)((self->private[2] + 1) % 64);
     // If 90% of the time is used up, the timer will fade red
-    if ((TRAINER_SCHOOL_TEST_STATE->timer * 10 / TEST_TIME) >= 9) {
+    if ((trainerschool_test_state->timer * 10 / TEST_TIME) >= 9) {
         (void)frame;
         if (!fading_control.active) {
             u8 alpha = (u8)MAX(0, 4 + sine((s16)(frame * 4), 4));
@@ -202,7 +204,7 @@ const u8 str_trainerschool_test_list[] = PSTRING("-");
 const u8 str_trainerschool_test_cursor[] = PSTRING("▶");
 
 void trainerschool_test_load_answers(){
-    u8 question = TRAINER_SCHOOL_TEST_STATE->current_question;
+    u8 question = trainerschool_test_state->current_question;
     DEBUG("Question %d\n", question);
     int i;
     for(i = 0; i < 5; i++){
@@ -212,7 +214,7 @@ void trainerschool_test_load_answers(){
         
         if(i < trainerschool_test_questions[question].answer_cnt){
             strcpy(strbuf, 
-                    TRAINER_SCHOOL_TEST_STATE->cursor == i ? str_trainerschool_test_cursor :
+                    trainerschool_test_state->cursor == i ? str_trainerschool_test_cursor :
                     str_trainerschool_test_list);
             strcat(strbuf, trainerschool_test_questions[question].answers[i]);
             tbox_print_string((u8)(i + 1), 2, 0, 0, 0, 0, 
@@ -231,8 +233,8 @@ void trainerschool_test_load_answers(){
 }
 
 void trainerschool_test_load_question(){
-    u8 question = TRAINER_SCHOOL_TEST_STATE->current_question;
-    TRAINER_SCHOOL_TEST_STATE->cursor = 0;
+    u8 question = trainerschool_test_state->current_question;
+    trainerschool_test_state->cursor = 0;
     //Print question
     
     tbox_flush_set(0, 0);
@@ -253,13 +255,13 @@ void trainerschool_test_done(){
 
 void trainerschool_test_question_done(){
     generic_callback1();
-    if(TRAINER_SCHOOL_TEST_STATE->delay) TRAINER_SCHOOL_TEST_STATE->delay--;
+    if(trainerschool_test_state->delay) trainerschool_test_state->delay--;
     else{
-        switch(TRAINER_SCHOOL_TEST_STATE->frame){
+        switch(trainerschool_test_state->frame){
             case 0:
-                TRAINER_SCHOOL_TEST_STATE->current_question++;
-                if(TRAINER_SCHOOL_TEST_STATE->current_question == 10){
-                    TRAINER_SCHOOL_TEST_STATE->finished = 1;
+                trainerschool_test_state->current_question++;
+                if(trainerschool_test_state->current_question == 10){
+                    trainerschool_test_state->finished = 1;
                     fadescreen_all(1, 0);
                     callback1_set(trainerschool_test_done);
                     return;
@@ -268,30 +270,30 @@ void trainerschool_test_question_done(){
                 play_sound(30);
                 bg_sync_display_and_show(1);
                 bg_display_sync();
-                oam_rotscale_free(&oams[TRAINER_SCHOOL_TEST_STATE->answer_oam]);
-                oam_delete(&oams[TRAINER_SCHOOL_TEST_STATE->answer_oam]);
+                oam_rotscale_free(&oams[trainerschool_test_state->answer_oam]);
+                oam_delete(&oams[trainerschool_test_state->answer_oam]);
                 lz77uncompwram(gfx_trainerschool_page_0Tiles, gp_tmp_buf);
                 lz77uncompwram(gfx_trainerschool_page_0Map, bg_get_tilemap(1));
                 bg_copy_vram(1, gp_tmp_buf, 0x1000, 0, 1);
                 bg_copy_vram(1, bg_get_tilemap(1), 0x800, 0, 2);
-                TRAINER_SCHOOL_TEST_STATE->delay = 10;
-                TRAINER_SCHOOL_TEST_STATE->frame++;
+                trainerschool_test_state->delay = 10;
+                trainerschool_test_state->frame++;
                 break;
             case 1:
                 lz77uncompwram(gfx_trainerschool_page_1Tiles, gp_tmp_buf);
                 lz77uncompwram(gfx_trainerschool_page_1Map, bg_get_tilemap(1));
                 bg_copy_vram(1, gp_tmp_buf, 0x1000, 0, 1);
                 bg_copy_vram(1, bg_get_tilemap(1), 0x800, 0, 2);
-                TRAINER_SCHOOL_TEST_STATE->delay = 10;
-                TRAINER_SCHOOL_TEST_STATE->frame++;
+                trainerschool_test_state->delay = 10;
+                trainerschool_test_state->frame++;
                 break;
             case 2:
                 lz77uncompwram(gfx_trainerschool_page_2Tiles, gp_tmp_buf);
                 lz77uncompwram(gfx_trainerschool_page_2Map, bg_get_tilemap(1));
                 bg_copy_vram(1, gp_tmp_buf, 0x1000, 0, 1);
                 bg_copy_vram(1, bg_get_tilemap(1), 0x800, 0, 2);
-                TRAINER_SCHOOL_TEST_STATE->delay = 10;
-                TRAINER_SCHOOL_TEST_STATE->frame++;
+                trainerschool_test_state->delay = 10;
+                trainerschool_test_state->frame++;
                 break;
             default:
                 bg_hide(1);
@@ -305,8 +307,8 @@ void trainerschool_test_question_done(){
 void trainerschool_times_up() {
     generic_callback1();
     if (!fading_control.active) {
-        if (TRAINER_SCHOOL_TEST_STATE->delay) {
-            TRAINER_SCHOOL_TEST_STATE->delay--;
+        if (trainerschool_test_state->delay) {
+            trainerschool_test_state->delay--;
             return;
         }
         fadescreen_all(1, 0);
@@ -318,47 +320,47 @@ void trainerschool_times_up() {
 
 void trainerschool_test_idle(){
     generic_callback1();
-    TRAINER_SCHOOL_TEST_STATE->timer++;
-    if (TRAINER_SCHOOL_TEST_STATE->timer >= TEST_TIME) {
-        TRAINER_SCHOOL_TEST_STATE->finished = 1;
-        TRAINER_SCHOOL_TEST_STATE->delay = 64;
+    trainerschool_test_state->timer++;
+    if (trainerschool_test_state->timer >= TEST_TIME) {
+        trainerschool_test_state->finished = 1;
+        trainerschool_test_state->delay = 64;
         play_sound(26);
         callback1_set(trainerschool_times_up);
         return;
     }
     if(super.keys_new.keys.down){
-        TRAINER_SCHOOL_TEST_STATE->cursor++;
-        TRAINER_SCHOOL_TEST_STATE->cursor = 
-        (u8)(TRAINER_SCHOOL_TEST_STATE->cursor %
-                trainerschool_test_questions[TRAINER_SCHOOL_TEST_STATE->current_question].answer_cnt);
+        trainerschool_test_state->cursor++;
+        trainerschool_test_state->cursor = 
+        (u8)(trainerschool_test_state->cursor %
+                trainerschool_test_questions[trainerschool_test_state->current_question].answer_cnt);
         play_sound(5);
         trainerschool_test_load_answers();
     }else if(super.keys_new.keys.up){
-        if(!TRAINER_SCHOOL_TEST_STATE->cursor)TRAINER_SCHOOL_TEST_STATE->cursor = (u8)
-                (trainerschool_test_questions[TRAINER_SCHOOL_TEST_STATE->current_question].answer_cnt - 1);
-        else TRAINER_SCHOOL_TEST_STATE->cursor--;
+        if(!trainerschool_test_state->cursor)trainerschool_test_state->cursor = (u8)
+                (trainerschool_test_questions[trainerschool_test_state->current_question].answer_cnt - 1);
+        else trainerschool_test_state->cursor--;
         play_sound(5);
         trainerschool_test_load_answers();
     }else if(super.keys_new.keys.A){
-        s16 y = (s16)(TRAINER_SCHOOL_TEST_STATE->cursor * 16 + 83);
-        u8 question = TRAINER_SCHOOL_TEST_STATE->current_question;
-        if(trainerschool_test_questions[question].correct_answer == TRAINER_SCHOOL_TEST_STATE->cursor){
+        s16 y = (s16)(trainerschool_test_state->cursor * 16 + 83);
+        u8 question = trainerschool_test_state->current_question;
+        if(trainerschool_test_questions[question].correct_answer == trainerschool_test_state->cursor){
             //correct answer
             fanfare(269);
             play_sound(12);
             (*var_access(TRAINERSCHOOL_CORRECT_ANSWERS))++;
-            TRAINER_SCHOOL_TEST_STATE->answer_oam = oam_new_forward_search(
+            trainerschool_test_state->answer_oam = oam_new_forward_search(
                 &trainerschool_test_oam_template_correct, 168, y, 0);
-            TRAINER_SCHOOL_TEST_STATE->delay = 0xC0;
-            TRAINER_SCHOOL_TEST_STATE->frame = 0;
+            trainerschool_test_state->delay = 0xC0;
+            trainerschool_test_state->frame = 0;
             callback1_set(trainerschool_test_question_done);
         }else{
             fanfare(271);
             play_sound(12);
-            TRAINER_SCHOOL_TEST_STATE->answer_oam = oam_new_forward_search(
+            trainerschool_test_state->answer_oam = oam_new_forward_search(
                 &trainerschool_test_oam_template_wrong, 168, y, 0);
-            TRAINER_SCHOOL_TEST_STATE->delay = 0xC0;
-            TRAINER_SCHOOL_TEST_STATE->frame = 0;
+            trainerschool_test_state->delay = 0xC0;
+            trainerschool_test_state->frame = 0;
             callback1_set(trainerschool_test_question_done);
         }
     }
@@ -437,10 +439,10 @@ void trainerschool_exam_init_components(){
 void trainerschool_exam_init(){
     generic_callback1();
     *var_access(TRAINERSCHOOL_CORRECT_ANSWERS) = 0;
-    fmem.gp_state = (trainerschool_test_memory*) malloc_and_clear(sizeof(trainerschool_test_memory));
-    TRAINER_SCHOOL_TEST_STATE->current_question = 0;
-    TRAINER_SCHOOL_TEST_STATE->timer = 0;
-    TRAINER_SCHOOL_TEST_STATE->finished = 0;
+    trainerschool_test_state = (trainerschool_test_state_t*) malloc_and_clear(sizeof(trainerschool_test_state_t));
+    trainerschool_test_state->current_question = 0;
+    trainerschool_test_state->timer = 0;
+    trainerschool_test_state->finished = 0;
     fadescreen_all(1, 0);
     callback1_set(trainerschool_exam_init_components);
     vblank_handler_set(generic_vblank_handler);

@@ -18,6 +18,10 @@
 #include "constants/mugshot_character.h"
 #include "bg.h"
 
+EWRAM u8 mugshot_oam_id = 0;
+EWRAM u8 mugshot_tb_id = 0;
+EWRAM mugshot_flags_t mugshot_flags = {0};
+
 const sprite mugshot_sprite = {0, 0xC000,  ATTR2_PRIO(1), 0};
 const sprite mugshot_sprite_prio0 = {0, 0xC000, ATTR2_PRIO(0), 0};
 
@@ -321,8 +325,8 @@ void mugshot_create_oam(int side, int idx, int emotion) {
 		pal_decompress(mugshots[idx].pal, (u16)(16 * (pal + 16)), 16 * sizeof(color_t));
 		pal_oam_apply_fading(pal);
 	}
-	fmem.mugshot_oam_id = oam_new_forward_search(mugshot_template, (s16) (32 + (side > 0) * 176), 80, 0);
-	fmem.mugshot_active = 1;
+	mugshot_oam_id = oam_new_forward_search(mugshot_template, (s16) (32 + (side > 0) * 176), 80, 0);
+	mugshot_flags.active = 1;
 }
 
 void mugshot_create_text(int side, const u8 *text) {
@@ -338,7 +342,7 @@ void mugshot_create_text(int side, const u8 *text) {
 		tbox_clear_bottom_line(box_id);
 		tbox_font_colormap fontcolmap = {1, 2, 1, 3};
 		tbox_print_string(box_id, 2, 16, 0, 0, 0, &fontcolmap, 0, strbuf);
-		fmem.mugshot_tb_id = box_id;
+		mugshot_tb_id = box_id;
 
 	}else{
 		tboxdata tbdata = {
@@ -351,17 +355,17 @@ void mugshot_create_text(int side, const u8 *text) {
 		tbox_frame_draw_outer(box_id, 1, 0xF);
 		tbox_font_colormap fontcolmap = {1, 2, 1, 3};
 		tbox_print_string(box_id, 2, 16, 0, 0, 0, &fontcolmap, 0, strbuf);
-		fmem.mugshot_tb_id = box_id;
+		mugshot_tb_id = box_id;
 	}
 }
 
 void mugshot_update() {
-	if (fmem.mugshot_active) {
-		u16 tag = oams[fmem.mugshot_oam_id].oam_template->tiles_tag;
+	if (mugshot_flags.active) {
+		u16 tag = oams[mugshot_oam_id].oam_template->tiles_tag;
 		int mugshot_idx = tag - MUGSHOT_BASE_TAG;
 		int emotion = *var_access(0x8000);
 		const u8 *gfx = mugshot_get_emotion_gfx(mugshot_idx, emotion);
-		u16 base_tile = oams[fmem.mugshot_oam_id].base_tile;
+		u16 base_tile = oams[mugshot_oam_id].base_tile;
 		lz77uncompvram(gfx, OAMCHARBASE(base_tile));
 	}
 }
@@ -394,7 +398,7 @@ void special_mugshot_show() {
 
 void special_mugshot_delete() {
 	// Delete the oam
-	u16 oam_id = fmem.mugshot_oam_id;
+	u16 oam_id = mugshot_oam_id;
 	u8 delete_oam_cb_id = big_callback_new(mugshot_delete_oam, 0);
 	big_callbacks[delete_oam_cb_id].params[0] = oam_id;
 	big_callbacks[delete_oam_cb_id].params[1] = 0;
@@ -403,7 +407,7 @@ void special_mugshot_delete() {
 
 	// Delete the text
 	u8 delete_tb_cb_id = big_callback_new(mugshot_delete_text, 0);
-	big_callbacks[delete_tb_cb_id].params[0] = fmem.mugshot_tb_id;
+	big_callbacks[delete_tb_cb_id].params[0] = mugshot_tb_id;
 	big_callbacks[delete_tb_cb_id].params[1] = 0;
 }
 
@@ -428,7 +432,7 @@ void mugshot_delete_oam(u8 self) {
 			++*state; // I frame delay
 			break;
 		default: {
-			fmem.mugshot_active = 0;
+			mugshot_flags.active = 0;
 			if (!big_callback_is_active(mugshot_wait_for_deletion)) {
 				big_callbacks[self].function = mugshot_wait_for_deletion;
 			} else {
@@ -480,7 +484,7 @@ void special_show_name() {
 void special_delete_name() {
 	// Delete the text
 	u8 delete_tb_cb_id = big_callback_new(mugshot_delete_text, 0);
-	big_callbacks[delete_tb_cb_id].params[0] = fmem.mugshot_tb_id;
+	big_callbacks[delete_tb_cb_id].params[0] = mugshot_tb_id;
 	big_callbacks[delete_tb_cb_id].params[1] = 0;
 }
 

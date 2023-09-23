@@ -26,7 +26,7 @@ int incubator_available_slots() {
 
 bool incubator_has_empty_slots() {
   for (int i = 0; i < incubator_available_slots(); i++) {
-    if (box_pokemon_get_attribute(&cmem.incubator_slots[i], ATTRIBUTE_SPECIES, 0) == 0) return true;
+    if (box_pokemon_get_attribute(&csave.incubator_slots[i], ATTRIBUTE_SPECIES, 0) == 0) return true;
   }
   return false;
 }
@@ -41,13 +41,13 @@ int incubator_egg_get_progress(const box_pokemon *egg) {
 }
 
 void incubator_remove_egg(int slot, box_pokemon *target) {
-  if (target) memcpy(target, &cmem.incubator_slots[slot], sizeof(box_pokemon));
-  memset(&cmem.incubator_slots[slot], 0, sizeof(box_pokemon));
+  if (target) memcpy(target, &csave.incubator_slots[slot], sizeof(box_pokemon));
+  memset(&csave.incubator_slots[slot], 0, sizeof(box_pokemon));
 }
 
 void incubator_clear() {
   for (int i = 0; i < 3; i++) {
-    memset(&cmem.incubator_slots[i], 0, sizeof(box_pokemon));
+    memset(&csave.incubator_slots[i], 0, sizeof(box_pokemon));
   }
 }
 

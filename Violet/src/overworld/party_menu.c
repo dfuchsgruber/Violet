@@ -19,6 +19,8 @@
 #include "pokemon/move_relearner.h"
 #include "constants/move_tutor.h"
 
+EWRAM bool (*pokemon_party_menu_choose_mon_generic_mon_is_eligible)(pokemon*) = NULL;
+
 void pokemon_party_menu_options_build(pokemon *base, u8 index) {
     pokemon_party_menu_options_state_t *options_state = pokemon_party_menu_state.options_state;
     options_state->number_options = 0;
@@ -166,7 +168,7 @@ static bool accessible_move_tutor_pokemon_is_eligible(pokemon *p) {
 
 void overworld_accessible_move_tutor_select_pokemon() {
     overworld_script_set_active();
-    fmem.pokemon_party_menu_choose_mon_generic_mon_is_eligible = accessible_move_tutor_pokemon_is_eligible;
+    pokemon_party_menu_choose_mon_generic_mon_is_eligible = accessible_move_tutor_pokemon_is_eligible;
     u8 cb_idx = big_callback_new(pokemon_party_menu_initialize_and_select_pokemon_after_fadescreen, 10);
     big_callbacks[cb_idx].params[0] = PARTY_MENU_TYPE_CHOOSE_MON_WITH_GENERIC_RESTRICTIONS;
     // fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
@@ -177,8 +179,8 @@ bool pokemon_party_menu_display_party_pokemon_data_for_move_tutor_or_evolution_i
     pokemon *p = player_pokemon + slot;
     u16 item = item_activated;
     if (pokemon_party_menu_state.menu_type == PARTY_MENU_TYPE_CHOOSE_MON_WITH_GENERIC_RESTRICTIONS &&
-        fmem.pokemon_party_menu_choose_mon_generic_mon_is_eligible) {
-        if (fmem.pokemon_party_menu_choose_mon_generic_mon_is_eligible(p)) {
+        pokemon_party_menu_choose_mon_generic_mon_is_eligible) {
+        if (pokemon_party_menu_choose_mon_generic_mon_is_eligible(p)) {
             pokemon_party_menu_render_box_display_description(slot, PARTY_MENU_BOX_DESCRIPTION_ABLE);
         } else { 
             pokemon_party_menu_render_box_display_description(slot, PARTY_MENU_BOX_DESCRIPTION_NOT_ABLE);

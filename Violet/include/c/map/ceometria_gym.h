@@ -27,8 +27,8 @@ enum ceometria_gym_person_types {
 
 #define CEOMETRIA_GYM_PUNISHMENT_SCORE_MAX 64
 #define CEOMETRIA_GYM_NON_TRAINER_SCORE_MAX 64
-#define CEOMETRIA_GYM_PUNISHMENT_SCORE_ADD(x) cmem.ceometria_gym_state.punishment_score = (u8)MIN(cmem.ceometria_gym_state.punishment_score + (x), CEOMETRIA_GYM_PUNISHMENT_SCORE_MAX)
-#define CEOMETRIA_GYM_NON_TRAINER_SCORE_ADD(x) cmem.ceometria_gym_state.non_trainer_score = (u8)MIN(cmem.ceometria_gym_state.non_trainer_score + (x), CEOMETRIA_GYM_NON_TRAINER_SCORE_MAX)
+#define CEOMETRIA_GYM_PUNISHMENT_SCORE_ADD(x) csave.ceometria_gym_state.punishment_score = (u8)MIN(csave.ceometria_gym_state.punishment_score + (x), CEOMETRIA_GYM_PUNISHMENT_SCORE_MAX)
+#define CEOMETRIA_GYM_NON_TRAINER_SCORE_ADD(x) csave.ceometria_gym_state.non_trainer_score = (u8)MIN(csave.ceometria_gym_state.non_trainer_score + (x), CEOMETRIA_GYM_NON_TRAINER_SCORE_MAX)
 
 
 typedef struct {

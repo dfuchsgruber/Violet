@@ -22,7 +22,7 @@
 #include "music.h"
 #include "dma.h"
 #include "callbacks.h"
-
+#include "pokepad/pokedex/state.h"
 
 void _pokedex_feature_scanner_sort_entries_swap(u16 entries[][2], int i, int j){
     u16 tmp[2];
@@ -66,7 +66,7 @@ int _pokedex_feature_scanner_build_entries(const wild_pokemon_entry *wild_entrie
 
 void pokedex_feature_scanner_entries_add_roamers(pokedex_scanner_state *state) {
     for (int i = 0; i < NUM_ROAMERS; i++) {
-        if (cmem.roamers[i].is_present && cmem.roamer_locations[i].bank == save1->bank && cmem.roamer_locations[i].map_idx == save1->map) {
+        if (csave.roamers[i].is_present && csave.roamer_locations[i].bank == save1->bank && csave.roamer_locations[i].map_idx == save1->map) {
             // 50% probability that the roamer appears, so all percentages must be multiplied by 1/2
             // If multiple roamers were present at this map, only the first roamer appears, so we only list one
             int total_percentage_values = 0;
@@ -342,7 +342,7 @@ void pokedex_callback_feature_scanner_selection_fade(pokedex_scanner_state *stat
 
 void pokedex_callback_feature_scanner_clear(){
     
-    pokedex_scanner_state *state = fmem.dex_mem->scanner_state;
+    pokedex_scanner_state *state = pokedex_state->scanner_state;
     
     // Clear the oams
     for(int i = 0; i < 13; i++){
@@ -430,7 +430,7 @@ const u8 str_pokedex_feature_scanner_super_rod[] = LANGDEP(PSTRING("Superangel")
 
 void pokedex_callback_feature_scanner_load(){
     
-    pokedex_scanner_state *state = fmem.dex_mem->scanner_state;
+    pokedex_scanner_state *state = pokedex_state->scanner_state;
     
     // Print the selected entry list
     switch(state->selected_area){
@@ -495,7 +495,7 @@ void pokedex_callback_feature_scanner_return(){
         free(bg_get_tilemap(1));
         tbox_free_all();
         
-        free(fmem.dex_mem->scanner_state);
+        free(pokedex_state->scanner_state);
         
         pokedex_init_components();
         pokedex_update_list();
@@ -509,7 +509,7 @@ void pokedex_callback_feature_scanner_return(){
 void pokedex_callback_feature_scanner_idle(){
     generic_callback1();
     if(!fading_is_active()){
-        pokedex_scanner_state *state = fmem.dex_mem->scanner_state;
+        pokedex_scanner_state *state = pokedex_state->scanner_state;
         pokedex_callback_feature_scanner_selection_fade(state);
         if(super.keys_new.keys.right){
             state->selected_area++;
@@ -534,7 +534,7 @@ void pokedex_callback_init_feature_scanner() {
     generic_callback1();
     if (!fading_is_active()) {
         pokedex_scanner_state *state = malloc_and_clear(sizeof(pokedex_scanner_state));
-        fmem.dex_mem->scanner_state = state;
+        pokedex_state->scanner_state = state;
         pokedex_free_maps();
         pokedex_feature_scanner_build_entries(state);
         _pokedex_callback_init_feature_scanner(state);

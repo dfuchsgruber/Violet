@@ -71,30 +71,30 @@ static int dungeon2_get_cave_num_patterns(dungeon_generator2 *dg2) {
 
 map_footer_t *dungeon2_init_footer_cave(dungeon_generator2 *dg2){
     const map_footer_t *footer = dungeon2_get_cave_type_pattern(dg2);
-    fmem.dmapfooter.width = (u32)dg2->width;
-    fmem.dmapfooter.height = (u32)dg2->height;
-    fmem.dmapfooter.tileset1 = footer->tileset1;
-    fmem.dmapfooter.tileset2 = footer->tileset2;
-    fmem.dmapfooter.border_blocks = footer->border_blocks;
-    fmem.dmapfooter.border_width = footer->border_width;
-    fmem.dmapfooter.border_height = footer->border_height;
-    fmem.dmapfooter.map = dungeon2_cave_map_empty;
-    return &(fmem.dmapfooter);
+    dynamic_map_footer.width = (u32)dg2->width;
+    dynamic_map_footer.height = (u32)dg2->height;
+    dynamic_map_footer.tileset1 = footer->tileset1;
+    dynamic_map_footer.tileset2 = footer->tileset2;
+    dynamic_map_footer.border_blocks = footer->border_blocks;
+    dynamic_map_footer.border_width = footer->border_width;
+    dynamic_map_footer.border_height = footer->border_height;
+    dynamic_map_footer.map = dungeon2_cave_map_empty;
+    return &(dynamic_map_footer);
 }
 
 static void dungeon_cave_tent_initialize_events(dungeon_generator2 *dg2) {
-    u8 num_warps = fmem.dmapevents.warp_cnt;
+    u8 num_warps = dynamic_map_event_header.warp_cnt;
     int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_cave_num_patterns(dg2);
-    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_warps <= ARRAY_COUNT(fmem.dwarps); j++) {
-        fmem.dwarps[num_warps].x = (s16)(nodes[DG2_NODE_PATTERN + j][0]);
-        fmem.dwarps[num_warps].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + 1);
-        fmem.dwarps[num_warps].target_warp_id = 0;
-        fmem.dwarps[num_warps].target_map = DG2_CAVE_TENT_MAP;
-        fmem.dwarps[num_warps].target_bank = DG2_BANK;
+    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_warps <= ARRAY_COUNT(dynamic_warps); j++) {
+        dynamic_warps[num_warps].x = (s16)(nodes[DG2_NODE_PATTERN + j][0]);
+        dynamic_warps[num_warps].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + 1);
+        dynamic_warps[num_warps].target_warp_id = 0;
+        dynamic_warps[num_warps].target_map = DG2_CAVE_TENT_MAP;
+        dynamic_warps[num_warps].target_bank = DG2_BANK;
         num_warps++;
     }
-    fmem.dmapevents.warp_cnt = num_warps;
+    dynamic_map_event_header.warp_cnt = num_warps;
 }
 
 static void dungeon_ice_cave_initialize_events(dungeon_generator2 *dg2) {
@@ -104,33 +104,33 @@ static void dungeon_ice_cave_initialize_events(dungeon_generator2 *dg2) {
 static void dungeon_sand_cave_initialize_events(dungeon_generator2 *dg2) {
     int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_cave_num_patterns(dg2);
-    u8 num_persons = fmem.dmapevents.person_cnt;
-    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_persons <= ARRAY_COUNT(fmem.dpersons); j++) {
-        fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0]);
-        fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1]);
-        fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
-        fmem.dpersons[num_persons].overworld_index = 101;
-        fmem.dpersons[num_persons].script_std = PERSON_EGG;
-        fmem.dpersons[num_persons].value = POKEMON_LARVITAR;
-        fmem.dpersons[num_persons].flag = (u16)(FLAG_DUNGEON_GP + j);
+    u8 num_persons = dynamic_map_event_header.person_cnt;
+    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_persons <= ARRAY_COUNT(dynamic_persons); j++) {
+        dynamic_persons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0]);
+        dynamic_persons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1]);
+        dynamic_persons[num_persons].target_index = (u8)(num_persons + 1);
+        dynamic_persons[num_persons].overworld_index = 101;
+        dynamic_persons[num_persons].script_std = PERSON_EGG;
+        dynamic_persons[num_persons].value = POKEMON_LARVITAR;
+        dynamic_persons[num_persons].flag = (u16)(FLAG_DUNGEON_GP + j);
         num_persons++;
     }
-    fmem.dmapevents.person_cnt = num_persons;
+    dynamic_map_event_header.person_cnt = num_persons;
 }
 
 static void dungeon_dragon_cave_initialize_events(dungeon_generator2 *dg2) {
-    u8 num_warps = fmem.dmapevents.warp_cnt;
+    u8 num_warps = dynamic_map_event_header.warp_cnt;
     int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_cave_num_patterns(dg2);
-    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_warps <= ARRAY_COUNT(fmem.dwarps); j++) {
-        fmem.dwarps[num_warps].x = (s16)(nodes[DG2_NODE_PATTERN + j][0]);
-        fmem.dwarps[num_warps].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + 3);
-        fmem.dwarps[num_warps].target_warp_id = 0;
-        fmem.dwarps[num_warps].target_map = DG2_CAVE_DRAGON_CAVE_MAP;
-        fmem.dwarps[num_warps].target_bank = DG2_BANK;
+    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_warps <= ARRAY_COUNT(dynamic_warps); j++) {
+        dynamic_warps[num_warps].x = (s16)(nodes[DG2_NODE_PATTERN + j][0]);
+        dynamic_warps[num_warps].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + 3);
+        dynamic_warps[num_warps].target_warp_id = 0;
+        dynamic_warps[num_warps].target_map = DG2_CAVE_DRAGON_CAVE_MAP;
+        dynamic_warps[num_warps].target_bank = DG2_BANK;
         num_warps++;
     }
-    fmem.dmapevents.warp_cnt = num_warps;
+    dynamic_map_event_header.warp_cnt = num_warps;
 }
 
 const u16 dungeon_steel_cave_special_items[] = {
@@ -144,19 +144,19 @@ static const s16 dungeon_steel_cave_special_item_positions[3][2] = {
 static void dungeon_steel_cave_initialize_events(dungeon_generator2 *dg2) {
     int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_cave_num_patterns(dg2);
-    u8 num_persons = fmem.dmapevents.person_cnt;
-    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_persons <= ARRAY_COUNT(fmem.dpersons); j++) {
+    u8 num_persons = dynamic_map_event_header.person_cnt;
+    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_persons <= ARRAY_COUNT(dynamic_persons); j++) {
         int pos_idx = dungeon2_rnd_16(dg2) % ARRAY_COUNT(dungeon_steel_cave_special_item_positions);
-        fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] + dungeon_steel_cave_special_item_positions[pos_idx][0]);
-        fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + dungeon_steel_cave_special_item_positions[pos_idx][1]);
-        fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
-        fmem.dpersons[num_persons].overworld_index = 92;
-        fmem.dpersons[num_persons].script_std = PERSON_ITEM;
-        fmem.dpersons[num_persons].value = dungeon_steel_cave_special_items[dungeon2_rnd_16(dg2) % ARRAY_COUNT(dungeon_steel_cave_special_items)];
-        fmem.dpersons[num_persons].flag = (u16)(FLAG_DUNGEON_GP + j);
+        dynamic_persons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] + dungeon_steel_cave_special_item_positions[pos_idx][0]);
+        dynamic_persons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] + dungeon_steel_cave_special_item_positions[pos_idx][1]);
+        dynamic_persons[num_persons].target_index = (u8)(num_persons + 1);
+        dynamic_persons[num_persons].overworld_index = 92;
+        dynamic_persons[num_persons].script_std = PERSON_ITEM;
+        dynamic_persons[num_persons].value = dungeon_steel_cave_special_items[dungeon2_rnd_16(dg2) % ARRAY_COUNT(dungeon_steel_cave_special_items)];
+        dynamic_persons[num_persons].flag = (u16)(FLAG_DUNGEON_GP + j);
         num_persons++;
     }
-    fmem.dmapevents.person_cnt = num_persons;
+    dynamic_map_event_header.person_cnt = num_persons;
 }
 
 const u16 dungeon_fossil_cave_fossils[] = {
@@ -166,18 +166,18 @@ const u16 dungeon_fossil_cave_fossils[] = {
 static void dungeon_fossil_cave_initialize_events(dungeon_generator2 *dg2) {
     int (*nodes)[2] = save1->dungeon_nodes;
     int num_patterns = dungeon2_get_cave_num_patterns(dg2);
-    u8 num_persons = fmem.dmapevents.person_cnt;
-    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_persons <= ARRAY_COUNT(fmem.dpersons); j++) {
-        fmem.dpersons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] + 0);
-        fmem.dpersons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] - 3);
-        fmem.dpersons[num_persons].target_index = (u8)(num_persons + 1);
-        fmem.dpersons[num_persons].overworld_index = 98;
-        fmem.dpersons[num_persons].script_std = PERSON_ITEM;
-        fmem.dpersons[num_persons].value = dungeon_fossil_cave_fossils[dungeon2_rnd_16(dg2) % ARRAY_COUNT(dungeon_fossil_cave_fossils)];
-        fmem.dpersons[num_persons].flag = (u16)(FLAG_DUNGEON_GP + j);
+    u8 num_persons = dynamic_map_event_header.person_cnt;
+    for (int j = 0; j < MIN(DG2_MAX_NUM_PATTERNS, num_patterns) && num_persons <= ARRAY_COUNT(dynamic_persons); j++) {
+        dynamic_persons[num_persons].x = (s16)(nodes[DG2_NODE_PATTERN + j][0] + 0);
+        dynamic_persons[num_persons].y = (s16)(nodes[DG2_NODE_PATTERN + j][1] - 3);
+        dynamic_persons[num_persons].target_index = (u8)(num_persons + 1);
+        dynamic_persons[num_persons].overworld_index = 98;
+        dynamic_persons[num_persons].script_std = PERSON_ITEM;
+        dynamic_persons[num_persons].value = dungeon_fossil_cave_fossils[dungeon2_rnd_16(dg2) % ARRAY_COUNT(dungeon_fossil_cave_fossils)];
+        dynamic_persons[num_persons].flag = (u16)(FLAG_DUNGEON_GP + j);
         num_persons++;
     }
-    fmem.dmapevents.person_cnt = num_persons;
+    dynamic_map_event_header.person_cnt = num_persons;
 }
 
 static void dungeon_pattern_fill_none(u8 *map, int x, int y, int w, int h, dungeon_generator2 *dg2) {
@@ -420,30 +420,30 @@ void dungeon2_init_wild_pokemon_cave(dungeon_generator2 *dg2) {
 
     *var_access(DUNGEON_OVERWORLD_SPECIES) = super_rare_pokemon[0];
 
-    fmem.dwild_pokemon.grass = &(fmem.dwild_habitat_grass);
-    fmem.dwild_pokemon.water = NULL;
-    fmem.dwild_pokemon.other = NULL;
-    fmem.dwild_pokemon.rod = NULL;
-    fmem.dwild_habitat_grass.frequency = DTYPE_CAVE_WILD_POKEMON_FREQUENCY;
-    fmem.dwild_habitat_grass.data = fmem.dwild_data_grass;
+    dynamic_wild_pokemon.grass = &(dynamic_wild_pokemon_habitat_grass);
+    dynamic_wild_pokemon.water = NULL;
+    dynamic_wild_pokemon.other = NULL;
+    dynamic_wild_pokemon.rod = NULL;
+    dynamic_wild_pokemon_habitat_grass.frequency = DTYPE_CAVE_WILD_POKEMON_FREQUENCY;
+    dynamic_wild_pokemon_habitat_grass.data = dynamic_wild_pokemon_entries_grass;
 
     // Each of the common pokemon has a 20% probability
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_0_20_PERCENT].species = common_pokemon[0];
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_1_20_PERCENT].species = common_pokemon[1];
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_2_10_PERCENT].species = common_pokemon[2];
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_3_10_PERCENT].species = common_pokemon[2];
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_4_10_PERCENT].species = common_pokemon[3];
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_5_10_PERCENT].species = common_pokemon[3];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_0_20_PERCENT].species = common_pokemon[0];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_1_20_PERCENT].species = common_pokemon[1];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_2_10_PERCENT].species = common_pokemon[2];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_3_10_PERCENT].species = common_pokemon[2];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_4_10_PERCENT].species = common_pokemon[3];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_5_10_PERCENT].species = common_pokemon[3];
 
     // The first rare pokemon has a 14% probability
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_6_5_PERCENT].species = rare_pokemon[0];
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_7_5_PERCENT].species = rare_pokemon[0];
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_8_4_PERCENT].species = rare_pokemon[0];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_6_5_PERCENT].species = rare_pokemon[0];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_7_5_PERCENT].species = rare_pokemon[0];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_8_4_PERCENT].species = rare_pokemon[0];
 
     // The other rare pokemon has a 6% probability
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_9_4_PERCENT].species = rare_pokemon[1];
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_10_1_PERCENT].species = rare_pokemon[1];
-    fmem.dwild_data_grass[WILD_POKEMON_DENSITY_GRASS_11_1_PERCENT].species = rare_pokemon[1];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_9_4_PERCENT].species = rare_pokemon[1];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_10_1_PERCENT].species = rare_pokemon[1];
+    dynamic_wild_pokemon_entries_grass[WILD_POKEMON_DENSITY_GRASS_11_1_PERCENT].species = rare_pokemon[1];
 
     u8 mean = 0;
     u8 std_deviation = 0;
@@ -454,13 +454,13 @@ void dungeon2_init_wild_pokemon_cave(dungeon_generator2 *dg2) {
     for(int i = 0; i < 12; i++) {
         dungeon2_wild_pokemon_sample_level_boundaries(&level_min, &level_max,
             (i < 6) ? mean : (u8)(mean + std_deviation), std_deviation, dg2);
-        fmem.dwild_data_grass[i].level_min = level_min;
-        fmem.dwild_data_grass[i].level_max = level_max;
+        dynamic_wild_pokemon_entries_grass[i].level_min = level_min;
+        dynamic_wild_pokemon_entries_grass[i].level_max = level_max;
     }
 }
 
 void dungeon2_set_encounter_cave() {
-  dungeon_generator2 *dg2 = &(cmem.dg2);
+  dungeon_generator2 *dg2 = &(csave.dg2);
   dungeon2_cave_initialize_state(dg2);
   pokemon_clear_opponent_party();
 
@@ -481,26 +481,26 @@ void dungeon2_set_encounter_cave() {
 
 map_header_t *dungeon2_init_header_cave(dungeon_generator2 *dg2) {
     DEBUG("D2 header init\n");
-    fmem.dmap_header_initialized = 1;
-    fmem.dmapheader.levelscripts = dungeon2_lscr;
-    fmem.dmapheader.connections = &dungeon2_connections;
-    fmem.dmapheader.music = 0x14b;
-    fmem.dmapheader.map_namespace = mapheader_virtual.map_namespace;
-    fmem.dmapheader.flash_type = 0;
-    fmem.dmapheader.weather = dungeon_cave_types[dungeon2_get_cave_type(dg2)].map_weather;
-    fmem.dmapheader.type = MAP_TYPE_BASEMENT;
-    fmem.dmapheader.show_name = 0;
-    fmem.dmapheader.battle_style = 0;
-    fmem.dmapheader.events = dungeon2_init_events_cave(dg2);
-    fmem.dmapheader.footer = dungeon2_init_footer_cave(dg2);
-    fmem.dmapheader.footer_idx = DG2_FOOTER_IDX;
-    return &(fmem.dmapheader);
+    dmap_flags.header_initialized = 1;
+    dynamic_map_header.levelscripts = dungeon2_lscr;
+    dynamic_map_header.connections = &dungeon2_connections;
+    dynamic_map_header.music = 0x14b;
+    dynamic_map_header.map_namespace = mapheader_virtual.map_namespace;
+    dynamic_map_header.flash_type = 0;
+    dynamic_map_header.weather = dungeon_cave_types[dungeon2_get_cave_type(dg2)].map_weather;
+    dynamic_map_header.type = MAP_TYPE_BASEMENT;
+    dynamic_map_header.show_name = 0;
+    dynamic_map_header.battle_style = 0;
+    dynamic_map_header.events = dungeon2_init_events_cave(dg2);
+    dynamic_map_header.footer = dungeon2_init_footer_cave(dg2);
+    dynamic_map_header.footer_idx = DG2_FOOTER_IDX;
+    return &(dynamic_map_header);
 }
 
 map_event_header_t *dungeon2_init_events_cave(dungeon_generator2 *dg2){
     dungeon2_initialize_std_events(dg2, dungeon_cave_pick_item);
     dungeon_cave_types[dungeon2_get_cave_type(dg2)].event_init(dg2);
-    return &(fmem.dmapevents);
+    return &(dynamic_map_event_header);
 }
 
 static void dungeon2_compute_blocks_cave(u8 *map, u8 *over, dungeon_generator2 *dg2){
@@ -543,11 +543,11 @@ void dungeon2_cave_initialize_state(dungeon_generator2 *dg2) {
 }
 
 void dungeon2_initialize_cave(){
-    dungeon_generator2 *dg2 = &(cmem.dg2);
+    dungeon_generator2 *dg2 = &(csave.dg2);
     dungeon2_cave_initialize_state(dg2);
     dungeon2_init_wild_pokemon_cave(dg2); // Initialize before events since persons depend
     dungeon2_init_header_cave(dg2);
-    fmem.dmap_header_initialized = 1;
+    dmap_flags.header_initialized = 1;
 }
 
 void dungeon2_compute_layout_cave_callback(u8 self) {
@@ -632,7 +632,7 @@ void dungeon2_compute_layout_cave_callback(u8 self) {
 
 
 void dungeon2_compute_layout_cave() {
-    dungeon_generator2 *dg2 = &(cmem.dg2);
+    dungeon_generator2 *dg2 = &(csave.dg2);
     dungeon2_cave_initialize_state(dg2);
     u8 cb_idx = big_callback_new(dungeon2_compute_layout_cave_callback, 0);
     big_callback_set_int(cb_idx, 2, (int)dg2);
@@ -656,7 +656,7 @@ void dungeon2_enter_cave() {
     dungeon2_reset_flags();
 
     // Get the warp node (first node in the cave)
-    dungeon_generator2 *dg2 = &(cmem.dg2);
+    dungeon_generator2 *dg2 = &(csave.dg2);
     dungeon2_cave_initialize_state(dg2);
     int (*nodes)[2] = save1->dungeon_nodes;
     s16 x = (s16)(nodes[0][0]);

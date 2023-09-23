@@ -61,7 +61,7 @@ typedef struct {
     u16 max_quantity; // How exemplars many can be crafted at max
     u16 quantity; // How many exemplars will be crafted currently
 
-} crafting_ui_state;
+} crafting_ui_state_t;
 
 /**
  * Reinitializes the ui state.
@@ -117,7 +117,7 @@ bool recipe_use(const crafting_recipe *r, u16 count);
  **/
 u16 recipe_max_count_with_requirements_fulfilled(const crafting_recipe *r);
 
-#define CRAFTING_UI_STATE ((crafting_ui_state*)fmem.gp_state)
+extern EWRAM crafting_ui_state_t *crafting_ui_state;
 
 #define CAULDRON_ITEM_BASE_TAG 0x1111
 #define CAULDRON_LIGHT_TAG 0x7663
@@ -142,16 +142,16 @@ typedef struct {
         u16 list_menu_cursor_positions[CRAFTING_TYPE_CNT]; // Remember where the cursor was for each category
         u16 list_menu_cursor_above[CRAFTING_TYPE_CNT]; // Remember where the cursor was for each category
     } saved_ui_state; // For reinitialization
-} cauldron_scene_state;
+} cauldron_scene_state_t;
 
-#define CAULDRON_SCENE_STATE ((cauldron_scene_state*)fmem.gp_state)
+extern EWRAM cauldron_scene_state_t *cauldron_scene_state;
 
 /**
  * Initializes the cauldron scene with a recipe. Assumes that the screen is already faded and the previous scene has freed its additional allocated memory
  * @param recipe with which recipe the cauldron scene is initializes
  * @param ui_state form which ui the cauldron is initialized, this is needed to backup the cursor positions
  **/
-void cauldron_scene_initialize(const crafting_recipe *recipe, crafting_ui_state *ui_state);
+void cauldron_scene_initialize(const crafting_recipe *recipe, crafting_ui_state_t *ui_state);
 
 
 // Crafting UI gfx

@@ -29,6 +29,7 @@ typedef struct mapfooter {
 
 
 extern const map_footer_t *const mapfooters[];
+extern EWRAM map_footer_t dynamic_map_footer;
 
 const map_footer_t *get_mapfooter();
 

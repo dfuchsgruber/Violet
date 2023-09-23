@@ -374,8 +374,8 @@ bool item_effect_execute_golden_apple(pokemon *p, u16 item, u8 battler_idx, u8 m
     (void)p; (void)item; (void)move_idx; (void)party_idx; (void)hold_effect; (void) calculate_heal_only;
     if (effect->golden_apple && battler_idx < 4) {
         if (!check_only) 
-            BATTLE_STATE2->status_custom_persistent[battler_idx] |= CUSTOM_STATUS_PERSISTENT_GOLDEN_APPLE_PROTECTION;
-        DEBUG("Golden Apple protection battler %d, status is %x\n", battler_idx, BATTLE_STATE2->status_custom_persistent[battler_idx]);
+            battle_state2->status_custom_persistent[battler_idx] |= CUSTOM_STATUS_PERSISTENT_GOLDEN_APPLE_PROTECTION;
+        DEBUG("Golden Apple protection battler %d, status is %x\n", battler_idx, battle_state2->status_custom_persistent[battler_idx]);
         return true;
     }
     return false;
@@ -443,12 +443,12 @@ bool item_effect(pokemon *p, u16 item, u8 party_idx, u8 move_idx, bool calculate
 
 bool _item_effect_unapplicable_fmem_hooked(pokemon *p, u16 item, u8 party_idx, u8 move_idx) {
     (void)p;
-    return !item_effect((pokemon*)fmem._hook_tmp_, item, party_idx, move_idx, false, true);
+    return !item_effect((pokemon*)hook_tmp, item, party_idx, move_idx, false, true);
 }
 
 bool item_effect_apply(pokemon *p, u16 item, u8 party_idx, u8 move_idx, bool calculate_hp_heal_only) {
     (void)p;
-    return !item_effect((pokemon*)fmem._hook_tmp_, item, party_idx, move_idx, calculate_hp_heal_only, false);
+    return !item_effect((pokemon*)hook_tmp, item, party_idx, move_idx, calculate_hp_heal_only, false);
 }
 
 u8 item_get_effect_type(u16 item) {

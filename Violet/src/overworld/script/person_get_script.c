@@ -15,6 +15,7 @@
 #include "pokemon/virtual.h"
 #include "prng.h"
 #include "battle/state.h"
+#include "trainer/trainer.h"
 
 extern const u8 ow_script_person_pokeball[];
 extern const u8 ow_script_person_egg[];
@@ -36,7 +37,7 @@ extern const u8 ow_script_recipe[];
 void battle_initialize_aggressive_wild() {
 	super.saved_callback = battle_continuation_wild_legendary_battle_end;
 	battle_flags = BATTLE_AGGRESSIVE_WILD | BATTLE_LEGENDARY;
-	if (fmem.trainers_cnt > 1)
+	if (trainers_cnt > 1)
 		battle_flags |= BATTLE_DOUBLE;
 	battle_initialize(battle_get_intro_type(), 0);
 	save_increment_key(8);

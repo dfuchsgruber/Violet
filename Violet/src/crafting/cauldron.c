@@ -20,6 +20,8 @@
 #include "overworld/script.h"
 #include "text.h"
 
+EWRAM cauldron_scene_state_t *cauldron_scene_state = NULL;
+
 static void cauldron_scene_step1_create_dropping_item(u16 frame);
 
 static const bg_config cauldron_bg_configs[] = {
@@ -36,8 +38,8 @@ static const tboxdata cauldron_tboxes[] = {
 
 static void cauldron_bg_scrolling_proceed() {
     for (int i = 0; i < 4; i++) {
-        u16 h_offset = (u16)(CAULDRON_SCENE_STATE->bg_horizontal_origin + CAULDRON_SCENE_STATE->bg_horizontal_scrolling[i]);
-        u16 v_offset = (u16)(CAULDRON_SCENE_STATE->bg_vertical_origin + CAULDRON_SCENE_STATE->bg_vertical_scrolling[i]);
+        u16 h_offset = (u16)(cauldron_scene_state->bg_horizontal_origin + cauldron_scene_state->bg_horizontal_scrolling[i]);
+        u16 v_offset = (u16)(cauldron_scene_state->bg_vertical_origin + cauldron_scene_state->bg_vertical_scrolling[i]);
         io_set((u16)(IO_BGHOFS(i)), h_offset);
         io_set((u16)(IO_BGVOFS(i)), v_offset);
     }
@@ -78,17 +80,17 @@ static void cauldron_light_oam_callback (oam_object *self) {
     u16 color = self->private[2];
     u16 duration = self->private[3];
     if (++*frame >= duration) {
-        CAULDRON_SCENE_STATE->lights_number_active--;
+        cauldron_scene_state->lights_number_active--;
         *frame = 0;
         oam_gfx_anim_start_if_not_current(self, (u8)(type * 3 + color));
     }
-    self->y2 = (s16)(-CAULDRON_SCENE_STATE->bg_vertical_origin);
-    self->x2 = (s16)(-CAULDRON_SCENE_STATE->bg_horizontal_origin);
+    self->y2 = (s16)(-cauldron_scene_state->bg_vertical_origin);
+    self->x2 = (s16)(-cauldron_scene_state->bg_horizontal_origin);
 }
 
 static void cauldron_light_initialize_all(u16 duration) {
-    for (u8 i = 0; i < ARRAY_COUNT(CAULDRON_SCENE_STATE->oams_lights); i++) {
-        oam_object *o = oams + CAULDRON_SCENE_STATE->oams_lights[i];
+    for (u8 i = 0; i < ARRAY_COUNT(cauldron_scene_state->oams_lights); i++) {
+        oam_object *o = oams + cauldron_scene_state->oams_lights[i];
         o->private[3] = (u16)(3 * duration);
         o->private[0] = (u16)(i * duration); // make them light with delay
     }
@@ -157,8 +159,8 @@ static void cauldron_item_callback(oam_object *self) {
     FIXED t = INT_TO_FIXED(frame);
     FIXED y = FIXED_MUL(a, FIXED_MUL(t, t)); // y = at^2
     FIXED x = FIXED_MUL(vx, t); // x = vt
-    self->y2 = (s16)(FIXED_TO_INT(y) + CAULDRON_SCENE_STATE->bg_vertical_origin);
-    self->x2 = (s16)(-FIXED_TO_INT(x) + CAULDRON_SCENE_STATE->bg_horizontal_origin);
+    self->y2 = (s16)(FIXED_TO_INT(y) + cauldron_scene_state->bg_vertical_origin);
+    self->x2 = (s16)(-FIXED_TO_INT(x) + cauldron_scene_state->bg_horizontal_origin);
 }
 
 static void cauldron_item_move_along_parabola(oam_object *self) {
@@ -179,7 +181,7 @@ static void cauldron_item_move_along_parabola(oam_object *self) {
     FIXED theta = FIXED_DIV(t, INT_TO_FIXED(dt));
     FIXED x = FIXED_MUL(INT_TO_FIXED(dx), FIXED_SIN(theta));
     self->y2 = (s16)(FIXED_TO_INT(y) - 32);
-    self->x2 = (s16)(FIXED_TO_INT(x)); // I think it looks better w/o + CAULDRON_SCENE_STATE->bg_horizontal_origin);
+    self->x2 = (s16)(FIXED_TO_INT(x)); // I think it looks better w/o + cauldron_scene_state->bg_horizontal_origin);
 }
 
 static void cauldron_item_set_parabolic_trajectory(u8 oam_idx, s16 ymax, s16 dx, u16 dt) {
@@ -223,28 +225,28 @@ static const coordinate_t cauldron_light_positions[3] = {
 
 static void cauldron_scene_light_animation(u8 self) {
     (void) self;
-    if (CAULDRON_SCENE_STATE->lights_number_active == 0) {
+    if (cauldron_scene_state->lights_number_active == 0) {
         for (int i = 0; i < 3; i++) {
-            u16 color = (u16)((i + CAULDRON_SCENE_STATE->lights_color_state) % 3);
-            oams[CAULDRON_SCENE_STATE->oams_lights[i]].private[2] = color;
-            CAULDRON_SCENE_STATE->lights_number_active++;
+            u16 color = (u16)((i + cauldron_scene_state->lights_color_state) % 3);
+            oams[cauldron_scene_state->oams_lights[i]].private[2] = color;
+            cauldron_scene_state->lights_number_active++;
         }
-        CAULDRON_SCENE_STATE->lights_color_state = (u8)((CAULDRON_SCENE_STATE->lights_color_state + 1) % 3);
+        cauldron_scene_state->lights_color_state = (u8)((cauldron_scene_state->lights_color_state + 1) % 3);
     }
 }
 
 static void cauldron_scene_handle_animation() {
     if (!fading_is_active() && !dma3_busy(-1)) {
-        if (CAULDRON_SCENE_STATE->step_callback) {
-            CAULDRON_SCENE_STATE->step_callback(CAULDRON_SCENE_STATE->frame++);
+        if (cauldron_scene_state->step_callback) {
+            cauldron_scene_state->step_callback(cauldron_scene_state->frame++);
         }
     }
     generic_callback1();
 }
 
 static void cauldron_scene_next_step(void (*step_callback)(u16)) {
-    CAULDRON_SCENE_STATE->frame = 0;
-    CAULDRON_SCENE_STATE->step_callback = step_callback;
+    cauldron_scene_state->frame = 0;
+    cauldron_scene_state->step_callback = step_callback;
     callback1_set(cauldron_scene_handle_animation);
 }
 
@@ -266,7 +268,7 @@ static void cauldron_scene_item_shaker(u8 self) {
         size_t idxs[4] = {0, 1, 2, 3};
         shuffle(idxs, ARRAY_COUNT(idxs), NULL);
         for (u8 i = 0; i < ARRAY_COUNT(idxs); i++) { // Shake the first, non-shaking oam
-            u8 oam_idx = CAULDRON_SCENE_STATE->oams_items[idxs[i]];
+            u8 oam_idx = cauldron_scene_state->oams_items[idxs[i]];
             if (oam_idx >= 0x40)
                 continue;
             if (oams[oam_idx].callback != cauldron_item_move_along_parabola) {
@@ -284,8 +286,8 @@ static void cauldron_scene_item_shaker(u8 self) {
 static void cauldron_scene_shaker(u8 self) {
     u16 frame = big_callbacks[self].params[0]++;
     FIXED t = FIXED_DIV(INT_TO_FIXED(frame % SHAKER_PERIOD), INT_TO_FIXED(SHAKER_PERIOD));
-    FIXED y = FIXED_MUL(INT_TO_FIXED(CAULDRON_SCENE_STATE->shaking_intensity), FIXED_SIN(t));
-    CAULDRON_SCENE_STATE->bg_horizontal_origin = (s16)FIXED_TO_INT(y); 
+    FIXED y = FIXED_MUL(INT_TO_FIXED(cauldron_scene_state->shaking_intensity), FIXED_SIN(t));
+    cauldron_scene_state->bg_horizontal_origin = (s16)FIXED_TO_INT(y); 
 }
 
 static void cauldron_scene_big_callback_null(u8 self) {
@@ -303,8 +305,8 @@ static void cauldron_free_and_return_to_overworld() {
         free(bg_get_tilemap(1));
         free(bg_get_tilemap(2));
         free(bg_get_tilemap(3));
-        cauldron_scene_state tmp = *CAULDRON_SCENE_STATE;
-        free(CAULDRON_SCENE_STATE);
+        cauldron_scene_state_t tmp = *cauldron_scene_state;
+        free(cauldron_scene_state);
         crafting_ui_reinitialize(tmp.saved_ui_state.type,
             tmp.saved_ui_state.list_menu_cursor_positions, tmp.saved_ui_state.list_menu_cursor_above);
         
@@ -317,7 +319,7 @@ static void cauldron_scene_end_on_keypress(u8 self) {
         big_callback_delete(self);
         play_sound(5);
         fadescreen_all(1, 0);
-        recipe_use(&CAULDRON_SCENE_STATE->recipe, CAULDRON_SCENE_STATE->count);
+        recipe_use(&cauldron_scene_state->recipe, cauldron_scene_state->count);
         callback1_set(cauldron_free_and_return_to_overworld);
     }
 }
@@ -328,18 +330,18 @@ static void cauldron_scene_step9_success_string(u16 frame) {
     tbox_flush_set(0, 0);
     tbox_tilemap_draw(0);
     u8 cb_idx = big_callback_new(cauldron_scene_big_callback_null, 0);
-    itoa(buffer1, CAULDRON_SCENE_STATE->count * CAULDRON_SCENE_STATE->recipe.count, ITOA_NO_PADDING, 3);
+    itoa(buffer1, cauldron_scene_state->count * cauldron_scene_state->recipe.count, ITOA_NO_PADDING, 3);
     string_decrypt(strbuf, str_crafted);
     tbox_print_string_and_continue(cb_idx, 0, CRAFTING_CAULDRON_BASE_TILE_MESSAGE, CRAFTING_CAULDRON_PAL_IDX_MESSAGE, 
         2, tbox_get_set_speed(), strbuf, cauldron_scene_end_on_keypress);
-    CAULDRON_SCENE_STATE->bg_vertical_scrolling[0] = (s16)(-CAULDRON_SCENE_STATE->bg_vertical_origin);
+    cauldron_scene_state->bg_vertical_scrolling[0] = (s16)(-cauldron_scene_state->bg_vertical_origin);
     cauldron_scene_next_step(cauldron_scene_step_none);
 }
 
 
 static void cauldron_scene_step8_decrease_shaking_intensity(u16 frame) {
     if (frame % 24 == 0) {
-        CAULDRON_SCENE_STATE->shaking_intensity--;
+        cauldron_scene_state->shaking_intensity--;
     }
     if (frame % 32 == 0 && frame <= 128) {
         cauldron_light_initialize_all((u16)(32 >> ((128 - frame) / 32)));
@@ -401,7 +403,7 @@ static void cauldron_scene_step7_wait_shaking(u16 frame) {
 
 static void cauldron_scene_step6_increase_shaking_intensity(u16 frame) {
     if (frame % 48 == 0) {
-        CAULDRON_SCENE_STATE->shaking_intensity++;
+        cauldron_scene_state->shaking_intensity++;
     }
     if (frame % 64 == 0 && frame <= 256) {
         cauldron_light_initialize_all((u16)(32 >> (frame / 64)));
@@ -419,7 +421,7 @@ static void cauldron_scene_step5_scroll_down(u16 frame) {
         cauldron_scene_next_step(cauldron_scene_step6_increase_shaking_intensity);
         return;
     }
-    CAULDRON_SCENE_STATE->bg_vertical_origin = (s16)(32 + 32 + frame);
+    cauldron_scene_state->bg_vertical_origin = (s16)(32 + 32 + frame);
 }
 
 static void cauldron_scene_step4_close_cauldron(u16 frame) {
@@ -428,14 +430,14 @@ static void cauldron_scene_step4_close_cauldron(u16 frame) {
     if (frame >= 50) {
         cauldron_scene_next_step(cauldron_scene_step5_scroll_down);
     } else {
-        CAULDRON_SCENE_STATE->bg_vertical_scrolling[2] = (s16)-(2 * frame + 65);
+        cauldron_scene_state->bg_vertical_scrolling[2] = (s16)-(2 * frame + 65);
     }
 }
 
 static void cauldron_scene_step2_wait_dropping_item(u16 frame) {
     if (frame == 32) {
-        if (CAULDRON_SCENE_STATE->state < MAX_NUM_INGREDIENTS && (CAULDRON_SCENE_STATE->recipe.ingredients[CAULDRON_SCENE_STATE->state].item || 
-            CAULDRON_SCENE_STATE->recipe.ingredients[CAULDRON_SCENE_STATE->state].type == CRAFTING_INGREDIENT_ASH)) {
+        if (cauldron_scene_state->state < MAX_NUM_INGREDIENTS && (cauldron_scene_state->recipe.ingredients[cauldron_scene_state->state].item || 
+            cauldron_scene_state->recipe.ingredients[cauldron_scene_state->state].type == CRAFTING_INGREDIENT_ASH)) {
             cauldron_scene_next_step(cauldron_scene_step1_create_dropping_item);
         } else {
             bg_sync_display_and_show(2);
@@ -447,18 +449,18 @@ static void cauldron_scene_step2_wait_dropping_item(u16 frame) {
 
 static void cauldron_scene_step1_create_dropping_item(u16 frame) {
     (void) frame;
-    u8 idx = CAULDRON_SCENE_STATE->state++;
+    u8 idx = cauldron_scene_state->state++;
     u16 item;
-    if (CAULDRON_SCENE_STATE->recipe.ingredients[idx].type == CRAFTING_INGREDIENT_ASH) {
+    if (cauldron_scene_state->recipe.ingredients[idx].type == CRAFTING_INGREDIENT_ASH) {
         item = ITEM_ASCHETASCHE;
     } else {
-        item = CAULDRON_SCENE_STATE->recipe.ingredients[idx].item;
+        item = cauldron_scene_state->recipe.ingredients[idx].item;
     }
     u8 oam_idx = item_oam_new_by_template(&cauldron_item_template, (u16)(CAULDRON_ITEM_BASE_TAG + idx), (u16)(CAULDRON_ITEM_BASE_TAG + idx), item);
     oams[oam_idx].x = cauldron_item_positions[idx].x;
     oams[oam_idx].y = cauldron_item_positions[idx].y;
     oams[oam_idx].priority_on_layer = 77;
-    CAULDRON_SCENE_STATE->oams_items[idx] = oam_idx;
+    cauldron_scene_state->oams_items[idx] = oam_idx;
     cauldron_scene_next_step(cauldron_scene_step2_wait_dropping_item);
     play_sound(23);
 }
@@ -467,16 +469,16 @@ static void cauldron_scene_step1_create_dropping_item(u16 frame) {
 
 static void cauldron_scene_step0_scroll_down(u16 frame) {
     if (frame <= 32) {
-        CAULDRON_SCENE_STATE->bg_vertical_origin = (s16)(32 + frame);
+        cauldron_scene_state->bg_vertical_origin = (s16)(32 + frame);
     } else {
-        CAULDRON_SCENE_STATE->state = 0;
+        cauldron_scene_state->state = 0;
         cauldron_scene_next_step(cauldron_scene_step1_create_dropping_item);
     }
 }
 
 void cauldron_scene_setup() {
     generic_callback1();
-    switch (CAULDRON_SCENE_STATE->state) {
+    switch (cauldron_scene_state->state) {
         case 0: {
             big_callback_delete_all();
             oam_reset();
@@ -496,8 +498,8 @@ void cauldron_scene_setup() {
             bg_virtual_set_displace(2, 0, 0);
             bg_virtual_map_displace(3, 0, 0);
             bg_virtual_set_displace(3, 0, 0);
-            CAULDRON_SCENE_STATE->bg_vertical_origin = 32;
-            CAULDRON_SCENE_STATE->bg_vertical_scrolling[2] = -64;
+            cauldron_scene_state->bg_vertical_origin = 32;
+            cauldron_scene_state->bg_vertical_scrolling[2] = -64;
             bg_set_tilemap(0, malloc_and_clear(0x800));
             bg_set_tilemap(1, malloc_and_clear(0x800));
             bg_set_tilemap(2, malloc_and_clear(0x800));
@@ -526,10 +528,10 @@ void cauldron_scene_setup() {
             break;
         }
         case 4: {
-            for (u8 i = 0; i < ARRAY_COUNT(CAULDRON_SCENE_STATE->oams_lights); i++) {
-                CAULDRON_SCENE_STATE->oams_lights[i] = oam_new_forward_search(&cauldron_light_oam_template, 
+            for (u8 i = 0; i < ARRAY_COUNT(cauldron_scene_state->oams_lights); i++) {
+                cauldron_scene_state->oams_lights[i] = oam_new_forward_search(&cauldron_light_oam_template, 
                     cauldron_light_positions[i].x, cauldron_light_positions[i].y, 0);
-                oam_object *oam = oams + CAULDRON_SCENE_STATE->oams_lights[i];
+                oam_object *oam = oams + cauldron_scene_state->oams_lights[i];
                 oam->private[2] = i;
                 if (i == 2) {
                     oams->flags |= OAM_FLAG_HFLIP;
@@ -571,21 +573,21 @@ void cauldron_scene_setup() {
         default:
             return;
     }
-    CAULDRON_SCENE_STATE->state++;
+    cauldron_scene_state->state++;
 }
 
 
 
-void cauldron_scene_initialize(const crafting_recipe *recipe, crafting_ui_state *ui_state) {
-    fmem.gp_state = malloc_and_clear(sizeof(cauldron_scene_state));
-    for (u8 i = 0; i < ARRAY_COUNT(CAULDRON_SCENE_STATE->oams_items); i++) {
-        CAULDRON_SCENE_STATE->oams_items[i] = 0x40;
+void cauldron_scene_initialize(const crafting_recipe *recipe, crafting_ui_state_t *ui_state) {
+    cauldron_scene_state = (cauldron_scene_state_t*) malloc_and_clear(sizeof(cauldron_scene_state_t));
+    for (u8 i = 0; i < ARRAY_COUNT(cauldron_scene_state->oams_items); i++) {
+        cauldron_scene_state->oams_items[i] = 0x40;
     }
-    CAULDRON_SCENE_STATE->recipe = *recipe;
-    CAULDRON_SCENE_STATE->count = ui_state->quantity;
-    CAULDRON_SCENE_STATE->saved_ui_state.type = ui_state->type;
-    memcpy(CAULDRON_SCENE_STATE->saved_ui_state.list_menu_cursor_positions, ui_state->list_menu_cursor_positions, sizeof(ui_state->list_menu_cursor_positions));
-    memcpy(CAULDRON_SCENE_STATE->saved_ui_state.list_menu_cursor_above, ui_state->list_menu_cursor_above, sizeof(ui_state->list_menu_cursor_above));
+    cauldron_scene_state->recipe = *recipe;
+    cauldron_scene_state->count = ui_state->quantity;
+    cauldron_scene_state->saved_ui_state.type = ui_state->type;
+    memcpy(cauldron_scene_state->saved_ui_state.list_menu_cursor_positions, ui_state->list_menu_cursor_positions, sizeof(ui_state->list_menu_cursor_positions));
+    memcpy(cauldron_scene_state->saved_ui_state.list_menu_cursor_above, ui_state->list_menu_cursor_above, sizeof(ui_state->list_menu_cursor_above));
     callback1_set(cauldron_scene_setup);
     vblank_handler_set(cauldron_vblank_handler);
 }

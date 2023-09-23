@@ -9,6 +9,7 @@
 #include "debug.h"
 
 extern const u8 gfx_ow_bbshipPal[];
+EWRAM u8 blackbeard_ship_oam_idx = 0;
 
 #define OAM_TAG_BB_SHIP 0x6666
 
@@ -90,7 +91,7 @@ u8 overworld_blackbeard_ship_new_at(s16 x, s16 y, s16 dx, s16 dy, u8 bank, u8 ma
 
 void tileset_lapis_cave_animations_initialize() {
     if (save1->bank == LAPIS_CAVE_BB_SHIP_BANK && save1->map == LAPIS_CAVE_BB_SHIP_MAP_IDX && !checkflag(KASKADA_BLACKMARET_BB_SHIP)) {
-        fmem.blackbeard_ship_oam_idx = overworld_blackbeard_ship_new_at(LAPIS_CAVE_BB_SHIP_X, LAPIS_CAVE_BB_SHIP_Y, 0, -4, LAPIS_CAVE_BB_SHIP_BANK, LAPIS_CAVE_BB_SHIP_MAP_IDX);
+        blackbeard_ship_oam_idx = overworld_blackbeard_ship_new_at(LAPIS_CAVE_BB_SHIP_X, LAPIS_CAVE_BB_SHIP_Y, 0, -4, LAPIS_CAVE_BB_SHIP_BANK, LAPIS_CAVE_BB_SHIP_MAP_IDX);
     }
 }
 
@@ -108,5 +109,5 @@ static void oam_callback_move_left(oam_object *self) {
 }
 
 void blackbeard_ship_move_left() {
-    oams[fmem.blackbeard_ship_oam_idx].callback = oam_callback_move_left;
+    oams[blackbeard_ship_oam_idx].callback = oam_callback_move_left;
 }

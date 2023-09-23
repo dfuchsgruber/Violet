@@ -1322,7 +1322,7 @@ const overworld_sprite overworld_berry_tree_sprout = {
 };
 
 const overworld_sprite *overworld_sprite_get_by_berry_tree_idx(u8 berry_idx) {
-	return overworld_sprite_get_by_berry_idx(cmem.berry_trees[berry_idx].berry, cmem.berry_trees[berry_idx].stage, cmem.berry_trees[berry_idx].fertilized);
+	return overworld_sprite_get_by_berry_idx(csave.berry_trees[berry_idx].berry, csave.berry_trees[berry_idx].stage, csave.berry_trees[berry_idx].fertilized);
 }
 
 const overworld_sprite *overworld_sprite_get_by_berry_idx(u8 berry, u8 stage, bool fertilized) {

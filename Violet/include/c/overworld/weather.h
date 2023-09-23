@@ -160,6 +160,10 @@ typedef struct {
 
 extern overworld_weather_stru overworld_weather;
 
+extern EWRAM color_t weather_blend;
+extern EWRAM u8 weather_blend_active;
+extern EWRAM u8 weather_blend_delay;
+
 /**
  * Adds a palette idx that is affected by fog, i.e. it is blended with an average color of the fog oams.
  * @param pal_idx the palette idx to add

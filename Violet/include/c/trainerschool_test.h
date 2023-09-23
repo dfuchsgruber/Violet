@@ -30,12 +30,12 @@ extern "C" {
         u8 frame;
         u16 timer;
         u8 finished;
-    } trainerschool_test_memory;
+    } trainerschool_test_state_t;
 
 extern const trainerschool_test_question trainerschool_test_questions [10];
 void trainerschool_test_idle();
 
-#define TRAINER_SCHOOL_TEST_STATE ((trainerschool_test_memory*)(fmem.gp_state))
+extern EWRAM trainerschool_test_state_t *trainerschool_test_state;
 
 #ifdef	__cplusplus
 }

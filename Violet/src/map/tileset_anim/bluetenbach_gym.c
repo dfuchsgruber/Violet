@@ -58,7 +58,7 @@ static const u8 rotating_wall_hflips_l_shape[4] = {false, true, true, false};
 
 static void rotating_wall_callback(oam_object *self) {
     int idx = self->private[0];
-    u8 rotation = (u8)((bluetenbach_gym_rotating_walls[idx].rotation + cmem.bluetenbach_gym_rotating_wall_orientations[idx]) % 4);
+    u8 rotation = (u8)((bluetenbach_gym_rotating_walls[idx].rotation + csave.bluetenbach_gym_rotating_wall_orientations[idx]) % 4);
     map_position_to_oam_position((s16)(bluetenbach_gym_rotating_walls[idx].anchor_x + 7), (s16)(bluetenbach_gym_rotating_walls[idx].anchor_y + 7), &self->x, &self->y);
     u8 anim_idx, hflip;
     if (bluetenbach_gym_rotating_walls[idx].is_l_shape) {

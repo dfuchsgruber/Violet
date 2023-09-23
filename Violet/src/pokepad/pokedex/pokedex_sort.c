@@ -15,10 +15,11 @@
 #include "music.h"
 #include "agbmemory.h"
 #include "io.h"
+#include "pokepad/pokedex/state.h"
 
 void pokedex_sort_locate_cursor() {
     ;
-    oams[fmem.dex_mem->oam_sort_cursor].x2 = (s16) (fmem.dex_mem->sort_cursor_pos * 32);
+    oams[pokedex_state->oam_sort_cursor].x2 = (s16) (pokedex_state->sort_cursor_pos * 32);
 }
 
 void pokedex_big_callback_resort(u8 self) {
@@ -53,10 +54,10 @@ void pokedex_big_callback_resort(u8 self) {
         {
             //sound(4);
             //while(true){}
-            if (fmem.dex_mem->reverse_req) {
+            if (pokedex_state->reverse_req) {
                 pokedex_quicksort_revert(0, POKEDEX_CNT);
             } else {
-                pokedex_quicksort_list(fmem.dex_mem->current_comparator, 0, POKEDEX_CNT - 1);
+                pokedex_quicksort_list(pokedex_state->current_comparator, 0, POKEDEX_CNT - 1);
             }
             pokedex_update_list();
             big_callbacks[self].params[0] = 3;
@@ -70,7 +71,7 @@ void pokedex_big_callback_resort(u8 self) {
 
                 u16 dispcnt = (u16) (io_get(0) & (~0x4000));
                 io_set(0, dispcnt);
-                fmem.dex_mem->resorting = false;
+                pokedex_state->resorting = false;
                 big_callback_delete(self);
             } else {
                 big_callbacks[self].params[1] = (u16) (big_callbacks[self].params[1] + 8);
@@ -83,46 +84,46 @@ void pokedex_big_callback_resort(u8 self) {
 
     }
     /*
-    pokedex_quicksort_list(fmem.dex_mem->current_comparator, 0, POKEDEX_CNT-1);
+    pokedex_quicksort_list(pokedex_state->current_comparator, 0, POKEDEX_CNT-1);
     pokedex_update_list();
-    fmem.dex_mem->resorting = false;
+    pokedex_state->resorting = false;
     remove_big_callback(self);
      */
 }
 
 void pokedex_callback_sort() {
     generic_callback1();
-    if (fmem.dex_mem->resorting)
+    if (pokedex_state->resorting)
         return;
     if (super.keys_new.keys.B) {
         //return to group selection
-        oams[fmem.dex_mem->oam_sort_cursor].anim_number = 0;
-        oam_gfx_anim_init(&oams[fmem.dex_mem->oam_sort_cursor], 0);
-        fmem.dex_mem->sort_cursor_pos = fmem.dex_mem->current_comparator & 3;
+        oams[pokedex_state->oam_sort_cursor].anim_number = 0;
+        oam_gfx_anim_init(&oams[pokedex_state->oam_sort_cursor], 0);
+        pokedex_state->sort_cursor_pos = pokedex_state->current_comparator & 3;
         pokedex_sort_locate_cursor();
         callback1_set(pokedex_callback_group_selection);
         play_sound(5);
         return;
     } else if (super.keys_new.keys.A) {
         //log new sorting
-        u8 old_sorting = fmem.dex_mem->current_comparator & 3;
-        u8 new_sorting = fmem.dex_mem->sort_cursor_pos;
+        u8 old_sorting = pokedex_state->current_comparator & 3;
+        u8 new_sorting = pokedex_state->sort_cursor_pos;
         if (old_sorting == new_sorting) {
-            fmem.dex_mem->current_comparator ^= 4;
-            fmem.dex_mem->reverse_req = true;
+            pokedex_state->current_comparator ^= 4;
+            pokedex_state->reverse_req = true;
         } else {
-            fmem.dex_mem->current_comparator = new_sorting;
-            fmem.dex_mem->reverse_req = false;
+            pokedex_state->current_comparator = new_sorting;
+            pokedex_state->reverse_req = false;
         }
-        fmem.dex_mem->resorting = true;
+        pokedex_state->resorting = true;
         play_sound(5);
         big_callbacks[big_callback_new(pokedex_big_callback_resort, 0)].params[0] = 0;
-    } else if (super.keys_new.keys.left && fmem.dex_mem->sort_cursor_pos > 0) {
-        fmem.dex_mem->sort_cursor_pos--;
+    } else if (super.keys_new.keys.left && pokedex_state->sort_cursor_pos > 0) {
+        pokedex_state->sort_cursor_pos--;
         pokedex_sort_locate_cursor();
         play_sound(5);
-    } else if (super.keys_new.keys.right && fmem.dex_mem->sort_cursor_pos < 3) {
-        fmem.dex_mem->sort_cursor_pos++;
+    } else if (super.keys_new.keys.right && pokedex_state->sort_cursor_pos < 3) {
+        pokedex_state->sort_cursor_pos++;
         pokedex_sort_locate_cursor();
         play_sound(5);
     }
@@ -130,7 +131,7 @@ void pokedex_callback_sort() {
 }
 
 void pokedex_quicksort_list_swap(int a, int b) {
-    pokedex_list_element *list = fmem.dex_mem->list;
+    pokedex_list_element *list = pokedex_state->list;
     pokedex_list_element tmp;
     memcpy(&tmp, &list[a], sizeof (pokedex_list_element));
     memcpy(&list[a], &list[b], sizeof (pokedex_list_element));
@@ -141,11 +142,11 @@ void pokedex_quicksort_revert(int from, int to) {
     do {
         pokedex_quicksort_list_swap(from++, --to);
     } while (to > from);
-    fmem.dex_mem->current_list_index = (u16) (POKEDEX_CNT - 1 - fmem.dex_mem->current_list_index);
+    pokedex_state->current_list_index = (u16) (POKEDEX_CNT - 1 - pokedex_state->current_list_index);
 }
 
 int pokedex_quicksort_list_compare(u8 comparator, int a, int b) {
-    pokedex_list_element *list = fmem.dex_mem->list;
+    pokedex_list_element *list = pokedex_state->list;
     int reverse = comparator > 3 ? -1 : 1;
     comparator &= 3;
     switch (comparator) {
@@ -216,14 +217,14 @@ void pokedex_quicksort_list(u8 comparator, int l, int r) {
     //now we find the index in the list of current species
     int i;
     for (i = 0; i < POKEDEX_CNT; i++) {
-        if (fmem.dex_mem->current_species) {
-            if (fmem.dex_mem->list[i].species == fmem.dex_mem->current_species) {
-                fmem.dex_mem->current_list_index = (u16) i;
+        if (pokedex_state->current_species) {
+            if (pokedex_state->list[i].species == pokedex_state->current_species) {
+                pokedex_state->current_list_index = (u16) i;
                 break;
             }
         } else {
-            if (fmem.dex_mem->list[i].seen) {
-                fmem.dex_mem->current_list_index = (u16) i;
+            if (pokedex_state->list[i].seen) {
+                pokedex_state->current_list_index = (u16) i;
                 break;
             }
         }

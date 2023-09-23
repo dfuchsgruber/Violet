@@ -42,6 +42,7 @@ typedef struct {
 
 extern u8 pc_slot_in_box;
 extern u8 pc_last_used_mode;
+extern EWRAM u8 pc_selection_context;
 
 /**
  * Initializes the pc.

@@ -20,6 +20,7 @@
 #include "pokemon/names.h"
 #include "vars.h"
 #include "trainer/trainer.h"
+#include "trainer/virtual.h"
 
 extern const u8 battlescript_mega_evolution[];
 extern const u8 battlescript_regent_evolution[];
@@ -49,17 +50,17 @@ void battler_form_change(u8 battler_idx, u16 species) {
 }
 
 bool battle_execute_action_mega_evolution() {
-    // DEBUG("Exectute mega in state %d\n", MEGA_STATE.mega_action_state);
-    switch (MEGA_STATE.mega_action_state) {
+    // DEBUG("Exectute mega in state %d\n", mega_state->mega_action_state);
+    switch (mega_state->mega_action_state) {
         case MEGA_ACTION_INITIALIZE:
-            MEGA_STATE.mega_action_current_slot = 0;
-            MEGA_STATE.mega_action_state = MEGA_ACTION_CHECK;
+            mega_state->mega_action_current_slot = 0;
+            mega_state->mega_action_state = MEGA_ACTION_CHECK;
             FALL_THROUGH;
         case MEGA_ACTION_CHECK:
         case MEGA_ACTION_CHECK_MEGA_EVOLUTION_PERFORMED: {
-            for (; MEGA_STATE.mega_action_current_slot < battler_cnt; MEGA_STATE.mega_action_current_slot++) {
-                u8 battler_idx = battler_attacking_order[MEGA_STATE.mega_action_current_slot];
-                if (MEGA_STATE.marked_for_mega_evolution[battler_idx]) {
+            for (; mega_state->mega_action_current_slot < battler_cnt; mega_state->mega_action_current_slot++) {
+                u8 battler_idx = battler_attacking_order[mega_state->mega_action_current_slot];
+                if (mega_state->marked_for_mega_evolution[battler_idx]) {
                     // Perform a mega evolution
                     const mega_evolution_t *mega_evolution = battler_get_available_mega_evolution(battler_idx);
                     if (mega_evolution) {
@@ -73,7 +74,7 @@ bool battle_execute_action_mega_evolution() {
                                 break;
                             case BATTLE_POSITION_OPPONENT_RIGHT:
                                 if (battle_flags & BATTLE_TWO_TRAINERS) {
-                                    trainer_idx = fmem.trainer_varsB.trainer_id;
+                                    trainer_idx = trainer_varsB.trainer_id;
                                     break;
                                 }
                                 FALL_THROUGH;
@@ -96,32 +97,32 @@ bool battle_execute_action_mega_evolution() {
                         battle_controller_emit_set_pokemon_data(0, 0, 0, sizeof(battler), battlers + battler_idx); // Request: SET_ALL_MON_DATA ??
                         battler_mark_for_controller_execution(battler_idx);
                         if (mega_evolution->type == MEGA_EVOLUTION)
-                            MEGA_STATE.owner_mega_evolved[battler_get_owner(battler_idx)] = 1;
-                        if (MEGA_STATE.marked_for_mega_evolution[battler_idx] == MEGA_EVOLUTION)
+                            mega_state->owner_mega_evolved[battler_get_owner(battler_idx)] = 1;
+                        if (mega_state->marked_for_mega_evolution[battler_idx] == MEGA_EVOLUTION)
                             battlescript_init_and_interrupt_battle(battlescript_mega_evolution);
-                        else if (MEGA_STATE.marked_for_mega_evolution[battler_idx] == REGENT_EVOLUTION) {
+                        else if (mega_state->marked_for_mega_evolution[battler_idx] == REGENT_EVOLUTION) {
                             battlescript_init_and_interrupt_battle(battlescript_regent_evolution);
                         } else {
-                            ERROR("Unkown mega type for script initialization %d\n", MEGA_STATE.marked_for_mega_evolution[battler_idx]);
+                            ERROR("Unkown mega type for script initialization %d\n", mega_state->marked_for_mega_evolution[battler_idx]);
                         }
                     } else {
                         DEBUG("Battler %d appearently was marked for mega evolution but has no available mega evolution. That is weird and should not happen...", battler_idx);
                     }
                     active_battler = battler_idx;
-                    MEGA_STATE.mega_action_state = MEGA_ACTION_BATTLE_ENTER_ABILITIES;
-                    MEGA_STATE.marked_for_mega_evolution[battler_idx] = 0;
+                    mega_state->mega_action_state = MEGA_ACTION_BATTLE_ENTER_ABILITIES;
+                    mega_state->marked_for_mega_evolution[battler_idx] = 0;
                     // DEBUG("Returning true\n");
                     return true;
                 }
             }
             // No battler did perform any more mega evolutions
-            MEGA_STATE.mega_action_state = MEGA_ACTION_INTIMIDATE;
+            mega_state->mega_action_state = MEGA_ACTION_INTIMIDATE;
             break;
         }
         case MEGA_ACTION_BATTLE_ENTER_ABILITIES: {
-            u8 battler_idx = battler_attacking_order[MEGA_STATE.mega_action_current_slot];
+            u8 battler_idx = battler_attacking_order[mega_state->mega_action_current_slot];
             ability_execute(ABILITY_CONTEXT_ENTER, battler_idx, 0, 0, 0);
-            MEGA_STATE.mega_action_state = MEGA_ACTION_CHECK;
+            mega_state->mega_action_state = MEGA_ACTION_CHECK;
             break;
         }
         case MEGA_ACTION_INTIMIDATE: {
@@ -129,12 +130,12 @@ bool battle_execute_action_mega_evolution() {
                 break;
             if (ability_execute(ABILITY_CONTEXT_INTIMIDATE_2, 0, 0, 0, 0))
                 break;
-            MEGA_STATE.mega_action_current_slot = 0;
-            MEGA_STATE.mega_action_state = MEGA_ACTION_DONE; // Check the next battler for a potential mega evolution
+            mega_state->mega_action_current_slot = 0;
+            mega_state->mega_action_state = MEGA_ACTION_DONE; // Check the next battler for a potential mega evolution
             break;
         }
         case MEGA_ACTION_DONE: { // No more mega evolutions to perform
-            MEGA_STATE.mega_action_state = MEGA_ACTION_INITIALIZE;
+            mega_state->mega_action_state = MEGA_ACTION_INITIALIZE;
             return false;
         }
     }

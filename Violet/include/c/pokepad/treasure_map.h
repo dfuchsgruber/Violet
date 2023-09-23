@@ -61,7 +61,9 @@ typedef struct {
     u8 scroll_indicator_cb_idx;
 } treasure_map_state_t;
 
-#define TREASURE_MAP_STATE ((treasure_map_state_t*)fmem.gp_state)
+extern EWRAM treasure_map_state_t *treasure_map_state;
+extern EWRAM u16 treasure_map_cursor_position;
+extern EWRAM u16 treasure_map_items_above;
 
 extern const LZ77COMPRESSED gfx_pokepad_icon_treasure_mapTiles;
 extern const LZ77COMPRESSED gfx_pokepad_icon_treasure_mapPal;

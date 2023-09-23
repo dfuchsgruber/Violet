@@ -113,7 +113,11 @@ typedef struct {
     u8 delay;
 } bag2_state_t;
 
-#define BAG2_STATE ((bag2_state_t*)fmem.bag2_state)
+extern EWRAM bag2_state_t *bag2_state;
+extern EWRAM u16 bag_cursor_position[MAX_NUM_POCKETS];
+extern EWRAM u16 bag_cursor_items_above[MAX_NUM_POCKETS];
+extern EWRAM void (*bag_continuation)();
+extern EWRAM u8 bag_context;
 
 #define BAG_OAM_TAG 0x3173
 #define BAG_ITEM_OAM_TAG 0x3174

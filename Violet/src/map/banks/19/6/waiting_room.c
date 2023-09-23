@@ -21,7 +21,7 @@ const u16 ceometria_gym_trainer_pokemon[] = {
 void ceometria_gym_build_trainer_party(u8 min_level, u8 max_level) {
     int num_species = 0;
     while (ceometria_gym_trainer_pokemon[num_species] != 0xFFFF) num_species++;
-    trainer_pokemon *dst = fmem.dynamic_trainer_party;
+    trainer_pokemon *dst = dynamic_trainer_party;
     for (int i = 0; i < 3; i++) {
         dst[i].species = ceometria_gym_trainer_pokemon[(u16)ceometria_gym_rnd() % num_species];
         dst[i].level = (u8)(min_level + ((u16)ceometria_gym_rnd() % (max_level - min_level + 1)));
@@ -29,16 +29,16 @@ void ceometria_gym_build_trainer_party(u8 min_level, u8 max_level) {
 }
 
 u32 ceometria_gym_rnd() {
-    return _prng_xorshift(&cmem.ceometria_gym_state.rng_state);
+    return _prng_xorshift(&csave.ceometria_gym_state.rng_state);
 }
 
 void ceometria_gym_initialize() {
     // Seed the gym
-    cmem.ceometria_gym_state.rng_state = (u32)(rnd16() | (rnd16() << 16));
-    cmem.ceometria_gym_state.waiting_room_cnt = 0;
-    cmem.ceometria_gym_state.non_trainer_score = 0;
-    cmem.ceometria_gym_state.punishment_score = 0;
-    cmem.ceometria_gym_state.last_room = NUM_CEOMETRIA_GYM_ROOM_TYPES;
+    csave.ceometria_gym_state.rng_state = (u32)(rnd16() | (rnd16() << 16));
+    csave.ceometria_gym_state.waiting_room_cnt = 0;
+    csave.ceometria_gym_state.non_trainer_score = 0;
+    csave.ceometria_gym_state.punishment_score = 0;
+    csave.ceometria_gym_state.last_room = NUM_CEOMETRIA_GYM_ROOM_TYPES;
 }
 
 const u8 ceometria_gym_overworld_pictures_male[] = {
@@ -50,12 +50,12 @@ const u8 ceometria_gym_overworld_pictures_female[] = {
 };
 
 static u8 ceometria_gym_generate_room() {
-    u8 room = cmem.ceometria_gym_state.last_room;
+    u8 room = csave.ceometria_gym_state.last_room;
     // Try to sample a room differnt than the last room type
-    for (int attempts = 0; attempts < 8 && room == cmem.ceometria_gym_state.last_room; attempts++) {
-        if ((ceometria_gym_rnd() % CEOMETRIA_GYM_PUNISHMENT_SCORE_MAX) < cmem.ceometria_gym_state.non_trainer_score) {
+    for (int attempts = 0; attempts < 8 && room == csave.ceometria_gym_state.last_room; attempts++) {
+        if ((ceometria_gym_rnd() % CEOMETRIA_GYM_PUNISHMENT_SCORE_MAX) < csave.ceometria_gym_state.non_trainer_score) {
             room = CEOMETRIA_GYM_TRAINER_ROOM;
-        } else if ((ceometria_gym_rnd() % CEOMETRIA_GYM_NON_TRAINER_SCORE_MAX) < cmem.ceometria_gym_state.punishment_score) {
+        } else if ((ceometria_gym_rnd() % CEOMETRIA_GYM_NON_TRAINER_SCORE_MAX) < csave.ceometria_gym_state.punishment_score) {
             room = CEOMETRIA_GYM_HEALING_ROOM;
         } else {
             room = (u8)(ceometria_gym_rnd() % NUM_CEOMETRIA_GYM_ROOM_TYPES);
@@ -68,22 +68,22 @@ static u8 ceometria_gym_generate_room() {
 void ceometria_gym_next_waiting_room() {
     // Determine next rooms
     for (int room_idx = 0; room_idx < 3; room_idx++) {
-        cmem.ceometria_gym_state.next_rooms[room_idx] = ceometria_gym_generate_room();
+        csave.ceometria_gym_state.next_rooms[room_idx] = ceometria_gym_generate_room();
     }
-    cmem.ceometria_gym_state.waiting_room_cnt++;
+    csave.ceometria_gym_state.waiting_room_cnt++;
     // Create persons
     for (int i = 0; i < 4; i++) {
         if (ceometria_gym_rnd() & 1) {
             // 50% chance that the person is hidden
             setflag((u16)(16 + i));
         } else {
-            cmem.ceometria_gym_state.persons[i].type = ceometria_gym_rnd() & 3;
-            cmem.ceometria_gym_state.persons[i].target = (u32)((u16)ceometria_gym_rnd() % 3) & 3;
-            cmem.ceometria_gym_state.persons[i].variant = ceometria_gym_rnd() & 7;
-            cmem.ceometria_gym_state.persons[i].is_present = ceometria_gym_rnd() & 1;
-            if (cmem.ceometria_gym_state.persons[i].is_present) {
+            csave.ceometria_gym_state.persons[i].type = ceometria_gym_rnd() & 3;
+            csave.ceometria_gym_state.persons[i].target = (u32)((u16)ceometria_gym_rnd() % 3) & 3;
+            csave.ceometria_gym_state.persons[i].variant = ceometria_gym_rnd() & 7;
+            csave.ceometria_gym_state.persons[i].is_present = ceometria_gym_rnd() & 1;
+            if (csave.ceometria_gym_state.persons[i].is_present) {
                 // Create a picture
-                bool is_female = cmem.ceometria_gym_state.persons[i].variant >= 4;
+                bool is_female = csave.ceometria_gym_state.persons[i].variant >= 4;
                 if (is_female) {
                     *var_access((u16)(0x4010 + i)) = ceometria_gym_overworld_pictures_female[ceometria_gym_rnd() & 3];
                 } else {
@@ -153,7 +153,7 @@ const u8 *const ceometria_gym_room_hint_room_negative[4] = {
 
 void ceometria_gym_person_buffer_target_room() {
     u16 person_idx = *var_access(0x8004);
-    switch (cmem.ceometria_gym_state.persons[person_idx].target % 3) {
+    switch (csave.ceometria_gym_state.persons[person_idx].target % 3) {
         case 0: {
             u8 s[] = LANGDEP(PSTRING("linke Raum"), PSTRING("left room"));
             strcpy(buffer0, s);
@@ -195,11 +195,11 @@ bool ceometria_gym_room_is_negative(u8 type) {
 
 void ceometria_gym_waiting_room_person_get_script() {
     u16 person_idx = *var_access(0x8004);
-    int variant = cmem.ceometria_gym_state.persons[person_idx].variant % 8;
-    int target_room = cmem.ceometria_gym_state.persons[person_idx].target % 3;
-    u8 target_room_type = cmem.ceometria_gym_state.next_rooms[target_room];
-    DEBUG("Type is %d\n", cmem.ceometria_gym_state.persons[person_idx].type);
-    switch (cmem.ceometria_gym_state.persons[person_idx].type) {
+    int variant = csave.ceometria_gym_state.persons[person_idx].variant % 8;
+    int target_room = csave.ceometria_gym_state.persons[person_idx].target % 3;
+    u8 target_room_type = csave.ceometria_gym_state.next_rooms[target_room];
+    DEBUG("Type is %d\n", csave.ceometria_gym_state.persons[person_idx].type);
+    switch (csave.ceometria_gym_state.persons[person_idx].type) {
         case CEOMETRIA_GYM_SAY_NOTHING: {
             overworld_script_virtual_ptr = ceometria_gym_person_scripts_say_nothing[variant];
             break;
@@ -222,11 +222,11 @@ void ceometria_gym_waiting_room_person_get_script() {
             break;
         }
         default:
-            ERROR("Unkown person type %d\n", cmem.ceometria_gym_state.persons[person_idx].type);
+            ERROR("Unkown person type %d\n", csave.ceometria_gym_state.persons[person_idx].type);
     }
 
 }
 
 u8 ceometria_gym_get_number_waiting_rooms() {
-    return cmem.ceometria_gym_state.waiting_room_cnt;
+    return csave.ceometria_gym_state.waiting_room_cnt;
 }

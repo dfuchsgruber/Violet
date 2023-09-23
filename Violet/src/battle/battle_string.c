@@ -14,6 +14,7 @@
 #include "pokemon/names.h"
 #include "battle/link.h"
 #include "battle/controller.h"
+#include "trainer/virtual.h"
 
 static const u8 str_multi_link_intro[] = LANGDEP(
     PSTRING("BSC_LINK_OPPONENT1_NAME und BSC_LINK_OPPONENT2_NAME\nmöchten kämpfen!"),
@@ -360,8 +361,8 @@ u16 trainer_idx_by_owner(u8 owner) {
     if (battle_flags & BATTLE_TRAINER) {
         switch (owner) {
             case OWNER_TRAINER_A: return trainer_vars.trainer_id;
-            case OWNER_TRAINER_B: return fmem.trainer_varsB.trainer_id;
-            case OWNER_ALLY: return fmem.ally_trainer_idx;
+            case OWNER_TRAINER_B: return trainer_varsB.trainer_id;
+            case OWNER_ALLY: return ally_trainer_idx;
         }
     }
     return 0;
@@ -377,7 +378,7 @@ const u8 *trainer_get_name(u16 trainer_idx) {
         return string_get_placeholder(6);
     } else if (trainer_idx >= 0x1e0 && trainer_idx < 0x1e4) {
         DEBUG("Return dynamic trainer name.\n");
-        return fmem.dynamic_trainer_name;
+        return dynamic_trainer_name;
     }
     else
         return trainers[trainer_idx].name;
@@ -388,13 +389,13 @@ const u8 *battle_string_decrypt_additional_buffers(u8 buffer_idx) {
         case 0x1D: // Trainer1 name
             return trainer_get_name(trainer_vars.trainer_id);
         case 0x31:  // Trainer2 Class
-            return trainer_class_names[trainers[fmem.trainer_varsB.trainer_id].trainerclass];
+            return trainer_class_names[trainers[trainer_varsB.trainer_id].trainerclass];
         case 0x32 : // Trainer2 Name
-            return trainer_get_name(fmem.trainer_varsB.trainer_id);
+            return trainer_get_name(trainer_varsB.trainer_id);
         case 0x2E: // Trainer2 Lose Text
-            return fmem.trainer_varsB.defeat_text; // Cut on trainer tower stuff...
+            return trainer_varsB.defeat_text; // Cut on trainer tower stuff...
         case 0x2F: // Trainer2 Win Text
-            return fmem.trainer_varsB.victory_text; // Cut on trainer tower stuff...
+            return trainer_varsB.victory_text; // Cut on trainer tower stuff...
         case 0x33: // Ally class
             return trainer_class_names[trainers[*var_access(VAR_ALLY)].trainerclass];
         case 0x34: // Ally name

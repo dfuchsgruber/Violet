@@ -47,7 +47,7 @@ void battle_ai_choose_action() {
     switch (actions[chosen_action]) {
         case ACTION_ITEM: {
             DEBUG("Use item.\n");
-            TRAINER_AI_STATE2->chosen_item_idxs[active_battler] = item_idx_to_use;
+            trainer_ai_state2->chosen_item_idxs[active_battler] = item_idx_to_use;
             battle_scripting.battler_idx = active_battler;
             battle_controller_emit_two_values(1, BATTLE_ACTION_USE_ITEM, 0);
             break;
@@ -74,7 +74,7 @@ void ai_setup(u16 trainer_idx) {
     DEBUG("AI is setup for trainer %d.\n", trainer_idx);
     ai_thinking_state_t *ai = battle_ressources->ai;
     memset(ai, 0, sizeof(ai_thinking_state_t));
-    BATTLE_STATE2->fleeing_rng_seed = (u32)(rnd16() | (rnd16() << 16));
+    battle_state2->fleeing_rng_seed = (u32)(rnd16() | (rnd16() << 16));
     u8 move_limitations = battler_check_move_limitations(active_battler, 0, MOVE_LIMITATION_ALL);
     for (int i = 0; i < 4; i++) {
         if (move_limitations & int_bitmasks[i])

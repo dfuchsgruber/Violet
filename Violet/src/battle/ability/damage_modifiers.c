@@ -12,6 +12,7 @@
 #include "item/item.h"
 #include "constants/item_hold_effects.h"
 #include "constants/battle/battle_handicaps.h"
+#include "trainer/virtual.h"
 
 void apply_final_damage_modifiers(){
     battler *attacker = &battlers[attacking_battler];
@@ -91,7 +92,7 @@ void apply_pre_damage_modifiers(){
             break;
         }
     }
-    if (BATTLE_STATE2->status_custom_persistent[defending_battler] & CUSTOM_STATUS_PERSISTENT_GOLDEN_APPLE_PROTECTION) {
+    if (battle_state2->status_custom_persistent[defending_battler] & CUSTOM_STATUS_PERSISTENT_GOLDEN_APPLE_PROTECTION) {
         damage_apply_multiplier(500);
     }
     if (attacker->item) {
@@ -106,17 +107,17 @@ void apply_pre_damage_modifiers(){
                 break;
         }
     }
-    if (BATTLE_STATE2->status_custom[defending_battler] & CUSTOM_STATUS_FLOATING_ROCKS) {
+    if (battle_state2->status_custom[defending_battler] & CUSTOM_STATUS_FLOATING_ROCKS) {
         DEBUG("Reduce damage caused to rock type battler %d.\n", defending_battler);
-        BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~CUSTOM_STATUS_FLOATING_ROCKS);
+        battle_state2->status_custom[defending_battler] &= (u32)(~CUSTOM_STATUS_FLOATING_ROCKS);
         damage_apply_multiplier(500);
     }
-    if (BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_GEM_USED) {
+    if (battle_state2->status_custom[attacking_battler] & CUSTOM_STATUS_GEM_USED) {
         DEBUG("Gem increased damage for battler %d.\n", attacking_battler);
-        // BATTLE_STATE2->status_custom[attacking_battler] &= (u32)(~CUSTOM_STATUS_GEM_USED);
+        // battle_state2->status_custom[attacking_battler] &= (u32)(~CUSTOM_STATUS_GEM_USED);
         damage_apply_multiplier(1500);
     }
-    if (BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY) {
+    if (battle_state2->status_custom[attacking_battler] & CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY) {
         DEBUG("Berry decreased damage for battler %d.\n", defending_battler);
         damage_apply_multiplier(500);
     }

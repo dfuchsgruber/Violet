@@ -182,10 +182,6 @@ typedef struct oam_object {
 
 #define NUM_OAMS 64
 
-extern oam_object oams[NUM_OAMS + 1];
-extern u16 oam_priorities[NUM_OAMS];
-extern u8 oam_order[NUM_OAMS];
-
 #define NUM_OAM_VRAM_TILES 1024
 
 extern u8 oam_vram_allocation[NUM_OAM_VRAM_TILES / 8];
@@ -233,7 +229,24 @@ typedef struct {
   u8 next;
 } oam_alloc_list_element_t;
 
+typedef struct {
+    u8 next;
+    u8 previous;
+} oam_group_list_element_t;
+
+typedef struct {
+    u8 oam_idx;
+    u8 subsprite_idx;
+} oams_to_sort_t;
+
 extern u8 oam_rotscale_disabled;
+extern oam_object oams[NUM_OAMS + 1];
+extern u16 oam_priorities[NUM_OAMS];
+extern u8 oam_order[NUM_OAMS];
+extern EWRAM oam_alloc_list_element_t oam_allocation_list[OAM_ALLOC_LIST_SIZE];
+extern EWRAM oam_group_list_element_t oam_groups[NUM_OAMS];
+extern EWRAM oams_to_sort_t oams_to_sort[NUM_OAMS]; // These oams will be sorted. Subsprites are listed as entries each here.
+extern EWRAM u8 oam_order_sorted[NUM_OAMS]; // Indices refering to `oams_to_sort
 
 /**
  * Adds an oam to an oam group

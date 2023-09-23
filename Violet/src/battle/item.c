@@ -36,7 +36,7 @@ u8 battle_items_switch_in_effects(u8 battler_idx) { // Return 0 if no effect was
     DEBUG("Item switch in effect, hold effect %d with parameter %d\n", hold_effect, hold_effect_parameter);
     switch(hold_effect) {
         case HOLD_EFFECT_FOUR_LEAF:
-            BATTLE_STATE2->item_dropping_chance_increased_by_item = 1;
+            battle_state2->item_dropping_chance_increased_by_item = 1;
             return 0xFF;
         case HOLD_EFFECT_WEATHER_EGG: {
             if (hold_effect_parameter == WEATHER_ROCK_HAIL && !(battle_weather & BATTLE_WEATHER_HAIL)) {
@@ -224,7 +224,7 @@ bool battle_item_before_attack_attacker() {
             GET_MOVE_TYPE(active_attack, move_type);
             if (move_type == item_get_hold_effect_parameter(battlers[attacking_battler].item) &&
                 attacks[active_attack].base_power > 0) {
-                BATTLE_STATE2->status_custom[attacking_battler] |= CUSTOM_STATUS_GEM_USED;
+                battle_state2->status_custom[attacking_battler] |= CUSTOM_STATUS_GEM_USED;
                 DEBUG("Triggered gem in custom status.\n");
             }
             break; // Didn't trigger a battle script, that is done by command 0x7 (i.e. the hook at its end) (this takes care of multi-turn moves)
@@ -380,7 +380,7 @@ bool battle_item_before_attack_defender() {
                 battlers[defending_battler].type1, battlers[defending_battler].type2, &multiplier);
             if (move_type == item_get_hold_effect_parameter(battlers[defending_battler].item) &&
                 attacks[active_attack].base_power > 0 && multiplier > 16) {
-                BATTLE_STATE2->status_custom[attacking_battler] |= CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY;
+                battle_state2->status_custom[attacking_battler] |= CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY;
                 // DEBUG("Defender %d protected by berry.\n", defending_battler);
             }
             break; // Didn't trigger a battle script, that is done by command 0x7 (i.e. the hook at its end) (this takes care of multi-turn moves)

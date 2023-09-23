@@ -44,7 +44,7 @@ void update_timezone() {
         default: {
             // Update the timezone based on the location of the player and the internal time
             if (bank == CEOMETRIA_GYM_PUNISHMENT_ROOM_BANK && map == CEOMETRIA_GYM_PUNISHMENT_ROOM_MAP_IDX &&
-                ceometria_gym_room_is_negative(cmem.ceometria_gym_state.next_rooms[*var_access(CEOMETRIA_GYM_NEXT_ROOM)])) {
+                ceometria_gym_room_is_negative(csave.ceometria_gym_state.next_rooms[*var_access(CEOMETRIA_GYM_NEXT_ROOM)])) {
                 // Negative (punishment) rooms are shaded in dark blue
                 pal_shaders = SHADER_CEOMETRIA_GYM_PUNISHMENT_ROOM;
             } else if (is_inside_map(bank, map)) {
@@ -80,7 +80,7 @@ bool dns_on() {
         case SHADER_NIGHT:
         case SHADER_EVENING:
         case SHADER_MORNING:
-            return !(cmem.settings.dns_disabled);
+            return !(csave.settings.dns_disabled);
         case SHADER_CEOMETRIA_GYM_PUNISHMENT_ROOM:
             return true;
     }

@@ -12,7 +12,10 @@
 #include "oam.h"
 #include "bios.h"
 #include "options.h"
+#include "mugshot.h"
 
+EWRAM u8 item_obtain_oam_id = 0;
+EWRAM u8 item_obtain_tb_id = 0;
 static const u8 str_times[] = PSTRING("FONT_SIZE_SMALL×FONT_SIZE_BIG");
 
 bool overworld_script_command_xd4_bufferitemnameplural(overworld_script_state_t *state) {
@@ -78,7 +81,7 @@ void special_item_obtain_show() {
 			tbox_font_colormap fontcolmap = {1, 2, 1, 3};
 			tbox_print_string(box_id, 0, 32 + 4, 2, 0, 0, &fontcolmap, 0,
 				item_get_description(item_idx));
-			fmem.item_obtain_tb_id = box_id;
+			item_obtain_tb_id = box_id;
 		} else {
 			const tboxdata *tbdata = is_tm_hm ? &tboxdata_tm_hm_non_transparent : &tboxdata_non_tm_hm_non_transparent;
 			u8 box_id = tbox_new(tbdata);
@@ -89,9 +92,9 @@ void special_item_obtain_show() {
 			tbox_font_colormap fontcolmap = {1, 2, 1, 3};
 			tbox_print_string(box_id, 0, 32 + 4, 2, 0, 0, &fontcolmap, 0,
 				item_get_description(item_idx));
-			fmem.item_obtain_tb_id = box_id;
+			item_obtain_tb_id = box_id;
 		}
-		DEBUG("Item description box %d\n", fmem.item_obtain_tb_id);
+		DEBUG("Item description box %d\n", item_obtain_tb_id);
 
 		// Create the oam
 		u16 tile = oam_vram_get_tile(ITEM_OBTAIN_TAG);
@@ -118,10 +121,10 @@ void special_item_obtain_show() {
 		}
 		u8 oam_idx = oam_new_forward_search(&template_item_obtain, 24 + 4, 
 			is_tm_hm ? 80 + 4 : 88 + 4, 1);
-		fmem.item_obtain_oam_id = oam_idx;
+		item_obtain_oam_id = oam_idx;
 	} else {
-		fmem.item_obtain_tb_id = 0x10;
-		fmem.item_obtain_oam_id = NUM_OAMS;
+		item_obtain_tb_id = 0x10;
+		item_obtain_oam_id = NUM_OAMS;
 	}
     
 }
@@ -143,7 +146,7 @@ static void item_obtain_delete_oam(u8 self) {
 			++*state; // I frame delay
 			break;
 		default: {
-			fmem.mugshot_active = 0;
+			mugshot_flags.active = 0;
 			if (!big_callback_is_active(item_obtain_wait_for_deletion)) {
 				big_callbacks[self].function = item_obtain_wait_for_deletion;
 			} else {
@@ -192,11 +195,11 @@ static void item_obtain_wait_for_deletion(u8 self) {
 void special_item_obtain_delete() {
     // Delete the text
 	u8 delete_tb_cb_id = big_callback_new(item_obtain_delete_text, 0);
-	big_callbacks[delete_tb_cb_id].params[0] = fmem.item_obtain_tb_id;
+	big_callbacks[delete_tb_cb_id].params[0] = item_obtain_tb_id;
 	big_callbacks[delete_tb_cb_id].params[1] = 0;
 
 	// Delete the oam
-	u16 oam_id = fmem.item_obtain_oam_id;
+	u16 oam_id = item_obtain_oam_id;
 	u8 delete_oam_cb_id = big_callback_new(item_obtain_delete_oam, 0);
 	big_callbacks[delete_oam_cb_id].params[0] = oam_id;
 	big_callbacks[delete_oam_cb_id].params[1] = 0;

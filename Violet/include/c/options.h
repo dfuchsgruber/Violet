@@ -70,6 +70,8 @@ extern const u8 gfx_options_uiTiles[];
 extern const u8 gfx_options_uiMap[];
 extern const u8 gfx_options_uiPal[];
 
+extern EWRAM options_state_t *options_state;
+
 #define OPTIONS_STATE ((options_state_t*)fmem.gp_state)
 
 /**

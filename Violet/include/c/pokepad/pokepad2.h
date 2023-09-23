@@ -35,7 +35,9 @@ typedef struct {
     u16 context_menu_cursor_position;
     u16 context_menu_num_items_above;
     list_menu_item wallpaper_list[POKEPAD_NUM_WALLPAPERS];
-} pokepad_memory2;
+} pokepad_state_t;
+
+extern EWRAM pokepad_state_t *pokepad_state;
 
 
 typedef struct {
@@ -99,8 +101,6 @@ extern const u8 gfx_pokepad_cursorPal[];
 extern const u8 gfx_pokepad_indicator_leftTiles[];
 extern const u8 gfx_pokepad_indicator_leftPal[];
 extern const u8 gfx_pokepad_indicator_rightTiles[];
-
-#define POKEPAD_STATE ((pokepad_memory2*)fmem.pad_mem)
 
 
 #endif

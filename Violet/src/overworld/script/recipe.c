@@ -86,7 +86,7 @@ void recipe_obtain_show() {
 			tbox_clear_bottom_line(box_id);
 			tbox_print_string(box_id, 0, 32 + 4, 2 + 56, 0, 0, &fontcolmap, 0,
 				item_get_description(recipe->item));
-			fmem.item_obtain_tb_id = box_id;
+			item_obtain_tb_id = box_id;
 		} else {
 			const tboxdata *tbdata = &tbox_template_recipe_non_transparent;
 			box_id = tbox_new(tbdata);
@@ -96,7 +96,7 @@ void recipe_obtain_show() {
 			tbox_frame_draw_outer(box_id, 1, 0xF);
 			tbox_print_string(box_id, 0, 32 + 4, 2 + 56, 0, 0, &fontcolmap, 0,
 				item_get_description(recipe->item));
-			fmem.item_obtain_tb_id = box_id;
+			item_obtain_tb_id = box_id;
 		}
         // Write out the recipe
         for (size_t i = 0; i < MAX_NUM_INGREDIENTS; i++) {
@@ -160,10 +160,10 @@ void recipe_obtain_show() {
 		}
 		u8 oam_idx = oam_new_forward_search(&template_recipe_item, 24 + 4, 
 			64 + 4, 1);
-		fmem.item_obtain_oam_id = oam_idx;
+		item_obtain_oam_id = oam_idx;
 	} else {
-		fmem.item_obtain_tb_id = 0x10;
-		fmem.item_obtain_oam_id = NUM_OAMS;
+		item_obtain_tb_id = 0x10;
+		item_obtain_oam_id = NUM_OAMS;
 	}
 }
 

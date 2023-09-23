@@ -1134,7 +1134,7 @@ lsr r0, #0x1A
 
 .org 0x0800ec74
 	push {r1}
-	ldr r1, =fmem
+	ldr r1, =hook_tmp
 	str r0, [r1]
 	pop {r1}
 	ldr r0, =pokemon_get_frontsprite | 1
@@ -1143,7 +1143,7 @@ lsr r0, #0x1A
 
 .org 0x0800f0b8
 	push {r1}
-	ldr r1, =fmem
+	ldr r1, =hook_tmp
 	str r0, [r1]
 	pop {r1}
 	ldr r0, =pokemon_get_frontsprite | 1

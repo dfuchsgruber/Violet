@@ -82,7 +82,7 @@ u16 battler_get_keystone(u8 battler_idx) {
             break;
         }
         case OWNER_TRAINER_B: {
-            keystone = trainer_get_keystone(fmem.trainer_varsB.trainer_id);
+            keystone = trainer_get_keystone(trainer_varsB.trainer_id);
             if (keystone == 0xFFFF) keystone = *var_access(OPPONENT_MEGA_ITEM);
             break;
         }
@@ -115,12 +115,12 @@ const mega_evolution_t *battler_get_available_mega_evolution(u8 battler_idx) {
     }
     if (!mega_evolution)
         return NULL;
-    if (MEGA_STATE.owner_mega_evolved[owner] && mega_evolution->type == MEGA_EVOLUTION)
+    if (mega_state->owner_mega_evolved[owner] && mega_evolution->type == MEGA_EVOLUTION)
         return NULL;
     // Check if any other battler with the same owner is marked for mega evolution
     if (mega_evolution->type == MEGA_EVOLUTION) {
         for (u8 i = 0; i < battler_cnt; i++) {
-            if (i != battler_idx && battler_get_owner(i) == owner && MEGA_STATE.marked_for_mega_evolution[i] == MEGA_EVOLUTION)
+            if (i != battler_idx && battler_get_owner(i) == owner && mega_state->marked_for_mega_evolution[i] == MEGA_EVOLUTION)
                 return NULL; 
         }
     }

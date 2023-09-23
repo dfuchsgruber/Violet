@@ -41,6 +41,7 @@ extern const trainerbattle_configuration trainerbattle_configuration_double_with
 extern const trainerbattle_configuration trainerbattle_configuration_losable[];
 
 extern trainer_variables trainer_vars;
+extern EWRAM trainer_variables trainer_varsB;
 
 /**
  * Reads an unaligned hword form the trainer build mini script

@@ -20,7 +20,7 @@ extern "C" {
     } multichoice_t;
     
     extern const multichoice_t multichoices[];
-
+    extern EWRAM multichoice_t dynamic_multichoice;
 
 #ifdef	__cplusplus
 }

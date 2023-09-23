@@ -38,6 +38,13 @@ extern "C" {
 #define DG2_ALTERNATIVE_TILE 16
 #define DG2_ALTERNATIVE_TILE_PROHIBITED 32
     
+    typedef struct {
+        u8 header_initialized : 1;
+        u8 blocks_initialized : 1;
+    } dmap_flags_t;
+
+    extern EWRAM dmap_flags_t dmap_flags;
+
     typedef struct{
         // Initial seed of the dg2
         u32 initial_seed;
@@ -563,6 +570,7 @@ extern "C" {
      * @return random 16-bit value
      **/
     u16 dungeon2_seeded_rnd16(dungeon_generator2 *dg2, u32 seed);
+
 
 #ifdef	__cplusplus
 }

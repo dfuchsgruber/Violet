@@ -18,22 +18,25 @@
 #include "menu_indicators.h"
 #include "overworld/script.h"
 
+EWRAM treasure_map_state_t *treasure_map_state = NULL;
+EWRAM u16 treasure_map_cursor_position = 0;
+EWRAM u16 treasure_map_items_above = 0;
 
 static const u8 treasure_map_context_has_scroll_indicators[NUM_TREASURE_MAP_CONTEXTS] = {
     [TREASURE_MAP_CONTEXT_NONE] = true,
 };
 
 static void treasure_map_free() {
-    list_menu_remove(TREASURE_MAP_STATE->list_menu_cb_idx, &fmem.treasure_map_cursor_position, &fmem.treasure_map_items_above);
-    free(TREASURE_MAP_STATE->bg0_map);
-    free(TREASURE_MAP_STATE->bg1_map);
-    free(TREASURE_MAP_STATE->bg2_map);
-    free(TREASURE_MAP_STATE->bg3_map);
-    oam_free(oams + TREASURE_MAP_STATE->oam_idx_cross);
-    if (treasure_map_context_has_scroll_indicators[TREASURE_MAP_STATE->context])
-        scroll_indicator_delete(TREASURE_MAP_STATE->scroll_indicator_cb_idx);
+    list_menu_remove(treasure_map_state->list_menu_cb_idx, &treasure_map_cursor_position, &treasure_map_items_above);
+    free(treasure_map_state->bg0_map);
+    free(treasure_map_state->bg1_map);
+    free(treasure_map_state->bg2_map);
+    free(treasure_map_state->bg3_map);
+    oam_free(oams + treasure_map_state->oam_idx_cross);
+    if (treasure_map_context_has_scroll_indicators[treasure_map_state->context])
+        scroll_indicator_delete(treasure_map_state->scroll_indicator_cb_idx);
     tbox_free_all();
-    free(TREASURE_MAP_STATE);
+    free(treasure_map_state);
 }
 
 static void treasure_map_continue_ow_script(u8 self) {
@@ -44,7 +47,7 @@ static void treasure_map_continue_ow_script(u8 self) {
 
 static void treasure_map_free_callback(u8 self) {
     if (!fading_control.active) {
-        if (TREASURE_MAP_STATE->from_outdoor) {
+        if (treasure_map_state->from_outdoor) {
             callback1_set(map_reload);
             overworld_script_resume();
             big_callbacks[self].function = treasure_map_continue_ow_script;
@@ -59,8 +62,8 @@ static void treasure_map_free_callback(u8 self) {
 static void treasure_map_idle_callback_none(u8 self) {
     if (fading_control.active || dma3_busy(-1))
         return;
-    int item_idx = list_menu_process_input(TREASURE_MAP_STATE->list_menu_cb_idx);
-    list_menu_get_scroll_and_row(TREASURE_MAP_STATE->list_menu_cb_idx, &fmem.treasure_map_cursor_position, &fmem.treasure_map_items_above);
+    int item_idx = list_menu_process_input(treasure_map_state->list_menu_cb_idx);
+    list_menu_get_scroll_and_row(treasure_map_state->list_menu_cb_idx, &treasure_map_cursor_position, &treasure_map_items_above);
     if (item_idx >= NUM_TREASURE_MAPS || super.keys_new.keys.B) {
         play_sound(5);
         fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
@@ -71,7 +74,7 @@ static void treasure_map_idle_callback_none(u8 self) {
 static void treasure_map_idle_callback_show(u8 self) {
     if (fading_control.active || dma3_busy(-1))
         return;
-    list_menu_get_scroll_and_row(TREASURE_MAP_STATE->list_menu_cb_idx, &fmem.treasure_map_cursor_position, &fmem.treasure_map_items_above);
+    list_menu_get_scroll_and_row(treasure_map_state->list_menu_cb_idx, &treasure_map_cursor_position, &treasure_map_items_above);
     if (super.keys_new.keys.A || super.keys_new.keys.B) {
         play_sound(5);
         fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
@@ -162,7 +165,7 @@ static void treasure_map_update_treasure_map_tilemap(bool treasure_map_visible) 
     const bg_tile *src = (!treasure_map_visible) ? gfx_treasure_map_ui_backgroundMap + 32 * 32 : gfx_treasure_map_ui_backgroundMap;
     for (int x = 8; x <= 30; x++) {
         for (int y = 0; y <= 20; y++) {
-            TREASURE_MAP_STATE->bg3_map[32 * y + x] = src[32 * y + x];
+            treasure_map_state->bg3_map[32 * y + x] = src[32 * y + x];
         }
     }
     bg_virtual_sync_reqeust_push(3);
@@ -201,7 +204,7 @@ static void treasure_map_update_callback(u8 self) {
     switch (*state) {
         case 0: {
             treasure_map_update_treasure_map_tilemap(false);
-            oams[TREASURE_MAP_STATE->oam_idx_cross].flags |= OAM_FLAG_INVISIBLE;
+            oams[treasure_map_state->oam_idx_cross].flags |= OAM_FLAG_INVISIBLE;
             // Settings are synced (`bg_display_sync`) a frame later to be in the same frame as the disappearance of the map
             bg_hide(0);
             bg_hide(1);
@@ -213,7 +216,7 @@ static void treasure_map_update_callback(u8 self) {
             bg_display_sync();
             if (treasure_map_idx >= NUM_TREASURE_MAPS) {
                 // Done updating, we just delete everything on the screen
-                TREASURE_MAP_STATE->is_updating = false;
+                treasure_map_state->is_updating = false;
                 big_callback_delete(self);
             } else {
                 overworld_load_tileset_pals_without_palette_effects(header->footer);
@@ -239,13 +242,13 @@ static void treasure_map_update_callback(u8 self) {
             int x_center = sign->x + sign->value.treasure_map.center_x;
             int y_center = sign->y + sign->value.treasure_map.center_y;
             bg_tile *targets[3] = {
-                TREASURE_MAP_STATE->bg2_map,
-                TREASURE_MAP_STATE->bg1_map,
-                TREASURE_MAP_STATE->bg0_map,
+                treasure_map_state->bg2_map,
+                treasure_map_state->bg1_map,
+                treasure_map_state->bg0_map,
             };
-            oams[TREASURE_MAP_STATE->oam_idx_cross].x2 = (s16)(-sign->value.treasure_map.center_x * 16);
-            oams[TREASURE_MAP_STATE->oam_idx_cross].y2 = (s16)(-sign->value.treasure_map.center_y * 16);
-            oam_gfx_anim_start(oams + TREASURE_MAP_STATE->oam_idx_cross, (u8)checkflag(treasure_map_get_flag(treasure_map_idx)));
+            oams[treasure_map_state->oam_idx_cross].x2 = (s16)(-sign->value.treasure_map.center_x * 16);
+            oams[treasure_map_state->oam_idx_cross].y2 = (s16)(-sign->value.treasure_map.center_y * 16);
+            oam_gfx_anim_start(oams + treasure_map_state->oam_idx_cross, (u8)checkflag(treasure_map_get_flag(treasure_map_idx)));
             for (int xx = 0; xx < 9; xx++) {
                 for (int yy = 0; yy < 7; yy++) {
                     int x = x_center + xx - 4;
@@ -278,8 +281,8 @@ static void treasure_map_update_callback(u8 self) {
             bg_update_and_show(1);
             bg_update_and_show(2);
             bg_display_sync();
-            oams[TREASURE_MAP_STATE->oam_idx_cross].flags &= (u16)(~OAM_FLAG_INVISIBLE);
-            TREASURE_MAP_STATE->is_updating = false;
+            oams[treasure_map_state->oam_idx_cross].flags &= (u16)(~OAM_FLAG_INVISIBLE);
+            treasure_map_state->is_updating = false;
             big_callback_delete(self);
             break;
         }
@@ -296,7 +299,7 @@ static void treasure_map_update(int treasure_map_idx) {
     }
     big_callbacks[cb_idx].params[0] = (u16)treasure_map_idx;
     big_callbacks[cb_idx].params[1] = 0;
-    TREASURE_MAP_STATE->is_updating = true;
+    treasure_map_state->is_updating = true;
 }
 
 static void treasure_map_print_item_callback(u8 tbox_idx, int idx, u8 y) {
@@ -337,7 +340,7 @@ static void treasure_map_callback_initialize() {
     treasure_map_cb1();
     if (fading_control.active || dma3_busy(-1))
         return;
-    switch (TREASURE_MAP_STATE->initialization_state) {
+    switch (treasure_map_state->initialization_state) {
         case RESET: {
             reset_hblank_and_vblank_callbacks();
             bg_vritual_sync_reset();
@@ -349,21 +352,21 @@ static void treasure_map_callback_initialize() {
             big_callback_delete_all();
             bg_reset_control_and_displacement();
             big_callback_delete_all();
-            TREASURE_MAP_STATE->initialization_state++;
+            treasure_map_state->initialization_state++;
             break;
         }
         case SETUP_BGS: {
             bg_reset(0);
             bg_reset_control_and_displacement();
             bg_setup(0, treasure_map_bg_configs, ARRAY_COUNT(treasure_map_bg_configs));
-            TREASURE_MAP_STATE->bg0_map = malloc_and_clear(0x800);
-            bg_set_tilemap(0, TREASURE_MAP_STATE->bg0_map);
-            TREASURE_MAP_STATE->bg1_map = malloc_and_clear(0x800);
-            bg_set_tilemap(1, TREASURE_MAP_STATE->bg1_map);
-            TREASURE_MAP_STATE->bg2_map = malloc_and_clear(0x800);
-            bg_set_tilemap(2, TREASURE_MAP_STATE->bg2_map);
-            TREASURE_MAP_STATE->bg3_map = malloc_and_clear(0x800);
-            bg_set_tilemap(3, TREASURE_MAP_STATE->bg3_map);
+            treasure_map_state->bg0_map = malloc_and_clear(0x800);
+            bg_set_tilemap(0, treasure_map_state->bg0_map);
+            treasure_map_state->bg1_map = malloc_and_clear(0x800);
+            bg_set_tilemap(1, treasure_map_state->bg1_map);
+            treasure_map_state->bg2_map = malloc_and_clear(0x800);
+            bg_set_tilemap(2, treasure_map_state->bg2_map);
+            treasure_map_state->bg3_map = malloc_and_clear(0x800);
+            bg_set_tilemap(3, treasure_map_state->bg3_map);
             bg_display_sync();
             bg_virtual_sync(0);
             bg_virtual_sync(1);
@@ -371,7 +374,7 @@ static void treasure_map_callback_initialize() {
             bg_virtual_sync(3);
             io_set(IO_DISPCNT, IO_DISPCNT_OAM_CHARACTER_MAPPING_ONE_DIMENSIONAL | IO_DISPCNT_OBJ | IO_DISPCNT_WIN0);
             io_set(IO_BLDCNT, IO_BLDCNT_NONE);
-            TREASURE_MAP_STATE->initialization_state++;
+            treasure_map_state->initialization_state++;
             break;
         }
         case SETUP_TBOXES: {
@@ -379,7 +382,7 @@ static void treasure_map_callback_initialize() {
             tbox_sync_with_virtual_bg_and_init_all(treasure_map_tboxes);
             tbox_init_frame_std(TREASURE_MAP_TBOX_LIST, TREASURE_MAP_START_TILE_BORDER_STD, 
                 16 * TREASURE_MAP_PAL_IDX_BORDER_STD);
-            TREASURE_MAP_STATE->initialization_state++;
+            treasure_map_state->initialization_state++;
             for (u8 i = 0; treasure_map_tboxes[i].bg_id != 0xFF; i++) {
                 tbox_flush_set(i, 0x00);
                 tbox_flush_map(i);
@@ -389,7 +392,7 @@ static void treasure_map_callback_initialize() {
             break;
         }
         case SETUP_LIST: {
-            TREASURE_MAP_STATE->num_list_menu_items = 0;
+            treasure_map_state->num_list_menu_items = 0;
             for (size_t i = 0; i < ARRAY_COUNT(treasure_maps); i++) {
                 const treasure_map_t *map = treasure_maps + i;
                 if (map->bank != 0xFF) {
@@ -400,20 +403,20 @@ static void treasure_map_callback_initialize() {
                     bool map_found = checkflag(treasure_map_get_map_flag(sign->value.treasure_map.idx));
                     bool treasure_found = checkflag(treasure_map_get_flag(sign->value.treasure_map.idx));
                     if (map_found) {
-                        u8 *text = TREASURE_MAP_STATE->list_menu_item_texts[TREASURE_MAP_STATE->num_list_menu_items];
+                        u8 *text = treasure_map_state->list_menu_item_texts[treasure_map_state->num_list_menu_items];
                         treasure_map_format_string(i, map_found, treasure_found, text);
-                        TREASURE_MAP_STATE->list_menu_items[TREASURE_MAP_STATE->num_list_menu_items].idx = (u8)(i);
-                        TREASURE_MAP_STATE->list_menu_items[TREASURE_MAP_STATE->num_list_menu_items].text = text;
-                        TREASURE_MAP_STATE->num_list_menu_items++;
+                        treasure_map_state->list_menu_items[treasure_map_state->num_list_menu_items].idx = (u8)(i);
+                        treasure_map_state->list_menu_items[treasure_map_state->num_list_menu_items].text = text;
+                        treasure_map_state->num_list_menu_items++;
                     }
                 }
             }
             // Add the "back" option
-            TREASURE_MAP_STATE->list_menu_items[TREASURE_MAP_STATE->num_list_menu_items].idx = NUM_TREASURE_MAPS;
-            TREASURE_MAP_STATE->list_menu_items[TREASURE_MAP_STATE->num_list_menu_items].text = str_back;
-                        TREASURE_MAP_STATE->num_list_menu_items++;
-            gp_list_menu_template.items = TREASURE_MAP_STATE->list_menu_items;
-            gp_list_menu_template.item_cnt = (u16)(TREASURE_MAP_STATE->num_list_menu_items);
+            treasure_map_state->list_menu_items[treasure_map_state->num_list_menu_items].idx = NUM_TREASURE_MAPS;
+            treasure_map_state->list_menu_items[treasure_map_state->num_list_menu_items].text = str_back;
+                        treasure_map_state->num_list_menu_items++;
+            gp_list_menu_template.items = treasure_map_state->list_menu_items;
+            gp_list_menu_template.item_cnt = (u16)(treasure_map_state->num_list_menu_items);
             gp_list_menu_template.tbox_idx = TREASURE_MAP_TBOX_LIST;
             gp_list_menu_template.header_x = 0;
             gp_list_menu_template.item_x = 9;
@@ -431,15 +434,15 @@ static void treasure_map_callback_initialize() {
             // TODO
             gp_list_menu_template.cursor_moved_callback = treasure_map_cursor_move_callback; 
             gp_list_menu_template.item_print_callback = treasure_map_print_item_callback;
-            TREASURE_MAP_STATE->initialization_state++;
+            treasure_map_state->initialization_state++;
             break;
         }
         case LOAD_GFX: {
             pal_copy(&black, 0, sizeof(color_t));
             lz77uncompvram(gfx_treasure_map_ui_backgroundTiles, CHARBASE(2));
-            cpuset(gfx_treasure_map_ui_backgroundMap, TREASURE_MAP_STATE->bg3_map, CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(32 * 32 * sizeof(bg_tile)));
+            cpuset(gfx_treasure_map_ui_backgroundMap, treasure_map_state->bg3_map, CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(32 * 32 * sizeof(bg_tile)));
             pal_decompress(gfx_treasure_map_ui_backgroundPal, 16 * 13, 32 * sizeof(color_t));
-            TREASURE_MAP_STATE->initialization_state++;
+            treasure_map_state->initialization_state++;
             break;
         }
         case LOAD_OAM_GFX: {
@@ -447,33 +450,33 @@ static void treasure_map_callback_initialize() {
             oam_load_graphic(&treasure_map_white_square_graphic);
             oam_palette_load_if_not_present(&treasure_map_cross_palette);
             oam_palette_load_if_not_present(&treasure_map_white_square_palette);
-            TREASURE_MAP_STATE->initialization_state++;
+            treasure_map_state->initialization_state++;
             break;
         }
         case SETUP_OAM: {
             // (void)treasure_map_cross_template;
-            TREASURE_MAP_STATE->oam_idx_cross = oam_new_forward_search(&treasure_map_cross_template,
+            treasure_map_state->oam_idx_cross = oam_new_forward_search(&treasure_map_cross_template,
                 152, 80, 0);
-            oams[TREASURE_MAP_STATE->oam_idx_cross].flags |= OAM_FLAG_CENTERED;
+            oams[treasure_map_state->oam_idx_cross].flags |= OAM_FLAG_CENTERED;
             // We're out of bgs for the white text background, so we just use oams
             oams[oam_new_forward_search(&treasure_map_white_square_template, 40, 40, 0)].flags |= OAM_FLAG_CENTERED;
             oams[oam_new_forward_search(&treasure_map_white_square_template, 40, 40 + 64, 0)].flags |= OAM_FLAG_CENTERED;
             oams[oam_new_forward_search(&treasure_map_white_square_template, 40, 40 + 128, 0)].flags |= OAM_FLAG_CENTERED;
-            TREASURE_MAP_STATE->initialization_state++;
+            treasure_map_state->initialization_state++;
             break;
         }
         case SETUP_SCROLL_INDICATORS: {
             scroll_indicator_template template_list = {
                 .arrow0_threshold = 0, 
-                .arrow1_threshold = (u16)MAX(0, TREASURE_MAP_STATE->num_list_menu_items - TREASURE_MAP_NUM_MAPS_SHOWN), 
+                .arrow1_threshold = (u16)MAX(0, treasure_map_state->num_list_menu_items - TREASURE_MAP_NUM_MAPS_SHOWN), 
                 .arrow0_type = SCROLL_ARROW_UP, .arrow1_type = SCROLL_ARROW_DOWN,
                 .arrow0_x = 40, .arrow1_x = 40,
                 .arrow0_y = 7, .arrow1_y = 152,
                 .pal_tag = 112, .tiles_tag = 112,
             };
-            if (treasure_map_context_has_scroll_indicators[TREASURE_MAP_STATE->context])
-                TREASURE_MAP_STATE->scroll_indicator_cb_idx = scroll_indicator_new(&template_list, &fmem.treasure_map_cursor_position);
-            TREASURE_MAP_STATE->initialization_state++;
+            if (treasure_map_context_has_scroll_indicators[treasure_map_state->context])
+                treasure_map_state->scroll_indicator_cb_idx = scroll_indicator_new(&template_list, &treasure_map_cursor_position);
+            treasure_map_state->initialization_state++;
             break;
         }
         case SHOW: {
@@ -490,20 +493,20 @@ static void treasure_map_callback_initialize() {
             bg_virtual_sync_reqeust_push(1);
             bg_virtual_sync_reqeust_push(2);
             bg_virtual_sync_reqeust_push(3);
-            TREASURE_MAP_STATE->initialization_state++;
+            treasure_map_state->initialization_state++;
             break;
         }
         default: {
-            TREASURE_MAP_STATE->list_menu_cb_idx = list_menu_new(&gp_list_menu_template, 
-                fmem.treasure_map_cursor_position, fmem.treasure_map_items_above);
-            if (TREASURE_MAP_STATE->context == TREASURE_MAP_CONTEXT_SHOW)
-                list_menu_search(TREASURE_MAP_STATE->list_menu_cb_idx, TREASURE_MAP_STATE->treasure_map_idx_to_show,
+            treasure_map_state->list_menu_cb_idx = list_menu_new(&gp_list_menu_template, 
+                treasure_map_cursor_position, treasure_map_items_above);
+            if (treasure_map_state->context == TREASURE_MAP_CONTEXT_SHOW)
+                list_menu_search(treasure_map_state->list_menu_cb_idx, treasure_map_state->treasure_map_idx_to_show,
                     true);
             fading_control.buffer_transfer_disabled = false;
             callback1_set(treasure_map_cb1);
             vblank_handler_set(treasure_map_vblank_callback);
             fadescreen(0xFFFFFFFF, 0, 16, 0, 0);
-            big_callback_new(treasure_map_idle_callbacks[TREASURE_MAP_STATE->context], 0);
+            big_callback_new(treasure_map_idle_callbacks[treasure_map_state->context], 0);
             break;
         }
     }
@@ -512,7 +515,7 @@ static void treasure_map_callback_initialize() {
 static void treasure_map_wait_for_fadescreen_and_initialize_ui(u8 self) {
     if (!fading_control.active) {
         big_callback_delete(self);
-        if (TREASURE_MAP_STATE->from_outdoor) {
+        if (treasure_map_state->from_outdoor) {
             overworld_free();
         } else {
             pokepad2_free();
@@ -524,9 +527,9 @@ static void treasure_map_wait_for_fadescreen_and_initialize_ui(u8 self) {
 
 void treasure_map_initialize(bool from_outdoor) {
     overworld_rain_sound_fade_out();
-    fmem.gp_state = malloc_and_clear(sizeof(treasure_map_state_t));
-    TREASURE_MAP_STATE->from_outdoor = from_outdoor;
-    TREASURE_MAP_STATE->context = TREASURE_MAP_CONTEXT_NONE;
+    treasure_map_state = malloc_and_clear(sizeof(treasure_map_state_t));
+    treasure_map_state->from_outdoor = from_outdoor;
+    treasure_map_state->context = TREASURE_MAP_CONTEXT_NONE;
     if (from_outdoor)
         fadescreen_all(1, 0);
     else
@@ -537,11 +540,11 @@ void treasure_map_initialize(bool from_outdoor) {
 
 void treasure_map_initialize_show() {
     overworld_rain_sound_fade_out();
-    fmem.gp_state = malloc_and_clear(sizeof(treasure_map_state_t));
-    TREASURE_MAP_STATE->from_outdoor = true;
-    TREASURE_MAP_STATE->context = TREASURE_MAP_CONTEXT_SHOW;
-    TREASURE_MAP_STATE->treasure_map_idx_to_show = (u8)(*var_access(0x8004));
-    if (TREASURE_MAP_STATE->from_outdoor)
+    treasure_map_state = malloc_and_clear(sizeof(treasure_map_state_t));
+    treasure_map_state->from_outdoor = true;
+    treasure_map_state->context = TREASURE_MAP_CONTEXT_SHOW;
+    treasure_map_state->treasure_map_idx_to_show = (u8)(*var_access(0x8004));
+    if (treasure_map_state->from_outdoor)
         fadescreen_all(1, 0);
     else
         fadescreen(0xFFFFFFFF, 0, 0, 16, 0);

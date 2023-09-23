@@ -26,6 +26,14 @@ extern "C" {
         const u8 *name;
     } mugshot;
 
+    typedef struct {
+        u8 active : 1;
+    } mugshot_flags_t;
+
+    extern EWRAM mugshot_flags_t mugshot_flags;
+    extern EWRAM u8 mugshot_oam_id;
+    extern EWRAM u8 mugshot_tb_id;
+
     /**
      * Creates the oam for a given mugshot and stores its idx in the floating memory
      * @param side side to display the mugshot (0 = left, 1 = right)

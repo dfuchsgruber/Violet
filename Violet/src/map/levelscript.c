@@ -7,11 +7,13 @@
 #include "constants/levelscript_types.h"
 #include "map/cloud.h"
 
+EWRAM const u8 *additional_levelscript_4 = NULL;
+
 void map_init_levelscript_4() {
-    const u8 *a = fmem.additional_levelscript_4;
+    const u8 *a = additional_levelscript_4;
     if (a) {
         overworld_script_init_muted(a);
-        fmem.additional_levelscript_4 = NULL;
+        additional_levelscript_4 = NULL;
     }
     const u8 *s = map_levelscript_get_if_triggered(LEVELSCRIPT_TYPE_ON_WARP_INTO_MAP_TABLE);
     if (s) {

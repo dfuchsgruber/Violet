@@ -107,7 +107,7 @@ void dungeon2_wild_pokemon_sample_level_boundaries(u8 *level_min, u8 *level_max,
 
 
 u16 dungeon2_encounter_rnd_generator() {
-  dungeon_generator2 *dg2 = &(cmem.dg2);  // is expected to be initialized
+  dungeon_generator2 *dg2 = &(csave.dg2);  // is expected to be initialized
   return dungeon2_rnd_16(dg2) & 127;
 }
 

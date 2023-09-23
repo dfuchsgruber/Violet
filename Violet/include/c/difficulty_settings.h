@@ -22,7 +22,7 @@ typedef struct {
     void *bg_3_map;
 } difficulty_settings_state_t;
 
-#define DIFFICULTY_SETTINGS_STATE ((difficulty_settings_state_t*)fmem.gp_state)
+extern EWRAM difficulty_settings_state_t *difficulty_settings_state;
 
 #define DIFFICULTY_SETTINGS_START_TILE_BORDER_BASE (1023 - TBOX_FRAME_MESSAGE_NUM_TILES - TBOX_FRAME_SET_STYLE_NUM_TILES)
 #define DIFFICULTY_SETTINGS_START_TILE_BORDER_MESSAGE (DIFFICULTY_SETTINGS_START_TILE_BORDER_BASE)

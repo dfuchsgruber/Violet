@@ -10,6 +10,8 @@
 #include "battle/ai.h"
 #include "data/trainer_parties.h"
 
+EWRAM u32 trainer_prng_state = 0;
+EWRAM u8 dynamic_trainer_name[12] = {0};
 
 const trainer trainers[TRAINER_CNT] = {
   {
@@ -4686,63 +4688,63 @@ const trainer trainers[TRAINER_CNT] = {
         .encounter = 0, .gender = 0, .name = LANGDEP(PSTRING("Nemo"),
             PSTRING("Nemo")), .pokemon_cnt = 2,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
-        .party = fmem.dynamic_trainer_party
+        .party = dynamic_trainer_party
     },
     [0xF4] = {
         .trainerclass = TRAINERCLASS_PSYCHO, .sprite = 21,
         .encounter = 0, .gender = 0, .name = LANGDEP(PSTRING("Myrko"),
             PSTRING("Myrko")), .pokemon_cnt = 1,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
-        .party = fmem.dynamic_trainer_party
+        .party = dynamic_trainer_party
     },
     [0xF5] = {
         .trainerclass = TRAINERCLASS_PSYCHO, .sprite = 21,
         .encounter = 0, .gender = 0, .name = LANGDEP(PSTRING("Obrast"),
             PSTRING("Obrast")), .pokemon_cnt = 3,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
-        .party = fmem.dynamic_trainer_party
+        .party = dynamic_trainer_party
     },
     [0xF6] = {
         .trainerclass = TRAINERCLASS_PSYCHO, .sprite = 21,
         .encounter = 0, .gender = 0, .name = LANGDEP(PSTRING("Johayn"),
             PSTRING("Johayn")), .pokemon_cnt = 2,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
-        .party = fmem.dynamic_trainer_party
+        .party = dynamic_trainer_party
     },
     [0xF7] = {
         .trainerclass = TRAINERCLASS_HEXE, .sprite = 10,
         .encounter = 0, .gender = 1, .name = LANGDEP(PSTRING("Gulyra"),
             PSTRING("Gulyra")), .pokemon_cnt = 2,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
-        .party = fmem.dynamic_trainer_party
+        .party = dynamic_trainer_party
     },
     [0xF8] = {
         .trainerclass = TRAINERCLASS_HEXE, .sprite = 10,
         .encounter = 0, .gender = 1, .name = LANGDEP(PSTRING("Cassna"),
             PSTRING("Cassna")), .pokemon_cnt = 1,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
-        .party = fmem.dynamic_trainer_party
+        .party = dynamic_trainer_party
     },
     [0xF9] = {
         .trainerclass = TRAINERCLASS_HEXE, .sprite = 10,
         .encounter = 0, .gender = 1, .name = LANGDEP(PSTRING("Ana"),
             PSTRING("Ana")), .pokemon_cnt = 3,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
-        .party = fmem.dynamic_trainer_party
+        .party = dynamic_trainer_party
     },
     [0xFA] = {
         .trainerclass = TRAINERCLASS_HEXE, .sprite = 10,
         .encounter = 0, .gender = 1, .name = LANGDEP(PSTRING("Andreaza"),
             PSTRING("Andreaza")), .pokemon_cnt = 2,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
-        .party = fmem.dynamic_trainer_party
+        .party = dynamic_trainer_party
     },
     [0xFB] = {
         .trainerclass = TRAINERCLASS_GENTLEMAN, .sprite = 23,
         .encounter = 0, .gender = 0, .name = LANGDEP(PSTRING("Sergej"),
             PSTRING("Sergej")), .pokemon_cnt = 3,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
-        .party = fmem.dynamic_trainer_party
+        .party = dynamic_trainer_party
     },
     [0xFC] = {
         .trainerclass = TRAINERCLASS_HEXE, .sprite = 10,
@@ -6409,28 +6411,28 @@ const trainer trainers[TRAINER_CNT] = {
         .encounter = 0, .gender = 0, .name = LANGDEP(PSTRING(""),
             PSTRING("")), .pokemon_cnt = 3,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
-        .party = fmem.dynamic_trainer_party
+        .party = dynamic_trainer_party
     },
     [0x1e1] = {
         .trainerclass = TRAINERCLASS_PKMN_RANGER, .sprite = 0x3d,
         .encounter = 1,  .gender = 1, .name = LANGDEP(PSTRING(""),
             PSTRING("")), .pokemon_cnt = 3,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
-        .party = fmem.dynamic_trainer_party,
+        .party = dynamic_trainer_party,
     },
     [0x1e2] = {
         .trainerclass = TRAINERCLASS_PKMN_RANGER, .sprite = 0x3c,
         .encounter = 0, .gender = 0, .name = LANGDEP(PSTRING(""),
             PSTRING("")), .pokemon_cnt = 3,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
-        .party = fmem.dynamic_trainer_party
+        .party = dynamic_trainer_party
     },
     [0x1e3] = {
         .trainerclass = TRAINERCLASS_PKMN_RANGER, .sprite = 0x3d,
         .encounter = 1,  .gender = 1, .name = LANGDEP(PSTRING(""),
             PSTRING("")), .pokemon_cnt = 3,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
-        .party = fmem.dynamic_trainer_party,
+        .party = dynamic_trainer_party,
     },
     [0x1e4] = {
         .trainerclass = TRAINERCLASS_EXPERTE, .sprite = 0x23,

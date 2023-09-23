@@ -19,6 +19,8 @@
 #include "list_menu.h"
 #include "new_game.h"
 
+EWRAM difficulty_settings_state_t *difficulty_settings_state = NULL;
+
 enum {
     TBOX_TEXT,
     TBOX_DIFFICULTY,
@@ -48,8 +50,8 @@ extern const LZ77COMPRESSED gfx_difficulty_setting_linesMap;
 extern const LZ77COMPRESSED gfx_difficulty_setting_linesPal;
 
 static void difficulty_settings_list_set_bg_v_offset() {
-    io_set(IO_BGVOFS(2), (u16)((DIFFICULTY_SETTINGS_STATE->list_offset * 16 + DIFFICULTY_SETTINGS_STATE->list_pixel_offset)));
-    io_set(IO_BGVOFS(3), (u16)(16 + DIFFICULTY_SETTINGS_STATE->list_pixel_offset));
+    io_set(IO_BGVOFS(2), (u16)((difficulty_settings_state->list_offset * 16 + difficulty_settings_state->list_pixel_offset)));
+    io_set(IO_BGVOFS(3), (u16)(16 + difficulty_settings_state->list_pixel_offset));
 }
 
 static void difficulty_settings_cb1(){
@@ -143,15 +145,15 @@ static u16 difficulty_settings_list_count_lines(const u8 *str) {
 static void difficulty_settings_scroll_indicators_list_new() {
     scroll_indicator_template template_list = {
         .arrow0_threshold = 0, 
-        .arrow1_threshold = (u16)MAX(0, DIFFICULTY_SETTINGS_STATE->list_num_lines - DIFFICULTY_LIST_MAX_ITEMS_SHOWN), 
+        .arrow1_threshold = (u16)MAX(0, difficulty_settings_state->list_num_lines - DIFFICULTY_LIST_MAX_ITEMS_SHOWN), 
         .arrow0_type = SCROLL_ARROW_UP, .arrow1_type = SCROLL_ARROW_DOWN,
         .arrow0_x = 86, .arrow1_x = 86,
         .arrow0_y = 7, .arrow1_y = 92,
         .pal_tag = 112, .tiles_tag = 112,
     };
-    DEBUG("List num lines %d\n", DIFFICULTY_SETTINGS_STATE->list_num_lines);
-    DIFFICULTY_SETTINGS_STATE->scroll_indicator_list_cb_idx = scroll_indicator_new(&template_list,
-        &DIFFICULTY_SETTINGS_STATE->list_offset);
+    DEBUG("List num lines %d\n", difficulty_settings_state->list_num_lines);
+    difficulty_settings_state->scroll_indicator_list_cb_idx = scroll_indicator_new(&template_list,
+        &difficulty_settings_state->list_offset);
 }
 
 static void difficulty_settings_scroll_indicators_difficulty_new() {
@@ -162,17 +164,17 @@ static void difficulty_settings_scroll_indicators_difficulty_new() {
         .arrow0_y = 50, .arrow1_y = 50,
         .pal_tag = 112, .tiles_tag = 112,
     };
-    DIFFICULTY_SETTINGS_STATE->scroll_indicator_difficulty_cb_idx = scroll_indicator_new(&template_difficulty,
-        &DIFFICULTY_SETTINGS_STATE->difficulty);
+    difficulty_settings_state->scroll_indicator_difficulty_cb_idx = scroll_indicator_new(&template_difficulty,
+        &difficulty_settings_state->difficulty);
 
 }
 
 static void difficulty_settings_initialize_difficulty(u16 difficulty) {
     *var_access(DIFFICULTY) = difficulty;
-    DIFFICULTY_SETTINGS_STATE->list_offset = 0;
-    DIFFICULTY_SETTINGS_STATE->list_pixel_offset = 0;
-    DIFFICULTY_SETTINGS_STATE->difficulty = difficulty;
-    DIFFICULTY_SETTINGS_STATE->list_num_lines = (u8)difficulty_settings_list_count_lines(difficulty_settings_get_list());
+    difficulty_settings_state->list_offset = 0;
+    difficulty_settings_state->list_pixel_offset = 0;
+    difficulty_settings_state->difficulty = difficulty;
+    difficulty_settings_state->list_num_lines = (u8)difficulty_settings_list_count_lines(difficulty_settings_get_list());
     difficulty_settings_print_list();
     difficulty_settings_print_difficulty();
 }
@@ -180,20 +182,20 @@ static void difficulity_settings_handle_input(u8 self);
 
 static void difficulty_settings_scroll_list(u8 self) {
     if (big_callbacks[self].params[0]) { // Scroll down
-        DIFFICULTY_SETTINGS_STATE->list_pixel_offset = (s8)(
-            DIFFICULTY_SETTINGS_STATE->list_pixel_offset + 2);
+        difficulty_settings_state->list_pixel_offset = (s8)(
+            difficulty_settings_state->list_pixel_offset + 2);
     } else { // Scroll up
-        DIFFICULTY_SETTINGS_STATE->list_pixel_offset = (s8)(
-            DIFFICULTY_SETTINGS_STATE->list_pixel_offset - 2);
+        difficulty_settings_state->list_pixel_offset = (s8)(
+            difficulty_settings_state->list_pixel_offset - 2);
     }
-    DEBUG("List offset %d, pixel offset %d\n", DIFFICULTY_SETTINGS_STATE->list_offset, DIFFICULTY_SETTINGS_STATE->list_pixel_offset);
-    if (DIFFICULTY_SETTINGS_STATE->list_pixel_offset >= 16) {
-        DIFFICULTY_SETTINGS_STATE->list_offset++;
-        DIFFICULTY_SETTINGS_STATE->list_pixel_offset = 0;
+    DEBUG("List offset %d, pixel offset %d\n", difficulty_settings_state->list_offset, difficulty_settings_state->list_pixel_offset);
+    if (difficulty_settings_state->list_pixel_offset >= 16) {
+        difficulty_settings_state->list_offset++;
+        difficulty_settings_state->list_pixel_offset = 0;
         big_callbacks[self].function = difficulity_settings_handle_input;
-    } else if (DIFFICULTY_SETTINGS_STATE->list_pixel_offset <= -16) {
-        DIFFICULTY_SETTINGS_STATE->list_offset--;
-        DIFFICULTY_SETTINGS_STATE->list_pixel_offset = 0;
+    } else if (difficulty_settings_state->list_pixel_offset <= -16) {
+        difficulty_settings_state->list_offset--;
+        difficulty_settings_state->list_pixel_offset = 0;
         big_callbacks[self].function = difficulity_settings_handle_input;
     }
 }
@@ -202,7 +204,7 @@ static void difficulty_settings_update_difficulty(u8 self) {
     u16 *state = big_callbacks[self].params + 1;
     switch (*state) {
         case 0:
-            difficulty_settings_initialize_difficulty(DIFFICULTY_SETTINGS_STATE->difficulty);
+            difficulty_settings_initialize_difficulty(difficulty_settings_state->difficulty);
             (*state)++;
             break;
         case 1:
@@ -218,13 +220,13 @@ static void difficulty_settings_update_difficulty(u8 self) {
 }
 
 static void difficulty_settings_free() {
-    scroll_indicator_delete(DIFFICULTY_SETTINGS_STATE->scroll_indicator_difficulty_cb_idx);
-    scroll_indicator_delete(DIFFICULTY_SETTINGS_STATE->scroll_indicator_list_cb_idx);
-    free(DIFFICULTY_SETTINGS_STATE->bg_0_map);
-    free(DIFFICULTY_SETTINGS_STATE->bg_1_map);
-    free(DIFFICULTY_SETTINGS_STATE->bg_2_map);
-    free(DIFFICULTY_SETTINGS_STATE->bg_3_map);
-    free(DIFFICULTY_SETTINGS_STATE);
+    scroll_indicator_delete(difficulty_settings_state->scroll_indicator_difficulty_cb_idx);
+    scroll_indicator_delete(difficulty_settings_state->scroll_indicator_list_cb_idx);
+    free(difficulty_settings_state->bg_0_map);
+    free(difficulty_settings_state->bg_1_map);
+    free(difficulty_settings_state->bg_2_map);
+    free(difficulty_settings_state->bg_3_map);
+    free(difficulty_settings_state);
 }
 
 static void difficulty_settings_wait_fadescreen_and_free_and_new_game(u8 self) {
@@ -268,28 +270,28 @@ static void difficulity_settings_handle_input(u8 self) {
     if (fading_control.active)
         return;
     if (super.keys.keys.down && 
-            DIFFICULTY_SETTINGS_STATE->list_offset < DIFFICULTY_SETTINGS_STATE->list_num_lines - DIFFICULTY_LIST_MAX_ITEMS_SHOWN) {
+            difficulty_settings_state->list_offset < difficulty_settings_state->list_num_lines - DIFFICULTY_LIST_MAX_ITEMS_SHOWN) {
         big_callbacks[self].function = difficulty_settings_scroll_list;
         big_callbacks[self].params[0] = true;
         
     } else if (super.keys.keys.up &&
-            DIFFICULTY_SETTINGS_STATE->list_offset > 0) {
+            difficulty_settings_state->list_offset > 0) {
         big_callbacks[self].function = difficulty_settings_scroll_list;
         big_callbacks[self].params[0] = false;
-    } else if (super.keys_new.keys.left && DIFFICULTY_SETTINGS_STATE->difficulty > 0) {
+    } else if (super.keys_new.keys.left && difficulty_settings_state->difficulty > 0) {
         play_sound(5);
         bg_hide(2);
         bg_display_sync();
-        scroll_indicator_delete(DIFFICULTY_SETTINGS_STATE->scroll_indicator_list_cb_idx);
-        DIFFICULTY_SETTINGS_STATE->difficulty--;
+        scroll_indicator_delete(difficulty_settings_state->scroll_indicator_list_cb_idx);
+        difficulty_settings_state->difficulty--;
         big_callbacks[self].function = difficulty_settings_update_difficulty;
         big_callbacks[self].params[1] = 0;
-    } else if (super.keys_new.keys.right && DIFFICULTY_SETTINGS_STATE->difficulty < NUM_DIFFICULTIES - 1) {
+    } else if (super.keys_new.keys.right && difficulty_settings_state->difficulty < NUM_DIFFICULTIES - 1) {
         play_sound(5);
         bg_hide(2);
         bg_display_sync();
-        scroll_indicator_delete(DIFFICULTY_SETTINGS_STATE->scroll_indicator_list_cb_idx);
-        DIFFICULTY_SETTINGS_STATE->difficulty++;
+        scroll_indicator_delete(difficulty_settings_state->scroll_indicator_list_cb_idx);
+        difficulty_settings_state->difficulty++;
         big_callbacks[self].function = difficulty_settings_update_difficulty;
         big_callbacks[self].params[1] = 0;
     } else if (super.keys_new.keys.A) {
@@ -314,7 +316,7 @@ enum {
 };
 
 void difficulty_settings_ui_initialize_callback() {
-    switch (DIFFICULTY_SETTINGS_STATE->state) {
+    switch (difficulty_settings_state->state) {
         case FREE_OVERWORLD:
             fading_control.buffer_transfer_disabled = true;
             // overworld_free();
@@ -324,7 +326,7 @@ void difficulty_settings_ui_initialize_callback() {
             dma0_reset_callback();
             tbox_free_all();
             bg_vritual_sync_reset();
-            DIFFICULTY_SETTINGS_STATE->state++;
+            difficulty_settings_state->state++;
             break;
         case SETUP_DATA:
             *var_access(DIFFICULTY) = DIFFICULTY_NORMAL;
@@ -332,14 +334,14 @@ void difficulty_settings_ui_initialize_callback() {
             bg_reset_scroll();
             bg_reset(0);
             bg_setup(0, bg_configs, ARRAY_COUNT(bg_configs));
-            DIFFICULTY_SETTINGS_STATE->bg_0_map = malloc_and_clear(0x800);
-            DIFFICULTY_SETTINGS_STATE->bg_1_map = malloc_and_clear(0x800);
-            DIFFICULTY_SETTINGS_STATE->bg_2_map = malloc_and_clear(0x800);
-            DIFFICULTY_SETTINGS_STATE->bg_3_map = malloc_and_clear(0x800);
-            bg_set_tilemap(0, DIFFICULTY_SETTINGS_STATE->bg_0_map);
-            bg_set_tilemap(1, DIFFICULTY_SETTINGS_STATE->bg_1_map);
-            bg_set_tilemap(2, DIFFICULTY_SETTINGS_STATE->bg_2_map);
-            bg_set_tilemap(3, DIFFICULTY_SETTINGS_STATE->bg_3_map);
+            difficulty_settings_state->bg_0_map = malloc_and_clear(0x800);
+            difficulty_settings_state->bg_1_map = malloc_and_clear(0x800);
+            difficulty_settings_state->bg_2_map = malloc_and_clear(0x800);
+            difficulty_settings_state->bg_3_map = malloc_and_clear(0x800);
+            bg_set_tilemap(0, difficulty_settings_state->bg_0_map);
+            bg_set_tilemap(1, difficulty_settings_state->bg_1_map);
+            bg_set_tilemap(2, difficulty_settings_state->bg_2_map);
+            bg_set_tilemap(3, difficulty_settings_state->bg_3_map);
             // io_set(IO_DISPCNT, (u16)(io_get(IO_DISPCNT) | IO_DISPCNT_WIN0));
             // io_set(IO_WIN0H, 
             //     (u16)IO_WINH(8 * difficulty_settings_tboxes[TBOX_LIST].x, 
@@ -352,7 +354,7 @@ void difficulty_settings_ui_initialize_callback() {
             // io_set(IO_WINOUT,
             //     IO_WININOUT_BG(0, 0) | IO_WININOUT_BG(0, 1) | 
             //     IO_WININOUT_OBJ(0)  | IO_WININOUT_FX(0)); // All but bg2 and bg3 in window 0
-            DIFFICULTY_SETTINGS_STATE->state++;
+            difficulty_settings_state->state++;
             break;
         case SETUP_TBOXES:
             tbox_sync_with_virtual_bg_and_init_all(difficulty_settings_tboxes);
@@ -361,21 +363,21 @@ void difficulty_settings_ui_initialize_callback() {
             tbox_tilemap_draw(TBOX_TEXT);
             tbox_tilemap_draw(TBOX_DIFFICULTY);
             tbox_tilemap_draw(TBOX_LIST);
-            DIFFICULTY_SETTINGS_STATE->state++;
+            difficulty_settings_state->state++;
             break;
         case LOAD_GFX:
-            lz77uncompwram(gfx_difficulty_settingMap, DIFFICULTY_SETTINGS_STATE->bg_1_map);
+            lz77uncompwram(gfx_difficulty_settingMap, difficulty_settings_state->bg_1_map);
             lz77uncompvram(gfx_difficulty_settingTiles, CHARBASE(2));
             pal_decompress(gfx_difficulty_settingPal, 0, 16 * sizeof(color_t));
-            lz77uncompwram(gfx_difficulty_setting_linesMap, DIFFICULTY_SETTINGS_STATE->bg_3_map);
+            lz77uncompwram(gfx_difficulty_setting_linesMap, difficulty_settings_state->bg_3_map);
             lz77uncompvram(gfx_difficulty_setting_linesTiles, CHARBASE_PLUS_OFFSET(1, DIFFICULTY_SETTINGS_LINES_CHARBASE_OFFSET));
             pal_decompress(gfx_difficulty_setting_linesPal, 16, 16 * sizeof(color_t));
-            DIFFICULTY_SETTINGS_STATE->state++;
+            difficulty_settings_state->state++;
             break;
         case LOAD_DIFFICULTY:
             difficulty_settings_initialize_difficulty(DIFFICULTY_NORMAL);
             difficulty_settings_print_description();
-            DIFFICULTY_SETTINGS_STATE->state++;
+            difficulty_settings_state->state++;
             break;
         case SHOW_BGS:
             bg_virtual_sync(0);
@@ -388,12 +390,12 @@ void difficulty_settings_ui_initialize_callback() {
             bg_sync_display_and_show(3);
             io_set(IO_DISPCNT, IO_DISPCNT_OAM_CHARACTER_MAPPING_ONE_DIMENSIONAL | IO_DISPCNT_OBJ);
             bg_display_sync();
-            DIFFICULTY_SETTINGS_STATE->state++;
+            difficulty_settings_state->state++;
             break;
         case LOAD_SCROLL_INDICATORS: {
             difficulty_settings_scroll_indicators_list_new();
             difficulty_settings_scroll_indicators_difficulty_new();
-            DIFFICULTY_SETTINGS_STATE->state++;
+            difficulty_settings_state->state++;
             break;
         }
         case FADE_IN:
@@ -402,14 +404,14 @@ void difficulty_settings_ui_initialize_callback() {
             fading_control.buffer_transfer_disabled = false;
             fadescreen(0xFFFFFFFF, 0, 16, 0, 0);
             callback1_set(difficulty_settings_cb1);
-            DIFFICULTY_SETTINGS_STATE->state++;
+            difficulty_settings_state->state++;
             break;
     }
 }
 
 void difficulty_settings_ui_initialize() {
-    fmem.gp_state = malloc_and_clear(sizeof(difficulty_settings_state_t));
-    DIFFICULTY_SETTINGS_STATE->state = FREE_OVERWORLD;
+    difficulty_settings_state = (difficulty_settings_state_t*) malloc_and_clear(sizeof(difficulty_settings_state_t));
+    difficulty_settings_state->state = FREE_OVERWORLD;
     vblank_handler_set(difficulty_settings_vblank_handler);
     callback1_set(difficulty_settings_ui_initialize_callback);
 }

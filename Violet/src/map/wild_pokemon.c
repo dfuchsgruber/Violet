@@ -30,7 +30,7 @@ u16 map_wild_pokemon_get_current_table_id(){
 
 const wild_pokemon_data *map_wild_pokemon_get_current() {
   if(dungeon_get_type() && save1->bank == DG2_BANK && save1->map == DG2_MAP) {
-    return &(fmem.dwild_pokemon);
+    return &(dynamic_wild_pokemon);
   } else {
     u16 idx = map_wild_pokemon_get_current_table_id();
     if (idx == 0xFFFF) return NULL;

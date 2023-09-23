@@ -38,6 +38,8 @@
 #include "item/item.h"
 #include "data_structures.h"
 
+EWRAM ev_menu_state_stru *ev_menu_state = NULL;
+
 const tbox_font_colormap ev_menu_font_colormap_std_dark = {
     0, 2, 1, 3
 };
@@ -101,8 +103,8 @@ void ev_menu_set_pixel(int x, int y) {
 		DEBUG("Attempt to set pixel outside the stat chart (%d, %d)\n", x ,y);
 		return;
 	}
-	int *sprite = fmem.ev_menu_state->render_sprite;
-	u8 color = fmem.ev_menu_state->render_color;
+	int *sprite = ev_menu_state->render_sprite;
+	u8 color = ev_menu_state->render_color;
 	int tile_x = x >> 3, tile_y = y >> 3;
 	int pixel_x = x & 7, pixel_y = y & 7;
 	int tile_idx = 8 * tile_y + tile_x;
@@ -113,21 +115,21 @@ void ev_menu_set_pixel(int x, int y) {
 }
 
 static void ev_menu_load_stat_header() {
-	pokemon *p = &player_pokemon[fmem.ev_menu_state->party_idx];
+	pokemon *p = &player_pokemon[ev_menu_state->party_idx];
 	bool is_egg = pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, 0);
     tbox_flush_set(EV_MENU_TBOX_CURRENT_STAT_HEADER, 0);
 	tbox_tilemap_draw(EV_MENU_TBOX_CURRENT_STAT_HEADER);
 	const tbox_font_colormap *stat_name_colormap = &ev_menu_font_colormap_std_light;
-	strcpy(strbuf, pokemon_get_stat_name(fmem.ev_menu_state->stat_idx));
+	strcpy(strbuf, pokemon_get_stat_name(ev_menu_state->stat_idx));
 	u8 str_stat_name_width = string_get_width(2, strbuf, 0);
 	if (!is_egg) {
 		u8 nature = pokemon_get_nature(p);
 		int stat_increased = nature / 5 + 1, stat_decreased = nature % 5 + 1;
-		if (stat_increased == fmem.ev_menu_state->stat_idx && stat_increased != stat_decreased){
+		if (stat_increased == ev_menu_state->stat_idx && stat_increased != stat_decreased){
 			stat_name_colormap = &ev_menu_font_colormap_plus;
 			u8 str_up[] = PSTRING("UP_ARROW");
 			strcat(strbuf, str_up);
-		} else if (stat_decreased == fmem.ev_menu_state->stat_idx
+		} else if (stat_decreased == ev_menu_state->stat_idx
 				&& stat_increased != stat_decreased) {
 			stat_name_colormap = &ev_menu_font_colormap_minus;
 			u8 str_down[] = PSTRING("DOWN_ARROW");
@@ -143,12 +145,12 @@ static void ev_menu_load_stat_header() {
 
 void ev_menu_load_stat() {
 	ev_menu_load_stat_header();
-	pokemon *p = &player_pokemon[fmem.ev_menu_state->party_idx];
+	pokemon *p = &player_pokemon[ev_menu_state->party_idx];
 	bool is_egg = pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, 0);
 
-	int iv = pokemon_get_attribute(p, (u8)(ATTRIBUTE_HP_IV + fmem.ev_menu_state->stat_idx), 0);
-	int effective_ev = pokemon_get_effective_ev(p, fmem.ev_menu_state->stat_idx) * 4;
-	int potential_ev = MIN(252, pokemon_get_potential_ev(p, fmem.ev_menu_state->stat_idx) & ~3);
+	int iv = pokemon_get_attribute(p, (u8)(ATTRIBUTE_HP_IV + ev_menu_state->stat_idx), 0);
+	int effective_ev = pokemon_get_effective_ev(p, ev_menu_state->stat_idx) * 4;
+	int potential_ev = MIN(252, pokemon_get_potential_ev(p, ev_menu_state->stat_idx) & ~3);
 	tbox_flush_set(EV_MENU_TBOX_CURRENT_IV, 0);
 	tbox_tilemap_draw(EV_MENU_TBOX_CURRENT_IV);
 	if (!is_egg) {
@@ -176,7 +178,7 @@ void ev_menu_load_stat() {
 
 
 void ev_menu_load_iv_chart() {
-	pokemon *p = &player_pokemon[fmem.ev_menu_state->party_idx];
+	pokemon *p = &player_pokemon[ev_menu_state->party_idx];
 	FIXED iv_ratios[6] = {0};
 	bool is_egg = pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, 0);
 	for (int i = 0; i < 6; i++) {
@@ -185,27 +187,27 @@ void ev_menu_load_iv_chart() {
 				EV_MENU_IV_CHART_MIN_VALUE);
 		iv_ratios[i] = FIXED_DIV(iv, INT_TO_FIXED(31 + EV_MENU_IV_CHART_MIN_VALUE));
 	}
-	fmem.ev_menu_state->render_sprite = fmem.ev_menu_state->iv_hexagon_sprite;
-	fmem.ev_menu_state->render_color = 1;
-	memset(fmem.ev_menu_state->render_sprite, 0, 0x800);
+	ev_menu_state->render_sprite = ev_menu_state->iv_hexagon_sprite;
+	ev_menu_state->render_color = 1;
+	memset(ev_menu_state->render_sprite, 0, 0x800);
 	gpu_render_polygon_by_radius(iv_ratios, 6, 31, ev_menu_set_pixel);
-	memcpy(OAMCHARBASE(fmem.ev_menu_state->oam_iv_hexagon_tile),
-			fmem.ev_menu_state->iv_hexagon_sprite, 0x800);
-    oams[fmem.ev_menu_state->oam_iv_hexagon_idx].flags &= (u16)(~OAM_FLAG_INVISIBLE);
+	memcpy(OAMCHARBASE(ev_menu_state->oam_iv_hexagon_tile),
+			ev_menu_state->iv_hexagon_sprite, 0x800);
+    oams[ev_menu_state->oam_iv_hexagon_idx].flags &= (u16)(~OAM_FLAG_INVISIBLE);
 }
 
 static void ev_menu_print_ev_chart(FIXED *ev_ratios) {
-	fmem.ev_menu_state->render_sprite = fmem.ev_menu_state->ev_hexagon_sprite;
-	fmem.ev_menu_state->render_color = 1;
-	memset(fmem.ev_menu_state->render_sprite, 0, 0x800);
+	ev_menu_state->render_sprite = ev_menu_state->ev_hexagon_sprite;
+	ev_menu_state->render_color = 1;
+	memset(ev_menu_state->render_sprite, 0, 0x800);
 	gpu_render_polygon_by_radius(ev_ratios, 6, 31, ev_menu_set_pixel);
-	memcpy(OAMCHARBASE(fmem.ev_menu_state->oam_ev_hexagon_tile),
-			fmem.ev_menu_state->ev_hexagon_sprite, 0x800);
-    oams[fmem.ev_menu_state->oam_ev_hexagon_idx].flags &= (u16)(~OAM_FLAG_INVISIBLE);
+	memcpy(OAMCHARBASE(ev_menu_state->oam_ev_hexagon_tile),
+			ev_menu_state->ev_hexagon_sprite, 0x800);
+    oams[ev_menu_state->oam_ev_hexagon_idx].flags &= (u16)(~OAM_FLAG_INVISIBLE);
 }
 
 void ev_menu_load_ev_chart() {
-	pokemon *p = &player_pokemon[fmem.ev_menu_state->party_idx];
+	pokemon *p = &player_pokemon[ev_menu_state->party_idx];
 	FIXED ev_ratios[6] = {0};
 	bool is_egg = pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, 0);
 	for (int i = 0; i < 6; i++) {
@@ -217,7 +219,7 @@ void ev_menu_load_ev_chart() {
 }
 
 void ev_menu_load_effective_ev_total() {
-	pokemon *p = &player_pokemon[fmem.ev_menu_state->party_idx];
+	pokemon *p = &player_pokemon[ev_menu_state->party_idx];
 	// Print the sum of effective evs
 	tbox_flush_set(EV_MENU_TBOX_TOTAL_EV, 0);
 	tbox_tilemap_draw(EV_MENU_TBOX_TOTAL_EV);
@@ -247,7 +249,7 @@ void ev_menu_load_evs_and_ivs() {
 static const u16 stat_coordinates[6][2] = {{34, 0}, {58, 12}, {58, 52}, {32, 64}, {2, 52}, {2, 12}};
 
 static void ev_menu_draw_print_stat_names() {
-	pokemon *p = &player_pokemon[fmem.ev_menu_state->party_idx];
+	pokemon *p = &player_pokemon[ev_menu_state->party_idx];
 	bool is_egg = pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, 0);
 	int stat_increased, stat_decreased;
 	if (!is_egg) {
@@ -283,18 +285,18 @@ static void ev_menu_draw_print_stat_names() {
 
 void ev_menu_load_pokemon() {
 
-	pokemon *p = &player_pokemon[fmem.ev_menu_state->party_idx];
+	pokemon *p = &player_pokemon[ev_menu_state->party_idx];
 	pid_t pid = {.value = (u32) pokemon_get_attribute(p,ATTRIBUTE_PID, 0)};
 	bool is_egg = pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, 0);
 	u16 species;
 	if (is_egg) species = POKEMON_EGG;
 	else species = (u16) pokemon_get_attribute(p, ATTRIBUTE_SPECIES, 0);
-	pokemon_load_gfx_by_graphic(&pokemon_frontsprites[species], fmem.ev_menu_state->pokemon_sprite,
+	pokemon_load_gfx_by_graphic(&pokemon_frontsprites[species], ev_menu_state->pokemon_sprite,
 			species, pid);
-	oams[fmem.ev_menu_state->oam_pokepic_idx].flags |= OAM_FLAG_INVISIBLE;
-	memcpy(OAMCHARBASE(fmem.ev_menu_state->oam_pokepic_tile), fmem.ev_menu_state->pokemon_sprite,
+	oams[ev_menu_state->oam_pokepic_idx].flags |= OAM_FLAG_INVISIBLE;
+	memcpy(OAMCHARBASE(ev_menu_state->oam_pokepic_tile), ev_menu_state->pokemon_sprite,
 			0x800);
-	const palette *pal = pokemon_get_palette(&player_pokemon[fmem.ev_menu_state->party_idx]);
+	const palette *pal = pokemon_get_palette(&player_pokemon[ev_menu_state->party_idx]);
 	pal_decompress(pal, (u16)(256 + 16 * oam_palette_get_index(EV_MENU_OAM_POKEPIC_TAG)), 32);
     pokemon_get_attribute(p, ATTRIBUTE_NICKNAME, strbuf);
     tbox_flush_set(EV_MENU_TBOX_NAME, 0);
@@ -338,7 +340,7 @@ void ev_menu_big_callback_update_pokemon(u8 self) {
 	switch(big_callbacks[self].params[0]++) {
 	case 0:
 		// Hide the pokemon, wait 1 frame (hiding is after palette updating...)
-		oams[fmem.ev_menu_state->oam_pokepic_idx].flags |= OAM_FLAG_INVISIBLE;
+		oams[ev_menu_state->oam_pokepic_idx].flags |= OAM_FLAG_INVISIBLE;
 		break;
 	case 2:
 		// Reload the pokemon sprite
@@ -346,17 +348,17 @@ void ev_menu_big_callback_update_pokemon(u8 self) {
 		break;
 	case 3:
 		// Show the pokemon
-		oams[fmem.ev_menu_state->oam_pokepic_idx].flags &= (u16)(~OAM_FLAG_INVISIBLE);
+		oams[ev_menu_state->oam_pokepic_idx].flags &= (u16)(~OAM_FLAG_INVISIBLE);
 		big_callback_delete(self);
 		break;
 	}
 }
 
 bool ev_menu_increase_effective_ev() {
-	pokemon *p = &player_pokemon[fmem.ev_menu_state->party_idx];
+	pokemon *p = &player_pokemon[ev_menu_state->party_idx];
 	if (pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, 0)) return false;
-	int effective_ev = pokemon_get_effective_ev(p, fmem.ev_menu_state->stat_idx);
-	int potential_ev = pokemon_get_potential_ev(p, fmem.ev_menu_state->stat_idx) / 4;
+	int effective_ev = pokemon_get_effective_ev(p, ev_menu_state->stat_idx);
+	int potential_ev = pokemon_get_potential_ev(p, ev_menu_state->stat_idx) / 4;
 	if (effective_ev >= potential_ev) return false;
 	// Check if the total 512 sum would be exceeded
 	int effective_ev_total = 0;
@@ -365,23 +367,23 @@ bool ev_menu_increase_effective_ev() {
 	}
 	if (effective_ev_total >= 128) return false;
 	// Increase the total effective ev
-	pokemon_set_effective_ev(p, fmem.ev_menu_state->stat_idx, (u8)(effective_ev + 1));
+	pokemon_set_effective_ev(p, ev_menu_state->stat_idx, (u8)(effective_ev + 1));
 	pokemon_calculate_stats(p);
 	return true;
 }
 
 void ev_menu_callback_return() {
     if (!fading_is_active() && cry_has_finished()) {
-    	pokemon_party_menu_current_index2 = fmem.ev_menu_state->party_idx;
+    	pokemon_party_menu_current_index2 = ev_menu_state->party_idx;
         free(bg_get_tilemap(0));
         free(bg_get_tilemap(1));
         free(bg_get_tilemap(2));
-        free(fmem.ev_menu_state->pokemon_sprite);
-        free(fmem.ev_menu_state->iv_hexagon_sprite);
-        free(fmem.ev_menu_state->ev_hexagon_sprite);
-        free(fmem.ev_menu_state);
+        free(ev_menu_state->pokemon_sprite);
+        free(ev_menu_state->iv_hexagon_sprite);
+        free(ev_menu_state->ev_hexagon_sprite);
+        free(ev_menu_state);
         tbox_free_all();
-        callback1_set(fmem.ev_menu_state->continuation); 
+        callback1_set(ev_menu_state->continuation); 
     }
     generic_callback1();
 }
@@ -392,7 +394,7 @@ void ev_menu_big_callback_jump(u8 self) {
 		big_callback_delete(self);
 	} else {
 		FIXED dy = ABS(8 * FIXED_SIN(t));
-		oams[fmem.ev_menu_state->oam_pokepic_idx].y2 = (s16)(-FIXED_TO_INT(dy));
+		oams[ev_menu_state->oam_pokepic_idx].y2 = (s16)(-FIXED_TO_INT(dy));
 		t = FIXED_ADD(t, INT_TO_FIXED(1) >> 4); // t += 1/16
 		big_callback_set_int(self, 0, t);
 	}
@@ -402,7 +404,7 @@ void ev_menu_callback_idle() {
     generic_callback1();
     if (!fading_is_active() && !big_callback_is_active(ev_menu_big_callback_jump) &&
     		!big_callback_is_active(ev_menu_big_callback_update_pokemon)) {
-    	if (!fmem.ev_menu_state->delay) {
+    	if (!ev_menu_state->delay) {
     		if (super.keys_new.keys.B) {
     			// Return
     			play_sound(5);
@@ -410,20 +412,20 @@ void ev_menu_callback_idle() {
                 fadescreen_all(1, 0);
     		} else if (super.keys_new.keys.left) {
     			play_sound(5);
-    			fmem.ev_menu_state->stat_idx = (u8)((fmem.ev_menu_state->stat_idx + 5) % 6);
+    			ev_menu_state->stat_idx = (u8)((ev_menu_state->stat_idx + 5) % 6);
     			ev_menu_load_stat();
     		} else if (super.keys_new.keys.right) {
     			play_sound(5);
-    			fmem.ev_menu_state->stat_idx = (u8)((fmem.ev_menu_state->stat_idx + 1) % 6);
+    			ev_menu_state->stat_idx = (u8)((ev_menu_state->stat_idx + 1) % 6);
     			ev_menu_load_stat();
     		} else if (super.keys_new.keys.down) {
-    			fmem.ev_menu_state->party_idx = (u8)((fmem.ev_menu_state->party_idx + 1) %
+    			ev_menu_state->party_idx = (u8)((ev_menu_state->party_idx + 1) %
     					pokemon_get_number_in_party());
     			big_callbacks[big_callback_new(
     					ev_menu_big_callback_update_pokemon, 1)].params[0] = 0;
     		} else if (super.keys_new.keys.up) {
-    			fmem.ev_menu_state->party_idx = (u8)(
-    					(fmem.ev_menu_state->party_idx + pokemon_get_number_in_party() - 1) %
+    			ev_menu_state->party_idx = (u8)(
+    					(ev_menu_state->party_idx + pokemon_get_number_in_party() - 1) %
     					pokemon_get_number_in_party());
     			big_callbacks[big_callback_new(
     					ev_menu_big_callback_update_pokemon, 1)].params[0] = 0;
@@ -436,7 +438,7 @@ void ev_menu_callback_idle() {
                     play_sound(26);
     			}
     		}
-    	} else fmem.ev_menu_state->delay--;
+    	} else ev_menu_state->delay--;
     }
 }
 
@@ -470,7 +472,7 @@ static void ev_menu_change_nature_step_has_changed(u8 self) {
 static void ev_menu_change_nature_step_sound(u8 self) {
 	if (sound_is_playing())
 		return;
-	pokemon *p = player_pokemon + fmem.ev_menu_state->party_idx;
+	pokemon *p = player_pokemon + ev_menu_state->party_idx;
 	pid_t pid = {.value = (u32)pokemon_get_attribute(p, ATTRIBUTE_PID, NULL)};
 	u32 new_nature = item_nature_stone_modify_nature((u8)pid.fields.nature, item_activated);
 	pid.fields.nature = new_nature & 0x1F;
@@ -485,7 +487,7 @@ static void ev_menu_change_nature_step_sound(u8 self) {
 static void ev_menu_change_nature_step_is_used(u8 self) {
 	if (!cry_has_finished())
 		return;
-	pokemon *p = player_pokemon + fmem.ev_menu_state->party_idx;
+	pokemon *p = player_pokemon + ev_menu_state->party_idx;
 	pokemon_load_name_as_string(p, buffer0);
 	strcpy(buffer1, item_get_name(item_activated));
 	string_decrypt(strbuf, str_used_nature_stone);
@@ -536,7 +538,7 @@ static void ev_menu_reset_effective_evs_animation(u8 self) {
 
 static void ev_menu_reset_effective_evs_step_1_sound_and_initialize_animation(u8 self) {
 	play_sound(238);
-	pokemon *p = &player_pokemon[fmem.ev_menu_state->party_idx];
+	pokemon *p = &player_pokemon[ev_menu_state->party_idx];
 	u16 *evs = big_callbacks[self].params;
 	for (int i = 0; i < 6; i++) {
 		evs[i] = pokemon_get_effective_ev(p, i);
@@ -548,7 +550,7 @@ static void ev_menu_reset_effective_evs_step_1_sound_and_initialize_animation(u8
 static void ev_menu_reset_effective_evs_step_0(u8 self) {
 	if (!cry_has_finished())
 		return;
-	pokemon *p = player_pokemon + fmem.ev_menu_state->party_idx;
+	pokemon *p = player_pokemon + ev_menu_state->party_idx;
 	pokemon_load_name_as_string(p, buffer0);
 	strcpy(buffer1, item_get_name(item_activated));
 	string_decrypt(strbuf, str_used_nature_stone);
@@ -570,7 +572,7 @@ void ev_menu_callback_show() {
     generic_callback1();
     if (!fading_is_active()) {
     	// Show the pokepic oam
-    	oams[fmem.ev_menu_state->oam_pokepic_idx].flags &= (u16)(~OAM_FLAG_INVISIBLE);
+    	oams[ev_menu_state->oam_pokepic_idx].flags &= (u16)(~OAM_FLAG_INVISIBLE);
 
     	fadescreen_all(0, 0);
 
@@ -578,7 +580,7 @@ void ev_menu_callback_show() {
         io_set(IO_BLDCNT, IO_BLDCNT_BG3_SECOND | IO_BLDCNT_BG2_SECOND | IO_BLDCNT_BG1_SECOND |
         		IO_BLDCNT_BG0_SECOND | IO_BLDCNT_ALPHA_BLENDING);
         io_set(IO_BLDALPHA, IO_BLDALPHA_EVA(7) | IO_BLDALPHA_EVB(11));
-        callback1_set(fmem.ev_menu_state->idle_callback);
+        callback1_set(ev_menu_state->idle_callback);
     }
 }
 
@@ -661,26 +663,26 @@ void ev_menu_callback_setup() {
 		u16 oam_pokepic_tile = oam_vram_alloc(64);
         oam_vram_allocation_table_add(EV_MENU_OAM_POKEPIC_TAG, oam_pokepic_tile, 64);
         oam_allocate_palette(EV_MENU_OAM_POKEPIC_TAG);
-        fmem.ev_menu_state->oam_pokepic_tile = oam_pokepic_tile;
-        fmem.ev_menu_state->oam_pokepic_idx = oam_new_forward_search(
+        ev_menu_state->oam_pokepic_tile = oam_pokepic_tile;
+        ev_menu_state->oam_pokepic_idx = oam_new_forward_search(
         		&ev_menu_oam_template_pokemon, 5 * 8, 9 * 8, 0);
-        oams[fmem.ev_menu_state->oam_pokepic_idx].flags |= OAM_FLAG_INVISIBLE;
+        oams[ev_menu_state->oam_pokepic_idx].flags |= OAM_FLAG_INVISIBLE;
 
 		u16 oam_iv_hexagon_tile = oam_vram_alloc(64);
         oam_vram_allocation_table_add(EV_MENU_OAM_IV_HEXAGON_TAG, oam_iv_hexagon_tile, 64);
         u8 iv_hexagon_pal = oam_allocate_palette(EV_MENU_OAM_IV_HEXAGON_TAG);
-        fmem.ev_menu_state->oam_iv_hexagon_tile = oam_iv_hexagon_tile;
-        fmem.ev_menu_state->oam_iv_hexagon_idx = oam_new_forward_search(
+        ev_menu_state->oam_iv_hexagon_tile = oam_iv_hexagon_tile;
+        ev_menu_state->oam_iv_hexagon_idx = oam_new_forward_search(
         		&ev_menu_oam_template_iv_hexagon, 15 * 8, 9 * 8, 0);
-        oams[fmem.ev_menu_state->oam_iv_hexagon_idx].flags |= OAM_FLAG_INVISIBLE;
+        oams[ev_menu_state->oam_iv_hexagon_idx].flags |= OAM_FLAG_INVISIBLE;
 
 		u16 oam_ev_hexagon_tile = oam_vram_alloc(64);
         oam_vram_allocation_table_add(EV_MENU_OAM_EV_HEXAGON_TAG, oam_ev_hexagon_tile, 64);
         u8 ev_hexagon_pal = oam_allocate_palette(EV_MENU_OAM_EV_HEXAGON_TAG);
-        fmem.ev_menu_state->oam_ev_hexagon_tile = oam_ev_hexagon_tile;
-        fmem.ev_menu_state->oam_ev_hexagon_idx = oam_new_forward_search(
+        ev_menu_state->oam_ev_hexagon_tile = oam_ev_hexagon_tile;
+        ev_menu_state->oam_ev_hexagon_idx = oam_new_forward_search(
         		&ev_menu_oam_template_ev_hexagon, 25 * 8, 9 * 8, 0);
-        oams[fmem.ev_menu_state->oam_ev_hexagon_idx].flags |= OAM_FLAG_INVISIBLE;
+        oams[ev_menu_state->oam_ev_hexagon_idx].flags |= OAM_FLAG_INVISIBLE;
         ev_menu_load_pokemon();
 
         // Load palettes
@@ -702,14 +704,14 @@ void ev_menu_callback_setup() {
 }
 
 static void ev_menu_initialize_internal(u8 party_idx, u8 stat_idx, void (*idle_callback)(), void (*continuation)()) {
-    fmem.ev_menu_state = (ev_menu_state_stru*) malloc_and_clear(sizeof (ev_menu_state_stru));
-    fmem.ev_menu_state->party_idx = party_idx;
-    fmem.ev_menu_state->stat_idx = stat_idx;
-    fmem.ev_menu_state->pokemon_sprite = malloc_and_clear(0x800);
-    fmem.ev_menu_state->iv_hexagon_sprite = malloc_and_clear(0x800);
-    fmem.ev_menu_state->ev_hexagon_sprite = malloc_and_clear(0x800);
-	fmem.ev_menu_state->idle_callback = idle_callback;
-	fmem.ev_menu_state->continuation = continuation;
+    ev_menu_state = (ev_menu_state_stru*) malloc_and_clear(sizeof (ev_menu_state_stru));
+    ev_menu_state->party_idx = party_idx;
+    ev_menu_state->stat_idx = stat_idx;
+    ev_menu_state->pokemon_sprite = malloc_and_clear(0x800);
+    ev_menu_state->iv_hexagon_sprite = malloc_and_clear(0x800);
+    ev_menu_state->ev_hexagon_sprite = malloc_and_clear(0x800);
+	ev_menu_state->idle_callback = idle_callback;
+	ev_menu_state->continuation = continuation;
     callback1_set(ev_menu_callback_setup);
 }
 

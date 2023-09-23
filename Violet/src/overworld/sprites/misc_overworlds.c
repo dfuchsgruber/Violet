@@ -283,7 +283,7 @@ static const u32 mushroom_rates[] = {[MUSHROOM_TYPE_LARGE_MUSHROOM] = 1, [MUSHRO
 u16 mushroom_get_stage(u16 mushroom_idx) {
     if (mushroom_idx >= DUNGEON_MISC_IDX_START)
         return dungeon_mushroom_get_type(mushroom_idx);
-    if (gp_flag_get(mushroom_idx, cmem.mushroom_flags))
+    if (gp_flag_get(mushroom_idx, csave.mushroom_flags))
         return MUSHROOM_TYPE_PLUCKED;
     u32 seq[1] = {mushroom_idx};
     gp_rng_seed(daily_events_hash(seq, ARRAY_COUNT(seq)));
@@ -296,7 +296,7 @@ void mushroom_pluck() {
     if (mushroom_idx >= DUNGEON_MISC_IDX_START)
         dungeon_mushroom_set_flag(mushroom_idx);
     else
-        gp_flag_set(mushroom_idx, cmem.mushroom_flags);
+        gp_flag_set(mushroom_idx, csave.mushroom_flags);
 }
 
 u16 special_shell_get_stage() {
@@ -309,7 +309,7 @@ static const u32 shell_rates[] = {[SHELL_TYPE_HEART_SCALE] = 1, [SHELL_TYPE_PEAR
 static const u32 species_shell_rates[] = {[SHELL_TYPE_SHOAL_SALT] = 3, [SHELL_TYPE_SHOAL_SHELL] = 3, [SHELL_TYPE_ENCOUNTER] = 1};
 
 u16 shell_get_stage(u16 shell_idx) {
-    if (gp_flag_get(shell_idx, cmem.shell_flags)) {
+    if (gp_flag_get(shell_idx, csave.shell_flags)) {
         return SHELL_TYPE_EMPTY;
     }
     bool is_special_shell = shell_is_special(shell_idx);
@@ -325,13 +325,13 @@ u16 shell_get_stage(u16 shell_idx) {
 void shell_open() {
     const map_event_person *p = map_get_person((u8)(*var_access(LASTTALKED)), save1->map, save1->bank);
     u16 shell_idx = p->value;
-    gp_flag_set(shell_idx, cmem.shell_flags);
+    gp_flag_set(shell_idx, csave.shell_flags);
 }
 
 static const u32 trash_rates[] = {[TRASH_TYPE_WIND] = 2, [TRASH_TYPE_ITEM] = 3, [TRASH_TYPE_ENCOUNTER] = 2};
 
 u16 trash_get_type(u16 trash_idx) {
-    bool empty = trash_idx < 128 ? gp_flag_get(trash_idx, cmem.trash_flags) : gp_flag_get((u16)(trash_idx - 128), cmem.trash_flags2);
+    bool empty = trash_idx < 128 ? gp_flag_get(trash_idx, csave.trash_flags) : gp_flag_get((u16)(trash_idx - 128), csave.trash_flags2);
     if (empty) {
         return TRASH_TYPE_EMPTY;
     } else {
@@ -350,15 +350,15 @@ void trash_set_empty() {
     const map_event_person *p = map_get_person((u8)(*var_access(LASTTALKED)), save1->map, save1->bank);
     u16 trash_idx = p->value;
     if (trash_idx < 128)
-        gp_flag_set(trash_idx, cmem.trash_flags);
+        gp_flag_set(trash_idx, csave.trash_flags);
     else
-        gp_flag_set((u16)(trash_idx - 128), cmem.trash_flags2);
+        gp_flag_set((u16)(trash_idx - 128), csave.trash_flags2);
 }
 
 void overworld_misc_intialize() {
-    memset(cmem.mushroom_flags, 0, ARRAY_COUNT(cmem.mushroom_flags));
-    memset(cmem.shell_flags, 0, ARRAY_COUNT(cmem.shell_flags));
-    memset(cmem.trash_flags, 0, ARRAY_COUNT(cmem.trash_flags));
+    memset(csave.mushroom_flags, 0, ARRAY_COUNT(csave.mushroom_flags));
+    memset(csave.shell_flags, 0, ARRAY_COUNT(csave.shell_flags));
+    memset(csave.trash_flags, 0, ARRAY_COUNT(csave.trash_flags));
 }
 
 static const u32 mushroom_encounters[] = {[POKEMON_KNILZ] = 1, [POKEMON_WAUMPEL] = 1, [POKEMON_SAMURZEL] = 1, [POKEMON_MYRAPLA] = 1, [POKEMON_KNOFENSA] = 1, [0] = 6};

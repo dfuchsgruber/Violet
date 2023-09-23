@@ -8,11 +8,14 @@
 #ifndef PRNG_H
 #define	PRNG_H
 
+#include "types.h"
+
 #ifdef	__cplusplus
 extern "C" {
 #endif
 
     extern u32 _main_rnd;
+    extern EWRAM u32 gp_rng;
 
     void rnd_init(); //Initializes the main rng module (xorshift)
 

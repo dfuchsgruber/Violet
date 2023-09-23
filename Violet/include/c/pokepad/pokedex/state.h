@@ -59,7 +59,9 @@
         bool habitat_found;
         bool from_battle;
         pokedex_scanner_state *scanner_state;
-    } pokedex_memory;
+    } pokedex_state_t;
+
+    extern EWRAM pokedex_state_t *pokedex_state;
 
 
 #endif /* INCLUDE_C_POKEPAD_POKEDEX_STATE_H_ */

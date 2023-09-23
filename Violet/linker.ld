@@ -11,7 +11,8 @@ PHDRS
 OUTPUT_ARCH(arm)
 MEMORY {
         rom     : ORIGIN = 0x09000000, LENGTH = 32M
-        ewram   : ORIGIN = 0x0203CF44, LENGTH = 8K
+        /* 4K are gained from the helper system, but in theory everything to the end of EWRAM 0x4e8c should be garbage firered features  */
+        ewram   : ORIGIN = 0x0203b174, LENGTH = 0x4000
 }
 
 SECTIONS {
@@ -27,7 +28,7 @@ SECTIONS {
                 *(.rodata*)
         } >rom :text = 0xff
 
-        free_ewram(NOLOAD) : AT(0x0203CF44)
+        free_ewram(NOLOAD) : AT(0x0203b174)
         {
                 *(free_ewram)
         } >ewram

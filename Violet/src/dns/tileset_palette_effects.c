@@ -128,13 +128,13 @@ void overworld_tilesets_apply_palette_effects(const map_footer_t *foot) {
 
 
 void tileset_load_pal_as_primary(const map_footer_t *foot){
-    fmem.current_tileset_1 = foot->tileset1;
+    current_tileset_1 = foot->tileset1;
     overworld_load_tileset_pal(foot->tileset1, 0, 0xE0);
 
 }
 
 void tileset_load_pal_as_secondary(const map_footer_t *foot){
-    fmem.current_tileset_2 = foot->tileset2;
+    current_tileset_2 = foot->tileset2;
     overworld_load_tileset_pal(foot->tileset2, 0x70, 0xC0);
 }
 
@@ -161,7 +161,7 @@ void map_transition_update_tilesets() {
     const map_footer_t *footer = mapheader_virtual.footer;
     if (footer) {
         tileset_load_pal_as_primary(footer);
-        if (fmem.current_tileset_2 != footer->tileset2) {
+        if (current_tileset_2 != footer->tileset2) {
             tileset_load_pal_as_secondary(footer);
             overworld_tilesets_apply_palette_effects(footer);
         }

@@ -1228,17 +1228,17 @@ bool item_is_rod(u16 item_idx) {
 }
 
 static void item_rod_update_equipped_bait() {
-    for (size_t i = 0; i < ARRAY_COUNT(cmem.rod_equipped_bait); i++) {
-        u16 bait = cmem.rod_equipped_bait[i];
+    for (size_t i = 0; i < ARRAY_COUNT(csave.rod_equipped_bait); i++) {
+        u16 bait = csave.rod_equipped_bait[i];
         if (bait != ITEM_NONE && !item_check(bait, 1))
-            cmem.rod_equipped_bait[i] = ITEM_NONE;
+            csave.rod_equipped_bait[i] = ITEM_NONE;
     }
 }
 
 u16 item_rod_get_equipped_bait(u16 item_idx) {
     item_rod_update_equipped_bait();
     if (item_is_rod(item_idx)) {
-        return cmem.rod_equipped_bait[item_idx_to_rod_idx(item_idx)];
+        return csave.rod_equipped_bait[item_idx_to_rod_idx(item_idx)];
     } else {
         return ITEM_NONE;
     }
@@ -1246,7 +1246,7 @@ u16 item_rod_get_equipped_bait(u16 item_idx) {
 
 void item_rod_equip_bait(u16 rod_item_idx, u16 bait_item_idx) {
     if (item_is_rod(rod_item_idx)) {
-        cmem.rod_equipped_bait[item_idx_to_rod_idx(rod_item_idx)] = bait_item_idx;
+        csave.rod_equipped_bait[item_idx_to_rod_idx(rod_item_idx)] = bait_item_idx;
     }
     item_rod_update_equipped_bait();
 }

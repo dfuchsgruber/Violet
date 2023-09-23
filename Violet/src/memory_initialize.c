@@ -20,7 +20,6 @@
 #include "overworld/misc.h"
 
 void fmem_init(){
-    memset(&fmem, 0, sizeof(fmem));
     gp_stack_init();
 }
 

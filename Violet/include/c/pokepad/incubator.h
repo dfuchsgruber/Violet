@@ -29,6 +29,8 @@ typedef struct {
   void (*idle_callback)(); // The idle callback to set after showing components
 } incubator_state_stru;
 
+extern EWRAM incubator_state_stru *incubator_state;
+
 #define INCUBATOR_EGG_TAG POKEMON_EGG
 #define INCUBATOR_SELECTION_TAG_LEFT 0x1496
 #define INCUBATOR_SELECTION_TAG_RIGHT 0x1497
