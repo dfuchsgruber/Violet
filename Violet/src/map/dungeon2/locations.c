@@ -11,6 +11,7 @@
 #include "tile/block.h"
 #include "debug.h"
 #include "vars.h"
+#include "constants/person_script_stds.h"
 
 const dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS] = {
 	/*
@@ -78,16 +79,16 @@ void dungeon_map_set_tiles() {
 				int x = dungeon_locations[i].x;
 				int y = dungeon_locations[i].y;
 				// Set the appropriate tiles
-				if (dungeon_locations[i].type == DTYPE_FOREST) {
+				if (dungeon_locations[i].type == DUNGEON_TYPE_FOREST) {
 					// Forest: The coordinates are the left-bottom most tile of the entrance
 					block_set_by_pos((s16)(x + 7), (s16)(y + 7), 0x25D | BLOCK_SOLID);
 					block_set_by_pos((s16)(x + 8), (s16)(y + 7), 0x265 | BLOCK_SOLID);
 					block_set_by_pos((s16)(x + 7), (s16)(y + 6), 0x266 | BLOCK_SOLID);
 					block_set_by_pos((s16)(x + 8), (s16)(y + 6), 0x267 | BLOCK_SOLID);
-				} else if (dungeon_locations[i].type == DTYPE_CAVE) {
+				} else if (dungeon_locations[i].type == DUNGEON_TYPE_CAVE) {
 					// Cave: The coordinates are the only tile
 					block_set_by_pos((s16)(x + 7), (s16)(y + 7), 0x25F | BLOCK_SOLID);
-				} else if (dungeon_locations[i].type == DTYPE_OCEAN) {
+				} else if (dungeon_locations[i].type == DUNGEON_TYPE_OCEAN) {
 					// Ocean: The coordinates are the left-top most tile of the entrance
 					block_set_by_pos((s16)(x + 7), (s16)(y + 7), 0x26E | BLOCK_SOLID);
 					block_set_by_pos((s16)(x + 8), (s16)(y + 7), 0x26F | BLOCK_SOLID);
@@ -105,19 +106,19 @@ void dungeon_map_set_tiles() {
 
 int dungeon_get_location_idx(u8 bank, u8 map, s16 x, s16 y) {
 	for(int i = 0; i < NUM_DUNGEON_LOCATIONS; i++) {
-		if(dungeon_locations[i].type == DTYPE_FOREST) {
+		if(dungeon_locations[i].type == DUNGEON_TYPE_FOREST) {
 			// Either match direct coordinates or the one right to the coordinate
 			//(entrance is 2 blocks big)
 			if(bank == dungeon_locations[i].bank && map == dungeon_locations[i].map &&
 					(x == dungeon_locations[i].x || x == dungeon_locations[i].x + 1) &&
 					y == dungeon_locations[i].y)
 			return i;
-		} else if (dungeon_locations[i].type == DTYPE_CAVE) {
+		} else if (dungeon_locations[i].type == DUNGEON_TYPE_CAVE) {
 			// Only match the coordinates, the entrance is only 1 block big
 			if(bank == dungeon_locations[i].bank && map == dungeon_locations[i].map &&
 					x == dungeon_locations[i].x && y == dungeon_locations[i].y)
 			return i;
-		} else if (dungeon_locations[i].type == DTYPE_OCEAN) {
+		} else if (dungeon_locations[i].type == DUNGEON_TYPE_OCEAN) {
 			if (bank == dungeon_locations[i].bank && map == dungeon_locations[i].map &&
 					(x == dungeon_locations[i].x || x == dungeon_locations[i].x + 1) &&
 					(y == dungeon_locations[i].y || y == dungeon_locations[i].y + 1)) {
@@ -160,17 +161,13 @@ void dungeon2_seed_init() {
 	DEBUG("Setup seed for dungeon %d to %d\n", dungeon_idx, csave.dg2.initial_seed);
 }
 
-void dungeon_map_entrance_set_flag() {
-	DEBUG("Set flag for dungeon %d\n", *var_access(0x8000));
-	dungeon_flag_set(*var_access(0x8000));
-}
 
 u8 dungeon2_get_dungeon_type_by_person_faced() {
 	position_t faced_position;
 	player_get_position_faced(&faced_position);
 	u8 npc_idx = npc_get_by_position_and_height(faced_position.coordinates.x, faced_position.coordinates.y, faced_position.height);
 	if (npc_idx < NUM_NPCS) {
-		map_event_person *p = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
+		const map_event_person *p = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
 		if (p) {
 			switch (p->script_std) {
 				case PERSON_SECRET_POWER_VINE:

@@ -2,9 +2,9 @@
 #include "worldmap.h"
 #include "debug.h"
 
-extern LZ77COMPRESSED gfx_worldmapTiles;
-extern LZ77COMPRESSED gfx_worldmapMap;
-extern color_t gfx_worldmapPal[80];
+extern const LZ77COMPRESSED gfx_worldmapTiles;
+extern const LZ77COMPRESSED gfx_worldmapMap;
+extern const color_t gfx_worldmapPal[80];
 
 extern const u8 worldmap0_position_data[WORLDMAP_HEIGHT][WORLDMAP_WIDTH];
 
