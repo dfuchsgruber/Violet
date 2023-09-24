@@ -54,6 +54,7 @@ ow_script_dream:
     special 0x19
     waitstate
     pause 0x80
+    /** 
     loadpointer 0x0 str_after_dream
     show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT MSG_KEEPOPEN hide_mugshot=0
     update_mugshot_emotion MUGSHOT_RUMINATIVE
@@ -64,6 +65,7 @@ ow_script_dream:
     callstd MSG_KEEPOPEN
     closeonkeypress
     hide_mugshot
+    **/
     playsong MUS_ALABASTIA 0
     playsong2 MUS_ALABASTIA
     end

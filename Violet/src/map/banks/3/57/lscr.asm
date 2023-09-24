@@ -133,7 +133,8 @@ end
 caught_pkmn:
 special SPECIAL_HEAL
 setvar TRAINERSCHOOL_ALLOWED_TO_ENTER_GRASS 0
-clearflag CAUGHT_POKEDEX_DISABLE
+clearflag FLAG_POKEDEX_DISABLE_AFTER_CATCHING
+/**
 @ remove pokeballs
 rm_pokeballs:
 checkitem ITEM_POKEBALL 0x1
@@ -142,6 +143,7 @@ gotoif EQUAL no_more_balls
 removeitem ITEM_POKEBALL 0x1
 goto rm_pokeballs
 no_more_balls:
+*/
 applymovement 4 mov_face_up
 waitmovement 0
 loadpointer 0 str_caught

@@ -16,6 +16,7 @@
 #include "constants/story_states.h"
 #include "constants/time_types.h"
 #include "overworld/map_control.h"
+#include "difficulty_settings.h"
 
 static void new_game_initialize_custom_flags() {
     setflag(AMONIA_RIVAL_INSIDE_PLAYER_HOUSE);
@@ -34,9 +35,8 @@ static void new_game_initialize_time() {
 }
 
 void new_game_initialize_custom_data() {
-    u16 tmp = *var_access(DIFFICULTY); // the difficulty is chosen before the data is cleared, this is a bit hacky but w/e
     memset(&csave, 0, sizeof(custom_memory));
-    *var_access(DIFFICULTY) = tmp;
+    *var_access(DIFFICULTY) = difficulty_settings_chosen_difficulty;
     setflag(POKERADAR_POKEMON_SPAWNED);  // set corresponds to a pokemon already spawned
     incubator_clear();
     overworld_misc_intialize();
