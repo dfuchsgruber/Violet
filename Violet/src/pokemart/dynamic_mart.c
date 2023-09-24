@@ -10,7 +10,7 @@
 EWRAM u16 dynamic_mart[32] = {0}; //max 32 items per mart
 
 static const mart_item mart_items_pokeball[] = {
-    {POKEDEX, ITEM_POKEBALL},
+    {0, ITEM_POKEBALL},
     {0xFFFF, 0}
 };
 

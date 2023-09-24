@@ -34,13 +34,13 @@ end
 str_before_test_blaise:
     .autostring 35 2 "DOTS DOTS DOTS"
 str_after_test_blaise:
-	.autostring 35 2 "Wie kommt dieser verrückte alte Knacker denn auf so einen Test?"
+	.autostring 35 2 "Wie kommt dieser verrückte alte Knacker denn auf so einen absurden Test?"
 
 .elseif LANG_EN
 str_before_test_blaise:
     .autostring 35 2 "DOTS DOTS DOTS"
 str_after_test_blaise:
-	.autostring 35 2 "How on earth did this crazy old geezer come up with a test like that?"
+	.autostring 35 2 "How on earth did this crazy old geezer come up with an absurd test like that?"
 
 .endif
 

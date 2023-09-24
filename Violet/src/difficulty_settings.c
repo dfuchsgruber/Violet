@@ -20,6 +20,7 @@
 #include "new_game.h"
 
 EWRAM difficulty_settings_state_t *difficulty_settings_state = NULL;
+u8 EWRAM difficulty_settings_chosen_difficulty = 0;
 
 enum {
     TBOX_TEXT,
@@ -120,13 +121,13 @@ static const tbox_font_colormap font_colors_difficulty = {.background = 0, .body
 
 static void difficulty_settings_print_difficulty() {
     tbox_flush_set(TBOX_DIFFICULTY, 0x00);
-    const u8 *str = str_difficulties[*var_access(DIFFICULTY)];
+    const u8 *str = str_difficulties[difficulty_settings_chosen_difficulty];
     int pos = (8 * difficulty_settings_tboxes[TBOX_DIFFICULTY].w - string_get_width(2, str, 0)) / 2;
     tbox_print_string(TBOX_DIFFICULTY, 2, (u16)pos, 3, 0, 0, &font_colors_difficulty, 0, str);
 }
 
 static const u8 *difficulty_settings_get_list() {
-    return str_descriptions[*var_access(DIFFICULTY)];
+    return str_descriptions[difficulty_settings_chosen_difficulty];
 }
 
 static void difficulty_settings_print_list() {
@@ -170,7 +171,7 @@ static void difficulty_settings_scroll_indicators_difficulty_new() {
 }
 
 static void difficulty_settings_initialize_difficulty(u16 difficulty) {
-    *var_access(DIFFICULTY) = difficulty;
+    difficulty_settings_chosen_difficulty = (u8)difficulty;
     difficulty_settings_state->list_offset = 0;
     difficulty_settings_state->list_pixel_offset = 0;
     difficulty_settings_state->difficulty = difficulty;
@@ -295,7 +296,7 @@ static void difficulity_settings_handle_input(u8 self) {
         big_callbacks[self].function = difficulty_settings_update_difficulty;
         big_callbacks[self].params[1] = 0;
     } else if (super.keys_new.keys.A) {
-        strcpy(buffer0, str_difficulties[*var_access(DIFFICULTY)]);
+        strcpy(buffer0, str_difficulties[difficulty_settings_chosen_difficulty]);
         string_decrypt(strbuf, str_confirm);
         tbox_flush_set(TBOX_TEXT, 0x00);
         tbox_print_string(TBOX_TEXT, 2, 0, 6, 0, 0, &font_colors_text, tbox_get_set_speed(), strbuf);
@@ -329,7 +330,7 @@ void difficulty_settings_ui_initialize_callback() {
             difficulty_settings_state->state++;
             break;
         case SETUP_DATA:
-            *var_access(DIFFICULTY) = DIFFICULTY_NORMAL;
+            difficulty_settings_chosen_difficulty = DIFFICULTY_NORMAL;
             bg_reset_control_and_displacement();
             bg_reset_scroll();
             bg_reset(0);

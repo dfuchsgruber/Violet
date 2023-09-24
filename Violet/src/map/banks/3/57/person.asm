@@ -63,7 +63,7 @@ end
 str_before_faun_appeared:
 	.autostring 35 2 "Ich kann es wirklich kaum erwarten, diesen Kindergarten hier hinter mir zu lassen."
 str_has_received_pkmn:
-	.autostring 35 2 "So wenig ich für den altne Knacker übrig habeDOTS\pDas Pokémon, das er mir gegeben hat, ist nicht von schlechten Eltern!"
+	.autostring 35 2 "So sehr mir der alte Knacker auf die Nerven gehtDOTS\pDieses Pokémon ist nicht von schlechten Eltern."
 
 .elseif LANG_EN
 str_before_faun_appeared:
@@ -311,7 +311,7 @@ receive_pokeballs:
 lock
 faceplayer
 setflag FLAG_SCRIPTED_WILD_BATTLES_LOSABLE
-setflag CAUGHT_POKEDEX_DISABLE
+setflag FLAG_POKEDEX_DISABLE_AFTER_CATCHING
 removeitem ITEM_POKEBALL 5
 loadpointer 0 str_player_receives_pokeballs
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
@@ -458,15 +458,15 @@ str_call_blaise:
 str_blaise_refuses:
 	.autostring 35 2 "DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT\pNein."
 str_call_blaise_again:
-	.autostring 35 2 "Wie bitte?\pIch hoffe, ich habe mich da verhört!"
+	.autostring 35 2 "Wie bitte?\pIch habe mich wohl verhört, du Bengel!"
 str_blaise_leaves:
-	.autostring 35 2 "Nein, Sie haben ganz richtig gehört.\pIch habe viel zu lange meine Zeit mit diesen Unsinn verschwendet.\pDamit ist jetzt Schluss.\pIch mache bei diesem Kindergarten nicht länger mit.\pAdieu."
+	.autostring 35 2 "Nein, Sie haben ganz richtig gehört.\pIch habe viel zu lange meine Zeit mit diesen Unsinn verschwendet.\pDamit ist jetzt Schluss.\pIch mache bei diesem Kindergarten nicht länger mit.\pJetzt, wo ich ein Pokémon habe, muss ich mir diesen Unsinn nicht länger anhören."
 str_faun_angry_at_blaise:
 	.autostring 35 2 "Dieser verdammte Bengel!\pWas fällt ihm einDOTS"
 str_continue_with_field_test:
 	.autostring 35 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pDas wird ein Nachspiel habenDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS"
 str_continue_with_field_test2:
-	.autostring 34 2 "Lassen wir uns davon nicht beirrenDOTS\pDann machst du eben den Anfang, Felix."
+	.autostring 34 2 "DOTS DOTS DOTS\pDann machst du eben den Anfang, Felix."
 str_felix_starts_test:
 	.autostring 35 2 "Jawohl, Opi -\nÄhmDOTS, ich meine natürlich, Herr Faun!"
 str_hand_felix_balls:
@@ -504,13 +504,13 @@ str_may_insecure:
 str_results_may:
 	.autostring 35 2 "Gut, gut.\nDer schriftliche Test war auch bei dir eher durchwachsen.\pUnd auch der Feldtest war nicht gerade überzeugendDOTS"
 str_may_understands:
-	.autostring 35 2 "Ich verstehe, Herr FaunDOTS\pEs tut mir leid."
+	.autostring 35 2 "Ich verstehe, Herr FaunDOTS"
 str_results_may2:
-	.autostring 35 2 "Ich weiß, dass du das Zeug zum Trainer hast, Maike.\pSonst wärst du in meiner Schule gar nicht so weit gekommenDOTS\pAber du stehst dir selbst im Weg, MädchenDOTS\pDOTS DOTS DOTs\nDOTS DOTS DOTS\pIch denke, es tut dir ganz gut, nicht mehr nur die Schulbank zu drücken, sondern da draußen in der echten Welt Erfahrungen zu sammeln.\pAlso lasse ich auch dich bestehenDOTS"
+	.autostring 35 2 "Aber ich glaube fest daran, dass auch du das Zeug zu einem erfolgreichen Trainer hast, Maike!\pAuch du hast bestanden!"
 str_may_glad:
-	.autostring 35 2 "Wirklich?\nDas ist fantastisch!\pIch habe doch tatsächlich bestandenDOTS"
+	.autostring 35 2 "Wirklich?\nDas ist fantastisch!"
 str_final_talk:
-	.autostring 34 2 "Also gut.\pIhr kriegt von mir sicher keine Abschiedsrede zu hören.\pAber ihr seid jetzt Absolventen meiner Schule.\pAlso verhaltet euch auch so.\pGebt euch Mühe, wenn ihr da draußen kämpft.\pUnd gebt aufeinander Acht, ja?\pIhr seid eine Gemeinschaft und habt füreinander einzustehen.\pSelbst für diesen Bengel Blaise.\pMerkt euch das, ja?\pLebt wohl, ihr Rotznasen!"
+.autostring 34 2 "Also gut.\pIch bin kein Mann größer Worte.\pAber ihr seid jetzt Absolventen meiner Schule.\pAlso verhaltet euch auch gefälligst so.\pIhr repräsentiert jetzt auch mich und diese Schule.\pGebt euch Mühe, wenn ihr da draußen kämpft.\pIch schätze, das war allesDOTS\pViel Erfolg, ihr Gören!"
 .elseif LANG_EN
 	.autostring 35 2 "Ok PLAYER, three Pokémon to choose from remain.\pTake your time to pick one of them!"
 str_player_received_b1:
@@ -825,7 +825,7 @@ str_battle_may:
 str_results_may3:
 	.autostring 35 2 "Ich habe gegen Felix verlorenDOTS"
 str_goodbye_may:
-	.autostring 35 2 "Ich hätte wirklich nicht gedacht, dass ich den Test bestehe, PLAYER!\pAber es freut mich, ehrlich.\pVielleicht ist das jetzt ein Wendepunkt in meinem Leben.\pIch werde mir wirklich Mühe geben.\pHoffentlich wird aus mir ja doch ein anständiger Pokémon-Trainer!"
+.autostring 35 2 "Ich hätte wirklich nicht gedacht, dass ich den Test bestehe, PLAYER!\pUnd ich werde das Gefühl nicht los, dass mich Herr Faun nur einfach so bestehen hat lassenDOTS\pA-Aber er hat recht!\pWir müssen jetzt alles geben, um seinen guten Ruf nicht zu beschämen.\pWir dürfen Herr Faun nicht enttäuschen!"
 .elseif LANG_EN
 str_make_both_appear:
 	.autostring 35 2 "Did that written exam also make you somewhat depressed, PLAYER?\pI just really don't think that I can pass anymore, no matter how the field test goesDOTS"

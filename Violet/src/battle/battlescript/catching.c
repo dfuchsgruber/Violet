@@ -82,7 +82,7 @@ void bsc_pokemon_caught(){
     }else{
         //catch pokemon
         pokedex_set_caught_and_load_pid(dex_id, 0b11, pid);
-        if(checkflag(CAUGHT_POKEDEX_DISABLE)){
+        if(checkflag(FLAG_POKEDEX_DISABLE_AFTER_CATCHING) || (!checkflag(POKEDEX))){
             const u8 *bsc_off_loc = &((bsc_offset)[1]);
             int target = UNALIGNED_32_GET(bsc_off_loc);
             bsc_offset = (const u8*)target;
