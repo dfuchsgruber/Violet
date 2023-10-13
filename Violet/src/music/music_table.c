@@ -782,5 +782,6 @@ const song song_table[] = {
 	[MUS_CLOUDS_VARIATION_3_SLOW] = {mus_clouds_theme_var3, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	[MUS_CLOUDS_VARIATION_4_WALTZ] = {mus_clouds_theme_waltz, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	[MUS_CLOUDS_VARIATION_5_TRUMPETS] = {mus_clouds_theme_var_trumpets, SONG_TYPE_SONG, SONG_TYPE_SONG},
-
+	[MUS_VIOLET_HQ2] = {mus_violet_hq2, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	[MUS_VIOLET_ENCOUNTER_2] = {mus_violet_encounter3, SONG_TYPE_SONG, SONG_TYPE_SONG},
 };
