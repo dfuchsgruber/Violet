@@ -27,8 +27,6 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
-	callasm worldmap_ui_habitat_show
-	waitstate
 	end
 
 	loadpointer 0 str_unown

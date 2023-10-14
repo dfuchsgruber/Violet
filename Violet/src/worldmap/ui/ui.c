@@ -22,6 +22,10 @@
 #include "language.h"
 #include "pokemon/sprites.h"
 #include "pokepad/pokedex/operator.h"
+#include "bg.h"
+#include "music.h"
+#include "debug.h"
+#include "menu_indicators.h"
 
 const u8 *const worldmap_tilesets[NUM_WORLDMAPS][NUM_WORLDMAP_LAYERS] = {
     [WORLDMAP_THETO] = {
@@ -59,7 +63,7 @@ const color_t *const worldmap_pals[NUM_WORLDMAPS][NUM_WORLDMAP_LAYERS] = {
 const color_t *const (worldmap_icon_pals[NUM_WORLDMAPS][NUM_WORLDMAP_LAYERS]) = {
     [WORLDMAP_THETO] = {
         [WORLDMAP_LAYER_GROUND] = gfx_worldmap_icon_thetoPal,
-        [WORLDMAP_LAYER_CLOUDS] = gfx_worldmap_icon_thetoPal,
+        [WORLDMAP_LAYER_CLOUDS] = gfx_worldmap_icon_theto_cloudsPal,
     },
     [WORLDMAP_ISLANDS] = {
         [WORLDMAP_LAYER_GROUND] = gfx_worldmap_icon_thetoPal,
@@ -71,7 +75,7 @@ const color_t *const (worldmap_icon_pals[NUM_WORLDMAPS][NUM_WORLDMAP_LAYERS]) = 
 const u8 *const (worldmap_icon_tiles[NUM_WORLDMAPS][NUM_WORLDMAP_LAYERS]) = {
     [WORLDMAP_THETO] = {
         [WORLDMAP_LAYER_GROUND] = gfx_worldmap_icon_thetoTiles,
-        [WORLDMAP_LAYER_CLOUDS] = gfx_worldmap_icon_thetoTiles,
+        [WORLDMAP_LAYER_CLOUDS] = gfx_worldmap_icon_theto_cloudsTiles,
     },
     [WORLDMAP_ISLANDS] = {
         [WORLDMAP_LAYER_GROUND] = gfx_worldmap_icon_thetoTiles,
@@ -160,6 +164,10 @@ static const sprite oam_icon_switch_maps = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(3)
 };
 
+static const sprite oam_switch_map_icon = {
+    .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_64_64, .attr2 = ATTR2_PRIO(0),
+};
+
 static const gfx_frame gfx_animation_cursor_unlocked[] = {
     {.data = 0, .duration = 0}, 
     {.data = 0 * GRAPHIC_SIZE_4BPP_TO_NUM_TILES(16, 16), .duration = 16},
@@ -201,6 +209,50 @@ static const oam_template oam_template_icon_switch_maps = {
     .rotscale = oam_rotscale_anim_table_null, .callback = oam_null_callback,
 };
 
+void oam_callback_switch_map_icon(__attribute__((unused)) oam_object *self) {
+    color_t red = {.rgb = {.red = 31, .blue = 0, .green = 0}};
+    if (worldmap_ui_state->red_overlay_should_be_active_on_worldmap[worldmap_ui_state->cursor_switch_maps.idx][worldmap_ui_state->cursor_switch_maps.layer]) {
+        u8 pal_idx = oam_palette_get_index(WORLDMAP_UI_GFX_TAG_SWITCH_MAP_MINIMAP);
+        pal_alpha_blending((u16)(256 + 16 * pal_idx), 16, worldmap_ui_state->red_overlay_intensity, red);
+    }
+}
+
+
+static const oam_template oam_template_switch_map_icon = {
+    .tiles_tag = WORLDMAP_UI_GFX_TAG_SWITCH_MAP_MINIMAP, .pal_tag = WORLDMAP_UI_GFX_TAG_SWITCH_MAP_MINIMAP,
+    .oam = &oam_switch_map_icon, .animation = oam_gfx_anim_table_null, .rotscale = oam_rotscale_anim_table_null,
+    .callback = oam_callback_switch_map_icon,
+};
+
+const u16 worldmap_flags[NUM_WORLDMAPS][NUM_WORLDMAP_LAYERS] = {
+    [WORLDMAP_THETO] = {
+    },
+    [WORLDMAP_ISLANDS] = {
+    },
+};
+
+bool worldmap_cursor_move(s8 direction_worldmap_idx, s8 direction_layer, worldmap_cursor_t *cursor, u8 *dst_worldmap_idx, u8 *dst_layer) {
+    int idx = cursor->idx;
+    int layer = cursor->layer;
+    while(true) {
+        idx += direction_worldmap_idx;
+        layer += direction_layer;
+        if (idx >= 0 && layer >= 0 && idx < NUM_WORLDMAPS && layer < NUM_WORLDMAP_LAYERS) {
+            u16 flag = worldmap_flags[idx][layer];
+            if (flag == WORLDMAP_FLAG_EMPTY_SLOT)
+                continue;
+            else if (flag == 0 || checkflag(flag)) {
+                *dst_worldmap_idx = (u8)idx;
+                *dst_layer = (u8)layer;
+                return true;
+            }
+        } else {
+            return false;
+        }
+    }
+}
+
+
 void worldmap_ui_cb1() {
     big_callback_proceed();
     tbox_proceed();
@@ -218,10 +270,6 @@ void worldmap_ui_vblank_callback() {
     dma3_queue_proceed();
 }
 
-const u16 worldmap_flags[NUM_WORLDMAPS] = {
-
-};
-
 bool worldmap_ui_callback_initialize_base() {
     worldmap_ui_cb1();
     if (fading_control.active || dma3_busy(-1))
@@ -230,11 +278,6 @@ bool worldmap_ui_callback_initialize_base() {
         case WORLDMAP_UI_INITIALIZATION_STATE_DATA_SETUP: {
             worldmap_locate_player();
             worldmap_set_cursor_to_player();
-            worldmap_ui_state->num_worldmaps = 0;
-            for (u8 i = 0; i < ARRAY_COUNT(worldmap_flags); i++) {
-                if ((worldmap_flags[i] == 0) || checkflag(worldmap_flags[i]))
-                    worldmap_ui_state->worldmaps[worldmap_ui_state->num_worldmaps++] = i;
-            }
             return true;
         }
         case WORLDMAP_UI_INITIALIZATION_STATE_RESET: {
@@ -258,7 +301,7 @@ bool worldmap_ui_callback_initialize_base() {
         }
         case WORLDMAP_UI_INITIALIZATION_STATE_LOAD_BG_GFX: {
             pal_copy(&black, 80, sizeof(color_t));
-            worldmap_ui_update_worldmap_gfx(worldmap_ui_state->worldmaps[worldmap_ui_state->cursor.idx], 
+            worldmap_ui_update_worldmap_gfx(worldmap_ui_state->cursor.idx, 
                 worldmap_ui_state->cursor.layer, worldmap_ui_state->worldmap_tile_x, worldmap_ui_state->worldmap_tile_y);
             pal_copy(tbox_palette_transparent, 15 * 16, sizeof(tbox_palette_transparent));
             return true;
@@ -267,6 +310,7 @@ bool worldmap_ui_callback_initialize_base() {
             oam_palette_load_if_not_present(palettes_player_head + save2->player_is_female);
             oam_palette_load_if_not_present(&palette_cursor);
             oam_palette_load_if_not_present(&palette_icon_switch_maps);
+            worldmap_ui_state->switch_map_icon_pal_idx = oam_allocate_palette(WORLDMAP_UI_GFX_TAG_SWITCH_MAP_MINIMAP);
             oam_load_graphic(graphics_player_head + save2->player_is_female);
             oam_load_graphic(&graphic_cursor);
             oam_load_graphic(&graphic_icon_switch_maps);
@@ -287,6 +331,9 @@ bool worldmap_ui_callback_initialize_base() {
                 (s16)(8 * (worldmap_ui_state->worldmap_tile_y +  WORLDMAP_Y_MARGIN)));
             worldmap_ui_update_cursor_oam((s16)(8 * (worldmap_ui_state->worldmap_tile_x + WORLDMAP_X_MARGIN)), 
                 (s16)(8 * (worldmap_ui_state->worldmap_tile_y +  WORLDMAP_Y_MARGIN)));
+            worldmap_ui_state->switch_map_icon_base_tile = oam_vram_alloc(GRAPHIC_SIZE_4BPP_TO_NUM_TILES(64, 64));
+            oam_vram_allocation_table_add(WORLDMAP_UI_GFX_TAG_SWITCH_MAP_MINIMAP, 
+                worldmap_ui_state->switch_map_icon_base_tile, GRAPHIC_SIZE_4BPP_TO_NUM_TILES(64, 64));
             return true;
         }
         case WORLDMAP_UI_INITIALIZATION_STATE_SHOW: {
@@ -414,6 +461,139 @@ bool worldmap_ui_handle_inputs_move_cursor(u8 self) {
     worldmap_ui_state->callback_cursor_starts_moving(self);
     worldmap_ui_state->cursor_moving = true;
     return true;
+}
+
+static const tbox_font_colormap font_colormap_switch_maps = {.background = 0, .body = 2, .edge = 3};
+
+static void worldmap_ui_switch_maps_update_icon(u8 self) {
+    lz77uncompvram(worldmap_icon_tiles[worldmap_ui_state->cursor_switch_maps.idx][worldmap_ui_state->cursor_switch_maps.layer],
+        OAMCHARBASE(worldmap_ui_state->switch_map_icon_base_tile));
+    oams[worldmap_ui_state->switch_map_icon_oam_idx].flags &= (u16)(~OAM_FLAG_INVISIBLE);
+    pal_copy(worldmap_icon_pals[worldmap_ui_state->cursor_switch_maps.idx][worldmap_ui_state->cursor_switch_maps.layer],
+        (u16)(256 + 16 * worldmap_ui_state->switch_map_icon_pal_idx), 16 * sizeof(color_t));
+    big_callback_set_function_to_continuation(self);
+}
+
+static void worldmap_ui_switch_maps_update_scroll_indicators() {
+    u8 idx, layer;
+    scroll_indicator_state *state_idx = (scroll_indicator_state*)(big_callbacks[worldmap_ui_state->switch_map_dialoge_scroll_indicator_idx_cb_idx].params);
+    if (worldmap_cursor_move(-1, 0, &worldmap_ui_state->cursor_switch_maps, &idx, &layer))
+        oams[state_idx->arrow0_oam_idx].flags &= (u16)(~OAM_FLAG_INVISIBLE);
+    else
+        oams[state_idx->arrow0_oam_idx].flags |= OAM_FLAG_INVISIBLE;
+    if (worldmap_cursor_move(1, 0, &worldmap_ui_state->cursor_switch_maps, &idx, &layer))
+        oams[state_idx->arrow1_oam_idx].flags &= (u16)(~OAM_FLAG_INVISIBLE);
+    else
+        oams[state_idx->arrow1_oam_idx].flags |= OAM_FLAG_INVISIBLE;
+    scroll_indicator_state *state_layer = (scroll_indicator_state*)(big_callbacks[worldmap_ui_state->switch_map_dialoge_scroll_indicator_layer_cb_idx].params);
+    if (worldmap_cursor_move(0, -1, &worldmap_ui_state->cursor_switch_maps, &idx, &layer))
+        oams[state_layer->arrow0_oam_idx].flags &= (u16)(~OAM_FLAG_INVISIBLE);
+    else
+        oams[state_layer->arrow0_oam_idx].flags |= OAM_FLAG_INVISIBLE;
+    if (worldmap_cursor_move(0, 1, &worldmap_ui_state->cursor_switch_maps, &idx, &layer))
+        oams[state_layer->arrow1_oam_idx].flags &= (u16)(~OAM_FLAG_INVISIBLE);
+    else
+        oams[state_layer->arrow1_oam_idx].flags |= OAM_FLAG_INVISIBLE;
+}
+
+static void worldmap_ui_switch_maps_update(u8 self, void (*continuation)(u8)) {
+    tbox_flush_set(WORLDMAP_UI_TBOX_IDX_SWITCH_MAPS_DIALOGE, 0x11);
+    const u8 *name = worldmap_names[worldmap_ui_state->cursor_switch_maps.idx];
+    tbox_print_string(WORLDMAP_UI_TBOX_IDX_SWITCH_MAPS_DIALOGE, 2, 
+        (u16)((WORLDMAP_SWITCH_MAPS_DIALOGE_WIDTH * 8 - string_get_width(2, name, 0)) / 2),
+        0, 0, 0, &font_colormap_switch_maps, 0, name);
+    const u8 *layer_name = worldmap_layer_names[worldmap_ui_state->cursor_switch_maps.layer];
+    tbox_print_string(WORLDMAP_UI_TBOX_IDX_SWITCH_MAPS_DIALOGE, 0, 
+        (u16)((WORLDMAP_SWITCH_MAPS_DIALOGE_WIDTH * 8 - string_get_width(0, layer_name, 0)) / 2),
+        11, 0, 0, &font_colormap_switch_maps, 0, layer_name);
+    oams[worldmap_ui_state->switch_map_icon_oam_idx].flags |= OAM_FLAG_INVISIBLE;
+
+    // Update scroll indicators
+    worldmap_ui_switch_maps_update_scroll_indicators();
+
+    big_callback_set_function_and_continuation(self, worldmap_ui_switch_maps_update_icon, continuation);
+
+}
+
+static void worldmap_ui_switch_maps_dialoge_scroll_indicators_dummy_callback(__attribute__((unused)) u8 self) {}
+
+void worldmap_ui_switch_maps_dialoge_new(u8 self, void (*handle_inputs_callback)(u8)) {
+    // dialoge textbox
+    tbox_flush_set(WORLDMAP_UI_TBOX_IDX_SWITCH_MAPS_DIALOGE, 0x11);
+    worldmap_ui_state->cursor_switch_maps = worldmap_ui_state->cursor;
+    tbox_tilemap_draw(WORLDMAP_UI_TBOX_IDX_SWITCH_MAPS_DIALOGE);
+    tbox_frame_draw_outer(WORLDMAP_UI_TBOX_IDX_SWITCH_MAPS_DIALOGE, 2, 13);
+    
+    // oam for the minimap
+    worldmap_ui_state->switch_map_icon_oam_idx = oam_new_forward_search(&oam_template_switch_map_icon,
+        (s16)((worldmap_ui_state->switch_map_dialoge_x + (WORLDMAP_SWITCH_MAPS_DIALOGE_WIDTH / 2)) * 8),
+        (s16)((worldmap_ui_state->switch_map_dialoge_y + (WORLDMAP_SWITCH_MAPS_DIALOGE_HEIGHT / 2) + 2) * 8), 0);
+    oams[worldmap_ui_state->switch_map_icon_oam_idx].flags |= OAM_FLAG_CENTERED;
+    tbox_copy_to_vram(WORLDMAP_UI_TBOX_IDX_SWITCH_MAPS_DIALOGE, TBOX_COPY_TILEMAP);
+
+    // scroll indicators
+    scroll_indicator_template template_idx = {
+        .arrow0_threshold = 0, 
+        .arrow1_threshold = NUM_WORLDMAPS, 
+        .arrow0_type = SCROLL_ARROW_LEFT, .arrow1_type = SCROLL_ARROW_RIGHT,
+        .arrow0_x = (u8)(8 * (worldmap_ui_state->switch_map_dialoge_x + WORLDMAP_SWITCH_MAPS_DIALOGE_WIDTH / 2) - 32), 
+        .arrow1_x = (u8)(8 * (worldmap_ui_state->switch_map_dialoge_x + WORLDMAP_SWITCH_MAPS_DIALOGE_WIDTH / 2) + 32),
+        .arrow0_y = (u8)(8 * (worldmap_ui_state->switch_map_dialoge_y + WORLDMAP_SWITCH_MAPS_DIALOGE_HEIGHT / 2) + 16),
+        .arrow1_y = (u8)(8 * (worldmap_ui_state->switch_map_dialoge_y + WORLDMAP_SWITCH_MAPS_DIALOGE_HEIGHT / 2) + 16),
+        .pal_tag = 112, .tiles_tag = 112,
+    };
+    worldmap_ui_state->switch_map_dialoge_scroll_indicator_idx_cb_idx = scroll_indicator_new(&template_idx, NULL);
+    big_callbacks[worldmap_ui_state->switch_map_dialoge_scroll_indicator_idx_cb_idx].function = worldmap_ui_switch_maps_dialoge_scroll_indicators_dummy_callback;
+    scroll_indicator_template template_layer = {
+        .arrow0_threshold = 0, 
+        .arrow1_threshold = NUM_WORLDMAP_LAYERS, 
+        .arrow0_type = SCROLL_ARROW_UP, .arrow1_type = SCROLL_ARROW_DOWN,
+        .arrow0_x = (u8)(8 * (worldmap_ui_state->switch_map_dialoge_x + WORLDMAP_SWITCH_MAPS_DIALOGE_WIDTH / 2)), 
+        .arrow1_x = (u8)(8 * (worldmap_ui_state->switch_map_dialoge_x + WORLDMAP_SWITCH_MAPS_DIALOGE_WIDTH / 2)),
+        .arrow0_y = (u8)(8 * (worldmap_ui_state->switch_map_dialoge_y + 2 + WORLDMAP_SWITCH_MAPS_DIALOGE_HEIGHT / 2) - 24),
+        .arrow1_y = (u8)(8 * (worldmap_ui_state->switch_map_dialoge_y + 2 + WORLDMAP_SWITCH_MAPS_DIALOGE_HEIGHT / 2) + 24),
+        .pal_tag = 112, .tiles_tag = 112,
+    };
+    worldmap_ui_state->switch_map_dialoge_scroll_indicator_layer_cb_idx = scroll_indicator_new(&template_layer, NULL);
+    big_callbacks[worldmap_ui_state->switch_map_dialoge_scroll_indicator_layer_cb_idx].function = worldmap_ui_switch_maps_dialoge_scroll_indicators_dummy_callback;
+
+    worldmap_ui_switch_maps_update(self, handle_inputs_callback);
+}
+
+bool worldmap_ui_switch_maps_dialoge_process_input(u8 self) {
+    if (dma3_busy(-1))
+        return false;
+    s8 direction_worldmap_idx = 0, direction_layer = 0;
+    if (super.keys_new.keys.left)
+        direction_worldmap_idx = -1;
+    else if (super.keys_new.keys.right)
+        direction_worldmap_idx = 1;
+    else if (super.keys_new.keys.down)
+        direction_layer = 1;
+    else if (super.keys_new.keys.up)
+        direction_layer = -1;
+    else 
+        return false;
+    // move the cursor
+    u8 worldmap_idx, layer;
+    if (worldmap_cursor_move(direction_worldmap_idx, direction_layer, &worldmap_ui_state->cursor_switch_maps,
+        &worldmap_idx, &layer)) {
+        play_sound(5);
+        worldmap_ui_state->cursor_switch_maps.idx = worldmap_idx;
+        worldmap_ui_state->cursor_switch_maps.layer = layer;
+        worldmap_ui_switch_maps_update(self, big_callbacks[self].function);
+        return true;
+    } else {
+        return false;
+    }
+}
+
+void worldmap_ui_switch_maps_dialoge_delete() {
+    oam_delete(oams + worldmap_ui_state->switch_map_icon_oam_idx);
+    tbox_flush_map_and_frame(WORLDMAP_UI_TBOX_IDX_SWITCH_MAPS_DIALOGE);
+    tbox_copy_to_vram(WORLDMAP_UI_TBOX_IDX_SWITCH_MAPS_DIALOGE, TBOX_COPY_TILEMAP);
+    scroll_indicator_delete(worldmap_ui_state->switch_map_dialoge_scroll_indicator_idx_cb_idx);
+    scroll_indicator_delete(worldmap_ui_state->switch_map_dialoge_scroll_indicator_layer_cb_idx);
 }
 
 void worldmap_ui_free_base() {

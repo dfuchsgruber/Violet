@@ -25,6 +25,7 @@
 #include "map/namespace.h"
 #include "dma.h"
 #include "io.h"
+#include "music.h"
 
 EWRAM worldmap_ui_state_t *worldmap_ui_state = NULL;
 
@@ -46,6 +47,12 @@ extern const LZ77COMPRESSED gfx_worldmap_icon_ball_caughtTiles;
 extern const color_t gfx_worldmap_icon_ball_caughtPal[16];
 extern const u8 gfx_worldmap_icon_percentageTiles[GRAPHIC_SIZE_4BPP(16, 16 * WORLDMAP_UI_HABITAT_NUM_PERCENTAGES)];
 extern const color_t gfx_worldmap_icon_percentagePal[16];
+
+static void worldmap_ui_handle_inputs_habitat(u8 self);
+static void worldmap_ui_habitat_update_red_should_be_active();
+static void worldmap_ui_habitat_update_red_overlay();
+static void worldmap_ui_habitat_draw_red_switch_tiles();
+static void worldmap_ui_habitat_free();
 
 static const graphic graphic_icon_grass = {
     .sprite = gfx_worldmap_icon_grassTiles, .tag = WORLDMAP_UI_GFX_TAG_ICON_GRASS,
@@ -297,7 +304,6 @@ static const u8 oam_animation_idx_to_percentage[WORLDMAP_UI_HABITAT_NUM_PERCENTA
     [WORLDMAP_UI_PERCENTAGE_100] = 100,
 };
 
-
 static const oam_template oam_template_icon_grass = {
     .tiles_tag = WORLDMAP_UI_GFX_TAG_ICON_GRASS, .pal_tag = WORLDMAP_UI_GFX_TAG_ICON_GRASS,
     .oam = &oam_icon, .animation = gfx_animations_icon_grass, .rotscale = oam_rotscale_anim_table_null,
@@ -420,20 +426,21 @@ static const u8 *const habitat_names[] = {
 };
 
 static const tboxdata worldmap_ui_habitat_tboxes[NUM_WORLDMAP_UI_HABITAT_TBOXES + 1] = {
-    [WORLDMAP_UI_HABITAT_TBOX_HEADER] = {.bg_id = 0, .x = 7, .y = 0, .w = 18, .h = 2, .pal = 15, .start_tile = 2},
-    [WORLDMAP_UI_TBOX_IDX_NAMESPACE] = {.bg_id = 2, .x = 7, .y = 2, .w = 18, .h = 2, .pal = 15, .start_tile = 2 + 2 * 18},
-    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_NAMES + HABITAT_TYPE_GRASS] = {.bg_id = 0, .x = 2, .y = 0, .w = 5, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 0 * 2 * 5},
-    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_NAMES + HABITAT_TYPE_WATER] = {.bg_id = 0, .x = 2, .y = 4, .w = 5, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 1 * 2 * 5},
-    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_NAMES + HABITAT_TYPE_RADAR] = {.bg_id = 0, .x = 2, .y = 8, .w = 5, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 2 * 2 * 5},
-    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_NAMES + HABITAT_TYPE_OLD_ROD] = {.bg_id = 0, .x = 2, .y = 12, .w = 5, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 3 * 3 * 5},
-    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_PERCENTAGES + HABITAT_TYPE_GRASS] = {.bg_id = 0, .x = 4, .y = 2, .w = 3, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 4 * 3 * 5 + 0 * 3 * 2},
-    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_PERCENTAGES + HABITAT_TYPE_WATER] = {.bg_id = 0, .x = 4, .y = 6, .w = 3, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 4 * 3 * 5 + 1 * 3 * 2},
-    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_PERCENTAGES + HABITAT_TYPE_RADAR] = {.bg_id = 0, .x = 4, .y = 10, .w = 3, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 4 * 3 * 5 + 2 * 3 * 2},
-    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_PERCENTAGES + HABITAT_TYPE_OLD_ROD] = {.bg_id = 0, .x = 4, .y = 14, .w = 3, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 4 * 3 * 5 + 3 * 3 * 2},
-    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_PERCENTAGES + HABITAT_TYPE_GOOD_ROD] = {.bg_id = 0, .x = 4, .y = 16, .w = 3, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 4 * 3 * 5 + 4 * 3 * 2},
-    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_PERCENTAGES + HABITAT_TYPE_SUPER_ROD] = {.bg_id = 0, .x = 4, .y = 18, .w = 3, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 4 * 3 * 5 + 5 * 3 * 2},
-    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_NO_HABITAT] = {.bg_id = 2, .x = 10, .y = 9, .w = 17, .h = 2, .pal = 15, .start_tile = 2 + 2 * 18 + 18 * 2 + 4 * 3 * 5 + 6 * 3 * 2},
-    [WORLDMAP_UI_HABITAT_TBOX_FOOTER] = {.bg_id = 0, .x = 7, .y = 18, .w = 27, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 4 * 3 * 5 + 6 * 3 * 2 + 17 * 2},
+    [WORLDMAP_UI_HABITAT_TBOX_HEADER] = {.bg_id = 0, .x = 7, .y = 0, .w = 18, .h = 2, .pal = 15, .start_tile = 2 + TBOX_FRAME_SET_STYLE_NUM_TILES},
+    [WORLDMAP_UI_TBOX_IDX_NAMESPACE] = {.bg_id = 2, .x = 7, .y = 2, .w = 18, .h = 2, .pal = 15, .start_tile = 2 + 2 * 18 + TBOX_FRAME_SET_STYLE_NUM_TILES},
+    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_NAMES + HABITAT_TYPE_GRASS] = {.bg_id = 0, .x = 2, .y = 0, .w = 5, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 0 * 2 * 5 + TBOX_FRAME_SET_STYLE_NUM_TILES},
+    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_NAMES + HABITAT_TYPE_WATER] = {.bg_id = 0, .x = 2, .y = 4, .w = 5, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 1 * 2 * 5 + TBOX_FRAME_SET_STYLE_NUM_TILES},
+    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_NAMES + HABITAT_TYPE_RADAR] = {.bg_id = 0, .x = 2, .y = 8, .w = 5, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 2 * 2 * 5 + TBOX_FRAME_SET_STYLE_NUM_TILES},
+    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_NAMES + HABITAT_TYPE_OLD_ROD] = {.bg_id = 0, .x = 2, .y = 12, .w = 5, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 3 * 3 * 5 + TBOX_FRAME_SET_STYLE_NUM_TILES},
+    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_PERCENTAGES + HABITAT_TYPE_GRASS] = {.bg_id = 0, .x = 4, .y = 2, .w = 3, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 4 * 3 * 5 + 0 * 3 * 2 + TBOX_FRAME_SET_STYLE_NUM_TILES},
+    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_PERCENTAGES + HABITAT_TYPE_WATER] = {.bg_id = 0, .x = 4, .y = 6, .w = 3, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 4 * 3 * 5 + 1 * 3 * 2 + TBOX_FRAME_SET_STYLE_NUM_TILES},
+    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_PERCENTAGES + HABITAT_TYPE_RADAR] = {.bg_id = 0, .x = 4, .y = 10, .w = 3, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 4 * 3 * 5 + 2 * 3 * 2 + TBOX_FRAME_SET_STYLE_NUM_TILES},
+    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_PERCENTAGES + HABITAT_TYPE_OLD_ROD] = {.bg_id = 0, .x = 4, .y = 14, .w = 3, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 4 * 3 * 5 + 3 * 3 * 2 + TBOX_FRAME_SET_STYLE_NUM_TILES},
+    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_PERCENTAGES + HABITAT_TYPE_GOOD_ROD] = {.bg_id = 0, .x = 4, .y = 16, .w = 3, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 4 * 3 * 5 + 4 * 3 * 2 + TBOX_FRAME_SET_STYLE_NUM_TILES},
+    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_PERCENTAGES + HABITAT_TYPE_SUPER_ROD] = {.bg_id = 0, .x = 4, .y = 18, .w = 3, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 4 * 3 * 5 + 5 * 3 * 2 + TBOX_FRAME_SET_STYLE_NUM_TILES},
+    [WORLDMAP_UI_HABITAT_TBOX_HABITAT_NO_HABITAT] = {.bg_id = 2, .x = 10, .y = 9, .w = 17, .h = 2, .pal = 15, .start_tile = 2 + 2 * 18 + 18 * 2 + 4 * 3 * 5 + 6 * 3 * 2 + TBOX_FRAME_SET_STYLE_NUM_TILES},
+    [WORLDMAP_UI_HABITAT_TBOX_FOOTER] = {.bg_id = 0, .x = 7, .y = 18, .w = 27, .h = 2, .pal = 14, .start_tile = 2 + 2 * 18 + 18 * 2 + 4 * 3 * 5 + 6 * 3 * 2 + 17 * 2 + TBOX_FRAME_SET_STYLE_NUM_TILES},
+    [WORLDMAP_UI_TBOX_IDX_SWITCH_MAPS_DIALOGE] = {.bg_id = 0, .x = WORLDMAP_SWITCH_MAPS_DIALOGE_X_HABITAT, .y = WORLDMAP_SWITCH_MAPS_DIALOGE_Y_HABITAT, .w = WORLDMAP_SWITCH_MAPS_DIALOGE_WIDTH, .h = WORLDMAP_SWITCH_MAPS_DIALOGE_HEIGHT, .pal = 13, .start_tile = 2 + 2 * 18 + 18 * 2 + 4 * 3 * 5 + 6 * 3 * 2 + 17 * 2 + 27 * 2 + TBOX_FRAME_SET_STYLE_NUM_TILES},
     [NUM_WORLDMAP_UI_HABITAT_TBOXES] = {.bg_id = 0xFF},
 };
 
@@ -514,16 +521,80 @@ static void worldmap_ui_habitat_cursor_starts_moving(u8 self) {
     (void)self;
 }
 
+static u32 worldmap_blending_get_affected_palettes_mask() {
+    return (u32) (0b0011111 | (1 << (16 + oam_palette_get_index(WORLDMAP_UI_GFX_TAG_PLAYER_HEAD))) \
+            | (1 << (16 + oam_palette_get_index(WORLDMAP_UI_GFX_TAG_CURSOR))));
+}
+
+static void worldmap_ui_update_worldmap(u8 self) {
+    if (fading_control.active)
+        return;
+    worldmap_ui_state->cursor = worldmap_ui_state->cursor_switch_maps;
+    worldmap_ui_habitat_update_red_should_be_active();
+    worldmap_ui_habitat_update_namespace_by_cursor_position(true);
+    worldmap_ui_habitat_update_red_overlay();
+    worldmap_ui_habitat_update_habitat_info_by_cursor();
+    worldmap_ui_update_worldmap_gfx(worldmap_ui_state->cursor.idx, 
+                worldmap_ui_state->cursor.layer, worldmap_ui_state->worldmap_tile_x, worldmap_ui_state->worldmap_tile_y);
+    worldmap_ui_habitat_draw_red_switch_tiles();
+    pal_copy(gfx_worldmap_ui_habitat_framePal + 1, 0, sizeof(color_t));
+    worldmap_ui_update_player_head_oam();
+        fadescreen(worldmap_blending_get_affected_palettes_mask(), 0, 16, 0, 0);
+    bg_virtual_sync_reqeust_push(2);
+    bg_virtual_sync_reqeust_push(3);
+    big_callbacks[self].function = worldmap_ui_handle_inputs_habitat;
+}
+
+static void worldmap_ui_handle_inputs_switch_maps_habitat(u8 self) {
+    if (worldmap_ui_switch_maps_dialoge_process_input(self))
+        return;
+    else if (super.keys_new.keys.B || (super.keys_new.keys.A && worldmap_ui_state->cursor_switch_maps.idx == worldmap_ui_state->cursor.idx &&
+            worldmap_ui_state->cursor_switch_maps.layer == worldmap_ui_state->cursor.layer)) {
+        play_sound(5);
+        worldmap_ui_switch_maps_dialoge_delete();
+        big_callbacks[self].function = worldmap_ui_handle_inputs_habitat;
+    } else if (super.keys_new.keys.A) {
+        play_sound(5);
+        worldmap_ui_switch_maps_dialoge_delete();
+        tbox_flush_set(WORLDMAP_UI_TBOX_IDX_NAMESPACE, 0x00);
+        tbox_sync(WORLDMAP_UI_TBOX_IDX_NAMESPACE, TBOX_SYNC_SET);
+        fadescreen(worldmap_blending_get_affected_palettes_mask(), 0, 0, 16, 0);
+        big_callbacks[self].function = worldmap_ui_update_worldmap;
+    }
+}
+
+
+static void worldmap_ui_exit(u8 self) {
+    if (!fading_control.active) {
+        callback1_set(worldmap_ui_state->continuation);
+        worldmap_ui_habitat_free();
+        big_callback_delete(self);
+    }
+}
+
 static void worldmap_ui_handle_inputs_habitat(u8 self) {
     if (dma3_busy(-1) || fading_control.active)
         return;
     if (worldmap_ui_handle_inputs_move_cursor(self))
         return;
+    else if (super.keys_new.keys.select ||
+        (super.keys_new.keys.A && worldmap_ui_state->cursor.x == worldmap_ui_state->icon_switch_maps_x &&
+            worldmap_ui_state->cursor.y == worldmap_ui_state->icon_switch_maps_y)) {
+        play_sound(5);
+        worldmap_ui_switch_maps_dialoge_new(self, worldmap_ui_handle_inputs_switch_maps_habitat);
+        return;
+    } else if (super.keys_new.keys.B) {
+        play_sound(5);
+        fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
+        big_callbacks[self].function = worldmap_ui_exit;
+    }
     // TODO: handle other DPAD presses
 }
 
 static void worldmap_ui_habitat_update_red_overlay() {
+    bg_tile zero = {0};
     bg_tile *bg2_map = (bg_tile*) worldmap_ui_state->bg2_map;
+    cpuset(&zero, bg2_map, CPUSET_FILL | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(sizeof(bg_tile) * 32 * 20));
     for (size_t i = 0; i < worldmap_ui_state->habitats->num_elements; i++) {
         pokedex_habitat_pair *entry = worldmap_ui_state->habitats->list + i;
         if (entry->worldmap_idx == worldmap_ui_state->cursor.idx && 
@@ -549,16 +620,20 @@ static void worldmap_ui_habitat_update_red_overlay() {
     }
 }
 
-void worldmap_ui_habitat_update_scanline(u16 colev_worldmap, u16 colev_switch_maps) {
+void worldmap_ui_habitat_update_scanline(u16 colev_worldmap, u16 colev_switch_maps, u16 colev_switch_maps_button) {
 	// Initialize the scanline
 	for (int i = 0; i < 32; i++) {
 		dma0_scanline_frames[0][i] = IO_BLDALPHA_EVA(15) | IO_BLDALPHA_EVB(10);
 		dma0_scanline_frames[1][i] = IO_BLDALPHA_EVA(15) | IO_BLDALPHA_EVB(10);
 	}
-	for (int i = 32; i < 160 - 16; i++) {
+	for (int i = 32; i < 160 - 24; i++) {
 		dma0_scanline_frames[0][i] = colev_worldmap;
 		dma0_scanline_frames[1][i] = colev_worldmap;
 	}
+    for (int i = 160 - 24; i < 160 - 16; i++) {
+		dma0_scanline_frames[0][i] = colev_switch_maps_button;
+		dma0_scanline_frames[1][i] = colev_switch_maps_button;
+    }
     for (int i = 160 - 16; i < 240; i++) {
 		dma0_scanline_frames[0][i] = colev_switch_maps;
 		dma0_scanline_frames[1][i] = colev_switch_maps;
@@ -577,7 +652,10 @@ static void worldmap_ui_habitat_apply_red_overlay(u16 intensity_worldmap, u16 in
     int ea_switch_maps = 2 * intensity_switch_maps;
     int eb_switch_maps = 16 - ea_switch_maps;
     u16 colev_switch_maps = (u16)((eb_switch_maps << 8) | ea_switch_maps);
-    worldmap_ui_habitat_update_scanline(colev_worldmap, colev_switch_maps);
+    int ea_switch_maps_button = intensity_switch_maps;
+    int eb_switch_maps_button = 16 - ea_switch_maps_button;
+    u16 colev_switch_maps_button = (u16)((eb_switch_maps_button << 8) | ea_switch_maps_button);
+    worldmap_ui_habitat_update_scanline(colev_worldmap, colev_switch_maps, colev_switch_maps_button);
 }
 
 #define delay params[0]
@@ -604,6 +682,7 @@ static void worldmap_ui_habitat_red_overlay_task(u8 self_idx) {
     }
     u16 intensity_worldmap = worldmap_ui_state->red_overlay_is_active ? self->intensity : 0;
     u16 intensity_switch_maps = worldmap_ui_state->other_red_is_active ? self->intensity : 0;
+    worldmap_ui_state->red_overlay_intensity = (u8)(self->intensity);
     if (self->intensity == 0) {
         // In this frame, the red fading effects can be resynchronized
         worldmap_ui_state->red_overlay_is_active = worldmap_ui_state->red_overlay_should_be_active;
@@ -618,21 +697,39 @@ static void worldmap_ui_habitat_red_overlay_task(u8 self_idx) {
 
 static void worldmap_ui_habitat_update_red_should_be_active() {
     // Does the current worldmap (where the cursor is at) have any red overaly (habitats)
-    for (size_t i = 0; i < worldmap_ui_state->habitats->num_elements; i++) {
-        pokedex_habitat_pair *entry = worldmap_ui_state->habitats->list + i;
-        if (entry->worldmap_idx == worldmap_ui_state->cursor.idx && 
-            entry->layer == worldmap_ui_state->cursor.layer) {
-            worldmap_ui_state->red_overlay_should_be_active = 1;
-        } else {
-            worldmap_ui_state->other_red_should_be_active = 1;
+    worldmap_ui_state->red_overlay_should_be_active = 0;
+    worldmap_ui_state->other_red_should_be_active = 0;
+    for (size_t idx = 0; idx < NUM_WORLDMAPS; idx++) {
+        for (size_t layer = 0; layer < NUM_WORLDMAP_LAYERS; layer++) {
+            if (worldmap_ui_state->red_overlay_should_be_active_on_worldmap[idx][layer]) {
+                if (worldmap_ui_state->cursor.idx == idx && worldmap_ui_state->cursor.layer == layer)
+                    worldmap_ui_state->red_overlay_should_be_active = 1;
+                else  
+                    worldmap_ui_state->other_red_should_be_active = 1;
+            }
+            DEBUG("Should be active on %d,%d: %d\n", idx, layer, worldmap_ui_state->red_overlay_should_be_active_on_worldmap[idx][layer]);
         }
     }
+
     // For debugging
-    worldmap_ui_state->red_overlay_should_be_active = 1;
-    worldmap_ui_state->other_red_should_be_active = 1;
+    // worldmap_ui_state->red_overlay_should_be_active = 1;
+    // worldmap_ui_state->other_red_should_be_active = 1;
 
     DEBUG("Red overlay should be active %d, other red overlay should be active %d\n",
         worldmap_ui_state->red_overlay_should_be_active, worldmap_ui_state->other_red_should_be_active);
+}
+
+static void worldmap_ui_habitat_draw_red_switch_tiles() {
+    int gfx_worldmap_red_switch_mapTiles[2] = {0};
+    cpuset(gfx_worldmap_red_switch_mapTiles, CHARBASE_PLUS_OFFSET_8BPP(1, 
+        WORLDMAP_TOTAL_WIDTH * WORLDMAP_TOTAL_HEIGHT + 1), CPUSET_FILL | CPUSET_HALFWORD |
+            CPUSET_HALFWORD_SIZE(GRAPHIC_SIZE_8BPP(8, 8)));
+    for (size_t y = 18; y < 20; y++) {
+        for (size_t x = 7; x < 20; x++) {
+            bg_tile *bg3_map = (bg_tile*)worldmap_ui_state->bg3_map;
+            bg3_map[y * 32 + x].text.tile_number = WORLDMAP_TOTAL_WIDTH * WORLDMAP_TOTAL_HEIGHT + 1;
+        }
+    }
 }
 
 static void worldmap_ui_callback_initialize_habitat() {
@@ -641,15 +738,21 @@ static void worldmap_ui_callback_initialize_habitat() {
     switch (worldmap_ui_state->initialization_state) {
         case WORLDMAP_UI_INITIALIZATION_STATE_DATA_SETUP: {
             worldmap_ui_state->initialization_state++;
+            worldmap_ui_state->habitats = pokedex_habitat_list_new(WORLDMAP_POKEDEX_HABITAT_INITIAL_LIST_SIZE, 
+                POKEDEX_HABITAT_LIST_MAX_SIZE);
+            pokedex_habitat_list_compute_by_species(worldmap_ui_state->habitats, worldmap_ui_state->species);
             worldmap_ui_state->callback_cursor_moved = worldmap_ui_habitat_cursor_moved;
             worldmap_ui_state->callback_cursor_starts_moving = worldmap_ui_habitat_cursor_starts_moving;
             worldmap_ui_state->worldmap_tile_x = WORLDMAP_X_OFFSET_HABITAT;
             worldmap_ui_state->worldmap_tile_y = WORLDMAP_Y_OFFSET_HABITAT;
             worldmap_ui_state->icon_switch_maps_x = WORLDMAP_BUTTON_SWITCH_MAPS_HABITAT_X;
             worldmap_ui_state->icon_switch_maps_y = WORLDMAP_BUTTON_SWITCH_MAPS_HABITAT_Y;
-            worldmap_ui_state->habitats = pokedex_habitat_list_new(WORLDMAP_POKEDEX_HABITAT_INITIAL_LIST_SIZE, 
-                POKEDEX_HABITAT_LIST_MAX_SIZE);
-            pokedex_habitat_list_compute_by_species(worldmap_ui_state->habitats, worldmap_ui_state->species);
+            worldmap_ui_state->switch_map_dialoge_x = WORLDMAP_SWITCH_MAPS_DIALOGE_X_HABITAT;
+            worldmap_ui_state->switch_map_dialoge_y = WORLDMAP_SWITCH_MAPS_DIALOGE_Y_HABITAT;
+            for (size_t i = 0; i < worldmap_ui_state->habitats->num_elements; i++) {
+                pokedex_habitat_pair *entry = worldmap_ui_state->habitats->list + i;
+                worldmap_ui_state->red_overlay_should_be_active_on_worldmap[entry->worldmap_idx][entry->layer] = 1;
+            }
             worldmap_ui_habitat_update_red_should_be_active();
             break;
         }
@@ -694,6 +797,7 @@ static void worldmap_ui_callback_initialize_habitat() {
         case WORLDMAP_UI_INITIALIZATION_STATE_SETUP_TBOXES: {
             tbox_free_all();
             tbox_sync_with_virtual_bg_and_init_all(worldmap_ui_habitat_tboxes);
+            tbox_init_frame_set_style(WORLDMAP_UI_TBOX_IDX_SWITCH_MAPS_DIALOGE, 2, 13 * 16);
             for (u8 i = 0; worldmap_ui_habitat_tboxes[i].bg_id != 0xFF; i++) {
                 tbox_flush_set(i, 0x00);
                 tbox_flush_map(i);
@@ -716,6 +820,7 @@ static void worldmap_ui_callback_initialize_habitat() {
             } else {
                 tbox_sync(WORLDMAP_UI_HABITAT_TBOX_HABITAT_NO_HABITAT, TBOX_SYNC_SET);
             }
+            tbox_sync(WORLDMAP_UI_TBOX_IDX_SWITCH_MAPS_DIALOGE, TBOX_SYNC_SET);
             tbox_print_string(WORLDMAP_UI_HABITAT_TBOX_FOOTER, 2, 2, 1, 0, 0, &font_colormap_transparent, 0, str_footer_key_select);
             tbox_print_string(WORLDMAP_UI_HABITAT_TBOX_FOOTER, 2, 28, 1, 0, 0, &font_colormap_transparent_footer, 0, str_footer_switch_map);
             tbox_print_string(WORLDMAP_UI_HABITAT_TBOX_FOOTER, 2, 82, 1, 0, 0, &font_colormap_transparent, 0, str_footer_key_dpad);
@@ -741,19 +846,8 @@ static void worldmap_ui_callback_initialize_habitat() {
             cpuset(&gfx_worldmap_red_overlayTiles, CHARBASE_PLUS_OFFSET_4BPP(0, 1), CPUSET_FILL | CPUSET_HALFWORD |
                  CPUSET_HALFWORD_SIZE(GRAPHIC_SIZE_4BPP(8, 8)));
             lz77uncompwram(gfx_worldmap_ui_habitat_frameMap, worldmap_ui_state->bg1_map);
-            int gfx_worldmap_red_switch_mapTiles = 0;
-            cpuset(&gfx_worldmap_red_switch_mapTiles, CHARBASE_PLUS_OFFSET_8BPP(1, 
-                WORLDMAP_TOTAL_WIDTH * WORLDMAP_TOTAL_HEIGHT + 1), CPUSET_FILL | CPUSET_HALFWORD |
-                 CPUSET_HALFWORD_SIZE(GRAPHIC_SIZE_4BPP(8, 8)));
-            for (size_t y = 18; y < 20; y++) {
-                for (size_t x = 7; x < 20; x++) {
-                    bg_tile *bg3_map = (bg_tile*)worldmap_ui_state->bg3_map;
-                    bg3_map[y * 32 + x].text.tile_number = WORLDMAP_TOTAL_WIDTH * WORLDMAP_TOTAL_HEIGHT + 1;
-                }
-            }
+            worldmap_ui_habitat_draw_red_switch_tiles();
             worldmap_ui_habitat_update_red_overlay();
-
-
             worldmap_ui_state->initialization_state++;
             break;
         }
@@ -835,15 +929,14 @@ static void worldmap_ui_habitat_wait_for_fadescreen_and_initialize_ui(u8 self) {
 }
 
 
-void worldmap_ui_habitat_show() {
+void worldmap_ui_habitat_new(u16 species, void (*continuation)()) {
     worldmap_ui_state = malloc_and_clear(sizeof(worldmap_ui_state_t));
-    worldmap_ui_state->species = 37;
-    fadescreen_all(1, 0);
+    worldmap_ui_state->species = species;
     callback1_set(worldmap_ui_cb1);
     big_callback_new(worldmap_ui_habitat_wait_for_fadescreen_and_initialize_ui, 0);
 }
 
-void worldmap_ui_habitat_free() {
+static void worldmap_ui_habitat_free() {
     pokedex_habitat_list_delete(worldmap_ui_state->habitats);
     worldmap_ui_free_base();
 }

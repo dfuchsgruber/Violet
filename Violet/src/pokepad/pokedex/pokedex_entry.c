@@ -26,6 +26,7 @@
 #include "pokemon/cry.h"
 #include "flags.h"
 #include "pokepad/pokedex/state.h"
+#include "worldmap.h"
 
 extern const unsigned short gfx_pokedex_formsTiles[];
 extern const unsigned short gfx_pokedex_entry_uiMap[];
@@ -197,6 +198,14 @@ void pokedex_entry_load_pokepic() {
 extern const u16 pokedex_colors[16];
 extern const u16 pokedex_colors_nr[16];
 
+static void pokedex_entry_free() {
+    free(bg_get_tilemap(0));
+    free(bg_get_tilemap(1));
+    free(bg_get_tilemap(2));
+    free(bg_get_tilemap(3));
+    tbox_free_all();
+}
+
 void pokedex_callback_init_entry_load_elements(){
    //disable window
     io_set(0, (u16) (io_get(0) &~0x6000));
@@ -274,7 +283,7 @@ void pokedex_callback_init_entry() {
         big_callback_delete_all();
         callback1_set(pokedex_callback_entry_idle);
         vblank_handler_set(generic_vblank_handler);
-        fadescreen_all(0, 0);
+        fadescreen(0xFFFFFFFF, 0, 16, 0);
         
     }
 }
@@ -320,11 +329,7 @@ void pokedex_entry_from_battle_cb(u8 self){
             }
             case 2:{ //free all components
                 volume_set(mplay_info_background_music, 0xFFFF, 0x100);
-                free(bg_get_tilemap(0));
-                free(bg_get_tilemap(1));
-                free(bg_get_tilemap(2));
-                free(bg_get_tilemap(3));
-                tbox_free_all();
+                pokedex_entry_free();
                 big_callback_delete(self);
                 
             }
@@ -334,22 +339,18 @@ void pokedex_entry_from_battle_cb(u8 self){
 }
 
 u8 pokedex_init_entry_from_battle(u16 species){
-    //First allocate dex_mem
-    pokedex_state_t *dex_mem = (pokedex_state_t*)malloc_and_clear(sizeof(pokedex_state_t));
-    dex_mem->current_species = species;
-    dex_mem->from_battle = true;
-    pokedex_state = dex_mem;
+    pokedex_state = (pokedex_state_t*)malloc_and_clear(sizeof(pokedex_state_t));
+    pokedex_state->current_species = species;
+    pokedex_state->from_battle = true;
     pokedex_callback_init_entry_load_elements();
     u8 cb_id = big_callback_new(pokedex_entry_from_battle_cb, 0);
     big_callbacks[cb_id].params[0] = 0;
     big_callbacks[cb_id].params[1] = 120; //countdown
     fading_control.buffer_transfer_disabled = false;
     fadescreen(0xFFFFFFFF, 0, 16, 0, 0xFFFF);
-    
     //Set the pokedex callback3
     void (*pokedex_cb3)() = (void(*)())(0x08102714 | 1);
     vblank_handler_set(pokedex_cb3);
-    
     return cb_id;
 }
 
@@ -357,11 +358,7 @@ u8 pokedex_init_entry_from_battle(u16 species){
 void pokedex_callback_entry_back() {
     generic_callback1();
     if (!fading_is_active()) {
-        free(bg_get_tilemap(0));
-        free(bg_get_tilemap(1));
-        free(bg_get_tilemap(2));
-        free(bg_get_tilemap(3));
-        tbox_free_all();
+        pokedex_entry_free();
         pokedex_init_components();
         pokedex_update_list();
         io_set(0x50, 0);
@@ -383,6 +380,8 @@ void pokedex_entry_update() {
         //test(pokedex_get_data(0),00);
     }
 }
+
+
 
 void pokedex_callback_entry_idle() {
     generic_callback1();
@@ -430,15 +429,13 @@ void pokedex_callback_entry_idle() {
             }
 
         } else if (super.keys_new.keys.A && HAS_HABITAT) {
+            u16 species = pokedex_state->current_species;
             play_sound(5);
-            fadescreen_all(1, 0);
-            callback1_set(pokedex_init_habitat);
-
-
-
+            pokedex_entry_free();
+            worldmap_ui_habitat_new(species, NULL);
+            fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
+            
         }
-
-
     }
 }
 

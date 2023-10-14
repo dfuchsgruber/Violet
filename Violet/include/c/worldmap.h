@@ -12,6 +12,7 @@
 extern "C" {
 #endif
 #define ____ 0xC5
+#include "types.h"
 #include "constants/map_namespaces.h"
 #include "tile/coordinate.h"
 #include "map/healing_place.h"
@@ -36,6 +37,12 @@ extern "C" {
 
 #define WORLDMAP_BUTTON_SWITCH_MAPS_HABITAT_X 0
 #define WORLDMAP_BUTTON_SWITCH_MAPS_HABITAT_Y 13
+
+#define WORLDMAP_SWITCH_MAPS_DIALOGE_WIDTH 10
+#define WORLDMAP_SWITCH_MAPS_DIALOGE_HEIGHT 10
+
+#define WORLDMAP_SWITCH_MAPS_DIALOGE_X_HABITAT (WORLDMAP_X_OFFSET_HABITAT + (WORLDMAP_TOTAL_WIDTH - WORLDMAP_SWITCH_MAPS_DIALOGE_WIDTH) / 2)
+#define WORLDMAP_SWITCH_MAPS_DIALOGE_Y_HABITAT (WORLDMAP_Y_OFFSET_HABITAT + (WORLDMAP_TOTAL_HEIGHT - WORLDMAP_SWITCH_MAPS_DIALOGE_HEIGHT) / 2)
 
 typedef u8 worldmap_namespace_t[WORLDMAP_HEIGHT][WORLDMAP_WIDTH];
 
@@ -67,6 +74,7 @@ enum worldmap_ui_gfx_tag {
     WORLDMAP_UI_GFX_TAG_CURSOR,
     WORLDMAP_UI_GFX_TAG_SWITCH_MAPS_ICON,
     WORLDMAP_UI_GFX_TAG_PERCENTAGE,
+    WORLDMAP_UI_GFX_TAG_SWITCH_MAP_MINIMAP,
 };
 
 enum {
@@ -161,7 +169,9 @@ enum {
     extern const color_t gfx_worldmapPal[80];
 
     extern const LZ77COMPRESSED gfx_worldmap_icon_thetoTiles;
+    extern const LZ77COMPRESSED gfx_worldmap_icon_theto_cloudsTiles;
     extern const color_t gfx_worldmap_icon_thetoPal[16];
+    extern const color_t gfx_worldmap_icon_theto_cloudsPal[16];
 
     enum worldmap_idx_t {
         WORLDMAP_THETO = 0,
@@ -174,6 +184,18 @@ enum {
         WORLDMAP_LAYER_CLOUDS = 1,
         NUM_WORLDMAP_LAYERS,
     };
+
+    #define WORLDMAP_FLAG_EMPTY_SLOT 0xFFFF
+
+    extern const u8 (*const worldmap_names[NUM_WORLDMAPS]);
+    extern const u8 (*const worldmap_layer_names[NUM_WORLDMAP_LAYERS]);
+
+    /**
+     * Processes the input of moving the cursor in the "switch maps" dialoge
+     * @param self self-reference
+     * @return whether the cursors was moved. Note that if this is true, the callback function is overwritten and the `self`-callback should not do anything further
+    */
+    bool worldmap_ui_switch_maps_dialoge_process_input(u8 self);
 
     /**
      * Updates the gfx of the worldmap to bg3 and charbase 1
@@ -269,6 +291,27 @@ enum {
     */
     void worldmap_ui_free_base();
 
+    /**
+     * Creates a new dialoge to switch maps
+     * @param self the idle callback to overwrite
+     * @param handle_inputs_callback after the dialoge is created, the `self`-callback will execute this function
+    */
+    void worldmap_ui_switch_maps_dialoge_new(u8 self, void (*handle_inputs_callback)(u8));
+
+    /**
+     * Deletes the dialoge to switch maps
+    */
+    void worldmap_ui_switch_maps_dialoge_delete();
+
+    /**
+     * Initializes the worldmap ui with the habitat of a pokemon. 
+     * Should be called once the previous state has been completely freed and the screen is fading to black.
+     * Will set `callback1` accordingly and reset.
+     * @param species the habitat of which species to show
+     * @param continuation the callback1 that will be called once the habitat is exited, faded to black and deallocated
+    */
+    void worldmap_ui_habitat_new(u16 species, void (*contuation)());
+
     typedef struct {
         u8 x, y, idx, layer, namespace;
     } worldmap_cursor_t;
@@ -297,11 +340,17 @@ enum {
         void *bg2_map;
         void *bg3_map;
 
-        u8 worldmaps[NUM_WORLDMAPS]; // all worldmaps the player has unlocked
-        u8 num_worldmaps;
+        void (*continuation)();
+
         u8 worldmap_tile_x, worldmap_tile_y;
         u8 icon_switch_maps_x, icon_switch_maps_y;
-        u8 switch_maps_dialoge_x, switch_maps_dialoge_y;
+
+        u8 switch_map_dialoge_x, switch_map_dialoge_y;
+        u16 switch_map_icon_base_tile;
+        u8 switch_map_icon_pal_idx;
+        u8 switch_map_icon_oam_idx;
+        u8 switch_map_dialoge_scroll_indicator_idx_cb_idx, switch_map_dialoge_scroll_indicator_layer_cb_idx;
+        u16 switch_map_dialoge_scroll_indicator_dummy_scroll_offset; // the scroll arrow visibility is actually managed by 
 
         u8 header_pokemon_name_string_width;
         u8 oam_idx_player, oam_idx_cursor, oam_idx_icon_switch_map, oam_idx_icon_switch_map_frame;
@@ -313,6 +362,7 @@ enum {
 
         worldmap_cursor_t player;
         worldmap_cursor_t cursor;
+        worldmap_cursor_t cursor_switch_maps;
 
         void (*callback_cursor_moved)(u8); // triggered after the cursor is finished moving
         void (*callback_cursor_starts_moving)(u8); // triggered once the cursor starts moving
@@ -321,6 +371,8 @@ enum {
 
         u16 species;
         u8 current_namespace;
+        u8 red_overlay_intensity;
+        u8 red_overlay_should_be_active_on_worldmap[NUM_WORLDMAPS][NUM_WORLDMAP_LAYERS];
 
         pokedex_habitat_list_t *habitats;
         u8 red_overlay_should_be_active : 1;
