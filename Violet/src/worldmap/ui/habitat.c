@@ -932,6 +932,7 @@ static void worldmap_ui_habitat_wait_for_fadescreen_and_initialize_ui(u8 self) {
 void worldmap_ui_habitat_new(u16 species, void (*continuation)()) {
     worldmap_ui_state = malloc_and_clear(sizeof(worldmap_ui_state_t));
     worldmap_ui_state->species = species;
+    worldmap_ui_state->continuation = continuation;
     callback1_set(worldmap_ui_cb1);
     big_callback_new(worldmap_ui_habitat_wait_for_fadescreen_and_initialize_ui, 0);
 }

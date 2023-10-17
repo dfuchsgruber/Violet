@@ -218,7 +218,7 @@ extern "C" {
     void bg_set_attribute(u8 bg_idx, u8 attribute, u8 value);
 
     /**
-     * Copies all request for copying bg virtual tilemaps to vram. This should be called in the vblank callback.
+     * Copies all request for copying bg virtual tilemaps to vram. This should be called in the cb1 callback.
      **/
     void bg_virtual_sync_reqeust_proceed();
 

@@ -96,7 +96,7 @@ static const pokepad2_item pokepad2_items[] = {
         .name = pokedex_name,
         .description = pokedex_description,
         .flag = POKEDEX,
-        .initialize = pokedex_init,
+        .initialize = pokedex_initialize,
         .icon_graphic = {
             .sprite = gfx_pokepad_icon_pokedexTiles, .size = GRAPHIC_SIZE_4BPP(32, 32), 
             .tag = POKEPAD_ITEM_ICON_BASE_TAG + POKEPAD_ITEM_POKEDEX,

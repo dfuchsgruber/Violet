@@ -494,15 +494,8 @@ void pokedex_callback_feature_scanner_return(){
         free(bg_get_tilemap(0));
         free(bg_get_tilemap(1));
         tbox_free_all();
-        
         free(pokedex_state->scanner_state);
-        
-        pokedex_init_components();
-        pokedex_update_list();
-        io_set(0x50, 0);
-        io_set(0x52, 0);
-        io_set(0x54, 0);
-        io_bic(0, 0x6000);
+        callback1_set(pokedex_callback_initialize);
     }
 }
 

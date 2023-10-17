@@ -20,7 +20,10 @@
 #define POKEDEX_TBOX_FEATURE_1 7
 #define POKEDEX_TBOX_FEATURE_2 8
 
-#define POKEDEX_SCANNER_ICON_BASE_TAG 0xDDE0
+enum {
+    POKEDEX_CURSOR_GFX_TAG = 0xA013,
+    POKEDEX_SCANNER_ICON_BASE_TAG = 0xDDE0
+};
 
 extern const tbox_font_colormap pokedex_fontcolmap;
 
@@ -31,15 +34,16 @@ extern const tbox_font_colormap pokedex_fontcolmap;
 void pokedex_init_components();
 
 /**
- * Initializes the pokedex (callback)
+ * Callback1 that initializes the pokedex gui. `pokedex_state` should already be allocated at this point.
+ * Also, the screen is expected to be already faded to (or currently fading) black.
  */
-void pokedex_callback_init();
+void pokedex_callback_initialize();
 
 /**
  * Initializes the pokedex either from the pokepad or the LR overworld shortcut
  * @param from_outdoor if the pokedex is launched from the overworld
  */
-void pokedex_init(bool from_outdoor);
+void pokedex_initialize(bool from_outdoor);
 
 /**
  * Shows the ui components of the pokedex
@@ -74,11 +78,6 @@ int pokedex_quicksort_list_compare(u8 comparator, int a, int b);
  * @param b the second entry
  */
 void pokedex_quicksort_list_swap(int a, int b);
-
-/**
- * Sets the group window currently active (by using the win feature)
- */
-void pokedex_group_window_set();
 
 /**
  * Callback during the selection of a group

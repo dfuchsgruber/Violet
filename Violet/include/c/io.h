@@ -52,6 +52,8 @@
 #define IO_BLDALPHA_EVA(x) (x)
 #define IO_BLDALPHA_EVB(x) (x << 8)
 
+#define IO_BLDY 0x54
+
 #define IO_WININOUT_BG(win,bg) (1 << ((bg) + 8 * (win)))
 #define IO_WININOUT_OBJ(win) (16 << (8 * (win)))
 #define IO_WININOUT_FX(win) (32 << (8 * (win)))

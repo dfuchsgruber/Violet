@@ -283,7 +283,7 @@ void pokedex_callback_init_entry() {
         big_callback_delete_all();
         callback1_set(pokedex_callback_entry_idle);
         vblank_handler_set(generic_vblank_handler);
-        fadescreen(0xFFFFFFFF, 0, 16, 0);
+        fadescreen(0xFFFFFFFF, 0, 16, 0, 0);
         
     }
 }
@@ -359,12 +359,7 @@ void pokedex_callback_entry_back() {
     generic_callback1();
     if (!fading_is_active()) {
         pokedex_entry_free();
-        pokedex_init_components();
-        pokedex_update_list();
-        io_set(0x50, 0);
-        io_set(0x52, 0);
-        io_set(0x54, 0);
-        io_bic(0, 0x6000);
+        callback1_set(pokedex_callback_initialize);
     }
 }
 

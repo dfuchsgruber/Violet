@@ -350,8 +350,6 @@ static void treasure_map_callback_initialize() {
             fading_control.buffer_transfer_disabled = true;
             oam_reset();
             big_callback_delete_all();
-            bg_reset_control_and_displacement();
-            big_callback_delete_all();
             treasure_map_state->initialization_state++;
             break;
         }
