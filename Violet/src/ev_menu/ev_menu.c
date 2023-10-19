@@ -304,7 +304,7 @@ void ev_menu_load_pokemon() {
 	// Center the name
 	u8 str_name_width = string_get_width(2, strbuf, 0);
 	u16 x_offset = (u16)((8 * ev_menu_tboxes[EV_MENU_TBOX_NAME].w - str_name_width) / 2);
-	tbox_print_string(EV_MENU_TBOX_NAME, 2, x_offset, 0, 0, 0, &ev_menu_font_colormap_std_dark, 0, strbuf);
+	tbox_print_string(EV_MENU_TBOX_NAME, 2, x_offset, 1, 0, 0, &ev_menu_font_colormap_std_dark, 0, strbuf);
 	tbox_flush_set(EV_MENU_TBOX_HIDDEN_POWER_TYPE, 0);
 	tbox_tilemap_draw(EV_MENU_TBOX_HIDDEN_POWER_TYPE);
 	if (!is_egg) {
@@ -635,7 +635,7 @@ void ev_menu_callback_setup() {
 		u8 str_hidden_power[] = LANGDEP(PSTRING("Kraftreserve"), PSTRING("Hidden Power"));
         tbox_flush_set(EV_MENU_TBOX_HIDDEN_POWER, 0);
 		tbox_tilemap_draw(EV_MENU_TBOX_HIDDEN_POWER);
-		tbox_print_string(EV_MENU_TBOX_HIDDEN_POWER, 2, 0, 0, 0, 0,
+		tbox_print_string(EV_MENU_TBOX_HIDDEN_POWER, 2, 0, 2, 0, 0,
 				&ev_menu_font_colormap_std_light, 0, str_hidden_power);
 		u8 str_header_iv_chart[] = LANGDEP(PSTRING("Veranlagung"), PSTRING("Genes"));
 		tbox_flush_set(EV_MENU_TBOX_IV_CHART_HEADER, 0);

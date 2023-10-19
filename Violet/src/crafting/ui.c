@@ -268,7 +268,7 @@ static void crafting_ui_setup_recipies_and_list_menu_items() {
                     u8 font_size_small[] = PSTRING("FONT_SIZE_SMALL");
                     strcpy(line_str, font_size_small);
                     strcat(line_str, item_get_name(crafting_ui_state->recipies[type][recipe_idx].item));
-                    u8 str_clear_to[] = PSTRING("SKIP\x42×");
+                    u8 str_clear_to[] = PSTRING("SHIFT_TEXT\x42×");
                     // u8 str_clear_to[] = PSTRING("SKIP");
                     line_str = strcat(line_str, str_clear_to);
                     itoa(line_str, crafting_ui_state->recipies[type][recipe_idx].count, ITOA_NO_PADDING, 1);

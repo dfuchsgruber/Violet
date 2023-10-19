@@ -10,19 +10,52 @@
 
 #include "text.h"
 
-#define POKEDEX_TBOX_SEEN 0
-#define POKEDEX_TBOX_CAUGHT 1
-#define POKEDEX_TBOX_LIST_NAME 2
-#define POKEDEX_TBOX_LIST_TYPES 3
-#define POKEDEX_TBOX_LIST_CAPTURE 4
-#define POKEDEX_TBOX_LIST_NR 5
+#define POKEDEX_LIST_WIDTH_NUMBER 4
+#define POKEDEX_LIST_WIDTH_CAUGHT_ICON 3
+#define POKEDEX_LIST_WIDTH_NAME 9
+#define POKEDEX_LIST_WIDTH_TYPE 10
+
+#define POKEDEX_LIST_MAX_NUM_VISIBLE 10
+
+// Bounds of the list window
+#define POKEDEX_LIST_X0 68
+#define POKEDEX_LIST_Y0 18
+#define POKEDEX_LIST_X1 240
+#define POKEDEX_LIST_Y1 160
+#define POKEDEX_LIST_DELTA_Y 8
+
+enum {
+    POKEDEX_TBOX_STATS = 0,
+    POKEDEX_TBOX_TITLE,
+    POKEDEX_TBOX_LIST_NUMBER,
+    POKEDEX_TBOX_LIST_CAUGHT_ICON,
+    POKEDEX_TBOX_LIST_NAME,
+    POKEDEX_TBOX_LIST_TYPE,
+    POKEDEX_TBOX_HEADER,
+    POKEDEX_TBOX_CONTEXT_MENU_SORT,
+    NUM_POKEDEX_TBOXES,
+};
+
+enum {
+    POKEDEX_SORTING_STATE_CLOSING,
+    POKEDEX_SORTING_STATE_SORTING,
+    POKEDEX_SORTING_STATE_OPENING,
+};
+
+typedef struct {
+    u8 state;
+    u8 y0, y1;
+    void (*continuation)(u8) __attribute__ ((aligned (4)));
+} pokedex_sorting_state_t;
+
 #define POKEDEX_TBOX_FEATURE_0 6
 #define POKEDEX_TBOX_FEATURE_1 7
 #define POKEDEX_TBOX_FEATURE_2 8
 
 enum {
     POKEDEX_CURSOR_GFX_TAG = 0xA013,
-    POKEDEX_SCANNER_ICON_BASE_TAG = 0xDDE0
+    POKEDEX_SCANNER_ICON_BASE_TAG = 0xDDE0,
+    POKEDEX_UI_POKEMON_TAG = 0xDDF0,
 };
 
 extern const tbox_font_colormap pokedex_fontcolmap;
@@ -32,6 +65,13 @@ extern const tbox_font_colormap pokedex_fontcolmap;
  * Initializes the pokedex ui and state components
  */
 void pokedex_init_components();
+
+/**
+ * Callback to trigger the resort animation of the pokedex
+ * @param self the callback to overwrite
+ * @param continuation which callback to continue with after resorting
+*/
+void pokedex_resort_list(u8 self, void (*continuation)(u8));
 
 /**
  * Callback1 that initializes the pokedex gui. `pokedex_state` should already be allocated at this point.
@@ -56,28 +96,12 @@ void pokedex_show_components();
 void pokedex_build_list();
 
 /**
- * Sorts the list entries of the pokedex
- * @param comparator: 0 by number, 1 by name, 2 by size, 3 by weight
- * @param l the lower bound for quicksort
- * @param r the upper bound for quicksort
- */
-void pokedex_quicksort_list(u8 comparator, int l, int r); //0 := nr, 1 := name, 2 := size, 3 := weight
-
-/**
- * Compares two list entries by a comparator
- * @param comparator: 0 by number, 1 by name, 2 by size, 3 by weight
- * @param a first entry
- * @param b second entry
- * @return the difference a - b using the comparison method
- */
-int pokedex_quicksort_list_compare(u8 comparator, int a, int b);
-
-/**
- * Swaps two list entries
- * @param a the first entry
- * @param b the second entry
- */
-void pokedex_quicksort_list_swap(int a, int b);
+ * Sorts the entries of the pokedex state's list.
+ * @param comparator according to which comparator
+ * @param l from which left index
+ * @param r to which right index
+*/
+void pokedex_quicksort_list(u8 comparator, int l, int r);
 
 /**
  * Callback during the selection of a group
@@ -85,31 +109,19 @@ void pokedex_quicksort_list_swap(int a, int b);
 void pokedex_callback_group_selection();
 
 /**
- * Returns from the pokedex to the previous state
- */
-void pokedex_callback_return();
+ * Updates the `first_idx` and `last_idx` fields of the `pokedex_state`.
+*/
+void pokedex_list_update_bounds();
 
 /**
- * Frees all pokedex components allocated on the heap
- */
-void pokedex_free_maps();
-
-/**
- * Gets the first pokedex entry number that was seen
- * @return the first entry number seen
- */
-int pokedex_get_first_seen();
-
-/**
- * Gets the last pokedex entry number that was seen
- * @return the last entry number seen
- */
-int pokedex_get_last_seen();
+ * Creates a new scroll indicator pair for the list
+*/
+void pokedex_list_scroll_indicators_new();
 
 /**
  * Updates the list entries of the pokedex
  */
-void pokedex_update_list();
+void pokedex_update_list(bool scrolling_down);
 
 /**
  * Callback during the list feature of the pokedex
@@ -127,14 +139,10 @@ void pokedex_callback_list_enter_mode(u8 mode);
 bool pokedex_callback_list_mode_proceed();
 
 /**
- * Loactes the cursor of the pokedex list after resorting
- */
-void pokedex_sort_locate_cursor();
-
-/**
- * Callback during the sort feature
- */
-void pokedex_callback_sort();
+ * Handles inputs for the pokedex gui.
+ * @param self self-reference
+*/
+void pokedex_context_menu_sort_handle_inputs(u8 self);
 
 /**
  * Unused: Parallel quicksort (using callbacks): Brings no improvement however

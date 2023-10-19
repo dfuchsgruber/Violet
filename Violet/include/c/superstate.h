@@ -35,20 +35,22 @@ typedef struct superstate {
     //key section
     key keys;
     key keys_new;
-    key keys_inv;
-    key keys_remapped; //by options (L->A, R->B)
-    key keys_new_rst; //keys are registered as new here when pressed long enough
-    key keys_countdown;
-    u16 keys_watched;
+    key keys_remapped; // by options (L->A, R->B)
+    key keys_new_remapped; // by options (L->A, R->B)
+    key keys_new_and_repeated; // if a key is held for long enough, it will also be registerd here each time the countdown has expired (for one frame)
+    u16 keys_countdown;
+    u16 is_watched_key_pressed;
     key watched_keys;
     sprite oam_attributes[128];
     u8 state;
     u8 disable_oams : 1;
     u8 in_battle : 1;
-
 } superstate;
 
 extern superstate super;
+
+extern u16 keys_repeated_start_delay; // after this many frames a held key will be registered as repeated for the first time
+extern u16 keys_repeated_continue_delay; // after this many frames a held key will be registered as repeated every n-th time (after the first registration)
 
 #define GP_STACK_SIZE 16
 

@@ -528,7 +528,7 @@ void pokedex_callback_init_feature_scanner() {
     if (!fading_is_active()) {
         pokedex_scanner_state *state = malloc_and_clear(sizeof(pokedex_scanner_state));
         pokedex_state->scanner_state = state;
-        pokedex_free_maps();
+        // pokedex_free_maps();
         pokedex_feature_scanner_build_entries(state);
         _pokedex_callback_init_feature_scanner(state);
         pokedex_feature_scanner_print_generic_list(state->entries_grass, state->num_entries_grass);

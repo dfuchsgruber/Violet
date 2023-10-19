@@ -30,8 +30,8 @@
     typedef struct {
             u16 dex_id;
             u16 species;
-            bool seen;
-            bool caught;
+            u8 seen : 1;
+            u8 caught : 1;
 	} pokedex_list_element;
 
 

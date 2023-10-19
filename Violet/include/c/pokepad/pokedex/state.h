@@ -23,7 +23,16 @@
         POKEDEX_SETUP_STATE_LOAD_GFX,
         POKEDEX_SETUP_STATE_SETUP_OAM,
         POKEDEX_SETUP_STATE_UPDATE_LIST,
+        POKEDEX_SETUP_SCROLL_INDICATORS,
         POKEDEX_SETUP_SHOW,
+    };
+
+    enum {
+        POKEDEX_SORTING_NUMERIC = 0,
+        POKEDEX_SORTING_ALPHABETIC,
+        POKEDEX_SORTING_SIZE,
+        POKEDEX_SORTING_WEIGHT,
+        NUM_POKEDEX_SORTINGS,
     };
 
     enum {
@@ -39,15 +48,24 @@
         u8 from_outdoor : 1;
         u8 in_list : 1;
         u8 group_fading_mode : 1;
-        u8 cursor_anchor : 1;
-        u8 list_fast_mode : 1;
+
+        u16 base_tile_pokemon;
+        u8 pal_idx_pokemon;
+        u8 oam_idx_pokemon;
+
         u8 initialization_state;
+
+        u8 list_scroll_indicator_cb_idx;
+        u16 first_idx, last_idx;
+        u16 first_visible_idx, last_visible_idx;
+        u8 list_is_scrolling_down : 1;
+
+        u8 context_menu_sort_list_menu_cb_idx;
+
         u8 current_group;
         u8 group_fading_index;
         u8 sorting;
-        u16 current_species;
         u16 current_list_index;
-        u8 current_comparator;
         //for list
         u8 list_mode; //0 = none, 1 = down, 2 = up, 3=right, 4=left
         

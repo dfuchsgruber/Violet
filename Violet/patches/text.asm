@@ -13,3 +13,11 @@
 .org 0x080cbfb8
     mov r0, #3 // the default fallback
     bx lr
+
+/**
+Fixes the control code SKIP = FC 12
+by updating the current position with the amount of pixels
+in the vanilla game SKIP's behaviour is equal to SHIFT_TEXT = FC 0D
+ */
+.org 0x08005a4e
+    ldrb r0, [r6, #8]

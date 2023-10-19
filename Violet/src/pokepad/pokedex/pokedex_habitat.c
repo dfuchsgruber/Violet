@@ -250,7 +250,7 @@ void pokedex_init_habitat() {
         tbox_tilemap_draw(0);
         u8 str_title[] = LANGDEP(PSTRING(" Fundorte v. "), PSTRING(" Habitats of "));
         u8 *title = strcpy(strbuf, str_title);
-        title = strcat(title, pokemon_names[pokedex_state->current_species]);
+        title = strcat(title, pokemon_names[csave.pokedex_species]);
         tbox_print_string(0, 2, 0, 0, 0, 0, &pokedex_fontcolmap, 0, strbuf);
         u8 str_back[] = LANGDEP(PSTRING("KEY_B Zur."), PSTRING("KEY_B Back"));
         tbox_print_string(0, 2, 144, 0, 0, 0, &pokedex_fontcolmap, 0, str_back);
@@ -424,7 +424,7 @@ void pokedex_habitat_callback_idle() {
 void pokedex_habitats_load_for_species(u16 *bg1map) {
     pokedex_habitat_pair *habitats = malloc(sizeof(pokedex_habitat_pair) * 6 * 22 * 15 * 7);
     pokedex_state->habitats = habitats;
-    int habitat_size = pokedex_get_habitats_of_species(habitats, pokedex_state->current_species);
+    int habitat_size = pokedex_get_habitats_of_species(habitats, csave.pokedex_species);
     pokedex_state->habitat_size = habitat_size;
     pokedex_state->habitat_found = false;
 

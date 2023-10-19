@@ -88,11 +88,11 @@ const oam_template pokedex_pokepic_template = {
 
 void pokedex_entry_load_strings() {
     tbox_flush_set(0, 0); //0 is the name header
-    pokedex_tbox_draw_num(0, 0, pokedex_state->current_species, 0, 0);
+    pokedex_tbox_draw_num(0, 0, csave.pokedex_species, 0, 0);
     tbox_tilemap_draw(0);
     tbox_print_string(0, 2, 30, 0, 0, 0, &pokedex_entry_title_fontcolmap, 0,
-        pokemon_names[pokedex_state->current_species]);
-    u16 dex_id = pokedex_get_id(pokedex_state->current_species);
+        pokemon_names[csave.pokedex_species]);
+    u16 dex_id = pokedex_get_id(csave.pokedex_species);
     DEBUG("Pokedex entry load for dex idx %d\n", dex_id);
 
     tbox_flush_set(1, 0);
@@ -156,8 +156,8 @@ void pokedex_entry_load_strings() {
     tbox_print_string(2, 2, 0, 0, 0, 1, &pokedex_fontcolmap, 0, is_caught ?
         pokedex_get_data(dex_id)->page0 : str_qmark);
     if (is_caught) {
-        u8 type1 = (u8) (basestats[pokedex_state->current_species].type1 + 1);
-        u8 type2 = (u8) (basestats[pokedex_state->current_species].type2 + 1);
+        u8 type1 = (u8) (basestats[csave.pokedex_species].type1 + 1);
+        u8 type2 = (u8) (basestats[csave.pokedex_species].type2 + 1);
         tbox_blit_move_info_icon(3, type1, 0, 0);
         if (type1 != type2)
             tbox_blit_move_info_icon(3, type2, 0x20, 0);
@@ -173,7 +173,7 @@ void pokedex_entry_load_pokepic() {
     if (pokedex_state->entry_skip_cry) {
         pokedex_state->entry_skip_cry = false;
     } else {
-        pokemon_play_cry(pokedex_state->current_species, 0);
+        pokemon_play_cry(csave.pokedex_species, 0);
     }
     if (pokedex_state->tile_pokepic == 0xFFFF) {
         //allocate obj vram
@@ -183,15 +183,15 @@ void pokedex_entry_load_pokepic() {
     if (pokedex_state->pal_pokepic == 0xFF) {
         pokedex_state->pal_pokepic = oam_allocate_palette(0xA00A);
     }
-    pal_decompress(pokemon_pals[pokedex_state->current_species].pal, (u16) (256 + pokedex_state->pal_pokepic * 16), 32);
+    pal_decompress(pokemon_pals[csave.pokedex_species].pal, (u16) (256 + pokedex_state->pal_pokepic * 16), 32);
     pal_set_all_to_black();
 
     void *offset = (void*) (0x06010000 + 32 * pokedex_state->tile_pokepic);
-    lz77uncompvram(pokemon_frontsprites[pokedex_state->current_species].sprite, offset);
+    lz77uncompvram(pokemon_frontsprites[csave.pokedex_species].sprite, offset);
 
     //load form
     offset = (void*) (0x06010000 + 32 * pokedex_state->tile_form);
-    u8 form = basestats[pokedex_state->current_species].form;
+    u8 form = basestats[csave.pokedex_species].form;
     cpuset(&gfx_pokedex_formsTiles[form * 256], offset, 256);
 }
 
@@ -278,7 +278,7 @@ void pokedex_callback_init_entry_load_elements(){
 void pokedex_callback_init_entry() {
     generic_callback1();
     if (!fading_is_active()) {
-        pokedex_free_maps();
+        // pokedex_free_maps();
         pokedex_callback_init_entry_load_elements();
         big_callback_delete_all();
         callback1_set(pokedex_callback_entry_idle);
@@ -305,7 +305,7 @@ void pokedex_entry_from_battle_cb(u8 self){
 
                 } else if (super.keys.keys.right) {
                     //first we count the lines in page1
-                    u16 dex_id = pokedex_get_id(pokedex_state->current_species);
+                    u16 dex_id = pokedex_get_id(csave.pokedex_species);
                     pokedex_entry *data = pokedex_get_data(dex_id);
                     //we count the lines
                     int i;
@@ -323,7 +323,7 @@ void pokedex_entry_from_battle_cb(u8 self){
                     fadescreen((u32)-1, 0, 0, 16, 0);
                     big_callbacks[self].params[0]++;
                 } else if (super.keys_new.keys.start) {
-                     pokemon_play_cry(pokedex_state->current_species, 0);
+                     pokemon_play_cry(csave.pokedex_species, 0);
                 }
                 break;
             }
@@ -340,7 +340,7 @@ void pokedex_entry_from_battle_cb(u8 self){
 
 u8 pokedex_init_entry_from_battle(u16 species){
     pokedex_state = (pokedex_state_t*)malloc_and_clear(sizeof(pokedex_state_t));
-    pokedex_state->current_species = species;
+    csave.pokedex_species = species;
     pokedex_state->from_battle = true;
     pokedex_callback_init_entry_load_elements();
     u8 cb_id = big_callback_new(pokedex_entry_from_battle_cb, 0);
@@ -366,7 +366,7 @@ void pokedex_callback_entry_back() {
 void pokedex_entry_update() {
     generic_callback1();
     if (!fading_is_active()) {
-        pokedex_state->current_species = pokedex_state->list[pokedex_state->current_list_index].species;
+        csave.pokedex_species = pokedex_state->list[pokedex_state->current_list_index].species;
         pokedex_entry_load_strings();
         pokedex_entry_load_pokepic();
         io_set(0x1A, 0);
@@ -388,14 +388,14 @@ void pokedex_callback_entry_idle() {
             volume_set(mplay_info_background_music, 0xFFFF, 0x100);
             callback1_set(pokedex_callback_entry_back);
         } else if (super.keys_new.keys.start) {
-            pokemon_play_cry(pokedex_state->current_species, 0);
-        } else if (super.keys_new.keys.up && pokedex_state->current_list_index > pokedex_get_first_seen()) {
+            pokemon_play_cry(csave.pokedex_species, 0);
+        } else if (super.keys_new.keys.up && pokedex_state->current_list_index > pokedex_state->first_idx) {
             do {
                 pokedex_state->current_list_index--;
             } while (!pokedex_state->list[pokedex_state->current_list_index].seen);
             callback1_set(pokedex_entry_update);
             fadescreen_all(1, 0);
-        } else if (super.keys_new.keys.down && pokedex_state->current_list_index < pokedex_get_last_seen()) {
+        } else if (super.keys_new.keys.down && pokedex_state->current_list_index < pokedex_state->last_idx) {
             do {
                 pokedex_state->current_list_index++;
             } while (!pokedex_state->list[pokedex_state->current_list_index].seen);
@@ -424,7 +424,7 @@ void pokedex_callback_entry_idle() {
             }
 
         } else if (super.keys_new.keys.A && HAS_HABITAT) {
-            u16 species = pokedex_state->current_species;
+            u16 species = csave.pokedex_species;
             play_sound(5);
             pokedex_entry_free();
             worldmap_ui_habitat_new(species, NULL);

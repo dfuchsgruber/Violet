@@ -93,7 +93,7 @@ void list_menu_generic_cursor_callback(int idx, u8 on_initialize, list_menu *lis
  * @param selected_row the index of the currently selected item
  * @return idx of the list menu handler (big callback)
  */
-u8 list_menu_new(list_menu_template *_template, u16 scroll_offset, u16 selected_row);
+u8 list_menu_new(const list_menu_template *_template, u16 scroll_offset, u16 selected_row);
 
 /**
  * Processes the input of a list handler.

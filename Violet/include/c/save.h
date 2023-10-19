@@ -229,7 +229,8 @@ typedef struct custom_memory {
     } settings;
     bag_item_t __attribute__((aligned(4))) bag_pocket_medicine[MAX_NUM_BAG_MEDICINE];
     u16 bag_pocket;
-    
+    u16 pokedex_species;
+    u8 pokedex_sorting;
     /**
     struct {
         u8 flags[64];

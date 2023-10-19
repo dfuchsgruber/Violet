@@ -17,120 +17,7 @@
 #include "io.h"
 #include "pokepad/pokedex/state.h"
 
-void pokedex_sort_locate_cursor() {
-    ;
-    oams[pokedex_state->oam_sort_cursor].x2 = (s16) (pokedex_state->sort_cursor_pos * 32);
-}
-
-void pokedex_big_callback_resort(u8 self) {
-    switch (big_callbacks[self].params[0]) {
-        case 0:
-        { //init resort (win1 feature)
-            play_sound(6);
-            u16 dispcnt = io_get(0) | 0x4000;
-            io_set(0, dispcnt);
-            io_set(0x48, 0x81F); //everything is in window 0 but nothing is in window 1
-            io_set(0x42, 0x40F0); //leftmost = 64, rightmost = 240
-            io_set(0x46, 0xa0A0); //topmost = 33, bottommost = 160
-            big_callbacks[self].params[0] = 1;
-            big_callbacks[self].params[1] = 160;
-            //big_callback_new(pokedex_big_callback_quicksort_parallel, 0);
-            break;
-        }
-        case 1:
-        {
-            //move window upwards
-            if (big_callbacks[self].params[1] <= 33) {
-                big_callbacks[self].params[1] = 33;
-                big_callbacks[self].params[0] = 2;
-            } else {
-                big_callbacks[self].params[1] = (u16) (big_callbacks[self].params[1] - 8);
-            }
-            u16 topmost_new = (u16) (big_callbacks[self].params[1] << 8);
-            io_set(0x46, topmost_new | 0xA0);
-            break;
-        }
-        case 2:
-        {
-            //sound(4);
-            //while(true){}
-            if (pokedex_state->reverse_req) {
-                pokedex_quicksort_revert(0, POKEDEX_CNT);
-            } else {
-                pokedex_quicksort_list(pokedex_state->current_comparator, 0, POKEDEX_CNT - 1);
-            }
-            pokedex_update_list();
-            big_callbacks[self].params[0] = 3;
-            play_sound(6);
-            break;
-        }
-        case 3:
-        {
-            //move window downwards
-            if (big_callbacks[self].params[1] >= 232) {
-
-                u16 dispcnt = (u16) (io_get(0) & (~0x4000));
-                io_set(0, dispcnt);
-                pokedex_state->resorting = false;
-                big_callback_delete(self);
-            } else {
-                big_callbacks[self].params[1] = (u16) (big_callbacks[self].params[1] + 8);
-            }
-            u16 topmost_new = (u16) (big_callbacks[self].params[1] << 8);
-            if (topmost_new > 0xA000) topmost_new = 0xA000;
-            io_set(0x46, topmost_new | 0xA0);
-            break;
-        }
-
-    }
-    /*
-    pokedex_quicksort_list(pokedex_state->current_comparator, 0, POKEDEX_CNT-1);
-    pokedex_update_list();
-    pokedex_state->resorting = false;
-    remove_big_callback(self);
-     */
-}
-
-void pokedex_callback_sort() {
-    generic_callback1();
-    if (pokedex_state->resorting)
-        return;
-    if (super.keys_new.keys.B) {
-        //return to group selection
-        oams[pokedex_state->oam_sort_cursor].anim_number = 0;
-        oam_gfx_anim_init(&oams[pokedex_state->oam_sort_cursor], 0);
-        pokedex_state->sort_cursor_pos = pokedex_state->current_comparator & 3;
-        pokedex_sort_locate_cursor();
-        callback1_set(pokedex_callback_group_selection);
-        play_sound(5);
-        return;
-    } else if (super.keys_new.keys.A) {
-        //log new sorting
-        u8 old_sorting = pokedex_state->current_comparator & 3;
-        u8 new_sorting = pokedex_state->sort_cursor_pos;
-        if (old_sorting == new_sorting) {
-            pokedex_state->current_comparator ^= 4;
-            pokedex_state->reverse_req = true;
-        } else {
-            pokedex_state->current_comparator = new_sorting;
-            pokedex_state->reverse_req = false;
-        }
-        pokedex_state->resorting = true;
-        play_sound(5);
-        big_callbacks[big_callback_new(pokedex_big_callback_resort, 0)].params[0] = 0;
-    } else if (super.keys_new.keys.left && pokedex_state->sort_cursor_pos > 0) {
-        pokedex_state->sort_cursor_pos--;
-        pokedex_sort_locate_cursor();
-        play_sound(5);
-    } else if (super.keys_new.keys.right && pokedex_state->sort_cursor_pos < 3) {
-        pokedex_state->sort_cursor_pos++;
-        pokedex_sort_locate_cursor();
-        play_sound(5);
-    }
-
-}
-
-void pokedex_quicksort_list_swap(int a, int b) {
+static inline void pokedex_quicksort_list_swap(int a, int b) {
     pokedex_list_element *list = pokedex_state->list;
     pokedex_list_element tmp;
     memcpy(&tmp, &list[a], sizeof (pokedex_list_element));
@@ -138,23 +25,15 @@ void pokedex_quicksort_list_swap(int a, int b) {
     memcpy(&list[b], &tmp, sizeof (pokedex_list_element));
 }
 
-void pokedex_quicksort_revert(int from, int to) {
-    do {
-        pokedex_quicksort_list_swap(from++, --to);
-    } while (to > from);
-    pokedex_state->current_list_index = (u16) (POKEDEX_CNT - 1 - pokedex_state->current_list_index);
-}
-
-int pokedex_quicksort_list_compare(u8 comparator, int a, int b) {
+static inline int pokedex_quicksort_list_compare(u8 comparator, int a, int b) {
     pokedex_list_element *list = pokedex_state->list;
     int reverse = comparator > 3 ? -1 : 1;
     comparator &= 3;
     switch (comparator) {
-        case 0://by number
+        case POKEDEX_SORTING_NUMERIC : // by number
             return (list[a].dex_id - list[b].dex_id) * reverse;
             break;
-        case 1:
-        {//by name
+        case POKEDEX_SORTING_ALPHABETIC: { // by name
             const u8 *name_a = pokemon_names[list[a].species];
             const u8 *name_b = pokemon_names[list[b].species];
             int i = 0;
@@ -167,15 +46,13 @@ int pokedex_quicksort_list_compare(u8 comparator, int a, int b) {
                 i++;
             }
             break;
-        }
-        case 2:
-        {//by height
+        } 
+        case POKEDEX_SORTING_SIZE: { // by height
             int dif = (pokedex_get_data(list[a].dex_id)->height - pokedex_get_data(list[b].dex_id)->height) * reverse;
             if (dif) return dif;
             return (list[a].dex_id - list[b].dex_id)*reverse;
         }
-        case 3:
-        {
+        case POKEDEX_SORTING_WEIGHT: {
             int dif = (pokedex_get_data(list[a].dex_id)->weight - pokedex_get_data(list[b].dex_id)->weight) * reverse;
             if (dif) return dif;
             return (list[a].dex_id - list[b].dex_id)*reverse;
@@ -185,7 +62,7 @@ int pokedex_quicksort_list_compare(u8 comparator, int a, int b) {
 }
 
 void pokedex_quicksort_list(u8 comparator, int l, int r) {
-    //we do an iteratiive implementation of quicksort
+    // Iteratiive implementation of quicksort
     int *stack = (int*) malloc((u32) (r - l + 1) * sizeof (int));
     int top = -1;
     stack[++top] = l;
@@ -214,11 +91,11 @@ void pokedex_quicksort_list(u8 comparator, int l, int r) {
             stack[++top] = r;
         }
     }
-    //now we find the index in the list of current species
+    // Find the index in the list of current species
     int i;
     for (i = 0; i < POKEDEX_CNT; i++) {
-        if (pokedex_state->current_species) {
-            if (pokedex_state->list[i].species == pokedex_state->current_species) {
+        if (csave.pokedex_species) {
+            if (pokedex_state->list[i].species == csave.pokedex_species) {
                 pokedex_state->current_list_index = (u16) i;
                 break;
             }
@@ -229,6 +106,58 @@ void pokedex_quicksort_list(u8 comparator, int l, int r) {
             }
         }
     }
-
     free(stack);
+}
+
+// The animation is realized like this:
+// The list area is in Win1, which contains no layers
+// The visible area is in Win0, which contains all layers, but this window shrinks
+// The area outside the list area is in WinOut, which contains all layers
+// Win1 wants to hide all layers, but Win0's rectangle superceeds this and shows a smaller rectangle
+
+void pokedex_callback_resort(u8 self) {
+    pokedex_sorting_state_t *state = (pokedex_sorting_state_t*)big_callbacks[self].params;
+    switch (state->state) {
+        case POKEDEX_SORTING_STATE_CLOSING:
+            state->y0 = (u8)MIN((state->y0 + POKEDEX_LIST_DELTA_Y), (POKEDEX_LIST_Y0 + POKEDEX_LIST_Y1) / 2);
+            state->y1 = (u8)MAX((state->y1 - POKEDEX_LIST_DELTA_Y), (POKEDEX_LIST_Y0 + POKEDEX_LIST_Y1) / 2);
+            io_set(IO_WIN0V, (u16)IO_WINH(state->y0, state->y1));
+            if (state->y1 <= state->y0)
+                state->state++;
+            break;
+        case POKEDEX_SORTING_STATE_SORTING: {
+            pokedex_quicksort_list(csave.pokedex_sorting, 0, POKEDEX_CNT - 1);
+            pokedex_list_update_bounds();
+            pokedex_update_list(pokedex_state->list_is_scrolling_down);
+            state->state++;
+            break;
+        }
+        case POKEDEX_SORTING_STATE_OPENING: {
+            state->y0 = (u8)MAX((state->y0 - POKEDEX_LIST_DELTA_Y), POKEDEX_LIST_Y0);
+            state->y1 = (u8)MIN((state->y1 + POKEDEX_LIST_DELTA_Y), POKEDEX_LIST_Y1);
+            io_set(IO_WIN0V, (u16)IO_WINH(state->y0, state->y1));
+            if (state->y0 <= POKEDEX_LIST_Y0 && state->y1 >= POKEDEX_LIST_Y1) {
+                io_bic(IO_DISPCNT, IO_DISPCNT_WIN0 | IO_DISPCNT_WIN1);
+                big_callbacks[self].function = state->continuation;
+            }
+            break;
+        }
+    }
+}
+
+void pokedex_resort_list(u8 self, void (*continuation)(u8)) {
+    pokedex_sorting_state_t *state = (pokedex_sorting_state_t*)big_callbacks[self].params;
+    state->state = POKEDEX_SORTING_STATE_CLOSING;
+    io_set(IO_DISPCNT, (u16)(io_get(IO_DISPCNT) | IO_DISPCNT_WIN0 | IO_DISPCNT_WIN1));
+            io_set(IO_WININ, IO_WININOUT_BG(0, 0) | IO_WININOUT_BG(0, 1) | IO_WININOUT_BG(0, 2) | 
+                IO_WININOUT_BG(0, 3) | IO_WININOUT_OBJ(0) | IO_WININOUT_FX(0));
+            io_set(IO_WINOUT, IO_WININOUT_BG(0, 0) | IO_WININOUT_BG(0, 1) | IO_WININOUT_BG(0, 2) | 
+                IO_WININOUT_BG(0, 3) | IO_WININOUT_OBJ(0) | IO_WININOUT_FX(0));
+            state->y0 = POKEDEX_LIST_Y0;
+            state->y1 = POKEDEX_LIST_Y1;
+            io_set(IO_WIN0H, IO_WINH(POKEDEX_LIST_X0, POKEDEX_LIST_X1));
+            io_set(IO_WIN1H, IO_WINH(POKEDEX_LIST_X0, POKEDEX_LIST_X1));
+            io_set(IO_WIN1V, IO_WINH(POKEDEX_LIST_Y0, POKEDEX_LIST_Y1));
+    state->continuation = continuation;
+    big_callbacks[self].function = pokedex_callback_resort;
 }

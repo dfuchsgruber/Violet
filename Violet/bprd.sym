@@ -1704,9 +1704,7 @@ bg_virtual_sync_reqeust_proceed = 0x080f6a4c | 1;
 npc_shift_coordinates_at_camera_update = 0x0805f82c | 1;
 npc_delete_all_outside_viewport = 0x0805ed10 | 1;
 npc_create_all_in_viewport_if_not_present = 0x0805ec30 | 1;
-
 oam_priorities_iram = 0x03007500;
-
 overworld_weather_sandstorm_graphic = 0x083c66a0;
 overworld_weather_sandstormPal = 0x083c2b6c;
 overworld_weather_sandstorm_template = 0x083c6688;
@@ -1829,3 +1827,5 @@ gp_save_sector_buffer = 0x02039a38;
 save_sector_buffer = 0x030052e4;
 read_flash_sector = 0x080da3b4 | 1;
 npc_get_by_position_and_height = 0x0805f894 | 1;
+keys_repeated_start_delay = 0x03003030;
+keys_repeated_continue_delay = 0x0300347c;
