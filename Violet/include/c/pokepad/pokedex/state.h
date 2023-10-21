@@ -15,8 +15,7 @@
 #include "bg.h"
 
     enum {
-        POKEDEX_SETUP_STATE_FREE_PREVIOUS_STATE = 0,
-        POKEDEX_SETUP_STATE_DATA_SETUP,
+        POKEDEX_SETUP_STATE_DATA_SETUP = 0,
         POKEDEX_SETUP_STATE_RESET,
         POKEDEX_SETUP_STATE_SETUP_BGS,
         POKEDEX_SETUP_STATE_SETUP_TBOXES,
@@ -101,7 +100,6 @@
         u8 habitat_fading_countdown;
         u8 current_worldmap;
         u8 current_feature;
-        pokedex_scanner_state *scanner_state;
     } pokedex_state_t;
 
     extern EWRAM pokedex_state_t *pokedex_state;

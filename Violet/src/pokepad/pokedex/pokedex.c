@@ -202,12 +202,11 @@ static void pokedex_context_menu_sort_new(u8 self) {
     big_callbacks[self].function = pokedex_context_menu_sort_handle_inputs;
 }
 
-static void pokedex_free() {
+static void pokedex_free_all_except_state() {
     tbox_free_all();
     for (u8 i = 0; i < 4; i++)
         free(pokedex_state->bg_maps[i]);
     free(pokedex_state->list);
-    free(pokedex_state);
 }
 
 static void pokedex_callback_return(u8 self) {
@@ -217,7 +216,16 @@ static void pokedex_callback_return(u8 self) {
         callback1_set(map_reload);
     else
         callback1_set(pokepad2_callback_initialize);
-    pokedex_free();
+    pokedex_free_all_except_state();
+    free(pokedex_state);
+    big_callback_delete(self);
+}
+
+static void pokedex_callback_scanner(u8 self) {
+    if (fading_control.active || dma3_busy(-1))
+        return;
+    callback1_set(pokedex_callback_init_feature_scanner);
+    pokedex_free_all_except_state();
     big_callback_delete(self);
 }
 
@@ -244,6 +252,10 @@ static void pokedex_handle_inputs(u8 self) {
     } else if (super.keys_new.keys.B) {
         fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
         big_callbacks[self].function = pokedex_callback_return;
+    } else if (super.keys_new.keys.start) {
+        play_sound(5);
+        fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
+        big_callbacks[self].function = pokedex_callback_scanner;
     }
     if (offset != 0) {
         u16 index = (u16)MIN(pokedex_state->last_idx, MAX(pokedex_state->first_idx, pokedex_state->current_list_index + offset));
@@ -256,20 +268,12 @@ static void pokedex_handle_inputs(u8 self) {
     }
 }
 
-void pokedex_callback_initialize() {
+void pokedex_callback_initialize_state_machine() {
     pokedex_cb1();
     if (fading_control.active || dma3_busy(-1))
         return;
     
     switch (pokedex_state->initialization_state) {
-        case POKEDEX_SETUP_STATE_FREE_PREVIOUS_STATE: 
-            if (pokedex_state->from_outdoor) {
-            overworld_free();
-            } else {
-                pokepad2_free();
-            }
-            pokedex_state->initialization_state++;
-            break;
         case POKEDEX_SETUP_STATE_DATA_SETUP:
             keys_repeated_start_delay = 20;
             keys_repeated_continue_delay = 1;
@@ -406,11 +410,28 @@ void pokedex_callback_initialize() {
     }
 }
 
+void pokedex_callback_initialize() {
+    pokedex_state->initialization_state = 0;
+    callback1_set(pokedex_callback_initialize_state_machine);
+}
+
+static void pokedex_callback_free_previous_context_and_initialize() {
+    pokedex_cb1();
+    if (fading_control.active || dma3_busy(-1))
+        return;
+    if (pokedex_state->from_outdoor) {
+        overworld_free();
+    } else {
+        pokepad2_free();
+    }
+    callback1_set(pokedex_callback_initialize);
+}
+
 void pokedex_initialize(bool from_outdoor) {
     overworld_rain_sound_fade_out();
     pokedex_state = malloc_and_clear(sizeof (pokedex_state_t));
     pokedex_state->from_outdoor = from_outdoor;
-    callback1_set(pokedex_callback_initialize);
+    callback1_set(pokedex_callback_free_previous_context_and_initialize);
     if (from_outdoor)
         fadescreen_all(1, 0);
     else

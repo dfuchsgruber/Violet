@@ -24,23 +24,28 @@
 #include "callbacks.h"
 #include "pokepad/pokedex/state.h"
 
-void _pokedex_feature_scanner_sort_entries_swap(u16 entries[][2], int i, int j){
+EWRAM pokedex_scanner_state_t *pokedex_scanner_state;
+
+static void pokedex_callback_feature_scanner_load();
+static void pokedex_callback_feature_scanner_idle();
+
+static void pokedex_feature_scanner_sort_entries_swap(u16 entries[][2], int i, int j){
     u16 tmp[2];
     tmp[0] = entries[i][0]; tmp[1] = entries[i][1];
     entries[i][0] = entries[j][0]; entries[i][1] = entries[j][1];
     entries[j][0] = tmp[0]; entries[j][1] = tmp[1];
 }
 
-void _pokedex_feature_scanner_sort_entries(u16 entries[][2], int size){
+static void pokedex_feature_scanner_sort_entries(u16 entries[][2], int size){
     for(int n = size; n > 1; n--){
         for(int i = 0; i < n - 1; i++){
             if(entries[i][1] < entries[i + 1][1])
-                _pokedex_feature_scanner_sort_entries_swap(entries, i, i + 1);
+                pokedex_feature_scanner_sort_entries_swap(entries, i, i + 1);
         }
     }
 }
 
-int _pokedex_feature_scanner_build_entries(const wild_pokemon_entry *wild_entries,
+static int pokedex_feature_scanner_build_entries(const wild_pokemon_entry *wild_entries,
         u16 dst[][2], int capacity, const u8 pdf[]){
     int num_entries = 0;
     for(int i = 0; i < capacity; i++){
@@ -64,7 +69,7 @@ int _pokedex_feature_scanner_build_entries(const wild_pokemon_entry *wild_entrie
     return num_entries;
 }
 
-void pokedex_feature_scanner_entries_add_roamers(pokedex_scanner_state *state) {
+static void pokedex_feature_scanner_entries_add_roamers(pokedex_scanner_state_t *state) {
     for (int i = 0; i < NUM_ROAMERS; i++) {
         if (csave.roamers[i].is_present && csave.roamer_locations[i].bank == save1->bank && csave.roamer_locations[i].map_idx == save1->map) {
             // 50% probability that the roamer appears, so all percentages must be multiplied by 1/2
@@ -81,17 +86,17 @@ void pokedex_feature_scanner_entries_add_roamers(pokedex_scanner_state *state) {
     }
 }
 
-int pokedex_feature_scanner_build_entries(pokedex_scanner_state *state){
+static int pokedex_feature_scanner_build_all_entries(pokedex_scanner_state_t *state){
     const wild_pokemon_data *wild_pokemon_header = map_wild_pokemon_get_current();
     if(!wild_pokemon_header) return -1;
    
     // Build grass entries
     state->num_entries_grass = 0;
     if(wild_pokemon_header->grass){
-        state->num_entries_grass = _pokedex_feature_scanner_build_entries(
+        state->num_entries_grass = pokedex_feature_scanner_build_entries(
                 wild_pokemon_header->grass->data, state->entries_grass,
                 12, wild_pokemon_grass_pdf);
-        _pokedex_feature_scanner_sort_entries(state->entries_grass, 
+        pokedex_feature_scanner_sort_entries(state->entries_grass, 
                 state->num_entries_grass);
     }
     pokedex_feature_scanner_entries_add_roamers(state);
@@ -99,50 +104,50 @@ int pokedex_feature_scanner_build_entries(pokedex_scanner_state *state){
     // Build the water entries
     state->num_entries_water = 0;
     if(wild_pokemon_header->water){
-        state->num_entries_water = _pokedex_feature_scanner_build_entries(
+        state->num_entries_water = pokedex_feature_scanner_build_entries(
                 wild_pokemon_header->water->data, state->entries_water,
                 5, wild_pokemon_water_pdf);
-        _pokedex_feature_scanner_sort_entries(state->entries_water, 
+        pokedex_feature_scanner_sort_entries(state->entries_water, 
                 state->num_entries_water);
     }
     
     // Build the other entries
     state->num_entries_other = 0;
     if(wild_pokemon_header->other){
-        state->num_entries_other = _pokedex_feature_scanner_build_entries(
+        state->num_entries_other = pokedex_feature_scanner_build_entries(
                 wild_pokemon_header->other->data, state->entries_other,
                 5, wild_pokemon_other_pdf);
-        _pokedex_feature_scanner_sort_entries(state->entries_other, 
+        pokedex_feature_scanner_sort_entries(state->entries_other, 
                 state->num_entries_other);
     }
     
     // Build rod entries
     state->num_entries_rod = 0;
     if(wild_pokemon_header->rod){
-        state->num_entries_rod = _pokedex_feature_scanner_build_entries(
+        state->num_entries_rod = pokedex_feature_scanner_build_entries(
                 wild_pokemon_header->rod->data, state->entries_rod, 2,
                 wild_pokemon_rod_pdf);
-        _pokedex_feature_scanner_sort_entries(state->entries_rod, 
+        pokedex_feature_scanner_sort_entries(state->entries_rod, 
                 state->num_entries_rod);
     }
     
     // Build good rod entries
     state->num_entries_good_rod = 0;
     if(wild_pokemon_header->rod){
-        state->num_entries_good_rod = _pokedex_feature_scanner_build_entries(
+        state->num_entries_good_rod = pokedex_feature_scanner_build_entries(
                 &wild_pokemon_header->rod->data[2],
                 state->entries_good_rod, 3, wild_pokemon_good_rod_pdf);
-        _pokedex_feature_scanner_sort_entries(state->entries_good_rod, 
+        pokedex_feature_scanner_sort_entries(state->entries_good_rod, 
                 state->num_entries_good_rod);
     }
     
     // Build super rod entries
     state->num_entries_super_rod = 0;
     if(wild_pokemon_header->rod){
-        state->num_entries_super_rod = _pokedex_feature_scanner_build_entries(
+        state->num_entries_super_rod = pokedex_feature_scanner_build_entries(
                 &wild_pokemon_header->rod->data[5],
                 state->entries_super_rod, 5, wild_pokemon_super_rod_pdf);
-        _pokedex_feature_scanner_sort_entries(state->entries_super_rod, 
+        pokedex_feature_scanner_sort_entries(state->entries_super_rod, 
                 state->num_entries_super_rod);
     }
     return 0;
@@ -180,7 +185,7 @@ const color_t pokedex_feature_scanner_text_colors[16] = {
     {0}, {.rgb = {20, 24, 30}}, {0}, {0}, {0}, {0}, {0}, {0}
 };
 
-void _pokedex_callback_init_feature_scanner(pokedex_scanner_state *state){
+void _pokedex_callback_init_feature_scanner(pokedex_scanner_state_t *state){
     // Disable window feature
     io_set(0, (u16) (io_get(0) &~0x6000));
     oam_reset();
@@ -249,11 +254,11 @@ void _pokedex_callback_init_feature_scanner(pokedex_scanner_state *state){
 }
 
 const tbox_font_colormap pokedex_feature_scanner_fontcolmap = {0, 2, 1, 0};
-const u8 str_pokedex_feature_scanner_percent[] = PSTRING("%");
-const u8 str_pokedex_feature_scanner_unseen[] = PSTRING("??????????");
+const u8 strpokedex_feature_scanner_percent[] = PSTRING("%");
+const u8 strpokedex_feature_scanner_unseen[] = PSTRING("??????????");
 
 
-void pokedex_feature_scanner_draw_generic_icons(pokedex_scanner_state *state,
+void pokedex_feature_scanner_draw_generic_icons(pokedex_scanner_state_t *state,
         u16 entries[][2], int size){
     // Load for each entry the respective icon and draw it
     for(int i = 0; i < size; i++){
@@ -273,19 +278,19 @@ void pokedex_feature_scanner_draw_generic_icons(pokedex_scanner_state *state,
 }
 
 
-const u8 str_pokedex_feature_scanner_none[] = LANGDEP(PSTRING("Keine Pokémon auffindbar"),
+const u8 strpokedex_feature_scanner_none[] = LANGDEP(PSTRING("Keine Pokémon auffindbar"),
     PSTRING("No Pokémon to find"));
 
 
 void pokedex_feature_scanner_print_empty_list(){
     // Print a centered "not availible string"
-    int pixel_len = string_get_width(2, str_pokedex_feature_scanner_none, 0);
+    int pixel_len = string_get_width(2, strpokedex_feature_scanner_none, 0);
     int x = ((30 * 8) - pixel_len) / 2;
     tbox_flush_set(2, 0);
     tbox_tilemap_draw(2);
     tbox_print_string(2, 2, (u16)x, 0, 0, 0,
             &pokedex_feature_scanner_fontcolmap, 0,
-            str_pokedex_feature_scanner_none);
+            strpokedex_feature_scanner_none);
     tbox_sync(2, TBOX_SYNC_MAP_AND_SET);
 }
 
@@ -310,11 +315,11 @@ void pokedex_feature_scanner_print_generic_list(u16 entries[][2], int size){
         // Print the name
         tbox_print_string(box_id, 2, 0, (u16)(16 * line), 0, 0, 
                 &pokedex_feature_scanner_fontcolmap, 0,
-                seen ? pokemon_names[species] : str_pokedex_feature_scanner_unseen);
+                seen ? pokemon_names[species] : strpokedex_feature_scanner_unseen);
         
         // Print the probabilty
         itoa(strbuf, prob, 0, 3);
-        strcat(strbuf, str_pokedex_feature_scanner_percent);
+        strcat(strbuf, strpokedex_feature_scanner_percent);
         tbox_print_string(box_id, 2, 70, (u16)(16 * line), 0, 0,
                 &pokedex_feature_scanner_fontcolmap, 0, strbuf);
         
@@ -323,7 +328,7 @@ void pokedex_feature_scanner_print_generic_list(u16 entries[][2], int size){
     bg_virtual_sync(0);
 }
 
-void pokedex_callback_feature_scanner_selection_fade(pokedex_scanner_state *state){
+void pokedex_callback_feature_scanner_selection_fade(pokedex_scanner_state_t *state){
     FIXED period = INT_TO_FIXED(64);
     FIXED fx = INT_TO_FIXED(state->fading_timer++);
     FIXED fy = FIXED_TRIANGLE_COS(FIXED_DIV(fx, period));
@@ -342,7 +347,7 @@ void pokedex_callback_feature_scanner_selection_fade(pokedex_scanner_state *stat
 
 void pokedex_callback_feature_scanner_clear(){
     
-    pokedex_scanner_state *state = pokedex_state->scanner_state;
+    pokedex_scanner_state_t *state = pokedex_scanner_state;
     
     // Clear the oams
     for(int i = 0; i < 13; i++){
@@ -395,18 +400,18 @@ static void pokedex_feature_scanner_print_generic_titled_list_at(int pos, const 
             // Print the name
             tbox_print_string(box_id, 2, 0, (u16)(16 * line), 0, 0, 
                     &pokedex_feature_scanner_fontcolmap, 0,
-                    seen ? pokemon_names[species] : str_pokedex_feature_scanner_unseen);
+                    seen ? pokemon_names[species] : strpokedex_feature_scanner_unseen);
 
             // Print the probabilty
             itoa(strbuf, prob, 0, 3);
-            strcat(strbuf, str_pokedex_feature_scanner_percent);
+            strcat(strbuf, strpokedex_feature_scanner_percent);
             tbox_print_string(box_id, 2, 70, (u16)(16 * line), 0, 0,
                     &pokedex_feature_scanner_fontcolmap, 0, strbuf);
         }
     }
 }
 
-void pokedex_feature_scanner_draw_generic_icons_at(pokedex_scanner_state *state,
+void pokedex_feature_scanner_draw_generic_icons_at(pokedex_scanner_state_t *state,
         int pos, u16 entries[][2], int size){
     for(int i = pos; i < pos + size; i++){
         
@@ -424,13 +429,13 @@ void pokedex_feature_scanner_draw_generic_icons_at(pokedex_scanner_state *state,
         oams[state->oams[i]].final_oam.attr2 |= (u16)(icon_pal << 12);
     }
 }
-const u8 str_pokedex_feature_scanner_rod[] = LANGDEP(PSTRING("Angel"), PSTRING("Rod"));
-const u8 str_pokedex_feature_scanner_good_rod[] = LANGDEP(PSTRING("Profiangel"), PSTRING("Good Rod"));
-const u8 str_pokedex_feature_scanner_super_rod[] = LANGDEP(PSTRING("Superangel"), PSTRING("Super Rod"));
+const u8 strpokedex_feature_scanner_rod[] = LANGDEP(PSTRING("Angel"), PSTRING("Rod"));
+const u8 strpokedex_feature_scanner_good_rod[] = LANGDEP(PSTRING("Profiangel"), PSTRING("Good Rod"));
+const u8 strpokedex_feature_scanner_super_rod[] = LANGDEP(PSTRING("Superangel"), PSTRING("Super Rod"));
 
 void pokedex_callback_feature_scanner_load(){
     
-    pokedex_scanner_state *state = pokedex_state->scanner_state;
+    pokedex_scanner_state_t *state = pokedex_scanner_state;
     
     // Print the selected entry list
     switch(state->selected_area){
@@ -459,21 +464,21 @@ void pokedex_callback_feature_scanner_load(){
             // Rod
             // Print super rod
             pokedex_feature_scanner_print_generic_titled_list_at(0,
-                    str_pokedex_feature_scanner_super_rod,
+                    strpokedex_feature_scanner_super_rod,
                     state->entries_super_rod, state->num_entries_super_rod);
             pokedex_feature_scanner_draw_generic_icons_at(state, 1, 
                     state->entries_super_rod, state->num_entries_super_rod);
             
             // First print odd rod
             pokedex_feature_scanner_print_generic_titled_list_at(6,
-                    str_pokedex_feature_scanner_rod, state->entries_rod,
+                    strpokedex_feature_scanner_rod, state->entries_rod,
                     state->num_entries_rod);
             pokedex_feature_scanner_draw_generic_icons_at(state, 7, 
                     state->entries_rod, state->num_entries_rod);
                     
             // Print good rod
             pokedex_feature_scanner_print_generic_titled_list_at(9,
-                    str_pokedex_feature_scanner_good_rod,
+                    strpokedex_feature_scanner_good_rod,
                     state->entries_good_rod, state->num_entries_good_rod);
             pokedex_feature_scanner_draw_generic_icons_at(state, 10, 
                     state->entries_good_rod, state->num_entries_good_rod);
@@ -494,7 +499,7 @@ void pokedex_callback_feature_scanner_return(){
         free(bg_get_tilemap(0));
         free(bg_get_tilemap(1));
         tbox_free_all();
-        free(pokedex_state->scanner_state);
+        free(pokedex_scanner_state);
         callback1_set(pokedex_callback_initialize);
     }
 }
@@ -502,7 +507,7 @@ void pokedex_callback_feature_scanner_return(){
 void pokedex_callback_feature_scanner_idle(){
     generic_callback1();
     if(!fading_is_active()){
-        pokedex_scanner_state *state = pokedex_state->scanner_state;
+        pokedex_scanner_state_t *state = pokedex_scanner_state;
         pokedex_callback_feature_scanner_selection_fade(state);
         if(super.keys_new.keys.right){
             state->selected_area++;
@@ -517,7 +522,7 @@ void pokedex_callback_feature_scanner_idle(){
         }else if(super.keys_new.keys.B){
             play_sound(5);
             callback1_set(pokedex_callback_feature_scanner_return);
-            fadescreen_all(1, 0);
+            fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
         }
         
     }
@@ -526,15 +531,13 @@ void pokedex_callback_feature_scanner_idle(){
 void pokedex_callback_init_feature_scanner() {
     generic_callback1();
     if (!fading_is_active()) {
-        pokedex_scanner_state *state = malloc_and_clear(sizeof(pokedex_scanner_state));
-        pokedex_state->scanner_state = state;
-        // pokedex_free_maps();
-        pokedex_feature_scanner_build_entries(state);
-        _pokedex_callback_init_feature_scanner(state);
-        pokedex_feature_scanner_print_generic_list(state->entries_grass, state->num_entries_grass);
-        pokedex_feature_scanner_draw_generic_icons(state, state->entries_grass, state->num_entries_grass);
+        pokedex_scanner_state = malloc_and_clear(sizeof(pokedex_scanner_state_t));
+        pokedex_feature_scanner_build_all_entries(pokedex_scanner_state);
+        _pokedex_callback_init_feature_scanner(pokedex_scanner_state);
+        pokedex_feature_scanner_print_generic_list(pokedex_scanner_state->entries_grass, pokedex_scanner_state->num_entries_grass);
+        pokedex_feature_scanner_draw_generic_icons(pokedex_scanner_state, pokedex_scanner_state->entries_grass, pokedex_scanner_state->num_entries_grass);
         callback1_set(pokedex_callback_feature_scanner_clear);
         vblank_handler_set(generic_vblank_handler);
-        fadescreen_all(0, 0);
+        fadescreen(0xFFFFFFFF, 0, 16, 0, 0);
     }
 }
