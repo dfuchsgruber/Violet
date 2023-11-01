@@ -15,6 +15,7 @@
 #include "data/pokemon/player_y.h"
 #include "data/pokemon/opponent_y.h"
 #include "data/pokemon/altitude.h"
+#include "data/pokemon/icons_greyscale.h"
 
 void pokemon_get_frontsprite(const graphic *g, void *dst, u16 species, pid_t p, u8 load_frontsprite) {
     (void) g;

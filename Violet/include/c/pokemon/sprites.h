@@ -11,6 +11,7 @@
 #include "pokemon/virtual.h"
 #include "pokemon/count.h"
 #include "oam.h"
+#include "color.h"
 
 extern const sprite_coordinates_t trainer_sprite_coordinates[];
 
@@ -73,6 +74,9 @@ extern const palette pokemon_pals[POKEMON_CNT];
 extern const palette pokemon_shiny_pals[POKEMON_CNT];
 extern const u8 pokemon_icon_usage[POKEMON_CNT];
 extern const void *const pokemon_icons[POKEMON_CNT];
+extern const void *const pokemon_icons_greyscale[POKEMON_CNT];
+
+extern const color_t gfx_pokemon_icon_greyPal[16];
 
 extern const pokemon_coordinate_t pokemon_player_y[POKEMON_CNT];
 extern const pokemon_coordinate_t pokemon_enemy_y[POKEMON_CNT];

@@ -1,0 +1,892 @@
+#include "types.h"
+#include "pokemon/sprites.h"
+
+extern const unsigned short gfx_pkmn_species_000_pokemon_pokemon_0_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_001_pokemon_bisasam_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_002_pokemon_bisaknosp_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_003_pokemon_bisaflor_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_004_pokemon_glumanda_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_005_pokemon_glutexo_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_006_pokemon_glurak_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_007_pokemon_schiggy_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_008_pokemon_schillok_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_009_pokemon_turtok_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_010_pokemon_dartiri_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_011_pokemon_dartignis_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_012_pokemon_fiaro_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_013_pokemon_hornliu_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_014_pokemon_kokuna_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_015_pokemon_bibor_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_016_pokemon_staralili_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_017_pokemon_staravia_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_018_pokemon_staraptor_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_019_pokemon_bronzel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_020_pokemon_bronzong_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_021_pokemon_maehikel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_022_pokemon_chevrumm_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_023_pokemon_paragoni_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_024_pokemon_trombork_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_025_pokemon_pikachu_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_026_pokemon_raichu_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_027_pokemon_sandan_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_028_pokemon_sandamer_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_029_pokemon_nidoranw_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_030_pokemon_nidorina_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_031_pokemon_nidoqueen_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_032_pokemon_nidoranm_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_033_pokemon_nidorino_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_034_pokemon_nidoking_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_035_pokemon_floette_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_036_pokemon_florges_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_037_pokemon_vulpix_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_038_pokemon_vulnona_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_039_pokemon_pummeluff_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_040_pokemon_knuddeluff_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_041_pokemon_zubat_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_042_pokemon_golbat_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_043_pokemon_myrapla_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_044_pokemon_duflor_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_045_pokemon_giflor_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_046_pokemon_folipurba_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_047_pokemon_feelinara_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_048_pokemon_wattzapf_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_049_pokemon_voltula_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_050_pokemon_digda_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_051_pokemon_digdri_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_052_pokemon_kastadur_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_053_pokemon_tentantel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_054_pokemon_enton_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_055_pokemon_entoron_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_056_pokemon_menki_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_057_pokemon_rasaff_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_058_pokemon_fukano_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_059_pokemon_arkani_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_060_pokemon_gramokles_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_061_pokemon_duokles_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_062_pokemon_durengard_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_063_pokemon_abra_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_064_pokemon_kadabra_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_065_pokemon_simsala_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_066_pokemon_machollo_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_067_pokemon_maschock_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_068_pokemon_machomei_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_069_pokemon_knofensa_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_070_pokemon_ultrigaria_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_071_pokemon_sarzenia_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_072_pokemon_tentacha_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_073_pokemon_tentoxa_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_074_pokemon_kleinstein_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_075_pokemon_georok_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_076_pokemon_geowaz_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_077_pokemon_ponita_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_078_pokemon_gallopa_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_079_pokemon_flegmon_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_080_pokemon_lahmus_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_081_pokemon_magnetilo_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_082_pokemon_magneton_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_083_pokemon_porenta_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_084_pokemon_dodu_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_085_pokemon_dodri_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_086_pokemon_jurbo_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_087_pokemon_jugong_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_088_pokemon_sleima_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_089_pokemon_sleimok_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_090_pokemon_muschas_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_091_pokemon_austos_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_092_pokemon_nebulak_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_093_pokemon_alpollo_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_094_pokemon_gengar_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_095_pokemon_onix_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_096_pokemon_traumato_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_097_pokemon_hypno_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_098_pokemon_krabby_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_099_pokemon_kingler_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_100_pokemon_voltobal_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_101_pokemon_lektrobal_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_102_pokemon_owei_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_103_pokemon_kokowei_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_104_pokemon_tragosso_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_105_pokemon_knogga_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_106_pokemon_kicklee_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_107_pokemon_nockchan_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_108_pokemon_schlurp_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_109_pokemon_smogon_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_110_pokemon_smogmog_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_111_pokemon_rihorn_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_112_pokemon_rizeros_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_113_pokemon_chaneira_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_114_pokemon_zobiris_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_115_pokemon_kangama_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_116_pokemon_seeper_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_117_pokemon_seemon_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_118_pokemon_quabbel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_119_pokemon_apoquallyp_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_120_pokemon_sterndu_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_121_pokemon_starmie_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_122_pokemon_traunfugil_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_123_pokemon_sichlor_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_124_pokemon_galagladi_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_125_pokemon_elektek_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_126_pokemon_magmar_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_127_pokemon_pinsir_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_128_pokemon_tauros_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_129_pokemon_karpador_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_130_pokemon_garados_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_131_pokemon_lapras_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_132_pokemon_ditto_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_133_pokemon_evoli_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_134_pokemon_aquana_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_135_pokemon_blitza_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_136_pokemon_flamara_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_137_pokemon_porygon_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_138_pokemon_amonitas_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_139_pokemon_amoroso_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_140_pokemon_kabuto_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_141_pokemon_kabutops_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_142_pokemon_aerodactyl_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_143_pokemon_relaxo_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_144_pokemon_arktos_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_145_pokemon_zapdos_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_146_pokemon_lavados_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_147_pokemon_dratini_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_148_pokemon_dragonir_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_149_pokemon_dragoran_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_150_pokemon_mewtu_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_151_pokemon_mew_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_152_pokemon_endivie_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_153_pokemon_lorblatt_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_154_pokemon_meganie_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_155_pokemon_feurigel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_156_pokemon_igelavar_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_157_pokemon_tornupto_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_158_pokemon_karnimani_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_159_pokemon_tyracroc_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_160_pokemon_impergator_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_161_pokemon_ignivor_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_162_pokemon_ramoth_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_163_pokemon_glaziola_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_164_pokemon_resladero_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_165_pokemon_ledyba_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_166_pokemon_ledian_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_167_pokemon_webarak_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_168_pokemon_ariados_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_169_pokemon_iksbat_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_170_pokemon_lampi_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_171_pokemon_lanturn_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_172_pokemon_magnezone_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_173_pokemon_togekiss_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_174_pokemon_flabebe_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_175_pokemon_togepi_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_176_pokemon_togetic_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_177_pokemon_natu_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_178_pokemon_xatu_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_179_pokemon_voltilamm_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_180_pokemon_waaty_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_181_pokemon_ampharos_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_182_pokemon_blubella_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_183_pokemon_marill_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_184_pokemon_azumarill_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_185_pokemon_mogelbaum_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_186_pokemon_clavion_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_187_pokemon_lichtel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_188_pokemon_laternecto_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_189_pokemon_sklelabra_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_190_pokemon_griffel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_191_pokemon_shnebedeck_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_192_pokemon_rexblisar_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_193_pokemon_ambidiffel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_194_pokemon_felino_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_195_pokemon_morlord_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_196_pokemon_psiana_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_197_pokemon_nachtara_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_198_pokemon_kramurx_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_199_pokemon_laschoking_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_200_pokemon_kramshef_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_201_pokemon_icognito_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_202_pokemon_frosdedje_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_203_pokemon_skorgro_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_204_pokemon_tannza_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_205_pokemon_forstellka_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_206_pokemon_elevoltek_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_207_pokemon_skorgla_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_208_pokemon_stahlos_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_209_pokemon_snubbull_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_210_pokemon_granbull_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_211_pokemon_mamutel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_212_pokemon_scherox_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_213_pokemon_fluffeluff_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_214_pokemon_skaraborn_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_215_pokemon_kryppuk_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_216_pokemon_teddiursa_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_217_pokemon_ursaring_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_218_pokemon_schneckmag_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_219_pokemon_magcargo_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_220_pokemon_quiekel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_221_pokemon_keifel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_222_pokemon_mampfaxo_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_223_pokemon_remoraid_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_224_pokemon_octillery_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_225_pokemon_botogel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_226_pokemon_schlurplek_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_227_pokemon_panzaeron_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_228_pokemon_hunduster_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_229_pokemon_hundemon_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_230_pokemon_seedraking_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_231_pokemon_phanpy_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_232_pokemon_donphan_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_233_pokemon_porygon2_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_234_pokemon_voluminas_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_235_pokemon_traunmagil_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_236_pokemon_rabauz_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_237_pokemon_kapoera_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_238_pokemon_sen_long_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_239_pokemon_elekid_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_240_pokemon_magby_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_241_pokemon_miltank_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_242_pokemon_heiteira_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_243_pokemon_raikou_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_244_pokemon_entei_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_245_pokemon_suicune_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_246_pokemon_larvitar_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_247_pokemon_pupitar_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_248_pokemon_despotar_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_249_pokemon_lugia_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_250_pokemon_ho_oh_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_251_pokemon_celebi_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_rotom_heat_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_rotom_wash_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_rotom_frost_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_rotom_fan_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_rotom_mow_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_257_pokemon_durengarda_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_mega_sandamer_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_mega_lahmus_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_mega_maskeregen_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_261_pokemon_ampharaosm_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_262_pokemon_banette_mega_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_263_pokemon_biborm_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_264_pokemon_altariam_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_265_pokemon_geowazm_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_mega_sengo_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_267_pokemon_vipitism_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_268_pokemon_zobirism_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_269_pokemon_tropius_mega_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_270_pokemon_octillery_mega_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_271_pokemon_rasaff_mega_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_mega_ariados_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_mega_firnontor_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_mega_jugong_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_mega_flunkifer_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_mega_palimpalim_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_277_pokemon_lockschal_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_278_pokemon_stichschal_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_279_pokemon_stahlstich_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_280_pokemon_weluno_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_281_pokemon_orthodos_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_282_pokemon_zerbertres_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_283_pokemon_seekid_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_284_pokemon_seeskull_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_285_pokemon_skullydra_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_286_pokemon_fiffyen_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_287_pokemon_magnayen_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_288_pokemon_zigzachs_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_289_pokemon_geradaks_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_290_pokemon_waumpel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_291_pokemon_schaloko_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_292_pokemon_papinella_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_293_pokemon_panekon_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_294_pokemon_pudox_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_295_pokemon_loturzel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_296_pokemon_lombrero_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_297_pokemon_kappalores_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_298_pokemon_samurzel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_299_pokemon_blanas_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_300_pokemon_tengulist_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_301_pokemon_nincada_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_302_pokemon_ninjask_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_303_pokemon_ninjatom_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_304_pokemon_schwalbini_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_305_pokemon_schwalboss_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_306_pokemon_knilz_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_307_pokemon_kapilz_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_308_pokemon_pandir_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_309_pokemon_wingull_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_310_pokemon_pelipper_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_311_pokemon_gehweiher_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_312_pokemon_maskeregen_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_313_pokemon_wailmer_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_314_pokemon_wailord_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_315_pokemon_eneco_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_316_pokemon_enekoro_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_317_pokemon_kecleon_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_318_pokemon_puppance_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_319_pokemon_lepumentas_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_320_pokemon_nasgnet_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_321_pokemon_magbrant_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_322_pokemon_zwirrfinst_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_323_pokemon_schmerbe_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_324_pokemon_welsar_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_325_pokemon_rihornior_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_326_pokemon_krebscorps_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_327_pokemon_krebutack_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_328_pokemon_barschwa_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_329_pokemon_milotic_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_330_pokemon_kanivanha_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_331_pokemon_tohaido_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_332_pokemon_knacklion_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_333_pokemon_vibrava_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_334_pokemon_libelldra_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_335_pokemon_riolu_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_336_pokemon_lucario_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_337_pokemon_frizelbliz_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_338_pokemon_voltenso_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_339_pokemon_camaub_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_340_pokemon_camerupt_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_341_pokemon_seemops_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_342_pokemon_seejong_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_343_pokemon_walraisa_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_344_pokemon_tuska_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_345_pokemon_noktuska_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_346_pokemon_schneppke_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_347_pokemon_firnontor_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_348_pokemon_lunastein_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_349_pokemon_sonnfel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_350_pokemon_azurill_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_351_pokemon_spoink_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_352_pokemon_groink_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_pichu_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_rotom_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_355_pokemon_flunkifer_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_356_pokemon_meditie_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_357_pokemon_meditalis_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_358_pokemon_wablu_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_359_pokemon_altaria_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_360_pokemon_klingplim_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_361_pokemon_zwirrlicht_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_362_pokemon_zwirrklop_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_363_pokemon_porygon_z_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_364_pokemon_bummelz_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_365_pokemon_muntier_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_366_pokemon_letarking_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_molunk_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_amfira_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_369_pokemon_tropius_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_370_pokemon_kaumalat_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_371_pokemon_knarksel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_372_pokemon_knakrack_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_373_pokemon_perlu_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_374_pokemon_aalabyss_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_375_pokemon_saganabyss_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_376_pokemon_absol_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_377_pokemon_shuppet_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_378_pokemon_banette_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_379_pokemon_vipitis_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_380_pokemon_sengo_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_381_pokemon_relicanth_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_382_pokemon_stollunior_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_383_pokemon_stollrak_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_384_pokemon_stolloss_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_385_pokemon_formeo_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_386_pokemon_wonneira_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_387_pokemon_mobai_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_388_pokemon_liliep_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_389_pokemon_wielie_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_390_pokemon_anorith_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_391_pokemon_armaldo_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_392_pokemon_trasla_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_393_pokemon_kirlia_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_394_pokemon_guardevoir_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_395_pokemon_kindwurm_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_396_pokemon_draschel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_397_pokemon_brutalanda_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_398_pokemon_tanhel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_399_pokemon_metang_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_400_pokemon_metagross_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_401_pokemon_regirock_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_402_pokemon_regice_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_403_pokemon_registeel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_404_pokemon_kyogre_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_405_pokemon_groudon_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_406_pokemon_rayquaza_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_407_pokemon_latias_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_408_pokemon_latios_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_409_pokemon_jirachi_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_410_pokemon_deoxys_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_411_pokemon_palimpalim_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_412_pokemon_egg_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_413_pokemon_icognito_b_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_414_pokemon_icognito_c_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_415_pokemon_icognito_d_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_416_pokemon_icognito_e_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_417_pokemon_icognito_f_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_418_pokemon_icognito_g_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_419_pokemon_icognito_h_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_420_pokemon_icognito_i_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_421_pokemon_icognito_j_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_422_pokemon_icognito_k_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_423_pokemon_icognito_l_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_424_pokemon_icognito_m_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_425_pokemon_icognito_n_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_426_pokemon_icognito_o_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_427_pokemon_icognito_p_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_428_pokemon_icognito_q_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_429_pokemon_icognito_r_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_430_pokemon_icognito_s_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_431_pokemon_icognito_t_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_432_pokemon_icognito_u_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_433_pokemon_icognito_v_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_434_pokemon_icognito_w_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_435_pokemon_icognito_x_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_436_pokemon_icognito_y_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_437_pokemon_icognito_z_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_438_pokemon_icognito_exclamation_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_439_pokemon_icognito_question_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_440_pokemon_groudon_e_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_species_441_pokemon_kecleon_p_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_crystal_onix_icon_greyscaleTiles[];
+
+const void *const pokemon_icons_greyscale[POKEMON_CNT] = {
+    gfx_pkmn_species_000_pokemon_pokemon_0_icon_greyscaleTiles,
+    gfx_pkmn_species_001_pokemon_bisasam_icon_greyscaleTiles,
+    gfx_pkmn_species_002_pokemon_bisaknosp_icon_greyscaleTiles,
+    gfx_pkmn_species_003_pokemon_bisaflor_icon_greyscaleTiles,
+    gfx_pkmn_species_004_pokemon_glumanda_icon_greyscaleTiles,
+    gfx_pkmn_species_005_pokemon_glutexo_icon_greyscaleTiles,
+    gfx_pkmn_species_006_pokemon_glurak_icon_greyscaleTiles,
+    gfx_pkmn_species_007_pokemon_schiggy_icon_greyscaleTiles,
+    gfx_pkmn_species_008_pokemon_schillok_icon_greyscaleTiles,
+    gfx_pkmn_species_009_pokemon_turtok_icon_greyscaleTiles,
+    gfx_pkmn_species_010_pokemon_dartiri_icon_greyscaleTiles,
+    gfx_pkmn_species_011_pokemon_dartignis_icon_greyscaleTiles,
+    gfx_pkmn_species_012_pokemon_fiaro_icon_greyscaleTiles,
+    gfx_pkmn_species_013_pokemon_hornliu_icon_greyscaleTiles,
+    gfx_pkmn_species_014_pokemon_kokuna_icon_greyscaleTiles,
+    gfx_pkmn_species_015_pokemon_bibor_icon_greyscaleTiles,
+    gfx_pkmn_species_016_pokemon_staralili_icon_greyscaleTiles,
+    gfx_pkmn_species_017_pokemon_staravia_icon_greyscaleTiles,
+    gfx_pkmn_species_018_pokemon_staraptor_icon_greyscaleTiles,
+    gfx_pkmn_species_019_pokemon_bronzel_icon_greyscaleTiles,
+    gfx_pkmn_species_020_pokemon_bronzong_icon_greyscaleTiles,
+    gfx_pkmn_species_021_pokemon_maehikel_icon_greyscaleTiles,
+    gfx_pkmn_species_022_pokemon_chevrumm_icon_greyscaleTiles,
+    gfx_pkmn_species_023_pokemon_paragoni_icon_greyscaleTiles,
+    gfx_pkmn_species_024_pokemon_trombork_icon_greyscaleTiles,
+    gfx_pkmn_species_025_pokemon_pikachu_icon_greyscaleTiles,
+    gfx_pkmn_species_026_pokemon_raichu_icon_greyscaleTiles,
+    gfx_pkmn_species_027_pokemon_sandan_icon_greyscaleTiles,
+    gfx_pkmn_species_028_pokemon_sandamer_icon_greyscaleTiles,
+    gfx_pkmn_species_029_pokemon_nidoranw_icon_greyscaleTiles,
+    gfx_pkmn_species_030_pokemon_nidorina_icon_greyscaleTiles,
+    gfx_pkmn_species_031_pokemon_nidoqueen_icon_greyscaleTiles,
+    gfx_pkmn_species_032_pokemon_nidoranm_icon_greyscaleTiles,
+    gfx_pkmn_species_033_pokemon_nidorino_icon_greyscaleTiles,
+    gfx_pkmn_species_034_pokemon_nidoking_icon_greyscaleTiles,
+    gfx_pkmn_species_035_pokemon_floette_icon_greyscaleTiles,
+    gfx_pkmn_species_036_pokemon_florges_icon_greyscaleTiles,
+    gfx_pkmn_species_037_pokemon_vulpix_icon_greyscaleTiles,
+    gfx_pkmn_species_038_pokemon_vulnona_icon_greyscaleTiles,
+    gfx_pkmn_species_039_pokemon_pummeluff_icon_greyscaleTiles,
+    gfx_pkmn_species_040_pokemon_knuddeluff_icon_greyscaleTiles,
+    gfx_pkmn_species_041_pokemon_zubat_icon_greyscaleTiles,
+    gfx_pkmn_species_042_pokemon_golbat_icon_greyscaleTiles,
+    gfx_pkmn_species_043_pokemon_myrapla_icon_greyscaleTiles,
+    gfx_pkmn_species_044_pokemon_duflor_icon_greyscaleTiles,
+    gfx_pkmn_species_045_pokemon_giflor_icon_greyscaleTiles,
+    gfx_pkmn_species_046_pokemon_folipurba_icon_greyscaleTiles,
+    gfx_pkmn_species_047_pokemon_feelinara_icon_greyscaleTiles,
+    gfx_pkmn_species_048_pokemon_wattzapf_icon_greyscaleTiles,
+    gfx_pkmn_species_049_pokemon_voltula_icon_greyscaleTiles,
+    gfx_pkmn_species_050_pokemon_digda_icon_greyscaleTiles,
+    gfx_pkmn_species_051_pokemon_digdri_icon_greyscaleTiles,
+    gfx_pkmn_species_052_pokemon_kastadur_icon_greyscaleTiles,
+    gfx_pkmn_species_053_pokemon_tentantel_icon_greyscaleTiles,
+    gfx_pkmn_species_054_pokemon_enton_icon_greyscaleTiles,
+    gfx_pkmn_species_055_pokemon_entoron_icon_greyscaleTiles,
+    gfx_pkmn_species_056_pokemon_menki_icon_greyscaleTiles,
+    gfx_pkmn_species_057_pokemon_rasaff_icon_greyscaleTiles,
+    gfx_pkmn_species_058_pokemon_fukano_icon_greyscaleTiles,
+    gfx_pkmn_species_059_pokemon_arkani_icon_greyscaleTiles,
+    gfx_pkmn_species_060_pokemon_gramokles_icon_greyscaleTiles,
+    gfx_pkmn_species_061_pokemon_duokles_icon_greyscaleTiles,
+    gfx_pkmn_species_062_pokemon_durengard_icon_greyscaleTiles,
+    gfx_pkmn_species_063_pokemon_abra_icon_greyscaleTiles,
+    gfx_pkmn_species_064_pokemon_kadabra_icon_greyscaleTiles,
+    gfx_pkmn_species_065_pokemon_simsala_icon_greyscaleTiles,
+    gfx_pkmn_species_066_pokemon_machollo_icon_greyscaleTiles,
+    gfx_pkmn_species_067_pokemon_maschock_icon_greyscaleTiles,
+    gfx_pkmn_species_068_pokemon_machomei_icon_greyscaleTiles,
+    gfx_pkmn_species_069_pokemon_knofensa_icon_greyscaleTiles,
+    gfx_pkmn_species_070_pokemon_ultrigaria_icon_greyscaleTiles,
+    gfx_pkmn_species_071_pokemon_sarzenia_icon_greyscaleTiles,
+    gfx_pkmn_species_072_pokemon_tentacha_icon_greyscaleTiles,
+    gfx_pkmn_species_073_pokemon_tentoxa_icon_greyscaleTiles,
+    gfx_pkmn_species_074_pokemon_kleinstein_icon_greyscaleTiles,
+    gfx_pkmn_species_075_pokemon_georok_icon_greyscaleTiles,
+    gfx_pkmn_species_076_pokemon_geowaz_icon_greyscaleTiles,
+    gfx_pkmn_species_077_pokemon_ponita_icon_greyscaleTiles,
+    gfx_pkmn_species_078_pokemon_gallopa_icon_greyscaleTiles,
+    gfx_pkmn_species_079_pokemon_flegmon_icon_greyscaleTiles,
+    gfx_pkmn_species_080_pokemon_lahmus_icon_greyscaleTiles,
+    gfx_pkmn_species_081_pokemon_magnetilo_icon_greyscaleTiles,
+    gfx_pkmn_species_082_pokemon_magneton_icon_greyscaleTiles,
+    gfx_pkmn_species_083_pokemon_porenta_icon_greyscaleTiles,
+    gfx_pkmn_species_084_pokemon_dodu_icon_greyscaleTiles,
+    gfx_pkmn_species_085_pokemon_dodri_icon_greyscaleTiles,
+    gfx_pkmn_species_086_pokemon_jurbo_icon_greyscaleTiles,
+    gfx_pkmn_species_087_pokemon_jugong_icon_greyscaleTiles,
+    gfx_pkmn_species_088_pokemon_sleima_icon_greyscaleTiles,
+    gfx_pkmn_species_089_pokemon_sleimok_icon_greyscaleTiles,
+    gfx_pkmn_species_090_pokemon_muschas_icon_greyscaleTiles,
+    gfx_pkmn_species_091_pokemon_austos_icon_greyscaleTiles,
+    gfx_pkmn_species_092_pokemon_nebulak_icon_greyscaleTiles,
+    gfx_pkmn_species_093_pokemon_alpollo_icon_greyscaleTiles,
+    gfx_pkmn_species_094_pokemon_gengar_icon_greyscaleTiles,
+    gfx_pkmn_species_095_pokemon_onix_icon_greyscaleTiles,
+    gfx_pkmn_species_096_pokemon_traumato_icon_greyscaleTiles,
+    gfx_pkmn_species_097_pokemon_hypno_icon_greyscaleTiles,
+    gfx_pkmn_species_098_pokemon_krabby_icon_greyscaleTiles,
+    gfx_pkmn_species_099_pokemon_kingler_icon_greyscaleTiles,
+    gfx_pkmn_species_100_pokemon_voltobal_icon_greyscaleTiles,
+    gfx_pkmn_species_101_pokemon_lektrobal_icon_greyscaleTiles,
+    gfx_pkmn_species_102_pokemon_owei_icon_greyscaleTiles,
+    gfx_pkmn_species_103_pokemon_kokowei_icon_greyscaleTiles,
+    gfx_pkmn_species_104_pokemon_tragosso_icon_greyscaleTiles,
+    gfx_pkmn_species_105_pokemon_knogga_icon_greyscaleTiles,
+    gfx_pkmn_species_106_pokemon_kicklee_icon_greyscaleTiles,
+    gfx_pkmn_species_107_pokemon_nockchan_icon_greyscaleTiles,
+    gfx_pkmn_species_108_pokemon_schlurp_icon_greyscaleTiles,
+    gfx_pkmn_species_109_pokemon_smogon_icon_greyscaleTiles,
+    gfx_pkmn_species_110_pokemon_smogmog_icon_greyscaleTiles,
+    gfx_pkmn_species_111_pokemon_rihorn_icon_greyscaleTiles,
+    gfx_pkmn_species_112_pokemon_rizeros_icon_greyscaleTiles,
+    gfx_pkmn_species_113_pokemon_chaneira_icon_greyscaleTiles,
+    gfx_pkmn_species_114_pokemon_zobiris_icon_greyscaleTiles,
+    gfx_pkmn_species_115_pokemon_kangama_icon_greyscaleTiles,
+    gfx_pkmn_species_116_pokemon_seeper_icon_greyscaleTiles,
+    gfx_pkmn_species_117_pokemon_seemon_icon_greyscaleTiles,
+    gfx_pkmn_species_118_pokemon_quabbel_icon_greyscaleTiles,
+    gfx_pkmn_species_119_pokemon_apoquallyp_icon_greyscaleTiles,
+    gfx_pkmn_species_120_pokemon_sterndu_icon_greyscaleTiles,
+    gfx_pkmn_species_121_pokemon_starmie_icon_greyscaleTiles,
+    gfx_pkmn_species_122_pokemon_traunfugil_icon_greyscaleTiles,
+    gfx_pkmn_species_123_pokemon_sichlor_icon_greyscaleTiles,
+    gfx_pkmn_species_124_pokemon_galagladi_icon_greyscaleTiles,
+    gfx_pkmn_species_125_pokemon_elektek_icon_greyscaleTiles,
+    gfx_pkmn_species_126_pokemon_magmar_icon_greyscaleTiles,
+    gfx_pkmn_species_127_pokemon_pinsir_icon_greyscaleTiles,
+    gfx_pkmn_species_128_pokemon_tauros_icon_greyscaleTiles,
+    gfx_pkmn_species_129_pokemon_karpador_icon_greyscaleTiles,
+    gfx_pkmn_species_130_pokemon_garados_icon_greyscaleTiles,
+    gfx_pkmn_species_131_pokemon_lapras_icon_greyscaleTiles,
+    gfx_pkmn_species_132_pokemon_ditto_icon_greyscaleTiles,
+    gfx_pkmn_species_133_pokemon_evoli_icon_greyscaleTiles,
+    gfx_pkmn_species_134_pokemon_aquana_icon_greyscaleTiles,
+    gfx_pkmn_species_135_pokemon_blitza_icon_greyscaleTiles,
+    gfx_pkmn_species_136_pokemon_flamara_icon_greyscaleTiles,
+    gfx_pkmn_species_137_pokemon_porygon_icon_greyscaleTiles,
+    gfx_pkmn_species_138_pokemon_amonitas_icon_greyscaleTiles,
+    gfx_pkmn_species_139_pokemon_amoroso_icon_greyscaleTiles,
+    gfx_pkmn_species_140_pokemon_kabuto_icon_greyscaleTiles,
+    gfx_pkmn_species_141_pokemon_kabutops_icon_greyscaleTiles,
+    gfx_pkmn_species_142_pokemon_aerodactyl_icon_greyscaleTiles,
+    gfx_pkmn_species_143_pokemon_relaxo_icon_greyscaleTiles,
+    gfx_pkmn_species_144_pokemon_arktos_icon_greyscaleTiles,
+    gfx_pkmn_species_145_pokemon_zapdos_icon_greyscaleTiles,
+    gfx_pkmn_species_146_pokemon_lavados_icon_greyscaleTiles,
+    gfx_pkmn_species_147_pokemon_dratini_icon_greyscaleTiles,
+    gfx_pkmn_species_148_pokemon_dragonir_icon_greyscaleTiles,
+    gfx_pkmn_species_149_pokemon_dragoran_icon_greyscaleTiles,
+    gfx_pkmn_species_150_pokemon_mewtu_icon_greyscaleTiles,
+    gfx_pkmn_species_151_pokemon_mew_icon_greyscaleTiles,
+    gfx_pkmn_species_152_pokemon_endivie_icon_greyscaleTiles,
+    gfx_pkmn_species_153_pokemon_lorblatt_icon_greyscaleTiles,
+    gfx_pkmn_species_154_pokemon_meganie_icon_greyscaleTiles,
+    gfx_pkmn_species_155_pokemon_feurigel_icon_greyscaleTiles,
+    gfx_pkmn_species_156_pokemon_igelavar_icon_greyscaleTiles,
+    gfx_pkmn_species_157_pokemon_tornupto_icon_greyscaleTiles,
+    gfx_pkmn_species_158_pokemon_karnimani_icon_greyscaleTiles,
+    gfx_pkmn_species_159_pokemon_tyracroc_icon_greyscaleTiles,
+    gfx_pkmn_species_160_pokemon_impergator_icon_greyscaleTiles,
+    gfx_pkmn_species_161_pokemon_ignivor_icon_greyscaleTiles,
+    gfx_pkmn_species_162_pokemon_ramoth_icon_greyscaleTiles,
+    gfx_pkmn_species_163_pokemon_glaziola_icon_greyscaleTiles,
+    gfx_pkmn_species_164_pokemon_resladero_icon_greyscaleTiles,
+    gfx_pkmn_species_165_pokemon_ledyba_icon_greyscaleTiles,
+    gfx_pkmn_species_166_pokemon_ledian_icon_greyscaleTiles,
+    gfx_pkmn_species_167_pokemon_webarak_icon_greyscaleTiles,
+    gfx_pkmn_species_168_pokemon_ariados_icon_greyscaleTiles,
+    gfx_pkmn_species_169_pokemon_iksbat_icon_greyscaleTiles,
+    gfx_pkmn_species_170_pokemon_lampi_icon_greyscaleTiles,
+    gfx_pkmn_species_171_pokemon_lanturn_icon_greyscaleTiles,
+    gfx_pkmn_species_172_pokemon_magnezone_icon_greyscaleTiles,
+    gfx_pkmn_species_173_pokemon_togekiss_icon_greyscaleTiles,
+    gfx_pkmn_species_174_pokemon_flabebe_icon_greyscaleTiles,
+    gfx_pkmn_species_175_pokemon_togepi_icon_greyscaleTiles,
+    gfx_pkmn_species_176_pokemon_togetic_icon_greyscaleTiles,
+    gfx_pkmn_species_177_pokemon_natu_icon_greyscaleTiles,
+    gfx_pkmn_species_178_pokemon_xatu_icon_greyscaleTiles,
+    gfx_pkmn_species_179_pokemon_voltilamm_icon_greyscaleTiles,
+    gfx_pkmn_species_180_pokemon_waaty_icon_greyscaleTiles,
+    gfx_pkmn_species_181_pokemon_ampharos_icon_greyscaleTiles,
+    gfx_pkmn_species_182_pokemon_blubella_icon_greyscaleTiles,
+    gfx_pkmn_species_183_pokemon_marill_icon_greyscaleTiles,
+    gfx_pkmn_species_184_pokemon_azumarill_icon_greyscaleTiles,
+    gfx_pkmn_species_185_pokemon_mogelbaum_icon_greyscaleTiles,
+    gfx_pkmn_species_186_pokemon_clavion_icon_greyscaleTiles,
+    gfx_pkmn_species_187_pokemon_lichtel_icon_greyscaleTiles,
+    gfx_pkmn_species_188_pokemon_laternecto_icon_greyscaleTiles,
+    gfx_pkmn_species_189_pokemon_sklelabra_icon_greyscaleTiles,
+    gfx_pkmn_species_190_pokemon_griffel_icon_greyscaleTiles,
+    gfx_pkmn_species_191_pokemon_shnebedeck_icon_greyscaleTiles,
+    gfx_pkmn_species_192_pokemon_rexblisar_icon_greyscaleTiles,
+    gfx_pkmn_species_193_pokemon_ambidiffel_icon_greyscaleTiles,
+    gfx_pkmn_species_194_pokemon_felino_icon_greyscaleTiles,
+    gfx_pkmn_species_195_pokemon_morlord_icon_greyscaleTiles,
+    gfx_pkmn_species_196_pokemon_psiana_icon_greyscaleTiles,
+    gfx_pkmn_species_197_pokemon_nachtara_icon_greyscaleTiles,
+    gfx_pkmn_species_198_pokemon_kramurx_icon_greyscaleTiles,
+    gfx_pkmn_species_199_pokemon_laschoking_icon_greyscaleTiles,
+    gfx_pkmn_species_200_pokemon_kramshef_icon_greyscaleTiles,
+    gfx_pkmn_species_201_pokemon_icognito_icon_greyscaleTiles,
+    gfx_pkmn_species_202_pokemon_frosdedje_icon_greyscaleTiles,
+    gfx_pkmn_species_203_pokemon_skorgro_icon_greyscaleTiles,
+    gfx_pkmn_species_204_pokemon_tannza_icon_greyscaleTiles,
+    gfx_pkmn_species_205_pokemon_forstellka_icon_greyscaleTiles,
+    gfx_pkmn_species_206_pokemon_elevoltek_icon_greyscaleTiles,
+    gfx_pkmn_species_207_pokemon_skorgla_icon_greyscaleTiles,
+    gfx_pkmn_species_208_pokemon_stahlos_icon_greyscaleTiles,
+    gfx_pkmn_species_209_pokemon_snubbull_icon_greyscaleTiles,
+    gfx_pkmn_species_210_pokemon_granbull_icon_greyscaleTiles,
+    gfx_pkmn_species_211_pokemon_mamutel_icon_greyscaleTiles,
+    gfx_pkmn_species_212_pokemon_scherox_icon_greyscaleTiles,
+    gfx_pkmn_species_213_pokemon_fluffeluff_icon_greyscaleTiles,
+    gfx_pkmn_species_214_pokemon_skaraborn_icon_greyscaleTiles,
+    gfx_pkmn_species_215_pokemon_kryppuk_icon_greyscaleTiles,
+    gfx_pkmn_species_216_pokemon_teddiursa_icon_greyscaleTiles,
+    gfx_pkmn_species_217_pokemon_ursaring_icon_greyscaleTiles,
+    gfx_pkmn_species_218_pokemon_schneckmag_icon_greyscaleTiles,
+    gfx_pkmn_species_219_pokemon_magcargo_icon_greyscaleTiles,
+    gfx_pkmn_species_220_pokemon_quiekel_icon_greyscaleTiles,
+    gfx_pkmn_species_221_pokemon_keifel_icon_greyscaleTiles,
+    gfx_pkmn_species_222_pokemon_mampfaxo_icon_greyscaleTiles,
+    gfx_pkmn_species_223_pokemon_remoraid_icon_greyscaleTiles,
+    gfx_pkmn_species_224_pokemon_octillery_icon_greyscaleTiles,
+    gfx_pkmn_species_225_pokemon_botogel_icon_greyscaleTiles,
+    gfx_pkmn_species_226_pokemon_schlurplek_icon_greyscaleTiles,
+    gfx_pkmn_species_227_pokemon_panzaeron_icon_greyscaleTiles,
+    gfx_pkmn_species_228_pokemon_hunduster_icon_greyscaleTiles,
+    gfx_pkmn_species_229_pokemon_hundemon_icon_greyscaleTiles,
+    gfx_pkmn_species_230_pokemon_seedraking_icon_greyscaleTiles,
+    gfx_pkmn_species_231_pokemon_phanpy_icon_greyscaleTiles,
+    gfx_pkmn_species_232_pokemon_donphan_icon_greyscaleTiles,
+    gfx_pkmn_species_233_pokemon_porygon2_icon_greyscaleTiles,
+    gfx_pkmn_species_234_pokemon_voluminas_icon_greyscaleTiles,
+    gfx_pkmn_species_235_pokemon_traunmagil_icon_greyscaleTiles,
+    gfx_pkmn_species_236_pokemon_rabauz_icon_greyscaleTiles,
+    gfx_pkmn_species_237_pokemon_kapoera_icon_greyscaleTiles,
+    gfx_pkmn_species_238_pokemon_sen_long_icon_greyscaleTiles,
+    gfx_pkmn_species_239_pokemon_elekid_icon_greyscaleTiles,
+    gfx_pkmn_species_240_pokemon_magby_icon_greyscaleTiles,
+    gfx_pkmn_species_241_pokemon_miltank_icon_greyscaleTiles,
+    gfx_pkmn_species_242_pokemon_heiteira_icon_greyscaleTiles,
+    gfx_pkmn_species_243_pokemon_raikou_icon_greyscaleTiles,
+    gfx_pkmn_species_244_pokemon_entei_icon_greyscaleTiles,
+    gfx_pkmn_species_245_pokemon_suicune_icon_greyscaleTiles,
+    gfx_pkmn_species_246_pokemon_larvitar_icon_greyscaleTiles,
+    gfx_pkmn_species_247_pokemon_pupitar_icon_greyscaleTiles,
+    gfx_pkmn_species_248_pokemon_despotar_icon_greyscaleTiles,
+    gfx_pkmn_species_249_pokemon_lugia_icon_greyscaleTiles,
+    gfx_pkmn_species_250_pokemon_ho_oh_icon_greyscaleTiles,
+    gfx_pkmn_species_251_pokemon_celebi_icon_greyscaleTiles,
+    gfx_pkmn_rotom_heat_icon_greyscaleTiles,
+    gfx_pkmn_rotom_wash_icon_greyscaleTiles,
+    gfx_pkmn_rotom_frost_icon_greyscaleTiles,
+    gfx_pkmn_rotom_fan_icon_greyscaleTiles,
+    gfx_pkmn_rotom_mow_icon_greyscaleTiles,
+    gfx_pkmn_species_257_pokemon_durengarda_icon_greyscaleTiles,
+    gfx_pkmn_mega_sandamer_icon_greyscaleTiles,
+    gfx_pkmn_mega_lahmus_icon_greyscaleTiles,
+    gfx_pkmn_mega_maskeregen_icon_greyscaleTiles,
+    gfx_pkmn_species_261_pokemon_ampharaosm_icon_greyscaleTiles,
+    gfx_pkmn_species_262_pokemon_banette_mega_icon_greyscaleTiles,
+    gfx_pkmn_species_263_pokemon_biborm_icon_greyscaleTiles,
+    gfx_pkmn_species_264_pokemon_altariam_icon_greyscaleTiles,
+    gfx_pkmn_species_265_pokemon_geowazm_icon_greyscaleTiles,
+    gfx_pkmn_mega_sengo_icon_greyscaleTiles,
+    gfx_pkmn_species_267_pokemon_vipitism_icon_greyscaleTiles,
+    gfx_pkmn_species_268_pokemon_zobirism_icon_greyscaleTiles,
+    gfx_pkmn_species_269_pokemon_tropius_mega_icon_greyscaleTiles,
+    gfx_pkmn_species_270_pokemon_octillery_mega_icon_greyscaleTiles,
+    gfx_pkmn_species_271_pokemon_rasaff_mega_icon_greyscaleTiles,
+    gfx_pkmn_mega_ariados_icon_greyscaleTiles,
+    gfx_pkmn_mega_firnontor_icon_greyscaleTiles,
+    gfx_pkmn_mega_jugong_icon_greyscaleTiles,
+    gfx_pkmn_mega_flunkifer_icon_greyscaleTiles,
+    gfx_pkmn_mega_palimpalim_icon_greyscaleTiles,
+    gfx_pkmn_species_277_pokemon_lockschal_icon_greyscaleTiles,
+    gfx_pkmn_species_278_pokemon_stichschal_icon_greyscaleTiles,
+    gfx_pkmn_species_279_pokemon_stahlstich_icon_greyscaleTiles,
+    gfx_pkmn_species_280_pokemon_weluno_icon_greyscaleTiles,
+    gfx_pkmn_species_281_pokemon_orthodos_icon_greyscaleTiles,
+    gfx_pkmn_species_282_pokemon_zerbertres_icon_greyscaleTiles,
+    gfx_pkmn_species_283_pokemon_seekid_icon_greyscaleTiles,
+    gfx_pkmn_species_284_pokemon_seeskull_icon_greyscaleTiles,
+    gfx_pkmn_species_285_pokemon_skullydra_icon_greyscaleTiles,
+    gfx_pkmn_species_286_pokemon_fiffyen_icon_greyscaleTiles,
+    gfx_pkmn_species_287_pokemon_magnayen_icon_greyscaleTiles,
+    gfx_pkmn_species_288_pokemon_zigzachs_icon_greyscaleTiles,
+    gfx_pkmn_species_289_pokemon_geradaks_icon_greyscaleTiles,
+    gfx_pkmn_species_290_pokemon_waumpel_icon_greyscaleTiles,
+    gfx_pkmn_species_291_pokemon_schaloko_icon_greyscaleTiles,
+    gfx_pkmn_species_292_pokemon_papinella_icon_greyscaleTiles,
+    gfx_pkmn_species_293_pokemon_panekon_icon_greyscaleTiles,
+    gfx_pkmn_species_294_pokemon_pudox_icon_greyscaleTiles,
+    gfx_pkmn_species_295_pokemon_loturzel_icon_greyscaleTiles,
+    gfx_pkmn_species_296_pokemon_lombrero_icon_greyscaleTiles,
+    gfx_pkmn_species_297_pokemon_kappalores_icon_greyscaleTiles,
+    gfx_pkmn_species_298_pokemon_samurzel_icon_greyscaleTiles,
+    gfx_pkmn_species_299_pokemon_blanas_icon_greyscaleTiles,
+    gfx_pkmn_species_300_pokemon_tengulist_icon_greyscaleTiles,
+    gfx_pkmn_species_301_pokemon_nincada_icon_greyscaleTiles,
+    gfx_pkmn_species_302_pokemon_ninjask_icon_greyscaleTiles,
+    gfx_pkmn_species_303_pokemon_ninjatom_icon_greyscaleTiles,
+    gfx_pkmn_species_304_pokemon_schwalbini_icon_greyscaleTiles,
+    gfx_pkmn_species_305_pokemon_schwalboss_icon_greyscaleTiles,
+    gfx_pkmn_species_306_pokemon_knilz_icon_greyscaleTiles,
+    gfx_pkmn_species_307_pokemon_kapilz_icon_greyscaleTiles,
+    gfx_pkmn_species_308_pokemon_pandir_icon_greyscaleTiles,
+    gfx_pkmn_species_309_pokemon_wingull_icon_greyscaleTiles,
+    gfx_pkmn_species_310_pokemon_pelipper_icon_greyscaleTiles,
+    gfx_pkmn_species_311_pokemon_gehweiher_icon_greyscaleTiles,
+    gfx_pkmn_species_312_pokemon_maskeregen_icon_greyscaleTiles,
+    gfx_pkmn_species_313_pokemon_wailmer_icon_greyscaleTiles,
+    gfx_pkmn_species_314_pokemon_wailord_icon_greyscaleTiles,
+    gfx_pkmn_species_315_pokemon_eneco_icon_greyscaleTiles,
+    gfx_pkmn_species_316_pokemon_enekoro_icon_greyscaleTiles,
+    gfx_pkmn_species_317_pokemon_kecleon_icon_greyscaleTiles,
+    gfx_pkmn_species_318_pokemon_puppance_icon_greyscaleTiles,
+    gfx_pkmn_species_319_pokemon_lepumentas_icon_greyscaleTiles,
+    gfx_pkmn_species_320_pokemon_nasgnet_icon_greyscaleTiles,
+    gfx_pkmn_species_321_pokemon_magbrant_icon_greyscaleTiles,
+    gfx_pkmn_species_322_pokemon_zwirrfinst_icon_greyscaleTiles,
+    gfx_pkmn_species_323_pokemon_schmerbe_icon_greyscaleTiles,
+    gfx_pkmn_species_324_pokemon_welsar_icon_greyscaleTiles,
+    gfx_pkmn_species_325_pokemon_rihornior_icon_greyscaleTiles,
+    gfx_pkmn_species_326_pokemon_krebscorps_icon_greyscaleTiles,
+    gfx_pkmn_species_327_pokemon_krebutack_icon_greyscaleTiles,
+    gfx_pkmn_species_328_pokemon_barschwa_icon_greyscaleTiles,
+    gfx_pkmn_species_329_pokemon_milotic_icon_greyscaleTiles,
+    gfx_pkmn_species_330_pokemon_kanivanha_icon_greyscaleTiles,
+    gfx_pkmn_species_331_pokemon_tohaido_icon_greyscaleTiles,
+    gfx_pkmn_species_332_pokemon_knacklion_icon_greyscaleTiles,
+    gfx_pkmn_species_333_pokemon_vibrava_icon_greyscaleTiles,
+    gfx_pkmn_species_334_pokemon_libelldra_icon_greyscaleTiles,
+    gfx_pkmn_species_335_pokemon_riolu_icon_greyscaleTiles,
+    gfx_pkmn_species_336_pokemon_lucario_icon_greyscaleTiles,
+    gfx_pkmn_species_337_pokemon_frizelbliz_icon_greyscaleTiles,
+    gfx_pkmn_species_338_pokemon_voltenso_icon_greyscaleTiles,
+    gfx_pkmn_species_339_pokemon_camaub_icon_greyscaleTiles,
+    gfx_pkmn_species_340_pokemon_camerupt_icon_greyscaleTiles,
+    gfx_pkmn_species_341_pokemon_seemops_icon_greyscaleTiles,
+    gfx_pkmn_species_342_pokemon_seejong_icon_greyscaleTiles,
+    gfx_pkmn_species_343_pokemon_walraisa_icon_greyscaleTiles,
+    gfx_pkmn_species_344_pokemon_tuska_icon_greyscaleTiles,
+    gfx_pkmn_species_345_pokemon_noktuska_icon_greyscaleTiles,
+    gfx_pkmn_species_346_pokemon_schneppke_icon_greyscaleTiles,
+    gfx_pkmn_species_347_pokemon_firnontor_icon_greyscaleTiles,
+    gfx_pkmn_species_348_pokemon_lunastein_icon_greyscaleTiles,
+    gfx_pkmn_species_349_pokemon_sonnfel_icon_greyscaleTiles,
+    gfx_pkmn_species_350_pokemon_azurill_icon_greyscaleTiles,
+    gfx_pkmn_species_351_pokemon_spoink_icon_greyscaleTiles,
+    gfx_pkmn_species_352_pokemon_groink_icon_greyscaleTiles,
+    gfx_pkmn_pichu_icon_greyscaleTiles,
+    gfx_pkmn_rotom_icon_greyscaleTiles,
+    gfx_pkmn_species_355_pokemon_flunkifer_icon_greyscaleTiles,
+    gfx_pkmn_species_356_pokemon_meditie_icon_greyscaleTiles,
+    gfx_pkmn_species_357_pokemon_meditalis_icon_greyscaleTiles,
+    gfx_pkmn_species_358_pokemon_wablu_icon_greyscaleTiles,
+    gfx_pkmn_species_359_pokemon_altaria_icon_greyscaleTiles,
+    gfx_pkmn_species_360_pokemon_klingplim_icon_greyscaleTiles,
+    gfx_pkmn_species_361_pokemon_zwirrlicht_icon_greyscaleTiles,
+    gfx_pkmn_species_362_pokemon_zwirrklop_icon_greyscaleTiles,
+    gfx_pkmn_species_363_pokemon_porygon_z_icon_greyscaleTiles,
+    gfx_pkmn_species_364_pokemon_bummelz_icon_greyscaleTiles,
+    gfx_pkmn_species_365_pokemon_muntier_icon_greyscaleTiles,
+    gfx_pkmn_species_366_pokemon_letarking_icon_greyscaleTiles,
+    gfx_pkmn_molunk_icon_greyscaleTiles,
+    gfx_pkmn_amfira_icon_greyscaleTiles,
+    gfx_pkmn_species_369_pokemon_tropius_icon_greyscaleTiles,
+    gfx_pkmn_species_370_pokemon_kaumalat_icon_greyscaleTiles,
+    gfx_pkmn_species_371_pokemon_knarksel_icon_greyscaleTiles,
+    gfx_pkmn_species_372_pokemon_knakrack_icon_greyscaleTiles,
+    gfx_pkmn_species_373_pokemon_perlu_icon_greyscaleTiles,
+    gfx_pkmn_species_374_pokemon_aalabyss_icon_greyscaleTiles,
+    gfx_pkmn_species_375_pokemon_saganabyss_icon_greyscaleTiles,
+    gfx_pkmn_species_376_pokemon_absol_icon_greyscaleTiles,
+    gfx_pkmn_species_377_pokemon_shuppet_icon_greyscaleTiles,
+    gfx_pkmn_species_378_pokemon_banette_icon_greyscaleTiles,
+    gfx_pkmn_species_379_pokemon_vipitis_icon_greyscaleTiles,
+    gfx_pkmn_species_380_pokemon_sengo_icon_greyscaleTiles,
+    gfx_pkmn_species_381_pokemon_relicanth_icon_greyscaleTiles,
+    gfx_pkmn_species_382_pokemon_stollunior_icon_greyscaleTiles,
+    gfx_pkmn_species_383_pokemon_stollrak_icon_greyscaleTiles,
+    gfx_pkmn_species_384_pokemon_stolloss_icon_greyscaleTiles,
+    gfx_pkmn_species_385_pokemon_formeo_icon_greyscaleTiles,
+    gfx_pkmn_species_386_pokemon_wonneira_icon_greyscaleTiles,
+    gfx_pkmn_species_387_pokemon_mobai_icon_greyscaleTiles,
+    gfx_pkmn_species_388_pokemon_liliep_icon_greyscaleTiles,
+    gfx_pkmn_species_389_pokemon_wielie_icon_greyscaleTiles,
+    gfx_pkmn_species_390_pokemon_anorith_icon_greyscaleTiles,
+    gfx_pkmn_species_391_pokemon_armaldo_icon_greyscaleTiles,
+    gfx_pkmn_species_392_pokemon_trasla_icon_greyscaleTiles,
+    gfx_pkmn_species_393_pokemon_kirlia_icon_greyscaleTiles,
+    gfx_pkmn_species_394_pokemon_guardevoir_icon_greyscaleTiles,
+    gfx_pkmn_species_395_pokemon_kindwurm_icon_greyscaleTiles,
+    gfx_pkmn_species_396_pokemon_draschel_icon_greyscaleTiles,
+    gfx_pkmn_species_397_pokemon_brutalanda_icon_greyscaleTiles,
+    gfx_pkmn_species_398_pokemon_tanhel_icon_greyscaleTiles,
+    gfx_pkmn_species_399_pokemon_metang_icon_greyscaleTiles,
+    gfx_pkmn_species_400_pokemon_metagross_icon_greyscaleTiles,
+    gfx_pkmn_species_401_pokemon_regirock_icon_greyscaleTiles,
+    gfx_pkmn_species_402_pokemon_regice_icon_greyscaleTiles,
+    gfx_pkmn_species_403_pokemon_registeel_icon_greyscaleTiles,
+    gfx_pkmn_species_404_pokemon_kyogre_icon_greyscaleTiles,
+    gfx_pkmn_species_405_pokemon_groudon_icon_greyscaleTiles,
+    gfx_pkmn_species_406_pokemon_rayquaza_icon_greyscaleTiles,
+    gfx_pkmn_species_407_pokemon_latias_icon_greyscaleTiles,
+    gfx_pkmn_species_408_pokemon_latios_icon_greyscaleTiles,
+    gfx_pkmn_species_409_pokemon_jirachi_icon_greyscaleTiles,
+    gfx_pkmn_species_410_pokemon_deoxys_icon_greyscaleTiles,
+    gfx_pkmn_species_411_pokemon_palimpalim_icon_greyscaleTiles,
+    gfx_pkmn_species_412_pokemon_egg_icon_greyscaleTiles,
+    gfx_pkmn_species_413_pokemon_icognito_b_icon_greyscaleTiles,
+    gfx_pkmn_species_414_pokemon_icognito_c_icon_greyscaleTiles,
+    gfx_pkmn_species_415_pokemon_icognito_d_icon_greyscaleTiles,
+    gfx_pkmn_species_416_pokemon_icognito_e_icon_greyscaleTiles,
+    gfx_pkmn_species_417_pokemon_icognito_f_icon_greyscaleTiles,
+    gfx_pkmn_species_418_pokemon_icognito_g_icon_greyscaleTiles,
+    gfx_pkmn_species_419_pokemon_icognito_h_icon_greyscaleTiles,
+    gfx_pkmn_species_420_pokemon_icognito_i_icon_greyscaleTiles,
+    gfx_pkmn_species_421_pokemon_icognito_j_icon_greyscaleTiles,
+    gfx_pkmn_species_422_pokemon_icognito_k_icon_greyscaleTiles,
+    gfx_pkmn_species_423_pokemon_icognito_l_icon_greyscaleTiles,
+    gfx_pkmn_species_424_pokemon_icognito_m_icon_greyscaleTiles,
+    gfx_pkmn_species_425_pokemon_icognito_n_icon_greyscaleTiles,
+    gfx_pkmn_species_426_pokemon_icognito_o_icon_greyscaleTiles,
+    gfx_pkmn_species_427_pokemon_icognito_p_icon_greyscaleTiles,
+    gfx_pkmn_species_428_pokemon_icognito_q_icon_greyscaleTiles,
+    gfx_pkmn_species_429_pokemon_icognito_r_icon_greyscaleTiles,
+    gfx_pkmn_species_430_pokemon_icognito_s_icon_greyscaleTiles,
+    gfx_pkmn_species_431_pokemon_icognito_t_icon_greyscaleTiles,
+    gfx_pkmn_species_432_pokemon_icognito_u_icon_greyscaleTiles,
+    gfx_pkmn_species_433_pokemon_icognito_v_icon_greyscaleTiles,
+    gfx_pkmn_species_434_pokemon_icognito_w_icon_greyscaleTiles,
+    gfx_pkmn_species_435_pokemon_icognito_x_icon_greyscaleTiles,
+    gfx_pkmn_species_436_pokemon_icognito_y_icon_greyscaleTiles,
+    gfx_pkmn_species_437_pokemon_icognito_z_icon_greyscaleTiles,
+    gfx_pkmn_species_438_pokemon_icognito_exclamation_icon_greyscaleTiles,
+    gfx_pkmn_species_439_pokemon_icognito_question_icon_greyscaleTiles,
+    gfx_pkmn_species_440_pokemon_groudon_e_icon_greyscaleTiles,
+    gfx_pkmn_species_441_pokemon_kecleon_p_icon_greyscaleTiles,
+    gfx_pkmn_crystal_onix_icon_greyscaleTiles,
+};

@@ -22,6 +22,8 @@
         #define POKEDEX_SCANNER_LIST_Y 8
         #define POKEDEX_SCANNER_LIST_LINE_WIDTH 18
 
+        #define START_MENU_SCANNER_ICONS_PER_LINE 8
+
         enum {
                 POKEDEX_SCANNER_HABITAT_GRASS = 0,
                 POKEDEX_SCANNER_HABITAT_WATER,
@@ -71,6 +73,9 @@
         #define POKEDEX_SCANNER_MAX_NUM_ENTIRES_ROD (WILD_POKEMON_NUM_ENTRIES_ROD + WILD_POKEMON_NUM_ENTRIES_GOOD_ROD + \
                         WILD_POKEMON_NUM_ENTRIES_SUPER_ROD + POKEDEX_SCANNER_NUM_DELIMITERS)
 
+        #define POKEDEX_SCANNER_MAX_NUM_UNIQUE_SPECIES (WILD_POKEMON_NUM_ENTRIES_GRASS + WILD_POKEMON_NUM_ENTRIES_WATER + WILD_POKEMON_NUM_ENTRIES_OTHER + WILD_POKEMON_NUM_ENTRIES_ROD + WILD_POKEMON_NUM_ENTRIES_GOOD_ROD + \
+                        WILD_POKEMON_NUM_ENTRIES_SUPER_ROD + NUM_ROAMERS)
+
         typedef struct {
                 u16 species;
                 u8 percentage;
@@ -88,8 +93,7 @@
         } pokedex_scanner_data_t;
 
         typedef struct {
-                u16 list[WILD_POKEMON_NUM_ENTRIES_GRASS + WILD_POKEMON_NUM_ENTRIES_WATER + WILD_POKEMON_NUM_ENTRIES_OTHER + WILD_POKEMON_NUM_ENTRIES_ROD + WILD_POKEMON_NUM_ENTRIES_GOOD_ROD + \
-                        WILD_POKEMON_NUM_ENTRIES_SUPER_ROD + NUM_ROAMERS];
+                u16 list[POKEDEX_SCANNER_MAX_NUM_UNIQUE_SPECIES];
                 size_t size;
         } pokedex_scanner_unique_species_list_t;
 
@@ -133,7 +137,14 @@
          **/
         void start_menu_print_scanner();
 
+        /**
+         * Clears the scanner icons
+         **/
+        void start_menu_clear_scanner();
+
         extern EWRAM pokedex_scanner_state_t *pokedex_scanner_state;
+        extern EWRAM u8 start_menu_scanner_oam_idxs[POKEDEX_SCANNER_MAX_NUM_UNIQUE_SPECIES];
+        extern EWRAM u8 start_menu_scanner_num_oams;
 
         /**
          * Callback to initialize the pokedex scanner UI.
