@@ -224,7 +224,7 @@ static void pokedex_callback_return(u8 self) {
 static void pokedex_callback_scanner(u8 self) {
     if (fading_control.active || dma3_busy(-1))
         return;
-    callback1_set(pokedex_callback_init_feature_scanner);
+    callback1_set(pokedex_callback_initialize_feature_scanner);
     pokedex_free_all_except_state();
     big_callback_delete(self);
 }
@@ -268,6 +268,9 @@ static void pokedex_handle_inputs(u8 self) {
     }
 }
 
+static const u8 str_seen[] = LANGDEP(PSTRING("Ges."), PSTRING("Seen"));
+static const u8 str_caught[] = LANGDEP(PSTRING("Gef."), PSTRING("Caught"));
+
 void pokedex_callback_initialize_state_machine() {
     pokedex_cb1();
     if (fading_control.active || dma3_busy(-1))
@@ -291,7 +294,7 @@ void pokedex_callback_initialize_state_machine() {
             dma0_reset_callback();
             reset_hblank_and_vblank_callbacks();
             pokedex_state->initialization_state++;
-            break;
+            FALL_THROUGH;
         case POKEDEX_SETUP_STATE_SETUP_BGS:
             bg_reset(0);
             bg_setup(0, pokedex_bg_main_configs, ARRAY_COUNT(pokedex_bg_main_configs));
@@ -306,7 +309,7 @@ void pokedex_callback_initialize_state_machine() {
             io_set(IO_DISPCNT, IO_DISPCNT_OAM_CHARACTER_MAPPING_ONE_DIMENSIONAL | IO_DISPCNT_OBJ | IO_DISPCNT_WIN0);
             io_set(IO_BLDCNT, IO_BLDCNT_NONE);
             pokedex_state->initialization_state++;
-            break;
+            FALL_THROUGH;
         case POKEDEX_SETUP_STATE_SETUP_TBOXES: {
             tbox_free_all();
             tbox_sync_with_virtual_bg_and_init_all(pokedex_tboxes);
@@ -315,8 +318,6 @@ void pokedex_callback_initialize_state_machine() {
             u16 caught = pokedex_get_number_seen_or_caught(true);
             tbox_flush_set(POKEDEX_TBOX_STATS, 0x00);
             tbox_tilemap_draw(POKEDEX_TBOX_STATS);
-            u8 str_seen[] = LANGDEP(PSTRING("Ges."), PSTRING("Seen"));
-            u8 str_caught[] = LANGDEP(PSTRING("Gef."), PSTRING("Caught"));
             tbox_print_string(POKEDEX_TBOX_STATS, 2, 4, 0, 0, 0, &pokedex_fontcolmap, 0xFF, str_seen);
             tbox_print_string(POKEDEX_TBOX_STATS, 2, 4, 16, 0, 0, &pokedex_fontcolmap, 0xFF, str_caught);
             itoa(strbuf, seen, ITOA_PAD_SPACES, 3);
@@ -368,7 +369,7 @@ void pokedex_callback_initialize_state_machine() {
             pokedex_state->pal_idx_pokemon = oam_allocate_palette(POKEDEX_UI_POKEMON_TAG);
             pokedex_state->oam_idx_pokemon = oam_new_backward_search(&pokedex_pokemon_template, 34, 72, 0);
             pokedex_state->initialization_state++;
-            break;
+            FALL_THROUGH;
         }
         case POKEDEX_SETUP_STATE_UPDATE_LIST:
             pokedex_update_list(pokedex_state->list_is_scrolling_down);

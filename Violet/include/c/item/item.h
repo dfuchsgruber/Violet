@@ -74,7 +74,7 @@ void item_strcpy(u16 item_idx, u8 *dst);
  * @param item_idx the item to get the name of
  * @return offset of the item's name
  **/
-u8 *item_get_name(u16 item_idx);
+const u8 *item_get_name(u16 item_idx);
 
 /**
  * Returns the holding effect parameter of an item.

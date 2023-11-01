@@ -77,6 +77,9 @@ extern const void *const pokemon_icons[POKEMON_CNT];
 extern const pokemon_coordinate_t pokemon_player_y[POKEMON_CNT];
 extern const pokemon_coordinate_t pokemon_enemy_y[POKEMON_CNT];
 extern const u8 pokemon_altitude[POKEMON_CNT];
-extern const u16 icon_pals[3][16];
+
+#define POKEMON_NUM_ICON_PALS 3
+
+extern const u16 icon_pals[POKEMON_NUM_ICON_PALS][16];
 
 #endif /* INCLUDE_C_POKEMON_SPRITES_H_ */

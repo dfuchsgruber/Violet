@@ -48,14 +48,10 @@ typedef struct {
     void (*continuation)(u8) __attribute__ ((aligned (4)));
 } pokedex_sorting_state_t;
 
-#define POKEDEX_TBOX_FEATURE_0 6
-#define POKEDEX_TBOX_FEATURE_1 7
-#define POKEDEX_TBOX_FEATURE_2 8
 
 enum {
     POKEDEX_CURSOR_GFX_TAG = 0xA013,
-    POKEDEX_SCANNER_ICON_BASE_TAG = 0xDDE0,
-    POKEDEX_UI_POKEMON_TAG = 0xDDF0,
+    POKEDEX_UI_POKEMON_TAG,
 };
 
 extern const tbox_font_colormap pokedex_fontcolmap;
