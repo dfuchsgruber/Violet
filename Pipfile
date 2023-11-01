@@ -8,7 +8,8 @@ name = "pypi"
 "html5lib" = "*"
 requests = "*"
 pyaml = "*"
-pyagb = {ref = "866bd9ec2e03e53daa82460f6e5222b115c9cd7f", git = "git+https://github.com/dfuchsgruber/pyagb.git"}
+pyagb = {ref = "153d282646f90b91ec079bb8151e3f662bf73baa", git = "git+https://github.com/dfuchsgruber/pyagb.git"}
+tqdm = "*"
 
 [dev-packages]
 ipykernel = "*"

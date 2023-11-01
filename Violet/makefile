@@ -106,7 +106,7 @@ CONSTANTSHC=$(CONSTANTS:%.const=include/c/%.h)
 OPENPAREN := (
 CLOSEPAREN := )
 
-include pokeapi/makefile tools/fata_morgana/makefile tools/index/makefile tools/cloud_maps/makefile tools/worldmap/makefile tools/berry_adjacency/makefile tools/treasure_map/makefile
+include pokeapi/makefile tools/fata_morgana/makefile tools/index/makefile tools/cloud_maps/makefile tools/worldmap/makefile tools/berry_adjacency/makefile tools/treasure_map/makefile tools/images_to_palette/makefile
 
 find_up=$(shell \
 	file="$(basename $(1))$(2)"; \
@@ -228,9 +228,9 @@ $(BLDPATH)/$(basename $(MAPPROJ)).o: $(MAPPROJ)
 $(BLDPATH)/midi.ld: $(MIDOBJS) $(BASESYMBOLS)
 	$(call build_list,$(BLDPATH)/midi.ld,$(MIDOBJS))
 
-$(BLDPATH)/asset.ld: $(GFXOBJS) $(CRYOBJS) $(SAMPLEOBJS) $(WAVOBJS) $(BASESYMBOLS)
+$(BLDPATH)/asset.ld: $(GFXOBJS) $(CRYOBJS) $(SAMPLEOBJS) $(WAVOBJS) $(POKEMON_ICON_GREYSCALE_OBJ) $(BASESYMBOLS)
 #	Create a ld script
-	$(call build_list,$(BLDPATH)/asset.ld,$(GFXOBJS) $(CRYOBJS) $(SAMPLEOBJS) $(WAVOBJS))
+	$(call build_list,$(BLDPATH)/asset.ld,$(GFXOBJS) $(CRYOBJS) $(SAMPLEOBJS) $(WAVOBJS) $(POKEMON_ICON_GREYSCALE_OBJ))
 	
 $(BLDPATH)/map.ld: $(PYAGBOBJS) $(BLDPATH)/$(basename $(MAPPROJ)).o $(BASESYMBOLS)
 #	Create a ld script

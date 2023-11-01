@@ -14,6 +14,7 @@
 #include "pokemon/roamer.h"
 #include "pokemon/sprites.h"
 #include "bg.h"
+#include "map/wild_pokemon.h"
 
         #define POKEDEX_SCANNER_MAX_NUM_DISPLAYED 7
         // x, y are relative to the list tbox
@@ -78,13 +79,23 @@
 
         #define POKEDEX_SCANNER_NUM_BGS 2
 
-	typedef struct {
-                u8 initialization_state;
+        typedef struct {
                 size_t num_entries[POKEDEX_SCANNER_NUM_HABITATS];
                 pokedex_scanner_entry_t entries_grass[WILD_POKEMON_NUM_ENTRIES_GRASS + NUM_ROAMERS];
                 pokedex_scanner_entry_t entries_water[WILD_POKEMON_NUM_ENTRIES_WATER + NUM_ROAMERS];
                 pokedex_scanner_entry_t entries_other[WILD_POKEMON_NUM_ENTRIES_OTHER];
                 pokedex_scanner_entry_t entries_rods[POKEDEX_SCANNER_MAX_NUM_ENTIRES_ROD];
+        } pokedex_scanner_data_t;
+
+        typedef struct {
+                u16 list[WILD_POKEMON_NUM_ENTRIES_GRASS + WILD_POKEMON_NUM_ENTRIES_WATER + WILD_POKEMON_NUM_ENTRIES_OTHER + WILD_POKEMON_NUM_ENTRIES_ROD + WILD_POKEMON_NUM_ENTRIES_GOOD_ROD + \
+                        WILD_POKEMON_NUM_ENTRIES_SUPER_ROD + NUM_ROAMERS];
+                size_t size;
+        } pokedex_scanner_unique_species_list_t;
+
+	typedef struct {
+                u8 initialization_state;
+                pokedex_scanner_data_t data;
                 bg_tile (*bg_maps[2])[32];
                 u8 oams[POKEDEX_SCANNER_MAX_NUM_DISPLAYED];
                 u8 oams_icons_caught[POKEDEX_SCANNER_MAX_NUM_DISPLAYED];
@@ -100,6 +111,27 @@
                 u8 habitat;
                 u8 oam_idx_habitat_cursor;
         } pokedex_scanner_state_t;
+        
+        /**
+         * Builds a list of unique species from the given data.
+         * @param dst The destination list.
+         * @param state The data to build the list from.
+        */
+        void pokedex_scanner_build_unique_species(pokedex_scanner_unique_species_list_t *dst, 
+                pokedex_scanner_data_t *state);
+
+        /**
+         * Builds the scanner data from the given wild pokemon data.
+         * @param dst The destination data.
+         * @param wild_pokemon The wild pokemon data to build the scanner data from.
+        */
+        void pokedex_feature_scanner_build_all_entries(pokedex_scanner_data_t *dst, 
+                const wild_pokemon_data *wild_pokemon);
+
+        /**
+         * Prints icons of the available pokemon on opening the START menu
+         **/
+        void start_menu_print_scanner();
 
         extern EWRAM pokedex_scanner_state_t *pokedex_scanner_state;
 

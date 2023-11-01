@@ -13,7 +13,7 @@
 #include "superstate.h"
 #include "language.h"
 #include "gp_menu.h"
-
+#include "pokepad/pokedex/scanner.h"
 
 static const tboxdata start_menu_clock_tboxdata = {
     .bg_id = 0, .x = 1, .y = 1, .w = 6, .h = 4, .pal = 14, .start_tile = 8 
@@ -59,28 +59,31 @@ static void start_menu_clock_callback(u8 self) {
 
 bool start_menu_initilize() {
     switch (start_menu_state.initialization_state) {
-        case 1:
+        case START_MENU_STEUP_STATE_BUILD:
             start_menu_build();
             break;
-        case 2: {
+        case START_MENU_SETUP_STATE_LOAD_GFX: {
             tbox_load_message_gfx_and_pal();
             u8 box_idx = start_menu_tbox_initialize(start_menu_state.number_items);
             tbox_print_std_frame(box_idx, false);
             break;
         }
-        case 3:
+        case START_MENU_SETUP_STATE_PRINT_SAFARI_OR_CLOCK:
             if (safari_is_active()) {
                 start_menu_print_safari_balls();
-            } else if (!mapheader_virtual.flash_type) {
+            } else if (true) {
                 start_menu_print_clock();
             }
             break;
-        case 4:
+        case START_MENU_SETUP_SCANNER:
+            start_menu_print_scanner();
+            break;
+        case START_MENU_SETUP_STATE_PRINT_ITEMS:
             if (!start_menu_draw_items(&(start_menu_state.number_items_printed), 2)) {
                 return false;
             }
             break;
-        case 5: {
+        case START_MENU_SETUP_STATE_SETUP_LIST: {
             u8 box_idx = start_menu_get_tbox_idx();
             start_menu_state.cursor = gp_menu_initialize_with_unmuted_a_press(box_idx, 2, 0, 0, 15, 
                 start_menu_state.number_items, start_menu_state.cursor);
@@ -98,7 +101,7 @@ bool start_menu_initilize() {
 }
 
 void start_menu_clear_additional_box() {
-    if (!safari_is_active() && !mapheader_virtual.flash_type) {
+    if (!safari_is_active()) {
         u8 idx = big_callback_get_id(start_menu_clock_callback);
         if (idx != 0xFF) big_callback_delete(idx);
         tbox_flush_all(start_menu_state.safari_tbox_idx, 0);

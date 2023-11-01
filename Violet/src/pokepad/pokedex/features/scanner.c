@@ -84,19 +84,19 @@ static size_t pokedex_feature_scanner_build_entries(const wild_pokemon_entry *wi
     return num_entries;
 }
 
-static void pokedex_feature_scanner_entries_add_roamers() {
+static void pokedex_feature_scanner_entries_add_roamers(pokedex_scanner_data_t *state) {
     for (int i = 0; i < NUM_ROAMERS; i++) {
         if (csave.roamers[i].is_present && csave.roamer_locations[i].bank == save1->bank && csave.roamer_locations[i].map_idx == save1->map) {
             // 50% probability that the roamer appears, so all percentages must be multiplied by 1/2
             // If multiple roamers were present at this map, only the first roamer appears, so we only list one
             int total_percentage_values = 0;
-            for (size_t j = 0; j < pokedex_scanner_state->num_entries[POKEDEX_SCANNER_HABITAT_GRASS]; j++) {
-                pokedex_scanner_state->entries_grass[j].percentage = (u16)(MAX(1, pokedex_scanner_state->entries_grass[j].percentage / 2));
-                total_percentage_values += pokedex_scanner_state->entries_grass[j].percentage;
+            for (size_t j = 0; j < state->num_entries[POKEDEX_SCANNER_HABITAT_GRASS]; j++) {
+                state->entries_grass[j].percentage = (u16)(MAX(1, state->entries_grass[j].percentage / 2));
+                total_percentage_values += state->entries_grass[j].percentage;
             }
-            pokedex_scanner_state->entries_grass[pokedex_scanner_state->num_entries[POKEDEX_SCANNER_HABITAT_GRASS]].species = roamer_species[i];
-            pokedex_scanner_state->entries_grass[pokedex_scanner_state->num_entries[POKEDEX_SCANNER_HABITAT_GRASS]].percentage = (u8)(100 - total_percentage_values); // Make probabilities sum up to 100 in case of rounding issues
-            pokedex_scanner_state->num_entries[POKEDEX_SCANNER_HABITAT_GRASS]++;
+            state->entries_grass[state->num_entries[POKEDEX_SCANNER_HABITAT_GRASS]].species = roamer_species[i];
+            state->entries_grass[state->num_entries[POKEDEX_SCANNER_HABITAT_GRASS]].percentage = (u8)(100 - total_percentage_values); // Make probabilities sum up to 100 in case of rounding issues
+            state->num_entries[POKEDEX_SCANNER_HABITAT_GRASS]++;
         }
     }
 }
@@ -111,11 +111,10 @@ static inline size_t pokedex_feature_scanner_add_entries_from_wild_pokemon_data(
     return num_entries;
 }
 
-static void pokedex_feature_scanner_build_all_entries(pokedex_scanner_state_t *state){
-    const wild_pokemon_data *wild_pokemon_header = map_wild_pokemon_get_current();
+void pokedex_feature_scanner_build_all_entries(pokedex_scanner_data_t *state, const wild_pokemon_data *wild_pokemon_header){
+    memset(state, 0, sizeof(pokedex_scanner_data_t));
     if(!wild_pokemon_header) 
         return;
-
     if (wild_pokemon_header->grass)
         state->num_entries[POKEDEX_SCANNER_HABITAT_GRASS] = pokedex_feature_scanner_add_entries_from_wild_pokemon_data(
                 wild_pokemon_header->grass->data, state->entries_grass, WILD_POKEMON_NUM_ENTRIES_GRASS, wild_pokemon_grass_pdf);
@@ -152,7 +151,7 @@ static void pokedex_feature_scanner_build_all_entries(pokedex_scanner_state_t *s
                 wild_pokemon_header->rod->data + WILD_POKEMON_NUM_ENTRIES_ROD + WILD_POKEMON_NUM_ENTRIES_GOOD_ROD, state->entries_rods + num_entries_rod, WILD_POKEMON_NUM_ENTRIES_SUPER_ROD, wild_pokemon_super_rod_pdf);
         state->num_entries[POKEDEX_SCANNER_HABITAT_ROD] = num_entries_rod;
     }
-    pokedex_feature_scanner_entries_add_roamers();
+    pokedex_feature_scanner_entries_add_roamers(state);
 }
     
 static const graphic graphics_icons[POKEDEX_SCANNER_NUM_HABITATS] = {
@@ -392,16 +391,16 @@ static u16 rod_delimiter_to_item_idx[POKEDEX_SCANNER_NUM_DELIMITERS] = {
     [POKEDEX_SCANNER_DELIMITER_SUPER_ROD] = ITEM_SUPERANGEL,
 };
 
-static pokedex_scanner_entry_t *pokedex_scanner_get_entries(u8 habitat) {
+static pokedex_scanner_entry_t *pokedex_scanner_get_entries(u8 habitat, pokedex_scanner_data_t *state) {
     switch (habitat) {
         case POKEDEX_SCANNER_HABITAT_GRASS:
-            return pokedex_scanner_state->entries_grass;
+            return state->entries_grass;
         case POKEDEX_SCANNER_HABITAT_WATER:
-            return pokedex_scanner_state->entries_water;
+            return state->entries_water;
         case POKEDEX_SCANNER_HABITAT_OTHER:
-            return pokedex_scanner_state->entries_other;
+            return state->entries_other;
         case POKEDEX_SCANNER_HABITAT_ROD:
-            return pokedex_scanner_state->entries_rods;
+            return state->entries_rods;
         default:
             return NULL;
     }
@@ -423,10 +422,10 @@ static const u8 str_pokedex_scanner_none_found[] = LANGDEP(
 void pokedex_scanner_redraw_list(bool scrolling_down) {
 
     u16 cursor = pokedex_scanner_state->cursor_positions[pokedex_scanner_state->habitat];
-    pokedex_scanner_entry_t *list = pokedex_scanner_get_entries(pokedex_scanner_state->habitat);
+    pokedex_scanner_entry_t *list = pokedex_scanner_get_entries(pokedex_scanner_state->habitat, &pokedex_scanner_state->data);
     // DEBUG("Habitat %d, list at 0x%x\n", pokedex_scanner_state->habitat, list);
     int first_idx = 0;
-    int last_idx = (int)(pokedex_scanner_state->num_entries[pokedex_scanner_state->habitat]) - 1;
+    int last_idx = (int)(pokedex_scanner_state->data.num_entries[pokedex_scanner_state->habitat]) - 1;
     tbox_flush_set(POKEDEX_SCANNER_TBOX_LIST, 0x00);
     // Make all icon oams invisible
     for (int i = 0; i < POKEDEX_SCANNER_MAX_NUM_DISPLAYED; i++) {
@@ -537,18 +536,18 @@ static void pokedex_scanner_cb1() {
 
 static bool pokedex_scanner_try_list_scroll(int offset) {
     int first, last;
-    for (first = 0; first < (int)pokedex_scanner_state->num_entries[pokedex_scanner_state->habitat]; first++) {
-        if (!pokedex_scanner_get_entries(pokedex_scanner_state->habitat)[first].is_delimiter)
+    for (first = 0; first < (int)pokedex_scanner_state->data.num_entries[pokedex_scanner_state->habitat]; first++) {
+        if (!pokedex_scanner_get_entries(pokedex_scanner_state->habitat, &pokedex_scanner_state->data)[first].is_delimiter)
             break;
     }
-    for (last = (int)pokedex_scanner_state->num_entries[pokedex_scanner_state->habitat] - 1; last > first; last--) {
-        if (!pokedex_scanner_get_entries(pokedex_scanner_state->habitat)[last].is_delimiter)
+    for (last = (int)pokedex_scanner_state->data.num_entries[pokedex_scanner_state->habitat] - 1; last > first; last--) {
+        if (!pokedex_scanner_get_entries(pokedex_scanner_state->habitat, &pokedex_scanner_state->data)[last].is_delimiter)
             break;
     }
     int cursor_new = pokedex_scanner_state->cursor_positions[pokedex_scanner_state->habitat];
     while (cursor_new >= first && cursor_new <= last) {
         cursor_new += offset;
-        if (!pokedex_scanner_get_entries(pokedex_scanner_state->habitat)[cursor_new].is_delimiter)
+        if (!pokedex_scanner_get_entries(pokedex_scanner_state->habitat, &pokedex_scanner_state->data)[cursor_new].is_delimiter)
             break;
     }
     if (cursor_new < first || cursor_new > last)
@@ -580,7 +579,7 @@ static void pokedex_scanner_scroll_indicator_callback(u8 self) {
     } else {
        oams[state->arrow0_oam_idx].flags |= OAM_FLAG_INVISIBLE;
     }
-    if (pokedex_scanner_state->last_idx_displayed < (int)pokedex_scanner_state->num_entries[pokedex_scanner_state->habitat] - 1) {
+    if (pokedex_scanner_state->last_idx_displayed < (int)pokedex_scanner_state->data.num_entries[pokedex_scanner_state->habitat] - 1) {
         oams[state->arrow1_oam_idx].flags &= (u16)(~OAM_FLAG_INVISIBLE);
     } else {
        oams[state->arrow1_oam_idx].flags |= OAM_FLAG_INVISIBLE;
@@ -592,7 +591,7 @@ static void pokedex_scanner_scroll_indicators_new() {
     u8 x = (u8)(8 * pokedex_feature_scanner_tboxes[POKEDEX_SCANNER_TBOX_LIST].x + (pokedex_feature_scanner_tboxes[POKEDEX_SCANNER_TBOX_LIST].w * 8 / 2));
     scroll_indicator_template scroll_indicator_template = {
                 .arrow0_threshold = 0, 
-                .arrow1_threshold = (u16)pokedex_scanner_state->num_entries[pokedex_scanner_state->habitat], 
+                .arrow1_threshold = (u16)pokedex_scanner_state->data.num_entries[pokedex_scanner_state->habitat], 
                 .arrow0_type = SCROLL_ARROW_UP, .arrow1_type = SCROLL_ARROW_DOWN,
                 .arrow0_x = x, .arrow1_x = x,
                 .arrow0_y = 28, .arrow1_y = 152,
@@ -652,48 +651,49 @@ static const u8 str_seen[] = LANGDEP(PSTRING("Ges."), PSTRING("Seen"));
 static const u8 str_caught[] = LANGDEP(PSTRING("Gef."), PSTRING("Caught"));
 static const u8 str_num_unique_count[] = PSTRING("BUFFER_2SKIP\x01/SKIP\x01BUFFER_1");
 
-static inline void pokedex_scanner_print_caught_and_total_counts() {
-    size_t max_size = 0;
-    for (u8 habitat = 0; habitat < POKEDEX_SCANNER_NUM_HABITATS; habitat++)
-        max_size += pokedex_scanner_state->num_entries[habitat];
-
-    size_t num_unique_species = 0;
-    u16 *unique_species = malloc(sizeof(u16) * max_size);
+void pokedex_scanner_build_unique_species(pokedex_scanner_unique_species_list_t *dst, 
+    pokedex_scanner_data_t *state) {
+    dst->size = 0;
     for (u8 habitat = 0; habitat < POKEDEX_SCANNER_NUM_HABITATS; habitat++) {
-        pokedex_scanner_entry_t *entries = pokedex_scanner_get_entries(habitat);
+        pokedex_scanner_entry_t *entries = pokedex_scanner_get_entries(habitat, state);
         if (entries) {
-            for (u16 i = 0; i < pokedex_scanner_state->num_entries[habitat]; i++) {
+            for (u16 i = 0; i < state->num_entries[habitat]; i++) {
                 if (!entries[i].is_delimiter && entries[i].species) {
                     // Add the species of the entry to unique species if is not present already
                     bool found = false;
-                    for (u16 j = 0; j < num_unique_species; j++) {
-                        if (unique_species[j] == entries[i].species) {
+                    for (u16 j = 0; j < dst->size; j++) {
+                        if (dst->list[j] == entries[i].species) {
                             found = true;
                             break;
                         }
                     }
                     if (!found) {
-                        unique_species[num_unique_species++] = entries[i].species;
+                        dst->list[dst->size++] = entries[i].species;
                     }
                 }
             }
         }
     }
+}
+
+static inline void pokedex_scanner_print_caught_and_total_counts() {
+    pokedex_scanner_unique_species_list_t *list = malloc(sizeof(pokedex_scanner_unique_species_list_t));
+    pokedex_scanner_build_unique_species(list, &pokedex_scanner_state->data);
     size_t num_unique_species_caught = 0, num_unique_species_seen = 0;
-    for (u16 i = 0; i < num_unique_species; i++) {
-        if (pokedex_operator(unique_species[i], POKEDEX_GET | POKEDEX_CAUGHT, true))
+    for (u16 i = 0; i < list->size; i++) {
+        if (pokedex_operator(list->list[i], POKEDEX_GET | POKEDEX_CAUGHT, true))
             num_unique_species_caught++;
-        if (pokedex_operator(unique_species[i], POKEDEX_GET | POKEDEX_SEEN, true))
+        if (pokedex_operator(list->list[i], POKEDEX_GET | POKEDEX_SEEN, true))
             num_unique_species_seen++;
     }
-    itoa(buffer0, (int)num_unique_species, ITOA_PAD_SPACES, 2);
+    itoa(buffer0, (int)list->size, ITOA_PAD_SPACES, 2);
     itoa(buffer1, (int)num_unique_species_seen, ITOA_PAD_SPACES, 2);
     string_decrypt(strbuf, str_num_unique_count);
     tbox_print_string(POKEDEX_SCANNER_TBOX_STATS, 2, 43, 0, 0, 0, &pokedex_feature_scanner_title_fontcolmap, 0, strbuf);
     itoa(buffer1, (int)num_unique_species_caught, ITOA_PAD_SPACES, 2);
     string_decrypt(strbuf, str_num_unique_count);
     tbox_print_string(POKEDEX_SCANNER_TBOX_STATS, 2, 43, 16, 0, 0, &pokedex_feature_scanner_title_fontcolmap, 0, strbuf);
-
+    free(list);
 }
 
 
@@ -706,14 +706,14 @@ void pokedex_callback_initialize_feature_scanner_state_machine() {
         case POKEDEX_SCANNER_SETUP_STATE_DATA_SETUP: {
             keys_repeated_start_delay = 20;
             keys_repeated_continue_delay = 4;
-            pokedex_feature_scanner_build_all_entries(pokedex_scanner_state);
+            pokedex_feature_scanner_build_all_entries(&pokedex_scanner_state->data, map_wild_pokemon_get_current());
             // Initialize all cursors to a non-delimiter entry
             for (u8 habitat = 0; habitat < POKEDEX_SCANNER_NUM_HABITATS; habitat++) {
-                pokedex_scanner_entry_t *entries = pokedex_scanner_get_entries(habitat);
+                pokedex_scanner_entry_t *entries = pokedex_scanner_get_entries(habitat, &pokedex_scanner_state->data);
                 if (entries) {
                     for (pokedex_scanner_state->cursor_positions[habitat] = 0; 
                             entries[pokedex_scanner_state->cursor_positions[habitat]].is_delimiter && \
-                            pokedex_scanner_state->cursor_positions[habitat] < pokedex_scanner_state->num_entries[habitat]; 
+                            pokedex_scanner_state->cursor_positions[habitat] < pokedex_scanner_state->data.num_entries[habitat]; 
                             pokedex_scanner_state->cursor_positions[habitat]++);
                 }
             }
@@ -819,9 +819,9 @@ void pokedex_callback_initialize_feature_scanner_state_machine() {
         }
         case POKEDEX_SCANNER_SETUP_STATE_SETUP_ICON_OAM: {
             for (u8 habitat = 0; habitat < POKEDEX_SCANNER_NUM_HABITATS; habitat++) {
-                pokedex_scanner_entry_t *entries = pokedex_scanner_get_entries(habitat);
+                pokedex_scanner_entry_t *entries = pokedex_scanner_get_entries(habitat, &pokedex_scanner_state->data);
                 if (entries) {
-                    for (u8 i = 0; i < pokedex_scanner_state->num_entries[habitat]; i++) {
+                    for (u8 i = 0; i < pokedex_scanner_state->data.num_entries[habitat]; i++) {
                         u16 species = entries[i].species;
                         if (species) {
                             pokedex_scanner_setup_icon_gfx(species);
