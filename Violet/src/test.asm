@@ -27,6 +27,7 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	setflag FLAG_POKEDEX_SCANNER
 	end
 
 	loadpointer 0 str_unown

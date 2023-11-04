@@ -450,7 +450,6 @@ void pokedex_scanner_redraw_list(bool scrolling_down) {
                 u16 species = list[i].species;
                 bool caught = pokedex_operator(species, POKEDEX_GET | POKEDEX_CAUGHT, true);
                 bool seen = pokedex_operator(species, POKEDEX_GET | POKEDEX_SEEN, true);
-                caught = true; seen = true;
                 strbuf[0] = 0xFF;
                 if (pokedex_scanner_state->cursor_positions[pokedex_scanner_state->habitat] == i) {
                     const u8 str_pokepad_pokedex_cursor[] = PSTRING("▶");
