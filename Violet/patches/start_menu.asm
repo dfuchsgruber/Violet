@@ -4,6 +4,12 @@
     bx r0
     .pool
 
+
+.org 0x0806f1e4
+    ldr r0, = start_menu_handle_input | 1
+    bx r0
+    .pool
+
 .org 0x0806ee7c
     ldr r0, = start_menu_clear_additional_box | 1
     bx r0

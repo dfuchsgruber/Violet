@@ -224,6 +224,7 @@ typedef struct custom_memory {
         u8 wonder_dust_automatic_quantity_disabled : 1;
         // padding for future settings
         u8 item_obtaining_descriptions_disabled : 1;
+        u8 start_menu_scanner_disabled;
         u8 field_2;
         u8 field_3; 
     } settings;

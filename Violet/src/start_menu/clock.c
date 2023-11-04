@@ -76,7 +76,6 @@ bool start_menu_initilize() {
             }
             break;
         case START_MENU_SETUP_SCANNER:
-            start_menu_scanner_num_oams = 0;
             start_menu_print_scanner();
             break;
         case START_MENU_SETUP_STATE_PRINT_ITEMS:
@@ -88,9 +87,6 @@ bool start_menu_initilize() {
             u8 box_idx = start_menu_get_tbox_idx();
             start_menu_state.cursor = gp_menu_initialize_with_unmuted_a_press(box_idx, 2, 0, 0, 15, 
                 start_menu_state.number_items, start_menu_state.cursor);
-            if (!sub_080bf8d8() && !is_bank_x0_and_map_x40()) {
-                start_menu_print_item_description(start_menu_item_descriptions[start_menu_state.items[start_menu_state.cursor]]);
-            }
             tbox_copy_to_vram(box_idx, 1);
             if (!safari_is_active())
                 big_callback_new(start_menu_clock_callback, 50);
@@ -122,5 +118,6 @@ bool start_menu_save_initialize_and_clear_additional_box() {
         if (idx != 0xFF) big_callback_delete(idx);
     }
     start_menu_clear_scanner();
+    bg_virtual_sync_reqeust_push(0);
     return start_menu_save_initialize();
 }

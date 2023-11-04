@@ -11,9 +11,13 @@ if __name__ == '__main__':
     parser.add_argument('-i', help='Input images', nargs='+', dest='input_images')
     parser.add_argument('-o', help='The output assembly to create.', dest='output_path')
     parser.add_argument('-s', help='The suffix to append to the image file name to create a symbol', dest='suffix')
+    parser.add_argument('-c', help='How many colors of the target palette to use', dest='num_target_colors', type=int, default=None)
     args = parser.parse_args()
     
     _, target_palette = agb.image.from_file(args.target_palette_image)
+    if args.num_target_colors is not None:
+        target_palette = target_palette[:args.num_target_colors]
+    
     assembly = []
     for path in tqdm(args.input_images):
         path = Path(path)

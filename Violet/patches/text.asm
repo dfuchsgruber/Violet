@@ -21,3 +21,6 @@ in the vanilla game SKIP's behaviour is equal to SHIFT_TEXT = FC 0D
  */
 .org 0x08005a4e
     ldrb r0, [r6, #8]
+
+.org 0x08005fbc
+    .word string_get_width_control_code_skip

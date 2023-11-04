@@ -252,7 +252,7 @@ static void pokedex_handle_inputs(u8 self) {
     } else if (super.keys_new.keys.B) {
         fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
         big_callbacks[self].function = pokedex_callback_return;
-    } else if (super.keys_new.keys.start) {
+    } else if (super.keys_new.keys.start && checkflag(FLAG_POKEDEX_SCANNER)) {
         play_sound(5);
         fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
         big_callbacks[self].function = pokedex_callback_scanner;
@@ -335,7 +335,7 @@ void pokedex_callback_initialize_state_machine() {
             u8 str_title[] = LANGDEP(PSTRING("KEY_ASKIP\x01InfoSKIP\x02KEY_SELECTSKIP\x01Sort."), 
                                         PSTRING("KEY_ASKIP\x01InfoSKIP\x02KEY_SELECTSKIP\x01Sort"));
             strcpy(strbuf, str_title);
-            if (checkflag(POKEDEX_FEATURE_0) || true) {
+            if (checkflag(FLAG_POKEDEX_SCANNER)) {
                 u8 str_scanner[] = LANGDEP(PSTRING("SKIP\x02KEY_STARTSKIP\x01Scan"), 
                                             PSTRING("SKIP\x02KEY_STARTSKIP\x01Scan"));
                 strcat(strbuf, str_scanner);

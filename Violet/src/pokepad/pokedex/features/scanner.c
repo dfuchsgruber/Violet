@@ -121,7 +121,7 @@ void pokedex_feature_scanner_build_all_entries(pokedex_scanner_data_t *state, co
     if (wild_pokemon_header->water)
         state->num_entries[POKEDEX_SCANNER_HABITAT_WATER] = pokedex_feature_scanner_add_entries_from_wild_pokemon_data(
                 wild_pokemon_header->water->data, state->entries_water, WILD_POKEMON_NUM_ENTRIES_WATER, wild_pokemon_water_pdf);
-    if (wild_pokemon_header->rod)
+    if (wild_pokemon_header->other)
         state->num_entries[POKEDEX_SCANNER_HABITAT_OTHER] = pokedex_feature_scanner_add_entries_from_wild_pokemon_data(
                 wild_pokemon_header->other->data, state->entries_other, WILD_POKEMON_NUM_ENTRIES_OTHER, wild_pokemon_other_pdf);
     if (wild_pokemon_header->rod) {
@@ -450,6 +450,7 @@ void pokedex_scanner_redraw_list(bool scrolling_down) {
                 u16 species = list[i].species;
                 bool caught = pokedex_operator(species, POKEDEX_GET | POKEDEX_CAUGHT, true);
                 bool seen = pokedex_operator(species, POKEDEX_GET | POKEDEX_SEEN, true);
+                caught = true; seen = true;
                 strbuf[0] = 0xFF;
                 if (pokedex_scanner_state->cursor_positions[pokedex_scanner_state->habitat] == i) {
                     const u8 str_pokepad_pokedex_cursor[] = PSTRING("▶");
@@ -662,13 +663,16 @@ void pokedex_scanner_build_unique_species(pokedex_scanner_unique_species_list_t 
                     // Add the species of the entry to unique species if is not present already
                     bool found = false;
                     for (u16 j = 0; j < dst->size; j++) {
-                        if (dst->list[j] == entries[i].species) {
+                        if (dst->list[j].species == entries[i].species) {
                             found = true;
                             break;
                         }
                     }
                     if (!found) {
-                        dst->list[dst->size++] = entries[i].species;
+                        dst->list[dst->size].species = (u16)(entries[i].species & 0x3FFF);
+                        dst->list[dst->size].is_seen = (u16)(pokedex_operator(entries[i].species, POKEDEX_GET | POKEDEX_SEEN, true) & 1);
+                        dst->list[dst->size].is_caught = (u16)(pokedex_operator(entries[i].species, POKEDEX_GET | POKEDEX_CAUGHT, true) & 1);
+                        dst->size++;
                     }
                 }
             }
@@ -681,9 +685,9 @@ static inline void pokedex_scanner_print_caught_and_total_counts() {
     pokedex_scanner_build_unique_species(list, &pokedex_scanner_state->data);
     size_t num_unique_species_caught = 0, num_unique_species_seen = 0;
     for (u16 i = 0; i < list->size; i++) {
-        if (pokedex_operator(list->list[i], POKEDEX_GET | POKEDEX_CAUGHT, true))
+        if (list->list[i].is_caught)
             num_unique_species_caught++;
-        if (pokedex_operator(list->list[i], POKEDEX_GET | POKEDEX_SEEN, true))
+        if (list->list[i].is_seen)
             num_unique_species_seen++;
     }
     itoa(buffer0, (int)list->size, ITOA_PAD_SPACES, 2);

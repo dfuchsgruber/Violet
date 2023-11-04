@@ -251,7 +251,5 @@ str_0x963906:
 
 ow_script_person_test:
     givepokemon POKEMON_FORMEO 20 0 0 0 0
-    @//setflag POKEDEX_FEATURE_0
-    @//setflag POKEDEX_FEATURE_1
-    @//setflag POKEDEX_FEATURE_2
+    @//setflag FLAG_POKEDEX_SCANNER
     end

@@ -128,6 +128,13 @@ void list_menu_remove(u8 list_menu_handler_callback_idx, u16 *scroll_offset, u16
 int gp_list_menu_process_input_and_close_on_selection();
 
 /**
+ * Moves the cursor of the gp list menu.
+ * @param offset the offset to move the cursor by
+ * @return the result of moving the cursor
+*/
+u8 gp_list_menu_move_cursor(s8 offset);
+
+/**
  * Prints (i.e. redraws) a list menu
  * @param callback_idx the callback of the list menu
  **/

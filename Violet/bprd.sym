@@ -1829,3 +1829,6 @@ read_flash_sector = 0x080da3b4 | 1;
 npc_get_by_position_and_height = 0x0805f894 | 1;
 keys_repeated_start_delay = 0x03003030;
 keys_repeated_continue_delay = 0x0300347c;
+gp_list_menu_move_cursor = 0x0810f9b4 | 1;
+start_menu_fade_if_applicable = 0x0806f2f8 | 1;
+start_menu_delete = 0x0806fe04 | 1;

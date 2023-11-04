@@ -93,7 +93,13 @@
         } pokedex_scanner_data_t;
 
         typedef struct {
-                u16 list[POKEDEX_SCANNER_MAX_NUM_UNIQUE_SPECIES];
+                u16 species : 14;
+                u8 is_seen : 1;
+                u8 is_caught : 1;
+        } pokedex_scanner_unique_species_entry_t;
+
+        typedef struct {
+                pokedex_scanner_unique_species_entry_t list[POKEDEX_SCANNER_MAX_NUM_UNIQUE_SPECIES];
                 size_t size;
         } pokedex_scanner_unique_species_list_t;
 
@@ -142,9 +148,19 @@
          **/
         void start_menu_clear_scanner();
 
+        /**
+         * Whether to draw a start menu scanner state
+         * @return Whether to draw a start menu scanner state
+        */
+        bool start_menu_scanner_active();
+
+        /**
+         * Moves the cursor in the scanner
+         * @param delta The delta to move the cursor by
+        */
+        void start_menu_scanner_move_cursor(s8 delta);
+
         extern EWRAM pokedex_scanner_state_t *pokedex_scanner_state;
-        extern EWRAM u8 start_menu_scanner_oam_idxs[POKEDEX_SCANNER_MAX_NUM_UNIQUE_SPECIES];
-        extern EWRAM u8 start_menu_scanner_num_oams;
 
         /**
          * Callback to initialize the pokedex scanner UI.

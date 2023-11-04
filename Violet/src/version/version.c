@@ -118,7 +118,7 @@ void version_upgrade_alpha_2_1_to_2_2() {
 	setflag(ROUTE_2_FELIX);
     setflag(ROUTE_3_MAY);
     setflag(FLAG_TAFELBERG_FELIX);
-    clearflag(POKEDEX_FEATURE_0);
+    clearflag(FLAG_POKEDEX_SCANNER);
     clearflag(POKEDEX_FEATURE_1);
     clearflag(POKEDEX_FEATURE_2);
     clearflag(ROUTE_6_ITEM_1); // Changed to "Heißbrocken", make it obtainable

@@ -7,6 +7,11 @@
 #include "language.h"
 #include "pokepad/pokepad2.h"
 #include "overworld/script.h"
+#include "superstate.h"
+#include "music.h"
+#include "list_menu.h"
+#include "debug.h"
+#include "pokepad/pokedex/scanner.h"
 
 extern const u8 ow_script_dungeon_exit[];
 
@@ -150,4 +155,27 @@ void start_menu_build() {
     } else {
         start_menu_build_std();
     }
+}
+
+bool start_menu_handle_input() {
+    if (super.keys_new.keys.up) {
+        play_sound(5);
+        start_menu_state.cursor = gp_list_menu_move_cursor(-1);
+    } else if (super.keys_new.keys.down) {
+        play_sound(5);
+        start_menu_state.cursor = gp_list_menu_move_cursor(1);
+    } else if (super.keys_new.keys.A) {
+        play_sound(5);
+        start_menu_state.callback = start_menu_items[start_menu_state.items[start_menu_state.cursor]].initialize;
+        start_menu_fade_if_applicable();
+    } else if (super.keys_new.keys.B || super.keys_new.keys.start) {
+        start_menu_clear_additional_box();
+        start_menu_delete();
+        return true;
+    } else if (super.keys_new_and_repeated.keys.left && start_menu_scanner_active()) {
+        start_menu_scanner_move_cursor(-1);
+    } else if (super.keys_new_and_repeated.keys.right && start_menu_scanner_active()) {
+        start_menu_scanner_move_cursor(1);
+    }
+    return false;
 }

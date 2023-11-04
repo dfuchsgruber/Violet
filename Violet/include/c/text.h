@@ -131,10 +131,10 @@ extern "C" {
      * Calculates the width (in pixels) of a string
      * @param font Font of the string (usually 2)
      * @param str The string to determine width of
-     * @param unkown Usually set to zero
+     * @param letter_spacing Additional letter spacing
      * @return The string width in pixels
      */
-    u8 string_get_width(u8 font, const u8 *str, s16 unkown);
+    u8 string_get_width(u8 font, const u8 *str, s16 letter_spacing);
 
     /**
      * Creates a new textbox

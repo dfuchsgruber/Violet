@@ -182,4 +182,14 @@ bool start_menu_retire_initialize();
  **/
 bool start_menu_bag_initialize();
 
+/**
+ * Fades the screen from the start menu if the overworld is left
+*/
+void start_menu_fade_if_applicable();
+
+/**
+ * Closes the start menu
+ */
+void start_menu_delete();
+
 #endif /* INCLUDE_C_OVERWORLD_START_MENU_H_ */

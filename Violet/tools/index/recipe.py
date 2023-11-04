@@ -32,7 +32,7 @@ def parse_flag(flag, project: pymap.project.Project) -> int:
         if flag in project.constants['flags']:
             return project.constants['flags'][flag]
         else:
-            raise ValueError
+            raise ValueError(f'Flag {flag} not found in constants.')
     else:
         return flag_idx
     

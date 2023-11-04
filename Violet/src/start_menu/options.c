@@ -23,6 +23,7 @@
 #include "overworld/map_control.h"
 #include "music.h"
 #include "menu_indicators.h"
+#include "flags.h"
 
 EWRAM options_state_t *options_state = NULL;
 
@@ -135,6 +136,19 @@ TWO_OPTIONS_STRINGS(
 static int option_item_obtain_descriptions_getter() { return csave.settings.item_obtaining_descriptions_disabled ? OPTION_OFF : OPTION_ON; }
 static void option_item_obtain_descriptions_setter(int is_off) { csave.settings.item_obtaining_descriptions_disabled = (u8)(is_off & 1); }
 
+
+TWO_OPTIONS_STRINGS(
+    start_menu_scanner,
+    LANGDEP(PSTRING("Scanner im KEY_STARTMenü"), PSTRING("Scanner in KEY_STARTMenu")),
+    LANGDEP(PSTRING("An"), PSTRING("On")),
+    LANGDEP(PSTRING("Pokémon in der Nähe werden im\nKEY_START Menü angezeigt."), PSTRING("Pokémon nearby are displayed in\nthe KEY_START menu.")),
+    LANGDEP(PSTRING("Aus"), PSTRING("Off")),
+    LANGDEP(PSTRING("Pokémon in der Nähe werden im\nKEY_START Menü nicht angezeigt."), PSTRING("Pokémon nearby are not displayed\nin the KEY_START menu."))
+);
+static int option_start_menu_scanner_getter() { return csave.settings.start_menu_scanner_disabled ? OPTION_OFF : OPTION_ON; }
+static void option_start_menu_scanner_setter(int is_off) { csave.settings.start_menu_scanner_disabled = (u8)(is_off & 1); }
+static bool option_start_menu_scanner_available() {return checkflag(FLAG_POKEDEX_SCANNER);}
+
 const option_t options[NUM_OPTIONS] = {
     [OPTION_FRAME_STYLE] = {
         .name = str_option_frame_style_name,
@@ -214,6 +228,15 @@ const option_t options[NUM_OPTIONS] = {
         .num_options = ARRAY_COUNT(option_item_obtain_descriptions_names),
         .options = option_item_obtain_descriptions_names,
         .option_descriptions = option_item_obtain_descriptions_descriptions,
+    },
+    [OPTION_START_MENU_SCANNER] = {
+        .name = str_option_start_menu_scanner_name,
+        .getter = option_start_menu_scanner_getter,
+        .setter = option_start_menu_scanner_setter,
+        .num_options = ARRAY_COUNT(option_start_menu_scanner_names),
+        .options = option_start_menu_scanner_names,
+        .option_descriptions = option_start_menu_scanner_descriptions,
+        .available = option_start_menu_scanner_available,
     },
 };
 
