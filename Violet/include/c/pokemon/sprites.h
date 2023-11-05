@@ -1,10 +1,3 @@
-/*
- * sprites.h
- *
- *  Created on: Mar 28, 2018
- *      Author: dominik
- */
-
 #ifndef INCLUDE_C_POKEMON_SPRITES_H_
 #define INCLUDE_C_POKEMON_SPRITES_H_
 

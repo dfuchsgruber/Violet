@@ -9,6 +9,7 @@
 #define INCLUDE_C_POKEMON_BASESTAT_H_
 
 #include "pokemon/count.h"
+#include "constants/pokemon_colors.h"
 
 #define LINKED_PKMN_CNT 8
 
@@ -44,12 +45,14 @@ typedef struct {
     u8 ability1;
     u8 ability2;
     u8 safari_rate;
-    u8 color_flip_field;
+    u8 flipped : 1;
+    u8 color : 7;
     u8 hidden_ability;
     u8 form;
 } basestat;
 
 extern const basestat basestats[POKEMON_CNT];
+extern const u8 *const pokemon_color_names[NUM_POKEMON_COLORS];
 
 extern const u32 pokemon_experience_tables[6][101];
 

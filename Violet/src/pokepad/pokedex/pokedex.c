@@ -122,7 +122,7 @@ const tbox_font_colormap pokedex_features_fontcolmap = {0, 10, 13, 1};
 const u16 pokedex_colors[16] = {0, 0x2927, 0x7FFF, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 const u16 pokedex_colors_nr[16] = {0, 0x7FFF, 0x2927, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-static void pokedex_cb1() {
+void pokedex_cb1() {
     tbox_proceed();
     oam_animations_proceed();
     oam_proceed();
@@ -206,7 +206,6 @@ static void pokedex_free_all_except_state() {
     tbox_free_all();
     for (u8 i = 0; i < 4; i++)
         free(pokedex_state->bg_maps[i]);
-    free(pokedex_state->list);
 }
 
 static void pokedex_callback_return(u8 self) {
@@ -225,6 +224,15 @@ static void pokedex_callback_scanner(u8 self) {
     if (fading_control.active || dma3_busy(-1))
         return;
     callback1_set(pokedex_callback_initialize_feature_scanner);
+    pokedex_free_all_except_state();
+    big_callback_delete(self);
+}
+
+static void pokedex_callback_entry(u8 self) {
+    if (fading_control.active || dma3_busy(-1))
+        return;
+    pokedex_entry_initialize(pokedex_state->list[pokedex_state->current_list_index].species, 
+        POKEDEX_ENTRY_PAGE_CONTEXT_POKEDEX, pokedex_callback_initialize);
     pokedex_free_all_except_state();
     big_callback_delete(self);
 }
@@ -249,6 +257,10 @@ static void pokedex_handle_inputs(u8 self) {
         play_sound(5);
         pokedex_context_menu_sort_new(self);
         return;
+    } else if (super.keys_new.keys.A && pokedex_state->list[pokedex_state->current_list_index].seen) {
+        play_sound(5);
+        fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
+        big_callbacks[self].function = pokedex_callback_entry;
     } else if (super.keys_new.keys.B) {
         fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
         big_callbacks[self].function = pokedex_callback_return;
@@ -272,6 +284,7 @@ static const u8 str_seen[] = LANGDEP(PSTRING("Ges."), PSTRING("Seen"));
 static const u8 str_caught[] = LANGDEP(PSTRING("Gef."), PSTRING("Caught"));
 
 void pokedex_callback_initialize_state_machine() {
+    DEBUG("Pokedex initialization state: %d\n", pokedex_state->initialization_state);
     pokedex_cb1();
     if (fading_control.active || dma3_busy(-1))
         return;

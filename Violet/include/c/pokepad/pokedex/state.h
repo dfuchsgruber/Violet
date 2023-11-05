@@ -13,6 +13,7 @@
 #include "pokepad/pokedex/habitat.h"
 #include "pokepad/pokedex/scanner.h"
 #include "bg.h"
+#include "pokepad/pokedex/entry.h"
 
     enum {
         POKEDEX_SETUP_STATE_DATA_SETUP = 0,
@@ -74,7 +75,7 @@
         u8 sort_cursor_pos;
         u8 resorting : 1;
         u8 reverse_req : 1;
-        pokedex_list_element *list;
+        pokedex_list_element list[POKEDEX_CNT];
         //for entry
         u16 tile_pokepic;
         u16 tile_form;
@@ -104,5 +105,9 @@
 
     extern EWRAM pokedex_state_t *pokedex_state;
 
+    /**
+     * Default callback for the pokedex
+     */
+    void pokedex_cb1();
 
 #endif /* INCLUDE_C_POKEPAD_POKEDEX_STATE_H_ */

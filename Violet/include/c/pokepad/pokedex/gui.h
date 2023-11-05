@@ -169,11 +169,6 @@ void pokedex_entry_load_strings();
 void pokedex_entry_load_pokepic();
 
 /**
- * Updates the entry of a pokemon according to the currently selected pokedex entry
- */
-void pokedex_entry_update();
-
-/**
  * Idle callback1 for the pokedex entry
  */
 void pokedex_callback_entry_idle();

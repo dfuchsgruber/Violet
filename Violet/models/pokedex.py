@@ -5,7 +5,7 @@ pokedex_order_type = agb.types.FixedSizeArrayType(
     lambda project, context: project.constants['species']['POKEMON_CNT']
 )
 
-pokedex_entry_string_type = agb.types.StringType(box_size=(35, 255))
+pokedex_entry_string_type = agb.types.StringType(box_size=(34, 255))
 
 pokdex_entry_string_pointer_type = agb.types.PointerType(
     'pokedex.entry_string',

@@ -129,7 +129,7 @@ static bool drop_type_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
 static const u32 drop_color_item_count_rates[] = {[1] = 1};
 
 static bool drop_color_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
-    int color = basestats[battlers[battler_idx].species].color_flip_field & 0x7F;
+    int color = basestats[battlers[battler_idx].species].color;
     u32 p[16]; u16 items[16];
     size_t p_size = 0;
     switch(color) {
