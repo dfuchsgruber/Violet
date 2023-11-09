@@ -37,7 +37,7 @@
 //Pokedex from battle
 .org 0x08106C20
         mov r0, r5
-        ldr r1, =pokedex_init_entry_from_battle | 1
+        ldr r1, =pokedex_entry_initialize_from_battle | 1
         bl bxr1
         pop {r4, r5}
         pop {r1}

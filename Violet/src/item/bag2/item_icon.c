@@ -15,6 +15,8 @@ static void bag_oam_item_callback_update(oam_object *self) {
             u16 tile = bag2_state->oam_item_base_tile;
             const u8 *gfx = item_get_resource(self->private[0], false);
             lz77uncompwram(gfx, gp_tmp_buf);
+            int zero = 0;
+            cpuset(&zero, OAMCHARBASE(tile), CPUSET_FILL | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(GRAPHIC_SIZE_4BPP(32, 32)));
             for (int x = 0; x < 3; x++) {
                 for (int y = 0; y < 3; y++) {
                     cpuset(gp_tmp_buf + (3 * y + x) * GRAPHIC_SIZE_4BPP(8, 8), (u8*)OAMCHARBASE(tile) + (4 * y + x) * GRAPHIC_SIZE_4BPP(8, 8),

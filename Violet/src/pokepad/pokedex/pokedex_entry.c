@@ -429,7 +429,6 @@ void pokedex_callback_entry_idle() {
             pokedex_entry_free();
             worldmap_ui_habitat_new(species, NULL);
             fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
-            
         }
     }
 }

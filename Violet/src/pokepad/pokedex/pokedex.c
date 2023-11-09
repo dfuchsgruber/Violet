@@ -231,8 +231,9 @@ static void pokedex_callback_scanner(u8 self) {
 static void pokedex_callback_entry(u8 self) {
     if (fading_control.active || dma3_busy(-1))
         return;
+    color_t black = {.rgb = {.red = 0, .blue = 0, .green = 0}};
     pokedex_entry_initialize(pokedex_state->list[pokedex_state->current_list_index].species, 
-        POKEDEX_ENTRY_PAGE_CONTEXT_POKEDEX, pokedex_callback_initialize);
+        POKEDEX_ENTRY_PAGE_CONTEXT_POKEDEX, pokedex_callback_initialize, true, black);
     pokedex_free_all_except_state();
     big_callback_delete(self);
 }

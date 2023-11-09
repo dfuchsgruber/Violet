@@ -143,50 +143,59 @@ static const u8 str_abilities[] = LANGDEP(PSTRING("Fähigkeiten"), PSTRING("Abil
 static const u8 str_hidden_ability[] = PSTRING("(BUFFER_1)");
 static const u8 str_form[] = LANGDEP(PSTRING("Form"), PSTRING("Form"));
 static const u8 str_cry[] = LANGDEP(PSTRING("KEY_STARTSKIP\x01Ruf"), PSTRING("KEY_STARTSKIP\x01Cry"));
+static const u8 str_cry_not_caught[] = LANGDEP(PSTRING("Ruf ???"), PSTRING("Cry ???"));
 static const u8 str_catch_rate[] = PSTRING("BUFFER_1,BUFFER_2%");
 static const u8 str_male[] = PSTRING("FONT_SIZE_BIGCOLOR\x0DSHADOW\x0E♂FONT_SIZE_SMALLCOLOR\x01SHADOW\x02");
 static const u8 str_female[] = PSTRING("FONT_SIZE_BIGCOLOR\x05SHADOW\x04♀FONT_SIZE_SMALLCOLOR\x01SHADOW\x02");
 static const u8 str_gender_ratio[] = PSTRING("BUFFER_1SKIP\x02BUFFER_2,BUFFER_3%");
 static const u8 str_gender_ratio_100_percent[] = PSTRING("BUFFER_1SKIP\x02BUFFER_2%");
 static const u8 str_gender_ratio_none[] = PSTRING("BUFFER_1SKIP\x01/SKIP\x01BUFFER_2SKIP\x02--");
-
+static const u8 str_gender_ratio_not_caught[] = PSTRING("BUFFER_1SKIP\x01/SKIP\x01BUFFER_2SKIP\x02??");
+static const u8 str_unkown[] = PSTRING("???");
 
 static const tbox_font_colormap tbox_font_colormap_white = {.background = 0, .body = 1, .edge = 2};
 static const tbox_font_colormap tbox_font_colormap_black = {.background = 0, .body = 2, .edge = 3};
 static const tbox_font_colormap tbox_font_colormap_green = {.background = 0, .body = 7, .edge = 6};
 
 static void pokedex_entry_page_flavor_text_update_flavor_text() {
-    const u8 *text = pokedex_entries[pokedex_get_id(pokedex_entry_state->species)].page0;
-    for (u16 lines_to_skip = pokedex_entry_state->page_flavor_text_first_line; 
-            lines_to_skip > 0 && *text != 0xFF;) {
-        if (*text == 0xFE)
-            lines_to_skip--;
-        text++;
-    }
-    u8 *dst = strbuf;
-    size_t num_lines = 0;
-    while (true) {
-        if (*text == 0xFE) {
-            num_lines++;
-            if (num_lines < POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_NUM_VISIBLE_LINES) {
-                *dst++ = *text++;
-            } else {
+    tbox_flush_set(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_TEXT], 0x00);
+    bool caught = pokedex_operator(pokedex_entry_state->species, POKEDEX_GET | POKEDEX_CAUGHT, true);
+    if (caught) {
+        const u8 *text = pokedex_entries[pokedex_get_id(pokedex_entry_state->species)].page0;
+        for (u16 lines_to_skip = pokedex_entry_state->page_flavor_text_first_line; 
+                lines_to_skip > 0 && *text != 0xFF;) {
+            if (*text == 0xFE)
+                lines_to_skip--;
+            text++;
+        }
+        u8 *dst = strbuf;
+        size_t num_lines = 0;
+        while (true) {
+            if (*text == 0xFE) {
+                num_lines++;
+                if (num_lines < POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_NUM_VISIBLE_LINES) {
+                    *dst++ = *text++;
+                } else {
+                    *dst++ = 0xFF;
+                    break;
+                }
+            } else if (*text == 0xFF) {
                 *dst++ = 0xFF;
                 break;
+            } else {
+                *dst++ = *text++;
             }
-        } else if (*text == 0xFF) {
-            *dst++ = 0xFF;
-            break;
-        } else {
-            *dst++ = *text++;
         }
+        tbox_print_string(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_TEXT], 0, 3, 3, 0, 0,
+            &tbox_font_colormap_black, 0, strbuf);
+    } else {
+        tbox_print_string(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_TEXT], 0, 3 + 4 * 20 - 2, 3 + 16, 0, 0,
+            &tbox_font_colormap_black, 0, str_unkown);
     }
-    tbox_flush_set(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_TEXT], 0x00);
-    tbox_print_string(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_TEXT], 0, 3, 3, 0, 0,
-        &tbox_font_colormap_black, 0, strbuf);
 }
 
 bool pokedex_entry_page_flavor_text_setup() {
+    bool caught = pokedex_operator(pokedex_entry_state->species, POKEDEX_GET | POKEDEX_CAUGHT, true);
     switch (pokedex_entry_state->page_initialization_state) {
         case POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_INITIALIZATION_STATE_DATA_SETUP: {
             pokedex_entry_state->page_flavor_text_num_lines = 1;
@@ -214,55 +223,61 @@ bool pokedex_entry_page_flavor_text_setup() {
             itoa(buffer1, pokedex_entries[dex_id].height % 10, ITOA_PAD_SPACES, 1);
             string_decrypt(strbuf, str_size_value);
             tbox_print_string(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_DATA],
-                2, 47, 4 + 0, 0, 0, &tbox_font_colormap_white, 0xFF, strbuf);
+                2, 47, 4 + 0, 0, 0, &tbox_font_colormap_white, 0xFF, caught ? strbuf : str_unkown);
             itoa(buffer0, pokedex_entries[dex_id].weight / 10, ITOA_PAD_SPACES, 3);
             itoa(buffer1, pokedex_entries[dex_id].weight % 10, ITOA_PAD_SPACES, 1);
             string_decrypt(strbuf, str_kg_value);
             tbox_print_string(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_DATA],
-                2, 47, 4 + 16, 0, 0, &tbox_font_colormap_white, 0xFF, strbuf);
+                2, 47, 4 + 16, 0, 0, &tbox_font_colormap_white, 0xFF, caught ? strbuf : str_unkown);
 
-            const u8 *str_color = pokemon_color_names[basestats[pokedex_entry_state->species].color];
+            const u8 *str_color = caught ? pokemon_color_names[basestats[pokedex_entry_state->species].color] : str_unkown;
             tbox_print_string(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_DATA],
                 2, (u16)(43 + (48 - string_get_width(2, str_color, 0)) / 2),
                 4 + 32, 0, 0, &tbox_font_colormap_white, 0xFF, str_color);
             tbox_print_string(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_DATA],
                 2, 96, 4 + 0, 0, 0, &tbox_font_colormap_white, 0xFF, str_abilities
                 );
-            
-            size_t num_abilities_displayed = 0;
-            tbox_print_string(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_DATA],
-                0, 96, (u16)(2 + 16 + (11 * num_abilities_displayed++)), 0, 0, 
-                &tbox_font_colormap_white, 0xFF, ability_names[basestats[pokedex_entry_state->species].ability1]);
-            if (basestats[pokedex_entry_state->species].ability2 && 
-                basestats[pokedex_entry_state->species].ability1 != basestats[pokedex_entry_state->species].ability2)
+
+            // Abilities
+            if (caught) {
+                size_t num_abilities_displayed = 0;
                 tbox_print_string(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_DATA],
                     0, 96, (u16)(2 + 16 + (11 * num_abilities_displayed++)), 0, 0, 
-                    &tbox_font_colormap_white, 0xFF, ability_names[basestats[pokedex_entry_state->species].ability2]);
-            if (basestats[pokedex_entry_state->species].hidden_ability) {
-                strcpy(buffer0, ability_names[basestats[pokedex_entry_state->species].hidden_ability]);
-                string_decrypt(strbuf, str_hidden_ability);
+                    &tbox_font_colormap_white, 0xFF, ability_names[basestats[pokedex_entry_state->species].ability1]);
+                if (basestats[pokedex_entry_state->species].ability2 && 
+                    basestats[pokedex_entry_state->species].ability1 != basestats[pokedex_entry_state->species].ability2)
+                    tbox_print_string(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_DATA],
+                        0, 96, (u16)(2 + 16 + (11 * num_abilities_displayed++)), 0, 0, 
+                        &tbox_font_colormap_white, 0xFF, ability_names[basestats[pokedex_entry_state->species].ability2]);
+                if (basestats[pokedex_entry_state->species].hidden_ability) {
+                    strcpy(buffer0, ability_names[basestats[pokedex_entry_state->species].hidden_ability]);
+                    string_decrypt(strbuf, str_hidden_ability);
+                    tbox_print_string(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_DATA],
+                        0, 96, (u16)(2 + 16 + (11 * num_abilities_displayed++)), 0, 0, 
+                        &tbox_font_colormap_green, 0xFF, strbuf);
+                }
+            } else {
                 tbox_print_string(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_DATA],
-                    0, 96, (u16)(2 + 16 + (11 * num_abilities_displayed++)), 0, 0, 
-                    &tbox_font_colormap_green, 0xFF, strbuf);
+                    0, 96, (u16)(2 + 16), 0, 0, &tbox_font_colormap_white, 0xFF, str_unkown);
             }
             tbox_print_string(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_DATA],
                 2, 3, 56 + 0, 0, 0, &tbox_font_colormap_white, 0xFF, str_form); 
             tbox_print_string(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_DATA],
                 2, (u16)(3 + (42 - string_get_width(2, str_cry, 0)) / 2), 
-                56 + 16, 0, 0, &tbox_font_colormap_white, 0xFF, str_cry); 
+                56 + 16, 0, 0, &tbox_font_colormap_white, 0xFF, caught ? str_cry : str_cry_not_caught); 
             
             itoa(strbuf, basestats[pokedex_entry_state->species].egg_cycles * 256, ITOA_NO_PADDING, 5);
             tbox_print_string(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_DATA],
-                0, 98, 56, 0, 0, &tbox_font_colormap_white, 0xFF, strbuf);
+                0, 98, 56, 0, 0, &tbox_font_colormap_white, 0xFF, caught ? strbuf : str_unkown);
             int catch_success_promille = 1000 * basestats[pokedex_entry_state->species].catch_rate / 255 / 3;
             itoa(buffer0, catch_success_promille / 10, ITOA_NO_PADDING, 2);
             itoa(buffer1, catch_success_promille % 10, ITOA_NO_PADDING, 1);
             string_decrypt(strbuf, str_catch_rate);
             tbox_print_string(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_DATA],
-                0, 98, 71, 0, 0, &tbox_font_colormap_white, 0xFF, strbuf);
+                0, 98, 71, 0, 0, &tbox_font_colormap_white, 0xFF, caught ? strbuf : str_unkown);
             itoa(strbuf, basestats[pokedex_entry_state->species].base_happiness, ITOA_NO_PADDING, 3);
             tbox_print_string(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_DATA],
-                0, 138, 56, 0, 0, &tbox_font_colormap_white, 0xFF, strbuf);
+                0, 138, 56, 0, 0, &tbox_font_colormap_white, 0xFF, caught ? strbuf : str_unkown);
             // Print the gender
             int prob_female = basestats[pokedex_entry_state->species].gender_value;
             switch (prob_female) {
@@ -288,7 +303,7 @@ bool pokedex_entry_page_flavor_text_setup() {
                 
             }
             tbox_print_string(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_DATA],
-                0, 128, 71, 0, 0, &tbox_font_colormap_white, 0xFF, strbuf);
+                0, 128, 71, 0, 0, &tbox_font_colormap_white, 0xFF, caught ? strbuf : str_gender_ratio_not_caught);
 
             tbox_sync(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_DATA], TBOX_SYNC_SET);
             tbox_tilemap_draw(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_TEXT]);
@@ -306,6 +321,8 @@ bool pokedex_entry_page_flavor_text_setup() {
             oam_load_graphic(&graphic_heart);
             oam_load_graphic(&graphic_pokeball);
             pokedex_entry_state->page_flavor_text_form_oam_idx = oam_new_forward_search(&oam_template_form, 137, 96, 0);
+            if (!caught)
+                oams[pokedex_entry_state->page_flavor_text_form_oam_idx].flags |= OAM_FLAG_INVISIBLE;
             oam_gfx_anim_start_if_not_current(oams + pokedex_entry_state->page_flavor_text_form_oam_idx, (u8)basestats[pokedex_entry_state->species].form);
             pokedex_entry_state->page_flavor_text_egg_oam_idx = oam_new_forward_search(&oam_template_egg, 162, 84, 0);
             pokedex_entry_state->page_flavor_text_pokeball_oam_idx = oam_new_forward_search(&oam_template_pokeball, 162, 102, 0);
@@ -313,15 +330,19 @@ bool pokedex_entry_page_flavor_text_setup() {
             pokedex_entry_state->page_initialization_state++;
             break;
         case POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_INITIALIZATION_STATE_SETUP_SCROLL_INDICATORS: {
-            scroll_indicator_template template = {
-                .arrow0_threshold = 0, 
-                .arrow1_threshold = (u16)MAX(0, pokedex_entry_state->page_flavor_text_num_lines - POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_NUM_VISIBLE_LINES), 
-                .arrow0_type = SCROLL_ARROW_UP, .arrow1_type = SCROLL_ARROW_DOWN,
-                .arrow0_x = 156, .arrow1_x = 156,
-                .arrow0_y = 113, .arrow1_y = 157,
-                .pal_tag = 112, .tiles_tag = 112,
-            };
-            pokedex_entry_state->page_flavor_text_scroll_indicators_cb_idx = scroll_indicator_new(&template, &pokedex_entry_state->page_flavor_text_first_line);
+            if (caught) {
+                scroll_indicator_template template = {
+                    .arrow0_threshold = 0, 
+                    .arrow1_threshold = (u16)MAX(0, pokedex_entry_state->page_flavor_text_num_lines - POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_NUM_VISIBLE_LINES), 
+                    .arrow0_type = SCROLL_ARROW_UP, .arrow1_type = SCROLL_ARROW_DOWN,
+                    .arrow0_x = 156, .arrow1_x = 156,
+                    .arrow0_y = 113, .arrow1_y = 157,
+                    .pal_tag = 112, .tiles_tag = 112,
+                };
+                pokedex_entry_state->page_flavor_text_scroll_indicators_cb_idx = scroll_indicator_new(&template, &pokedex_entry_state->page_flavor_text_first_line);
+            } else {
+                pokedex_entry_state->page_flavor_text_scroll_indicators_cb_idx = 0xFF;
+            }
             pokedex_entry_state->page_initialization_state++;
             break;
         }
@@ -333,6 +354,8 @@ bool pokedex_entry_page_flavor_text_setup() {
 
 void pokedex_entry_page_flavor_text_destroy() {
     pokedex_entry_page_free_tboxes();
+    if (pokedex_entry_state->page_flavor_text_scroll_indicators_cb_idx != 0xFF)
+        scroll_indicator_delete(pokedex_entry_state->page_flavor_text_scroll_indicators_cb_idx);
 }
 
 static void pokedex_entry_page_flavor_text_wait_cry(u8 self) {
@@ -351,16 +374,17 @@ bool pokedex_entry_page_flavor_text_handle_inputs(u8 self) {
     if (fading_control.active || dma3_busy(-1)) {
         return false;
     }
-    if (super.keys_new_and_repeated.keys.up && pokedex_entry_state->page_flavor_text_first_line > 0) {
+    bool caught = pokedex_operator(pokedex_entry_state->species, POKEDEX_GET | POKEDEX_CAUGHT, true);
+    if (super.keys_new_and_repeated.keys.up && caught && pokedex_entry_state->page_flavor_text_first_line > 0) {
         pokedex_entry_state->page_flavor_text_first_line--;
         pokedex_entry_page_flavor_text_update_flavor_text();
         return true;
-    } else if (super.keys_new_and_repeated.keys.down && 
+    } else if (super.keys_new_and_repeated.keys.down && caught &&
         pokedex_entry_state->page_flavor_text_first_line < pokedex_entry_state->page_flavor_text_num_lines - POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_NUM_VISIBLE_LINES) {
         pokedex_entry_state->page_flavor_text_first_line++;
         pokedex_entry_page_flavor_text_update_flavor_text();
         return true;
-    } else if (super.keys_new.keys.start) {
+    } else if (super.keys_new.keys.start && caught) {
         pokemon_play_cry(pokedex_entry_state->species, 0);
         big_callback_set_function_and_continuation(self, pokedex_entry_page_flavor_text_wait_cry, big_callbacks[self].function);
     }

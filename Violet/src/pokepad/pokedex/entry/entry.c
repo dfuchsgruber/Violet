@@ -32,6 +32,8 @@
 #include "menu_indicators.h"
 #include "pokemon/names.h"
 #include "pokepad/pokedex/pages/flavor_text.h"
+#include "pokemon/cry.h"
+#include "battle/state.h"
 
 EWRAM pokedex_entry_state_t *pokedex_entry_state = NULL;
 
@@ -138,7 +140,7 @@ static void pokedex_entry_update(u16 species) {
     tbox_flush_set(POKEDEX_ENTRY_TBOX_CATEGORY, 0x00);
 
     // Print additional information if the pokemon is caught
-    if (pokedex_operator(species, POKEDEX_GET | POKEDEX_CAUGHT, true) || true) {
+    if (pokedex_operator(species, POKEDEX_GET | POKEDEX_CAUGHT, true)) {
         tbox_blit_move_info_icon(POKEDEX_ENTRY_TBOX_CAUGHT_ICON, 0, 4, 4);
         u8 type1 = (u8) (basestats[species].type1 + 1);
         u8 type2 = (u8) (basestats[species].type2 + 1);
@@ -178,9 +180,11 @@ static void pokedex_entry_callback_return(u8 self) {
     callback1_set(pokedex_entry_state->continuation);
     pokedex_entry_free();
     big_callback_delete(self);
+    if (pokedex_entry_state->context == POKEDEX_ENTRY_PAGE_CONTEXT_CATCHING)
+        big_callback_delete(pokedex_entry_state->catching_cb_idx);
 }
 
-static void pokedex_entry_handle_inputs(u8 self) {
+static void pokedex_entry_handle_inputs_context_pokedex(u8 self) {
     if (fading_control.active || dma3_busy(-1))
         return;
     if (super.keys_new.keys.B) {
@@ -192,6 +196,53 @@ static void pokedex_entry_handle_inputs(u8 self) {
     }
 }
 
+static void pokedex_entry_handle_input_context_catching(u8 self) {
+    if (fading_control.active || dma3_busy(-1))
+        return;
+    if (super.keys_new.keys.B || super.keys_new.keys.A) {
+        fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
+        big_callbacks[self].function = pokedex_entry_callback_return;
+    } else {
+        if (pokedex_entry_pages[pokedex_entry_state->page].handle_inputs(self))
+            return;
+    }    
+}
+
+
+static void (*pokedex_entry_handle_inputs_by_context[POKEDEX_ENTRY_PAGE_NUM_CONTEXTS])(u8) = {
+    [POKEDEX_ENTRY_PAGE_CONTEXT_POKEDEX] = pokedex_entry_handle_inputs_context_pokedex,
+    [POKEDEX_ENTRY_PAGE_CONTEXT_CATCHING] = pokedex_entry_handle_input_context_catching,
+};
+
+
+static void pokedex_entry_handle_inputs(u8 self) {
+    if (pokedex_entry_state->handle_inputs_delay > 0) {
+        pokedex_entry_state->handle_inputs_delay--;
+        return;
+    }
+    pokedex_entry_handle_inputs_by_context[pokedex_entry_state->context](self);
+}
+
+
+static void pokedex_entry_wait_for_cry_and_continue_handle_inputs(u8 self) {
+    if (fading_control.active || dma3_busy(-1) || !cry_has_finished())
+        return;
+    big_callbacks[self].function = pokedex_entry_handle_inputs;
+}
+
+
+static void pokedex_entry_play_cry_and_continue_handle_inputs(u8 self) {
+    if (fading_control.active || dma3_busy(-1))
+        return;
+    if (pokedex_entry_state->play_cry) {
+        pokemon_play_cry(pokedex_entry_state->species, 0);
+        big_callbacks[self].function = pokedex_entry_wait_for_cry_and_continue_handle_inputs;
+    } else {
+        big_callbacks[self].function = pokedex_entry_handle_inputs;
+    }
+}
+
+
 static const u8 str_habitat[] = LANGDEP(
     PSTRING("KEY_AGebiete"),
     PSTRING("KEY_AHabitats")
@@ -202,11 +253,7 @@ static const u8 str_continue[] = LANGDEP(
     PSTRING("KEY_AWeiter")
 );
 
-static void pokedex_entry_callback_initialize_state_machine() {
-    DEBUG("Pokedex entry initialization state %d\n", pokedex_entry_state->initialization_state);
-    pokedex_cb1();
-    if (fading_control.active || dma3_busy(-1))
-        return;
+static void pokedex_entry_initialize_state_machine() {
     switch (pokedex_entry_state->initialization_state) {
         case POKEDEX_ENTRY_INITIALIZATION_STATE_DATA_SETUP: {
             pokedex_entry_state->page = POKEDEX_ENTRY_PAGE_FLAVOR_TEXT;
@@ -215,7 +262,8 @@ static void pokedex_entry_callback_initialize_state_machine() {
         }
         case POKEDEX_ENTRY_INITIALIZATION_STATE_STATE_RESET: {
             oam_reset();
-            big_callback_delete_all();
+            if (pokedex_entry_state->context != POKEDEX_ENTRY_PAGE_CONTEXT_CATCHING)
+                big_callback_delete_all();
             fading_cntrl_reset(); 
             fading_control.buffer_transfer_disabled = true;
             oam_palette_allocation_reset();
@@ -244,6 +292,7 @@ static void pokedex_entry_callback_initialize_state_machine() {
         case POKEDEX_ENTRY_INITIALIZATION_STATE_SETUP_TBOXES:
             tbox_free_all(); {
             tbox_sync_with_virtual_bg_and_init_all(pokedex_entry_tboxes);
+            tbox_init_frame_set_style(POKEDEX_ENTRY_TBOX_PAGE_TITLE, 1, 13 * 16);
             tbox_tilemap_draw(POKEDEX_ENTRY_TBOX_PAGE_TITLE);
             tbox_tilemap_draw(POKEDEX_ENTRY_TBOX_TITLE);
             tbox_tilemap_draw(POKEDEX_ENTRY_TBOX_CAUGHT_ICON);
@@ -293,7 +342,8 @@ static void pokedex_entry_callback_initialize_state_machine() {
             break;
         }
         case POKEDEX_ENTRY_INITIALIZATION_STATE_SETUP_SHOW: {
-            pal_set_all_to_black();
+            for (size_t i = 0; i < 512; i++)
+                pals[i] = pokedex_entry_state->color_to_fade_from;
             fading_control.buffer_transfer_disabled = false;   
             for (size_t i = 0; i < 4; i++)
                 bg_virtual_sync_reqeust_push(pokedex_entry_bg_configs[i].bg_id);
@@ -308,21 +358,34 @@ static void pokedex_entry_callback_initialize_state_machine() {
             io_set(IO_BLDALPHA, 0);
             io_set(IO_BLDY, 0);
             io_bic(IO_DISPCNT, IO_DISPCNT_WIN0 | IO_DISPCNT_WIN1);
-            fadescreen(0xFFFFFFFF, 0, 16, 0, 0);
+            fadescreen(0xFFFFFFFF, 0, 16, 0, pokedex_entry_state->color_to_fade_from.value);
             callback1_set(pokedex_cb1);
             vblank_handler_set(generic_vblank_handler);
-            big_callback_new(pokedex_entry_handle_inputs, 0);
+            big_callback_new(pokedex_entry_play_cry_and_continue_handle_inputs, 0);
             break;
         }
     }
+
 }
 
-void pokedex_entry_initialize(u16 species, u8 context, void (*continuation_cb1)()) {
+static void pokedex_entry_callback_initialize_state_machine() {
+    DEBUG("Pokedex entry initialization state %d\n", pokedex_entry_state->initialization_state);
+    pokedex_cb1();
+    if (fading_control.active || dma3_busy(-1))
+        return;
+    pokedex_entry_initialize_state_machine();
+}
+    
+
+void pokedex_entry_initialize(u16 species, u8 context, void (*continuation_cb1)(), bool play_cry,
+        color_t color_to_fade_from) {
     pokedex_entry_state = malloc_and_clear(sizeof(pokedex_entry_state_t));
     pokedex_entry_state->initialization_state = 0;
     pokedex_entry_state->species = species;
     pokedex_entry_state->context = context;
     pokedex_entry_state->continuation = continuation_cb1;
+    pokedex_entry_state->play_cry = (u8)(play_cry & 1);
+    pokedex_entry_state->color_to_fade_from = color_to_fade_from;
     callback1_set(pokedex_entry_callback_initialize_state_machine);
 }
 
@@ -354,4 +417,12 @@ void pokedex_entry_page_load_gfx(const void *tiles, const void *map, const void 
             pokedex_entry_state->bg_maps[2 + pokedex_entry_state->page_layer][y][x] = tile;
         }
     }
+}
+
+u8 pokedex_entry_initialize_from_battle(u16 species) {
+    color_t white = {.rgb = {.red = 31, .green = 31, .blue = 31}};
+    pokedex_entry_initialize(species, POKEDEX_ENTRY_PAGE_CONTEXT_CATCHING, battle_callback1, true, white);
+    pokedex_entry_state->handle_inputs_delay = 120;
+    pokedex_entry_state->catching_cb_idx = big_callback_new((void(*)(u8))nullsub, 0);
+    return pokedex_entry_state->catching_cb_idx;
 }

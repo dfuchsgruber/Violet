@@ -789,6 +789,39 @@ battle_item_restore_hp_at_end_turn_for_type_break:
 	bx r0
 	.pool
 
+.org 0x08010814
+	.word battle_callback1 | 1
+.org 0x0801104c
+	.word battle_callback1 | 1
+.org 0x08015984
+	.word battle_callback1 | 1
+.org 0x08015ad0
+	.word battle_callback1 | 1
+.org 0x080254b8
+	.word battle_callback1 | 1
+.org 0x0802da4c
+	.word battle_callback1 | 1
+.org 0x0802dea8
+	.word battle_callback1 | 1
+.org 0x0802def0
+	.word battle_callback1 | 1
+.org 0x080305b8
+	.word battle_callback1 | 1
+.org 0x0803066c
+	.word battle_callback1 | 1
+.org 0x08077a08
+	.word battle_callback1 | 1
+.org 0x080ddab0
+	.word battle_callback1 | 1
+.org 0x080e7c6c
+	.word battle_callback1 | 1
+.org 0x080e7d3c
+	.word battle_callback1 | 1
+.org 0x08156238
+	.word battle_callback1 | 1
+.org 0x081562e4
+	.word battle_callback1 | 1
+
 .org 0x0803ebec
 	push {r4, lr}
 	sub sp, #0x10 // Room for the 4 args on the stack

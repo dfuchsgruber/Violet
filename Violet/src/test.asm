@@ -27,6 +27,8 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	callasm bag_clear
+	end
 	setflag FLAG_POKEDEX_SCANNER
 	end
 
