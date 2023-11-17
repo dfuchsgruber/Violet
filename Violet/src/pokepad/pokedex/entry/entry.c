@@ -46,6 +46,18 @@ extern LZ77COMPRESSED gfx_pokedex_entry_page_flavor_text_uiTiles;
 extern LZ77COMPRESSED gfx_pokedex_entry_page_flavor_text_uiPal;
 extern LZ77COMPRESSED gfx_pokedex_entry_page_flavor_text_uiMap;
 
+static const pokedex_entry_page_t pokedex_entry_pages[NUM_POKEDEX_ENTRY_PAGES] = {
+    [POKEDEX_ENTRY_PAGE_FLAVOR_TEXT] = {
+        .title = str_pokedex_entry_page_flavor_text,
+        .setup = pokedex_entry_page_flavor_text_setup,
+        .destroy = pokedex_entry_page_flavor_text_destroy,
+        .handle_inputs = pokedex_entry_page_flavor_text_handle_inputs,
+        .tiles = gfx_pokedex_entry_page_flavor_text_uiTiles, 
+        .map = gfx_pokedex_entry_page_flavor_text_uiMap, 
+        .pal = gfx_pokedex_entry_page_flavor_text_uiPal,
+        },
+};
+
 static const bg_config pokedex_entry_bg_configs[] = {
     {.bg_id = 0, .char_base = 2, .map_base = 31, .priority = 0,},
     {.bg_id = 1, .char_base = 0, .map_base = 30, .priority = 1,},
@@ -78,18 +90,6 @@ static const u8 str_pokedex_entry_page_flavor_text[] = LANGDEP(
     PSTRING("Allgemeines"),
     PSTRING("General")
 );
-
-static const pokedex_entry_page_t pokedex_entry_pages[NUM_POKEDEX_ENTRY_PAGES] = {
-    [POKEDEX_ENTRY_PAGE_FLAVOR_TEXT] = {
-        .title = str_pokedex_entry_page_flavor_text,
-        .setup = pokedex_entry_page_flavor_text_setup,
-        .destroy = pokedex_entry_page_flavor_text_destroy,
-        .handle_inputs = pokedex_entry_page_flavor_text_handle_inputs,
-        .tiles = gfx_pokedex_entry_page_flavor_text_uiTiles, 
-        .map = gfx_pokedex_entry_page_flavor_text_uiMap, 
-        .pal = gfx_pokedex_entry_page_flavor_text_uiPal,
-        },
-};
 
 static const tbox_font_colormap tbox_fontcolmap_white = {.background = 0, .body = 1, .edge = 2};
 
