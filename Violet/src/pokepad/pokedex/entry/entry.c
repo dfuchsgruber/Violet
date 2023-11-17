@@ -46,6 +46,11 @@ extern LZ77COMPRESSED gfx_pokedex_entry_page_flavor_text_uiTiles;
 extern LZ77COMPRESSED gfx_pokedex_entry_page_flavor_text_uiPal;
 extern LZ77COMPRESSED gfx_pokedex_entry_page_flavor_text_uiMap;
 
+static const u8 str_pokedex_entry_page_flavor_text[] = LANGDEP(
+    PSTRING("Allgemeines"),
+    PSTRING("General")
+);
+
 static const pokedex_entry_page_t pokedex_entry_pages[NUM_POKEDEX_ENTRY_PAGES] = {
     [POKEDEX_ENTRY_PAGE_FLAVOR_TEXT] = {
         .title = str_pokedex_entry_page_flavor_text,
@@ -85,11 +90,6 @@ static const oam_template oam_template_pokemon = {
     .callback = oam_null_callback,
 };
 
-
-static const u8 str_pokedex_entry_page_flavor_text[] = LANGDEP(
-    PSTRING("Allgemeines"),
-    PSTRING("General")
-);
 
 static const tbox_font_colormap tbox_fontcolmap_white = {.background = 0, .body = 1, .edge = 2};
 
