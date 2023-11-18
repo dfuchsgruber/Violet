@@ -87,9 +87,9 @@ void special_item_obtain_show() {
 			u8 box_id = tbox_new(tbdata);
 			tbox_flush_set(box_id, 0x11);
 			tbox_tilemap_draw(box_id);
-			tbox_init_frame_message(box_id, 1, 15 * 16);
-			tbox_frame_draw_outer(box_id, 1, 0xF);
-			tbox_font_colormap fontcolmap = {1, 2, 1, 3};
+			tbox_init_frame_set_style(box_id, 1, 13 * 16);
+			tbox_frame_draw_outer(box_id, 1, 13);
+			tbox_font_colormap fontcolmap = {1, 2, 3, 3};
 			tbox_print_string(box_id, 0, 32 + 4, 2, 0, 0, &fontcolmap, 0,
 				item_get_description(item_idx));
 			item_obtain_tb_id = box_id;
