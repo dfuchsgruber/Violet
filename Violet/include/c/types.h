@@ -10,6 +10,12 @@
  #define FALL_THROUGH ((void)0)
 #endif /* __GNUC__ >= 7 */
 
+#if (__GNUC__ > 2) || (__GNUC__ == 2 && __GNUC_MINOR__ > 4)
+#       define UNUSED         __attribute__((__unused__))
+#else
+#       define UNUSED
+#endif
+
 #define EWRAM __attribute__((section("free_ewram")))
 
 #define ALIGNED(n) __attribute__((aligned(n)))

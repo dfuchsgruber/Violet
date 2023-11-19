@@ -15,6 +15,20 @@
 extern "C" {
 #endif
 
+    enum {
+        BG_TEXT_SIZE_256x256 = 0,
+        BG_TEXT_SIZE_512x256 = 1,
+        BG_TEXT_SIZE_256x512 = 2,
+        BG_TEXT_SIZE_512x512 = 3,
+    };
+
+    enum {
+        BG_RS_SIZE_128x128 = 0,
+        BG_RS_SIZE_256x256 = 1,
+        BG_RS_SIZE_512x512 = 2,
+        BG_RS_SIZE_1024x1024 = 3,
+    };
+
     typedef struct {
         u32 bg_id : 2;
         u32 char_base : 2;

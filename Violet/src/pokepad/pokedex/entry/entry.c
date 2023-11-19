@@ -32,6 +32,7 @@
 #include "menu_indicators.h"
 #include "pokemon/names.h"
 #include "pokepad/pokedex/pages/flavor_text.h"
+#include "pokepad/pokedex/pages/evolution.h"
 #include "pokemon/cry.h"
 #include "battle/state.h"
 
@@ -42,13 +43,15 @@ extern const LZ77COMPRESSED gfx_pokedex_entry_ui2Map;
 extern const LZ77COMPRESSED gfx_pokedex_entry_ui2Pal;
 extern const LZ77COMPRESSED gfx_pokedex_entry_ui_scrollingTiles;
 extern const bg_tile gfx_pokedex_entry_ui_scrollingMap[3][6];
-extern LZ77COMPRESSED gfx_pokedex_entry_page_flavor_text_uiTiles;
-extern LZ77COMPRESSED gfx_pokedex_entry_page_flavor_text_uiPal;
-extern LZ77COMPRESSED gfx_pokedex_entry_page_flavor_text_uiMap;
 
 static const u8 str_pokedex_entry_page_flavor_text[] = LANGDEP(
     PSTRING("Allgemeines"),
     PSTRING("General")
+);
+
+static const u8 str_pokedex_entry_page_evolution[] = LANGDEP(
+    PSTRING("Evolution"),
+    PSTRING("Evolution")
 );
 
 static const pokedex_entry_page_t pokedex_entry_pages[NUM_POKEDEX_ENTRY_PAGES] = {
@@ -61,13 +64,22 @@ static const pokedex_entry_page_t pokedex_entry_pages[NUM_POKEDEX_ENTRY_PAGES] =
         .map = gfx_pokedex_entry_page_flavor_text_uiMap, 
         .pal = gfx_pokedex_entry_page_flavor_text_uiPal,
         },
+    [POKEDEX_ENTRY_PAGE_EVOLUTION] = {
+        .title = str_pokedex_entry_page_evolution,
+        .setup = pokedex_entry_page_evolution_setup,
+        .destroy = pokedex_entry_page_evolution_destroy,
+        .handle_inputs = pokedex_entry_page_evolution_handle_inputs,
+        .tiles = gfx_pokedex_entry_page_evolution_uiTiles, 
+        .map = gfx_pokedex_entry_page_evolution_uiMap, 
+        .pal = gfx_pokedex_entry_page_evolution_uiPal,
+        },
 };
 
 static const bg_config pokedex_entry_bg_configs[] = {
-    {.bg_id = 0, .char_base = 2, .map_base = 31, .priority = 0,},
-    {.bg_id = 1, .char_base = 0, .map_base = 30, .priority = 1,},
-    {.bg_id = 2, .char_base = 1, .map_base = 29, .priority = 2,},
-    {.bg_id = 3, .char_base = 1, .map_base = 28, .priority = 3,},
+    {.bg_id = 0, .char_base = 2, .map_base = 31, .priority = 0, .size = BG_TEXT_SIZE_256x256},
+    {.bg_id = 1, .char_base = 0, .map_base = 30, .priority = 1, .size = BG_TEXT_SIZE_256x256},
+    {.bg_id = 2, .char_base = 1, .map_base = 28, .priority = 2, .size = BG_TEXT_SIZE_512x256},
+    {.bg_id = 3, .char_base = 1, .map_base = 26, .priority = 3, .size = BG_TEXT_SIZE_512x256},
 };
 
 static const tboxdata pokedex_entry_tboxes[NUM_POKEDEX_ENTRY_TBOXES + 1] = {
@@ -95,7 +107,7 @@ static const tbox_font_colormap tbox_fontcolmap_white = {.background = 0, .body 
 
 static void pokedex_entry_update_page_header() {
     for (int i = 0; i < NUM_POKEDEX_ENTRY_PAGES; i++) {
-        int x = 30 - (NUM_POKEDEX_ENTRY_PAGES + i) * 2;
+        int x = 30 - (NUM_POKEDEX_ENTRY_PAGES - i) * 2;
         int src_x;
         if (i < pokedex_entry_state->page) {
             src_x = 0;
@@ -114,6 +126,7 @@ static void pokedex_entry_update_page_header() {
     tbox_flush_set(POKEDEX_ENTRY_TBOX_PAGE_TITLE, 0x00);
     tbox_print_string(POKEDEX_ENTRY_TBOX_PAGE_TITLE, 2, 4, 4, 0, 0, &tbox_fontcolmap_white, 0, 
         pokedex_entry_pages[pokedex_entry_state->page].title);
+    bg_virtual_sync_reqeust_push(1);
 }
 
 static void pokedex_entry_update_page_all() {
@@ -123,10 +136,88 @@ static void pokedex_entry_update_page_all() {
             break;
         }
     }
-    pokedex_entry_page_load_gfx(pokedex_entry_pages[pokedex_entry_state->page].tiles, 
-        pokedex_entry_pages[pokedex_entry_state->page].map, 
-        pokedex_entry_pages[pokedex_entry_state->page].pal);
 }
+
+static void pokedex_entry_switch_pages_callback(u8 self) {
+    u16 *state = big_callbacks[self].params;
+    bool fading_in = big_callbacks[self].params[1];
+    bool setup_proceeding = false;
+    if (*state == 2 || *state == 3) 
+        setup_proceeding = pokedex_entry_pages[pokedex_entry_state->page].setup();
+    switch (*state) {
+        case 0: {
+            pokedex_entry_update_page_header();
+            // pokedex_entry_update_page_all();
+           pokedex_entry_page_load_gfx(
+                pokedex_entry_state->page_layer,
+                pokedex_entry_pages[pokedex_entry_state->page].tiles, 
+                pokedex_entry_pages[pokedex_entry_state->page].map, 
+                pokedex_entry_pages[pokedex_entry_state->page].pal);
+            bg_set_attribute((u8)(2 + (pokedex_entry_state->page_layer ^ fading_in ^ 1)), BG_ATTR_PRIORITY, 2);
+            bg_set_attribute((u8)(2 + (pokedex_entry_state->page_layer ^ fading_in)), BG_ATTR_PRIORITY, 3);
+            bg_update_and_show(2);
+            bg_update_and_show(3);
+            bg_virtual_sync_reqeust_push(0);
+            bg_virtual_sync_reqeust_push(2);
+            bg_virtual_sync_reqeust_push(3);
+            (*state)++;
+            FALL_THROUGH;
+        }
+        case 1: {
+            pokedex_entry_state->bg_x_offset[2 + pokedex_entry_state->page_layer] = fading_in ? 256 : 0;
+            pokedex_entry_state->bg_x_offset[2 + (pokedex_entry_state->page_layer ^ 1)] = 0;
+            (*state)++;
+            break;
+        }
+        case 2: {
+            if (fading_in) {
+                pokedex_entry_state->bg_x_offset[2 + pokedex_entry_state->page_layer] = (u16)(
+                    pokedex_entry_state->bg_x_offset[2 + pokedex_entry_state->page_layer] - 64);
+                if (pokedex_entry_state->bg_x_offset[2 + pokedex_entry_state->page_layer] > 0)
+                    break;
+            } else {
+                pokedex_entry_state->bg_x_offset[2 + (pokedex_entry_state->page_layer ^ 1)] = (u16)(
+                    pokedex_entry_state->bg_x_offset[2 + (pokedex_entry_state->page_layer ^ 1)] + 64);
+                
+                if (pokedex_entry_state->bg_x_offset[2 + (pokedex_entry_state->page_layer ^ 1)] < 256)
+                    break;
+            }
+            (*state)++;
+            FALL_THROUGH;
+        }
+        case 3: {
+            if (setup_proceeding)
+                return;
+            bg_virtual_sync_reqeust_push(0);
+            io_bic(IO_DISPCNT, IO_DISPCNT_WIN0);
+            FALL_THROUGH;
+        }
+        default:
+            big_callback_set_function_to_continuation(self);
+            DEBUG("Big callback set function co tinuation %d\n", big_callbacks[self].function);
+            break;
+    }
+}
+
+static void pokedex_entry_switch_pages(u8 self, u8 fading_in, u8 to_page) {
+    // DEBUG("Switch fading %d, to %d\n", fading_in, to_page);
+    pokedex_entry_pages[pokedex_entry_state->page].destroy();
+    pokedex_entry_state->page = to_page;
+    pokedex_entry_state->page_layer ^= 1;
+    big_callbacks[self].params[0] = 0;
+    big_callbacks[self].params[1] = fading_in;
+    // Exclude everything but BG2 and BG3 from the area where the page is loaded using the WIN feature
+    io_set(IO_DISPCNT, (u16)(io_get(IO_DISPCNT) | IO_DISPCNT_WIN0));
+    io_set(IO_WININ, IO_WININOUT_BG(0, 2) | IO_WININOUT_BG(0, 3));
+    io_set(IO_WINOUT, IO_WININOUT_BG(0, 0) | IO_WININOUT_BG(0, 1) | IO_WININOUT_BG(0, 2) |
+        IO_WININOUT_BG(0, 3) | IO_WININOUT_OBJ(0) | IO_WININOUT_FX(0));
+    io_set(IO_WIN0H, IO_WINH(70, 255));
+    io_set(IO_WIN0V, IO_WINV(24, 255));
+    pokedex_entry_state->page_initialization_state = 0;
+    big_callback_set_function_and_continuation(self, pokedex_entry_switch_pages_callback, big_callbacks[self].function);
+    big_callbacks[self].function(self);
+}
+
 
 static void pokedex_entry_update(u16 species) {
     DEBUG("Species: %d\n", species);
@@ -184,6 +275,19 @@ static void pokedex_entry_callback_return(u8 self) {
         big_callback_delete(pokedex_entry_state->catching_cb_idx);
 }
 
+static bool pokedex_entry_handle_inputs_switch_pages(u8 self) {
+    if (super.keys_new.keys.right && pokedex_entry_state->page < NUM_POKEDEX_ENTRY_PAGES - 1) {
+        play_sound(5);
+        pokedex_entry_switch_pages(self, true, (u8)(pokedex_entry_state->page + 1));
+        return true;
+    } else if (super.keys_new.keys.left && pokedex_entry_state->page > 0) {
+        play_sound(5);
+        pokedex_entry_switch_pages(self, false, (u8)(pokedex_entry_state->page - 1));
+        return true;
+    }
+    return false;
+}
+
 static void pokedex_entry_handle_inputs_context_pokedex(u8 self) {
     if (fading_control.active || dma3_busy(-1))
         return;
@@ -192,6 +296,8 @@ static void pokedex_entry_handle_inputs_context_pokedex(u8 self) {
         big_callbacks[self].function = pokedex_entry_callback_return;
     } else {
         if (pokedex_entry_pages[pokedex_entry_state->page].handle_inputs(self))
+            return;
+        if (pokedex_entry_handle_inputs_switch_pages(self))
             return;
     }
 }
@@ -204,6 +310,8 @@ static void pokedex_entry_handle_input_context_catching(u8 self) {
         big_callbacks[self].function = pokedex_entry_callback_return;
     } else {
         if (pokedex_entry_pages[pokedex_entry_state->page].handle_inputs(self))
+            return;
+        if (pokedex_entry_handle_inputs_switch_pages(self))
             return;
     }    
 }
@@ -253,6 +361,20 @@ static const u8 str_continue[] = LANGDEP(
     PSTRING("KEY_AWeiter")
 );
 
+static void pokedex_entry_cb1() {
+    generic_callback1();
+    bg_virtual_sync_reqeust_proceed();
+    for (size_t i = 0; i < 4; i++) {
+        io_set((u16)IO_BGHOFS(i), pokedex_entry_state->bg_x_offset[i]);
+        io_set((u16)IO_BGVOFS(i), pokedex_entry_state->bg_y_offset[i]);
+    }
+    DEBUG("Bg2vofs %d, bg3vofs %d\n", pokedex_entry_state->bg_x_offset[2], pokedex_entry_state->bg_x_offset[3]);
+}
+
+static size_t pokedex_entry_bg_sizes[4] = {
+    [0] = 32 * 32 * sizeof(bg_tile), [1] = 32 * 32 * sizeof(bg_tile), [2] = 32 * 64 * sizeof(bg_tile), [3] = 32 * 64 * sizeof(bg_tile),
+};
+
 static void pokedex_entry_initialize_state_machine() {
     switch (pokedex_entry_state->initialization_state) {
         case POKEDEX_ENTRY_INITIALIZATION_STATE_DATA_SETUP: {
@@ -278,7 +400,7 @@ static void pokedex_entry_initialize_state_machine() {
             bg_display_sync();
             for (size_t i = 0; i < 4; i++) {
                 u8 bg_idx = pokedex_entry_bg_configs[i].bg_id;
-                pokedex_entry_state->bg_maps[bg_idx] = malloc_and_clear(32 * 32 * sizeof(bg_tile));
+                pokedex_entry_state->bg_maps[bg_idx] = malloc_and_clear(pokedex_entry_bg_sizes[bg_idx]);
                 bg_set_tilemap(bg_idx, pokedex_entry_state->bg_maps[bg_idx]);
                 bg_virtual_map_displace(bg_idx, 0, 0);
                 bg_virtual_set_displace(bg_idx, 0, 0);
@@ -337,6 +459,11 @@ static void pokedex_entry_initialize_state_machine() {
         case POKEDEX_ENTRY_INITIALIZATION_STATE_LOAD_PAGE: {
             pokedex_entry_update_page_header();
             pokedex_entry_update_page_all();
+            pokedex_entry_page_load_gfx(
+                pokedex_entry_state->page_layer,
+                pokedex_entry_pages[pokedex_entry_state->page].tiles, 
+                pokedex_entry_pages[pokedex_entry_state->page].map, 
+                pokedex_entry_pages[pokedex_entry_state->page].pal);
             pokedex_entry_update(pokedex_entry_state->species);
             pokedex_entry_state->initialization_state++;
             break;
@@ -359,7 +486,7 @@ static void pokedex_entry_initialize_state_machine() {
             io_set(IO_BLDY, 0);
             io_bic(IO_DISPCNT, IO_DISPCNT_WIN0 | IO_DISPCNT_WIN1);
             fadescreen(0xFFFFFFFF, 0, 16, 0, pokedex_entry_state->color_to_fade_from.value);
-            callback1_set(pokedex_cb1);
+            callback1_set(pokedex_entry_cb1);
             vblank_handler_set(generic_vblank_handler);
             big_callback_new(pokedex_entry_play_cry_and_continue_handle_inputs, 0);
             break;
@@ -399,22 +526,25 @@ void pokedex_entry_page_initialize_tboxes(const tboxdata *boxes) {
 
 void pokedex_entry_page_free_tboxes() {
     for (size_t i = 0; i < pokedex_entry_state->page_num_tboxes; i++) {
+        tbox_flush_set(pokedex_entry_state->page_tbox_idxs[i], 0x00);
+        tbox_flush_map(pokedex_entry_state->page_tbox_idxs[i]);
+        tbox_copy_to_vram(pokedex_entry_state->page_tbox_idxs[i], TBOX_COPY_TILESET | TBOX_COPY_TILEMAP);
         tbox_free(pokedex_entry_state->page_tbox_idxs[i]);
     }
     pokedex_entry_state->page_num_tboxes = 0;
 }
 
-void pokedex_entry_page_load_gfx(const void *tiles, const void *map, const void *pal) {
-    lz77uncompvram(tiles, CHARBASE_PLUS_OFFSET_4BPP(1, 1 + pokedex_entry_state->page_layer * POKEDEX_ENTRY_PAGE_NUM_TILES));
-    lz77uncompwram(map, pokedex_entry_state->bg_maps[2 + pokedex_entry_state->page_layer]);
-    pal_decompress(pal, (u16)(16 * (2 + POKEDEX_ENTRY_PAGE_NUM_PALS * 16 * pokedex_entry_state->page_layer)), 16 * sizeof(color_t));
+void pokedex_entry_page_load_gfx(u8 layer, const void *tiles, const void *map, const void *pal) {
+    lz77uncompvram(tiles, CHARBASE_PLUS_OFFSET_4BPP(1, 1 + layer * POKEDEX_ENTRY_PAGE_NUM_TILES));
+    lz77uncompwram(map, pokedex_entry_state->bg_maps[2 + layer]);
+    pal_decompress(pal, (u16)(16 * (2 + POKEDEX_ENTRY_PAGE_NUM_PALS * layer)), 16 * sizeof(color_t));
     // Shift the palette and tile indices of the map
     for (int y = 0; y < 20; y++) {
         for (int x = 0; x < 30; x++) {
-            bg_tile tile = pokedex_entry_state->bg_maps[2 + pokedex_entry_state->page_layer][y][x];
-            tile.text.tile_number = (u16)((tile.text.tile_number + pokedex_entry_state->page_layer * POKEDEX_ENTRY_PAGE_NUM_TILES) & 0x3FF);
-            tile.text.palette = (u16)((2 + pokedex_entry_state->page_layer * POKEDEX_ENTRY_PAGE_NUM_PALS) & 0xF);
-            pokedex_entry_state->bg_maps[2 + pokedex_entry_state->page_layer][y][x] = tile;
+            bg_tile tile = pokedex_entry_state->bg_maps[2 + layer][y][x];
+            tile.text.tile_number = (u16)((tile.text.tile_number + layer * POKEDEX_ENTRY_PAGE_NUM_TILES) & 0x3FF);
+            tile.text.palette = (u16)((2 + layer * POKEDEX_ENTRY_PAGE_NUM_PALS) & 0xF);
+            pokedex_entry_state->bg_maps[2 + layer][y][x] = tile;
         }
     }
 }

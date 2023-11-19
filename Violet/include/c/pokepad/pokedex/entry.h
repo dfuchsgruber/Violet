@@ -40,6 +40,7 @@ enum {
 
 enum {
     POKEDEX_ENTRY_PAGE_FLAVOR_TEXT = 0,
+    POKEDEX_ENTRY_PAGE_EVOLUTION,
     NUM_POKEDEX_ENTRY_PAGES,
 };
 
@@ -73,6 +74,8 @@ typedef struct {
     u8 oam_idx_pokemon;
     u16 base_tile_pokemon;
     u8 play_cry;
+    u16 bg_x_offset[4];
+    u16 bg_y_offset[4];
     // From catching
     u8 handle_inputs_delay;
     // This callback should only be killed in the catching context to indicate 
@@ -121,11 +124,12 @@ void pokedex_entry_page_free_tboxes();
 
 /**
  * Loads the graphics for a page on the entry to the current layer
+ * @param layer The layer to load the graphics to
  * @param tiles The tiles to load
  * @param map The map to load
  * @param pal The palette to load
 */
-void pokedex_entry_page_load_gfx(const void *tiles, const void *map, const void *pal);
+void pokedex_entry_page_load_gfx(u8 layer, const void *tiles, const void *map, const void *pal);
 
 /**
  * Initializes the entry ui after a pokemon was caught in battle

@@ -35,4 +35,8 @@ void pokedex_entry_page_flavor_text_destroy();
 */
 bool pokedex_entry_page_flavor_text_handle_inputs(u8 task_id);
 
+extern LZ77COMPRESSED gfx_pokedex_entry_page_flavor_text_uiTiles;
+extern LZ77COMPRESSED gfx_pokedex_entry_page_flavor_text_uiPal;
+extern LZ77COMPRESSED gfx_pokedex_entry_page_flavor_text_uiMap;
+
 #endif

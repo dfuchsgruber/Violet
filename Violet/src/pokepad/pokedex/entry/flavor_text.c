@@ -344,7 +344,7 @@ bool pokedex_entry_page_flavor_text_setup() {
                 pokedex_entry_state->page_flavor_text_scroll_indicators_cb_idx = 0xFF;
             }
             pokedex_entry_state->page_initialization_state++;
-            break;
+            FALL_THROUGH;
         }
         default:
             return false;
@@ -356,6 +356,10 @@ void pokedex_entry_page_flavor_text_destroy() {
     pokedex_entry_page_free_tboxes();
     if (pokedex_entry_state->page_flavor_text_scroll_indicators_cb_idx != 0xFF)
         scroll_indicator_delete(pokedex_entry_state->page_flavor_text_scroll_indicators_cb_idx);
+    oam_free(oams + pokedex_entry_state->page_flavor_text_egg_oam_idx);
+    oam_free(oams + pokedex_entry_state->page_flavor_text_pokeball_oam_idx);
+    oam_free(oams + pokedex_entry_state->page_flavor_text_heart_oam_idx);
+    oam_free(oams + pokedex_entry_state->page_flavor_text_form_oam_idx);
 }
 
 static void pokedex_entry_page_flavor_text_wait_cry(u8 self) {
