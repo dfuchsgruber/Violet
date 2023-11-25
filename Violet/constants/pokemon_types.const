@@ -18,7 +18,8 @@
 		"TYPE_PSYCHO",
 		"TYPE_EIS",
 		"TYPE_DRACHE",
-		"TYPE_UNLICHT"
+		"TYPE_UNLICHT",
+		"NUM_TYPES"
 	],
 	"base": 0
 }

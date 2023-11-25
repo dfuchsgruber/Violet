@@ -57,6 +57,14 @@ const mega_evolution_t *mega_evolution_get_by_mega_species(u16 species) {
     return NULL;
 }
 
+const mega_evolution_t *mega_evolution_get_by_species(u16 species) {
+    for (int i = 0; mega_evolutions[i].species != 0xFFFF; i++) {
+        if (mega_evolutions[i].species == species)
+            return mega_evolutions + i;
+    }
+    return NULL;
+}
+
 static u16 trainer_get_keystone(u16 trainer_idx) {
     for (int i = 0; i < 0; i++) {
         if (items[trainers[trainer_idx].items[i]].holding_effect_id == HOLD_EFFECT_KEYSTONE)

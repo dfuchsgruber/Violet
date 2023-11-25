@@ -3,6 +3,7 @@
 #include "constants/pokemon_types.h"
 #include "text.h"
 #include "vars.h"
+#include "pokemon/basestat.h"
 
 static const u8 str_normal[] = LANGDEP(PSTRING("Normal"), PSTRING("Normal"));
 static const u8 str_kampf[] = LANGDEP(PSTRING("Kampf"), PSTRING("Fighting"));
@@ -23,7 +24,7 @@ static const u8 str_eis[] = LANGDEP(PSTRING("Eis"), PSTRING("Ice"));
 static const u8 str_drache[] = LANGDEP(PSTRING("Drache"), PSTRING("Dragon"));
 static const u8 str_unlicht[] = LANGDEP(PSTRING("Unlicht"), PSTRING("Dark"));
 
-const u8 *const str_pokemon_type_names[] = {
+const u8 *const str_pokemon_type_names[NUM_TYPES] = {
     [TYPE_NORMAL] = str_normal,
     [TYPE_KAMPF] = str_kampf,
     [TYPE_FLUG] = str_flug,

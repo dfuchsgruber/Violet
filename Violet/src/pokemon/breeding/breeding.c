@@ -36,38 +36,35 @@ const u16 *pokemon_get_egg_moves(u16 species, int *size){
     return egg_moves;
 }
 
+const baby_pokemon_t baby_pokemon[] = {
+	{.baby_species = POKEMON_AZURILL, .parent_species = POKEMON_AZUMARILL, .breeding_item = ITEM_SEERAUCH},
+	{.baby_species = POKEMON_MAMPFAXO, .parent_species = POKEMON_RELAXO, .breeding_item = ITEM_LAHMRAUCH},
+	{.baby_species = POKEMON_MOBAI, .parent_species = POKEMON_MOGELBAUM, .breeding_item = ITEM_STEINRAUCH},
+	{.baby_species = POKEMON_KLINGPLIM, .parent_species = POKEMON_PALIMPALIM, .breeding_item = ITEM_SCHEUCHRAUCH},
+	{.baby_species = POKEMON_WONNEIRA, .parent_species = POKEMON_CHANEIRA, .breeding_item = ITEM_GLUECKSRAUCH},
+	{.baby_species = POKEMON_PICHU, .parent_species = POKEMON_PIKACHU},
+	{.baby_species = POKEMON_FLUFFELUFF, .parent_species = POKEMON_PUMMELUFF},
+	{.baby_species = POKEMON_TOGEPI, .parent_species = POKEMON_TOGETIC},
+	{.baby_species = POKEMON_RABAUZ, .parent_species = POKEMON_NOCKCHAN},
+	{.baby_species = POKEMON_ELEKID, .parent_species = POKEMON_ELEKTEK},
+	{.baby_species = POKEMON_MAGBY, .parent_species = POKEMON_MAGMAR},
+	{.baby_species = POKEMON_RIOLU, .parent_species = POKEMON_LUCARIO},
+	{.baby_species = 0xFFFF},
+};
+
 void breeding_alter_egg_species(u16 *species, daycare_stru *daycare) {
 	u16 mother_item = (u16) box_pokemon_get_attribute(&(daycare->pokemon[0].pokemon),
 			ATTRIBUTE_ITEM, 0);
 	u16 father_item = (u16) box_pokemon_get_attribute(&(daycare->pokemon[1].pokemon),
 			ATTRIBUTE_ITEM, 0);
-	switch (*species) {
-	case POKEMON_AZURILL:
-		if (mother_item != ITEM_SEERAUCH && father_item != ITEM_SEERAUCH) {
-			*species = POKEMON_MARILL; // Can't breed Azurill without sea incense
+	for (size_t i = 0; baby_pokemon[i].baby_species != 0xFFFF; i++) {
+		if (baby_pokemon[i].baby_species == *species && baby_pokemon[i].breeding_item != 0 &&
+				baby_pokemon[i].breeding_item != mother_item && 
+				baby_pokemon[i].breeding_item != father_item) {
+			*species = baby_pokemon[i].parent_species;
+			return;
 		}
-		break;
-	case POKEMON_MAMPFAXO:
-		if (mother_item != ITEM_LAHMRAUCH && father_item != ITEM_LAHMRAUCH) {
-			*species = POKEMON_RELAXO; // Can't breed Munchlax without lax incense
-		}
-		break;
-	case POKEMON_MOBAI:
-		if (mother_item != ITEM_STEINRAUCH && father_item != ITEM_STEINRAUCH) {
-			*species = POKEMON_MOGELBAUM; // Can't breed Mobai without rock incense
-		}
-		break;
-	case POKEMON_KLINGPLIM:
-		if (mother_item != ITEM_SCHEUCHRAUCH && father_item != ITEM_SCHEUCHRAUCH) {
-			*species = POKEMON_PALIMPALIM;
-		}
-		break;
-	case POKEMON_WONNEIRA:
-		if (mother_item != ITEM_GLUECKSRAUCH && father_item != ITEM_GLUECKSRAUCH) {
-			*species = POKEMON_CHANEIRA;
-		}
-		break;
-	} // Wobuffet and Wynaut have been removed from the dex (who likes them anyway?)
+	}
 }
 
 void breeding_inherit_ivs(pokemon *egg, daycare_stru *daycare) {

@@ -60,18 +60,14 @@ static const pokedex_entry_page_t pokedex_entry_pages[NUM_POKEDEX_ENTRY_PAGES] =
         .setup = pokedex_entry_page_flavor_text_setup,
         .destroy = pokedex_entry_page_flavor_text_destroy,
         .handle_inputs = pokedex_entry_page_flavor_text_handle_inputs,
-        .tiles = gfx_pokedex_entry_page_flavor_text_uiTiles, 
-        .map = gfx_pokedex_entry_page_flavor_text_uiMap, 
-        .pal = gfx_pokedex_entry_page_flavor_text_uiPal,
+        .setup_bg = pokedex_entry_page_flavor_text_setup_bg,
         },
     [POKEDEX_ENTRY_PAGE_EVOLUTION] = {
         .title = str_pokedex_entry_page_evolution,
         .setup = pokedex_entry_page_evolution_setup,
         .destroy = pokedex_entry_page_evolution_destroy,
         .handle_inputs = pokedex_entry_page_evolution_handle_inputs,
-        .tiles = gfx_pokedex_entry_page_evolution_uiTiles, 
-        .map = gfx_pokedex_entry_page_evolution_uiMap, 
-        .pal = gfx_pokedex_entry_page_evolution_uiPal,
+        .setup_bg = pokedex_entry_page_evolution_setup_bg,
         },
 };
 
@@ -147,12 +143,7 @@ static void pokedex_entry_switch_pages_callback(u8 self) {
     switch (*state) {
         case 0: {
             pokedex_entry_update_page_header();
-            // pokedex_entry_update_page_all();
-           pokedex_entry_page_load_gfx(
-                pokedex_entry_state->page_layer,
-                pokedex_entry_pages[pokedex_entry_state->page].tiles, 
-                pokedex_entry_pages[pokedex_entry_state->page].map, 
-                pokedex_entry_pages[pokedex_entry_state->page].pal);
+            pokedex_entry_pages[pokedex_entry_state->page].setup_bg(pokedex_entry_state->page_layer);
             bg_set_attribute((u8)(2 + (pokedex_entry_state->page_layer ^ fading_in ^ 1)), BG_ATTR_PRIORITY, 2);
             bg_set_attribute((u8)(2 + (pokedex_entry_state->page_layer ^ fading_in)), BG_ATTR_PRIORITY, 3);
             bg_update_and_show(2);
@@ -333,7 +324,7 @@ static void pokedex_entry_handle_inputs(u8 self) {
 
 
 static void pokedex_entry_wait_for_cry_and_continue_handle_inputs(u8 self) {
-    if (fading_control.active || dma3_busy(-1) || !cry_has_finished())
+    if (fading_control.active || dma3_busy(-1)) //  || !cry_has_finished())
         return;
     big_callbacks[self].function = pokedex_entry_handle_inputs;
 }
@@ -368,7 +359,6 @@ static void pokedex_entry_cb1() {
         io_set((u16)IO_BGHOFS(i), pokedex_entry_state->bg_x_offset[i]);
         io_set((u16)IO_BGVOFS(i), pokedex_entry_state->bg_y_offset[i]);
     }
-    DEBUG("Bg2vofs %d, bg3vofs %d\n", pokedex_entry_state->bg_x_offset[2], pokedex_entry_state->bg_x_offset[3]);
 }
 
 static size_t pokedex_entry_bg_sizes[4] = {
@@ -459,11 +449,7 @@ static void pokedex_entry_initialize_state_machine() {
         case POKEDEX_ENTRY_INITIALIZATION_STATE_LOAD_PAGE: {
             pokedex_entry_update_page_header();
             pokedex_entry_update_page_all();
-            pokedex_entry_page_load_gfx(
-                pokedex_entry_state->page_layer,
-                pokedex_entry_pages[pokedex_entry_state->page].tiles, 
-                pokedex_entry_pages[pokedex_entry_state->page].map, 
-                pokedex_entry_pages[pokedex_entry_state->page].pal);
+            pokedex_entry_pages[pokedex_entry_state->page].setup_bg(pokedex_entry_state->page_layer);
             pokedex_entry_update(pokedex_entry_state->species);
             pokedex_entry_state->initialization_state++;
             break;

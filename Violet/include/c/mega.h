@@ -93,4 +93,11 @@ u16 battler_get_keystone(u8 battler_idx);
  **/
 const mega_evolution_t *mega_evolution_get_by_mega_species(u16 species);
 
+/**
+ * Searches the mega evolution of a species.
+ * @param species the species of the pokemon
+ * @return the mega evolution associated with the species or NULL
+*/
+const mega_evolution_t *mega_evolution_get_by_species(u16 species);
+
 #endif

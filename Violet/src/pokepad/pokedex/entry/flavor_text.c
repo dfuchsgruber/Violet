@@ -128,7 +128,7 @@ static const oam_template oam_template_heart = {
     .rotscale = oam_rotscale_anim_table_null, .callback = oam_null_callback,
 };
 
-static const tboxdata pokedex_entry_tboxes[NUM_POKEDEX_ENTRY_TBOXES + 1] = {
+static const tboxdata pokedex_entry_tboxes[NUM_POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOXES + 1] = {
     [POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_DATA] = {.bg_id = 0, .x = 9, .y = 3, .w = 21, .h = 11, .pal = 13, .start_tile = POKEDEX_ENTRY_PAGE_START_TILE},
     [POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_TEXT] = {.bg_id = 0, .x = 9, .y = 14, .w = 21, .h = 6, .pal = 13, .start_tile = POKEDEX_ENTRY_PAGE_START_TILE + 21 * 11},
     [NUM_POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOXES] = {.bg_id = 0xFF},
@@ -156,6 +156,22 @@ static const u8 str_unkown[] = PSTRING("???");
 static const tbox_font_colormap tbox_font_colormap_white = {.background = 0, .body = 1, .edge = 2};
 static const tbox_font_colormap tbox_font_colormap_black = {.background = 0, .body = 2, .edge = 3};
 static const tbox_font_colormap tbox_font_colormap_green = {.background = 0, .body = 7, .edge = 6};
+
+
+void pokedex_entry_page_flavor_text_setup_bg(u8 layer) {
+    lz77uncompvram(gfx_pokedex_entry_page_flavor_text_uiTiles, CHARBASE_PLUS_OFFSET_4BPP(1, 1 + layer * POKEDEX_ENTRY_PAGE_NUM_TILES));
+    lz77uncompwram(gfx_pokedex_entry_page_flavor_text_uiMap, pokedex_entry_state->bg_maps[2 + layer]);
+    pal_decompress(gfx_pokedex_entry_page_flavor_text_uiPal, (u16)(16 * (2 + POKEDEX_ENTRY_PAGE_NUM_PALS * layer)), 16 * sizeof(color_t));
+    // Shift the palette and tile indices of the map
+    for (int y = 0; y < 20; y++) {
+        for (int x = 0; x < 30; x++) {
+            bg_tile tile = pokedex_entry_state->bg_maps[2 + layer][y][x];
+            tile.text.tile_number = (u16)((tile.text.tile_number + layer * POKEDEX_ENTRY_PAGE_NUM_TILES) & 0x3FF);
+            tile.text.palette = (u16)((2 + layer * POKEDEX_ENTRY_PAGE_NUM_PALS) & 0xF);
+            pokedex_entry_state->bg_maps[2 + layer][y][x] = tile;
+        }
+    }
+}
 
 static void pokedex_entry_page_flavor_text_update_flavor_text() {
     tbox_flush_set(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_TEXT], 0x00);
@@ -354,8 +370,10 @@ bool pokedex_entry_page_flavor_text_setup() {
 
 void pokedex_entry_page_flavor_text_destroy() {
     pokedex_entry_page_free_tboxes();
-    if (pokedex_entry_state->page_flavor_text_scroll_indicators_cb_idx != 0xFF)
+    if (pokedex_entry_state->page_flavor_text_scroll_indicators_cb_idx != 0xFF) {
         scroll_indicator_delete(pokedex_entry_state->page_flavor_text_scroll_indicators_cb_idx);
+        pokedex_entry_state->page_flavor_text_scroll_indicators_cb_idx = 0xFF;
+    }
     oam_free(oams + pokedex_entry_state->page_flavor_text_egg_oam_idx);
     oam_free(oams + pokedex_entry_state->page_flavor_text_pokeball_oam_idx);
     oam_free(oams + pokedex_entry_state->page_flavor_text_heart_oam_idx);

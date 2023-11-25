@@ -11,6 +11,7 @@ enum {
     POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_INITIALIZATION_STATE_SETUP_OAM,
     POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_INITIALIZATION_STATE_SETUP_SCROLL_INDICATORS,
 };
+
 enum {
     POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_DATA = 0,
     POKEDEX_ENTRY_PAGE_FLAVOR_TEXT_TBOX_TEXT,
@@ -34,6 +35,12 @@ void pokedex_entry_page_flavor_text_destroy();
  * @return true if the input was processed and triggered an action
 */
 bool pokedex_entry_page_flavor_text_handle_inputs(u8 task_id);
+
+/**
+ * Sets up the background for the flavor text page.
+ * @param layer the layer to setup the background on
+*/
+void pokedex_entry_page_flavor_text_setup_bg(u8 layer);
 
 extern LZ77COMPRESSED gfx_pokedex_entry_page_flavor_text_uiTiles;
 extern LZ77COMPRESSED gfx_pokedex_entry_page_flavor_text_uiPal;

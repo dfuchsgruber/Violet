@@ -10,6 +10,7 @@
 
 #include "types.h"
 #include "pokemon/virtual.h"
+#include "constants/egg_groups.h"
 
 typedef struct {
 	u16 words[9];
@@ -18,6 +19,12 @@ typedef struct {
 	u16 species;
 	u16 item;
 } mail_stru;
+
+typedef struct {
+	u16 baby_species;
+	u16 parent_species;
+	u16 breeding_item;
+} baby_pokemon_t;
 
 typedef struct {
 	mail_stru message;
@@ -136,5 +143,8 @@ void daycare_remove_egg(daycare_stru *daycare);
  * @return A temperature in ]0, PARTY_TEMPERATURE_MAX], with the default temperature being at 500
  */
 u32 breeding_get_party_temperature();
+
+extern const baby_pokemon_t baby_pokemon[];
+extern const u8 *const egg_group_names[NUM_EGG_GROUPS];
 
 #endif /* INCLUDE_C_POKEMON_EGG_MOVES_H_ */

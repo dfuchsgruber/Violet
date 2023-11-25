@@ -191,7 +191,7 @@ extern "C" {
      * @param h height of the rectangle to fill
      * @param pal the palette idx each tile is associated with
      **/
-    void bg_fill_map_with_rectangle(u8 bg_idx, u16 tile, u8 x, u8 y, u8 w, u8 h, u8 pal);
+    void bg_fill_map_with_rectangle(u8 bg_idx, bg_tile tile, u8 x, u8 y, u8 w, u8 h, u8 pal);
 
     /**
      * Copies data to a rectangle on a bg
@@ -202,7 +202,19 @@ extern "C" {
      * @param w width of the rectangle
      * @param h height of the rectangle
      **/
-    void bg_copy_rectangle(u8 bg_idx, const u16 *src, u8 x, u8 y, u8 w, u8 h);
+    void bg_copy_rectangle(u8 bg_idx, const bg_tile *src, u8 x, u8 y, u8 w, u8 h);
+
+    /**
+     * Copies data to a rectangle on a bg and changes the palette of the tiles
+     * @param bg_idx to which bg to copy to
+     * @param src the data to copy
+     * @param x upper left x coordinate of the rectangle
+     * @param y upper left y coordiante of the rectangle
+     * @param w width of the rectangle
+     * @param h height of the rectangle
+     * @param pal the palette idx each tile is associated with
+     **/
+    void bg_copy_rectangle_and_change_palette(u8 bg_idx, const bg_tile *src, u8 x, u8 y, u8 w, u8 h, u8 pal);
 
     /**
      * General purpose free memory ?
@@ -241,6 +253,15 @@ extern "C" {
      * 
      */
     void bg_reset_scroll();
+
+    /**
+     * Loads or decompesses a tilemap to the bg tilemap buffer
+     * 
+     * @param bg_idx the bg to load to
+     * @param src the source data
+     * @param mode if true, the data is copied, otherwise it is decompressed
+     */
+    void bg_load_to_tilemap(u8 bg_idx, const void *src, bool mode);
 
 #ifdef	__cplusplus
 }

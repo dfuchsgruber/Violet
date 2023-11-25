@@ -6,6 +6,7 @@
 #include "constants/crafting_ingredient_types.h"
 #include "constants/crafting_recipe_types.h"
 #include "list_menu.h"
+#include "bg.h"
 
 #define MAX_NUM_INGREDIENTS 4
 #define CRAFTING_OAM_BASE_TAG 0x1534
@@ -159,7 +160,7 @@ extern const u8 gfx_crafting_menu_bg3Tiles[];
 extern const u8 gfx_crafting_menu_bg3Map[];
 extern const u8 gfx_crafting_menu_bg3Pal[];
 extern const u8 gfx_crafting_menu_bg2Tiles[];
-extern const u16 gfx_crafting_menu_bg2Map[56 / 8][136 / 8];
+extern const bg_tile gfx_crafting_menu_bg2Map[56 / 8][136 / 8];
 extern const u8 gfx_crafting_menu_bg2Pal[];
 
 // Cauldron scene gfx

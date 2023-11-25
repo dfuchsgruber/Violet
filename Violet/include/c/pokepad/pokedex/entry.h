@@ -55,11 +55,20 @@ typedef struct {
     bool (*setup)();
     void (*destroy)();
     bool (*handle_inputs)(u8);
-    const void *tiles;
-    const void *map;
-    const void *pal;
+    void (*setup_bg)(u8);
 } pokedex_entry_page_t;
 
+typedef struct {
+    u16 species;
+    u16 method;
+    u16 argument;
+    u8 indent : 4;
+    u8 is_egg : 1;
+    u8 is_mega : 1;
+    u8 hatches_from_egg : 1;
+} pokedex_entry_evolution_tree_node_t;
+
+#define POKEDEX_ENTRY_PAGE_EVOLUTION_MAX_TREE_SIZE 12
 
 typedef struct {
     u8 initialization_state;
@@ -95,6 +104,15 @@ typedef struct {
     u8 page_flavor_text_pokeball_oam_idx;
     u8 page_flavor_text_heart_oam_idx;
     u8 page_flavor_text_scroll_indicators_cb_idx;
+    // Evolution Page
+    pokedex_entry_evolution_tree_node_t evolution_tree[POKEDEX_ENTRY_PAGE_EVOLUTION_MAX_TREE_SIZE];
+    u8 evolution_tree_any_caught : 1;
+    u8 evolution_tree_size;
+    u8 evolution_tree_icon_oam_idxs[4];
+    u16 evolution_tree_cursor;
+    u16 evolution_tree_icon_base_tiles[4];
+    u8 evolution_tree_icon_pal_idxs[4];
+    u8 evolution_tree_scroll_indicators_cb_idx;
 
 } pokedex_entry_state_t;
 

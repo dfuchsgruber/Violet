@@ -10,6 +10,7 @@
 
 #include "pokemon/count.h"
 #include "constants/pokemon_colors.h"
+#include "constants/pokemon_types.h"
 
 #define LINKED_PKMN_CNT 8
 
@@ -60,5 +61,6 @@ extern const u32 pokemon_experience_tables[6][101];
 extern const u16 pokemon_linked[LINKED_PKMN_CNT];
 
 extern const u8 *pokemon_nature_strings[];
+extern const u8 *const str_pokemon_type_names[NUM_TYPES];
 
 #endif /* INCLUDE_C_POKEMON_BASESTAT_H_ */
