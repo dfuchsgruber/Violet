@@ -4,6 +4,7 @@
 #include "types.h"
 #include "bg.h"
 #include "color.h"
+#include "list_menu.h"
 
 #define POKEDEX_ENTRY_PAGE_START_TILE (1 + TBOX_FRAME_SET_STYLE_NUM_TILES  + 10 * 3 + 10 * 3 + 2 * 3 + 2 * 9 + 2 * 8 + 2 * 8)
 #define POKEDEX_ENTRY_PAGE_NUM_PALS 2
@@ -41,6 +42,7 @@ enum {
 enum {
     POKEDEX_ENTRY_PAGE_FLAVOR_TEXT = 0,
     POKEDEX_ENTRY_PAGE_EVOLUTION,
+    POKEDEX_ENTRY_PAGE_MOVE_LIST,
     NUM_POKEDEX_ENTRY_PAGES,
 };
 
@@ -113,6 +115,15 @@ typedef struct {
     u16 evolution_tree_icon_base_tiles[4];
     u8 evolution_tree_icon_pal_idxs[4];
     u8 evolution_tree_scroll_indicators_cb_idx;
+    // Move list
+    u8 list_menu_move_list_cb_idx;
+    u8 move_list_scroll_indicators_cb_idx;
+    list_menu_item *move_list_items;
+    u16 move_list_size;
+    u8 *move_list_strs;
+    u16 cursor_position_move_list;
+    u16 items_above_move_list;
+
 
 } pokedex_entry_state_t;
 
