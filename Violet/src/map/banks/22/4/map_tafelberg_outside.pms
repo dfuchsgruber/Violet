@@ -27,7 +27,8 @@
 						"item": 0,
 						"species": "POKEMON_MEDITALIS",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -55,7 +56,8 @@
 						"item": 0,
 						"species": "POKEMON_KLEINSTEIN",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -83,7 +85,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -111,7 +114,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -139,7 +143,8 @@
 						"item": 0,
 						"species": "0",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -167,7 +172,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -195,7 +201,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -223,7 +230,8 @@
 						"item": 0,
 						"species": "ITEM_TM37",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -251,7 +259,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "23",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -279,7 +288,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "24",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -307,7 +317,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "19",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -335,7 +346,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -363,7 +375,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -391,7 +404,8 @@
 						"item": 0,
 						"species": "POKEMON_RASAFF",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -419,7 +433,8 @@
 						"item": 0,
 						"species": "POKEMON_MEDITIE",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -447,7 +462,8 @@
 						"item": 0,
 						"species": "POKEMON_KLEINSTEIN",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -475,7 +491,8 @@
 						"item": 0,
 						"species": "POKEMON_DIGDRI",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -503,7 +520,8 @@
 						"item": 0,
 						"species": "POKEMON_MACHOLLO",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -531,7 +549,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "15",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -564,7 +583,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -592,7 +612,8 @@
 						"item": "ITEM_FOKUSBALL",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -620,7 +641,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -648,7 +670,8 @@
 						"item": "ITEM_X_SPEZIAL",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -676,7 +699,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				}
 			],

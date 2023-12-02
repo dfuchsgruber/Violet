@@ -29,7 +29,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -59,7 +60,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -87,7 +89,8 @@
 						"item": 0,
 						"species": "POKEMON_MYRAPLA",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {

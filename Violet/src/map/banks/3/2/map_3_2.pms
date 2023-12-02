@@ -29,7 +29,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -59,7 +60,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -89,7 +91,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -119,7 +122,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -149,7 +153,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -179,7 +184,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -209,7 +215,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -239,7 +246,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -269,7 +277,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -299,7 +308,8 @@
 						"item": "0",
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -329,7 +339,8 @@
 						"item": "ITEM_SCHUTZ",
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -359,7 +370,8 @@
 						"item": "ITEM_MININUGGET",
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -389,7 +401,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -419,7 +432,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -449,7 +463,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -479,7 +494,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -509,7 +525,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -539,7 +556,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -569,7 +587,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -597,7 +616,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -625,7 +645,8 @@
 						"item": 0,
 						"species": "POKEMON_KLEINSTEIN",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -653,7 +674,8 @@
 						"item": 0,
 						"species": "POKEMON_NASGNET",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -681,7 +703,8 @@
 						"item": 0,
 						"species": "POKEMON_WINGULL",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -709,7 +732,8 @@
 						"item": 0,
 						"species": "POKEMON_STOLLUNIOR",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -737,7 +761,8 @@
 						"item": 0,
 						"species": "POKEMON_GEOROK",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -765,7 +790,8 @@
 						"item": 0,
 						"species": "POKEMON_KRAMSHEF",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -793,7 +819,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "2",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -821,7 +848,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "10",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -849,7 +877,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "11",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -877,7 +906,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "3",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -905,7 +935,8 @@
 						"item": 0,
 						"species": "POKEMON_STERNDU",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": "10",
 					"script_std_and_in_connection": {
@@ -933,7 +964,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -961,7 +993,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "16",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {

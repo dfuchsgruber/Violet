@@ -4,6 +4,7 @@
 #include "types.h"
 #include "list_menu.h"
 #include "pokemon/virtual.h"
+#include "constants/move_tutor.h"
 
 typedef struct {
     u8 state;
@@ -33,7 +34,16 @@ typedef struct {
     u16 list_menu_row;
 } move_relearner_state_t;
 
+typedef struct {
+    u8 bank;
+    u8 map_idx;
+    u8 person_idx;
+} move_tutor_t;
+
+extern const move_tutor_t move_tutors[NUM_MOVE_TUTORS];
+
 extern move_relearner_state_t *move_relearner_state;
+
 
 /**
  * Gets all moves relearnable by a pokemon.
@@ -65,5 +75,11 @@ extern const list_menu_template move_relearner_list_menu_template; // static ROM
  * @return u8 how many moves are applicable
  */
 u8 pokemon_get_accesible_learnable_moves(const pokemon *p, u16 *moves, u8 type);
+
+/**
+ * Sets the flag of a move tutor
+ * @param move_tutor the move tutor
+*/
+void move_tutor_set_flag(u8 move_tutor);
 
 #endif

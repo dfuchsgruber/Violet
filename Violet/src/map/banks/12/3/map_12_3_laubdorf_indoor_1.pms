@@ -12,27 +12,28 @@
 					"picture": "26",
 					"x": "5",
 					"y": "5",
-					"level": 0,
+					"level": "0",
 					"behaviour": "BEHAVIOUR_ROTATE_CLOCKWISE",
 					"behaviour_range": {
 						"x": "2",
 						"y": "0"
 					},
-					"field_B": 0,
+					"field_B": "0",
 					"is_trainer": "0",
 					"field_D": 0,
-					"alert_radius": 0,
+					"alert_radius": "0",
 					"script": "ow_script_laubdorf_indoor_1_person_0",
-					"flag": 0,
+					"flag": "0",
 					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": 0
+						"item": "0",
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0",
+						"move_tutor": "MOVE_TUTOR_ENERGIEBALL"
 					},
-					"argument": 0,
+					"argument": "0",
 					"script_std_and_in_connection": {
-						"script_std": 0,
+						"script_std": "PERSON_MOVE_TUTOR",
 						"in_connection": "0"
 					}
 				},
@@ -61,7 +62,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				}
 			],

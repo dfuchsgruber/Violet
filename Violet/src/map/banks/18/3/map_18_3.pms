@@ -29,7 +29,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -59,7 +60,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -89,7 +91,8 @@
 						"item": "ITEM_EISEN",
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -119,7 +122,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -149,7 +153,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -179,7 +184,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -209,7 +215,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -239,7 +246,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -269,7 +277,8 @@
 						"item": "ITEM_HEISSBROCKEN",
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -299,7 +308,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -329,7 +339,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -359,7 +370,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -389,7 +401,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -419,7 +432,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -449,7 +463,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -479,7 +494,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -509,7 +525,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -539,7 +556,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -569,7 +587,8 @@
 						"item": 0,
 						"species": "POKEMON_MOLUNK",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -599,7 +618,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -629,7 +649,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -659,7 +680,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -689,7 +711,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -719,7 +742,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -749,7 +773,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -779,7 +804,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -809,7 +835,8 @@
 						"item": 0,
 						"species": "POKEMON_SCHNECKMAG",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -838,7 +865,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -867,7 +895,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -896,7 +925,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -924,7 +954,8 @@
 						"item": 0,
 						"species": "POKEMON_VULPIX",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": "36",
 					"script_std_and_in_connection": {
@@ -952,7 +983,8 @@
 						"item": 0,
 						"species": "POKEMON_FUKANO",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -980,7 +1012,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1008,7 +1041,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1036,7 +1070,8 @@
 						"item": 0,
 						"species": "POKEMON_MAGMAR",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1064,7 +1099,8 @@
 						"item": 0,
 						"species": "POKEMON_MAGCARGO",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1092,7 +1128,8 @@
 						"item": 0,
 						"species": "POKEMON_PANZAERON",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1120,7 +1157,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "30",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1148,7 +1186,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "17",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {

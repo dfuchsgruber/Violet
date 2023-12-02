@@ -29,7 +29,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -59,7 +60,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -89,7 +91,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -119,7 +122,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -149,7 +153,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -179,7 +184,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -209,7 +215,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -239,7 +246,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -269,7 +277,8 @@
 						"item": 0,
 						"species": "0",
 						"berry_tree_idx": "13",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -299,7 +308,8 @@
 						"item": 0,
 						"species": "0",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -329,7 +339,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -359,7 +370,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -389,7 +401,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -419,7 +432,8 @@
 						"item": "ITEM_BELEBER",
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -449,7 +463,8 @@
 						"item": "0",
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -479,7 +494,8 @@
 						"item": "ITEM_AETHER",
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -509,7 +525,8 @@
 						"item": "ITEM_GEGENGIFT",
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -539,7 +556,8 @@
 						"item": "ITEM_NESTBALL",
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": "3",
 					"script_std_and_in_connection": {
@@ -569,7 +587,8 @@
 						"item": "ITEM_STERNENSTUECK",
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -599,7 +618,8 @@
 						"item": "ITEM_TM32",
 						"species": "0",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -629,7 +649,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -659,7 +680,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -689,7 +711,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -719,7 +742,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -749,7 +773,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -779,7 +804,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -809,7 +835,8 @@
 						"item": 0,
 						"species": "0",
 						"berry_tree_idx": "6",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -839,7 +866,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -869,7 +897,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -899,7 +928,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -929,7 +959,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -959,7 +990,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -989,7 +1021,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1019,7 +1052,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1049,7 +1083,8 @@
 						"item": "ITEM_AP_PLUS",
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1079,7 +1114,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1109,7 +1145,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1139,7 +1176,8 @@
 						"item": 0,
 						"species": "POKEMON_FRIZELBLIZ",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": "9",
 					"script_std_and_in_connection": {
@@ -1169,7 +1207,8 @@
 						"item": 0,
 						"species": "POKEMON_NACHTARA",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1199,7 +1238,8 @@
 						"item": 0,
 						"species": "POKEMON_KANIVANHA",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1229,7 +1269,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1259,7 +1300,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1289,7 +1331,8 @@
 						"item": 0,
 						"species": "POKEMON_KIRLIA",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": "35",
 					"script_std_and_in_connection": {
@@ -1319,7 +1362,8 @@
 						"item": "ITEM_ABRA_PUPPE",
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1349,7 +1393,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -1379,7 +1424,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -1409,7 +1455,8 @@
 						"item": 0,
 						"species": "0",
 						"berry_tree_idx": "4",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1439,7 +1486,8 @@
 						"item": 0,
 						"species": "0",
 						"berry_tree_idx": "6",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1469,7 +1517,8 @@
 						"item": 0,
 						"species": "POKEMON_ELEKID",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1498,7 +1547,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1527,7 +1577,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1556,7 +1607,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -1584,7 +1636,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "9",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1612,7 +1665,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "10",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1640,7 +1694,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "11",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1668,7 +1723,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "12",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1696,7 +1752,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "6",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1724,7 +1781,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "20",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1752,7 +1810,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "7",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1780,7 +1839,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "4",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1808,7 +1868,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "1",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1836,7 +1897,8 @@
 						"item": 0,
 						"species": "POKEMON_BIBOR",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1864,7 +1926,8 @@
 						"item": 0,
 						"species": "POKEMON_BIBOR",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -1892,7 +1955,8 @@
 						"item": 0,
 						"species": "POKEMON_BIBOR",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {

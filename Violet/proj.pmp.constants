@@ -1,5 +1,5 @@
 {
-	"move_tutor": "constants/move_tutor.const",
+	"move_tutors": "constants/move_tutors.const",
 	"evolution_methods": "constants/evolution_methods.const",
 	"items": "constants/items.const",
 	"species": "constants/species.const",

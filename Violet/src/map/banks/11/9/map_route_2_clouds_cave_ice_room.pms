@@ -27,7 +27,8 @@
 						"item": 0,
 						"species": "POKEMON_KEIFEL",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": "37",
 					"script_std_and_in_connection": {
@@ -55,7 +56,8 @@
 						"item": 0,
 						"species": "POKEMON_SCHNEPPKE",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -83,7 +85,8 @@
 						"item": "ITEM_EISHEILER",
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": "3",
 					"script_std_and_in_connection": {
@@ -111,7 +114,8 @@
 						"item": "ITEM_EWIGES_EIS",
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -139,7 +143,8 @@
 						"item": 0,
 						"species": "POKEMON_GOLBAT",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -167,7 +172,8 @@
 						"item": 0,
 						"species": "POKEMON_SCHNEPPKE",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -195,7 +201,8 @@
 						"item": 0,
 						"species": "POKEMON_SHNEBEDECK",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -223,7 +230,8 @@
 						"item": 0,
 						"species": "POKEMON_GEOROK",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -251,7 +259,8 @@
 						"item": 0,
 						"species": "POKEMON_FIRNONTOR",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -279,7 +288,8 @@
 						"item": 0,
 						"species": "POKEMON_SCHNEPPKE",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {

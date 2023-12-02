@@ -28,7 +28,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "26",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -57,7 +58,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -86,7 +88,8 @@
 						"item": "ITEM_HYPERBALL",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "5",
 					"script_std_and_in_connection": {
@@ -115,7 +118,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -144,7 +148,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -172,7 +177,8 @@
 						"item": "0",
 						"species": "POKEMON_PUMMELUFF",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -200,7 +206,8 @@
 						"item": "0",
 						"species": "POKEMON_STARAVIA",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -228,7 +235,8 @@
 						"item": 0,
 						"species": "POKEMON_DARTIGNIS",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -256,7 +264,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "TYPE_FEE"
+						"type": "TYPE_FEE",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -284,7 +293,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "47",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -312,7 +322,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "48",
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -340,7 +351,8 @@
 						"item": "0",
 						"species": "POKEMON_FLOETTE",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "36",
 					"script_std_and_in_connection": {
@@ -368,7 +380,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -396,7 +409,8 @@
 						"item": "ITEM_LEUCHTSTEIN",
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -424,7 +438,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -452,7 +467,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -480,7 +496,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -508,7 +525,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -536,7 +554,8 @@
 						"item": "0",
 						"species": "POKEMON_WELSAR",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "42",
 					"script_std_and_in_connection": {
@@ -564,7 +583,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -592,7 +612,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -620,7 +641,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -648,7 +670,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -676,7 +699,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -704,7 +728,8 @@
 						"item": "0",
 						"species": "POKEMON_TRASLA",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -732,7 +757,8 @@
 						"item": "0",
 						"species": "POKEMON_BLUBELLA",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -760,7 +786,8 @@
 						"item": 0,
 						"species": "POKEMON_KRAMSHEF",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -788,7 +815,8 @@
 						"item": 0,
 						"species": "POKEMON_SCHWALBOSS",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -816,7 +844,8 @@
 						"item": "0",
 						"species": "POKEMON_CLAVION",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -844,7 +873,8 @@
 						"item": "0",
 						"species": "POKEMON_TOGEPI",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -872,7 +902,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -900,7 +931,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -928,7 +960,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -956,7 +989,8 @@
 						"item": "0",
 						"species": "POKEMON_KIRLIA",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "37",
 					"script_std_and_in_connection": {
@@ -984,7 +1018,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -1012,7 +1047,8 @@
 						"item": "0",
 						"species": "POKEMON_KNUDDELUFF",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -1040,7 +1076,8 @@
 						"item": 0,
 						"species": "POKEMON_WAUMPEL",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {

@@ -60,11 +60,6 @@ void accessible_move_tutor_set_flag() {
     setflag((u16)(FLAG_TUTOR_CRYSTAL_BASE + *var_access(VAR_ACCESIBLE_MOVE_TUTOR_TYPE) - 1));
 }
 
-void move_tutor_set_flag() {
-    setflag((u16)(FLAG_MOVE_TUTOR_BASE + *var_access(0x8004)));
-
-}
-
 static const u8 str_back[] = LANGDEP(PSTRING("Zurück"), PSTRING("Cancel"));
 
 void move_relearner_initialize_list_menu() {

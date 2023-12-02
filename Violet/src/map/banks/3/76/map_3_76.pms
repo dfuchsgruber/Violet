@@ -29,7 +29,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -59,7 +60,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -89,7 +91,8 @@
 						"item": 0,
 						"species": "POKEMON_PANZAERON",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -118,7 +121,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -147,7 +151,8 @@
 						"item": "ITEM_X_ANGRIFF",
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -175,7 +180,8 @@
 						"item": 0,
 						"species": "POKEMON_WABLU",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": "35",
 					"script_std_and_in_connection": {
@@ -203,7 +209,8 @@
 						"item": 0,
 						"species": "POKEMON_STARALILI",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -231,7 +238,8 @@
 						"item": 0,
 						"species": "POKEMON_FIARO",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -259,7 +267,8 @@
 						"item": 0,
 						"species": "POKEMON_FORMEO",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -292,7 +301,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -320,7 +330,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "53",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -348,7 +359,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "52",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -376,7 +388,8 @@
 						"item": "ITEM_SONDERBONBON",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -404,7 +417,8 @@
 						"item": "0",
 						"species": "POKEMON_PANZAERON",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -432,7 +446,8 @@
 						"item": "0",
 						"species": "POKEMON_GEOROK",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -460,7 +475,8 @@
 						"item": "0",
 						"species": "POKEMON_SCHWALBOSS",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				}
 			],

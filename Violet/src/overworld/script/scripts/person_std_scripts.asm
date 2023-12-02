@@ -825,7 +825,14 @@ str_recipe_can_be_used:
 	.autostring 34 2 "Das Rezept kann an einem Laz. Kessel in einem Pokéstop verwendet werden."
 str_mushroom_no_pluck:
 	.autostring 34 2 "Schade!\nDas BUFFER_1 hat den Pilz bereits gegegessenDOTS"
+
 .elseif LANG_EN
+str_move_tutor_ask:
+    .autostring 34 2 "Fantastic!\nYou have BUFFER_2 BUFFER_1!\pShould I teach one of your Pokémon BUFFER_3?"
+str_move_tutor_which_mon:
+    .autostring 34 2 "Which of your Pokémon should I teach BUFFER_3?"
+str_move_tutor_aborted:
+    .autostring 34 2 "What a pity.\nIf you change your mind, you know where to find me."
 str_mon0:
 	.autostring 34 2 "BUFFER_1! BUFFER_1!"
 str_mon1:

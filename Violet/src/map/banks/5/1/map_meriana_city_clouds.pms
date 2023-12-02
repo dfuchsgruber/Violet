@@ -28,7 +28,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -57,7 +58,8 @@
 						"item": "ITEM_HYPERTRANK",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "3",
 					"script_std_and_in_connection": {
@@ -86,7 +88,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -115,7 +118,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -143,7 +147,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": "TYPE_KAMPF"
+						"type": "TYPE_KAMPF",
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -171,7 +176,8 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -199,7 +205,8 @@
 						"item": "0",
 						"species": "POKEMON_MASCHOCK",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "35",
 					"script_std_and_in_connection": {
@@ -227,7 +234,8 @@
 						"item": "0",
 						"species": "POKEMON_DARTIGNIS",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -255,7 +263,8 @@
 						"item": 0,
 						"species": "POKEMON_PANZAERON",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -283,7 +292,8 @@
 						"item": 0,
 						"species": "POKEMON_KRAMURX",
 						"berry_tree_idx": 0,
-						"type": 0
+						"type": 0,
+						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
@@ -316,7 +326,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -344,7 +355,8 @@
 						"item": "ITEM_KRAFTBALL",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -372,14 +384,15 @@
 						"item": "ITEM_MUSKELBAND",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
 					"target_index": "14",
 					"picture": "54",
 					"script_std_and_in_connection": {
-						"script_std": "0",
+						"script_std": "PERSON_MOVE_TUTOR",
 						"in_connection": "0"
 					},
 					"argument": "0",
@@ -400,7 +413,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": "MOVE_TUTOR_FOKUSSTOSS"
 					}
 				},
 				{
@@ -428,7 +442,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -456,7 +471,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -484,7 +500,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				}
 			],

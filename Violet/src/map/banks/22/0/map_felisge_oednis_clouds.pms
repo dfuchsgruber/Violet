@@ -28,7 +28,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -57,7 +58,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -86,7 +88,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
@@ -119,7 +122,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "TYPE_WASSER"
+						"type": "TYPE_WASSER",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -147,7 +151,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "54",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -175,7 +180,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "55",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -203,7 +209,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -231,7 +238,8 @@
 						"item": "0",
 						"species": "POKEMON_MORLORD",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -259,7 +267,8 @@
 						"item": "ITEM_LICHTLEHM",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -287,7 +296,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -315,7 +325,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -343,7 +354,8 @@
 						"item": "0",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -371,7 +383,8 @@
 						"item": "ITEM_WOLKENBALL",
 						"species": "0",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -399,7 +412,8 @@
 						"item": "0",
 						"species": "POKEMON_STARALILI",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -427,7 +441,8 @@
 						"item": "0",
 						"species": "POKEMON_FELINO",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				},
 				{
@@ -455,7 +470,8 @@
 						"item": "0",
 						"species": "POKEMON_SCHWALBOSS",
 						"berry_tree_idx": "0",
-						"type": "0"
+						"type": "0",
+						"move_tutor": 0
 					}
 				}
 			],

@@ -278,7 +278,7 @@ u16 special_mushroom_get_stage() {
 }
 
 
-static const u32 mushroom_rates[] = {[MUSHROOM_TYPE_LARGE_MUSHROOM] = 1, [MUSHROOM_TYPE_TINY_MUSHROOM] = 5, [MUSHROOM_TYPE_ENCOUNTER] = 5, [MUSHROOM_TYPE_ENCOUNTER_LARGE] = 1};
+static const u32 mushroom_rates[] = {[MUSHROOM_TYPE_LARGE_MUSHROOM] = 1, [MUSHROOM_TYPE_TINY_MUSHROOM] = 19, [MUSHROOM_TYPE_ENCOUNTER] = 19, [MUSHROOM_TYPE_ENCOUNTER_LARGE] = 1};
 
 u16 mushroom_get_stage(u16 mushroom_idx) {
     if (mushroom_idx >= DUNGEON_MISC_IDX_START)

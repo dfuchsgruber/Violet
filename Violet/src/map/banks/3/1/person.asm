@@ -271,59 +271,24 @@ str_after_receiving_black_belt:
     .autostring 34 2 "The Black Belt makes Fighting-Type attacks stronger when being held by a Pokémon.\pEvery move will be a hit, I am not gonna lie!"
 .endif
 
+make_move_tutor_std move_tutor str_move_tutor_intro str_move_tutor_abort
+
+.global ow_script_map_bluetenbach_move_tutor_rock_slide
+ow_script_beach_house_move_tutor:
+    call move_tutor
+    end
 ow_script_map_bluetenbach_move_tutor_rock_slide:
-    setvar 0x8004 MOVE_TUTOR_STEINHAGEL
-    callasm move_tutor_set_flag
-    loadpointer 0x0 str_move_tutor_intro
-    callstd MSG_FACE
-    call move_tutor_item_check
-    gotoif EQUAL has_mushrooms
-    end
-
-has_mushrooms:
-    applymovement 0x800f say_exclam
-    waitmovement 0x0
-    loadpointer 0x0 str_ask_move_tutor
-    callstd MSG_YES_NO
-    compare LASTRESULT 0x1
-    gotoif LESS move_tutor_abort
-    loadpointer 0x0 str_which_should_learn
-    callstd MSG
-    setvar 0x8005 MOVE_TUTOR_STEINHAGEL
-    call ow_script_move_tutor_do
-    compare LASTRESULT 0x0
-    gotoif EQUAL move_tutor_abort
-    call ow_script_move_tutor_pay_items
-    loadpointer 0x0 str_move_tutor_pay_items
-    callstd MSG
-    end
-
-move_tutor_abort:
-    loadpointer 0x0 str_move_tutor_abort
-    callstd MSG
-    end
-
-say_exclam:
-    .byte SAY_EXCLAM, STOP
-
+    
 .ifdef LANG_GER
 str_move_tutor_intro:
-    .autostring 34 2 "Viele Jahre habe ich die verschiedensten Höhlen erkundet.\pIch habe viele Kampffertigkeiten erworben.\pMeine Pokémon sind nun sogar dazu im Stande, Steine hageln zu lassen.\pWenn du mir entweder einen Riesenpilz oder drei Minipilze gibst, kann ich diese Technik einem deiner Pokémon beibringen."
-str_ask_move_tutor:
-    .autostring 34 2 "Ha!\nAusgezeichnet!\pDu hast BUFFER_2-mal BUFFER_1 bei dir!\pAls Gegenleistung bringe ich einem deiner Pokémon Steinhagel bei.\pWas sagst du dazu?"
-str_which_should_learn:
-    .autostring 34 2 "Gute Wahl!\pWelches Pokémon soll Steinhagel lernen?"
+    .autostring 34 2 "Viele Jahre habe ich die verschiedensten Höhlen erkundet.\pIch habe viele Kampffertigkeiten erworben.\pMeine Pokémon sind nun sogar dazu im Stande, Steine hageln zu lassen.\pWenn du mir entweder BUFFER_1x Riesenpilz oder BUFFER_2x Minipilz gibst, kann ich diese Technik einem deiner Pokémon beibringen."
 str_move_tutor_abort:
-    .autostring 34 2 "Wie schade!\pSolltest du einem deiner Pokémon Steinhagel beibringen wollen, weißt du ja, wo ich zu finden bin."
+    .autostring 34 2 "Wie schade!\pSolltest du einem deiner Pokémon BUFFER_3 beibringen wollen, weißt du ja, wo ich zu finden bin."
 .elseif LANG_EN
 str_move_tutor_intro:
-    .autostring 34 2 "Many years I have spend exploring many caves!\pI learned many battle techniques while wandering arround the world.\pNow, my Pokémon are even able to make rocks fall down on foes.\pIf you want me to teach this to one of your Pokémon, bring me either one Large Mushroom or three Tiny Mushrooms."
-str_ask_move_tutor:
-    .autostring 34 2 "Ha!\nSplendid!\pYou brought me BUFFER_2-times BUFFER_1!\pIn return I can teach one of your Pokémon the move Rock Slide.\pWhat do you think?"
-str_which_should_learn:
-    .autostring 34 2 "Good choice!\pWhich Pokémon should learn Rock Slide?"
+    .autostring 34 2 "For many years I have explored the most diverse caves.\pI have acquired many fighting skills.\pMy Pokémon are even able to make rocks rain down.\pIf you give me either BUFFER_1x Big Mushroom or BUFFER_2x Tiny Mushroom, I can teach this technique to one of your Pokémon."
 str_move_tutor_abort:
-    .autostring 34 2 "What a shame!\pIf you want me to teach one of your Pokémon Rock Slide, I will just be right here."
+    .autostring 34 2 "What a shame!\pIf you ever want to teach one of your Pokémon BUFFER_3, you know where to find me."
 .endif
 
 ow_script_map_bluetenbach_rival:

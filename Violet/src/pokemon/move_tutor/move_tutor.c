@@ -1,8 +1,12 @@
 #include "types.h"
-#include "stdbool.h"
 #include "pokemon/moves.h"
 #include "constants/attacks.h"
 #include "constants/move_tutor.h"
+#include "text.h"
+#include "attack.h"
+#include "vars.h"
+#include "flags.h"
+#include "debug.h"
 
 bool move_tutor_is_compatible(u16 species, u8 move_tutor){
     u32 mask = (u32)(1 << move_tutor);
@@ -33,7 +37,20 @@ const u16 move_tutor_attacks[32] = {
     [MOVE_TUTOR_DONNERWELLE] = ATTACK_DONNERWELLE,
 };
 
+void move_tutor_buffer_string() {
+    strcpy(buffer2, attack_names[move_tutor_get_attack((u8)(*var_access(0x8004)))]);
+}
+
 u16 move_tutor_get_attack(u8 move_tutor_idx) {
     return move_tutor_attacks[move_tutor_idx];
 }
 
+void move_tutor_set_flag(u8 move_tutor_idx) {
+    DEBUG("Move Tutor set flag %d\n", move_tutor_idx);
+    setflag((u16)(FLAG_MOVE_TUTOR_BASE + move_tutor_idx));
+}
+
+void move_tutor_set_flag_by_var() {
+    u8 move_tutor_idx = (u8)(*var_access(0x8004));
+    move_tutor_set_flag(move_tutor_idx);
+}
