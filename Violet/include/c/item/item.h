@@ -206,8 +206,6 @@ u8 item_get_pocket(u16 item);
  **/
 u8 item_get_importance(u16 item);
 
-extern const u16 tm_hm_to_attack[58];
-
 /**
  * Creates a new oam for an item with the standard template
  * @param tiles_tag which tiles tag to associate with the oam

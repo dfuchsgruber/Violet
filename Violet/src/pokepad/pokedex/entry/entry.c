@@ -48,7 +48,7 @@ extern const bg_tile gfx_pokedex_entry_ui_scrollingMap[3][6];
 static const u8 str_pokedex_entry_page_flavor_text[] = LANGDEP(PSTRING("Allgemeines"), PSTRING("General"));
 static const u8 str_pokedex_entry_page_evolution[] = LANGDEP(PSTRING("Evolution"),PSTRING("Evolution"));
 static const u8 str_pokedex_entry_page_move_list[] = LANGDEP(PSTRING("Attacken"), PSTRING("Moves"));
-
+static const u8 str_pokedex_entry_page_extra_move_list[] = LANGDEP(PSTRING("Extra-Attacken"), PSTRING("Extra Moves"));
 
 static const pokedex_entry_page_t pokedex_entry_pages[NUM_POKEDEX_ENTRY_PAGES] = {
     [POKEDEX_ENTRY_PAGE_FLAVOR_TEXT] = {
@@ -67,10 +67,17 @@ static const pokedex_entry_page_t pokedex_entry_pages[NUM_POKEDEX_ENTRY_PAGES] =
         },
     [POKEDEX_ENTRY_PAGE_MOVE_LIST] = {
         .title = str_pokedex_entry_page_move_list,
-        .setup = pokedex_entry_page_move_list_setup,
-        .destroy = pokedex_entry_page_move_list_destroy,
-        .handle_inputs = pokedex_entry_page_move_list_handle_inputs,
+        .setup = pokedex_entry_page_move_list_level_up_setup,
+        .destroy = pokedex_entry_page_move_list_level_up_destroy,
+        .handle_inputs = pokedex_entry_page_move_list_level_up_handle_inputs,
         .setup_bg = pokedex_entry_page_move_list_setup_bg,
+    },
+    [POKEDEX_ENTRY_PAGE_EXTRA_MOVE_LIST] = {
+        .title = str_pokedex_entry_page_extra_move_list,
+        .setup = pokedex_entry_page_move_list_extra_setup,
+        .destroy = pokedex_entry_page_move_list_extra_destroy,
+        .handle_inputs = pokedex_entry_page_move_list_extra_handle_inputs,
+        .setup_bg = pokedex_entry_page_move_list_extra_setup_bg,
     },
 };
 

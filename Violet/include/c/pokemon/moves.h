@@ -9,7 +9,7 @@
 #define INCLUDE_C_POKEMON_MOVES_H_
 
 #include "pokemon/count.h"
-
+#include "constants/move_tutor.h"
 
 typedef struct {
     u16 move_id : 9;

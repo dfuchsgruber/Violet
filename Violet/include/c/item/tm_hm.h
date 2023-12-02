@@ -8,11 +8,17 @@
 
 #define TM_HM_LIST_MENU_STR_LENGTH 0x30
 
-#define ITEM_IDX_TO_TM_IDX(item_idx) (item_idx - ITEM_TM01)
-#define ITEM_IDX_TO_HM_IDX(item_idx) (item_idx - ITEM_VM01)
+#define ITEM_IS_TM(item_idx) (((item_idx) >= ITEM_TM01) && ((item_idx) <= ITEM_TM50))
+#define ITEM_IS_HM(item_idx) (((item_idx) >= ITEM_VM01) && ((item_idx) <= ITEM_VM08))
+#define ITEM_IS_TM_OR_HM(item_idx) (ITEM_IS_TM(item_idx) || ITEM_IS_HM(item_idx))
+#define ITEM_IDX_TO_TM_IDX(item_idx) ((item_idx) - ITEM_TM01)
+#define ITEM_IDX_TO_HM_IDX(item_idx) ((item_idx) - ITEM_VM01)
+#define TM_IDX_TO_ITEM_IDX(tm_idx) ((tm_idx) + ITEM_TM01)
+#define TM_HM_IDX_TO_HM_IDX(tm_hm_idx) ((tm_hm_idx) - NUM_TMS)
 
 #define NUM_TMS 50
 #define NUM_HMS 8
+#define IS_TM(tm_hm_idx)((tm_hm_idx) < NUM_TMS)
 
 enum tm_hm_type
 {
@@ -26,6 +32,7 @@ enum tm_hm_type
 
 extern list_menu_item *tm_hm_list_menu_items;
 extern u8 (*tm_hm_list_menu_strs)[TM_HM_LIST_MENU_STR_LENGTH];
+extern const u16 tm_hm_to_attack[NUM_TMS + NUM_HMS];
 
 typedef struct {
     void (* saved_callback)(void);

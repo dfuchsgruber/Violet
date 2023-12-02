@@ -85,3 +85,9 @@
 
 
 
+## Devin "Saga"
+- Devin runs a casino (?)
+- Proxy for some illegal activity (?)
+- Somehow Blaise should confront his father here and lose (or maybe that should happen earlier?)
+- Here, Blaise should also join the revolution
+- Maybe, we can introduce the commander-in-chief of the revolution

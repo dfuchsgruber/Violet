@@ -5,6 +5,7 @@
 #include "bg.h"
 #include "color.h"
 #include "list_menu.h"
+#include "oam.h"
 
 #define POKEDEX_ENTRY_PAGE_START_TILE (1 + TBOX_FRAME_SET_STYLE_NUM_TILES  + 10 * 3 + 10 * 3 + 2 * 3 + 2 * 9 + 2 * 8 + 2 * 8)
 #define POKEDEX_ENTRY_PAGE_NUM_PALS 2
@@ -43,6 +44,7 @@ enum {
     POKEDEX_ENTRY_PAGE_FLAVOR_TEXT = 0,
     POKEDEX_ENTRY_PAGE_EVOLUTION,
     POKEDEX_ENTRY_PAGE_MOVE_LIST,
+    POKEDEX_ENTRY_PAGE_EXTRA_MOVE_LIST,
     NUM_POKEDEX_ENTRY_PAGES,
 };
 
@@ -121,9 +123,15 @@ typedef struct {
     list_menu_item *move_list_items;
     u16 move_list_size;
     u8 *move_list_strs;
-    u16 cursor_position_move_list;
-    u16 items_above_move_list;
-
+    u16 cursor_position_move_list_level_up;
+    u16 items_above_move_list_level_up;
+    u16 cursor_position_move_list_extra;
+    u16 items_above_move_list_extra;
+    u16 move_list_extra_icon_base_tile;
+    u8 move_list_extra_pal_idx;
+    u8 move_list_extra_oam_idx;
+    u8 move_list_extra_oam_setup_flip_flop : 1;
+    oam_template move_list_extra_icon_template;
 
 } pokedex_entry_state_t;
 
@@ -139,6 +147,12 @@ extern EWRAM pokedex_entry_state_t *pokedex_entry_state;
 */
 void pokedex_entry_initialize(u16 species, u8 context, void (*continuation_cb1)(), bool play_cry,
     color_t color_to_fade_from);
+
+/**
+ * Adds tbos to the entry screen
+ * @param boxes The tboxes to add
+ **/
+void pokedex_entry_page_tboxes_new(const tboxdata *boxes);
 
 /**
  * Initializes tboxes for a page on the entry
