@@ -130,6 +130,7 @@ typedef struct {
     u16 move_list_extra_icon_base_tile;
     u8 move_list_extra_pal_idx;
     u8 move_list_extra_oam_idx;
+    u8 move_list_extra_icon_pal_idxs[2];
     u8 move_list_extra_oam_setup_flip_flop : 1;
     oam_template move_list_extra_icon_template;
 

@@ -304,6 +304,13 @@ void npc_delete_rage_sprite(u8 oam_idx);
  */
 bool shell_is_special(u16 shell_idx);
 
+/**
+ * Gets the palette of an overworld by its tag
+ * @param tag the tag of the palette
+ * @return the palette
+*/
+const palette *overworld_npc_palette_get_by_tag(u16 tag);
+
 extern const u8 gfx_ow_bisasamTiles[];
 extern const color_t gfx_ow_bisasamPal[16];
 extern const u8 gfx_ow_bisaknospTiles[];

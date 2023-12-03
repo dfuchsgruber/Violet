@@ -208,7 +208,7 @@ const palette overworld_palette_treasure_map = {
     .pal = gfx_ow_treasure_mapPal, .tag = OW_PAL_TAG_TREASURE_MAP,
 };
 
-static const palette *overworld_npc_palette_get_by_tag(u16 tag) {
+const palette *overworld_npc_palette_get_by_tag(u16 tag) {
     if (tag >= OW_PAL_TAG_POKEMON_BASE && tag < OW_PAL_TAG_POKEMON_END) {
         return overworld_palette_get_by_species((u16)(tag - OW_PAL_TAG_POKEMON_BASE));
     }

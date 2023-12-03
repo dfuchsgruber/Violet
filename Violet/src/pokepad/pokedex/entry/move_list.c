@@ -21,6 +21,7 @@
 #include "pokemon/sprites.h"
 #include "pokemon/basestat.h"
 #include "overworld/sprite.h"
+#include "pokemon/move_relearner.h"
 
 static void pokedex_entry_page_move_list_setup_bg_shift_map(u8 layer) {
     for (int y = 0; y < 20; y++) {
@@ -150,7 +151,8 @@ static void pokedex_entry_page_move_list_cursor_move_callback(int idx, u8 on_ini
 
 static void pokedex_entry_page_move_list_extra_delete_icon_if_present() {
     if (pokedex_entry_state->move_list_extra_oam_idx < NUM_OAMS) {
-        oam_free(&oams[pokedex_entry_state->move_list_extra_oam_idx]);
+        oam_free_graphic(&oams[pokedex_entry_state->move_list_extra_oam_idx]);
+        oam_delete(&oams[pokedex_entry_state->move_list_extra_oam_idx]);
         pokedex_entry_state->move_list_extra_oam_idx = NUM_OAMS;
     }
 }
@@ -219,11 +221,11 @@ static void pokedex_entry_page_move_list_extra_cursor_move_callback(int idx, u8 
     pokedex_entry_page_move_list_update(item.fields.move);
     u8 oam_idx_new_icon = NUM_OAMS;
     u16 tag_new = (u16)(POKEDEX_ENTRY_PAGE_MOVE_LIST_EXTRA_GFX_TAG_ICON + pokedex_entry_state->move_list_extra_oam_setup_flip_flop);
-    
+    DEBUG("Tag for new oam is %d\n", tag_new);
     const u8 *str = NULL;
     switch (item.fields.type) {
         case POKEDEX_ENTRY_PAGE_MOVE_LIST_EXTRA_EGG: {
-            u8 pal_idx = oam_allocate_palette(tag_new);
+            u8 pal_idx = pokedex_entry_state->move_list_extra_icon_pal_idxs[pokedex_entry_state->move_list_extra_oam_setup_flip_flop];
             pal_copy(icon_pals[1], (u16)(256 + 16 * pal_idx), 16 * sizeof(color_t));
             oam_idx_new_icon = oam_new_forward_search(templates_icon_egg + 
                 pokedex_entry_state->move_list_extra_oam_setup_flip_flop, 206, 122, 0);
@@ -232,7 +234,7 @@ static void pokedex_entry_page_move_list_extra_cursor_move_callback(int idx, u8 
             break;
         }
         case POKEDEX_ENTRY_PAGE_MOVE_LIST_EXTRA_TM_HM: {
-            u8 pal_idx = oam_allocate_palette(tag_new);
+            u8 pal_idx = pokedex_entry_state->move_list_extra_icon_pal_idxs[pokedex_entry_state->move_list_extra_oam_setup_flip_flop];
             u16 tile = oam_vram_alloc(GRAPHIC_SIZE_4BPP_TO_NUM_TILES(32, 32));
             oam_vram_allocation_table_add(tag_new, tile, GRAPHIC_SIZE_4BPP_TO_NUM_TILES(32, 32));
             pal_decompress(item_get_resource((u16)TM_IDX_TO_ITEM_IDX(item.fields.argument), true),
@@ -262,13 +264,37 @@ static void pokedex_entry_page_move_list_extra_cursor_move_callback(int idx, u8 
             break;
         }
         case POKEDEX_ENTRY_PAGE_MOVE_LIST_EXTRA_TUTOR: {
-                
+            u8 move_tutor_idx = item.fields.argument;
+            DEBUG("Move tutor idx %d, bank %d, map_idx %d, person_idx %d\n", move_tutor_idx,
+                move_tutors[move_tutor_idx].bank, move_tutors[move_tutor_idx].map_idx, move_tutors[move_tutor_idx].person_idx);
+            if (move_tutors[move_tutor_idx].bank != 0xFF) {
+                const map_event_person *person = map_get_person(
+                    move_tutors[move_tutor_idx].person_idx, move_tutors[move_tutor_idx].map_idx,
+                    move_tutors[move_tutor_idx].bank);
+                if (person) {
+                    const overworld_sprite *sprite = overworld_get(person->overworld_index);
+                    if (sprite) {
+                        DEBUG("Sprite %d, person %d, bank 0x%x, map 0x%x\n", person->overworld_index, 
+                            move_tutors[move_tutor_idx].person_idx, move_tutors[move_tutor_idx].bank, move_tutors[move_tutor_idx].map_idx);
+                        u8 pal_idx = pokedex_entry_state->move_list_extra_icon_pal_idxs[pokedex_entry_state->move_list_extra_oam_setup_flip_flop];
+                        const palette *pal = overworld_npc_palette_get_by_tag(sprite->pal_tag);
+                        pal_copy(pal->pal, (u16)(256 + 16 * pal_idx), 16 * sizeof(color_t));
+                        pokedex_entry_state->move_list_extra_icon_template = templates_icon_crystal;
+                        pokedex_entry_state->move_list_extra_icon_template.pal_tag = tag_new;
+                        pokedex_entry_state->move_list_extra_icon_template.graphics = sprite->graphics;
+                        pokedex_entry_state->move_list_extra_icon_template.animation = sprite->gfx_animation;
+                        pokedex_entry_state->move_list_extra_icon_template.oam = sprite->final_oam;
+                        oam_idx_new_icon = oam_new_forward_search(&pokedex_entry_state->move_list_extra_icon_template, 208, 120, 0);
+                        oam_gfx_anim_start_if_not_current(&oams[oam_idx_new_icon], 4);
+                    }
+                }
+            }
             string_decrypt(strbuf, str_tutor_move);
             str = strbuf;
             break;
         }
         case POKEDEX_ENTRY_PAGE_MOVE_LIST_EXTRA_CRYSTAL: {
-            u8 pal_idx = oam_allocate_palette(tag_new);
+            u8 pal_idx = pokedex_entry_state->move_list_extra_icon_pal_idxs[pokedex_entry_state->move_list_extra_oam_setup_flip_flop];
             const overworld_sprite *sprite = overworld_sprite_get_by_tutor_crystal_type(attacks[item.fields.move].type);
             const palette *pal = overworld_palette_tutor_crystal_get_by_tag(sprite->pal_tag);
             pal_copy(pal->pal, (u16)(256 + 16 * pal_idx), 16 * sizeof(color_t));
@@ -427,6 +453,7 @@ static void pokedex_entry_page_move_list_setup_extra_moves() {
                     .fields = {
                         .type = POKEDEX_ENTRY_PAGE_MOVE_LIST_EXTRA_TUTOR,
                         .move = attack,
+                        .argument = i,
                     }}.value,
                 .text = pokedex_entry_state->move_list_strs + idx * POKEDEX_ENTRY_PAGE_MOVE_LIST_MAX_NUM_CHARS,
             };
@@ -463,6 +490,12 @@ bool pokedex_entry_page_move_list_setup_any(u8 which, u16 *cursor_position, u16 
             pokedex_entry_state->move_list_extra_icon_base_tile = 0xFFFF;
             pokedex_entry_state->move_list_extra_pal_idx = 0xFF;
             pokedex_entry_state->move_list_extra_oam_idx = NUM_OAMS;
+            pokedex_entry_state->move_list_extra_oam_setup_flip_flop = 0;
+            for (size_t i = 0; i < ARRAY_COUNT(pokedex_entry_state->move_list_extra_icon_pal_idxs); i++) {
+                pokedex_entry_state->move_list_extra_icon_pal_idxs[i] = oam_allocate_palette((u16)(POKEDEX_ENTRY_PAGE_MOVE_LIST_EXTRA_GFX_TAG_ICON + i));
+                DEBUG("Allocated palette %d for icon %d with tag %d\n", pokedex_entry_state->move_list_extra_icon_pal_idxs[i], i, 
+                    (u16)(POKEDEX_ENTRY_PAGE_MOVE_LIST_EXTRA_GFX_TAG_ICON + i));
+            }
             pokedex_entry_page_move_list_setup_data[which]();
             pokedex_entry_state->page_initialization_state++;
             break;
@@ -522,6 +555,12 @@ static void pokedex_entry_page_move_list_destroy_any(u16 *cursor_position, u16 *
         list_menu_remove(pokedex_entry_state->list_menu_move_list_cb_idx, 
             cursor_position, items_above);
         pokedex_entry_state->list_menu_move_list_cb_idx = 0xFF;
+    }
+    for (size_t i = 0; i < ARRAY_COUNT(pokedex_entry_state->move_list_extra_icon_pal_idxs); i++) {
+        if (pokedex_entry_state->move_list_extra_icon_pal_idxs[i] < 16) {
+            oam_palette_free((u16)(POKEDEX_ENTRY_PAGE_MOVE_LIST_EXTRA_GFX_TAG_ICON + i));
+            pokedex_entry_state->move_list_extra_icon_pal_idxs[i] = 0xFF;
+        }
     }
     pokedex_entry_page_move_list_extra_delete_icon_if_present();
 }

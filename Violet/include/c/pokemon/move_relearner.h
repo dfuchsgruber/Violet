@@ -38,6 +38,7 @@ typedef struct {
     u8 bank;
     u8 map_idx;
     u8 person_idx;
+    u8 filler;
 } move_tutor_t;
 
 extern const move_tutor_t move_tutors[NUM_MOVE_TUTORS];

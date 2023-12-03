@@ -106,7 +106,10 @@ CONSTANTSHC=$(CONSTANTS:%.const=include/c/%.h)
 OPENPAREN := (
 CLOSEPAREN := )
 
-include pokeapi/makefile tools/fata_morgana/makefile tools/index/makefile tools/cloud_maps/makefile tools/worldmap/makefile tools/berry_adjacency/makefile tools/treasure_map/makefile tools/images_to_palette/makefile
+include pokeapi/makefile tools/fata_morgana/makefile tools/index/makefile \
+ tools/cloud_maps/makefile tools/worldmap/makefile tools/berry_adjacency/makefile \
+ tools/treasure_map/makefile tools/images_to_palette/makefile \
+ tools/move_tutor/makefile
 
 find_up=$(shell \
 	file="$(basename $(1))$(2)"; \
@@ -236,9 +239,9 @@ $(BLDPATH)/map.ld: $(PYAGBOBJS) $(BLDPATH)/$(basename $(MAPPROJ)).o $(BASESYMBOL
 #	Create a ld script
 	$(call build_list,$(BLDPATH)/map.ld,$(PYAGBOBJS) $(BLDPATH)/$(basename $(MAPPROJ)).o)
 	
-$(BLDPATH)/sources.ld: $(ASOBJS1) $(ASOBJS2) $(COBJS) $(CLOUD_MAPS_OBJ) $(WORLDMAPOBJS) $(BASESYMBOLS) $(BERRYADJACENCY_OBJ) $(TREASUREMAP_OBJ) $(FONTOBJS) $(FATAMORGANA_OBJ)
+$(BLDPATH)/sources.ld: $(ASOBJS1) $(ASOBJS2) $(COBJS) $(CLOUD_MAPS_OBJ) $(WORLDMAPOBJS) $(BASESYMBOLS) $(BERRYADJACENCY_OBJ) $(TREASUREMAP_OBJ) $(FONTOBJS) $(FATAMORGANA_OBJ) $(MOVETUTORS_OBJ)
 	@echo "Linking src files..."
-	$(call build_list,$(BLDPATH)/sources.ld,$(ASOBJS1) $(ASOBJS2) $(COBJS) $(CLOUD_MAPS_OBJ) $(WORLDMAPOBJS) $(BERRYADJACENCY_OBJ) $(TREASUREMAP_OBJ) $(FONTOBJS) $(FATAMORGANA_OBJ))
+	$(call build_list,$(BLDPATH)/sources.ld,$(ASOBJS1) $(ASOBJS2) $(COBJS) $(CLOUD_MAPS_OBJ) $(WORLDMAPOBJS) $(BERRYADJACENCY_OBJ) $(TREASUREMAP_OBJ) $(MOVETUTORS_OBJ) $(FONTOBJS) $(FATAMORGANA_OBJ))
 		
 	
 soundfont: $(BLDROM)
