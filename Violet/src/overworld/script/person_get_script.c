@@ -116,6 +116,6 @@ const u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank) {
 			move_tutor_set_flag((u8)(p->value));
 			return p->script;
 		default:
-			return NULL;
+			return p->script;
 	}
 }
