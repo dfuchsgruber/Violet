@@ -309,8 +309,9 @@ enum {
      * Will set `callback1` accordingly and reset.
      * @param species the habitat of which species to show
      * @param continuation the callback1 that will be called once the habitat is exited, faded to black and deallocated
+     * @param from_overworld whether the habitat was opened from the overworld
     */
-    void worldmap_ui_habitat_new(u16 species, void (*contuation)());
+    void worldmap_ui_habitat_new(u16 species, void (*contuation)(), u8 from_overworld);
 
     typedef struct {
         u8 x, y, idx, layer, namespace;
@@ -335,6 +336,8 @@ enum {
     typedef struct {
         u8 initialization_state;
         u8 mode;
+        u8 from_overworld;
+
         void *bg0_map;
         void *bg1_map;
         void *bg2_map;

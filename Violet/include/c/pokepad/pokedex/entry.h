@@ -6,8 +6,9 @@
 #include "color.h"
 #include "list_menu.h"
 #include "oam.h"
+#include "vram.h"
 
-#define POKEDEX_ENTRY_PAGE_START_TILE (1 + TBOX_FRAME_SET_STYLE_NUM_TILES  + 10 * 3 + 10 * 3 + 2 * 3 + 2 * 9 + 2 * 8 + 2 * 8)
+#define POKEDEX_ENTRY_PAGE_START_TILE (1 + TBOX_FRAME_SET_STYLE_NUM_TILES  + 11 * 3 + 10 * 3 + 2 * 3 + 2 * 9 + 2 * 8 + 2 * 8)
 #define POKEDEX_ENTRY_PAGE_NUM_PALS 2
 #define POKEDEX_ENTRY_PAGE_NUM_TILES 256
 
@@ -45,6 +46,7 @@ enum {
     POKEDEX_ENTRY_PAGE_EVOLUTION,
     POKEDEX_ENTRY_PAGE_MOVE_LIST,
     POKEDEX_ENTRY_PAGE_EXTRA_MOVE_LIST,
+    POKEDEX_ENTRY_PAGE_STATS,
     NUM_POKEDEX_ENTRY_PAGES,
 };
 
@@ -133,6 +135,9 @@ typedef struct {
     u8 move_list_extra_icon_pal_idxs[2];
     u8 move_list_extra_oam_setup_flip_flop : 1;
     oam_template move_list_extra_icon_template;
+    // Stats
+    u8 basestats_sprites[2][2][GRAPHIC_SIZE_4BPP(64, 64)];
+    u8 basestats_sprite_oam_idxs[2][2];
 
 } pokedex_entry_state_t;
 

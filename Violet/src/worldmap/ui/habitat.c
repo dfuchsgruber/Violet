@@ -457,12 +457,14 @@ static void worldmap_ui_habitat_update_namespace_by_cursor_position(bool print_i
     } else {
         u8 namespace_idx = worldmap_get_namespace_by_pos(worldmap_ui_state->cursor.idx, worldmap_ui_state->cursor.layer,
             worldmap_ui_state->cursor.x, worldmap_ui_state->cursor.y);
+        DEBUG("namespace_idx: %d\n", namespace_idx);
         if ((namespace_idx != worldmap_ui_state->current_namespace || print_if_namespace_not_changed) 
                 && namespace_idx != MAP_NAMESPACE_NONE) {
             worldmap_ui_state->current_namespace = namespace_idx;
             str = map_namespaces[MAP_NAMESPACE_TO_IDX(namespace_idx)];
         }
     }
+    DEBUG("str: 0x%x\n", str);
     if (str) {
         tbox_flush_set(WORLDMAP_UI_TBOX_IDX_NAMESPACE, 0x11);
         tbox_print_string(WORLDMAP_UI_TBOX_IDX_NAMESPACE, 2, 4, 0, 0, 0, &font_colormap_non_transparent, 0, str);
@@ -618,6 +620,7 @@ static void worldmap_ui_habitat_update_red_overlay() {
             bg2_map[32 * y + x].text.palette = 6;  
         }
     }
+    tbox_tilemap_draw(WORLDMAP_UI_TBOX_IDX_NAMESPACE);
 }
 
 void worldmap_ui_habitat_update_scanline(u16 colev_worldmap, u16 colev_switch_maps, u16 colev_switch_maps_button) {
@@ -732,7 +735,7 @@ static void worldmap_ui_habitat_draw_red_switch_tiles() {
     }
 }
 
-static void worldmap_ui_callback_initialize_habitat() {
+void worldmap_ui_callback_initialize_habitat() {
     if (!worldmap_ui_callback_initialize_base())
         return;
     switch (worldmap_ui_state->initialization_state) {
@@ -920,24 +923,20 @@ static void worldmap_ui_callback_initialize_habitat() {
 }
 
 
-static void worldmap_ui_habitat_wait_for_fadescreen_and_initialize_ui(u8 self) {
-    if (!fading_control.active) {
-        big_callback_delete(self);
-        overworld_free();
-        callback1_set(worldmap_ui_callback_initialize_habitat);
-    }
-}
-
-
-void worldmap_ui_habitat_new(u16 species, void (*continuation)()) {
+void worldmap_ui_habitat_new(u16 species, void (*continuation)(), u8 from_overworld) {
     worldmap_ui_state = malloc_and_clear(sizeof(worldmap_ui_state_t));
     worldmap_ui_state->species = species;
     worldmap_ui_state->continuation = continuation;
-    callback1_set(worldmap_ui_cb1);
-    big_callback_new(worldmap_ui_habitat_wait_for_fadescreen_and_initialize_ui, 0);
+    worldmap_ui_state->from_overworld = from_overworld;
+    callback1_set(worldmap_ui_callback_initialize_habitat);
 }
 
 static void worldmap_ui_habitat_free() {
     pokedex_habitat_list_delete(worldmap_ui_state->habitats);
+    tbox_free_all();
+    free(worldmap_ui_state->bg0_map);
+    free(worldmap_ui_state->bg1_map);
+    free(worldmap_ui_state->bg2_map);
+    free(worldmap_ui_state->bg3_map);
     worldmap_ui_free_base();
 }

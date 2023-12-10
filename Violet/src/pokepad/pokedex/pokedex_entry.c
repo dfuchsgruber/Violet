@@ -427,7 +427,8 @@ void pokedex_callback_entry_idle() {
             u16 species = csave.pokedex_species;
             play_sound(5);
             pokedex_entry_free();
-            worldmap_ui_habitat_new(species, NULL);
+            // worldmap_ui_habitat_new(species, NULL);
+            (void)species;
             fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
         }
     }

@@ -28,6 +28,7 @@ void lz77uncompvram(const void *src, void*dst);
 #define CPUSET_WORD 0x4000000
 #define CPUSET_WORD_SIZE(x) ((u32)((x) >> 2))
 #define CPUSET_HALFWORD_SIZE(x) ((u32)((x) >> 1))
+
 /**
  * Calls software interrupt for cpuset
  * @param src Source data (aligned to data unit size)
@@ -35,6 +36,11 @@ void lz77uncompvram(const void *src, void*dst);
  * @param cntrl Data size in units | data unit size | mode
  */
 void cpuset(const void *src, void *dst, u32 cnt_and_mode);
+
+#define CPUSETCOPY16(src, dst, size) cpuset((src), (dst), CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE((size)))
+#define CPUSETCOPY32(src, dst, size) cpuset((src), (dst), CPUSET_COPY | CPUSET_WORD | CPUSET_WORD_SIZE((size)))
+#define CPUSETFILL16(src, dst, size) cpuset((src), (dst), CPUSET_FILL | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE((size)))
+#define CPUSETFILL32(src, dst, size) cpuset((src), (dst), CPUSET_FILL | CPUSET_WORD | CPUSET_WORD_SIZE((size)))
 
 #define CPUFASTSET_COPY 0x0
 #define CPUFASTSET_FILL 0x1000000
@@ -47,6 +53,9 @@ void cpuset(const void *src, void *dst, u32 cnt_and_mode);
  * @param cntrl Data size in units of 4 | mode
  */
 void cpufastset(void *src, void *dst, u32 cnt_and_mode);
+
+#define CPUFASTSETCOPY(src, dst, size) cpufastset((src), (dst), CPUFASTSET_COPY | CPUFASTSET_SIZE((size)))
+#define CPUFASTSETFILL(src, dst, size) cpufastset((src), (dst), CPUFASTSET_FILL | CPUFASTSET_SIZE((size)))
 
 /**
  * Calcualtes the square root of x

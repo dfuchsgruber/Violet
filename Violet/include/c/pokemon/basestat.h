@@ -15,12 +15,7 @@
 #define LINKED_PKMN_CNT 8
 
 typedef struct {
-    u8 base_hp;
-    u8 base_atk;
-    u8 base_def;
-    u8 base_speed;
-    u8 base_satk;
-    u8 base_sdef;
+    u8 stats[6];
     u8 type1;
     u8 type2;
     u8 catch_rate;

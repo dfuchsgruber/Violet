@@ -119,7 +119,7 @@ static void pokedex_entry_page_move_list_update(int idx) {
     tbox_print_string(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_MOVE_LIST_TBOX_DESCRIPTION], 
         0, 0, 0, 0, 0, &font_colormap_std, 0, attack_descriptions[idx - 1]);
     tbox_flush_set(pokedex_entry_state->page_tbox_idxs[POKEDEX_ENTRY_PAGE_MOVE_LIST_TBOX_STAT_VALUES], 0x00);
-    if (attacks[idx].base_power == 0 || attacks[idx].category == CATEGORY_STATUS) {
+    if (attacks[idx].base_power <= 1 || attacks[idx].category == CATEGORY_STATUS) {
         strcpy(strbuf, str_move_no_power);
     } else {
         itoa(strbuf, attacks[idx].base_power, ITOA_NO_PADDING, 3);

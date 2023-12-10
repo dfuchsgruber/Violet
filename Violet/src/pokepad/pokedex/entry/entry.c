@@ -34,10 +34,14 @@
 #include "pokepad/pokedex/pages/flavor_text.h"
 #include "pokepad/pokedex/pages/evolution.h"
 #include "pokepad/pokedex/pages/move_list.h"
+#include "pokepad/pokedex/pages/stats.h"
 #include "pokemon/cry.h"
 #include "battle/state.h"
+#include "worldmap.h"
 
 EWRAM pokedex_entry_state_t *pokedex_entry_state = NULL;
+
+static void pokedex_entry_callback_initialize_state_machine();
 
 extern const LZ77COMPRESSED gfx_pokedex_entry_ui2Tiles;
 extern const LZ77COMPRESSED gfx_pokedex_entry_ui2Map;
@@ -49,6 +53,7 @@ static const u8 str_pokedex_entry_page_flavor_text[] = LANGDEP(PSTRING("Allgemei
 static const u8 str_pokedex_entry_page_evolution[] = LANGDEP(PSTRING("Evolution"),PSTRING("Evolution"));
 static const u8 str_pokedex_entry_page_move_list[] = LANGDEP(PSTRING("Attacken"), PSTRING("Moves"));
 static const u8 str_pokedex_entry_page_extra_move_list[] = LANGDEP(PSTRING("Extra-Attacken"), PSTRING("Extra Moves"));
+static const u8 str_pokedex_entry_page_stats[] = LANGDEP(PSTRING("Basiswerte"), PSTRING("Base Stats"));
 
 static const pokedex_entry_page_t pokedex_entry_pages[NUM_POKEDEX_ENTRY_PAGES] = {
     [POKEDEX_ENTRY_PAGE_FLAVOR_TEXT] = {
@@ -79,6 +84,13 @@ static const pokedex_entry_page_t pokedex_entry_pages[NUM_POKEDEX_ENTRY_PAGES] =
         .handle_inputs = pokedex_entry_page_move_list_extra_handle_inputs,
         .setup_bg = pokedex_entry_page_move_list_extra_setup_bg,
     },
+    [POKEDEX_ENTRY_PAGE_STATS] = {
+        .title = str_pokedex_entry_page_stats,
+        .setup = pokedex_entry_page_stats_setup,
+        .destroy = pokedex_entry_page_stats_destroy,
+        .handle_inputs = pokedex_entry_page_stats_handle_inputs,
+        .setup_bg = pokedex_entry_page_stats_setup_bg,
+    }
 };
 
 static const bg_config pokedex_entry_bg_configs[] = {
@@ -89,12 +101,12 @@ static const bg_config pokedex_entry_bg_configs[] = {
 };
 
 static const tboxdata pokedex_entry_tboxes[NUM_POKEDEX_ENTRY_TBOXES + 1] = {
-    [POKEDEX_ENTRY_TBOX_PAGE_TITLE] = {.bg_id = 0, .x = 10, .y = 0, .w = 10, .h = 3, .pal = 13, .start_tile = 1 + TBOX_FRAME_SET_STYLE_NUM_TILES},
-    [POKEDEX_ENTRY_TBOX_TITLE] = {.bg_id = 0, .x = 0, .y = 0, .w = 10, .h = 3, .pal = 13, .start_tile = 1 + TBOX_FRAME_SET_STYLE_NUM_TILES  + 10 * 3},
-    [POKEDEX_ENTRY_TBOX_CAUGHT_ICON] = {.bg_id = 0, .x = 3, .y = 12, .w = 2, .h = 2, .pal = 12, .start_tile = 1 + TBOX_FRAME_SET_STYLE_NUM_TILES  + 10 * 3 + 10 * 3},
-    [POKEDEX_ENTRY_TBOX_TYPES] = {.bg_id = 0, .x = 0, .y = 16, .w = 9, .h = 2, .pal = 11, .start_tile = 1 + TBOX_FRAME_SET_STYLE_NUM_TILES  + 10 * 3 + 10 * 3 + 2 * 3},
-    [POKEDEX_ENTRY_TBOX_CATEGORY] = {.bg_id = 0, .x = 0, .y = 14, .w = 8, .h = 2, .pal = 13, .start_tile = 1 + TBOX_FRAME_SET_STYLE_NUM_TILES  + 10 * 3 + 10 * 3 + 2 * 3 + 2 * 9},
-    [POKEDEX_ENTRY_TBOX_HABITAT] = {.bg_id = 0, .x = 0, .y = 18, .w = 8, .h = 2, .pal = 13, .start_tile = 1 + TBOX_FRAME_SET_STYLE_NUM_TILES  + 10 * 3 + 10 * 3 + 2 * 3 + 2 * 9 + 2 * 8},
+    [POKEDEX_ENTRY_TBOX_PAGE_TITLE] = {.bg_id = 0, .x = 10, .y = 0, .w = 11, .h = 3, .pal = 13, .start_tile = 1 + TBOX_FRAME_SET_STYLE_NUM_TILES},
+    [POKEDEX_ENTRY_TBOX_TITLE] = {.bg_id = 0, .x = 0, .y = 0, .w = 10, .h = 3, .pal = 13, .start_tile = 1 + TBOX_FRAME_SET_STYLE_NUM_TILES  + 11 * 3},
+    [POKEDEX_ENTRY_TBOX_CAUGHT_ICON] = {.bg_id = 0, .x = 3, .y = 12, .w = 2, .h = 2, .pal = 12, .start_tile = 1 + TBOX_FRAME_SET_STYLE_NUM_TILES  + 11 * 3 + 10 * 3},
+    [POKEDEX_ENTRY_TBOX_TYPES] = {.bg_id = 0, .x = 0, .y = 16, .w = 9, .h = 2, .pal = 11, .start_tile = 1 + TBOX_FRAME_SET_STYLE_NUM_TILES  + 11 * 3 + 10 * 3 + 2 * 3},
+    [POKEDEX_ENTRY_TBOX_CATEGORY] = {.bg_id = 0, .x = 0, .y = 14, .w = 8, .h = 2, .pal = 13, .start_tile = 1 + TBOX_FRAME_SET_STYLE_NUM_TILES  + 11 * 3 + 10 * 3 + 2 * 3 + 2 * 9},
+    [POKEDEX_ENTRY_TBOX_HABITAT] = {.bg_id = 0, .x = 0, .y = 18, .w = 8, .h = 2, .pal = 13, .start_tile = 1 + TBOX_FRAME_SET_STYLE_NUM_TILES  + 11 * 3 + 10 * 3 + 2 * 3 + 2 * 9 + 2 * 8},
     [NUM_POKEDEX_ENTRY_TBOXES] = {.bg_id = 0xFF},
 };
 
@@ -263,7 +275,7 @@ static void pokedex_entry_free() {
         u8 bg_idx = pokedex_entry_bg_configs[i].bg_id;
         free(pokedex_entry_state->bg_maps[bg_idx]);
     }
-    free(pokedex_entry_state);
+    pokedex_entry_pages[pokedex_entry_state->page].destroy();
 }
 
 static void pokedex_entry_callback_return(u8 self) {
@@ -274,6 +286,25 @@ static void pokedex_entry_callback_return(u8 self) {
     big_callback_delete(self);
     if (pokedex_entry_state->context == POKEDEX_ENTRY_PAGE_CONTEXT_CATCHING)
         big_callback_delete(pokedex_entry_state->catching_cb_idx);
+    free(pokedex_entry_state);
+}
+
+static void pokedex_entry_reinitialize_from_habitat() {
+    pokedex_entry_state->play_cry = false;
+    pokedex_entry_state->initialization_state = 0;
+    pokedex_entry_state->color_to_fade_from = (color_t){0};
+    callback1_set(pokedex_entry_callback_initialize_state_machine);
+}
+
+static void pokedex_entry_callback_habitat(u8 self) {
+    if (fading_control.active || dma3_busy(-1))
+        return;
+    pokedex_entry_free();
+    // Do not free `pokedex_entry_state` here, it is used by the worldmap UI
+    big_callback_delete(self);
+    if (pokedex_entry_state->context == POKEDEX_ENTRY_PAGE_CONTEXT_CATCHING)
+        big_callback_delete(pokedex_entry_state->catching_cb_idx);
+    worldmap_ui_habitat_new(pokedex_entry_state->species, pokedex_entry_reinitialize_from_habitat, false);
 }
 
 static bool pokedex_entry_handle_inputs_switch_pages(u8 self) {
@@ -295,6 +326,9 @@ static void pokedex_entry_handle_inputs_context_pokedex(u8 self) {
     if (super.keys_new.keys.B) {
         fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
         big_callbacks[self].function = pokedex_entry_callback_return;
+    } else if (super.keys_new.keys.A) {
+        fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
+        big_callbacks[self].function = pokedex_entry_callback_habitat;
     } else {
         if (pokedex_entry_pages[pokedex_entry_state->page].handle_inputs(self))
             return;
@@ -353,8 +387,8 @@ static void pokedex_entry_play_cry_and_continue_handle_inputs(u8 self) {
 
 
 static const u8 str_habitat[] = LANGDEP(
-    PSTRING("KEY_AGebiete"),
-    PSTRING("KEY_AHabitats")
+    PSTRING("KEY_ASKIP\x02Gebiete"),
+    PSTRING("KEY_ASKIP\x02Habitats")
 );
 
 static const u8 str_continue[] = LANGDEP(
@@ -429,7 +463,9 @@ static void pokedex_entry_initialize_state_machine() {
                 str = str_continue;
             }
             if (str)
-                tbox_print_string(POKEDEX_ENTRY_TBOX_HABITAT, 2, 2, 0, 0, 0, &tbox_fontcolmap_white, 0, str_habitat);
+                tbox_print_string(POKEDEX_ENTRY_TBOX_HABITAT, 2, 
+                (u16)((pokedex_entry_tboxes[POKEDEX_ENTRY_TBOX_HABITAT].w * 8 - string_get_width(2, str, 0)) / 2),
+                1, 0, 0, &tbox_fontcolmap_white, 0, str);
             else
                 tbox_sync(POKEDEX_ENTRY_TBOX_HABITAT, TBOX_SYNC_SET);
 
