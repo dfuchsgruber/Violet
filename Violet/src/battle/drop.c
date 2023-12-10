@@ -24,10 +24,10 @@
 #include "pokemon/evolution.h"
 
 static const u32 standard_item_drop_rates[][2] = {
-    {ITEM_BITTERKRAUT, 100},
+    {ITEM_BITTERKRAUT, 130},
     {ITEM_QUARZSTAUB, 50},
     {ITEM_WUNDERSTAUB, 75},
-    {ITEM_APFEL, 40},
+    {ITEM_APFEL, 10},
     /**
     {ITEM_POKEBALL, 75},
     {ITEM_SUPERBALL, 30},

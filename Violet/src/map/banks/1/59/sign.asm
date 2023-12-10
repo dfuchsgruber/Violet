@@ -13,4 +13,6 @@ str_0:
     .autostring 34 2 "UP_ARROW Tafelberg\nUP_ARROW Kaskada"
 
 .elseif LANG_EN
+str_0:
+    .autostring 34 2 "UP_ARROW Tafelberg\nUP_ARROW Kaskada"
 .endif

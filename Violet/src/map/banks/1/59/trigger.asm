@@ -67,6 +67,18 @@ str_f4:
 str_f5:
     .autostring 34 2 "Lass uns am Besten keine Zeit verlieren!"
 .elseif LANG_EN
+str_f0:
+    .autostring 34 2 "Hey, PLAYER!\pAs always, you come at the perfect time."
+str_f1:
+    .autostring 34 2 "I still feel bad that we didn't catch the Team Violet Commander in the Time ForestDOTS"
+str_f2:
+    .autostring 34 2 "But it seems like we're getting a second chance here!"
+str_f3:
+    .autostring 34 2 "There are people from the Revolution Movement lurking around here.\pThis pack wants to overthrow the Pokémon League and plunge the region into a civil war.\pAs a policeman, I can't allow that.\pAnd especially as a student of Opi, a member of the Top Four, it is practically our duty to put these troublemakers in their place, don't you think?"
+str_f4:
+    .autostring 34 2 "I wonderDOTS\pDOTSif we might even be able to catch a high-ranking member of this movementDOTS"
+str_f5:
+    .autostring 34 2 "Let's not waste any time!"
 .endif
 
 .global ow_script_tafelberg_trigger_battle
@@ -179,6 +191,30 @@ str_3:
 str_4:
     .autostring 34 2 "Schau mal drüben!\pDa ist ja Opi!"
 .elseif LANG_EN
+str_0:
+    .autostring 34 2 "So, now it's time for the real deal!\pIn the name of the police of Theto and the Pokémon LeagueDOTS\pYou are hereby under arre-"
+str_1:
+    .autostring 34 2 "There you are, PLAYER!\pI'm just about to arrest these two revolutionaries.\pLet's fight them together, what do you say?"
+str_select:
+    .autostring 34 2 "Which Pokémon do you want to send into battle?"
+str_have_to_select:
+    .autostring 34 2 "Hey, PLAYER!\pAre you kidding me?\pLet's kick these revolutionaries' asses."
+str_before:
+    .autostring 34 2 "Hey, you greenhorn want to be a policeman?\pWe'll be done with you in no time!"
+str_after1:
+    .autostring 34 2 "That was a beatingDOTS"
+str_after2:
+    .autostring 34 2 "I underestimated youDOTS\pBut that doesn't matterDOTS"
+str_lets_go:
+    .autostring 34 2 "Alright, PLAYER!\pGive it your best shot, okay?"
+str_revo:
+    .string "Revolutionary"
+str_2:
+    .autostring 34 2 "Pah!\nAlright, you beat usDOTS\pBut that won't do you any goodDOTS\pBecause you can't do anything against our leader!"
+str_3:
+    .autostring 34 2 "What did those revolutionaries say?"
+str_4:
+    .autostring 34 2 "Look over there!\pIsn't that Gramps?"
 .endif
 
 /* 

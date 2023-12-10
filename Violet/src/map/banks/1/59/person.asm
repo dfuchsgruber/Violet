@@ -155,6 +155,33 @@ str_story:
     .autostring 34 2 "Many years ago a dark queen ruled over this region, long before the Elite Four even were thing.\pShe was a tyrant and her lust for power was without any limit.\pAbove all however, she was unmatched in power.\pShe tamed many legendary Pokémon on her own and nobody was able to stand up to her.\pSome day she declared war on the gods of this world.\pFor this grandeure she was punished in the end and utterly destroyed.\pIt is said that her spirit wanders arround in this world to this very day."
 str_after:
     .autostring 34 2 "Many witches are still searching for the spirit of the dark queen.\pShe is considered to be the mother of witchcraft."
-
+str_2:
+    .autostring 34 2 "After a visit to the teahouse in Cascada, there is nothing better than taking a leisurely walk to the summit of Table Mountain."
+str_3:
+    .autostring 34 2 "The fact that Table Mountain is right on the coast makes it even more interesting for visitors.\pOn a clear day, you can see all the way to Bruchfels in the north."
+str_4:
+    .autostring 34 2 "I love coming to the beach here to collect seashells.\pFrom time to time, the sea washes up some treasures."
+str_5:
+    .autostring 34 2 "I'm a real bird Pokémon lover.\pHere on Table Mountain, you can often see flocks of Natu.\pIt is said that even the Aztecs revered this Pokémon and its evolution, Xatu."
+str_6:
+    .autostring 34 2 "I'm meeting a friend here.\pAlthough we were supposed to meet over an hour ago.\pBut with this view, I'm not even sad about being stood up."
+str_7:
+    .autostring 34 2 "That damn cop!\pI won't let the lackeys of the Pokémon League push me around, got it?"
+str_8:
+    .autostring 34 2 "I won't let you guys get the better of me!\pWe will shatter your corrupt system, no matter the cost!"
+str_9:
+    .autostring 34 2 "My Pokémon is running out of steam.\pCome on, we can't give up!"
+str_10:
+    .autostring 34 2 "You guys are a bunch of incorrigible punks.\pWe'll show you the power of our law."
+str_11:
+    .autostring 34 2 "Don't think you revolutionaries can do whatever you want.\pThe police will protect the citizens of this region from you."
+str_12:
+    .autostring 34 2 "This fight has been going on for too long.\pBut if I give in to these ruffians, chaos will reign in Theto."
+str_13:
+    .autostring 34 2 "You and your little police friend may have defeated us.\pBut our leader is a whole different story!"
+str_14:
+    .autostring 34 2 "You seem pretty confident in your victory, huh?\pBut just wait, our leader used to be a member of the Elite Four!"
+str_15:
+    .autostring 34 2 "Grandpa!\pWhat exactly is going on here?"
 .endif
 

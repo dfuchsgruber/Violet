@@ -117,4 +117,50 @@ str_before_10:
 str_after_10:
     .autostring 34 2 "So einen Kampf kann man doch wahrlich nicht als langweilig bezeichnen, oder?"
 .elseif LANG_EN
+str_before_0:
+    .autostring 34 2 "We fight for a free world.\pAnd this goal justifies the means we use!"
+str_after_0:
+    .autostring 34 2 "You don't see the big picture.\pOtherwise, you wouldn't stand in our wayDOTS"
+str_before_1:
+    .autostring 34 2 "Why do you oppose us?\pWe fight for the freedom of all people in this region!"
+str_after_1:
+    .autostring 34 2 "When will people finally realize that we are not their enemiesDOTS"
+str_before_2:
+    .autostring 34 2 "Albus will free this world from the clutches of the Elite Four.\pI will fight to the end for that!"
+str_after_2:
+    .autostring 34 2 "So be itDOTS\pAgainst someone like Albus, you have no chanceDOTS"
+str_before_3:
+    .autostring 34 2 "A beautiful flower can delight anyone.\pYou don't believe me?\nWatch out!"
+str_after_3:
+    .autostring 34 2 "You are so rudeDOTS\pJust trampling on my flowersDOTS"
+str_before_4:
+    .autostring 34 2 "A mechanic never gets bored in such a modern world.\pThere are always machines that need repairing!"
+str_after_4:
+    .autostring 34 2 "I guess I'll have to tinker with my own team for nowDOTS"
+str_before_5:
+    .autostring 34 2 "A powerful smear campaign is being waged against our revolutionary movement.\pBut we don't care about such things!\pWe fight for a higher purpose!"
+str_after_5:
+    .autostring 34 2 "You're just a slave of the system, aren't you?"
+str_before_6:
+    .autostring 34 2 "Bug Pokémon are often underestimated, you know.\pI always love showing people how strong this type of Pokémon can actually be!"
+str_after_6:
+    .autostring 34 2 "Don't get me wrongDOTS\pBug Pokémon are still very strongDOTS"
+str_before_7:
+    .autostring 34 2 "I raised my Pokémon since it was a baby!\pWe've never lost a battle!"
+str_after_7:
+    .autostring 34 2 "What?\nBut my Pokémon and I are unbeatable!\pYou cheated!"
+str_before_8:
+    .autostring 34 2 "Cascade is said to harbor the most beautiful of all Pokémon.\pIt's only fitting that I train in such a place!"
+str_after_8:
+    .autostring 34 2 "What?\nDid my grace and elegance mean nothing to you?"
+str_before_9:
+    .autostring 34 2 "My sister always knows exactly what I'm thinking.\pAnd of course, that helps us in battles too!"
+str_after_9:
+    .autostring 34 2 "Sister dear?\nAre you okay?"
+str_cant_battle_9:
+    .autostring 34 2 "My sister and I only fight togetherDOTS\pUnfortunately, you'll have to deal with us!"
+str_before_10:
+    .autostring 34 2 "Fishing is considered very boring by many.\pBut battling with caught Pokémon is so exciting!"
+str_after_10:
+    .autostring 34 2 "You can't really call such a battle boring, can you?"
 .endif
