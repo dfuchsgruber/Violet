@@ -318,15 +318,17 @@ bool worldmap_ui_callback_initialize_base() {
             oams[worldmap_ui_state->oam_idx_player].flags |= OAM_FLAG_CENTERED;
             worldmap_ui_state->oam_idx_cursor = oam_new_forward_search(&oam_template_cursor, 0, 0, 10);
             oams[worldmap_ui_state->oam_idx_cursor].flags |= OAM_FLAG_CENTERED;
-            s16 icon_switch_map_x = (s16)(8 * (worldmap_ui_state->worldmap_tile_x + WORLDMAP_X_MARGIN + worldmap_ui_state->icon_switch_maps_x) + 4);
-            s16 icon_switch_map_y = (s16)(8 * (worldmap_ui_state->worldmap_tile_y + WORLDMAP_Y_MARGIN + worldmap_ui_state->icon_switch_maps_y) + 4);
-            worldmap_ui_state->oam_idx_icon_switch_map = oam_new_forward_search(&oam_template_icon_switch_maps, icon_switch_map_x, icon_switch_map_y, 11);
-            oams[worldmap_ui_state->oam_idx_icon_switch_map].flags |= OAM_FLAG_CENTERED;
-            oam_gfx_anim_start_if_not_current(oams + worldmap_ui_state->oam_idx_icon_switch_map, 0);
-            worldmap_ui_state->oam_idx_icon_switch_map_frame = oam_new_forward_search(&oam_template_icon_switch_maps, icon_switch_map_x, icon_switch_map_y, 11);
-            oams[worldmap_ui_state->oam_idx_icon_switch_map_frame].flags |= OAM_FLAG_CENTERED;
-            oam_gfx_anim_start_if_not_current(oams + worldmap_ui_state->oam_idx_icon_switch_map_frame, 1);
-            oams[worldmap_ui_state->oam_idx_icon_switch_map_frame].final_oam.attr2 = (u16)((oams[worldmap_ui_state->oam_idx_icon_switch_map_frame].final_oam.attr2 & (~ATTR2_PRIO_MASK)) | ATTR2_PRIO(2));
+            if (worldmap_ui_state->switch_maps_allowed) {
+                s16 icon_switch_map_x = (s16)(8 * (worldmap_ui_state->worldmap_tile_x + WORLDMAP_X_MARGIN + worldmap_ui_state->icon_switch_maps_x) + 4);
+                s16 icon_switch_map_y = (s16)(8 * (worldmap_ui_state->worldmap_tile_y + WORLDMAP_Y_MARGIN + worldmap_ui_state->icon_switch_maps_y) + 4);
+                worldmap_ui_state->oam_idx_icon_switch_map = oam_new_forward_search(&oam_template_icon_switch_maps, icon_switch_map_x, icon_switch_map_y, 11);
+                oams[worldmap_ui_state->oam_idx_icon_switch_map].flags |= OAM_FLAG_CENTERED;
+                oam_gfx_anim_start_if_not_current(oams + worldmap_ui_state->oam_idx_icon_switch_map, 0);
+                worldmap_ui_state->oam_idx_icon_switch_map_frame = oam_new_forward_search(&oam_template_icon_switch_maps, icon_switch_map_x, icon_switch_map_y, 11);
+                oams[worldmap_ui_state->oam_idx_icon_switch_map_frame].flags |= OAM_FLAG_CENTERED;
+                oam_gfx_anim_start_if_not_current(oams + worldmap_ui_state->oam_idx_icon_switch_map_frame, 1);
+                oams[worldmap_ui_state->oam_idx_icon_switch_map_frame].final_oam.attr2 = (u16)((oams[worldmap_ui_state->oam_idx_icon_switch_map_frame].final_oam.attr2 & (~ATTR2_PRIO_MASK)) | ATTR2_PRIO(2));
+            }
             worldmap_ui_update_player_head_oam((s16)(8 * (worldmap_ui_state->worldmap_tile_x + WORLDMAP_X_MARGIN)), 
                 (s16)(8 * (worldmap_ui_state->worldmap_tile_y +  WORLDMAP_Y_MARGIN)));
             worldmap_ui_update_cursor_oam((s16)(8 * (worldmap_ui_state->worldmap_tile_x + WORLDMAP_X_MARGIN)), 

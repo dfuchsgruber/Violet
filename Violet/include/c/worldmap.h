@@ -32,17 +32,24 @@ extern "C" {
 // The habitat widget on the left hides one column of the worldmap (which is why you can scroll "with no left margin")
 #define WORLDMAP_X_OFFSET_HABITAT 6
 #define WORLDMAP_Y_OFFSET_HABITAT 2
+#define WORLDMAP_X_OFFSET_STD 3
+#define WORLDMAP_Y_OFFSET_STD 2
+
 
 #define WORLDMAP_POKEDEX_HABITAT_INITIAL_LIST_SIZE 64
 
 #define WORLDMAP_BUTTON_SWITCH_MAPS_HABITAT_X 0
 #define WORLDMAP_BUTTON_SWITCH_MAPS_HABITAT_Y 13
+#define WORLDMAP_BUTTON_SWITCH_MAPS_STD_X 0
+#define WORLDMAP_BUTTON_SWITCH_MAPS_STD_Y 13
 
 #define WORLDMAP_SWITCH_MAPS_DIALOGE_WIDTH 10
 #define WORLDMAP_SWITCH_MAPS_DIALOGE_HEIGHT 10
 
 #define WORLDMAP_SWITCH_MAPS_DIALOGE_X_HABITAT (WORLDMAP_X_OFFSET_HABITAT + (WORLDMAP_TOTAL_WIDTH - WORLDMAP_SWITCH_MAPS_DIALOGE_WIDTH) / 2)
 #define WORLDMAP_SWITCH_MAPS_DIALOGE_Y_HABITAT (WORLDMAP_Y_OFFSET_HABITAT + (WORLDMAP_TOTAL_HEIGHT - WORLDMAP_SWITCH_MAPS_DIALOGE_HEIGHT) / 2)
+#define WORLDMAP_SWITCH_MAPS_DIALOGE_X_STD (WORLDMAP_X_OFFSET_STD + (WORLDMAP_TOTAL_WIDTH - WORLDMAP_SWITCH_MAPS_DIALOGE_WIDTH) / 2)
+#define WORLDMAP_SWITCH_MAPS_DIALOGE_Y_STD (WORLDMAP_Y_OFFSET_STD + (WORLDMAP_TOTAL_HEIGHT - WORLDMAP_SWITCH_MAPS_DIALOGE_HEIGHT) / 2)
 
 typedef u8 worldmap_namespace_t[WORLDMAP_HEIGHT][WORLDMAP_WIDTH];
 
@@ -109,7 +116,20 @@ enum {
     WORLDMAP_UI_HABITAT_NUM_PERCENTAGES,
 };
 
+enum worldmap_ui_habitat_tbox {
+    WORLDMAP_UI_HABITAT_TBOX_HEADER = WORLDMAP_UI_NUM_TBOXES,
+    WORLDMAP_UI_HABITAT_TBOX_FOOTER,
+    WORLDMAP_UI_HABITAT_TBOX_HABITAT_NAMES,
+    WORLDMAP_UI_HABITAT_TBOX_HABITAT_PERCENTAGES = WORLDMAP_UI_HABITAT_TBOX_HABITAT_NAMES + NUM_HABITAT_TYPES - 2,
+    WORLDMAP_UI_HABITAT_TBOX_HABITAT_NO_HABITAT = WORLDMAP_UI_HABITAT_TBOX_HABITAT_PERCENTAGES + NUM_HABITAT_TYPES,
+    NUM_WORLDMAP_UI_HABITAT_TBOXES,
+};
 
+enum worldmap_ui_std_tbox{
+    WORLDMAP_UI_STD_TBOX_HEADER = WORLDMAP_UI_NUM_TBOXES,
+    WORLDMAP_UI_STD_TBOX_FOOTER,
+    NUM_WORLDMAP_UI_STD_TBOXES,
+};
 
     typedef struct{
         u8 bank;
@@ -308,10 +328,9 @@ enum {
      * Should be called once the previous state has been completely freed and the screen is fading to black.
      * Will set `callback1` accordingly and reset.
      * @param species the habitat of which species to show
-     * @param continuation the callback1 that will be called once the habitat is exited, faded to black and deallocated
      * @param from_overworld whether the habitat was opened from the overworld
     */
-    void worldmap_ui_habitat_new(u16 species, void (*contuation)(), u8 from_overworld);
+    void worldmap_ui_habitat_new(u16 species, void (*contuation)());
 
     typedef struct {
         u8 x, y, idx, layer, namespace;
@@ -331,12 +350,13 @@ enum {
 
     enum worldmap_ui_mode_t {
         WORLDMAP_UI_HABITAT = 0,
+        WORLDMAP_UI_STD,
     };
 
     typedef struct {
         u8 initialization_state;
         u8 mode;
-        u8 from_overworld;
+        u8 switch_maps_allowed: 1;
 
         void *bg0_map;
         void *bg1_map;

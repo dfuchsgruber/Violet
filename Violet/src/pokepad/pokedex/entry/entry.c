@@ -304,7 +304,7 @@ static void pokedex_entry_callback_habitat(u8 self) {
     big_callback_delete(self);
     if (pokedex_entry_state->context == POKEDEX_ENTRY_PAGE_CONTEXT_CATCHING)
         big_callback_delete(pokedex_entry_state->catching_cb_idx);
-    worldmap_ui_habitat_new(pokedex_entry_state->species, pokedex_entry_reinitialize_from_habitat, false);
+    worldmap_ui_habitat_new(pokedex_entry_state->species, pokedex_entry_reinitialize_from_habitat);
 }
 
 static bool pokedex_entry_handle_inputs_switch_pages(u8 self) {

@@ -325,3 +325,6 @@ special_table equ 0x0815FCC0
 
 .org special_table + 224 * 4
         .word move_relearner_initialize | 1
+
+.org special_table + 251 * 4
+        .word special_worldmap_ui_std | 1
