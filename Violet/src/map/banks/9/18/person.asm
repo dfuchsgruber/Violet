@@ -24,6 +24,7 @@ ow_script_movs_0x95d7ea:
 ow_script_map_9_18_person_0:
 lock
 faceplayer
+setflag FLAG_MOVE_REMINDER
 loadpointer 0x0 str_0x95d7f0
 callstd MSG
 checkitem ITEM_HERZSCHUPPE 0x1

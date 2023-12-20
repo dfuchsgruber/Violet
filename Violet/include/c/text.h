@@ -163,6 +163,8 @@ extern "C" {
      **/
     bool tbox_printer_is_active(u8 box_idx);
 
+    #define CENTERED_STR_X(str,font,width,letter_spacing) ((u16)(((width)-string_get_width((font),(str),(letter_spacing))) / 2))
+
     /**
      * Prints a string on a textbox
      * @param box_id Textbox id to print string on

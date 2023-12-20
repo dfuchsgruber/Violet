@@ -8,9 +8,9 @@
 .global ow_script_map_6_0_person_0
 
 ow_script_map_6_0_person_0:
-loadpointer 0 str
-callstd MSG_FACE
-end
+	loadpointer 0 str
+	callstd MSG_FACE
+	end
 
 
 .ifdef LANG_GER

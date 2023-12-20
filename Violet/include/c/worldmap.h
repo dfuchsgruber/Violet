@@ -17,6 +17,8 @@ extern "C" {
 #include "tile/coordinate.h"
 #include "map/healing_place.h"
 #include "pokepad/pokedex/habitat.h"
+#include "pokemon/move_relearner.h"
+#include "list_menu.h"
 
 // Width and height without the margin
 #define WORLDMAP_WIDTH 22
@@ -34,6 +36,8 @@ extern "C" {
 #define WORLDMAP_Y_OFFSET_HABITAT 2
 #define WORLDMAP_X_OFFSET_STD 3
 #define WORLDMAP_Y_OFFSET_STD 2
+#define WORLDMAP_X_OFFSET_INFO 7
+#define WORLDMAP_Y_OFFSET_INFO 2
 
 
 #define WORLDMAP_POKEDEX_HABITAT_INITIAL_LIST_SIZE 64
@@ -42,6 +46,8 @@ extern "C" {
 #define WORLDMAP_BUTTON_SWITCH_MAPS_HABITAT_Y 13
 #define WORLDMAP_BUTTON_SWITCH_MAPS_STD_X 0
 #define WORLDMAP_BUTTON_SWITCH_MAPS_STD_Y 13
+#define WORLDMAP_BUTTON_SWITCH_MAPS_INFO_X 0
+#define WORLDMAP_BUTTON_SWITCH_MAPS_INFO_Y 13
 
 #define WORLDMAP_SWITCH_MAPS_DIALOGE_WIDTH 10
 #define WORLDMAP_SWITCH_MAPS_DIALOGE_HEIGHT 10
@@ -50,6 +56,20 @@ extern "C" {
 #define WORLDMAP_SWITCH_MAPS_DIALOGE_Y_HABITAT (WORLDMAP_Y_OFFSET_HABITAT + (WORLDMAP_TOTAL_HEIGHT - WORLDMAP_SWITCH_MAPS_DIALOGE_HEIGHT) / 2)
 #define WORLDMAP_SWITCH_MAPS_DIALOGE_X_STD (WORLDMAP_X_OFFSET_STD + (WORLDMAP_TOTAL_WIDTH - WORLDMAP_SWITCH_MAPS_DIALOGE_WIDTH) / 2)
 #define WORLDMAP_SWITCH_MAPS_DIALOGE_Y_STD (WORLDMAP_Y_OFFSET_STD + (WORLDMAP_TOTAL_HEIGHT - WORLDMAP_SWITCH_MAPS_DIALOGE_HEIGHT) / 2)
+#define WORLDMAP_SWITCH_MAPS_DIALOGE_X_INFO (WORLDMAP_X_OFFSET_INFO - 1 + (WORLDMAP_TOTAL_WIDTH - WORLDMAP_SWITCH_MAPS_DIALOGE_WIDTH) / 2)
+#define WORLDMAP_SWITCH_MAPS_DIALOGE_Y_INFO (WORLDMAP_Y_OFFSET_INFO + (WORLDMAP_TOTAL_HEIGHT - WORLDMAP_SWITCH_MAPS_DIALOGE_HEIGHT) / 2)
+
+#define WORLDMAP_INFO_ICON_HOUSE_X 0
+#define WORLDMAP_INFO_ICON_HOUSE_Y 16
+#define WORLDMAP_INFO_ICON_HOUSE_WIDTH 9
+#define WORLDMAP_INFO_ICON_HOUSE_HEIGHT 9
+
+#define WORLDMAP_INFO_ICON_POKEBALL_X 16
+#define WORLDMAP_INFO_ICON_POKEBALL_Y 16
+#define WORLDMAP_INFO_ICON_POKEBALL_WIDTH 9
+#define WORLDMAP_INFO_ICON_POKEBALL_HEIGHT 9
+
+#define WORLDMAP_INFO_SEARCH_MAX_ITEMS_SHOWN 7
 
 typedef u8 worldmap_namespace_t[WORLDMAP_HEIGHT][WORLDMAP_WIDTH];
 
@@ -131,6 +151,50 @@ enum worldmap_ui_std_tbox{
     NUM_WORLDMAP_UI_STD_TBOXES,
 };
 
+enum worldmap_ui_info_tbox{
+    WORLDMAP_UI_INFO_TBOX_HEADER = WORLDMAP_UI_NUM_TBOXES,
+    WORLDMAP_UI_INFO_TBOX_FOOTER,
+    WORLDMAP_UI_INFO_TBOX_HEADER_INFO,
+    WORLDMAP_UI_INFO_TBOX_INFO,
+    WORLDMAP_UI_INFO_TBOX_SEARCH_CATEGORY,
+    WORLDMAP_UI_INFO_TBOX_SEARCH_ITEMS,
+    NUM_WORLDMAP_UI_INFO_TBOXES,
+};
+
+enum worldmap_person {
+    WORLDMAP_PERSON_MOVE_REMINDER = 0,
+    WORLDMAP_PERSON_MOVE_DELETER,
+    WORLDMAP_PERSON_NICKNAME_RATER,
+    NUM_WORLDMAP_PERSONS,
+};
+
+enum worldmap_institution{
+    WORLDMAP_INSTITUTION_PLAYER_HOUSE = 0,
+    WORLDMAP_INSTITUTION_RIVAL_HOUSE,
+    WORLDMAP_INSTITUTION_GYM_BASE,
+    WORLDMAP_INSTITUTION_TANNS_LAB = WORLDMAP_INSTITUTION_GYM_BASE + 5,
+    WORLDMAP_INSTITUTION_LAZ_CORP,
+    WORLDMAP_INSTITUTION_LESTER_HOUSE,
+    WORLDMAP_INSTITUTION_ROSALIE_HOUSE,
+    WORLDMAP_INSTITUTION_CELEBI_SHRINE,
+    WORLDMAP_INSTITUTION_TEAHS_HOUSE,
+    NUM_WORLDMAP_INSTIUTIONS,
+};
+
+enum worldmap_institution_type{
+    WORLDMAP_INSTITUTION_TYPE_NONE = 0,
+    WORLDMAP_INSTITUTION_TYPE_HOUSE,
+    WORLDMAP_INSTITUTION_TYPE_GYM,
+};
+
+enum worldmap_info_category{
+    WORLDMAP_CATEGORY_PERSON = 0,
+    WORLDMAP_CATEGORY_INSTITUTION,
+    WORLDMAP_CATEGORY_TUTOR,
+    WORLDMAP_CATEGORY_TUTOR_CRYSTAL,
+    NUM_WORLDMAP_CATEGORIES,
+};
+
     typedef struct{
         u8 bank;
         u8 map;
@@ -165,6 +229,19 @@ enum worldmap_ui_std_tbox{
         u8 map_idx;
         u8 shape_idx;
     } worldmap_shape_association_t;
+
+    typedef struct {
+        move_tutor_t person;
+        u16 flag;
+        u8 name[13];
+    } worldmap_person_t;
+
+    typedef struct {
+        u8 bank, map_idx, warp_idx;
+        u8 institution_type;
+        u16 flag;
+        u8 name[13];
+    } worldmap_institution_t;
 
     #define NUM_WORLDMAP_SHAPE_ASSOCIATIONS 6
     extern const worldmap_shape_association_t worldmap_shape_associations[NUM_WORLDMAP_SHAPE_ASSOCIATIONS];
@@ -269,6 +346,21 @@ enum worldmap_ui_std_tbox{
     void worldmap_locate_player();
 
     /**
+     * Returns the worldmap position of a map
+     * @param bank the mapbank
+     * @param map_idx the mapid in the bank
+     * @param x the x coordinate (in tiles)
+     * @param y the y coordinate (in tiles)
+     * @param dst_x the x coordinate on the worldmap
+     * @param dst_y the y coordinate on the worldmap
+     * @param dst_worldmap_idx the worldmap index
+     * @param dst_layer the layer
+     * @return whether the position could be found
+     */
+    bool map_coordinates_to_worldmap_position(u8 bank, u8 map_idx, s16 x, s16 y, u8 *dst_x, u8 *dst_y, 
+		u8 *dst_worldmap_idx, u8 *dst_layer);
+
+    /**
      * Sets the position of the worldmap cursor to the player's cursor.
     */
     void worldmap_set_cursor_to_player();
@@ -331,6 +423,14 @@ enum worldmap_ui_std_tbox{
      * @param from_overworld whether the habitat was opened from the overworld
     */
     void worldmap_ui_habitat_new(u16 species, void (*contuation)());
+
+    /**
+     * Initializes the worldmap ui with the info ui
+     * Should be called once the previous state has been completely freed and the screen is fading to black.
+     * Will set `callback1` accordingly and reset.
+     * @param continuation the continuation to call once the ui is finished
+    */
+    void worldmap_ui_info_new(void (*continuation)());
 
     typedef struct {
         u8 x, y, idx, layer, namespace;
@@ -402,6 +502,23 @@ enum worldmap_ui_std_tbox{
         u8 red_overlay_is_active : 1;
         u8 other_red_should_be_active : 1;
         u8 other_red_is_active : 1;
+
+        u8 search_category;
+        u8 list_menu_search_cb_idx, list_menu_search_items_cb_idx;
+        u8 scroll_indicator_search_items_cb_idx;
+        u16 search_category_cursor, search_category_items_above;
+        u16 search_items_cursor[NUM_WORLDMAP_CATEGORIES];
+        u16 search_items_items_above[NUM_WORLDMAP_CATEGORIES];
+        union {
+            list_menu_item persons[NUM_WORLDMAP_PERSONS];
+            list_menu_item tutors[NUM_MOVE_TUTORS];
+            list_menu_item tutor_crystals[NUM_TYPES];
+            list_menu_item institutions[NUM_WORLDMAP_INSTIUTIONS];
+        } search_items;
+        union {
+            u8 institutions[NUM_WORLDMAP_INSTIUTIONS][20];
+        } search_item_strs;
+
     } worldmap_ui_state_t;
 
     extern EWRAM worldmap_ui_state_t *worldmap_ui_state;

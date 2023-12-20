@@ -5,6 +5,7 @@
 #include "list_menu.h"
 #include "pokemon/virtual.h"
 #include "constants/move_tutor.h"
+#include "constants/pokemon_types.h"
 
 typedef struct {
     u8 state;
@@ -42,6 +43,7 @@ typedef struct {
 } move_tutor_t;
 
 extern const move_tutor_t move_tutors[NUM_MOVE_TUTORS];
+extern const move_tutor_t move_tutor_crystals[NUM_TYPES];
 
 extern move_relearner_state_t *move_relearner_state;
 
@@ -82,5 +84,19 @@ u8 pokemon_get_accesible_learnable_moves(const pokemon *p, u16 *moves, u8 type);
  * @param move_tutor the move tutor
 */
 void move_tutor_set_flag(u8 move_tutor);
+
+/**
+ * Checks if a move tutor has been visited at least once
+ * @param move_tutor the move tutor
+ * @return true if visited, false otherwise
+*/
+bool move_tutor_check_flag(u8 move_tutor);
+
+/**
+ * Checks if an accessible move tutor has been visited at least once
+ * @param type the type of the move tutor
+ * @return true if visited, false otherwise
+*/
+bool accessible_move_tutor_check_flag(u8 type);
 
 #endif

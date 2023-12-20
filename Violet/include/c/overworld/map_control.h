@@ -374,4 +374,9 @@ void map_draw_block_at(const map_footer_t *footer, int offset, int x, int y);
  **/
 void map_draw_block(int layer, u16 *block, int offset);
 
+/**
+ * Sets the overworld callaback2 to execute item usage.
+*/
+void overworld_callback2_set_to_use_item();
+
 #endif /* INCLUDE_C_OVERWORLD_MAP_CONTROL_H_ */

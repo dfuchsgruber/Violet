@@ -1834,3 +1834,4 @@ gp_list_menu_move_cursor = 0x0810f9b4 | 1;
 start_menu_fade_if_applicable = 0x0806f2f8 | 1;
 start_menu_delete = 0x0806fe04 | 1;
 bg_load_to_tilemap = 0x08002050 | 1;
+overworld_callback2_set_to_use_item = 0x080a1270 | 1;

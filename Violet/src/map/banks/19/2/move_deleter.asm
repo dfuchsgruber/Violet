@@ -3,12 +3,14 @@
 .include "specials.s"
 .include "ordinals.s"
 .include "vars.s"
+.include "flags.s"
 
 .global ow_script_ceometria_indoor_1_move_deleter
 
 ow_script_ceometria_indoor_1_move_deleter:
     lock
     faceplayer
+    setflag FLAG_MOVE_DELETER
     loadpointer 0 str_intro
     callstd MSG_YES_NO
     compare LASTRESULT 1

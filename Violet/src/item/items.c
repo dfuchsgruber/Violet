@@ -7581,7 +7581,7 @@ const item items[] = {
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x80a1d4d, //field_usage
+		item_effect_town_map,
 		0, // battle_effect
 		NULL, //battle_usage2
 		0, // secondary_idx

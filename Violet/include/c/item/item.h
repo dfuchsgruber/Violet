@@ -437,4 +437,10 @@ enum {
  */
 u8 item_is_tm_or_evolution_stone(u16 item_idx);
 
+/**
+ * Starts the town map
+ * @param self self-reference
+*/
+void item_effect_town_map(u8 self);
+
 #endif /* INCLUDE_C_ITEM_ITEM_H_ */

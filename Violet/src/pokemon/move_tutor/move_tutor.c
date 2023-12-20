@@ -50,6 +50,10 @@ void move_tutor_set_flag(u8 move_tutor_idx) {
     setflag((u16)(FLAG_MOVE_TUTOR_BASE + move_tutor_idx));
 }
 
+bool move_tutor_check_flag(u8 move_tutor_idx) {
+    return checkflag((u16)(FLAG_MOVE_TUTOR_BASE + move_tutor_idx));
+}
+
 void move_tutor_set_flag_by_var() {
     u8 move_tutor_idx = (u8)(*var_access(0x8004));
     move_tutor_set_flag(move_tutor_idx);

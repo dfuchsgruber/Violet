@@ -3,16 +3,18 @@
 .include "vars.s"
 .include "specials.s"
 .include "ordinals.s"
+.include "flags.s"
 
 .global map_forest_cemetery_teahs_house_levelscript
 
 map_forest_cemetery_teahs_house_levelscript:
 	.byte LEVELSCRIPT_TYPE_ON_TRANSITION
-    .word lscr_hide_boy
+    .word on_transition
     .byte 0
 
-lscr_hide_boy:
+on_transition:
     // Get the hour (0x4)
+    setflag FLAG_TEAHS_HOUSE
     setvar 0x8004 4
     special2 LASTRESULT SPECIAL_TIME_GET
     compare LASTRESULT 1

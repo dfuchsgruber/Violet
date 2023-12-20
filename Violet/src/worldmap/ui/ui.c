@@ -329,10 +329,8 @@ bool worldmap_ui_callback_initialize_base() {
                 oam_gfx_anim_start_if_not_current(oams + worldmap_ui_state->oam_idx_icon_switch_map_frame, 1);
                 oams[worldmap_ui_state->oam_idx_icon_switch_map_frame].final_oam.attr2 = (u16)((oams[worldmap_ui_state->oam_idx_icon_switch_map_frame].final_oam.attr2 & (~ATTR2_PRIO_MASK)) | ATTR2_PRIO(2));
             }
-            worldmap_ui_update_player_head_oam((s16)(8 * (worldmap_ui_state->worldmap_tile_x + WORLDMAP_X_MARGIN)), 
-                (s16)(8 * (worldmap_ui_state->worldmap_tile_y +  WORLDMAP_Y_MARGIN)));
-            worldmap_ui_update_cursor_oam((s16)(8 * (worldmap_ui_state->worldmap_tile_x + WORLDMAP_X_MARGIN)), 
-                (s16)(8 * (worldmap_ui_state->worldmap_tile_y +  WORLDMAP_Y_MARGIN)));
+            worldmap_ui_update_player_head_oam();
+            worldmap_ui_update_cursor_oam();
             worldmap_ui_state->switch_map_icon_base_tile = oam_vram_alloc(GRAPHIC_SIZE_4BPP_TO_NUM_TILES(64, 64));
             oam_vram_allocation_table_add(WORLDMAP_UI_GFX_TAG_SWITCH_MAP_MINIMAP, 
                 worldmap_ui_state->switch_map_icon_base_tile, GRAPHIC_SIZE_4BPP_TO_NUM_TILES(64, 64));
@@ -385,8 +383,10 @@ void worldmap_ui_update_cursor_oam() {
         oams[worldmap_ui_state->oam_idx_cursor].flags &= (u16)(~OAM_FLAG_INVISIBLE);
         oams[worldmap_ui_state->oam_idx_cursor].x = (s16)(8 * worldmap_ui_state->worldmap_tile_x + 
             (worldmap_ui_state->cursor.x + WORLDMAP_X_MARGIN) * 8 + 4);
+        oams[worldmap_ui_state->oam_idx_cursor].x2 = 0;
         oams[worldmap_ui_state->oam_idx_cursor].y = (s16)(8 * worldmap_ui_state->worldmap_tile_y + 
             (worldmap_ui_state->cursor.y + WORLDMAP_Y_MARGIN) * 8 + 4);
+        oams[worldmap_ui_state->oam_idx_cursor].y2 = 0;
         oam_gfx_anim_start_if_not_current(oams + worldmap_ui_state->oam_idx_cursor, worldmap_ui_state->cursor_locked);
     }
 }

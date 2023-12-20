@@ -17,6 +17,7 @@
 ow_script_map_8_4_person_0:
 lock
 faceplayer
+setflag FLAG_NICKNAME_RATER
 loadpointer 0x0 str_0x926fde
 callstd MSG_YES_NO
 compare LASTRESULT 0x1
