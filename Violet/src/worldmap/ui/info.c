@@ -466,20 +466,27 @@ static void worldmap_ui_exit(u8 self) {
     }
 }
 
+static void wordlmap_ui_update_on_current() {
+    worldmap_ui_info_update_namespace_by_cursor_position(true);
+    worldmap_ui_info_update_info(); 
+    worldmap_ui_update_player_head_oam();
+    worldmap_ui_update_cursor_oam();
+}
+
 static void worldmap_ui_update_worldmap(u8 self) {
     if (fading_control.active)
         return;
+    fading_control.buffer_transfer_disabled = true;
     worldmap_ui_state->cursor = worldmap_ui_state->cursor_switch_maps;
-    worldmap_ui_info_update_namespace_by_cursor_position(true);
-    worldmap_ui_info_update_info();
     worldmap_ui_update_worldmap_gfx(worldmap_ui_state->cursor.idx, 
                 worldmap_ui_state->cursor.layer, worldmap_ui_state->worldmap_tile_x, worldmap_ui_state->worldmap_tile_y);
-    worldmap_ui_update_player_head_oam();
-    worldmap_ui_update_cursor_oam();
+    wordlmap_ui_update_on_current();
+    worldmap_ui_update_fly_icon();
     fadescreen(0xFFFFFFFF, 0, 16, 0, 0);
     bg_virtual_sync_reqeust_push(2);
     bg_virtual_sync_reqeust_push(3);
     big_callbacks[self].function = worldmap_ui_handle_inputs_info;
+    fading_control.buffer_transfer_disabled = false;
 }
 
 static void worldmap_ui_handle_inputs_switch_maps_info(u8 self) {
@@ -605,8 +612,15 @@ static void worldmap_ui_search_dialoge_handle_inputs_items(UNUSED u8 self) {
                 worldmap_ui_state->cursor_switch_maps.layer, worldmap_ui_state->cursor_switch_maps.idx);
             worldmap_ui_search_dialoge_items_delete();
             worldmap_ui_search_dialoge_category_delete();
-            fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
-            big_callbacks[self].function = worldmap_ui_update_worldmap;
+            if (worldmap_ui_state->cursor_switch_maps.idx == worldmap_ui_state->cursor.idx &&
+                worldmap_ui_state->cursor_switch_maps.layer == worldmap_ui_state->cursor.layer) {
+                worldmap_ui_state->cursor = worldmap_ui_state->cursor_switch_maps;
+                wordlmap_ui_update_on_current();
+                big_callbacks[self].function = worldmap_ui_handle_inputs_info;
+            } else {
+                fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
+                big_callbacks[self].function = worldmap_ui_update_worldmap;
+            }
             play_sound(5);
             break;
     }
@@ -749,6 +763,22 @@ static void worldmap_ui_search_dialoge_new(u8 self) {
 }
 
 
+static int worldmap_ui_get_flight_position_of_cursor(worldmap_cursor_t *cursor) {
+    int idx = -1;
+    for (int i = 0; flight_positions2[i].bank != 0xFF; i++) {
+        u8 x, y, layer, worldmap_idx;
+        u16 flag = flight_positions2[i].flag;
+        if ((flag == 0 || checkflag(flag)) && map_coordinates_to_worldmap_position(flight_positions2[i].bank, flight_positions2[i].map_idx, 
+                flight_positions2[i].x, flight_positions2[i].y, &x, &y, &layer, &worldmap_idx)) {
+            if (x == cursor->x && y == cursor->y && layer == cursor->layer && worldmap_idx == cursor->idx) {
+                idx = i;
+                break;
+            }
+        }
+    }
+    return idx;
+}
+
 static void worldmap_ui_handle_inputs_info(u8 self) {
     if (dma3_busy(-1) || fading_control.active)
         return;
@@ -767,6 +797,16 @@ static void worldmap_ui_handle_inputs_info(u8 self) {
         play_sound(5);
         fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
         big_callbacks[self].function = worldmap_ui_exit;
+    } else if (super.keys_new.keys.A) {
+        int idx = worldmap_ui_get_flight_position_of_cursor(&worldmap_ui_state->cursor);
+        if (idx != -1) {
+            const flight_position2_t *flight_position = flight_positions2 + idx;
+            warp_setup(flight_position->bank, flight_position->map_idx, 0xFF, 
+                flight_position->x, flight_position->y);
+            play_sound(5);
+            fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
+            big_callbacks[self].function = worldmap_ui_exit;
+        }
     }
 }
 
@@ -901,5 +941,13 @@ void worldmap_ui_callback_initialize_info() {
 void worldmap_ui_info_new(void (*continuation)()) {
     worldmap_ui_state = malloc_and_clear(sizeof(worldmap_ui_state_t));
     worldmap_ui_state->continuation = continuation;
+    callback1_set(worldmap_ui_callback_initialize_info);
+}
+
+
+void worldmap_ui_fly_new(void (*continuation)()) {
+    worldmap_ui_state = malloc_and_clear(sizeof(worldmap_ui_state_t));
+    worldmap_ui_state->continuation = continuation;
+    worldmap_ui_state->fly_enabled = true;
     callback1_set(worldmap_ui_callback_initialize_info);
 }

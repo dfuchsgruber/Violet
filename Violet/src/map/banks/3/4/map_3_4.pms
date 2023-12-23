@@ -1031,33 +1031,33 @@
 					}
 				},
 				{
-					"picture": 92,
-					"level": 0,
-					"target_index": 34,
+					"picture": "92",
+					"level": "0",
+					"target_index": "34",
 					"flag": "KASKADA_ITEM_0",
 					"x": "46",
-					"alert_radius": 0,
+					"alert_radius": "0",
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"script": "0",
-					"y": "61",
+					"script": "ow_script_test",
+					"y": "46",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
-					"field_B": 0,
+					"field_B": "0",
 					"value": {
 						"item": "ITEM_NUGGET",
-						"species": 0,
-						"berry_tree_idx": 0,
-						"type": 0,
-						"move_tutor": 0
+						"species": "0",
+						"berry_tree_idx": "0",
+						"type": "0",
+						"move_tutor": "0"
 					},
-					"argument": 0,
+					"argument": "0",
 					"script_std_and_in_connection": {
-						"script_std": "PERSON_ITEM",
+						"script_std": "PERSON_SCRIPT",
 						"in_connection": "0"
 					}
 				},

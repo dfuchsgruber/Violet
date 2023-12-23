@@ -123,10 +123,16 @@ extern const LZ77COMPRESSED gfx_worldmap_cursorTiles;
 extern const color_t gfx_worldmap_cursorPal[16];
 extern const LZ77COMPRESSED gfx_worldmap_icon_switch_mapsTiles;
 extern const color_t gfx_worldmap_icon_switch_mapsPal[16];
+extern const LZ77COMPRESSED gfx_worldmap_fly_iconTiles;
+extern const color_t gfx_worldmap_fly_iconPal[16];
 
 static const graphic graphics_player_head[2] = {
     {.sprite = gfx_hiro_headTiles, .tag = WORLDMAP_UI_GFX_TAG_PLAYER_HEAD, .size=GRAPHIC_SIZE_4BPP(16, 16)},
     {.sprite = gfx_hiroine_headTiles, .tag = WORLDMAP_UI_GFX_TAG_PLAYER_HEAD, .size=GRAPHIC_SIZE_4BPP(16, 16)},
+};
+
+static const graphic graphics_fly_icon = {
+    .sprite = gfx_worldmap_fly_iconTiles, .tag = WORLDMAP_UI_GFX_TAG_FLY_ICON, .size=GRAPHIC_SIZE_4BPP(16, 32),
 };
 
 static const graphic graphic_cursor = {
@@ -152,6 +158,10 @@ static const palette palette_cursor = {
     .pal = gfx_worldmap_cursorPal, .tag = WORLDMAP_UI_GFX_TAG_CURSOR
 };
 
+static const palette palette_fly_icon = {
+    .pal = gfx_worldmap_fly_iconPal, .tag = WORLDMAP_UI_GFX_TAG_FLY_ICON
+};
+
 static const sprite oam_player_head = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(3)
 };
@@ -166,6 +176,10 @@ static const sprite oam_icon_switch_maps = {
 
 static const sprite oam_switch_map_icon = {
     .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_64_64, .attr2 = ATTR2_PRIO(0),
+};
+
+static const sprite oam_fly_icon = {
+    .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(3)
 };
 
 static const gfx_frame gfx_animation_cursor_unlocked[] = {
@@ -191,6 +205,14 @@ static const gfx_frame gfx_animation_icon_switch_maps_frame[] = {
 
 static const gfx_frame *const gfx_animations_icon_switch_map[2] = {gfx_animation_icon_switch_maps, gfx_animation_icon_switch_maps_frame};
 
+static const gfx_frame gfx_animation_fly_icon[] = {
+    {.data = 0, .duration = 0}, {.data = 0, .duration = 32},
+    {.data = GRAPHIC_SIZE_4BPP_TO_NUM_TILES(16, 16) * 1, .duration = 32},
+    {.data = GFX_ANIM_JUMP, .duration = 1},
+};
+
+static const gfx_frame *const gfx_animations_fly_icon[] = {gfx_animation_fly_icon};
+
 static const oam_template oam_template_player_head = {
     .tiles_tag = WORLDMAP_UI_GFX_TAG_PLAYER_HEAD, .pal_tag = WORLDMAP_UI_GFX_TAG_PLAYER_HEAD,
     .oam = &oam_player_head, .animation = oam_gfx_anim_table_null,
@@ -206,6 +228,12 @@ static const oam_template oam_template_cursor = {
 static const oam_template oam_template_icon_switch_maps = {
     .tiles_tag = WORLDMAP_UI_GFX_TAG_ICON_SWITCH_MAPS, .pal_tag = WORLDMAP_UI_GFX_TAG_ICON_SWITCH_MAPS,
     .oam = &oam_icon_switch_maps, .animation = gfx_animations_icon_switch_map,
+    .rotscale = oam_rotscale_anim_table_null, .callback = oam_null_callback,
+};
+
+static const oam_template oam_template_fly_icon = {
+    .tiles_tag = WORLDMAP_UI_GFX_TAG_FLY_ICON, .pal_tag = WORLDMAP_UI_GFX_TAG_FLY_ICON,
+    .oam = &oam_fly_icon, .animation = gfx_animations_fly_icon,
     .rotscale = oam_rotscale_anim_table_null, .callback = oam_null_callback,
 };
 
@@ -310,10 +338,12 @@ bool worldmap_ui_callback_initialize_base() {
             oam_palette_load_if_not_present(palettes_player_head + save2->player_is_female);
             oam_palette_load_if_not_present(&palette_cursor);
             oam_palette_load_if_not_present(&palette_icon_switch_maps);
+            oam_palette_load_if_not_present(&palette_fly_icon);
             worldmap_ui_state->switch_map_icon_pal_idx = oam_allocate_palette(WORLDMAP_UI_GFX_TAG_SWITCH_MAP_MINIMAP);
             oam_load_graphic(graphics_player_head + save2->player_is_female);
             oam_load_graphic(&graphic_cursor);
             oam_load_graphic(&graphic_icon_switch_maps);
+            oam_load_graphic(&graphics_fly_icon);
             worldmap_ui_state->oam_idx_player = oam_new_forward_search(&oam_template_player_head, 0, 0, 20);
             oams[worldmap_ui_state->oam_idx_player].flags |= OAM_FLAG_CENTERED;
             worldmap_ui_state->oam_idx_cursor = oam_new_forward_search(&oam_template_cursor, 0, 0, 10);
@@ -329,8 +359,14 @@ bool worldmap_ui_callback_initialize_base() {
                 oam_gfx_anim_start_if_not_current(oams + worldmap_ui_state->oam_idx_icon_switch_map_frame, 1);
                 oams[worldmap_ui_state->oam_idx_icon_switch_map_frame].final_oam.attr2 = (u16)((oams[worldmap_ui_state->oam_idx_icon_switch_map_frame].final_oam.attr2 & (~ATTR2_PRIO_MASK)) | ATTR2_PRIO(2));
             }
+            worldmap_ui_state->oam_idx_fly_icon = oam_new_forward_search(&oam_template_fly_icon, 
+                (s16)(8 * (worldmap_ui_state->worldmap_tile_x + WORLDMAP_X_MARGIN) + 4 + 56), 
+                (s16)(8 * (worldmap_ui_state->worldmap_tile_y + WORLDMAP_Y_MARGIN) + 4 + 56),
+                60);
+            oam_gfx_anim_start_if_not_current(oams + worldmap_ui_state->oam_idx_fly_icon, 0);
             worldmap_ui_update_player_head_oam();
             worldmap_ui_update_cursor_oam();
+            worldmap_ui_update_fly_icon();
             worldmap_ui_state->switch_map_icon_base_tile = oam_vram_alloc(GRAPHIC_SIZE_4BPP_TO_NUM_TILES(64, 64));
             oam_vram_allocation_table_add(WORLDMAP_UI_GFX_TAG_SWITCH_MAP_MINIMAP, 
                 worldmap_ui_state->switch_map_icon_base_tile, GRAPHIC_SIZE_4BPP_TO_NUM_TILES(64, 64));
@@ -388,6 +424,33 @@ void worldmap_ui_update_cursor_oam() {
             (worldmap_ui_state->cursor.y + WORLDMAP_Y_MARGIN) * 8 + 4);
         oams[worldmap_ui_state->oam_idx_cursor].y2 = 0;
         oam_gfx_anim_start_if_not_current(oams + worldmap_ui_state->oam_idx_cursor, worldmap_ui_state->cursor_locked);
+    }
+}
+
+void worldmap_ui_update_fly_icon() {
+    if (worldmap_ui_state->fly_enabled) {
+        oams[worldmap_ui_state->oam_idx_fly_icon].flags &= (u16)(~OAM_FLAG_INVISIBLE);
+        worldmap_ui_state->fly_icon_subsprite_table.num_subsprites = 0;
+        for (size_t i = 0; flight_positions2[i].bank != 0xFF; i++) {
+            u8 x, y, layer, worldmap_idx;
+            u16 flag = flight_positions2[i].flag;
+            if ((flag == 0 || checkflag(flag)) && map_coordinates_to_worldmap_position(flight_positions2[i].bank, flight_positions2[i].map_idx, 
+                flight_positions2[i].x, flight_positions2[i].y, &x, &y, &layer, &worldmap_idx)) {
+                if (worldmap_idx == worldmap_ui_state->cursor.idx && layer == worldmap_ui_state->cursor.layer) {
+                    worldmap_ui_state->fly_icon_subsprites[worldmap_ui_state->fly_icon_subsprite_table.num_subsprites++] =
+                        (subsprite){.x = (s8)(8 * x - 64), .y = (s8)(8 * y - 64), .shape = 0, .size = 1, .priority = 3};
+                }
+            }
+        }
+        if (worldmap_ui_state->fly_icon_subsprite_table.num_subsprites > 0) {
+            worldmap_ui_state->fly_icon_subsprite_table.subsprites = worldmap_ui_state->fly_icon_subsprites;
+            oam_set_subsprite_table(oams + worldmap_ui_state->oam_idx_fly_icon, &worldmap_ui_state->fly_icon_subsprite_table);
+        } else {
+            oams[worldmap_ui_state->oam_idx_fly_icon].flags |= OAM_FLAG_INVISIBLE;
+        }
+
+    } else {
+        oams[worldmap_ui_state->oam_idx_fly_icon].flags |= OAM_FLAG_INVISIBLE;
     }
 }
 

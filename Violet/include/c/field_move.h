@@ -114,6 +114,11 @@ void field_move_softboiled_init(u8 self);
 void field_move_fly_init();
 
 /**
+ * Initializes map reload and continues to fly to the warp setup by `warp_setup`
+*/
+void field_move_fly_map_reload_and_do_fly();
+
+/**
  * Initializes the error message for the fieldmove surfer
  */
 void field_move_surfer_print_error();

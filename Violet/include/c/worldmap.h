@@ -19,6 +19,7 @@ extern "C" {
 #include "pokepad/pokedex/habitat.h"
 #include "pokemon/move_relearner.h"
 #include "list_menu.h"
+#include "oam.h"
 
 // Width and height without the margin
 #define WORLDMAP_WIDTH 22
@@ -98,6 +99,7 @@ enum worldmap_ui_gfx_tag {
     WORLDMAP_UI_GFX_TAG_ICON_BALL_CAUGHT,
     WORLDMAP_UI_GFX_TAG_ICON_SWITCH_MAPS,
     WORLDMAP_UI_GFX_TAG_PLAYER_HEAD,
+    WORLDMAP_UI_GFX_TAG_FLY_ICON,
     WORLDMAP_UI_GFX_TAG_CURSOR,
     WORLDMAP_UI_GFX_TAG_SWITCH_MAPS_ICON,
     WORLDMAP_UI_GFX_TAG_PERCENTAGE,
@@ -195,23 +197,6 @@ enum worldmap_info_category{
     NUM_WORLDMAP_CATEGORIES,
 };
 
-    typedef struct{
-        u8 bank;
-        u8 map;
-        s16 x;
-        s16 y;
-        u16 field_6;
-    } stru_flight_position;
-    
-    typedef struct {
-    	u16 cursor_x, cursor_y;
-    	u8 unknown[0x10];
-    	u16 player_namespace;
-    	u8 unkown2[0xE];
-    	u16 tiles[0x80]; // whatever those tiles may be...
-
-    } worldmap_state_t;
-
     // A pattern consists of multiple shapes, each of which can have displacement from the
     // position anchor and its own rectangular dimension. To associate a map with a shape use
     // the respective field in the mapheader structure
@@ -246,18 +231,14 @@ enum worldmap_info_category{
     #define NUM_WORLDMAP_SHAPE_ASSOCIATIONS 6
     extern const worldmap_shape_association_t worldmap_shape_associations[NUM_WORLDMAP_SHAPE_ASSOCIATIONS];
 
-    extern worldmap_state_t *worldmap_state;
-
-    extern const stru_flight_position flight_positions[NUM_HEALING_PLACES]; // Each flight position is associated with a healing place
-
     typedef struct {
         u8 bank;
         u8 map_idx;
-        u8 healing_place_idx;
-    } flight_position_association_t;
+        s16 x, y;
+        u16 flag;
+    } flight_position2_t;
     
-    // Associates map namespaces with healing place idxs
-    extern const flight_position_association_t flight_position_associations[MAP_NAMESPACE_NONE - MAP_AMONIA];
+    extern const flight_position2_t flight_positions2[];
 
     extern const int *const worldmap_tilemaps[4];
     extern const u8 *namespace_worldmap_associations;
@@ -302,21 +283,6 @@ enum worldmap_info_category{
      * @param y_offset the vertical offset in tiles of the worldmap
     */
     void worldmap_ui_update_worldmap_gfx(u8 worldmap_idx, u8 layer, u8 x_offset, u8 y_offset);
-
-    /**
-     * Returns the flightposition idx that corresponds to a bank, map tuple
-     * @param bank the mapbank
-     * @param map the mapid in the bank
-     * @return the corresponding flightposition idx + 1 or 0 if none matches
-     */
-    int map_get_flightposition(u8 bank, u8 map);
-
-    /**
-     * Returns the offset on a flight position by its index + 1
-     * @param idx_plus_one the index of the flight position plus one
-     * @return the flight pos offset
-     */
-    const stru_flight_position *flightposition_by_id(int idx_plus_one);
 
     /**
      * Gets the namespace id associated with a position on the worldmap
@@ -376,6 +342,11 @@ enum worldmap_info_category{
     void worldmap_ui_update_cursor_oam();
 
     /**
+     * Updates the position and fly icons on the worldmap
+    */
+    void worldmap_ui_update_fly_icon();
+
+    /**
      * Performs one step of the base ui initialization callback
      * @return whether the step has finished
     */
@@ -431,6 +402,14 @@ enum worldmap_info_category{
      * @param continuation the continuation to call once the ui is finished
     */
     void worldmap_ui_info_new(void (*continuation)());
+
+    /**
+     * Initializes the worldmap ui with the ui for flying to a new location
+     * Should be called once the previous state has been completely freed and the screen is fading to black.
+     * Will set `callback1` accordingly and reset.
+     * @param continuation the continuation to call once the ui is finished
+    */
+    void worldmap_ui_fly_new(void (*continuation)());
 
     typedef struct {
         u8 x, y, idx, layer, namespace;
@@ -502,7 +481,6 @@ enum worldmap_info_category{
         u8 red_overlay_is_active : 1;
         u8 other_red_should_be_active : 1;
         u8 other_red_is_active : 1;
-
         u8 search_category;
         u8 list_menu_search_cb_idx, list_menu_search_items_cb_idx;
         u8 scroll_indicator_search_items_cb_idx;
@@ -518,6 +496,11 @@ enum worldmap_info_category{
         union {
             u8 institutions[NUM_WORLDMAP_INSTIUTIONS][20];
         } search_item_strs;
+
+        u8 fly_enabled : 1;
+        u8 oam_idx_fly_icon;
+        subsprite fly_icon_subsprites[25];
+        subsprite_table fly_icon_subsprite_table;
 
     } worldmap_ui_state_t;
 
