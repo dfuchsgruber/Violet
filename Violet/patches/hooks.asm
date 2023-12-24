@@ -25,7 +25,6 @@
 .include "patches/save.asm"
 .include "patches/titlescreen.asm"
 .include "patches/intro.asm"
-.include "patches/worldmap.asm"
 .include "patches/types.asm"
 .include "patches/string.asm"
 .include "patches/color.asm"

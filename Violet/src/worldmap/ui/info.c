@@ -19,6 +19,7 @@
 #include "flags.h"
 #include "gym.h"
 #include "menu_indicators.h"
+#include "superstate.h"
 
 extern const LZ77COMPRESSED gfx_worldmap_ui_info_frameTiles;
 extern const LZ77COMPRESSED gfx_worldmap_ui_info_frameMap;

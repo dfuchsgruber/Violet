@@ -109,13 +109,12 @@ void pokedex_quicksort_list(u8 comparator, int l, int r) {
     free(stack);
 }
 
-// The animation is realized like this:
-// The list area is in Win1, which contains no layers
-// The visible area is in Win0, which contains all layers, but this window shrinks
-// The area outside the list area is in WinOut, which contains all layers
-// Win1 wants to hide all layers, but Win0's rectangle superceeds this and shows a smaller rectangle
-
 void pokedex_callback_resort(u8 self) {
+    // The animation is realized like this:
+    // The list area is in Win1, which contains no layers
+    // The visible area is in Win0, which contains all layers, but this window shrinks
+    // The area outside the list area is in WinOut, which contains all layers
+    // Win1 wants to hide all layers, but Win0's rectangle superceeds this and shows a smaller rectangle
     pokedex_sorting_state_t *state = (pokedex_sorting_state_t*)big_callbacks[self].params;
     switch (state->state) {
         case POKEDEX_SORTING_STATE_CLOSING:

@@ -1042,8 +1042,8 @@
 						"x": "0",
 						"y": "0"
 					},
-					"script": "ow_script_test",
-					"y": "46",
+					"script": "0",
+					"y": "61",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -1057,7 +1057,7 @@
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
-						"script_std": "PERSON_SCRIPT",
+						"script_std": "PERSON_ITEM",
 						"in_connection": "0"
 					}
 				},

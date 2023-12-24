@@ -1,6 +1,8 @@
 #include "types.h"
 #include "worldmap.h"
 #include "debug.h"
+#include "map/header.h"
+#include "save.h"
 
 extern const LZ77COMPRESSED gfx_worldmapTiles;
 extern const LZ77COMPRESSED gfx_worldmapMap;

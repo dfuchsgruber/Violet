@@ -11,6 +11,7 @@
 #include "music.h"
 #include "overworld/map_control.h"
 #include "bios.h"
+#include "superstate.h"
 
 extern const LZ77COMPRESSED gfx_worldmap_ui_std_frameTiles;
 extern const LZ77COMPRESSED gfx_worldmap_ui_std_frameMap;

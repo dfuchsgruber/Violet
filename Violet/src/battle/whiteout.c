@@ -9,7 +9,6 @@
 #include "vars.h"
 #include "flags.h"
 #include "trainer/virtual.h"
-#include "map/healing_place.h"
 #include "worldmap.h"
 #include "constants/battle/battle_results.h"
 #include "pokemon/virtual.h"
@@ -20,12 +19,40 @@
 #include "anim_engine.h"
 #include "text.h"
 #include "callbacks.h"
-#include "map/healing_place.h"
 #include "overworld/npc.h"
 #include "overworld/weather.h"
 #include "overworld/script.h"
 #include "dma.h"
 #include "fading.h"
+#include "constants/healingplaces.h"
+
+extern const u8 str_whiteout[];
+extern const u8 str_whiteout_mother[];
+extern const u8 str_whiteout_bbship[];
+extern const u8 str_whiteout_tann[];
+extern const u8 str_whiteout_desert[];
+
+extern const u8 ow_script_whiteout_bbship[];
+extern const u8 ow_script_whiteout_joy[];
+extern const u8 ow_script_whiteout_mother[];
+extern const u8 ow_script_whiteout_tann[];
+extern const u8 ow_script_whiteout_desert[];
+
+static const healing_place2_t healing_places[NUM_HEALING_PLACES] = {
+    [HEALINGPLACE_AMONIA] = {.bank = 4, .map = 0, .x = 0x12, .y = 0x6, .target_person = 1},
+    [HEALINGPLACE_MERIANA_CITY] = {.bank = 5, .map = 4, .x = 0x7, .y = 0x4, .target_person = 1},
+    [HEALINGPLACE_AKTANIA] = {.bank = 6, .map = 5, .x = 0x7, .y = 0x4, .target_person = 3},
+    [HEALINGPLACE_SILVANIA_CITY] = {.bank = 7, .map = 3, .x = 0x7, .y = 0x4, .target_person = 1},
+    [HEALINGPLACE_KASKADA] = {.bank = 8, .map = 0, .x = 0x7, .y = 0x4, .target_person = 1},
+    [HEALINGPLACE_ORINA_CITY] = {.bank = 9, .map = 1, .x = 0x7, .y = 0x4, .target_person = 1},
+    [HEALINGPLACE_INFERIOR] = {.bank = 10, .map = 12, .x = 0x7, .y = 0x4, .target_person = 1},
+    [HEALINGPLACE_LAUBDORF] = {.bank = 12, .map = 0, .x = 0x7, .y = 0x4, .target_person = 1},
+    [HEALINGPLACE_CEOMETRIA] = {.bank = 19, .map = 0, .x = 0x7, .y = 0x4, .target_person = 1},
+    [HEALINGPLACE_HAWEILAND] = {.bank = 27, .map = 3, .x = 0x7, .y = 0x4, .target_person = 1},
+    [HEALINGPLACE_BBSHIP] = {.bank = 33, .map = 0, .x = 3, .y = 5, .target_person = 0xFF},
+    [HEALINGPLACE_TANNS_LAB] = {.bank = 35, .map = 0, .x = 0x7, .y = 0x4, .target_person = 1},
+    [HEALINGPLACE_DESERT] = {.bank = 37, .map = 0, .x = 7, .y = 4, .target_person = 1},
+}; 
 
 void whiteout_reset_vars(){
     *var_access(BATTLE_SONG_OVERRIDE) = 0;
@@ -91,39 +118,13 @@ void battle_scripted_wild_battle_continuation() {
 
 
 void whiteout_setup_warp(warp_save_t *target) {
-	int healing_place_idx = map_get_flightposition(
-			save1->healingplace.bank, save1->healingplace.map);
-	target->bank = (u8)(healing_place_maps[healing_place_idx - 1].bank);
-	target->map = (u8)(healing_place_maps[healing_place_idx - 1].map);
+	target->bank = healing_places[csave.healing_place_idx].bank;
+	target->map = healing_places[csave.healing_place_idx].map;
 	target->exit = 0xFF;
-	target->x = healing_place_target_coordinates[healing_place_idx - 1].x;
-	target->y = healing_place_target_coordinates[healing_place_idx - 1].y;
-	whiteout_set_target_person(healing_place_idx);
+	target->x = healing_places[csave.healing_place_idx].x;
+	target->y = healing_places[csave.healing_place_idx].y;
+	lasttalked = healing_places[csave.healing_place_idx].target_person;
 }
-
-static int healingplace_get_current() {
-	for (int i = 1; i <= NUM_HEALING_PLACES; i++) {
-		const stru_flight_position *position = flightposition_by_id(i);
-		if (save1->healingplace.bank == position->bank && save1->healingplace.map == position->map &&
-			save1->healingplace.x == position->x && save1->healingplace.y == position->y) {
-				DEBUG("Current healingplace is %d\n", i);
-				return i;
-		}
-	}
-	return -1;
-}
-
-extern const u8 str_whiteout[];
-extern const u8 str_whiteout_mother[];
-extern const u8 str_whiteout_bbship[];
-extern const u8 str_whiteout_tann[];
-extern const u8 str_whiteout_desert[];
-
-extern const u8 ow_script_whiteout_bbship[];
-extern const u8 ow_script_whiteout_joy[];
-extern const u8 ow_script_whiteout_mother[];
-extern const u8 ow_script_whiteout_tann[];
-extern const u8 ow_script_whiteout_desert[];
 
 void whiteout_callback_print_text(u8 self) {
 	u16 *state = big_callbacks[self].params + 0;
@@ -142,7 +143,7 @@ void whiteout_callback_print_text(u8 self) {
 		case 1: {
 			const u8 *str;
 			u8 direction = DIR_UP;
-			switch(healingplace_get_current()) {
+			switch(csave.healing_place_idx) {
 				case HEALINGPLACE_AMONIA: str = str_whiteout_mother; break;
 				case HEALINGPLACE_BBSHIP: str = str_whiteout_bbship; direction = DIR_DOWN; break;
 				default: str = str_whiteout; break;
@@ -167,7 +168,7 @@ void whiteout_callback_print_text(u8 self) {
 			if (overworld_fading_effect_finished()) {
 				big_callback_delete(self);
 				const u8 *script;
-				switch(healingplace_get_current()) {
+				switch(csave.healing_place_idx) {
 					case HEALINGPLACE_AMONIA: script = ow_script_whiteout_mother; break;
 					case HEALINGPLACE_BBSHIP: script = ow_script_whiteout_bbship; break;
 					default: script = ow_script_whiteout_joy; break;
@@ -176,4 +177,9 @@ void whiteout_callback_print_text(u8 self) {
 			}
 		}
 	}
+}
+
+void healing_place_set(u8 idx) {
+	csave.healing_place_idx = idx;
+	whiteout_setup_warp(&save1->healingplace);
 }

@@ -27,8 +27,8 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
-	setflag FRBADGE_3
-	additem ITEM_VM02 1
+	clearflag FRBADGE_3
+	removeitem ITEM_VM02 1
 	end
 
 

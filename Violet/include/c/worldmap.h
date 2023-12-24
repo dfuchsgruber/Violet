@@ -15,11 +15,11 @@ extern "C" {
 #include "types.h"
 #include "constants/map_namespaces.h"
 #include "tile/coordinate.h"
-#include "map/healing_place.h"
 #include "pokepad/pokedex/habitat.h"
 #include "pokemon/move_relearner.h"
 #include "list_menu.h"
 #include "oam.h"
+#include "color.h"
 
 // Width and height without the margin
 #define WORLDMAP_WIDTH 22

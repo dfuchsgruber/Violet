@@ -25,5 +25,6 @@ u16 *var_access(u16 var);
 u16 var_get(u16 var);
 
 extern u16 lastresult;
+extern u16 lasttalked;
 
 #endif /* INCLUDE_C_VARS_H_ */

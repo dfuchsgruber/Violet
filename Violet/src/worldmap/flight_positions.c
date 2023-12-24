@@ -1,10 +1,10 @@
 #include "types.h"
 #include "worldmap.h"
-#include "map/healing_place.h"
 #include "constants/map_namespaces.h"
+#include "constants/flags.h"
 
 const flight_position2_t flight_positions2[] = {
-    {.bank = 3, .map_idx = 0, .x = 0xE, .y = 0xC, .flag = WM_AMONIA},
+    {.bank = 3, .map_idx = 0, .x = 0xE, .y = 0x10, .flag = WM_AMONIA},
     {.bank = 3, .map_idx = 1, .x = 72, .y = 29, .flag = WM_MERIANA_CITY},
     {.bank = 3, .map_idx = 2, .x = 0x1f, .y = 0x28, .flag = WM_AKTANIA},
     {.bank = 3, .map_idx = 3, .x = 0x1c, .y = 0xA, .flag = WM_SILVANIA},

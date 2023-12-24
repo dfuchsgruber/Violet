@@ -886,3 +886,7 @@ end_turn_wrap_no_effect:
 	bx r1
 	.pool
 	
+.org 0x080554ec
+	ldr r1, =healing_place_set | 1
+	bx r1
+	.pool

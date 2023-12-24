@@ -11,6 +11,11 @@
 #include "types.h"
 #include "text.h"
 
+typedef struct {
+    u8 bank, map, target_person;
+    s16 x, y;
+} healing_place2_t;
+
 /**
  * Callback that returns to the overworld map and plays the map music.
  **/
@@ -34,12 +39,6 @@ void whiteout_callback_print_text(u8 self);
  * @return if the result is a loss
  **/
 bool battle_result_is_loss(u8 result);
-
-/**
- * Sets the target person for a whiteout script
- * @param the target healing place idx + 1
- */
-void whiteout_set_target_person(int idx_plus_one);
 
 /**
  * Prints the whiteout message.
