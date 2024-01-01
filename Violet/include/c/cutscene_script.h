@@ -1,19 +1,19 @@
-#ifndef H_ANIM_ENGINE
-#define H_ANIM_ENGINE
+#ifndef H_CUTSCENE_SCRIPT
+#define H_CUTSCENE_SCRIPT
 
 #include "types.h"
 #include "color.h"
 #include "text.h"
 #include "constants/cutscenes.h"
 
-typedef struct anim_engine_task{
+typedef struct cutscene_script_task{
     int priority;
     int id;
-    struct anim_engine_task *prev;
-    struct anim_engine_task *next;
-    void (*callback)(struct anim_engine_task*);
+    struct cutscene_script_task *prev;
+    struct cutscene_script_task *next;
+    void (*callback)(struct cutscene_script_task*);
     void *vars;
-} anim_engine_task;
+} cutscene_script_task;
 
 typedef struct animation_engine_state_t {
     u16 current_frame;
@@ -27,24 +27,24 @@ typedef struct animation_engine_state_t {
     const u8 *stack[8];
     u16 vars[16];
     color_t *pal_restore_save;
-    anim_engine_task *root; // Doubly-linked list, sorted by priority
+    cutscene_script_task *root; // Doubly-linked list, sorted by priority
 } animation_engine_state_t ;
 
 extern EWRAM animation_engine_state_t *animation_engine_state;
 extern const u8 *const cutscene_scripts[NUM_CUTSCENES];
 
-void init_anim_engine_by_table();
-void anim_engine_initiatlize(const u8 *script);
-void anim_engine_callback(u8 callback_id);
-void anim_engine_execute_frame(animation_engine_state_t * mem);
-u8 anim_engine_read_byte(animation_engine_state_t * mem);
-u16 anim_engine_get_hword(animation_engine_state_t *mem);
-u32 anim_engine_read_word(animation_engine_state_t * mem);
-u16 anim_engine_read_hword(animation_engine_state_t * mem);
-u16 anim_engine_read_param(animation_engine_state_t * mem);
-//void anim_engine_tbox_renderer(u8 cbid);
-void _obj_move_linear_trace(anim_engine_task *self);
-void anim_engine_fader(anim_engine_task *self);
+void init_cutscene_script_by_table();
+void cutscene_script_initiatlize(const u8 *script);
+void cutscene_script_callback(u8 callback_id);
+void cutscene_script_execute_frame(animation_engine_state_t * mem);
+u8 cutscene_script_read_byte(animation_engine_state_t * mem);
+u16 cutscene_script_get_hword(animation_engine_state_t *mem);
+u32 cutscene_script_read_word(animation_engine_state_t * mem);
+u16 cutscene_script_read_hword(animation_engine_state_t * mem);
+u16 cutscene_script_read_param(animation_engine_state_t * mem);
+//void cutscene_script_tbox_renderer(u8 cbid);
+void _obj_move_linear_trace(cutscene_script_task *self);
+void cutscene_script_fader(cutscene_script_task *self);
 void callback_maintain();
 /**
 / Command Functions
@@ -75,7 +75,7 @@ void cmdx16_clear_textbox(animation_engine_state_t *mem);
 void cmdx17_display_rendered_tbox(animation_engine_state_t *mem);
 void cmdx18_rendered_tbox_event(animation_engine_state_t * mem);
 void cmdx19_objmove(animation_engine_state_t * mem);
-void anim_engine_cmdx1A(animation_engine_state_t * mem);
+void cutscene_script_cmdx1A(animation_engine_state_t * mem);
 void cmdx1B_gfx_anim_set(animation_engine_state_t *mem);
 void cmdx1C_rs_anim_set(animation_engine_state_t *mem);
 void cmdx1D_loadpal(animation_engine_state_t *mem);
@@ -89,12 +89,12 @@ void cmdx24_script_notify();
 void cmdx25_oam_reset();
 void cmdx26_callback_reset(animation_engine_state_t *mem);
 void cmdx27_dma3_controller_reset();
-void anim_engine_bg_free_task(anim_engine_task *self);
+void cutscene_script_bg_free_task(cutscene_script_task *self);
 void cmdx28_bg_displacement_reset();
 void cmdx29_bg_vmap_init(animation_engine_state_t *mem);
 void cmdx2A_bg_vmap_drop(animation_engine_state_t *mem);
 void cmdx2B_bg_scroll(animation_engine_state_t *mem);
-void anim_engine_bg_scroller(anim_engine_task *self);
+void cutscene_script_bg_scroller(cutscene_script_task *self);
 void cmdx2C_mapreload();
 void cmdx2D_force_pals_to_black();
 void cmdx2E_bg_clear_map(animation_engine_state_t *mem);
@@ -114,15 +114,15 @@ void cmdx3A_task_delete_all(animation_engine_state_t *mem);
 void cmd_nop(animation_engine_state_t *mem);
 void ae_mapreloader();
 
-void anim_engine_yin_yang_fade_big_callback(u8 self);
+void cutscene_script_yin_yang_fade_big_callback(u8 self);
 
-void anim_engine_task_nullsub(anim_engine_task *root);
+void cutscene_script_task_nullsub(cutscene_script_task *root);
 
 /**
  * Executes all anim engine tasks
  * @param head
  */
-void anim_engine_tasks_execute(anim_engine_task *root);
+void cutscene_script_tasks_execute(cutscene_script_task *root);
 
 /**
  * Removes an anim engine task
@@ -130,13 +130,13 @@ void anim_engine_tasks_execute(anim_engine_task *root);
  * @param self
  * @return -1 if attempted to delete root, 0 otherwise
  */
-int anim_engine_task_delete(anim_engine_task *self);
+int cutscene_script_task_delete(cutscene_script_task *self);
 
 /**
  * Removes all anim tasks except the root node
  * @param root
  */
-void anim_engine_task_delete_all(anim_engine_task *root);
+void cutscene_script_task_delete_all(cutscene_script_task *root);
 
 /**
  * Creates new anim task with given priority
@@ -149,22 +149,22 @@ void anim_engine_task_delete_all(anim_engine_task *root);
  * @return NULL on failure (not enough consecutive memory), pointer to task
  * structure else
  */
-anim_engine_task *anim_engine_task_new(int priority,
-        void (*callback)(anim_engine_task*),
-        unsigned int size_var_space, anim_engine_task *root);
+cutscene_script_task *cutscene_script_task_new(int priority,
+        void (*callback)(cutscene_script_task*),
+        unsigned int size_var_space, cutscene_script_task *root);
 
 
 /**
  * Sets up the anim engine root task
  * @return the root task
  */
-anim_engine_task *anim_engine_task_setup();
+cutscene_script_task *cutscene_script_task_setup();
 
 /**
  * Frees all tasks and the root element (engine must re reinitialized)
  * @param root
  */
-void anim_engine_task_tear_down(anim_engine_task *root);
+void cutscene_script_task_tear_down(cutscene_script_task *root);
 
 /**
  * Returns next availible task id
@@ -173,7 +173,7 @@ void anim_engine_task_tear_down(anim_engine_task *root);
  * @param root
  * @return next free task id -1 if no task id availible
  */
-int anim_engine_task_next_id(anim_engine_task *root);
+int cutscene_script_task_next_id(cutscene_script_task *root);
 
 
 /**
@@ -182,6 +182,6 @@ int anim_engine_task_next_id(anim_engine_task *root);
  * @param id
  * @return pointer to the task struct or NULL if id is not present
  */
-anim_engine_task *anim_engine_task_get_by_id(anim_engine_task *root, int id);
+cutscene_script_task *cutscene_script_task_get_by_id(cutscene_script_task *root, int id);
 
 #endif

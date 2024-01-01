@@ -6,6 +6,7 @@
 .include "cutscenes.s"
 .include "specials.s"
 .include "pathfinding.s"
+.include "flags.s"
 
 .global ow_script_route_4_person_0
 .global ow_script_route_4_person_1
@@ -71,20 +72,48 @@ ow_script_route_4_painter:
     callstd MSG_YES_NO
     compare LASTRESULT 0
     gotoif EQUAL painter_no
+    closeonkeypress
     applymovement LASTTALKED mov_fu
     waitmovement 0
     playsong MUS_TANN_SPEECH 0
     special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
     setvar 0x8004 0x16
     setvar 0x8005 0x53
-    setvar 0x8006, A_STAR_SPEED_FAST
+    setvar 0x8006, A_STAR_SPEED_SLOW
     special SPECIAL_OVERWORLD_VIEWPOINT_MOVE_TO
     waitmovement 0
     special SPECIAL_OVERWORLD_VIEWPORT_LOCK
-
     setvar 0x8004 CUTSCENE_ELITE_FOUR_FOUNDERS
     special SPECIAL_CUTSCENE_SHOW
-
+    waitstate
+    special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
+    setvar 0x8004 0xFF
+    special SPECIAL_PERSON_GET_POSITION
+    setvar 0x8006, A_STAR_SPEED_SLOW
+    special SPECIAL_OVERWORLD_VIEWPOINT_MOVE_TO
+    waitmovement 0
+    special SPECIAL_OVERWORLD_VIEWPORT_LOCK
+    copyvar 0x8004 LASTTALKED
+    special SPECIAL_SET_TARGET_NPC_TO_VAR
+    lock
+    faceplayer
+	trainerbattlecont 0x1 0x1ca 0 str_painter_1 str_painter_after painter_continuation
+painter_continuation:
+    lock
+    faceplayer
+    loadpointer 0 str_painter_2
+    callstd MSG_KEEPOPEN
+    fanfare 258
+    loadpointer 0 str_got_wallpaper
+    callstd MSG_KEEPOPEN
+    waitfanfare
+painter_done:
+    loadpointer 0 str_painter_3
+    callstd MSG_KEEPOPEN
+    closeonkeypress
+    setflag FLAG_POKEPAD_WALLPAPER_LEGENDS
+    release
+    end
 
 
 painter_no:
@@ -97,6 +126,16 @@ painter_no:
 .ifdef LANG_GER
 str_painter_0:
     .autostring 34 2 "Ich bin eine Malerin aus Blütenbach.\pEigentlich wollte ich hier die Landschaft malen, aber mir geht ein Motiv nicht mehr aus dem KopfDOTS\pSoll ich dir erzählen, was mich beschäftigt?"
+str_painter_1:
+    .autostring 34 2 "Diese dreiDOTS\pSie haben diese Region geprägt wie niemand sonst.\pIch habe sie oft gemalt, aber das Motiv verliert für mich seinen Reiz überhaupt nicht.\pIch schlage dir etwas vor.\pVielleicht bringt mich ein Kampf auf andere Ideen.\pWenn du mich besiegen kannst, gebe ich dir eines meiner Bilder!"
+str_painter_after:
+    .autostring 34 2 "Ich habe dich unterschätzt!\pWas für ein inspirierender Kampf!"
+str_painter_2:
+    .autostring 34 2 "Unglaublich!\pEinen solchen Kampf, muss man auf die Leinwand bringen!\pWie abgemacht, erhältst du eines meiner Bilder als Belohnung."
+str_got_wallpaper:
+    .autostring 34 2 "PLAYER erhält ein Poképad-Motiv!\pEs zeigt die drei Gründer der Pokémon-Liga."
+str_painter_3:
+    .autostring 34 2 "Das Bild der drei Gründer der Pokémon-Liga ist mein großes Meisterwerk.\pIch hoffe, es macht dir Freude.\pIch widme mich jetzt neuen MotivenDOTS"
 str_painter_no:
     .autostring 34 2 "Schade, ich hätte dir eine spannende Geschichte erzähltDOTS"
 str_0:

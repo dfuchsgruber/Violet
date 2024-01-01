@@ -45,7 +45,7 @@ special_table equ 0x0815FCC0
 	.pool
 
 .org (special_table +(0x19 *4))
-        .word init_anim_engine_by_table | 1
+        .word special_cutscene_show | 1
         .pool
 
 .org (special_table + (0x1A * 4))

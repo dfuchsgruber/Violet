@@ -1,10 +1,10 @@
 .align 2
 .thumb
 
-.global anim_engine_cmdx1A
+.global cutscene_script_cmdx1A
 
 .thumb_func
-anim_engine_cmdx1A:
+cutscene_script_cmdx1A:
 push {r4-r7, lr}
 mov r4, r8
 mov r5, r9

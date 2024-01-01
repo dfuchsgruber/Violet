@@ -7,7 +7,7 @@
 #include "math.h"
 #include "io.h"
 #include "bios.h"
-#include "anim_engine.h"
+#include "cutscene_script.h"
 
 extern const unsigned short gfx_groudon_headTiles[];
 extern const unsigned short gfx_groudon_arm_leftTiles[];

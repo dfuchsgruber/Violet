@@ -1,4 +1,4 @@
-.include "anim_engine.s"
+.include "cutscene_script.s"
 .include "flags.s"
 .include "songs.s"
 .include "species.s"

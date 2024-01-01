@@ -2,11 +2,11 @@
 #include "callbacks.h"
 #include "io.h"
 #include "bios.h"
-#include "anim_engine.h"
+#include "cutscene_script.h"
 #include "music.h"
 #include "bg.h"
 
-void anim_engine_yin_yang_fade_big_callback(u8 self) {
+void cutscene_script_yin_yang_fade_big_callback(u8 self) {
 
     switch (big_callbacks[self].params[0]) {
         case 0:

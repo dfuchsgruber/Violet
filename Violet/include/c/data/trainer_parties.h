@@ -2467,10 +2467,19 @@ const trainer_pokemon trainer_party_x1c9_route_4_trainer_7[] = {
 };
 
 const trainer_pokemon trainer_party_x1ca_route_4_cave_south_painter[] = {
-	{.held_item = ITEM_LICHTLEHM, .moves_set = true, .moves = {ATTACK_GEDANKENGUT, ATTACK_PSYCHOKINESE, ATTACK_REFLEKTOR, ATTACK_LICHTSCHILD}, .level = 47, .species = POKEMON_PSIANA, .evs = {[STAT_HP] = 252, [STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
-	{.held_item = ITEM_ZAUBERWASSER, .moves_set = true, .moves = {ATTACK_OCTAZOOKA, ATTACK_EISSTRAHL, ATTACK_AMPELLEUCHTE, ATTACK_KUGELSAAT}, .level = 47, .species = POKEMON_OCTILLERY, .evs = {[STAT_ATTACK] = 252, [STAT_HP] = 4, [STAT_SPEED] = 252}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_FROH}}},
-	{.held_item = ITEM_SEIDENSCHAL, .moves_set = true, .moves = {ATTACK_IRRSCHLAG, ATTACK_TIEFSCHLAG, ATTACK_DURCHBRUCH, ATTACK_STEINHAGEL}, .level = 47, .species = POKEMON_PANDIR, .evs = {[STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 252, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_SCHEU}}},
-	{.held_item = ITEM_MORBBEERE, .moves_set = true, .moves = {ATTACK_DOPPELSCHLAG, ATTACK_FEUERSCHLAG, ATTACK_EISHIEB, ATTACK_MOGELHIEB}, .level = 47, .species = POKEMON_AMBIDIFFEL, .evs = {[STAT_ATTACK] = 252, [STAT_HP] = 4, [STAT_SPEED] = 252}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
+	{
+		.held_item = ITEM_LEBEN_ORB, .moves_set = true, .moves = {ATTACK_TIEFSCHLAG, ATTACK_KNUDDLER, ATTACK_GIFTZAHN, ATTACK_EISHIEB}, 
+		.level = 35, .species = POKEMON_FLUNKIFER,
+		.evs = {[STAT_HP] = 4, [STAT_ATTACK] = 252, [STAT_SPEED] = 252}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}
+	}, {
+		.held_item = ITEM_PRUNUSBEERE, .moves_set = true, .moves = {ATTACK_GESANG, ATTACK_ABGESANG, ATTACK_DRACHENTANZ, ATTACK_WUTANFALL}, 
+		.level = 35, .species = POKEMON_ALTARIA,
+		.evs = {[STAT_HP] = 252, [STAT_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}
+	}, {
+		.held_item = ITEM_EVOLITH, .moves_set = true, .moves = {ATTACK_SCHWERTTANZ, ATTACK_SCHATTENSTOSS, ATTACK_ZORNKLINGE, ATTACK_LICHTKANONE}, 
+		.level = 36, .species = POKEMON_DUOKLES,
+		.evs = {[STAT_HP] = 252, [STAT_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HITZIG}}
+	},
 };
 
 const trainer_pokemon trainer_party_x1cb_bluetenbach_gym_manus_easy[] = {

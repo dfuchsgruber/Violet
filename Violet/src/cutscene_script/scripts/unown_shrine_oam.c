@@ -7,7 +7,7 @@
 #include "math.h"
 #include "io.h"
 #include "bios.h"
-#include "anim_engine.h"
+#include "cutscene_script.h"
 #include "music.h"
 
 #define LIGHTNING_TAG 0x1AAB
@@ -201,7 +201,7 @@ static inline int earthquake_displacement(int frame, int period, int amplitude, 
     return (FIXED_TO_INT(trig_applied) * decay) / 0x10000;
 }
 
-void unown_shrine_animation_lightning_callback(anim_engine_task *self) {
+void unown_shrine_animation_lightning_callback(cutscene_script_task *self) {
     lightning_state_t *state = (lightning_state_t*)self->vars;
     switch (state->state) {
         case 0: {
@@ -246,7 +246,7 @@ void unown_shrine_animation_lightning_callback(anim_engine_task *self) {
                 for (int j = 0; j < 2; j++)
                     oam_gfx_anim_start(oams + state->lightnings[i][j], 0);
             }
-            anim_engine_task_delete(self);
+            cutscene_script_task_delete(self);
             state->state++;
             break;
         }

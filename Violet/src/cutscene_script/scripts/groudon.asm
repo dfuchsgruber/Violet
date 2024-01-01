@@ -1,4 +1,4 @@
-.include "anim_engine.s"
+.include "cutscene_script.s"
 
 .global cutscene_script_groudon
 
