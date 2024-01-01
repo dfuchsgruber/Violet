@@ -12,7 +12,10 @@
 
 ## Lucky
 - Opportunistic
+- First stole in the Pokéball factory to Blackbeard
+- then joined his crew
 - former first mate of Blackbeard, but stole Nuggets from him
+- was imprisoned
 - was freed from prison island by the revolutionaries in the past
 - somewhat of a coward
 - goofy
@@ -20,6 +23,7 @@
 ## Igva (call her differently? Irene?)
 - Convinced, that Albus will lead the E4 to a better system: Why
     - Does she need a "backstory" (prob something shallow) as a motivation?
+    - something with the volcano?
 - Beliefs in people's participation
 - Kind-hearted
 - In love with Mistral

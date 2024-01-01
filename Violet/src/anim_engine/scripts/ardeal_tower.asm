@@ -1,12 +1,12 @@
 .include "anim_engine.s"
 
-.global ae_script_ardeal_tower
+.global cutscene_script_ardeal_tower
 
 .equ HIRO_GFX, 0x1337
 .equ SLASH_GFX, 0x1338
 .equ LUCIUS_GFX, 0x1339
 
-ae_script_ardeal_tower:
+cutscene_script_ardeal_tower:
     //fadescreen 0x7FFF 0 512 8 0 16
     //pause 8
     maintain

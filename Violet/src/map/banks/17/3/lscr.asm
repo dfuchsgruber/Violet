@@ -1,4 +1,5 @@
 .include "vars.s"
+.include "specials.s"
 
 .global lscr_0x71df84
 
@@ -67,7 +68,7 @@ loadpointer 0x0 str_0x94d6db
 show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 addvar STORY_PROGRESS 0x1
 setvar 0x8004 0x4
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 waitstate
 loadpointer 0x0 str_0x94d69f
 show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT

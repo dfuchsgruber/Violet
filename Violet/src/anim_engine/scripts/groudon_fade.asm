@@ -1,11 +1,11 @@
 .include "anim_engine.s"
 
-.global ae_script_groudon_fade
-.global ae_script_groudon_red
-.global ae_script_groudon_grey
+.global cutscene_script_groudon_fade
+.global cutscene_script_groudon_red
+.global cutscene_script_groudon_grey
 
 .align 4
-ae_script_groudon_fade:
+cutscene_script_groudon_fade:
     fadescreen 0x43C 0 512 64 0 16
     pause 64
     script_notify
@@ -18,7 +18,7 @@ ae_script_groudon_fade:
     end
 
 .align 4
-ae_script_groudon_red:
+cutscene_script_groudon_red:
     fadescreen 0x43C 0 512 64 0 4
     pause 64
     script_notify
@@ -26,7 +26,7 @@ ae_script_groudon_red:
 
 
 .align 4
-ae_script_groudon_grey:
+cutscene_script_groudon_grey:
     spawn_big_cb groudon_cb_grey_fade 0 1
     .hword 0
     pause 16

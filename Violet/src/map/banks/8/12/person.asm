@@ -91,35 +91,50 @@ ow_script_kaskada_tea_house_igva:
     fadescreen 0
     pause 48
     loadpointer 0 str_igva_5
-    show_mugshot MUGSHOT_IGVA MUGSHOT_RIGHT emotion=MUGSHOT_RUMINATIVE message_type=MSG_KEEPOPEN hide_mugshot=0
+    show_mugshot MUGSHOT_IGVA MUGSHOT_RIGHT emotion=MUGSHOT_BLUSHING message_type=MSG_KEEPOPEN hide_mugshot=0
     loadpointer 0 str_igva_6
     update_mugshot_emotion MUGSHOT_NORMAL
     callstd MSG_KEEPOPEN
-    loadpointer 0 str_igva_6_2
-    update_mugshot_emotion MUGSHOT_RUMINATIVE
+    loadpointer 0 str_igva_6_5
+    update_mugshot_emotion MUGSHOT_BLUSHING
     callstd MSG_KEEPOPEN
-    loadpointer 0 str_igva_7
-    update_mugshot_emotion MUGSHOT_HAPPY
+    loadpointer 0 str_igva_6_51
+    update_mugshot_emotion MUGSHOT_NORMAL
     callstd MSG_KEEPOPEN
-    loadpointer 0 str_igva_8
+    loadpointer 0 str_igva_6_52
     update_mugshot_emotion MUGSHOT_SAD
     callstd MSG_KEEPOPEN
-    loadpointer 0 str_igva_9
+    loadpointer 0 str_igva_6_53
+    update_mugshot_emotion MUGSHOT_BLUSHING
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_igva_6_54
     update_mugshot_emotion MUGSHOT_NORMAL
     callstd MSG_KEEPOPEN
-    loadpointer 0 str_igva_10
-    update_mugshot_emotion MUGSHOT_HAPPY
-    callstd MSG_KEEPOPEN
-    loadpointer 0 str_igva_11
-    update_mugshot_emotion MUGSHOT_SCARED
-    callstd MSG_KEEPOPEN
-    loadpointer 0 str_igva_12
+    loadpointer 0 str_igva_6_55
     update_mugshot_emotion MUGSHOT_NORMAL
     callstd MSG_KEEPOPEN
-    loadpointer 0 str_igva_13
+    loadpointer 0 str_igva_6_56
     update_mugshot_emotion MUGSHOT_HAPPY
     callstd MSG_KEEPOPEN
-    loadpointer 0 str_igva_14
+    loadpointer 0 str_igva_6_57
+    update_mugshot_emotion MUGSHOT_NORMAL
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_igva_6_58
+    update_mugshot_emotion MUGSHOT_HAPPY
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_igva_6_59
+    update_mugshot_emotion MUGSHOT_RUMINATIVE
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_igva_6_60
+    update_mugshot_emotion MUGSHOT_ANGRY
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_igva_6_61
+    update_mugshot_emotion MUGSHOT_NORMAL
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_igva_6_62
+    update_mugshot_emotion MUGSHOT_HAPPY
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_igva_6_63
     update_mugshot_emotion MUGSHOT_NORMAL
     callstd MSG_KEEPOPEN
     closeonkeypress
@@ -224,37 +239,47 @@ mov_igva_1:
 str_igva_0:
     .autostring 34 2 "Ich werde dir jetzt ein Geheimnis verraten, PLAYER!\pHinter dem Teehaus hier steckt viel mehr, als der Anschein verraten mag.\pDu musst nämlich wissen, dass es im Untergrund der Stadt einen Handelsplatz gibt.\pNatürlich kommt man da nicht einfach so hinein.\pAber mit mir zusammen ist das gar kein Problem.\pPass mal auf!"
 str_igva_1:
-    .autostring 34 2 "Siehst du?\nGanz leicht, oder?\pBeeilen wir uns am Besten, PLAYER"
+    .autostring 34 2 "Siehst du?\nGanz leicht, oder?\pBeeilen wir uns am Besten, PLAYER."
 str_igva_2:
     .autostring 34 2 "PLAYER!"
 str_igva_3:
-    .autostring 34 2 "Wie schön, dass du gekommen bist!"
+    .autostring 34 2 "Toll, dass du gekommen bist!"
 str_igva_4:
     .autostring 34 2 "Setz' dich doch zu mirDOTS"
 str_igva_5:
-    .autostring 34 2 "AlsoDOTSTEXT_DELAY_SHORT\pWo fange ich bloß an?"
+    .autostring 34 2 "N-Na gutDOTS\pÄhmDOTS\pDOTS DOTS DOTS"
 str_igva_6:
-    .autostring 34 2 "Vielleicht sollte ich mich zuerst einmal entschuldigen, dich einfach so überrumpelt zu haben.\pEs ist normalerweise auch gar nicht meine Art, irgendwelche Menschen einfach so anzusprechenDOTS"
-str_igva_6_2:
-    .autostring 34 2 "Zumindest nichtDOTSTEXT_DELAY_SHORT\nDOTSTEXT_DELAY_SHORT immer!"
-str_igva_7:
-    .autostring 34 2 "Aber du hast dieses Feuer in den Augen!"
-str_igva_8:
-    .autostring 34 2 "Und das hat mich an einen ehemaligen Freund erinnertDOTS"
-str_igva_9:
-    .autostring 34 2 "Wir beide wollten damals etwas verändern!\pWeißt du, was ich meine?\pDieses ganze System der Pokémon-LigaDOTS\pEs dient doch schon lange nur noch denen, die ganz oben stehen und tut rein gar nichts mehr für die Menschen in dieser Region, oder?"
-str_igva_10:
-    .autostring 34 2 "Deswegen kämpfe ich für eine Veränderung!"
-str_igva_11:
-    .autostring 34 2 "DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT\pH-Habe ich zu viel gesagt?\pD-Du siehst mich so verurteilend a-anDOTS"
-str_igva_12:
-    .autostring 34 2 "Dabei kann ich deine Skepsis ja verstehen.\pEs hat auch für mich gedauert, bis ich eingesehen habe, dass wir Veränderung brauchen."
-str_igva_13:
-    .autostring 34 2 "Ich mache dir ein Angebot, PLAYER, ja?"
-str_igva_14:
-    .autostring 34 2 "Lass mich dir etwas zeigen, das dir die Augen öffnen wird.\pEin schmutziges Geheimnis dieser StadtDOTS\pUnd das nicht nur unter den Augen der Top Vier, sondern sogar von ihnen unterhalten!\pIch werde dir zeigen, in welche Machenschaften die Pokémon-Liga verstrickt ist!"
+    .autostring 34 2 "Tut mir leid, dass ich dich so überrumpelt habe."
+str_igva_6_5:
+    .autostring 34 2 "Aber du hast mich an jemanden erinnert, der mir einmal sehr wichtig warDOTS"
+str_igva_6_51:
+    .autostring 34 2 "Du hast dieses Feuer in den Augen."
+str_igva_6_52:
+    .autostring 34 2 "Genau wie erDOTS"
+str_igva_6_53:
+    .autostring 34 2 "Entschuldige bitte, PLAYER!"
+str_igva_6_54:
+    .autostring 34 2 "Du bist ein Trainer, oder?\pUnd ein außerordentlich guter, möchte ich wetten!\pDas sieht man dir an!\pDu hast definitiv das Zeug dazu, etwas zu verändern!"
+str_igva_6_55:
+    .autostring 34 2 "Ich weiß, das klingt jetzt alles sehr seltsam.\pAber du bist doch auch die Art Mensch, die nicht wegsehen kann, wenn irgendwo Unrecht passiert, habe ich Recht?"
+str_igva_6_56:
+    .autostring 34 2 "Dachte ich es mir doch!"
+str_igva_6_57:
+    .autostring 34 2 "Du hast sicher schon bemerkt, dass in Theto sehr viel Unrecht geschieht, nicht wahr?"
+str_igva_6_58:
+    .autostring 34 2 "Und ich habe mich der Sache verschrieben, etwas dagegen zu unternehmen!"
+str_igva_6_59:
+    .autostring 34 2 "Die Top VierDOTS"
+str_igva_6_60:
+    .autostring 34 2 "Sie sind diejenigen, die etwas unternehmen sollten!\pStattdessenDOTS"
+str_igva_6_61:
+    .autostring 34 2 "Müssen wir selbst die Sache in die Hand nehmen!"
+str_igva_6_62:
+    .autostring 34 2 "PLAYER!"
+str_igva_6_63:
+    .autostring 34 2 "Das ist bestimmt alles etwas verwirrend für dich.\pAber ich möchte, dass du meinen Mentor kennelernst!\pEr ist ein großer Mann, der Theto zum Besseren verändern wird.\pEr wird dir alles erklären, ja?"
 str_igva_15:
-    .autostring 34 2 "Na mach schon, PLAYER!\pWorauf wartest du denn?"
+    .autostring 34 2 "Folge mir, PLAYER!"
 
 str_0:
     .autostring 34 2 "Im Teehaus ist immer sehr viel los.\pAn manchen Wochenenden bekommt man nicht einmal mehr einen Platz.\pAber das ist kaum verwunderlich bei all dem guten Tee hier!"

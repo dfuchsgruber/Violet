@@ -32,9 +32,9 @@ ow_script_on_frame_table:
 	setvar 0x8004 0x22
     setvar 0x8005 0x29
 	call ow_script_move_camera_at_position
-	setvar 0x8004 0x2c
-    setvar 0x8005 0x16
-	call ow_script_move_camera_at_position
+	@ setvar 0x8004 0x2c
+    @ setvar 0x8005 0x16
+	@ call ow_script_move_camera_at_position
 	special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
 	special SPECIAL_OVERWORLD_VIEWPORT_SET_TO_PLAYER_POSITION
 	special SPECIAL_OVERWORLD_VIEWPORT_LOCK
@@ -89,6 +89,6 @@ str_1:
 str_2:
 	.autostring 34 2 "Das könnte sonst nämlich ganz schön gefährlich werdenDOTS\pDOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT"
 str_3:
-	.autostring 34 2 "Wie dem auch sei!\pIch sind hier, weil einer unserer Leute hier neue Mitstreiter für unsere Sache anwirbt.\pSein Name ist Lucky und er muss sich hier irgendwo herumtreiben.\pWährend wir hier nach ihm Ausschau halten, kannst du dir ein Bild davon machen, was im Untergrund dieser Region vor sich geht."
+	.autostring 34 2 "Wie dem auch sei!\pUnsere Gruppe trifft sich hier mit einem unserer Mitstreiter, Lucky.\pWenn wir uns beeilen, sind sie noch nicht weg."
 .elseif LANG_EN
 .endif

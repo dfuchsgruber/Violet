@@ -10,6 +10,7 @@
 .include "flags.s"
 .include "overworld_script.s"
 .include "species.s"
+.include "specials.s"
 
 .global ow_script_0x96acf2
 .global ow_script_0x96ebc4
@@ -36,7 +37,7 @@
 
 ow_script_map_0_13_person_1:
 setvar 0x8004 0x5
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 waitstate
 end
 
@@ -119,7 +120,7 @@ waitmovement 0x0
 special 0x114
 setvar 0x8004 0x5
 setvar SONG_OVERRIDE 0x16b
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 waitstate
 pause 0x1
 goto ow_script_0x96aa40
@@ -321,7 +322,7 @@ ow_script_movs_0x96aeac:
 
 ow_script_0x96ebc4:
 setvar 0x8004 0x2
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 waitstate
 special 0x113
 applymovement 0x7f ow_script_movs_0x96aeac
@@ -331,7 +332,7 @@ playsong MUS_MERWURDIGE_UND_UNBEKANNTE_MUSIK 0x0
 setvar SONG_OVERRIDE 0x149
 setvar 0x8004 0x6
 setflag TRANS_DISABLE
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 clearflag INFERIOR_VIOLET_GRUNTS | 0x8000
 waitstate
 showsprite 0xa
@@ -369,7 +370,7 @@ goto ow_script_0x96ecbf
 
 ow_script_0x96ecbf:
 setvar 0x8004 0x7
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 waitstate
 hidesprite 0xa
 waitstate
@@ -529,7 +530,7 @@ loadpointer 0x0 str_0x96fc90
 show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 pause 0x1
 setvar 0x8004 0x8
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 waitstate
 goto ow_script_0x97305b
 
@@ -570,7 +571,7 @@ waitcry
 pause 0x20
 fadesong 0
 setvar 0x8004 0x9
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 waitstate
 loadpointer 0x0 str_0x972313
 show_mugshot MUGSHOT_RUBYS MUGSHOT_LEFT
@@ -582,7 +583,7 @@ setvar VAR_STORY_STATE STORY_STATE_VULCANO_DONE
 sound 0x64
 checksound
 setvar 0x8004 0xa
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 addvar STORY_PROGRESS 0x1
 waitstate
 goto ow_script_0x966e64
@@ -623,7 +624,7 @@ return
 ow_script_0x96ebb2:
 sound 0x21
 setvar 0x8004 0x1
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 waitstate
 call ow_script_earthquake
 return

@@ -1,9 +1,9 @@
 .include "anim_engine.s"
 
-.global ae_script_mistral_yin_yang
+.global cutscene_script_mistral_yin_yang
 
 .align 4
-ae_script_mistral_yin_yang:
+cutscene_script_mistral_yin_yang:
     fadescreen 0 0 512 16 0 16
     pause 32
     bg_override 0 gfx_yin_yangTiles 0x1000 0 1

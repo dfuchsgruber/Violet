@@ -19,6 +19,18 @@
     - tyrant ruler
     - was defeated by PLAYER's dad
 
+# Jungle Island
+- Home to tribe
+- Gym leader is tribe leader, pacifist
+- once, there was a Pokéball Factory
+    - it destoryed the jungle
+    - a member of the tribe revolted against the factory (owned by Narcissa)
+        - this member is injured from a chemical?
+    - eventually, Narcissa shut down the factory and gave the land back to the tribe
+        - but no compensation for the harm done
+        - did it mostly, because also gemstones come from this tribe (maybe a mine?, where you also do Mega Stones)
+    - the tribe leader did not participate in the revolt
+    - tribe leader should join the revolution
 
 
 # Post-Story with Chrones

@@ -9,6 +9,7 @@
 .include "flags.s"
 .include "story_states.s"
 .include "levelscript_types.s"
+.include "specials.s"
 
 .global map_player_bedroom_levelscripts
 
@@ -51,7 +52,7 @@ ow_script_dream:
     clearflag FLAG_FILTER_COLOR_ACTIVE
     addvar STORY_PROGRESS 0x1 
     setvar 0x8004 13
-    special 0x19
+    special SPECIAL_CUTSCENE_SHOW
     waitstate
     pause 0x80
     /** 

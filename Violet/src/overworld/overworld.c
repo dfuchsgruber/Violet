@@ -208,6 +208,10 @@ const palette overworld_palette_treasure_map = {
     .pal = gfx_ow_treasure_mapPal, .tag = OW_PAL_TAG_TREASURE_MAP,
 };
 
+static const palette overworld_palette_painter = {
+    .pal = gfx_ow_painterPal, .tag = OW_PAL_TAG_PAINTER,
+};
+
 const palette *overworld_npc_palette_get_by_tag(u16 tag) {
     if (tag >= OW_PAL_TAG_POKEMON_BASE && tag < OW_PAL_TAG_POKEMON_END) {
         return overworld_palette_get_by_species((u16)(tag - OW_PAL_TAG_POKEMON_BASE));
@@ -240,6 +244,7 @@ const palette *overworld_npc_palette_get_by_tag(u16 tag) {
         case OW_PAL_TAG_GREEN_GEAR: return &overworld_palette_green_gear;
         case OW_PAL_TAG_YELLOW_GEAR: return &overworld_palette_yellow_gear;
         case OW_PAL_TAG_TREASURE_MAP: return &overworld_palette_treasure_map;
+        case OW_PAL_TAG_PAINTER: return &overworld_palette_painter;
     }
     u8 idx = overworld_npc_palette_get_idx(tag);
     // OW_DEBUG("Tag 0x%x is at idx %d in pal-table.\n", tag, idx);

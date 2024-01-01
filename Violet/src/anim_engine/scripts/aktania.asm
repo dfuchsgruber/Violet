@@ -3,11 +3,11 @@
 .include "songs.s"
 .include "species.s"
 
-.global ae_script_aktania_meteor
-.global ae_script_aktania_beam
-.global ae_script_aktania_sky
+.global cutscene_script_aktania_meteor
+.global cutscene_script_aktania_beam
+.global cutscene_script_aktania_sky
 
-ae_script_aktania_meteor:
+cutscene_script_aktania_meteor:
     pal_restore_snapshot 1
     fadescreen 0 0 512 16 0 16
     pause 32
@@ -166,7 +166,7 @@ ae_script_aktania_meteor:
 
 
 
-ae_script_aktania_beam:
+cutscene_script_aktania_beam:
     pal_restore_snapshot 1
     fadescreen 0 0 512 16 0 16
     pause 32
@@ -232,7 +232,7 @@ ae_script_aktania_beam:
     script_notify
     end
     
-ae_script_aktania_sky:
+cutscene_script_aktania_sky:
     pal_restore_snapshot 1
     fadescreen 0 0 512 16 0 16
     pause 32

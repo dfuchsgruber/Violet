@@ -1,9 +1,9 @@
 .include "anim_engine.s"
 
-.global ae_script_elite_four_founders
+.global cutscene_script_elite_four_founders
 
 .align 4
-ae_script_elite_four_founders:
+cutscene_script_elite_four_founders:
     fadescreen 0 0 512 128 0 16
     pause 128
     maintain

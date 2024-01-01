@@ -1,8 +1,8 @@
 .include "anim_engine.s"
 
-.global ae_script_arc_scrim
+.global cutscene_script_arc_scrim
 
-ae_script_arc_scrim:
+cutscene_script_arc_scrim:
     fadescreen 0 0 512 16 0 16
     pause 16
     maintain

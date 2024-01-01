@@ -6,7 +6,7 @@
 
 .thumb
 hook_music_oak_intro:
-	ldr r0, =PROFESSOR_EICHS_LABOR
+	ldr r0, =MUS_TANN_SPEECH
 	bl _playsong
 	mov r0, #1
 	ldr r1, =0x0812F890 | 1

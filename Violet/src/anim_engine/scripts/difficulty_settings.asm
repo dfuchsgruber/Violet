@@ -1,9 +1,9 @@
 .include "anim_engine.s"
 
-.global ae_script_difficulty_setting
-.global ae_script_difficulty_setting_fade_to_dark
+.global cutscene_script_difficulty_setting
+.global cutscene_script_difficulty_setting_fade_to_dark
 
-ae_script_difficulty_setting:
+cutscene_script_difficulty_setting:
     force_pals_to_black
     pause 1
     bg_override 1 gfx_difficulty_settingTiles 0x2000 0 COPYSET
@@ -22,7 +22,7 @@ ae_script_difficulty_setting:
     end
 
 
-ae_script_difficulty_setting_fade_to_dark:
+cutscene_script_difficulty_setting_fade_to_dark:
     fadescreen 0 0 512 16 0 16
     pause 16
     force_pals_to_black

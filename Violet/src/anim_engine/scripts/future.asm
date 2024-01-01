@@ -1,9 +1,9 @@
 .include "anim_engine.s"
 
-.global ae_script_future
+.global cutscene_script_future
 
 
-ae_script_future:
+cutscene_script_future:
     fadescreen 0 0 512 32 3 16
     pause 32
     maintain

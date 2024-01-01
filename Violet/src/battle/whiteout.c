@@ -66,7 +66,7 @@ void battle_trainerbattle_continuation() {
 	if (battle_trainer_kind == 9) {
 		if (trainer_vars.rival_flags & 4) { // Battle against Lucius
 			pokemon_heal_player_party();
-			anim_engine_initiatlize(ae_scripts[19]);
+			anim_engine_initiatlize(cutscene_scripts[19]);
 			callback1_set(generic_callback1);
 			return;
 		}

@@ -5,6 +5,7 @@
 .include "overworld_script.s"
 .include "species.s"
 .include "items.s"
+.include "specials.s"
 
 .global ow_script_map_15_1_person_0
 .global ow_script_0x846bee
@@ -65,7 +66,7 @@ doweather
 setflag TRANS_DISABLE
 clearflag TRANS_PALETTE_FETCH
 setvar 0x8004 0xE
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 waitstate
 setflag MAP_BGN_AUTO_ALIGN_OFF
 waitstate

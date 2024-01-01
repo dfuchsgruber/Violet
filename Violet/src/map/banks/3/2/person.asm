@@ -8,6 +8,7 @@
 .include "species.s"
 .include "items.s"
 .include "pathfinding.s"
+.include "specials.s"
 
 .global ow_script_bruchfels_may_2
 .global ow_script_map_3_2_person_0
@@ -86,7 +87,7 @@ waitcry
 setflag TRANS_DISABLE
 clearflag TRANS_PALETTE_FETCH
 setvar 0x8004 0xf
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 waitstate
 setflag MAP_BGN_AUTO_ALIGN_OFF
 waitstate

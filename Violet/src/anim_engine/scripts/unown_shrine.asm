@@ -1,10 +1,10 @@
 .include "anim_engine.s" 
 
-.global ae_script_unown_shrine
+.global cutscene_script_unown_shrine
 
 .equ LIGHTNING_TAG, 0x1AAB
 
-ae_script_unown_shrine:
+cutscene_script_unown_shrine:
     fadescreen 0 0 512 16 0 16
     pause 16 + 1
     maintain

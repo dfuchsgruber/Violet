@@ -5,6 +5,7 @@
 .include "flags.s"
 .include "overworld_script.s"
 .include "pathfinding.s"
+.include "specials.s"
 
 .global ow_script_0x937675
 .global ow_script_0x936d7a
@@ -19,7 +20,7 @@ end
 setflag TRANS_DISABLE
 clearflag TRANS_PALETTE_FETCH
 setvar 0x8004 0x3
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 waitstate
 clearflag TRANS_DISABLE
 loadpointer 0x0 str_0x936ba2
@@ -41,7 +42,7 @@ show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 setflag TRANS_DISABLE
 clearflag TRANS_PALETTE_FETCH
 setvar 0x8004 0x3
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 waitstate
 clearflag TRANS_DISABLE
 draw_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
@@ -59,7 +60,7 @@ setflag TRANS_DISABLE
 clearflag TRANS_PALETTE_FETCH
 setvar SONG_OVERRIDE 0x16b
 setvar 0x8004 0x0
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 waitstate
 clearflag TRANS_DISABLE
 setvar SONG_OVERRIDE 0x0

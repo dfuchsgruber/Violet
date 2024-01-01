@@ -2040,6 +2040,26 @@ const overworld_sprite overworld_treasure_map = {
     .graphics = overworld_gfx_treasure_map, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
+static const graphic overworld_sprite_painter_sprites[] = {
+	{gfx_ow_painterTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_painterTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_painterTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_painterTiles + 3 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_painterTiles + 4 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_painterTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_painterTiles + 6 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_painterTiles + 7 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_painterTiles + 8 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+};
+
+const overworld_sprite overworld_painter = {
+	0xffff, OW_PAL_TAG_PAINTER, 0x11ff, 0x100,
+	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
+	&ow_final_oam_16_32, &ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_painter_sprites, 
+	oam_rotscale_anim_table_null
+};
+
 //The overworld table
 const overworld_sprite *const overworld_sprites[] = {
     	&ow_hiro,
@@ -2254,6 +2274,7 @@ const overworld_sprite *const overworld_sprites[] = {
 	[190] = &overworld_green_gear,
 	[191] = &overworld_yellow_gear,
 	[192] = &overworld_treasure_map,
+	[193] = &overworld_painter,
 
 	[OVERWORLD_SPRITE_TUTOR_CRYSTAL] = &ow_tutor_crystal_dummy,
 	[OVERWORLD_SPRITE_MISC] = &ow_misc_16_16,

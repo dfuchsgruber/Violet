@@ -1,9 +1,9 @@
 .include "anim_engine.s"
 
-.global ae_script_groudon
+.global cutscene_script_groudon
 
 .align 4
-ae_script_groudon:
+cutscene_script_groudon:
     fadescreen 0 0 512 128 0 16
     pause 128
     maintain

@@ -52,7 +52,4 @@ str_0x9664e4:
 
 
 ow_script_map_0_12_trainer_2:
-setvar 0x8004 0xa
-special 0x19
-waitstate
 end

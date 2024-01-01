@@ -258,6 +258,7 @@ extern "C" {
     extern const unsigned short gfx_mug_icarus_scaredTiles[];
     extern const unsigned short gfx_mug_icarus_shockedTiles[];
     extern const unsigned short gfx_mug_icarus_thoughtfulTiles[];
+    extern const unsigned short gfx_mug_igva_blushingTiles[];
 
     extern const u8 str_mug_mistral[];
     extern const u8 str_mug_hiro[];

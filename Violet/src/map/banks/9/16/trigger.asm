@@ -7,6 +7,7 @@
 .include "overworld_script.s"
 .include "flags.s"
 .include "pathfinding.s"
+.include "specials.s"
 
 .global ow_script_0x958ba3
 .global ow_script_map_9_16_trigger_0

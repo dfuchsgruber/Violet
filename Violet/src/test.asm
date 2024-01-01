@@ -435,7 +435,7 @@ trainerbattlecont 0x1 0x4 0x3 str_0x8a158f str_0x8a15bf ow_script_0x8a1433
 
 
 setvar 0x8004 18
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 waitstate
 end
 
@@ -444,7 +444,7 @@ waitstate //both waitstates are resolved in animation 12
 pause 0x20
 fadescreen 1
 setvar 0x8004 13
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 waitstate //now disable the bg aligment again
 setflag MAP_BGN_AUTO_ALIGN_OFF
 waitstate
@@ -550,7 +550,7 @@ doanimation 0x36
 checkanimation 0x36
 setvar 0x8004 0x6
 setflag TRANS_DISABLE
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 waitstate
 settrainerflag 0xaa
 trainerbattlecont 0x1 0xaa 0x0 str_0x96f0ee str_0x96f156 ow_script_0x96fbaa
@@ -608,7 +608,7 @@ end
 settrainerflag 0xb7
 trainerbattlecont 0x1 0xb7 0x0 str_0x83114c str_0x8311a8 ow_script_0x83108d
 setvar 0x8004 6
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 waitstate
 cont_end:
 end

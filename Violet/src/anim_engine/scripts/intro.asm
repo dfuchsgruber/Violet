@@ -2,9 +2,9 @@
 .include "songs.s"
 .include "species.s"
 
-.global ae_script_intro
+.global cutscene_script_intro
 
-ae_script_intro:
+cutscene_script_intro:
     @fadescreen 0 0 512 128 16 8
     @pause 200
     fadescreen 0 0 512 128 8 16

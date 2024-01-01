@@ -27,6 +27,11 @@
 .global ow_script_kaskada_blackmarket_person_12
 .global ow_script_kaskada_blackmarket_person_13
 .global ow_script_kaskada_blackmarket_person_14
+.global ow_script_kaskada_blackmarket_person_15
+.global ow_script_kaskada_blackmarket_person_16
+.global ow_script_kaskada_blackmarket_person_17
+.global ow_script_kaskada_blackmarket_person_18
+.global ow_script_kaskada_blackmarket_person_19
 .global ow_script_kaskada_blackmarket_primus
 .global ow_script_kaskada_blackmarket_coin_game
 .global ow_script_kaskada_black_glasses
@@ -91,6 +96,26 @@ ow_script_kaskada_blackmarket_person_13:
 	end
 ow_script_kaskada_blackmarket_person_14:
 	loadpointer 0 str_14
+	callstd MSG_FACE
+	end
+ow_script_kaskada_blackmarket_person_15:
+	loadpointer 0 str_15
+	callstd MSG_FACE
+	end
+ow_script_kaskada_blackmarket_person_16:
+	loadpointer 0 str_16
+	callstd MSG_FACE
+	end
+ow_script_kaskada_blackmarket_person_17:
+	loadpointer 0 str_17
+	callstd MSG
+	end
+ow_script_kaskada_blackmarket_person_18:
+	loadpointer 0 str_18
+	callstd MSG
+	end
+ow_script_kaskada_blackmarket_person_19:
+	loadpointer 0 str_19
 	callstd MSG_FACE
 	end
 
@@ -245,6 +270,8 @@ ow_script_kaskada_black_blaise:
 
 @ // The wardens are gone
 	call blaise_all_face_blaise
+	applymovement 20 mov_fr
+	waitmovement 0
 	loadpointer 0 str_blaise_4
 	show_mugshot MUGSHOT_BLAISE MUGSHOT_LEFT emotion=MUGSHOT_NORMAL hide_mugshot=1 message_type=MSG
 	call blaise_all_face_igva
@@ -587,7 +614,16 @@ str_13:
 	.autostring 34 2 "Ich warte hier sicher schon seit StundenDOTS\pImmerhin Igva hat sich jetzt blicken lassenDOTS\pFehlen aber noch immer Lucky und der Boss, bis wir hier die Düse machen können."
 str_14:
 	.autostring 34 2 "Wo bleibt denn nur Lucky?\pIch hoffe, dass er wenigstens Blackbeard als Verbündeten gewinnen kann, wenn er sich schon so viel Zeit lässtDOTS"
-
+str_15:
+	.autostring 34 2 "Herzlich willkommen!\nHier kannst du allerhand seltene Pokémon kaufen.\pBist du an einem unsererDOTS\pMoment, mal!\pWas hast du hier verloren?\pEin Kind wie du sollte nichts mit gestohlenen Pokémon am Hut haben!"
+str_16:
+	.autostring 34 2 "Ich muss diese Pokémon bewachen, bis der Kapitän wieder zurück ist.\pFür manche von ihnen können wir hier einen hohen Preis erzielen."
+str_17:
+	.autostring 34 2 "Eine Unverschämtheit, diese Preise!\pWer soll sich denn das leisten können?"
+str_18:
+	.autostring 34 2 "Gestohlene Pokémon haben eben ihren Preis!\pWenn es dir nicht passt, dann trainiere doch deine Pokémon einfach selbst!"
+str_19:
+	.autostring 34 2 "W-Weißt duDOTS\pFindest du es nicht auch irgendwieDOTS\pNaja, falsch?\pWir kämpfen doch eigentlich gegen die Missstände in Theto.\pUnd dann kaufen wir selbst unsere Pokémon auf einem Schwarzmarkt?"
 
 str_igva_0:
 	.autostring 34 2 "PLAYER!\pIch bin wirklich am verzweifelnDOTS"
@@ -598,7 +634,7 @@ str_igva_2:
 str_igva_3:
 	.autostring 34 2 "Was denkt sich Lucky denn dabei!\pUnser Plan war doch unmissverständlich, Blackbeard für unsere Sache zu gewinnen.\pUnd jetzt verschwindet er einfach mit diesem PiratenpackDOTS"
 str_igva_4:
-	.autostring 34 2 "Das wird unseren Anführer wirklich nicht freuenDOTS"
+	.autostring 34 2 "So ein Mist!"
 str_albus_0:
 	.autostring 34 2 "Igva!\nEntschuldige bitte, dass ich mich verspäte.\pIch hatte noch etwas mit einem altem Freund zu klärenDOTS"
 str_albus_1:
@@ -614,7 +650,7 @@ str_igva_6:
 str_igva_7:
 	.autostring 34 2 "Ich glaube, er könnte ein toller Mitstreiter für unsere Sache werden!"
 str_albus_4:
-	.autostring 34 2 "IgvaDOTS\pIch glaube ehrlichgesagt kaum, dass sich PLAYER so einfach unserer Bewegung anschließen wird.\pIch habe ihn vorhin bereits flüchtig kennengelernt.\pEr ist ein ehemaliger Schüler vom alten Faun."
+	.autostring 34 2 "Igva, ich glaube kaum, dass du PLAYER für unsere Sache gewinnen kannst.\pWir haben uns bereits zuvor kennengelernt.\pPLAYER ist ein Schüler von Faun."
 str_igva_8:
 	.autostring 34 2 "W-was?\nDu bist ein Schüler vom Pinken Faun?\pD-Dann bist du auf der Seite der Pokémon-Liga?"
 str_albus_5:
@@ -622,81 +658,81 @@ str_albus_5:
 str_igva_9:
 	.autostring 34 2 "DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT"
 str_albus_6:
-	.autostring 34 2 "Wie dem auch sei.\pHör mir gut zu, PLAYER."
+	.autostring 34 2 "Hör mir gut zu, PLAYER."
 str_albus_7:
-	.autostring 34 2 "Ich kann verstehen, dass du in mir einen Feind siehst.\pIch will das System verändern, für das dein ehemaliger Lehrer so verbissen eintritt.\pAber lass mich dir einen Ratschlag erteilen.\pUrteile nicht all zu schnell darüber, für wen und wessen Ansichten du kämpfen solltest.\pDieser Untergrundmarkt ist das perfekte Beispiel dafür, warum die Pokémon-Liga zu Fall gebracht werden muss.\pAber ich möchte dich nicht zu einer Entscheidung drängen.\pDu bist ein junger Trainer und hast einen weiten Weg vor dir.\pVielleicht kommst du eines Tages zu der gleichen Einsicht wie wir, die wir uns entschlossen haben, für ein besseres System zu kämpfen.\pVielleicht stehen wir uns aber auch als Gegner gegenüber.\pFolge stets deinem Sinn für Rechtschaffenheit, PLAYER.\pDas ist alles, worauf es ankommt."
+	.autostring 34 2 "Ich kann gut verstehen, dass du mich als deinen Gegner siehst.\pImmerhin will ich das System verändern, an dem dein Lehrer so verbissen festhält.\pAber urteile nicht allzu schnell, PLAYER.\pNiemand sollte für die Ansichten anderer kämpfen, ohne sie selbst zu teilen.\pDieser UntergrundmarktDOTS\pWird von einem Mitglied der Top Vier unterhalten.\pEr ist das Sinnbild für alles, das in diesem System falsch läuft.\pAber lass dich von mir nicht zu einer Entscheidung drängen, die du später vielleicht bereust.\pMach dir dein eigenes Bild von den Dingen.\pVielleicht kommst du irgendwann auch zur Einsicht, dass die Pokémon Liga zu Fall gebracht werden muss.\pVielleicht stehen wir uns am Ende aber auch als Gegner gegenüber.\pWichtig ist nur, dass du hinter deiner Entscheidung voll und ganz stehen kannst, PLAYER."
 str_albus_8:
-	.autostring 34 2 "Gut.\nNachdem Lucky wohl auch nicht mehr auftauchen wirdDOTS\pSehe ich die potentielle Allianz mit den Blackbeard Piraten als gescheitert an.\pWir sollten wir uns zurückziehen."
+	.autostring 34 2 "Nun gut.\nNachdem Lucky wohl auch nicht mehr auftauchen wirdDOTS\pSehe ich die potentielle Allianz mit den Blackbeard Piraten als gescheitert an.\pWir sollten wir uns zurückziehen."
 str_igva_10:
 	.autostring 34 2 "PLAYERDOTS\pEntschuldige bitte, wenn ich etwas zu aufdringlich gewesen binDOTS"
 str_igva_11:
-	.autostring 34 2 "Aber weißt duDOTS\pNur, weil unsere Mentoren im Zwist miteinander stehen, heißt das ja noch lange nicht, dass wir keine Freunde sein können, oder?\pUnd es zwingt dich auch niemand dazu, an der Seite deines alten Lehrers zu kämpfen.\pNiemand hindert dich daran, die richtige Seite in diesem Konflikt zu wählen."
+	.autostring 34 2 "Aber weißt duDOTS\pNur, weil unsere Mentoren im Zwist miteinander stehen, heißt das ja noch lange nicht, dass wir keine Freunde sein können, oder?\pUnd es zwingt dich auch niemand dazu, an der Seite deines alten Lehrers zu kämpfen.\pNiemand hindert dich daran, dich auf die richtige Seite zu stellen."
 str_igva_12:
-	.autostring 34 2 "Ich muss mich jetzt aber wirklich beeilen.\pSonst verliere ich noch meine Mitstreiter."
+	.autostring 34 2 "Ich muss mich jetzt aber wirklich beeilen."
 str_igva_13:
 	.autostring 34 2 "Halt die Ohren steif, PLAYER!\pIch bin mir sicher, dass wir uns bald wiedersehen werden!"
 str_blaise_0:
-	.autostring 34 2 "Lasst mich in Ruhe!\pFinger weg!"
+	.autostring 34 2 "Lasst mich in Ruhe!"
 str_warden_0:
 	.autostring 34 2 "Nichts da!\pGlaubst du, dass du hier einfach Randale machen kannst und wir bloß zuschauen?"
 str_blaise_1:
-	.autostring 34 2 "Argh, euch werd' ich's zeigen!"
+	.autostring 34 2 "GehtDOTS\pGeht mir aus dem Weg!"
 str_blaise_igva_0:
 	.autostring 34 2 "Was ist hier denn los?"
 str_blaise_2:
 	.autostring 34 2 "PLAYER?!\pWas treibst du denn hier?"
 str_blaise_igva_1:
-	.autostring 34 2 "K-kennst du diesen Jungen, PLAYER?"
+	.autostring 34 2 "K-kennst du diesen Typen, PLAYER?"
 str_warden_1:
 	.autostring 34 2 "Igva!\pGehört dieser Bengel zu euch?"
 str_blaise_igva_1_2:
 	.autostring 34 2 "Ä-ÄhmDOTS\nDOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT"
 str_blaise_igva_2:
-	.autostring 34 2 "J-Ja, er ist einer von unsDOTS"
+	.autostring 34 2 "J-Ja, er gehört zu unserer GruppeDOTS"
 str_blaise_3:
-	.autostring 34 2 "W-Was?\nDas stimmt doch-"
+	.autostring 34 2 "W-Was?\nDasDOTS"
 str_warden_2:
-	.autostring 34 2 "GrrDOTS\pDann bring deine Leute unter Kontrolle, ja?\pNur, weil er zur Revolutionsbewegung gehört, kann er hier noch lang nicht alles kurz und klein schlagen, verstanden?\pAuch für euch gelten hier Regeln!"
+	.autostring 34 2 "Bringt eure Leute gefälligst unter Kontrolle!\pAuch für euch gelten hier unten Regeln, verstanden?"
 str_blaise_igva_3:
 	.autostring 34 2 "J-Ja natürlich!"
 str_blaise_igva_4:
-	.autostring 34 2 "Ich werde mit ihm ein ernstes Wörtchen reden.\pIhr habt mein Wort!"
+	.autostring 34 2 "Ich werde mit ihm ein ernstes Wörtchen reden.\pDu hast mein Wort!"
 str_warden_3:
-	.autostring 34 2 "Na gut, dann wäre hier ja alles geklärt."
+	.autostring 34 2 "Dann wäre alles geklärt."
 str_warden_4:
 	.autostring 34 2 "Was ist denn?\pKommst du nun?"
 str_blaise_4:
-	.autostring 34 2 "Was zum Teufel war das denn?"
+	.autostring 34 2 "Was zum Teufel war das denn?\pKenne ich dich?"
 str_blaise_igva_5:
 	.autostring 34 2 "Wie wäre es mit etwas Dankbarkeit?\pIch hab dir gerade mächtig aus der Patsche geholfen.\pWas wollten die Aufseher eigentlich von dir?"
 str_blaise_5:
-	.autostring 34 2 "HmmDOTS\pVielleicht hat es ihnen nicht gefallen, dass ich im Begriff war, diesen Untergrundmarkt in Schutt und Asche zu legenDOTS"
+	.autostring 34 2 "Vermutlich hat es ihnen nicht gefallen, dass ich hier randaliert habe."
 str_blaise_igva_6:
 	.autostring 34 2 "W-Was?\pIst das dein Ernst?\pWeißt du denn nicht, wer hinter diesem Untergrundmarkt steht?"
 str_blaise_6:
-	.autostring 34 2 "Und wie ich das weiß!\pGenau deswegen will ich ihn ja dem Erdboden gleichmachen."
+	.autostring 34 2 "Natürlich weiß ich das."
 str_blaise_igva_7:
-	.autostring 34 2 "D-Du willst dich allen Ernstes mit den Top Vier anlegen?\pGanz alleine?"
+	.autostring 34 2 "B-Bist du von allen guten Geistern verlassen?\pD-Du willst dich allen Ernstes mit den Top Vier anlegen?"
 str_blaise_7:
-	.autostring 34 2 "Mein Vater ist der Kopf hinter diesem Schwarzmarkt.\pUnd ich werde ihm einen dicken Strich durch die Rechnung machen!"
+	.autostring 34 2 "Hör mal zu, Rotschopf.\pMein Vater unterhält diesen Laden.\pUnd genau deswegen werd ich ihn in Grund und Asche legen.\pKomm mir nicht in die Quere."
 str_blaise_igva_8:
-	.autostring 34 2 "DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT\nDOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT\pH-hör mal zu, Kleiner.\pDu kannst unmöglich alleine jemanden von den Top Vier direkt herausfordern.\pDu hättest keine ChanceDOTS"
+	.autostring 34 2 "DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT\nDOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT\pH-hör mal zu.\pDu kannst unmöglich alleine gegen jemanden von den Top Vier gewinnen.\pDas ist Wahnsinn!"
 str_blaise_8:
-	.autostring 34 2 "Ach ja?\nWer sagt das?\pDu etwa?\pIch lasse mir doch von einer Revoluzzerin nicht sagen, was ich nicht kann.\pUnd überhaupt, was soll ich sonst tun?\pMich in einen grünen Mantel werfen und eurer niederträchtigen Vereinigung beitreten?"
+	.autostring 34 2 "Wer sagt das?\pDu etwa?\pSoll ich mich lieber eurer scheinheiligen Revolutionsbewegung anschließen, ja?"
 str_blaise_igva_9:
-	.autostring 34 2 "Wieso nicht?\pWir haben das gleiche Ziel.\pUnsere Gruppe will die Top Vier auch stürzen, weißt du?\pUnd wir haben jemanden auf unserer Seite, der es mit ihnen aufnehmen kann."
+	.autostring 34 2 "Wieso nicht?\pWir haben das gleiche Ziel.\pUnsere Gruppe will die Top Vier auch stürzen, weißt du?"
 str_blaise_9:
-	.autostring 34 2 "Pah.\nNein danke!\pSo tief bin ich noch nicht gesunken.\pIch erledige die Dinge auf meine Weise.\pAdieu!"
+	.autostring 34 2 "Hör mir mal gut zu.\pIch habe keine Lust, mit euch Grünmänteln Revolution zu spielen.\pIch habe meinen eigenen Plan und davon wird mich keiner abhalten.\pAdieu!"
 str_blaise_10:
-	.autostring 34 2 "Ach, und PLAYER.\pAn deiner Stelle würde ich dringend überdenken, mit wem ich mich abgebe.\pNur ein gut gemeinter Rat eines alten Klassenkammeraden."
+	.autostring 34 2 "Ach, und PLAYER.\pAn deiner Stelle würde ich dringend überdenken, mit wem ich mich abgebe.\pEin gut gemeinter Rat deines alten Klassenkammeraden."
 str_blaise_igva_10:
-	.autostring 34 2 "Du hast ja nette Freunde, PLAYER.\pWas für ein undankbarer Bengel."
+	.autostring 34 2 "Du hast ja nette Freunde, PLAYER.\pWas für ein IdiotDOTS"
 str_blaise_igva_11:
-	.autostring 34 2 "Aber immerhin kämpft er für die richtige Sache.\pOrte wie diesen, sollte es nicht geben dürfen.\pDOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT"
+	.autostring 34 2 "Aber immerhin stellt sich auch er gegen ein Mitglied der Top Vier.\pIch schätze, das ist auch schon etwasDOTS"
 str_blaise_igva_12:
 	.autostring 34 2 "Ach du Schande!\pDiese ganze Geschichte hier hat uns wirklich lange aufgehalten."
 str_blaise_igva_13:
-	.autostring 34 2 "Wir sollten schnellstens nach meinem Freund Lucky suchen, ja PLAYER?"
+	.autostring 34 2 "Wir sollten schnellstens nach meinem Freund Lucky suchen.\pDann kannst du meinen Mentor treffen!"
 
 
 

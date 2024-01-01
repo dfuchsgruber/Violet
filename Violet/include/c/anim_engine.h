@@ -1,9 +1,10 @@
 #ifndef H_ANIM_ENGINE
 #define H_ANIM_ENGINE
 
-#include <stdbool.h>
+#include "types.h"
 #include "color.h"
 #include "text.h"
+#include "constants/cutscenes.h"
 
 typedef struct anim_engine_task{
     int priority;
@@ -30,7 +31,7 @@ typedef struct animation_engine_state_t {
 } animation_engine_state_t ;
 
 extern EWRAM animation_engine_state_t *animation_engine_state;
-extern const u8 *ae_scripts[];
+extern const u8 *const cutscene_scripts[NUM_CUTSCENES];
 
 void init_anim_engine_by_table();
 void anim_engine_initiatlize(const u8 *script);

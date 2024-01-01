@@ -1,11 +1,11 @@
 .include "anim_engine.s"
 
-.global ae_script_staraptor_to
-.global ae_script_staraptor_from
+.global cutscene_script_staraptor_to
+.global cutscene_script_staraptor_from
 
 
 .align 4
-ae_script_staraptor_to:
+cutscene_script_staraptor_to:
     fadescreen 0 0 512 16 0 16
     pause 16
     //maintain
@@ -56,7 +56,7 @@ after_loading_template:
     script_notify
     end
 
-ae_script_staraptor_from:
+cutscene_script_staraptor_from:
     fadescreen 0 0 512 16 0 16
     pause 16
     //maintain

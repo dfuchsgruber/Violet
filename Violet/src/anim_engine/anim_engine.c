@@ -91,7 +91,7 @@ static void (*const commands[])(animation_engine_state_t*) = {
 
 void init_anim_engine_by_table() {
     u16 index = *var_access(0x8004);
-    anim_engine_initiatlize(ae_scripts[index]);
+    anim_engine_initiatlize(cutscene_scripts[index]);
 }
 
 void anim_engine_initiatlize(const u8 *script) {

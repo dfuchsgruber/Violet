@@ -1,9 +1,9 @@
 .include "anim_engine.s"
 
-.global ae_script_groudon_diserakt
+.global cutscene_script_groudon_diserakt
 
 .align 4
-ae_script_groudon_diserakt:
+cutscene_script_groudon_diserakt:
     fadescreen 0 0 512 64 0 16
     pause 64
     maintain

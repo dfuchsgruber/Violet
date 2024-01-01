@@ -3,7 +3,6 @@
 import agb.image
 import argparse
 from pathlib import Path
-from tqdm import tqdm
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Puts images into a one palette')
@@ -19,7 +18,7 @@ if __name__ == '__main__':
         target_palette = target_palette[:args.num_target_colors]
     
     assembly = []
-    for path in tqdm(args.input_images):
+    for path in args.input_images:
         path = Path(path)
         image, palette = agb.image.from_file(path)
         image.apply_palette(palette, target_palette)

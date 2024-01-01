@@ -282,6 +282,9 @@ ow_script_kaskada_igva:
 	faceplayer
 	loadpointer 0 str_igva0
 	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT mask_name=1 hide_mugshot=0 message_type=MSG_KEEPOPEN
+	loadpointer 0 str_igva0_1
+	update_mugshot_emotion MUGSHOT_BLUSHING
+	callstd MSG_KEEPOPEN
 	loadpointer 0 str_igva1
 	update_mugshot_emotion MUGSHOT_RUMINATIVE
 	callstd MSG_KEEPOPEN
@@ -301,13 +304,10 @@ ow_script_kaskada_igva:
 	update_mugshot_emotion MUGSHOT_SCARED
 	callstd MSG_KEEPOPEN
 	loadpointer 0 str_igva7
-	update_mugshot_emotion MUGSHOT_HAPPY
+	update_mugshot_emotion MUGSHOT_BLUSHING
 	callstd MSG_KEEPOPEN
 	loadpointer 0 str_igva8
 	update_mugshot_emotion MUGSHOT_NORMAL
-	callstd MSG_KEEPOPEN
-	loadpointer 0 str_igva8
-	update_mugshot_emotion MUGSHOT_RUMINATIVE
 	callstd MSG_KEEPOPEN
 	loadpointer 0 str_igva9
 	update_mugshot_emotion MUGSHOT_NORMAL
@@ -320,11 +320,26 @@ ow_script_kaskada_igva:
 	callstd MSG_KEEPOPEN
 	closeonkeypress
 	hide_mugshot
-	npc_move_to 36 0x38 0x2f
+	npc_move_to 36 0x34 0x2f
+	pause 32
+	applymovement 36 mov_fl
+	waitmovement 0
+	pause 32
+	sound 0x15
+	applymovement 36 mov_exclam
+	waitmovement 0
+	checksound
+	loadpointer 0 str_igva12
+	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
+	applymovement 36 mov_5r_fast
+	waitmovement 0
 	hidesprite 36
 	clearflag (FLAG_KASKADA_IGVA_TEAHOUSE | 0x8000)
 	releaseall
 	end
+
+mov_5r_fast:
+	.byte STEP_RIGHT_FAST, STEP_RIGHT_FAST, STEP_RIGHT_FAST, STEP_RIGHT_FAST, STEP_RIGHT_FAST, STOP
 
 ow_script_kaskada_felix:
 	lockall
@@ -394,28 +409,33 @@ str_felix_8:
 
 str_igva0:
 	.autostring 34 2 "Huh?\nKennen wir uns vielleicht?"
+str_igva0_1:
+	.autostring 34 2 "DOTS DOTS DOTS\pDOTS DOTS DOTS\pDuDOTS\pDu erinnerst mich anDOTS"
 str_igva1:
-	.autostring 34 2 "Du kommst mir irgendwie sehr bekannt vor.\pSagst du mir deinen Namen?"
+	.autostring 34 2 "Sagst du mir deinen Namen?"
 str_igva2:
 	.autostring 34 2 "PLAYER also!\nIch bin Igva, freut mich, dich kennenzulernen."
 str_igva3:
-	.autostring 34 2 "Normalerweise würde ich so etwas nicht machenDOTS"
+	.autostring 34 2 "Normalerweise mache ich so etwas nichtDOTS"
 str_igva4:
-	.autostring 34 2 "Aber irgendetwas an dir sagt mir, dass ich dir vertrauen kann."
+	.autostring 34 2 "AberDOTS"
 str_igva5:
 	.autostring 34 2 "Hast du nicht vielleicht LustDOTS"
 str_igva6:
 	.autostring 34 2 "NajaDOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT"
 str_igva7:
-	.autostring 34 2 "Dich mit mir bei einem Tee zu unterhalten?"
+	.autostring 34 2 "Mit mir einen Tee trinken zu gehen?"
 str_igva8:
-	.autostring 34 2 "Hier in Kaskada gibt es ein ganz besonders interessantes Teehaus!"
+	.autostring 34 2 "Hier in Kaskada gibt es ein tolles Teehaus!"
 str_igva9:
 	.autostring 34 2 "Ich werde uns dort einen schönen Platz besorgen."
 str_igva10:
-	.autostring 34 2 "Dann können wir ein wenig plaudern, PLAYER."
+	.autostring 34 2 "Ich würde dich wahnsinning gerne kennenlernen, PLAYER."
 str_igva11:
-	.autostring 34 2 "Und denk gar nicht daran, mich zu versetzten!"
+	.autostring 34 2 "Und versetz mich nicht, ja?"
+str_igva12:
+	.autostring 34 2 "DOTS DOTS DOTS\pBis dann, PLAYER!"
+
 
 str_intro_evolithe:
 	.autostring 34 2 "Für viele Trainer geht es nur darum, ihre Pokémon möglichst stark zu machen.\pSie zwingen sie sogar dazu, sich gegen ihren Willen zu entwickeln.\pWenn Trainer so einen Druck auf ihre Pokémon ausübenDOTS\pDas macht mich sehr traurigDOTS\pDabei können doch auch nicht entwickelte Pokémon stark sein, findest du nicht auch?"

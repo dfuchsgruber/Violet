@@ -195,7 +195,7 @@ ow_script_0x8d7960:
 	show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED
 	// Meteorite Cutscene
 	setvar 0x8004 0x10
-	special 0x19
+	special SPECIAL_CUTSCENE_SHOW
 	waitstate
 	loadpointer 0x0 str_0x8d7bbb
 	show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED
@@ -569,7 +569,7 @@ ow_script_0x8d7960:
 	clearflag TRANS_PALETTE_FETCH
 	setvar STORY_PROGRESS 0x14
 	setvar 0x8004 0x12
-	special 0x19
+	special SPECIAL_CUTSCENE_SHOW
 	waitstate
 	clearflag TRANS_DISABLE
 	pause 0x1

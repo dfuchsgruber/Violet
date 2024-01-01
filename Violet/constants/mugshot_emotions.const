@@ -15,6 +15,7 @@
         "MUGSHOT_SERIOUS",
         "MUGSHOT_BEATEN",
         "MUGSHOT_GOOD",
+        "MUGSHOT_BLUSHING",
         "MUGSHOT_EMOTION_COUNT"
     ]
 }

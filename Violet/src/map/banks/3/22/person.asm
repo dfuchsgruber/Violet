@@ -1,5 +1,11 @@
 .include "callstds.s"
 .include "overworld_script.s"
+.include "ordinals.s"
+.include "vars.s"
+.include "songs.s"
+.include "cutscenes.s"
+.include "specials.s"
+.include "pathfinding.s"
 
 .global ow_script_route_4_person_0
 .global ow_script_route_4_person_1
@@ -12,6 +18,7 @@
 .global ow_script_route_4_person_8
 .global ow_script_route_4_person_9
 .global ow_script_route_4_person_10
+.global ow_script_route_4_painter
 
 ow_script_route_4_person_0:
     loadpointer 0 str_0
@@ -57,8 +64,41 @@ ow_script_route_4_person_10:
     loadpointer 0 str_10
     callstd MSG_FACE
     end
+ow_script_route_4_painter:
+    lock
+    faceplayer
+    loadpointer 0 str_painter_0
+    callstd MSG_YES_NO
+    compare LASTRESULT 0
+    gotoif EQUAL painter_no
+    applymovement LASTTALKED mov_fu
+    waitmovement 0
+    playsong MUS_TANN_SPEECH 0
+    special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
+    setvar 0x8004 0x16
+    setvar 0x8005 0x53
+    setvar 0x8006, A_STAR_SPEED_FAST
+    special SPECIAL_OVERWORLD_VIEWPOINT_MOVE_TO
+    waitmovement 0
+    special SPECIAL_OVERWORLD_VIEWPORT_LOCK
+
+    setvar 0x8004 CUTSCENE_ELITE_FOUR_FOUNDERS
+    special SPECIAL_CUTSCENE_SHOW
+
+
+
+painter_no:
+    loadpointer 0 str_painter_no
+    callstd MSG_KEEPOPEN
+    closeonkeypress
+    release
+    end
 
 .ifdef LANG_GER
+str_painter_0:
+    .autostring 34 2 "Ich bin eine Malerin aus Blütenbach.\pEigentlich wollte ich hier die Landschaft malen, aber mir geht ein Motiv nicht mehr aus dem KopfDOTS\pSoll ich dir erzählen, was mich beschäftigt?"
+str_painter_no:
+    .autostring 34 2 "Schade, ich hätte dir eine spannende Geschichte erzähltDOTS"
 str_0:
     .autostring 34 2 "Der Osten Thetos gefällt mir am Besten.\pHier ist die Landschaft einfach malerisch, findest du nicht?"
 str_1:
