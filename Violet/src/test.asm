@@ -27,6 +27,8 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	trainerbattlestd 0 0x300 0 str_beforea str_beforeb
+	end
 	clearflag FRBADGE_3
 	removeitem ITEM_VM02 1
 	end

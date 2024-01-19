@@ -219,6 +219,8 @@ void bsc_cmd_x8f_random_switch_out() {
         // Roar should succeed regardless of the level, like in generations >= V, so if we reach this point, roar will succed!
         u8 switch_into = valid_targets[rnd16() % num_valid_targets];
         battle_state->battler_to_switch_into[defending_battler] = switch_into;
+        battle_state->switch_out_party_idxs[defending_battler] = battler_idx_to_party_idx(defending_battler);
+        DEBUG("Switching the defending battler %d into %d\n", defending_battler, switch_into);
         if (!battle_is_multi_double() && !battle_is_tag()) {
             sub_08013ef0(defending_battler);
         }

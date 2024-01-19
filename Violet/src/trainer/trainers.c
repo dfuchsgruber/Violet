@@ -6686,6 +6686,6 @@ const trainer trainers[TRAINER_CNT] = {
       .name = LANGDEP(PSTRING("Lester"), PSTRING("Lester")),
       .items = {ITEM_GOLDAPFEL, ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG},
       .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE | TRAINER_AI_STATUS_MOVES_PREFERED_IN_FIRST_ROUND,
-      .battle_state = BATTLE_DOUBLE, .pokemon_cnt = 2, .party = trainer_party_test,
+      .battle_state = 0, .pokemon_cnt = ARRAY_COUNT(trainer_party_test), .party = trainer_party_test,
 	  },
 }; 

@@ -2164,14 +2164,15 @@ const trainer_pokemon trainer_party_x199_bbship_blackbeard[] = {
 
 
 const trainer_pokemon trainer_party_test[] = {
-	{.species = POKEMON_PIKACHU, .level = 50, .held_item = ITEM_UEBERRESTE, .moves_set = true, .moves = {ATTACK_SURFER, ATTACK_DONNER}, .shiny_set = true,
-		.pid = {.fields = {.is_shiny = true, .nature = NATURE_KAUZIG, .is_female = true}}, .nickname = trainer_pokemon_nickname_test,
-		.evs_set = true, .evs = {[STAT_HP] = 148, [STAT_ATTACK] = 252, [STAT_SPECIAL_DEFENSE] = 100},
-		.ivs_set = true, .ivs = {4, 8, 16, 20, 24, 28},
-		.gender_set = true,
-		.nature_set = true,	
-	},
-	{.species = POKEMON_PICHU, .level = 7},
+	// {.species = POKEMON_PIKACHU, .level = 50, .held_item = ITEM_UEBERRESTE, .moves_set = true, .moves = {ATTACK_SURFER, ATTACK_DONNER}, .shiny_set = true,
+	// 	.pid = {.fields = {.is_shiny = true, .nature = NATURE_KAUZIG, .is_female = true}}, .nickname = trainer_pokemon_nickname_test,
+	// 	.evs_set = true, .evs = {[STAT_HP] = 148, [STAT_ATTACK] = 252, [STAT_SPECIAL_DEFENSE] = 100},
+	// 	.ivs_set = true, .ivs = {4, 8, 16, 20, 24, 28},
+	// 	.gender_set = true,
+	// 	.nature_set = true,	
+	// },
+	{.species = POKEMON_MAGNAYEN, .level = 100, .moves_set = true, .moves = {ATTACK_BRUELLER}},
+	// {.species = POKEMON_PICHU, .level = 7},
 	// {.ivs_set = true, .ivs = {19, 19, 19, 19, 19, 19}, .held_item = ITEM_OCTILLERYNIT, .moves_set = true, .moves = {ATTACK_HITZEKOLLER, ATTACK_WINDSCHNITT, ATTACK_SOLARSTRAHL, ATTACK_SONNENTAG}, .level = 40, .species = POKEMON_OCTILLERY, .evs = {[STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 252, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
 	// {.ivs_set = true, .ivs = {19, 19, 19, 19, 19, 19}, .hidden_ability = true, .held_item = ITEM_SCHWARZPULVER, .moves_set = true, .moves = {ATTACK_STURZFLUG, ATTACK_FLAMMENBLITZ, ATTACK_STAHLFLUEGEL, ATTACK_HITZEKOLLER}, .level = 41, .species = POKEMON_FIARO, .evs = {[STAT_ATTACK] = 252, [STAT_HP] = 4, [STAT_SPEED] = 252}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
 };

@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_8_pokestop",
 		"events": {
-			"person_cnt": 8,
+			"person_cnt": 7,
 			"warp_cnt": 2,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
@@ -221,35 +221,6 @@
 					"argument": 0,
 					"script_std_and_in_connection": {
 						"script_std": "PERSON_POKEMON_NPC",
-						"in_connection": "0"
-					}
-				},
-				{
-					"target_index": "8",
-					"picture": "238",
-					"x": "3",
-					"y": "6",
-					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_RIGHT",
-					"behaviour_range": {
-						"x": 0,
-						"y": 0
-					},
-					"field_B": 0,
-					"is_trainer": 0,
-					"alert_radius": 0,
-					"script": 0,
-					"flag": 0,
-					"value": {
-						"item": 0,
-						"species": "POKEMON_FIFFYEN",
-						"berry_tree_idx": 0,
-						"type": 0,
-						"move_tutor": 0
-					},
-					"argument": 0,
-					"script_std_and_in_connection": {
-						"script_std": "PERSON_POKEMON",
 						"in_connection": "0"
 					}
 				}
