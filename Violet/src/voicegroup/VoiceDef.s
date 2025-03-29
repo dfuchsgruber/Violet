@@ -18,6 +18,7 @@
 	.equ	DirectReverse,	0x10
 	.equ	DirectComp,	0x20
 	.equ	ReverseComp,	0x30
+	.equ 	ProgNoise2,  0x0C
 
 @***
 @ Table Types

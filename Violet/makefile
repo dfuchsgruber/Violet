@@ -282,7 +282,7 @@ $(BLDPATH)/sources.ld: $(ASOBJS1) $(ASOBJS2) $(COBJS) $(CLOUD_MAPS_OBJ) $(WORLDM
 	
 soundfont: $(BLDROM)
 	$(shell mkdir -p $(BLDPATH)/soundfont)
-	$(foreach vcg,000 001 002, \
+	$(foreach vcg,000 001 002 003, \
 	$(SOUNDFONTRIPPER) $(BLDROM) $(BLDPATH)/soundfont/vcg$(vcg).sf2 $(PSG_DATA) $(GOLDENSUN_SYNTH) -n soundfont/instrument_names_vcg$(vcg).txt -mv12 $(shell grep "voicegroup$(vcg)" $(BLDPATH)/symbols | cut -d' ' -f1 | sed -e "s/.*/obase\=16\;ibase\=16\;&-8000000/" | bc | sed -e "s/^/0x/");)
 
 $(BLDROM): $(CONSTANTSHAS) $(CONSTANTSHC) $(BLDPATH)/asset.ld $(BLDPATH)/map.ld $(BLDPATH)/sources.ld $(BLDPATH)/midi.ld $(EXPORTED_STATS_OBJ) $(PATCHES) patches.asm $(BASESYMBOLS) linker.ld

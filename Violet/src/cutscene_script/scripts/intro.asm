@@ -199,21 +199,21 @@ bgcnfgs:
 
 .ifdef LANG_GER
     str_intro_0:
-        .string "Kannst du mich hören?\nDOTS DOTS DOTS\nLass es mich dir zeigen!\nEs kam von weit herDOTSPAUSE_UNTIL_PRESS"
+        .string "DOTS DOTS DOTS\nAus den Tiefen des AllsDOTS\nDOTS DOTS DOTSPAUSE_UNTIL_PRESS"
     str_intro_1:
-        .string "Mit einem Meteoriten fiel\nes herab auf die Erde mit\ndem Ziel, Lebensraum\nzu finden.PAUSE_UNTIL_PRESS"
+        .string "DOTS DOTS DOTS\nEs kam, um zu bleiben\nDOTS DOTS DOTSPAUSE_UNTIL_PRESS"
     str_intro_2:
-        .string "Es war bereit, Mensch und\nPokémon zu vernichten.PAUSE_UNTIL_PRESS"
+        .string "Doch der Widerstand war erfolgreich\nDOTS DOTS DOTSPAUSE_UNTIL_PRESS"
     str_intro_3:
-        .string "Und bald wird diese Gefahr\nwiederkehrenDOTSPAUSE_UNTIL_PRESS"
+        .string "Seine Rückkehr steht kurz bevor\nDOTS DOTS DOTSPAUSE_UNTIL_PRESS"
         
-.elseif LANG_GER
+.elseif LANG_EN
     str_intro_0:
-        .string "Can you hear me?\nDOTS DOTS DOTS\pLet me show it to you!\pIt came from far awayDOTS DOTS DOTS"
+        .string "DOTS DOTS DOTS\nFrom the depths of spaceDOTS\nDOTS DOTS DOTSPAUSE_UNTIL_PRESS"
     str_intro_1:
-        .string "With a meteorite it fell\ndown to earth and wanted\nto find a place to live.PAUSE_UNTIL_PRESS"
-    str_intro_2:
-        .string "It was willing to destroy\nboth men and Pokémon."
+        .string "DOTS DOTS DOTS\nIt came to stay\nDOTS DOTS DOTSPAUSE_UNTIL_PRESS"
+    str_intro_2:    
+        .string "But the resistance was successful\nDOTS DOTS DOTSPAUSE_UNTIL_PRESS"
     str_intro_3:
-        .string "And soon this danger will\nreturn once againDOTSPAUSE_UNTIL_PRESS"
+        .string "Its return is imminent\nDOTS DOTS DOTSPAUSE_UNTIL_PRESS"
 .endif        

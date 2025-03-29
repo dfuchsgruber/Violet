@@ -243,6 +243,10 @@ extern const unsigned char mus_violet_hq2[];
 extern const unsigned char mus_violet_encounter3[];
 extern const unsigned char mus_violet_battle2[];
 extern const unsigned char mus_violet_battle2_elite[];
+extern const unsigned char mus_cloud_wild_battle2[];
+extern const unsigned char mus_clouds_trainer_battle[];
+extern const unsigned char mus_clouds_silent[];
+extern const unsigned char mus_route_y[];
 
 #endif	/* MUSIC_H */
 

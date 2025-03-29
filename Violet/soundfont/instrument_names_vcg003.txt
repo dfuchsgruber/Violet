@@ -1,0 +1,128 @@
+Standard Drum Kit
+Piano
+Modulated Synth 
+EMPTY
+E Piano 1 64_249_0_188
+E Piano 2 255_204_77_246
+Harpsichord
+E Piano 1 255_249_0_165
+E Piano 2  255_204_77_246
+Glockenspiel
+EMPTY
+EMPTY
+EMPTY
+Xylophone
+Tubular Bells
+Synth Square (Direct Sound)
+percussive organ 128_160_175_165
+Percussive Organ 255_0_255_127
+Percussive Organ 37_165_103_127
+Church Organ
+Reed Organ
+Accordion 64_188_108_165
+Accordion 85_137_180_204
+EMPTY
+Accustic Guitar (nylon) 255_249_25_76
+Acoustic Guitar (steel) 64_195_103_220
+Acoustic Guitar (nylon) 128_249_25_127
+EMPTY
+EMPTY
+Low E-Guitar 128_0_255_214
+Distortion Guitar 255_0_255_206
+E-Guitar Harmonics
+Low E-Guitar  255_0_255_127
+Electric Bass (Finger)
+Distortion Guitar 255_0_255_127
+Fretless Bass
+EMPTY
+EMPTY
+Synth Bass 255_252_0_115
+Synth Bass 128_188_77_115
+Violin
+EMPTY
+Cello
+EMPTY
+EMPTY
+Pizzicato Strings
+Orchestral Strings
+Timpani 255_0_180_246
+Timpani 255_127_154_235
+Timpani 255_246_0_226
+Timpani 255_0_193_76
+EMPTY
+Timpani with Hit
+Voice Oohs 85_0_156_165
+Voice Oohs 255_0_255_0
+EMPTY
+Trumpet
+EMPTY
+Tuba
+Ship Horn ?
+French Horn
+EMPTY
+E-Guitar 255_0_255_209
+E-Guitar 255_165_180_165
+EMPTY
+EMPTY
+EMPTY
+EMPTY
+Oboe
+English Horn
+EMPTY
+EMPTY
+EMPTY
+Flute 255_127_231_127
+Flute 255_0_255_165
+Pan Flute
+EMPTY
+EMPTY
+Whistle 255_0_255_127
+Whistle 43_76_103_216
+Square 1 Duty 12%
+Square 1 Duty 25%
+Square 1 Duty 50%
+Square 1 Duty 75%
+Square 2 Duty 12%
+Square 2 Duty 25%
+Square 2 Duty 50%
+Square 2 Duty 75%
+EMPTY
+EMPTY
+EMPTY
+EMPTY
+EMPTY
+Hit SFX
+Bass Piano 255_165_103_235
+Bass Piano 128_204_51_242
+EMPTY
+EMPTY
+EMPTY
+EMPTY
+pw_Square_50_0_0_15_0
+pwA_0_1_12_0
+pwB_7_15_0_0
+pwC_7_15_0_0
+pwD_0_0_12_0
+pwE_0_7_15_0
+pwF_0_7_15_0
+pwG_0_7_15_1
+pwH_0_7_15_0
+pwI_0_7_15_0
+pwJ_0_7_15_1
+pwK_0_7_15_2
+EMPTY
+EMPTY
+Steel Drum
+EMPTY
+EMPTY
+EMPTY
+EMPTY
+EMPTY
+Drum Kit FX
+Drum Kit Unknown 1
+Drum Kit Unknown 2
+EMPTY
+Clapping
+Noise2_Rough_0_0_15_0
+Noise2_Fine_0_2_6_0
+Noise2_Fine_0_1_3_2

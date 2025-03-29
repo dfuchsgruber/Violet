@@ -2,19 +2,19 @@
 	.global str_intro_board_0
 
 	str_intro_board_0:
-		.string "Wilkommen in Theto, der Welt von\nPokémon Violet!\nMein Name ist Wodka, der\nEntwickler des Spiels.\nVor dir liegt ein legendäres\nAbenteuer voller Geheimnisse,\nVerschwörungen und Helden.\nRuhm und Ehre erwarten dich!"
+		.string "Willkommen in der Theto Region!\nVor dir liegt ein legendäres Abenteuer\nvoller Herausforderungen und\nGeheimnisse. Ruhm und Ehre erwarten\nden Trainer, der sich ihnen\nstellt und triumphiert!"
 
 
 	.global str_intro_board_1
 
 	str_intro_board_1:
-		.string "Auf deinem Weg wirst du vielen\nPersonen begegnen und einige unter\nihnen schon bald zu deinen engsten\nFreunden zählen können.\nAuch wirst du aus den\nzahlreichen Pokemon\neine Truppe von treuen\nGefährten zusammenstellen können."
-
+		.string "Auf deinem Weg wirst du vielen\nPersonen begegnen und einige von ihnen\nschon bald zu deinen engsten\nFreunden zählen können.\nUnd auch zahlreiche Pokémon\nwerden dich als verlässliche\nGefährtenauf deinem Abenteuer\nunterstützen."
+		
 
 	.global str_intro_board_2
 
 	str_intro_board_2:
-		.string "Doch sei auf der Hut! Nicht immer\nsind die Dinge, wie sie scheinen.\nAuch bösartige Gestalten werden\ndir auf deinem Weg begegnen.\nEine finstere Gruppe treibt\nihr Unwesen und bedroht\ndas Land, während rebel-\nlische Kräfte Theto erschüttern."
+		.string "Doch sei auf der Hut! Nicht alle,\ndie dir begegnen, sind deine Freunde.\nEine Gruppe seltsamer Gestalten treibt\nseit kurzer Zeit ihr Unwesen in Theto.\nUnd rebellische Kräfte\nschwächen die Regierung\nder Pokémon Liga. Wirst\ndu dich ihnen entgegenstellen?"
 
 
 	.global str_intro_prof_0
@@ -74,7 +74,7 @@
 	.global str_intro_prof_7
 
 	str_intro_prof_7:
-		.string "Dies ist mein Sohn, ein ziemlicher\nHitzkopf!\pSeit eurer frühsten Kindheit seid\nihr unzertrennliche, beste Freunde.\pWollen wir dich einmal auf die\nProbe stellen.\pWie war noch gleich sein Name?"
+		.string "Dies ist mein Sohn, ein ziemlicher\nHitzkopf!\pSeit ich denken kann seid\nihr beiden unzertrennlich.\pWollen wir dich einmal auf die\nProbe stellen.\pWie war noch gleich sein Name?"
 
 
 	.global str_intro_prof_8
@@ -92,7 +92,7 @@
 	.global str_intro_prof_10
 
 	str_intro_prof_10:
-		.string "PLAYER!\nDeine Reise in die sagenhafte\lRegion Theto beginnt nun endlich!\pAuf deiner langen Straße des\nLernens wirst du Bekanntschaften\lschließen, Feinde bezwingen und\lüber dich hinauswachsen.\pBis zur Spitze wird dich dein\nEhrgeiz bringen!\pDas ist dein Traum!\nLebe ihn!\p"
+		.string "PLAYER!\nDeine Reise in die rätselhafte\lRegion Theto beginnt nun endlich!\pAuf deiner langen Straße des\nLernens wirst du Bekanntschaften\lschließen, Feinde bezwingen und\lüber dich hinauswachsen.\pBis zur Spitze wird dich dein\nEhrgeiz bringen!\pDas ist dein Traum!\nLebe ihn!\p"
 
 
 	.global str_player_std_new_name

@@ -786,4 +786,8 @@ const song song_table[] = {
 	[MUS_VIOLET_HQ2] = {mus_violet_hq2, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	[MUS_VIOLET_ENCOUNTER_2] = {mus_violet_encounter3, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	[MUS_VIOLET_ELITE] = {mus_violet_battle2_elite, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	[MUS_CLOUDS_WILD_BATTLE] = {mus_cloud_wild_battle2, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	[MUS_CLOUDS_TRAINER_BATTLE] = {mus_clouds_trainer_battle, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	[MUS_CLOUDS_SILENT] = {mus_clouds_silent, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	[MUS_ROUTE_Y] = {mus_route_y, SONG_TYPE_SONG, SONG_TYPE_SONG},
 };

@@ -107,6 +107,12 @@ Life Quest:
 
 ## Devin
 
+Past:
+    - trained by Faun, but egoistic and overambitious
+    - together with his wife (name=?, maybe she was an Elite 4 as well), he fought in a battle and his wife sacrifed herself to save him
+    - 
+
+
 ## Larissa
 
 # Gym Leaders
