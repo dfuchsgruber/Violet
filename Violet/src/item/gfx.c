@@ -1,3 +1,4 @@
+#include "constants/items.h"
 #include "types.h"
 #include "item/item.h"
 #include "item/gfx.h" 
@@ -449,6 +450,7 @@ static const item_gfx_pair item_gfx_pairs[] = {
     [ITEM_REGULAER_PFLASTER] = {.gfx = gfx_item_reg_pflasterTiles, .pal = gfx_item_reg_pflasterPal},
     [ITEM_FAEHIGK_KAPSEL] = {.gfx = gfx_item_faehigkeit_kapselTiles, .pal = gfx_item_faehigkeit_kapselPal},
     [ITEM_KANDISSCHELIFE] = {.gfx = gfx_item_kandisschleifeTiles, .pal = gfx_item_kandisschleifePal},
+    [ITEM_GRADUIERTENHUT] = {.gfx = gfx_item_graduate_hatTiles, .pal = gfx_item_graduate_hatPal},
 };
 
 const u8 *item_get_resource(u16 item_idx, u8 get_palette) {

@@ -148,6 +148,14 @@ int battle_base_damage_calculate(battler *attacker, battler *defender, u32 move,
         spDefense = (150 * spDefense) / 100;
     if (attackerHoldEffect == HOLD_EFFECT_THICK_CLUB && (attacker->species == POKEMON_TRAGOSSO || attacker->species == POKEMON_KNOGGA))
         attack *= 2;
+    if (attackerHoldEffect == HOLD_EFFECT_GRADUATE_HAT && attacker->level < defender->level){ 
+        attack += defender->level - attacker->level;
+        spAttack += defender->level - attacker->level;
+    }
+    if (defenderHoldEffect == HOLD_EFFECT_GRADUATE_HAT && defender->level < attacker->level){ 
+        defense += attacker->level - defender->level;
+        spDefense += attacker->level - defender->level;
+    }
     if (defender->ability == SPECKSCHICHT && (type == TYPE_FEUER || type == TYPE_EIS))
         spAttack /= 2;
     if (attacker->ability == UEBEREIFER)

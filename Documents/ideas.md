@@ -1,3 +1,13 @@
+# ~ 10 years prior
+- Devin was travelling to install his empire of trade etc. together with his wife, Blaise's mother
+- They scammed people from the [Kingdom of Battle (change name)]
+- The trainers from the [Kingdom of Battle] retaliated and attacked Theto
+- Devin's wife tried to fight them off, but died in this battle
+- Devin singlehandedly fought them off as revenge and *is now a hero of the Theto* region
+- Blaise rembembers his mom dying and blames Devin
+
+
+
 ### Island in the South (discard, doesnt advance the story)
 
 - Punk group holds an island hostage
@@ -41,3 +51,4 @@
     - PLAYER and Mistral are his children
         - He believes them to be "chosen" ones
     
+

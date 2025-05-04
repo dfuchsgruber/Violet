@@ -109,8 +109,11 @@ Life Quest:
 
 Past:
     - trained by Faun, but egoistic and overambitious
-    - together with his wife (name=?, maybe she was an Elite 4 as well), he fought in a battle and his wife sacrifed herself to save him
-    - 
+    - controls most of the trade (legal and illegal) in Theto
+    - celebrated as a hero for fending off the invasion of the [Kingdom of Battle]
+        - even though he was responsible for it
+        - Duality: Public perception of him is very good, but he is involved in crime in Theto
+    
 
 
 ## Larissa
@@ -147,8 +150,17 @@ Past:
     - Share same mother
 
 ## Felix
+- looks up to authorities, e.g. his grandpa Faun
+- first wants to become a police officer like his dad
+    - Backstory here?
+- after failing to dismantle Devin and learning about the corruption in the police, joins the revolution
+    - there, he uses Albus as a new role model
+        - again he ignores his flaws (mainly that Albus has a selfish interest in establishing himself as a new Champion)
+- Seeing how the revolution fails, he admits he wasn't taking the police seriously and that switching sides was lazy
+    - He returns to the police and attempts to reform their corrupt system
+        - That can be his post-game plotline, e.g. tearing down the remains of Devin's empire
 
-## Blaise (temporarily revolutionaries)
+## Blaise
 
 ## May (temporarily Team V)
 

@@ -1791,6 +1791,10 @@ static const u8 str_item_kandisschleife[] = LANGDEP(
 	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverstärkt Fee-Attacken."),
 	PSTRING("An item to be held by a Pokémon.\nA seed imbued with life that boosts\nthe power of Fairy-type moves.")
 );
+static const u8 str_item_graduiertenhut[] = LANGDEP(
+	PSTRING("Erhöht Offensiv- und Defensiv-\nWerte, wenn Träger niedrigeres Level\nals Gegner hat."),
+	PSTRING("Raises offensive and defensive\nstats when the holder is at a\nlower level than the opponent.")
+);
 
 const item items[] = {
 	{
@@ -8254,6 +8258,13 @@ const item items[] = {
 		.description = str_item_kandisschleife, .pocket = POCKET_ITEMS,
 		.type = 4, .field_usage = item_field_function_print_string_can_not_be_used,
 		.holding_effect_id = HOLD_EFFECT_FAIRY_POWER, .holding_effect_param = 20,
+	},
+	[ITEM_GRADUIERTENHUT] = {
+		.name = LANGDEP(PSTRING("Abschlusshut"), PSTRING("Grad-Hat")),
+		.index = ITEM_GRADUIERTENHUT,
+		.description = str_item_graduiertenhut, .pocket = POCKET_ITEMS,
+		.type = 4, .field_usage = item_field_function_print_string_can_not_be_used,
+		.holding_effect_id = HOLD_EFFECT_GRADUATE_HAT,
 	}
 };
 

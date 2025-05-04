@@ -4,7 +4,10 @@ from PIL import Image
 import os
 from agb import image as agbimage
 from agb import palette as agbpalette
+from pymap.gui.event.event_to_image import EventImage
+from pymap.gui.render import pack_colors
 import struct
+import functools
 
 base = os.environ.get("BASEROM") or './base/bprd.gba'
 sprite_table = 0x39FC74
@@ -153,6 +156,17 @@ tutor_crystal_images = {
     'TYPE_UNLICHT' : 'asset/gfx/overworld/tutor_crystal/gfx_tutor_crystal_dark.png',
 }
 
+def make_hashable(obj):
+    """Convert a dictionary or any mutable object into a hashable one."""
+    if isinstance(obj, dict):
+        # Sort keys to make order irrelevant, then recursively make values hashable
+        return frozenset((key, make_hashable(value)) for key, value in obj.items())
+    elif isinstance(obj, list):
+        # Recursively handle lists, use tuple because lists are mutable
+        return tuple(make_hashable(item) for item in obj)
+    else:
+        # Base case: return the object itself if it's not mutable (like an int or string)
+        return obj
 
 class Event_to_image:
     """ Class to lazily load the images. """
@@ -162,7 +176,12 @@ class Event_to_image:
     def event_to_image(self, event, event_type, project):
         """ Provides a pilow image for the event or None if no image is associated. """
         os.chdir(os.path.dirname(project.path)) # Use the project directory as cwd for paths
-        if event_type['datatype'] != 'event.person': return None
+        return self._event_to_image_internal(event, event_type)
+
+    def _event_to_image_internal(self, event, event_type) -> EventImage | None:
+        """ Provides a pilow image for the event or None if no image is associated. """
+        if event_type['datatype'] != 'event.person': 
+            return None
         try: 
             picture_idx = int(str(event['picture']), 0)
         except ValueError:
@@ -197,21 +216,27 @@ class Event_to_image:
             else:
                 return None
             picture_idx = path
+
+        
         if picture_idx in self.images and self.images[picture_idx] is not None:
             image = self.images[picture_idx]
         elif picture_idx in picture_idx_to_png:
             # Use the hard assignment table in order to provide images
             image, palette = agbimage.from_file(picture_idx_to_png[picture_idx])
-            image = image.to_pil_image(palette.to_pil_palette(), transparent=0)
+            palettes = pack_colors([palette.to_data()])
+            image = image.to_rgba(palettes[0])
             if picture_idx in spritesheet_images:
-                image = image.crop(spritesheet_images[picture_idx])
+                x0, y0, x1, y1 = spritesheet_images[picture_idx]
+                image = image[y0:y1, x0:x1]
         elif isinstance(picture_idx, str):
             path = picture_idx
             if not os.path.exists(path):
                 return None
             image, palette = agbimage.from_file(path)
-            image = image.to_pil_image(palette.to_pil_palette(), transparent=0)
-            image = image.crop(box)
+            palettes = pack_colors([palette.to_data()])
+            image = image.to_rgba(palettes[0])
+            x0, y0, x1, y1 = box
+            image = image[y0:y1, x0:x1]
         else:
             # Use the rom to retrieve sprites
             if picture_idx in range(152):
@@ -234,12 +259,13 @@ class Event_to_image:
                 image = agbimage.Image(rom[gfx_offset : gfx_offset + (width * height // 2)], width, height, depth=4)
                 palette = agbpalette.from_data(rom[pal_offset : pal_offset + 16 * 2])
                 # print(f'{hex(gfx_offset)}, {hex(pal_offset)}, {picture_idx}, {pal_tag}')
-                image = image.to_pil_image(palette.to_pil_palette(), transparent=0)
+                palettes = pack_colors([palette.to_data()])
+                image = image.to_rgba(palettes[0])
             else:
                 return None
         self.images[picture_idx] = image
         # Return shift of upper left corner of the image
-        width, height = image.size
+        height, width = image.shape[:2]
         horizontal_shift = 8 -  width // 2 # Center align horizontally
         vertical_shift = 16 - height # Align such that the bottom line is aligned with the block
         return image, horizontal_shift, vertical_shift

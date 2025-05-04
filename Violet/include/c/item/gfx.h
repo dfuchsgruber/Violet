@@ -919,5 +919,7 @@ extern const LZ77COMPRESSED gfx_item_unbekannter_samenTiles;
 extern const LZ77COMPRESSED gfx_item_unbekannter_samenPal;
 extern const LZ77COMPRESSED gfx_item_kandisschleifeTiles;
 extern const LZ77COMPRESSED gfx_item_kandisschleifePal;
+extern const LZ77COMPRESSED gfx_item_graduate_hatTiles;
+extern const LZ77COMPRESSED gfx_item_graduate_hatPal;
 
 #endif

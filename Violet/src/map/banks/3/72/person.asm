@@ -3,6 +3,7 @@
 .include "callstds.s"
 .include "mugshot.s"
 .include "overworld_script.s"
+.include "flags.s"
 
 .global ow_script_map_3_72_person_5
 .global ow_script_map_3_72_person_2
@@ -28,6 +29,26 @@ before_test_blaise:
 loadpointer 0x0 str_before_test_blaise
 show_mugshot MUGSHOT_BLAISE MUGSHOT_RIGHT MSG_FACE
 end
+
+
+ow_script_trainer_school_female_teacher:
+	checkflag FLAG_TRAINERSCHOOL_GRADUATION_HAT
+	gotoif EQUAL after_receive_hat
+
+
+
+after_receive_hat:
+	loadpointer 0 str_after_receive_hat
+	callstd MSG_FACE
+	end
+
+.ifdef LANG_GER
+str_after_receive_hat:
+	.autostring 35 2 "Fauns Schule genießt in der ganzen Region einen hervorragenden Ruf.\pAls Lehrerin ist es nicht immer leicht, den Anforderungen gerecht zu werden.\pAber ich gebe mein Bestes!\pIch hoffe, dass du auch dein Bestes gibst!"
+.elseif LANG_EN
+str_after_receive_hat:
+	.autostring 35 2 "Faun's school has a great reputation all over the region.\pAs a teacher, it is not always easy to meet the requirements.\pBut I do my best!\pI hope you do your best too!"
+.endif
 
 .ifdef LANG_GER
 

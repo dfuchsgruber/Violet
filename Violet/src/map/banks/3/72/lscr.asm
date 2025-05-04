@@ -33,31 +33,26 @@ loadpointer 0x0 str_rival_to_player
 show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT emotion=MUGSHOT_ANNOYED
 applymovement 0x1 mov_rival_to_place
 waitmovement 0
+hidesprite 1
 applymovement 0xFF mov_step_up
 waitmovement 0
 addvar STORY_PROGRESS 1
+setvar TRAINERSCHOOL_PROGRESS 3
 releaseall
 end
 
 mov_rival_to_place:
-.byte STEP_UP_FAST
 .byte STEP_LEFT_FAST
 .byte STEP_LEFT_FAST
 .byte STEP_UP_FAST
 .byte STEP_UP_FAST
-.byte STEP_LEFT_FAST
-.byte STEP_LEFT_FAST
-.byte STEP_LEFT_FAST
-.byte STEP_LEFT_FAST
-.byte STEP_LEFT_FAST
-.byte STEP_LEFT_FAST
-.byte STEP_LEFT_FAST
-.byte STEP_LEFT_FAST
-.byte STEP_LEFT_FAST
-.byte STEP_LEFT_FAST
-.byte STEP_LEFT_FAST
-.byte STEP_LEFT_FAST
-.byte LOOK_UP
+.byte STEP_UP_FAST
+.byte STEP_UP_FAST
+.byte STEP_RIGHT_FAST
+.byte STEP_RIGHT_FAST
+.byte STEP_RIGHT_FAST
+.byte STEP_UP_FAST
+.byte STEP_UP_FAST
 .byte STOP
 
 mov_step_up:

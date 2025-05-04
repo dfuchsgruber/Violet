@@ -85,10 +85,18 @@
 
 
 
+
 ## Devin "Saga"
-- Devin runs a casino (?)
-- Proxy for some illegal activity (?)
-- Somehow Blaise should confront his father here and lose (or maybe that should happen earlier?)
-- Here, Blaise should also join the revolution
-- Maybe, we can introduce the commander-in-chief of the revolution
-- Devin runs the "advocates", who can bail out any criminial by fighting
+
+
+Important plot points:
+
+- Felix versucht die Machenschaften von Devin aufzudecken
+    - Devin wird aber von der Polizei und Narzissa von den E4 gedeckt: Er ist ein Volksheld und ein Symbol für die Stabilität in Theto und daher unantastbar. Das Übel wird in Kauf genommen. Er kann Theto verteidigen (wie bereits gesehen im Kampf gegen die [Kindgom of Battle] Trainer)
+    - Das desillusioniert Felix, sodass dieser sich schließlich der Revolution anschließt
+
+- Blaise wird 1x von Devin besiegt, schließt sich aber *nicht* der Revolution an
+    - Später besiegt Blaise Devin am Höhepunkt des Deoxys Plot
+        - Soll dieser dabei sterben? Blaise als E4 Mitgled, das ihn ersetzt?
+
+- Devin dafür verantwortlich, dass Team Violet das Portal gelingt? Beschafft er ihnen das Aquaherz?
