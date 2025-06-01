@@ -8,6 +8,7 @@
 .global ow_script_map_4_1_sign_0
 .global ow_script_0x89a168
 .global ow_script_debugger
+.global ow_script_bookshelf_player
 
 ow_script_0x8000a5:
 lock
@@ -25,6 +26,20 @@ str_0x8000b2:
 .elseif LANG_EN
 str_0x8000b2:
     .autostring 34 2 "I am way too old for computer games.\pOutside the real world is waiting for me!"
+.endif
+
+
+ow_script_bookshelf_player:
+loadpointer 0 str_bookshelf
+callstd MSG_SIGN
+end
+
+.ifdef LANG_GER
+str_bookshelf:
+    .autostring 34 2 "Das ist ein Regal voller Bücher.\pViele hat dir Mama geschenkt, aber du hast sie nie gelesenDOTS"
+.elseif LANG_EN
+str_bookshelf:
+    .autostring 34 2 "This is a shelf full of books.\pMany were given to you by Mom, but you never read themDOTS"
 .endif
 
 

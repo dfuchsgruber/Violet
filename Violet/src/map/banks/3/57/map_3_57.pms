@@ -435,8 +435,8 @@
 						"in_connection": 0
 					},
 					"argument": 0,
-					"x": "37",
-					"y": "14",
+					"x": "39",
+					"y": "8",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -618,14 +618,14 @@
 					"flag": "0"
 				},
 				{
-					"x": "35",
-					"y": "11",
+					"x": "37",
+					"y": "10",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"script": "0",
 						"item": {
-							"item": "ITEM_BELEBER",
+							"item": "ITEM_TRANK",
 							"flag": 7,
 							"amount": 1,
 							"chunk": 0

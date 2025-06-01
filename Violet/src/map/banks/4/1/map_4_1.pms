@@ -2,11 +2,41 @@
 	"data": {
 		"footer": "map_footer_2",
 		"events": {
-			"person_cnt": 0,
+			"person_cnt": 1,
 			"warp_cnt": 2,
 			"trigger_cnt": 0,
-			"signpost_cnt": 2,
-			"persons": [],
+			"signpost_cnt": 4,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "92",
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "9",
+					"y": "2",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_graduate_hat",
+					"flag": "FLAG_GRADUATE_HAT | 0x8000",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0,
+						"move_tutor": 0
+					}
+				}
+			],
 			"warps": [
 				{
 					"x": "4",
@@ -72,6 +102,52 @@
 						}
 					},
 					"flag": "0"
+				},
+				{
+					"x": "1",
+					"y": "2",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_bookshelf_player",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "2",
+					"y": "2",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_bookshelf_player",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
 				}
 			]
 		},

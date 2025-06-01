@@ -260,6 +260,7 @@ after_battle:
 	checksound
 	setflag TRAINERSCHOOL_FAUN_OUTSIDE
 	clearflag (FLAG_TRAINERSCHOOL_FAUN_INSIDE | 0x8000)
+	clearflag (FLAG_GRADUATE_HAT | 0x8000)
 	setvar TRAINERSCHOOL_PROGRESS 4 
 	releaseall
 	end
