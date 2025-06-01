@@ -186,6 +186,7 @@ extern "C" {
     extern const unsigned short gfx_mug_faun_angryTiles[];
     extern const unsigned short gfx_mug_faun_seriousTiles[];
     extern const unsigned short gfx_mug_faun_shockedTiles[];
+    extern const unsigned short gfx_mug_faun_happyTiles[];
     extern const unsigned short gfx_mug_faunPal[];
     extern const unsigned short gfx_mug_eliseTiles[];
     extern const unsigned short gfx_mug_elise_angryTiles[];

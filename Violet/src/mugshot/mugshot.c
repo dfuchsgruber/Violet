@@ -1,3 +1,4 @@
+#include "constants/mugshot_emotions.h"
 #include "types.h"
 #include "mugshot.h" 
 #include "oam.h"
@@ -130,6 +131,7 @@ const mugshot mugshots[] = {
 			[MUGSHOT_ANGRY] = gfx_mug_faun_angryTiles,
 			[MUGSHOT_SERIOUS] = gfx_mug_faun_seriousTiles,
 			[MUGSHOT_SHOCKED] = gfx_mug_faun_shockedTiles,
+			[MUGSHOT_HAPPY] = gfx_mug_faun_happyTiles,
 			}, 
 		gfx_mug_faunPal, str_mug_faun},
     [MUGSHOT_ELISE] = {

@@ -11,178 +11,29 @@
 .global ow_script_map_3_72_person_3
 .global ow_script_map_3_72_person_0
 .global ow_script_map_3_72_person_4
-.global ow_script_trainerschool_rival
 .global ow_script_trainerschool_felix
 .global ow_script_trainerschool_maike
 .global ow_script_trainerschool_blaise
 .global ow_script_trainerschool_faun
-
-
-ow_script_trainerschool_blaise:
-compare TRAINERSCHOOL_PROGRESS 2
-gotoif LESS before_test_blaise
-loadpointer 0x0 str_after_test_blaise
-show_mugshot MUGSHOT_BLAISE MUGSHOT_RIGHT MSG_FACE emotion=MUGSHOT_RUMINATIVE
-end
-
-before_test_blaise:
-loadpointer 0x0 str_before_test_blaise
-show_mugshot MUGSHOT_BLAISE MUGSHOT_RIGHT MSG_FACE
-end
-
-
-ow_script_trainer_school_female_teacher:
-	checkflag FLAG_TRAINERSCHOOL_GRADUATION_HAT
-	gotoif EQUAL after_receive_hat
-
-
-
-after_receive_hat:
-	loadpointer 0 str_after_receive_hat
-	callstd MSG_FACE
-	end
-
-.ifdef LANG_GER
-str_after_receive_hat:
-	.autostring 35 2 "Fauns Schule genießt in der ganzen Region einen hervorragenden Ruf.\pAls Lehrerin ist es nicht immer leicht, den Anforderungen gerecht zu werden.\pAber ich gebe mein Bestes!\pIch hoffe, dass du auch dein Bestes gibst!"
-.elseif LANG_EN
-str_after_receive_hat:
-	.autostring 35 2 "Faun's school has a great reputation all over the region.\pAs a teacher, it is not always easy to meet the requirements.\pBut I do my best!\pI hope you do your best too!"
-.endif
-
-.ifdef LANG_GER
-
-str_before_test_blaise:
-    .autostring 35 2 "DOTS DOTS DOTS"
-str_after_test_blaise:
-	.autostring 35 2 "Wie kommt dieser verrückte alte Knacker denn auf so einen absurden Test?"
-
-.elseif LANG_EN
-str_before_test_blaise:
-    .autostring 35 2 "DOTS DOTS DOTS"
-str_after_test_blaise:
-	.autostring 35 2 "How on earth did this crazy old geezer come up with an absurd test like that?"
-
-.endif
-
-ow_script_trainerschool_faun:
-compare TRAINERSCHOOL_PROGRESS 2
-gotoif LESS before_test_faun
-call after_test_faun
-show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT MSG_FACE
-end
-
-@ Before the written test
-before_test_faun:
-	checkgender
-    compare LASTRESULT 0x0
-    callif EQUAL before_test_m
-    callif NOT_EQUAL before_test_f
-	show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT MSG_FACE
-	end
-
-before_test_m:
-	loadpointer 0x0 str_before_test_m
-	return
-
-before_test_f:
-	loadpointer 0x0 str_before_test_f
-	return
-
-after_test_faun:
-	checkgender
-	compare LASTRESULT 0x0
-	callif EQUAL after_test_m
-	callif NOT_EQUAL after_test_f
-	return
-
-after_test_m:
-	loadpointer 0x0 str_after_test_m
-	return
-
-after_test_f:
-	loadpointer 0x0 str_after_test_m
-	return
-
-.ifdef LANG_GER
-str_before_test_m:
-	.autostring 35 2 "PLAYER, du Schlafmütze!\nHehe!\pHusch, auf deinen Platz, oder du fällst durch, Junge!"
-str_before_test_f:
-	.autostring 35 2 "PLAYER, du Schlafmütze!\nHehe!\pHusch auf deinen Platz, oder du fällst durch, Mädchen!"
-str_after_test_m:
-	.autostring 35 2 "Wie?\nDu fandest den Test unfair?\pAch ja?\nFragen, auf die man die Antworten gar nicht hätte wissen können?\pDenkst du etwa, dass man als Trainer die Antworten auf alle Fragen immer kennt?"
-
-.elseif LANG_EN
-str_before_test_m:
-	.autostring 35 2 "PLAYER, you sleepy head!\nHehe!\pTake seat, boy!"
-str_before_test_f:
-	.autostring 35 2 "PLAYER, you sleepy head!\nHehe!\pTake a seat, girl!"
-str_after_test_m:
-	.autostring 35 2 "Come again?\nYou think the test was unfair?\pIs that so?\nQuestion you couldn't have known the answer to?\pDo you think that as a trainer you will always know the answer to everything?"
-
-.endif
-
-ow_script_trainerschool_felix:
-compare TRAINERSCHOOL_PROGRESS 2
-gotoif LESS before_test_felix
-loadpointer 0x0 str_after_test_felix
-show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT MSG_FACE emotion=MUGSHOT_ANGRY
-end
-
-before_test_felix:
-loadpointer 0x0 str_before_test_felix
-show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT MSG_FACE emotion=MUGSHOT_ANNOYED
-end
-
-.ifdef LANG_GER
-
-str_before_test_felix:
-    .autostring 35 2 "PLAYERDOTS\pGerade heute hier zu spät aufkreuzen.\pDu hast vielleicht NervenDOTS"
-str_after_test_felix:
-	.autostring 35 2 "Was für ein unsinnger Test!\pWer soll solche Fragen denn beantworten können?\pWas hat sich Opi dabei nur gedachtDOTS"
-
-.elseif LANG_EN
-
-str_before_test_felix:
-    .autostring 35 2 "PLAYERDOTS\pBeing late on a day like this!\pYou really got some nervesDOTS"
-str_after_test_felix:
-	.autostring 35 2 "What a stupid test!\pWho is even able to answer question like that?\pWhat was grandpa thinking?"
-.endif
-
-ow_script_trainerschool_maike:
-compare TRAINERSCHOOL_PROGRESS 2
-gotoif LESS before_test_may
-loadpointer 0x0 str_after_test_may
-show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE emotion=MUGSHOT_SAD
-end
-
-before_test_may:
-loadpointer 0x0 str_before_test_may
-show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE emotion=MUGSHOT_SCARED
-end
-
-.ifdef LANG_GER
-
-str_before_test_may:
-    .autostring 35 2 "Ich binDOTS\nDOTSso unvorbereitetDOTS\pDiesen Test werde ich niemals bestehenDOTS"
-str_after_test_may:
-	.autostring 35 2 "SchniefDOTS\pBei diesen Fragen bin ich mir ganz sicher, durchgefallen zu seinDOTS"
-
-.elseif LANG_EN
-
-str_before_test_may:
-    .autostring 35 2 "I am just soDOTS\nDOTSpoorly prepearedDOTS\pI will never pass that testDOTS"
-str_after_test_may:
-	.autostring 35 2 "SobDOTS\pAfter questions like these I am just certain that I failed the examDOTS"
-
-.endif
-
+.global ow_script_trainerschool_faun_inside
 
 ow_script_map_3_72_person_5:
 loadpointer 0x0 str_0x89f1c6
 callstd MSG_FACE
 end
 
+ow_script_trainerschool_faun_inside:
+	loadpointer 0 str_faun_inside
+	show_mugshot MUGSHOT_FAUN MUGSHOT_RIGHT message_type=MSG_FACE
+	end
+
+.ifdef LANG_GER
+str_faun_inside:
+	.autostring 34 2 "PLAYER!\pWie schlägst du dich?\pDu warst einer meiner faszinierendsten Schüler.\pDu hast wirklich eine Gabe für Pokémonkämpfe.\pIch bin mir sicher, dass du für Großes bestimmt bist!"
+.elseif LANG_EN
+str_faun_inside:
+	.autostring 34 2 "PLAYER!\pHow are you doing?\pYou were one of my most fascinating students.\pYou really have a gift for Pokémon battles.\pI am sure you are destined for greatness!"
+.endif
 
 .ifdef LANG_GER
 
@@ -274,29 +125,4 @@ str_0x8a0763:
 str_0x8a0763:
     .autostring 34 2 "Mein Pokémon has a high attack stat.\pThat means its physical attacks are stronger."
 
-.endif
-
-ow_script_trainerschool_rival:
-compare TRAINERSCHOOL_PROGRESS 2
-gotoif LESS before_test_rival
-loadpointer 0x0 str_after_test_rival
-show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT MSG_FACE emotion=MUGSHOT_ANGRY
-end
-
-before_test_rival:
-loadpointer 0x0 str_before_test_rival
-show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT MSG_FACE emotion=MUGSHOT_ANNOYED
-end
-
-.ifdef LANG_GER
-
-str_before_test_rival:
-	.autostring 34 2 "Toll gemacht, PLAYER!\pWeil du so rumtrödeln musstest, haben wir eine Standpauke von Faun bekommen!"
-str_after_test_rival:
-	.autostring 34 2 "Was um alles in der Welt?\pWas waren das bitte für Fragen?"
-.elseif LANG_EN
-str_before_test_rival:
-	.autostring 34 2 "Jeez, PLAYER!\pBecause you dawdled arround Faun got super angry at us!"
-str_after_test_rival:
-	.autostring 34 2 "What in the world?\pWhat kind of questions were those even?"
 .endif

@@ -4136,7 +4136,7 @@ const trainer trainers[TRAINER_CNT] = {
 	0, // no dual battle
 	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_SUPER_EFFECTIVE,
 	0,
-	2, // pkmn cnt
+	ARRAY_COUNT(trainer_party_xb3), // pkmn cnt
 	0, 0, 0,
 	trainer_party_xb3
   },
@@ -4151,7 +4151,7 @@ const trainer trainers[TRAINER_CNT] = {
 	0, // no dual battle
 	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_SUPER_EFFECTIVE,
 	0,
-	2, // pkmn cnt
+	ARRAY_COUNT(trainer_party_xb4), // pkmn cnt
 	0, 0, 0,
 	trainer_party_xb4
   },
@@ -4166,7 +4166,7 @@ const trainer trainers[TRAINER_CNT] = {
 	0, // no dual battle
 	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_SUPER_EFFECTIVE,
 	0,
-	2, // pkmn cnt
+	ARRAY_COUNT(trainer_party_xb5), // pkmn cnt
 	0, 0, 0,
 	trainer_party_xb5
   },{

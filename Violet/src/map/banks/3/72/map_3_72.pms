@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_442",
 		"events": {
-			"person_cnt": 7,
+			"person_cnt": 8,
 			"warp_cnt": 2,
 			"trigger_cnt": 0,
 			"signpost_cnt": 2,
@@ -21,7 +21,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_trainerschool_rival",
+					"script": "0",
 					"flag": "TRAINERSCHOOL_RIVAL_INSIDE",
 					"field_D": 0,
 					"field_B": 0,
@@ -222,6 +222,35 @@
 					"script_std_and_in_connection": {
 						"script_std": 0,
 						"in_connection": "0"
+					}
+				},
+				{
+					"target_index": "8",
+					"picture": "103",
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "7",
+					"y": "30",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_trainerschool_faun_inside",
+					"flag": "FLAG_TRAINERSCHOOL_FAUN_INSIDE | 0x8000",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0,
+						"move_tutor": 0
 					}
 				}
 			],

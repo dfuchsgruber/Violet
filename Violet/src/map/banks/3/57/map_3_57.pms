@@ -2,9 +2,9 @@
 	"data": {
 		"footer": "map_footer_249",
 		"events": {
-			"person_cnt": 14,
+			"person_cnt": 15,
 			"warp_cnt": 4,
-			"trigger_cnt": 15,
+			"trigger_cnt": 7,
 			"signpost_cnt": 3,
 			"persons": [
 				{
@@ -74,17 +74,17 @@
 					"picture": 72,
 					"field_2": 0,
 					"x": "45",
-					"y": "16",
+					"y": "19",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_trainerschool_rival_outside",
-					"flag": "TRAINERSCHOOL_RIVAL_OUTSIDE | 0x8000",
+					"script": "ow_script_trainerschool_test_2",
+					"flag": "FLAG_TRAINERSCHOOL_PEOPLE_OUTSIDE",
 					"field_D": 0,
 					"field_B": 0,
 					"value": {
@@ -105,9 +105,9 @@
 					"picture": 79,
 					"field_2": 0,
 					"x": "46",
-					"y": "20",
+					"y": "16",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -115,7 +115,7 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_trainerschool_faun_outside",
-					"flag": "TRAINERSCHOOL_FAUN_OUTSIDE | 0x8000",
+					"flag": "TRAINERSCHOOL_FAUN_OUTSIDE",
 					"field_D": 0,
 					"field_B": 0,
 					"value": {
@@ -135,8 +135,8 @@
 					"target_index": 5,
 					"picture": 15,
 					"field_2": 0,
-					"x": "46",
-					"y": "20",
+					"x": "47",
+					"y": "18",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
@@ -146,7 +146,7 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_trainerschool_maike_outside",
-					"flag": "TRAINERSCHOOL_MAY_OUTSIDE | 0x8000",
+					"flag": "FLAG_TRAINERSCHOOL_PEOPLE_OUTSIDE",
 					"field_D": 0,
 					"field_B": 0,
 					"value": {
@@ -166,8 +166,8 @@
 					"target_index": 6,
 					"picture": 89,
 					"field_2": 0,
-					"x": "46",
-					"y": "20",
+					"x": "44",
+					"y": "18",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
@@ -177,7 +177,7 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_trainerschool_blaise_outside",
-					"flag": "TRAINERSCHOOL_BLAISE_OUTSIDE | 0x8000",
+					"flag": "FLAG_TRAINERSCHOOL_PEOPLE_OUTSIDE",
 					"field_D": 0,
 					"field_B": 0,
 					"value": {
@@ -197,8 +197,8 @@
 					"target_index": 7,
 					"picture": "70",
 					"field_2": 0,
-					"x": "45",
-					"y": "20",
+					"x": "43",
+					"y": "18",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
@@ -208,7 +208,7 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_trainerschool_felix_outside",
-					"flag": "TRAINERSCHOOL_FELIX_OUTSIDE | 0x8000",
+					"flag": "FLAG_TRAINERSCHOOL_PEOPLE_OUTSIDE",
 					"field_D": 0,
 					"field_B": 0,
 					"value": {
@@ -315,7 +315,7 @@
 					"target_index": "11",
 					"picture": "18",
 					"x": "39",
-					"y": "31",
+					"y": "32",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_RIGHT",
 					"behaviour_range": {
@@ -344,7 +344,7 @@
 					"target_index": "12",
 					"picture": "238",
 					"x": "39",
-					"y": "32",
+					"y": "33",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
@@ -419,6 +419,35 @@
 					"alert_radius": 0,
 					"script": 0,
 					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0,
+						"move_tutor": 0
+					}
+				},
+				{
+					"target_index": "15",
+					"picture": "95",
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "37",
+					"y": "14",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_cut_tree",
+					"flag": "10",
 					"value": {
 						"item": 0,
 						"species": 0,
@@ -508,84 +537,7 @@
 					"var": "STORY_PROGRESS"
 				},
 				{
-					"x": "37",
-					"y": "15",
-					"level": 0,
-					"field_5": 0,
-					"value": 0,
-					"script": "ow_script_trainerschool_lock_grass",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "TRAINERSCHOOL_ALLOWED_TO_ENTER_GRASS"
-				},
-				{
-					"x": "38",
-					"y": "14",
-					"level": 0,
-					"field_5": 0,
-					"value": 0,
-					"script": "ow_script_trainerschool_lock_grass",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "TRAINERSCHOOL_ALLOWED_TO_ENTER_GRASS"
-				},
-				{
-					"x": "39",
-					"y": "13",
-					"level": 0,
-					"field_5": 0,
-					"value": 0,
-					"script": "ow_script_trainerschool_lock_grass",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "TRAINERSCHOOL_ALLOWED_TO_ENTER_GRASS"
-				},
-				{
 					"x": "40",
-					"y": "13",
-					"level": 0,
-					"field_5": 0,
-					"value": 0,
-					"script": "ow_script_trainerschool_lock_grass",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "TRAINERSCHOOL_ALLOWED_TO_ENTER_GRASS"
-				},
-				{
-					"x": "41",
-					"y": "12",
-					"level": 0,
-					"field_5": 0,
-					"value": 0,
-					"script": "ow_script_trainerschool_lock_grass",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "TRAINERSCHOOL_ALLOWED_TO_ENTER_GRASS"
-				},
-				{
-					"x": "42",
-					"y": "12",
-					"level": 0,
-					"field_5": 0,
-					"value": 0,
-					"script": "ow_script_trainerschool_lock_grass",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "TRAINERSCHOOL_ALLOWED_TO_ENTER_GRASS"
-				},
-				{
-					"x": "43",
-					"y": "11",
-					"level": 0,
-					"field_5": 0,
-					"value": 0,
-					"script": "ow_script_trainerschool_lock_grass",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "TRAINERSCHOOL_ALLOWED_TO_ENTER_GRASS"
-				},
-				{
-					"x": "44",
 					"y": "17",
 					"level": 0,
 					"field_5": 0,
@@ -594,28 +546,6 @@
 					"field_A": 0,
 					"field_B": 0,
 					"var": "TRAINERSCHOOL_PROGRESS"
-				},
-				{
-					"x": "45",
-					"y": "20",
-					"level": 0,
-					"field_5": 0,
-					"value": "0",
-					"script": "ow_script_trainerschool_lock_exit",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "TRAINERSCHOOL_DONE"
-				},
-				{
-					"x": "46",
-					"y": "20",
-					"level": 0,
-					"field_5": 0,
-					"value": "0",
-					"script": "ow_script_trainerschool_lock_exit",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "TRAINERSCHOOL_DONE"
 				},
 				{
 					"x": "49",
@@ -627,6 +557,17 @@
 					"field_A": 0,
 					"field_B": 0,
 					"script": "ow_script_map_3_57_trigger_1"
+				},
+				{
+					"x": "46",
+					"y": "19",
+					"level": 0,
+					"field_5": 0,
+					"var": "TRAINERSCHOOL_PROGRESS",
+					"value": "3",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_trainerschool_test_2"
 				}
 			],
 			"signposts": [

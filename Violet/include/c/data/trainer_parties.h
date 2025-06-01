@@ -980,17 +980,17 @@ const trainer_pokemon trainer_party_xb8[] = {
 
 const trainer_pokemon trainer_party_xb3[] = {
 	{.level = 5, .species = POKEMON_WELUNO, .evs = {[STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 252, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
-	{.level = 5, .species = POKEMON_SCHIGGY, .evs = {[STAT_HP] = 252, [STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
+	//{.level = 5, .species = POKEMON_SCHIGGY, .evs = {[STAT_HP] = 252, [STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
 };
 
 const trainer_pokemon trainer_party_xb4[] = {
 	{.level = 5, .species = POKEMON_SEEKID, .evs = {[STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 252, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
-	{.level = 5, .species = POKEMON_BISASAM, .evs = {[STAT_HP] = 252, [STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
+	//{.level = 5, .species = POKEMON_BISASAM, .evs = {[STAT_HP] = 252, [STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
 };
 
 const trainer_pokemon trainer_party_xb5[] = {
 	{.level = 5, .species = POKEMON_LOCKSCHAL, .evs = {[STAT_HP] = 252, [STAT_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
-	{.level = 5, .species = POKEMON_GLUMANDA, .evs = {[STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 252, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_SCHEU}}},
+	//{.level = 5, .species = POKEMON_GLUMANDA, .evs = {[STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 252, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_SCHEU}}},
 };
 
 const trainer_pokemon trainer_party_xb9[] = {

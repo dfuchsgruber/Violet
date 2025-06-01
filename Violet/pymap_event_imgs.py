@@ -4,7 +4,7 @@ from PIL import Image
 import os
 from agb import image as agbimage
 from agb import palette as agbpalette
-from pymap.gui.event.event_to_image import EventImage
+from pymap.gui.map.tabs.events.event_to_image import EventImage
 from pymap.gui.render import pack_colors
 import struct
 import functools
