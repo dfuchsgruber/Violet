@@ -33,6 +33,8 @@ ow_script_trainerschool_outside_person_2:
 	end
 
 ow_script_trainerschool_rival_outside:
+	checkflag TRAINERSCHOOL_FAUN_OUTSIDE
+	gotoif 0 ow_script_trainerschool_test_2
 	loadpointer 0 str_rival_outside
 	show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT MSG_FACE
 	end

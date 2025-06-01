@@ -156,7 +156,6 @@ ow_script_trainerschool_test_2:
 	special SPECIAL_OVERWORLD_VIEWPORT_LOCK
 	loadpointer 0 str_rival_challange2
 	show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT emotion=MUGSHOT_HAPPY
-	goto after_rival_battle
 	compare STARTER_SELECTED 0
 	gotoif EQUAL plant_chosen
 	compare STARTER_SELECTED 1
