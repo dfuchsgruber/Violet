@@ -23,6 +23,8 @@
 ## Igva (call her differently? Irene?)
 - Convinced, that Albus will lead the E4 to a better system: Why
     - Does she need a "backstory" (prob something shallow) as a motivation?
+    - Yes: Her parent was incarcerated after being wrongly accued by Devin as a scapegoat (-> ties her nicely into the Devin plot)
+    - Goal: Wants to free them and take down Devin (E4)
     - something with the volcano?
 - Beliefs in people's participation
 - Kind-hearted
