@@ -17,7 +17,26 @@
 ### Prison Island
 
 - Lucky was freed there in the past by the revolutionaries and that's why he joined them
+- Could be a major culmination for the revolutionaries: Sb get's captured?
 
+
+
+### Orina City
+- Revolutionaries occupy Laz.Corp. to force them to stop polluting the lake / river etc?
+- Take Laz.Corp hostage
+- After PLAYER frees them, Igva appears:
+- Conflict that they did act without Albus' order
+- Inner conflict: Revos dont want to take orders, blabla
+
+### East of Orina City
+Maybe revamp to include polluted lake
+
+
+### Replacing the Icarus story
+- Maybe, Prof Tann gives Player access to the Cloud Island
+- Some side mission, where they discover the Map to Atlantea
+- Travel via air balloon?
+- Could be side quest to obtain the cloud to roam freely?
 
 
 # Cloud World
