@@ -138,10 +138,12 @@ Past:
 
 # Cloud (Side Quests)
 
-## Icarus
+## Icarus -> really needed? Prof. Tann seems ideal for this role
 - "trained" by Mistral
 - tried more to imitate him and also become and explorer
 - maybe we can add a "catchphrase" that he copied from Mistral (oder other mannerisms?)
+
+- 
 
 # Misc
 
@@ -173,6 +175,10 @@ Past:
 - Father to RIVAL
 - Life goal: Discover Atlantea
 - Archeologist
+
+- Absorbed in work; lives separate from his wife (who is in Amonia)
+- Great research advances in the ancient civilisation above the clouds
+    - could replace Icarus as a character?
 
 # Chrones
 
