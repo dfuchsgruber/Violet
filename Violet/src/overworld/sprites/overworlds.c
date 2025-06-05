@@ -2060,6 +2060,34 @@ const overworld_sprite overworld_painter = {
 	oam_rotscale_anim_table_null
 };
 
+static const graphic overworld_sprite_chimney_smoke_sprites[] = {
+	[0] = {.sprite = gfx_ow_chimney_smokeTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size=GRAPHIC_SIZE_4BPP(16, 32)},
+	[1] = {.sprite = gfx_ow_chimney_smokeTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size=GRAPHIC_SIZE_4BPP(16, 32)},
+	[2] = {.sprite = gfx_ow_chimney_smokeTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size=GRAPHIC_SIZE_4BPP(16, 32)},
+	[3] = {.sprite = gfx_ow_chimney_smokeTiles + 3 * GRAPHIC_SIZE_4BPP(16, 32), .size=GRAPHIC_SIZE_4BPP(16, 32)},	
+	[4] = {.sprite = gfx_ow_chimney_smokeTiles + 4 * GRAPHIC_SIZE_4BPP(16, 32), .size=GRAPHIC_SIZE_4BPP(16, 32)},
+	[5] = {.sprite = gfx_ow_chimney_smokeTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size=GRAPHIC_SIZE_4BPP(16, 32)},
+	[6] = {.sprite = gfx_ow_chimney_smokeTiles + 6 * GRAPHIC_SIZE_4BPP(16, 32), .size=GRAPHIC_SIZE_4BPP(16, 32)},
+	[7] = {.sprite = gfx_ow_chimney_smokeTiles + 7 * GRAPHIC_SIZE_4BPP(16, 32), .size=GRAPHIC_SIZE_4BPP(16, 32)},
+};
+
+static const gfx_frame gfx_animation_chimney_smoke[] = {
+	{.data = 0, .duration = 0}, {.data = 0, .duration = 8}, {.data = 1, .duration = 8}, 
+	{.data = 2, .duration = 8}, {.data = 3, .duration = 8}, {.data = 4, .duration = 8},
+	{.data = 5, .duration = 8}, {.data = 6, .duration = 8}, {.data = 7, .duration = 8},
+	{.data = GFX_ANIM_JUMP, .duration = 0},
+};
+
+static const gfx_frame *const gfx_animations_chimney_smoke[] = {gfx_animation_chimney_smoke};
+
+const overworld_sprite overworld_chimney_smoke = {
+	0xffff, 0x1100, 0x1102, 0x200,
+	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x0,
+	&ow_final_oam_16_32, &ow_formation_16_32,
+	gfx_animations_chimney_smoke, overworld_sprite_chimney_smoke_sprites, 
+	oam_rotscale_anim_table_null
+};
+
 //The overworld table
 const overworld_sprite *const overworld_sprites[] = {
     	&ow_hiro,
@@ -2275,6 +2303,7 @@ const overworld_sprite *const overworld_sprites[] = {
 	[191] = &overworld_yellow_gear,
 	[192] = &overworld_treasure_map,
 	[193] = &overworld_painter,
+	[194] = &overworld_chimney_smoke,
 
 	[OVERWORLD_SPRITE_TUTOR_CRYSTAL] = &ow_tutor_crystal_dummy,
 	[OVERWORLD_SPRITE_MISC] = &ow_misc_16_16,

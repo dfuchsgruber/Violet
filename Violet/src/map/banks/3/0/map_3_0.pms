@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_78",
 		"events": {
-			"person_cnt": 20,
+			"person_cnt": 21,
 			"warp_cnt": 4,
 			"trigger_cnt": 0,
 			"signpost_cnt": 4,
@@ -11,8 +11,8 @@
 					"target_index": 1,
 					"picture": 17,
 					"field_2": 0,
-					"x": "21",
-					"y": "8",
+					"x": "18",
+					"y": "7",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
@@ -589,6 +589,35 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "51",
+						"type": 0,
+						"move_tutor": 0
+					}
+				},
+				{
+					"target_index": "21",
+					"picture": "194",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_SCRIPT_NO_COLLISION",
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "15",
+					"y": "10",
+					"level": "4",
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
 						"type": 0,
 						"move_tutor": 0
 					}

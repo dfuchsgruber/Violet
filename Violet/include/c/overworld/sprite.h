@@ -1861,6 +1861,7 @@ extern const u8 gfx_ow_green_gearTiles[GRAPHIC_SIZE_4BPP(16, 16)];
 extern const u8 gfx_ow_yellow_gearTiles[GRAPHIC_SIZE_4BPP(16, 16)];
 extern const u8 gfx_ow_treasure_mapTiles[GRAPHIC_SIZE_4BPP(16, 16)];
 extern const u8 gfx_ow_painterTiles[];
+extern const u8 gfx_ow_chimney_smokeTiles[];
 
 extern const u8 gfx_tutor_crystal_bugTiles[];
 extern const color_t gfx_tutor_crystal_bugPal[16];
