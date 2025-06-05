@@ -31,7 +31,7 @@ str_0x800688:
     .string "PLAYERs Haus"
 .elseif LANG_EN
 str_0x800688:
-    .string "PLAYERs house"
+    .string "PLAYER's house"
 .endif
 
 
@@ -45,5 +45,5 @@ end
 str_0x87aafc:
     .string "RIVALs Haus"
 .elseif LANG_EN
-    .string "RIVALs house"
+    .string "RIVAL's house"
 .endif

@@ -182,7 +182,9 @@ void dungeon2_initialize_std_events(dungeon_generator2 *dg2, u16 (*item_picker)(
 }
 
 static const u32 dungeon_mushroom_rates[] = {
-    [MUSHROOM_TYPE_TINY_MUSHROOM] = 2, [MUSHROOM_TYPE_LARGE_MUSHROOM] = 1,
+    [MUSHROOM_TYPE_TINY_MUSHROOM] = 7, [MUSHROOM_TYPE_LARGE_MUSHROOM] = 2,
+    [MUSHROOM_TYPE_SWIRL_MUSHROOM] = 1,
+
 };
 
 u16 dungeon_mushroom_get_type(u16 mushroom_idx) {

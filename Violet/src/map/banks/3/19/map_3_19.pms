@@ -2,9 +2,9 @@
 	"data": {
 		"footer": "map_footer_89",
 		"events": {
-			"person_cnt": 23,
+			"person_cnt": 24,
 			"warp_cnt": 1,
-			"trigger_cnt": 11,
+			"trigger_cnt": 13,
 			"signpost_cnt": 3,
 			"persons": [
 				{
@@ -434,8 +434,8 @@
 				{
 					"target_index": "16",
 					"picture": "238",
-					"x": "6",
-					"y": "31",
+					"x": "4",
+					"y": "30",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_UP_AND_RIGHT",
 					"behaviour_range": {
@@ -463,7 +463,7 @@
 				{
 					"target_index": "17",
 					"picture": "238",
-					"x": "6",
+					"x": "5",
 					"y": "30",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
@@ -691,6 +691,35 @@
 						"type": 0,
 						"move_tutor": 0
 					}
+				},
+				{
+					"target_index": "24",
+					"picture": "92",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_ITEM",
+						"in_connection": "1"
+					},
+					"argument": 0,
+					"x": "5",
+					"y": "28",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ROUTE_1_ITEM_3",
+					"value": {
+						"item": "ITEM_ZINK",
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0,
+						"move_tutor": 0
+					}
 				}
 			],
 			"warps": [
@@ -824,6 +853,28 @@
 					"field_A": 0,
 					"field_B": 0,
 					"script": "ow_script_map_3_19_trigger_1"
+				},
+				{
+					"x": "11",
+					"y": "27",
+					"level": 0,
+					"field_5": 0,
+					"var": "TRAINERSCHOOL_DONE",
+					"value": "1",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_route_1_hide_people_in_trainerschool"
+				},
+				{
+					"x": "12",
+					"y": "27",
+					"level": 0,
+					"field_5": 0,
+					"var": "TRAINERSCHOOL_DONE",
+					"value": "1",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_route_1_hide_people_in_trainerschool"
 				}
 			],
 			"signposts": [

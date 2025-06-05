@@ -427,6 +427,8 @@ ow_script_mushroom:
 	gotoif EQUAL mushroom_encounter
 	compare LASTRESULT MUSHROOM_TYPE_ENCOUNTER_LARGE
 	gotoif EQUAL mushroom_encounter
+	compare LASTRESULT MUSHROOM_TYPE_SWIRL_MUSHROOM
+	gotoif EQUAL mushroom_swirl
 	releaseall
 	end
 mushroom_plucked:
@@ -436,6 +438,9 @@ mushroom_plucked:
 	end
 mushroom_tiny:
 	setvar 0x8000 ITEM_MINIPILZ
+	goto mushroom_plucking
+mushroom_swirl:
+	setvar 0x8000 ITEM_WIRBELPILZ
 	goto mushroom_plucking
 mushroom_encounter:
 	setvar 0x8004 1

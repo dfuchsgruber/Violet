@@ -9,6 +9,13 @@
 .global ow_script_map_3_19_trigger_1
 .global ow_script_map_3_19_trigger_0
 .global ow_script_0x8f6de3
+.global ow_script_route_1_hide_people_in_trainerschool
+
+ow_script_route_1_hide_people_in_trainerschool:
+setflag FLAG_TRAINERSCHOOL_PEOPLE_OUTSIDE
+setflag (TRAINERSCHOOL_RIVAL_OUTSIDE | 0x8000)
+setvar TRAINERSCHOOL_DONE 2
+end
 
 ow_script_movs_0x89bf97:
 .byte FACE_DOWN

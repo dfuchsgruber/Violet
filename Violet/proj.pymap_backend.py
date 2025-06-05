@@ -4,7 +4,9 @@ from PIL import Image
 import os
 from agb import image as agbimage
 from agb import palette as agbpalette
-from pymap.gui.map.tabs.events.event_to_image import EventImage
+from pymap.backend import ProjectBackend
+from pymap.project import Project
+from pymap.gui.map.tabs.events import EventImage
 from pymap.gui.render import pack_colors
 import struct
 import functools
@@ -270,5 +272,21 @@ class Event_to_image:
         vertical_shift = 16 - height # Align such that the bottom line is aligned with the block
         return image, horizontal_shift, vertical_shift
 
-def get_event_to_image():
-    return Event_to_image()
+class VioletProjectBackend(ProjectBackend):
+    """Base-backend for the project."""
+
+    def __init__(self, *args, **kwargs):
+        """Initialize the VioletProjectBackend."""
+        super().__init__(*args, **kwargs)
+        self._event_to_image = Event_to_image()
+
+    def event_to_image(
+        self,
+        event,
+        event_type,
+    ) -> EventImage | None:
+        """Returns the event to image backend."""
+        return self._event_to_image.event_to_image(event, event_type, self.project)
+    
+
+backend_cls = VioletProjectBackend

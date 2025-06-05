@@ -3449,7 +3449,7 @@ const item items[] = {
 		//ITEM_MINIPILZ
 		LANGDEP(PSTRING("Minipilz"), PSTRING("Tinymushroom")),
 		0x67, //index
-		250, //price
+		100, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_minipilz_description,
@@ -3465,7 +3465,7 @@ const item items[] = {
 		//ITEM_RIESENPILZ
 		LANGDEP(PSTRING("Riesenpilz"), PSTRING("Big Mushroom")),
 		0x68, //index
-		500, //price
+		200, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_riesenpilz_description,
@@ -8212,6 +8212,7 @@ const item items[] = {
 	[ITEM_FAEHIGK_PFLASTER] = {
 		.name = LANGDEP(PSTRING("Lotuspflaster"), PSTRING("Lotus Patch")),
 		.index = ITEM_FAEHIGK_PFLASTER,
+		.price = 700,
 		.description = str_item_faehigk_pflaster_description, .pocket = POCKET_ITEMS, .type=1,
 		.field_usage = item_ability_patch_field_effect,
 	},
@@ -8219,12 +8220,14 @@ const item items[] = {
 		.name = LANGDEP(PSTRING("Lotusköder"), PSTRING("Lotus bait")),
 		.index = ITEM_LOTUS_KOEDER,
 		.description = str_item_lotus_koeder_description, .pocket = POCKET_BAIT, .type = 4,
+		.price = 500,
 		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_ELITEKOEDER] = {
 		.name = LANGDEP(PSTRING("Elite-Köder"), PSTRING("Elite bait")),
 		.index = ITEM_ELITEKOEDER,
 		.description = str_item_elite_koeder_description, .pocket = POCKET_BAIT, .type = 4,
+		.price = 5000,
 		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 	[ITEM_RUNENBAND] = {
@@ -8233,23 +8236,27 @@ const item items[] = {
 		.description = str_item_runenband_description, .pocket = POCKET_ITEMS, .type = 4,
 		.holding_effect_id = HOLD_EFFECT_LIMIT_MOVES_BY_UNOWN_LETTER,
 		.field_usage = item_field_function_print_string_can_not_be_used,
+		.price = 2000,
 	},
 	[ITEM_LOTUSBLUETE] = {
 		.name = LANGDEP(PSTRING("Lotusblüte"), PSTRING("Lotus Flower")),
 		.index = ITEM_LOTUSBLUETE,
 		.description = str_item_lotusbluete, .pocket = POCKET_ITEMS, .type = 1,
 		.field_usage = item_field_function_print_string_can_not_be_used,
+		.price = 1000,
 	},
 	[ITEM_REGULAER_PFLASTER] = {
 		.name = LANGDEP(PSTRING("Reg.-Pflaster"), PSTRING("Regular Patch")),
 		.index = ITEM_REGULAER_PFLASTER,
 		.description = str_item_regulear_pflaster, .pocket = POCKET_ITEMS, .type=1,
+		.price = 700,
 		.field_usage = item_anti_ability_patch_field_effect,
 	},
 	[ITEM_FAEHIGK_KAPSEL] = {
 		.name = LANGDEP(PSTRING("Fähig.-Kapsel"), PSTRING("Ability Capsule")),
 		.index = ITEM_FAEHIGK_KAPSEL,
 		.description = str_item_faehigkeit_kapsel, .pocket = POCKET_ITEMS, .type=1,
+		.price = 7000,
 		.field_usage = item_ability_capsule_field_effect,
 	},
 	[ITEM_KANDISSCHELIFE] = {
@@ -8258,6 +8265,7 @@ const item items[] = {
 		.description = str_item_kandisschleife, .pocket = POCKET_ITEMS,
 		.type = 4, .field_usage = item_field_function_print_string_can_not_be_used,
 		.holding_effect_id = HOLD_EFFECT_FAIRY_POWER, .holding_effect_param = 20,
+		.price=9800, //price
 	},
 	[ITEM_GRADUIERTENHUT] = {
 		.name = LANGDEP(PSTRING("Abschlusshut"), PSTRING("Grad-Hat")),
@@ -8265,6 +8273,7 @@ const item items[] = {
 		.description = str_item_graduiertenhut, .pocket = POCKET_ITEMS,
 		.type = 4, .field_usage = item_field_function_print_string_can_not_be_used,
 		.holding_effect_id = HOLD_EFFECT_GRADUATE_HAT,
+		.price=2000
 	}
 };
 

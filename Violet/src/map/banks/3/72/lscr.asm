@@ -38,6 +38,7 @@ applymovement 0xFF mov_step_up
 waitmovement 0
 addvar STORY_PROGRESS 1
 setvar TRAINERSCHOOL_PROGRESS 3
+clearflag (TRAINERSCHOOL_RIVAL_OUTSIDE | 0x8000)
 releaseall
 end
 
