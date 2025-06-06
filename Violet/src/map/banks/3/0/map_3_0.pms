@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_78",
 		"events": {
-			"person_cnt": 21,
+			"person_cnt": 23,
 			"warp_cnt": 4,
 			"trigger_cnt": 0,
 			"signpost_cnt": 4,
@@ -102,8 +102,8 @@
 				{
 					"target_index": "4",
 					"picture": "92",
-					"x": "50",
-					"y": "12",
+					"x": "47",
+					"y": "19",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -306,8 +306,8 @@
 				{
 					"target_index": "11",
 					"picture": "95",
-					"x": "40",
-					"y": "18",
+					"x": "39",
+					"y": "27",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -604,10 +604,68 @@
 					"x": "15",
 					"y": "10",
 					"level": "4",
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NO_ANIMATION",
 					"behaviour_range": {
-						"x": 0,
-						"y": 0
+						"x": "6",
+						"y": "-1"
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0,
+						"move_tutor": 0
+					}
+				},
+				{
+					"target_index": "22",
+					"picture": "194",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_SCRIPT_NO_COLLISION",
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": 29,
+					"y": 5,
+					"level": "4",
+					"behaviour": "BEHAVIOUR_NO_ANIMATION",
+					"behaviour_range": {
+						"x": "6",
+						"y": "-1"
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0,
+						"move_tutor": 0
+					}
+				},
+				{
+					"target_index": "23",
+					"picture": "194",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_SCRIPT_NO_COLLISION",
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": 34,
+					"y": 18,
+					"level": "4",
+					"behaviour": "BEHAVIOUR_NO_ANIMATION",
+					"behaviour_range": {
+						"x": "6",
+						"y": "-1"
 					},
 					"field_B": 0,
 					"is_trainer": 0,

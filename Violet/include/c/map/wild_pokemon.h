@@ -7,7 +7,7 @@
 
 #ifndef INCLUDE_C_MAP_WILD_POKEMON_H_
 #define INCLUDE_C_MAP_WILD_POKEMON_H_
-
+#include "types.h"
 #include "constants/wild_pokemon_densities.h"
 
 typedef struct wild_pokemon_entry {

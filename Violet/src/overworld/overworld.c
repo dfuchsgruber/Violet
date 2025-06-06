@@ -3,7 +3,7 @@
 #include "save.h"
 #include "constants/flags.h"
 #include "flags.h"
-#include "debug.h"
+#include "overworld/person_behaviour.h"
 #include "oam.h"
 #include "overworld/palette.h"
 #include "overworld/effect.h"
@@ -577,7 +577,7 @@ static void overworld_create_oam_template_by_overworld_sprite_with_callback(cons
     template->rotscale = sprite->rotscale_animation;
     template->graphics = sprite->graphics;
     // We don't give a damn about this quest log stuff
-    template->callback = npc_movements_oam_callbacks[movement_callback_idx];
+    template->callback = person_behaviour_oam_callbacks[movement_callback_idx];
     if (sprite->subsprite_table)
         *subsprites = sprite->subsprite_table;
 }

@@ -684,3 +684,32 @@ blxr4_npc_create_camera:
     ldr r1, =pokemon_party_menu_display_party_pokemon_data_for_move_tutor_or_evolution_item | 1
     bx r1
     .pool
+
+.org 0x805e95c
+    .word person_behaviour_oam_callbacks
+.org 0x8063658
+    .word person_behaviour_oam_callbacks
+.org 0x805e230
+    .word person_behaviour_initial_direction
+.org 0x8061988
+    .word person_behaviour_initial_direction
+.org 0x80629b4
+    .word person_behaviour_initial_direction
+.org 0x8062a6c
+    .word person_behaviour_initial_direction
+.org 0x8062b24
+    .word person_behaviour_initial_direction
+.org 0x8062bdc
+    .word person_behaviour_initial_direction
+.org 0x8062c94
+    .word person_behaviour_initial_direction
+.org 0x8062cdc
+    .word person_behaviour_initial_direction
+.org 0x8062d94
+    .word person_behaviour_initial_direction
+.org 0x8062e5c
+    .word person_behaviour_initial_direction
+.org 0x8066890
+    .word person_behaviour_initial_direction
+.org 0x805e234
+    .word person_behaviour_has_range

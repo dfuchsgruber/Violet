@@ -3,6 +3,7 @@
 #include "map/event.h"
 #include "debug.h"
 #include "constants/person_script_stds.h"
+#include "overworld/person_behaviour.h"
 
 const map_event_person *person_get_by_target_index(u8 target_index, const map_event_person *persons, u8 num_persons){
     if(target_index == 254)
@@ -142,10 +143,10 @@ u8 npc_create_by_person(const map_event_person *p, u8 map_idx, u8 bank) {
     n->map = map_idx;
     n->bank = bank;
     n->collision_type = npc_get_collision_type_by_script_std(p->script_std);
-    n->movement_direction_previous = behaviour_initial_facing_directions[n->behavior_type];
+    n->movement_direction_previous = person_behaviour_initial_direction[n->behavior_type];
     npc_set_direction(n, n->movement_direction_previous);
     npc_set_dynamic_picture(n);
-    if (behaviour_has_range[n->behavior_type]) {
+    if (person_behaviour_has_range[n->behavior_type]) {
         if (n->rectangle.x == 0)
             n->rectangle.x++;
         if (n->rectangle.y == 0)

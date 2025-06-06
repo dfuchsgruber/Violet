@@ -1,6 +1,6 @@
 #include "types.h"
 #include "overworld/npc.h"
-#include "overworld/sprite.h"
+#include "overworld/person_behaviour.h"
 #include "map/event.h"
 #include "overworld/script.h"
 #include "debug.h"
@@ -14,7 +14,7 @@ bool overworld_script_command_spritebehave (overworld_script_state_t *state) {
     u8 npc_idx = npc_get_by_person_idx(person_idx, save1->map, save1->bank);
     if (npc_idx < NUM_NPCS) {
         npcs[npc_idx].behavior_type = behaviour;
-        oams[npcs[npc_idx].oam_id].callback = npc_movements_oam_callbacks[behaviour];
+        oams[npcs[npc_idx].oam_id].callback = person_behaviour_oam_callbacks[behaviour];
         DEBUG("Person %d (npc %d) got behaviour %d\n", person_idx, npc_idx, behaviour);
     }
     return false;

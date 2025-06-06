@@ -705,8 +705,6 @@ u8 npc_get_animation_idx_by_facing(u8 facing);
  **/
 u8 direction_get_opposite(u8 direction);
 
-extern void (*npc_movements_oam_callbacks[])(oam_object*);
-
 /**
  * Gets the an npc at a position
  * @param x the x coordinate
@@ -916,9 +914,6 @@ enum {
  */
 void player_transition(u8 player_transition_type);
 
-// Initial facing direction per behaviour
-extern const u8 behaviour_initial_facing_directions[80];
-extern const u8 behaviour_has_range[80];
 
 extern EWRAM u8 pathfinding_npc_movements_waiting;
 extern EWRAM u8 npc_facing_movements[2];

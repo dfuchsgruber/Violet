@@ -5,7 +5,7 @@
 			"person_cnt": 24,
 			"warp_cnt": 1,
 			"trigger_cnt": 13,
-			"signpost_cnt": 3,
+			"signpost_cnt": 2,
 			"persons": [
 				{
 					"is_trainer": "0",
@@ -228,7 +228,7 @@
 					"is_trainer": "0",
 					"script": "ow_script_cut_tree",
 					"y": "8",
-					"target_index": "9",
+					"target_index": "8",
 					"picture": 95,
 					"flag": "0x13",
 					"x": "34",
@@ -259,7 +259,7 @@
 					"is_trainer": "0",
 					"script": "0",
 					"y": "8",
-					"target_index": "10",
+					"target_index": "9",
 					"picture": "101",
 					"flag": "ROUTE_1_EGG",
 					"x": "36",
@@ -316,7 +316,7 @@
 					}
 				},
 				{
-					"target_index": "12",
+					"target_index": "10",
 					"picture": "237",
 					"x": "37",
 					"y": "22",
@@ -345,7 +345,7 @@
 					}
 				},
 				{
-					"target_index": "13",
+					"target_index": "12",
 					"picture": "237",
 					"x": "38",
 					"y": "22",
@@ -374,7 +374,7 @@
 					}
 				},
 				{
-					"target_index": "14",
+					"target_index": "13",
 					"picture": "238",
 					"x": "20",
 					"y": "10",
@@ -403,7 +403,7 @@
 					}
 				},
 				{
-					"target_index": "15",
+					"target_index": "14",
 					"picture": "238",
 					"x": "21",
 					"y": "27",
@@ -432,7 +432,7 @@
 					}
 				},
 				{
-					"target_index": "16",
+					"target_index": "15",
 					"picture": "238",
 					"x": "4",
 					"y": "30",
@@ -461,7 +461,7 @@
 					}
 				},
 				{
-					"target_index": "17",
+					"target_index": "16",
 					"picture": "238",
 					"x": "5",
 					"y": "30",
@@ -490,7 +490,7 @@
 					}
 				},
 				{
-					"target_index": "18",
+					"target_index": "17",
 					"picture": "238",
 					"x": "22",
 					"y": "23",
@@ -519,7 +519,7 @@
 					}
 				},
 				{
-					"target_index": "19",
+					"target_index": "18",
 					"picture": "238",
 					"x": "37",
 					"y": "20",
@@ -548,7 +548,7 @@
 					}
 				},
 				{
-					"target_index": "20",
+					"target_index": "19",
 					"picture": "236",
 					"x": "26",
 					"y": "29",
@@ -606,7 +606,7 @@
 					}
 				},
 				{
-					"target_index": 0,
+					"target_index": "21",
 					"picture": "187",
 					"script_std_and_in_connection": {
 						"script_std": "PERSON_UPSTREAM",
@@ -697,7 +697,7 @@
 					"picture": "92",
 					"script_std_and_in_connection": {
 						"script_std": "PERSON_ITEM",
-						"in_connection": "1"
+						"in_connection": "0"
 					},
 					"argument": 0,
 					"x": "5",
@@ -878,29 +878,6 @@
 				}
 			],
 			"signposts": [
-				{
-					"x": "19",
-					"y": "39",
-					"level": 0,
-					"type": "SIGNPOST_HIDDEN_ITEM",
-					"value": {
-						"script": "0",
-						"item": {
-							"item": "ITEM_SCHUTZ",
-							"flag": 3,
-							"amount": 1,
-							"chunk": 0
-						},
-						"treasure_map": {
-							"item": "0",
-							"idx": "0",
-							"amount": "0",
-							"center_x": "0",
-							"center_y": "0"
-						}
-					},
-					"flag": "0"
-				},
 				{
 					"x": "19",
 					"y": "20",

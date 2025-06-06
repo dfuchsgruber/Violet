@@ -8,6 +8,7 @@
 #ifndef INCLUDE_C_TILE_BLOCK_H_
 #define INCLUDE_C_TILE_BLOCK_H_
 
+#include "types.h"
 #include "tile/coordinate.h"
 
 #define BDATA_BEHAVIOUR 0
