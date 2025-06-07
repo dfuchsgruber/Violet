@@ -398,7 +398,7 @@ static const item_gfx_pair item_gfx_pairs[] = {
     [ITEM_GRADUIERTENHUT] = {.gfx = gfx_item_graduate_hatTiles, .pal = gfx_item_graduate_hatPal},
 };
 
-static const item_gfx_pair tm_item_gfx_pairs[NUM_TYPES] = {
+static const item_gfx_pair tm_item_gfx_pairs[NUM_TYPES + 1] = {
     [TYPE_NORMAL] = { .gfx = gfx_item_tm_normalTiles, .pal = gfx_item_tm_normalPal },
     [TYPE_KAMPF] = { .gfx = gfx_item_tm_fightingTiles, .pal = gfx_item_tm_fightingPal },
     [TYPE_FLUG] = { .gfx = gfx_item_tm_flyingTiles, .pal = gfx_item_tm_flyingPal },
@@ -417,6 +417,7 @@ static const item_gfx_pair tm_item_gfx_pairs[NUM_TYPES] = {
     [TYPE_EIS] = { .gfx = gfx_item_tm_iceTiles, .pal = gfx_item_tm_icePal },
     [TYPE_DRACHE] = { .gfx = gfx_item_tm_dragonTiles, .pal = gfx_item_tm_dragonPal },
     [TYPE_UNLICHT] = { .gfx = gfx_item_tm_darkTiles, .pal = gfx_item_tm_darkPal },
+    [NUM_TYPES] =  { .gfx = gfx_item_tm_brokenTiles, .pal = gfx_item_tm_brokenPal },
 };
 
 const u8 *item_get_resource(u16 item_idx, u8 get_palette) {
@@ -424,7 +425,10 @@ const u8 *item_get_resource(u16 item_idx, u8 get_palette) {
         item_idx = 0;
     const item_gfx_pair *pair;
     if (ITEM_IS_TM_OR_HM(item_idx)) {
-        pair = tm_item_gfx_pairs + attacks[item_idx_to_attack(item_idx)].type;
+        if (ITEM_IS_TM(item_idx) && tm_is_used(ITEM_IDX_TO_TM_IDX(item_idx)))
+            pair = tm_item_gfx_pairs + NUM_TYPES; // broken TM
+        else
+            pair = tm_item_gfx_pairs + attacks[item_idx_to_attack(item_idx)].type;
     } else {
         pair = item_gfx_pairs + item_idx;
     }

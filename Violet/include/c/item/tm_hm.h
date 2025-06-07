@@ -190,4 +190,20 @@ void tm_set_unused(int tm_idx);
  */
 void tm_hm_field_function(u8 self);
 
+/**
+ * @brief How many crystals are needed to recharge a tm or hm
+    *
+    * @param item_idx the item index of the tm or hm
+    * @return size_t the number of crystals needed to recharge the tm or hm
+ */
+u8 tm_hm_get_recharge_cost(u16 item_idx);
+
+/**
+ * @brief Checks if a tm or hm can be recharged
+ * 
+ * @param item_idx the item index of the tm or hm
+ * @return true if it can be recharged, false otherwise
+ */
+bool tm_hm_can_be_recharged(u16 item_idx);
+
 #endif

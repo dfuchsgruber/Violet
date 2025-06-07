@@ -12,6 +12,8 @@
 extern "C" {
 #endif
 
+#include "types.h"
+
     enum {
         TBOX_FONT_STD = 2,
         TBOX_FONT_UNOWN = 5,
@@ -55,6 +57,14 @@ extern "C" {
      * @return dst
      */
     u8* itoa(u8* dst, int value, int padding, u8 num_chars);
+
+    /**
+     * Transforms an integer 0-9 into a digit with circle around it
+     * @param dst Destination of the string
+     * @param value The value to transform (0-9)
+     * @return dst
+     */
+    u8 *itoa_circled(u8 *dst, u8 value);
 
     extern tbox tboxes[];
     

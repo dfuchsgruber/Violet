@@ -1,28 +1,42 @@
+#include "constants/items.h"
 #include "types.h"
 #include "oam.h"
 #include "item/bag2.h"
 #include "bios.h"
 #include "item/item.h"
 
+void bag_item_load_palette(u16 item_idx) {
+    if (item_idx >= ITEM_CNT)
+        return;
+    const u8 *pal = item_get_resource(item_idx, true);
+    pal_decompress(pal, (u16)(256 + 16 * bag2_state->pal_idx_item), 16 * sizeof(color_t));
+
+}
+
+void bag_item_load_gfx(u16 item_idx) {
+    if (item_idx >= ITEM_CNT)
+        return;
+    u16 tile = bag2_state->oam_item_base_tile;
+    const u8 *gfx = item_get_resource(item_idx, false);
+    lz77uncompwram(gfx, gp_tmp_buf);
+    int zero = 0;
+    cpuset(&zero, OAMCHARBASE(tile), CPUSET_FILL | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(GRAPHIC_SIZE_4BPP(32, 32)));
+    for (int x = 0; x < 3; x++) {
+        for (int y = 0; y < 3; y++) {
+            cpuset(gp_tmp_buf + (3 * y + x) * GRAPHIC_SIZE_4BPP(8, 8), (u8*)OAMCHARBASE(tile) + (4 * y + x) * GRAPHIC_SIZE_4BPP(8, 8),
+                CPUSET_COPY | CPUSET_HALFWORD_SIZE(GRAPHIC_SIZE_4BPP(8, 8) | CPUSET_HALFWORD));
+        }
+    }
+}
+
 static void bag_oam_item_callback_update(oam_object *self) {
     switch (self->private[1]) {
         case 0: {
-            const u8 *pal = item_get_resource(self->private[0], true);
-            pal_decompress(pal, (u16)(256 + 16 * bag2_state->pal_idx_item), 16 * sizeof(color_t));
+            bag_item_load_palette(self->private[0]);
             break;
         }
         case 1: {
-            u16 tile = bag2_state->oam_item_base_tile;
-            const u8 *gfx = item_get_resource(self->private[0], false);
-            lz77uncompwram(gfx, gp_tmp_buf);
-            int zero = 0;
-            cpuset(&zero, OAMCHARBASE(tile), CPUSET_FILL | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(GRAPHIC_SIZE_4BPP(32, 32)));
-            for (int x = 0; x < 3; x++) {
-                for (int y = 0; y < 3; y++) {
-                    cpuset(gp_tmp_buf + (3 * y + x) * GRAPHIC_SIZE_4BPP(8, 8), (u8*)OAMCHARBASE(tile) + (4 * y + x) * GRAPHIC_SIZE_4BPP(8, 8),
-                        CPUSET_COPY | CPUSET_HALFWORD_SIZE(GRAPHIC_SIZE_4BPP(8, 8) | CPUSET_HALFWORD));
-                }
-            }
+            bag_item_load_gfx(self->private[0]);
             break;
         }
         default: {

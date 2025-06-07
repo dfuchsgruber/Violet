@@ -94,7 +94,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_ZAHLTAG
 	{
@@ -109,7 +109,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_FEUERSCHLAG
 	{
@@ -124,7 +124,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_EISHIEB
 	{
@@ -139,7 +139,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_DONNERSCHLAG
 	{
@@ -154,7 +154,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_KRATZER
 	{
@@ -199,7 +199,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_KLINGENSTURM
 	{
@@ -214,7 +214,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_SCHWERTTANZ
 	{
@@ -229,7 +229,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_SNATCH,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_ZERSCHNEIDER
 	{
@@ -289,7 +289,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_FLIEGEN
 	{
@@ -304,7 +304,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_KLAMMERGRIFF
 	{
@@ -394,7 +394,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_SPRUNGKICK
 	{
@@ -499,7 +499,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_TACKLE
 	{
@@ -529,7 +529,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_WICKEL
 	{
@@ -559,7 +559,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_FUCHTLER
 	{
@@ -574,7 +574,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_RISIKOTACKLE
 	{
@@ -589,7 +589,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_RUTENSCHLAG
 	{
@@ -709,7 +709,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_GESANG
 	{
@@ -724,7 +724,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_SUPERSCHALL
 	{
@@ -769,7 +769,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_SAEURE
 	{
@@ -814,7 +814,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_WEISSNEBEL
 	{
@@ -829,7 +829,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_SNATCH,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_AQUAKNARRE
 	{
@@ -859,7 +859,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		6 //Padding
 	},
 	// ATTACK_SURFER
 	{
@@ -874,7 +874,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_EISSTRAHL
 	{
@@ -889,7 +889,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_BLIZZARD
 	{
@@ -904,7 +904,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		6 //Padding
 	},
 	// ATTACK_PSYSTRAHL
 	{
@@ -919,7 +919,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_BLUBBSTRAHL
 	{
@@ -934,7 +934,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_AURORASTRAHL
 	{
@@ -949,7 +949,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_HYPERSTRAHL
 	{
@@ -964,7 +964,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_SCHNABEL
 	{
@@ -994,7 +994,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_UEBERROLLER
 	{
@@ -1039,7 +1039,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_GEOWURF
 	{
@@ -1054,7 +1054,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_STAERKE
 	{
@@ -1114,7 +1114,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_WACHSTUM
 	{
@@ -1129,7 +1129,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_SNATCH,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_RASIERBLATT
 	{
@@ -1159,7 +1159,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_GIFTPUDER
 	{
@@ -1174,7 +1174,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_STACHELSPORE
 	{
@@ -1189,7 +1189,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_SCHLAFPUDER
 	{
@@ -1204,7 +1204,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_BLAETTERTANZ
 	{
@@ -1249,7 +1249,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_FEUERWIRBEL
 	{
@@ -1294,7 +1294,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_DONNERWELLE
 	{
@@ -1309,7 +1309,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_DONNER
 	{
@@ -1324,7 +1324,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_STEINWURF
 	{
@@ -1339,7 +1339,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_ERDBEBEN
 	{
@@ -1354,7 +1354,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		6 //Padding
 	},
 	// ATTACK_GEOFISSUR
 	{
@@ -1369,7 +1369,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_SCHAUFLER
 	{
@@ -1384,7 +1384,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_TOXIN
 	{
@@ -1399,7 +1399,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_KONFUSION
 	{
@@ -1429,7 +1429,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_HYPNOSE
 	{
@@ -1444,7 +1444,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_MEDITATION
 	{
@@ -1474,7 +1474,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_SNATCH,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_RUCKZUCKHIEB
 	{
@@ -1489,7 +1489,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_RASEREI
 	{
@@ -1519,7 +1519,7 @@ const attack attacks[ATTACK_CNT] = {
 		0,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_NACHTNEBEL
 	{
@@ -1534,7 +1534,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_MIMIKRY
 	{
@@ -1564,7 +1564,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_DOPPELTEAM
 	{
@@ -1579,7 +1579,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_SNATCH,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_GENESUNG
 	{
@@ -1594,7 +1594,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_SNATCH,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_HAERTNER
 	{
@@ -1654,7 +1654,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_PANZERSCHUTZ
 	{
@@ -1699,7 +1699,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_SNATCH,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_LICHTSCHILD
 	{
@@ -1714,7 +1714,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_SNATCH,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_DUNKELNEBEL
 	{
@@ -1729,7 +1729,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_REFLEKTOR
 	{
@@ -1744,7 +1744,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_SNATCH,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_ENERGIEFOKUS
 	{
@@ -1804,7 +1804,7 @@ const attack attacks[ATTACK_CNT] = {
 		0,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_FINALE
 	{
@@ -1819,7 +1819,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_EIERBOMBE
 	{
@@ -1894,7 +1894,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_FEUERSTURM
 	{
@@ -1909,7 +1909,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_KASKADE
 	{
@@ -1924,7 +1924,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_SCHNAPPER
 	{
@@ -1969,7 +1969,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_DORNKANONE
 	{
@@ -2014,7 +2014,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_SNATCH,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_PSYKRAFT
 	{
@@ -2074,7 +2074,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_TRAUMFRESSER
 	{
@@ -2089,7 +2089,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_GIFTWOLKE
 	{
@@ -2209,7 +2209,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_PILZSPORE
 	{
@@ -2224,7 +2224,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_BLITZ
 	{
@@ -2239,7 +2239,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_PSYWELLE
 	{
@@ -2254,7 +2254,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_PLATSCHER
 	{
@@ -2314,7 +2314,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_KRATZFURIE
 	{
@@ -2344,7 +2344,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_ERHOLUNG
 	{
@@ -2359,7 +2359,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_SNATCH,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_STEINHAGEL
 	{
@@ -2374,7 +2374,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_HYPERZAHN
 	{
@@ -2389,7 +2389,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_SCHAERFER
 	{
@@ -2434,7 +2434,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_SUPERZAHN
 	{
@@ -2449,7 +2449,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_SCHLITZER
 	{
@@ -2464,7 +2464,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_DELEGATOR
 	{
@@ -2479,7 +2479,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_SNATCH,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_VERZWEIFLER
 	{
@@ -2539,7 +2539,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_SPINNENNETZ
 	{
@@ -2629,7 +2629,7 @@ const attack attacks[ATTACK_CNT] = {
 		0,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_DRESCHFLEGEL
 	{
@@ -2674,7 +2674,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_BAUMWOLLSAAT
 	{
@@ -2704,7 +2704,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_GROLL
 	{
@@ -2719,7 +2719,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_PULVERSCHNEE
 	{
@@ -2749,7 +2749,7 @@ const attack attacks[ATTACK_CNT] = {
 		0,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_TEMPOHIEB
 	{
@@ -2764,7 +2764,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_GRIMASSE
 	{
@@ -2824,7 +2824,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_SNATCH,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_MATSCHBOMBE
 	{
@@ -2839,7 +2839,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_LEHMSCHELLE
 	{
@@ -2869,7 +2869,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_STACHLER
 	{
@@ -2884,7 +2884,7 @@ const attack attacks[ATTACK_CNT] = {
 		0,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_BLITZKANONE
 	{
@@ -2899,7 +2899,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_GESICHTE
 	{
@@ -2929,7 +2929,7 @@ const attack attacks[ATTACK_CNT] = {
 		0,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_ABGESANG
 	{
@@ -2944,7 +2944,7 @@ const attack attacks[ATTACK_CNT] = {
 		0,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_EISSTURM
 	{
@@ -2959,7 +2959,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_SCANNER
 	{
@@ -2989,7 +2989,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_ZIELSCHUSS
 	{
@@ -3019,7 +3019,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_SANDSTURM
 	{
@@ -3034,7 +3034,7 @@ const attack attacks[ATTACK_CNT] = {
 		0,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_GIGASAUGER
 	{
@@ -3049,7 +3049,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_AUSDAUER
 	{
@@ -3064,7 +3064,7 @@ const attack attacks[ATTACK_CNT] = {
 		0,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_CHARME
 	{
@@ -3109,7 +3109,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_ANGEBEREI
 	{
@@ -3124,7 +3124,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_MILCHGETRAENK
 	{
@@ -3199,7 +3199,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_ANZIEHUNG
 	{
@@ -3214,7 +3214,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_SCHLAFREDE
 	{
@@ -3259,7 +3259,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_GESCHENK
 	{
@@ -3289,7 +3289,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_BODYGUARD
 	{
@@ -3319,7 +3319,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_LAEUTERFEUER
 	{
@@ -3334,7 +3334,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_INTENSITAET
 	{
@@ -3349,7 +3349,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_WUCHTSCHLAG
 	{
@@ -3364,7 +3364,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_VIELENDER
 	{
@@ -3379,7 +3379,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_FEUERODEM
 	{
@@ -3394,7 +3394,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_STAFFETTE
 	{
@@ -3409,7 +3409,7 @@ const attack attacks[ATTACK_CNT] = {
 		0,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_ZUGABE
 	{
@@ -3424,7 +3424,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_VERFOLGUNG
 	{
@@ -3484,7 +3484,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_METALLKLAUE
 	{
@@ -3529,7 +3529,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_SNATCH,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_SYNTHESE
 	{
@@ -3544,7 +3544,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_SNATCH,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_MONDSCHEIN
 	{
@@ -3559,7 +3559,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_SNATCH,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_KRAFTRESERVE
 	{
@@ -3574,7 +3574,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_KREUZHIEB
 	{
@@ -3589,7 +3589,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_WINDHOSE
 	{
@@ -3649,7 +3649,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_SPIEGELCAPE
 	{
@@ -3664,7 +3664,7 @@ const attack attacks[ATTACK_CNT] = {
 		MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_PSYCHO_PLUS
 	{
@@ -3694,7 +3694,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_ANTIK_KRAFT
 	{
@@ -3709,7 +3709,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_SPUKBALL
 	{
@@ -3724,7 +3724,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_SEHER
 	{
@@ -3799,7 +3799,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_AUFRUHR
 	{
@@ -3874,7 +3874,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_HAGELSTURM
 	{
@@ -3934,7 +3934,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_MEMENTO_MORI
 	{
@@ -3979,7 +3979,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_RIECHSALZ
 	{
@@ -4114,7 +4114,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_ZUSCHUSS
 	{
@@ -4159,7 +4159,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_MAGIEMANTEL
 	{
@@ -4219,7 +4219,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_GAEHNER
 	{
@@ -4249,7 +4249,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_NOTSITUATION
 	{
@@ -4279,7 +4279,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_WERTWECHSEL
 	{
@@ -4369,7 +4369,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_TAUCHER
 	{
@@ -4429,7 +4429,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_SNATCH,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_SCHEINWERFER
 	{
@@ -4444,7 +4444,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_NEBELBALL
 	{
@@ -4459,7 +4459,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_DAUNENREIGEN
 	{
@@ -4504,7 +4504,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_LEHMSUHLER
 	{
@@ -4564,7 +4564,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_SNATCH,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_SCHALLWELLE
 	{
@@ -4579,7 +4579,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_GIFTZAHN
 	{
@@ -4594,7 +4594,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_ZERMALMKLAUE
 	{
@@ -4624,7 +4624,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		6 //Padding
 	},
 	// ATTACK_AQUAHAUBITZE
 	{
@@ -4639,7 +4639,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		6 //Padding
 	},
 	// ATTACK_STERNHIEB
 	{
@@ -4654,7 +4654,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_ERSTAUNER
 	{
@@ -4684,7 +4684,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_AROMAKUR
 	{
@@ -4729,7 +4729,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_HITZEKOLLER
 	{
@@ -4744,7 +4744,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_SCHNUEFFLER
 	{
@@ -4789,7 +4789,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_METALLSOUND
 	{
@@ -4864,7 +4864,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_AMPELLEUCHTE
 	{
@@ -4879,7 +4879,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_FINSTERFAUST
 	{
@@ -4894,7 +4894,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_SONDERSENSOR
 	{
@@ -4909,7 +4909,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_HIMMELHIEB
 	{
@@ -4924,7 +4924,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_SANDGRAB
 	{
@@ -4954,7 +4954,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_LEHMBRUEHE
 	{
@@ -4969,7 +4969,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_KUGELSAAT
 	{
@@ -4984,7 +4984,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_AERO_ASS
 	{
@@ -4999,7 +4999,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_EISSPEER
 	{
@@ -5074,7 +5074,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_FAUNA_STATUE
 	{
@@ -5089,7 +5089,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		6 //Padding
 	},
 	// ATTACK_PROTZER
 	{
@@ -5149,7 +5149,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_BEZIRZER
 	{
@@ -5179,7 +5179,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_ZAUBERBLATT
 	{
@@ -5224,7 +5224,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_SNATCH,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_LAUBKLINGE
 	{
@@ -5239,7 +5239,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_DRACHENTANZ
 	{
@@ -5254,7 +5254,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_SNATCH,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_FELSWURF
 	{
@@ -5314,7 +5314,7 @@ const attack attacks[ATTACK_CNT] = {
 		0,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_PSYSCHUB
 	{
@@ -5329,7 +5329,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_FILLER
 	{
@@ -5359,7 +5359,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_AURASPHAERE
 	{
@@ -5374,7 +5374,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_GIFTHIEB
 	{
@@ -5389,7 +5389,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_FOKUSSTOSS
 	{
@@ -5404,7 +5404,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_PATRONENHIEB
 	{
@@ -5419,7 +5419,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_FINSTERAURA
 	{
@@ -5434,7 +5434,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_FLAMMENBLITZ
 	{
@@ -5449,7 +5449,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_EISZAHN
 	{
@@ -5464,7 +5464,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_DONNERZAHN
 	{
@@ -5479,7 +5479,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_DUNKELKLAUE
 	{
@@ -5494,7 +5494,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_KREUZSCHERE
 	{
@@ -5509,7 +5509,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_STEINKANTE
 	{
@@ -5524,7 +5524,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_STURZFLUG
 	{
@@ -5539,7 +5539,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_STEINPOLITUR
 	{
@@ -5584,7 +5584,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_NAHKAMPF
 	{
@@ -5599,7 +5599,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_LICHTKANONE
 	{
@@ -5614,7 +5614,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_DRACO_METEOR
 	{
@@ -5629,7 +5629,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_NASSCHWEIF
 	{
@@ -5644,7 +5644,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_ZEN_KOPFSTOSS
 	{
@@ -5659,7 +5659,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_ENERGIEBALL
 	{
@@ -5674,7 +5674,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_SCHATTENSTOSS
 	{
@@ -5689,7 +5689,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_DOPPELSCHLAG
 	{
@@ -5719,7 +5719,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_NACHTHIEB
 	{
@@ -5734,7 +5734,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_SAMENBOMBE
 	{
@@ -5749,7 +5749,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_ERDKRAEFTE
 	{
@@ -5764,7 +5764,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_DRACHENPULS
 	{
@@ -5779,7 +5779,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_EISSPLITTER
 	{
@@ -5794,7 +5794,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_FEUERZAHN
 	{
@@ -5809,7 +5809,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_WASSERDUESE
 	{
@@ -5824,7 +5824,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_ZORNFEUER
 	{
@@ -5839,7 +5839,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_TSUNAMI
 	{
@@ -5854,7 +5854,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_STAHLSTREICH
 	{
@@ -5869,7 +5869,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_KINESISWELLE
 	{
@@ -5884,7 +5884,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		6 //Padding
 	},
 	// ATTACK_SUPERNOVA
 	{
@@ -5899,7 +5899,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_WASSERSPALT
 	{
@@ -5914,7 +5914,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		5 //Padding
 	},
 	// ATTACK_SCHALLSTICH
 	{
@@ -5929,7 +5929,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_DIEBESKUSS
 	{
@@ -5959,7 +5959,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_MONDGEWALT
 	{
@@ -5974,7 +5974,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_ZAUBERSCHEIN
 	{
@@ -5989,7 +5989,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_SAEUSELSTIMME
 	{
@@ -6020,7 +6020,7 @@ const attack attacks[ATTACK_CNT] = {
 		TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_SCHWARMSTICH
 	{
@@ -6035,7 +6035,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_GESANG_2
 	{
@@ -6065,7 +6065,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_GEWITTER
 	{
@@ -6080,7 +6080,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_EISENSLAM
 	{
@@ -6095,7 +6095,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_HOLZGEWEIH
 	{
@@ -6110,7 +6110,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_KAEFERBISS
 	{
@@ -6125,7 +6125,7 @@ const attack attacks[ATTACK_CNT] = {
 		MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
-		0x0 //Padding
+		1 //Padding
 	},
 	// ATTACK_FALTERREIGEN
 	{
@@ -6140,7 +6140,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		3 //Padding
 	},
 	// ATTACK_NITROLADUNG
 	{
@@ -6170,7 +6170,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		2 //Padding
 	},
 	// ATTACK_TORNADO
 	{
@@ -6185,7 +6185,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,
-		0x0 //Padding
+		4 //Padding
 	},
 	// ATTACK_KOENIGSSCHILD
 	{
@@ -6200,7 +6200,7 @@ const attack attacks[ATTACK_CNT] = {
 		AFFECTED_BY_PROTECT | TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_STATUS,
-		0x0 //Padding
+		2 //Padding
 	},
 	[ATTACK_RUNENGLEICH] = {
 		0xe5, //Effect-id (in table)
@@ -6224,6 +6224,7 @@ const attack attacks[ATTACK_CNT] = {
 		.pp = 5,
 		.affects_whom = SELECTED_TARGET,
 		.flags = AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
-		.category = CATEGORY_STATUS
+		.category = CATEGORY_STATUS,
+		.rating = 2,
 	},
 };

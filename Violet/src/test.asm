@@ -27,6 +27,7 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	additem ITEM_ENERGIEDISK 1
 	additem ITEM_TM50 1
 	additem ITEM_TM51 1
 	additem ITEM_TM52 1

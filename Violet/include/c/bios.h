@@ -8,6 +8,8 @@
 #ifndef INCLUDE_C_BIOS_H_
 #define INCLUDE_C_BIOS_H_
 
+#include "types.h"
+
 /**
  * Calls software interrupt for lz77 decompression into WRAM
  * @param src Source offset (lz77 compressed)

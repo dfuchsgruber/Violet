@@ -65,10 +65,30 @@ void bag_oam_switch_pockets(u8 pocket) {
     oam_gfx_anim_start(o, pocket);
 }
 
-static const sprite sprite_item = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(1)};
+static const sprite sprite_item = {.attr0 = ATTR0_SHAPE_SQUARE | ATTR0_DSIZE | ATTR0_ROTSCALE, .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(1)};
+
+static const rotscale_frame rs_item_none[] = {
+    {.affine = {.affine_x_value = 0x100, .affine_y_value = 0x100, .duration = 0}},
+    {.command = {.command = ROTSCALE_ANIM_END}}
+};
+
+static const rotscale_frame rs_item_pulsate[] = {
+    {.affine = {.affine_x_value = 0x100, .affine_y_value = 0x100, .duration = 0}},
+    {.affine = {.affine_x_value = 2, .affine_y_value = 2, .duration = 32}},
+    {.affine = {.affine_x_value = -2, .affine_y_value = -2, .duration = 32}},
+    {.affine = {.affine_x_value = 2, .affine_y_value = 2, .duration = 32}},
+    {.affine = {.affine_x_value = -2, .affine_y_value = -2, .duration = 32}},
+    {.affine = {.affine_x_value = 2, .affine_y_value = 2, .duration = 32}},
+    {.command = {.command = ROTSCALE_ANIM_END}}
+};
+
+static const rotscale_frame *const rs_item_anims[] = {
+    [0] = rs_item_none,
+    [1] = rs_item_pulsate,
+};
 
 const oam_template bag_oam_template_item = {
     .tiles_tag = BAG_ITEM_OAM_TAG, .pal_tag = BAG_ITEM_OAM_TAG,
     .graphics = NULL, .oam = &sprite_item, .animation = oam_gfx_anim_table_null,
-    .rotscale = oam_rotscale_anim_table_null, .callback = oam_null_callback,
+    .rotscale = rs_item_anims, .callback = oam_null_callback,
 };

@@ -471,4 +471,18 @@ u16 bag_get_current_slot_in_current_pocket() ;
  */
 void bag2_return_to_last();
 
+/**
+* @brief Loads the palette of an item in the bag
+* 
+* @param item_idx the item to load the palette for
+*/
+void bag_item_load_palette(u16 item_idx);
+
+/**
+ * @brief Loads the graphics of an item in the bag
+ * 
+ * @param item_idx the item to load the graphics for
+ */
+void bag_item_load_gfx(u16 item_idx);
+
 #endif

@@ -212,36 +212,64 @@ void tm_vm_print_item(u8 tbox_idx, int item_idx, u8 y) {
 static const u8 str_text_small[] = PSTRING("FONT_SIZE_SMALL");
 static const u8 str_color_red[] = PSTRING("COLOR_FG_BG_SHADOW\x04\x00\x05"); //PSTRING("TEXT_SET_FG\x04TEXT_SET_SHADOW\x05");
 static const u8 str_color_grey[] = PSTRING("COLOR_FG_BG_SHADOW\x02\x00\x03"); //PSTRING("TEXT_SET_FG\x02TEXT_SET_SHADOW\x03");
+static const u8 str_color_lightgrey[] = PSTRING("COLOR_FG_BG_SHADOW\x03\x00\x00"); //PSTRING("TEXT_SET_FG\x02TEXT_SET_SHADOW\x03");
 static const u8 str_clear_to_x12[] = PSTRING("CLEAR_TO\x12");
 static const u8 str_clear_to_x13[] = PSTRING("CLEAR_TO\x13");
 static const u8 str_clear_to_xtm[] = PSTRING("CLEAR_TO\x17");
-static const u8 str_xf9_x08_clear_to_x1[] = {0xF9, 0x8, 0xFC, 0x11, 0x1, 0xFF};
+static const u8 str_xf9_x08_clear_to_x1[] = PSTRING("CHAR_NOCLEAR\x01"); // {0xF9, 0x8, 0xFC, 0x11, 0x1, 0xFF};
+static const u8 str_xf9_clear_to_x40[] = PSTRING("SHIFT_TEXT\x72"); //{0xF9, 0x8, 0xFC, 0x11, 0x1, 0xFF};//PSTRING("SKIP\x04");
 static const u8 str_space[] = PSTRING(" ");
 static const u8 str_font_size_big[] = PSTRING("FONT_SIZE_BIG");
 
 void tm_hm_get_str_number_and_name(u8 *dst, u16 item_idx) {
-	strcpy(strbuf, str_text_small);
+	u8 buffer[128];
+	strcpy(buffer, str_text_small);
 	if (item_is_hm(item_idx)) {
-		strcat(strbuf, str_clear_to_x13);
-		// strcat(strbuf, str_xf9_x08_clear_to_x1);
+		if (bag_context == BAG_CONTEXT_RECHARGE_TM_HM)
+			strcat(buffer, str_color_lightgrey);
+
+		strcat(buffer, str_clear_to_x13);
+		// strcat(buffer, str_xf9_x08_clear_to_x1);
 		(void)str_clear_to_x12;
 		(void)str_clear_to_xtm;
 		itoa(buffer0, ITEM_IDX_TO_HM_IDX(item_idx) + 1, ITOA_PAD_ZEROS, 1);
-		strcat(strbuf, buffer0);
+		strcat(buffer, buffer0);
 	} else {
-		if (tm_is_used(ITEM_IDX_TO_TM_IDX(item_idx))) {
-			strcat(strbuf, str_color_red);
+		if (bag_context == BAG_CONTEXT_RECHARGE_TM_HM) {
+			// If there is not enough quantity to recharge a selected TM, show it in red
+			// If it does not need recharging, show it in grey
+			if (tm_is_used(ITEM_IDX_TO_TM_IDX(item_idx))) {
+				if (!(tm_hm_can_be_recharged(item_idx)))  {
+					strcat(buffer, str_color_red);
+				}
+			} else {
+				strcat(buffer, str_color_lightgrey);
+			}
+		} else {
+			if (tm_is_used(ITEM_IDX_TO_TM_IDX(item_idx))) {
+				strcat(buffer, str_color_red);
+			}
 		}
-		strcat(strbuf, str_xf9_x08_clear_to_x1);
+		strcat(buffer, str_xf9_x08_clear_to_x1);
 		itoa(buffer0, ITEM_IDX_TO_TM_IDX(item_idx) + 1, ITOA_PAD_ZEROS, 2);
-		strcat(strbuf, buffer0);
-		strcat(strbuf, str_clear_to_xtm);
+		strcat(buffer, buffer0);
+		strcat(buffer, str_clear_to_xtm);
 	}
-	strcat(strbuf, str_space);
-	strcat(strbuf, str_font_size_big);
-	strcat(strbuf, attack_names[item_idx_to_attack(item_idx)]);
-	strcat(strbuf, str_color_grey);
-	strcpy(dst, strbuf);
+	strcat(buffer, str_space);
+	strcat(buffer, str_font_size_big);
+	strcat(buffer, attack_names[item_idx_to_attack(item_idx)]);
+	(void) str_color_grey;
+	// strcat(buffer, str_color_grey);
+	if (!item_is_hm(item_idx)) {
+		// strcat(buffer, str_color_lightgrey);
+		if (tm_is_used(ITEM_IDX_TO_TM_IDX(item_idx))) {
+			strcat(buffer, str_xf9_clear_to_x40);
+			itoa_circled(buffer1, tm_hm_get_recharge_cost(item_idx));
+			strcat(buffer, buffer1);
+		}
+	}
+	strcpy(dst, buffer);
+
 	// DEBUG("Formatted item %d (is hm %d) to 0x%x\n", item_idx, item_is_hm(item_idx), dst);
 }
 
@@ -278,7 +306,6 @@ static const u8 str_move_info_none[] = PSTRING("---");
 static const tbox_font_colormap font_colmap_move_info = {.background = 0, .body = 15, .edge = 14};
 
 void bag_tm_hm_pocket_load_move_info(u16 slot) {
-
 
 	u8 pocket_idx = bag_get_current_pocket();
 	u8 power = 0, accuracy = 0, type = 0xFF, pp = 0, category = 0xFF;
@@ -345,11 +372,15 @@ void item_field_effect_energiedisk(u8 self) {
 	bag_fade_out_and_continuation(self);
 }
 
-static const u8 str_needs_to_be_recharged[] = LANGDEP(PSTRING("BUFFER_1 muss erst\nwieder aufgeladen werden!"), PSTRING("BUFFER_1 needs to\nbe recharged first!"));
+static const u8 str_needs_to_be_recharged[] = LANGDEP(
+	PSTRING("BUFFER_1 muss erst wieder mit\nBUFFER_2FONT_SIZE_SMALL×FONT_SIZE_BIGEnergiedisk aufgeladen werden!"), 
+	PSTRING("BUFFER_1 needs to be recharged\nwith BUFFER_2FONT_SIZE_SMALL×FONT_SIZE_BIGEnergy Disc first!")
+);
 
 void tm_hm_field_function(u8 self) {
 	if (item_is_tm(item_activated) && tm_is_used(ITEM_IDX_TO_TM_IDX(item_activated))) {
 		strcpy(buffer0, item_get_name(item_activated));
+		itoa_circled(buffer1, tm_hm_get_recharge_cost(item_activated));
 		string_decrypt(strbuf, str_needs_to_be_recharged);
 		bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
 	} else {
@@ -357,4 +388,39 @@ void tm_hm_field_function(u8 self) {
 		bag_set_continuation(pokemon_party_menu_open_for_item_use);
 		bag_fade_out_and_continuation(self);
 	}
+}
+
+u8 tm_hm_get_recharge_cost(u16 item_idx) {
+	if (!item_is_tm(item_idx))
+		return 0;
+	int tm_idx = ITEM_IDX_TO_TM_IDX(item_idx);
+	if (tm_idx < 0 || tm_idx >= NUM_TMS) {
+		DEBUG("Invalid TM index %d for recharge cost\n", tm_idx);
+		return 0;
+	}
+	switch (attacks[item_idx_to_attack(item_idx)].rating) {
+		case 0:
+		case 1:
+			return 1;
+		case 2:
+			return 2;
+		case 3:
+			return 3;
+		case 4:
+			return 4;
+		case 5:
+			return 5;
+		case 6:
+		default:
+			return 10;
+	}
+}
+
+bool tm_hm_can_be_recharged(u16 item_idx) {
+	if (!item_is_tm(item_idx))
+		return false;
+	u8 cost = tm_hm_get_recharge_cost(item_idx);
+	if (cost == 0)
+		return true;
+	return item_check(ITEM_ENERGIEDISK, cost);
 }

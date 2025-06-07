@@ -27,7 +27,7 @@ extern "C" {
         u8 flags;
         u8 effect_table;
         u8 category;
-        u8 padding;
+        u8 rating;
     }attack;
 
     

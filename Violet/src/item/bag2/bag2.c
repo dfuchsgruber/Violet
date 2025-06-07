@@ -177,7 +177,6 @@ void bag_format_item_string(u8 *dst, u16 item_idx) {
     else
         strcpy(dst, str_bag_font_color_regular);
     u8 pocket_idx = item_get_pocket(item_idx);
-    DEBUG("Format string called with %d\n", item_idx);
     if (item_idx == 0xFFFF)
         strcat(dst, str_cancel);
     else if (pocket_idx == POCKET_TM_HM) {

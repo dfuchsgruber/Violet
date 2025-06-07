@@ -1,30 +1,34 @@
-#include "types.h"
-#include "item/bag2.h"
-#include "language.h"
-#include "item/item.h"
-#include "overworld/pokemon_party_menu.h"
-#include "callbacks.h"
-#include "list_menu.h"
-#include "gp_menu.h"
-#include "text.h"
-#include "link.h"
-#include "dma.h"
 #include "agbmemory.h"
-#include "debug.h"
-#include "pokemon/virtual.h"
-#include "music.h"
-#include "menu_indicators.h"
+#include "attack.h"
 #include "berry.h"
+#include "bios.h"
+#include "callbacks.h"
+#include "color.h"
 #include "constants/sav_keys.h"
-#include "vars.h"
-#include "item/tm_hm.h"
-#include "overworld/map_control.h"
-#include "item/fishing.h"
 #include "data_structures.h"
+#include "debug.h"
+#include "dma.h"
+#include "gp_menu.h"
+#include "item/bag2.h"
+#include "item/fishing.h"
+#include "item/item.h"
+#include "item/tm_hm.h"
+#include "language.h"
+#include "link.h"
+#include "list_menu.h"
+#include "menu_indicators.h"
+#include "music.h"
+#include "oam.h"
+#include "overworld/map_control.h"
+#include "overworld/pokemon_party_menu.h"
+#include "pokemon/virtual.h"
+#include "text.h"
+#include "types.h"
+#include "vars.h"
 
 static const u8 str_use[] = LANGDEP(PSTRING("O.K."), PSTRING("Use"));
 static const u8 str_give[] = LANGDEP(PSTRING("Geben"), PSTRING("Give"));
-static const u8 str_toss[] =  LANGDEP(PSTRING("Müll"), PSTRING("Toss"));
+static const u8 str_toss[] = LANGDEP(PSTRING("Müll"), PSTRING("Toss"));
 static const u8 str_cancel[] = LANGDEP(PSTRING("Zurück"), PSTRING("Cancel"));
 static const u8 str_select[] = LANGDEP(PSTRING("Select"), PSTRING("Select"));
 static const u8 str_deselect[] = LANGDEP(PSTRING("Select"), PSTRING("Select"));
@@ -63,7 +67,7 @@ void bag_reinitialize_list_and_scroll_menu_indicators_and_return_to_idle_callbac
     big_callbacks[self].function = bag_reinitialize_scroll_menu_indicators_and_return_to_idle_callback;
 }
 
-void bag_close_message_and_return_to_idle_callback(u8 self)  {
+void bag_close_message_and_return_to_idle_callback(u8 self) {
     // tbox_flush_map(BAG_TBOX_MESSAGE);
     tbox_clear_message(BAG_TBOX_MESSAGE, false);
     bg_virtual_sync_reqeust_push(0);
@@ -75,7 +79,7 @@ void bag_wait_a_button_and_close_message_and_return_to_idle_callback(u8 self) {
         play_sound(5);
         bag_close_message_and_return_to_idle_callback(self);
     }
-} 
+}
 
 void bag_wait_a_button_and_close_message_and_close_bag(u8 self) {
     if (super.keys_new.keys.A) {
@@ -85,7 +89,7 @@ void bag_wait_a_button_and_close_message_and_close_bag(u8 self) {
         bg_virtual_sync_reqeust_push(0);
         bag_close(self, ITEM_NONE, false);
     }
-} 
+}
 
 void bag_menu_cancel_redraw_description_and_scroll_menu_indicators_and_return_to_idle_callback(u8 self) {
     tbox_tilemap_draw(BAG_TBOX_DESCRIPTION);
@@ -93,7 +97,6 @@ void bag_menu_cancel_redraw_description_and_scroll_menu_indicators_and_return_to
     bg_virtual_sync_reqeust_push(0);
     bag_reinitialize_scroll_menu_indicators_and_return_to_idle_callback(self);
 }
-
 
 static const u8 str_there_is_no_pokemon[] = LANGDEP(PSTRING("Du hast keine\nPokémon."), PSTRING("There is no\nPokémon."));
 
@@ -122,7 +125,7 @@ static void bag_context_menu_item_cancel(u8 self) {
     tbox_free(bag2_state->tbox_context_menu);
     tbox_flush_map(BAG_TBOX_CONTEXT_MENU_TEXT);
     bag_print_item_description(bag_get_current_slot_in_current_pocket());
-    big_callbacks[self].function = (void(*)(u8))bag_menu_cancel_redraw_description_and_scroll_menu_indicators_and_return_to_idle_callback;
+    big_callbacks[self].function = (void (*)(u8))bag_menu_cancel_redraw_description_and_scroll_menu_indicators_and_return_to_idle_callback;
 }
 
 static void bag_toss_or_sell_wait_a_or_b_press_and_redraw_all(u8 self) {
@@ -176,7 +179,7 @@ static void bag_toss_confirm_no(u8 self) {
     tbox_flush_map_and_frame(BAG_TBOX_MESSAGE_WITH_YES_NO);
     bg_virtual_sync_reqeust_push(0);
     bag_print_item_description(bag_get_current_slot_in_current_pocket());
-    big_callbacks[self].function = (void(*)(u8))bag_menu_cancel_redraw_description_and_scroll_menu_indicators_and_return_to_idle_callback;
+    big_callbacks[self].function = (void (*)(u8))bag_menu_cancel_redraw_description_and_scroll_menu_indicators_and_return_to_idle_callback;
 }
 
 static const yes_no_box_callbacks_t yes_no_callbacks_toss = {
@@ -207,18 +210,26 @@ static void bag_toss_or_sell_update_quantity(u8 number_digits) {
 }
 
 static const scroll_indicator_template scroll_indicator_quantity_toss_template = {
-    .arrow0_type = SCROLL_ARROW_UP, .arrow0_x = 212, .arrow0_y = 120,
-    .arrow1_type = SCROLL_ARROW_DOWN, .arrow1_x = 212, .arrow1_y = 152,
-    .arrow0_threshold = 0, 
+    .arrow0_type = SCROLL_ARROW_UP,
+    .arrow0_x = 212,
+    .arrow0_y = 120,
+    .arrow1_type = SCROLL_ARROW_DOWN,
+    .arrow1_x = 212,
+    .arrow1_y = 152,
+    .arrow0_threshold = 0,
     .arrow1_threshold = 1000,
     .tiles_tag = 110,
     .pal_tag = 110,
 };
 
 static const scroll_indicator_template scroll_indicator_quantity_sell_template = {
-    .arrow0_type = SCROLL_ARROW_UP, .arrow0_x = 168, .arrow0_y = 120,
-    .arrow1_type = SCROLL_ARROW_DOWN, .arrow1_x = 168, .arrow1_y = 152,
-    .arrow0_threshold = 0, 
+    .arrow0_type = SCROLL_ARROW_UP,
+    .arrow0_x = 168,
+    .arrow0_y = 120,
+    .arrow1_type = SCROLL_ARROW_DOWN,
+    .arrow1_x = 168,
+    .arrow1_y = 152,
+    .arrow0_threshold = 0,
     .arrow1_threshold = 1000,
     .tiles_tag = 110,
     .pal_tag = 110,
@@ -283,7 +294,6 @@ static void bag_context_menu_item_toss(u8 self) {
         bag_toss_or_sell_initiaize_quantity(str_toss_how_many, 3);
         big_callbacks[self].function = bag_select_quantity_to_toss;
     }
-
 }
 
 static void bag_context_menu_item_give_continuation() {
@@ -344,20 +354,19 @@ static void bag_equip_bait_continuation() {
     if (item_activated != ITEM_NONE) {
         item_rod_equip_bait(item_idx_rod, item_activated);
     }
-	bag_open(BAG_CONTEXT_OVERWORLD, BAG_OPEN_KEYITEMS, NULL);
+    bag_open(BAG_CONTEXT_OVERWORLD, BAG_OPEN_KEYITEMS, NULL);
 }
 
 static void bag_initalize_with_context_equip_bait() {
-	bag_open(BAG_CONTEXT_EQUIP_BAIT, BAG_OPEN_BAIT, NULL);
-	bag_set_continuation(bag_equip_bait_continuation);
+    bag_open(BAG_CONTEXT_EQUIP_BAIT, BAG_OPEN_BAIT, NULL);
+    bag_set_continuation(bag_equip_bait_continuation);
 }
 
 static void bag_equip_bait(u8 self) {
     gp_stack_push(item_activated);
-	bag_set_continuation(bag_initalize_with_context_equip_bait);
-	bag_fade_out_and_continuation(self);
+    bag_set_continuation(bag_initalize_with_context_equip_bait);
+    bag_fade_out_and_continuation(self);
 }
-
 
 static void bag_equip_bait_confirm_yes(u8 self) {
     // tbox_clear_message(BAG_TBOX_MESSAGE_WITH_YES_NO, false);
@@ -372,8 +381,7 @@ static const yes_no_box_callbacks_t yes_no_callbacks_equip_bait = {
 
 static const u8 str_confirm_equip_bait[] = LANGDEP(
     PSTRING("BUFFER_2 ist\nausgerüstet. Wechsel?"),
-    PSTRING("BUFFER_2 is\nequipped. Continue?")
-);
+    PSTRING("BUFFER_2 is\nequipped. Continue?"));
 
 static void bag_confirm_equip(u8 self) {
     strcpy(buffer0, item_get_name(item_activated));
@@ -399,13 +407,12 @@ static void bag_context_menu_item_equip_bait(u8 self) {
         big_callbacks[self].function = bag_confirm_equip;
     } else {
         bag_equip_bait(self);
-    }   
+    }
 }
 
 static const u8 str_unequiped_bait[] = LANGDEP(
     PSTRING("BUFFER_1 wurde von\nBUFFER_2 entfernt."),
-    PSTRING("BUFFER_1 was\nremoved from BUFFER_2.")
-);
+    PSTRING("BUFFER_1 was\nremoved from BUFFER_2."));
 
 static void bag_context_menu_item_unequip_bait(u8 self) {
     // Close the context menu and hide tboxes
@@ -415,7 +422,7 @@ static void bag_context_menu_item_unequip_bait(u8 self) {
     tbox_flush_map(BAG_TBOX_CONTEXT_MENU_TEXT);
     tbox_tilemap_draw(BAG_TBOX_LIST);
     bg_virtual_sync_reqeust_push(0);
-    
+
     strcpy(buffer0, item_get_name(item_rod_get_equipped_bait(item_activated)));
     strcpy(buffer1, item_get_name(item_activated));
     string_decrypt(strbuf, str_unequiped_bait);
@@ -425,13 +432,13 @@ static void bag_context_menu_item_unequip_bait(u8 self) {
 
 static void bag_equip_bait_from_bait_pocket_continuation() {
     u16 item_idx_rod = (u16)gp_stack_pop();
-    (void)item_idx_rod; // The rod was already equipped 
-	bag_open(BAG_CONTEXT_OVERWORLD, BAG_OPEN_BAIT, NULL);
+    (void)item_idx_rod; // The rod was already equipped
+    bag_open(BAG_CONTEXT_OVERWORLD, BAG_OPEN_BAIT, NULL);
 }
 
 static void bag_initalize_with_context_equip_bait_from_bait_pocket() {
-	bag_open(BAG_CONTEXT_SELECT_ROD_TO_EQUIP_BAIT, BAG_OPEN_KEYITEMS, NULL);
-	bag_set_continuation(bag_equip_bait_from_bait_pocket_continuation);
+    bag_open(BAG_CONTEXT_SELECT_ROD_TO_EQUIP_BAIT, BAG_OPEN_KEYITEMS, NULL);
+    bag_set_continuation(bag_equip_bait_from_bait_pocket_continuation);
 }
 
 static void bag_context_menu_item_equip_bait_from_bait_pocket(u8 self) {
@@ -445,11 +452,9 @@ static void bag_context_menu_item_equip_bait_from_bait_pocket(u8 self) {
     bg_virtual_sync_reqeust_push(0);
 
     gp_stack_push(item_activated);
-	bag_set_continuation(bag_initalize_with_context_equip_bait_from_bait_pocket);
-	bag_fade_out_and_continuation(self);
+    bag_set_continuation(bag_initalize_with_context_equip_bait_from_bait_pocket);
+    bag_fade_out_and_continuation(self);
 }
-
-
 
 const menu_action_t bag_context_menu_items[NUM_BAG_CONTEXT_MENU_ITEMS] = {
     [BAG_CONTEXT_MENU_USE] = {.text = str_use, .function = {.void_u8 = bag_context_menu_item_use}},
@@ -462,12 +467,10 @@ const menu_action_t bag_context_menu_items[NUM_BAG_CONTEXT_MENU_ITEMS] = {
     [BAG_CONTEXT_MENU_BATTLE_USE] = {.text = str_use, .function = {.void_u8 = bag_context_menu_item_battle_use}},
     [BAG_CONTEXT_MENU_EQUIP_BAIT] = {.text = str_equip_bait, .function = {.void_u8 = bag_context_menu_item_equip_bait}},
     [BAG_CONTEXT_MENU_UNEQUIP_BAIT] = {.text = str_unequip_bait, .function = {.void_u8 = bag_context_menu_item_unequip_bait}},
-    [BAG_CONTEXT_MENU_EQUIP_BAIT_FROM_BAIT_POCKET] = {.text = str_equip_bait, .function = {.void_u8 = bag_context_menu_item_equip_bait_from_bait_pocket}}, 
+    [BAG_CONTEXT_MENU_EQUIP_BAIT_FROM_BAIT_POCKET] = {.text = str_equip_bait, .function = {.void_u8 = bag_context_menu_item_equip_bait_from_bait_pocket}},
 };
 
-
 static const u8 str_item_is_selected[] = LANGDEP(PSTRING("BUFFER_1\nist ausgewählt!"), PSTRING("BUFFER_1\nis selected!"));
-
 
 static void bag_disable_ui() {
     // Disable bag ui
@@ -479,7 +482,8 @@ static void bag_disable_ui() {
 }
 
 static void bag_open_context_menu(const u8 *items, size_t num_items) {
-    (void)items;(void)num_items;
+    (void)items;
+    (void)num_items;
 
     bag2_state->num_context_menu_items = (u8)num_items;
     memcpy(bag2_state->context_menu_items, items, num_items * sizeof(bag2_state->context_menu_items[0]));
@@ -491,10 +495,10 @@ static void bag_open_context_menu(const u8 *items, size_t num_items) {
     tbox_tilemap_draw(bag2_state->tbox_context_menu);
     tbox_draw_std_frame_by_base_tile_and_pal(bag2_state->tbox_context_menu, false, BAG_START_TILE_BORDER_SET_STYLE, BAG_PAL_IDX_SET_STYLE);
     gp_menu_print_items(bag2_state->tbox_context_menu, 2, (u8)list_menu_get_cursor_dimension(2, CURSOR_DIMENSION_WIDTH), 2, font_get_attribute(2, FONT_ATTRIBUTE_LETTER_SPACING),
-        (u8)(font_get_attribute(2, FONT_ATTRIBUTE_MAX_LETTER_HEIGHT) + 2), (u8)num_items, bag_context_menu_items, items);
-    
+                        (u8)(font_get_attribute(2, FONT_ATTRIBUTE_MAX_LETTER_HEIGHT) + 2), (u8)num_items, bag_context_menu_items, items);
+
     gp_menu_initialize_with_unmuted_a_press(bag2_state->tbox_context_menu, 2, 0, 2, (u8)(font_get_attribute(2, FONT_ATTRIBUTE_MAX_LETTER_HEIGHT) + 2), (u8)num_items, 0);
-    
+
     bg_virtual_sync_reqeust_push(0);
 
     // Print the right text
@@ -505,20 +509,19 @@ static void bag_open_context_menu(const u8 *items, size_t num_items) {
     tbox_print_string(BAG_TBOX_CONTEXT_MENU_TEXT, 2, 0, 3, 0, 0, &bag_font_colormap_description, 0, strbuf);
 }
 
-
 static void bag_context_menu_overworld_handle_input(u8 self) {
     if (menu_util_link_is_busy() || dma3_busy(-1))
         return;
     int input = gp_menu_process_input_no_wrap_around();
     switch (input) {
-        case GP_MENU_NOTHING_CHOSEN:
-            break;
-        case GP_MENU_B_PRESSED:
-            bag_context_menu_items[BAG_CONTEXT_MENU_CANCEL].function.void_u8(self);
-            break;
-        default:
-            bag_context_menu_items[bag2_state->context_menu_items[input]].function.void_u8(self);
-            break;
+    case GP_MENU_NOTHING_CHOSEN:
+        break;
+    case GP_MENU_B_PRESSED:
+        bag_context_menu_items[BAG_CONTEXT_MENU_CANCEL].function.void_u8(self);
+        break;
+    default:
+        bag_context_menu_items[bag2_state->context_menu_items[input]].function.void_u8(self);
+        break;
     }
 }
 
@@ -538,7 +541,7 @@ static void bag_item_selected_overworld(u8 self) {
     u8 context_menu[4];
     u8 num_items = 0;
     if (item_get_pocket(item_activated) == POCKET_BAIT) {
-            context_menu[num_items++] = BAG_CONTEXT_MENU_EQUIP_BAIT_FROM_BAIT_POCKET;
+        context_menu[num_items++] = BAG_CONTEXT_MENU_EQUIP_BAIT_FROM_BAIT_POCKET;
     } else if (item_get_field_function(item_activated)) {
         if (item_activated == ITEM_FAHRRAD && overworld_flag_get(PLAYER_STATE_BIKING))
             context_menu[num_items++] = BAG_CONTEXT_MENU_WALK;
@@ -556,8 +559,8 @@ static void bag_item_selected_overworld(u8 self) {
         else
             context_menu[num_items++] = BAG_CONTEXT_MENU_SELECT;
     } else if (item_can_be_tossed(item_activated)) {
-            context_menu[num_items++] = BAG_CONTEXT_MENU_GIVE;
-            context_menu[num_items++] = BAG_CONTEXT_MENU_TOSS;
+        context_menu[num_items++] = BAG_CONTEXT_MENU_GIVE;
+        context_menu[num_items++] = BAG_CONTEXT_MENU_TOSS;
     }
     context_menu[num_items++] = BAG_CONTEXT_MENU_CANCEL;
     bag_open_context_menu(context_menu, num_items);
@@ -580,7 +583,7 @@ static void bag_sell_confirm_no(u8 self) {
     tbox_tilemap_draw(BAG_TBOX_POCKET_NAME);
     bg_virtual_sync_reqeust_push(0);
     bag_print_item_description(bag_get_current_slot_in_current_pocket());
-    big_callbacks[self].function = (void(*)(u8))bag_menu_cancel_redraw_description_and_scroll_menu_indicators_and_return_to_idle_callback;
+    big_callbacks[self].function = (void (*)(u8))bag_menu_cancel_redraw_description_and_scroll_menu_indicators_and_return_to_idle_callback;
 }
 
 static void bag_sold_item_wait_a_b_press(u8 self) {
@@ -622,7 +625,6 @@ static void bag_sell_confirm_yes(u8 self) {
     bg_virtual_sync_reqeust_push(0);
     bag_print_string(self, 2, str_sold_item, bag_sold_item);
 }
-
 
 static const yes_no_box_callbacks_t yes_no_callbacks_sell = {
     .no_callback = bag_sell_confirm_no,
@@ -710,7 +712,6 @@ static void bag_item_selected_sell(u8 self) {
         bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
     }
 }
-
 
 static void bag_deposit_wait_a_or_b_press_and_redraw_all(u8 self) {
     if (super.keys_new.keys.A || super.keys_new.keys.B) {
@@ -878,13 +879,11 @@ static void bag_item_selected_plant_berry(u8 self) {
 }
 
 static const u8 str_tm_recharged[] = LANGDEP(
-	PSTRING("BUFFER_1\nwurde wieder aufgeladen."),
-	PSTRING("BUFFER_1\nwas recharged.")
-);
+    PSTRING("BUFFER_1\nwurde wieder aufgeladen."),
+    PSTRING("BUFFER_1\nwas recharged."));
 
 static void bag_recharge_wait_for_sound(u8 self) {
     if (!sound_is_playing()) {
-        bag_reinitialize_list();
         strcpy(buffer0, item_get_name(item_activated));
         string_decrypt(strbuf, str_tm_recharged);
         bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_close_bag);
@@ -892,98 +891,183 @@ static void bag_recharge_wait_for_sound(u8 self) {
 }
 
 static const u8 str_hms_cant_be_recharged[] = LANGDEP(
-	PSTRING("Vms müssen nicht aufgeladen werden!"),
-	PSTRING("Hms don't need to be recharged!")
-);
+    PSTRING("Vms müssen nicht aufgeladen werden!"),
+    PSTRING("Hms don't need to be recharged!"));
 
 static const u8 str_tm_doesnt_need_recharge[] = LANGDEP(
-	PSTRING("BUFFER_1\nmuss nicht aufgeladen werden!"),
-	PSTRING("BUFFER_1\ndoesn't need to be recharged!")
-);
+    PSTRING("BUFFER_1\nmuss nicht aufgeladen werden!"),
+    PSTRING("BUFFER_1\ndoesn't need to be recharged!"));
 
-static void bag_item_selected_recharge(u8 self) {
-    bag_disable_ui();
-    if (!item_is_tm(item_activated)) {
-        strcpy(buffer0, item_get_name(item_activated));
-        string_decrypt(strbuf, str_hms_cant_be_recharged);
-        bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
-    } else if (!tm_is_used(ITEM_IDX_TO_TM_IDX(item_activated))) {
-        strcpy(buffer0, item_get_name(item_activated));
-        string_decrypt(strbuf, str_tm_doesnt_need_recharge);
-        bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
-    } else {
-        item_remove(ITEM_ENERGIEDISK, 1);
-		tm_set_unused(ITEM_IDX_TO_TM_IDX(item_activated));
-		play_sound(27);
-		big_callbacks[self].function = bag_recharge_wait_for_sound;
-    }
-}
+static const u8 str_tm_cant_pay_cost[] = LANGDEP(
+    PSTRING("Du benötigst BUFFER_2×BUFFER_1,\num BUFFER_3 aufzuladen."),
+    PSTRING("You need BUFFER_2×BUFFER_1\nto recharge BUFFER_3."));
 
-static const u8 bag_context_menu_battle[] = {BAG_CONTEXT_MENU_BATTLE_USE, BAG_CONTEXT_MENU_CANCEL};
-static const u8 bag_context_menu_battle_no_function[] = {BAG_CONTEXT_MENU_CANCEL};
-
-static void bag_item_selected_battle(u8 self) {
-    bag_disable_ui();
-    if (item_get_battle_function(item_activated))
-        bag_open_context_menu(bag_context_menu_battle, ARRAY_COUNT(bag_context_menu_battle));
-    else
-        bag_open_context_menu(bag_context_menu_battle_no_function, ARRAY_COUNT(bag_context_menu_battle_no_function));
-    big_callbacks[self].function = bag_context_menu_overworld_handle_input;
-}
-
-static void bag_item_selected_equip_bait(u8 self) {
-    bag_disable_ui();
-    bag_close(self, item_activated, false);
-}
-
-static void bag_wait_sound_effect_and_close_bag(u8 self) {
-    if (!sound_is_playing()) {
-        if (bag2_state->delay > 0) {
-            bag2_state->delay--;
-        } else {
-            bag_close(self, item_activated, false);
+#define frame params[0]
+#define state params[1]
+static void bag_recharge_pal_fade(u8 self) {
+    u16 start_color = (u16)(256 + 16 * bag2_state->pal_idx_item);
+    switch (big_callbacks[self].state) {
+    case 0:
+        oam_rotscale_anim_init(oams + bag2_state->oam_idx_item, 1);
+        FALL_THROUGH;
+    case 3:
+    case 6:
+        play_sound(133);
+        ++big_callbacks[self].state;
+        FALL_THROUGH;
+    case 1:
+    case 4:
+    case 7:
+    {
+        // Fade to white
+        pal_alpha_blending(start_color, 16, (u8)((++big_callbacks[self].frame)) / 2, (color_t){.rgb = {31, 31, 31}});
+        if (big_callbacks[self].frame >= 32) {
+            ++big_callbacks[self].state;
+            big_callbacks[self].frame = 0;
         }
+        break;
+    }
+    case 2:
+    case 5:
+    case 11:
+    {
+        // Fade from white
+        pal_alpha_blending(start_color, 16, (u8)(16 - (++big_callbacks[self].frame) / 2), (color_t){.rgb = {31, 31, 31}});
+        if (big_callbacks[self].frame >= 32) {
+            ++big_callbacks[self].state;
+            big_callbacks[self].frame = 0;
+        }
+        break;
+    }
+    case 8: {
+        // Replace pal
+        bag_item_load_palette(item_activated);
+        color_t white = {.rgb = {31, 31, 31}};
+        CPUSETFILL16(&white, pals + 16 * (16 + bag2_state->pal_idx_item), 16 * sizeof(color_t));
+        big_callbacks[self].state++;
+        break;
+    }
+    case 9: {
+        // Replace gfx
+        bag_item_load_gfx(item_activated);
+        big_callbacks[self].frame = 0;
+        big_callbacks[self].state++;
+        break;
+    }
+    case 10: {
+        oam_rotscale_anim_init(oams + bag2_state->oam_idx_item, 0);
+        // Wait for sound effect to finish
+        if (!sound_is_playing()) {
+            big_callbacks[self].state++;
+            big_callbacks[self].frame = 0;
+        }
+        break;
+    }
+    case 12:
+        play_sound(88);
+        bag_reinitialize_list();
+        big_callbacks[self].function = bag_recharge_wait_for_sound;
+        return;
     }
 }
 
-static const u8 str_is_no_rod[] = LANGDEP(PSTRING("Nur eine Angel kann mit\nBUFFER_2 ausgerüstet werden."), PSTRING("BUFFER_2 can only\nbe equipped to a rod."));
-static const u8 str_is_already_equipped[] = LANGDEP(PSTRING("BUFFER_1 ist bereits\nmit BUFFER_2 ausgerüstet."), PSTRING("BUFFER_2 is already\nequipped to BUFFER_1."));
+    static void bag_item_selected_recharge(u8 self) {
+        bag_disable_ui();
 
-static void bag_item_selected_equip_to_rod(u8 self) {
-    bag_disable_ui();
-    u16 bait_idx = (u16)gp_stack_peek();
-    if (item_is_rod(item_activated)) {
-        if (item_rod_get_equipped_bait(item_activated) == bait_idx) {
+        if (!item_is_tm(item_activated)) {
             strcpy(buffer0, item_get_name(item_activated));
-            strcpy(buffer1, item_get_name(bait_idx));
-            string_decrypt(strbuf, str_is_already_equipped);
+            string_decrypt(strbuf, str_hms_cant_be_recharged);
+            bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+        } else if (!tm_is_used(ITEM_IDX_TO_TM_IDX(item_activated))) {
+            strcpy(buffer0, item_get_name(item_activated));
+            string_decrypt(strbuf, str_tm_doesnt_need_recharge);
+            bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+        } else if (!tm_hm_can_be_recharged(item_activated)) {
+            u8 recharge_cost = tm_hm_get_recharge_cost(item_activated);
+            itoa_circled(buffer1, recharge_cost);
+            strcpy(buffer0, item_get_name(ITEM_ENERGIEDISK));
+            strcpy(buffer2, attack_names[item_idx_to_attack(item_activated)]);
+            string_decrypt(strbuf, str_tm_cant_pay_cost);
             bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
         } else {
-            play_sound(29);
-            bag2_state->delay = 40;
-            item_rod_equip_bait(item_activated, bait_idx);
-            bag_reinitialize_list();
-            bag_print_item_description(bag_get_current_slot_in_current_pocket());
-            tbox_tilemap_draw(BAG_TBOX_DESCRIPTION);
-            big_callbacks[self].function = bag_wait_sound_effect_and_close_bag;
+            item_remove(ITEM_ENERGIEDISK, tm_hm_get_recharge_cost(
+                                              item_activated));
+            tm_set_unused(ITEM_IDX_TO_TM_IDX(item_activated));
+            // Start the pal fading
+            big_callbacks[self].function = bag_recharge_pal_fade;
+            big_callbacks[self].state = 0;
+            big_callbacks[self].frame = 0;
+            //bag_recharge_wait_for_sound;
         }
-    } else {
-        strcpy(buffer0, item_get_name(item_activated));
-        strcpy(buffer1, item_get_name(bait_idx));
-        string_decrypt(strbuf, str_is_no_rod);
-        bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
     }
-}
+#undef frame
+#undef state
 
-void (*const bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8) = {
-    [BAG_CONTEXT_OVERWORLD] = bag_item_selected_overworld,
-    [BAG_CONTEXT_PARTY_GIVE] = bag_item_selected_party_give,
-    [BAG_CONTEXT_SELL] = bag_item_selected_sell,
-    [BAG_CONTEXT_DEPOSIT] = bag_item_selected_deposit,
-    [BAG_CONTEXT_COMPOST] = bag_item_selected_compost,
-    [BAG_CONTEXT_PLANT_BERRY] = bag_item_selected_plant_berry,
-    [BAG_CONTEXT_RECHARGE_TM_HM] = bag_item_selected_recharge,
-    [BAG_CONTEXT_BATTLE] = bag_item_selected_battle,
-    [BAG_CONTEXT_EQUIP_BAIT]  = bag_item_selected_equip_bait,
-    [BAG_CONTEXT_SELECT_ROD_TO_EQUIP_BAIT] = bag_item_selected_equip_to_rod,
-};
+    static const u8 bag_context_menu_battle[] = {BAG_CONTEXT_MENU_BATTLE_USE, BAG_CONTEXT_MENU_CANCEL};
+    static const u8 bag_context_menu_battle_no_function[] = {BAG_CONTEXT_MENU_CANCEL};
+
+    static void bag_item_selected_battle(u8 self) {
+        bag_disable_ui();
+        if (item_get_battle_function(item_activated))
+            bag_open_context_menu(bag_context_menu_battle, ARRAY_COUNT(bag_context_menu_battle));
+        else
+            bag_open_context_menu(bag_context_menu_battle_no_function, ARRAY_COUNT(bag_context_menu_battle_no_function));
+        big_callbacks[self].function = bag_context_menu_overworld_handle_input;
+    }
+
+    static void bag_item_selected_equip_bait(u8 self) {
+        bag_disable_ui();
+        bag_close(self, item_activated, false);
+    }
+
+    static void bag_wait_sound_effect_and_close_bag(u8 self) {
+        if (!sound_is_playing()) {
+            if (bag2_state->delay > 0) {
+                bag2_state->delay--;
+            } else {
+                bag_close(self, item_activated, false);
+            }
+        }
+    }
+
+    static const u8 str_is_no_rod[] = LANGDEP(PSTRING("Nur eine Angel kann mit\nBUFFER_2 ausgerüstet werden."), PSTRING("BUFFER_2 can only\nbe equipped to a rod."));
+    static const u8 str_is_already_equipped[] = LANGDEP(PSTRING("BUFFER_1 ist bereits\nmit BUFFER_2 ausgerüstet."), PSTRING("BUFFER_2 is already\nequipped to BUFFER_1."));
+
+    static void bag_item_selected_equip_to_rod(u8 self) {
+        bag_disable_ui();
+        u16 bait_idx = (u16)gp_stack_peek();
+        if (item_is_rod(item_activated)) {
+            if (item_rod_get_equipped_bait(item_activated) == bait_idx) {
+                strcpy(buffer0, item_get_name(item_activated));
+                strcpy(buffer1, item_get_name(bait_idx));
+                string_decrypt(strbuf, str_is_already_equipped);
+                bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+            } else {
+                play_sound(29);
+                bag2_state->delay = 40;
+                item_rod_equip_bait(item_activated, bait_idx);
+                bag_reinitialize_list();
+                bag_print_item_description(bag_get_current_slot_in_current_pocket());
+                tbox_tilemap_draw(BAG_TBOX_DESCRIPTION);
+                big_callbacks[self].function = bag_wait_sound_effect_and_close_bag;
+            }
+        } else {
+            strcpy(buffer0, item_get_name(item_activated));
+            strcpy(buffer1, item_get_name(bait_idx));
+            string_decrypt(strbuf, str_is_no_rod);
+            bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+        }
+    }
+
+    void (*const bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8) = {
+        [BAG_CONTEXT_OVERWORLD] = bag_item_selected_overworld,
+        [BAG_CONTEXT_PARTY_GIVE] = bag_item_selected_party_give,
+        [BAG_CONTEXT_SELL] = bag_item_selected_sell,
+        [BAG_CONTEXT_DEPOSIT] = bag_item_selected_deposit,
+        [BAG_CONTEXT_COMPOST] = bag_item_selected_compost,
+        [BAG_CONTEXT_PLANT_BERRY] = bag_item_selected_plant_berry,
+        [BAG_CONTEXT_RECHARGE_TM_HM] = bag_item_selected_recharge,
+        [BAG_CONTEXT_BATTLE] = bag_item_selected_battle,
+        [BAG_CONTEXT_EQUIP_BAIT] = bag_item_selected_equip_bait,
+        [BAG_CONTEXT_SELECT_ROD_TO_EQUIP_BAIT] = bag_item_selected_equip_to_rod,
+    };

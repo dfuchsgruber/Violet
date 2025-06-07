@@ -843,5 +843,7 @@ extern const LZ77COMPRESSED gfx_item_tm_dragonTiles;
 extern const LZ77COMPRESSED gfx_item_tm_dragonPal;
 extern const LZ77COMPRESSED gfx_item_tm_darkTiles;
 extern const LZ77COMPRESSED gfx_item_tm_darkPal;
+extern const LZ77COMPRESSED gfx_item_tm_brokenTiles;
+extern const LZ77COMPRESSED gfx_item_tm_brokenPal;
 
 #endif
