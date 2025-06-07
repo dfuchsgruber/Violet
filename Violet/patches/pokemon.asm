@@ -683,11 +683,10 @@
         mov r0, #0x7F
         lsl r0, #0x18
 
-.org 0x8043b68
-	.word pokemon_tm_compatibility
-
-.org 0x8043b80
-	.word pokemon_tm_compatibility
+.org 0x08043b2c
+	ldr r2, =pokemon_can_learn_tm_hm | 1
+	bx r2
+	.pool
 
 //Evolution table
 

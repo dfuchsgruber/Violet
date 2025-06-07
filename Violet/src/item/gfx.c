@@ -1,7 +1,10 @@
+#include "attack.h"
 #include "constants/items.h"
+#include "item/tm_hm.h"
 #include "types.h"
 #include "item/item.h"
 #include "item/gfx.h" 
+#include "constants/pokemon_types.h"
 
 static const item_gfx_pair item_gfx_pairs[] = {
     [ITEM_NONE] = { .gfx = gfx_item_noneTiles, .pal = gfx_item_nonePal },
@@ -293,64 +296,6 @@ static const item_gfx_pair item_gfx_pairs[] = {
     [ITEM_WURZELFOSSIL] = { .gfx = gfx_item_wurzelfossilTiles, .pal = gfx_item_wurzelfossilPal },
     [ITEM_KLAUENFOSSIL] = { .gfx = gfx_item_klauenfossilTiles, .pal = gfx_item_klauenfossilPal },
     [ITEM_DEVON_SCOPE] = { .gfx = gfx_item_devon_scopeTiles, .pal = gfx_item_devon_scopePal },
-    [ITEM_TM01] = { .gfx = gfx_item_tm01Tiles, .pal = gfx_item_tm01Pal },
-    [ITEM_TM02] = { .gfx = gfx_item_tm02Tiles, .pal = gfx_item_tm02Pal },
-    [ITEM_TM03] = { .gfx = gfx_item_tm03Tiles, .pal = gfx_item_tm03Pal },
-    [ITEM_TM04] = { .gfx = gfx_item_tm04Tiles, .pal = gfx_item_tm04Pal },
-    [ITEM_TM05] = { .gfx = gfx_item_tm05Tiles, .pal = gfx_item_tm05Pal },
-    [ITEM_TM06] = { .gfx = gfx_item_tm06Tiles, .pal = gfx_item_tm06Pal },
-    [ITEM_TM07] = { .gfx = gfx_item_tm07Tiles, .pal = gfx_item_tm07Pal },
-    [ITEM_TM08] = { .gfx = gfx_item_tm08Tiles, .pal = gfx_item_tm08Pal },
-    [ITEM_TM09] = { .gfx = gfx_item_tm09Tiles, .pal = gfx_item_tm09Pal },
-    [ITEM_TM10] = { .gfx = gfx_item_tm10Tiles, .pal = gfx_item_tm10Pal },
-    [ITEM_TM11] = { .gfx = gfx_item_tm11Tiles, .pal = gfx_item_tm11Pal },
-    [ITEM_TM12] = { .gfx = gfx_item_tm12Tiles, .pal = gfx_item_tm12Pal },
-    [ITEM_TM13] = { .gfx = gfx_item_tm13Tiles, .pal = gfx_item_tm13Pal },
-    [ITEM_TM14] = { .gfx = gfx_item_tm14Tiles, .pal = gfx_item_tm14Pal },
-    [ITEM_TM15] = { .gfx = gfx_item_tm15Tiles, .pal = gfx_item_tm15Pal },
-    [ITEM_TM16] = { .gfx = gfx_item_tm16Tiles, .pal = gfx_item_tm16Pal },
-    [ITEM_TM17] = { .gfx = gfx_item_tm17Tiles, .pal = gfx_item_tm17Pal },
-    [ITEM_TM18] = { .gfx = gfx_item_tm18Tiles, .pal = gfx_item_tm18Pal },
-    [ITEM_TM19] = { .gfx = gfx_item_tm19Tiles, .pal = gfx_item_tm19Pal },
-    [ITEM_TM20] = { .gfx = gfx_item_tm20Tiles, .pal = gfx_item_tm20Pal },
-    [ITEM_TM21] = { .gfx = gfx_item_tm21Tiles, .pal = gfx_item_tm21Pal },
-    [ITEM_TM22] = { .gfx = gfx_item_tm22Tiles, .pal = gfx_item_tm22Pal },
-    [ITEM_TM23] = { .gfx = gfx_item_tm23Tiles, .pal = gfx_item_tm23Pal },
-    [ITEM_TM24] = { .gfx = gfx_item_tm24Tiles, .pal = gfx_item_tm24Pal },
-    [ITEM_TM25] = { .gfx = gfx_item_tm25Tiles, .pal = gfx_item_tm25Pal },
-    [ITEM_TM26] = { .gfx = gfx_item_tm26Tiles, .pal = gfx_item_tm26Pal },
-    [ITEM_TM27] = { .gfx = gfx_item_tm27Tiles, .pal = gfx_item_tm27Pal },
-    [ITEM_TM28] = { .gfx = gfx_item_tm28Tiles, .pal = gfx_item_tm28Pal },
-    [ITEM_TM29] = { .gfx = gfx_item_tm29Tiles, .pal = gfx_item_tm29Pal },
-    [ITEM_TM30] = { .gfx = gfx_item_tm30Tiles, .pal = gfx_item_tm30Pal },
-    [ITEM_TM31] = { .gfx = gfx_item_tm31Tiles, .pal = gfx_item_tm31Pal },
-    [ITEM_TM32] = { .gfx = gfx_item_tm32Tiles, .pal = gfx_item_tm32Pal },
-    [ITEM_TM33] = { .gfx = gfx_item_tm33Tiles, .pal = gfx_item_tm33Pal },
-    [ITEM_TM34] = { .gfx = gfx_item_tm34Tiles, .pal = gfx_item_tm34Pal },
-    [ITEM_TM35] = { .gfx = gfx_item_tm35Tiles, .pal = gfx_item_tm35Pal },
-    [ITEM_TM36] = { .gfx = gfx_item_tm36Tiles, .pal = gfx_item_tm36Pal },
-    [ITEM_TM37] = { .gfx = gfx_item_tm37Tiles, .pal = gfx_item_tm37Pal },
-    [ITEM_TM38] = { .gfx = gfx_item_tm38Tiles, .pal = gfx_item_tm38Pal },
-    [ITEM_TM39] = { .gfx = gfx_item_tm39Tiles, .pal = gfx_item_tm39Pal },
-    [ITEM_TM40] = { .gfx = gfx_item_tm40Tiles, .pal = gfx_item_tm40Pal },
-    [ITEM_TM41] = { .gfx = gfx_item_tm41Tiles, .pal = gfx_item_tm41Pal },
-    [ITEM_TM42] = { .gfx = gfx_item_tm42Tiles, .pal = gfx_item_tm42Pal },
-    [ITEM_TM43] = { .gfx = gfx_item_tm43Tiles, .pal = gfx_item_tm43Pal },
-    [ITEM_TM44] = { .gfx = gfx_item_tm44Tiles, .pal = gfx_item_tm44Pal },
-    [ITEM_TM45] = { .gfx = gfx_item_tm45Tiles, .pal = gfx_item_tm45Pal },
-    [ITEM_TM46] = { .gfx = gfx_item_tm46Tiles, .pal = gfx_item_tm46Pal },
-    [ITEM_TM47] = { .gfx = gfx_item_tm47Tiles, .pal = gfx_item_tm47Pal },
-    [ITEM_TM48] = { .gfx = gfx_item_tm48Tiles, .pal = gfx_item_tm48Pal },
-    [ITEM_TM49] = { .gfx = gfx_item_tm49Tiles, .pal = gfx_item_tm49Pal },
-    [ITEM_TM50] = { .gfx = gfx_item_tm50Tiles, .pal = gfx_item_tm50Pal },
-    [ITEM_VM01] = { .gfx = gfx_item_vm01Tiles, .pal = gfx_item_vm01Pal },
-    [ITEM_VM02] = { .gfx = gfx_item_vm02Tiles, .pal = gfx_item_vm02Pal },
-    [ITEM_VM03] = { .gfx = gfx_item_vm03Tiles, .pal = gfx_item_vm03Pal },
-    [ITEM_VM04] = { .gfx = gfx_item_vm04Tiles, .pal = gfx_item_vm04Pal },
-    [ITEM_VM05] = { .gfx = gfx_item_vm05Tiles, .pal = gfx_item_vm05Pal },
-    [ITEM_VM06] = { .gfx = gfx_item_vm06Tiles, .pal = gfx_item_vm06Pal },
-    [ITEM_VM07] = { .gfx = gfx_item_vm07Tiles, .pal = gfx_item_vm07Pal },
-    [ITEM_VM08] = { .gfx = gfx_item_vm08Tiles, .pal = gfx_item_vm08Pal },
     [ITEM_SCHWARZPULVER] = { .gfx = gfx_item_schwarzpulverTiles, .pal = gfx_item_schwarzpulverPal },
     [ITEM_VIERBLATT] = { .gfx = gfx_item_vierblattTiles, .pal = gfx_item_vierblattPal },
     [ITEM_ZUGANGSKARTE] = { .gfx = gfx_item_zugangskarteTiles, .pal = gfx_item_zugangskartePal },
@@ -453,12 +398,38 @@ static const item_gfx_pair item_gfx_pairs[] = {
     [ITEM_GRADUIERTENHUT] = {.gfx = gfx_item_graduate_hatTiles, .pal = gfx_item_graduate_hatPal},
 };
 
+static const item_gfx_pair tm_item_gfx_pairs[NUM_TYPES] = {
+    [TYPE_NORMAL] = { .gfx = gfx_item_tm_normalTiles, .pal = gfx_item_tm_normalPal },
+    [TYPE_KAMPF] = { .gfx = gfx_item_tm_fightingTiles, .pal = gfx_item_tm_fightingPal },
+    [TYPE_FLUG] = { .gfx = gfx_item_tm_flyingTiles, .pal = gfx_item_tm_flyingPal },
+    [TYPE_GIFT] = { .gfx = gfx_item_tm_poisonTiles, .pal = gfx_item_tm_poisonPal },
+    [TYPE_BODEN] = { .gfx = gfx_item_tm_groundTiles, .pal = gfx_item_tm_groundPal },
+    [TYPE_GESTEIN] = { .gfx = gfx_item_tm_rockTiles, .pal = gfx_item_tm_rockPal },
+    [TYPE_KAEFER] = { .gfx = gfx_item_tm_bugTiles, .pal = gfx_item_tm_bugPal },
+    [TYPE_GEIST] = { .gfx = gfx_item_tm_ghostTiles, .pal = gfx_item_tm_ghostPal },
+    [TYPE_STAHL] = { .gfx = gfx_item_tm_steelTiles, .pal = gfx_item_tm_steelPal },
+    [TYPE_FEE] = { .gfx = gfx_item_tm_fairyTiles, .pal = gfx_item_tm_fairyPal },
+    [TYPE_FEUER] = { .gfx = gfx_item_tm_fireTiles, .pal = gfx_item_tm_firePal },
+    [TYPE_WASSER] = { .gfx = gfx_item_tm_waterTiles, .pal = gfx_item_tm_waterPal },
+    [TYPE_PFLANZE] = { .gfx = gfx_item_tm_grassTiles, .pal = gfx_item_tm_grassPal },
+    [TYPE_ELEKTRO] = { .gfx = gfx_item_tm_electricTiles, .pal = gfx_item_tm_electricPal },
+    [TYPE_PSYCHO] = { .gfx = gfx_item_tm_psychicTiles, .pal = gfx_item_tm_psychicPal },
+    [TYPE_EIS] = { .gfx = gfx_item_tm_iceTiles, .pal = gfx_item_tm_icePal },
+    [TYPE_DRACHE] = { .gfx = gfx_item_tm_dragonTiles, .pal = gfx_item_tm_dragonPal },
+    [TYPE_UNLICHT] = { .gfx = gfx_item_tm_darkTiles, .pal = gfx_item_tm_darkPal },
+};
+
 const u8 *item_get_resource(u16 item_idx, u8 get_palette) {
     if (item_idx >= ITEM_CNT) 
         item_idx = 0;
+    const item_gfx_pair *pair;
+    if (ITEM_IS_TM_OR_HM(item_idx)) {
+        pair = tm_item_gfx_pairs + attacks[item_idx_to_attack(item_idx)].type;
+    } else {
+        pair = item_gfx_pairs + item_idx;
+    }
     if (get_palette)
-        return item_gfx_pairs[item_idx].pal;
+        return pair->pal;
     else
-        return item_gfx_pairs[item_idx].gfx;
-
+        return pair->gfx;
 }

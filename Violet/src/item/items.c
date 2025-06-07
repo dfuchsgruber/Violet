@@ -1328,8 +1328,8 @@ static const u8 str_item_tm40_description[] = LANGDEP(
 	PSTRING("An extremely fast attack against\none target. It can’t be evaded.")
 );
 static const u8 str_item_tm41_description[] = LANGDEP(
-	PSTRING("Erzürnt Gegner, um wiederholten\nEinsatz derselben Att. zu\nverhindern."),
-	PSTRING("It enrages the foe, making it\nincapable of using the same move\nsuccessively.")
+	PSTRING("Anwender feuert mächtigen\nLichtblitz ab, der Gegner\nSchaden zufügt."),
+	PSTRING("The user fires a powerful beam of\nlight at the foe, dealing damage.")
 );
 static const u8 str_item_tm42_description[] = LANGDEP(
 	PSTRING("Erhöht Angr. nach Verbrennung,\nParalyse oder Vergiftung."),
@@ -1364,9 +1364,210 @@ static const u8 str_item_tm49_description[] = LANGDEP(
 	PSTRING("Steals the effects of the foe’s\nhealing or statuschanging move.")
 );
 static const u8 str_item_tm50_description[] = LANGDEP(
+	PSTRING("Anwender eröht seinen mentalen\nFokus und greift an. Senkt\nevtl. Sp. Vert. des Ziels."),
+	PSTRING("The user focuses its mind and\nattacks. It may also lower the\ntarget’s SP. Def.")
+);
+static const u8 str_item_tm51_description[] = LANGDEP(
 	PSTRING("Angriff mit voller Kraft, der den\nSP. Ang. d. Anwenders  deutlich\nsenkt."),
 	PSTRING("An intense attack that also\nsharply reduces the user’s SP.\nAtk stat.")
 );
+static const u8 str_item_tm52_description[] = LANGDEP(
+	PSTRING("Anwender greif mit giftigen\nGliedmaßen an. Das Ziel wird dabei\neventuell vergiftet."),
+	PSTRING("The user attacks with poisonous\nappendages. The target may also\nbe poisoned.")
+);
+static const u8 str_item_tm53_description[] = LANGDEP(
+	PSTRING("Anwender greift mit fürchterlicher\nAura schlechter Gedanken an.\nZiel schreckt evtl. zurück."),
+	PSTRING("The user attacks with a dreadful\nwave of dark thoughts. The\ntarget may flinch.")
+);
+static const u8 str_item_tm54_description[] = LANGDEP(
+	PSTRING("Anwender führt eine Attacke aus,\ndie einer Scherenbewegung ähnelt.\nHohe Volltrefferquote."),
+	PSTRING("The user attacks with a move that\nresembles a scissor action. It has\na high critical-hit ratio.")	
+);
+static const u8 str_item_tm55_description[] = LANGDEP(
+	PSTRING("Anwender schleudert scharfe Steine\nauf das Ziel. Hohe\nVolltrefferquote."),
+	PSTRING("The user hurls sharp stones at the\ntarget. It has a high critical-hit\nratio.")	
+);
+static const u8 str_item_tm56_description[] = LANGDEP(
+	PSTRING("Anwender sammelt Lichtenergie und\nfeuert sie auf einmal ab. Senkt\nevtl. Sp. Vert. des Ziels."),
+	PSTRING("The user gathers light energy and\nfires it all at once. It may also\nlower the target’s SP. Def.")
+);
+static const u8 str_item_tm57_description[] = LANGDEP(
+	PSTRING("Anwender zieht Kraft aus der Natur\nund feuer sie auf das Ziel. Senkt\nEvtl. Sp. Vert. des Ziels."),
+	PSTRING("The user draws power from nature\nand fires it at the target. It may\nalso lower the target’s SP. Def.")
+);
+static const u8 str_item_tm58_description[] = LANGDEP(
+	PSTRING("Das Ziel wird mit einer\nSchockwelle angegriffen, die aus dem\nMaul des Anwenders kommt."),
+	PSTRING("The target is attacked with a\nshock wave that comes from the\nuser’s mouth.")
+);
+static const u8 str_item_tm59_description[] = LANGDEP(
+	PSTRING("Anwender explodiert, richtet bei\nallen Pokémon in der Umgebung großen\nSchaden an und wird kampfunfähig."),
+	PSTRING("The user explodes, dealing great\ndamage to all Pokémon in the\narea and fainting itself.")
+);
+static const u8 str_item_tm60_description[] = LANGDEP(
+	PSTRING("Schleudert riesige Felsen auf\ngegnerische Pokémon, die\neventuell zurückschrecken."),
+	PSTRING("Hurls huge boulders at opposing\nPokémon, possibly making them\nflinch.")
+);
+static const u8 str_item_tm61_description[] = LANGDEP(
+	PSTRING("Anwender setzt 1/4 der max.\nKP ein, um Delegator zu erzeugen,\nder für ihn Schläge einsteckt."),
+	PSTRING("The user sacrifices 1/4 of its max.\nHP to create a decoy that takes\nhits for it.")
+);
+static const u8 str_item_tm62_description[] = LANGDEP(
+	PSTRING("Ein schwacher Stromstoß, der\ndas Ziel paralysiert."),
+	PSTRING("A weak electric shock that\nparalyzes the target.")
+);
+static const u8 str_item_tm63_description[] = LANGDEP(
+	PSTRING("Anwender setzt zufällige,\nihm bekannte Attacke ein, wenn\ndieser schläft."),
+	PSTRING("The user randomly uses one of its\nknown moves when it is asleep.")
+);
+static const u8 str_item_tm64_description[] = LANGDEP(
+	PSTRING("Verwirrt das Ziel und\nerhöht dessen Angriff stark."),
+	PSTRING("Confuses the target and sharply\nraises its Attack stat.")
+);
+static const u8 str_item_tm65_description[] = LANGDEP(
+	PSTRING("Richtet Schaden gemäß dem\nLevel des Angreifers an."),
+	PSTRING("Deals damage based on the\nattacker's level.")
+);
+static const u8 str_item_tm66_description[] = LANGDEP(
+	PSTRING("Strahlenattacke, die das\nZiel eventuell verwirrt."),
+	PSTRING("A beam attack that may confuse\nthe target.")
+);
+static const u8 str_item_tm67_description[] = LANGDEP(
+	PSTRING("Greift das Ziel mit scharfen\nKLaue aus Schatten an. Hohe\nVolltrefferquote."),
+	PSTRING("Attacks the target with sharp\nclaws made of shadows. It has a\nhigh critical-hit ratio.")
+);
+static const u8 str_item_tm68_description[] = LANGDEP(
+	PSTRING("Schlägt das Item des Ziels\nweg und vereitelt dessen Gebrauch."),
+	PSTRING("Knocks away the target’s held\nitem, preventing its use in battle.")
+);
+static const u8 str_item_tm69_description[] = LANGDEP(
+	PSTRING("Anwender konzentriert seinen\nWillen und rammt das Ziel.\nDieses schreckt evtl. zurück."),
+	PSTRING("The user focuses its willpower\nand rams the target. The target\nmay flinch.")
+);
+static const u8 str_item_tm70_description[] = LANGDEP(
+	PSTRING("Anwender überrumpelt das Ziel\nund tauscht mit ihm getragene\nItems."),
+	PSTRING("The user surprises the target and\nswaps held items with it.")
+);
+static const u8 str_item_tm71_description[] = LANGDEP(
+	PSTRING("Anwender reduziert seinen\nLuftwiderstand und erhöht den\nInitiative-Wert stark."),
+	PSTRING("The user reduces its air\nresistance, sharply raising its\nSpeed stat.")
+);
+static const u8 str_item_tm72_description[] = LANGDEP(
+	PSTRING("Versprüht Blasen, die\neventuell den Init.-Wert des\nZiels senken."),
+	PSTRING("The user sprays bubbles that may\nlower the target’s Speed stat.")	
+);
+static const u8 str_item_tm73_description[] = LANGDEP(
+	PSTRING("Wirkung hängt davon ab,\nob der Anwender vom Typ\nGeist ist."),
+	PSTRING("The effect depends on whether\nthe user is a Ghost type.")
+);
+static const u8 str_item_tm74_description[] = LANGDEP(
+	PSTRING("1 KP bleibt stets übrig.\nMisserfolg bei Wiederholung\nmöglich."),	
+	PSTRING("1 HP remains after use.\nIt may fail if used in\nsuccession.")
+);
+static const u8 str_item_tm75_description[] = LANGDEP(
+	PSTRING("Eis-Attacke, die schadet und\nden Initiative-Wert des\nZiels senkt."),
+	PSTRING("An Ice-type attack that deals damage\nand may lower the target's Speed stat.")
+);
+static const u8 str_item_tm76_description[] = LANGDEP(
+	PSTRING("Erzürnt das Ziel, um\nwiederholten Einsatz derselben\nAttacke zu verhindern."),
+	PSTRING("Enrages the target, preventing it\nfrom using the same move\nsuccessively.")
+);
+static const u8 str_item_tm77_description[] = LANGDEP(
+	PSTRING("Alle Status-Attacken wie\nEgelsamen werde reflektiert."),
+	PSTRING("Reflects all status moves like\nLeech Seed back at the user.")
+);
+static const u8 str_item_tm78_description[] = LANGDEP(
+	PSTRING("Boden unter dem Ziel\nerzittert durch Kraft der Erde.\nSenkt eventuell Sp. Vert."),
+	PSTRING("The ground under the target\nshakes with the power of the\nearth. It may also lower the\ntarget's SP. Def.")
+);
+static const u8 str_item_tm79_description[] = LANGDEP(
+	PSTRING("Raubt den Effekt heilender\noder Werte verändernder\nAttacken des Gegners."),
+	PSTRING("Steals the effects of the foe’s\nhealing or stat-changing moves.")
+);
+static const u8 str_item_tm80_description[] = LANGDEP(
+	PSTRING("Starke Attacke, die jedoch\nauch Angr. und Vert. des\nAnwenders senkt."),
+	PSTRING("A powerful attack that also\nsharply lowers the user’s\nAttack and Defense stats.")
+);
+static const u8 str_item_tm81_description[] = LANGDEP(
+	PSTRING("Recycled eines getragenen\nItems, das zuvor im Kampf verwendet\nwurde."),
+	PSTRING("Recycles a held item that was\nused in battle. It can be used\nonly once per battle.")
+);
+static const u8 str_item_tm82_description[] = LANGDEP(
+	PSTRING("Anwender tauscht Fähigkeit\nmit dem Ziel."),
+	PSTRING("The user swaps abilities with the\ntarget. It can be used only once\nper battle.")
+);
+static const u8 str_item_tm83_description[] = LANGDEP(
+	PSTRING("Verhindert, dass Ziel flieht\noder ausgewechselt wird."),
+	PSTRING("Prevents the target from fleeing\nor switching out. It can be used\nonly once per battle.")
+);
+static const u8 str_item_tm84_description[] = LANGDEP(
+	PSTRING("Angriff mit der Kraft der\nNatur. Die Wirkung hängt von\nder Umgebung ab."),
+	PSTRING("An attack that harnesses the\npower of nature. Its effect\ndepends on the environment.")
+);
+static const u8 str_item_tm85_description[] = LANGDEP(
+	PSTRING("Angriff, der dem Ziel\nzumindest 1 KP lässt."),
+	PSTRING("An attack that leaves the target\nwith at least 1 HP.")
+);
+static const u8 str_item_tm86_description[] = LANGDEP(
+	PSTRING("Anwender hüllt sich in Flammen\nund greift an. Erhöht dabei\ndie eigene Initiative."),
+	PSTRING("The user cloaks itself in flames\nand attacks. It also raises its\nSpeed stat.")
+);
+static const u8 str_item_tm87_description[] = LANGDEP(
+	PSTRING("Attacke, die fünf Runden\ndauert. Mit jedem Treffer\nsteigt die Stärke."),
+	PSTRING("A move that lasts five turns.\nIts power increases with each\nhit.")
+);
+static const u8 str_item_tm88_description[] = LANGDEP(
+	PSTRING("Frisst Träume des schlafenden\nZiels und heilt Hälfte des\nzugefügten Schadens."),
+	PSTRING("The user eats the dreams of a\nsleeping target, restoring half\nthe damage it inflicted.")
+);
+static const u8 str_item_tm89_description[] = LANGDEP(
+	PSTRING("---"),
+	PSTRING("---")
+);
+static const u8 str_item_tm90_description[] = LANGDEP(
+	PSTRING("---"),
+	PSTRING("---")
+);
+static const u8 str_item_tm91_description[] = LANGDEP(
+	PSTRING("---"),
+	PSTRING("---")
+);
+static const u8 str_item_tm92_description[] = LANGDEP(
+	PSTRING("---"),
+	PSTRING("---")
+);
+static const u8 str_item_tm93_description[] = LANGDEP(
+	PSTRING("---"),
+	PSTRING("---")
+);
+static const u8 str_item_tm94_description[] = LANGDEP(
+	PSTRING("---"),
+	PSTRING("---")
+);
+static const u8 str_item_tm95_description[] = LANGDEP(
+	PSTRING("---"),
+	PSTRING("---")
+);
+static const u8 str_item_tm96_description[] = LANGDEP(
+	PSTRING("---"),
+	PSTRING("---")
+);
+static const u8 str_item_tm97_description[] = LANGDEP(
+	PSTRING("---"),
+	PSTRING("---")
+);
+static const u8 str_item_tm98_description[] = LANGDEP(
+	PSTRING("---"),
+	PSTRING("---")
+);
+static const u8 str_item_tm99_description[] = LANGDEP(
+	PSTRING("---"),
+	PSTRING("---")
+);
+static const u8 str_item_tm100_description[] = LANGDEP(
+	PSTRING("---"),
+	PSTRING("---")
+);
+
 static const u8 str_item_vm01_description[] = LANGDEP(
 	PSTRING("Ein Basisangriff. Damit können\nkleine Bäume gefällt werden."),
 	PSTRING("A basic attack. It can be used to\ncut down thin trees and grass.")
@@ -8274,7 +8475,407 @@ const item items[] = {
 		.type = 4, .field_usage = item_field_function_print_string_can_not_be_used,
 		.holding_effect_id = HOLD_EFFECT_GRADUATE_HAT,
 		.price=2000
-	}
+	},
+	[ITEM_TM51] = {
+		.name = LANGDEP(PSTRING("TM51"), PSTRING("TM51")),
+		.index = ITEM_TM51,
+		.description = str_item_tm51_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM52] = {
+		.name = LANGDEP(PSTRING("TM52"), PSTRING("TM52")),
+		.index = ITEM_TM52,
+		.description = str_item_tm52_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM53] = {
+		.name = LANGDEP(PSTRING("TM53"), PSTRING("TM53")),
+		.index = ITEM_TM53,
+		.description = str_item_tm53_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM54] = {
+		.name = LANGDEP(PSTRING("TM54"), PSTRING("TM54")),
+		.index = ITEM_TM54,
+		.description = str_item_tm54_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM55] = {
+		.name = LANGDEP(PSTRING("TM55"), PSTRING("TM55")),
+		.index = ITEM_TM55,
+		.description = str_item_tm55_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM56] = {
+		.name = LANGDEP(PSTRING("TM56"), PSTRING("TM56")),
+		.index = ITEM_TM56,
+		.description = str_item_tm56_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM57] = {
+		.name = LANGDEP(PSTRING("TM57"), PSTRING("TM57")),
+		.index = ITEM_TM57,
+		.description = str_item_tm57_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM58] = {
+		.name = LANGDEP(PSTRING("TM58"), PSTRING("TM58")),
+		.index = ITEM_TM58,
+		.description = str_item_tm58_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM59] = {
+		.name = LANGDEP(PSTRING("TM59"), PSTRING("TM59")),
+		.index = ITEM_TM59,
+		.description = str_item_tm59_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM60] = {
+		.name = LANGDEP(PSTRING("TM60"), PSTRING("TM60")),
+		.index = ITEM_TM60,
+		.description = str_item_tm60_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM61] = {
+		.name = LANGDEP(PSTRING("TM61"), PSTRING("TM61")),
+		.index = ITEM_TM61,
+		.description = str_item_tm61_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM62] = {
+		.name = LANGDEP(PSTRING("TM62"), PSTRING("TM62")),
+		.index = ITEM_TM62,
+		.description = str_item_tm62_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM63] = {
+		.name = LANGDEP(PSTRING("TM63"), PSTRING("TM63")),
+		.index = ITEM_TM63,
+		.description = str_item_tm63_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM64] = {
+		.name = LANGDEP(PSTRING("TM64"), PSTRING("TM64")),
+		.index = ITEM_TM64,
+		.description = str_item_tm64_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM65] = {
+		.name = LANGDEP(PSTRING("TM65"), PSTRING("TM65")),
+		.index = ITEM_TM65,
+		.description = str_item_tm65_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM66] = {
+		.name = LANGDEP(PSTRING("TM66"), PSTRING("TM66")),
+		.index = ITEM_TM66,
+		.description = str_item_tm66_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM67] = {
+		.name = LANGDEP(PSTRING("TM67"), PSTRING("TM67")),
+		.index = ITEM_TM67,
+		.description = str_item_tm67_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM68] = {
+		.name = LANGDEP(PSTRING("TM68"), PSTRING("TM68")),
+		.index = ITEM_TM68,
+		.description = str_item_tm68_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM69] = {
+		.name = LANGDEP(PSTRING("TM69"), PSTRING("TM69")),
+		.index = ITEM_TM69,
+		.description = str_item_tm69_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM70] = {
+		.name = LANGDEP(PSTRING("TM70"), PSTRING("TM70")),
+		.index = ITEM_TM70,
+		.description = str_item_tm70_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM71] = {
+		.name = LANGDEP(PSTRING("TM71"), PSTRING("TM71")),
+		.index = ITEM_TM71,
+		.description = str_item_tm71_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM72] = {
+		.name = LANGDEP(PSTRING("TM72"), PSTRING("TM72")),
+		.index = ITEM_TM72,
+		.description = str_item_tm72_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM73] = {
+		.name = LANGDEP(PSTRING("TM73"), PSTRING("TM73")),
+		.index = ITEM_TM73,
+		.description = str_item_tm73_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM74] = {
+		.name = LANGDEP(PSTRING("TM74"), PSTRING("TM74")),
+		.index = ITEM_TM74,
+		.description = str_item_tm74_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM75] = {
+		.name = LANGDEP(PSTRING("TM75"), PSTRING("TM75")),
+		.index = ITEM_TM75,
+		.description = str_item_tm75_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM76] = {
+		.name = LANGDEP(PSTRING("TM76"), PSTRING("TM76")),
+		.index = ITEM_TM76,
+		.description = str_item_tm76_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM77] = {
+		.name = LANGDEP(PSTRING("TM77"), PSTRING("TM77")),
+		.index = ITEM_TM77,
+		.description = str_item_tm77_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM78] = {
+		.name = LANGDEP(PSTRING("TM78"), PSTRING("TM78")),
+		.index = ITEM_TM78,
+		.description = str_item_tm78_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM79] = {
+		.name = LANGDEP(PSTRING("TM79"), PSTRING("TM79")),
+		.index = ITEM_TM79,
+		.description = str_item_tm79_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM80] = {
+		.name = LANGDEP(PSTRING("TM80"), PSTRING("TM80")),
+		.index = ITEM_TM80,
+		.description = str_item_tm80_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM81] = {
+		.name = LANGDEP(PSTRING("TM81"), PSTRING("TM81")),
+		.index = ITEM_TM81,
+		.description = str_item_tm81_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM82] = {
+		.name = LANGDEP(PSTRING("TM82"), PSTRING("TM82")),
+		.index = ITEM_TM82,
+		.description = str_item_tm82_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM83] = {
+		.name = LANGDEP(PSTRING("TM83"), PSTRING("TM83")),
+		.index = ITEM_TM83,
+		.description = str_item_tm83_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM84] = {
+		.name = LANGDEP(PSTRING("TM84"), PSTRING("TM84")),
+		.index = ITEM_TM84,
+		.description = str_item_tm84_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM85] = {
+		.name = LANGDEP(PSTRING("TM85"), PSTRING("TM85")),
+		.index = ITEM_TM85,
+		.description = str_item_tm85_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM86] = {
+		.name = LANGDEP(PSTRING("TM86"), PSTRING("TM86")),
+		.index = ITEM_TM86,
+		.description = str_item_tm86_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM87] = {
+		.name = LANGDEP(PSTRING("TM87"), PSTRING("TM87")),
+		.index = ITEM_TM87,
+		.description = str_item_tm87_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM88] = {
+		.name = LANGDEP(PSTRING("TM88"), PSTRING("TM88")),
+		.index = ITEM_TM88,
+		.description = str_item_tm88_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM89] = {
+		.name = LANGDEP(PSTRING("TM89"), PSTRING("TM89")),
+		.index = ITEM_TM89,
+		.description = str_item_tm89_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM90] = {
+		.name = LANGDEP(PSTRING("TM90"), PSTRING("TM90")),
+		.index = ITEM_TM90,
+		.description = str_item_tm90_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM91] = {
+		.name = LANGDEP(PSTRING("TM91"), PSTRING("TM91")),
+		.index = ITEM_TM91,
+		.description = str_item_tm91_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM92] = {
+		.name = LANGDEP(PSTRING("TM92"), PSTRING("TM92")),
+		.index = ITEM_TM92,
+		.description = str_item_tm92_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM93] = {
+		.name = LANGDEP(PSTRING("TM93"), PSTRING("TM93")),
+		.index = ITEM_TM93,
+		.description = str_item_tm93_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM94] = {
+		.name = LANGDEP(PSTRING("TM94"), PSTRING("TM94")),
+		.index = ITEM_TM94,
+		.description = str_item_tm94_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM95] = {
+		.name = LANGDEP(PSTRING("TM95"), PSTRING("TM95")),
+		.index = ITEM_TM95,
+		.description = str_item_tm95_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM96] = {
+		.name = LANGDEP(PSTRING("TM96"), PSTRING("TM96")),
+		.index = ITEM_TM96,
+		.description = str_item_tm96_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM97] = {
+		.name = LANGDEP(PSTRING("TM97"), PSTRING("TM97")),
+		.index = ITEM_TM97,
+		.description = str_item_tm97_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM98] = {
+		.name = LANGDEP(PSTRING("TM98"), PSTRING("TM98")),
+		.index = ITEM_TM98,
+		.description = str_item_tm98_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM99] = {
+		.name = LANGDEP(PSTRING("TM99"), PSTRING("TM99")),
+		.index = ITEM_TM99,
+		.description = str_item_tm99_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
+	[ITEM_TM100] = {
+		.name = LANGDEP(PSTRING("TM100"), PSTRING("TM100")),
+		.index = ITEM_TM100,
+		.description = str_item_tm100_description, .pocket = POCKET_TM_HM, .type = 1,
+		.importance = 1,
+		.field_usage = tm_hm_field_function,
+		.price = 3000,
+	},
 };
 
 u16 item_idx_saniztize(u16 item_idx) {

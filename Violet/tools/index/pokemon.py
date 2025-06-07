@@ -9,12 +9,12 @@ import argparse, pickle
 def tm_hm_compatibility_to_list(compatiblity, tm_hm_to_attack):
     """ Maps a bitfield list of tm_hm_compatiblities to HMs / TMs"""
     l = []
-    for i in range(50 + 8):
+    for i in range(100 + 8):
         if compatiblity[i // 8] & (1 << (i & 7)):
-            if i < 50:
+            if i < 100:
                 name = ('TM', i + 1)
             else:
-                name = ('VM', i - 50 + 1)
+                name = ('VM', i - 100 + 1)
             l.append((name, tm_hm_to_attack[i]))
     return l
 

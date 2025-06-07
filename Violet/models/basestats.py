@@ -102,7 +102,7 @@ egg_moves_type = agb.types.FixedSizeArrayType(
 
 tm_compatibility_type = agb.types.FixedSizeArrayType(
     'u8',
-    (lambda project, context: 8)
+    (lambda project, context: 16)
 )
 
 tm_compatibilities_type = agb.types.FixedSizeArrayType(
@@ -134,7 +134,7 @@ pokemon_names_type = agb.types.FixedSizeArrayType(
 
 tm_hm_to_attack_type = agb.types.FixedSizeArrayType(
     'move',
-    (lambda project, context: 58)
+    (lambda project, context: 100 + 8)
 )
 
 move_tutor_to_attack_type = agb.types.FixedSizeArrayType(

@@ -49,6 +49,45 @@ tms = {
     'Schwerttanz' : ('TM', 48),
     'Irrlicht' : ('TM', 49),
     'Hitzekoller' : ('TM', 50),
+
+    'Fokusstoß' : ('TM', 51),
+    'Gifthieb' : ('TM', 52),
+    'Finsteraura' : ('TM', 53),
+    'Kreuzschere' : ('TM', 54),
+    'Steinkante' : ('TM', 55),
+    'Lichtkanone' : ('TM', 56),
+    'Energieball' : ('TM', 57),
+    'Drachenpuls' : ('TM', 58),
+    'Explosion' : ('TM', 59),
+    'Steinhagel' : ('TM', 60),
+    'Delegator' : ('TM', 61),
+    'Donnerwelle' : ('TM', 62),
+    'Schlafrede' : ('TM', 63),
+    'Angeberei' : ('TM', 64),
+    'Geowurf' : ('TM', 65),
+    'Ampelleuchte' : ('TM', 66),
+    'Dunkelklaue' : ('TM', 67),
+    'Abschlag' : ('TM', 68),
+    'Zen-Kopfstoß' : ('TM', 69),
+    'Trickbetrug' : ('TM', 70),
+    'Steinpolitur' : ('TM', 71),
+    'Blubbstrahl' : ('TM', 72),
+    'Fluch' : ('TM', 73),
+    'Ausdauer' : ('TM', 74),
+    'Eissturm' : ('TM', 75),
+    'Folterknecht' : ('TM', 76),
+    'Magiemantel' : ('TM', 77),
+    'Erdkräfte' : ('TM', 78),
+    'Übernahme' : ('TM', 79),
+    'Kraftkoloss' : ('TM', 80),
+    'Aufbereitung' : ('TM', 81),
+    'Wertewechsel' : ('TM', 82),
+    'Rückentzug' : ('TM', 83),
+    'Natur-Kraft' : ('TM', 84),
+    'Trugschlag' : ('TM', 85),
+    'Nitroladung' : ('TM', 86),
+    'Walzer' : ('TM', 87),
+    'Traumfresser' : ('TM', 88),
     'Zerschneider' : ('VM', 1),
     'Fliegen' : ('VM', 2),
     'Surfer' : ('VM', 3),
@@ -72,11 +111,11 @@ def get_tm_compatibility(tm_list):
     compatbililty : list
         Eight bytes indicating the tm / hm compatbility of a pokemon.
     """
-    compatbililty = [0] * 8
+    compatbililty = [0] * 16
     for move, tm_type in tm_list:
         prefix, idx = tm_type
         idx -= 1
         if prefix == 'VM':
-            idx += 50
+            idx += 100
         compatbililty[idx // 8] |= 1 << (idx & 7)
     return compatbililty

@@ -328,3 +328,6 @@ special_table equ 0x0815FCC0
 
 .org special_table + 251 * 4
         .word special_worldmap_ui_std | 1
+
+.org special_table + 406 * 4
+        .word special_x196_buffer_tm_hm_name | 1

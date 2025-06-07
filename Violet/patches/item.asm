@@ -168,7 +168,20 @@ _bxr1:
 	bx r1
 	.pool
 
+.org 0x08125ac8
+	ldr r1, =item_idx_to_attack | 1
+	bx r1
+	.pool
 
+.org 0x08125ae0
+	ldr r1, = move_is_hm | 1
+	bx r1
+	.pool
+
+.org 0x0811d02c
+	ldr r1, = item_animation_get_animation_type | 1
+	bx r1
+	.pool
 
 .org 0x0805d2fc
 	.word fishing_big_callback | 1	

@@ -27,6 +27,60 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	additem ITEM_TM50 1
+	additem ITEM_TM51 1
+	additem ITEM_TM52 1
+	additem ITEM_TM53 1
+	additem ITEM_TM54 1
+	additem ITEM_TM55 1
+	additem ITEM_TM56 1
+	additem ITEM_TM57 1
+	additem ITEM_TM58 1
+	additem ITEM_TM59 1
+	additem ITEM_TM60 1
+	additem ITEM_TM61 1
+	additem ITEM_TM62 1
+	additem ITEM_TM63 1
+	additem ITEM_TM64 1
+	additem ITEM_TM65 1
+	additem ITEM_TM66 1
+	additem ITEM_TM67 1
+	additem ITEM_TM68 1
+	additem ITEM_TM69 1
+	additem ITEM_TM70 1
+	additem ITEM_TM71 1
+	additem ITEM_TM72 1
+	additem ITEM_TM73 1
+	additem ITEM_TM74 1
+	additem ITEM_TM75 1
+	additem ITEM_TM76 1
+	additem ITEM_TM77 1
+	additem ITEM_TM78 1
+	additem ITEM_TM79 1
+	additem ITEM_TM80 1
+	additem ITEM_TM81 1
+	additem ITEM_TM82 1
+	additem ITEM_TM83 1
+	additem ITEM_TM84 1
+	additem ITEM_TM85 1
+	additem ITEM_TM86 1
+	additem ITEM_TM87 1
+	additem ITEM_TM88 1
+	additem ITEM_TM89 1
+	additem ITEM_TM90 1
+	additem ITEM_TM91 1
+	additem ITEM_TM92 1
+	additem ITEM_TM93 1
+	additem ITEM_TM94 1
+	additem ITEM_TM95 1
+	additem ITEM_TM96 1
+	additem ITEM_TM97 1
+	additem ITEM_TM98 1
+	additem ITEM_TM99 1
+	additem ITEM_TM100 1
+	additem ITEM_VM01 1
+	end
+
 	trainerbattlestd 0 0x300 0 str_beforea str_beforeb
 	end
 	clearflag FRBADGE_3

@@ -1,3 +1,4 @@
+#include "pokemon/moves.h"
 #include "types.h"
 #include "pokemon/virtual.h"
 #include "field_move.h"
@@ -18,6 +19,7 @@
 #include "vars.h"
 #include "pokemon/move_relearner.h"
 #include "constants/move_tutors.h"
+#include "pokemon/moves.h"
 
 EWRAM bool (*pokemon_party_menu_choose_mon_generic_mon_is_eligible)(pokemon*) = NULL;
 
@@ -93,7 +95,7 @@ void sub_08124f4c(void) {
         pokemon_clear_pp_ups(p, slot);
         pokemon_set_move(p, item_idx_to_attack(item_activated), slot);
         pokemon_add_friendship(p, 4);
-        if (item_activated < ITEM_VM01)
+        if (ITEM_IS_TM(item_activated))
             tm_set_used(ITEM_IDX_TO_TM_IDX(item_activated));
         callback1_set(pokemon_party_menu_state.callback);
     } else {
@@ -111,7 +113,7 @@ void pokemon_party_menu_big_callback_learned_move(u8 self) {
     
     if (move[1] == 0) {
         pokemon_add_friendship(p, 4);
-        if (item < ITEM_VM01)
+        if (ITEM_IS_TM(item))
             tm_set_used(ITEM_IDX_TO_TM_IDX(item));
     }
     pokemon_load_name_as_string(p, buffer0);
@@ -211,4 +213,25 @@ bool pokemon_party_menu_display_party_pokemon_data_for_move_tutor_or_evolution_i
         }
     }
     return true;
+}
+
+u8 pokemon_can_learn_tm_or_move_tutor(pokemon *p, u16 item_idx, u8 move_tutor_idx) {
+    u16 move;
+    if (pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, NULL))
+        return PARTY_POKEMON_CANNOT_LEARN_MOVE_IS_EGG;
+    if (ITEM_IS_TM_OR_HM(item_idx)) {
+        if (pokemon_can_learn_tm_hm(p, ITEM_IDX_TO_TM_IDX(item_idx)))
+            move = item_idx_to_attack(item_idx);
+        else
+            return PARTY_POKEMON_CANNOT_LEARN_MOVE;
+    } else if (!move_tutor_is_compatible((u16) pokemon_get_attribute(p, ATTRIBUTE_SPECIES, NULL), move_tutor_idx)) {
+        return PARTY_POKEMON_CANNOT_LEARN_MOVE;
+    } else {
+        move = move_tutor_get_attack(move_tutor_idx);
+    }
+    if (pokemon_knows_move(p, move)) {
+        return PARTY_POKEMON_ALREADY_KNOWS_MOVE;
+    } else {
+        return PARTY_POKEMON_CAN_LEARN_MOVE;
+    }
 }

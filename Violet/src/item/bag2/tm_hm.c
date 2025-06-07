@@ -72,19 +72,70 @@ const u16 tm_hm_to_attack[NUM_TMS + NUM_HMS] = {
 	 ATTACK_SCHWERTTANZ,
 	 ATTACK_IRRLICHT,
 	 ATTACK_HITZEKOLLER,
-	 ATTACK_ZERSCHNEIDER,
-	 ATTACK_FLIEGEN,
-	 ATTACK_SURFER,
-	 ATTACK_STAERKE,
-	 ATTACK_BLITZ,
-	 ATTACK_ZERTRUEMMERER,
-	 ATTACK_KASKADE,
-	 ATTACK_KRAXLER
+	 ATTACK_FOKUSSTOSS,
+	 // Taken from move tutors: TODO: remove move tutors
+	 ATTACK_GIFTHIEB,
+	 ATTACK_FINSTERAURA,
+	 ATTACK_KREUZSCHERE,
+	 ATTACK_STEINKANTE,
+	 ATTACK_LICHTKANONE,
+	 ATTACK_ENERGIEBALL,
+	 ATTACK_DRACHENPULS,
+	 ATTACK_EXPLOSION,
+	 ATTACK_STEINHAGEL,
+	 ATTACK_DELEGATOR,
+	 ATTACK_DONNERWELLE,
+	 // Taken from accessible moves
+	 ATTACK_SCHLAFREDE,
+	 ATTACK_ANGEBEREI,
+	 ATTACK_GEOWURF,
+	 ATTACK_AMPELLEUCHTE,
+	 ATTACK_DUNKELKLAUE,
+	 ATTACK_ABSCHLAG,
+	 ATTACK_ZEN_KOPFSTOSS,
+	 ATTACK_TRICKBETRUG,
+	 ATTACK_STEINPOLITUR,
+	 ATTACK_BLUBBSTRAHL,
+	 ATTACK_FLUCH,
+	 ATTACK_AUSDAUER,
+	 ATTACK_EISSTURM,
+	 ATTACK_FOLTERKNECHT,
+	 ATTACK_MAGIEMANTEL,
+	 ATTACK_ERDKRAEFTE,
+	 ATTACK_UEBERNAHME,
+	 ATTACK_KRAFTKOLOSS,
+	 ATTACK_AUFBEREITUNG,
+	 ATTACK_WERTEWECHSEL,
+	 ATTACK_RUECKENTZUG,
+	 ATTACK_NATUR_KRAFT,
+	 ATTACK_TRUGSCHLAG,
+	 ATTACK_NITROLADUNG,
+	 ATTACK_WALZER,
+	 ATTACK_TRAUMFRESSER,
+	 // TODO: more TMs and HMs, 11 emtpy slots here
+	 [NUM_TMS + 0] = ATTACK_ZERSCHNEIDER,
+	 [NUM_TMS + 1] = ATTACK_FLIEGEN,
+	 [NUM_TMS + 2] = ATTACK_SURFER,
+	 [NUM_TMS + 3] = ATTACK_STAERKE,
+	 [NUM_TMS + 4] = ATTACK_BLITZ,
+	 [NUM_TMS + 5] = ATTACK_ZERTRUEMMERER,
+	 [NUM_TMS + 6] = ATTACK_KASKADE,
+	 [NUM_TMS + 7] = ATTACK_KRAXLER
 };
+
+u16 item_idx_to_attack(u16 item_idx) {
+	int tm_hm_idx = ITEM_IDX_TO_TM_IDX(item_idx);
+	if (tm_hm_idx < 0 || tm_hm_idx >= NUM_TMS + NUM_HMS) {
+		DEBUG("Invalid item index %d for attack conversion\n", item_idx);
+		return ATTACK_NONE;
+	}
+	return tm_hm_to_attack[tm_hm_idx];
+}
 
 bool item_is_tm(u16 item_idx) {
 	switch(item_idx) {
 		case ITEM_TM01 ... ITEM_TM50: return true;
+		case ITEM_TM51 ... ITEM_TM100: return true;
 		default: return false;
 	}
 }
@@ -105,6 +156,15 @@ bool item_is_hm(u16 item_idx) {
 	}
 }
 
+bool move_is_hm(u16 move_idx) {
+	for (int i = 0; i < NUM_HMS; i++) {
+		if (move_idx == tm_hm_to_attack[NUM_TMS + i]) {
+			return true;
+		}
+	}
+	return false;
+}
+
 bool item_is_sellable(u16 item_idx) {
 	if (item_get_price(item_idx) == 0) return false;
 	if (item_is_hm(item_idx) || item_is_tm(item_idx)) return false;
@@ -123,6 +183,7 @@ bool tm_is_used(int tm_idx) {
 }
 
 void tm_set_used(int tm_idx) {
+	DEBUG("Setting TM %d to used\n", tm_idx);
 	int idx = tm_idx >> 3;
 	int mask = 1 << (tm_idx & 7);
 	save1->tm_used_flags[idx] = (u8)(save1->tm_used_flags[idx] | mask);

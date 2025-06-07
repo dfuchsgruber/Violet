@@ -2567,7 +2567,10 @@
 			"Geowurf",
 			"Pfund",
 			"Raserei",
-			"Bodycheck"
+			"Bodycheck",
+			"Explosion",
+			"Zen-Kopfsto\u00df",
+			"Aufbereitung"
 		],
 		"egg_moves": [],
 		"dex_number": 253,
@@ -2758,7 +2761,10 @@
 			"Geowurf",
 			"Pfund",
 			"Raserei",
-			"Bodycheck"
+			"Bodycheck",
+			"Explosion",
+			"Zen-Kopfsto\u00df",
+			"Aufbereitung"
 		],
 		"egg_moves": [],
 		"dex_number": 254,
@@ -2964,7 +2970,10 @@
 			"Geowurf",
 			"Pfund",
 			"Raserei",
-			"Bodycheck"
+			"Bodycheck",
+			"Explosion",
+			"Zen-Kopfsto\u00df",
+			"Aufbereitung"
 		],
 		"egg_moves": [],
 		"dex_number": 255

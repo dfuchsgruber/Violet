@@ -8,15 +8,19 @@
 
 #define TM_HM_LIST_MENU_STR_LENGTH 0x30
 
-#define ITEM_IS_TM(item_idx) (((item_idx) >= ITEM_TM01) && ((item_idx) <= ITEM_TM50))
+#define ITEM_IS_TM(item_idx) ((((item_idx) >= ITEM_TM01) && ((item_idx) <= ITEM_TM50)) || \
+                             (((item_idx) >= ITEM_TM51) && ((item_idx) <= ITEM_TM100)))
 #define ITEM_IS_HM(item_idx) (((item_idx) >= ITEM_VM01) && ((item_idx) <= ITEM_VM08))
 #define ITEM_IS_TM_OR_HM(item_idx) (ITEM_IS_TM(item_idx) || ITEM_IS_HM(item_idx))
-#define ITEM_IDX_TO_TM_IDX(item_idx) ((item_idx) - ITEM_TM01)
+#define ITEM_IDX_TO_TM_IDX(item_idx) ((((item_idx) >= ITEM_TM01) && ((item_idx) <= ITEM_TM50)) ? ((item_idx) - ITEM_TM01) : \
+                                      (((item_idx) >= ITEM_TM51) && ((item_idx) <= ITEM_TM100)) ? ((item_idx) - ITEM_TM51 + 50) : \
+                                      ( ((item_idx) >= ITEM_VM01) && ((item_idx) <= ITEM_VM08)) ? (ITEM_IDX_TO_HM_IDX(item_idx) + NUM_TMS ) : 0)
 #define ITEM_IDX_TO_HM_IDX(item_idx) ((item_idx) - ITEM_VM01)
-#define TM_IDX_TO_ITEM_IDX(tm_idx) ((tm_idx) + ITEM_TM01)
+#define TM_IDX_TO_ITEM_IDX(tm_idx) ((((tm_idx) >= 0) && ((tm_idx) <= 50)) ? ((tm_idx) + ITEM_TM01) : \
+                                    (((tm_idx) >= 51) && ((tm_idx) <= 100)) ? ((tm_idx) + ITEM_TM51 - 50) : 0)
 #define TM_HM_IDX_TO_HM_IDX(tm_hm_idx) ((tm_hm_idx) - NUM_TMS)
 
-#define NUM_TMS 50
+#define NUM_TMS 100
 #define NUM_HMS 8
 #define IS_TM(tm_hm_idx)((tm_hm_idx) < NUM_TMS)
 
@@ -82,7 +86,7 @@ void tm_hm_place_hm_in_tbox(u8 tbox_idx, u8 x, u8 y);
  * @param item_idx the item
  * @return the associated attack
  **/
-u16 item_idx_to_attack(u16 item_idx);
+extern u16 item_idx_to_attack(u16 item_idx);
 
 /**
  * Callback for the tm hm menu on moving the cursor
@@ -163,6 +167,14 @@ bool item_is_hm(u16 item_idx);
  * @return false 
  */
 bool item_is_tm(u16 item_idx);
+
+/**
+ * @brief Checks if a move is a hm
+    *
+    * @param move_idx the move index to check
+    * @return true if it is a hm, false otherwise
+ */
+bool move_is_hm(u16 move_idx);
 
 /**
  * @brief Sets a tm to unused (and therefore usable)

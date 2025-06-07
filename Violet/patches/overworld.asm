@@ -713,3 +713,8 @@ blxr4_npc_create_camera:
     .word person_behaviour_initial_direction
 .org 0x805e234
     .word person_behaviour_has_range
+
+.org 0x08120b54
+    ldr r3, =pokemon_can_learn_tm_or_move_tutor | 1
+    bx r3
+    .pool

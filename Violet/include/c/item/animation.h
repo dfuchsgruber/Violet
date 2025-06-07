@@ -9,4 +9,7 @@
  **/
 bool item_animation_is_disabled();
 
+
+extern u16 item_animation_get_animation_type(u16 item_idx);
+
 #endif

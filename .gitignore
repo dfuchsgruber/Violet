@@ -1,6 +1,8 @@
 # Config files
 .env
 
+*.Identifier
+
 # Constants
 Violet/include/c/constants
 Violet/include/as/constants/

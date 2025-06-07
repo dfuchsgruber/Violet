@@ -58,3 +58,10 @@ u16 pokemon_attempt_learning_move_consider_evolution_moves(pokemon *p, u8 is_fir
     }
     return 0; // Pokemon can learn no more moves
 }
+
+bool pokemon_can_learn_tm_hm(pokemon *p, u16 tm_hm_id) {
+    u16 species = (u16)pokemon_get_attribute(p, ATTRIBUTE_SPECIES, 0);
+    DEBUG("Checking if pokemon %d can learn tm/hm %d with target bits at 0x%x, result is %d\n", species, tm_hm_id, pokemon_tm_compatibility[species] + (tm_hm_id / 8),
+          (pokemon_tm_compatibility[species][tm_hm_id / 8] & (1 << (tm_hm_id % 8))) != 0);
+    return (pokemon_tm_compatibility[species][tm_hm_id / 8] & (1 << (tm_hm_id & 7))) != 0;
+}

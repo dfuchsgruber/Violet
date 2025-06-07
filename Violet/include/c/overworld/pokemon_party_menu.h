@@ -63,6 +63,14 @@ typedef struct {
     u16 padding;
 } pokemon_party_menu_partner_pokemon_t;
 
+enum
+{
+    PARTY_POKEMON_CAN_LEARN_MOVE,
+    PARTY_POKEMON_CANNOT_LEARN_MOVE,
+    PARTY_POKEMON_ALREADY_KNOWS_MOVE,
+    PARTY_POKEMON_CANNOT_LEARN_MOVE_IS_EGG
+};
+
 extern pokemon_party_menu_partner_pokemon_t pokemon_party_menu_partner_party[3];
 extern EWRAM bool (*pokemon_party_menu_choose_mon_generic_mon_is_eligible)(pokemon*);
 
