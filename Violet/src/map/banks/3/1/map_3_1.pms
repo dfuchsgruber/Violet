@@ -42,8 +42,8 @@
 					"target_index": 2,
 					"picture": "54",
 					"field_2": 0,
-					"x": "70",
-					"y": "12",
+					"x": "88",
+					"y": "41",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
@@ -1405,7 +1405,7 @@
 					"field_B": "0",
 					"is_trainer": "0",
 					"alert_radius": "0",
-					"script": "ow_script_map_bluetenbach_move_tutor_rock_slide",
+					"script": "ow_script_map_bluetenbach_person_21",
 					"flag": "0",
 					"value": {
 						"item": "0",
@@ -1416,7 +1416,7 @@
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
-						"script_std": "PERSON_MOVE_TUTOR",
+						"script_std": "PERSON_SCRIPT",
 						"in_connection": "0"
 					}
 				},
@@ -1424,7 +1424,7 @@
 					"target_index": "48",
 					"picture": "72",
 					"x": "74",
-					"y": "12",
+					"y": "11",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -1495,7 +1495,7 @@
 					"script": 0,
 					"flag": "FLAG_BLUETENBACH_ITEM_0",
 					"value": {
-						"item": "ITEM_ZINK",
+						"item": "ITEM_CARBON",
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0,
@@ -1717,7 +1717,7 @@
 			"signposts": [
 				{
 					"x": "77",
-					"y": "12",
+					"y": "11",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {

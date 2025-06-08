@@ -27835,7 +27835,7 @@
 					"level": 1
 				},
 				{
-					"block_idx": 709,
+					"block_idx": 214,
 					"level": 1
 				},
 				{
@@ -29091,7 +29091,7 @@
 					"level": 1
 				},
 				{
-					"block_idx": 709,
+					"block_idx": 214,
 					"level": 1
 				},
 				{
@@ -29335,5 +29335,6 @@
 		"field_1A": 0
 	},
 	"label": "map_footer_92",
-	"type": "footer"
+	"type": "footer",
+	"smart_shapes": {}
 }

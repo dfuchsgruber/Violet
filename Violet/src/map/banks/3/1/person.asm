@@ -36,6 +36,7 @@
 .global ow_script_map_bluetenbach_person_18
 .global ow_script_map_bluetenbach_person_19
 .global ow_script_map_bluetenbach_person_20
+.global ow_script_map_bluetenbach_person_21
 .global ow_script_map_bluetenbach_trainer_0
 .global ow_script_map_bluetenbach_move_tutor_rock_slide
 .global ow_script_map_bluetenbach_rival
@@ -131,6 +132,10 @@ trainer0_later:
     loadpointer 0 str_later0
     callstd MSG_FACE
     end
+ow_script_map_bluetenbach_person_21:
+    loadpointer 0 str_21
+    callstd MSG_FACE
+    end
 
 .ifdef LANG_GER
 str_0:
@@ -181,6 +186,8 @@ str_after0:
     .autostring 34 2 "Gar nicht mal übelDOTS\pFür einen Anfänger natürlich."
 str_later0:
     .autostring 34 2 "Pech gehabt!\nDer Arenaleiter ist gerade nicht im Haus, also kannst du trotzdem nicht hinein.\pManuel ist damit beschäftigt, den unlängst eingestürzten Wassertunnel zu räumen."
+str_21:
+    .autostring 34 2 "Viele Menschen schwören auf die heilsamen Wirkung der Kirschblüten hier.\pIch persönlich glaube zwar nicht daran, aber ihr Anblick erfüllt mich einer gewissen Kraft."
 .elseif LANG_EN
 str_0:
     .autostring 34 2 "Petal Creek is a place full of tradition.\pFor decaded strong people from all around the world come together here in order to challange one another."
@@ -230,7 +237,8 @@ str_after0:
     .autostring 34 2 "Not even half badDOTS\pFor a rookie, that isDOTS"
 str_later0:
     .autostring 34 2 "Well, joke's on you!\pThe gym leader is not here right now, so you can't enter anyway.\pManuel is busy clearing the recently collapsed water tunnel."
-
+str_21:
+    .autostring 34 2 "Many people swear by the healing powers of the cherry trees here.\pI personally don't believe in that, but just looking at them gives me a certain strength."
 .endif
 
 ow_script_map_bluetenbach_black_belt_gift:
