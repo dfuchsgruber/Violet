@@ -396,7 +396,7 @@
 						"type": 0,
 						"move_tutor": 0
 					},
-					"argument": "6",
+					"argument": "5",
 					"script_std_and_in_connection": {
 						"script_std": "PERSON_AGGRESSIVE_POKEMON",
 						"in_connection": "0"
@@ -512,7 +512,7 @@
 						"type": 0,
 						"move_tutor": 0
 					},
-					"argument": "6",
+					"argument": "5",
 					"script_std_and_in_connection": {
 						"script_std": "PERSON_AGGRESSIVE_POKEMON",
 						"in_connection": "0"
@@ -577,7 +577,7 @@
 					}
 				},
 				{
-					"target_index": "21",
+					"target_index": "20",
 					"picture": "92",
 					"x": "8",
 					"y": "37",
@@ -593,13 +593,13 @@
 					"script": 0,
 					"flag": "FLAG_ROUTE_1_ITEM_1",
 					"value": {
-						"item": "ITEM_PARA_HEILER",
+						"item": "ITEM_POKEBALL",
 						"species": 0,
 						"berry_tree_idx": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
-					"argument": 0,
+					"argument": "5",
 					"script_std_and_in_connection": {
 						"script_std": "PERSON_ITEM",
 						"in_connection": "0"
