@@ -9,6 +9,7 @@
 #include "debug.h"
 #include "dma.h"
 #include "gp_menu.h"
+#include "item/bag.h"
 #include "item/bag2.h"
 #include "item/fishing.h"
 #include "item/item.h"
@@ -35,6 +36,9 @@ static const u8 str_deselect[] = LANGDEP(PSTRING("Select"), PSTRING("Select"));
 static const u8 str_walk[] = LANGDEP(PSTRING("Laufen"), PSTRING("Walk"));
 static const u8 str_equip_bait[] = LANGDEP(PSTRING("Ausrüsten"), PSTRING("Equip"));
 static const u8 str_unequip_bait[] = LANGDEP(PSTRING("Entfernen"), PSTRING("Unequip"));
+static const u8 str_recharge[] = LANGDEP(PSTRING("Aufladen"), PSTRING("Recharge"));
+
+static void bag_context_menu_item_recharge(u8 self);
 
 static u16 bag_context_menu_get_start_tile() {
     u16 start_tile = 0;
@@ -468,6 +472,7 @@ const menu_action_t bag_context_menu_items[NUM_BAG_CONTEXT_MENU_ITEMS] = {
     [BAG_CONTEXT_MENU_EQUIP_BAIT] = {.text = str_equip_bait, .function = {.void_u8 = bag_context_menu_item_equip_bait}},
     [BAG_CONTEXT_MENU_UNEQUIP_BAIT] = {.text = str_unequip_bait, .function = {.void_u8 = bag_context_menu_item_unequip_bait}},
     [BAG_CONTEXT_MENU_EQUIP_BAIT_FROM_BAIT_POCKET] = {.text = str_equip_bait, .function = {.void_u8 = bag_context_menu_item_equip_bait_from_bait_pocket}},
+    [BAG_CONTEXT_MENU_RECHARGE] = {.text = str_recharge, .function = {.void_u8 = bag_context_menu_item_recharge}},
 };
 
 static const u8 str_item_is_selected[] = LANGDEP(PSTRING("BUFFER_1\nist ausgewählt!"), PSTRING("BUFFER_1\nis selected!"));
@@ -552,6 +557,9 @@ static void bag_item_selected_overworld(u8 self) {
         context_menu[num_items++] = BAG_CONTEXT_MENU_EQUIP_BAIT;
         if (item_rod_get_equipped_bait(item_activated) != ITEM_NONE)
             context_menu[num_items++] = BAG_CONTEXT_MENU_UNEQUIP_BAIT;
+    }
+    if (item_is_tm(item_activated) && tm_is_used(ITEM_IDX_TO_TM_IDX(item_activated))) {
+        context_menu[num_items++] = BAG_CONTEXT_MENU_RECHARGE;
     }
     if (item_get_pocket(item_activated) == POCKET_KEY_ITEMS) {
         if (save1->registered_item == item_activated)
@@ -886,7 +894,7 @@ static void bag_recharge_wait_for_sound(u8 self) {
     if (!sound_is_playing()) {
         strcpy(buffer0, item_get_name(item_activated));
         string_decrypt(strbuf, str_tm_recharged);
-        bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_close_bag);
+        bag_print_string(self, 2, strbuf, (void (*)(u8))big_callback_get_int(self, 2));
     }
 }
 
@@ -917,8 +925,7 @@ static void bag_recharge_pal_fade(u8 self) {
         FALL_THROUGH;
     case 1:
     case 4:
-    case 7:
-    {
+    case 7: {
         // Fade to white
         pal_alpha_blending(start_color, 16, (u8)((++big_callbacks[self].frame)) / 2, (color_t){.rgb = {31, 31, 31}});
         if (big_callbacks[self].frame >= 32) {
@@ -929,8 +936,7 @@ static void bag_recharge_pal_fade(u8 self) {
     }
     case 2:
     case 5:
-    case 11:
-    {
+    case 11: {
         // Fade from white
         pal_alpha_blending(start_color, 16, (u8)(16 - (++big_callbacks[self].frame) / 2), (color_t){.rgb = {31, 31, 31}});
         if (big_callbacks[self].frame >= 32) {
@@ -965,109 +971,130 @@ static void bag_recharge_pal_fade(u8 self) {
     }
     case 12:
         play_sound(88);
-        bag_reinitialize_list();
-        big_callbacks[self].function = bag_recharge_wait_for_sound;
+        big_callbacks[self].state++;
+        big_callbacks[self].frame = 0;
+        break;
+    case 13:
+        if (++big_callbacks[self].frame >= 32) {
+            bag_reinitialize_list();
+            big_callbacks[self].function = bag_recharge_wait_for_sound;
+        }
         return;
     }
 }
+static void bag_item_recharge(u8 self, void (*continuation)(u8)) {
+    item_remove(ITEM_ENERGIEDISK, tm_hm_get_recharge_cost(
+                                      item_activated));
+    tm_set_unused(ITEM_IDX_TO_TM_IDX(item_activated));
+    // Start the pal fading
+    big_callbacks[self].function = bag_recharge_pal_fade;
+    big_callbacks[self].state = 0;
+    big_callbacks[self].frame = 0;
+    big_callback_set_int(self, 2, (int)continuation);
+}
 
-    static void bag_item_selected_recharge(u8 self) {
-        bag_disable_ui();
+static void bag_item_selected_recharge(u8 self) {
+    bag_disable_ui();
 
-        if (!item_is_tm(item_activated)) {
-            strcpy(buffer0, item_get_name(item_activated));
-            string_decrypt(strbuf, str_hms_cant_be_recharged);
-            bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
-        } else if (!tm_is_used(ITEM_IDX_TO_TM_IDX(item_activated))) {
-            strcpy(buffer0, item_get_name(item_activated));
-            string_decrypt(strbuf, str_tm_doesnt_need_recharge);
-            bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
-        } else if (!tm_hm_can_be_recharged(item_activated)) {
-            u8 recharge_cost = tm_hm_get_recharge_cost(item_activated);
-            itoa_circled(buffer1, recharge_cost);
-            strcpy(buffer0, item_get_name(ITEM_ENERGIEDISK));
-            strcpy(buffer2, attack_names[item_idx_to_attack(item_activated)]);
-            string_decrypt(strbuf, str_tm_cant_pay_cost);
-            bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
-        } else {
-            item_remove(ITEM_ENERGIEDISK, tm_hm_get_recharge_cost(
-                                              item_activated));
-            tm_set_unused(ITEM_IDX_TO_TM_IDX(item_activated));
-            // Start the pal fading
-            big_callbacks[self].function = bag_recharge_pal_fade;
-            big_callbacks[self].state = 0;
-            big_callbacks[self].frame = 0;
-            //bag_recharge_wait_for_sound;
-        }
+    if (!item_is_tm(item_activated)) {
+        strcpy(buffer0, item_get_name(item_activated));
+        string_decrypt(strbuf, str_hms_cant_be_recharged);
+        bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+    } else if (!tm_is_used(ITEM_IDX_TO_TM_IDX(item_activated))) {
+        strcpy(buffer0, item_get_name(item_activated));
+        string_decrypt(strbuf, str_tm_doesnt_need_recharge);
+        bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+    } else if (!tm_hm_can_be_recharged(item_activated)) {
+        u8 recharge_cost = tm_hm_get_recharge_cost(item_activated);
+        itoa_circled(buffer1, recharge_cost);
+        strcpy(buffer0, item_get_name(ITEM_ENERGIEDISK));
+        strcpy(buffer2, attack_names[item_idx_to_attack(item_activated)]);
+        string_decrypt(strbuf, str_tm_cant_pay_cost);
+        bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+    } else {
+        bag_item_recharge(self, bag_wait_a_button_and_close_message_and_close_bag);
     }
+}
+
+static void bag_context_menu_item_recharge(u8 self) {
+    bag_disable_ui();
+    tbox_flush_all(bag2_state->tbox_context_menu, 0x00);
+    tbox_flush_map(bag2_state->tbox_context_menu);
+    tbox_free(bag2_state->tbox_context_menu);
+    tbox_flush_map(BAG_TBOX_CONTEXT_MENU_TEXT);
+    tbox_tilemap_draw(BAG_TBOX_LIST);
+    bg_virtual_sync_reqeust_push(0);
+    bag_item_recharge(self, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+}
+
 #undef frame
 #undef state
 
-    static const u8 bag_context_menu_battle[] = {BAG_CONTEXT_MENU_BATTLE_USE, BAG_CONTEXT_MENU_CANCEL};
-    static const u8 bag_context_menu_battle_no_function[] = {BAG_CONTEXT_MENU_CANCEL};
+static const u8 bag_context_menu_battle[] = {BAG_CONTEXT_MENU_BATTLE_USE, BAG_CONTEXT_MENU_CANCEL};
+static const u8 bag_context_menu_battle_no_function[] = {BAG_CONTEXT_MENU_CANCEL};
 
-    static void bag_item_selected_battle(u8 self) {
-        bag_disable_ui();
-        if (item_get_battle_function(item_activated))
-            bag_open_context_menu(bag_context_menu_battle, ARRAY_COUNT(bag_context_menu_battle));
-        else
-            bag_open_context_menu(bag_context_menu_battle_no_function, ARRAY_COUNT(bag_context_menu_battle_no_function));
-        big_callbacks[self].function = bag_context_menu_overworld_handle_input;
-    }
+static void bag_item_selected_battle(u8 self) {
+    bag_disable_ui();
+    if (item_get_battle_function(item_activated))
+        bag_open_context_menu(bag_context_menu_battle, ARRAY_COUNT(bag_context_menu_battle));
+    else
+        bag_open_context_menu(bag_context_menu_battle_no_function, ARRAY_COUNT(bag_context_menu_battle_no_function));
+    big_callbacks[self].function = bag_context_menu_overworld_handle_input;
+}
 
-    static void bag_item_selected_equip_bait(u8 self) {
-        bag_disable_ui();
-        bag_close(self, item_activated, false);
-    }
+static void bag_item_selected_equip_bait(u8 self) {
+    bag_disable_ui();
+    bag_close(self, item_activated, false);
+}
 
-    static void bag_wait_sound_effect_and_close_bag(u8 self) {
-        if (!sound_is_playing()) {
-            if (bag2_state->delay > 0) {
-                bag2_state->delay--;
-            } else {
-                bag_close(self, item_activated, false);
-            }
+static void bag_wait_sound_effect_and_close_bag(u8 self) {
+    if (!sound_is_playing()) {
+        if (bag2_state->delay > 0) {
+            bag2_state->delay--;
+        } else {
+            bag_close(self, item_activated, false);
         }
     }
+}
 
-    static const u8 str_is_no_rod[] = LANGDEP(PSTRING("Nur eine Angel kann mit\nBUFFER_2 ausgerüstet werden."), PSTRING("BUFFER_2 can only\nbe equipped to a rod."));
-    static const u8 str_is_already_equipped[] = LANGDEP(PSTRING("BUFFER_1 ist bereits\nmit BUFFER_2 ausgerüstet."), PSTRING("BUFFER_2 is already\nequipped to BUFFER_1."));
+static const u8 str_is_no_rod[] = LANGDEP(PSTRING("Nur eine Angel kann mit\nBUFFER_2 ausgerüstet werden."), PSTRING("BUFFER_2 can only\nbe equipped to a rod."));
+static const u8 str_is_already_equipped[] = LANGDEP(PSTRING("BUFFER_1 ist bereits\nmit BUFFER_2 ausgerüstet."), PSTRING("BUFFER_2 is already\nequipped to BUFFER_1."));
 
-    static void bag_item_selected_equip_to_rod(u8 self) {
-        bag_disable_ui();
-        u16 bait_idx = (u16)gp_stack_peek();
-        if (item_is_rod(item_activated)) {
-            if (item_rod_get_equipped_bait(item_activated) == bait_idx) {
-                strcpy(buffer0, item_get_name(item_activated));
-                strcpy(buffer1, item_get_name(bait_idx));
-                string_decrypt(strbuf, str_is_already_equipped);
-                bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
-            } else {
-                play_sound(29);
-                bag2_state->delay = 40;
-                item_rod_equip_bait(item_activated, bait_idx);
-                bag_reinitialize_list();
-                bag_print_item_description(bag_get_current_slot_in_current_pocket());
-                tbox_tilemap_draw(BAG_TBOX_DESCRIPTION);
-                big_callbacks[self].function = bag_wait_sound_effect_and_close_bag;
-            }
-        } else {
+static void bag_item_selected_equip_to_rod(u8 self) {
+    bag_disable_ui();
+    u16 bait_idx = (u16)gp_stack_peek();
+    if (item_is_rod(item_activated)) {
+        if (item_rod_get_equipped_bait(item_activated) == bait_idx) {
             strcpy(buffer0, item_get_name(item_activated));
             strcpy(buffer1, item_get_name(bait_idx));
-            string_decrypt(strbuf, str_is_no_rod);
+            string_decrypt(strbuf, str_is_already_equipped);
             bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
+        } else {
+            play_sound(29);
+            bag2_state->delay = 40;
+            item_rod_equip_bait(item_activated, bait_idx);
+            bag_reinitialize_list();
+            bag_print_item_description(bag_get_current_slot_in_current_pocket());
+            tbox_tilemap_draw(BAG_TBOX_DESCRIPTION);
+            big_callbacks[self].function = bag_wait_sound_effect_and_close_bag;
         }
+    } else {
+        strcpy(buffer0, item_get_name(item_activated));
+        strcpy(buffer1, item_get_name(bait_idx));
+        string_decrypt(strbuf, str_is_no_rod);
+        bag_print_string(self, 2, strbuf, bag_wait_a_button_and_close_message_and_return_to_idle_callback);
     }
+}
 
-    void (*const bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8) = {
-        [BAG_CONTEXT_OVERWORLD] = bag_item_selected_overworld,
-        [BAG_CONTEXT_PARTY_GIVE] = bag_item_selected_party_give,
-        [BAG_CONTEXT_SELL] = bag_item_selected_sell,
-        [BAG_CONTEXT_DEPOSIT] = bag_item_selected_deposit,
-        [BAG_CONTEXT_COMPOST] = bag_item_selected_compost,
-        [BAG_CONTEXT_PLANT_BERRY] = bag_item_selected_plant_berry,
-        [BAG_CONTEXT_RECHARGE_TM_HM] = bag_item_selected_recharge,
-        [BAG_CONTEXT_BATTLE] = bag_item_selected_battle,
-        [BAG_CONTEXT_EQUIP_BAIT] = bag_item_selected_equip_bait,
-        [BAG_CONTEXT_SELECT_ROD_TO_EQUIP_BAIT] = bag_item_selected_equip_to_rod,
-    };
+void (*const bag_item_selected_by_context[NUM_BAG_CONTEXTS])(u8) = {
+    [BAG_CONTEXT_OVERWORLD] = bag_item_selected_overworld,
+    [BAG_CONTEXT_PARTY_GIVE] = bag_item_selected_party_give,
+    [BAG_CONTEXT_SELL] = bag_item_selected_sell,
+    [BAG_CONTEXT_DEPOSIT] = bag_item_selected_deposit,
+    [BAG_CONTEXT_COMPOST] = bag_item_selected_compost,
+    [BAG_CONTEXT_PLANT_BERRY] = bag_item_selected_plant_berry,
+    [BAG_CONTEXT_RECHARGE_TM_HM] = bag_item_selected_recharge,
+    [BAG_CONTEXT_BATTLE] = bag_item_selected_battle,
+    [BAG_CONTEXT_EQUIP_BAIT] = bag_item_selected_equip_bait,
+    [BAG_CONTEXT_SELECT_ROD_TO_EQUIP_BAIT] = bag_item_selected_equip_to_rod,
+};
