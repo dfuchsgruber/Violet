@@ -9294,7 +9294,7 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 309,
+					"tile_idx": 57,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 2
@@ -10996,7 +10996,7 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 309,
+					"tile_idx": 57,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 2
@@ -11070,7 +11070,7 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 309,
+					"tile_idx": 57,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 2
@@ -11144,7 +11144,7 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 309,
+					"tile_idx": 57,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 2

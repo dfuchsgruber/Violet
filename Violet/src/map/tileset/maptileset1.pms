@@ -19072,8 +19072,8 @@
 			],
 			[
 				{
-					"tile_idx": 101,
-					"horizontal_flip": 0,
+					"tile_idx": 32,
+					"horizontal_flip": 1,
 					"vertical_flip": 0,
 					"palette_idx": 0
 				},
