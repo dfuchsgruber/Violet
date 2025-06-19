@@ -586,7 +586,7 @@ const song song_table[] = {
 	//Song 290
 	{(void*) 0x86cf978, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 291
-	{mus_new_day, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	{mus_new_day2, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 292
 	{mus_melancholy, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 293

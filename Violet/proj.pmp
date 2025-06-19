@@ -2384,7 +2384,8 @@
 		"maptileset_cave_mossy": "src/map/tileset/maptileset_cave_mossy.pms",
 		"maptileset_clouds_canyon": "src/map/tileset/maptileset_clouds_canyon.pms",
 		"maptileset_clouds_pink": "src/map/tileset/maptileset_clouds_pink.pms",
-		"maptileset_clouds_blue": "src/map/tileset/maptileset_clouds_blue.pms"
+		"maptileset_clouds_blue": "src/map/tileset/maptileset_clouds_blue.pms",
+		"maptileset_inside": "src\\map\\tileset\\maptileset_inside.pms"
 	},
 	"tilesets_secondary": {
 		"maptileset45": "src/map/tileset/maptileset45.pms",
@@ -2470,14 +2471,16 @@
 		"maptileset_clouds_spider_web_forest": "src/map/tileset/maptileset_clouds_various.pms",
 		"maptileset_cloud_flowers": "src/map/tileset/maptileset_cloud_flowers.pms",
 		"maptileset_cloud_mines_outside": "src/map/tileset/maptileset_cloud_mines_outside.pms",
-		"maptileset_cave_mine": "src/map/tileset/maptileset_cave_mine.pms"
+		"maptileset_cave_mine": "src/map/tileset/maptileset_cave_mine.pms",
+		"maptileset_bluetenbach_inside": "src\\map\\tileset\\maptileset_bluetenbach_inside.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
 		"gfx_maptileset0Tiles": "asset/gfx/tileset/gfx_maptileset0.png",
 		"gfx_maptileset_cloudsTiles": "asset/gfx/tileset/gfx_maptileset_clouds.png",
 		"gfx_maptileset_caveTiles": "asset/gfx/tileset/gfx_maptileset_cave.png",
-		"gfx_maptileset_cave_mossyTiles": "asset/gfx/tileset/gfx_maptileset_cave_mossy.png"
+		"gfx_maptileset_cave_mossyTiles": "asset/gfx/tileset/gfx_maptileset_cave_mossy.png",
+		"gfx_maptileset_insideTiles": "asset\\gfx\\tileset\\gfx_maptileset_inside.png"
 	},
 	"gfxs_secondary": {
 		"gfx_maptileset302795Tiles": "asset/gfx/tileset/gfx_maptileset302795.png",
@@ -2562,6 +2565,7 @@
 		"gfx_maptileset_cloud_spider_webTiles": "asset/gfx/tileset/gfx_maptileset_cloud_spider_web.png",
 		"gfx_maptileset_clouds_flowersTiles": "asset/gfx/tileset/gfx_maptileset_clouds_flowers.png",
 		"gfx_maptileset_clouds_mine_outsideTiles": "asset/gfx/tileset/gfx_maptileset_clouds_mine_outside.png",
-		"gfx_maptileset_cave_mineTiles": "asset/gfx/tileset/gfx_maptileset_cave_mine.png"
+		"gfx_maptileset_cave_mineTiles": "asset/gfx/tileset/gfx_maptileset_cave_mine.png",
+		"gfx_maptileset_bluetenbach_insideTiles": "asset\\gfx\\tileset\\gfx_maptileset_bluetenbach_inside.png"
 	}
 }

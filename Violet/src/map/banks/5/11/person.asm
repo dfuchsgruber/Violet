@@ -21,7 +21,7 @@ ow_script_map_5_11_person_1:
 ow_script_bluetenbach_ingame_trade:
 	lock
 	faceplayer
-	setvar 0x8008, INGAME_TRADE_CAMAUB
+	setvar 0x8008, INGAME_TRADE_RABAUZ
 	call ow_script_ingame_trade_get_species_info
 	checkflag FLAG_BLUETENBACH_INGAME_TRADE
     gotoif 1 already_traded

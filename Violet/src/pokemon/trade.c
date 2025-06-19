@@ -1,3 +1,4 @@
+#include "constants/species.h"
 #include "types.h"
 #include "pokemon/trade.h"
 #include "language.h"
@@ -6,33 +7,33 @@
 #include "constants/items.h"
 
 const ingame_trade_t ingame_trades[NUM_INGAME_TRADES] = {
-    [INGAME_TRADE_CAMAUB] = {
-        .nickname = LANGDEP(PSTRING("Carmella"), PSTRING("Carmella")),
-        .species = POKEMON_CAMAUB,
+    [INGAME_TRADE_RABAUZ] = {
+        .nickname = LANGDEP(PSTRING("Bauze"), PSTRING("Pascal")),
+        .species = POKEMON_RABAUZ,
         .ivs = {
-            [STAT_HP] = 24,
-            [STAT_ATTACK] = 16,
-            [STAT_DEFENSE] = 25,
-            [STAT_SPEED] = 25,
-            [STAT_SPECIAL_ATTACK] = 31,
-            [STAT_SPECIAL_DEFENSE] = 22,
+            [STAT_HP] = 25,
+            [STAT_ATTACK] = 29,
+            [STAT_DEFENSE] = 29,
+            [STAT_SPEED] = 28,
+            [STAT_SPECIAL_ATTACK] = 30,
+            [STAT_SPECIAL_DEFENSE] = 26,
         },
-        .tid = 69420,
+         .tid = 771234,
         .pid = {
             .fields = {
                 .ability = 0,
-                .is_female = true,
+                .is_female = false,
                 .is_shiny = 0,
-                .hidden_power_type = TYPE_KAMPF,
-                .hidden_power_strength = 6,
-                .nature = NATURE_MAESSIG,
+                .hidden_power_type = TYPE_FEE,
+                .hidden_power_strength = 7,
+                .nature = NATURE_ROBUST,
             }
         },
-        .item = ITEM_SAIMBEERE,
-        .ot_name = LANGDEP(PSTRING("Anthony"), PSTRING("Anthony")),
+        .item = ITEM_KAMPFJUWEL,
+        .ot_name = LANGDEP(PSTRING("Obrest"), PSTRING("Obrest")),
         .ot_is_female = 0,
         .hidden_ability = 1,
-        .requested_species = POKEMON_ABRA,
+        .requested_species = POKEMON_DARTIRI,
     },
     [INGAME_TRADE_SEEMOPS] = {
         .nickname = LANGDEP(PSTRING("Robin"), PSTRING("Robin")),
@@ -173,7 +174,8 @@ const ingame_trade_t ingame_trades[NUM_INGAME_TRADES] = {
         .ot_is_female = 1,
         .hidden_ability = 1,
         .requested_species = POKEMON_PIKACHU,
-    }
+    },
+    
 };
 
 
