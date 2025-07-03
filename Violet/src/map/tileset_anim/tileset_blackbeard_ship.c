@@ -11,7 +11,7 @@ static const tileset_animation tileset_blackbeard_ship_animations[] = {
 };
 
 static const tileset_animation_header tileset_blackbeard_ship_animations_head = {
-    1, tileset_blackbeard_ship_animations
+    ARRAY_COUNT(tileset_blackbeard_ship_animations), tileset_blackbeard_ship_animations
 };
 
 

@@ -11,24 +11,44 @@ extern const u16 gfx_tileset_0_anim_5Tiles[];
 
 static const tileset_animation tileset_0_animations[] = {
     {
-        5, 16, 508, 48, gfx_tileset_0_anim_0Tiles
+        .cycle=5,
+        .speed=16,
+        .start_tile=508,
+        .num_tiles=48,
+        .gfx=gfx_tileset_0_anim_0Tiles
     },
     {
-        4, 16, 556, 60, gfx_tileset_0_anim_1Tiles
+        .cycle=4,
+        .speed=16,
+        .start_tile=556,
+        .num_tiles=60,
+        .gfx=gfx_tileset_0_anim_1Tiles
     },
     {
-        8, 16, 500, 8, gfx_tileset_0_anim_2Tiles
+        .cycle=8,
+        .speed=16,
+        .start_tile=500,
+        .num_tiles=8,
+        .gfx=gfx_tileset_0_anim_2Tiles
     },
     {
-        4, 16, 616, 24, gfx_tileset_0_anim_3Tiles
+        .cycle=4,
+        .speed=16,
+        .start_tile=616,
+        .num_tiles=24,
+        .gfx=gfx_tileset_0_anim_3Tiles
     },
     {
-        4, 16, 480, 10, gfx_tileset_0_anim_4Tiles
+        .cycle=4,
+        .speed=16,
+        .start_tile=480,
+        .num_tiles=10,
+        .gfx=gfx_tileset_0_anim_4Tiles
     },
 };
 
 static const tileset_animation_header tileset_0_animations_head = {
-    5, tileset_0_animations
+    ARRAY_COUNT(tileset_0_animations), tileset_0_animations
 };
 
 

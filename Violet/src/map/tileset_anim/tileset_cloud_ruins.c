@@ -10,7 +10,7 @@ static const tileset_animation tileset_cloud_ruins_animations[] = {
 };
 
 static const tileset_animation_header tileset_cloud_ruins_animation_head = {
-    1, tileset_cloud_ruins_animations
+    ARRAY_COUNT(tileset_cloud_ruins_animations), tileset_cloud_ruins_animations
 };
 
 

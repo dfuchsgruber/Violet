@@ -17,7 +17,7 @@ static const tileset_animation tileset_inferior_gym_animations[] = {
 };
 
 static const tileset_animation_header tileset_inferior_gym_animations_head = {
-    1, tileset_inferior_gym_animations
+    ARRAY_COUNT(tileset_inferior_gym_animations), tileset_inferior_gym_animations
 };
 
 

@@ -17,7 +17,7 @@ static const tileset_animation tileset_route_7_animations[] = {
 };
 
 static const tileset_animation_header tileset_route_7_animations_head = {
-    1, tileset_route_7_animations
+    ARRAY_COUNT(tileset_route_7_animations), tileset_route_7_animations
 };
 
 

@@ -38,6 +38,7 @@ typedef struct {
     u16 start_tile;
     u16 num_tiles;
     const void *gfx;
+    bool (*is_active)(void);
 } tileset_animation;
 
 typedef struct {

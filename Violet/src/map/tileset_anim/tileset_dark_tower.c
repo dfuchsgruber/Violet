@@ -8,7 +8,7 @@ static const tileset_animation animations[] = {
 };
 
 static const tileset_animation_header animation_header = {
-    1, animations
+    ARRAY_COUNT(animations), animations
 };
 
 

@@ -166,7 +166,7 @@ extern const unsigned char mus_encounter_staccato[];
 extern const unsigned char mus_encounter_cello[];
 extern const unsigned char mus_silvania_forest[];
 extern const unsigned char mus_new_day[];
-extern const unsigned char mus_new_day2[];
+extern const unsigned char mus_new_day_v2[];
 extern const unsigned char mus_melancholy[];
 extern const unsigned char mus_windy[];
 extern const unsigned char mus_gym_leader[];

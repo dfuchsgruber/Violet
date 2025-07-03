@@ -7,6 +7,10 @@
 //Text format :=…Es laufen [XXX]:YYYYYYY…
 //Beispiel: …Es läuft eine Doku: Blablabla…
 
+bool tv_broadcast_is_on() {
+	return true; //TODO: Implement
+}
+
 void load_tv_text() {
 
     const u8 **ptrbank0 = (const u8**) 0x03000f14;

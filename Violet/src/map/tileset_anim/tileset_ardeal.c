@@ -17,7 +17,7 @@ static const tileset_animation tileset_ardeal_animations[] = {
 };
 
 static const tileset_animation_header tileset_ardeal_animations_head = {
-    1, tileset_ardeal_animations
+    ARRAY_COUNT(tileset_ardeal_animations), tileset_ardeal_animations
 };
 
 

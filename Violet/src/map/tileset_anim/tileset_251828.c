@@ -6,15 +6,23 @@ extern const u16 gfx_tileset_251828_anim_1Tiles[];
 
 static const tileset_animation tileset_251828_animations[] = {
     {
-        4, 16, 656, 4, gfx_tileset_251828_anim_0Tiles
+        .cycle=4,
+        .speed=16,
+        .start_tile=656,
+        .num_tiles=4,
+        .gfx=gfx_tileset_251828_anim_0Tiles
     },
     {
-        4, 16, 661, 8, gfx_tileset_251828_anim_1Tiles
+        .cycle=4,
+        .speed=16,
+        .start_tile=661,
+        .num_tiles=8,
+        .gfx=gfx_tileset_251828_anim_1Tiles
     }
 };
 
 static const tileset_animation_header tileset_251828_animations_head = {
-    2, tileset_251828_animations
+    ARRAY_COUNT(tileset_251828_animations), tileset_251828_animations
 };
 
 

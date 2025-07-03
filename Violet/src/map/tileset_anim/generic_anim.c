@@ -23,7 +23,8 @@ u16 generic_tileset_anim_get_clk(const tileset_animation_header *anim_header){
 
 void generic_tileset_anim_proceed(const tileset_animation *anim, u16 clk){
     if(checkflag(TILESET_ANIM_DISABLE)) return;
-    if(!(clk % anim->speed)){
+    if (anim->is_active && !anim->is_active()) return;
+    if((clk % anim->speed) == 0){
         //Copy frame
         void *dst = (void*)(0x06000000 + anim->start_tile * 32);
         int frame = (clk / anim->speed) % anim->cycle;
