@@ -178,7 +178,7 @@ tileset_behaviour_type = agb.types.BitfieldType(
     [
         ("behaviour", "block_behaviour", 9),
         ("hm_usage", "block_hm_usage", 5),
-        ("field_2", "block_arguments", 4),
+        ("argument", "block_arguments", 4),
         ("battle_bg", "battle/battle_bgs", 6),
         ("encounter_type", None, 3),
         ("field_5", None, 2),

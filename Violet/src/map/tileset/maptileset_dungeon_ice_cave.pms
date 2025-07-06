@@ -33362,7 +33362,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33372,7 +33372,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33382,7 +33382,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33392,7 +33392,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33402,7 +33402,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33412,7 +33412,7 @@
 			{
 				"behaviour": "MB_CAVE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -33422,7 +33422,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33432,7 +33432,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33442,7 +33442,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33452,7 +33452,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33462,7 +33462,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33472,7 +33472,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33482,7 +33482,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33492,7 +33492,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33502,7 +33502,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33512,7 +33512,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33522,7 +33522,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33532,7 +33532,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33542,7 +33542,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33552,7 +33552,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33562,7 +33562,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33572,7 +33572,7 @@
 			{
 				"behaviour": "MB_LADDER",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33582,7 +33582,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33592,7 +33592,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33602,7 +33602,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33612,7 +33612,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33622,7 +33622,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33632,7 +33632,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33642,7 +33642,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33652,7 +33652,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -33662,7 +33662,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -33672,7 +33672,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -33682,7 +33682,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33692,7 +33692,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33702,7 +33702,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33712,7 +33712,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33722,7 +33722,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33732,7 +33732,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33742,7 +33742,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33752,7 +33752,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33762,7 +33762,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33772,7 +33772,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33782,7 +33782,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33792,7 +33792,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33802,7 +33802,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33812,7 +33812,7 @@
 			{
 				"behaviour": "MB_BA",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33822,7 +33822,7 @@
 			{
 				"behaviour": "MB_BA",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33832,7 +33832,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33842,7 +33842,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -33852,7 +33852,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -33862,7 +33862,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -33872,7 +33872,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -33882,7 +33882,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -33892,7 +33892,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33902,7 +33902,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -33922,7 +33922,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -33932,7 +33932,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -33942,7 +33942,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -33952,7 +33952,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -33962,7 +33962,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -33972,7 +33972,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34002,7 +34002,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -34012,7 +34012,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -34022,7 +34022,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -34032,7 +34032,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34062,7 +34062,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34072,7 +34072,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34082,7 +34082,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34092,7 +34092,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34102,7 +34102,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34112,7 +34112,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34122,7 +34122,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34132,7 +34132,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34142,7 +34142,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34152,7 +34152,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34162,7 +34162,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34172,7 +34172,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34182,7 +34182,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34192,7 +34192,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34212,7 +34212,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34222,7 +34222,7 @@
 			{
 				"behaviour": "MB_JUMP_EAST",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34232,7 +34232,7 @@
 			{
 				"behaviour": "MB_LADDER",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34242,7 +34242,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34252,7 +34252,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34262,7 +34262,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34272,7 +34272,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34282,7 +34282,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34302,7 +34302,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34312,7 +34312,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34322,7 +34322,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34332,7 +34332,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34342,7 +34342,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34352,7 +34352,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34362,7 +34362,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34372,7 +34372,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34382,7 +34382,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34392,87 +34392,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": "BATTLE_BG_ICE_CAVE",
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": "MB_ICE",
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": "BATTLE_BG_ICE_CAVE",
-				"encounter_type": "1",
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": "MB_ICE",
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": "BATTLE_BG_ICE_CAVE",
-				"encounter_type": "1",
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": "MB_ICE",
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": "BATTLE_BG_ICE_CAVE",
-				"encounter_type": "1",
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": "MB_ICE",
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": "BATTLE_BG_ICE_CAVE",
-				"encounter_type": "1",
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": "MB_ICE",
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": "BATTLE_BG_ICE_CAVE",
-				"encounter_type": "1",
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": 0,
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": "BATTLE_BG_ICE_CAVE",
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": 0,
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": "BATTLE_BG_ICE_CAVE",
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": 0,
-				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34482,7 +34402,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -34492,7 +34412,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -34502,7 +34422,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -34512,7 +34432,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -34522,7 +34442,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -34532,7 +34452,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34542,7 +34462,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34552,7 +34472,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34562,7 +34482,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -34572,7 +34492,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -34582,7 +34502,27 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
+				"battle_bg": "BATTLE_BG_ICE_CAVE",
+				"encounter_type": "1",
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": "MB_ICE",
+				"hm_usage": 0,
+				"argument": 0,
+				"battle_bg": "BATTLE_BG_ICE_CAVE",
+				"encounter_type": "1",
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": "MB_ICE",
+				"hm_usage": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -34592,7 +34532,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34602,7 +34542,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34612,7 +34552,47 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
+				"battle_bg": "BATTLE_BG_ICE_CAVE",
+				"encounter_type": 0,
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": "MB_ICE",
+				"hm_usage": 0,
+				"argument": 0,
+				"battle_bg": "BATTLE_BG_ICE_CAVE",
+				"encounter_type": "1",
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": "MB_ICE",
+				"hm_usage": 0,
+				"argument": 0,
+				"battle_bg": "BATTLE_BG_ICE_CAVE",
+				"encounter_type": "1",
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": "MB_ICE",
+				"hm_usage": 0,
+				"argument": 0,
+				"battle_bg": "BATTLE_BG_ICE_CAVE",
+				"encounter_type": "1",
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": 0,
+				"hm_usage": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34622,7 +34602,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34632,7 +34612,27 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
+				"battle_bg": "BATTLE_BG_ICE_CAVE",
+				"encounter_type": 0,
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": 0,
+				"hm_usage": 0,
+				"argument": 0,
+				"battle_bg": "BATTLE_BG_ICE_CAVE",
+				"encounter_type": 0,
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": 0,
+				"hm_usage": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34652,7 +34652,7 @@
 			{
 				"behaviour": "0",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -34662,7 +34662,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -34672,7 +34672,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34682,7 +34682,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34692,7 +34692,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34702,7 +34702,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34712,7 +34712,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34722,7 +34722,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -34732,7 +34732,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34742,7 +34742,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34752,7 +34752,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34762,7 +34762,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34772,7 +34772,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34782,7 +34782,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34792,7 +34792,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34802,7 +34802,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": "1",
 				"field_5": 0,
@@ -34812,7 +34812,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34822,7 +34822,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34832,7 +34832,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34842,7 +34842,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34852,7 +34852,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34862,7 +34862,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34872,7 +34872,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34882,7 +34882,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34892,7 +34892,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34902,7 +34902,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34912,7 +34912,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34922,7 +34922,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34932,7 +34932,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34942,7 +34942,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34952,7 +34952,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34962,7 +34962,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34972,7 +34972,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34982,7 +34982,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -34992,7 +34992,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35002,7 +35002,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35012,7 +35012,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35022,7 +35022,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35032,7 +35032,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35042,7 +35042,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35052,7 +35052,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35062,7 +35062,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35072,7 +35072,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35082,7 +35082,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35092,7 +35092,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35102,7 +35102,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35112,7 +35112,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35122,7 +35122,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35132,7 +35132,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35142,7 +35142,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35152,7 +35152,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35162,7 +35162,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35172,7 +35172,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35182,7 +35182,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35192,7 +35192,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35202,7 +35202,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35212,7 +35212,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35222,7 +35222,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35232,7 +35232,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35242,7 +35242,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35252,7 +35252,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35262,7 +35262,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35272,7 +35272,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35282,7 +35282,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35292,7 +35292,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35302,7 +35302,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35312,7 +35312,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35322,7 +35322,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35332,7 +35332,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35342,7 +35342,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35352,7 +35352,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35362,7 +35362,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35372,7 +35372,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35382,7 +35382,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35392,7 +35392,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35402,7 +35402,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35412,7 +35412,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35422,7 +35422,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35432,7 +35432,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35442,7 +35442,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35452,7 +35452,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35462,7 +35462,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35472,7 +35472,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35482,7 +35482,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35492,7 +35492,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35502,7 +35502,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35512,7 +35512,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35522,7 +35522,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35532,7 +35532,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35542,7 +35542,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35552,7 +35552,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35562,7 +35562,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35572,7 +35572,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35582,7 +35582,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35592,7 +35592,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35602,7 +35602,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35612,7 +35612,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35622,7 +35622,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35632,7 +35632,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35642,7 +35642,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35652,7 +35652,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35662,7 +35662,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35672,7 +35672,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35682,7 +35682,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35692,7 +35692,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35702,7 +35702,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35712,7 +35712,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35722,7 +35722,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35732,7 +35732,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35742,7 +35742,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35752,7 +35752,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35762,7 +35762,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35772,7 +35772,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35782,7 +35782,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35792,7 +35792,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35802,7 +35802,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35812,7 +35812,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35822,7 +35822,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35832,7 +35832,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35842,7 +35842,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35852,7 +35852,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35862,7 +35862,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35872,7 +35872,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35882,7 +35882,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35892,7 +35892,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35902,7 +35902,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35912,7 +35912,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35922,7 +35922,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35932,7 +35932,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35942,7 +35942,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35952,7 +35952,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35962,7 +35962,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35972,7 +35972,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35982,7 +35982,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -35992,7 +35992,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36002,7 +36002,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36012,7 +36012,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36022,7 +36022,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36032,7 +36032,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36042,7 +36042,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36052,7 +36052,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36062,7 +36062,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36072,7 +36072,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36082,7 +36082,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36092,7 +36092,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36102,7 +36102,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36112,7 +36112,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36122,7 +36122,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36132,7 +36132,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36142,7 +36142,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36152,7 +36152,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36162,7 +36162,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36172,7 +36172,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36182,7 +36182,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36192,7 +36192,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36202,7 +36202,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36212,7 +36212,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36222,7 +36222,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36232,7 +36232,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36242,7 +36242,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36252,7 +36252,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36262,7 +36262,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36272,7 +36272,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36282,7 +36282,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36292,7 +36292,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36302,7 +36302,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36312,7 +36312,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36322,7 +36322,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36332,7 +36332,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36342,7 +36342,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36352,7 +36352,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36362,7 +36362,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36372,7 +36372,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36382,7 +36382,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36392,7 +36392,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36402,7 +36402,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36412,7 +36412,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36422,7 +36422,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36432,7 +36432,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36442,7 +36442,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36452,7 +36452,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36462,7 +36462,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36472,7 +36472,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36482,7 +36482,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36492,7 +36492,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36502,7 +36502,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36512,7 +36512,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36522,7 +36522,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36532,7 +36532,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36542,7 +36542,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36552,7 +36552,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36562,7 +36562,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36572,7 +36572,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36582,7 +36582,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36592,7 +36592,7 @@
 			{
 				"behaviour": "MB_CAVE_DOOR",
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36602,7 +36602,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36612,7 +36612,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36622,7 +36622,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36632,7 +36632,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36642,7 +36642,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36652,7 +36652,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36662,7 +36662,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36672,7 +36672,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36682,7 +36682,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36692,7 +36692,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36702,7 +36702,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36712,7 +36712,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36722,7 +36722,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36732,7 +36732,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36742,7 +36742,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36752,7 +36752,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36762,7 +36762,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36772,7 +36772,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36782,7 +36782,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36792,7 +36792,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36802,7 +36802,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36812,7 +36812,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36822,7 +36822,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36832,7 +36832,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36842,7 +36842,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36852,7 +36852,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36862,7 +36862,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36872,7 +36872,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36882,7 +36882,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36892,7 +36892,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36902,7 +36902,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36912,7 +36912,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36922,7 +36922,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36932,7 +36932,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36942,7 +36942,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36952,7 +36952,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36962,7 +36962,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36972,7 +36972,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36982,7 +36982,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -36992,7 +36992,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -37002,7 +37002,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -37012,7 +37012,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -37022,7 +37022,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -37032,7 +37032,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -37042,7 +37042,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -37052,7 +37052,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -37062,7 +37062,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -37072,7 +37072,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -37082,7 +37082,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -37092,7 +37092,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -37102,7 +37102,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -37112,7 +37112,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -37122,7 +37122,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -37132,7 +37132,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -37142,7 +37142,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -37152,7 +37152,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -37162,7 +37162,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -37172,7 +37172,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -37182,7 +37182,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -37192,7 +37192,7 @@
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
-				"field_2": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
 				"encounter_type": 0,
 				"field_5": 0,
