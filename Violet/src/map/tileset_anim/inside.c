@@ -7,7 +7,7 @@ extern const u16 gfx_tileset_inside_anim_tvTiles[];
 
 static const tileset_animation tileset_inside_animations[] = {
     {
-        .cycle=9,
+        .cycle=5,
         .speed=4,
         .start_tile=0x100,
         .num_tiles=14,
