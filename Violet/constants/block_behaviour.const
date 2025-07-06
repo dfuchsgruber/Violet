@@ -240,7 +240,7 @@
         "MB_EC",
         "MB_ED",
         "MB_EE",
-        "MB_EF",
+        "MB_FLAVOR_TEXT_INSIDE",
         "MB_CLIMBABLE_LADDER_BOTTOM",
         "MB_CLIMBABLE_LADDER_TOP",
         "MB_CLIMBABLE_LADDER_MIDPOINT",

@@ -41,11 +41,11 @@
 				{
 					"is_trainer": "0",
 					"script": "ow_script_map_5_12_person_1",
-					"y": "9",
+					"y": "4",
 					"target_index": 2,
 					"picture": 22,
 					"flag": "0x0",
-					"x": "15",
+					"x": "7",
 					"field_2": 0,
 					"level": 3,
 					"alert_radius": 0,

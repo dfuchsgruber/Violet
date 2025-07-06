@@ -13016,14 +13016,14 @@
 			],
 			[
 				{
-					"tile_idx": 722,
-					"palette_idx": 7,
+					"tile_idx": 190,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 723,
-					"palette_idx": 7,
+					"tile_idx": 191,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
@@ -13040,14 +13040,14 @@
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 190,
-					"palette_idx": 0,
+					"tile_idx": 304,
+					"palette_idx": 2,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 191,
-					"palette_idx": 0,
+					"tile_idx": 305,
+					"palette_idx": 2,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
@@ -13070,8 +13070,8 @@
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 305,
-					"palette_idx": 2,
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
@@ -13090,15 +13090,15 @@
 			],
 			[
 				{
-					"tile_idx": 722,
-					"palette_idx": 7,
-					"horizontal_flip": 0,
+					"tile_idx": 191,
+					"palette_idx": 0,
+					"horizontal_flip": 1,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 723,
-					"palette_idx": 7,
-					"horizontal_flip": 0,
+					"tile_idx": 190,
+					"palette_idx": 0,
+					"horizontal_flip": 1,
 					"vertical_flip": 0
 				},
 				{
@@ -13114,32 +13114,32 @@
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 191,
-					"palette_idx": 0,
-					"horizontal_flip": 1,
-					"vertical_flip": 0
-				},
-				{
-					"tile_idx": 190,
-					"palette_idx": 0,
-					"horizontal_flip": 1,
-					"vertical_flip": 0
-				},
-				{
-					"tile_idx": 0,
-					"palette_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0
-				},
-				{
-					"tile_idx": 0,
-					"palette_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0
-				},
-				{
 					"tile_idx": 306,
 					"palette_idx": 2,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 307,
+					"palette_idx": 2,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 0,
+					"palette_idx": 0,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 0,
+					"palette_idx": 0,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
@@ -49246,7 +49246,7 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": 0,
+				"behaviour": "MB_FLAVOR_TEXT_INSIDE",
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": 0,
@@ -49326,7 +49326,7 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": 0,
+				"behaviour": "0",
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": 0,

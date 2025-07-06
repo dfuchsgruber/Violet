@@ -89,5 +89,6 @@
 	"overworld/ground_effects" : "constants/overworld/ground_effects.const",
 	"crafting_recipe_types" : "constants/crafting_recipe_types.const",
 	"dungeon/dungeon_types" : "constants/dungeon/dungeon_types.const",
-	"cutscenes" : "constants/cutscenes.const"
+	"cutscenes" : "constants/cutscenes.const",
+	"block_arguments" : "constants/block_arguments.const"
 }

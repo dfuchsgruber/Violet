@@ -8,8 +8,8 @@
 
 
 .org 0x806D154
-	ldr r0, =hook_get_behavior_script | 1
-	bx r0
+	ldr r3, =hook_get_behavior_script | 1
+	bx r3
 	.pool
 	
 .org 0x0806CA94

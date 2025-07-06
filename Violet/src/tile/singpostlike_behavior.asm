@@ -9,6 +9,7 @@
 .global hook_get_behavior_script
 
 .thumb_func
+@TODO: migrate this to C...
 hook_get_behavior_script:
 
 push {r4-r5, lr}
@@ -16,8 +17,16 @@ lsl r1, #0x18
 lsr r4, r1, #0x18
 lsl r2, #0x18
 lsr r5, r2, #0x18
-ldr r0, =0x020370D4
-strh r5, [r0]
+ldr r3, =0x020370D4
+strh r5, [r3]
+
+mov r1, r4
+mov r2, r5
+bl behaviour_get_flavor_text_script
+cmp r0, #0
+bne ret_s 
+
+
 
 cmp r4, #0xB2
 beq trigger_tv

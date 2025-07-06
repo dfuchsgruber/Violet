@@ -8,6 +8,8 @@
 #ifndef INCLUDE_C_TILE_COORDINATE_H_
 #define INCLUDE_C_TILE_COORDINATE_H_
 
+#include "types.h"
+
 typedef struct {
     s16 x;
     s16 y;
