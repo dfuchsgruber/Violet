@@ -48338,7 +48338,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0",
-				"field_2": "0",
+				"argument": "0",
 				"battle_bg": "BATTLE_BG_SKY_ISLAND",
 				"encounter_type": "0",
 				"field_5": "0",
@@ -49208,7 +49208,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49298,7 +49298,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49468,7 +49468,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49478,7 +49478,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49488,7 +49488,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49498,7 +49498,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49508,7 +49508,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49518,7 +49518,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49528,7 +49528,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49538,7 +49538,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49548,7 +49548,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49558,7 +49558,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49568,7 +49568,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49578,7 +49578,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49588,7 +49588,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49598,7 +49598,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49608,7 +49608,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0",
-				"field_2": "0",
+				"argument": "0",
 				"battle_bg": "BATTLE_BG_SKY_ISLAND",
 				"encounter_type": "0",
 				"field_5": "0",
@@ -49618,7 +49618,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49628,7 +49628,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49638,7 +49638,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49648,7 +49648,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49658,7 +49658,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49668,7 +49668,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49678,7 +49678,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49688,7 +49688,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49698,7 +49698,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49708,7 +49708,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49718,7 +49718,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49728,7 +49728,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49738,7 +49738,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49748,7 +49748,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -49798,7 +49798,7 @@
 			{
 				"behaviour": "MB_WATERFALL",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
@@ -49878,7 +49878,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -50248,7 +50248,7 @@
 			{
 				"behaviour": "MB_WATERFALL",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
@@ -50258,7 +50258,7 @@
 			{
 				"behaviour": "MB_WATERFALL",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
@@ -50308,7 +50308,7 @@
 			{
 				"behaviour": "MB_JUMP_ALL_WITH_CLOUD",
 				"hm_usage": "0",
-				"field_2": "0",
+				"argument": "0",
 				"battle_bg": "BATTLE_BG_SKY_ISLAND",
 				"encounter_type": "0",
 				"field_5": "0",
@@ -50318,7 +50318,7 @@
 			{
 				"behaviour": "MB_WATERFALL",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
@@ -50328,7 +50328,7 @@
 			{
 				"behaviour": "MB_WATERFALL",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
@@ -50338,7 +50338,7 @@
 			{
 				"behaviour": "MB_WATERFALL",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
@@ -50388,7 +50388,7 @@
 			{
 				"behaviour": "MB_JUMP_ALL_WITH_CLOUD",
 				"hm_usage": "0",
-				"field_2": "0",
+				"argument": "0",
 				"battle_bg": "BATTLE_BG_SKY_ISLAND",
 				"encounter_type": "0",
 				"field_5": "0",
@@ -50398,7 +50398,7 @@
 			{
 				"behaviour": "MB_WATERFALL",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
@@ -50408,7 +50408,7 @@
 			{
 				"behaviour": "MB_WATERFALL",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
@@ -50418,7 +50418,7 @@
 			{
 				"behaviour": "MB_WATERFALL",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
@@ -51118,7 +51118,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -51128,7 +51128,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -52358,7 +52358,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0",
-				"field_2": "0",
+				"argument": "0",
 				"battle_bg": "BATTLE_BG_SKY_ISLAND",
 				"encounter_type": "0",
 				"field_5": "0",
@@ -52518,7 +52518,7 @@
 			{
 				"behaviour": "MB_TALL_GRASS",
 				"hm_usage": "0x1",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_SKY_ISLAND",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
@@ -52528,7 +52528,7 @@
 			{
 				"behaviour": "MB_TALL_GRASS",
 				"hm_usage": "0x1",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_SKY_ISLAND",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
@@ -52538,7 +52538,7 @@
 			{
 				"behaviour": "MB_TALL_GRASS",
 				"hm_usage": "0x1",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_SKY_ISLAND",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
@@ -52548,7 +52548,7 @@
 			{
 				"behaviour": "MB_TALL_GRASS",
 				"hm_usage": "0x1",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_SKY_ISLAND",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
@@ -52558,7 +52558,7 @@
 			{
 				"behaviour": "MB_TALL_GRASS",
 				"hm_usage": "0x1",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_SKY_ISLAND",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
@@ -53738,7 +53738,7 @@
 			{
 				"behaviour": "MB_JUMP_SOUTH",
 				"hm_usage": "0",
-				"field_2": "0",
+				"argument": "0",
 				"battle_bg": "BATTLE_BG_SKY_ISLAND",
 				"encounter_type": "0",
 				"field_5": "0",
@@ -53988,7 +53988,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -53998,7 +53998,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -54008,7 +54008,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -54068,7 +54068,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -54078,7 +54078,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -54088,7 +54088,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -54148,7 +54148,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -54158,7 +54158,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -54168,7 +54168,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -54188,7 +54188,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -54198,32 +54198,12 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
 				"priority": "0x1",
 				"field_7": "0x0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": 0,
-				"argument": 0,
-				"battle_bg": 0,
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": 0,
-				"argument": 0,
-				"battle_bg": 0,
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
 			},
 			{
 				"behaviour": "0x0",
@@ -54259,6 +54239,26 @@
 				"behaviour": "0x0",
 				"hm_usage": 0,
 				"argument": 0,
+				"battle_bg": 0,
+				"encounter_type": 0,
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": 0,
+				"argument": 0,
+				"battle_bg": 0,
+				"encounter_type": 0,
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": 0,
+				"argument": 0,
 				"battle_bg": "BATTLE_BG_SKY_ISLAND",
 				"encounter_type": 0,
 				"field_5": 0,
@@ -54268,7 +54268,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
@@ -54278,7 +54278,7 @@
 			{
 				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD",
 				"encounter_type": "0x2",
 				"field_5": "0x0",

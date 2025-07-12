@@ -30132,7 +30132,7 @@
 			{
 				"behaviour": "MB_CAVE",
 				"hm_usage": 0,
-				"field_2": "BATTLE_BG_DARK_TOWER",
+				"argument": "BATTLE_BG_DARK_TOWER",
 				"battle_bg": 0,
 				"encounter_type": "1",
 				"field_5": 0,
@@ -30212,7 +30212,7 @@
 			{
 				"behaviour": "MB_CAVE",
 				"hm_usage": 0,
-				"field_2": "BATTLE_BG_DARK_TOWER",
+				"argument": "BATTLE_BG_DARK_TOWER",
 				"battle_bg": 0,
 				"encounter_type": "1",
 				"field_5": 0,

@@ -33932,7 +33932,7 @@
 			{
 				"behaviour": "MB_SAND_CAVE",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_CAVE",
 				"encounter_type": "0x1",
 				"field_5": "0x0",

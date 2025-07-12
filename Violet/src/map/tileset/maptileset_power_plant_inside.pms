@@ -29702,7 +29702,7 @@
 			{
 				"behaviour": "MB_SOUTH_ARROW_WARP",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "0x16",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
@@ -30902,7 +30902,7 @@
 			{
 				"behaviour": "MB_PAINTING",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
@@ -30912,7 +30912,7 @@
 			{
 				"behaviour": "MB_PAINTING",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",

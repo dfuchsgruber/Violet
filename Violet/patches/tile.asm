@@ -102,7 +102,9 @@
     .word str_pc_adieu, str_pc_adieu
 
 // Disable FRD's random spawning hidden items
-.org 0x0815D60C
+.org 0x0815d598 // hidden_flags_daily_proceed
+    bx lr
+.org 0x0815D60C // hidden_flag_daily_initialize
 	bx lr
 .org 0x0815D4D8
 	ldr r0, =new_game_initialize_custom_data | 1

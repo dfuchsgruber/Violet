@@ -1280,7 +1280,7 @@
 				},
 				{
 					"block_idx": 240,
-					"level": 12
+					"level": 0
 				},
 				{
 					"block_idx": 241,
@@ -1374,11 +1374,11 @@
 				},
 				{
 					"block_idx": 4,
-					"level": 12
+					"level": 0
 				},
 				{
 					"block_idx": 248,
-					"level": 12
+					"level": 16
 				},
 				{
 					"block_idx": 1,

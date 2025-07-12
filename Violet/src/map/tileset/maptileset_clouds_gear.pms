@@ -28982,7 +28982,7 @@
 			{
 				"behaviour": "0",
 				"hm_usage": "0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_SKY_ISLAND",
 				"encounter_type": "0x1",
 				"field_5": "0x0",

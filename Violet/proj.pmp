@@ -305,7 +305,7 @@
 		},
 		"5": {
 			"0": [
-				"map_5_0",
+				"map_bluetenbach_inside_small",
 				"src/map/banks/5/0/map_5_0.pms",
 				"MAP_MERIANA_CITY"
 			],
@@ -315,17 +315,17 @@
 				"MAP_MERIANA_CITY"
 			],
 			"4": [
-				"map_5_4",
+				"map_bluetenbach_pokestop",
 				"src/map/banks/5/4/map_5_4.pms",
 				"MAP_MERIANA_CITY"
 			],
 			"11": [
-				"map_5_11",
+				"map_bluetenbach_inside_medium_0",
 				"src/map/banks/5/11/map_5_11.pms",
 				"MAP_MERIANA_CITY"
 			],
 			"12": [
-				"map_5_12",
+				"map_bluetenbach_inside_big_0",
 				"src/map/banks/5/12/map_5_12.pms",
 				"MAP_MERIANA_CITY"
 			],

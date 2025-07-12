@@ -29252,7 +29252,7 @@
 			{
 				"behaviour": "MB_SOUTH_ARROW_WARP",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"battle_bg": "BATTLE_BG_DUNGEON_FOREST_TENT_INSIDE",
 				"encounter_type": "0x0",
 				"field_5": "0x0",

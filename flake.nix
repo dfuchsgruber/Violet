@@ -56,14 +56,14 @@
           # Build most recent supported version of `pyagb`
           pyagb = python3.pkgs.buildPythonPackage rec {
             pname = "pyagb";
-            version = "4f9a983080a8c03410eca3a333b02621e124b3cf";
+            version = "e530d49bd0f63cfd068755f8ebf1e73f6b37d244";
             pyproject = true;
 
             src = pkgs.fetchFromGitHub {
               owner = "dfuchsgruber";
               repo = pname;
               rev = version;
-              sha256 = "sha256-1mEriP/o8/mxVdDEVONGqjcawaTks+sx5JdvsXCSM7c=";
+              sha256 = "sha256-Gdn2upWjzgp8WZUngd3PaTQm00tvnQvO9cR5ffUl+S8=";
             };
 
             nativeBuildInputs =

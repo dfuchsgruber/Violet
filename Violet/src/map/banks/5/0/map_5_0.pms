@@ -10,11 +10,11 @@
 				{
 					"is_trainer": "0",
 					"script": "ow_script_map_5_0_person_0",
-					"y": 5,
+					"y": "4",
 					"target_index": 1,
 					"picture": 52,
 					"flag": "0x0",
-					"x": 1,
+					"x": "0",
 					"field_2": 0,
 					"level": 3,
 					"alert_radius": 0,
@@ -77,6 +77,6 @@
 			"flag_7": "0"
 		}
 	},
-	"label": "map_5_0",
+	"label": "map_bluetenbach_inside_small",
 	"type": "header"
 }

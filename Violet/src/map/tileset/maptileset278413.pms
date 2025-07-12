@@ -499,7 +499,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "1",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -509,7 +509,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -519,7 +519,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -529,7 +529,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -539,7 +539,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -549,7 +549,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -559,7 +559,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -569,7 +569,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -579,7 +579,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -589,7 +589,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -599,7 +599,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -609,7 +609,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -619,7 +619,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -629,7 +629,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -639,17 +639,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -659,7 +649,17 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -669,7 +669,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -679,7 +679,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -689,7 +689,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -699,7 +699,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -709,7 +709,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -719,7 +719,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -729,7 +729,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -739,7 +739,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -749,7 +749,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -759,7 +759,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -769,7 +769,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -779,7 +779,7 @@
 			{
 				"behaviour": "MB_SOUTH_ARROW_WARP",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -789,7 +789,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -799,7 +799,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -809,7 +809,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -819,7 +819,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -829,7 +829,7 @@
 			{
 				"behaviour": "MB_LADDER",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -839,7 +839,7 @@
 			{
 				"behaviour": "MB_LADDER",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -849,7 +849,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -859,7 +859,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -869,7 +869,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -879,7 +879,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -889,7 +889,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -899,7 +899,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -909,7 +909,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0",
+				"argument": "0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -919,7 +919,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0",
 				"field_7": "0x0",
@@ -929,7 +929,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -939,7 +939,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -949,7 +949,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -959,7 +959,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -969,7 +969,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -979,7 +979,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -989,7 +989,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -999,7 +999,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1009,7 +1009,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1019,7 +1019,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1029,7 +1029,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1039,7 +1039,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1049,7 +1049,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1059,7 +1059,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1069,7 +1069,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1079,7 +1079,7 @@
 			{
 				"behaviour": "MB_FALL_WARP",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1089,7 +1089,7 @@
 			{
 				"behaviour": "MB_FALL_WARP",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1099,7 +1099,7 @@
 			{
 				"behaviour": "MB_FALL_WARP",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1109,7 +1109,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1119,7 +1119,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1129,7 +1129,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1139,7 +1139,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1149,7 +1149,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1159,7 +1159,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1169,7 +1169,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1179,7 +1179,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1189,7 +1189,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1199,7 +1199,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1209,7 +1209,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1219,7 +1219,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1229,7 +1229,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1239,7 +1239,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1249,7 +1249,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1259,7 +1259,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1269,7 +1269,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1279,7 +1279,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1289,7 +1289,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1299,7 +1299,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1309,7 +1309,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1319,7 +1319,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1329,7 +1329,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1339,7 +1339,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1349,7 +1349,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1359,7 +1359,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1369,7 +1369,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1379,7 +1379,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1389,7 +1389,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1399,7 +1399,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1409,7 +1409,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1419,7 +1419,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1429,7 +1429,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1439,7 +1439,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1449,7 +1449,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1459,7 +1459,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1469,7 +1469,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1479,7 +1479,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1489,7 +1489,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1499,7 +1499,7 @@
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
-				"field_2": "0x3",
+				"argument": "0x3",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
@@ -1509,7 +1509,7 @@
 			{
 				"behaviour": "MB_5D",
 				"hm_usage": "0x1",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1519,7 +1519,7 @@
 			{
 				"behaviour": "MB_5F",
 				"hm_usage": "0x5",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x3",
 				"field_5": "0x2",
 				"field_7": "0x0",
@@ -1529,7 +1529,7 @@
 			{
 				"behaviour": "MB_UP_LEFT_STAIR_WARP",
 				"hm_usage": "0xb",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x3",
 				"field_7": "0x0",
@@ -1539,7 +1539,7 @@
 			{
 				"behaviour": "0x14e",
 				"hm_usage": "0x13",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x2",
 				"field_5": "0x1",
 				"field_7": "0x0",
@@ -1549,7 +1549,7 @@
 			{
 				"behaviour": "MB_DB",
 				"hm_usage": "0x19",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x2",
 				"field_5": "0x3",
 				"field_7": "0x0",
@@ -1559,7 +1559,7 @@
 			{
 				"behaviour": "0x13f",
 				"hm_usage": "0x1f",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1569,7 +1569,7 @@
 			{
 				"behaviour": "0x146",
 				"hm_usage": "0x7",
-				"field_2": "0x1",
+				"argument": "0x1",
 				"encounter_type": "0x2",
 				"field_5": "0x1",
 				"field_7": "0x1",
@@ -1579,7 +1579,7 @@
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
-				"field_2": "0x3",
+				"argument": "0x3",
 				"encounter_type": "0x6",
 				"field_5": "0x3",
 				"field_7": "0x1",
@@ -1589,7 +1589,7 @@
 			{
 				"behaviour": "0x1b4",
 				"hm_usage": "0xc",
-				"field_2": "0x2",
+				"argument": "0x2",
 				"encounter_type": "0x0",
 				"field_5": "0x1",
 				"field_7": "0x0",
@@ -1599,7 +1599,7 @@
 			{
 				"behaviour": "0x1cc",
 				"hm_usage": "0x6",
-				"field_2": "0x3",
+				"argument": "0x3",
 				"encounter_type": "0x0",
 				"field_5": "0x1",
 				"field_7": "0x0",
@@ -1609,7 +1609,7 @@
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1619,7 +1619,7 @@
 			{
 				"behaviour": "0x14d",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1629,7 +1629,7 @@
 			{
 				"behaviour": "MB_REGULAR_WARP",
 				"hm_usage": "0x0",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1639,7 +1639,7 @@
 			{
 				"behaviour": "MB_01",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1649,7 +1649,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x1",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1659,7 +1659,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x1",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1669,7 +1669,7 @@
 			{
 				"behaviour": "MB_1E",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1679,7 +1679,7 @@
 			{
 				"behaviour": "MB_PUDDLE",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1689,7 +1689,7 @@
 			{
 				"behaviour": "MB_PUDDLE",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1699,7 +1699,7 @@
 			{
 				"behaviour": "MB_WATERFALL",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1709,7 +1709,7 @@
 			{
 				"behaviour": "MB_SHALLOW_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1719,7 +1719,7 @@
 			{
 				"behaviour": "MB_SHALLOW_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1729,7 +1729,7 @@
 			{
 				"behaviour": "MB_SHALLOW_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1739,7 +1739,7 @@
 			{
 				"behaviour": "MB_SHALLOW_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1749,7 +1749,7 @@
 			{
 				"behaviour": "MB_SHALLOW_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1759,7 +1759,7 @@
 			{
 				"behaviour": "MB_70",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1769,7 +1769,7 @@
 			{
 				"behaviour": "MB_73",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1779,7 +1779,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1789,7 +1789,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1799,7 +1799,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1809,7 +1809,7 @@
 			{
 				"behaviour": "MB_B2",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1819,7 +1819,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1829,7 +1829,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1839,7 +1839,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1849,7 +1849,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1859,7 +1859,7 @@
 			{
 				"behaviour": "MB_TRASH",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1869,7 +1869,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1879,7 +1879,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1889,7 +1889,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1899,7 +1899,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1909,7 +1909,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1919,7 +1919,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1929,7 +1929,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1939,7 +1939,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1949,7 +1949,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1959,7 +1959,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1969,7 +1969,7 @@
 			{
 				"behaviour": "MB_73",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1979,7 +1979,7 @@
 			{
 				"behaviour": "MB_KITCHEN",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1989,7 +1989,7 @@
 			{
 				"behaviour": "MB_KITCHEN",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -1999,7 +1999,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2009,7 +2009,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2019,107 +2019,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xcc"
-			},
-			{
-				"behaviour": "MB_D3",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xd4"
-			},
-			{
-				"behaviour": "MB_CB",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xcc"
-			},
-			{
-				"behaviour": "MB_CB",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xcc"
-			},
-			{
-				"behaviour": "MB_CB",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xcc"
-			},
-			{
-				"behaviour": "MB_CB",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xcc"
-			},
-			{
-				"behaviour": "MB_CB",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xcc"
-			},
-			{
-				"behaviour": "MB_CB",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xcc"
-			},
-			{
-				"behaviour": "MB_CB",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xcc"
-			},
-			{
-				"behaviour": "MB_CB",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xcc"
-			},
-			{
-				"behaviour": "MB_CB",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2129,7 +2029,7 @@
 			{
 				"behaviour": "MB_D3",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2139,7 +2039,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2149,7 +2049,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2159,7 +2059,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2169,7 +2069,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2179,7 +2079,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2189,7 +2089,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2199,7 +2099,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2209,7 +2109,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2219,7 +2119,27 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xcc"
+			},
+			{
+				"behaviour": "MB_D3",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xd4"
+			},
+			{
+				"behaviour": "MB_CB",
+				"hm_usage": "0x3",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2229,7 +2149,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2239,7 +2159,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2249,7 +2169,87 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xcc"
+			},
+			{
+				"behaviour": "MB_CB",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xcc"
+			},
+			{
+				"behaviour": "MB_CB",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xcc"
+			},
+			{
+				"behaviour": "MB_CB",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xcc"
+			},
+			{
+				"behaviour": "MB_CB",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xcc"
+			},
+			{
+				"behaviour": "MB_CB",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xcc"
+			},
+			{
+				"behaviour": "MB_CB",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xcc"
+			},
+			{
+				"behaviour": "MB_CB",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xcc"
+			},
+			{
+				"behaviour": "MB_CB",
+				"hm_usage": "0x3",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2259,7 +2259,7 @@
 			{
 				"behaviour": "MB_PUDDLE",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2269,7 +2269,7 @@
 			{
 				"behaviour": "MB_1E",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2279,7 +2279,7 @@
 			{
 				"behaviour": "MB_1E",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2289,7 +2289,7 @@
 			{
 				"behaviour": "MB_WATERFALL",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2299,7 +2299,7 @@
 			{
 				"behaviour": "MB_1F",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2309,7 +2309,7 @@
 			{
 				"behaviour": "MB_1F",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2319,7 +2319,7 @@
 			{
 				"behaviour": "MB_1F",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2329,7 +2329,7 @@
 			{
 				"behaviour": "MB_1F",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2339,7 +2339,7 @@
 			{
 				"behaviour": "MB_1F",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2349,7 +2349,7 @@
 			{
 				"behaviour": "MB_70",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2359,7 +2359,7 @@
 			{
 				"behaviour": "MB_73",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2369,7 +2369,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2379,7 +2379,7 @@
 			{
 				"behaviour": "MB_B2",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2389,7 +2389,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2399,7 +2399,7 @@
 			{
 				"behaviour": "MB_7D",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2409,7 +2409,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2419,7 +2419,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2429,7 +2429,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2439,7 +2439,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2449,7 +2449,7 @@
 			{
 				"behaviour": "MB_7B",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2459,7 +2459,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2469,7 +2469,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2479,7 +2479,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2489,7 +2489,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2499,7 +2499,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2509,7 +2509,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2519,7 +2519,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2529,7 +2529,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2539,7 +2539,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2549,7 +2549,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2559,7 +2559,7 @@
 			{
 				"behaviour": "MB_73",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2569,7 +2569,7 @@
 			{
 				"behaviour": "MB_KITCHEN",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2579,7 +2579,7 @@
 			{
 				"behaviour": "MB_KITCHEN",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2589,7 +2589,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2599,7 +2599,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2609,107 +2609,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xc6"
-			},
-			{
-				"behaviour": "MB_D9",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xda"
-			},
-			{
-				"behaviour": "MB_C5",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xc6"
-			},
-			{
-				"behaviour": "MB_C5",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xc6"
-			},
-			{
-				"behaviour": "MB_C5",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xc6"
-			},
-			{
-				"behaviour": "MB_C5",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xc6"
-			},
-			{
-				"behaviour": "MB_C5",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xc6"
-			},
-			{
-				"behaviour": "MB_C5",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xc6"
-			},
-			{
-				"behaviour": "MB_C5",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xc6"
-			},
-			{
-				"behaviour": "MB_C5",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xc6"
-			},
-			{
-				"behaviour": "MB_C5",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2719,7 +2619,7 @@
 			{
 				"behaviour": "MB_D9",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2729,7 +2629,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2739,7 +2639,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2749,7 +2649,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2759,7 +2659,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2769,7 +2669,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2779,7 +2679,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2789,7 +2689,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2799,7 +2699,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2809,7 +2709,27 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xc6"
+			},
+			{
+				"behaviour": "MB_D9",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xda"
+			},
+			{
+				"behaviour": "MB_C5",
+				"hm_usage": "0x3",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2819,7 +2739,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2829,7 +2749,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2839,7 +2759,87 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xc6"
+			},
+			{
+				"behaviour": "MB_C5",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xc6"
+			},
+			{
+				"behaviour": "MB_C5",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xc6"
+			},
+			{
+				"behaviour": "MB_C5",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xc6"
+			},
+			{
+				"behaviour": "MB_C5",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xc6"
+			},
+			{
+				"behaviour": "MB_C5",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xc6"
+			},
+			{
+				"behaviour": "MB_C5",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xc6"
+			},
+			{
+				"behaviour": "MB_C5",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xc6"
+			},
+			{
+				"behaviour": "MB_C5",
+				"hm_usage": "0x3",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2849,7 +2849,7 @@
 			{
 				"behaviour": "MB_1E",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2859,7 +2859,7 @@
 			{
 				"behaviour": "MB_PUDDLE",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2869,7 +2869,7 @@
 			{
 				"behaviour": "MB_PUDDLE",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2879,7 +2879,7 @@
 			{
 				"behaviour": "MB_WATERFALL",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2889,7 +2889,7 @@
 			{
 				"behaviour": "MB_SHALLOW_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2899,7 +2899,7 @@
 			{
 				"behaviour": "MB_CAVE_DOOR",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2909,7 +2909,7 @@
 			{
 				"behaviour": "MB_CRACKED_ICE",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2919,7 +2919,7 @@
 			{
 				"behaviour": "MB_SHALLOW_WATER",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2929,7 +2929,7 @@
 			{
 				"behaviour": "MB_CRACKED_ICE",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2939,7 +2939,7 @@
 			{
 				"behaviour": "MB_70",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2949,7 +2949,7 @@
 			{
 				"behaviour": "MB_73",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2959,7 +2959,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2969,7 +2969,7 @@
 			{
 				"behaviour": "MB_KITCHEN",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2979,7 +2979,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2989,7 +2989,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -2999,7 +2999,7 @@
 			{
 				"behaviour": "MB_B2",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3009,7 +3009,7 @@
 			{
 				"behaviour": "MB_AB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3019,7 +3019,7 @@
 			{
 				"behaviour": "MB_AB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3029,7 +3029,7 @@
 			{
 				"behaviour": "MB_TRASH",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3039,7 +3039,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3049,7 +3049,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3059,7 +3059,7 @@
 			{
 				"behaviour": "MB_TRASH",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3069,7 +3069,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3079,7 +3079,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3089,7 +3089,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3099,7 +3099,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3109,7 +3109,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3119,7 +3119,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3129,7 +3129,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3139,7 +3139,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3149,7 +3149,7 @@
 			{
 				"behaviour": "MB_73",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3159,7 +3159,7 @@
 			{
 				"behaviour": "MB_KITCHEN",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3169,7 +3169,7 @@
 			{
 				"behaviour": "MB_KITCHEN",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3179,7 +3179,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3189,7 +3189,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3199,107 +3199,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xcc"
-			},
-			{
-				"behaviour": "MB_DB",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xdc"
-			},
-			{
-				"behaviour": "MB_CB",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xcc"
-			},
-			{
-				"behaviour": "MB_CB",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xcc"
-			},
-			{
-				"behaviour": "MB_CB",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xcc"
-			},
-			{
-				"behaviour": "MB_CB",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xcc"
-			},
-			{
-				"behaviour": "MB_CB",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xcc"
-			},
-			{
-				"behaviour": "MB_CB",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xcc"
-			},
-			{
-				"behaviour": "MB_CB",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xcc"
-			},
-			{
-				"behaviour": "MB_CB",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
-				"encounter_type": "0x6",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0xcc"
-			},
-			{
-				"behaviour": "MB_CB",
-				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3309,7 +3209,7 @@
 			{
 				"behaviour": "MB_DB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3319,7 +3219,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3329,7 +3229,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3339,7 +3239,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3349,7 +3249,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3359,7 +3259,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3369,7 +3269,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3379,7 +3279,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3389,7 +3289,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3399,7 +3299,27 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xcc"
+			},
+			{
+				"behaviour": "MB_DB",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xdc"
+			},
+			{
+				"behaviour": "MB_CB",
+				"hm_usage": "0x3",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3409,7 +3329,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3419,7 +3339,7 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3429,7 +3349,87 @@
 			{
 				"behaviour": "MB_CB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xcc"
+			},
+			{
+				"behaviour": "MB_CB",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xcc"
+			},
+			{
+				"behaviour": "MB_CB",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xcc"
+			},
+			{
+				"behaviour": "MB_CB",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xcc"
+			},
+			{
+				"behaviour": "MB_CB",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xcc"
+			},
+			{
+				"behaviour": "MB_CB",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xcc"
+			},
+			{
+				"behaviour": "MB_CB",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xcc"
+			},
+			{
+				"behaviour": "MB_CB",
+				"hm_usage": "0x3",
+				"argument": "0x0",
+				"encounter_type": "0x6",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0xcc"
+			},
+			{
+				"behaviour": "MB_CB",
+				"hm_usage": "0x3",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3439,7 +3439,7 @@
 			{
 				"behaviour": "MB_PUDDLE",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3449,7 +3449,7 @@
 			{
 				"behaviour": "MB_1E",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3459,7 +3459,7 @@
 			{
 				"behaviour": "MB_1E",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3469,7 +3469,7 @@
 			{
 				"behaviour": "MB_ICE",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3479,7 +3479,7 @@
 			{
 				"behaviour": "MB_1F",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3489,7 +3489,7 @@
 			{
 				"behaviour": "MB_1E",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3499,7 +3499,7 @@
 			{
 				"behaviour": "MB_01",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3509,7 +3509,7 @@
 			{
 				"behaviour": "MB_1F",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3519,7 +3519,7 @@
 			{
 				"behaviour": "MB_01",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3529,7 +3529,7 @@
 			{
 				"behaviour": "MB_70",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3539,7 +3539,7 @@
 			{
 				"behaviour": "MB_73",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3549,7 +3549,7 @@
 			{
 				"behaviour": "MB_B2",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3559,7 +3559,7 @@
 			{
 				"behaviour": "MB_7D",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3569,7 +3569,7 @@
 			{
 				"behaviour": "MB_B2",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3579,7 +3579,7 @@
 			{
 				"behaviour": "MB_AB",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3589,7 +3589,7 @@
 			{
 				"behaviour": "MB_AC",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3599,7 +3599,7 @@
 			{
 				"behaviour": "MB_ADVERTISING_POSTER",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3609,7 +3609,7 @@
 			{
 				"behaviour": "MB_BD",
 				"hm_usage": "0x19",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
 				"field_7": "0x0",
@@ -3619,7 +3619,7 @@
 			{
 				"behaviour": "MB_AA",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3629,7 +3629,7 @@
 			{
 				"behaviour": "MB_TRASH",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3639,7 +3639,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3649,7 +3649,7 @@
 			{
 				"behaviour": "MB_7B",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3659,7 +3659,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3669,7 +3669,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3679,7 +3679,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3689,7 +3689,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3699,7 +3699,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3709,7 +3709,7 @@
 			{
 				"behaviour": "MB_TRASH",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3719,7 +3719,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3729,7 +3729,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3739,7 +3739,7 @@
 			{
 				"behaviour": "MB_73",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3749,7 +3749,7 @@
 			{
 				"behaviour": "MB_KITCHEN",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3759,7 +3759,7 @@
 			{
 				"behaviour": "MB_KITCHEN",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3769,7 +3769,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3779,7 +3779,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3789,7 +3789,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3799,7 +3799,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3809,7 +3809,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3819,7 +3819,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3829,7 +3829,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3839,7 +3839,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3849,7 +3849,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3859,7 +3859,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3869,7 +3869,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3879,7 +3879,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3889,7 +3889,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3899,7 +3899,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3909,7 +3909,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3919,7 +3919,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3929,7 +3929,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3939,7 +3939,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3949,7 +3949,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3959,7 +3959,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3969,7 +3969,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3979,7 +3979,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3989,7 +3989,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -3999,7 +3999,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4009,7 +4009,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4019,7 +4019,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4029,7 +4029,7 @@
 			{
 				"behaviour": "MB_1E",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4039,7 +4039,7 @@
 			{
 				"behaviour": "MB_PUDDLE",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4049,7 +4049,7 @@
 			{
 				"behaviour": "MB_PUDDLE",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4059,7 +4059,7 @@
 			{
 				"behaviour": "MB_14",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4069,7 +4069,7 @@
 			{
 				"behaviour": "MB_CAVE_DOOR",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4079,7 +4079,7 @@
 			{
 				"behaviour": "MB_THIN_ICE",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4089,7 +4089,7 @@
 			{
 				"behaviour": "MB_LAVARIDGE_1F_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4099,7 +4099,7 @@
 			{
 				"behaviour": "MB_WARP_DOOR",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4109,7 +4109,7 @@
 			{
 				"behaviour": "MB_WARP_DOOR",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4119,7 +4119,7 @@
 			{
 				"behaviour": "MB_BB",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4129,7 +4129,7 @@
 			{
 				"behaviour": "MB_73",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4139,7 +4139,7 @@
 			{
 				"behaviour": "MB_KITCHEN",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4149,7 +4149,7 @@
 			{
 				"behaviour": "MB_B2",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4159,7 +4159,7 @@
 			{
 				"behaviour": "MB_A4",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4169,7 +4169,7 @@
 			{
 				"behaviour": "MB_ADVERTISING_POSTER",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4179,7 +4179,7 @@
 			{
 				"behaviour": "MB_ADVERTISING_POSTER",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4189,7 +4189,7 @@
 			{
 				"behaviour": "MB_ADVERTISING_POSTER",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4199,7 +4199,7 @@
 			{
 				"behaviour": "MB_C5",
 				"hm_usage": "0x19",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
 				"field_7": "0x0",
@@ -4209,7 +4209,7 @@
 			{
 				"behaviour": "MB_ADVERTISING_POSTER",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4219,7 +4219,7 @@
 			{
 				"behaviour": "MB_BURGLARY",
 				"hm_usage": "0x3",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4229,7 +4229,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4239,7 +4239,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4249,7 +4249,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4259,7 +4259,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4269,7 +4269,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4279,7 +4279,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4289,7 +4289,7 @@
 			{
 				"behaviour": "MB_UNION_ROOM_WARP",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4299,7 +4299,7 @@
 			{
 				"behaviour": "MB_7B",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4309,7 +4309,7 @@
 			{
 				"behaviour": "MB_TRASH",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4319,7 +4319,7 @@
 			{
 				"behaviour": "MB_7C",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -4329,7 +4329,7 @@
 			{
 				"behaviour": "MB_73",
 				"hm_usage": "0x2",
-				"field_2": "0x0",
+				"argument": "0x0",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",

@@ -35,7 +35,9 @@ TWO_OPTIONS_STRINGS(
     LANGDEP(PSTRING("Aus"), PSTRING("Off")),
     LANGDEP(PSTRING("Farben werden nicht von der\nTageszeit beeinflusst."), PSTRING("Colors are unaffected by the\ndaytime."))
 );
-static int option_dns_colors_getter() { return csave.settings.dns_disabled ? OPTION_OFF : OPTION_ON; }
+static int option_dns_colors_getter() { 
+    DEBUG("Offset of dns_disabled: 0x%x", (int)(&csave.settings));
+    return csave.settings.dns_disabled ? OPTION_OFF : OPTION_ON; }
 static void option_dns_color_setter(int is_off) { csave.settings.dns_disabled = (u8)(is_off & 1); }
 
 TWO_OPTIONS_STRINGS(

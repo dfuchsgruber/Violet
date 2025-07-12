@@ -10,11 +10,11 @@
 				{
 					"is_trainer": "0",
 					"script": "ow_script_map_5_11_person_0",
-					"y": 5,
+					"y": "5",
 					"target_index": 1,
 					"picture": "32",
 					"flag": "0x0",
-					"x": 9,
+					"x": "10",
 					"field_2": 0,
 					"level": 3,
 					"alert_radius": 0,
@@ -41,11 +41,11 @@
 				{
 					"is_trainer": "0",
 					"script": "ow_script_map_5_11_person_1",
-					"y": 7,
+					"y": "5",
 					"target_index": 2,
 					"picture": 22,
 					"flag": "0x0",
-					"x": 3,
+					"x": "2",
 					"field_2": 0,
 					"level": 3,
 					"alert_radius": 0,
@@ -72,7 +72,7 @@
 				{
 					"target_index": "3",
 					"picture": "26",
-					"x": "13",
+					"x": "14",
 					"y": "6",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_LEFT",
@@ -137,6 +137,6 @@
 			"flag_7": "0"
 		}
 	},
-	"label": "map_5_11",
+	"label": "map_bluetenbach_inside_medium_0",
 	"type": "header"
 }
