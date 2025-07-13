@@ -10,7 +10,7 @@
 				{
 					"is_trainer": "0",
 					"script": "ow_script_map_4_4_person_0",
-					"y": "5",
+					"y": "4",
 					"target_index": 1,
 					"picture": 32,
 					"flag": "0x0",
@@ -41,7 +41,7 @@
 				{
 					"is_trainer": "0",
 					"script": "ow_script_map_4_4_person_1",
-					"y": "5",
+					"y": "4",
 					"target_index": 2,
 					"picture": 23,
 					"flag": "0x0",
@@ -76,7 +76,7 @@
 					"y": "7",
 					"target_bank": 3,
 					"level": 0,
-					"x": "6",
+					"x": "7",
 					"target_warp_idx": 2
 				}
 			],
@@ -108,6 +108,6 @@
 			"flag_7": "0"
 		}
 	},
-	"label": "map_4_4",
+	"label": "map_anemonia_inside_0",
 	"type": "header"
 }

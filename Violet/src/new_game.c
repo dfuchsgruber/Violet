@@ -50,6 +50,6 @@ void new_game_initialize_custom_data() {
 void new_game_warp_to_initial_map() {
     *var_access(VAR_FILTER_COLOR) = 0x71ef;
     setflag(FLAG_FILTER_COLOR_ACTIVE);
-    warp_setup(4, 1, 0xFF, 8, 5);
+    warp_setup(4, 1, 0xFF, 8, 6);
     warp_do();
 }

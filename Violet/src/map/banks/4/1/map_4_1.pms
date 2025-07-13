@@ -39,8 +39,8 @@
 			],
 			"warps": [
 				{
-					"x": "4",
-					"y": "2",
+					"x": "5",
+					"y": "1",
 					"level": "3",
 					"target_bank": "4",
 					"target_map": "0",
@@ -58,8 +58,8 @@
 			"triggers": [],
 			"signposts": [
 				{
-					"x": "8",
-					"y": "2",
+					"x": "7",
+					"y": "1",
 					"level": "0",
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -81,8 +81,8 @@
 					"flag": "0"
 				},
 				{
-					"x": "4",
-					"y": "5",
+					"x": "10",
+					"y": "0",
 					"level": "0",
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -104,8 +104,8 @@
 					"flag": "0"
 				},
 				{
-					"x": "1",
-					"y": "2",
+					"x": "0",
+					"y": "1",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"flag": 0,
@@ -127,8 +127,8 @@
 					}
 				},
 				{
-					"x": "2",
-					"y": "2",
+					"x": "1",
+					"y": "1",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"flag": 0,
@@ -176,6 +176,6 @@
 			"flag_7": "0"
 		}
 	},
-	"label": "map_4_1",
+	"label": "map_anemonia_player_room",
 	"type": "header"
 }

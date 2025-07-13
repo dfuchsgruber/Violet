@@ -41,7 +41,7 @@ end
 
 
 ow_script_0x8400be:
-movesprite2 0x1 0x6 0x6
+movesprite2 0x1 0x8 0x6
 spritebehave 0x1 0x7
 end
 
@@ -82,7 +82,6 @@ ow_script_movs_0x89adba:
 
 ow_script_movs_0x8401ea:
 .byte STEP_DOWN
-.byte STEP_RIGHT
 .byte STEP_RIGHT
 .byte STEP_RIGHT
 .byte STEP_RIGHT

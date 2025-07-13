@@ -5,14 +5,14 @@
 			"person_cnt": 2,
 			"warp_cnt": 2,
 			"trigger_cnt": 0,
-			"signpost_cnt": 4,
+			"signpost_cnt": 2,
 			"persons": [
 				{
 					"picture": 88,
 					"level": 0,
 					"target_index": 1,
 					"flag": "0x0",
-					"x": 18,
+					"x": "19",
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
@@ -20,7 +20,7 @@
 						"y": "0"
 					},
 					"script": "ow_script_map_4_0_person_0",
-					"y": 5,
+					"y": "6",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -43,7 +43,7 @@
 					"level": 0,
 					"target_index": 2,
 					"flag": "AMONIA_RIVAL_INSIDE_PLAYER_HOUSE",
-					"x": 8,
+					"x": "8",
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
@@ -51,7 +51,7 @@
 						"y": "0"
 					},
 					"script": "0",
-					"y": 12,
+					"y": "13",
 					"field_2": 0,
 					"is_trainer": "0",
 					"field_D": 0,
@@ -74,93 +74,47 @@
 				{
 					"level": 0,
 					"target_bank": 3,
-					"y": 12,
+					"y": "13",
 					"target_map": 0,
-					"x": 8,
+					"x": "8",
 					"target_warp_idx": 0
 				},
 				{
 					"level": 0,
 					"target_bank": 4,
-					"y": 4,
+					"y": "4",
 					"target_map": 1,
-					"x": 6,
+					"x": "8",
 					"target_warp_idx": 0
 				}
 			],
 			"triggers": [],
 			"signposts": [
 				{
+					"x": "0",
+					"y": "4",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_bookshelf_mum_0",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
 					"x": "1",
-					"y": "4",
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"flag": 0,
-					"value": {
-						"item": {
-							"item": 0,
-							"flag": 0,
-							"amount": 0,
-							"chunk": 0
-						},
-						"script": "ow_script_bookshelf_mum_0",
-						"treasure_map": {
-							"item": 0,
-							"idx": 0,
-							"amount": 0,
-							"center_x": 0,
-							"center_y": 0
-						}
-					}
-				},
-				{
-					"x": "2",
-					"y": "4",
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"flag": 0,
-					"value": {
-						"item": {
-							"item": 0,
-							"flag": 0,
-							"amount": 0,
-							"chunk": 0
-						},
-						"script": "ow_script_bookshelf_mum_0",
-						"treasure_map": {
-							"item": 0,
-							"idx": 0,
-							"amount": 0,
-							"center_x": 0,
-							"center_y": 0
-						}
-					}
-				},
-				{
-					"x": "8",
-					"y": "4",
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"flag": 0,
-					"value": {
-						"item": {
-							"item": 0,
-							"flag": 0,
-							"amount": 0,
-							"chunk": 0
-						},
-						"script": "ow_script_bookshelf_mum_1",
-						"treasure_map": {
-							"item": 0,
-							"idx": 0,
-							"amount": 0,
-							"center_x": 0,
-							"center_y": 0
-						}
-					}
-				},
-				{
-					"x": "9",
 					"y": "4",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
@@ -209,6 +163,6 @@
 			"flag_7": "0"
 		}
 	},
-	"label": "map_4_0",
+	"label": "map_anemonia_player_house_downstairs",
 	"type": "header"
 }

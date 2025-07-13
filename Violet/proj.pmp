@@ -81,7 +81,7 @@
 		},
 		"3": {
 			"0": [
-				"map_3_0",
+				"map_anemonia",
 				"src/map/banks/3/0/map_3_0.pms",
 				"MAP_AMONIA"
 			],
@@ -268,22 +268,22 @@
 		},
 		"4": {
 			"0": [
-				"map_4_0",
+				"map_anemonia_player_house_downstairs",
 				"src/map/banks/4/0/map_4_0.pms",
 				"MAP_AMONIA"
 			],
 			"1": [
-				"map_4_1",
+				"map_anemonia_player_room",
 				"src/map/banks/4/1/map_4_1.pms",
 				"MAP_AMONIA"
 			],
 			"2": [
-				"map_4_2",
+				"map_anemonia_rival_house",
 				"src/map/banks/4/2/map_4_2.pms",
 				"MAP_AMONIA"
 			],
 			"4": [
-				"map_4_4",
+				"map_anemonia_inside_0",
 				"src/map/banks/4/4/map_4_4.pms",
 				"MAP_AMONIA"
 			],
@@ -2472,7 +2472,8 @@
 		"maptileset_cloud_flowers": "src/map/tileset/maptileset_cloud_flowers.pms",
 		"maptileset_cloud_mines_outside": "src/map/tileset/maptileset_cloud_mines_outside.pms",
 		"maptileset_cave_mine": "src/map/tileset/maptileset_cave_mine.pms",
-		"maptileset_bluetenbach_inside": "src\\map\\tileset\\maptileset_bluetenbach_inside.pms"
+		"maptileset_bluetenbach_inside": "src\\map\\tileset\\maptileset_bluetenbach_inside.pms",
+		"maptileset_anemonia_inside": "src\\map\\tileset\\maptileset_anemonia_inside.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2566,6 +2567,7 @@
 		"gfx_maptileset_clouds_flowersTiles": "asset/gfx/tileset/gfx_maptileset_clouds_flowers.png",
 		"gfx_maptileset_clouds_mine_outsideTiles": "asset/gfx/tileset/gfx_maptileset_clouds_mine_outside.png",
 		"gfx_maptileset_cave_mineTiles": "asset/gfx/tileset/gfx_maptileset_cave_mine.png",
-		"gfx_maptileset_bluetenbach_insideTiles": "asset\\gfx\\tileset\\gfx_maptileset_bluetenbach_inside.png"
+		"gfx_maptileset_bluetenbach_insideTiles": "asset\\gfx\\tileset\\gfx_maptileset_bluetenbach_inside.png",
+		"gfx_maptileset_anemonia_insideTiles": "asset\\gfx\\tileset\\gfx_maptileset_anemonia_inside.png"
 	}
 }

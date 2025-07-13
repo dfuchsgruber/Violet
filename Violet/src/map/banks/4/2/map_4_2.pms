@@ -10,11 +10,11 @@
 				{
 					"is_trainer": "0",
 					"script": "ow_script_map_4_2_person_0",
-					"y": 3,
+					"y": "2",
 					"target_index": 0,
 					"picture": 28,
 					"flag": "0x0",
-					"x": 17,
+					"x": "17",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -50,26 +50,26 @@
 				},
 				{
 					"target_map": 2,
-					"y": 4,
+					"y": "3",
 					"target_bank": 4,
 					"level": 0,
-					"x": 11,
+					"x": "10",
 					"target_warp_idx": 2
 				},
 				{
 					"target_map": 2,
-					"y": 23,
+					"y": "22",
 					"target_bank": 4,
 					"level": 0,
-					"x": 6,
+					"x": "7",
 					"target_warp_idx": 1
 				}
 			],
 			"triggers": [],
 			"signposts": [
 				{
-					"x": 1,
-					"y": 23,
+					"x": "0",
+					"y": "22",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -91,54 +91,31 @@
 					"flag": "0"
 				},
 				{
+					"x": "5",
+					"y": "3",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_rival_bookshelf",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
 					"x": "6",
-					"y": "4",
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"flag": 0,
-					"value": {
-						"item": {
-							"item": 0,
-							"flag": 0,
-							"amount": 0,
-							"chunk": 0
-						},
-						"script": "ow_script_rival_bookshelf",
-						"treasure_map": {
-							"item": 0,
-							"idx": 0,
-							"amount": 0,
-							"center_x": 0,
-							"center_y": 0
-						}
-					}
-				},
-				{
-					"x": "7",
-					"y": "4",
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"flag": 0,
-					"value": {
-						"item": {
-							"item": 0,
-							"flag": 0,
-							"amount": 0,
-							"chunk": 0
-						},
-						"script": "ow_script_rival_bookshelf",
-						"treasure_map": {
-							"item": 0,
-							"idx": 0,
-							"amount": 0,
-							"center_x": 0,
-							"center_y": 0
-						}
-					}
-				},
-				{
-					"x": "8",
-					"y": "23",
+					"y": "3",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"flag": 0,
@@ -161,7 +138,30 @@
 				},
 				{
 					"x": "9",
-					"y": "23",
+					"y": "22",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_rival_bookshelf",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "10",
+					"y": "22",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"flag": 0,
@@ -209,6 +209,6 @@
 			"flag_7": "0"
 		}
 	},
-	"label": "map_4_2",
+	"label": "map_anemonia_rival_house",
 	"type": "header"
 }
