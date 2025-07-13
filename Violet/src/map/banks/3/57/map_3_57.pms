@@ -83,7 +83,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_trainerschool_test_2",
+					"script": "ow_script_trainerschool_rival_outside",
 					"flag": "TRAINERSCHOOL_RIVAL_OUTSIDE | 0x8000",
 					"field_D": 0,
 					"field_B": 0,

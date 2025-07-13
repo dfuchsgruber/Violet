@@ -321,15 +321,15 @@ mov_2r2d2l1d:
 
 .ifdef LANG_GER
 str_faun_rant_0:
-	.autostring 34 2 "Was für eine Unverschämtheit!\pAm Tag der Prüfung zu spät erscheinen!\pZu meinen Zeiten-"
+	.autostring 34 2 "Ihr traut euch was!\pAm Tag der Prüfung zu spät erscheinen!\pZu meinen Zeiten-"
 str_faun_rant_1:
-	.autostring 34 2 "PLAYER!\nWie überaus freundlich von dir, auch noch vorbei zu kommen!\pIch sollte euch für diese Frechheit, zu spät zu kommen, eigentlich gleich wieder nach Hause schicken!\pDann hättet ihr nochmal ein Jahr Zeit, etwas Anstand zu lernen!"
+	.autostring 34 2 "PLAYER!\nWie überaus freundlich von dir, auch noch vorbei zu kommen!\pIch sollte euch für diese Frechheit, zu spät zu kommen, gleich wieder nach Hause schicken!\pDann hättet ihr nochmal ein Jahr Zeit, etwas Anstand zu lernen!"
 str_faun_rant_2:
-	.autostring 34 2 "DOTSPAUSE\x3C DOTSPAUSE\x3C DOTSPAUSE\x3C"
+	.autostring 34 2 "DOTSPAUSE\x1C DOTSPAUSE\x1C DOTSPAUSE\x1C"
 str_faun_rant_3:
 	.autostring 34 2 "Na wird's bald?\pKommt gefälligst her!"
 str_faun_intro_0:
-	.autostring 34 2 "Dann machen wir 'mal weiterDOTS\pWie ihr wisst, wird euer Abschlusstest aus einem Kampf gegen einen anderen Schüler bestehen.\pAber zuerst braucht ihr natürlich noch ein Pokémon.\pDiejenigen, die sich durch hervorragende Leistungen hervorgetan haben, dürfen sich zuerst ein Pokémon aussuchen.\pBlaise und Felix haben bereits ein Pokémon erhalten.\pPLAYER!\nDu bist als Nächstes an der Reihe."
+	.autostring 34 2 "Wie ihr wisst, wird euer Abschlusstest aus einem Kampf gegen einen anderen Schüler bestehen.\pAber zuerst braucht ihr natürlich noch ein Pokémon.\pDiejenigen, die sich durch hervorragende Leistungen hervorgetan haben, dürfen sich zuerst ein Pokémon aussuchen.\pBlaise und Felix haben bereits ein Pokémon erhalten.\pPLAYER!\nDu bist als Nächstes an der Reihe."
 str_faun_give_pkmn:
 	.autostring 34 2 "Du solltest dich wirklich glücklich schätzen, dass du ein so vielversprechender Schüler bist!\pObwohl du zu spät gekommen bist, darfst du dir eines dieser erstklassigen Pokémon aussuchen."
 str_player_received_b1:
@@ -343,25 +343,25 @@ str_faun_call_may:
 str_may_received_pkmn:
 	.autostring 34 2 "O-Oh!\nDanke, Herr Faun!\pAuch wenn ich nicht so gut bin wie die anderen, werde ich versuchen, mein Bestes zu geben.\pWenn ich als Schlusslicht der Klasse schon ein so starkes Pokémon bekomme, muss ich mich ganz besonders anstrengen."
 str_faun_call_for_battle:
-	.autostring 34 2 "Ausgezeichnet!\pJetzt, wo ihr alle ein Pokémon habt, können wir mit dem Test beginnen.\pIhr werdet gegeneinander antreten.\pReiht euch dafür-"
+	.autostring 34 2 "Jetzt, wo ihr alle ein Pokémon habt, können wir mit dem Test beginnen.\pIhr werdet gegeneinander antreten.\pReiht euch dafür-"
 str_blaise_call_0:
 	.autostring 34 2 "Herr Faun!"
 str_blaise_call_1:
-	.autostring 34 2 "Ich bin Ihnen wirklich dankbar für alles, was Sie für mich getan haben.\pAber ich kann meine Zeit nicht mit dieser albernen Prüfung verschwenden.\pWenn ich mein Ziel erreichen will, muss ich so schnell wie möglich stärker werden.\pMit diesem PokémonDOTS DOTS DOTS\pSie waren ein guter Lehrer.\pAber nun ist es an der Zeit, dass ich meinen eigenen Weg gehe."
+	.autostring 34 2 "Ich bin Ihnen aufrichtig dankbar für alles, was Sie für mich getan haben.\pAber ich werde meine Zeit nicht einer albernen Prüfung verschwenden.\pIch muss so schnell wie möglich stärker werden.\pSie waren ein guter Lehrer.\pLeben Sie wohl."
 str_felix_at_blaise:
 	.autostring 34 2 "Blaise, warte!"
 str_faun_angry_at_blaise:
-	.autostring 34 2 "Blaise!\nWas fällt dir ein?\pDu kannst doch nicht einfach so gehen!\pDiese Dreistigkeit!\nMein Pokémon zu nehmen und dann einfach so zu verschwinden!\pDem werd' ich's passend machen!\pNa warte!"
+	.autostring 34 2 "Blaise!\nWas fällt dir ein?\pMein Pokémon zu nehmen und dann einfach zu verschwinden!\pDem werd' ich's passend machen!\pNa warte!"
 str_felix_prevents_faun:
 	.autostring 34 2 "Opi, bitte!\pWir müssen doch noch die Prüfung machen!"
 str_faun_angry_at_felix:
-	.autostring 34 2 "Felix!\pIch hab' dir schon hundert mal gesagt, dass du mich Herr Faun zu nennen hast!\pUnd ich kann doch Blaise diese Unverschämtheit nicht einfach so durchgehen lassen!"
+	.autostring 34 2 "Felix!\pIch hab' dir schon hundert mal gesagt, dass du mich Herr Faun zu nennen hast!"
 str_faun_contemplates:
-	.autostring 34 2 "DOTSPAUSE\x3C DOTSPAUSE\x3C DOTSPAUSE\x3C\pNa gutDOTS\pIch werde diesen Bengel später zur Rechenschaft ziehen.\pAber ihr vier habt euch eine ordentliche Prüfung verdient.\pWir fahren jetzt einfach fort.\pFindet euch auf dem Kampffeld ein.\pFelix, Maike!\pIhr seid das erste Paar!"
+	.autostring 34 2 "DOTSPAUSE\x1C DOTSPAUSE\x1C DOTSPAUSE\x1C\pNa gutDOTS\pIch werde diesem Bengel später einen Einlauf verpassen.\pAber ihr vier verdient eine ordentliche Prüfung.\pAuf eure Positionen!\pFelix, Maike!\pIhr seid das erste Paar!"
 str_faun_call_player_and_rival:
 	.autostring 34 2 "PLAYER, RIVAL!\pIhr seid das zweite Paar!"
 str_rival_challange2:
-	.autostring 34 2 "Endlich keine leeren Worte mehr!\pJetzt werden wir sehen, wer von uns beiden wirklich der Bessere ist!\pMach dich auf 'was gefasst, PLAYER!"
+	.autostring 34 2 "Endlich nicht mehr nur Geplänkel!\pJetzt werden wir sehen, wer von uns beiden wirklich der Bessere ist!\pMach dich auf 'was gefasst, PLAYER!"
 str_won2:
 	.autostring 34 2 "Was?\nDas kann nicht sein!\pDu hast geschummelt, ich will nochmal!"
 str_lost2:
@@ -369,48 +369,48 @@ str_lost2:
 str_after_battle_lost:
 	.autostring 34 2 "Hah!\nHab ich dir nicht gesagt, dass ich der bessere Trainer bin?\pMach dir nichts draus, gegen mich zu verlieren ist keine Schande!"
 str_after_battle_won:
-	.autostring 34 2 "Anfängerglück!\pIch war nicht ganz bei der Sache.\pAber ich gönne dir den Sieg natürlich.\pImmerhin wird es dein einziger gegen mich sein!"
+	.autostring 34 2 "Anfängerglück!\pIch war nicht ganz bei der Sache.\pDas wird nicht nochmal passieren!"
 str_may_lost:
 	.autostring 34 2 "Ich wusste esDOTS\pIch tauge einfach nicht zum TrainerDOTS"
 str_felix_won:
 	.autostring 34 2 "Na das war doch 'was oder?\pWillst du nach einer Niederlage etwa schon aufgeben?\pDas würde Opi gar nicht gefallen!"
 str_felix_won2:
-	.autostring 34 2 "DOTS DOTS DOTS\pMach dir nichts draus, Maike!\pDu hast dich doch nicht schlecht geschlagen.\pBeim nächsten Mal gewinnst du, da bin ich mir sicher!"
+	.autostring 34 2 "DOTS DOTS DOTS\pMach dir nichts draus, Maike!\pDas war echt knapp!"
 str_may_lost2:
 	.autostring 34 2 "J-Ja?\nMeinst du wirklich?"
 str_announce_end:
-	.autostring 34 2 "Ausgezeichnet!\pDas war's auch schon!\pIch werde euch jetzt die Ergebnisse mitteilen.\pMeinem kritischen Blick entgeht nichts, Kinder!"
+	.autostring 34 2 "Ausgezeichnet!\pIch werde euch jetzt die Ergebnisse mitteilen.\pMeinem alten Auge entgeht nämlich gar nichts, Kinder!"
 str_final_call_felix:
-	.autostring 34 2 "Felix, mein JungeDOTS\pDu bist zweifellos ein fleißiger Bursche.\pDu hast dir jede Lektion genaustens zu Herzen genommen.\pUnd folglich hast du deinen Kampf meisterhaft geführt.\pEs sollte dich nicht überraschen, dass du bestanden hast, Kleiner!"
+	.autostring 34 2 "Felix, mein JungeDOTS\pDu bist zweifellos ein fleißiger Bursche.\pDu hast dir jede Lektion genaustens zu Herzen genommen.\pBestanden, Kleiner!"
 str_final_call_felix_reply:
-	.autostring 34 2 "Hihi!\nDanke, Opi!\pÄhm, ich meine natürlich Herr Faun!\pDu warst ein toller Lehrer!\pIch werde dich auch in Zukunft nicht enttäuschen, versprochen!"
+	.autostring 34 2 "Hihi!\nDanke, Opi!\pÄhm, ich meine natürlich Herr Faun!\pDu warst ein toller Lehrer!"
 str_final_call_may:
-	.autostring 34 2 "MaikeDOTS\pEs steht außer Frage, dass du dich wirklich bemüht hast.\pDu hast dir ein umfassendes Wissen hart erarbeitet und auch deinen Kampf hervorragend geführt.\pAberDOTS\pDir fehlt der Glaube an dich selbst, Mädchen!\pVertrau deinen Fähigkeiten.\pDu hast das Zeug zu einer großartigen Trainerin.\pAuch du hast bestanden, Maike!\pKopf hoch!"
+	.autostring 34 2 "MaikeDOTS\pEs steht außer Frage, dass du dich wirklich bemüht hast.\pDu hast viel gelernt und dein Pokémon gut geführt.\pAberDOTS\pAber dir fehlt der Glaube an dich selbst, Mädchen!\pDu hast das Zeug zu einer großartigen Trainerin.\pAuch du hast bestanden, Maike!\pKopf hoch!"
 str_final_call_may_reply:
 	.autostring 34 2 "O-Oh!\nW-Wirklich?\pDanke, Herr Faun!\pIch werde versuchen, mich zu bessern.\pIch werde hart an mir arbeiten!"
 str_final_call_player:
-	.autostring 34 2 "PLAYER!\nWas dir an Fleiß fehlt, machst du mit einem außerordentlichen Talent wett.\pDu hast dich hervorragend geschlagen.\pDu scheinst, eine ganz besondere Verbindung zu deinem Pokémon zu haben.\pUnd das, obwohl du es erst heute bekommen hast.\pDu bist zum Trainer berufen.\pBestanden, Kindchen!"
+	.autostring 34 2 "PLAYER!\nWas dir an Fleiß fehlt, machst du mit einem außerordentlichen Talent wett.\pDu hast dich hervorragend geschlagen.\pDu scheinst, eine ganz besondere Verbindung zu deinem Pokémon zu haben.\pUnd das, obwohl du es erst heute bekommen hast.\pBestanden, Kindchen!"
 str_final_call_rival:
-	.autostring 34 2 "RIVALDOTS\pDu bereitest mir wie immer Kopfzerbrechen.\pDu bist äußert talentiert.\pAber du bist auch ein Hitzkopf und handelst oft unüberlegt.\pEin Trainer muss zuallerst sich selbst unter Kontrolle haben.\pSonst kann er seine Pokémon auch nicht in den Griff bekommen.\pNach deinem Kampf gegen PLAYER bin ich überzeugt, dass du ein großer Trainer werden kannst.\pAuch du bestehst, RIVAL!"
+	.autostring 34 2 "RIVALDOTS\pDu bereitest mir wie immer Kopfzerbrechen.\pDu bist äußert talentiert.\pAber du bist auch ein Hitzkopf und handelst viel zu unüberlegt.\pEin Trainer muss zuallerst sich selbst unter Kontrolle haben.\pSonst kann er seine Pokémon auch nicht in den Griff bekommen.\pNach deinem Kampf gegen PLAYER bin ich aber überzeugt, dass du ein großer Trainer werden kannst.\pAuch du bestehst, RIVAL!"
 str_final_call_rival_reply:
 	.autostring 34 2 "Yippee!\nIch hab's geschafft!\pJetzt werde ich der größte Pokémon-Trainer aller Zeiten werden!"
 str_final_call_faun:
-	.autostring 34 2 "Sehr gut, Kinder!\pIhr habt mich alle sehr stolz gemacht!\pNoch nie hat ein ganzer Jahrgang bestanden!\pJetzt seid ihr alle Pokémon-Trainer.\pDas ist erst der Anfang.\pJetzt seid ihr auf euch gestellt.\pWo wird euch das Abenteuer hinführen?\pDas liegt jetzt ganz bei euch.\pAber in einem bin ich mir absolut sicher.\pIhr werdet alle großartige Trainer werden.\pIch wünsche euch alles Gute auf eurem Weg!\pVergesst nichtDOTS"
+	.autostring 34 2 "Sehr gut, Kinder!\pIhr habt mich alle sehr stolz gemacht!\pNoch nie hat ein ganzer Jahrgang bestanden!\pJetzt seid ihr alle Pokémon-Trainer.\pAber das ist erst der Anfang.\pJetzt seid ihr auf euch gestellt.\pWo wird euch das Abenteuer hinführen?\pDas liegt jetzt ganz bei euch.\pAber in einem bin ich mir absolut sicher.\pIhr werdet mich alle stolz machen.\pIch wünsche euch alles Gute auf eurem Weg!\pVergesst nichtDOTS"
 str_final_call_faun2:
-	.autostring 34 2 "Dieser alte Herr hier hält euch immer den Rücken frei, komme was wolle!"
+	.autostring 34 2 "Wenn ihr mal in der Patsche steckt, hält dieser alte Herr euch den Rücken frei!"
 .elseif LANG_EN
 str_faun_rant_0:
-	.autostring 34 2 "What a nerve!\pShowing up late on the day of the exam!\pIn my day-"
+	.autostring 34 2 "You dare to show up late on the day of your final exam!\pIn my day-"
 str_faun_rant_1:
-	.autostring 34 2 "PLAYER!\nHow nice of you to show up!\pI should send you home for your rudeness!\pYou should have one more year to learn some manners!"
+	.autostring 34 2 "PLAYER!\nHow nice of you to show up!\pI should send you home for being late!\pThen you would have another year to learn some manners!"
 str_faun_rant_2:
-	.autostring 34 2 "DOTSPAUSE\x3C DOTSPAUSE\x3C DOTSPAUSE\x3C"
+	.autostring 34 2 "DOTSPAUSE\x1C DOTSPAUSE\x1C DOTSPAUSE\x1C"
 str_faun_rant_3:
-	.autostring 34 2 "Well, are you coming or not?\pCome here!"
+	.autostring 34 2 "Well, are you coming?\pCome here!"
 str_faun_intro_0:
-	.autostring 34 2 "Let's continue.\pAs you know, your final exam will consist of a battle against another student.\pBut first, you need a Pokémon.\pThose who have excelled in their studies will be allowed to choose first.\pBlaise and Felix have already received their Pokémon.\pPLAYER!\nYou are next in line."
+	.autostring 34 2 "As you know, your final exam will be a battle against another student.\pBut first you need a Pokémon.\pThose who have excelled in their studies may choose first.\pBlaise and Felix have already received their Pokémon.\pPLAYER!\nYou are next."
 str_faun_give_pkmn:
-	.autostring 34 2 "You should feel lucky to be such a promising student!\pEven though you showed up late, you are allowed to choose one of these top-notch Pokémon."
+	.autostring 34 2 "You should feel lucky to be such a promising student!\pEven though you are late, you may choose one of these fine Pokémon."
 str_player_received_b1:
 	.string "PLAYER received a BUFFER_1!"
 str_faun_call_rival:
@@ -420,65 +420,64 @@ str_rival_received_pkmn:
 str_faun_call_may:
 	.autostring 34 2 "May, you are last."
 str_may_received_pkmn:
-	.autostring 34 2 "O-Oh!\nThank you, Mr. Faun!\pEven though I am not as good as the others, I will try my best.\pIf I get such a strong Pokémon as the last one in class, I have to work extra hard."
+	.autostring 34 2 "O-Oh!\nThank you, Mr. Faun!\pEven though I am not as good as the others, I will try my best.\pIf I get such a strong Pokémon as the last of the class, I have to work extra hard."
 str_faun_call_for_battle:
-	.autostring 34 2 "Excellent!\pNow that you all have a Pokémon, we can start the test.\pYou will battle each other.\pPlease line up on the battlefield."
+	.autostring 34 2 "Now that you all have a Pokémon, we can start the exam.\pYou will battle each other.\pPlease line up-"
 str_blaise_call_0:
 	.autostring 34 2 "Mr. Faun!"
-str_blaise_call_1:	
-	.autostring 34 2 "I am really grateful for everything you have done for me.\pBut I cannot waste my time with this silly exam.\pIf I want to achieve my goal, I need to become stronger as fast as possible.\pWith this PokémonDOTS DOTS DOTS\pYou were a good teacher.\pBut now it is time for me to go my own way."
+str_blaise_call_1:
+	.autostring 34 2 "I am sincerely grateful for everything you have done for me.\pBut I will not waste my time on a silly exam.\pI must become stronger as fast as possible.\pYou were a good teacher.\pGoodbye."
 str_felix_at_blaise:
 	.autostring 34 2 "Blaise, wait!"
 str_faun_angry_at_blaise:
-	.autostring 34 2 "Blaise!\nWhat do you think you are doing?\pYou cannot just leave like that!\pHow dare you take my Pokémon and then just disappear!\pI will make you pay for this!\pJust wait!"
+	.autostring 34 2 "Blaise!\nHow dare you take my Pokémon and then just leave!\pI will make you pay for this!\pJust wait!"
 str_felix_prevents_faun:
-	.autostring 34 2 "Gramps, please!\pWe still need to do the exam!"
+	.autostring 34 2 "Gramps, please!\pWe still have to do the exam!"
 str_faun_angry_at_felix:
-	.autostring 34 2 "Felix!\pI have told you a hundred times to call me Mr. Faun!\pAnd I cannot just let Blaise get away with this insolence!"
+	.autostring 34 2 "Felix!\pI have told you a hundred times that you have to call me Mr. Faun!"
 str_faun_contemplates:
-	.autostring 34 2 "DOTSPAUSE\x3C DOTSPAUSE\x3C DOTSPAUSE\x3C\pWell, alrightDOTS\pI will deal with that brat later.\pBut you four deserve a proper exam.\pLet's just continue.\pLine up on the battlefield.\pFelix, May!\pYou are the first pair!"
+	.autostring 34 2 "DOTSPAUSE\x1C DOTSPAUSE\x1C DOTSPAUSE\x1C\pWell, wellDOTS\pI will give that brat a piece of my mind later.\pBut you four deserve a proper exam.\pTake your positions!\pFelix, May!\pYou are the first pair!"
 str_faun_call_player_and_rival:
 	.autostring 34 2 "PLAYER, RIVAL!\pYou are the second pair!"
 str_rival_challange2:
-	.autostring 34 2 "Finally, no more empty words!\pNow we will see who is really the better one of us!\pGet ready, PLAYER!"
+	.autostring 34 2 "Finally, no more small talk!\pNow we will see who is really the better of us two!\pGet ready, PLAYER!"
 str_won2:
-	.autostring 34 2 "What?\nThis cannot be!\pYou cheated, I want a rematch!"
+	.autostring 34 2 "What?\nThis can't be!\pYou cheated, I want a rematch!"
 str_lost2:
 	.autostring 34 2 "Is that it?\pYou are not even trying!\pI haven't even started yet!"
 str_after_battle_lost:
-	.autostring 34 2 "Hah!\nI told you I am the better trainer!\pDon't worry about losing to me, it is no shame!"
+	.autostring 34 2 "Hah!\nDidn't I tell you that I am the better trainer?\pDon't worry, losing to me is no shame!"
 str_after_battle_won:
-	.autostring 34 2 "Beginner's luck!\pI wasn't even trying.\pBut of course I let you win!\pIt will be your only victory against me!"
+	.autostring 34 2 "Beginner's luck!\pI wasn't even trying.\pThat won't happen again!"
 str_may_lost:
 	.autostring 34 2 "I knew itDOTS\pI am just not cut out to be a trainerDOTS"
 str_felix_won:
-	.autostring 34 2 "Well, that was something, wasn't it?\pAre you going to give up after a defeat?\pThat would not please Gramps!"
+	.autostring 34 2 "Now that was something, wasn't it?\pAre you going to give up after a loss?\pThat would not please Gramps!"
 str_felix_won2:
-	.autostring 34 2 "DOTS DOTS DOTS\pDon't worry, May!\pYou did not do badly.\pNext time you will win, I am sure of it!"
+	.autostring 34 2 "DOTS DOTS DOTS\pDon't worry, May!\pThat was really close!"
 str_may_lost2:
-	.autostring 34 2 "R-Really?\pDo you really think so?"
+	.autostring 34 2 "R-Really?\nDo you really think so?"
 str_announce_end:
-	.autostring 34 2 "Excellent!\pThat is it!\pI will now announce the results.\pMy critical eye misses nothing, children!"
+	.autostring 34 2 "Excellent!\pI will now announce the results.\pMy old eyes see everything, children!"
 str_final_call_felix:
-	.autostring 34 2 "Felix, my ladDOTS\pYou are undoubtedly a diligent lad.\pYou have taken every lesson to heart.\pAnd as a result, you have conducted your battle masterfully.\pIt should not surprise you that you passed, little one!"
+	.autostring 34 2 "Felix, my boyDOTS\pYou are undoubtedly a diligent lad.\pYou have taken every lesson to heart.\pYou have passed, little one!"
 str_final_call_felix_reply:
-	.autostring 34 2 "Hehe!\nThank you, Gramps!\pI mean, thank you Mr. Faun!\pYou were a great teacher!\pI will not disappoint you in the future, I promise!"
+	.autostring 34 2 "Hihi!\nThank you, Gramps!\pI mean, of course, Mr. Faun!\pYou were a great teacher!"
 str_final_call_may:
-	.autostring 34 2 "MayDOTS\pThere is no doubt that you have really tried hard.\pYou have worked hard to acquire a comprehensive knowledge and also conducted your battle excellently.\pButDOTS\pYou lack confidence in yourself.\pTrust your abilities.\pYou have what it takes to be a great trainer.\pYou also passed, May!\pKeep your chin up!"
+	.autostring 34 2 "MayDOTS\pThere is no doubt that you have really tried hard.\pYou have learned a lot and handled your Pokémon well.\pButDOTS\pBut you lack confidence in yourself.\pYou have the makings of a great trainer.\pYou have passed as well, May!\pKeep your chin up!"
 str_final_call_may_reply:
 	.autostring 34 2 "O-Oh!\nR-Really?\pThank you, Mr. Faun!\pI will try to improve.\pI will work hard on myself!"
 str_final_call_player:
-	.autostring 34 2 "PLAYER!\nWhat you lack in diligence, you make up for with extraordinary talent.\pYou have conducted yourself excellently.\pYou seem to have a special bond with your Pokémon.\pAnd that, even though you just got it today.\pYou are destined to be a trainer.\pYou passed, kiddo!"
+	.autostring 34 2 "PLAYER!\nWhat you lack in diligence, you make up with extraordinary talent.\pYou have done very well.\pYou seem to have a special bond with your Pokémon.\pAnd that, even though you just got it today.\pYou have passed, kiddo!"
 str_final_call_rival:
-	.autostring 34 2 "RIVALDOTS\pYou always give me a headache.\pYou are extremely talented.\pBut you are also hot-headed and often act rashly.\pA trainer must first have control over himself.\pOtherwise, he cannot control his Pokémon either.\pAfter your battle against PLAYER, I am convinced that you can become a great trainer.\pYou also pass, RIVAL!"
+	.autostring 34 2 "RIVALDOTS\pYou give me a headache as always.\pYou are extremely talented.\pBut you are also a hothead and act too rashly.\pA trainer must first have control over himself.\pOtherwise he cannot control his Pokémon.\pAfter your battle against PLAYER, I am convinced that you can become a great trainer.\pYou have passed as well, RIVAL!"
 str_final_call_rival_reply:
 	.autostring 34 2 "Yippee!\nI did it!\pNow I will become the greatest Pokémon trainer of all time!"
 str_final_call_faun:
-	.autostring 34 2 "Very well, children!\pYou have all made me very proud!\pNever before has a whole class passed!\pNow you are all Pokémon trainers.\pThis is just the beginning.\pNow you are on your own.\pWhere will your adventure take you?\pThat is now entirely up to you.\pBut I am absolutely sure of one thing.\pYou will all become great trainers.\pI wish you all the best on your way!\pDo not forgetDOTS"
+	.autostring 34 2 "Very well, children!\pYou have all made me very proud!\pNever before has a whole class passed!\pNow you are all Pokémon trainers.\pBut this is just the beginning.\pNow you are on your own.\pWhere will your adventure take you?\pThat is now entirely up to you.\pBut one thing I am absolutely sure of.\pYou will all make me proud.\pI wish you all the best on your way!\pDon't forgetDOTS"
 str_final_call_faun2:
-	.autostring 34 2 "This old man will always have your back, no matter what!"
+	.autostring 34 2 "If you ever get into trouble, this old man will always be there to help you out."
 .endif
-
 
 
 ow_script_trainerschool_battle_test:
