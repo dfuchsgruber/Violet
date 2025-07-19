@@ -11,6 +11,9 @@
 #include "types.h"
 #include "text.h"
 
+#define HEALINGPLACE_POKESTOP_X 6
+#define HEALINGPLACE_POKESTOP_Y 4
+
 typedef struct {
     u8 bank, map, target_person;
     s16 x, y;

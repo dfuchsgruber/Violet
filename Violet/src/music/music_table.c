@@ -632,7 +632,7 @@ const song song_table[] = {
 	//Song 313
 	{mus_kaskada_unused, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 314
-	{mus_meriana_city, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	{mus_bluetenbach_v2, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 315
 	{mus_encounter_rival, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 316

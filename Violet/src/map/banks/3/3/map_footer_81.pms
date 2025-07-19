@@ -8125,11 +8125,11 @@
 					"level": 12
 				},
 				{
-					"block_idx": 1,
+					"block_idx": 673,
 					"level": 12
 				},
 				{
-					"block_idx": 1,
+					"block_idx": 640,
 					"level": 12
 				},
 				{
@@ -8403,7 +8403,7 @@
 					"level": 12
 				},
 				{
-					"block_idx": 1,
+					"block_idx": 673,
 					"level": 12
 				},
 				{
@@ -8677,7 +8677,7 @@
 					"level": 12
 				},
 				{
-					"block_idx": 1,
+					"block_idx": 681,
 					"level": 12
 				},
 				{
@@ -13733,5 +13733,6 @@
 		"field_1A": 0
 	},
 	"label": "map_footer_81",
-	"type": "footer"
+	"type": "footer",
+	"smart_shapes": {}
 }

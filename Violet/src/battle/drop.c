@@ -244,7 +244,10 @@ static bool drop_evolution_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     size_t num_items = pokemon_get_evolution_item_line(species, items, ARRAY_COUNT(items));
     if (num_items == 0)
         return false;
-    size_t p[16] = {1};
+    size_t p[16];
+    for (size_t i = 0; i < num_items; i++) {
+        p[i] = 1;
+    }
     *dst_item = items[choice(p, num_items, NULL)];
     *dst_cnt = 1;
     return true;
@@ -275,7 +278,7 @@ static const u32 dropping_type_probabilities[] = {
     [DROP_STANDARD_ITEM] = 30,
     [DROP_RARE_ITEM] = 2,
     [DROP_TYPE_ITEM] = 3,
-    [DROP_COLOR_ITEM] = 3,
+    [DROP_COLOR_ITEM] = 2,
     [DROP_SPECIES_ITEM] = 2,
     [DROP_BERRY_ITEM] = 0, // For now, we don't drop any berries
     [DROP_EVOLUTION_ITEM] = 1,

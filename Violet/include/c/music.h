@@ -248,6 +248,7 @@ extern const unsigned char mus_cloud_wild_battle2[];
 extern const unsigned char mus_clouds_trainer_battle[];
 extern const unsigned char mus_clouds_silent[];
 extern const unsigned char mus_route_y[];
+extern const unsigned char mus_bluetenbach_v2[];
 
 #endif	/* MUSIC_H */
 

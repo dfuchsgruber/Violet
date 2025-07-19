@@ -888,8 +888,8 @@ static const u8 str_item_up_grade_description[] = LANGDEP(
 	PSTRING("A transparent device filled with all\nsorts of data.\nIt is made by Silph Co.")
 );
 static const u8 str_item_seegesang_description[] = LANGDEP(
-	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nfüllt im Kampf stetig KP auf."),
-	PSTRING("An item to be held by a Pokémon.\nThe holding Pokémon regains some\nHP upon striking the foe.")
+	PSTRING("Ein Item (Tragen), das KP\nin Höhe von 1/4 des zugefügten\nSchadens wiederherstellt."),
+	PSTRING("An item to be held by a Pokémon.\nIt restores 1/4 of the damage dealt\nby the holder in battle.")
 );
 static const u8 str_item_seerauch_description[] = LANGDEP(
 	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverstärkt Wasser-Attacken."),
@@ -5508,7 +5508,7 @@ const item items[] = {
 		0xdb, //index
 		200, //price
 		62, //holding_effect_id
-		5, //holding_effect_param
+		4, //holding_effect_param
 		str_item_seegesang_description,
 		0, // Importance
 		0, // exits_bag_on_use

@@ -3,35 +3,31 @@
 		"border": [
 			[
 				{
-					"block_idx": 8,
+					"block_idx": 1,
 					"level": 0
 				},
 				{
-					"block_idx": 8,
+					"block_idx": 1,
 					"level": 0
 				}
 			],
 			[
 				{
-					"block_idx": 8,
+					"block_idx": 1,
 					"level": 0
 				},
 				{
-					"block_idx": 8,
+					"block_idx": 1,
 					"level": 0
 				}
 			]
 		],
-		"tileset_primary": "maptileset12",
+		"tileset_primary": "maptileset_inside",
 		"tileset_secondary": "maptileset14",
 		"blocks": [
 			[
 				{
 					"block_idx": 672,
-					"level": 1
-				},
-				{
-					"block_idx": 723,
 					"level": 1
 				},
 				{
@@ -43,7 +39,7 @@
 					"level": 1
 				},
 				{
-					"block_idx": 644,
+					"block_idx": 915,
 					"level": 1
 				},
 				{
@@ -67,7 +63,7 @@
 					"level": 1
 				},
 				{
-					"block_idx": 644,
+					"block_idx": 913,
 					"level": 1
 				},
 				{
@@ -79,14 +75,6 @@
 					"level": 1
 				},
 				{
-					"block_idx": 662,
-					"level": 1
-				},
-				{
-					"block_idx": 663,
-					"level": 1
-				},
-				{
 					"block_idx": 644,
 					"level": 1
 				},
@@ -103,17 +91,13 @@
 					"level": 1
 				},
 				{
-					"block_idx": 644,
+					"block_idx": 678,
 					"level": 1
 				}
 			],
 			[
 				{
 					"block_idx": 680,
-					"level": 1
-				},
-				{
-					"block_idx": 653,
 					"level": 1
 				},
 				{
@@ -125,7 +109,7 @@
 					"level": 1
 				},
 				{
-					"block_idx": 681,
+					"block_idx": 923,
 					"level": 1
 				},
 				{
@@ -161,11 +145,7 @@
 					"level": 1
 				},
 				{
-					"block_idx": 670,
-					"level": 1
-				},
-				{
-					"block_idx": 671,
+					"block_idx": 899,
 					"level": 1
 				},
 				{
@@ -181,11 +161,7 @@
 					"level": 1
 				},
 				{
-					"block_idx": 733,
-					"level": 1
-				},
-				{
-					"block_idx": 733,
+					"block_idx": 686,
 					"level": 1
 				}
 			],
@@ -193,10 +169,6 @@
 				{
 					"block_idx": 688,
 					"level": 1
-				},
-				{
-					"block_idx": 660,
-					"level": 12
 				},
 				{
 					"block_idx": 717,
@@ -220,7 +192,7 @@
 				},
 				{
 					"block_idx": 656,
-					"level": 12
+					"level": 1
 				},
 				{
 					"block_idx": 656,
@@ -228,7 +200,7 @@
 				},
 				{
 					"block_idx": 692,
-					"level": 1
+					"level": 12
 				},
 				{
 					"block_idx": 693,
@@ -243,12 +215,8 @@
 					"level": 12
 				},
 				{
-					"block_idx": 741,
-					"level": 12
-				},
-				{
-					"block_idx": 741,
-					"level": 12
+					"block_idx": 907,
+					"level": 1
 				},
 				{
 					"block_idx": 711,
@@ -259,25 +227,17 @@
 					"level": 12
 				},
 				{
-					"block_idx": 709,
-					"level": 12
-				},
-				{
 					"block_idx": 734,
 					"level": 1
 				},
 				{
-					"block_idx": 735,
-					"level": 1
+					"block_idx": 823,
+					"level": 12
 				}
 			],
 			[
 				{
 					"block_idx": 696,
-					"level": 12
-				},
-				{
-					"block_idx": 641,
 					"level": 12
 				},
 				{
@@ -325,10 +285,6 @@
 					"level": 12
 				},
 				{
-					"block_idx": 641,
-					"level": 12
-				},
-				{
 					"block_idx": 649,
 					"level": 12
 				},
@@ -341,25 +297,17 @@
 					"level": 12
 				},
 				{
-					"block_idx": 641,
-					"level": 12
-				},
-				{
 					"block_idx": 742,
 					"level": 1
 				},
 				{
 					"block_idx": 743,
-					"level": 1
+					"level": 12
 				}
 			],
 			[
 				{
 					"block_idx": 696,
-					"level": 12
-				},
-				{
-					"block_idx": 641,
 					"level": 12
 				},
 				{
@@ -407,10 +355,6 @@
 					"level": 12
 				},
 				{
-					"block_idx": 641,
-					"level": 12
-				},
-				{
 					"block_idx": 649,
 					"level": 12
 				},
@@ -423,16 +367,12 @@
 					"level": 12
 				},
 				{
-					"block_idx": 641,
-					"level": 12
-				},
-				{
 					"block_idx": 758,
 					"level": 1
 				},
 				{
 					"block_idx": 759,
-					"level": 1
+					"level": 12
 				}
 			],
 			[
@@ -453,10 +393,6 @@
 					"level": 12
 				},
 				{
-					"block_idx": 649,
-					"level": 12
-				},
-				{
 					"block_idx": 641,
 					"level": 12
 				},
@@ -470,10 +406,6 @@
 				},
 				{
 					"block_idx": 785,
-					"level": 12
-				},
-				{
-					"block_idx": 641,
 					"level": 12
 				},
 				{
@@ -505,16 +437,12 @@
 					"level": 12
 				},
 				{
-					"block_idx": 641,
-					"level": 12
-				},
-				{
 					"block_idx": 742,
 					"level": 1
 				},
 				{
 					"block_idx": 743,
-					"level": 1
+					"level": 12
 				}
 			],
 			[
@@ -529,10 +457,6 @@
 				{
 					"block_idx": 669,
 					"level": 1
-				},
-				{
-					"block_idx": 641,
-					"level": 12
 				},
 				{
 					"block_idx": 757,
@@ -571,10 +495,6 @@
 					"level": 12
 				},
 				{
-					"block_idx": 641,
-					"level": 12
-				},
-				{
 					"block_idx": 649,
 					"level": 12
 				},
@@ -587,21 +507,17 @@
 					"level": 12
 				},
 				{
-					"block_idx": 641,
-					"level": 12
-				},
-				{
 					"block_idx": 750,
 					"level": 1
 				},
 				{
 					"block_idx": 751,
-					"level": 1
+					"level": 12
 				}
 			],
 			[
 				{
-					"block_idx": 696,
+					"block_idx": 900,
 					"level": 12
 				},
 				{
@@ -611,10 +527,6 @@
 				{
 					"block_idx": 677,
 					"level": 1
-				},
-				{
-					"block_idx": 641,
-					"level": 12
 				},
 				{
 					"block_idx": 765,
@@ -653,10 +565,6 @@
 					"level": 12
 				},
 				{
-					"block_idx": 641,
-					"level": 12
-				},
-				{
 					"block_idx": 649,
 					"level": 12
 				},
@@ -669,12 +577,8 @@
 					"level": 12
 				},
 				{
-					"block_idx": 719,
-					"level": 12
-				},
-				{
 					"block_idx": 724,
-					"level": 12
+					"level": 1
 				},
 				{
 					"block_idx": 727,
@@ -683,71 +587,59 @@
 			],
 			[
 				{
-					"block_idx": 673,
-					"level": 12
-				},
-				{
-					"block_idx": 741,
-					"level": 12
-				},
-				{
-					"block_idx": 741,
-					"level": 12
-				},
-				{
-					"block_idx": 641,
-					"level": 12
-				},
-				{
-					"block_idx": 741,
-					"level": 12
-				},
-				{
-					"block_idx": 641,
-					"level": 12
-				},
-				{
-					"block_idx": 706,
-					"level": 12
-				},
-				{
-					"block_idx": 707,
-					"level": 12
-				},
-				{
-					"block_idx": 708,
-					"level": 12
-				},
-				{
-					"block_idx": 641,
-					"level": 12
-				},
-				{
-					"block_idx": 641,
-					"level": 12
-				},
-				{
-					"block_idx": 649,
-					"level": 12
-				},
-				{
-					"block_idx": 649,
-					"level": 12
-				},
-				{
-					"block_idx": 641,
-					"level": 12
-				},
-				{
-					"block_idx": 649,
-					"level": 12
-				},
-				{
-					"block_idx": 697,
+					"block_idx": 908,
 					"level": 1
 				},
 				{
-					"block_idx": 700,
+					"block_idx": 741,
+					"level": 12
+				},
+				{
+					"block_idx": 741,
+					"level": 12
+				},
+				{
+					"block_idx": 649,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 920,
+					"level": 12
+				},
+				{
+					"block_idx": 921,
+					"level": 12
+				},
+				{
+					"block_idx": 922,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 649,
+					"level": 12
+				},
+				{
+					"block_idx": 649,
+					"level": 12
+				},
+				{
+					"block_idx": 912,
+					"level": 1
+				},
+				{
+					"block_idx": 697,
 					"level": 1
 				},
 				{
@@ -765,93 +657,82 @@
 			],
 			[
 				{
-					"block_idx": 8,
+					"block_idx": 1,
 					"level": 1
 				},
 				{
-					"block_idx": 8,
+					"block_idx": 1,
 					"level": 1
 				},
 				{
-					"block_idx": 8,
+					"block_idx": 1,
 					"level": 1
 				},
 				{
-					"block_idx": 8,
+					"block_idx": 1,
 					"level": 1
 				},
 				{
-					"block_idx": 8,
+					"block_idx": 1,
 					"level": 1
 				},
 				{
-					"block_idx": 8,
+					"block_idx": 928,
 					"level": 1
 				},
 				{
-					"block_idx": 26,
+					"block_idx": 929,
 					"level": 1
 				},
 				{
-					"block_idx": 27,
+					"block_idx": 930,
 					"level": 1
 				},
 				{
-					"block_idx": 28,
+					"block_idx": 1,
 					"level": 1
 				},
 				{
-					"block_idx": 8,
+					"block_idx": 1,
 					"level": 1
 				},
 				{
-					"block_idx": 8,
+					"block_idx": 1,
 					"level": 1
 				},
 				{
-					"block_idx": 8,
+					"block_idx": 1,
 					"level": 1
 				},
 				{
-					"block_idx": 8,
+					"block_idx": 1,
 					"level": 1
 				},
 				{
-					"block_idx": 8,
+					"block_idx": 1,
 					"level": 1
 				},
 				{
-					"block_idx": 8,
+					"block_idx": 1,
 					"level": 1
 				},
 				{
-					"block_idx": 8,
+					"block_idx": 1,
 					"level": 1
 				},
 				{
-					"block_idx": 8,
+					"block_idx": 1,
 					"level": 1
-				},
-				{
-					"block_idx": 8,
-					"level": 1
-				},
-				{
-					"block_idx": 8,
-					"level": 0
-				},
-				{
-					"block_idx": 8,
-					"level": 0
 				}
 			]
 		],
-		"width": 20,
+		"width": 17,
 		"height": 10,
 		"border_width": 2,
 		"border_height": 2,
 		"field_1A": 0
 	},
 	"label": "map_footer_8_pokestop",
-	"type": "footer"
+	"type": "footer",
+	"smart_shapes": {}
 }

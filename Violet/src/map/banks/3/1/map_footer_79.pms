@@ -27,11 +27,11 @@
 		"blocks": [
 			[
 				{
-					"block_idx": 217,
+					"block_idx": 0,
 					"level": 1
 				},
 				{
-					"block_idx": 217,
+					"block_idx": 0,
 					"level": 1
 				},
 				{
@@ -1165,7 +1165,7 @@
 					"level": 1
 				},
 				{
-					"block_idx": 217,
+					"block_idx": 0,
 					"level": 1
 				},
 				{
