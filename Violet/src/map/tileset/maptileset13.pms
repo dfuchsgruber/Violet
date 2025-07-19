@@ -2797,7 +2797,7 @@
 				"battle_bg": "0xa4"
 			},
 			{
-				"behaviour": "MB_COMPUTER",
+				"behaviour": "MB_PC",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -3027,7 +3027,7 @@
 				"battle_bg": "0xa3"
 			},
 			{
-				"behaviour": "MB_COMPUTER",
+				"behaviour": "MB_PC",
 				"hm_usage": "0x3",
 				"argument": "0x2",
 				"encounter_type": "0x6",

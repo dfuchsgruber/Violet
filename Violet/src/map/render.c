@@ -8,7 +8,7 @@
 
 void map_draw_all() { // special 0x8E
     DEBUG("Map draw all.\n");
-    map_draw_all_by_position_and_footer(save1->x_cam_orig, save1->y_cam_orig, mapheader_virtual.footer);
+    map_draw_all_by_position_and_footer(save1->x_camera, save1->y_camera, mapheader_virtual.footer);
     map_camera_offset.copy_to_vram = true; // imported from pokeemerald
 }
 

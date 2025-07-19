@@ -663,9 +663,9 @@ void dungeon2_enter_cave() {
     s16 y = (s16)(nodes[0][1]); 
 
     warp_setup(DG2_BANK, DG2_MAP, 0xFF, x, y);
-    warp_update_last_outdoor_map(save1->x_cam_orig, save1->y_cam_orig);
-    warp_last_map_set(0, save1->bank, save1->map, 0xFF, (s16)(save1->x_cam_orig - 7),
-            (s16)(save1->y_cam_orig - 7));
+    warp_update_last_outdoor_map(save1->x_camera, save1->y_camera);
+    warp_last_map_set(0, save1->bank, save1->map, 0xFF, (s16)(save1->x_camera - 7),
+            (s16)(save1->y_camera - 7));
     warp_setup_callbacks();
     warp_reset_initial_player_state();
 

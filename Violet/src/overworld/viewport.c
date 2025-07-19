@@ -15,8 +15,8 @@
 
 void overworld_viewport_set_position(s16 x, s16 y) {
     overworld_viewport_move_and_update_all(
-        (s16)(x - save1->x_cam_orig),
-        (s16)(y - save1->y_cam_orig)
+        (s16)(x - save1->x_camera),
+        (s16)(y - save1->y_camera)
     );
 }
 

@@ -22,7 +22,11 @@
         "FLAVOR_TEXT_INSIDE_BED" : 2,
         "FLAVOR_TEXT_INSIDE_DRAWERS" : 3,
         "FLAVOR_TEXT_INSIDE_FLOWER_POT" : 4,
-        "FLAVOR_TEXT_INSIDE_LAMP" : 5
+        "FLAVOR_TEXT_INSIDE_LAMP" : 5,
+
+        "PC_GENERIC" : 0,
+        "PC_POKESTOP" : 1,
+        "NUM_PCS" : 2
     },
     "max_value" : 15
 }

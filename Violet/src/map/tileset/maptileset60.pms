@@ -29964,7 +29964,7 @@
 				"battle_bg": "0x21"
 			},
 			{
-				"behaviour": "MB_COMPUTER",
+				"behaviour": "MB_PC",
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
@@ -30004,7 +30004,7 @@
 				"battle_bg": "0x21"
 			},
 			{
-				"behaviour": "MB_COMPUTER",
+				"behaviour": "MB_PC",
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
@@ -30044,7 +30044,7 @@
 				"battle_bg": "0x21"
 			},
 			{
-				"behaviour": "MB_COMPUTER",
+				"behaviour": "MB_PC",
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
@@ -30084,7 +30084,7 @@
 				"battle_bg": "0x22"
 			},
 			{
-				"behaviour": "MB_COMPUTER",
+				"behaviour": "MB_PC",
 				"hm_usage": "0x9",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -30274,7 +30274,7 @@
 				"battle_bg": "0x1f"
 			},
 			{
-				"behaviour": "MB_COMPUTER",
+				"behaviour": "MB_PC",
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
@@ -30284,7 +30284,7 @@
 				"battle_bg": "0x25"
 			},
 			{
-				"behaviour": "MB_COMPUTER",
+				"behaviour": "MB_PC",
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
@@ -30314,7 +30314,7 @@
 				"battle_bg": "0x1f"
 			},
 			{
-				"behaviour": "MB_COMPUTER",
+				"behaviour": "MB_PC",
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
@@ -30324,7 +30324,7 @@
 				"battle_bg": "0x25"
 			},
 			{
-				"behaviour": "MB_COMPUTER",
+				"behaviour": "MB_PC",
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
@@ -30354,7 +30354,7 @@
 				"battle_bg": "0x1f"
 			},
 			{
-				"behaviour": "MB_COMPUTER",
+				"behaviour": "MB_PC",
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
@@ -30364,7 +30364,7 @@
 				"battle_bg": "0x25"
 			},
 			{
-				"behaviour": "MB_COMPUTER",
+				"behaviour": "MB_PC",
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
@@ -30394,7 +30394,7 @@
 				"battle_bg": "0x1f"
 			},
 			{
-				"behaviour": "MB_COMPUTER",
+				"behaviour": "MB_PC",
 				"hm_usage": "0x9",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -30404,7 +30404,7 @@
 				"battle_bg": "0x26"
 			},
 			{
-				"behaviour": "MB_COMPUTER",
+				"behaviour": "MB_PC",
 				"hm_usage": "0x9",
 				"argument": "0x2",
 				"encounter_type": "0x2",

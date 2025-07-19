@@ -137,3 +137,16 @@
     .byte 3 - 3
 .org 0x083a6f50 + 0xC
     .byte 3 - 3
+
+.org 0x080caab0
+    ldr r1, =tile_interaction_pc_turn_on_set_block | 1
+    bx r1
+    .pool
+
+.org 0x080cab60
+    ldr r0, =tile_interaction_pc_turn_off_set_block_and_redraw_map | 1
+    bx r0
+    .pool
+
+.org 0x080ebbf8
+    .word ow_script_anemonia_player_pc_turn_off

@@ -155,7 +155,7 @@ void block_set_by_pos(s16 x, s16 y, u16 block);
 /**
  * Updates all blocks on the maps with their RAM state (used by special 0x8E)
  */
-void blocks_update();
+void map_redraw_all_blocks();
 
 /**
  * Returns the behaviour of a block at a certain position

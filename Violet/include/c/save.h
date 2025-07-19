@@ -77,8 +77,8 @@ typedef struct  {
 } enigma_berry_t;
 
 typedef struct saveblock1 {
-    s16 x_cam_orig; //camera origin
-    s16 y_cam_orig; //camera origin
+    s16 x_camera; //camera origin
+    s16 y_camera; //camera origin
     u8 bank;
     u8 map;
     u8 last_exit;

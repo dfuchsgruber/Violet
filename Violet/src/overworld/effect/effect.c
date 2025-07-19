@@ -223,10 +223,10 @@ u32 overworld_effect_npc_transparent_fade_initialize() {
 }
 
 bool overworld_effect_is_oam_outside_camera_view(s16 x, s16 y, int width, int height) {
-    int left = save1->x_cam_orig + 7 - 7 - (width / 16);
-    int right = save1->x_cam_orig + 7 + 7 + (width / 16);
-    int top = save1->y_cam_orig + 7 - 5 - (height / 16);
-    int bottom = save1->y_cam_orig + 7 + 5 + (height / 16);
+    int left = save1->x_camera + 7 - 7 - (width / 16);
+    int right = save1->x_camera + 7 + 7 + (width / 16);
+    int top = save1->y_camera + 7 - 5 - (height / 16);
+    int bottom = save1->y_camera + 7 + 5 + (height / 16);
     return x < left || x > right || y < top || y > bottom;
 }
 

@@ -44,7 +44,7 @@ bool map_coordinates_to_worldmap_position(u8 bank, u8 map_idx, s16 x, s16 y, u8 
 }
 
 void worldmap_locate_player() {
-	map_coordinates_to_worldmap_position(save1->bank, save1->map, save1->x_cam_orig, save1->y_cam_orig, 
+	map_coordinates_to_worldmap_position(save1->bank, save1->map, save1->x_camera, save1->y_camera, 
 		&worldmap_ui_state->player.x, &worldmap_ui_state->player.y, &worldmap_ui_state->player.idx, 
 		&worldmap_ui_state->player.layer);
 	DEBUG("Located player to %d, %d, %d, %d", worldmap_ui_state->player.x, worldmap_ui_state->player.y, 

@@ -3,12 +3,14 @@
 .include "ordinals.s"
 .include "overworld_script.s"
 .include "flags.s"
+.include "constants/block_arguments.s"
 
 .global ow_script_0x8000a5
 .global ow_script_map_4_1_sign_0
 .global ow_script_0x89a168
 .global ow_script_debugger
 .global ow_script_bookshelf_player
+.global ow_script_anemonia_player_pc_turn_off
 
 ow_script_0x8000a5:
 lock
@@ -44,23 +46,32 @@ str_bookshelf:
 
 
 ow_script_map_4_1_sign_0:
-special 0x187
-compare LASTRESULT 0x2
-gotoif EQUAL ow_script_0x89a168
-lockall
-setvar 0x8004 0x20
-special 0x17d
-setvar 0x8004 0x1
-special 0xd6
-sound 0x4
-loadpointer 0x0 str_0x1a8124
-callstd MSG
-special 0xf9
-waitstate
-special 0x120
-clearflag TRANS_DISABLE
-releaseall
-end
+    special 0x187
+    compare LASTRESULT 0x2
+    gotoif EQUAL ow_script_0x89a168
+    lockall
+    setvar 0x8004 0x20
+    special 0x17d
+    setvar 0x8004 PC_GENERIC
+    special 0xd6
+    sound 0x4
+    loadpointer 0x0 str_0x1a8124
+    callstd MSG
+    setvar 0x8004 PC_GENERIC
+    special 0xf9
+    waitstate
+    special 0x120
+    clearflag TRANS_DISABLE
+    releaseall
+    end
+
+ow_script_anemonia_player_pc_turn_off:
+    setvar 0x8004 PC_GENERIC
+    sound 3
+    special 0xd7
+    special 0x190
+    releaseall
+    end
 
 
 ow_script_0x89a168:
