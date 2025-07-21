@@ -10,6 +10,6 @@ enum {
     TILE_INTERACTION_PC_POKESTOP_ON = 0x294,
 };
 
-
+extern const u8 ow_script_pc[];
 
 #endif // TILE_INTERACTION_PC_H

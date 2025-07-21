@@ -1743,7 +1743,7 @@
 				"battle_bg": "0x5d"
 			},
 			{
-				"behaviour": "MB_CABINET",
+				"behaviour": "MB_89",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -1753,7 +1753,7 @@
 				"battle_bg": "0x8a"
 			},
 			{
-				"behaviour": "MB_FOOD_SMELLS_TASTY",
+				"behaviour": "MB_99",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -1783,7 +1783,7 @@
 				"battle_bg": "0x5f"
 			},
 			{
-				"behaviour": "MB_KITCHEN",
+				"behaviour": "MB_8A",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -1793,7 +1793,7 @@
 				"battle_bg": "0x8a"
 			},
 			{
-				"behaviour": "MB_TRASH_BIN",
+				"behaviour": "MB_9A",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -1823,7 +1823,7 @@
 				"battle_bg": "0x5f"
 			},
 			{
-				"behaviour": "MB_KITCHEN",
+				"behaviour": "MB_8A",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -1833,7 +1833,7 @@
 				"battle_bg": "0x8b"
 			},
 			{
-				"behaviour": "MB_TRASH_BIN",
+				"behaviour": "MB_9A",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -1863,7 +1863,7 @@
 				"battle_bg": "0x5c"
 			},
 			{
-				"behaviour": "MB_INDIGO_PLATEAU_MARK_2_DPAD",
+				"behaviour": "MB_92",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -1873,7 +1873,7 @@
 				"battle_bg": "0x92"
 			},
 			{
-				"behaviour": "MB_BURGLARY",
+				"behaviour": "MB_A2",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2033,7 +2033,7 @@
 				"battle_bg": "0xba"
 			},
 			{
-				"behaviour": "MB_POKEMART_SHELF",
+				"behaviour": "MB_82",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2063,7 +2063,7 @@
 				"battle_bg": "0x5d"
 			},
 			{
-				"behaviour": "MB_FOOD_SMELLS_TASTY",
+				"behaviour": "MB_99",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2073,47 +2073,7 @@
 				"battle_bg": "0x9a"
 			},
 			{
-				"behaviour": "MB_FOOD_SMELLS_TASTY",
-				"hm_usage": "0x11",
-				"argument": "0x2",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x1",
-				"priority": "0x1",
-				"battle_bg": "0x9a"
-			},
-			{
-				"behaviour": "MB_4E",
-				"hm_usage": "0x1",
-				"argument": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0x4f"
-			},
-			{
-				"behaviour": "MB_5E",
-				"hm_usage": "0x1",
-				"argument": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0x5f"
-			},
-			{
-				"behaviour": "MB_TRASH_BIN",
-				"hm_usage": "0x11",
-				"argument": "0x2",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x1",
-				"priority": "0x1",
-				"battle_bg": "0x9a"
-			},
-			{
-				"behaviour": "MB_TRASH_BIN",
+				"behaviour": "MB_99",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2143,7 +2103,47 @@
 				"battle_bg": "0x5f"
 			},
 			{
-				"behaviour": "MB_TRASH_BIN",
+				"behaviour": "MB_9A",
+				"hm_usage": "0x11",
+				"argument": "0x2",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x1",
+				"priority": "0x1",
+				"battle_bg": "0x9a"
+			},
+			{
+				"behaviour": "MB_9A",
+				"hm_usage": "0x11",
+				"argument": "0x2",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x1",
+				"priority": "0x1",
+				"battle_bg": "0x9a"
+			},
+			{
+				"behaviour": "MB_4E",
+				"hm_usage": "0x1",
+				"argument": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0x4f"
+			},
+			{
+				"behaviour": "MB_5E",
+				"hm_usage": "0x1",
+				"argument": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0x5f"
+			},
+			{
+				"behaviour": "MB_9A",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2153,7 +2153,7 @@
 				"battle_bg": "0x9b"
 			},
 			{
-				"behaviour": "MB_TRASH_BIN",
+				"behaviour": "MB_9A",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2193,7 +2193,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_SNACKS",
+				"behaviour": "MB_8C",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2343,7 +2343,7 @@
 				"battle_bg": "0xbe"
 			},
 			{
-				"behaviour": "MB_BATTLE_RECORDS",
+				"behaviour": "MB_8E",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2353,7 +2353,7 @@
 				"battle_bg": "0x8f"
 			},
 			{
-				"behaviour": "MB_BLINKING_LIGHTS",
+				"behaviour": "MB_9D",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x6",
@@ -2383,7 +2383,7 @@
 				"battle_bg": "0x5d"
 			},
 			{
-				"behaviour": "MB_FOOD_SMELLS_TASTY",
+				"behaviour": "MB_99",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2423,7 +2423,7 @@
 				"battle_bg": "0x5f"
 			},
 			{
-				"behaviour": "MB_TRASH_BIN",
+				"behaviour": "MB_9A",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2463,7 +2463,7 @@
 				"battle_bg": "0x5f"
 			},
 			{
-				"behaviour": "MB_TRASH_BIN",
+				"behaviour": "MB_9A",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2503,7 +2503,7 @@
 				"battle_bg": "0x1f"
 			},
 			{
-				"behaviour": "MB_PORTHOLE",
+				"behaviour": "MB_9C",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2663,7 +2663,7 @@
 				"battle_bg": "0xbe"
 			},
 			{
-				"behaviour": "MB_BLINKING_LIGHTS",
+				"behaviour": "MB_9D",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x6",
@@ -2673,7 +2673,7 @@
 				"battle_bg": "0x9e"
 			},
 			{
-				"behaviour": "MB_BLINKING_LIGHTS",
+				"behaviour": "MB_9D",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x6",
@@ -2753,7 +2753,7 @@
 				"battle_bg": "0xba"
 			},
 			{
-				"behaviour": "MB_POKEMART_SHELF",
+				"behaviour": "MB_82",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2793,7 +2793,7 @@
 				"battle_bg": "0xba"
 			},
 			{
-				"behaviour": "MB_BOOKSHELF",
+				"behaviour": "MB_81",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -3063,7 +3063,7 @@
 				"battle_bg": "0x5d"
 			},
 			{
-				"behaviour": "MB_BLUEPRINTS",
+				"behaviour": "MB_93",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -3103,7 +3103,7 @@
 				"battle_bg": "0x5f"
 			},
 			{
-				"behaviour": "MB_INDIGO_PLATEAU_MARK_DPAD",
+				"behaviour": "MB_91",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -3143,7 +3143,7 @@
 				"battle_bg": "0x5f"
 			},
 			{
-				"behaviour": "MB_TELEPHONE",
+				"behaviour": "MB_96",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -3153,7 +3153,7 @@
 				"battle_bg": "0xa8"
 			},
 			{
-				"behaviour": "MB_POKEMART_SIGN",
+				"behaviour": "MB_88",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -3383,7 +3383,7 @@
 				"battle_bg": "0x5f"
 			},
 			{
-				"behaviour": "MB_BLUEPRINTS",
+				"behaviour": "MB_93",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -3423,7 +3423,7 @@
 				"battle_bg": "0x5f"
 			},
 			{
-				"behaviour": "MB_INDIGO_PLATEAU_MARK_DPAD",
+				"behaviour": "MB_91",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -3433,7 +3433,7 @@
 				"battle_bg": "0x92"
 			},
 			{
-				"behaviour": "MB_VIDEO_GAME",
+				"behaviour": "MB_A1",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -3463,7 +3463,7 @@
 				"battle_bg": "0x5f"
 			},
 			{
-				"behaviour": "MB_TELEPHONE",
+				"behaviour": "MB_96",
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x2",

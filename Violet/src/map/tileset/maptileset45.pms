@@ -32734,7 +32734,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_POKEMART_SIGN",
+				"behaviour": "MB_88",
 				"hm_usage": "0x19",
 				"argument": "0x1",
 				"encounter_type": "0x2",
@@ -32744,7 +32744,7 @@
 				"battle_bg": "0x99"
 			},
 			{
-				"behaviour": "MB_ADVERTISING_POSTER",
+				"behaviour": "MB_98",
 				"hm_usage": "0x19",
 				"argument": "0x1",
 				"encounter_type": "0x2",

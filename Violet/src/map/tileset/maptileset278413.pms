@@ -1977,7 +1977,7 @@
 				"battle_bg": "0x71"
 			},
 			{
-				"behaviour": "MB_KITCHEN",
+				"behaviour": "MB_8A",
 				"hm_usage": "0x2",
 				"argument": "0x0",
 				"encounter_type": "0x4",
@@ -1987,7 +1987,7 @@
 				"battle_bg": "0x71"
 			},
 			{
-				"behaviour": "MB_KITCHEN",
+				"behaviour": "MB_8A",
 				"hm_usage": "0x2",
 				"argument": "0x0",
 				"encounter_type": "0x4",
@@ -2567,7 +2567,7 @@
 				"battle_bg": "0x71"
 			},
 			{
-				"behaviour": "MB_KITCHEN",
+				"behaviour": "MB_8A",
 				"hm_usage": "0x2",
 				"argument": "0x0",
 				"encounter_type": "0x4",
@@ -2577,7 +2577,7 @@
 				"battle_bg": "0x71"
 			},
 			{
-				"behaviour": "MB_KITCHEN",
+				"behaviour": "MB_8A",
 				"hm_usage": "0x2",
 				"argument": "0x0",
 				"encounter_type": "0x4",
@@ -2967,7 +2967,7 @@
 				"battle_bg": "0x71"
 			},
 			{
-				"behaviour": "MB_KITCHEN",
+				"behaviour": "MB_8A",
 				"hm_usage": "0x2",
 				"argument": "0x0",
 				"encounter_type": "0x4",
@@ -3157,7 +3157,7 @@
 				"battle_bg": "0x71"
 			},
 			{
-				"behaviour": "MB_KITCHEN",
+				"behaviour": "MB_8A",
 				"hm_usage": "0x2",
 				"argument": "0x0",
 				"encounter_type": "0x4",
@@ -3167,7 +3167,7 @@
 				"battle_bg": "0x71"
 			},
 			{
-				"behaviour": "MB_KITCHEN",
+				"behaviour": "MB_8A",
 				"hm_usage": "0x2",
 				"argument": "0x0",
 				"encounter_type": "0x4",
@@ -3597,7 +3597,7 @@
 				"battle_bg": "0x98"
 			},
 			{
-				"behaviour": "MB_ADVERTISING_POSTER",
+				"behaviour": "MB_98",
 				"hm_usage": "0x3",
 				"argument": "0x0",
 				"encounter_type": "0x6",
@@ -3607,7 +3607,7 @@
 				"battle_bg": "0x98"
 			},
 			{
-				"behaviour": "MB_BD",
+				"behaviour": "MB_ROCK_CLIMB",
 				"hm_usage": "0x19",
 				"argument": "0x0",
 				"encounter_type": "0x2",
@@ -3747,7 +3747,7 @@
 				"battle_bg": "0x71"
 			},
 			{
-				"behaviour": "MB_KITCHEN",
+				"behaviour": "MB_8A",
 				"hm_usage": "0x2",
 				"argument": "0x0",
 				"encounter_type": "0x4",
@@ -3757,7 +3757,7 @@
 				"battle_bg": "0x71"
 			},
 			{
-				"behaviour": "MB_KITCHEN",
+				"behaviour": "MB_8A",
 				"hm_usage": "0x2",
 				"argument": "0x0",
 				"encounter_type": "0x4",
@@ -4137,7 +4137,7 @@
 				"battle_bg": "0x71"
 			},
 			{
-				"behaviour": "MB_KITCHEN",
+				"behaviour": "MB_8A",
 				"hm_usage": "0x2",
 				"argument": "0x0",
 				"encounter_type": "0x4",
@@ -4167,7 +4167,7 @@
 				"battle_bg": "0x98"
 			},
 			{
-				"behaviour": "MB_ADVERTISING_POSTER",
+				"behaviour": "MB_98",
 				"hm_usage": "0x3",
 				"argument": "0x0",
 				"encounter_type": "0x6",
@@ -4177,7 +4177,7 @@
 				"battle_bg": "0x98"
 			},
 			{
-				"behaviour": "MB_ADVERTISING_POSTER",
+				"behaviour": "MB_98",
 				"hm_usage": "0x3",
 				"argument": "0x0",
 				"encounter_type": "0x6",
@@ -4187,7 +4187,7 @@
 				"battle_bg": "0xad"
 			},
 			{
-				"behaviour": "MB_ADVERTISING_POSTER",
+				"behaviour": "MB_98",
 				"hm_usage": "0x3",
 				"argument": "0x0",
 				"encounter_type": "0x6",
@@ -4207,7 +4207,7 @@
 				"battle_bg": "0xc6"
 			},
 			{
-				"behaviour": "MB_ADVERTISING_POSTER",
+				"behaviour": "MB_98",
 				"hm_usage": "0x3",
 				"argument": "0x0",
 				"encounter_type": "0x6",
@@ -4217,7 +4217,7 @@
 				"battle_bg": "0x98"
 			},
 			{
-				"behaviour": "MB_BURGLARY",
+				"behaviour": "MB_A2",
 				"hm_usage": "0x3",
 				"argument": "0x0",
 				"encounter_type": "0x4",

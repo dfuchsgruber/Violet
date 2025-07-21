@@ -9,6 +9,7 @@
 #define INCLUDE_C_VARS_H_
 
 #include "constants/vars.h"
+#include "types.h"
 
 /**
  * Accesses a variable
@@ -19,12 +20,13 @@ u16 *var_access(u16 var);
 
 /**
  * Gets a value from a var if the arg is >= 0x4000 and else just returns the value.
- * @param arg if >= 0x4000 it is interpreted as variable, else as value 
+ * @param arg if >= 0x4000 it is interpreted as variable, else as value
  * @return the value of variable arg if arg >= 0x4000 and else arg
  **/
 u16 var_get(u16 var);
 
 extern u16 lastresult;
 extern u16 lasttalked;
+extern u16 player_facing;
 
 #endif /* INCLUDE_C_VARS_H_ */

@@ -186,7 +186,7 @@ extern const oam_template overworld_effect_oam_template_high_grass;
 static const any_grass any_grasses_default[] = {
     {.triggered_by_behavior = MB_TALL_GRASS, .template = &overworld_effect_oam_template_high_grass, .palette = &overworld_effect_high_grass_pal, 
         .initialize = any_grass_step, .on_player_step = any_grass_player_step_null},
-    {.triggered_by_behavior = MB_BD, .template = &rock_climb_template, .palette = &rock_climb_pal, 
+    {.triggered_by_behavior = MB_ROCK_CLIMB, .template = &rock_climb_template, .palette = &rock_climb_pal, 
         .initialize = rock_climb_step, .on_player_step = any_grass_player_step_null},
     {.triggered_by_behavior = MB_3, .template = (oam_template *)0x083A5800, .palette = NULL, 
         .initialize = rock_climb_step, .on_player_step = any_grass_player_step_null},
@@ -197,7 +197,7 @@ const any_grass_header_t any_grasses_header_default = {.any_grasses = any_grasse
 static const any_grass any_grasses_ash[] = {
     {.triggered_by_behavior = MB_TALL_GRASS, .template = any_grass_templates + ANY_GRASS_ASH, .palette = any_grass_pals + ANY_GRASS_ASH, 
         .initialize = any_grass_step, .on_player_step = ash_grass_player_step},
-    {.triggered_by_behavior = MB_BD, .template = &rock_climb_template, .palette = &rock_climb_pal, 
+    {.triggered_by_behavior = MB_ROCK_CLIMB, .template = &rock_climb_template, .palette = &rock_climb_pal, 
         .initialize = rock_climb_step, .on_player_step = any_grass_player_step_null},
 };
 // maptileset251828
@@ -206,7 +206,7 @@ const any_grass_header_t any_grasses_header_ash = {.any_grasses = any_grasses_as
 static const any_grass any_grasses_graveyard[] = {
     {.triggered_by_behavior = MB_BB, .template = any_grass_templates + ANY_GRASS_GRAVEYARD, .palette = any_grass_pals + ANY_GRASS_GRAVEYARD, 
         .initialize = any_grass_step, .on_player_step = any_grass_player_step_null},
-    {.triggered_by_behavior = MB_BD, .template = &rock_climb_template, .palette = &rock_climb_pal, 
+    {.triggered_by_behavior = MB_ROCK_CLIMB, .template = &rock_climb_template, .palette = &rock_climb_pal, 
         .initialize = rock_climb_step, .on_player_step = any_grass_player_step_null},
 };
 
@@ -215,7 +215,7 @@ const any_grass_header_t any_grasses_header_graveyard = {.any_grasses = any_gras
 static const any_grass any_grasses_haweiland[] = {
     {.triggered_by_behavior = MB_BB, .template = any_grass_templates + ANY_GRASS_HAWEILAND, .palette = any_grass_pals + ANY_GRASS_HAWEILAND, 
         .initialize = any_grass_step, .on_player_step = any_grass_player_step_null},
-    {.triggered_by_behavior = MB_BD, .template = &rock_climb_template, .palette = &rock_climb_pal, 
+    {.triggered_by_behavior = MB_ROCK_CLIMB, .template = &rock_climb_template, .palette = &rock_climb_pal, 
         .initialize = rock_climb_step, .on_player_step = any_grass_player_step_null},
 };
 
@@ -224,7 +224,7 @@ const any_grass_header_t any_grasses_header_haweiland = {.any_grasses = any_gras
 static const any_grass any_grasses_clouds[] = {
     {.triggered_by_behavior = 2, .template = any_grass_templates + ANY_GRASS_CLOUD, .palette = any_grass_pals + ANY_GRASS_CLOUD, 
         .initialize = any_grass_step, .on_player_step = any_grass_player_step_null},
-    {.triggered_by_behavior = MB_BD, .template = &rock_climb_sky_island_template, .palette = &rock_climb_sky_island_pal, 
+    {.triggered_by_behavior = MB_ROCK_CLIMB, .template = &rock_climb_sky_island_template, .palette = &rock_climb_sky_island_pal, 
         .initialize = rock_climb_step, .on_player_step = any_grass_player_step_null},
 };
 
@@ -233,7 +233,7 @@ const any_grass_header_t any_grasses_header_clouds = {.any_grasses = any_grasses
 static const any_grass any_grasses_clouds_dark_green[] = {
     {.triggered_by_behavior = 2, .template = any_grass_templates + ANY_GRASS_CLOUD_DARK_GREEN, .palette = any_grass_pals + ANY_GRASS_CLOUD_DARK_GREEN, 
         .initialize = any_grass_step, .on_player_step = any_grass_player_step_null},
-    {.triggered_by_behavior = MB_BD, .template = &rock_climb_sky_island_template, .palette = &rock_climb_sky_island_pal, 
+    {.triggered_by_behavior = MB_ROCK_CLIMB, .template = &rock_climb_sky_island_template, .palette = &rock_climb_sky_island_pal, 
         .initialize = rock_climb_step, .on_player_step = any_grass_player_step_null},
 };
 
@@ -242,7 +242,7 @@ const any_grass_header_t any_grasses_header_clouds_dark_green = {.any_grasses = 
 static const any_grass any_grasses_clouds_blue[] = {
     {.triggered_by_behavior = 2, .template = any_grass_templates + ANY_GRASS_CLOUD_BLUE, .palette = any_grass_pals + ANY_GRASS_CLOUD_BLUE, 
         .initialize = any_grass_step, .on_player_step = any_grass_player_step_null},
-    {.triggered_by_behavior = MB_BD, .template = &rock_climb_sky_island_template, .palette = &rock_climb_sky_island_pal, 
+    {.triggered_by_behavior = MB_ROCK_CLIMB, .template = &rock_climb_sky_island_template, .palette = &rock_climb_sky_island_pal, 
         .initialize = rock_climb_step, .on_player_step = any_grass_player_step_null},
 };
 
@@ -280,7 +280,7 @@ void rock_climb_step(bool reinitialize){
 }
 
 bool tile_is_high_grass(u8 behavior){
-    return behavior == MB_TALL_GRASS || behavior == 0xD1 || behavior == MB_BB || behavior == MB_BD;
+    return behavior == MB_TALL_GRASS || behavior == 0xD1 || behavior == MB_BB || behavior == MB_ROCK_CLIMB;
 }
 
 

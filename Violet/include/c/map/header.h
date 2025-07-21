@@ -11,7 +11,6 @@
 #include "map/footer.h"
 #include "map/levelscript.h"
 #include "map/connection.h"
-#include "map/header.h"
 #include "map/event.h"
 
 typedef struct map_header_t {
@@ -76,6 +75,13 @@ s8 map_get_warp_idx_by_position(const map_header_t *map, const position_t *posit
  * @return the event or NULL if none was found
  **/
 const map_event_signpost *map_get_signpost_by_position(const map_header_t *map, s16 x, s16 y, u8 level);
+
+/**
+ * Returns the signpost script at a certain position on the current map.
+ * @param position the position to find the signpost
+ * @return the event or NULL if none was found
+ **/
+const u8 *map_get_signpost_script_by_position_on_current_map(const position_t *position);
 
 /**
  * Checks if a map type represents an outside map.

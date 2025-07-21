@@ -49546,7 +49546,7 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": 0,
+				"behaviour": "0",
 				"hm_usage": 0,
 				"argument": 0,
 				"battle_bg": 0,
@@ -49556,7 +49556,7 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": 0,
+				"behaviour": "0",
 				"hm_usage": 0,
 				"argument": 0,
 				"battle_bg": 0,
@@ -49586,7 +49586,7 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": 0,
+				"behaviour": "MB_TELEVISION",
 				"hm_usage": 0,
 				"argument": 0,
 				"battle_bg": 0,
@@ -49596,7 +49596,7 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": 0,
+				"behaviour": "MB_TELEVISION",
 				"hm_usage": 0,
 				"argument": 0,
 				"battle_bg": 0,

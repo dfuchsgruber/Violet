@@ -31584,7 +31584,7 @@
 				"battle_bg": "0x75"
 			},
 			{
-				"behaviour": "MB_PAINTING",
+				"behaviour": "MB_94",
 				"hm_usage": "0xc",
 				"argument": "0x3",
 				"encounter_type": "0x0",
@@ -32464,7 +32464,7 @@
 				"battle_bg": "0x99"
 			},
 			{
-				"behaviour": "MB_BD",
+				"behaviour": "MB_ROCK_CLIMB",
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
@@ -32514,7 +32514,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_FOOD_SMELLS_TASTY",
+				"behaviour": "MB_99",
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x5",

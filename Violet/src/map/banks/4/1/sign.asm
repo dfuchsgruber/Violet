@@ -4,6 +4,7 @@
 .include "overworld_script.s"
 .include "flags.s"
 .include "constants/block_arguments.s"
+.include "specials.s"
 
 .global ow_script_0x8000a5
 .global ow_script_map_4_1_sign_0
@@ -50,15 +51,13 @@ ow_script_map_4_1_sign_0:
     compare LASTRESULT 0x2
     gotoif EQUAL ow_script_0x89a168
     lockall
-    setvar 0x8004 0x20
-    special 0x17d
     setvar 0x8004 PC_GENERIC
-    special 0xd6
+    special SPECIAL_PC_ANIMATION_TURN_ON
     sound 0x4
     loadpointer 0x0 str_0x1a8124
     callstd MSG
-    setvar 0x8004 PC_GENERIC
-    special 0xf9
+    setvar 0x8004 0
+    special SPECIAL_PC_PLAYER_ROOM
     waitstate
     special 0x120
     clearflag TRANS_DISABLE
@@ -68,7 +67,7 @@ ow_script_map_4_1_sign_0:
 ow_script_anemonia_player_pc_turn_off:
     setvar 0x8004 PC_GENERIC
     sound 3
-    special 0xd7
+    special SPECIAL_PC_ANIMATION_TURN_OFF
     special 0x190
     releaseall
     end

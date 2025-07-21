@@ -6,11 +6,6 @@
 	bx r0
 	.pool
 
-
-.org 0x806D154
-	ldr r3, =hook_get_behavior_script | 1
-	bx r3
-	.pool
 	
 .org 0x0806CA94
         ldr r0, =pokepad_outdoor_trigger | 1
@@ -116,14 +111,28 @@
     bx r0
     .pool
 
+
+
+.org 0x0806ce04
+    ldr r3, =overworld_script_initialize_by_tile_interaction | 1
+    bx r3
+    .pool
+
+/** OBSOLETE CODE, because the 
 .org 0x0806D4AC
-	ldr r3, =tile_trigger_water_scripts | 1
+	ldr r3, =tile_interaction_get_by_water | 1
 	bx r3
 	.pool
 
 .org 0x0806d048
     ldr r3, =signpost_get_script | 1
     bx r3
+    .pool
+**/
+
+.org 0x0806d7fc
+    ldr r2, =signpost_get_script_type | 1
+    bx r2
     .pool
 
 /**
@@ -150,3 +159,8 @@
 
 .org 0x080ebbf8
     .word ow_script_anemonia_player_pc_turn_off
+
+.org 0x0806d768
+    ldr r3, =signpost_overworld_script_initialize_by_collision | 1
+    bx r3
+    .pool

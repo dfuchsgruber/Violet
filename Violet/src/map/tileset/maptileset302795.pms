@@ -32224,7 +32224,7 @@
 				"battle_bg": "0xed"
 			},
 			{
-				"behaviour": "MB_QUESTIONNAIRE",
+				"behaviour": "MB_8F",
 				"hm_usage": "0x18",
 				"argument": "0x3",
 				"encounter_type": "0x0",
@@ -32454,7 +32454,7 @@
 				"battle_bg": "0xf1"
 			},
 			{
-				"behaviour": "MB_IMPRESSIVE_MACHINE",
+				"behaviour": "MB_A0",
 				"hm_usage": "0x10",
 				"argument": "0x0",
 				"encounter_type": "0x4",
@@ -32744,7 +32744,7 @@
 				"battle_bg": "0x54"
 			},
 			{
-				"behaviour": "MB_CABINET",
+				"behaviour": "MB_89",
 				"hm_usage": "0xa",
 				"argument": "0x1",
 				"encounter_type": "0x2",

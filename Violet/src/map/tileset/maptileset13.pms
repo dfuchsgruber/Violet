@@ -637,7 +637,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_ADVERTISING_POSTER",
+				"behaviour": "MB_98",
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
@@ -877,7 +877,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_POKEMART_SHELF",
+				"behaviour": "MB_82",
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
@@ -887,7 +887,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_POKEMART_SHELF",
+				"behaviour": "MB_82",
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
@@ -957,7 +957,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_POKEMART_SHELF",
+				"behaviour": "MB_82",
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
@@ -967,7 +967,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_POKEMART_SHELF",
+				"behaviour": "MB_82",
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
@@ -987,7 +987,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_QUESTIONNAIRE",
+				"behaviour": "MB_8F",
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
@@ -1327,7 +1327,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_BOOKSHELF",
+				"behaviour": "MB_81",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -1337,7 +1337,7 @@
 				"battle_bg": "0xa0"
 			},
 			{
-				"behaviour": "MB_INDIGO_PLATEAU_MARK_DPAD",
+				"behaviour": "MB_91",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -1367,7 +1367,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_BOOKSHELF",
+				"behaviour": "MB_81",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -1377,7 +1377,7 @@
 				"battle_bg": "0xa0"
 			},
 			{
-				"behaviour": "MB_INDIGO_PLATEAU_MARK_DPAD",
+				"behaviour": "MB_91",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -1407,7 +1407,7 @@
 				"battle_bg": "0x3e"
 			},
 			{
-				"behaviour": "MB_BOOKSHELF",
+				"behaviour": "MB_81",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -1417,7 +1417,7 @@
 				"battle_bg": "0xa0"
 			},
 			{
-				"behaviour": "MB_INDIGO_PLATEAU_MARK_DPAD",
+				"behaviour": "MB_91",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -1447,7 +1447,7 @@
 				"battle_bg": "0xc9"
 			},
 			{
-				"behaviour": "MB_BOOKSHELF",
+				"behaviour": "MB_81",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -1457,7 +1457,7 @@
 				"battle_bg": "0xa0"
 			},
 			{
-				"behaviour": "MB_INDIGO_PLATEAU_MARK_DPAD",
+				"behaviour": "MB_91",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -1517,7 +1517,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_CUP",
+				"behaviour": "MB_9B",
 				"hm_usage": "0x19",
 				"argument": "0x1",
 				"encounter_type": "0x2",
@@ -1647,7 +1647,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_VIDEO_GAME",
+				"behaviour": "MB_A1",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -1687,7 +1687,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_VIDEO_GAME",
+				"behaviour": "MB_A1",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -1727,7 +1727,7 @@
 				"battle_bg": "0x63"
 			},
 			{
-				"behaviour": "MB_VIDEO_GAME",
+				"behaviour": "MB_A1",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -1767,7 +1767,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_VIDEO_GAME",
+				"behaviour": "MB_A1",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -1837,7 +1837,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_DRESSER",
+				"behaviour": "MB_8B",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x2",
@@ -2047,7 +2047,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_BOOKSHELF",
+				"behaviour": "MB_81",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2057,7 +2057,7 @@
 				"battle_bg": "0xa0"
 			},
 			{
-				"behaviour": "MB_INDIGO_PLATEAU_MARK_DPAD",
+				"behaviour": "MB_91",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2087,7 +2087,7 @@
 				"battle_bg": "0x85"
 			},
 			{
-				"behaviour": "MB_BOOKSHELF",
+				"behaviour": "MB_81",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2097,7 +2097,7 @@
 				"battle_bg": "0xa0"
 			},
 			{
-				"behaviour": "MB_INDIGO_PLATEAU_MARK_DPAD",
+				"behaviour": "MB_91",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2127,7 +2127,7 @@
 				"battle_bg": "0x87"
 			},
 			{
-				"behaviour": "MB_CUP",
+				"behaviour": "MB_9B",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x2",
@@ -2367,7 +2367,7 @@
 				"battle_bg": "0x23"
 			},
 			{
-				"behaviour": "MB_VIDEO_GAME",
+				"behaviour": "MB_A1",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2407,7 +2407,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_VIDEO_GAME",
+				"behaviour": "MB_A1",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2477,7 +2477,7 @@
 				"battle_bg": "0x84"
 			},
 			{
-				"behaviour": "MB_TELEPHONE",
+				"behaviour": "MB_96",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2577,7 +2577,7 @@
 				"battle_bg": "0xa3"
 			},
 			{
-				"behaviour": "MB_BURGLARY",
+				"behaviour": "MB_A2",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x2",
@@ -2717,7 +2717,7 @@
 				"battle_bg": "0x83"
 			},
 			{
-				"behaviour": "MB_PAINTING",
+				"behaviour": "MB_94",
 				"hm_usage": "0x3",
 				"argument": "0x2",
 				"encounter_type": "0x6",
@@ -2727,7 +2727,7 @@
 				"battle_bg": "0x96"
 			},
 			{
-				"behaviour": "MB_BURGLARY",
+				"behaviour": "MB_A2",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x2",
@@ -2807,7 +2807,7 @@
 				"battle_bg": "0x86"
 			},
 			{
-				"behaviour": "MB_VIDEO_GAME",
+				"behaviour": "MB_A1",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2837,7 +2837,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_CABINET",
+				"behaviour": "MB_89",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x6",
@@ -2847,7 +2847,7 @@
 				"battle_bg": "0x89"
 			},
 			{
-				"behaviour": "MB_VIDEO_GAME",
+				"behaviour": "MB_A1",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2867,7 +2867,7 @@
 				"battle_bg": "0x92"
 			},
 			{
-				"behaviour": "MB_BLINKING_LIGHTS",
+				"behaviour": "MB_9D",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x2",
@@ -2887,7 +2887,7 @@
 				"battle_bg": "0xaf"
 			},
 			{
-				"behaviour": "MB_VIDEO_GAME",
+				"behaviour": "MB_A1",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2927,7 +2927,7 @@
 				"battle_bg": "0xae"
 			},
 			{
-				"behaviour": "MB_VIDEO_GAME",
+				"behaviour": "MB_A1",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2967,7 +2967,7 @@
 				"battle_bg": "0xc7"
 			},
 			{
-				"behaviour": "MB_VIDEO_GAME",
+				"behaviour": "MB_A1",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -2997,7 +2997,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_CABINET",
+				"behaviour": "MB_89",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x6",
@@ -3117,7 +3117,7 @@
 				"battle_bg": "0x88"
 			},
 			{
-				"behaviour": "MB_POKEMART_SIGN",
+				"behaviour": "MB_88",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x0",
@@ -3197,7 +3197,7 @@
 				"battle_bg": "0xbf"
 			},
 			{
-				"behaviour": "MB_DRESSER",
+				"behaviour": "MB_8B",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x2",
@@ -3237,7 +3237,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_DRESSER",
+				"behaviour": "MB_8B",
 				"hm_usage": "0x3",
 				"argument": "0x3",
 				"encounter_type": "0x6",
@@ -3277,7 +3277,7 @@
 				"battle_bg": "0xd7"
 			},
 			{
-				"behaviour": "MB_DRESSER",
+				"behaviour": "MB_8B",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x2",
@@ -3297,7 +3297,7 @@
 				"battle_bg": "0x8d"
 			},
 			{
-				"behaviour": "MB_SNACKS",
+				"behaviour": "MB_8C",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x2",
@@ -3347,7 +3347,7 @@
 				"battle_bg": "0xd3"
 			},
 			{
-				"behaviour": "MB_POKEMART_SIGN",
+				"behaviour": "MB_88",
 				"hm_usage": "0x3",
 				"argument": "0x2",
 				"encounter_type": "0x6",
@@ -3487,7 +3487,7 @@
 				"battle_bg": "0xab"
 			},
 			{
-				"behaviour": "MB_BURGLARY",
+				"behaviour": "MB_A2",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x2",
@@ -3497,7 +3497,7 @@
 				"battle_bg": "0xa2"
 			},
 			{
-				"behaviour": "MB_BURGLARY",
+				"behaviour": "MB_A2",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x2",
@@ -3527,7 +3527,7 @@
 				"battle_bg": "0x81"
 			},
 			{
-				"behaviour": "MB_BURGLARY",
+				"behaviour": "MB_A2",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x2",
@@ -3537,7 +3537,7 @@
 				"battle_bg": "0xa2"
 			},
 			{
-				"behaviour": "MB_BURGLARY",
+				"behaviour": "MB_A2",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x2",
@@ -3587,7 +3587,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_CUP",
+				"behaviour": "MB_9B",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x2",
@@ -3607,7 +3607,7 @@
 				"battle_bg": "0xab"
 			},
 			{
-				"behaviour": "MB_CUP",
+				"behaviour": "MB_9B",
 				"hm_usage": "0x3",
 				"argument": "0x3",
 				"encounter_type": "0x6",
@@ -3647,7 +3647,7 @@
 				"battle_bg": "0xad"
 			},
 			{
-				"behaviour": "MB_BURGLARY",
+				"behaviour": "MB_A2",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x2",
@@ -3657,7 +3657,7 @@
 				"battle_bg": "0xb7"
 			},
 			{
-				"behaviour": "MB_BURGLARY",
+				"behaviour": "MB_A2",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x2",
@@ -3697,7 +3697,7 @@
 				"battle_bg": "0xa2"
 			},
 			{
-				"behaviour": "MB_BURGLARY",
+				"behaviour": "MB_A2",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x2",
@@ -3767,7 +3767,7 @@
 				"battle_bg": "0xa1"
 			},
 			{
-				"behaviour": "MB_BURGLARY",
+				"behaviour": "MB_A2",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x2",
@@ -3777,7 +3777,7 @@
 				"battle_bg": "0xa2"
 			},
 			{
-				"behaviour": "MB_BURGLARY",
+				"behaviour": "MB_A2",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x2",
@@ -3857,7 +3857,7 @@
 				"battle_bg": "0xc1"
 			},
 			{
-				"behaviour": "MB_BURGLARY",
+				"behaviour": "MB_A2",
 				"hm_usage": "0x1",
 				"argument": "0x3",
 				"encounter_type": "0x2",
@@ -4087,7 +4087,7 @@
 				"battle_bg": "0xb2"
 			},
 			{
-				"behaviour": "MB_BOOKSHELF",
+				"behaviour": "MB_81",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -4097,7 +4097,7 @@
 				"battle_bg": "0xa0"
 			},
 			{
-				"behaviour": "MB_INDIGO_PLATEAU_MARK_DPAD",
+				"behaviour": "MB_91",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -4127,7 +4127,7 @@
 				"battle_bg": "0x1d"
 			},
 			{
-				"behaviour": "MB_BOOKSHELF",
+				"behaviour": "MB_81",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -4137,7 +4137,7 @@
 				"battle_bg": "0xa0"
 			},
 			{
-				"behaviour": "MB_INDIGO_PLATEAU_MARK_DPAD",
+				"behaviour": "MB_91",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -4167,7 +4167,7 @@
 				"battle_bg": "0x1f"
 			},
 			{
-				"behaviour": "MB_VIDEO_GAME",
+				"behaviour": "MB_A1",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
@@ -4207,7 +4207,7 @@
 				"battle_bg": "0x3d"
 			},
 			{
-				"behaviour": "MB_VIDEO_GAME",
+				"behaviour": "MB_A1",
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",

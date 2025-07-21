@@ -1,3 +1,9 @@
+#include "constants/block_behaviour.h"
+#include "map/event.h"
+#include "map/header.h"
+#include "tile/block.h"
+#include "tile/coordinate.h"
+#include "tile/interaction.h"
 #include "types.h"
 #include "save.h"
 #include "debug.h"
@@ -11,15 +17,6 @@
 #include "constants/signpost_types.h"
 #include "pokepad/treasure_map.h"
 
-const u8 *singpost_behavior_xBC(){
-    //trigger script by block id (since we do not have enough behaviorbytes...)
-    coordinate_t pos;
-    player_get_facing_position(&pos.x, &pos.y);
-    u16 block_id = block_get_by_pos(pos.x, pos.y) & 0x3FF;
-    (void)block_id;
-    return NULL;
-    
-}
 
 u16 hidden_flag_by_chunk(u8 flag, u8 hidden_chunk){
     switch(hidden_chunk){
@@ -67,7 +64,7 @@ extern const u8 ow_script_signpost_null[];
 extern const u8 ow_script_hidden_item_find[];
 extern const u8 ow_script_treasure_find[];
 
-const u8 *signpost_get_script(const position_t *position, u8 behaviour, u8 direction) {
+const u8 *tile_interaction_get_by_signpost(const position_t *position, u16 behaviour, u8 direction) {
     const map_event_signpost *sign = map_get_signpost_by_position(&mapheader_virtual, (s16)(position->coordinates.x - 7), (s16)(position->coordinates.y - 7), position->height);
     if (!sign) return NULL;
     if (sign->flag && checkflag(sign->flag)) return NULL;
@@ -120,8 +117,44 @@ const u8 *signpost_get_script(const position_t *position, u8 behaviour, u8 direc
         }
     }
     // Signpost scripts
-    if (signpost_get_script_type(behaviour, direction) != 255)
+    if (signpost_get_script_type(behaviour, direction) != SIGNPOST_SCRIPT_NONE)
         overworld_tbox_set_sign();
     *var_access(PLAYERFACING) = direction;
     return sign->value.script;
+}
+
+u8 signpost_get_script_type(u16 behaviour, u8 direction) {
+    if (behaviour == MB_POKEMON_CENTER_SIGN && direction == DIR_UP) {
+        return SIGNPOST_SCRIPT_POKECENTER;
+    } else if (behaviour == MB_SIGNPOST) {
+        return SIGNPOST_SCRIPT_DEFAULT;
+    }
+    return SIGNPOST_SCRIPT_NONE;
+}
+
+
+u8 signpost_overworld_script_initialize_by_collision(const position_t *position, u16 behaviour, u8 faced_direction)
+{
+    if (super.keys_remapped.keys.left || super.keys_remapped.keys.right)
+        return false;
+    if (faced_direction == DIR_LEFT || faced_direction == DIR_RIGHT)
+        return false;
+
+    u16 signpost_script_type = signpost_get_script_type(behaviour, faced_direction);
+    switch (signpost_script_type) {
+        case SIGNPOST_SCRIPT_POKECENTER:
+            overworld_script_initialize_by_collision(ow_script_pokemon_center_sign, faced_direction);
+            return true;
+        case SIGNPOST_SCRIPT_DEFAULT: {
+            const u8 *script = map_get_signpost_script_by_position_on_current_map(position);
+            if (script == NULL) {
+                return false;
+            }
+            overworld_script_initialize_by_collision(script, faced_direction);
+            return true;
+
+        }
+        default:
+            return false;
+    }
 }

@@ -983,7 +983,7 @@
 				"battle_bg": "0x22"
 			},
 			{
-				"behaviour": "MB_BLUEPRINTS",
+				"behaviour": "MB_93",
 				"hm_usage": "0x3",
 				"argument": "0xc",
 				"encounter_type": "0x6",
@@ -1033,7 +1033,7 @@
 				"battle_bg": "0x23"
 			},
 			{
-				"behaviour": "MB_POKEMART_SIGN",
+				"behaviour": "MB_88",
 				"hm_usage": "0x3",
 				"argument": "0xc",
 				"encounter_type": "0x6",
@@ -1853,7 +1853,7 @@
 				"battle_bg": "0x2d"
 			},
 			{
-				"behaviour": "MB_BATTLE_RECORDS",
+				"behaviour": "MB_8E",
 				"hm_usage": "0x3",
 				"argument": "0x0",
 				"encounter_type": "0x6",
@@ -1913,7 +1913,7 @@
 				"battle_bg": "0x2d"
 			},
 			{
-				"behaviour": "MB_TELEPHONE",
+				"behaviour": "MB_96",
 				"hm_usage": "0x19",
 				"argument": "0xc",
 				"encounter_type": "0x2",
@@ -2003,7 +2003,7 @@
 				"battle_bg": "0x2e"
 			},
 			{
-				"behaviour": "MB_IMPRESSIVE_MACHINE",
+				"behaviour": "MB_A0",
 				"hm_usage": "0x19",
 				"argument": "0x8",
 				"encounter_type": "0x2",
@@ -3453,7 +3453,7 @@
 				"battle_bg": "0x1c"
 			},
 			{
-				"behaviour": "MB_POKEMART_SIGN",
+				"behaviour": "MB_88",
 				"hm_usage": "0x1e",
 				"argument": "0xe",
 				"encounter_type": "0x0",
@@ -3493,7 +3493,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_POKEMART_SIGN",
+				"behaviour": "MB_88",
 				"hm_usage": "0x1f",
 				"argument": "0xe",
 				"encounter_type": "0x0",
@@ -3533,7 +3533,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_POKEMART_SIGN",
+				"behaviour": "MB_88",
 				"hm_usage": "0x0",
 				"argument": "0xf",
 				"encounter_type": "0x0",
@@ -3573,7 +3573,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_POKEMART_SIGN",
+				"behaviour": "MB_88",
 				"hm_usage": "0x1",
 				"argument": "0xf",
 				"encounter_type": "0x0",
@@ -3613,7 +3613,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_POKEMART_SIGN",
+				"behaviour": "MB_88",
 				"hm_usage": "0x2",
 				"argument": "0xf",
 				"encounter_type": "0x0",
@@ -3823,7 +3823,7 @@
 				"battle_bg": "0x22"
 			},
 			{
-				"behaviour": "MB_BLUEPRINTS",
+				"behaviour": "MB_93",
 				"hm_usage": "0x3",
 				"argument": "0x8",
 				"encounter_type": "0x6",

@@ -5,6 +5,7 @@
 #include "tile/block.h"
 #include "tile/coordinate.h"
 #include "types.h"
+#include "tile/interaction/flavor_text.h"
 
 extern const u8 ow_script_flavor_text_inside_piano[];
 extern const u8 ow_script_flavor_text_inside_fridge[];
@@ -58,7 +59,7 @@ static const u8 *flavor_text_scripts_inside_2[] = {
 
 };
 
-const u8 *behaviour_get_flavor_text_script(UNUSED position_t *pos, u16 behaviour, UNUSED u8 facing_direction) {
+const u8 *behaviour_get_flavor_text_script(const UNUSED position_t *pos, u16 behaviour, UNUSED u8 facing_direction) {
     position_t faced_position;
     player_get_position_faced(&faced_position);
     switch (behaviour) {

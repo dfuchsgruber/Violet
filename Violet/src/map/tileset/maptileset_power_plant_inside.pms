@@ -30900,7 +30900,7 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": "MB_PAINTING",
+				"behaviour": "MB_94",
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"battle_bg": "0",
@@ -30910,7 +30910,7 @@
 				"field_7": "0x0"
 			},
 			{
-				"behaviour": "MB_PAINTING",
+				"behaviour": "MB_94",
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"battle_bg": "0",

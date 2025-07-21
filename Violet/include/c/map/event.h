@@ -13,6 +13,15 @@
 #include "tile/hidden_item.h"
 #include "constants/signpost_types.h"
 
+enum {
+    SIGNPOST_SCRIPT_POKECENTER = 0,
+    SIGNPOST_SCRIPT_POKEMART = 1,
+    SIGNPOST_SCRIPT_INDIGO_1 = 2,
+    SIGNPOST_SCRIPT_INDIGO_2 = 3,
+    SIGNPOST_SCRIPT_DEFAULT = 240,
+    SIGNPOST_SCRIPT_NONE = 255
+};
+
 typedef struct map_event_person {
     u8 target_index; // Used as a reference id for the person
     u8 overworld_index; //the picture to be displayed
@@ -127,7 +136,7 @@ void person_delete_npc_if_present(u8 person_idx, u8 map_idx, u8 bank);
  * @param direction in which direction the signspost was encountered
  * @return the script type or 255 if None
  **/
-u8 signpost_get_script_type(u8 behaviour, u8 direction);
+u8 signpost_get_script_type(u16 behaviour, u8 direction);
 
 /**
  * Sets the position of a person.
@@ -143,5 +152,14 @@ void person_set_position(u8 person_idx, s16 x, s16 y);
  * @param behaviour the behaviour to set
  **/
 void person_set_behaviour(u8 person_idx, u8 behaviour);
+
+/**
+ * Initializes the overworld script by collision with something.
+ * @param script the script to initialize
+ * @param faced_direction the direction the player is facing
+ */
+void overworld_script_initialize_by_collision(const u8 *script, u8 faced_direction);
+
+
 
 #endif /* INCLUDE_C_MAP_EVENT_H_ */

@@ -753,23 +753,23 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_BOOKSHELF",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
+				"behaviour": "MB_FLAVOR_TEXT_INSIDE",
+				"hm_usage": "0",
+				"argument": "FLAVOR_TEXT_INSIDE_BOOKSHELF_2",
+				"encounter_type": "0",
+				"field_5": "0",
+				"field_7": "0",
+				"priority": "0",
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_BOOKSHELF",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
+				"behaviour": "MB_FLAVOR_TEXT_INSIDE",
+				"hm_usage": "0",
+				"argument": "FLAVOR_TEXT_INSIDE_BOOKSHELF_3",
+				"encounter_type": "0",
+				"field_5": "0",
+				"field_7": "0",
+				"priority": "0",
 				"battle_bg": "0"
 			},
 			{
@@ -1753,7 +1753,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_INDIGO_PLATEAU_MARK_2_DPAD",
+				"behaviour": "MB_92",
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
@@ -2263,7 +2263,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_INDIGO_PLATEAU_MARK_DPAD",
+				"behaviour": "MB_91",
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
@@ -2313,7 +2313,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_BATTLE_RECORDS",
+				"behaviour": "MB_8E",
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",

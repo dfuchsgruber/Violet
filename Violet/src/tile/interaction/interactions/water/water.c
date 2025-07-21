@@ -11,14 +11,14 @@ extern const u8 ow_script_prompt_surf[];
 extern const u8 ow_script_waterfall_not_available[];
 extern const u8 ow_script_prompt_waterfall[];
 
-const u8 *tile_trigger_water_scripts(const position_t *tile_position, u8 behaviour, u8 player_facing) {
+const u8 *tile_interaction_get_by_water(const position_t *tile_position, u16 behaviour, u8 player_facing) {
   (void)tile_position;
   (void)player_facing;
-  if (behaviour_is_surf_strong_stream(behaviour) && player_pokemon_has_surf())
+  if (behaviour_is_surf_strong_stream((u8)behaviour) && player_pokemon_has_surf())
     return ow_script_surf_not_usable_stream_too_strong;
   if (checkflag(FRBADGE_4) && player_pokemon_has_surf() && player_can_use_surf_on_tile_faced())
     return ow_script_prompt_surf;
-  if (behaviour_is_waterfall(behaviour)) {
+  if (behaviour_is_waterfall((u8)behaviour)) {
     if (checkflag(FRBADGE_7) && player_can_use_waterfall_on_tile_faced())
       return ow_script_prompt_waterfall;
     else

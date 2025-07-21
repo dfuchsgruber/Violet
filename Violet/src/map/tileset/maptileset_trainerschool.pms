@@ -31675,7 +31675,7 @@
 				"battle_bg": "0xaf"
 			},
 			{
-				"behaviour": "MB_BURGLARY",
+				"behaviour": "MB_A2",
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",

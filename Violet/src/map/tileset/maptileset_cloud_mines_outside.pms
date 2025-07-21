@@ -31480,7 +31480,7 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": "MB_BD",
+				"behaviour": "MB_ROCK_CLIMB",
 				"hm_usage": "0",
 				"argument": "0",
 				"battle_bg": "0",

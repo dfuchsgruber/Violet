@@ -29450,7 +29450,7 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": "MB_BD",
+				"behaviour": "MB_ROCK_CLIMB",
 				"hm_usage": "HM_USAGE_ROCK_CLIMB",
 				"argument": "0x0",
 				"battle_bg": "0",
@@ -30290,7 +30290,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_BD",
+				"behaviour": "MB_ROCK_CLIMB",
 				"hm_usage": "HM_USAGE_ROCK_CLIMB",
 				"argument": "0x0",
 				"encounter_type": "0x0",
@@ -30500,7 +30500,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_BD",
+				"behaviour": "MB_ROCK_CLIMB",
 				"hm_usage": "HM_USAGE_ROCK_CLIMB",
 				"argument": "0x0",
 				"encounter_type": "0x0",
@@ -31060,7 +31060,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "MB_BD",
+				"behaviour": "MB_ROCK_CLIMB",
 				"hm_usage": "HM_USAGE_ROCK_CLIMB",
 				"argument": "0x0",
 				"encounter_type": "0x0",
