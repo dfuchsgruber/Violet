@@ -5,13 +5,13 @@
 			"person_cnt": 54,
 			"warp_cnt": 8,
 			"trigger_cnt": 2,
-			"signpost_cnt": 6,
+			"signpost_cnt": 5,
 			"persons": [
 				{
 					"target_index": 1,
 					"picture": 27,
 					"field_2": 0,
-					"x": "78",
+					"x": "77",
 					"y": "30",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
@@ -40,20 +40,20 @@
 				},
 				{
 					"target_index": 2,
-					"picture": "54",
+					"picture": "96",
 					"field_2": 0,
-					"x": "88",
-					"y": "41",
+					"x": "85",
+					"y": "28",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "0",
-					"flag": "AMONIA_RIVAL_INSIDE_PLAYER_HOUSE",
+					"script": "ow_script_rock_smash",
+					"flag": "0x12",
 					"field_D": 0,
 					"field_B": 0,
 					"value": {
@@ -166,8 +166,8 @@
 					"target_index": "6",
 					"picture": 96,
 					"field_2": 0,
-					"x": 15,
-					"y": 14,
+					"x": "14",
+					"y": "14",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -197,8 +197,8 @@
 					"target_index": "7",
 					"picture": 96,
 					"field_2": 0,
-					"x": 23,
-					"y": 15,
+					"x": "22",
+					"y": "15",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -226,20 +226,20 @@
 				},
 				{
 					"target_index": "8",
-					"picture": 92,
+					"picture": "96",
 					"field_2": 0,
-					"x": "65",
-					"y": "9",
+					"x": "83",
+					"y": "28",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "0",
-					"flag": "0x0",
+					"script": "ow_script_rock_smash",
+					"flag": "0x14",
 					"field_D": 0,
 					"field_B": 0,
 					"value": {
@@ -259,8 +259,8 @@
 					"target_index": "9",
 					"picture": 92,
 					"field_2": 0,
-					"x": 23,
-					"y": 14,
+					"x": "22",
+					"y": "14",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -352,8 +352,8 @@
 					"target_index": "12",
 					"picture": 54,
 					"field_2": 0,
-					"x": "35",
-					"y": "8",
+					"x": "33",
+					"y": "6",
 					"level": 3,
 					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
@@ -476,7 +476,7 @@
 					"target_index": "16",
 					"picture": 23,
 					"field_2": 0,
-					"x": "56",
+					"x": "55",
 					"y": "24",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
@@ -538,7 +538,7 @@
 					"target_index": "18",
 					"picture": 54,
 					"field_2": 0,
-					"x": "24",
+					"x": "22",
 					"y": "12",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
@@ -600,7 +600,7 @@
 					"target_index": "20",
 					"picture": 35,
 					"field_2": 0,
-					"x": "59",
+					"x": "58",
 					"y": "33",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
@@ -632,7 +632,7 @@
 					"picture": 16,
 					"field_2": 0,
 					"x": "55",
-					"y": "26",
+					"y": "25",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_RIGHT_UP_LEFT",
 					"behaviour_range": {
@@ -662,8 +662,8 @@
 					"target_index": "22",
 					"picture": 56,
 					"field_2": 0,
-					"x": 52,
-					"y": 30,
+					"x": "51",
+					"y": "27",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -959,8 +959,8 @@
 				{
 					"target_index": "32",
 					"picture": "236",
-					"x": "18",
-					"y": "30",
+					"x": "15",
+					"y": "31",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -989,7 +989,7 @@
 					"target_index": "33",
 					"picture": "17",
 					"x": "57",
-					"y": "26",
+					"y": "25",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_LEFT_DOWN_RIGHT_UP",
 					"behaviour_range": {
@@ -1017,10 +1017,10 @@
 				{
 					"target_index": "34",
 					"picture": "238",
-					"x": "23",
-					"y": "8",
+					"x": "13",
+					"y": "29",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -1248,9 +1248,9 @@
 				},
 				{
 					"target_index": "42",
-					"picture": "238",
-					"x": "57",
-					"y": "4",
+					"picture": "96",
+					"x": "86",
+					"y": "27",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -1260,18 +1260,18 @@
 					"field_B": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": 0,
-					"flag": 0,
+					"script": "ow_script_rock_smash",
+					"flag": "0x13",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_KLEINSTEIN",
+						"species": "0",
 						"berry_tree_idx": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
-						"script_std": "PERSON_POKEMON",
+						"script_std": "PERSON_SCRIPT",
 						"in_connection": "0"
 					}
 				},
@@ -1452,8 +1452,8 @@
 				{
 					"target_index": "49",
 					"picture": "96",
-					"x": "85",
-					"y": "26",
+					"x": "15",
+					"y": "15",
 					"level": "0",
 					"behaviour": "0",
 					"behaviour_range": {
@@ -1464,7 +1464,7 @@
 					"is_trainer": "0",
 					"alert_radius": "0",
 					"script": "ow_script_rock_smash",
-					"flag": "MERIANA_CITY_HIKER_BLOCKING_ROUTE_4",
+					"flag": "0x11",
 					"value": {
 						"item": "0",
 						"species": "0",
@@ -1539,7 +1539,7 @@
 				{
 					"target_index": "52",
 					"picture": "185",
-					"x": "51",
+					"x": "52",
 					"y": "8",
 					"level": 0,
 					"behaviour": 0,
@@ -1573,8 +1573,8 @@
 						"in_connection": "0"
 					},
 					"argument": "0",
-					"x": "87",
-					"y": "18",
+					"x": "65",
+					"y": "9",
 					"level": "0",
 					"behaviour": "0",
 					"behaviour_range": {
@@ -1603,7 +1603,7 @@
 					},
 					"argument": "0",
 					"x": "73",
-					"y": "29",
+					"y": "27",
 					"level": "0",
 					"behaviour": "0",
 					"behaviour_range": {
@@ -1650,8 +1650,8 @@
 					"target_warp_idx": 0
 				},
 				{
-					"x": 72,
-					"y": 28,
+					"x": "72",
+					"y": "26",
 					"level": 0,
 					"target_bank": 5,
 					"target_map": 4,
@@ -1762,8 +1762,8 @@
 					"flag": "0"
 				},
 				{
-					"x": "69",
-					"y": "28",
+					"x": "70",
+					"y": "27",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -1820,29 +1820,6 @@
 							"chunk": 0
 						},
 						"script": 0,
-						"treasure_map": {
-							"item": "0",
-							"idx": "0",
-							"amount": "0",
-							"center_x": "0",
-							"center_y": "0"
-						}
-					},
-					"flag": "0"
-				},
-				{
-					"x": "55",
-					"y": "33",
-					"level": "0",
-					"type": "SIGNPOST_HIDDEN_ITEM",
-					"value": {
-						"item": {
-							"item": "ITEM_SUPERTRANK",
-							"flag": "2",
-							"amount": "3",
-							"chunk": "0"
-						},
-						"script": "0",
 						"treasure_map": {
 							"item": "0",
 							"idx": "0",
