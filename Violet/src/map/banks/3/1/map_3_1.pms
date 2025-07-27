@@ -136,7 +136,7 @@
 					"picture": 106,
 					"field_2": 0,
 					"x": "8",
-					"y": "23",
+					"y": "22",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -725,7 +725,7 @@
 					"picture": 61,
 					"field_2": 0,
 					"x": "65",
-					"y": "27",
+					"y": "26",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
