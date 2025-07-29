@@ -6,6 +6,7 @@
 #include "debug.h"
 #include "dungeon/dungeon2.h"
 #include "flags.h"
+#include "map/route_2_house.h"
 #include "overworld/map_control.h"
 #include "overworld/script.h"
 #include "pokemon/roamer.h"
@@ -13,7 +14,6 @@
 #include "save.h"
 #include "tile/block.h"
 #include "types.h"
-#include "vars.h"
 
 extern const u8 ow_script_trainerschool_wildbattle[];
 
@@ -113,6 +113,11 @@ int map_wildbattle_init(bdata current, u16 behaviour_previous_tile) {
             return true;
         }
     }
+    if (wild_battle_route_2_house_initialize_special_encounter()) {
+        wildbattle_start();
+        return true;
+    }
+
     DEBUG("Roamer not spawned or not allowed by repel\n");
     if (!wildbattle_initialize_by_habitat(habitat, pdf_type, true)) {
         wildbattle_increase_chance(habitat->frequency);
@@ -127,7 +132,7 @@ int map_wildbattle_init(bdata current, u16 behaviour_previous_tile) {
     //   wildbattle_start();
     // }
     wildbattle_start();
-    return 1;
+    return true;
 }
 
 bool wildbattle_initialize_by_habitat(const wild_pokemon_habitat *habitat, int pdf_type,

@@ -101,7 +101,19 @@ def get_habitat_index(rompath, symbolspath, projectpath):
         'type' : 'event',
         'description' : 'from Elise after the third badge',
     }]
-        
+
+    # Parse Route 2 House special encounters
+    offset = symbols['wild_pokemon_route_2_house_special_encounters']
+    datatype = project.model['wild_pokemon.list_with_pdf']
+    for encounter in datatype.from_data(rom, offset, project, [], []):
+        if not encounter['species']:
+            continue
+        habitats[encounter['species']].append({
+            'type' : 'route_2_house_special',
+            'level_min' : encounter['level'],
+            'level_max' : encounter['level'],
+        })
+
     return habitats
 
 

@@ -2,8 +2,8 @@
 	"data": {
 		"footer": "map_footer_9_indoor_layout_18",
 		"events": {
-			"person_cnt": 1,
-			"warp_cnt": 1,
+			"person_cnt": 2,
+			"warp_cnt": 2,
 			"trigger_cnt": 0,
 			"signpost_cnt": 8,
 			"persons": [
@@ -11,17 +11,17 @@
 					"target_index": 1,
 					"picture": 32,
 					"field_2": 0,
-					"x": 8,
-					"y": 3,
+					"x": "4",
+					"y": "3",
 					"level": 3,
-					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": "1",
 						"y": "1"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_clock_master",
+					"script": "ow_script_pokemon_spotter",
 					"flag": 0,
 					"field_D": 0,
 					"field_B": 0,
@@ -37,23 +37,60 @@
 						"script_std": 0,
 						"in_connection": "0"
 					}
+				},
+				{
+					"target_index": "2",
+					"picture": "35",
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "8",
+					"y": "5",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_pokemon_spotter_wife",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0,
+						"type": 0,
+						"move_tutor": 0
+					}
 				}
 			],
 			"warps": [
 				{
-					"x": 6,
-					"y": 7,
+					"x": "6",
+					"y": "8",
 					"level": 0,
 					"target_bank": 11,
 					"target_map": 1,
 					"target_warp_idx": 1
+				},
+				{
+					"x": "7",
+					"y": "2",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": "1",
+					"target_bank": "11"
 				}
 			],
 			"triggers": [],
 			"signposts": [
 				{
-					"x": 1,
-					"y": 6,
+					"x": "5",
+					"y": "0",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -75,8 +112,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 3,
-					"y": 2,
+					"x": "2",
+					"y": "0",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -98,8 +135,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 4,
-					"y": 2,
+					"x": "3",
+					"y": "0",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -121,8 +158,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 5,
-					"y": 2,
+					"x": "4",
+					"y": "0",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -144,8 +181,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 7,
-					"y": 2,
+					"x": "1",
+					"y": "0",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -167,8 +204,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 8,
-					"y": 5,
+					"x": "6",
+					"y": "0",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -190,8 +227,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 10,
-					"y": 7,
+					"x": "8",
+					"y": "0",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -213,8 +250,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 10,
-					"y": 2,
+					"x": "7",
+					"y": "0",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -242,7 +279,7 @@
 			"connection_cnt": 0,
 			"connections": []
 		},
-		"music": "MUS_VERTANIA_CITY_AND_MARMORIA_CITY_AND_SAFFRONIA_CITY",
+		"music": "MUS_LAUBDORF",
 		"footer_idx": 9,
 		"namespace": "MAP_ROUTE_2",
 		"flash_type": "FLASH_NONE",

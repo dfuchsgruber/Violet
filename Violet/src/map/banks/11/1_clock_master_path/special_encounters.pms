@@ -1,0 +1,51 @@
+{
+    "label": "wild_pokemon_route_2_house_special_encounters",
+    "data": [
+        {
+            "species": "POKEMON_PIKACHU",
+            "level": 5,
+            "probability": 20
+        },
+        {
+            "species": "POKEMON_EVOLI",
+            "level": 5,
+            "probability": 2
+        },
+        {
+            "species": "POKEMON_MAMPFAXO",
+            "level": 5,
+            "probability": 1
+        },
+        {
+            "species": "POKEMON_WONNEIRA",
+            "level": 5,
+            "probability": 3
+        },
+        {
+            "species": "POKEMON_FLUNKIFER",
+            "level": 5,
+            "probability": 1
+        },
+        {
+            "species": "POKEMON_GRAMOKLES",
+            "level": 5,
+            "probability": 5
+        },
+        {
+            "species": "POKEMON_TOGEPI",
+            "level": 5,
+            "probability": 4
+        },
+        {
+            "species": "POKEMON_GRIFFEL",
+            "level": 5,
+            "probability": 3
+        },
+        {
+            "species": "POKEMON_TEDDIURSA",
+            "level": 5,
+            "probability": 2
+        }
+    ],
+    "type": "wild_pokemon.list_with_pdf"
+}
