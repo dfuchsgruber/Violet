@@ -42,8 +42,17 @@
     - Wants Faun to join the cause, but Faun sees through Albus' ambitions
 - Goal: Install a government by people, but he should be the proxy champ to design that government
 
-## Blaise (partially)
-- see Blaise
+## Felix (??)
+
+## Blackbeard
+
+- Son of XYZ, former mayor / ruler of Haweiiland
+    - XYZ was expelled by Lucius / Faun / Albus
+- Blackbeard was born at sea
+    - Wants to rule the sea
+- His father was swallowed by the great storm that engulfes the entrance to Atlantea
+    - He therefore is scared to return there
+
 
 
 # Team Violet
@@ -140,7 +149,7 @@ Past:
 
 # Cloud (Side Quests)
 
-## Icarus -> really needed? Prof. Tann seems ideal for this role
+## Icarus -> really needed? Prof. Tann seems ideal for this role --> Scrap this character
 - "trained" by Mistral
 - tried more to imitate him and also become and explorer
 - maybe we can add a "catchphrase" that he copied from Mistral (oder other mannerisms?)

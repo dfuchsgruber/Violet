@@ -31,7 +31,7 @@
 					"value": {
 						"item": "0",
 						"species": "0",
-						"berry_tree_idx": "5",
+						"scalar": "5",
 						"type": "0",
 						"move_tutor": 0
 					}
@@ -60,7 +60,7 @@
 					"value": {
 						"item": "0",
 						"species": "0",
-						"berry_tree_idx": "0",
+						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
 					}
@@ -89,7 +89,7 @@
 					"value": {
 						"item": "ITEM_FAEHIGK_PFLASTER",
 						"species": "0",
-						"berry_tree_idx": "0",
+						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
 					}
@@ -118,7 +118,7 @@
 					"value": {
 						"item": "0",
 						"species": "POKEMON_KNILZ",
-						"berry_tree_idx": "0",
+						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
 					}
@@ -147,7 +147,7 @@
 					"value": {
 						"item": "0",
 						"species": "0",
-						"berry_tree_idx": "0",
+						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
 					}
@@ -176,7 +176,7 @@
 					"value": {
 						"item": "0",
 						"species": "0",
-						"berry_tree_idx": "18",
+						"scalar": "18",
 						"type": "0",
 						"move_tutor": 0
 					}

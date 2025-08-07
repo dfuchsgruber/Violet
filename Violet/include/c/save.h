@@ -13,6 +13,7 @@
 #include "overworld/npc.h"
 #include "color.h"
 #include "item/bag.h"
+#include "overworld/misc.h"
 
 #define NUM_SECTORS 32
 #define NUM_SECTORS_PER_SAVEFILE 14
@@ -188,7 +189,7 @@ typedef struct custom_memory {
     u8 flag_extension[0x80]; //additional 0x400 flags (0x900-0xD00)
     u8 pokedex_seen_extension[0x40]; //additional 512 flags
     u8 pokedex_caught_extension[0x40]; //additional 512 flags
-    u8 gp_freespace[0x100];
+    u8 unused_2[0x100];
     u16 var_extension[0x100]; //Additional 256 vars (0x5000-0x50FF)
     u8 dungeon_flags[0x10]; // mapheader dmapheader (part I)
     pid_t daycare_offspring_pid; // FRLG's desing does not allow for an entire word to be stored...
@@ -204,7 +205,7 @@ typedef struct custom_memory {
     rtc_timestamp daily_events_last_update;
     u32 daily_events_seed;
     rtc_timestamp fossil_gen_time;
-    u8 any_tmp_flags[16];
+    u8 unused[128 / 8];
     map_event_person pokeradar_person;
     
     //Dungeon Memory II

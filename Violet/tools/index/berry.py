@@ -48,7 +48,7 @@ def get_berry_index(rompath, symbolspath, projectpath):
             for person_idx, person in enumerate(header['events']['persons']):
                 try:
                     if person['script_std_and_in_connection']['script_std'] == 'PERSON_BERRY_TREE':
-                        tree_idx = str(person['value']['berry_tree_idx'])
+                        tree_idx = str(person['value']['scalar'])
                         flag_to_map[int(tree_idx, 0)].append((bank, map_idx, namespace))
                 except Exception as e:
                     print(f'Error in parsing item of person {person_idx} on map {bank},{map_idx}')

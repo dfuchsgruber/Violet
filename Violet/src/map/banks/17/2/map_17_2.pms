@@ -28,7 +28,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -59,7 +59,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -90,7 +90,7 @@
 					"value": {
 						"item": "ITEM_SONDERBONBON",
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -121,7 +121,7 @@
 					"value": {
 						"item": "ITEM_FUNKELSTEIN",
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -151,7 +151,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -181,7 +181,7 @@
 					"value": {
 						"item": "0",
 						"species": "0",
-						"berry_tree_idx": "0",
+						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
 					},
@@ -211,7 +211,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -240,7 +240,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -269,7 +269,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "40",
+						"scalar": "40",
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -298,7 +298,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "39",
+						"scalar": "39",
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -327,7 +327,7 @@
 					"value": {
 						"item": "0",
 						"species": "0",
-						"berry_tree_idx": "0",
+						"scalar": "0",
 						"type": "TYPE_KAEFER",
 						"move_tutor": 0
 					},
@@ -356,7 +356,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_WEBARAK",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -385,7 +385,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_SCHWALBOSS",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -414,7 +414,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_DARTIGNIS",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -443,7 +443,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_KRAMURX",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -472,7 +472,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_SCHWALBINI",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -501,7 +501,7 @@
 					"value": {
 						"item": "0",
 						"species": "POKEMON_SCHWALBOSS",
-						"berry_tree_idx": "0",
+						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
 					},
@@ -530,7 +530,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_WABLU",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -559,7 +559,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_KINDWURM",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -593,7 +593,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					}
@@ -622,7 +622,7 @@
 					"value": {
 						"item": "0",
 						"species": "POKEMON_WATTZAPF",
-						"berry_tree_idx": "0",
+						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
 					}
@@ -651,7 +651,7 @@
 					"value": {
 						"item": "0",
 						"species": "POKEMON_KNILZ",
-						"berry_tree_idx": "0",
+						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
 					}
@@ -680,7 +680,7 @@
 					"value": {
 						"item": "0",
 						"species": "POKEMON_WEBARAK",
-						"berry_tree_idx": "0",
+						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
 					}
@@ -709,7 +709,7 @@
 					"value": {
 						"item": "0",
 						"species": "POKEMON_PANEKON",
-						"berry_tree_idx": "0",
+						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
 					}
@@ -738,7 +738,7 @@
 					"value": {
 						"item": "0",
 						"species": "POKEMON_TROMBORK",
-						"berry_tree_idx": "0",
+						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
 					}
@@ -767,7 +767,7 @@
 					"value": {
 						"item": "0",
 						"species": "POKEMON_PARAGONI",
-						"berry_tree_idx": "0",
+						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
 					}
@@ -796,7 +796,7 @@
 					"value": {
 						"item": "0",
 						"species": "POKEMON_WEBARAK",
-						"berry_tree_idx": "0",
+						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
 					}
@@ -825,7 +825,7 @@
 					"value": {
 						"item": "0",
 						"species": "POKEMON_WATTZAPF",
-						"berry_tree_idx": "0",
+						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
 					}
@@ -854,7 +854,7 @@
 					"value": {
 						"item": "0",
 						"species": "POKEMON_ARIADOS",
-						"berry_tree_idx": "0",
+						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
 					}

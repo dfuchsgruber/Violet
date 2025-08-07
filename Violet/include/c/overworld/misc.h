@@ -5,6 +5,12 @@
 #include "save.h"
 #include "constants/overworld/misc.h"
 
+typedef struct {
+    u16 flag;
+    u8 despawn_rate; // 0-100
+    u8 field_2; // Unused
+} static_encounter_data_t;
+
 /**
  * "Regrows" (i.e. makes them reappear) the mushrooms and shells. That is, all flags are simply cleared.
  **/
@@ -30,5 +36,10 @@ u16 shell_get_stage(u16 shell_idx);
  * @return content of the trash can
  **/
 u16 trash_get_type(u16 trash_idx);
+
+extern const static_encounter_data_t aggressive_wild_encounters[];
+
+/** Resets the static encounter flags */
+void overworld_static_encounters_reset();
 
 #endif

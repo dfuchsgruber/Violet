@@ -30,7 +30,7 @@ u8 *flag_access_ext(u16 flag) {
         return csave.trash_flags + idx;
     } else if (flag < FLAG_DUNGEON_BASE + 128) { // 0x1000 - 0x1080 are mapped to dungeons
         int idx = (flag - FLAG_DUNGEON_BASE);
-        DEBUG("Get dungeon flag hard %d\n", flag - 0x1000);
+        DEBUG("Get dungeon flag hard %d\n", flag - FLAG_DUNGEON_BASE);
         return csave.dungeon_flags + idx;
     } else {
         ERROR("Invalid flag access: 0x%x\n", flag);

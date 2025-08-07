@@ -26,7 +26,7 @@
 					"value": {
 						"item": "ITEM_GIFTSTICH",
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},

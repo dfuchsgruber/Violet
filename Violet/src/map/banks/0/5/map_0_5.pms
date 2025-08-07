@@ -28,7 +28,7 @@
 					"value": {
 						"item": "ITEM_SUPERTRANK",
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -59,7 +59,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -90,7 +90,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -121,7 +121,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -152,7 +152,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -183,7 +183,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -214,7 +214,7 @@
 					"value": {
 						"item": "ITEM_FLUCHTSEIL",
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -245,7 +245,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -276,7 +276,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -307,7 +307,7 @@
 					"value": {
 						"item": "ITEM_BELEBER",
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -338,7 +338,7 @@
 					"value": {
 						"item": "ITEM_AP_PLUS",
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -369,7 +369,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -400,7 +400,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -431,7 +431,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -462,7 +462,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -493,7 +493,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -524,7 +524,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -555,7 +555,7 @@
 					"value": {
 						"item": "ITEM_HYPERTRANK",
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -586,7 +586,7 @@
 					"value": {
 						"item": "ITEM_TOP_BELEBER",
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -616,7 +616,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -645,7 +645,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_ONIX",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -674,7 +674,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_KLEINSTEIN",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -703,7 +703,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_ZUBAT",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -732,7 +732,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_STOLLUNIOR",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -761,7 +761,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_GOLBAT",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -790,7 +790,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_SANDAN",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -819,7 +819,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_DIGDA",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -848,7 +848,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_STOLLRAK",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -877,7 +877,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_VOLUMINAS",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -906,7 +906,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_NASGNET",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -935,7 +935,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_GEOROK",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -964,7 +964,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_STOLLUNIOR",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -993,7 +993,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_PUPPANCE",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1022,7 +1022,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "12",
+						"scalar": "12",
 						"type": 0,
 						"move_tutor": 0
 					},

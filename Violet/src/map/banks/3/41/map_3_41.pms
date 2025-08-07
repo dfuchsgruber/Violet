@@ -28,7 +28,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -59,7 +59,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -90,7 +90,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -121,7 +121,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -152,7 +152,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -183,7 +183,7 @@
 					"value": {
 						"item": "0",
 						"species": "0",
-						"berry_tree_idx": "0",
+						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
 					},
@@ -214,7 +214,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -245,7 +245,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -276,7 +276,7 @@
 					"value": {
 						"item": 0,
 						"species": "0",
-						"berry_tree_idx": "13",
+						"scalar": "13",
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -307,7 +307,7 @@
 					"value": {
 						"item": 0,
 						"species": "0",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -338,7 +338,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -369,7 +369,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -400,7 +400,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -431,7 +431,7 @@
 					"value": {
 						"item": "ITEM_BELEBER",
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -462,7 +462,7 @@
 					"value": {
 						"item": "0",
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -493,7 +493,7 @@
 					"value": {
 						"item": "ITEM_AETHER",
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -524,7 +524,7 @@
 					"value": {
 						"item": "ITEM_GEGENGIFT",
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -555,7 +555,7 @@
 					"value": {
 						"item": "ITEM_NESTBALL",
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -586,7 +586,7 @@
 					"value": {
 						"item": "ITEM_STERNENSTUECK",
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -617,7 +617,7 @@
 					"value": {
 						"item": "ITEM_TM32",
 						"species": "0",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -648,7 +648,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -679,7 +679,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -710,7 +710,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -741,7 +741,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -772,7 +772,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -803,7 +803,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -834,7 +834,7 @@
 					"value": {
 						"item": 0,
 						"species": "0",
-						"berry_tree_idx": "6",
+						"scalar": "6",
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -865,7 +865,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -896,7 +896,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -927,7 +927,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -958,7 +958,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -989,7 +989,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1020,7 +1020,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1051,7 +1051,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1082,7 +1082,7 @@
 					"value": {
 						"item": "ITEM_AP_PLUS",
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1113,7 +1113,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1144,7 +1144,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1175,7 +1175,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_FRIZELBLIZ",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1206,7 +1206,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_NACHTARA",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1237,7 +1237,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_KANIVANHA",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1268,7 +1268,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1299,7 +1299,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1330,7 +1330,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_KIRLIA",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1361,7 +1361,7 @@
 					"value": {
 						"item": "ITEM_ABRA_PUPPE",
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1392,7 +1392,7 @@
 					"value": {
 						"item": "0",
 						"species": "0",
-						"berry_tree_idx": "0",
+						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
 					},
@@ -1423,7 +1423,7 @@
 					"value": {
 						"item": "0",
 						"species": "0",
-						"berry_tree_idx": "0",
+						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
 					},
@@ -1454,7 +1454,7 @@
 					"value": {
 						"item": 0,
 						"species": "0",
-						"berry_tree_idx": "4",
+						"scalar": "4",
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1485,7 +1485,7 @@
 					"value": {
 						"item": 0,
 						"species": "0",
-						"berry_tree_idx": "6",
+						"scalar": "6",
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1516,7 +1516,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_ELEKID",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1546,7 +1546,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1576,7 +1576,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1606,7 +1606,7 @@
 					"value": {
 						"item": "0",
 						"species": "0",
-						"berry_tree_idx": "0",
+						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
 					},
@@ -1635,7 +1635,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "9",
+						"scalar": "9",
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1664,7 +1664,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "10",
+						"scalar": "10",
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1693,7 +1693,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "11",
+						"scalar": "11",
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1722,7 +1722,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "12",
+						"scalar": "12",
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1751,7 +1751,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "6",
+						"scalar": "6",
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1780,7 +1780,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "20",
+						"scalar": "20",
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1809,7 +1809,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "7",
+						"scalar": "7",
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1838,7 +1838,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "4",
+						"scalar": "4",
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1867,7 +1867,7 @@
 					"value": {
 						"item": 0,
 						"species": 0,
-						"berry_tree_idx": "1",
+						"scalar": "1",
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1896,7 +1896,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_BIBOR",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1925,7 +1925,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_BIBOR",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
@@ -1954,7 +1954,7 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_BIBOR",
-						"berry_tree_idx": 0,
+						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},

@@ -40,10 +40,10 @@ void daily_events_new_seed() {
 void daily_events_reset() {
     int i;
     for (i = 0; i < 16; i++) {
-        csave.any_tmp_flags[i] = 0;
         csave.dungeon_flags[i] = 0;
     }
     overworld_misc_intialize();
+    overworld_static_encounters_reset();
 }
 
 u32 dungeon_hash(int dungeon_id) {

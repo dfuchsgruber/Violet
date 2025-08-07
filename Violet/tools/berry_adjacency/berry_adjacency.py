@@ -33,7 +33,7 @@ if __name__ == '__main__':
             for person_idx, person in enumerate(header['events']['persons']):
                 try:
                     if person['script_std_and_in_connection']['script_std'] == 'PERSON_BERRY_TREE':
-                        tree_idx = int(str(person['value']['berry_tree_idx']), 0)
+                        tree_idx = int(str(person['value']['scalar']), 0)
                         x, y = string_to_int(person['x']), string_to_int(person['y'])
                         location_to_berry[(string_to_int(bank), string_to_int(map_idx), x, y)] = tree_idx
                         for dx, dy in itertools.product(range(-2, 2 + 1), repeat=2):

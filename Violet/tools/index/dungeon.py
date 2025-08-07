@@ -27,7 +27,7 @@ def get_dungeon_index(rompath, symbolspath, projectpath):
             for person_idx, person in enumerate(header['events']['persons']):
                 try:
                     if person['script_std_and_in_connection']['script_std'] in dungeon_locations_by_type:
-                        idx = str(person['value']['berry_tree_idx'])
+                        idx = str(person['value']['scalar'])
                         dungeon_locations_by_idx[idx].append({'type' : person['script_std_and_in_connection']['script_std'], 'bank' : bank, 'map_idx' : map_idx, 'person_idx' : person_idx, 'namespace' : namespace})
                         dungeon_locations_by_type[person['script_std_and_in_connection']['script_std']].append(idx)
                 except Exception as e:
