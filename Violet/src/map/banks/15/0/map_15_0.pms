@@ -2337,7 +2337,7 @@
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_SOUTH",
-					"displacement": "19",
+					"displacement": "35",
 					"bank": 3,
 					"field_A": 0,
 					"field_B": 0,

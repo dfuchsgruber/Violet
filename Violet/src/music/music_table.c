@@ -790,4 +790,7 @@ const song song_table[] = {
 	[MUS_CLOUDS_TRAINER_BATTLE] = {mus_clouds_trainer_battle, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	[MUS_CLOUDS_SILENT] = {mus_clouds_silent, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	[MUS_ROUTE_Y] = {mus_route_y, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	[MUS_CLOUDS_CAVE] = {mus_clouds_cave, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	[MUS_ROUTE_9] = {mus_route_9, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	[MUS_CLOUDS_WALTZ_2] = {mus_clouds_waltz2, SONG_TYPE_SONG, SONG_TYPE_SONG},
 };
