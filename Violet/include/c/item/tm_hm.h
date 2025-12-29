@@ -16,8 +16,9 @@
                                       (((item_idx) >= ITEM_TM51) && ((item_idx) <= ITEM_TM100)) ? ((item_idx) - ITEM_TM51 + 50) : \
                                       ( ((item_idx) >= ITEM_VM01) && ((item_idx) <= ITEM_VM08)) ? (ITEM_IDX_TO_HM_IDX(item_idx) + NUM_TMS ) : 0)
 #define ITEM_IDX_TO_HM_IDX(item_idx) ((item_idx) - ITEM_VM01)
-#define TM_IDX_TO_ITEM_IDX(tm_idx) ((((tm_idx) >= 0) && ((tm_idx) <= 50)) ? ((tm_idx) + ITEM_TM01) : \
-                                    (((tm_idx) >= 51) && ((tm_idx) <= 100)) ? ((tm_idx) + ITEM_TM51 - 50) : 0)
+#define TM_IDX_TO_ITEM_IDX(tm_idx) ((((tm_idx) >= 0) && ((tm_idx) < 50)) ? ((tm_idx) + ITEM_TM01) : \
+                                    (((tm_idx) >= 50) && ((tm_idx) < 100)) ? ((tm_idx) + ITEM_TM51 - 50) : 0)
+#define HM_IDX_TO_ITEM_IDX(hm_idx) (((hm_idx <= 7)) ? ((hm_idx) + ITEM_VM01) : 0)
 #define TM_HM_IDX_TO_HM_IDX(tm_hm_idx) ((tm_hm_idx) - NUM_TMS)
 
 #define NUM_TMS 100

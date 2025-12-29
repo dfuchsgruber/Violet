@@ -78,3 +78,11 @@ You can get to the map by loading the cheat file located at `Violet/sav/Debug Mo
 
 <!--- References -->
 [SoundFontRipper]: https://github.com/WodkaRHR/gba-mus-ripper
+
+## Changing Python Package Versions
+
+To change e.g. the pyagb dependency to a new commit, change the `version` field in `flake.nix` to the full commit SHA. Then replace the checksum (`sha256`) to a dummy by uncommenting the `# sha256 = pkgs.lib.fakeSha256;` line. Force a rebuild of the nix shell with:
+
+```bash
+nix develop --impure --extra-experimental-features nix-command --extra-experimental-features flakes
+```

@@ -3744,7 +3744,7 @@ const attack attacks[ATTACK_CNT] = {
 	// ATTACK_ZERTRUEMMERER
 	{
 		0x2b, //Effect-id (in table)
-		85, //Base Power
+		50, //Base Power
 		TYPE_KAMPF,
 		100, //Accuracy
 		15, //PP

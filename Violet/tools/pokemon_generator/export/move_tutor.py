@@ -1,5 +1,5 @@
 tutor_moves = [
-    'Fokusstoß',
+    '---',
     '---',
     '---',
     'Eiszahn',
