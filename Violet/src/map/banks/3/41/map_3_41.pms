@@ -5,7 +5,7 @@
 			"person_cnt": 64,
 			"warp_cnt": 5,
 			"trigger_cnt": 6,
-			"signpost_cnt": 8,
+			"signpost_cnt": 9,
 			"persons": [
 				{
 					"target_index": "1",
@@ -690,21 +690,21 @@
 					}
 				},
 				{
-					"target_index": "23",
-					"picture": 50,
+					"target_index": "0",
+					"picture": "95",
 					"field_2": 0,
-					"x": "1",
-					"y": "10",
+					"x": "19",
+					"y": "29",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_41_trainer_11",
-					"flag": "ROUTE_5_VIOLET_GRUNTS",
+					"script": "ow_script_cut_tree",
+					"flag": "0x18",
 					"field_D": 0,
 					"field_B": 0,
 					"value": {
@@ -817,7 +817,7 @@
 					"target_index": "27",
 					"picture": "183",
 					"field_2": 0,
-					"x": "7",
+					"x": "13",
 					"y": "68",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
@@ -1158,18 +1158,18 @@
 					"target_index": "38",
 					"picture": "238",
 					"field_2": 1,
-					"x": "46",
+					"x": "47",
 					"y": "61",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_RIGHT_AND_LEFT",
 					"behaviour_range": {
-						"x": "4",
+						"x": "3",
 						"y": "0"
 					},
 					"is_trainer": "1",
 					"alert_radius": "4",
-					"script": "ow_script_test",
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"script": "0",
+					"flag": "FLAG_ROUTE_3_ELECTRICE",
 					"field_D": 0,
 					"field_B": 0,
 					"value": {
@@ -1324,7 +1324,7 @@
 					"is_trainer": "1",
 					"alert_radius": "4",
 					"script": "0",
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_3",
+					"flag": "FLAG_ROUTE_3_KIRLIA",
 					"field_D": 0,
 					"field_B": 0,
 					"value": {
@@ -1468,7 +1468,7 @@
 					"target_index": "48",
 					"picture": "183",
 					"field_2": 0,
-					"x": "7",
+					"x": "13",
 					"y": "67",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
@@ -1515,7 +1515,7 @@
 					"field_B": 0,
 					"value": {
 						"item": 0,
-						"species": "POKEMON_ELEKID",
+						"species": "POKEMON_SCHLURP",
 						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
@@ -2013,7 +2013,7 @@
 					"y": "55",
 					"level": 0,
 					"field_5": 0,
-					"value": 13,
+					"value": "6",
 					"script": "ow_script_map_3_41_trigger_0",
 					"field_A": 0,
 					"field_B": 0,
@@ -2024,7 +2024,7 @@
 					"y": "54",
 					"level": 0,
 					"field_5": 0,
-					"value": 13,
+					"value": "6",
 					"script": "ow_script_map_3_41_trigger_0",
 					"field_A": 0,
 					"field_B": 0,
@@ -2035,7 +2035,7 @@
 					"y": "56",
 					"level": 0,
 					"field_5": 0,
-					"value": 13,
+					"value": "6",
 					"script": "ow_script_map_3_41_trigger_0",
 					"field_A": 0,
 					"field_B": 0,
@@ -2046,7 +2046,7 @@
 					"y": "57",
 					"level": 0,
 					"field_5": 0,
-					"value": 13,
+					"value": "6",
 					"script": "ow_script_map_3_41_trigger_0",
 					"field_A": 0,
 					"field_B": 0,
@@ -2058,7 +2058,7 @@
 					"level": 0,
 					"field_5": 0,
 					"var": "STORY_PROGRESS",
-					"value": "13",
+					"value": "6",
 					"field_A": 0,
 					"field_B": 0,
 					"script": "ow_script_map_3_41_trigger_0"
@@ -2069,7 +2069,7 @@
 					"level": 0,
 					"field_5": 0,
 					"var": "STORY_PROGRESS",
-					"value": "13",
+					"value": "6",
 					"field_A": 0,
 					"field_B": 0,
 					"script": "ow_script_map_3_41_trigger_0"
@@ -2238,7 +2238,7 @@
 					"flag": "0"
 				},
 				{
-					"x": "51",
+					"x": "52",
 					"y": "63",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
@@ -2259,6 +2259,29 @@
 						}
 					},
 					"flag": "0"
+				},
+				{
+					"x": "7",
+					"y": "33",
+					"level": 0,
+					"type": "SIGNPOST_HIDDEN_ITEM",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": "ITEM_BELEBER",
+							"flag": "39",
+							"amount": "1",
+							"chunk": "0"
+						},
+						"script": 0,
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
 				}
 			]
 		},

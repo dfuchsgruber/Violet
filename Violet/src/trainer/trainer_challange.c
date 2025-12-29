@@ -474,7 +474,7 @@ void trainer_play_encounter_music() {
         u16 music;
         switch(trainers[trainer_idx].trainerclass) {
             case TRAINERCLASS_TEAM_VIOLET: 
-                music = MUS_VIOLET_ENCOUNTER; break;
+                music = MUS_VIOLET_ENCOUNTER_2; break;
             case TRAINERCLASS_REVOLUTIONAER: 
                 music = MUS_REVOLUTION; break;
             case TRAINERCLASS_PIRATE: 

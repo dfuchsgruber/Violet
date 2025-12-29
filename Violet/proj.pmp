@@ -141,7 +141,7 @@
 				"MAP_ROUTE_1"
 			],
 			"66": [
-				"map_3_66",
+				"map_sonnaufeld_tanns_lab",
 				"src/map/banks/3/66/map_3_66.pms",
 				"MAP_TANNS_LABOR"
 			],
@@ -256,7 +256,7 @@
 				"MAP_KRAFTWERK"
 			],
 			"25": [
-				"map_r2_village",
+				"map_sonnaufeld",
 				"src/map/banks/3/25/map_r2_village.pms",
 				"MAP_TANNS_LABOR"
 			],
@@ -1371,6 +1371,11 @@
 				"map_sonnaufeld_clouds",
 				"src/map/banks/35/3/map_sonnaufeld_clouds.pms",
 				"MAP_TANNS_LABOR"
+			],
+			"4": [
+				"map_header_sonnaufeld_tanns_study",
+				"src/map/banks/35/4/map_header_sonnaufeld_tanns_lab_study.pms",
+				"MAP_TANNS_LABOR"
 			]
 		},
 		"36": {
@@ -2369,6 +2374,18 @@
 		"map_footer_anemonia_clouds_cave": [
 			190,
 			"src/map/banks/4/6/map_footer_anemonia_clouds_cave.pms"
+		],
+		"map_footer_sonnaufeld_inside_0": [
+			67,
+			"src/map/banks/35/1/map_footer_sonnaufeld_inside_0.pms"
+		],
+		"map_footer_sonnaufeld_inside_1": [
+			191,
+			"src/map/banks/35/2/map_footer_sonnaufeld_inside_1.pms"
+		],
+		"map_sonnaufeld_tanns_lab_study": [
+			192,
+			"src/map/banks/35/4/map_sonnaufeld_tanns_lab_study.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -2385,7 +2402,7 @@
 		"maptileset_clouds_canyon": "src/map/tileset/maptileset_clouds_canyon.pms",
 		"maptileset_clouds_pink": "src/map/tileset/maptileset_clouds_pink.pms",
 		"maptileset_clouds_blue": "src/map/tileset/maptileset_clouds_blue.pms",
-		"maptileset_inside": "src\\map\\tileset\\maptileset_inside.pms"
+		"maptileset_inside": "src/map/tileset/maptileset_inside.pms"
 	},
 	"tilesets_secondary": {
 		"maptileset45": "src/map/tileset/maptileset45.pms",
@@ -2472,9 +2489,10 @@
 		"maptileset_cloud_flowers": "src/map/tileset/maptileset_cloud_flowers.pms",
 		"maptileset_cloud_mines_outside": "src/map/tileset/maptileset_cloud_mines_outside.pms",
 		"maptileset_cave_mine": "src/map/tileset/maptileset_cave_mine.pms",
-		"maptileset_bluetenbach_inside": "src\\map\\tileset\\maptileset_bluetenbach_inside.pms",
-		"maptileset_anemonia_inside": "src\\map\\tileset\\maptileset_anemonia_inside.pms",
-		"maptileset_sonnaufeld_inside": "src\\map\\tileset\\maptileset_sonnaufeld_inside.pms"
+		"maptileset_bluetenbach_inside": "src/map/tileset/maptileset_bluetenbach_inside.pms",
+		"maptileset_anemonia_inside": "src/map/tileset/maptileset_anemonia_inside.pms",
+		"maptileset_sonnaufeld_inside": "src/map/tileset/maptileset_sonnaufeld_inside.pms",
+		"maptileset_tanns_lab": "src/map/tileset/maptileset_tanns_lab.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2482,7 +2500,7 @@
 		"gfx_maptileset_cloudsTiles": "asset/gfx/tileset/gfx_maptileset_clouds.png",
 		"gfx_maptileset_caveTiles": "asset/gfx/tileset/gfx_maptileset_cave.png",
 		"gfx_maptileset_cave_mossyTiles": "asset/gfx/tileset/gfx_maptileset_cave_mossy.png",
-		"gfx_maptileset_insideTiles": "asset\\gfx\\tileset\\gfx_maptileset_inside.png"
+		"gfx_maptileset_insideTiles": "asset/gfx/tileset/gfx_maptileset_inside.png"
 	},
 	"gfxs_secondary": {
 		"gfx_maptileset302795Tiles": "asset/gfx/tileset/gfx_maptileset302795.png",
@@ -2568,8 +2586,9 @@
 		"gfx_maptileset_clouds_flowersTiles": "asset/gfx/tileset/gfx_maptileset_clouds_flowers.png",
 		"gfx_maptileset_clouds_mine_outsideTiles": "asset/gfx/tileset/gfx_maptileset_clouds_mine_outside.png",
 		"gfx_maptileset_cave_mineTiles": "asset/gfx/tileset/gfx_maptileset_cave_mine.png",
-		"gfx_maptileset_bluetenbach_insideTiles": "asset\\gfx\\tileset\\gfx_maptileset_bluetenbach_inside.png",
-		"gfx_maptileset_anemonia_insideTiles": "asset\\gfx\\tileset\\gfx_maptileset_anemonia_inside.png",
-		"gfx_maptileset_sonnaufeld_insideTiles": "asset\\gfx\\tileset\\gfx_maptileset_sonnaufeld_inside.png"
+		"gfx_maptileset_bluetenbach_insideTiles": "asset/gfx/tileset/gfx_maptileset_bluetenbach_inside.png",
+		"gfx_maptileset_anemonia_insideTiles": "asset/gfx/tileset/gfx_maptileset_anemonia_inside.png",
+		"gfx_maptileset_sonnaufeld_insideTiles": "asset/gfx/tileset/gfx_maptileset_sonnaufeld_inside.png",
+		"gfx_maptileset_tanns_labTiles": "asset/gfx/tileset/gfx_maptileset_tanns_lab.png"
 	}
 }

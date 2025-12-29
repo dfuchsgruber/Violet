@@ -14,6 +14,7 @@
 #include "save.h"
 #include "tile/block.h"
 #include "types.h"
+#include "vars.h"
 
 extern const u8 ow_script_trainerschool_wildbattle[];
 
@@ -65,6 +66,7 @@ u8 map_wildbattle_init_seed(u32 triggers_wildbattle) {
 
 int map_wildbattle_init(bdata current, u16 behaviour_previous_tile) {
     DEBUG("map_wildbattle_init called with current %p, behaviour_previous_tile %d, wild disabled %d\n", current, behaviour_previous_tile, wild_pokemon_disabled);
+    DEBUG("story progress %d, flag tanns house %d\n", *var_access(STORY_PROGRESS), checkflag(ROUTE_2_TANN_AND_VIOLET_GRUNTS));
     if (wild_pokemon_disabled)
         return 0;
     // if (*var_access(TRAINERSCHOOL_PROGRESS) <= 5) return 0; // Can not encounter until >= 6

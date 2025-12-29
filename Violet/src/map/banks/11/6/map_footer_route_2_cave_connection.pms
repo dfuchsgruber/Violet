@@ -12119,5 +12119,6 @@
 		"field_1A": 0
 	},
 	"label": "map_footer_route_2_cave_connection",
-	"type": "footer"
+	"type": "footer",
+	"smart_shapes": {}
 }

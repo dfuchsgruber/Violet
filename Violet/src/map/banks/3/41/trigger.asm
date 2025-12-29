@@ -40,7 +40,7 @@ mov_face_left_and_exclam:
 
 ow_script_map_3_41_trigger_0:
 lockall
-playsong MUS_VIOLET_ENCOUNTER 0x0
+playsong MUS_VIOLET_ENCOUNTER_2 0x0
 sound 0x15
 applymovement 0xFF mov_face_right
 waitmovement 0
@@ -95,7 +95,7 @@ show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT emotion=MUGSHOT_ANGRY
     applymovement 37 mov_face_right
     waitmovement 0
 select:
-    setvar SONG_OVERRIDE MUS_VIOLET_ENCOUNTER
+    setvar SONG_OVERRIDE MUS_VIOLET_ENCOUNTER_2
     loadpointer 0 str_select
     callstd MSG_KEEPOPEN
     special SPECIAL_SELECT_HALF_PARTY
@@ -110,7 +110,7 @@ select:
 water_starter:
     setvar VAR_ALLY 0x161
     special SPECIAL_ALLY_BATTLE_SAVE_AND_SETUP_PARTY
-    loadpointer 0 str_violet_grunt
+    loadpointer 0 str_violet_grunt 
     setvar 0x8000 1
     special SPECIAL_NAME_SHOW
     trainerbattleallytwotrainers 0x8 0x164 0x161 44 TRAINER_BACKSPRITE_RIVAL 1 str_0x8a69df str_0x8a6a97 str_after_second_grunt ow_script_0x8a71a2
@@ -311,11 +311,11 @@ str_0x8a70a9:
 str_0x8a7027:
     .autostring 34 2 "Was hat dich das zu interessieren?\pDu brauchst nur zu wissen, dass wir den Zeitstein haben wollen.\pUnd deshalb wirst du uns sagen, wo wir ihn finden können, verstanden?"
 str_0x8a6f8a:
-    .autostring 34 2 "PLAYER!\pPerfektes Timing!\pDas Labor meines Vaters befindet sich hier und ich wollte ihm einen Besuch abstatten."
+    .autostring 34 2 "PLAYER!\pHab ich dich endlich eingeholt!\pZeit für einen Kampf zwischenDOTS"
 str_0x8a6f16:
     .autostring 34 2 "Was ist denn hier los?\pWer sind diese Leute und was haben Sie mit meinem Vater zu schaffen?"
 str_0x8a6bac:
-    .autostring 34 2 "Lasst den Professor in Ruhe!"
+    .autostring 34 2 "Lasst Professor Tann in Ruhe!"
 str_0x8a6b82:
     .autostring 34 2 "RIVAL! PLAYER!\pHilfe!"
 str_0x8a6bfa:
@@ -335,7 +335,7 @@ str_0x8a7502:
 str_0x8a74d8:
     .autostring 34 2 "Wir sollten uns vom Acker machen!"
 str_0x8a73a9:
-    .autostring 34 2 "RIVAL, PLAYER!\pIhr seid wirklich genau im richtigen Moment gekommen.\pDiese Typen sind wie aus dem Nichts aufgetaucht.\pTeam Violet nennen sie sich, glaube ich.\pIch habe schon ein paar mal von ihnen gehört, aber dass diese Schurken einmal vor meiner Tür stehen, hätte ich mir nicht träumen lassenDOTS\pAber wir sollten das nicht hier draußen besprechen, kommt doch herein in mein Labor!"
+    .autostring 34 2 "RIVAL, PLAYER!\pIhr seid wirklich genau im richtigen Moment gekommen.\pDiese Typen sind wie aus dem Nichts aufgetaucht.\pTeam Violet nennen sie sich, glaube ich.\pDass diese Punks mich einfach so überfallenDOTS\pAber das ganze trifft sich letzendlich doch ganz gut.\pIch wollte ich sowieso noch etwas fragenDOTS\pKommt doch mit in mein Labor in Sonnaufeld!"
 str_select:
     .autostring 34 2 "Wähle die Pokémon aus, mit denen du kämpfen möchtest."
 str_have_to_select:
@@ -376,7 +376,7 @@ str_0x8a7502:
 str_0x8a74d8:
     .autostring 34 2 "We should get away now, guys!"
 str_0x8a73a9:
-    .autostring 34 2 "RIVAL, PLAYER!\pYou really just came the very right moment!\pThese guys just came out of nothing.\pTeam Violet is what they call themselves, I think.\pI heard about them a few times, but I would have never imagined encountering them just before the door of my lab.\pBut we shouldn't discuss these affairs outside, right?\pCome in, guys!"
+    .autostring 34 2 "RIVAL, PLAYER!\pYou really came at the right moment.\pThese guys appeared out of nowhere.\pThey call themselves Team Violet, I think.\pI can't believe these punks just ambushed meDOTS\pBut in the end this works out quite well.\pI wanted to ask you something anywayDOTS\pCome with me to my lab in Sonnaufeld!"
 str_select:
     .autostring 34 2 "Select the Pokémon you want to battle with."
 str_have_to_select:

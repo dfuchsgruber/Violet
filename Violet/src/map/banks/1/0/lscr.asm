@@ -30,7 +30,7 @@ lsrc_setwmflag_and_movesprites:
 	end
 
 forest_burning_move_sprites:
-	playsong2 MUS_VIOLET_ENCOUNTER
+	playsong2 MUS_VIOLET_ENCOUNTER_2
 	setweather MAP_WEATHER_BURNING_TREES
 	movesprite2 42 0x2d 0x13
 	movesprite2 43 0x31 0x14

@@ -1,6 +1,6 @@
 {
 	"data": {
-		"footer": "map_footer_396_indoor_layout_11",
+		"footer": "map_footer_sonnaufeld_inside_0",
 		"events": {
 			"person_cnt": 4,
 			"warp_cnt": 1,
@@ -10,10 +10,10 @@
 				{
 					"target_index": "1",
 					"picture": "28",
-					"x": "8",
-					"y": "3",
+					"x": "11",
+					"y": "4",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -39,10 +39,10 @@
 				{
 					"target_index": "2",
 					"picture": "30",
-					"x": "9",
-					"y": "3",
+					"x": "10",
+					"y": "6",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -68,8 +68,8 @@
 				{
 					"target_index": "3",
 					"picture": "16",
-					"x": "7",
-					"y": "4",
+					"x": "4",
+					"y": "5",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_RIGHT_UP_LEFT",
 					"behaviour_range": {
@@ -97,8 +97,8 @@
 				{
 					"target_index": "4",
 					"picture": "238",
-					"x": "10",
-					"y": "4",
+					"x": "6",
+					"y": "5",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_LEFT_DOWN_RIGHT_UP",
 					"behaviour_range": {
@@ -126,8 +126,8 @@
 			],
 			"warps": [
 				{
-					"x": "6",
-					"y": "7",
+					"x": "8",
+					"y": "9",
 					"level": 0,
 					"target_warp_idx": "2",
 					"target_map": "25",
@@ -143,7 +143,7 @@
 			"connections": []
 		},
 		"music": "MUS_LAUBDORF",
-		"footer_idx": 396,
+		"footer_idx": 67,
 		"namespace": "MAP_TANNS_LABOR",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_INSIDE",

@@ -12,7 +12,7 @@
 
 ow_script_forest_cemetery_rin_event:
     lockall
-    playsong MUS_VIOLET_ENCOUNTER 0
+    playsong MUS_VIOLET_ENCOUNTER_2 0
     loadpointer 0 str_teah_0
     show_mugshot MUGSHOT_TEAH alignment=MUGSHOT_RIGHT message_type=MSG_KEEPOPEN mask_name=1
     loadpointer 0 str_rin_0

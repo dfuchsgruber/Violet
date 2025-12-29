@@ -18,8 +18,8 @@
 
 ow_script_silvania_forest_rin_0:
     lockall
-    playsong MUS_VIOLET_ENCOUNTER 0
-    playsong2 MUS_VIOLET_ENCOUNTER
+    playsong MUS_VIOLET_ENCOUNTER_2 0
+    playsong2 MUS_VIOLET_ENCOUNTER_2
     special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
     applymovement 0x7F mov_2r
     waitmovement 0

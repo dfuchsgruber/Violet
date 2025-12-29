@@ -20,9 +20,9 @@ ow_script_sonnaufeld_inside_0_person_2:
 
 .ifdef LANG_GER
 str_0:
-    .autostring 34 2 "Es war wirklich keine Idee, unserem Sohn dieses Menki zu schenken.\pJetzt toben die beiden den ganzen Tag im Haus herumDOTS"
+    .autostring 34 2 "Es war wirklich keine tolle Idee, unserem Sohn dieses Menki zu schenken.\pJetzt toben die beiden den ganzen Tag im Haus herum und machen alles schmutzig!"
 str_1:
-    .autostring 34 2 "Meine Frau ist manchmal eine echte Spaßbremse.\pJetzt hat sie etwas daran auszusetzten, dass unser Junge mit seinem Pokémon spielt.\pIch begreife das wirklich nichtDOTS"
+    .autostring 34 2 "Meine Frau ist Floristin und bringt oft Sonnenblumen mit nach Hause.\pManchmal macht sie sich sogar auf den weiten Weg nach Kranzdorf, um sie dort gegen ein paar Beeren oder Mulch einzutauschen."
 str_2:
     .autostring 34 2 "Hui!\nHui! Juhu!\pDu kriegst mich nicht, Menki!"
 .elseif LANG_EN

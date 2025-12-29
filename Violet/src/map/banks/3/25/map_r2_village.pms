@@ -39,8 +39,8 @@
 				{
 					"target_index": "2",
 					"picture": "185",
-					"x": "15",
-					"y": "8",
+					"x": "14",
+					"y": "6",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -156,7 +156,7 @@
 					"target_index": "6",
 					"picture": "56",
 					"x": "14",
-					"y": "10",
+					"y": "12",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -242,10 +242,10 @@
 				{
 					"target_index": "9",
 					"picture": "27",
-					"x": "22",
-					"y": "23",
+					"x": "21",
+					"y": "19",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_WANDER_UP_AND_DOWN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -561,8 +561,8 @@
 				{
 					"target_index": "20",
 					"picture": "238",
-					"x": "13",
-					"y": "5",
+					"x": "17",
+					"y": "7",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -677,8 +677,8 @@
 				{
 					"target_index": "24",
 					"picture": "96",
-					"x": "15",
-					"y": "9",
+					"x": "14",
+					"y": "8",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -1086,6 +1086,6 @@
 		"level": "0",
 		"battle_style": "0"
 	},
-	"label": "map_r2_village",
+	"label": "map_sonnaufeld",
 	"type": "header"
 }

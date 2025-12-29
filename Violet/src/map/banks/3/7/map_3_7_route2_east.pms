@@ -4,7 +4,7 @@
 		"events": {
 			"person_cnt": 37,
 			"warp_cnt": 9,
-			"trigger_cnt": 3,
+			"trigger_cnt": 0,
 			"signpost_cnt": 1,
 			"persons": [
 				{
@@ -352,7 +352,7 @@
 					"target_index": 12,
 					"picture": 92,
 					"field_2": 0,
-					"x": "70",
+					"x": "69",
 					"y": "34",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
@@ -383,8 +383,8 @@
 					"target_index": 13,
 					"picture": 92,
 					"field_2": 0,
-					"x": 45,
-					"y": 21,
+					"x": "43",
+					"y": "20",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -1030,7 +1030,7 @@
 					},
 					"argument": 0,
 					"x": "58",
-					"y": "32",
+					"y": "30",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -1128,7 +1128,7 @@
 				},
 				{
 					"x": "58",
-					"y": "32",
+					"y": "30",
 					"level": 0,
 					"target_bank": 11,
 					"target_map": 2,
@@ -1183,41 +1183,7 @@
 					"target_bank": "11"
 				}
 			],
-			"triggers": [
-				{
-					"x": "16",
-					"y": "21",
-					"level": 0,
-					"field_5": 0,
-					"value": 12,
-					"script": "ow_script_route_2_felix",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"x": 16,
-					"y": 22,
-					"level": 0,
-					"field_5": 0,
-					"value": 12,
-					"script": "ow_script_route_2_felix",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"x": 16,
-					"y": 23,
-					"level": 0,
-					"field_5": 0,
-					"value": 12,
-					"script": "ow_script_route_2_felix",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				}
-			],
+			"triggers": [],
 			"signposts": [
 				{
 					"x": 79,
@@ -1266,7 +1232,7 @@
 				}
 			]
 		},
-		"music": "MUS_ROUTE_24_25",
+		"music": "MUS_ROUTE_9",
 		"footer_idx": 5,
 		"namespace": "MAP_ROUTE_2",
 		"flash_type": "FLASH_NONE",
