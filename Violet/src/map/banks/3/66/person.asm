@@ -128,7 +128,7 @@ str_0x8aac71:
 str_0x8ab119:
 	.autostring 35 2 "Eine Sache noch.\pJe öfter du den Wundertausch benutzt, desto höher steigt dein Level.\pMit einem hohen Wundertausch-Level kannst du mit anderen erfahrenen Trainern tauschen, sodass du häufiger seltene Pokémon mit besonderen Fähigkeiten erhältst.\pBesonders ambitionierte Trainer sollten meine App also sehr häufig benutzen!"
 str_0x8a7951:
-    .autostring 35 2 "Hallo PLAYER!\pWie geht es dir?\pSammelst du auch fleißig Daten für den Pokédex?"
+    .autostring 35 2 "Hallo PLAYER!\pWie geht es dir?\pSammelst du Daten für den Pokédex?\pVergiss nicht, die Wundertausch-App zu benutzen, um verschiedene Pokémon zu registrieren."
 str_expedition2:
     .autostring 34 2 "Professor Tann will dich sehen."
 str_elise_0:
@@ -148,17 +148,5 @@ str_elise_6:
 str_elise_7:
 	.autostring 34 2 "Und lass dir nicht zu viel Zeit, PLAYER, ja?\pImmerhin wird es sich lohnen, das verspreche ich dir."
 .elseif LANG_EN
-
-
-str_0x8aac71:
-	.autostring 34 2 "Oh PLAYER, I almost forgot!\pI also have a present for you!\pSome while ago I developed a system that enables trainers from arround the world to trade Pokémon with one another.\pI called the system Wondertrade and to be quite honest, I think it's one of my better ideas.\pYou offer one of your Pokémon for trading.\pThen it will be sent to a random trainer somewhere else and in return you get one of their Pokémon.\pThe most exciting part about it all is that you can never quite know what kind of Pokémon you will be given.\pIf you make use of this system, it will get a lot easier to collect data for the Pokédex.\pI will just install the Wondertrade-App on your Poképad!"
-	str_0x8aa801:
-    .autostring 35 2 "Elise installed the Wondertrade-App on the Poképad."
-str_0x8ab119:
-	.autostring 34 2 "Just one thing.\pThe more you use the Wondertrade, the higher your level will go.\pWith a high Wondertrade-Level you will be more likely to trade with other experienced trainers and receive more rare and skilled Pokémon.\pIsn't that a great incentive for more ambitious trainers to use the Wondertrade-System very frequently?"
-str_0x8a7951:
-    .autostring 35 2 "Hello PLAYER!\pHow are you?\pAre you collecting data for the Pokédex?"
-str_expedition2:
-    .autostring 34 2 "Professor Fig want's to see you.\pHe will be going on an expedition soon!"
 
 .endif

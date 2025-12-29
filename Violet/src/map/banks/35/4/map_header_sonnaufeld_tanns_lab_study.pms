@@ -5,7 +5,7 @@
 			"person_cnt": 1,
 			"warp_cnt": 1,
 			"trigger_cnt": 0,
-			"signpost_cnt": 0,
+			"signpost_cnt": 7,
 			"persons": [
 				{
 					"target_index": "1",
@@ -48,7 +48,169 @@
 				}
 			],
 			"triggers": [],
-			"signposts": []
+			"signposts": [
+				{
+					"x": "3",
+					"y": "4",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_notes_2",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "4",
+					"y": "4",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_equipment_0",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "5",
+					"y": "4",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_equipment_0",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "0",
+					"y": "5",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_fossil_0",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "8",
+					"y": "5",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_fossil_1",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "1",
+					"y": "5",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_fossil_0",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "7",
+					"y": "5",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_fossil_1",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				}
+			]
 		},
 		"levelscripts": 0,
 		"connections": {

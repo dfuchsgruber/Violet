@@ -5,7 +5,7 @@
 			"person_cnt": 6,
 			"warp_cnt": 2,
 			"trigger_cnt": 1,
-			"signpost_cnt": 0,
+			"signpost_cnt": 18,
 			"persons": [
 				{
 					"is_trainer": "0",
@@ -220,7 +220,422 @@
 					"var": "STORY_PROGRESS"
 				}
 			],
-			"signposts": []
+			"signposts": [
+				{
+					"x": "9",
+					"y": "9",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_box",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "4",
+					"y": "12",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_box",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "5",
+					"y": "12",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_box",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "0",
+					"y": "11",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_machine_0",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "1",
+					"y": "11",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_machine_0",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "0",
+					"y": "4",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_computer_0",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "5",
+					"y": "2",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_whiteboard",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "6",
+					"y": "3",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_notes_1",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "7",
+					"y": "3",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_equipment_0\n",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "8",
+					"y": "3",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_equipment_0\n",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "9",
+					"y": "2",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_fridge",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "12",
+					"y": "3",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_computer_1",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "11",
+					"y": "3",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_computer_1",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "13",
+					"y": "3",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_computer_1",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "11",
+					"y": "9",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_machine_1",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "12",
+					"y": "9",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_machine_1",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "13",
+					"y": "9",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_machine_1",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				},
+				{
+					"x": "5",
+					"y": "8",
+					"level": 0,
+					"type": 0,
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_tanns_lab_sign_notes_0",
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
+						}
+					}
+				}
+			]
 		},
 		"levelscripts": "lscr_0x718dc8",
 		"connections": {

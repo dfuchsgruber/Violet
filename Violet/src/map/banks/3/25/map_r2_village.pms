@@ -1024,7 +1024,7 @@
 					"y": "7",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
-					"flag": "ROUTE_2_TANN_AND_VIOLET_GRUNTS | 0x8000",
+					"flag": "ROUTE_2_TANN_AND_VIOLET_GRUNTS",
 					"value": {
 						"item": {
 							"item": 0,

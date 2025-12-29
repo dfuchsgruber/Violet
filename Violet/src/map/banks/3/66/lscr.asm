@@ -15,18 +15,21 @@
 .global lscr_0x718dc8
 
 lscr_0x718dc8:
-	.byte 0x2
-	.word lscr_0x71a5df
 	.byte LEVELSCRIPT_TYPE_ON_TRANSITION
     .word script_set_healingplace
+	.byte 0x2
+	.word lscr_0x71a5df
 	.byte 0x0
 
 
 script_set_healingplace:
 	// sethealingplace HEALINGPLACE_TANNS_LAB
     setworldmapflag WM_TANNS_LAB
-end
-
+    checkflag WONDERTRADE
+    gotoif NOT_EQUAL not_move_elise
+    movesprite2 2 1 4
+not_move_elise:
+    end
 
 .align 4
 .global lscr_0x71a5df
