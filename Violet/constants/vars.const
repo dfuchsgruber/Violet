@@ -1,6 +1,7 @@
 {
 	"type": "dict",
 	"values": {
+		"VAR_TMP_BASE" : 16384,
 		"AKTANIA_FLASHBACK_LSCR_PLAYER_INVISIBLE": 16460,
 		"INTRO": 16464,
 		"STORY_PROGRESS": 16465,

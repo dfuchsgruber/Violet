@@ -27,6 +27,8 @@ ow_script_route_3_house_inside_blendpuder:
     copyvarifnotzero 0x8000 ITEM_BLENDPUDER
     copyvarifnotzero 0x8001 1
     callstd ITEM_OBTAIN
+    lock
+    faceplayer
     compare LASTRESULT 0x0
     gotoif EQUAL ow_script_no_room_for_giveitem
     loadpointer 0x0 str_after_receiving_powder
@@ -43,9 +45,9 @@ after_receiving_powder:
     
 .ifdef LANG_GER
 str_0:
-    .autostring 34 2 "Ich frage mich, warum wir überhaupt noch zusammen essen, wenn dann trotzdem jeder nur Augen für den Fernseher hatDOTS"
+    .autostring 34 2 "Meine Frau verbringt beinahe ihre gesamte Zeit vor dem Computer und unsere Tochter streunert den lieben langen Tag im Gras herum.\pIch weiß dann einfach nichts mehr mit mir anzufangenDOTS"
 str_1:
-    .autostring 34 2 "Pssst!\nSei bitte leise!\pMeine Lieblingsserie fängt gleich an.\pDas darf ich nicht verpassen!"
+    .autostring 34 2 "Entschuldige bitte?\pSiehst du nicht, dass ich hier beschäftigt bin?"
 str_intro_powder:
     .autostring 34 2 "Schau mal, was mein Pokémon heute Morgen aufgesammelt hat.\pIch weiß nicht so wirklich, was ich damit anfangen soll, also kannst du es haben."
 str_after_receiving_powder:

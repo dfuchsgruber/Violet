@@ -93,13 +93,13 @@ static bool drop_type_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     u32 p[16]; u16 items[16];
     size_t p_size = 0;
     if (battlers[battler_idx].type1 == TYPE_WASSER || battlers[battler_idx].type2 == TYPE_WASSER) {
-        P_ARRAY_ADD_ITEM(p, items, ITEM_PERLE, 50, p_size);
-        P_ARRAY_ADD_ITEM(p, items, ITEM_HERZSCHUPPE, 25, p_size);
+        P_ARRAY_ADD_ITEM(p, items, ITEM_PERLE, 73, p_size);
+        P_ARRAY_ADD_ITEM(p, items, ITEM_HERZSCHUPPE, 2, p_size);
         P_ARRAY_ADD_ITEM(p, items, ITEM_RIESENPERLE, 5, p_size);
     }
     if (battlers[battler_idx].type1 == TYPE_PFLANZE || battlers[battler_idx].type2 == TYPE_PFLANZE ||
         battlers[battler_idx].type1 == TYPE_KAEFER || battlers[battler_idx].type2 == TYPE_KAEFER) {
-        P_ARRAY_ADD_ITEM(p, items, ITEM_MINIPILZ, 70, p_size);
+        P_ARRAY_ADD_ITEM(p, items, ITEM_MINIPILZ, 90, p_size);
         P_ARRAY_ADD_ITEM(p, items, ITEM_RIESENPILZ, 10, p_size);
     }
     if (battlers[battler_idx].type1 == TYPE_GESTEIN || battlers[battler_idx].type2 == TYPE_GESTEIN ||

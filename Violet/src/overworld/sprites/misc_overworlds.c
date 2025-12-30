@@ -389,7 +389,7 @@ u16 special_shell_get_stage() {
     return stage;
 }
 
-static const u32 shell_rates[] = {[SHELL_TYPE_HEART_SCALE] = 1, [SHELL_TYPE_PEARL] = 8, [SHELL_TYPE_LARGE_PEARL] = 2, [SHELL_TYPE_ENCOUNTER] = 15};
+static const u32 shell_rates[] = {[SHELL_TYPE_HEART_SCALE] = 1, [SHELL_TYPE_PEARL] = 8, [SHELL_TYPE_LARGE_PEARL] = 1, [SHELL_TYPE_ENCOUNTER] = 15};
 static const u32 species_shell_rates[] = {[SHELL_TYPE_SHOAL_SALT] = 3, [SHELL_TYPE_SHOAL_SHELL] = 3, [SHELL_TYPE_ENCOUNTER] = 1};
 
 u16 shell_get_stage(u16 shell_idx) {

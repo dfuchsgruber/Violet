@@ -3698,7 +3698,7 @@ const item items[] = {
 		//ITEM_PERLE
 		LANGDEP(PSTRING("Perle"), PSTRING("Pearl")),
 		0x6a, //index
-		1400, //price
+		800, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_perle_description,
@@ -3714,7 +3714,7 @@ const item items[] = {
 		//ITEM_RIESENPERLE
 		LANGDEP(PSTRING("Riesenperle"), PSTRING("Big Pearl")),
 		0x6b, //index
-		7500, //price
+		5000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_riesenperle_description,
