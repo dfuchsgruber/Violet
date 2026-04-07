@@ -1955,16 +1955,16 @@
 					"target_warp_idx": 0
 				},
 				{
-					"x": 11,
-					"y": 70,
+					"x": "16",
+					"y": "74",
 					"level": 0,
 					"target_bank": 15,
 					"target_map": 0,
 					"target_warp_idx": 4
 				},
 				{
-					"x": 11,
-					"y": 71,
+					"x": "17",
+					"y": "74",
 					"level": 0,
 					"target_bank": 15,
 					"target_map": 0,
@@ -2027,8 +2027,8 @@
 					"target_warp_idx": 10
 				},
 				{
-					"x": 11,
-					"y": 69,
+					"x": "16",
+					"y": "74",
 					"level": 0,
 					"target_bank": 15,
 					"target_map": 0,

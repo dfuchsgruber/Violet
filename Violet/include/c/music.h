@@ -252,6 +252,7 @@ extern const unsigned char mus_bluetenbach_v2[];
 extern const unsigned char mus_clouds_cave[];
 extern const unsigned char mus_route_9[];
 extern const unsigned char mus_clouds_waltz2[];
+extern const unsigned char mus_route_10[];
 
 #endif	/* MUSIC_H */
 

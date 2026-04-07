@@ -1,0 +1,254 @@
+{
+    "label": "pokemon_builds",
+    "type": null,
+    "value": {
+        "POKEMON_BISAFLOR": [
+            {
+                "evs": {
+                    "STAT_SPEED": 252,
+                    "STAT_SP_ATTACK": 252,
+                    "STAT_HP": 4
+                },
+                "hidden_ability": true,
+                "ability": 0,
+                "nature": "MAESSIG",
+                "held_item": "ITEM_SONNEN_EI",
+                "attacks": [
+                    "ATTACK_SOLARSTRAHL",
+                    "ATTACK_MATSCHBOMBE",
+                    "ATTACK_BLITZ",
+                    "ATTACK_KRAFTRESERVE"
+                ],
+                "hidden_power_type": "TYPE_FEUER",
+                "rating" : 7
+            },
+            {
+                "evs": {
+                    "STAT_HP": 252,
+                    "STAT_ATTACK": 252,
+                    "STAT_DEFENSE": 4
+                },
+                "hidden_ability": false,
+                "ability": 0,
+                "nature": "SACHT",
+                "held_item": "ITEM_GIFTSCHLEIM",
+                "attacks": [
+                    "ATTACK_FLUCH",
+                    "ATTACK_ERDBEBEN",
+                    "ATTACK_SAMENBOMBEN",
+                    "ATTACK_SYNTHESE"
+                ],
+                "hidden_power_type": "TYPE_FEUER",
+                "rating" : 5
+            },
+            {
+                "evs": {
+                    "STAT_HP": 252,
+                    "STAT_SPECIAL_DEFENSE": 252,
+                    "STAT_DEFENSE": 4
+                },
+                "hidden_ability": false,
+                "ability": 0,
+                "nature": "SACHT",
+                "held_item": "ITEM_GIFTSCHLEIM",
+                "attacks": [
+                    "ATTACK_DOPPELTEAM",
+                    "ATTACK_SYNTHESE",
+                    "ATTACK_EGELSAMEN",
+                    "ATTACK_TOXIN"
+                ],
+                "hidden_power_type": "TYPE_FEUER",
+                "rating" : 4
+            },
+            {
+                "evs": {
+                    "STAT_HP": 252,
+                    "STAT_SPECIAL_ATTACK": 252,
+                    "STAT_DEFENSE": 4
+                },
+                "hidden_ability": false,
+                "ability": 0,
+                "nature": "MAESSIG",
+                "held_item": "ITEM_BISAFLORNIT",
+                "attacks": [
+                    "ATTACK_GIGASAUGER",
+                    "ATTACK_MATSCHBOMBE",
+                    "ATTACK_SCHUTZSCHILD",
+                    "ATTACK_TOXIN"
+                ],
+                "hidden_power_type": "TYPE_FEUER",
+                "rating" : 8
+            }
+        ]
+    },
+    "POKEMON_GLURAK" : [
+        {
+            "evs": {
+                "STAT_SPECIAL_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "SCHEU",
+            "held_item": "ITEM_GROSSLINSE",
+            "attacks": [
+                "ATTACK_FEUERSTURM",
+                "ATTACK_FOKUSSTOSS",
+                "ATTACK_WINDSCHNITT",
+                "ATTACK_KRAFTRESERVE"
+            ],
+            "hidden_power_type": "TYPE_GESTEIN",
+            "rating" : 6
+        },{
+            "evs": {
+                "STAT_SPECIAL_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": true,
+            "ability": 0,
+            "nature": "SCHEU",
+            "held_item": "ITEM_SALKABEERE",
+            "attacks": [
+                "ATTACK_AUSDAUER",
+                "ATTACK_FOKUSSTOSS",
+                "ATTACK_FEUERSCHLAG",
+                "ATTACK_ERDBEBEN"
+            ],
+            "hidden_power_type": "TYPE_GESTEIN",
+            "rating" : 6
+        },
+        {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_LEBEN_ORB",
+            "attacks": [
+                "ATTACK_DRACHENTANZ",
+                "ATTACK_AERO_ASS",
+                "ATTACK_FLAMMENBLITZ",
+                "ATTACK_ZERSCHNEIDER"
+            ],
+            "hidden_power_type": "TYPE_GESTEIN",
+            "rating" : 7
+        },{
+            "evs": {
+                "STAT_HP": 252,
+                "STAT_SPECIAL_DEFENSE": 252,
+                "STAT_DEFENSE": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "STILL",
+            "held_item": "ITEM_UEBERRESTE",
+            "attacks": [
+                "ATTACK_IRRLICHT",
+                "ATTACK_FLAMMENWURF",
+                "ATTACK_FEUERWIRBEL",
+                "ATTACK_SCHUTZSCHILD"
+            ],
+            "hidden_power_type": "TYPE_GESTEIN",
+            "rating" : 3
+        },
+        {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_GLURAKNIT",
+            "attacks": [
+                "ATTACK_DRACHENTANZ",
+                "ATTACK_DRACHENKLAUE",
+                "ATTACK_FLAMMENBLITZ",
+                "ATTACK_ZERSCHNEIDER"
+            ],
+            "hidden_power_type": "TYPE_GESTEIN",
+            "rating" : 8
+        }
+    ],
+    "POKEMON_TURTOK" : [
+        {
+            "evs": {
+                "STAT_SPECIAL_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "MAESSIG",
+            "held_item": "ITEM_TURTOKNIT",
+            "attacks": [
+                "ATTACK_HYDROPUMPE",
+                "ATTACK_EISSTRAHL",
+                "ATTACK_FINSTERAURA",
+                "Drachenpuls"
+            ],
+            "hidden_power_type": "TYPE_GESTEIN",
+            "rating" : 8
+        },{
+            "evs": {
+                "STAT_SPECIAL_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "MAESSIG",
+            "held_item": "ITEM_UEBERRESTE",
+            "attacks": [
+                "ATTACK_ERHOLUNG",
+                "ATTACK_EISSTURM",
+                "ATTACK_SURFER",
+                "ATTACK_TOXIN"
+            ],
+            "hidden_power_type": "TYPE_GESTEIN",
+            "rating" : 6
+        },{
+            "evs": {
+                "STAT_HP": 252,
+                "STAT_DEFENSE": 252,
+                "STAT_ATTACK": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "PFIFFIG",
+            "held_item": "ITEM_UEBERRESTE",
+            "attacks": [
+                "ATTACK_KONTER",
+                "ATTACK_GEOFISSUR",
+                "ATTACK_NASSSCHWEIF",
+                "ATTACK_EISHIEB"
+            ],
+            "hidden_power_type": "TYPE_GESTEIN",
+            "rating" : 3
+        },{
+            "evs": {
+                "STAT_HP": 252,
+                "STAT_DEFENSE": 4,
+                "STAT_ATTACK": 252
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_UEBERRESTE",
+            "attacks": [
+                "ATTACK_FLUCH",
+                "ATTACK_ERDBEBEN",
+                "ATTACK_NASSSCHWEIF",
+                "ATTACK_EISHIEB"
+            ],
+            "hidden_power_type": "TYPE_GESTEIN",
+            "rating" : 7
+        }
+    ]
+}

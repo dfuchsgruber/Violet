@@ -158,7 +158,7 @@
 			"connection_cnt": 0,
 			"connections": []
 		},
-		"music": "MUS_VERTANIA_CITY_AND_MARMORIA_CITY_AND_SAFFRONIA_CITY",
+		"music": "MUS_LAUBDORF",
 		"footer_idx": 7,
 		"namespace": "MAP_ROUTE_4",
 		"flash_type": "FLASH_NONE",

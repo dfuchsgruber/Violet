@@ -108,7 +108,7 @@ const u8 trainer_class_names[TRAINERCLASS_CNT][13] = {
 	LANGDEP(PSTRING("PKMN-Ranger"), PSTRING("PKMN Ranger")),
 	LANGDEP(PSTRING("Aromalady"), PSTRING("Aroma Lady")),
 	LANGDEP(PSTRING("Ruinenmaniac"), PSTRING("Ruin Maniac")),
-	LANGDEP(PSTRING("Lady"), PSTRING("Lady")),
+	LANGDEP(PSTRING("Farmer"), PSTRING("Rancher")),
 	LANGDEP(PSTRING("Malerin"), PSTRING("Painter")),
 };
 

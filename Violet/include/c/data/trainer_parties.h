@@ -1,6 +1,7 @@
 #ifndef H_DATA_TRAINER
 #define H_DATA_TRAINER
 
+#include "constants/pokemon_stat_names.h"
 #include "types.h"
 #include "constants/items.h"
 #include "constants/attacks.h"
@@ -225,17 +226,17 @@ const trainer_pokemon trainer_party_x28[] = {
 };
 
 const trainer_pokemon trainer_party_x29[] = {
-	{.held_item = ITEM_TSITRUBEERE, .level = 15, .species = POKEMON_BISASAM},
+	{.held_item = ITEM_SINELBEERE, .level = 15, .species = POKEMON_KNILZ},
 	{.held_item = ITEM_TSITRUBEERE, .level = 15, .species = POKEMON_SEEKID},
 };
 
 const trainer_pokemon trainer_party_x2a[] = {
-	{.held_item = ITEM_TSITRUBEERE, .level = 14, .species = POKEMON_GLUMANDA},
+	{.held_item = ITEM_SINELBEERE, .level = 14, .species = POKEMON_HUNDUSTER},
 	{.held_item = ITEM_TSITRUBEERE, .level = 15, .species = POKEMON_LOCKSCHAL},
 };
 
 const trainer_pokemon trainer_party_x2b[] = {
-	{.held_item = ITEM_TSITRUBEERE, .level = 14, .species = POKEMON_SCHIGGY},
+	{.held_item = ITEM_SINELBEERE, .level = 14, .species = POKEMON_STERNDU},
 	{.held_item = ITEM_TSITRUBEERE, .level = 15, .species = POKEMON_WELUNO},
 };
 
@@ -978,37 +979,55 @@ const trainer_pokemon trainer_party_xb8[] = {
 	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_TAMOTBEERE, .moves_set = true, .moves = {ATTACK_NAHKAMPF, ATTACK_STEINKANTE, ATTACK_ERDBEBEN, ATTACK_PATRONENHIEB}, .level = 39, .species = POKEMON_LUCARIO, .evs = {[STAT_ATTACK] = 252, [STAT_HP] = 4, [STAT_SPEED] = 252}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
 };
 
+// Rival teams
+
 const trainer_pokemon trainer_party_xb3[] = {
-	{.level = 5, .species = POKEMON_WELUNO, .evs = {[STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 252, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
+	{.level = 5, .species = POKEMON_WELUNO, .evs = {[STAT_SPECIAL_ATTACK] = 0, [STAT_SPEED] = 0, [STAT_HP] = 0}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
 	//{.level = 5, .species = POKEMON_SCHIGGY, .evs = {[STAT_HP] = 252, [STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
 };
 
 const trainer_pokemon trainer_party_xb4[] = {
-	{.level = 5, .species = POKEMON_SEEKID, .evs = {[STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 252, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
+	{.level = 5, .species = POKEMON_SEEKID, .evs = {[STAT_SPECIAL_ATTACK] = 0, [STAT_SPEED] = 0, [STAT_HP] = 0}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
 	//{.level = 5, .species = POKEMON_BISASAM, .evs = {[STAT_HP] = 252, [STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
 };
 
 const trainer_pokemon trainer_party_xb5[] = {
-	{.level = 5, .species = POKEMON_LOCKSCHAL, .evs = {[STAT_HP] = 252, [STAT_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
+	{.level = 5, .species = POKEMON_LOCKSCHAL, .evs = {[STAT_HP] = 0, [STAT_ATTACK] = 0, [STAT_SPEED] = 0}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
 	//{.level = 5, .species = POKEMON_GLUMANDA, .evs = {[STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 252, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_SCHEU}}},
 };
 
-const trainer_pokemon trainer_party_xb9[] = {
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .moves_set = true, .moves = {ATTACK_AQUAWELLE, ATTACK_AURORASTRAHL, ATTACK_AURASPHAERE}, .level = 20, .species = POKEMON_SCHILLOK, .evs = {[STAT_HP] = 252, [STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_TSITRUBEERE, .moves_set = true, .moves = {ATTACK_GLUT, ATTACK_BISS, ATTACK_ZERSCHNEIDER, ATTACK_KRATZER}, .level = 21, .species = POKEMON_ORTHODOS, .evs = {[STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 252, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .moves_set = true, .moves = {ATTACK_MEGASAUGER, ATTACK_KONFUSION, ATTACK_HYPNOSE, ATTACK_REFLEKTOR}, .level = 19, .species = POKEMON_OWEI, .evs = {[STAT_HP] = 252, [STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
+const trainer_pokemon trainer_party_x15f_route_2_rival_plant_starter[] = {
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .moves_set = true, .moves = {ATTACK_ABSORBER, ATTACK_WACHSTUM, ATTACK_SAEURE}, .level = 10, .species = POKEMON_MYRAPLA, .evs = {[STAT_HP] = 32, [STAT_SPECIAL_ATTACK] = 32, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_SINELBEERE, .moves_set = true, .moves = {ATTACK_GLUT, ATTACK_JAULER, ATTACK_KRATZER}, .level = 11, .species = POKEMON_WELUNO, .evs = {[STAT_SPECIAL_ATTACK] = 32, [STAT_SPEED] = 32, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
 };
 
-const trainer_pokemon trainer_party_xba[] = {
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .moves_set = true, .moves = {ATTACK_SCHLAFPUDER, ATTACK_EGELSAMEN, ATTACK_SAEURE, ATTACK_ENERGIEBALL}, .level = 20, .species = POKEMON_BISAKNOSP, .evs = {[STAT_HP] = 252, [STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_TSITRUBEERE, .moves_set = true, .moves = {ATTACK_FINTE, ATTACK_AURORASTRAHL, ATTACK_AQUAWELLE, ATTACK_KONFUSTRAHL}, .level = 21, .species = POKEMON_SEESKULL, .evs = {[STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 252, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .moves_set = true, .moves = {ATTACK_GLUT, ATTACK_DONNERSCHLAG, ATTACK_DURCHBRUCH, ATTACK_FINTE}, .level = 19, .species = POKEMON_MAGBY, .evs = {[STAT_ATTACK] = 252, [STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_NAIV}}},
+const trainer_pokemon trainer_party_x160_route_2_rival_fire_starter[] = {
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .moves_set = true, .moves = {ATTACK_TACKLE, ATTACK_HEULER, ATTACK_SCHNABEL, ATTACK_RUCKZUCKHIEB}, .level = 10, .species = POKEMON_DARTIRI, .evs = {[STAT_ATTACK] = 32, [STAT_SPEED] = 32, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_FROH}}},
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_SINELBEERE, .moves_set = true, .moves = {ATTACK_PFUND, ATTACK_SILBERBLICK, ATTACK_AQUAKNARRE}, .level = 11, .species = POKEMON_SEEKID, .evs = {[STAT_SPECIAL_ATTACK] = 32, [STAT_SPEED] = 32, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
 };
 
-const trainer_pokemon trainer_party_xbb[] = {
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .moves_set = true, .moves = {ATTACK_METALLKLAUE, ATTACK_FEUERSCHLAG, ATTACK_DRACHENTANZ, ATTACK_STEINHAGEL}, .level = 20, .species = POKEMON_GLUTEXO, .evs = {[STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 252, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_SCHEU}}},
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_TSITRUBEERE, .moves_set = true, .moves = {ATTACK_LAUBKLINGE, ATTACK_NATUR_KRAFT, ATTACK_EISENABWEHR, ATTACK_DURCHBRUCH}, .level = 21, .species = POKEMON_STICHSCHAL, .evs = {[STAT_HP] = 252, [STAT_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .moves_set = true, .moves = {ATTACK_EISHIEB, ATTACK_WASSERDUESE, ATTACK_KNUDDLER, ATTACK_SCHAUFLER}, .level = 19, .species = POKEMON_MARILL, .evs = {[STAT_ATTACK] = 252, [STAT_HP] = 4, [STAT_SPEED] = 252}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
+const trainer_pokemon trainer_party_x161_route_2_rival_water_starter[] = {
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .moves_set = true, .moves = {ATTACK_WINDHOSE, ATTACK_AQUAKNARRE, ATTACK_SILBERBLICK, ATTACK_RAUCHWOLKE}, .level = 10, .species = POKEMON_SEEPER, .evs = {[STAT_HP] = 32, [STAT_SPECIAL_ATTACK] = 32, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_SINELBEERE, .moves_set = true, .moves = {ATTACK_PFUND, ATTACK_HAERTNER, ATTACK_RASIERBLATT}, .level = 11, .species = POKEMON_LOCKSCHAL, .evs = {[STAT_HP] = 32, [STAT_ATTACK] = 32, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
+};
+
+
+const trainer_pokemon trainer_party_xb9_rival_felsige_oednis_plant_starter[] = {
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .moves_set = true, .moves = {ATTACK_SCHLAFPUDER, ATTACK_MEGASAUGER, ATTACK_SAEURE, ATTACK_EGELSAMEN}, .level = 21, .species = POKEMON_DUFLOR, .evs = {[STAT_HP] = 80, [STAT_SPECIAL_ATTACK] = 80, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_TSITRUBEERE, .moves_set = true, .moves = {ATTACK_GLUT, ATTACK_BISS, ATTACK_ZERSCHNEIDER, ATTACK_KRATZER}, .level = 22, .species = POKEMON_ORTHODOS, .evs = {[STAT_SPECIAL_ATTACK] = 80, [STAT_SPEED] = 80, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .moves_set = true, .moves = {ATTACK_MEGASAUGER, ATTACK_KONFUSION, ATTACK_HYPNOSE, ATTACK_REFLEKTOR}, .level = 19, .species = POKEMON_STERNDU, .evs = {[STAT_SPEED] = 80, [STAT_SPECIAL_ATTACK] = 80, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
+};
+
+const trainer_pokemon trainer_party_xba_rival_felsige_oednis_fire_starter[] = {
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .moves_set = true, .moves = {ATTACK_NITROLADUNG, ATTACK_AERO_ASS, ATTACK_RUCKZUCKHIEB, ATTACK_SCHWERTTANZ}, .level = 21, .species = POKEMON_DARTIGNIS, .evs = {[STAT_HP] = 4, [STAT_ATTACK] = 80, [STAT_SPEED] = 80}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_FROH}}},
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_TSITRUBEERE, .moves_set = true, .moves = {ATTACK_FINTE, ATTACK_AURORASTRAHL, ATTACK_AQUAWELLE, ATTACK_KONFUSTRAHL}, .level = 22, .species = POKEMON_SEESKULL, .evs = {[STAT_SPECIAL_ATTACK] = 80, [STAT_SPEED] = 80, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .moves_set = true, .moves = {ATTACK_METALLKLAUE, ATTACK_SAMENBOMBEN, ATTACK_NADELRAKETE, ATTACK_EGELSAMEN}, .level = 19, .species = POKEMON_KASTADUR, .evs = {[STAT_HP] = 80, [STAT_DEFENSE] = 80, [STAT_ATTACK] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_PFIFFIG}}},
+};
+
+const trainer_pokemon trainer_party_xbb_rival_felsige_oednis_water_starter[] = {
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .moves_set = true, .moves = {ATTACK_FEUERODEM, ATTACK_AQUAWELLE, ATTACK_EISSTURM, ATTACK_RAUCHWOLKE}, .level = 21, .species = POKEMON_SEEPER, .evs = {[STAT_SPECIAL_ATTACK] = 80, [STAT_HP] = 4, [STAT_SPEED] = 80}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_TSITRUBEERE, .moves_set = true, .moves = {ATTACK_LAUBKLINGE, ATTACK_NATUR_KRAFT, ATTACK_EISENABWEHR, ATTACK_DURCHBRUCH}, .level = 22, .species = POKEMON_STICHSCHAL, .evs = {[STAT_HP] = 80, [STAT_ATTACK] = 80, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .moves_set = true, .moves = {ATTACK_GLUT, ATTACK_BISS, ATTACK_DONNERZAHN, ATTACK_SMOG}, .level = 19, .species = POKEMON_HUNDUSTER, .evs = {[STAT_SPECIAL_ATTACK] = 80, [STAT_HP] = 4, [STAT_SPEED] = 80}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
 };
 
 const trainer_pokemon trainer_party_xbc[] = {
@@ -1848,20 +1867,6 @@ const trainer_pokemon trainer_party_x15e_ardeal_lucius[] = {
 	{.ivs_set = true, .ivs = {31, 31, 31, 31, 31, 31}, .held_item = ITEM_SCHLOHKRAUT, .moves_set = true, .moves = {ATTACK_HITZEKOLLER, ATTACK_WINDSCHNITT, ATTACK_FOKUSSTOSS, ATTACK_SOLARSTRAHL}, .level = 85, .species = POKEMON_GLURAK, .evs = {[STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 252, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_SCHEU}}},
 };
 
-const trainer_pokemon trainer_party_x15f_route_2_rival_plant_starter[] = {
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .moves_set = true, .moves = {ATTACK_ABSORBER, ATTACK_WACHSTUM, ATTACK_SAEURE}, .level = 10, .species = POKEMON_MYRAPLA, .evs = {[STAT_HP] = 252, [STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_SINELBEERE, .moves_set = true, .moves = {ATTACK_GLUT, ATTACK_JAULER, ATTACK_KRATZER}, .level = 11, .species = POKEMON_WELUNO, .evs = {[STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 252, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
-};
-
-const trainer_pokemon trainer_party_x160_route_2_rival_fire_starter[] = {
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .moves_set = true, .moves = {ATTACK_TACKLE, ATTACK_HEULER, ATTACK_SCHNABEL, ATTACK_RUCKZUCKHIEB}, .level = 10, .species = POKEMON_DARTIRI, .evs = {[STAT_ATTACK] = 252, [STAT_SPEED] = 252, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_FROH}}},
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_SINELBEERE, .moves_set = true, .moves = {ATTACK_PFUND, ATTACK_SILBERBLICK, ATTACK_AQUAKNARRE}, .level = 11, .species = POKEMON_SEEKID, .evs = {[STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 252, [STAT_HP] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
-};
-
-const trainer_pokemon trainer_party_x161_route_2_rival_water_starter[] = {
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .moves_set = true, .moves = {ATTACK_WINDHOSE, ATTACK_AQUAKNARRE, ATTACK_SILBERBLICK, ATTACK_RAUCHWOLKE}, .level = 10, .species = POKEMON_SCHIGGY, .evs = {[STAT_HP] = 252, [STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_SINELBEERE, .moves_set = true, .moves = {ATTACK_PFUND, ATTACK_HAERTNER, ATTACK_RASIERBLATT}, .level = 11, .species = POKEMON_LOCKSCHAL, .evs = {[STAT_HP] = 252, [STAT_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
-};
 
 const trainer_pokemon trainer_party_x162_route_2_east_trainer_0[] = {
 	{.level = 7, .species = POKEMON_HORNLIU},
@@ -2813,6 +2818,27 @@ const trainer_pokemon trainer_party_x204_tafelberg_clouds_west_cryptic_2[] = {
 const trainer_pokemon trainer_party_x205_tafelberg_clouds_west_cryptic_3[] = {
 	{.level = 40, .species = POKEMON_ICOGNITO, .pid = {.fields = {.unown_letter = UNOWN_LETTER_EXCLAMATION_MARK, .hidden_power_strength = 7, .hidden_power_type = TYPE_DRACHE}}, 
 		.held_item = ITEM_RUNENBAND, .hidden_power_type_set = true, .hidden_power_strength_set = true, .unown_letter_set = true},
+};
+
+const trainer_pokemon trainer_party_x206_route_3_trainer_0[] = {
+	{.level = 14, .species = POKEMON_MAEHIKEL},
+	{.level = 13, .species = POKEMON_MILTANK}
+};
+
+const trainer_pokemon trainer_party_x207_route_3_trainer_1[] = {
+	{.level = 17, .species = POKEMON_TAUROS},
+};
+
+const trainer_pokemon trainer_party_x208_route_3_trainer_2[] = {
+	{.level = 13, .species = POKEMON_VOLTILAMM},
+	{.level = 13, .species = POKEMON_WAATY},
+	{.level = 14, .species = POKEMON_MAEHIKEL},
+};
+
+const trainer_pokemon trainer_party_x209_route_3_trainer_4[] = {
+	{.level = 14, .species = POKEMON_KNILZ},
+	{.level = 12, .species = POKEMON_FLABEBE},
+	{.level = 13, .species = POKEMON_KNOFENSA},
 };
 
 #endif

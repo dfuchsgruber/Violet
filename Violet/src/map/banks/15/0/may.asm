@@ -9,13 +9,7 @@
 .include "items.s"
 .include "pathfinding.s"
 .include "specials.s"
-
-.macro npc_face_npc person_idx:req npc_target:req
-    setvar 0x8004 \person_idx
-    setvar 0x8005 \npc_target
-    special SPECIAL_NPC_FACE_TO_NPC
-    waitmovement 0
-.endm
+.include "npc.s"
 
 
 .global ow_script_route_3_may
@@ -36,8 +30,8 @@ mov_fr:
     .byte LOOK_RIGHT, STOP
 mov_say_smile:
     .byte SAY_SMILE, STOP
-mov_exclam_and_fu:
-    .byte LOOK_UP, SAY_EXCLAM, STOP
+mov_exclam_and_fd:
+    .byte LOOK_DOWN, SAY_EXCLAM, STOP
 mov_1u:
     .byte STEP_UP, STOP
 mov_1r_fu:
@@ -53,7 +47,7 @@ ow_script_route_3_may:
     faceplayer
     loadpointer 0x0 str_may_1
     show_mugshot MUGSHOT_MAY MUGSHOT_LEFT message_type=MSG_KEEPOPEN hide_mugshot=0
-    update_mugshot_emotion MUGSHOT_SAD
+    update_mugshot_emotion MUGSHOT_NORMAL
     loadpointer 0 str_may_2
     callstd MSG_KEEPOPEN
     multichoice 8 8 0 1
@@ -86,26 +80,22 @@ may_later:
     waitmovement 0
     checksound
     pause 16
-    applymovement PERSON_LARISSA mov_fd
+    applymovement PERSON_LARISSA mov_fu
     waitmovement 0
     loadpointer 0 str_larissa_1
     show_mugshot MUGSHOT_LARISSA MUGSHOT_LEFT message_type=MSG emotion=MUGSHOT_HAPPY
     sound 0x15
-    applymovement 0xFF mov_exclam_and_fu
-    applymovement PERSON_MAY mov_exclam_and_fu
+    applymovement 0xFF mov_exclam_and_fd
+    applymovement PERSON_MAY mov_exclam_and_fd
     waitmovement 0
     checksound
     pause 16
     getplayerpos 0x8005 0x8006
-    addvar 0x8006 0xFFFF
-    compare 0x8005 0x2d
-    gotoif NOT_EQUAL not_occupied
-    compare 0x8006 0x38
-    gotoif NOT_EQUAL not_occupied
-    addvar 0x8006 0xFFFF
+    addvar 0x8006 1 @ move larissa one tile below the player
 not_occupied:
     npc_move_to PERSON_LARISSA 0xFFFF 0xFFFF
-    applymovement PERSON_LARISSA mov_fd
+    waitmovement 0
+    applymovement PERSON_LARISSA mov_fu
     waitmovement 0
     /*
     special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
@@ -126,6 +116,7 @@ not_occupied:
     loadpointer 0 str_may_5
     show_mugshot MUGSHOT_MAY MUGSHOT_LEFT message_type=MSG emotion=MUGSHOT_ANNOYED
     npc_face_npc PERSON_MAY PERSON_LARISSA
+    npc_face_npc 0xFF PERSON_LARISSA
     loadpointer 0 str_larissa_3
     show_mugshot MUGSHOT_LARISSA MUGSHOT_LEFT message_type=MSG
     loadpointer 0 str_may_6
@@ -177,7 +168,7 @@ not_occupied:
     npc_face_npc 0xFF PERSON_MAY
     npc_face_npc PERSON_MAY 0xFF
     loadpointer 0 str_may_8
-    show_mugshot MUGSHOT_MAY MUGSHOT_LEFT message_type=MSG_KEEPOPEN emotion=MUGSHOT_ANGRY hide_mugshot=0
+    show_mugshot MUGSHOT_MAY MUGSHOT_LEFT message_type=MSG_KEEPOPEN emotion=MUGSHOT_ANNOYED hide_mugshot=0
     update_mugshot_emotion MUGSHOT_ANNOYED
     loadpointer 0 str_may_9
     callstd MSG_KEEPOPEN
@@ -189,8 +180,17 @@ not_occupied:
     callstd MSG_KEEPOPEN
     hide_mugshot
     closeonkeypress
-    npc_move_to PERSON_MAY 0x2d 0x2f
+    setdooropened 58 58
+    sound 8
+    doorchange
+    checksound
+    applymovement PERSON_MAY mov_1u
+    waitmovement 0
     hidesprite PERSON_MAY
+    sound 9
+    checksound
+    setdoorclosed 58 58
+    doorchange
     addvar STORY_PROGRESS 1
     releaseall
     end    
@@ -225,35 +225,35 @@ str_may_4:
     .autostring 34 2 "VerlorenDOTS\pIch tauge einfach nicht zum Trainer, meinst du nicht auch?\pMit RIVAL, Felix oder dir kann ich einfach nicht mithaltenDOTS"
 
 str_larissa_1:
-    .autostring 34 2 "Fantastisch\pWirklich fantastisch!"
+    .autostring 34 2 "Was für ein Kampf!"
 str_larissa_2:
-    .autostring 34 2 "Wie ihr beiden da gekämpft habtDOTS\pMan hat wirklich eure Leidenschaft sehen können!\pIhr habt alles gegeben, obwohl ihr ganz offensichtlich eng befreundet seid.\pIch bin von eurer Einstelllung schwer beeindruckt!"
+    .autostring 34 2 "Ihr seid wirklich beide sehr talentiert!\pEinen solchen Kampf zu sehen, macht einfach Spaß!"
 str_may_5:
     .autostring 34 2 "Wer ist das, PLAYER?\pKennst du die Frau?"
 str_larissa_3:
-    .autostring 34 2 "Ach, wie unhöflich von mir!\pMein Name ist Larissa!\pDie meiste Zeit ist mir sehr langweilig in dieser RegionDOTS\pAlso freut es mich immer sehr, wenn Trainer treffe, die mit ganzem Herzen bei der Sache sind.\pUnd ihr beide habt wirklich fantastisch gekämpft, wenn ich das nocheinmal so sagen darf!"
+    .autostring 34 2 "Ach, wie unhöflich von mir!\pMein Name ist Larissa!\pDie meisten Trainer in dieser Region sind so langweiligDOTS\pAber ihr beide ganz sicher nicht!"
 str_may_6:
     .autostring 34 2 "Na, zumindest einer von unsDOTS"
 str_may_7:
     .autostring 34 2 "Immerhin habe ich ja wiedermal einen meiner Kämpfe in den Sand gesetztDOTS"
 str_larissa_4:
-    .autostring 34 2 "Hör gefälligst auf, dich so selbst zu bemitleiden."
+    .autostring 34 2 "Was für ein Unsinn!"
 str_larissa_5:
-    .autostring 34 2 "Wenn du ein wenig mehr Vertrauen in dich und deine Pokémon setzten würdest, könntest du ganz leicht von einem Sieg zum nächsten hüpfen!\pIhr beiden!\pIhr fordert doch die Arenaleiter dieser Region heraus, nicht?\pAn ihnen müssen sich alle aufstrebenden Trainer messen."
+    .autostring 34 2 "Ein bisschen Selbstvertrauen und du hüpfst von Sieg zu Sieg, meine Liebe!\pIhr beide fordert doch sicher die Arenaleiter der Region heraus, oder?"
 str_larissa_6:
     .autostring 34 2 "Kranzdorf liegt zum Beispiel ganz in der Nähe, da hat Rosalie ihre Arena.\pAllerdingsDOTS\pDen Farmern hier sind einige Pokémon ausgebüchst und es könnte etwas dauern, bis sie ihre Voltilamm-Herde wieder zusammengescheucht haben.\pWarum versucht ihr nicht stattdessen nach Bruchfels zu gelangen?"
 str_karte:
     .autostring 34 2 "PLAYER hat eine Karte erhalten."
 str_larissa_7:
-    .autostring 34 2 "Hier habt ihr beide eine Karte.\pWie ihr sehen könnt, liegt Bruchfels weit im Norden.\pUm dorthinzugelangen müsst ihr irgendwie das Meer überwinden."
+    .autostring 34 2 "Wie ihr sehen könnt, liegt Bruchfels weit im Norden.\pUm dorthinzugelangen müsst ihr irgendwie das Meer überwinden."
 str_larissa_8:
-    .autostring 34 2 "Aber keine Sorge, dieses Rätsel zu lösen, ist nicht gerade schwerDOTS\pIch lasse euch aber trotzdem den Spaß, es selbst herauszufinden!"
+    .autostring 34 2 "Aber keine Sorge, dieses Rätsel zu lösen, ist nicht gerade kompliziertDOTS"
 str_larissa_9:
-    .autostring 34 2 "Ach!\nIch bin froh, euch beide hier getroffen zu haben.\pJetzt ist mein Tag nicht mehr ganz so langweilig.\pAber lasst euch von mir nicht weiter aufhalten, ja?"
+    .autostring 34 2 "Ihr beiden seid wirklich sehr amüsant!\pLasst euch von mir nicht weiter aufhalten."
 str_may_8:
-    .autostring 34 2 "Diese Frau hat wirklich Nerven!"
+    .autostring 34 2 "Diese Frau ist wirklich seltsam!"
 str_may_9:
-    .autostring 34 2 "Geht einfach so auf uns zu, fängt an uns zu belehrten und erteilt dann auch noch Anweisungen, irgendwelche Arenaleiter herauszufordern!"
+    .autostring 34 2 "Schenkt uns eine Karte und erzählt uns komische DingeDOTS"
 str_may_10:
     .autostring 34 2 "Aber meinst du.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT"
 str_may_11:

@@ -3345,7 +3345,7 @@
 	0x0,// field_21
 	0x0,// field_22
 	0x0,// field_23
-	(trainer_pokemon*) trainer_party_xb9
+	(trainer_pokemon*) trainer_party_xb9_rival_felsige_oednis_plant_starter
 },{
 	//Trainer 0xba
 	false,// Custom moves
@@ -3363,7 +3363,7 @@
 	0x0,// field_21
 	0x0,// field_22
 	0x0,// field_23
-	(trainer_pokemon*) trainer_party_xba
+	(trainer_pokemon*) trainer_party_xba_rival_felsige_oednis_fire_starter
 },{
 	//Trainer 0xbb
 	true,// Custom moves
@@ -3381,7 +3381,7 @@
 	0x0,// field_21
 	0x0,// field_22
 	0x0,// field_23
-	(trainer_pokemon*) trainer_party_xbb
+	(trainer_pokemon*) trainer_party_xbb_rival_felsige_oednis_water_starter
 },{
 	//Trainer 0xbc
 	false,// Custom moves

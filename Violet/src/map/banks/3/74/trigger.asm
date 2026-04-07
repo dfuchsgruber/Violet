@@ -129,7 +129,7 @@ str_2:
 str_3:
 	.autostring 34 2 "Aber er hat mir gesagt, dass er hier einen Kommandanten von Team Violet stellen will."
 str_4:
-	.autostring 34 2 "Ich hab' mit diesen Leuten noch eine Rechnung offen, seit sie meinen Papa auf Route 2 so angegangen sind."
+	.autostring 34 2 "Ich hab' mit diesen Leuten noch eine Rechnung offen, seit sie meinen Papa auf Route 3 so angegangen sind."
 str_5:
 	.autostring 34 2 "Das heißt, dass wir beide diesem Kommandanten ordentlich zeigen, wo es lang geht, oder?"
 str_6:

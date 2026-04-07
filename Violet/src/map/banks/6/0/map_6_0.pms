@@ -10,11 +10,11 @@
 				{
 					"is_trainer": "0",
 					"script": "ow_script_map_6_0_person_0",
-					"y": 4,
+					"y": "6",
 					"target_index": 1,
 					"picture": 35,
 					"flag": "0x0",
-					"x": 3,
+					"x": "2",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -77,6 +77,6 @@
 			"flag_7": "0"
 		}
 	},
-	"label": "map_6_0",
+	"label": "map_bruchfels_inside_2",
 	"type": "header"
 }

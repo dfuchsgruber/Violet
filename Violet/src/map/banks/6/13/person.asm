@@ -17,6 +17,6 @@ ow_script_map_6_13_person_1:
 str_0:
     .autostring 34 2 "Seit dem Unglück hier ist der arme Lester ganz aufgelöst.\pWer kann es ihm verübeln, wo er doch seinen Vater verloren hat?"
 str_1:
-    .autostring 34 2 "Lester war so ein froher Junge!\pJetzt ist er immerzu so deprimiertDOTS\pAls hätte die Lebensfreude ihn komplett verlassen.\pDer Junge tut mir ehrlichgesagt sehr leidDOTS"
+    .autostring 34 2 "Wir haben lange Zeit versucht, diese Stadt wieder aufzubauen.\pAber Lester konnte es nicht zulassen, auch nur einen Stein dieser Ruinen zu berühren.\pWir Bewohner machen nun das Beste daraus, aber viele von uns haben Bruchfels längst verlassen."
 .elseif LANG_EN
 .endif

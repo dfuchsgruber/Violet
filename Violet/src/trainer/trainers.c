@@ -3622,7 +3622,7 @@ const trainer trainers[TRAINER_CNT] = {
   {
     //Trainer 0x9d
     0, // money multiplier
-    TRAINERCLASS_LADY2,
+    TRAINERCLASS_LADY,
     0x2, // encounter,
     true, // gender
     0x92, // sprite
@@ -4232,7 +4232,7 @@ const trainer trainers[TRAINER_CNT] = {
 		0x0,// field_21
 		0x0,// field_22
 		0x0,// field_23
-		trainer_party_xb9
+		trainer_party_xb9_rival_felsige_oednis_plant_starter
 	},{
 		//Trainer 0xba
 			0x0,// money multiplier
@@ -4248,7 +4248,7 @@ const trainer trainers[TRAINER_CNT] = {
 		0x0,// field_21
 		0x0,// field_22
 		0x0,// field_23
-		trainer_party_xba
+		trainer_party_xba_rival_felsige_oednis_fire_starter
 	},{
 		//Trainer 0xbb
 			0x0,// money multiplier
@@ -4264,7 +4264,7 @@ const trainer trainers[TRAINER_CNT] = {
 		0x0,// field_21
 		0x0,// field_22
 		0x0,// field_23
-		trainer_party_xbb
+		trainer_party_xbb_rival_felsige_oednis_water_starter
 	},{
 			//Trainer 0xbc
 			0x0,// money multiplier
@@ -6678,6 +6678,28 @@ const trainer trainers[TRAINER_CNT] = {
       .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
       .party = trainer_party_x205_tafelberg_clouds_west_cryptic_3,
       .pokemon_cnt = ARRAY_COUNT(trainer_party_x205_tafelberg_clouds_west_cryptic_3),
+    },
+    [0x206] = {
+        .trainerclass = TRAINERCLASS_FARMER, .sprite = 91, .encounter = 0, .gender = 0,
+        .name = LANGDEP(PSTRING("Elmar"), PSTRING("Elmar")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x206_route_3_trainer_0),
+        .party = trainer_party_x206_route_3_trainer_0,
+    },
+    [0x207] = {
+        .trainerclass = TRAINERCLASS_FARMER, .sprite = 91, .encounter = 0, .gender = 0,
+        .name = LANGDEP(PSTRING("Zack"), PSTRING("Zack")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x207_route_3_trainer_1),
+        .party = trainer_party_x207_route_3_trainer_1,
+    },
+    [0x208] = {
+        .trainerclass = TRAINERCLASS_FARMER, .sprite = 91, .encounter = 0, .gender = 0,
+        .name = LANGDEP(PSTRING("Barney"), PSTRING("Barney")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x208_route_3_trainer_2),
+        .party = trainer_party_x208_route_3_trainer_2,
+    },
+    [0x209] = {
+        .trainerclass = TRAINERCLASS_AROMALADY, .sprite = 3,
+        .encounter = 1,  .gender = 1, .name = LANGDEP(PSTRING("Lydia"),
+            PSTRING("Lydia")), .pokemon_cnt = ARRAY_COUNT(trainer_party_x209_route_3_trainer_4),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = trainer_party_x209_route_3_trainer_4,
     },
 
     [0x300] = {

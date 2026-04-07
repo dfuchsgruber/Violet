@@ -17,5 +17,7 @@
         "*.gba": "hexEditor.hexedit",
         "*.ipynb": "jupyter-notebook"
     },
-    "C_Cpp.errorSquiggles": "enabled"
+    "C_Cpp.errorSquiggles": "enabled",
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python-envs.pythonProjects": []
 }

@@ -23,6 +23,7 @@
 .global ow_script_flavor_text_inside_drawers
 .global ow_script_flavor_text_inside_flower_pot
 .global ow_script_flavor_text_inside_lamp
+.global ow_script_flavor_text_crops
 
 ow_script_flavor_text_inside_piano:
     loadpointer 0 str_piano
@@ -112,6 +113,10 @@ ow_script_flavor_text_inside_lamp:
     loadpointer 0 str_lamp
     callstd MSG_SIGN
     end
+ow_script_flavor_text_crops:
+    loadpointer 0 str_crops
+    callstd MSG_SIGN
+    end
 
 .ifdef LANG_GER
 str_piano:
@@ -158,6 +163,8 @@ str_flower_pot:
     .autostring 34 2 "Ein Blumentopf mit einer schönen Pflanze.\pVon ihr geht ein äußerst angenehmer Duft aus."
 str_lamp:
     .autostring 34 2 "Eine einfache Zimmerlampe.\pVon Zeit zu Zeit flackert sie etwas."
+str_crops:
+    .autostring 34 2 "Ein Feld mit Pflanzen, die so aussehen, als würden sie bald erntereif werden."
 .elseif LANG_EN 
 str_piano:
     .autostring 34 2 "A piano of a high-quality brand.\pIt seems to have not been tuned in a whileDOTS"
@@ -203,4 +210,6 @@ str_flower_pot:
     .autostring 34 2 "A flower pot with a beautiful plant.\pIt gives off a very pleasant scent."
 str_lamp:
     .autostring 34 2 "A simple room lamp.\pFrom time to time it flickers a bit."
+str_crops:
+    .autostring 34 2 "A field with plants that look like they're almost ready to be harvested."
 .endif

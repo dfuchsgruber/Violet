@@ -1,3 +1,4 @@
+#include "constants/items.h"
 #include "types.h"
 #include "save.h"
 #include "berry.h"
@@ -389,6 +390,8 @@ const u8 berry_tree_initial_items[NUM_BERRY_TREES] = {
     [55] = ITEM_IDX_TO_BERRY_IDX(ITEM_YAPABEERE),
     [56] = ITEM_IDX_TO_BERRY_IDX(ITEM_FRAGIABEERE),
     [57] = ITEM_IDX_TO_BERRY_IDX(ITEM_AMRENABEERE),
+    [58] = ITEM_IDX_TO_BERRY_IDX(ITEM_SINELBEERE),
+    [59] = ITEM_IDX_TO_BERRY_IDX(ITEM_PERSIMBEERE),
 };
 
 

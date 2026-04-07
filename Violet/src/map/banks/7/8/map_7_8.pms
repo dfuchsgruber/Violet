@@ -1,6 +1,6 @@
 {
 	"data": {
-		"footer": "map_footer_6_indoor_layout_9",
+		"footer": "map_footer_kranzdorf_mias_house",
 		"events": {
 			"person_cnt": 4,
 			"warp_cnt": 2,
@@ -141,10 +141,10 @@
 				},
 				{
 					"target_bank": 3,
-					"y": 7,
+					"y": "7",
 					"level": 0,
 					"target_map": 3,
-					"x": 5,
+					"x": "5",
 					"target_warp_idx": 6
 				}
 			],
@@ -157,7 +157,7 @@
 			"connections": []
 		},
 		"music": "MUS_EILAND_1_3",
-		"footer_idx": 6,
+		"footer_idx": 193,
 		"namespace": "MAP_SILVANIA",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_INSIDE",

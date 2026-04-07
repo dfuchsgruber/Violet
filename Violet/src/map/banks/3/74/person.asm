@@ -21,7 +21,7 @@
 .global ow_script_0x8e601c
 .global ow_script_map_3_74_trainer_17
 .global ow_script_0x8ecbe0
-.global ow_script_map_3_74_trainer_15
+.global ow_script_felsige_oednis_faun_rival_felix_event
 .global ow_script_map_3_74_trainer_8
 .global ow_script_map_3_74_trainer_11
 .global ow_script_map_3_74_trainer_5
@@ -565,7 +565,7 @@ ow_script_movs_0x8ec5cb:
     //special SPECIAL_SET_TARGET_NPC_TO_VAR
 .endm
 
-ow_script_map_3_74_trainer_15:
+ow_script_felsige_oednis_faun_rival_felix_event:
 lockall
 loadpointer 0 str_faun0
 show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT message_type=MSG_KEEPOPEN emotion=MUGSHOT_ANGRY
@@ -667,7 +667,7 @@ str_faun0:
 str_faun1:
     .autostring 34 2 "Felix hat Recht!\pDiese Bande hat meinen Vater angegriffen!\pDamit können wir sie nicht davon kommen lassen!"
 str_faun2:
-    .autostring 34 2 "Jetzt reißt euch erst einmal zusammen!\pWie redet ihr eigentlich mit mir?\pGlaubt ihr, nur weil ihr jetzt Trainer seid, dass ihr keinen Respekt mehr zu haben braucht?\pIch sage euch mal was, ihr Gören!\pIhr seid eintausend Jahre zu früh dran, in einem solchen Ton mit mir zu reden, ja?"
+    .autostring 34 2 "Jetzt reißt euch erst einmal zusammen!\pWie redet ihr eigentlich mit mir?\pGlaubt ihr, nur weil ihr jetzt Trainer seid, dass ihr keinen Respekt mehr zu haben braucht?\pIch sage euch mal was, ihr Gören!\pIhr seid eintausend Jahre zu früh dran, so mit mir zu reden, ja?"
 str_faun3:
     .string "DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT"
 str_faun4:
@@ -675,23 +675,23 @@ str_faun4:
 str_faun5:
     .autostring 34 2 "Na, schon viel besser, oder?\pJetzt können wir uns auch über dieses Team Violet unterhalten, ja?"
 str_faun6:
-    .autostring 34 2 "Ah, PLAYER!\pDu kommst genau rechtzeitig!\pDeine Schulfreunde haben sich zwar etwas im Ton vergriffen, aber ich glaube, die beiden haben sich in den Kopf gesetzt, Team Violet zu bekämpfen."
+    .autostring 34 2 "Ah, PLAYER!\pDu kommst genau rechtzeitig!\pDie beiden haben sich in den Kopf gesetzt, Team Violet zu bekämpfen."
 str_faun7:
     .autostring 34 2 "Genau das werden wir tun!\pUnd PLAYER wird uns übrigens dabei helfen!"
 str_faun8:
-    .autostring 34 2 "Aha!\nNa ihr scheint es ja ganz schön ernst zu meinen.\pAlso gut, ich will mir das genau anhören, was ihr zu sagen habt.\pDieser Kommandant von Team Violet soll sich in Kranzdorf aufhalten, ja?\pDann sollten wir auf jeden Fall die Arenaleiterin Rosalie mit ins Boot holen.\pDie wird auch etwas von einem Kampf gegen Team Violet wissen wollen."
+    .autostring 34 2 "Aha!\nNa ihr scheint es ja ganz schön ernst zu meinen.\pAlso gut, ich will mir das genau anhören, was ihr zu sagen habt.\pDieser Kommandant von Team Violet soll sich in Kranzdorf aufhalten, ja?\pDann sollten wir auf jeden Fall die Arenaleiterin Rosalie mit ins Boot holen.\pDie wird auch davon wissen wollen."
 str_faun9:
     .autostring 34 2 "Eine Arenaleiterin?\pWir brauchen aber keine Hilfe!\pWir schlagen Team Violet auch zu dritt!"
 str_faun10:
     .autostring 34 2 "Werd' mal nicht übermütig, RIVALDOTS\pWir wissen gar nicht, was auf uns zu kommtDOTS"
 str_faun11:
-    .autostring 34 2 "Felix hat Recht!\pDa haben sie dir bei der Polizei wohl etwas Vernunft beigebracht, was?\pIch werde mich auf die Suche nach Rosalie machen.\pWir treffen uns dann in ihrem Haus in Kranzdorf, verstanden?\pUnd denkt gar nicht daran, zu trödeln!"
+    .autostring 34 2 "Felix hat Recht!\pHaben dir bei der Polizei wohl etwas Vernunft beigebracht, was?\pIch werde mich auf die Suche nach Rosalie machen.\pWir treffen uns dann in ihrem Haus in Kranzdorf, verstanden?"
 str_faun12:
     .autostring 34 2 "Wie langweiligDOTS\pJetzt mischt sich ein Arenaleiter in unser Abenteuer einDOTS"
 str_faun13:
     .autostring 34 2 "Du bist wirklich ein hoffnungsloser Fall, RIVALDOTS"
 str_faun14:
-    .autostring 34 2 "H-Hey!\nWarte!\pIch werde doch einem Polizisten nicht den ganzen Spaß überlassen!"
+    .autostring 34 2 "H-Hey!\nWarte!\pIch werde doch einem Möchtegern-Polizisten nicht den ganzen Spaß überlassen!"
 .elseif LANG_EN
 .endif
 

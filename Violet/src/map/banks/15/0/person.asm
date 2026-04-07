@@ -40,6 +40,67 @@
 .global ow_script_0x829b7e
 .global ow_script_map_15_0_trainer_8
 .global str_say_starlili
+.global ow_script_map_route_4_person_0
+.global ow_script_map_route_4_trainer_0
+.global ow_script_map_route_4_trainer_1
+.global ow_script_map_route_4_trainer_2
+.global ow_script_map_route_4_trainer_3
+
+ow_script_map_route_4_person_0:
+    loadpointer 0 str_0
+    callstd MSG_FACE
+    end
+ow_script_map_route_4_trainer_0:
+    trainerbattlestd 0 0x206 0 str_before_0 str_after_0
+    loadpointer 0 str_later_0
+    callstd MSG_FACE
+    end
+ow_script_map_route_4_trainer_1:
+    trainerbattlestd 0 0x207 0 str_before_1 str_after_1
+    loadpointer 0 str_later_1
+    callstd MSG_FACE
+    end
+ow_script_map_route_4_trainer_2:
+    trainerbattlestd 0 0x208 0 str_before_2 str_after_2
+    loadpointer 0 str_later_2
+    callstd MSG_FACE
+    end
+ow_script_map_route_4_trainer_3:
+    trainerbattlestd 0 0x209 0 str_before_3 str_after_3
+    loadpointer 0 str_later_3
+    callstd MSG_FACE
+    end
+
+.ifdef LANG_GER
+str_0:
+    .autostring 34 2 "Ich liebe es, die Voltilamm zu streicheln!\pSie sind so schön weich und flauschig.\pAber manchmal britzelt es auch dolle!"
+str_before_0:
+    .autostring 34 2 "Die Pokémon-Zucht ist mein Leben!\pEs gibt nichts schöneres, als hier auf der Farm hart zu arbeiten!"
+str_after_0:
+    .autostring 34 2 "Soll das heißen, die ganze harte Arbeit auf der Farm war umsonst?"
+str_later_0:
+    .autostring 34 2 "Jetzt muss ich wohl den ganzen Mist zusammenschaufeln, den die Pokémon hier hinterlassen haben!"
+str_before_1:
+    .autostring 34 2 "Sich um die ganzen Farm-Pokémon zu kümmern ist eine Menge Arbeit!\pAber es erfüllt mich auch sehr, wenn ich sehe, wie gut es ihnen hier geht!"
+str_after_1:
+    .autostring 34 2 "Ich bin froh, dass ich hier arbeiten darf, auch wenn ich verloren habe."
+str_later_1:
+    .autostring 34 2 "Wenn du mich entschuldigst, ich muss jetzt zurück an die Arbeit.\pDie Pokémon hier müssen gefüttert und gepflegt werden!"
+str_before_2:
+    .autostring 34 2 "Ich bin hier auf der Suche nach etwas Holz für die Farm weiter im Süden.\pHast du zufällig etwas gesehen?"
+str_after_2:
+    .autostring 34 2 "Wenn ich kein Holz finde, macht man mir DampfDOTS"
+str_later_2:
+    .autostring 34 2 "Oh, sind da drüben Baumstämme?\pDas könnte mir sehr gut helfen!"
+str_before_3:
+    .autostring 34 2 "Die Gegend um den Kranzwald ist voller schöner Bäume!\pDiese Energie ist einfach magisch!"
+str_after_3:
+    .autostring 34 2 "Ich habe verloren, obwohl ich von all diesen schönen Bäumen umgeben bin?"
+str_later_3:
+    .autostring 34 2 "Nicht zu glauben, dass ich gegen dich verliere, obwohl der Kranzwald uns förmlich umgibtDOTS"
+.elseif LANG_EN
+.endif
+
 
 ow_script_map_15_0_person_0:
 cry POKEMON_STARALILI 0x0

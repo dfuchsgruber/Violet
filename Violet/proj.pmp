@@ -121,7 +121,7 @@
 				"MAP_TRAINERSCHULE"
 			],
 			"73": [
-				"map_3_73",
+				"map_bruchfels_past",
 				"src/map/banks/3/73/map_3_73.pms",
 				"MAP_AKTANIA"
 			],
@@ -357,7 +357,7 @@
 		},
 		"6": {
 			"0": [
-				"map_6_0",
+				"map_bruchfels_inside_2",
 				"src/map/banks/6/0/map_6_0.pms",
 				"MAP_AKTANIA"
 			],
@@ -387,12 +387,12 @@
 				"MAP_AKTANIA"
 			],
 			"13": [
-				"map_6_13",
+				"map_bruchfels_inside_0",
 				"src/map/banks/6/13/map_6_13.pms",
 				"MAP_AKTANIA"
 			],
 			"14": [
-				"map_6_14",
+				"map_bruchfels_inside_1",
 				"src/map/banks/6/14/map_6_14.pms",
 				"MAP_AKTANIA"
 			],
@@ -2386,6 +2386,10 @@
 		"map_sonnaufeld_tanns_lab_study": [
 			192,
 			"src/map/banks/35/4/map_sonnaufeld_tanns_lab_study.pms"
+		],
+		"map_footer_kranzdorf_mias_house": [
+			193,
+			"src/map/banks/7/8/map_footer_kranzdorf_mias_house.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -2492,7 +2496,9 @@
 		"maptileset_bluetenbach_inside": "src/map/tileset/maptileset_bluetenbach_inside.pms",
 		"maptileset_anemonia_inside": "src/map/tileset/maptileset_anemonia_inside.pms",
 		"maptileset_sonnaufeld_inside": "src/map/tileset/maptileset_sonnaufeld_inside.pms",
-		"maptileset_tanns_lab": "src/map/tileset/maptileset_tanns_lab.pms"
+		"maptileset_tanns_lab": "src/map/tileset/maptileset_tanns_lab.pms",
+		"maptileset_bruchfels_inside": "src/map/tileset/maptileset_bruchfels_inside.pms",
+		"maptileset_kranzdorf": "src/map/tileset/maptileset_kranzdorf.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2589,6 +2595,8 @@
 		"gfx_maptileset_bluetenbach_insideTiles": "asset/gfx/tileset/gfx_maptileset_bluetenbach_inside.png",
 		"gfx_maptileset_anemonia_insideTiles": "asset/gfx/tileset/gfx_maptileset_anemonia_inside.png",
 		"gfx_maptileset_sonnaufeld_insideTiles": "asset/gfx/tileset/gfx_maptileset_sonnaufeld_inside.png",
-		"gfx_maptileset_tanns_labTiles": "asset/gfx/tileset/gfx_maptileset_tanns_lab.png"
+		"gfx_maptileset_tanns_labTiles": "asset/gfx/tileset/gfx_maptileset_tanns_lab.png",
+		"gfx_maptileset_bruchfels_insideTiles": "asset/gfx/tileset/gfx_maptileset_bruchfels_inside.png",
+		"gfx_maptileset_kranzdorf_insideTiles": "asset/gfx/tileset/gfx_maptileset_kranzdorf_inside.png"
 	}
 }

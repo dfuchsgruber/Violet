@@ -10,11 +10,11 @@
 				{
 					"is_trainer": "0",
 					"script": "ow_script_map_6_13_person_0",
-					"y": 9,
+					"y": "10",
 					"target_index": 1,
 					"picture": 32,
 					"flag": "0x0",
-					"x": 4,
+					"x": "4",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -41,11 +41,11 @@
 				{
 					"is_trainer": "0",
 					"script": "ow_script_map_6_13_person_1",
-					"y": 3,
+					"y": "7",
 					"target_index": 2,
 					"picture": 35,
 					"flag": "0x0",
-					"x": 5,
+					"x": "7",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -108,6 +108,6 @@
 			"flag_7": "0"
 		}
 	},
-	"label": "map_6_13",
+	"label": "map_bruchfels_inside_0",
 	"type": "header"
 }

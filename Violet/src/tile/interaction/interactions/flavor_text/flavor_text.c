@@ -29,8 +29,9 @@ extern const u8 ow_script_flavor_text_inside_bed[];
 extern const u8 ow_script_flavor_text_inside_drawers[];
 extern const u8 ow_script_flavor_text_inside_flower_pot[];
 extern const u8 ow_script_flavor_text_inside_lamp[];
+extern const u8 ow_script_flavor_text_crops[];
 
-static const u8 *flavor_text_scripts_inside[] = {
+static const u8 *flavor_text_scripts_inside[NUM_FLAVOR_TEXTS] = {
     [FLAVOR_TEXT_INSIDE_PIANO] = ow_script_flavor_text_inside_piano,
     [FLAVOR_TEXT_INSIDE_FRIDGE] = ow_script_flavor_text_inside_fridge,
     [FLAVOR_TEXT_INSIDE_BOOKSHELF_0] = ow_script_flavor_text_inside_bookshelf_0,
@@ -49,7 +50,7 @@ static const u8 *flavor_text_scripts_inside[] = {
     [FLAVOR_TEXT_INSIDE_STOVE] = ow_script_flavor_text_inside_stove,
 };
 
-static const u8 *flavor_text_scripts_inside_2[] = {
+static const u8 *flavor_text_scripts_inside_2[NUM_FLAVOR_TEXTS] = {
     [FLAVOR_TEXT_INSIDE_KITCHEN_CUPBOARD] = ow_script_flavor_text_inside_kitchen_cupboard,
     [FLAVOR_TEXT_INSIDE_WARDROBE] = ow_script_flavor_text_inside_wardrobe,
     [FLAVOR_TEXT_INSIDE_BED] = ow_script_flavor_text_inside_bed,
@@ -57,6 +58,10 @@ static const u8 *flavor_text_scripts_inside_2[] = {
     [FLAVOR_TEXT_INSIDE_FLOWER_POT] = ow_script_flavor_text_inside_flower_pot,
     [FLAVOR_TEXT_INSIDE_LAMP] = ow_script_flavor_text_inside_lamp
 
+};
+
+static const u8 *flavor_text_scripts[NUM_FLAVOR_TEXTS] = {
+    [FLAVOR_TEXT_CROPS] = ow_script_flavor_text_crops
 };
 
 const u8 *behaviour_get_flavor_text_script(const UNUSED position_t *pos, u16 behaviour, UNUSED u8 facing_direction) {
@@ -68,6 +73,9 @@ const u8 *behaviour_get_flavor_text_script(const UNUSED position_t *pos, u16 beh
         }
         case MB_FLAVOR_TEXT_INSIDE_2: {
             return flavor_text_scripts_inside_2[block_get_field_by_pos(faced_position.coordinates.x, faced_position.coordinates.y, FIELD_ARGUMENT)];
+        }
+        case MB_FLAVOR_TEXT: {
+            return flavor_text_scripts[block_get_field_by_pos(faced_position.coordinates.x, faced_position.coordinates.y, FIELD_ARGUMENT)];
         }
     }
     return NULL;

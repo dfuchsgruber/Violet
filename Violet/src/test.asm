@@ -14,6 +14,7 @@
 .include "battle/battle_bgs.s"
 .include "map_weathers.s"
 .include "overworld/overworld_effects.s"
+.include "cutscenes.s"
 
 .global ow_script_test
 
@@ -27,6 +28,12 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+
+	setvar 0x8004 CUTSCENE_AKTANIA_BEAM
+	special SPECIAL_CUTSCENE_SHOW
+	waitstate
+	end
+
 	additem ITEM_ENERGIEDISK 1
 	additem ITEM_TM50 1
 	additem ITEM_TM51 1

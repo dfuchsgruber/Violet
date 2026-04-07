@@ -147,14 +147,15 @@
           # Build `midi2agb`
           midi2agb = pkgs.stdenv.mkDerivation rec {
             pname = "midi2agb";
-            version = "ff820bf5453a0e2b6a4612da2cd1d5fc8c220b20";
+            version = "19a6f83f94af9efddc764dfe0b2e3dd86bf25e96";
 
             src = pkgs.fetchFromGitHub {
               owner = "ipatix";
               repo = pname;
               rev = version;
               fetchSubmodules = true;
-              sha256 = "6MO4LLVP4SACEbY/rNmZOIAs896jVSKUr6wFtr1cFE4=";
+              # sha256 = pkgs.lib.fakeSha256;
+              sha256 = "QDlD6iTRQuGXRM+7xjKw6yCwoFkoYcV9XmmfaKOoCM4=";
             };
 
             installPhase = ''

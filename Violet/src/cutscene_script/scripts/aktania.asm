@@ -166,6 +166,7 @@ cutscene_script_aktania_meteor:
 
 
 
+
 cutscene_script_aktania_beam:
     pal_restore_snapshot 1
     fadescreen 0 0 512 16 0 16
@@ -215,15 +216,20 @@ cutscene_script_aktania_beam:
     bg_scroll 2 0x28 0 0xFFD8
     pause 64
     sound 100
-    pause 8
-    bg_override 2 gfx_anim_dark_aktania_back_1Map 0x1000 0 COPYMAP
-    bg_override 2 gfx_anim_dark_aktania_back_1Tiles 0x6000 0 COPYSET
-    pause 8
-    bg_override 2 gfx_anim_dark_aktania_back_2Map 0x1000 0 COPYMAP
-    bg_override 2 gfx_anim_dark_aktania_back_2Tiles 0x6000 0 COPYSET
-    pause 8
-    bg_override 2 gfx_anim_dark_aktania_back_3Map 0x1000 0 COPYMAP
-    bg_override 2 gfx_anim_dark_aktania_back_3Tiles 0x6000 0 COPYSET
+
+    obj_vram_load graphic_aktania_beam
+    load_obj_pal 0x6E00 gfx_anim_aktania_beamPal UNCOMP FORCE
+    oam_new oam_template_aktania_beam 124 50 0 0x8002
+
+    @ pause 8
+    @ bg_override 2 gfx_anim_dark_aktania_back_1Map 0x1000 0 COPYMAP
+    @ bg_override 2 gfx_anim_dark_aktania_back_1Tiles 0x6000 0 COPYSET
+    @ pause 8
+    @ bg_override 2 gfx_anim_dark_aktania_back_2Map 0x1000 0 COPYMAP
+    @ bg_override 2 gfx_anim_dark_aktania_back_2Tiles 0x6000 0 COPYSET
+    @ pause 8
+    @ bg_override 2 gfx_anim_dark_aktania_back_3Map 0x1000 0 COPYMAP
+    @ bg_override 2 gfx_anim_dark_aktania_back_3Tiles 0x6000 0 COPYSET
     pause 96
     setflag MAP_BGN_AUTO_ALIGN_OFF 0
     setflag TILESET_ANIM_DISABLE 0

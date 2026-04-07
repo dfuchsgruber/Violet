@@ -43,21 +43,16 @@ checkflag AKTANIA_FLASHBACK_DONE
 gotoif NOT_EQUAL dont_move_woman
 compare STORY_PROGRESS 0x14
 gotoif NOT_EQUAL dont_move_woman
-movesprite2 39 0x2e 0x2d
+movesprite2 39 58 60
 spritebehave 39 BEHAVIOUR_FACE_UP
 dont_move_woman:
-movesprite2 0x6 0x1c 0x31
-spritebehave 0x6 BEHAVIOUR_LOOK_AROUND
-movesprite2 25 38 8
-movesprite2 26 35 42
-movesprite2 27 34 41
-movesprite2 28 52 41
-movesprite2 29 55 40
-movesprite2 30 43 38
-movesprite2 31 43 40
-movesprite2 32 40 41
-movesprite2 33 36 45
-movesprite2 38 30 45
+
+movesprite2 26 54 52
+movesprite2 28 58 53
+movesprite2 29 54 48
+movesprite2 31 53 45
+movesprite2 32 52 53
+
 return
 
 

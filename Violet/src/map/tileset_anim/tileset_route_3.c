@@ -1,17 +1,21 @@
 #include "types.h"
+#include "map/tileset.h"
 #include "overworld/effect.h"
 #include "overworld/sprite.h"
 #include "oam.h"
 #include "save.h"
 
+
 extern const u8 gfx_tileset_route_3_millTiles[];
 extern const u8 gfx_tileset_route_3_millPal[];
+extern const u16 gfx_tileset_animation_route_3_vinesTiles[];
 
 #define ROUTE_3_MILL_TAG 0x888
 #define ROUTE_3_BANK 15
 #define ROUTE_3_MAP 0
-#define ROUTE_3_X 0x2D + 7 
-#define ROUTE_3_Y 0x7 + 7 
+// Position of the center of the mill's wheel
+#define ROUTE_3_X 57 + 7 
+#define ROUTE_3_Y 13 + 7 
 
 static const graphic route_3_mill_graphic = {
     .sprite = gfx_tileset_route_3_millTiles, .tag = ROUTE_3_MILL_TAG, .size = GRAPHIC_SIZE_4BPP(64, 64),
@@ -54,6 +58,21 @@ static const oam_template route_3_mill_oam_template = {
     .callback = oam_callback_route_3_mill,
 };
 
+static const tileset_animation tileset_route_3_animations[] = {
+    {
+		.cycle = 4, .speed = 16, .start_tile = 0x318, .num_tiles = 6,
+		.gfx = gfx_tileset_animation_route_3_vinesTiles
+    }
+};
+
+static const tileset_animation_header tileset_route_3_animations_head = {
+    ARRAY_COUNT(tileset_route_3_animations), tileset_route_3_animations
+};
+
+void tileset_route_3_anim(u16 clk) {
+    generic_tileset_anim_proceed_all(&tileset_route_3_animations_head, clk);
+}
+
 void tileset_route_3_animation_initialize() {
     u8 pal_idx = oam_allocate_palette(ROUTE_3_MILL_TAG);
     pal_decompress(gfx_tileset_route_3_millPal, (u16)(256 + 16 * pal_idx), 16 * sizeof(color_t));
@@ -62,4 +81,6 @@ void tileset_route_3_animation_initialize() {
     u8 oam_idx = oam_new_forward_search(&route_3_mill_oam_template, 0, 0, 1);
     oams[oam_idx].flags |= OAM_FLAG_CENTERED;
     oams[oam_idx].callback(oams + oam_idx);
+    tileset_anim_clk1_cycle = generic_tileset_anim_get_clk(&tileset_route_3_animations_head);
+    tileset_anim_1 = tileset_route_3_anim;
 }

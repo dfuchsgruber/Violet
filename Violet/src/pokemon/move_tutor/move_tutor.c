@@ -16,6 +16,23 @@ bool move_tutor_is_compatible(u16 species, u8 move_tutor){
 }
 
 // TODO: replace some of the move tutors, they are now TMs
+// Candidates
+// Wuchtschlag
+// Konter
+// Meteorologe
+// Gegenschlag
+// Tiefschlag
+// Windschnitt
+// Draco-Meteor
+// Hitzewelle
+
+// Early-Game
+
+// Bodyslam
+// Megahieb
+// Megakick
+// Windschnitt ?
+// Fußkick
 const u16 move_tutor_attacks[32] = {
     [MOVE_TUTOR_FOKUSSTOSS] = 0,
     [MOVE_TUTOR_GIFTHIEB] = 0,

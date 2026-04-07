@@ -163,6 +163,7 @@ mov_fl:
 ow_script_0x8d7960:
 
 	setvar STORY_PROGRESS 0x14
+	// goto skip @ debugging
 	loadpointer 0x0 str_0x8d79cd
 	show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 	applymovement 0xFF mov_cam_down1
@@ -565,6 +566,7 @@ ow_script_0x8d7960:
 	hidesprite 7
 	hidesprite 8
 	hidesprite 11
+skip:
 	setflag TRANS_DISABLE
 	clearflag TRANS_PALETTE_FETCH
 	setvar STORY_PROGRESS 0x14
@@ -584,7 +586,7 @@ ow_script_0x8d7960:
 	fadescreen 0x1
 	writebytetooffset 0x0 0x2036e28
 	setflag AKTANIA_FLASHBACK_DONE
-	warpmuted 0xf 0x0 0xff 0x2e 0x2c
+	warpmuted 15 0x0 0xff 58 59
 	end
 
 mov_fly_down:
