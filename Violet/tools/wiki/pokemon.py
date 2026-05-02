@@ -353,6 +353,51 @@ def indexed_pokemon_value(pokemon_data, key, idx, fallback=None):
     return fallback
 
 
+def normalized_evolution_entries(entries):
+    entries = entries or []
+    if isinstance(entries, dict):
+        return [
+            {"target": target, "method": details.get("trigger"), "argument": details.get("argument"),
+             "baby_trigger_item": details.get("baby_trigger_item")}
+            for target, details in entries.items()
+        ]
+    return entries
+
+
+def build_pre_evolution_map(pokemon_data, species_to_idx):
+    pre_evolutions = {}
+    for source_idx, entries in enumerate(pokemon_data.get("evolutions") or []):
+        for evo in normalized_evolution_entries(entries):
+            if not isinstance(evo, dict):
+                continue
+            target = evo.get("target")
+            target_idx = species_to_idx.get(target) if isinstance(target, str) else None
+            if target_idx is None:
+                continue
+            current_source = pre_evolutions.get(target_idx)
+            if current_source is None or source_idx < current_source:
+                pre_evolutions[target_idx] = source_idx
+    return pre_evolutions
+
+
+def base_species_idx(pre_evolutions, idx):
+    seen = set()
+    while idx in pre_evolutions and idx not in seen:
+        seen.add(idx)
+        idx = pre_evolutions[idx]
+    return idx
+
+
+def inherited_egg_moves(pokemon_data, idx, pre_evolutions):
+    own_egg_moves = indexed_pokemon_value(pokemon_data, "egg_moves", idx)
+    if own_egg_moves:
+        return own_egg_moves
+    base_idx = base_species_idx(pre_evolutions, idx)
+    if base_idx == idx:
+        return own_egg_moves
+    return indexed_pokemon_value(pokemon_data, "egg_moves", base_idx, own_egg_moves)
+
+
 def render_type_badges(types, language="LANG_GER", variant="solid"):
     badges = []
     for type_name in dict.fromkeys(t for t in types if t):
@@ -468,13 +513,7 @@ def format_evolution_argument(evo, language="LANG_GER"):
 
 
 def evolution_list(entries, species_to_idx, names, page_slugs, language="LANG_GER"):
-    entries = entries or []
-    if isinstance(entries, dict):
-        entries = [
-            {"target": target, "method": details.get("trigger"), "argument": details.get("argument"),
-             "baby_trigger_item": details.get("baby_trigger_item")}
-            for target, details in entries.items()
-        ]
+    entries = normalized_evolution_entries(entries)
     if not entries:
         return "<p class=\"muted\">-</p>"
     items = []
@@ -539,6 +578,7 @@ def build_records(args):
     sprite_map = parse_frontsprites("include/c/data/pokemon/frontsprites.h")
     mega_evolutions = parse_mega_evolutions(args.mega_evolutions_pms)
     shifted_order = detect_shifted_pokedex_order(pokemon_data)
+    pokemon_data["_pre_evolutions"] = build_pre_evolution_map(pokemon_data, species_to_idx)
 
     all_species_rows = []
     species_rows = []
@@ -785,7 +825,7 @@ def render_species_page(args, record, pokemon_data, names, species_to_idx, sprit
         pokemon_data, species_to_idx, names, sprite_map, page_slugs, output_dir
     )
     levelup_moves = indexed_pokemon_value(pokemon_data, "levelup_moves", idx, readable.get("levelup_moves"))
-    egg_moves = indexed_pokemon_value(pokemon_data, "egg_moves", idx, readable.get("egg_moves"))
+    egg_moves = inherited_egg_moves(pokemon_data, idx, pokemon_data.get("_pre_evolutions", {}))
     accessible_moves = indexed_pokemon_value(pokemon_data, "accessible_moves", idx, readable.get("accessible_moves"))
     tm_hm_compatibility = indexed_pokemon_value(
         pokemon_data,
