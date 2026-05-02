@@ -905,13 +905,21 @@ def render_species_page(args, record, pokemon_data, names, species_to_idx, sprit
         </section>
         {alternate_forms_html}
         {mega_forms_html}
+        <section class="panel">
+          <h2>Entwicklung</h2>
+          {evolution_list(readable.get('evolutions') or pokemon_data.get('evolutions', [None])[idx], species_to_idx, names, page_slugs, args.language)}
+        </section>
         <section class="grid two">
-          <article class="panel panel-span"><h2>Entwicklung</h2>{evolution_list(readable.get('evolutions') or pokemon_data.get('evolutions', [None])[idx], species_to_idx, names, page_slugs, args.language)}</article>
           <article class="panel"><h2>Level-Up Attacken</h2>{move_list_table(levelup_moves, args.language)}</article>
           <article class="panel"><h2>TM/VM</h2>{tm_table(tm_hm_compatibility, args.language)}</article>
+        </section>
+        <section class="grid two">
           <article class="panel"><h2>Ei-Attacken</h2>{item_list(egg_moves, ('ATTACK_',), language=args.language)}</article>
           <article class="panel"><h2>Weitere Attacken</h2>{item_list(accessible_moves, ('ATTACK_',), language=args.language)}</article>
-          <article class="panel panel-span"><h2>Tutor</h2>{tutor_table(move_tutor_compatibility, args.language)}</article>
+        </section>
+        <section class="grid two">
+          <article class="panel"><h2>Tutor</h2>{tutor_table(move_tutor_compatibility, args.language)}</article>
+          <div></div>
         </section>
       </div>
     </section>
@@ -1114,7 +1122,6 @@ h2 { margin: 0 0 14px; font-size: 18px; color: var(--page-ink); }
 .article-column { min-width: 0; }
 .grid { display: grid; gap: 18px; align-items: start; }
 .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.panel-span { grid-column: 1 / -1; }
 .info-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin: 0; }
 .info-grid.compact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .info-grid div { min-width: 0; }
