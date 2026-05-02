@@ -2498,7 +2498,8 @@
 		"maptileset_sonnaufeld_inside": "src/map/tileset/maptileset_sonnaufeld_inside.pms",
 		"maptileset_tanns_lab": "src/map/tileset/maptileset_tanns_lab.pms",
 		"maptileset_bruchfels_inside": "src/map/tileset/maptileset_bruchfels_inside.pms",
-		"maptileset_kranzdorf": "src/map/tileset/maptileset_kranzdorf.pms"
+		"maptileset_kranzdorf": "src/map/tileset/maptileset_kranzdorf.pms",
+		"maptileset_laubdorf_inside": "src/map/tileset/maptileset_laubdorf_inside.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2597,6 +2598,7 @@
 		"gfx_maptileset_sonnaufeld_insideTiles": "asset/gfx/tileset/gfx_maptileset_sonnaufeld_inside.png",
 		"gfx_maptileset_tanns_labTiles": "asset/gfx/tileset/gfx_maptileset_tanns_lab.png",
 		"gfx_maptileset_bruchfels_insideTiles": "asset/gfx/tileset/gfx_maptileset_bruchfels_inside.png",
-		"gfx_maptileset_kranzdorf_insideTiles": "asset/gfx/tileset/gfx_maptileset_kranzdorf_inside.png"
+		"gfx_maptileset_kranzdorf_insideTiles": "asset/gfx/tileset/gfx_maptileset_kranzdorf_inside.png",
+		"gfx_maptileset_laubdorf_insideTiles": "asset/gfx/tileset/gfx_maptileset_laubdorf_inside.png"
 	}
 }
