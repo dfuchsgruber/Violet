@@ -240,21 +240,21 @@
 		"ability_1": null,
 		"hidden_ability": "Lernfaehig",
 		"safari_rate": 0,
-		"dex_number": 13
+		"dex_number": 14
 	},
 	"POKEMON_RAICHU": {
 		"ability_0": "Statik",
 		"ability_1": null,
 		"hidden_ability": "Lernfaehig",
 		"safari_rate": 0,
-		"dex_number": 14
+		"dex_number": 15
 	},
 	"POKEMON_SANDAN": {
 		"ability_0": "Sandschleier",
 		"ability_1": null,
 		"hidden_ability": "Sandherz",
 		"safari_rate": 0,
-		"dex_number": 15,
+		"dex_number": 16,
 		"levelup_moves": [
 			[
 				"Finte",
@@ -279,7 +279,7 @@
 		"ability_1": null,
 		"hidden_ability": "Sandherz",
 		"safari_rate": 0,
-		"dex_number": 16,
+		"dex_number": 17,
 		"levelup_moves": [
 			[
 				"Finte",
@@ -308,21 +308,21 @@
 		"ability_1": null,
 		"hidden_ability": "Blitzfaenger",
 		"safari_rate": 50,
-		"dex_number": 17
+		"dex_number": 18
 	},
 	"POKEMON_NIDORINA": {
 		"ability_0": "Giftdorn",
 		"ability_1": null,
 		"hidden_ability": "Blitzfaenger",
 		"safari_rate": 75,
-		"dex_number": 18
+		"dex_number": 19
 	},
 	"POKEMON_NIDOQUEEN": {
 		"ability_0": "Giftdorn",
 		"ability_1": null,
 		"hidden_ability": "Blitzfaenger",
 		"safari_rate": 0,
-		"dex_number": 19
+		"dex_number": 20
 	},
 	"POKEMON_NIDORANM": {
 		"name" : {
@@ -333,21 +333,21 @@
 		"ability_1": null,
 		"hidden_ability": "Bedroher",
 		"safari_rate": 50,
-		"dex_number": 20
+		"dex_number": 21
 	},
 	"POKEMON_NIDORINO": {
 		"ability_0": "Giftdorn",
 		"ability_1": null,
 		"hidden_ability": "Bedroher",
 		"safari_rate": 75,
-		"dex_number": 21
+		"dex_number": 22
 	},
 	"POKEMON_NIDOKING": {
 		"ability_0": "Giftdorn",
 		"ability_1": null,
 		"hidden_ability": "Bedroher",
 		"safari_rate": 0,
-		"dex_number": 22
+		"dex_number": 23
 	},
 	"POKEMON_FLOETTE": {
 		"genus" : {
@@ -371,14 +371,14 @@
 		"ability_1": null,
 		"hidden_ability": "Solarkraft",
 		"safari_rate": 0,
-		"dex_number": 23
+		"dex_number": 24
 	},
 	"POKEMON_VULNONA": {
 		"ability_0": "Feuerfaenger",
 		"ability_1": null,
 		"hidden_ability": "Solarkraft",
 		"safari_rate": 0,
-		"dex_number": 24,
+		"dex_number": 25,
 		"dex_entry" : {
 			"LANG_GER" : "Man sagt, es k\u00f6nne bis zu 1.000 Jahre alt werden. Mit mystischen Kr\u00e4ften kontrolliert es das Feuer und br\u00e4t sich damit seine Beute.",
 			"LANG_EN" : ""
@@ -389,7 +389,7 @@
 		"ability_1": null,
 		"hidden_ability": "Curator",
 		"safari_rate": 0,
-		"dex_number": 26,
+		"dex_number": 27,
 		"levelup_moves" : [
 			["Sirenenlied", 1]
 		]
@@ -399,7 +399,7 @@
 		"ability_1": null,
 		"hidden_ability": "Curator",
 		"safari_rate": 0,
-		"dex_number": 27,
+		"dex_number": 28,
 		"levelup_moves" : [
 			["Sirenenlied", 1]
 		]
@@ -409,35 +409,35 @@
 		"ability_1": null,
 		"hidden_ability": "Lebensraeuber",
 		"safari_rate": 0,
-		"dex_number": 28
+		"dex_number": 29
 	},
 	"POKEMON_GOLBAT": {
 		"ability_0": "Konzentrator",
 		"ability_1": null,
 		"hidden_ability": "Lebensraeuber",
 		"safari_rate": 0,
-		"dex_number": 29
+		"dex_number": 30
 	},
 	"POKEMON_MYRAPLA": {
 		"ability_0": "Chlorophyll",
 		"ability_1": null,
 		"hidden_ability": "Sporenwirt",
 		"safari_rate": 0,
-		"dex_number": 31
+		"dex_number": 32
 	},
 	"POKEMON_DUFLOR": {
 		"ability_0": "Chlorophyll",
 		"ability_1": null,
 		"hidden_ability": "Sporenwirt",
 		"safari_rate": 0,
-		"dex_number": 32
+		"dex_number": 33
 	},
 	"POKEMON_GIFLOR": {
 		"ability_0": "Chlorophyll",
 		"ability_1": null,
 		"hidden_ability": "Sporenwirt",
 		"safari_rate": 0,
-		"dex_number": 33
+		"dex_number": 34
 	},
 	"POKEMON_FOLIPURBA": {
 		"ability_0": "Chlorophyll",
@@ -461,14 +461,14 @@
 		"ability_1": null,
 		"hidden_ability": "Statik",
 		"safari_rate": 0,
-		"dex_number": 35
+		"dex_number": 329
 	},
 	"POKEMON_VOLTULA": {
 		"ability_0": "Facettenauge",
 		"ability_1": null,
 		"hidden_ability": "Statik",
 		"safari_rate": 75,
-		"dex_number": 36
+		"dex_number": 330
 	},
 	"POKEMON_DIGDA": {
 		"ability_0": "Sandschleier",
@@ -1407,7 +1407,7 @@
 		"ability_1": null,
 		"hidden_ability": "Lebensraeuber",
 		"safari_rate": 0,
-		"dex_number": 30
+		"dex_number": 31
 	},
 	"POKEMON_LAMPI": {
 		"ability_0": "Voltabsorber",
@@ -1505,7 +1505,7 @@
 		"ability_1": null,
 		"hidden_ability": "Photogenese",
 		"safari_rate": 0,
-		"dex_number": 34
+		"dex_number": 35
 	},
 	"POKEMON_MARILL": {
 		"ability_0": "Speckschicht",
@@ -1746,7 +1746,7 @@
 		"ability_1": null,
 		"hidden_ability": "Fluffig",
 		"safari_rate": 0,
-		"dex_number": 25
+		"dex_number": 26
 	},
 	"POKEMON_SKARABORN": {
 		"ability_0": "Hexaplaga",
@@ -4677,14 +4677,14 @@
 		"ability_1": null,
 		"hidden_ability": "Blitzfaenger",
 		"safari_rate": 0,
-		"dex_number": 329
+		"dex_number": 13
 	},
 	"POKEMON_ROTOM": {
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"hidden_ability": null,
 		"safari_rate": 0,
-		"dex_number": 330
+		"dex_number": 36
 	},
 	"POKEMON_FLUNKIFER": {
 		"ability_0": "Scherenmacht",
