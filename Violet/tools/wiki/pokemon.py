@@ -253,6 +253,14 @@ def clean_entry_text(value):
     return str(value).replace("\\xFE", " ").replace("\xFE", " ").replace("\\n", " ").strip()
 
 
+def form_name(species_constant, readable, language="LANG_GER"):
+    constant_name = display_value(species_constant, ("POKEMON_",), language)
+    base_name = language_value(readable.get("name"), language)
+    if base_name and constant_name == base_name:
+        return base_name
+    return constant_name
+
+
 def constants_by_value(project, table_name):
     return {value: key for key, value in project.constants[table_name].items()}
 
@@ -264,6 +272,26 @@ def parse_frontsprites(path):
     for species_constant, sprite_slug in pattern.findall(text):
         sprite_map[species_constant] = sprite_slug
     return sprite_map
+
+
+def parse_mega_evolutions(path):
+    if not Path(path).exists():
+        eprint(f"warning: missing mega evolution table {path}")
+        return {}
+    text = Path(path).read_text(encoding="utf-8")
+    pattern = re.compile(
+        r"\{\s*(POKEMON_[A-Z0-9_]+)\s*,\s*(ITEM_[A-Z0-9_]+)\s*,\s*"
+        r"(POKEMON_[A-Z0-9_]+)\s*,\s*(MEGA_EVOLUTION|REGENT_EVOLUTION)\s*\}"
+    )
+    evolutions = {}
+    for species, item, mega_species, evolution_type in pattern.findall(text):
+        evolutions[mega_species] = {
+            "species": species,
+            "item": item,
+            "mega_species": mega_species,
+            "type": evolution_type,
+        }
+    return evolutions
 
 
 def detect_shifted_pokedex_order(pokemon_data):
@@ -496,13 +524,16 @@ def write_assets(assets_dir):
 def build_records(args):
     pokemon_data = load_pickle(args.pokemon_pkl)
     readable_stats = load_pickle(args.stats_pkl) if args.stats_pkl.exists() else []
+    raw_updates = json.loads(args.updates_json.read_text(encoding="utf-8")) if args.updates_json.exists() else {}
     generated_names = load_json_data(Path("bld/pokeapi/pokemon_names.pms")) or []
     project = Project(str(args.project))
     species_to_idx = dict(project.constants["species"].items())
     idx_to_species = constants_by_value(project, "species")
     sprite_map = parse_frontsprites("include/c/data/pokemon/frontsprites.h")
+    mega_evolutions = parse_mega_evolutions(args.mega_table)
     shifted_order = detect_shifted_pokedex_order(pokemon_data)
 
+    all_species_rows = []
     species_rows = []
     names = {}
     basestats = pokemon_data.get("basestats") or []
@@ -516,12 +547,10 @@ def build_records(args):
         name = language_value(readable.get("name"), args.language) or generated_name or display_value(species_constant, ("POKEMON_",))
         names[idx] = name
         dex_number = dex_number_for(pokemon_data, idx, shifted_order)
-        if not isinstance(dex_number, int) or dex_number <= 0:
-            continue
         pkl_entry = dex_entry_for(pokemon_data, dex_number)
         dex_text = language_value(readable.get("dex_entry"), args.language) or pkl_entry.get("entry_string_0")
         genus = language_value(readable.get("genus"), args.language) or pkl_entry.get("genus")
-        species_rows.append({
+        row = {
             "idx": idx,
             "species_constant": species_constant,
             "name": name,
@@ -530,7 +559,12 @@ def build_records(args):
             "pkl_entry": pkl_entry,
             "dex_text": clean_entry_text(dex_text),
             "genus": genus,
-        })
+            "updates": raw_updates.get(species_constant, {}),
+        }
+        all_species_rows.append(row)
+        if not isinstance(dex_number, int) or dex_number <= 0:
+            continue
+        species_rows.append(row)
 
     records = []
     page_slugs = {}
@@ -539,10 +573,39 @@ def build_records(args):
         rows.sort(key=lambda row: (1 if row["readable"].get("species_link") else 0, row["idx"]))
         record = dict(rows[0])
         record["alt_species"] = rows[1:]
+        record["alternate_forms"] = []
+        record["mega_forms"] = []
         record["slug"] = f"{dex_number:03d}-{slugify(record['name'])}"
         records.append(record)
         for row in rows:
             page_slugs[row["idx"]] = record["slug"] + "/"
+
+    record_by_species = {record["species_constant"]: record for record in records}
+    for row in all_species_rows:
+        species_constant = row["species_constant"]
+        linked_species = row["readable"].get("species_link") or row["updates"].get("species_link")
+        if not linked_species or linked_species == species_constant:
+            continue
+        record = record_by_species.get(linked_species)
+        if not record:
+            linked_idx = species_to_idx.get(linked_species)
+            linked_dex = dex_number_for(pokemon_data, linked_idx, shifted_order) if linked_idx is not None else None
+            record = next((candidate for candidate in records if candidate["dex_number"] == linked_dex), None)
+        if not record:
+            eprint(f"warning: no base page found for alternate form {species_constant} -> {linked_species}")
+            continue
+        form = dict(row)
+        form["base_species_constant"] = linked_species
+        form["display_name"] = form_name(species_constant, row["readable"], args.language)
+        form["mega_evolution"] = mega_evolutions.get(species_constant)
+        target = "mega_forms" if form["mega_evolution"] else "alternate_forms"
+        if form not in record[target]:
+            record[target].append(form)
+        page_slugs[row["idx"]] = record["slug"] + "/"
+
+    for record in records:
+        record["alternate_forms"].sort(key=lambda form: (form["dex_number"] or 0, form["idx"]))
+        record["mega_forms"].sort(key=lambda form: (form["mega_evolution"]["type"], form["idx"]))
     return pokemon_data, records, names, species_to_idx, sprite_map, page_slugs
 
 
@@ -578,6 +641,117 @@ def render_fact_table(pairs):
     return "<table class=\"fact-table\"><tbody>" + "".join(rows) + "</tbody></table>"
 
 
+def stats_from(row, pokemon_data):
+    idx = row["idx"]
+    if idx < len(pokemon_data.get("basestats", [])):
+        return pokemon_data["basestats"][idx] or {}
+    return {}
+
+
+def value_from(row, stats, key):
+    readable = row["readable"]
+    if key in readable and readable[key] not in (None, "", []):
+        return readable[key]
+    return stats.get(key)
+
+
+def render_stat_delta_table(base_stats, form_stats):
+    rows = []
+    base_values = base_stats.get("basestats", {})
+    form_values = form_stats.get("basestats", {})
+    for stat in STATS:
+        base_value = int(base_values.get(stat, 0))
+        form_value = int(form_values.get(stat, 0))
+        delta = form_value - base_value
+        delta_text = f"+{delta}" if delta > 0 else str(delta)
+        rows.append(
+            f"<tr><th>{STAT_LABELS[stat]}</th><td>{form_value}</td>"
+            f"<td class=\"delta {'positive' if delta > 0 else 'negative' if delta < 0 else 'neutral'}\">{escape(delta_text)}</td></tr>"
+        )
+    return "<table class=\"stats form-stats\"><thead><tr><th>Wert</th><th>Form</th><th>Δ</th></tr></thead><tbody>" + "".join(rows) + "</tbody></table>"
+
+
+def render_form_changes(args, form, base_record, pokemon_data, species_to_idx, names, page_slugs):
+    updates = form.get("updates") or {}
+    base_stats = stats_from(base_record, pokemon_data)
+    form_stats = stats_from(form, pokemon_data)
+    rows = []
+
+    if "type_0" in updates or "type_1" in updates:
+        types = normalized_types([value_from(form, form_stats, "type_0"), value_from(form, form_stats, "type_1")])
+        rows.append(("Typ", render_type_badges(types, args.language, "soft") or "-"))
+
+    ability_keys = [key for key in ("ability_0", "ability_1", "hidden_ability") if key in updates]
+    if ability_keys:
+        abilities = []
+        for key in ability_keys:
+            label = {
+                "ability_0": "Fähigkeit 1",
+                "ability_1": "Fähigkeit 2",
+                "hidden_ability": "Versteckte Fähigkeit",
+            }[key]
+            abilities.append(f"{label}: {display_value(value_from(form, form_stats, key), ('ABILITY_',), args.language)}")
+        rows.append(("Fähigkeiten", "<br>".join(escape(value) for value in abilities)))
+
+    for key, label, prefixes in (
+        ("exp_yield", "EP", ()),
+        ("capture_rate", "Fangrate", ()),
+        ("safari_rate", "Safari", ()),
+        ("common_item", "Häufiges Item", ("ITEM_",)),
+        ("rare_item", "Seltenes Item", ("ITEM_",)),
+        ("growth_rate", "Wachstum", ("GROWTH_RATE_",)),
+        ("egg_group_0", "Ei-Gruppe 1", ("EGG_GROUP_",)),
+        ("egg_group_1", "Ei-Gruppe 2", ("EGG_GROUP_",)),
+    ):
+        if key in updates:
+            rows.append((label, escape(display_value(value_from(form, form_stats, key), prefixes, args.language))))
+
+    if form.get("mega_evolution"):
+        mega = form["mega_evolution"]
+        rows.insert(0, (
+            "Auslöser",
+            escape(display_value(mega["item"], ("ITEM_",), args.language)),
+        ))
+
+    if not rows:
+        rows.append(("Änderungen", escape(", ".join(sorted(k for k in updates if k not in ("species_link", "dex_number"))) or "-")))
+
+    body = "<table class=\"fact-table form-change-table\"><tbody>"
+    body += "".join(f"<tr><th>{escape(label)}</th><td>{value}</td></tr>" for label, value in rows)
+    body += "</tbody></table>"
+
+    if "basestats" in updates:
+        body += render_stat_delta_table(base_stats, form_stats)
+    if "evolutions" in updates:
+        body += f"<div class=\"form-subsection\"><h3>Entwicklung</h3>{evolution_list(value_from(form, form_stats, 'evolutions'), species_to_idx, names, page_slugs, args.language)}</div>"
+    return body
+
+
+def render_form_section(args, title, forms, base_record, pokemon_data, species_to_idx, names, sprite_map, page_slugs, output_dir):
+    if not forms:
+        return ""
+    cards = []
+    for form in forms:
+        form_stats = stats_from(form, pokemon_data)
+        types = normalized_types([value_from(form, form_stats, "type_0"), value_from(form, form_stats, "type_1")])
+        theme = type_theme(*types)
+        sprite_src = copy_sprite(form["species_constant"], sprite_map, output_dir / "assets")
+        sprite_html = f"<img src=\"{escape(sprite_src)}\" alt=\"{escape(form['display_name'])}\">" if sprite_src else ""
+        if form.get("mega_evolution"):
+            kind = "Mega-Entwicklung" if form["mega_evolution"]["type"] == "MEGA_EVOLUTION" else "Regent-Entwicklung"
+        else:
+            kind = "Alternative Form"
+        cards.append(
+            f"<article class=\"form-card\" style=\"--card-accent:{theme['accent']};--card-soft:{theme['soft']};--card-line:{theme['line']};--card-ink:{theme['ink']};\">"
+            f"<div class=\"form-sprite\">{sprite_html}</div>"
+            f"<div class=\"form-body\"><p class=\"eyebrow\">{escape(kind)} · Species #{escape(form['idx'])}</p>"
+            f"<h3>{escape(form['display_name'])}</h3>"
+            f"{render_form_changes(args, form, base_record, pokemon_data, species_to_idx, names, page_slugs)}</div>"
+            f"</article>"
+        )
+    return f"<section class=\"panel\"><h2>{escape(title)}</h2><div class=\"form-grid\">{''.join(cards)}</div></section>"
+
+
 def render_species_page(args, record, pokemon_data, names, species_to_idx, sprite_map, page_slugs, output_dir):
     idx = record["idx"]
     stats = pokemon_data["basestats"][idx] or {}
@@ -595,6 +769,14 @@ def render_species_page(args, record, pokemon_data, names, species_to_idx, sprit
         f"{STAT_LABELS[s]} +{stats.get('ev_yield', {}).get(s)}"
         for s in STATS if stats.get("ev_yield", {}).get(s)
     ) or "-"
+    alternate_forms_html = render_form_section(
+        args, "Alternative Formen", record.get("alternate_forms", []), record,
+        pokemon_data, species_to_idx, names, sprite_map, page_slugs, output_dir
+    )
+    mega_forms_html = render_form_section(
+        args, "Mega / Regent-Entwicklungen", record.get("mega_forms", []), record,
+        pokemon_data, species_to_idx, names, sprite_map, page_slugs, output_dir
+    )
 
     sprite_html = f"<img src=\"{escape(sprite_src)}\" alt=\"{escape(record['name'])}\">" if sprite_src else ""
     infobox_top = render_fact_table([
@@ -659,6 +841,8 @@ def render_species_page(args, record, pokemon_data, names, species_to_idx, sprit
           <h2>Basiswerte</h2>
           {stat_table(stats.get('basestats', {}))}
         </section>
+        {alternate_forms_html}
+        {mega_forms_html}
         <section class="grid two">
           <article class="panel"><h2>Entwicklung</h2>{evolution_list(readable.get('evolutions') or pokemon_data.get('evolutions', [None])[idx], species_to_idx, names, page_slugs, args.language)}</article>
           <article class="panel"><h2>Level-Up Attacken</h2>{move_list_table(readable.get('levelup_moves') or pokemon_data.get('levelup_moves', [None])[idx], args.language)}</article>
@@ -750,6 +934,8 @@ def main():
     parser = argparse.ArgumentParser(description="Generate a static Pokémon Violet Pokédex wiki.")
     parser.add_argument("--pokemon-pkl", type=Path, default=Path("bld/index/pokemon.pkl"))
     parser.add_argument("--stats-pkl", type=Path, default=Path("bld/pokeapi/updated.pkl"))
+    parser.add_argument("--updates-json", type=Path, default=Path("pokeapi/updates.json"))
+    parser.add_argument("--mega-table", type=Path, default=Path("src/battle/mega/mega.c"))
     parser.add_argument("--project", type=Path, default=Path("proj.pmp"))
     parser.add_argument("--output", type=Path, default=Path("docs/pokemon"))
     parser.add_argument("--language", default="LANG_GER")
@@ -934,11 +1120,43 @@ th { color: var(--muted); font-size: 13px; }
 .pokemon-card strong { overflow-wrap: anywhere; }
 .pokemon-card small { display: flex; gap: 4px; flex-wrap: wrap; }
 .pokemon-card small .type { min-height: 18px; padding: 1px 6px; font-size: 10px; }
+.form-grid { display: grid; gap: 12px; }
+.form-card {
+  display: grid;
+  grid-template-columns: 116px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  padding: 12px;
+  border: 1px solid var(--card-line, var(--line));
+  border-radius: 6px;
+  background: linear-gradient(180deg, #fff, var(--card-soft, #f7f8f8));
+  box-shadow: inset 4px 0 0 var(--card-accent, var(--page-accent));
+}
+.form-sprite {
+  display: grid;
+  place-items: center;
+  min-height: 110px;
+  border: 1px solid var(--card-line, var(--line));
+  border-radius: 6px;
+  background: rgba(255,255,255,0.72);
+}
+.form-sprite img { width: 96px; height: 96px; object-fit: contain; image-rendering: pixelated; }
+.form-body h3 { margin: 0 0 10px; font-family: "Trebuchet MS", "Avenir Next", sans-serif; font-size: 20px; color: var(--card-ink, var(--page-ink)); }
+.form-change-table { margin-bottom: 10px; }
+.form-change-table .types { display: inline-flex; vertical-align: middle; }
+.form-stats { margin-top: 8px; }
+.form-stats .delta { width: 56px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.form-stats .positive { color: #2f7d46; }
+.form-stats .negative { color: #a0463a; }
+.form-stats .neutral { color: var(--muted); }
+.form-subsection { margin-top: 12px; }
+.form-subsection h3 { margin: 0 0 8px; font-size: 15px; }
 .search { display: grid; gap: 6px; justify-self: end; color: var(--muted); font-weight: 700; }
 .search input { width: min(360px, 70vw); padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; font: inherit; }
 @media (max-width: 760px) {
   main { width: min(100% - 20px, 1160px); margin-top: 18px; }
   .list-header, .grid.two, .species-layout { grid-template-columns: 1fr; }
+  .form-card { grid-template-columns: 1fr; }
   h1 { font-size: 34px; }
   .info-grid, .info-grid.compact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .search { justify-self: stretch; }

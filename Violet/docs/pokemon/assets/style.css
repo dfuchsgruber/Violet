@@ -174,11 +174,43 @@ th { color: var(--muted); font-size: 13px; }
 .pokemon-card strong { overflow-wrap: anywhere; }
 .pokemon-card small { display: flex; gap: 4px; flex-wrap: wrap; }
 .pokemon-card small .type { min-height: 18px; padding: 1px 6px; font-size: 10px; }
+.form-grid { display: grid; gap: 12px; }
+.form-card {
+  display: grid;
+  grid-template-columns: 116px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  padding: 12px;
+  border: 1px solid var(--card-line, var(--line));
+  border-radius: 6px;
+  background: linear-gradient(180deg, #fff, var(--card-soft, #f7f8f8));
+  box-shadow: inset 4px 0 0 var(--card-accent, var(--page-accent));
+}
+.form-sprite {
+  display: grid;
+  place-items: center;
+  min-height: 110px;
+  border: 1px solid var(--card-line, var(--line));
+  border-radius: 6px;
+  background: rgba(255,255,255,0.72);
+}
+.form-sprite img { width: 96px; height: 96px; object-fit: contain; image-rendering: pixelated; }
+.form-body h3 { margin: 0 0 10px; font-family: "Trebuchet MS", "Avenir Next", sans-serif; font-size: 20px; color: var(--card-ink, var(--page-ink)); }
+.form-change-table { margin-bottom: 10px; }
+.form-change-table .types { display: inline-flex; vertical-align: middle; }
+.form-stats { margin-top: 8px; }
+.form-stats .delta { width: 56px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.form-stats .positive { color: #2f7d46; }
+.form-stats .negative { color: #a0463a; }
+.form-stats .neutral { color: var(--muted); }
+.form-subsection { margin-top: 12px; }
+.form-subsection h3 { margin: 0 0 8px; font-size: 15px; }
 .search { display: grid; gap: 6px; justify-self: end; color: var(--muted); font-weight: 700; }
 .search input { width: min(360px, 70vw); padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; font: inherit; }
 @media (max-width: 760px) {
   main { width: min(100% - 20px, 1160px); margin-top: 18px; }
   .list-header, .grid.two, .species-layout { grid-template-columns: 1fr; }
+  .form-card { grid-template-columns: 1fr; }
   h1 { font-size: 34px; }
   .info-grid, .info-grid.compact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .search { justify-self: stretch; }
