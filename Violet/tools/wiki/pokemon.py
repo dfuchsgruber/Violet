@@ -346,6 +346,13 @@ def item_list(values, prefixes=(), limit=None, language="LANG_GER"):
     return "<ul class=\"chip-list\">" + "".join(items) + "</ul>"
 
 
+def indexed_pokemon_value(pokemon_data, key, idx, fallback=None):
+    values = pokemon_data.get(key)
+    if isinstance(values, (list, tuple)) and idx < len(values):
+        return values[idx]
+    return fallback
+
+
 def render_type_badges(types, language="LANG_GER", variant="solid"):
     badges = []
     for type_name in dict.fromkeys(t for t in types if t):
@@ -777,6 +784,21 @@ def render_species_page(args, record, pokemon_data, names, species_to_idx, sprit
         args, "Mega / Regent-Entwicklungen", record.get("mega_forms", []), record,
         pokemon_data, species_to_idx, names, sprite_map, page_slugs, output_dir
     )
+    levelup_moves = indexed_pokemon_value(pokemon_data, "levelup_moves", idx, readable.get("levelup_moves"))
+    egg_moves = indexed_pokemon_value(pokemon_data, "egg_moves", idx, readable.get("egg_moves"))
+    accessible_moves = indexed_pokemon_value(pokemon_data, "accessible_moves", idx, readable.get("accessible_moves"))
+    tm_hm_compatibility = indexed_pokemon_value(
+        pokemon_data,
+        "tm_hm_compatibility",
+        idx,
+        readable.get("tm_compatibility") or readable.get("tm_compatiblilty"),
+    )
+    move_tutor_compatibility = indexed_pokemon_value(
+        pokemon_data,
+        "move_tutor_compatibility",
+        idx,
+        readable.get("tutor_compatibility"),
+    )
 
     sprite_html = f"<img src=\"{escape(sprite_src)}\" alt=\"{escape(record['name'])}\">" if sprite_src else ""
     infobox_top = render_fact_table([
@@ -845,15 +867,15 @@ def render_species_page(args, record, pokemon_data, names, species_to_idx, sprit
         {mega_forms_html}
         <section class="grid two">
           <article class="panel"><h2>Entwicklung</h2>{evolution_list(readable.get('evolutions') or pokemon_data.get('evolutions', [None])[idx], species_to_idx, names, page_slugs, args.language)}</article>
-          <article class="panel"><h2>Level-Up Attacken</h2>{move_list_table(readable.get('levelup_moves') or pokemon_data.get('levelup_moves', [None])[idx], args.language)}</article>
+          <article class="panel"><h2>Level-Up Attacken</h2>{move_list_table(levelup_moves, args.language)}</article>
         </section>
         <section class="grid two">
-          <article class="panel"><h2>Ei-Attacken</h2>{item_list(readable.get('egg_moves') if readable.get('egg_moves') is not None else pokemon_data.get('egg_moves', [None])[idx], ('ATTACK_',), language=args.language)}</article>
-          <article class="panel"><h2>Weitere Attacken</h2>{item_list(readable.get('accessible_moves') if readable.get('accessible_moves') is not None else pokemon_data.get('accessible_moves', [None])[idx], ('ATTACK_',), language=args.language)}</article>
+          <article class="panel"><h2>Ei-Attacken</h2>{item_list(egg_moves, ('ATTACK_',), language=args.language)}</article>
+          <article class="panel"><h2>Weitere Attacken</h2>{item_list(accessible_moves, ('ATTACK_',), language=args.language)}</article>
         </section>
         <section class="grid two">
-          <article class="panel"><h2>TM/VM</h2>{tm_table(readable.get('tm_compatiblilty') or pokemon_data.get('tm_hm_compatibility', [None])[idx], args.language)}</article>
-          <article class="panel"><h2>Tutor</h2>{tutor_table(readable.get('tutor_compatibility') if readable.get('tutor_compatibility') is not None else pokemon_data.get('move_tutor_compatibility', [None])[idx], args.language)}</article>
+          <article class="panel"><h2>TM/VM</h2>{tm_table(tm_hm_compatibility, args.language)}</article>
+          <article class="panel"><h2>Tutor</h2>{tutor_table(move_tutor_compatibility, args.language)}</article>
         </section>
       </div>
     </section>
