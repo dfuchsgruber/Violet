@@ -286,7 +286,7 @@ def build_records(args):
     sprite_map = parse_frontsprites("include/c/data/pokemon/frontsprites.h")
     shifted_order = detect_shifted_pokedex_order(pokemon_data)
 
-    records = []
+    species_rows = []
     names = {}
     basestats = pokemon_data.get("basestats") or []
     max_species = species_to_idx.get("POKEMON_CNT", len(basestats))
@@ -299,22 +299,34 @@ def build_records(args):
         name = language_value(readable.get("name"), args.language) or generated_name or display_value(species_constant, ("POKEMON_",))
         names[idx] = name
         dex_number = dex_number_for(pokemon_data, idx, shifted_order)
+        if not isinstance(dex_number, int) or dex_number <= 0:
+            continue
         pkl_entry = dex_entry_for(pokemon_data, dex_number)
         dex_text = language_value(readable.get("dex_entry"), args.language) or pkl_entry.get("entry_string_0")
         genus = language_value(readable.get("genus"), args.language) or pkl_entry.get("genus")
-        page_slug = f"{idx:03d}-{slugify(name)}"
-        records.append({
+        species_rows.append({
             "idx": idx,
             "species_constant": species_constant,
             "name": name,
-            "slug": page_slug,
             "dex_number": dex_number,
             "readable": readable,
             "pkl_entry": pkl_entry,
             "dex_text": clean_entry_text(dex_text),
             "genus": genus,
         })
-    return pokemon_data, records, names, species_to_idx, sprite_map
+
+    records = []
+    page_slugs = {}
+    for dex_number in sorted({row["dex_number"] for row in species_rows}):
+        rows = [row for row in species_rows if row["dex_number"] == dex_number]
+        rows.sort(key=lambda row: (1 if row["readable"].get("species_link") else 0, row["idx"]))
+        record = dict(rows[0])
+        record["alt_species"] = rows[1:]
+        record["slug"] = f"{dex_number:03d}-{slugify(record['name'])}"
+        records.append(record)
+        for row in rows:
+            page_slugs[row["idx"]] = record["slug"] + "/"
+    return pokemon_data, records, names, species_to_idx, sprite_map, page_slugs
 
 
 def render_info_grid(record, stats):
@@ -373,7 +385,7 @@ def render_species_page(args, record, pokemon_data, names, species_to_idx, sprit
     <section class="hero">
       <div>{sprite_html}</div>
       <div>
-        <p class="eyebrow">#{escape(record['idx'])} · {escape(record['species_constant'])}</p>
+        <p class="eyebrow">Pokédex #{escape(record['dex_number'])} · Species #{escape(record['idx'])} · {escape(record['species_constant'])}</p>
         <h1>{escape(record['name'])}</h1>
         <div class="types">{type_badges}</div>
         <p>{escape(record['dex_text']) if record['dex_text'] else ''}</p>
@@ -432,7 +444,7 @@ def render_index(records, pokemon_data, sprite_map, output_dir):
         cards.append(
             f"<a class=\"pokemon-card\" href=\"species/{escape(record['slug'])}/\" "
             f"data-search=\"{escape((record['name'] + ' ' + record['species_constant'] + ' ' + type_text).lower())}\">"
-            f"{img}<span>#{escape(record['idx'])}</span><strong>{escape(record['name'])}</strong><small>{types}</small></a>"
+            f"{img}<span>#{escape(record['dex_number'])}</span><strong>{escape(record['name'])}</strong><small>{types}</small></a>"
         )
     content = f"""<!doctype html>
 <html lang="de">
@@ -471,8 +483,7 @@ def generate(args):
         shutil.rmtree(args.output)
     args.output.mkdir(parents=True, exist_ok=True)
     write_assets(args.output / "assets")
-    pokemon_data, records, names, species_to_idx, sprite_map = build_records(args)
-    page_slugs = {record["idx"]: record["slug"] + "/" for record in records}
+    pokemon_data, records, names, species_to_idx, sprite_map, page_slugs = build_records(args)
     for record in records:
         render_species_page(args, record, pokemon_data, names, species_to_idx, sprite_map, page_slugs, args.output)
     render_index(records, pokemon_data, sprite_map, args.output)

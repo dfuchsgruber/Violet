@@ -140,7 +140,7 @@ CONSTANTSHC=$(CONSTANTS:%.const=include/c/%.h)
 OPENPAREN := (
 CLOSEPAREN := )
 
-include pokeapi/makefile tools/fata_morgana/makefile tools/index/makefile \
+include pokeapi/makefile tools/fata_morgana/makefile tools/index/makefile tools/wiki/makefile \
  tools/cloud_maps/makefile tools/worldmap/makefile tools/berry_adjacency/makefile \
  tools/treasure_map/makefile tools/images_to_palette/makefile \
  tools/move_tutor/makefile tools/tutor_crystal/makefile \
