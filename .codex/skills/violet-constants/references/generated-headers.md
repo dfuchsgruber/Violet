@@ -4,14 +4,14 @@
 
 Constants are registered in `Violet/proj.pmp.constants`:
 
-```json
+```jsonc
 {
 	"items": "constants/items.const",
 	"species": "constants/species.const"
 }
 ```
 
-The key is the constant table name used by pymap/pyagb. The path points to the `.const` JSON file.
+The key is the constant table name used by pymap/pyagb. The path points to the `.const` JSONC file.
 
 ## Generation
 
@@ -67,7 +67,7 @@ evolution_type = agb.types.ScalarType("u16", constant="mega_evolution_types")
 
 Then PMS data may use symbolic values:
 
-```json
+```jsonc
 {
 	"species": "POKEMON_GEOWAZ",
 	"mega_item": "ITEM_GEOWAZNIT",

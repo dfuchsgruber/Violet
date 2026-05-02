@@ -4,7 +4,7 @@
 
 Use `"type": "enum"` when values are sequential and order is meaningful.
 
-```json
+```jsonc
 {
 	"type": "enum",
 	"base": 1,
@@ -45,9 +45,9 @@ Before creating a dict, inspect existing dict-style constants in `Violet/constan
 
 ## Choosing A Table Name
 
-The JSON filename, the `proj.pmp.constants` key, and generated header path should normally align:
+The JSONC filename, the `proj.pmp.constants` key, and generated header path should normally align:
 
-```json
+```jsonc
 {
 	"mega_evolution_types": "constants/mega_evolution_types.const"
 }

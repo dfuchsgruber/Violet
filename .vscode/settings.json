@@ -4,10 +4,10 @@
     ],
     "C_Cpp.default.cStandard": "c99",
     "files.associations": {
-        "*.const": "json",
-        "*.pmp.config" : "json",
-        "*.pmp": "json",
-        "*.pms": "json",
+        "*.const": "jsonc",
+        "*.pmp.config" : "jsonc",
+        "*.pmp": "jsonc",
+        "*.pms": "jsonc",
         "*.grit": "plaintext",
         "*.flags": "plaintext"
     },

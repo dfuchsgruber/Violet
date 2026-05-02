@@ -30,7 +30,7 @@ models_to_export = {
 
 ## Common Types
 
-- `ScalarType("<width>", constant="<constant-table>")`: integer encoded as a named constant in PMS JSON.
+- `ScalarType("<width>", constant="<constant-table>")`: integer encoded as a named constant in PMS JSONC.
 - `Structure([...])`: C-like struct; tuple shape is `(field_name, model_type_name, default)`.
 - `FixedSizeArrayType(element_type, size_or_callback)`: arrays with a known count.
 - `UnboundedArrayType(element_type, sentinel)`: arrays terminated by a generated sentinel.

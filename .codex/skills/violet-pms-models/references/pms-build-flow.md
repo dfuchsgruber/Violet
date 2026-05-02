@@ -4,7 +4,7 @@
 
 Standalone PMS data normally looks like this:
 
-```json
+```jsonc
 {
 	"label": "global_symbol_name",
 	"type": "exported_model_type",
@@ -13,6 +13,21 @@ Standalone PMS data normally looks like this:
 ```
 
 The `"type"` value must exist in `models_to_export`. The `"label"` becomes the generated assembly/C symbol.
+
+PMS files use JSONC. Prefer comments for entry labels:
+
+```jsonc
+{
+	"label": "attacks",
+	"type": "attack.table",
+	"data": [
+		// ATTACK_NONE
+		{
+			"effect": 0
+		}
+	]
+}
+```
 
 ## Makefile Discovery
 
@@ -54,7 +69,6 @@ Run small checks first:
 
 ```bash
 python -m py_compile Violet/models/<model>.py
-python -m json.tool Violet/src/path/to/data.pms >/dev/null
 ```
 
 Then build the generated assembly/object:

@@ -1,0 +1,6231 @@
+{
+	"label": "attacks",
+	"type": "attack.table",
+	"data": [
+		// ATTACK_NONE
+		{
+			"effect": 0,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 0,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_PFUND
+		{
+			"effect": 0,
+			"base_power": 40,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 40,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_KARATESCHLAG
+		{
+			"effect": 43,
+			"base_power": 50,
+			"type": "TYPE_KAMPF",
+			"accuracy": 100,
+			"pp": 25,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_DUPLEXHIEB
+		{
+			"effect": 29,
+			"base_power": 15,
+			"type": "TYPE_NORMAL",
+			"accuracy": 85,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_KOMETENHIEB
+		{
+			"effect": 29,
+			"base_power": 18,
+			"type": "TYPE_NORMAL",
+			"accuracy": 85,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_MEGAHIEB
+		{
+			"effect": 0,
+			"base_power": 80,
+			"type": "TYPE_NORMAL",
+			"accuracy": 85,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_ZAHLTAG
+		{
+			"effect": 34,
+			"base_power": 40,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_FEUERSCHLAG
+		{
+			"effect": 4,
+			"base_power": 75,
+			"type": "TYPE_FEUER",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_EISHIEB
+		{
+			"effect": 5,
+			"base_power": 75,
+			"type": "TYPE_EIS",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_DONNERSCHLAG
+		{
+			"effect": 6,
+			"base_power": 75,
+			"type": "TYPE_ELEKTRO",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_KRATZER
+		{
+			"effect": 0,
+			"base_power": 40,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 35,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_KLAMMER
+		{
+			"effect": 0,
+			"base_power": 55,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_GUILLOTINE
+		{
+			"effect": 38,
+			"base_power": 1,
+			"type": "TYPE_NORMAL",
+			"accuracy": 30,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 5
+		},
+		// ATTACK_KLINGENSTURM
+		{
+			"effect": 39,
+			"base_power": 80,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_SCHWERTTANZ
+		{
+			"effect": 50,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 5
+		},
+		// ATTACK_ZERSCHNEIDER
+		{
+			"effect": 0,
+			"base_power": 65,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 100,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_WINDSTOSS
+		{
+			"effect": 149,
+			"base_power": 40,
+			"type": "TYPE_FLUG",
+			"accuracy": 100,
+			"pp": 35,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_FLUEGELSCHLAG
+		{
+			"effect": 0,
+			"base_power": 60,
+			"type": "TYPE_FLUG",
+			"accuracy": 100,
+			"pp": 35,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_WIRBELWIND
+		{
+			"effect": 28,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": -6,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		},
+		// ATTACK_FLIEGEN
+		{
+			"effect": 155,
+			"base_power": 70,
+			"type": "TYPE_FLUG",
+			"accuracy": 95,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_KLAMMERGRIFF
+		{
+			"effect": 42,
+			"base_power": 15,
+			"type": "TYPE_NORMAL",
+			"accuracy": 75,
+			"pp": 20,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_SLAM
+		{
+			"effect": 0,
+			"base_power": 80,
+			"type": "TYPE_NORMAL",
+			"accuracy": 75,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_RANKENHIEB
+		{
+			"effect": 0,
+			"base_power": 35,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_STAMPFER
+		{
+			"effect": 150,
+			"base_power": 65,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_DOPPELKICK
+		{
+			"effect": 44,
+			"base_power": 30,
+			"type": "TYPE_KAMPF",
+			"accuracy": 100,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_MEGAKICK
+		{
+			"effect": 0,
+			"base_power": 120,
+			"type": "TYPE_NORMAL",
+			"accuracy": 75,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_SPRUNGKICK
+		{
+			"effect": 45,
+			"base_power": 70,
+			"type": "TYPE_KAMPF",
+			"accuracy": 95,
+			"pp": 25,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_FEGEKICK
+		{
+			"effect": 31,
+			"base_power": 60,
+			"type": "TYPE_KAMPF",
+			"accuracy": 85,
+			"pp": 15,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_SANDWIRBEL
+		{
+			"effect": 23,
+			"base_power": 0,
+			"type": "TYPE_BODEN",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_KOPFNUSS
+		{
+			"effect": 31,
+			"base_power": 70,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_HORNATTACKE
+		{
+			"effect": 0,
+			"base_power": 65,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 25,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_FURIENSCHLAG
+		{
+			"effect": 29,
+			"base_power": 15,
+			"type": "TYPE_NORMAL",
+			"accuracy": 85,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_HORNBOHRER
+		{
+			"effect": 38,
+			"base_power": 1,
+			"type": "TYPE_NORMAL",
+			"accuracy": 30,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 5
+		},
+		// ATTACK_TACKLE
+		{
+			"effect": 0,
+			"base_power": 35,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 35,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_BODYSLAM
+		{
+			"effect": 6,
+			"base_power": 85,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_WICKEL
+		{
+			"effect": 42,
+			"base_power": 15,
+			"type": "TYPE_NORMAL",
+			"accuracy": 85,
+			"pp": 20,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_BODYCHECK
+		{
+			"effect": 48,
+			"base_power": 90,
+			"type": "TYPE_NORMAL",
+			"accuracy": 85,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_FUCHTLER
+		{
+			"effect": 27,
+			"base_power": 90,
+			"type": "TYPE_NORMAL",
+			"accuracy": 120,
+			"pp": 20,
+			"effect_accuracy": 100,
+			"affects_whom": "RANDOM_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_RISIKOTACKLE
+		{
+			"effect": 198,
+			"base_power": 120,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_RUTENSCHLAG
+		{
+			"effect": 19,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_GIFTSTACHEL
+		{
+			"effect": 2,
+			"base_power": 15,
+			"type": "TYPE_GIFT",
+			"accuracy": 100,
+			"pp": 35,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_DUONADEL
+		{
+			"effect": 77,
+			"base_power": 25,
+			"type": "TYPE_KAEFER",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 20,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_NADELRAKETE
+		{
+			"effect": 29,
+			"base_power": 14,
+			"type": "TYPE_KAEFER",
+			"accuracy": 85,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_SILBERBLICK
+		{
+			"effect": 19,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_BISS
+		{
+			"effect": 31,
+			"base_power": 60,
+			"type": "TYPE_UNLICHT",
+			"accuracy": 100,
+			"pp": 25,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_HEULER
+		{
+			"effect": 18,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 40,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_BRUELLER
+		{
+			"effect": 28,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": -6,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		},
+		// ATTACK_GESANG
+		{
+			"effect": 1,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 55,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		},
+		// ATTACK_SUPERSCHALL
+		{
+			"effect": 49,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 55,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_ULTRASCHALL
+		{
+			"effect": 130,
+			"base_power": 1,
+			"type": "TYPE_NORMAL",
+			"accuracy": 90,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_AUSSETZER
+		{
+			"effect": 86,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 55,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_SAEURE
+		{
+			"effect": 69,
+			"base_power": 40,
+			"type": "TYPE_GIFT",
+			"accuracy": 100,
+			"pp": 30,
+			"effect_accuracy": 10,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_GLUT
+		{
+			"effect": 4,
+			"base_power": 40,
+			"type": "TYPE_FEUER",
+			"accuracy": 100,
+			"pp": 25,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_FLAMMENWURF
+		{
+			"effect": 4,
+			"base_power": 95,
+			"type": "TYPE_FEUER",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 4
+		},
+		// ATTACK_WEISSNEBEL
+		{
+			"effect": 46,
+			"base_power": 0,
+			"type": "TYPE_EIS",
+			"accuracy": 0,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_AQUAKNARRE
+		{
+			"effect": 0,
+			"base_power": 40,
+			"type": "TYPE_WASSER",
+			"accuracy": 100,
+			"pp": 25,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_HYDROPUMPE
+		{
+			"effect": 0,
+			"base_power": 120,
+			"type": "TYPE_WASSER",
+			"accuracy": 80,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 6
+		},
+		// ATTACK_SURFER
+		{
+			"effect": 0,
+			"base_power": 95,
+			"type": "TYPE_WASSER",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 2
+		},
+		// ATTACK_EISSTRAHL
+		{
+			"effect": 5,
+			"base_power": 95,
+			"type": "TYPE_EIS",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 4
+		},
+		// ATTACK_BLIZZARD
+		{
+			"effect": 5,
+			"base_power": 120,
+			"type": "TYPE_EIS",
+			"accuracy": 70,
+			"pp": 5,
+			"effect_accuracy": 10,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 6
+		},
+		// ATTACK_PSYSTRAHL
+		{
+			"effect": 76,
+			"base_power": 65,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 3
+		},
+		// ATTACK_BLUBBSTRAHL
+		{
+			"effect": 70,
+			"base_power": 65,
+			"type": "TYPE_WASSER",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 1
+		},
+		// ATTACK_AURORASTRAHL
+		{
+			"effect": 68,
+			"base_power": 65,
+			"type": "TYPE_EIS",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 1
+		},
+		// ATTACK_HYPERSTRAHL
+		{
+			"effect": 80,
+			"base_power": 150,
+			"type": "TYPE_NORMAL",
+			"accuracy": 90,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 5
+		},
+		// ATTACK_SCHNABEL
+		{
+			"effect": 0,
+			"base_power": 35,
+			"type": "TYPE_FLUG",
+			"accuracy": 100,
+			"pp": 35,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_BOHRSCHNABEL
+		{
+			"effect": 0,
+			"base_power": 80,
+			"type": "TYPE_FLUG",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_UEBERROLLER
+		{
+			"effect": 48,
+			"base_power": 80,
+			"type": "TYPE_KAMPF",
+			"accuracy": 80,
+			"pp": 25,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_FUSSKICK
+		{
+			"effect": 196,
+			"base_power": 1,
+			"type": "TYPE_KAMPF",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_KONTER
+		{
+			"effect": 89,
+			"base_power": 1,
+			"type": "TYPE_KAMPF",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_DEPENDS_ON_ATTACK",
+			"priority": -5,
+			"flags": "MAKES_CONTACT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_GEOWURF
+		{
+			"effect": 87,
+			"base_power": 1,
+			"type": "TYPE_KAMPF",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_STAERKE
+		{
+			"effect": 0,
+			"base_power": 80,
+			"type": "TYPE_KAMPF",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_ABSORBER
+		{
+			"effect": 3,
+			"base_power": 20,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_MEGASAUGER
+		{
+			"effect": 3,
+			"base_power": 40,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_EGELSAMEN
+		{
+			"effect": 84,
+			"base_power": 0,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 90,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 4
+		},
+		// ATTACK_WACHSTUM
+		{
+			"effect": 13,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 40,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_RASIERBLATT
+		{
+			"effect": 43,
+			"base_power": 55,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 95,
+			"pp": 25,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_SOLARSTRAHL
+		{
+			"effect": 151,
+			"base_power": 120,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 5
+		},
+		// ATTACK_GIFTPUDER
+		{
+			"effect": 66,
+			"base_power": 0,
+			"type": "TYPE_GIFT",
+			"accuracy": 75,
+			"pp": 35,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_STACHELSPORE
+		{
+			"effect": 67,
+			"base_power": 0,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 75,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_SCHLAFPUDER
+		{
+			"effect": 1,
+			"base_power": 0,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 75,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_BLAETTERTANZ
+		{
+			"effect": 27,
+			"base_power": 120,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 100,
+			"affects_whom": "RANDOM_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_FADENSCHUSS
+		{
+			"effect": 20,
+			"base_power": 0,
+			"type": "TYPE_KAEFER",
+			"accuracy": 95,
+			"pp": 40,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_DRACHENWUT
+		{
+			"effect": 41,
+			"base_power": 1,
+			"type": "TYPE_DRACHE",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 1
+		},
+		// ATTACK_FEUERWIRBEL
+		{
+			"effect": 42,
+			"base_power": 15,
+			"type": "TYPE_FEUER",
+			"accuracy": 70,
+			"pp": 15,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_DONNERSCHOCK
+		{
+			"effect": 6,
+			"base_power": 40,
+			"type": "TYPE_ELEKTRO",
+			"accuracy": 100,
+			"pp": 30,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_DONNERBLITZ
+		{
+			"effect": 6,
+			"base_power": 95,
+			"type": "TYPE_ELEKTRO",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 4
+		},
+		// ATTACK_DONNERWELLE
+		{
+			"effect": 67,
+			"base_power": 0,
+			"type": "TYPE_ELEKTRO",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 3
+		},
+		// ATTACK_DONNER
+		{
+			"effect": 152,
+			"base_power": 120,
+			"type": "TYPE_ELEKTRO",
+			"accuracy": 70,
+			"pp": 10,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 5
+		},
+		// ATTACK_STEINWURF
+		{
+			"effect": 0,
+			"base_power": 50,
+			"type": "TYPE_GESTEIN",
+			"accuracy": 90,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 1
+		},
+		// ATTACK_ERDBEBEN
+		{
+			"effect": 147,
+			"base_power": 100,
+			"type": "TYPE_BODEN",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_BOTH_FOES_AND_PARTNER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 6
+		},
+		// ATTACK_GEOFISSUR
+		{
+			"effect": 38,
+			"base_power": 1,
+			"type": "TYPE_BODEN",
+			"accuracy": 30,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 5
+		},
+		// ATTACK_SCHAUFLER
+		{
+			"effect": 155,
+			"base_power": 60,
+			"type": "TYPE_BODEN",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_TOXIN
+		{
+			"effect": 33,
+			"base_power": 0,
+			"type": "TYPE_GIFT",
+			"accuracy": 85,
+			"pp": 10,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		},
+		// ATTACK_KONFUSION
+		{
+			"effect": 76,
+			"base_power": 50,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 100,
+			"pp": 25,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_PSYCHOKINESE
+		{
+			"effect": 72,
+			"base_power": 90,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 4
+		},
+		// ATTACK_HYPNOSE
+		{
+			"effect": 1,
+			"base_power": 0,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 60,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 3
+		},
+		// ATTACK_MEDITATION
+		{
+			"effect": 10,
+			"base_power": 0,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 0,
+			"pp": 40,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_AGILITAET
+		{
+			"effect": 52,
+			"base_power": 0,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 0,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_RUCKZUCKHIEB
+		{
+			"effect": 103,
+			"base_power": 40,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 1,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_RASEREI
+		{
+			"effect": 81,
+			"base_power": 20,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_TELEPORT
+		{
+			"effect": 153,
+			"base_power": 0,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 0,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_NACHTNEBEL
+		{
+			"effect": 87,
+			"base_power": 1,
+			"type": "TYPE_GEIST",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 1
+		},
+		// ATTACK_MIMIKRY
+		{
+			"effect": 82,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_KREIDESCHREI
+		{
+			"effect": 59,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 85,
+			"pp": 40,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_DOPPELTEAM
+		{
+			"effect": 16,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_GENESUNG
+		{
+			"effect": 32,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_HAERTNER
+		{
+			"effect": 11,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_KOMPRIMATOR
+		{
+			"effect": 108,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_RAUCHWOLKE
+		{
+			"effect": 23,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_KONFUSTRAHL
+		{
+			"effect": 49,
+			"base_power": 0,
+			"type": "TYPE_GEIST",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_PANZERSCHUTZ
+		{
+			"effect": 11,
+			"base_power": 0,
+			"type": "TYPE_WASSER",
+			"accuracy": 0,
+			"pp": 40,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_EINIGLER
+		{
+			"effect": 156,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 40,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_BARRIERE
+		{
+			"effect": 51,
+			"base_power": 0,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 0,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_LICHTSCHILD
+		{
+			"effect": 35,
+			"base_power": 0,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 0,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		},
+		// ATTACK_DUNKELNEBEL
+		{
+			"effect": 25,
+			"base_power": 0,
+			"type": "TYPE_EIS",
+			"accuracy": 0,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		},
+		// ATTACK_REFLEKTOR
+		{
+			"effect": 65,
+			"base_power": 0,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 0,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		},
+		// ATTACK_ENERGIEFOKUS
+		{
+			"effect": 47,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_GEDULD
+		{
+			"effect": 26,
+			"base_power": 1,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_METRONOM
+		{
+			"effect": 83,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_DEPENDS_ON_ATTACK",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_SPIEGELTRICK
+		{
+			"effect": 9,
+			"base_power": 0,
+			"type": "TYPE_FLUG",
+			"accuracy": 0,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_DEPENDS_ON_ATTACK",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 1
+		},
+		// ATTACK_FINALE
+		{
+			"effect": 7,
+			"base_power": 200,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_BOTH_FOES_AND_PARTNER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_EIERBOMBE
+		{
+			"effect": 0,
+			"base_power": 100,
+			"type": "TYPE_NORMAL",
+			"accuracy": 75,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_SCHLECKER
+		{
+			"effect": 6,
+			"base_power": 20,
+			"type": "TYPE_GEIST",
+			"accuracy": 100,
+			"pp": 30,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_SMOG
+		{
+			"effect": 2,
+			"base_power": 20,
+			"type": "TYPE_GIFT",
+			"accuracy": 70,
+			"pp": 20,
+			"effect_accuracy": 40,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_SCHLAMMBAD
+		{
+			"effect": 2,
+			"base_power": 65,
+			"type": "TYPE_GIFT",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_KNOCHENKEULE
+		{
+			"effect": 31,
+			"base_power": 65,
+			"type": "TYPE_BODEN",
+			"accuracy": 85,
+			"pp": 20,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_FEUERSTURM
+		{
+			"effect": 4,
+			"base_power": 120,
+			"type": "TYPE_FEUER",
+			"accuracy": 85,
+			"pp": 5,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 4
+		},
+		// ATTACK_KASKADE
+		{
+			"effect": 31,
+			"base_power": 105,
+			"type": "TYPE_WASSER",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_SCHNAPPER
+		{
+			"effect": 42,
+			"base_power": 35,
+			"type": "TYPE_WASSER",
+			"accuracy": 75,
+			"pp": 10,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_STERNSCHAUER
+		{
+			"effect": 17,
+			"base_power": 60,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_SCHAEDELWUMME
+		{
+			"effect": 145,
+			"base_power": 100,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_DORNKANONE
+		{
+			"effect": 29,
+			"base_power": 20,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_UMKLAMMERUNG
+		{
+			"effect": 70,
+			"base_power": 10,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 35,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_AMNESIE
+		{
+			"effect": 54,
+			"base_power": 0,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 0,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_PSYKRAFT
+		{
+			"effect": 23,
+			"base_power": 0,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 80,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_WEICHEI
+		{
+			"effect": 157,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_TURMKICK
+		{
+			"effect": 45,
+			"base_power": 85,
+			"type": "TYPE_KAMPF",
+			"accuracy": 90,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_GIFTBLICK
+		{
+			"effect": 67,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 75,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_TRAUMFRESSER
+		{
+			"effect": 8,
+			"base_power": 100,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 2
+		},
+		// ATTACK_GIFTWOLKE
+		{
+			"effect": 66,
+			"base_power": 0,
+			"type": "TYPE_GIFT",
+			"accuracy": 55,
+			"pp": 40,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_STAKKATO
+		{
+			"effect": 29,
+			"base_power": 15,
+			"type": "TYPE_NORMAL",
+			"accuracy": 85,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_BLUTSAUGER
+		{
+			"effect": 3,
+			"base_power": 20,
+			"type": "TYPE_KAEFER",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_TODESKUSS
+		{
+			"effect": 1,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 75,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_HIMMELSFEGER
+		{
+			"effect": 75,
+			"base_power": 140,
+			"type": "TYPE_FLUG",
+			"accuracy": 90,
+			"pp": 5,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_WANDLER
+		{
+			"effect": 57,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_BLUBBER
+		{
+			"effect": 70,
+			"base_power": 20,
+			"type": "TYPE_WASSER",
+			"accuracy": 100,
+			"pp": 30,
+			"effect_accuracy": 10,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_IRRSCHLAG
+		{
+			"effect": 76,
+			"base_power": 70,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 20,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_PILZSPORE
+		{
+			"effect": 1,
+			"base_power": 0,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 3
+		},
+		// ATTACK_BLITZ
+		{
+			"effect": 17,
+			"base_power": 60,
+			"type": "TYPE_ELEKTRO",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 1
+		},
+		// ATTACK_PSYWELLE
+		{
+			"effect": 88,
+			"base_power": 1,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 80,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 1
+		},
+		// ATTACK_PLATSCHER
+		{
+			"effect": 85,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 40,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_SAEUREPANZER
+		{
+			"effect": 51,
+			"base_power": 0,
+			"type": "TYPE_GIFT",
+			"accuracy": 0,
+			"pp": 40,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_KRABBHAMMER
+		{
+			"effect": 43,
+			"base_power": 90,
+			"type": "TYPE_WASSER",
+			"accuracy": 85,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_EXPLOSION
+		{
+			"effect": 7,
+			"base_power": 250,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_BOTH_FOES_AND_PARTNER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 5
+		},
+		// ATTACK_KRATZFURIE
+		{
+			"effect": 29,
+			"base_power": 18,
+			"type": "TYPE_NORMAL",
+			"accuracy": 80,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_KNOCHMERANG
+		{
+			"effect": 44,
+			"base_power": 50,
+			"type": "TYPE_BODEN",
+			"accuracy": 90,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_ERHOLUNG
+		{
+			"effect": 37,
+			"base_power": 0,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 0,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		},
+		// ATTACK_STEINHAGEL
+		{
+			"effect": 31,
+			"base_power": 75,
+			"type": "TYPE_GESTEIN",
+			"accuracy": 90,
+			"pp": 10,
+			"effect_accuracy": 30,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_HYPERZAHN
+		{
+			"effect": 31,
+			"base_power": 80,
+			"type": "TYPE_NORMAL",
+			"accuracy": 90,
+			"pp": 15,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_SCHAERFER
+		{
+			"effect": 10,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_UMWANDLUNG
+		{
+			"effect": 30,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_TRIPLETTE
+		{
+			"effect": 36,
+			"base_power": 80,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 20,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 1
+		},
+		// ATTACK_SUPERZAHN
+		{
+			"effect": 40,
+			"base_power": 1,
+			"type": "TYPE_NORMAL",
+			"accuracy": 90,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_SCHLITZER
+		{
+			"effect": 43,
+			"base_power": 70,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_DELEGATOR
+		{
+			"effect": 79,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		},
+		// ATTACK_VERZWEIFLER
+		{
+			"effect": 48,
+			"base_power": 50,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 1,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_NACHAHMER
+		{
+			"effect": 95,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 1,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_DREIFACHKICK
+		{
+			"effect": 104,
+			"base_power": 10,
+			"type": "TYPE_KAMPF",
+			"accuracy": 90,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_RAUB
+		{
+			"effect": 105,
+			"base_power": 40,
+			"type": "TYPE_UNLICHT",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 3
+		},
+		// ATTACK_SPINNENNETZ
+		{
+			"effect": 106,
+			"base_power": 0,
+			"type": "TYPE_KAEFER",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_WILLENSLESER
+		{
+			"effect": 94,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_NACHTMAHR
+		{
+			"effect": 107,
+			"base_power": 0,
+			"type": "TYPE_GEIST",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_FLAMMENRAD
+		{
+			"effect": 125,
+			"base_power": 60,
+			"type": "TYPE_FEUER",
+			"accuracy": 100,
+			"pp": 25,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_SCHNARCHER
+		{
+			"effect": 92,
+			"base_power": 40,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_FLUCH
+		{
+			"effect": 109,
+			"base_power": 0,
+			"type": "TYPE_GEIST",
+			"accuracy": 0,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		},
+		// ATTACK_DRESCHFLEGEL
+		{
+			"effect": 99,
+			"base_power": 1,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_UMWANDLUNG2
+		{
+			"effect": 93,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_LUFTSTOSS
+		{
+			"effect": 43,
+			"base_power": 100,
+			"type": "TYPE_FLUG",
+			"accuracy": 95,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 4
+		},
+		// ATTACK_BAUMWOLLSAAT
+		{
+			"effect": 60,
+			"base_power": 0,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 85,
+			"pp": 40,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_GEGENSCHLAG
+		{
+			"effect": 99,
+			"base_power": 1,
+			"type": "TYPE_KAMPF",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_GROLL
+		{
+			"effect": 100,
+			"base_power": 0,
+			"type": "TYPE_GEIST",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_PULVERSCHNEE
+		{
+			"effect": 5,
+			"base_power": 40,
+			"type": "TYPE_EIS",
+			"accuracy": 100,
+			"pp": 25,
+			"effect_accuracy": 10,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_SCHUTZSCHILD
+		{
+			"effect": 111,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 3,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_TEMPOHIEB
+		{
+			"effect": 103,
+			"base_power": 40,
+			"type": "TYPE_KAMPF",
+			"accuracy": 100,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 1,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_GRIMASSE
+		{
+			"effect": 60,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 90,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_FINTE
+		{
+			"effect": 17,
+			"base_power": 60,
+			"type": "TYPE_UNLICHT",
+			"accuracy": 0,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_BITTERKUSS
+		{
+			"effect": 49,
+			"base_power": 0,
+			"type": "TYPE_FEE",
+			"accuracy": 75,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_BAUCHTROMMEL
+		{
+			"effect": 142,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 3
+		},
+		// ATTACK_MATSCHBOMBE
+		{
+			"effect": 2,
+			"base_power": 90,
+			"type": "TYPE_GIFT",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 4
+		},
+		// ATTACK_LEHMSCHELLE
+		{
+			"effect": 73,
+			"base_power": 20,
+			"type": "TYPE_BODEN",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_OCTAZOOKA
+		{
+			"effect": 73,
+			"base_power": 65,
+			"type": "TYPE_WASSER",
+			"accuracy": 85,
+			"pp": 10,
+			"effect_accuracy": 50,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 2
+		},
+		// ATTACK_STACHLER
+		{
+			"effect": 112,
+			"base_power": 0,
+			"type": "TYPE_BODEN",
+			"accuracy": 0,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_OPPONENT_FIELD",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_BLITZKANONE
+		{
+			"effect": 6,
+			"base_power": 100,
+			"type": "TYPE_ELEKTRO",
+			"accuracy": 50,
+			"pp": 5,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 5
+		},
+		// ATTACK_GESICHTE
+		{
+			"effect": 113,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 40,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_ABGANGSBUND
+		{
+			"effect": 98,
+			"base_power": 0,
+			"type": "TYPE_GEIST",
+			"accuracy": 0,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 4
+		},
+		// ATTACK_ABGESANG
+		{
+			"effect": 114,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 4
+		},
+		// ATTACK_EISSTURM
+		{
+			"effect": 70,
+			"base_power": 55,
+			"type": "TYPE_EIS",
+			"accuracy": 95,
+			"pp": 15,
+			"effect_accuracy": 100,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 1
+		},
+		// ATTACK_SCANNER
+		{
+			"effect": 111,
+			"base_power": 0,
+			"type": "TYPE_KAMPF",
+			"accuracy": 0,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 3,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_KNOCHENHATZ
+		{
+			"effect": 29,
+			"base_power": 25,
+			"type": "TYPE_BODEN",
+			"accuracy": 80,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_ZIELSCHUSS
+		{
+			"effect": 94,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_WUTANFALL
+		{
+			"effect": 27,
+			"base_power": 120,
+			"type": "TYPE_DRACHE",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 100,
+			"affects_whom": "RANDOM_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 4
+		},
+		// ATTACK_SANDSTURM
+		{
+			"effect": 115,
+			"base_power": 0,
+			"type": "TYPE_GESTEIN",
+			"accuracy": 0,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_GIGASAUGER
+		{
+			"effect": 3,
+			"base_power": 60,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 4
+		},
+		// ATTACK_AUSDAUER
+		{
+			"effect": 116,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 3,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_CHARME
+		{
+			"effect": 58,
+			"base_power": 0,
+			"type": "TYPE_FEE",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_WALZER
+		{
+			"effect": 117,
+			"base_power": 30,
+			"type": "TYPE_GESTEIN",
+			"accuracy": 90,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_TRUGSCHLAG
+		{
+			"effect": 101,
+			"base_power": 40,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 40,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_ANGEBEREI
+		{
+			"effect": 118,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 90,
+			"pp": 15,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_MILCHGETRAENK
+		{
+			"effect": 157,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_FUNKENSPRUNG
+		{
+			"effect": 6,
+			"base_power": 65,
+			"type": "TYPE_ELEKTRO",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_ZORNKLINGE
+		{
+			"effect": 119,
+			"base_power": 20,
+			"type": "TYPE_KAEFER",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_STAHLFLUEGEL
+		{
+			"effect": 138,
+			"base_power": 70,
+			"type": "TYPE_STAHL",
+			"accuracy": 90,
+			"pp": 25,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_HORRORBLICK
+		{
+			"effect": 106,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_ANZIEHUNG
+		{
+			"effect": 120,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_SCHLAFREDE
+		{
+			"effect": 97,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_DEPENDS_ON_ATTACK",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_VITALGLOCKE
+		{
+			"effect": 102,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_RUECKKEHR
+		{
+			"effect": 121,
+			"base_power": 1,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_GESCHENK
+		{
+			"effect": 122,
+			"base_power": 1,
+			"type": "TYPE_NORMAL",
+			"accuracy": 90,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_FRUSTRATION
+		{
+			"effect": 123,
+			"base_power": 1,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_BODYGUARD
+		{
+			"effect": 124,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 25,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_LEIDTEILER
+		{
+			"effect": 91,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		},
+		// ATTACK_LAEUTERFEUER
+		{
+			"effect": 125,
+			"base_power": 100,
+			"type": "TYPE_FEUER",
+			"accuracy": 95,
+			"pp": 5,
+			"effect_accuracy": 50,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 5
+		},
+		// ATTACK_INTENSITAET
+		{
+			"effect": 126,
+			"base_power": 1,
+			"type": "TYPE_BODEN",
+			"accuracy": 100,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_BOTH_FOES_AND_PARTNER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_WUCHTSCHLAG
+		{
+			"effect": 76,
+			"base_power": 120,
+			"type": "TYPE_KAMPF",
+			"accuracy": 50,
+			"pp": 5,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_VIELENDER
+		{
+			"effect": 0,
+			"base_power": 120,
+			"type": "TYPE_KAEFER",
+			"accuracy": 85,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 5
+		},
+		// ATTACK_FEUERODEM
+		{
+			"effect": 6,
+			"base_power": 60,
+			"type": "TYPE_DRACHE",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 1
+		},
+		// ATTACK_STAFETTE
+		{
+			"effect": 127,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 40,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		},
+		// ATTACK_ZUGABE
+		{
+			"effect": 90,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		},
+		// ATTACK_VERFOLGUNG
+		{
+			"effect": 128,
+			"base_power": 40,
+			"type": "TYPE_UNLICHT",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_TURBODREHER
+		{
+			"effect": 129,
+			"base_power": 20,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 40,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_LOCKDUFT
+		{
+			"effect": 24,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_EISENSCHWEIF
+		{
+			"effect": 69,
+			"base_power": 100,
+			"type": "TYPE_STAHL",
+			"accuracy": 75,
+			"pp": 15,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 4
+		},
+		// ATTACK_METALLKLAUE
+		{
+			"effect": 139,
+			"base_power": 50,
+			"type": "TYPE_STAHL",
+			"accuracy": 95,
+			"pp": 35,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_UEBERWURF
+		{
+			"effect": 78,
+			"base_power": 70,
+			"type": "TYPE_KAMPF",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": -1,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_MORGENGRAUEN
+		{
+			"effect": 132,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		},
+		// ATTACK_SYNTHESE
+		{
+			"effect": 133,
+			"base_power": 0,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 0,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		},
+		// ATTACK_MONDSCHEIN
+		{
+			"effect": 134,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		},
+		// ATTACK_KRAFTRESERVE
+		{
+			"effect": 135,
+			"base_power": 1,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 4
+		},
+		// ATTACK_KREUZHIEB
+		{
+			"effect": 43,
+			"base_power": 100,
+			"type": "TYPE_KAMPF",
+			"accuracy": 80,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_WINDHOSE
+		{
+			"effect": 146,
+			"base_power": 40,
+			"type": "TYPE_DRACHE",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 20,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_REGENTANZ
+		{
+			"effect": 136,
+			"base_power": 0,
+			"type": "TYPE_WASSER",
+			"accuracy": 0,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_SONNENTAG
+		{
+			"effect": 137,
+			"base_power": 0,
+			"type": "TYPE_FEUER",
+			"accuracy": 0,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_KNIRSCHER
+		{
+			"effect": 72,
+			"base_power": 80,
+			"type": "TYPE_UNLICHT",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 20,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_SPIEGELCAPE
+		{
+			"effect": 144,
+			"base_power": 1,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_DEPENDS_ON_ATTACK",
+			"priority": -5,
+			"flags": "MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 1
+		},
+		// ATTACK_PSYCHO_PLUS
+		{
+			"effect": 143,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_TURBOTEMPO
+		{
+			"effect": 103,
+			"base_power": 80,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 1,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 4
+		},
+		// ATTACK_ANTIK_KRAFT
+		{
+			"effect": 140,
+			"base_power": 60,
+			"type": "TYPE_GESTEIN",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 2
+		},
+		// ATTACK_SPUKBALL
+		{
+			"effect": 72,
+			"base_power": 80,
+			"type": "TYPE_GEIST",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 20,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 3
+		},
+		// ATTACK_SEHER
+		{
+			"effect": 148,
+			"base_power": 80,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 90,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_ZERTRUEMMERER
+		{
+			"effect": 43,
+			"base_power": 50,
+			"type": "TYPE_KAMPF",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 50,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_WHIRLPOOL
+		{
+			"effect": 42,
+			"base_power": 15,
+			"type": "TYPE_WASSER",
+			"accuracy": 70,
+			"pp": 15,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_PRUEGLER
+		{
+			"effect": 154,
+			"base_power": 10,
+			"type": "TYPE_UNLICHT",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_MOGELHIEB
+		{
+			"effect": 158,
+			"base_power": 40,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 1,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_AUFRUHR
+		{
+			"effect": 159,
+			"base_power": 50,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 100,
+			"affects_whom": "RANDOM_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_HORTER
+		{
+			"effect": 160,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_ENTFESSLER
+		{
+			"effect": 161,
+			"base_power": 100,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_VERZEHRER
+		{
+			"effect": 162,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_HITZEWELLE
+		{
+			"effect": 4,
+			"base_power": 100,
+			"type": "TYPE_FEUER",
+			"accuracy": 90,
+			"pp": 10,
+			"effect_accuracy": 10,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 4
+		},
+		// ATTACK_HAGELSTURM
+		{
+			"effect": 164,
+			"base_power": 0,
+			"type": "TYPE_EIS",
+			"accuracy": 0,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_FOLTERKNECHT
+		{
+			"effect": 165,
+			"base_power": 0,
+			"type": "TYPE_UNLICHT",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_SCHMEICHLER
+		{
+			"effect": 166,
+			"base_power": 0,
+			"type": "TYPE_UNLICHT",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_IRRLICHT
+		{
+			"effect": 167,
+			"base_power": 0,
+			"type": "TYPE_FEUER",
+			"accuracy": 75,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		},
+		// ATTACK_MEMENTO_MORI
+		{
+			"effect": 168,
+			"base_power": 0,
+			"type": "TYPE_UNLICHT",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_FASSADE
+		{
+			"effect": 76,
+			"base_power": 90,
+			"type": "TYPE_NORMAL",
+			"accuracy": 85,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_POWER_PUNCH
+		{
+			"effect": 170,
+			"base_power": 150,
+			"type": "TYPE_KAMPF",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": -3,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_RIECHSALZ
+		{
+			"effect": 171,
+			"base_power": 60,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_SPOTLIGHT
+		{
+			"effect": 172,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 3,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_NATUR_KRAFT
+		{
+			"effect": 173,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_DEPENDS_ON_ATTACK",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_LADEVORGANG
+		{
+			"effect": 174,
+			"base_power": 0,
+			"type": "TYPE_ELEKTRO",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_VERHOEHNER
+		{
+			"effect": 175,
+			"base_power": 0,
+			"type": "TYPE_UNLICHT",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_RECHTE_HAND
+		{
+			"effect": 176,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 5,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_TRICKBETRUG
+		{
+			"effect": 177,
+			"base_power": 0,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_ROLLENTAUSCH
+		{
+			"effect": 178,
+			"base_power": 0,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_WUNSCHTRAUM
+		{
+			"effect": 179,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 3
+		},
+		// ATTACK_ZUSCHUSS
+		{
+			"effect": 180,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_DEPENDS_ON_ATTACK",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_VERWURZLER
+		{
+			"effect": 181,
+			"base_power": 0,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_KRAFTKOLOSS
+		{
+			"effect": 182,
+			"base_power": 120,
+			"type": "TYPE_KAMPF",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_MAGIEMANTEL
+		{
+			"effect": 183,
+			"base_power": 0,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_DEPENDS_ON_ATTACK",
+			"priority": 4,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_AUFBEREITUNG
+		{
+			"effect": 184,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_VERGELTUNG
+		{
+			"effect": 185,
+			"base_power": 60,
+			"type": "TYPE_KAMPF",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": -4,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_DURCHBRUCH
+		{
+			"effect": 186,
+			"base_power": 75,
+			"type": "TYPE_KAMPF",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_GAEHNER
+		{
+			"effect": 187,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_ABSCHLAG
+		{
+			"effect": 188,
+			"base_power": 20,
+			"type": "TYPE_UNLICHT",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_NOTSITUATION
+		{
+			"effect": 189,
+			"base_power": 1,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_ERUPTION
+		{
+			"effect": 190,
+			"base_power": 150,
+			"type": "TYPE_FEUER",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 5
+		},
+		// ATTACK_WERTEWECHSEL
+		{
+			"effect": 191,
+			"base_power": 0,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_BEGRENZER
+		{
+			"effect": 192,
+			"base_power": 0,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_HEILUNG
+		{
+			"effect": 193,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_NACHSPIEL
+		{
+			"effect": 194,
+			"base_power": 0,
+			"type": "TYPE_GEIST",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_UEBERNAHME
+		{
+			"effect": 195,
+			"base_power": 0,
+			"type": "TYPE_UNLICHT",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_DEPENDS_ON_ATTACK",
+			"priority": 4,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_GEHEIMPOWER
+		{
+			"effect": 197,
+			"base_power": 70,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_TAUCHER
+		{
+			"effect": 155,
+			"base_power": 95,
+			"type": "TYPE_WASSER",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_ARMSTOSS
+		{
+			"effect": 29,
+			"base_power": 15,
+			"type": "TYPE_KAMPF",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_TARNUNG
+		{
+			"effect": 213,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_SCHWEIFGLANZ
+		{
+			"effect": 53,
+			"base_power": 0,
+			"type": "TYPE_KAEFER",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		},
+		// ATTACK_SCHEINWERFER
+		{
+			"effect": 72,
+			"base_power": 70,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 50,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 5
+		},
+		// ATTACK_NEBELBALL
+		{
+			"effect": 71,
+			"base_power": 70,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 50,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 5
+		},
+		// ATTACK_DAUNENREIGEN
+		{
+			"effect": 58,
+			"base_power": 0,
+			"type": "TYPE_FLUG",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_TAUMELTANZ
+		{
+			"effect": 199,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_BOTH_FOES_AND_PARTNER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_FEUERFEGER
+		{
+			"effect": 200,
+			"base_power": 85,
+			"type": "TYPE_FEUER",
+			"accuracy": 90,
+			"pp": 10,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_LEHMSUHLER
+		{
+			"effect": 201,
+			"base_power": 0,
+			"type": "TYPE_BODEN",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_FROSTBEULE
+		{
+			"effect": 117,
+			"base_power": 30,
+			"type": "TYPE_EIS",
+			"accuracy": 90,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_NIETENRANKE
+		{
+			"effect": 150,
+			"base_power": 60,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_TAGEDIEB
+		{
+			"effect": 32,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 1
+		},
+		// ATTACK_SCHALLWELLE
+		{
+			"effect": 0,
+			"base_power": 90,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 2
+		},
+		// ATTACK_GIFTZAHN
+		{
+			"effect": 202,
+			"base_power": 50,
+			"type": "TYPE_GIFT",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_ZERMALMKLAUE
+		{
+			"effect": 69,
+			"base_power": 75,
+			"type": "TYPE_NORMAL",
+			"accuracy": 95,
+			"pp": 10,
+			"effect_accuracy": 50,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_LOHEKANONADE
+		{
+			"effect": 80,
+			"base_power": 150,
+			"type": "TYPE_FEUER",
+			"accuracy": 90,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 6
+		},
+		// ATTACK_AQUAHAUBITZE
+		{
+			"effect": 80,
+			"base_power": 150,
+			"type": "TYPE_WASSER",
+			"accuracy": 90,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 6
+		},
+		// ATTACK_STERNHIEB
+		{
+			"effect": 139,
+			"base_power": 100,
+			"type": "TYPE_STAHL",
+			"accuracy": 85,
+			"pp": 10,
+			"effect_accuracy": 20,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 4
+		},
+		// ATTACK_ERSTAUNER
+		{
+			"effect": 150,
+			"base_power": 30,
+			"type": "TYPE_GEIST",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_METEOROLOGE
+		{
+			"effect": 203,
+			"base_power": 50,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 1
+		},
+		// ATTACK_AROMAKUR
+		{
+			"effect": 102,
+			"base_power": 0,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 0,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_TRUGTRAENE
+		{
+			"effect": 62,
+			"base_power": 0,
+			"type": "TYPE_UNLICHT",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_WINDSCHNITT
+		{
+			"effect": 43,
+			"base_power": 55,
+			"type": "TYPE_FLUG",
+			"accuracy": 95,
+			"pp": 25,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 2
+		},
+		// ATTACK_HITZEKOLLER
+		{
+			"effect": 204,
+			"base_power": 140,
+			"type": "TYPE_FEUER",
+			"accuracy": 90,
+			"pp": 5,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 4
+		},
+		// ATTACK_SCHNUEFFLER
+		{
+			"effect": 113,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 40,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_FELSGRAB
+		{
+			"effect": 70,
+			"base_power": 50,
+			"type": "TYPE_GESTEIN",
+			"accuracy": 80,
+			"pp": 10,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_SILBERHAUCH
+		{
+			"effect": 140,
+			"base_power": 60,
+			"type": "TYPE_KAEFER",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 1
+		},
+		// ATTACK_METALLSOUND
+		{
+			"effect": 62,
+			"base_power": 0,
+			"type": "TYPE_STAHL",
+			"accuracy": 85,
+			"pp": 40,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_GRASFLOETE
+		{
+			"effect": 1,
+			"base_power": 0,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 55,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_SPASSKANONE
+		{
+			"effect": 205,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_KOSMIK_KRAFT
+		{
+			"effect": 206,
+			"base_power": 0,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 0,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_FONTRAENEN
+		{
+			"effect": 190,
+			"base_power": 150,
+			"type": "TYPE_WASSER",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 5
+		},
+		// ATTACK_AMPELLEUCHTE
+		{
+			"effect": 76,
+			"base_power": 75,
+			"type": "TYPE_KAEFER",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 1
+		},
+		// ATTACK_FINSTERFAUST
+		{
+			"effect": 17,
+			"base_power": 60,
+			"type": "TYPE_GEIST",
+			"accuracy": 0,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_SONDERSENSOR
+		{
+			"effect": 150,
+			"base_power": 80,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 100,
+			"pp": 30,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 1
+		},
+		// ATTACK_HIMMELHIEB
+		{
+			"effect": 207,
+			"base_power": 85,
+			"type": "TYPE_KAMPF",
+			"accuracy": 90,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_SANDGRAB
+		{
+			"effect": 42,
+			"base_power": 15,
+			"type": "TYPE_BODEN",
+			"accuracy": 70,
+			"pp": 15,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_EISESKAELTE
+		{
+			"effect": 38,
+			"base_power": 1,
+			"type": "TYPE_EIS",
+			"accuracy": 30,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 5
+		},
+		// ATTACK_LEHMBRUEHE
+		{
+			"effect": 73,
+			"base_power": 95,
+			"type": "TYPE_WASSER",
+			"accuracy": 85,
+			"pp": 10,
+			"effect_accuracy": 30,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 2
+		},
+		// ATTACK_KUGELSAAT
+		{
+			"effect": 29,
+			"base_power": 15,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_AERO_ASS
+		{
+			"effect": 17,
+			"base_power": 60,
+			"type": "TYPE_FLUG",
+			"accuracy": 0,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_EISSPEER
+		{
+			"effect": 29,
+			"base_power": 10,
+			"type": "TYPE_EIS",
+			"accuracy": 100,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_EISENABWEHR
+		{
+			"effect": 51,
+			"base_power": 0,
+			"type": "TYPE_STAHL",
+			"accuracy": 0,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_RUECKENTZUG
+		{
+			"effect": 106,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_JAULER
+		{
+			"effect": 10,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 40,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_DRACHENKLAUE
+		{
+			"effect": 0,
+			"base_power": 80,
+			"type": "TYPE_DRACHE",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_FLORA_STATUE
+		{
+			"effect": 80,
+			"base_power": 150,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 90,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 6
+		},
+		// ATTACK_PROTZER
+		{
+			"effect": 208,
+			"base_power": 0,
+			"type": "TYPE_KAMPF",
+			"accuracy": 0,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_SPRUNGFEDER
+		{
+			"effect": 155,
+			"base_power": 85,
+			"type": "TYPE_FLUG",
+			"accuracy": 85,
+			"pp": 5,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_LEHMSCHUSS
+		{
+			"effect": 70,
+			"base_power": 55,
+			"type": "TYPE_BODEN",
+			"accuracy": 95,
+			"pp": 15,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_GIFTSCHWEIF
+		{
+			"effect": 209,
+			"base_power": 50,
+			"type": "TYPE_GIFT",
+			"accuracy": 100,
+			"pp": 25,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_BEZIRZER
+		{
+			"effect": 105,
+			"base_power": 40,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 40,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_VOLTTACKLE
+		{
+			"effect": 198,
+			"base_power": 120,
+			"type": "TYPE_ELEKTRO",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 5
+		},
+		// ATTACK_ZAUBERBLATT
+		{
+			"effect": 17,
+			"base_power": 60,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 0,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_NASSMACHER
+		{
+			"effect": 210,
+			"base_power": 0,
+			"type": "TYPE_WASSER",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_GEDANKENGUT
+		{
+			"effect": 211,
+			"base_power": 0,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 0,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		},
+		// ATTACK_LAUBKLINGE
+		{
+			"effect": 43,
+			"base_power": 70,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_DRACHENTANZ
+		{
+			"effect": 212,
+			"base_power": 0,
+			"type": "TYPE_DRACHE",
+			"accuracy": 0,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 4
+		},
+		// ATTACK_FELSWURF
+		{
+			"effect": 29,
+			"base_power": 25,
+			"type": "TYPE_GESTEIN",
+			"accuracy": 80,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_SCHOCKWELLE
+		{
+			"effect": 17,
+			"base_power": 60,
+			"type": "TYPE_ELEKTRO",
+			"accuracy": 0,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_AQUAWELLE
+		{
+			"effect": 76,
+			"base_power": 60,
+			"type": "TYPE_WASSER",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 20,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_KISMETWUNSCH
+		{
+			"effect": 148,
+			"base_power": 120,
+			"type": "TYPE_STAHL",
+			"accuracy": 85,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 5
+		},
+		// ATTACK_PSYSCHUB
+		{
+			"effect": 204,
+			"base_power": 140,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 90,
+			"pp": 5,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 5
+		},
+		// ATTACK_FILLER
+		{
+			"effect": 0,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 0,
+			"pp": 0,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_HAMMERARM
+		{
+			"effect": 221,
+			"base_power": 100,
+			"type": "TYPE_KAMPF",
+			"accuracy": 90,
+			"pp": 10,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 4
+		},
+		// ATTACK_AURASPHAERE
+		{
+			"effect": 17,
+			"base_power": 90,
+			"type": "TYPE_KAMPF",
+			"accuracy": 0,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_GIFTHIEB
+		{
+			"effect": 2,
+			"base_power": 80,
+			"type": "TYPE_GIFT",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_FOKUSSTOSS
+		{
+			"effect": 22,
+			"base_power": 120,
+			"type": "TYPE_KAMPF",
+			"accuracy": 70,
+			"pp": 5,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 4
+		},
+		// ATTACK_PATRONENHIEB
+		{
+			"effect": 103,
+			"base_power": 40,
+			"type": "TYPE_STAHL",
+			"accuracy": 100,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 1,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_FINSTERAURA
+		{
+			"effect": 31,
+			"base_power": 80,
+			"type": "TYPE_UNLICHT",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 20,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 4
+		},
+		// ATTACK_FLAMMENBLITZ
+		{
+			"effect": 217,
+			"base_power": 120,
+			"type": "TYPE_FEUER",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 5
+		},
+		// ATTACK_EISZAHN
+		{
+			"effect": 218,
+			"base_power": 65,
+			"type": "TYPE_EIS",
+			"accuracy": 95,
+			"pp": 15,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_DONNERZAHN
+		{
+			"effect": 219,
+			"base_power": 65,
+			"type": "TYPE_ELEKTRO",
+			"accuracy": 95,
+			"pp": 15,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_DUNKELKLAUE
+		{
+			"effect": 43,
+			"base_power": 70,
+			"type": "TYPE_GEIST",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_KREUZSCHERE
+		{
+			"effect": 0,
+			"base_power": 80,
+			"type": "TYPE_KAEFER",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 4
+		},
+		// ATTACK_STEINKANTE
+		{
+			"effect": 43,
+			"base_power": 100,
+			"type": "TYPE_GESTEIN",
+			"accuracy": 80,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 4
+		},
+		// ATTACK_STURZFLUG
+		{
+			"effect": 198,
+			"base_power": 120,
+			"type": "TYPE_FLUG",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 5
+		},
+		// ATTACK_STEINPOLITUR
+		{
+			"effect": 52,
+			"base_power": 0,
+			"type": "TYPE_GESTEIN",
+			"accuracy": 0,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_SNATCH",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 0
+		},
+		// ATTACK_KRAXLER
+		{
+			"effect": 31,
+			"base_power": 90,
+			"type": "TYPE_GESTEIN",
+			"accuracy": 85,
+			"pp": 20,
+			"effect_accuracy": 33,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_BLAETTERSTURM
+		{
+			"effect": 204,
+			"base_power": 140,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 90,
+			"pp": 5,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 4
+		},
+		// ATTACK_NAHKAMPF
+		{
+			"effect": 222,
+			"base_power": 120,
+			"type": "TYPE_KAMPF",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 4
+		},
+		// ATTACK_LICHTKANONE
+		{
+			"effect": 22,
+			"base_power": 80,
+			"type": "TYPE_STAHL",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 20,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": -6,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 3
+		},
+		// ATTACK_DRACO_METEOR
+		{
+			"effect": 204,
+			"base_power": 140,
+			"type": "TYPE_DRACHE",
+			"accuracy": 90,
+			"pp": 5,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 5
+		},
+		// ATTACK_NASSSCHWEIF
+		{
+			"effect": 0,
+			"base_power": 90,
+			"type": "TYPE_WASSER",
+			"accuracy": 90,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_ZEN_KOPFSTOSS
+		{
+			"effect": 31,
+			"base_power": 80,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 90,
+			"pp": 15,
+			"effect_accuracy": 20,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_ENERGIEBALL
+		{
+			"effect": 22,
+			"base_power": 80,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 1
+		},
+		// ATTACK_SCHATTENSTOSS
+		{
+			"effect": 103,
+			"base_power": 40,
+			"type": "TYPE_GEIST",
+			"accuracy": 100,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 1,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_DOPPELSCHLAG
+		{
+			"effect": 44,
+			"base_power": 35,
+			"type": "TYPE_NORMAL",
+			"accuracy": 90,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_TIEFSCHLAG
+		{
+			"effect": 228,
+			"base_power": 80,
+			"type": "TYPE_UNLICHT",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 1,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_NACHTHIEB
+		{
+			"effect": 43,
+			"base_power": 70,
+			"type": "TYPE_UNLICHT",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_SAMENBOMBEN
+		{
+			"effect": 0,
+			"base_power": 80,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_ERDKRAEFTE
+		{
+			"effect": 22,
+			"base_power": 90,
+			"type": "TYPE_BODEN",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 2
+		},
+		// ATTACK_DRACHENPULS
+		{
+			"effect": 0,
+			"base_power": 90,
+			"type": "TYPE_DRACHE",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 3
+		},
+		// ATTACK_EISSPLITTER
+		{
+			"effect": 103,
+			"base_power": 40,
+			"type": "TYPE_EIS",
+			"accuracy": 100,
+			"pp": 30,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 1,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_FEUERZAHN
+		{
+			"effect": 220,
+			"base_power": 65,
+			"type": "TYPE_FEUER",
+			"accuracy": 95,
+			"pp": 15,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_WASSERDUESE
+		{
+			"effect": 103,
+			"base_power": 40,
+			"type": "TYPE_WASSER",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 1,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_ZORNFEUER
+		{
+			"effect": 104,
+			"base_power": 35,
+			"type": "TYPE_FEUER",
+			"accuracy": 90,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 4
+		},
+		// ATTACK_TSUNAMI
+		{
+			"effect": 43,
+			"base_power": 115,
+			"type": "TYPE_WASSER",
+			"accuracy": 75,
+			"pp": 15,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 4
+		},
+		// ATTACK_STAHLSTREICH
+		{
+			"effect": 224,
+			"base_power": 65,
+			"type": "TYPE_STAHL",
+			"accuracy": 95,
+			"pp": 20,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 4
+		},
+		// ATTACK_KINESISWELLE
+		{
+			"effect": 80,
+			"base_power": 250,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 85,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 6
+		},
+		// ATTACK_SUPERNOVA
+		{
+			"effect": 4,
+			"base_power": 55,
+			"type": "TYPE_FEUER",
+			"accuracy": 90,
+			"pp": 5,
+			"effect_accuracy": 100,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 5
+		},
+		// ATTACK_WASSERSPALT
+		{
+			"effect": 76,
+			"base_power": 100,
+			"type": "TYPE_WASSER",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 25,
+			"affects_whom": "RANDOM_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 5
+		},
+		// ATTACK_SCHALLSTICH
+		{
+			"effect": 103,
+			"base_power": 75,
+			"type": "TYPE_STAHL",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 1,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_DIEBESKUSS
+		{
+			"effect": 3,
+			"base_power": 50,
+			"type": "TYPE_FEE",
+			"accuracy": 100,
+			"pp": 35,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_KNUDDLER
+		{
+			"effect": 0,
+			"base_power": 90,
+			"type": "TYPE_FEE",
+			"accuracy": 90,
+			"pp": 10,
+			"effect_accuracy": 20,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_MONDGEWALT
+		{
+			"effect": 0,
+			"base_power": 95,
+			"type": "TYPE_FEE",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 3
+		},
+		// ATTACK_ZAUBERSCHEIN
+		{
+			"effect": 0,
+			"base_power": 80,
+			"type": "TYPE_FEE",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 2
+		},
+		// ATTACK_SAEUSELSTIMME
+		{
+			"effect": 0,
+			"base_power": 40,
+			"type": "TYPE_FEE",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_BIENENSTICH
+		{
+			"effect": 2,
+			"base_power": 75,
+			"type": "TYPE_KAEFER",
+			"accuracy": 95,
+			"pp": 20,
+			"effect_accuracy": 50,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE | MAKES_CONTACT | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_SCHWARMSTICH
+		{
+			"effect": 29,
+			"base_power": 20,
+			"type": "TYPE_GIFT",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_GESANG_2
+		{
+			"effect": 1,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 55,
+			"pp": 15,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 0
+		},
+		// ATTACK_HEISSSTEIN
+		{
+			"effect": 4,
+			"base_power": 95,
+			"type": "TYPE_FEUER",
+			"accuracy": 85,
+			"pp": 20,
+			"effect_accuracy": 40,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 3
+		},
+		// ATTACK_GEWITTER
+		{
+			"effect": 6,
+			"base_power": 100,
+			"type": "TYPE_ELEKTRO",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 20,
+			"affects_whom": "TARGET_BOTH_FOES_AND_PARTNER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 4
+		},
+		// ATTACK_EISENSLAM
+		{
+			"effect": 31,
+			"base_power": 85,
+			"type": "TYPE_STAHL",
+			"accuracy": 95,
+			"pp": 15,
+			"effect_accuracy": 20,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 4
+		},
+		// ATTACK_HOLZGEWEIH
+		{
+			"effect": 3,
+			"base_power": 75,
+			"type": "TYPE_PFLANZE",
+			"accuracy": 100,
+			"pp": 30,
+			"effect_accuracy": 10,
+			"affects_whom": "TARGET_BOTH_FOES",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 2
+		},
+		// ATTACK_KAEFERBISS
+		{
+			"effect": 4,
+			"base_power": 60,
+			"type": "TYPE_KAEFER",
+			"accuracy": 100,
+			"pp": 25,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "MAKES_CONTACT | AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_PHYSICAL",
+			"rating": 1
+		},
+		// ATTACK_FALTERREIGEN
+		{
+			"effect": 225,
+			"base_power": 95,
+			"type": "TYPE_KAEFER",
+			"accuracy": 100,
+			"pp": 15,
+			"effect_accuracy": 10,
+			"affects_whom": "TARGET_USER",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 3
+		},
+		// ATTACK_NITROLADUNG
+		{
+			"effect": 226,
+			"base_power": 40,
+			"type": "TYPE_FEUER",
+			"accuracy": 100,
+			"pp": 20,
+			"effect_accuracy": 100,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_SNATCH | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_KAEFERGEBRUMM
+		{
+			"effect": 22,
+			"base_power": 90,
+			"type": "TYPE_KAEFER",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 10,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 2
+		},
+		// ATTACK_TORNADO
+		{
+			"effect": 76,
+			"base_power": 120,
+			"type": "TYPE_FLUG",
+			"accuracy": 70,
+			"pp": 10,
+			"effect_accuracy": 30,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | MIRRORABLE | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 4
+		},
+		// ATTACK_KOENIGSSCHILD
+		{
+			"effect": 111,
+			"base_power": 0,
+			"type": "TYPE_STAHL",
+			"accuracy": 100,
+			"pp": 10,
+			"effect_accuracy": 0,
+			"affects_whom": "TARGET_USER",
+			"priority": 3,
+			"flags": "AFFECTED_BY_PROTECT | TRIGGERS_KINGS_ROCK",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		},
+		// ATTACK_RUNENGLEICH
+		{
+			"effect": 229,
+			"base_power": 1,
+			"type": "TYPE_PSYCHO",
+			"accuracy": 95,
+			"pp": 20,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": 0,
+			"effect_table": 0,
+			"category": "CATEGORY_SPECIAL",
+			"rating": 0
+		},
+		// ATTACK_SIRENENLIED
+		{
+			"effect": 106,
+			"base_power": 0,
+			"type": "TYPE_NORMAL",
+			"accuracy": 100,
+			"pp": 5,
+			"effect_accuracy": 0,
+			"affects_whom": "SELECTED_TARGET",
+			"priority": 0,
+			"flags": "AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE",
+			"effect_table": 0,
+			"category": "CATEGORY_STATUS",
+			"rating": 2
+		}
+	]
+}
