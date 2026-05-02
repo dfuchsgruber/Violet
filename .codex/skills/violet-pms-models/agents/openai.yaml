@@ -1,0 +1,4 @@
+interface:
+  display_name: "Violet PMS Models"
+  short_description: "Work with Violet PMS files and pyagb models."
+  default_prompt: "Use this skill when adding, changing, or interpreting Violet .pms files and their Python data models."

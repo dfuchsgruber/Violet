@@ -1,0 +1,4 @@
+interface:
+  display_name: "Violet Constants"
+  short_description: "Work with Violet .const files and generated C/assembly headers."
+  default_prompt: "Use this skill when adding, changing, or using Violet project constants and generated headers."
