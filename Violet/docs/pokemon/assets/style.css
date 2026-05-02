@@ -131,11 +131,18 @@ th { color: var(--muted); font-size: 13px; }
   min-height: 24px;
   padding: 2px 9px;
   border-radius: 999px;
-  color: #fff;
+  color: var(--type-ink, #fff);
   background: var(--type-accent, #69707a);
-  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.18);
+  border: 1px solid var(--type-line, transparent);
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.06);
   font-size: 12px;
   font-weight: 800;
+}
+.type-solid {
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.18);
+}
+.type-soft {
+  color: var(--type-ink, var(--ink));
 }
 .chip-list, .evolution-list { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
 .chip-list li, .evolution-list li {
@@ -156,13 +163,14 @@ th { color: var(--muted); font-size: 13px; }
   align-items: center;
   padding: 12px;
   text-decoration: none;
-  border: 1px solid var(--line);
+  border: 1px solid var(--card-line, var(--line));
   border-radius: 6px;
-  background: var(--panel);
+  background: linear-gradient(180deg, #fff, var(--card-soft, var(--panel)));
+  box-shadow: inset 4px 0 0 var(--card-accent, transparent);
 }
-.pokemon-card:hover { border-color: var(--page-accent); }
+.pokemon-card:hover { border-color: var(--card-accent, var(--page-accent)); }
 .pokemon-card img { grid-row: 1 / 4; width: 54px; height: 54px; object-fit: contain; image-rendering: pixelated; }
-.pokemon-card span { color: var(--muted); font-size: 12px; }
+.pokemon-card span { color: var(--card-ink, var(--muted)); font-size: 12px; opacity: 0.8; }
 .pokemon-card strong { overflow-wrap: anywhere; }
 .pokemon-card small { display: flex; gap: 4px; flex-wrap: wrap; }
 .pokemon-card small .type { min-height: 18px; padding: 1px 6px; font-size: 10px; }

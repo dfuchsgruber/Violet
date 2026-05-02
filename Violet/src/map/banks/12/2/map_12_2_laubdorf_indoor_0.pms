@@ -10,8 +10,8 @@
 				{
 					"target_index": "1",
 					"picture": "32",
-					"x": "1",
-					"y": "6",
+					"x": "0",
+					"y": "5",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {

@@ -187,20 +187,6 @@ def normalize_constant(value, prefixes=()):
     return " ".join(part.capitalize() for part in text.split())
 
 
-def germanize_ascii(text):
-    replacements = {
-        "Ae": "Ä",
-        "Oe": "Ö",
-        "Ue": "Ü",
-        "ae": "ä",
-        "oe": "ö",
-        "ue": "ü",
-    }
-    for src, dst in replacements.items():
-        text = text.replace(src, dst)
-    return text
-
-
 def display_value(value, prefixes=(), language="LANG_GER"):
     if value is None or value == 0 or value == "ABILITY_NONE" or value == "ITEM_NONE":
         return "-"
@@ -212,15 +198,32 @@ def display_value(value, prefixes=(), language="LANG_GER"):
     override = LABEL_OVERRIDES.get(language, {}).get(normalized)
     if override:
         return override
-    if language == "LANG_GER" and isinstance(normalized, str):
-        return germanize_ascii(normalized)
     return normalized
+
+
+def theme_key_for_type(type_name):
+    if type_name in TYPE_THEMES:
+        return type_name
+    if not isinstance(type_name, str):
+        return None
+    normalized = normalize_constant(type_name, ("TYPE_",))
+    if not normalized:
+        return None
+    for key in TYPE_THEMES:
+        if normalize_constant(key, ("TYPE_",)) == normalized:
+            return key
+    for language_overrides in LABEL_OVERRIDES.values():
+        for key, label in language_overrides.items():
+            if key.startswith("TYPE_") and label == type_name:
+                return key
+    return None
 
 
 def type_theme(*types):
     for type_name in types:
-        if type_name in TYPE_THEMES:
-            return TYPE_THEMES[type_name]
+        key = theme_key_for_type(type_name)
+        if key:
+            return TYPE_THEMES[key]
     return DEFAULT_THEME
 
 
@@ -301,13 +304,25 @@ def item_list(values, prefixes=(), limit=None, language="LANG_GER"):
     return "<ul class=\"chip-list\">" + "".join(items) + "</ul>"
 
 
-def render_type_badges(types, language="LANG_GER"):
+def render_type_badges(types, language="LANG_GER", variant="solid"):
     badges = []
     for type_name in dict.fromkeys(t for t in types if t):
         label = display_value(type_name, ("TYPE_",), language)
         theme = type_theme(type_name)
+        if variant == "soft":
+            style = (
+                f"--type-accent:{theme['soft']};"
+                f"--type-line:{theme['line']};"
+                f"--type-ink:{theme['ink']};"
+            )
+        else:
+            style = (
+                f"--type-accent:{theme['accent']};"
+                f"--type-line:{theme['accent']};"
+                f"--type-ink:#ffffff;"
+            )
         badges.append(
-            f"<span class=\"type\" style=\"--type-accent:{theme['accent']};--type-ink:{theme['ink']};\">{escape(label)}</span>"
+            f"<span class=\"type type-{variant}\" style=\"{style}\">{escape(label)}</span>"
         )
     return "".join(badges)
 
@@ -661,13 +676,15 @@ def render_index(records, pokemon_data, sprite_map, output_dir, language="LANG_G
         readable = record["readable"]
         index_types = (readable.get("type_0") or stats.get("type_0"), readable.get("type_1") or stats.get("type_1"))
         type_text = " ".join(display_value(t, ("TYPE_",), language) for t in index_types if t)
-        types = render_type_badges(index_types, language)
+        card_theme = type_theme(*index_types)
+        types = render_type_badges(index_types, language, "soft")
         sprite_slug = sprite_map.get(record["species_constant"])
         sprite_file = f"gfx_pokemon_{sprite_slug}_frontsprite.png" if sprite_slug else ""
         sprite = f"assets/sprites/{sprite_file}" if sprite_file and (output_dir / "assets" / "sprites" / sprite_file).exists() else ""
         img = f"<img src=\"{escape(sprite)}\" alt=\"{escape(record['name'])}\">" if sprite else ""
         cards.append(
             f"<a class=\"pokemon-card\" href=\"species/{escape(record['slug'])}/\" "
+            f"style=\"--card-accent:{card_theme['accent']};--card-soft:{card_theme['soft']};--card-line:{card_theme['line']};--card-ink:{card_theme['ink']};\" "
             f"data-search=\"{escape((record['name'] + ' ' + record['species_constant'] + ' ' + type_text).lower())}\">"
             f"{img}<span>#{escape(record['dex_number'])}</span><strong>{escape(record['name'])}</strong><small>{types}</small></a>"
         )
@@ -860,11 +877,18 @@ th { color: var(--muted); font-size: 13px; }
   min-height: 24px;
   padding: 2px 9px;
   border-radius: 999px;
-  color: #fff;
+  color: var(--type-ink, #fff);
   background: var(--type-accent, #69707a);
-  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.18);
+  border: 1px solid var(--type-line, transparent);
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.06);
   font-size: 12px;
   font-weight: 800;
+}
+.type-solid {
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.18);
+}
+.type-soft {
+  color: var(--type-ink, var(--ink));
 }
 .chip-list, .evolution-list { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
 .chip-list li, .evolution-list li {
@@ -885,13 +909,14 @@ th { color: var(--muted); font-size: 13px; }
   align-items: center;
   padding: 12px;
   text-decoration: none;
-  border: 1px solid var(--line);
+  border: 1px solid var(--card-line, var(--line));
   border-radius: 6px;
-  background: var(--panel);
+  background: linear-gradient(180deg, #fff, var(--card-soft, var(--panel)));
+  box-shadow: inset 4px 0 0 var(--card-accent, transparent);
 }
-.pokemon-card:hover { border-color: var(--page-accent); }
+.pokemon-card:hover { border-color: var(--card-accent, var(--page-accent)); }
 .pokemon-card img { grid-row: 1 / 4; width: 54px; height: 54px; object-fit: contain; image-rendering: pixelated; }
-.pokemon-card span { color: var(--muted); font-size: 12px; }
+.pokemon-card span { color: var(--card-ink, var(--muted)); font-size: 12px; opacity: 0.8; }
 .pokemon-card strong { overflow-wrap: anywhere; }
 .pokemon-card small { display: flex; gap: 4px; flex-wrap: wrap; }
 .pokemon-card small .type { min-height: 18px; padding: 1px 6px; font-size: 10px; }

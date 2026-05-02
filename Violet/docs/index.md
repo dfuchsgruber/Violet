@@ -7,7 +7,7 @@ while still maintaining the nostalgic charme of the good old third generation Po
 ## Pages
 - Pokémon List - Where to find each Pokémon
 - Wondertrade - How it works
-- Pokédex - Features explained
+- [Pokédex](pokemon/) - Browse Pokémon stats, learnsets and evolutions
 - Items - Where to find each item
 - [Youtube](https://www.youtube.com/channel/UCbpo4OmrVSfZei8953MpR-A) - Soundtracks and latest demo videos
 - [RomHackersWorld](https://board.romhackersworld.eu/thread/11183-pok%C3%A9mon-violet-alpha-2-0-3/) - Where the project originated
