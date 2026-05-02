@@ -807,8 +807,9 @@ def render_species_page(args, record, pokemon_data, names, species_to_idx, sprit
     types = normalized_types([readable.get("type_0") or stats.get("type_0"), readable.get("type_1") or stats.get("type_1")])
     page_theme = type_theme(*types)
     type_badges = render_type_badges(types, args.language)
-    ability_values = [readable.get("ability_0") or stats.get("ability_0"), readable.get("ability_1") or stats.get("ability_1"), readable.get("hidden_ability") or stats.get("hidden_ability")]
+    ability_values = [readable.get("ability_0") or stats.get("ability_0"), readable.get("ability_1") or stats.get("ability_1")]
     abilities = " / ".join(display_value(v, ("ABILITY_",), args.language) for v in ability_values if display_value(v, ("ABILITY_",), args.language) != "-") or "-"
+    hidden_ability = display_value(readable.get("hidden_ability") or stats.get("hidden_ability"), ("ABILITY_",), args.language)
     held_items = " / ".join(
         display_value(v, ("ITEM_",), args.language) for v in (readable.get("common_item") or stats.get("common_item"), readable.get("rare_item") or stats.get("rare_item")) if display_value(v, ("ITEM_",), args.language) != "-"
     ) or "-"
@@ -851,6 +852,7 @@ def render_species_page(args, record, pokemon_data, names, species_to_idx, sprit
     ])
     infobox_training = render_fact_table([
         ("Fähigkeiten", abilities),
+        ("Versteckte Fähigkeit", hidden_ability),
         ("Items", held_items),
         ("Fangrate", stats.get("capture_rate", "-")),
         ("Zuneigung", stats.get("base_happiness", "-")),
