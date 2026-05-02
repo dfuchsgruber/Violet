@@ -227,6 +227,20 @@ def type_theme(*types):
     return DEFAULT_THEME
 
 
+def normalized_types(values):
+    normalized = []
+    seen = set()
+    for value in values:
+        if not value:
+            continue
+        key = theme_key_for_type(value) or str(value)
+        if key in seen:
+            continue
+        seen.add(key)
+        normalized.append(value)
+    return normalized
+
+
 def slugify(value):
     value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode("ascii")
     value = re.sub(r"[^a-zA-Z0-9]+", "-", value.lower()).strip("-")
@@ -569,7 +583,7 @@ def render_species_page(args, record, pokemon_data, names, species_to_idx, sprit
     stats = pokemon_data["basestats"][idx] or {}
     readable = record["readable"]
     sprite_src = copy_sprite(record["species_constant"], sprite_map, output_dir / "assets")
-    types = [readable.get("type_0") or stats.get("type_0"), readable.get("type_1") or stats.get("type_1")]
+    types = normalized_types([readable.get("type_0") or stats.get("type_0"), readable.get("type_1") or stats.get("type_1")])
     page_theme = type_theme(*types)
     type_badges = render_type_badges(types, args.language)
     ability_values = [readable.get("ability_0") or stats.get("ability_0"), readable.get("ability_1") or stats.get("ability_1"), readable.get("hidden_ability") or stats.get("hidden_ability")]
@@ -674,7 +688,7 @@ def render_index(records, pokemon_data, sprite_map, output_dir, language="LANG_G
         idx = record["idx"]
         stats = pokemon_data["basestats"][idx] or {}
         readable = record["readable"]
-        index_types = (readable.get("type_0") or stats.get("type_0"), readable.get("type_1") or stats.get("type_1"))
+        index_types = normalized_types([readable.get("type_0") or stats.get("type_0"), readable.get("type_1") or stats.get("type_1")])
         type_text = " ".join(display_value(t, ("TYPE_",), language) for t in index_types if t)
         card_theme = type_theme(*index_types)
         types = render_type_badges(index_types, language, "soft")
