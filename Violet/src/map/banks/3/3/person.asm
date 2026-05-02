@@ -85,7 +85,7 @@ mov_cut_tree:
 str_0:
     .autostring 34 2 "Das ist typischDOTS"
 str_1:
-    .autostring 34 2 "Sieht wohl ganz so aus, als wäre RIVAL schon hier gewesenDOTS\pWas denkt er sich nur dabei, allein in solche Gefahren hineinzurennenDOTS"
+    .autostring 34 2 "Sieht wohl ganz so aus, als wäre RIVAL schon hier gewesenDOTS\pWas denkt er sich nur dabei, allein da hineinzurennenDOTS"
 str_2:
     .autostring 34 2 "PLAYER!\nDa bist du ja.\pWir haben schon auf dich gewartet."
 str_3:
@@ -93,9 +93,9 @@ str_3:
 str_4:
     .autostring 34 2 "Wir wissen nicht genau, was uns hier erwartet.\pAber wir können davon ausgehen, dass der Team Violet Kommandant uns einigen Widerstand leisten wird.\pDas hier wird bestimmt kein Kinderspiel werdenDOTS\pWir sollten also zusammenbleiben, so weit es geht, ja?\pGemeinsam haben wir bessere Chancen, diese Leute für ihre Verbrechen zur Rechenschaft zu ziehen."
 str_5:
-    .autostring 34 2 "Wie viel Anführer in einem so jungen Polizisten stecken kann!"
+    .autostring 34 2 "Du sprichst ja wie ein erfahrener Polizist!"
 str_6:
-    .autostring 34 2 "Aber dein Plan klingt sehr vernünftig.\pSo machen wir es!\pLasst uns keine Zeit verlieren.\pNicht, dass diese Rüpel meinem geliebten Wald einen Schaden zufügen."
+    .autostring 34 2 "So machen wir es!\pLasst uns keine Zeit verlieren.\pNicht, dass diese Rüpel meinem geliebten Wald einen Schaden zufügen."
 .elseif LANG_EN
 .endif
 

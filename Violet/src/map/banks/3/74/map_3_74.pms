@@ -765,7 +765,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_74_trainer_15",
+					"script": "ow_script_felsige_oednis_faun_rival_felix_event",
 					"flag": "FELSIGE_ODNIS_FAUN",
 					"field_D": 0,
 					"field_B": 0,
@@ -945,7 +945,7 @@
 					"field_B": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_map_3_74_trainer_15",
+					"script": "ow_script_felsige_oednis_faun_rival_felix_event",
 					"flag": "FELSIGE_ODNIS_FAUN",
 					"value": {
 						"item": 0,
@@ -974,7 +974,7 @@
 					"field_B": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_map_3_74_trainer_15",
+					"script": "ow_script_felsige_oednis_faun_rival_felix_event",
 					"flag": "FELSIGE_ODNIS_FAUN",
 					"value": {
 						"item": 0,

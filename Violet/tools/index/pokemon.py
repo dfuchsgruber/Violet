@@ -32,7 +32,7 @@ def move_tutor_compatability_to_list(compatibility, tutor_to_attack):
     for i in range(len(tutor_to_attack)):
         if compatibility & (1 << i):
             l.append((i, tutor_to_attack[i]))
-    return i
+    return l
 
 def get_move_tutor_compatibility(rom, symbols, project):
     """ Gets the move tutor compatibility for all species. """
@@ -50,7 +50,7 @@ def get_pokemon_index(rompath, symbols_path, project_path):
     project = Project(project_path)
     return {
         'levelup_moves' : project.model['levelup_moves'].from_data(rom, symbols['pokemon_moves'], project, [], []),
-        'pokedex_order' : [0] + project.model['pokedex_order'].from_data(rom, symbols['pokedex_order'], project, [], []),
+        'pokedex_order' : project.model['pokedex_order'].from_data(rom, symbols['pokedex_order'], project, [], []),
         'basestats' : project.model['basestats'].from_data(rom, symbols['basestats'] , project, [], []),
         'pokedex_entries' : project.model['pokedex_entries'].from_data(rom, symbols['pokedex_entries'], project, [], []),
         'egg_moves' : project.model['egg_moves'].from_data(rom, symbols['pokemon_egg_moves'], project, [], []),

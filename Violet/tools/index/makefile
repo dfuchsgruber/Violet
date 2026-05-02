@@ -15,6 +15,8 @@ MISC_INDEXER=./tools/index/misc_person.py
 MISC_READABLE=$(INDEXPATH)/misc.txt
 POKEMON_INDEX_PKL=$(INDEXPATH)/pokemon.pkl
 POKEMON_INDEXER=./tools/index/pokemon.py
+POKEMON_WIKI=./tools/wiki/pokemon.py
+WIKI_OUTPUT ?= docs/pokemon
 TUTOR_CRYSTAL_INDEX_PKL=$(INDEXPATH)/tutor_crystal.pkl
 TUTOR_CRYSTAL_INDEXER=./tools/index/tutor_crystal.py
 TUTOR_CRYSTAL_READABLE=$(INDEXPATH)/tutor_crystal.txt
@@ -33,7 +35,7 @@ POKEMON_STATS_READABLE=$(INDEXPATH)/pokemon.txt
 
 PRINT_INDEX=./tools/index/print.py
 
-.PHONY: index
+.PHONY: index pokemon_wiki wiki
 
 $(HABITATS_INDEX_PKL): $(BLDROM) $(MAPPROJ)
 	$(shell mkdir -p $(dir $@))
@@ -51,7 +53,7 @@ $(MISC_INDEX_PKL): $(BLDROM) $(MAPPROJ)
 	$(shell mkdir -p $(dir $@))
 	$(MISC_INDEXER) -o $(MISC_INDEX_PKL) $(BLDROM) $(SYMBOLDUMP) $(MAPPROJ)
 
-$(POKEMON_INDEX_PKL): $(BLDROM) $(MAPPROJ)
+$(POKEMON_INDEX_PKL): $(BLDROM) $(MAPPROJ) $(POKEMON_INDEXER)
 	$(shell mkdir -p $(dir $@))
 	$(POKEMON_INDEXER) -o $(POKEMON_INDEX_PKL) $(BLDROM) $(SYMBOLDUMP) $(MAPPROJ)
 
@@ -83,3 +85,8 @@ index: $(HABITATS_INDEX_PKL) $(ITEMS_INDEX_PKL) $(BERRIES_INDEX_PKL) $(MISC_INDE
 	$(PRINT_INDEX) -o $(POKEMON_STATS_READABLE) --pokemon $(POKEMON_STATS_PKL)
 	$(PRINT_INDEX) -o $(TREASURE_MAP_READABLE) --treasure_map $(TREASURE_MAP_INDEX_PKL)
 	$(PRINT_INDEX) -o $(RECIPE_READABLE) --recipe_flags $(RECIPE_INDEX_PKL)
+
+pokemon_wiki: $(POKEMON_INDEX_PKL) $(POKEMON_STATS_PKL)
+	$(POKEMON_WIKI) --pokemon-pkl $(POKEMON_INDEX_PKL) --stats-pkl $(POKEMON_STATS_PKL) --project $(MAPPROJ) --output $(WIKI_OUTPUT) --language $(LANGUAGE) --clean
+
+wiki: pokemon_wiki

@@ -826,7 +826,7 @@
 					"is_trainer": "1",
 					"alert_radius": "3",
 					"script": 0,
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_1",
+					"flag": "FLAG_LAUBPFAD_WILD_MOBAI",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_MOBAI",

@@ -219,29 +219,29 @@ ow_script_0x81c406:
 .ifdef LANG_GER
 
 str_0:
-	.autostring 34 2 "Aber Opi, Team Violet ist eine Gefahr für die Menschen in dieser Region!"
+	.autostring 34 2 "Aber Opi, Team Violet ist eine Gefahr für die Menschen hier!"
 str_1:
-	.autostring 34 2 "Genug jetzt davon, Felix!\pMag ja sein, dass diese Gruppe Ärger macht, aber jemand wie ich kann sich nicht mit solchen Problemen herumschlangenDOTS"
+	.autostring 34 2 "Genug jetzt davon, Felix!\pMag ja sein, dass diese Gruppe Ärger macht, aber ich kann mich gerade nicht mit solchen Problemen herumschlangenDOTS"
 str_2:
 	.autostring 34 2 "Aber was ist denn für ein Mitglied der Top Vier wichtiger, als die Menschen in Theto zu beschützen?"
 str_3:
-	.autostring 34 2 "Ah, PLAYER!\pDu kommst gerade richtig!\pHier fliegen schon wieder richtig die Fetzen!"
+	.autostring 34 2 "Ah, PLAYER!\pDu kommst gerade richtig!\pHier fliegen richtig die Fetzen!"
 str_4:
-	.autostring 34 2 "Wir sollten uns alle etwas beruhigenDOTS\pMit der ganzen Streiterei erreichen wir ja doch nichtsDOTS"
+	.autostring 34 2 "Wir sollten uns alle etwas beruhigenDOTS"
 str_5:
-	.autostring 34 2 "Ich verstehe sowieso nicht, warum wir uns hier angehen!\pDer alte Faun will uns im Kampf gegen Team Violet nicht helfen.\pNa und?\nWir wollen dieses Pack doch wieso auf eigene Faust zur Strecke bringen.\pSoll er sich seinen anderen Problemen widmen, und wir erledigen diesen Team Violet Kommandanten!"
+	.autostring 34 2 "Ich verstehe sowieso nicht, warum wir uns hier streiten!\pDer alte Faun will uns im Kampf gegen Team Violet nicht helfen.\pNa und?\nWir wollen dieses Pack doch wieso auf eigene Faust zur Strecke bringen.\pSoll er sich seinen anderen Problemen widmen, und wir erledigen diesen Team Violet Kommandanten!"
 str_6:
-	.autostring 34 2 "RIVAL, du weißt doch gar nicht, was du da sagst.\pDiese Kommandanten sollte man nicht unterschätzen.\pAuch wenn die Polizei diesen Leuten keine besondere Aufmerksamkeit schenken willDOTSTEXT_DELAY_SHORT\pWenn man den Berichten glauben will, sind diese Kommandanten nicht zu unterschätzenDOTS"
+	.autostring 34 2 "RIVAL, du weißt doch gar nicht, was du da sagst.\pAuch wenn die Polizei Team Violet bisher keine besondere Aufmerksamkeit schenken willDOTSTEXT_DELAY_SHORT\pMeine Ermittlungen haben ergeben, dass mit den Kommandaten von Team Violet nicht zu spaßen ist."
 str_7:
-	.autostring 34 2 "Du hast einfach die Hosen voll!\pWillst du bei jeder Herausforderung deinen Opa um Hilfe bitten?\pDas ist kindischDOTS"
+	.autostring 34 2 "Du hast einfach die Hosen voll!\pWillst du bei jeder Herausforderung deinen Opa um Hilfe bitten?"
 str_8:
-	.autostring 34 2 "Was fällt dir ein!\pIm Gegensatz zu dir, bin ich im Stande, eine Gefahr auch richtig einzuschätzen, bevor ichDOTS"
+	.autostring 34 2 "Was für ein Unsinn!\pIm Gegensatz zu dir, bin ich im Stande, eine Gefahr auch richtig einzuschätzen, bevor ichDOTS"
 str_9:
-	.autostring 34 2 "Ruhe jetzt, ihr beiden!\pEure kindischen Streitereien habe ich satt!\pIhr verschwendet meine Zeit, ihr Bengel!"
+	.autostring 34 2 "Ruhe jetzt, ihr beiden!\pEure Streitereien habe ich satt!\pIhr verschwendet meine Zeit!"
 str_10:
-	.autostring 34 2 "BitteDOTS\nGenug Geschrei, wir sollten uns wirklich beruhigenDOTS"
+	.autostring 34 2 "BitteDOTS\nGenug, wir sollten uns wirklich beruhigenDOTS"
 str_11:
-	.autostring 34 2 "Rosalie hat Recht.\pSo erreichen wir nichts.\pLasst es mich euch also in aller Deutlichkeit erklären.\pIch bin nicht einfach rein zufällig hierher gekommen.\pEs gibt hier Dinge, die ich erledigen muss, die viel wichtiger sind, als ein paar Punks zurechtzuweisen.\pUnd es ist klug von dir, Felix, dass du dieses Problem nicht unüberlegt angehen willst.\pAber du bist jetzt Teil der Polizei von Theto.\pDu musst auch etwas Mut beweisen, und dich solchen Herausforderungen entgegenstellen, ja?\pAußerdem habe ich ja auch gar nicht vor, euch allein mit dieser Aufgabe zu betrauenDOTS"
+	.autostring 34 2 "Rosalie hat Recht.\pSo erreichen wir nichts.\pLasst es mich euch also in aller Deutlichkeit erklären.\pIch bin nicht einfach rein zufällig hierher gekommen.\pEs gibt hier Dinge, die ich erledigen muss.\pUnd die viel sind wichtiger, als ein paar Punks zurechtzuweisen.\pFelix, ich verstehe, dass du dieses Problem nicht unüberlegt angehen willst.\pAber du bist jetzt Teil der Polizei von Theto.\pDu musst Mut beweisen, und dich solchen Herausforderungen entgegenstellen, ja?\pAußerdem habe ich ja auch gar nicht vor, euch allein mit dieser Aufgabe zu betrauenDOTS"
 str_12:
 	.autostring 34 2 "Das ist richtig.\pAls Arenaleiterin von Kranzdorf werde ich euch selbstverständlich unterstützen, wenn eine Bande von Verbrechern in meinem Wald ihr Unwesen treibt."
 str_13:
@@ -249,7 +249,7 @@ str_13:
 str_14:
 	.string "DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT"
 str_15:
-	.autostring 34 2 "Na, seht ihr?\pSo kriegen wir Dinge doch noch geregelt!\pDamit ist es ausgemacht.\pRosalie wird euch helfen, diese Unruhestifter zurechtzuweisen.\pUnd ich kann mich darauf konzentrieren, wichtigere Angelegenheiten zu regeln."
+	.autostring 34 2 "Na, seht ihr?\pDamit ist es ausgemacht.\pRosalie wird euch helfen, diesen Kommandanten zurechtzuweisen.\pUnd ich kann mich darauf konzentrieren, meine Angelegenheiten zu regeln."
 str_16:
 	.autostring 34 2 "Wie schön, dass wir uns doch noch einig geworden sind!"
 str_17:
@@ -261,13 +261,13 @@ str_19:
 str_20:
 	.autostring 34 2 "Der Junge ist wirklich ein HitzkopfDOTS\pAber ich bin froh, dass wir gemeinsam kämpfen können!\pUm eines muss ich euch aber bittenDOTS\pDer Kranzwald bedeutet mir sehr viel.\pEs gibt dort einen Ort, der mir sehr wichtig ist.\pBitte versucht trotz allem, diesem wunderschönen Wald würdevoll zu begegnen.\pNehmt bitte Rücksicht auf die Pflanzen und Pokémon, die im Kranzwald leben, ja?"
 str_21:
-	.autostring 34 2 "Das werden wir, Rosalie!\pIch denke, ich spreche auch im Namen von PLAYER, wenn ich sage, dass wir alles daran setzen, den Kranzwald zu beschützen.\pImmerhin stellen wir uns ja auch deswegen diesem Kommandanten von Team Violet, um Orte wie diesen vor Bösem zu bewahren."
+	.autostring 34 2 "Das werden wir, Rosalie!\pIch denke, ich spreche auch im Namen von PLAYER, wenn ich sage, dass wir alles daran setzen, den Kranzwald zu beschützen."
 str_22:
-	.autostring 34 2 "Das freut mich außerordentlich!\pIhr habt gute Herzen, Kinder!\pWenn man mit sich selbst im Reinen ist, kann man gar nicht mehr verlieren.\pIch würde vorschlagen, wir treffen uns im Norden von Kranzdorf, wo sich der Eingang in den Kranzwald befindet, ja?"
+	.autostring 34 2 "Das freut mich außerordentlich!\pIhr habt gute Herzen!\pWenn man mit sich selbst im Reinen ist, kann man gar nicht mehr verlieren, sage ich immer.\pIch würde vorschlagen, wir treffen uns im Norden von Kranzdorf, wo sich der Eingang in den Kranzwald befindet, ja?"
 str_23:
 	.autostring 34 2 "Abgemacht!\pAber lasst euch nicht zu viel Zeit, sonst geht uns dieser Kommandant noch durch die Lappen!"
 str_24:
-	.autostring 34 2 "Dein Name war PLAYER, ja?\pDu machst einen entschlossenen Eindruck auf mich!\pDas ist gut, Entschlossenheit können wir im Kampf gegen böse Menschen gebrauchen!\pWir sehen uns am Waldeingang!"
+	.autostring 34 2 "Dein Name war PLAYER, ja?\pDu machst einen entschlossenen Eindruck auf mich!\pDas ist gut, Entschlossenheit können wir im Kampf gegen böse Menschen gebrauchen!\pWir sehen uns am Waldeingang im Norden von Kranzdorf!"
 
 .elseif LANG_EN
 

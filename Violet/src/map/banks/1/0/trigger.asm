@@ -181,6 +181,10 @@ ow_script_silvania_forest_rin_0:
     show_mugshot MUGSHOT_ROSALIE MUGSHOT_LEFT message_type=MSG_KEEPOPEN
     loadpointer 0 str_25
     show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT message_type=MSG_KEEPOPEN
+    loadpointer 0 str_25a
+    show_mugshot MUGSHOT_ROSALIE MUGSHOT_LEFT message_type=MSG_KEEPOPEN
+    loadpointer 0 str_25b
+    show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT message_type=MSG_KEEPOPEN
     loadpointer 0 str_26
     show_mugshot MUGSHOT_ROSALIE MUGSHOT_LEFT message_type=MSG_KEEPOPEN
     loadpointer 0 str_27
@@ -343,7 +347,7 @@ str_11:
 str_11_2:
     .autostring 34 2 "Huh?"
 str_12:
-    .autostring 34 2 "Ach, halt den Rand, Primus!"
+    .autostring 34 2 "HmDOTS"
 str_13:
     .autostring 34 2 "Und was diesen Kindergarten hier anbelangtDOTS\pWas glaub ihr Gören, was ihr tut?\pIhr mischt euch in Dinge ein, die euch nichts angehen!\pWenn ihr nicht sofot abschwirrt, mach ich euch die Hölle heiß, ihr Bälger!"
 str_14:
@@ -369,7 +373,11 @@ str_23:
 str_24:
     .autostring 34 2 "Felix hat RechtDOTS"
 str_25:
-    .autostring 34 2 "Wir werden diese Kommandantin auf keinen Fall damit durchkommen lassen.\pAber wir können auch den Wald nicht einfach abbrennen lassen.\pAlso machen wir es so.\pRosalie und ich versuchen hier, das Feuer in den Griff zu kriegen.\pRIVAL und PLAYER, ihr beiden gebt dieser Kommandantin eins auf den Deckel und befreit Professor Primus."
+    .autostring 34 2 "Wir werden diese Kommandantin auf keinen Fall damit durchkommen lassen."
+str_25a:
+    .autostring 34 2 "Aber wir können auch den Wald nicht einfach abbrennen lassen."
+str_25b:
+    .autostring 34 2 "Also machen wir es so.\pRosalie und ich versuchen hier, das Feuer in den Griff zu kriegen.\pRIVAL und PLAYER, ihr beiden gebt dieser Kommandantin eins auf den Deckel und befreit Professor Primus."
 str_26:
     .autostring 34 2 "Das hört sich nach einem guten Plan-"
 str_27:
@@ -684,7 +692,7 @@ str_39:
 str_40:
     .autostring 34 2 "Deinem kleinen Freund hier hab ich schon gezeigt, was es bedeutet, sich mit uns anzulegen."
 str_41:
-    .autostring 34 2 "Ihr Gören fangt an mir gewaltig auf die Nerven zu gehen.\pUnd ich habe hier leider auch nicht das gefunden, was ich gehofft hatte.\pPech für dich, Kindchen!\pMit Rin, einer Kommandantin von Team Violet, sollte man sich nicht anlegen!\pJetzt werde ich meinen ganzen Frust an dir auslassen!"
+    .autostring 34 2 "Ihr Gören fangt an mir gewaltig auf die Nerven zu gehen.\pUnd ich habe hier leider auch nicht das gefunden, was ich gehofft hatte.\pPech für dich, Kindchen!\pMit mir, einer Kommandantin von Team Violet, sollte man sich nicht anlegen!\pJetzt werde ich meinen ganzen Frust an dir auslassen!"
 str_42:
     .autostring 34 2 "U-Unmöglich!\pIch habe mich von einem Kind besiegen lassen?"
 str_43:
