@@ -56,14 +56,14 @@
           # Build most recent supported version of `pyagb`
           pyagb = python3.pkgs.buildPythonPackage rec {
             pname = "pyagb";
-            version = "6669a5e8e32190bdac14f43c654c38eebbb75070";
+            version = "6d6604d75d57099fc094cd4c5a55f2af771072da";
             pyproject = true;
 
             src = pkgs.fetchFromGitHub {
               owner = "dfuchsgruber";
               repo = pname;
               rev = version;
-              sha256 = "sha256-YvZUVwEpTG0BwC6IAbrNfDW379leSL37h7jx0lW+Jnw=";
+              sha256 = "sha256-Nq0RjO1U8Q63S7Yhcp9TQ4Ji+iZ8TJEf5G+CQqGM634=";
               # sha256 = pkgs.lib.fakeSha256;
             };
 
@@ -86,7 +86,7 @@
                   scikit-image
                   scipy
                   typing-extensions
-                  json5
+                  pyjson5
                 ];
 
             postInstall = ''

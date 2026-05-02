@@ -2390,6 +2390,14 @@
 		"map_footer_kranzdorf_mias_house": [
 			193,
 			"src/map/banks/7/8/map_footer_kranzdorf_mias_house.pms"
+		],
+		"map_footer_laubdorf_inside_1": [
+			194,
+			"src/map/banks/12/3/map_footer_laubdorf_inside_1.pms"
+		],
+		"map_footer_laubdorf_inside_3": [
+			195,
+			"src/map/banks/12/6/map_footer_laubdorf_inside_3.pms"
 		]
 	},
 	"tilesets_primary": {

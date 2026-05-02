@@ -1,6 +1,6 @@
 {
 	"data": {
-		"footer": "map_footer_418_indoor_layout_16",
+		"footer": "map_footer_laubdorf_inside_3",
 		"events": {
 			"person_cnt": 1,
 			"warp_cnt": 1,
@@ -10,8 +10,8 @@
 				{
 					"target_index": "1",
 					"picture": "52",
-					"x": "6",
-					"y": "5",
+					"x": "5",
+					"y": "4",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_LEFT_AND_RIGHT",
 					"behaviour_range": {
@@ -40,7 +40,7 @@
 			],
 			"warps": [
 				{
-					"x": "6",
+					"x": "5",
 					"y": "7",
 					"level": 0,
 					"target_warp_idx": "5",
@@ -57,7 +57,7 @@
 			"connections": []
 		},
 		"music": "MUS_LAUBDORF",
-		"footer_idx": 418,
+		"footer_idx": 195,
 		"namespace": "MAP_LAUBDORF",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_INSIDE",
