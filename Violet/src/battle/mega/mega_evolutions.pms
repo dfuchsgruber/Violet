@@ -1,0 +1,126 @@
+{
+	"label": "mega_evolutions",
+	"type": "mega_evolutions",
+	"data": [
+		{
+			"species": "POKEMON_GROUDON",
+			"mega_item": "ITEM_MAGMAHERZ",
+			"mega_species": "POKEMON_GROUDON_REGENT",
+			"type": "REGENT_EVOLUTION"
+		},
+		{
+			"species": "POKEMON_GEOWAZ",
+			"mega_item": "ITEM_GEOWAZNIT",
+			"mega_species": "POKEMON_MEGA_GEOWAZ",
+			"type": "MEGA_EVOLUTION"
+		},
+		{
+			"species": "POKEMON_TROPIUS",
+			"mega_item": "ITEM_TROPIUSNIT",
+			"mega_species": "POKEMON_MEGA_TROPIUS",
+			"type": "MEGA_EVOLUTION"
+		},
+		{
+			"species": "POKEMON_OCTILLERY",
+			"mega_item": "ITEM_OCTILLERYNIT",
+			"mega_species": "POKEMON_MEGA_OCTILLERY",
+			"type": "MEGA_EVOLUTION"
+		},
+		{
+			"species": "POKEMON_RASAFF",
+			"mega_item": "ITEM_RASAFFNIT",
+			"mega_species": "POKEMON_MEGA_RASAFF",
+			"type": "MEGA_EVOLUTION"
+		},
+		{
+			"species": "POKEMON_BANETTE",
+			"mega_item": "ITEM_BANETTENIT",
+			"mega_species": "POKEMON_MEGA_BANETTE",
+			"type": "MEGA_EVOLUTION"
+		},
+		{
+			"species": "POKEMON_ALTARIA",
+			"mega_item": "ITEM_ALTARIANIT",
+			"mega_species": "POKEMON_MEGA_ALTARIA",
+			"type": "MEGA_EVOLUTION"
+		},
+		{
+			"species": "POKEMON_SANDAMER",
+			"mega_item": "ITEM_SANDAMERNIT",
+			"mega_species": "POKEMON_MEGA_SANDAMER",
+			"type": "MEGA_EVOLUTION"
+		},
+		{
+			"species": "POKEMON_LAHMUS",
+			"mega_item": "ITEM_LAHMUSNIT",
+			"mega_species": "POKEMON_MEGA_LAHMUS",
+			"type": "MEGA_EVOLUTION"
+		},
+		{
+			"species": "POKEMON_MASKEREGEN",
+			"mega_item": "ITEM_MASKEREGENIT",
+			"mega_species": "POKEMON_MEGA_MASKEREGEN",
+			"type": "MEGA_EVOLUTION"
+		},
+		{
+			"species": "POKEMON_ARIADOS",
+			"mega_item": "ITEM_ARIADOSNIT",
+			"mega_species": "POKEMON_MEGA_ARIADOS",
+			"type": "MEGA_EVOLUTION"
+		},
+		{
+			"species": "POKEMON_FIRNONTOR",
+			"mega_item": "ITEM_FIRNONTORNIT",
+			"mega_species": "POKEMON_MEGA_FIRNONTOR",
+			"type": "MEGA_EVOLUTION"
+		},
+		{
+			"species": "POKEMON_BIBOR",
+			"mega_item": "ITEM_BIBORNIT",
+			"mega_species": "POKEMON_MEGA_BIBOR",
+			"type": "MEGA_EVOLUTION"
+		},
+		{
+			"species": "POKEMON_JUGONG",
+			"mega_item": "ITEM_JUGONGNIT",
+			"mega_species": "POKEMON_MEGA_JUGONG",
+			"type": "MEGA_EVOLUTION"
+		},
+		{
+			"species": "POKEMON_AMPHAROS",
+			"mega_item": "ITEM_AMPHAROSNIT",
+			"mega_species": "POKEMON_MEGA_AMPHAROS",
+			"type": "MEGA_EVOLUTION"
+		},
+		{
+			"species": "POKEMON_ZOBIRIS",
+			"mega_item": "ITEM_ZOBIRISNIT",
+			"mega_species": "POKEMON_MEGA_ZOBIRIS",
+			"type": "MEGA_EVOLUTION"
+		},
+		{
+			"species": "POKEMON_FLUNKIFER",
+			"mega_item": "ITEM_FLUNKIFERNIT",
+			"mega_species": "POKEMON_MEGA_FLUNKIFER",
+			"type": "MEGA_EVOLUTION"
+		},
+		{
+			"species": "POKEMON_SENGO",
+			"mega_item": "ITEM_SENGONIT",
+			"mega_species": "POKEMON_MEGA_SENGO",
+			"type": "MEGA_EVOLUTION"
+		},
+		{
+			"species": "POKEMON_VIPITIS",
+			"mega_item": "ITEM_VIPITISNIT",
+			"mega_species": "POKEMON_MEGA_VIPITIS",
+			"type": "MEGA_EVOLUTION"
+		},
+		{
+			"species": "POKEMON_PALIMPALIM",
+			"mega_item": "ITEM_PALIMPALIMNIT",
+			"mega_species": "POKEMON_MEGA_PALIMPALIM",
+			"type": "MEGA_EVOLUTION"
+		}
+	]
+}

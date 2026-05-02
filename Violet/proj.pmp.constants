@@ -1,6 +1,7 @@
 {
 	"move_tutors": "constants/move_tutors.const",
 	"evolution_methods": "constants/evolution_methods.const",
+	"mega_evolution_types": "constants/mega_evolution_types.const",
 	"items": "constants/items.const",
 	"species": "constants/species.const",
 	"abilities": "constants/abilities.const",

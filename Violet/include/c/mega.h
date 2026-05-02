@@ -4,13 +4,11 @@
 #include "battle/battler.h"
 #include "oam.h"
 #include "constants/items.h"
+#include "constants/mega_evolution_types.h"
 
 #define MEGA_TRIGGER_TAG 0x134F
 #define REGENT_TRIGGER_TAG 0x1350
 #define MEGA_INDICATOR_TAG 0xA3A8
-
-#define MEGA_EVOLUTION 1
-#define REGENT_EVOLUTION 2
 
 #define DEFAULT_KEYSTONE ITEM_MEGA_AMULETT
 
@@ -46,6 +44,7 @@ typedef struct {
     u16 type;
 } mega_evolution_t;
 
+extern mega_evolution_t mega_evolutions[];
 
 /** Gets the mega evolution a battler is able to perform.
  * @param battler_idx the idx of the battler

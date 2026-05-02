@@ -1,0 +1,8 @@
+{
+	"type": "enum",
+	"base": 1,
+	"values": [
+		"MEGA_EVOLUTION",
+		"REGENT_EVOLUTION"
+	]
+}

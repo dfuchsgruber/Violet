@@ -276,15 +276,15 @@ def parse_frontsprites(path):
 
 def parse_mega_evolutions(path):
     if not Path(path).exists():
-        eprint(f"warning: missing mega evolution table {path}")
+        eprint(f"warning: missing mega evolution data {path}")
         return {}
-    text = Path(path).read_text(encoding="utf-8")
-    pattern = re.compile(
-        r"\{\s*(POKEMON_[A-Z0-9_]+)\s*,\s*(ITEM_[A-Z0-9_]+)\s*,\s*"
-        r"(POKEMON_[A-Z0-9_]+)\s*,\s*(MEGA_EVOLUTION|REGENT_EVOLUTION)\s*\}"
-    )
+    payload = json.loads(Path(path).read_text(encoding="utf-8"))
     evolutions = {}
-    for species, item, mega_species, evolution_type in pattern.findall(text):
+    for entry in payload.get("data", []):
+        species = entry["species"]
+        item = entry["mega_item"]
+        mega_species = entry["mega_species"]
+        evolution_type = entry["type"]
         evolutions[mega_species] = {
             "species": species,
             "item": item,
@@ -530,7 +530,7 @@ def build_records(args):
     species_to_idx = dict(project.constants["species"].items())
     idx_to_species = constants_by_value(project, "species")
     sprite_map = parse_frontsprites("include/c/data/pokemon/frontsprites.h")
-    mega_evolutions = parse_mega_evolutions(args.mega_table)
+    mega_evolutions = parse_mega_evolutions(args.mega_evolutions_pms)
     shifted_order = detect_shifted_pokedex_order(pokemon_data)
 
     all_species_rows = []
@@ -935,7 +935,7 @@ def main():
     parser.add_argument("--pokemon-pkl", type=Path, default=Path("bld/index/pokemon.pkl"))
     parser.add_argument("--stats-pkl", type=Path, default=Path("bld/pokeapi/updated.pkl"))
     parser.add_argument("--updates-json", type=Path, default=Path("pokeapi/updates.json"))
-    parser.add_argument("--mega-table", type=Path, default=Path("src/battle/mega/mega.c"))
+    parser.add_argument("--mega-evolutions-pms", type=Path, default=Path("src/battle/mega/mega_evolutions.pms"))
     parser.add_argument("--project", type=Path, default=Path("proj.pmp"))
     parser.add_argument("--output", type=Path, default=Path("docs/pokemon"))
     parser.add_argument("--language", default="LANG_GER")
