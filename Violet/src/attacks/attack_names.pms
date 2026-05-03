@@ -1,0 +1,2081 @@
+{
+	"label": "attack_names",
+	"type": "attack.names",
+	"data": [
+		// ATTACK_NONE
+		{
+			"LANG_GER": "-",
+			"LANG_EN": "-"
+		},
+		// ATTACK_PFUND
+		{
+			"LANG_GER": "Pfund",
+			"LANG_EN": "Pound"
+		},
+		// ATTACK_KARATESCHLAG
+		{
+			"LANG_GER": "Karateschlag",
+			"LANG_EN": "Karate Chop"
+		},
+		// ATTACK_DUPLEXHIEB
+		{
+			"LANG_GER": "Duplexhieb",
+			"LANG_EN": "Doubleslap"
+		},
+		// ATTACK_KOMETENHIEB
+		{
+			"LANG_GER": "Kometenhieb",
+			"LANG_EN": "Comet Punch"
+		},
+		// ATTACK_MEGAHIEB
+		{
+			"LANG_GER": "Megahieb",
+			"LANG_EN": "Mega Punch"
+		},
+		// ATTACK_ZAHLTAG
+		{
+			"LANG_GER": "Zahltag",
+			"LANG_EN": "Pay Day"
+		},
+		// ATTACK_FEUERSCHLAG
+		{
+			"LANG_GER": "Feuerschlag",
+			"LANG_EN": "Fire Punch"
+		},
+		// ATTACK_EISHIEB
+		{
+			"LANG_GER": "Eishieb",
+			"LANG_EN": "Ice Punch"
+		},
+		// ATTACK_DONNERSCHLAG
+		{
+			"LANG_GER": "Donnerschlag",
+			"LANG_EN": "Thunderpunch"
+		},
+		// ATTACK_KRATZER
+		{
+			"LANG_GER": "Kratzer",
+			"LANG_EN": "Scratch"
+		},
+		// ATTACK_KLAMMER
+		{
+			"LANG_GER": "Klammer",
+			"LANG_EN": "Vicegrip"
+		},
+		// ATTACK_GUILLOTINE
+		{
+			"LANG_GER": "Guillotine",
+			"LANG_EN": "Guillotine"
+		},
+		// ATTACK_KLINGENSTURM
+		{
+			"LANG_GER": "Klingensturm",
+			"LANG_EN": "Razor Wind"
+		},
+		// ATTACK_SCHWERTTANZ
+		{
+			"LANG_GER": "Schwerttanz",
+			"LANG_EN": "Swords Dance"
+		},
+		// ATTACK_ZERSCHNEIDER
+		{
+			"LANG_GER": "Zerschneider",
+			"LANG_EN": "Cut"
+		},
+		// ATTACK_WINDSTOSS
+		{
+			"LANG_GER": "Windstoß",
+			"LANG_EN": "Gust"
+		},
+		// ATTACK_FLUEGELSCHLAG
+		{
+			"LANG_GER": "Flügelschlag",
+			"LANG_EN": "Wing Attack"
+		},
+		// ATTACK_WIRBELWIND
+		{
+			"LANG_GER": "Wirbelwind",
+			"LANG_EN": "Whirlwind"
+		},
+		// ATTACK_FLIEGEN
+		{
+			"LANG_GER": "Fliegen",
+			"LANG_EN": "Fly"
+		},
+		// ATTACK_KLAMMERGRIFF
+		{
+			"LANG_GER": "Klammergriff",
+			"LANG_EN": "Bind"
+		},
+		// ATTACK_SLAM
+		{
+			"LANG_GER": "Slam",
+			"LANG_EN": "Slam"
+		},
+		// ATTACK_RANKENHIEB
+		{
+			"LANG_GER": "Rankenhieb",
+			"LANG_EN": "Vine Whip"
+		},
+		// ATTACK_STAMPFER
+		{
+			"LANG_GER": "Stampfer",
+			"LANG_EN": "Stomp"
+		},
+		// ATTACK_DOPPELKICK
+		{
+			"LANG_GER": "Doppelkick",
+			"LANG_EN": "Double Kick"
+		},
+		// ATTACK_MEGAKICK
+		{
+			"LANG_GER": "Megakick",
+			"LANG_EN": "Mega Kick"
+		},
+		// ATTACK_SPRUNGKICK
+		{
+			"LANG_GER": "Sprungkick",
+			"LANG_EN": "Jump Kick"
+		},
+		// ATTACK_FEGEKICK
+		{
+			"LANG_GER": "Fegekick",
+			"LANG_EN": "Rolling Kick"
+		},
+		// ATTACK_SANDWIRBEL
+		{
+			"LANG_GER": "Sandwirbel",
+			"LANG_EN": "Sand-attack"
+		},
+		// ATTACK_KOPFNUSS
+		{
+			"LANG_GER": "Kopfnuss",
+			"LANG_EN": "Headbutt"
+		},
+		// ATTACK_HORNATTACKE
+		{
+			"LANG_GER": "Hornattacke",
+			"LANG_EN": "Horn Attack"
+		},
+		// ATTACK_FURIENSCHLAG
+		{
+			"LANG_GER": "Furienschlag",
+			"LANG_EN": "Fury Attack"
+		},
+		// ATTACK_HORNBOHRER
+		{
+			"LANG_GER": "Hornbohrer",
+			"LANG_EN": "Horn Drill"
+		},
+		// ATTACK_TACKLE
+		{
+			"LANG_GER": "Tackle",
+			"LANG_EN": "Tackle"
+		},
+		// ATTACK_BODYSLAM
+		{
+			"LANG_GER": "Bodyslam",
+			"LANG_EN": "Body Slam"
+		},
+		// ATTACK_WICKEL
+		{
+			"LANG_GER": "Wickel",
+			"LANG_EN": "Wrap"
+		},
+		// ATTACK_BODYCHECK
+		{
+			"LANG_GER": "Bodychek",
+			"LANG_EN": "Take Down"
+		},
+		// ATTACK_FUCHTLER
+		{
+			"LANG_GER": "Fuchtler",
+			"LANG_EN": "Thrash"
+		},
+		// ATTACK_RISIKOTACKLE
+		{
+			"LANG_GER": "Risikotackle",
+			"LANG_EN": "Double-edge"
+		},
+		// ATTACK_RUTENSCHLAG
+		{
+			"LANG_GER": "Rutenschlag",
+			"LANG_EN": "Tail Whip"
+		},
+		// ATTACK_GIFTSTACHEL
+		{
+			"LANG_GER": "Giftstachel",
+			"LANG_EN": "Poison Sting"
+		},
+		// ATTACK_DUONADEL
+		{
+			"LANG_GER": "Duonadel",
+			"LANG_EN": "Twineedle"
+		},
+		// ATTACK_NADELRAKETE
+		{
+			"LANG_GER": "Nadelrakete",
+			"LANG_EN": "Pin Missile"
+		},
+		// ATTACK_SILBERBLICK
+		{
+			"LANG_GER": "Silberblick",
+			"LANG_EN": "Leer"
+		},
+		// ATTACK_BISS
+		{
+			"LANG_GER": "Biss",
+			"LANG_EN": "Bite"
+		},
+		// ATTACK_HEULER
+		{
+			"LANG_GER": "Heuler",
+			"LANG_EN": "Growl"
+		},
+		// ATTACK_BRUELLER
+		{
+			"LANG_GER": "Brüller",
+			"LANG_EN": "Roar"
+		},
+		// ATTACK_GESANG
+		{
+			"LANG_GER": "Gesang",
+			"LANG_EN": "Sing"
+		},
+		// ATTACK_SUPERSCHALL
+		{
+			"LANG_GER": "Superschall",
+			"LANG_EN": "Supersonic"
+		},
+		// ATTACK_ULTRASCHALL
+		{
+			"LANG_GER": "Ultraschall",
+			"LANG_EN": "Sonicboom"
+		},
+		// ATTACK_AUSSETZER
+		{
+			"LANG_GER": "Aussetzer",
+			"LANG_EN": "Disable"
+		},
+		// ATTACK_SAEURE
+		{
+			"LANG_GER": "Säure",
+			"LANG_EN": "Acid"
+		},
+		// ATTACK_GLUT
+		{
+			"LANG_GER": "Glut",
+			"LANG_EN": "Ember"
+		},
+		// ATTACK_FLAMMENWURF
+		{
+			"LANG_GER": "Flammenwurf",
+			"LANG_EN": "Flamethrower"
+		},
+		// ATTACK_WEISSNEBEL
+		{
+			"LANG_GER": "Weißnebel",
+			"LANG_EN": "Mist"
+		},
+		// ATTACK_AQUAKNARRE
+		{
+			"LANG_GER": "Aquaknarre",
+			"LANG_EN": "Water Gun"
+		},
+		// ATTACK_HYDROPUMPE
+		{
+			"LANG_GER": "Hydropumpe",
+			"LANG_EN": "Hydro Pump"
+		},
+		// ATTACK_SURFER
+		{
+			"LANG_GER": "Surfer",
+			"LANG_EN": "Surf"
+		},
+		// ATTACK_EISSTRAHL
+		{
+			"LANG_GER": "Eisstrahl",
+			"LANG_EN": "Ice Beam"
+		},
+		// ATTACK_BLIZZARD
+		{
+			"LANG_GER": "Blizzard",
+			"LANG_EN": "Blizzard"
+		},
+		// ATTACK_PSYSTRAHL
+		{
+			"LANG_GER": "Psystrahl",
+			"LANG_EN": "Psybeam"
+		},
+		// ATTACK_BLUBBSTRAHL
+		{
+			"LANG_GER": "Blubbstrahl",
+			"LANG_EN": "Bubblebeam"
+		},
+		// ATTACK_AURORASTRAHL
+		{
+			"LANG_GER": "Aurorastrahl",
+			"LANG_EN": "Aurora Beam"
+		},
+		// ATTACK_HYPERSTRAHL
+		{
+			"LANG_GER": "Hyperstrahl",
+			"LANG_EN": "Hyper Beam"
+		},
+		// ATTACK_SCHNABEL
+		{
+			"LANG_GER": "Schnabel",
+			"LANG_EN": "Peck"
+		},
+		// ATTACK_BOHRSCHNABEL
+		{
+			"LANG_GER": "Bohrschnabel",
+			"LANG_EN": "Drill Peck"
+		},
+		// ATTACK_UEBERROLLER
+		{
+			"LANG_GER": "Überroller",
+			"LANG_EN": "Submission"
+		},
+		// ATTACK_FUSSKICK
+		{
+			"LANG_GER": "Fußkick",
+			"LANG_EN": "Low Kick"
+		},
+		// ATTACK_KONTER
+		{
+			"LANG_GER": "Konter",
+			"LANG_EN": "Counter"
+		},
+		// ATTACK_GEOWURF
+		{
+			"LANG_GER": "Geowurf",
+			"LANG_EN": "Seismic Toss"
+		},
+		// ATTACK_STAERKE
+		{
+			"LANG_GER": "Stärke",
+			"LANG_EN": "Strength"
+		},
+		// ATTACK_ABSORBER
+		{
+			"LANG_GER": "Absorber",
+			"LANG_EN": "Absorb"
+		},
+		// ATTACK_MEGASAUGER
+		{
+			"LANG_GER": "Megasauger",
+			"LANG_EN": "Mega Drain"
+		},
+		// ATTACK_EGELSAMEN
+		{
+			"LANG_GER": "Egelsamen",
+			"LANG_EN": "Leech Seed"
+		},
+		// ATTACK_WACHSTUM
+		{
+			"LANG_GER": "Wachstum",
+			"LANG_EN": "Growth"
+		},
+		// ATTACK_RASIERBLATT
+		{
+			"LANG_GER": "Rasierblatt",
+			"LANG_EN": "Razor Leaf"
+		},
+		// ATTACK_SOLARSTRAHL
+		{
+			"LANG_GER": "Solarstrahl",
+			"LANG_EN": "Solarbeam"
+		},
+		// ATTACK_GIFTPUDER
+		{
+			"LANG_GER": "Giftpuder",
+			"LANG_EN": "Poisonpowder"
+		},
+		// ATTACK_STACHELSPORE
+		{
+			"LANG_GER": "Stachelspore",
+			"LANG_EN": "Stun Spore"
+		},
+		// ATTACK_SCHLAFPUDER
+		{
+			"LANG_GER": "Schlafpuder",
+			"LANG_EN": "Sleep Powder"
+		},
+		// ATTACK_BLAETTERTANZ
+		{
+			"LANG_GER": "Blättertanz",
+			"LANG_EN": "Petal Dance"
+		},
+		// ATTACK_FADENSCHUSS
+		{
+			"LANG_GER": "Fadenschuss",
+			"LANG_EN": "String Shot"
+		},
+		// ATTACK_DRACHENWUT
+		{
+			"LANG_GER": "Drachenwut",
+			"LANG_EN": "Dragon Rage"
+		},
+		// ATTACK_FEUERWIRBEL
+		{
+			"LANG_GER": "Feuerwirbel",
+			"LANG_EN": "Fire Spin"
+		},
+		// ATTACK_DONNERSCHOCK
+		{
+			"LANG_GER": "Donnerschock",
+			"LANG_EN": "Thundershock"
+		},
+		// ATTACK_DONNERBLITZ
+		{
+			"LANG_GER": "Donnerblitz",
+			"LANG_EN": "Thunderbolt"
+		},
+		// ATTACK_DONNERWELLE
+		{
+			"LANG_GER": "Donnerwelle",
+			"LANG_EN": "Thunder Wave"
+		},
+		// ATTACK_DONNER
+		{
+			"LANG_GER": "Donner",
+			"LANG_EN": "Thunder"
+		},
+		// ATTACK_STEINWURF
+		{
+			"LANG_GER": "Steinwurf",
+			"LANG_EN": "Rock Throw"
+		},
+		// ATTACK_ERDBEBEN
+		{
+			"LANG_GER": "Erdbeben",
+			"LANG_EN": "Earthquake"
+		},
+		// ATTACK_GEOFISSUR
+		{
+			"LANG_GER": "Geofissur",
+			"LANG_EN": "Fissure"
+		},
+		// ATTACK_SCHAUFLER
+		{
+			"LANG_GER": "Schaufler",
+			"LANG_EN": "Dig"
+		},
+		// ATTACK_TOXIN
+		{
+			"LANG_GER": "Toxin",
+			"LANG_EN": "Toxic"
+		},
+		// ATTACK_KONFUSION
+		{
+			"LANG_GER": "Konfusion",
+			"LANG_EN": "Confusion"
+		},
+		// ATTACK_PSYCHOKINESE
+		{
+			"LANG_GER": "Psychokinese",
+			"LANG_EN": "Psychic"
+		},
+		// ATTACK_HYPNOSE
+		{
+			"LANG_GER": "Hypnose",
+			"LANG_EN": "Hypnosis"
+		},
+		// ATTACK_MEDITATION
+		{
+			"LANG_GER": "Meditation",
+			"LANG_EN": "Meditate"
+		},
+		// ATTACK_AGILITAET
+		{
+			"LANG_GER": "Agilität",
+			"LANG_EN": "Agility"
+		},
+		// ATTACK_RUCKZUCKHIEB
+		{
+			"LANG_GER": "Ruckzuckhieb",
+			"LANG_EN": "Quick Attack"
+		},
+		// ATTACK_RASEREI
+		{
+			"LANG_GER": "Raserei",
+			"LANG_EN": "Rage"
+		},
+		// ATTACK_TELEPORT
+		{
+			"LANG_GER": "Teleport",
+			"LANG_EN": "Teleport"
+		},
+		// ATTACK_NACHTNEBEL
+		{
+			"LANG_GER": "Nachtnebel",
+			"LANG_EN": "Night Shade"
+		},
+		// ATTACK_MIMIKRY
+		{
+			"LANG_GER": "Mimikry",
+			"LANG_EN": "Mimic"
+		},
+		// ATTACK_KREIDESCHREI
+		{
+			"LANG_GER": "Kreideschrei",
+			"LANG_EN": "Screech"
+		},
+		// ATTACK_DOPPELTEAM
+		{
+			"LANG_GER": "Doppelteam",
+			"LANG_EN": "Double Team"
+		},
+		// ATTACK_GENESUNG
+		{
+			"LANG_GER": "Genesung",
+			"LANG_EN": "Recover"
+		},
+		// ATTACK_HAERTNER
+		{
+			"LANG_GER": "Härtner",
+			"LANG_EN": "Harden"
+		},
+		// ATTACK_KOMPRIMATOR
+		{
+			"LANG_GER": "Komprimator",
+			"LANG_EN": "Minimize"
+		},
+		// ATTACK_RAUCHWOLKE
+		{
+			"LANG_GER": "Rauchwolke",
+			"LANG_EN": "Smokescreen"
+		},
+		// ATTACK_KONFUSTRAHL
+		{
+			"LANG_GER": "Konfustrahl",
+			"LANG_EN": "Confuse Ray"
+		},
+		// ATTACK_PANZERSCHUTZ
+		{
+			"LANG_GER": "Panzerschutz",
+			"LANG_EN": "Withdraw"
+		},
+		// ATTACK_EINIGLER
+		{
+			"LANG_GER": "Einigler",
+			"LANG_EN": "Defense Curl"
+		},
+		// ATTACK_BARRIERE
+		{
+			"LANG_GER": "Barriere",
+			"LANG_EN": "Barrier"
+		},
+		// ATTACK_LICHTSCHILD
+		{
+			"LANG_GER": "Lichtschild",
+			"LANG_EN": "Light Screen"
+		},
+		// ATTACK_DUNKELNEBEL
+		{
+			"LANG_GER": "Dunkelnebel",
+			"LANG_EN": "Haze"
+		},
+		// ATTACK_REFLEKTOR
+		{
+			"LANG_GER": "Reflektor",
+			"LANG_EN": "Reflect"
+		},
+		// ATTACK_ENERGIEFOKUS
+		{
+			"LANG_GER": "Energiefokus",
+			"LANG_EN": "Focus Energy"
+		},
+		// ATTACK_GEDULD
+		{
+			"LANG_GER": "Geduld",
+			"LANG_EN": "Bide"
+		},
+		// ATTACK_METRONOM
+		{
+			"LANG_GER": "Metronom",
+			"LANG_EN": "Metronome"
+		},
+		// ATTACK_SPIEGELTRICK
+		{
+			"LANG_GER": "Spiegeltrick",
+			"LANG_EN": "Mirror Move"
+		},
+		// ATTACK_FINALE
+		{
+			"LANG_GER": "Finale",
+			"LANG_EN": "Selfdestruct"
+		},
+		// ATTACK_EIERBOMBE
+		{
+			"LANG_GER": "Eierbombe",
+			"LANG_EN": "Egg Bomb"
+		},
+		// ATTACK_SCHLECKER
+		{
+			"LANG_GER": "Schlecker",
+			"LANG_EN": "Lick"
+		},
+		// ATTACK_SMOG
+		{
+			"LANG_GER": "Smog",
+			"LANG_EN": "Smog"
+		},
+		// ATTACK_SCHLAMMBAD
+		{
+			"LANG_GER": "Schlammbad",
+			"LANG_EN": "Sludge"
+		},
+		// ATTACK_KNOCHENKEULE
+		{
+			"LANG_GER": "Knochenkeule",
+			"LANG_EN": "Bone Club"
+		},
+		// ATTACK_FEUERSTURM
+		{
+			"LANG_GER": "Feuersturm",
+			"LANG_EN": "Fire Blast"
+		},
+		// ATTACK_KASKADE
+		{
+			"LANG_GER": "Kaskade",
+			"LANG_EN": "Waterfall"
+		},
+		// ATTACK_SCHNAPPER
+		{
+			"LANG_GER": "Schnapper",
+			"LANG_EN": "Clamp"
+		},
+		// ATTACK_STERNSCHAUER
+		{
+			"LANG_GER": "Sternschauer",
+			"LANG_EN": "Swift"
+		},
+		// ATTACK_SCHAEDELWUMME
+		{
+			"LANG_GER": "Schädelwumme",
+			"LANG_EN": "Skull Bash"
+		},
+		// ATTACK_DORNKANONE
+		{
+			"LANG_GER": "Dornkanone",
+			"LANG_EN": "Spike Cannon"
+		},
+		// ATTACK_UMKLAMMERUNG
+		{
+			"LANG_GER": "Umklammerung",
+			"LANG_EN": "Constrict"
+		},
+		// ATTACK_AMNESIE
+		{
+			"LANG_GER": "Amnesie",
+			"LANG_EN": "Amnesia"
+		},
+		// ATTACK_PSYKRAFT
+		{
+			"LANG_GER": "Psykraft",
+			"LANG_EN": "Kinesis"
+		},
+		// ATTACK_WEICHEI
+		{
+			"LANG_GER": "Weichei",
+			"LANG_EN": "Softboiled"
+		},
+		// ATTACK_TURMKICK
+		{
+			"LANG_GER": "Turmkick",
+			"LANG_EN": "Hi Jump Kick"
+		},
+		// ATTACK_GIFTBLICK
+		{
+			"LANG_GER": "Giftblick",
+			"LANG_EN": "Glare"
+		},
+		// ATTACK_TRAUMFRESSER
+		{
+			"LANG_GER": "Traumfresser",
+			"LANG_EN": "Dream Eater"
+		},
+		// ATTACK_GIFTWOLKE
+		{
+			"LANG_GER": "Giftwolke",
+			"LANG_EN": "Poison Gas"
+		},
+		// ATTACK_STAKKATO
+		{
+			"LANG_GER": "Stakkato",
+			"LANG_EN": "Barrage"
+		},
+		// ATTACK_BLUTSAUGER
+		{
+			"LANG_GER": "Blutsauger",
+			"LANG_EN": "Leech Life"
+		},
+		// ATTACK_TODESKUSS
+		{
+			"LANG_GER": "Todeskuss",
+			"LANG_EN": "Lovely Kiss"
+		},
+		// ATTACK_HIMMELSFEGER
+		{
+			"LANG_GER": "Himmelsfeger",
+			"LANG_EN": "Sky Attack"
+		},
+		// ATTACK_WANDLER
+		{
+			"LANG_GER": "Wandler",
+			"LANG_EN": "Transform"
+		},
+		// ATTACK_BLUBBER
+		{
+			"LANG_GER": "Blubber",
+			"LANG_EN": "Bubble"
+		},
+		// ATTACK_IRRSCHLAG
+		{
+			"LANG_GER": "Irrschlag",
+			"LANG_EN": "Dizzy Punch"
+		},
+		// ATTACK_PILZSPORE
+		{
+			"LANG_GER": "Pilzspore",
+			"LANG_EN": "Spore"
+		},
+		// ATTACK_BLITZ
+		{
+			"LANG_GER": "Blitz",
+			"LANG_EN": "Flash"
+		},
+		// ATTACK_PSYWELLE
+		{
+			"LANG_GER": "Psywelle",
+			"LANG_EN": "Psywave"
+		},
+		// ATTACK_PLATSCHER
+		{
+			"LANG_GER": "Platscher",
+			"LANG_EN": "Splash"
+		},
+		// ATTACK_SAEUREPANZER
+		{
+			"LANG_GER": "Säurepanzer",
+			"LANG_EN": "Acid Armor"
+		},
+		// ATTACK_KRABBHAMMER
+		{
+			"LANG_GER": "Krabbhammer",
+			"LANG_EN": "Crabhammer"
+		},
+		// ATTACK_EXPLOSION
+		{
+			"LANG_GER": "Explosion",
+			"LANG_EN": "Explosion"
+		},
+		// ATTACK_KRATZFURIE
+		{
+			"LANG_GER": "Kratzfurie",
+			"LANG_EN": "Fury Swipes"
+		},
+		// ATTACK_KNOCHMERANG
+		{
+			"LANG_GER": "Knochmerang",
+			"LANG_EN": "Bonemerang"
+		},
+		// ATTACK_ERHOLUNG
+		{
+			"LANG_GER": "Erholung",
+			"LANG_EN": "Rest"
+		},
+		// ATTACK_STEINHAGEL
+		{
+			"LANG_GER": "Steinhagel",
+			"LANG_EN": "Rock Slide"
+		},
+		// ATTACK_HYPERZAHN
+		{
+			"LANG_GER": "Hyperzahn",
+			"LANG_EN": "Hyper Fang"
+		},
+		// ATTACK_SCHAERFER
+		{
+			"LANG_GER": "Schärfer",
+			"LANG_EN": "Sharpen"
+		},
+		// ATTACK_UMWANDLUNG
+		{
+			"LANG_GER": "Umwandlung",
+			"LANG_EN": "Conversion"
+		},
+		// ATTACK_TRIPLETTE
+		{
+			"LANG_GER": "Triplette",
+			"LANG_EN": "Tri Attack"
+		},
+		// ATTACK_SUPERZAHN
+		{
+			"LANG_GER": "Superzahn",
+			"LANG_EN": "Super Fang"
+		},
+		// ATTACK_SCHLITZER
+		{
+			"LANG_GER": "Schlitzer",
+			"LANG_EN": "Slash"
+		},
+		// ATTACK_DELEGATOR
+		{
+			"LANG_GER": "Delegator",
+			"LANG_EN": "Substitute"
+		},
+		// ATTACK_VERZWEIFLER
+		{
+			"LANG_GER": "Verzweifler",
+			"LANG_EN": "Struggle"
+		},
+		// ATTACK_NACHAHMER
+		{
+			"LANG_GER": "Nachahmer",
+			"LANG_EN": "Sketch"
+		},
+		// ATTACK_DREIFACHKICK
+		{
+			"LANG_GER": "Dreifachkick",
+			"LANG_EN": "Triple Kick"
+		},
+		// ATTACK_RAUB
+		{
+			"LANG_GER": "Raub",
+			"LANG_EN": "Thief"
+		},
+		// ATTACK_SPINNENNETZ
+		{
+			"LANG_GER": "Spinnennetz",
+			"LANG_EN": "Spider Web"
+		},
+		// ATTACK_WILLENSLESER
+		{
+			"LANG_GER": "Willensleser",
+			"LANG_EN": "Mind Reader"
+		},
+		// ATTACK_NACHTMAHR
+		{
+			"LANG_GER": "Nachtmahr",
+			"LANG_EN": "Nightmare"
+		},
+		// ATTACK_FLAMMENRAD
+		{
+			"LANG_GER": "Flammenrad",
+			"LANG_EN": "Flame Wheel"
+		},
+		// ATTACK_SCHNARCHER
+		{
+			"LANG_GER": "Schnarcher",
+			"LANG_EN": "Snore"
+		},
+		// ATTACK_FLUCH
+		{
+			"LANG_GER": "Fluch",
+			"LANG_EN": "Curse"
+		},
+		// ATTACK_DRESCHFLEGEL
+		{
+			"LANG_GER": "Dreschflegel",
+			"LANG_EN": "Flail"
+		},
+		// ATTACK_UMWANDLUNG2
+		{
+			"LANG_GER": "Unwandlung2",
+			"LANG_EN": "Conversion 2"
+		},
+		// ATTACK_LUFTSTOSS
+		{
+			"LANG_GER": "Luftstoß",
+			"LANG_EN": "Aeroblast"
+		},
+		// ATTACK_BAUMWOLLSAAT
+		{
+			"LANG_GER": "Baumwollsaat",
+			"LANG_EN": "Cotton Spore"
+		},
+		// ATTACK_GEGENSCHLAG
+		{
+			"LANG_GER": "Gegenschlag",
+			"LANG_EN": "Reversal"
+		},
+		// ATTACK_GROLL
+		{
+			"LANG_GER": "Groll",
+			"LANG_EN": "Spite"
+		},
+		// ATTACK_PULVERSCHNEE
+		{
+			"LANG_GER": "Pulverschnee",
+			"LANG_EN": "Powder Snow"
+		},
+		// ATTACK_SCHUTZSCHILD
+		{
+			"LANG_GER": "Schutzschild",
+			"LANG_EN": "Protect"
+		},
+		// ATTACK_TEMPOHIEB
+		{
+			"LANG_GER": "Tempohieb",
+			"LANG_EN": "Mach Punch"
+		},
+		// ATTACK_GRIMASSE
+		{
+			"LANG_GER": "Grimasse",
+			"LANG_EN": "Scary Face"
+		},
+		// ATTACK_FINTE
+		{
+			"LANG_GER": "Finte",
+			"LANG_EN": "Faint Attack"
+		},
+		// ATTACK_BITTERKUSS
+		{
+			"LANG_GER": "Bitterkuss",
+			"LANG_EN": "Sweet Kiss"
+		},
+		// ATTACK_BAUCHTROMMEL
+		{
+			"LANG_GER": "Bauchtrommel",
+			"LANG_EN": "Belly Drum"
+		},
+		// ATTACK_MATSCHBOMBE
+		{
+			"LANG_GER": "Matschbombe",
+			"LANG_EN": "Sludge Bomb"
+		},
+		// ATTACK_LEHMSCHELLE
+		{
+			"LANG_GER": "Lehmschelle",
+			"LANG_EN": "Mud-slap"
+		},
+		// ATTACK_OCTAZOOKA
+		{
+			"LANG_GER": "Octazooka",
+			"LANG_EN": "Octazooka"
+		},
+		// ATTACK_STACHLER
+		{
+			"LANG_GER": "Stachler",
+			"LANG_EN": "Spikes"
+		},
+		// ATTACK_BLITZKANONE
+		{
+			"LANG_GER": "Blitzkanone",
+			"LANG_EN": "Zap Cannon"
+		},
+		// ATTACK_GESICHTE
+		{
+			"LANG_GER": "Gesichte",
+			"LANG_EN": "Foresight"
+		},
+		// ATTACK_ABGANGSBUND
+		{
+			"LANG_GER": "Abgangsbund",
+			"LANG_EN": "Destiny Bond"
+		},
+		// ATTACK_ABGESANG
+		{
+			"LANG_GER": "Abgesang",
+			"LANG_EN": "Perish Song"
+		},
+		// ATTACK_EISSTURM
+		{
+			"LANG_GER": "Eissturm",
+			"LANG_EN": "Icy Wind"
+		},
+		// ATTACK_SCANNER
+		{
+			"LANG_GER": "Scanner",
+			"LANG_EN": "Detect"
+		},
+		// ATTACK_KNOCHENHATZ
+		{
+			"LANG_GER": "Knochenhatz",
+			"LANG_EN": "Bone Rush"
+		},
+		// ATTACK_ZIELSCHUSS
+		{
+			"LANG_GER": "Zielschuss",
+			"LANG_EN": "Lock-on"
+		},
+		// ATTACK_WUTANFALL
+		{
+			"LANG_GER": "Wutanfall",
+			"LANG_EN": "Outrage"
+		},
+		// ATTACK_SANDSTURM
+		{
+			"LANG_GER": "Sandsturm",
+			"LANG_EN": "Sandstorm"
+		},
+		// ATTACK_GIGASAUGER
+		{
+			"LANG_GER": "Gigasauger",
+			"LANG_EN": "Giga Drain"
+		},
+		// ATTACK_AUSDAUER
+		{
+			"LANG_GER": "Ausdauer",
+			"LANG_EN": "Endure"
+		},
+		// ATTACK_CHARME
+		{
+			"LANG_GER": "Charme",
+			"LANG_EN": "Charm"
+		},
+		// ATTACK_WALZER
+		{
+			"LANG_GER": "Walzer",
+			"LANG_EN": "Rollout"
+		},
+		// ATTACK_TRUGSCHLAG
+		{
+			"LANG_GER": "Trugschlag",
+			"LANG_EN": "False Swipe"
+		},
+		// ATTACK_ANGEBEREI
+		{
+			"LANG_GER": "Angeberei",
+			"LANG_EN": "Swagger"
+		},
+		// ATTACK_MILCHGETRAENK
+		{
+			"LANG_GER": "Milchgetränk",
+			"LANG_EN": "Milk Drink"
+		},
+		// ATTACK_FUNKENSPRUNG
+		{
+			"LANG_GER": "Funkensprung",
+			"LANG_EN": "Spark"
+		},
+		// ATTACK_ZORNKLINGE
+		{
+			"LANG_GER": "Zornklinge",
+			"LANG_EN": "Fury Cutter"
+		},
+		// ATTACK_STAHLFLUEGEL
+		{
+			"LANG_GER": "Stahlflügel",
+			"LANG_EN": "Steel Wing"
+		},
+		// ATTACK_HORRORBLICK
+		{
+			"LANG_GER": "Horrorblick",
+			"LANG_EN": "Mean Look"
+		},
+		// ATTACK_ANZIEHUNG
+		{
+			"LANG_GER": "Anziehung",
+			"LANG_EN": "Attract"
+		},
+		// ATTACK_SCHLAFREDE
+		{
+			"LANG_GER": "Schlafrede",
+			"LANG_EN": "Sleep Talk"
+		},
+		// ATTACK_VITALGLOCKE
+		{
+			"LANG_GER": "Vitalglocke",
+			"LANG_EN": "Heal Bell"
+		},
+		// ATTACK_RUECKKEHR
+		{
+			"LANG_GER": "Rückkehr",
+			"LANG_EN": "Return"
+		},
+		// ATTACK_GESCHENK
+		{
+			"LANG_GER": "Geschenk",
+			"LANG_EN": "Present"
+		},
+		// ATTACK_FRUSTRATION
+		{
+			"LANG_GER": "Frustration",
+			"LANG_EN": "Frustration"
+		},
+		// ATTACK_BODYGUARD
+		{
+			"LANG_GER": "Bodyguard",
+			"LANG_EN": "Safeguard"
+		},
+		// ATTACK_LEIDTEILER
+		{
+			"LANG_GER": "Leidteiler",
+			"LANG_EN": "Pain Split"
+		},
+		// ATTACK_LAEUTERFEUER
+		{
+			"LANG_GER": "Läuterfeuer",
+			"LANG_EN": "Sacred Fire"
+		},
+		// ATTACK_INTENSITAET
+		{
+			"LANG_GER": "Intensität",
+			"LANG_EN": "Magnitude"
+		},
+		// ATTACK_WUCHTSCHLAG
+		{
+			"LANG_GER": "Wuchtschlag",
+			"LANG_EN": "Dynamicpunch"
+		},
+		// ATTACK_VIELENDER
+		{
+			"LANG_GER": "Vielender",
+			"LANG_EN": "Megahorn"
+		},
+		// ATTACK_FEUERODEM
+		{
+			"LANG_GER": "Feuerodem",
+			"LANG_EN": "Dragonbreath"
+		},
+		// ATTACK_STAFETTE
+		{
+			"LANG_GER": "Staffette",
+			"LANG_EN": "Baton Pass"
+		},
+		// ATTACK_ZUGABE
+		{
+			"LANG_GER": "Zugabe",
+			"LANG_EN": "Encore"
+		},
+		// ATTACK_VERFOLGUNG
+		{
+			"LANG_GER": "Verfolgung",
+			"LANG_EN": "Pursuit"
+		},
+		// ATTACK_TURBODREHER
+		{
+			"LANG_GER": "Turbodreher",
+			"LANG_EN": "Rapid Spin"
+		},
+		// ATTACK_LOCKDUFT
+		{
+			"LANG_GER": "Lockduft",
+			"LANG_EN": "Sweet Scent"
+		},
+		// ATTACK_EISENSCHWEIF
+		{
+			"LANG_GER": "Eisenschweif",
+			"LANG_EN": "Iron Tail"
+		},
+		// ATTACK_METALLKLAUE
+		{
+			"LANG_GER": "Metallklaue",
+			"LANG_EN": "Metal Claw"
+		},
+		// ATTACK_UEBERWURF
+		{
+			"LANG_GER": "Überwurf",
+			"LANG_EN": "Vital Throw"
+		},
+		// ATTACK_MORGENGRAUEN
+		{
+			"LANG_GER": "Morgengrauen",
+			"LANG_EN": "Morning Sun"
+		},
+		// ATTACK_SYNTHESE
+		{
+			"LANG_GER": "Synthese",
+			"LANG_EN": "Synthesis"
+		},
+		// ATTACK_MONDSCHEIN
+		{
+			"LANG_GER": "Mondschein",
+			"LANG_EN": "Moonlight"
+		},
+		// ATTACK_KRAFTRESERVE
+		{
+			"LANG_GER": "Kraftreserve",
+			"LANG_EN": "Hidden Power"
+		},
+		// ATTACK_KREUZHIEB
+		{
+			"LANG_GER": "Kreuzhieb",
+			"LANG_EN": "Cross Chop"
+		},
+		// ATTACK_WINDHOSE
+		{
+			"LANG_GER": "Windhose",
+			"LANG_EN": "Twister"
+		},
+		// ATTACK_REGENTANZ
+		{
+			"LANG_GER": "Regentanz",
+			"LANG_EN": "Rain Dance"
+		},
+		// ATTACK_SONNENTAG
+		{
+			"LANG_GER": "Sonnentag",
+			"LANG_EN": "Sunny Day"
+		},
+		// ATTACK_KNIRSCHER
+		{
+			"LANG_GER": "Knirscher",
+			"LANG_EN": "Crunch"
+		},
+		// ATTACK_SPIEGELCAPE
+		{
+			"LANG_GER": "Spiegelcape",
+			"LANG_EN": "Mirror Coat"
+		},
+		// ATTACK_PSYCHO_PLUS
+		{
+			"LANG_GER": "Psycho-Plus",
+			"LANG_EN": "Psych Up"
+		},
+		// ATTACK_TURBOTEMPO
+		{
+			"LANG_GER": "Turbotempo",
+			"LANG_EN": "Extremespeed"
+		},
+		// ATTACK_ANTIK_KRAFT
+		{
+			"LANG_GER": "Antik-Kraft",
+			"LANG_EN": "Ancientpower"
+		},
+		// ATTACK_SPUKBALL
+		{
+			"LANG_GER": "Spukball",
+			"LANG_EN": "Shadow Ball"
+		},
+		// ATTACK_SEHER
+		{
+			"LANG_GER": "Seher",
+			"LANG_EN": "Future Sight"
+		},
+		// ATTACK_ZERTRUEMMERER
+		{
+			"LANG_GER": "Zertrümmerer",
+			"LANG_EN": "Rock Smash"
+		},
+		// ATTACK_WHIRLPOOL
+		{
+			"LANG_GER": "Whirlpool",
+			"LANG_EN": "Whirlpool"
+		},
+		// ATTACK_PRUEGLER
+		{
+			"LANG_GER": "Prügler",
+			"LANG_EN": "Beat Up"
+		},
+		// ATTACK_MOGELHIEB
+		{
+			"LANG_GER": "Mogelhieb",
+			"LANG_EN": "Fake Out"
+		},
+		// ATTACK_AUFRUHR
+		{
+			"LANG_GER": "Aufruhr",
+			"LANG_EN": "Uproar"
+		},
+		// ATTACK_HORTER
+		{
+			"LANG_GER": "Horter",
+			"LANG_EN": "Stockpile"
+		},
+		// ATTACK_ENTFESSLER
+		{
+			"LANG_GER": "Entfessler",
+			"LANG_EN": "Spit Up"
+		},
+		// ATTACK_VERZEHRER
+		{
+			"LANG_GER": "Verzehrer",
+			"LANG_EN": "Swallow"
+		},
+		// ATTACK_HITZEWELLE
+		{
+			"LANG_GER": "Hitzewelle",
+			"LANG_EN": "Heat Wave"
+		},
+		// ATTACK_HAGELSTURM
+		{
+			"LANG_GER": "Hagelsturm",
+			"LANG_EN": "Hail"
+		},
+		// ATTACK_FOLTERKNECHT
+		{
+			"LANG_GER": "Folterknecht",
+			"LANG_EN": "Torment"
+		},
+		// ATTACK_SCHMEICHLER
+		{
+			"LANG_GER": "Schmeichler",
+			"LANG_EN": "Flatter"
+		},
+		// ATTACK_IRRLICHT
+		{
+			"LANG_GER": "Irrlicht",
+			"LANG_EN": "Will-o-wisp"
+		},
+		// ATTACK_MEMENTO_MORI
+		{
+			"LANG_GER": "Memento-Mori",
+			"LANG_EN": "Memento"
+		},
+		// ATTACK_FASSADE
+		{
+			"LANG_GER": "Fassade",
+			"LANG_EN": "Facade"
+		},
+		// ATTACK_POWER_PUNCH
+		{
+			"LANG_GER": "Power-Punch",
+			"LANG_EN": "Focus Punch"
+		},
+		// ATTACK_RIECHSALZ
+		{
+			"LANG_GER": "Riechsalz",
+			"LANG_EN": "Smellingsalt"
+		},
+		// ATTACK_SPOTLIGHT
+		{
+			"LANG_GER": "Spotlight",
+			"LANG_EN": "Follow Me"
+		},
+		// ATTACK_NATUR_KRAFT
+		{
+			"LANG_GER": "Natur-Kraft",
+			"LANG_EN": "Nature Power"
+		},
+		// ATTACK_LADEVORGANG
+		{
+			"LANG_GER": "Ladevorgang",
+			"LANG_EN": "Charge"
+		},
+		// ATTACK_VERHOEHNER
+		{
+			"LANG_GER": "Verhöhner",
+			"LANG_EN": "Taunt"
+		},
+		// ATTACK_RECHTE_HAND
+		{
+			"LANG_GER": "Rechte hand",
+			"LANG_EN": "Helping Hand"
+		},
+		// ATTACK_TRICKBETRUG
+		{
+			"LANG_GER": "Trickbetrug",
+			"LANG_EN": "Trick"
+		},
+		// ATTACK_ROLLENTAUSCH
+		{
+			"LANG_GER": "Rollentausch",
+			"LANG_EN": "Role Play"
+		},
+		// ATTACK_WUNSCHTRAUM
+		{
+			"LANG_GER": "Wunschtraum",
+			"LANG_EN": "Wish"
+		},
+		// ATTACK_ZUSCHUSS
+		{
+			"LANG_GER": "Zuschuss",
+			"LANG_EN": "Assist"
+		},
+		// ATTACK_VERWURZLER
+		{
+			"LANG_GER": "Verwurzler",
+			"LANG_EN": "Ingrain"
+		},
+		// ATTACK_KRAFTKOLOSS
+		{
+			"LANG_GER": "Kraftkoloss",
+			"LANG_EN": "Superpower"
+		},
+		// ATTACK_MAGIEMANTEL
+		{
+			"LANG_GER": "Magiemantel",
+			"LANG_EN": "Magic Coat"
+		},
+		// ATTACK_AUFBEREITUNG
+		{
+			"LANG_GER": "Aufbereitung",
+			"LANG_EN": "Recycle"
+		},
+		// ATTACK_VERGELTUNG
+		{
+			"LANG_GER": "Vergeltung",
+			"LANG_EN": "Revenge"
+		},
+		// ATTACK_DURCHBRUCH
+		{
+			"LANG_GER": "Durchbruch",
+			"LANG_EN": "Brick Break"
+		},
+		// ATTACK_GAEHNER
+		{
+			"LANG_GER": "Gähner",
+			"LANG_EN": "Yawn"
+		},
+		// ATTACK_ABSCHLAG
+		{
+			"LANG_GER": "Abschlag",
+			"LANG_EN": "Knock Off"
+		},
+		// ATTACK_NOTSITUATION
+		{
+			"LANG_GER": "Notsituation",
+			"LANG_EN": "Endeavor"
+		},
+		// ATTACK_ERUPTION
+		{
+			"LANG_GER": "Eruption",
+			"LANG_EN": "Eruption"
+		},
+		// ATTACK_WERTEWECHSEL
+		{
+			"LANG_GER": "Wertwechsel",
+			"LANG_EN": "Skill Swap"
+		},
+		// ATTACK_BEGRENZER
+		{
+			"LANG_GER": "Begrenzer",
+			"LANG_EN": "Imprison"
+		},
+		// ATTACK_HEILUNG
+		{
+			"LANG_GER": "Heilung",
+			"LANG_EN": "Refresh"
+		},
+		// ATTACK_NACHSPIEL
+		{
+			"LANG_GER": "Nachspiel",
+			"LANG_EN": "Grudge"
+		},
+		// ATTACK_UEBERNAHME
+		{
+			"LANG_GER": "Übernahme",
+			"LANG_EN": "Snatch"
+		},
+		// ATTACK_GEHEIMPOWER
+		{
+			"LANG_GER": "Geheimpower",
+			"LANG_EN": "Secret Power"
+		},
+		// ATTACK_TAUCHER
+		{
+			"LANG_GER": "Taucher",
+			"LANG_EN": "Dive"
+		},
+		// ATTACK_ARMSTOSS
+		{
+			"LANG_GER": "Armstoß",
+			"LANG_EN": "Arm Thrust"
+		},
+		// ATTACK_TARNUNG
+		{
+			"LANG_GER": "Tarnung",
+			"LANG_EN": "Camouflage"
+		},
+		// ATTACK_SCHWEIFGLANZ
+		{
+			"LANG_GER": "Schweifglanz",
+			"LANG_EN": "Tail Glow"
+		},
+		// ATTACK_SCHEINWERFER
+		{
+			"LANG_GER": "Scheinwerfer",
+			"LANG_EN": "Luster Purge"
+		},
+		// ATTACK_NEBELBALL
+		{
+			"LANG_GER": "Nebelball",
+			"LANG_EN": "Mist Ball"
+		},
+		// ATTACK_DAUNENREIGEN
+		{
+			"LANG_GER": "Daunenreigen",
+			"LANG_EN": "Featherdance"
+		},
+		// ATTACK_TAUMELTANZ
+		{
+			"LANG_GER": "Taumeltanz",
+			"LANG_EN": "Teeter Dance"
+		},
+		// ATTACK_FEUERFEGER
+		{
+			"LANG_GER": "Feuerfeger",
+			"LANG_EN": "Blaze Kick"
+		},
+		// ATTACK_LEHMSUHLER
+		{
+			"LANG_GER": "Lehmsuhler",
+			"LANG_EN": "Mud Sport"
+		},
+		// ATTACK_FROSTBEULE
+		{
+			"LANG_GER": "Frostbeule",
+			"LANG_EN": "Ice Ball"
+		},
+		// ATTACK_NIETENRANKE
+		{
+			"LANG_GER": "Nietenranke",
+			"LANG_EN": "Needle Arm"
+		},
+		// ATTACK_TAGEDIEB
+		{
+			"LANG_GER": "Tagedieb",
+			"LANG_EN": "Slack Off"
+		},
+		// ATTACK_SCHALLWELLE
+		{
+			"LANG_GER": "Schallwelle",
+			"LANG_EN": "Hyper Voice"
+		},
+		// ATTACK_GIFTZAHN
+		{
+			"LANG_GER": "Giftzahn",
+			"LANG_EN": "Poison Fang"
+		},
+		// ATTACK_ZERMALMKLAUE
+		{
+			"LANG_GER": "Zermalmklaue",
+			"LANG_EN": "Crush Claw"
+		},
+		// ATTACK_LOHEKANONADE
+		{
+			"LANG_GER": "Lohekanonade",
+			"LANG_EN": "Blast Burn"
+		},
+		// ATTACK_AQUAHAUBITZE
+		{
+			"LANG_GER": "Aquahaubitze",
+			"LANG_EN": "Hydro Cannon"
+		},
+		// ATTACK_STERNHIEB
+		{
+			"LANG_GER": "Sternhieb",
+			"LANG_EN": "Meteor Mash"
+		},
+		// ATTACK_ERSTAUNER
+		{
+			"LANG_GER": "Erstauner",
+			"LANG_EN": "Astonish"
+		},
+		// ATTACK_METEOROLOGE
+		{
+			"LANG_GER": "Meteorologe",
+			"LANG_EN": "Weather Ball"
+		},
+		// ATTACK_AROMAKUR
+		{
+			"LANG_GER": "Aromakur",
+			"LANG_EN": "Aromatherapy"
+		},
+		// ATTACK_TRUGTRAENE
+		{
+			"LANG_GER": "Trugträne",
+			"LANG_EN": "Fake Tears"
+		},
+		// ATTACK_WINDSCHNITT
+		{
+			"LANG_GER": "Windschnitt",
+			"LANG_EN": "Air Cutter"
+		},
+		// ATTACK_HITZEKOLLER
+		{
+			"LANG_GER": "Hitzekoller",
+			"LANG_EN": "Overheat"
+		},
+		// ATTACK_SCHNUEFFLER
+		{
+			"LANG_GER": "Schnüffler",
+			"LANG_EN": "Odor Sleuth"
+		},
+		// ATTACK_FELSGRAB
+		{
+			"LANG_GER": "Felsgrab",
+			"LANG_EN": "Rock Tomb"
+		},
+		// ATTACK_SILBERHAUCH
+		{
+			"LANG_GER": "Silberhauch",
+			"LANG_EN": "Silver Wind"
+		},
+		// ATTACK_METALLSOUND
+		{
+			"LANG_GER": "Metallsound",
+			"LANG_EN": "Metal Sound"
+		},
+		// ATTACK_GRASFLOETE
+		{
+			"LANG_GER": "Grasflöte",
+			"LANG_EN": "Grasswhistle"
+		},
+		// ATTACK_SPASSKANONE
+		{
+			"LANG_GER": "Spaßkanone",
+			"LANG_EN": "Tickle"
+		},
+		// ATTACK_KOSMIK_KRAFT
+		{
+			"LANG_GER": "Kosmik-Kraft",
+			"LANG_EN": "Cosmic Power"
+		},
+		// ATTACK_FONTRAENEN
+		{
+			"LANG_GER": "Fontränen",
+			"LANG_EN": "Water Spout"
+		},
+		// ATTACK_AMPELLEUCHTE
+		{
+			"LANG_GER": "Ampelleuchte",
+			"LANG_EN": "Signal Beam"
+		},
+		// ATTACK_FINSTERFAUST
+		{
+			"LANG_GER": "Finsterfaust",
+			"LANG_EN": "Shadow Punch"
+		},
+		// ATTACK_SONDERSENSOR
+		{
+			"LANG_GER": "Sondersensor",
+			"LANG_EN": "Extrasensory"
+		},
+		// ATTACK_HIMMELHIEB
+		{
+			"LANG_GER": "Himmelhieb",
+			"LANG_EN": "Sky Uppercut"
+		},
+		// ATTACK_SANDGRAB
+		{
+			"LANG_GER": "Sandgrab",
+			"LANG_EN": "Sand Tomb"
+		},
+		// ATTACK_EISESKAELTE
+		{
+			"LANG_GER": "Eiseskälte",
+			"LANG_EN": "Sheer Cold"
+		},
+		// ATTACK_LEHMBRUEHE
+		{
+			"LANG_GER": "Lehmbrühe",
+			"LANG_EN": "Muddy Water"
+		},
+		// ATTACK_KUGELSAAT
+		{
+			"LANG_GER": "Kugelsaat",
+			"LANG_EN": "Bullet Seed"
+		},
+		// ATTACK_AERO_ASS
+		{
+			"LANG_GER": "Aero-Ass",
+			"LANG_EN": "Aerial Ace"
+		},
+		// ATTACK_EISSPEER
+		{
+			"LANG_GER": "Eisspeer",
+			"LANG_EN": "Icicle Spear"
+		},
+		// ATTACK_EISENABWEHR
+		{
+			"LANG_GER": "Eisenabwehr",
+			"LANG_EN": "Iron Defense"
+		},
+		// ATTACK_RUECKENTZUG
+		{
+			"LANG_GER": "Rückentzug",
+			"LANG_EN": "Block"
+		},
+		// ATTACK_JAULER
+		{
+			"LANG_GER": "Jauler",
+			"LANG_EN": "Howl"
+		},
+		// ATTACK_DRACHENKLAUE
+		{
+			"LANG_GER": "Drachenklaue",
+			"LANG_EN": "Dragon Claw"
+		},
+		// ATTACK_FLORA_STATUE
+		{
+			"LANG_GER": "Flora-Statue",
+			"LANG_EN": "Frenzy Plant"
+		},
+		// ATTACK_PROTZER
+		{
+			"LANG_GER": "Protzer",
+			"LANG_EN": "Bulk Up"
+		},
+		// ATTACK_SPRUNGFEDER
+		{
+			"LANG_GER": "Sprungfeder",
+			"LANG_EN": "Bounce"
+		},
+		// ATTACK_LEHMSCHUSS
+		{
+			"LANG_GER": "Lehmschuss",
+			"LANG_EN": "Mud Shot"
+		},
+		// ATTACK_GIFTSCHWEIF
+		{
+			"LANG_GER": "Giftschweif",
+			"LANG_EN": "Poison Tail"
+		},
+		// ATTACK_BEZIRZER
+		{
+			"LANG_GER": "Bezirzer",
+			"LANG_EN": "Covet"
+		},
+		// ATTACK_VOLTTACKLE
+		{
+			"LANG_GER": "Volttackle",
+			"LANG_EN": "Volt Tackle"
+		},
+		// ATTACK_ZAUBERBLATT
+		{
+			"LANG_GER": "Zauberblatt",
+			"LANG_EN": "Magical Leaf"
+		},
+		// ATTACK_NASSMACHER
+		{
+			"LANG_GER": "Nassmacher",
+			"LANG_EN": "Water Sport"
+		},
+		// ATTACK_GEDANKENGUT
+		{
+			"LANG_GER": "Gedankengut",
+			"LANG_EN": "Calm Mind"
+		},
+		// ATTACK_LAUBKLINGE
+		{
+			"LANG_GER": "Laubklinge",
+			"LANG_EN": "Leaf Blade"
+		},
+		// ATTACK_DRACHENTANZ
+		{
+			"LANG_GER": "Drachentanz",
+			"LANG_EN": "Dragon Dance"
+		},
+		// ATTACK_FELSWURF
+		{
+			"LANG_GER": "Felswurf",
+			"LANG_EN": "Rock Blast"
+		},
+		// ATTACK_SCHOCKWELLE
+		{
+			"LANG_GER": "Schockwelle",
+			"LANG_EN": "Shock Wave"
+		},
+		// ATTACK_AQUAWELLE
+		{
+			"LANG_GER": "Aquawelle",
+			"LANG_EN": "Water Pulse"
+		},
+		// ATTACK_KISMETWUNSCH
+		{
+			"LANG_GER": "Kismetwunsch",
+			"LANG_EN": "Doom Desire"
+		},
+		// ATTACK_PSYSCHUB
+		{
+			"LANG_GER": "Psyschub",
+			"LANG_EN": "Psycho Boost"
+		},
+		// ATTACK_FILLER
+		{
+			"LANG_GER": "-",
+			"LANG_EN": "-"
+		},
+		// ATTACK_HAMMERARM
+		{
+			"LANG_GER": "Hammerarm",
+			"LANG_EN": "Hammer Arm"
+		},
+		// ATTACK_AURASPHAERE
+		{
+			"LANG_GER": "Aurasphäre",
+			"LANG_EN": "Aura Sphere"
+		},
+		// ATTACK_GIFTHIEB
+		{
+			"LANG_GER": "Gifthieb",
+			"LANG_EN": "Poison Jab"
+		},
+		// ATTACK_FOKUSSTOSS
+		{
+			"LANG_GER": "Fokusstoß",
+			"LANG_EN": "Focus Blast"
+		},
+		// ATTACK_PATRONENHIEB
+		{
+			"LANG_GER": "Patronenhieb",
+			"LANG_EN": "Bullet Punch"
+		},
+		// ATTACK_FINSTERAURA
+		{
+			"LANG_GER": "Finsteraura",
+			"LANG_EN": "Dark Pulse"
+		},
+		// ATTACK_FLAMMENBLITZ
+		{
+			"LANG_GER": "Flammenblitz",
+			"LANG_EN": "Flare Blitz"
+		},
+		// ATTACK_EISZAHN
+		{
+			"LANG_GER": "Eiszahn",
+			"LANG_EN": "Ice Fang"
+		},
+		// ATTACK_DONNERZAHN
+		{
+			"LANG_GER": "Donnerzahn",
+			"LANG_EN": "Thunder Fang"
+		},
+		// ATTACK_DUNKELKLAUE
+		{
+			"LANG_GER": "Dunkelklaue",
+			"LANG_EN": "Shadow Claw"
+		},
+		// ATTACK_KREUZSCHERE
+		{
+			"LANG_GER": "Kreuzschere",
+			"LANG_EN": "X-Scissor"
+		},
+		// ATTACK_STEINKANTE
+		{
+			"LANG_GER": "Steinkante",
+			"LANG_EN": "Stone Edge"
+		},
+		// ATTACK_STURZFLUG
+		{
+			"LANG_GER": "Sturzflug",
+			"LANG_EN": "Brave Bird"
+		},
+		// ATTACK_STEINPOLITUR
+		{
+			"LANG_GER": "Steinpolitur",
+			"LANG_EN": "Rock Polish"
+		},
+		// ATTACK_KRAXLER
+		{
+			"LANG_GER": "Kraxler",
+			"LANG_EN": "Rock Climb"
+		},
+		// ATTACK_BLAETTERSTURM
+		{
+			"LANG_GER": "Blättersturm",
+			"LANG_EN": "Leaf Storm"
+		},
+		// ATTACK_NAHKAMPF
+		{
+			"LANG_GER": "Nahkampf",
+			"LANG_EN": "Close Combat"
+		},
+		// ATTACK_LICHTKANONE
+		{
+			"LANG_GER": "Lichtkanone",
+			"LANG_EN": "Flash Cannon"
+		},
+		// ATTACK_DRACO_METEOR
+		{
+			"LANG_GER": "Draco-meteor",
+			"LANG_EN": "Draco-meteor"
+		},
+		// ATTACK_NASSSCHWEIF
+		{
+			"LANG_GER": "Nassschweif",
+			"LANG_EN": "Aqua Tail"
+		},
+		// ATTACK_ZEN_KOPFSTOSS
+		{
+			"LANG_GER": "Zen-kopfstoß",
+			"LANG_EN": "Zen Headbutt"
+		},
+		// ATTACK_ENERGIEBALL
+		{
+			"LANG_GER": "Energieball",
+			"LANG_EN": "Energy Ball"
+		},
+		// ATTACK_SCHATTENSTOSS
+		{
+			"LANG_GER": "Schattenstoß",
+			"LANG_EN": "Shadow Sneak"
+		},
+		// ATTACK_DOPPELSCHLAG
+		{
+			"LANG_GER": "Doppelschlag",
+			"LANG_EN": "Thunder Punch"
+		},
+		// ATTACK_TIEFSCHLAG
+		{
+			"LANG_GER": "Tiefschlag",
+			"LANG_EN": "Sucker Punch"
+		},
+		// ATTACK_NACHTHIEB
+		{
+			"LANG_GER": "Nachthieb",
+			"LANG_EN": "Night Slash"
+		},
+		// ATTACK_SAMENBOMBEN
+		{
+			"LANG_GER": "Samenbombe",
+			"LANG_EN": "Seed Bomb"
+		},
+		// ATTACK_ERDKRAEFTE
+		{
+			"LANG_GER": "Erdkräfte",
+			"LANG_EN": "Earth Power"
+		},
+		// ATTACK_DRACHENPULS
+		{
+			"LANG_GER": "Drachenpuls",
+			"LANG_EN": "Dragon Pulse"
+		},
+		// ATTACK_EISSPLITTER
+		{
+			"LANG_GER": "Eissplitter",
+			"LANG_EN": "Ice Shard"
+		},
+		// ATTACK_FEUERZAHN
+		{
+			"LANG_GER": "Feuerzahn",
+			"LANG_EN": "Fire Fang"
+		},
+		// ATTACK_WASSERDUESE
+		{
+			"LANG_GER": "Wasserdüse",
+			"LANG_EN": "Aqua Jet"
+		},
+		// ATTACK_ZORNFEUER
+		{
+			"LANG_GER": "Zornfeuer",
+			"LANG_EN": "Rage Flare"
+		},
+		// ATTACK_TSUNAMI
+		{
+			"LANG_GER": "Tsunami",
+			"LANG_EN": "Tsunami"
+		},
+		// ATTACK_STAHLSTREICH
+		{
+			"LANG_GER": "Stahlstreich",
+			"LANG_EN": "Steel Cut"
+		},
+		// ATTACK_KINESISWELLE
+		{
+			"LANG_GER": "Kinesiswelle",
+			"LANG_EN": "Kinetic Wave"
+		},
+		// ATTACK_SUPERNOVA
+		{
+			"LANG_GER": "Supernova",
+			"LANG_EN": "Supernova"
+		},
+		// ATTACK_WASSERSPALT
+		{
+			"LANG_GER": "Wasserspalt",
+			"LANG_EN": "Ocean Fissure"
+		},
+		// ATTACK_SCHALLSTICH
+		{
+			"LANG_GER": "Schallstich",
+			"LANG_EN": "Sonic Stitch"
+		},
+		// ATTACK_DIEBESKUSS
+		{
+			"LANG_GER": "Diebeskuss",
+			"LANG_EN": "Draining Kiss"
+		},
+		// ATTACK_KNUDDLER
+		{
+			"LANG_GER": "Knuddler",
+			"LANG_EN": "Cuddle"
+		},
+		// ATTACK_MONDGEWALT
+		{
+			"LANG_GER": "Mondgewalt",
+			"LANG_EN": "Moonblast"
+		},
+		// ATTACK_ZAUBERSCHEIN
+		{
+			"LANG_GER": "Zauberschein",
+			"LANG_EN": "Dazzling Glea."
+		},
+		// ATTACK_SAEUSELSTIMME
+		{
+			"LANG_GER": "Säuselstimme",
+			"LANG_EN": "Disarming Voi."
+		},
+		// ATTACK_BIENENSTICH
+		{
+			"LANG_GER": "Bienenstich",
+			"LANG_EN": "Bee Stitch"
+		},
+		// ATTACK_SCHWARMSTICH
+		{
+			"LANG_GER": "Schwarmstich",
+			"LANG_EN": "Swarm Stitch"
+		},
+		// ATTACK_GESANG_2
+		{
+			"LANG_GER": "Gesang",
+			"LANG_EN": "Gesang"
+		},
+		// ATTACK_HEISSSTEIN
+		{
+			"LANG_GER": "Heißstein",
+			"LANG_EN": "Hot Rocks"
+		},
+		// ATTACK_GEWITTER
+		{
+			"LANG_GER": "Gewitter",
+			"LANG_EN": "Tempest"
+		},
+		// ATTACK_EISENSLAM
+		{
+			"LANG_GER": "Eisenslam",
+			"LANG_EN": "Iron Slam"
+		},
+		// ATTACK_HOLZGEWEIH
+		{
+			"LANG_GER": "Holzgeweih",
+			"LANG_EN": "Horn Leech"
+		},
+		// ATTACK_KAEFERBISS
+		{
+			"LANG_GER": "Käferbiss",
+			"LANG_EN": "Bug Bite"
+		},
+		// ATTACK_FALTERREIGEN
+		{
+			"LANG_GER": "Falterreigen",
+			"LANG_EN": "Falterreigen"
+		},
+		// ATTACK_NITROLADUNG
+		{
+			"LANG_GER": "Nitroladung",
+			"LANG_EN": "Nitro Charge"
+		},
+		// ATTACK_KAEFERGEBRUMM
+		{
+			"LANG_GER": "Käfergebrumm",
+			"LANG_EN": "Bug Buzz"
+		},
+		// ATTACK_TORNADO
+		{
+			"LANG_GER": "Tornado",
+			"LANG_EN": "Tornado"
+		},
+		// ATTACK_KOENIGSSCHILD
+		{
+			"LANG_GER": "Königsschild",
+			"LANG_EN": "King's Shield"
+		},
+		// ATTACK_RUNENGLEICH
+		{
+			"LANG_GER": "Runengleich",
+			"LANG_EN": "Glyphmatch"
+		},
+		// ATTACK_SIRENENLIED
+		{
+			"LANG_GER": "Sirenenlied",
+			"LANG_EN": "Siren's Song"
+		}
+	]
+}

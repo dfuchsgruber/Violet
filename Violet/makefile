@@ -254,7 +254,8 @@ $(PYAGBS): $(BLDPATH)/%.s: %.pms
 	
 $(PYAGBOBJS): %.o: %.s
 	$(shell mkdir -p $(dir $@))
-	$(AS) $(ASFLAGS) --MD $*.d $< -o $@
+	$(PYPREPROC) -o $*.i $< $(MAPPROJ)
+	$(AS) $(ASFLAGS) --MD $*.d $*.i -o $@
 	
 # Map project
 $(BLDPATH)/$(basename $(MAPPROJ)).o: $(MAPPROJ)

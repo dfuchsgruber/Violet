@@ -29,6 +29,9 @@ attack_entry_type = agb.types.Structure(
 
 attack_table_type = agb.types.FixedSizeArrayType("attack.entry", get_attack_count)
 
+attack_name_type = agb.types.LocalizedStringType(fixed_size=13, default_language="LANG_GER")
+attack_names_table = agb.types.FixedSizeArrayType("attack.name", get_attack_count)
+
 models_to_export = {
     "attack.type": attack_type_type,
     "attack.affects_whom": attack_affects_whom_type,
@@ -36,4 +39,6 @@ models_to_export = {
     "attack.category": attack_category_type,
     "attack.entry": attack_entry_type,
     "attack.table": attack_table_type,
+    "attack.name": attack_name_type,
+    "attack.names": attack_names_table,
 }

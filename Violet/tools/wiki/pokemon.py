@@ -340,7 +340,7 @@ def parse_mega_evolutions(path):
     return evolutions
 
 
-def parse_attacks(path, project):
+def parse_attacks(path, project, attack_names=None):
     payload = load_jsonc_payload(path)
     if not payload:
         eprint(f"warning: missing attacks data {path}")
@@ -351,7 +351,9 @@ def parse_attacks(path, project):
     for idx, entry in enumerate(entries):
         attack_constant = attack_by_index.get(idx)
         if attack_constant:
-            attacks[attack_constant] = entry
+            attacks[attack_constant] = dict(entry)
+            if attack_names and idx < len(attack_names):
+                attacks[attack_constant]["name"] = attack_names[idx]
     return attacks
 
 
@@ -515,10 +517,11 @@ def attack_table(entries, attack_details, language="LANG_GER", criterion_label=N
         if not move:
             continue
         detail = attack_details.get(move, {})
+        label = language_value(detail.get("name"), language) or display_value(move, ('ATTACK_',), language)
         cells = []
         if show_criterion:
             cells.append(f"<td>{escape(criterion or '-')}</td>")
-        cells.append(f"<td>{escape(display_value(move, ('ATTACK_',), language))}</td>")
+        cells.append(f"<td>{escape(label)}</td>")
         cells.append(f"<td>{render_type_badges([detail.get('type')], language, 'soft') if detail.get('type') else '-'}</td>")
         rows.append("<tr>" + "".join(cells) + "</tr>")
     if not rows:
@@ -631,12 +634,13 @@ def build_records(args):
     readable_stats = load_pickle(args.stats_pkl) if args.stats_pkl.exists() else []
     raw_updates = load_jsonc_payload(args.updates_json) if args.updates_json.exists() else {}
     generated_names = load_json_data(Path("bld/pokeapi/pokemon_names.pms")) or []
+    attack_names = load_json_data(Path("src/attacks/attack_names.pms")) or []
     project = Project(str(args.project))
     species_to_idx = dict(project.constants["species"].items())
     idx_to_species = constants_by_value(project, "species")
     sprite_map = parse_frontsprites("include/c/data/pokemon/frontsprites.h")
     mega_evolutions = parse_mega_evolutions(args.mega_evolutions_pms)
-    attack_details = parse_attacks(args.attacks_pms, project)
+    attack_details = parse_attacks(args.attacks_pms, project, attack_names)
     shifted_order = detect_shifted_pokedex_order(pokemon_data)
     pokemon_data["_pre_evolutions"] = build_pre_evolution_map(pokemon_data, species_to_idx)
     pokemon_data["_attack_details"] = attack_details
