@@ -482,12 +482,6 @@ def render_type_badges(types, language="LANG_GER", variant="solid"):
     return "".join(badges)
 
 
-def attack_stat_text(value):
-    if value in (None, 0):
-        return "-"
-    return str(value)
-
-
 def attack_table(entries, attack_details, language="LANG_GER", criterion_label=None):
     if isinstance(entries, int):
         return "<p class=\"muted\">Nicht verfügbar: altes pokemon.pkl enthält nur den fehlerhaften Indexwert.</p>"
@@ -526,10 +520,6 @@ def attack_table(entries, attack_details, language="LANG_GER", criterion_label=N
             cells.append(f"<td>{escape(criterion or '-')}</td>")
         cells.append(f"<td>{escape(display_value(move, ('ATTACK_',), language))}</td>")
         cells.append(f"<td>{render_type_badges([detail.get('type')], language, 'soft') if detail.get('type') else '-'}</td>")
-        cells.append(f"<td>{escape(display_value(detail.get('category'), (), language))}</td>")
-        cells.append(f"<td>{escape(attack_stat_text(detail.get('base_power')))}</td>")
-        cells.append(f"<td>{escape(attack_stat_text(detail.get('accuracy')))}</td>")
-        cells.append(f"<td>{escape(attack_stat_text(detail.get('pp')))}</td>")
         rows.append("<tr>" + "".join(cells) + "</tr>")
     if not rows:
         return "<p class=\"muted\">-</p>"
@@ -539,10 +529,6 @@ def attack_table(entries, attack_details, language="LANG_GER", criterion_label=N
     headers.extend([
         "<th>Attacke</th>",
         "<th>Typ</th>",
-        "<th>Kategorie</th>",
-        "<th>Stärke</th>",
-        "<th>Genauigkeit</th>",
-        "<th>AP</th>",
     ])
     return "<table><thead><tr>" + "".join(headers) + "</tr></thead><tbody>" + "".join(rows) + "</tbody></table>"
 
