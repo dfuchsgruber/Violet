@@ -1910,7 +1910,7 @@
 		// ATTACK_KASKADE
 		{
 			"effect": 31,
-			"base_power": 105,
+			"base_power": 80,
 			"type": "TYPE_WASSER",
 			"accuracy": 100,
 			"pp": 15,

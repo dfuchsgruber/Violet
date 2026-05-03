@@ -148,6 +148,9 @@ LABEL_OVERRIDES = {
         "Hold_Item_and_Night": "Item bei Nacht",
         "Link_Cable_and_Item": "Linkkabel und Item",
         "On_Map": "Auf Karte",
+        "CATEGORY_PHYSICAL": "Physisch",
+        "CATEGORY_SPECIAL": "Spezial",
+        "CATEGORY_STATUS": "Status",
     },
     "LANG_EN": {},
 }
@@ -157,17 +160,60 @@ def eprint(message):
     print(f"pokemon wiki: {message}", file=sys.stderr)
 
 
+def strip_jsonc_comments(text):
+    result = []
+    idx = 0
+    in_string = None
+    escaped = False
+    while idx < len(text):
+        char = text[idx]
+        next_char = text[idx + 1] if idx + 1 < len(text) else ""
+        if in_string:
+            result.append(char)
+            if escaped:
+                escaped = False
+            elif char == "\\":
+                escaped = True
+            elif char == in_string:
+                in_string = None
+            idx += 1
+            continue
+        if char in ('"', "'"):
+            in_string = char
+            result.append(char)
+            idx += 1
+            continue
+        if char == "/" and next_char == "/":
+            idx += 2
+            while idx < len(text) and text[idx] not in "\r\n":
+                idx += 1
+            continue
+        if char == "/" and next_char == "*":
+            idx += 2
+            while idx + 1 < len(text) and not (text[idx] == "*" and text[idx + 1] == "/"):
+                idx += 1
+            idx += 2
+            continue
+        result.append(char)
+        idx += 1
+    return "".join(result)
+
+
 def load_pickle(path):
     with open(path, "rb") as f:
         return pickle.load(f)
 
 
-def load_json_data(path):
+def load_jsonc_payload(path):
     try:
-        with open(path, encoding="utf-8") as f:
-            return json.load(f).get("data")
+        return json.loads(strip_jsonc_comments(Path(path).read_text(encoding="utf-8")))
     except FileNotFoundError:
         return None
+
+
+def load_json_data(path):
+    payload = load_jsonc_payload(path)
+    return payload.get("data") if payload else None
 
 
 def escape(value):
@@ -278,7 +324,7 @@ def parse_mega_evolutions(path):
     if not Path(path).exists():
         eprint(f"warning: missing mega evolution data {path}")
         return {}
-    payload = json.loads(Path(path).read_text(encoding="utf-8"))
+    payload = load_jsonc_payload(path) or {}
     evolutions = {}
     for entry in payload.get("data", []):
         species = entry["species"]
@@ -292,6 +338,21 @@ def parse_mega_evolutions(path):
             "type": evolution_type,
         }
     return evolutions
+
+
+def parse_attacks(path, project):
+    payload = load_jsonc_payload(path)
+    if not payload:
+        eprint(f"warning: missing attacks data {path}")
+        return {}
+    entries = payload.get("data", [])
+    attack_by_index = constants_by_value(project, "attacks")
+    attacks = {}
+    for idx, entry in enumerate(entries):
+        attack_constant = attack_by_index.get(idx)
+        if attack_constant:
+            attacks[attack_constant] = entry
+    return attacks
 
 
 def detect_shifted_pokedex_order(pokemon_data):
@@ -421,57 +482,69 @@ def render_type_badges(types, language="LANG_GER", variant="solid"):
     return "".join(badges)
 
 
-def move_list_table(levelup_moves, language="LANG_GER"):
-    moves = levelup_moves or []
-    if not moves:
-        return "<p class=\"muted\">-</p>"
-    rows = []
-    for entry in moves:
-        if isinstance(entry, dict):
-            level = entry.get("level")
-            move = display_value(entry.get("move"), ("ATTACK_",), language)
-        elif isinstance(entry, (tuple, list)) and len(entry) >= 2:
-            move, level = entry[0], entry[1]
-        else:
-            continue
-        level_text = "Evo" if level == 0 else escape(level)
-        rows.append(f"<tr><td>{level_text}</td><td>{escape(display_value(move, ('ATTACK_',), language))}</td></tr>")
-    return "<table><thead><tr><th>Level</th><th>Attacke</th></tr></thead><tbody>" + "".join(rows) + "</tbody></table>"
+def attack_stat_text(value):
+    if value in (None, 0):
+        return "-"
+    return str(value)
 
 
-def tm_table(entries, language="LANG_GER"):
-    if not entries:
-        return "<p class=\"muted\">-</p>"
-    rows = []
-    for entry in entries:
-        if isinstance(entry, (tuple, list)) and len(entry) == 2:
-            left, right = entry
-            if isinstance(left, (tuple, list)) and len(left) == 2:
-                machine, move = left, right
-            elif isinstance(right, (tuple, list)) and len(right) == 2:
-                move, machine = left, right
-            else:
-                machine, move = left, right
-            if isinstance(machine, (tuple, list)) and len(machine) == 2:
-                machine_text = f"{machine[0]}{int(machine[1]):02d}"
-            else:
-                machine_text = str(machine)
-            rows.append(f"<tr><td>{escape(machine_text)}</td><td>{escape(display_value(move, ('ATTACK_',), language))}</td></tr>")
-    return "<table><thead><tr><th>TM/VM</th><th>Attacke</th></tr></thead><tbody>" + "".join(rows) + "</tbody></table>"
-
-
-def tutor_table(entries, language="LANG_GER"):
+def attack_table(entries, attack_details, language="LANG_GER", criterion_label=None):
     if isinstance(entries, int):
         return "<p class=\"muted\">Nicht verfügbar: altes pokemon.pkl enthält nur den fehlerhaften Indexwert.</p>"
     if not entries:
         return "<p class=\"muted\">-</p>"
+    show_criterion = criterion_label is not None
     rows = []
     for entry in entries:
-        if isinstance(entry, str):
-            rows.append(f"<tr><td>{escape(display_value(entry, ('ATTACK_',), language))}</td></tr>")
+        criterion = None
+        move = None
+        if isinstance(entry, dict):
+            move = entry.get("move")
+            if "level" in entry:
+                level = entry.get("level")
+                criterion = "Evo" if level == 0 else str(level)
+        elif isinstance(entry, str):
+            move = entry
         elif isinstance(entry, (tuple, list)) and len(entry) == 2:
-            rows.append(f"<tr><td>{escape(display_value(entry[1], ('ATTACK_',), language))}</td></tr>")
-    return "<table><thead><tr><th>Attacke</th></tr></thead><tbody>" + "".join(rows) + "</tbody></table>"
+            left, right = entry
+            if isinstance(left, (tuple, list)) and len(left) == 2:
+                machine, move = left, right
+                criterion = f"{machine[0]}{int(machine[1]):02d}"
+            elif isinstance(right, (tuple, list)) and len(right) == 2:
+                move, machine = left, right
+                criterion = f"{machine[0]}{int(machine[1]):02d}"
+            elif isinstance(left, int):
+                criterion = str(left)
+                move = right
+            else:
+                move, criterion = left, right
+        if not move:
+            continue
+        detail = attack_details.get(move, {})
+        cells = []
+        if show_criterion:
+            cells.append(f"<td>{escape(criterion or '-')}</td>")
+        cells.append(f"<td>{escape(display_value(move, ('ATTACK_',), language))}</td>")
+        cells.append(f"<td>{render_type_badges([detail.get('type')], language, 'soft') if detail.get('type') else '-'}</td>")
+        cells.append(f"<td>{escape(display_value(detail.get('category'), (), language))}</td>")
+        cells.append(f"<td>{escape(attack_stat_text(detail.get('base_power')))}</td>")
+        cells.append(f"<td>{escape(attack_stat_text(detail.get('accuracy')))}</td>")
+        cells.append(f"<td>{escape(attack_stat_text(detail.get('pp')))}</td>")
+        rows.append("<tr>" + "".join(cells) + "</tr>")
+    if not rows:
+        return "<p class=\"muted\">-</p>"
+    headers = []
+    if show_criterion:
+        headers.append(f"<th>{escape(criterion_label)}</th>")
+    headers.extend([
+        "<th>Attacke</th>",
+        "<th>Typ</th>",
+        "<th>Kategorie</th>",
+        "<th>Stärke</th>",
+        "<th>Genauigkeit</th>",
+        "<th>AP</th>",
+    ])
+    return "<table><thead><tr>" + "".join(headers) + "</tr></thead><tbody>" + "".join(rows) + "</tbody></table>"
 
 
 def stat_table(basestats):
@@ -570,15 +643,17 @@ def write_assets(assets_dir):
 def build_records(args):
     pokemon_data = load_pickle(args.pokemon_pkl)
     readable_stats = load_pickle(args.stats_pkl) if args.stats_pkl.exists() else []
-    raw_updates = json.loads(args.updates_json.read_text(encoding="utf-8")) if args.updates_json.exists() else {}
+    raw_updates = load_jsonc_payload(args.updates_json) if args.updates_json.exists() else {}
     generated_names = load_json_data(Path("bld/pokeapi/pokemon_names.pms")) or []
     project = Project(str(args.project))
     species_to_idx = dict(project.constants["species"].items())
     idx_to_species = constants_by_value(project, "species")
     sprite_map = parse_frontsprites("include/c/data/pokemon/frontsprites.h")
     mega_evolutions = parse_mega_evolutions(args.mega_evolutions_pms)
+    attack_details = parse_attacks(args.attacks_pms, project)
     shifted_order = detect_shifted_pokedex_order(pokemon_data)
     pokemon_data["_pre_evolutions"] = build_pre_evolution_map(pokemon_data, species_to_idx)
+    pokemon_data["_attack_details"] = attack_details
 
     all_species_rows = []
     species_rows = []
@@ -828,6 +903,7 @@ def render_species_page(args, record, pokemon_data, names, species_to_idx, sprit
     levelup_moves = indexed_pokemon_value(pokemon_data, "levelup_moves", idx, readable.get("levelup_moves"))
     egg_moves = inherited_egg_moves(pokemon_data, idx, pokemon_data.get("_pre_evolutions", {}))
     accessible_moves = indexed_pokemon_value(pokemon_data, "accessible_moves", idx, readable.get("accessible_moves"))
+    attack_details = pokemon_data.get("_attack_details", {})
     tm_hm_compatibility = indexed_pokemon_value(
         pokemon_data,
         "tm_hm_compatibility",
@@ -912,15 +988,15 @@ def render_species_page(args, record, pokemon_data, names, species_to_idx, sprit
           {evolution_list(readable.get('evolutions') or pokemon_data.get('evolutions', [None])[idx], species_to_idx, names, page_slugs, args.language)}
         </section>
         <section class="grid two">
-          <article class="panel"><h2>Level-Up Attacken</h2>{move_list_table(levelup_moves, args.language)}</article>
-          <article class="panel"><h2>TM/VM</h2>{tm_table(tm_hm_compatibility, args.language)}</article>
+          <article class="panel"><h2>Level-Up Attacken</h2>{attack_table(levelup_moves, attack_details, args.language, "Level")}</article>
+          <article class="panel"><h2>TM/VM</h2>{attack_table(tm_hm_compatibility, attack_details, args.language, "TM/VM")}</article>
         </section>
         <section class="grid two">
-          <article class="panel"><h2>Ei-Attacken</h2>{item_list(egg_moves, ('ATTACK_',), language=args.language)}</article>
-          <article class="panel"><h2>Weitere Attacken</h2>{item_list(accessible_moves, ('ATTACK_',), language=args.language)}</article>
+          <article class="panel"><h2>Ei-Attacken</h2>{attack_table(egg_moves, attack_details, args.language)}</article>
+          <article class="panel"><h2>Weitere Attacken</h2>{attack_table(accessible_moves, attack_details, args.language)}</article>
         </section>
         <section class="grid two">
-          <article class="panel"><h2>Tutor</h2>{tutor_table(move_tutor_compatibility, args.language)}</article>
+          <article class="panel"><h2>Tutor</h2>{attack_table(move_tutor_compatibility, attack_details, args.language, "Tutor")}</article>
           <div></div>
         </section>
       </div>
@@ -1004,6 +1080,7 @@ def main():
     parser.add_argument("--stats-pkl", type=Path, default=Path("bld/pokeapi/updated.pkl"))
     parser.add_argument("--updates-json", type=Path, default=Path("pokeapi/updates.json"))
     parser.add_argument("--mega-evolutions-pms", type=Path, default=Path("src/battle/mega/mega_evolutions.pms"))
+    parser.add_argument("--attacks-pms", type=Path, default=Path("src/attacks/attacks.pms"))
     parser.add_argument("--project", type=Path, default=Path("proj.pmp"))
     parser.add_argument("--output", type=Path, default=Path("docs/pokemon"))
     parser.add_argument("--language", default="LANG_GER")

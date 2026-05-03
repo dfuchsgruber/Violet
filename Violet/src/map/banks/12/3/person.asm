@@ -6,7 +6,6 @@
 .include "move_tutor.s"
 .include "movements.s"
 
-make_move_tutor_std move_tutor str_intro str_aborted
 
 .global ow_script_laubdorf_indoor_1_person_0
 ow_script_laubdorf_indoor_1_person_0:
