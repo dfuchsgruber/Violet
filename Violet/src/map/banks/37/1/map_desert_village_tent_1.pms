@@ -10,7 +10,7 @@
 				{
 					"target_index": "1",
 					"picture": "238",
-					"x": "1",
+					"x": "7",
 					"y": "4",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
@@ -39,8 +39,8 @@
 				{
 					"target_index": "2",
 					"picture": "238",
-					"x": "4",
-					"y": "5",
+					"x": "2",
+					"y": "2",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -97,8 +97,8 @@
 				{
 					"target_index": "4",
 					"picture": "16",
-					"x": "2",
-					"y": "6",
+					"x": "3",
+					"y": "5",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_LEFT_AND_RIGHT",
 					"behaviour_range": {

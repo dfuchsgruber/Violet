@@ -98,7 +98,7 @@
 					"target_index": "4",
 					"picture": "64",
 					"x": "3",
-					"y": "6",
+					"y": "5",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
@@ -185,7 +185,7 @@
 					"target_index": "7",
 					"picture": "238",
 					"x": "3",
-					"y": "7",
+					"y": "6",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {

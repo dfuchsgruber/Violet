@@ -1,3 +1,4 @@
+#include "constants/items.h"
 #include "types.h"
 #include "crafting.h"
 #include "item/item.h"

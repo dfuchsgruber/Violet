@@ -261,7 +261,7 @@ static int trainer_pricemoney_get(u16 trainer_idx) {
         money, battle_state->money_multiplier, trainer_class_money_multipliers[trainers[trainer_idx].trainerclass]);
     if (trainers[trainer_idx].money_multiplier > 0)
         money *= trainers[trainer_idx].money_multiplier;
-    return money / 2048;
+    return money / 4096;
 }
 
 u32 money_lost() {
@@ -276,7 +276,7 @@ u32 money_lost() {
     if (pokemon_cnt) average_player_level = MAX(1, average_player_level * 1000 / pokemon_cnt);
     else average_player_level = 1;
     DEBUG("Average player level is %d / 1000.\n", average_player_level);
-    int money = money_lost_multipliers_by_number_of_badges[badges_number_get()] * 4 * average_player_level;
+    int money = money_lost_multipliers_by_number_of_badges[badges_number_get()] * 6 * average_player_level;
     switch (*var_access(DIFFICULTY)) {
         case DIFFICULTY_EASY: money -= money / 2; break;
         case DIFFICULTY_HARD: money *= 2; break;
