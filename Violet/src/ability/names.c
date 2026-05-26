@@ -58,7 +58,7 @@ const u8 ability_names[NUM_ABILITIES][13] = {
 	LANGDEP(PSTRING("Scherenmacht"), PSTRING("Hyper cutter")),
 	LANGDEP(PSTRING("Mitnahme"), PSTRING("Pickup")),
 	LANGDEP(PSTRING("Schnarchnase"), PSTRING("Truant")),
-	LANGDEP(PSTRING("übereifer"), PSTRING("Hustle")),
+	LANGDEP(PSTRING("Übereifer"), PSTRING("Hustle")),
 	LANGDEP(PSTRING("Charmebolzen"), PSTRING("Cute charm")),
 	LANGDEP(PSTRING("Plus"), PSTRING("Plus")),
 	LANGDEP(PSTRING("Minus"), PSTRING("Minus")),
@@ -96,7 +96,7 @@ const u8 ability_names[NUM_ABILITIES][13] = {
 	LANGDEP(PSTRING("Zeitspiel"), PSTRING("Zeitspiel")),
 	LANGDEP(PSTRING("Strolch"), PSTRING("Strolch")),
 	LANGDEP(PSTRING("Orkanschw."), PSTRING("Orkanschw.")),
-	LANGDEP(PSTRING("Dunkle Magie"), PSTRING("Dunkle magie")),
+	LANGDEP(PSTRING("Omen"), PSTRING("Omen")),
 	LANGDEP(PSTRING("Lernfähig"), PSTRING("Lernfähig")),
 	LANGDEP(PSTRING("Hagelalarm"), PSTRING("Hagelalarm")),
 	LANGDEP(PSTRING("Hochmut"), PSTRING("Hochmut")),
@@ -132,4 +132,5 @@ const u8 ability_names[NUM_ABILITIES][13] = {
 	LANGDEP(PSTRING("Krallenwucht"), PSTRING("Tough Claw")),
 	LANGDEP(PSTRING("Giftnebel"), PSTRING("Toxic Mist")),
 	LANGDEP(PSTRING("Finalglocke"), PSTRING("Perish Bell")),
+	LANGDEP(PSTRING("Giftgriff"), PSTRING("Toxic Grip")),
 };

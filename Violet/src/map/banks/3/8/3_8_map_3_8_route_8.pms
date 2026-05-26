@@ -145,7 +145,7 @@
 					"script": 0,
 					"flag": "ROUTE_8_ITEM_0",
 					"value": {
-						"item": "ITEM_SUPERSCHUTZ",
+						"item": "ITEM_TM86",
 						"species": 0,
 						"scalar": 0,
 						"type": 0,

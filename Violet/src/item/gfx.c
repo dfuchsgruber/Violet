@@ -396,6 +396,7 @@ static const item_gfx_pair item_gfx_pairs[] = {
     [ITEM_FAEHIGK_KAPSEL] = {.gfx = gfx_item_faehigkeit_kapselTiles, .pal = gfx_item_faehigkeit_kapselPal},
     [ITEM_KANDISSCHELIFE] = {.gfx = gfx_item_kandisschleifeTiles, .pal = gfx_item_kandisschleifePal},
     [ITEM_GRADUIERTENHUT] = {.gfx = gfx_item_graduate_hatTiles, .pal = gfx_item_graduate_hatPal},
+    [ITEM_SLEIMOKNIT] = {.gfx = gfx_item_sleimoknitTiles, .pal = gfx_item_sleimoknitPal},
 };
 
 static const item_gfx_pair tm_item_gfx_pairs[NUM_TYPES + 1] = {

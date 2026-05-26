@@ -76,15 +76,15 @@
 			[
 				{
 					"block_idx": 768,
-					"level": 12
+					"level": 1
 				},
 				{
 					"block_idx": 769,
-					"level": 12
+					"level": 1
 				},
 				{
 					"block_idx": 770,
-					"level": 12
+					"level": 1
 				},
 				{
 					"block_idx": 729,
@@ -100,13 +100,13 @@
 				},
 				{
 					"block_idx": 763,
-					"level": 12
+					"level": 1
 				}
 			],
 			[
 				{
 					"block_idx": 643,
-					"level": 1
+					"level": 12
 				},
 				{
 					"block_idx": 643,
@@ -114,11 +114,11 @@
 				},
 				{
 					"block_idx": 641,
-					"level": 1
+					"level": 12
 				},
 				{
 					"block_idx": 641,
-					"level": 1
+					"level": 12
 				},
 				{
 					"block_idx": 641,
@@ -130,7 +130,7 @@
 				},
 				{
 					"block_idx": 778,
-					"level": 1
+					"level": 12
 				}
 			],
 			[
@@ -144,11 +144,11 @@
 				},
 				{
 					"block_idx": 641,
-					"level": 1
+					"level": 12
 				},
 				{
 					"block_idx": 641,
-					"level": 1
+					"level": 12
 				},
 				{
 					"block_idx": 779,
@@ -156,17 +156,17 @@
 				},
 				{
 					"block_idx": 448,
-					"level": 12
+					"level": 1
 				},
 				{
 					"block_idx": 86,
-					"level": 12
+					"level": 1
 				}
 			],
 			[
 				{
 					"block_idx": 795,
-					"level": 12
+					"level": 1
 				},
 				{
 					"block_idx": 641,
@@ -186,7 +186,7 @@
 				},
 				{
 					"block_idx": 100,
-					"level": 12
+					"level": 1
 				},
 				{
 					"block_idx": 458,

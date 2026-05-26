@@ -449,6 +449,7 @@ const pokemon_coordinate_t pokemon_enemy_y[POKEMON_CNT] = {
     [POKEMON_GROUDON_REGENT] = {.width = POKEMON_COORDINATE_SIZE(64), .height = POKEMON_COORDINATE_SIZE(64), .y_offset = 1},
     [POKEMON_KECLEON_PURPLE] = {.width = POKEMON_COORDINATE_SIZE(56), .height = POKEMON_COORDINATE_SIZE(48), .y_offset = 3},
     [POKEMON_CRYSTAL_ONIX] = {.width = POKEMON_COORDINATE_SIZE(64), .height = POKEMON_COORDINATE_SIZE(56), .y_offset = 0},
+    [POKEMON_MEGA_SLEIMOK] = {.width = POKEMON_COORDINATE_SIZE(48), .height = POKEMON_COORDINATE_SIZE(64), .y_offset = 3},
 };
 
 #endif

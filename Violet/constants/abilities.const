@@ -130,6 +130,7 @@
 		"KRALLENWUCHT",
 		"GIFTNEBEL",
 		"FINALGLOCKE",
+		"GIFTGRIFF",
 		"NUM_ABILITIES"
 	],
 	"base": 0

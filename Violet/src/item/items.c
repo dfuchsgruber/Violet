@@ -1996,6 +1996,10 @@ static const u8 str_item_graduiertenhut[] = LANGDEP(
 	PSTRING("Erhöht Offensiv- und Defensiv-\nWerte, wenn Träger niedrigeres Level\nals Gegner hat."),
 	PSTRING("Raises offensive and defensive\nstats when the holder is at a\nlower level than the opponent.")
 );
+static const u8 str_item_sleimoknit_description[] = LANGDEP(
+	PSTRING("Wird er von einem Sleimok\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+	PSTRING("If held by a Muk in\nbattle it can perform\na mega evolution.")
+);
 
 const item items[] = {
 	{
@@ -8875,6 +8879,12 @@ const item items[] = {
 		.importance = 1,
 		.field_usage = tm_hm_field_function,
 		.price = 3000,
+	},
+	[ITEM_SLEIMOKNIT] = {
+		.name = LANGDEP(PSTRING("Sleimoknit"), ("Muknite")),
+		.index = ITEM_SLEIMOKNIT,
+		.description = str_item_sleimoknit_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
 };
 

@@ -121,6 +121,12 @@
 			"mega_item": "ITEM_PALIMPALIMNIT",
 			"mega_species": "POKEMON_MEGA_PALIMPALIM",
 			"type": "MEGA_EVOLUTION"
+		},
+		{
+			"species": "POKEMON_SLEIMOK",
+			"mega_item": "ITEM_SLEIMOKNIT",
+			"mega_species": "POKEMON_MEGA_SLEIMOK",
+			"type": "MEGA_EVOLUTION"
 		}
 	]
 }

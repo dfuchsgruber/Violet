@@ -1,6 +1,7 @@
 #ifndef H_POKEMON_PALS
 #define H_POKEMON_PALS
 
+#include "data/pokemon/frontsprites.h"
 #include "types.h"
 #include "oam.h"
 #include "constants/species.h"
@@ -448,6 +449,7 @@ extern const u8 gfx_pokemon_icognito_question_frontspritePal[];
 extern const u8 gfx_pokemon_groudon_regent_frontspritePal[];
 extern const u8 gfx_pokemon_kecleon_purple_frontspritePal[];
 extern const u8 gfx_pokemon_crystal_onix_frontspritePal[];
+extern const u8 gfx_pokemon_mega_sleimok_frontspritePal[];
 
 const palette pokemon_pals[POKEMON_CNT] = {
     [POKEMON_POKEMON_0] = {.pal = gfx_pokemon_pokemon_0_frontspritePal, .tag = POKEMON_POKEMON_0,},
@@ -893,6 +895,8 @@ const palette pokemon_pals[POKEMON_CNT] = {
 	[POKEMON_GROUDON_REGENT] = {.pal = gfx_pokemon_groudon_regent_frontspritePal, .tag = POKEMON_GROUDON_REGENT,},
 	[POKEMON_KECLEON_PURPLE] = {.pal = gfx_pokemon_kecleon_purple_frontspritePal, .tag = POKEMON_KECLEON_PURPLE,},
 	[POKEMON_CRYSTAL_ONIX] = {.pal = gfx_pokemon_crystal_onix_frontspritePal, .tag = POKEMON_CRYSTAL_ONIX,},
+	[POKEMON_MEGA_SLEIMOK] = {.pal = gfx_pokemon_mega_sleimok_frontspritePal, .tag = POKEMON_MEGA_SLEIMOK,},
+
 };
 
 

@@ -6,7 +6,7 @@ POKEMON_ICON_GREYSCALE_SUFFIX:=_greyscaleTiles
 POKEMON_ICON_GREYSCALE_PALETTE_IMAGE:=asset/gfx/pokemon_icons_greyscale/gfx_pokemon_icon_grey.png
 
 # Pokemon icon greyscale
-$(POKEMON_ICON_GREYSCALE_OBJ): $(POKEMON_ICON_GREYSCALE_PALETTE_IMAGE)
+$(POKEMON_ICON_GREYSCALE_OBJ): $(POKEMON_ICON_GREYSCALE_PALETTE_IMAGE) $(POKEMON_ICON_GFX) $(IMAGES_TO_PALETTE)
 	@echo "Creating greyscale pokemon icon palette..."
 	$(PY3) $(IMAGES_TO_PALETTE) $(POKEMON_ICON_GREYSCALE_PALETTE_IMAGE) -o $(BLDPATH)/pokemon_icons_greyscale.s -s $(POKEMON_ICON_GREYSCALE_SUFFIX) -i $(POKEMON_ICON_GFX) -c 15
 	$(AS) $(ASFLAGS) $(BLDPATH)/pokemon_icons_greyscale.s -o $(POKEMON_ICON_GREYSCALE_OBJ)

@@ -112,7 +112,7 @@ typedef struct battler_damage_taken_stru {
 	u8 intimdated_foe : 1;
 	u8 traced : 1;
 	u8 pp_unaffected_by_pressure : 1;
-	u8 bit_6;
+    u8 bit_6 : 1;
 	u8 used_focus_band : 1;
     u8 used_sturdy : 1;
     u8 field_1 : 7;
@@ -179,7 +179,7 @@ extern u8 battlers_absent;
 extern u8 battler_in_party_menu;
 extern u8 effect_battler;
 
-#define DAMAGE_CAUSED ((battler_damage_taken[defending_battler].physical_damage != 0 || battler_damage_taken[defending_battler].special_damage != 0))
+#define DAMAGE_CAUSED (((battler_damage_taken[defending_battler].physical_damage != 0) || (battler_damage_taken[defending_battler].special_damage != 0)))
 
 
 #define BATTLER_CAN_SWITCH_OUT(i) (\

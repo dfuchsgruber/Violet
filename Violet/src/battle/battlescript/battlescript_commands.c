@@ -402,7 +402,7 @@ void bsc_cmd_x49_attack_done_new() {
             // Just watch out to respect the limits of the original function
             bool effect = false;
             while (!effect) {
-                DEBUG("Executing substate %d\n", battle_state2->attack_done_substate);
+                DEBUG("Attack done: Executing substate %d\n", battle_state2->attack_done_substate);
                 switch(battle_state2->attack_done_substate) {
                     case 0: {
                         if (mode != 2 || last_state > 5) { // State 5 is the original attacker abilities (i.e. synchronize)

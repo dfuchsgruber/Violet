@@ -131,6 +131,7 @@ ability_descriptions:
     .word str_ability_descr_0x7e
     .word str_ability_descr_0x7f
     .word str_ability_descr_0x80
+    .word str_ability_descr_0x81
 @ // Define the strings
 
 .ifdef LANG_GER
@@ -867,6 +868,9 @@ ability_descriptions:
 	str_ability_descr_0x80: @// Finalglocke
 		.string "Spielt Abgesang bei Kampfeintritt."
 
+	str_ability_descr_0x81: @// Giftgriff
+		.string "Kontaktangriffe vergiften."
+
 
 .elseif LANG_EN
 	.global str_ability_descr_0x0
@@ -1484,6 +1488,9 @@ ability_descriptions:
 
 	str_ability_descr_0x80: @// Fataläuten
 		.string "Plays perish song on battle entry."
+
+	str_ability_descr_0x81: @// Giftgriff
+		.string "Contact moves poison the foe."
 
 .endif
 

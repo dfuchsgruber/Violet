@@ -498,6 +498,7 @@
 		"ITEM_TM98",
 		"ITEM_TM99",
 		"ITEM_TM100",
+		"ITEM_SLEIMOKNIT",
 		"ITEM_CNT"
 	],
 	"base": 0

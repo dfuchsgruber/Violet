@@ -444,6 +444,7 @@ extern const unsigned short gfx_pkmn_species_439_pokemon_icognito_question_icon_
 extern const unsigned short gfx_pkmn_species_440_pokemon_groudon_e_icon_greyscaleTiles[];
 extern const unsigned short gfx_pkmn_species_441_pokemon_kecleon_p_icon_greyscaleTiles[];
 extern const unsigned short gfx_pkmn_crystal_onix_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_mega_sleimok_icon_greyscaleTiles[];
 
 const void *const pokemon_icons_greyscale[POKEMON_CNT] = {
     gfx_pkmn_species_000_pokemon_pokemon_0_icon_greyscaleTiles,
@@ -889,4 +890,5 @@ const void *const pokemon_icons_greyscale[POKEMON_CNT] = {
     gfx_pkmn_species_440_pokemon_groudon_e_icon_greyscaleTiles,
     gfx_pkmn_species_441_pokemon_kecleon_p_icon_greyscaleTiles,
     gfx_pkmn_crystal_onix_icon_greyscaleTiles,
+    [POKEMON_MEGA_SLEIMOK] = gfx_pkmn_mega_sleimok_icon_greyscaleTiles,
 };

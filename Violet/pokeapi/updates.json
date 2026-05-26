@@ -6340,5 +6340,23 @@
 		"evolutions" : {
 			"__overwrite__" : true
 		}
+	},
+	"POKEMON_MEGA_SLEIMOK": {
+		"basestats": {
+			"hp": 105,
+			"attack": 140,
+			"defense": 105,
+			"speed": 50,
+			"special-attack": 80,
+			"special-defense": 125
+		},
+		"type_0": "Gift",
+		"type_1": "Unlicht",
+		"exp_yield": 240,
+		"ability_0": "Giftgriff",
+		"ability_1": null,
+		"hidden_ability": null,
+		"species_link": "POKEMON_SLEIMOK",
+		"dex_number": 0
 	}
 }

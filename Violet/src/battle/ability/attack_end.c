@@ -20,6 +20,8 @@
 #include "constants/pokemon_stat_names.h"
 #include "item/item.h"
 #include "constants/item_hold_effects.h"
+#include "battle/communication.h"
+#include "constants/battle/battle_effects.h"
 
 extern const u8 bsc_hagelalarm[];
 extern const u8 bsc_lernfaehig[];
@@ -39,6 +41,18 @@ bool battle_abilities_attack_done_attacker_new() {
     battler *attacker = battlers + attacking_battler;
     battler *defender = battlers + defending_battler;
     defending_battler_ability = attacker->ability;
+    DEBUG("Battle abilities attack done: Atacker %d, defender %d, Attacker ability %d, had effect %d, made contact %d, hurt in confusion %d, damage caused %d,damage taken: physical @0x%x, special @0x%x, size %d, physical offset %d\n", 
+            attacking_battler, defending_battler,
+        attacker->ability, !(attack_result & ATTACK_NO_EFFECT_ANY),
+            (attacks[active_attack].flags & MAKES_CONTACT), !battler_statuses[attacking_battler].hurt_in_confusion, 
+            DAMAGE_CAUSED,
+        &battler_damage_taken[defending_battler].physical_damage, &battler_damage_taken[defending_battler].special_damage,
+    sizeof(battler_damage_taken_stru),
+        (int)(
+            (int)(&battler_damage_taken[defending_battler].physical_damage) - (int)(&battler_damage_taken[defending_battler])
+        )
+
+);
     if (attacker->ability == LERNFAEHIG && attacker->current_hp &&
             (attack_result & ATTACK_MISSED) && attacker->stat_changes[6] < 12) {
         attacker->stat_changes[STAT_ACCURACY]++;
@@ -106,6 +120,16 @@ bool battle_abilities_attack_done_attacker_new() {
         damage_to_apply = MAX(1, damage_caused / 5);
         battlescript_callstack_push_next_command();
         bsc_offset = bsc_extradorn;
+        return true;
+    } else if (attacker->ability == GIFTGRIFF && !(attack_result & ATTACK_NO_EFFECT_ANY) &&
+            (attacks[active_attack].flags & MAKES_CONTACT) && !battler_statuses[attacking_battler].hurt_in_confusion && 
+            DAMAGE_CAUSED) {
+            // Check if defender can be poisoned, if not, poison them
+        DEBUG("Giftgriff: Attacking battler %d, defending battler %d\n", attacking_battler, defending_battler);
+        battle_communication[BATTLE_COMMUNICATION_BATTLE_EFFECT] = BATTLE_EFFECT_POISON;
+        bsc_status_flags = BSC_STATUS_FLAG_IGNORE_SAFEGUARD;
+        battlescript_callstack_push_next_command();
+        bsc_offset = battlescript_apply_status1;
         return true;
     }
     return false;
