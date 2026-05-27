@@ -5,7 +5,7 @@
 			"person_cnt": 53,
 			"warp_cnt": 7,
 			"trigger_cnt": 0,
-			"signpost_cnt": 16,
+			"signpost_cnt": 17,
 			"persons": [
 				{
 					"target_index": 1,
@@ -590,7 +590,7 @@
 						"type": 0,
 						"move_tutor": 0
 					},
-					"argument": 0,
+					"argument": "1",
 					"script_std_and_in_connection": {
 						"script_std": "PERSON_ITEM",
 						"in_connection": "0"
@@ -770,7 +770,7 @@
 					"field_D": 0,
 					"field_B": 0,
 					"value": {
-						"item": "ITEM_WUESTEN_EI",
+						"item": "ITEM_TM74",
 						"species": 0,
 						"scalar": 0,
 						"type": 0,
@@ -978,7 +978,7 @@
 					"is_trainer": "1",
 					"alert_radius": "4",
 					"script": 0,
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"flag": "FLAG_KAKTUSLABYRINTH_WILD_TUSKA",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_TUSKA",
@@ -995,8 +995,37 @@
 				{
 					"target_index": "33",
 					"picture": "238",
-					"x": "72",
-					"y": "50",
+					"x": "80",
+					"y": "51",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "4",
+					"script": 0,
+					"flag": "0",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KNACKLION",
+						"scalar": 0,
+						"type": 0,
+						"move_tutor": 0
+					},
+					"argument": "25",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": "0"
+					}
+				},
+				{
+					"target_index": "34",
+					"picture": "238",
+					"x": "16",
+					"y": "10",
 					"level": "0",
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -1007,36 +1036,7 @@
 					"is_trainer": "1",
 					"alert_radius": "4",
 					"script": 0,
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_1",
-					"value": {
-						"item": 0,
-						"species": "POKEMON_KNACKLION",
-						"scalar": 0,
-						"type": 0,
-						"move_tutor": 0
-					},
-					"argument": "25",
-					"script_std_and_in_connection": {
-						"script_std": "PERSON_AGGRESSIVE_POKEMON",
-						"in_connection": "0"
-					}
-				},
-				{
-					"target_index": "34",
-					"picture": "238",
-					"x": "16",
-					"y": "15",
-					"level": "0",
-					"behaviour": "BEHAVIOUR_ROTATE_CLOCKWISE",
-					"behaviour_range": {
-						"x": 0,
-						"y": 0
-					},
-					"field_B": 0,
-					"is_trainer": "1",
-					"alert_radius": "4",
-					"script": 0,
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_5_PERCENT",
+					"flag": "0",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_DIGDRI",
@@ -1046,7 +1046,7 @@
 					},
 					"argument": "31",
 					"script_std_and_in_connection": {
-						"script_std": "PERSON_AGGRESSIVE_POKEMON",
+						"script_std": "PERSON_POKEMON",
 						"in_connection": "0"
 					}
 				},
@@ -1239,10 +1239,10 @@
 					"is_trainer": "1",
 					"alert_radius": "4",
 					"script": 0,
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_2",
+					"flag": "FLAG_KAKTUSLABYRINTH_WILD_SANDAMER",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_PUPPANCE",
+						"species": "POKEMON_SANDAMER",
 						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
@@ -1962,8 +1962,8 @@
 					"flag": "0"
 				},
 				{
-					"x": "67",
-					"y": "69",
+					"x": "40",
+					"y": "31",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
@@ -2027,6 +2027,29 @@
 							"amount": "0",
 							"center_x": "0",
 							"center_y": "0"
+						}
+					}
+				},
+				{
+					"x": 18,
+					"y": 14,
+					"level": 0,
+					"type": "SIGNPOST_HIDDEN_ITEM",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": "ITEM_BODENJUWEL",
+							"flag": "119",
+							"amount": "1",
+							"chunk": 0
+						},
+						"script": 0,
+						"treasure_map": {
+							"item": 0,
+							"idx": 0,
+							"amount": 0,
+							"center_x": 0,
+							"center_y": 0
 						}
 					}
 				}

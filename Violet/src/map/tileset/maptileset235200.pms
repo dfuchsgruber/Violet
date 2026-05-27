@@ -27605,10 +27605,28 @@
 			],
 			[
 				{
-					"tile_idx": 0,
+					"tile_idx": 752,
+					"palette_idx": 8,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 752,
+					"palette_idx": 8,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 752,
+					"palette_idx": 8,
+					"horizontal_flip": 0,
+					"vertical_flip": 1
+				},
+				{
+					"tile_idx": 752,
+					"palette_idx": 8,
+					"horizontal_flip": 1,
+					"vertical_flip": 1
 				},
 				{
 					"tile_idx": 0,
@@ -27653,25 +27671,7 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 33,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 8,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 33,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 8,
+					"tile_idx": 0,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 0
@@ -32151,14 +32151,14 @@
 				"battle_bg": "BATTLE_BG_DESERT"
 			},
 			{
-				"behaviour": "MB_TALL_GRASS",
-				"hm_usage": "0x1",
+				"behaviour": "MB_SAND",
+				"hm_usage": "0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"field_5": "0x2",
 				"field_7": "0x0",
 				"priority": "0x0",
-				"battle_bg": "0"
+				"battle_bg": "BATTLE_BG_DESERT"
 			},
 			{
 				"behaviour": "MB_SAND",
