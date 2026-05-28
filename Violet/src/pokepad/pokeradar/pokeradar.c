@@ -169,7 +169,7 @@ void pokeradar_spawn_pokemon() {
     if (*var_access(POKERADAR_ENCOUNTER_COUNT) != 0xFFFF)
         (*var_access(POKERADAR_ENCOUNTER_COUNT))++;
     pid_t p = {.value = 0};
-    pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, level, 32, false, p,
+    pokemon_new_by_prng(&opponent_pokemon[0], species, level, 32, false, p,
         false, 0, pokeradar_next_seed, NULL);
 }
 

@@ -183,7 +183,7 @@ void aggresive_wild_pokemon_create() {
         u8 npc_idx = trainers_npc_idxs[i];
         const map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
         pid_t pid = {0};
-        pokemon_spawn_by_seed_algorithm(opponent_pokemon + i, person->value, person->argument, 32, false, pid, false, 0, aggressive_wild_pokemon_feature_generator, NULL);
+        pokemon_new_by_prng(opponent_pokemon + i, person->value, person->argument, 32, false, pid, false, 0, aggressive_wild_pokemon_feature_generator, NULL);
     }
 }
 

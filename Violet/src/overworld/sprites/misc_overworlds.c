@@ -507,5 +507,5 @@ void misc_encounter_setup() {
     int level = FIXED_TO_INT(FIXED_ADD(INT_TO_FIXED(mean), FIXED_MUL(x, INT_TO_FIXED(std))));
     level = MIN(100, MAX(5, level));
     pid_t pid = {0};
-    pokemon_spawn_by_seed_algorithm(opponent_pokemon + 0, species, (u8)level, 32, false, pid, false, 0, misc_feature_generator, NULL);
+    pokemon_new_by_prng(opponent_pokemon + 0, species, (u8)level, 32, false, pid, false, 0, misc_feature_generator, NULL);
 }

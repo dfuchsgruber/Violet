@@ -568,7 +568,7 @@ static void fishing_pokemon_new(fishing_state_t *state) {
     }
     gp_stack_push((int)state);
     pid_t pid = {.value = 0};
-    pokemon_spawn_by_seed_algorithm(opponent_pokemon, entry->species, level, POKEMON_NEW_RANDOM_IVS,
+    pokemon_new_by_prng(opponent_pokemon, entry->species, level, POKEMON_NEW_RANDOM_IVS,
         false, pid, false, 0, feature_generator_fishing, NULL);
     pid.value = (u32)pokemon_get_attribute(opponent_pokemon, ATTRIBUTE_PID, NULL);
     if (state->bait == ITEM_LEUCHTKOEDER) {

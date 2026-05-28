@@ -59,7 +59,7 @@ u16 fishing_create_pokemon(const wild_pokemon_habitat *habitat, u8 rod_type) {
     DEBUG("Gp stack has size %d\n", gp_stack_size);
     gp_stack_push((int)seed);
     if (checkflag(FLAG_FISHING_SHINING_BAIT_USED)) {
-        pokemon_spawn_by_seed_algorithm(opponent_pokemon, species, (u8)(MIN(level + 8, 100)), 
+        pokemon_new_by_prng(opponent_pokemon, species, (u8)(MIN(level + 8, 100)), 
         32, false, pid, false, 0, fishing_rng_shining_bait, NULL);
         pid_t pid = {.value = (u32)pokemon_get_attribute(opponent_pokemon, ATTRIBUTE_PID, 0)};
         pid.fields.is_shiny = 1;
@@ -68,19 +68,19 @@ u16 fishing_create_pokemon(const wild_pokemon_habitat *habitat, u8 rod_type) {
         item_remove(ITEM_LEUCHTKOEDER, 1);
         DEBUG("Spawned fishing pokemon with shining bait\n");
     } else if (checkflag(FLAG_FISHING_GOLDEN_BAIT_USED)) {
-        pokemon_spawn_by_seed_algorithm(opponent_pokemon, species, (u8)(MIN(level + 5, 100)), 
+        pokemon_new_by_prng(opponent_pokemon, species, (u8)(MIN(level + 5, 100)), 
         POKEMON_NEW_RANDOM_IVS, false, pid, false, 0, fishing_rng_golden_bait, NULL);
         clearflag(FLAG_FISHING_GOLDEN_BAIT_USED);
         item_remove(ITEM_GOLDKOEDER, 1);
         DEBUG("Spawned fishing pokemon with golden bait\n");
     } else if (checkflag(FLAG_FISHING_BAIT_USED)) {
-        pokemon_spawn_by_seed_algorithm(opponent_pokemon, species, (u8)(MIN(level + 2, 100)), 
+        pokemon_new_by_prng(opponent_pokemon, species, (u8)(MIN(level + 2, 100)), 
         POKEMON_NEW_RANDOM_IVS, false, pid, false, 0, fishing_rng_bait, NULL);
         clearflag(FLAG_FISHING_BAIT_USED);
         item_remove(ITEM_KOEDER, 1);
         DEBUG("Spawned fishing pokemon with bait\n");
     } else {
-        pokemon_spawn_by_seed_algorithm(opponent_pokemon, species, level, 
+        pokemon_new_by_prng(opponent_pokemon, species, level, 
         POKEMON_NEW_RANDOM_IVS, false, pid, false, 0, fishing_rng_no_bait, NULL);
         DEBUG("Spawned fishing pokemon without bait\n");
     }

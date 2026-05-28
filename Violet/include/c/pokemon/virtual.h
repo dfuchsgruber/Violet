@@ -162,6 +162,20 @@ typedef struct pokemon {
     u16 special_defense;
 } pokemon;
 
+enum {
+	POKEMON_NEW_PRNG_MODULUS_SHINY = 0,
+	POKEMON_NEW_PRNG_MODULUS_HIDDEN_POWER_STRENGTH,
+	POKEMON_NEW_PRNG_MODULUS_HIDDEN_ABILITY,
+	POKEMON_NEW_PRNG_MODULUS_EGG_MOVES,
+	POKEMON_NEW_PRNG_MODULUS_ITEM,
+	POKEMON_NEW_PRNG_MODULUS_IV_BASE,
+	POKEMON_NEW_PRNG_NUM_MODULUS = POKEMON_NEW_PRNG_MODULUS_IV_BASE + 6,
+};
+
+typedef struct {
+	u16 (*prngs[POKEMON_NEW_PRNG_NUM_MODULUS])();
+} pokemon_new_prngs;
+
 extern u8 player_party_selected_idxs[3]; // Idxs selected by special 0x29
 
 extern pokemon player_pokemon[];
@@ -361,8 +375,32 @@ void pokemon_rotate_and_push_attack(pokemon *p, u16 attack);
  * @param rng arbitrary rng to determine the pokemon entirely. If null the standard rng
  * is used.
  */
-void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_spread,
+void pokemon_new_by_prng(pokemon *p, u16 species, u8 level, u8 ev_spread,
     bool pid_determined, pid_t pid, bool tid_determined, u32 tid, u16(*feature_generator)(),
+	u16(*rng)());
+
+
+/**
+Creates a new pokemon using the "seed algorithm". Features are added to the given pokemon
+ * with some probability, where values are drawn from a generator and expected to be
+ * uniformly distributed in [0; 512). Lower values mean that features will be appended, so
+ * the chance of getting "features" is increased when the rnd_generator provides numbers that
+ * range only from [0; x) with x < 512.
+ * @param p the pokemon to instanciate
+ * @param species desired species
+ * @param level desired level
+ * @param ev_spread desired ev spread
+ * @param pid_determined if the pid is already determined and given (shinyness might be changed)
+ * @param pid the pid to apply if pid_determined is set to true
+ * @param tid_determined if the tid is already determined and given
+ * @param tid the tid to apply if tid_determined is set to true
+ * @param prngs array of prng functions that provide values in [0; x) with x < 512 to
+ * instaciate features (lower values mean more features). The array should have a size of POKEMON_NEW_PRNG_NUM_MODULUS and each entry should correspond to the modulus with the same idx.
+ * @param rng arbitrary rng to determine the pokemon entirely. If null the standard rng
+ * is used.
+*/
+void pokemon_new_by_prngs(pokemon *p, u16 species, u8 level, u8 default_iv,
+    bool pid_determined, pid_t pid, bool tid_determined, u32 tid, pokemon_new_prngs *prngs, 
 	u16(*rng)());
 
 /**

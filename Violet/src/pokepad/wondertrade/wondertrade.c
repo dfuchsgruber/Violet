@@ -246,7 +246,7 @@ void wondertrade_spawn_pokemon() {
     DEBUG("Spawned wondertrade mon %d with OT @ 0x%x\n", species, ot_name);
     u32 tid = tid_by_ot_name(ot_name);
     pid_t p = {.value = 0};
-    pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, 5, 32, false, p,
+    pokemon_new_by_prng(&opponent_pokemon[0], species, 5, 32, false, p,
                                     true, tid, wondertrade_next_seed, NULL);
     pokemon_set_attribute(&opponent_pokemon[0], ATTRIBUTE_OT_NAME, ot_name);
     pokemon_set_attribute(opponent_pokemon + 0, ATTRIBUTE_OT_GENDER, &female_ot);

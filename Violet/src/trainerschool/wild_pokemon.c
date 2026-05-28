@@ -59,7 +59,7 @@ bool trainerschool_wildbattle_initialize_secondary_starter() {
 		// Determine the pid (apart from shinyness)
 		pid_t pid = {(u32)(trainerschool_wildbattle_secondary_starter_feature_generator() |
 				trainerschool_wildbattle_secondary_starter_feature_generator() << 16)};
-		pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, 5, 32,
+		pokemon_new_by_prng(&opponent_pokemon[0], species, 5, 32,
 		    true, pid, false, 0, trainerschool_wildbattle_secondary_starter_feature_generator,
 			trainerschool_wildbattle_secondary_starter_prng);
 		// If all ten questions were answered correctly, set the pokemon to shiny

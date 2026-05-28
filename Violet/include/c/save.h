@@ -14,6 +14,7 @@
 #include "color.h"
 #include "item/bag.h"
 #include "overworld/misc.h"
+#include "pokepad/vs_seeker.h"
 
 #define NUM_SECTORS 32
 #define NUM_SECTORS_PER_SAVEFILE 14
@@ -123,7 +124,8 @@ typedef struct saveblock1 {
     int dungeon_nodes[16][2];
     u8 tm_used_flags[16];
     bag_item_t bag_pocket_bait[MAX_NUM_BAG_BAIT];
-    u8 questlog[112];
+    u8 trainer_rematch_flags[96]; // 0x300=768 flags for rematches
+    u8 questlog[16];
     u8 field_4864[80];
     u16 mail_words[2][9]; // Might be there are more than 2 mails
     u8 unknown_4[620];
@@ -205,7 +207,7 @@ typedef struct custom_memory {
     rtc_timestamp daily_events_last_update;
     u32 daily_events_seed;
     rtc_timestamp fossil_gen_time;
-    u8 unused[128 / 8];
+    u8 vs_seeker_flags[VS_SEEKER_NUM_FLAGS / 8];
     map_event_person pokeradar_person;
     
     //Dungeon Memory II

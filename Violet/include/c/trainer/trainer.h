@@ -27,8 +27,7 @@ typedef struct {
     u16 field_1E;
     u8 pokemon_cnt;
     u8 field_21;
-    u8 field_22;
-    u8 field_23;
+    u16 rematch_flag_idx;
     const trainer_pokemon *party;
 } trainer;
 

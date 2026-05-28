@@ -109,3 +109,4 @@ void shuffle(size_t *array, size_t size, u16 (*rng)()) {
         array[j] = tmp;
     }
 }
+

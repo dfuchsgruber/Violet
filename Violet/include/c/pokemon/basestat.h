@@ -8,6 +8,7 @@
 #ifndef INCLUDE_C_POKEMON_BASESTAT_H_
 #define INCLUDE_C_POKEMON_BASESTAT_H_
 
+#include "types.h"
 #include "pokemon/count.h"
 #include "constants/pokemon_colors.h"
 #include "constants/pokemon_types.h"

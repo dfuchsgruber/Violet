@@ -8,58 +8,52 @@
 #include "prng.h"
 #include "agbmemory.h"
 
-void pokemon_spawn_by_algorithm_generate_ivs(int *ivs, u8 default_iv, u16(*feature_generator)(),
+static void pokemon_new_ivs_by_prngs(int *ivs, u8 default_iv, pokemon_new_prngs *prngs,
 		u16(*rng)()) {
     int i;
-    int p = feature_generator();
     for (i = 0; i < 6; i++) {
-    	if (p < 128) {
-    		ivs[i] = 31;
-    		p += 16;
-    	} else {
-    		if (default_iv < 32) {
-    			ivs[i] = default_iv;
-    		} else {
-    			ivs[i] = rng() & 31;
-    		}
-    	}
+      if (default_iv < 32) {
+        ivs[i] = default_iv;
+      } else {
+        ivs[i] = MIN(31, (rng() & 31) + 31 - MIN(31, (prngs->prngs[POKEMON_NEW_PRNG_MODULUS_IV_BASE + i]() / 16)));
+      }
     }
 }
 
-static u16 default_feature_generator() {
+static u16 default_pokemon_new_prng() {
   return (u16)(rnd16() & 511);
 }
 
-void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 default_iv,
-    bool pid_determined, pid_t pid, bool tid_determined, u32 tid, u16(*feature_generator)(),
+
+void pokemon_new_by_prngs(pokemon *p, u16 species, u8 level, u8 default_iv,
+    bool pid_determined, pid_t pid, bool tid_determined, u32 tid, pokemon_new_prngs *prngs, 
 	u16(*rng)()) {
 
 	if (!rng) rng = rnd16;  // default rng
-  if (!feature_generator) feature_generator = default_feature_generator; // Why use the seed algorithm then in the first place?
-
+  
     //first we random a pid
     if (!pid_determined)
       pid = pokemon_new_pid(species);
 
-    if (!feature_generator()) {
+    if (!prngs->prngs[POKEMON_NEW_PRNG_MODULUS_SHINY]()) {
         pid.fields.is_shiny = 1;
     } else {
     	pid.fields.is_shiny = 0;
     }
 
     // Set hidden power strength
-    pid.fields.hidden_power_strength = (u8)((7 - ((feature_generator() >> 6) & 7)) & 7);
+    pid.fields.hidden_power_strength = (u8)((7 - ((prngs->prngs[POKEMON_NEW_PRNG_MODULUS_HIDDEN_POWER_STRENGTH]() >> 6) & 7)) & 7);
 
     pokemon_new(p, species, level, default_iv, true, pid, tid_determined, tid);
     //now we add ivs
     int i;
     int ivs[6];
-    pokemon_spawn_by_algorithm_generate_ivs(ivs, default_iv, feature_generator, rng);
+    pokemon_new_ivs_by_prngs(ivs, default_iv, prngs, rng);
     for (i = 0; i < 6; i++) {
 		pokemon_set_attribute(p, (u16) (ATTRIBUTE_HP_IV + i), &ivs[i]);
     }
     //now we add hidden ability
-    if (feature_generator() < 16)
+    if (prngs->prngs[POKEMON_NEW_PRNG_MODULUS_HIDDEN_ABILITY]() < 16)
     	pokemon_set_hidden_ability(&p->box);
 
     int r;
@@ -72,7 +66,7 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 defau
       DEBUG("Returned egg moves %x for species %d of size %d\n", egg_moves, species, egg_move_cnt);
       for (int attached = 0; attached < 4 && egg_move_cnt > 0; attached++) {
         //we attach a random egg move
-        if (feature_generator() >= 32) continue; 
+        if (prngs->prngs[POKEMON_NEW_PRNG_MODULUS_EGG_MOVES]() >= 32) continue; 
         int n = rng() % egg_move_cnt;
         if (pokemon_append_attack(&opponent_pokemon[0], egg_moves[n]) == 0xFFFF) {
           pokemon_rotate_and_push_attack(&opponent_pokemon[0], egg_moves[n]);
@@ -83,7 +77,7 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 defau
     }
 
     //now we give the item
-    r = feature_generator();
+    r = prngs->prngs[POKEMON_NEW_PRNG_MODULUS_ITEM]();
     if (r < 32) {
         const u16 *item = &basestats[species].common_item;
         if (r < 8 && basestats[species].rare_item) {
@@ -94,5 +88,13 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 defau
     pokemon_calculate_stats(&opponent_pokemon[0]);
 }
 
-
-
+void pokemon_new_by_prng(pokemon *p, u16 species, u8 level, u8 default_iv,
+    bool pid_determined, pid_t pid, bool tid_determined, u32 tid, u16 (*pokemon_new_prng)(), 
+	u16(*rng)()) {
+    if (!pokemon_new_prng) pokemon_new_prng = default_pokemon_new_prng;
+    pokemon_new_prngs prngs = {0};
+    for (size_t i = 0; i < POKEMON_NEW_PRNG_NUM_MODULUS; i++) {
+      prngs.prngs[i] = pokemon_new_prng;
+    }
+    pokemon_new_by_prngs(p, species, level, default_iv, pid_determined, pid, tid_determined, tid, &prngs, rng);
+  }

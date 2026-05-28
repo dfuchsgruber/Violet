@@ -98,7 +98,7 @@ void dungeon2_set_encounter_ocean() {
 
   pid_t p = {dungeon2_rnd(dg2)};
 
-  pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, (u8)level, 32, true, p, false, 0,
+  pokemon_new_by_prng(&opponent_pokemon[0], species, (u8)level, 32, true, p, false, 0,
       dungeon2_encounter_rnd_generator, dungeon2_encounter_rnd_generator);
 }
 
