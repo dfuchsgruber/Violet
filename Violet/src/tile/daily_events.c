@@ -44,6 +44,7 @@ void daily_events_reset() {
     }
     overworld_misc_intialize();
     overworld_static_encounters_reset();
+    vs_seeker_randomly_set_rematch_flags();
 }
 
 u32 dungeon_hash(int dungeon_id) {

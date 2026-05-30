@@ -14,6 +14,7 @@
 .global ow_script_aggresive_wild_spotted
 .global ow_script_aggressive_wild_pokemon_start_battle
 .global str_aggressive_wild_challange
+.global ow_script_trainerbatte_challange
 
 challange_loop:
     closeonkeypress
@@ -101,6 +102,33 @@ ow_script_aggressive_wild_pokemon_start_battle:
     end
 
 
+ow_script_trainerbatte_challange:
+	lock
+	faceplayer
+	applymovement LASTTALKED, mov_reveal_trainer
+	waitmovement 0
+	special2 LASTRESULT, SPECIAL_CHECK_LOADED_TRAINERFLAG
+	compare LASTRESULT, 0
+    gotoif NOT_EQUAL check_rematch_battle
+	special SPECIAL_TRAINER_PLAY_ENCOUNTER_MUSIC
+	special SPECIAL_TRAINER_SETUP_NPC_MOVEMENT
+	goto ow_script_do_trainerbattle
+
+check_rematch_battle:
+    callasm vs_seeker_check_lasttalked_trainer_rematch_triggered
+    compare LASTRESULT, 0
+    gotoif EQUAL no_trainer_battle
+	special SPECIAL_TRAINER_SETUP_NPC_MOVEMENT
+    callasm vs_seeker_do_rematch_trainerbattle
+    callasm vs_seeker_set_rematch_flags_after_battle_lasttalked_trainer
+    releaseall
+    end
+
+no_trainer_battle:
+    endtrainerbattle
+
+mov_reveal_trainer:
+    .byte REVEAL_TRAINER, STOP
 
 .ifdef LANG_GER
 str_0:

@@ -2,7 +2,6 @@
 #include "pokemon/virtual.h"
 #include "pokemon/breeding.h"
 #include "pokemon/basestat.h"
-#include "pokepad/state.h"
 #include "debug.h"
 #include "constants/pokemon_attributes.h"
 #include "prng.h"

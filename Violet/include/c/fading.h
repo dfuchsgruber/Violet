@@ -8,6 +8,8 @@
 #ifndef INCLUDE_C_FADING_H_
 #define INCLUDE_C_FADING_H_
 
+#include "types.h"
+
 typedef struct {
     u32 affects;
     u8 delay : 6;

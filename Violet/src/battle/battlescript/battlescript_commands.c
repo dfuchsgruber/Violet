@@ -1,3 +1,4 @@
+#include "pokemon/virtual.h"
 #include "types.h"
 #include "battle/battler.h"
 #include "battle/battlescript.h"
@@ -249,18 +250,33 @@ void bsc_cmd_trainerslidein() {
     bsc_offset += 2;    
 }
 
-static int trainer_pricemoney_get(u16 trainer_idx) {
+static int trainer_pricemoney_get() {
     // Calculate the average level of the trainer pokemon
     int average_level = 0;
-    for (int i = 0; i < trainers[trainer_idx].pokemon_cnt; i++)
-        average_level += trainer_pokemon_get_level(trainers[trainer_idx].party[i].level);
-    average_level = MAX(1, 1000 * average_level / trainers[trainer_idx].pokemon_cnt); // Higher resultion by multplying with 1000
-    DEBUG("Trainer %d has an average level of %d / 1000\n", trainer_idx, average_level);
-    int money = average_level * battle_state->money_multiplier * trainer_class_money_multipliers[trainers[trainer_idx].trainerclass] * 4;
-    DEBUG("Trainer %d yields %d / 1000 money. Multiplier is %d, class multiplier is %d\n", trainer_idx, 
-        money, battle_state->money_multiplier, trainer_class_money_multipliers[trainers[trainer_idx].trainerclass]);
-    if (trainers[trainer_idx].money_multiplier > 0)
-        money *= trainers[trainer_idx].money_multiplier;
+    int num_pokemon = 0;
+    for (num_pokemon = 0; num_pokemon < pokemon_get_attribute(opponent_pokemon + num_pokemon, ATTRIBUTE_SPECIES, NULL); num_pokemon++) {
+        average_level += pokemon_get_attribute(opponent_pokemon + num_pokemon, ATTRIBUTE_LEVEL, NULL);
+    }
+    average_level = MAX(1, 1000 * average_level / num_pokemon); // Higher resultion by multplying with 1000
+    int trainer_class_multiplier;
+    int money_multiplier;
+    if (battle_flags & BATTLE_DOUBLE) {
+        trainer_class_multiplier = (trainer_class_money_multipliers[trainers[trainer_vars.trainer_id].trainerclass] + 
+            trainer_class_money_multipliers[trainers[trainer_varsB.trainer_id].trainerclass]) / 2;
+
+        money_multiplier = (trainers[trainer_vars.trainer_id].money_multiplier + trainers[trainer_varsB.trainer_id].money_multiplier) / 2;
+    } else if (battle_flags & BATTLE_TRAINER) {
+        trainer_class_multiplier = trainer_class_money_multipliers[trainers[trainer_vars.trainer_id].trainerclass];
+        money_multiplier = trainers[trainer_vars.trainer_id].money_multiplier;
+    } else {
+        trainer_class_multiplier = 1;
+        money_multiplier = 0;
+    }
+    int money = average_level * battle_state->money_multiplier * trainer_class_multiplier * 4;
+    if (money_multiplier > 0)
+        money *= money_multiplier;
+    DEBUG("Trainerbattle yields %d / 1000 money. Multiplier is %d, class multiplier is %d\n", 
+        money, battle_state->money_multiplier, trainer_class_multiplier);
     return money / 4096;
 }
 

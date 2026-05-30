@@ -1,0 +1,1530 @@
+{
+  "1": [
+    "src/map/banks/3/19/person.asm",
+    "src/map/testscripts.asm"
+  ],
+  "2": [
+    "src/map/banks/3/19/person.asm"
+  ],
+  "3": [
+    "src/map/banks/3/19/person.asm",
+    "src/map/banks/3/74/person.asm"
+  ],
+  "4": [
+    "src/test.asm"
+  ],
+  "5": [
+    "src/map/banks/3/70/person.asm"
+  ],
+  "7": [
+    "src/map/banks/3/70/person.asm"
+  ],
+  "8": [
+    "src/map/banks/3/41/trigger.asm"
+  ],
+  "9": [
+    "src/map/banks/3/41/person.asm"
+  ],
+  "10": [
+    "src/map/banks/3/41/person.asm"
+  ],
+  "11": [
+    "src/map/banks/3/41/person.asm"
+  ],
+  "12": [
+    "src/map/banks/3/41/person.asm"
+  ],
+  "13": [
+    "src/map/banks/3/41/person.asm"
+  ],
+  "14": [
+    "src/map/banks/3/41/person.asm"
+  ],
+  "15": [
+    "src/map/banks/3/41/person.asm"
+  ],
+  "17": [
+    "src/map/banks/3/41/person.asm"
+  ],
+  "18": [
+    "src/map/banks/6/2/person.asm"
+  ],
+  "19": [
+    "src/map/banks/3/41/person.asm"
+  ],
+  "20": [
+    "src/map/banks/3/41/person.asm"
+  ],
+  "21": [
+    "src/map/banks/15/4/person.asm"
+  ],
+  "23": [
+    "src/map/banks/3/41/person.asm"
+  ],
+  "24": [
+    "src/map/banks/15/0/person.asm"
+  ],
+  "25": [
+    "src/map/banks/15/0/trigger.asm"
+  ],
+  "26": [
+    "src/map/banks/15/0/person.asm"
+  ],
+  "27": [
+    "src/map/banks/15/0/person.asm"
+  ],
+  "28": [
+    "src/map/banks/15/0/person.asm"
+  ],
+  "29": [
+    "src/map/banks/15/0/person.asm"
+  ],
+  "30": [
+    "src/map/banks/15/0/person.asm"
+  ],
+  "32": [
+    "src/map/banks/15/0/person.asm"
+  ],
+  "33": [
+    "src/map/banks/15/0/person.asm"
+  ],
+  "34": [
+    "src/map/banks/15/0/person.asm"
+  ],
+  "35": [
+    "src/map/banks/15/0/person.asm"
+  ],
+  "36": [
+    "src/map/banks/15/0/person.asm"
+  ],
+  "37": [
+    "src/map/banks/15/4/person.asm"
+  ],
+  "38": [
+    "src/map/banks/15/5/trigger.asm"
+  ],
+  "39": [
+    "src/map/banks/15/5/person.asm"
+  ],
+  "40": [
+    "src/map/banks/15/0/person.asm"
+  ],
+  "41": [
+    "src/map/banks/15/0/may.asm",
+    "src/map/banks/15/0/trigger.asm"
+  ],
+  "42": [
+    "src/map/banks/15/0/may.asm",
+    "src/map/banks/15/0/trigger.asm"
+  ],
+  "43": [
+    "src/map/banks/15/0/may.asm",
+    "src/map/banks/15/0/trigger.asm"
+  ],
+  "45": [
+    "src/map/banks/3/74/person.asm"
+  ],
+  "46": [
+    "src/map/banks/3/74/person.asm",
+    "src/test.asm"
+  ],
+  "47": [
+    "src/map/banks/3/74/person.asm"
+  ],
+  "48": [
+    "src/map/banks/3/74/person.asm"
+  ],
+  "49": [
+    "src/map/banks/3/74/person.asm"
+  ],
+  "50": [
+    "src/map/banks/3/74/person.asm"
+  ],
+  "51": [
+    "src/map/banks/3/74/person.asm"
+  ],
+  "52": [
+    "src/map/banks/3/74/person.asm"
+  ],
+  "54": [
+    "src/map/banks/15/0/person.asm"
+  ],
+  "55": [
+    "src/map/banks/3/41/person.asm"
+  ],
+  "56": [
+    "src/map/banks/3/74/person.asm"
+  ],
+  "57": [
+    "src/map/banks/3/74/person.asm"
+  ],
+  "58": [
+    "src/map/banks/7/5/person.asm"
+  ],
+  "59": [
+    "src/map/banks/3/74/person.asm"
+  ],
+  "60": [
+    "src/map/banks/3/74/person.asm"
+  ],
+  "61": [
+    "src/map/banks/7/5/person.asm"
+  ],
+  "62": [
+    "src/map/banks/7/5/person.asm"
+  ],
+  "63": [
+    "src/map/banks/7/5/person.asm"
+  ],
+  "65": [
+    "src/map/banks/1/0/person.asm"
+  ],
+  "66": [
+    "src/map/banks/1/0/person.asm"
+  ],
+  "67": [
+    "src/map/banks/1/0/person.asm"
+  ],
+  "68": [
+    "src/map/banks/1/0/person.asm"
+  ],
+  "69": [
+    "src/map/banks/1/0/person.asm"
+  ],
+  "70": [
+    "src/map/banks/1/0/person.asm"
+  ],
+  "71": [
+    "src/map/banks/1/0/person.asm"
+  ],
+  "72": [
+    "src/map/banks/1/0/person.asm"
+  ],
+  "73": [
+    "src/map/banks/1/0/person.asm"
+  ],
+  "74": [
+    "src/map/banks/1/0/person.asm"
+  ],
+  "75": [
+    "src/map/banks/1/0/person.asm"
+  ],
+  "76": [
+    "src/map/banks/1/0/trigger.asm"
+  ],
+  "77": [
+    "src/map/banks/0/5/person.asm"
+  ],
+  "78": [
+    "src/map/banks/0/5/person.asm"
+  ],
+  "79": [
+    "src/map/banks/0/5/person.asm"
+  ],
+  "80": [
+    "src/map/banks/0/5/person.asm"
+  ],
+  "81": [
+    "src/map/banks/0/5/person.asm"
+  ],
+  "82": [
+    "src/map/banks/0/6/person.asm"
+  ],
+  "83": [
+    "src/map/banks/0/6/person.asm"
+  ],
+  "84": [
+    "src/map/banks/0/6/person.asm"
+  ],
+  "85": [
+    "src/map/banks/0/6/person.asm"
+  ],
+  "86": [
+    "src/map/banks/0/6/person.asm"
+  ],
+  "87": [
+    "src/map/banks/0/6/person.asm"
+  ],
+  "88": [
+    "src/map/banks/0/6/person.asm"
+  ],
+  "89": [
+    "src/map/banks/0/6/person.asm"
+  ],
+  "90": [
+    "src/map/banks/0/6/person.asm"
+  ],
+  "91": [
+    "src/map/banks/0/5/person.asm"
+  ],
+  "92": [
+    "src/map/banks/3/21/trigger.asm"
+  ],
+  "93": [
+    "src/map/banks/3/21/trigger.asm"
+  ],
+  "94": [
+    "src/map/banks/3/21/trigger.asm"
+  ],
+  "95": [
+    "src/map/banks/3/21/person.asm"
+  ],
+  "96": [
+    "src/map/banks/3/21/person.asm"
+  ],
+  "97": [
+    "src/map/banks/3/21/person.asm"
+  ],
+  "98": [
+    "src/map/banks/3/21/person.asm"
+  ],
+  "99": [
+    "src/map/banks/3/21/person.asm"
+  ],
+  "100": [
+    "src/map/banks/3/21/person.asm"
+  ],
+  "101": [
+    "src/map/banks/3/21/person.asm"
+  ],
+  "102": [
+    "src/map/banks/3/21/person.asm"
+  ],
+  "103": [
+    "src/map/banks/3/21/person.asm"
+  ],
+  "104": [
+    "src/map/banks/3/21/person.asm"
+  ],
+  "105": [
+    "src/map/banks/3/21/person.asm"
+  ],
+  "106": [
+    "src/map/banks/3/21/person.asm"
+  ],
+  "107": [
+    "src/map/banks/0/7/trainer.asm"
+  ],
+  "108": [
+    "src/map/banks/1/59/trainer.asm"
+  ],
+  "109": [
+    "src/map/banks/1/59/trainer.asm"
+  ],
+  "110": [
+    "src/map/banks/1/59/trainer.asm",
+    "src/map/banks/1/59/trigger.asm"
+  ],
+  "111": [
+    "src/map/banks/1/59/trainer.asm"
+  ],
+  "112": [
+    "src/map/banks/1/59/trainer.asm"
+  ],
+  "113": [
+    "src/map/banks/8/11/trainer.asm"
+  ],
+  "114": [
+    "src/map/banks/8/11/trainer.asm"
+  ],
+  "116": [
+    "src/map/banks/3/22/trainer.asm"
+  ],
+  "117": [
+    "src/map/banks/3/22/trainer.asm"
+  ],
+  "118": [
+    "src/map/banks/3/22/trainer.asm"
+  ],
+  "119": [
+    "src/map/banks/3/22/trainer.asm"
+  ],
+  "120": [
+    "src/map/banks/3/22/trainer.asm"
+  ],
+  "121": [
+    "src/map/banks/16/2/trainer.asm",
+    "src/map/banks/16/3/person.asm"
+  ],
+  "122": [
+    "src/map/banks/16/2/trainer.asm",
+    "src/map/banks/16/3/person.asm"
+  ],
+  "123": [
+    "src/map/banks/16/3/person.asm"
+  ],
+  "124": [
+    "src/map/banks/16/2/trainer.asm",
+    "src/map/banks/16/3/person.asm"
+  ],
+  "125": [
+    "src/map/banks/16/3/person.asm"
+  ],
+  "126": [
+    "src/map/banks/16/3/person.asm"
+  ],
+  "127": [
+    "src/map/banks/16/3/person.asm"
+  ],
+  "128": [
+    "src/map/banks/5/13/trigger.asm",
+    "src/map/banks/5/3/trainer.asm"
+  ],
+  "129": [
+    "src/map/banks/5/13/trigger.asm",
+    "src/map/banks/5/3/trainer.asm"
+  ],
+  "130": [
+    "src/map/banks/5/13/trigger.asm",
+    "src/map/banks/5/3/trainer.asm"
+  ],
+  "131": [
+    "src/map/banks/5/13/trigger.asm",
+    "src/map/banks/5/3/trainer.asm"
+  ],
+  "133": [
+    "src/map/banks/3/23/trainer.asm"
+  ],
+  "134": [
+    "src/map/banks/3/23/trainer.asm"
+  ],
+  "135": [
+    "src/map/banks/3/23/trainer.asm"
+  ],
+  "136": [
+    "src/map/banks/3/23/trainer.asm"
+  ],
+  "137": [
+    "src/map/banks/17/2/trainer.asm"
+  ],
+  "138": [
+    "src/map/banks/17/2/trainer.asm"
+  ],
+  "139": [
+    "src/map/banks/3/23/trainer.asm"
+  ],
+  "140": [
+    "src/map/banks/3/76/trainer.asm"
+  ],
+  "141": [
+    "src/map/banks/3/5/person.asm"
+  ],
+  "142": [
+    "src/map/banks/9/16/person.asm"
+  ],
+  "143": [
+    "src/map/banks/9/16/person.asm"
+  ],
+  "144": [
+    "src/map/banks/9/16/person.asm"
+  ],
+  "145": [
+    "src/map/banks/9/16/trigger.asm"
+  ],
+  "146": [
+    "src/map/banks/18/2/person.asm"
+  ],
+  "147": [
+    "src/map/banks/18/3/trainer.asm"
+  ],
+  "148": [
+    "src/map/banks/18/3/trainer.asm"
+  ],
+  "149": [
+    "src/map/banks/18/3/trainer.asm"
+  ],
+  "150": [
+    "src/map/banks/18/3/trainer.asm"
+  ],
+  "151": [
+    "src/map/banks/18/3/trainer.asm"
+  ],
+  "152": [
+    "src/map/banks/18/3/trainer.asm"
+  ],
+  "153": [
+    "src/map/banks/1/31/person.asm"
+  ],
+  "154": [
+    "src/map/banks/1/31/person.asm"
+  ],
+  "156": [
+    "src/map/banks/1/30/trainer.asm"
+  ],
+  "157": [
+    "src/map/banks/1/30/trainer.asm"
+  ],
+  "158": [
+    "src/map/banks/1/30/trainer.asm"
+  ],
+  "159": [
+    "src/map/banks/18/3/trainer.asm"
+  ],
+  "160": [
+    "src/map/banks/18/3/trainer.asm"
+  ],
+  "161": [
+    "src/map/banks/18/3/trainer.asm"
+  ],
+  "162": [
+    "src/map/banks/18/3/trainer.asm"
+  ],
+  "163": [
+    "src/map/banks/1/81/person.asm"
+  ],
+  "164": [
+    "src/map/banks/1/81/person.asm"
+  ],
+  "165": [
+    "src/map/banks/1/81/person.asm"
+  ],
+  "166": [
+    "src/map/banks/1/81/person.asm"
+  ],
+  "167": [
+    "src/map/banks/1/81/person.asm"
+  ],
+  "168": [
+    "src/map/banks/1/81/person.asm"
+  ],
+  "169": [
+    "src/map/banks/1/126/person.asm"
+  ],
+  "170": [
+    "src/map/banks/0/13/person.asm",
+    "src/test.asm"
+  ],
+  "171": [
+    "src/map/banks/1/126/person.asm",
+    "src/map/banks/10/16/person.asm"
+  ],
+  "172": [
+    "src/map/banks/1/126/person.asm",
+    "src/map/banks/10/16/person.asm"
+  ],
+  "173": [
+    "src/map/banks/1/82/person.asm",
+    "src/map/banks/10/16/person.asm"
+  ],
+  "174": [
+    "src/map/banks/0/12/person.asm"
+  ],
+  "175": [
+    "src/map/banks/0/12/person.asm"
+  ],
+  "176": [
+    "src/map/banks/0/13/person.asm"
+  ],
+  "177": [
+    "src/map/banks/0/13/person.asm"
+  ],
+  "178": [
+    "src/map/banks/0/13/person.asm"
+  ],
+  "179": [
+    "src/map/banks/3/57/trigger.asm"
+  ],
+  "180": [
+    "src/map/banks/3/57/trigger.asm"
+  ],
+  "181": [
+    "src/map/banks/3/57/trigger.asm"
+  ],
+  "182": [
+    "src/map/banks/6/9/lscr.asm"
+  ],
+  "183": [
+    "src/map/banks/7/10/lscr.asm",
+    "src/test.asm"
+  ],
+  "184": [
+    "src/map/banks/5/13/trigger.asm",
+    "src/map/banks/5/6/levelscript.asm"
+  ],
+  "185": [
+    "src/map/banks/3/74/trigger.asm"
+  ],
+  "186": [
+    "src/map/banks/3/74/trigger.asm"
+  ],
+  "187": [
+    "src/map/banks/3/74/trigger.asm"
+  ],
+  "188": [
+    "src/map/banks/3/24/trigger.asm"
+  ],
+  "189": [
+    "src/map/banks/3/24/trigger.asm"
+  ],
+  "190": [
+    "src/map/banks/3/24/trigger.asm"
+  ],
+  "191": [
+    "src/map/banks/10/0/person.asm"
+  ],
+  "192": [
+    "src/map/banks/10/0/person.asm"
+  ],
+  "193": [
+    "src/map/banks/10/0/person.asm"
+  ],
+  "194": [
+    "src/map/banks/10/0/person.asm"
+  ],
+  "195": [
+    "src/map/banks/10/0/person.asm"
+  ],
+  "196": [
+    "src/map/banks/10/1/script/levelscript.asm"
+  ],
+  "197": [
+    "src/map/banks/3/8/trainer.asm"
+  ],
+  "198": [
+    "src/map/banks/3/8/trainer.asm"
+  ],
+  "199": [
+    "src/map/banks/3/8/trainer.asm"
+  ],
+  "200": [
+    "src/map/banks/3/8/trainer.asm"
+  ],
+  "201": [
+    "src/map/banks/3/8/trainer.asm"
+  ],
+  "202": [
+    "src/map/banks/3/10/trainer.asm"
+  ],
+  "203": [
+    "src/map/banks/3/10/trainer.asm"
+  ],
+  "204": [
+    "src/map/banks/3/10/trainer.asm"
+  ],
+  "205": [
+    "src/map/banks/3/10/trainer.asm"
+  ],
+  "206": [
+    "src/map/banks/3/10/trainer.asm"
+  ],
+  "207": [
+    "src/map/banks/3/10/trainer.asm"
+  ],
+  "208": [
+    "src/map/banks/3/10/trainer.asm"
+  ],
+  "209": [
+    "src/map/banks/13/0/trainer.asm"
+  ],
+  "210": [
+    "src/map/banks/13/0/trainer.asm"
+  ],
+  "211": [
+    "src/map/banks/13/0/trainer.asm"
+  ],
+  "212": [
+    "src/map/banks/13/0/trainer.asm"
+  ],
+  "213": [
+    "src/map/banks/13/0/trainer.asm"
+  ],
+  "214": [
+    "src/map/banks/13/0/trainer.asm"
+  ],
+  "215": [
+    "src/map/banks/13/0/trainer.asm"
+  ],
+  "216": [
+    "src/map/banks/3/11/trainer.asm"
+  ],
+  "217": [
+    "src/map/banks/3/11/trainer.asm"
+  ],
+  "218": [
+    "src/map/banks/3/11/trainer.asm"
+  ],
+  "219": [
+    "src/map/banks/3/11/trainer.asm"
+  ],
+  "220": [
+    "src/map/banks/3/11/trainer.asm"
+  ],
+  "221": [
+    "src/map/banks/3/11/trainer.asm"
+  ],
+  "222": [
+    "src/map/banks/3/11/trainer.asm"
+  ],
+  "223": [
+    "src/map/banks/3/11/trainer.asm"
+  ],
+  "224": [
+    "src/map/banks/14/0/trainer.asm"
+  ],
+  "226": [
+    "src/map/banks/3/12/trainer.asm"
+  ],
+  "227": [
+    "src/map/banks/3/12/trainer.asm"
+  ],
+  "228": [
+    "src/map/banks/3/12/trainer.asm"
+  ],
+  "229": [
+    "src/map/banks/3/12/trainer.asm"
+  ],
+  "230": [
+    "src/map/banks/3/12/trainer.asm"
+  ],
+  "231": [
+    "src/map/banks/3/12/trainer.asm"
+  ],
+  "232": [
+    "src/map/banks/3/12/trainer.asm"
+  ],
+  "233": [
+    "src/map/banks/3/12/trainer.asm"
+  ],
+  "234": [
+    "src/map/banks/3/14/trainer.asm"
+  ],
+  "235": [
+    "src/map/banks/3/14/trainer.asm"
+  ],
+  "236": [
+    "src/map/banks/3/14/trainer.asm"
+  ],
+  "237": [
+    "src/map/banks/3/14/trainer.asm"
+  ],
+  "238": [
+    "src/map/banks/3/14/trainer.asm"
+  ],
+  "239": [
+    "src/map/banks/3/14/trainer.asm"
+  ],
+  "240": [
+    "src/map/banks/3/14/trainer.asm"
+  ],
+  "241": [
+    "src/map/banks/3/14/trainer.asm"
+  ],
+  "242": [
+    "src/map/banks/3/14/trainer.asm"
+  ],
+  "243": [
+    "src/map/banks/19/6/waiting_room_scripts_trainerbattle.asm"
+  ],
+  "244": [
+    "src/map/banks/19/6/waiting_room_scripts_trainerbattle.asm"
+  ],
+  "245": [
+    "src/map/banks/19/6/waiting_room_scripts_trainerbattle.asm"
+  ],
+  "246": [
+    "src/map/banks/19/6/waiting_room_scripts_trainerbattle.asm"
+  ],
+  "247": [
+    "src/map/banks/19/6/waiting_room_scripts_trainerbattle.asm"
+  ],
+  "248": [
+    "src/map/banks/19/6/waiting_room_scripts_trainerbattle.asm"
+  ],
+  "249": [
+    "src/map/banks/19/6/waiting_room_scripts_trainerbattle.asm"
+  ],
+  "250": [
+    "src/map/banks/19/6/waiting_room_scripts_trainerbattle.asm"
+  ],
+  "251": [
+    "src/map/banks/19/7/punishments.asm"
+  ],
+  "252": [
+    "src/map/banks/3/15/trainer.asm"
+  ],
+  "253": [
+    "src/map/banks/3/15/trainer.asm"
+  ],
+  "254": [
+    "src/map/banks/3/15/trainer.asm"
+  ],
+  "255": [
+    "src/map/banks/3/15/trainer.asm"
+  ],
+  "256": [
+    "src/map/banks/3/15/trainer.asm"
+  ],
+  "257": [
+    "src/map/banks/3/16/trainer.asm"
+  ],
+  "258": [
+    "src/map/banks/3/16/trainer.asm"
+  ],
+  "259": [
+    "src/map/banks/3/16/trainer.asm"
+  ],
+  "260": [
+    "src/map/banks/3/16/trainer.asm"
+  ],
+  "261": [
+    "src/map/banks/3/16/trainer.asm"
+  ],
+  "262": [
+    "src/map/banks/3/16/trainer.asm"
+  ],
+  "263": [
+    "src/map/banks/3/16/trainer.asm"
+  ],
+  "264": [
+    "src/map/banks/3/16/trainer.asm"
+  ],
+  "265": [
+    "src/map/banks/3/16/trainer.asm"
+  ],
+  "266": [
+    "src/map/banks/3/16/trainer.asm"
+  ],
+  "267": [
+    "src/map/banks/3/16/trainer.asm"
+  ],
+  "268": [
+    "src/map/banks/3/16/trainer.asm"
+  ],
+  "269": [
+    "src/map/banks/3/16/trainer.asm"
+  ],
+  "270": [
+    "src/map/banks/3/16/trainer.asm"
+  ],
+  "271": [
+    "src/map/banks/3/16/trainer.asm"
+  ],
+  "272": [
+    "src/map/banks/3/16/trainer.asm"
+  ],
+  "273": [
+    "src/map/banks/11/2_route_2_east_clouds/trainer.asm"
+  ],
+  "274": [
+    "src/map/banks/11/2_route_2_east_clouds/trainer.asm"
+  ],
+  "275": [
+    "src/map/banks/11/3_route_2_north_clouds/trainer.asm"
+  ],
+  "276": [
+    "src/map/banks/11/3_route_2_north_clouds/trainer.asm"
+  ],
+  "277": [
+    "src/map/banks/11/3_route_2_north_clouds/trainer.asm"
+  ],
+  "278": [
+    "src/map/banks/17/2/trainer.asm"
+  ],
+  "279": [
+    "src/map/banks/9/0/trainer.asm"
+  ],
+  "280": [
+    "src/map/banks/9/0/trainer.asm"
+  ],
+  "281": [
+    "src/map/banks/9/0/trainer.asm"
+  ],
+  "282": [
+    "src/map/banks/18/0/trainer.asm"
+  ],
+  "283": [
+    "src/map/banks/18/0/trainer.asm"
+  ],
+  "284": [
+    "src/map/banks/10/2/trainer.asm"
+  ],
+  "285": [
+    "src/map/banks/16/0/trainer.asm"
+  ],
+  "286": [
+    "src/map/banks/16/0/trainer.asm"
+  ],
+  "287": [
+    "src/map/banks/8/1/trainer.asm"
+  ],
+  "288": [
+    "src/map/banks/8/1/trainer.asm"
+  ],
+  "289": [
+    "src/map/banks/22/0/trainer.asm"
+  ],
+  "291": [
+    "src/map/banks/7/0/trainer.asm"
+  ],
+  "292": [
+    "src/map/banks/15/2/trainer.asm"
+  ],
+  "293": [
+    "src/map/banks/1/2/trainer.asm"
+  ],
+  "294": [
+    "src/map/banks/1/2/trainer.asm"
+  ],
+  "295": [
+    "src/map/banks/23/0/trainer.asm"
+  ],
+  "296": [
+    "src/map/banks/12/5/trainer.asm"
+  ],
+  "297": [
+    "src/map/banks/13/4/trainer.asm"
+  ],
+  "298": [
+    "src/map/banks/13/4/trainer.asm"
+  ],
+  "299": [
+    "src/map/banks/13/5/trainer.asm"
+  ],
+  "300": [
+    "src/map/banks/6/6/trainer.asm"
+  ],
+  "301": [
+    "src/map/banks/24/0/trainer.asm"
+  ],
+  "302": [
+    "src/map/banks/25/0/trainer.asm"
+  ],
+  "303": [
+    "src/map/banks/19/9/trainer.asm"
+  ],
+  "305": [
+    "src/map/banks/26/1/trainer.asm"
+  ],
+  "306": [
+    "src/map/banks/26/1/trainer.asm"
+  ],
+  "307": [
+    "src/map/banks/27/0/trainer.asm"
+  ],
+  "309": [
+    "src/map/banks/29/0/trainer.asm"
+  ],
+  "310": [
+    "src/map/banks/29/0/trainer.asm"
+  ],
+  "311": [
+    "src/map/banks/29/0/trainer.asm"
+  ],
+  "312": [
+    "src/map/banks/29/0/trainer.asm"
+  ],
+  "313": [
+    "src/map/banks/29/0/trigger.asm"
+  ],
+  "314": [
+    "src/map/banks/29/0/trigger.asm"
+  ],
+  "317": [
+    "src/map/banks/3/17/may.asm"
+  ],
+  "318": [
+    "src/map/banks/19/10/levelscript.asm"
+  ],
+  "319": [
+    "src/map/banks/29/3/trainer.asm"
+  ],
+  "320": [
+    "src/map/banks/29/3/trainer.asm"
+  ],
+  "321": [
+    "src/map/banks/29/3/trainer.asm"
+  ],
+  "322": [
+    "src/map/banks/29/2/trainer.asm"
+  ],
+  "323": [
+    "src/map/banks/29/2/trainer.asm"
+  ],
+  "324": [
+    "src/map/banks/29/2/trainer.asm"
+  ],
+  "325": [
+    "src/map/banks/29/2/trainer.asm"
+  ],
+  "326": [
+    "src/map/banks/29/2/trainer.asm"
+  ],
+  "327": [
+    "src/map/banks/29/2/trainer.asm"
+  ],
+  "330": [
+    "src/map/banks/3/18/trainer.asm"
+  ],
+  "331": [
+    "src/map/banks/3/18/trainer.asm"
+  ],
+  "332": [
+    "src/map/banks/3/18/trainer.asm"
+  ],
+  "333": [
+    "src/map/banks/3/18/trainer.asm"
+  ],
+  "334": [
+    "src/map/banks/29/1/trainer.asm"
+  ],
+  "335": [
+    "src/map/banks/29/1/trainer.asm"
+  ],
+  "336": [
+    "src/map/banks/29/1/trainer.asm"
+  ],
+  "337": [
+    "src/map/banks/29/1/trainer.asm"
+  ],
+  "338": [
+    "src/map/banks/29/1/trainer.asm"
+  ],
+  "339": [
+    "src/map/banks/29/1/trainer.asm"
+  ],
+  "340": [
+    "src/map/banks/29/1/trainer.asm"
+  ],
+  "341": [
+    "src/map/banks/29/1/trainer.asm"
+  ],
+  "342": [
+    "src/map/banks/29/1/trainer.asm"
+  ],
+  "343": [
+    "src/map/banks/29/1/trainer.asm"
+  ],
+  "344": [
+    "src/map/banks/29/1/trainer.asm"
+  ],
+  "345": [
+    "src/map/banks/31/0/trainer.asm"
+  ],
+  "346": [
+    "src/map/banks/31/9/trainer.asm"
+  ],
+  "347": [
+    "src/map/banks/29/2/trainer.asm"
+  ],
+  "348": [
+    "src/map/banks/31/13/trainer.asm"
+  ],
+  "349": [
+    "src/map/banks/31/12/trainer.asm"
+  ],
+  "350": [
+    "src/map/banks/31/17/levelscript.asm",
+    "src/test.asm"
+  ],
+  "351": [
+    "src/map/banks/3/41/trigger.asm",
+    "src/test.asm"
+  ],
+  "352": [
+    "src/map/banks/3/41/trigger.asm",
+    "src/test.asm"
+  ],
+  "353": [
+    "src/map/banks/3/41/trigger.asm",
+    "src/test.asm"
+  ],
+  "354": [
+    "src/map/banks/3/7/trainer.asm"
+  ],
+  "355": [
+    "src/map/banks/3/41/trainer.asm"
+  ],
+  "356": [
+    "src/map/banks/3/41/trigger.asm"
+  ],
+  "357": [
+    "src/map/banks/3/41/trainer.asm"
+  ],
+  "358": [
+    "src/map/banks/3/41/trainer.asm"
+  ],
+  "359": [
+    "src/map/banks/15/0/trainer.asm"
+  ],
+  "360": [
+    "src/map/banks/0/5/trainer.asm"
+  ],
+  "361": [
+    "src/map/banks/1/59/trigger.asm"
+  ],
+  "362": [
+    "src/map/banks/1/59/trigger.asm"
+  ],
+  "363": [
+    "src/map/banks/3/22/trainer.asm"
+  ],
+  "364": [
+    "src/map/banks/3/23/trainer.asm"
+  ],
+  "365": [
+    "src/map/banks/3/23/trainer.asm"
+  ],
+  "366": [
+    "src/map/banks/18/3/trainer.asm"
+  ],
+  "367": [
+    "src/map/banks/18/3/trainer.asm"
+  ],
+  "368": [
+    "src/map/banks/0/13/person.asm",
+    "src/test.asm"
+  ],
+  "369": [
+    "src/map/banks/0/13/person.asm"
+  ],
+  "370": [
+    "src/map/banks/0/13/person.asm"
+  ],
+  "371": [
+    "src/map/banks/0/13/person.asm"
+  ],
+  "372": [
+    "src/map/banks/3/10/trainer.asm"
+  ],
+  "373": [
+    "src/map/banks/3/10/trainer.asm"
+  ],
+  "374": [
+    "src/map/banks/3/8/trainer.asm"
+  ],
+  "375": [
+    "src/map/banks/3/8/trainer.asm"
+  ],
+  "377": [
+    "src/map/banks/29/2/trainer.asm"
+  ],
+  "378": [
+    "src/map/banks/3/18/trainer.asm"
+  ],
+  "379": [
+    "src/map/banks/3/18/trainer.asm"
+  ],
+  "380": [
+    "src/map/banks/3/16/trainer.asm"
+  ],
+  "381": [
+    "src/map/banks/3/12/trainer.asm"
+  ],
+  "382": [
+    "src/map/banks/19/9/trainer.asm"
+  ],
+  "383": [
+    "src/map/banks/19/9/trainer.asm"
+  ],
+  "384": [
+    "src/map/banks/19/9/trainer.asm"
+  ],
+  "385": [
+    "src/map/banks/32/0/trainer.asm"
+  ],
+  "386": [
+    "src/map/banks/32/1/trainer.asm"
+  ],
+  "387": [
+    "src/map/banks/32/3/trainer.asm"
+  ],
+  "388": [
+    "src/map/banks/33/2/trainer.asm"
+  ],
+  "389": [
+    "src/map/banks/33/2/trainer.asm"
+  ],
+  "390": [
+    "src/map/banks/33/2/trainer.asm"
+  ],
+  "391": [
+    "src/map/banks/33/2/trainer.asm"
+  ],
+  "392": [
+    "src/map/banks/33/2/trainer.asm"
+  ],
+  "393": [
+    "src/map/banks/33/2/trainer.asm"
+  ],
+  "394": [
+    "src/map/banks/33/0/trainer.asm"
+  ],
+  "395": [
+    "src/map/banks/33/3/trainer.asm"
+  ],
+  "397": [
+    "src/map/banks/33/5/trainer.asm"
+  ],
+  "399": [
+    "src/map/banks/33/6/trainer.asm"
+  ],
+  "400": [
+    "src/map/banks/33/6/trainer.asm"
+  ],
+  "401": [
+    "src/map/banks/33/6/trainer.asm"
+  ],
+  "402": [
+    "src/map/banks/33/4/trainer.asm"
+  ],
+  "403": [
+    "src/map/banks/33/4/trainer.asm"
+  ],
+  "404": [
+    "src/map/banks/33/4/trainer.asm"
+  ],
+  "405": [
+    "src/map/banks/33/4/trainer.asm"
+  ],
+  "406": [
+    "src/map/banks/33/4/trainer.asm"
+  ],
+  "407": [
+    "src/map/banks/33/4/trainer.asm"
+  ],
+  "408": [
+    "src/map/banks/33/4/person.asm"
+  ],
+  "409": [
+    "src/map/banks/33/7/person.asm"
+  ],
+  "410": [
+    "src/map/banks/3/1/person.asm"
+  ],
+  "411": [
+    "src/map/banks/3/70/person.asm"
+  ],
+  "412": [
+    "src/map/banks/11/5/trainer.asm"
+  ],
+  "413": [
+    "src/map/banks/11/5/trainer.asm"
+  ],
+  "414": [
+    "src/map/banks/11/5/trainer.asm"
+  ],
+  "415": [
+    "src/map/banks/6/8/trainer.asm",
+    "src/map/banks/7/10/person.asm"
+  ],
+  "416": [
+    "src/map/banks/6/8/trainer.asm"
+  ],
+  "417": [
+    "src/map/banks/6/9/lscr.asm"
+  ],
+  "418": [
+    "src/map/banks/6/9/lscr.asm"
+  ],
+  "419": [
+    "src/map/banks/3/74/person.asm"
+  ],
+  "420": [
+    "src/map/banks/7/10/lscr.asm"
+  ],
+  "421": [
+    "src/map/banks/7/10/lscr.asm"
+  ],
+  "422": [
+    "src/map/banks/22/2/person.asm"
+  ],
+  "423": [
+    "src/map/banks/22/2/person.asm"
+  ],
+  "424": [
+    "src/map/banks/22/2/person.asm"
+  ],
+  "425": [
+    "src/map/banks/22/2/person.asm"
+  ],
+  "426": [
+    "src/map/banks/22/2/person.asm"
+  ],
+  "427": [
+    "src/map/banks/22/4/trainer.asm"
+  ],
+  "428": [
+    "src/map/banks/22/4/trainer.asm"
+  ],
+  "429": [
+    "src/map/banks/22/4/trainer.asm"
+  ],
+  "430": [
+    "src/map/banks/22/4/trainer.asm"
+  ],
+  "431": [
+    "src/map/banks/22/4/trainer.asm"
+  ],
+  "432": [
+    "src/map/banks/22/4/trainer.asm"
+  ],
+  "433": [
+    "src/map/banks/22/4/trainer.asm"
+  ],
+  "434": [
+    "src/map/banks/3/67/trainer.asm"
+  ],
+  "435": [
+    "src/map/banks/3/67/trainer.asm"
+  ],
+  "436": [
+    "src/map/banks/3/67/trainer.asm"
+  ],
+  "437": [
+    "src/map/banks/3/67/trainer.asm"
+  ],
+  "438": [
+    "src/map/banks/0/7/trainer.asm"
+  ],
+  "439": [
+    "src/map/banks/0/7/trainer.asm"
+  ],
+  "440": [
+    "src/map/banks/0/7/trainer.asm"
+  ],
+  "441": [
+    "src/map/banks/0/7/trainer.asm"
+  ],
+  "442": [
+    "src/map/banks/1/59/trainer.asm"
+  ],
+  "443": [
+    "src/map/banks/1/59/trainer.asm"
+  ],
+  "444": [
+    "src/map/banks/1/59/trainer.asm"
+  ],
+  "445": [
+    "src/map/banks/1/59/trainer.asm"
+  ],
+  "446": [
+    "src/map/banks/1/59/trainer.asm"
+  ],
+  "447": [
+    "src/map/banks/1/59/trainer.asm"
+  ],
+  "448": [
+    "src/map/banks/1/59/trigger.asm"
+  ],
+  "449": [
+    "src/map/banks/16/1/trainer.asm"
+  ],
+  "450": [
+    "src/map/banks/3/22/trainer.asm"
+  ],
+  "451": [
+    "src/map/banks/3/22/trainer.asm"
+  ],
+  "452": [
+    "src/map/banks/3/22/trainer.asm"
+  ],
+  "453": [
+    "src/map/banks/3/22/trainer.asm"
+  ],
+  "454": [
+    "src/map/banks/3/22/trainer.asm"
+  ],
+  "455": [
+    "src/map/banks/3/21/person.asm",
+    "src/map/banks/3/22/trainer.asm"
+  ],
+  "456": [
+    "src/map/banks/3/22/trainer.asm"
+  ],
+  "457": [
+    "src/map/banks/3/22/trainer.asm"
+  ],
+  "458": [
+    "src/map/banks/16/2/trainer.asm",
+    "src/map/banks/3/22/person.asm"
+  ],
+  "459": [
+    "src/map/banks/5/6/levelscript.asm"
+  ],
+  "460": [
+    "src/map/banks/5/6/levelscript.asm"
+  ],
+  "461": [
+    "src/map/banks/5/3/trainer.asm"
+  ],
+  "462": [
+    "src/map/banks/5/3/trainer.asm"
+  ],
+  "463": [
+    "src/map/banks/5/3/trainer.asm"
+  ],
+  "464": [
+    "src/map/banks/5/3/trainer.asm"
+  ],
+  "465": [
+    "src/map/banks/3/23/trainer.asm"
+  ],
+  "466": [
+    "src/map/banks/3/23/trainer.asm"
+  ],
+  "467": [
+    "src/map/banks/3/23/trainer.asm"
+  ],
+  "468": [
+    "src/map/banks/3/23/trainer.asm"
+  ],
+  "469": [
+    "src/map/banks/4/5/trainer.asm"
+  ],
+  "470": [
+    "src/map/banks/16/0/trainer.asm"
+  ],
+  "471": [
+    "src/map/banks/16/0/trainer.asm"
+  ],
+  "472": [
+    "src/map/banks/16/0/trainer.asm"
+  ],
+  "473": [
+    "src/map/banks/16/0/trainer.asm"
+  ],
+  "474": [
+    "src/map/banks/3/23/person.asm"
+  ],
+  "475": [
+    "src/map/banks/34/0/trainer.asm"
+  ],
+  "476": [
+    "src/map/banks/34/0/trainer.asm"
+  ],
+  "477": [
+    "src/map/banks/34/0/trainer.asm"
+  ],
+  "478": [
+    "src/map/banks/29/3/trainer.asm"
+  ],
+  "479": [
+    "src/map/banks/29/3/trainer.asm"
+  ],
+  "480": [
+    "src/map/dungeon2/script.asm"
+  ],
+  "481": [
+    "src/map/dungeon2/script.asm"
+  ],
+  "482": [
+    "src/map/dungeon2/script.asm"
+  ],
+  "483": [
+    "src/map/dungeon2/script.asm"
+  ],
+  "484": [
+    "src/map/banks/126/1/veteran.asm"
+  ],
+  "485": [
+    "src/map/banks/126/1/veteran.asm"
+  ],
+  "486": [
+    "src/map/banks/126/1/veteran.asm"
+  ],
+  "487": [
+    "src/map/banks/126/1/veteran.asm"
+  ],
+  "488": [
+    "src/map/banks/126/1/veteran.asm"
+  ],
+  "489": [
+    "src/map/banks/3/7/trainer.asm"
+  ],
+  "490": [
+    "src/map/banks/3/7/trainer.asm"
+  ],
+  "491": [
+    "src/map/banks/16/2/trainer.asm"
+  ],
+  "492": [
+    "src/map/banks/16/2/trainer.asm"
+  ],
+  "493": [
+    "src/map/banks/16/2/trainer.asm"
+  ],
+  "494": [
+    "src/map/banks/16/2/trainer.asm"
+  ],
+  "495": [
+    "src/map/banks/16/2/trainer.asm"
+  ],
+  "496": [
+    "src/map/banks/16/2/trainer.asm"
+  ],
+  "497": [
+    "src/map/banks/16/2/trainer.asm"
+  ],
+  "498": [
+    "src/map/banks/11/3_route_2_north_clouds/trainer.asm"
+  ],
+  "499": [
+    "src/map/banks/11/3_route_2_north_clouds/trainer.asm"
+  ],
+  "500": [
+    "src/map/banks/11/3_route_2_north_clouds/trainer.asm"
+  ],
+  "501": [
+    "src/map/banks/11/3_route_2_north_clouds/trainer.asm"
+  ],
+  "502": [
+    "src/map/banks/11/3_route_2_north_clouds/trainer.asm"
+  ],
+  "503": [
+    "src/map/banks/35/3/trainer.asm"
+  ],
+  "504": [
+    "src/map/banks/35/3/trainer.asm"
+  ],
+  "505": [
+    "src/map/banks/35/3/trainer.asm"
+  ],
+  "506": [
+    "src/map/banks/11/7/trainer.asm"
+  ],
+  "507": [
+    "src/map/banks/11/7/trainer.asm"
+  ],
+  "509": [
+    "src/map/banks/3/26/trainer.asm"
+  ],
+  "510": [
+    "src/map/banks/8/1/trainer.asm"
+  ],
+  "511": [
+    "src/map/banks/24/0/trigger.asm"
+  ],
+  "512": [
+    "src/map/banks/24/0/trainer.asm"
+  ],
+  "513": [
+    "src/map/banks/24/0/trainer.asm"
+  ],
+  "514": [
+    "src/map/banks/22/0/person.asm"
+  ],
+  "515": [
+    "src/map/banks/22/0/person.asm"
+  ],
+  "516": [
+    "src/map/banks/22/0/person.asm"
+  ],
+  "517": [
+    "src/map/banks/22/0/person.asm"
+  ],
+  "518": [
+    "src/map/banks/15/0/person.asm"
+  ],
+  "519": [
+    "src/map/banks/15/0/person.asm"
+  ],
+  "520": [
+    "src/map/banks/15/0/person.asm"
+  ],
+  "521": [
+    "src/map/banks/15/0/person.asm"
+  ],
+  "768": [
+    "src/test.asm"
+  ]
+}

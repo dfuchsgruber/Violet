@@ -65,6 +65,8 @@ extern EWRAM treasure_map_state_t *treasure_map_state;
 extern EWRAM u16 treasure_map_cursor_position;
 extern EWRAM u16 treasure_map_items_above;
 
+extern const LZ77COMPRESSED gfx_pokepad_vs_seekerTiles;
+extern const LZ77COMPRESSED gfx_pokepad_vs_seekerPal;
 extern const LZ77COMPRESSED gfx_pokepad_icon_treasure_mapTiles;
 extern const LZ77COMPRESSED gfx_pokepad_icon_treasure_mapPal;
 extern const LZ77COMPRESSED gfx_treasure_map_ui_backgroundTiles;

@@ -121,4 +121,10 @@ void oam_trainer_sprite_callback(oam_object *self);
  **/
 void ally_party_setup();
 
+
+/**
+ * Continuation function for trainer battles. Superstate callback.
+ **/
+void trainerbattle_continuation();
+
 #endif /* INCLUDE_C_TRAINER_TRAINER_H_ */

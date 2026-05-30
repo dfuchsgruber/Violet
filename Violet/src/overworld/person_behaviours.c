@@ -95,10 +95,10 @@ void (*const person_behaviour_oam_callbacks[NUM_BEHAVIOURS])(oam_object*) = {
     [BEHAVIOUR_RUN_IN_PLACE_LEFT] = behaviour_run_in_place_left_oam_callback,
     [BEHAVIOUR_RUN_IN_PLACE_RIGHT] = behaviour_run_in_place_right_oam_callback,
     [BEHAVIOUR_INVISIBLE] = behaviour_invisible_oam_callback,
-    [BEHAVIOUR_WALK_SLOWLY_IN_PLACE_DOWN] = behaviour_walk_slowly_in_place_down_oam_callback,
-    [BEHAVIOUR_WALK_SLOWLY_IN_PLACE_UP] = behaviour_walk_slowly_in_place_up_oam_callback,
-    [BEHAVIOUR_WALK_SLOWLY_IN_PLACE_LEFT] = behaviour_walk_slowly_in_place_left_oam_callback,
-    [BEHAVIOUR_WALK_SLOWLY_IN_PLACE_RIGHT] = behaviour_walk_slowly_in_place_right_oam_callback,
+    [BEHAVIOUR_RAISE_HAND_AND_STOP] = behaviour_walk_slowly_in_place_down_oam_callback,
+    [BEHAVIOUR_RAISE_HAND_AND_JUMP] = behaviour_walk_slowly_in_place_up_oam_callback,
+    [BEHAVIOUR_RAISE_HAND_AND_SWIM] = behaviour_walk_slowly_in_place_left_oam_callback,
+    [BEHAVIOUR_WANDER_AROUND_SLOWER] = behaviour_walk_slowly_in_place_right_oam_callback,
     [BEHAVIOUR_NO_ANIMATION] = person_behaviour_oam_callback_no_behaviour,
 };
 
@@ -144,7 +144,7 @@ const u8 person_behaviour_has_range[NUM_BEHAVIOURS] = {
     [BEHAVIOUR_COPY_PLAYER_OPPOSITE_IN_GRASS] = true,
     [BEHAVIOUR_COPY_PLAYER_COUNTERCLOCKWISE_IN_GRASS] = true,
     [BEHAVIOUR_COPY_PLAYER_CLOCKWISE_IN_GRASS] = true,
-    [BEHAVIOUR_WALK_SLOWLY_IN_PLACE_RIGHT] = true,
+    [BEHAVIOUR_WANDER_AROUND_SLOWER] = true,
 };
 
 const u8 person_behaviour_initial_direction[NUM_BEHAVIOURS] = {
@@ -225,9 +225,9 @@ const u8 person_behaviour_initial_direction[NUM_BEHAVIOURS] = {
     [BEHAVIOUR_RUN_IN_PLACE_LEFT] = DIR_LEFT,
     [BEHAVIOUR_RUN_IN_PLACE_RIGHT] = DIR_RIGHT,
     [BEHAVIOUR_INVISIBLE] = DIR_DOWN,
-    [BEHAVIOUR_WALK_SLOWLY_IN_PLACE_DOWN] = DIR_DOWN,
-    [BEHAVIOUR_WALK_SLOWLY_IN_PLACE_UP] = DIR_DOWN,
-    [BEHAVIOUR_WALK_SLOWLY_IN_PLACE_LEFT] = DIR_DOWN,
-    [BEHAVIOUR_WALK_SLOWLY_IN_PLACE_RIGHT] = DIR_DOWN,
+    [BEHAVIOUR_RAISE_HAND_AND_STOP] = DIR_DOWN,
+    [BEHAVIOUR_RAISE_HAND_AND_JUMP] = DIR_DOWN,
+    [BEHAVIOUR_RAISE_HAND_AND_SWIM] = DIR_DOWN,
+    [BEHAVIOUR_WANDER_AROUND_SLOWER] = DIR_DOWN,
     [BEHAVIOUR_NO_ANIMATION] = DIR_DOWN,
 };

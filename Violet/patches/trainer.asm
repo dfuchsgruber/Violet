@@ -117,5 +117,19 @@
 	ldr r0, =trainer_set_flags | 1
 	bx r0
 	.pool
+
+.org 0x08080398
+	ldr r1, =trainerflag_set | 1
+	bx r1
+	.pool
+
+.org 0x0810c5f8
+	ldr r2, =vs_seeker_reset_on_map | 1
+	bx r2
+	.pool
+
+// nullsub the step counter increment for vs_seeker
+.org 0x0810c56c
+	bx lr
 /**
 **/

@@ -1,6 +1,7 @@
 #ifndef H_CALLBACK
 #define H_CALLBACK
 
+#include "types.h"
 
 void nullsub();
 

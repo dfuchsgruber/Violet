@@ -127,26 +127,42 @@ static void trainer_pokemon_new(pokemon *p, const trainer_pokemon *template) {
 		);
 }
 
+static int party_setup_by_trainer(pokemon *dst_party, const trainer *trainer) {
+	size_t idxs[6] = {0, 1, 2, 3, 4, 5};
+	if (*var_access(DIFFICULTY) == DIFFICULTY_HARD) {  // Shuffle
+		shuffle(idxs, trainer->pokemon_cnt, NULL);
+	}
+	for (int j = 0; j < trainer->pokemon_cnt; j++)
+		DEBUG("Shuffled team order %d : %d\n", j, idxs[j]);
+	for (int j = 0; j < trainer->pokemon_cnt; j++) {
+		trainer_pokemon_new(dst_party + j, trainer->party + j);
+	}
+	battle_flags |= trainer->battle_state;
+	return trainer->pokemon_cnt;
+}
+
 
 static int party_setup_by_trainer_idx(pokemon *dst_party, u16 trainer_id) {
 	if (trainer_id >= 0x1e0 && trainer_id < 0x1e4)
 		dungeon2_init_trainer(trainer_id);
 	// To generate a trainer consistent pid we use a pseudo rng
 	trainer_prng_state = trainer_id;
-	size_t idxs[6] = {0, 1, 2, 3, 4, 5};
-	if (*var_access(DIFFICULTY) == DIFFICULTY_HARD) {  // Shuffle
-		shuffle(idxs, trainers[trainer_id].pokemon_cnt, NULL);
+	if (battle_flags & BATTLE_VS_SEEKER) {
+		trainer *trainer_p = malloc_and_clear(sizeof(trainer));
+		trainer_pokemon *party = malloc_and_clear(sizeof(trainer_pokemon) * 6);
+		vs_seeker_setup_trainer_party(trainer_id, trainer_p, party);
+		trainer_p->party = party;
+		int num_setup = party_setup_by_trainer(dst_party, trainer_p);
+		party_setup_by_trainer(dst_party, trainer_p);
+		free(trainer_p);
+		free(party);
+		return num_setup;
+	} else {
+		return party_setup_by_trainer(dst_party, trainers + trainer_id);
 	}
-	for (int j = 0; j < trainers[trainer_id].pokemon_cnt; j++)
-		DEBUG("Shuffled team order %d : %d\n", j, idxs[j]);
-	for (int j = 0; j < trainers[trainer_id].pokemon_cnt; j++) {
-		trainer_pokemon_new(dst_party + j, trainers[trainer_id].party + j);
-	}
-	battle_flags |= trainers[trainer_id].battle_state;
-	return trainers[trainer_id].pokemon_cnt;
 }
 
-
+	
 int trainer_party_setup() {
 	int num_pokemon_setup = 0;
 	if (!(battle_flags & BATTLE_TOWER) && !(battle_flags & BATTLE_EREADER)

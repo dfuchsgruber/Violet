@@ -5,6 +5,7 @@
 #include "pokepad/wondertrade.h"
 #include "pokepad/incubator.h"
 #include "pokepad/treasure_map.h"
+#include "pokepad/vs_seeker.h"
 #include "save.h"
 #include "bg.h"
 #include "color.h"
@@ -56,6 +57,7 @@ static const u8 pokedex_name[] = LANGDEP(PSTRING("Pokédex"), PSTRING("Pokédex"
 static const u8 pokeradar_name[] = LANGDEP(PSTRING("Pokéradar"), PSTRING("Pokéradar"));
 static const u8 incubator_name[] = LANGDEP(PSTRING("Inkubator"), PSTRING("Incubator"));
 static const u8 treasure_map_name[] = LANGDEP(PSTRING("Karten"), PSTRING("Maps"));
+static const u8 vs_seeker_name[] = LANGDEP(PSTRING("Kampff."), PSTRING("VS-Seeker"));
 
 static const u8 wondertrade_description[] = LANGDEP(
     PSTRING("Tausche Pokémon mit Trainern aus aller\nWelt."),
@@ -76,6 +78,10 @@ static const u8 incubator_description[] = LANGDEP(
 static const u8 treasure_map_description[] = LANGDEP(
     PSTRING("Sieh dir Schatzkarten an, die\ndu gefunden hast."),
     PSTRING("Look at treasure maps you found.")
+);
+static const u8 vs_seeker_description[] = LANGDEP(
+    PSTRING("Fordere Trainer in der Nähe zu einem\nRückkampf heraus."),
+    PSTRING("Challenge nearby trainers to a\nrematch.")
 );
 
 static const pokepad2_item pokepad2_items[] = {
@@ -142,6 +148,19 @@ static const pokepad2_item pokepad2_items[] = {
         },
         .icon_palette = {
             .pal = gfx_pokepad_icon_treasure_mapPal, .tag = POKEPAD_ITEM_ICON_BASE_TAG + POKEPAD_ITEM_TREASURE_MAP,
+        },
+    },
+    [POKEPAD_ITEM_VS_SEEKER] = {
+        .name = vs_seeker_name,
+        .description = vs_seeker_description,
+        .flag = FLAG_VS_SEEKER,
+        .initialize = vs_seeker_initialize,
+        .icon_graphic = {
+            .sprite = gfx_pokepad_vs_seekerTiles, .size = GRAPHIC_SIZE_4BPP(32, 32), 
+            .tag = POKEPAD_ITEM_ICON_BASE_TAG + POKEPAD_ITEM_VS_SEEKER,
+        },
+        .icon_palette = {
+            .pal = gfx_pokepad_vs_seekerPal, .tag = POKEPAD_ITEM_ICON_BASE_TAG + POKEPAD_ITEM_VS_SEEKER,
         },
     }
 };
@@ -326,6 +345,7 @@ static void pokepad2_update_description() {
     const pokepad2_item *item = pokepad2_items + pokepad_state->items[pokepad_state->cursor_idx];
     tbox_flush_set(TBOX_DESCRIPTION, 0x11);
     tbox_print_string(TBOX_DESCRIPTION, 2, 8, 6, 0, 0, &description_fontcolmap, 0, item->description);
+    DEBUG("Description updated for item %d", pokepad_state->cursor_idx);
 }
 
 static const u8 str_key_l[] = PSTRING("KEY_L");
@@ -602,8 +622,8 @@ enum {
     RESET,
     BG_SETUP,
     GFX_LOAD,
-    TBOX_SETUP,
     DATA_SETUP,
+    TBOX_SETUP,
     APP_SETUP,
     PAL_SETUP,
     CURSOR_SETUP,
@@ -699,6 +719,7 @@ static void pokepad2_initialize() {
             tbox_print_string(TBOX_HEADER, 2, 8, 0, 0, 0, &description_fontcolmap, 0, str_header);
             tbox_sync(TBOX_APP_UPPER, TBOX_SYNC_SET);
             tbox_sync(TBOX_APP_LOWER, TBOX_SYNC_SET);
+            DEBUG("Setup description.\n");
             pokepad2_update_description();
             ++(pokepad_state->initialization_state);
             break;

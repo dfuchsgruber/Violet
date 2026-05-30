@@ -111,8 +111,10 @@ typedef struct saveblock1 {
     /*0x0430*/ bag_item_t bag_pocket_pokeballs[MAX_NUM_BAG_POKEBALLS];
     /*0x0464*/ bag_item_t bag_pocket_tm_hms[MAX_NUM_BAG_TM_HMS];
     /*0x054c*/ bag_item_t bag_pocket_berries[MAX_NUM_BAG_BERRIES];
-    /*0x0638*/ u16 trainer_rematch_step_counter;
-    /*0x063A*/ u8 ALIGNED(2) trainer_rematches[100];
+    /*0x0638*/ u16 unused_3; // previously, step counter for vs seeker, but this is not needed anymore, so it can be used for something else
+    u8 trainer_rematch_triggered[64 / 8];
+     // Freed from repurposing vs seeker; we do not store per 100 entries (even though there is only 64 persons...) which rematch idx, but only if there was one issued
+    u8 unused_2[92];
     /*0x06A0*/ npc npcs[NUM_NPCS];
     // 0x8e0
     map_event_person persons[64];
@@ -124,7 +126,7 @@ typedef struct saveblock1 {
     int dungeon_nodes[16][2];
     u8 tm_used_flags[16];
     bag_item_t bag_pocket_bait[MAX_NUM_BAG_BAIT];
-    u8 trainer_rematch_flags[96]; // 0x300=768 flags for rematches
+    u8 trainer_rematch_flags[VS_SEEKER_NUM_FLAGS / 8]; // 0x300=768 flags for rematches
     u8 questlog[16];
     u8 field_4864[80];
     u16 mail_words[2][9]; // Might be there are more than 2 mails
@@ -207,7 +209,7 @@ typedef struct custom_memory {
     rtc_timestamp daily_events_last_update;
     u32 daily_events_seed;
     rtc_timestamp fossil_gen_time;
-    u8 vs_seeker_flags[VS_SEEKER_NUM_FLAGS / 8];
+    u8 unused_4[96];
     map_event_person pokeradar_person;
     
     //Dungeon Memory II

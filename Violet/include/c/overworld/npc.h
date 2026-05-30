@@ -895,6 +895,32 @@ void npc_create_all_in_viewport_if_not_present(s16 camera_x, s16 camera_y);
  */
 void npc_clear_held_movement_if_active(npc *n);
 
+void npc_player_clear_held_movement_and_unlock_npcs();
+
+/**
+ * @brief Checks if an npc index is valid
+ * 
+ * @param npc_idx the npc index to check
+ * @return `true` if the index is valid, `false` otherwise
+ */
+bool npc_idx_is_sane(u8 npc_idx);
+
+/**
+ * @brief Sets the movement type of a trainer npc, which controls how it moves when triggered for battle
+ * 
+ * @param n the npc to set the movement type for
+ * @param movement_type the movement type to set.
+ */
+void npc_set_trainer_movement_type(npc *n, u8 movement_type);
+
+/**
+ * @brief Overrides the movement type of a trainer npc.
+ * 
+ * @param n the npc to set the movement type for
+ * @param movement_type the movement type to set.
+ */
+void npc_override_movement_type(npc *n, u8 movement_type);
+
 enum {
     PLAYER_TRANSITION_NORMAL,
     PLAYER_TRANSITION_BIKE,

@@ -17,6 +17,7 @@
 #include "constants/time_types.h"
 #include "overworld/map_control.h"
 #include "difficulty_settings.h"
+#include "pokepad/vs_seeker.h"
 
 static void new_game_initialize_custom_flags() {
     setflag(AMONIA_RIVAL_INSIDE_PLAYER_HOUSE);
@@ -45,6 +46,7 @@ void new_game_initialize_custom_data() {
     new_game_initialize_time();
     new_game_initialize_custom_vars();
     new_game_initialize_custom_flags();
+    vs_seeker_reset_rematch_flags();
 }
 
 void new_game_warp_to_initial_map() {
