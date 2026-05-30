@@ -1,0 +1,5 @@
+interface:
+  display_name: "Violet Battle/Pokemon"
+  short_description: "Work with Violet battle mechanics, Pokemon code, moves, abilities, and items."
+  default_prompt: "Use this skill when modifying Violet battle, Pokemon, attack, item, ability, evolution, or gameplay mechanics code."
+

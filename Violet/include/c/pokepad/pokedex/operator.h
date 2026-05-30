@@ -41,6 +41,9 @@ u8* pokedex_flag_access(u16 flag, bool seen);
  */
 u16 pokedex_get_number_seen_or_caught(bool caught);
 
+#define POKEDEX_NUMBER_SEEN pokedex_get_number_seen_or_caught(false)
+#define POKEDEX_NUMBER_CAUGHT pokedex_get_number_seen_or_caught(true)
+
 /**
  * Finds the dex id of a species
  * @param species the species

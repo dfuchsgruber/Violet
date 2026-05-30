@@ -15,8 +15,13 @@ extern "C" {
 
 
 
-
+	#ifdef VSCODE_INTELLISENSE
+	#undef PSTRING
+	#undef LANGDEP
+	#define PSTRING(...) { __VA_ARGS__ }
+	#else
 	#define PSTRING(...) __VA_ARGS__
+	#endif
 
 
 	// Define language dependent macro

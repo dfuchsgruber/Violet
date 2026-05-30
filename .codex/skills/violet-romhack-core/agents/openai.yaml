@@ -1,0 +1,5 @@
+interface:
+  display_name: "Violet Romhack Core"
+  short_description: "Work with Violet build, hooks, assets, scripts, and core C code."
+  default_prompt: "Use this skill when making general code changes in the Pokemon Violet FireRed romhack repository."
+

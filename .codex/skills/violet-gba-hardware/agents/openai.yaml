@@ -1,0 +1,5 @@
+interface:
+  display_name: "Violet GBA Hardware"
+  short_description: "Apply GBATEK GBA hardware constraints to Violet code."
+  default_prompt: "Use this skill when Violet code touches timing, VRAM/OAM/palette, BGs, DMA, interrupts, input, sound, or cartridge/save behavior."
+

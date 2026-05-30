@@ -1,0 +1,5 @@
+interface:
+  display_name: "Violet GBA UI"
+  short_description: "Work with Violet menus, screens, callbacks, BGs, OAM, and textboxes."
+  default_prompt: "Use this skill when modifying Pokepad, crafting, worldmap, start menu, PC, EV menu, or other Violet GBA UI flows."
+
