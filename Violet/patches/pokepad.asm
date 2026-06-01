@@ -1,10 +1,4 @@
-.org 0x083A7190
-    .word str_pokepad
-    .word start_menu_pokepad_initialize | 1 //startmenu_init_pokepad | 1
-    .word str_pokemon
 
-.org 0x083A71E0
-	.word str_pokepad_description
 
 //Pokeradar
 .org 0x0805FDB0

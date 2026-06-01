@@ -12,6 +12,8 @@
 #include "list_menu.h"
 #include "debug.h"
 #include "pokepad/pokedex/scanner.h"
+#include "achievements.h"
+#include "flags.h"
 
 extern const u8 ow_script_dungeon_exit[];
 
@@ -72,6 +74,10 @@ const start_menu_item_t start_menu_items[NUM_START_MENU_ITEMS] = {
         .name = str_leave,
         .initialize = start_menu_leave_dungeon_initialize,
     },
+    [START_MENU_ACHIEVEMENTS] = {
+        .name = (const u8[]) LANGDEP(PSTRING("Erfolge"), PSTRING("Achievements")),
+        .initialize = start_menu_achievements_initialize,
+    },
 };
 
 static const u8 str_pokepad_description[] = LANGDEP(
@@ -130,6 +136,10 @@ const u8 *const start_menu_item_descriptions[NUM_START_MENU_ITEMS] = {
     [START_MENU_RETIRE] = str_retire_description,
     [START_MENU_PLAYER2] = str_trainer_card_description,
     [START_MENU_LEAVE_DUNGEON] = str_leave_dungeon_description,
+    [START_MENU_ACHIEVEMENTS] = (const u8[]) LANGDEP(
+        PSTRING("Überprüfe die Erfolge, die du\nfreigeschaltet hast."),
+        PSTRING("Check the achievements you\nhave unlocked.")
+    ),
 };
 
 void start_menu_build_dungeon() {
@@ -155,6 +165,20 @@ void start_menu_build() {
     } else {
         start_menu_build_std();
     }
+}
+
+void start_menu_build_std() {
+    if (checkflag(POKEDEX))
+        start_menu_add_item(START_MENU_POKEPAD);
+    if (checkflag(PKMNMENU))
+        start_menu_add_item(START_MENU_POKEMON);
+
+    start_menu_add_item(START_MENU_BAG);
+    start_menu_add_item(START_MENU_PLAYER);
+    start_menu_add_item(START_MENU_SAVE);
+    start_menu_add_item(START_MENU_ACHIEVEMENTS);
+    start_menu_add_item(START_MENU_OPTION);
+    start_menu_add_item(START_MENU_EXIT);
 }
 
 bool start_menu_handle_input() {

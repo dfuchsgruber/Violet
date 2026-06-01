@@ -8,6 +8,8 @@
 #ifndef INCLUDE_C_OVERWORLD_START_MENU_H_
 #define INCLUDE_C_OVERWORLD_START_MENU_H_
 
+#include "types.h"
+
 typedef struct {
     const u8 *name;
     bool (*initialize)();
@@ -24,6 +26,7 @@ enum {
     START_MENU_RETIRE,
     START_MENU_PLAYER2,
     START_MENU_LEAVE_DUNGEON,
+    START_MENU_ACHIEVEMENTS, // TODO: maybe move to trainer card later on?
     NUM_START_MENU_ITEMS,
 };
 

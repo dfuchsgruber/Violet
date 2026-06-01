@@ -1242,7 +1242,6 @@ callback_update_link_state_is_cb0 = 0x0805644c | 1;
 start_menu_build_link = 0x0806ed98 | 1;
 start_menu_build_union_room = 0x0806edbc | 1;
 start_menu_build_safari = 0x0806ed68 | 1;
-start_menu_build_std = 0x0806ed14 | 1;
 start_menu_pokemon_initialize = 0x0806f3b0 | 1;
 start_menu_trainer_card_initialize = 0x0806f418 | 1;
 start_menu_save_initialize = 0x0806f44c | 1;
