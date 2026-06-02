@@ -27,6 +27,7 @@ Trigger `violet-gba-hardware` when a change touches hardware timing, memory plac
 
 - C is built as C99 Thumb code with `-Wall -Werror -Wextra -Wconversion -O2`; keep casts explicit and warnings clean.
 - The linked overlay is imported by armips at `0x09000000`; do not assume normal hosted C runtime behavior.
+- RAM and ROM are scarce. Minimize storage widths in structs and persistent data: prefer `u8`, `u16`, and bitfields such as `u8 flag : 1` over `bool` when storing state, because `bool` is 4 bytes in this codebase.
 - New persistent game state should usually go in `custom_memory csave` or existing saveblock slack only after checking layout impact.
 - User-facing text usually needs both German and English through `LANGDEP(PSTRING(...), PSTRING(...))` in C or `.ifdef LANG_GER` / `.elseif LANG_EN` in assembly.
 - Match the local feature shape: table-driven registries, heap-backed UI state, script-facing special/callasm glue, persistent `csave` state, or stateless service helpers.

@@ -10,6 +10,16 @@
 .global ow_script_achievement_pokedex_catch_50_reward
 .global ow_script_achievement_pokedex_catch_150_reward
 
+end_achievement_reward:
+    callasm achievements_get_return_to_achievements_to_lastresult
+    compare LASTRESULT 0
+    gotoif EQUAL _end
+    callasm achievements_ui_initialize_from_overworld
+    waitstate
+_end:
+    end
+
+
 ow_script_achievement_pokedex_catch_5_reward:
     @copyvarifnotzero 0x8000 ITEM_POKEBALL
     @copyvarifnotzero 0x8001 1
@@ -24,7 +34,7 @@ ow_script_achievement_pokedex_catch_5_reward:
     closeonkeypress
     setflag FLAG_CATCHING_GIVES_EXP
     release
-    end
+    goto end_achievement_reward
 
 ow_script_achievement_pokedex_catch_20_reward:
     lockall
@@ -35,7 +45,7 @@ ow_script_achievement_pokedex_catch_20_reward:
     closeonkeypress
     setflag POKERADAR
     release
-    end
+    goto end_achievement_reward
 
 
 ow_script_achievement_pokedex_catch_50_reward:
@@ -47,7 +57,7 @@ ow_script_achievement_pokedex_catch_50_reward:
     closeonkeypress
     setflag FLAG_INCREASED_CATCH_RATE
     release
-    end
+    goto end_achievement_reward
 
 ow_script_achievement_pokedex_catch_150_reward:
     lockall
@@ -58,7 +68,7 @@ ow_script_achievement_pokedex_catch_150_reward:
     closeonkeypress
     setflag FLAG_RARE_POKEMON_MORE_LIKELY
     release
-    end
+    goto end_achievement_reward
 
 .ifdef LANG_GER
 str_added_pokeradar_app:

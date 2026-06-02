@@ -49,14 +49,22 @@ typedef struct {
     u8 num_achievements;
 } achievement_group_t;
 
+typedef struct {
+    u8 cursor : 7;
+    u8 return_to_achievements : 1;
+} achievements_ui_cursor_t;
 
 #define REWARDS_UI_NUM_ITEMS_SHOWN 6
 
 typedef struct {
     u8 initialization_state;
+    u8 opened_from_script : 1;
+    u8 claim_note_visible : 1;
     u8 process_input_callback_idx;
 
     u8 list_menu_callback_idx;
+    u8 scroll_indicator_callback_idx;
+    const u8 *script_to_execute;
     u16 list_menu_scroll_offset;
     u16 list_menu_row;
     list_menu_template list_menu_template;
@@ -66,17 +74,24 @@ typedef struct {
     u8 achievements_item_strings[NUM_ACHIEVEMENT_GROUPS][64];
 
     u8 oam_idxs[REWARDS_UI_NUM_ITEMS_SHOWN];
+    u8 oam_idxs_progress[REWARDS_UI_NUM_ITEMS_SHOWN];
 
 } achievements_ui_state_t;
 
 extern const achievement_t achievements_pokedex[5];
 
 extern const achievement_group_t achievement_groups[NUM_ACHIEVEMENT_GROUPS];
+extern EWRAM achievements_ui_cursor_t achievements_ui_cursor;
 
 /**
  * Initializes the pokepad from the start menu
  **/
 bool start_menu_achievements_initialize();
+
+/**
+ * Initializes the achievements UI from an overworld script.
+ */
+void achievements_ui_initialize_from_overworld(void);
 
 /**
  * Gets the tail of an achievement group, i.e. the first non-achieved achievement, or the last achievement.
@@ -93,7 +108,9 @@ extern LZ77COMPRESSED gfx_achievements_ui_bgTiles;
 extern LZ77COMPRESSED gfx_achievements_ui_bgMap;
 extern LZ77COMPRESSED gfx_achievements_ui_bgPal;
 
-extern LZ77COMPRESSED gfx_achievements_ui_level_iconsTiles;
-extern LZ77COMPRESSED gfx_achievements_ui_level_iconsPal;
+extern LZ77COMPRESSED gfx_achievements_level_iconsTiles;
+extern LZ77COMPRESSED gfx_achievements_level_iconsPal;
+extern LZ77COMPRESSED gfx_achievements_progress_barTiles;
+extern LZ77COMPRESSED gfx_achievements_progress_barPal;
 
 #endif
