@@ -57,6 +57,16 @@ typedef struct {
 #define REWARDS_UI_NUM_ITEMS_SHOWN 6
 
 typedef struct {
+    u16 progress;
+    u8 tail_idx;
+    u8 last_achieved_idx;
+    u8 first_claimable_reward_idx;
+    u8 unlocked : 1;
+    u8 completed : 1;
+    u8 tail_reward_visible : 1;
+} achievement_group_ui_cache_t;
+
+typedef struct {
     u8 initialization_state;
     u8 opened_from_script : 1;
     u8 claim_note_visible : 1;
@@ -71,6 +81,7 @@ typedef struct {
     list_menu_item list_menu_items[NUM_ACHIEVEMENT_GROUPS];
 
     u8 achievements[NUM_ACHIEVEMENT_GROUPS]; // Sorted
+    achievement_group_ui_cache_t achievement_cache[NUM_ACHIEVEMENT_GROUPS];
     u8 achievements_item_strings[NUM_ACHIEVEMENT_GROUPS][64];
 
     u8 oam_idxs[REWARDS_UI_NUM_ITEMS_SHOWN];
