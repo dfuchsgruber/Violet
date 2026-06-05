@@ -250,9 +250,9 @@
 .word \jumpiftype_address
 .endm
 
-.macro cmd23 cmd23_side_or_bank
+.macro getexp battler:req
 .byte 0x23
-.byte \cmd23_side_or_bank
+.byte \battler
 .endm
 
 .macro atk24 address:req
@@ -602,9 +602,9 @@
 .byte 0x5F
 .endm
 
-.macro cmd60 cmd60_byte
+.macro incrementsavkey savkey:req
 .byte 0x60
-.byte \cmd60_byte
+.byte \savkey
 .endm
 
 .macro cmd61 cmd61_bank_or_side
@@ -1353,6 +1353,23 @@ various \battler, 2
     .byte 0xFD // multibyte command
     .byte 1
     .word \failure_continuation
+.endm
+
+@ Jumps to an address if a flag is set / unset
+.macro jumpifflag flag:req condition:req address:req
+    .byte 0xFD // multibyte command
+    .byte 3
+    .hword \flag
+    .byte \condition
+    .word \address
+.endm
+
+.macro jumpifflagset flag:req address:req
+    jumpifflag \flag, 1, \address
+.endm 
+
+.macro jumpifflagunset flag:req address:req
+    jumpifflag \flag, 0, \address
 .endm
 
 @// Meta macros

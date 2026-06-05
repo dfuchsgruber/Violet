@@ -201,6 +201,8 @@ void bsc_command_xEF_handleballthrow(void) {
             odds = (u32)((catch_rate * ball_multiplier / 10) *
                     (battlers[defending_battler].max_hp * 3 - battlers[defending_battler].current_hp * 2)
                     / (3 * battlers[defending_battler].max_hp));
+            if (checkflag(FLAG_INCREASED_CATCH_RATE))
+                odds = (odds * 20) / 10;
             if (battlers[defending_battler].status1 & (STATUS1_SLEEPING | STATUS1_FROZEN))
                 odds *= 2;
             if (battlers[defending_battler].status1 & (STATUS1_POISONED_ANY | STATUS1_BURNED | STATUS1_PARALYZED))

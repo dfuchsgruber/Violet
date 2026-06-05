@@ -4,6 +4,7 @@
 #include "debug.h"
 
 bool achievement_pokedex_unlocked() { return checkflag(POKEDEX); }
+bool achievement_pokeradar_unlocked() { return checkflag(POKERADAR); }
 
 u8 achievement_group_get_tail_idx(const achievement_group_t *group) {
     u8 i = 0;
@@ -16,46 +17,16 @@ u8 achievement_group_get_tail_idx(const achievement_group_t *group) {
 }
 
 const achievement_group_t achievement_groups[NUM_ACHIEVEMENT_GROUPS] = {
-    {
+    [ACHIEVEMENT_POKEDEX]{
         .name = (const u8[]) LANGDEP(PSTRING("Schnapp sie dir!"), PSTRING("Catch 'em all!")),
         .achievements = achievements_pokedex,
         .is_unlocked = achievement_pokedex_unlocked,
         .num_achievements = ARRAY_COUNT(achievements_pokedex),
     },
-    {
-        .name = (const u8[]) LANGDEP(PSTRING("Test2"), PSTRING("Test2")),
-        .achievements = achievements_pokedex,
-        .is_unlocked = achievement_pokedex_unlocked,
-        .num_achievements = ARRAY_COUNT(achievements_pokedex),
-    },
-    {
-        .name = (const u8[]) LANGDEP(PSTRING("Test2"), PSTRING("Test2")),
-        .achievements = achievements_pokedex,
-        .is_unlocked = achievement_pokedex_unlocked,
-        .num_achievements = 1,
-    },
-    {
-        .name = (const u8[]) LANGDEP(PSTRING("Test2"), PSTRING("Test2")),
-        .achievements = achievements_pokedex,
-        .is_unlocked = achievement_pokedex_unlocked,
-        .num_achievements = ARRAY_COUNT(achievements_pokedex),
-    },
-    {
-        .name = (const u8[]) LANGDEP(PSTRING("Test2"), PSTRING("Test2")),
-        .achievements = achievements_pokedex,
-        .is_unlocked = achievement_pokedex_unlocked,
-        .num_achievements = ARRAY_COUNT(achievements_pokedex),
-    },
-    {
-        .name = (const u8[]) LANGDEP(PSTRING("INvislbe Test2"), PSTRING("INvisble Test2")),
-        .achievements = achievements_pokedex,
-        .is_unlocked = achievement_pokedex_unlocked,
-        .num_achievements = ARRAY_COUNT(achievements_pokedex),
-    },
-    {
-        .name = (const u8[]) LANGDEP(PSTRING("INvislbe Test3"), PSTRING("INvisble Test3")),
-        .achievements = achievements_pokedex,
-        .is_unlocked = achievement_pokedex_unlocked,
-        .num_achievements = ARRAY_COUNT(achievements_pokedex),
+    [ACHIEVEMENT_POKERADAR] = {
+        .name = (const u8[]) LANGDEP(PSTRING("Pokémon-Jäger"), PSTRING("Pokémon Hunter")),
+        .achievements = achievements_pokeradar,
+        .is_unlocked = achievement_pokeradar_unlocked,
+        .num_achievements = ARRAY_COUNT(achievements_pokeradar),
     },
 };

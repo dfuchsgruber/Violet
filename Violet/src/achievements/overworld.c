@@ -313,7 +313,7 @@ void achievements_is_reward_obtained() {
     }
 }
 
-void achievements_create_name_tbox_next() {
+void achievements_achieved_get_next() {
     u16 group_idx = *var_access(0x8004);
     u8 tail_idx = achievement_group_get_tail_idx(achievement_groups + group_idx);
     const achievement_t *achievement = achievement_groups[group_idx].achievements + tail_idx;
@@ -321,7 +321,8 @@ void achievements_create_name_tbox_next() {
         lastresult = 0;
         return;
     } else {
-        achievements_create_name_tbox_by_achievement((u8)group_idx, achievement);
+        *var_access(0x8004) = group_idx;
+        *var_access(0x8005) = tail_idx;
         lastresult = 1;
     }
 }

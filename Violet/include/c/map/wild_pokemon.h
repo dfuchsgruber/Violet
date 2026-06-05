@@ -9,6 +9,7 @@
 #define INCLUDE_C_MAP_WILD_POKEMON_H_
 #include "types.h"
 #include "constants/wild_pokemon_densities.h"
+#include "flags.h"
 
 typedef struct wild_pokemon_entry {
     u8 level_min;
@@ -164,16 +165,19 @@ bool trainerschool_wildbattle_initialize_secondary_starter();
  * in percent. (Encounters are actually hardwired with these values)
  */
 
-extern const u8 wild_pokemon_grass_pdf[WILD_POKEMON_NUM_ENTRIES_GRASS];
 
-extern const u8 wild_pokemon_water_pdf[WILD_POKEMON_NUM_ENTRIES_WATER];
+#define WILD_PDFS_IMPROVED (checkflag(FLAG_RARE_POKEMON_MORE_LIKELY) > 0)
 
-extern const u8 wild_pokemon_rod_pdf[WILD_POKEMON_NUM_ENTRIES_ROD];
+extern const u8 wild_pokemon_grass_pdfs[2][WILD_POKEMON_NUM_ENTRIES_GRASS];
 
-extern const u8 wild_pokemon_good_rod_pdf[WILD_POKEMON_NUM_ENTRIES_GOOD_ROD];
+extern const u8 wild_pokemon_water_pdfs[2][WILD_POKEMON_NUM_ENTRIES_WATER];
 
-extern const u8 wild_pokemon_super_rod_pdf[WILD_POKEMON_NUM_ENTRIES_SUPER_ROD];
+extern const u8 wild_pokemon_rod_pdfs[2][WILD_POKEMON_NUM_ENTRIES_ROD];
 
-extern const u8 wild_pokemon_other_pdf[WILD_POKEMON_NUM_ENTRIES_OTHER];
+extern const u8 wild_pokemon_good_rod_pdfs[2][WILD_POKEMON_NUM_ENTRIES_GOOD_ROD];
+
+extern const u8 wild_pokemon_super_rod_pdfs[2][WILD_POKEMON_NUM_ENTRIES_SUPER_ROD];
+
+extern const u8 wild_pokemon_other_pdfs[2][WILD_POKEMON_NUM_ENTRIES_OTHER];
 
 #endif /* INCLUDE_C_MAP_WILD_POKEMON_H_ */

@@ -8886,6 +8886,16 @@ const item items[] = {
 		.description = str_item_sleimoknit_description, .pocket = POCKET_ITEMS, .type = 4,
 		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
+	[ITEM_SCHILLERPIN] = {
+		.name = LANGDEP(PSTRING("Schillerpin"), PSTRING("Shiny Pin")),
+		.index = ITEM_SCHILLERPIN,
+		.description = (const u8[]) LANGDEP(
+			PSTRING("Ein mysteriöser, schillernder Glücksbringer,\nder die Wahrscheinlichkeit erhöht,\nSchillernde Pokémon zu finden."),
+			PSTRING("A mysterious, shiny charm that increases\nthe chances of finding Shiny Pokémon.")
+		), .pocket = POCKET_KEY_ITEMS, .type = 4,
+		.field_usage = item_field_function_print_string_can_not_be_used,
+		.importance = 1,
+	},
 };
 
 u16 item_idx_saniztize(u16 item_idx) {

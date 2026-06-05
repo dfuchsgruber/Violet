@@ -50,9 +50,10 @@ pid_t pokemon_new_pid_by_prng(u16 species, u16 (*rnd)()) {
 
 	// Use slash count to increase the shiny rate
 	int splash_cnt = MIN(99, save_get_key(SAVE_KEY_SPLASH_USED));
+	int shiny_rate = checkflag(FLAG_SCHILLERPIN) ? 500 : 1000;
 
-	if (rnd() % 1000 <= splash_cnt / 10) {
-		// Shiny rate of exactly 0.1% + (#Splash used) * 0.01% and maximum at 1%
+	if (rnd() % shiny_rate <= splash_cnt / 10) {
+		// Shiny rate of exactly 0.1% / 0.2% if Schillerpin + (#Splash used) * 0.01% and maximum at 1%
 		p.fields.is_shiny = 1;
 	} else {
 		p.fields.is_shiny = 0;

@@ -11,6 +11,7 @@
 .include "healingplaces.s"
 .include "story_states.s"
 .include "specials.s"
+.include "achievement.s"
 
 .global lscr_0x718dc8
 
@@ -250,6 +251,7 @@ callstd MSG_KEEPOPEN
 setflag POKEDEX
 closeonkeypress
 waitfanfare
+achievement_unlocked ACHIEVEMENT_POKEDEX
 applymovement 2 mov_elise_to_rival
 waitmovement 0
 

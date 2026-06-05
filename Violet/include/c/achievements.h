@@ -4,6 +4,7 @@
 #include "flags.h"
 #include "list_menu.h"
 #include "types.h"
+#include "constants/achievements.h"
 
 enum {
     ACHIEVEMENT_LEVEL_BRONZE,
@@ -12,16 +13,7 @@ enum {
     ACHIEVEMENT_LEVEL_PLATINUM,
 };
 
-enum {
-    ACHIEVEMENT_POKEDEX = 0,
-    ACHIEVEMENT_TEST_2,
-    ACHIEVEMENT_TEST_3,
-    ACHIEVEMENT_TEST_4,
-    ACHIEVEMENT_TEST_5,
-    ACHIEVEMENT_TEST_6,
-    ACHIEVEMENT_TEST_7,
-    NUM_ACHIEVEMENT_GROUPS,
-};
+
 
 typedef struct {
     u16 flag;
@@ -89,7 +81,13 @@ typedef struct {
 
 } achievements_ui_state_t;
 
-extern const achievement_t achievements_pokedex[5];
+enum {
+    NUM_POKEDEX_ACHIEVEMENTS = 6,
+    NUM_POKERADAR_ACHIEVEMENTS = 1,
+};
+
+extern const achievement_t achievements_pokedex[NUM_POKEDEX_ACHIEVEMENTS];
+extern const achievement_t achievements_pokeradar[NUM_POKERADAR_ACHIEVEMENTS];
 
 extern const achievement_group_t achievement_groups[NUM_ACHIEVEMENT_GROUPS];
 extern EWRAM achievements_ui_cursor_t achievements_ui_cursor;

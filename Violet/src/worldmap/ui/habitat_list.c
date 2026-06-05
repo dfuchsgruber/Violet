@@ -98,7 +98,7 @@ void pokedex_habitat_list_compute_by_species(pokedex_habitat_list_t *list, u16 s
             int probability = 0;
             for (int j = 0; j < WILD_POKEMON_NUM_ENTRIES_GRASS; j++) {
                 if (wild_pokemon[i].grass->data[j].species == species) {
-                    probability += wild_pokemon_grass_pdf[j];
+                    probability += wild_pokemon_grass_pdfs[WILD_PDFS_IMPROVED][j];
                 }
             }
             if (probability > 0) 
@@ -108,7 +108,7 @@ void pokedex_habitat_list_compute_by_species(pokedex_habitat_list_t *list, u16 s
             int probability = 0;
             for (int j = 0; j < WILD_POKEMON_NUM_ENTRIES_WATER; j++) {
                 if (wild_pokemon[i].water->data[j].species == species) {
-                    probability += wild_pokemon_water_pdf[j];
+                    probability += wild_pokemon_water_pdfs[WILD_PDFS_IMPROVED][j];
                 }
             }
             if (probability > 0)
@@ -119,7 +119,7 @@ void pokedex_habitat_list_compute_by_species(pokedex_habitat_list_t *list, u16 s
             int probability = 0;
             for (int j = 0; j < WILD_POKEMON_NUM_ENTRIES_OTHER; j++) {
                 if (wild_pokemon[i].other->data[j].species == species) {
-                    probability += wild_pokemon_other_pdf[j];
+                    probability += wild_pokemon_other_pdfs[WILD_PDFS_IMPROVED][j];
                 }
             }
             if (probability > 0) 
@@ -130,7 +130,7 @@ void pokedex_habitat_list_compute_by_species(pokedex_habitat_list_t *list, u16 s
             int probability = 0;
             for (int j = 0; j < WILD_POKEMON_NUM_ENTRIES_ROD; j++) {
                 if (wild_pokemon[i].rod->data[j].species == species) {
-                    probability += wild_pokemon_rod_pdf[j];
+                    probability += wild_pokemon_rod_pdfs[WILD_PDFS_IMPROVED][j];
                 }
             }
             if (probability > 0) 
@@ -139,7 +139,7 @@ void pokedex_habitat_list_compute_by_species(pokedex_habitat_list_t *list, u16 s
             probability = 0;
             for (int j = 0; j < WILD_POKEMON_NUM_ENTRIES_GOOD_ROD; j++) {
                 if (wild_pokemon[i].rod->data[WILD_POKEMON_NUM_ENTRIES_ROD + j].species == species) {
-                    probability += wild_pokemon_good_rod_pdf[j];
+                    probability += wild_pokemon_good_rod_pdfs[WILD_PDFS_IMPROVED][j];
                 }
             }
             if (probability > 0) 
@@ -148,7 +148,7 @@ void pokedex_habitat_list_compute_by_species(pokedex_habitat_list_t *list, u16 s
             probability = 0;
             for (int j = 0; j < WILD_POKEMON_NUM_ENTRIES_SUPER_ROD; j++) {
                 if (wild_pokemon[i].rod->data[WILD_POKEMON_NUM_ENTRIES_ROD + WILD_POKEMON_NUM_ENTRIES_GOOD_ROD + j].species == species) {
-                    probability += wild_pokemon_super_rod_pdf[j];
+                    probability += wild_pokemon_super_rod_pdfs[WILD_PDFS_IMPROVED][j];
                 }
             }
             if (probability > 0) 

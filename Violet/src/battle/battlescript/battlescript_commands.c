@@ -868,11 +868,25 @@ static void bsc_backup_attacking_battler() {
     bsc_offset += 2;
 }
 
+static void bsc_jump_if_flag() {
+    u16 flag = UNALIGNED_16_GET(bsc_offset + 1);
+    u8 condition = bsc_offset[3];
+    const u8 *ptr = (const u8*)UNALIGNED_32_GET(bsc_offset + 4);
+    if (
+        (checkflag(flag) > 0) == (condition > 0)
+    ) {
+        bsc_offset = ptr;
+    } else {
+        bsc_offset += 8;
+    }
+}
+
 
 static void (*const bsc_multibyte_commands[])() = {
     [0] = bsc_jump_if_item_effect,
     [1] = bsc_try_set_perishsong_no_attack,
     [2] = bsc_backup_attacking_battler,
+    [3] = bsc_jump_if_flag,
 };
 
 void bsc_cmd_multibyte_command() {

@@ -1928,3 +1928,4 @@ npc_override_movement_type = 0x0805fe7c | 1;
 checktrainerflag = 0x08080380 | 1;
 ow_script_do_trainerbattle = 0x081a7c81;
 trainerbattle_continuation = 0x08080408 | 1;
+bsc_pokemon_caught_after_string = 0x081ddceb;

@@ -16,6 +16,7 @@
 #include "types.h"
 #include "vars.h"
 
+
 extern const u8 ow_script_trainerschool_wildbattle[];
 
 u16 map_wild_pokemon_get_current_table_id() {
@@ -142,15 +143,15 @@ bool wildbattle_initialize_by_habitat(const wild_pokemon_habitat *habitat, int p
     int idx = -1;
     switch (pdf_type) {
     case 0: {
-        idx = wildbattle_sample_from_pdf(wild_pokemon_grass_pdf, WILD_POKEMON_NUM_ENTRIES_GRASS);
+        idx = wildbattle_sample_from_pdf(wild_pokemon_grass_pdfs[WILD_PDFS_IMPROVED], WILD_POKEMON_NUM_ENTRIES_GRASS);
         break;
     }
     case 1: {
-        idx = wildbattle_sample_from_pdf(wild_pokemon_water_pdf, WILD_POKEMON_NUM_ENTRIES_WATER);
+        idx = wildbattle_sample_from_pdf(wild_pokemon_water_pdfs[WILD_PDFS_IMPROVED], WILD_POKEMON_NUM_ENTRIES_WATER);
         break;
     }
     case 2: {
-        idx = wildbattle_sample_from_pdf(wild_pokemon_other_pdf, WILD_POKEMON_NUM_ENTRIES_OTHER);
+        idx = wildbattle_sample_from_pdf(wild_pokemon_other_pdfs[WILD_PDFS_IMPROVED], WILD_POKEMON_NUM_ENTRIES_OTHER);
         break;
     }
     default: {
@@ -192,30 +193,47 @@ int wildbattle_sample_from_pdf(const u8 *pdf, int size) {
 
 int wildbattle_sample_from_rod_pdf(u8 rod_type) {
     u8 *pdf;
-    ;
     int size;
     switch (rod_type) {
     default:
     case 0:
-        return wildbattle_sample_from_pdf(wild_pokemon_rod_pdf, WILD_POKEMON_NUM_ENTRIES_ROD);
+        return wildbattle_sample_from_pdf(wild_pokemon_rod_pdfs[WILD_PDFS_IMPROVED], WILD_POKEMON_NUM_ENTRIES_ROD);
     case 1:
-        return wildbattle_sample_from_pdf(wild_pokemon_good_rod_pdf, WILD_POKEMON_NUM_ENTRIES_GOOD_ROD) +
+        return wildbattle_sample_from_pdf(wild_pokemon_good_rod_pdfs[WILD_PDFS_IMPROVED], WILD_POKEMON_NUM_ENTRIES_GOOD_ROD) +
                WILD_POKEMON_NUM_ENTRIES_ROD;
     case 2:
-        return wildbattle_sample_from_pdf(wild_pokemon_super_rod_pdf, WILD_POKEMON_NUM_ENTRIES_SUPER_ROD) +
+        return wildbattle_sample_from_pdf(wild_pokemon_super_rod_pdfs[WILD_PDFS_IMPROVED], WILD_POKEMON_NUM_ENTRIES_SUPER_ROD) +
                WILD_POKEMON_NUM_ENTRIES_ROD + WILD_POKEMON_NUM_ENTRIES_GOOD_ROD;
     }
     return wildbattle_sample_from_pdf(pdf, size);
 }
 
-const u8 wild_pokemon_grass_pdf[12] = {20, 20, 10, 10, 10, 10, 5, 5, 4, 4, 1, 1};
+const u8 wild_pokemon_grass_pdfs[2][12] = {
+    {20, 20, 10, 10, 10, 10, 5, 5, 4, 4, 1, 1},
+    {10, 10, 10, 10, 10, 10, 10, 10, 8, 8, 2, 2},
+};
 
-const u8 wild_pokemon_water_pdf[5] = {35, 25, 20, 15, 5};
+const u8 wild_pokemon_water_pdfs[2][5] = {
+    {35, 25, 20, 15, 5},
+    {30, 20, 20, 20, 10},
+};
 
-const u8 wild_pokemon_rod_pdf[2] = {70, 30};
+const u8 wild_pokemon_rod_pdfs[2][2] = {
+    {70, 30},
+    {60, 40}
+};
 
-const u8 wild_pokemon_good_rod_pdf[3] = {60, 20, 20};
+const u8 wild_pokemon_good_rod_pdfs[2][3] = {
+    {60, 20, 20},
+    {50, 30, 20}
+};
 
-const u8 wild_pokemon_super_rod_pdf[5] = {40, 40, 15, 4, 1};
+const u8 wild_pokemon_super_rod_pdfs[2][5] = {
+    {40, 40, 15, 4, 1},
+    {35, 35, 20, 5, 5}
+};
 
-const u8 wild_pokemon_other_pdf[5] = {40, 20, 20, 10, 10};
+const u8 wild_pokemon_other_pdfs[2][5] = {
+    {40, 20, 20, 10, 10},
+    {20, 20, 20, 20, 20}
+};

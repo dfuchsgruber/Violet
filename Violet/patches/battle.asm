@@ -890,3 +890,7 @@ end_turn_wrap_no_effect:
 	ldr r1, =healing_place_set | 1
 	bx r1
 	.pool
+
+.org 0x081ddcda
+	.byte 0x28 // goto
+	.word bsc_pokemon_caught_with_exp

@@ -36,7 +36,6 @@
 .global ow_script_map_15_0_person_0
 .global ow_script_0x8f3bfd
 .global ow_script_map_15_0_person_1
-.global ow_script_0x8efcd3
 .global ow_script_0x829b7e
 .global ow_script_map_15_0_trainer_8
 .global str_say_starlili
@@ -643,36 +642,8 @@ str_0x8d494b:
 
 
 ow_script_map_15_0_trainer_20:
-lock
-faceplayer
-checkflag POKERADAR
-gotoif EQUAL ow_script_0x8efcd3
-loadpointer 0x0 str_0x8f3c00
-callstd MSG
-setvar 0x8004 0x1
-special2 0x800d 0xd4
-buffernumber 0x2 0x8006
-compare 0x8006 0xa
-gotoif LESS ow_script_0x8f3bfd
-sound 0x15
-applymovement 0x800f mov_exclam
-waitmovement 0x0
-loadpointer 0x0 str_0x8f3cd9
-callstd MSG
-fanfare 0x13e
-lock
-faceplayer
-loadpointer 0x0 str_0x8f3bc4
-callstd MSG_KEEPOPEN
-lock
-faceplayer
-waitfanfare
-lock
-faceplayer
-loadpointer 0x0 str_0x8f3a57
-callstd MSG
-setflag POKERADAR
-release
+loadpointer 0 str_researcher
+callstd MSG_FACE
 end
 
 
@@ -681,40 +652,14 @@ release
 end
 
 
-ow_script_0x8efcd3:
-loadpointer 0x0 str_0x8f39d8
-callstd MSG_FACE
-end
-
 mov_exclam:
     .byte SAY_EXCLAM, STOP
 
 
 .ifdef LANG_GER
 
-str_0x8f3c00:
-    .string "Hallo, ich bin ein Assistent\nProfessor Tanns. Ich helfe\lTrainern, die den Pokedex haben,\lbei der Vervollständigung der\lDaten.\lWenn du 10 verschiedene Pokémon im\lPokedex registriert hast, erhältst\ldu eine Belohnung."
-
-
-
-str_0x8f3cd9:
-    .string "Sehr gut, du hast bereits\nBUFFER_3 verschiedene Pokémon\lregistriert. Als Belohnung werde\lich die Pokeradar-App auf deinem\lPokepad installieren."
-
-
-
-str_0x8f3bc4:
-    .string "Deinem Pokepad wurde die\nPokeradar-App hinzugefügt!"
-
-
-
-str_0x8f3a57:
-    .string "Das Pokeradar kann in der Nähe von\nhohem Graß benutzt werden, um\lseltene Pokémon aufzuspüren.\lSie sind sehr scheu, also gerate\lnicht in ihr Blickfeld, wenn du\lsie fangen möchtest.\lJe öfter du das Pokeradar\leinsetzt, desto höher ist die\lWahrscheinlichkeit, seltene\lPokémon anzutreffen.\lDiese Funktion sollte dir bei der\lvervollständigung des Pokedex\lenorm helfen."
-
-
-
-str_0x8f39d8:
-    .string "Das Pokeradar findet seltene\nPokémon in deiner Umgebung. Da sie\lsehr scheu sind, solltest du nicht\lin ihr Blickfeld geraten."
-
+str_researcher:
+    .autostring 34 2 "Ich arbeite bei der Laz. Corp. in Orina City.\pUnter Professor Primus haben wir große Durchbrüche in der Forschung zu interdimensionalen Portalen erzielt.\pIn den letzten Jahren hatte er wirklich ausgesprochen gute Ideen!"
 
 .elseif LANG_EN
 

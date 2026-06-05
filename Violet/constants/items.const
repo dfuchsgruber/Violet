@@ -499,6 +499,7 @@
 		"ITEM_TM99",
 		"ITEM_TM100",
 		"ITEM_SLEIMOKNIT",
+		"ITEM_SCHILLERPIN",
 		"ITEM_CNT"
 	],
 	"base": 0

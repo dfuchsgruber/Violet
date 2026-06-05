@@ -6,6 +6,9 @@
 .include "constants/battle/battle_statuses.s"
 .include "constants/pokemon_stat_names.s"
 .include "constants/item_hold_effects.s"
+.include "constants/flags.s"
+.include "constants/items.s"
+.include "constants/sav_keys.s"
 
 .global battlescript_trainer_battle_won
 battlescript_trainer_battle_won:
@@ -310,3 +313,15 @@ bsc_battler_hung_on_with_sturdy:
     printstring 0x1c5
     waitmessage 0x40
     return 
+
+.global bsc_pokemon_caught_with_exp
+bsc_pokemon_caught_with_exp:
+    jumpifhalfword EQUAL, bsc_last_used_item, ITEM_SAFARIBALL, caught_no_increment_sav_key
+	incrementsavkey SAV_KEY_POKEMON_CAUGHT
+caught_no_increment_sav_key:
+    printstring 0x10b
+    @jumpifflagset FLAG_CATCHING_GIVES_EXP, skip_caught_exp
+    setbyte battle_scripting + 0x1C, 0
+    getexp BANK_TARGET
+skip_caught_exp:
+    goto bsc_pokemon_caught_after_string

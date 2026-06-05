@@ -117,13 +117,13 @@ void pokedex_feature_scanner_build_all_entries(pokedex_scanner_data_t *state, co
         return;
     if (wild_pokemon_header->grass)
         state->num_entries[POKEDEX_SCANNER_HABITAT_GRASS] = pokedex_feature_scanner_add_entries_from_wild_pokemon_data(
-                wild_pokemon_header->grass->data, state->entries_grass, WILD_POKEMON_NUM_ENTRIES_GRASS, wild_pokemon_grass_pdf);
+                wild_pokemon_header->grass->data, state->entries_grass, WILD_POKEMON_NUM_ENTRIES_GRASS, wild_pokemon_grass_pdfs[WILD_PDFS_IMPROVED]);
     if (wild_pokemon_header->water)
         state->num_entries[POKEDEX_SCANNER_HABITAT_WATER] = pokedex_feature_scanner_add_entries_from_wild_pokemon_data(
-                wild_pokemon_header->water->data, state->entries_water, WILD_POKEMON_NUM_ENTRIES_WATER, wild_pokemon_water_pdf);
+                wild_pokemon_header->water->data, state->entries_water, WILD_POKEMON_NUM_ENTRIES_WATER, wild_pokemon_water_pdfs[WILD_PDFS_IMPROVED]);
     if (wild_pokemon_header->other)
         state->num_entries[POKEDEX_SCANNER_HABITAT_OTHER] = pokedex_feature_scanner_add_entries_from_wild_pokemon_data(
-                wild_pokemon_header->other->data, state->entries_other, WILD_POKEMON_NUM_ENTRIES_OTHER, wild_pokemon_other_pdf);
+                wild_pokemon_header->other->data, state->entries_other, WILD_POKEMON_NUM_ENTRIES_OTHER, wild_pokemon_other_pdfs[WILD_PDFS_IMPROVED]);
     if (wild_pokemon_header->rod) {
         // DEBUG("Has rod data\n");
         // Build rod entries with corresponding delimiters
@@ -134,21 +134,21 @@ void pokedex_feature_scanner_build_all_entries(pokedex_scanner_data_t *state, co
         state->entries_rods[num_entries_rod].is_delimiter = true;
         num_entries_rod++;
         num_entries_rod += pokedex_feature_scanner_add_entries_from_wild_pokemon_data(
-                wild_pokemon_header->rod->data, state->entries_rods + num_entries_rod, WILD_POKEMON_NUM_ENTRIES_ROD, wild_pokemon_rod_pdf);
+                wild_pokemon_header->rod->data, state->entries_rods + num_entries_rod, WILD_POKEMON_NUM_ENTRIES_ROD, wild_pokemon_rod_pdfs[WILD_PDFS_IMPROVED]);
 
         // Add good rod delimiter and good rod entries
         state->entries_rods[num_entries_rod].species = POKEDEX_SCANNER_DELIMITER_GOOD_ROD;
         state->entries_rods[num_entries_rod].is_delimiter = true;
         num_entries_rod++;
         num_entries_rod += pokedex_feature_scanner_add_entries_from_wild_pokemon_data(
-                wild_pokemon_header->rod->data + WILD_POKEMON_NUM_ENTRIES_ROD, state->entries_rods + num_entries_rod, WILD_POKEMON_NUM_ENTRIES_GOOD_ROD, wild_pokemon_good_rod_pdf);
+                wild_pokemon_header->rod->data + WILD_POKEMON_NUM_ENTRIES_ROD, state->entries_rods + num_entries_rod, WILD_POKEMON_NUM_ENTRIES_GOOD_ROD, wild_pokemon_good_rod_pdfs[WILD_PDFS_IMPROVED]);
 
         // Add super rod delimiter and super rod entries
         state->entries_rods[num_entries_rod].species = POKEDEX_SCANNER_DELIMITER_SUPER_ROD;
         state->entries_rods[num_entries_rod].is_delimiter = true;
         num_entries_rod++;
         num_entries_rod += pokedex_feature_scanner_add_entries_from_wild_pokemon_data(
-                wild_pokemon_header->rod->data + WILD_POKEMON_NUM_ENTRIES_ROD + WILD_POKEMON_NUM_ENTRIES_GOOD_ROD, state->entries_rods + num_entries_rod, WILD_POKEMON_NUM_ENTRIES_SUPER_ROD, wild_pokemon_super_rod_pdf);
+                wild_pokemon_header->rod->data + WILD_POKEMON_NUM_ENTRIES_ROD + WILD_POKEMON_NUM_ENTRIES_GOOD_ROD, state->entries_rods + num_entries_rod, WILD_POKEMON_NUM_ENTRIES_SUPER_ROD, wild_pokemon_super_rod_pdfs[WILD_PDFS_IMPROVED]);
         state->num_entries[POKEDEX_SCANNER_HABITAT_ROD] = num_entries_rod;
     }
     pokedex_feature_scanner_entries_add_roamers(state);
