@@ -794,4 +794,5 @@ const song song_table[] = {
 	[MUS_ROUTE_9] = {mus_route_9, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	[MUS_CLOUDS_WALTZ_2] = {mus_clouds_waltz2, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	[MUS_ROUTE_10] = {mus_route_10, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	[FANFARE_ACHIEVEMENT] = {fanfare_achievement, SONG_TYPE_FANFARE, SONG_TYPE_FANFARE},
 };

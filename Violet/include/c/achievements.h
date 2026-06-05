@@ -1,9 +1,9 @@
 #ifndef H_ACHIVEMENTS
 #define H_ACHIVEMENTS
 
+#include "flags.h"
 #include "list_menu.h"
 #include "types.h"
-#include "flags.h"
 
 enum {
     ACHIEVEMENT_LEVEL_BRONZE,
@@ -115,6 +115,20 @@ u8 achievement_group_get_tail_idx(const achievement_group_t *group);
  */
 void achievements_process_input(u8 self);
 
+
+/**
+ * Gets the group and achievement idx for an issued unlocked message, if any. An issued unlocked message is when an achievement is achieved but its reward not claimed, and the game has already issued a message about it being unlocked. This is used to know when to issue an unlock message in the overworld, and for which achievement.
+    * @param group_idx_dst Output pointer for the achievement group idx of the issued message, only valid if the function returns true
+    * @param achievement_idx_dst Output pointer for the achievement idx of the issued message, only valid if the function returns true
+    * @return True if there is an issued unlocked message, false otherwise
+ */
+bool achievements_get_issued_unlocked_message_group_idx(u8 *group_idx_dst, u8 *achievement_idx_dst);
+
+/**
+ * Computes, for all achievement groups, if any reward is claimable and sets the flag for it to be issued in the overworld.
+ */
+void achievements_compute_unlocked_message_issued();
+
 extern LZ77COMPRESSED gfx_achievements_ui_bgTiles;
 extern LZ77COMPRESSED gfx_achievements_ui_bgMap;
 extern LZ77COMPRESSED gfx_achievements_ui_bgPal;
@@ -123,5 +137,7 @@ extern LZ77COMPRESSED gfx_achievements_level_iconsTiles;
 extern LZ77COMPRESSED gfx_achievements_level_iconsPal;
 extern LZ77COMPRESSED gfx_achievements_progress_barTiles;
 extern LZ77COMPRESSED gfx_achievements_progress_barPal;
+
+extern u8 ow_script_achievement_unlocked[];
 
 #endif

@@ -446,7 +446,7 @@ static u8 achievements_get_selected_group_idx(void) {
 }
 
 static void achievements_save_cursor(void) {
-    achievements_ui_cursor.cursor = (u8)(achievements_get_selected_group_idx() & 0x7F);
+    achievements_ui_cursor.cursor = (u8)(achievements_get_selected_group_idx() & 0x3F);
 }
 
 static void achievements_get_initial_cursor(u16 *scroll_offset, u16 *row) {

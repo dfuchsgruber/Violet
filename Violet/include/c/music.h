@@ -253,6 +253,7 @@ extern const unsigned char mus_clouds_cave[];
 extern const unsigned char mus_route_9[];
 extern const unsigned char mus_clouds_waltz2[];
 extern const unsigned char mus_route_10[];
+extern const unsigned char fanfare_achievement[];
 
 #endif	/* MUSIC_H */
 

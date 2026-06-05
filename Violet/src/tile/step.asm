@@ -58,7 +58,7 @@ ldr r0, =0x00806D695
 bx r0
 
 script_init:
-ldr r1, =0x08069AD5
+ldr r1, =overworld_script_init
 bx r1
 
 checkflag:

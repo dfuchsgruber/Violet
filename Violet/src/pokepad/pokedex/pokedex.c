@@ -3,6 +3,7 @@
 #include "pokepad/pokedex/operator.h"
 #include "pokepad/pokedex/state.h"
 #include "mega.h"
+#include "vars.h"
 
 u8* pokedex_flag_access(u16 flag, bool seen) {
     if (flag < 416) {
@@ -13,6 +14,22 @@ u8* pokedex_flag_access(u16 flag, bool seen) {
         int index = (416 - flag) / 8;
         return seen ? &(csave.pokedex_seen_extension[index]) : &(csave.pokedex_caught_extension[index]);
     }
+}
+
+static u16 pokedex_compute_number_seen_or_caught(bool caught) {
+    u16 cnt = 0;
+    u16 i;
+    for (i = 1; i <= POKEDEX_CNT; i++) {
+        if (pokedex_operator_by_dex_id(i, caught ? 1 : 0))
+            cnt++;
+
+    }
+    if (caught) {
+        *var_access(VAR_POKEDEX_CAUGHT) = cnt;
+    } else {
+        *var_access(VAR_POKEDEX_SEEN) = cnt;
+    }
+    return cnt;
 }
 
 bool pokedex_operator(u16 val, u8 op, bool is_species_id) {
@@ -28,6 +45,7 @@ bool pokedex_operator(u16 val, u8 op, bool is_species_id) {
     u8 *field = pokedex_flag_access(val, seen);
     if (apply) {
         *field |= mask;
+        pokedex_compute_number_seen_or_caught(!seen);
     } else {
         if (*field & mask)
             return true;
@@ -36,15 +54,11 @@ bool pokedex_operator(u16 val, u8 op, bool is_species_id) {
 }
 
 u16 pokedex_get_number_seen_or_caught(bool caught) {
-
-    u16 cnt = 0;
-    u16 i;
-    for (i = 1; i <= POKEDEX_CNT; i++) {
-        if (pokedex_operator_by_dex_id(i, caught ? 1 : 0))
-            cnt++;
-
+    if (caught) {
+        return *var_access(VAR_POKEDEX_CAUGHT);
+    } else {
+        return *var_access(VAR_POKEDEX_SEEN);
     }
-    return cnt;
 }
 
 u16 pokemon_get_display_number(u16 species) {

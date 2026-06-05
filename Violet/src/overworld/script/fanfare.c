@@ -19,6 +19,7 @@ static const fanfare_t fanfares[] = {
     { MUS_BASISITEM_ERHALTEN_VERSION_2,       170 },
     { MUS_SOUND_317,       196 },
     { FANFARE_GONG, 80},
+    {FANFARE_ACHIEVEMENT, 120},
 };
 
 void fanfare_by_fanfare_idx(u8 fanfare_idx) {

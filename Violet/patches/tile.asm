@@ -98,7 +98,9 @@
 
 // Disable FRD's random spawning hidden items
 .org 0x0815d598 // hidden_flags_daily_proceed
-    bx lr
+    ldr r0, =achievements_compute_unlocked_message_issued | 1
+    bx r0
+    .pool
 .org 0x0815D60C // hidden_flag_daily_initialize
 	bx lr
 .org 0x0815D4D8
@@ -164,3 +166,4 @@
     ldr r3, =signpost_overworld_script_initialize_by_collision | 1
     bx r3
     .pool
+

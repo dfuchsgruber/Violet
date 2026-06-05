@@ -6,6 +6,8 @@
 #include "debug.h"
 #include "constants/levelscript_types.h"
 #include "map/cloud.h"
+#include "achievements.h"
+#include "vars.h"
 
 EWRAM const u8 *additional_levelscript_4 = NULL;
 
@@ -38,6 +40,14 @@ bool map_init_levelscript_2_on_frame() {
     }
     if (map_flash_try_automatic_usage()) {
         overworld_script_init(ow_script_automatic_flash_usage);
+        return true;
+    }
+    u8 group_idx, achievement_idx;
+    if (achievements_get_issued_unlocked_message_group_idx(&group_idx, &achievement_idx)) {
+        // Handle the case where there's an issued unlocked message for a specific achievement group
+        *var_access(0x8004) = group_idx;
+        *var_access(0x8005) = achievement_idx;
+        overworld_script_init(ow_script_achievement_unlocked);
         return true;
     }
     return false;
