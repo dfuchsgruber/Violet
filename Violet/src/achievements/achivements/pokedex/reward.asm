@@ -4,6 +4,7 @@
 .include "callstds.s"
 .include "flags.s"
 .include "ordinals.s"
+.include "achievement.s"
 
 .global ow_script_achievement_pokedex_catch_5_reward
 .global ow_script_achievement_pokedex_catch_20_reward
@@ -44,6 +45,7 @@ ow_script_achievement_pokedex_catch_20_reward:
     loadpointer 0 str_explain_pokeradar
     callstd MSG_KEEPOPEN
     closeonkeypress
+    achievement_unlocked ACHIEVEMENT_POKERADAR
     goto ow_script_end_achievement_reward
 
 

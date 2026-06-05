@@ -143,6 +143,8 @@ u8 pokeradar_prepeare() {
 }
 
 bool pokeradar_npc_alert(u8 npc_id) {
+    if (checkflag(FLAG_POKERADAR_POKEMON_DONT_SPOT_PLAYER))
+        return false;
     if (npcs[npc_id].overworld_id == 254) {
         const map_event_person *person = map_get_person(npcs[npc_id].overworld_id, npcs[npc_id].map, npcs[npc_id].bank);
         if (checkflag(person->flag)) return false;
@@ -175,7 +177,10 @@ void pokeradar_spawn_pokemon() {
 
 void battle_initialize_pokeradar() {
 	super.saved_callback = battle_continuation_wild_legendary_battle_end;
-	battle_flags = BATTLE_FLEEING_WILD | BATTLE_LEGENDARY;
+	battle_flags = BATTLE_LEGENDARY;
+    if (!checkflag(FLAG_POKERADAR_POKEMON_DONT_FLEE)) {
+        battle_flags |= BATTLE_FLEEING_WILD;
+    }
 	battle_initialize(battle_get_intro_type(), 0);
 	save_increment_key(8);
 	save_increment_key(9);

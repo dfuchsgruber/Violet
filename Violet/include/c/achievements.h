@@ -83,7 +83,7 @@ typedef struct {
 
 enum {
     NUM_POKEDEX_ACHIEVEMENTS = 6,
-    NUM_POKERADAR_ACHIEVEMENTS = 1,
+    NUM_POKERADAR_ACHIEVEMENTS = 4,
 };
 
 extern const achievement_t achievements_pokedex[NUM_POKEDEX_ACHIEVEMENTS];
