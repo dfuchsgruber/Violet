@@ -633,6 +633,7 @@ void achievements_initialize_state_machine() {
         bg_reset(0);
         bg_setup(0, bg_configs, ARRAY_COUNT(bg_configs));
         ++(achievements_ui_state->initialization_state);
+        io_set(IO_DISPCNT, IO_DISPCNT_OAM_CHARACTER_MAPPING_ONE_DIMENSIONAL | IO_DISPCNT_OBJ);
         break;
     }
     case BG_SETUP: {

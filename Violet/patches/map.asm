@@ -116,3 +116,8 @@
     ldr r3, =npc_create_by_person | 1
     bx r3
     .pool
+
+.org 0x08069c4c
+    ldr r0, =map_init_levelscript_7_on_return_to_overworld | 1
+    bx r0
+    .pool

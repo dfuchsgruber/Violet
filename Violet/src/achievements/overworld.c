@@ -10,9 +10,12 @@
 #define ACHIEVEMENT_NAME_ICON_TAG 0xA006
 #define ACHIEVEMENT_NAME_ICON_RESERVED_PIXELS 40
 #define ACHIEVEMENT_NAME_TEXT_X 40
+#define ACHIEVEMENT_NAME_TBOX_START_TILE 0xE8
+#define ACHIEVEMENT_DESC_TBOX_START_TILE (ACHIEVEMENT_NAME_TBOX_START_TILE + 30 * 2)
 
 static EWRAM u8 achievements_unlocked_message_issued_flags[8]; // 8 * 8 flags for achievements
 static EWRAM u8 achievement_name_tbox_idx = 0;
+static EWRAM u8 achievement_desc_tbox_idx = 0;
 static EWRAM u8 achievement_name_tbox_active = 0;
 static EWRAM u8 achievement_name_oam_idx = NUM_OAMS;
 static EWRAM u8 achievement_name_oam_gfx_loaded = 0;
@@ -119,14 +122,7 @@ static void achievements_create_name_icon(const achievement_t *achievement, u8 b
     }
 }
 
-void achievements_delete_name_tbox(void) {
-    if (!achievement_name_tbox_active) {
-        achievements_delete_name_icon();
-        return;
-    }
-
-    achievements_delete_name_icon();
-    u8 tb_id = achievement_name_tbox_idx;
+static void achievements_delete_tbox(u8 tb_id) {
     tbox_flush_set(tb_id, 0);
     tbox_flush_map(tb_id);
     tbox_sync(tb_id, TBOX_SYNC_MAP_AND_SET);
@@ -134,49 +130,86 @@ void achievements_delete_name_tbox(void) {
         tbox_flush_map_and_frame(tb_id);
     }
     tbox_free(tb_id);
-    achievement_name_tbox_active = 0;
 }
 
-void achievements_create_name_tbox(void) {
-    u16 group_idx = *var_access(0x8004);
-    achievements_delete_name_tbox();
-
-    const achievement_t *achievement = achievement_from_vars();
-    if (achievement == NULL) {
+void achievements_delete_name_tbox_if_active(void) {
+    if (!achievement_name_tbox_active) {
+        achievements_delete_name_icon();
         return;
     }
 
+    achievements_delete_name_icon();
+    achievements_delete_tbox(achievement_desc_tbox_idx);
+    achievements_delete_tbox(achievement_name_tbox_idx);
+    achievement_name_tbox_active = 0;
+}
+
+static void achievements_print_desc_tbox(const achievement_t *achievement, u8 y) {
+    tboxdata tbdata = {0, 1, y, 28, 4, 15, ACHIEVEMENT_DESC_TBOX_START_TILE};
+    u8 box_id = tbox_new(&tbdata);
+    tbox_flush_set(box_id, 0x11);
+    tbox_tilemap_draw(box_id);
+    if (transparency_is_on()) {
+        tbox_clear_bottom_line(box_id);
+    } else {
+        tbox_init_frame_set_style(box_id, 1, 13 * 16);
+        tbox_frame_draw_outer(box_id, 1, 13);
+    }
+    tbox_font_colormap fontcolmap = transparency_is_on()
+        ? ((tbox_font_colormap){1, 2, 1, 3})
+        : ((tbox_font_colormap){1, 2, 3, 3});
+    tbox_print_string(box_id, 2, 4, 2, 0, 0, &fontcolmap, 0, achievement->description);
+    achievement_desc_tbox_idx = box_id;
+}
+
+
+
+static void achievements_create_name_tbox_by_achievement(u8 group_idx,const achievement_t *achievement) {
+    if (achievement == NULL) {
+        return;
+    }
     const u8 *name = achievement_groups[group_idx].name;
     string_decrypt(strbuf, name);
     u16 width = string_get_width(2, strbuf, 0);
-
+    tbox_font_colormap fontcolmap = transparency_is_on()
+        ? ((tbox_font_colormap){1, 2, 1, 3})
+        : ((tbox_font_colormap){1, 2, 3, 3});
     if (transparency_is_on()) {
         u8 box_width = (u8)MIN(30, (width + ACHIEVEMENT_NAME_ICON_RESERVED_PIXELS) / 8 + 3);
         u8 x = 0;
-        tboxdata tbdata = {0, x, 12, box_width, 2, 15, 0xE8};
+        u8 y = 1;
+        tboxdata tbdata = {0, x, y, box_width, 2, 15, ACHIEVEMENT_NAME_TBOX_START_TILE};
         u8 box_id = tbox_new(&tbdata);
         tbox_flush_set(box_id, 0x11);
         tbox_tilemap_draw(box_id);
         tbox_clear_bottom_line(box_id);
-        tbox_font_colormap fontcolmap = {1, 2, 1, 3};
         tbox_print_string(box_id, 2, ACHIEVEMENT_NAME_TEXT_X, 0, 0, 0, &fontcolmap, 0, strbuf);
         achievement_name_tbox_idx = box_id;
-        achievements_create_name_icon(achievement, x, 12);
+        achievements_create_name_icon(achievement, x, y);
+        achievements_print_desc_tbox(achievement, 3);
     } else {
         u8 box_width = (u8)MIN(29, (width + ACHIEVEMENT_NAME_ICON_RESERVED_PIXELS) / 8 + 3);
         u8 x = 1;
-        tboxdata tbdata = {0, x, 11, box_width, 2, 15, 0xE8};
+        u8 y = 1;
+        tboxdata tbdata = {0, x, y, box_width, 2, 15, ACHIEVEMENT_NAME_TBOX_START_TILE};
         u8 box_id = tbox_new(&tbdata);
         tbox_flush_set(box_id, 0x11);
         tbox_tilemap_draw(box_id);
         tbox_init_frame_set_style(box_id, 1, 13 * 16);
         tbox_frame_draw_outer(box_id, 1, 13);
-        tbox_font_colormap fontcolmap = {1, 2, 1, 3};
         tbox_print_string(box_id, 2, ACHIEVEMENT_NAME_TEXT_X, 0, 0, 0, &fontcolmap, 0, strbuf);
         achievement_name_tbox_idx = box_id;
-        achievements_create_name_icon(achievement, x, 11);
+        achievements_create_name_icon(achievement, x, y);
+        achievements_print_desc_tbox(achievement, 5);
     }
     achievement_name_tbox_active = 1;
+}
+
+
+void achievements_create_name_tbox(void) {
+    u16 group_idx = *var_access(0x8004);
+    const achievement_t *achievement = achievement_from_vars();
+    achievements_create_name_tbox_by_achievement((u8)group_idx, achievement);
 }
 
 bool achievements_get_issued_unlocked_message_group_idx(u8 *group_idx_dst, u8 *achievement_idx_dst) {
@@ -277,5 +310,18 @@ void achievements_is_reward_obtained() {
         lastresult = 1;
     } else {
         lastresult = 0;
+    }
+}
+
+void achievements_create_name_tbox_next() {
+    u16 group_idx = *var_access(0x8004);
+    u8 tail_idx = achievement_group_get_tail_idx(achievement_groups + group_idx);
+    const achievement_t *achievement = achievement_groups[group_idx].achievements + tail_idx;
+    if (achievement == NULL || checkflag(achievement->flag_achieved)) {
+        lastresult = 0;
+        return;
+    } else {
+        achievements_create_name_tbox_by_achievement((u8)group_idx, achievement);
+        lastresult = 1;
     }
 }

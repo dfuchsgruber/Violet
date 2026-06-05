@@ -10,19 +10,24 @@
 ow_script_achievement_unlocked:
     lockall
     callasm achievements_set_flag_achieved
+    callasm achievements_create_name_tbox
     fanfare FANFARE_ACHIEVEMENT
     loadpointer 0x0 str_achievement_unlocked
     callstd MSG_KEEPOPEN
-    callasm achievements_load_achieved_text
-    callasm achievements_create_name_tbox
-    callstd MSG_KEEPOPEN
     waitfanfare
     closeonkeypress
-    callasm achievements_delete_name_tbox
+    callasm achievements_delete_name_tbox_if_active
     call achievement_give_reward
     callasm achievements_is_reward_obtained
     compare LASTRESULT 0
     callif EQUAL show_message_can_be_obtained_later
+    callasm achievements_create_name_tbox_next
+    compare LASTRESULT 0
+    gotoif EQUAL ow_script_check_next_achievement
+    loadpointer 0 str_new_achievement
+    callstd MSG_KEEPOPEN
+    callasm achievements_delete_name_tbox_if_active
+ow_script_check_next_achievement:
     callasm achievements_compute_unlocked_message_issued
     callasm achievements_get_issued_unlocked_message_group_idx_to_vars
     compare LASTRESULT 1
@@ -56,9 +61,13 @@ str_achievement_unlocked:
     .autostring 34 2 "Neuer Erfolg!"
 str_can_be_obtained_later:
     .autostring 34 2 "Erhalte die Belohnung später über das Start-Menü."
+str_new_achievement:
+    .autostring 34 2 "Neues Ziel freigeschaltet!"
 .elseif LANG_EN
 str_achievement_unlocked:
-    .autostring 34 2 "New Achievement!"
+    .autostring 34 2 "New achievement!"
 str_can_be_obtained_later:
     .autostring 34 2 "You can obtain the reward later through the Start Menu."
+str_new_achievement:
+    .autostring 34 2 "New goal unlocked!"
 .endif
