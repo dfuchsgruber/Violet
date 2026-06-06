@@ -91,7 +91,7 @@ const achievement_t achievements_pokedex[NUM_POKEDEX_ACHIEVEMENTS] = {
             .flag = FLAG_POKEDEX_SCANNER,
             .script = ow_script_achievement_pokedex_catch_100_reward,
             .description = (const u8[]) LANGDEP(
-                PSTRING("Scanner Feature\n wird in\nPokédex-App\ninstalliert."), 
+                PSTRING("Scanner Feature\nwird in der\nPokédex-App\ninstalliert."), 
                 PSTRING("Scanner feature\ninstalled in\nPokédex app.")
             ),
         }

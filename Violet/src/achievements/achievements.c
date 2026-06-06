@@ -1,10 +1,12 @@
 #include "achievements.h"
+#include "constants/flags.h"
 #include "language.h"
 #include "flags.h"
 #include "debug.h"
 
 bool achievement_pokedex_unlocked() { return checkflag(POKEDEX); }
 bool achievement_pokeradar_unlocked() { return checkflag(POKERADAR); }
+bool achievement_wondertrade_unlocked() { return checkflag(WONDERTRADE); }
 
 u8 achievement_group_get_tail_idx(const achievement_group_t *group) {
     u8 i = 0;
@@ -17,7 +19,7 @@ u8 achievement_group_get_tail_idx(const achievement_group_t *group) {
 }
 
 const achievement_group_t achievement_groups[NUM_ACHIEVEMENT_GROUPS] = {
-    [ACHIEVEMENT_POKEDEX]{
+    [ACHIEVEMENT_POKEDEX] = {
         .name = (const u8[]) LANGDEP(PSTRING("Schnapp sie dir!"), PSTRING("Catch 'em all!")),
         .achievements = achievements_pokedex,
         .is_unlocked = achievement_pokedex_unlocked,
@@ -28,5 +30,11 @@ const achievement_group_t achievement_groups[NUM_ACHIEVEMENT_GROUPS] = {
         .achievements = achievements_pokeradar,
         .is_unlocked = achievement_pokeradar_unlocked,
         .num_achievements = ARRAY_COUNT(achievements_pokeradar),
+    },
+    [ACHIEVEMENT_WONDERTRADE] = {
+        .name = (const u8[]) LANGDEP(PSTRING("Tauschfreude"), PSTRING("Trading Fun")),
+        .achievements = achievements_wondertrade,
+        .is_unlocked = achievement_wondertrade_unlocked,
+        .num_achievements = ARRAY_COUNT(achievements_wondertrade),
     },
 };

@@ -28,6 +28,7 @@ static void achievements_exit(u8 self);
 static void achievements_exit_to_script(u8 self);
 static u8 achievements_get_selected_group_idx(void);
 static const achievement_t *achievements_group_get_first_claimable_reward(u8 group_idx);
+static u8 achievements_group_get_first_claimable_reward_idx(u8 group_idx);
 static const achievement_t *achievements_group_get_last_achieved(u8 group_idx);
 static const achievement_t *achievements_group_get_tail(u8 group_idx);
 static void achievements_cache_all_groups(void);
@@ -51,6 +52,7 @@ void achievements_process_input(u8 self) {
         u8 group_idx = achievements_get_selected_group_idx();
         const achievement_t *achievement = achievements_group_get_first_claimable_reward(group_idx);
         if (achievement != NULL && achievement->reward.script != NULL) {
+            achievements_set_current(group_idx, achievements_group_get_first_claimable_reward_idx(group_idx));
             achievements_ui_state->script_to_execute = achievement->reward.script;
             fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
             big_callbacks[self].function = achievements_exit_to_script;
@@ -320,8 +322,14 @@ static void achievements_update_level_icon_oams(void) {
     list_menu_get_scroll_and_row(achievements_ui_state->list_menu_callback_idx, &scroll_offset, &row);
     for (u8 i = 0; i < REWARDS_UI_NUM_ITEMS_SHOWN; i++) {
         const u8 oam_idx = achievements_ui_state->oam_idxs[i];
+        const u8 progress_oam_idx = achievements_ui_state->oam_idxs_progress[i];
+
+        if (oam_idx >= NUM_OAMS || progress_oam_idx >= NUM_OAMS) {
+            continue;
+        }
+
         oam_object *icon = oams + oam_idx;
-        oam_object *progress_bar = oams + achievements_ui_state->oam_idxs_progress[i];
+        oam_object *progress_bar = oams + progress_oam_idx;
 
         if (scroll_offset + i >= NUM_ACHIEVEMENT_GROUPS) {
             icon->flags |= OAM_FLAG_INVISIBLE;
@@ -358,10 +366,14 @@ static void achievements_create_level_icon_oams(void) {
     for (u8 i = 0; i < REWARDS_UI_NUM_ITEMS_SHOWN; i++) {
         achievements_ui_state->oam_idxs[i] = oam_new_forward_search(&achievement_level_icon_template,
                                                                      0, 0, 0);
-        oams[achievements_ui_state->oam_idxs[i]].flags |= OAM_FLAG_INVISIBLE;
+        if (achievements_ui_state->oam_idxs[i] < NUM_OAMS) {
+            oams[achievements_ui_state->oam_idxs[i]].flags |= OAM_FLAG_INVISIBLE;
+        }
         achievements_ui_state->oam_idxs_progress[i] = oam_new_forward_search(&achievement_progress_bar_template,
                                                                      0, 0, 0);
-        oams[achievements_ui_state->oam_idxs_progress[i]].flags |= OAM_FLAG_INVISIBLE;
+        if (achievements_ui_state->oam_idxs_progress[i] < NUM_OAMS) {
+            oams[achievements_ui_state->oam_idxs_progress[i]].flags |= OAM_FLAG_INVISIBLE;
+        }
     }
 }
 
@@ -392,9 +404,14 @@ static void achievements_free(void) {
         if (achievements_ui_state->oam_idxs[i] < NUM_OAMS) {
             oam_free(oams + achievements_ui_state->oam_idxs[i]);
         }
+        if (achievements_ui_state->oam_idxs_progress[i] < NUM_OAMS) {
+            oam_free(oams + achievements_ui_state->oam_idxs_progress[i]);
+        }
     }
     oam_free_vram_by_tag(ACHIEVEMENTS_LEVEL_ICON_TAG);
     oam_palette_free(ACHIEVEMENTS_LEVEL_ICON_TAG);
+    oam_free_vram_by_tag(ACHIEVEMENTS_PROGRESS_BAR_TAG);
+    oam_palette_free(ACHIEVEMENTS_PROGRESS_BAR_TAG);
     tbox_free_all();
     free(bg_get_tilemap(0));
     free(bg_get_tilemap(1));
@@ -468,11 +485,16 @@ static void achievements_get_initial_cursor(u16 *scroll_offset, u16 *row) {
 }
 
 static const achievement_t *achievements_group_get_first_claimable_reward(u8 group_idx) {
-    const achievement_group_ui_cache_t *cache = achievements_ui_state->achievement_cache + group_idx;
-    if (cache->first_claimable_reward_idx == ACHIEVEMENT_UI_CACHE_NONE) {
+    u8 achievement_idx = achievements_group_get_first_claimable_reward_idx(group_idx);
+    if (achievement_idx == ACHIEVEMENT_UI_CACHE_NONE) {
         return NULL;
     }
-    return achievement_groups[group_idx].achievements + cache->first_claimable_reward_idx;
+    return achievement_groups[group_idx].achievements + achievement_idx;
+}
+
+static u8 achievements_group_get_first_claimable_reward_idx(u8 group_idx) {
+    const achievement_group_ui_cache_t *cache = achievements_ui_state->achievement_cache + group_idx;
+    return cache->first_claimable_reward_idx;
 }
 
 static const achievement_t *achievements_group_get_last_achieved(u8 group_idx) {
@@ -665,6 +687,7 @@ void achievements_initialize_state_machine() {
     case DATA_SETUP: {
         for (u8 i = 0; i < REWARDS_UI_NUM_ITEMS_SHOWN; i++) {
             achievements_ui_state->oam_idxs[i] = NUM_OAMS;
+            achievements_ui_state->oam_idxs_progress[i] = NUM_OAMS;
         }
         achievements_ui_state->scroll_indicator_callback_idx = 0xFF;
         achievements_ui_state->process_input_callback_idx = 0xFF;

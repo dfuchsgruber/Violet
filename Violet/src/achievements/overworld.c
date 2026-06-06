@@ -20,6 +20,8 @@ static EWRAM u8 achievement_name_tbox_active = 0;
 static EWRAM u8 achievement_name_oam_idx = NUM_OAMS;
 static EWRAM u8 achievement_name_oam_gfx_loaded = 0;
 static EWRAM u8 achievement_name_oam_pal_loaded = 0;
+static EWRAM u8 achievement_current_group_idx = 0xFF;
+static EWRAM u8 achievement_current_idx = 0xFF;
 
 static const graphic achievement_name_icon_graphic = {
     .sprite = &gfx_achievements_level_iconsTiles,
@@ -75,18 +77,25 @@ static const oam_template achievement_name_icon_template = {
     .callback = oam_null_callback,
 };
 
-static const achievement_t *achievement_from_vars(void) {
-    u16 group_idx = *var_access(0x8004);
-    u16 achievement_idx = *var_access(0x8005);
-    if (group_idx >= NUM_ACHIEVEMENT_GROUPS) {
+void achievements_set_current(u8 group_idx, u8 achievement_idx) {
+    achievement_current_group_idx = group_idx;
+    achievement_current_idx = achievement_idx;
+}
+
+void achievements_set_current_from_vars(void) {
+    achievements_set_current((u8)(*var_access(0x8004)), (u8)(*var_access(0x8005)));
+}
+
+static const achievement_t *achievement_from_current(void) {
+    if (achievement_current_group_idx >= NUM_ACHIEVEMENT_GROUPS) {
         return NULL;
     }
 
-    const achievement_group_t *group = achievement_groups + group_idx;
-    if (achievement_idx >= group->num_achievements) {
+    const achievement_group_t *group = achievement_groups + achievement_current_group_idx;
+    if (achievement_current_idx >= group->num_achievements) {
         return NULL;
     }
-    return group->achievements + achievement_idx;
+    return group->achievements + achievement_current_idx;
 }
 
 static void achievements_delete_name_icon(void) {
@@ -207,9 +216,8 @@ static void achievements_create_name_tbox_by_achievement(u8 group_idx,const achi
 
 
 void achievements_create_name_tbox(void) {
-    u16 group_idx = *var_access(0x8004);
-    const achievement_t *achievement = achievement_from_vars();
-    achievements_create_name_tbox_by_achievement((u8)group_idx, achievement);
+    const achievement_t *achievement = achievement_from_current();
+    achievements_create_name_tbox_by_achievement(achievement_current_group_idx, achievement);
 }
 
 bool achievements_get_issued_unlocked_message_group_idx(u8 *group_idx_dst, u8 *achievement_idx_dst) {
@@ -219,6 +227,9 @@ bool achievements_get_issued_unlocked_message_group_idx(u8 *group_idx_dst, u8 *a
             for (u8 bit = 0; bit < 8; bit++) {
                 if (flags & (1 << bit)) {
                     u8 group_idx = (u8)(i * 8 + bit);
+                    if (group_idx >= NUM_ACHIEVEMENT_GROUPS) {
+                        continue;
+                    }
                     const achievement_group_t *group = achievement_groups + group_idx;
                     if (group->is_unlocked()) {
                         for (u8 achievement_idx = 0; achievement_idx < group->num_achievements; achievement_idx++) {
@@ -239,11 +250,10 @@ bool achievements_get_issued_unlocked_message_group_idx(u8 *group_idx_dst, u8 *a
     return false;
 }
 
-void achievements_get_issued_unlocked_message_group_idx_to_vars() {
+void achievements_get_issued_unlocked_message_group_idx_to_current() {
     u8 group_idx, achievement_idx;
     if (achievements_get_issued_unlocked_message_group_idx(&group_idx, &achievement_idx)) {
-        *var_access(0x8004) = group_idx;
-        *var_access(0x8005) = achievement_idx;
+        achievements_set_current(group_idx, achievement_idx);
         lastresult = 1;
     } else {
         lastresult = 0;
@@ -251,14 +261,9 @@ void achievements_get_issued_unlocked_message_group_idx_to_vars() {
 }
 
 void achievements_set_flag_achieved() {
-    int group_idx = *var_access(0x8004);
-    int achievement_idx = *var_access(0x8005);
-    if (group_idx < NUM_ACHIEVEMENT_GROUPS) {
-        const achievement_group_t *group = achievement_groups + group_idx;
-        if (achievement_idx < group->num_achievements) {
-            const achievement_t *achievement = group->achievements + achievement_idx;
-            setflag(achievement->flag_achieved);
-        }
+    const achievement_t *achievement = achievement_from_current();
+    if (achievement != NULL) {
+        setflag(achievement->flag_achieved);
     }
 }
 
@@ -287,16 +292,23 @@ void achievements_compute_unlocked_message_issued() {
 }
 
 void achievements_load_achieved_text() {
-    const achievement_t *achievement = achievement_from_vars();
+    const achievement_t *achievement = achievement_from_current();
     if (achievement != NULL) {
         overworld_script_state.pointer_banks[0] = achievement->description;
     }
 }
 
 void achievements_load_reward_script() {
-    const achievement_t *achievement = achievement_from_vars();
-    DEBUG("Loading reward script for achievement 0x%x, has reward: %d, reward taken: %d\n", achievement, ACHIEVEMENT_HAS_REWARD(achievement), ACHIEVEMENT_REWARD_TAKEN(achievement));
-    if (achievement != NULL && ACHIEVEMENT_HAS_REWARD(achievement) && !ACHIEVEMENT_REWARD_TAKEN(achievement)) {
+    const achievement_t *achievement = achievement_from_current();
+    if (achievement == NULL) {
+        DEBUG("Loading reward script failed: invalid current achievement\n");
+        lastresult = 0;
+        return;
+    }
+
+    DEBUG("Loading reward script for achievement 0x%x, has reward: %d, reward taken: %d\n",
+          achievement, ACHIEVEMENT_HAS_REWARD(achievement), ACHIEVEMENT_REWARD_TAKEN(achievement));
+    if (ACHIEVEMENT_HAS_REWARD(achievement) && achievement->reward.script != NULL && !ACHIEVEMENT_REWARD_TAKEN(achievement)) {
         overworld_script_virtual_ptr = achievement->reward.script;
         lastresult = 1;
     } else {
@@ -305,7 +317,8 @@ void achievements_load_reward_script() {
 }
 
 void achievements_is_reward_obtained() {
-    const achievement_t *achievement = achievement_from_vars();
+    DEBUG("Checking if reward obtained for current achievement: 0x%x\n", achievement_from_current());
+    const achievement_t *achievement = achievement_from_current();
     if (achievement != NULL && ACHIEVEMENT_HAS_REWARD(achievement) && ACHIEVEMENT_REWARD_TAKEN(achievement)) {
         lastresult = 1;
     } else {
@@ -314,15 +327,18 @@ void achievements_is_reward_obtained() {
 }
 
 void achievements_achieved_get_next() {
-    u16 group_idx = *var_access(0x8004);
+    u8 group_idx = achievement_current_group_idx;
+    if (group_idx >= NUM_ACHIEVEMENT_GROUPS || achievement_groups[group_idx].num_achievements == 0) {
+        lastresult = 0;
+        return;
+    }
     u8 tail_idx = achievement_group_get_tail_idx(achievement_groups + group_idx);
     const achievement_t *achievement = achievement_groups[group_idx].achievements + tail_idx;
-    if (achievement == NULL || checkflag(achievement->flag_achieved)) {
+    if (checkflag(achievement->flag_achieved)) {
         lastresult = 0;
         return;
     } else {
-        *var_access(0x8004) = group_idx;
-        *var_access(0x8005) = tail_idx;
+        achievements_set_current(group_idx, tail_idx);
         lastresult = 1;
     }
 }

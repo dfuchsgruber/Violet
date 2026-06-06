@@ -27,6 +27,13 @@
     };
 
     enum {
+        WONDERTRADE_LEVEL_REQUIREMENT_BRONZE = 0,
+        WONDERTRADE_LEVEL_REQUIREMENT_SILVER = 5,
+        WONDERTRADE_LEVEL_REQUIREMENT_GOLD = 25,
+        WONDERTRADE_LEVEL_REQUIREMENT_PLATINUM = 100,
+    };
+
+    enum {
         WONDERTRADE_LEVEL_BRONZE,
         WONDERTRADE_LEVEL_SILVER,
         WONDERTRADE_LEVEL_GOLD,
@@ -51,6 +58,7 @@
     extern const u8 script_wondertrade_failure[];
     extern const u8 str_wondertrade_name0[];
     extern const u8 *wondertrade_ot_names[];
+    extern const u16 wondertrade_level_requirements[NUM_WONDERTRADE_LEVELS];
 
     /**
      * Callback responsible for scrolling the background of the wondertrade ui

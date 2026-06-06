@@ -4,6 +4,7 @@
 #include "pokepad/pokedex/state.h"
 #include "mega.h"
 #include "vars.h"
+#include "achievements.h"
 
 u8* pokedex_flag_access(u16 flag, bool seen) {
     if (flag < 416) {
@@ -46,6 +47,7 @@ bool pokedex_operator(u16 val, u8 op, bool is_species_id) {
     if (apply) {
         *field |= mask;
         pokedex_compute_number_seen_or_caught(!seen);
+        achievements_compute_unlocked_message_issued();
     } else {
         if (*field & mask)
             return true;

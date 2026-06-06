@@ -17,11 +17,11 @@ script_wondertrade_failure:
 .ifdef LANG_GER
 
 	str_wondertrade_not_possible_script:
-    	.string "Verbindung zum Wundertausch-\nNetzwerk fehlgeschlagen (BUFFER_1/250)."
+    	.string "Verbindung zum Wundertausch-\nNetzwerk fehlgeschlagen (BUFFER_1/BUFFER_2)."
 
 .elseif LANG_EN
 
 	str_wondertrade_not_possible_script:
-		.string "Failed to connect to the\nWondertrade-Network (BUFFER_1/250)."
+		.string "Failed to connect to the\nWondertrade-Network (BUFFER_1/BUFFER_2)."
 
 .endif

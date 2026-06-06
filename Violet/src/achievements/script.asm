@@ -27,7 +27,7 @@ ow_script_achievement_unlocked:
     callif EQUAL ow_script_show_achievement_unlocked
 ow_script_check_next_achievement:
     callasm achievements_compute_unlocked_message_issued
-    callasm achievements_get_issued_unlocked_message_group_idx_to_vars
+    callasm achievements_get_issued_unlocked_message_group_idx_to_current
     compare LASTRESULT 1
     gotoif EQUAL ow_script_achievement_unlocked
     release

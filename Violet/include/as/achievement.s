@@ -3,5 +3,6 @@
 .macro achievement_unlocked achievement_group_idx:req, achievement_idx=0
     setvar 0x8004 \achievement_group_idx
     setvar 0x8005, \achievement_idx
+    callasm achievements_set_current_from_vars
     call ow_script_show_achievement_unlocked
 .endm

@@ -5,10 +5,10 @@
 #include "constants/flags.h"
 #include "vars.h"
 
-extern const u8 ow_script_achievement_pokedex_catch_5_reward[];
-extern const u8 ow_script_achievement_pokedex_catch_20_reward[];
-extern const u8 ow_script_achievement_pokedex_catch_50_reward[];
-extern const u8 ow_script_achievement_pokedex_catch_100_reward[];
+extern const u8 ow_script_achievement_pokeradar_catch_5_reward[];
+extern const u8 ow_script_achievement_pokeradar_catch_20_reward[];
+extern const u8 ow_script_achievement_pokeradar_catch_50_reward[];
+extern const u8 ow_script_achievement_pokeradar_catch_100_reward[];
 
 
 u16 achievement_pokeradar_get_progress() {return *var_access(POKERADAR_ENCOUNTER_COUNT);}
@@ -31,10 +31,10 @@ const achievement_t achievements_pokeradar[NUM_POKERADAR_ACHIEVEMENTS] = {
         .level = ACHIEVEMENT_LEVEL_BRONZE,
         .reward = {
             .flag = FLAG_POKERADAR_REWARD_5,
-            .script = ow_script_achievement_pokedex_catch_5_reward,
+            .script = ow_script_achievement_pokeradar_catch_5_reward,
             .description = (const u8[]) LANGDEP(
-                PSTRING("1× Sonderbonbon."), 
-                PSTRING("1× Rare Candy.")
+                PSTRING("1×Sonderbonbon"), 
+                PSTRING("1×Rare Candy")
             ),
         }
     },
@@ -50,10 +50,10 @@ const achievement_t achievements_pokeradar[NUM_POKERADAR_ACHIEVEMENTS] = {
         .level = ACHIEVEMENT_LEVEL_SILVER,
         .reward = {
             .flag = FLAG_POKERADAR_POKEMON_DONT_FLEE,
-            .script = ow_script_achievement_pokedex_catch_20_reward,
+            .script = ow_script_achievement_pokeradar_catch_20_reward,
             .description = (const u8[]) LANGDEP(
-                PSTRING("Pokéradar Pokémon fliehen nicht."), 
-                PSTRING("Pokéradar Pokémon don't flee.")
+                PSTRING("Pokéradar\nPokémon\nfliehen nicht."), 
+                PSTRING("Pokéradar\nPokémon\ndon't flee.")
             ),
         }
     },
@@ -69,10 +69,10 @@ const achievement_t achievements_pokeradar[NUM_POKERADAR_ACHIEVEMENTS] = {
         .level = ACHIEVEMENT_LEVEL_GOLD,
         .reward = {
             .flag = FLAG_POKERADAR_POKEMON_DONT_SPOT_PLAYER,
-            .script = ow_script_achievement_pokedex_catch_50_reward,
+            .script = ow_script_achievement_pokeradar_catch_50_reward,
             .description = (const u8[]) LANGDEP(
-                PSTRING("Pokéradar Pokemon entdecken Spieler nicht mehr."), 
-                PSTRING("Pokéradar Pokémon no longer spot the player.")
+                PSTRING("Pokéradar\nPokémon\nentdecken\nSpieler nicht\nmehr."), 
+                PSTRING("Pokéradar\nPokémon\nno longer\nspot the\nplayer.")
             ),
         }
     },
@@ -88,10 +88,10 @@ const achievement_t achievements_pokeradar[NUM_POKERADAR_ACHIEVEMENTS] = {
         .level = ACHIEVEMENT_LEVEL_PLATINUM,
         .reward = {
             .flag = FLAG_POKERADAR_REWARD_100,
-            .script = ow_script_achievement_pokedex_catch_100_reward,
+            .script = ow_script_achievement_pokeradar_catch_100_reward,
             .description = (const u8[]) LANGDEP(
-                PSTRING("3× Goldbonbon."), 
-                PSTRING("3× Gold Candy.")
+                PSTRING("3×Goldbonbon"), 
+                PSTRING("3×Gold Candy")
             ),
         }
     }

@@ -127,10 +127,10 @@ const u16 *const wondertrade_pokemon[] = {
     wondertrade_pokemon_platinum};
 
 const u16 wondertrade_level_requirements[NUM_WONDERTRADE_LEVELS] = {
-    [WONDERTRADE_LEVEL_BRONZE] = 0,
-    [WONDERTRADE_LEVEL_SILVER] = 5,
-    [WONDERTRADE_LEVEL_GOLD] = 25,
-    [WONDERTRADE_LEVEL_PLATINUM] = 100};
+    [WONDERTRADE_LEVEL_BRONZE] = WONDERTRADE_LEVEL_REQUIREMENT_BRONZE,
+    [WONDERTRADE_LEVEL_SILVER] = WONDERTRADE_LEVEL_REQUIREMENT_SILVER,
+    [WONDERTRADE_LEVEL_GOLD] = WONDERTRADE_LEVEL_REQUIREMENT_GOLD,
+    [WONDERTRADE_LEVEL_PLATINUM] = WONDERTRADE_LEVEL_REQUIREMENT_PLATINUM};
 
 void wondertrade_color_callback(u8 self) {
     if (wondertrade_memory->error_m || !wondertrade_memory->usable)
@@ -192,10 +192,10 @@ u16 wondertrade_select_pokemon() {
     u8 table = 0; // bronze standard table
     u8 r = (u8)rnd16();
     u8 wondertrade_level = wondertrade_get_level();
-    if (wondertrade_level == WONDERTRADE_LEVEL_PLATINUM && !checkflag(WONDERTRADE_MEW_RECEIVED)) {
-        setflag(WONDERTRADE_MEW_RECEIVED);
-        return POKEMON_MEW;
-    }
+    // if (wondertrade_level == WONDERTRADE_LEVEL_PLATINUM && !checkflag(WONDERTRADE_MEW_RECEIVED)) {
+    //     setflag(WONDERTRADE_MEW_RECEIVED);
+    //     return POKEMON_MEW;
+    // }
     switch (wondertrade_level) {
     case WONDERTRADE_LEVEL_PLATINUM:
         if (r < 16)
@@ -214,13 +214,15 @@ u16 wondertrade_select_pokemon() {
     while (wondertrade_pokemon[table][table_size] != 0xFFFF)
         table_size++;
     int *probabilities = malloc_and_clear(table_size * sizeof(int));
-    for (u32 i = 0; i < table_size; i++) {
-        if (!pokedex_operator(wondertrade_pokemon[table][i], POKEDEX_CAUGHT, true))
-            probabilities[i] += wondertrade_level;
-        if (!pokedex_operator(wondertrade_pokemon[table][i], POKEDEX_SEEN, true))
-            probabilities[i] += wondertrade_level;
+    if (checkflag(FLAG_WONDERTRADE_REPLACE_CAUGHT_POKEMON)) {
+        for (u32 i = 0; i < table_size; i++) {
+            if (!pokedex_operator(wondertrade_pokemon[table][i], POKEDEX_CAUGHT, true))
+                probabilities[i] += wondertrade_level + 1;
+            if (!pokedex_operator(wondertrade_pokemon[table][i], POKEDEX_SEEN, true))
+                probabilities[i] += wondertrade_level + 1;
+        }
     }
-    u32 idx = softmax_choice(probabilities, table_size, 0, NUM_WONDERTRADE_LEVELS - 1, rnd16);
+    u32 idx = softmax_choice(probabilities, table_size, 0, 2 * NUM_WONDERTRADE_LEVELS + 2, rnd16);
     return wondertrade_pokemon[table][idx];
 }
 
@@ -247,7 +249,7 @@ void wondertrade_spawn_pokemon() {
     u32 tid = tid_by_ot_name(ot_name);
     pid_t p = {.value = 0};
     pokemon_new_by_prng(&opponent_pokemon[0], species, 5, 32, false, p,
-                                    true, tid, wondertrade_next_seed, NULL);
+                        true, tid, wondertrade_next_seed, NULL);
     pokemon_set_attribute(&opponent_pokemon[0], ATTRIBUTE_OT_NAME, ot_name);
     pokemon_set_attribute(opponent_pokemon + 0, ATTRIBUTE_OT_GENDER, &female_ot);
 }
@@ -278,7 +280,7 @@ void wondertrade_callback_after_selection() {
     } else {
         if (wondertrade_can_pokemon_be_sent()) {
             wondertrade_spawn_pokemon();
-            if (*var_access(WONDERTRADE_CNT < 9999)) {
+            if (*var_access(WONDERTRADE_CNT) < 9999) {
                 (*var_access(WONDERTRADE_CNT))++;
             }
             *var_access(WONDERTRADE_STEPS_TO_ENABLE) = 0;
@@ -594,13 +596,21 @@ void wondertrade_init_callback() {
     }
 }
 
+static int wondertrade_steps_to_enable_required() {
+    if (checkflag(FLAG_WONDERTRADE_CHARGING_STEPS_REDUCED)) {
+        return 250;
+    } else {
+        return 500;
+    }
+}
+
 void wondertrade_buffer_steps() {
-    u8 *buffer0 = (u8 *)0x02021CD0;
     itoa(buffer0, *var_access(WONDERTRADE_STEPS_TO_ENABLE), 0, 3);
+    itoa(buffer1, wondertrade_steps_to_enable_required(), 0, 3);
 }
 
 void wondertrade_init(bool is_outdoor) {
-    bool is_usable = *var_access(WONDERTRADE_STEPS_TO_ENABLE) >= 250;
+    bool is_usable = *var_access(WONDERTRADE_STEPS_TO_ENABLE) >= wondertrade_steps_to_enable_required();
     if (is_outdoor && !is_usable) {
         wondertrade_buffer_steps();
         overworld_script_init(script_wondertrade_failure);
@@ -614,4 +624,15 @@ void wondertrade_init(bool is_outdoor) {
     wondertrade_memory->usable = is_usable;
     wondertrade_memory->cursor = 0;
     callback1_set(wondertrade_init_callback);
+}
+
+void wondertrade_give_mew() {
+    pokemon *p = malloc_and_clear(sizeof(pokemon));
+    pokemon_new_by_prng(p, POKEMON_MEW, 5, 32, false, (pid_t){0},
+                        true, 0x17111997, wondertrade_next_seed, NULL);
+    pokemon_set_attribute(p, ATTRIBUTE_OT_NAME, str_wodka);
+    lastresult = pokemon_give(p);
+    pokedex_operator(POKEMON_MEW, POKEDEX_SEEN, true);
+    pokedex_operator(POKEMON_MEW, POKEDEX_CAUGHT, true);
+    free(p);
 }

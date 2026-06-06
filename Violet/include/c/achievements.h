@@ -5,6 +5,7 @@
 #include "list_menu.h"
 #include "types.h"
 #include "constants/achievements.h"
+#include "pokepad/wondertrade.h"
 
 enum {
     ACHIEVEMENT_LEVEL_BRONZE,
@@ -84,10 +85,12 @@ typedef struct {
 enum {
     NUM_POKEDEX_ACHIEVEMENTS = 6,
     NUM_POKERADAR_ACHIEVEMENTS = 4,
+    NUM_WONDERTRADE_ACHIEVEMENTS = 3,
 };
 
 extern const achievement_t achievements_pokedex[NUM_POKEDEX_ACHIEVEMENTS];
 extern const achievement_t achievements_pokeradar[NUM_POKERADAR_ACHIEVEMENTS];
+extern const achievement_t achievements_wondertrade[NUM_WONDERTRADE_ACHIEVEMENTS];
 
 extern const achievement_group_t achievement_groups[NUM_ACHIEVEMENT_GROUPS];
 extern EWRAM achievements_ui_cursor_t achievements_ui_cursor;
@@ -121,6 +124,11 @@ void achievements_process_input(u8 self);
     * @return True if there is an issued unlocked message, false otherwise
  */
 bool achievements_get_issued_unlocked_message_group_idx(u8 *group_idx_dst, u8 *achievement_idx_dst);
+
+/**
+ * Sets the current achievement used by overworld achievement scripts.
+ */
+void achievements_set_current(u8 group_idx, u8 achievement_idx);
 
 /**
  * Computes, for all achievement groups, if any reward is claimable and sets the flag for it to be issued in the overworld.

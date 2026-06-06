@@ -3,7 +3,7 @@
     "values" : [
         "ACHIEVEMENT_POKEDEX",
         // "ACHIEVEMENT_BADGES",
-        // "ACHIEVEMENT_WONDERTRADE",
+        "ACHIEVEMENT_WONDERTRADE",
         "ACHIEVEMENT_POKERADAR",
         // "ACHIEVEMENT_BERRIES",
         // "ACHIEVEMENT_BREEDING",
