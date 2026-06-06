@@ -17,17 +17,17 @@ ow_script_egg_hatch:
 	waitstate
 	clearflag TRANS_DISABLE
 incubator_slots_update:
-	// Check if this hatching enables more slots in the incubator
-	special2 LASTRESULT SPECIAL_INCUBATOR_ATTEMPT_ADD_SLOT
-	compare LASTRESULT 0
-	gotoif EQUAL no_slots_enabled
-	buffernumber 0 INCUBATOR_SLOTS
-	buffernumber 1 0x8004
-	fanfare 0x13e
-	loadpointer 0 str_new_slot
-	callstd MSG_KEEPOPEN
-	waitfanfare
-	closeonkeypress
+@ 	// Check if this hatching enables more slots in the incubator
+@ 	special2 LASTRESULT SPECIAL_INCUBATOR_ATTEMPT_ADD_SLOT
+@ 	compare LASTRESULT 0
+@ 	gotoif EQUAL no_slots_enabled
+@ 	buffernumber 0 INCUBATOR_SLOTS
+@ 	buffernumber 1 0x8004
+@ 	fanfare 0x13e
+@ 	loadpointer 0 str_new_slot
+@ 	callstd MSG_KEEPOPEN
+@ 	waitfanfare
+@ 	closeonkeypress
 no_slots_enabled:
 	releaseall
 	end

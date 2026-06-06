@@ -9,6 +9,7 @@
 .include "flags.s"
 .include "items.s"
 .include "pathfinding.s"
+.include "achievement.s"
 
 .global ow_script_map_3_66_person_0
 .global ow_script_map_3_66_person_2
@@ -106,6 +107,7 @@ ow_script_0x8a7343:
 	closeonkeypress
 	waitfanfare
 	setflag WONDERTRADE
+	achievement_unlocked ACHIEVEMENT_WONDERTRADE
 	loadpointer 0x0 str_0x8ab119
 	show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT MSG_FACE
 	setvar STORY_PROGRESS 0x10
