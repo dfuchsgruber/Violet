@@ -87,12 +87,14 @@ enum {
     NUM_POKERADAR_ACHIEVEMENTS = 4,
     NUM_WONDERTRADE_ACHIEVEMENTS = 3,
     NUM_BREEDING_ACHIEVEMENTS = 5,
+    NUM_BERRIES_ACHIEVEMENTS = 4,
 };
 
 extern const achievement_t achievements_pokedex[NUM_POKEDEX_ACHIEVEMENTS];
 extern const achievement_t achievements_pokeradar[NUM_POKERADAR_ACHIEVEMENTS];
 extern const achievement_t achievements_wondertrade[NUM_WONDERTRADE_ACHIEVEMENTS];
 extern const achievement_t achievements_breeding[NUM_BREEDING_ACHIEVEMENTS];
+extern const achievement_t achievements_berries[NUM_BERRIES_ACHIEVEMENTS];
 
 extern const achievement_group_t achievement_groups[NUM_ACHIEVEMENT_GROUPS];
 extern EWRAM achievements_ui_cursor_t achievements_ui_cursor;

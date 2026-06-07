@@ -14,7 +14,10 @@ ow_script_achievement_pokeradar_catch_5_reward:
     copyvarifnotzero 0x8000 ITEM_SONDERBONBON
     copyvarifnotzero 0x8001 1
     callstd ITEM_OBTAIN
+    compare LASTRESULT 0x0
+    gotoif EQUAL no_room_for_item
     setflag FLAG_POKERADAR_REWARD_5
+no_room_for_item:
     goto ow_script_end_achievement_reward
 
 ow_script_achievement_pokeradar_catch_20_reward:

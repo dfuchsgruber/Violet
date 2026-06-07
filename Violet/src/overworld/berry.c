@@ -433,6 +433,10 @@ void berry_tree_calculate_yield(u8 berry_tree_idx) {
             yield += MAX(1, yield / 2);
             DEBUG("Fertilized yield is %d\n", yield);
         }
+        if (checkflag(FLAG_BERRIES_ACHIEVEMENT_PICK_20_ACHIEVED)) {
+            yield += MAX(1, yield / 2);
+            DEBUG("Achievement yield is %d\n", yield);
+        }
         yield = MIN(7, yield);
         csave.berry_trees[berry_tree_idx].yield = (u8)(yield & 7);
         csave.berry_trees[berry_tree_idx].yields_flower = false;
@@ -515,6 +519,9 @@ bool berry_pick() {
     if (!item_has_room(item_idx, count))
         return false;
     item_add(item_idx, count);
+    if (csave.berry_trees[*var_access(0x8000)].replanted) {
+        *var_access(VAR_REPLANTED_BERRIES_HARVESTED) = MIN(9999, *var_access(VAR_REPLANTED_BERRIES_HARVESTED) + 1);
+    }
     csave.berry_trees[*var_access(0x8000)].picked_once = true;
     csave.berry_trees[*var_access(0x8000)].stage = BERRY_STAGE_NO_BERRY;
     csave.berry_trees[*var_access(0x8000)].fertilized = false;

@@ -385,6 +385,7 @@ loaded_str_harvested_single:
 	special SPECIAL_BERRY_TREE_UPDATE_GFX
 	compare 0x8006 1
 	callif EQUAL harvest_flower
+	callasm achievements_compute_unlocked_message_issued @ picking berries may unlock achievements
 	loadpointer 0 str_ground_muddy
 	callstd MSG
 	end
