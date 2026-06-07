@@ -7,7 +7,7 @@
 bool achievement_pokedex_unlocked() { return checkflag(POKEDEX); }
 bool achievement_pokeradar_unlocked() { return checkflag(POKERADAR); }
 bool achievement_wondertrade_unlocked() { return checkflag(WONDERTRADE); }
-bool achievement_breeding_unlocked() { return true; }
+bool achievement_breeding_unlocked() { return checkflag(POKEDEX); }
 bool achievement_berries_unlocked() { return true; }
 
 u8 achievement_group_get_tail_idx(const achievement_group_t *group) {

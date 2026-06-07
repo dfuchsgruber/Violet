@@ -70,6 +70,7 @@ typedef struct {
     const u8 *script_to_execute;
     u16 list_menu_scroll_offset;
     u16 list_menu_row;
+    u8 num_list_menu_items;
     list_menu_template list_menu_template;
     list_menu_item list_menu_items[NUM_ACHIEVEMENT_GROUPS];
 

@@ -95,13 +95,14 @@ static inline u8 achievement_to_bucket(u8 achievement_group) {
 
 void sort_achievements() {
     u8 dst = 0;
-    for (u8 bucket = 0; bucket < 3; bucket++) {
+    for (u8 bucket = 0; bucket < 2; bucket++) {
         for (u8 i = 0; i < NUM_ACHIEVEMENT_GROUPS; i++) {
-            if (achievement_to_bucket(i) == bucket) {
+            if (achievements_ui_state->achievement_cache[i].unlocked && achievement_to_bucket(i) == bucket) {
                 achievements_ui_state->achievements[dst++] = i;
             }
         }
     }
+    achievements_ui_state->num_list_menu_items = dst;
 }
 
 enum { TBOX_HEADER,
@@ -256,7 +257,7 @@ static void achievements_build_header_count_string(u8 *dst) {
 }
 
 static void list_menu_print_callback_null(u8 tbox_idx, int idx, u8 y) {
-    if (idx < 0 || idx >= NUM_ACHIEVEMENT_GROUPS) {
+    if (idx < 0 || idx >= achievements_ui_state->num_list_menu_items) {
         return;
     }
 
@@ -331,7 +332,7 @@ static void achievements_update_level_icon_oams(void) {
         oam_object *icon = oams + oam_idx;
         oam_object *progress_bar = oams + progress_oam_idx;
 
-        if (scroll_offset + i >= NUM_ACHIEVEMENT_GROUPS) {
+        if (scroll_offset + i >= achievements_ui_state->num_list_menu_items) {
             icon->flags |= OAM_FLAG_INVISIBLE;
             progress_bar->flags |= OAM_FLAG_INVISIBLE;
             continue;
@@ -386,7 +387,9 @@ static void achievements_setup_scroll_indicators(void) {
         .arrow1_x = (u8)((ui_tboxes[TBOX_LIST_MENU].x + ui_tboxes[TBOX_LIST_MENU].w / 2) * 8),
         .arrow1_y = (u8)((ui_tboxes[TBOX_LIST_MENU].y + ui_tboxes[TBOX_LIST_MENU].h) * 8 - 4),
         .arrow0_threshold = 0,
-        .arrow1_threshold = (u16)MAX(0, NUM_ACHIEVEMENT_GROUPS - REWARDS_UI_NUM_ITEMS_SHOWN),
+        .arrow1_threshold = achievements_ui_state->num_list_menu_items > REWARDS_UI_NUM_ITEMS_SHOWN
+                                ? (u16)(achievements_ui_state->num_list_menu_items - REWARDS_UI_NUM_ITEMS_SHOWN)
+                                : 0,
         .tiles_tag = 111,
         .pal_tag = 111,
     };
@@ -473,7 +476,7 @@ static void achievements_get_initial_cursor(u16 *scroll_offset, u16 *row) {
         cursor = 0;
     }
 
-    for (u16 i = 0; i < NUM_ACHIEVEMENT_GROUPS; i++) {
+    for (u16 i = 0; i < achievements_ui_state->num_list_menu_items; i++) {
         if (achievements_ui_state->achievements[i] == cursor) {
             sorted_idx = i;
             break;
@@ -712,14 +715,14 @@ void achievements_initialize_state_machine() {
     case BUILD_LIST_MENU: {
         u16 scroll_offset, row;
         achievements_ui_state->list_menu_template = achievements_list_menu_template;
-        for (u8 i = 0; i < NUM_ACHIEVEMENT_GROUPS; i++) {
+        for (u8 i = 0; i < achievements_ui_state->num_list_menu_items; i++) {
             u8 *dst = achievements_ui_state->achievements_item_strings[i];
             strcpy(dst, achievement_groups[achievements_ui_state->achievements[i]].name);
             achievements_ui_state->list_menu_items[i].text = dst;
             achievements_ui_state->list_menu_items[i].idx = i;
         }
         achievements_ui_state->list_menu_template.items = achievements_ui_state->list_menu_items;
-        achievements_ui_state->list_menu_template.item_cnt = NUM_ACHIEVEMENT_GROUPS;
+        achievements_ui_state->list_menu_template.item_cnt = achievements_ui_state->num_list_menu_items;
         achievements_get_initial_cursor(&scroll_offset, &row);
         achievements_ui_state->list_menu_scroll_offset = scroll_offset;
         achievements_ui_state->list_menu_row = row;
