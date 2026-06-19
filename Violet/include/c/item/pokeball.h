@@ -112,6 +112,18 @@ extern const u8 gfx_pokeball_quickTiles[];
 extern const u8 gfx_pokeball_quickPal[];
 extern const u8 gfx_pokeball_duskTiles[];
 extern const u8 gfx_pokeball_duskPal[];
+extern const u8 gfx_pokeball_attackTiles[];
+extern const u8 gfx_pokeball_attackPal[];
+extern const u8 gfx_pokeball_defenseTiles[];
+extern const u8 gfx_pokeball_defensePal[];
+extern const u8 gfx_pokeball_speedTiles[];
+extern const u8 gfx_pokeball_speedPal[];
+extern const u8 gfx_pokeball_special_attackTiles[];
+extern const u8 gfx_pokeball_special_attackPal[];
+extern const u8 gfx_pokeball_special_defenseTiles[];
+extern const u8 gfx_pokeball_special_defensePal[];
+extern const u8 gfx_pokeball_hpTiles[];
+extern const u8 gfx_pokeball_hpPal[];
 
 extern const u8 gfx_pokeball_particlesTiles[];
 extern const u8 gfx_pokeball_particlesPal[];

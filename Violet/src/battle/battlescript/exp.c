@@ -24,6 +24,9 @@ void bsc_cmd_x23_adjust_exp_and_print_string(u16 boosted_string_idx) {
             damage_to_apply = MAX(1, damage_to_apply - damage_to_apply / 2);
             break;
     }
+    if (checkflag(FLAG_REMATCHES_ACHIEVEMENT_100_REWARD) && (battle_flags & BATTLE_VS_SEEKER)) {
+        damage_to_apply += damage_to_apply / 2;
+    }
     damage_to_apply = MAX(1, damage_to_apply);
     DEBUG("Exp to give party idx %d before level adjustment %d\n", battle_state->exp_getter_idx, damage_to_apply);
     // Calculate ( (2L + 10) / (L + Lp + 10) )^2.5

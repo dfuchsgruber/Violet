@@ -91,7 +91,7 @@ u8 vs_seeker_get_response_by_visible_trainers() {
                 npc_update_coordinates_with_current(npcs + trainer->npc_idx);
                 vs_seeker_trainer_applymovement(trainer, movements_trainer_rematchable);
                 vs_seeker_state->trainer_wants_rematch = 1;
-                DEBUG("Trainer %d wants rematch", trainer->trainer_idx);
+                // DEBUG("Trainer %d wants rematch", trainer->trainer_idx);
             } else {
                 vs_seeker_trainer_applymovement(trainer, movements_trainer_no_rematch);
                 vs_seeker_state->trainer_does_not_want_rematch = 1;
@@ -186,6 +186,7 @@ void vs_seeker_callback_step_0_initialize(u8 self) {
         lastresult = 0;
         big_callback_delete(self);
         overworld_script_resume();
+        free(vs_seeker_state);
     } else {
         big_callbacks[self].function = vs_seeker_callback_step_1_wait;
         big_callbacks[self].params[0] = 15;
@@ -194,7 +195,6 @@ void vs_seeker_callback_step_0_initialize(u8 self) {
 }
 
 void vs_seeker() {
-    // No need to implement this, it's just a shortcut to the overworld menu
     big_callback_new(vs_seeker_callback_step_0_initialize, 10);
 }
 
@@ -207,5 +207,53 @@ void vs_seeker_do_rematch_trainerbattle() {
     battle_flags = BATTLE_TRAINER | BATTLE_VS_SEEKER;
     super.saved_callback = trainerbattle_continuation;
     trainerbattle_start();
+    *var_access(VAR_TRAINERBATTLE_REMATCHES_FOUGHT) = MIN(9999, *var_access(VAR_TRAINERBATTLE_REMATCHES_FOUGHT) + 1);
     overworld_script_halt();
+}
+
+static const u8 vs_seeker_visible_rematch_movements[] = {LOOK_DOWN_DELAYED, 101, 95, STOP};
+
+bool vs_seeker_new_rematches_visible() {
+    if (!checkflag(FLAG_VS_SEEKER)) return false;
+    if (!checkflag(FLAG_REMATCHES_ACHIEVEMENT_50_REWARD)) return false;
+    
+    vs_seeker_state = malloc_and_clear(sizeof(vs_seeker_state_t));
+    vs_seeker_state_initialize_by_persons();
+    // DEBUG("Checking for new rematches, num trainers %d\n", vs_seeker_state->num_rematchable_trainers);
+    bool result = false;
+    for (size_t i = 0; vs_seeker_state->trainers[i].person_idx != 0xFF; i++) {
+        // DEBUG("Trainer %d, visible %d, flag %d, wants rematch %d, rematch triggered %d\n",
+        //     i,
+        //     vs_seeker_is_trainer_visible(vs_seeker_state->trainers + i),
+        //     checktrainerflag(vs_seeker_state->trainers[i].trainer_idx),
+        //      vs_seeker_trainer_wants_rematch(vs_seeker_state->trainers[i].trainer_idx),
+        //     vs_seeker_person_get_rematch_triggered(vs_seeker_state->trainers[i].person_idx)
+        // );
+        if (vs_seeker_is_trainer_visible(vs_seeker_state->trainers + i) &&
+            checktrainerflag(vs_seeker_state->trainers[i].trainer_idx) &&
+            vs_seeker_trainer_wants_rematch(vs_seeker_state->trainers[i].trainer_idx) &&
+            !vs_seeker_person_get_rematch_triggered(vs_seeker_state->trainers[i].person_idx)) {
+                result = true;
+                // DEBUG("Trainer %d wants rematch", vs_seeker_state->trainers[i].trainer_idx);
+                vs_seeker_trainer_t *trainer = vs_seeker_state->trainers + i;
+                 vs_seeker_state->behaviours[vs_seeker_state->num_rematchable_trainers] = vs_seeker_get_movement_type_by_sprite_idx(
+                    trainer->sprite_idx
+                );
+                vs_seeker_person_set_rematch_triggered(trainer->person_idx);
+                vs_seeker_state->trainer_idxs[vs_seeker_state->num_rematchable_trainers] = trainer->trainer_idx;
+                vs_seeker_state->num_rematchable_trainers++;
+                npc_update_coordinates_with_current(npcs + trainer->npc_idx);
+                // u8 npc_idx = vs_seeker_state->trainers[i].npc_idx;
+                // if (npc_idx_is_sane(npc_idx)) {
+                //     npc_set_trainer_movement_type(npcs + npc_idx, vs_seeker_state->behaviours[i]);
+                // }
+                // npc_override_movement_type(npcs + npc_idx, vs_seeker_state->behaviours[i]);
+                vs_seeker_trainer_applymovement(trainer, vs_seeker_visible_rematch_movements);
+        }
+    }
+    if (result) {
+        vs_seeker_rematch_trainers_start_idle_movement();
+    }
+    free(vs_seeker_state);
+    return result;
 }

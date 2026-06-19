@@ -195,4 +195,9 @@ void start_menu_fade_if_applicable();
  */
 void start_menu_delete();
 
+/**
+ * Shows the start menu
+ */
+void start_menu_show();
+
 #endif /* INCLUDE_C_OVERWORLD_START_MENU_H_ */

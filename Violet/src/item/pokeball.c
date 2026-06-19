@@ -83,6 +83,12 @@ const graphic pokeball_gfxs[NUM_POKEBALLS] = {
     [BALL_LOTUS] = {.sprite = gfx_pokeball_lotusTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_LOTUS},
     [BALL_QUICK] = {.sprite = gfx_pokeball_quickTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_QUICK},
     [BALL_DUSK] = {.sprite = gfx_pokeball_duskTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_DUSK},
+    [BALL_ATTACK] = {.sprite = gfx_pokeball_attackTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_ATTACK},
+    [BALL_DEFENSE] = {.sprite = gfx_pokeball_defenseTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_DEFENSE},
+    [BALL_SPEED] = {.sprite = gfx_pokeball_speedTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_SPEED},
+    [BALL_SPECIAL_ATTACK] = {.sprite = gfx_pokeball_special_attackTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_SPECIAL_ATTACK},
+    [BALL_SPECIAL_DEFENSE] = {.sprite = gfx_pokeball_special_defenseTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_SPECIAL_DEFENSE},
+    [BALL_HP] = {.sprite = gfx_pokeball_hpTiles, .size = GRAPHIC_SIZE_4BPP(16, 48), .tag = OAM_TAG_POKEBALL_BASE + BALL_HP},
 };
 
 const palette pokeball_palettes[NUM_POKEBALLS] = {
@@ -101,6 +107,12 @@ const palette pokeball_palettes[NUM_POKEBALLS] = {
     [BALL_LOTUS] = {.pal = gfx_pokeball_lotusPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_LOTUS},
     [BALL_QUICK] = {.pal = gfx_pokeball_quickPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_QUICK},
     [BALL_DUSK] = {.pal = gfx_pokeball_duskPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_DUSK},
+    [BALL_ATTACK] = {.pal = gfx_pokeball_attackPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_ATTACK},
+    [BALL_DEFENSE] = {.pal = gfx_pokeball_defensePal, .tag = OAM_TAG_POKEBALL_BASE + BALL_DEFENSE},
+    [BALL_SPEED] = {.pal = gfx_pokeball_speedPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_SPEED},
+    [BALL_SPECIAL_ATTACK] = {.pal = gfx_pokeball_special_attackPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_SPECIAL_ATTACK},
+    [BALL_SPECIAL_DEFENSE] = {.pal = gfx_pokeball_special_defensePal, .tag = OAM_TAG_POKEBALL_BASE + BALL_SPECIAL_DEFENSE},
+    [BALL_HP] = {.pal = gfx_pokeball_hpPal, .tag = OAM_TAG_POKEBALL_BASE + BALL_HP},
 };
 
 const oam_template pokeball_oam_templates[NUM_POKEBALLS] = {
@@ -119,6 +131,12 @@ const oam_template pokeball_oam_templates[NUM_POKEBALLS] = {
     [BALL_LOTUS] = POKEBALL_TEMPLATE_STANDARD(BALL_LOTUS),
     [BALL_QUICK] = POKEBALL_TEMPLATE_STANDARD(BALL_QUICK),
     [BALL_DUSK] = POKEBALL_TEMPLATE_STANDARD(BALL_DUSK),
+    [BALL_ATTACK] = POKEBALL_TEMPLATE_STANDARD(BALL_ATTACK),
+    [BALL_DEFENSE] = POKEBALL_TEMPLATE_STANDARD(BALL_DEFENSE),
+    [BALL_SPEED] = POKEBALL_TEMPLATE_STANDARD(BALL_SPEED),
+    [BALL_SPECIAL_ATTACK] = POKEBALL_TEMPLATE_STANDARD(BALL_SPECIAL_ATTACK),
+    [BALL_SPECIAL_DEFENSE] = POKEBALL_TEMPLATE_STANDARD(BALL_SPECIAL_DEFENSE),
+    [BALL_HP] = POKEBALL_TEMPLATE_STANDARD(BALL_HP),
 };
 
 static const sprite pokeball_partices_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_8_8, .attr2 = ATTR2_PRIO(2),};
@@ -139,6 +157,12 @@ const graphic pokeball_particle_gfxs[NUM_POKEBALLS] = {
     [BALL_LOTUS] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_LOTUS},
     [BALL_QUICK] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_QUICK},
     [BALL_DUSK] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_DUSK},
+    [BALL_ATTACK] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_ATTACK},
+    [BALL_DEFENSE] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_DEFENSE},
+    [BALL_SPEED] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_SPEED},
+    [BALL_SPECIAL_ATTACK] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_SPECIAL_ATTACK},
+    [BALL_SPECIAL_DEFENSE] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_SPECIAL_DEFENSE},
+    [BALL_HP] = {.sprite = gfx_pokeball_particlesTiles, .size = GRAPHIC_SIZE_4BPP(8, 8) * 8, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_HP},
 };
 
 const palette pokeball_particle_palettes[NUM_POKEBALLS] = {
@@ -157,6 +181,12 @@ const palette pokeball_particle_palettes[NUM_POKEBALLS] = {
     [BALL_LOTUS] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_LOTUS},
     [BALL_QUICK] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_QUICK},
     [BALL_DUSK] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_DUSK},
+    [BALL_ATTACK] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_ATTACK},
+    [BALL_DEFENSE] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_DEFENSE},
+    [BALL_SPEED] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_SPEED},
+    [BALL_SPECIAL_ATTACK] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_SPECIAL_ATTACK},
+    [BALL_SPECIAL_DEFENSE] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_SPECIAL_DEFENSE},
+    [BALL_HP] = {.pal = gfx_pokeball_particlesPal, .tag = OAM_TAG_POKEBALL_PARTICLES_BASE + BALL_HP},
 };
 
 const u8 pokeball_particle_animation_idxs[NUM_POKEBALLS] = {
@@ -175,6 +205,12 @@ const u8 pokeball_particle_animation_idxs[NUM_POKEBALLS] = {
     [BALL_LOTUS] = 1,
     [BALL_QUICK] = BALL_PARTICLE_SMALL_GREEN_CROSSES,
     [BALL_DUSK] = BALL_PARTICLE_SMALL_GREEN_CROSSES,
+    [BALL_ATTACK] = 0,
+    [BALL_DEFENSE] = 0,
+    [BALL_SPEED] = 0,
+    [BALL_SPECIAL_ATTACK] = 0,
+    [BALL_SPECIAL_DEFENSE] = 0,
+    [BALL_HP] = 0,
 };
 
 void (*const pokeball_particles_initializers[NUM_POKEBALLS])(u8) = {
@@ -193,6 +229,12 @@ void (*const pokeball_particles_initializers[NUM_POKEBALLS])(u8) = {
     [BALL_LOTUS] = pokeball_particles_initialize_master_ball,
     [BALL_QUICK] = pokeball_particles_initialize_nest_ball,
     [BALL_DUSK] = pokeball_particles_initialize_nest_ball,
+    [BALL_ATTACK] = pokeball_particles_initialize_poke_ball,
+    [BALL_DEFENSE] = pokeball_particles_initialize_poke_ball,
+    [BALL_SPEED] = pokeball_particles_initialize_poke_ball,
+    [BALL_SPECIAL_ATTACK] = pokeball_particles_initialize_poke_ball,
+    [BALL_SPECIAL_DEFENSE] = pokeball_particles_initialize_poke_ball,
+    [BALL_HP] = pokeball_particles_initialize_poke_ball,
 };
 
 const oam_template pokeball_particles_oam_templates[NUM_POKEBALLS] = {
@@ -211,6 +253,12 @@ const oam_template pokeball_particles_oam_templates[NUM_POKEBALLS] = {
     [BALL_LOTUS] = POKEBALL_PARTICLE_TEMPLATE_STANDARD(BALL_LOTUS),
     [BALL_QUICK] = POKEBALL_PARTICLE_TEMPLATE_STANDARD(BALL_QUICK),
     [BALL_DUSK] = POKEBALL_PARTICLE_TEMPLATE_STANDARD(BALL_DUSK),
+    [BALL_ATTACK] = POKEBALL_PARTICLE_TEMPLATE_STANDARD(BALL_ATTACK),
+    [BALL_DEFENSE] = POKEBALL_PARTICLE_TEMPLATE_STANDARD(BALL_DEFENSE),
+    [BALL_SPEED] = POKEBALL_PARTICLE_TEMPLATE_STANDARD(BALL_SPEED),
+    [BALL_SPECIAL_ATTACK] = POKEBALL_PARTICLE_TEMPLATE_STANDARD(BALL_SPECIAL_ATTACK),
+    [BALL_SPECIAL_DEFENSE] = POKEBALL_PARTICLE_TEMPLATE_STANDARD(BALL_SPECIAL_DEFENSE),
+    [BALL_HP] = POKEBALL_PARTICLE_TEMPLATE_STANDARD(BALL_HP),
 };
 
 // Battlers are faded to this palette when sent out in this ball
@@ -230,6 +278,12 @@ const color_t pokeball_open_fade_colors[] = {
     [BALL_LOTUS]    =  {.rgb = {.red = 31, .green = 31, .blue = 10}},
     [BALL_QUICK]    =  {.rgb = {.red = 26, .green = 20, .blue = 4}},
     [BALL_DUSK]    =  {.rgb = {.red = 11, .green = 11, .blue = 1}},
+    [BALL_ATTACK]    =  {.rgb = {.red = 31, .green = 22, .blue = 30}},
+    [BALL_DEFENSE]    =  {.rgb = {.red = 31, .green = 22, .blue = 30}},
+    [BALL_SPEED]    =  {.rgb = {.red = 31, .green = 22, .blue = 30}},
+    [BALL_SPECIAL_ATTACK]    =  {.rgb = {.red = 31, .green = 22, .blue = 30}},
+    [BALL_SPECIAL_DEFENSE]    =  {.rgb = {.red = 31, .green = 22, .blue = 30}},
+    [BALL_HP]    =  {.rgb = {.red = 31, .green = 22, .blue = 30}},
 };
 
 void pokeball_load_gfx(u8 ball_idx) {

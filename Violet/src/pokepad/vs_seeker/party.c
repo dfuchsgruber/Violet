@@ -17,7 +17,7 @@ void vs_seeker_setup_trainer_party(u16 trainer_idx, trainer *trainer_dst, traine
         int deviation = (u16)_prng_xorshift(&rng_state) % (2 * std);
         u8 level = (u8)MIN(100, MAX(2, mean - std + deviation));
         party_dst[i] = trainers[trainer_idx].party[i];
-        party_dst[i].level = level;
+        party_dst[i].level = MIN(100, MAX(party_dst[i].level, level));
     }
     DEBUG("Setting up rematch trainer party for trainer %d", trainer_idx);
     // TODO: Generate some additional pokemon, add items, etc. based on the story progression

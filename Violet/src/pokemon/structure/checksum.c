@@ -13,6 +13,7 @@
 #include "constants/pokemon_stat_names.h"
 #include "constants/pokemon_attributes.h"
 #include "item/pokeball.h"
+#include "constants/sav_keys.h"
 
 static bool pokemon_new_gender_is_female(u16 species, u16 (*rnd)()) {
 	if (rnd == NULL)
@@ -49,7 +50,7 @@ pid_t pokemon_new_pid_by_prng(u16 species, u16 (*rnd)()) {
 	p.fields.hidden_power_strength = (u8)(rnd() & 7);
 
 	// Use slash count to increase the shiny rate
-	int splash_cnt = MIN(99, save_get_key(SAVE_KEY_SPLASH_USED));
+	int splash_cnt = MIN(99, save_get_key(SAV_KEY_SPLASH_USED));
 	int shiny_rate = checkflag(FLAG_SCHILLERPIN) ? 500 : 1000;
 
 	if (rnd() % shiny_rate <= splash_cnt / 10) {

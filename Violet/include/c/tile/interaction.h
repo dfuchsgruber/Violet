@@ -38,6 +38,24 @@ const u8 *tile_interaction_get_by_person(const position_t *position, u16 behavio
  */
 const u8 *tile_interaction_get_by_tile_behaviour(const position_t *tile_position, u16 behaviour, u8 direction, u16 *interaction_sound);
 
+/**
+    * Checks if a signpost script should be triggered by a collision and initializes it.
+    * @param position the position of the tile
+    * @param behaviour the tile behaviour
+    * @param direction the direction the player is facing
+    * @return if a signpost script was triggered
+ */
+u8 signpost_overworld_script_initialize_by_collision(const position_t *position, u16 behaviour, u8 faced_direction);
+
+/**
+    * Checks if a tile interaction script should be triggered by a collision and initializes it.
+    * @param position the position of the tile
+    * @param behaviour the tile behaviour
+    * @param direction the direction the player is facing
+    * @return if a tile interaction script was triggered
+*/
+u8 overworld_script_initialize_by_tile_interaction(position_t *position, u16 behaviour, u8 direction);
+
 // TODO: this is currently always an empty trash can -- should we make a dynamic system here as well?
 extern const u8 ow_script_trash[];
 extern const u8 ow_script_rock_climb[];

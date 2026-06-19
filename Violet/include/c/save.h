@@ -257,9 +257,6 @@ extern EWRAM custom_memory csave;
 
 extern warp_save_t warp_recent; // Recent map, bank and positions (i.e. when transitioning)
 
-#define SAVE_KEY_SPLASH_USED 0x1A
-#define SAVE_KEY_EGGS_HATCHED 0xD
-
 /**
  * Increments a stat in the save file (key)
  * @param key the stat to increment

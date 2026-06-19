@@ -20,6 +20,7 @@
 #include "save.h"
 #include "types.h"
 #include "vars.h"
+#include "constants/sav_keys.h"
 
 void _pokemon_get_egg_moves_stub() {
     ERROR("Rom called old invalid stub for pokemon_get_egg_moves!\n");
@@ -73,7 +74,7 @@ void breeding_inherit_ivs(pokemon *egg, daycare_stru *daycare) {
         // Randomly generate an iv
         int iv_rnd = rnd16() % 32;
         // Random iv can be amplified by up to 2.0 hatching eggs
-        iv_rnd *= (100 + MIN(100, save_get_key(SAVE_KEY_EGGS_HATCHED))) / 100;
+        iv_rnd *= (100 + MIN(100, save_get_key(SAV_KEY_EGGS_HATCHED))) / 100;
         iv_rnd = MIN(31, iv_rnd);
         int iv_mother = box_pokemon_get_attribute(&daycare->pokemon[0].pokemon, ATTRIBUTE_HP_IV + i,
                                                   0);

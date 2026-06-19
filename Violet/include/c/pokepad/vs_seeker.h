@@ -139,6 +139,11 @@ bool vs_seeker_person_get_rematch_triggered(u8 person_idx);
  */
 void vs_seeker_person_clear_rematch_triggered_for_all();
 
+/*
+ * Checks if there are new rematchable trainers visible and triggers their rematch movements.
+    * @return whether there are new rematchable trainers visible
+*/
+bool vs_seeker_new_rematches_visible();
 
 
 void vs_seeker_setup_trainer_party(u16 trainer_idx, trainer *trainer_dst, trainer_pokemon *party_dst);

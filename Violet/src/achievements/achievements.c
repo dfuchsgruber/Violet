@@ -9,6 +9,7 @@ bool achievement_pokeradar_unlocked() { return checkflag(POKERADAR); }
 bool achievement_wondertrade_unlocked() { return checkflag(WONDERTRADE); }
 bool achievement_breeding_unlocked() { return checkflag(POKEDEX); }
 bool achievement_berries_unlocked() { return true; }
+bool achievement_rematches_unlocked() { return checkflag(FLAG_VS_SEEKER); }
 
 u8 achievement_group_get_tail_idx(const achievement_group_t *group) {
     u8 i = 0;
@@ -28,27 +29,33 @@ const achievement_group_t achievement_groups[NUM_ACHIEVEMENT_GROUPS] = {
         .num_achievements = ARRAY_COUNT(achievements_pokedex),
     },
     [ACHIEVEMENT_POKERADAR] = {
-        .name = (const u8[]) LANGDEP(PSTRING("Pokémon-Jäger"), PSTRING("Pokémon Hunter")),
+        .name = (const u8[]) LANGDEP(PSTRING("Auf dem Radar"), PSTRING("On the radar")),
         .achievements = achievements_pokeradar,
         .is_unlocked = achievement_pokeradar_unlocked,
         .num_achievements = ARRAY_COUNT(achievements_pokeradar),
     },
     [ACHIEVEMENT_WONDERTRADE] = {
-        .name = (const u8[]) LANGDEP(PSTRING("Tauschfreude"), PSTRING("Trading Fun")),
+        .name = (const u8[]) LANGDEP(PSTRING("Nimm, was kommt"), PSTRING("Trading Fun")),
         .achievements = achievements_wondertrade,
         .is_unlocked = achievement_wondertrade_unlocked,
         .num_achievements = ARRAY_COUNT(achievements_wondertrade),
     },
     [ACHIEVEMENT_BREEDING] = {
-        .name = (const u8[]) LANGDEP(PSTRING("Gut geschlüpft!"), PSTRING("Egg-cellent")),
+        .name = (const u8[]) LANGDEP(PSTRING("Ei, ei, eiDOTS"), PSTRING("Egg-cellent")),
         .achievements = achievements_breeding,
         .is_unlocked = achievement_breeding_unlocked,
         .num_achievements = ARRAY_COUNT(achievements_breeding),
     },
     [ACHIEVEMENT_BERRIES] = {
         .name = (const u8[]) LANGDEP(PSTRING("Grüner Daumen"), PSTRING("Green Thumb")),
-        .achievements = achievements_berries, // No achievements for berries yet, as they are not fully implemented yet
+        .achievements = achievements_berries,
         .is_unlocked = achievement_berries_unlocked,
         .num_achievements = ARRAY_COUNT(achievements_berries),
+    },
+    [ACHIEVEMENT_REMATCHES] = {
+        .name = (const u8[]) LANGDEP(PSTRING("Runde Zwei"), PSTRING("Round Two")),
+        .achievements = achievements_rematches,
+        .is_unlocked = achievement_rematches_unlocked,
+        .num_achievements = ARRAY_COUNT(achievements_rematches),
     }
 };

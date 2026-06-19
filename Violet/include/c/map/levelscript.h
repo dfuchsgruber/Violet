@@ -31,4 +31,10 @@ void map_levelscript_init_no_var_check(u8 type);
  **/
 bool map_flash_try_automatic_usage();
 
+/**
+ * Checks if a levelscript of type on_frame can be triggered and triggers it. Also checks for automatic flash usage.
+ * @return if a levelscript has been triggered
+*/
+bool map_init_levelscript_2_on_frame();
+
 #endif /* INCLUDE_C_MAP_LEVELSCRIPT_H_ */

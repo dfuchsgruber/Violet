@@ -127,4 +127,10 @@ void ally_party_setup();
  **/
 void trainerbattle_continuation();
 
+/**
+* Triggers trainer battles if the player is spotted by a trainer npc.
+* @return if a trainer battle was triggered
+*/
+bool trigger_npc_spotting();
+
 #endif /* INCLUDE_C_TRAINER_TRAINER_H_ */

@@ -1,7 +1,5 @@
 #include "achievements.h"
 #include "language.h"
-#include "pokepad/pokedex/operator.h"
-#include "pokepad/pokedex/count.h"
 #include "constants/flags.h"
 #include "vars.h"
 

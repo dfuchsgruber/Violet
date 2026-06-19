@@ -165,3 +165,7 @@
     bx r3
     .pool
 
+.org 0x0806ca2c
+    ldr r1, =overworld_process_input | 1
+    bx r1
+    .pool

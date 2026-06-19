@@ -48,13 +48,13 @@ end_main:
 bl safari_do_step
 lsl r0, #0x18
 lsr r0, #0x18
-ldr r1, =0x0806d68d
+ldr r1, =0x0806d68c | 1
 bx r1
 
 
 
 ret_1:
-ldr r0, =0x00806D695
+ldr r0, =0x00806D694 | 1
 bx r0
 
 script_init:

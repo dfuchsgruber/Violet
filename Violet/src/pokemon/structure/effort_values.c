@@ -15,6 +15,8 @@
 #include "save.h"
 #include "constants/item_hold_effects.h"
 #include "pokemon/basestat.h"
+#include "battle/state.h"
+#include "flags.h"
 
 const u8 effective_ev_attributes[6] = {
 		[STAT_HP] = ATTRIBUTE_COOLNESS,
@@ -62,6 +64,8 @@ void pokemon_get_evs(pokemon *p, u16 defeated_species) {
 	if (pokemon_get_pokerus(p, POKERUS_GET_SINGLE_POKEMON))
 		multiplier *= 2;
 	if (hold_effect == HOLD_EFFECT_MACHO_BRACE)
+		multiplier *= 2;
+	if (checkflag(FLAG_REMATCHES_ACHIEVEMENT_100_REWARD) && (battle_flags & BATTLE_VS_SEEKER))
 		multiplier *= 2;
 	evs[STAT_HP] = basestats[defeated_species].ev_yield.hp;
 	evs[STAT_ATTACK] = basestats[defeated_species].ev_yield.att;

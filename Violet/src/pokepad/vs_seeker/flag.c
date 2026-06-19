@@ -36,7 +36,7 @@ void vs_seeker_reset_rematch_flags() {
 
 
 void vs_seeker_randomly_set_rematch_flags() {
-    size_t num_iterations = 1; // TODO: based on level?
+    size_t num_iterations = checkflag(FLAG_REMATCHES_ACHIEVEMENT_10_REWARD) ? 2 : 1;
     for (size_t i = 0; i < ARRAY_COUNT(save1->trainer_rematch_flags); i++) {
         for (size_t j = 0; j < num_iterations; j++) {
             save1->trainer_rematch_flags[i] |= (u8)rnd16();
