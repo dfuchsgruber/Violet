@@ -6148,7 +6148,7 @@ const item items[] = {
 		0, // secondary_idx
 	},{
 		//
-		LANGDEP(PSTRING("Leuchtköder"), PSTRING("Shining Bait")),
+		LANGDEP(PSTRING("Leuchtköder"), PSTRING("Shiny Bait")),
 		0x103, //index
 		0, //price
 		0, //holding_effect_id

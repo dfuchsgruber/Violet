@@ -453,6 +453,7 @@ static bool fishing_wait_for_bite(u8 self) {
         }
         state->delay--;
         int p = MAX(1, 2 + fishing_get_bite_bonus(state)); // Base change is 4 / 256 = 1 / 64
+        if (state->biting_odds_increased) p += 5;
         if (map_current_has_wild_habitat_rod() && ((rnd16() % 256) < p)) { // something bites
             // oam_gfx_anim_start(oams + player_state.oam_idx, fishing_get_bite_animation_idx_by_facing_direction());
             state->state = FISHING_STATE_BITE_EXCLAMATION_MARK;
@@ -1190,6 +1191,8 @@ static void fishing_big_callback_do(u8 self) {
 
 void fishing_big_callback(u8 self) {
     fishing_state_t *state = malloc_and_clear(sizeof(fishing_state_t));
+    state->catching_speed_increased = checkflag(FLAG_FISHING_REWARD_20);
+    state->biting_odds_increased = checkflag(FLAG_FISHING_REWARD_5);
     state->rod_type = (u8)big_callbacks[self].params[15];
     big_callback_set_int(self, 0, (int)state);
     big_callbacks[self].function = fishing_big_callback_do;

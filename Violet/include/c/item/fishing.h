@@ -172,6 +172,8 @@ typedef struct {
     FIXED fish_target_position;
     u16 fish_t;
     u16 fish_pattern_duration;
+    u8 catching_speed_increased : 1;
+    u8 biting_odds_increased : 1;
 } fishing_state_t;
 
 

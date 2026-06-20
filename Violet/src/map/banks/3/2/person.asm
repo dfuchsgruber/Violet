@@ -9,6 +9,7 @@
 .include "items.s"
 .include "pathfinding.s"
 .include "specials.s"
+.include "achievement.s"
 
 .global ow_script_bruchfels_may_2
 .global ow_script_map_3_2_person_0
@@ -289,6 +290,7 @@ copyvarifnotzero 0x8000 ITEM_ANGEL
 copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 setflag AKTANIA_ROD
+achievement_unlocked ACHIEVEMENT_FISHING
 loadpointer 0x0 str_0x8c1179
 callstd MSG
 release

@@ -6,6 +6,7 @@
 .include "flags.s"
 .include "items.s"
 .include "vars.s"
+.include "achievement.s"
 
 .global ow_script_kaskada_clouds_person_0
 .global ow_script_kaskada_clouds_person_1
@@ -28,6 +29,7 @@ ow_script_kaskada_clouds_person_fisher_good_rod:
     copyvarifnotzero 0x8000 ITEM_PROFIANGEL
     copyvarifnotzero 0x8001 0x1
     callstd ITEM_OBTAIN
+    achievement_unlocked ACHIEVEMENT_FISHING
     loadpointer 0 str_given_good_rod
     callstd MSG_KEEPOPEN
     setflag FLAG_GOOD_ROD
