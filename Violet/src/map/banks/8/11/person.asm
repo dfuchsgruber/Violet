@@ -712,23 +712,23 @@ str_blaise_igva_6:
 str_blaise_6:
 	.autostring 34 2 "Natürlich weiß ich das."
 str_blaise_igva_7:
-	.autostring 34 2 "B-Bist du von allen guten Geistern verlassen?\pD-Du willst dich allen Ernstes mit den Top Vier anlegen?"
+	.autostring 34 2 "B-Bist du von allen guten Geistern verlassen?\pD-Du willst dich allen Ernstes mit ihm anlegen?"
 str_blaise_7:
-	.autostring 34 2 "Hör mal zu, Rotschopf.\pMein Vater unterhält diesen Laden.\pUnd genau deswegen werd ich ihn in Grund und Asche legen.\pKomm mir nicht in die Quere."
+	.autostring 34 2 "Hör mal zu, Rotschopf.\pIch werde alles, was meinem Vater gehört, in Schutt und Asche legen.\pKomm mir ja nicht in die Quere."
 str_blaise_igva_8:
-	.autostring 34 2 "DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT\nDOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT\pH-hör mal zu.\pDu kannst unmöglich alleine gegen jemanden von den Top Vier gewinnen.\pDas ist Wahnsinn!"
+	.autostring 34 2 "DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT\nDOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT\pD-Dir ist wirklich nicht zu helfenDOTS"
 str_blaise_8:
-	.autostring 34 2 "Wer sagt das?\pDu etwa?\pSoll ich mich lieber eurer scheinheiligen Revolutionsbewegung anschließen, ja?"
+	.autostring 34 2 "Deine Meinung interessiert mich nicht."
 str_blaise_igva_9:
-	.autostring 34 2 "Wieso nicht?\pWir haben das gleiche Ziel.\pUnsere Gruppe will die Top Vier auch stürzen, weißt du?"
+	.autostring 34 2 "W-wiesoDOTS\pWieso schließt du dich uns dann nicht an?\pW-Wir wollen doch auch diejenigenDOTS"
 str_blaise_9:
-	.autostring 34 2 "Hör mir mal gut zu.\pIch habe keine Lust, mit euch Grünmänteln Revolution zu spielen.\pIch habe meinen eigenen Plan und davon wird mich keiner abhalten.\pAdieu!"
+	.autostring 34 2 "Hör mir mal gut zu.\pIch habe keine Lust, mit euch Grünmänteln Revolution zu spielen.\pIch muss stärker werden, um meinen Vater zu besiegen.\pUnd das kann ich in eurem Verein ganz sicher nicht erreichen."
 str_blaise_10:
-	.autostring 34 2 "Ach, und PLAYER.\pAn deiner Stelle würde ich dringend überdenken, mit wem ich mich abgebe.\pEin gut gemeinter Rat deines alten Klassenkammeraden."
+	.autostring 34 2 "PLAYER.\pIch hätte nicht gedacht, dass du dich mit solchen Leuten abgibstDOTS"
 str_blaise_igva_10:
 	.autostring 34 2 "Du hast ja nette Freunde, PLAYER.\pWas für ein IdiotDOTS"
 str_blaise_igva_11:
-	.autostring 34 2 "Aber immerhin stellt sich auch er gegen ein Mitglied der Top Vier.\pIch schätze, das ist auch schon etwasDOTS"
+	.autostring 34 2 "A-Aber er scheint wohl auch etwas gegen diesen Ort hier zu habenDOTS DOTS DOTS"
 str_blaise_igva_12:
 	.autostring 34 2 "Ach du Schande!\pDiese ganze Geschichte hier hat uns wirklich lange aufgehalten."
 str_blaise_igva_13:

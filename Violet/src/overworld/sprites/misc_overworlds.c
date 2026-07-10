@@ -443,6 +443,7 @@ void overworld_misc_intialize() {
     memset(csave.mushroom_flags, 0, ARRAY_COUNT(csave.mushroom_flags));
     memset(csave.shell_flags, 0, ARRAY_COUNT(csave.shell_flags));
     memset(csave.trash_flags, 0, ARRAY_COUNT(csave.trash_flags));
+    memset(csave.trash_flags2, 0, ARRAY_COUNT(csave.trash_flags2));
 }
 
 static const u32 mushroom_encounters[] = {[POKEMON_KNILZ] = 4, [POKEMON_WAUMPEL] = 1, [POKEMON_SAMURZEL] = 1, [POKEMON_MYRAPLA] = 1, [POKEMON_KNOFENSA] = 1, [0] = 12};

@@ -476,17 +476,17 @@
 				"MAP_KASKADA"
 			],
 			"4": [
-				"map_8_4",
+				"map_kaskada_house_2",
 				"src/map/banks/8/4/map_8_4.pms",
 				"MAP_KASKADA"
 			],
 			"6": [
-				"map_8_6",
+				"map_kaskada_house_3",
 				"src/map/banks/8/6/map_8_6.pms",
 				"MAP_KASKADA"
 			],
 			"7": [
-				"map_8_7",
+				"map_kaskada_house_4",
 				"src/map/banks/8/7/map_8_7.pms",
 				"MAP_KASKADA"
 			],
@@ -2398,6 +2398,14 @@
 		"map_footer_laubdorf_inside_3": [
 			195,
 			"src/map/banks/12/6/map_footer_laubdorf_inside_3.pms"
+		],
+		"map_footer_kaskada_inside_0": [
+			196,
+			"src/map/banks/8/0/map_footer_kaskada_inside_0.pms"
+		],
+		"map_footer_kaskada_house_3": [
+			197,
+			"src/map/banks/8/6/map_footer_kaskada_house_3.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -2507,7 +2515,8 @@
 		"maptileset_tanns_lab": "src/map/tileset/maptileset_tanns_lab.pms",
 		"maptileset_bruchfels_inside": "src/map/tileset/maptileset_bruchfels_inside.pms",
 		"maptileset_kranzdorf": "src/map/tileset/maptileset_kranzdorf.pms",
-		"maptileset_laubdorf_inside": "src/map/tileset/maptileset_laubdorf_inside.pms"
+		"maptileset_laubdorf_inside": "src/map/tileset/maptileset_laubdorf_inside.pms",
+		"maptileset_kaskada_inside": "src/map/tileset/maptileset_kaskada_inside.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2607,6 +2616,7 @@
 		"gfx_maptileset_tanns_labTiles": "asset/gfx/tileset/gfx_maptileset_tanns_lab.png",
 		"gfx_maptileset_bruchfels_insideTiles": "asset/gfx/tileset/gfx_maptileset_bruchfels_inside.png",
 		"gfx_maptileset_kranzdorf_insideTiles": "asset/gfx/tileset/gfx_maptileset_kranzdorf_inside.png",
-		"gfx_maptileset_laubdorf_insideTiles": "asset/gfx/tileset/gfx_maptileset_laubdorf_inside.png"
+		"gfx_maptileset_laubdorf_insideTiles": "asset/gfx/tileset/gfx_maptileset_laubdorf_inside.png",
+		"gfx_maptileset_kaskada_insideTiles": "asset/gfx/tileset/gfx_maptileset_kaskada_inside.png"
 	}
 }

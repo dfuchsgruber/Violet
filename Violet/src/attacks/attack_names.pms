@@ -145,7 +145,7 @@
 		// ATTACK_SANDWIRBEL
 		{
 			"LANG_GER": "Sandwirbel",
-			"LANG_EN": "Sand-attack"
+			"LANG_EN": "Sand Attack"
 		},
 		// ATTACK_KOPFNUSS
 		{
@@ -1874,7 +1874,7 @@
 		},
 		// ATTACK_DRACO_METEOR
 		{
-			"LANG_GER": "Draco-meteor",
+			"LANG_GER": "Draco-Meteor",
 			"LANG_EN": "Draco-meteor"
 		},
 		// ATTACK_NASSSCHWEIF
@@ -1884,7 +1884,7 @@
 		},
 		// ATTACK_ZEN_KOPFSTOSS
 		{
-			"LANG_GER": "Zen-kopfstoß",
+			"LANG_GER": "Zen-Kopfstoß",
 			"LANG_EN": "Zen Headbutt"
 		},
 		// ATTACK_ENERGIEBALL

@@ -81,6 +81,11 @@ void pokepad2_callback_initialize();
  **/
 bool start_menu_pokepad_initialize();
 
+/**
+ * Checks for inputs of the L and R buttons and triggers the script of the pokepad registered item if set and key pressed.
+*/
+bool pokepad_initialize_registered_item();
+
 extern const u8 gfx_pokepad_wallpaper_startersTiles[];
 extern const u8 gfx_pokepad_wallpaper_startersPal[];
 extern const u8 gfx_pokepad_wallpaper_startersMap[];

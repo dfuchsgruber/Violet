@@ -78,6 +78,44 @@
                 ],
                 "hidden_power_type": "TYPE_FEUER",
                 "rating" : 8
+            },
+            {
+                "evs": {
+                    "STAT_HP": 4,
+                    "STAT_SPEED": 252,
+                    "STAT_SP_ATTACK": 252
+                },
+                "hidden_ability": false,
+                "ability": 0,
+                "nature": "SCHEU",
+                "held_item": "ITEM_BISAFLORNIT",
+                "attacks": [
+                    "ATTACK_BLITZ",
+                    "ATTACK_ERDKRAEFTE",
+                    "ATTACK_BLAETTERSTURM",
+                    "ATTACK_MATSCHBOMBE"
+                ],
+                "hidden_power_type": "TYPE_FEUER",
+                "rating" : 5
+            },
+            {
+                "evs": {
+                    "STAT_HP": 252,
+                    "STAT_ATTACK": 252,
+                    "STAT_DEFENSE": 4
+                },
+                "hidden_ability": false,
+                "ability": 0,
+                "nature": "HART",
+                "held_item": "ITEM_WAHLBAND",
+                "attacks": [
+                    "ATTACK_WUTANFALL",
+                    "ATTACK_ERDBEBEN",
+                    "ATTACK_SAMBENBOMBE",
+                    "ATTACK_GIFTHIEB"
+                ],
+                "hidden_power_type": "TYPE_FEUER",
+                "rating" : 5
             }
         ]
     },
@@ -174,7 +212,7 @@
             ],
             "hidden_power_type": "TYPE_GESTEIN",
             "rating" : 8
-        }
+        },
     ],
     "POKEMON_TURTOK" : [
         {
@@ -250,5 +288,1203 @@
             "hidden_power_type": "TYPE_GESTEIN",
             "rating" : 7
         }
+    ],
+     "POKEMON_BIBOR" : [
+        {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": true,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_BIBORNIT",
+            "attacks": [
+                "ATTACK_SCHWARMSTICH",
+                "ATTACK_BIENENSTICH",
+                "ATTACK_ZERSCHNEIDER",
+                "ATTACK_SCHWERTTANZ"
+            ],
+            "hidden_power_type": "TYPE_GESTEIN",
+            "rating" : 7
+        },
+        {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_LEBEN_ORB",
+            "attacks": [
+                "ATTACK_KREUZSCHERE",
+                "ATTACK_VERFOLGUNG",
+                "ATTACK_GIFTHIEB",
+                "ATTACK_DURCHBRUCH"
+            ],
+            "hidden_power_type": "TYPE_GESTEIN",
+            "rating" : 4
+        },
+        {
+            "evs": {
+                "STAT_HP": 252,
+                "STAT_DEFENSE": 252,
+                "STAT_ATTACK": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_BLENDPUDER",
+            "attacks": [
+                "ATTACK_FLUCH",
+                "ATTACK_DOPPELTEAM",
+                "ATTACK_SCHWARMSTICH",
+                "ATTACK_BIENENSTICH"
+            ],
+            "hidden_power_type": "TYPE_GESTEIN",
+            "rating" : 1
+        },
+    ],
+    "POKEMON_RAICHU" : [
+        {
+            "evs": {
+                "STAT_SP_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "MAESSIG",
+            "held_item": "ITEM_MAGNET",
+            "attacks": [
+                "ATTACK_DONNERBLITZ",
+                "ATTACK_FOKUSSTOSS",
+                "ATTACK_AMPELLEUCHTE",
+                "ATTACK_GEHEIMPOWER"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2
+        },
+        {
+            "evs": {
+                "STAT_SP_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "ZART",
+            "held_item": "ITEM_MAGNET",
+            "attacks": [
+                "ATTACK_DONNERWELLE",
+                "ATTACK_DONNERBLITZ",
+                "ATTACK_LICHTSCHILD",
+                "ATTACK_ABSCHLAG"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2
+        },
+        {
+            "evs": {
+                "STAT_SP_ATTACK": 180,
+                "STAT_SPEED": 252,
+                "STAT_ATTACK": 76
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "MILD",
+            "held_item": "ITEM_LEBEN_ORB",
+            "attacks": [
+                "ATTACK_FOKUSSTOSS",
+                "ATTACK_DONNER",
+                "ATTACK_EISENSCHWEIF",
+                "ATTACK_KNUDDLER"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2
+        },
+    ],
+    "POKEMON_SANDAMER" : [
+        {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_DEFENSE": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "PFIFFIG",
+            "held_item": "ITEM_SANDAMERNIT",
+            "attacks": [
+                "ATTACK_ERDBEBEN",
+                "ATTACK_NACHTHIEB",
+                "ATTACK_KREUZSCHERE",
+                "ATTACK_STEINKANTE"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 7
+        },
+        {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_PUDERSAND",
+            "attacks": [
+                "ATTACK_ERDBEBEN",
+                "ATTACK_DURCHBRUCH",
+                "ATTACK_DUNKELKLAUE",
+                "ATTACK_AERO_ASS"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2
+        },   
+        {
+            "evs": {
+                "STAT_HP": 252,
+                "STAT_DEFENSE": 252,
+                "STAT_ATTACK": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "PFIFFIG",
+            "held_item": "ITEM_UEBERRESTE",
+            "attacks": [
+                "ATTACK_SCHAUFLER",
+                "ATTACK_SCHUTZSCHILD",
+                "ATTACK_TOXIN",
+                "ATTACK_FLUCH"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 1
+        },   
+        {
+            "evs": {
+                "STAT_HP": 252,
+                "STAT_DEFENSE": 252,
+                "STAT_ATTACK": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "PFIFFIG",
+            "held_item": "ITEM_OFFENSIVWESTE",
+            "attacks": [
+                "ATTACK_SCHWERTTANZ",
+                "ATTACK_STEINKANTE",
+                "ATTACK_ERDBEBEN",
+                "ATTACK_GIFTHIEB"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2
+        },   
+    ],
+    "POKEMON_NIDOQUEEN" : [
+        {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_OFFENSIVWESTE",
+            "attacks": [
+                "ATTACK_ERDBEBEN",
+                "ATTACK_GIFTHIEB",
+                "ATTACK_KRAFTKOLOSS",
+                "ATTACK_STEINKANTE"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 4
+        },   
+        {
+            "evs": {
+                "STAT_SP_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "MAESSIG",
+            "held_item": "ITEM_WAHLGLAS",
+            "attacks": [
+                "ATTACK_ERDKRAEFTE",
+                "ATTACK_MATSCHBOMBE",
+                "ATTACK_EISSTRAHL",
+                "ATTACK_DONNERBLITZ"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 3
+        }, 
+        {
+            "evs": {
+                "STAT_HP": 252,
+                "STAT_ATTACK": 252,
+                "STAT_DEFENSE": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_GIFTSCHLEIM",
+            "attacks": [
+                "ATTACK_TOXIN",
+                "ATTACK_KONTER",
+                "ATTACK_ERDBEBEN",
+                "ATTACK_DONNERSCHLAG"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2,
+        },   
+        {
+            "evs": {
+                "STAT_HP": 252,
+                "STAT_ATTACK": 252,
+                "STAT_DEFENSE": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_WAHLBAND",
+            "attacks": [
+                "ATTACK_WUTANFALL",
+                "ATTACK_STAERKE",
+                "ATTACK_NASSSCHWEIF",
+                "ATTACK_EISHIEB"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2,
+        },
+        {
+            "evs": {
+                "STAT_SP_ATTACK": 252,
+                "STAT_ATTACK": 252,
+                "STAT_DEFENSE": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "FRECH",
+            "held_item": "ITEM_GROSSLINSE",
+            "attacks": [
+                "ATTACK_DONNER",
+                "ATTACK_BLIZZARD",
+                "ATTACK_ERDBEBEN",
+                "ATTACK_WUCHTSCHLAG"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 1,
+        },  
+        {
+            "evs": {
+                "STAT_DEFENSE": 252,
+                "STAT_HP": 252,
+                "STAT_ATTACK": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "PFIFFIG",
+            "held_item": "ITEM_MARONBEERE",
+            "attacks": [
+                "ATTACK_HORNBOHRER",
+                "ATTACK_DOPPELTEAM",
+                "ATTACK_ERHOLUNG",
+                "ATTACK_SCHLAFREDE"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2,
+        },  
+    ],
+    "POKEMON_NIDOKING" : [
+        {
+            "evs": {
+                "STAT_HP": 252,
+                "STAT_ATTACK": 252,
+                "STAT_DEFENSE": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_WAHLBAND",
+            "attacks": [
+                "ATTACK_VIELENDER",
+                "ATTACK_ERDBEBEN",
+                "ATTACK_GIFTHIEB",
+                "ATTACK_STEINKANTE"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 3,
+        }, 
+        {
+            "evs": {
+                "STAT_SPEED": 252,
+                "STAT_ATTACK": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "FROH",
+            "held_item": "ITEM_WAHLSCHAL",
+            "attacks": [
+                "ATTACK_ZERSCHNEIDER",
+                "ATTACK_ERDBEBEN",
+                "ATTACK_GIFTHIEB",
+                "ATTACK_RISIKOTACKLE"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 3,
+        }, 
+        {
+            "evs": {
+                "STAT_DEFENSE": 252,
+                "STAT_HP": 252,
+                "STAT_ATTACK": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "FROH",
+            "held_item": "ITEM_GIFTSCHLEIM",
+            "attacks": [
+                "ATTACK_GIFTHIEB",
+                "ATTACK_TOXIN",
+                "ATTACK_GEOFISSUR",
+                "ATTACK_SUPERZAHN"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 1,
+        }, 
+        {
+            "evs": {
+                "STAT_DEFENSE": 252,
+                "STAT_HP": 252,
+                "STAT_ATTACK": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "PFIFFIG",
+            "held_item": "ITEM_MARONBEERE",
+            "attacks": [
+                "ATTACK_DOPPELTEAM",
+                "ATTACK_ERHOLUNG",
+                "ATTACK_GEOFISSUR",
+                "ATTACK_HORNBOHRER"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2,
+        }, {
+            "evs": {
+                "STAT_SP_ATTACK": 252,
+                "STAT_HP": 252,
+                "STAT_SPEED": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "MAESSIG",
+            "held_item": "ITEM_OFFENSIVWESTE",
+            "attacks": [
+                "ATTACK_DONNER",
+                "ATTACK_FEUERSTURM",
+                "ATTACK_BLIZZARD",
+                "ATTACK_ERDKRAEFTE"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 1,
+        },  
+        {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_HP": 252,
+                "STAT_SPEED": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "PFIFFIG",
+            "held_item": "ITEM_OFFENSIVWESTE",
+            "attacks": [
+                "ATTACK_KONTER",
+                "ATTACK_TOXIN",
+                "ATTACK_ERDBEBEN",
+                "ATTACK_GIFTHIEB"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2,
+        }, 
+    ],
+    "POKEMON_VULNONA" : [
+        {
+            "evs": {
+                "STAT_SP_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": true,
+            "ability": 0,
+            "nature": "MAESSIG",
+            "held_item": "ITEM_SONNEN_EI",
+            "attacks": [
+                "ATTACK_SOLARSTRAHL",
+                "ATTACK_FEUERSTURM",
+                "ATTACK_FINSTERAURA",
+                "ATTACK_SONDERSENSOR"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 3,
+        }, 
+        {
+            "evs": {
+                "STAT_SP_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "SCHEU",
+            "held_item": "ITEM_HOLZKOHLE",
+            "attacks": [
+                "ATTACK_SPUKBALL",
+                "ATTACK_FLAMMENWURF",
+                "ATTACK_HYPNOSE",
+                "ATTACK_ANZIEHUNG"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 1,
+        }, 
+        {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_LEBEN_ORB",
+            "attacks": [
+                "ATTACK_FLAMMENBLITZ",
+                "ATTACK_EISENSCHWEIF",
+                "ATTACK_RUCKZUCKHIEB",
+                "ATTACK_RISIKOTACKLE"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 1,
+        }, 
+        {
+            "evs": {
+                "STAT_SP_ATTACK": 252,
+                "STAT_HP": 252,
+                "STAT_SPEED": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "KUEHN",
+            "held_item": "ITEM_UEBERRESTE",
+            "attacks": [
+                "ATTACK_IRRLICHT",
+                "ATTACK_REFLEKTOR",
+                "ATTACK_HYPNOSE",
+                "ATTACK_HITZEWELLE"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2,
+        }, 
+    ],
+    "POKEMON_IKSBAT" : [
+        {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "FROH",
+            "held_item": "ITEM_GIFTSCHLEIM",
+            "attacks": [
+                "ATTACK_STURZFLUG",
+                "ATTACK_GIFTHIEB",
+                "ATTACK_STAHLFLUEGEL",
+                "ATTACK_ZEN_KOPFSTOSS"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 3,
+        }, 
+        {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_GROSSLINSE",
+            "attacks": [
+                "ATTACK_HYPNOSE",
+                "ATTACK_DOPPELTEAM",
+                "ATTACK_AERO_ASS",
+                "ATTACK_GIFTZAHN"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 1,
+        }, 
+        {
+            "evs": {
+                "STAT_SP_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "SCHEU",
+            "held_item": "ITEM_WAHLSCHAL",
+            "attacks": [
+                "ATTACK_MATSCHBOMBE",
+                "ATTACK_WINDSCHNITT",
+                "ATTACK_FINSTERAURA",
+                "ATTACK_HITZEWELLE"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2,
+        }, {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_HP": 252,
+                "STAT_SPEED": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_GIFTSCHLEIM",
+            "attacks": [
+                "ATTACK_KONFUSTRAHL",
+                "ATTACK_KNIRSCHER",
+                "ATTACK_SUPERZAHN",
+                "ATTACK_GIFTZAHN"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 1,
+        }, 
+    ],
+    "POKEMON_GIFLOR" : [
+        {
+            "evs": {
+                "STAT_SP_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "MAESSIG",
+            "held_item": "ITEM_SCHLOHKRAUT",
+            "attacks": [
+                "ATTACK_MATSCHBOMBE",
+                "ATTACK_BLAETTERSTURM",
+                "ATTACK_BLITZ",
+                "ATTACK_ZAUBERSCHEIN"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 3,
+        }, 
+        {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_GIFTSCHLEIM",
+            "attacks": [
+                "ATTACK_SCHWERTTANZ",
+                "ATTACK_SAMENBOMBEN",
+                "ATTACK_MONDSCHEIN",
+                "ATTACK_RISIKOTACKLE"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2,
+        }, 
+        {
+            "evs": {
+                "STAT_SP_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "SCHEU",
+            "held_item": "ITEM_SONNEN_EI",
+            "attacks": [
+                "ATTACK_SOLARSTRAHL",
+                "ATTACK_SONNENTAG",
+                "ATTACK_MATSCHBOMBE",
+                "ATTACK_METEOROLOGE"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 4,
+        }, 
+        {
+            "evs": {
+                "STAT_HP": 252,
+                "STAT_SP_ATTACK": 252,
+                "STAT_SPEED": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "KUEHN",
+            "held_item": "ITEM_GIFTSCHLEIM",
+            "attacks": [
+                "ATTACK_EGELSAMEN",
+                "ATTACK_TOXIN",
+                "ATTACK_VERWURZLER",
+                "ATTACK_BLAETTERSTURM"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 4,
+        }, 
+    ],
+    "POKEMON_BLUBELLA" : [
+        {
+            "evs": {
+                "STAT_SP_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "MAESSIG",
+            "held_item": "ITEM_UEBERRESTE",
+            "attacks": [
+                "ATTACK_FALTERREIGEN",
+                "ATTACK_ENERGIEBALL",
+                "ATTACK_MATSCHBOMBE",
+                "ATTACK_BLITZ"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 3,
+        }, 
+        {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_UEBERRESTE",
+            "attacks": [
+                "ATTACK_FLUCH",
+                "ATTACK_SAMENBOMBE",
+                "ATTACK_DOPPELTEAM",
+                "ATTACK_KNUDDLER"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 1,
+        }, 
+        {
+            "evs": {
+                "STAT_SP_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "MAESSIG",
+            "held_item": "ITEM_WUNDERSAAT",
+            "attacks": [
+                "ATTACK_DOPPELTEAM",
+                "ATTACK_SCHLAFPUDER",
+                "ATTACK_GIGASAUGER",
+                "ATTACK_ANZIEHUNG"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2,
+        }, {
+            "evs": {
+                "STAT_SP_ATTACK": 252,
+                "STAT_HP": 252,
+                "STAT_SPEED": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "MAESSIG",
+            "held_item": "ITEM_SONNEN_EI",
+            "attacks": [
+                "ATTACK_SOLARSTRAHL",
+                "ATTACK_SONNENTAG",
+                "ATTACK_METEOROLOGE",
+                "ATTACK_MONDGEWALT"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2,
+        }, 
+    ],
+    "POKEMON_DIGDRI" : [
+        {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": true,
+            "ability": 0,
+            "nature": "FROH",
+            "held_item": "ITEM_WAHLBAND",
+            "attacks": [
+                "ATTACK_NACHTHIEB",
+                "ATTACK_AERO_ASS",
+                "ATTACK_ERDBEBEN",
+                "ATTACK_STEINKANTE"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 4,
+        }, {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_LEBEN_ORB",
+            "attacks": [
+                "ATTACK_DUNKELKLAUE",
+                "ATTACK_ZERSCHNEIDER",
+                "ATTACK_ERDBEBEN",
+                "ATTACK_STEINKANTE"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 3,
+        }, {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "FROH",
+            "held_item": "ITEM_FOKUSGURT",
+            "attacks": [
+                "ATTACK_GEOFISSUR",
+                "ATTACK_AUSDAUER",
+                "ATTACK_GEGENSCHLAG",
+                "ATTACK_ERDBEBEN"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2,
+        }, 
+        {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_FOKUSGURT",
+            "attacks": [
+                "ATTACK_SCHWERTTANZ",
+                "ATTACK_ERDBEBEN",
+                "ATTACK_STEINKANTE",
+                "ATTACK_NACHTHIEB"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 3,
+        },  
+    ],
+    "POKEMON_RASAFF" : [
+        {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": true,
+            "ability": 0,
+            "nature": "FROH",
+            "held_item": "ITEM_RASAFFNIT",
+            "attacks": [
+                "ATTACK_NAHKAMPF",
+                "ATTACK_EISENSCHWEIF",
+                "ATTACK_STEINKANTE",
+                "ATTACK_EISHIEB"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 5,
+        }, {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": true,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_LEBEN_ORB",
+            "attacks": [
+                "ATTACK_DONNERSCHLAG",
+                "ATTACK_FEUERSCHLAG",
+                "ATTACK_EISHIEB",
+                "ATTACK_KREUZHIEB"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2,
+        },  {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": true,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_WAHLBAND",
+            "attacks": [
+                "ATTACK_NAHKAMPF",
+                "ATTACK_ERDBEBEN",
+                "ATTACK_DUNKELKLAUE",
+                "ATTACK_SAMENBOMBE"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2,
+        },  {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": true,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_UEBERRESTE",
+            "attacks": [
+                "ATTACK_FLUCH",
+                "ATTACK_KONTER",
+                "ATTACK_KREUZHIEB",
+                "ATTACK_MEGAHIEB"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 1,
+        }, 
+    ],
+    "POKEMON_ARKANI" : [
+         {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_HOLZKOHLE",
+            "attacks": [
+                "ATTACK_TURBOTEMPO",
+                "ATTACK_FLAMMENBLITZ",
+                "ATTACK_DONNERZAHN",
+                "ATTACK_KNIRSCHER"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 3,
+        }, 
+        {
+            "evs": {
+                "STAT_SP_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "MAESSIG",
+            "held_item": "ITEM_SCHLOHKRAUT",
+            "attacks": [
+                "ATTACK_HITZEKOLLER",
+                "ATTACK_DRACHENPULS",
+                "ATTACK_SCHALLWELLE",
+                "ATTACK_ANZIEHUNG"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2,
+        }, {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_WAHLBAND",
+            "attacks": [
+                "ATTACK_NAHKAMPF",
+                "ATTACK_FLAMMENBLITZ",
+                "ATTACK_DONNERZAHN",
+                "ATTACK_WUTANFALL"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 4,
+        }, {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 4,
+                "STAT_HP": 252
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_MARONBEERE",
+            "attacks": [
+                "ATTACK_IRRLICHT",
+                "ATTACK_FLAMMENBLITZ",
+                "ATTACK_ERHOLUNG",
+                "ATTACK_ANZIEHUNG"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 1,
+        }, 
+    ],
+    "POKEMON_SIMSALA" : [
+        {
+            "evs": {
+                "STAT_SP_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "SCHEU",
+            "held_item": "ITEM_WAHLGLAS",
+            "attacks": [
+                "ATTACK_PSYCHOKINESE",
+                "ATTACK_BLITZ",
+                "ATTACK_TRICKBETRUG",
+                "ATTACK_FOKUSSTOSS"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 5,
+        }, 
+        {
+            "evs": {
+                "STAT_SP_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "MAESSIG",
+            "held_item": "ITEM_LEBEN_ORB",
+            "attacks": [
+                "ATTACK_GEDANKENGUT",
+                "ATTACK_PSYCHOKINESE",
+                "ATTACK_BLITZ",
+                "ATTACK_FOKUSSTOSS"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 4,
+        }, 
+        {
+            "evs": {
+                "STAT_SP_ATTACK": 252,
+                "STAT_SPEED": 4,
+                "STAT_HP": 252
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "MEASSIG",
+            "held_item": "ITEM_LICHTLEHM",
+            "attacks": [
+                "ATTACK_GEDANKENGUT",
+                "ATTACK_PSYCHOKINESE",
+                "ATTACK_REFLEKTOR",
+                "ATTACK_LICHTSCHILD"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 3,
+        }, 
+        {
+            "evs": {
+                "STAT_SP_ATTACK": 252,
+                "STAT_SPEED": 4,
+                "STAT_HP": 252
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_LEBEN_ORB",
+            "attacks": [
+                "ATTACK_DONNERSCHLAG",
+                "ATTACK_FEUERSCHLAG",
+                "ATTACK_EISHIEB",
+                "ATTACK_ZEN_KOPFSTOSS"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2,
+        }, 
+    ],
+    "POKEMON_MACHOMEI" : [
+        {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 4,
+                "STAT_HP": 252
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_HEISS_ORB",
+            "attacks": [
+                "ATTACK_NAHKAMPF",
+                "ATTACK_ERDBEBEN",
+                "ATTACK_STEINKANTE",
+                "ATTACK_EISHIEB"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 4,
+        }, 
+        {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_UEBERRESTE",
+            "attacks": [
+                "ATTACK_NAHKAMPF",
+                "ATTACK_ERDBEBEN",
+                "ATTACK_PROTZER",
+                "ATTACK_PATRONENHIEB"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 4,
+        }, 
+        {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "FROH",
+            "held_item": "ITEM_WAHLSCHAL",
+            "attacks": [
+                "ATTACK_FEUERSCHLAG",
+                "ATTACK_DONNERSCHLAG",
+                "ATTACK_EISHIEB",
+                "ATTACK_KREUZHIEB"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 3,
+        }, 
+        {
+            "evs": {
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 4,
+                "STAT_HP": 252
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_SCHWARZGURT",
+            "attacks": [
+                "ATTACK_KONTER",
+                "ATTACK_DURCHBRUCH",
+                "ATTACK_GIFTHIEB",
+                "ATTACK_STEINKANTE"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 3,
+        }, 
+    ],
+    "POKEMON_SARZENIA" : [
+        {
+            "evs": {
+                "STAT_SPEED": 252,
+                "STAT_SP_ATTACK": 252,
+                "STAT_ATTACK": 4
+            },
+            "hidden_ability": true,
+            "ability": 0,
+            "nature": "MILD",
+            "held_item": "ITEM_SCHLOHKRAUT",
+            "attacks": [
+                "ATTACK_BLAETTERSTURM",
+                "ATTACK_MATSCHBOMBE",
+                "ATTACK_BLITZ",
+                "ATTACK_TIEFSCHLAG"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2,
+        }, 
+        {
+            "evs": {
+                "STAT_SPEED": 252,
+                "STAT_SP_ATTACK": 252,
+                "STAT_HP": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "SCHEU",
+            "held_item": "ITEM_SONNEN_EI",
+            "attacks": [
+                "ATTACK_SOLARSTRAHL",
+                "ATTACK_SYNTHESE",
+                "ATTACK_MATSCHBOMBE",
+                "ATTACK_METEOROLOGE"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2,
+        }, 
+        {
+            "evs": {
+                "STAT_HP": 252,
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_GIFTSCHLEIM",
+            "attacks": [
+                "ATTACK_SCHWERTTANZ",
+                "ATTACK_LAUBKLINGE",
+                "ATTACK_KAEFERBISS",
+                "ATTACK_GIFTHIEB"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2,
+        }, 
+        {
+            "evs": {
+                "STAT_HP": 252,
+                "STAT_ATTACK": 252,
+                "STAT_SPEED": 4
+            },
+            "hidden_ability": false,
+            "ability": 0,
+            "nature": "HART",
+            "held_item": "ITEM_GIFTSCHLEIM",
+            "attacks": [
+                "ATTACK_SCHWERTTANZ",
+                "ATTACK_LAUBKLINGE",
+                "ATTACK_KAEFERBISS",
+                "ATTACK_GIFTHIEB"
+            ],
+            "hidden_power_type": "TYPE_PFLANZE",
+            "rating" : 2,
+        }, 
     ]
 }

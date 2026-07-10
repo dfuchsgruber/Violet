@@ -3,22 +3,22 @@
 		"footer": "map_footer_21_indoor_layout_10",
 		"events": {
 			"person_cnt": 1,
-			"warp_cnt": 2,
+			"warp_cnt": 1,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
 			"persons": [
 				{
 					"is_trainer": "0",
 					"script": "ow_script_map_8_4_person_0",
-					"y": 3,
+					"y": "4",
 					"target_index": 1,
 					"picture": 61,
 					"flag": "0x0",
-					"x": 8,
+					"x": "6",
 					"field_2": 0,
 					"level": 3,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "1",
 						"y": "1"
@@ -42,19 +42,11 @@
 			"warps": [
 				{
 					"target_map": 4,
-					"y": 7,
+					"y": "7",
 					"target_bank": 3,
 					"level": 3,
-					"x": 6,
+					"x": "6",
 					"target_warp_idx": 3
-				},
-				{
-					"target_map": 4,
-					"y": 7,
-					"target_bank": 3,
-					"level": 3,
-					"x": 5,
-					"target_warp_idx": 4
 				}
 			],
 			"triggers": [],
@@ -85,6 +77,6 @@
 			"flag_7": "0"
 		}
 	},
-	"label": "map_8_4",
+	"label": "map_kaskada_house_2",
 	"type": "header"
 }

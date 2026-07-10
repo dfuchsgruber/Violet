@@ -223,13 +223,13 @@ look_at_albus:
 
 .ifdef LANG_GER
 str_0:
-    .autostring 34 2 "Was ist denn in dich gefahren, Albus?\pWillst du all das, was wir zusammen aufgebaut haben, einfach so niederbrennen?"
+    .autostring 34 2 "Ist das dein Ernst, Albus?\pWillst du all das, was wir zusammen aufgebaut haben, einfach so niederbrennen?"
 str_1:
-    .autostring 34 2 "Faun!\pIch wünschte, es gäbe einen anderen Weg.\pAber die Pokémon-LigaDOTS\pSie ist nicht mehr zu rettenDOTS\pKorruption und Machtgier haben sie zugrunde gerichtetDOTS"
+    .autostring 34 2 "Faun!\pIch wünschte, es gäbe einen anderen Weg.\pAber die Pokémon-LigaDOTS\pDOTS DOTS DOTS\pSie ist nicht mehr zu rettenDOTS"
 str_2:
-    .autostring 34 2 "Ach ja?\pWas soll dieser Unsinn denn heißen, Albus?\pUnd selbst wenn du damit recht haben solltestDOTS\pSoll diese sogenannte Revolutionsbewegung etwa die Lösung sein?"
+    .autostring 34 2 "Was soll dieser Unsinn denn heißen, Albus?\pSoll deine sogenannte Revolutionsbewegung etwa die Lösung sein?"
 str_3:
-    .autostring 34 2 "Ich sehe, dass du noch nicht bereit bist, der Wahrheit ins Auge zu blicken, FaunDOTS"
+    .autostring 34 2 "Du bist noch nicht bereit, der Wahrheit ins Auge zu sehen, Faun, oder?"
 str_4:
     .autostring 34 2 "DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT"
 str_5:
@@ -239,7 +239,7 @@ str_6:
 str_7:
     .autostring 34 2 "Ich kann dich ja verstehen, Faun.\pGanz ehrlich.\pDenkst du, es ist mir leicht gefallen, der Pokémon Liga den Rücken zu kehren?"
 str_8:
-    .autostring 34 2 "Aber diese RevolutionDOTS\pIst notwendig, mein alter Freund.\pIch hoffe ehrlich, dass wir am Ende am gleichen Strang ziehenDOTS\pDiese Revolution wird jemanden wie dich mit offenen Armen aufnehmen.\pBis dahinDOTS"
+    .autostring 34 2 "Aber diese RevolutionDOTS\pIst der Ausweg, mein alter Freund.\pIch hoffe ehrlich, dass wir am Ende am gleichen Strang ziehen werdenDOTS\pUnsere Bewegung wird jemanden wie dich mit offenen Armen aufnehmen.\pBis dahinDOTS"
 str_9:
     .autostring 34 2 "Alles Gute, FaunDOTS"
 str_10:
@@ -249,43 +249,43 @@ str_11:
 str_12:
     .autostring 34 2 "PLAYERDOTS"
 str_13:
-    .autostring 34 2 "Dieser MannDOTS\pEr war einmal ein sehr guter FreundDOTS\pAls man mir erzählt hat, dass erDOTS\pIch konnte es nicht glaubenDOTS\pDOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT\pAber er ist der Anführer der Revolutionsbewegung."
+    .autostring 34 2 "Dieser MannDOTS\pEr ist ein sehr guter FreundDOTS\pAls ich gehört habe, dass erDOTS\pIch wollte es nicht glaubenDOTS\pDOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT\pAber er ist der Anführer der Revolutionsbewegung."
 str_14:
-    .autostring 34 2 "Was?\nIst das dein Ernst?\pDieser Typ war der Anführer der Revolutionäre?\pWarum hast du ihn denn dann laufen lassen?"
+    .autostring 34 2 "Was?\nIst das dein Ernst?\pDieser Typ war der Anführer der Revolutionäre?\pWarum hast du ihn denn laufen lassen?"
 str_15:
-    .autostring 34 2 "So einfach ist das nicht, Felix!"
+    .autostring 34 2 "Nicht so vorlaut, Felix!"
 str_16:
-    .autostring 34 2 "Du hältst Albus sicherlich für einen VerbrecherDOTS\pUnd bei allem, was die Revolutionsbewegung in der letzten Zeit angestellt hat, kann man dir das auch nicht verübelnDOTS\pAber Albus ist kein schlechter Mensch.\pEr ist mein Freund."
+    .autostring 34 2 "Du verurteilst Albus sicherlichDOTS\pUnd bei allem, was die Revolutionsbewegung in der letzten Zeit angestellt hat, kann man es wohl verstehenDOTS\pAber dieser Mann ist kein schlechter Mensch."
 str_17:
-    .autostring 34 2 "Als ich gehört habe, dass er sich in der Nähe von Kaskada aufhält, wollte ich keine Zeit verlieren.\pIch hatte die Hoffnung, dass ich meinem alten Freund ins Gewissen reden könnteDOTS\pDass ich ihn wieder zur Vernunft bringen würdeDOTS"
+    .autostring 34 2 "Als ich gehört habe, dass er sich in der Nähe von Kaskada herumtreibt, wollte ich ihn persönlich zur Rede stellen.\pIch hatte die Hoffnung, dass ich meinem alten Freund ins Gewissen reden könnteDOTS\pDass ich ihn wieder zur Vernunft bringen würdeDOTS"
 str_18:
     .autostring 34 2 "Aber deswegen kannst du den Kopf der Revolutionsbewegung doch nicht einfach entkommen lassen!"
 str_19:
-    .autostring 34 2 "Was erlaubst du Rotzlöffel dir eigentlich, so mit mir zu reden?\pIch bin immer noch dein Großvater und Lehrer!"
+    .autostring 34 2 "Was erlaubst du dir eigentlich, so mit mir zu reden?\pIch bin immer noch dein Großvater!"
 str_20:
     .autostring 34 2 "E-Entschuldige bitte, OpiDOTS"
 str_21:
-    .autostring 34 2 "Aber du hast recht, FelixDOTS\pAls Mitglied der Pokémon-Liga muss ich den Anführer der Revolutionsbewegung festnehmenDOTS"
+    .autostring 34 2 "FelixDOTS\pAls Mitglied der Pokémon-Liga ist es sehr wohl meine Pflicht, den Anführer der Revolutionsbewegung festzunehmenDOTS"
 str_22:
     .autostring 34 2 "Aber gegen einen guten Freund zu kämpfenDOTS"
 str_23:
-    .autostring 34 2 "Na, das ist doch ganz klar, Opi!\pEs würde mir auch nicht leicht fallen, gegen PLAYER zu kämpfen.\pAber mach dir keine Sorgen.\pWir beide werden uns diesen Albus schon vorknöpfen und du bist fein raus!"
+    .autostring 34 2 "Na, das ist doch ganz klar, Opi!\pEs würde mir auch nicht leicht fallen, gegen jemanden wie PLAYER zu kämpfen.\pAber mach dir keine Sorgen.\pWir beide werden uns diesen Albus schon vorknöpfen und du bist fein raus!"
 str_24:
     .autostring 34 2 "Nicht wahr, PLAYER?"
 str_25:
-    .autostring 34 2 "Ach ihr beidenDOTS\pIhr habt das Herz am rechten Fleck."
+    .autostring 34 2 "Ihr beidenDOTS\pIhr habt das Herz am rechten Fleck."
 str_26:
-    .autostring 34 2 "Aber werdet nicht übermütig.\pIhr seid sicherlich schon stärker geworden, aber Albus ist ein Kaliber zu groß für euch.\pSogar für mich wäre es eine Herausforderung, gegen ihn zu kämpfen.\pAlso versprecht mir, dass ihr euch nicht mit ihm anlegt, ja?\pÜberlasst das den Top Vier."
+    .autostring 34 2 "Aber werdet nicht übermütig.\pIhr seid sicherlich schon stärker geworden seit eurer SchulzeitDOTS\pAber Albus ist eine Nummer zu groß für euch.\pSogar für mich wäre es eine Herausforderung, gegen ihn zu kämpfen.\pVersprecht mir, dass ihr euch nicht leichtfertig mit ihm anlegt, ja?\pÜberlasst das den Top Vier."
 str_27:
     .autostring 34 2 "Na gut, Opi.\pWir versprechen es, ja?"
 str_28:
-    .autostring 34 2 "Ausgezeichnet!\pJunge Trainer wie ihr sollten sich ohnehin nicht mit den Problem alter Männer befassen müssen!\pIch werde mich selbst um die Geschichte mit Albus kümmern.\pUnd ihr bestreitet euer eigenes Abenteuer!"
+    .autostring 34 2 "Ausgezeichnet!\pAufstrebende Trainer wie ihr sollten sich ohnehin nicht mit den Problem von alten Männern wie uns befassen müssen!\pIch werde mich selbst um die Sache mit Albus kümmern."
 str_29:
-    .autostring 34 2 "Genau, Opi!"
+    .autostring 34 2 "Ist gut, Opi."
 str_30:
-    .autostring 34 2 "Macht eurem altern Lehrer ja keine Schande, ihr Gören!"
+    .autostring 34 2 "Macht eurem altern Lehrer ja keine Schande, ihr Kleinen!"
 str_31:
-    .autostring 34 2 "Was sagst du dazu, PLAYER?\pWir können diesen Albus doch nicht einfach so laufen lassen, oder?\pAuch wenn wir Opi etwas anderes gesagt habenDOTSTEXT_DELAY_SHORT\pSollten wir diesen Revolutionsanführer Hops nehmen."
+    .autostring 34 2 "Was sagst du dazu, PLAYER?\pWir können diesen Albus doch nicht einfach so laufen lassen, oder?\pAuch wenn wir Opi etwas anderes gesagt habenDOTSTEXT_DELAY_SHORT\pSollten wir ohne Frage den Kopf der Revolutionsbewegung Hops nehmen."
 str_32:
     .autostring 34 2 "Und außerdemDOTS"
 str_33:

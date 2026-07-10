@@ -12,6 +12,7 @@
 #include "music.h"
 #include "overworld/start_menu.h"
 #include "pokepad/vs_seeker.h"
+#include "pokepad/pokepad2.h"
 
 bool overworld_process_input(overworld_input_t *input) {
     position_t position;
@@ -89,9 +90,14 @@ bool overworld_process_input(overworld_input_t *input) {
         start_menu_show();
         return true;
     }
+
     if (input->select_pressed && trigger_registered_key_item()) {
         overworld_input_record.select_pressed = true;
         return true;
     }
+
+    if (pokepad_initialize_registered_item())
+        return true;
+
     return false;
 }

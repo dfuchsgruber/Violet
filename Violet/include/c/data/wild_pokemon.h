@@ -4252,6 +4252,10 @@ const wild_pokemon_data wild_pokemon[] = {
         .water = &wild_pokemon_0_7_water,
         .rod = &wild_pokemon_0_7_rod,
         .grass = &wild_pokemon_route_4_south_cave_grass,
+    },{
+        .bank = 16,
+        .map = 0,
+        .grass = &wild_pokemon_route_4_south_cave_grass,
     },
     {
         .bank = 35,
