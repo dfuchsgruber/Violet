@@ -9,6 +9,7 @@
 #include "stdbool.h"
 #include "trainer/trainer.h"
 #include "types.h"
+#include "overworld/restaurant.h"
 
 EWRAM u32 trainer_prng_state = 0;
 EWRAM u8 dynamic_trainer_name[12] = {0};
@@ -5668,6 +5669,79 @@ const trainer trainers[TRAINER_CNT] = {
         .rematch_flag_idx = 363,
         .pokemon_cnt = ARRAY_COUNT(trainer_party_x209_route_3_trainer_4),
         .party = trainer_party_x209_route_3_trainer_4,
+    },
+    [RESTAURANT_TRAINER_BASE + 0] = {
+        .trainerclass = TRAINERCLASS_TEENAGER,
+        .encounter = 1, .gender = 0, .sprite = 0x24,
+        .name = LANGDEP(PSTRING("Efraim"), PSTRING("Efraim")),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .pokemon_cnt = 2,
+        .party = dynamic_trainer_party,
+        .battle_state = BATTLE_RESTAURANT,
+        
+    },
+    [RESTAURANT_TRAINER_BASE + 1] = {
+        .trainerclass = TRAINERCLASS_GOERE,
+        .encounter = 1, .gender = 1, .sprite = 0x41,
+        .name = LANGDEP(PSTRING("Gabrielle"), PSTRING("Gabrielle")),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .pokemon_cnt = 3,
+        .party = dynamic_trainer_party,
+        .battle_state = BATTLE_RESTAURANT,
+    },
+    [RESTAURANT_TRAINER_BASE + 2] = {
+        .trainerclass = TRAINERCLASS_GENTLEMAN,
+        .encounter = 1, .gender = 0, .sprite = 0x17,
+        .name = LANGDEP(PSTRING("Arnold"), PSTRING("Arnold")),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .pokemon_cnt = 1,
+        .party = dynamic_trainer_party,
+        .battle_state = BATTLE_RESTAURANT,
+    },
+    [RESTAURANT_TRAINER_BASE + 3] = {
+        .trainerclass = TRAINERCLASS_ASS_TRAINER,
+        .encounter = 1, .gender = 1, .sprite = 0x9,
+        .name = LANGDEP(PSTRING("Marlene"), PSTRING("Marlene")),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .pokemon_cnt = 3,
+        .party = dynamic_trainer_party,
+        .battle_state = BATTLE_RESTAURANT,
+    },
+    [RESTAURANT_TRAINER_BASE + 4] = {
+        .trainerclass = TRAINERCLASS_POKEMANIAC,
+        .encounter = 0, .gender = 0, .sprite = 0x20,
+        .name = LANGDEP(PSTRING("Lothar"), PSTRING("Lothar")),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .pokemon_cnt = 3,
+        .party = dynamic_trainer_party,
+        .battle_state = BATTLE_RESTAURANT,
+    },
+    [RESTAURANT_TRAINER_BASE + 5] = {
+        .trainerclass = TRAINERCLASS_LADY,
+        .encounter = 0, .gender = 1, .sprite = 0xB,
+        .name = LANGDEP(PSTRING("Eliana"), PSTRING("Eliana")),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .pokemon_cnt = 2,
+        .party = dynamic_trainer_party,
+        .battle_state = BATTLE_RESTAURANT,
+    },
+    [RESTAURANT_TRAINER_BASE + 6] = {
+        .trainerclass = TRAINERCLASS_PKMN_SAMMLER,
+        .encounter = 0, .gender = 0, .sprite = 54,
+        .name = LANGDEP(PSTRING("Rainer"), PSTRING("Rainer")),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .pokemon_cnt = 3,
+        .party = dynamic_trainer_party,
+        .battle_state = BATTLE_RESTAURANT,
+    },
+    [RESTAURANT_TRAINER_BASE + 7] = {
+        .trainerclass = TRAINERCLASS_SCHNOESEL,
+        .encounter = 0, .gender = 0, .sprite = 13,
+        .name = LANGDEP(PSTRING("Ludwig"), PSTRING("Ludwig")),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .pokemon_cnt = 1,
+        .party = dynamic_trainer_party,
+        .battle_state = BATTLE_RESTAURANT,
     },
     [0x300] = {
         .trainerclass = TRAINERCLASS_CHEFKOCH,

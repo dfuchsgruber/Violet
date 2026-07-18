@@ -3,7 +3,7 @@
 		"footer": "map_footer_8_pokestop",
 		"events": {
 			"person_cnt": 6,
-			"warp_cnt": 1,
+			"warp_cnt": 2,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
 			"persons": [
@@ -202,6 +202,14 @@
 					"target_bank": 3,
 					"target_map": 3,
 					"target_warp_idx": 7
+				},
+				{
+					"x": "1",
+					"y": "4",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "4",
+					"target_bank": "7"
 				}
 			],
 			"triggers": [],
@@ -232,6 +240,6 @@
 			"flag_7": "0"
 		}
 	},
-	"label": "map_7_3",
+	"label": "map_kranzdorf_pokestop",
 	"type": "header"
 }

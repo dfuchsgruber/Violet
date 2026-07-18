@@ -53,7 +53,7 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_rock_smash",
-					"flag": "0x12",
+					"flag": "MERIANA_CITY_HIKER_BLOCKING_ROUTE_4",
 					"field_D": 0,
 					"field_B": 0,
 					"value": {
@@ -239,7 +239,7 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_rock_smash",
-					"flag": "0x14",
+					"flag": "MERIANA_CITY_HIKER_BLOCKING_ROUTE_4",
 					"field_D": 0,
 					"field_B": 0,
 					"value": {
@@ -1261,7 +1261,7 @@
 					"is_trainer": 0,
 					"alert_radius": 0,
 					"script": "ow_script_rock_smash",
-					"flag": "0x13",
+					"flag": "MERIANA_CITY_HIKER_BLOCKING_ROUTE_4",
 					"value": {
 						"item": 0,
 						"species": "0",

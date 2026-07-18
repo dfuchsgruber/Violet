@@ -1938,3 +1938,7 @@ trigger_wildbattle = 0x08083314 | 1;
 trigger_arrow_warp = 0x0806d8c8 | 1;
 trigger_on_step_warp = 0x0806dc34 | 1;
 trigger_registered_key_item = 0x0810ad90 | 1;
+gp_list_menu_new = 0x0810f824 | 1;
+cleartrainerflag = 0x080803ac | 1;
+person_showsprite = 0x0805e898 | 1;
+person_hidesprite = 0x0805e4c8 | 1;

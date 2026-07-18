@@ -941,11 +941,11 @@ const trainer_pokemon trainer_party_xb2[] = {
 };
 
 const trainer_pokemon trainer_party_xb8[] = {
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_NANABBEERE, .moves_set = true, .moves = {ATTACK_VIELENDER, ATTACK_NAHKAMPF, ATTACK_STEINKANTE, ATTACK_POWER_PUNCH}, .level = 38, .species = POKEMON_SKARABORN, .evs = {[STAT_ATTACK] = 252, [STAT_HP] = 4, [STAT_SPEED] = 252}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .moves_set = true, .moves = {ATTACK_ZEN_KOPFSTOSS, ATTACK_PROTZER, ATTACK_POWER_PUNCH, ATTACK_DURCHBRUCH}, .level = 38, .species = POKEMON_MEDITALIS, .evs = {[STAT_ATTACK] = 252, [STAT_HP] = 4, [STAT_SPEED] = 252}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_FROH}}},
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_SCHWARZGURT, .moves_set = true, .moves = {ATTACK_WUCHTSCHLAG, ATTACK_STEINKANTE, ATTACK_ERDBEBEN, ATTACK_DONNERSCHLAG}, .level = 37, .species = POKEMON_MACHOMEI, .evs = {[STAT_HP] = 252, [STAT_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_FOKUS_BAND, .moves_set = true, .moves = {ATTACK_POWER_PUNCH, ATTACK_ANZIEHUNG, ATTACK_NACHTHIEB, ATTACK_STEINKANTE}, .level = 37, .species = POKEMON_RASAFF, .evs = {[STAT_HP] = 252, [STAT_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_TAMOTBEERE, .moves_set = true, .moves = {ATTACK_NAHKAMPF, ATTACK_STEINKANTE, ATTACK_ERDBEBEN, ATTACK_PATRONENHIEB}, .level = 39, .species = POKEMON_LUCARIO, .evs = {[STAT_ATTACK] = 252, [STAT_HP] = 4, [STAT_SPEED] = 252}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_NANABBEERE, .moves_set = true, .moves = {ATTACK_VIELENDER, ATTACK_NAHKAMPF, ATTACK_STEINKANTE, ATTACK_POWER_PUNCH}, .level = 38, .species = POKEMON_SKARABORN, .evs = {[STAT_ATTACK] = 48, [STAT_HP] = 4, [STAT_SPEED] = 48}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .moves_set = true, .moves = {ATTACK_ZEN_KOPFSTOSS, ATTACK_PROTZER, ATTACK_POWER_PUNCH, ATTACK_DURCHBRUCH}, .level = 38, .species = POKEMON_MEDITALIS, .evs = {[STAT_ATTACK] = 48, [STAT_HP] = 4, [STAT_SPEED] = 48}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_FROH}}},
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_SCHWARZGURT, .moves_set = true, .moves = {ATTACK_WUCHTSCHLAG, ATTACK_STEINKANTE, ATTACK_ERDBEBEN, ATTACK_DONNERSCHLAG}, .level = 37, .species = POKEMON_MACHOMEI, .evs = {[STAT_HP] = 48, [STAT_ATTACK] = 48, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_FOKUS_BAND, .moves_set = true, .moves = {ATTACK_POWER_PUNCH, ATTACK_ANZIEHUNG, ATTACK_NACHTHIEB, ATTACK_STEINKANTE}, .level = 37, .species = POKEMON_RASAFF, .evs = {[STAT_HP] = 48, [STAT_ATTACK] = 48, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_TAMOTBEERE, .moves_set = true, .moves = {ATTACK_NAHKAMPF, ATTACK_STEINKANTE, ATTACK_ERDBEBEN, ATTACK_PATRONENHIEB}, .level = 39, .species = POKEMON_LUCARIO, .evs = {[STAT_ATTACK] = 48, [STAT_HP] = 4, [STAT_SPEED] = 48}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
 };
 
 
@@ -2396,32 +2396,57 @@ const trainer_pokemon trainer_party_x1ca_route_4_cave_south_painter[] = {
 	{
 		.held_item = ITEM_LEBEN_ORB, .moves_set = true, .moves = {ATTACK_TIEFSCHLAG, ATTACK_KNUDDLER, ATTACK_GIFTZAHN, ATTACK_EISHIEB}, 
 		.level = 35, .species = POKEMON_FLUNKIFER,
-		.evs = {[STAT_HP] = 4, [STAT_ATTACK] = 252, [STAT_SPEED] = 252}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}
+		.evs = {[STAT_HP] = 4, [STAT_ATTACK] = 48, [STAT_SPEED] = 48}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}
 	}, {
 		.held_item = ITEM_PRUNUSBEERE, .moves_set = true, .moves = {ATTACK_GESANG, ATTACK_ABGESANG, ATTACK_DRACHENTANZ, ATTACK_WUTANFALL}, 
 		.level = 35, .species = POKEMON_ALTARIA,
-		.evs = {[STAT_HP] = 252, [STAT_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}
+		.evs = {[STAT_HP] = 48, [STAT_ATTACK] = 48, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}
 	}, {
 		.held_item = ITEM_EVOLITH, .moves_set = true, .moves = {ATTACK_SCHWERTTANZ, ATTACK_SCHATTENSTOSS, ATTACK_ZORNKLINGE, ATTACK_LICHTKANONE}, 
 		.level = 36, .species = POKEMON_DUOKLES,
-		.evs = {[STAT_HP] = 252, [STAT_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HITZIG}}
+		.evs = {[STAT_HP] = 48, [STAT_ATTACK] = 48, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HITZIG}}
 	},
 };
 
 const trainer_pokemon trainer_party_x1cb_bluetenbach_gym_manus_easy[] = {
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_MUSKELBAND, .moves_set = true, .moves = {ATTACK_ZEN_KOPFSTOSS, ATTACK_LAUBKLINGE, ATTACK_NACHTHIEB, ATTACK_NAHKAMPF}, .level = 35, .species = POKEMON_GALAGLADI, .evs = {[STAT_ATTACK] = 252, [STAT_HP] = 4, [STAT_SPEED] = 252}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_FROH}}},
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_HEISS_ORB, .moves_set = true, .moves = {ATTACK_VIELENDER, ATTACK_DURCHBRUCH, ATTACK_STEINHAGEL, ATTACK_SCHUTZSCHILD}, .level = 35, .species = POKEMON_SKARABORN, .evs = {[STAT_ATTACK] = 252, [STAT_HP] = 4, [STAT_SPEED] = 252}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART, .ability = true}}, .ability_set = true},
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_BLENDPUDER, .moves_set = true, .moves = {ATTACK_POWER_PUNCH, ATTACK_ANZIEHUNG, ATTACK_NACHTHIEB, ATTACK_DOPPELTEAM}, .level = 34, .species = POKEMON_RASAFF, .evs = {[STAT_HP] = 252, [STAT_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
-	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_TAMOTBEERE, .moves_set = true, .moves = {ATTACK_DURCHBRUCH, ATTACK_STEINHAGEL, ATTACK_ERDBEBEN, ATTACK_PATRONENHIEB}, .level = 36, .species = POKEMON_LUCARIO, .evs = {[STAT_ATTACK] = 252, [STAT_HP] = 4, [STAT_SPEED] = 252}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_MUSKELBAND, .moves_set = true, .moves = {ATTACK_ZEN_KOPFSTOSS, ATTACK_LAUBKLINGE, ATTACK_NACHTHIEB, ATTACK_NAHKAMPF}, .level = 35, .species = POKEMON_GALAGLADI, .evs = {[STAT_ATTACK] = 48, [STAT_HP] = 4, [STAT_SPEED] = 48}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_FROH}}},
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_HEISS_ORB, .moves_set = true, .moves = {ATTACK_VIELENDER, ATTACK_DURCHBRUCH, ATTACK_STEINHAGEL, ATTACK_SCHUTZSCHILD}, .level = 35, .species = POKEMON_SKARABORN, .evs = {[STAT_ATTACK] = 48, [STAT_HP] = 4, [STAT_SPEED] = 48}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART, .ability = true}}, .ability_set = true},
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_BLENDPUDER, .moves_set = true, .moves = {ATTACK_POWER_PUNCH, ATTACK_ANZIEHUNG, ATTACK_NACHTHIEB, ATTACK_DOPPELTEAM}, .level = 34, .species = POKEMON_RASAFF, .evs = {[STAT_HP] = 48, [STAT_ATTACK] = 48, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
+	{.ivs_set = true, .ivs = {11, 11, 11, 11, 11, 11}, .held_item = ITEM_TAMOTBEERE, .moves_set = true, .moves = {ATTACK_DURCHBRUCH, ATTACK_STEINHAGEL, ATTACK_ERDBEBEN, ATTACK_PATRONENHIEB}, .level = 36, .species = POKEMON_LUCARIO, .evs = {[STAT_ATTACK] = 48, [STAT_HP] = 4, [STAT_SPEED] = 48}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
 };
 
 const trainer_pokemon trainer_party_x1cc_bluetenbach_gym_manus_hard[] = {
-	{.ivs_set = true, .ivs = {31, 31, 31, 31, 31, 31}, .held_item = ITEM_MUSKELBAND, .moves_set = true, .moves = {ATTACK_ZEN_KOPFSTOSS, ATTACK_LAUBKLINGE, ATTACK_NACHTHIEB, ATTACK_NAHKAMPF}, .level = 40, .species = POKEMON_GALAGLADI, .evs = {[STAT_ATTACK] = 252, [STAT_HP] = 4, [STAT_SPEED] = 252}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_FROH}}},
-	{.ivs_set = true, .ivs = {31, 31, 31, 31, 31, 31}, .held_item = ITEM_OFFENSIVWESTE, .moves_set = true, .moves = {ATTACK_WUCHTSCHLAG, ATTACK_STEINKANTE, ATTACK_ERDBEBEN, ATTACK_DONNERSCHLAG}, .level = 42, .species = POKEMON_MACHOMEI, .evs = {[STAT_HP] = 252, [STAT_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
-	{.ivs_set = true, .ivs = {31, 31, 31, 31, 31, 31}, .held_item = ITEM_HEISS_ORB, .moves_set = true, .moves = {ATTACK_VIELENDER, ATTACK_NAHKAMPF, ATTACK_STEINKANTE, ATTACK_SCHUTZSCHILD}, .level = 41, .species = POKEMON_SKARABORN, .evs = {[STAT_ATTACK] = 252, [STAT_HP] = 4, [STAT_SPEED] = 252}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART, .ability = true}}, .ability_set = true},
-	{.ivs_set = true, .ivs = {31, 31, 31, 31, 31, 31}, .held_item = ITEM_BLENDPUDER, .moves_set = true, .moves = {ATTACK_POWER_PUNCH, ATTACK_ANZIEHUNG, ATTACK_NACHTHIEB, ATTACK_DOPPELTEAM}, .level = 40, .species = POKEMON_RASAFF, .evs = {[STAT_HP] = 252, [STAT_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
-	{.ivs_set = true, .ivs = {31, 31, 31, 31, 31, 31}, .held_item = ITEM_SALKABEERE, .moves_set = true, .moves = {ATTACK_AERO_ASS, ATTACK_DURCHBRUCH, ATTACK_DONNERSCHLAG, ATTACK_AUSDAUER}, .level = 41, .species = POKEMON_RESLADERO, .evs = {[STAT_ATTACK] = 252, [STAT_HP] = 4, [STAT_SPEED] = 252}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_FROH}}},
-	{.ivs_set = true, .ivs = {31, 31, 31, 31, 31, 31}, .held_item = ITEM_TAMOTBEERE, .moves_set = true, .moves = {ATTACK_NAHKAMPF, ATTACK_KNIRSCHER, ATTACK_ERDBEBEN, ATTACK_PATRONENHIEB}, .level = 43, .species = POKEMON_LUCARIO, .evs = {[STAT_ATTACK] = 252, [STAT_HP] = 4, [STAT_SPEED] = 252}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
+	{.ivs_set = true, .ivs = {31, 31, 31, 31, 31, 31}, .held_item = ITEM_MUSKELBAND, .moves_set = true, .moves = {ATTACK_ZEN_KOPFSTOSS, ATTACK_LAUBKLINGE, ATTACK_NACHTHIEB, ATTACK_NAHKAMPF}, .level = 40, .species = POKEMON_GALAGLADI, .evs = {[STAT_ATTACK] = 48, [STAT_HP] = 4, [STAT_SPEED] = 48}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_FROH}}},
+	{.ivs_set = true, .ivs = {31, 31, 31, 31, 31, 31}, .held_item = ITEM_OFFENSIVWESTE, .moves_set = true, .moves = {ATTACK_WUCHTSCHLAG, ATTACK_STEINKANTE, ATTACK_ERDBEBEN, ATTACK_DONNERSCHLAG}, .level = 42, .species = POKEMON_MACHOMEI, .evs = {[STAT_HP] = 48, [STAT_ATTACK] = 48, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
+	{.ivs_set = true, .ivs = {31, 31, 31, 31, 31, 31}, .held_item = ITEM_HEISS_ORB, .moves_set = true, .moves = {ATTACK_VIELENDER, ATTACK_NAHKAMPF, ATTACK_STEINKANTE, ATTACK_SCHUTZSCHILD}, .level = 41, .species = POKEMON_SKARABORN, .evs = {[STAT_ATTACK] = 48, [STAT_HP] = 4, [STAT_SPEED] = 48}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART, .ability = true}}, .ability_set = true},
+	{.ivs_set = true, .ivs = {31, 31, 31, 31, 31, 31}, .held_item = ITEM_BLENDPUDER, .moves_set = true, .moves = {ATTACK_POWER_PUNCH, ATTACK_ANZIEHUNG, ATTACK_NACHTHIEB, ATTACK_DOPPELTEAM}, .level = 40, .species = POKEMON_RASAFF, .evs = {[STAT_HP] = 48, [STAT_ATTACK] = 48, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_HART}}},
+	{.ivs_set = true, .ivs = {31, 31, 31, 31, 31, 31}, .held_item = ITEM_SALKABEERE, .moves_set = true, .moves = {ATTACK_AERO_ASS, ATTACK_DURCHBRUCH, ATTACK_DONNERSCHLAG, ATTACK_AUSDAUER}, .level = 41, .species = POKEMON_RESLADERO, .evs = {[STAT_ATTACK] = 48, [STAT_HP] = 4, [STAT_SPEED] = 48}, .nature_set = true, .evs_set =
+	true, .pid = {.fields = {.nature = NATURE_FROH}}},
+	{.ivs_set = true, .ivs = {31, 31, 31, 31, 31, 31}, .held_item = ITEM_TAMOTBEERE, .moves_set =
+	true, .moves =
+	{ATTACK_NAHKAMPF,
+	ATTACK_KNIRSCHER,
+	ATTACK_ERDBEBEN,
+	ATTACK_PATRONENHIEB},
+	.level =
+	43,
+	.species =
+	POKEMON_LUCARIO,
+	.evs =
+	{[STAT_ATTACK] =
+	48,
+	[STAT_HP] =
+	4,
+	[STAT_SPEED] =
+	48},
+	.nature_set =
+	true,
+	.evs_set =
+	true,
+	.pid =
+	{.fields =
+	{.nature =
+	NATURE_HART}}}
 };
 
 const trainer_pokemon trainer_party_x1cd_bluetenbach_gym_trainer_4[] = {
@@ -2759,6 +2784,10 @@ const trainer_pokemon trainer_party_x209_route_3_trainer_4[] = {
 	{.level = 14, .species = POKEMON_KNILZ},
 	{.level = 12, .species = POKEMON_FLABEBE},
 	{.level = 13, .species = POKEMON_KNOFENSA},
+};
+
+const trainer_pokemon trainer_party_restaurant_dummy[] = {
+	{.level = 5, .species = POKEMON_MEW},
 };
 
 #endif

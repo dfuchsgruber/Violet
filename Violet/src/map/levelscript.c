@@ -11,6 +11,7 @@
 EWRAM const u8 *additional_levelscript_4 = NULL;
 
 void map_init_levelscript_4() {
+    DEBUG("Additional levelscript 4 0x%x\n", additional_levelscript_4);
     const u8 *a = additional_levelscript_4;
     if (a) {
         overworld_script_init_muted(a);

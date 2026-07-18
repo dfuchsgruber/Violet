@@ -17,6 +17,7 @@
 #include "debug.h"
 #include "dungeon/dungeon2.h"
 #include "trainer/virtual.h"
+#include "overworld/restaurant.h"
 
 EWRAM trainer_pokemon dynamic_trainer_party[NUM_DYNAMIC_TRAINER_POKEMON] = {0};
 
@@ -145,6 +146,9 @@ static int party_setup_by_trainer(pokemon *dst_party, const trainer *trainer) {
 static int party_setup_by_trainer_idx(pokemon *dst_party, u16 trainer_id) {
 	if (trainer_id >= 0x1e0 && trainer_id < 0x1e4)
 		dungeon2_init_trainer(trainer_id);
+	if (IS_RESTAURANT_TRAINER(trainer_id)) {
+		restaurant_setup_trainer_party(trainer_id);
+	}
 	// To generate a trainer consistent pid we use a pseudo rng
 	trainer_prng_state = trainer_id;
 	if (battle_flags & BATTLE_VS_SEEKER) {

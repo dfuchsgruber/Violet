@@ -23,7 +23,7 @@
 			]
 		],
 		"tileset_primary": "maptileset_inside",
-		"tileset_secondary": "maptileset_sonnaufeld_inside",
+		"tileset_secondary": "maptileset_kaskada_inside",
 		"blocks": [
 			[
 				{

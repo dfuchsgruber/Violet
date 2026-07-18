@@ -9,6 +9,8 @@
 #include "battle/state.h"
 #include "math.h"
 #include "debug.h"
+#include "vars.h"
+#include "overworld/restaurant.h"
 
 void bsc_cmd_x23_adjust_exp_and_print_string(u16 boosted_string_idx) {
     u8 opponent_level = battlers[fainted_battler].level;
@@ -25,6 +27,9 @@ void bsc_cmd_x23_adjust_exp_and_print_string(u16 boosted_string_idx) {
             break;
     }
     if (checkflag(FLAG_REMATCHES_ACHIEVEMENT_100_REWARD) && (battle_flags & BATTLE_VS_SEEKER)) {
+        damage_to_apply += damage_to_apply / 2;
+    }
+    if ((battle_flags & BATTLE_RESTAURANT) && *var_access(VAR_RESTAURANT_STARTER) == RESTAURANT_BOOST_EXP) {
         damage_to_apply += damage_to_apply / 2;
     }
     damage_to_apply = MAX(1, damage_to_apply);

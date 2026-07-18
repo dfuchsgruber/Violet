@@ -237,6 +237,7 @@ typedef struct custom_memory {
     u16 bag_pocket;
     u16 pokedex_species;
     u8 pokedex_sorting;
+    u8 unused[928];
     /**
     struct {
         u8 flags[64];

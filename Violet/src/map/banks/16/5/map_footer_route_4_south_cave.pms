@@ -4981,7 +4981,7 @@
 					"level": 1
 				},
 				{
-					"block_idx": 803,
+					"block_idx": 666,
 					"level": 1
 				},
 				{
@@ -5077,11 +5077,11 @@
 					"level": 1
 				},
 				{
-					"block_idx": 666,
+					"block_idx": 660,
 					"level": 1
 				},
 				{
-					"block_idx": 660,
+					"block_idx": 674,
 					"level": 1
 				},
 				{
@@ -5399,15 +5399,15 @@
 					"level": 1
 				},
 				{
-					"block_idx": 674,
-					"level": 1
-				},
-				{
 					"block_idx": 675,
 					"level": 1
 				},
 				{
 					"block_idx": 660,
+					"level": 1
+				},
+				{
+					"block_idx": 674,
 					"level": 1
 				},
 				{
@@ -5725,12 +5725,12 @@
 					"level": 1
 				},
 				{
-					"block_idx": 674,
+					"block_idx": 675,
 					"level": 1
 				},
 				{
-					"block_idx": 675,
-					"level": 1
+					"block_idx": 656,
+					"level": 12
 				},
 				{
 					"block_idx": 691,
@@ -6369,24 +6369,24 @@
 					"level": 1
 				},
 				{
-					"block_idx": 658,
-					"level": 1
-				},
-				{
-					"block_idx": 658,
-					"level": 1
-				},
-				{
-					"block_idx": 658,
-					"level": 1
-				},
-				{
 					"block_idx": 659,
 					"level": 1
 				},
 				{
 					"block_idx": 656,
 					"level": 12
+				},
+				{
+					"block_idx": 656,
+					"level": 12
+				},
+				{
+					"block_idx": 656,
+					"level": 12
+				},
+				{
+					"block_idx": 683,
+					"level": 1
 				},
 				{
 					"block_idx": 656,
@@ -6691,20 +6691,20 @@
 					"level": 1
 				},
 				{
-					"block_idx": 681,
+					"block_idx": 667,
 					"level": 1
 				},
 				{
-					"block_idx": 682,
-					"level": 1
+					"block_idx": 656,
+					"level": 12
 				},
 				{
-					"block_idx": 666,
-					"level": 1
+					"block_idx": 656,
+					"level": 12
 				},
 				{
-					"block_idx": 668,
-					"level": 20
+					"block_idx": 657,
+					"level": 1
 				},
 				{
 					"block_idx": 659,
@@ -7013,19 +7013,19 @@
 					"level": 1
 				},
 				{
-					"block_idx": 665,
+					"block_idx": 668,
 					"level": 1
 				},
 				{
-					"block_idx": 668,
-					"level": 20
+					"block_idx": 658,
+					"level": 1
 				},
 				{
-					"block_idx": 668,
-					"level": 20
+					"block_idx": 658,
+					"level": 1
 				},
 				{
-					"block_idx": 682,
+					"block_idx": 669,
 					"level": 1
 				},
 				{
@@ -7335,15 +7335,15 @@
 					"level": 1
 				},
 				{
-					"block_idx": 673,
-					"level": 1
-				},
-				{
-					"block_idx": 661,
-					"level": 1
-				},
-				{
 					"block_idx": 666,
+					"level": 1
+				},
+				{
+					"block_idx": 681,
+					"level": 1
+				},
+				{
+					"block_idx": 658,
 					"level": 20
 				},
 				{
@@ -12899,5 +12899,6 @@
 		"field_1A": 0
 	},
 	"label": "map_footer_route_4_south_cave",
-	"type": "footer"
+	"type": "footer",
+	"smart_shapes": {}
 }

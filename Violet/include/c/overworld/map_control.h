@@ -112,8 +112,9 @@ void warp_setup_callbacks();
 
 /**
  * Sets up callback to execute the escalator warp
+ * @param behaviour the behaviour of the escalator warp (up or down)
  **/
-void warp_setup_escalator_callback();
+void warp_setup_escalator_callback(u8 behaviour);
 
 /**
  * Sets up callback to execute the lavaridge b1f warp

@@ -940,6 +940,23 @@ enum {
  */
 void player_transition(u8 player_transition_type);
 
+/**
+    * @brief Shows a sprite for a person on a map
+    * 
+    * @param person_idx the person index to show
+    * @param map_idx the map index to show
+    * @param bank the bank to show
+*/
+void person_showsprite(u8 person_idx, u8 map_idx, u8 bank);
+
+/*
+    * @brief Hides a sprite for a person on a map and sets the flag
+    * 
+    * @param person_idx the person index to hide
+    * @param map_idx the map index to hide
+    * @param bank the bank to hide
+*/
+void person_hidesprite(u8 person_idx, u8 map_idx, u8 bank);
 
 extern EWRAM u8 pathfinding_npc_movements_waiting;
 extern EWRAM u8 npc_facing_movements[2];

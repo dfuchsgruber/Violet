@@ -269,4 +269,19 @@ void list_menu_call_cursor_move_callback(list_menu *list, bool on_init);
  */
 bool list_menu_search(u8 cb_idx, int item_idx, bool call_cursor_move_callback);
 
+
+/**
+ * @brief Creates a new gp list menu
+  * 
+  * @param tbox_idx the tbox to use
+  * @param font the font to use
+  * @param x the x coordinate of the text
+  * @param y the y coordinate of the text
+  * @param height the height of the box in tiles
+  * @param num_elements how many elements to show
+  * @param cursor_position where to place the cursor initially
+  * @param is_a_press_muted if true, A-presses are muted
+  * @return u8 the callback index of the gp list menu handler
+  */ 
+u8 gp_list_menu_new(u8 tbox_idx, u8 font, u8 x, u8 y, u8 height, u8 num_elements, u8 cursor_position, u8 is_a_press_muted);
 #endif /* INCLUDE_C_LIST_MENU_H_ */

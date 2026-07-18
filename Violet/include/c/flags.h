@@ -11,6 +11,8 @@
 #include "types.h"
 #include "constants/flags.h"
 
+#define INVERSE_FLAG(flag) ((flag) | 0x8000)
+
 /**
  * Sets a flag
  * @param The flag to set

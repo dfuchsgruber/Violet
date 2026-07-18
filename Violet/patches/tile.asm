@@ -169,3 +169,7 @@
     ldr r1, =overworld_process_input | 1
     bx r1
     .pool
+
+// Escalator animation tiles
+.org 0x0809c2bc
+    bx lr

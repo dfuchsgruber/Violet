@@ -17,6 +17,8 @@
 #include "pokemon/basestat.h"
 #include "battle/state.h"
 #include "flags.h"
+#include "vars.h"
+#include "overworld/restaurant.h"
 
 const u8 effective_ev_attributes[6] = {
 		[STAT_HP] = ATTRIBUTE_COOLNESS,
@@ -73,6 +75,24 @@ void pokemon_get_evs(pokemon *p, u16 defeated_species) {
 	evs[STAT_SPEED] = basestats[defeated_species].ev_yield.speed;
 	evs[STAT_SPECIAL_ATTACK] = basestats[defeated_species].ev_yield.satt;
 	evs[STAT_SPECIAL_DEFENSE] = basestats[defeated_species].ev_yield.sdef;
+	
+	if ((battle_flags & BATTLE_RESTAURANT)) {
+		switch(*var_access(VAR_RESTAURANT_STARTER)) {
+			case RESTAURANT_BOOST_HP_EV:
+				evs[STAT_HP]++; break;
+			case RESTAURANT_BOOST_ATTACK_EV:
+				evs[STAT_ATTACK]++; break;
+			case RESTAURANT_BOOST_DEFENSE_EV:
+				evs[STAT_DEFENSE]++; break;
+			case RESTAURANT_BOOST_SPEED_EV:
+				evs[STAT_SPEED]++; break;
+			case RESTAURANT_BOOST_SP_ATTACK_EV:
+				evs[STAT_SPECIAL_ATTACK]++; break;
+			case RESTAURANT_BOOST_SP_DEFENSE_EV:
+				evs[STAT_SPECIAL_DEFENSE]++; break;
+		}
+	}
+	
 	u8 ball_idx = (u8)pokemon_get_attribute(p, ATTRIBUTE_CATCH_INFO, NULL);
 	switch (ball_idx) {
 		case BALL_HP:

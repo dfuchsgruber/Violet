@@ -1,0 +1,7 @@
+{
+    "type" : "dict",
+    "values" : {
+        "RESTAURANT_TRAINER_BASE" : 522,
+        "NUM_RESTAURANT_TRAINERS" : 8,
+    }
+}

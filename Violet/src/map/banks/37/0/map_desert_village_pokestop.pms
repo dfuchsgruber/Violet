@@ -3,7 +3,7 @@
 		"footer": "map_footer_8_pokestop",
 		"events": {
 			"person_cnt": 9,
-			"warp_cnt": 1,
+			"warp_cnt": 2,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
 			"persons": [
@@ -155,8 +155,8 @@
 				{
 					"target_index": "6",
 					"picture": "19",
-					"x": "3",
-					"y": "7",
+					"x": "6",
+					"y": "6",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -184,8 +184,8 @@
 				{
 					"target_index": "7",
 					"picture": "18",
-					"x": "1",
-					"y": "5",
+					"x": "2",
+					"y": "7",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
@@ -214,9 +214,9 @@
 					"target_index": "8",
 					"picture": "238",
 					"x": "2",
-					"y": "5",
+					"y": "6",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -277,6 +277,14 @@
 					"target_warp_idx": 0,
 					"target_map": "26",
 					"target_bank": "3"
+				},
+				{
+					"x": "1",
+					"y": "4",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "2",
+					"target_bank": "37"
 				}
 			],
 			"triggers": [],
@@ -287,7 +295,7 @@
 			"connection_cnt": 0,
 			"connections": []
 		},
-		"music": "MUS_POKEMON_CENTER_AND_POKEMON_MARKT_AND_LINK_ZENTRALE",
+		"music": "MUS_DESERT_TENT",
 		"footer_idx": 8,
 		"namespace": "MAP_DESERT_VILLAGE",
 		"flash_type": "FLASH_NONE",

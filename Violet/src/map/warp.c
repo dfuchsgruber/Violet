@@ -70,7 +70,7 @@ bool step_on_warp(const position_t *position, u8 behaviour) {
         player_save_initial_state();
         warp_setup_by_event_and_position(&mapheader_virtual, warp_idx, position);
         if (behaviour_is_escalator(behaviour)) {
-            warp_setup_escalator_callback();
+            warp_setup_escalator_callback(behaviour);
         } else if (behaviour_is_lavaridge_b1f_warp(behaviour)) {
             warp_setup_lavaridge_b1f_callback();
         } else if (behaviour_is_lavaridge_1f_warp(behaviour)) {

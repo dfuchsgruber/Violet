@@ -9249,5 +9249,6 @@
 		"field_1A": 0
 	},
 	"label": "map_footer_desert_village",
-	"type": "footer"
+	"type": "footer",
+	"smart_shapes": {}
 }

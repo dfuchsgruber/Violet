@@ -1,6 +1,6 @@
 {
 	"data": {
-		"footer": "map_footer_451_indoor_layout_14",
+		"footer": "map_footer_kaskada_house_6",
 		"events": {
 			"person_cnt": 4,
 			"warp_cnt": 2,
@@ -10,11 +10,11 @@
 				{
 					"is_trainer": "0",
 					"script": "ow_script_map_8_9_person_0",
-					"y": 6,
+					"y": "4",
 					"target_index": 1,
 					"picture": 17,
 					"flag": "0x0",
-					"x": 8,
+					"x": "8",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -41,15 +41,15 @@
 				{
 					"is_trainer": "0",
 					"script": "ow_script_map_8_9_person_1",
-					"y": 3,
+					"y": "3",
 					"target_index": 2,
 					"picture": 35,
 					"flag": "0x0",
-					"x": 3,
+					"x": "1",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -103,10 +103,10 @@
 				{
 					"target_index": "4",
 					"picture": "238",
-					"x": "4",
-					"y": "3",
+					"x": "2",
+					"y": "7",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -133,18 +133,18 @@
 			"warps": [
 				{
 					"target_map": 4,
-					"y": 7,
+					"y": "7",
 					"target_bank": 3,
 					"level": 3,
-					"x": 6,
+					"x": "5",
 					"target_warp_idx": 4
 				},
 				{
 					"target_map": 4,
-					"y": 7,
+					"y": "7",
 					"target_bank": 3,
 					"level": 3,
-					"x": 7,
+					"x": "6",
 					"target_warp_idx": 5
 				}
 			],
@@ -157,7 +157,7 @@
 			"connections": []
 		},
 		"music": "KASKADA_BATTLE",
-		"footer_idx": 451,
+		"footer_idx": 198,
 		"namespace": "MAP_KASKADA",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_INSIDE",
@@ -176,6 +176,6 @@
 			"flag_7": "0"
 		}
 	},
-	"label": "map_8_9",
+	"label": "map_kaskada_house_6",
 	"type": "header"
 }

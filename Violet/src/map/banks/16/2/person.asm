@@ -152,33 +152,33 @@ str_2:
 str_3:
     .autostring 34 2 "Damit wäre der Weg wieder freigeräumt."
 str_4:
-    .autostring 34 2 "Ich muss mich wirklich bei dir bedanken, Mädchen.\pOhne dich hätte das ganze hier sicher viel länger gedauert."
+    .autostring 34 2 "Ich muss mich wirklich bei dir bedanken.\pOhne dich hätte das ganze hier sicher viel länger gedauert."
 str_5:
     .autostring 34 2 "Ach, das ist doch nicht der Rede wert.\pIch hatte ohnehin das Gefühl vor Langeweile zu sterben."
 str_6:
     .autostring 34 2 "PLAYER!\pDas ist ja eine Überraschung."
 str_7:
-    .autostring 34 2 "Du siehst aus, als wärst du um einiges stärker geworden, seit wir uns das letzte Mal gesehen haben.\pHabe ich recht?"
+    .autostring 34 2 "Du siehst aus, als wärst du um einiges stärker geworden, seit wir uns das letzte Mal gesehen haben."
 str_8:
-    .autostring 34 2 "Dieses Kind?\pBUFFER_1 soll ein starker Trainer sein?"
+    .autostring 34 2 "Dieses Kind soll ein starker Trainer sein?"
 str_9:
-    .autostring 34 2 "Du würdest dich wundern, Manuel."
+    .autostring 34 2 "Wer weiß."
 str_10:
-    .autostring 34 2 "Das glaube ich erst, wenn ich es selbst gesehen habe.\pMein Name ist Manuel und ich bin der Arenaleiter von Blütenbach.\pNormalerweise würde ich jemanden wie dich gar nicht erst in meiner Arena antreten lassen.\pAber Larissa scheint etwas auf dich zu halten.\pUnd weil sie mir beim Freiräumen dieses Weges geholfen hat, bin ich es ihr wohl schuldig, deine Herausforderung zumindest anzunehmen.\pWenn du den Mumm haben solltest, gegen mich zu kämpfen.\pWas sagst du?"
+    .autostring 34 2 "Das glaube ich erst, wenn ich es selbst gesehen habe.\pMein Name ist Manuel und ich bin der Arenaleiter von Blütenbach.\pNormalerweise würde ich jemanden wie dich gar nicht erst in meiner Arena antreten lassen.\pAber Larissa scheint etwas auf dich zu halten.\pUnd weil sie mir beim Freiräumen dieses Weges geholfen hat, bin ich es ihr schuldig, deine Herausforderung zumindest anzunehmen.\pWenn du den Mumm haben solltest, gegen mich zu kämpfen.\pWas sagst du?"
 str_11:
-    .autostring 34 2 "Natürlich wird PLAYER gegen dich kämpfen!"
+    .autostring 34 2 "PLAYER wird auf jeden Fall gegen dich antreten."
 str_12:
     .autostring 34 2 "Na dann ist es ausgemacht.\pIch werde dich in meiner Arena erwarten, Kindchen.\pLass mich ja warten, verstanden?"
 str_13:
-    .autostring 34 2 "Da sind wohl etwas die Ponitas mit mir durchgegangen.\pEntschudlige bitte, dass ich dich eben so bevormundet habe."
+    .autostring 34 2 "Da sind wohl etwas die Ponitas mit mir durchgegangen.\pEntschudlige bitte, ich wollte dich nicht bevormunden."
 str_14:
-    .autostring 34 2 "Es ist einfach so aufregend, zu sehen, wie sehr du dich weiterentwickelt hast.\pDir selbst mag das vielleicht nicht aufgefallen seinDOTS\pAber alles an dir schreit inzwischen nach Trainer."
+    .autostring 34 2 "Aber ich verfolge deinen Fortschritt wirklich gerne mit.\pDir selbst mag das vielleicht nicht aufgefallen seinDOTS\pAber alles an dir schreit inzwischen nach einem starken Trainer."
 str_15:
-    .autostring 34 2 "Sicherlich hast du noch einen weiten Weg vor dirDOTS"
+    .autostring 34 2 "Du hast natürlich noch viel zu lernenDOTS"
 str_16:
-    .autostring 34 2 "Aber ich kann es kaum abwarten, zu erfahren, wie weit du es bringen wirst."
+    .autostring 34 2 "Aber ich kann es kaum erwarten, zu sehen, wie weit du es bringst."
 str_17:
-    .autostring 34 2 "Und Manuel ist niemand, den man unterschätzen sollte.\pAlso gib dein Bestes, ja?"
+    .autostring 34 2 "Und Manuel ist niemand, den man unterschätzen sollte.\pDa wirst du dein Bestes geben müssen."
 str_he:
     .string "Der"
 str_him:

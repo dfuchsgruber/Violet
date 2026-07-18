@@ -251,6 +251,12 @@ const battle_bg battle_bgs[256] = {
         NULL, NULL,
         gfx_battle_bg_ice_cavePal,
     },
+    [BATTLE_BG_POKESTOP_RESTAURANT] = {
+        gfx_battle_bg_pokestop_restaurantTiles,
+        gfx_battle_bg_pokestop_restaurantMap,
+        NULL, NULL,
+        gfx_battle_bg_pokestop_restaurantPal,
+    }
 };
 
 
@@ -331,6 +337,7 @@ void bsc_cmd_xEB_set_type_to_terrain() {
     case BATTLE_BG_CARGO_HALL:
     case BATTLE_BG_INSIDE_STD:
     case BATTLE_BG_DUNGEON_FOREST_TENT_INSIDE:
+    case BATTLE_BG_POKESTOP_RESTAURANT:
 		type = TYPE_NORMAL;
 		break;
     case BATTLE_BG_GRAVEYARD:
@@ -403,6 +410,7 @@ const u16 terrain_moves[] = {
     [BATTLE_BG_INSIDE_STD] = ATTACK_RUECKKEHR,
     [BATTLE_BG_DUNGEON_FOREST_TENT_INSIDE] = ATTACK_AMNESIE,
     [BATTLE_BG_ICE_CAVE] = ATTACK_EISSTURM,
+    [BATTLE_BG_POKESTOP_RESTAURANT] = ATTACK_TRIPLETTE,
 };
 
 void bsc_cmd_xCC_set_terrain_based_move(){

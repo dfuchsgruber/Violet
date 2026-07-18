@@ -58,6 +58,7 @@ void npc_move_to_unblock_movements() {
 void npc_move_to_freeing_callback(u8 self) {
     u8 person_idx = (u8) big_callbacks[self].params[2];
     if (npc_movement_callback_is_finished(person_idx, save1->map, save1->bank)) {
+        free((void*)big_callback_get_int(self, 0));
         big_callback_delete(self);
     }
 }
@@ -66,6 +67,8 @@ static void npc_move_to_do_moves(u8 self) {
     if (!pathfinding_npc_movements_waiting) {
         u8 *moves = (u8*)big_callback_get_int(self, 0);
         u8 person_idx = (u8)big_callbacks[self].params[2];
+        DEBUG("Applying movement for person %d\n", person_idx);
+        DEBUG("First moves: %d, %d, %d, %d\n", moves[0], moves[1], moves[2], moves[3]);
         npc_apply_movement(person_idx, save1->map, save1->bank, moves);
         npc_movement_target_person_idx = person_idx;
         big_callbacks[self].function = npc_move_to_freeing_callback;

@@ -3,7 +3,7 @@
 		"footer": "map_footer_8_pokestop",
 		"events": {
 			"person_cnt": 7,
-			"warp_cnt": 2,
+			"warp_cnt": 3,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
 			"persons": [
@@ -42,10 +42,10 @@
 					"target_index": 2,
 					"picture": 61,
 					"field_2": 0,
-					"x": "3",
+					"x": "2",
 					"y": "6",
 					"level": 3,
-					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
 						"x": "1",
 						"y": "1"
@@ -104,8 +104,8 @@
 					"target_index": 4,
 					"picture": 18,
 					"field_2": 0,
-					"x": "1",
-					"y": "4",
+					"x": "7",
+					"y": "6",
 					"level": 3,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -241,6 +241,14 @@
 					"target_bank": 0,
 					"target_map": 0,
 					"target_warp_idx": 0
+				},
+				{
+					"x": "1",
+					"y": "4",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "7",
+					"target_bank": "5"
 				}
 			],
 			"triggers": [],

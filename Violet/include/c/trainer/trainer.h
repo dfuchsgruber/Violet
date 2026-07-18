@@ -59,6 +59,12 @@ const u8 *trainer_configure_by_overworld_script(const u8 *script);
  */
 bool checktrainerflag(u16 trainer_id);
 
+/*
+ @brief Makes a trainer want to battle
+ @param trainer_id Id of the trainer
+ */
+void cleartrainerflag(u16 trainer_id);
+
 /**
  * Checks whether a trainer can challange the player (double battle, fraction etc.)
  * @param trainer_id Id of the trainer

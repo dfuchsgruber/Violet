@@ -138,6 +138,7 @@ bool multichoice_with_default(u8 x, u8 y, u8 choice, u8 forced_choice, u8 defaul
  */
 bool multichoice_grid(u8 x, u8 y, u8 choice, u8 forced_choice, u8 num_columns);
 
+
 /**
  * Gives an egg to the player.
  * @param species the species to create an egg of

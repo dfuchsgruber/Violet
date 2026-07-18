@@ -25,6 +25,7 @@
 #include "menu_indicators.h"
 #include "overworld/pokemon_party_menu.h"
 #include "item/tm_hm.h"
+#include "debug.h"
 
 static bool bag_cb_initialize_step();
 
@@ -325,7 +326,6 @@ static u8 bag_idle_callback_new() {
 }
 
 void bag_free() {
-    // TODO
     if (bag2_state->bg0_map)
         free(bag2_state->bg0_map);
     if (bag2_state->bg1_map)
@@ -546,6 +546,7 @@ static bool bag_cb_initialize_step() {
             break;
         }
         default: {
+            DEBUG("medicine at 0x%x\n", csave.bag_pocket_medicine);
             callback1_set(bag_cb1);
             vblank_handler_set(bag_vblank_handler);
             return true;

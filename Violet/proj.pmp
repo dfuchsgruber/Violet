@@ -353,6 +353,11 @@
 				"map_meriana_city_gym_arena",
 				"src/map/banks/5/6/map_meriana_city_gym_arena.pms",
 				"MAP_MERIANA_CITY"
+			],
+			"7": [
+				"map_bluetenbach_pokestop_restaurant",
+				"src/map/banks/5/7/map_bluetenbach_pokestop_restaurant.pms",
+				"MAP_MERIANA_CITY"
 			]
 		},
 		"6": {
@@ -377,7 +382,7 @@
 				"MAP_AKTANIA"
 			],
 			"5": [
-				"map_6_5",
+				"map_bruchfels_pokestop",
 				"src/map/banks/6/5/map_6_5.pms",
 				"MAP_AKTANIA"
 			],
@@ -430,6 +435,11 @@
 				"map_bruchfels_crypt",
 				"src/map/banks/6/11/map_bruchfels_grave.pms",
 				"MAP_AKTANIA"
+			],
+			"12": [
+				"map_bruchfels_pokestop_restaurant",
+				"src/map/banks/6/12/map_bruchfels_pokestop_restaurant.pms",
+				"MAP_AKTANIA"
 			]
 		},
 		"7": {
@@ -444,7 +454,7 @@
 				"MAP_SILVANIA"
 			],
 			"3": [
-				"map_7_3",
+				"map_kranzdorf_pokestop",
 				"src/map/banks/7/3/map_7_3.pms",
 				"MAP_SILVANIA"
 			],
@@ -466,6 +476,11 @@
 			"0": [
 				"map_silvania_clouds",
 				"src/map/banks/7/0/map_silvania_clouds.pms",
+				"MAP_SILVANIA"
+			],
+			"4": [
+				"map_kranzdorf_pokestop_restaurant",
+				"src/map/banks/7/4/map_kranzdorf_pokestop_restaurant.pms",
 				"MAP_SILVANIA"
 			]
 		},
@@ -491,17 +506,17 @@
 				"MAP_KASKADA"
 			],
 			"8": [
-				"map_8_8",
+				"map_kaskada_house_5",
 				"src/map/banks/8/8/map_8_8.pms",
 				"MAP_KASKADA"
 			],
 			"9": [
-				"map_8_9",
+				"map_kaskada_house_6",
 				"src/map/banks/8/9/map_8_9.pms",
 				"MAP_KASKADA"
 			],
 			"10": [
-				"map_8_10",
+				"map_kaskada_house_7",
 				"src/map/banks/8/10/map_8_10.pms",
 				"MAP_KASKADA"
 			],
@@ -543,6 +558,11 @@
 			"14": [
 				"map_kaskada_black_market_exit",
 				"src/map/banks/8/14/map_kaskada_black_market_exit.pms",
+				"MAP_KASKADA"
+			],
+			"15": [
+				"map_kaskada_pokestop_restaurant",
+				"src/map/banks/8/15/map_kaskada_pokestop_restaurant.pms",
 				"MAP_KASKADA"
 			]
 		},
@@ -694,7 +714,7 @@
 		},
 		"16": {
 			"4": [
-				"map_16_4",
+				"map_route_5_fly_house",
 				"src/map/banks/16/4/map_16_4.pms",
 				"MAP_ROUTE_5"
 			],
@@ -881,6 +901,11 @@
 			"7": [
 				"map_laubdorf_cloud_ruins",
 				"src/map/banks/12/7/map_laubdorf_cloud_ruins.pms",
+				"MAP_LAUBDORF"
+			],
+			"8": [
+				"map_laubdorf_pokestop_restaurant",
+				"src/map/banks/12/8/map_laubdorf_pokestop_restaurant.pms",
 				"MAP_LAUBDORF"
 			]
 		},
@@ -1376,6 +1401,11 @@
 				"map_header_sonnaufeld_tanns_study",
 				"src/map/banks/35/4/map_header_sonnaufeld_tanns_lab_study.pms",
 				"MAP_TANNS_LABOR"
+			],
+			"5": [
+				"map_sonnaufeld_pokestop_restaurant",
+				"src/map/banks/35/5/map_sonnaufeld_pokestop_restaurant.pms",
+				"MAP_TANNS_LABOR"
 			]
 		},
 		"36": {
@@ -1394,6 +1424,11 @@
 			"1": [
 				"map_desert_village_tent_1",
 				"src/map/banks/37/1/map_desert_village_tent_1.pms",
+				"MAP_DESERT_VILLAGE"
+			],
+			"2": [
+				"map_desert_village_pokestop_restaurant",
+				"src/map/banks/37/2/map_desert_village_pokestop_restaurant.pms",
 				"MAP_DESERT_VILLAGE"
 			]
 		}
@@ -2406,6 +2441,14 @@
 		"map_footer_kaskada_house_3": [
 			197,
 			"src/map/banks/8/6/map_footer_kaskada_house_3.pms"
+		],
+		"map_footer_kaskada_house_6": [
+			198,
+			"src/map/banks/8/9/map_footer_kaskada_house_6.pms"
+		],
+		"map_footer_bluetenbach_pokestop_restaurant": [
+			199,
+			"src/map/banks/5/7/map_footer_bluetenbach_pokestop_restaurant.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -2516,7 +2559,8 @@
 		"maptileset_bruchfels_inside": "src/map/tileset/maptileset_bruchfels_inside.pms",
 		"maptileset_kranzdorf": "src/map/tileset/maptileset_kranzdorf.pms",
 		"maptileset_laubdorf_inside": "src/map/tileset/maptileset_laubdorf_inside.pms",
-		"maptileset_kaskada_inside": "src/map/tileset/maptileset_kaskada_inside.pms"
+		"maptileset_kaskada_inside": "src/map/tileset/maptileset_kaskada_inside.pms",
+		"maptileset_pokestop_restaurant": "src/map/tileset/maptileset_pokestop_restaurant.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2617,6 +2661,7 @@
 		"gfx_maptileset_bruchfels_insideTiles": "asset/gfx/tileset/gfx_maptileset_bruchfels_inside.png",
 		"gfx_maptileset_kranzdorf_insideTiles": "asset/gfx/tileset/gfx_maptileset_kranzdorf_inside.png",
 		"gfx_maptileset_laubdorf_insideTiles": "asset/gfx/tileset/gfx_maptileset_laubdorf_inside.png",
-		"gfx_maptileset_kaskada_insideTiles": "asset/gfx/tileset/gfx_maptileset_kaskada_inside.png"
+		"gfx_maptileset_kaskada_insideTiles": "asset/gfx/tileset/gfx_maptileset_kaskada_inside.png",
+		"gfx_maptileset_pokestop_restaurantTiles": "asset/gfx/tileset/gfx_maptileset_pokestop_restaurant.png"
 	}
 }

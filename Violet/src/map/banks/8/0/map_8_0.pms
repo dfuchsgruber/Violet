@@ -3,7 +3,7 @@
 		"footer": "map_footer_8_pokestop",
 		"events": {
 			"person_cnt": 8,
-			"warp_cnt": 1,
+			"warp_cnt": 2,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
 			"persons": [
@@ -262,6 +262,14 @@
 					"target_bank": 3,
 					"target_map": 4,
 					"target_warp_idx": 5
+				},
+				{
+					"x": "1",
+					"y": "4",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "15",
+					"target_bank": "8"
 				}
 			],
 			"triggers": [],

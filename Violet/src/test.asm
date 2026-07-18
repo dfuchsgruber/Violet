@@ -28,6 +28,17 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	setflag TRANS_DISABLE
+	clearflag TRANS_PALETTE_FETCH
+	showmoney 0 0 0
+	loadpointer 0 str_beforea
+	callstd MSG_KEEPOPEN
+	callasm restaurant_menu_starters_new
+	waitstate
+	hidemoney
+	closeonkeypress
+	end
+
 
 	setvar 0x8004 CUTSCENE_AKTANIA_BEAM
 	special SPECIAL_CUTSCENE_SHOW

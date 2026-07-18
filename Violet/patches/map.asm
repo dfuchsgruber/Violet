@@ -1,17 +1,4 @@
-.org 0x08069C8C
-    ldr r0, =map_init_levelscript_4 | 1
-    bx r0
-    .pool
 
-.org 0x08069C28
-	ldr r0, =map_init_levelscript_1 | 1
-	bx r0
-	.pool
-
-.org 0x08069c34
-    ldr r0, =map_init_levelscript_on_transition | 1
-    bx r0
-    .pool
 
 .org 0x0806ffcc
     ldr r0, =tileset_secondary_animation_initialize_ | 1
@@ -86,12 +73,6 @@
     bx r3
     .pool
 
-.org 0x08069c64
-    ldr r0, =map_init_levelscript_2_on_frame | 1
-    bx r0
-    .pool
-
-
 .org 0x0806dbb8
     ldr r0, =warp_setup_by_event_and_position | 1 // The header is unused
     bx r0
@@ -117,7 +98,28 @@
     bx r3
     .pool
 
+
 .org 0x08069c4c
     ldr r0, =map_init_levelscript_7_on_return_to_overworld | 1
+    bx r0
+    .pool
+
+.org 0x08069c64
+    ldr r0, =map_init_levelscript_2_on_frame | 1
+    bx r0
+    .pool
+
+.org 0x08069C8C
+    ldr r0, =map_init_levelscript_4 | 1
+    bx r0
+    .pool
+
+.org 0x08069C28
+	ldr r0, =map_init_levelscript_1 | 1
+	bx r0
+	.pool
+
+.org 0x08069c34
+    ldr r0, =map_init_levelscript_on_transition | 1
     bx r0
     .pool

@@ -358,8 +358,8 @@
 				{
 					"target_index": "13",
 					"picture": "92",
-					"x": "60",
-					"y": "21",
+					"x": "61",
+					"y": "22",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -387,8 +387,8 @@
 				{
 					"target_index": "14",
 					"picture": "97",
-					"x": "62",
-					"y": "18",
+					"x": "61",
+					"y": "19",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -929,7 +929,7 @@
 						"type": 0,
 						"move_tutor": 0
 					},
-					"argument": 0,
+					"argument": "3",
 					"script_std_and_in_connection": {
 						"script_std": "PERSON_ITEM",
 						"in_connection": "0"
