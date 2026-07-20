@@ -38,7 +38,7 @@ void overworld_tilesets_apply_palette_effects(const map_footer_t *foot) {
             pal_restore[2 * 16 + 15] = dns_color_flame_orange;
         }
         if (foot->tileset2 == &maptileset_orina_city) {
-            //Orina City TS2
+            //Hochpolis City TS2
             pal_restore[7*16+7] = dns_color_light_yellow_weak_dark;
             pal_restore[7*16+6] = dns_color_light_yellow;
             pal_restore[7*16+13] = dns_color_light_yellow;

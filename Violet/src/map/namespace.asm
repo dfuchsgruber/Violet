@@ -148,7 +148,7 @@ map_namespaces:
 	.global str_mapnamespace_93
 
 	str_mapnamespace_93:
-		.string "Orina City"
+		.string "Hochpolis City"
 
 
 	.global str_mapnamespace_94

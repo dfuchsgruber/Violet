@@ -95,7 +95,7 @@ str_4:
 str_5:
     .autostring 34 2 "Wusstest du, dass manche Leute die Frechheit besitzen, den Müll anderer zu durchwühlen?\pEinmal abgesehen davon, dass es sich nicht gehört, ist das auch ganz schön gefährlich.\pIch habe gehört, dass jemand dabei mal von einem Pokémon angegriffen wurde, das sich in der Mülltonne versteckt hatte."
 str_6:
-    .autostring 34 2 "Ich komme oft hierher, um eine Tante zu besuchen.\pEigentlich lebe ich in Orina City, aber es tut mir sehr gut, hin und wieder einmal aus der Großstadt herauszukommen."
+    .autostring 34 2 "Ich komme oft hierher, um eine Tante zu besuchen.\pEigentlich lebe ich in Hochpolis City, aber es tut mir sehr gut, hin und wieder einmal aus der Großstadt herauszukommen."
 str_7:
     .autostring 34 2 "Sind die Sonnenblumen hier in Sonnaufeld nicht fantastisch?\pDas einzig nervige daran ist, dass sie eine Menge Bibor anlocken, wenn sie in Blüte stehenDOTS"
 str_8:

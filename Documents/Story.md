@@ -86,27 +86,27 @@
     - Der Wasserpfad ist damit wieder freigeräumt und Manuel kehrt in seine Arena zurück -> Spieler kann ihn dort herausfordern
 
 ### Blütenbach
-    - Spieler trifft auf Rival, dieser sagt ihm, dass Prof. Tann sie in Orina City treffen will
+    - Spieler trifft auf Rival, dieser sagt ihm, dass Prof. Tann sie in Hochpolis City treffen will
 
 ### Route 5
     - Giftsumpf, durch die Abwasser der Laz.Corp
 
-### Orina City (1)
+### Hochpolis City (1)
     - Laz. Corp von Revolutionären besetzt, die den CEO attackieren wollen
-        - Darunter Bewohner von Orina City, die sich gegen die Laz. Corp auflehnen
+        - Darunter Bewohner von Hochpolis City, die sich gegen die Laz. Corp auflehnen
     - Player und RIVAL befreien Laz. Corp
         - Igva erscheint, und sagt, dass die Revolutionäre eigenmächtig und ohne Befehl von oben gehandelt hätten
         - kurzer Streit, der offenlegt, dass es keine gute Befehlskette gibt und mehr oder weniger Anarchie
     - Treffen Elise in Laz. Corp (Elise needs to be hidden at some point in Tanns Lab), diese gibt beiden ein Porygon und sagt ihnen, dass Tann sie im Museum treffen will
-    - Im Museum zeigt Tann ihnen das Magmaherz, das er auf seiner letzten Expedition gefunden hat und lädt PLAYER und RIVAL auf nächste Expedition ein, sollen sich im Nordosten von Orina City, Ballonhafen treffen
+    - Im Museum zeigt Tann ihnen das Magmaherz, das er auf seiner letzten Expedition gefunden hat und lädt PLAYER und RIVAL auf nächste Expedition ein, sollen sich im Nordosten von Hochpolis City, Ballonhafen treffen
 
 ### Ballonhafen
     - Tann nimmt PLAYER und RIVAL mit Ballon auf Wolkeninsel mit, gehen zusammen in eine Ruine
-### Orina City (Clouds)
+### Hochpolis City (Clouds)
     - Player, RIVAL und Tann finden Alte Karte - Tann aufgeregt, da er nun das Rätsel um Atlantis gelöst hat
     - RIVAL und Tann stürmen aufgeregt davon
 
-### Orina City (2)
+### Hochpolis City (2)
     - Team Violet hat Museum besetzt, insbesondere Mistral
     - Mistral stiehlt Magmaherz
 
@@ -116,7 +116,7 @@
         - Allerdings weiß RIVAL nicht, wo Tann genau hin ist...
 
 ### Route 7
-    - PLAYER trifft wieder auf Igva: Diese entschuldigt sich nochmal für Orina City Vorfall
+    - PLAYER trifft wieder auf Igva: Diese entschuldigt sich nochmal für Hochpolis City Vorfall
         - Erzählt, dass Mistral auf dem Weg zum Volcano ist, und fürchtet, er würde das legendäre Pokémon aufwecken, bringt Inferior in Gefahr
         - Enthüllt dabei, dass sie Arenaleiterin ist
 

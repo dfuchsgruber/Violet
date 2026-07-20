@@ -21,14 +21,14 @@
 
 
 
-### Orina City
+### Hochpolis City
 - Revolutionaries occupy Laz.Corp. to force them to stop polluting the lake / river etc?
 - Take Laz.Corp hostage
 - After PLAYER frees them, Igva appears:
 - Conflict that they did act without Albus' order
 - Inner conflict: Revos dont want to take orders, blabla
 
-### East of Orina City
+### East of Hochpolis City
 Maybe revamp to include polluted lake
 
 

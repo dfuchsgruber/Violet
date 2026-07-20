@@ -63,7 +63,7 @@ str_give_access:
 str_got_access:
     .autostring 34 2 "PLAYER hat nun Zugang zum Geheimpower Labor der Laz. Corp."
 str_after_access:
-    .autostring 34 2 "Unser Firmenhauptsitz befindet sich in Orina City.\pStatte dem Labor doch mal einen Besuch ab.\pDort kannst du mehr über Geheimpower erfahren und wie man sie einsetzt."
+    .autostring 34 2 "Unser Firmenhauptsitz befindet sich in Hochpolis City.\pStatte dem Labor doch mal einen Besuch ab.\pDort kannst du mehr über Geheimpower erfahren und wie man sie einsetzt."
 str_done:
     .autostring 34 2 "Benutzt du Geheimpower, um schwer zugängliche Areale zu erkunden?\pDas lässt das Trainer-Herz doch sicherlich höher schlagen!"
 /* 

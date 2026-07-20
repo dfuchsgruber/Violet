@@ -94,7 +94,7 @@ ow_script_0x958b36:
 .ifdef LANG_GER
 
 str_0x958c0b:
-    .autostring 34 2 "Willkommen im Orina City Museum.\pWir verfügen über die größte Ausstellung antiker Objekte in der ganzen Region.\pDer Eintritt kostet 500POKEDOLLAR.\pMöchtest du eine Karte kaufen?"
+    .autostring 34 2 "Willkommen im Hochpolis City Museum.\pWir verfügen über die größte Ausstellung antiker Objekte in der ganzen Region.\pDer Eintritt kostet 500POKEDOLLAR.\pMöchtest du eine Karte kaufen?"
 str_0x958b7e:
     .autostring 34 2  "Viel Freude bei deinem Aufenthalt."
 str_0x958bb4:

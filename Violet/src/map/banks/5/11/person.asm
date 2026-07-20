@@ -68,7 +68,7 @@ already_traded:
 str_0:
     .autostring 34 2 "Ich erinnere mich noch, als unser Arenaleiter Manuel ein kleiner Junge war.\pEr hat nichts anderes getan, als den ganzen Tag trainiert.\pJetzt ist er einer der stärksten Männer der Region.\pIch bewundere jemanden, der mit solcher Entschlossenheit an seinen Zielen festhält."
 str_1:
-    .autostring 34 2 "Blütenbach mag ja ganz nett seinDOTS\pAber es ist so öde hier!\pWer will schon den ganzen Tag Ruhe haben?\pWenn ich älter bin, werde ich nach Orina City ziehen.\pDa ist man immer im Zentrum des Geschehens!"
+    .autostring 34 2 "Blütenbach mag ja ganz nett seinDOTS\pAber es ist so öde hier!\pWer will schon den ganzen Tag Ruhe haben?\pWenn ich älter bin, werde ich nach Hochpolis City ziehen.\pDa ist man immer im Zentrum des Geschehens!"
 str_want_to_trade:
     .autostring 34 2 "Du bist ein Trainer oder?\pIch bin verrückt nach dem Pokémon BUFFER_1.\pMöchtest du ein BUFFER_1 gegen mein BUFFER_2 tauschen?"
 str_decline_trade:
@@ -83,5 +83,5 @@ str_after_trade:
 str_0:
     .autostring 34 2 "I still remember when your gym leader Manuel was just a boy.\pAll day would do nothing but to train.\pNow he is one of the strongest men in this region.\pI really admire people who pursue their goals with that much determination."
 str_1:
-    .autostring 34 2 "Sure, Petal Creek may be a nice place to liveDOTS\pBut it is so boring here!\pWho wants no action all day anyway?\pWhen I am older I will move to Orina City.\pThere, you are always in the middle of everything!"
+    .autostring 34 2 "Sure, Petal Creek may be a nice place to liveDOTS\pBut it is so boring here!\pWho wants no action all day anyway?\pWhen I am older I will move to Hochpolis City.\pThere, you are always in the middle of everything!"
 .endif

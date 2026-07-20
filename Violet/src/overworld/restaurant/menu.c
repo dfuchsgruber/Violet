@@ -238,7 +238,7 @@ const restaurant_menu_t restaurant_menu = {
             .effect = TYPE_WASSER,
         },
         {
-            .name = (const u8[]) LANGDEP(PSTRING("Pflanzen Schokolade"), PSTRING("Grass Chocolate")),
+            .name = (const u8[]) LANGDEP(PSTRING("Graß Schokolade"), PSTRING("Grass Chocolate")),
             .description = (const u8[]) LANGDEP(PSTRING("Kämpfe gegen Pflanze Pokémon."), PSTRING("Fight against Grass Pokémon.")),
             .price = 1500,
             .effect = TYPE_PFLANZE,

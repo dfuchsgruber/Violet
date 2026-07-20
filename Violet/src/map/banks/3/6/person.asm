@@ -63,7 +63,7 @@ end
 .ifdef LANG_GER
 
 str_0x86ef43:
-    .string "Du bist der doch der Junge aus dem\nOrina City Museum.\pHat dich Mistral nicht gewarnt,\nihm fernzubleiben?"
+    .string "Du bist der doch der Junge aus dem\nHochpolis City Museum.\pHat dich Mistral nicht gewarnt,\nihm fernzubleiben?"
 
 
 .elseif LANG_EN

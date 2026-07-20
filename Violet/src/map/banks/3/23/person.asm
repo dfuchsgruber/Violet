@@ -239,9 +239,9 @@ str_5:
 str_6:
     .autostring 34 2 "Bist du neidisch auf meine Wolke?\pIch habe sie selbst gewoben."
 str_7:
-    .autostring 34 2 "Dieser Teich ist ein großartiger Ort, um einmal dem ganzen Lärm der Großstadt zu entkommen.\pVersteh mich nicht falschDOTS\pIch mag es, in Orina City zu leben, aber manchmal braucht selbst ein Teenager eine Auszeit."
+    .autostring 34 2 "Dieser Teich ist ein großartiger Ort, um einmal dem ganzen Lärm der Großstadt zu entkommen.\pVersteh mich nicht falschDOTS\pIch mag es, in Hochpolis City zu leben, aber manchmal braucht selbst ein Teenager eine Auszeit."
 str_8:
-    .autostring 34 2 "Warst du schon einmal im Museum von Orina City?\pProfessor Tann hat einen großen Teil der dort ausgestellten Fossilien ausgegraben.\pDiese Ausstellungsstücke sind wirklich atemberaubend!"
+    .autostring 34 2 "Warst du schon einmal im Museum von Hochpolis City?\pProfessor Tann hat einen großen Teil der dort ausgestellten Fossilien ausgegraben.\pDiese Ausstellungsstücke sind wirklich atemberaubend!"
 str_intro_sooth_bell:
     .autostring 34 2 "Ein Trainer kann das volle Potential seiner Pokémon nur entfalten, wenn diese ihm voll und ganz vertrauen.\pDas Band zwischen Mensch und Pokémon muss jede Zerreisprobe überstehen können.\pDu wirkst auf mich wie eine Person, die sich um das Wohl der eigenen Pokémon sorgt.\pIch will dir dieses Item anvertrauen."
 str_after_receiving_sooth_bell:

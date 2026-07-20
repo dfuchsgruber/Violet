@@ -747,7 +747,7 @@ str_0x97138c:
 
 
 str_0x96f1be:
-    .autostring 34 2 "Du bist wirklich schwer von Begriff, Igva!\pDas Magmaherz aus dem Museum von Orina City ermöglicht mir absolute Kontrolle über das antike Pokémon Groudon.\pUnd darüber hinaus erlangt es seine wahre Stärke als Herrscher über die Erde!\pIn seiner Kaiserform ist Groudon nicht zu stoppen!\pHaha!\nHahaha! Hahaha!\pIch bin unbesiegbar!"
+    .autostring 34 2 "Du bist wirklich schwer von Begriff, Igva!\pDas Magmaherz aus dem Museum von Hochpolis City ermöglicht mir absolute Kontrolle über das antike Pokémon Groudon.\pUnd darüber hinaus erlangt es seine wahre Stärke als Herrscher über die Erde!\pIn seiner Kaiserform ist Groudon nicht zu stoppen!\pHaha!\nHahaha! Hahaha!\pIch bin unbesiegbar!"
 
 
 str_0x96f0ee:

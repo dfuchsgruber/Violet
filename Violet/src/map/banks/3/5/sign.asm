@@ -26,7 +26,7 @@ end
 .ifdef LANG_GER
 
 str_0x95587d:
-    .autostring 34 2 "Orina City.\pHier überragen Häuser die Wolken."
+    .autostring 34 2 "Hochpolis City.\pHier überragen Häuser die Wolken."
 
 
 .elseif LANG_EN
@@ -162,7 +162,7 @@ end
 .ifdef LANG_GER
 
 str_0x9553f8:
-    .string "Orina City Museum"
+    .string "Hochpolis City Museum"
 
 
 .elseif LANG_EN
@@ -179,7 +179,7 @@ end
 .ifdef LANG_GER
 
 str_0x955429:
-    .autostring 34 2 "Orina City Bank"
+    .autostring 34 2 "Hochpolis City Bank"
 
 
 .elseif LANG_EN

@@ -12,7 +12,7 @@ end
 .ifdef LANG_GER
 
 str_0x95ef3e:
-    .string "Westen: Route 6\nOsten: Orina City"
+    .string "Westen: Route 6\nOsten: Hochpolis City"
 
 
 .elseif LANG_EN

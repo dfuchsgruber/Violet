@@ -123,10 +123,10 @@ end
 .ifdef LANG_GER
 
 str2:
-	.autostring 35 2 "Irgendwo hier auf Route 2 hat Professor Tann sein Labor.\pEr ist Archäologe und das Museum in Orina City hat ihm bereits viele Ausstellungsstücke zu verdanken."
+	.autostring 35 2 "Irgendwo hier auf Route 2 hat Professor Tann sein Labor.\pEr ist Archäologe und das Museum in Hochpolis City hat ihm bereits viele Ausstellungsstücke zu verdanken."
 .elseif LANG_EN
 str2:
-	.autostring 34 2 "Somewhere here on Route 2 Professor Fig has his laboratory.\pHe is an archeologist and most of the exhibition in the Orina City Museum is due to him."
+	.autostring 34 2 "Somewhere here on Route 2 Professor Fig has his laboratory.\pHe is an archeologist and most of the exhibition in the Hochpolis City Museum is due to him."
 .endif
 
 ow_script_route_2_east_npc_2:

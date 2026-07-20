@@ -33,7 +33,7 @@ end
 .ifdef LANG_GER
 
 str_0x9663ca:
-    .string "Ich habe das Magmaherz an diesem\nOrt gefunden, aber Archäologen\lhaben es sofort beschlagnahmt und\lin das Orina City Museum gebracht.\pWo liegt da die Gerechtigkeit?"
+    .string "Ich habe das Magmaherz an diesem\nOrt gefunden, aber Archäologen\lhaben es sofort beschlagnahmt und\lin das Hochpolis City Museum gebracht.\pWo liegt da die Gerechtigkeit?"
 
 
 .elseif LANG_EN

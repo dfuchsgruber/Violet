@@ -635,7 +635,7 @@ str_0x8fea2c:
 
 
 str_0x8fe8d0:
-	.autostring 35 2 "Endlich habe ich ein Fossil gefunden!\pDie Laz.Corp in Orina City arbeitet an einem Projekt, bei dem es darum geht, Pokémon aus Fossilien zu restaurieren.\pDu solltest der Firma einen Besuch abstatten!"
+	.autostring 35 2 "Endlich habe ich ein Fossil gefunden!\pDie Laz.Corp in Hochpolis City arbeitet an einem Projekt, bei dem es darum geht, Pokémon aus Fossilien zu restaurieren.\pDu solltest der Firma einen Besuch abstatten!"
 
 .elseif LANG_EN
 

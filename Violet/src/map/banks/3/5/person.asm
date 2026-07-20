@@ -79,7 +79,7 @@ str_37:
 str_38:
     .autostring 34 2 "Bei meiner Arbeit im Kraftwerk sehe ich manchmal ein großes gelbes Vogelpokémon.\pIch frage mich, ob es von der Elektrizität angezogen wird."
 str_39:
-    .autostring 34 2 "Das Kraftwerk versorgt die ganze Region mit Strom.\pNatürlich bekommt Orina City dabei den größten Teil ab.\pImmerhin ist das hier die größte Stadt Thetos."
+    .autostring 34 2 "Das Kraftwerk versorgt die ganze Region mit Strom.\pNatürlich bekommt Hochpolis City dabei den größten Teil ab.\pImmerhin ist das hier die größte Stadt Thetos."
 .elseif LANG_EN
 
 .endif
@@ -274,12 +274,12 @@ str_0x959f24:
 
 
 str_0x95a047:
-    .string "Oh, du bist ja so pleite wie ein\nGrypheldis!\pHehehe! Ich werde dir das\nWolkenherz sicherlich nicht\lumsonst besorgen.\pLeih dir doch etwas Geld von der\nOrina City Bank! Hehe!"
+    .string "Oh, du bist ja so pleite wie ein\nGrypheldis!\pHehehe! Ich werde dir das\nWolkenherz sicherlich nicht\lumsonst besorgen.\pLeih dir doch etwas Geld von der\nHochpolis City Bank! Hehe!"
 
 
 
 str_0x95a110:
-    .string "Pah! Na gut, dann werde ich eben\nwarten, bis du es dir anders\lüberlegst.\pMir scheint so, als würdest du\ndieses Wolkenherz ziemlich\ldringend gebrauchen können!\pLeih dir doch etwas Geld von der\nOrina City Bank! Hehe!"
+    .string "Pah! Na gut, dann werde ich eben\nwarten, bis du es dir anders\lüberlegst.\pMir scheint so, als würdest du\ndieses Wolkenherz ziemlich\ldringend gebrauchen können!\pLeih dir doch etwas Geld von der\nHochpolis City Bank! Hehe!"
 
 
 
@@ -301,7 +301,7 @@ end
 .ifdef LANG_GER
 
 str_0x94dbda:
-    .string "Orina City ist die größte Stadt\nThetos.\pAußerdem ist sie der westlichste\nBereich, der Fauns Kontrolle\lunterliegt."
+    .string "Hochpolis City ist die größte Stadt\nThetos.\pAußerdem ist sie der westlichste\nBereich, der Fauns Kontrolle\lunterliegt."
 
 
 .elseif LANG_EN
@@ -318,7 +318,7 @@ end
 .ifdef LANG_GER
 
 str_0x94dc4d:
-    .string "Selbst nach den vielen Jahren, die\nich nun in Orina City lebe, bin\lich von den Hochhausschluchten\lnoch immmer fasziniert."
+    .string "Selbst nach den vielen Jahren, die\nich nun in Hochpolis City lebe, bin\lich von den Hochhausschluchten\lnoch immmer fasziniert."
 
 
 .elseif LANG_EN
@@ -335,7 +335,7 @@ end
 .ifdef LANG_GER
 
 str_0x94dcc8:
-    .string "Das Museum von Orina City sollte\nein Punkt auf jeder guten\lSightseeing-Tour sein.\pDie Nachbildungen antiker Pokémon\nsind schlichtweg beeindruckend."
+    .string "Das Museum von Hochpolis City sollte\nein Punkt auf jeder guten\lSightseeing-Tour sein.\pDie Nachbildungen antiker Pokémon\nsind schlichtweg beeindruckend."
 
 
 .elseif LANG_EN
@@ -575,7 +575,7 @@ end
 .ifdef LANG_GER
 
 str_0x94e371:
-    .string "Faun setzt sich für die Sauberkeit\nauf den Straßen von Orina City\lein.\pErst durch seine Herrschaft ist\ndieser Ort wirklich schön\lgeworden."
+    .string "Faun setzt sich für die Sauberkeit\nauf den Straßen von Hochpolis City\lein.\pErst durch seine Herrschaft ist\ndieser Ort wirklich schön\lgeworden."
 
 
 .elseif LANG_EN
@@ -609,7 +609,7 @@ end
 .ifdef LANG_GER
 
 str_0x94e49f:
-    .string "Der Kontrast aus Blumen und Metall\nmacht Orina City zu dem schönen\lOrt, der es ist."
+    .string "Der Kontrast aus Blumen und Metall\nmacht Hochpolis City zu dem schönen\lOrt, der es ist."
 
 
 .elseif LANG_EN
@@ -745,7 +745,7 @@ end
 .ifdef LANG_GER
 
 str_0x94e7e7:
-    .string "Die Orina City Bank ist gerissen.\nNimmst du dir einen Kredit,\lverlangen sie ein Fünftel als\lZinssatz.\pUnd sie kapseln es klammheimlich\nvon deinem gewonnen Preisgeld ab!\lUnverschämtheit!"
+    .string "Die Hochpolis City Bank ist gerissen.\nNimmst du dir einen Kredit,\lverlangen sie ein Fünftel als\lZinssatz.\pUnd sie kapseln es klammheimlich\nvon deinem gewonnen Preisgeld ab!\lUnverschämtheit!"
 
 
 .elseif LANG_EN

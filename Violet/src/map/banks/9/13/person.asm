@@ -228,7 +228,7 @@ str_after_porygon_5:
 str_after_porygon_6:
     .autostring 34 2 "Er ist immerhin eine Kopryphähe der Archäologie.\pDas Museum hier in der Stadt verdankt viele seiner Ausstellungsstücke der Arbeit von Professor Tann.\pDu solltest dir die Gelegenheit auf keinen Fall entgehen lassen, dort vorbeizusehen."
 str_after_porygon_7:
-    .autostring 34 2 "Das Archäologiemuseum von Orina City ist wirklich einen Besuch wert."
+    .autostring 34 2 "Das Archäologiemuseum von Hochpolis City ist wirklich einen Besuch wert."
 str_after_porygon_8:
     .autostring 34 2 "DOTSTEXT_DELAY_LONG DOTSTEXT_DELAY_LONG DOTSTEXT_DELAY_LONG"
 str_after_porygon_9:

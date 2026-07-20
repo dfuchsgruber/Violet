@@ -29,8 +29,7 @@ announce_expedition:
 	loadpointer 0 str_expedition
 	show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT
 	sound 9
-	clearflag PKMNMENU
-	showsprite 4
+	showsprite 2
 	applymovement 0xFF mov_fd
 	applymovement 1 mov_fd
 	waitmovement 0
@@ -39,11 +38,11 @@ announce_expedition:
 	pause 16
 	loadpointer 0 str_0
 	show_mugshot MUGSHOT_RIVAL MUGSHOT_LEFT
-	applymovement 4 mov_3u
+	applymovement 2 mov_1u
 	waitmovement 0
 	pause 20
 	sound 0x15
-	applymovement 4 mov_exclam
+	applymovement 2 mov_exclam
 	waitmovement 0
 	checksound
 	loadpointer 0 str_1
@@ -57,32 +56,18 @@ announce_expedition:
 	show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT
 	loadpointer 0 str_4
 	show_mugshot MUGSHOT_RIVAL MUGSHOT_LEFT emotion=MUGSHOT_ANNOYED
-	// Move rival either in front of prof or right next to them
-	getplayerpos 0x8004 0x8005
-	compare 0x8004 7
-	gotoif EQUAL move_rival_right
-move_rival_in_front:
-	npc_move_to 4 0x7 0x6
-	applymovement 4 mov_fu
+	applymovement 2 mov_1u
 	waitmovement 0
-	goto after_rival_there
-move_rival_right:
-	npc_move_to 4 0x8 0x6
-	applymovement 4 mov_fu
-	waitmovement 0
-after_rival_there:
-	fadesong MUS_VERTANIA_CITY_AND_MARMORIA_CITY_AND_SAFFRONIA_CITY
+	fadesong MUS_LAUBDORF
 	pause 20
-	setvar 0x8004 0xFF
-	setvar 0x8005 1
-	special SPECIAL_NPC_FACE_TO_NPC
-	waitmovement 0
+	npc_face_to_npc 0xFF 1
 	loadpointer 0 str_5
 	show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT emotion=MUGSHOT_HAPPY hide_mugshot=0 message_type=MSG_KEEPOPEN
 	loadpointer 0 str_6
 	update_mugshot_emotion MUGSHOT_NORMAL
 	callstd MSG_KEEPOPEN
 	hide_mugshot
+	// goto jump_1
 	loadpointer 0 str_7
 	show_mugshot MUGSHOT_RIVAL MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED hide_mugshot=0 message_type=MSG_KEEPOPEN
 	loadpointer 0 str_8
@@ -98,9 +83,10 @@ after_rival_there:
 	closeonkeypress
 	pause 16
 	sound 0x15
-	applymovement 4 mov_exclam
+	applymovement 2 mov_exclam
 	waitmovement 0
 	checksound
+	// goto jump_1
 	loadpointer 0 str_11
 	show_mugshot MUGSHOT_RIVAL MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED hide_mugshot=0 message_type=MSG_KEEPOPEN
 	loadpointer 0 str_12
@@ -135,19 +121,15 @@ after_rival_there:
 	hide_mugshot
 	closeonkeypress
 	pause 12
-	setvar 0x8004 0xFF
-	setvar 0x8005 4
-	special SPECIAL_NPC_FACE_TO_NPC
+	npc_face_to_npc 0xFF 2
 	waitmovement 0
-	applymovement 4 mov_jump_in_place_2_times
+	applymovement 2 mov_jump_in_place_2_times
 	sound 10
 	pause 16
 	sound 10
 	waitmovement 0
 	checksound
-	setvar 0x8004 4
-	setvar 0x8005 0xFF
-	special SPECIAL_NPC_FACE_TO_NPC
+	npc_face_to_npc 2 0xFF
 	waitmovement 0
 	loadpointer 0 str_22
 	show_mugshot MUGSHOT_RIVAL MUGSHOT_LEFT emotion=MUGSHOT_HAPPY
@@ -155,36 +137,23 @@ after_rival_there:
 	loadpointer 0 str_23
 	show_mugshot MUGSHOT_RIVAL MUGSHOT_LEFT emotion=MUGSHOT_HAPPY
 	playsong MUS_RIVALE_ERSCHEINT_GARY 0
-	getplayerpos 0x8004 0x8005
-	compare 0x8004 7
-	gotoif EQUAL move_rival_away_right
-move_rival_away_in_front:
-	applymovement 4 mov_rival_away_in_front
-	goto rival_moved_away
-move_rival_away_right:
-	applymovement 4 mov_rival_away_right
-	goto rival_moved_away
-rival_moved_away:
+	applymovement 2 mov_2d
+	waitmovement 0
 	pause 32
 	applymovement 0xFF mov_fd
 	applymovement 1 mov_fd
-	waitmovement 4
+	waitmovement 0
+jump_1:
 	sound 9
-	hidesprite 4
+	hidesprite 2
 	checksound
 	loadpointer 0 str_24
 	show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT emotion=MUGSHOT_SHOCKED
 	fadesong MUS_VERTANIA_CITY_AND_MARMORIA_CITY_AND_SAFFRONIA_CITY
 	setvar 0x8004 1
 	special SPECIAL_SET_TARGET_NPC_TO_VAR
-	setvar 0x8004 0xFF
-	setvar 0x8005 1
-	special SPECIAL_NPC_FACE_TO_NPC
-	waitmovement 0
-	setvar 0x8004 1
-	setvar 0x8005 0xFF
-	special SPECIAL_NPC_FACE_TO_NPC
-	waitmovement 0
+	npc_face_to_npc 0xFF 1
+	npc_face_to_npc 1 0xFF
 	loadpointer 0 str_25
 	show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT emotion=MUGSHOT_ANNOYED hide_mugshot=0 message_type=MSG_KEEPOPEN
 	loadpointer 0 str_26
@@ -216,9 +185,9 @@ rival_moved_away:
 	callstd MSG_KEEPOPEN
 	closeonkeypress
 	hide_mugshot
-	npc_move_to 1 0x7 0x7
-	applymovement 0xFF mov_fd
-	applymovement 1 mov_4d
+	npc_move_to 1 4 7
+	waitmovement 0
+	applymovement 1 mov_fd
 	waitmovement 0
 	pause 16
 	sound 9
@@ -243,9 +212,9 @@ str_expedition:
 str_0:
 	.autostring 34 2 "So Papa!\nDa bin ich!"
 str_1:
-	.autostring 34 2 "PLAYER!\pSoll das etwa heißen, dass du schon vor mir hier warst?"
+	.autostring 34 2 "PLAYER!\pDu warst als Erster hier?"
 str_2:
-	.autostring 34 2 "Dass eine Schlafmütze mich überholt haben sollDOTS"
+	.autostring 34 2 "Dass so eine Schlafmütze wie du mich überholtDOTS"
 str_3:
 	.autostring 34 2 "RIVALDOTS\pKomm bitte einfach hierher, ja?"
 str_4:
@@ -253,41 +222,41 @@ str_4:
 str_5:
 	.autostring 34 2 "Schön, dass ihr nun beide hier seid, PLAYER und RIVAL."
 str_6:
-	.autostring 34 2 "Ich will euch auch gar nicht länger auf die Folter spannen und euch sagen, warum ihr hier seid.\pIch werde mich auf eine gefährliche Expedition begeben.\pVielleicht bin ich erst einmal eine ganze Weile unterwegs."
+	.autostring 34 2 "Ich werde euch nicht länger auf die Folter spannen.\pIch habe euch hergebeten, weil ich mich auf eine gefährliche Expedition begeben werde.\pVielleicht bin ich erst einmal eine ganze Weile unterwegs."
 str_7:
 	.autostring 34 2 "Eine Expedition?\pDas klingt ganz schön gefährlichDOTS"
 str_8:
-	.autostring 34 2 "Aber auch super aufregend!"
+	.autostring 34 2 "Wie aufregend!"
 str_9:
 	.autostring 34 2 "Das ist eine Untertreibung!"
 str_10:
-	.autostring 34 2 "Ich bin schon seit einiger Zeit auf der Spur eines sagenumwobenen Relikts names Alte Karte.\pIm Grunde handelt es sich dabei um einen Wegweiser, der einen direkt zur versunkenen Stadt Atlantea führen soll."
+	.autostring 34 2 "Ich bin schon seit einiger Zeit auf der Spur eines sagenumwobenen Relikts, das sich Alte Karte nennt.\pIm Grunde handelt es sich um einen Wegweiser, der einen direkt zur versunkenen Stadt Atlantea führen soll."
 str_11:
 	.autostring 34 2 "Die versunkene Stadt Atlantea?"
 str_12:
-	.autostring 34 2 "Aber gibt es die denn wirklich, Papa?\pIch dachte immer, das wäre bloß ein Märchen."
+	.autostring 34 2 "Aber gibt es die denn wirklich, Papa?\pIst das nicht bloß ein Märchen?"
 str_13:
 	.autostring 34 2 "Ganz ohne Zweifel sind viele der Erzählungen über diese Stadt mit der ein oder anderen Übertreibung ausgeschmücktDOTS"
 str_14:
-	.autostring 34 2 "Aber gleichzeitigDOTS\pGibt es auch viele Hinweise darauf, dass es eine solche Stadt tatsächlich einmal gegeben hat."
+	.autostring 34 2 "Aber gleichzeitigDOTS\pGlaube ich fest daran, dass sie wirklich einmal existiert hat."
 str_15:
-	.autostring 34 2 "Und ist es nicht aufregend, nach dieser Stadt zu suchen?\pWir könnten so viel über die Menschen lernen, die in Theto vor Jahrhunderten gelebt haben."
+	.autostring 34 2 "Von dieser Stadt könnten wir so viel über die Menschen lernen, die in Theto vor Jahrhunderten gelebt haben."
 str_16:
 	.autostring 34 2 "Eine versunkene Stadt zu erkundenDOTS\pDas hört sich nach einem tollen Abenteuer an!"
 str_17:
-	.autostring 34 2 "Aber es bedeutet auch, dass ich mich einigen Gefahren aussetzen muss.\pIn letzter Zeit ist es immer gefährlicher geworden, in See zu stechenDOTS\pDie Blackbeard Piratenbande treibt auf dem Meer ihr UnwesenDOTS\pUnd ich weiß nicht, wie lange mich diese Expedition beschäftigen wird."
+	.autostring 34 2 "Und geführlich obendrein.\pEs ist mittlerweile recht riskant, in See zu stechenDOTS\pDie Blackbeard Piratenbande treibt auf dem Meer ihr UnwesenDOTS"
 str_18:
-	.autostring 34 2 "Und ich kann natürlich nicht einfach gehen, ohne mich von euch zu verabschieden, oder?"
+	.autostring 34 2 "In Anbetracht der Gefahren, wollte ich mich von euch verabschieden, sollte ich nichtDOTS DOTS DOTS"
 str_19:
 	.autostring 34 2 "Alles klar, Papa!\pIch verstehe schon!"
 str_20:
-	.autostring 34 2 "Das Abenteuer liegt bei uns in der Familie!"
+	.autostring 34 2 "Zu einem Abenteuer kann man nur ja sagen!"
 str_21:
-	.autostring 34 2 "Und außerdem ist das perfekt.\pWenn du herausfindest, wo diese versunkene Stadt liegtDOTS\pDann kann ich sie als erster Trainer erkunden!"
+	.autostring 34 2 "Und wenn du herausfindest, wo diese versunkene Stadt liegtDOTS\pDann kann ich sie als Trainer erkunden!"
 str_22:
 	.autostring 34 2 "Da wird man ganz hibbelig!"
 str_23:
-	.autostring 34 2 "PLAYER!\pWir haben keine Zeit, hier herumzutrödeln.\pDa draußen warten unzählige Abenteuer auf uns!"
+	.autostring 34 2 "PLAYER!\pWir können hier nicht rumtrödeln!\pDa draußen warten neue Abenteuer auf uns!"
 str_24:
 	.autostring 34 2 "J-Jetzt warte doch 'mal, RIVAL!"
 str_25:
@@ -307,9 +276,9 @@ str_31:
 str_32:
 	.autostring 34 2 "Aber RIVAL ist wohl schon längst über alle BergeDOTS"
 str_33:
-	.autostring 34 2 "Also sei doch so lieb und sprich wenigstens du mit ihr, bevor du dich wieder auf den Weg machst, ja?"
+	.autostring 34 2 "Also melde dich doch bei ihr, bevor du dich wieder auf den Weg machst, ja?"
 str_34:
-	.autostring 34 2 "Bis dann, PLAYER!\pVielleicht kann ich dir bei unserem nächsten Treffen die sagenumwobene versunkene Stadt Atlantea zeigen!\pHalt die Ohren steif!"
+	.autostring 34 2 "Mach's gut, PLAYER!\pBei unserem nächsten Treffen werde ich dir von der versunken Stadt Atlantea berichten!"
 
 str_default_tann:
 	.autostring 35 2 "Wie geht es dir, PLAYER?\pVerfolgst du immer noch deine Träume?\pLass dich auf deinem Weg von niemanden abhalten!"

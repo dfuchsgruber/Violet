@@ -66,7 +66,7 @@ end
 .ifdef LANG_GER
 
 str_0x95ab3b:
-    .string "Ich bewache die Rücklagen der\nOrina City Bank.\lOb ich nur ein einzelner Polizist\lbin?\pÄhmDOTS! Nein! Natürlich nicht.\nHinter dieser Türe sind noch\lhundert weitereDOTS"
+    .string "Ich bewache die Rücklagen der\nHochpolis City Bank.\lOb ich nur ein einzelner Polizist\lbin?\pÄhmDOTS! Nein! Natürlich nicht.\nHinter dieser Türe sind noch\lhundert weitereDOTS"
 
 
 .elseif LANG_EN

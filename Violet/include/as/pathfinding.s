@@ -46,3 +46,19 @@
     .endif
 .endm
 
+.macro npc_face_to_npc person:req target:req waitmovement=1
+    .if \person == LASTTALKED
+        copyvar 0x8004 LASTTALKED
+    .else
+        setvar 0x8004 \person
+    .endif
+    .if \target == LASTTALKED
+        copyvar 0x8005 LASTTALKED
+    .else
+        setvar 0x8005 \target
+    .endif
+    special SPECIAL_NPC_FACE_TO_NPC
+    .if \waitmovement != 0
+        waitmovement 0
+    .endif
+.endm

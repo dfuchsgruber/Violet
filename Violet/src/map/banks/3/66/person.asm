@@ -140,15 +140,15 @@ str_elise_1:
 str_elise_2:
 	.autostring 34 2 "Dann bekommst eben nur du das Geschenk, das ich eigentlich dir und RIVAL geben wollte."
 str_elise_3:
-	.autostring 34 2 "Mit dieser Karte gelangst du in das Gebäude der Laz. Corp., der Firma, für die ich arbeite.\pMeine Forschung hier ist fast abgeschlossenDOTS"
+	.autostring 34 2 "Mit dieser Karte gelangst du in das Gebäude der Laz. Corp., der Firma, für die ich forsche.\pMeine Studie hier ist fast abgeschlossenDOTS"
 str_elise_4:
-	.autostring 34 2 "Und um ehrlich zu sein, ist uns in der Laz. Corp. ein Durchbruch gelungen."
+	.autostring 34 2 "Und um ehrlich zu sein, ist uns in der Laz. Corp. ein gewisser Durchbruch gelungen."
 str_elise_5:
-	.autostring 34 2 "Aber ich will die Überraschung nicht vorweg nehmen.\pKomm einfach in das Hauptgebäude der Laz. Corp. in Orina City.\pDort werde ich auf dich warten, ja?"
+	.autostring 34 2 "Aber ich will die Überraschung nicht vorweg nehmen.\pKomm einfach in das Hauptgebäude der Laz. Corp. in Hochpolis City.\pDort werde ich auf dich warten, ja?"
 str_elise_6:
-	.autostring 34 2 "Orina City liegt westlich von Route 2, also nicht weit von hier."
+	.autostring 34 2 "Hochpolis City liegt westlich von Route 4, also nicht weit von hier."
 str_elise_7:
-	.autostring 34 2 "Und lass dir nicht zu viel Zeit, PLAYER, ja?\pImmerhin wird es sich lohnen, das verspreche ich dir."
+	.autostring 34 2 "Ich freue mich schon auf dich, PLAYER!"
 .elseif LANG_EN
 
 .endif

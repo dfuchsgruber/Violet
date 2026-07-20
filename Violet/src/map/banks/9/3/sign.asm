@@ -239,7 +239,7 @@ str_0x95b7b9:
 
 
 str_0x95b7fa:
-    .string "Die Orina City Bank vergibt\nKredite an Trainer im ganzen Land.\pDabei verlangen wir als\nGegenleistung ein Fünftel des\lBetrages.\pWir ziehen von deinem erhaltenen\nPreisgeld automatisch drei Viertel\lab, um die Schulden zu begleichen."
+    .string "Die Hochpolis City Bank vergibt\nKredite an Trainer im ganzen Land.\pDabei verlangen wir als\nGegenleistung ein Fünftel des\lBetrages.\pWir ziehen von deinem erhaltenen\nPreisgeld automatisch drei Viertel\lab, um die Schulden zu begleichen."
 
 
 
@@ -269,7 +269,7 @@ str_0x95ba9b:
 
 
 str_0x95bd3c:
-    .string "Das ist wirklich sehr schade!\nMit einem Konto bei der Orina City\lBank kannst du einen Kredit von\lbis zu 50.000POKEDOLLAR aufnehmen.\lKomm wieder, solltest du deine\lMeinung doch geändert haben."
+    .string "Das ist wirklich sehr schade!\nMit einem Konto bei der Hochpolis City\lBank kannst du einen Kredit von\lbis zu 50.000POKEDOLLAR aufnehmen.\lKomm wieder, solltest du deine\lMeinung doch geändert haben."
 
 
 .elseif LANG_EN

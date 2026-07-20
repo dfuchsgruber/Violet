@@ -659,7 +659,7 @@ mov_exclam:
 .ifdef LANG_GER
 
 str_researcher:
-    .autostring 34 2 "Ich arbeite bei der Laz. Corp. in Orina City.\pUnter Professor Primus haben wir große Durchbrüche in der Forschung zu interdimensionalen Portalen erzielt.\pIn den letzten Jahren hatte er wirklich ausgesprochen gute Ideen!"
+    .autostring 34 2 "Ich arbeite bei der Laz. Corp. in Hochpolis City.\pUnter Professor Primus haben wir große Durchbrüche in der Forschung zu interdimensionalen Portalen erzielt.\pIn den letzten Jahren hatte er wirklich ausgesprochen gute Ideen!"
 
 .elseif LANG_EN
 

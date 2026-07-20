@@ -142,7 +142,7 @@ str_picture_frame_0:
 str_picture_frame_1:
     .autostring 34 2 "Im Bilderrahmen ist ein Foto der Burg Ardeal, die einem heftigen Gewitter trotzt."
 str_picture_frame_2:
-    .autostring 34 2 "Im Bilderrahmen ist ein Foto der Stadt Orina City, deren Wolkenkratzer hoch in den Himmel ragen."
+    .autostring 34 2 "Im Bilderrahmen ist ein Foto der Stadt Hochpolis City, deren Wolkenkratzer hoch in den Himmel ragen."
 str_picture_frame_3:
     .autostring 34 2 "Im Bilderrahmen ist ein Gemälde der höchsten Gipfel der Region."
 str_picture_waves:
@@ -189,7 +189,7 @@ str_picture_frame_0:
 str_picture_frame_1:
     .autostring 34 2 "In the picture frame is a photo of Ardeal Castle weathering a fierce storm."
 str_picture_frame_2:
-    .autostring 34 2 "In the picture frame is a photo of Orina City, whose skyscrapers reach high into the sky."
+    .autostring 34 2 "In the picture frame is a photo of Hochpolis City, whose skyscrapers reach high into the sky."
 str_picture_frame_3:
     .autostring 34 2 "In the picture frame is a painting of the highest peaks in the region."
 str_picture_waves:
