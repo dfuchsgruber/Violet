@@ -143,7 +143,6 @@ announce_expedition:
 	applymovement 0xFF mov_fd
 	applymovement 1 mov_fd
 	waitmovement 0
-jump_1:
 	sound 9
 	hidesprite 2
 	checksound

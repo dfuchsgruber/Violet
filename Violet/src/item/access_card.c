@@ -1,5 +1,5 @@
 #include "types.h"
-#include "multichoice.h"
+#include "language.h"
 #include "constants/flags.h"
 #include "access_card.h"
 #include "constants/vars.h"
@@ -12,10 +12,25 @@
 #include "list_menu.h"
 
 static const access_card_element access_card_elements [ACCESS_CARD_ELEMENT_CNT] = {
-    {0, 9, 13, 0, 8}, //Cybernetik
-    {ORINA_CITY_VIOLET_GRUNTS, 9, 15, 0, 3}, //Fossil
-	{SECRET_POWER_LAB_ACCESS, 9, 19, 0, 2}, // Geheimpower
-    {0, 9, 14, 1, 0} //Atrium
+    [ACCESS_CARD_CYBERNETIK] = {
+        0, 9, 13, 0, 8, 
+        (const u8[]) LANGDEP(PSTRING("8F Cybernetik"), PSTRING("9F Cybernetics"))
+    }, // Cybernetik
+    [ACCESS_CARD_CLOUDS_LAB] = {
+        FLAG_ACCESS_CARD_CLOUDS_LAB, 9, 6, 0, 5,
+        (const u8[]) LANGDEP(PSTRING("5F Wetterforschung"), PSTRING("6F Weather Research"))
+    }, // Clouds Lab
+    [ACCESS_CARD_FOSSIL] = {
+        ORINA_CITY_VIOLET_GRUNTS, 9, 15, 0, 3,
+        (const u8[]) LANGDEP(PSTRING("3F Fossilien"), PSTRING("4F Fossils"))
+    }, // Fossil
+	[ACCESS_CARD_GEHEIMPOWER] = {
+        SECRET_POWER_LAB_ACCESS, 9, 19, 0, 2,
+        (const u8[]) LANGDEP(PSTRING("2F Geheimpower"), PSTRING("3F Secret Power"))
+    }, // Geheimpower
+    [ACCESS_CARD_ATRIUM] = {0, 9, 14, 1, 0, 
+        (const u8[]) LANGDEP(PSTRING("EG Atrium"), PSTRING("1F Atrium"))
+    } //Atrium
 };
 
 void access_card_print_multichoice() {
@@ -28,7 +43,7 @@ void access_card_print_multichoice() {
         if (access_card_elements[i].flag) {
             if (!checkflag(access_card_elements[i].flag)) continue;
         }
-        d_elements[displayed++].text = access_card_element_names[i];
+        d_elements[displayed++].text = access_card_elements[i].name;
     }
     if (displayed) {
         *var_access(DYN_MULTICHOICE_ITEM_CNT) = displayed;
@@ -42,7 +57,7 @@ void access_card_print_multichoice() {
 
 void access_card_execute_elevator() {
     *var_access(DYN_MULTICHOICE_ITEM_CNT) = 0;
-    int index = *var_access(0x800D);
+    int index = *var_access(LASTRESULT);
     int i;
     for (i = 0; i < ACCESS_CARD_ELEMENT_CNT; i++) {
         if (access_card_elements[i].flag) {
@@ -57,13 +72,12 @@ void access_card_execute_elevator() {
             *var_access(0x8005) = access_card_elements[i].virtual_eg;
             //We reached the table entry we looked for
             if (*current_eg == i) {
-                *var_access(0x800D) = 0;
+                *var_access(LASTRESULT) = 0;
             } else {
                 *current_eg = (u16) i;
-                *var_access(0x800D) = 1;
+                *var_access(LASTRESULT) = 1;
             }
             map_event_warp w = get_mapheader(access_card_elements[i].bank, access_card_elements[i].map)->events->warps[access_card_elements[i].exit];
-
             warp_last_map_set(0, access_card_elements[i].bank, access_card_elements[i].map, 0xFF, w.x, w.y);
             break;
 
@@ -72,5 +86,5 @@ void access_card_execute_elevator() {
 }
 
 void access_card_init_by_atrium() {
-    *var_access(LAZ_CORP_CURRENT_LEVEL) = ACCESS_CARD_INDEX_ATRIUM;
+    *var_access(LAZ_CORP_CURRENT_LEVEL) = ACCESS_CARD_ATRIUM;
 }

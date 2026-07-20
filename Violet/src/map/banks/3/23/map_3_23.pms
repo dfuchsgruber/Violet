@@ -1032,7 +1032,7 @@
 				{
 					"target_index": "35",
 					"picture": "238",
-					"x": "52",
+					"x": "51",
 					"y": "41",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
@@ -1119,8 +1119,8 @@
 				{
 					"target_index": "38",
 					"picture": "238",
-					"x": "49",
-					"y": "57",
+					"x": "55",
+					"y": "48",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_RIGHT_AND_LEFT",
 					"behaviour_range": {
@@ -1561,11 +1561,11 @@
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_EAST",
-					"bank": 3,
-					"displacement": "26",
+					"bank": "15",
+					"displacement": "22",
 					"field_A": 0,
 					"field_B": 0,
-					"map_idx": 41
+					"map_idx": "0"
 				},
 				{
 					"direction": "MAP_CONNECTION_WEST",

@@ -24,6 +24,7 @@
 .global ow_script_person_accessible_move_tutor
 .global ow_script_static_berry_tree
 .global ow_script_recipe
+.global str_recipe_can_be_used
 
 ow_script_person_pokeball:
 	callstd ITEM_FIND

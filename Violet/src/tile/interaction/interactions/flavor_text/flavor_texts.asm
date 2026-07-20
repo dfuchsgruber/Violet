@@ -24,6 +24,10 @@
 .global ow_script_flavor_text_inside_flower_pot
 .global ow_script_flavor_text_inside_lamp
 .global ow_script_flavor_text_crops
+.global ow_script_flavor_text_laz_corp_screens_0
+.global ow_script_flavor_text_laz_corp_screens_1
+.global ow_script_flavor_text_laz_corp_laptop
+.global ow_script_flavor_text_laz_corp_substances
 
 ow_script_flavor_text_inside_piano:
     loadpointer 0 str_piano
@@ -117,6 +121,22 @@ ow_script_flavor_text_crops:
     loadpointer 0 str_crops
     callstd MSG_SIGN
     end
+ow_script_flavor_text_laz_corp_screens_0:
+    loadpointer 0 str_laz_corp_screens_0
+    callstd MSG_SIGN
+    end
+ow_script_flavor_text_laz_corp_screens_1:
+    loadpointer 0 str_laz_corp_screens_1
+    callstd MSG_SIGN
+    end
+ow_script_flavor_text_laz_corp_laptop:
+    loadpointer 0 str_laz_corp_laptop
+    callstd MSG_SIGN
+    end
+ow_script_flavor_text_laz_corp_substances:
+    loadpointer 0 str_laz_corp_substances
+    callstd MSG_SIGN
+    end
 
 .ifdef LANG_GER
 str_piano:
@@ -165,6 +185,15 @@ str_lamp:
     .autostring 34 2 "Eine einfache Zimmerlampe.\pVon Zeit zu Zeit flackert sie etwas."
 str_crops:
     .autostring 34 2 "Ein Feld mit Pflanzen, die so aussehen, als würden sie bald erntereif werden."
+str_laz_corp_screens_0:
+    .autostring 34 2 "Auf dem Bildschirm sind viele komplizierte Darstellungen zu erkennen.\pManche Diagramme verändern sich in Echtzeit."
+str_laz_corp_laptop:
+    .autostring 34 2 "Auf diesem Computer sind eine Menge Daten gespeichert.\pEs muss viel Arbeit machen, sie alle auszuwerten."
+str_laz_corp_screens_1:
+    .autostring 34 2 "Jeder dieser Bildschirme zeigt etwas anderes.\pFür dich ergibt keines der Fenster einen Sinn, aber die Wissenschaftler hier müssen sie wohl verstehen."
+str_laz_corp_substances:
+    .autostring 34 2 "In diesen Behältern befinden sich verschiedene Substanzen.\pIch sollte sie besser nicht anfassen."
+
 .elseif LANG_EN 
 str_piano:
     .autostring 34 2 "A piano of a high-quality brand.\pIt seems to have not been tuned in a whileDOTS"

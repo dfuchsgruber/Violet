@@ -14,10 +14,14 @@ extern "C" {
 
 #include "types.h"
 
-#define ACCESS_CARD_ELEMENT_CNT 4
-#define ACCESS_CARD_INDEX_ATRIUM 3
-
-    extern const u8 *const *const access_card_element_names;
+enum {
+    ACCESS_CARD_CYBERNETIK = 0,
+    ACCESS_CARD_CLOUDS_LAB,
+    ACCESS_CARD_FOSSIL,
+    ACCESS_CARD_GEHEIMPOWER,
+    ACCESS_CARD_ATRIUM,
+    ACCESS_CARD_ELEMENT_CNT
+};
 
     typedef struct {
         u16 flag;
@@ -25,7 +29,7 @@ extern "C" {
         u8 map;
         u8 exit;
         u8 virtual_eg; //used to calculate how long elevating lasts
-
+        const u8 *name;
     } access_card_element;
 
 

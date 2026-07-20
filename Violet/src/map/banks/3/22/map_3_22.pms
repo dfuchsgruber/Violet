@@ -1238,7 +1238,7 @@
 					"is_trainer": "0",
 					"alert_radius": "0",
 					"script": "ow_script_route_4_cook",
-					"flag": "FLAG_WEATHER_EGG_RECIPIES",
+					"flag": "FLAG_RECIPE_EXP_CANDY_S",
 					"value": {
 						"item": "0",
 						"species": "0",

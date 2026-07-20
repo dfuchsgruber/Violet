@@ -598,17 +598,17 @@
 				"MAP_ORINA_CITY"
 			],
 			"13": [
-				"map_9_13",
+				"map_laz_corp_elises_lab",
 				"src/map/banks/9/13/map_9_13.pms",
 				"MAP_ORINA_CITY"
 			],
 			"14": [
-				"map_9_14",
+				"map_laz_corp_atrium",
 				"src/map/banks/9/14/map_9_14.pms",
 				"MAP_ORINA_CITY"
 			],
 			"15": [
-				"map_9_15",
+				"map_laz_corp_fossil_lab",
 				"src/map/banks/9/15/map_9_15.pms",
 				"MAP_ORINA_CITY"
 			],
@@ -645,6 +645,16 @@
 			"4": [
 				"map_orina_city_cloud_ruins",
 				"src/map/banks/9/4/map_orina_city_cloud_ruins.pms",
+				"MAP_ORINA_CITY"
+			],
+			"5": [
+				"map_hochpolis_city_pokestop_restaurant",
+				"src/map/banks/9/5/map_hochpolis_city_pokestop_restaurant.pms",
+				"MAP_ORINA_CITY"
+			],
+			"6": [
+				"map_laz_corp_clouds_lab",
+				"src/map/banks/9/6/map_laz_corp_clouds_lab.pms",
 				"MAP_ORINA_CITY"
 			]
 		},
@@ -2449,6 +2459,10 @@
 		"map_footer_bluetenbach_pokestop_restaurant": [
 			199,
 			"src/map/banks/5/7/map_footer_bluetenbach_pokestop_restaurant.pms"
+		],
+		"map_footer_laz_corp_clouds_lab": [
+			200,
+			"src/map/banks/9/6/map_footer_laz_corp_clouds_lab.pms"
 		]
 	},
 	"tilesets_primary": {

@@ -185,7 +185,7 @@ str_cook_give:
 str_got_recipe:
     .autostring 34 2 "PLAYER hat ein Rezept erhalten!"
 str_after_recipe:
-    .autostring 34 2 "Mit diesem Rezept kannst du Wetter-Eier herstellen.\pDas kann dir im Kampf einen entscheidenen Vorteil bringen.\pIch werde mich daran setzen, diese Rezepte noch weiter zu verfeinern, ja?"
+    .autostring 34 2 "Mit diesem Rezept kannst du leckere EP-Bonbons S herstellen.\pIch werde mich daran setzen, diese Rezepte noch weiter zu verfeinern, ja?"
 .elseif LANG_EN
 
 .endif

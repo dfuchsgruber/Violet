@@ -27,6 +27,10 @@
 
 
         "FLAVOR_TEXT_CROPS" : 0,
+        "FLAVOR_TEXT_LAZ_CORP_SCREENS_0" : 1,
+        "FLAVOR_TEXT_LAZ_CORP_SCREENS_1" : 2,
+        "FLAVOR_TEXT_LAZ_CORP_LAPTOP" : 3,
+        "FLAVOR_TEXT_LAZ_CORP_SUBSTANCES" : 4,
 
         "PC_GENERIC" : 0,
         "PC_POKESTOP" : 1,
