@@ -34,6 +34,9 @@ extern const u8 ow_script_flavor_text_laz_corp_screens_0[];
 extern const u8 ow_script_flavor_text_laz_corp_screens_1[];
 extern const u8 ow_script_flavor_text_laz_corp_laptop[];
 extern const u8 ow_script_flavor_text_laz_corp_substances[];
+extern const u8 ow_script_flavor_text_unown_tablet[];
+extern const u8 ow_script_flavor_text_ancient_flower_0[];
+extern const u8 ow_script_flavor_text_ancient_flower_1[];
 
 static const u8 *flavor_text_scripts_inside[NUM_FLAVOR_TEXTS] = {
     [FLAVOR_TEXT_INSIDE_PIANO] = ow_script_flavor_text_inside_piano,
@@ -70,6 +73,9 @@ static const u8 *flavor_text_scripts[NUM_FLAVOR_TEXTS] = {
     [FLAVOR_TEXT_LAZ_CORP_SCREENS_1] = ow_script_flavor_text_laz_corp_screens_1,
     [FLAVOR_TEXT_LAZ_CORP_LAPTOP] = ow_script_flavor_text_laz_corp_laptop,
     [FLAVOR_TEXT_LAZ_CORP_SUBSTANCES] = ow_script_flavor_text_laz_corp_substances,
+    [FLAVOR_TEXT_UNOWN_TABLET] = ow_script_flavor_text_unown_tablet,
+    [FLAVOR_TEXT_ANCIENT_FLOWER_0] = ow_script_flavor_text_ancient_flower_0,
+    [FLAVOR_TEXT_ANCIENT_FLOWER_1] = ow_script_flavor_text_ancient_flower_1,
 };
 
 const u8 *behaviour_get_flavor_text_script(const UNUSED position_t *pos, u16 behaviour, UNUSED u8 facing_direction) {

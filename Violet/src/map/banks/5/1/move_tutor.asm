@@ -3,25 +3,47 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
-.include "move_tutor.s"
 .include "movements.s"
+.include "items.s"
 
-
-make_move_tutor_std move_tutor str_0 str_bye
-
-.global ow_script_bluetenbach_clouds_move_tutor
-ow_script_bluetenbach_clouds_move_tutor:
-    call move_tutor
+.global ow_script_bluetenbach_clouds_expert_belt
+ow_script_bluetenbach_clouds_expert_belt:
+    checkflag FLAG_ITEM_EXPERT_BELT
+    gotoif EQUAL done
+    lock
+    faceplayer
+    loadpointer 0 str_0
+    callstd MSG_KEEPOPEN
+    copyvarifnotzero 0x8000 ITEM_EXPERTENGURT
+    copyvarifnotzero 0x8001 1
+    callstd ITEM_OBTAIN
+    compare LASTRESULT 0x0
+    gotoif EQUAL no_room_for_item
+    setflag FLAG_ITEM_EXPERT_BELT
+    release
+    end
+done:
+    loadpointer 0 str_bye
+    callstd MSG_FACE
+    end
+no_room_for_item:
+    loadpointer 0 str_no_room_for_item
+    callstd MSG_KEEPOPEN
+    release
     end
 
 .ifdef LANG_GER
 str_0:
-    .autostring 34 2 ".TEXT_DELAY_SHORT.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT .TEXT_DELAY_SHORT.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT\n.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT .TEXT_DELAY_SHORT.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT\pAn diesem Ort gelingt es mir, mich ganz und gar zu fokussieren.\pDie Kraft, die einem ein solcher Fokus gibtDOTS\pIch kann sie einem deiner Pokémon zeigen.\pIm Gegenzug für BUFFER_1x Minipiliz oder BUFFER_2x Riesenpilz bringe ich einem deiner Pokémon den Angriff BUFFER_3 bei."
+    .autostring 34 2 ".TEXT_DELAY_SHORT.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT .TEXT_DELAY_SHORT.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT\n.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT .TEXT_DELAY_SHORT.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT\pMeine Konzentration wird von meinem Gurt gestärktDOTS\pMein GurtDOTS"
 str_bye:
-    .autostring 34 2 "Ganz wie du meinst.\pDu unterschätzt wohl die Kraft, die ein BUFFER_3 aufbringen kann.\pAber das ist dein Problem."
+    .autostring 34 2 "Der Expertengurt macht dich stärkerDOTS\pEr kann auch deinen Fokus verbessern!"
+str_no_room_for_item:
+    .autostring 34 2 "Du hast keinen Platz im Beutel.\pKomm wieder, wenn du Platz hast."
 .elseif LANG_EN
 str_0:
-    .autostring 34 2 ".TEXT_DELAY_SHORT.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT .TEXT_DELAY_SHORT.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT\n.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT .TEXT_DELAY_SHORT.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT\pThis place allows me to focus completely.\pThe power that such a focus givesDOTS\pI can show it to one of your Pokémon.\pIn exchange for BUFFER_1x Tiny Mushroom or BUFFER_2x Big Mushroom, I can teach one of your Pokémon the move BUFFER_3."
+    .autostring 34 2 ".TEXT_DELAY_SHORT.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT .TEXT_DELAY_SHORT.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT\n.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT .TEXT_DELAY_SHORT.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT\pMy concentration is strengthened by my beltDOTS\pMy beltDOTS"
 str_bye:
-    .autostring 34 2 "As you wish.\pYou underestimate the power that BUFFER_3 can bring.\pBut that's your problem."
+    .autostring 34 2 "The Expert Belt makes you strongerDOTS\pIt can also improve your focus!"
+str_no_room_for_item:
+    .autostring 34 2 "You have no room in your bag.\pCome back when you have room."
 .endif

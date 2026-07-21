@@ -28,6 +28,9 @@
 .global ow_script_flavor_text_laz_corp_screens_1
 .global ow_script_flavor_text_laz_corp_laptop
 .global ow_script_flavor_text_laz_corp_substances
+.global ow_script_flavor_text_unown_tablet
+.global ow_script_flavor_text_ancient_flower_0
+.global ow_script_flavor_text_ancient_flower_1
 
 ow_script_flavor_text_inside_piano:
     loadpointer 0 str_piano
@@ -137,6 +140,18 @@ ow_script_flavor_text_laz_corp_substances:
     loadpointer 0 str_laz_corp_substances
     callstd MSG_SIGN
     end
+ow_script_flavor_text_unown_tablet:
+    loadpointer 0 str_unown_tablet
+    callstd MSG_SIGN
+    end
+ow_script_flavor_text_ancient_flower_0:
+    loadpointer 0 str_ancient_flower_0
+    callstd MSG_SIGN
+    end
+ow_script_flavor_text_ancient_flower_1:
+    loadpointer 0 str_ancient_flower_1
+    callstd MSG_SIGN
+    end
 
 .ifdef LANG_GER
 str_piano:
@@ -193,7 +208,12 @@ str_laz_corp_screens_1:
     .autostring 34 2 "Jeder dieser Bildschirme zeigt etwas anderes.\pFür dich ergibt keines der Fenster einen Sinn, aber die Wissenschaftler hier müssen sie wohl verstehen."
 str_laz_corp_substances:
     .autostring 34 2 "In diesen Behältern befinden sich verschiedene Substanzen.\pIch sollte sie besser nicht anfassen."
-
+str_unown_tablet:
+    .autostring 34 2 "Auf diesem Tablet sind viele seltsame Symbole zu sehen.\pSie scheinen eine Art von Sprache zu seinDOTS."
+str_ancient_flower_0:
+    .autostring 34 2 "Eine Blume, die in der Region schon seit Jahrhunderten nicht mehr gesehen wurde.\pSie ist ein Relikt aus längst vergangenen Zeiten."
+str_ancient_flower_1:
+    .autostring 34 2 "Welch eine wunderliche Pflanze.\pAuf dem Boden hat man sie schon seit Urzeiten nicht mehr gesehenDOTS"
 .elseif LANG_EN 
 str_piano:
     .autostring 34 2 "A piano of a high-quality brand.\pIt seems to have not been tuned in a whileDOTS"
@@ -241,4 +261,18 @@ str_lamp:
     .autostring 34 2 "A simple room lamp.\pFrom time to time it flickers a bit."
 str_crops:
     .autostring 34 2 "A field with plants that look like they're almost ready to be harvested."
+str_laz_corp_screens_0:
+    .autostring 34 2 "On the screen, many complicated representations can be seen.\pSome diagrams change in real time."
+str_laz_corp_laptop:
+    .autostring 34 2 "This computer has a lot of data stored on it.\pIt must be a lot of work to evaluate them all."
+str_laz_corp_screens_1:
+    .autostring 34 2 "Each of these screens shows something different.\pNone of the windows make sense to you, but the scientists here must understand them."
+str_laz_corp_substances:
+    .autostring 34 2 "These containers hold various substances.\pI better not touch them."
+str_unown_tablet:
+    .autostring 34 2 "This tablet shows many strange symbols.\pThey seem to be a kind of languageDOTS."
+str_ancient_flower_0:
+    .autostring 34 2 "A flower that has not been seen in the region for centuries.\pIt is a relic from long ago."
+str_ancient_flower_1:
+    .autostring 34 2 "What a peculiar plant.\pIt has not been seen on the ground for agesDOTS"
 .endif

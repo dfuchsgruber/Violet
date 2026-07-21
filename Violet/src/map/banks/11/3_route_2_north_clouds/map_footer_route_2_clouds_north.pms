@@ -1385,7 +1385,7 @@
 			],
 			[
 				{
-					"block_idx": 1,
+					"block_idx": 4,
 					"level": 32
 				},
 				{
@@ -1659,7 +1659,7 @@
 			],
 			[
 				{
-					"block_idx": 1,
+					"block_idx": 12,
 					"level": 32
 				},
 				{
@@ -1933,11 +1933,11 @@
 			],
 			[
 				{
-					"block_idx": 1,
+					"block_idx": 6,
 					"level": 32
 				},
 				{
-					"block_idx": 1,
+					"block_idx": 4,
 					"level": 32
 				},
 				{
@@ -2207,11 +2207,11 @@
 			],
 			[
 				{
-					"block_idx": 1,
+					"block_idx": 19,
 					"level": 32
 				},
 				{
-					"block_idx": 1,
+					"block_idx": 20,
 					"level": 32
 				},
 				{
@@ -12632,7 +12632,7 @@
 				},
 				{
 					"block_idx": 904,
-					"level": 32
+					"level": 1
 				},
 				{
 					"block_idx": 906,
@@ -12640,7 +12640,7 @@
 				},
 				{
 					"block_idx": 457,
-					"level": 1
+					"level": 12
 				},
 				{
 					"block_idx": 457,
@@ -12906,7 +12906,7 @@
 				},
 				{
 					"block_idx": 912,
-					"level": 32
+					"level": 1
 				},
 				{
 					"block_idx": 914,
@@ -12914,7 +12914,7 @@
 				},
 				{
 					"block_idx": 465,
-					"level": 1
+					"level": 12
 				},
 				{
 					"block_idx": 457,
@@ -13180,15 +13180,15 @@
 				},
 				{
 					"block_idx": 924,
-					"level": 32
+					"level": 12
 				},
 				{
 					"block_idx": 916,
-					"level": 32
+					"level": 12
 				},
 				{
 					"block_idx": 915,
-					"level": 1
+					"level": 12
 				},
 				{
 					"block_idx": 344,
@@ -13458,11 +13458,11 @@
 				},
 				{
 					"block_idx": 915,
-					"level": 32
+					"level": 12
 				},
 				{
 					"block_idx": 916,
-					"level": 1
+					"level": 12
 				},
 				{
 					"block_idx": 344,
@@ -13732,11 +13732,11 @@
 				},
 				{
 					"block_idx": 916,
-					"level": 1
+					"level": 12
 				},
 				{
 					"block_idx": 344,
-					"level": 1
+					"level": 12
 				},
 				{
 					"block_idx": 344,
@@ -14006,11 +14006,11 @@
 				},
 				{
 					"block_idx": 615,
-					"level": 1
+					"level": 12
 				},
 				{
 					"block_idx": 344,
-					"level": 1
+					"level": 12
 				},
 				{
 					"block_idx": 344,
@@ -16390,7 +16390,7 @@
 				},
 				{
 					"block_idx": 344,
-					"level": 12
+					"level": 20
 				},
 				{
 					"block_idx": 396,
@@ -17152,15 +17152,15 @@
 				},
 				{
 					"block_idx": 915,
-					"level": 12
+					"level": 0
 				},
 				{
 					"block_idx": 344,
-					"level": 12
+					"level": 16
 				},
 				{
 					"block_idx": 448,
-					"level": 12
+					"level": 16
 				},
 				{
 					"block_idx": 589,
@@ -17430,11 +17430,11 @@
 				},
 				{
 					"block_idx": 915,
-					"level": 12
+					"level": 0
 				},
 				{
 					"block_idx": 448,
-					"level": 12
+					"level": 0
 				},
 				{
 					"block_idx": 589,
@@ -18252,27 +18252,27 @@
 				},
 				{
 					"block_idx": 349,
-					"level": 1
+					"level": 32
 				},
 				{
 					"block_idx": 374,
-					"level": 1
+					"level": 32
 				},
 				{
 					"block_idx": 343,
-					"level": 1
+					"level": 32
 				},
 				{
 					"block_idx": 488,
-					"level": 1
+					"level": 32
 				},
 				{
 					"block_idx": 489,
-					"level": 1
+					"level": 32
 				},
 				{
 					"block_idx": 489,
-					"level": 1
+					"level": 32
 				},
 				{
 					"block_idx": 490,
@@ -20295,5 +20295,6 @@
 		"field_1A": 0
 	},
 	"label": "map_footer_route_2_clouds_north",
-	"type": "footer"
+	"type": "footer",
+	"smart_shapes": {}
 }

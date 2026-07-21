@@ -3479,7 +3479,7 @@ static const wild_pokemon_entry route_2_clouds_cave_ice_grass_entries[12] = {
     [WILD_POKEMON_DENSITY_GRASS_3_10_PERCENT] =
         {.level_min = 31, .level_max = 34, .species = POKEMON_SHNEBEDECK},
     [WILD_POKEMON_DENSITY_GRASS_4_10_PERCENT] =
-        {.level_min = 31, .level_max = 34, .species = POKEMON_QUIEKEL},
+        {.level_min = 31, .level_max = 34, .species = POKEMON_SCHNEPPKE},
     [WILD_POKEMON_DENSITY_GRASS_5_10_PERCENT] =
         {.level_min = 31, .level_max = 34, .species = POKEMON_SHNEBEDECK},
     [WILD_POKEMON_DENSITY_GRASS_6_5_PERCENT] =

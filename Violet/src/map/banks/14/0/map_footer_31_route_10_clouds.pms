@@ -18097,5 +18097,6 @@
 		"field_1A": 0
 	},
 	"label": "map_footer_31_route_10_clouds",
-	"type": "footer"
+	"type": "footer",
+	"smart_shapes": {}
 }

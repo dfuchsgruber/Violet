@@ -29500,9 +29500,9 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": "0x0",
-				"hm_usage": 0,
-				"argument": 0,
+				"behaviour": "MB_FLAVOR_TEXT",
+				"hm_usage": "0",
+				"argument": "FLAVOR_TEXT_UNOWN_TABLET",
 				"battle_bg": 0,
 				"encounter_type": 0,
 				"field_5": 0,
@@ -29510,9 +29510,9 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": "0x0",
+				"behaviour": "MB_FLAVOR_TEXT",
 				"hm_usage": 0,
-				"argument": 0,
+				"argument": "FLAVOR_TEXT_UNOWN_TABLET",
 				"battle_bg": 0,
 				"encounter_type": 0,
 				"field_5": 0,
@@ -29520,9 +29520,9 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": "0x0",
+				"behaviour": "MB_FLAVOR_TEXT",
 				"hm_usage": 0,
-				"argument": 0,
+				"argument": "FLAVOR_TEXT_UNOWN_TABLET",
 				"battle_bg": 0,
 				"encounter_type": 0,
 				"field_5": 0,
@@ -29530,9 +29530,9 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": "0x0",
+				"behaviour": "MB_FLAVOR_TEXT",
 				"hm_usage": 0,
-				"argument": 0,
+				"argument": "FLAVOR_TEXT_UNOWN_TABLET",
 				"battle_bg": 0,
 				"encounter_type": 0,
 				"field_5": 0,
@@ -29540,9 +29540,9 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": "0x0",
+				"behaviour": "MB_FLAVOR_TEXT",
 				"hm_usage": 0,
-				"argument": 0,
+				"argument": "FLAVOR_TEXT_UNOWN_TABLET",
 				"battle_bg": 0,
 				"encounter_type": 0,
 				"field_5": 0,
@@ -29650,9 +29650,9 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": "0x0",
+				"behaviour": "MB_FLAVOR_TEXT",
 				"hm_usage": 0,
-				"argument": 0,
+				"argument": "FLAVOR_TEXT_UNOWN_TABLET",
 				"battle_bg": 0,
 				"encounter_type": 0,
 				"field_5": 0,
@@ -29660,9 +29660,9 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": "0x0",
+				"behaviour": "MB_FLAVOR_TEXT",
 				"hm_usage": 0,
-				"argument": 0,
+				"argument": "FLAVOR_TEXT_UNOWN_TABLET",
 				"battle_bg": 0,
 				"encounter_type": 0,
 				"field_5": 0,
@@ -29670,9 +29670,9 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": "0x0",
+				"behaviour": "MB_FLAVOR_TEXT",
 				"hm_usage": 0,
-				"argument": 0,
+				"argument": "FLAVOR_TEXT_UNOWN_TABLET",
 				"battle_bg": 0,
 				"encounter_type": 0,
 				"field_5": 0,
@@ -29680,9 +29680,9 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": "0x0",
+				"behaviour": "MB_FLAVOR_TEXT",
 				"hm_usage": 0,
-				"argument": 0,
+				"argument": "FLAVOR_TEXT_UNOWN_TABLET",
 				"battle_bg": 0,
 				"encounter_type": 0,
 				"field_5": 0,
@@ -29690,9 +29690,9 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": "0x0",
+				"behaviour": "MB_FLAVOR_TEXT",
 				"hm_usage": 0,
-				"argument": 0,
+				"argument": "FLAVOR_TEXT_UNOWN_TABLET",
 				"battle_bg": 0,
 				"encounter_type": 0,
 				"field_5": 0,
@@ -29700,9 +29700,9 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": "0x0",
+				"behaviour": "MB_FLAVOR_TEXT",
 				"hm_usage": 0,
-				"argument": 0,
+				"argument": "FLAVOR_TEXT_UNOWN_TABLET",
 				"battle_bg": 0,
 				"encounter_type": 0,
 				"field_5": 0,

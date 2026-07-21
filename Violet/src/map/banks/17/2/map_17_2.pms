@@ -515,12 +515,12 @@
 					"target_index": "18",
 					"picture": "238",
 					"x": "38",
-					"y": "20",
+					"y": "19",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_LEFT_UP_RIGHT",
 					"behaviour_range": {
 						"x": "4",
-						"y": "7"
+						"y": "6"
 					},
 					"field_B": 0,
 					"is_trainer": 0,
@@ -618,7 +618,7 @@
 					"is_trainer": "1",
 					"alert_radius": "3",
 					"script": "0",
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"flag": "FLAG_ROUTE_6_CLOUDS_WATTZAPF",
 					"value": {
 						"item": "0",
 						"species": "POKEMON_WATTZAPF",
@@ -1009,6 +1009,6 @@
 			"flag_7": "0"
 		}
 	},
-	"label": "map_17_2",
+	"label": "map_route_5_clouds",
 	"type": "header"
 }

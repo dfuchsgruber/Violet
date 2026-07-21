@@ -599,6 +599,16 @@ static void bag_sold_item_wait_a_b_press(u8 self) {
         return;
     if (super.keys_new.keys.A || super.keys_new.keys.B) {
         play_sound(5);
+        u8 pocket_idx = bag_get_current_pocket();
+        list_menu_remove(bag2_state->list_menu_cb_idx, bag_cursor_position + POCKET_TO_BAG_POCKETS_IDX(pocket_idx), bag_cursor_items_above + POCKET_TO_BAG_POCKETS_IDX(pocket_idx));
+        bag_initialize_compute_item_counts();
+        bag_initialize_list_cursor_positions();
+        bag_build_item_list();
+        item_remove(item_activated, bag2_state->toss_current_number);
+        int money = item_get_price(item_activated) / 2 * bag2_state->toss_current_number;
+        money_add(&save1->money, (u32)money);
+        tbox_update_money(bag2_state->tbox_money, money_get(&save1->money), 0);
+        bag2_state->list_menu_cb_idx = list_menu_new(&gp_list_menu_template, bag_cursor_position[POCKET_TO_BAG_POCKETS_IDX(pocket_idx)], bag_cursor_items_above[POCKET_TO_BAG_POCKETS_IDX(pocket_idx)]);
         tbox_flush_map_and_frame(bag2_state->tbox_money);
         tbox_free(bag2_state->tbox_money);
         tbox_clear_message(BAG_TBOX_MESSAGE, false);
@@ -612,18 +622,8 @@ static void bag_sold_item_wait_a_b_press(u8 self) {
 
 static void bag_sold_item(u8 self) {
     play_sound(248);
-    item_remove(item_activated, bag2_state->toss_current_number);
-    int money = item_get_price(item_activated) / 2 * bag2_state->toss_current_number;
-    money_add(&save1->money, (u32)money);
-    tbox_update_money(bag2_state->tbox_money, money_get(&save1->money), 0);
-    u8 pocket_idx = bag_get_current_pocket();
-    list_menu_remove(bag2_state->list_menu_cb_idx, bag_cursor_position + POCKET_TO_BAG_POCKETS_IDX(pocket_idx), bag_cursor_items_above + POCKET_TO_BAG_POCKETS_IDX(pocket_idx));
-    bag_initialize_compute_item_counts();
-    bag_initialize_list_cursor_positions();
-    bag_build_item_list();
-    bag2_state->list_menu_cb_idx = list_menu_new(&gp_list_menu_template, bag_cursor_position[POCKET_TO_BAG_POCKETS_IDX(pocket_idx)], bag_cursor_items_above[POCKET_TO_BAG_POCKETS_IDX(pocket_idx)]);
-    bg_virtual_sync_reqeust_push(0);
     big_callbacks[self].function = bag_sold_item_wait_a_b_press;
+    return;
 }
 
 static const u8 str_sold_item[] = LANGDEP(PSTRING("BUFFER_1 ×BUFFER_2 wurde im\nTausch gegen BUFFER_3POKEDOLLAR übergeben."), PSTRING("Exchanged BUFFER_1 ×BUFFER_2\nagainst BUFFER_3POKEDOLLAR."));

@@ -68,8 +68,8 @@ const achievement_t achievements_wondertrade[NUM_WONDERTRADE_ACHIEVEMENTS] = {
             .flag = WONDERTRADE_MEW_RECEIVED, // no reward
             .script = ow_script_achievement_wondertrade_100_reward,
             .description = (const u8[]) LANGDEP(
-                PSTRING("Erhalte ein\nMew."), 
-                PSTRING("Receive a\nMew.")
+                PSTRING("Erhalte ein\nbesonderes\nPokémonDOTS"), 
+                PSTRING("Receive a\nspecial\nPokémonDOTS")
             ),
         }
     }

@@ -54139,7 +54139,7 @@
 				"behaviour": "0x0",
 				"hm_usage": 0,
 				"argument": 0,
-				"battle_bg": 0,
+				"battle_bg": "BATTLE_BG_SKY_ISLAND",
 				"encounter_type": 0,
 				"field_5": 0,
 				"priority": 0,

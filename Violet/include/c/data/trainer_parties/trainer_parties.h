@@ -1372,9 +1372,9 @@ const trainer_pokemon trainer_party_x112_route_2_clouds_trainer_1[] = {
 };
 
 const trainer_pokemon trainer_party_x113_route_2_clouds_trainer_2[] = {
-	{.level = 34, .species = POKEMON_PELIPPER},
-	{.level = 35, .species = POKEMON_SCHWALBINI},
-	{.level = 34, .species = POKEMON_DARTIGNIS},
+	{.level = 34, .species = POKEMON_REMORAID},
+	{.level = 35, .species = POKEMON_QUABBEL},
+	{.level = 34, .species = POKEMON_SCHMERBE},
 };
 
 const trainer_pokemon trainer_party_x114_route_2_clouds_trainer_3[] = {

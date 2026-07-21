@@ -179,11 +179,11 @@
 						"species": "0",
 						"scalar": "0",
 						"type": "0",
-						"move_tutor": "MOVE_TUTOR_DRACHENPULS"
+						"move_tutor": "0"
 					},
 					"argument": "0",
 					"script_std_and_in_connection": {
-						"script_std": "PERSON_MOVE_TUTOR",
+						"script_std": "0",
 						"in_connection": "0"
 					}
 				},
@@ -455,7 +455,7 @@
 						"script_std": "PERSON_AGGRESSIVE_POKEMON",
 						"in_connection": "0"
 					},
-					"argument": "36",
+					"argument": "37",
 					"x": "64",
 					"y": "22",
 					"level": "0",
@@ -468,10 +468,10 @@
 					"is_trainer": "1",
 					"alert_radius": "2",
 					"script": "0",
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"flag": "FLAG_KASKADA_CLOUDS_WILD_PSYDUCK",
 					"value": {
 						"item": "0",
-						"species": "POKEMON_ENTON",
+						"species": "POKEMON_ENTORON",
 						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0

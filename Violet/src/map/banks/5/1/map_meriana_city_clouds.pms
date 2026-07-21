@@ -160,7 +160,7 @@
 					"target_index": "6",
 					"picture": "96",
 					"x": "13",
-					"y": "31",
+					"y": "32",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -392,7 +392,7 @@
 					"target_index": "14",
 					"picture": "54",
 					"script_std_and_in_connection": {
-						"script_std": "PERSON_MOVE_TUTOR",
+						"script_std": "0",
 						"in_connection": "0"
 					},
 					"argument": "0",
@@ -407,7 +407,7 @@
 					"field_B": "0",
 					"is_trainer": "0",
 					"alert_radius": "0",
-					"script": "ow_script_bluetenbach_clouds_move_tutor",
+					"script": "ow_script_bluetenbach_clouds_expert_belt",
 					"flag": "0",
 					"value": {
 						"item": "0",

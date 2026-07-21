@@ -2977,10 +2977,10 @@ const trainer trainers[TRAINER_CNT] = {
         .party = trainer_party_x112_route_2_clouds_trainer_1,
     },
     [0x113] = {
-        .trainerclass = TRAINERCLASS_WOLKENREITER,
+        .trainerclass = TRAINERCLASS_ANGLER,
         .encounter = 2,
         .gender = 0,
-        .sprite = 0x48,
+        .sprite = 0x26,
         .name = LANGDEP(PSTRING("Adam"), PSTRING("Adam")),
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .rematch_flag_idx = 183,

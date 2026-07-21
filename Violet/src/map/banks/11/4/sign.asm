@@ -27,8 +27,12 @@ str_0:
 str_ask_scripture:
     .autostring 34 2 "Dort scheint ein Text in einer antiken Sprache eingraviert zu sein.\pMöchtest du den Text lesen?"
 str_scripture:
-    .autostring 24 2 "FONT_UNOWNHEIL DER GROSSEN DUNKLEN KOENIGIN, DER DIESER TEMPEL GEWEIHT IST.\pNAH IST DER TAG DER BEFREIUNG UNSERES VOLKES.\pNICHT EINMAL DIE GOETTER DIESER WELT VERMOEGEN ES NOCH, UNS ZU UNTERWERFEN.\pHEIL DIR DUNKLE KOENIGIN."
+    .autostring 24 2 "FONT_UNOWNHEIL DER GROSSEN DUNKLEN KOENIGIN.\pNAH IST DER TAG DER BEFREIUNG UNSERES VOLKES.\pNICHT EINMAL DIE GOETTER DIESER WELT VERMOEGEN NUN MEHR UNS ZU BINDEN.\pHEIL DIR, DUNKLE KOENIGIN."
 .elseif LANG_EN
 str_0:
     .autostring 34 2 "QUOTE_STARTI found this lost world above the clouds.\pI am determined to unravel its secrets.QUOTE_END"
+str_ask_scripture:
+    .autostring 34 2 "There seems to be a text engraved in an ancient language.\pDo you want to read the text?"
+str_scripture:
+    .autostring 24 2 "FONT_UNOWNHAIL THE GREAT DARK QUEEN.\pNEAR IS THE DAY OF LIBERATION OF OUR PEOPLE.\pNOT EVEN THE GODS OF THIS WORLD CAN BIND US ANYMORE.\pHAIL TO YOU, DARK QUEEN."
 .endif

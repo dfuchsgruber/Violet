@@ -6499,5 +6499,6 @@
 		"field_1A": 0
 	},
 	"label": "map_footer_route_2_clouds_cave_ice_room",
-	"type": "footer"
+	"type": "footer",
+	"smart_shapes": {}
 }

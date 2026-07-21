@@ -262,7 +262,7 @@
 					"script": "0",
 					"flag": "FLAG_ROUTE_4_CLOUDS_ITEM_3",
 					"value": {
-						"item": "ITEM_LUXUSBALL",
+						"item": "ITEM_SCHILDBALL",
 						"species": "0",
 						"scalar": "0",
 						"type": "0",
@@ -355,7 +355,7 @@
 						"type": "0",
 						"move_tutor": 0
 					},
-					"argument": "5",
+					"argument": "3",
 					"script_std_and_in_connection": {
 						"script_std": "PERSON_ITEM_MULTIPLE_COPIES",
 						"in_connection": "0"
@@ -805,7 +805,7 @@
 					},
 					"argument": "0",
 					"x": "19",
-					"y": "51",
+					"y": "54",
 					"level": "0",
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_RIGHT_UP_DOWN_LEFT",
 					"behaviour_range": {

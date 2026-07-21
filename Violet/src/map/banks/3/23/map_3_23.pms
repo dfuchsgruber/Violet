@@ -859,7 +859,7 @@
 					"target_index": "29",
 					"picture": "23",
 					"x": "25",
-					"y": "36",
+					"y": "35",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {

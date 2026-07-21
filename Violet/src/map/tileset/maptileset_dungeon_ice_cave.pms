@@ -33374,7 +33374,7 @@
 				"hm_usage": 0,
 				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
-				"encounter_type": 0,
+				"encounter_type": "1",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -33454,7 +33454,7 @@
 				"hm_usage": 0,
 				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
-				"encounter_type": 0,
+				"encounter_type": "1",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -33474,7 +33474,7 @@
 				"hm_usage": 0,
 				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
-				"encounter_type": 0,
+				"encounter_type": "1",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -33484,7 +33484,7 @@
 				"hm_usage": 0,
 				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
-				"encounter_type": 0,
+				"encounter_type": "1",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -33694,7 +33694,7 @@
 				"hm_usage": 0,
 				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
-				"encounter_type": 0,
+				"encounter_type": "1",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -33714,7 +33714,7 @@
 				"hm_usage": 0,
 				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
-				"encounter_type": 0,
+				"encounter_type": "1",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -33724,7 +33724,7 @@
 				"hm_usage": 0,
 				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
-				"encounter_type": 0,
+				"encounter_type": "1",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -34094,7 +34094,7 @@
 				"hm_usage": 0,
 				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
-				"encounter_type": 0,
+				"encounter_type": "1",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -34614,7 +34614,7 @@
 				"hm_usage": 0,
 				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
-				"encounter_type": 0,
+				"encounter_type": "1",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -34624,7 +34624,7 @@
 				"hm_usage": 0,
 				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
-				"encounter_type": 0,
+				"encounter_type": "1",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0
@@ -34874,7 +34874,7 @@
 				"hm_usage": 0,
 				"argument": 0,
 				"battle_bg": "BATTLE_BG_ICE_CAVE",
-				"encounter_type": 0,
+				"encounter_type": "1",
 				"field_5": 0,
 				"priority": 0,
 				"field_7": 0

@@ -3316,7 +3316,7 @@
 				},
 				{
 					"block_idx": 639,
-					"level": 12
+					"level": 28
 				},
 				{
 					"block_idx": 340,
@@ -8913,5 +8913,6 @@
 		"field_1A": 0
 	},
 	"label": "map_footer_459",
-	"type": "footer"
+	"type": "footer",
+	"smart_shapes": {}
 }

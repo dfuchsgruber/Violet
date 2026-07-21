@@ -14,5 +14,5 @@ ow_script_laubdorf_indoor_1_person_0:
 
 .ifdef LANG_GER
 str_0:
-    .autostring 34 2 "Laubdorf ist seit je her ein Ort, der die Familie in den Mittelpunkt stellt.\pHier sorgt man sich um seinen Nachwuchs!\pLeiderDOTS\pIst mir nicht das Glück zuteil geworden, Vater zu werden.\pAber ich habe einen Neffen in Kranzdorf!"
+    .autostring 34 2 "Laubkind-Dorf ist seit je her ein Ort, der die Familie in den Mittelpunkt stellt.\pHier sorgt man sich um seinen Nachwuchs!\pLeiderDOTS\pIst mir nicht das Glück zuteil geworden, Vater zu werden.\pAber ich habe einen Neffen in Kranzdorf!"
 .endif

@@ -11299,5 +11299,6 @@
 		"field_1A": 0
 	},
 	"label": "map_footer_11",
-	"type": "footer"
+	"type": "footer",
+	"smart_shapes": {}
 }
