@@ -3753,7 +3753,7 @@
 			],
 			[
 				{
-					"block_idx": 327,
+					"block_idx": 1,
 					"level": 1
 				},
 				{
@@ -3931,7 +3931,7 @@
 			],
 			[
 				{
-					"block_idx": 335,
+					"block_idx": 357,
 					"level": 1
 				},
 				{
@@ -4109,8 +4109,8 @@
 			],
 			[
 				{
-					"block_idx": 223,
-					"level": 12
+					"block_idx": 365,
+					"level": 1
 				},
 				{
 					"block_idx": 344,
@@ -4287,8 +4287,8 @@
 			],
 			[
 				{
-					"block_idx": 204,
-					"level": 12
+					"block_idx": 365,
+					"level": 1
 				},
 				{
 					"block_idx": 344,
@@ -4465,7 +4465,7 @@
 			],
 			[
 				{
-					"block_idx": 212,
+					"block_idx": 365,
 					"level": 1
 				},
 				{
@@ -7139,5 +7139,6 @@
 		"field_1A": 0
 	},
 	"label": "map_footer_ceometria_clouds",
-	"type": "footer"
+	"type": "footer",
+	"smart_shapes": {}
 }

@@ -283,7 +283,7 @@ void wondertrade_callback_after_selection() {
             if (*var_access(WONDERTRADE_CNT) < 9999) {
                 (*var_access(WONDERTRADE_CNT))++;
             }
-            *var_access(WONDERTRADE_STEPS_TO_ENABLE) = 0;
+            *var_access(WONDERTRADE_STEPS_TO_ENABLE) = 0; 
             *var_access(0x8000) = *var_access(0x8004);
             *var_access(0x8001) = *var_access(0x8005);
             *var_access(0x8004) = 0;
@@ -601,6 +601,13 @@ static int wondertrade_steps_to_enable_required() {
         return 250;
     } else {
         return 500;
+    }
+}
+
+void wondertrade_increment_steps() {
+    u16 *steps = var_access(WONDERTRADE_STEPS_TO_ENABLE);
+    if (*steps < wondertrade_steps_to_enable_required()) {
+        (*steps)++;
     }
 }
 

@@ -32,10 +32,9 @@ if __name__ == '__main__':
             if offset is None:
                 errors.append(f'No worldmap association for bank of map {bank}.{map_idx}:{label}')
             else:
-                offset += 4 * int(map_idx) # bit hacky to have the 4 hardcoded here, but w/e...
-                shape = project.model['worldmap_position'].from_data(rom, offset, project, [], [])
+                shape = project.model['worldmap_position_bank'].from_data(rom, offset, project, [], [])[int(map_idx)]
                 if shape['width'] == 0 and shape['height'] == 0:
-                    errors.append(f'No worldmap shape specified for map {bank}.{map_idx}:{label}')
+                    errors.append(f'No worldmap shape specified for map {bank}.{map_idx}:{label}, ({shape})')
     if len(errors):
         warn('\n'.join(errors))
                 

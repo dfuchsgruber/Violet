@@ -293,8 +293,9 @@ cloud_maps_list_type = agb.types.UnboundedArrayType(
 block_tilemap_type = agb.types.FixedSizeArrayType("block", lambda *args: 12)
 
 worldmap_position_type = agb.types.Structure(
-    [("x", "u8", 0), ("y", "u8", 0), ("width", "u8", 0), ("height", "u8", 0)]
+    [("x", "u8", 0), ("y", "u8", 0), ("width", "u8", 0), ("height", "u8", 0), ("worldmap_idx", "u8", 0), ("layer", "u8", 0), ("filler", "u16", 0)]
 )
+worldmap_position_bank = agb.types.FixedSizeArrayType("worldmap_position", lambda *args: 256)
 
 # Export new models
 
@@ -302,6 +303,7 @@ models_to_export = {
     "move_tutor_16": move_tutor_16_type,
     "pokemon_type_16": pokemon_type_16_type,
     "worldmap_position": worldmap_position_type,
+    "worldmap_position_bank": worldmap_position_bank,
     "person_behaviour": person_behaviour_type,
     "person_script_std": person_script_std_type_type,
     "event.person.script_std_and_in_connection": person_script_std_and_in_connection_type,

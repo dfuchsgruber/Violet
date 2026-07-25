@@ -28,6 +28,10 @@ u8 worldmap_get_namespace_by_pos(u8 worldmap_index, u8 layer, u16 x, u16 y) {
 bool map_coordinates_to_worldmap_position(u8 bank, u8 map_idx, s16 x, s16 y, u8 *dst_x, u8 *dst_y, 
 		u8 *dst_worldmap_idx, u8 *dst_layer) {
 	const worldmap_position_t *position = &worldmap_positions[bank][map_idx];
+	if (position->width == 0 || position->height == 0) {
+		// Deliberately empty position
+		return false;
+	}
 	const map_header_t *header = get_mapheader(bank, map_idx);
 	if (position && header) {
 		u32 segment_width = MAX(1, header->footer->width / position->width);
@@ -43,10 +47,11 @@ bool map_coordinates_to_worldmap_position(u8 bank, u8 map_idx, s16 x, s16 y, u8 
 	return false;
 }
 
-void worldmap_locate_player() {
-	map_coordinates_to_worldmap_position(save1->bank, save1->map, save1->x_camera, save1->y_camera, 
+bool worldmap_locate_player() {
+	bool result = map_coordinates_to_worldmap_position(save1->bank, save1->map, save1->x_camera, save1->y_camera, 
 		&worldmap_ui_state->player.x, &worldmap_ui_state->player.y, &worldmap_ui_state->player.idx, 
 		&worldmap_ui_state->player.layer);
 	DEBUG("Located player to %d, %d, %d, %d", worldmap_ui_state->player.x, worldmap_ui_state->player.y, 
 		worldmap_ui_state->player.idx, worldmap_ui_state->player.layer);
+	return result;
 }

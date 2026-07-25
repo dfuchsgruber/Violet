@@ -3970,11 +3970,6 @@ const wild_pokemon_data wild_pokemon[] = {
         .rod = &wild_pokemon_route_6_clouds_rod,
     },
     {
-        .bank = 21,
-        .map = 0,
-        .grass = &wild_pokemon_route_6_clouds_grass,
-    },
-    {
         .bank = 5,
         .map = 1,
         .grass = &wild_pokemon_meriana_city_clouds_grass,
@@ -4029,16 +4024,6 @@ const wild_pokemon_data wild_pokemon[] = {
         .grass = &wild_pokemon_route_8_clouds_grass,
     },
     {
-        .bank = 13,
-        .map = 4,
-        .grass = &wild_pokemon_route_9_clouds_grass,
-    },
-    {
-        .bank = 13,
-        .map = 5,
-        .grass = &wild_pokemon_route_9_clouds_grass,
-    },
-    {
         .bank = 6,
         .map = 6,
         .grass = &wild_pokemon_route_9_clouds_grass,
@@ -4067,22 +4052,11 @@ const wild_pokemon_data wild_pokemon[] = {
         .map = 9,
         .grass = &wild_pokemon_ceometria_clouds_grass,
     },
-    {
-        .bank = 26,
-        .map = 0,
-        .grass = &wild_pokemon_route_12_clouds_grass,
-    },
-    {
-        .bank = 26,
-        .map = 1,
-        .grass = &wild_pokemon_route_12_clouds_grass,
-    },
     {.bank = 11, .map = 4, .grass = &wild_pokemon_unown_ruins_grass},
     {.bank = 6, .map = 7, .grass = &wild_pokemon_unown_ruins_grass},
     {.bank = 8, .map = 2, .grass = &wild_pokemon_unown_ruins_grass},
     {.bank = 9, .map = 4, .grass = &wild_pokemon_unown_ruins_grass},
     {.bank = 12, .map = 7, .grass = &wild_pokemon_unown_ruins_grass},
-    {.bank = 27, .map = 1, .grass = &wild_pokemon_unown_ruins_grass},
     {
         .bank = 3,
         .map = 16,

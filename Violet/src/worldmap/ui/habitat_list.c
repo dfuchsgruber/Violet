@@ -42,7 +42,8 @@ static void pokedex_habitat_list_reallocate(pokedex_habitat_list_t *list, size_t
 static void pokedex_habitat_list_add_position(pokedex_habitat_list_t *list, int x, int y, int worldmap_idx,
     int layer, int probability, int habitat_type, int map_type) {
     for (size_t i = 0; i < list->num_elements; i++) {
-        if (list->list[i].worldmap_x == x && list->list[i].worldmap_y == y && list->list[i].habitat_type == habitat_type 
+        if (list->list[i].worldmap_x == x && list->list[i].worldmap_y == y && list->list[i].habitat_type == habitat_type
+            && list->list[i].worldmap_idx == worldmap_idx && list->list[i].layer == layer
             //&& dst[i].map_type == map_type // for now, we do not separate map types in the current UI
             ) {
             list->list[i].probability = (u8)MAX(list->list[i].probability, probability);
@@ -65,6 +66,11 @@ static void pokedex_habitat_list_add_position(pokedex_habitat_list_t *list, int 
 
 static void pokedex_habitats_add_map(pokedex_habitat_list_t *list, u8 bank, u8 map_idx, int probability, int habitat_type, int map_type) {
     DEBUG("Found species at %d.%d with m_type %d, h_type %d and probability of %d percent.\n", bank, map_idx, map_type, habitat_type, probability);
+    if (!worldmap_positions[bank])
+        return;
+    u16 flag = worldmap_flags[worldmap_positions[bank][map_idx].worldmap_idx][worldmap_positions[bank][map_idx].layer];
+    if (flag != 0 && flag != WORLDMAP_FLAG_EMPTY_SLOT && !checkflag(flag))
+        return; // Don't add this map to the habitats if not unlocked yet
     for (int i = 0; i < worldmap_positions[bank][map_idx].width; i++) {
         for (int j = 0; j < worldmap_positions[bank][map_idx].height; j++) {
             pokedex_habitat_list_add_position(list, 
@@ -94,6 +100,9 @@ void pokedex_habitat_list_compute_by_species(pokedex_habitat_list_t *list, u16 s
     for (int i = 0; wild_pokemon[i].bank != 0xFF; i++) {
         // Check grass habitats
         int map_type = pokdex_map_type_to_habitat_map_type[get_mapheader(wild_pokemon[i].bank, wild_pokemon[i].map)->type];
+        // pokedex_habitats_add_map(list, wild_pokemon[i].bank, wild_pokemon[i].map, 50, HABITAT_TYPE_GRASS, map_type);
+        // continue;
+
         if (wild_pokemon[i].grass) {
             int probability = 0;
             for (int j = 0; j < WILD_POKEMON_NUM_ENTRIES_GRASS; j++) {

@@ -359,7 +359,7 @@ static const bg_config worldmap_ui_bg_configs[] = {
         .bg_id = 0, .char_base = 0, .map_base = 28, .priority = 0, .size = 0,
     },
     [1] = { // Frame layer
-        .bg_id = 1, .char_base = 2, .map_base = 29, .priority = 1, .size = 0,
+        .bg_id = 1, .char_base = 3, .map_base = 29, .priority = 1, .size = 0,
     },
     [2] = { // Text layer for namespace label and habitat over
         .bg_id = 2, .char_base = 0, .map_base = 30, .priority = 2, .size = 0,
@@ -435,36 +435,6 @@ static const tboxdata worldmap_ui_habitat_tboxes[NUM_WORLDMAP_UI_HABITAT_TBOXES 
     [NUM_WORLDMAP_UI_HABITAT_TBOXES] = {.bg_id = 0xFF},
 };
 
-static const u8 str_namespace_switch_maps[] = LANGDEP(
-    PSTRING("Karte wechseln"),
-    PSTRING("Switch maps")
-);
-
-static void worldmap_ui_habitat_update_namespace_by_cursor_position(bool print_if_namespace_not_changed) {
-    const u8 *str = NULL;
-    if (worldmap_ui_state->cursor.x == worldmap_ui_state->icon_switch_maps_x &&
-        worldmap_ui_state->cursor.y == worldmap_ui_state->icon_switch_maps_y) {
-        str = str_namespace_switch_maps;
-    } else {
-        u8 namespace_idx = worldmap_get_namespace_by_pos(worldmap_ui_state->cursor.idx, worldmap_ui_state->cursor.layer,
-            worldmap_ui_state->cursor.x, worldmap_ui_state->cursor.y);
-        DEBUG("namespace_idx: %d\n", namespace_idx);
-        if ((namespace_idx != worldmap_ui_state->current_namespace || print_if_namespace_not_changed) 
-                && namespace_idx != MAP_NAMESPACE_NONE) {
-            worldmap_ui_state->current_namespace = namespace_idx;
-            str = map_namespaces[MAP_NAMESPACE_TO_IDX(namespace_idx)];
-        }
-    }
-    DEBUG("str: 0x%x\n", str);
-    if (str) {
-        tbox_flush_set(WORLDMAP_UI_TBOX_IDX_NAMESPACE, 0x11);
-        tbox_print_string(WORLDMAP_UI_TBOX_IDX_NAMESPACE, 2, 4, 0, 0, 0, &font_colormap_non_transparent, 0, str);
-    } else {
-        tbox_flush_set(WORLDMAP_UI_TBOX_IDX_NAMESPACE, 0x00);
-        tbox_sync(WORLDMAP_UI_TBOX_IDX_NAMESPACE, TBOX_SYNC_SET);
-    }
-}
-
 static u8 worldmap_ui_habitat_get_oam_animation_idx_by_probability(u8 probability) {
     int animation_idx;
     for (animation_idx = WORLDMAP_UI_HABITAT_NUM_PERCENTAGES - 1; animation_idx >= 0; animation_idx--) {
@@ -506,7 +476,7 @@ static void worldmap_ui_habitat_update_habitat_info_by_cursor() {
 }
 
 static void worldmap_ui_habitat_cursor_moved(__attribute__ ((unused)) u8 self) {
-    worldmap_ui_habitat_update_namespace_by_cursor_position(false);
+    worldmap_ui_update_namespace_by_cursor_position(false);
     worldmap_ui_habitat_update_habitat_info_by_cursor();
 }
 
@@ -524,7 +494,7 @@ static void worldmap_ui_update_worldmap(u8 self) {
         return;
     worldmap_ui_state->cursor = worldmap_ui_state->cursor_switch_maps;
     worldmap_ui_habitat_update_red_should_be_active();
-    worldmap_ui_habitat_update_namespace_by_cursor_position(true);
+    worldmap_ui_update_namespace_by_cursor_position(true);
     worldmap_ui_habitat_update_red_overlay();
     worldmap_ui_habitat_update_habitat_info_by_cursor();
     worldmap_ui_update_worldmap_gfx(worldmap_ui_state->cursor.idx, 
@@ -832,7 +802,7 @@ void worldmap_ui_callback_initialize_habitat() {
 
             u8 namespace_idx = worldmap_get_namespace_by_pos(worldmap_ui_state->cursor.idx, worldmap_ui_state->cursor.layer,
                 worldmap_ui_state->cursor.x, worldmap_ui_state->cursor.y);
-            worldmap_ui_habitat_update_namespace_by_cursor_position(true);
+            worldmap_ui_update_namespace_by_cursor_position(true);
             worldmap_ui_habitat_update_habitat_info_by_cursor();
             worldmap_ui_state->current_namespace = namespace_idx;
             worldmap_ui_state->initialization_state++;
@@ -843,7 +813,7 @@ void worldmap_ui_callback_initialize_habitat() {
             color_t red = {.rgb = {.red = 31, .blue = 0,  .green = 0}};
             pal_copy(&red, 96 + 1, sizeof(color_t));
             pal_copy(gfx_worldmap_ui_habitat_framePal + 1, 0, sizeof(color_t));
-            lz77uncompvram(gfx_worldmap_ui_habitat_frameTiles, CHARBASE(2));
+            lz77uncompvram(gfx_worldmap_ui_habitat_frameTiles, CHARBASE(worldmap_ui_bg_configs[1].char_base));
             int gfx_worldmap_red_overlayTiles = 0x11111111;
             cpuset(&gfx_worldmap_red_overlayTiles, CHARBASE_PLUS_OFFSET_4BPP(0, 1), CPUSET_FILL | CPUSET_HALFWORD |
                  CPUSET_HALFWORD_SIZE(GRAPHIC_SIZE_4BPP(8, 8)));

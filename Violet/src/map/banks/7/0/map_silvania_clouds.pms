@@ -170,7 +170,7 @@
 				},
 				{
 					"direction": "MAP_CONNECTION_WEST",
-					"displacement": "6",
+					"displacement": "-9",
 					"bank": "15",
 					"map_idx": "2",
 					"field_A": 0,

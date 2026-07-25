@@ -340,20 +340,12 @@
 		},
 		"levelscripts": "map_ceometria_clouds_levelscripts",
 		"connections": {
-			"connection_cnt": 3,
+			"connection_cnt": 2,
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_NORTH",
 					"displacement": "21",
 					"bank": "25",
-					"map_idx": 0,
-					"field_A": 0,
-					"field_B": 0
-				},
-				{
-					"direction": "MAP_CONNECTION_WEST",
-					"displacement": "0",
-					"bank": "26",
 					"map_idx": 0,
 					"field_A": 0,
 					"field_B": 0

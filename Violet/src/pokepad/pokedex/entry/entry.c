@@ -475,6 +475,7 @@ static void pokedex_entry_initialize_state_machine() {
         case POKEDEX_ENTRY_INITIALIZATION_STATE_LOAD_GFX: {
             int zero = 0;
             cpufastset(&zero, CHARBASE_PLUS_OFFSET_4BPP(1, 0), CPUSET_FILL | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(GRAPHIC_SIZE_4BPP(8, 8)));
+            cpufastset(&zero, CHARBASE_PLUS_OFFSET_4BPP(2, 0), CPUSET_FILL | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(GRAPHIC_SIZE_4BPP(8, 8)));
             lz77uncompwram(gfx_pokedex_entry_ui2Map, pokedex_entry_state->bg_maps[1]);
             lz77uncompvram(gfx_pokedex_entry_ui2Tiles, CHARBASE(0));
             pal_decompress(gfx_pokedex_entry_ui2Pal, 0, 16 * sizeof(color_t));

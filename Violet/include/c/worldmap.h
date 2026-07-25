@@ -197,24 +197,6 @@ enum worldmap_info_category{
     NUM_WORLDMAP_CATEGORIES,
 };
 
-    // A pattern consists of multiple shapes, each of which can have displacement from the
-    // position anchor and its own rectangular dimension. To associate a map with a shape use
-    // the respective field in the mapheader structure
-    typedef struct {
-    	u8 x, y, width, height;
-    } worldmap_shape_t;
-
-    typedef struct {
-    	int num_shapes;
-    	const worldmap_shape_t *shapes;
-    } worldmap_pattern_t;
-
-    typedef struct {
-        u8 bank;
-        u8 map_idx;
-        u8 shape_idx;
-    } worldmap_shape_association_t;
-
     typedef struct {
         move_tutor_t person;
         u16 flag;
@@ -227,9 +209,6 @@ enum worldmap_info_category{
         u16 flag;
         u8 name[13];
     } worldmap_institution_t;
-
-    #define NUM_WORLDMAP_SHAPE_ASSOCIATIONS 6
-    extern const worldmap_shape_association_t worldmap_shape_associations[NUM_WORLDMAP_SHAPE_ASSOCIATIONS];
 
     typedef struct {
         u8 bank;
@@ -245,6 +224,9 @@ enum worldmap_info_category{
     extern const LZ77COMPRESSED gfx_worldmapTiles;
     extern const LZ77COMPRESSED gfx_worldmapMap;
     extern const color_t gfx_worldmapPal[80];
+    extern const LZ77COMPRESSED gfx_worldmap_cloudsTiles;
+    extern const LZ77COMPRESSED gfx_worldmap_cloudsMap;
+    extern const color_t gfx_worldmap_cloudsPal[80];
 
     extern const LZ77COMPRESSED gfx_worldmap_icon_thetoTiles;
     extern const LZ77COMPRESSED gfx_worldmap_icon_theto_cloudsTiles;
@@ -265,6 +247,7 @@ enum worldmap_info_category{
 
     #define WORLDMAP_FLAG_EMPTY_SLOT 0xFFFF
 
+    extern const u16 worldmap_flags[NUM_WORLDMAPS][NUM_WORLDMAP_LAYERS];
     extern const u8 (*const worldmap_names[NUM_WORLDMAPS]);
     extern const u8 (*const worldmap_layer_names[NUM_WORLDMAP_LAYERS]);
 
@@ -308,8 +291,9 @@ enum worldmap_info_category{
 
     /**
      * Locates the player on the current worldmap (saves x, y to the worldmap state).
+     @return whether the player could be located on the worldmap
      */
-    void worldmap_locate_player();
+    bool worldmap_locate_player();
 
     /**
      * Returns the worldmap position of a map
@@ -411,6 +395,14 @@ enum worldmap_info_category{
     */
     void worldmap_ui_fly_new(void (*continuation)());
 
+    void pokemon_party_menu_initialize_after_fly();
+
+    /**
+     * Updates the namespace display based on the cursor's position
+     * @param print_if_namespace_not_changed whether to print the namespace even if it hasn't changed
+     */
+    void worldmap_ui_update_namespace_by_cursor_position(bool print_if_namespace_not_changed);
+
     typedef struct {
         u8 x, y, idx, layer, namespace;
     } worldmap_cursor_t;
@@ -422,6 +414,7 @@ enum worldmap_info_category{
         u8 height;
         u8 worldmap_idx;
         u8 layer;
+        u16 filler;
     } worldmap_position_t;
 
     // Locates maps exactly on the worldmap
@@ -436,6 +429,7 @@ enum worldmap_info_category{
         u8 initialization_state;
         u8 mode;
         u8 switch_maps_allowed: 1;
+        u8 player_located : 1;
 
         void *bg0_map;
         void *bg1_map;

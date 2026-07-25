@@ -17,7 +17,6 @@ extern const LZ77COMPRESSED gfx_worldmap_ui_std_frameTiles;
 extern const LZ77COMPRESSED gfx_worldmap_ui_std_frameMap;
 extern const color_t gfx_worldmap_ui_std_framePal[16];
 
-static void worldmap_ui_std_update_namespace_by_cursor_position(bool print_if_namespace_not_changed);
 
 static const tboxdata worldmap_ui_habitat_tboxes[NUM_WORLDMAP_UI_STD_TBOXES + 1] = {
     [WORLDMAP_UI_TBOX_IDX_NAMESPACE] = {.bg_id = 2, .x = 3, .y = 2, .w = 18, .h = 2, .pal = 15, .start_tile = 2 + TBOX_FRAME_SET_STYLE_NUM_TILES},
@@ -28,7 +27,7 @@ static const tboxdata worldmap_ui_habitat_tboxes[NUM_WORLDMAP_UI_STD_TBOXES + 1]
 };
 
 static void worldmap_ui_std_cursor_moved(__attribute__ ((unused)) u8 self) {
-    worldmap_ui_std_update_namespace_by_cursor_position(false);
+    worldmap_ui_update_namespace_by_cursor_position(false);
 }
 
 static void worldmap_ui_std_cursor_starts_moving(u8 self) {
@@ -40,7 +39,7 @@ static const bg_config worldmap_ui_bg_configs[] = {
         .bg_id = 0, .char_base = 0, .map_base = 28, .priority = 0, .size = 0,
     },
     [1] = { // Frame layer
-        .bg_id = 1, .char_base = 2, .map_base = 29, .priority = 1, .size = 0,
+        .bg_id = 1, .char_base = 3, .map_base = 29, .priority = 1, .size = 0,
     },
     [2] = { // Text layer for namespace label and habitat over
         .bg_id = 2, .char_base = 0, .map_base = 30, .priority = 2, .size = 0,
@@ -52,7 +51,6 @@ static const bg_config worldmap_ui_bg_configs[] = {
 };
 
 static const tbox_font_colormap font_colormap_transparent = {.background = 0, .body = 2, .edge = 0};
-static const tbox_font_colormap font_colormap_non_transparent = {.background = 1, .body = 2, .edge = 0};
 static const tbox_font_colormap font_colormap_transparent_footer = {.background = 0, .body = 1, .edge = 0};
 
 
@@ -73,24 +71,6 @@ static const u8 str_header[] = LANGDEP(
     PSTRING("Eine Karte von BUFFER_1"),
     PSTRING("A map of BUFFER_1")
 );
-
-static void worldmap_ui_std_update_namespace_by_cursor_position(bool print_if_namespace_not_changed) {
-    const u8 *str = NULL;
-    u8 namespace_idx = worldmap_get_namespace_by_pos(worldmap_ui_state->cursor.idx, worldmap_ui_state->cursor.layer,
-        worldmap_ui_state->cursor.x, worldmap_ui_state->cursor.y);
-    if ((namespace_idx != worldmap_ui_state->current_namespace || print_if_namespace_not_changed) 
-            && namespace_idx != MAP_NAMESPACE_NONE) {
-        worldmap_ui_state->current_namespace = namespace_idx;
-        str = map_namespaces[MAP_NAMESPACE_TO_IDX(namespace_idx)];
-    }
-    if (str) {
-        tbox_flush_set(WORLDMAP_UI_TBOX_IDX_NAMESPACE, 0x11);
-        tbox_print_string(WORLDMAP_UI_TBOX_IDX_NAMESPACE, 2, 4, 0, 0, 0, &font_colormap_non_transparent, 0, str);
-    } else {
-        tbox_flush_set(WORLDMAP_UI_TBOX_IDX_NAMESPACE, 0x00);
-        tbox_sync(WORLDMAP_UI_TBOX_IDX_NAMESPACE, TBOX_SYNC_SET);
-    }
-}
 
 static void worldmap_ui_std_free() {
     tbox_free_all();
@@ -211,14 +191,14 @@ void worldmap_ui_callback_initialize_std() {
             tbox_print_string(WORLDMAP_UI_STD_TBOX_FOOTER, 2, 148 - 76, 1, 0, 0, &font_colormap_transparent_footer, 0, str_footer_back);
             u8 namespace_idx = worldmap_get_namespace_by_pos(worldmap_ui_state->cursor.idx, worldmap_ui_state->cursor.layer,
                 worldmap_ui_state->cursor.x, worldmap_ui_state->cursor.y);
-            worldmap_ui_std_update_namespace_by_cursor_position(true);
+            worldmap_ui_update_namespace_by_cursor_position(true);
             worldmap_ui_state->current_namespace = namespace_idx;
             worldmap_ui_state->initialization_state++;
             break;
         }
         case WORLDMAP_UI_INITIALIZATION_STATE_LOAD_BG_GFX: {
             pal_copy(gfx_worldmap_ui_std_framePal, 80, sizeof(gfx_worldmap_ui_std_framePal));
-            lz77uncompvram(gfx_worldmap_ui_std_frameTiles, CHARBASE(2));
+            lz77uncompvram(gfx_worldmap_ui_std_frameTiles, CHARBASE(worldmap_ui_bg_configs[1].char_base));
             lz77uncompwram(gfx_worldmap_ui_std_frameMap, worldmap_ui_state->bg1_map);
             worldmap_ui_state->initialization_state++;
             break;

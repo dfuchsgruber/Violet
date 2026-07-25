@@ -26,37 +26,38 @@
 #include "music.h"
 #include "debug.h"
 #include "menu_indicators.h"
+#include "map/namespace.h"
 
 const u8 *const worldmap_tilesets[NUM_WORLDMAPS][NUM_WORLDMAP_LAYERS] = {
     [WORLDMAP_THETO] = {
         [WORLDMAP_LAYER_GROUND] = gfx_worldmapTiles,
-        [WORLDMAP_LAYER_CLOUDS] = gfx_worldmapTiles,
+        [WORLDMAP_LAYER_CLOUDS] = gfx_worldmap_cloudsTiles,
     },
     [WORLDMAP_ISLANDS] = {
         [WORLDMAP_LAYER_GROUND] = gfx_worldmapTiles,
-        [WORLDMAP_LAYER_CLOUDS] = gfx_worldmapTiles,
+        [WORLDMAP_LAYER_CLOUDS] = gfx_worldmap_cloudsTiles,
     },
 };
 
 const u8 *const worldmap_tilemaps2[NUM_WORLDMAPS][NUM_WORLDMAP_LAYERS] = {
     [WORLDMAP_THETO] = {
         [WORLDMAP_LAYER_GROUND] = gfx_worldmapMap,
-        [WORLDMAP_LAYER_CLOUDS] = gfx_worldmapMap,
+        [WORLDMAP_LAYER_CLOUDS] = gfx_worldmap_cloudsMap,
     },
     [WORLDMAP_ISLANDS] = {
         [WORLDMAP_LAYER_GROUND] = gfx_worldmapMap,
-        [WORLDMAP_LAYER_CLOUDS] = gfx_worldmapMap,
+        [WORLDMAP_LAYER_CLOUDS] = gfx_worldmap_cloudsMap,
     },
 };
 
 const color_t *const worldmap_pals[NUM_WORLDMAPS][NUM_WORLDMAP_LAYERS] = {
     [WORLDMAP_THETO] = {
         [WORLDMAP_LAYER_GROUND] = gfx_worldmapPal,
-        [WORLDMAP_LAYER_CLOUDS] = gfx_worldmapPal,
+        [WORLDMAP_LAYER_CLOUDS] = gfx_worldmap_cloudsPal,
     },
     [WORLDMAP_ISLANDS] = {
         [WORLDMAP_LAYER_GROUND] = gfx_worldmapPal,
-        [WORLDMAP_LAYER_CLOUDS] = gfx_worldmapPal,
+        [WORLDMAP_LAYER_CLOUDS] = gfx_worldmap_cloudsPal,
     },
 };
 
@@ -254,8 +255,12 @@ static const oam_template oam_template_switch_map_icon = {
 
 const u16 worldmap_flags[NUM_WORLDMAPS][NUM_WORLDMAP_LAYERS] = {
     [WORLDMAP_THETO] = {
+        [WORLDMAP_LAYER_GROUND] = 0,
+        [WORLDMAP_LAYER_CLOUDS] = ROUTE_5_CLOUD_RECEIVED,
     },
     [WORLDMAP_ISLANDS] = {
+        [WORLDMAP_LAYER_GROUND] = WORLDMAP_ISLANDS_UNLOCKED,
+        [WORLDMAP_LAYER_CLOUDS] = WORLDMAP_FLAG_EMPTY_SLOT // Maaaaaybe we want to have clouds on the islands worldmap, but for now we don't
     },
 };
 
@@ -277,6 +282,42 @@ bool worldmap_cursor_move(s8 direction_worldmap_idx, s8 direction_layer, worldma
         } else {
             return false;
         }
+    }
+}
+
+
+static const u8 str_namespace_switch_maps[] = LANGDEP(
+    PSTRING("Karte wechseln"),
+    PSTRING("Switch maps")
+);
+
+void worldmap_ui_update_namespace_by_cursor_position(bool print_if_namespace_not_changed) {
+    const u8 *str = NULL;
+    bool flush_to_empty = false;
+    if (worldmap_ui_state->cursor.x == worldmap_ui_state->icon_switch_maps_x &&
+        worldmap_ui_state->cursor.y == worldmap_ui_state->icon_switch_maps_y) {
+        str = str_namespace_switch_maps;
+    } else {
+        u8 namespace_idx = worldmap_get_namespace_by_pos(worldmap_ui_state->cursor.idx, worldmap_ui_state->cursor.layer,
+            worldmap_ui_state->cursor.x, worldmap_ui_state->cursor.y);
+        DEBUG("namespace_idx: %d\n", namespace_idx);
+        if (namespace_idx != worldmap_ui_state->current_namespace || print_if_namespace_not_changed) {
+            if (namespace_idx == MAP_NAMESPACE_NONE) {
+                flush_to_empty = true;
+            } else {
+                str = map_namespaces[MAP_NAMESPACE_TO_IDX(namespace_idx)];
+            }
+        }
+        worldmap_ui_state->current_namespace = namespace_idx;
+    }
+    DEBUG("str: 0x%x\n", str);
+    if (str) {
+        tbox_flush_set(WORLDMAP_UI_TBOX_IDX_NAMESPACE, 0x11);
+        tbox_print_string(WORLDMAP_UI_TBOX_IDX_NAMESPACE, 2, 4, 0, 0, 0, 
+            &((const tbox_font_colormap){.background = 1, .body = 2, .edge = 0}), 0, str);
+    } else if (flush_to_empty) {
+        tbox_flush_set(WORLDMAP_UI_TBOX_IDX_NAMESPACE, 0x00);
+        tbox_sync(WORLDMAP_UI_TBOX_IDX_NAMESPACE, TBOX_SYNC_SET);
     }
 }
 
@@ -304,8 +345,12 @@ bool worldmap_ui_callback_initialize_base() {
         return false;
     switch (worldmap_ui_state->initialization_state) {
         case WORLDMAP_UI_INITIALIZATION_STATE_DATA_SETUP: {
-            worldmap_locate_player();
-            worldmap_set_cursor_to_player();
+            if (worldmap_locate_player()) {
+                worldmap_set_cursor_to_player();
+                worldmap_ui_state->player_located = true;
+            } else {
+                worldmap_ui_state->player_located = false;
+            }
             return true;
         }
         case WORLDMAP_UI_INITIALIZATION_STATE_RESET: {
@@ -399,7 +444,8 @@ void worldmap_set_cursor_to_player() {
 }
 
 void worldmap_ui_update_player_head_oam() {
-    if (worldmap_ui_state->cursor.idx != worldmap_ui_state->player.idx ||
+    if (!worldmap_ui_state->player_located ||
+        worldmap_ui_state->cursor.idx != worldmap_ui_state->player.idx ||
         worldmap_ui_state->cursor.layer != worldmap_ui_state->player.layer) {
         oams[worldmap_ui_state->oam_idx_player].flags |= OAM_FLAG_INVISIBLE;
     } else {
@@ -465,7 +511,7 @@ void worldmap_ui_update_worldmap_gfx(u8 worldmap_idx, u8 layer, u8 x_offset, u8 
         cpuset(src + WORLDMAP_TOTAL_WIDTH * row, dst + 32 * (row + y_offset) + x_offset, 
             WORLDMAP_TOTAL_WIDTH * sizeof(bg_tile));
     }
-    pal_copy(worldmap_pals[worldmap_idx][layer], 0x0, 80);
+    pal_copy(worldmap_pals[worldmap_idx][layer], 0x0, 80 * sizeof(color_t)); // 5 palettes of 16 colors each
 }
 
 static void oam_callback_cursor_moving(oam_object *self) {

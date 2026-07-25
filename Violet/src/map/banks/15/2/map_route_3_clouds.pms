@@ -201,15 +201,7 @@
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_EAST",
-					"displacement": "-6",
-					"bank": "7",
-					"map_idx": 0,
-					"field_A": 0,
-					"field_B": 0
-				},
-				{
-					"direction": "MAP_CONNECTION_SOUTH",
-					"displacement": "-4",
+					"displacement": "43",
 					"bank": "11",
 					"map_idx": "3",
 					"field_A": 0,
@@ -220,6 +212,14 @@
 					"displacement": 0,
 					"bank": "15",
 					"map_idx": 0,
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_WEST",
+					"displacement": "-4",
+					"bank": "17",
+					"map_idx": "2",
 					"field_A": 0,
 					"field_B": 0
 				}

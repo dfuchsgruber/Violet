@@ -10,16 +10,7 @@ on_step:
 
 bl egg_warm_update
 @bl update_a_vector
-
-ldr r0, =WONDERTRADE_STEPS_TO_ENABLE
-bl var_access
-ldrh r1, [r0]
-cmp r1, #250
-bge skip_inc
-add r1, #1
-strh r1, [r0]
-skip_inc:
-
+bl wondertrade_increment_steps
 bl do_fata_morgana
 
 bl player_step_force_on_cloud

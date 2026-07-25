@@ -27,7 +27,6 @@ extern const color_t gfx_worldmap_ui_info_framePal[16];
 extern const u8 gfx_worldmap_ui_info_headerTiles[GRAPHIC_SIZE_4BPP(64, 16)];
 extern const color_t gfx_worldmap_ui_info_headerPal[16];
 
-static void worldmap_ui_info_update_namespace_by_cursor_position(bool print_if_namespace_not_changed);
 static void worldmap_ui_info_update_info();
 static void worldmap_ui_handle_inputs_info(u8 self);
 static void worldmap_ui_search_dialoge_handle_inputs_category(u8 self);
@@ -157,7 +156,7 @@ static void list_menu_print_tutor_crystal_callback(u8 tbox_idx, int idx, u8 y) {
 }
 
 static void worldmap_ui_info_cursor_moved(UNUSED u8 self) {
-    worldmap_ui_info_update_namespace_by_cursor_position(false);
+    worldmap_ui_update_namespace_by_cursor_position(false);
     worldmap_ui_info_update_info();
 }
 
@@ -168,7 +167,7 @@ static const bg_config worldmap_ui_bg_configs[] = {
         .bg_id = 0, .char_base = 0, .map_base = 28, .priority = 0, .size = 0,
     },
     [1] = { // Frame layer
-        .bg_id = 1, .char_base = 2, .map_base = 29, .priority = 1, .size = 0,
+        .bg_id = 1, .char_base = 3, .map_base = 29, .priority = 1, .size = 0,
     },
     [2] = { // Text layer for namespace label and info over
         .bg_id = 2, .char_base = 0, .map_base = 30, .priority = 2, .size = 0,
@@ -180,7 +179,6 @@ static const bg_config worldmap_ui_bg_configs[] = {
 };
 
 static const tbox_font_colormap font_colormap_transparent = {.background = 0, .body = 2, .edge = 0};
-static const tbox_font_colormap font_colormap_non_transparent = {.background = 1, .body = 2, .edge = 0};
 static const tbox_font_colormap font_colormap_info = {.background = 0, .body = 14, .edge = 10};
 static const tbox_font_colormap font_colormap_info_header = {.background = 0, .body = 1, .edge = 2};
 static const tbox_font_colormap font_colormap_info_category = {.background = 0, .body = 10, .edge = 9};
@@ -193,11 +191,6 @@ static const u8 str_footer[] = LANGDEP(
 static const u8 str_header[] = LANGDEP(
     PSTRING("Karte"),
     PSTRING("Town Map")
-);
-
-static const u8 str_namespace_switch_maps[] = LANGDEP(
-    PSTRING("Karte wechseln"),
-    PSTRING("Switch maps")
 );
 
 static const u8 str_info_header[] = LANGDEP(
@@ -426,30 +419,6 @@ static void worldmap_ui_info_update_info() {
     tbox_sync(WORLDMAP_UI_INFO_TBOX_INFO, TBOX_SYNC_SET);
 }
 
-
-static void worldmap_ui_info_update_namespace_by_cursor_position(bool print_if_namespace_not_changed) {
-    const u8 *str = NULL;
-    if (worldmap_ui_state->cursor.x == worldmap_ui_state->icon_switch_maps_x &&
-        worldmap_ui_state->cursor.y == worldmap_ui_state->icon_switch_maps_y) {
-        str = str_namespace_switch_maps;
-    } else {
-        u8 namespace_idx = worldmap_get_namespace_by_pos(worldmap_ui_state->cursor.idx, worldmap_ui_state->cursor.layer,
-            worldmap_ui_state->cursor.x, worldmap_ui_state->cursor.y);
-        if ((namespace_idx != worldmap_ui_state->current_namespace || print_if_namespace_not_changed) 
-                && namespace_idx != MAP_NAMESPACE_NONE) {
-            worldmap_ui_state->current_namespace = namespace_idx;
-            str = map_namespaces[MAP_NAMESPACE_TO_IDX(namespace_idx)];
-        }
-    }
-    if (str) {
-        tbox_flush_set(WORLDMAP_UI_TBOX_IDX_NAMESPACE, 0x11);
-        tbox_print_string(WORLDMAP_UI_TBOX_IDX_NAMESPACE, 2, 4, 0, 0, 0, &font_colormap_non_transparent, 0, str);
-    } else {
-        tbox_flush_set(WORLDMAP_UI_TBOX_IDX_NAMESPACE, 0x00);
-        tbox_sync(WORLDMAP_UI_TBOX_IDX_NAMESPACE, TBOX_SYNC_SET);
-    }
-}
-
 static void worldmap_ui_info_free() {
     tbox_free_all();
     free(worldmap_ui_state->bg0_map);
@@ -468,7 +437,7 @@ static void worldmap_ui_exit(u8 self) {
 }
 
 static void wordlmap_ui_update_on_current() {
-    worldmap_ui_info_update_namespace_by_cursor_position(true);
+    worldmap_ui_update_namespace_by_cursor_position(true);
     worldmap_ui_info_update_info(); 
     worldmap_ui_update_player_head_oam();
     worldmap_ui_update_cursor_oam();
@@ -797,6 +766,7 @@ static void worldmap_ui_handle_inputs_info(u8 self) {
     } else if (super.keys_new.keys.B) {
         play_sound(5);
         fadescreen(0xFFFFFFFF, 0, 0, 16, 0);
+        worldmap_ui_state->continuation = pokemon_party_menu_initialize_after_fly;
         big_callbacks[self].function = worldmap_ui_exit;
     } else if (super.keys_new.keys.A) {
         int idx = worldmap_ui_get_flight_position_of_cursor(&worldmap_ui_state->cursor);
@@ -905,7 +875,7 @@ void worldmap_ui_callback_initialize_info() {
             tbox_sync(WORLDMAP_UI_INFO_TBOX_INFO, TBOX_SYNC_SET);
             u8 namespace_idx = worldmap_get_namespace_by_pos(worldmap_ui_state->cursor.idx, worldmap_ui_state->cursor.layer,
                 worldmap_ui_state->cursor.x, worldmap_ui_state->cursor.y);
-            worldmap_ui_info_update_namespace_by_cursor_position(true);
+            worldmap_ui_update_namespace_by_cursor_position(true);
             worldmap_ui_info_update_info();
             worldmap_ui_state->current_namespace = namespace_idx;
             worldmap_ui_state->initialization_state++;
@@ -915,7 +885,7 @@ void worldmap_ui_callback_initialize_info() {
             pal_copy(gfx_worldmap_ui_info_framePal, 80, sizeof(gfx_worldmap_ui_info_framePal));
             pal_copy(typechart_icon_pal, 11 * 16, sizeof(typechart_icon_pal));
             pal_copy(gfx_worldmap_ui_info_headerPal, 12 * 16, sizeof(gfx_worldmap_ui_info_headerPal));
-            lz77uncompvram(gfx_worldmap_ui_info_frameTiles, CHARBASE(2));
+            lz77uncompvram(gfx_worldmap_ui_info_frameTiles, CHARBASE(worldmap_ui_bg_configs[1].char_base));
             lz77uncompwram(gfx_worldmap_ui_info_frameMap, worldmap_ui_state->bg1_map);
             worldmap_ui_state->initialization_state++;
             break;

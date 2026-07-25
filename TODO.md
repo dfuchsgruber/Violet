@@ -5,6 +5,9 @@
 - []: Pyramid Cloud Map above desert
 - []: Cave for Tafelberg Cloud Map (minecarts?), Altbernstein
 - []: Rework movesets for builds for frontier, diversify items!! (many of the ones available are not utilized in the current builds, try to get at least 4 builds per Mon)
-
+- [] Route 9 (northmost) is waaaaay to streched; add an island with content here, also adapt the worldmap pattern (src/worldmap/worldmap_position.c), potentially an archipeligo of small islands to the east of a 2x1 route 9 horizontal stretch?
+- [] Some areal where nurse joy is trained; there you obtain wonneira egg
+- [] sky island with sunfel and lunatone -- do they need megas?
+- [] done one final run with full pokedex to see if habitats should be extended: maybe you think certain species should appear somewhere - diversify biomes and habitats
 Release:
 - []: Disable DEBUG messages 
