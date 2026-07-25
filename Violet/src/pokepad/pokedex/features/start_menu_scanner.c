@@ -60,7 +60,7 @@ static void start_menu_redraw_scanner() {
             u16 y = (u16)(((i - start_menu_scanner_tbox_cursor) / START_MENU_SCANNER_MAX_NUM_ICONS_PER_LINE) * 16 + 6);
             tbox_blit(start_menu_scanner_tbox_idx, pokemon_icons_greyscale[species], 0, 8, 32, 24,
                 x, y, 32, 32);
-            if (start_menu_scanner_list->list[i].is_caught || true) {
+            if (start_menu_scanner_list->list[i].is_caught) {
                 tbox_blit(start_menu_scanner_tbox_idx, gfx_start_menu_scanner_pokeballTiles, 0, 0, 16, 16, 
                 (u16)(x + 16), (u16)(y + 14), 16, 16);
             }

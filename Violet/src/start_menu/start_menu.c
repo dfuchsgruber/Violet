@@ -178,7 +178,7 @@ void start_menu_build_std() {
     start_menu_add_item(START_MENU_SAVE);
     start_menu_add_item(START_MENU_ACHIEVEMENTS);
     start_menu_add_item(START_MENU_OPTION);
-    start_menu_add_item(START_MENU_EXIT);
+    // start_menu_add_item(START_MENU_EXIT);
 }
 
 bool start_menu_handle_input() {

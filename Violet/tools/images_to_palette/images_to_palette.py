@@ -7,9 +7,8 @@ from pathlib import Path
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Puts images into a one palette')
     parser.add_argument('target_palette_image', help='The image that has the palette other images should be put into.')
-    parser.add_argument('-i', help='Input images', nargs='+', dest='input_images')
-    parser.add_argument('-o', help='The output assembly to create.', dest='output_path')
-    parser.add_argument('-s', help='The suffix to append to the image file name to create a symbol', dest='suffix')
+    parser.add_argument('-i', help='Input image', dest='input_image')
+    parser.add_argument('-o', help='The output png to create.', dest='output_path')
     parser.add_argument('-c', help='How many colors of the target palette to use', dest='num_target_colors', type=int, default=None)
     args = parser.parse_args()
     
@@ -17,19 +16,10 @@ if __name__ == '__main__':
     if args.num_target_colors is not None:
         target_palette = target_palette[:args.num_target_colors]
     
-    assembly = []
-    for path in args.input_images:
-        path = Path(path)
-        image, palette = agb.image.from_file(path)
-        image.apply_palette(palette, target_palette)
-        assembly.append('.align 4')
-        symbol = path.stem + args.suffix
-        assembly.append(f'.global {symbol}')
-        assembly.append(f'@ from "{path}" to palette of "{args.target_palette_image}"')
-        assembly.append(f'{symbol}:')
-        assembly.append('\t.byte ' + ', '.join(map(str, list(image.to_binary()))))
-        assembly.append('')
-    
-    with open(args.output_path, 'w+') as f:
-        f.write('\n'.join(assembly))
-    
+    path = Path(args.input_image)
+    image, palette = agb.image.from_file(path)
+    image.apply_palette(palette, target_palette)
+    image.save(
+        args.output_path,
+        target_palette.to_pil_palette()
+    )
