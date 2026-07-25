@@ -22,7 +22,7 @@
 					"is_trainer": "1",
 					"alert_radius": "4",
 					"script": 0,
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"flag": "(16 | 0x8000)",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_WEBARAK",
@@ -51,7 +51,7 @@
 					"is_trainer": "1",
 					"alert_radius": "4",
 					"script": 0,
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_1",
+					"flag": "(15 | 0x8000)",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_WEBARAK",
@@ -80,7 +80,7 @@
 					"is_trainer": "1",
 					"alert_radius": "4",
 					"script": 0,
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_2",
+					"flag": "(14 | 0x8000)",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_WEBARAK",

@@ -132,21 +132,21 @@
 					}
 				},
 				{
-					"target_index": "5",
-					"picture": 110,
+					"target_index": "0",
+					"picture": "49",
 					"field_2": 0,
-					"x": "62",
-					"y": "58",
+					"x": "0",
+					"y": "13",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_RIGHT",
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "0",
-					"flag": "0",
+					"script": "ow_script_map_route_4_violet_grunts",
+					"flag": "ROUTE_5_VIOLET_GRUNTS",
 					"field_D": 0,
 					"field_B": 0,
 					"value": {
@@ -908,10 +908,10 @@
 				},
 				{
 					"target_index": "30",
-					"picture": "238",
+					"picture": "50",
 					"field_2": 0,
-					"x": "59",
-					"y": "52",
+					"x": "2",
+					"y": "15",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -920,8 +920,8 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "0",
-					"flag": "0",
+					"script": "ow_script_map_route_4_violet_grunts",
+					"flag": "ROUTE_5_VIOLET_GRUNTS",
 					"field_D": 0,
 					"field_B": 0,
 					"value": {
@@ -933,7 +933,7 @@
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
-						"script_std": "PERSON_POKEMON",
+						"script_std": "0",
 						"in_connection": "0"
 					}
 				},
@@ -1767,31 +1767,31 @@
 					}
 				},
 				{
-					"target_index": "58",
-					"picture": "238",
-					"x": "27",
-					"y": "62",
+					"target_index": "0",
+					"picture": "50",
+					"x": "1",
+					"y": "14",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
 					},
 					"field_B": 0,
-					"is_trainer": "1",
-					"alert_radius": "4",
-					"script": 0,
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"is_trainer": "0",
+					"alert_radius": "0",
+					"script": "ow_script_map_route_4_violet_grunts",
+					"flag": "ROUTE_5_VIOLET_GRUNTS",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_KNOFENSA",
+						"species": "0",
 						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
-					"argument": "15",
+					"argument": "0",
 					"script_std_and_in_connection": {
-						"script_std": "PERSON_AGGRESSIVE_POKEMON",
+						"script_std": "0",
 						"in_connection": "0"
 					}
 				},
@@ -1883,12 +1883,12 @@
 					}
 				},
 				{
-					"target_index": "62",
-					"picture": "236",
-					"x": "18",
-					"y": "29",
+					"target_index": "0",
+					"picture": "49",
+					"x": "1",
+					"y": "12",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT_AND_RIGHT",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -1896,28 +1896,28 @@
 					"field_B": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": 0,
-					"flag": 0,
+					"script": "ow_script_map_route_4_violet_grunts",
+					"flag": "ROUTE_5_VIOLET_GRUNTS",
 					"value": {
 						"item": 0,
 						"species": 0,
-						"scalar": "12",
+						"scalar": "0",
 						"type": 0,
 						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
-						"script_std": "PERSON_TRASH_CAN",
+						"script_std": "0",
 						"in_connection": "0"
 					}
 				},
 				{
-					"target_index": "63",
-					"picture": "183",
-					"x": "47",
-					"y": "6",
+					"target_index": "0",
+					"picture": "50",
+					"x": "0",
+					"y": "11",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -1925,28 +1925,28 @@
 					"field_B": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": 0,
-					"flag": "FLAG_DUNGEON_BASE + 5",
+					"script": "ow_script_map_route_4_violet_grunts",
+					"flag": "ROUTE_5_VIOLET_GRUNTS",
 					"value": {
 						"item": 0,
 						"species": 0,
-						"scalar": "5",
+						"scalar": "0",
 						"type": 0,
 						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
-						"script_std": "PERSON_SECRET_POWER_VINE",
+						"script_std": "0",
 						"in_connection": "0"
 					}
 				},
 				{
-					"target_index": "64",
-					"picture": "183",
-					"x": "46",
-					"y": "6",
+					"target_index": "0",
+					"picture": "49",
+					"x": "0",
+					"y": "12",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -1954,18 +1954,18 @@
 					"field_B": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": 0,
-					"flag": "FLAG_DUNGEON_BASE + 5",
+					"script": "ow_script_map_route_4_violet_grunts",
+					"flag": "ROUTE_5_VIOLET_GRUNTS",
 					"value": {
 						"item": 0,
 						"species": 0,
-						"scalar": "5",
+						"scalar": "0",
 						"type": 0,
 						"move_tutor": 0
 					},
 					"argument": 0,
 					"script_std_and_in_connection": {
-						"script_std": "PERSON_SECRET_POWER_VINE",
+						"script_std": "0",
 						"in_connection": "0"
 					}
 				}

@@ -709,5 +709,6 @@
 		"field_1A": 0
 	},
 	"label": "map_footer_route_5_cave_4f",
-	"type": "footer"
+	"type": "footer",
+	"smart_shapes": {}
 }

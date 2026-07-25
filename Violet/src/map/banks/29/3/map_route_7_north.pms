@@ -382,7 +382,7 @@
 					"is_trainer": "1",
 					"alert_radius": "3",
 					"script": 0,
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"flag": "FLAG_ROUTE_7_GROWLITHE",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_FUKANO",
@@ -399,10 +399,10 @@
 				{
 					"target_index": "14",
 					"picture": "238",
-					"x": "35",
-					"y": "29",
+					"x": "11",
+					"y": "21",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_RIGHT_LEFT_DOWN_UP",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "3",
 						"y": "3"
@@ -411,17 +411,17 @@
 					"is_trainer": "1",
 					"alert_radius": "4",
 					"script": 0,
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_75_PERCENT",
+					"flag": "0",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_NIDORINO",
+						"species": "POKEMON_SCHNECKMAG",
 						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
 					"argument": "37",
 					"script_std_and_in_connection": {
-						"script_std": "PERSON_AGGRESSIVE_POKEMON",
+						"script_std": "PERSON_POKEMON",
 						"in_connection": "0"
 					}
 				},

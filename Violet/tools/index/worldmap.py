@@ -33,7 +33,7 @@ if __name__ == '__main__':
                 errors.append(f'No worldmap association for bank of map {bank}.{map_idx}:{label}')
             else:
                 shape = project.model['worldmap_position_bank'].from_data(rom, offset, project, [], [])[int(map_idx)]
-                if shape['width'] == 0 and shape['height'] == 0:
+                if shape['width'] == 0 and shape['height'] == 0 and shape['filler'] != 0xFFFF:
                     errors.append(f'No worldmap shape specified for map {bank}.{map_idx}:{label}, ({shape})')
     if len(errors):
         warn('\n'.join(errors))

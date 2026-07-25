@@ -265,7 +265,7 @@
 					"is_trainer": "1",
 					"alert_radius": "4",
 					"script": "0",
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_50_PERCENT",
+					"flag": "FLAG_ROUTE_2_CLOUDS_SHNEBDECK",
 					"value": {
 						"item": "0",
 						"species": "POKEMON_SHNEBEDECK",

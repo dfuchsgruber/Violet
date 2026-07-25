@@ -109,7 +109,7 @@
 					"is_trainer": "1",
 					"alert_radius": "3",
 					"script": 0,
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"flag": "FLAG_TAFELBERG_GRAVELER",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_GEOROK",

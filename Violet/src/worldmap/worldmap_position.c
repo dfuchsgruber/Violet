@@ -11,7 +11,7 @@ typedef worldmap_position_t worldmap_position_bank[256];
 typedef worldmap_position_t worldmap_position_bank[];
 #endif
 
-
+#define WORLDMAP_POSITION_NO_POSITION {.width = 0, .height = 0, .filler = 0xFFFF}
 #define WORLDMAP_POSITION_ANEMONIA {.x = 20, .y = 12, .width = 1, .height = 1, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_GROUND,}
 #define WORLDMAP_POSITION_ANEMONIA_CLOUDS {.x = 20, .y = 12, .width = 1, .height = 1, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_CLOUDS,}
 #define WORLDMAP_POSITION_TRAINER_SCHOOL {.x = 19, .y = 11, .width = 1, .height = 1, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_GROUND,}
@@ -21,6 +21,7 @@ typedef worldmap_position_t worldmap_position_bank[];
 #define WORLDMAP_POSITION_SONNAUFELD_CLOUDS {.x = 16, .y = 9, .width = 1, .height = 1, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_CLOUDS,}
 #define WORLDMAP_POSITION_KRANZWALD {.x = 13, .y = 4, .width = 1, .height = 1, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_GROUND,}
 #define WORLDMAP_POSITION_KRANZDORF {.x = 13, .y = 5, .width = 1, .height = 1, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_GROUND,}
+#define WORLDMAP_POSITION_KRANZDORF_CLOUDS {.x = 13, .y = 5, .width = 1, .height = 1, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_CLOUDS,}
 #define WORLDMAP_POSITION_BASIS_TROCKENTAG {.x = 16, .y = 5, .width = 1, .height = 1, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_GROUND,}
 #define WORLDMAP_POSITION_TAFELBERG_WEST {.x = 19, .y = 5, .width = 1, .height = 1, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_GROUND,}
 #define WORLDMAP_POSITION_TAFELBERG_WEST_CLOUDS {.x = 19, .y = 5, .width = 1, .height = 1, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_CLOUDS,}
@@ -170,7 +171,7 @@ static const worldmap_position_bank worldmap_position_bank_7_kranzdorf = {
     [5] = WORLDMAP_POSITION_KRANZDORF,
     [8] = WORLDMAP_POSITION_KRANZDORF,
     [10] = WORLDMAP_POSITION_KRANZDORF,
-    // TODO: cloud maps 0
+    [0] = WORLDMAP_POSITION_KRANZDORF_CLOUDS,
 };
 
 static const worldmap_position_bank worldmap_position_bank_0_felsige_oednis = {
@@ -424,6 +425,16 @@ static const worldmap_position_bank worldmap_position_bank_33_schattenflut = {
     [8] = WORLDMAP_POSITION_SCHATTENFLUT,
 };
 
+static const worldmap_position_bank worldmap_positions_bank_2 = {
+    [33] = WORLDMAP_POSITION_NO_POSITION
+};
+
+static const worldmap_position_bank worldmap_positions_bank_126 = {
+    [0] = WORLDMAP_POSITION_NO_POSITION,
+    [1] = WORLDMAP_POSITION_NO_POSITION,
+    [2] = WORLDMAP_POSITION_NO_POSITION,
+};
+
 const worldmap_position_t *const worldmap_positions[256] = {
     [3] = worldmap_positions_bank_3,
     [4] = worldmap_positions_bank_4_anemonia,
@@ -460,4 +471,6 @@ const worldmap_position_t *const worldmap_positions[256] = {
     [20] = worldmap_position_bank_20_waldfriedhof,
     [25] = worldmap_position_bank_25_route_11,
     [33] = worldmap_position_bank_33_schattenflut,
+    [2] = worldmap_positions_bank_2,
+    [126] = worldmap_positions_bank_126,
 };

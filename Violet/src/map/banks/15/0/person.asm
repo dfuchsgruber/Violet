@@ -44,6 +44,7 @@
 .global ow_script_map_route_4_trainer_1
 .global ow_script_map_route_4_trainer_2
 .global ow_script_map_route_4_trainer_3
+.global ow_script_map_route_4_violet_grunts
 
 ow_script_map_route_4_person_0:
     loadpointer 0 str_0
@@ -67,6 +68,10 @@ ow_script_map_route_4_trainer_2:
 ow_script_map_route_4_trainer_3:
     trainerbattlestd 0 0x209 0 str_before_3 str_after_3
     loadpointer 0 str_later_3
+    callstd MSG_FACE
+    end
+ow_script_map_route_4_violet_grunts:
+    loadpointer 0 str_violet_grunts
     callstd MSG_FACE
     end
 
@@ -97,6 +102,8 @@ str_after_3:
     .autostring 34 2 "Ich habe verloren, obwohl ich von all diesen schönen Bäumen umgeben bin?"
 str_later_3:
     .autostring 34 2 "Nicht zu glauben, dass ich gegen dich verliere, obwohl der Kranzwald uns förmlich umgibtDOTS"
+str_violet_grunts:
+    .autostring 34 2 "Verzieh dich, wir warten hier auf den Kommandanten unserer Division, damit wir nach Hochpolis City aufbrechen können!\pUnsere Geschäfte gehen dich gar nichts an, Kindchen!"
 .elseif LANG_EN
 .endif
 

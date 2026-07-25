@@ -810,10 +810,10 @@
 				{
 					"target_index": "27",
 					"picture": "238",
-					"x": "6",
-					"y": "14",
+					"x": "2",
+					"y": "12",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_RIGHT_UP_DOWN_LEFT",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "2",
 						"y": "2"
@@ -822,17 +822,17 @@
 					"is_trainer": "1",
 					"alert_radius": "4",
 					"script": 0,
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_5_PERCENT",
+					"flag": "0",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_AZUMARILL",
+						"species": "POKEMON_WAILMER",
 						"scalar": 0,
 						"type": 0,
 						"move_tutor": 0
 					},
 					"argument": "35",
 					"script_std_and_in_connection": {
-						"script_std": "PERSON_AGGRESSIVE_POKEMON",
+						"script_std": "PERSON_POKEMON",
 						"in_connection": "0"
 					}
 				},
@@ -880,7 +880,7 @@
 					"is_trainer": "1",
 					"alert_radius": "6",
 					"script": 0,
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"flag": "FLAG_TAFELBERG_KINGLER",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_KINGLER",
@@ -909,7 +909,7 @@
 					"is_trainer": "1",
 					"alert_radius": "3",
 					"script": 0,
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_1",
+					"flag": "FLAG_TAFELBERG_NATU",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_NATU",

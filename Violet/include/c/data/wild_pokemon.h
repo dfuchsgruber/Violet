@@ -4007,23 +4007,6 @@ const wild_pokemon_data wild_pokemon[] = {
         .grass = &wild_pokemon_route_3_clouds_grass,
     },
     {
-        .bank = 1,
-        .map = 2,
-        .grass = &wild_pokemon_silvania_wald_clouds_grass,
-    },
-    {
-        .bank = 23,
-        .map = 0,
-        .grass = &wild_pokemon_route_8_clouds_grass,
-        .water = &wild_pokemon_route_6_clouds_water,
-        .rod = &wild_pokemon_route_6_clouds_rod,
-    },
-    {
-        .bank = 12,
-        .map = 5,
-        .grass = &wild_pokemon_route_8_clouds_grass,
-    },
-    {
         .bank = 6,
         .map = 6,
         .grass = &wild_pokemon_route_9_clouds_grass,
@@ -4056,7 +4039,7 @@ const wild_pokemon_data wild_pokemon[] = {
     {.bank = 6, .map = 7, .grass = &wild_pokemon_unown_ruins_grass},
     {.bank = 8, .map = 2, .grass = &wild_pokemon_unown_ruins_grass},
     {.bank = 9, .map = 4, .grass = &wild_pokemon_unown_ruins_grass},
-    {.bank = 12, .map = 7, .grass = &wild_pokemon_unown_ruins_grass},
+    // {.bank = 12, .map = 7, .grass = &wild_pokemon_unown_ruins_grass},
     {
         .bank = 3,
         .map = 16,

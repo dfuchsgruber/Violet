@@ -804,7 +804,7 @@
 					"is_trainer": "1",
 					"alert_radius": "3",
 					"script": 0,
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_3",
+					"flag": "FLAG_ROUTE_2_TENTACRUEL",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_TENTOXA",

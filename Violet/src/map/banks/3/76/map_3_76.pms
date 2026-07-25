@@ -175,7 +175,7 @@
 					"is_trainer": "1",
 					"alert_radius": "1",
 					"script": 0,
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"flag": "FLAG_ROUTE_1_CLOUDS_SWABLU",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_WABLU",

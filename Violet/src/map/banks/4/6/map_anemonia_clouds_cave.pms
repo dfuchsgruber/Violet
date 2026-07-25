@@ -114,7 +114,7 @@
 					"is_trainer": "1",
 					"alert_radius": "4",
 					"script": "0",
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_50_PERCENT",
+					"flag": "FLAG_ANEMONIA_CLOUDS_CAVE_SHROOMISH",
 					"value": {
 						"item": "0",
 						"species": "POKEMON_KNILZ",

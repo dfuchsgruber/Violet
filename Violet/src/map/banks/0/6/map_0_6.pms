@@ -958,7 +958,7 @@
 					"is_trainer": "1",
 					"alert_radius": "3",
 					"script": 0,
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_25_PERCENT",
+					"flag": "FLAG_FELSIGE_OEDNIS_CAVE_SABLEYE",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_ZOBIRIS",

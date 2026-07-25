@@ -225,7 +225,7 @@
 					"is_trainer": "1",
 					"alert_radius": "2",
 					"script": 0,
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"flag": "FLAG_POWER_PLANT_MAGNETON",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_MAGNETON",
@@ -254,7 +254,7 @@
 					"is_trainer": "1",
 					"alert_radius": "4",
 					"script": 0,
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_1",
+					"flag": "FLAG_POWER_PLANT_PIKACHU",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_PIKACHU",

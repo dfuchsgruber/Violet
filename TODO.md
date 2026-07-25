@@ -11,3 +11,5 @@
 - [] done one final run with full pokedex to see if habitats should be extended: maybe you think certain species should appear somewhere - diversify biomes and habitats
 Release:
 - []: Disable DEBUG messages 
+- []: Place Unown ruins somewhere
+- []: Fix scanner

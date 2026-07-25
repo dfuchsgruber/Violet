@@ -718,10 +718,10 @@
 					"is_trainer": "1",
 					"alert_radius": "4",
 					"script": "0",
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"flag": "FLAG_ROUTE_5_CLOUDS_CAVE_SLOWBRO",
 					"value": {
 						"item": "0",
-						"species": "POKEMON_KINGLER",
+						"species": "POKEMON_LAHMUS",
 						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
@@ -950,10 +950,10 @@
 					"is_trainer": "1",
 					"alert_radius": "4",
 					"script": "0",
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_1",
+					"flag": "FLAG_ROUTE_4_SOUTH_CAVE_KICKLEE",
 					"value": {
 						"item": "0",
-						"species": "POKEMON_MASCHOCK",
+						"species": "POKEMON_KICKLEE",
 						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0
@@ -979,7 +979,7 @@
 					"is_trainer": "1",
 					"alert_radius": "0",
 					"script": "0",
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_5_PERCENT",
+					"flag": "FLAG_ROUTE_4_SOUTH_CAVE_ABRA",
 					"value": {
 						"item": "0",
 						"species": "POKEMON_ABRA",

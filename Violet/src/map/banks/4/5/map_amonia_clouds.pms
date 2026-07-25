@@ -111,7 +111,7 @@
 					"is_trainer": "1",
 					"alert_radius": "4",
 					"script": "0",
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"flag": "FLAG_ANEMONIA_CLOUDS_LINOONE",
 					"value": {
 						"item": "0",
 						"species": "POKEMON_GERADAKS",
@@ -256,7 +256,7 @@
 					"is_trainer": "1",
 					"alert_radius": "5",
 					"script": "0",
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_1",
+					"flag": "FLAG_ANEMONIA_CLOUDS_JIGGLYPUFF",
 					"value": {
 						"item": "0",
 						"species": "POKEMON_PUMMELUFF",

@@ -200,10 +200,10 @@
 					"is_trainer": "1",
 					"alert_radius": "5",
 					"script": "0",
-					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"flag": "FLAG_BLUETENBACH_CLOUDS_RASAFF",
 					"value": {
 						"item": "0",
-						"species": "POKEMON_MASCHOCK",
+						"species": "POKEMON_RASAFF",
 						"scalar": "0",
 						"type": "0",
 						"move_tutor": 0

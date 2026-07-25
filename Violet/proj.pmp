@@ -72,11 +72,6 @@
 				"map_silvania_wald_flashback",
 				"src/map/banks/1/1/map_silvania_wald_clouds.pms",
 				"MAP_SILVANIA_WALD"
-			],
-			"2": [
-				"map_silvania_wald_clouds",
-				"src/map/banks/1/2/map_silvania_wald_clouds.pms",
-				"MAP_SILVANIA_WALD"
 			]
 		},
 		"3": {
@@ -898,19 +893,9 @@
 				"src/map/banks/12/4/map_12_4_laubdorf_indoor_2.pms",
 				"MAP_LAUBDORF"
 			],
-			"5": [
-				"map_laubdorf_clouds",
-				"src/map/banks/12/5/map_laubdorf_clouds.pms",
-				"MAP_LAUBDORF"
-			],
 			"6": [
 				"map_laubdorf_inside_3",
 				"src/map/banks/12/6/map_laubdorf_inside_3.pms",
-				"MAP_LAUBDORF"
-			],
-			"7": [
-				"map_laubdorf_cloud_ruins",
-				"src/map/banks/12/7/map_laubdorf_cloud_ruins.pms",
 				"MAP_LAUBDORF"
 			],
 			"8": [
@@ -1060,13 +1045,7 @@
 				"MAP_KUESTENBERG"
 			]
 		},
-		"23": {
-			"0": [
-				"map_route_8_clouds",
-				"src/map/banks/23/0/map_route_8_clouds.pms",
-				"MAP_LAUBPFAD"
-			]
-		},
+		"23": {},
 		"24": {
 			"0": [
 				"map_tafelberg_clouds_north",
@@ -1150,11 +1129,6 @@
 			"5": [
 				"map_route_7_legendary_fishermans_house",
 				"src/map/banks/29/5/map_route_7_legendary_fishermans_house.pms",
-				"MAP_ROUTE_8"
-			],
-			"6": [
-				"map_route_7_clouds_castle",
-				"src/map/banks/29/6/map_route_7_clouds_castle.pms",
 				"MAP_ROUTE_8"
 			]
 		},

@@ -15,7 +15,7 @@
 						"in_connection": "0"
 					},
 					"argument": "0",
-					"x": "1",
+					"x": "0",
 					"y": "5",
 					"level": "0",
 					"behaviour": "BEHAVIOUR_FACE_UP_AND_RIGHT",
@@ -142,7 +142,7 @@
 			"connection_cnt": 0,
 			"connections": []
 		},
-		"music": "MUS_CLOUDS_VARIATION_3_SLOW",
+		"music": "MUS_CLOUDS_WALTZ_2",
 		"footer_idx": 418,
 		"namespace": "MAP_KUESTENBERG",
 		"flash_type": "FLASH_NONE",
