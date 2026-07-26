@@ -599,9 +599,9 @@
 						"type": 0,
 						"move_tutor": 0
 					},
-					"argument": "5",
+					"argument": "3",
 					"script_std_and_in_connection": {
-						"script_std": "PERSON_ITEM",
+						"script_std": "PERSON_ITEM_MULTIPLE_COPIES",
 						"in_connection": "0"
 					}
 				},

@@ -683,6 +683,7 @@ void incubator_initialize_ui() {
   tbox_sync_with_virtual_bg_and_init_all(incubator_tboxes);
   tbox_init_frame_set_style(INCUBATOR_TBOX_MESSAGE, 1, 13 * 16);
   tbox_init_frame_std(INCUBATOR_TBOX_MESSAGE, 1 + TBOX_FRAME_SET_STYLE_NUM_TILES, 14 * 16);
+  tbox_init_frame_message(INCUBATOR_TBOX_MESSAGE, 1 + TBOX_FRAME_STD_NUM_TILES, 14 * 16);
   tbox_flush_set(INCUBATOR_TBOX_TITLE, 0);
   tbox_tilemap_draw(INCUBATOR_TBOX_TITLE);
   u8 str_title[] = LANGDEP(PSTRING("Inkubator"), PSTRING("Incubator"));

@@ -31,6 +31,7 @@
 .global ow_script_flavor_text_unown_tablet
 .global ow_script_flavor_text_ancient_flower_0
 .global ow_script_flavor_text_ancient_flower_1
+.global ow_script_flavor_text_kranzwald_stones
 
 ow_script_flavor_text_inside_piano:
     loadpointer 0 str_piano
@@ -152,6 +153,10 @@ ow_script_flavor_text_ancient_flower_1:
     loadpointer 0 str_ancient_flower_1
     callstd MSG_SIGN
     end
+ow_script_flavor_text_kranzwald_stones:
+    loadpointer 0 str_kranzwald_stones
+    callstd MSG_SIGN
+    end
 
 .ifdef LANG_GER
 str_piano:
@@ -214,6 +219,8 @@ str_ancient_flower_0:
     .autostring 34 2 "Eine Blume, die in der Region schon seit Jahrhunderten nicht mehr gesehen wurde.\pSie ist ein Relikt aus längst vergangenen Zeiten."
 str_ancient_flower_1:
     .autostring 34 2 "Welch eine wunderliche Pflanze.\pAuf dem Boden hat man sie schon seit Urzeiten nicht mehr gesehenDOTS"
+str_kranzwald_stones:
+    .autostring 34 2 "Die Steine funkeln und strahlen eine ominöse Aura aus.\pEs ist, als würde die Zeit langsamer vergehen, je länger man sie ansiehtDOTS"
 .elseif LANG_EN 
 str_piano:
     .autostring 34 2 "A piano of a high-quality brand.\pIt seems to have not been tuned in a whileDOTS"
@@ -275,4 +282,6 @@ str_ancient_flower_0:
     .autostring 34 2 "A flower that has not been seen in the region for centuries.\pIt is a relic from long ago."
 str_ancient_flower_1:
     .autostring 34 2 "What a peculiar plant.\pIt has not been seen on the ground for agesDOTS"
+str_kranzwald_stones:
+    .autostring 34 2 "The stones sparkle and radiate an ominous aura.\pIt is as if time slows down the longer you look at themDOTS"
 .endif

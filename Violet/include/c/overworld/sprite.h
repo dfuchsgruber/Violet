@@ -103,6 +103,7 @@ enum {
     OW_PAL_TAG_YELLOW_GEAR,
     OW_PAL_TAG_TREASURE_MAP,
     OW_PAL_TAG_PAINTER,
+    OW_PAL_TAG_LUCKY,
     OW_PAL_TAG_END = 0x3000,
 };
 
@@ -1916,6 +1917,7 @@ extern const color_t gfx_ow_green_gearPal[16];
 extern const color_t gfx_ow_red_gearPal[16];
 extern const color_t gfx_ow_yellow_gearPal[16];
 extern const color_t gfx_ow_treasure_mapPal[16];
+extern const color_t gfx_ow_luckyPal[16];
 
 extern const overworld_sprite overworld_sprite_strength_boulder;
 

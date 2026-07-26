@@ -22,7 +22,7 @@
 					"is_trainer": "1",
 					"alert_radius": "4",
 					"script": 0,
-					"flag": "(16 | 0x8000)",
+					"flag": "16",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_WEBARAK",

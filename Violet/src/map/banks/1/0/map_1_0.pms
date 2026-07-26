@@ -2210,7 +2210,7 @@
 						"item": {
 							"item": "ITEM_HYPERBALL",
 							"flag": 21,
-							"amount": 1,
+							"amount": "3",
 							"chunk": 0
 						},
 						"treasure_map": {

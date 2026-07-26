@@ -49,15 +49,18 @@ levelscripts_silvania_gym:
 	.byte 0
 
 lscr_setmaptile:
-    checkflag FRBADGE_2
-    gotoif NOT_EQUAL gym_not_solved
+    compare VAR_TMP_SILVANIA_GYM_RED_TRIGGER 0
+    gotoif EQUAL dont_remove_red
     call ow_script_silvania_gym_remove_red_trees
+dont_remove_red:
+    compare VAR_TMP_SILVANIA_GYM_PURPLE_TRIGGER 0
+    gotoif EQUAL dont_remove_purple
     call ow_script_silvania_gym_remove_purple_trees
+dont_remove_purple:
+    compare VAR_TMP_SILVANIA_GYM_GOLDEN_TRIGGER 0
+    gotoif EQUAL dont_remove_golden
     call ow_script_silvania_gym_remove_golden_trees
-    setvar VAR_TMP_SILVANIA_GYM_RED_TRIGGER 1
-    setvar VAR_TMP_SILVANIA_GYM_PURPLE_TRIGGER 1
-    setvar VAR_TMP_SILVANIA_GYM_GOLDEN_TRIGGER 1
-gym_not_solved:
+dont_remove_golden:
     end
 
 lscr_referee:

@@ -28994,9 +28994,9 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x0",
+				"behaviour": "MB_FLAVOR_TEXT",
 				"hm_usage": "0x0",
-				"argument": "0x0",
+				"argument": "FLAVOR_TEXT_KRANZWALD_STONES",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -29074,9 +29074,9 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x0",
+				"behaviour": "MB_FLAVOR_TEXT",
 				"hm_usage": "0x0",
-				"argument": "0x0",
+				"argument": "FLAVOR_TEXT_KRANZWALD_STONES",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
@@ -29154,9 +29154,9 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x0",
+				"behaviour": "MB_FLAVOR_TEXT",
 				"hm_usage": "0x0",
-				"argument": "0x0",
+				"argument": "FLAVOR_TEXT_KRANZWALD_STONES",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",

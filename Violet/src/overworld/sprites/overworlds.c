@@ -1589,7 +1589,7 @@ const graphic overworld_sprite_lucky[] = {
 };
 
 const overworld_sprite ow_lucky = {
-	0xffff, 0x1105, 0x11ff, 0x100,
+	0xffff, OW_PAL_TAG_LUCKY, 0x11ff, 0x100,
 	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
 	&ow_final_oam_16_32, &ow_formation_16_32,
 	ow_anim_standard_npc, overworld_sprite_lucky, 

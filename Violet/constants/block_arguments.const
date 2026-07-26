@@ -34,6 +34,7 @@
         "FLAVOR_TEXT_UNOWN_TABLET" : 5,
         "FLAVOR_TEXT_ANCIENT_FLOWER_0" : 6,
         "FLAVOR_TEXT_ANCIENT_FLOWER_1" : 7,
+        "FLAVOR_TEXT_KRANZWALD_STONES" : 8,
 
         "PC_GENERIC" : 0,
         "PC_POKESTOP" : 1,

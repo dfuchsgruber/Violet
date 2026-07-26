@@ -196,6 +196,11 @@ static const palette overworld_palette_painter = {
     .tag = OW_PAL_TAG_PAINTER,
 };
 
+static const palette overworld_palette_lucky = {
+    .pal = gfx_ow_luckyPal,
+    .tag = OW_PAL_TAG_LUCKY,
+};
+
 const palette *overworld_npc_palette_get_by_tag(u16 tag) {
     if (tag >= OW_PAL_TAG_POKEMON_BASE && tag < OW_PAL_TAG_POKEMON_END) {
         return overworld_palette_get_by_species((u16)(tag - OW_PAL_TAG_POKEMON_BASE));
@@ -251,6 +256,8 @@ const palette *overworld_npc_palette_get_by_tag(u16 tag) {
         return &overworld_palette_treasure_map;
     case OW_PAL_TAG_PAINTER:
         return &overworld_palette_painter;
+    case OW_PAL_TAG_LUCKY:
+        return &overworld_palette_lucky;
     }
     u8 idx = overworld_npc_palette_get_idx(tag);
     // OW_DEBUG("Tag 0x%x is at idx %d in pal-table.\n", tag, idx);
