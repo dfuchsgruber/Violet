@@ -56,7 +56,7 @@ void battle_ai_choose_action() {
             DEBUG("Switch.\n");
             battle_state->battler_to_switch_into[active_battler] = switch_into;
             battle_scripting.battler_idx = active_battler;
-            battle_state->ai_switch_target_chosen &= (u8) int_bitmasks[active_battler];
+            battle_state->ai_switch_target_chosen |= (u8) int_bitmasks[active_battler];
             battle_controller_emit_two_values(1, BATTLE_ACTION_SWITCH, 0);
             break;
         }

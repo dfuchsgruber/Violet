@@ -39,7 +39,7 @@ extern const u8 ow_script_whiteout_tann[];
 extern const u8 ow_script_whiteout_desert[];
 
 static const healing_place2_t healing_places[NUM_HEALING_PLACES] = {
-    [HEALINGPLACE_AMONIA] = {.bank = 4, .map = 0, .x = 0x12, .y = 0x6, .target_person = 1},
+    [HEALINGPLACE_AMONIA] = {.bank = 4, .map = 0, .x = 19, .y = 7, .target_person = 1},
     [HEALINGPLACE_MERIANA_CITY] = {.bank = 5, .map = 4, .x = HEALINGPLACE_POKESTOP_X, .y = HEALINGPLACE_POKESTOP_Y, .target_person = 1},
     [HEALINGPLACE_AKTANIA] = {.bank = 6, .map = 5, .x = HEALINGPLACE_POKESTOP_X, .y = HEALINGPLACE_POKESTOP_Y, .target_person = 3},
     [HEALINGPLACE_SILVANIA_CITY] = {.bank = 7, .map = 3, .x = HEALINGPLACE_POKESTOP_X, .y = HEALINGPLACE_POKESTOP_Y, .target_person = 1},

@@ -189,7 +189,7 @@ u8 battle_ai_should_switch_into_pokemon_to_absorb_move(int *score) {
 
 void battle_ai_should_switch_stat_changes(int *score) {
     for (int i = 0; i < 8; i++) {
-        score += battlers[active_battler].stat_changes[i] - 6;
+        *score += battlers[active_battler].stat_changes[i] - 6;
     }
 }
 
@@ -237,12 +237,12 @@ int battle_ai_score_attacks_foes(pokemon *p, u8 foe, u8 foe_partner) {
             int attack = pokemon_get_attribute(p, (u8)(ATTRIBUTE_ATTACK1 + i), 0);
             if (attack != 0 && pokemon_get_attribute(p, (u8)(ATTRIBUTE_PP1 + i), 0) > 0 && attacks[attack].base_power) {
                 if (!(battlers_absent & int_bitmasks[foe])) {
-                    battle_ai_attack_apply_effectiveness_multiplier_with_abilities(attacks[attack].type, battlers[foe].type1, battlers[foe].type2, 
-                        battlers[foe].ability, &multiplier1);
+                    battle_ai_attack_apply_effectiveness_multiplier_with_abilities(attacks[attack].type, battlers[foe].ability,
+                        battlers[foe].type1, battlers[foe].type2, &multiplier1);
                 }
                 if (!(battlers_absent & int_bitmasks[foe_partner]) && foe_partner != foe) {
-                    battle_ai_attack_apply_effectiveness_multiplier_with_abilities(attacks[attack].type, battlers[foe_partner].type1, 
-                        battlers[foe_partner].type2, battlers[foe_partner].ability, &multiplier2);
+                    battle_ai_attack_apply_effectiveness_multiplier_with_abilities(attacks[attack].type, battlers[foe_partner].ability,
+                        battlers[foe_partner].type1, battlers[foe_partner].type2, &multiplier2);
                 }
                 int score_foe = msb_index(multiplier1) - 2; // Score in [-3, 2]
                 int score_foe_partner = msb_index(multiplier2) - 2; // Score in [-3, 2]

@@ -50,7 +50,7 @@ void stance_change_change_species(u8 target, u16 species){
              ATTRIBUTE_TOTAL_HP, 0);
     battlers[target].ability = pokemon_get_ability(pokemon);
     battlers[target].type1 = basestats[species].type1;
-    battlers[target].type1 = basestats[species].type2;
+    battlers[target].type2 = basestats[species].type2;
 }
 
 bool battle_abilities_before_attack(){

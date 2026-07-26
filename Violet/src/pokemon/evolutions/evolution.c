@@ -121,11 +121,8 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
                 }
                 case EVOLUTION_METHOD_HOLD_ITEM:
                 {
-                    if (held_item == evolutions[i].condition) {
-                        held_item = 0; //Remove this item
-                        pokemon_set_attribute(p, ATTRIBUTE_ITEM, & held_item);
+                    if (held_item == evolutions[i].condition)
                         return evolutions[i].target;
-                    }
                     break;
                 }
                 case EVOLUTION_METHOD_KNOW_MOVE:
@@ -149,11 +146,8 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
                     };
                     time_read( & time);
                     if ((time.hour <= 6 || time.hour >= 22) &&
-                            held_item == evolutions[i].condition) {
-                        held_item = 0; //Remove this item
-                        pokemon_set_attribute(p, ATTRIBUTE_ITEM, & held_item);
+                            held_item == evolutions[i].condition)
                         return evolutions[i].target;
-                    }
                     break;
                 }
                 case EVOLUTION_METHOD_HOLD_ITEM_AND_DAY:
@@ -164,12 +158,9 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
                         0
                     };
                     time_read( & time);
-                    if ((time.hour > 6 || time.hour < 22) &&
-                            held_item == evolutions[i].condition) {
-                        held_item = 0; //Remove this item
-                        pokemon_set_attribute(p, ATTRIBUTE_ITEM, & held_item);
+                    if (time.hour > 6 && time.hour < 22 &&
+                            held_item == evolutions[i].condition)
                         return evolutions[i].target;
-                    }
                     break;
                 }
                 case EVOLUTION_METHOD_FEMALE_AND_LEVEL_UP: {
@@ -232,6 +223,20 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
 
     }
     return 0;
+}
+
+bool pokemon_evolution_consumes_held_item(u16 species, u16 target, u16 held_item) {
+    const pokemon_evolution *evolutions = pokemon_evolutions[species];
+    if (!evolutions)
+        return false;
+    for (int i = 0; evolutions[i].method != EVOLUTION_METHOD_NONE; i++) {
+        if (evolutions[i].target == target && evolutions[i].condition == held_item &&
+                (evolutions[i].method == EVOLUTION_METHOD_HOLD_ITEM ||
+                 evolutions[i].method == EVOLUTION_METHOD_HOLD_ITEM_AND_NIGHT ||
+                 evolutions[i].method == EVOLUTION_METHOD_HOLD_ITEM_AND_DAY))
+            return true;
+    }
+    return false;
 }
 
 bool pokemon_can_evolve (u16 species) {

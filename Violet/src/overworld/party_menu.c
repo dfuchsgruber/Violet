@@ -22,6 +22,8 @@
 #include "pokemon/moves.h"
 
 EWRAM bool (*pokemon_party_menu_choose_mon_generic_mon_is_eligible)(pokemon*) = NULL;
+EWRAM u16 pending_held_item_evolution_target = 0;
+EWRAM bool pending_held_item_evolution = false;
 
 void pokemon_party_menu_options_build(pokemon *base, u8 index) {
     pokemon_party_menu_options_state_t *options_state = pokemon_party_menu_state.options_state;
@@ -125,6 +127,14 @@ void pokemon_party_menu_big_callback_learned_move(u8 self) {
 }
 
 static void pokemon_party_menu_evolution_continuation() {
+    pokemon *p = player_pokemon + pokemon_party_menu_current_index;
+    u16 species = (u16)pokemon_get_attribute(p, ATTRIBUTE_SPECIES, NULL);
+    if (pending_held_item_evolution && species == pending_held_item_evolution_target) {
+        u16 no_item = 0;
+        pokemon_set_attribute(p, ATTRIBUTE_ITEM, &no_item);
+    }
+    pending_held_item_evolution = false;
+
     if (item_rare_candy_is_issued()) {
         // Return to the party menu and directly issue more executions of the candy 
         pokemon_party_menu_init(pokemon_party_menu_type.type, KEEP_PARTY_LAYOUT, PARTY_ACTION_CHOOSE_MON, pokemon_party_menu_current_index, PARTY_MSG_NONE,
@@ -137,8 +147,12 @@ static void pokemon_party_menu_evolution_continuation() {
 
 void pokemon_party_menu_attempt_evolution(u8 self) {
     pokemon *p = player_pokemon + pokemon_party_menu_current_index;
+    u16 species = (u16)pokemon_get_attribute(p, ATTRIBUTE_SPECIES, NULL);
+    u16 held_item = (u16)pokemon_get_attribute(p, ATTRIBUTE_ITEM, NULL);
     u16 target_species = pokemon_get_evolution(p, EVOLUTION_TRIGGER_LEVEL_UP, 0);
     if (target_species) {
+        pending_held_item_evolution = pokemon_evolution_consumes_held_item(species, target_species, held_item);
+        pending_held_item_evolution_target = target_species;
         // TODO: Remaining candy levels afterwards
         pokemon_party_menu_free();
         evolution_continuation = pokemon_party_menu_evolution_continuation;

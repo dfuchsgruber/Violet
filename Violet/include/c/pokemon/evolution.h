@@ -8,6 +8,10 @@
 #ifndef INCLUDE_C_POKEMON_EVOLUTION_H_
 #define INCLUDE_C_POKEMON_EVOLUTION_H_
 
+#include "types.h"
+#include "pokemon/count.h"
+#include "pokemon/virtual.h"
+
 
 #define EVOLUTION_TRIGGER_LEVEL_UP 0
 #define EVOLUTION_TRIGGER_TRADE_EVO 1
@@ -15,7 +19,6 @@
 #define EVOLUTION_TRIGGER_ITEM2 3
 #define EVOLUTION_TRIGGER_ITEM_AND_REMOVE_HOLD_ITEM 4
 
-#include "pokemon/count.h"
 
 typedef struct {
         u16 method;
@@ -58,6 +61,15 @@ bool pokemon_can_evolve (u16 species);
  * @return the species the pokemon evolves into or 0 if no such species exists
  **/
 u16 pokemon_get_evolution(pokemon *p, u8 trigger_type, u16 arg);
+
+/**
+ * Checks whether a successful level-up evolution consumes the held item.
+ * @param species the species before evolution
+ * @param target the species after evolution
+ * @param held_item the item held when the evolution was selected
+ * @return whether the matching evolution method consumes the held item
+ **/
+bool pokemon_evolution_consumes_held_item(u16 species, u16 target, u16 held_item);
 
 /**
  * Initializes callbacks and a scene for evolving a pokemon.
