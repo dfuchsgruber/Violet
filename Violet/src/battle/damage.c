@@ -124,14 +124,12 @@ int battle_base_damage_calculate(battler *attacker, battler *defender, u32 move,
         attack = (attack * (attackerHoldEffectParam + 100)) / 100;
     }
     if (attackerHoldEffect == HOLD_EFFECT_BOOST_SPECIAL_MOVES && attacks[move].category == CATEGORY_SPECIAL) {
-        attack = (attack * (attackerHoldEffectParam + 100)) / 100;
+        spAttack = (spAttack * (attackerHoldEffectParam + 100)) / 100;
     }
 	if (attackerHoldEffect == HOLD_EFFECT_CHOICE_ITEM && attackerHoldEffectParam == CHOICE_ITEM_BAND)
 		attack = (150 * attack) / 100;
 	if (attackerHoldEffect == HOLD_EFFECT_CHOICE_ITEM && attackerHoldEffectParam == CHOICE_ITEM_SPECS)
-		spAttack = (150 * attack) / 100;
-    if (attackerHoldEffect == HOLD_EFFECT_CHOICE_ITEM)
-        attack = (150 * attack) / 100;
+		spAttack = (150 * spAttack) / 100;
     if (attackerHoldEffect == HOLD_EFFECT_SOUL_DEW && !(battle_flags & (BATTLE_TOWER)) && (attacker->species == POKEMON_LATIAS || attacker->species == POKEMON_LATIOS))
         spAttack = (150 * spAttack) / 100;
     if (defenderHoldEffect == HOLD_EFFECT_SOUL_DEW && !(battle_flags & (BATTLE_TOWER)) && (defender->species == POKEMON_LATIAS || defender->species == POKEMON_LATIOS))
@@ -302,4 +300,3 @@ int battle_base_damage_calculate(battler *attacker, battler *defender, u32 move,
 
     return damage + 2;
 }
-
