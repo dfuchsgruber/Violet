@@ -22,6 +22,11 @@
 #define SECTOR_SIZE 0x1000
 #define SECTOR_SIZE_FOOTER 128
 #define SECTOR_SIZE_DATA (SECTOR_SIZE - SECTOR_SIZE_FOOTER)
+#define SECTOR_USED_END 0xFF0
+#define SECTOR_SIGNATURE 0x08012025
+#define NUM_SAVE_SLOTS 2
+#define SAVE_STATUS_OK 1
+#define SAVE_STATUS_ERROR 0xFF
 
 typedef struct {
     u16 offset;
@@ -30,7 +35,7 @@ typedef struct {
 
 extern const save_section_locations_t save_section_locations[NUM_SECTORS_PER_SAVEFILE];
 
-typedef struct {
+typedef struct save_sector {
     u8 data[SECTOR_SIZE_DATA];
     u8 unused[SECTOR_SIZE_FOOTER - 12]; // Unused portion of the footer
     u16 id;
@@ -39,8 +44,15 @@ typedef struct {
     u32 counter;
 } save_sector_t;
 
+typedef struct save_sector_location {
+    u8 *data;
+    u16 size;
+} save_sector_location;
+
 extern save_sector_t gp_save_sector_buffer;
 extern save_sector_t *save_sector_buffer;
+extern u16 last_written_sector;
+extern u32 save_counter;
 
 /**
  * Reads a sector from the flash
@@ -49,6 +61,14 @@ extern save_sector_t *save_sector_buffer;
  * @return unused
 */
 bool read_flash_sector(u8 sector_id, save_sector_t *buffer);
+u16 save_checksum_calculate(const void *data, u16 size);
+u8 save_sector_try_write(u8 sector_id, u8 *data);
+
+u8 save_slot_data_load(u16 sector_id, const save_sector_location *locations);
+u8 save_sector_handle_write(u16 sector_id, const save_sector_location *locations);
+void save_custom_blocks_store(save_sector_t *sector);
+void save_test_pattern_fill(void);
+void save_test_pattern_check(void);
 
 
 typedef struct warp_save_t {

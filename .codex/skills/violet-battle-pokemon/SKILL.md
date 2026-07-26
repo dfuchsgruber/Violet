@@ -17,6 +17,12 @@ description: Work with Violet Pokemon, battle, attacks, abilities, items, evolut
 
 Read `references/gameplay-patterns.md` for attack/Pokemon data layout, battle globals, and known sharp edges.
 
+Read `references/battle-lifecycle.md` for allocation, script dispatch, custom states, battler identity, catching, form changes, and teardown.
+
+Read `references/pokemon-storage.md` before changing PID fields, boxed/party layouts, creation, checksum handling, evolution, abilities, or contest-stat storage.
+
+Read `references/mechanics-audit.md` when reviewing formulas, abilities, AI, item effects, and evolution predicates.
+
 Trigger `violet-gba-hardware` when battle/Pokemon work is performance-sensitive, stack-heavy, hardware-timed, or depends on ROM/EWRAM/IWRAM layout.
 
 ## Project Rules

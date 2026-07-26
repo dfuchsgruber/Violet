@@ -19,6 +19,8 @@ description: Build or modify Violet GBA UI flows, menus, app screens, textboxes,
 
 Read `references/ui-patterns.md` for concrete Pokepad/crafting/worldmap patterns, helper APIs, and lifecycle checklists.
 
+Read `references/runtime-lifecycle.md` when auditing callbacks, partial initialization, Pokepad child transitions, worldmap modes, or DMA-backed effects.
+
 Trigger `violet-gba-hardware` or read its references when a UI change is constrained by frame budget, VBlank/HBlank, VRAM/OAM/palette access, DMA, keypad polling, or sprite/BG hardware limits.
 
 ## Project Rules

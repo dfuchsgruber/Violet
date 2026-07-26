@@ -1,0 +1,4 @@
+interface:
+  display_name: "Violet Injection Audit"
+  short_description: "Audit Violet hooks, overlay ABI, and engine contracts"
+  default_prompt: "Use $violet-injection-audit to audit a Violet binary hook and its C engine contract."

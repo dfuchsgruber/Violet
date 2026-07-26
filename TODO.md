@@ -13,3 +13,5 @@ Release:
 - []: Disable DEBUG messages 
 - []: Place Unown ruins somewhere
 - []: Fix scanner
+- []: Add Zubat to R2 Cave
+- []: Add Thunder, Fire, and Waterstone early on

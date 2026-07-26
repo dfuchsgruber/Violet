@@ -320,7 +320,7 @@ bsc_pokemon_caught_with_exp:
 	incrementsavkey SAV_KEY_POKEMON_CAUGHT
 caught_no_increment_sav_key:
     printstring 0x10b
-    @jumpifflagset FLAG_CATCHING_GIVES_EXP, skip_caught_exp
+    jumpifflagset FLAG_CATCHING_GIVES_EXP, skip_caught_exp
     setbyte battle_scripting + 0x1C, 0
     getexp BANK_TARGET
 skip_caught_exp:

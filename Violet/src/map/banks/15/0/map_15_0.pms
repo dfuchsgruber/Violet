@@ -132,7 +132,7 @@
 					}
 				},
 				{
-					"target_index": "0",
+					"target_index": "5",
 					"picture": "49",
 					"field_2": 0,
 					"x": "0",
@@ -1767,7 +1767,7 @@
 					}
 				},
 				{
-					"target_index": "0",
+					"target_index": "58",
 					"picture": "50",
 					"x": "1",
 					"y": "14",
@@ -1883,7 +1883,7 @@
 					}
 				},
 				{
-					"target_index": "0",
+					"target_index": "62",
 					"picture": "49",
 					"x": "1",
 					"y": "12",
@@ -1912,7 +1912,7 @@
 					}
 				},
 				{
-					"target_index": "0",
+					"target_index": "63",
 					"picture": "50",
 					"x": "0",
 					"y": "11",
@@ -1941,7 +1941,7 @@
 					}
 				},
 				{
-					"target_index": "0",
+					"target_index": "64",
 					"picture": "49",
 					"x": "0",
 					"y": "12",

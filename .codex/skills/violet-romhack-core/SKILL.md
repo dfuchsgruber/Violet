@@ -21,6 +21,12 @@ Read `references/c-feature-patterns.md` before adding a new C/H feature or when 
 
 Read `references/bug-notes.md` before changing battle damage, Pokemon generation, or anything found by TODO/bug scans.
 
+Read `references/save-and-runtime-data.md` before changing `custom_memory`, save hooks, Dungeon2 persistence, map runtime data, or sentinel-driven generated tables.
+
+Read `references/data-structures-audit.md` before using or changing the custom hashmap, dynamic array, queues, heap, stack, or pathfinding implementation.
+
+Trigger `violet-injection-audit` for binary patches, hook wrappers, overlay placement, fixed engine addresses, or C functions called directly from assembly.
+
 Trigger `violet-gba-hardware` when a change touches hardware timing, memory placement, VRAM/OAM/palette access, DMA, interrupts, input sampling, sound timers/FIFOs, or cartridge/save behavior.
 
 ## Project Rules

@@ -1,17 +1,22 @@
-//save file block restauration
-
-.org 0x80DA100
-    ldr r0, =hook_save_block_load | 1
-    bx r0
+// Replace the complete slot loader. This preserves the vanilla normal
+// sector flow and additionally restores csave from selected sector tails.
+.org 0x080DA078
+    ldr r2, =save_slot_data_load | 1
+    bx r2
     .pool
 
-.org 0x80D9B42
-    bx r7 //use a previous word load
+// Replace normal sector construction/writing.
+.org 0x080D9A94
+    ldr r2, =save_sector_handle_write | 1
+    bx r2
+    .pool
 
-.org 0x80D9B80
-    .word hook_save_block_store | 1
-
-
+// HandleReplaceSector has an independent construction path. Serialize its
+// custom tail after the vanilla checksum is stored and before flash erasure.
+.org 0x080D9E28
+    ldr r0, =hook_save_block_replace | 1
+    bx r0
+    .pool
 .org 0x83FEC98 //the save block size lut
     
 .halfword 0x0
