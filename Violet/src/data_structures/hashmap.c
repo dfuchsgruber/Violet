@@ -68,8 +68,10 @@ void hashmap_put(u32 key, int value, hashmap *map) {
 
         int i;
         for (i = 0; i < map->buckets[bucket]->size; i++) {
-            if (map->buckets[bucket]->array[i].key == key)
+            if (map->buckets[bucket]->array[i].key == key) {
                 map->buckets[bucket]->array[i].value = value;
+                return;
+            }
         }
     }
 
@@ -91,14 +93,14 @@ int hashmap_remove(u32 key, hashmap *map) {
         for (i = 0; i < map->buckets[bucket]->size; i++) {
             if (map->buckets[bucket]->array[i].key == key) {
                 int value = map->buckets[bucket]->array[i].value;
-                memcpy(&map->buckets[bucket]->array[i], &map->buckets[bucket]->array[i + 1], (u32) (map->buckets[bucket]->array_size - i - 1)* (sizeof (dyn_arr_node)));
+                memcpy(&map->buckets[bucket]->array[i], &map->buckets[bucket]->array[i + 1], (u32) (map->buckets[bucket]->size - i - 1)* (sizeof (dyn_arr_node)));
                 if (map->buckets[bucket]->size - 1) {
                     dyn_arr_resize(map->buckets[bucket]->size - 1, map->buckets[bucket]);
-                    return value;
                 } else {
                     dyn_arr_free(map->buckets[bucket]);
                     map->buckets[bucket] = NULL;
                 }
+                return value;
             }
         }
     }
