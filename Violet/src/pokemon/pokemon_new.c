@@ -67,8 +67,8 @@ void pokemon_new_by_prngs(pokemon *p, u16 species, u8 level, u8 default_iv,
         //we attach a random egg move
         if (prngs->prngs[POKEMON_NEW_PRNG_MODULUS_EGG_MOVES]() >= 32) continue; 
         int n = rng() % egg_move_cnt;
-        if (pokemon_append_attack(&opponent_pokemon[0], egg_moves[n]) == 0xFFFF) {
-          pokemon_rotate_and_push_attack(&opponent_pokemon[0], egg_moves[n]);
+        if (pokemon_append_attack(p, egg_moves[n]) == 0xFFFF) {
+          pokemon_rotate_and_push_attack(p, egg_moves[n]);
         }
         egg_moves[n] = egg_moves[--egg_move_cnt];
       }
@@ -84,7 +84,7 @@ void pokemon_new_by_prngs(pokemon *p, u16 species, u8 level, u8 default_iv,
         }
         pokemon_set_attribute(p, ATTRIBUTE_ITEM, item);
     }
-    pokemon_calculate_stats(&opponent_pokemon[0]);
+    pokemon_calculate_stats(p);
 }
 
 void pokemon_new_by_prng(pokemon *p, u16 species, u8 level, u8 default_iv,
