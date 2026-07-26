@@ -34,7 +34,7 @@ static void a_star_big_callback(u8 self) {
         hashmap_put((u32)key.value, 0, state->closed); // Close this vertex
         DEBUG("Expanding 0x%x, 0x%x with heading %d\n", key.state.x - 7, key.state.y - 7, key.state.heading);
         if (key.state.x == state->x_destination && key.state.y == state->y_destination) {
-            a_star_reconstruct(state->path, key, state->predecessor, state->speed);
+            a_star_reconstruct(state->path, state->path_capacity, key, state->predecessor, state->speed);
             // Free resources
             a_star_state_delete(state);
             big_callbacks[self].function = a_star_done;
@@ -67,13 +67,14 @@ static void a_star_big_callback(u8 self) {
     }
     if (state->queue->size == 0) {
         DEBUG("Could not find an a-star path\n");
-        state->path[0] = STOP;
+        if (state->path_capacity > 0)
+            state->path[0] = STOP;
         a_star_state_delete(state);
         big_callbacks[self].function = a_star_done;
     }
 }
 
-u8 a_star_compute_path(u8 *path, s16 x_destination, s16 y_destination, npc *original_walker, u8 speed, int steps_per_frame) {
+u8 a_star_compute_path(u8 *path, int path_capacity, s16 x_destination, s16 y_destination, npc *original_walker, u8 speed, int steps_per_frame) {
     DEBUG("A star for warlker person %d \n", original_walker->overworld_id);
     a_star_state *state = malloc(sizeof(a_star_state));
     state->original_walker = *original_walker;
@@ -94,6 +95,7 @@ u8 a_star_compute_path(u8 *path, s16 x_destination, s16 y_destination, npc *orig
     state->closed = closed;
     state->queue = queue;
     state->path = path;
+    state->path_capacity = path_capacity;
     state->x_destination = x_destination;
     state->y_destination = y_destination;
     state->steps_per_frame = steps_per_frame;
@@ -129,31 +131,42 @@ static const u8 direction_and_speed_to_movement[][5] = {
     },
 };
 
-int a_star_reconstruct(u8 *path, a_star_key key, hashmap *predecessors, u8 speed) {
+int a_star_reconstruct(u8 *path, int path_capacity, a_star_key key, hashmap *predecessors, u8 speed) {
     int path_length = 0;
     int predecessor;
+
+    if (path_capacity <= 0)
+        return 0;
+
+    a_star_key current = key;
     do {
-        predecessor = hashmap_get((u32) key.value, predecessors);
+        predecessor = hashmap_get((u32) current.value, predecessors);
         if ((u32) predecessor == A_STAR_PREDECESSOR_NONE)
             break;
         a_star_key predecessor_key = {.value = (int)predecessor};
-        if (key.state.heading != DIR_NONE)
-            path[path_length++] = direction_and_speed_to_movement[speed][key.state.heading];
-        key = predecessor_key;
-    } while ((u32)key.value != A_STAR_PREDECESSOR_NONE);
+        if (current.state.heading != DIR_NONE)
+            path_length++;
+        current = predecessor_key;
+    } while ((u32)current.value != A_STAR_PREDECESSOR_NONE);
 
+    int movements_to_write = MIN(path_length, path_capacity - 1);
+    int path_idx = path_length;
+    current = key;
+    do {
+        predecessor = hashmap_get((u32)current.value, predecessors);
+        if ((u32)predecessor == A_STAR_PREDECESSOR_NONE)
+            break;
+        a_star_key predecessor_key = {.value = predecessor};
+        if (current.state.heading != DIR_NONE) {
+            path_idx--;
+            if (path_idx < movements_to_write)
+                path[path_idx] = direction_and_speed_to_movement[speed][current.state.heading];
+        }
+        current = predecessor_key;
+    } while ((u32)current.value != A_STAR_PREDECESSOR_NONE);
 
-    // Reverse the order of moves
-    int i = 0, j = path_length - 1;
-    while (i < j) {
-        u8 tmp = path[i];
-        path[i] = path[j];
-        path[j] = tmp;
-        i++;
-        j--;
-    }
-    path[path_length++] = STOP;
-    return path_length;
+    path[movements_to_write] = STOP;
+    return movements_to_write + 1;
 }
 
 bool a_star_is_connected(s16 dest_x, s16 dest_y, s16 from_x, s16 from_y, npc *walker) {

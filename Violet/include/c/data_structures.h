@@ -81,6 +81,7 @@ typedef struct {
     hashmap *predecessor;
     dyn_arr *queue;
     u8 *path;
+    int path_capacity;
     npc original_walker;
     s16 x_destination;
     s16 y_destination;
@@ -88,9 +89,9 @@ typedef struct {
     int steps_per_frame;
 } a_star_state;
 
-u8 a_star_compute_path(u8 *path, s16 to_x, s16 to_y, npc *original_walker, u8 speed, int steps_per_frame);
+u8 a_star_compute_path(u8 *path, int path_capacity, s16 to_x, s16 to_y, npc *original_walker, u8 speed, int steps_per_frame);
 
-int a_star_reconstruct(u8 *path, a_star_key destination, hashmap *nodes, u8 speed);
+int a_star_reconstruct(u8 *path, int path_capacity, a_star_key destination, hashmap *nodes, u8 speed);
 
 bool a_star_is_connected(s16 dest_x, s16 dest_y, s16 from_x, s16 from_y, npc *walker);
 
@@ -144,4 +145,3 @@ bool ring_queue_empty(const ring_queue_t *queue);
 void ring_queue_del(ring_queue_t *queue);
 
 #endif	/* BIN_HEAP_H */
-

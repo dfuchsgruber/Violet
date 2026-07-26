@@ -21,6 +21,8 @@
 EWRAM u8 pathfinding_npc_movements_waiting = false;
 EWRAM u8 npc_facing_movements[2] = {0};
 
+#define NPC_MOVE_PATH_CAPACITY 256
+
 void special_move_npc_to_player() {
     s16 pos[2];
     player_get_facing_position(&pos[0], &pos[1]);
@@ -91,8 +93,8 @@ void npc_move_to(u8 ow_id, s16 dest_x, s16 dest_y, u8 speed) {
     if (npc_get_id_by_overworld_id(ow_id, save1->map, save1->bank, &npc_id))
         return;
     trainer_npc_idx = npc_id;
-    u8 *dyn_move = (u8*) malloc(256); // dynamic space for movement list
-    u8 a_star = a_star_compute_path(dyn_move, dest_x, dest_y, &npcs[npc_id], speed, A_STAR_STEPS_PER_FRAME);
+    u8 *dyn_move = (u8*) malloc(NPC_MOVE_PATH_CAPACITY); // dynamic space for movement list
+    u8 a_star = a_star_compute_path(dyn_move, NPC_MOVE_PATH_CAPACITY, dest_x, dest_y, &npcs[npc_id], speed, A_STAR_STEPS_PER_FRAME);
     u8 cb = big_callback_new(npc_move_to_wait_for_a_star, 10);
     big_callback_set_int(cb, 0, (int) dyn_move);
     big_callbacks[cb].params[2] = ow_id;
