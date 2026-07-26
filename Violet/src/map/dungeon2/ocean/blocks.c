@@ -236,25 +236,30 @@ void dungeon2_ocean_draw_map(u8 *map, u8 *is_map_border, int type, dungeon_gener
 void dungeon2_ocean_flood_fill_borders(u8 *map, u8 *is_map_border, dungeon_generator2 *dg2) {
 	// Use simple flood fill to determine walls that are connected with the map border
 	int *stack = malloc_and_clear(sizeof(int) * (size_t)(dg2->width * dg2->height));
-	int stack_size = 1;
-	stack[0] = COORDINATE_PACK(0, 0);
+	int stack_size = 0;
+	if (map[0] == DG2_WALL) {
+		is_map_border[0] |= DG2_OCEAN_IS_BORDER;
+		stack[stack_size++] = COORDINATE_PACK(0, 0);
+	}
 	while (stack_size > 0) {
-	  int packed = stack[--stack_size];
-	  int x = COORDINATE_UNPACK_X(packed);
-	  int y = COORDINATE_UNPACK_Y(packed);
-	  if (map[y * dg2->height + x] == DG2_WALL &&
-			  !(is_map_border[y * dg2->height + x] & DG2_OCEAN_IS_BORDER)) {
-		  // DEBUG("Flood fill %d, %d\n", x, y);
-		  is_map_border[y * dg2->height + x] |= DG2_OCEAN_IS_BORDER;
-		  for (int i = 0; i < 4; i++) {
-			  int x2 = x + dg2_cross_neighbourhood[i][0];
-			  int y2 = y + dg2_cross_neighbourhood[i][1];
-			  if (x2 >= 0 && x2 < dg2->width && y >= 0 && y < dg2->height) {
-				  stack[stack_size++] = COORDINATE_PACK(x2, y2);
-				  // DEBUG("Stack size %d\n", stack_size);
-			  }
-		  }
-	  }
+		int packed = stack[--stack_size];
+		int x = COORDINATE_UNPACK_X(packed);
+		int y = COORDINATE_UNPACK_Y(packed);
+		// DEBUG("Flood fill %d, %d\n", x, y);
+		for (int i = 0; i < 4; i++) {
+			int x2 = x + dg2_cross_neighbourhood[i][0];
+			int y2 = y + dg2_cross_neighbourhood[i][1];
+			if (x2 >= 0 && x2 < dg2->width && y2 >= 0 && y2 < dg2->height) {
+				int idx = y2 * dg2->width + x2;
+				if (map[idx] == DG2_WALL &&
+						!(is_map_border[idx] & DG2_OCEAN_IS_BORDER)) {
+					// Mark when enqueuing so each tile can occupy the stack only once
+					is_map_border[idx] |= DG2_OCEAN_IS_BORDER;
+					stack[stack_size++] = COORDINATE_PACK(x2, y2);
+					// DEBUG("Stack size %d\n", stack_size);
+				}
+			}
+		}
 	}
 	free(stack);
 }
@@ -400,7 +405,6 @@ void dungeon2_compute_blocks_ocean(u8 *map, u8 *over, dungeon_generator2 *dg2){
 
   dungeon2_ocean_draw_map(over, is_map_border, WALL_SET_SAND, dg2);
 }
-
 
 
 
