@@ -1,0 +1,4 @@
+interface:
+  display_name: "Violet EWRAM Safety"
+  short_description: "Keep mutable Violet globals in EWRAM"
+  default_prompt: "Use $violet-ewram to audit mutable RAM variables and verify the linked ROM build."
