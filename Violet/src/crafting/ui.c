@@ -514,6 +514,7 @@ static void crafting_ui_process_yes_no_start_crafting(u8 self) {
 }
 
 static void crafting_ui_message_continuation_yes_no_box(u8 self) {
+    // tbox_init_frame_set_style()
     gp_list_menu_yes_no_new(&ui_yes_no_box, 2, 0, 2, 256 + 20, 14, 1);
     big_callbacks[self].function = crafting_ui_process_yes_no_start_crafting;
 }
