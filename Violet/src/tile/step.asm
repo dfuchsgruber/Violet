@@ -13,7 +13,7 @@ bl egg_warm_update
 bl wondertrade_increment_steps
 bl do_fata_morgana
 
-bl player_step_force_on_cloud
+bl player_step_force_on_or_off_cloud
 @ cmp r0, #0
 @ bne ret_1
 

@@ -22,9 +22,9 @@ typedef struct bdata {
     u32 behavior : 9;
     u32 hm_usage : 5; // probably flags
     u32 argument : 4;
-    u32 field_3 : 6;
+    u32 battle_bg : 6;
     u32 wild_pokemon_type : 3; //if 0 no wildbattle triggered, 1 fetch data from wild grass table, 2 water
-    u32 field_5 : 2;
+    u32 force_cloud : 2;
     u32 field_6 : 2;
     u32 field_7 : 1;
 
@@ -58,7 +58,7 @@ enum {
     FIELD_ARGUMENT = 2,
     FIELD_BATTLE_BG = 3,
     FIELD_ENCOUNTER_TYPE = 4,
-    FIELD_FIELD_5 = 5,
+    FIELD_CLOUD_TYPE = 5,
     FIELD_PRIORITY = 6,
     FIELD_FIELD_7 = 7,
 };

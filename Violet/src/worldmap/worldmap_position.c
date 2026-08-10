@@ -141,11 +141,11 @@ static const worldmap_position_bank worldmap_position_bank_36_route_3 = {
 static const worldmap_position_bank worldmap_position_bank_15_route_4 = {
     [0] = {.x = 13, .y = 6, .width = 1, .height = 2, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_GROUND,}, // Outdoor map
     [1] = {.x = 13, .y = 7, .width = 1, .height = 1, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_GROUND,}, // Indoor map, bird breeders
+    [3] = {.x = 13, .y = 7, .width = 1, .height = 1, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_GROUND,}, // Clouds map
     [4] = {.x = 13, .y = 6, .width = 1, .height = 2, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_GROUND,}, // Outdoor map
     [5] = {.x = 13, .y = 6, .width = 1, .height = 1, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_GROUND,}, // Mill
     [6] = {.x = 13, .y = 6, .width = 1, .height = 1, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_GROUND,}, // Mill
     [2] = {.x = 13, .y = 6, .width = 1, .height = 2, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_CLOUDS,}, // Outdoor map
-    // TODO: cloud maps 2
 };
 
 static const worldmap_position_bank worldmap_position_bank_1_kranwald = {

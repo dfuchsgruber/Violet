@@ -6,12 +6,17 @@
 #include "tile/cloud.h"
 #include "overworld/script.h"
 
-bool player_step_force_on_cloud() {
+bool player_step_force_on_or_off_cloud() {
     // Check if the player transits to a non-walkable tile on a cloud map
     if (cloud_not_dismountable() && !(player_state.state & PLAYER_STATE_BIKING)) {
-        u8 cb_idx = big_callback_new(player_transition_to_bike, 0);
+        u8 cb_idx = big_callback_new(player_transition_toggle_on_off_bike, 0);
         overworld_script_set_active();
-        player_transition_to_bike(cb_idx);
+        player_transition_toggle_on_off_bike(cb_idx);
+        return true;
+    } else if (player_should_be_forced_off_cloud() && (player_state.state & PLAYER_STATE_BIKING)) {
+        u8 cb_idx = big_callback_new(player_transition_toggle_on_off_bike, 0);
+        overworld_script_set_active();
+        player_transition_toggle_on_off_bike(cb_idx);
         return true;
     }
     return false;

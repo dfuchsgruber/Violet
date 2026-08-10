@@ -37,4 +37,5 @@ if __name__ == '__main__':
                     errors.append(f'No worldmap shape specified for map {bank}.{map_idx}:{label}, ({shape})')
     if len(errors):
         warn('\n'.join(errors))
+        raise RuntimeError(f'Found {len(errors)} errors in worldmap associations. See above for details.')
                 

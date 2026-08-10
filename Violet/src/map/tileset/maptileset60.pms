@@ -28918,7 +28918,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -28928,7 +28928,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -28938,7 +28938,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -28948,7 +28948,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -28958,7 +28958,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -28968,7 +28968,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -28978,7 +28978,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -28988,7 +28988,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -28998,7 +28998,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29008,7 +29008,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29018,7 +29018,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29028,7 +29028,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29038,7 +29038,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29048,7 +29048,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29058,7 +29058,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29068,7 +29068,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29078,7 +29078,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29088,7 +29088,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29098,7 +29098,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29108,7 +29108,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29118,7 +29118,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29128,7 +29128,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29138,7 +29138,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29148,7 +29148,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29158,7 +29158,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29168,7 +29168,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29178,7 +29178,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29188,7 +29188,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29198,7 +29198,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29208,7 +29208,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29218,7 +29218,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29228,7 +29228,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29238,7 +29238,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29248,7 +29248,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29258,7 +29258,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29268,7 +29268,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29278,7 +29278,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29288,7 +29288,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29298,7 +29298,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29308,97 +29308,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "MB_CAVE",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x1",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "MB_CAVE",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x1",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "MB_CAVE",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x1",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "MB_CAVE",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x1",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "MB_CAVE",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x1",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "MB_CAVE",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x1",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "MB_CAVE",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29408,7 +29318,17 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0"
@@ -29418,7 +29338,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29428,7 +29348,27 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_CAVE",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x1",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_CAVE",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x1",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0"
@@ -29438,47 +29378,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "MB_CAVE",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x1",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "MB_CAVE",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x1",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "MB_CAVE",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x1",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "MB_CAVE",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0"
@@ -29488,7 +29388,27 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_CAVE",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x1",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0"
@@ -29498,7 +29418,17 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_CAVE",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x1",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0"
@@ -29508,7 +29438,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29518,7 +29448,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29528,7 +29458,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29538,7 +29468,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29548,7 +29478,37 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_CAVE",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x1",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_CAVE",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x1",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_CAVE",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x1",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29558,7 +29518,47 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_CAVE",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x1",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_CAVE",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x1",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_CAVE",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x1",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_CAVE",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x1",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29568,7 +29568,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29578,7 +29578,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29588,7 +29588,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29598,7 +29598,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29608,7 +29608,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29618,7 +29618,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29628,7 +29628,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29638,7 +29638,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29648,7 +29648,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29658,7 +29658,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29668,27 +29668,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "MB_CAVE",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29698,7 +29678,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29708,7 +29688,17 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29718,7 +29708,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29728,7 +29718,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29738,7 +29728,17 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_CAVE",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x1",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0"
@@ -29748,7 +29748,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0"
@@ -29758,7 +29758,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0"
@@ -29768,7 +29768,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0"
@@ -29778,7 +29778,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0"
@@ -29788,7 +29788,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29798,7 +29798,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29808,7 +29808,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29818,7 +29818,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29828,7 +29828,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29838,7 +29838,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29848,7 +29848,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29858,7 +29858,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29868,7 +29868,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29878,7 +29878,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29888,7 +29888,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -29898,7 +29898,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x13"
@@ -29908,7 +29908,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x17"
@@ -29918,7 +29918,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x21"
@@ -29928,7 +29928,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x25"
@@ -29938,7 +29938,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xc",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x13"
@@ -29948,7 +29948,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xc",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x17"
@@ -29958,7 +29958,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x21"
@@ -29968,7 +29968,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x25"
@@ -29978,7 +29978,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x13"
@@ -29988,7 +29988,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x17"
@@ -29998,7 +29998,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x21"
@@ -30008,7 +30008,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x25"
@@ -30018,7 +30018,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xc",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x13"
@@ -30028,7 +30028,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xc",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x17"
@@ -30038,7 +30038,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x21"
@@ -30048,7 +30048,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x25"
@@ -30058,7 +30058,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x13"
@@ -30068,7 +30068,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x17"
@@ -30078,7 +30078,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x2",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x22"
@@ -30088,7 +30088,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x2",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x26"
@@ -30098,7 +30098,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x13"
@@ -30108,7 +30108,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x17"
@@ -30118,7 +30118,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x24"
@@ -30128,7 +30128,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x28"
@@ -30138,7 +30138,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x13"
@@ -30148,7 +30148,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x17"
@@ -30158,7 +30158,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x24"
@@ -30168,7 +30168,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x28"
@@ -30178,7 +30178,7 @@
 				"hm_usage": "0x10",
 				"argument": "0x5",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x3",
 				"battle_bg": "0x28"
@@ -30188,7 +30188,7 @@
 				"hm_usage": "0x10",
 				"argument": "0xd",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x3",
 				"battle_bg": "0x28"
@@ -30198,7 +30198,7 @@
 				"hm_usage": "0x4",
 				"argument": "0xc",
 				"encounter_type": "0x0",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x2f"
@@ -30208,7 +30208,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x1",
 				"encounter_type": "0x4",
-				"field_5": "0x1",
+				"cloud_type": "0x1",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -30218,7 +30218,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1b"
@@ -30228,7 +30228,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1f"
@@ -30238,7 +30238,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x25"
@@ -30248,7 +30248,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x25"
@@ -30258,7 +30258,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xc",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1b"
@@ -30268,7 +30268,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xc",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1f"
@@ -30278,7 +30278,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x25"
@@ -30288,7 +30288,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x25"
@@ -30298,7 +30298,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1b"
@@ -30308,7 +30308,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1f"
@@ -30318,7 +30318,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x25"
@@ -30328,7 +30328,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x25"
@@ -30338,7 +30338,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xc",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1b"
@@ -30348,7 +30348,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xc",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1f"
@@ -30358,7 +30358,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x25"
@@ -30368,7 +30368,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x25"
@@ -30378,7 +30378,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1b"
@@ -30388,7 +30388,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1f"
@@ -30398,7 +30398,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x2",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x26"
@@ -30408,7 +30408,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x2",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x26"
@@ -30418,7 +30418,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x13"
@@ -30428,7 +30428,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x0",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x2c"
@@ -30438,7 +30438,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x28"
@@ -30448,7 +30448,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x2c"
@@ -30458,7 +30458,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x13"
@@ -30468,7 +30468,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x17"
@@ -30478,7 +30478,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x28"
@@ -30488,7 +30488,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x28"
@@ -30498,7 +30498,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x5",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x34"
@@ -30508,7 +30508,7 @@
 				"hm_usage": "0x0",
 				"argument": "0xd",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x34"
@@ -30518,7 +30518,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -30528,7 +30528,7 @@
 				"hm_usage": "0x13",
 				"argument": "0x0",
 				"encounter_type": "0x7",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x37"
@@ -30538,7 +30538,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x13"
@@ -30548,7 +30548,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x17"
@@ -30558,7 +30558,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x29"
@@ -30568,7 +30568,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x2d"
@@ -30578,7 +30578,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x29"
@@ -30588,7 +30588,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x22"
@@ -30598,7 +30598,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0x22"
@@ -30608,7 +30608,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0x26"
@@ -30618,7 +30618,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x29"
@@ -30628,7 +30628,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x2d"
@@ -30638,7 +30638,7 @@
 				"hm_usage": "0x11",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0x2a"
@@ -30648,7 +30648,7 @@
 				"hm_usage": "0x11",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0x2e"
@@ -30658,7 +30658,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x29"
@@ -30668,7 +30668,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x2d"
@@ -30678,7 +30678,7 @@
 				"hm_usage": "0x11",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x29"
@@ -30688,7 +30688,7 @@
 				"hm_usage": "0x11",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x2d"
@@ -30698,7 +30698,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x13"
@@ -30708,7 +30708,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x17"
@@ -30718,7 +30718,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x2",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x2a"
@@ -30728,7 +30728,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x2",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x2e"
@@ -30738,7 +30738,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x0",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x30"
@@ -30748,7 +30748,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x0",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x34"
@@ -30758,7 +30758,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x30"
@@ -30768,7 +30768,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x34"
@@ -30778,7 +30778,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x13"
@@ -30788,7 +30788,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x17"
@@ -30798,7 +30798,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x5",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x21"
@@ -30808,7 +30808,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x5",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x25"
@@ -30818,7 +30818,7 @@
 				"hm_usage": "0x10",
 				"argument": "0x5",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x3",
 				"battle_bg": "0x34"
@@ -30828,7 +30828,7 @@
 				"hm_usage": "0x0",
 				"argument": "0xd",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x34"
@@ -30838,7 +30838,7 @@
 				"hm_usage": "0x13",
 				"argument": "0x8",
 				"encounter_type": "0x7",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x3b"
@@ -30848,7 +30848,7 @@
 				"hm_usage": "0x13",
 				"argument": "0x0",
 				"encounter_type": "0x7",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x37"
@@ -30858,7 +30858,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1b"
@@ -30868,7 +30868,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1f"
@@ -30878,7 +30878,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x31"
@@ -30888,7 +30888,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x35"
@@ -30898,7 +30898,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xc",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1b"
@@ -30908,7 +30908,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xc",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1f"
@@ -30918,7 +30918,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x26"
@@ -30928,7 +30928,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x2a"
@@ -30938,7 +30938,7 @@
 				"hm_usage": "0x19",
 				"argument": "0xc",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x32"
@@ -30948,7 +30948,7 @@
 				"hm_usage": "0x19",
 				"argument": "0xc",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x36"
@@ -30958,7 +30958,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -30968,7 +30968,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -30978,7 +30978,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xc",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1b"
@@ -30988,7 +30988,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xc",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1f"
@@ -30998,7 +30998,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x31"
@@ -31008,7 +31008,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x35"
@@ -31018,7 +31018,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1b"
@@ -31028,7 +31028,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1f"
@@ -31038,7 +31038,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x2",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x32"
@@ -31048,7 +31048,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x2",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x36"
@@ -31058,7 +31058,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x13"
@@ -31068,7 +31068,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x17"
@@ -31078,7 +31078,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x24"
@@ -31088,7 +31088,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x28"
@@ -31098,7 +31098,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x13"
@@ -31108,7 +31108,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x17"
@@ -31118,7 +31118,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x24"
@@ -31128,7 +31128,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x28"
@@ -31138,7 +31138,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x4",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -31148,7 +31148,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -31158,7 +31158,7 @@
 				"hm_usage": "0x19",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x3a"
@@ -31168,7 +31168,7 @@
 				"hm_usage": "0x19",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x3e"
@@ -31178,7 +31178,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x4",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -31188,7 +31188,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -31198,7 +31198,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x39"
@@ -31208,7 +31208,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x3d"
@@ -31218,17 +31218,17 @@
 				"hm_usage": "0x0",
 				"argument": "0x4",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
 			},
 			{
-				"behaviour": "MB_3",
+				"behaviour": "0",
 				"hm_usage": "0x4",
 				"argument": "0xc",
 				"encounter_type": "0x0",
-				"field_5": "0x1",
+				"cloud_type": "0x1",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -31238,7 +31238,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x39"
@@ -31248,7 +31248,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x3d"
@@ -31258,7 +31258,7 @@
 				"hm_usage": "0x8",
 				"argument": "0xc",
 				"encounter_type": "0x0",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x28"
@@ -31268,7 +31268,7 @@
 				"hm_usage": "0x8",
 				"argument": "0xc",
 				"encounter_type": "0x0",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x2c"
@@ -31278,7 +31278,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -31288,7 +31288,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x38"
@@ -31298,7 +31298,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x5",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x34"
@@ -31308,7 +31308,7 @@
 				"hm_usage": "0x10",
 				"argument": "0xd",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x3",
 				"battle_bg": "0x34"
@@ -31318,7 +31318,7 @@
 				"hm_usage": "0x13",
 				"argument": "0x0",
 				"encounter_type": "0x7",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x3b"
@@ -31328,7 +31328,7 @@
 				"hm_usage": "0x13",
 				"argument": "0x8",
 				"encounter_type": "0x7",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x37"
@@ -31338,7 +31338,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x13"
@@ -31348,7 +31348,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x17"
@@ -31358,7 +31358,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x28"
@@ -31368,7 +31368,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x2c"
@@ -31378,7 +31378,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x13"
@@ -31388,7 +31388,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x17"
@@ -31398,7 +31398,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x28"
@@ -31408,7 +31408,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x2c"
@@ -31418,7 +31418,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x13"
@@ -31428,7 +31428,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x17"
@@ -31438,7 +31438,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x28"
@@ -31448,7 +31448,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x2c"
@@ -31458,7 +31458,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x4",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -31468,7 +31468,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -31478,7 +31478,7 @@
 				"hm_usage": "0x11",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0x23"
@@ -31488,7 +31488,7 @@
 				"hm_usage": "0x11",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0x27"
@@ -31498,7 +31498,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x4",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -31508,7 +31508,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -31518,7 +31518,7 @@
 				"hm_usage": "0x11",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0x23"
@@ -31528,7 +31528,7 @@
 				"hm_usage": "0x11",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0x27"
@@ -31538,7 +31538,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x4",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -31548,7 +31548,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -31558,7 +31558,7 @@
 				"hm_usage": "0x11",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0x23"
@@ -31568,7 +31568,7 @@
 				"hm_usage": "0x11",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0x27"
@@ -31578,7 +31578,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x8",
 				"encounter_type": "0x4",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD"
@@ -31588,7 +31588,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x8",
 				"encounter_type": "0x4",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD"
@@ -31598,7 +31598,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x3c"
@@ -31608,7 +31608,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x3c"
@@ -31618,7 +31618,7 @@
 				"hm_usage": "0x10",
 				"argument": "0x5",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x3",
 				"battle_bg": "0x34"
@@ -31628,7 +31628,7 @@
 				"hm_usage": "0x0",
 				"argument": "0xd",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x34"
@@ -31638,7 +31638,7 @@
 				"hm_usage": "0x13",
 				"argument": "0x8",
 				"encounter_type": "0x7",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x3b"
@@ -31648,7 +31648,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -31658,7 +31658,7 @@
 				"hm_usage": "0x3",
 				"argument": "0xa",
 				"encounter_type": "0x6",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x30"
@@ -31668,7 +31668,7 @@
 				"hm_usage": "0x3",
 				"argument": "0xa",
 				"encounter_type": "0x6",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x34"
@@ -31678,7 +31678,7 @@
 				"hm_usage": "0x1b",
 				"argument": "0x0",
 				"encounter_type": "0x6",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x29"
@@ -31688,7 +31688,7 @@
 				"hm_usage": "0x1b",
 				"argument": "0x0",
 				"encounter_type": "0x6",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x2d"
@@ -31698,7 +31698,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x30"
@@ -31708,7 +31708,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x34"
@@ -31718,7 +31718,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x29"
@@ -31728,7 +31728,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x2",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x2d"
@@ -31738,7 +31738,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x13"
@@ -31748,7 +31748,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x17"
@@ -31758,7 +31758,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x30"
@@ -31768,7 +31768,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xe",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x34"
@@ -31778,7 +31778,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x4",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -31788,7 +31788,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -31798,7 +31798,7 @@
 				"hm_usage": "0x11",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0x2b"
@@ -31808,7 +31808,7 @@
 				"hm_usage": "0x11",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0x2f"
@@ -31818,7 +31818,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x4",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -31828,7 +31828,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -31838,7 +31838,7 @@
 				"hm_usage": "0x11",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0x2b"
@@ -31848,7 +31848,7 @@
 				"hm_usage": "0x11",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0x2f"
@@ -31858,7 +31858,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x4",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -31868,7 +31868,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -31878,7 +31878,7 @@
 				"hm_usage": "0x11",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0x2b"
@@ -31888,7 +31888,7 @@
 				"hm_usage": "0x11",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0x2f"
@@ -31898,7 +31898,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x8",
 				"encounter_type": "0x4",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD"
@@ -31908,7 +31908,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x8",
 				"encounter_type": "0x4",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD"
@@ -31918,7 +31918,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x38"
@@ -31928,7 +31928,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x3c"
@@ -31938,7 +31938,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x1",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x1a"
@@ -31948,7 +31948,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x1",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x1e"
@@ -31958,7 +31958,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -31968,7 +31968,7 @@
 				"hm_usage": "0x8",
 				"argument": "0xd",
 				"encounter_type": "0x1",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x20"
@@ -31978,7 +31978,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x1",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x1a"
@@ -31988,7 +31988,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x1",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x1e"
@@ -31998,7 +31998,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -32008,7 +32008,7 @@
 				"hm_usage": "0xa",
 				"argument": "0xd",
 				"encounter_type": "0x5",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x20"
@@ -32018,7 +32018,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x1",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x1c"
@@ -32028,7 +32028,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x5",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x1c"
@@ -32038,7 +32038,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -32048,7 +32048,7 @@
 				"hm_usage": "0x8",
 				"argument": "0x9",
 				"encounter_type": "0x5",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x20"
@@ -32058,7 +32058,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x5",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x28"
@@ -32068,7 +32068,7 @@
 				"hm_usage": "0x10",
 				"argument": "0xd",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x28"
@@ -32078,7 +32078,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -32088,7 +32088,7 @@
 				"hm_usage": "0x11",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x37"
@@ -32098,7 +32098,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x4",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -32108,7 +32108,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -32118,7 +32118,7 @@
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -32128,7 +32128,7 @@
 				"hm_usage": "0x11",
 				"argument": "0x2",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -32138,7 +32138,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x4",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -32148,7 +32148,7 @@
 				"hm_usage": "0x4",
 				"argument": "0xc",
 				"encounter_type": "0x0",
-				"field_5": "0x1",
+				"cloud_type": "0x1",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -32158,7 +32158,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xc",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x38"
@@ -32168,7 +32168,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xc",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x3c"
@@ -32178,7 +32178,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x4",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -32188,7 +32188,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -32198,7 +32198,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x8",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0x33"
@@ -32208,7 +32208,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x8",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0x37"
@@ -32218,17 +32218,17 @@
 				"hm_usage": "0x0",
 				"argument": "0x8",
 				"encounter_type": "0x4",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
-				"behaviour": "MB_3",
+				"behaviour": "0",
 				"hm_usage": "0x6",
 				"argument": "0x8",
 				"encounter_type": "0x4",
-				"field_5": "0x1",
+				"cloud_type": "0x1",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -32238,7 +32238,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x39"
@@ -32248,7 +32248,7 @@
 				"hm_usage": "0x9",
 				"argument": "0x6",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x3d"
@@ -32258,17 +32258,17 @@
 				"hm_usage": "0x0",
 				"argument": "0x4",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_FIRE"
 			},
 			{
-				"behaviour": "MB_3",
+				"behaviour": "0",
 				"hm_usage": "0x4",
 				"argument": "0xc",
 				"encounter_type": "0x0",
-				"field_5": "0x1",
+				"cloud_type": "0x1",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -32278,7 +32278,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xc",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x38"
@@ -32288,7 +32288,7 @@
 				"hm_usage": "0x9",
 				"argument": "0xc",
 				"encounter_type": "0x2",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x3c"
@@ -32298,7 +32298,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x5",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x28"
@@ -32308,7 +32308,7 @@
 				"hm_usage": "0x0",
 				"argument": "0xd",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x28"
@@ -32318,7 +32318,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -32328,7 +32328,7 @@
 				"hm_usage": "0x13",
 				"argument": "0x0",
 				"encounter_type": "0x7",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x37"
@@ -32338,7 +32338,7 @@
 				"hm_usage": "0x8",
 				"argument": "0x4",
 				"encounter_type": "0x0",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x29"
@@ -32348,7 +32348,7 @@
 				"hm_usage": "0x8",
 				"argument": "0x4",
 				"encounter_type": "0x0",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x2d"
@@ -32358,7 +32358,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -32368,7 +32368,7 @@
 				"hm_usage": "0x1",
 				"argument": "0xa",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x0",
 				"battle_bg": "0x20"
@@ -32378,7 +32378,7 @@
 				"hm_usage": "0x10",
 				"argument": "0x5",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x3",
 				"battle_bg": "0x28"
@@ -32388,7 +32388,7 @@
 				"hm_usage": "0x10",
 				"argument": "0xd",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x28"
@@ -32398,7 +32398,7 @@
 				"hm_usage": "0x11",
 				"argument": "0xc",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x3b"
@@ -32408,7 +32408,7 @@
 				"hm_usage": "0x11",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x37"
@@ -32418,7 +32418,7 @@
 				"hm_usage": "0x8",
 				"argument": "0x4",
 				"encounter_type": "0x0",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1b"
@@ -32428,7 +32428,7 @@
 				"hm_usage": "0x8",
 				"argument": "0x4",
 				"encounter_type": "0x0",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1f"
@@ -32438,7 +32438,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -32448,7 +32448,7 @@
 				"hm_usage": "0x19",
 				"argument": "0x6",
 				"encounter_type": "0x3",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0"
@@ -32458,7 +32458,7 @@
 				"hm_usage": "0x8",
 				"argument": "0x5",
 				"encounter_type": "0x1",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x13"
@@ -32468,7 +32468,7 @@
 				"hm_usage": "0x8",
 				"argument": "0x5",
 				"encounter_type": "0x1",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "BATTLE_BG_MILL"
@@ -32478,7 +32478,7 @@
 				"hm_usage": "0x0",
 				"argument": "0xb",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x1",
 				"priority": "0x2",
 				"battle_bg": "BATTLE_BG_FIRE"
@@ -32488,7 +32488,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -32498,7 +32498,7 @@
 				"hm_usage": "0x8",
 				"argument": "0xc",
 				"encounter_type": "0x0",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x28"
@@ -32508,7 +32508,7 @@
 				"hm_usage": "0x8",
 				"argument": "0xc",
 				"encounter_type": "0x0",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x2c"
@@ -32518,7 +32518,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -32528,7 +32528,7 @@
 				"hm_usage": "0x19",
 				"argument": "0xa",
 				"encounter_type": "0x3",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0"
@@ -32538,7 +32538,7 @@
 				"hm_usage": "0x8",
 				"argument": "0xc",
 				"encounter_type": "0x0",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x28"
@@ -32548,7 +32548,7 @@
 				"hm_usage": "0x8",
 				"argument": "0xc",
 				"encounter_type": "0x0",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x2c"
@@ -32558,7 +32558,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -32568,7 +32568,7 @@
 				"hm_usage": "0x19",
 				"argument": "0xa",
 				"encounter_type": "0x7",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_CLOUD"
@@ -32578,7 +32578,7 @@
 				"hm_usage": "0x8",
 				"argument": "0xc",
 				"encounter_type": "0x0",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x28"
@@ -32588,7 +32588,7 @@
 				"hm_usage": "0x8",
 				"argument": "0xc",
 				"encounter_type": "0x0",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x2c"
@@ -32598,7 +32598,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -32608,7 +32608,7 @@
 				"hm_usage": "0x1b",
 				"argument": "0xa",
 				"encounter_type": "0x7",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0"
@@ -32618,7 +32618,7 @@
 				"hm_usage": "0x10",
 				"argument": "0x5",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x3",
 				"battle_bg": "0x28"
@@ -32628,7 +32628,7 @@
 				"hm_usage": "0x0",
 				"argument": "0xd",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x28"
@@ -32638,7 +32638,7 @@
 				"hm_usage": "0x13",
 				"argument": "0x8",
 				"encounter_type": "0x7",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x3b"
@@ -32648,7 +32648,7 @@
 				"hm_usage": "0x13",
 				"argument": "0x0",
 				"encounter_type": "0x7",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x37"
@@ -32658,7 +32658,7 @@
 				"hm_usage": "0x8",
 				"argument": "0x4",
 				"encounter_type": "0x0",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x29"
@@ -32668,7 +32668,7 @@
 				"hm_usage": "0x8",
 				"argument": "0xc",
 				"encounter_type": "0x5",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x3d"
@@ -32678,7 +32678,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0"
@@ -32688,7 +32688,7 @@
 				"hm_usage": "0x1b",
 				"argument": "0x2",
 				"encounter_type": "0x7",
-				"field_5": "0x2",
+				"cloud_type": "0x2",
 				"field_7": "0x1",
 				"priority": "0x1",
 				"battle_bg": "0"
@@ -32698,7 +32698,7 @@
 				"hm_usage": "0x10",
 				"argument": "0x5",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x2",
 				"battle_bg": "0x28"
@@ -32708,7 +32708,7 @@
 				"hm_usage": "0x10",
 				"argument": "0xd",
 				"encounter_type": "0x1",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x3",
 				"battle_bg": "0x28"
@@ -32718,7 +32718,7 @@
 				"hm_usage": "0x11",
 				"argument": "0x4",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x3b"
@@ -32728,7 +32728,7 @@
 				"hm_usage": "0x11",
 				"argument": "0xc",
 				"encounter_type": "0x3",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0x37"
@@ -32738,7 +32738,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1b"
@@ -32748,7 +32748,7 @@
 				"hm_usage": "0x1",
 				"argument": "0x4",
 				"encounter_type": "0x2",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "0x1f"

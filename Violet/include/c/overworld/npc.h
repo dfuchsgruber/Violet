@@ -511,7 +511,7 @@ void npc_update_oam_delay_all();
  * Callback that lets the player transit to a biking state.
  * @param self self reference
  **/
-void player_transition_to_bike(u8 self);
+void player_transition_toggle_on_off_bike(u8 self);
 
 /**
  * Checks if the player state disables them to use a bike

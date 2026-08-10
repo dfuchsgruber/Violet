@@ -1,0 +1,9 @@
+{
+    "type" : "enum",
+    "base" : 0,
+    "values" : [
+        "BLOCK_CLOUD_NONE",
+        "BLOCK_FORCE_ON_CLOUD",
+        "BLOCK_FORCE_OFF_CLOUD",
+    ]
+}

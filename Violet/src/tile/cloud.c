@@ -13,6 +13,7 @@
 #include "overworld/map_control.h"
 #include "constants/battle/battle_bgs.h"
 #include "debug.h"
+#include "constants/block_cloud_types.h"
 
 void cloud_force() {
     if ((player_state.state & 1) && cloud_not_dismountable()) {
@@ -73,54 +74,19 @@ void warp_to_pos_with_facing() {
     clearflag(TRANS_PALETTE_FETCH);
 }
 
-static const u16 cloud_dismountable_blocks[] = {
-	0xD8, 0xD9, 0xDA, 0xDB, 0xDC, 0xDD, 0xDE, 0xDF, 
-	0xE2, 0xEA, 0xF2, 0xE4, 0xE5, 0xCA, 0xCB, 0xCC, 
-	0xC6, 0xCE, 0xD6, 0xEC, 0xF4,
-	0xFFFF,
-};
+bool cloud_not_dismountable() {
+	if (!player_state_disables_bike()) {
+		position_t pos;
+		player_get_position(&pos);
+		u32 cloud_type = block_get_field_by_pos(pos.coordinates.x, pos.coordinates.y, FIELD_CLOUD_TYPE);
+		return cloud_type == BLOCK_FORCE_ON_CLOUD;
+	}
+	return false;
+}
 
-static const u16 cloud_ardeal_dismountable_blocks[] = {
-	0x281, 0x282, 0x298, 0x299, 0x2a0, 0x2a1, 0x2a8, 
-	0x2a9, 0x28b, 0x28c, 0x293, 0x29b, 0x2a4, 0x2d9, 
-	0x296, 0x295, 0x294, 0x29E,
-	0xFFFF,
-};
-
-
-static bool cloud_current_block_dismountable(const u16 *blocks) {
+bool player_should_be_forced_off_cloud() {
 	position_t pos;
 	player_get_position(&pos);
-	u16 block = block_get_by_pos(pos.coordinates.x, pos.coordinates.y);
-
-	
-	for (int i = 0; blocks[i] != 0xFFFF; i++) {
-		if (block == blocks[i]) return true;
-	}
-	return false;
+	u32 cloud_type = block_get_field_by_pos(pos.coordinates.x, pos.coordinates.y, FIELD_CLOUD_TYPE);
+	return cloud_type == BLOCK_FORCE_OFF_CLOUD;
 }
-
-bool cloud_not_dismountable() {
-	if (map_is_cloud() && !player_state_disables_bike()) {
-		if (tileset_primary_is_clouds(mapheader_virtual.footer->tileset1)) {
-			position_t pos;
-			player_get_position(&pos);
-			// DEBUG("Position is %d,%d, with battle bg %d\n", pos.coordinates.x, pos.coordinates.y, block_get_field_by_pos(pos.coordinates.x, pos.coordinates.y, FIELD_BATTLE_BG));
-
-			if (block_get_field_by_pos(pos.coordinates.x, pos.coordinates.y, FIELD_BATTLE_BG) == BATTLE_BG_SKY_ISLAND) {
-				return false; // These are all land tiles, more or less...
-			}
-		}
-		if (cloud_current_block_dismountable(cloud_dismountable_blocks)) {
-			// On cloud maps only on certain blocks the player can dismount
-			return false;
-		}
-		if (mapheader_virtual.footer->tileset2 == &maptileset_cloud_ardeal &&
-			cloud_current_block_dismountable(cloud_ardeal_dismountable_blocks)) {
-			return false;
-		}
-		return true;
-	}
-	return false;
-}
-

@@ -17,8 +17,6 @@ sonnaufeld_clouds_levelscripts:
 	.word levelscript_on_transition
     .byte LEVELSCRIPT_TYPE_ON_LOAD
     .word levelscript_set_blocks
-	.byte LEVELSCRIPT_TYPE_ON_WARP_INTO_MAP_TABLE
-	.word levelscript_player_set_on_cloud
     .byte 0
 
 levelscript_on_transition:

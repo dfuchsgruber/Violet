@@ -7,7 +7,8 @@
 
 #ifndef INCLUDE_C_TILE_CLOUD_H_
 #define INCLUDE_C_TILE_CLOUD_H_
-#include "stdbool.h"
+#include "types.h"
+
 
 extern const u8 *script_cloud_none_ref;
 extern const u8 *script_use_cloud_ref;
@@ -23,5 +24,11 @@ void cloud_enter();
  * @return if the cloud can not be dismounted, i.e. the player has to be on a cloud
  **/
 bool cloud_not_dismountable();
+
+/**
+ * Checks if the player should be forced off a cloud.
+ * @return if the player should be forced off a cloud
+ */
+bool player_should_be_forced_off_cloud();
 
 #endif /* INCLUDE_C_TILE_CLOUD_H_ */

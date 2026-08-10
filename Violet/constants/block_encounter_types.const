@@ -1,0 +1,9 @@
+{
+    "type" : "enum",
+    "values" : [
+        "BLOCK_ENCOUNTER_NONE",
+        "BLOCK_ENCOUNTER_GRASS",
+        "BLOCK_ENCOUNTER_WATER",
+    ],
+    "base" : 0,
+}

@@ -56,8 +56,8 @@ bool step_on_warp(const position_t *position, u8 behaviour) {
     }
     if (behaviour == MB_CLOUD_UPSTREAM_WARP && checkflag(ROUTE_5_CLOUD_RECEIVED)) {//&& item_check(ITEM_FAHRRAD, 1)) {
         if (!(player_state.state & PLAYER_STATE_BIKING)) {
-            u8 cb_idx = big_callback_new(player_transition_to_bike, 0);
-            player_transition_to_bike(cb_idx);
+            u8 cb_idx = big_callback_new(player_transition_toggle_on_off_bike, 0);
+            player_transition_toggle_on_off_bike(cb_idx);
         }
         player_save_initial_state();
         player_initial_state.state |= PLAYER_STATE_BIKING;

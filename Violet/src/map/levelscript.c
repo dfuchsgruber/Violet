@@ -53,10 +53,12 @@ bool map_init_levelscript_2_on_frame() {
 }
 
 void map_init_levelscript_on_transition() {
+    DEBUG("map_init_levelscript_on_transition\n");
 	map_levelscript_init_no_var_check(LEVELSCRIPT_TYPE_ON_TRANSITION);
 }
 
 void map_init_levelscript_7_on_return_to_overworld() {
     achievements_compute_unlocked_message_issued();
+    DEBUG("map_init_levelscript_7_on_return_to_overworld\n");
     map_levelscript_init_no_var_check(LEVELSCRIPT_TYPE_ON_RETURN_TO_OVERWORLD);
 }

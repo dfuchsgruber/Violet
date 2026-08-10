@@ -21,7 +21,7 @@ static const u8 door_animation_blackbeard_ship_palettes[] = {7, 7, 7, 7, 7, 7, 7
 static const u8 door_animation_meriana_city_palettes[] = {7, 7, 7, 7, 7, 7, 7, 7};
 static const u8 door_animation_route_4_palettes[] = {12, 12, 12, 12, 12, 12, 12, 12};
 static const u8 door_animation_sonnaufeld_palettes[] = {7, 7, 7, 7, 7, 7, 7, 7};
-
+static const u8 door_animation_cloud_swamp_house_palettes[] = {9, 9, 9, 9, 9, 9, 9, 9};
 extern const u8 gfx_tileset_door_anim_0Tiles[];
 extern const u8 gfx_tileset_door_anim_1Tiles[];
 extern const u8 gfx_tileset_door_anim_2Tiles[];
@@ -40,6 +40,7 @@ extern const u8 gfx_tileset_haweiland_door_animTiles[];
 extern const u8 gfx_maptileset_blackbeard_ship_door_animTiles[];
 extern const u8 gfx_maptileset_meriana_city_doorTiles[];
 extern const u8 gfx_tileset_door_anim_sonnaufeldTiles[];
+extern const u8 gfx_door_anim_cloud_swap_houseTiles[];
 
 const door_animation door_animations[] = {
     {0x2AA, 0, 0, gfx_tileset_door_anim_0Tiles, door_animation_0_palettes},
@@ -61,6 +62,6 @@ const door_animation door_animations[] = {
     {.block = 0x36b, .type = DOOR_ANIM_TYPE_STANDARD, .double_tiled = false, .gfx = gfx_maptileset_meriana_city_doorTiles, .palette_map = door_animation_meriana_city_palettes},
     {0x19e, 0, 0, gfx_tileset_door_anim_13Tiles, door_animation_route_4_palettes}, // same as ceometria, i am just recycling the house basically...
     {.block = 0x3b9, .type = DOOR_ANIM_TYPE_STANDARD, .double_tiled = false, .gfx = gfx_tileset_door_anim_sonnaufeldTiles, .palette_map = door_animation_sonnaufeld_palettes},
-    {0, 0, 0, 0, 0},
+    {.block = 0x32A, .type = DOOR_ANIM_TYPE_STANDARD, .double_tiled = 0, .gfx = gfx_door_anim_cloud_swap_houseTiles, .palette_map = door_animation_cloud_swamp_house_palettes},
 };
 

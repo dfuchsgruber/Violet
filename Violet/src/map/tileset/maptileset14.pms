@@ -7,7 +7,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -17,7 +17,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -27,7 +27,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -37,7 +37,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -47,7 +47,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -57,7 +57,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -67,7 +67,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -77,7 +77,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -87,7 +87,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -97,7 +97,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -107,7 +107,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -117,7 +117,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -127,7 +127,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -137,7 +137,7 @@
 				"hm_usage": "0x0",
 				"argument": "PC_POKESTOP",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -147,7 +147,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -157,7 +157,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -167,7 +167,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -177,7 +177,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -187,7 +187,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -197,7 +197,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -207,7 +207,7 @@
 				"hm_usage": "0x0",
 				"argument": "PC_POKESTOP",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -217,7 +217,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -227,7 +227,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -237,7 +237,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -247,7 +247,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -257,7 +257,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -267,7 +267,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -277,7 +277,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -287,7 +287,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -297,7 +297,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -307,7 +307,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -317,7 +317,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -327,7 +327,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -337,7 +337,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -347,7 +347,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -357,7 +357,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -367,7 +367,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -377,7 +377,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -387,7 +387,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -397,7 +397,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -407,7 +407,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -417,7 +417,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -427,7 +427,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -437,7 +437,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -447,7 +447,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -457,7 +457,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -467,7 +467,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -477,7 +477,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -487,7 +487,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -497,7 +497,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -507,7 +507,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -517,7 +517,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -527,7 +527,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -537,7 +537,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -547,7 +547,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -557,7 +557,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -567,7 +567,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -577,7 +577,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -587,7 +587,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -597,7 +597,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -607,7 +607,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -617,7 +617,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -627,7 +627,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -637,7 +637,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -647,7 +647,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -657,7 +657,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -667,7 +667,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -677,7 +677,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -687,7 +687,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -697,7 +697,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -707,7 +707,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -717,7 +717,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -727,7 +727,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -737,7 +737,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -747,7 +747,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -757,7 +757,7 @@
 				"hm_usage": "0",
 				"argument": "FLAVOR_TEXT_INSIDE_BOOKSHELF_2",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -767,7 +767,7 @@
 				"hm_usage": "0",
 				"argument": "FLAVOR_TEXT_INSIDE_BOOKSHELF_3",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -777,7 +777,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -787,77 +787,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "MB_BA",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "MB_BA",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -867,17 +797,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "MB_BA",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -887,7 +807,87 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "MB_BA",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "MB_BA",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "MB_BA",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -897,7 +897,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -907,7 +907,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -917,7 +917,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -927,7 +927,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -937,7 +937,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -947,7 +947,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -957,7 +957,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -967,7 +967,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -977,7 +977,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -987,7 +987,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -997,7 +997,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1007,7 +1007,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1017,7 +1017,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1027,7 +1027,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1037,7 +1037,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1047,157 +1047,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "MB_COUNTER",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1207,7 +1057,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1217,7 +1067,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1227,7 +1077,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1237,7 +1087,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1247,7 +1097,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1257,37 +1107,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"argument": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1297,7 +1117,37 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1307,7 +1157,47 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1317,7 +1207,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1327,7 +1217,117 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "MB_COUNTER",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"argument": "0x0",
+				"encounter_type": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1337,7 +1337,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1347,7 +1347,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1357,7 +1357,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1367,7 +1367,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1377,7 +1377,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1387,7 +1387,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1397,7 +1397,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1407,7 +1407,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1417,7 +1417,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1427,7 +1427,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1437,7 +1437,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1447,7 +1447,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1457,7 +1457,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1467,7 +1467,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1477,7 +1477,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1487,7 +1487,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1497,7 +1497,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1507,7 +1507,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1517,7 +1517,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1527,7 +1527,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1537,7 +1537,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1547,7 +1547,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1557,7 +1557,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1567,7 +1567,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1577,7 +1577,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1587,7 +1587,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1597,7 +1597,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1607,7 +1607,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1617,7 +1617,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1627,7 +1627,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1637,7 +1637,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1647,7 +1647,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1657,7 +1657,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1667,7 +1667,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1677,7 +1677,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1687,7 +1687,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1697,7 +1697,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1707,7 +1707,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1717,7 +1717,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1727,7 +1727,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1737,7 +1737,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1747,7 +1747,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1757,7 +1757,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1767,7 +1767,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1777,7 +1777,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1787,7 +1787,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1797,7 +1797,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1807,7 +1807,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1817,7 +1817,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1827,7 +1827,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1837,7 +1837,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1847,7 +1847,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1857,7 +1857,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1867,7 +1867,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1877,7 +1877,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1887,7 +1887,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1897,7 +1897,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1907,7 +1907,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1917,7 +1917,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1927,7 +1927,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1937,7 +1937,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1947,7 +1947,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1957,7 +1957,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1967,7 +1967,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1977,7 +1977,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1987,7 +1987,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -1997,7 +1997,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2007,7 +2007,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2017,7 +2017,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2027,7 +2027,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2037,7 +2037,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2047,7 +2047,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2057,7 +2057,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2067,7 +2067,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2077,7 +2077,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2087,7 +2087,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2097,7 +2097,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2107,7 +2107,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2117,7 +2117,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2127,7 +2127,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2137,7 +2137,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2147,7 +2147,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2157,7 +2157,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2167,7 +2167,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2177,7 +2177,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2187,7 +2187,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2197,7 +2197,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2207,7 +2207,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2217,7 +2217,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2227,7 +2227,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2237,7 +2237,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2247,7 +2247,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2257,7 +2257,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2267,7 +2267,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2277,7 +2277,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2287,7 +2287,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2297,7 +2297,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2307,7 +2307,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2317,7 +2317,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2327,7 +2327,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2337,7 +2337,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2347,7 +2347,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2357,7 +2357,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2367,7 +2367,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2377,7 +2377,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2387,7 +2387,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2397,7 +2397,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2407,7 +2407,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2417,7 +2417,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2427,7 +2427,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2437,7 +2437,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2447,7 +2447,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2457,7 +2457,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2467,7 +2467,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2477,7 +2477,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2487,7 +2487,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2497,7 +2497,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2507,7 +2507,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2517,7 +2517,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2527,7 +2527,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2537,7 +2537,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2547,7 +2547,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2557,7 +2557,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2567,7 +2567,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2577,7 +2577,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2587,7 +2587,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2597,7 +2597,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2607,7 +2607,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2617,7 +2617,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2627,7 +2627,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2637,7 +2637,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2647,7 +2647,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2657,7 +2657,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2667,7 +2667,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2677,7 +2677,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2687,7 +2687,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2697,7 +2697,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2707,7 +2707,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2717,7 +2717,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2727,7 +2727,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2737,7 +2737,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2747,7 +2747,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2757,7 +2757,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2767,7 +2767,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2777,7 +2777,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2787,7 +2787,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2797,7 +2797,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2807,7 +2807,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2817,7 +2817,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2827,7 +2827,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2837,7 +2837,7 @@
 				"hm_usage": "0x0",
 				"argument": "0x0",
 				"encounter_type": "0x0",
-				"field_5": "0x0",
+				"cloud_type": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2847,7 +2847,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2857,57 +2857,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
-				"field_7": "0",
-				"priority": "0",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x1ff",
-				"hm_usage": "0x1f",
-				"argument": "0x3",
-				"encounter_type": "0x7",
-				"field_5": "0x3",
-				"field_7": "0x1",
-				"priority": "0x3",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x1ff",
-				"hm_usage": "0x1f",
-				"argument": "0x3",
-				"encounter_type": "0x7",
-				"field_5": "0x3",
-				"field_7": "0x1",
-				"priority": "0x3",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0",
-				"hm_usage": "0",
-				"argument": "0",
-				"encounter_type": "0",
-				"field_5": "0",
-				"field_7": "0",
-				"priority": "0",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0",
-				"hm_usage": "0",
-				"argument": "0",
-				"encounter_type": "0",
-				"field_5": "0",
-				"field_7": "0",
-				"priority": "0",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0",
-				"hm_usage": "0",
-				"argument": "0",
-				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2917,37 +2867,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
-				"field_7": "0x1",
-				"priority": "0x3",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0",
-				"hm_usage": "0",
-				"argument": "0",
-				"encounter_type": "0",
-				"field_5": "0",
-				"field_7": "0",
-				"priority": "0",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0",
-				"hm_usage": "0",
-				"argument": "0",
-				"encounter_type": "0",
-				"field_5": "0",
-				"field_7": "0",
-				"priority": "0",
-				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
-			},
-			{
-				"behaviour": "0x1ff",
-				"hm_usage": "0x1f",
-				"argument": "0x3",
-				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2957,7 +2877,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2967,7 +2887,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2977,7 +2897,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2987,7 +2907,27 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
+				"field_7": "0",
+				"priority": "0",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x1ff",
+				"hm_usage": "0x1f",
+				"argument": "0x3",
+				"encounter_type": "0x7",
+				"cloud_type": "0x3",
+				"field_7": "0x1",
+				"priority": "0x3",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0",
+				"hm_usage": "0",
+				"argument": "0",
+				"encounter_type": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -2997,7 +2937,37 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
+				"field_7": "0",
+				"priority": "0",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x1ff",
+				"hm_usage": "0x1f",
+				"argument": "0x3",
+				"encounter_type": "0x7",
+				"cloud_type": "0x3",
+				"field_7": "0x1",
+				"priority": "0x3",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0x1ff",
+				"hm_usage": "0x1f",
+				"argument": "0x3",
+				"encounter_type": "0x7",
+				"cloud_type": "0x3",
+				"field_7": "0x1",
+				"priority": "0x3",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0",
+				"hm_usage": "0",
+				"argument": "0",
+				"encounter_type": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3007,7 +2977,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3017,7 +2987,37 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
+				"field_7": "0",
+				"priority": "0",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0",
+				"hm_usage": "0",
+				"argument": "0",
+				"encounter_type": "0",
+				"cloud_type": "0",
+				"field_7": "0",
+				"priority": "0",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0",
+				"hm_usage": "0",
+				"argument": "0",
+				"encounter_type": "0",
+				"cloud_type": "0",
+				"field_7": "0",
+				"priority": "0",
+				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
+			},
+			{
+				"behaviour": "0",
+				"hm_usage": "0",
+				"argument": "0",
+				"encounter_type": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3027,7 +3027,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3037,7 +3037,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3047,7 +3047,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3057,7 +3057,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3067,7 +3067,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3077,7 +3077,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3087,7 +3087,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3097,7 +3097,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3107,7 +3107,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3117,7 +3117,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3127,7 +3127,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3137,7 +3137,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3147,7 +3147,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3157,7 +3157,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3167,7 +3167,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3177,7 +3177,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3187,7 +3187,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3197,7 +3197,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3207,7 +3207,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3217,7 +3217,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3227,7 +3227,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3237,7 +3237,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3247,7 +3247,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3257,7 +3257,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3267,7 +3267,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3277,7 +3277,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3287,7 +3287,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3297,7 +3297,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3307,7 +3307,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3317,7 +3317,7 @@
 				"hm_usage": "0",
 				"argument": "0",
 				"encounter_type": "0",
-				"field_5": "0",
+				"cloud_type": "0",
 				"field_7": "0",
 				"priority": "0",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3327,7 +3327,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3337,7 +3337,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3347,7 +3347,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3357,7 +3357,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3367,7 +3367,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3377,7 +3377,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3387,7 +3387,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3397,7 +3397,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3407,7 +3407,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3417,7 +3417,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3427,7 +3427,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3437,7 +3437,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3447,7 +3447,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3457,7 +3457,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3467,7 +3467,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3477,7 +3477,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3487,7 +3487,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3497,7 +3497,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3507,7 +3507,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3517,7 +3517,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3527,7 +3527,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3537,7 +3537,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3547,7 +3547,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3557,7 +3557,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3567,7 +3567,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3577,7 +3577,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3587,7 +3587,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3597,7 +3597,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3607,7 +3607,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3617,7 +3617,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3627,7 +3627,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3637,7 +3637,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3647,7 +3647,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3657,7 +3657,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3667,7 +3667,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3677,7 +3677,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3687,7 +3687,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3697,7 +3697,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3707,7 +3707,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3717,7 +3717,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3727,7 +3727,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3737,7 +3737,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3747,7 +3747,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3757,7 +3757,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3767,7 +3767,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3777,7 +3777,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3787,7 +3787,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3797,7 +3797,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3807,7 +3807,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3817,7 +3817,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3827,7 +3827,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"
@@ -3837,7 +3837,7 @@
 				"hm_usage": "0x1f",
 				"argument": "0x3",
 				"encounter_type": "0x7",
-				"field_5": "0x3",
+				"cloud_type": "0x3",
 				"field_7": "0x1",
 				"priority": "0x3",
 				"battle_bg": "BATTLE_BG_POKESTOP_RESTAURANT"

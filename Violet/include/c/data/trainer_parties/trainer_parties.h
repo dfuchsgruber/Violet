@@ -2786,6 +2786,27 @@ const trainer_pokemon trainer_party_x209_route_3_trainer_4[] = {
 	{.level = 13, .species = POKEMON_KNOFENSA},
 };
 
+const trainer_pokemon trainer_party_x212_route_4_clouds_trainer_1[] = {
+	{.level = 32, .species = POKEMON_MOLUNK},
+	{.level = 34, .species = POKEMON_SMOGON},
+	{.level = 33, .species = POKEMON_SLEIMA},
+};
+
+
+const trainer_pokemon trainer_party_x213_tafelberg_clouds_ancient_guard_green[] = {
+	{.held_item = ITEM_LICHTLEHM, .moves_set = true, 
+		.moves = {ATTACK_REFLEKTOR, ATTACK_LICHTSCHILD, ATTACK_PSYCHOKINESE, ATTACK_ERDKRAEFTE}, 
+		.level = 40, .species = POKEMON_LEPUMENTAS, 
+		.evs = {[STAT_HP] = 252, [STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 4}, 
+		.nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_MAESSIG}}},
+	{.held_item = ITEM_UEBERRESTE, .moves_set = true, 
+		.moves = {ATTACK_ENERGIEBALL, ATTACK_EGELSAMEN, ATTACK_TOXIN, ATTACK_SCHUTZSCHILD}, .level = 40, .species = POKEMON_WIELIE, .evs = {[STAT_SPECIAL_ATTACK] = 252, [STAT_HP] = 252, [STAT_DEFENSE] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_KUEHN}}},
+	{.held_item = ITEM_TSITRUBEERE, .moves_set = true, 
+		.moves = {ATTACK_SOLARSTRAHL, ATTACK_SONNENTAG, ATTACK_WINDSCHNITT, ATTACK_SYNTHESE}, .level = 40, .species = POKEMON_TROPIUS,
+		 .evs = {[STAT_HP] = 252, [STAT_SPECIAL_ATTACK] = 252, [STAT_SPEED] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_STILL}}},
+	{.held_item = ITEM_BEULENHELM, .moves_set = true, .moves = {ATTACK_SYNTHESE, ATTACK_VERWURZLER, ATTACK_GIGASAUGER, ATTACK_TOXIN}, .level = 40, .species = POKEMON_TENTANTEL, .evs = {[STAT_HP] = 252, [STAT_DEFENSE] = 252, [STAT_SPECIAL_ATTACK] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_KUEHN}}},
+};
+
 const trainer_pokemon trainer_party_restaurant_dummy[] = {
 	{.level = 5, .species = POKEMON_MEW},
 };

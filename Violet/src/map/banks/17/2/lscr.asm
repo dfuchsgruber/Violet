@@ -11,8 +11,6 @@
 .global ow_script_move_camera_at_position
 
 route_5_clouds_levelscripts:
-	.byte LEVELSCRIPT_TYPE_ON_WARP_INTO_MAP_TABLE
-	.word levelscript_player_set_on_cloud
 	.byte LEVELSCRIPT_TYPE_ON_FRAME_TABLE
 	.word lscr_on_frame_table
 	.byte 0x0

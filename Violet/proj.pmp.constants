@@ -91,5 +91,7 @@
 	"crafting_recipe_types" : "constants/crafting_recipe_types.const",
 	"dungeon/dungeon_types" : "constants/dungeon/dungeon_types.const",
 	"cutscenes" : "constants/cutscenes.const",
-	"block_arguments" : "constants/block_arguments.const"
+	"block_arguments" : "constants/block_arguments.const",
+	"block_encounter_types" : "constants/block_encounter_types.const",
+	"block_cloud_types" : "constants/block_cloud_types.const"
 }

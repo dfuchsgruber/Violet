@@ -38,6 +38,8 @@ extern const u8 gfx_grass_cloud_dark_greenTiles[];
 extern const color_t gfx_grass_cloud_dark_greenPal[16];
 extern const u8 gfx_grass_cloud_blueTiles[];
 extern const color_t gfx_grass_cloud_bluePal[16];
+extern const unsigned int gfx_grass_cloud_swampTiles[];
+extern const color_t gfx_grass_cloud_swampPal[16];
 
 extern const gfx_frame *const overworld_effect_gfx_anim_table_grass[];
 
@@ -102,6 +104,21 @@ const graphic cloud_blue_grass_graphics[] = {
     {&gfx_grass_cloud_blueTiles[4 * GRAPHIC_SIZE_4BPP(16, 16)], GRAPHIC_SIZE_4BPP(16, 16), 0},
 };
 
+const graphic cloud_swamp_grass_graphics[] = {
+    {&gfx_grass_cloud_swampTiles[0 * GRAPHIC_SIZE_4BPP(16, 16)], GRAPHIC_SIZE_4BPP(16, 16), 0},
+    {&gfx_grass_cloud_swampTiles[0 * GRAPHIC_SIZE_4BPP(16, 16)], GRAPHIC_SIZE_4BPP(16, 16), 0},
+    {&gfx_grass_cloud_swampTiles[0 * GRAPHIC_SIZE_4BPP(16, 16)], GRAPHIC_SIZE_4BPP(16, 16), 0},
+    {&gfx_grass_cloud_swampTiles[0 * GRAPHIC_SIZE_4BPP(16, 16)], GRAPHIC_SIZE_4BPP(16, 16), 0},
+    {&gfx_grass_cloud_swampTiles[0 * GRAPHIC_SIZE_4BPP(16, 16)], GRAPHIC_SIZE_4BPP(16, 16), 0},
+    {&gfx_grass_cloud_swampTiles[0 * GRAPHIC_SIZE_4BPP(16, 16)], GRAPHIC_SIZE_4BPP(16, 16), 0},
+    {&gfx_grass_cloud_swampTiles[0 * GRAPHIC_SIZE_4BPP(16, 16)], GRAPHIC_SIZE_4BPP(16, 16), 0},
+    {&gfx_grass_cloud_swampTiles[0 * GRAPHIC_SIZE_4BPP(16, 16)], GRAPHIC_SIZE_4BPP(16, 16), 0},
+    {&gfx_grass_cloud_swampTiles[0 * GRAPHIC_SIZE_4BPP(16, 16)], GRAPHIC_SIZE_4BPP(16, 16), 0},
+    {&gfx_grass_cloud_swampTiles[0 * GRAPHIC_SIZE_4BPP(16, 16)], GRAPHIC_SIZE_4BPP(16, 16), 0},
+    {&gfx_grass_cloud_swampTiles[0 * GRAPHIC_SIZE_4BPP(16, 16)], GRAPHIC_SIZE_4BPP(16, 16), 0},
+    {&gfx_grass_cloud_swampTiles[0 * GRAPHIC_SIZE_4BPP(16, 16)], GRAPHIC_SIZE_4BPP(16, 16), 0},
+};
+
 const palette any_grass_pals[] = {
     [ANY_GRASS_ASH] = {gfx_grass_ashPal, TAG_ANY_GRASS_ASH, 0},
     [ANY_GRASS_GRAVEYARD] = {gfx_graveyard_grassPal, TAG_ANY_GRASS_GRAVEYARD, 0},
@@ -109,6 +126,7 @@ const palette any_grass_pals[] = {
     [ANY_GRASS_CLOUD] = {gfx_grass_cloudPal, TAG_ANY_GRASS_CLOUD, 0},
     [ANY_GRASS_CLOUD_DARK_GREEN] = {gfx_grass_cloud_dark_greenPal, TAG_ANY_GRASS_CLOUD_DARK_GREEN, 0},
     [ANY_GRASS_CLOUD_BLUE] = {gfx_grass_cloud_bluePal, TAG_ANY_GRASS_CLOUD_BLUE, 0},
+    [ANY_GRASS_CLOUD_SWAMP] = {gfx_grass_cloud_swampPal, TAG_ANY_GRASS_CLOUD_SWAMP, 0},
 };
 
 const oam_template any_grass_templates[] = {
@@ -124,6 +142,8 @@ const oam_template any_grass_templates[] = {
     cloud_dark_green_grass_graphics, oam_rotscale_anim_table_null, overworld_effect_oam_callback_grass},
     [ANY_GRASS_CLOUD_BLUE] = {0xFFFF, TAG_ANY_GRASS_CLOUD_BLUE, &overworld_effect_grass_sprite, overworld_effect_gfx_anim_table_grass,
     cloud_blue_grass_graphics, oam_rotscale_anim_table_null, overworld_effect_oam_callback_grass},
+    [ANY_GRASS_CLOUD_SWAMP] = {0xFFFF, TAG_ANY_GRASS_CLOUD_SWAMP, &overworld_effect_grass_sprite, overworld_effect_gfx_anim_table_grass,
+    cloud_swamp_grass_graphics, oam_rotscale_anim_table_null, overworld_effect_oam_callback_grass},
 };
 
 const gfx_frame rock_climb_gfx_anim[] = {
@@ -188,7 +208,7 @@ static const any_grass any_grasses_default[] = {
         .initialize = any_grass_step, .on_player_step = any_grass_player_step_null},
     {.triggered_by_behavior = MB_ROCK_CLIMB, .template = &rock_climb_template, .palette = &rock_climb_pal, 
         .initialize = rock_climb_step, .on_player_step = any_grass_player_step_null},
-    {.triggered_by_behavior = MB_3, .template = (oam_template *)0x083A5800, .palette = NULL, 
+    {.triggered_by_behavior = 0, .template = (oam_template *)0x083A5800, .palette = NULL, 
         .initialize = rock_climb_step, .on_player_step = any_grass_player_step_null},
 };
 
@@ -222,7 +242,7 @@ static const any_grass any_grasses_haweiland[] = {
 const any_grass_header_t any_grasses_header_haweiland = {.any_grasses = any_grasses_haweiland, .number_any_grasses = ARRAY_COUNT(any_grasses_haweiland)};
 
 static const any_grass any_grasses_clouds[] = {
-    {.triggered_by_behavior = 2, .template = any_grass_templates + ANY_GRASS_CLOUD, .palette = any_grass_pals + ANY_GRASS_CLOUD, 
+    {.triggered_by_behavior = MB_TALL_GRASS, .template = any_grass_templates + ANY_GRASS_CLOUD, .palette = any_grass_pals + ANY_GRASS_CLOUD, 
         .initialize = any_grass_step, .on_player_step = any_grass_player_step_null},
     {.triggered_by_behavior = MB_ROCK_CLIMB, .template = &rock_climb_sky_island_template, .palette = &rock_climb_sky_island_pal, 
         .initialize = rock_climb_step, .on_player_step = any_grass_player_step_null},
@@ -248,11 +268,20 @@ static const any_grass any_grasses_clouds_blue[] = {
 
 const any_grass_header_t any_grasses_header_clouds_blue = {.any_grasses = any_grasses_clouds_blue, .number_any_grasses = ARRAY_COUNT(any_grasses_clouds_blue)};
 
+static const any_grass any_grasses_clouds_swamp[] = {
+    {.triggered_by_behavior = MB_LONG_GRASS, .template = any_grass_templates + ANY_GRASS_CLOUD_SWAMP, .palette = any_grass_pals + ANY_GRASS_CLOUD_SWAMP, 
+        .initialize = any_grass_step, .on_player_step = any_grass_player_step_null},
+};
+
+const any_grass_header_t any_grasses_header_clouds_swamp = {.any_grasses = any_grasses_clouds_swamp, .number_any_grasses = ARRAY_COUNT(any_grasses_clouds_swamp)};
+
+
 
 static const any_grass *any_grass_get_by_behaviour(u8 behaviour, const tileset *ts) {
     if (ts->any_grasses) {
         for (size_t i = 0; i < ts->any_grasses->number_any_grasses; i++) {
             const any_grass *g = ts->any_grasses->any_grasses + i;
+            DEBUG("Checking any grass %d on tileset %x for behaviour %d?=%d.\n", i, ts, g->triggered_by_behavior, behaviour);
             if (g->triggered_by_behavior == behaviour)
                 return g;
         }
@@ -263,8 +292,10 @@ static const any_grass *any_grass_get_by_behaviour(u8 behaviour, const tileset *
 const any_grass *any_grass_get_on_current_map_by_behaviour(u8 behaviour) {
     // Secondary tileset any grasses superceed primary tileset ones
     const any_grass *g = any_grass_get_by_behaviour(behaviour, mapheader_virtual.footer->tileset2);
-    if (g)
+    if (g) {
+        DEBUG("Found any grass on secondary tileset for behaviour %d.\n", behaviour);
         return g;
+    }
     g = any_grass_get_by_behaviour(behaviour, mapheader_virtual.footer->tileset1);
     return g;
 }
@@ -280,7 +311,7 @@ void rock_climb_step(bool reinitialize){
 }
 
 bool tile_is_high_grass(u8 behavior){
-    return behavior == MB_TALL_GRASS || behavior == 0xD1 || behavior == MB_BB || behavior == MB_ROCK_CLIMB;
+    return behavior == MB_TALL_GRASS || behavior == MB_LONG_GRASS || behavior == 0xD1 || behavior == MB_BB || behavior == MB_ROCK_CLIMB;
 }
 
 

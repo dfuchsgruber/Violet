@@ -715,6 +715,11 @@
 				"map_route_3_clouds",
 				"src/map/banks/15/2/map_route_3_clouds.pms",
 				"MAP_ROUTE_4"
+			],
+			"3": [
+				"map_route_4_clouds_swamp_house_inside",
+				"src/map/banks/15/3/map_route_4_clouds_swamp_house_inside.pms",
+				"MAP_ROUTE_4"
 			]
 		},
 		"16": {
@@ -2400,6 +2405,10 @@
 		"map_footer_laz_corp_clouds_lab": [
 			200,
 			"src/map/banks/9/6/map_footer_laz_corp_clouds_lab.pms"
+		],
+		"map_footer_route_4_clouds_swamp_house_inside": [
+			201,
+			"src/map/banks/15/3/map_footer_route_4_clouds_swamp_house_inside.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -2511,7 +2520,9 @@
 		"maptileset_kranzdorf": "src/map/tileset/maptileset_kranzdorf.pms",
 		"maptileset_laubdorf_inside": "src/map/tileset/maptileset_laubdorf_inside.pms",
 		"maptileset_kaskada_inside": "src/map/tileset/maptileset_kaskada_inside.pms",
-		"maptileset_pokestop_restaurant": "src/map/tileset/maptileset_pokestop_restaurant.pms"
+		"maptileset_pokestop_restaurant": "src/map/tileset/maptileset_pokestop_restaurant.pms",
+		"maptileset_cloud_swamp": "src/map/tileset/maptileset_cloud_swamp.pms",
+		"maptileset_cloud_forest": "src/map/tileset/maptileset_cloud_forest.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2613,6 +2624,8 @@
 		"gfx_maptileset_kranzdorf_insideTiles": "asset/gfx/tileset/gfx_maptileset_kranzdorf_inside.png",
 		"gfx_maptileset_laubdorf_insideTiles": "asset/gfx/tileset/gfx_maptileset_laubdorf_inside.png",
 		"gfx_maptileset_kaskada_insideTiles": "asset/gfx/tileset/gfx_maptileset_kaskada_inside.png",
-		"gfx_maptileset_pokestop_restaurantTiles": "asset/gfx/tileset/gfx_maptileset_pokestop_restaurant.png"
+		"gfx_maptileset_pokestop_restaurantTiles": "asset/gfx/tileset/gfx_maptileset_pokestop_restaurant.png",
+		"gfx_maptileset_cloud_swampTiles": "asset/gfx/tileset/gfx_maptileset_cloud_swamp.png",
+		"gfx_maptileset_cloud_forestTiles": "asset/gfx/tileset/gfx_maptileset_cloud_forest.png"
 	}
 }
