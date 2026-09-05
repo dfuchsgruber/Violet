@@ -217,7 +217,7 @@
 						},
 						"script": "0",
 						"treasure_map": {
-							"item": "ITEM_TOXIK_ORB",
+							"item": "ITEM_NORMALJUWEL",
 							"idx": "0",
 							"amount": "1",
 							"center_x": "-3",

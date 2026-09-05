@@ -936,6 +936,11 @@
 				"map_14_0_route_10_clouds",
 				"src/map/banks/14/0/map_14_0_route_10_clouds.pms",
 				"MAP_ROUTE_10"
+			],
+			"1": [
+				"map_route_10_clouds_house_inside",
+				"src/map/banks/14/1/map_route_10_clouds_house_inside.pms",
+				"MAP_ROUTE_10"
 			]
 		},
 		"19": {
@@ -2409,6 +2414,10 @@
 		"map_footer_route_4_clouds_swamp_house_inside": [
 			201,
 			"src/map/banks/15/3/map_footer_route_4_clouds_swamp_house_inside.pms"
+		],
+		"map_footer_route_10_clouds_house_inside": [
+			202,
+			"src/map/banks/14/1/map_footer_route_10_clouds_house_inside.pms"
 		]
 	},
 	"tilesets_primary": {

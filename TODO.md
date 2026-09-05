@@ -1,7 +1,8 @@
+- []: Distribute Treasure Maps: Add a new npc type that gives out treasure map after battling
 - []: Disable cloud features for fast and wing-jumping
 - []: TV
 - []: Song Pokestop Restaurant (center theme with jazz chords)
-- []: worldmaps
+- [x]: worldmaps
 - []: Pyramid Cloud Map above desert
 - []: Cave for Tafelberg Cloud Map (minecarts?), Altbernstein
 - []: Rework movesets for builds for frontier, diversify items!! (many of the ones available are not utilized in the current builds, try to get at least 4 builds per Mon)
@@ -12,6 +13,6 @@
 Release:
 - []: Disable DEBUG messages 
 - []: Place Unown ruins somewhere
-- []: Fix scanner
+- [x]: Fix scanner
 - []: Add Zubat to R2 Cave
 - []: Add Thunder, Fire, and Waterstone early on

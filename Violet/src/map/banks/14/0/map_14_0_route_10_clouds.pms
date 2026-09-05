@@ -3,7 +3,7 @@
 		"footer": "map_footer_31_route_10_clouds",
 		"events": {
 			"person_cnt": 27,
-			"warp_cnt": 15,
+			"warp_cnt": 16,
 			"trigger_cnt": 0,
 			"signpost_cnt": 2,
 			"persons": [
@@ -743,8 +743,8 @@
 						"in_connection": "0"
 					},
 					"argument": "0",
-					"x": "25",
-					"y": "59",
+					"x": "0",
+					"y": "11",
 					"level": "0",
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -913,6 +913,14 @@
 					"level": "0",
 					"target_warp_idx": "6",
 					"target_map": "0",
+					"target_bank": "14"
+				},
+				{
+					"x": "20",
+					"y": "54",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "1",
 					"target_bank": "14"
 				}
 			],

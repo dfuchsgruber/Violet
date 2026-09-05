@@ -39,16 +39,15 @@ ow_script_route_10_tann_assistant:
     faceplayer
     loadpointer 0 str_check_dex
     callstd MSG
-    setvar 0x8004 1
-    special2 LASTRESULT SPECIAL_POKEDEX_GET_STATS
-    compare 0x8006 30
-    gotoif LESS end_assistant
-    buffernumber 0 0x8006
-    sound 0x15
-    applymovement LASTTALKED mov_exclam
-    waitmovement 0
-    checksound
-    loadpointer 0 str_has_caught_enough
+    @ setvar 0x8004 1
+    @ special2 LASTRESULT SPECIAL_POKEDEX_GET_STATS
+    @ compare 0x8006 30
+    @ gotoif LESS end_assistant
+    @ buffernumber 0 0x8006
+    @ sound 0x15
+    @ applymovement LASTTALKED mov_exclam
+    @ waitmovement 0
+    @ checksound
     callstd MSG_KEEPOPEN
     fanfare 0x13E
     loadpointer 0 str_received_app
@@ -74,9 +73,9 @@ end_assistant:
 
 .ifdef LANG_GER
 str_check_dex:
-    .autostring 34 2 "Hallo, PLAYER!\pIch bin ein Assistent von Professor Tann.\pWenn du 30 verschiedene Pokémon gefangen hast, soll ich dir ein Geschenk geben."
-str_has_caught_enough:
-    .autostring 34 2 "Fantastisch!\pDu hast bereits BUFFER_1 Pokémon in der Pokédex-App registriert.\pAls Belohnung werde ich eine neue App auf deinem Poképad installieren."
+    .autostring 34 2 "Hallo, PLAYER!\pIch bin ein Assistent von Professor Tann.\pIch erforsche hier gemeinsam mit Professor Tann die antike Zivilisation, die einst auf den Wolkeninseln gelebt haben muss.\pViele Schätze liegen hier vergrabenDOTS\pWo wir gerade davon sprechen!\pLass mich etwas auf deinem Poképad installieren."
+@ str_has_caught_enough:
+@     .autostring 34 2 "Fantastisch!\pDu hast bereits BUFFER_1 Pokémon in der Pokédex-App registriert.\pAls Belohnung werde ich eine neue App auf deinem Poképad installieren."
 str_received_app:
     .autostring 34 2 "Die Karten-App wurde auf dem Poképad installiert!"
 str_explain_map_app:

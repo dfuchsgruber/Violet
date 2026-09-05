@@ -796,5 +796,6 @@ const song song_table[] = {
 	[MUS_ROUTE_10] = {mus_route_10, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	[FANFARE_ACHIEVEMENT] = {fanfare_achievement, SONG_TYPE_FANFARE, SONG_TYPE_FANFARE},
 	[MUS_DESERT_TENT] = {mus_desert_tent, SONG_TYPE_SONG, SONG_TYPE_SONG},
-	[MUS_POKESTOP_RESTAURANT] = {mus_pokecenter_restaurant, SONG_TYPE_SONG, SONG_TYPE_SONG}
+	[MUS_POKESTOP_RESTAURANT] = {mus_pokecenter_restaurant, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	[MUS_ROUTE_D_MINOR] = {mus_route_d_minor, SONG_TYPE_SONG, SONG_TYPE_SONG},
 };

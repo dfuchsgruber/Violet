@@ -235,6 +235,7 @@ static const worldmap_position_bank worldmap_position_bank_16_route_5 = {
 
 static const worldmap_position_bank worldmap_position_bank_14_route_10 = {
     [0] =  {.x = 20, .y = 1, .width = 1, .height = 3, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_CLOUDS,}, // Route 10
+    [1] =  {.x = 20, .y = 1, .width = 1, .height = 3, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_CLOUDS,}, // Route 10 house inside
 };
 
 static const worldmap_position_bank worldmap_position_bank_6_bruchfels = {

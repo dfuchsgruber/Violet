@@ -256,6 +256,7 @@ extern const unsigned char mus_route_10[];
 extern const unsigned char fanfare_achievement[];
 extern const unsigned char mus_desert_tent[];
 extern const unsigned char mus_pokecenter_restaurant[];
+extern const unsigned char mus_route_d_minor[];
 
 #endif	/* MUSIC_H */
 

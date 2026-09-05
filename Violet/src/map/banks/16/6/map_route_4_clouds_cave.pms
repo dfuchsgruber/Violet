@@ -2,16 +2,16 @@
 	"data": {
 		"footer": "map_footer_route_4_clouds_cave",
 		"events": {
-			"person_cnt": 2,
-			"warp_cnt": 1,
-			"trigger_cnt": 4,
+			"person_cnt": 8,
+			"warp_cnt": 4,
+			"trigger_cnt": 0,
 			"signpost_cnt": 2,
 			"persons": [
 				{
 					"target_index": "1",
 					"picture": "181",
-					"x": "18",
-					"y": "16",
+					"x": "61",
+					"y": "23",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -22,7 +22,7 @@
 					"is_trainer": 0,
 					"alert_radius": 0,
 					"script": 0,
-					"flag": "FLAG_ROUTE_4_AMBER_STONE | 0x8000",
+					"flag": "FLAG_ROUTE_4_AMBER_STONE",
 					"value": {
 						"item": "ITEM_ALTBERNSTEIN",
 						"species": "0",
@@ -39,17 +39,17 @@
 				{
 					"target_index": "2",
 					"picture": "238",
-					"x": "9",
-					"y": "29",
+					"x": "17",
+					"y": "32",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_RIGHT_UP_LEFT_DOWN",
+					"behaviour": "BEHAVIOUR_WALK_LEFT_AND_RIGHT",
 					"behaviour_range": {
 						"x": "7",
 						"y": "4"
 					},
 					"field_B": 0,
-					"is_trainer": "1",
-					"alert_radius": "5",
+					"is_trainer": "0",
+					"alert_radius": "0",
 					"script": 0,
 					"flag": "FLAG_ROUTE_5_CLOUDS_CAVE_GOLBAT",
 					"value": {
@@ -61,71 +61,224 @@
 					},
 					"argument": "38",
 					"script_std_and_in_connection": {
-						"script_std": "PERSON_AGGRESSIVE_POKEMON",
+						"script_std": "PERSON_POKEMON",
 						"in_connection": "0"
+					}
+				},
+				{
+					"target_index": "3",
+					"picture": "92",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_ITEM",
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "35",
+					"y": "33",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ROUTE_5_CLOUDS_CAVE_ITEM_0",
+					"value": {
+						"item": "ITEM_GESTEINJUWEL",
+						"species": 0,
+						"scalar": 0,
+						"type": 0,
+						"move_tutor": 0
+					}
+				},
+				{
+					"target_index": "4",
+					"picture": "92",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_ITEM",
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "15",
+					"y": "13",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ROUTE_5_CLOUDS_CAVE_ITEM_1",
+					"value": {
+						"item": "ITEM_BELEBER",
+						"species": 0,
+						"scalar": 0,
+						"type": 0,
+						"move_tutor": 0
+					}
+				},
+				{
+					"target_index": "5",
+					"picture": "92",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_ITEM",
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "40",
+					"y": "36",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ROUTE_5_CLOUDS_CAVE_ITEM_2",
+					"value": {
+						"item": "ITEM_TM60",
+						"species": 0,
+						"scalar": 0,
+						"type": 0,
+						"move_tutor": 0
+					}
+				},
+				{
+					"target_index": "6",
+					"picture": "92",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_ITEM",
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "75",
+					"y": "26",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ROUTE_5_CLOUDS_CAVE_ITEM_3",
+					"value": {
+						"item": "ITEM_VERT_ORB_P",
+						"species": 0,
+						"scalar": 0,
+						"type": 0,
+						"move_tutor": 0
+					}
+				},
+				{
+					"target_index": "7",
+					"picture": "238",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "49",
+					"y": "32",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_GEOROK",
+						"scalar": 0,
+						"type": 0,
+						"move_tutor": 0
+					}
+				},
+				{
+					"target_index": "8",
+					"picture": "238",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_POKEMON",
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "48",
+					"y": "17",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_ZUBAT",
+						"scalar": 0,
+						"type": 0,
+						"move_tutor": 0
 					}
 				}
 			],
 			"warps": [
 				{
-					"x": "18",
-					"y": "45",
+					"x": "20",
+					"y": "62",
 					"level": 0,
 					"target_warp_idx": "2",
 					"target_map": 0,
 					"target_bank": "16"
+				},
+				{
+					"x": "49",
+					"y": "52",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": 0,
+					"target_bank": "16"
+				},
+				{
+					"x": "32",
+					"y": "22",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": "5",
+					"target_bank": "16"
+				},
+				{
+					"x": "42",
+					"y": "7",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": "5",
+					"target_bank": "16"
 				}
 			],
-			"triggers": [
-				{
-					"x": "7",
-					"y": "33",
-					"level": 0,
-					"field_5": 0,
-					"var": "0x4004",
-					"value": 0,
-					"field_A": 0,
-					"field_B": 0,
-					"script": "ow_script_route_4_clouds_cave_west_button"
-				},
-				{
-					"x": "30",
-					"y": "33",
-					"level": 0,
-					"field_5": 0,
-					"var": "0x4002",
-					"value": 0,
-					"field_A": 0,
-					"field_B": 0,
-					"script": "ow_script_route_4_clouds_cave_east_button"
-				},
-				{
-					"x": "24",
-					"y": "47",
-					"level": 0,
-					"field_5": 0,
-					"var": "0x4003",
-					"value": 0,
-					"field_A": 0,
-					"field_B": 0,
-					"script": "ow_script_route_4_clouds_cave_south_button"
-				},
-				{
-					"x": "22",
-					"y": "23",
-					"level": 0,
-					"field_5": 0,
-					"var": "0x4001",
-					"value": 0,
-					"field_A": 0,
-					"field_B": 0,
-					"script": "ow_script_route_4_clouds_cave_north_button"
-				}
-			],
+			"triggers": [],
 			"signposts": [
 				{
-					"x": "18",
-					"y": "38",
+					"x": "17",
+					"y": "40",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"flag": 0,
@@ -136,7 +289,7 @@
 							"amount": 0,
 							"chunk": 0
 						},
-						"script": "ow_script_route_4_clouds_cave_tablet",
+						"script": "ow_script_clouds_mine_switch_sign",
 						"treasure_map": {
 							"item": "0",
 							"idx": "0",
@@ -147,8 +300,8 @@
 					}
 				},
 				{
-					"x": "19",
-					"y": "38",
+					"x": "26",
+					"y": "24",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"flag": 0,
@@ -159,7 +312,7 @@
 							"amount": 0,
 							"chunk": 0
 						},
-						"script": "ow_script_route_4_clouds_cave_tablet",
+						"script": "ow_script_clouds_mine_switch_sign",
 						"treasure_map": {
 							"item": "0",
 							"idx": "0",
@@ -171,12 +324,12 @@
 				}
 			]
 		},
-		"levelscripts": "route_4_clouds_cave_levelscripts",
+		"levelscripts": "lscr_clouds_mine",
 		"connections": {
 			"connection_cnt": 0,
 			"connections": []
 		},
-		"music": "MUS_GLUTBERG_AND_EISKASKADENHOHLE_AND_WANDELHOHLE_AND_VERLORENE_HOHLE_AND_NABELFELS",
+		"music": "MUS_CLOUDS_CAVE",
 		"footer_idx": 158,
 		"namespace": "MAP_ROUTE_5",
 		"flash_type": "FLASH_NONE",
