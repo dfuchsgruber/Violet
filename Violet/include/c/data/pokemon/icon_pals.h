@@ -450,6 +450,7 @@ const u8 pokemon_icon_usage[POKEMON_CNT] = {
     [POKEMON_KECLEON_PURPLE] = 2,
     [POKEMON_CRYSTAL_ONIX] = 2,
     [POKEMON_MEGA_SLEIMOK] = 2,
+    [POKEMON_MEGA_SONNFEL] = 0,
 };
 
 #endif

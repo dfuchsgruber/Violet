@@ -448,6 +448,8 @@ const u8 pokemon_altitude[POKEMON_CNT] = {
     [POKEMON_GROUDON_REGENT] = 0,
     [POKEMON_KECLEON_PURPLE] = 0,
     [POKEMON_CRYSTAL_ONIX] = 0,
+    [POKEMON_MEGA_SLEIMOK] = 0,
+    [POKEMON_MEGA_SONNFEL] = 8,
 };
 
 #endif

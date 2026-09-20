@@ -449,6 +449,7 @@ extern const unsigned short gfx_pkmn_species_440_pokemon_groudon_e_iconTiles[];
 extern const unsigned short gfx_pkmn_species_441_pokemon_kecleon_p_iconTiles[];
 extern const unsigned short gfx_pkmn_crystal_onix_iconTiles[];
 extern const unsigned short gfx_pkmn_mega_sleimok_iconTiles[];
+extern const unsigned short gfx_pkmn_mega_sonnfel_iconTiles[];
 
 
 const void *const pokemon_icons[POKEMON_CNT] = {
@@ -896,6 +897,7 @@ const void *const pokemon_icons[POKEMON_CNT] = {
     gfx_pkmn_species_441_pokemon_kecleon_p_iconTiles,
     gfx_pkmn_crystal_onix_iconTiles,
     [POKEMON_MEGA_SLEIMOK] = gfx_pkmn_mega_sleimok_iconTiles,
+    [POKEMON_MEGA_SONNFEL] = gfx_pkmn_mega_sonnfel_iconTiles,
 };
 
 

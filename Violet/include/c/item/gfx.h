@@ -810,6 +810,8 @@ extern const LZ77COMPRESSED gfx_item_sleimoknitTiles;
 extern const LZ77COMPRESSED gfx_item_sleimoknitPal;
 extern const LZ77COMPRESSED gfx_item_schillerpinTiles;
 extern const LZ77COMPRESSED gfx_item_schillerpinPal;
+extern const LZ77COMPRESSED gfx_item_sonnfelnitTiles;
+extern const LZ77COMPRESSED gfx_item_sonnfelnitPal;
 
 extern const LZ77COMPRESSED gfx_item_tm_normalTiles;
 extern const LZ77COMPRESSED gfx_item_tm_normalPal;

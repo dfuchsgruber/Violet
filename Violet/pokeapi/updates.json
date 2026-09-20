@@ -6358,5 +6358,29 @@
 		"hidden_ability": null,
 		"species_link": "POKEMON_SLEIMOK",
 		"dex_number": 0
+	},
+	"POKEMON_MEGA_SONNFEL": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": null,
+		"type_0": "Gestein",
+		"type_1": "Feuer",
+		"exp_yield": 240,
+		"species_link": "POKEMON_SONNFEL",
+		"basestats": {
+			"hp": 90,
+			"attack": 135,
+			"defense": 125,
+			"speed": 95,
+			"special-attack": 80,
+			"special-defense": 100
+		},
+		"dex_number": 0,
+		"levelup_moves": [
+			[
+				"Flammenrad",
+				15
+			]
+		]
 	}
 }

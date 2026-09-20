@@ -8896,6 +8896,15 @@ const item items[] = {
 		.field_usage = item_field_function_print_string_can_not_be_used,
 		.importance = 1,
 	},
+	[ITEM_SONNFELNIT] = {
+		.name = LANGDEP(PSTRING("Sonnfelnit"), ("Solrocknite")),
+		.index = ITEM_SONNFELNIT,
+		.description = (const u8[]) LANGDEP(
+			PSTRING("Wird er von einem Sonnfel\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+			PSTRING("If held by a Solrock in\nbattle it can perform\na mega evolution.")
+		), .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = item_field_function_print_string_can_not_be_used,
+	},
 };
 
 u16 item_idx_saniztize(u16 item_idx) {
