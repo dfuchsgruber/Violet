@@ -451,6 +451,7 @@ const u8 pokemon_icon_usage[POKEMON_CNT] = {
     [POKEMON_CRYSTAL_ONIX] = 2,
     [POKEMON_MEGA_SLEIMOK] = 2,
     [POKEMON_MEGA_SONNFEL] = 0,
+    [POKEMON_MEGA_LUNASTEIN] = 1,
 };
 
 #endif

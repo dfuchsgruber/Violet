@@ -6382,5 +6382,33 @@
 				15
 			]
 		]
+	},
+	"POKEMON_MEGA_LUNASTEIN": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": null,
+		"type_0": "Gestein",
+		"type_1": "Psycho",
+		"exp_yield": 240,
+		"species_link": "POKEMON_LUNASTEIN",
+		"basestats": {
+			"hp": 90,
+			"attack": 55,
+			"defense": 85,
+			"speed": 95,
+			"special-attack": 135,
+			"special-defense": 125
+		},
+		"dex_number": 0,
+		"levelup_moves": [
+			[
+				"Bohrschnabel",
+				36
+			],
+			[
+				"Hornbohrer",
+				55
+			]
+		]
 	}
 }

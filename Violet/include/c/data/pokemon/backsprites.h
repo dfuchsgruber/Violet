@@ -450,6 +450,7 @@ extern const u8 gfx_pokemon_kecleon_purple_backspriteTiles[];
 extern const u8 gfx_pokemon_crystal_onix_backspriteTiles[];
 extern const u8 gfx_pokemon_mega_sleimok_backspriteTiles[];
 extern const u8 gfx_pokemon_mega_sonnfel_backspriteTiles[];
+extern const u8 gfx_pokemon_mega_lunastein_backspriteTiles[];
 
 
 const graphic pokemon_backsprites[POKEMON_CNT] = {
@@ -898,6 +899,7 @@ const graphic pokemon_backsprites[POKEMON_CNT] = {
 	[POKEMON_CRYSTAL_ONIX] = {.sprite = gfx_pokemon_crystal_onix_backspriteTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEMON_CRYSTAL_ONIX,},
 	[POKEMON_MEGA_SLEIMOK] = {.sprite = gfx_pokemon_mega_sleimok_backspriteTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEMON_MEGA_SLEIMOK,},
 	[POKEMON_MEGA_SONNFEL] = {.sprite = gfx_pokemon_mega_sonnfel_backspriteTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEMON_MEGA_SONNFEL,},
+	[POKEMON_MEGA_LUNASTEIN] = {.sprite = gfx_pokemon_mega_lunastein_backspriteTiles, .size = GRAPHIC_SIZE_4BPP(64, 64), .tag = POKEMON_MEGA_LUNASTEIN,},
 };
 
 #endif

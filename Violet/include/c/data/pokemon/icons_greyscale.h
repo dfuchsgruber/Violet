@@ -446,6 +446,7 @@ extern const unsigned short gfx_pkmn_species_441_pokemon_kecleon_p_icon_greyscal
 extern const unsigned short gfx_pkmn_crystal_onix_icon_greyscaleTiles[];
 extern const unsigned short gfx_pkmn_mega_sleimok_icon_greyscaleTiles[];
 extern const unsigned short gfx_pkmn_mega_sonnfel_icon_greyscaleTiles[];
+extern const unsigned short gfx_pkmn_mega_lunastein_icon_greyscaleTiles[];
 
 const void *const pokemon_icons_greyscale[POKEMON_CNT] = {
     gfx_pkmn_species_000_pokemon_pokemon_0_icon_greyscaleTiles,
@@ -893,4 +894,5 @@ const void *const pokemon_icons_greyscale[POKEMON_CNT] = {
     gfx_pkmn_crystal_onix_icon_greyscaleTiles,
     [POKEMON_MEGA_SLEIMOK] = gfx_pkmn_mega_sleimok_icon_greyscaleTiles,
     [POKEMON_MEGA_SONNFEL] = gfx_pkmn_mega_sonnfel_icon_greyscaleTiles,
+    [POKEMON_MEGA_LUNASTEIN] = gfx_pkmn_mega_lunastein_icon_greyscaleTiles,
 };

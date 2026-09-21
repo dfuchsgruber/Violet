@@ -8905,6 +8905,15 @@ const item items[] = {
 		), .pocket = POCKET_ITEMS, .type = 4,
 		.field_usage = item_field_function_print_string_can_not_be_used,
 	},
+	[ITEM_LUNASTEINIT] = {
+		.name = LANGDEP(PSTRING("Lunasteinit"), ("Lunatonite")),
+		.index = ITEM_LUNASTEINIT,
+		.description = (const u8[]) LANGDEP(
+			PSTRING("Wird er von einem Lunastein\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+			PSTRING("If held by a Lunatone in\nbattle it can perform\na mega evolution.")
+		), .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = item_field_function_print_string_can_not_be_used,
+	},
 };
 
 u16 item_idx_saniztize(u16 item_idx) {

@@ -451,6 +451,7 @@ extern const u8 gfx_pokemon_kecleon_purple_frontspritePal[];
 extern const u8 gfx_pokemon_crystal_onix_frontspritePal[];
 extern const u8 gfx_pokemon_mega_sleimok_frontspritePal[];
 extern const u8 gfx_pokemon_mega_sonnfel_frontspritePal[];
+extern const u8 gfx_pokemon_mega_lunastein_frontspritePal[];
 
 const palette pokemon_pals[POKEMON_CNT] = {
     [POKEMON_POKEMON_0] = {.pal = gfx_pokemon_pokemon_0_frontspritePal, .tag = POKEMON_POKEMON_0,},
@@ -898,6 +899,7 @@ const palette pokemon_pals[POKEMON_CNT] = {
 	[POKEMON_CRYSTAL_ONIX] = {.pal = gfx_pokemon_crystal_onix_frontspritePal, .tag = POKEMON_CRYSTAL_ONIX,},
 	[POKEMON_MEGA_SLEIMOK] = {.pal = gfx_pokemon_mega_sleimok_frontspritePal, .tag = POKEMON_MEGA_SLEIMOK,},
 	[POKEMON_MEGA_SONNFEL] = {.pal = gfx_pokemon_mega_sonnfel_frontspritePal, .tag = POKEMON_MEGA_SONNFEL,},
+	[POKEMON_MEGA_LUNASTEIN] = {.pal = gfx_pokemon_mega_lunastein_frontspritePal, .tag = POKEMON_MEGA_LUNASTEIN,},
 };
 
 

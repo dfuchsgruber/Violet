@@ -451,6 +451,7 @@ const pokemon_coordinate_t pokemon_player_y[POKEMON_CNT] = {
     [POKEMON_CRYSTAL_ONIX] = {.width = POKEMON_COORDINATE_SIZE(0), .height = POKEMON_COORDINATE_SIZE(0), .y_offset = 0},
     [POKEMON_MEGA_SLEIMOK] = {.width = POKEMON_COORDINATE_SIZE(40), .height = POKEMON_COORDINATE_SIZE(64), .y_offset = 8},
     [POKEMON_MEGA_SONNFEL] = {.width = POKEMON_COORDINATE_SIZE(56), .height = POKEMON_COORDINATE_SIZE(64), .y_offset = 2},
+    [POKEMON_MEGA_LUNASTEIN] = {.width = POKEMON_COORDINATE_SIZE(56), .height = POKEMON_COORDINATE_SIZE(64), .y_offset = 2},
 };
 
 #endif

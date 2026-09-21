@@ -450,6 +450,7 @@ const u8 pokemon_altitude[POKEMON_CNT] = {
     [POKEMON_CRYSTAL_ONIX] = 0,
     [POKEMON_MEGA_SLEIMOK] = 0,
     [POKEMON_MEGA_SONNFEL] = 8,
+    [POKEMON_MEGA_LUNASTEIN] = 13,
 };
 
 #endif

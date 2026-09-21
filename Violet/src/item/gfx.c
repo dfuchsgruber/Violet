@@ -399,6 +399,7 @@ static const item_gfx_pair item_gfx_pairs[] = {
     [ITEM_SLEIMOKNIT] = {.gfx = gfx_item_sleimoknitTiles, .pal = gfx_item_sleimoknitPal},
     [ITEM_SCHILLERPIN] = {.gfx = gfx_item_schillerpinTiles, .pal=gfx_item_schillerpinPal},
     [ITEM_SONNFELNIT] = {.gfx = gfx_item_sonnfelnitTiles, .pal=gfx_item_sonnfelnitPal},
+    [ITEM_LUNASTEINIT] = {.gfx = gfx_item_lunasteinitTiles, .pal=gfx_item_lunasteinitPal},
 };
 
 static const item_gfx_pair tm_item_gfx_pairs[NUM_TYPES + 1] = {

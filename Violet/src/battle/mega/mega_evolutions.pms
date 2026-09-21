@@ -127,6 +127,18 @@
 			"mega_item": "ITEM_SLEIMOKNIT",
 			"mega_species": "POKEMON_MEGA_SLEIMOK",
 			"type": "MEGA_EVOLUTION"
+		},
+		{
+			"species" : "POKEMON_SONNFEL",
+			"mega_item" : "ITEM_SONNFELNIT",
+			"mega_species" : "POKEMON_MEGA_SONNFEL",
+			"type" : "MEGA_EVOLUTION"
+		},
+		{
+			"species" : "POKEMON_LUNASTEIN",
+			"mega_item" : "ITEM_LUNASTEINIT",
+			"mega_species" : "POKEMON_MEGA_LUNASTEIN",
+			"type" : "MEGA_EVOLUTION"
 		}
 	]
 }
