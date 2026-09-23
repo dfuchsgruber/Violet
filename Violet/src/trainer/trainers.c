@@ -5762,6 +5762,20 @@ const trainer trainers[TRAINER_CNT] = {
         .pokemon_cnt = ARRAY_COUNT(trainer_party_x213_tafelberg_clouds_ancient_guard_green),
         .party = trainer_party_x213_tafelberg_clouds_ancient_guard_green,
     },
+    [0x214] = {
+        .trainerclass = TRAINERCLASS_WOLKENREITER,
+        .encounter = 0x0,
+        .gender = true,
+        .sprite = 0x47,
+        .name = LANGDEP(PSTRING("Flora"), PSTRING("Flora")),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .rematch_flag_idx = 365,
+        .pokemon_cnt = ARRAY_COUNT(trainer_party_x214_felsige_oednis_clouds_0),
+        .party = trainer_party_x214_felsige_oednis_clouds_0,
+    },
+
+
+
     [0x300] = {
         .trainerclass = TRAINERCLASS_CHEFKOCH,
         .encounter = 1,

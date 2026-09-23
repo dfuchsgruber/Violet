@@ -193,7 +193,7 @@ static const worldmap_position_bank worldmap_position_bank_22_basis_trockentag =
     [5] = WORLDMAP_POSITION_TAFELBERG_WEST, // Tafelberg outside ascent, east  
     [0] = WORLDMAP_POSITION_TAFELBERG_WEST_CLOUDS,
     [1] = WORLDMAP_POSITION_TAFELBERG_WEST_CLOUDS,
-
+    [9] = {.x = 14, .y = 5, .width = 1, .height = 1, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_CLOUDS,} // Felisge Oednis West Clouds
 };
 
 static const worldmap_position_bank worldmap_postition_bank_37_basis_trockentag = {

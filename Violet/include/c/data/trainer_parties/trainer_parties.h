@@ -2807,6 +2807,13 @@ const trainer_pokemon trainer_party_x213_tafelberg_clouds_ancient_guard_green[] 
 	{.held_item = ITEM_BEULENHELM, .moves_set = true, .moves = {ATTACK_SYNTHESE, ATTACK_VERWURZLER, ATTACK_GIGASAUGER, ATTACK_TOXIN}, .level = 40, .species = POKEMON_TENTANTEL, .evs = {[STAT_HP] = 252, [STAT_DEFENSE] = 252, [STAT_SPECIAL_ATTACK] = 4}, .nature_set = true, .evs_set = true, .pid = {.fields = {.nature = NATURE_KUEHN}}},
 };
 
+
+const trainer_pokemon trainer_party_x214_felsige_oednis_clouds_0[] = {
+		{.level = 32, .species = POKEMON_WABLU},
+	{.level = 34, .species = POKEMON_PANZAERON},
+	{.level = 33, .species = POKEMON_STARAVIA},
+};
+
 const trainer_pokemon trainer_party_restaurant_dummy[] = {
 	{.level = 5, .species = POKEMON_MEW},
 };

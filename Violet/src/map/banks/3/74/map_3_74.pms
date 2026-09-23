@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_447",
 		"events": {
-			"person_cnt": 52,
+			"person_cnt": 54,
 			"warp_cnt": 7,
 			"trigger_cnt": 3,
 			"signpost_cnt": 3,
@@ -1563,6 +1563,64 @@
 					"flag": "FLAG_FELSIGE_OEDNIS_ITEM_26",
 					"value": {
 						"item": "ITEM_HYPERBALL",
+						"species": 0,
+						"scalar": 0,
+						"type": 0,
+						"move_tutor": 0
+					}
+				},
+				{
+					"target_index": "53",
+					"picture": "93",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_ITEM",
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "59",
+					"y": "6",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_MEGA_SOLROCKNITE_FALLEN",
+					"value": {
+						"item": "ITEM_SONNFELNIT",
+						"species": 0,
+						"scalar": 0,
+						"type": 0,
+						"move_tutor": 0
+					}
+				},
+				{
+					"target_index": "54",
+					"picture": "93",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_ITEM",
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "59",
+					"y": "6",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_MEGA_LUNATONITE_FALLEN | 0x8000",
+					"value": {
+						"item": "ITEM_LUNASTEINIT",
 						"species": 0,
 						"scalar": 0,
 						"type": 0,
