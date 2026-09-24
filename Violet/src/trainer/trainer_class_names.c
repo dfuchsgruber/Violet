@@ -102,7 +102,7 @@ const u8 trainer_class_names[TRAINERCLASS_CNT][13] = {
 	LANGDEP(PSTRING("Geschwister"), PSTRING("Sis And Bro")),
 	LANGDEP(PSTRING("Antike Wache"), PSTRING("Ancient Guard")),
 	LANGDEP(PSTRING("Spieler"), PSTRING("Player")),
-	LANGDEP(PSTRING("Mühlenmädel"), PSTRING("Crush Girl")),
+	LANGDEP(PSTRING("Schatzsucher"), PSTRING("Treasure Hunter")),
 	LANGDEP(PSTRING("Planscher"), PSTRING("Tuber")),
 	LANGDEP(PSTRING("PKMN-Züchter"), PSTRING("PKMN Breeder")),
 	LANGDEP(PSTRING("PKMN-Ranger"), PSTRING("PKMN Ranger")),

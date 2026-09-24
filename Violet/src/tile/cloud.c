@@ -14,6 +14,7 @@
 #include "constants/battle/battle_bgs.h"
 #include "debug.h"
 #include "constants/block_cloud_types.h"
+#include "worldmap.h"
 
 void cloud_force() {
     if ((player_state.state & 1) && cloud_not_dismountable()) {
@@ -23,7 +24,7 @@ void cloud_force() {
 }
 
 bool map_is_cloud(){
-	return mapheader_virtual.type == MAP_TYPE_CLOUD;
+	return worldmap_positions[save1->bank][save1->map].layer == WORLDMAP_LAYER_CLOUDS;
 }
 
 

@@ -106,6 +106,7 @@ trainergfx 80,gfx_trainer_dark_guard_greenTiles,gfx_trainer_dark_guard_greenPal
 trainergfx 81,gfx_trainer_dark_guard_yellowTiles,gfx_trainer_dark_guard_yellowPal
 trainergfx 28,gfx_trainer_crypticTiles,gfx_trainer_crypticPal
 trainergfx 91,gfx_trainer_farmerTiles,gfx_trainer_farmerPal
+trainergfx 101,gfx_trainer_treasure_hunterTiles,gfx_trainer_treasure_hunterPal
 
 .org 0x0803f7a0
     .word trainer_backsprite_templates

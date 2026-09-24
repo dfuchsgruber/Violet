@@ -11,11 +11,11 @@
 #include "trainer/trainer.h"
 #include "music.h"
 #include "battle/state.h"
-#include "flags.h"
 #include "constants/vars.h"
 #include "constants/songs.h"
 #include "constants/trainerclasses.h"
 #include "vars.h"
+#include "map/header.h"
 
 const short_pair trainer_music_table [] = {
     {TRAINERCLASS_RIVALE, MUS_RIVAL_BATTLE},
@@ -42,10 +42,18 @@ u16 battle_get_song() {
             }
             i++;
         }
-        return MUS_KAMPF_GEGEN_RIVALEN_GARY;
+        if (map_is_cloud()) {
+            return MUS_CLOUDS_TRAINER_BATTLE; 
+        } else {
+            return MUS_KAMPF_GEGEN_RIVALEN_GARY;
+        }
     }
     if ((battle_flags & BATTLE_12) || (battle_flags & BATTLE_LEGENDARY)) {
         return MUS_KAMPF_GEGEN_WILDES_POKEMON;
     }
-    return MUS_KAMPF_GEGEN_WILDES_POKEMON;
+    if (map_is_cloud()) {
+        return MUS_CLOUDS_WILD_BATTLE;
+    } else {
+        return MUS_KAMPF_GEGEN_WILDES_POKEMON;
+    }
 }

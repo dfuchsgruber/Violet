@@ -10,7 +10,7 @@
 - [] Some areal where nurse joy is trained; there you obtain wonneira egg
 - [] sky island with sunfel and lunatone -- do they need megas?
 - [] done one final run with full pokedex to see if habitats should be extended: maybe you think certain species should appear somewhere - diversify biomes and habitats
-- [] Make disctinct themes for cloud battles (wild and trainer) play on clouds
+- [x] Make disctinct themes for cloud battles (wild and trainer) play on clouds
 Release:
 - []: Disable DEBUG messages 
 - []: Place Unown ruins somewhere
