@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_route_4_clouds_cave",
 		"events": {
-			"person_cnt": 8,
+			"person_cnt": 9,
 			"warp_cnt": 4,
 			"trigger_cnt": 0,
 			"signpost_cnt": 2,
@@ -238,6 +238,35 @@
 						"type": 0,
 						"move_tutor": 0
 					}
+				},
+				{
+					"target_index": "9",
+					"picture": "235",
+					"script_std_and_in_connection": {
+						"script_std": "PERSON_ACCESSIBLE_MOVE_TUTOR",
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "29",
+					"y": "14",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"scalar": 0,
+						"type": "TYPE_GESTEIN",
+						"move_tutor": 0
+					}
 				}
 			],
 			"warps": [
@@ -332,7 +361,7 @@
 		"music": "MUS_CLOUDS_CAVE",
 		"footer_idx": 158,
 		"namespace": "MAP_ROUTE_5",
-		"flash_type": "FLASH_NONE",
+		"flash_type": "DARK_FLASH_USABLE",
 		"weather": "MAP_WEATHER_INSIDE",
 		"type": "MAP_TYPE_BASEMENT",
 		"bike_usable": "1",
