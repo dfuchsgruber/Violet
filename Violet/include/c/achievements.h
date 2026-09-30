@@ -92,6 +92,7 @@ enum {
     NUM_REMATCHES_ACHIEVEMENTS = 3,
     NUM_FISHING_ACHIEVEMENTS = 4,
     NUM_CRYSTAL_ACHIEVEMENTS = 3,
+    NUM_TREASURE_ACHIEVEMENTS = 3,
 };
 
 extern const achievement_t achievements_pokedex[NUM_POKEDEX_ACHIEVEMENTS];
@@ -102,6 +103,7 @@ extern const achievement_t achievements_berries[NUM_BERRIES_ACHIEVEMENTS];
 extern const achievement_t achievements_rematches[NUM_REMATCHES_ACHIEVEMENTS];
 extern const achievement_t achievements_fishing[NUM_FISHING_ACHIEVEMENTS];
 extern const achievement_t achievements_crystal[NUM_CRYSTAL_ACHIEVEMENTS];
+extern const achievement_t achievements_treasure[NUM_TREASURE_ACHIEVEMENTS];
 
 extern const achievement_group_t achievement_groups[NUM_ACHIEVEMENT_GROUPS];
 extern EWRAM achievements_ui_cursor_t achievements_ui_cursor;

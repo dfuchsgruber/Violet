@@ -34,8 +34,14 @@ def print_item_index(items):
             bank = location.get('bank', None)
             map_idx = location.get('map_idx', None)
             namespace = location.get('namespace', None)
+            file = location.get('file', None)
             _type = location['type']
-            index += f'  *\t{_type}\t{namespace}\t[{bank}.{map_idx}]\n'
+            index += f'  *\t{_type}'
+            if bank is not None and map_idx is not None:
+                index += f'\t{namespace}\t[{bank}.{map_idx}]'
+            elif file is not None:
+                index += f'\t{file}'
+            index += '\n'
     return index
 
 def print_hidden_index(items):

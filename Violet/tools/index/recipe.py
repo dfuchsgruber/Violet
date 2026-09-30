@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 from asyncio import constants
-from typing import List
 import agb.types
 import pymap.project
 import argparse
@@ -9,7 +8,7 @@ from collections import defaultdict
 from symbols import parse_symbols
 from pymap.project import Project
 import pickle
-from constants import SRC_ROOT, CRAFTING_NUM_RECIPIES, CRAFTING_RECIPES
+from constants import MAPS_ROOT, SRC_ROOT, CRAFTING_NUM_RECIPIES, CRAFTING_RECIPES
 import os
 import re
 from symbols import parse_symbols
@@ -66,10 +65,18 @@ def get_flag_locations(flags: set, project: pymap.project.Project) -> defaultdic
                     matches = list(re.findall('setflag (.*)', content, flags=re.M))
                     if len(matches):
                         # Reconstruct the bank and map idx and context from the path
-                        bank, map_idx = re.findall(f'{SRC_ROOT}/(.*?)/(.*?)/.*', filepath)[0]
+                        re_match_bank_map_idx = re.findall(f'{MAPS_ROOT}/(.*?)/(.*?)/.*', filepath)
+                        if not re_match_bank_map_idx:
+                            bank, map_idx = None, None
+                        else:
+                            bank, map_idx = re_match_bank_map_idx[0]
                         for flag in matches:
                             try:
-                                flag_idx = parse_flag(flag, project)
+                                try:
+                                    flag_idx = parse_flag(flag, project)
+                                except ValueError:
+                                    # Flag is not in constants, we ignore it
+                                    continue
                                 if flag_idx in flags:
                                     # Is a recipe flag
                                     flag_to_location[flag_idx].append({

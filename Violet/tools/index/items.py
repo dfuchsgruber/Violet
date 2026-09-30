@@ -5,7 +5,7 @@ from collections import defaultdict
 import os, re
 from pprint import pprint
 import argparse, pickle
-from constants import SRC_ROOT
+from constants import MAPS_ROOT, SRC_ROOT
 
 def get_item_index(rompath, symbolspath, projectpath):
     """ Creates an index for items. """
@@ -20,31 +20,12 @@ def get_item_index(rompath, symbolspath, projectpath):
         } for item in project.constants['items']
     }
 
-    # Parse script files
-    for subdir, dirs, files in os.walk(SRC_ROOT):
-        for file in files:
-            filepath = subdir + os.sep + file
-            if filepath.endswith('.asm'):
-                with open(filepath) as f:
-                    content = f.read()
-                    # Match callstd giveitems
-                    matches = list(re.findall('copyvarifnotzero 0x8000 (.*)$\n.*copyvarifnotzero 0x8001 (.*)', content, flags=re.M)) + list(re.findall('additem (.*) (.*)\n', content, flags=re.M))
-                    if len(matches):
-                        # Reconstruct the bank and map idx and context from the path
-                        bank, map_idx = re.findall(f'{SRC_ROOT}/(.*?)/(.*?)/.*', filepath)[0]
-                        for item, amount in matches:
-                            items[item]['locations'].append({
-                                'type' : 'script',
-                                'context' : '',
-                                'bank' : bank,
-                                'map_idx' : map_idx,
-                                'amount' : amount,
-                            })
-
+    bank_map_idx_to_namespace = {}
     # Parse person and signpost items
     for bank in project.headers:
         for map_idx in project.headers[bank]:
             header, label, namespace = project.load_header(bank, map_idx)
+            bank_map_idx_to_namespace[(bank, map_idx)] = namespace
             for person_idx, person in enumerate(header['events']['persons']):
                 try:
                     if person['script_std_and_in_connection']['script_std'] in ('PERSON_ITEM', 'PERSON_ITEM_MULTIPLE_COPIES'):
@@ -90,6 +71,47 @@ def get_item_index(rompath, symbolspath, projectpath):
                     print(f'Error in parsing item of sign {sign_idx} on map {bank},{map_idx}')
                     raise e
 
+
+    # Parse script files
+    for subdir, dirs, files in os.walk(SRC_ROOT):
+        for file in files:
+            filepath = subdir + os.sep + file
+            if filepath.endswith('.asm'):
+                try:
+                    with open(filepath) as f:
+                        content = f.read()
+                        # Match callstd giveitems
+                        matches = list(re.findall(
+                            r'^[^\S\r\n]*copyvarifnotzero[^\S\r\n]+0x8000[^\S\r\n]+([A-Za-z0-9_]+)[^\S\r\n]*\r?\n[^\S\r\n]*copyvarifnotzero[^\S\r\n]+0x8001[^\S\r\n]+([A-Za-z0-9_]+)[^\S\r\n]*\r?$',
+                              content, flags=re.MULTILINE)
+                        ) + list(re.findall(
+                            r'^[^\S\r\n]*additem[^\S\r\n]+([A-Za-z0-9_]+)[^\S\r\n]+([A-Za-z0-9_]+)[^\S\r\n]*\r?\n'
+                            , content, flags=re.MULTILINE))
+                        if len(matches):
+                            # Reconstruct the bank and map idx and context from the path
+                            re_match_bank_map_idx = re.findall(f'{MAPS_ROOT}/(.*?)/(.*?)/.*', filepath)
+                            if not re_match_bank_map_idx:
+                                metadata = {
+                                    'file' : filepath,
+                                }
+                            else:
+                                metadata = {
+                                    'bank' : re_match_bank_map_idx[0][0],
+                                    'map_idx' : re_match_bank_map_idx[0][1],
+                                    'namespace' : bank_map_idx_to_namespace.get((re_match_bank_map_idx[0][0], re_match_bank_map_idx[0][1]), None),
+                                }
+                            for item, amount in matches:
+                                item = item.strip()
+                                if item not in items:
+                                    continue
+                                items[item]['locations'].append({
+                                    'type' : 'script',
+                                    'context' : '',
+                                    'amount' : amount,
+                                } | metadata)
+                except Exception as e:
+                    print(f'Error in parsing item in file {filepath}')
+                    raise e
 
     # # Parse dungeon items
     # datatype = project.model['item_list']

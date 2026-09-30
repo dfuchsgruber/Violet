@@ -5,6 +5,7 @@
 .include "specials.s"
 .include "ordinals.s"
 .include "treasure_map.s"
+.include "achievement.s"
 
 .global ow_script_route_10_clouds_person_0
 .global ow_script_route_10_clouds_person_1
@@ -56,6 +57,7 @@ ow_script_route_10_tann_assistant:
     setflag FLAG_TREASURE_MAPS_APP
     loadpointer 0 str_explain_map_app
     callstd MSG_KEEPOPEN
+    achievement_unlocked ACHIEVEMENT_TREASURE
     give_treasure_map treasure_map_idx=3 give_type=TREASURE_MAP_OBTAIN
     lock
     faceplayer
