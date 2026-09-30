@@ -439,6 +439,7 @@ static const worldmap_position_bank worldmap_positions_bank_126 = {
 static const worldmap_position_bank worldmap_positions_bank_38 = {
     [0] = {.x = 14, .y = 5, .width = 1, .height = 1, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_CLOUDS,}, // Sun Tower
     [1] = {.x = 14, .y = 5, .width = 1, .height = 1, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_CLOUDS,}, // Sun Moon Tower Bridge
+    [2] = {.x = 14, .y = 5, .width = 1, .height = 1, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_CLOUDS,}, // Moon Tower
 };
 
 const worldmap_position_t *const worldmap_positions[256] = {

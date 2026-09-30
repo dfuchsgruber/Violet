@@ -224,9 +224,9 @@
 					"x": "29",
 					"y": "5",
 					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_warp_idx": "5",
+					"target_map": "2",
+					"target_bank": "38"
 				}
 			],
 			"triggers": [],

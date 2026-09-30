@@ -3782,6 +3782,39 @@ static const wild_pokemon_habitat wild_pokemon_sun_tower_grass = {
     .frequency = 6, .data = wild_pokemon_sun_tower_entries};
 
 
+
+
+static const wild_pokemon_entry wild_pokemon_moon_tower_entries[12] = {
+    [WILD_POKEMON_DENSITY_GRASS_0_20_PERCENT] =
+        {.level_min = 28, .level_max = 32, .species = POKEMON_ZUBAT},
+    [WILD_POKEMON_DENSITY_GRASS_1_20_PERCENT] =
+        {.level_min = 28, .level_max = 31, .species = POKEMON_KLEINSTEIN},
+    [WILD_POKEMON_DENSITY_GRASS_2_10_PERCENT] =
+        {.level_min = 28, .level_max = 32, .species = POKEMON_ABRA},
+    [WILD_POKEMON_DENSITY_GRASS_3_10_PERCENT] =
+        {.level_min = 28, .level_max = 31, .species = POKEMON_BRONZEL},
+    [WILD_POKEMON_DENSITY_GRASS_4_10_PERCENT] =
+        {.level_min = 28, .level_max = 31, .species = POKEMON_ZUBAT},
+    [WILD_POKEMON_DENSITY_GRASS_5_10_PERCENT] =
+        {.level_min = 28, .level_max = 31, .species = POKEMON_ABRA},
+    [WILD_POKEMON_DENSITY_GRASS_6_5_PERCENT] =
+        {.level_min = 28, .level_max = 32, .species = POKEMON_KLEINSTEIN},
+    [WILD_POKEMON_DENSITY_GRASS_7_5_PERCENT] =
+        {.level_min = 29, .level_max = 32, .species = POKEMON_BRONZEL},
+    [WILD_POKEMON_DENSITY_GRASS_8_4_PERCENT] =
+        {.level_min = 30, .level_max = 33, .species = POKEMON_GEOROK},
+    [WILD_POKEMON_DENSITY_GRASS_9_4_PERCENT] =
+        {.level_min = 29, .level_max = 33, .species = POKEMON_KADABRA},
+    [WILD_POKEMON_DENSITY_GRASS_10_1_PERCENT] =
+        {.level_min = 30, .level_max = 33, .species = POKEMON_GOLBAT},
+    [WILD_POKEMON_DENSITY_GRASS_11_1_PERCENT] =
+        {.level_min = 33, .level_max = 34, .species = POKEMON_LUNASTEIN},
+};
+    
+static const wild_pokemon_habitat wild_pokemon_moon_tower_grass = {
+    .frequency = 6, .data = wild_pokemon_moon_tower_entries};
+
+
 const wild_pokemon_data wild_pokemon[] = {
     {
         .bank = 3,
@@ -4422,6 +4455,9 @@ const wild_pokemon_data wild_pokemon[] = {
     },
     {
         .bank = 38, .map = 0, .grass = &wild_pokemon_sun_tower_grass,
+    },
+    {
+        .bank = 38, .map = 2, .grass = &wild_pokemon_moon_tower_grass,
     },
 
     // Sentinel value to indicate the end of the array
