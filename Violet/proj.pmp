@@ -1399,6 +1399,11 @@
 				"map_sun_tower_inside",
 				"src/map/banks/38/0/map_sun_tower_inside.pms",
 				"MAP_SUN_MOON_TOWER"
+			],
+			"1": [
+				"map_sun_moon_tower_bridge",
+				"src/map/banks/38/1/map_sun_moon_tower_bridge.pms",
+				"MAP_SUN_MOON_TOWER"
 			]
 		}
 	},
@@ -2438,6 +2443,10 @@
 		"map_footer_sun_tower_inside": [
 			204,
 			"src/map/banks/38/0/map_footer_sun_tower_inside.pms"
+		],
+		"map_footer_sun_moon_tower_bridge": [
+			205,
+			"src/map/banks/38/1/map_footer_sun_moon_tower_bridge.pms"
 		]
 	},
 	"tilesets_primary": {

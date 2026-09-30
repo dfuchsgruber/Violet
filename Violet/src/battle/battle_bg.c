@@ -263,6 +263,12 @@ const battle_bg battle_bgs[256] = {
         NULL, NULL,
         gfx_battle_bg_sun_towerPal,
     },
+    [BATTLE_BG_MOON_TOWER] = {
+        gfx_battle_bg_moon_towerTiles,
+        gfx_battle_bg_moon_towerMap,
+        NULL, NULL,
+        gfx_battle_bg_moon_towerPal,
+    },
 };
 
 

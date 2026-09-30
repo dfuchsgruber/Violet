@@ -95,7 +95,7 @@
 					}
 				},
 				{
-					"target_index": 0,
+					"target_index": "4",
 					"picture": "96",
 					"script_std_and_in_connection": {
 						"script_std": 0,
@@ -248,9 +248,9 @@
 					"x": "18",
 					"y": "28",
 					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_warp_idx": "1",
+					"target_map": "1",
+					"target_bank": "38"
 				},
 				{
 					"x": "16",
