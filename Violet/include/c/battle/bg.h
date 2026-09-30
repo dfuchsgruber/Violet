@@ -72,6 +72,7 @@ extern const unsigned short gfx_battle_bg_inside_stdTiles[];
 extern const unsigned short gfx_battle_bg_dungeon_forest_tent_insideTiles[];
 extern const unsigned short gfx_battle_bg_ice_caveTiles[];
 extern const unsigned short gfx_battle_bg_pokestop_restaurantTiles[];
+extern const unsigned short gfx_battle_bg_sun_towerTiles[];
 
 extern const unsigned short gfx_battle_bg_capturedPal[];
 extern const unsigned short gfx_battle_bg_cavePal[];
@@ -106,6 +107,7 @@ extern const unsigned short gfx_battle_bg_power_plantPal[];
 extern const unsigned short gfx_battle_bg_inside_stdPal[];
 extern const unsigned short gfx_battle_bg_dungeon_forest_tent_insidePal[];
 extern const unsigned short gfx_battle_bg_ice_cavePal[];
+extern const unsigned short gfx_battle_bg_sun_towerPal[];
 extern const unsigned short gfx_battle_bg_pokestop_restaurantPal[];
 
 extern const unsigned short gfx_battle_bg_capturedMap[];
@@ -142,6 +144,7 @@ extern const unsigned short gfx_battle_bg_inside_stdMap[];
 extern const unsigned short gfx_battle_bg_dungeon_forest_tent_insideMap[];
 extern const unsigned short gfx_battle_bg_ice_caveMap[];
 extern const unsigned short gfx_battle_bg_pokestop_restaurantMap[];
+extern const unsigned short gfx_battle_bg_sun_towerMap[];
 
 // Battle anim bg
 extern const unsigned short gfx_stance_changeTiles[];

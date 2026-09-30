@@ -12,6 +12,8 @@ bool achievement_breeding_unlocked() { return checkflag(POKEDEX); }
 bool achievement_berries_unlocked() { return true; }
 bool achievement_rematches_unlocked() { return checkflag(FLAG_VS_SEEKER); }
 bool achievement_fishing_unlocked() { return item_check(ITEM_ANGEL, 1) || item_check(ITEM_PROFIANGEL, 1) || item_check(ITEM_SUPERANGEL, 1); }
+bool achievement_crystal_unlocked() { return checkflag(FLAG_ACHIEVEMENT_CRYSTAL_UNLOCKED); }
+
 
 u8 achievement_group_get_tail_idx(const achievement_group_t *group) {
     u8 i = 0;
@@ -66,4 +68,11 @@ const achievement_group_t achievement_groups[NUM_ACHIEVEMENT_GROUPS] = {
         .is_unlocked = achievement_fishing_unlocked,
         .num_achievements = ARRAY_COUNT(achievements_fishing),
     },
+    [ACHIEVEMENT_CRYSTAL] = {
+        .name = (const u8[])LANGDEP(PSTRING("Funkelnd"), PSTRING("Sparkling")),
+        .achievements = achievements_crystal,
+        .is_unlocked = achievement_crystal_unlocked,
+        .num_achievements = ARRAY_COUNT(achievements_crystal),
+    },
+
 };

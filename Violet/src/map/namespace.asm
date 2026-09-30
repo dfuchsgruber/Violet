@@ -81,7 +81,7 @@ map_namespaces:
 	.word str_mapnamespace_164
 	.word str_mapnamespace_165
 	.word str_mapnamespace_166
-	.word str_mapnamespace_167
+	.word str_namespace_sun_moon_tower
 	.word str_mapnamespace_168
 	.word str_mapnamespace_169
 	.word str_mapnamespace_170
@@ -589,10 +589,10 @@ map_namespaces:
 		.string "Ruinental"
 
 
-	.global str_mapnamespace_167
+	.global str_namespace_sun_moon_tower
 
-	str_mapnamespace_167:
-		.string "Trainerturm"
+	str_namespace_sun_moon_tower:
+		.string "Gestirnentürme"
 
 
 	.global str_mapnamespace_168

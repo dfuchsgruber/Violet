@@ -9,6 +9,7 @@
 .include "songs.s"
 .include "items.s"
 .include "overworld/misc.s"
+.include "achievement.s"
 
 .global ow_script_person_pokeball
 .global ow_script_person_egg
@@ -645,6 +646,7 @@ dont_open_trash:
 ow_script_person_accessible_move_tutor:
 	//setvar VAR_ACCESIBLE_MOVE_TUTOR_TYPE, 0
 	callasm accessible_move_tutor_set_flag
+	setflag FLAG_ACHIEVEMENT_CRYSTAL_UNLOCKED
 	loadpointer 0 str_quarz_intro
 	callstd MSG_KEEPOPEN
 	checkitem ITEM_ENERGIEQUARZ, 1
@@ -684,6 +686,11 @@ ow_script_person_accessible_move_tutor:
 	removeitem ITEM_ENERGIEQUARZ, 1
 accessible_move_tutor_end:
 	setvar VAR_ACCESIBLE_MOVE_TUTOR_TYPE, 0
+	checkflag FLAG_ACHIEVEMENT_CRYSTAL_UNLOCKED
+	gotoif EQUAL accessible_move_tutor_end_no_achievement_unlocked
+	achievement_unlocked ACHIEVEMENT_CRYSTAL
+accessible_move_tutor_end_no_achievement_unlocked:
+	callasm achievements_compute_unlocked_message_issued @ interacting with a crystal may unlock achievements
 	end
 accessible_move_tutor_is_egg:
 	loadpointer 0 str_crystal_is_egg

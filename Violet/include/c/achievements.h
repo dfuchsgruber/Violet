@@ -91,6 +91,7 @@ enum {
     NUM_BERRIES_ACHIEVEMENTS = 4,
     NUM_REMATCHES_ACHIEVEMENTS = 3,
     NUM_FISHING_ACHIEVEMENTS = 4,
+    NUM_CRYSTAL_ACHIEVEMENTS = 3,
 };
 
 extern const achievement_t achievements_pokedex[NUM_POKEDEX_ACHIEVEMENTS];
@@ -100,6 +101,7 @@ extern const achievement_t achievements_breeding[NUM_BREEDING_ACHIEVEMENTS];
 extern const achievement_t achievements_berries[NUM_BERRIES_ACHIEVEMENTS];
 extern const achievement_t achievements_rematches[NUM_REMATCHES_ACHIEVEMENTS];
 extern const achievement_t achievements_fishing[NUM_FISHING_ACHIEVEMENTS];
+extern const achievement_t achievements_crystal[NUM_CRYSTAL_ACHIEVEMENTS];
 
 extern const achievement_group_t achievement_groups[NUM_ACHIEVEMENT_GROUPS];
 extern EWRAM achievements_ui_cursor_t achievements_ui_cursor;
@@ -143,6 +145,11 @@ void achievements_set_current(u8 group_idx, u8 achievement_idx);
  * Computes, for all achievement groups, if any reward is claimable and sets the flag for it to be issued in the overworld.
  */
 void achievements_compute_unlocked_message_issued();
+
+/**
+ * Gets the current progress in the achivement group for finding tutor crystals.
+ */
+u16 achievement_crystal_get_progress();
 
 extern LZ77COMPRESSED gfx_achievements_ui_bgTiles;
 extern LZ77COMPRESSED gfx_achievements_ui_bgMap;

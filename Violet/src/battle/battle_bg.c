@@ -256,7 +256,13 @@ const battle_bg battle_bgs[256] = {
         gfx_battle_bg_pokestop_restaurantMap,
         NULL, NULL,
         gfx_battle_bg_pokestop_restaurantPal,
-    }
+    },
+    [BATTLE_BG_SUN_TOWER] = {
+        gfx_battle_bg_sun_towerTiles,
+        gfx_battle_bg_sun_towerMap,
+        NULL, NULL,
+        gfx_battle_bg_sun_towerPal,
+    },
 };
 
 
@@ -344,6 +350,8 @@ void bsc_cmd_xEB_set_type_to_terrain() {
         type = TYPE_GEIST;
         break;
     case BATTLE_BG_ARDEAL:
+    case BATTLE_BG_SUN_TOWER:
+    case BATTLE_BG_MOON_TOWER:
         type = TYPE_PSYCHO;
         break;
     case BATTLE_BG_ARDEAL_DUNGEON:
@@ -411,6 +419,8 @@ const u16 terrain_moves[] = {
     [BATTLE_BG_DUNGEON_FOREST_TENT_INSIDE] = ATTACK_AMNESIE,
     [BATTLE_BG_ICE_CAVE] = ATTACK_EISSTURM,
     [BATTLE_BG_POKESTOP_RESTAURANT] = ATTACK_TRIPLETTE,
+    [BATTLE_BG_SUN_TOWER] = ATTACK_KONFUSION,
+    [BATTLE_BG_MOON_TOWER] = ATTACK_MONDGEWALT,
 };
 
 void bsc_cmd_xCC_set_terrain_based_move(){

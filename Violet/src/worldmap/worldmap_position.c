@@ -436,6 +436,10 @@ static const worldmap_position_bank worldmap_positions_bank_126 = {
     [2] = WORLDMAP_POSITION_NO_POSITION,
 };
 
+static const worldmap_position_bank worldmap_positions_bank_38 = {
+    [0] = {.x = 14, .y = 5, .width = 1, .height = 1, .worldmap_idx = WORLDMAP_THETO, .layer = WORLDMAP_LAYER_CLOUDS,} // Sun Tower
+};
+
 const worldmap_position_t *const worldmap_positions[256] = {
     [3] = worldmap_positions_bank_3,
     [4] = worldmap_positions_bank_4_anemonia,
@@ -474,4 +478,5 @@ const worldmap_position_t *const worldmap_positions[256] = {
     [33] = worldmap_position_bank_33_schattenflut,
     [2] = worldmap_positions_bank_2,
     [126] = worldmap_positions_bank_126,
+    [38] = worldmap_positions_bank_38,
 };
