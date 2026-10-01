@@ -1,12 +1,25 @@
-.include "callstds.s"
-.include "overworld_script.s"
 
+.include "overworld_script.s"
+.include "treasure_map.s"
+.include "callstds.s"
+.include "vars.s"
+.include "ordinals.s"
+.include "flags.s"
+
+.global ow_script_amonia_clouds_treasure_map
 .global ow_script_amonia_clouds_person_0
 .global ow_script_amonia_clouds_person_1
 .global ow_script_amonia_clouds_person_2
 .global ow_script_amonia_clouds_person_3
 .global ow_script_amonia_clouds_person_4
 .global ow_script_amonia_clouds_person_5
+
+
+ow_script_amonia_clouds_treasure_map:
+    give_treasure_map treasure_map_idx=7 give_type=TREASURE_MAP_FIND
+    hidesprite LASTTALKED
+    release
+    end
 
 ow_script_amonia_clouds_person_0:
     loadpointer 0x0 str_0

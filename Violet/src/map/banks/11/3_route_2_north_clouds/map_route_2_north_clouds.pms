@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_route_2_clouds_north",
 		"events": {
-			"person_cnt": 37,
+			"person_cnt": 38,
 			"warp_cnt": 4,
 			"trigger_cnt": 0,
 			"signpost_cnt": 3,
@@ -1083,6 +1083,35 @@
 					"script_std_and_in_connection": {
 						"script_std": "PERSON_POKEMON",
 						"in_connection": "0"
+					}
+				},
+				{
+					"target_index": "38",
+					"picture": "56",
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "16",
+					"y": "52",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_route_2_clouds_treasure_hunter_0",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"scalar": 0,
+						"type": 0,
+						"move_tutor": 0
 					}
 				}
 			],

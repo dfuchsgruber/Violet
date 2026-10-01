@@ -5773,6 +5773,40 @@ const trainer trainers[TRAINER_CNT] = {
         .pokemon_cnt = ARRAY_COUNT(trainer_party_x214_felsige_oednis_clouds_0),
         .party = trainer_party_x214_felsige_oednis_clouds_0,
     },
+    [0x215] = {
+        .trainerclass = TRAINERCLASS_SCHATZSUCHER,
+        .encounter = 0x0,
+        .gender = 0,
+        .sprite = 101,
+        .name = LANGDEP(PSTRING("Richie"), PSTRING("Richie")),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .rematch_flag_idx = 366,
+        .pokemon_cnt = ARRAY_COUNT(trainer_party_x215_laubdorf_clouds_treasure_hunter),
+        .party = trainer_party_x215_laubdorf_clouds_treasure_hunter,
+    },
+    [0x216] = {
+        .trainerclass = TRAINERCLASS_SCHATZSUCHER,
+        .encounter = 0x0,
+        .gender = 0,
+        .sprite = 101,
+        .name = LANGDEP(PSTRING("Marnie"), PSTRING("Marnie")),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .rematch_flag_idx = 367,
+        .pokemon_cnt = ARRAY_COUNT(trainer_party_x216_route_2_clouds_treasure_hunter),
+        .party = trainer_party_x216_route_2_clouds_treasure_hunter,
+    },
+    [0x217] = {
+        .trainerclass = TRAINERCLASS_SCHATZSUCHER,
+        .encounter = 0x0,
+        .gender = 0,
+        .sprite = 101,
+        .name = LANGDEP(PSTRING("Cyrian"), PSTRING("Cyrian")),
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .rematch_flag_idx = 368,
+        .pokemon_cnt = ARRAY_COUNT(trainer_party_x217_route_2_clouds_treasure_hunter_1),
+        .party = trainer_party_x217_route_2_clouds_treasure_hunter_1,
+    },
+
 
 
 

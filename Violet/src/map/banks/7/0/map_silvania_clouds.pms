@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_silvania_clouds",
 		"events": {
-			"person_cnt": 6,
+			"person_cnt": 7,
 			"warp_cnt": 0,
 			"trigger_cnt": 1,
 			"signpost_cnt": 2,
@@ -182,6 +182,35 @@
 						"species": 0,
 						"scalar": 0,
 						"type": "TYPE_PFLANZE",
+						"move_tutor": 0
+					}
+				},
+				{
+					"target_index": "7",
+					"picture": "56",
+					"script_std_and_in_connection": {
+						"script_std": 0,
+						"in_connection": 0
+					},
+					"argument": 0,
+					"x": "9",
+					"y": "19",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_silvania_clouds_treasure_hunter_0",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"scalar": 0,
+						"type": 0,
 						"move_tutor": 0
 					}
 				}

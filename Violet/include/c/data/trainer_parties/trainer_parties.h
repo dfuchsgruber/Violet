@@ -2814,6 +2814,21 @@ const trainer_pokemon trainer_party_x214_felsige_oednis_clouds_0[] = {
 	{.level = 33, .species = POKEMON_STARAVIA},
 };
 
+const trainer_pokemon trainer_party_x215_laubdorf_clouds_treasure_hunter[] = {
+	{.level = 35, .species = POKEMON_BRONZEL},
+	{.level = 36, .species = POKEMON_PUPPANCE},
+};
+
+const trainer_pokemon trainer_party_x216_route_2_clouds_treasure_hunter[] = {
+	{.level = 34, .species = POKEMON_KLEINSTEIN},
+	{.level = 34, .species = POKEMON_BRONZEL},
+	{.level = 34, .species = POKEMON_SANDAN},
+};
+
+const trainer_pokemon trainer_party_x217_route_2_clouds_treasure_hunter_1[] = {
+	{.level = 37, .species = POKEMON_SANDAMER},
+};
+
 const trainer_pokemon trainer_party_restaurant_dummy[] = {
 	{.level = 5, .species = POKEMON_MEW},
 };

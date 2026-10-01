@@ -8,12 +8,15 @@
 - []: Rework movesets for builds for frontier, diversify items!! (many of the ones available are not utilized in the current builds, try to get at least 4 builds per Mon)
 - [] Route 9 (northmost) is waaaaay to streched; add an island with content here, also adapt the worldmap pattern (src/worldmap/worldmap_position.c), potentially an archipeligo of small islands to the east of a 2x1 route 9 horizontal stretch?
 - [] Some areal where nurse joy is trained; there you obtain wonneira egg
-- [] sky island with sunfel and lunatone -- do they need megas?
+- [x] sky island with sunfel and lunatone -- do they need megas?
 - [] done one final run with full pokedex to see if habitats should be extended: maybe you think certain species should appear somewhere - diversify biomes and habitats
 - [x] Make disctinct themes for cloud battles (wild and trainer) play on clouds
 Release:
 - []: Disable DEBUG messages 
 - []: Place Unown ruins somewhere
+    - DGIX
+    - FZNT
+    - LORS
 - [x]: Fix scanner
 - []: Add Zubat to R2 Cave
 - []: Add Thunder, Fire, and Waterstone early on

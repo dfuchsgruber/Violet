@@ -1,6 +1,8 @@
 .include "overworld_script.s"
 .include "callstds.s"
-
+.include "flags.s"
+.include "ordinals.s"
+.include "treasure_map.s"
 
 .global ow_script_route_2_clouds_trainer_2
 .global ow_script_route_2_clouds_trainer_3
@@ -10,6 +12,7 @@
 .global ow_script_route_2_clouds_trainer_7
 .global ow_script_route_2_clouds_trainer_8
 .global ow_script_route_2_clouds_trainer_9
+.global ow_script_route_2_clouds_treasure_hunter_0
 
 ow_script_route_2_clouds_trainer_2:
     trainerbattlestd 0 0x113 0 str_trainer2_challange str_trainer2_defeat
@@ -50,6 +53,25 @@ ow_script_route_2_clouds_trainer_9:
     trainerbattlestd 0 0x1f6 0 str_before_9 str_after_9
     loadpointer 0 str_later_9
     callstd MSG_FACE
+    end
+
+
+ow_script_route_2_clouds_treasure_hunter_0:
+    lock
+    faceplayer
+    checkflag (FLAG_TREASURE_MAP_BASE + 1)
+    gotoif EQUAL treasure_hunter_done
+    trainerbattlecont 0x1 0x216 0x0 str_treasure_hunter_0_challange str_treasure_hunter_0_defeat cont
+cont:
+    loadpointer 0 str_treasure_hunter_0_after
+    callstd MSG_FACE
+    give_treasure_map treasure_map_idx=1 give_type=TREASURE_MAP_OBTAIN
+    release
+    end
+treasure_hunter_done:
+    loadpointer 0 str_treasure_hunter_0_done
+    callstd MSG_KEEPOPEN
+    release
     end
 
 .ifdef LANG_GER
@@ -101,6 +123,14 @@ str_after_9:
     .autostring 34 2 "Was?\nWie konnte ich trotz dieser prächtigen Natur besiegt werden?"
 str_later_9:
     .autostring 34 2 "Es scheint, dass ich mich von der Schönheit dieser Natur zu sehr ablenken habe lassen.\pBeim nächsten Mal wird mir das nicht passieren!"
+str_treasure_hunter_0_challange:
+    .autostring 34 2 "Wenn du mich schlägst, zeige ich dir eine Schatzkarte, die ich hier oben gefunden habe!"
+str_treasure_hunter_0_defeat:
+    .autostring 34 2 "Abgemacht ist abgemacht."
+str_treasure_hunter_0_after:
+    .autostring 34 2 "Na gutDOTS\pHier, ich überlasse dir meine Schatzkarte."
+str_treasure_hunter_0_done:
+    .autostring 34 2 "Wenn du den Schatz gefunden hast, den diese Karte zeigt, freu dich bitte in meinem Namen, ja?"
 .elseif LANG_EN
 str_trainer2_challange:
     .autostring 34 2 "If today the sky would fall down\pDOTSnow I lost itDOTS"
@@ -114,4 +144,32 @@ str_trainer4_challange:
     .autostring 34 2 "Where to catch larger birds than above the clouds?"
 str_trainer4_defeat:
     .autostring 34 2 "Did you catch larger birds than me?"
+str_before_5:
+    .autostring 34 2 "The bird catchers are only here.\pBut I am certainly the best of them all!"
+str_after_5:
+    .autostring 34 2 "You won't tell the other bird catchers about this, right?"
+str_before_6:
+    .autostring 34 2 "It's rare that an angler wanders up here.\pSo my catch is all the better!"
+str_after_6:
+    .autostring 34 2 "UffDOTS\nI had imagined this differentlyDOTS"
+str_before_7:
+    .autostring 34 2 "I tell you a secret!\pI didn't come up here on a cloud, but used my telekinetic abilities to float!"
+str_after_7:
+    .autostring 34 2 "T-Time out!\pI need to gather myselfDOTS"
+str_before_8:
+    .autostring 34 2 "To climb all the mountains of the region is the goal of most hikers.\pI will be the first to have climbed these sky islands!"
+str_after_8:
+    .autostring 34 2 "Maybe I should take a break.\pAfter all, no one is on my heelsDOTS"
+str_before_9:
+    .autostring 34 2 "The nature up here has a very own character.\pIn such an environment I cannot lose!"
+str_after_9:
+    .autostring 34 2 "What?\nHow could I be defeated despite this magnificent nature?"
+str_treasure_hunter_0_challange:
+    .autostring 34 2 "If you beat me, I will show you a treasure map I found up here!"
+str_treasure_hunter_0_defeat:
+    .autostring 34 2 "A deal is a deal."
+str_treasure_hunter_0_after:
+    .autostring 34 2 "AlrightDOTS\pHere, I leave you my treasure map."
+str_treasure_hunter_0_done:
+    .autostring 34 2 "If you found the treasure this map shows, please rejoice in my name, okay?"
 .endif
