@@ -1947,3 +1947,4 @@ cleartrainerflag = 0x080803ac | 1;
 person_showsprite = 0x0805e898 | 1;
 person_hidesprite = 0x0805e4c8 | 1;
 pokemon_party_menu_initialize_after_fly = 0x08124b00 | 1;
+overworld_weather_increment_rain_sav_key = 0x0807b220 | 1;

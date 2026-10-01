@@ -8,6 +8,7 @@
 #ifndef INCLUDE_C_MAP_NAMESPACE_H_
 #define INCLUDE_C_MAP_NAMESPACE_H_
 
+#include "types.h"
 #include "constants/map_namespaces.h"
 
 #define MAP_NAMESPACE_TO_IDX(namespace_idx) ((namespace_idx) - MAP_AMONIA)

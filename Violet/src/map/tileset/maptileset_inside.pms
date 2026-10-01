@@ -27988,49 +27988,49 @@
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 272,
+					"tile_idx": 256,
 					"palette_idx": 2,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 273,
+					"tile_idx": 257,
 					"palette_idx": 2,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 288,
+					"tile_idx": 263,
 					"palette_idx": 2,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 289,
+					"tile_idx": 264,
 					"palette_idx": 2,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 272,
+					"tile_idx": 256,
 					"palette_idx": 2,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 273,
+					"tile_idx": 257,
 					"palette_idx": 2,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 288,
+					"tile_idx": 263,
 					"palette_idx": 2,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 289,
+					"tile_idx": 264,
 					"palette_idx": 2,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
@@ -28062,49 +28062,49 @@
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 274,
+					"tile_idx": 258,
 					"palette_idx": 2,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 275,
+					"tile_idx": 259,
 					"palette_idx": 2,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 290,
+					"tile_idx": 265,
 					"palette_idx": 2,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 291,
+					"tile_idx": 266,
 					"palette_idx": 2,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 274,
+					"tile_idx": 258,
 					"palette_idx": 2,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 275,
+					"tile_idx": 259,
 					"palette_idx": 2,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 290,
+					"tile_idx": 265,
 					"palette_idx": 2,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 291,
+					"tile_idx": 266,
 					"palette_idx": 2,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
@@ -51646,7 +51646,7 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": 0,
+				"behaviour": "MB_TELEVISION",
 				"hm_usage": 0,
 				"argument": 0,
 				"battle_bg": 0,
@@ -51656,7 +51656,7 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": 0,
+				"behaviour": "MB_TELEVISION",
 				"hm_usage": 0,
 				"argument": 0,
 				"battle_bg": 0,

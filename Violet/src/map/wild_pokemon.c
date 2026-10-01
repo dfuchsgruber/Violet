@@ -15,6 +15,7 @@
 #include "tile/block.h"
 #include "types.h"
 #include "vars.h"
+#include "overworld/tv.h"
 
 
 extern const u8 ow_script_trainerschool_wildbattle[];
@@ -161,11 +162,11 @@ bool wildbattle_initialize_by_habitat(const wild_pokemon_habitat *habitat, int p
     }
     u8 level = wildbattle_sample_level(&(habitat->data[idx]));
     if (!consider_repel || wildbattle_is_allowed_by_repel(level)) {
-        // if (*var_access(STORY_PROGRESS) < 8) {
-        //     return trainerschool_wildbattle_initialize_secondary_starter();
-        // }
-
-        wild_pokemon_new(habitat->data[idx].species, level, rnd16() % NUM_UNOWN_LETTERS_PER_MAP);
+        u16 species = tv_event_swarm_get_species_if_active(save1->bank, save1->map);
+        if (!species || rnd16() % 2) { // 50% to spawn from the normal table even if swarm is present
+            species = habitat->data[idx].species;
+        }
+        wild_pokemon_new(species, level, rnd16() % NUM_UNOWN_LETTERS_PER_MAP);
         return true;
     }
     return false;

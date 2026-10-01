@@ -1,6 +1,8 @@
 - []: Distribute Treasure Maps: Add a new npc type that gives out treasure map after battling
 - []: Disable cloud features for fast and wing-jumping
-- []: TV
+- [(x)]: TV
+    - More shows: Ideas:
+        - Dungeon Explorer, if you meet a certain npc, they put you on TV
 - []: Song Pokestop Restaurant (center theme with jazz chords)
 - [x]: worldmaps
 - []: Pyramid Cloud Map above desert

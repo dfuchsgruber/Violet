@@ -426,4 +426,11 @@ void overworld_weather_rain_oam_callback_update(oam_object *self);
  **/
 void overworld_weather_snowflake_initialize(oam_object *self);
 
+/**
+ * Increments the rain save key
+ * @param new_weather the new weather
+ * @param previous_weather the previous weather
+ **/
+void overworld_weather_increment_rain_sav_key(u8 new_weather, u8 previous_weather);
+
 #endif

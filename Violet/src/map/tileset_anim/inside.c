@@ -1,9 +1,9 @@
 #include "types.h"
 #include "map/tileset.h"
 #include "debug.h"
-#include "tile/tv.h"
+#include "overworld/tv.h"
 
-extern const u16 gfx_tileset_inside_anim_tvTiles[];
+extern const u8 gfx_tileset_inside_anim_tvTiles[];
 
 static const tileset_animation tileset_inside_animations[] = {
     {
@@ -12,7 +12,6 @@ static const tileset_animation tileset_inside_animations[] = {
         .start_tile=0x100,
         .num_tiles=14,
         .gfx=gfx_tileset_inside_anim_tvTiles,
-        .is_active=tv_broadcast_is_on
     },
 };
 
@@ -20,9 +19,27 @@ static const tileset_animation_header tileset_inside_animations_head = {
     ARRAY_COUNT(tileset_inside_animations), tileset_inside_animations
 };
 
+static const tileset_animation tileset_inside_animations_tv_off[] = {
+    {
+        .cycle=1,
+        .speed=256,
+        .start_tile=0x100,
+        .num_tiles=14,
+        .gfx=gfx_tileset_inside_anim_tvTiles + 14 * 5 * GRAPHIC_SIZE_4BPP(8, 8), // 5 frames of 14 tiles each, 32 bytes per tile (8x8 tiles)
+    },
+};
+
+static const tileset_animation_header tileset_inside_animations_head_tv_off = {
+    ARRAY_COUNT(tileset_inside_animations_tv_off), tileset_inside_animations_tv_off
+};
+
 
 void tileset_inside_anim(u16 clk){
-    generic_tileset_anim_proceed_all(&tileset_inside_animations_head, clk);
+    if (tv_broadcast_is_on()) {
+        generic_tileset_anim_proceed_all(&tileset_inside_animations_head, clk);
+    } else {
+        generic_tileset_anim_proceed_all(&tileset_inside_animations_head_tv_off, clk);
+    }
 }
 
 void tileset_inside_anim_init(){

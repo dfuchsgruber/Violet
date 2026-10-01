@@ -7,6 +7,7 @@
 #include "debug.h"
 #include "overworld/misc.h"
 #include "flags.h"
+#include "overworld/tv.h"
 
 u16 tile_hash_by_position(s16 x, s16 y, u8 bank, u8 map_idx, size_t m) {
     u32 seq[4] = {
@@ -45,6 +46,7 @@ void daily_events_reset() {
     overworld_misc_intialize();
     overworld_static_encounters_reset();
     vs_seeker_randomly_set_rematch_flags();
+    tv_randomize_event();
 }
 
 u32 dungeon_hash(int dungeon_id) {

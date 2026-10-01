@@ -123,3 +123,8 @@
     ldr r0, =map_init_levelscript_on_transition | 1
     bx r0
     .pool
+
+.org 0x0807b0a4
+    ldr r0, =map_transition_update_weather | 1
+    bx r0
+    .pool
